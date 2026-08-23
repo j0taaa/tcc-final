@@ -19,7 +19,7 @@ Rules:
 4. A correctness-gate failure blocks later integration/performance milestones.
 5. Do not substitute measured values with estimates.
 
-Current starting point: **M1 / T104**. M0 through T103 are complete at the
+Current starting point: **M1 / T105**. M0 through T104 are complete at the
 immutable commits recorded below; no MWPC solver result is claimed by the M0
 baseline.
 
@@ -249,18 +249,21 @@ Ruff, strict MyPy, and 12 unit tests; `python -m pytest -q tests/exact_commit`:
 
 **Depends on:** T100
 
-- [ ] Create `docs/decisions/0003-exactness-scope.md`.
-- [ ] Define exactness over full, explicit, and top-`K` support.
-- [ ] Define adaptive support expansion semantics.
-- [ ] Define `INFEASIBLE_ON_SUPPORT` versus global infeasibility.
-- [ ] Define timeout/error fallback logging.
+- [x] Create `docs/decisions/0003-exactness-scope.md`.
+- [x] Define exactness over full, explicit, and top-`K` support.
+- [x] Define adaptive support expansion semantics.
+- [x] Define `INFEASIBLE_ON_SUPPORT` versus global infeasibility.
+- [x] Define timeout/error fallback logging.
 
 **Acceptance criteria**
 
-- [ ] Every public result can be named without overstating its guarantee.
-- [ ] The TCC wording can be derived directly from this ADR.
+- [x] Every public result can be named without overstating its guarantee.
+- [x] The TCC wording can be derived directly from this ADR.
 
-**Evidence:** `[ADR path]`
+**Evidence:** `docs/decisions/0003-exactness-scope.md` and aligned
+`docs/scientific-contract.md`; `make check` passed with Ruff, strict MyPy, and
+12 unit tests; `python -m pytest -q tests/exact_commit`: 42 passed; full Python
+suite: 55 passed. Commit: `913f2edc5c9dab52f3afae00403cdf7508fff228`.
 
 ## T105 — Create an independent certificate validator interface
 
