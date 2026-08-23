@@ -19,7 +19,7 @@ Rules:
 4. A correctness-gate failure blocks later integration/performance milestones.
 5. Do not substitute measured values with estimates.
 
-Current starting point: **M1 / T103**. M0 through T102 are complete at the
+Current starting point: **M1 / T104**. M0 through T103 are complete at the
 immutable commits recorded below; no MWPC solver result is claimed by the M0
 baseline.
 
@@ -226,20 +226,24 @@ tests/exact_commit/test_graph_and_result_contracts.py tests/unit/test_types.py`:
 
 **Depends on:** T101
 
-- [ ] Create `docs/decisions/0001-objective-and-weights.md`.
-- [ ] Define arbitrary non-negative weights, `unit`, and `confidence` modes.
-- [ ] State that confidence sums are utilities, not joint probabilities.
-- [ ] Create `docs/decisions/0002-candidate-set-and-schedule.md`.
-- [ ] Define `C` as proposals from the `k_s` schedule-selected positions.
-- [ ] State that alternatives outside the proposal token carry zero proposal reward.
-- [ ] Define deterministic ordering and tie behavior.
+- [x] Create `docs/decisions/0001-objective-and-weights.md`.
+- [x] Define arbitrary non-negative weights, `unit`, and `confidence` modes.
+- [x] State that confidence sums are utilities, not joint probabilities.
+- [x] Create `docs/decisions/0002-candidate-set-and-schedule.md`.
+- [x] Define `C` as proposals from the `k_s` schedule-selected positions.
+- [x] State that alternatives outside the proposal token carry zero proposal reward.
+- [x] Define deterministic ordering and tie behavior.
 
 **Acceptance criteria**
 
-- [ ] Code comments and ADR terminology use the same objective.
-- [ ] No unresolved ambiguity remains about whether the solver may commit more than `k_s` proposals.
+- [x] Code comments and ADR terminology use the same objective.
+- [x] No unresolved ambiguity remains about whether the solver may commit more than `k_s` proposals.
 
-**Evidence:** `[ADR paths]`
+**Evidence:** `docs/decisions/0001-objective-and-weights.md` and
+`docs/decisions/0002-candidate-set-and-schedule.md`; `make check` passed with
+Ruff, strict MyPy, and 12 unit tests; `python -m pytest -q tests/exact_commit`:
+42 passed; full Python suite: 55 passed. Commit:
+`d50bdc61ae139b88e4e5006dd5f537c344c6d23d`.
 
 ## T104 — Freeze exactness and failure terminology
 
