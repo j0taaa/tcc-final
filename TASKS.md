@@ -19,7 +19,7 @@ Rules:
 4. A correctness-gate failure blocks later integration/performance milestones.
 5. Do not substitute measured values with estimates.
 
-Current starting point: **M1 / T102**. M0 through T101 are complete at the
+Current starting point: **M1 / T103**. M0 through T102 are complete at the
 immutable commits recorded below; no MWPC solver result is claimed by the M0
 baseline.
 
@@ -205,18 +205,22 @@ commit: `53d4e31b4c7ae7e06cb61dbc42ff5f8ef5494fa6`.
 
 **Depends on:** T100, T101
 
-- [ ] Add `TokenArc`, `TerminalEdge`, `WeightedTerminalDAG`, and `ExactCommitResult` dataclasses or equivalent types.
-- [ ] Use stable integer IDs for nodes and edges.
-- [ ] Include witness tokens, terminal labels, graph-edge IDs, selected proposals, objective, scope, and diagnostics.
-- [ ] Ensure `OPTIMAL` construction requires certificate fields.
-- [ ] Ensure non-optimal statuses do not accidentally expose an uncertified objective as optimal.
+- [x] Add `TokenArc`, `TerminalEdge`, `WeightedTerminalDAG`, and `ExactCommitResult` dataclasses or equivalent types.
+- [x] Use stable integer IDs for nodes and edges.
+- [x] Include witness tokens, terminal labels, graph-edge IDs, selected proposals, objective, scope, and diagnostics.
+- [x] Ensure `OPTIMAL` construction requires certificate fields.
+- [x] Ensure non-optimal statuses do not accidentally expose an uncertified objective as optimal.
 
 **Acceptance criteria**
 
-- [ ] Invalid graph endpoints and malformed result/status combinations fail fast.
-- [ ] Result objects serialize to JSON metadata without losing IDs or status.
+- [x] Invalid graph endpoints and malformed result/status combinations fail fast.
+- [x] Result objects serialize to JSON metadata without losing IDs or status.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q
+tests/exact_commit/test_graph_and_result_contracts.py tests/unit/test_types.py`:
+23 passed; `make check`: Ruff and strict MyPy clean with 12 unit tests passed;
+`python -m pytest -q`: 55 passed. Implementation commit:
+`bb16f0f8bbe99f7c99af78095eb633853f586772`.
 
 ## T103 — Freeze objective and candidate semantics in ADRs
 
