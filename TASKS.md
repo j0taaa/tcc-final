@@ -19,8 +19,9 @@ Rules:
 4. A correctness-gate failure blocks later integration/performance milestones.
 5. Do not substitute measured values with estimates.
 
-Current starting point: **M1 / T100**. M0 is complete at the immutable baseline
-commit recorded below; no MWPC solver result is claimed by that baseline.
+Current starting point: **M1 / T101**. M0 and T100 are complete at the
+immutable commits recorded below; no MWPC solver result is claimed by the M0
+baseline.
 
 Required milestones: **M0 through M13**.
 
@@ -162,19 +163,22 @@ of a local model checkpoint are recorded in `docs/baseline-smoke.md` and
 
 **Target file:** `src/mwpc_exact/types.py`
 
-- [ ] Add `SolveStatus` with `OPTIMAL`, `INFEASIBLE_ON_SUPPORT`, `TIMEOUT`, `UNSUPPORTED`, and `ERROR`.
-- [ ] Add `SupportKind` with `FULL`, `TOP_K`, and `EXPLICIT`.
-- [ ] Add immutable `ExactnessScope` metadata.
-- [ ] Validate `top_k`, vocabulary size, special tokens, and adaptive expansions.
-- [ ] Provide JSON-serializable conversion.
+- [x] Add `SolveStatus` with `OPTIMAL`, `INFEASIBLE_ON_SUPPORT`, `TIMEOUT`, `UNSUPPORTED`, and `ERROR`.
+- [x] Add `SupportKind` with `FULL`, `TOP_K`, and `EXPLICIT`.
+- [x] Add immutable `ExactnessScope` metadata.
+- [x] Validate `top_k`, vocabulary size, special tokens, and adaptive expansions.
+- [x] Provide JSON-serializable conversion.
 
 **Acceptance criteria**
 
-- [ ] Timeout cannot be represented as infeasible.
-- [ ] A top-`K` result cannot omit its value of `K`.
-- [ ] Round-trip serialization tests pass.
+- [x] Timeout cannot be represented as infeasible.
+- [x] A top-`K` result cannot omit its value of `K`.
+- [x] Round-trip serialization tests pass.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q tests/exact_commit/test_exactness_scope.py
+tests/unit/test_types.py`: 22 passed; `make check`: 12 unit tests passed with
+Ruff and strict MyPy clean; `python -m pytest -q`: 27 passed. Implementation
+commit: `f2beb93ddc1c0457296956d4c1c975fa7fc74ba7`.
 
 ## T101 — Define `Proposal` and proposal aggregation
 
