@@ -248,7 +248,11 @@ ExactCommitStatus = SolveStatus
 
 @dataclass(frozen=True, slots=True)
 class Proposal:
-    """One weighted model proposal for one physical token slot."""
+    """One weighted model proposal for one physical token slot.
+
+    ``weight`` is the MWPC utility. ``model_confidence`` is separate analysis
+    metadata and is never implicitly added to that utility.
+    """
 
     proposal_id: int
     position: int
@@ -313,7 +317,11 @@ class AggregatedProposal:
 
 
 def aggregate_proposals(proposals: Iterable[Proposal]) -> tuple[AggregatedProposal, ...]:
-    """Aggregate rewards by choice while preserving stable proposal provenance."""
+    """Sum MWPC utility by choice while preserving stable proposal provenance.
+
+    First-seen choice order and input proposal-ID order are retained for
+    deterministic traversal; model confidence is deliberately not aggregated.
+    """
     groups: dict[tuple[int, int], list[Proposal]] = {}
     seen_ids: set[int] = set()
     for proposal in proposals:
