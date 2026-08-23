@@ -392,18 +392,24 @@ unit tests passed. Implementation commit:
 
 **Depends on:** T203
 
-- [ ] Reconstruct the terminal sequence from backpointers.
-- [ ] Recover all matched positive-weight proposal IDs.
-- [ ] Recompute the objective from proposal IDs.
-- [ ] Return `ExactCommitResult` with `SupportKind.FULL` or explicit small support.
-- [ ] Pass the result through the independent validator.
+- [x] Reconstruct the terminal sequence from backpointers.
+- [x] Recover all matched positive-weight proposal IDs.
+- [x] Recompute the objective from proposal IDs.
+- [x] Return `ExactCommitResult` with `SupportKind.FULL` or explicit small support.
+- [x] Pass the result through the independent validator.
 
 **Acceptance criteria**
 
-- [ ] Corrupting any backpointer or score is detected by tests.
-- [ ] The reconstructed sequence is accepted by an independent CFG recognizer.
+- [x] Corrupting any backpointer or score is detected by tests.
+- [x] The reconstructed sequence is accepted by an independent CFG recognizer.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q
+tests/exact_commit/test_token_aligned_certificate.py`: 7 passed, including
+terminal/binary backpointer and score corruption, independent Boolean CFG
+recognition, and a second public-certificate validation; `python -m pytest -q
+tests/exact_commit`: 98 passed; `make check`: upstream pin verified, Ruff and
+strict MyPy clean, 12 unit tests passed. Implementation commit:
+`d4f7bb27e1ed02fe48cda36566f6ef1e57b82720`.
 
 ## T205 — Add canonical token-aligned examples
 
