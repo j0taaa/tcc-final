@@ -8,6 +8,9 @@ from mwpc_exact.types import (
     Proposal,
     SolveStatus,
     SupportKind,
+    TerminalEdge,
+    TokenArc,
+    WeightedTerminalDAG,
     aggregate_proposals,
 )
 
@@ -19,5 +22,8 @@ __all__ = [
     "Proposal",
     "SolveStatus",
     "SupportKind",
+    "TerminalEdge",
+    "TokenArc",
+    "WeightedTerminalDAG",
     "aggregate_proposals",
 ]

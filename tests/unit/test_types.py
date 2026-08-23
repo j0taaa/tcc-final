@@ -41,10 +41,10 @@ def test_valid_optimal_result() -> None:
         status=SolveStatus.OPTIMAL,
         exactness_scope=finite_scope(),
         objective_value=2.5,
-        selected_proposal_ids=("p0",),
+        selected_proposal_ids=(0,),
         witness_token_ids=(10, 11),
         witness_terminal_labels=("a", "b"),
-        witness_graph_edge_ids=("e0", "e1"),
+        witness_graph_edge_ids=(0, 1),
     )
     assert result.status is SolveStatus.OPTIMAL
     assert result.objective_value == 2.5
@@ -55,5 +55,5 @@ def test_timeout_cannot_claim_selected_proposals() -> None:
         ExactCommitResult(
             status=SolveStatus.TIMEOUT,
             exactness_scope=finite_scope(),
-            selected_proposal_ids=("p0",),
+            selected_proposal_ids=(0,),
         )

@@ -6,7 +6,8 @@ from collections.abc import Iterable, Mapping
 from dataclasses import dataclass, field
 from enum import StrEnum
 from math import fsum, isfinite
-from typing import Any, Self
+from types import MappingProxyType
+from typing import Self, TypeAlias
 
 
 class SolveStatus(StrEnum):
@@ -52,6 +53,64 @@ def _finite_float(value: object, field_name: str, *, non_negative: bool) -> floa
     if non_negative and normalized < 0:
         raise ValueError(f"{field_name} must be non-negative")
     return normalized
+
+
+def _stable_ids(value: object, field_name: str, *, allow_empty: bool) -> tuple[int, ...]:
+    ids = _int_tuple(value, field_name)
+    if not allow_empty and not ids:
+        raise ValueError(f"{field_name} must be non-empty")
+    if len(set(ids)) != len(ids):
+        raise ValueError(f"{field_name} must not contain duplicates")
+    if any(stable_id < 0 for stable_id in ids):
+        raise ValueError(f"{field_name} must be non-negative")
+    return ids
+
+
+TerminalLabel: TypeAlias = int | str
+
+
+def _terminal_label(value: object) -> TerminalLabel:
+    if isinstance(value, bool) or not isinstance(value, (int, str)):
+        raise TypeError("terminal labels must be byte integers or strings")
+    if isinstance(value, int):
+        if not 0 <= value <= 255:
+            raise ValueError("integer terminal labels must be bytes in [0, 255]")
+    elif not value:
+        raise ValueError("string terminal labels must be non-empty")
+    return value
+
+
+def _terminal_tuple(value: object) -> tuple[TerminalLabel, ...]:
+    if isinstance(value, (str, bytes)) or not isinstance(value, Iterable):
+        raise TypeError("witness_terminal_labels must be a sequence")
+    return tuple(_terminal_label(label) for label in value)
+
+
+def _freeze_json(value: object, field_name: str) -> object:
+    if value is None or isinstance(value, (str, bool, int)):
+        return value
+    if isinstance(value, float):
+        if not isfinite(value):
+            raise ValueError(f"{field_name} must not contain NaN or infinity")
+        return value
+    if isinstance(value, Mapping):
+        frozen: dict[str, object] = {}
+        for key, item in value.items():
+            if not isinstance(key, str):
+                raise TypeError(f"{field_name} keys must be strings")
+            frozen[key] = _freeze_json(item, f"{field_name}.{key}")
+        return MappingProxyType(frozen)
+    if isinstance(value, (list, tuple)):
+        return tuple(_freeze_json(item, field_name) for item in value)
+    raise TypeError(f"{field_name} must contain only JSON-compatible values")
+
+
+def _thaw_json(value: object) -> object:
+    if isinstance(value, Mapping):
+        return {key: _thaw_json(item) for key, item in value.items()}
+    if isinstance(value, tuple):
+        return [_thaw_json(item) for item in value]
+    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -285,29 +344,283 @@ def aggregate_proposals(proposals: Iterable[Proposal]) -> tuple[AggregatedPropos
 
 
 @dataclass(frozen=True, slots=True)
+class TokenArc:
+    """One token choice crossing a physical slot boundary."""
+
+    token_edge_id: int
+    slot: int
+    token_id: int
+    source_boundary: int
+    target_boundary: int
+    emitted_bytes: bytes
+    weight: float = 0.0
+    matched_proposal_ids: tuple[int, ...] = ()
+
+    def __post_init__(self) -> None:
+        for field_name in ("token_edge_id", "slot", "token_id", "source_boundary"):
+            value = _require_int(getattr(self, field_name), field_name)
+            if value < 0:
+                raise ValueError(f"{field_name} must be non-negative")
+        target_boundary = _require_int(self.target_boundary, "target_boundary")
+        if target_boundary <= self.source_boundary:
+            raise ValueError("target_boundary must be greater than source_boundary")
+        if not isinstance(self.emitted_bytes, (bytes, bytearray)):
+            raise TypeError("emitted_bytes must be bytes")
+        object.__setattr__(self, "emitted_bytes", bytes(self.emitted_bytes))
+        object.__setattr__(
+            self,
+            "weight",
+            _finite_float(self.weight, "weight", non_negative=True),
+        )
+        object.__setattr__(
+            self,
+            "matched_proposal_ids",
+            _stable_ids(
+                self.matched_proposal_ids,
+                "matched_proposal_ids",
+                allow_empty=True,
+            ),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class TerminalEdge:
+    """One weighted terminal edge with stable token provenance."""
+
+    edge_id: int
+    source_state: int
+    target_state: int
+    terminal_label: TerminalLabel
+    weight: float = 0.0
+    provenance_token_edge_id: int | None = None
+    matched_proposal_ids: tuple[int, ...] = ()
+
+    def __post_init__(self) -> None:
+        for field_name in ("edge_id", "source_state", "target_state"):
+            value = _require_int(getattr(self, field_name), field_name)
+            if value < 0:
+                raise ValueError(f"{field_name} must be non-negative")
+        if self.source_state == self.target_state:
+            raise ValueError("terminal edges cannot be self-loops")
+        object.__setattr__(self, "terminal_label", _terminal_label(self.terminal_label))
+        object.__setattr__(
+            self,
+            "weight",
+            _finite_float(self.weight, "weight", non_negative=True),
+        )
+        if self.provenance_token_edge_id is not None:
+            provenance_id = _require_int(
+                self.provenance_token_edge_id, "provenance_token_edge_id"
+            )
+            if provenance_id < 0:
+                raise ValueError("provenance_token_edge_id must be non-negative")
+        object.__setattr__(
+            self,
+            "matched_proposal_ids",
+            _stable_ids(
+                self.matched_proposal_ids,
+                "matched_proposal_ids",
+                allow_empty=True,
+            ),
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class WeightedTerminalDAG:
+    """Finite terminal graph with stable node and edge IDs.
+
+    Full topological validation and indexing belong to T400. This boundary
+    already rejects missing endpoints and ambiguous IDs.
+    """
+
+    node_ids: tuple[int, ...]
+    start_node_id: int
+    final_node_ids: tuple[int, ...]
+    edges: tuple[TerminalEdge, ...] = ()
+
+    def __post_init__(self) -> None:
+        node_ids = _stable_ids(self.node_ids, "node_ids", allow_empty=False)
+        start_node_id = _require_int(self.start_node_id, "start_node_id")
+        if start_node_id not in node_ids:
+            raise ValueError("start_node_id must reference an existing node")
+        final_node_ids = _stable_ids(
+            self.final_node_ids, "final_node_ids", allow_empty=False
+        )
+        missing_finals = set(final_node_ids) - set(node_ids)
+        if missing_finals:
+            raise ValueError("final_node_ids must reference existing nodes")
+
+        if isinstance(self.edges, (str, bytes)) or not isinstance(self.edges, Iterable):
+            raise TypeError("edges must be a sequence of TerminalEdge instances")
+        edges = tuple(self.edges)
+        if not all(isinstance(edge, TerminalEdge) for edge in edges):
+            raise TypeError("edges must contain only TerminalEdge instances")
+        edge_ids = tuple(edge.edge_id for edge in edges)
+        if len(set(edge_ids)) != len(edge_ids):
+            raise ValueError("edge IDs must be unique")
+        node_set = set(node_ids)
+        if any(
+            edge.source_state not in node_set or edge.target_state not in node_set
+            for edge in edges
+        ):
+            raise ValueError("every edge endpoint must reference an existing node")
+
+        object.__setattr__(self, "node_ids", node_ids)
+        object.__setattr__(self, "final_node_ids", final_node_ids)
+        object.__setattr__(self, "edges", edges)
+
+
+@dataclass(frozen=True, slots=True)
 class ExactCommitResult:
     """Solver result plus the certificate needed for independent validation."""
 
     status: SolveStatus
     exactness_scope: ExactnessScope
     objective_value: float | None = None
-    selected_proposal_ids: tuple[str, ...] = ()
+    selected_proposal_ids: tuple[int, ...] = ()
     witness_token_ids: tuple[int, ...] = ()
-    witness_terminal_labels: tuple[str, ...] = ()
-    witness_graph_edge_ids: tuple[str, ...] = ()
-    diagnostics: dict[str, Any] = field(default_factory=dict)
+    witness_terminal_labels: tuple[TerminalLabel, ...] = ()
+    witness_graph_edge_ids: tuple[int, ...] = ()
+    diagnostics: Mapping[str, object] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
+        if not isinstance(self.status, SolveStatus):
+            raise TypeError("status must be a SolveStatus")
+        if not isinstance(self.exactness_scope, ExactnessScope):
+            raise TypeError("exactness_scope must be an ExactnessScope")
+
         if self.objective_value is not None:
-            if not isfinite(self.objective_value) or self.objective_value < 0:
-                raise ValueError("objective_value must be finite and non-negative")
+            object.__setattr__(
+                self,
+                "objective_value",
+                _finite_float(
+                    self.objective_value,
+                    "objective_value",
+                    non_negative=True,
+                ),
+            )
+
+        selected_ids = _stable_ids(
+            self.selected_proposal_ids,
+            "selected_proposal_ids",
+            allow_empty=True,
+        )
+        witness_token_ids = _int_tuple(self.witness_token_ids, "witness_token_ids")
+        if any(token_id < 0 for token_id in witness_token_ids):
+            raise ValueError("witness_token_ids must be non-negative")
+        terminal_labels = _terminal_tuple(self.witness_terminal_labels)
+        witness_edge_ids = _stable_ids(
+            self.witness_graph_edge_ids,
+            "witness_graph_edge_ids",
+            allow_empty=True,
+        )
+        object.__setattr__(self, "selected_proposal_ids", selected_ids)
+        object.__setattr__(self, "witness_token_ids", witness_token_ids)
+        object.__setattr__(self, "witness_terminal_labels", terminal_labels)
+        object.__setattr__(self, "witness_graph_edge_ids", witness_edge_ids)
+
+        frozen_diagnostics = _freeze_json(self.diagnostics, "diagnostics")
+        if not isinstance(frozen_diagnostics, Mapping):
+            raise TypeError("diagnostics must be a mapping")
+        object.__setattr__(self, "diagnostics", frozen_diagnostics)
 
         if self.status is SolveStatus.OPTIMAL:
             if self.objective_value is None:
                 raise ValueError("OPTIMAL requires objective_value")
-            if not self.witness_token_ids:
+            if not witness_token_ids:
                 raise ValueError("OPTIMAL requires a non-empty witness token sequence")
-            if not self.witness_graph_edge_ids:
+            if not terminal_labels:
+                raise ValueError("OPTIMAL requires witness terminal labels")
+            if not witness_edge_ids:
                 raise ValueError("OPTIMAL requires a reconstructible witness path")
-        elif self.selected_proposal_ids:
-            raise ValueError("non-OPTIMAL results cannot claim selected proposals")
+            if len(terminal_labels) != len(witness_edge_ids):
+                raise ValueError(
+                    "witness terminal labels and graph edge IDs must have equal length"
+                )
+        elif any(
+            (
+                self.objective_value is not None,
+                bool(selected_ids),
+                bool(witness_token_ids),
+                bool(terminal_labels),
+                bool(witness_edge_ids),
+            )
+        ):
+            raise ValueError("non-OPTIMAL results cannot expose an objective or certificate")
+
+    def to_dict(self) -> dict[str, object]:
+        """Return a JSON-compatible result without dropping stable IDs."""
+        return {
+            "status": self.status.value,
+            "objective_value": self.objective_value,
+            "selected_proposal_ids": list(self.selected_proposal_ids),
+            "witness_token_ids": list(self.witness_token_ids),
+            "witness_terminal_labels": list(self.witness_terminal_labels),
+            "witness_graph_edge_ids": list(self.witness_graph_edge_ids),
+            "exactness_scope": self.exactness_scope.to_dict(),
+            "diagnostics": _thaw_json(self.diagnostics),
+        }
+
+    @classmethod
+    def from_dict(cls, data: Mapping[str, object]) -> Self:
+        """Reconstruct and validate a result parsed from JSON."""
+        if not isinstance(data, Mapping):
+            raise TypeError("exact commit result data must be a mapping")
+        allowed = {
+            "status",
+            "objective_value",
+            "selected_proposal_ids",
+            "witness_token_ids",
+            "witness_terminal_labels",
+            "witness_graph_edge_ids",
+            "exactness_scope",
+            "diagnostics",
+        }
+        unknown = set(data) - allowed
+        if unknown:
+            names = ", ".join(sorted(repr(name) for name in unknown))
+            raise ValueError(f"unknown exact commit result fields: {names}")
+        missing = {"status", "exactness_scope"} - set(data)
+        if missing:
+            names = ", ".join(sorted(missing))
+            raise ValueError(f"missing exact commit result fields: {names}")
+
+        status_value = data["status"]
+        if not isinstance(status_value, str):
+            raise TypeError("status must be a string")
+        try:
+            status = SolveStatus(status_value)
+        except ValueError as exc:
+            raise ValueError(f"unknown solve status: {status_value!r}") from exc
+
+        scope_data = data["exactness_scope"]
+        if not isinstance(scope_data, Mapping):
+            raise TypeError("exactness_scope must be a mapping")
+        objective_data = data.get("objective_value")
+        objective = (
+            None
+            if objective_data is None
+            else _finite_float(objective_data, "objective_value", non_negative=True)
+        )
+        diagnostics = data.get("diagnostics", {})
+        if not isinstance(diagnostics, Mapping):
+            raise TypeError("diagnostics must be a mapping")
+
+        return cls(
+            status=status,
+            exactness_scope=ExactnessScope.from_dict(scope_data),
+            objective_value=objective,
+            selected_proposal_ids=_int_tuple(
+                data.get("selected_proposal_ids", ()), "selected_proposal_ids"
+            ),
+            witness_token_ids=_int_tuple(
+                data.get("witness_token_ids", ()), "witness_token_ids"
+            ),
+            witness_terminal_labels=_terminal_tuple(
+                data.get("witness_terminal_labels", ())
+            ),
+            witness_graph_edge_ids=_int_tuple(
+                data.get("witness_graph_edge_ids", ()), "witness_graph_edge_ids"
+            ),
+            diagnostics=diagnostics,
+        )
