@@ -452,19 +452,25 @@ audit found no `torch`, `transformers`, `rustformlang`, or
 
 **Target:** `src/mwpc_exact/reference/brute_force.py`
 
-- [ ] Enumerate all completions over a supplied finite per-position support.
-- [ ] Filter fixed-position violations.
-- [ ] Use an independent CFG recognizer.
-- [ ] Compute reward directly from proposals.
-- [ ] Return all or one deterministic optimum for tiny inputs.
-- [ ] Enforce a maximum search-size guard.
+- [x] Enumerate all completions over a supplied finite per-position support.
+- [x] Filter fixed-position violations.
+- [x] Use an independent CFG recognizer.
+- [x] Compute reward directly from proposals.
+- [x] Return all or one deterministic optimum for tiny inputs.
+- [x] Enforce a maximum search-size guard.
 
 **Acceptance criteria**
 
-- [ ] Oracle results match manually computed fixtures.
-- [ ] Search-size overflow is explicit, not an accidental hang.
+- [x] Oracle results match manually computed fixtures.
+- [x] Search-size overflow is explicit, not an accidental hang.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q
+tests/exact_commit/test_completion_oracle.py`: 7 passed, including manual
+objectives, all-optimum enumeration, fixed/infeasible canvases, duplicate IDs,
+and an explicit pre-enumeration search guard; `python -m pytest -q
+tests/exact_commit`: 111 passed; `make check`: upstream pin verified, Ruff and
+strict MyPy clean, 12 unit tests passed. Implementation commit:
+`53ec2d48aea3f75ea135539e4987491273673a6d`.
 
 ## T301 — Implement exhaustive subset oracle
 
