@@ -4,8 +4,9 @@ backend = "python_reference"
 strategy = "exact"
 
 [scope]
-kind = "finite_support"
-# This configuration is only a skeleton. Record the real support in every result.
+kind = "top_k"
+# This configuration is only a skeleton. Inject the tokenizer vocabulary size
+# and included special-token IDs before executing a real run.
 top_k = 8
 
 [limits]
