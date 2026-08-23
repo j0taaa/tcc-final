@@ -322,17 +322,23 @@ strict MyPy clean, 12 unit tests passed. Implementation commit:
 
 **Depends on:** T200
 
-- [ ] Test the upstream `to_normal_form()` behavior on epsilon, unit, recursive, and ambiguous grammars.
-- [ ] Decide whether to reuse it or implement a controlled normalizer.
-- [ ] Preserve a mapping from normalized productions to original symbols when needed for diagnostics.
-- [ ] Handle empty-string acceptance explicitly.
+- [x] Test the upstream `to_normal_form()` behavior on epsilon, unit, recursive, and ambiguous grammars.
+- [x] Decide whether to reuse it or implement a controlled normalizer.
+- [x] Preserve a mapping from normalized productions to original symbols when needed for diagnostics.
+- [x] Handle empty-string acceptance explicitly.
 
 **Acceptance criteria**
 
-- [ ] A boolean enumerator confirms language preservation up to a configured small length for the normalization fixtures.
-- [ ] The decision is recorded in `docs/decisions/0004-grammar-normalization.md`.
+- [x] A boolean enumerator confirms language preservation up to a configured small length for the normalization fixtures.
+- [x] The decision is recorded in `docs/decisions/0004-grammar-normalization.md`.
 
-**Evidence:** `[tests, ADR, commit]`
+**Evidence:** `python -m pytest -q tests/exact_commit/test_normalization.py
+tests/exact_commit/test_upstream_normalization_audit.py`: 13 passed, including
+the pinned upstream audit and bounded language comparisons through length five;
+`python -m pytest -q tests/exact_commit`: 76 passed; `make check`: upstream pin
+verified, Ruff and strict MyPy clean, 12 unit tests passed. Decision:
+`docs/decisions/0004-grammar-normalization.md`. Implementation commit:
+`f43eef975af715b690dd998c0bfc3f0c3c124d8a`.
 
 ## T202 — Implement lexical reward construction
 
