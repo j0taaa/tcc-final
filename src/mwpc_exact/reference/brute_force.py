@@ -73,6 +73,50 @@ class CompletionOracleResult:
             raise ValueError("completion enumeration counts are inconsistent")
 
 
+@dataclass(frozen=True, slots=True)
+class SubsetOracleResult:
+    """Best compatible proposal subset and one existence witness."""
+
+    status: SolveStatus
+    objective_value: float | None
+    selected_proposal_ids: tuple[int, ...]
+    witness_token_ids: tuple[int, ...]
+    witness_terminal_labels: tuple[TerminalLabel, ...]
+    subset_search_space_size: int
+    enumerated_subsets: int
+    grammar_valid_completions: int
+
+    def __post_init__(self) -> None:
+        if self.status not in {
+            SolveStatus.OPTIMAL,
+            SolveStatus.INFEASIBLE_ON_SUPPORT,
+        }:
+            raise ValueError("subset oracle status must be OPTIMAL or INFEASIBLE_ON_SUPPORT")
+        if self.status is SolveStatus.OPTIMAL:
+            if self.objective_value is None:
+                raise ValueError("OPTIMAL subset result requires an objective")
+            if len(self.witness_token_ids) != len(self.witness_terminal_labels):
+                raise ValueError("subset witness token and terminal lengths must match")
+        elif any(
+            (
+                self.objective_value is not None,
+                bool(self.selected_proposal_ids),
+                bool(self.witness_token_ids),
+                bool(self.witness_terminal_labels),
+            )
+        ):
+            raise ValueError("infeasible subset result cannot expose an optimum witness")
+        counts = (
+            self.subset_search_space_size,
+            self.enumerated_subsets,
+            self.grammar_valid_completions,
+        )
+        if any(isinstance(item, bool) or not isinstance(item, int) or item < 0 for item in counts):
+            raise ValueError("subset oracle counts must be non-negative integers")
+        if self.enumerated_subsets > self.subset_search_space_size:
+            raise ValueError("enumerated subset count exceeds the search space")
+
+
 def exhaustive_completion_oracle(
     *,
     grammar: CnfGrammar,
@@ -159,6 +203,125 @@ def exhaustive_completion_oracle(
         enumerated_completions=enumerated,
         fixed_compatible_completions=fixed_compatible,
         grammar_valid_completions=grammar_valid,
+    )
+
+
+def exhaustive_subset_oracle(
+    *,
+    grammar: CnfGrammar,
+    per_position_support: Sequence[Sequence[int]],
+    canvas: Sequence[int | None],
+    proposals: Iterable[Proposal],
+    terminal_labels_by_token_id: Mapping[int, TerminalLabel],
+    max_subsets: int = 1_048_576,
+    max_completions: int = 1_000_000,
+) -> SubsetOracleResult:
+    """Enumerate proposal subsets and test each by completion existence.
+
+    This does not call :func:`exhaustive_completion_oracle`; proposal-subset
+    scoring and compatibility search are separate loops so their agreement is
+    a meaningful correctness check.
+    """
+    if not isinstance(grammar, CnfGrammar):
+        raise TypeError("grammar must be a CnfGrammar")
+    supports = _supports(per_position_support)
+    canvas_tokens = _canvas(canvas)
+    if len(supports) != len(canvas_tokens):
+        raise ValueError("canvas and per-position support must have equal length")
+    labels_by_token = _terminal_mapping(grammar, terminal_labels_by_token_id, supports)
+    proposal_items = _proposals(proposals, len(supports))
+    subset_maximum = _positive_int(max_subsets, "max_subsets")
+    completion_maximum = _positive_int(max_completions, "max_completions")
+
+    subset_search_space_size = 1 << len(proposal_items)
+    if subset_search_space_size > subset_maximum:
+        raise SearchSpaceLimitExceeded(
+            search_space_size=subset_search_space_size,
+            maximum=subset_maximum,
+        )
+    completion_search_space_size = prod(len(support) for support in supports)
+    if completion_search_space_size > completion_maximum:
+        raise SearchSpaceLimitExceeded(
+            search_space_size=completion_search_space_size,
+            maximum=completion_maximum,
+        )
+
+    valid_completions: list[tuple[tuple[int, ...], tuple[TerminalLabel, ...]]] = []
+    for completion in product(*supports):
+        if any(
+            fixed_token_id is not None and completion[position] != fixed_token_id
+            for position, fixed_token_id in enumerate(canvas_tokens)
+        ):
+            continue
+        terminal_labels = tuple(labels_by_token[token_id] for token_id in completion)
+        if recognizes_cnf(grammar, terminal_labels):
+            valid_completions.append((completion, terminal_labels))
+
+    if not valid_completions:
+        return SubsetOracleResult(
+            status=SolveStatus.INFEASIBLE_ON_SUPPORT,
+            objective_value=None,
+            selected_proposal_ids=(),
+            witness_token_ids=(),
+            witness_terminal_labels=(),
+            subset_search_space_size=subset_search_space_size,
+            enumerated_subsets=0,
+            grammar_valid_completions=0,
+        )
+
+    best_score: float | None = None
+    best_subset: tuple[Proposal, ...] = ()
+    best_witness: tuple[int, ...] = ()
+    best_labels: tuple[TerminalLabel, ...] = ()
+    enumerated_subsets = 0
+    for mask in range(subset_search_space_size):
+        enumerated_subsets += 1
+        subset = tuple(
+            proposal for index, proposal in enumerate(proposal_items) if mask & (1 << index)
+        )
+        witness = next(
+            (
+                (completion, terminal_labels)
+                for completion, terminal_labels in valid_completions
+                if all(completion[proposal.position] == proposal.token_id for proposal in subset)
+            ),
+            None,
+        )
+        if witness is None:
+            continue
+        try:
+            score = fsum(proposal.weight for proposal in subset)
+        except OverflowError as exc:
+            raise ValueError("subset objective overflowed finite float range") from exc
+        if best_score is None or score > best_score:
+            best_score = score
+            best_subset = subset
+            best_witness, best_labels = witness
+
+    if best_score is None:
+        raise AssertionError("empty proposal subset must match every valid completion")
+    positive_subset = tuple(proposal for proposal in best_subset if proposal.weight > 0)
+    matched_positive = tuple(
+        proposal
+        for proposal in proposal_items
+        if proposal.weight > 0 and best_witness[proposal.position] == proposal.token_id
+    )
+    matched_score = fsum(proposal.weight for proposal in matched_positive)
+    if matched_score != best_score or {item.proposal_id for item in matched_positive} != {
+        item.proposal_id for item in positive_subset
+    }:
+        raise AssertionError(
+            "best subset is not closed under positive proposals matched by its witness"
+        )
+    return SubsetOracleResult(
+        status=SolveStatus.OPTIMAL,
+        objective_value=best_score,
+        selected_proposal_ids=tuple(item.proposal_id for item in positive_subset),
+        witness_token_ids=best_witness,
+        witness_terminal_labels=best_labels,
+        subset_search_space_size=subset_search_space_size,
+        enumerated_subsets=enumerated_subsets,
+        grammar_valid_completions=len(valid_completions),
     )
 
 
