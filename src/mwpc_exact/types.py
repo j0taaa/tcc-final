@@ -242,10 +242,6 @@ class ExactnessScope:
         )
 
 
-# Compatibility for the initial M0 scaffold. New APIs use ``SolveStatus``.
-ExactCommitStatus = SolveStatus
-
-
 @dataclass(frozen=True, slots=True)
 class Proposal:
     """One weighted model proposal for one physical token slot.

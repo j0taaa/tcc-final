@@ -3,7 +3,6 @@
 from mwpc_exact.types import (
     AggregatedProposal,
     ExactCommitResult,
-    ExactCommitStatus,
     ExactnessScope,
     Proposal,
     SolveStatus,
@@ -13,17 +12,32 @@ from mwpc_exact.types import (
     WeightedTerminalDAG,
     aggregate_proposals,
 )
+from mwpc_exact.validator import (
+    EOSWitnessValidator,
+    GrammarRecognizer,
+    TokenizerWitnessValidator,
+    ValidationCode,
+    ValidationIssue,
+    ValidationReport,
+    validate_exact_commit_certificate,
+)
 
 __all__ = [
     "AggregatedProposal",
+    "EOSWitnessValidator",
     "ExactCommitResult",
-    "ExactCommitStatus",
     "ExactnessScope",
+    "GrammarRecognizer",
     "Proposal",
     "SolveStatus",
     "SupportKind",
     "TerminalEdge",
     "TokenArc",
+    "TokenizerWitnessValidator",
+    "ValidationCode",
+    "ValidationIssue",
+    "ValidationReport",
     "WeightedTerminalDAG",
     "aggregate_proposals",
+    "validate_exact_commit_certificate",
 ]
