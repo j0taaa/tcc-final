@@ -344,17 +344,22 @@ verified, Ruff and strict MyPy clean, 12 unit tests passed. Decision:
 
 **Depends on:** T101, T200
 
-- [ ] Build `score[position][terminal]` from canvas and proposals.
-- [ ] Use negative infinity for tokens conflicting with fixed positions.
-- [ ] Sum weights for duplicate matching proposals.
-- [ ] Use zero for allowed alternatives that match no proposal.
-- [ ] Preserve the matching proposal IDs for backtracking.
+- [x] Build `score[position][terminal]` from canvas and proposals.
+- [x] Use negative infinity for tokens conflicting with fixed positions.
+- [x] Sum weights for duplicate matching proposals.
+- [x] Use zero for allowed alternatives that match no proposal.
+- [x] Preserve the matching proposal IDs for backtracking.
 
 **Acceptance criteria**
 
-- [ ] Tests cover fixed conflicts, zero reward, duplicate proposals, and multiple alternatives.
+- [x] Tests cover fixed conflicts, zero reward, duplicate proposals, and multiple alternatives.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q
+tests/exact_commit/test_lexical_rewards.py`: 8 passed, covering fixed conflicts,
+zero reward, duplicate proposals, multiple alternatives, alignment validation,
+and empty terminal support; `python -m pytest -q tests/exact_commit`: 84 passed;
+`make check`: upstream pin verified, Ruff and strict MyPy clean, 12 unit tests
+passed. Implementation commit: `726012490ffed15de2787c4824a564c3b83bbf2a`.
 
 ## T203 — Implement CKY max-plus
 
