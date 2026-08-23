@@ -19,7 +19,8 @@ Rules:
 4. A correctness-gate failure blocks later integration/performance milestones.
 5. Do not substitute measured values with estimates.
 
-Current starting point: **M0 / T000**. Repository scaffolding is present, but no baseline build/test evidence has been claimed.
+Current starting point: **M1 / T100**. M0 is complete at the immutable baseline
+commit recorded below; no MWPC solver result is claimed by that baseline.
 
 Required milestones: **M0 through M13**.
 
@@ -33,36 +34,40 @@ Optional milestones: **O1 through O4**.
 
 **Depends on:** none
 
-- [ ] Initialize the pinned read-only submodule `vendor/EPIC-Decoding` from `hyundong98/EPIC-Decoding`.
-- [ ] Record the exact upstream URL, default branch, and commit SHA in `UPSTREAM.md`.
-- [ ] Preserve `LICENSE` and `THIRD_PARTY_LICENSES.md`.
-- [ ] Verify that `.gitmodules` points to the official upstream and that the submodule is at the SHA recorded in `UPSTREAM.md`.
-- [ ] Confirm that no generated model weights, caches, or credentials are tracked.
+- [x] Initialize the pinned read-only submodule `vendor/EPIC-Decoding` from `hyundong98/EPIC-Decoding`.
+- [x] Record the exact upstream URL, default branch, and commit SHA in `UPSTREAM.md`.
+- [x] Preserve `LICENSE` and `THIRD_PARTY_LICENSES.md`.
+- [x] Verify that `.gitmodules` points to the official upstream and that the submodule is at the SHA recorded in `UPSTREAM.md`.
+- [x] Confirm that no generated model weights, caches, or credentials are tracked.
 
 **Acceptance criteria**
 
-- [ ] `UPSTREAM.md` identifies an immutable base commit.
-- [ ] `git status` contains no accidental generated files.
-- [ ] Existing license notices are unchanged.
+- [x] `UPSTREAM.md` identifies an immutable base commit.
+- [x] `git status` contains no accidental generated files.
+- [x] Existing license notices are unchanged.
 
-**Evidence:** `[commands and commit/path]`
+**Evidence:** `./scripts/verify_upstream.sh` verified the official URL, `main`
+branch, clean submodule, gitlink SHA `5b1b31098f34ed3691d2a9f4aae14fdf5839d072`,
+and the two notice hashes recorded in `UPSTREAM.md`; staged large/generated-file
+and credential-assignment scans returned no findings. Frozen in
+`b9f2179caadf8640fe026f7a73833cbda9755876`.
 
 ## T001 — Build a clean Python/Rust environment
 
 **Depends on:** T000
 
-- [ ] Create `.venv` with Python 3.11.
-- [ ] Install the project editable dependencies.
-- [ ] Install Maturin.
-- [ ] Build `rustformlang_bindings` in release mode.
-- [ ] Verify that Python imports `rustformlang` from the newly built binding.
-- [ ] Record Python, pip, Rust, Cargo, compiler, and Maturin versions in `docs/environment-baseline.md`.
+- [x] Create `.venv` with Python 3.11.
+- [x] Install the project editable dependencies.
+- [x] Install Maturin.
+- [x] Build `rustformlang_bindings` in release mode.
+- [x] Verify that Python imports `rustformlang` from the newly built binding.
+- [x] Record Python, pip, Rust, Cargo, compiler, and Maturin versions in `docs/environment-baseline.md`.
 
 **Acceptance criteria**
 
-- [ ] `python -c "import constrained_diffusion, rustformlang"` succeeds.
-- [ ] The binding is rebuilt from the current checkout rather than an unrelated wheel.
-- [ ] Setup commands are repeatable from a clean shell.
+- [x] `python -c "import constrained_diffusion, rustformlang"` succeeds.
+- [x] The binding is rebuilt from the current checkout rather than an unrelated wheel.
+- [x] Setup commands are repeatable from a clean shell.
 
 **Required checks**
 
@@ -70,22 +75,27 @@ Optional milestones: **O1 through O4**.
 python -c "import constrained_diffusion, rustformlang; print('ok')"
 ```
 
-**Evidence:** `[commands and output]`
+**Evidence:** `make bootstrap` and `make bootstrap-epic` completed; Maturin built
+the binding in release mode from `vendor/EPIC-Decoding/rustformlang_bindings`;
+`python -c "import constrained_diffusion, rustformlang; print('ok')"` printed
+`ok`; `python -m pip check` found no broken requirements. Versions, hardware,
+package-metadata workaround, and relative import paths are in
+`docs/environment-baseline.md`.
 
 ## T002 — Run and freeze baseline tests
 
 **Depends on:** T001
 
-- [ ] Run the complete existing Python test suite before changing behavior.
-- [ ] Run the Rust library tests.
-- [ ] Record all passing/failing tests and runtime in `docs/baseline-tests.md`.
-- [ ] If a test fails before any changes, preserve the full failure and classify it as environment, dependency, or upstream behavior.
-- [ ] Create a baseline tag or immutable commit after recording results.
+- [x] Run the complete existing Python test suite before changing behavior.
+- [x] Run the Rust library tests.
+- [x] Record all passing/failing tests and runtime in `docs/baseline-tests.md`.
+- [x] If a test fails before any changes, preserve the full failure and classify it as environment, dependency, or upstream behavior.
+- [x] Create a baseline tag or immutable commit after recording results.
 
 **Acceptance criteria**
 
-- [ ] There is a written baseline against which regressions can be distinguished.
-- [ ] No existing test is deleted or skipped to create a clean baseline.
+- [x] There is a written baseline against which regressions can be distinguished.
+- [x] No existing test is deleted or skipped to create a clean baseline.
 
 **Required checks**
 
@@ -94,41 +104,53 @@ python -m pytest -q
 cargo test --manifest-path rustformlang/Cargo.toml
 ```
 
-**Evidence:** `[commands, summary, tag/commit]`
+**Evidence:** `python -m pytest -q`: 13 passed in 0.10 s;
+`make test-upstream`: 406 passed, 8 pre-existing skips in 53.97 s;
+`cargo test --manifest-path vendor/EPIC-Decoding/rustformlang/Cargo.toml`:
+63 passed, 1 pre-existing ignored test. Full classifications and timings are in
+`docs/baseline-tests.md`; immutable baseline commit:
+`b9f2179caadf8640fe026f7a73833cbda9755876`.
 
 ## T003 — Run one existing decoder smoke path
 
 **Depends on:** T001
 
-- [ ] Identify one existing constrained-decoding entry point that can run in the available environment.
-- [ ] Prefer a tiny/local fixture; do not make baseline CI depend on downloading a large model.
-- [ ] Record command, configuration, and output.
-- [ ] If no model artifact is available, run the deepest model-free path and document the missing external dependency.
+- [x] Identify one existing constrained-decoding entry point that can run in the available environment.
+- [x] Prefer a tiny/local fixture; do not make baseline CI depend on downloading a large model.
+- [x] Record command, configuration, and output.
+- [x] If no model artifact is available, run the deepest model-free path and document the missing external dependency.
 
 **Acceptance criteria**
 
-- [ ] The existing EPIC path is understood well enough to identify the later exact-strategy hook.
-- [ ] The smoke path is documented without pretending unavailable model inference was run.
+- [x] The existing EPIC path is understood well enough to identify the later exact-strategy hook.
+- [x] The smoke path is documented without pretending unavailable model inference was run.
 
-**Evidence:** `[command/output or explicit external blocker]`
+**Evidence:** `python scripts/smoke_epic_baseline.py` accepted `a b` and rejected
+`a a` through the compiled CFG-on-terminal-graph path. Command, JSON output,
+the raw-CFG deadlock regression/workaround, later LLaDA/Dream hook, and absence
+of a local model checkpoint are recorded in `docs/baseline-smoke.md` and
+`tests/integration/test_epic_baseline.py`.
 
 ## T004 — Add project documentation skeleton
 
 **Depends on:** T000
 
-- [ ] Add `docs/decisions/` for architecture decision records (ADRs).
-- [ ] Add `configs/exact_commit/` for immutable experiment configurations.
-- [ ] Add `scripts/exact_commit/` for experiment and reproduction scripts.
-- [ ] Add `tests/exact_commit/`.
-- [ ] Add gitignored `artifacts/`, `results/raw/`, and model-cache paths.
-- [ ] Add a short README section pointing to `AGENTS.md`, `TASKS.md`, and the implementation plan.
+- [x] Add `docs/decisions/` for architecture decision records (ADRs).
+- [x] Add `configs/exact_commit/` for immutable experiment configurations.
+- [x] Add `scripts/exact_commit/` for experiment and reproduction scripts.
+- [x] Add `tests/exact_commit/`.
+- [x] Add gitignored `artifacts/`, `results/raw/`, and model-cache paths.
+- [x] Add a short README section pointing to `AGENTS.md`, `TASKS.md`, and the implementation plan.
 
 **Acceptance criteria**
 
-- [ ] Repository structure exists without moving unrelated upstream files.
-- [ ] Generated/large artifacts are ignored.
+- [x] Repository structure exists without moving unrelated upstream files.
+- [x] Generated/large artifacts are ignored.
 
-**Evidence:** `[paths and commit]`
+**Evidence:** `docs/decisions/README.md`, `configs/exact_commit/README.md`,
+`scripts/exact_commit/README.md`, `tests/exact_commit/README.md`, root and paper
+`.gitignore` files, and the README directory map; commit
+`b9f2179caadf8640fe026f7a73833cbda9755876`.
 
 ---
 
