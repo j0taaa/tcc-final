@@ -415,24 +415,32 @@ strict MyPy clean, 12 unit tests passed. Implementation commit:
 
 **Depends on:** T204
 
-- [ ] Add a case where all proposals are compatible.
-- [ ] Add a case where proposals are individually compatible but jointly incompatible.
-- [ ] Add a case where greedy confidence order is suboptimal.
-- [ ] Add a case with several optimum witnesses.
-- [ ] Add an infeasible fixed canvas.
-- [ ] Add duplicate proposals.
+- [x] Add a case where all proposals are compatible.
+- [x] Add a case where proposals are individually compatible but jointly incompatible.
+- [x] Add a case where greedy confidence order is suboptimal.
+- [x] Add a case with several optimum witnesses.
+- [x] Add an infeasible fixed canvas.
+- [x] Add duplicate proposals.
 
 **Acceptance criteria**
 
-- [ ] Expected values are explained in test comments or fixture documentation.
+- [x] Expected values are explained in test comments or fixture documentation.
 
-**Evidence:** `[fixture/test paths]`
+**Evidence:** `tests/exact_commit/fixtures/token_aligned_examples.md` and
+`tests/exact_commit/test_token_aligned_examples.py`; focused run: 6 passed.
+Implementation commit: `38ebc779b05066eb4c74e720acdedacd0e325295`.
 
 **M2 gate**
 
-- [ ] All M2 tasks complete.
-- [ ] Targeted tests pass.
-- [ ] The solver has no model/tokenizer dependency.
+- [x] All M2 tasks complete.
+- [x] Targeted tests pass.
+- [x] The solver has no model/tokenizer dependency.
+
+**Gate evidence:** `python -m pytest -q tests/exact_commit`: 104 passed;
+`python -m pytest -q`: 117 passed; `make check`: upstream pin verified, Ruff
+and strict MyPy clean, 12 unit tests passed; `make paper`: PDF built; import
+audit found no `torch`, `transformers`, `rustformlang`, or
+`constrained_diffusion` imports in `src/mwpc_exact/reference/`.
 
 ---
 
