@@ -497,18 +497,24 @@ unit tests passed. Implementation commit:
 
 **Depends on:** T300, T301
 
-- [ ] Generate small acyclic/recursive CFG fixtures with bounded language lengths.
-- [ ] Generate finite supports, fixed positions, proposals, duplicate proposals, and integer weights.
-- [ ] Record seeds.
-- [ ] Serialize a failing instance to JSON.
-- [ ] Avoid generators that only produce trivial all-compatible cases.
+- [x] Generate small acyclic/recursive CFG fixtures with bounded language lengths.
+- [x] Generate finite supports, fixed positions, proposals, duplicate proposals, and integer weights.
+- [x] Record seeds.
+- [x] Serialize a failing instance to JSON.
+- [x] Avoid generators that only produce trivial all-compatible cases.
 
 **Acceptance criteria**
 
-- [ ] A seed reproduces the same case exactly.
-- [ ] Generated cases include feasible and infeasible instances.
+- [x] A seed reproduces the same case exactly.
+- [x] Generated cases include feasible and infeasible instances.
 
-**Evidence:** `[tests and paths]`
+**Evidence:** `src/mwpc_exact/reference/random_instances.py` and `python -m
+pytest -q tests/exact_commit/test_random_instances.py`: 6 passed, covering
+seed reproducibility, versioned JSON replay, offline artifact I/O, both grammar
+families, feasible/infeasible seeds, conflicts, integer weights, and duplicate
+choices; `python -m pytest -q tests/exact_commit`: 125 passed; `make check`:
+upstream pin verified, Ruff and strict MyPy clean, 12 unit tests passed.
+Implementation commit: `8a458b48b7a26a9411142fece647ff4a7ad32cec`.
 
 ## T303 — Add property-based/differential test suite
 
