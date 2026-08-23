@@ -417,6 +417,7 @@ def solve_token_aligned(
     proposals: Iterable[Proposal],
     exactness_scope: ExactnessScope,
     terminal_token_ids: Mapping[int, int] | None = None,
+    per_position_support: Sequence[Sequence[int]] | None = None,
 ) -> ExactCommitResult:
     """Solve one finite token-aligned MWPC instance and validate its certificate."""
     if not isinstance(exactness_scope, ExactnessScope):
@@ -430,6 +431,7 @@ def solve_token_aligned(
         canvas=canvas_tokens,
         proposals=proposal_items,
         terminal_token_ids=terminal_token_ids,
+        per_position_support=per_position_support,
     )
     represented_token_ids = tuple(lexical.terminal_token_ids.values())
     if any(token_id >= exactness_scope.vocabulary_size for token_id in represented_token_ids):
@@ -441,6 +443,12 @@ def solve_token_aligned(
         raise ValueError("fixed canvas token is outside the exactness-scope vocabulary")
     if any(proposal.token_id >= exactness_scope.vocabulary_size for proposal in proposal_items):
         raise ValueError("proposal token is outside the exactness-scope vocabulary")
+    if per_position_support is not None and any(
+        token_id >= exactness_scope.vocabulary_size
+        for support in per_position_support
+        for token_id in support
+    ):
+        raise ValueError("support token is outside the exactness-scope vocabulary")
 
     solve = run_cky(grammar, lexical)
     base_diagnostics: dict[str, object] = {

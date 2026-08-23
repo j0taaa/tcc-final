@@ -140,3 +140,17 @@ def test_empty_terminal_support_builds_an_infeasible_row_for_epsilon_only_gramma
 
     assert table.slot_count == 1
     assert dict(table.rows[0]) == {}
+
+
+def test_explicit_per_position_support_sets_absent_grammar_tokens_to_negative_infinity() -> None:
+    table = build_lexical_rewards(
+        grammar=alternatives_grammar(),
+        canvas=(None,),
+        proposals=(Proposal(1, 0, 101, 100),),
+        terminal_token_ids=TOKEN_IDS,
+        per_position_support=((303,),),
+    )
+
+    assert table.reward(0, 10).score == -inf
+    assert table.reward(0, 20).score == -inf
+    assert table.reward(0, 30).score == 0.0

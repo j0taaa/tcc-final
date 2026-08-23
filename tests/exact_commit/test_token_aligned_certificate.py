@@ -193,3 +193,30 @@ def test_zero_slot_empty_language_is_explicitly_unsupported_by_public_contract()
 
     assert result.status is SolveStatus.UNSUPPORTED
     assert "empty path certificate" in str(result.diagnostics["reason"])
+
+
+def test_public_solver_cannot_leave_explicit_per_position_support() -> None:
+    # A must emit x at slot 0, but the represented support contains only y there.
+    result = solve_token_aligned(
+        grammar=pair_grammar(),
+        canvas=(None, None),
+        proposals=(Proposal(1, 0, 100, 100),),
+        exactness_scope=SCOPE,
+        terminal_token_ids=TOKEN_IDS,
+        per_position_support=((200,), (200,)),
+    )
+
+    assert result.status is SolveStatus.INFEASIBLE_ON_SUPPORT
+    assert result.objective_value is None
+
+
+def test_public_solver_rejects_support_token_outside_scope_vocabulary() -> None:
+    with pytest.raises(ValueError, match="support token is outside"):
+        solve_token_aligned(
+            grammar=pair_grammar(),
+            canvas=(None, None),
+            proposals=(),
+            exactness_scope=SCOPE,
+            terminal_token_ids=TOKEN_IDS,
+            per_position_support=((300,), (200,)),
+        )

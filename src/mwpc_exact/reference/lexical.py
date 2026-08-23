@@ -100,12 +100,15 @@ def build_lexical_rewards(
     canvas: Sequence[int | None],
     proposals: Iterable[Proposal],
     terminal_token_ids: Mapping[int, int] | None = None,
+    per_position_support: Sequence[Sequence[int]] | None = None,
 ) -> LexicalRewardTable:
     """Construct the exact token-aligned lexical objective.
 
     When ``terminal_token_ids`` is omitted, every grammar terminal label must
     already be an integer token ID. A supplied map must cover exactly the
-    grammar's terminal symbol IDs.
+    grammar's terminal symbol IDs. ``per_position_support`` defaults to every
+    mapped grammar token at every slot; when supplied, absent choices receive
+    negative infinity and cannot enter an ``OPTIMAL`` witness.
     """
     if not isinstance(grammar, CnfGrammar):
         raise TypeError("grammar must be a CnfGrammar")
@@ -120,6 +123,11 @@ def build_lexical_rewards(
             )
 
     mapping = _terminal_token_mapping(grammar, terminal_token_ids)
+    supports = _per_position_support(
+        per_position_support,
+        slot_count=len(canvas_tokens),
+        default_token_ids=tuple(mapping.values()),
+    )
     aggregated = aggregate_proposals(proposal_items)
     reward_by_choice = {(item.position, item.token_id): item.weight for item in aggregated}
     positive_ids_by_choice: dict[tuple[int, int], list[int]] = {}
@@ -134,7 +142,9 @@ def build_lexical_rewards(
         row: dict[int, LexicalReward] = {}
         for terminal in grammar.terminals:
             token_id = mapping[terminal.symbol_id]
-            if fixed_token_id is not None and token_id != fixed_token_id:
+            if token_id not in supports[position] or (
+                fixed_token_id is not None and token_id != fixed_token_id
+            ):
                 row[terminal.symbol_id] = LexicalReward(NEGATIVE_INFINITY)
                 continue
             choice = (position, token_id)
@@ -144,6 +154,32 @@ def build_lexical_rewards(
             )
         rows.append(row)
     return LexicalRewardTable(tuple(rows), mapping)
+
+
+def _per_position_support(
+    value: object,
+    *,
+    slot_count: int,
+    default_token_ids: tuple[int, ...],
+) -> tuple[frozenset[int], ...]:
+    if value is None:
+        default = frozenset(default_token_ids)
+        return tuple(default for _ in range(slot_count))
+    if isinstance(value, (str, bytes)) or not isinstance(value, Sequence):
+        raise TypeError("per_position_support must be a finite sequence")
+    if len(value) != slot_count:
+        raise ValueError("per_position_support and canvas must have equal length")
+    result: list[frozenset[int]] = []
+    for position, raw_support in enumerate(value):
+        if isinstance(raw_support, (str, bytes)) or not isinstance(raw_support, Sequence):
+            raise TypeError(f"support at position {position} must be a finite sequence")
+        support = tuple(
+            _token_id(token_id, f"support token at position {position}") for token_id in raw_support
+        )
+        if len(set(support)) != len(support):
+            raise ValueError(f"support at position {position} contains duplicate token IDs")
+        result.append(frozenset(support))
+    return tuple(result)
 
 
 def _canvas(value: object) -> tuple[int | None, ...]:
