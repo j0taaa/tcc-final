@@ -19,7 +19,7 @@ Rules:
 4. A correctness-gate failure blocks later integration/performance milestones.
 5. Do not substitute measured values with estimates.
 
-Current starting point: **M1 / T101**. M0 and T100 are complete at the
+Current starting point: **M1 / T102**. M0 through T101 are complete at the
 immutable commits recorded below; no MWPC solver result is claimed by the M0
 baseline.
 
@@ -184,19 +184,22 @@ commit: `f2beb93ddc1c0457296956d4c1c975fa7fc74ba7`.
 
 **Depends on:** T100
 
-- [ ] Add immutable `Proposal(proposal_id, position, token_id, weight, model_confidence)`.
-- [ ] Reject duplicate proposal IDs.
-- [ ] Reject negative, NaN, and infinite weights.
-- [ ] Permit multiple proposals at one position.
-- [ ] Aggregate weights and proposal IDs for identical `(position, token_id)` choices.
-- [ ] Keep model confidence separate from the theorem-level weight.
+- [x] Add immutable `Proposal(proposal_id, position, token_id, weight, model_confidence)`.
+- [x] Reject duplicate proposal IDs.
+- [x] Reject negative, NaN, and infinite weights.
+- [x] Permit multiple proposals at one position.
+- [x] Aggregate weights and proposal IDs for identical `(position, token_id)` choices.
+- [x] Keep model confidence separate from the theorem-level weight.
 
 **Acceptance criteria**
 
-- [ ] Duplicate proposal objects remain distinguishable by ID.
-- [ ] Aggregation returns the exact sum and exact set/list of IDs.
+- [x] Duplicate proposal objects remain distinguishable by ID.
+- [x] Aggregation returns the exact sum and exact set/list of IDs.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q tests/exact_commit/test_proposals.py
+tests/unit/test_types.py`: 21 passed; `make check`: Ruff and strict MyPy clean
+with 12 unit tests passed; `python -m pytest -q`: 40 passed. Implementation
+commit: `53d4e31b4c7ae7e06cb61dbc42ff5f8ef5494fa6`.
 
 ## T102 — Define graph, lattice, and result contracts
 
