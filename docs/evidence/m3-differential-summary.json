@@ -1,0 +1,31 @@
+{
+  "campaign": "m3_token_aligned_differential",
+  "case_count": 2000,
+  "failed_cases": 0,
+  "failures": [],
+  "metadata": {
+    "config_path": "configs/exact_commit/m3_differential.toml",
+    "config_sha256": "d68e8e8890890d0f18604a12351e2a05ff40dd90b106f501206c07c960db3d86",
+    "exactness_scope": "exact_on_support",
+    "generator_schema_version": "1",
+    "git_commit": "05504c1f21aedadd16e1f8995d8f4501a6823f46",
+    "model_revision": "not_applicable",
+    "python_version": "3.11.16",
+    "support_policy": "generated_explicit_per_position",
+    "tokenizer_revision": "not_applicable"
+  },
+  "passed_cases": 2000,
+  "property_checks": {
+    "certificate_validation": 23538,
+    "fixed_position": 2000,
+    "proposal_removal": 2000,
+    "support_monotonicity": 2000,
+    "three_way_agreement": 10000
+  },
+  "schema_version": 1,
+  "seed_start": 0,
+  "status_counts": {
+    "infeasible_on_support": 500,
+    "optimal": 1500
+  }
+}

@@ -520,19 +520,28 @@ Implementation commit: `8a458b48b7a26a9411142fece647ff4a7ad32cec`.
 
 **Depends on:** T302
 
-- [ ] Compare CKY, completion oracle, and subset oracle.
-- [ ] Check monotonicity when support is expanded.
-- [ ] Check that removing a proposal does not increase optimum score.
-- [ ] Check that fixing a position preserves or reduces the feasible optimum.
-- [ ] Check selected IDs and reconstructed score.
-- [ ] Run a smaller deterministic set in normal tests and a larger campaign via script.
+- [x] Compare CKY, completion oracle, and subset oracle.
+- [x] Check monotonicity when support is expanded.
+- [x] Check that removing a proposal does not increase optimum score.
+- [x] Check that fixing a position preserves or reduces the feasible optimum.
+- [x] Check selected IDs and reconstructed score.
+- [x] Run a smaller deterministic set in normal tests and a larger campaign via script.
 
 **Acceptance criteria**
 
-- [ ] Normal test campaign has 100% agreement.
-- [ ] Extended campaign writes summary and failing seed artifacts.
+- [x] Normal test campaign has 100% agreement.
+- [x] Extended campaign writes summary and failing seed artifacts.
 
-**Evidence:** `[commands, number of cases, result artifact]`
+**Evidence:** `python -m pytest -q
+tests/exact_commit/test_differential_campaign.py`: 3 passed, including a
+32-seed normal campaign and injected-failure artifact replay; `python
+scripts/exact_commit/run_m3_differential.py`: 2,000/2,000 seeds passed with
+10,000 three-way comparisons, 23,538 certificate validations, and 2,000 checks
+each for support expansion, proposal removal, and fixed positions. Artifact:
+`docs/evidence/m3-differential-summary.json`, produced from commit
+`05504c1f21aedadd16e1f8995d8f4501a6823f46`. The campaign first exposed and
+regressed the per-position support bug fixed in commit
+`f312bdd6e43238160e22990254061957299ad476`.
 
 ## T304 — Establish regression corpus
 
