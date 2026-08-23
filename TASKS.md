@@ -301,18 +301,22 @@ passed. Implementation commit: `f4670378800de5e4fb1c5c58c9c468bce77b14fe`.
 
 **Target:** `src/mwpc_exact/reference/grammar.py`
 
-- [ ] Define terminal and binary productions with stable IDs.
-- [ ] Define symbol tables for nonterminals and terminals.
-- [ ] Validate the start symbol and production references.
-- [ ] Provide an adapter from the repository CFG representation.
-- [ ] Document epsilon/unit-production assumptions.
+- [x] Define terminal and binary productions with stable IDs.
+- [x] Define symbol tables for nonterminals and terminals.
+- [x] Validate the start symbol and production references.
+- [x] Provide an adapter from the repository CFG representation.
+- [x] Document epsilon/unit-production assumptions.
 
 **Acceptance criteria**
 
-- [ ] Handwritten CNF grammars round-trip through the representation.
-- [ ] Malformed grammars are rejected with useful messages.
+- [x] Handwritten CNF grammars round-trip through the representation.
+- [x] Malformed grammars are rejected with useful messages.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q
+tests/exact_commit/test_reference_grammar.py`: 10 passed; `python -m pytest -q
+tests/exact_commit`: 63 passed; `make check`: upstream pin verified, Ruff and
+strict MyPy clean, 12 unit tests passed. Implementation commit:
+`50270412af92241277b813584639ef8b522836dc`.
 
 ## T201 — Verify or implement grammar normalization
 
