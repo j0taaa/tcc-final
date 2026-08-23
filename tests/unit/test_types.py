@@ -18,7 +18,7 @@ def finite_scope() -> ExactnessScope:
 @pytest.mark.parametrize("weight", [-1.0, inf, -inf, nan])
 def test_proposal_rejects_invalid_weight(weight: float) -> None:
     with pytest.raises(ValueError):
-        Proposal("p0", position=0, token_id=1, weight=weight)
+        Proposal(0, position=0, token_id=1, weight=weight)
 
 
 def test_scope_records_top_k() -> None:

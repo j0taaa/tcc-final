@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Iterable, Mapping
 from dataclasses import dataclass, field
 from enum import StrEnum
-from math import isfinite
+from math import fsum, isfinite
 from typing import Any, Self
 
 
@@ -38,6 +38,20 @@ def _int_tuple(value: object, field_name: str) -> tuple[int, ...]:
         raise TypeError(f"{field_name} must be a sequence of integers")
     items: tuple[object, ...] = tuple(value)
     return tuple(_require_int(item, f"{field_name} item") for item in items)
+
+
+def _finite_float(value: object, field_name: str, *, non_negative: bool) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise TypeError(f"{field_name} must be a real number")
+    try:
+        normalized = float(value)
+    except OverflowError as exc:
+        raise ValueError(f"{field_name} must be finite") from exc
+    if not isfinite(normalized):
+        raise ValueError(f"{field_name} must be finite")
+    if non_negative and normalized < 0:
+        raise ValueError(f"{field_name} must be non-negative")
+    return normalized
 
 
 @dataclass(frozen=True, slots=True)
@@ -177,23 +191,97 @@ ExactCommitStatus = SolveStatus
 class Proposal:
     """One weighted model proposal for one physical token slot."""
 
-    proposal_id: str
+    proposal_id: int
     position: int
     token_id: int
     weight: float
     model_confidence: float | None = None
 
     def __post_init__(self) -> None:
-        if not self.proposal_id:
-            raise ValueError("proposal_id must be non-empty")
-        if self.position < 0:
+        proposal_id = _require_int(self.proposal_id, "proposal_id")
+        if proposal_id < 0:
+            raise ValueError("proposal_id must be non-negative")
+        position = _require_int(self.position, "position")
+        if position < 0:
             raise ValueError("position must be non-negative")
-        if self.token_id < 0:
+        token_id = _require_int(self.token_id, "token_id")
+        if token_id < 0:
             raise ValueError("token_id must be non-negative")
-        if not isfinite(self.weight) or self.weight < 0:
-            raise ValueError("weight must be finite and non-negative")
-        if self.model_confidence is not None and not isfinite(self.model_confidence):
-            raise ValueError("model_confidence must be finite when provided")
+        object.__setattr__(
+            self,
+            "weight",
+            _finite_float(self.weight, "weight", non_negative=True),
+        )
+        if self.model_confidence is not None:
+            object.__setattr__(
+                self,
+                "model_confidence",
+                _finite_float(
+                    self.model_confidence,
+                    "model_confidence",
+                    non_negative=False,
+                ),
+            )
+
+
+@dataclass(frozen=True, slots=True)
+class AggregatedProposal:
+    """Reward and provenance for one represented ``(position, token_id)``."""
+
+    position: int
+    token_id: int
+    weight: float
+    proposal_ids: tuple[int, ...]
+
+    def __post_init__(self) -> None:
+        if _require_int(self.position, "position") < 0:
+            raise ValueError("position must be non-negative")
+        if _require_int(self.token_id, "token_id") < 0:
+            raise ValueError("token_id must be non-negative")
+        object.__setattr__(
+            self,
+            "weight",
+            _finite_float(self.weight, "weight", non_negative=True),
+        )
+        proposal_ids = _int_tuple(self.proposal_ids, "proposal_ids")
+        if not proposal_ids:
+            raise ValueError("proposal_ids must be non-empty")
+        if len(set(proposal_ids)) != len(proposal_ids):
+            raise ValueError("proposal_ids must not contain duplicates")
+        if any(proposal_id < 0 for proposal_id in proposal_ids):
+            raise ValueError("proposal_ids must be non-negative")
+        object.__setattr__(self, "proposal_ids", proposal_ids)
+
+
+def aggregate_proposals(proposals: Iterable[Proposal]) -> tuple[AggregatedProposal, ...]:
+    """Aggregate rewards by choice while preserving stable proposal provenance."""
+    groups: dict[tuple[int, int], list[Proposal]] = {}
+    seen_ids: set[int] = set()
+    for proposal in proposals:
+        if not isinstance(proposal, Proposal):
+            raise TypeError("proposals must contain only Proposal instances")
+        if proposal.proposal_id in seen_ids:
+            raise ValueError(f"duplicate proposal_id: {proposal.proposal_id}")
+        seen_ids.add(proposal.proposal_id)
+        groups.setdefault((proposal.position, proposal.token_id), []).append(proposal)
+
+    aggregated: list[AggregatedProposal] = []
+    for (position, token_id), group in groups.items():
+        try:
+            total_weight = fsum(proposal.weight for proposal in group)
+        except OverflowError as exc:
+            raise ValueError(
+                f"aggregated weight is not finite at position={position}, token_id={token_id}"
+            ) from exc
+        aggregated.append(
+            AggregatedProposal(
+                position=position,
+                token_id=token_id,
+                weight=total_weight,
+                proposal_ids=tuple(proposal.proposal_id for proposal in group),
+            )
+        )
+    return tuple(aggregated)
 
 
 @dataclass(frozen=True, slots=True)
