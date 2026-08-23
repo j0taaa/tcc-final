@@ -367,20 +367,26 @@ passed. Implementation commit: `726012490ffed15de2787c4824a564c3b83bbf2a`.
 
 **Target:** `src/mwpc_exact/reference/token_aligned.py`
 
-- [ ] Allocate sparse or dense DP entries for `(nonterminal, i, j)`.
-- [ ] Initialize terminal spans.
-- [ ] Combine binary productions and split points.
-- [ ] Store terminal/binary backpointers.
-- [ ] Use a deterministic stable update rule on equal scores.
-- [ ] Return explicit infeasibility when the start entry is negative infinity.
+- [x] Allocate sparse or dense DP entries for `(nonterminal, i, j)`.
+- [x] Initialize terminal spans.
+- [x] Combine binary productions and split points.
+- [x] Store terminal/binary backpointers.
+- [x] Use a deterministic stable update rule on equal scores.
+- [x] Return explicit infeasibility when the start entry is negative infinity.
 
 **Acceptance criteria**
 
-- [ ] Hand-computed examples produce the expected score.
-- [ ] An ambiguous grammar does not double-count derivations.
-- [ ] Fixed positions are respected.
+- [x] Hand-computed examples produce the expected score.
+- [x] An ambiguous grammar does not double-count derivations.
+- [x] Fixed positions are respected.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q
+tests/exact_commit/test_token_aligned_cky.py`: 7 passed, covering a
+hand-computed max-plus score, ambiguity, fixed and infeasible canvases, stable
+ties, and explicit empty acceptance; `python -m pytest -q tests/exact_commit`:
+91 passed; `make check`: upstream pin verified, Ruff and strict MyPy clean, 12
+unit tests passed. Implementation commit:
+`0a9aab19ecc2bcc05a4e8d268fad5ff760cff170`.
 
 ## T204 — Implement CKY certificate reconstruction
 
