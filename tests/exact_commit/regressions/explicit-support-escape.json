@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "regression_id": "explicit-per-position-support-escape",
+  "description": "CKY previously allowed an absent x token at slot 0 and scored x y as 10 instead of the only represented valid completion z w at 0.",
+  "discovered_in_task": "T303",
+  "fixed_by_commit": "f312bdd6e43238160e22990254061957299ad476",
+  "expected_status": "optimal",
+  "expected_objective": 0.0,
+  "expected_selected_proposal_ids": [],
+  "instance": {
+    "schema_version": 1,
+    "seed": 303000,
+    "grammar_kind": "acyclic",
+    "grammar": {
+      "nonterminals": [
+        {"symbol_id": 0, "name": "S"},
+        {"symbol_id": 1, "name": "X"},
+        {"symbol_id": 2, "name": "Y"},
+        {"symbol_id": 3, "name": "Z"},
+        {"symbol_id": 4, "name": "W"}
+      ],
+      "terminals": [
+        {"symbol_id": 0, "label": "x"},
+        {"symbol_id": 1, "label": "y"},
+        {"symbol_id": 2, "label": "z"},
+        {"symbol_id": 3, "label": "w"}
+      ],
+      "start_nonterminal_id": 0,
+      "terminal_productions": [
+        {"production_id": 10, "head_id": 1, "terminal_id": 0, "source_production_ids": []},
+        {"production_id": 11, "head_id": 2, "terminal_id": 1, "source_production_ids": []},
+        {"production_id": 12, "head_id": 3, "terminal_id": 2, "source_production_ids": []},
+        {"production_id": 13, "head_id": 4, "terminal_id": 3, "source_production_ids": []}
+      ],
+      "binary_productions": [
+        {"production_id": 20, "head_id": 0, "left_id": 1, "right_id": 2, "source_production_ids": []},
+        {"production_id": 21, "head_id": 0, "left_id": 3, "right_id": 4, "source_production_ids": []}
+      ],
+      "accepts_empty": false
+    },
+    "per_position_support": [[2], [1, 3]],
+    "canvas": [null, null],
+    "proposals": [
+      {
+        "proposal_id": 0,
+        "position": 1,
+        "token_id": 1,
+        "weight": 10.0,
+        "model_confidence": null
+      }
+    ],
+    "terminal_token_ids": [
+      {"terminal_id": 0, "token_id": 0},
+      {"terminal_id": 1, "token_id": 1},
+      {"terminal_id": 2, "token_id": 2},
+      {"terminal_id": 3, "token_id": 3}
+    ]
+  }
+}
