@@ -547,23 +547,37 @@ regressed the per-position support bug fixed in commit
 
 **Depends on:** T303
 
-- [ ] Add `tests/exact_commit/regressions/`.
-- [ ] Store every discovered minimal failing instance.
-- [ ] Add a loader that runs all regression fixtures.
-- [ ] Document fixture schema.
+- [x] Add `tests/exact_commit/regressions/`.
+- [x] Store every discovered minimal failing instance.
+- [x] Add a loader that runs all regression fixtures.
+- [x] Document fixture schema.
 
 **Acceptance criteria**
 
-- [ ] Regression suite is deterministic and runs offline.
+- [x] Regression suite is deterministic and runs offline.
 
-**Evidence:** `[paths and tests]`
+**Evidence:** `tests/exact_commit/regressions/README.md`, minimized fixture
+`tests/exact_commit/regressions/explicit-support-escape.json`, deterministic
+loader `src/mwpc_exact/reference/regressions.py`, and `python -m pytest -q
+tests/exact_commit/test_regression_corpus.py`: 2 passed offline. Implementation
+commit: `9f6c5af44853055d151c26b0ec8a5bc61ae131ab`.
 
 **M3 correctness gate — blocking**
 
-- [ ] CKY equals both exhaustive oracles for all configured cases.
-- [ ] Independent certificates validate.
-- [ ] Any failure has been minimized and fixed.
-- [ ] No tokenizer, Rust optimization, or model integration begins before this gate.
+- [x] CKY equals both exhaustive oracles for all configured cases.
+- [x] Independent certificates validate.
+- [x] Any failure has been minimized and fixed.
+- [x] No tokenizer, Rust optimization, or model integration begins before this gate.
+
+**Gate evidence:** the versioned 2,000-seed artifact at
+`docs/evidence/m3-differential-summary.json` records zero failures across
+10,000 three-way comparisons and 23,538 certificate validations. The one bug
+exposed while constructing the campaign was fixed in `f312bdd` and preserved
+as the offline minimized regression above. Final gate runs: `python -m pytest
+-q tests/exact_commit`: 133 passed; `python -m pytest -q`: 146 passed; `make
+check`: upstream pin verified, Ruff and strict MyPy clean, 12 unit tests
+passed. Dependency audit found no model, tokenizer, or EPIC imports in the
+reference package; the EPIC submodule remained pinned at `5b1b310`.
 
 ---
 
