@@ -2,7 +2,12 @@
 
 The optimizer receives non-negative weighted proposals `c = (position, token_id, weight)` and a finite represented set of possible completions. It maximizes the sum of all positive-weight represented proposals matched by one grammar-valid completion.
 
-An `OPTIMAL` result certifies optimality only over the declared support. For top-`K`, vocabulary pruning or any other support restriction, use `finite_support`/`exact_on_support` terminology. Never infer full-vocabulary infeasibility from `INFEASIBLE_ON_SUPPORT`.
+An `OPTIMAL` result certifies optimality only over the declared support. For
+`SupportKind.TOP_K`, `SupportKind.EXPLICIT`, vocabulary pruning, or any other
+support restriction, use `exact_on_support` terminology. `SupportKind.FULL`
+means the current finite-slot instance represents the declared full
+vocabulary; it does not make the future denoising trajectory globally optimal.
+Never infer broader infeasibility from `INFEASIBLE_ON_SUPPORT`.
 
 Every optimal result must allow an independent implementation to verify:
 
