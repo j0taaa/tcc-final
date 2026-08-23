@@ -476,16 +476,22 @@ strict MyPy clean, 12 unit tests passed. Implementation commit:
 
 **Depends on:** T300
 
-- [ ] Enumerate proposal subsets.
-- [ ] Test compatibility through existence of a completion.
-- [ ] Compute the best compatible subset weight.
-- [ ] Preserve a witness for the selected subset.
+- [x] Enumerate proposal subsets.
+- [x] Test compatibility through existence of a completion.
+- [x] Compute the best compatible subset weight.
+- [x] Preserve a witness for the selected subset.
 
 **Acceptance criteria**
 
-- [ ] Completion optimum, subset optimum, and CKY optimum agree on canonical fixtures.
+- [x] Completion optimum, subset optimum, and CKY optimum agree on canonical fixtures.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q
+tests/exact_commit/test_subset_oracle.py`: 8 passed, including three-way
+agreement on all six canonical fixtures, duplicate-ID witness preservation,
+and the subset-count guard; `python -m pytest -q tests/exact_commit`: 119
+passed; `make check`: upstream pin verified, Ruff and strict MyPy clean, 12
+unit tests passed. Implementation commit:
+`3d6ad2b0666e8de36ef81b317b347410e8068c1e`.
 
 ## T302 — Add deterministic random instance generators
 
