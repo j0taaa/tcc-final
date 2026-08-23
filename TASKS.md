@@ -19,7 +19,7 @@ Rules:
 4. A correctness-gate failure blocks later integration/performance milestones.
 5. Do not substitute measured values with estimates.
 
-Current starting point: **M1 / T105**. M0 through T104 are complete at the
+Current starting point: **M2 / T200**. M0 through the M1 gate are complete at the
 immutable commits recorded below; no MWPC solver result is claimed by the M0
 baseline.
 
@@ -271,22 +271,25 @@ suite: 55 passed. Commit: `913f2edc5c9dab52f3afae00403cdf7508fff228`.
 
 **Target file:** `src/mwpc_exact/validator.py`
 
-- [ ] Define validation checks without calling the weighted parser as an oracle.
-- [ ] Validate fixed positions, slot count, proposal matches, score, edge continuity, and result metadata.
-- [ ] Allow later injection of a boolean CFG recognizer and tokenizer/EOS validators.
-- [ ] Return structured validation failures, not a bare boolean.
+- [x] Define validation checks without calling the weighted parser as an oracle.
+- [x] Validate fixed positions, slot count, proposal matches, score, edge continuity, and result metadata.
+- [x] Allow later injection of a boolean CFG recognizer and tokenizer/EOS validators.
+- [x] Return structured validation failures, not a bare boolean.
 
 **Acceptance criteria**
 
-- [ ] Unit tests detect deliberately corrupted witness tokens, scores, proposal IDs, and paths.
+- [x] Unit tests detect deliberately corrupted witness tokens, scores, proposal IDs, and paths.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** `python -m pytest -q tests/exact_commit/test_validator.py`: 11
+passed; `make check`: Ruff and strict MyPy clean with 12 unit tests;
+`python -m pytest -q tests/exact_commit`: 53 passed; full Python suite: 66
+passed. Implementation commit: `f4670378800de5e4fb1c5c58c9c468bce77b14fe`.
 
 **M1 gate**
 
-- [ ] All M1 tasks complete.
-- [ ] `python -m pytest -q tests/exact_commit` passes.
-- [ ] Public terminology matches `AGENTS.md`.
+- [x] All M1 tasks complete.
+- [x] `python -m pytest -q tests/exact_commit` passes.
+- [x] Public terminology matches `AGENTS.md`.
 
 ---
 
