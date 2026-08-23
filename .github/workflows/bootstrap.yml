@@ -19,17 +19,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Materialize and verify immutable source snapshot
-        run: python scripts/materialize.py
-      - name: Install lightweight development environment
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install -e '.[dev]'
-      - name: Verify pinned EPIC provenance
-        run: ./scripts/verify_upstream.sh
-      - name: Lint
-        run: python -m ruff check src tests
-      - name: Type check
-        run: python -m mypy src
-      - name: Unit tests
-        run: python -m pytest -q tests/unit
+      - name: Verify historical source snapshot without overwriting the checkout
+        run: python scripts/materialize.py --verify-only

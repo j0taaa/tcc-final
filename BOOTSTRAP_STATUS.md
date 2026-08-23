@@ -2,10 +2,14 @@
 
 - Definitive repository: `j0taaa/tcc-final`
 - Default branch: `main`
-- Source snapshot: `j0taaa/tcc@2ae9fe6a888d0e97f5921810c8effa4c7024ca30`
+- Historical source snapshot: `j0taaa/tcc@2ae9fe6a888d0e97f5921810c8effa4c7024ca30`
 - EPIC pinned commit: `5b1b31098f34ed3691d2a9f4aae14fdf5839d072`
-- Expanded source archive SHA-256: `b1c111500803c6239a07de2741f97c89f9e0b65abcaede5baa7b826f37c83d5f`
-- Local bootstrap validation before publication: `8 passed` for the initial Python data-contract unit tests; `python -m compileall` passed
-- Not yet claimed: full EPIC baseline build, Rust parser, oracle agreement, tokenizer audit, model integration, benchmark values or end-to-end scientific results
+- Recovered local archive SHA-256: `62b8ed1bf31a414901c4e703ba7d0be272a2d9aee15480894210471c224db489`
+- Materialization state: complete; `PROJECT_MATERIALIZED` records the archive used
+- Current baseline evidence: see `docs/environment-baseline.md`, `docs/baseline-tests.md`, and `docs/baseline-smoke.md`
+- Not yet claimed: MWPC solver correctness, oracle agreement, tokenizer semantics, model integration, benchmark values, or end-to-end scientific results
 
-Run `python scripts/materialize.py`, review the expanded tree and commit it before starting `T000`.
+The archive is retained as a content-addressed recovery artifact. Run
+`python scripts/materialize.py --verify-only` for integrity checks. The default
+command is non-destructive once `PROJECT_MATERIALIZED` exists; restoring the
+historical snapshot requires the explicit `--force` option.

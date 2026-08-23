@@ -1,0 +1,14 @@
+# Direct EPIC runtime dependencies, pinned from the upstream requirements.txt.
+# PyTorch is installed separately from the official CPU wheel index by the
+# Makefile so this baseline setup does not download unused CUDA libraries.
+accelerate==1.10.1
+cachier==4.1.0
+datasets==3.6.0
+fire==0.7.1
+frozendict==2.4.6
+jsonschema==4.25.1
+pytest-timeout==2.4.0
+range-ex==0.0.2
+regex==2025.7.34
+stopit==1.1.2
+transformers==4.52.2

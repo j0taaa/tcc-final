@@ -1,0 +1,16 @@
+{
+  "name": "Exact CFG dLLM TCC",
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "git submodule update --init --recursive && python -m pip install -e '.[dev]'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "charliermarsh.ruff",
+        "ms-python.python",
+        "ms-python.mypy-type-checker",
+        "rust-lang.rust-analyzer",
+        "James-Yu.latex-workshop"
+      ]
+    }
+  }
+}

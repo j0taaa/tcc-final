@@ -41,10 +41,10 @@ Before changing code:
 
 ## Architecture boundaries
 
-- `constrained_diffusion/exact_commit/reference/`: small, readable Python reference algorithms and exhaustive oracles. Correctness first; no model dependencies.
-- `constrained_diffusion/exact_commit/`: proposal policy, finite-support construction, tokenizer adapter, orchestration, validation, diagnostics, and decoder integration.
-- `rustformlang/`: performance-critical weighted CFG-on-DAG parser and certificate reconstruction.
-- `rustformlang_bindings/`: thin PyO3 bindings. Do not duplicate parsing logic here.
+- `src/mwpc_exact/reference/`: small, readable Python reference algorithms and exhaustive oracles. Correctness first; no model dependencies.
+- `src/mwpc_exact/`: proposal policy, finite-support construction, tokenizer adapter, orchestration, validation, diagnostics, and decoder integration.
+- `vendor/EPIC-Decoding/rustformlang/` (read-only baseline) and `crates/mwpc_parser/` (new production solver): performance-critical weighted CFG-on-DAG parser and certificate reconstruction.
+- `crates/mwpc_parser_py/`: thin PyO3 bindings. Do not duplicate parsing logic here.
 - Existing EPIC modules remain usable without the exact strategy enabled.
 - Model-specific code must call a model-independent exact-commit API. Do not put LLaDA/Dream/Qwen-specific logic inside the solver.
 - The Python reference solver and the Rust production solver must remain independently implemented so differential tests are meaningful.
@@ -117,15 +117,21 @@ Do not expose a bare tuple whose fields are easy to confuse.
 
 ## Commands
 
-Initial setup, following the EPIC layout:
+Initial lightweight setup for reference work:
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install maturin
 python -m pip install -e .
-(cd rustformlang_bindings && maturin develop --release)
+```
+
+Pinned EPIC CPU baseline and Rust binding:
+
+```bash
+make bootstrap-epic
+source .venv/bin/activate
+python -c "import constrained_diffusion, rustformlang; print('ok')"
 ```
 
 Baseline/complete Python tests:
@@ -143,21 +149,22 @@ python -m pytest -q tests/exact_commit
 Rust parser tests after Rust changes:
 
 ```bash
-cargo test --manifest-path rustformlang/Cargo.toml
-cargo fmt --manifest-path rustformlang/Cargo.toml --all -- --check
+cargo test --manifest-path vendor/EPIC-Decoding/rustformlang/Cargo.toml
+cargo fmt --manifest-path vendor/EPIC-Decoding/rustformlang/Cargo.toml --all -- --check
 ```
 
 Bindings and differential tests after changing the Rust API:
 
 ```bash
-(cd rustformlang_bindings && maturin develop --release)
+(cd vendor/EPIC-Decoding/rustformlang_bindings && maturin develop --release)
 python -m pytest -q tests/exact_commit/test_rust_differential.py
 ```
 
 Run the existing constrained-decoding regression tests after integration changes:
 
 ```bash
-python -m pytest -q tests/test_constrain_utils.py tests/test_bindings.py
+python -m pytest -q vendor/EPIC-Decoding/tests/test_constrain_utils.py \
+  vendor/EPIC-Decoding/tests/test_bindings.py
 ```
 
 Use the smallest relevant command while developing. Before completing a milestone that changes public behavior, run the full Python suite plus relevant Rust and binding tests. Report commands that could not run and why.

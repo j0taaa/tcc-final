@@ -1,0 +1,12 @@
+[run]
+seed = 42
+backend = "python_reference"
+strategy = "exact"
+
+[scope]
+kind = "finite_support"
+# This configuration is only a skeleton. Record the real support in every result.
+top_k = 8
+
+[limits]
+timeout_seconds = 30

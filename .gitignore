@@ -1,3 +1,4 @@
+# Python
 .venv/
 __pycache__/
 *.py[cod]
@@ -9,10 +10,16 @@ htmlcov/
 *.egg-info/
 dist/
 build/
+
+# Rust
 /target/
 crates/**/target/
+
+# Models, datasets and experiment outputs
 .cache/
 cache/
+artifacts/
+model-cache/
 models/
 checkpoints/
 datasets/
@@ -25,9 +32,13 @@ wandb/
 *.pt
 *.pth
 *.ckpt
+
+# Editors and OS
 .vscode/
 .idea/
 .DS_Store
+
+# LaTeX generated files
 paper/*.aux
 paper/*.bbl
 paper/*.blg
@@ -37,4 +48,7 @@ paper/*.toc
 paper/*.fls
 paper/*.fdb_latexmk
 paper/*.synctex.gz
+paper/main.pdf
+
+# Local environment records (templates remain tracked)
 docs/environment-local.md
