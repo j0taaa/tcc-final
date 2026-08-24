@@ -24,9 +24,9 @@ Rules:
 
 ## Current starting point
 
-**M7 / T701.** M0 through M6 and T700 are complete at the immutable commits and
-artifacts recorded below. The first incomplete required task is T701: compose
-the finite token choices with the EOS/PAD automaton defined by ADR 0007. The
+**M7 / T702.** M0 through M6 and T700--T701 are complete at the immutable
+commits and artifacts recorded below. The first incomplete required task is
+T702: independently validate finite-slot EOS/PAD witnesses. The
 historical M0--M3 checklist remains archived in
 [`docs/history/TASKS-through-M3.md`](docs/history/TASKS-through-M3.md).
 
@@ -701,18 +701,39 @@ tests; `make paper` produced the 15-page PDF.
 
 **Depends on:** T700
 
-- [ ] Compose token choices with `BEFORE_EOS`/`AFTER_EOS` state.
-- [ ] Permit only configured transitions.
-- [ ] Consume all physical slots even when grammar content ends early.
-- [ ] Preserve proposal weights on EOS/PAD choices.
-- [ ] Normalize any resulting epsilon edges safely.
+- [x] Compose token choices with `BEFORE_EOS`/`AFTER_EOS` state.
+- [x] Permit only configured transitions.
+- [x] Consume all physical slots even when grammar content ends early.
+- [x] Preserve proposal weights on EOS/PAD choices.
+- [x] Normalize any resulting epsilon edges safely.
 
 **Acceptance criteria**
 
-- [ ] Invalid normal-token-after-EOS paths do not exist.
-- [ ] Valid EOS/PAD paths reconstruct all physical token IDs.
+- [x] Invalid normal-token-after-EOS paths do not exist.
+- [x] Valid EOS/PAD paths reconstruct all physical token IDs.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`09c50b2f4c7dc34e3d14ac7793e76b2cb3255304`. The separate
+`src/mwpc_exact/eos_lattice.py` product construction implements explicit
+`ABSENT`, `REQUIRED`, and `OPTIONAL` profiles over canonical
+`BEFORE_EOS`/`AFTER_EOS` boundary states without changing the completed M6
+ordinary byte lattice. Ordinary tokens emit their exact private byte paths;
+EOS and PAD consume one physical slot on weighted epsilon edges carrying only
+their own proposal provenance. Mode-specific final states enforce required or
+optional termination, and unsupported controls plus ordinary/EOT choices
+after termination have no graph transitions. The construction invokes the
+proved ADR-0005 epsilon normalization and retains normalized-to-original edge
+provenance, with separate reconstruction for epsilon-only content, so parser
+paths recover every physical token ID, role, EOS position, content endpoint,
+objective, and matched proposal ID.
+
+`python -m pytest -q tests/exact_commit/test_eos_lattice.py` passed 18 focused
+tests covering the LLaDA EOS/PAD alias, EOT termination, distinct PAD IDs,
+fixed-position infeasibility, final-slot EOS, empty canvases, weighted
+EOS/PAD proposals, raw graph path enumeration, normalized reconstruction, and
+an exact CFG solve. `make check` passed the upstream pin, Ruff, strict MyPy
+over 31 source files, 8 unit tests, and 302 exact-commit tests. `python -m
+pytest -q` passed all 311 tests. `make paper` produced the 15-page PDF.
 
 ## T702 — Extend independent validator for finite slots
 
