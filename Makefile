@@ -4,7 +4,7 @@ VENV_PY := $(VENV)/bin/python
 VENV_PIP := $(VENV)/bin/pip
 EPIC_CPU_INDEX ?= https://download.pytorch.org/whl/cpu
 
-.PHONY: bootstrap bootstrap-epic verify-upstream install check lint format typecheck test test-unit test-exact test-upstream paper clean
+.PHONY: bootstrap bootstrap-epic verify-upstream install check lint format typecheck test test-unit test-exact test-upstream test-m4-extended paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -42,6 +42,9 @@ test-exact:
 test-upstream:
 	PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=vendor/EPIC-Decoding \
 		$(VENV_PY) -m pytest -q vendor/EPIC-Decoding/tests
+
+test-m4-extended:
+	$(VENV_PY) scripts/exact_commit/run_m4_graph_differential.py
 
 test: test-unit test-exact
 
