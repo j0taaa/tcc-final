@@ -1,0 +1,11 @@
+[package]
+name = "mwpc_parser"
+version = "0.1.0"
+edition = "2021"
+description = "Independent Rust max-plus CFG-on-DAG solver for exact MWPC"
+
+[lib]
+name = "mwpc_parser"
+path = "src/lib.rs"
+
+[dependencies]
