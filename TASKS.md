@@ -578,17 +578,39 @@ pytest -q` passed all 272 tests; `make paper` produced the 15-page PDF.
 
 **Depends on:** T603, T604, T505
 
-- [ ] Build a model-independent `solve_exact_commit` path from canvas, support, and proposals to the Rust result.
-- [ ] Convert the terminal-edge certificate back to token IDs and proposal IDs.
-- [ ] Validate the result independently.
-- [ ] Add a Python-backend switch for debugging.
+- [x] Build a model-independent `solve_exact_commit` path from canvas, support, and proposals to the Rust result.
+- [x] Convert the terminal-edge certificate back to token IDs and proposal IDs.
+- [x] Validate the result independently.
+- [x] Add a Python-backend switch for debugging.
 
 **Acceptance criteria**
 
-- [ ] Tiny tokenizer-aware cases match enumeration of token paths.
-- [ ] Python and Rust backends return equal scores.
+- [x] Tiny tokenizer-aware cases match enumeration of token paths.
+- [x] Python and Rust backends return equal scores.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`520f34c33dafe6a34804716909c498e1daa63f81`.
+`src/mwpc_exact/finite_solver.py` exposes the Rust-default `solve_exact_commit`
+bridge and explicit `ExactBackend.PYTHON` debugging switch over an already
+validated finite support. It reconstructs complete private byte paths into
+exactly one token per physical slot, cross-checks Rust-reported token-edge
+provenance, independently recomputes selected positive proposals and objective,
+and runs the Boolean grammar, tokenizer-byte, graph-path, fixed-position,
+support, and slot checks before returning `OPTIMAL`. Missing Rust bindings yield
+`UNSUPPORTED`; invalid backend certificates yield `ERROR`; `TIMEOUT` and
+`INFEASIBLE_ON_SUPPORT` retain distinct payload-free results. Top-K scope is
+preserved as exactness on represented support. `python -m pytest -q
+tests/exact_commit/test_finite_solver.py` passed 16 deterministic tests with the
+release Rust binding, covering tiny path enumeration, variable-length tokens,
+same-byte/different-ID choices, multiple matching proposal IDs, fixed slots,
+top-K scope, infeasibility, timeout, missing bindings, corrupted certificates,
+and equal Python/Rust scores. The focused Rust binding/differential/bridge run
+passed 31 tests. `make test-rust-parser` passed formatting, 20 Rust tests, and
+strict Clippy; `make test-m5-differential` again passed 500 normal and 2,000
+extended cases with zero failures. `make check` passed the upstream pin, Ruff,
+strict MyPy over 29 source files, 12 unit tests, and 275 exact-commit tests;
+`python -m pytest -q` passed all 288 tests; `make paper` produced the 15-page
+PDF.
 
 ## T606 — Add finite-lattice randomized tests
 

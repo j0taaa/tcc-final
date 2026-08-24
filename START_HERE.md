@@ -12,7 +12,7 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-M0 through M5 and T600--T604 are complete. The pinned EPIC baseline has been
+M0 through M5 and T600--T605 are complete. The pinned EPIC baseline has been
 reproduced, the scientific contracts are frozen, and both the token-aligned and
 generic weighted terminal-DAG Python solvers agree with their independent
 exhaustive oracles over the configured deterministic campaigns. Weighted
@@ -30,11 +30,16 @@ byte expansion uses private raw-byte paths with stable token identity and
 single reward attachment, explicitly rejecting unsupported or empty-emission
 tokens. Precisely scoped arithmetic, tiny assignment DSL, and restricted JSON
 value byte grammars now have documented syntax and versioned valid/invalid
-corpora whose labels are recomputed by the independent Boolean recognizer. No
-runtime benchmark or end-to-end dLLM result has been asserted.
+corpora whose labels are recomputed by the independent Boolean recognizer. The
+finite-lattice solve bridge now dispatches to the Rust production parser or
+Python reference backend, reconstructs terminal-edge certificates to exact
+token/proposal provenance, and independently validates every result before
+returning `OPTIMAL`. No randomized M6 campaign, runtime benchmark, or
+end-to-end dLLM result has been asserted.
 
-The next required task is `T605`: connect the finite token/byte lattice to the
-generic exact solver through independently validated Python and Rust backends.
+The next required task is `T606`: run deterministic randomized finite-lattice
+differential tests against exhaustive token-path enumeration and close M6 only
+if every configured case agrees.
 Preserve the completed evidence unless a regression or explicit review finding
 invalidates it.
 
@@ -50,8 +55,7 @@ invalidates it.
 
 ## Definition of the next deliverable
 
-Complete T605's model-independent exact-solve path from canvas, finite support,
-and proposals through the byte lattice and generic terminal-DAG solver. Convert
-the terminal certificate back to token/proposal provenance, validate it
-independently, retain a Python backend for debugging, and compare both backends
-against tiny token-path enumeration.
+Complete T606's finite-lattice randomized campaign. Generate small vocabularies
+with variable and multi-byte emissions, same-byte/different-ID tokens, and fixed
+positions; compare each exact solve with exhaustive token-path enumeration;
+record deterministic seeds; and save any mismatch as a regression fixture.
