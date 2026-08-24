@@ -144,17 +144,22 @@ and `python -m mypy src` passed.
 
 **Depends on:** T400
 
-- [ ] Enumerate paths in tiny DAGs.
-- [ ] Recognize each terminal sequence independently.
-- [ ] Sum edge weights once.
-- [ ] Return the maximum valid path.
-- [ ] Guard against path explosion.
+- [x] Enumerate paths in tiny DAGs.
+- [x] Recognize each terminal sequence independently.
+- [x] Sum edge weights once.
+- [x] Return the maximum valid path.
+- [x] Guard against path explosion.
 
 **Acceptance criteria**
 
-- [ ] Graph parser and path oracle agree on random tiny DAGs.
+- [x] Graph parser and path oracle agree on random tiny DAGs.
 
-**Evidence:** `[tests and campaign result]`
+**Evidence:** implementation commit `d7ef4f507c9b3932602f91b48b4eb18da3fac147`;
+`python -m pytest -q tests/exact_commit/test_graph_oracle.py
+tests/exact_commit/test_dag_parser.py` (`10 passed`), including exact status and
+objective agreement over seeds `0..249`; `python -m ruff check
+src/mwpc_exact/reference/graph_oracle.py tests/exact_commit/test_graph_oracle.py`
+and `python -m mypy src` passed.
 
 ## T403 — Define and implement epsilon normalization
 
