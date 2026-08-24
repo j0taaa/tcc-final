@@ -24,7 +24,7 @@ campaigns. The pinned LLaDA tokenizer now has an audited compositional raw-byte
 interface for ordinary tokens with added controls rejected explicitly.
 Deterministic full, top-K, and explicit support construction is also complete,
 including fixed-slot enforcement and canonical support fingerprints. The next
-required task is M6/T602. No token lattice, runtime benchmark, or
+required task is M6/T603. No byte lattice, runtime benchmark, or
 end-to-end model result is claimed yet; implementation-dependent article
 placeholders remain unchanged.
 
@@ -81,10 +81,10 @@ and crates, using adapters for EPIC integration.
 
 ## Next concrete target
 
-M5's production-parser gate and T600--T601 have passed. The next target is
-T602: construct the finite layered token lattice with exactly one choice per
-represented alternative and preserve token/proposal provenance across every
-physical slot.
+M5's production-parser gate and T600--T602 have passed. The next target is
+T603: expand the finite token lattice through the audited raw-byte tokenizer
+adapter while preserving stable token identity and attaching reward/proposal
+provenance exactly once per token choice.
 
 ## Directory map
 

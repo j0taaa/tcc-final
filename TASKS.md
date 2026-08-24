@@ -477,19 +477,33 @@ produced the 15-page PDF.
 
 **Target:** `src/mwpc_exact/token_lattice.py`
 
-- [ ] Add one physical boundary per canvas slot.
-- [ ] Add one token-choice path per supported token in a masked slot.
-- [ ] Add exactly one choice for fixed positions.
-- [ ] Attach aggregated reward and proposal IDs once per token choice.
-- [ ] Preserve absolute canvas position and token ID.
-- [ ] Validate that every complete token path consumes the configured number of slots.
+- [x] Add one physical boundary per canvas slot.
+- [x] Add one token-choice path per supported token in a masked slot.
+- [x] Add exactly one choice for fixed positions.
+- [x] Attach aggregated reward and proposal IDs once per token choice.
+- [x] Preserve absolute canvas position and token ID.
+- [x] Validate that every complete token path consumes the configured number of slots.
 
 **Acceptance criteria**
 
-- [ ] Enumerating tiny token lattices gives the Cartesian product of supports.
-- [ ] No path skips or consumes two alternatives for one slot.
+- [x] Enumerating tiny token lattices gives the Cartesian product of supports.
+- [x] No path skips or consumes two alternatives for one slot.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`fb1021bf8acfeab6b5f06622df9a46a2fdaec8b3`. The model-independent
+`src/mwpc_exact/token_lattice.py` constructs canonical boundaries `0..n` and
+one stable-ID `TokenChoice` per represented `(position, token_id)`, requiring
+every choice to cross exactly `position -> position + 1`. It retains the
+validated support and exactness scope, aggregates duplicate proposal rewards,
+attaches every represented positive proposal ID exactly once, excludes
+zero-weight IDs from selected-set provenance, and records proposals absent
+from pruned support explicitly. Deterministic `TokenLatticePath` enumeration
+and independent path validation make the finite-slot/Cartesian-product
+invariant executable without assigning placeholder bytes before T603.
+`python -m pytest -q tests/exact_commit/test_token_lattice.py` passed 14 tests;
+`make check` passed the upstream pin, Ruff, strict MyPy over 26 source files,
+12 unit tests, and 241 exact-commit tests; `python -m pytest -q` passed all 254
+tests; `make paper` produced the 15-page PDF.
 
 ## T603 — Implement token-to-byte expansion
 

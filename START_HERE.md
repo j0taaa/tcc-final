@@ -12,7 +12,7 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-M0 through M5 and T600--T601 are complete. The pinned EPIC baseline has been
+M0 through M5 and T600--T602 are complete. The pinned EPIC baseline has been
 reproduced, the scientific contracts are frozen, and both the token-aligned and
 generic weighted terminal-DAG Python solvers agree with their independent
 exhaustive oracles over the configured deterministic campaigns. Weighted
@@ -21,12 +21,15 @@ The independently implemented Rust production parser and thin PyO3 binding
 agree with Python and brute force on all configured M5 normal and extended
 cases. The pinned LLaDA tokenizer audit defines a compositional raw ByteLevel
 adapter for ordinary tokens and explicitly excludes added control tokens.
-Per-position support construction now deterministically handles full, top-K,
-and explicit rows with fixed-slot validation and canonical fingerprints. No
-token lattice, runtime benchmark, or end-to-end dLLM result has been asserted.
+Per-position support construction deterministically handles full, top-K, and
+explicit rows with fixed-slot validation and canonical fingerprints. The
+finite layered token lattice now preserves every represented token choice,
+absolute position, aggregate reward, and positive proposal provenance while
+making every complete path consume exactly the physical canvas slots. No byte
+lattice, runtime benchmark, or end-to-end dLLM result has been asserted.
 
-The next required task is `T602`: construct the layered finite token lattice
-from the validated per-position support and aggregated proposal rewards.
+The next required task is `T603`: expand each token choice into its exact
+byte-labeled path using the audited compositional tokenizer adapter.
 Preserve the completed evidence unless a regression or explicit review finding
 invalidates it.
 
@@ -42,9 +45,8 @@ invalidates it.
 
 ## Definition of the next deliverable
 
-Complete T602's model-independent layered token lattice. It must create one
-physical boundary per slot plus the terminal boundary, one distinct token
-choice for every represented alternative, and exactly one choice at fixed
-positions. Each choice must retain absolute position and token ID while
-attaching aggregate proposal reward and every matching positive proposal ID
-exactly once. Every complete path must consume every finite slot.
+Complete T603's token-to-byte expansion without collapsing token provenance.
+Each token choice must expand to its audited exact byte emission, retain its
+stable token-edge identity, and attach reward/proposal provenance exactly once
+regardless of byte length. Multi-byte, byte-fallback, empty-emission, special,
+and same-bytes/different-token cases must follow the explicit adapter policy.
