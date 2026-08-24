@@ -442,12 +442,22 @@ pub fn solve_with_options(
     graph: &WeightedTerminalDag,
     options: &SolveOptions,
 ) -> Result<SolveResult, ValidationError> {
+    let solve_started = Instant::now();
     let computation = run_max_plus_with_options(grammar, graph, options)?;
     if computation.status != SolveStatus::Optimal {
         return SolveResult::without_certificate(computation.status, computation.diagnostics);
     }
     let certificate = reconstruct_certificate(&computation, grammar, graph)?;
-    SolveResult::optimal(certificate, computation.diagnostics)
+    let mut diagnostics = computation.diagnostics;
+    diagnostics.elapsed_parser_seconds = solve_started.elapsed().as_secs_f64();
+    if options
+        .timeout
+        .is_some_and(|timeout| solve_started.elapsed() >= timeout)
+    {
+        diagnostics.deadline_checks += 1;
+        return SolveResult::without_certificate(SolveStatus::Timeout, diagnostics);
+    }
+    SolveResult::optimal(certificate, diagnostics)
 }
 
 fn reconstruct_certificate(
