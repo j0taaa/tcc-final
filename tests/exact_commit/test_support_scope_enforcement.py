@@ -120,3 +120,25 @@ def test_explicit_support_is_recorded_in_machine_readable_diagnostics() -> None:
     assert diagnostics["represented_support_token_ids"] == [[100], [200]]
     assert diagnostics["represented_support_row_sizes"] == [1, 1]
     assert len(str(diagnostics["represented_support_sha256"])) == 64
+
+
+def test_support_fingerprint_is_deterministic() -> None:
+    arguments = {
+        "grammar": pair_grammar(),
+        "canvas": (None, None),
+        "proposals": (Proposal(1, 0, 100, 2), Proposal(2, 1, 200, 3)),
+        "exactness_scope": EXPLICIT_SCOPE,
+        "terminal_token_ids": {10: 100, 20: 200},
+        "per_position_support": ((100,), (200,)),
+    }
+
+    first = solve_token_aligned(**arguments)
+    second = solve_token_aligned(**arguments)
+    first_diagnostics = first.to_dict()["diagnostics"]
+    second_diagnostics = second.to_dict()["diagnostics"]
+
+    assert isinstance(first_diagnostics, dict)
+    assert isinstance(second_diagnostics, dict)
+    assert first_diagnostics["represented_support_sha256"] == second_diagnostics[
+        "represented_support_sha256"
+    ]
