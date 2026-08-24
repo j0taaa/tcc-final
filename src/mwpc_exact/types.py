@@ -430,8 +430,44 @@ class TerminalEdge:
 
 
 @dataclass(frozen=True, slots=True)
+class EpsilonEdge:
+    """One weighted graph edge that emits no terminal label."""
+
+    edge_id: int
+    source_state: int
+    target_state: int
+    weight: float = 0.0
+    matched_proposal_ids: tuple[int, ...] = ()
+
+    def __post_init__(self) -> None:
+        for field_name in ("edge_id", "source_state", "target_state"):
+            value = _require_int(getattr(self, field_name), field_name)
+            if value < 0:
+                raise ValueError(f"{field_name} must be non-negative")
+        if self.source_state == self.target_state:
+            raise ValueError("epsilon edges cannot be self-loops")
+        object.__setattr__(
+            self,
+            "weight",
+            _finite_float(self.weight, "weight", non_negative=True),
+        )
+        object.__setattr__(
+            self,
+            "matched_proposal_ids",
+            _stable_ids(
+                self.matched_proposal_ids,
+                "matched_proposal_ids",
+                allow_empty=True,
+            ),
+        )
+
+
+GraphEdge: TypeAlias = TerminalEdge | EpsilonEdge
+
+
+@dataclass(frozen=True, slots=True)
 class WeightedTerminalDAG:
-    """Finite terminal graph with stable node and edge IDs.
+    """Finite terminal/epsilon graph with stable node and edge IDs.
 
     Full topological validation and indexing belong to T400. This boundary
     already rejects missing endpoints and ambiguous IDs.
@@ -440,7 +476,7 @@ class WeightedTerminalDAG:
     node_ids: tuple[int, ...]
     start_node_id: int
     final_node_ids: tuple[int, ...]
-    edges: tuple[TerminalEdge, ...] = ()
+    edges: tuple[GraphEdge, ...] = ()
 
     def __post_init__(self) -> None:
         node_ids = _stable_ids(self.node_ids, "node_ids", allow_empty=False)
@@ -455,10 +491,10 @@ class WeightedTerminalDAG:
             raise ValueError("final_node_ids must reference existing nodes")
 
         if isinstance(self.edges, (str, bytes)) or not isinstance(self.edges, Iterable):
-            raise TypeError("edges must be a sequence of TerminalEdge instances")
+            raise TypeError("edges must be a sequence of graph edge instances")
         edges = tuple(self.edges)
-        if not all(isinstance(edge, TerminalEdge) for edge in edges):
-            raise TypeError("edges must contain only TerminalEdge instances")
+        if not all(isinstance(edge, (TerminalEdge, EpsilonEdge)) for edge in edges):
+            raise TypeError("edges must contain only TerminalEdge or EpsilonEdge instances")
         edge_ids = tuple(edge.edge_id for edge in edges)
         if len(set(edge_ids)) != len(edge_ids):
             raise ValueError("edge IDs must be unique")

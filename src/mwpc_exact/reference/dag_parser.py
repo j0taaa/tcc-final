@@ -11,7 +11,13 @@ from typing import TypeAlias
 from mwpc_exact.reference.grammar import CnfGrammar, TerminalProduction
 from mwpc_exact.reference.graph import IndexedTerminalDAG, index_terminal_dag
 from mwpc_exact.reference.recognizer import recognizes_cnf
-from mwpc_exact.types import SolveStatus, TerminalLabel, WeightedTerminalDAG
+from mwpc_exact.types import (
+    EpsilonEdge,
+    SolveStatus,
+    TerminalEdge,
+    TerminalLabel,
+    WeightedTerminalDAG,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -139,11 +145,23 @@ class DagCertificateReconstructionError(ValueError):
     """A DAG chart does not reconstruct to its recorded objective."""
 
 
+class EpsilonNormalizationRequired(ValueError):
+    """The epsilon-free parser received an external epsilon edge."""
+
+
 def run_dag_cky(grammar: CnfGrammar, graph: WeightedTerminalDAG) -> DagSolve:
     """Run exact max-plus CFG parsing over every path represented by ``graph``."""
     if not isinstance(grammar, CnfGrammar):
         raise TypeError("grammar must be a CnfGrammar")
     indexed = index_terminal_dag(graph)
+    epsilon_edge_ids = tuple(
+        edge.edge_id for edge in graph.edges if isinstance(edge, EpsilonEdge)
+    )
+    if epsilon_edge_ids:
+        raise EpsilonNormalizationRequired(
+            "run_dag_cky accepts only epsilon-free graphs; normalize epsilon edges first "
+            f"(edge_ids={epsilon_edge_ids})"
+        )
     labels = grammar.terminal_labels
     terminal_id_by_label = {label: terminal_id for terminal_id, label in labels.items()}
     entries: dict[DagChartKey, DagChartEntry] = {}
@@ -153,6 +171,7 @@ def run_dag_cky(grammar: CnfGrammar, graph: WeightedTerminalDAG) -> DagSolve:
         productions_by_terminal.setdefault(production.terminal_id, []).append(production)
 
     for edge in sorted(graph.edges, key=lambda item: item.edge_id):
+        assert isinstance(edge, TerminalEdge)
         terminal_id = terminal_id_by_label.get(edge.terminal_label)
         if terminal_id is None:
             continue
@@ -260,7 +279,11 @@ def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
         if isinstance(pointer, DagTerminalBackpointer):
             terminal_production = terminal_productions.get(pointer.production_id)
             edge = edge_by_id.get(pointer.edge_id)
-            if terminal_production is None or edge is None:
+            if (
+                terminal_production is None
+                or edge is None
+                or not isinstance(edge, TerminalEdge)
+            ):
                 raise DagCertificateReconstructionError(
                     "terminal backpointer references an unknown production or edge"
                 )
@@ -347,27 +370,25 @@ def validate_dag_certificate(
     indexed = index_terminal_dag(graph)
     if not isinstance(certificate, DagParseCertificate):
         raise TypeError("certificate must be a DagParseCertificate")
-    if len(certificate.witness_terminal_labels) != len(
-        certificate.witness_graph_edge_ids
-    ):
-        return False
-
     current = graph.start_node_id
     labels: list[TerminalLabel] = []
     selected_ids: list[int] = []
     weights: list[float] = []
-    for edge_id, claimed_label in zip(
-        certificate.witness_graph_edge_ids,
-        certificate.witness_terminal_labels,
-        strict=True,
-    ):
+    claimed_labels = iter(certificate.witness_terminal_labels)
+    for edge_id in certificate.witness_graph_edge_ids:
         edge = indexed.edge_by_id.get(edge_id)
-        if edge is None or edge.source_state != current or edge.terminal_label != claimed_label:
+        if edge is None or edge.source_state != current:
             return False
         current = edge.target_state
-        labels.append(edge.terminal_label)
+        if isinstance(edge, TerminalEdge):
+            claimed_label = next(claimed_labels, None)
+            if edge.terminal_label != claimed_label:
+                return False
+            labels.append(edge.terminal_label)
         selected_ids.extend(edge.matched_proposal_ids)
         weights.append(edge.weight)
+    if next(claimed_labels, None) is not None:
+        return False
     if current not in graph.final_node_ids:
         return False
     if tuple(selected_ids) != certificate.selected_proposal_ids:

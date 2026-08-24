@@ -2,6 +2,7 @@
 
 from mwpc_exact.types import (
     AggregatedProposal,
+    EpsilonEdge,
     ExactCommitResult,
     ExactnessScope,
     Proposal,
@@ -25,6 +26,7 @@ from mwpc_exact.validator import (
 __all__ = [
     "AggregatedProposal",
     "EOSWitnessValidator",
+    "EpsilonEdge",
     "ExactCommitResult",
     "ExactnessScope",
     "GrammarRecognizer",

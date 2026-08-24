@@ -478,7 +478,9 @@ def solve_token_aligned(
         certificate = reconstruct_cky_certificate(solve, proposals=proposal_items)
         graph = build_token_aligned_support_graph(grammar, lexical)
         edge_by_position_and_label = {
-            (edge.source_state, edge.terminal_label): edge.edge_id for edge in graph.edges
+            (edge.source_state, edge.terminal_label): edge.edge_id
+            for edge in graph.edges
+            if isinstance(edge, TerminalEdge)
         }
         witness_edge_ids = tuple(
             edge_by_position_and_label[(position, label)]

@@ -20,6 +20,7 @@ from mwpc_exact.types import (
     ExactnessScope,
     Proposal,
     SolveStatus,
+    TerminalEdge,
     TerminalLabel,
     WeightedTerminalDAG,
 )
@@ -342,7 +343,17 @@ def validate_exact_commit_certificate(
             )
             path_complete = False
         current_state = edge.target_state
-        if edge.terminal_label != terminal_label:
+        if not isinstance(edge, TerminalEdge):
+            _issue(
+                issues,
+                ValidationCode.TERMINAL_LABEL_MISMATCH,
+                "public witness paths must reference terminal, not epsilon, edges",
+                path_index=index,
+                edge_id=edge_id,
+                actual_label=terminal_label,
+            )
+            path_complete = False
+        elif edge.terminal_label != terminal_label:
             _issue(
                 issues,
                 ValidationCode.TERMINAL_LABEL_MISMATCH,

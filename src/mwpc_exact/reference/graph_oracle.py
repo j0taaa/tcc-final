@@ -9,7 +9,7 @@ from mwpc_exact.reference.dag_parser import DagParseCertificate, validate_dag_ce
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.reference.graph import index_terminal_dag
 from mwpc_exact.reference.recognizer import recognizes_cnf
-from mwpc_exact.types import SolveStatus, TerminalEdge, WeightedTerminalDAG
+from mwpc_exact.types import GraphEdge, SolveStatus, TerminalEdge, WeightedTerminalDAG
 
 
 class PathEnumerationLimitExceeded(RuntimeError):
@@ -62,7 +62,7 @@ def enumerate_best_cfg_path(
     completed_paths = 0
     best_score: float | None = None
     best_certificate: DagParseCertificate | None = None
-    path: list[TerminalEdge] = []
+    path: list[GraphEdge] = []
 
     def visit(state: int) -> None:
         nonlocal completed_paths, best_score, best_certificate
@@ -72,7 +72,9 @@ def enumerate_best_cfg_path(
                     f"graph path enumeration exceeded max_paths={max_paths}"
                 )
             completed_paths += 1
-            labels = tuple(edge.terminal_label for edge in path)
+            labels = tuple(
+                edge.terminal_label for edge in path if isinstance(edge, TerminalEdge)
+            )
             if recognizes_cnf(grammar, labels):
                 score = fsum(edge.weight for edge in path)
                 selected_ids = tuple(
