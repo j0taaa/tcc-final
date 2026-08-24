@@ -547,18 +547,32 @@ tests, and 252 exact-commit tests; `python -m pytest -q` passed all 265 tests;
 
 **Depends on:** T201, T603
 
-- [ ] Add an arithmetic-expression byte grammar.
-- [ ] Add a small DSL byte grammar.
-- [ ] Add a clearly named JSON subset grammar if manageable.
-- [ ] Document accepted syntax and deliberate omissions.
-- [ ] Add valid/invalid sample corpora.
+- [x] Add an arithmetic-expression byte grammar.
+- [x] Add a small DSL byte grammar.
+- [x] Add a clearly named JSON subset grammar if manageable.
+- [x] Document accepted syntax and deliberate omissions.
+- [x] Add valid/invalid sample corpora.
 
 **Acceptance criteria**
 
-- [ ] Boolean parser classifications match fixture labels.
-- [ ] Grammar names do not overstate subsets as complete languages.
+- [x] Boolean parser classifications match fixture labels.
+- [x] Grammar names do not overstate subsets as complete languages.
 
-**Evidence:** `[grammar/test paths]`
+**Evidence:** implementation commit
+`73b563a8a98d7a6464673c6789cf17b2bc885db1`.
+`src/mwpc_exact/reference/byte_grammars.py` defines deterministic source and
+normalized byte CFGs for `arithmetic_expression_bytes_v1`,
+`tiny_assignment_dsl_bytes_v1`, and the deliberately scoped
+`lower_ascii_json_value_subset_v1`. The exact syntax and omissions are recorded
+in `tests/exact_commit/fixtures/byte_grammars.md`; the versioned corpus in
+`tests/exact_commit/fixtures/byte_grammar_corpus.json` contains 50 cases (22
+accepted and 28 rejected). `python -m pytest -q
+tests/exact_commit/test_byte_grammars.py` passed 7 tests, recomputing every
+corpus classification with the independent Boolean CNF recognizer and checking
+deterministic construction, byte-only terminal labels, fixture names, and
+scope documentation. `make check` passed the upstream pin, Ruff, strict MyPy
+over 28 source files, 12 unit tests, and 259 exact-commit tests; `python -m
+pytest -q` passed all 272 tests; `make paper` produced the 15-page PDF.
 
 ## T605 — Connect token lattice to the generic exact solver
 

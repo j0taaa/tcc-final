@@ -12,7 +12,7 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-M0 through M5 and T600--T603 are complete. The pinned EPIC baseline has been
+M0 through M5 and T600--T604 are complete. The pinned EPIC baseline has been
 reproduced, the scientific contracts are frozen, and both the token-aligned and
 generic weighted terminal-DAG Python solvers agree with their independent
 exhaustive oracles over the configured deterministic campaigns. Weighted
@@ -28,11 +28,13 @@ absolute position, aggregate reward, and positive proposal provenance while
 making every complete path consume exactly the physical canvas slots. Its
 byte expansion uses private raw-byte paths with stable token identity and
 single reward attachment, explicitly rejecting unsupported or empty-emission
-tokens. No byte-grammar fixture, runtime benchmark, or end-to-end dLLM result
-has been asserted.
+tokens. Precisely scoped arithmetic, tiny assignment DSL, and restricted JSON
+value byte grammars now have documented syntax and versioned valid/invalid
+corpora whose labels are recomputed by the independent Boolean recognizer. No
+runtime benchmark or end-to-end dLLM result has been asserted.
 
-The next required task is `T604`: add precisely documented byte-level grammar
-fixtures and valid/invalid corpora for parser integration.
+The next required task is `T605`: connect the finite token/byte lattice to the
+generic exact solver through independently validated Python and Rust backends.
 Preserve the completed evidence unless a regression or explicit review finding
 invalidates it.
 
@@ -48,8 +50,8 @@ invalidates it.
 
 ## Definition of the next deliverable
 
-Complete T604's byte-level grammar fixtures. Add an arithmetic-expression
-grammar and a small DSL grammar, plus a clearly named JSON subset if kept in
-scope. Document the exact accepted syntax and deliberate omissions, provide
-valid/invalid byte corpora, and verify every fixture classification with the
-independent Boolean parser.
+Complete T605's model-independent exact-solve path from canvas, finite support,
+and proposals through the byte lattice and generic terminal-DAG solver. Convert
+the terminal certificate back to token/proposal provenance, validate it
+independently, retain a Python backend for debugging, and compare both backends
+against tiny token-path enumeration.
