@@ -13,7 +13,9 @@ The project adds an exact, certificate-producing optimizer for choosing the maxi
 - Pinned EPIC baseline: `vendor/EPIC-Decoding` at the immutable SHA in [`UPSTREAM.md`](UPSTREAM.md)
 - New code belongs in `src/mwpc_exact/` and later in `crates/`; the EPIC submodule is read-only.
 
-No benchmark result, correctness result, or model result is claimed in this bootstrap commit. Placeholders must remain placeholders until backed by reproducible artifacts.
+## Current implementation status
+
+M0 through M3 are complete: the EPIC baseline and environment are recorded, scientific contracts are frozen, and the token-aligned Python max-plus CKY solver agrees with both independent exhaustive oracles on the configured deterministic campaign. The next required task is M4/T400. No tokenizer-aware, Rust-production-parser, runtime benchmark, or end-to-end model result is claimed yet; implementation-dependent article placeholders remain unchanged.
 
 ## Clone
 
@@ -49,17 +51,18 @@ Model weights, datasets and Hugging Face caches are never committed.
 ## Give this instruction to the coding agent
 
 ```text
-Read START_HERE.md, AGENTS.md, UPSTREAM.md and TASKS.md. Start at T000 and
-continue in dependency order. Do not bypass correctness gates. Update task
-checkboxes and Evidence fields only after running the required commands.
+Read START_HERE.md, AGENTS.md, UPSTREAM.md and TASKS.md. Continue from the
+first incomplete required task in dependency order (currently T400). Do not
+redo completed milestones or bypass correctness gates. Update task checkboxes
+and Evidence fields only after running the required commands.
 Never invent benchmark values or replace implementation-dependent placeholders.
 Keep vendor/EPIC-Decoding read-only; implement new code under src/mwpc_exact
 and crates, using adapters for EPIC integration.
 ```
 
-## First concrete target
+## Next concrete target
 
-The first scientific gate is a small token-aligned max-plus CKY implementation whose score agrees in every generated small case with both exhaustive completion enumeration and exhaustive proposal-subset enumeration. Do not begin tokenizer, model or performance integration before that gate passes.
+M3's token-aligned correctness gate has passed for the configured finite cases. The next target is M4: a generic max-plus CFG-on-DAG reference solver whose values and certificates agree with explicit path enumeration and with the layered token-aligned special case.
 
 ## Directory map
 

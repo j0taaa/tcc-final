@@ -29,5 +29,5 @@ jobs:
         run: python -m ruff check src tests
       - name: Type check
         run: python -m mypy src
-      - name: Unit tests
-        run: python -m pytest -q tests/unit
+      - name: Unit and exact-commit tests
+        run: python -m pytest -q tests/unit tests/exact_commit

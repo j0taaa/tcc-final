@@ -12,9 +12,9 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-The repository structure, pinned upstream baseline, LaTeX article, CI skeleton and core Python data contracts are present. No baseline build, oracle agreement, parser correctness, tokenizer property, runtime result or end-to-end result has been asserted.
+M0 through M3 are complete. The pinned EPIC baseline has been reproduced, the scientific contracts are frozen, the token-aligned Python solver is implemented, and its objective agrees with both exhaustive oracles over the configured deterministic campaign. No tokenizer, Rust-production-parser, runtime benchmark, or end-to-end dLLM result has been asserted.
 
-Begin at `T000`. Verify the submodule SHA and licenses, then produce reproducible environment evidence. Do not mark a task complete because files exist; execute its acceptance checks.
+The next required task is `T400`: validate and index a generic weighted terminal DAG. Preserve the completed evidence unless a regression or explicit review finding invalidates it.
 
 ## Non-negotiable rules
 
@@ -26,14 +26,6 @@ Begin at `T000`. Verify the submodule SHA and licenses, then produce reproducibl
 - Preserve deterministic seeds and save every counterexample as a regression test.
 - Do not fabricate measurements or fill article placeholders from estimates.
 
-## Definition of the first deliverable
+## Definition of the next deliverable
 
-Create the token-aligned Python reference solver and two independent exhaustive oracles. Randomized tests must demonstrate:
-
-```text
-max-plus CKY optimum
-  = exhaustive valid-completion optimum
-  = exhaustive compatible-subset optimum
-```
-
-for every tested finite instance. Record commands, seed ranges and test counts in the relevant `TASKS.md` Evidence fields.
+Implement M4's generic weighted terminal-DAG reference solver without weakening the completed M3 gate. The DAG implementation must validate acyclicity and stable IDs, reconstruct a certificate, agree with explicit path enumeration on tiny graphs, and reduce exactly to the token-aligned solver on layered per-slot DAGs.

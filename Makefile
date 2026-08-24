@@ -4,7 +4,7 @@ VENV_PY := $(VENV)/bin/python
 VENV_PIP := $(VENV)/bin/pip
 EPIC_CPU_INDEX ?= https://download.pytorch.org/whl/cpu
 
-.PHONY: bootstrap bootstrap-epic verify-upstream install check lint format typecheck test test-unit test-upstream paper clean
+.PHONY: bootstrap bootstrap-epic verify-upstream install check lint format typecheck test test-unit test-exact test-upstream paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -36,13 +36,16 @@ format:
 test-unit:
 	$(VENV_PY) -m pytest -q tests/unit
 
+test-exact:
+	$(VENV_PY) -m pytest -q tests/exact_commit
+
 test-upstream:
 	PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=vendor/EPIC-Decoding \
 		$(VENV_PY) -m pytest -q vendor/EPIC-Decoding/tests
 
-test: test-unit
+test: test-unit test-exact
 
-check: verify-upstream lint typecheck test-unit
+check: verify-upstream lint typecheck test
 
 paper:
 	$(MAKE) -C paper

@@ -13,6 +13,10 @@ Feasibility can also remain unknown because of a timeout or unsupported
 semantic feature. Without separate scope and status fields, these cases are
 easy to overstate as global optimality or infeasibility.
 
+A scope label is meaningful only when it is checked against the alternatives
+actually represented. A caller-provided `FULL` enum alongside a pruned graph
+must not be sufficient to produce a full-vocabulary claim.
+
 ## Support kinds
 
 Every solve records an immutable `ExactnessScope` with tokenizer vocabulary
@@ -35,6 +39,10 @@ exact over the declared full-vocabulary finite-slot instance for this step
 It is not a claim about future denoising steps, another tokenizer revision,
 unbounded strings, semantic program correctness, or a different grammar.
 
+The implementation must validate full coverage from the represented support.
+A partial token mapping, caller-supplied pruned row, or missing permitted
+special token invalidates a `FULL` claim.
+
 ### `SupportKind.TOP_K`
 
 Each relevant slot represents the recorded model top-K alternatives plus the
@@ -51,15 +59,17 @@ It must never be called globally exact or full-vocabulary optimal.
 
 The instance uses explicitly recorded token alternatives per slot, such as a
 small oracle fixture or replay lattice. The exact set is carried by the input
-arcs/fixture and identified by the scope's pruning description. The allowed
-short name is:
+arcs or fixture and identified by machine-readable support metadata. The
+allowed short name is:
 
 ```text
 exact_on_support(kind=explicit, ...)
 ```
 
-An explicit support may happen to contain every token in a toy vocabulary,
-but it is named `FULL` only when full representation is validated as such.
+An explicit support may happen to contain every token in a toy vocabulary, but
+it is named `FULL` only when full representation is validated as such. An
+explicit row may not omit an already committed token or include a token that
+the active token-to-terminal interface cannot interpret.
 
 ## Adaptive top-K expansion
 
@@ -113,7 +123,7 @@ non-optimal status, subject to its configured policy. Fallback does not change
 the solver status. Every fallback event records at least:
 
 - original status and exactness scope;
-- timeout/unsupported/error reason and elapsed limit where applicable;
+- timeout, unsupported, or error reason and elapsed limit where applicable;
 - support-expansion attempt history;
 - fallback strategy and committed position/token;
 - whether that token actually matched a proposal in the frozen candidate set;
@@ -139,20 +149,37 @@ tokenizer semantics, and denoising step.
 
 ## Alternatives considered
 
-- A single `None`/failure result was rejected because it conflates timeout,
+- A single `None` or failure result was rejected because it conflates timeout,
   unsupported semantics, errors, and proved support infeasibility.
-- Calling every parser optimum “exact” was rejected because omitted vocabulary
+- Calling every parser optimum "exact" was rejected because omitted vocabulary
   tokens can change feasibility and score.
 - Treating a successful fallback as solver success was rejected because it
   erases the guarantee actually obtained.
+- Trusting a caller-supplied support enum without checking the graph was
+  rejected because it permits a pruned instance to be mislabeled as `FULL`.
 
 ## Executable enforcement
 
 `SolveStatus` defines five distinct values. `ExactnessScope` requires support
 metadata and rejects top-K without `K`, invalid special tokens, and malformed
-expansion sequences. `ExactCommitResult` permits objectives/certificates only
-for `OPTIMAL`. The focused regressions are
-`tests/exact_commit/test_exactness_scope.py` and
-`tests/exact_commit/test_graph_and_result_contracts.py`. T801/T804 will make
-adaptive-attempt and fallback diagnostics executable without changing these
-meanings.
+expansion sequences. `ExactCommitResult` permits objectives and certificates
+only for `OPTIMAL`.
+
+The token-aligned reference solver additionally checks the declaration against
+the alternatives it represents:
+
+- `FULL` rejects a partial token mapping or caller-supplied pruned rows;
+- explicit rows reject unmapped alternatives;
+- explicit rows may not omit an already committed token;
+- diagnostics record canonical per-row token IDs, row sizes, and a SHA-256
+  fingerprint of the represented support.
+
+The focused regressions are
+`tests/exact_commit/test_exactness_scope.py`,
+`tests/exact_commit/test_graph_and_result_contracts.py`, and
+`tests/exact_commit/test_support_scope_enforcement.py`.
+
+The current public result contract intentionally reports a zero-slot epsilon
+witness as `UNSUPPORTED`; M2 and M3 completeness evidence is therefore scoped
+to non-empty physical canvases. T801 and T804 will make adaptive-attempt and
+fallback diagnostics executable without changing these meanings.

@@ -1,14 +1,14 @@
-# ADR 0004: controlled grammar normalization
+# ADR 0004: Controlled grammar normalization
 
-- Status: accepted
+- Status: Accepted
 - Date: 2026-08-23
 
 ## Context
 
 The token-aligned CKY solver requires strict terminal/binary CNF: `A -> a`
 and `A -> B C`, plus an explicit empty-string flag. The pinned EPIC binding
-offers `CFG.to_normal_form()`, but its Python API exposes serialized productions
-rather than stable production identities or origin mappings.
+offers `CFG.to_normal_form()`, but its Python API exposes serialized
+productions rather than stable production identities or origin mappings.
 
 We audited the pinned upstream commit on epsilon, unit-cycle, recursive, and
 ambiguous fixtures. Bounded Boolean enumeration through length four found no
@@ -34,8 +34,11 @@ The controlled pipeline:
 6. records source production IDs on every normalized production.
 
 Duplicate normalized rules are merged as Boolean grammar alternatives, and
-their source production IDs are combined. The diagnostic mapping is not a
-claim that a source grammar has a unique derivation.
+their source production IDs are combined. These IDs are conservative
+diagnostic associations, not a derivation-exact provenance certificate: unit
+closure keeps a deterministic representative path and synthetic proxy rules
+may merge associations from several source rules. The mapping is not a claim
+that a source grammar has a unique derivation.
 
 Empty-string acceptance is metadata on `CnfGrammar`. Epsilon never consumes a
 finite token slot. The repository-CFG adapter remains a strict boundary and
@@ -48,5 +51,7 @@ two instead of silently normalizing them.
 - Normalized production IDs are stable for a fixed source grammar ordering.
 - Bounded fixed-point enumeration tests independently compare source and CNF
   languages, including recursive and ambiguous cases.
+- Diagnostic provenance is useful for tracing normalization associations but
+  must not be presented as a complete source derivation certificate.
 - The EPIC normalizer remains audited as a baseline dependency but is not
   modified or treated as strict CNF.
