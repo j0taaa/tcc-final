@@ -165,19 +165,26 @@ and `python -m mypy src` passed.
 
 **Depends on:** T400
 
-- [ ] Create `docs/decisions/0005-epsilon-edges.md`.
-- [ ] Define whether the external graph accepts epsilon edges.
-- [ ] If accepted, compute weighted epsilon closure on DAGs.
-- [ ] Saturate terminal arcs while preserving original-edge provenance.
-- [ ] Handle epsilon-only accepted paths when the CFG derives empty.
-- [ ] Reject epsilon cycles or general cycles.
+- [x] Create `docs/decisions/0005-epsilon-edges.md`.
+- [x] Define whether the external graph accepts epsilon edges.
+- [x] If accepted, compute weighted epsilon closure on DAGs.
+- [x] Saturate terminal arcs while preserving original-edge provenance.
+- [x] Handle epsilon-only accepted paths when the CFG derives empty.
+- [x] Reject epsilon cycles or general cycles.
 
 **Acceptance criteria**
 
-- [ ] Normalized graph and direct path enumeration agree on fixtures.
-- [ ] Proposal weights are not duplicated by closure.
+- [x] Normalized graph and direct path enumeration agree on fixtures.
+- [x] Proposal weights are not duplicated by closure.
 
-**Evidence:** `[ADR, tests, commit]`
+**Evidence:** `docs/decisions/0005-epsilon-edges.md`; implementation commit
+`ed22c6f822678ed6ac6e25e22878c6ddbcf99260`; `python -m pytest -q
+tests/exact_commit/test_epsilon_normalization.py tests/exact_commit/test_graph_oracle.py
+tests/exact_commit/test_dag_parser.py tests/exact_commit/test_graph_index.py
+tests/exact_commit/test_graph_and_result_contracts.py tests/exact_commit/test_validator.py
+tests/exact_commit/test_token_aligned_certificate.py` (`56 passed`); `python -m
+ruff check src tests/exact_commit/test_epsilon_normalization.py` and `python -m
+mypy src` passed.
 
 ## T404 — Add graph differential/property tests
 
