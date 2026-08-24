@@ -45,9 +45,11 @@ def test_valid_optimal_result() -> None:
         witness_token_ids=(10, 11),
         witness_terminal_labels=("a", "b"),
         witness_graph_edge_ids=(0, 1),
+        witness_content_endpoint_slot=2,
     )
     assert result.status is SolveStatus.OPTIMAL
     assert result.objective_value == 2.5
+    assert result.witness_content_endpoint_slot == 2
 
 
 def test_timeout_cannot_claim_selected_proposals() -> None:

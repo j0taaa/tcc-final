@@ -492,6 +492,7 @@ def solve_token_aligned(
             witness_token_ids=certificate.witness_token_ids,
             witness_terminal_labels=certificate.witness_terminal_labels,
             witness_graph_edge_ids=witness_edge_ids,
+            witness_content_endpoint_slot=len(certificate.witness_token_ids),
             diagnostics=base_diagnostics,
         )
         token_id_by_label = {
@@ -532,6 +533,7 @@ def solve_token_aligned(
             witness_token_ids=certificate.witness_token_ids,
             witness_terminal_labels=certificate.witness_terminal_labels,
             witness_graph_edge_ids=witness_edge_ids,
+            witness_content_endpoint_slot=len(certificate.witness_token_ids),
             diagnostics={
                 **base_diagnostics,
                 "certificate_validation": report.to_dict(),

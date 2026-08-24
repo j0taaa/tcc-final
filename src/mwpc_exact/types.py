@@ -518,6 +518,8 @@ class ExactCommitResult:
     witness_token_ids: tuple[int, ...] = ()
     witness_terminal_labels: tuple[TerminalLabel, ...] = ()
     witness_graph_edge_ids: tuple[int, ...] = ()
+    witness_eos_position: int | None = None
+    witness_content_endpoint_slot: int | None = None
     diagnostics: Mapping[str, object] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
@@ -554,6 +556,22 @@ class ExactCommitResult:
         object.__setattr__(self, "witness_terminal_labels", terminal_labels)
         object.__setattr__(self, "witness_graph_edge_ids", witness_edge_ids)
 
+        eos_position = self.witness_eos_position
+        if eos_position is not None:
+            eos_position = _require_int(eos_position, "witness_eos_position")
+            if eos_position < 0:
+                raise ValueError("witness_eos_position must be non-negative")
+        content_endpoint = self.witness_content_endpoint_slot
+        if content_endpoint is not None:
+            content_endpoint = _require_int(
+                content_endpoint,
+                "witness_content_endpoint_slot",
+            )
+            if content_endpoint < 0:
+                raise ValueError("witness_content_endpoint_slot must be non-negative")
+        object.__setattr__(self, "witness_eos_position", eos_position)
+        object.__setattr__(self, "witness_content_endpoint_slot", content_endpoint)
+
         frozen_diagnostics = _freeze_json(self.diagnostics, "diagnostics")
         if not isinstance(frozen_diagnostics, Mapping):
             raise TypeError("diagnostics must be a mapping")
@@ -564,14 +582,10 @@ class ExactCommitResult:
                 raise ValueError("OPTIMAL requires objective_value")
             if not witness_token_ids:
                 raise ValueError("OPTIMAL requires a non-empty witness token sequence")
-            if not terminal_labels:
-                raise ValueError("OPTIMAL requires witness terminal labels")
             if not witness_edge_ids:
                 raise ValueError("OPTIMAL requires a reconstructible witness path")
-            if len(terminal_labels) != len(witness_edge_ids):
-                raise ValueError(
-                    "witness terminal labels and graph edge IDs must have equal length"
-                )
+            if content_endpoint is None:
+                raise ValueError("OPTIMAL requires witness_content_endpoint_slot")
         elif any(
             (
                 self.objective_value is not None,
@@ -579,6 +593,8 @@ class ExactCommitResult:
                 bool(witness_token_ids),
                 bool(terminal_labels),
                 bool(witness_edge_ids),
+                eos_position is not None,
+                content_endpoint is not None,
             )
         ):
             raise ValueError("non-OPTIMAL results cannot expose an objective or certificate")
@@ -592,6 +608,8 @@ class ExactCommitResult:
             "witness_token_ids": list(self.witness_token_ids),
             "witness_terminal_labels": list(self.witness_terminal_labels),
             "witness_graph_edge_ids": list(self.witness_graph_edge_ids),
+            "witness_eos_position": self.witness_eos_position,
+            "witness_content_endpoint_slot": self.witness_content_endpoint_slot,
             "exactness_scope": self.exactness_scope.to_dict(),
             "diagnostics": _thaw_json(self.diagnostics),
         }
@@ -608,6 +626,8 @@ class ExactCommitResult:
             "witness_token_ids",
             "witness_terminal_labels",
             "witness_graph_edge_ids",
+            "witness_eos_position",
+            "witness_content_endpoint_slot",
             "exactness_scope",
             "diagnostics",
         }
@@ -656,6 +676,19 @@ class ExactCommitResult:
             ),
             witness_graph_edge_ids=_int_tuple(
                 data.get("witness_graph_edge_ids", ()), "witness_graph_edge_ids"
+            ),
+            witness_eos_position=(
+                None
+                if data.get("witness_eos_position") is None
+                else _require_int(data["witness_eos_position"], "witness_eos_position")
+            ),
+            witness_content_endpoint_slot=(
+                None
+                if data.get("witness_content_endpoint_slot") is None
+                else _require_int(
+                    data["witness_content_endpoint_slot"],
+                    "witness_content_endpoint_slot",
+                )
             ),
             diagnostics=diagnostics,
         )

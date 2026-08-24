@@ -97,7 +97,12 @@ def test_valid_terminal_graph_keeps_stable_ids() -> None:
 
 @pytest.mark.parametrize(
     "missing_field",
-    ["objective_value", "witness_token_ids", "witness_terminal_labels", "witness_graph_edge_ids"],
+    [
+        "objective_value",
+        "witness_token_ids",
+        "witness_graph_edge_ids",
+        "witness_content_endpoint_slot",
+    ],
 )
 def test_optimal_result_requires_complete_certificate(missing_field: str) -> None:
     values: dict[str, object] = {
@@ -108,6 +113,7 @@ def test_optimal_result_requires_complete_certificate(missing_field: str) -> Non
         "witness_token_ids": (42,),
         "witness_terminal_labels": (97, 98),
         "witness_graph_edge_ids": (7, 8),
+        "witness_content_endpoint_slot": 1,
     }
     values.pop(missing_field)
 
@@ -143,6 +149,7 @@ def test_optimal_result_json_round_trip_preserves_status_and_ids() -> None:
         witness_token_ids=(42,),
         witness_terminal_labels=(97, "b"),
         witness_graph_edge_ids=(7, 8),
+        witness_content_endpoint_slot=1,
         diagnostics={"chart": {"entries": 12}, "tie_break": [7, 8]},
     )
 
@@ -164,9 +171,35 @@ def test_optimal_result_preserves_repeated_proposal_id_occurrences() -> None:
         witness_token_ids=(42,),
         witness_terminal_labels=(97,),
         witness_graph_edge_ids=(7,),
+        witness_content_endpoint_slot=1,
     )
 
     assert ExactCommitResult.from_dict(result.to_dict()).selected_proposal_ids == (4, 4)
+
+
+def test_result_rejects_malformed_eos_metadata_at_the_data_boundary() -> None:
+    values = {
+        "status": SolveStatus.OPTIMAL,
+        "exactness_scope": explicit_scope(),
+        "objective_value": 0.0,
+        "witness_token_ids": (127,),
+        "witness_graph_edge_ids": (7,),
+        "witness_content_endpoint_slot": 0,
+    }
+
+    with pytest.raises(ValueError, match="witness_eos_position must be non-negative"):
+        ExactCommitResult(**values, witness_eos_position=-1)
+    with pytest.raises(TypeError, match="witness_content_endpoint_slot must be an integer"):
+        ExactCommitResult(**{**values, "witness_content_endpoint_slot": True})
+
+
+def test_non_optimal_result_cannot_expose_eos_metadata() -> None:
+    with pytest.raises(ValueError, match="cannot expose an objective or certificate"):
+        ExactCommitResult(
+            status=SolveStatus.TIMEOUT,
+            exactness_scope=explicit_scope(),
+            witness_content_endpoint_slot=0,
+        )
 
 
 def test_result_diagnostics_are_deeply_immutable() -> None:

@@ -16,6 +16,8 @@ from math import fsum, isclose, isfinite
 from types import MappingProxyType
 from typing import Protocol
 
+from mwpc_exact.eos_lattice import EOSMode, EOSPolicy
+from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from mwpc_exact.types import (
     ExactCommitResult,
     ExactnessScope,
@@ -51,7 +53,7 @@ class SupportWitnessValidator(Protocol):
 
 
 class EOSWitnessValidator(Protocol):
-    """Validate finite-slot EOS/PAD behavior for witness token IDs."""
+    """Legacy boolean EOS hook used when no structured EOS policy is supplied."""
 
     def __call__(self, token_ids: tuple[int, ...], /) -> bool: ...
 
@@ -75,6 +77,14 @@ class ValidationCode(StrEnum):
     TOKENIZER_REJECTED = "tokenizer_rejected"
     SUPPORT_REJECTED = "support_rejected"
     EOS_REJECTED = "eos_rejected"
+    EOS_TOKEN_ID_OUT_OF_RANGE = "eos_token_id_out_of_range"
+    EOS_PAD_BEFORE_TERMINATION = "eos_pad_before_termination"
+    EOS_UNSUPPORTED_CONTROL = "eos_unsupported_control"
+    EOS_TOKEN_AFTER_TERMINATION = "eos_token_after_termination"
+    EOS_REQUIRED_MISSING = "eos_required_missing"
+    EOS_POSITION_MISMATCH = "eos_position_mismatch"
+    CONTENT_ENDPOINT_MISMATCH = "content_endpoint_mismatch"
+    EFFECTIVE_TERMINAL_SEQUENCE_MISMATCH = "effective_terminal_sequence_mismatch"
     INJECTED_VALIDATOR_ERROR = "injected_validator_error"
 
 
@@ -189,6 +199,143 @@ def _run_injected_check(
         _issue(issues, rejected_code, f"{name} validator rejected the witness")
 
 
+def _validate_eos_policy_configuration(
+    *,
+    expected_scope: ExactnessScope,
+    eos_policy: EOSPolicy | None,
+    eos_adapter: CompositionalByteLevelAdapter | None,
+    eos_validator: EOSWitnessValidator | None,
+) -> None:
+    if eos_policy is not None and not isinstance(eos_policy, EOSPolicy):
+        raise TypeError("eos_policy must be an EOSPolicy or None")
+    if eos_adapter is not None and not isinstance(
+        eos_adapter,
+        CompositionalByteLevelAdapter,
+    ):
+        raise TypeError("eos_adapter must be a CompositionalByteLevelAdapter or None")
+    if (eos_policy is None) != (eos_adapter is None):
+        raise ValueError("eos_policy and eos_adapter must be supplied together")
+    if eos_policy is not None and eos_validator is not None:
+        raise ValueError("structured eos_policy and legacy eos_validator are mutually exclusive")
+    if eos_adapter is None or eos_policy is None:
+        return
+    if eos_adapter.vocabulary_size != expected_scope.vocabulary_size:
+        raise ValueError("EOS tokenizer adapter and exactness scope must have equal vocabularies")
+    special_ids = (*eos_policy.termination_token_ids, eos_policy.pad_token_id)
+    if any(
+        token_id is not None and token_id >= eos_adapter.vocabulary_size
+        for token_id in special_ids
+    ):
+        raise ValueError("EOS policy token IDs must belong to the tokenizer vocabulary")
+
+
+def _validate_finite_eos_policy(
+    *,
+    result: ExactCommitResult,
+    canvas_tokens: tuple[int | None, ...],
+    policy: EOSPolicy,
+    adapter: CompositionalByteLevelAdapter,
+    issues: list[ValidationIssue],
+) -> None:
+    """Recompute finite-slot EOS roles and effective bytes without lattice state."""
+
+    after_eos = False
+    eos_position: int | None = None
+    effective_bytes = bytearray()
+    special_mode = policy.mode is not EOSMode.ABSENT
+
+    for position, token_id in enumerate(result.witness_token_ids):
+        if token_id >= adapter.vocabulary_size:
+            _issue(
+                issues,
+                ValidationCode.EOS_TOKEN_ID_OUT_OF_RANGE,
+                "witness token is outside the EOS policy tokenizer vocabulary",
+                position=position,
+                token_id=token_id,
+                vocabulary_size=adapter.vocabulary_size,
+            )
+            continue
+
+        if after_eos:
+            if token_id != policy.pad_token_id:
+                _issue(
+                    issues,
+                    ValidationCode.EOS_TOKEN_AFTER_TERMINATION,
+                    "only the canonical PAD token is legal after EOS",
+                    position=position,
+                    eos_position=eos_position,
+                    expected_pad_token_id=policy.pad_token_id,
+                    actual_token_id=token_id,
+                )
+            continue
+
+        if special_mode and token_id in policy.termination_token_ids:
+            eos_position = position
+            after_eos = True
+            continue
+
+        if special_mode and token_id == policy.pad_token_id:
+            _issue(
+                issues,
+                ValidationCode.EOS_PAD_BEFORE_TERMINATION,
+                "canonical PAD is illegal before the first termination token",
+                position=position,
+                pad_token_id=policy.pad_token_id,
+            )
+            continue
+
+        emission = adapter.emissions[token_id]
+        if emission is None:
+            _issue(
+                issues,
+                ValidationCode.EOS_UNSUPPORTED_CONTROL,
+                "unsupported control token is neither ordinary content nor legal EOS/PAD",
+                position=position,
+                token_id=token_id,
+                eos_mode=policy.mode.value,
+            )
+            continue
+        effective_bytes.extend(emission)
+
+    if policy.mode is EOSMode.REQUIRED and eos_position is None:
+        _issue(
+            issues,
+            ValidationCode.EOS_REQUIRED_MISSING,
+            "REQUIRED EOS policy needs one termination token within the physical slots",
+            termination_token_ids=list(policy.termination_token_ids),
+            physical_slot_count=len(canvas_tokens),
+        )
+
+    content_endpoint = len(canvas_tokens) if eos_position is None else eos_position
+    if result.witness_eos_position != eos_position:
+        _issue(
+            issues,
+            ValidationCode.EOS_POSITION_MISMATCH,
+            "reported EOS position does not equal the first termination token position",
+            expected_eos_position=eos_position,
+            actual_eos_position=result.witness_eos_position,
+        )
+    if result.witness_content_endpoint_slot != content_endpoint:
+        _issue(
+            issues,
+            ValidationCode.CONTENT_ENDPOINT_MISMATCH,
+            "reported content endpoint does not match the finite-slot EOS policy",
+            expected_content_endpoint_slot=content_endpoint,
+            actual_content_endpoint_slot=result.witness_content_endpoint_slot,
+        )
+
+    expected_labels = tuple(effective_bytes)
+    if result.witness_terminal_labels != expected_labels:
+        _issue(
+            issues,
+            ValidationCode.EFFECTIVE_TERMINAL_SEQUENCE_MISMATCH,
+            "witness terminal sequence is not the ordinary-token bytes before EOS",
+            expected_terminal_labels=list(expected_labels),
+            actual_terminal_labels=list(result.witness_terminal_labels),
+            content_endpoint_slot=content_endpoint,
+        )
+
+
 def validate_exact_commit_certificate(
     result: ExactCommitResult,
     *,
@@ -200,6 +347,8 @@ def validate_exact_commit_certificate(
     tokenizer_validator: TokenizerWitnessValidator | None = None,
     support_validator: SupportWitnessValidator | None = None,
     eos_validator: EOSWitnessValidator | None = None,
+    eos_policy: EOSPolicy | None = None,
+    eos_adapter: CompositionalByteLevelAdapter | None = None,
     objective_tolerance: float = 1e-12,
 ) -> ValidationReport:
     """Validate one certificate without trusting weighted-parser internals."""
@@ -209,6 +358,12 @@ def validate_exact_commit_certificate(
         raise TypeError("expected_scope must be an ExactnessScope")
     if not isinstance(graph, WeightedTerminalDAG):
         raise TypeError("graph must be a WeightedTerminalDAG")
+    _validate_eos_policy_configuration(
+        expected_scope=expected_scope,
+        eos_policy=eos_policy,
+        eos_adapter=eos_adapter,
+        eos_validator=eos_validator,
+    )
     if (
         isinstance(objective_tolerance, bool)
         or not isinstance(objective_tolerance, (int, float))
@@ -322,20 +477,15 @@ def validate_exact_commit_certificate(
     edge_by_id = {edge.edge_id: edge for edge in graph.edges}
     current_state = graph.start_node_id
     path_complete = True
-    for index, (edge_id, terminal_label) in enumerate(
-        zip(
-            result.witness_graph_edge_ids,
-            result.witness_terminal_labels,
-            strict=True,
-        )
-    ):
+    terminal_index = 0
+    for path_index, edge_id in enumerate(result.witness_graph_edge_ids):
         edge = edge_by_id.get(edge_id)
         if edge is None:
             _issue(
                 issues,
                 ValidationCode.UNKNOWN_GRAPH_EDGE,
                 "witness references an edge absent from the terminal graph",
-                path_index=index,
+                path_index=path_index,
                 edge_id=edge_id,
             )
             path_complete = False
@@ -345,7 +495,7 @@ def validate_exact_commit_certificate(
                 issues,
                 ValidationCode.EDGE_CONTINUITY,
                 "witness graph edges do not form a continuous path",
-                path_index=index,
+                path_index=path_index,
                 edge_id=edge_id,
                 expected_source_state=current_state,
                 actual_source_state=edge.source_state,
@@ -353,25 +503,42 @@ def validate_exact_commit_certificate(
             path_complete = False
         current_state = edge.target_state
         if not isinstance(edge, TerminalEdge):
+            continue
+        if terminal_index >= len(result.witness_terminal_labels):
             _issue(
                 issues,
                 ValidationCode.TERMINAL_LABEL_MISMATCH,
-                "public witness paths must reference terminal, not epsilon, edges",
-                path_index=index,
-                edge_id=edge_id,
-                actual_label=terminal_label,
-            )
-            path_complete = False
-        elif edge.terminal_label != terminal_label:
-            _issue(
-                issues,
-                ValidationCode.TERMINAL_LABEL_MISMATCH,
-                "witness terminal label does not match its graph edge",
-                path_index=index,
+                "terminal graph edge has no corresponding witness terminal label",
+                path_index=path_index,
+                terminal_index=terminal_index,
                 edge_id=edge_id,
                 expected_label=edge.terminal_label,
-                actual_label=terminal_label,
             )
+            path_complete = False
+        else:
+            terminal_label = result.witness_terminal_labels[terminal_index]
+            if edge.terminal_label != terminal_label:
+                _issue(
+                    issues,
+                    ValidationCode.TERMINAL_LABEL_MISMATCH,
+                    "witness terminal label does not match its terminal graph edge",
+                    path_index=path_index,
+                    terminal_index=terminal_index,
+                    edge_id=edge_id,
+                    expected_label=edge.terminal_label,
+                    actual_label=terminal_label,
+                )
+        terminal_index += 1
+    if terminal_index < len(result.witness_terminal_labels):
+        _issue(
+            issues,
+            ValidationCode.TERMINAL_LABEL_MISMATCH,
+            "witness contains terminal labels without corresponding terminal graph edges",
+            expected_terminal_count=terminal_index,
+            actual_terminal_count=len(result.witness_terminal_labels),
+            extra_terminal_labels=list(result.witness_terminal_labels[terminal_index:]),
+        )
+        path_complete = False
     if path_complete and current_state not in graph.final_node_ids:
         _issue(
             issues,
@@ -392,21 +559,20 @@ def validate_exact_commit_certificate(
         issues=issues,
         skipped=skipped,
     )
-    _run_injected_check(
-        name="tokenizer",
-        call=(
-            None
-            if tokenizer_validator is None
-            else partial(
+    if tokenizer_validator is not None:
+        _run_injected_check(
+            name="tokenizer",
+            call=partial(
                 tokenizer_validator,
                 result.witness_token_ids,
                 result.witness_terminal_labels,
-            )
-        ),
-        rejected_code=ValidationCode.TOKENIZER_REJECTED,
-        issues=issues,
-        skipped=skipped,
-    )
+            ),
+            rejected_code=ValidationCode.TOKENIZER_REJECTED,
+            issues=issues,
+            skipped=skipped,
+        )
+    elif eos_policy is None:
+        skipped.append("tokenizer")
     if support_validator is not None:
         _run_injected_check(
             name="support",
@@ -415,17 +581,26 @@ def validate_exact_commit_certificate(
             issues=issues,
             skipped=skipped,
         )
-    _run_injected_check(
-        name="eos",
-        call=(
-            None
-            if eos_validator is None
-            else partial(eos_validator, result.witness_token_ids)
-        ),
-        rejected_code=ValidationCode.EOS_REJECTED,
-        issues=issues,
-        skipped=skipped,
-    )
+    if eos_policy is not None and eos_adapter is not None:
+        _validate_finite_eos_policy(
+            result=result,
+            canvas_tokens=canvas_tokens,
+            policy=eos_policy,
+            adapter=eos_adapter,
+            issues=issues,
+        )
+    else:
+        _run_injected_check(
+            name="eos",
+            call=(
+                None
+                if eos_validator is None
+                else partial(eos_validator, result.witness_token_ids)
+            ),
+            rejected_code=ValidationCode.EOS_REJECTED,
+            issues=issues,
+            skipped=skipped,
+        )
 
     return ValidationReport(
         issues=tuple(issues),

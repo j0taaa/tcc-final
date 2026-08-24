@@ -16,6 +16,7 @@ from math import fsum, isclose, isfinite
 from typing import cast
 
 from mwpc_exact.byte_lattice import ByteLattice, build_byte_lattice
+from mwpc_exact.eos_lattice import EOSMode, EOSPolicy
 from mwpc_exact.reference.dag_parser import (
     DagParseCertificate,
     reconstruct_dag_certificate,
@@ -290,18 +291,6 @@ def _finite_support_witness_is_exact(
         token_id in support.rows[position] for position, token_id in enumerate(token_ids)
     )
 
-
-
-def _absent_eos_witness_is_exact(
-    adapter: CompositionalByteLevelAdapter,
-    token_ids: tuple[int, ...],
-) -> bool:
-    """Validate the completed M6 profile in which every slot is ordinary content."""
-
-    unsupported = frozenset(adapter.unsupported_token_ids)
-    return not any(token_id in unsupported for token_id in token_ids)
-
-
 def _error_result(
     *,
     support: PerPositionSupport,
@@ -442,6 +431,7 @@ def solve_exact_commit(
             witness_token_ids=token_path.token_ids,
             witness_terminal_labels=outcome.certificate.witness_terminal_labels,
             witness_graph_edge_ids=outcome.certificate.witness_graph_edge_ids,
+            witness_content_endpoint_slot=len(token_path.token_ids),
             diagnostics=diagnostics,
         )
         validation = validate_exact_commit_certificate(
@@ -460,10 +450,8 @@ def solve_exact_commit(
                 support,
                 token_ids,
             ),
-            eos_validator=lambda token_ids: _absent_eos_witness_is_exact(
-                tokenizer_adapter,
-                token_ids,
-            ),
+            eos_policy=EOSPolicy(EOSMode.ABSENT),
+            eos_adapter=tokenizer_adapter,
         )
         diagnostics["certificate_validation"] = validation.to_dict()
         if not validation.is_valid:
@@ -486,6 +474,8 @@ def solve_exact_commit(
         witness_token_ids=preliminary_result.witness_token_ids,
         witness_terminal_labels=preliminary_result.witness_terminal_labels,
         witness_graph_edge_ids=preliminary_result.witness_graph_edge_ids,
+        witness_eos_position=preliminary_result.witness_eos_position,
+        witness_content_endpoint_slot=preliminary_result.witness_content_endpoint_slot,
         diagnostics=diagnostics,
     )
 

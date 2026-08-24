@@ -147,6 +147,8 @@ def test_python_backend_matches_independent_token_path_enumeration(case: FiniteC
     assert result.status is SolveStatus.OPTIMAL
     assert result.objective_value == expected_objective
     assert result.witness_token_ids in optimal_token_paths
+    assert result.witness_eos_position is None
+    assert result.witness_content_endpoint_slot == len(case.canvas)
     assert result.exactness_scope == case.support.exactness_scope
     validation = result.diagnostics["certificate_validation"]
     assert isinstance(validation, Mapping)

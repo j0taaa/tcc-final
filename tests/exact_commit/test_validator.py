@@ -54,6 +54,7 @@ def certificate_case() -> tuple[
         witness_token_ids=(10, 20),
         witness_terminal_labels=("a", "b"),
         witness_graph_edge_ids=(0, 1),
+        witness_content_endpoint_slot=2,
     )
     return result, scope, (None, 20), proposals, graph
 
