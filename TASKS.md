@@ -24,9 +24,9 @@ Rules:
 
 ## Current starting point
 
-**M7 / T702.** M0 through M6 and T700--T701 are complete at the immutable
+**M7 / T703.** M0 through M6 and T700--T702 are complete at the immutable
 commits and artifacts recorded below. The first incomplete required task is
-T702: independently validate finite-slot EOS/PAD witnesses. The
+T703: create the finite-slot counterexample corpus. The
 historical M0--M3 checklist remains archived in
 [`docs/history/TASKS-through-M3.md`](docs/history/TASKS-through-M3.md).
 
@@ -739,17 +739,43 @@ pytest -q` passed all 311 tests. `make paper` produced the 15-page PDF.
 
 **Depends on:** T701, T105
 
-- [ ] Check exact physical slot count.
-- [ ] Check EOS position and post-EOS tokens.
-- [ ] Check effective terminal sequence.
-- [ ] Check fixed special-token positions.
-- [ ] Produce precise error messages.
+- [x] Check exact physical slot count.
+- [x] Check EOS position and post-EOS tokens.
+- [x] Check effective terminal sequence.
+- [x] Check fixed special-token positions.
+- [x] Produce precise error messages.
 
 **Acceptance criteria**
 
-- [ ] Deliberately malformed EOS/PAD witnesses are rejected.
+- [x] Deliberately malformed EOS/PAD witnesses are rejected.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`ed60f25bc628436f52bf08358c186b05f3eb27c9`. The public
+`ExactCommitResult` now records `witness_eos_position` and the required
+`witness_content_endpoint_slot`; its graph witness may retain epsilon edges
+while terminal labels name only grammar-emitting edges, including the valid
+empty terminal sequence produced by EOS in slot zero. Non-optimal statuses
+remain unable to expose any certificate metadata.
+
+`validate_exact_commit_certificate` independently scans the physical token
+witness from the configured `EOSPolicy` and audited byte adapter without
+calling or inspecting the product lattice or weighted parser. It separately
+checks slot count, all fixed positions (including special tokens), first
+termination position, PAD-only suffixes, required termination, unsupported
+controls, vocabulary bounds, reported content endpoint, and exact effective
+bytes. Stable issue codes and position-specific contexts distinguish PAD
+before EOS, ordinary/EOT after EOS, missing required EOS, metadata mismatch,
+and terminal-sequence mismatch. Represented-support membership remains a
+separate `SUPPORT_REJECTED` check. The completed M6 bridge now exercises the
+same structured validator under an explicit `ABSENT` profile.
+
+`python -m pytest -q tests/exact_commit/test_finite_eos_validator.py` passed
+17 focused tests, including epsilon-bearing and epsilon-only valid
+certificates plus deliberately malformed slot counts, EOS/PAD sequences,
+fixed specials, metadata, and terminal labels. `make check` passed the
+upstream pin, Ruff, strict MyPy over 31 source files, 8 unit tests, and 321
+exact-commit tests. `python -m pytest -q` passed all 330 tests. `make paper`
+produced the 15-page PDF.
 
 ## T703 — Create finite-slot counterexample corpus
 
@@ -782,7 +808,7 @@ pytest -q` passed all 311 tests. `make paper` produced the 15-page PDF.
 
 **M7 finite-slot gate — blocking**
 
-- [ ] EOS/PAD semantics are implemented and independently validated.
+- [x] EOS/PAD semantics are implemented and independently validated.
 - [ ] Finite-slot counterexamples exist and reproduce.
 
 ---
