@@ -230,18 +230,24 @@ configured M4 differential campaign had zero failures.
 
 **Target:** `crates/mwpc_parser/`
 
-- [ ] Define validated DAG, edge, support metadata, solver status, diagnostics, and certificate structs.
-- [ ] Use stable integer IDs.
-- [ ] Store `f64` scores and reject non-finite inputs.
-- [ ] Validate topological order and endpoints.
-- [ ] Keep the pinned EPIC Rust code read-only.
+- [x] Define validated DAG, edge, support metadata, solver status, diagnostics, and certificate structs.
+- [x] Use stable integer IDs.
+- [x] Store `f64` scores and reject non-finite inputs.
+- [x] Validate topological order and endpoints.
+- [x] Keep the pinned EPIC Rust code read-only.
 
 **Acceptance criteria**
 
-- [ ] Rust unit tests cover valid and invalid constructors.
-- [ ] Existing EPIC Rust tests still pass unchanged.
+- [x] Rust unit tests cover valid and invalid constructors.
+- [x] Existing EPIC Rust tests still pass unchanged.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit `9df61ec302e0cc6e9d6927db1850b40c8afc87f8`;
+`cargo test --manifest-path crates/mwpc_parser/Cargo.toml` (`6 passed`);
+`cargo clippy --manifest-path crates/mwpc_parser/Cargo.toml --all-targets -- -D
+warnings` and crate-local `cargo fmt --check` passed; `cargo test
+--manifest-path vendor/EPIC-Decoding/rustformlang/Cargo.toml` (`63 passed`, `1
+ignored`) with the pinned submodule clean. The vendor-wide format check still
+reports the pre-existing upstream formatting differences and was not changed.
 
 ## T501 — Implement Rust max-plus CFG-on-DAG DP
 
