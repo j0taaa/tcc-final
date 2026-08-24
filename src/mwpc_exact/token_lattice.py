@@ -1,8 +1,8 @@
 """Finite layered token lattice with exact MWPC reward provenance.
 
-This module deliberately stops before detokenization.  A :class:`TokenChoice`
+This module deliberately stops before detokenization. A :class:`TokenChoice`
 identifies one represented token alternative across one physical canvas slot;
-T603 expands those choices into byte-bearing ``TokenArc`` objects.
+the byte-lattice layer expands those choices into byte-bearing ``TokenArc`` objects.
 """
 
 from __future__ import annotations

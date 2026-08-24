@@ -24,9 +24,10 @@ Rules:
 
 ## Current starting point
 
-**M4 / T400.** M0 through M3 are complete at the immutable commits and artifacts
-summarized below. The full historical checklist and per-task evidence as it
-stood at the M3 gate is archived in
+**M7 / T701.** M0 through M6 and T700 are complete at the immutable commits and
+artifacts recorded below. The first incomplete required task is T701: compose
+the finite token choices with the EOS/PAD automaton defined by ADR 0007. The
+historical M0--M3 checklist remains archived in
 [`docs/history/TASKS-through-M3.md`](docs/history/TASKS-through-M3.md).
 
 Required milestones: **M0 through M13**.
