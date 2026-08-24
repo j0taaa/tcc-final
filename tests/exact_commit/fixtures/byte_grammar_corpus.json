@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "encoding": "ASCII strings encoded to raw bytes without preprocessing",
+  "grammars": {
+    "arithmetic_expression_bytes_v1": {
+      "cases": [
+        {"input": "0", "accepted": true, "why": "single unsigned integer"},
+        {"input": "0042", "accepted": true, "why": "leading zeros are deliberately allowed"},
+        {"input": "1+2", "accepted": true, "why": "addition"},
+        {"input": "8/2-3", "accepted": true, "why": "division followed by subtraction"},
+        {"input": "(1+2)*30", "accepted": true, "why": "parentheses and multiplication"},
+        {"input": "((7))", "accepted": true, "why": "nested parenthesized factor"},
+        {"input": "", "accepted": false, "why": "expressions are non-empty"},
+        {"input": " 1+2", "accepted": false, "why": "whitespace is not in the language"},
+        {"input": "+1", "accepted": false, "why": "unary operators are omitted"},
+        {"input": "1+", "accepted": false, "why": "missing right operand"},
+        {"input": "1**2", "accepted": false, "why": "two operators cannot be adjacent"},
+        {"input": "()", "accepted": false, "why": "parentheses require an expression"},
+        {"input": "1.5", "accepted": false, "why": "decimal literals are omitted"}
+      ]
+    },
+    "tiny_assignment_dsl_bytes_v1": {
+      "cases": [
+        {"input": "set x=0;", "accepted": true, "why": "one assignment"},
+        {"input": "print value1;", "accepted": true, "why": "one print statement"},
+        {"input": "set answer_2=0042;\nprint answer_2;", "accepted": true, "why": "two newline-separated statements"},
+        {"input": "set x=1;\nset y2=2;\nprint y2;", "accepted": true, "why": "three-statement program"},
+        {"input": "", "accepted": false, "why": "programs require a statement"},
+        {"input": "set X=1;", "accepted": false, "why": "names start with lowercase ASCII"},
+        {"input": "set x =1;", "accepted": false, "why": "extra whitespace is not allowed"},
+        {"input": "set x=-1;", "accepted": false, "why": "integers are unsigned"},
+        {"input": "print x", "accepted": false, "why": "semicolon is required"},
+        {"input": "set x=1;print x;", "accepted": false, "why": "statements require one LF separator"},
+        {"input": "set x=1;\n", "accepted": false, "why": "trailing LF is omitted"},
+        {"input": "set x=1;\n\nprint x;", "accepted": false, "why": "blank lines are omitted"},
+        {"input": "let x=1;", "accepted": false, "why": "only set and print exist"}
+      ]
+    },
+    "lower_ascii_json_value_subset_v1": {
+      "cases": [
+        {"input": "null", "accepted": true, "why": "null literal"},
+        {"input": "true", "accepted": true, "why": "boolean literal"},
+        {"input": "false", "accepted": true, "why": "boolean literal"},
+        {"input": "0", "accepted": true, "why": "zero integer"},
+        {"input": "1203", "accepted": true, "why": "non-zero unsigned integer"},
+        {"input": "\"\"", "accepted": true, "why": "empty restricted string"},
+        {"input": "\"a 9\"", "accepted": true, "why": "lowercase, digit, and space string"},
+        {"input": "[null,true,0]", "accepted": true, "why": "heterogeneous array"},
+        {"input": "{}", "accepted": true, "why": "empty object"},
+        {"input": "{\"a\":1}", "accepted": true, "why": "one object member"},
+        {"input": "{\"a\":[false,{\"b\":\"x 2\"}]}", "accepted": true, "why": "nested values"},
+        {"input": "[{},[],\"\"]", "accepted": true, "why": "nested empty containers and string"},
+        {"input": "", "accepted": false, "why": "a value is required"},
+        {"input": "01", "accepted": false, "why": "JSON leading-zero integers are rejected"},
+        {"input": "-1", "accepted": false, "why": "negative numbers are omitted"},
+        {"input": "1.0", "accepted": false, "why": "fractional numbers are omitted"},
+        {"input": "\"A\"", "accepted": false, "why": "uppercase string characters are outside this subset"},
+        {"input": "\"a\\n\"", "accepted": false, "why": "string escapes are omitted"},
+        {"input": "[1,]", "accepted": false, "why": "trailing commas are rejected"},
+        {"input": "[1 2]", "accepted": false, "why": "array comma is required"},
+        {"input": "{\"a\": 1}", "accepted": false, "why": "structural whitespace is omitted"},
+        {"input": "{a:1}", "accepted": false, "why": "object keys must be restricted strings"},
+        {"input": "{\"a\":1,}", "accepted": false, "why": "trailing commas are rejected"},
+        {"input": "TRUE", "accepted": false, "why": "keywords are lowercase"}
+      ]
+    }
+  }
+}
