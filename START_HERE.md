@@ -12,9 +12,17 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-M0 through M3 are complete. The pinned EPIC baseline has been reproduced, the scientific contracts are frozen, the token-aligned Python solver is implemented, and its objective agrees with both exhaustive oracles over the configured deterministic campaign. No tokenizer, Rust-production-parser, runtime benchmark, or end-to-end dLLM result has been asserted.
+M0 through M4 are complete. The pinned EPIC baseline has been reproduced, the
+scientific contracts are frozen, and both the token-aligned and generic
+weighted terminal-DAG Python solvers agree with their independent exhaustive
+oracles over the configured deterministic campaigns. Weighted epsilon edges
+are normalized with reconstructible original-edge provenance. No tokenizer,
+Rust-production-parser, runtime benchmark, or end-to-end dLLM result has been
+asserted.
 
-The next required task is `T400`: validate and index a generic weighted terminal DAG. Preserve the completed evidence unless a regression or explicit review finding invalidates it.
+The next required task is `T500`: add independently implemented Rust weighted
+graph and result contracts under `crates/mwpc_parser/`. Preserve the completed
+evidence unless a regression or explicit review finding invalidates it.
 
 ## Non-negotiable rules
 
@@ -28,4 +36,7 @@ The next required task is `T400`: validate and index a generic weighted terminal
 
 ## Definition of the next deliverable
 
-Implement M4's generic weighted terminal-DAG reference solver without weakening the completed M3 gate. The DAG implementation must validate acyclicity and stable IDs, reconstruct a certificate, agree with explicit path enumeration on tiny graphs, and reduce exactly to the token-aligned solver on layered per-slot DAGs.
+Implement M5's Rust production parser and thin PyO3 binding without copying the
+Python reference algorithm or modifying the pinned EPIC baseline. Rust must
+validate inputs, reconstruct stable certificate provenance, handle timeouts as
+distinct outcomes, and agree with both Python and brute force before M6 begins.

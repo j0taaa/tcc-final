@@ -190,23 +190,35 @@ mypy src` passed.
 
 **Depends on:** T401, T402, T403
 
-- [ ] Random DAGs with parallel edges.
-- [ ] Random integer edge rewards.
-- [ ] Multiple final states.
-- [ ] Epsilon chains.
-- [ ] Same terminal string through different token provenance.
-- [ ] Infeasible graph/grammar intersections.
+- [x] Random DAGs with parallel edges.
+- [x] Random integer edge rewards.
+- [x] Multiple final states.
+- [x] Epsilon chains.
+- [x] Same terminal string through different token provenance.
+- [x] Infeasible graph/grammar intersections.
 
 **Acceptance criteria**
 
-- [ ] 100% score agreement with the graph path oracle in the configured campaign.
+- [x] 100% score agreement with the graph path oracle in the configured campaign.
 
-**Evidence:** `[commands and result artifact]`
+**Evidence:** campaign implementation commit
+`7702267312c364f6ed49e873123d641a67fbace8`; `python
+scripts/exact_commit/run_m4_graph_differential.py` produced
+`docs/evidence/m4-graph-differential-summary.json`: `2000/2000` seeds passed,
+with `2000` status and objective agreements, `2694` independently validated
+optimal certificates, and `38336` saturated-edge provenance validations. The
+configured cases include `2000` epsilon-chain/parallel/provenance cases,
+`1000` multiple-final cases, and `400` forced infeasible intersections.
 
 **M4 gate**
 
-- [ ] Generic Python graph solver is certified against brute force.
-- [ ] Epsilon semantics are fixed and tested.
+- [x] Generic Python graph solver is certified against brute force.
+- [x] Epsilon semantics are fixed and tested.
+
+**Evidence:** T400--T404 evidence above; `python -m pytest -q` (`178 passed`);
+`make check` verified the upstream pin, lint, strict typing, `12` unit tests,
+and `165` exact-commit tests; `make paper` produced the 15-page PDF. The
+configured M4 differential campaign had zero failures.
 
 ---
 

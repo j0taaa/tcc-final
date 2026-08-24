@@ -1,0 +1,38 @@
+{
+  "campaign": "m4_graph_differential",
+  "case_count": 2000,
+  "failed_cases": 0,
+  "failures": [],
+  "feature_case_counts": {
+    "epsilon_chain": 2000,
+    "forced_infeasible_intersection": 400,
+    "integer_edge_rewards": 2000,
+    "multiple_final_states": 1000,
+    "parallel_edges": 2000,
+    "same_terminal_distinct_token_provenance": 2000
+  },
+  "metadata": {
+    "config_path": "configs/exact_commit/m4_graph_differential.toml",
+    "config_sha256": "879497763984f6a76861671c49578c018c50fd7cb4885494be3d1d529d6b40ad",
+    "exactness_scope": "exact_on_represented_graph",
+    "generator_schema_version": "1",
+    "git_commit": "7702267312c364f6ed49e873123d641a67fbace8",
+    "model_revision": "not_applicable",
+    "python_version": "3.11.16",
+    "support_policy": "explicit_weighted_terminal_epsilon_dag",
+    "tokenizer_revision": "not_applicable"
+  },
+  "passed_cases": 2000,
+  "property_checks": {
+    "certificate_validation": 2694,
+    "normalized_edge_validation": 38336,
+    "objective_agreement": 2000,
+    "status_agreement": 2000
+  },
+  "schema_version": 1,
+  "seed_start": 0,
+  "status_counts": {
+    "infeasible_on_support": 653,
+    "optimal": 1347
+  }
+}

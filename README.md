@@ -15,7 +15,13 @@ The project adds an exact, certificate-producing optimizer for choosing the maxi
 
 ## Current implementation status
 
-M0 through M3 are complete: the EPIC baseline and environment are recorded, scientific contracts are frozen, and the token-aligned Python max-plus CKY solver agrees with both independent exhaustive oracles on the configured deterministic campaign. The next required task is M4/T400. No tokenizer-aware, Rust-production-parser, runtime benchmark, or end-to-end model result is claimed yet; implementation-dependent article placeholders remain unchanged.
+M0 through M4 are complete: the EPIC baseline and environment are recorded,
+scientific contracts are frozen, and the token-aligned and generic weighted
+terminal-DAG Python solvers agree with independent exhaustive oracles on their
+configured deterministic campaigns. The next required task is M5/T500. No
+tokenizer-aware, Rust-production-parser, runtime benchmark, or end-to-end model
+result is claimed yet; implementation-dependent article placeholders remain
+unchanged.
 
 ## Clone
 
@@ -52,7 +58,7 @@ Model weights, datasets and Hugging Face caches are never committed.
 
 ```text
 Read START_HERE.md, AGENTS.md, UPSTREAM.md and TASKS.md. Continue from the
-first incomplete required task in dependency order (currently T400). Do not
+first incomplete required task in dependency order (currently T500). Do not
 redo completed milestones or bypass correctness gates. Update task checkboxes
 and Evidence fields only after running the required commands.
 Never invent benchmark values or replace implementation-dependent placeholders.
@@ -62,7 +68,10 @@ and crates, using adapters for EPIC integration.
 
 ## Next concrete target
 
-M3's token-aligned correctness gate has passed for the configured finite cases. The next target is M4: a generic max-plus CFG-on-DAG reference solver whose values and certificates agree with explicit path enumeration and with the layered token-aligned special case.
+M4's generic graph correctness gate has passed for the configured finite
+cases. The next target is M5: an independently implemented Rust production
+parser and thin PyO3 binding whose scores and certificates agree with the
+Python solver and brute force.
 
 ## Directory map
 
