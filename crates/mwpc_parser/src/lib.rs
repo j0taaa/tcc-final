@@ -6,6 +6,7 @@
 mod parser;
 pub mod types;
 
+pub use parser::{solve, solve_with_options, SolveOptions};
 pub use types::{
     BinaryProduction, Certificate, CnfGrammar, Diagnostics, ExactnessScope, NonterminalId,
     ProductionId, SolveResult, SolveStatus, SupportKind, TerminalEdge, TerminalId, TerminalLabel,
