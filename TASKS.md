@@ -121,20 +121,24 @@ tests/exact_commit/test_graph_index.py` and `python -m mypy src` passed.
 
 **Depends on:** T400, T201
 
-- [ ] Implement DP entries `(A, p, q)`.
-- [ ] Initialize from terminal edges.
-- [ ] Combine binary productions over valid intermediate states.
-- [ ] Use topological/span ordering that guarantees termination.
-- [ ] Store edge and binary backpointers.
-- [ ] Support multiple final states.
+- [x] Implement DP entries `(A, p, q)`.
+- [x] Initialize from terminal edges.
+- [x] Combine binary productions over valid intermediate states.
+- [x] Use topological/span ordering that guarantees termination.
+- [x] Store edge and binary backpointers.
+- [x] Support multiple final states.
 
 **Acceptance criteria**
 
-- [ ] String-chain DAGs produce the same result as token-aligned CKY.
-- [ ] Parallel paths with different scores choose the maximum.
-- [ ] Ambiguous grammars do not sum derivations.
+- [x] String-chain DAGs produce the same result as token-aligned CKY.
+- [x] Parallel paths with different scores choose the maximum.
+- [x] Ambiguous grammars do not sum derivations.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit `e57400c9e9437500a9b09c03832e9b7ad1556391`;
+`python -m pytest -q tests/exact_commit/test_dag_parser.py
+tests/exact_commit/test_graph_index.py` (`11 passed`); `python -m ruff check
+src/mwpc_exact/reference/dag_parser.py tests/exact_commit/test_dag_parser.py`
+and `python -m mypy src` passed.
 
 ## T402 — Implement graph-path brute-force oracle
 
