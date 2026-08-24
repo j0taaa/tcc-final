@@ -12,7 +12,7 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-M0 through M5 and T600 are complete. The pinned EPIC baseline has been
+M0 through M5 and T600--T601 are complete. The pinned EPIC baseline has been
 reproduced, the scientific contracts are frozen, and both the token-aligned and
 generic weighted terminal-DAG Python solvers agree with their independent
 exhaustive oracles over the configured deterministic campaigns. Weighted
@@ -20,11 +20,13 @@ epsilon edges are normalized with reconstructible original-edge provenance.
 The independently implemented Rust production parser and thin PyO3 binding
 agree with Python and brute force on all configured M5 normal and extended
 cases. The pinned LLaDA tokenizer audit defines a compositional raw ByteLevel
-adapter for ordinary tokens and explicitly excludes added control tokens. No
+adapter for ordinary tokens and explicitly excludes added control tokens.
+Per-position support construction now deterministically handles full, top-K,
+and explicit rows with fixed-slot validation and canonical fingerprints. No
 token lattice, runtime benchmark, or end-to-end dLLM result has been asserted.
 
-The next required task is `T601`: implement deterministic per-position support
-construction with validated exactness metadata and a canonical fingerprint.
+The next required task is `T602`: construct the layered finite token lattice
+from the validated per-position support and aggregated proposal rewards.
 Preserve the completed evidence unless a regression or explicit review finding
 invalidates it.
 
@@ -40,9 +42,9 @@ invalidates it.
 
 ## Definition of the next deliverable
 
-Complete T601's model-independent support construction. Fixed positions must
-contain exactly their committed token; masked positions must deterministically
-represent their declared full, top-K, or explicit alternatives; ties must be
-stable; and serialized rows plus their exactness scope must have a canonical
-fingerprint. Do not call a partial row `FULL` or silently include unsupported
-token IDs.
+Complete T602's model-independent layered token lattice. It must create one
+physical boundary per slot plus the terminal boundary, one distinct token
+choice for every represented alternative, and exactly one choice at fixed
+positions. Each choice must retain absolute position and token ID while
+attaching aggregate proposal reward and every matching positive proposal ID
+exactly once. Every complete path must consume every finite slot.

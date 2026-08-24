@@ -441,21 +441,35 @@ PDF.
 
 **Target:** `src/mwpc_exact/support.py`
 
-- [ ] Accept logits or an explicit support map.
-- [ ] Include top-`K` tokens per masked position.
-- [ ] Include the proposal token if a later policy makes that necessary.
-- [ ] Include required special tokens according to configuration.
-- [ ] Use only the fixed token for committed positions.
-- [ ] Return validated `ExactnessScope` and support diagnostics.
-- [ ] Canonically serialize and fingerprint the represented rows.
+- [x] Accept logits or an explicit support map.
+- [x] Include top-`K` tokens per masked position.
+- [x] Include the proposal token if a later policy makes that necessary.
+- [x] Include required special tokens according to configuration.
+- [x] Use only the fixed token for committed positions.
+- [x] Return validated `ExactnessScope` and support diagnostics.
+- [x] Canonically serialize and fingerprint the represented rows.
 
 **Acceptance criteria**
 
-- [ ] Support is deterministic for fixed logits and tie policy.
-- [ ] Fixed-position support cannot be widened or omit its committed token.
-- [ ] `FULL`, `TOP_K`, and `EXPLICIT` metadata matches represented alternatives.
+- [x] Support is deterministic for fixed logits and tie policy.
+- [x] Fixed-position support cannot be widened or omit its committed token.
+- [x] `FULL`, `TOP_K`, and `EXPLICIT` metadata matches represented alternatives.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`f03b9fc3be1920d8060e364e970c0c24b63e87ea`. The model-independent
+`src/mwpc_exact/support.py` accepts exactly one of a position-by-vocabulary
+logit matrix or an explicit position map, ranks equal logits by ascending
+token ID, supports recorded adaptive widths and configured proposal/special
+additions, filters through explicit permitted-token semantics, and validates
+fixed singleton rows plus `FULL`, `TOP_K`, and `EXPLICIT` scope claims. Its
+immutable result serializes the exact rows, permitted token universe, scope,
+construction diagnostics, and canonical SHA-256 fingerprints. The existing
+token-aligned solver now uses the same canonical fingerprint helper. `python -m
+pytest -q tests/exact_commit/test_support.py` passed 28 deterministic tests;
+the focused support/scope run passed 35 tests. `make check` passed the upstream
+pin, Ruff, strict MyPy over 25 source files, 12 unit tests, and 227
+exact-commit tests; `python -m pytest -q` passed all 240 tests; `make paper`
+produced the 15-page PDF.
 
 ## T602 — Implement layered token-lattice construction
 
