@@ -102,16 +102,20 @@ M3 completeness evidence is scoped to non-empty physical canvases.
 
 **Target:** `src/mwpc_exact/reference/graph.py`
 
-- [ ] Validate state IDs, start/final states, edges, labels, weights, and DAG property.
-- [ ] Compute a deterministic topological order.
-- [ ] Index terminal edges by label and endpoint.
-- [ ] Reject malformed or cyclic graphs with explicit errors.
+- [x] Validate state IDs, start/final states, edges, labels, weights, and DAG property.
+- [x] Compute a deterministic topological order.
+- [x] Index terminal edges by label and endpoint.
+- [x] Reject malformed or cyclic graphs with explicit errors.
 
 **Acceptance criteria**
 
-- [ ] Tests cover disconnected nodes, multiple final states, parallel edges, and cycles.
+- [x] Tests cover disconnected nodes, multiple final states, parallel edges, and cycles.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit `6c22ae0c9c8cba54ecabefe0101a4b0e0a0b03e4`;
+`python -m pytest -q tests/exact_commit/test_graph_index.py
+tests/exact_commit/test_graph_and_result_contracts.py` (`20 passed`);
+`python -m ruff check src/mwpc_exact/reference/graph.py
+tests/exact_commit/test_graph_index.py` and `python -m mypy src` passed.
 
 ## T401 — Implement Python max-plus CFG-on-DAG parser
 
