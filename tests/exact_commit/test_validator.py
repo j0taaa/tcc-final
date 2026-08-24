@@ -78,6 +78,7 @@ def validate_case(
         grammar_recognizer=lambda labels: labels == ("a", "b"),
         tokenizer_validator=lambda tokens, labels: (tokens, labels)
         == ((10, 20), ("a", "b")),
+        support_validator=lambda tokens: tokens == (10, 20),
         eos_validator=lambda tokens: len(tokens) == 2,
     )
 
@@ -185,6 +186,7 @@ def test_validator_requires_all_injected_checks_for_validity(certificate_case) -
     [
         ("grammar", ValidationCode.GRAMMAR_REJECTED),
         ("tokenizer", ValidationCode.TOKENIZER_REJECTED),
+        ("support", ValidationCode.SUPPORT_REJECTED),
         ("eos", ValidationCode.EOS_REJECTED),
     ],
 )
@@ -195,12 +197,14 @@ def test_validator_reports_injected_rejection(
     validators = {
         "grammar_recognizer": lambda labels: True,
         "tokenizer_validator": lambda tokens, labels: True,
+        "support_validator": lambda tokens: True,
         "eos_validator": lambda tokens: True,
     }
     validators[
         {
             "grammar": "grammar_recognizer",
             "tokenizer": "tokenizer_validator",
+            "support": "support_validator",
             "eos": "eos_validator",
         }[validator_name]
     ] = lambda *args: False

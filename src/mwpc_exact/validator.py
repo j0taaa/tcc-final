@@ -44,6 +44,12 @@ class TokenizerWitnessValidator(Protocol):
     ) -> bool: ...
 
 
+class SupportWitnessValidator(Protocol):
+    """Validate membership in the represented finite token support."""
+
+    def __call__(self, token_ids: tuple[int, ...], /) -> bool: ...
+
+
 class EOSWitnessValidator(Protocol):
     """Validate finite-slot EOS/PAD behavior for witness token IDs."""
 
@@ -67,6 +73,7 @@ class ValidationCode(StrEnum):
     PATH_FINAL_STATE = "path_final_state"
     GRAMMAR_REJECTED = "grammar_rejected"
     TOKENIZER_REJECTED = "tokenizer_rejected"
+    SUPPORT_REJECTED = "support_rejected"
     EOS_REJECTED = "eos_rejected"
     INJECTED_VALIDATOR_ERROR = "injected_validator_error"
 
@@ -191,6 +198,7 @@ def validate_exact_commit_certificate(
     graph: WeightedTerminalDAG,
     grammar_recognizer: GrammarRecognizer | None = None,
     tokenizer_validator: TokenizerWitnessValidator | None = None,
+    support_validator: SupportWitnessValidator | None = None,
     eos_validator: EOSWitnessValidator | None = None,
     objective_tolerance: float = 1e-12,
 ) -> ValidationReport:
@@ -399,6 +407,14 @@ def validate_exact_commit_certificate(
         issues=issues,
         skipped=skipped,
     )
+    if support_validator is not None:
+        _run_injected_check(
+            name="support",
+            call=partial(support_validator, result.witness_token_ids),
+            rejected_code=ValidationCode.SUPPORT_REJECTED,
+            issues=issues,
+            skipped=skipped,
+        )
     _run_injected_check(
         name="eos",
         call=(

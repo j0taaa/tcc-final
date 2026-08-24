@@ -1,4 +1,4 @@
-"""T605 bridge from finite token support to an independently validated solve.
+"""Bridge from finite token support to an independently validated solve.
 
 This module intentionally accepts an already constructed
 :class:`~mwpc_exact.support.PerPositionSupport`.  Proposal policy, adaptive
@@ -291,6 +291,17 @@ def _finite_support_witness_is_exact(
     )
 
 
+
+def _absent_eos_witness_is_exact(
+    adapter: CompositionalByteLevelAdapter,
+    token_ids: tuple[int, ...],
+) -> bool:
+    """Validate the completed M6 profile in which every slot is ordinary content."""
+
+    unsupported = frozenset(adapter.unsupported_token_ids)
+    return not any(token_id in unsupported for token_id in token_ids)
+
+
 def _error_result(
     *,
     support: PerPositionSupport,
@@ -419,6 +430,10 @@ def solve_exact_commit(
             outcome.certificate,
             reported_token_edge_ids=outcome.witness_token_edge_ids,
         )
+        if not _finite_support_witness_is_exact(support, token_path.token_ids):
+            raise _CertificateValidationError(
+                "reconstructed witness is outside the represented finite support"
+            )
         preliminary_result = ExactCommitResult(
             status=SolveStatus.OPTIMAL,
             exactness_scope=support.exactness_scope,
@@ -441,8 +456,12 @@ def solve_exact_commit(
                 token_ids,
                 labels,
             ),
-            eos_validator=lambda token_ids: _finite_support_witness_is_exact(
+            support_validator=lambda token_ids: _finite_support_witness_is_exact(
                 support,
+                token_ids,
+            ),
+            eos_validator=lambda token_ids: _absent_eos_witness_is_exact(
+                tokenizer_adapter,
                 token_ids,
             ),
         )

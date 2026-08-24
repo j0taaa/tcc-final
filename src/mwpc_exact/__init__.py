@@ -38,6 +38,7 @@ from mwpc_exact.types import (
 from mwpc_exact.validator import (
     EOSWitnessValidator,
     GrammarRecognizer,
+    SupportWitnessValidator,
     TokenizerWitnessValidator,
     ValidationCode,
     ValidationIssue,
@@ -63,6 +64,7 @@ __all__ = [
     "SupportInputSource",
     "SupportKind",
     "SupportPolicy",
+    "SupportWitnessValidator",
     "TerminalEdge",
     "TokenArc",
     "TokenChoice",
