@@ -8,6 +8,12 @@ from mwpc_exact.support import (
     canonical_support_rows_json,
     support_rows_sha256,
 )
+from mwpc_exact.token_lattice import (
+    TokenChoice,
+    TokenLattice,
+    TokenLatticePath,
+    build_token_lattice,
+)
 from mwpc_exact.tokenizer_bytes import (
     BYTE_LEVEL_ALPHABET,
     CompositionalByteLevelAdapter,
@@ -54,6 +60,9 @@ __all__ = [
     "SupportPolicy",
     "TerminalEdge",
     "TokenArc",
+    "TokenChoice",
+    "TokenLattice",
+    "TokenLatticePath",
     "TokenizerWitnessValidator",
     "UnsupportedTokenError",
     "ValidationCode",
@@ -62,6 +71,7 @@ __all__ = [
     "WeightedTerminalDAG",
     "aggregate_proposals",
     "build_per_position_support",
+    "build_token_lattice",
     "byte_level_piece_to_bytes",
     "canonical_support_rows_json",
     "support_rows_sha256",
