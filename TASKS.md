@@ -616,22 +616,52 @@ PDF.
 
 **Depends on:** T605
 
-- [ ] Generate small token vocabularies with variable byte strings.
-- [ ] Include same-byte/different-ID tokens.
-- [ ] Include multi-byte tokens and fixed positions.
-- [ ] Compare the exact solver with token-path enumeration.
-- [ ] Save failures as regression fixtures.
+- [x] Generate small token vocabularies with variable byte strings.
+- [x] Include same-byte/different-ID tokens.
+- [x] Include multi-byte tokens and fixed positions.
+- [x] Compare the exact solver with token-path enumeration.
+- [x] Save failures as regression fixtures.
 
 **Acceptance criteria**
 
-- [ ] 100% agreement in configured campaigns.
+- [x] 100% agreement in configured campaigns.
 
-**Evidence:** `[commands and artifacts]`
+**Evidence:** implementation commit
+`8d951f0777e4c22f8be286bd559ab3467be69fa0`.
+`src/mwpc_exact/finite_differential.py` defines a versioned, replayable seed
+schema and a direct Cartesian-product token-path oracle that derives emitted
+bytes, all represented positive proposal IDs, and objective values from the
+serialized vocabulary/support/proposals without consulting either parser. The
+generator forces variable and multi-byte emissions, same-byte distinct token
+IDs, multiple proposal IDs on one choice, zero weights, and integer rewards in
+every case; half of all seeds contain a fixed position and one quarter force an
+infeasible grammar intersection. Every expanded byte path is independently
+checked for path validity, exact bytes, score, and proposal provenance before
+the Python debugging and Rust production results are compared with enumeration.
+Any mismatch writes the exact instance plus failure metadata under the ignored
+configured artifact directory; the deterministic serialization path and an
+injected failure are covered by tests.
+
+`make test-m6-differential` ran the immutable
+`configs/exact_commit/m6_finite_lattice_differential.toml` campaigns against
+commit `8d951f0777e4c22f8be286bd559ab3467be69fa0`: the normal campaign passed
+500/500 seeds and the extended campaign passed 2,000/2,000 seeds with zero
+failures. Together they exhaustively enumerated and audited 42,396 finite token
+paths, with both `OPTIMAL` and `INFEASIBLE_ON_SUPPORT` represented. Versioned
+summaries are
+`docs/evidence/m6-finite-lattice-differential-normal-summary.json` and
+`docs/evidence/m6-finite-lattice-differential-extended-summary.json`.
+`python -m pytest -q tests/exact_commit/test_finite_differential.py
+tests/exact_commit/test_finite_solver.py` passed 22 focused tests. `make
+test-rust-parser` passed formatting, strict Clippy, and 20 Rust tests. `make
+check` passed the upstream pin, Ruff, strict MyPy over 30 source files, 12 unit
+tests, and 281 exact-commit tests; `python -m pytest -q` passed all 294 tests;
+`make paper` produced the 15-page PDF.
 
 **M6 gate**
 
-- [ ] A finite tokenizer-aware byte lattice is exact on its represented support.
-- [ ] Provenance and score survive expansion.
+- [x] A finite tokenizer-aware byte lattice is exact on its represented support.
+- [x] Provenance and score survive expansion.
 
 ---
 

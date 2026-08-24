@@ -1,0 +1,60 @@
+{
+  "campaign": "m6_finite_lattice_differential",
+  "campaign_name": "normal",
+  "case_count": 500,
+  "failed_cases": 0,
+  "failures": [],
+  "feature_case_counts": {
+    "explicit_represented_support": 500,
+    "fixed_position": 250,
+    "forced_infeasible_intersection": 125,
+    "integer_proposal_weights": 500,
+    "multi_byte_token": 500,
+    "multiple_proposals_same_choice": 500,
+    "same_bytes_distinct_token_ids": 500,
+    "variable_byte_lengths": 500,
+    "zero_weight_proposal": 500
+  },
+  "metadata": {
+    "binding_crate_version": "0.1.0",
+    "config_path": "configs/exact_commit/m6_finite_lattice_differential.toml",
+    "config_sha256": "c72c369aafe407765b224b174ff8af9fc633deabba6d5dd8f1e89164d6aff414",
+    "exactness_scope": "exact_on_support",
+    "finite_slot_policy": "one_ordinary_token_per_physical_slot_no_eos_pad",
+    "generator_schema_version": "1",
+    "git_commit": "8d951f0777e4c22f8be286bd559ab3467be69fa0",
+    "grammar_family_sha256": "a2cd1e7206a3b9a1c3fa583b2eda7d1cfc7df0ee54da55d48326973357ce37d5",
+    "machine": "x86_64",
+    "model_revision": "not_applicable_synthetic_correctness_campaign",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "python_version": "3.11.16",
+    "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+    "support_policy": "explicit_per_position_token_rows",
+    "token_byte_alphabet": "raw_bytes_0x61_0x62",
+    "tokenizer_revision": "synthetic_compositional_byte_v1",
+    "weight_policy": "nonnegative_integer_proposal_weights"
+  },
+  "passed_cases": 500,
+  "property_checks": {
+    "byte_expansion_path_validation": 8201,
+    "byte_expansion_provenance": 8201,
+    "byte_expansion_score": 8201,
+    "certificate_validation": 534,
+    "exactness_scope": 1000,
+    "nonoptimal_payload": 466,
+    "objective_agreement": 534,
+    "optimal_witness_membership": 534,
+    "result_byte_provenance": 534,
+    "result_proposal_provenance": 534,
+    "status_agreement": 500
+  },
+  "schema_version": 1,
+  "seed_start": 0,
+  "status_counts": {
+    "infeasible_on_support": 233,
+    "optimal": 267
+  },
+  "total_enumerated_token_paths": 8201,
+  "total_grammar_valid_paths": 3639
+}
