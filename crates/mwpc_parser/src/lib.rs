@@ -3,6 +3,7 @@
 //! This crate is implemented independently from the readable Python reference
 //! solver. The public data contracts reject malformed inputs before solving.
 
+mod parser;
 pub mod types;
 
 pub use types::{
