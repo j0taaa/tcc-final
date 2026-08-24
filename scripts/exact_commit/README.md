@@ -24,6 +24,20 @@ python scripts/exact_commit/run_m4_graph_differential.py
 It compares normalized max-plus parsing with direct original-graph path
 enumeration and validates every saturated edge's original provenance.
 
+The T600 tokenizer audit requires the separately pinned EPIC dependencies and
+downloads only the tokenizer files at the immutable configured revision:
+
+```bash
+make bootstrap-epic
+HF_HOME=.cache/huggingface \
+  python scripts/exact_commit/audit_t600_llada_tokenizer.py
+```
+
+Add `--local-files-only` to reproduce from an already populated cache. The
+script tests the entire base vocabulary, all added/special tokens, byte
+coverage, curated text classes, and the seeded random campaign, then writes
+`docs/evidence/t600-llada-tokenizer-audit.json`.
+
 The M5 Python/Rust/oracle campaigns are configured by
 `configs/exact_commit/m5_rust_differential.toml` and run with:
 

@@ -8,3 +8,8 @@ model/tokenizer revision when applicable, and exactness scope.
 campaigns. Each epsilon-normalized graph is solved by Python, Rust, and an
 exhaustive path oracle; generated summaries are versioned under
 `docs/evidence/` and exact mismatch fixtures go to ignored `artifacts/`.
+
+`t600_llada_tokenizer.toml` pins the first LLaDA model/tokenizer interface,
+expected vocabulary shape, random audit seed, and raw ByteLevel policy. Its
+audit summary is versioned under `docs/evidence/`; tokenizer files and model
+weights remain in ignored external caches.

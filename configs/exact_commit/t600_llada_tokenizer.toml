@@ -1,0 +1,26 @@
+schema_version = 1
+model_id = "GSAI-ML/LLaDA-8B-Instruct"
+tokenizer_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+expected_tokenizer_class = "PreTrainedTokenizerFast"
+expected_base_vocabulary_size = 126080
+expected_total_vocabulary_size = 126349
+random_seed = 600
+random_case_count = 20000
+random_max_sequence_length = 12
+singleton_counterexample_ids = [47681, 102]
+tokenizer_files = [
+  "tokenizer.json",
+  "tokenizer_config.json",
+  "special_tokens_map.json",
+]
+
+[policy]
+mapping = "gpt2_bytelevel_inverse_raw_bytes"
+ordinary_token_id_start = 0
+ordinary_token_id_end_exclusive = 126080
+unsupported_added_token_id_start = 126080
+unsupported_added_token_id_end_exclusive = 126349
+unicode_rendering = "outside_lattice_raw_byte_contract"
+
+[output]
+summary = "docs/evidence/t600-llada-tokenizer-audit.json"
