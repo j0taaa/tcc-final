@@ -1,0 +1,13 @@
+[build-system]
+requires = ["maturin>=1.7,<2"]
+build-backend = "maturin"
+
+[project]
+name = "mwpc-parser-py"
+version = "0.1.0"
+description = "Thin PyO3 boundary for the independent MWPC Rust parser"
+requires-python = ">=3.11,<3.13"
+
+[tool.maturin]
+bindings = "pyo3"
+module-name = "mwpc_parser_py"

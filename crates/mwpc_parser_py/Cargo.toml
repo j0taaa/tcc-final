@@ -1,0 +1,13 @@
+[package]
+name = "mwpc_parser_py"
+version = "0.1.0"
+edition = "2021"
+description = "Thin PyO3 boundary for the independent MWPC Rust parser"
+
+[lib]
+name = "mwpc_parser_py"
+crate-type = ["cdylib"]
+
+[dependencies]
+mwpc_parser = { path = "../mwpc_parser" }
+pyo3 = { version = "0.24.0", features = ["extension-module"] }

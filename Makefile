@@ -4,7 +4,7 @@ VENV_PY := $(VENV)/bin/python
 VENV_PIP := $(VENV)/bin/pip
 EPIC_CPU_INDEX ?= https://download.pytorch.org/whl/cpu
 
-.PHONY: bootstrap bootstrap-epic verify-upstream install check lint format typecheck test test-unit test-exact test-upstream test-m4-extended paper clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-upstream test-m4-extended test-rust-parser paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -19,6 +19,10 @@ bootstrap-epic: bootstrap
 	cd vendor/EPIC-Decoding/rustformlang_bindings && ../../../$(VENV)/bin/maturin develop --release
 	$(VENV_PY) scripts/install_epic_checkout.py
 	PYTHONDONTWRITEBYTECODE=1 $(VENV_PY) -c "import constrained_diffusion, rustformlang; print('EPIC imports ok')"
+
+bootstrap-rust-parser: bootstrap
+	cd crates/mwpc_parser_py && ../../$(VENV)/bin/maturin develop --release
+	$(VENV_PY) -c "import mwpc_parser_py; print('MWPC Rust parser import ok')"
 
 verify-upstream:
 	./scripts/verify_upstream.sh
@@ -45,6 +49,13 @@ test-upstream:
 
 test-m4-extended:
 	$(VENV_PY) scripts/exact_commit/run_m4_graph_differential.py
+
+test-rust-parser:
+	cargo fmt --manifest-path crates/mwpc_parser/Cargo.toml --all -- --check
+	cargo test --manifest-path crates/mwpc_parser/Cargo.toml
+	cargo clippy --manifest-path crates/mwpc_parser/Cargo.toml --all-targets -- -D warnings
+	cargo fmt --manifest-path crates/mwpc_parser_py/Cargo.toml --all -- --check
+	PYO3_PYTHON=$(CURDIR)/$(VENV_PY) cargo clippy --manifest-path crates/mwpc_parser_py/Cargo.toml --all-targets -- -D warnings
 
 test: test-unit test-exact
 
