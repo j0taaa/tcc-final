@@ -48,3 +48,16 @@ make test-m5-differential
 Rebuild the release binding with `make bootstrap-rust-parser` first. Every
 mismatch writes its exact serialized input plus failure metadata under the
 configured ignored artifact directory.
+
+The M6 finite tokenizer-aware campaigns are configured by
+`configs/exact_commit/m6_finite_lattice_differential.toml` and run with:
+
+```bash
+make test-m6-differential
+```
+
+Each seed constructs a small explicit support with variable and multi-byte
+token emissions, same-byte/different-ID choices, proposal provenance, and
+optional fixed positions. Direct enumeration defines the exact-on-support
+answer; both the Python debugging solver and Rust production solver must agree
+with it. Exact mismatch inputs and failure metadata are saved for replay.
