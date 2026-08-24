@@ -1,6 +1,7 @@
 """Exact maximum-weight parallel commitment research package."""
 
 from mwpc_exact.byte_lattice import ByteLattice, ByteLatticePath, build_byte_lattice
+from mwpc_exact.finite_solver import ExactBackend, solve_exact_commit
 from mwpc_exact.support import (
     PerPositionSupport,
     SupportInputSource,
@@ -52,6 +53,7 @@ __all__ = [
     "CompositionalByteLevelAdapter",
     "EOSWitnessValidator",
     "EpsilonEdge",
+    "ExactBackend",
     "ExactCommitResult",
     "ExactnessScope",
     "GrammarRecognizer",
@@ -78,6 +80,7 @@ __all__ = [
     "build_token_lattice",
     "byte_level_piece_to_bytes",
     "canonical_support_rows_json",
+    "solve_exact_commit",
     "support_rows_sha256",
     "validate_exact_commit_certificate",
 ]
