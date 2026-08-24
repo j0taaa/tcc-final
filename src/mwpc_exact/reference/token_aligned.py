@@ -25,6 +25,8 @@ from mwpc_exact.reference._token_aligned_core import (
     build_token_aligned_support_graph,
     reconstruct_cky_certificate,
     run_cky,
+)
+from mwpc_exact.reference._token_aligned_core import (
     solve_token_aligned as _solve_token_aligned,
 )
 from mwpc_exact.reference.grammar import CnfGrammar
