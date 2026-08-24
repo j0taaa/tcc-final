@@ -151,3 +151,22 @@ def test_empty_path_is_explicit_when_start_is_final_and_grammar_accepts_empty() 
     assert solve.status is SolveStatus.OPTIMAL
     assert certificate == type(certificate)(0.0, (), (), ())
     assert validate_dag_certificate(grammar, graph, certificate)
+
+
+def test_certificate_preserves_repeated_proposal_id_occurrences_on_path() -> None:
+    grammar = pair_grammar()
+    graph = WeightedTerminalDAG(
+        node_ids=(0, 1, 2),
+        start_node_id=0,
+        final_node_ids=(2,),
+        edges=(
+            TerminalEdge(0, 0, 1, "x", 2, matched_proposal_ids=(7,)),
+            TerminalEdge(1, 1, 2, "y", 3, matched_proposal_ids=(7,)),
+        ),
+    )
+
+    certificate = reconstruct_dag_certificate(run_dag_cky(grammar, graph))
+
+    assert certificate.objective_value == 5.0
+    assert certificate.selected_proposal_ids == (7, 7)
+    assert validate_dag_certificate(grammar, graph, certificate)

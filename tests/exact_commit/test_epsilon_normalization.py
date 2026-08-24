@@ -88,6 +88,24 @@ def test_epsilon_chain_between_terminals_is_not_duplicated() -> None:
     assert result.certificate.selected_proposal_ids == (20,)
 
 
+def test_epsilon_normalization_preserves_repeated_proposal_id_occurrences() -> None:
+    graph = WeightedTerminalDAG(
+        (0, 1, 2),
+        0,
+        (2,),
+        (
+            EpsilonEdge(0, 0, 1, 2, (7,)),
+            TerminalEdge(1, 1, 2, "x", 3, matched_proposal_ids=(7,)),
+        ),
+    )
+
+    result = solve_cfg_on_epsilon_dag(single_x_grammar(), graph)
+
+    assert result.objective_value == 5.0
+    assert result.certificate is not None
+    assert result.certificate.selected_proposal_ids == (7, 7)
+
+
 def test_maximum_epsilon_closure_safely_dominates_lower_weight_path() -> None:
     graph = WeightedTerminalDAG(
         (0, 1, 2),

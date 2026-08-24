@@ -7,6 +7,7 @@ boolean recognizers through small protocols.
 
 from __future__ import annotations
 
+from collections import Counter
 from collections.abc import Callable, Iterable, Mapping, Sequence
 from dataclasses import dataclass, field
 from enum import StrEnum
@@ -286,7 +287,7 @@ def validate_exact_commit_certificate(
     )
     recomputed_ids = tuple(proposal.proposal_id for proposal in matched)
     recomputed_objective = fsum(proposal.weight for proposal in matched)
-    if set(result.selected_proposal_ids) != set(recomputed_ids):
+    if Counter(result.selected_proposal_ids) != Counter(recomputed_ids):
         _issue(
             issues,
             ValidationCode.SELECTED_PROPOSALS_MISMATCH,

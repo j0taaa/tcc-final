@@ -78,7 +78,6 @@ impl TerminalEdge {
             return Err(ValidationError::new("terminal edges cannot be self-loops"));
         }
         require_weight(weight, "edge weight")?;
-        require_unique(&matched_proposal_ids, "matched proposal IDs")?;
         Ok(Self {
             edge_id,
             source_state,
@@ -566,7 +565,6 @@ impl Certificate {
         witness_token_edge_ids: Vec<Option<TokenEdgeId>>,
     ) -> Result<Self, ValidationError> {
         require_weight(objective_value, "certificate objective")?;
-        require_unique(&selected_proposal_ids, "selected proposal IDs")?;
         if witness_terminal_labels.len() != witness_graph_edge_ids.len()
             || witness_graph_edge_ids.len() != witness_token_edge_ids.len()
         {

@@ -155,6 +155,20 @@ def test_optimal_result_json_round_trip_preserves_status_and_ids() -> None:
     assert restored.witness_graph_edge_ids == (7, 8)
 
 
+def test_optimal_result_preserves_repeated_proposal_id_occurrences() -> None:
+    result = ExactCommitResult(
+        status=SolveStatus.OPTIMAL,
+        exactness_scope=explicit_scope(),
+        objective_value=3.0,
+        selected_proposal_ids=(4, 4),
+        witness_token_ids=(42,),
+        witness_terminal_labels=(97,),
+        witness_graph_edge_ids=(7,),
+    )
+
+    assert ExactCommitResult.from_dict(result.to_dict()).selected_proposal_ids == (4, 4)
+
+
 def test_result_diagnostics_are_deeply_immutable() -> None:
     diagnostics = {"chart": {"entries": 12}, "edge_ids": [7, 8]}
     result = ExactCommitResult(

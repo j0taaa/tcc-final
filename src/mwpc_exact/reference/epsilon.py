@@ -116,7 +116,6 @@ def normalize_epsilon_edges(graph: WeightedTerminalDAG) -> EpsilonNormalizationR
                     *prefix.matched_proposal_ids,
                     *edge.matched_proposal_ids,
                 )
-                _require_unique_proposals(candidate_proposals, candidate_ids)
                 candidate = EpsilonPath(
                     source,
                     edge.target_state,
@@ -160,7 +159,6 @@ def normalize_epsilon_edges(graph: WeightedTerminalDAG) -> EpsilonNormalizationR
                     *terminal_edge.matched_proposal_ids,
                     *suffix.matched_proposal_ids,
                 )
-                _require_unique_proposals(matched_ids, original_ids)
                 weight = prefix.weight + terminal_edge.weight + suffix.weight
                 if not isfinite(weight):
                     raise EpsilonNormalizationError(
@@ -272,7 +270,6 @@ def _expand_normalized_certificate(
         for edge in original_edges
         for proposal_id in edge.matched_proposal_ids
     )
-    _require_unique_proposals(selected_ids, original_ids)
     objective = fsum(edge.weight for edge in original_edges)
     if not isclose(
         objective,
@@ -296,14 +293,3 @@ def _epsilon_path_is_better(candidate: EpsilonPath, current: EpsilonPath) -> boo
         candidate.weight == current.weight
         and candidate.original_edge_ids < current.original_edge_ids
     )
-
-
-def _require_unique_proposals(
-    proposal_ids: tuple[int, ...],
-    edge_ids: tuple[int, ...],
-) -> None:
-    if len(set(proposal_ids)) != len(proposal_ids):
-        raise EpsilonNormalizationError(
-            "one original graph path repeats a matched proposal ID "
-            f"(edge_ids={edge_ids})"
-        )

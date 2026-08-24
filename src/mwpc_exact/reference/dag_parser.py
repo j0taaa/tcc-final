@@ -339,10 +339,6 @@ def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
     )
     if len(set(path_edges)) != len(path_edges):
         raise DagCertificateReconstructionError("reconstructed path repeats an edge")
-    if len(set(selected_ids)) != len(selected_ids):
-        raise DagCertificateReconstructionError(
-            "reconstructed path repeats a matched proposal ID"
-        )
     objective = fsum(edge_by_id[edge_id].weight for edge_id in path_edges)
     if not isclose(objective, root_score, rel_tol=1e-12, abs_tol=1e-12):
         raise DagCertificateReconstructionError(
@@ -392,8 +388,6 @@ def validate_dag_certificate(
     if current not in graph.final_node_ids:
         return False
     if tuple(selected_ids) != certificate.selected_proposal_ids:
-        return False
-    if len(set(selected_ids)) != len(selected_ids):
         return False
     if not isclose(
         fsum(weights), certificate.objective_value, rel_tol=1e-12, abs_tol=1e-12

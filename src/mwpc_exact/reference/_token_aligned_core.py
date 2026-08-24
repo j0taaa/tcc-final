@@ -338,8 +338,6 @@ def reconstruct_cky_certificate(
         return recomputed
 
     root_score = visit(*chart.root_key)
-    if len(set(selected_ids)) != len(selected_ids):
-        raise CertificateReconstructionError("reconstructed proposal IDs contain duplicates")
     try:
         selected_proposals = tuple(proposal_by_id[item] for item in selected_ids)
     except KeyError as exc:

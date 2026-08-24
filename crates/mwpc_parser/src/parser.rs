@@ -921,6 +921,45 @@ mod tests {
     }
 
     #[test]
+    fn certificate_preserves_repeated_proposal_id_occurrences() {
+        let graph = WeightedTerminalDag::new(
+            vec![0, 1, 2],
+            0,
+            vec![2],
+            vec![
+                TerminalEdge::new(
+                    7,
+                    0,
+                    1,
+                    TerminalLabel::Text("x".to_owned()),
+                    2.0,
+                    None,
+                    vec![100],
+                )
+                .unwrap(),
+                TerminalEdge::new(
+                    8,
+                    1,
+                    2,
+                    TerminalLabel::Text("y".to_owned()),
+                    7.0,
+                    None,
+                    vec![100],
+                )
+                .unwrap(),
+            ],
+        )
+        .unwrap();
+
+        let result = solve(&pair_grammar(), &graph).unwrap();
+
+        assert_eq!(
+            result.certificate.unwrap().selected_proposal_ids,
+            vec![100, 100]
+        );
+    }
+
+    #[test]
     fn corrupted_backpointer_is_rejected_during_reconstruction() {
         let graph = WeightedTerminalDag::new(
             vec![0, 1, 2],

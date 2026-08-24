@@ -66,6 +66,13 @@ def _stable_ids(value: object, field_name: str, *, allow_empty: bool) -> tuple[i
     return ids
 
 
+def _id_occurrences(value: object, field_name: str) -> tuple[int, ...]:
+    ids = _int_tuple(value, field_name)
+    if any(stable_id < 0 for stable_id in ids):
+        raise ValueError(f"{field_name} must be non-negative")
+    return ids
+
+
 TerminalLabel: TypeAlias = int | str
 
 
@@ -379,11 +386,7 @@ class TokenArc:
         object.__setattr__(
             self,
             "matched_proposal_ids",
-            _stable_ids(
-                self.matched_proposal_ids,
-                "matched_proposal_ids",
-                allow_empty=True,
-            ),
+            _id_occurrences(self.matched_proposal_ids, "matched_proposal_ids"),
         )
 
 
@@ -421,11 +424,7 @@ class TerminalEdge:
         object.__setattr__(
             self,
             "matched_proposal_ids",
-            _stable_ids(
-                self.matched_proposal_ids,
-                "matched_proposal_ids",
-                allow_empty=True,
-            ),
+            _id_occurrences(self.matched_proposal_ids, "matched_proposal_ids"),
         )
 
 
@@ -454,11 +453,7 @@ class EpsilonEdge:
         object.__setattr__(
             self,
             "matched_proposal_ids",
-            _stable_ids(
-                self.matched_proposal_ids,
-                "matched_proposal_ids",
-                allow_empty=True,
-            ),
+            _id_occurrences(self.matched_proposal_ids, "matched_proposal_ids"),
         )
 
 
@@ -540,11 +535,9 @@ class ExactCommitResult:
                 ),
             )
 
-        selected_ids = _stable_ids(
-            self.selected_proposal_ids,
-            "selected_proposal_ids",
-            allow_empty=True,
-        )
+        selected_ids = _int_tuple(self.selected_proposal_ids, "selected_proposal_ids")
+        if any(proposal_id < 0 for proposal_id in selected_ids):
+            raise ValueError("selected_proposal_ids must be non-negative")
         witness_token_ids = _int_tuple(self.witness_token_ids, "witness_token_ids")
         if any(token_id < 0 for token_id in witness_token_ids):
             raise ValueError("witness_token_ids must be non-negative")

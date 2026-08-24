@@ -129,6 +129,15 @@ def test_validator_detects_corrupted_selected_proposal_ids(certificate_case) -> 
     assert ValidationCode.SELECTED_PROPOSALS_MISMATCH in validation_codes(report)
 
 
+def test_validator_compares_selected_proposal_multiplicity(certificate_case) -> None:
+    result, scope, canvas, proposals, graph = certificate_case
+    corrupted = replace(result, selected_proposal_ids=(0, 0))
+
+    report = validate_case(corrupted, scope, canvas, proposals, graph)
+
+    assert ValidationCode.SELECTED_PROPOSALS_MISMATCH in validation_codes(report)
+
+
 def test_validator_detects_corrupted_graph_path(certificate_case) -> None:
     result, scope, canvas, proposals, graph = certificate_case
     corrupted = replace(
