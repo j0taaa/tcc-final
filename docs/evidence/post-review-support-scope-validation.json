@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "validation": "post_review_support_scope_and_correctness_gates",
+  "validated_commit": "8d25dcdbb9837295c13166bc43fc062a306b6ac3",
+  "validated_tree": "449072f4bd20cbd8c49722359aa36f8955e8c294",
+  "pull_requests": [
+    "https://github.com/j0taaa/tcc-final/pull/1",
+    "https://github.com/j0taaa/tcc-final/pull/2"
+  ],
+  "workflow_runs": {
+    "bootstrap_integrity": {
+      "run_id": 32678215370,
+      "conclusion": "success"
+    },
+    "project_checks": {
+      "run_id": 32678215375,
+      "job_id": 97290115022,
+      "conclusion": "success",
+      "ruff": "success",
+      "mypy": {
+        "conclusion": "success",
+        "source_files_checked": 16
+      },
+      "pytest": {
+        "conclusion": "success",
+        "passed": 148,
+        "skipped": 1,
+        "skip_reason": "The optional pinned EPIC Rust binding is not built in the lightweight CI environment."
+      }
+    },
+    "m3_extended_correctness": {
+      "run_id": 32678215360,
+      "job_id": 97290114742,
+      "conclusion": "success",
+      "config_path": "configs/exact_commit/m3_differential.toml",
+      "config_sha256": "d68e8e8890890d0f18604a12351e2a05ff40dd90b106f501206c07c960db3d86",
+      "python_version": "3.11.16",
+      "exactness_scope": "exact_on_support",
+      "support_policy": "generated_explicit_per_position",
+      "case_count": 2000,
+      "passed_cases": 2000,
+      "failed_cases": 0,
+      "status_counts": {
+        "optimal": 1500,
+        "infeasible_on_support": 500
+      },
+      "property_checks": {
+        "three_way_agreement": 10000,
+        "certificate_validation": 23538,
+        "support_monotonicity": 2000,
+        "proposal_removal": 2000,
+        "fixed_position": 2000
+      }
+    }
+  },
+  "scope_note": "The randomized campaign covers the configured tiny finite instance families and is an executable regression gate, not a substitute for the formal proof or a claim over every CFG and support shape."
+}
