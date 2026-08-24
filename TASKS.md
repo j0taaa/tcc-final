@@ -253,18 +253,21 @@ reports the pre-existing upstream formatting differences and was not changed.
 
 **Depends on:** T500
 
-- [ ] Implement terminal initialization.
-- [ ] Implement indexed binary combinations.
-- [ ] Avoid scanning impossible triples where straightforward indexing can eliminate them.
-- [ ] Preserve deterministic update order.
-- [ ] Return explicit infeasibility.
+- [x] Implement terminal initialization.
+- [x] Implement indexed binary combinations.
+- [x] Avoid scanning impossible triples where straightforward indexing can eliminate them.
+- [x] Preserve deterministic update order.
+- [x] Return explicit infeasibility.
 
 **Acceptance criteria**
 
-- [ ] Rust canonical examples match Python reference scores.
-- [ ] No panic occurs for valid infeasible inputs.
+- [x] Rust canonical examples match Python reference scores.
+- [x] No panic occurs for valid infeasible inputs.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit `a3f9650cfec8bd9e9e5bc7db707c69840d7c80e4`;
+crate-local `cargo fmt --check` passed; `cargo test --manifest-path
+crates/mwpc_parser/Cargo.toml` (`10 passed`), including the canonical score,
+parallel-edge maximum, indexed-relaxation, and valid-infeasible cases.
 
 ## T502 — Implement Rust backtracking and provenance
 
