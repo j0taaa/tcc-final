@@ -8,8 +8,6 @@ and records a canonical support fingerprint on every returned result.
 
 from __future__ import annotations
 
-import hashlib
-import json
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import replace
 
@@ -35,6 +33,7 @@ from mwpc_exact.reference.lexical import (
     LexicalRewardTable,
     build_lexical_rewards,
 )
+from mwpc_exact.support import support_rows_sha256
 from mwpc_exact.types import ExactCommitResult, ExactnessScope, Proposal, SupportKind
 
 __all__ = [
@@ -107,16 +106,12 @@ def solve_token_aligned(
         per_position_support=per_position_support,
     )
     represented_rows = _represented_support_rows(lexical)
-    encoded_rows = json.dumps(
-        [list(row) for row in represented_rows],
-        separators=(",", ":"),
-    ).encode("utf-8")
     diagnostics: dict[str, object] = {
         **dict(result.diagnostics),
         "support_kind": exactness_scope.kind.value,
         "represented_support_token_ids": [list(row) for row in represented_rows],
         "represented_support_row_sizes": [len(row) for row in represented_rows],
-        "represented_support_sha256": hashlib.sha256(encoded_rows).hexdigest(),
+        "represented_support_sha256": support_rows_sha256(represented_rows),
     }
     return replace(result, diagnostics=diagnostics)
 

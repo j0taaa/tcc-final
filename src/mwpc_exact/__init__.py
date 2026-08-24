@@ -1,5 +1,13 @@
 """Exact maximum-weight parallel commitment research package."""
 
+from mwpc_exact.support import (
+    PerPositionSupport,
+    SupportInputSource,
+    SupportPolicy,
+    build_per_position_support,
+    canonical_support_rows_json,
+    support_rows_sha256,
+)
 from mwpc_exact.tokenizer_bytes import (
     BYTE_LEVEL_ALPHABET,
     CompositionalByteLevelAdapter,
@@ -38,9 +46,12 @@ __all__ = [
     "ExactCommitResult",
     "ExactnessScope",
     "GrammarRecognizer",
+    "PerPositionSupport",
     "Proposal",
     "SolveStatus",
+    "SupportInputSource",
     "SupportKind",
+    "SupportPolicy",
     "TerminalEdge",
     "TokenArc",
     "TokenizerWitnessValidator",
@@ -50,6 +61,9 @@ __all__ = [
     "ValidationReport",
     "WeightedTerminalDAG",
     "aggregate_proposals",
+    "build_per_position_support",
     "byte_level_piece_to_bytes",
+    "canonical_support_rows_json",
+    "support_rows_sha256",
     "validate_exact_commit_certificate",
 ]
