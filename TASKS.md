@@ -403,19 +403,37 @@ documented upstream skips. The submodule remained clean at
 
 **Depends on:** M5 gate
 
-- [ ] Identify candidate `[MODEL_ID]` and tokenizer revision.
-- [ ] Determine whether token-to-byte emission is compositional.
-- [ ] Test random sequences, whitespace, Unicode, byte fallback, added tokens, and special tokens.
-- [ ] Do not assume concatenated `decode([id])` equals full decoding.
-- [ ] Choose a compositional byte adapter, stateful detokenizer, or different model.
-- [ ] Record the decision in `docs/decisions/0006-tokenizer-byte-semantics.md`.
+- [x] Identify candidate `[MODEL_ID]` and tokenizer revision.
+- [x] Determine whether token-to-byte emission is compositional.
+- [x] Test random sequences, whitespace, Unicode, byte fallback, added tokens, and special tokens.
+- [x] Do not assume concatenated `decode([id])` equals full decoding.
+- [x] Choose a compositional byte adapter, stateful detokenizer, or different model.
+- [x] Record the decision in `docs/decisions/0006-tokenizer-byte-semantics.md`.
 
 **Acceptance criteria**
 
-- [ ] The exact mapping used by the lattice is stated and tested.
-- [ ] Unsupported tokens are identified explicitly.
+- [x] The exact mapping used by the lattice is stated and tested.
+- [x] Unsupported tokens are identified explicitly.
 
-**Evidence:** `[model/tokenizer revision, tests, ADR]`
+**Evidence:** implementation commit `0f49153610058c6e0918d79c1f3802c5031da6dd`
+pins `GSAI-ML/LLaDA-8B-Instruct` and tokenizer revision
+`08b83a6feb34df1a6011b80c3c00c7563e963b07`. ADR
+`docs/decisions/0006-tokenizer-byte-semantics.md` defines the exact inverse
+GPT-2 ByteLevel raw-byte mapping and rejects all added IDs `126080..126348`
+from ordinary grammar emission; the versioned audit lists each of those 269
+IDs individually. `HF_HOME=.cache/huggingface .venv/bin/python
+scripts/exact_commit/audit_t600_llada_tokenizer.py --local-files-only` passed
+the entire 126,080-token base vocabulary, all 256 raw byte values, all added
+and special tokens, curated whitespace and Unicode cases, and 20,000 seeded
+random sequences, producing
+`docs/evidence/t600-llada-tokenizer-audit.json`. The evidence preserves the
+deterministic `[47681, 102]` regression showing full decode `"👩"` versus
+concatenated singleton decode `"��"`. `python -m pytest -q
+tests/exact_commit/test_tokenizer_bytes.py
+tests/exact_commit/test_t600_tokenizer_audit_evidence.py` passed 15 tests;
+`make check` passed the upstream pin, Ruff, strict MyPy over 24 source files,
+12 unit tests, and 199 exact-commit tests; `make paper` produced the 15-page
+PDF.
 
 ## T601 — Implement per-position support construction
 

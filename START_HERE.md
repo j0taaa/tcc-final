@@ -12,18 +12,21 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-M0 through M5 are complete. The pinned EPIC baseline has been reproduced, the
-scientific contracts are frozen, and both the token-aligned and generic
-weighted terminal-DAG Python solvers agree with their independent exhaustive
-oracles over the configured deterministic campaigns. Weighted epsilon edges
-are normalized with reconstructible original-edge provenance. The independently
-implemented Rust production parser and thin PyO3 binding agree with Python and
-brute force on all configured M5 normal and extended cases. No tokenizer-aware
-lattice, runtime benchmark, or end-to-end dLLM result has been asserted.
+M0 through M5 and T600 are complete. The pinned EPIC baseline has been
+reproduced, the scientific contracts are frozen, and both the token-aligned and
+generic weighted terminal-DAG Python solvers agree with their independent
+exhaustive oracles over the configured deterministic campaigns. Weighted
+epsilon edges are normalized with reconstructible original-edge provenance.
+The independently implemented Rust production parser and thin PyO3 binding
+agree with Python and brute force on all configured M5 normal and extended
+cases. The pinned LLaDA tokenizer audit defines a compositional raw ByteLevel
+adapter for ordinary tokens and explicitly excludes added control tokens. No
+token lattice, runtime benchmark, or end-to-end dLLM result has been asserted.
 
-The next required task is `T600`: audit a candidate model/tokenizer at an exact
-revision and choose a tested token-to-byte semantics. Preserve the completed
-evidence unless a regression or explicit review finding invalidates it.
+The next required task is `T601`: implement deterministic per-position support
+construction with validated exactness metadata and a canonical fingerprint.
+Preserve the completed evidence unless a regression or explicit review finding
+invalidates it.
 
 ## Non-negotiable rules
 
@@ -37,8 +40,9 @@ evidence unless a regression or explicit review finding invalidates it.
 
 ## Definition of the next deliverable
 
-Complete T600's tokenizer/model audit without assuming that concatenated
-per-token decoding equals full-sequence decoding. Record the exact revision,
-Unicode/whitespace/byte-fallback/special-token behavior, unsupported tokens,
-and the chosen compositional or stateful adapter in ADR 0006 before byte-lattice
-implementation begins.
+Complete T601's model-independent support construction. Fixed positions must
+contain exactly their committed token; masked positions must deterministically
+represent their declared full, top-K, or explicit alternatives; ties must be
+stable; and serialized rows plus their exactness scope must have a canonical
+fingerprint. Do not call a partial row `FULL` or silently include unsupported
+token IDs.

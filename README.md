@@ -15,13 +15,15 @@ The project adds an exact, certificate-producing optimizer for choosing the maxi
 
 ## Current implementation status
 
-M0 through M5 are complete: the EPIC baseline and environment are recorded,
-scientific contracts are frozen, and the token-aligned and generic weighted
-terminal-DAG Python solvers agree with independent exhaustive oracles on their
-configured deterministic campaigns. The independent Rust parser and thin PyO3
-binding also agree with Python and brute force on all configured M5 campaigns.
-The next required task is M6/T600. No tokenizer-aware lattice, runtime benchmark,
-or end-to-end model result is claimed yet; implementation-dependent article
+M0 through M5 and T600 are complete: the EPIC baseline and environment are
+recorded, scientific contracts are frozen, and the token-aligned and generic
+weighted terminal-DAG Python solvers agree with independent exhaustive oracles
+on their configured deterministic campaigns. The independent Rust parser and
+thin PyO3 binding also agree with Python and brute force on all configured M5
+campaigns. The pinned LLaDA tokenizer now has an audited compositional raw-byte
+interface for ordinary tokens with added controls rejected explicitly. The
+next required task is M6/T601. No token lattice, runtime benchmark, or
+end-to-end model result is claimed yet; implementation-dependent article
 placeholders remain unchanged.
 
 ## Clone
@@ -67,7 +69,7 @@ Model weights, datasets and Hugging Face caches are never committed.
 
 ```text
 Read START_HERE.md, AGENTS.md, UPSTREAM.md and TASKS.md. Continue from the
-first incomplete required task in dependency order (currently T600). Do not
+first incomplete required task in dependency order (currently T601). Do not
 redo completed milestones or bypass correctness gates. Update task checkboxes
 and Evidence fields only after running the required commands.
 Never invent benchmark values or replace implementation-dependent placeholders.
@@ -77,9 +79,9 @@ and crates, using adapters for EPIC integration.
 
 ## Next concrete target
 
-M5's production-parser gate has passed for the configured finite cases. The
-next target is T600: audit a versioned tokenizer/model interface and establish
-the exact token-to-byte semantics needed by the finite lattice.
+M5's production-parser gate and T600's tokenizer audit have passed. The next
+target is T601: construct deterministic per-position support with fixed-token
+invariants, exactness metadata, canonical serialization, and fingerprints.
 
 ## Directory map
 
