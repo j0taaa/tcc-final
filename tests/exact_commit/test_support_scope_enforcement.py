@@ -80,7 +80,7 @@ def test_valid_full_scope_covers_the_declared_vocabulary() -> None:
 
 
 def test_explicit_support_must_include_fixed_canvas_tokens() -> None:
-    with pytest.raises(ValueError, match="fixed canvas token.*absent"):
+    with pytest.raises(ValueError, match=r"fixed canvas token.*absent"):
         solve_token_aligned(
             grammar=pair_grammar(),
             canvas=(100, None),
