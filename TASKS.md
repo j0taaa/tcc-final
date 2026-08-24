@@ -273,49 +273,63 @@ parallel-edge maximum, indexed-relaxation, and valid-infeasible cases.
 
 **Depends on:** T501
 
-- [ ] Store terminal and binary backpointers.
-- [ ] Reconstruct terminal edge IDs in path order.
-- [ ] Reconstruct terminal labels.
-- [ ] Preserve token/proposal provenance supplied on edges.
-- [ ] Recompute the result score before returning.
+- [x] Store terminal and binary backpointers.
+- [x] Reconstruct terminal edge IDs in path order.
+- [x] Reconstruct terminal labels.
+- [x] Preserve token/proposal provenance supplied on edges.
+- [x] Recompute the result score before returning.
 
 **Acceptance criteria**
 
-- [ ] Returned edge path is continuous start-to-final.
-- [ ] Independent Python validator accepts converted certificates.
+- [x] Returned edge path is continuous start-to-final.
+- [x] Independent Python validator accepts converted certificates.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit `236417fa64004d2001af2569dadd553d0bbe3c2f`
+and repeated-provenance correction commit
+`9c56a94673a9af1a610e5bcf37c6a67d1bb2c50e`; the Rust reconstruction tests
+cover path order, terminal labels, graph/token edge IDs, repeated proposal
+provenance, independent score recomputation, and corrupted backpointers.
+Converted Rust certificates passed the independent Python validator in
+`tests/exact_commit/test_rust_binding.py` and all `2,500` configured T506 cases.
 
 ## T503 — Add timeout and diagnostic handling
 
 **Depends on:** T501
 
-- [ ] Implement deadline checks at bounded intervals.
-- [ ] Return `TIMEOUT`, never `INFEASIBLE`, after deadline.
-- [ ] Report chart entries, relaxations, graph size, grammar size, and elapsed parser time.
-- [ ] Add a deterministic timeout test hook without wall-clock flakiness.
+- [x] Implement deadline checks at bounded intervals.
+- [x] Return `TIMEOUT`, never `INFEASIBLE`, after deadline.
+- [x] Report chart entries, relaxations, graph size, grammar size, and elapsed parser time.
+- [x] Add a deterministic timeout test hook without wall-clock flakiness.
 
 **Acceptance criteria**
 
-- [ ] Timeout test is reliable.
-- [ ] Partial data is not exposed as an optimal certificate.
+- [x] Timeout test is reliable.
+- [x] Partial data is not exposed as an optimal certificate.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** commits `236417fa64004d2001af2569dadd553d0bbe3c2f` and
+`bcd0ab47a2b7f5336665d4d1af05a10a6510d929`; deterministic zero-work timeout
+tests distinguish `TIMEOUT` from infeasibility and assert that objective and
+certificate data are absent. Deadline checks cover bounded parser work and a
+final post-reconstruction check prevents a late `OPTIMAL` result.
 
 ## T504 — Add Rust unit and randomized tests
 
 **Depends on:** T501, T502, T503
 
-- [ ] Port canonical graph fixtures.
-- [ ] Add randomized small DAG tests against an independent oracle.
-- [ ] Cover parallel edges, ties, ambiguity, epsilon-normalization output, and multiple finals.
-- [ ] Run formatting checks.
+- [x] Port canonical graph fixtures.
+- [x] Add randomized small DAG tests against an independent oracle.
+- [x] Cover parallel edges, ties, ambiguity, epsilon-normalization output, and multiple finals.
+- [x] Run formatting checks.
 
 **Acceptance criteria**
 
-- [ ] Rust suite is clean.
+- [x] Rust suite is clean.
 
-**Evidence:** `[commands and summary]`
+**Evidence:** implementation commit `3f074c9a76634783985c9eb4d48348b59fbb4193`;
+`cargo test --manifest-path crates/mwpc_parser/Cargo.toml` passed `17` unit and
+`3` integration tests, including `500` deterministic Rust-only path/Boolean-CYK
+oracle seeds. Crate-local `cargo fmt --check` and strict `cargo clippy
+--all-targets -- -D warnings` passed via `make test-rust-parser`.
 
 ## T505 — Expose the solver through PyO3
 
@@ -323,39 +337,63 @@ parallel-edge maximum, indexed-relaxation, and valid-infeasible cases.
 
 **Target:** `crates/mwpc_parser_py/`
 
-- [ ] Add a Python-visible validated solve function and result conversion.
-- [ ] Convert labels and IDs losslessly.
-- [ ] Release the GIL around the CPU-intensive solve when safe.
-- [ ] Convert Rust status to Python `SolveStatus` without string ambiguity.
-- [ ] Keep bindings thin and avoid duplicating solver logic.
+- [x] Add a Python-visible validated solve function and result conversion.
+- [x] Convert labels and IDs losslessly.
+- [x] Release the GIL around the CPU-intensive solve when safe.
+- [x] Convert Rust status to Python `SolveStatus` without string ambiguity.
+- [x] Keep bindings thin and avoid duplicating solver logic.
 
 **Acceptance criteria**
 
-- [ ] Binding builds in release mode.
-- [ ] Malformed Python inputs produce clear exceptions.
+- [x] Binding builds in release mode.
+- [x] Malformed Python inputs produce clear exceptions.
 
-**Evidence:** `[build/test commands]`
+**Evidence:** implementation commit `d64d43326b231eaab988e109b808ab56f98174a2`;
+`(cd crates/mwpc_parser_py && ../../.venv/bin/maturin develop --release)` built
+and installed the CPython 3.11 release binding. `tests/exact_commit/test_rust_binding.py`
+passes lossless byte/string labels, stable IDs and provenance, actual Python
+`SolveStatus` values, timeout separation, repeated proposal occurrences, and
+clear malformed-input errors. Rebuild and Rust checks are documented as
+`make bootstrap-rust-parser` and `make test-rust-parser`.
 
 ## T506 — Add Python/Rust differential tests
 
 **Depends on:** T505
 
-- [ ] Run the same serialized random instances through both solvers.
-- [ ] Compare status, objective, certificate validity, and path reward.
-- [ ] Permit different optimum witnesses on ties.
-- [ ] Save any mismatch fixture automatically.
+- [x] Run the same serialized random instances through both solvers.
+- [x] Compare status, objective, certificate validity, and path reward.
+- [x] Permit different optimum witnesses on ties.
+- [x] Save any mismatch fixture automatically.
 
 **Acceptance criteria**
 
-- [ ] 100% agreement on the configured normal and extended campaigns.
+- [x] 100% agreement on the configured normal and extended campaigns.
 
-**Evidence:** `[commands, case counts, artifacts]`
+**Evidence:** campaign implementation commit
+`2c64c324c7eb695f9587f961963dba2d5d5e1dca`; release binding rebuilt and
+`python scripts/exact_commit/run_m5_rust_differential.py` passed `500/500`
+normal and `2,000/2,000` extended cases with zero failures. Versioned summaries:
+`docs/evidence/m5-rust-differential-normal-summary.json` and
+`docs/evidence/m5-rust-differential-extended-summary.json`; configuration:
+`configs/exact_commit/m5_rust_differential.toml`. Ties compare objective and
+certificate validity rather than requiring identical witnesses; failures emit
+the serialized M4 input and separate metadata under ignored `artifacts/`.
 
 **M5 production-parser gate — blocking**
 
-- [ ] Python, Rust, and brute force agree.
-- [ ] Binding rebuild is documented.
-- [ ] Existing EPIC tests remain green or pre-existing failures are documented.
+- [x] Python, Rust, and brute force agree.
+- [x] Binding rebuild is documented.
+- [x] Existing EPIC tests remain green or pre-existing failures are documented.
+
+**Evidence:** the T506 summaries record zero cross-language/oracle mismatches;
+`python -m pytest -q` passed `197` tests; `make check` passed the upstream pin,
+lint, strict typing, `12` unit tests, and `184` exact-commit tests; `make
+test-rust-parser` passed formatting, `20` Rust tests, and strict Clippy. The
+pinned EPIC Rust suite passed `63` tests with `1` ignored and its pre-existing
+compiler warnings; the targeted EPIC Python regressions passed `19` with `4`
+documented upstream skips. The submodule remained clean at
+`5b1b31098f34ed3691d2a9f4aae14fdf5839d072`; `make paper` produced the
+15-page PDF.
 
 ---
 

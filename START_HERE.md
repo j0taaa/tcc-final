@@ -12,16 +12,17 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-M0 through M4 are complete. The pinned EPIC baseline has been reproduced, the
+M0 through M5 are complete. The pinned EPIC baseline has been reproduced, the
 scientific contracts are frozen, and both the token-aligned and generic
 weighted terminal-DAG Python solvers agree with their independent exhaustive
 oracles over the configured deterministic campaigns. Weighted epsilon edges
-are normalized with reconstructible original-edge provenance. No tokenizer,
-Rust-production-parser, runtime benchmark, or end-to-end dLLM result has been
-asserted.
+are normalized with reconstructible original-edge provenance. The independently
+implemented Rust production parser and thin PyO3 binding agree with Python and
+brute force on all configured M5 normal and extended cases. No tokenizer-aware
+lattice, runtime benchmark, or end-to-end dLLM result has been asserted.
 
-The next required task is `T500`: add independently implemented Rust weighted
-graph and result contracts under `crates/mwpc_parser/`. Preserve the completed
+The next required task is `T600`: audit a candidate model/tokenizer at an exact
+revision and choose a tested token-to-byte semantics. Preserve the completed
 evidence unless a regression or explicit review finding invalidates it.
 
 ## Non-negotiable rules
@@ -36,7 +37,8 @@ evidence unless a regression or explicit review finding invalidates it.
 
 ## Definition of the next deliverable
 
-Implement M5's Rust production parser and thin PyO3 binding without copying the
-Python reference algorithm or modifying the pinned EPIC baseline. Rust must
-validate inputs, reconstruct stable certificate provenance, handle timeouts as
-distinct outcomes, and agree with both Python and brute force before M6 begins.
+Complete T600's tokenizer/model audit without assuming that concatenated
+per-token decoding equals full-sequence decoding. Record the exact revision,
+Unicode/whitespace/byte-fallback/special-token behavior, unsupported tokens,
+and the chosen compositional or stateful adapter in ADR 0006 before byte-lattice
+implementation begins.

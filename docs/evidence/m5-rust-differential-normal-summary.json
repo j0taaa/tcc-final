@@ -1,0 +1,44 @@
+{
+  "campaign": "m5_rust_differential",
+  "campaign_name": "normal",
+  "case_count": 500,
+  "failed_cases": 0,
+  "failures": [],
+  "feature_case_counts": {
+    "epsilon_chain": 500,
+    "epsilon_normalization_output": 500,
+    "forced_infeasible_intersection": 100,
+    "integer_edge_rewards": 500,
+    "multiple_final_states": 250,
+    "parallel_edges": 500,
+    "same_terminal_distinct_token_provenance": 500
+  },
+  "metadata": {
+    "binding_crate_version": "0.1.0",
+    "config_path": "configs/exact_commit/m5_rust_differential.toml",
+    "config_sha256": "e39d895e14c016537a003ecab00555af172bfa533590deb2fb1143086839a752",
+    "exactness_scope": "exact_on_represented_graph",
+    "generator_schema_version": "1",
+    "git_commit": "bcd0ab47a2b7f5336665d4d1af05a10a6510d929",
+    "model_revision": "not_applicable",
+    "python_version": "3.11.16",
+    "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+    "support_policy": "explicit_epsilon_normalized_weighted_terminal_dag",
+    "tokenizer_revision": "not_applicable"
+  },
+  "passed_cases": 500,
+  "property_checks": {
+    "certificate_validation": 993,
+    "nonoptimal_payload": 169,
+    "objective_agreement": 331,
+    "rust_path_reward": 331,
+    "rust_token_provenance": 331,
+    "status_agreement": 500
+  },
+  "schema_version": 1,
+  "seed_start": 0,
+  "status_counts": {
+    "infeasible_on_support": 169,
+    "optimal": 331
+  }
+}

@@ -15,13 +15,14 @@ The project adds an exact, certificate-producing optimizer for choosing the maxi
 
 ## Current implementation status
 
-M0 through M4 are complete: the EPIC baseline and environment are recorded,
+M0 through M5 are complete: the EPIC baseline and environment are recorded,
 scientific contracts are frozen, and the token-aligned and generic weighted
 terminal-DAG Python solvers agree with independent exhaustive oracles on their
-configured deterministic campaigns. The next required task is M5/T500. No
-tokenizer-aware, Rust-production-parser, runtime benchmark, or end-to-end model
-result is claimed yet; implementation-dependent article placeholders remain
-unchanged.
+configured deterministic campaigns. The independent Rust parser and thin PyO3
+binding also agree with Python and brute force on all configured M5 campaigns.
+The next required task is M6/T600. No tokenizer-aware lattice, runtime benchmark,
+or end-to-end model result is claimed yet; implementation-dependent article
+placeholders remain unchanged.
 
 ## Clone
 
@@ -46,6 +47,14 @@ source .venv/bin/activate
 make check
 ```
 
+Build and verify the independent Rust production parser binding with:
+
+```bash
+make bootstrap-rust-parser
+make test-rust-parser
+make test-m5-differential
+```
+
 The EPIC model experiments and CUDA setup are intentionally separate from the lightweight correctness environment:
 
 ```bash
@@ -58,7 +67,7 @@ Model weights, datasets and Hugging Face caches are never committed.
 
 ```text
 Read START_HERE.md, AGENTS.md, UPSTREAM.md and TASKS.md. Continue from the
-first incomplete required task in dependency order (currently T500). Do not
+first incomplete required task in dependency order (currently T600). Do not
 redo completed milestones or bypass correctness gates. Update task checkboxes
 and Evidence fields only after running the required commands.
 Never invent benchmark values or replace implementation-dependent placeholders.
@@ -68,16 +77,15 @@ and crates, using adapters for EPIC integration.
 
 ## Next concrete target
 
-M4's generic graph correctness gate has passed for the configured finite
-cases. The next target is M5: an independently implemented Rust production
-parser and thin PyO3 binding whose scores and certificates agree with the
-Python solver and brute force.
+M5's production-parser gate has passed for the configured finite cases. The
+next target is T600: audit a versioned tokenizer/model interface and establish
+the exact token-to-byte semantics needed by the finite lattice.
 
 ## Directory map
 
 ```text
 src/mwpc_exact/            Python contracts, reference solver and orchestration
-crates/                    New Rust parser and PyO3 binding (created in M5)
+crates/                    Independent Rust parser and thin PyO3 binding
 vendor/EPIC-Decoding/      Read-only pinned EPIC baseline
 paper/                     SBC LaTeX article
 configs/                   Reproducible experiment configurations
