@@ -31,3 +31,28 @@ jobs:
         run: python -m mypy src
       - name: Unit and exact-commit tests
         run: python -m pytest -q tests/unit tests/exact_commit
+
+  rust-correctness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Bootstrap production Rust binding
+        run: make bootstrap-rust-parser
+      - name: Check Rust crates
+        run: make test-rust-parser
+      - name: Run Rust-backed differential tests
+        run: |
+          .venv/bin/python -m pytest -q \
+            tests/exact_commit/test_rust_binding.py \
+            tests/exact_commit/test_rust_differential.py \
+            tests/exact_commit/test_finite_solver.py \
+            tests/exact_commit/test_finite_differential.py
+      - name: Run normal M6 finite-lattice campaign
+        run: |
+          .venv/bin/python scripts/exact_commit/run_m6_finite_lattice_differential.py \
+            --campaign normal
