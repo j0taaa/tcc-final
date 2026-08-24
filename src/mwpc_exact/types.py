@@ -378,6 +378,8 @@ class TokenArc:
         if not isinstance(self.emitted_bytes, (bytes, bytearray)):
             raise TypeError("emitted_bytes must be bytes")
         object.__setattr__(self, "emitted_bytes", bytes(self.emitted_bytes))
+        if not self.emitted_bytes:
+            raise ValueError("empty token emissions are unsupported")
         object.__setattr__(
             self,
             "weight",

@@ -1,5 +1,6 @@
 """Exact maximum-weight parallel commitment research package."""
 
+from mwpc_exact.byte_lattice import ByteLattice, ByteLatticePath, build_byte_lattice
 from mwpc_exact.support import (
     PerPositionSupport,
     SupportInputSource,
@@ -46,6 +47,8 @@ from mwpc_exact.validator import (
 __all__ = [
     "BYTE_LEVEL_ALPHABET",
     "AggregatedProposal",
+    "ByteLattice",
+    "ByteLatticePath",
     "CompositionalByteLevelAdapter",
     "EOSWitnessValidator",
     "EpsilonEdge",
@@ -70,6 +73,7 @@ __all__ = [
     "ValidationReport",
     "WeightedTerminalDAG",
     "aggregate_proposals",
+    "build_byte_lattice",
     "build_per_position_support",
     "build_token_lattice",
     "byte_level_piece_to_bytes",
