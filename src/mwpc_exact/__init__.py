@@ -1,6 +1,17 @@
 """Exact maximum-weight parallel commitment research package."""
 
 from mwpc_exact.byte_lattice import ByteLattice, ByteLatticePath, build_byte_lattice
+from mwpc_exact.eos_lattice import (
+    EOSArc,
+    EOSLattice,
+    EOSLatticePath,
+    EOSMode,
+    EOSPolicy,
+    EOSPolicyViolation,
+    EOSState,
+    TokenRole,
+    build_eos_lattice,
+)
 from mwpc_exact.finite_solver import ExactBackend, solve_exact_commit
 from mwpc_exact.support import (
     PerPositionSupport,
@@ -52,6 +63,13 @@ __all__ = [
     "ByteLattice",
     "ByteLatticePath",
     "CompositionalByteLevelAdapter",
+    "EOSArc",
+    "EOSLattice",
+    "EOSLatticePath",
+    "EOSMode",
+    "EOSPolicy",
+    "EOSPolicyViolation",
+    "EOSState",
     "EOSWitnessValidator",
     "EpsilonEdge",
     "ExactBackend",
@@ -70,6 +88,7 @@ __all__ = [
     "TokenChoice",
     "TokenLattice",
     "TokenLatticePath",
+    "TokenRole",
     "TokenizerWitnessValidator",
     "UnsupportedTokenError",
     "ValidationCode",
@@ -78,6 +97,7 @@ __all__ = [
     "WeightedTerminalDAG",
     "aggregate_proposals",
     "build_byte_lattice",
+    "build_eos_lattice",
     "build_per_position_support",
     "build_token_lattice",
     "byte_level_piece_to_bytes",
