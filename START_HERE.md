@@ -12,7 +12,7 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-M0 through M5 and T600--T602 are complete. The pinned EPIC baseline has been
+M0 through M5 and T600--T603 are complete. The pinned EPIC baseline has been
 reproduced, the scientific contracts are frozen, and both the token-aligned and
 generic weighted terminal-DAG Python solvers agree with their independent
 exhaustive oracles over the configured deterministic campaigns. Weighted
@@ -25,11 +25,14 @@ Per-position support construction deterministically handles full, top-K, and
 explicit rows with fixed-slot validation and canonical fingerprints. The
 finite layered token lattice now preserves every represented token choice,
 absolute position, aggregate reward, and positive proposal provenance while
-making every complete path consume exactly the physical canvas slots. No byte
-lattice, runtime benchmark, or end-to-end dLLM result has been asserted.
+making every complete path consume exactly the physical canvas slots. Its
+byte expansion uses private raw-byte paths with stable token identity and
+single reward attachment, explicitly rejecting unsupported or empty-emission
+tokens. No byte-grammar fixture, runtime benchmark, or end-to-end dLLM result
+has been asserted.
 
-The next required task is `T603`: expand each token choice into its exact
-byte-labeled path using the audited compositional tokenizer adapter.
+The next required task is `T604`: add precisely documented byte-level grammar
+fixtures and valid/invalid corpora for parser integration.
 Preserve the completed evidence unless a regression or explicit review finding
 invalidates it.
 
@@ -45,8 +48,8 @@ invalidates it.
 
 ## Definition of the next deliverable
 
-Complete T603's token-to-byte expansion without collapsing token provenance.
-Each token choice must expand to its audited exact byte emission, retain its
-stable token-edge identity, and attach reward/proposal provenance exactly once
-regardless of byte length. Multi-byte, byte-fallback, empty-emission, special,
-and same-bytes/different-token cases must follow the explicit adapter policy.
+Complete T604's byte-level grammar fixtures. Add an arithmetic-expression
+grammar and a small DSL grammar, plus a clearly named JSON subset if kept in
+scope. Document the exact accepted syntax and deliberate omissions, provide
+valid/invalid byte corpora, and verify every fixture classification with the
+independent Boolean parser.

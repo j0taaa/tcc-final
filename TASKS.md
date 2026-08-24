@@ -511,20 +511,37 @@ tests; `make paper` produced the 15-page PDF.
 
 **Target:** `src/mwpc_exact/byte_lattice.py`
 
-- [ ] Expand each token path into exact byte-labeled edges.
-- [ ] Attach reward/proposal provenance exactly once.
-- [ ] Preserve token-edge identity through expansion.
-- [ ] Handle multi-byte UTF-8 and byte fallback.
-- [ ] Define behavior for empty-emission and special tokens.
-- [ ] Avoid prefix sharing in the first version unless provenance is proven safe.
+- [x] Expand each token path into exact byte-labeled edges.
+- [x] Attach reward/proposal provenance exactly once.
+- [x] Preserve token-edge identity through expansion.
+- [x] Handle multi-byte UTF-8 and byte fallback.
+- [x] Define behavior for empty-emission and special tokens.
+- [x] Avoid prefix sharing in the first version unless provenance is proven safe.
 
 **Acceptance criteria**
 
-- [ ] Concatenated bytes of every enumerated tiny path equal the adapter's full detokenization.
-- [ ] Score is independent of token byte length.
-- [ ] Distinct token IDs with identical bytes remain distinguishable.
+- [x] Concatenated bytes of every enumerated tiny path equal the adapter's full detokenization.
+- [x] Score is independent of token byte length.
+- [x] Distinct token IDs with identical bytes remain distinguishable.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`cecebd706693901baacaca834f146e82480eb201`. The dependency-free
+`src/mwpc_exact/byte_lattice.py` maps every canonical token choice through the
+audited `CompositionalByteLevelAdapter` into a private, non-empty chain of
+integer byte-labeled `TerminalEdge`s. Every byte edge retains the stable token
+edge ID; only the first byte carries the token's aggregate reward and positive
+proposal provenance. Canonical intermediate nodes and edge IDs, one-to-one
+token/terminal edge maps, independent complete-path validation, and
+JSON-compatible diagnostics make the construction replayable. Prefix and
+identical-byte alternatives never share internal states. Adapter/scope
+vocabulary mismatches, unsupported controls/specials, and empty emissions fail
+explicitly. `python -m pytest -q tests/exact_commit/test_byte_lattice.py`
+passed 11 deterministic tests, including independent terminal-DAG enumeration,
+multi-byte UTF-8 fragments, raw byte `0xff`, fixed slots, score invariance,
+same-bytes/different-token provenance, and duplicate-reward rejection. `make
+check` passed the upstream pin, Ruff, strict MyPy over 27 source files, 12 unit
+tests, and 252 exact-commit tests; `python -m pytest -q` passed all 265 tests;
+`make paper` produced the 15-page PDF.
 
 ## T604 — Add byte-level grammar fixtures
 

@@ -15,7 +15,7 @@ The project adds an exact, certificate-producing optimizer for choosing the maxi
 
 ## Current implementation status
 
-M0 through M5 and T600--T601 are complete: the EPIC baseline and environment are
+M0 through M5 and T600--T603 are complete: the EPIC baseline and environment are
 recorded, scientific contracts are frozen, and the token-aligned and generic
 weighted terminal-DAG Python solvers agree with independent exhaustive oracles
 on their configured deterministic campaigns. The independent Rust parser and
@@ -23,9 +23,11 @@ thin PyO3 binding also agree with Python and brute force on all configured M5
 campaigns. The pinned LLaDA tokenizer now has an audited compositional raw-byte
 interface for ordinary tokens with added controls rejected explicitly.
 Deterministic full, top-K, and explicit support construction is also complete,
-including fixed-slot enforcement and canonical support fingerprints. The next
-required task is M6/T603. No byte lattice, runtime benchmark, or
-end-to-end model result is claimed yet; implementation-dependent article
+including fixed-slot enforcement and canonical support fingerprints. The
+finite token lattice now expands into private raw-byte paths without losing
+token or proposal provenance. The next required task is M6/T604. No byte-level
+grammar fixtures, runtime benchmark, or end-to-end model result are claimed
+yet; implementation-dependent article
 placeholders remain unchanged.
 
 ## Clone
@@ -71,7 +73,7 @@ Model weights, datasets and Hugging Face caches are never committed.
 
 ```text
 Read START_HERE.md, AGENTS.md, UPSTREAM.md and TASKS.md. Continue from the
-first incomplete required task in dependency order (currently T602). Do not
+first incomplete required task in dependency order (currently T604). Do not
 redo completed milestones or bypass correctness gates. Update task checkboxes
 and Evidence fields only after running the required commands.
 Never invent benchmark values or replace implementation-dependent placeholders.
@@ -81,10 +83,10 @@ and crates, using adapters for EPIC integration.
 
 ## Next concrete target
 
-M5's production-parser gate and T600--T602 have passed. The next target is
-T603: expand the finite token lattice through the audited raw-byte tokenizer
-adapter while preserving stable token identity and attaching reward/proposal
-provenance exactly once per token choice.
+M5's production-parser gate and T600--T603 have passed. The next target is
+T604: add precisely scoped byte-level grammar fixtures, documented syntax, and
+valid/invalid corpora for arithmetic expressions and a small DSL (plus a
+clearly named JSON subset if manageable).
 
 ## Directory map
 
