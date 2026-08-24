@@ -671,18 +671,30 @@ tests, and 281 exact-commit tests; `python -m pytest -q` passed all 294 tests;
 
 **Depends on:** M6 gate
 
-- [ ] Inspect `[MODEL_ID]` special-token behavior.
-- [ ] Create `docs/decisions/0007-eos-pad-semantics.md`.
-- [ ] Define whether EOS is required, optional, or absent in each task.
-- [ ] Define legal tokens after EOS.
-- [ ] Define whether PAD emits no grammar symbol.
-- [ ] Define the physical slot count and effective content endpoint.
+- [x] Inspect `GSAI-ML/LLaDA-8B-Instruct` special-token behavior.
+- [x] Create `docs/decisions/0007-eos-pad-semantics.md`.
+- [x] Define whether EOS is required, optional, or absent in each task.
+- [x] Define legal tokens after EOS.
+- [x] Define whether PAD emits no grammar symbol.
+- [x] Define the physical slot count and effective content endpoint.
 
 **Acceptance criteria**
 
-- [ ] Every path has unambiguous token and content-length semantics.
+- [x] Every path has unambiguous token and content-length semantics.
 
-**Evidence:** `[ADR path]`
+**Evidence:** `docs/decisions/0007-eos-pad-semantics.md` pins the first
+production profile to the versioned LLaDA tokenizer audit, records the
+configured EOS/PAD alias at token ID `126081`, and retains EPIC's additional
+`<|eot_id|>` termination behavior without editing the vendor baseline. It
+defines explicit `ABSENT`, `REQUIRED`, and test-only `OPTIONAL` task profiles;
+the `BEFORE_EOS`/`AFTER_EOS` transition contract; canonical PAD-only suffixes;
+zero grammar emission with per-slot proposal provenance; and independently
+recomputable physical-slot, EOS-position, content-endpoint, and byte-length
+semantics. The offline evidence regression now fixes the EOS/PAD alias and EOT
+control observations. The focused tokenizer/evidence run passed 17 tests;
+`make check` passed the upstream pin, Ruff, strict MyPy over 30 source files,
+12 unit tests, and 283 exact-commit tests; `python -m pytest -q` passed all 296
+tests; `make paper` produced the 15-page PDF.
 
 ## T701 — Implement EOS/PAD regular constraint
 

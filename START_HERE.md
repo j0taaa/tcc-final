@@ -12,7 +12,7 @@ You are implementing a research artifact, not merely a software feature. A passi
 
 ## Current state
 
-M0 through M5 and T600--T605 are complete. The pinned EPIC baseline has been
+M0 through M6 and T700 are complete. The pinned EPIC baseline has been
 reproduced, the scientific contracts are frozen, and both the token-aligned and
 generic weighted terminal-DAG Python solvers agree with their independent
 exhaustive oracles over the configured deterministic campaigns. Weighted
@@ -34,12 +34,18 @@ corpora whose labels are recomputed by the independent Boolean recognizer. The
 finite-lattice solve bridge now dispatches to the Rust production parser or
 Python reference backend, reconstructs terminal-edge certificates to exact
 token/proposal provenance, and independently validates every result before
-returning `OPTIMAL`. No randomized M6 campaign, runtime benchmark, or
-end-to-end dLLM result has been asserted.
+returning `OPTIMAL`. The deterministic M6 normal and extended campaigns passed
+2,500/2,500 cases and independently enumerated 42,396 finite token paths. CI
+now builds the independent Rust binding, runs Rust-backed differential tests,
+replays the normal M6 campaign, and validates the frozen M6 evidence. ADR 0007
+freezes the pinned LLaDA EOS/PAD policy: task-specific absent, required, and
+optional modes; contextual EOS/PAD roles for the aliased token ID; canonical
+PAD-only suffixes; and distinct physical-slot and grammar-content endpoints.
+No runtime benchmark or end-to-end dLLM result has been asserted.
 
-The next required task is `T606`: run deterministic randomized finite-lattice
-differential tests against exhaustive token-path enumeration and close M6 only
-if every configured case agrees.
+The next required task is `T701`: compose token choices with the documented
+`BEFORE_EOS`/`AFTER_EOS` automaton while preserving all physical token IDs,
+proposal weights, and provenance.
 Preserve the completed evidence unless a regression or explicit review finding
 invalidates it.
 
@@ -55,7 +61,8 @@ invalidates it.
 
 ## Definition of the next deliverable
 
-Complete T606's finite-lattice randomized campaign. Generate small vocabularies
-with variable and multi-byte emissions, same-byte/different-ID tokens, and fixed
-positions; compare each exact solve with exhaustive token-path enumeration;
-record deterministic seeds; and save any mismatch as a regression fixture.
+Complete T701's EOS/PAD regular constraint as a separate composition step.
+Permit only the transitions frozen by ADR 0007, consume every physical slot,
+preserve EOS/PAD reward provenance, normalize any introduced epsilon edges
+safely, and reconstruct every valid physical token ID. Do not weaken or mutate
+the completed ordinary-token M6 path.

@@ -75,3 +75,32 @@ def test_pinned_tokenizer_artifact_hashes_are_immutable() -> None:
             "sha256": "b9a6102c39a4f42f47f0d63fc6cee58a2381199d90f2a4f39b3f6871f32b4119"
         },
     }
+
+
+def test_pinned_llada_eos_pad_alias_and_eot_control_are_recorded() -> None:
+    evidence = _evidence()
+    special_tokens_map = evidence["special_tokens_map"]
+    unsupported = evidence["unsupported_added_tokens"]
+
+    assert isinstance(special_tokens_map, dict)
+    assert special_tokens_map["eos_token"] == "<|endoftext|>"
+    assert special_tokens_map["pad_token"] == special_tokens_map["eos_token"]
+    assert isinstance(unsupported, list)
+    by_id = {item["token_id"]: item for item in unsupported}
+    assert by_id[126081] == {
+        "backend_special": True,
+        "configured_special_id": True,
+        "content": "<|endoftext|>",
+        "decode_skipping_specials": "",
+        "decode_with_specials": "<|endoftext|>",
+        "lstrip": False,
+        "normalized": False,
+        "ordinary_grammar_emission": "unsupported",
+        "rstrip": False,
+        "single_word": False,
+        "token_id": 126081,
+    }
+    assert by_id[126348]["content"] == "<|eot_id|>"
+    assert by_id[126348]["backend_special"] is True
+    assert by_id[126348]["configured_special_id"] is False
+    assert by_id[126348]["ordinary_grammar_emission"] == "unsupported"

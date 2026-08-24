@@ -9,3 +9,5 @@ make the decision executable.
 - `0003-exactness-scope.md`: exact-on-support and explicit failure terminology.
 - `0006-tokenizer-byte-semantics.md`: pinned LLaDA ByteLevel raw-byte mapping
   and explicit unsupported control tokens.
+- `0007-eos-pad-semantics.md`: explicit per-task EOS modes, LLaDA termination
+  IDs, canonical post-EOS padding, and physical/content-length semantics.
