@@ -3,6 +3,8 @@ name: apply-m7-cleanup
 on:
   push:
     branches: ["cleanup-m7-organization"]
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -19,6 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.head_ref || github.ref_name }}
           fetch-depth: 0
           submodules: recursive
       - uses: actions/setup-python@v5
