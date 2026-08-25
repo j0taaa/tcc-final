@@ -24,9 +24,9 @@ Rules:
 
 ## Current starting point
 
-**M8 / T804.** M0 through M7 and T800--T803 are complete at the immutable
+**M8 / T805.** M0 through M7 and T800--T804 are complete at the immutable
 commits and artifacts recorded below. The first incomplete required task is
-T804: add component-level profiling. The
+T805: add offline exact-step integration tests. The
 historical M0--M3 checklist remains archived in
 [`docs/history/TASKS-through-M3.md`](docs/history/TASKS-through-M3.md).
 
@@ -1036,16 +1036,38 @@ and 407 exact-commit tests; `python -m pytest -q` passed all 416 tests; and
 
 **Target:** `src/mwpc_exact/profiling.py`
 
-- [ ] Time proposal policy, support, token lattice, byte expansion, parser, backtracking, validation, and commit update separately.
-- [ ] Record graph nodes/edges, chart entries, proposals, support sizes, and expansions.
-- [ ] Keep profiling optional and low-overhead when disabled.
-- [ ] Produce JSON-serializable events.
+- [x] Time proposal policy, support, token lattice, byte expansion, parser, backtracking, validation, and commit update separately.
+- [x] Record graph nodes/edges, chart entries, proposals, support sizes, and expansions.
+- [x] Keep profiling optional and low-overhead when disabled.
+- [x] Produce JSON-serializable events.
 
 **Acceptance criteria**
 
-- [ ] Sum and breakdown are internally consistent within measurement overhead.
+- [x] Sum and breakdown are internally consistent within measurement overhead.
 
-**Evidence:** `[tests/sample event]`
+**Evidence:** implementation commit
+`8fa780f3adf6f0beaf7e704905fa68445d816706` adds an opt-in shared component
+profiler across proposal construction, finite support, token-lattice
+construction, byte/EOS expansion, parsing, certificate backtracking,
+independent validation, and the physical commit update. Disabled profiling
+does not read the clock or emit an event, and an enabled/unprofiled regression
+asserts identical solver and decoder result payloads. Events contain every
+component and invocation count, graph and chart sizes, proposal count,
+per-position support widths, adaptive attempts/expansions, and commit count;
+their measured component sum plus explicit unattributed overhead is validated
+against the wall span. Rust diagnostics now expose chart and backtracking
+durations separately while preserving the compatible total parser duration.
+The reproducible synthetic-clock schema sample (explicitly not a benchmark) is
+`docs/evidence/t804-component-profile-sample.json`, and its exact event payload
+is checked by `tests/exact_commit/test_profiling.py`.
+
+`(cd crates/mwpc_parser_py && ../../.venv/bin/maturin develop --release)`
+rebuilt and installed the release binding. The focused Python/Rust profiling,
+adaptive, solver, decoder, binding, and differential tests passed `73` tests;
+`make check` passed the upstream pin, Ruff, strict MyPy over 38 source files, 8
+unit tests, and 411 exact-commit tests. `make test-rust-parser` passed Rust
+formatting, 20 tests, and strict Clippy for the parser and binding; `python -m
+pytest -q` passed all 420 tests; and `make paper` produced the 15-page PDF.
 
 ## T805 — Add offline exact-step integration tests
 
