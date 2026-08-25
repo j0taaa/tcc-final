@@ -33,6 +33,25 @@ make test-rust-parser
 make test-m6-differential
 ```
 
+## Decoder strategy configuration
+
+The reusable integration boundary validates `serial`, `epic`, and `exact`
+commitment before model loading:
+
+```bash
+mwpc-commit-config --help
+mwpc-commit-config \
+  --commit-strategy exact \
+  --exact-support-top-k 8 \
+  --exact-eos-policy absent
+```
+
+Omitting `--commit-strategy` preserves EPIC's existing
+`CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH` switch. Exact top-`K` decoding is
+reported as `exact_on_support`; it is not a full-vocabulary or future-trajectory
+optimality claim. Model adapters consume this configuration in the subsequent
+integration tasks.
+
 Install the heavier pinned EPIC environment only for baseline or model-integration work:
 
 ```bash

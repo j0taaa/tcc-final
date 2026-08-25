@@ -12,6 +12,9 @@ license = { text = "Research code; see LICENSES.md and the pinned EPIC submodule
 authors = [{ name = "Gabriel Jota Lizardo" }]
 dependencies = []
 
+[project.scripts]
+mwpc-commit-config = "mwpc_exact.strategy:main"
+
 [project.optional-dependencies]
 dev = [
   "hypothesis>=6.100",
