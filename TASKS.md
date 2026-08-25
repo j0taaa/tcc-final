@@ -137,17 +137,36 @@ formatting, 20 Rust tests, and strict Clippy, and `make paper` produced the
 
 **Depends on:** T901
 
-- [ ] Add regression tests for strategy dispatch.
-- [ ] Confirm `serial` calls the original serial path.
-- [ ] Confirm `epic` calls the existing regular-cover selector.
-- [ ] Confirm `exact` does not mutate baseline functions.
-- [ ] Compare fixed-seed or saved-logit baseline outputs before and after integration where deterministic.
+- [x] Add regression tests for strategy dispatch.
+- [x] Confirm `serial` calls the original serial path.
+- [x] Confirm `epic` calls the existing regular-cover selector.
+- [x] Confirm `exact` does not mutate baseline functions.
+- [x] Compare fixed-seed or saved-logit baseline outputs before and after integration where deterministic.
 
 **Acceptance criteria**
 
-- [ ] No baseline code is deleted or silently redefined.
+- [x] No baseline code is deleted or silently redefined.
 
-**Evidence:** `[tests and comparison artifact]`
+**Evidence:** implementation commit
+`324fdf5c78c8bd39fb94dac5be1ff5789840bd51` adds the offline comparison
+artifact `docs/evidence/t902-baseline-preservation.json` and model-free EPIC
+integration regressions without modifying the submodule. The artifact pins the
+upstream commit and Git blob IDs for the LLaDA generator and regular-cover
+selector, records a deterministic temperature-zero serial saved-logit fixture,
+and records a deterministic regular-cover candidate fixture. Tests call the
+original upstream functions directly and through `dispatch_commit_strategy`,
+compare both outputs with the artifact, reject calls to either unselected
+strategy, and verify that the real exact tensor hook leaves the serial and EPIC
+function objects unchanged. `scripts/verify_upstream.sh` also confirmed the
+submodule is clean at `5b1b31098f34ed3691d2a9f4aae14fdf5839d072`.
+
+The focused baseline-preservation and exact tensor-hook command passed 4 tests.
+`make bootstrap-epic` completed and imported the pinned CPU EPIC environment.
+`make check` passed the upstream pin, Ruff, strict MyPy over 45 source files, 9
+unit tests, and 442 exact-commit tests; `python -m pytest -q` passed all 456
+tests. The focused upstream constrained-decoder/binding command passed 19 tests
+with 4 pre-existing declared skips. `make test-rust-parser` passed formatting,
+20 Rust tests, and strict Clippy, and `make paper` produced the 15-page PDF.
 
 ## T903 — Add saved-logit end-to-end decoder test
 
