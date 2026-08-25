@@ -25,8 +25,8 @@ Rules:
 
 ## Current starting point
 
-**M9 / T901.** M0 through M8 and T900 are complete. The first incomplete
-required task is T901: add the exact hook to the first model adapter.
+**M9 / T902.** M0 through M8 and T900--T901 are complete. The first incomplete
+required task is T902: preserve the serial and EPIC baselines.
 
 Required milestones: **M0 through M13**. Optional milestones: **O1 through O4**.
 
@@ -93,21 +93,45 @@ skips, and `make paper` produced the 15-page PDF.
 
 **Depends on:** T900, T600
 
-**Initial target:** `[CHOSEN_ADAPTER]`, likely an existing LLaDA-style constrained loop.
+**Initial target:** the pinned EPIC LLaDA constrained loop through a read-only
+parent-side adapter.
 
-- [ ] Locate the point after logits/confidence and before heuristic/serial commitment.
-- [ ] Reuse the baseline `k_s` schedule.
-- [ ] Convert the current canvas and logits into the exact API.
-- [ ] Commit returned positions/tokens to model tensors and decoded tracking state.
-- [ ] Preserve prompt positions and active-block limits.
-- [ ] Preserve baseline EOS handling according to the new documented semantics.
+- [x] Locate the point after logits/confidence and before heuristic/serial commitment.
+- [x] Reuse the baseline `k_s` schedule.
+- [x] Convert the current canvas and logits into the exact API.
+- [x] Commit returned positions/tokens to model tensors and decoded tracking state.
+- [x] Preserve prompt positions and active-block limits.
+- [x] Preserve baseline EOS handling according to the new documented semantics.
 
 **Acceptance criteria**
 
-- [ ] A fixed-logit test confirms the exact hook receives the intended canvas and candidate set.
-- [ ] No exact-specific logic leaks into generic parser code.
+- [x] A fixed-logit test confirms the exact hook receives the intended canvas and candidate set.
+- [x] No exact-specific logic leaks into generic parser code.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`c32900bdbbe42464fd1b24110bd2d0bcba109ecf` adds the parent-side
+`mwpc_exact.epic_adapter.llada` boundary without modifying the pinned EPIC
+submodule. It snapshots the LLaDA loop's single-batch token/logit/prediction/
+confidence rows at the documented pre-commit point, maps only the generated
+region into the finite exact canvas, reuses the supplied positive `k_s`, and
+restricts proposals plus witness progress to masked positions in the active
+block. It calls `solve_exact_commit_adaptive_validated`, includes proposal
+tokens explicitly in represented support, maps recorded commits back to model
+positions and decoded tracking, verifies the prompt stayed unchanged, and
+records the only cross-block update separately: canonical PAD filling after a
+configured EOS/EOT. ADR 0012 records that boundary and retains
+`exact_on_support` terminology; generic parser code is unchanged.
+
+The deterministic fixed-logit and decoder boundary suites passed 32 tests,
+including candidate selection, future-block exclusion, prompt preservation,
+zero-match witness progress, and EOS/PAD suffix behavior. The opt-in CPU EPIC
+environment test passed against a real Torch tensor without model weights or
+network access. `make check` passed the upstream pin, Ruff, strict MyPy over 45
+source files, 9 unit tests, and 442 exact-commit tests; `python -m pytest -q`
+passed all 453 tests. The focused upstream constrained-decoder/binding command
+passed 19 tests with 4 declared upstream skips. `make test-rust-parser` passed
+formatting, 20 Rust tests, and strict Clippy, and `make paper` produced the
+15-page PDF.
 
 ## T902 — Preserve serial and EPIC baselines
 
