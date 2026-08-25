@@ -25,8 +25,8 @@ Rules:
 
 ## Current starting point
 
-**M9 / T902.** M0 through M8 and T900--T901 are complete. The first incomplete
-required task is T902: preserve the serial and EPIC baselines.
+**M9 / T904.** M0 through M8 and T900--T903 are complete. The first incomplete
+required task is T904: run one live-model smoke test.
 
 Required milestones: **M0 through M13**. Optional milestones: **O1 through O4**.
 
@@ -172,16 +172,41 @@ with 4 pre-existing declared skips. `make test-rust-parser` passed formatting,
 
 **Depends on:** T901
 
-- [ ] Record or synthesize logits for several denoising steps.
-- [ ] Run the decoder loop without a live model.
-- [ ] Confirm progress, state updates, and final grammar validity.
-- [ ] Confirm event logs contain every step.
+- [x] Record or synthesize logits for several denoising steps.
+- [x] Run the decoder loop without a live model.
+- [x] Confirm progress, state updates, and final grammar validity.
+- [x] Confirm event logs contain every step.
 
 **Acceptance criteria**
 
-- [ ] Test is deterministic, CPU-only, and offline.
+- [x] Test is deterministic, CPU-only, and offline.
 
-**Evidence:** `[fixture and test]`
+**Evidence:** implementation commit
+`7cdca7bf5b3fb7c4fd32fbc35a93a885008682fd` adds the versioned synthetic
+fixture `tests/exact_commit/fixtures/llada_saved_logit_loop.json` and its offline
+replay in `tests/exact_commit/test_llada_saved_logit_loop.py`. The fixture
+contains three complete saved-logit, prediction, confidence, schedule-budget,
+grammar, tokenizer-emission, EOS/PAD, and expected semantic-event snapshots;
+it explicitly identifies itself as CPU-only, network-free, model-free, and not
+a benchmark or live-model result.
+
+The loop invokes the real parent-side LLaDA exact hook for every saved step. It
+commits `b`, then `a`, then EOT plus canonical PAD, reduces the masked-slot
+count monotonically from 4 to 0, preserves every fixed token, and records one
+JSON-serializable full result event for each of the three input step IDs. Every
+step retains `OPTIMAL`, top-K `exact_on_support` metadata, a reconstructible
+witness, and a successful live independent certificate-validation report. The
+completed content detokenizes to the byte labels for `ab`, which the separate
+Boolean CNF recognizer accepts. Replaying the fixture twice produced identical
+semantic event summaries.
+
+The focused saved-logit loop command passed 1 test. `make check` passed the
+upstream pin, Ruff, strict MyPy over 45 source files, 9 unit tests, and 443
+exact-commit tests; `python -m pytest -q` passed all 457 tests. The focused
+upstream constrained-decoder/binding command passed 19 tests with 4
+pre-existing declared skips. `make test-rust-parser` passed formatting, 20 Rust
+tests, and strict Clippy, and `make paper` produced the 15-page PDF. The pinned
+EPIC submodule remained clean and unchanged.
 
 ## T904 — Run one live-model smoke test
 
