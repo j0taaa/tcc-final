@@ -49,6 +49,12 @@ jobs:
         run: |
           .venv/bin/python scripts/exact_commit/run_m6_finite_lattice_differential.py --campaign normal
           .venv/bin/python scripts/exact_commit/run_m7_eos_finite_slot_differential.py --campaign normal
+      - name: Install LaTeX for article validation
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-extra texlive-fonts-recommended \
+            poppler-utils
       - name: Compile the article
         run: make paper
       - name: Preserve immutable evidence and check patch
