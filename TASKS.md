@@ -24,9 +24,9 @@ Rules:
 
 ## Current starting point
 
-**M8 / T802.** M0 through M7 and T800--T801 are complete at the immutable
+**M8 / T803.** M0 through M7 and T800--T802 are complete at the immutable
 commits and artifacts recorded below. The first incomplete required task is
-T802: implement adaptive support expansion. The
+T803: implement progress and failure fallbacks. The
 historical M0--M3 checklist remains archived in
 [`docs/history/TASKS-through-M3.md`](docs/history/TASKS-through-M3.md).
 
@@ -954,18 +954,39 @@ produced the 15-page PDF.
 
 **Depends on:** T601, T801
 
-- [ ] Add `initial_k`, growth policy, `k_max`, and total-timeout config.
-- [ ] Retry only on `INFEASIBLE_ON_SUPPORT`, not arbitrary errors.
-- [ ] Ensure each expansion is a superset of the previous support.
-- [ ] Record attempts, graph sizes, times, and final scope.
-- [ ] Stop deterministically.
+- [x] Add `initial_k`, growth policy, `k_max`, and total-timeout config.
+- [x] Retry only on `INFEASIBLE_ON_SUPPORT`, not arbitrary errors.
+- [x] Ensure each expansion is a superset of the previous support.
+- [x] Record attempts, graph sizes, times, and final scope.
+- [x] Stop deterministically.
 
 **Acceptance criteria**
 
-- [ ] Optimum score never decreases across support expansions.
-- [ ] Final result records every attempted K.
+- [x] Optimum score never decreases across support expansions.
+- [x] Final result records every attempted K.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`d6e36e764e2232f4f47e4b58c3282b9e5f13e7d4` adds immutable adaptive
+configuration with deterministic linear and doubling growth, bounded
+`initial_k`/`k_max`, and a total timeout. The model-independent adaptive API
+rebuilds support from saved logits, freezes proposals, verifies every row is a
+superset before retrying, retries only a conclusive
+`INFEASIBLE_ON_SUPPORT`, converts complete permitted-token coverage to a
+validated `FULL` scope, passes the remaining total deadline to Rust, and
+preserves timeout/error/unsupported statuses without additional attempts.
+Final diagnostics record every configured and attempted K, per-attempt scope,
+status, objective, support fingerprint and row sizes, graph sizes, support and
+solve times, cumulative time, deadline allocation, stop reason, and final
+scope. Deterministic regressions cover both growth policies, K caps, malformed
+configuration, infeasible-to-optimal expansion, full-support conversion,
+K-max exhaustion, all non-retry statuses, total-timeout exhaustion,
+row-superset rejection, Python/Rust agreement, and non-decreasing exact
+objectives over nested supports. `python -m pytest -q
+tests/exact_commit/test_adaptive_support.py tests/exact_commit/test_solver.py
+tests/exact_commit/test_support.py` passed 59 tests. `make check` passed the
+upstream pin, Ruff, strict MyPy over 36 source files, 8 unit tests, and 384
+exact-commit tests; `python -m pytest -q` passed all 393 tests; and `make paper`
+produced the 15-page PDF.
 
 ## T803 — Implement progress and failure fallbacks
 
