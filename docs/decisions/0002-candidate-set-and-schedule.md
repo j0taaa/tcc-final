@@ -45,6 +45,10 @@ slots so that it remains a complete grammar-valid certificate. Such a token is
 not proposal-backed and is not committed as part of the matched MWPC batch.
 If orchestration uses a witness token as a progress fallback, it records that
 action separately and does not retroactively add a proposal ID or reward.
+T803 chooses among still-masked positions by the model probability assigned to
+the returned witness token, descending, then by ascending absolute canvas
+position. The probabilities are supplied explicitly at the model-independent
+decoder boundary; the decoder does not reload logits or infer model state.
 
 ## Determinism and comparison
 
@@ -71,8 +75,11 @@ candidate regeneration is not a fair comparison.
 ## Executable enforcement
 
 T101 provides deterministic proposal aggregation and preserves all matching
-IDs. T800 will implement schedule-compatible construction of `P_s` and `C`;
-its tests must exercise confidence ties, `k_s` larger than the remaining mask
-count, zero-reward alternatives, and multiple proposal objects at one
-position. The independent validator in T105/T702 will recompute selected IDs
-and reward rather than trusting solver bookkeeping.
+IDs. T800 implements schedule-compatible construction of `P_s` and `C`; its
+tests exercise confidence ties, `k_s` larger than the remaining mask count,
+zero-reward alternatives, and multiple proposal objects at one position. The
+independent validator in T105/T702 recomputes selected IDs and reward rather
+than trusting solver bookkeeping. T803 additionally rejects an optimal decoder
+input without recorded independent certificate validation, recomputes
+proposal matches at commit time, and verifies that witness-backed updates
+remain completable by the same witness.

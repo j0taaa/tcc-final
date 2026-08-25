@@ -181,5 +181,6 @@ The focused regressions are
 
 The current public result contract intentionally reports a zero-slot epsilon
 witness as `UNSUPPORTED`; M2 and M3 completeness evidence is therefore scoped
-to non-empty physical canvases. T801 and T804 will make adaptive-attempt and
-fallback diagnostics executable without changing these meanings.
+to non-empty physical canvases. T802 and T803 make adaptive-attempt and
+fallback diagnostics executable without changing these meanings; T804 adds
+component-level profiling.
