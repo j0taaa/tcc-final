@@ -25,8 +25,8 @@ Rules:
 
 ## Current starting point
 
-**M9 / T904.** M0 through M8 and T900--T903 are complete. The first incomplete
-required task is T904: run one live-model smoke test.
+**M10 / T1000.** M0 through M9 are complete. The first incomplete required task
+is T1000: wrap the serial selector in the common evaluation interface.
 
 Required milestones: **M0 through M13**. Optional milestones: **O1 through O4**.
 
@@ -41,6 +41,7 @@ Required milestones: **M0 through M13**. Optional milestones: **O1 through O4**.
 - **M6:** finite tokenizer-aware token/byte lattice exact on represented support.
 - **M7:** explicit EOS/PAD automaton, finite-slot validator, counterexamples, and gate.
 - **M8:** proposal policy, first-feasible adaptive support, typed solve/commit boundary, fallbacks, profiling, and offline exact-step integration.
+- **M9:** pinned LLaDA serial/EPIC/exact integration with saved-logit and live-model evidence.
 
 **Post-M8 corrections:** the production decoder now requires a typed
 `ValidatedExactCommit` carrying the live independent validation report;
@@ -212,24 +213,64 @@ EPIC submodule remained clean and unchanged.
 
 **Depends on:** T902, T903
 
-- [ ] Load `[MODEL_ID]` and the exact tokenizer revision.
-- [ ] Record dtype, quantization, and device settings.
-- [ ] Run one small structured generation with `serial`, `epic`, and `exact` where feasible.
-- [ ] Validate outputs and save raw metadata.
-- [ ] Record any memory limitation honestly.
+- [x] Load `[MODEL_ID]` and the exact tokenizer revision.
+- [x] Record dtype, quantization, and device settings.
+- [x] Run one small structured generation with `serial`, `epic`, and `exact` where feasible.
+- [x] Validate outputs and save raw metadata.
+- [x] Record any memory limitation honestly.
 
 **Acceptance criteria**
 
-- [ ] At least one exact end-to-end generation completes, or a precise model/hardware blocker is documented while offline integration remains passing.
-- [ ] No benchmark claim is made from this smoke test alone.
+- [x] At least one exact end-to-end generation completes, or a precise model/hardware blocker is documented while offline integration remains passing.
+- [x] No benchmark claim is made from this smoke test alone.
 
-**Evidence:** `[config, command, raw artifact]`
+**Evidence:** driver commit `40f228a83c5d30679023ba38248eb8a9c5ab7f98`
+and `configs/exact_commit/t904_llada_live_smoke.toml` pin the model and tokenizer
+to `GSAI-ML/LLaDA-8B-Instruct` revision
+`08b83a6feb34df1a6011b80c3c00c7563e963b07`, the single-byte `0` grammar,
+all three strategies, top-1 first-feasible `exact_on_support`, Python backend,
+required EOS/EOT, and canonical EOS-as-PAD. The live command was
+`HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 TOKENIZERS_PARALLELISM=false
+<isolated-live-venv>/bin/python
+scripts/exact_commit/run_t904_llada_live_smoke.py --config
+configs/exact_commit/t904_llada_live_smoke.toml --local-files-only`; the pinned
+CUDA dependencies are versioned in `requirements/t904-live-cu128.txt` and the
+reproduction setup is documented in `scripts/exact_commit/README.md`.
+
+The raw artifact `docs/evidence/t904-llada-live-smoke.json` records a clean
+driver commit and resolved model revision. The untouched upstream serial loop
+and EPIC-enabled loop both completed with token IDs
+`[15, 126348, 126348, 126348]`; independent raw-byte/CNF validation accepted
+the content `0`. The one-byte case provided fewer than EPIC's configured two
+ordinary candidates, so the artifact honestly records zero regular-cover
+selector calls and the preserved serial fallback rather than claiming a
+parallel heuristic commit. The real parent-side exact adapter completed with
+`OPTIMAL`, top-1 `exact_on_support`, objective `3.2833624770448697`, selected
+proposal IDs `{0,1,2,3}`, witness token IDs
+`[15, 126348, 126081, 126081]`, terminal label `[48]`, graph-edge provenance,
+and an independent certificate recomputing the same objective and selected
+set without issues.
+
+The six pinned safetensor shards total `16,031,197,112` bytes while the RTX
+3080 Ti reports `12,490,506,240` total bytes. An unquantized BF16 load was
+therefore not attempted; the recorded smoke used bitsandbytes NF4 4-bit double
+quantization with BF16 compute on `cuda:0`, reaching a measured peak allocation
+of `5,881,013,248` bytes. These values document reachability and capacity only;
+the config and artifact explicitly make no benchmark claim. The live adapter
+also pads the tokenizer's 126,349 IDs to the model's 126,464 logit rows as
+unsupported ordinary emissions, covered by a deterministic regression.
+
+Post-evidence validation passed `make check` (upstream pin, Ruff, strict MyPy
+over 45 source files, 9 unit tests, and 449 exact-commit tests), the full Python
+suite passed all 463 tests, and the focused upstream constrained-decoder and
+binding command passed 19 tests with 4 declared upstream skips. `make paper`
+produced the 15-page PDF, and the EPIC submodule remained clean and unchanged.
 
 **M9 integration gate**
 
-- [ ] Exact mode is reachable through a real adapter.
-- [ ] Baseline modes remain available.
-- [ ] Offline-loop and live-smoke evidence exist.
+- [x] Exact mode is reachable through a real adapter.
+- [x] Baseline modes remain available.
+- [x] Offline-loop and live-smoke evidence exist.
 
 ---
 

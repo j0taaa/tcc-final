@@ -1,0 +1,962 @@
+{
+  "benchmark_claim": false,
+  "conclusion": "All configured modes reached the pinned live model and independently valid structured output; the exact run returned an independently validated OPTIMAL certificate exact_on_support. This smoke alone supports no benchmark claim.",
+  "config": {
+    "path": "configs/exact_commit/t904_llada_live_smoke.toml",
+    "seed": 904,
+    "sha256": "96340ce417b5a0736b949c03b8015fd2240ad6951d2da92224be4fdec25ce063"
+  },
+  "execution": {
+    "cuda_memory_allocated_bytes": 5687158272,
+    "cuda_peak_memory_allocated_bytes": 5881013248,
+    "device": "cuda:0",
+    "device_map": {
+      "": 0
+    },
+    "local_files_only": true,
+    "model_memory_footprint_bytes": 5562179584,
+    "quantization": {
+      "four_bit_compute_dtype": "bfloat16",
+      "four_bit_quant_type": "nf4",
+      "four_bit_use_double_quant": true,
+      "implementation": "bitsandbytes",
+      "load_in_4bit": true
+    },
+    "torch_dtype": "bfloat16"
+  },
+  "generated_at_utc": "2026-08-25T20:25:39.657237+00:00",
+  "generation": {
+    "block_length": 4,
+    "cfg_scale": 0.0,
+    "generation_length": 4,
+    "max_resamples": 64,
+    "remasking": "low_confidence",
+    "steps": 1,
+    "strategies": [
+      "serial",
+      "epic",
+      "exact"
+    ],
+    "target_utf8": "0",
+    "temperature": 0.0
+  },
+  "grammar": {
+    "epic_grammar_text": "S -> lexZero",
+    "epic_lexeme_regex": "0",
+    "exact_cnf": {
+      "accepts_empty": false,
+      "binary_productions": [],
+      "nonterminals": [
+        {
+          "name": "S",
+          "symbol_id": 0
+        }
+      ],
+      "start_nonterminal_id": 0,
+      "terminal_productions": [
+        {
+          "head_id": 0,
+          "production_id": 0,
+          "source_production_ids": [],
+          "terminal_id": 0
+        }
+      ],
+      "terminals": [
+        {
+          "label": 48,
+          "symbol_id": 0
+        }
+      ]
+    },
+    "exact_cnf_sha256": "ecb04687eebb0d055e82db369295ecb34d05e0f8b6322c4faab56540e9e6bbe2",
+    "target_bytes_hex": "30",
+    "target_utf8": "0"
+  },
+  "hardware": {
+    "cpu_logical_count": 16,
+    "cuda_driver_version": "595.84",
+    "gpu_compute_capability": "8.6",
+    "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+    "machine": "x86_64",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39"
+  },
+  "invocation": "python scripts/exact_commit/run_t904_llada_live_smoke.py --config configs/exact_commit/t904_llada_live_smoke.toml --local-files-only",
+  "memory_assessment": {
+    "gpu_total_memory_bytes": 12490506240,
+    "host_total_memory_bytes": 16609329152,
+    "unquantized_bf16_limitation": "The pinned safetensor shard bytes exceed total GPU memory before activations and runtime overhead; the smoke therefore uses recorded NF4 4-bit quantization.",
+    "unquantized_bf16_load_attempted": false
+  },
+  "model": {
+    "checkpoint_safetensors_bytes": 16031197112,
+    "checkpoint_shards": [
+      {
+        "name": "model-00001-of-00006.safetensors",
+        "size_bytes": 2109747184
+      },
+      {
+        "name": "model-00002-of-00006.safetensors",
+        "size_bytes": 2948598128
+      },
+      {
+        "name": "model-00003-of-00006.safetensors",
+        "size_bytes": 2986883656
+      },
+      {
+        "name": "model-00004-of-00006.safetensors",
+        "size_bytes": 2952797224
+      },
+      {
+        "name": "model-00005-of-00006.safetensors",
+        "size_bytes": 2919239128
+      },
+      {
+        "name": "model-00006-of-00006.safetensors",
+        "size_bytes": 2113931792
+      }
+    ],
+    "class": "LLaDAModelLM",
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "requested_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "resolved_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "vocabulary_size": 126464
+  },
+  "prompt": {
+    "chat_template_text_sha256": "d4cd6f7e3818150c2a22a0d93b7edae647744e7d4b49bce9fa796ea9d309b6bb",
+    "instruction": "Reply with exactly the single digit 0 and nothing else.",
+    "prompt_token_count": 25
+  },
+  "purpose": "live_model_correctness_smoke_not_a_benchmark",
+  "repository": {
+    "git_clean_at_start": true,
+    "git_commit": "40f228a83c5d30679023ba38248eb8a9c5ab7f98",
+    "upstream_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072"
+  },
+  "schema_version": 1,
+  "software": {
+    "packages": {
+      "accelerate": "1.10.1",
+      "bitsandbytes": "0.50.1",
+      "huggingface-hub": "0.36.2",
+      "safetensors": "0.8.0",
+      "tokenizers": "0.21.4",
+      "transformers": "4.52.2"
+    },
+    "python": "3.11.16",
+    "torch": "2.8.0+cu128",
+    "torch_cuda_runtime": "12.8"
+  },
+  "status": "PASS",
+  "strategy_runs": [
+    {
+      "complete": true,
+      "decoded_with_specials": "0<|eot_id|><|eot_id|><|eot_id|>",
+      "event_count": 3,
+      "generated_token_ids": [
+        15,
+        126348,
+        126348,
+        126348
+      ],
+      "implementation": "upstream_llada_serial_constrained_loop",
+      "regular_cover_batch_enabled": false,
+      "regular_cover_selector_calls": 0,
+      "resample_count": 0,
+      "serial_fallback_remains_available": true,
+      "strategy": "serial",
+      "validation": {
+        "content_bytes_hex": "30",
+        "content_token_ids": [
+          15
+        ],
+        "content_utf8": "0",
+        "independent_grammar_valid": true,
+        "suffix_token_ids": [
+          126348,
+          126348
+        ],
+        "termination_position": 1,
+        "termination_token_id": 126348
+      }
+    },
+    {
+      "complete": true,
+      "decoded_with_specials": "0<|eot_id|><|eot_id|><|eot_id|>",
+      "event_count": 3,
+      "generated_token_ids": [
+        15,
+        126348,
+        126348,
+        126348
+      ],
+      "implementation": "upstream_llada_regular_cover_enabled_loop",
+      "regular_cover_batch_enabled": true,
+      "regular_cover_selector_calls": 0,
+      "resample_count": 0,
+      "serial_fallback_remains_available": true,
+      "strategy": "epic",
+      "validation": {
+        "content_bytes_hex": "30",
+        "content_token_ids": [
+          15
+        ],
+        "content_utf8": "0",
+        "independent_grammar_valid": true,
+        "suffix_token_ids": [
+          126348,
+          126348
+        ],
+        "termination_position": 1,
+        "termination_token_id": 126348
+      }
+    },
+    {
+      "complete": true,
+      "decoded_with_specials": "0<|eot_id|><|endoftext|><|endoftext|>",
+      "generated_token_ids": [
+        15,
+        126348,
+        126081,
+        126081
+      ],
+      "implementation": "parent_side_pinned_llada_exact_step_v1",
+      "outcome": {
+        "complete": true,
+        "decoder_step": {
+          "commit_guarantee": "exact_mwpc_selection",
+          "commit_source": "exact_proposals",
+          "commits": [
+            {
+              "matching_proposal_ids": [
+                1
+              ],
+              "matching_proposal_weight": 0.9937450501320871,
+              "position": 0,
+              "selected_proposal_ids": [
+                1
+              ],
+              "token_id": 15
+            },
+            {
+              "matching_proposal_ids": [
+                2
+              ],
+              "matching_proposal_weight": 0.6692162363893144,
+              "position": 1,
+              "selected_proposal_ids": [
+                2
+              ],
+              "token_id": 126348
+            },
+            {
+              "matching_proposal_ids": [
+                3
+              ],
+              "matching_proposal_weight": 0.6222797619959748,
+              "position": 2,
+              "selected_proposal_ids": [
+                3
+              ],
+              "token_id": 126081
+            },
+            {
+              "matching_proposal_ids": [
+                0
+              ],
+              "matching_proposal_weight": 0.9981214285274932,
+              "position": 3,
+              "selected_proposal_ids": [
+                0
+              ],
+              "token_id": 126081
+            }
+          ],
+          "diagnostics": {
+            "commit_guarantee": "exact_mwpc_selection",
+            "commit_source": "exact_proposals",
+            "committed_position_count": 4,
+            "committed_positions": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "decoder": "exact_commit_decoder_v1",
+            "failure_fallback_attempted": false,
+            "failure_fallback_strategy": null,
+            "failure_fallback_succeeded": false,
+            "fallback_class": "none",
+            "fallback_reason": null,
+            "matching_frozen_proposal_ids": [
+              1,
+              2,
+              3,
+              0
+            ],
+            "matching_frozen_proposal_weight": 3.2833624770448697,
+            "no_remasking_verified": true,
+            "original_exactness_scope": {
+              "adaptive_expansions": [],
+              "included_special_tokens": [
+                126081,
+                126348
+              ],
+              "kind": "top_k",
+              "pruning_description": "pinned EPIC LLaDA generated-canvas top-K support; exact_on_support",
+              "top_k": 1,
+              "vocabulary_size": 126464
+            },
+            "original_solver_status": "optimal",
+            "progress_fallback": false,
+            "progress_fallback_rule": null,
+            "proposal_backed_commit_count": 4,
+            "selected_proposal_ids": [
+              1,
+              2,
+              3,
+              0
+            ],
+            "support_expansion_attempted_k": [
+              1
+            ],
+            "witness_compatible_after_commit": true
+          },
+          "fallback_reason": null,
+          "fallback_strategy": null,
+          "input_canvas": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "solver_result": {
+            "diagnostics": {
+              "adaptive_support": {
+                "attempted_k": [
+                  1
+                ],
+                "attempts": [
+                  {
+                    "attempt_index": 0,
+                    "backend_timeout_seconds": null,
+                    "cumulative_elapsed_seconds": 0.3133319109911099,
+                    "effective_support_kind": "top_k",
+                    "effective_top_k": 1,
+                    "elapsed_seconds": 0.3133319109911099,
+                    "graph_sizes": {
+                      "normalized_edge_count": 4,
+                      "original_edge_count": 13,
+                      "original_node_count": 10,
+                      "token_choice_count": 9
+                    },
+                    "objective_value": 3.2833624770448697,
+                    "represented_support_row_sizes": [
+                      3,
+                      2,
+                      2,
+                      2
+                    ],
+                    "represented_support_sha256": "a87fe30c236baabdcd68c0cf4779b6f470bd6a938873bb678e63235bbe901ce6",
+                    "requested_k": 1,
+                    "scope": {
+                      "adaptive_expansions": [],
+                      "included_special_tokens": [
+                        126081,
+                        126348
+                      ],
+                      "kind": "top_k",
+                      "pruning_description": "pinned EPIC LLaDA generated-canvas top-K support; exact_on_support",
+                      "top_k": 1,
+                      "vocabulary_size": 126464
+                    },
+                    "solve_seconds": 0.016446446999907494,
+                    "status": "optimal",
+                    "superset_of_previous": null,
+                    "support_construction_seconds": 0.2968854639912024
+                  }
+                ],
+                "config": {
+                  "growth_policy": "doubling",
+                  "initial_k": 1,
+                  "k_max": 4,
+                  "total_timeout_seconds": null
+                },
+                "configured_widths": [
+                  1,
+                  2,
+                  4
+                ],
+                "deadline_enforcement": "late_reference_results_discarded_attempts_not_interruptible",
+                "final_scope": {
+                  "adaptive_expansions": [],
+                  "included_special_tokens": [
+                    126081,
+                    126348
+                  ],
+                  "kind": "top_k",
+                  "pruning_description": "pinned EPIC LLaDA generated-canvas top-K support; exact_on_support",
+                  "top_k": 1,
+                  "vocabulary_size": 126464
+                },
+                "final_status": "optimal",
+                "observed_objective_monotonicity_basis": "fixed proposals over row-wise verified support supersets",
+                "observed_optimal_objectives_non_decreasing": true,
+                "optimal_objective_values": [
+                  3.2833624770448697
+                ],
+                "orchestrator": "feasibility_driven_support_expansion_v2",
+                "resource_limit_prevented_expansion": false,
+                "stopped_reason": "terminal_status_optimal",
+                "stopping_policy": "first_feasible",
+                "support_superset_verified": true,
+                "total_elapsed_seconds": 0.3133319109911099
+              },
+              "backend": "python",
+              "backend_diagnostics": {
+                "chart_entries": 4,
+                "final_node_id": 9
+              },
+              "byte_eos_lattice_diagnostics": {
+                "eos_mode": "required",
+                "epsilon_edge_count": 12,
+                "legal_token_path_count": 4,
+                "normalized_graph_edge_count": 4,
+                "original_graph_edge_count": 13,
+                "original_graph_node_count": 10,
+                "pad_token_id": 126081,
+                "physical_slot_count": 4,
+                "physical_slot_policy": "all_slots_consumed",
+                "product_arc_count": 13,
+                "represented_support_sha256": "a87fe30c236baabdcd68c0cf4779b6f470bd6a938873bb678e63235bbe901ce6",
+                "special_reward_attachment": "own_epsilon_edge",
+                "termination_token_ids": [
+                  126081,
+                  126348
+                ]
+              },
+              "certificate_source": "normalized_parser",
+              "certificate_validation": {
+                "is_valid": true,
+                "issues": [],
+                "recomputed_objective": 3.2833624770448697,
+                "recomputed_selected_proposal_ids": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "skipped_checks": []
+              },
+              "exactness_name": "exact_on_support",
+              "finite_slot_policy": "all_physical_slots_consumed_with_explicit_eos_pad",
+              "orchestrator": "exact_commit_step_v1",
+              "represented_support_sha256": "a87fe30c236baabdcd68c0cf4779b6f470bd6a938873bb678e63235bbe901ce6",
+              "support_diagnostics": {
+                "configured_required_special_token_ids": [
+                  126081,
+                  126348
+                ],
+                "effective_top_k": 1,
+                "fixed_positions": [],
+                "input_source": "logits",
+                "permitted_token_count": 126082,
+                "permitted_token_ids_sha256": "1c7aa3da46ea1aba2687f5ecd367853aac2179dadbc3e09229dc3e604c6d620f",
+                "proposal_token_ids_by_position": [
+                  [
+                    15
+                  ],
+                  [
+                    126348
+                  ],
+                  [
+                    126081
+                  ],
+                  [
+                    126081
+                  ]
+                ],
+                "proposal_token_inclusion_enabled": true,
+                "represented_support_canonical_json": "[[15,126081,126348],[126081,126348],[126081,126348],[126081,126348]]",
+                "represented_support_row_sizes": [
+                  3,
+                  2,
+                  2,
+                  2
+                ],
+                "represented_support_sha256": "a87fe30c236baabdcd68c0cf4779b6f470bd6a938873bb678e63235bbe901ce6",
+                "tie_break": "score_descending_then_token_id_ascending",
+                "top_k_token_ids_by_position": [
+                  [
+                    15
+                  ],
+                  [
+                    126348
+                  ],
+                  [
+                    126081
+                  ],
+                  [
+                    126081
+                  ]
+                ]
+              },
+              "token_lattice_diagnostics": {
+                "boundary_count": 5,
+                "matched_positive_proposal_ids": [
+                  1,
+                  2,
+                  3,
+                  0
+                ],
+                "proposal_ids": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "represented_support_row_sizes": [
+                  3,
+                  2,
+                  2,
+                  2
+                ],
+                "represented_support_sha256": "a87fe30c236baabdcd68c0cf4779b6f470bd6a938873bb678e63235bbe901ce6",
+                "slot_count": 4,
+                "support_kind": "top_k",
+                "token_choice_count": 9,
+                "token_path_count": 24,
+                "unrepresented_positive_proposal_ids": [],
+                "unrepresented_proposal_ids": [],
+                "zero_weight_proposal_ids": []
+              }
+            },
+            "exactness_scope": {
+              "adaptive_expansions": [],
+              "included_special_tokens": [
+                126081,
+                126348
+              ],
+              "kind": "top_k",
+              "pruning_description": "pinned EPIC LLaDA generated-canvas top-K support; exact_on_support",
+              "top_k": 1,
+              "vocabulary_size": 126464
+            },
+            "objective_value": 3.2833624770448697,
+            "selected_proposal_ids": [
+              1,
+              2,
+              3,
+              0
+            ],
+            "status": "optimal",
+            "witness_content_endpoint_slot": 1,
+            "witness_eos_position": 1,
+            "witness_graph_edge_ids": [
+              0,
+              6,
+              8,
+              11
+            ],
+            "witness_terminal_labels": [
+              48
+            ],
+            "witness_token_ids": [
+              15,
+              126348,
+              126081,
+              126081
+            ]
+          },
+          "updated_canvas": [
+            15,
+            126348,
+            126081,
+            126081
+          ]
+        },
+        "model_updates": [
+          {
+            "canvas_position": 0,
+            "model_position": 25,
+            "reason": "decoder_commit",
+            "token_id": 15
+          },
+          {
+            "canvas_position": 1,
+            "model_position": 26,
+            "reason": "decoder_commit",
+            "token_id": 126348
+          },
+          {
+            "canvas_position": 2,
+            "model_position": 27,
+            "reason": "decoder_commit",
+            "token_id": 126081
+          },
+          {
+            "canvas_position": 3,
+            "model_position": 28,
+            "reason": "decoder_commit",
+            "token_id": 126081
+          }
+        ],
+        "request": {
+          "active_block_end": 29,
+          "canvas": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "diagnostics": {
+            "active_block_limit_applied_to_proposals": true,
+            "adapter": "pinned_epic_llada_exact_step_v1",
+            "canvas_position_mapping": "model_position_minus_prompt_length",
+            "exactness_scope": "exact_on_support",
+            "logit_shape": [
+              4,
+              126464
+            ],
+            "support_covers_full_generated_canvas": true,
+            "tensor_batch_size": 1
+          },
+          "generation_length": 4,
+          "profile": {
+            "eos_policy": {
+              "mode": "required",
+              "pad_token_id": 126081,
+              "termination_token_ids": [
+                126081,
+                126348
+              ]
+            },
+            "mask_token_id": 126336,
+            "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+            "tokenizer_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+          },
+          "prompt_length": 25,
+          "prompt_token_ids": [
+            126080,
+            126346,
+            3840,
+            126347,
+            198,
+            198,
+            17382,
+            391,
+            6604,
+            268,
+            3554,
+            13712,
+            220,
+            15,
+            301,
+            4956,
+            1942,
+            13,
+            126348,
+            126346,
+            598,
+            10450,
+            126347,
+            198,
+            198
+          ],
+          "proposal_batch": {
+            "diagnostics": {
+              "candidate_positions": [
+                3,
+                0,
+                1,
+                2
+              ],
+              "confidence_to_weight": "identity_non_negative",
+              "eligible_position_count": 4,
+              "eligible_positions": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "first_proposal_id": 0,
+              "policy": "baseline_schedule_primary_proposal_v1",
+              "proposal_count": 4,
+              "schedule_budget": 4,
+              "schedule_tie_break": "confidence_descending_then_absolute_position_ascending",
+              "weight_mode": "confidence"
+            },
+            "proposals": [
+              {
+                "model_confidence": 0.9981214285274932,
+                "position": 3,
+                "proposal_id": 0,
+                "token_id": 126081,
+                "weight": 0.9981214285274932
+              },
+              {
+                "model_confidence": 0.9937450501320871,
+                "position": 0,
+                "proposal_id": 1,
+                "token_id": 15,
+                "weight": 0.9937450501320871
+              },
+              {
+                "model_confidence": 0.6692162363893144,
+                "position": 1,
+                "proposal_id": 2,
+                "token_id": 126348,
+                "weight": 0.6692162363893144
+              },
+              {
+                "model_confidence": 0.6222797619959748,
+                "position": 2,
+                "proposal_id": 3,
+                "token_id": 126081,
+                "weight": 0.6222797619959748
+              }
+            ]
+          },
+          "schedule_mask": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        "updated_canvas": [
+          15,
+          126348,
+          126081,
+          126081
+        ]
+      },
+      "strategy": "exact",
+      "top_tokens_before_commit": [
+        [
+          {
+            "decoded": "0",
+            "logit": 18.5,
+            "token_id": 15,
+            "token_piece": "0"
+          },
+          {
+            "decoded": "<|endoftext|>",
+            "logit": 13.0,
+            "token_id": 126081,
+            "token_piece": "<|endoftext|>"
+          },
+          {
+            "decoded": "**",
+            "logit": 11.0625,
+            "token_id": 480,
+            "token_piece": "**"
+          },
+          {
+            "decoded": "1",
+            "logit": 10.875,
+            "token_id": 16,
+            "token_piece": "1"
+          },
+          {
+            "decoded": "Here",
+            "logit": 8.9375,
+            "token_id": 6952,
+            "token_piece": "Here"
+          },
+          {
+            "decoded": "<|eot_id|>",
+            "logit": 8.8125,
+            "token_id": 126348,
+            "token_piece": "<|eot_id|>"
+          },
+          {
+            "decoded": "-",
+            "logit": 8.5625,
+            "token_id": 12,
+            "token_piece": "-"
+          },
+          {
+            "decoded": "2",
+            "logit": 8.375,
+            "token_id": 17,
+            "token_piece": "2"
+          }
+        ],
+        [
+          {
+            "decoded": "<|eot_id|>",
+            "logit": 16.875,
+            "token_id": 126348,
+            "token_piece": "<|eot_id|>"
+          },
+          {
+            "decoded": ".",
+            "logit": 16.125,
+            "token_id": 13,
+            "token_piece": "."
+          },
+          {
+            "decoded": "<|endoftext|>",
+            "logit": 12.875,
+            "token_id": 126081,
+            "token_piece": "<|endoftext|>"
+          },
+          {
+            "decoded": "0",
+            "logit": 10.125,
+            "token_id": 15,
+            "token_piece": "0"
+          },
+          {
+            "decoded": "**",
+            "logit": 8.375,
+            "token_id": 480,
+            "token_piece": "**"
+          },
+          {
+            "decoded": "\n",
+            "logit": 8.1875,
+            "token_id": 198,
+            "token_piece": "\u010a"
+          },
+          {
+            "decoded": " ",
+            "logit": 8.125,
+            "token_id": 220,
+            "token_piece": "\u0120"
+          },
+          {
+            "decoded": ":",
+            "logit": 7.9375,
+            "token_id": 25,
+            "token_piece": ":"
+          }
+        ],
+        [
+          {
+            "decoded": "<|endoftext|>",
+            "logit": 18.5,
+            "token_id": 126081,
+            "token_piece": "<|endoftext|>"
+          },
+          {
+            "decoded": "<|eot_id|>",
+            "logit": 18.0,
+            "token_id": 126348,
+            "token_piece": "<|eot_id|>"
+          },
+          {
+            "decoded": ".",
+            "logit": 8.9375,
+            "token_id": 13,
+            "token_piece": "."
+          },
+          {
+            "decoded": "```",
+            "logit": 8.0,
+            "token_id": 2891,
+            "token_piece": "```"
+          },
+          {
+            "decoded": "\n",
+            "logit": 7.625,
+            "token_id": 198,
+            "token_piece": "\u010a"
+          },
+          {
+            "decoded": "0",
+            "logit": 7.25,
+            "token_id": 15,
+            "token_piece": "0"
+          },
+          {
+            "decoded": " ",
+            "logit": 6.53125,
+            "token_id": 220,
+            "token_piece": "\u0120"
+          },
+          {
+            "decoded": "**",
+            "logit": 6.15625,
+            "token_id": 480,
+            "token_piece": "**"
+          }
+        ],
+        [
+          {
+            "decoded": "<|endoftext|>",
+            "logit": 20.75,
+            "token_id": 126081,
+            "token_piece": "<|endoftext|>"
+          },
+          {
+            "decoded": "<|eot_id|>",
+            "logit": 14.4375,
+            "token_id": 126348,
+            "token_piece": "<|eot_id|>"
+          },
+          {
+            "decoded": "\t",
+            "logit": 8.25,
+            "token_id": 197,
+            "token_piece": "\u0109"
+          },
+          {
+            "decoded": "\n",
+            "logit": 8.125,
+            "token_id": 198,
+            "token_piece": "\u010a"
+          },
+          {
+            "decoded": "**",
+            "logit": 7.875,
+            "token_id": 480,
+            "token_piece": "**"
+          },
+          {
+            "decoded": "-",
+            "logit": 7.84375,
+            "token_id": 12,
+            "token_piece": "-"
+          },
+          {
+            "decoded": ".",
+            "logit": 6.9375,
+            "token_id": 13,
+            "token_piece": "."
+          },
+          {
+            "decoded": "  ",
+            "logit": 6.8125,
+            "token_id": 256,
+            "token_piece": "\u0120\u0120"
+          }
+        ]
+      ],
+      "validation": {
+        "content_bytes_hex": "30",
+        "content_token_ids": [
+          15
+        ],
+        "content_utf8": "0",
+        "independent_grammar_valid": true,
+        "suffix_token_ids": [
+          126081,
+          126081
+        ],
+        "termination_position": 1,
+        "termination_token_id": 126348
+      }
+    }
+  ],
+  "task_id": "T904",
+  "tokenizer": {
+    "base_vocabulary_size": 126080,
+    "class": "PreTrainedTokenizerFast",
+    "model_output_padding_rows": 115,
+    "ordinary_byte_emission_ids": 126080,
+    "requested_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "total_vocabulary_size": 126349,
+    "unsupported_ordinary_emission_ids": 384
+  }
+}
