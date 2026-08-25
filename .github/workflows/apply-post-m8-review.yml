@@ -32,6 +32,7 @@ jobs:
           python scripts/hotfix_apply_post_m8_review.py
           python scripts/apply_post_m8_review.py
           python scripts/post_apply_import_fixes.py
+          python scripts/post_apply_test_fixes.py
       - name: Bootstrap production binding
         run: make bootstrap-rust-parser
       - name: Format generated Python changes
@@ -60,6 +61,7 @@ jobs:
             scripts/apply_post_m8_review.py \
             scripts/hotfix_apply_post_m8_review.py \
             scripts/post_apply_import_fixes.py \
+            scripts/post_apply_test_fixes.py \
             .github/workflows/apply-post-m8-review.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
