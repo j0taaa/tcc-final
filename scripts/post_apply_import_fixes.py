@@ -19,6 +19,30 @@ REPLACEMENTS = {
         "from mwpc_exact.eos_lattice import EOSLattice, EOSLatticePath, build_eos_lattice\n"
         "from mwpc_exact.eos_policy import EOSMode, EOSPolicy"
     ),
+    (
+        "from mwpc_exact.eos_lattice import (\n"
+        "    EOSLattice,\n"
+        "    EOSLatticePath,\n"
+        "    EOSMode,\n"
+        "    EOSPolicy,\n"
+        "    TokenRole,\n"
+        "    build_eos_lattice,\n"
+        ")"
+    ): (
+        "from mwpc_exact.eos_lattice import (\n"
+        "    EOSLattice,\n"
+        "    EOSLatticePath,\n"
+        "    build_eos_lattice,\n"
+        ")\n"
+        "from mwpc_exact.eos_policy import EOSMode, EOSPolicy, TokenRole"
+    ),
+    (
+        "from mwpc_exact.eos_lattice import "
+        "EOSLatticePath, EOSMode, EOSPolicy, build_eos_lattice"
+    ): (
+        "from mwpc_exact.eos_lattice import EOSLatticePath, build_eos_lattice\n"
+        "from mwpc_exact.eos_policy import EOSMode, EOSPolicy"
+    ),
     "from mwpc_exact.finite_solver import ExactBackend, solve_exact_commit": (
         "from mwpc_exact.backend import ExactBackend\n"
         "from mwpc_exact.finite_solver import solve_exact_commit"
