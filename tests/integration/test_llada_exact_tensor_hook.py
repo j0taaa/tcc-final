@@ -15,10 +15,20 @@ from mwpc_exact.epic_adapter.llada import LLaDAAdapterProfile, run_llada_exact_s
 from mwpc_exact.reference.grammar import CnfGrammar, Nonterminal, Terminal, TerminalProduction
 
 torch = pytest.importorskip("torch", reason="install the pinned EPIC CPU environment")
+llada_baseline = pytest.importorskip(
+    "constrained_diffusion.eval.dllm.models.llada.generate_constrained",
+    reason="install the pinned EPIC CPU environment",
+)
+regular_cover_baseline = pytest.importorskip(
+    "constrained_diffusion.regular_cover",
+    reason="install the pinned EPIC CPU environment",
+)
 
 
 @pytest.mark.integration
 def test_exact_hook_commits_to_a_real_single_batch_torch_row() -> None:
+    original_serial = llada_baseline.generate
+    original_epic = regular_cover_baseline.select_batch_with_regular_cover
     eos, eot, mask = 1, 2, 3
     profile = LLaDAAdapterProfile(
         model_id="offline/torch-llada-style-fixture",
@@ -76,3 +86,5 @@ def test_exact_hook_commits_to_a_real_single_batch_torch_row() -> None:
     assert token_row.tolist() == [0, 0, eos]
     assert tracking == ["prompt", "token-0", "<EOS>"]
     assert outcome.complete is True
+    assert llada_baseline.generate is original_serial
+    assert regular_cover_baseline.select_batch_with_regular_cover is original_epic
