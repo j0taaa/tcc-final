@@ -33,6 +33,8 @@ jobs:
           python scripts/apply_post_m8_review.py
       - name: Bootstrap production binding
         run: make bootstrap-rust-parser
+      - name: Format generated Python changes
+        run: .venv/bin/python -m ruff check --fix src tests
       - name: Run Python quality and complete tests
         run: |
           .venv/bin/python -m ruff check src tests
