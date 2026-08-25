@@ -280,15 +280,37 @@ produced the 15-page PDF, and the EPIC submodule remained clean and unchanged.
 
 **Depends on:** M9 gate
 
-- [ ] Accept saved canvas, proposals, and support input.
-- [ ] Return selected IDs, score, status, runtime, and witness if available.
-- [ ] Preserve order semantics.
+- [x] Accept saved canvas, proposals, and support input.
+- [x] Return selected IDs, score, status, runtime, and witness if available.
+- [x] Preserve order semantics.
 
 **Acceptance criteria**
 
-- [ ] The same input can be fed to serial and exact selectors.
+- [x] The same input can be fed to serial and exact selectors.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`da5a5b0a5f4cc745dd359ef23853d2f187639e35` adds the immutable common
+`SelectionInput`/`SelectionResult` contracts and `select_serial`/`select_exact`
+adapters in `src/mwpc_exact/selection.py`. Both selectors consume the same
+frozen grammar, canvas, proposal tuple, represented support, tokenizer, and
+EOS/PAD policy. The serial baseline processes the saved proposal tuple without
+sorting, retains a choice only after an exact finite-support feasibility check,
+and reports only `FEASIBLE_ON_SUPPORT`; it never acquires an MWPC optimality
+claim. Successful serial and exact results independently recompute every
+positive-weight witness match and score. Timeout, infeasible, unsupported, and
+error outcomes remain distinct and expose no score or partial witness.
+
+`tests/exact_commit/test_selection.py` passed all 10 focused tests, including
+order-sensitive outcomes, the same instance through Python and production Rust
+backends, required EOS/PAD slots, duplicate-choice provenance, zero weights,
+unrepresented proposals, fixed-canvas score validation, infeasibility, and a
+deterministic timeout regression. `make check` passed the upstream pin, Ruff,
+strict MyPy over 46 source files, 9 unit tests, and 459 exact-commit tests;
+`python -m pytest -q` passed all 473 tests. `make test-rust-parser` passed
+formatting, 20 Rust tests, and strict Clippy. The focused upstream constrained
+decoder/binding regressions passed 19 tests with 4 pre-existing declared skips,
+`make paper` produced the 15-page PDF, and the EPIC submodule remained clean at
+`5b1b31098f34ed3691d2a9f4aae14fdf5839d072`.
 
 ## T1001 — Wrap EPIC heuristic selector in the common interface
 
