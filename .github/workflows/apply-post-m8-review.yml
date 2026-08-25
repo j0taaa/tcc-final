@@ -57,18 +57,20 @@ jobs:
             texlive-lang-portuguese texlive-science poppler-utils
       - name: Compile the article
         run: make paper
-      - name: Preserve immutable evidence and check patch
+      - name: Preserve immutable evidence and workflow files
         run: |
-          git checkout -- docs/evidence
+          git checkout -- \
+            docs/evidence \
+            .github/workflows/ci.yml \
+            .github/workflows/apply-post-m8-review.yml
           git diff --check
-      - name: Commit validated fixes
+      - name: Commit validated non-workflow changes
         run: |
           rm -f \
             scripts/apply_post_m8_review.py \
             scripts/hotfix_apply_post_m8_review.py \
             scripts/post_apply_import_fixes.py \
-            scripts/post_apply_test_fixes.py \
-            .github/workflows/apply-post-m8-review.yml
+            scripts/post_apply_test_fixes.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
