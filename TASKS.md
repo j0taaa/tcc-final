@@ -24,9 +24,9 @@ Rules:
 
 ## Current starting point
 
-**M8 / T803.** M0 through M7 and T800--T802 are complete at the immutable
+**M8 / T804.** M0 through M7 and T800--T803 are complete at the immutable
 commits and artifacts recorded below. The first incomplete required task is
-T803: implement progress and failure fallbacks. The
+T804: add component-level profiling. The
 historical M0--M3 checklist remains archived in
 [`docs/history/TASKS-through-M3.md`](docs/history/TASKS-through-M3.md).
 
@@ -994,19 +994,41 @@ produced the 15-page PDF.
 
 **Target:** `src/mwpc_exact/decoder.py`
 
-- [ ] For `OPTIMAL` with a nonempty selected set, commit exactly those proposals.
-- [ ] For `OPTIMAL` with zero proposal score/set, choose one masked witness token using the documented deterministic rule.
-- [ ] For timeout/error, invoke the configured serial or EPIC fallback.
-- [ ] Record fallback type and reason.
-- [ ] Do not label a fallback result as optimal.
+- [x] For `OPTIMAL` with a nonempty selected set, commit exactly those proposals.
+- [x] For `OPTIMAL` with zero proposal score/set, choose one masked witness token using the documented deterministic rule.
+- [x] For timeout/error, invoke the configured serial or EPIC fallback.
+- [x] Record fallback type and reason.
+- [x] Do not label a fallback result as optimal.
 
 **Acceptance criteria**
 
-- [ ] Each feasible no-remasking step commits at least one slot.
-- [ ] The witness remains compatible after commitment.
-- [ ] Fallback metrics distinguish witness progress from error fallback.
+- [x] Each feasible no-remasking step commits at least one slot.
+- [x] The witness remains compatible after commitment.
+- [x] Fallback metrics distinguish witness progress from error fallback.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`442a0ae747394126325f7bb45e1cbbc22a804a31` adds the model-independent
+decoder commit boundary and structured token, callback, request, and step
+result contracts. It refuses unvalidated optimal inputs, independently
+recomputes the selected positive proposal set and objective, commits one token
+per selected masked position while retaining every matching proposal ID, and
+checks that the returned witness still completes the updated canvas. A
+zero-score optimum commits exactly one masked witness token by descending
+explicit model probability and ascending absolute-position tie-break, without
+inventing selected proposal IDs. Typed serial and EPIC callbacks handle every
+non-optimal status; their physical updates are validated against no-remasking
+and vocabulary bounds, their real frozen-proposal matches are recomputed, and
+their commit guarantee remains explicitly non-exact while the original solver
+status is preserved. Diagnostics distinguish exact selection, witness
+progress, successful failure fallback, unconfigured fallback, and callback
+failure, and record strategy, reason, support-expansion history, proposal
+accounting, and witness compatibility. ADRs 0002 and 0003 pin the tie-break
+and correct the executable-task attribution. `python -m pytest -q
+tests/exact_commit/test_decoder.py tests/exact_commit/test_solver.py
+tests/exact_commit/test_proposal_policy.py` passed 58 tests. `make check`
+passed the upstream pin, Ruff, strict MyPy over 37 source files, 8 unit tests,
+and 407 exact-commit tests; `python -m pytest -q` passed all 416 tests; and
+`make paper` produced the 15-page PDF.
 
 ## T804 — Add component-level profiling
 
