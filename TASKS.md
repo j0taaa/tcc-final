@@ -24,9 +24,9 @@ Rules:
 
 ## Current starting point
 
-**M8 / T801.** M0 through M7 and T800 are complete at the immutable commits
-and artifacts recorded below. The first incomplete required task is T801:
-implement the exact optimizer orchestration API. The
+**M8 / T802.** M0 through M7 and T800--T801 are complete at the immutable
+commits and artifacts recorded below. The first incomplete required task is
+T802: implement adaptive support expansion. The
 historical M0--M3 checklist remains archived in
 [`docs/history/TASKS-through-M3.md`](docs/history/TASKS-through-M3.md).
 
@@ -921,19 +921,34 @@ paper` produced the 15-page PDF.
 
 **Target:** `src/mwpc_exact/solver.py`
 
-- [ ] Validate canvas, proposals, support, and scope consistency.
-- [ ] Build token and byte lattices.
-- [ ] Call the configured backend.
-- [ ] Reconstruct tokens and proposals.
-- [ ] Run independent validation.
-- [ ] Return structured result and diagnostics.
+- [x] Validate canvas, proposals, support, and scope consistency.
+- [x] Build token and byte lattices.
+- [x] Call the configured backend.
+- [x] Reconstruct tokens and proposals.
+- [x] Run independent validation.
+- [x] Return structured result and diagnostics.
 
 **Acceptance criteria**
 
-- [ ] API works from explicit saved logits/support without loading a model.
-- [ ] Invalid certificate becomes `ERROR`, never silently committed.
+- [x] API works from explicit saved logits/support without loading a model.
+- [x] Invalid certificate becomes `ERROR`, never silently committed.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`a41a4c26c2ebdf8fbcb5672afe336762490b8cce` adds the model-independent
+`solve_exact_commit` orchestration API, explicit canvas/support/scope and
+EOS-policy validation, token-to-byte finite lattice construction, Python and
+Rust backend dispatch, original token/proposal reconstruction, and mandatory
+independent public-certificate validation. Deterministic regressions cover
+saved-logit proposal generation without a model, explicit support, fixed
+slots, absent/optional/required EOS, epsilon-only certificates, Python/Rust
+agreement, timeout preservation, malformed normalized certificates, backend
+exceptions, unavailable bindings, and an injected independent-validator
+rejection; every invalid-certificate path returns a payload-free `ERROR`.
+`python -m pytest -q tests/exact_commit/test_solver.py
+tests/exact_commit/test_finite_solver.py` passed 30 tests. `make check` passed
+the upstream pin, Ruff, strict MyPy over 35 source files, 8 unit tests, and 367
+exact-commit tests; `python -m pytest -q` passed all 376 tests; and `make paper`
+produced the 15-page PDF.
 
 ## T802 — Implement adaptive support expansion
 
