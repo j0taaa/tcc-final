@@ -28,7 +28,9 @@ jobs:
         with:
           python-version: "3.11"
       - name: Apply focused fixes
-        run: python scripts/apply_post_m8_review.py
+        run: |
+          python scripts/hotfix_apply_post_m8_review.py
+          python scripts/apply_post_m8_review.py
       - name: Bootstrap production binding
         run: make bootstrap-rust-parser
       - name: Run Python quality and complete tests
@@ -51,7 +53,10 @@ jobs:
           git diff --check
       - name: Commit validated fixes
         run: |
-          rm -f scripts/apply_post_m8_review.py .github/workflows/apply-post-m8-review.yml
+          rm -f \
+            scripts/apply_post_m8_review.py \
+            scripts/hotfix_apply_post_m8_review.py \
+            .github/workflows/apply-post-m8-review.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
