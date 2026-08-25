@@ -1,5 +1,10 @@
 """Exact maximum-weight parallel commitment research package."""
 
+from mwpc_exact.adaptive import (
+    AdaptiveSupportConfig,
+    SupportGrowthPolicy,
+    solve_exact_commit_adaptive,
+)
 from mwpc_exact.byte_lattice import ByteLattice, ByteLatticePath, build_byte_lattice
 from mwpc_exact.eos_lattice import (
     EOSArc,
@@ -66,6 +71,7 @@ from mwpc_exact.validator import (
 
 __all__ = [
     "BYTE_LEVEL_ALPHABET",
+    "AdaptiveSupportConfig",
     "AggregatedProposal",
     "ByteLattice",
     "ByteLatticePath",
@@ -88,6 +94,7 @@ __all__ = [
     "ProposalWeightMode",
     "ScheduleProposalBatch",
     "SolveStatus",
+    "SupportGrowthPolicy",
     "SupportInputSource",
     "SupportKind",
     "SupportPolicy",
@@ -113,6 +120,7 @@ __all__ = [
     "byte_level_piece_to_bytes",
     "canonical_support_rows_json",
     "solve_exact_commit",
+    "solve_exact_commit_adaptive",
     "solve_ordinary_exact_commit",
     "support_rows_sha256",
     "validate_exact_commit_certificate",
