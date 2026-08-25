@@ -10,13 +10,13 @@ from pathlib import Path
 from typing import Self
 
 from mwpc_exact.reference.brute_force import exhaustive_completion_oracle
-from mwpc_exact.reference.differential import (
+from mwpc_exact.reference.random_instances import RandomTokenAlignedInstance
+from mwpc_exact.types import SolveStatus
+from mwpc_research.token_aligned_differential import (
     DifferentialCaseReport,
     DifferentialMismatch,
     check_differential_instance,
 )
-from mwpc_exact.reference.random_instances import RandomTokenAlignedInstance
-from mwpc_exact.types import SolveStatus
 
 REGRESSION_SCHEMA_VERSION = 1
 

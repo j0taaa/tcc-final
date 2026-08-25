@@ -17,13 +17,13 @@ from mwpc_exact.reference.dag_parser import (
 )
 from mwpc_exact.reference.epsilon import normalize_epsilon_edges
 from mwpc_exact.reference.graph import index_terminal_dag
-from mwpc_exact.reference.graph_differential import (
-    RandomGraphInstance,
-    generate_random_graph_instance,
-)
 from mwpc_exact.reference.graph_oracle import enumerate_best_cfg_path
 from mwpc_exact.rust_solver import RustDagSolveResult, solve_rust_dag
 from mwpc_exact.types import SolveStatus, TerminalEdge, WeightedTerminalDAG
+from mwpc_research.graph_differential import (
+    RandomGraphInstance,
+    generate_random_graph_instance,
+)
 
 
 class RustDifferentialMismatch(AssertionError):

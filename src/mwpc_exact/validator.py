@@ -16,7 +16,7 @@ from math import fsum, isclose, isfinite
 from types import MappingProxyType
 from typing import Protocol
 
-from mwpc_exact.eos_lattice import EOSMode, EOSPolicy
+from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from mwpc_exact.types import (
     ExactCommitResult,
@@ -137,6 +137,75 @@ class ValidationReport:
                 self.recomputed_selected_proposal_ids
             ),
         }
+
+
+    @classmethod
+    def from_dict(cls, data: Mapping[str, object]) -> ValidationReport:
+        """Reconstruct a typed report from its JSON-compatible representation."""
+
+        if not isinstance(data, Mapping):
+            raise TypeError("validation report data must be a mapping")
+        raw_issues = data.get("issues", ())
+        if isinstance(raw_issues, (str, bytes)) or not isinstance(raw_issues, Sequence):
+            raise TypeError("validation report issues must be a finite sequence")
+        issues: list[ValidationIssue] = []
+        for index, raw_issue in enumerate(raw_issues):
+            if not isinstance(raw_issue, Mapping):
+                raise TypeError(f"validation issue {index} must be a mapping")
+            raw_code = raw_issue.get("code")
+            raw_message = raw_issue.get("message")
+            raw_context = raw_issue.get("context", {})
+            if not isinstance(raw_code, str):
+                raise TypeError(f"validation issue {index} code must be a string")
+            if not isinstance(raw_message, str):
+                raise TypeError(f"validation issue {index} message must be a string")
+            if not isinstance(raw_context, Mapping):
+                raise TypeError(f"validation issue {index} context must be a mapping")
+            try:
+                code = ValidationCode(raw_code)
+            except ValueError as exc:
+                raise ValueError(f"unknown validation issue code: {raw_code!r}") from exc
+            issues.append(ValidationIssue(code=code, message=raw_message, context=raw_context))
+
+        raw_skipped = data.get("skipped_checks", ())
+        if isinstance(raw_skipped, (str, bytes)) or not isinstance(raw_skipped, Sequence):
+            raise TypeError("skipped_checks must be a finite sequence")
+        skipped = tuple(raw_skipped)
+        if not all(isinstance(item, str) and item for item in skipped):
+            raise TypeError("skipped_checks must contain non-empty strings")
+
+        raw_objective = data.get("recomputed_objective")
+        if raw_objective is None:
+            objective = None
+        elif isinstance(raw_objective, bool) or not isinstance(raw_objective, (int, float)):
+            raise TypeError("recomputed_objective must be a real number or None")
+        else:
+            objective = float(raw_objective)
+            if not isfinite(objective):
+                raise ValueError("recomputed_objective must be finite")
+
+        raw_ids = data.get("recomputed_selected_proposal_ids", ())
+        if isinstance(raw_ids, (str, bytes)) or not isinstance(raw_ids, Sequence):
+            raise TypeError("recomputed_selected_proposal_ids must be a finite sequence")
+        recomputed_ids: list[int] = []
+        for item in raw_ids:
+            if isinstance(item, bool) or not isinstance(item, int) or item < 0:
+                raise ValueError("recomputed selected proposal IDs must be non-negative integers")
+            recomputed_ids.append(item)
+
+        report = cls(
+            issues=tuple(issues),
+            skipped_checks=skipped,
+            recomputed_objective=objective,
+            recomputed_selected_proposal_ids=tuple(recomputed_ids),
+        )
+        declared_valid = data.get("is_valid")
+        if declared_valid is not None:
+            if not isinstance(declared_valid, bool):
+                raise TypeError("is_valid must be a boolean when provided")
+            if declared_valid is not report.is_valid:
+                raise ValueError("serialized is_valid disagrees with reconstructed report")
+        return report
 
 
 def _validate_canvas(canvas: Sequence[int | None]) -> tuple[int | None, ...]:

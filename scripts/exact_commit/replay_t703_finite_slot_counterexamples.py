@@ -8,7 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from mwpc_exact.finite_slot_counterexamples import (
+from mwpc_research.finite_slot_counterexamples import (
     load_finite_slot_counterexamples,
     replay_finite_slot_counterexample,
     summarize_finite_slot_counterexamples,

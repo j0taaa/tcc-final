@@ -7,21 +7,22 @@ and the complete attempt history is attached to the final structured result.
 
 from __future__ import annotations
 
-from collections.abc import Iterable, Mapping, Sequence
+from collections.abc import Callable, Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from enum import StrEnum
 from itertools import pairwise
 from math import isfinite
 from time import monotonic
 
-from mwpc_exact.eos_lattice import EOSPolicy
-from mwpc_exact.finite_solver import ExactBackend
+from mwpc_exact.backend import ExactBackend
+from mwpc_exact.eos_policy import EOSPolicy
 from mwpc_exact.profiling import ComponentProfiler
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.solver import solve_exact_commit
 from mwpc_exact.support import PerPositionSupport, SupportPolicy, build_per_position_support
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from mwpc_exact.types import ExactCommitResult, Proposal, SolveStatus, SupportKind
+from mwpc_exact.validated import ValidatedExactCommit, validated_exact_commit
 
 
 class SupportGrowthPolicy(StrEnum):
@@ -244,7 +245,8 @@ def _finalize(
     ]
     diagnostics = dict(result.diagnostics)
     diagnostics["adaptive_support"] = {
-        "orchestrator": "adaptive_support_v1",
+        "orchestrator": "feasibility_driven_support_expansion_v2",
+        "stopping_policy": "first_feasible",
         "config": config.to_dict(),
         "configured_widths": list(configured_widths),
         "attempted_k": [attempt.requested_k for attempt in attempts],
@@ -256,10 +258,10 @@ def _finalize(
         "support_superset_verified": all(
             attempt.superset_of_previous is not False for attempt in attempts
         ),
-        "objective_monotonicity_basis": (
+        "observed_objective_monotonicity_basis": (
             "fixed proposals over row-wise verified support supersets"
         ),
-        "optimal_objective_non_decreasing": all(
+        "observed_optimal_objectives_non_decreasing": all(
             earlier <= later for earlier, later in pairwise(optimal_objectives)
         ),
         "optimal_objective_values": optimal_objectives,
@@ -289,6 +291,7 @@ def solve_exact_commit_adaptive(
     deadline_check_interval: int = 1_024,
     deterministic_work_limit: int | None = None,
     profiler: ComponentProfiler | None = None,
+    clock: Callable[[], float] | None = None,
 ) -> ExactCommitResult:
     """Solve with successively wider deterministic top-K support.
 
@@ -298,6 +301,10 @@ def solve_exact_commit_adaptive(
     deadline between complete attempts because it has no interruptible parser.
     """
 
+    if clock is None:
+        clock = monotonic
+    elif not callable(clock):
+        raise TypeError("clock must be callable or None")
     if not isinstance(config, AdaptiveSupportConfig):
         raise TypeError("config must be an AdaptiveSupportConfig")
     if profiler is not None and not isinstance(profiler, ComponentProfiler):
@@ -331,7 +338,7 @@ def solve_exact_commit_adaptive(
         raise AssertionError("SupportPolicy did not normalize permitted_token_ids")
     widths = config.attempt_widths(len(normalized_permitted))
 
-    started_at = monotonic()
+    started_at = clock()
     latest_time = started_at
     attempts: list[_AttemptRecord] = []
     previous_support: PerPositionSupport | None = None
@@ -356,7 +363,7 @@ def solve_exact_commit_adaptive(
             proposals=proposal_items,
             profiler=profiler,
         )
-        support_finished_at = monotonic()
+        support_finished_at = clock()
         if previous_support is not None:
             _validate_support_superset(previous_support, support)
 
@@ -380,7 +387,7 @@ def solve_exact_commit_adaptive(
             deterministic_work_limit=deterministic_work_limit,
             profiler=profiler,
         )
-        latest_time = monotonic()
+        latest_time = clock()
         attempt = _AttemptRecord(
             attempt_index=attempt_index,
             requested_k=width,
@@ -396,6 +403,39 @@ def solve_exact_commit_adaptive(
         if profiler is not None and profiler.enabled:
             profiler.set_counter("support_attempt_count", len(attempts))
             profiler.set_counter("support_expansion_count", max(0, len(attempts) - 1))
+
+        total_elapsed = max(0.0, latest_time - started_at)
+        if (
+            config.total_timeout_seconds is not None
+            and total_elapsed >= config.total_timeout_seconds
+            and result.status is not SolveStatus.TIMEOUT
+        ):
+            timeout_result = ExactCommitResult(
+                status=SolveStatus.TIMEOUT,
+                exactness_scope=result.exactness_scope,
+                diagnostics=result.diagnostics,
+            )
+            attempts[-1] = _AttemptRecord(
+                attempt_index=attempt.attempt_index,
+                requested_k=attempt.requested_k,
+                support=attempt.support,
+                result=timeout_result,
+                support_construction_seconds=attempt.support_construction_seconds,
+                solve_seconds=attempt.solve_seconds,
+                cumulative_elapsed_seconds=attempt.cumulative_elapsed_seconds,
+                backend_timeout_seconds=attempt.backend_timeout_seconds,
+                superset_of_previous=attempt.superset_of_previous,
+            )
+            return _finalize(
+                timeout_result,
+                config=config,
+                configured_widths=widths,
+                attempts=attempts,
+                backend=backend,
+                stopped_reason="total_timeout_after_attempt",
+                resource_limit_prevented_expansion=True,
+                total_elapsed_seconds=total_elapsed,
+            )
 
         if result.status is not SolveStatus.INFEASIBLE_ON_SUPPORT:
             return _finalize(
@@ -448,8 +488,49 @@ def solve_exact_commit_adaptive(
     raise AssertionError("validated adaptive schedule unexpectedly contained no attempts")
 
 
+def solve_exact_commit_adaptive_validated(
+    grammar: CnfGrammar,
+    *,
+    canvas: Sequence[int | None],
+    logits: Sequence[Sequence[float]],
+    proposals: Iterable[Proposal],
+    tokenizer_adapter: CompositionalByteLevelAdapter,
+    eos_policy: EOSPolicy,
+    config: AdaptiveSupportConfig,
+    backend: ExactBackend = ExactBackend.RUST,
+    permitted_token_ids: Sequence[int] | None = None,
+    include_proposal_tokens: bool = False,
+    pruning_description: str | None = None,
+    deadline_check_interval: int = 1_024,
+    deterministic_work_limit: int | None = None,
+    profiler: ComponentProfiler | None = None,
+    clock: Callable[[], float] | None = None,
+) -> ValidatedExactCommit | ExactCommitResult:
+    """Return a typed validated optimum under feasibility-driven support expansion."""
+
+    result = solve_exact_commit_adaptive(
+        grammar,
+        canvas=canvas,
+        logits=logits,
+        proposals=proposals,
+        tokenizer_adapter=tokenizer_adapter,
+        eos_policy=eos_policy,
+        config=config,
+        backend=backend,
+        permitted_token_ids=permitted_token_ids,
+        include_proposal_tokens=include_proposal_tokens,
+        pruning_description=pruning_description,
+        deadline_check_interval=deadline_check_interval,
+        deterministic_work_limit=deterministic_work_limit,
+        profiler=profiler,
+        clock=clock,
+    )
+    return validated_exact_commit(result) if result.status is SolveStatus.OPTIMAL else result
+
+
 __all__ = [
     "AdaptiveSupportConfig",
     "SupportGrowthPolicy",
     "solve_exact_commit_adaptive",
+    "solve_exact_commit_adaptive_validated",
 ]

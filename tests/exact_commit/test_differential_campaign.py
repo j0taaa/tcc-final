@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import json
 
-from mwpc_exact.reference.differential import (
+from mwpc_exact.reference.random_instances import RandomTokenAlignedInstance
+from mwpc_research.token_aligned_differential import (
     DifferentialMismatch,
     check_differential_instance,
     run_differential_campaign,
 )
-from mwpc_exact.reference.random_instances import RandomTokenAlignedInstance
 
 
 def test_normal_differential_campaign_has_complete_agreement() -> None:

@@ -6,7 +6,7 @@ from importlib import import_module
 import pytest
 
 from mwpc_exact import ExactBackend, SolveStatus
-from mwpc_exact.finite_differential import (
+from mwpc_research.finite_differential import (
     FiniteLatticeDifferentialMismatch,
     RandomFiniteLatticeInstance,
     check_finite_lattice_instance,

@@ -12,7 +12,7 @@ import sys
 import tomllib
 from pathlib import Path
 
-from mwpc_exact.eos_differential import (
+from mwpc_research.eos_differential import (
     EOS_DIFFERENTIAL_GENERATOR_SCHEMA_VERSION,
     eos_finite_slot_grammar_family_sha256,
     run_eos_finite_slot_campaign,

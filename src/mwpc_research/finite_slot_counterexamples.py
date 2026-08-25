@@ -17,7 +17,8 @@ from math import fsum, isclose
 from pathlib import Path
 from typing import Self
 
-from mwpc_exact.eos_lattice import EOSLatticePath, EOSMode, EOSPolicy, build_eos_lattice
+from mwpc_exact.eos_lattice import EOSLatticePath, build_eos_lattice
+from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.reference.epsilon import solve_cfg_on_epsilon_dag
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.reference.recognizer import recognizes_cnf

@@ -23,11 +23,9 @@ from typing import NoReturn, Self
 from mwpc_exact.eos_lattice import (
     EOSLattice,
     EOSLatticePath,
-    EOSMode,
-    EOSPolicy,
-    TokenRole,
     build_eos_lattice,
 )
+from mwpc_exact.eos_policy import EOSMode, EOSPolicy, TokenRole
 from mwpc_exact.reference.epsilon import solve_cfg_on_epsilon_dag
 from mwpc_exact.reference.grammar import (
     BinaryProduction,
