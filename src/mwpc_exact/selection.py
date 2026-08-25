@@ -48,6 +48,7 @@ class SelectionStatus(StrEnum):
 
     OPTIMAL = "optimal"
     FEASIBLE_ON_SUPPORT = "feasible_on_support"
+    HEURISTIC = "heuristic"
     INFEASIBLE_ON_SUPPORT = "infeasible_on_support"
     TIMEOUT = "timeout"
     UNSUPPORTED = "unsupported"
@@ -268,9 +269,12 @@ class SelectionResult:
         if self.status is SelectionStatus.OPTIMAL:
             if score is None or not token_ids:
                 raise ValueError("OPTIMAL requires a score and witness token sequence")
-        elif self.status is SelectionStatus.FEASIBLE_ON_SUPPORT:
+        elif self.status in {
+            SelectionStatus.FEASIBLE_ON_SUPPORT,
+            SelectionStatus.HEURISTIC,
+        }:
             if score is None:
-                raise ValueError("FEASIBLE_ON_SUPPORT requires a recomputed score")
+                raise ValueError("successful baseline results require a recomputed score")
         elif any(
             (
                 score is not None,

@@ -34,6 +34,11 @@ from mwpc_exact.eos_policy import (
     EOSState,
     TokenRole,
 )
+from mwpc_exact.epic_selection import (
+    EPIC_UPSTREAM_COMMIT,
+    EpicSelectionContext,
+    select_epic,
+)
 from mwpc_exact.finite_solver import solve_ordinary_support_reference
 from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent, ProfilingEvent
 from mwpc_exact.proposal_policy import (
@@ -108,6 +113,7 @@ from mwpc_exact.validator import (
 
 __all__ = [
     "BYTE_LEVEL_ALPHABET",
+    "EPIC_UPSTREAM_COMMIT",
     "AdaptiveSupportConfig",
     "AggregatedProposal",
     "ByteLattice",
@@ -127,6 +133,7 @@ __all__ = [
     "EOSPolicyViolation",
     "EOSState",
     "EOSWitnessValidator",
+    "EpicSelectionContext",
     "EpsilonEdge",
     "ExactBackend",
     "ExactCommitResult",
@@ -184,6 +191,7 @@ __all__ = [
     "dispatch_commit_strategy",
     "legacy_commit_strategy",
     "recompute_witness_selection",
+    "select_epic",
     "select_exact",
     "select_serial",
     "solve_exact_commit",
