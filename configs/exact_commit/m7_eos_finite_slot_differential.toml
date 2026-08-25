@@ -1,0 +1,16 @@
+schema_version = 1
+
+[[campaigns]]
+name = "normal"
+seed_start = 0
+case_count = 500
+summary = "docs/evidence/m7-eos-finite-slot-differential-normal-summary.json"
+
+[[campaigns]]
+name = "extended"
+seed_start = 100000
+case_count = 2000
+summary = "docs/evidence/m7-eos-finite-slot-differential-extended-summary.json"
+
+[output]
+failure_directory = "artifacts/m7/eos-finite-slot-differential-failures"

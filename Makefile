@@ -4,7 +4,7 @@ VENV_PY := $(VENV)/bin/python
 VENV_PIP := $(VENV)/bin/pip
 EPIC_CPU_INDEX ?= https://download.pytorch.org/whl/cpu
 
-.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-upstream test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-rust-parser paper clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-upstream test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -58,6 +58,9 @@ test-m6-differential:
 
 test-m7-counterexamples:
 	$(VENV_PY) scripts/exact_commit/replay_t703_finite_slot_counterexamples.py
+
+test-m7-differential:
+	$(VENV_PY) scripts/exact_commit/run_m7_eos_finite_slot_differential.py
 
 test-rust-parser:
 	cargo fmt --manifest-path crates/mwpc_parser/Cargo.toml --all -- --check

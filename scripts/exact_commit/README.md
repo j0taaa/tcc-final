@@ -73,3 +73,18 @@ intersection, recomputes their required-EOS slot shortfalls, and compares the
 finite EOS-lattice parser with independent complete-path enumeration. It writes
 the deterministic, versioned summary to
 `docs/evidence/t703-finite-slot-counterexamples.json`.
+
+The T704 seeded finite-slot EOS/PAD differential campaigns are configured by
+`configs/exact_commit/m7_eos_finite_slot_differential.toml` and run with:
+
+```bash
+make test-m7-differential
+```
+
+The oracle enumerates the explicit token-row Cartesian product and applies an
+independent EOS interpreter before CFG recognition. It does not use product
+lattice states, epsilon normalization, or parser backpointers. The campaign
+randomizes required/optional termination, EOS position, canonical PAD suffixes,
+fixed ordinary/EOS/PAD slots, special controls, proposal weights, and support
+rows. Every optimal parser witness is checked by the public independent
+certificate validator, and every failure saves its exact input for replay.
