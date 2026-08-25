@@ -25,8 +25,8 @@ Rules:
 
 ## Current starting point
 
-**M10 / T1000.** M0 through M9 are complete. The first incomplete required task
-is T1000: wrap the serial selector in the common evaluation interface.
+**M10 / T1002.** M0 through M9 and T1000 through T1001 are complete. The first
+incomplete required task is T1002: wrap brute force as a small-instance baseline.
 
 Required milestones: **M0 through M13**. Optional milestones: **O1 through O4**.
 
@@ -316,16 +316,42 @@ decoder/binding regressions passed 19 tests with 4 pre-existing declared skips,
 
 **Depends on:** M9 gate
 
-- [ ] Convert EPIC candidates and current words into common input/output.
-- [ ] Record regular-cover and exact-shrink calls/diagnostics.
-- [ ] Recompute selected score independently.
-- [ ] Keep EPIC behavior unchanged.
+- [x] Convert EPIC candidates and current words into common input/output.
+- [x] Record regular-cover and exact-shrink calls/diagnostics.
+- [x] Recompute selected score independently.
+- [x] Keep EPIC behavior unchanged.
 
 **Acceptance criteria**
 
-- [ ] Heuristic and exact receive identical proposals and weights in offline comparisons.
+- [x] Heuristic and exact receive identical proposals and weights in offline comparisons.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`e1766a1080098088eb3249d0c6b6fff645748bc4` adds the pinned-upstream EPIC
+adapter and explicit `HEURISTIC` result status. The adapter translates the
+common generated-canvas positions into EPIC tracking-row indices, delegates to
+the unchanged upstream regular-cover selector, preserves confidence-based
+candidate ordering and minimum-batch fallback behavior, and independently
+recomputes the returned score from the original positive MWPC proposal weights.
+It never exposes an EPIC witness or optimality claim. Diagnostics record the
+pinned upstream commit, exact-shrink configuration, support fingerprint,
+eligible/excluded proposal IDs, serial-fallback decision, and regular-cover,
+intersection, and exact-shrink call deltas when the upstream profiler is
+enabled.
+
+`tests/exact_commit/test_epic_selection.py` and
+`tests/integration/test_epic_common_selection.py` passed all 8 focused tests.
+The integration regression replays the versioned T902 saved-candidate fixture,
+feeds EPIC and exact the same immutable `SelectionInput` proposal tuple and
+weights, compares the adapter with a direct call to the pinned upstream
+selector, and exercises both regular-cover and recursive exact-shrink call
+accounting without replacing the upstream selection function. `make check`
+passed the upstream pin, Ruff, strict MyPy over 47 source files, 9 unit tests,
+and 466 exact-commit tests; `python -m pytest -q` passed all 481 tests.
+`make test-rust-parser` passed formatting, 20 Rust tests, and strict Clippy.
+The focused upstream constrained-decoder/binding regressions passed 19 tests
+with 4 pre-existing declared skips, `make paper` produced the 15-page PDF, and
+the EPIC submodule remained clean at
+`5b1b31098f34ed3691d2a9f4aae14fdf5839d072`.
 
 ## T1002 — Wrap brute force as a small-instance baseline
 
