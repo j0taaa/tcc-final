@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "abstract_sigma_star_semantics": "ordered proposal-token anchors separated and surrounded by unbounded token Sigma* gaps; physical canvas slots and the required EOS token are not allocated",
+  "cases": [
+    {
+      "case_id": "required_eos_one_slot_infeasible_v1",
+      "title": "One content token plus required EOS cannot fit in one slot",
+      "grammar": {
+        "nonterminals": [
+          {"symbol_id": 0, "name": "S"}
+        ],
+        "terminals": [
+          {"symbol_id": 0, "label": 97}
+        ],
+        "start_nonterminal_id": 0,
+        "terminal_productions": [
+          {
+            "production_id": 0,
+            "head_id": 0,
+            "terminal_id": 0,
+            "source_production_ids": []
+          }
+        ],
+        "binary_productions": [],
+        "accepts_empty": false
+      },
+      "canvas": [null],
+      "support_rows": [[0, 1]],
+      "emissions_hex_by_token_id": ["61", null],
+      "proposals": [
+        {"proposal_id": 10, "position": 0, "token_id": 0, "weight": 10}
+      ],
+      "eos_policy": {
+        "mode": "required",
+        "termination_token_ids": [1],
+        "pad_token_id": 1
+      },
+      "abstract_sigma_star": {
+        "pattern": "Sigma* token(0='a') Sigma*",
+        "proposal_ids": [10],
+        "witness_token_ids": [0],
+        "objective_value": 10
+      },
+      "slot_proof": {
+        "minimum_physical_slots": 2,
+        "available_physical_slots": 1
+      },
+      "expected_finite": {
+        "status": "infeasible_on_support",
+        "objective_value": null,
+        "selected_proposal_ids": [],
+        "witness_token_ids": null
+      }
+    },
+    {
+      "case_id": "required_eos_one_slot_lower_empty_v1",
+      "title": "Finite slots force a lower-score EOS-only completion",
+      "grammar": {
+        "nonterminals": [
+          {"symbol_id": 0, "name": "S"}
+        ],
+        "terminals": [
+          {"symbol_id": 0, "label": 97}
+        ],
+        "start_nonterminal_id": 0,
+        "terminal_productions": [
+          {
+            "production_id": 0,
+            "head_id": 0,
+            "terminal_id": 0,
+            "source_production_ids": []
+          }
+        ],
+        "binary_productions": [],
+        "accepts_empty": true
+      },
+      "canvas": [null],
+      "support_rows": [[0, 1]],
+      "emissions_hex_by_token_id": ["61", null],
+      "proposals": [
+        {"proposal_id": 20, "position": 0, "token_id": 0, "weight": 10},
+        {"proposal_id": 21, "position": 0, "token_id": 1, "weight": 1}
+      ],
+      "eos_policy": {
+        "mode": "required",
+        "termination_token_ids": [1],
+        "pad_token_id": 1
+      },
+      "abstract_sigma_star": {
+        "pattern": "Sigma* token(0='a') Sigma*",
+        "proposal_ids": [20],
+        "witness_token_ids": [0],
+        "objective_value": 10
+      },
+      "slot_proof": {
+        "minimum_physical_slots": 2,
+        "available_physical_slots": 1
+      },
+      "expected_finite": {
+        "status": "optimal",
+        "objective_value": 1,
+        "selected_proposal_ids": [21],
+        "witness_token_ids": [1]
+      }
+    }
+  ]
+}

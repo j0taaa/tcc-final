@@ -61,3 +61,15 @@ token emissions, same-byte/different-ID choices, proposal provenance, and
 optional fixed positions. Direct enumeration defines the exact-on-support
 answer; both the Python debugging solver and Rust production solver must agree
 with it. Exact mismatch inputs and failure metadata are saved for replay.
+
+The T703 finite-slot counterexample corpus is replayed with:
+
+```bash
+make test-m7-counterexamples
+```
+
+The command verifies concrete witnesses for the relaxed abstract `Sigma*`
+intersection, recomputes their required-EOS slot shortfalls, and compares the
+finite EOS-lattice parser with independent complete-path enumeration. It writes
+the deterministic, versioned summary to
+`docs/evidence/t703-finite-slot-counterexamples.json`.

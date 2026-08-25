@@ -1,0 +1,117 @@
+{
+  "abstract_sigma_star_semantics": "ordered proposal-token anchors separated and surrounded by unbounded token Sigma* gaps; physical canvas slots and the required EOS token are not allocated",
+  "all_abstract_sigma_star_accepted": true,
+  "all_slot_shortfalls_positive": true,
+  "case_count": 2,
+  "cases": [
+    {
+      "abstract_sigma_star": {
+        "accepted": true,
+        "objective_value": 10.0,
+        "pattern": "Sigma* token(0='a') Sigma*",
+        "terminal_bytes_hex": "61",
+        "terminal_labels": [
+          97
+        ]
+      },
+      "case_id": "required_eos_one_slot_infeasible_v1",
+      "finite_exact_on_support": {
+        "eos_policy": {
+          "mode": "required",
+          "pad_token_id": 1,
+          "termination_token_ids": [
+            1
+          ]
+        },
+        "exactness_scope": {
+          "adaptive_expansions": [],
+          "claim": "exact_on_support",
+          "included_special_tokens": [
+            1
+          ],
+          "kind": "explicit",
+          "pruning_description": "T703 versioned fixture required_eos_one_slot_infeasible_v1",
+          "top_k": null,
+          "vocabulary_size": 2
+        },
+        "objective_value": null,
+        "represented_support_sha256": "f515fa775d99acd6f31a0b7f0a698ebf3bb5052eb031c28e49b7b81b7ad53b6a",
+        "selected_proposal_ids": [],
+        "status": "infeasible_on_support",
+        "witness_content_endpoint_slot": null,
+        "witness_eos_position": null,
+        "witness_graph_edge_ids": null,
+        "witness_terminal_labels": null,
+        "witness_token_ids": null,
+        "witness_token_roles": null
+      },
+      "slot_proof": {
+        "available_physical_slots": 1,
+        "minimum_physical_slots": 2,
+        "slot_shortfall": 1
+      }
+    },
+    {
+      "abstract_sigma_star": {
+        "accepted": true,
+        "objective_value": 10.0,
+        "pattern": "Sigma* token(0='a') Sigma*",
+        "terminal_bytes_hex": "61",
+        "terminal_labels": [
+          97
+        ]
+      },
+      "case_id": "required_eos_one_slot_lower_empty_v1",
+      "finite_exact_on_support": {
+        "eos_policy": {
+          "mode": "required",
+          "pad_token_id": 1,
+          "termination_token_ids": [
+            1
+          ]
+        },
+        "exactness_scope": {
+          "adaptive_expansions": [],
+          "claim": "exact_on_support",
+          "included_special_tokens": [
+            1
+          ],
+          "kind": "explicit",
+          "pruning_description": "T703 versioned fixture required_eos_one_slot_lower_empty_v1",
+          "top_k": null,
+          "vocabulary_size": 2
+        },
+        "objective_value": 1.0,
+        "represented_support_sha256": "f515fa775d99acd6f31a0b7f0a698ebf3bb5052eb031c28e49b7b81b7ad53b6a",
+        "selected_proposal_ids": [
+          21
+        ],
+        "status": "optimal",
+        "witness_content_endpoint_slot": 0,
+        "witness_eos_position": 0,
+        "witness_graph_edge_ids": [
+          1
+        ],
+        "witness_terminal_labels": [],
+        "witness_token_ids": [
+          1
+        ],
+        "witness_token_roles": [
+          "eos"
+        ]
+      },
+      "slot_proof": {
+        "available_physical_slots": 1,
+        "minimum_physical_slots": 2,
+        "slot_shortfall": 1
+      }
+    }
+  ],
+  "finite_status_counts": {
+    "infeasible_on_support": 1,
+    "optimal": 1
+  },
+  "fixture_path": "tests/exact_commit/fixtures/finite_slot_counterexamples.json",
+  "fixture_sha256": "03dbe78fc12e9e2f82ff201b06e9101a151a14950be4e0366a2cd2b938dc7739",
+  "schema_version": 1
+}
