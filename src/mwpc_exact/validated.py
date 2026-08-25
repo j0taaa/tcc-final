@@ -10,32 +10,46 @@ from math import isclose
 from mwpc_exact.types import ExactCommitResult, SolveStatus
 from mwpc_exact.validator import ValidationReport
 
+_VALIDATION_AUTHORITY = object()
 
-@dataclass(frozen=True, slots=True)
+
+@dataclass(frozen=True, slots=True, init=False)
 class ValidatedExactCommit:
     """An optimal result paired with its typed independent validation report."""
 
     result: ExactCommitResult
     validation_report: ValidationReport
 
-    def __post_init__(self) -> None:
-        if not isinstance(self.result, ExactCommitResult):
+    def __init__(
+        self,
+        result: ExactCommitResult,
+        validation_report: ValidationReport,
+        *,
+        _authority: object | None = None,
+    ) -> None:
+        if _authority is not _VALIDATION_AUTHORITY:
+            raise TypeError("ValidatedExactCommit must come from a validated solve API")
+        if not isinstance(result, ExactCommitResult):
             raise TypeError("result must be an ExactCommitResult")
-        if not isinstance(self.validation_report, ValidationReport):
+        if not isinstance(validation_report, ValidationReport):
             raise TypeError("validation_report must be a ValidationReport")
-        if self.result.status is not SolveStatus.OPTIMAL:
+        if result.status is not SolveStatus.OPTIMAL:
             raise ValueError("ValidatedExactCommit requires an OPTIMAL result")
-        if not self.validation_report.is_valid:
+        if not validation_report.is_valid:
             raise ValueError("ValidatedExactCommit requires a fully valid report")
-        if Counter(self.result.selected_proposal_ids) != Counter(
-            self.validation_report.recomputed_selected_proposal_ids
+        if Counter(result.selected_proposal_ids) != Counter(
+            validation_report.recomputed_selected_proposal_ids
         ):
             raise ValueError("validation report proposal IDs disagree with the result")
-        recomputed = self.validation_report.recomputed_objective
-        if recomputed is None or self.result.objective_value is None or not isclose(
-            self.result.objective_value, recomputed, rel_tol=1e-12, abs_tol=1e-12
+        recomputed = validation_report.recomputed_objective
+        if (
+            recomputed is None
+            or result.objective_value is None
+            or not isclose(result.objective_value, recomputed, rel_tol=1e-12, abs_tol=1e-12)
         ):
             raise ValueError("validation report objective disagrees with the result")
+        object.__setattr__(self, "result", result)
+        object.__setattr__(self, "validation_report", validation_report)
 
     @property
     def status(self) -> SolveStatus:
@@ -82,18 +96,19 @@ class ValidatedExactCommit:
         return self.result.to_dict()
 
 
-def validated_exact_commit(result: ExactCommitResult) -> ValidatedExactCommit:
-    """Create the typed commit boundary from the orchestrator's recorded report."""
+def _validated_exact_commit(
+    result: ExactCommitResult,
+    validation_report: ValidationReport,
+) -> ValidatedExactCommit:
+    """Create commit authority from the live independent validator result."""
 
     if not isinstance(result, ExactCommitResult):
         raise TypeError("result must be an ExactCommitResult")
-    raw_report = result.diagnostics.get("certificate_validation")
-    if not isinstance(raw_report, Mapping):
-        raise ValueError("optimal result omitted typed certificate-validation evidence")
     return ValidatedExactCommit(
         result=result,
-        validation_report=ValidationReport.from_dict(raw_report),
+        validation_report=validation_report,
+        _authority=_VALIDATION_AUTHORITY,
     )
 
 
-__all__ = ["ValidatedExactCommit", "validated_exact_commit"]
+__all__ = ["ValidatedExactCommit"]

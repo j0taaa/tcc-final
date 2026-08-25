@@ -11,5 +11,7 @@ IDs agree with the result. Non-optimal results remain raw because fallbacks
 must preserve their original status without acquiring an exact guarantee.
 
 The production M9 adapter must call the validated solve APIs before invoking
-`apply_exact_commit_result`. A JSON boolean in diagnostics is evidence for
-serialization, not by itself authorization to mutate the canvas.
+`apply_exact_commit_result`. Those APIs carry the live typed report emitted by
+the independent validator; reconstructing a report from result diagnostics
+cannot create commit authority. A JSON boolean in diagnostics is evidence for
+serialization, not authorization to mutate the canvas.

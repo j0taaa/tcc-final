@@ -43,10 +43,11 @@ Required milestones: **M0 through M13**. Optional milestones: **O1 through O4**.
 - **M8:** proposal policy, first-feasible adaptive support, typed solve/commit boundary, fallbacks, profiling, and offline exact-step integration.
 
 **Post-M8 corrections:** the production decoder now requires a typed
-`ValidatedExactCommit`; `total_timeout_seconds` is a hard returned-status
-deadline even when a complete attempt finishes late; adaptive diagnostics name
-the first-feasible stopping policy; campaign code lives in `mwpc_research`; and
-the Rust CI path runs the complete current suite plus normal M6/M7 campaigns.
+`ValidatedExactCommit` carrying the live independent validation report;
+`total_timeout_seconds` rejects late results while documenting that Python
+reference attempts are not interruptible; adaptive diagnostics name the
+first-feasible stopping policy; campaign code lives in `mwpc_research`; and the
+Rust CI path runs the complete current suite plus normal M6/M7 campaigns.
 
 See the archived checklist and `docs/evidence/` for exact commits, commands,
 configured-case boundaries, and campaign counts.

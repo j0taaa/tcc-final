@@ -163,9 +163,7 @@ def test_infeasible_attempt_expands_to_optimal_saved_logits_support() -> None:
     )
     assert attempts[0]["superset_of_previous"] is None
     assert attempts[1]["superset_of_previous"] is True
-    assert attempts[0]["represented_support_sha256"] != attempts[1][
-        "represented_support_sha256"
-    ]
+    assert attempts[0]["represented_support_sha256"] != attempts[1]["represented_support_sha256"]
     for attempt in attempts:
         graph_sizes = attempt["graph_sizes"]
         assert graph_sizes["token_choice_count"] > 0
@@ -242,9 +240,7 @@ def test_reaching_every_permitted_token_uses_validated_full_scope() -> None:
         SupportKind.TOP_K.value,
         SupportKind.FULL.value,
     )
-    assert result.diagnostics["exactness_name"] == (
-        "exact_declared_full_finite_slot_instance"
-    )
+    assert result.diagnostics["exactness_name"] == ("exact_declared_full_finite_slot_instance")
 
 
 def test_linear_growth_stops_deterministically_at_k_max_when_still_infeasible() -> None:
@@ -272,10 +268,7 @@ def test_linear_growth_stops_deterministically_at_k_max_when_still_infeasible() 
     assert diagnostics["stopped_reason"] == "k_max_reached"
     attempts = diagnostics["attempts"]
     assert isinstance(attempts, tuple)
-    assert all(
-        attempt["status"] == SolveStatus.INFEASIBLE_ON_SUPPORT.value
-        for attempt in attempts
-    )
+    assert all(attempt["status"] == SolveStatus.INFEASIBLE_ON_SUPPORT.value for attempt in attempts)
 
 
 @pytest.mark.parametrize(
@@ -357,7 +350,45 @@ def test_total_timeout_between_infeasible_attempts_is_not_infeasibility(
     assert diagnostics["attempted_k"] == (1,)
     assert diagnostics["resource_limit_prevented_expansion"] is True
     assert diagnostics["stopped_reason"] == "total_timeout_after_attempt"
-    assert diagnostics["deadline_enforcement"] == "checked_between_reference_parser_attempts"
+    assert diagnostics["deadline_enforcement"] == (
+        "late_reference_results_discarded_attempts_not_interruptible"
+    )
+
+
+def test_expired_total_deadline_does_not_start_a_reference_solver_attempt(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    times = iter((0.0, 1.0))
+
+    def clock() -> float:
+        return next(times)
+
+    def unexpected_solve(*_args: object, **_kwargs: object) -> ExactCommitResult:
+        raise AssertionError("expired adaptive deadline started the parser")
+
+    monkeypatch.setattr(adaptive, "solve_exact_commit", unexpected_solve)
+    result = solve_exact_commit_adaptive(
+        one_byte_grammar(ord("a")),
+        canvas=(None,),
+        logits=((1.0,),),
+        proposals=(),
+        tokenizer_adapter=CompositionalByteLevelAdapter((b"a",)),
+        eos_policy=EOSPolicy(EOSMode.ABSENT),
+        config=AdaptiveSupportConfig(
+            initial_k=1,
+            k_max=1,
+            total_timeout_seconds=0.5,
+        ),
+        backend=ExactBackend.PYTHON,
+        clock=clock,
+    )
+
+    assert result.status is SolveStatus.TIMEOUT
+    diagnostics = adaptive_diagnostics(result)
+    assert diagnostics["stopped_reason"] == "total_timeout_before_solver_attempt"
+    attempts = diagnostics["attempts"]
+    assert isinstance(attempts, tuple)
+    assert attempts[0]["solve_seconds"] == 0.0
 
 
 def test_rust_attempt_receives_only_remaining_total_timeout(
@@ -504,7 +535,7 @@ def test_verified_support_growth_cannot_decrease_the_exact_optimum() -> None:
     assert narrow_result.objective_value <= full_result.objective_value
 
 
-def test_hard_total_timeout_overrides_a_late_optimal_reference_result(
+def test_late_reference_optimum_is_discarded_as_timeout(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     times = iter((0.0, 0.1, 1.1))

@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from mwpc_exact import SolveStatus
-from mwpc_exact.reference.regressions import (
+from mwpc_research.regressions import (
     load_regression_fixtures,
     verify_regression_fixture,
 )

@@ -22,7 +22,8 @@ from mwpc_exact.solver import solve_exact_commit
 from mwpc_exact.support import PerPositionSupport, SupportPolicy, build_per_position_support
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from mwpc_exact.types import ExactCommitResult, Proposal, SolveStatus, SupportKind
-from mwpc_exact.validated import ValidatedExactCommit, validated_exact_commit
+from mwpc_exact.validated import ValidatedExactCommit, _validated_exact_commit
+from mwpc_exact.validator import ValidationReport
 
 
 class SupportGrowthPolicy(StrEnum):
@@ -78,9 +79,7 @@ class AdaptiveSupportConfig:
         while widths[-1] < ceiling:
             current = widths[-1]
             proposed = (
-                current + 1
-                if self.growth_policy is SupportGrowthPolicy.LINEAR
-                else current * 2
+                current + 1 if self.growth_policy is SupportGrowthPolicy.LINEAR else current * 2
             )
             widths.append(min(proposed, ceiling))
         return tuple(widths)
@@ -198,9 +197,7 @@ def _validate_support_superset(
         raise RuntimeError("adaptive support expansion changed the frozen canvas")
     if previous.permitted_token_ids != current.permitted_token_ids:
         raise RuntimeError("adaptive support expansion changed the permitted token universe")
-    for position, (old_row, new_row) in enumerate(
-        zip(previous.rows, current.rows, strict=True)
-    ):
+    for position, (old_row, new_row) in enumerate(zip(previous.rows, current.rows, strict=True)):
         if not set(old_row) <= set(new_row):
             raise RuntimeError(
                 f"adaptive support row {position} is not a superset of its predecessor"
@@ -269,7 +266,7 @@ def _finalize(
         "deadline_enforcement": (
             "remaining_total_time_passed_to_each_parser_attempt"
             if backend is ExactBackend.RUST
-            else "checked_between_reference_parser_attempts"
+            else "late_reference_results_discarded_attempts_not_interruptible"
         ),
     }
     return _copy_result_with_diagnostics(result, diagnostics)
@@ -292,6 +289,7 @@ def solve_exact_commit_adaptive(
     deterministic_work_limit: int | None = None,
     profiler: ComponentProfiler | None = None,
     clock: Callable[[], float] | None = None,
+    _validation_sink: Callable[[ValidationReport], None] | None = None,
 ) -> ExactCommitResult:
     """Solve with successively wider deterministic top-K support.
 
@@ -309,6 +307,8 @@ def solve_exact_commit_adaptive(
         raise TypeError("config must be an AdaptiveSupportConfig")
     if profiler is not None and not isinstance(profiler, ComponentProfiler):
         raise TypeError("profiler must be a ComponentProfiler or None")
+    if _validation_sink is not None and not callable(_validation_sink):
+        raise TypeError("_validation_sink must be callable or None")
     if not isinstance(tokenizer_adapter, CompositionalByteLevelAdapter):
         raise TypeError("tokenizer_adapter must be a CompositionalByteLevelAdapter")
     if not isinstance(eos_policy, EOSPolicy):
@@ -328,9 +328,7 @@ def solve_exact_commit_adaptive(
         vocabulary_size=tokenizer_adapter.vocabulary_size,
         required_special_token_ids=special_token_ids,
         include_proposal_tokens=include_proposal_tokens,
-        permitted_token_ids=(
-            None if permitted_token_ids is None else tuple(permitted_token_ids)
-        ),
+        permitted_token_ids=(None if permitted_token_ids is None else tuple(permitted_token_ids)),
         pruning_description=pruning_description,
     )
     normalized_permitted = base_policy.permitted_token_ids
@@ -373,6 +371,49 @@ def solve_exact_commit_adaptive(
                 0.0,
                 config.total_timeout_seconds - (support_finished_at - started_at),
             )
+            if remaining_timeout <= 0.0:
+                timeout_result = ExactCommitResult(
+                    status=SolveStatus.TIMEOUT,
+                    exactness_scope=support.exactness_scope,
+                )
+                attempts.append(
+                    _AttemptRecord(
+                        attempt_index=attempt_index,
+                        requested_k=width,
+                        support=support,
+                        result=timeout_result,
+                        support_construction_seconds=max(
+                            0.0,
+                            support_finished_at - support_started_at,
+                        ),
+                        solve_seconds=0.0,
+                        cumulative_elapsed_seconds=max(
+                            0.0,
+                            support_finished_at - started_at,
+                        ),
+                        backend_timeout_seconds=(0.0 if backend is ExactBackend.RUST else None),
+                        superset_of_previous=(None if previous_support is None else True),
+                    )
+                )
+                if profiler is not None and profiler.enabled:
+                    profiler.set_counter("support_attempt_count", len(attempts))
+                    profiler.set_counter(
+                        "support_expansion_count",
+                        max(0, len(attempts) - 1),
+                    )
+                return _finalize(
+                    timeout_result,
+                    config=config,
+                    configured_widths=widths,
+                    attempts=attempts,
+                    backend=backend,
+                    stopped_reason="total_timeout_before_solver_attempt",
+                    resource_limit_prevented_expansion=True,
+                    total_elapsed_seconds=max(
+                        0.0,
+                        support_finished_at - started_at,
+                    ),
+                )
         backend_timeout = remaining_timeout if backend is ExactBackend.RUST else None
         result = solve_exact_commit(
             grammar,
@@ -386,6 +427,7 @@ def solve_exact_commit_adaptive(
             deadline_check_interval=deadline_check_interval,
             deterministic_work_limit=deterministic_work_limit,
             profiler=profiler,
+            _validation_sink=_validation_sink,
         )
         latest_time = clock()
         attempt = _AttemptRecord(
@@ -508,6 +550,7 @@ def solve_exact_commit_adaptive_validated(
 ) -> ValidatedExactCommit | ExactCommitResult:
     """Return a typed validated optimum under feasibility-driven support expansion."""
 
+    validation_reports: list[ValidationReport] = []
     result = solve_exact_commit_adaptive(
         grammar,
         canvas=canvas,
@@ -524,8 +567,13 @@ def solve_exact_commit_adaptive_validated(
         deterministic_work_limit=deterministic_work_limit,
         profiler=profiler,
         clock=clock,
+        _validation_sink=validation_reports.append,
     )
-    return validated_exact_commit(result) if result.status is SolveStatus.OPTIMAL else result
+    if result.status is not SolveStatus.OPTIMAL:
+        return result
+    if len(validation_reports) != 1:
+        raise RuntimeError("OPTIMAL adaptive solve omitted its live validation report")
+    return _validated_exact_commit(result, validation_reports[0])
 
 
 __all__ = [

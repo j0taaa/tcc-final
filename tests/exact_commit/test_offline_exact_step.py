@@ -355,7 +355,7 @@ def test_total_timeout_preserves_status_and_uses_explicit_serial_fallback() -> N
     adaptive = _adaptive_diagnostics(run.solver_result)
     assert adaptive["attempted_k"] == (1,)
     assert adaptive["resource_limit_prevented_expansion"] is True
-    assert adaptive["stopped_reason"] == "total_timeout_after_attempt"
+    assert adaptive["stopped_reason"] == "total_timeout_before_solver_attempt"
     assert run.decoder_step.solver_result.status is SolveStatus.TIMEOUT
     assert run.decoder_step.updated_canvas == (1, None, None)
     assert run.decoder_step.commit_source is CommitSource.SERIAL_FALLBACK

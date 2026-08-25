@@ -1,4 +1,4 @@
-"""Versioned offline regression-fixture loading and verification."""
+"""Versioned offline differential-regression loading and verification."""
 
 from __future__ import annotations
 

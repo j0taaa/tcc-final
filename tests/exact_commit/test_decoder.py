@@ -20,6 +20,7 @@ from mwpc_exact import (
     ValidationReport,
     apply_exact_commit_result,
 )
+from mwpc_exact.validated import _validated_exact_commit
 
 SCOPE = ExactnessScope(
     kind=SupportKind.EXPLICIT,
@@ -53,9 +54,9 @@ def optimal_result(
             }
         },
     )
-    return ValidatedExactCommit(
-        result=raw_result,
-        validation_report=ValidationReport(
+    return _validated_exact_commit(
+        raw_result,
+        ValidationReport(
             issues=(),
             skipped_checks=(),
             recomputed_objective=objective,
@@ -302,10 +303,7 @@ def test_nonoptimal_status_invokes_configured_baseline_without_exact_label(
     assert step.solver_result.status is not SolveStatus.OPTIMAL
     assert step.updated_canvas == (8, 6)
     assert step.commit_source is expected_source
-    assert (
-        step.commit_guarantee
-        is CommitGuarantee.BASELINE_FALLBACK_NO_EXACT_GUARANTEE
-    )
+    assert step.commit_guarantee is CommitGuarantee.BASELINE_FALLBACK_NO_EXACT_GUARANTEE
     assert step.fallback_strategy is strategy
     assert step.selected_proposal_ids == ()
     assert step.matching_proposal_ids == (30,)

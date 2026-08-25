@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
+
 import pytest
 
 from mwpc_exact import (
@@ -10,6 +12,7 @@ from mwpc_exact import (
     ValidatedExactCommit,
     ValidationReport,
 )
+from mwpc_exact.validated import _validated_exact_commit
 
 SCOPE = ExactnessScope(
     kind=SupportKind.EXPLICIT,
@@ -32,9 +35,9 @@ def result() -> ExactCommitResult:
 
 
 def test_validated_boundary_requires_a_fully_valid_typed_report() -> None:
-    validated = ValidatedExactCommit(
-        result=result(),
-        validation_report=ValidationReport(
+    validated = _validated_exact_commit(
+        result(),
+        ValidationReport(
             issues=(),
             skipped_checks=(),
             recomputed_objective=1.0,
@@ -48,12 +51,40 @@ def test_validated_boundary_requires_a_fully_valid_typed_report() -> None:
 
 def test_validated_boundary_rejects_mismatched_objective() -> None:
     with pytest.raises(ValueError, match="objective"):
-        ValidatedExactCommit(
-            result=result(),
-            validation_report=ValidationReport(
+        _validated_exact_commit(
+            result(),
+            ValidationReport(
                 issues=(),
                 skipped_checks=(),
                 recomputed_objective=0.0,
                 recomputed_selected_proposal_ids=(7,),
             ),
         )
+
+
+def test_public_constructor_cannot_turn_self_reported_diagnostics_into_authority() -> None:
+    forged = ExactCommitResult(
+        status=SolveStatus.OPTIMAL,
+        exactness_scope=SCOPE,
+        objective_value=1.0,
+        selected_proposal_ids=(7,),
+        witness_token_ids=(0,),
+        witness_terminal_labels=(255,),
+        witness_graph_edge_ids=(999,),
+        witness_content_endpoint_slot=1,
+        diagnostics={
+            "certificate_validation": {
+                "is_valid": True,
+                "issues": [],
+                "skipped_checks": [],
+                "recomputed_objective": 1.0,
+                "recomputed_selected_proposal_ids": [7],
+            }
+        },
+    )
+    raw_report = forged.diagnostics["certificate_validation"]
+    assert isinstance(raw_report, Mapping)
+    report = ValidationReport.from_dict(raw_report)
+
+    with pytest.raises(TypeError, match="validated solve API"):
+        ValidatedExactCommit(forged, report)

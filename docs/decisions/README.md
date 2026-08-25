@@ -10,3 +10,6 @@ Numbered architecture decision records live here. Each ADR states the affected s
 - `0006-tokenizer-byte-semantics.md`: pinned LLaDA ByteLevel raw-byte mapping.
 - `0007-eos-pad-semantics.md`: task-specific EOS modes, canonical padding, and content endpoints.
 - `0008-validation-boundaries.md`: separate represented-support and EOS/PAD validation.
+- `0009-adaptive-timeout-semantics.md`: backend-specific total-timeout semantics.
+- `0010-validated-commit-boundary.md`: live independent validation required for commits.
+- `0011-feasibility-driven-support-expansion.md`: first-feasible adaptive top-K policy.

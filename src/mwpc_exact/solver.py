@@ -9,7 +9,7 @@ validates an optimal public certificate before returning it.
 from __future__ import annotations
 
 from collections import Counter
-from collections.abc import Iterable, Mapping, Sequence
+from collections.abc import Callable, Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from math import isclose, isfinite
 
@@ -30,8 +30,8 @@ from mwpc_exact.support import PerPositionSupport
 from mwpc_exact.token_lattice import build_token_lattice
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from mwpc_exact.types import ExactCommitResult, Proposal, SolveStatus, TerminalEdge
-from mwpc_exact.validated import ValidatedExactCommit, validated_exact_commit
-from mwpc_exact.validator import validate_exact_commit_certificate
+from mwpc_exact.validated import ValidatedExactCommit, _validated_exact_commit
+from mwpc_exact.validator import ValidationReport, validate_exact_commit_certificate
 
 
 class _CertificateValidationError(ValueError):
@@ -305,9 +305,7 @@ def _select_conclusive_path(
                 outcome.certificate,
                 reported_token_edge_ids=outcome.witness_token_edge_ids,
             )
-            path = lattice.reconstruct_normalized_path(
-                outcome.certificate.witness_graph_edge_ids
-            )
+            path = lattice.reconstruct_normalized_path(outcome.certificate.witness_graph_edge_ids)
             _validate_reconstructed_path(lattice, outcome.certificate, path)
         else:
             with profiler.measure(ProfilingComponent.VALIDATION):
@@ -416,6 +414,7 @@ def solve_exact_commit(
     deadline_check_interval: int = 1_024,
     deterministic_work_limit: int | None = None,
     profiler: ComponentProfiler | None = None,
+    _validation_sink: Callable[[ValidationReport], None] | None = None,
 ) -> ExactCommitResult:
     """Solve one frozen exact-commit instance without loading a model.
 
@@ -428,6 +427,8 @@ def solve_exact_commit(
     _validate_byte_grammar(grammar)
     if profiler is not None and not isinstance(profiler, ComponentProfiler):
         raise TypeError("profiler must be a ComponentProfiler or None")
+    if _validation_sink is not None and not callable(_validation_sink):
+        raise TypeError("_validation_sink must be callable or None")
     if not isinstance(support, PerPositionSupport):
         raise TypeError("support must be a PerPositionSupport")
     if not isinstance(tokenizer_adapter, CompositionalByteLevelAdapter):
@@ -604,6 +605,8 @@ def solve_exact_commit(
             raise _CertificateValidationError(
                 "public exact-commit certificate failed independent validation"
             )
+        if _validation_sink is not None:
+            _validation_sink(validation)
     except Exception as error:
         return _error_result(
             support=support,
@@ -642,6 +645,7 @@ def solve_validated_exact_commit(
 ) -> ValidatedExactCommit | ExactCommitResult:
     """Return a typed validated wrapper for optimal outcomes and raw failures otherwise."""
 
+    validation_reports: list[ValidationReport] = []
     result = solve_exact_commit(
         grammar,
         canvas=canvas,
@@ -654,8 +658,13 @@ def solve_validated_exact_commit(
         deadline_check_interval=deadline_check_interval,
         deterministic_work_limit=deterministic_work_limit,
         profiler=profiler,
+        _validation_sink=validation_reports.append,
     )
-    return validated_exact_commit(result) if result.status is SolveStatus.OPTIMAL else result
+    if result.status is not SolveStatus.OPTIMAL:
+        return result
+    if len(validation_reports) != 1:
+        raise RuntimeError("OPTIMAL solve omitted its live independent validation report")
+    return _validated_exact_commit(result, validation_reports[0])
 
 
 __all__ = ["solve_exact_commit", "solve_validated_exact_commit"]
