@@ -187,6 +187,36 @@ def test_zero_score_optimum_uses_probability_then_position_tie_break() -> None:
     assert step.diagnostics["witness_compatible_after_commit"] is True
 
 
+def test_witness_progress_respects_the_adapter_eligibility_boundary() -> None:
+    step = apply_exact_commit_result(
+        optimal_result((1, 2, 3)),
+        canvas=(None, None, None),
+        proposals=(Proposal(20, position=0, token_id=9, weight=1),),
+        witness_token_probabilities=(0.1, 0.2, 0.99),
+        witness_progress_positions=(0, 1),
+    )
+
+    assert step.updated_canvas == (None, 2, None)
+    assert tuple(commit.position for commit in step.commits) == (1,)
+
+
+@pytest.mark.parametrize(
+    "positions",
+    [(1,), (0, 0), (2,), ()],
+)
+def test_witness_progress_rejects_invalid_adapter_eligibility(
+    positions: tuple[int, ...],
+) -> None:
+    with pytest.raises((TypeError, ValueError)):
+        apply_exact_commit_result(
+            optimal_result((1, 2)),
+            canvas=(None, 2),
+            proposals=(),
+            witness_token_probabilities=(0.5, 0.5),
+            witness_progress_positions=positions,
+        )
+
+
 def test_zero_selected_progress_requires_explicit_witness_probabilities() -> None:
     with pytest.raises(ValueError, match="required for deterministic witness progress"):
         apply_exact_commit_result(

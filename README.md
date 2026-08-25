@@ -49,8 +49,17 @@ mwpc-commit-config \
 Omitting `--commit-strategy` preserves EPIC's existing
 `CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH` switch. Exact top-`K` decoding is
 reported as `exact_on_support`; it is not a full-vocabulary or future-trajectory
-optimality claim. Model adapters consume this configuration in the subsequent
-integration tasks.
+optimality claim.
+
+The first parent-side model hook is
+`mwpc_exact.epic_adapter.llada.run_llada_exact_step`. It consumes the pinned
+LLaDA loop's single-batch token, logit, prediction, and confidence rows after
+the existing `k_s` schedule is known. It excludes prompt tokens from the CFG
+canvas, restricts ordinary commits to the active block, applies only a live
+independently validated optimum, and records canonical EOS/PAD suffix updates.
+The vendor LLaDA implementation remains unchanged. A configured serial or EPIC
+failure fallback must be supplied by its baseline adapter; selecting
+`--exact-fallback none` requires no such callback.
 
 Install the heavier pinned EPIC environment only for baseline or model-integration work:
 

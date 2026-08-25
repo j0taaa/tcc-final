@@ -13,3 +13,4 @@ Numbered architecture decision records live here. Each ADR states the affected s
 - `0009-adaptive-timeout-semantics.md`: backend-specific total-timeout semantics.
 - `0010-validated-commit-boundary.md`: live independent validation required for commits.
 - `0011-feasibility-driven-support-expansion.md`: first-feasible adaptive top-K policy.
+- `0012-llada-exact-adapter-boundary.md`: generated-canvas tensor mapping and active-block/EOS rules.

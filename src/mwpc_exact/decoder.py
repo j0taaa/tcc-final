@@ -94,9 +94,7 @@ def _proposal_accounting(
         position=position,
         token_id=token_id,
         selected_proposal_ids=tuple(
-            proposal.proposal_id
-            for proposal in matches
-            if proposal.proposal_id in selected_ids
+            proposal.proposal_id for proposal in matches if proposal.proposal_id in selected_ids
         ),
         matching_proposal_ids=tuple(proposal.proposal_id for proposal in matches),
         matching_proposal_weight=fsum(proposal.weight for proposal in matches),
@@ -111,11 +109,7 @@ def _exact_proposal_commits(
 ) -> tuple[TokenCommit, ...]:
     selected = frozenset(result.selected_proposal_ids)
     positions = sorted(
-        {
-            proposal.position
-            for proposal in proposals
-            if proposal.proposal_id in selected
-        }
+        {proposal.position for proposal in proposals if proposal.proposal_id in selected}
     )
     if any(canvas[position] is not None for position in positions):
         raise ValueError("selected decoder proposals must target currently masked positions")
@@ -153,6 +147,34 @@ def _witness_probabilities(
             )
         probabilities.append(probability)
     return tuple(probabilities)
+
+
+def _witness_progress_positions(
+    value: Sequence[int] | None,
+    *,
+    canvas: tuple[int | None, ...],
+) -> tuple[int, ...]:
+    masked_positions = tuple(
+        position for position, token_id in enumerate(canvas) if token_id is None
+    )
+    if value is None:
+        return masked_positions
+    if isinstance(value, (str, bytes)) or not isinstance(value, Sequence):
+        raise TypeError("witness_progress_positions must be a finite sequence")
+    positions: list[int] = []
+    for raw_position in value:
+        if isinstance(raw_position, bool) or not isinstance(raw_position, int):
+            raise TypeError("witness progress positions must be integers")
+        if raw_position < 0 or raw_position >= len(canvas):
+            raise ValueError("witness progress position is outside the finite canvas")
+        if canvas[raw_position] is not None:
+            raise ValueError("witness progress positions must be currently masked")
+        positions.append(raw_position)
+    if len(set(positions)) != len(positions):
+        raise ValueError("witness_progress_positions must not contain duplicates")
+    if not positions and masked_positions:
+        raise ValueError("witness_progress_positions must permit progress on a masked slot")
+    return tuple(positions)
 
 
 def _apply_commits(
@@ -330,6 +352,7 @@ def apply_exact_commit_result(
     canvas: Sequence[int | None],
     proposals: Iterable[Proposal],
     witness_token_probabilities: Sequence[float] | None = None,
+    witness_progress_positions: Sequence[int] | None = None,
     failure_fallback_strategy: FailureFallbackStrategy | None = None,
     failure_fallback: FailureFallbackHandler | None = None,
     profiler: ComponentProfiler | None = None,
@@ -338,9 +361,11 @@ def apply_exact_commit_result(
 
     For an empty optimal selected set, ``witness_token_probabilities`` must
     contain the model probability assigned to each witness token. The highest
-    probability among still-masked positions is committed; equal values use
-    the lowest absolute position. Failure callbacks return only raw token
-    updates, and this layer independently recomputes any real proposal match.
+    probability among the optional ``witness_progress_positions`` boundary is
+    committed; omitted positions permit every still-masked slot and equal
+    values use the lowest absolute position. Failure callbacks return only raw
+    token updates, and this layer independently recomputes any real proposal
+    match.
     """
 
     if isinstance(result, ValidatedExactCommit):
@@ -387,8 +412,9 @@ def apply_exact_commit_result(
                 witness_compatible=True,
             )
 
-        masked_positions = tuple(
-            position for position, token_id in enumerate(canvas_tokens) if token_id is None
+        masked_positions = _witness_progress_positions(
+            witness_progress_positions,
+            canvas=canvas_tokens,
         )
         if not masked_positions:
             return _build_step_result(
@@ -470,9 +496,7 @@ def apply_exact_commit_result(
             )
             for token in selection.tokens
         )
-        if any(
-            commit.token_id >= result.exactness_scope.vocabulary_size for commit in commits
-        ):
+        if any(commit.token_id >= result.exactness_scope.vocabulary_size for commit in commits):
             raise ValueError("fallback token is outside the exactness vocabulary")
         _apply_commits(canvas_tokens, commits)
     except Exception as error:
@@ -508,6 +532,7 @@ def apply_exact_commit_result(
         fallback_succeeded=True,
         fallback_handler_diagnostics=selection.diagnostics,
     )
+
 
 __all__ = [
     "CommitGuarantee",
