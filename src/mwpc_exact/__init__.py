@@ -13,6 +13,11 @@ from mwpc_exact.eos_lattice import (
     build_eos_lattice,
 )
 from mwpc_exact.finite_solver import ExactBackend, solve_exact_commit
+from mwpc_exact.proposal_policy import (
+    ProposalWeightMode,
+    ScheduleProposalBatch,
+    build_schedule_proposals,
+)
 from mwpc_exact.support import (
     PerPositionSupport,
     SupportInputSource,
@@ -78,6 +83,8 @@ __all__ = [
     "GrammarRecognizer",
     "PerPositionSupport",
     "Proposal",
+    "ProposalWeightMode",
+    "ScheduleProposalBatch",
     "SolveStatus",
     "SupportInputSource",
     "SupportKind",
@@ -99,6 +106,7 @@ __all__ = [
     "build_byte_lattice",
     "build_eos_lattice",
     "build_per_position_support",
+    "build_schedule_proposals",
     "build_token_lattice",
     "byte_level_piece_to_bytes",
     "canonical_support_rows_json",
