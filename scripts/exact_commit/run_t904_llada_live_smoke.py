@@ -108,7 +108,7 @@ def _validate_generated_tokens(
         "generated row contains an ordinary token after termination",
     )
     content_bytes = tokenizer_adapter.detokenize_bytes(content_ids)
-    grammar_valid = recognizes_cnf(grammar, content_bytes)
+    grammar_valid = recognizes_cnf(grammar, tuple(content_bytes))
     _require(content_bytes == target, "generated content differs from the frozen target")
     _require(grammar_valid, "generated content failed independent CNF recognition")
     return {

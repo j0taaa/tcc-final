@@ -3,6 +3,12 @@ from __future__ import annotations
 import tomllib
 from pathlib import Path
 
+from scripts.exact_commit.run_t904_llada_live_smoke import (
+    _literal_grammar,
+    _validate_generated_tokens,
+)
+
+from mwpc_exact import CompositionalByteLevelAdapter
 from mwpc_exact.epic_adapter.llada import PINNED_LLADA_PROFILE
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
@@ -36,3 +42,16 @@ def test_t904_config_freezes_live_revision_strategies_and_support_scope() -> Non
         config["expected_model_vocabulary_size"]
         > config["expected_tokenizer_total_vocabulary_size"]
     )
+
+
+def test_t904_independent_validation_passes_tuple_labels_to_cnf_recognizer() -> None:
+    target = b"0"
+    validation = _validate_generated_tokens(
+        (0, PINNED_LLADA_PROFILE.eos_policy.termination_token_ids[0]),
+        tokenizer_adapter=CompositionalByteLevelAdapter((b"0",)),
+        grammar=_literal_grammar(target),
+        target=target,
+    )
+
+    assert validation["content_bytes_hex"] == target.hex()
+    assert validation["independent_grammar_valid"] is True
