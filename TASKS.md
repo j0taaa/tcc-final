@@ -819,20 +819,53 @@ tests; and `make paper` produced the 15-page PDF.
 
 **Depends on:** T702, T703
 
-- [ ] Compare finite token-path enumeration with the solver.
-- [ ] Randomize EOS position, PAD, fixed slots, and supports.
-- [ ] Check that every optimal certificate consumes exactly the configured slots.
+- [x] Compare finite token-path enumeration with the solver.
+- [x] Randomize EOS position, PAD, fixed slots, and supports.
+- [x] Check that every optimal certificate consumes exactly the configured slots.
 
 **Acceptance criteria**
 
-- [ ] 100% agreement in the configured campaign.
+- [x] 100% agreement in the configured campaign.
 
-**Evidence:** `[commands and artifacts]`
+**Evidence:** implementation commit
+`5cb148efb36c6fd5f224ea6faf7778fff3691a0a`. The independent oracle in
+`src/mwpc_exact/eos_differential.py` enumerates each explicit token-row
+Cartesian product, applies EOS/PAD transitions without consulting product
+lattice states or parser internals, recomputes proposal scores and selected
+IDs, and recognizes the effective byte sequence independently. It compares
+the complete legal path set with the EOS lattice and compares status,
+objective, and optimal-witness membership with the weighted epsilon-DAG
+solver. Every reconstructed optimum is then checked by the public T702
+validator, including exact support, fixed positions, graph path, effective
+bytes, EOS position, canonical PAD suffix, selected proposals, objective, and
+physical slot count. Seed 0 is a deterministic regression for treating
+selected proposal IDs as a set/multiset rather than an ordered objective.
+
+`make test-m7-differential` ran the immutable normal 500-case and extended
+2,000-case campaigns from
+`configs/exact_commit/m7_eos_finite_slot_differential.toml`. All 2,500 cases
+passed with zero failures across 248,192 raw token paths and 20,272 legal EOS
+paths: 2,142 `OPTIMAL` and 358 `INFEASIBLE_ON_SUPPORT`. All 2,142 optimal
+certificates independently validated and consumed exactly their configured
+slots. Witnesses covered optional EOS absence and EOS in the first, middle,
+and final slots; generated cases also covered required/optional modes,
+EOS/PAD alias and alternate EOT termination, PAD suffixes, fixed
+ordinary/EOS/PAD positions, unsupported controls, randomized supports,
+duplicate-choice proposals, and zero weights. Versioned results are in
+`docs/evidence/m7-eos-finite-slot-differential-normal-summary.json` and
+`docs/evidence/m7-eos-finite-slot-differential-extended-summary.json`; every
+future mismatch saves a full offline replay fixture and failure record.
+
+`python -m pytest -q tests/exact_commit/test_eos_differential.py
+tests/exact_commit/test_m7_evidence.py` passed 7 focused tests. `make check`
+passed the upstream pin, Ruff, strict MyPy over 33 source files, 8 unit tests,
+and 332 exact-commit tests; `python -m pytest -q` passed all 341 tests; and
+`make paper` produced the 15-page PDF.
 
 **M7 finite-slot gate — blocking**
 
 - [x] EOS/PAD semantics are implemented and independently validated.
-- [ ] Finite-slot counterexamples exist and reproduce.
+- [x] Finite-slot counterexamples exist and reproduce.
 
 ---
 
