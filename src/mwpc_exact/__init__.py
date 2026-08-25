@@ -32,6 +32,7 @@ from mwpc_exact.eos_lattice import (
 )
 from mwpc_exact.finite_solver import ExactBackend
 from mwpc_exact.finite_solver import solve_exact_commit as solve_ordinary_exact_commit
+from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent, ProfilingEvent
 from mwpc_exact.proposal_policy import (
     ProposalWeightMode,
     ScheduleProposalBatch,
@@ -90,6 +91,7 @@ __all__ = [
     "ByteLatticePath",
     "CommitGuarantee",
     "CommitSource",
+    "ComponentProfiler",
     "CompositionalByteLevelAdapter",
     "DecoderStepResult",
     "EOSArc",
@@ -112,6 +114,8 @@ __all__ = [
     "FallbackToken",
     "GrammarRecognizer",
     "PerPositionSupport",
+    "ProfilingComponent",
+    "ProfilingEvent",
     "Proposal",
     "ProposalWeightMode",
     "ScheduleProposalBatch",

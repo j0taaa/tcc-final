@@ -591,15 +591,38 @@ pub struct Diagnostics {
     pub graph_edges: u64,
     pub grammar_nonterminals: u64,
     pub grammar_productions: u64,
+    pub elapsed_chart_seconds: f64,
+    pub elapsed_backtracking_seconds: f64,
     pub elapsed_parser_seconds: f64,
     pub deadline_checks: u64,
 }
 
 impl Diagnostics {
     pub fn validate(&self) -> Result<(), ValidationError> {
+        if !self.elapsed_chart_seconds.is_finite() || self.elapsed_chart_seconds < 0.0 {
+            return Err(ValidationError::new(
+                "elapsed chart time must be finite and non-negative",
+            ));
+        }
+        if !self.elapsed_backtracking_seconds.is_finite() || self.elapsed_backtracking_seconds < 0.0
+        {
+            return Err(ValidationError::new(
+                "elapsed backtracking time must be finite and non-negative",
+            ));
+        }
         if !self.elapsed_parser_seconds.is_finite() || self.elapsed_parser_seconds < 0.0 {
             return Err(ValidationError::new(
                 "elapsed parser time must be finite and non-negative",
+            ));
+        }
+        let component_seconds = self.elapsed_chart_seconds + self.elapsed_backtracking_seconds;
+        let tolerance =
+            f64::EPSILON * self.elapsed_parser_seconds.max(component_seconds).max(1.0) * 16.0;
+        if !component_seconds.is_finite()
+            || component_seconds > self.elapsed_parser_seconds + tolerance
+        {
+            return Err(ValidationError::new(
+                "chart plus backtracking time must not exceed total parser time",
             ));
         }
         Ok(())

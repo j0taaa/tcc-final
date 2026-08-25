@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from enum import StrEnum
 from math import isnan
 
+from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent
 from mwpc_exact.types import ExactnessScope, Proposal, SupportKind, aggregate_proposals
 
 
@@ -526,7 +527,7 @@ def _explicit_rows(
     )
 
 
-def build_per_position_support(
+def _build_per_position_support(
     *,
     canvas: Sequence[int | None],
     policy: SupportPolicy,
@@ -649,3 +650,47 @@ def build_per_position_support(
         proposal_token_ids_by_position=proposal_rows,
         proposal_token_inclusion_enabled=policy.include_proposal_tokens,
     )
+
+
+def build_per_position_support(
+    *,
+    canvas: Sequence[int | None],
+    policy: SupportPolicy,
+    logits: Sequence[Sequence[float]] | None = None,
+    explicit_support: Mapping[int, Sequence[int]] | None = None,
+    proposals: Iterable[Proposal] = (),
+    profiler: ComponentProfiler | None = None,
+) -> PerPositionSupport:
+    """Construct deterministic support from logits or explicit position rows.
+
+    Exactly one input source is required. ``TOP_K`` requires logits,
+    ``EXPLICIT`` requires an explicit map, and ``FULL`` accepts either while
+    validating complete coverage. Fixed slots are never widened. When
+    supplied, the optional profiler records only support construction.
+    """
+
+    if profiler is not None and not isinstance(profiler, ComponentProfiler):
+        raise TypeError("profiler must be a ComponentProfiler or None")
+    if profiler is None or not profiler.enabled:
+        return _build_per_position_support(
+            canvas=canvas,
+            policy=policy,
+            logits=logits,
+            explicit_support=explicit_support,
+            proposals=proposals,
+        )
+    with profiler.measure(ProfilingComponent.SUPPORT_CONSTRUCTION):
+        support = _build_per_position_support(
+            canvas=canvas,
+            policy=policy,
+            logits=logits,
+            explicit_support=explicit_support,
+            proposals=proposals,
+        )
+    row_sizes = tuple(len(row) for row in support.rows)
+    profiler.set_support_row_sizes(row_sizes)
+    profiler.set_counter("support_slot_count", len(row_sizes))
+    profiler.set_counter("support_alternative_count", sum(row_sizes))
+    profiler.set_counter("support_max_row_size", max(row_sizes, default=0))
+    profiler.set_counter("support_attempt_count", 1)
+    return support

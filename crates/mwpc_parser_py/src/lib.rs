@@ -308,6 +308,14 @@ fn solve_py(
         result.diagnostics.grammar_productions,
     )?;
     diagnostics.set_item(
+        "elapsed_chart_seconds",
+        result.diagnostics.elapsed_chart_seconds,
+    )?;
+    diagnostics.set_item(
+        "elapsed_backtracking_seconds",
+        result.diagnostics.elapsed_backtracking_seconds,
+    )?;
+    diagnostics.set_item(
         "elapsed_parser_seconds",
         result.diagnostics.elapsed_parser_seconds,
     )?;

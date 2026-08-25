@@ -51,6 +51,12 @@ def test_binding_round_trips_labels_ids_status_and_provenance(label: int | str) 
     assert result.certificate.witness_graph_edge_ids == (7,)
     assert result.certificate.selected_proposal_ids == (100, 101)
     assert result.witness_token_edge_ids == (70,)
+    assert result.diagnostics["elapsed_chart_seconds"] >= 0.0
+    assert result.diagnostics["elapsed_backtracking_seconds"] >= 0.0
+    assert result.diagnostics["elapsed_parser_seconds"] >= (
+        result.diagnostics["elapsed_chart_seconds"]
+        + result.diagnostics["elapsed_backtracking_seconds"]
+    )
     assert validate_dag_certificate(grammar, graph, result.certificate)
 
 

@@ -16,6 +16,7 @@ from time import monotonic
 
 from mwpc_exact.eos_lattice import EOSPolicy
 from mwpc_exact.finite_solver import ExactBackend
+from mwpc_exact.profiling import ComponentProfiler
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.solver import solve_exact_commit
 from mwpc_exact.support import PerPositionSupport, SupportPolicy, build_per_position_support
@@ -287,6 +288,7 @@ def solve_exact_commit_adaptive(
     pruning_description: str | None = None,
     deadline_check_interval: int = 1_024,
     deterministic_work_limit: int | None = None,
+    profiler: ComponentProfiler | None = None,
 ) -> ExactCommitResult:
     """Solve with successively wider deterministic top-K support.
 
@@ -298,6 +300,8 @@ def solve_exact_commit_adaptive(
 
     if not isinstance(config, AdaptiveSupportConfig):
         raise TypeError("config must be an AdaptiveSupportConfig")
+    if profiler is not None and not isinstance(profiler, ComponentProfiler):
+        raise TypeError("profiler must be a ComponentProfiler or None")
     if not isinstance(tokenizer_adapter, CompositionalByteLevelAdapter):
         raise TypeError("tokenizer_adapter must be a CompositionalByteLevelAdapter")
     if not isinstance(eos_policy, EOSPolicy):
@@ -350,6 +354,7 @@ def solve_exact_commit_adaptive(
             policy=policy,
             logits=logits,
             proposals=proposal_items,
+            profiler=profiler,
         )
         support_finished_at = monotonic()
         if previous_support is not None:
@@ -373,6 +378,7 @@ def solve_exact_commit_adaptive(
             timeout_seconds=backend_timeout,
             deadline_check_interval=deadline_check_interval,
             deterministic_work_limit=deterministic_work_limit,
+            profiler=profiler,
         )
         latest_time = monotonic()
         attempt = _AttemptRecord(
@@ -387,6 +393,9 @@ def solve_exact_commit_adaptive(
             superset_of_previous=None if previous_support is None else True,
         )
         attempts.append(attempt)
+        if profiler is not None and profiler.enabled:
+            profiler.set_counter("support_attempt_count", len(attempts))
+            profiler.set_counter("support_expansion_count", max(0, len(attempts) - 1))
 
         if result.status is not SolveStatus.INFEASIBLE_ON_SUPPORT:
             return _finalize(

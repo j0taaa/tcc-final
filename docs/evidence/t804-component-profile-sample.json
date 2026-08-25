@@ -1,0 +1,55 @@
+{
+  "event": {
+    "component_invocations": {
+      "backtracking": 0,
+      "byte_lattice_expansion": 0,
+      "commit_update": 0,
+      "parser": 0,
+      "proposal_policy": 1,
+      "support_construction": 1,
+      "token_lattice_construction": 0,
+      "validation": 0
+    },
+    "event_type": "exact_commit_component_profile",
+    "schema_version": "mwpc_component_profile_v1",
+    "sizes": {
+      "counters": {
+        "chart_entries": 0,
+        "commit_count": 0,
+        "normalized_graph_edge_count": 0,
+        "proposal_count": 3,
+        "support_alternative_count": 6,
+        "support_attempt_count": 1,
+        "support_expansion_count": 0,
+        "support_max_row_size": 4,
+        "support_slot_count": 2,
+        "terminal_graph_edge_count": 0,
+        "terminal_graph_node_count": 0,
+        "token_lattice_edge_count": 0,
+        "token_lattice_node_count": 0
+      },
+      "support_row_sizes": [
+        2,
+        4
+      ]
+    },
+    "timings_seconds": {
+      "accounted_total": 3.5,
+      "components": {
+        "backtracking": 0.0,
+        "byte_lattice_expansion": 0.0,
+        "commit_update": 0.0,
+        "parser": 0.0,
+        "proposal_policy": 1.0,
+        "support_construction": 2.0,
+        "token_lattice_construction": 0.0,
+        "validation": 0.0
+      },
+      "measured_component_total": 3.0,
+      "unattributed_measurement_overhead": 0.5,
+      "wall_span": 3.5
+    }
+  },
+  "evidence_kind": "deterministic_synthetic_clock_schema_sample_not_a_benchmark",
+  "producing_test": "tests/exact_commit/test_profiling.py::test_deterministic_breakdown_accounts_for_unmeasured_wall_overhead"
+}

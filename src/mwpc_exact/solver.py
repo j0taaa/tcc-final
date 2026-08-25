@@ -15,6 +15,7 @@ from math import isclose, isfinite
 
 from mwpc_exact.eos_lattice import EOSLattice, EOSLatticePath, EOSMode, EOSPolicy, build_eos_lattice
 from mwpc_exact.finite_solver import ExactBackend
+from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent
 from mwpc_exact.reference.dag_parser import (
     DagParseCertificate,
     reconstruct_dag_certificate,
@@ -137,11 +138,24 @@ def _validate_input_consistency(
         raise AssertionError("validated ABSENT EOS policy unexpectedly configured special IDs")
 
 
-def _run_python_backend(grammar: CnfGrammar, lattice: EOSLattice) -> _BackendOutcome:
-    solve = run_dag_cky(grammar, lattice.normalized_graph)
-    certificate = (
-        reconstruct_dag_certificate(solve) if solve.status is SolveStatus.OPTIMAL else None
-    )
+def _run_python_backend(
+    grammar: CnfGrammar,
+    lattice: EOSLattice,
+    profiler: ComponentProfiler | None = None,
+) -> _BackendOutcome:
+    if profiler is None or not profiler.enabled:
+        solve = run_dag_cky(grammar, lattice.normalized_graph)
+    else:
+        with profiler.measure(ProfilingComponent.PARSER):
+            solve = run_dag_cky(grammar, lattice.normalized_graph)
+        profiler.set_counter("chart_entries", len(solve.chart.entries))
+    if solve.status is not SolveStatus.OPTIMAL:
+        certificate = None
+    elif profiler is None or not profiler.enabled:
+        certificate = reconstruct_dag_certificate(solve)
+    else:
+        with profiler.measure(ProfilingComponent.BACKTRACKING):
+            certificate = reconstruct_dag_certificate(solve)
     return _BackendOutcome(
         status=solve.status,
         certificate=certificate,
@@ -160,14 +174,40 @@ def _run_rust_backend(
     timeout_seconds: float | None,
     deadline_check_interval: int,
     deterministic_work_limit: int | None,
+    profiler: ComponentProfiler | None,
 ) -> _BackendOutcome:
-    solve = solve_rust_dag(
-        grammar,
-        lattice.normalized_graph,
-        timeout_seconds=timeout_seconds,
-        deadline_check_interval=deadline_check_interval,
-        deterministic_work_limit=deterministic_work_limit,
-    )
+    if profiler is None or not profiler.enabled:
+        solve = solve_rust_dag(
+            grammar,
+            lattice.normalized_graph,
+            timeout_seconds=timeout_seconds,
+            deadline_check_interval=deadline_check_interval,
+            deterministic_work_limit=deterministic_work_limit,
+        )
+    else:
+        with profiler.observe_wall_span():
+            solve = solve_rust_dag(
+                grammar,
+                lattice.normalized_graph,
+                timeout_seconds=timeout_seconds,
+                deadline_check_interval=deadline_check_interval,
+                deterministic_work_limit=deterministic_work_limit,
+            )
+        parser_seconds = solve.diagnostics.get("elapsed_chart_seconds")
+        backtracking_seconds = solve.diagnostics.get("elapsed_backtracking_seconds")
+        if isinstance(parser_seconds, (int, float)) and not isinstance(parser_seconds, bool):
+            profiler.add_duration(ProfilingComponent.PARSER, float(parser_seconds))
+        if isinstance(backtracking_seconds, (int, float)) and not isinstance(
+            backtracking_seconds,
+            bool,
+        ):
+            profiler.add_duration(
+                ProfilingComponent.BACKTRACKING,
+                float(backtracking_seconds),
+            )
+        chart_entries = solve.diagnostics.get("chart_entries")
+        if isinstance(chart_entries, int) and not isinstance(chart_entries, bool):
+            profiler.set_counter("chart_entries", chart_entries)
     return _BackendOutcome(
         status=solve.status,
         certificate=solve.certificate,
@@ -203,13 +243,13 @@ def _validate_reported_normalized_provenance(
         )
 
 
-def _reconstruct_normalized_candidate(
+def _validate_normalized_certificate(
     grammar: CnfGrammar,
     lattice: EOSLattice,
     certificate: DagParseCertificate,
     *,
     reported_token_edge_ids: tuple[int | None, ...] | None,
-) -> EOSLatticePath:
+) -> None:
     if not validate_dag_certificate(grammar, lattice.normalized_graph, certificate):
         raise _CertificateValidationError(
             "normalized terminal-DAG certificate failed independent validation"
@@ -219,7 +259,13 @@ def _reconstruct_normalized_candidate(
         certificate,
         reported_token_edge_ids,
     )
-    path = lattice.reconstruct_normalized_path(certificate.witness_graph_edge_ids)
+
+
+def _validate_reconstructed_path(
+    lattice: EOSLattice,
+    certificate: DagParseCertificate,
+    path: EOSLatticePath,
+) -> None:
     lattice.validate_path(path)
     if path.terminal_labels != certificate.witness_terminal_labels:
         raise _CertificateValidationError(
@@ -238,26 +284,46 @@ def _reconstruct_normalized_candidate(
         raise _CertificateValidationError(
             "restored full-slot objective differs from normalized parser objective"
         )
-    return path
 
 
 def _select_conclusive_path(
     grammar: CnfGrammar,
     lattice: EOSLattice,
     outcome: _BackendOutcome,
+    profiler: ComponentProfiler | None,
 ) -> _PathCandidate | None:
     candidates: list[_PathCandidate] = []
     if outcome.status is SolveStatus.OPTIMAL:
         if outcome.certificate is None:
             raise _CertificateValidationError("OPTIMAL backend outcome omitted its certificate")
-        candidates.append(
-            _PathCandidate(
-                path=_reconstruct_normalized_candidate(
+        if profiler is None or not profiler.enabled:
+            _validate_normalized_certificate(
+                grammar,
+                lattice,
+                outcome.certificate,
+                reported_token_edge_ids=outcome.witness_token_edge_ids,
+            )
+            path = lattice.reconstruct_normalized_path(
+                outcome.certificate.witness_graph_edge_ids
+            )
+            _validate_reconstructed_path(lattice, outcome.certificate, path)
+        else:
+            with profiler.measure(ProfilingComponent.VALIDATION):
+                _validate_normalized_certificate(
                     grammar,
                     lattice,
                     outcome.certificate,
                     reported_token_edge_ids=outcome.witness_token_edge_ids,
-                ),
+                )
+            with profiler.measure(ProfilingComponent.BACKTRACKING):
+                path = lattice.reconstruct_normalized_path(
+                    outcome.certificate.witness_graph_edge_ids
+                )
+            with profiler.measure(ProfilingComponent.VALIDATION):
+                _validate_reconstructed_path(lattice, outcome.certificate, path)
+        candidates.append(
+            _PathCandidate(
+                path=path,
                 source="normalized_parser",
             )
         )
@@ -267,8 +333,14 @@ def _select_conclusive_path(
         )
 
     if grammar.accepts_empty and lattice.normalization.best_epsilon_only_path is not None:
-        epsilon_path = lattice.reconstruct_epsilon_only_path()
-        lattice.validate_path(epsilon_path)
+        if profiler is None or not profiler.enabled:
+            epsilon_path = lattice.reconstruct_epsilon_only_path()
+            lattice.validate_path(epsilon_path)
+        else:
+            with profiler.measure(ProfilingComponent.BACKTRACKING):
+                epsilon_path = lattice.reconstruct_epsilon_only_path()
+            with profiler.measure(ProfilingComponent.VALIDATION):
+                lattice.validate_path(epsilon_path)
         candidates.append(_PathCandidate(epsilon_path, "epsilon_only"))
 
     if not candidates:
@@ -341,6 +413,7 @@ def solve_exact_commit(
     timeout_seconds: float | None = None,
     deadline_check_interval: int = 1_024,
     deterministic_work_limit: int | None = None,
+    profiler: ComponentProfiler | None = None,
 ) -> ExactCommitResult:
     """Solve one frozen exact-commit instance without loading a model.
 
@@ -351,6 +424,8 @@ def solve_exact_commit(
     """
 
     _validate_byte_grammar(grammar)
+    if profiler is not None and not isinstance(profiler, ComponentProfiler):
+        raise TypeError("profiler must be a ComponentProfiler or None")
     if not isinstance(support, PerPositionSupport):
         raise TypeError("support must be a PerPositionSupport")
     if not isinstance(tokenizer_adapter, CompositionalByteLevelAdapter):
@@ -371,12 +446,45 @@ def solve_exact_commit(
         eos_policy=eos_policy,
     )
     proposal_items = tuple(proposals)
-    token_lattice = build_token_lattice(support=support, proposals=proposal_items)
-    byte_eos_lattice = build_eos_lattice(
-        token_lattice=token_lattice,
-        adapter=tokenizer_adapter,
-        policy=eos_policy,
-    )
+    if profiler is None or not profiler.enabled:
+        token_lattice = build_token_lattice(support=support, proposals=proposal_items)
+    else:
+        row_sizes = tuple(len(row) for row in support.rows)
+        profiler.set_counter("proposal_count", len(proposal_items))
+        profiler.set_support_row_sizes(row_sizes)
+        profiler.set_counter("support_slot_count", len(row_sizes))
+        profiler.set_counter("support_alternative_count", sum(row_sizes))
+        profiler.set_counter("support_max_row_size", max(row_sizes, default=0))
+        profiler.set_counter("support_attempt_count", 1)
+        with profiler.measure(ProfilingComponent.TOKEN_LATTICE_CONSTRUCTION):
+            token_lattice = build_token_lattice(support=support, proposals=proposal_items)
+        profiler.set_counter("token_lattice_node_count", len(token_lattice.boundary_ids))
+        profiler.set_counter("token_lattice_edge_count", len(token_lattice.choices))
+    if profiler is None or not profiler.enabled:
+        byte_eos_lattice = build_eos_lattice(
+            token_lattice=token_lattice,
+            adapter=tokenizer_adapter,
+            policy=eos_policy,
+        )
+    else:
+        with profiler.measure(ProfilingComponent.BYTE_LATTICE_EXPANSION):
+            byte_eos_lattice = build_eos_lattice(
+                token_lattice=token_lattice,
+                adapter=tokenizer_adapter,
+                policy=eos_policy,
+            )
+        profiler.set_counter(
+            "terminal_graph_node_count",
+            len(byte_eos_lattice.graph.node_ids),
+        )
+        profiler.set_counter(
+            "terminal_graph_edge_count",
+            len(byte_eos_lattice.graph.edges),
+        )
+        profiler.set_counter(
+            "normalized_graph_edge_count",
+            len(byte_eos_lattice.normalized_graph.edges),
+        )
     diagnostics = _base_diagnostics(
         backend=backend,
         support=support,
@@ -385,7 +493,10 @@ def solve_exact_commit(
 
     try:
         if backend is ExactBackend.PYTHON:
-            outcome = _run_python_backend(grammar, byte_eos_lattice)
+            if profiler is None or not profiler.enabled:
+                outcome = _run_python_backend(grammar, byte_eos_lattice)
+            else:
+                outcome = _run_python_backend(grammar, byte_eos_lattice, profiler)
         else:
             outcome = _run_rust_backend(
                 grammar,
@@ -393,6 +504,7 @@ def solve_exact_commit(
                 timeout_seconds=timeout_seconds,
                 deadline_check_interval=deadline_check_interval,
                 deterministic_work_limit=deterministic_work_limit,
+                profiler=profiler,
             )
     except RustBindingUnavailable as error:
         return ExactCommitResult(
@@ -431,7 +543,12 @@ def solve_exact_commit(
         )
 
     try:
-        candidate = _select_conclusive_path(grammar, byte_eos_lattice, outcome)
+        candidate = _select_conclusive_path(
+            grammar,
+            byte_eos_lattice,
+            outcome,
+            profiler,
+        )
         if candidate is None:
             return ExactCommitResult(
                 status=SolveStatus.INFEASIBLE_ON_SUPPORT,
@@ -452,17 +569,34 @@ def solve_exact_commit(
             witness_content_endpoint_slot=path.content_endpoint_slot,
             diagnostics=diagnostics,
         )
-        validation = validate_exact_commit_certificate(
-            preliminary_result,
-            expected_scope=support.exactness_scope,
-            canvas=canvas_tokens,
-            proposals=proposal_items,
-            graph=byte_eos_lattice.graph,
-            grammar_recognizer=lambda labels: recognizes_cnf(grammar, labels),
-            support_validator=lambda token_ids: _support_accepts(support, token_ids),
-            eos_policy=eos_policy,
-            eos_adapter=tokenizer_adapter,
-        )
+        if profiler is None or not profiler.enabled:
+            validation = validate_exact_commit_certificate(
+                preliminary_result,
+                expected_scope=support.exactness_scope,
+                canvas=canvas_tokens,
+                proposals=proposal_items,
+                graph=byte_eos_lattice.graph,
+                grammar_recognizer=lambda labels: recognizes_cnf(grammar, labels),
+                support_validator=lambda token_ids: _support_accepts(support, token_ids),
+                eos_policy=eos_policy,
+                eos_adapter=tokenizer_adapter,
+            )
+        else:
+            with profiler.measure(ProfilingComponent.VALIDATION):
+                validation = validate_exact_commit_certificate(
+                    preliminary_result,
+                    expected_scope=support.exactness_scope,
+                    canvas=canvas_tokens,
+                    proposals=proposal_items,
+                    graph=byte_eos_lattice.graph,
+                    grammar_recognizer=lambda labels: recognizes_cnf(grammar, labels),
+                    support_validator=lambda token_ids: _support_accepts(
+                        support,
+                        token_ids,
+                    ),
+                    eos_policy=eos_policy,
+                    eos_adapter=tokenizer_adapter,
+                )
         diagnostics["certificate_validation"] = validation.to_dict()
         if not validation.is_valid:
             raise _CertificateValidationError(

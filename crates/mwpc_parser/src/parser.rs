@@ -410,6 +410,7 @@ fn finish_computation(
     graph: &WeightedTerminalDag,
     controller: &DeadlineController,
 ) -> ParseComputation {
+    let elapsed_chart_seconds = controller.started.elapsed().as_secs_f64();
     let diagnostics = Diagnostics {
         chart_entries: entries.values().map(BTreeMap::len).sum::<usize>() as u64,
         relaxations,
@@ -417,7 +418,9 @@ fn finish_computation(
         graph_edges: graph.edges().len() as u64,
         grammar_nonterminals: grammar.nonterminal_ids().len() as u64,
         grammar_productions: grammar.production_count() as u64,
-        elapsed_parser_seconds: controller.started.elapsed().as_secs_f64(),
+        elapsed_chart_seconds,
+        elapsed_backtracking_seconds: 0.0,
+        elapsed_parser_seconds: elapsed_chart_seconds,
         deadline_checks: controller.deadline_checks,
     };
     ParseComputation {
@@ -447,8 +450,10 @@ pub fn solve_with_options(
     if computation.status != SolveStatus::Optimal {
         return SolveResult::without_certificate(computation.status, computation.diagnostics);
     }
+    let backtracking_started = Instant::now();
     let certificate = reconstruct_certificate(&computation, grammar, graph)?;
     let mut diagnostics = computation.diagnostics;
+    diagnostics.elapsed_backtracking_seconds = backtracking_started.elapsed().as_secs_f64();
     diagnostics.elapsed_parser_seconds = solve_started.elapsed().as_secs_f64();
     if options
         .timeout
@@ -1036,6 +1041,13 @@ mod tests {
         assert_eq!(result.status, SolveStatus::Optimal);
         assert_eq!(result.objective_value, Some(9.0));
         assert!(result.diagnostics.deadline_checks > 1);
+        assert!(result.diagnostics.elapsed_chart_seconds >= 0.0);
+        assert!(result.diagnostics.elapsed_backtracking_seconds >= 0.0);
+        assert!(
+            result.diagnostics.elapsed_parser_seconds
+                >= result.diagnostics.elapsed_chart_seconds
+                    + result.diagnostics.elapsed_backtracking_seconds
+        );
     }
 
     #[test]

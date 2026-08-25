@@ -13,6 +13,7 @@ from dataclasses import dataclass
 from enum import StrEnum
 from math import isfinite
 
+from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent
 from mwpc_exact.types import Proposal, aggregate_proposals
 
 
@@ -181,7 +182,7 @@ def _required_confidence(proposal: Proposal) -> float:
     return confidence
 
 
-def build_schedule_proposals(
+def _build_schedule_proposals(
     *,
     predicted_token_ids: Sequence[int],
     confidence_values: Sequence[float],
@@ -249,3 +250,45 @@ def build_schedule_proposals(
         weight_mode=weight_mode,
         first_proposal_id=proposal_id_start,
     )
+
+
+def build_schedule_proposals(
+    *,
+    predicted_token_ids: Sequence[int],
+    confidence_values: Sequence[float],
+    schedule_mask: Sequence[bool],
+    k_s: int,
+    weight_mode: ProposalWeightMode,
+    first_proposal_id: int = 0,
+    profiler: ComponentProfiler | None = None,
+) -> ScheduleProposalBatch:
+    """Build the candidate collection used by one baseline schedule step.
+
+    ``schedule_mask`` must be the decoder's final eligibility mask. Values at
+    excluded positions are ignored. Eligible confidences must be finite;
+    confidence weights must additionally be non-negative. When supplied, the
+    optional profiler records only proposal-policy construction.
+    """
+
+    if profiler is not None and not isinstance(profiler, ComponentProfiler):
+        raise TypeError("profiler must be a ComponentProfiler or None")
+    if profiler is None or not profiler.enabled:
+        return _build_schedule_proposals(
+            predicted_token_ids=predicted_token_ids,
+            confidence_values=confidence_values,
+            schedule_mask=schedule_mask,
+            k_s=k_s,
+            weight_mode=weight_mode,
+            first_proposal_id=first_proposal_id,
+        )
+    with profiler.measure(ProfilingComponent.PROPOSAL_POLICY):
+        batch = _build_schedule_proposals(
+            predicted_token_ids=predicted_token_ids,
+            confidence_values=confidence_values,
+            schedule_mask=schedule_mask,
+            k_s=k_s,
+            weight_mode=weight_mode,
+            first_proposal_id=first_proposal_id,
+        )
+    profiler.set_counter("proposal_count", len(batch.proposals))
+    return batch

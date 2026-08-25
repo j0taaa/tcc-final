@@ -17,6 +17,7 @@ from math import fsum, isclose, isfinite
 from types import MappingProxyType
 from typing import Protocol
 
+from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent
 from mwpc_exact.types import ExactCommitResult, Proposal, SolveStatus, aggregate_proposals
 
 
@@ -648,6 +649,7 @@ def _build_step_result(
     commits: tuple[TokenCommit, ...],
     source: CommitSource,
     guarantee: CommitGuarantee,
+    profiler: ComponentProfiler | None,
     fallback_strategy: FailureFallbackStrategy | None = None,
     fallback_reason: str | None = None,
     fallback_attempted: bool = False,
@@ -656,7 +658,12 @@ def _build_step_result(
     fallback_handler_diagnostics: Mapping[str, object] | None = None,
     fallback_error: Exception | None = None,
 ) -> DecoderStepResult:
-    updated = _apply_commits(canvas, commits)
+    if profiler is None or not profiler.enabled:
+        updated = _apply_commits(canvas, commits)
+    else:
+        with profiler.measure(ProfilingComponent.COMMIT_UPDATE):
+            updated = _apply_commits(canvas, commits)
+        profiler.set_counter("commit_count", len(commits))
     return DecoderStepResult(
         solver_result=result,
         input_canvas=canvas,
@@ -690,6 +697,7 @@ def apply_exact_commit_result(
     witness_token_probabilities: Sequence[float] | None = None,
     failure_fallback_strategy: FailureFallbackStrategy | None = None,
     failure_fallback: FailureFallbackHandler | None = None,
+    profiler: ComponentProfiler | None = None,
 ) -> DecoderStepResult:
     """Apply one exact result or an explicitly configured baseline fallback.
 
@@ -702,6 +710,8 @@ def apply_exact_commit_result(
 
     if not isinstance(result, ExactCommitResult):
         raise TypeError("result must be an ExactCommitResult")
+    if profiler is not None and not isinstance(profiler, ComponentProfiler):
+        raise TypeError("profiler must be a ComponentProfiler or None")
     if (failure_fallback_strategy is None) != (failure_fallback is None):
         raise ValueError("failure fallback strategy and callable must be supplied together")
     if failure_fallback_strategy is not None and not isinstance(
@@ -734,6 +744,7 @@ def apply_exact_commit_result(
                 commits=commits,
                 source=CommitSource.EXACT_PROPOSALS,
                 guarantee=CommitGuarantee.EXACT_MWPC_SELECTION,
+                profiler=profiler,
                 witness_compatible=True,
             )
 
@@ -747,6 +758,7 @@ def apply_exact_commit_result(
                 commits=(),
                 source=CommitSource.COMPLETE,
                 guarantee=CommitGuarantee.EXACT_WITNESS_PROGRESS,
+                profiler=profiler,
                 witness_compatible=True,
             )
         if witness_token_probabilities is None:
@@ -772,6 +784,7 @@ def apply_exact_commit_result(
             commits=(commit,),
             source=CommitSource.WITNESS_PROGRESS,
             guarantee=CommitGuarantee.EXACT_WITNESS_PROGRESS,
+            profiler=profiler,
             fallback_reason="optimal_zero_selected_proposals",
             witness_compatible=True,
         )
@@ -784,6 +797,7 @@ def apply_exact_commit_result(
             commits=(),
             source=CommitSource.NO_COMMIT,
             guarantee=CommitGuarantee.NONE,
+            profiler=profiler,
             fallback_reason=f"{reason}; canvas_already_complete",
         )
     if failure_fallback_strategy is None or failure_fallback is None:
@@ -793,6 +807,7 @@ def apply_exact_commit_result(
             commits=(),
             source=CommitSource.NO_COMMIT,
             guarantee=CommitGuarantee.NONE,
+            profiler=profiler,
             fallback_reason=f"{reason}; no_failure_fallback_configured",
         )
 
@@ -828,6 +843,7 @@ def apply_exact_commit_result(
             commits=(),
             source=CommitSource.FALLBACK_FAILED,
             guarantee=CommitGuarantee.NONE,
+            profiler=profiler,
             fallback_strategy=failure_fallback_strategy,
             fallback_reason=reason,
             fallback_attempted=True,
@@ -846,6 +862,7 @@ def apply_exact_commit_result(
         commits=commits,
         source=source,
         guarantee=CommitGuarantee.BASELINE_FALLBACK_NO_EXACT_GUARANTEE,
+        profiler=profiler,
         fallback_strategy=failure_fallback_strategy,
         fallback_reason=reason,
         fallback_attempted=True,

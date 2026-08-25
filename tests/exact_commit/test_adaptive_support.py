@@ -9,6 +9,7 @@ import pytest
 import mwpc_exact.adaptive as adaptive
 from mwpc_exact import (
     AdaptiveSupportConfig,
+    ComponentProfiler,
     CompositionalByteLevelAdapter,
     EOSMode,
     EOSPolicy,
@@ -126,6 +127,7 @@ def test_infeasible_attempt_expands_to_optimal_saved_logits_support() -> None:
         Proposal(0, position=0, token_id=1, weight=5),
         Proposal(1, position=1, token_id=3, weight=2),
     )
+    profiler = ComponentProfiler(enabled=True)
 
     result = solve_exact_commit_adaptive(
         one_byte_grammar(ord("b")),
@@ -136,6 +138,7 @@ def test_infeasible_attempt_expands_to_optimal_saved_logits_support() -> None:
         eos_policy=REQUIRED_EOS,
         config=AdaptiveSupportConfig(initial_k=1, k_max=4),
         backend=ExactBackend.PYTHON,
+        profiler=profiler,
     )
 
     assert result.status is SolveStatus.OPTIMAL
@@ -171,6 +174,12 @@ def test_infeasible_attempt_expands_to_optimal_saved_logits_support() -> None:
         assert graph_sizes["normalized_edge_count"] > 0
         assert attempt["support_construction_seconds"] >= 0.0
         assert attempt["solve_seconds"] >= 0.0
+    profile_event = profiler.snapshot()
+    assert profile_event is not None
+    assert profile_event.counters["support_attempt_count"] == 2
+    assert profile_event.counters["support_expansion_count"] == 1
+    assert profile_event.component_invocations["support_construction"] == 2
+    assert profile_event.component_invocations["parser"] == 2
     json.dumps(result.to_dict())
 
 
