@@ -781,16 +781,39 @@ produced the 15-page PDF.
 
 **Depends on:** T701
 
-- [ ] Construct cases accepted by an abstract `Sigma*` gap representation.
-- [ ] Prove or enumerate that each requires more token slots than available.
-- [ ] Confirm the finite lattice returns `INFEASIBLE_ON_SUPPORT` or a lower feasible alternative.
-- [ ] Store a human-readable explanation and machine fixture.
+- [x] Construct cases accepted by an abstract `Sigma*` gap representation.
+- [x] Prove or enumerate that each requires more token slots than available.
+- [x] Confirm the finite lattice returns `INFEASIBLE_ON_SUPPORT` or a lower feasible alternative.
+- [x] Store a human-readable explanation and machine fixture.
 
 **Acceptance criteria**
 
-- [ ] At least one minimal counterexample is suitable for the TCC figure/table.
+- [x] At least one minimal counterexample is suitable for the TCC figure/table.
 
-**Evidence:** `[fixture and command]`
+**Evidence:** implementation commit
+`d7a760416f9c616b1d67465f469032256f04785a`. The schema-versioned machine
+corpus `tests/exact_commit/fixtures/finite_slot_counterexamples.json` freezes
+the relaxed ordered-anchor `Sigma*` semantics, complete grammars, token bytes,
+explicit per-position support, proposals, required-EOS policy, slot proof, and
+expected finite result for two one-slot cases. Its paired human explanation in
+`tests/exact_commit/fixtures/finite_slot_counterexamples.md` gives a compact
+TCC-ready table and proves minimality: one non-empty ordinary-token witness
+plus required EOS needs two physical slots, while only one exists.
+
+`make test-m7-counterexamples` verified both concrete abstract witnesses,
+recomputed a positive one-slot shortfall for each, and independently enumerated
+all legal finite EOS-lattice paths against the CFG before comparing with the
+weighted parser. The outcomes were one `INFEASIBLE_ON_SUPPORT` and one lower
+feasible `OPTIMAL` EOS-only witness (objective 1 versus abstract objective 10).
+The deterministic artifact
+`docs/evidence/t703-finite-slot-counterexamples.json` records the fixture hash,
+explicit `exact_on_support` metadata, distinct statuses, and the complete
+optimal certificate including graph-edge path, physical token, EOS role,
+selected proposal, terminal sequence, and objective. `python -m pytest -q
+tests/exact_commit/test_finite_slot_counterexamples.py` passed 4 focused tests;
+`make check` passed the upstream pin, Ruff, strict MyPy over 32 source files, 8
+unit tests, and 325 exact-commit tests; `python -m pytest -q` passed all 334
+tests; and `make paper` produced the 15-page PDF.
 
 ## T704 — Run finite-slot randomized/differential tests
 
