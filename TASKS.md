@@ -24,9 +24,9 @@ Rules:
 
 ## Current starting point
 
-**M8 / T805.** M0 through M7 and T800--T804 are complete at the immutable
-commits and artifacts recorded below. The first incomplete required task is
-T805: add offline exact-step integration tests. The
+**M9 / T900.** M0 through M8 are complete at the immutable commits and
+artifacts recorded below. The first incomplete required task is T900: add
+configuration and strategy dispatch. The
 historical M0--M3 checklist remains archived in
 [`docs/history/TASKS-through-M3.md`](docs/history/TASKS-through-M3.md).
 
@@ -1073,23 +1073,36 @@ pytest -q` passed all 420 tests; and `make paper` produced the 15-page PDF.
 
 **Depends on:** T802, T803, T804
 
-- [ ] Use fixed canvases and logits tensors.
-- [ ] Test a fully compatible batch.
-- [ ] Test a strict optimal subset.
-- [ ] Test an empty matched set with witness-progress fallback.
-- [ ] Test support expansion.
-- [ ] Test timeout fallback.
-- [ ] Test fixed positions and EOS/PAD.
+- [x] Use fixed canvases and logits tensors.
+- [x] Test a fully compatible batch.
+- [x] Test a strict optimal subset.
+- [x] Test an empty matched set with witness-progress fallback.
+- [x] Test support expansion.
+- [x] Test timeout fallback.
+- [x] Test fixed positions and EOS/PAD.
 
 **Acceptance criteria**
 
-- [ ] Tests run on CPU and without network/model weights.
+- [x] Tests run on CPU and without network/model weights.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`4e4471f27a761666a7effd3336b5c87e2de4fc23` adds
+`tests/exact_commit/test_offline_exact_step.py`, which drives one complete
+proposal/support/solve/validate/commit/profile step from fixed CPU-side canvas
+and logits inputs through the independent Python backend. Its five deterministic
+offline cases cover a fully compatible batch, a strict optimal subset, an empty
+matched set with certified witness progress, monotone top-`K` expansion, an
+explicit serial fallback that preserves the original `TIMEOUT`, fixed positions,
+and required EOS/PAD semantics. `python -m pytest -q
+tests/exact_commit/test_offline_exact_step.py` passed all 5 tests. The focused
+proposal/adaptive/solver/decoder/profiling integration command passed 84 tests.
+`make check` passed the upstream pin, Ruff, strict MyPy over 38 source files, 8
+unit tests, and 416 exact-commit tests; `python -m pytest -q` passed all 425
+tests; and `make paper` produced the 15-page PDF.
 
 **M8 gate**
 
-- [ ] One complete exact decoding step works offline with a certified witness.
+- [x] One complete exact decoding step works offline with a certified witness.
 
 ---
 
