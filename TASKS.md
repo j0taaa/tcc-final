@@ -24,9 +24,9 @@ Rules:
 
 ## Current starting point
 
-**M7 / T703.** M0 through M6 and T700--T702 are complete at the immutable
-commits and artifacts recorded below. The first incomplete required task is
-T703: create the finite-slot counterexample corpus. The
+**M8 / T801.** M0 through M7 and T800 are complete at the immutable commits
+and artifacts recorded below. The first incomplete required task is T801:
+implement the exact optimizer orchestration API. The
 historical M0--M3 checklist remains archived in
 [`docs/history/TASKS-through-M3.md`](docs/history/TASKS-through-M3.md).
 
@@ -877,19 +877,43 @@ and 332 exact-commit tests; `python -m pytest -q` passed all 341 tests; and
 
 **Target:** `src/mwpc_exact/proposal_policy.py`
 
-- [ ] Accept model token predictions and confidence values.
-- [ ] Select the same `k_s` candidate positions used by the baseline schedule.
-- [ ] Create one primary proposal per candidate position.
-- [ ] Implement `unit` and `confidence` weights.
-- [ ] Preserve absolute position indices.
-- [ ] Emit deterministic proposal IDs.
+- [x] Accept model token predictions and confidence values.
+- [x] Select the same `k_s` candidate positions used by the baseline schedule.
+- [x] Create one primary proposal per candidate position.
+- [x] Implement `unit` and `confidence` weights.
+- [x] Preserve absolute position indices.
+- [x] Emit deterministic proposal IDs.
 
 **Acceptance criteria**
 
-- [ ] Given saved logits, policy output is deterministic.
-- [ ] Number of proposals is at most `k_s`.
+- [x] Given saved logits, policy output is deterministic.
+- [x] Number of proposals is at most `k_s`.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`75b69a35585ed63d0868981fa10313e97d6ae0a5`. The model-independent
+`build_schedule_proposals` API consumes saved per-position primary token
+predictions, confidence values, and the decoder's final schedule-eligibility
+mask. It ranks eligible positions by descending finite confidence with
+ascending absolute position as the stable tie-break, takes exactly
+`min(k_s, eligible_count)`, and assigns contiguous proposal IDs in that
+schedule order. The immutable `ScheduleProposalBatch` independently enforces
+one proposal per position, the schedule bound and order, retained confidence,
+and the configured `unit` or identity-non-negative `confidence` weight
+conversion. Excluded positions may retain the baseline's non-finite confidence
+sentinels because they cannot enter the candidate set; selected proposal
+weights remain finite and non-negative. Diagnostics and `to_dict()` preserve
+the policy version, eligible and selected absolute positions, budget, weight
+conversion, tie rule, and proposal-ID origin for offline replay.
+
+`python -m pytest -q tests/exact_commit/test_proposal_policy.py` passed 21
+tests covering deterministic saved inputs, equal-confidence ties, `k_s` above
+the remaining eligible count, zero budget, inactive sentinels, both weight
+modes, deterministic IDs, absolute positions, malformed inputs, zero-reward
+support alternatives, and generic duplicate-choice provenance. The focused
+proposal/support/token-lattice run passed 76 tests. `make check` passed the
+upstream pin, Ruff, strict MyPy over 34 source files, 8 unit tests, and 353
+exact-commit tests; `python -m pytest -q` passed all 362 tests; and `make
+paper` produced the 15-page PDF.
 
 ## T801 — Implement the exact optimizer orchestration API
 
