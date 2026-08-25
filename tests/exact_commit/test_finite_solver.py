@@ -19,8 +19,8 @@ from mwpc_exact import (
     build_byte_lattice,
     build_per_position_support,
     build_token_lattice,
-    solve_exact_commit,
 )
+from mwpc_exact.finite_solver import solve_exact_commit
 from mwpc_exact.reference.byte_grammars import arithmetic_expression_bytes_v1
 from mwpc_exact.reference.grammar import (
     CnfGrammar,

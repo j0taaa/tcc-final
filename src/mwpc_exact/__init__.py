@@ -12,12 +12,14 @@ from mwpc_exact.eos_lattice import (
     TokenRole,
     build_eos_lattice,
 )
-from mwpc_exact.finite_solver import ExactBackend, solve_exact_commit
+from mwpc_exact.finite_solver import ExactBackend
+from mwpc_exact.finite_solver import solve_exact_commit as solve_ordinary_exact_commit
 from mwpc_exact.proposal_policy import (
     ProposalWeightMode,
     ScheduleProposalBatch,
     build_schedule_proposals,
 )
+from mwpc_exact.solver import solve_exact_commit
 from mwpc_exact.support import (
     PerPositionSupport,
     SupportInputSource,
@@ -111,6 +113,7 @@ __all__ = [
     "byte_level_piece_to_bytes",
     "canonical_support_rows_json",
     "solve_exact_commit",
+    "solve_ordinary_exact_commit",
     "support_rows_sha256",
     "validate_exact_commit_certificate",
 ]
