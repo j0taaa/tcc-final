@@ -38,6 +38,27 @@ script tests the entire base vocabulary, all added/special tokens, byte
 coverage, curated text classes, and the seeded random campaign, then writes
 `docs/evidence/t600-llada-tokenizer-audit.json`.
 
+The T904 live-model smoke uses a separate optional CUDA environment so the
+CPU-pinned baseline environment remains unchanged:
+
+```bash
+python3.11 -m venv .venv-live
+.venv-live/bin/python -m pip install -r requirements/t904-live-cu128.txt
+.venv-live/bin/python -m pip install --no-deps -e .
+VIRTUAL_ENV="$PWD/.venv-live" PATH="$PWD/.venv-live/bin:$PATH" \
+  .venv-live/bin/maturin develop \
+  --manifest-path vendor/EPIC-Decoding/rustformlang_bindings/Cargo.toml --release
+.venv-live/bin/python scripts/install_epic_checkout.py
+.venv-live/bin/python scripts/exact_commit/run_t904_llada_live_smoke.py \
+  --config configs/exact_commit/t904_llada_live_smoke.toml
+```
+
+After the exact revision is cached, add `--local-files-only`. The driver loads
+one NF4-quantized model instance, invokes the original serial and EPIC-enabled
+constrained loops and the parent-side exact hook, independently recognizes all
+three outputs, and saves raw model/tokenizer/device/certificate metadata. It
+does not produce a latency, throughput, quality, or comparative benchmark.
+
 The M5 Python/Rust/oracle campaigns are configured by
 `configs/exact_commit/m5_rust_differential.toml` and run with:
 

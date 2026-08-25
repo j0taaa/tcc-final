@@ -15,6 +15,7 @@ from mwpc_exact.epic_adapter.llada import (
     LLaDAExactStepResult,
     LLaDATokenUpdate,
     LLaDAUpdateReason,
+    build_llada_byte_adapter,
     prepare_llada_exact_step,
     run_llada_exact_step,
 )
@@ -31,6 +32,7 @@ __all__ = [
     "LLaDAExactStepResult",
     "LLaDATokenUpdate",
     "LLaDAUpdateReason",
+    "build_llada_byte_adapter",
     "prepare_llada_exact_step",
     "run_llada_exact_step",
 ]

@@ -1,0 +1,9 @@
+# Optional CUDA environment used only for the pinned T904 live-model smoke.
+# The main reproducibility environment remains the CPU-pinned `.venv`.
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+-r epic-baseline-cpu.txt
+
+bitsandbytes==0.50.1
+maturin==1.15.0
+torch==2.8.0+cu128

@@ -17,6 +17,7 @@ from mwpc_exact import (
 from mwpc_exact.epic_adapter.llada import (
     LLaDAAdapterProfile,
     LLaDAUpdateReason,
+    build_llada_byte_adapter,
     run_llada_exact_step,
 )
 from mwpc_exact.reference.grammar import (
@@ -92,6 +93,27 @@ def _config(*, top_k: int) -> ExactStrategyConfig:
 def _row(*scores: float) -> tuple[float, ...]:
     assert len(scores) == ADAPTER.vocabulary_size
     return scores
+
+
+def test_live_byte_adapter_marks_added_and_model_only_rows_unsupported() -> None:
+    adapter = build_llada_byte_adapter(
+        ("a", "b", "c"),
+        model_vocabulary_size=ADAPTER.vocabulary_size,
+        profile=PROFILE,
+    )
+
+    assert adapter.vocabulary_size == ADAPTER.vocabulary_size
+    assert adapter.emissions == (b"a", b"b", b"c", None, None, None)
+    assert set(PROFILE.eos_policy.termination_token_ids) <= set(adapter.unsupported_token_ids)
+
+
+def test_live_byte_adapter_rejects_model_vocabulary_before_profile_specials() -> None:
+    with pytest.raises(ValueError, match="special token outside"):
+        build_llada_byte_adapter(
+            ("a", "b", "c"),
+            model_vocabulary_size=5,
+            profile=PROFILE,
+        )
 
 
 def test_fixed_logits_reach_exact_hook_with_generated_canvas_and_baseline_candidates() -> None:

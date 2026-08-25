@@ -1,0 +1,74 @@
+schema_version = 1
+task_id = "T904"
+purpose = "live_model_correctness_smoke_not_a_benchmark"
+seed = 904
+require_clean_worktree = true
+
+model_id = "GSAI-ML/LLaDA-8B-Instruct"
+model_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+tokenizer_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+expected_resolved_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+expected_model_vocabulary_size = 126464
+expected_tokenizer_base_vocabulary_size = 126080
+expected_tokenizer_total_vocabulary_size = 126349
+torch_dtype = "bfloat16"
+device = "cuda:0"
+device_map = "cuda:0"
+
+checkpoint_shard_names = [
+  "model-00001-of-00006.safetensors",
+  "model-00002-of-00006.safetensors",
+  "model-00003-of-00006.safetensors",
+  "model-00004-of-00006.safetensors",
+  "model-00005-of-00006.safetensors",
+  "model-00006-of-00006.safetensors",
+]
+checkpoint_shard_sizes_bytes = [
+  2109747184,
+  2948598128,
+  2986883656,
+  2952797224,
+  2919239128,
+  2113931792,
+]
+
+[quantization]
+implementation = "bitsandbytes"
+load_in_4bit = true
+four_bit_quant_type = "nf4"
+four_bit_compute_dtype = "bfloat16"
+four_bit_use_double_quant = true
+
+[generation]
+instruction = "Reply with exactly the single digit 0 and nothing else."
+target_utf8 = "0"
+generation_length = 4
+block_length = 4
+steps = 1
+temperature = 0.0
+cfg_scale = 0.0
+remasking = "low_confidence"
+max_resamples = 64
+strategies = ["serial", "epic", "exact"]
+
+[epic]
+grammar_text = "S -> lexZero"
+grammar_start = "S"
+lexeme_name = "lexZero"
+lexeme_regex = "0"
+regular_cover_min_batch = 2
+regular_cover_exact = true
+
+[exact]
+exactness_scope = "exact_on_support"
+backend = "python"
+support_initial_k = 1
+support_k_max = 4
+weight_mode = "confidence"
+schedule_budget = 4
+eos_mode = "required"
+termination_token_ids = [126081, 126348]
+pad_token_id = 126081
+
+[output]
+raw_metadata = "docs/evidence/t904-llada-live-smoke.json"

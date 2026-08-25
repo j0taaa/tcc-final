@@ -24,3 +24,9 @@ public independent finite-slot validator.
 expected vocabulary shape, random audit seed, and raw ByteLevel policy. Its
 audit summary is versioned under `docs/evidence/`; tokenizer files and model
 weights remain in ignored external caches.
+
+`t904_llada_live_smoke.toml` freezes the one-byte structured live-model smoke
+for the pinned LLaDA revision. It records serial, EPIC-enabled, and exact
+strategy settings, the NF4 CUDA load policy, finite EOS/PAD semantics, and the
+checkpoint shard sizes. The resulting raw metadata is reachability/correctness
+evidence only, never a benchmark.

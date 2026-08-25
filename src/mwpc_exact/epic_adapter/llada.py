@@ -101,6 +101,43 @@ PINNED_LLADA_PROFILE = LLaDAAdapterProfile(
 )
 
 
+def build_llada_byte_adapter(
+    base_token_pieces: Sequence[str],
+    *,
+    model_vocabulary_size: int,
+    profile: LLaDAAdapterProfile = PINNED_LLADA_PROFILE,
+) -> CompositionalByteLevelAdapter:
+    """Build the live LLaDA byte adapter at the model-logit vocabulary size.
+
+    The pinned tokenizer has an ordinary ByteLevel base vocabulary followed by
+    added control tokens, while the model output matrix has further unused
+    padding rows.  Both groups are unsupported as ordinary grammar emissions;
+    configured EOS/EOT IDs remain available through the separate EOS policy.
+    """
+
+    if isinstance(base_token_pieces, (str, bytes)) or not isinstance(base_token_pieces, Sequence):
+        raise TypeError("base_token_pieces must be a sequence of strings")
+    if not base_token_pieces:
+        raise ValueError("base_token_pieces must not be empty")
+    if any(not isinstance(piece, str) for piece in base_token_pieces):
+        raise TypeError("every base token piece must be a string")
+    vocabulary_size = _integer(model_vocabulary_size, "model_vocabulary_size")
+    if vocabulary_size < len(base_token_pieces):
+        raise ValueError("model vocabulary cannot be smaller than the tokenizer base vocabulary")
+    special_ids = (
+        profile.mask_token_id,
+        *profile.eos_policy.termination_token_ids,
+    )
+    if profile.eos_policy.pad_token_id is not None:
+        special_ids = (*special_ids, profile.eos_policy.pad_token_id)
+    if any(token_id >= vocabulary_size for token_id in special_ids):
+        raise ValueError("the LLaDA profile contains a special token outside the model vocabulary")
+    token_pieces: tuple[str | None, ...] = tuple(base_token_pieces) + (None,) * (
+        vocabulary_size - len(base_token_pieces)
+    )
+    return CompositionalByteLevelAdapter.from_token_pieces(token_pieces)
+
+
 @dataclass(frozen=True, slots=True)
 class LLaDAExactStepRequest:
     """Frozen generated-region input supplied to one validated exact solve."""
@@ -621,6 +658,7 @@ __all__ = [
     "LLaDATokenUpdate",
     "LLaDAUpdateReason",
     "MutableTokenRow",
+    "build_llada_byte_adapter",
     "prepare_llada_exact_step",
     "run_llada_exact_step",
 ]
