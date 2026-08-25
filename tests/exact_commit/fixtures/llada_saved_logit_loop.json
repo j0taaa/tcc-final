@@ -1,0 +1,485 @@
+{
+  "artifact_kind": "offline_llada_saved_logit_loop_fixture",
+  "execution": {
+    "device": "cpu",
+    "model_weights_required": false,
+    "network_required": false
+  },
+  "exact_config": {
+    "backend": "python",
+    "support_k_max": 2,
+    "support_top_k": 2,
+    "weight_mode": "confidence"
+  },
+  "expected": {
+    "events": [
+      {
+        "candidate_positions": [
+          1
+        ],
+        "complete": false,
+        "exactness_scope": "exact_on_support",
+        "input_canvas": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "input_token_ids": [
+          2,
+          5,
+          5,
+          5,
+          5
+        ],
+        "objective_value": 0.95,
+        "selected_proposal_ids": [
+          0
+        ],
+        "solver_status": "optimal",
+        "step_id": "denoise-000",
+        "step_index": 0,
+        "support_kind": "top_k",
+        "updated_canvas": [
+          null,
+          1,
+          null,
+          null
+        ],
+        "updates": [
+          {
+            "canvas_position": 1,
+            "model_position": 2,
+            "reason": "decoder_commit",
+            "token_id": 1
+          }
+        ],
+        "validation_is_valid": true,
+        "witness_terminal_labels": [
+          97,
+          98
+        ],
+        "witness_token_ids": [
+          0,
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "candidate_positions": [
+          0
+        ],
+        "complete": false,
+        "exactness_scope": "exact_on_support",
+        "input_canvas": [
+          null,
+          1,
+          null,
+          null
+        ],
+        "input_token_ids": [
+          2,
+          5,
+          1,
+          5,
+          5
+        ],
+        "objective_value": 0.99,
+        "selected_proposal_ids": [
+          0
+        ],
+        "solver_status": "optimal",
+        "step_id": "denoise-001",
+        "step_index": 1,
+        "support_kind": "top_k",
+        "updated_canvas": [
+          0,
+          1,
+          null,
+          null
+        ],
+        "updates": [
+          {
+            "canvas_position": 0,
+            "model_position": 1,
+            "reason": "decoder_commit",
+            "token_id": 0
+          }
+        ],
+        "validation_is_valid": true,
+        "witness_terminal_labels": [
+          97,
+          98
+        ],
+        "witness_token_ids": [
+          0,
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "candidate_positions": [
+          2
+        ],
+        "complete": true,
+        "exactness_scope": "exact_on_support",
+        "input_canvas": [
+          0,
+          1,
+          null,
+          null
+        ],
+        "input_token_ids": [
+          2,
+          0,
+          1,
+          5,
+          5
+        ],
+        "objective_value": 0.99,
+        "selected_proposal_ids": [
+          0
+        ],
+        "solver_status": "optimal",
+        "step_id": "denoise-002",
+        "step_index": 2,
+        "support_kind": "top_k",
+        "updated_canvas": [
+          0,
+          1,
+          4,
+          3
+        ],
+        "updates": [
+          {
+            "canvas_position": 2,
+            "model_position": 3,
+            "reason": "decoder_commit",
+            "token_id": 4
+          },
+          {
+            "canvas_position": 3,
+            "model_position": 4,
+            "reason": "eos_pad_canonicalization",
+            "token_id": 3
+          }
+        ],
+        "validation_is_valid": true,
+        "witness_terminal_labels": [
+          97,
+          98
+        ],
+        "witness_token_ids": [
+          0,
+          1,
+          4,
+          3
+        ]
+      }
+    ],
+    "final_grammar_valid": true,
+    "final_terminal_labels": [
+      97,
+      98
+    ],
+    "final_token_ids": [
+      2,
+      0,
+      1,
+      4,
+      3
+    ],
+    "final_tracking": [
+      "prompt",
+      "a",
+      "b",
+      "<EOS>",
+      "<EOS>"
+    ]
+  },
+  "grammar": {
+    "accepts_empty": false,
+    "binary_productions": [
+      {
+        "head_id": 0,
+        "left_id": 1,
+        "production_id": 2,
+        "right_id": 2,
+        "source_production_ids": []
+      }
+    ],
+    "nonterminals": [
+      {
+        "name": "S",
+        "symbol_id": 0
+      },
+      {
+        "name": "A",
+        "symbol_id": 1
+      },
+      {
+        "name": "B",
+        "symbol_id": 2
+      }
+    ],
+    "start_nonterminal_id": 0,
+    "terminal_productions": [
+      {
+        "head_id": 1,
+        "production_id": 0,
+        "source_production_ids": [],
+        "terminal_id": 0
+      },
+      {
+        "head_id": 2,
+        "production_id": 1,
+        "source_production_ids": [],
+        "terminal_id": 1
+      }
+    ],
+    "terminals": [
+      {
+        "label": 97,
+        "symbol_id": 0
+      },
+      {
+        "label": 98,
+        "symbol_id": 1
+      }
+    ]
+  },
+  "initial_decoded_tracking": [
+    "prompt",
+    null,
+    null,
+    null,
+    null
+  ],
+  "initial_token_ids": [
+    2,
+    5,
+    5,
+    5,
+    5
+  ],
+  "notes": "Synthetic deterministic integration fixture; not a benchmark or live-model result.",
+  "profile": {
+    "eos_marker": "<EOS>",
+    "eos_policy": {
+      "mode": "required",
+      "pad_token_id": 3,
+      "termination_token_ids": [
+        3,
+        4
+      ]
+    },
+    "generation_length": 4,
+    "mask_token_id": 5,
+    "model_id": "offline/llada-saved-logit-fixture",
+    "prompt_length": 1,
+    "tokenizer_revision": "synthetic-v1"
+  },
+  "schema_version": 1,
+  "steps": [
+    {
+      "active_block_end": 5,
+      "confidence_values": [
+        0.0,
+        0.7,
+        0.95,
+        0.8,
+        0.6
+      ],
+      "k_s": 1,
+      "logits": [
+        [
+          0.0,
+          0.0,
+          10.0,
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          10.0,
+          0.0,
+          8.0,
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          0.0,
+          10.0,
+          8.0,
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          10.0,
+          9.0,
+          -2.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          10.0,
+          9.0,
+          -2.0
+        ]
+      ],
+      "predicted_token_ids": [
+        2,
+        0,
+        1,
+        3,
+        3
+      ],
+      "step_id": "denoise-000"
+    },
+    {
+      "active_block_end": 5,
+      "confidence_values": [
+        0.0,
+        0.99,
+        0.1,
+        0.8,
+        0.7
+      ],
+      "k_s": 1,
+      "logits": [
+        [
+          0.0,
+          0.0,
+          10.0,
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          10.0,
+          0.0,
+          8.0,
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          0.0,
+          10.0,
+          8.0,
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          10.0,
+          9.0,
+          -2.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          10.0,
+          9.0,
+          -2.0
+        ]
+      ],
+      "predicted_token_ids": [
+        2,
+        0,
+        1,
+        3,
+        3
+      ],
+      "step_id": "denoise-001"
+    },
+    {
+      "active_block_end": 5,
+      "confidence_values": [
+        0.0,
+        0.1,
+        0.1,
+        0.99,
+        0.8
+      ],
+      "k_s": 1,
+      "logits": [
+        [
+          0.0,
+          0.0,
+          10.0,
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          10.0,
+          0.0,
+          8.0,
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          0.0,
+          10.0,
+          8.0,
+          -1.0,
+          -2.0,
+          -3.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          9.0,
+          10.0,
+          -2.0
+        ],
+        [
+          0.0,
+          0.0,
+          -1.0,
+          10.0,
+          9.0,
+          -2.0
+        ]
+      ],
+      "predicted_token_ids": [
+        2,
+        0,
+        1,
+        4,
+        3
+      ],
+      "step_id": "denoise-002"
+    }
+  ],
+  "tokenizer": {
+    "decoded_tokens": {
+      "0": "a",
+      "1": "b",
+      "2": "c"
+    },
+    "emissions_hex": [
+      "61",
+      "62",
+      "63",
+      null,
+      null,
+      null
+    ]
+  }
+}
