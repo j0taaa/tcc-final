@@ -41,6 +41,15 @@ from mwpc_exact.proposal_policy import (
     ScheduleProposalBatch,
     build_schedule_proposals,
 )
+from mwpc_exact.selection import (
+    SelectionInput,
+    SelectionResult,
+    SelectionStatus,
+    SelectorKind,
+    recompute_witness_selection,
+    select_exact,
+    select_serial,
+)
 from mwpc_exact.solver import solve_exact_commit, solve_validated_exact_commit
 from mwpc_exact.strategy import (
     CommitStrategy,
@@ -136,6 +145,10 @@ __all__ = [
     "Proposal",
     "ProposalWeightMode",
     "ScheduleProposalBatch",
+    "SelectionInput",
+    "SelectionResult",
+    "SelectionStatus",
+    "SelectorKind",
     "SolveStatus",
     "SupportGrowthPolicy",
     "SupportInputSource",
@@ -170,6 +183,9 @@ __all__ = [
     "decoder_strategy_config_from_namespace",
     "dispatch_commit_strategy",
     "legacy_commit_strategy",
+    "recompute_witness_selection",
+    "select_exact",
+    "select_serial",
     "solve_exact_commit",
     "solve_exact_commit_adaptive",
     "solve_exact_commit_adaptive_validated",
