@@ -16,6 +16,8 @@ from mwpc_exact import (
     Proposal,
     SolveStatus,
     SupportKind,
+    ValidatedExactCommit,
+    ValidationReport,
     apply_exact_commit_result,
 )
 
@@ -31,8 +33,8 @@ def optimal_result(
     *,
     selected: tuple[int, ...] = (),
     objective: float = 0.0,
-) -> ExactCommitResult:
-    return ExactCommitResult(
+) -> ValidatedExactCommit:
+    raw_result = ExactCommitResult(
         status=SolveStatus.OPTIMAL,
         exactness_scope=SCOPE,
         objective_value=objective,
@@ -41,7 +43,24 @@ def optimal_result(
         witness_terminal_labels=(ord("a"),),
         witness_graph_edge_ids=(100,),
         witness_content_endpoint_slot=len(witness),
-        diagnostics={"certificate_validation": {"is_valid": True}},
+        diagnostics={
+            "certificate_validation": {
+                "is_valid": True,
+                "issues": [],
+                "skipped_checks": [],
+                "recomputed_objective": objective,
+                "recomputed_selected_proposal_ids": list(selected),
+            }
+        },
+    )
+    return ValidatedExactCommit(
+        result=raw_result,
+        validation_report=ValidationReport(
+            issues=(),
+            skipped_checks=(),
+            recomputed_objective=objective,
+            recomputed_selected_proposal_ids=selected,
+        ),
     )
 
 
@@ -69,7 +88,7 @@ def test_optimal_nonempty_selection_commits_exactly_matching_proposals() -> None
 
     step = apply_exact_commit_result(result, canvas=canvas, proposals=proposals)
 
-    assert step.solver_result is result
+    assert step.solver_result is result.result
     assert step.updated_canvas == (4, 5, 9, None)
     assert step.commit_source is CommitSource.EXACT_PROPOSALS
     assert step.commit_guarantee is CommitGuarantee.EXACT_MWPC_SELECTION
@@ -111,7 +130,7 @@ def test_optimal_result_without_independent_validation_is_never_committed() -> N
         witness_content_endpoint_slot=1,
     )
 
-    with pytest.raises(ValueError, match="independent certificate validation"):
+    with pytest.raises(ValueError, match="ValidatedExactCommit"):
         apply_exact_commit_result(
             unvalidated,
             canvas=(None,),

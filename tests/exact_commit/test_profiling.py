@@ -17,10 +17,12 @@ from mwpc_exact import (
     SolveStatus,
     SupportKind,
     SupportPolicy,
+    ValidatedExactCommit,
     apply_exact_commit_result,
     build_per_position_support,
     build_schedule_proposals,
     solve_exact_commit,
+    solve_validated_exact_commit,
 )
 from mwpc_exact.reference.grammar import (
     CnfGrammar,
@@ -123,7 +125,7 @@ def test_profiled_python_step_is_observational_and_records_every_component() -> 
         proposals=proposal_batch.proposals,
         profiler=profiler,
     )
-    result = solve_exact_commit(
+    validated_result = solve_validated_exact_commit(
         _one_byte_grammar(ord("a")),
         canvas=(None, None),
         support=support,
@@ -133,8 +135,10 @@ def test_profiled_python_step_is_observational_and_records_every_component() -> 
         backend=ExactBackend.PYTHON,
         profiler=profiler,
     )
+    assert isinstance(validated_result, ValidatedExactCommit)
+    result = validated_result.result
     step = apply_exact_commit_result(
-        result,
+        validated_result,
         canvas=(None, None),
         proposals=proposal_batch.proposals,
         profiler=profiler,
@@ -162,7 +166,7 @@ def test_profiled_python_step_is_observational_and_records_every_component() -> 
     assert event.accounted_total_seconds == pytest.approx(event.wall_span_seconds)
     json.dumps(event.to_dict())
 
-    unprofiled_result = solve_exact_commit(
+    unprofiled_validated_result = solve_validated_exact_commit(
         _one_byte_grammar(ord("a")),
         canvas=(None, None),
         support=support,
@@ -171,8 +175,10 @@ def test_profiled_python_step_is_observational_and_records_every_component() -> 
         eos_policy=eos_policy,
         backend=ExactBackend.PYTHON,
     )
+    assert isinstance(unprofiled_validated_result, ValidatedExactCommit)
+    unprofiled_result = unprofiled_validated_result.result
     unprofiled_step = apply_exact_commit_result(
-        unprofiled_result,
+        unprofiled_validated_result,
         canvas=(None, None),
         proposals=proposal_batch.proposals,
     )

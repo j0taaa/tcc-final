@@ -6,14 +6,14 @@ import pytest
 
 pytest.importorskip("mwpc_parser_py")
 
-from mwpc_exact.reference.graph_differential import (
+from mwpc_exact.types import SolveStatus
+from mwpc_research.graph_differential import (
     generate_random_graph_instance,
 )
-from mwpc_exact.rust_differential import (
+from mwpc_research.rust_differential import (
     check_rust_differential_instance,
     run_rust_differential_campaign,
 )
-from mwpc_exact.types import SolveStatus
 
 
 def test_small_python_rust_oracle_campaign_has_full_agreement() -> None:

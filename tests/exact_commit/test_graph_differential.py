@@ -5,7 +5,7 @@ import json
 from hypothesis import HealthCheck, given, settings
 from hypothesis import strategies as st
 
-from mwpc_exact.reference.graph_differential import (
+from mwpc_research.graph_differential import (
     GraphDifferentialMismatch,
     RandomGraphInstance,
     check_graph_differential_instance,

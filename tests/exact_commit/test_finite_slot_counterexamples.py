@@ -4,13 +4,13 @@ import hashlib
 import json
 from pathlib import Path
 
-from mwpc_exact.finite_slot_counterexamples import (
+from mwpc_exact.types import SolveStatus
+from mwpc_research.finite_slot_counterexamples import (
     ABSTRACT_SIGMA_STAR_SEMANTICS,
     load_finite_slot_counterexamples,
     replay_finite_slot_counterexample,
     summarize_finite_slot_counterexamples,
 )
-from mwpc_exact.types import SolveStatus
 
 FIXTURE_DIRECTORY = Path(__file__).with_name("fixtures")
 CORPUS_PATH = FIXTURE_DIRECTORY / "finite_slot_counterexamples.json"

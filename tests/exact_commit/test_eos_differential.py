@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import json
 
-from mwpc_exact.eos_differential import (
+from mwpc_exact.types import SolveStatus
+from mwpc_research.eos_differential import (
     EOSFiniteSlotCaseReport,
     EOSFiniteSlotDifferentialMismatch,
     RandomEOSFiniteSlotInstance,
@@ -10,7 +11,6 @@ from mwpc_exact.eos_differential import (
     generate_random_eos_finite_slot_instance,
     run_eos_finite_slot_campaign,
 )
-from mwpc_exact.types import SolveStatus
 
 
 def test_seed_is_deterministic_and_fixture_round_trips() -> None:

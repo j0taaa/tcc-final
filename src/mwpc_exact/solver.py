@@ -13,8 +13,9 @@ from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from math import isclose, isfinite
 
-from mwpc_exact.eos_lattice import EOSLattice, EOSLatticePath, EOSMode, EOSPolicy, build_eos_lattice
-from mwpc_exact.finite_solver import ExactBackend
+from mwpc_exact.backend import ExactBackend
+from mwpc_exact.eos_lattice import EOSLattice, EOSLatticePath, build_eos_lattice
+from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent
 from mwpc_exact.reference.dag_parser import (
     DagParseCertificate,
@@ -29,6 +30,7 @@ from mwpc_exact.support import PerPositionSupport
 from mwpc_exact.token_lattice import build_token_lattice
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from mwpc_exact.types import ExactCommitResult, Proposal, SolveStatus, TerminalEdge
+from mwpc_exact.validated import ValidatedExactCommit, validated_exact_commit
 from mwpc_exact.validator import validate_exact_commit_certificate
 
 
@@ -624,4 +626,36 @@ def solve_exact_commit(
     )
 
 
-__all__ = ["ExactBackend", "solve_exact_commit"]
+def solve_validated_exact_commit(
+    grammar: CnfGrammar,
+    *,
+    canvas: Sequence[int | None],
+    support: PerPositionSupport,
+    proposals: Iterable[Proposal],
+    tokenizer_adapter: CompositionalByteLevelAdapter,
+    eos_policy: EOSPolicy,
+    backend: ExactBackend = ExactBackend.RUST,
+    timeout_seconds: float | None = None,
+    deadline_check_interval: int = 1_024,
+    deterministic_work_limit: int | None = None,
+    profiler: ComponentProfiler | None = None,
+) -> ValidatedExactCommit | ExactCommitResult:
+    """Return a typed validated wrapper for optimal outcomes and raw failures otherwise."""
+
+    result = solve_exact_commit(
+        grammar,
+        canvas=canvas,
+        support=support,
+        proposals=proposals,
+        tokenizer_adapter=tokenizer_adapter,
+        eos_policy=eos_policy,
+        backend=backend,
+        timeout_seconds=timeout_seconds,
+        deadline_check_interval=deadline_check_interval,
+        deterministic_work_limit=deterministic_work_limit,
+        profiler=profiler,
+    )
+    return validated_exact_commit(result) if result.status is SolveStatus.OPTIMAL else result
+
+
+__all__ = ["solve_exact_commit", "solve_validated_exact_commit"]

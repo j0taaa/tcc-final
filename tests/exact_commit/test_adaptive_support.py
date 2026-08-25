@@ -154,7 +154,7 @@ def test_infeasible_attempt_expands_to_optimal_saved_logits_support() -> None:
     assert diagnostics["attempted_k"] == (1, 2)
     assert diagnostics["stopped_reason"] == "terminal_status_optimal"
     assert diagnostics["support_superset_verified"] is True
-    assert diagnostics["optimal_objective_non_decreasing"] is True
+    assert diagnostics["observed_optimal_objectives_non_decreasing"] is True
     attempts = diagnostics["attempts"]
     assert isinstance(attempts, tuple)
     assert tuple(attempt["status"] for attempt in attempts) == (
@@ -356,7 +356,7 @@ def test_total_timeout_between_infeasible_attempts_is_not_infeasibility(
     diagnostics = adaptive_diagnostics(result)
     assert diagnostics["attempted_k"] == (1,)
     assert diagnostics["resource_limit_prevented_expansion"] is True
-    assert diagnostics["stopped_reason"] == "total_timeout_before_next_expansion"
+    assert diagnostics["stopped_reason"] == "total_timeout_after_attempt"
     assert diagnostics["deadline_enforcement"] == "checked_between_reference_parser_attempts"
 
 
@@ -502,3 +502,79 @@ def test_verified_support_growth_cannot_decrease_the_exact_optimum() -> None:
     assert narrow_result.objective_value == 1.0
     assert full_result.objective_value == 4.0
     assert narrow_result.objective_value <= full_result.objective_value
+
+
+def test_hard_total_timeout_overrides_a_late_optimal_reference_result(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    times = iter((0.0, 0.1, 1.1))
+
+    def clock() -> float:
+        return next(times)
+
+    def late_optimal(*_args: object, **kwargs: object) -> ExactCommitResult:
+        support = kwargs["support"]
+        assert isinstance(support, PerPositionSupport)
+        return ExactCommitResult(
+            status=SolveStatus.OPTIMAL,
+            exactness_scope=support.exactness_scope,
+            objective_value=0.0,
+            witness_token_ids=(0,),
+            witness_terminal_labels=(ord("a"),),
+            witness_graph_edge_ids=(0,),
+            witness_content_endpoint_slot=1,
+            diagnostics={
+                "certificate_validation": {
+                    "is_valid": True,
+                    "issues": [],
+                    "skipped_checks": [],
+                    "recomputed_objective": 0.0,
+                    "recomputed_selected_proposal_ids": [],
+                }
+            },
+        )
+
+    monkeypatch.setattr(adaptive, "solve_exact_commit", late_optimal)
+    result = solve_exact_commit_adaptive(
+        one_byte_grammar(ord("a")),
+        canvas=(None,),
+        logits=((1.0,),),
+        proposals=(),
+        tokenizer_adapter=CompositionalByteLevelAdapter((b"a",)),
+        eos_policy=EOSPolicy(EOSMode.ABSENT),
+        config=AdaptiveSupportConfig(
+            initial_k=1,
+            k_max=1,
+            total_timeout_seconds=1.0,
+        ),
+        backend=ExactBackend.PYTHON,
+        clock=clock,
+    )
+
+    assert result.status is SolveStatus.TIMEOUT
+    assert result.objective_value is None
+    diagnostics = adaptive_diagnostics(result)
+    assert diagnostics["stopped_reason"] == "total_timeout_after_attempt"
+    assert diagnostics["resource_limit_prevented_expansion"] is True
+    attempts = diagnostics["attempts"]
+    assert isinstance(attempts, tuple)
+    assert attempts[0]["status"] == SolveStatus.TIMEOUT.value
+    assert attempts[0]["objective_value"] is None
+
+
+def test_adaptive_diagnostics_name_first_feasible_stopping_policy() -> None:
+    result = solve_exact_commit_adaptive(
+        one_byte_grammar(ord("a")),
+        canvas=(None,),
+        logits=((2.0, 1.0),),
+        proposals=(),
+        tokenizer_adapter=CompositionalByteLevelAdapter((b"a", b"b")),
+        eos_policy=EOSPolicy(EOSMode.ABSENT),
+        config=AdaptiveSupportConfig(initial_k=1, k_max=2),
+        backend=ExactBackend.PYTHON,
+    )
+
+    diagnostics = adaptive_diagnostics(result)
+    assert diagnostics["orchestrator"] == "feasibility_driven_support_expansion_v2"
+    assert diagnostics["stopping_policy"] == "first_feasible"
+    assert diagnostics["attempted_k"] == (1,)

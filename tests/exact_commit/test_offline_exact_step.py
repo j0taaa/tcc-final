@@ -35,9 +35,10 @@ from mwpc_exact import (
     ScheduleProposalBatch,
     SolveStatus,
     SupportKind,
+    ValidatedExactCommit,
     apply_exact_commit_result,
     build_schedule_proposals,
-    solve_exact_commit_adaptive,
+    solve_exact_commit_adaptive_validated,
 )
 from mwpc_exact.reference.grammar import (
     BinaryProduction,
@@ -124,7 +125,7 @@ def _run_offline_step(
         weight_mode=ProposalWeightMode.CONFIDENCE,
         profiler=profiler,
     )
-    solver_result = solve_exact_commit_adaptive(
+    validated_result = solve_exact_commit_adaptive_validated(
         grammar,
         canvas=canvas,
         logits=logits,
@@ -136,8 +137,16 @@ def _run_offline_step(
         pruning_description="T805 fixed offline CPU integration fixture",
         profiler=profiler,
     )
+    if isinstance(validated_result, ValidatedExactCommit):
+        solver_result = validated_result.result
+        decoder_input: ValidatedExactCommit | ExactCommitResult = validated_result
+    elif isinstance(validated_result, ExactCommitResult):
+        solver_result = validated_result
+        decoder_input = validated_result
+    else:
+        raise AssertionError("adaptive exact fixture returned an unknown result type")
     decoder_step = apply_exact_commit_result(
-        solver_result,
+        decoder_input,
         canvas=canvas,
         proposals=proposal_batch.proposals,
         witness_token_probabilities=witness_token_probabilities,
@@ -346,7 +355,7 @@ def test_total_timeout_preserves_status_and_uses_explicit_serial_fallback() -> N
     adaptive = _adaptive_diagnostics(run.solver_result)
     assert adaptive["attempted_k"] == (1,)
     assert adaptive["resource_limit_prevented_expansion"] is True
-    assert adaptive["stopped_reason"] == "total_timeout_before_next_expansion"
+    assert adaptive["stopped_reason"] == "total_timeout_after_attempt"
     assert run.decoder_step.solver_result.status is SolveStatus.TIMEOUT
     assert run.decoder_step.updated_canvas == (1, None, None)
     assert run.decoder_step.commit_source is CommitSource.SERIAL_FALLBACK

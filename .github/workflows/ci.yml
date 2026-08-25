@@ -45,14 +45,13 @@ jobs:
         run: make bootstrap-rust-parser
       - name: Check Rust crates
         run: make test-rust-parser
-      - name: Run Rust-backed differential tests
-        run: |
-          .venv/bin/python -m pytest -q \
-            tests/exact_commit/test_rust_binding.py \
-            tests/exact_commit/test_rust_differential.py \
-            tests/exact_commit/test_finite_solver.py \
-            tests/exact_commit/test_finite_differential.py
+      - name: Run complete suite with production binding
+        run: .venv/bin/python -m pytest -q tests/unit tests/exact_commit
       - name: Run normal M6 finite-lattice campaign
         run: |
           .venv/bin/python scripts/exact_commit/run_m6_finite_lattice_differential.py \
+            --campaign normal
+      - name: Run normal M7 EOS finite-slot campaign
+        run: |
+          .venv/bin/python scripts/exact_commit/run_m7_eos_finite_slot_differential.py \
             --campaign normal

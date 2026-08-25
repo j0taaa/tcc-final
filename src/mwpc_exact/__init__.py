@@ -4,7 +4,9 @@ from mwpc_exact.adaptive import (
     AdaptiveSupportConfig,
     SupportGrowthPolicy,
     solve_exact_commit_adaptive,
+    solve_exact_commit_adaptive_validated,
 )
+from mwpc_exact.backend import ExactBackend
 from mwpc_exact.byte_lattice import ByteLattice, ByteLatticePath, build_byte_lattice
 from mwpc_exact.decoder import (
     CommitGuarantee,
@@ -23,22 +25,23 @@ from mwpc_exact.eos_lattice import (
     EOSArc,
     EOSLattice,
     EOSLatticePath,
+    build_eos_lattice,
+)
+from mwpc_exact.eos_policy import (
     EOSMode,
     EOSPolicy,
     EOSPolicyViolation,
     EOSState,
     TokenRole,
-    build_eos_lattice,
 )
-from mwpc_exact.finite_solver import ExactBackend
-from mwpc_exact.finite_solver import solve_exact_commit as solve_ordinary_exact_commit
+from mwpc_exact.finite_solver import solve_ordinary_support_reference
 from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent, ProfilingEvent
 from mwpc_exact.proposal_policy import (
     ProposalWeightMode,
     ScheduleProposalBatch,
     build_schedule_proposals,
 )
-from mwpc_exact.solver import solve_exact_commit
+from mwpc_exact.solver import solve_exact_commit, solve_validated_exact_commit
 from mwpc_exact.support import (
     PerPositionSupport,
     SupportInputSource,
@@ -72,6 +75,7 @@ from mwpc_exact.types import (
     WeightedTerminalDAG,
     aggregate_proposals,
 )
+from mwpc_exact.validated import ValidatedExactCommit
 from mwpc_exact.validator import (
     EOSWitnessValidator,
     GrammarRecognizer,
@@ -134,6 +138,7 @@ __all__ = [
     "TokenRole",
     "TokenizerWitnessValidator",
     "UnsupportedTokenError",
+    "ValidatedExactCommit",
     "ValidationCode",
     "ValidationIssue",
     "ValidationReport",
@@ -149,7 +154,9 @@ __all__ = [
     "canonical_support_rows_json",
     "solve_exact_commit",
     "solve_exact_commit_adaptive",
-    "solve_ordinary_exact_commit",
+    "solve_exact_commit_adaptive_validated",
+    "solve_ordinary_support_reference",
+    "solve_validated_exact_commit",
     "support_rows_sha256",
     "validate_exact_commit_certificate",
 ]

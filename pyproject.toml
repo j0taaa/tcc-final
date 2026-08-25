@@ -46,4 +46,4 @@ select = ["E", "F", "I", "B", "UP", "RUF"]
 python_version = "3.11"
 strict = true
 mypy_path = "src"
-packages = ["mwpc_exact"]
+packages = ["mwpc_exact", "mwpc_research"]

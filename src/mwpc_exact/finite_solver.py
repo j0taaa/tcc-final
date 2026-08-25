@@ -1,4 +1,4 @@
-"""Bridge from finite token support to an independently validated solve.
+"""Frozen M6 ordinary-token reference bridge over finite support.
 
 This module intentionally accepts an already constructed
 :class:`~mwpc_exact.support.PerPositionSupport`.  Proposal policy, adaptive
@@ -11,12 +11,12 @@ from __future__ import annotations
 
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
-from enum import StrEnum
 from math import fsum, isclose, isfinite
 from typing import cast
 
+from mwpc_exact.backend import ExactBackend
 from mwpc_exact.byte_lattice import ByteLattice, build_byte_lattice
-from mwpc_exact.eos_lattice import EOSMode, EOSPolicy
+from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.reference.dag_parser import (
     DagParseCertificate,
     reconstruct_dag_certificate,
@@ -36,13 +36,6 @@ from mwpc_exact.types import (
     TerminalLabel,
 )
 from mwpc_exact.validator import validate_exact_commit_certificate
-
-
-class ExactBackend(StrEnum):
-    """Available finite-lattice parser implementations."""
-
-    PYTHON = "python"
-    RUST = "rust"
 
 
 @dataclass(frozen=True, slots=True)
@@ -480,4 +473,7 @@ def solve_exact_commit(
     )
 
 
-__all__ = ["ExactBackend", "solve_exact_commit"]
+solve_ordinary_support_reference = solve_exact_commit
+
+
+__all__ = ["solve_ordinary_support_reference"]

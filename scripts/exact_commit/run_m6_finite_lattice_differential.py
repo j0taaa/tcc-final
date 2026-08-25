@@ -12,7 +12,7 @@ import sys
 import tomllib
 from pathlib import Path
 
-from mwpc_exact.finite_differential import (
+from mwpc_research.finite_differential import (
     FINITE_LATTICE_GENERATOR_SCHEMA_VERSION,
     finite_grammar_family_sha256,
     run_finite_lattice_campaign,

@@ -20,8 +20,9 @@ from random import Random
 from types import MappingProxyType
 from typing import NoReturn, Self
 
+from mwpc_exact.backend import ExactBackend
 from mwpc_exact.byte_lattice import ByteLatticePath, build_byte_lattice
-from mwpc_exact.finite_solver import ExactBackend, solve_exact_commit
+from mwpc_exact.finite_solver import solve_exact_commit
 from mwpc_exact.reference.grammar import (
     BinaryProduction,
     CnfGrammar,

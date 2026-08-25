@@ -11,7 +11,7 @@ import sys
 import tomllib
 from pathlib import Path
 
-from mwpc_exact.reference.differential import run_differential_campaign
+from mwpc_research.token_aligned_differential import run_differential_campaign
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 

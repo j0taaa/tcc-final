@@ -11,7 +11,7 @@ import sys
 import tomllib
 from pathlib import Path
 
-from mwpc_exact.reference.graph_differential import run_graph_differential_campaign
+from mwpc_research.graph_differential import run_graph_differential_campaign
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 
