@@ -25,8 +25,8 @@ Rules:
 
 ## Current starting point
 
-**M9 / T900.** M0 through M8 are complete. The first incomplete required task
-is T900: configuration and strategy dispatch.
+**M9 / T901.** M0 through M8 and T900 are complete. The first incomplete
+required task is T901: add the exact hook to the first model adapter.
 
 Required milestones: **M0 through M13**. Optional milestones: **O1 through O4**.
 
@@ -60,17 +60,34 @@ configured-case boundaries, and campaign counts.
 
 **Depends on:** M8 gate
 
-- [ ] Add `serial|epic|exact` strategy option to the relevant CLI/config path.
-- [ ] Add exact support, weight, timeout, EOS, backend, and fallback options.
-- [ ] Keep default behavior backward compatible unless deliberately documented.
-- [ ] Validate incompatible options early.
+- [x] Add `serial|epic|exact` strategy option to the relevant CLI/config path.
+- [x] Add exact support, weight, timeout, EOS, backend, and fallback options.
+- [x] Keep default behavior backward compatible unless deliberately documented.
+- [x] Validate incompatible options early.
 
 **Acceptance criteria**
 
-- [ ] Existing commands without exact flags retain baseline behavior.
-- [ ] Help/config output documents exactness scope.
+- [x] Existing commands without exact flags retain baseline behavior.
+- [x] Help/config output documents exactness scope.
 
-**Evidence:** `[tests/CLI output]`
+**Evidence:** implementation commit
+`37517ecfcf382e378a82073708dc432a834b4e0f` adds the reusable typed strategy
+configuration and exclusive dispatcher in `src/mwpc_exact/strategy.py`, the
+installed `mwpc-commit-config` entry point, public exports, documentation, and
+`tests/exact_commit/test_strategy.py`. With no new flag, configuration preserves
+the upstream `CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH` convention: the CLI
+printed `serial` for the upstream-default environment and `epic` when the
+legacy switch was `1`. Exact configuration covers adaptive top-`K`, weight,
+total timeout, explicit EOS/PAD, Python/Rust backend, and none/serial/EPIC
+fallback; baseline modes reject exact-only options before model loading. CLI
+help and resolved JSON both name `exact_on_support` and reject a global or
+future-trajectory claim. The focused strategy suite passed 11 tests. `make
+check` passed the upstream pin, Ruff, strict MyPy over 44 source files, 9 unit
+tests, and 433 exact-commit tests. After rebuilding the release Rust binding,
+`make test-rust-parser` passed formatting, 20 Rust tests, and strict Clippy;
+`python -m pytest -q` passed all 443 tests. The focused upstream constrained
+decoder/binding regression command passed 19 tests with 4 declared upstream
+skips, and `make paper` produced the 15-page PDF.
 
 ## T901 — Add exact hook to the first model adapter
 
