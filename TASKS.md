@@ -25,8 +25,8 @@ Rules:
 
 ## Current starting point
 
-**M10 / T1002.** M0 through M9 and T1000 through T1001 are complete. The first
-incomplete required task is T1002: wrap brute force as a small-instance baseline.
+**M10 / T1003.** M0 through M9 and T1000 through T1002 are complete. The first
+incomplete required task is T1003: define a shared benchmark-instance schema.
 
 Required milestones: **M0 through M13**. Optional milestones: **O1 through O4**.
 
@@ -357,15 +357,46 @@ the EPIC submodule remained clean at
 
 **Depends on:** T300, T402
 
-- [ ] Expose a common result for tiny token-aligned and graph instances.
-- [ ] Add explicit size guard and status.
-- [ ] Use it in experiment scripts only when feasible.
+- [x] Expose a common result for tiny token-aligned and graph instances.
+- [x] Add explicit size guard and status.
+- [x] Use it in experiment scripts only when feasible.
 
 **Acceptance criteria**
 
-- [ ] Exact result matches brute force in the common harness.
+- [x] Exact result matches brute force in the common harness.
 
-**Evidence:** `[tests and commit]`
+**Evidence:** implementation commit
+`5f18fdda521778d7a1dd1603b3a18ef361147918` adds guarded common-result
+adapters for the independent M3 completion oracle and M4 graph-path oracle.
+The token-aligned adapter accepts the same immutable `SelectionInput` as the
+exact selector, returns independently scored token and graph witnesses, and
+reports unsupported tokenizer/EOS shapes without widening its claim. The
+generic graph adapter returns stable parser-local graph witnesses without
+inventing token IDs; graph-only `OPTIMAL` results are restricted to the
+brute-force oracle, so the production exact selector still requires a physical
+token witness.
+
+Both adapters compute the complete candidate-path count before enumeration.
+Inputs above `max_completions` or `max_paths` return the distinct
+`SIZE_LIMIT_EXCEEDED` status with no score or partial witness. Deterministic
+tests replace each underlying oracle with a failing stub and confirm it is not
+called after the preflight guard, making the adapter safe for experiment
+scripts only on feasible tiny instances.
+
+`tests/exact_commit/test_brute_force_selection.py` passed all 12 tests. The
+common harness compares exact and brute-force statuses, objectives, selected
+proposal sets, and validated certificates on a manual fixture and recorded
+seeds `0..31`; it also covers token and graph infeasibility, unsupported
+tokenizer shapes, both size guards, graph-only witness typing, and the seed-6
+regression where frozen proposal order differs from graph-path provenance
+order. The focused oracle/adapter suite passed 48 tests. `make check` passed the
+upstream pin, Ruff, strict MyPy over 48 source files, 9 unit tests, and 478
+exact-commit tests; `python -m pytest -q` passed all 493 tests.
+`make test-rust-parser` passed formatting, 20 Rust tests, and strict Clippy.
+The focused upstream constrained-decoder/binding regressions passed 19 tests
+with 4 pre-existing declared skips, `make paper` produced the 15-page PDF, and
+the EPIC submodule remained clean at
+`5b1b31098f34ed3691d2a9f4aae14fdf5839d072`.
 
 ## T1003 — Define a shared benchmark-instance schema
 
