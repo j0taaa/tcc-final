@@ -113,14 +113,17 @@ jobs:
           benchmark = benchmark_test.read_text(encoding="utf-8")
           factory_start = benchmark.index("    def cfg_factory(")
           factory_end = benchmark.index("\n\n    results = replay_benchmark_instance(", factory_start)
-          new_factory = '''    class _AlignedCfg:
-              def accepts(self, words: list[str]) -> bool:
-                  return words == ["a", "x", "b", "y"]
-
-              def cfg_factory(text: str, start_symbol: str) -> object:
-                  seen_cfg.append((text, start_symbol))
-                  return _AlignedCfg()
-          '''
+          new_factory = "\n".join(
+              [
+                  "    class _AlignedCfg:",
+                  "        def accepts(self, words: list[str]) -> bool:",
+                  '            return words == ["a", "x", "b", "y"]',
+                  "",
+                  "    def cfg_factory(text: str, start_symbol: str) -> object:",
+                  "        seen_cfg.append((text, start_symbol))",
+                  "        return _AlignedCfg()",
+              ]
+          ) + "\n"
           benchmark_test.write_text(
               benchmark[:factory_start] + new_factory + benchmark[factory_end:],
               encoding="utf-8",
