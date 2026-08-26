@@ -20,3 +20,7 @@ resolved values fails instead of overwriting provenance.
 The Q5 file reuses the already versioned T904 model, tokenizer, and one-byte
 grammar smoke. It is not a final task suite or a source of benchmark claims.
 Model caches and raw run directories remain untracked.
+
+`q1_correctness_v1.toml` is the executable T1101 configuration. It keeps the
+earlier Q1 schema smoke immutable while adding the exact canonical,
+exhaustive, and randomized case counts consumed by the Q1 driver.

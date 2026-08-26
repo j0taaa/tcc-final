@@ -55,6 +55,10 @@ jobs:
         run: |
           .venv/bin/python scripts/exact_commit/run_m7_eos_finite_slot_differential.py \
             --campaign normal
+      - name: Run Q1 correctness smoke
+        run: |
+          .venv/bin/python scripts/exact_commit/run_q1_correctness.py \
+            --run-directory "$RUNNER_TEMP/q1-correctness"
 
   epic-integration:
     runs-on: ubuntu-latest

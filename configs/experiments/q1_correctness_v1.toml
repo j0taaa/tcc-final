@@ -1,0 +1,49 @@
+schema_version = 1
+experiment_id = "q1_correctness_v1"
+question = "correctness"
+description = "Executable Q1 comparison of direct enumeration, Python reference, and Rust production solvers."
+publication_mode = false
+seeds = [1101]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "canonical_exhaustive_and_random_explicit_per_position"
+top_k = 6
+k_max = 6
+finite_slots = true
+
+[model]
+model_id = "not_applicable"
+model_revision = "not_applicable"
+tokenizer_id = "generated_raw_byte_vocabulary"
+tokenizer_revision = "finite_lattice_generator_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "q1_small_cfg_family"
+source = "mwpc_research.q1_correctness"
+revision = "q1_generator_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 5.0
+run_seconds = 600.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+campaigns = ["canonical", "exhaustive", "randomized"]
+solvers = ["exhaustive_oracle", "python_reference", "rust_production"]
+random_case_count = 100
+failure_directory = "mismatches"
+raw_output_root = "results/raw/q1_correctness_v1"

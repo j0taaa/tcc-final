@@ -59,6 +59,20 @@ constrained loops and the parent-side exact hook, independently recognizes all
 three outputs, and saves raw model/tokenizer/device/certificate metadata. It
 does not produce a latency, throughput, quality, or comparative benchmark.
 
+The T1101 Q1 correctness experiment requires the independent Rust production
+binding and runs its canonical, exhaustive, and randomized finite-support
+families with:
+
+```bash
+make bootstrap-rust-parser
+python scripts/exact_commit/run_q1_correctness.py
+```
+
+The driver creates a unique ignored directory under `results/raw/` unless
+`--run-directory` is supplied. It writes immutable raw JSONL, a computed
+summary, the resolved config, and exact replay fixtures for every mismatch. A
+single disagreement makes the command exit nonzero.
+
 The M5 Python/Rust/oracle campaigns are configured by
 `configs/exact_commit/m5_rust_differential.toml` and run with:
 

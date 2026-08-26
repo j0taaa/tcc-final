@@ -14,9 +14,10 @@ import json
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
 from itertools import product
-from math import fsum, isclose
+from math import fsum, isclose, isfinite
 from pathlib import Path
 from random import Random
+from time import perf_counter
 from types import MappingProxyType
 from typing import NoReturn, Self
 
@@ -218,13 +219,41 @@ class RandomFiniteLatticeInstance:
 class FiniteLatticeCaseReport:
     seed: int
     status: SolveStatus
+    objective_value: float | None
     enumerated_token_paths: int
     grammar_valid_paths: int
     property_checks: Mapping[str, int]
     features: tuple[str, ...]
+    solver_statuses: Mapping[str, str]
+    timings_seconds: Mapping[str, float]
 
     def __post_init__(self) -> None:
-        object.__setattr__(self, "property_checks", MappingProxyType(dict(self.property_checks)))
+        if self.status is SolveStatus.OPTIMAL and self.objective_value is None:
+            raise ValueError("optimal case report requires an objective value")
+        if self.status is not SolveStatus.OPTIMAL and self.objective_value is not None:
+            raise ValueError("non-optimal case report cannot expose an objective value")
+        timings = dict(self.timings_seconds)
+        if any(
+            not isinstance(name, str)
+            or not name
+            or isinstance(seconds, bool)
+            or not isinstance(seconds, (int, float))
+            or not isfinite(float(seconds))
+            or seconds < 0.0
+            for name, seconds in timings.items()
+        ):
+            raise ValueError("timings must have names and finite non-negative seconds")
+        for field_name in ("property_checks", "solver_statuses"):
+            object.__setattr__(
+                self,
+                field_name,
+                MappingProxyType(dict(getattr(self, field_name))),
+            )
+        object.__setattr__(
+            self,
+            "timings_seconds",
+            MappingProxyType({name: float(seconds) for name, seconds in timings.items()}),
+        )
 
 
 @dataclass(frozen=True, slots=True)
@@ -399,6 +428,8 @@ def check_finite_lattice_instance(
     instance: RandomFiniteLatticeInstance,
     *,
     backends: Sequence[ExactBackend] = (ExactBackend.PYTHON, ExactBackend.RUST),
+    rust_timeout_seconds: float | None = None,
+    clock: Callable[[], float] = perf_counter,
 ) -> FiniteLatticeCaseReport:
     """Compare selected backends to enumeration and audit byte expansion."""
 
@@ -409,20 +440,33 @@ def check_finite_lattice_instance(
         raise ValueError("backends must contain at least one ExactBackend")
     if len(set(backend_items)) != len(backend_items):
         raise ValueError("backends must not contain duplicates")
+    if not callable(clock):
+        raise TypeError("clock must be callable")
 
+    total_started = clock()
+    phase_started = clock()
     expanded_paths = _audit_byte_expansion(instance)
+    timings = {"byte_lattice_audit": clock() - phase_started}
+    phase_started = clock()
     oracle = _enumerate_token_paths(instance)
-    results = {
-        backend: solve_exact_commit(
+    timings["exhaustive_oracle"] = clock() - phase_started
+    results: dict[ExactBackend, ExactCommitResult] = {}
+    for backend in backend_items:
+        phase_started = clock()
+        results[backend] = solve_exact_commit(
             instance.grammar,
             canvas=instance.canvas,
             support=instance.support,
             proposals=instance.proposals,
             tokenizer_adapter=instance.adapter,
             backend=backend,
+            timeout_seconds=(
+                rust_timeout_seconds if backend is ExactBackend.RUST else None
+            ),
         )
-        for backend in backend_items
-    }
+        timing_name = "python_reference" if backend is ExactBackend.PYTHON else "rust_production"
+        timings[timing_name] = clock() - phase_started
+    comparison_started = clock()
     statuses = {result.status for result in results.values()} | {oracle.status}
     if len(statuses) != 1:
         rendered = " ".join(
@@ -480,13 +524,27 @@ def check_finite_lattice_instance(
                 )
         checks["nonoptimal_payload"] = len(results)
 
+    timings["comparison"] = clock() - comparison_started
+    timings["total"] = clock() - total_started
+    solver_statuses = {"exhaustive_oracle": oracle.status.value}
+    solver_statuses.update(
+        {
+            ("python_reference" if backend is ExactBackend.PYTHON else "rust_production"): (
+                result.status.value
+            )
+            for backend, result in results.items()
+        }
+    )
     return FiniteLatticeCaseReport(
         seed=instance.seed,
         status=oracle.status,
+        objective_value=oracle.objective_value,
         enumerated_token_paths=oracle.enumerated_token_paths,
         grammar_valid_paths=oracle.grammar_valid_paths,
         property_checks=checks,
         features=instance.features,
+        solver_statuses=solver_statuses,
+        timings_seconds=timings,
     )
 
 
