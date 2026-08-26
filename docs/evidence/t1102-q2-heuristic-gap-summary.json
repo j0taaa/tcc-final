@@ -1,0 +1,151 @@
+{
+  "artifact_kind": "mwpc_q2_heuristic_gap_summary",
+  "case_count": 6,
+  "case_kind_counts": {
+    "canonical": 2,
+    "crafted_adversarial": 4
+  },
+  "common_instance_count": 3,
+  "failed_cases": 0,
+  "failures": [],
+  "passed_cases": 6,
+  "run_metadata": {
+    "component_selectors": [
+      "greedy_exact_feasibility",
+      "epic_regular_cover",
+      "exact_mwpc"
+    ],
+    "config_sha256": "fcddc72d33427ff896fa9a9eccb35b8e75a7d6ceec3f7612771a8a36805e71af",
+    "dataset": "configured_synthetic_q2_states_v1",
+    "epic_exact_shrink": true,
+    "epic_minimum_batch_size": 2,
+    "epic_upstream_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+    "exact_backend": "rust",
+    "exactness_guarantee": "per_step",
+    "exactness_scope": "exact_on_support",
+    "finite_slots": true,
+    "generated_at_utc": "2026-08-26T13:13:44.038470+00:00",
+    "git_commit": "a8b4e7c499dbf67c7f33a5110e95b4b02738729d",
+    "git_dirty": false,
+    "grammar_hash_policy": "sha256_per_instance",
+    "hardware": {
+      "cpu_threads": 1,
+      "cuda_device": null,
+      "device": "cpu",
+      "dtype": "float64",
+      "machine": "x86_64",
+      "processor": "x86_64",
+      "synchronize_cuda": false
+    },
+    "model_id": "not_applicable_synthetic_states",
+    "model_revision": "q2_generator_v1",
+    "run_id": "a8b4e7c",
+    "run_timeout_seconds": 600.0,
+    "software_versions": {
+      "mwpc_exact": "0.1.0",
+      "mwpc_parser_py": "0.1.0",
+      "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+      "python": "3.11.16",
+      "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+      "rustformlang": "0.1.0"
+    },
+    "solver_timeout_seconds": 5.0,
+    "support_k_max": 4,
+    "support_policy": "configured_synthetic_explicit_per_position",
+    "support_top_k": 4,
+    "timing_scope": "single_repetition_smoke_not_publication_benchmark",
+    "tokenizer_id": "generated_raw_byte_vocabulary",
+    "tokenizer_revision": "q2_generator_v1"
+  },
+  "schema_version": 1,
+  "weight_modes": {
+    "confidence": {
+      "case_count": 3,
+      "selectors": {
+        "epic_regular_cover": {
+          "case_count": 3,
+          "equality_count": 1,
+          "equality_rate": 0.3333333333333333,
+          "maximum_absolute_gap": 1.1,
+          "maximum_relative_gap": 1.0,
+          "mean_absolute_gap": 0.6666666666666666,
+          "mean_relative_gap": 0.6666666666666666,
+          "status_counts": {
+            "heuristic": 3
+          },
+          "total_cardinality": 3,
+          "total_runtime_seconds": 0.0011241100146435201,
+          "total_score": 2.4
+        },
+        "exact_mwpc": {
+          "case_count": 3,
+          "status_counts": {
+            "optimal": 3
+          },
+          "total_cardinality": 6,
+          "total_runtime_seconds": 0.0015924819745123386,
+          "total_score": 4.4
+        },
+        "greedy_exact_feasibility": {
+          "case_count": 3,
+          "equality_count": 2,
+          "equality_rate": 0.6666666666666666,
+          "maximum_absolute_gap": 0.20000000000000007,
+          "maximum_relative_gap": 0.18181818181818185,
+          "mean_absolute_gap": 0.0666666666666667,
+          "mean_relative_gap": 0.060606060606060615,
+          "status_counts": {
+            "feasible_on_support": 3
+          },
+          "total_cardinality": 5,
+          "total_runtime_seconds": 0.005876765993889421,
+          "total_score": 4.2
+        }
+      }
+    },
+    "unit": {
+      "case_count": 3,
+      "selectors": {
+        "epic_regular_cover": {
+          "case_count": 3,
+          "equality_count": 1,
+          "equality_rate": 0.3333333333333333,
+          "maximum_absolute_gap": 2.0,
+          "maximum_relative_gap": 1.0,
+          "mean_absolute_gap": 1.3333333333333333,
+          "mean_relative_gap": 0.6666666666666666,
+          "status_counts": {
+            "heuristic": 3
+          },
+          "total_cardinality": 3,
+          "total_runtime_seconds": 0.0014058169908821583,
+          "total_score": 3.0
+        },
+        "exact_mwpc": {
+          "case_count": 3,
+          "status_counts": {
+            "optimal": 3
+          },
+          "total_cardinality": 7,
+          "total_runtime_seconds": 0.0016775830299593508,
+          "total_score": 7.0
+        },
+        "greedy_exact_feasibility": {
+          "case_count": 3,
+          "equality_count": 1,
+          "equality_rate": 0.3333333333333333,
+          "maximum_absolute_gap": 1.0,
+          "maximum_relative_gap": 0.5,
+          "mean_absolute_gap": 0.6666666666666666,
+          "mean_relative_gap": 0.3333333333333333,
+          "status_counts": {
+            "feasible_on_support": 3
+          },
+          "total_cardinality": 5,
+          "total_runtime_seconds": 0.006889960030093789,
+          "total_score": 5.0
+        }
+      }
+    }
+  }
+}

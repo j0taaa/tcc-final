@@ -14,9 +14,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M11 / T1102.** M0 through M10, the M10.5 hardening pass, T1100, and T1101
-are complete. The first incomplete required task is T1102: Q2 heuristic
-optimality-gap experiment.
+**M11 / T1103.** M0 through M10, the M10.5 hardening pass, and T1100 through
+T1102 are complete. The first incomplete required task is T1103: Q3
+finite-slot experiment.
 
 ## Completed milestone summary
 
@@ -96,16 +96,40 @@ randomized differential, library Clippy, and binding Clippy checks passed;
 
 **Depends on:** T1100, M10 gate
 
-- [ ] Replay identical instances through EPIC, serial, and exact.
-- [ ] Compute exact/heuristic score, cardinality, absolute gap, relative gap, equality rate, and runtime.
-- [ ] Include crafted adversarial cases.
-- [ ] Separate unit and confidence weighting if both are evaluated.
+- [x] Replay identical instances through EPIC, serial, and exact.
+- [x] Compute exact/heuristic score, cardinality, absolute gap, relative gap, equality rate, and runtime.
+- [x] Include crafted adversarial cases.
+- [x] Separate unit and confidence weighting if both are evaluated.
 
 **Acceptance criteria**
 
-- [ ] Every gap row references a common instance ID and support scope.
+- [x] Every gap row references a common instance ID and support scope.
 
-**Evidence:** `[command and artifacts]`
+**Evidence:** implementation commit `a8b4e7c499dbf67c7f33a5110e95b4b02738729d`;
+`python scripts/exact_commit/run_q2_heuristic_gap.py --config
+configs/experiments/q2_heuristic_gap_v1.toml --run-directory
+results/raw/q2_heuristic_gap_v1/a8b4e7c --summary-output
+docs/evidence/t1102-q2-heuristic-gap-summary.json` from that clean commit -> 6/6
+successful paired rows over three common finite-support states in both `unit`
+and `confidence` modes, with exact/brute-force score agreement in every row
+and independently feasible serial and EPIC selected subsets. On these configured
+synthetic cases, unit-weight totals were exact 7, serial 5, and EPIC 3, with
+equality counts 1/3 and maximum absolute gaps 1 and 2 for serial and EPIC;
+confidence-weight totals were exact 4.4, serial 4.2, and EPIC 2.4, with equality
+counts 2/3 and 1/3 and maximum absolute gaps 0.2 and 1.1. Raw per-case records,
+including common instance IDs, explicit support specifications, cardinalities,
+absolute/relative gaps, and diagnostic single-repetition runtimes, are in
+`results/raw/q2_heuristic_gap_v1/a8b4e7c/q2-gap-rows.jsonl`; the versioned,
+computed summary is `docs/evidence/t1102-q2-heuristic-gap-summary.json`.
+`python -m pytest -q tests/exact_commit/test_q2_gap.py
+tests/exact_commit/test_t1102_evidence.py
+tests/integration/test_q2_gap_replay.py
+tests/integration/test_benchmark_instance_replay.py` -> 11 passed; `make check`
+-> Ruff clean, strict MyPy clean, 9 unit and 523 exact tests passed; `python -m
+pytest -q` -> 542 passed; `make test-rust-parser` -> Rust format, 17 unit, 3
+randomized differential, library Clippy, and binding Clippy checks passed;
+`make paper` -> `main.pdf` built (15 pages). The recorded runtimes are explicitly
+smoke diagnostics, not publication benchmark measurements.
 
 ## T1103 — Implement Q3 finite-slot experiment
 
