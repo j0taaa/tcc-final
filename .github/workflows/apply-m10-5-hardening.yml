@@ -204,10 +204,11 @@ jobs:
             texlive-science texlive-lang-portuguese
           make paper
           git diff --check
-      - name: Commit validated hardening tree
+      - name: Commit validated source tree
         run: |
+          git restore .github/workflows/ci.yml .github/workflows/apply-m10-5-hardening.yml
           rm -rf .m10_5_gz .m10_5_patch .m10_5_patch_small
-          rm -f scripts/apply_m10_5_hardening.py .github/workflows/apply-m10-5-hardening.yml
+          rm -f scripts/apply_m10_5_hardening.py
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
