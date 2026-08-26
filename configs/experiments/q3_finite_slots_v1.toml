@@ -1,0 +1,49 @@
+schema_version = 1
+experiment_id = "q3_finite_slots_v1"
+question = "finite_slots"
+description = "Executable Q3 replay of curated abstract Sigma-star finite-slot counterexamples."
+publication_mode = false
+seeds = [1103]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "curated_t703_explicit_per_position"
+top_k = 2
+k_max = 2
+finite_slots = true
+
+[model]
+model_id = "not_applicable_curated_counterexamples"
+model_revision = "t703_fixture_v1"
+tokenizer_id = "counterexample_raw_byte_vocabulary"
+tokenizer_revision = "finite_slot_fixture_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "finite_slot_counterexample_cfgs"
+source = "tests/exact_commit/fixtures/finite_slot_counterexamples.json"
+revision = "finite_slot_fixture_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 5.0
+run_seconds = 300.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+case_ids = ["required_eos_one_slot_infeasible_v1", "required_eos_one_slot_lower_empty_v1"]
+abstract_baseline = "ordered_anchor_sigma_star"
+finite_solver = "python_reference_plus_exhaustive_path_enumeration"
+mine_real_decoder_states = false
+raw_output_root = "results/raw/q3_finite_slots_v1"

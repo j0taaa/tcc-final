@@ -31,6 +31,10 @@ jobs:
         run: python -m mypy src
       - name: Unit and exact-commit tests
         run: python -m pytest -q tests/unit tests/exact_commit
+      - name: Run Q3 finite-slot smoke
+        run: |
+          python scripts/exact_commit/run_q3_finite_slots.py \
+            --run-directory "$RUNNER_TEMP/q3-finite-slots"
 
   rust-correctness:
     runs-on: ubuntu-latest

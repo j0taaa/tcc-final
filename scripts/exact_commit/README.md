@@ -89,6 +89,19 @@ computed summary are written separately. Any missing/inconclusive selector,
 exact-oracle disagreement, or negative measured gap emits a complete benchmark
 fixture and makes the command exit nonzero.
 
+The T1103 Q3 finite-slot experiment replays the versioned T703 corpus with:
+
+```bash
+python scripts/exact_commit/run_q3_finite_slots.py
+```
+
+It records the concrete abstract `Sigma*` witness, available slots, minimum
+required physical tokens, exact finite status, and either a reconstructible
+finite witness or a reason for represented-support infeasibility. The finite
+parser is checked against complete finite-path enumeration. Raw JSONL and the
+computed summary are immutable and separate; any replay error remains distinct
+from `INFEASIBLE_ON_SUPPORT` and makes the command exit nonzero.
+
 The M5 Python/Rust/oracle campaigns are configured by
 `configs/exact_commit/m5_rust_differential.toml` and run with:
 

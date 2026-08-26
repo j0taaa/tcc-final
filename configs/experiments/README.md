@@ -29,3 +29,9 @@ exhaustive, and randomized case counts consumed by the Q1 driver.
 configuration. It keeps the earlier Q2 schema smoke immutable and freezes the
 three component-selector names, two objective weight modes, paired grammar
 settings, pinned EPIC exact-shrink behavior, and brute-force validation limit.
+
+`q3_finite_slots_v1.toml` is the executable T1103 curated-counterexample
+configuration. It keeps the earlier Q3 schema smoke immutable and freezes the
+two T703 cases, relaxed ordered-anchor `Sigma*` baseline, explicit finite
+support, required independent path enumeration, and the fact that this version
+does not mine real decoder states.
