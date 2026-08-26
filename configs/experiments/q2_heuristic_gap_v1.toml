@@ -1,0 +1,53 @@
+schema_version = 1
+experiment_id = "q2_heuristic_gap_v1"
+question = "heuristic_gap"
+description = "Executable synthetic Q2 gap comparison of common component-selector inputs."
+publication_mode = false
+seeds = [1102]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "configured_synthetic_explicit_per_position"
+top_k = 4
+k_max = 4
+finite_slots = true
+
+[model]
+model_id = "not_applicable_synthetic_states"
+model_revision = "q2_generator_v1"
+tokenizer_id = "generated_raw_byte_vocabulary"
+tokenizer_revision = "q2_generator_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "q2_paired_synthetic_cfg_family"
+source = "mwpc_research.q2_gap"
+revision = "q2_generator_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 5.0
+run_seconds = 600.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+case_ids = ["all-compatible", "adversarial-one-vs-two", "adversarial-weight-mode-divergence"]
+selectors = ["greedy_exact_feasibility", "epic_regular_cover", "exact_mwpc"]
+weight_modes = ["unit", "confidence"]
+exact_backend = "rust"
+brute_force_max_completions = 64
+epic_exact_shrink = true
+epic_minimum_batch_size = 2
+failure_directory = "mismatches"
+raw_output_root = "results/raw/q2_heuristic_gap_v1"

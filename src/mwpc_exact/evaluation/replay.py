@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import replace
 from importlib import import_module
 from types import MappingProxyType
-from typing import cast
+from typing import Protocol, cast
 
 from mwpc_exact.backend import ExactBackend
 from mwpc_exact.evaluation.alignment import EpicGrammar, validate_semantic_alignment
@@ -28,10 +28,49 @@ from mwpc_exact.evaluation.selection import (
 EpicCfgFactory = Callable[[str, str], object]
 
 
+class _EpicLexMapCompiler(Protocol):
+    def __call__(
+        self,
+        lex_map: Mapping[str, str],
+        subtokens: Mapping[str, set[str]],
+    ) -> object: ...
+
+
 def _default_epic_cfg_factory(text: str, start_symbol: str) -> object:
     cfg_module = import_module("rustformlang.cfg")
     cfg_type = cfg_module.CFG
     return cast(object, cfg_type.from_text(text, start_symbol))
+
+
+def _compile_epic_lex_map(value: object, subtokens: object) -> object:
+    """Reconstruct EPIC's runtime-only lexical map from JSON-compatible data."""
+
+    if value is None:
+        return None
+    if not isinstance(value, Mapping) or not all(
+        isinstance(key, str) and isinstance(regex, str) for key, regex in value.items()
+    ):
+        raise TypeError("serialized EPIC lex_map must map strings to regex strings")
+    if subtokens is None:
+        normalized_subtokens: dict[str, set[str]] = {}
+    elif isinstance(subtokens, Mapping):
+        normalized_subtokens = {}
+        for key, raw_items in subtokens.items():
+            if (
+                not isinstance(key, str)
+                or isinstance(raw_items, (str, bytes))
+                or not isinstance(raw_items, Sequence)
+            ):
+                raise TypeError("serialized EPIC subtokens must map strings to string sequences")
+            items = tuple(raw_items)
+            if not all(isinstance(item, str) for item in items):
+                raise TypeError("serialized EPIC subtokens must contain only strings")
+            normalized_subtokens[key] = set(items)
+    else:
+        raise TypeError("serialized EPIC subtokens must be a mapping or null")
+    module = import_module("constrained_diffusion.constrain_utils")
+    compiler = cast(_EpicLexMapCompiler, module.compile_lex_map)
+    return compiler(cast(Mapping[str, str], value), normalized_subtokens)
 
 
 def _unsupported_epic_result(
@@ -86,6 +125,10 @@ def replay_benchmark_instance(
             cfg = factory(text, start_symbol)
             alignment_report = validate_semantic_alignment(instance, cast(EpicGrammar, cfg))
             context = instance.epic_replay.to_context(cfg)
+            context = replace(
+                context,
+                lex_map=_compile_epic_lex_map(context.lex_map, context.subtokens),
+            )
         except (ImportError, ModuleNotFoundError, AttributeError, TypeError) as error:
             results[SelectorKind.EPIC_REGULAR_COVER] = _unsupported_epic_result(
                 selection_input,

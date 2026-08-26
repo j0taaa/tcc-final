@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -70,3 +71,28 @@ def test_versioned_file_reconstructs_pinned_epic_cfg_and_replays_all_selectors(
     assert results[SelectorKind.EPIC].diagnostics["implementation"] == (
         "pinned_upstream_epic_regular_cover"
     )
+
+
+@pytest.mark.integration
+def test_real_epic_replay_compiles_serialized_lexical_map(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    instance = BenchmarkInstance.read_json(FIXTURE_PATH)
+    assert instance.epic_replay is not None
+    instance = replace(
+        instance,
+        epic_replay=replace(
+            instance.epic_replay,
+            lex_map={terminal: terminal for terminal in ("a", "x", "b", "y")},
+            terminals=("a", "x", "b", "y"),
+        ),
+    )
+    monkeypatch.setenv("CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT", "1")
+    monkeypatch.setenv("CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH", "2")
+
+    results = replay_benchmark_instance(instance, backend=ExactBackend.PYTHON)
+
+    assert results[SelectorKind.EPIC].status is SelectionStatus.HEURISTIC
+    assert results[SelectorKind.EPIC].score == 56.0
+    assert results[SelectorKind.EPIC].selected_proposal_ids == (0, 1, 2, 3)
+    assert results[SelectorKind.EPIC].diagnostics["exact_shrink_enabled"] is True

@@ -24,3 +24,8 @@ Model caches and raw run directories remain untracked.
 `q1_correctness_v1.toml` is the executable T1101 configuration. It keeps the
 earlier Q1 schema smoke immutable while adding the exact canonical,
 exhaustive, and randomized case counts consumed by the Q1 driver.
+
+`q2_heuristic_gap_v1.toml` is the executable T1102 synthetic smoke
+configuration. It keeps the earlier Q2 schema smoke immutable and freezes the
+three component-selector names, two objective weight modes, paired grammar
+settings, pinned EPIC exact-shrink behavior, and brute-force validation limit.

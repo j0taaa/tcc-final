@@ -73,6 +73,22 @@ The driver creates a unique ignored directory under `results/raw/` unless
 summary, the resolved config, and exact replay fixtures for every mismatch. A
 single disagreement makes the command exit nonzero.
 
+The T1102 Q2 heuristic-gap experiment requires both pinned EPIC and the exact
+Rust production binding:
+
+```bash
+make bootstrap-epic
+(cd crates/mwpc_parser_py && ../../.venv/bin/maturin develop --release)
+python scripts/exact_commit/run_q2_heuristic_gap.py
+```
+
+It replays each configured weighted input through
+`greedy_exact_feasibility`, `epic_regular_cover`, and `exact_mwpc`, and also
+uses guarded brute force to validate the exact reference score. Raw rows and a
+computed summary are written separately. Any missing/inconclusive selector,
+exact-oracle disagreement, or negative measured gap emits a complete benchmark
+fixture and makes the command exit nonzero.
+
 The M5 Python/Rust/oracle campaigns are configured by
 `configs/exact_commit/m5_rust_differential.toml` and run with:
 

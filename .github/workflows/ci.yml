@@ -73,3 +73,9 @@ jobs:
         run: make bootstrap-epic
       - name: Run pinned EPIC integration tests
         run: PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/integration
+      - name: Build exact Rust binding for Q2
+        run: cd crates/mwpc_parser_py && ../../.venv/bin/maturin develop --release
+      - name: Run Q2 heuristic-gap smoke
+        run: |
+          .venv/bin/python scripts/exact_commit/run_q2_heuristic_gap.py \
+            --run-directory "$RUNNER_TEMP/q2-heuristic-gap"
