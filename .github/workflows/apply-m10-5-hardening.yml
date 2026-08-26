@@ -54,6 +54,47 @@ jobs:
           text = text.replace(marker, helper + "\n\n" + marker, 1)
           path.write_text(text, encoding="utf-8")
           PY
+      - name: Repair generated typing inference
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          ranked_path = Path("src/mwpc_exact/ranked_support.py")
+          ranked = ranked_path.read_text(encoding="utf-8")
+          old_ranked = '''        if policy.kind is SupportKind.FULL:
+              ranked = ()
+              represented = set(rankings.permitted_token_ids)
+          '''
+          new_ranked = '''        if policy.kind is SupportKind.FULL:
+              ranked: tuple[int, ...] = ()
+              represented = set(rankings.permitted_token_ids)
+          '''
+          if ranked.count(old_ranked) != 1:
+              raise RuntimeError("ranked-support FULL branch marker is not unique")
+          ranked_path.write_text(ranked.replace(old_ranked, new_ranked), encoding="utf-8")
+
+          llada_path = Path("src/mwpc_exact/epic_adapter/llada.py")
+          llada = llada_path.read_text(encoding="utf-8")
+          old_fallback = '''    rows = _sequence(value, "logits")
+              if len(rows) != expected_length:
+                  raise ValueError("logits must contain prompt_length + generation_length rows")
+              generated = tuple(
+                  _score_vector(row, f"logits row {prompt_length + position}")
+                  for position, row in enumerate(rows[prompt_length:expected_length])
+              )
+          '''
+          new_fallback = '''    raw_rows = _sequence(value, "logits")
+              if len(raw_rows) != expected_length:
+                  raise ValueError("logits must contain prompt_length + generation_length rows")
+              generated = tuple(
+                  _score_vector(row, f"logits row {prompt_length + position}")
+                  for position, row in enumerate(raw_rows[prompt_length:expected_length])
+              )
+          '''
+          if llada.count(old_fallback) != 1:
+              raise RuntimeError("LLaDA witness-probability fallback marker is not unique")
+          llada_path.write_text(llada.replace(old_fallback, new_fallback), encoding="utf-8")
+          PY
       - name: Normalize Python sources
         run: |
           python -m pip install --upgrade pip
