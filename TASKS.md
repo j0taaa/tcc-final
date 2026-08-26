@@ -25,8 +25,8 @@ Rules:
 
 ## Current starting point
 
-**M10 / T1003.** M0 through M9 and T1000 through T1002 are complete. The first
-incomplete required task is T1003: define a shared benchmark-instance schema.
+**M11 / T1100.** M0 through M10 are complete. The first incomplete required
+task is T1100: add immutable experiment configuration.
 
 Required milestones: **M0 through M13**. Optional milestones: **O1 through O4**.
 
@@ -402,20 +402,55 @@ the EPIC submodule remained clean at
 
 **Depends on:** T1000, T1001, T1002
 
-- [ ] Serialize canvas, support, proposals, weights, grammar ID/hash, and expected metadata.
-- [ ] Support saved logits without storing model weights.
-- [ ] Version the schema.
-- [ ] Add schema validation and migration policy.
+- [x] Serialize canvas, support, proposals, weights, grammar ID/hash, and expected metadata.
+- [x] Support saved logits without storing model weights.
+- [x] Version the schema.
+- [x] Add schema validation and migration policy.
 
 **Acceptance criteria**
 
-- [ ] One file can replay serial, EPIC, exact, and brute force where applicable.
+- [x] One file can replay serial, EPIC, exact, and brute force where applicable.
 
-**Evidence:** `[schema and fixture]`
+**Evidence:** implementation commit
+`64f93359f8123d748c23078d4919a4d51de4d5e8` adds the version-1 immutable
+benchmark-instance contract, strict JSON loader, canonical content hashes,
+saved-logit representation, EPIC grammar/lexical reconstruction, and common
+four-selector replay in `src/mwpc_exact/benchmark_instance.py`. The schema
+freezes the already-validated `SelectionInput`; replay does not regenerate or
+reorder proposals or represented support from logits. Saved logits contain a
+portable score matrix and provenance only, reject NaN, preserve infinities with
+standard-JSON string encodings, and are shape-checked against the canvas and
+vocabulary. When support was built from logits, the loader also verifies that
+the saved matrix reproduces the recorded deterministic top-K ranking.
+
+`tests/exact_commit/fixtures/benchmark_instance_v1.json` is the versioned
+single-file fixture. It records canvas, ordered proposals and separate MWPC
+weights/model confidences, exact support and SHA-256, byte emissions, EOS
+policy, exact CNF, EPIC CFG text, grammar SHA-256, saved logits, source metadata,
+and selector-applicability metadata without model weights or measured model
+claims. `docs/benchmark-instance-schema.md` defines validation, exactness,
+EPIC-replay, unsupported-runtime, and fail-closed migration semantics. Version
+1 is the first public version; unknown older or newer versions are rejected
+until a deterministic one-step migration and regression fixture are added.
+
+The focused schema plus pinned-EPIC integration suite passed 7 tests. The full
+M10 common-interface regression group passed 37 tests, including reconstruction
+of the pinned `rustformlang` CFG and replay of serial, EPIC, exact, and guarded
+brute force from the same file and the same in-memory `SelectionInput`. In the
+focused select-all runtime stub, the four independently recomputed scores are
+56; this only checks shared-input plumbing and is not a benchmark or model
+result.
+`make check` passed the upstream pin, Ruff, strict MyPy over 49 source files, 9
+unit tests, and 484 exact-commit tests; `python -m pytest -q` passed all 500
+tests. `make test-rust-parser` passed formatting, 20 Rust tests, and strict
+Clippy. The focused upstream constrained-decoder/binding regressions passed 19
+tests with 4 pre-existing declared skips, `make paper` produced the 15-page PDF,
+and the EPIC submodule remained clean at
+`5b1b31098f34ed3691d2a9f4aae14fdf5839d072`.
 
 **M10 gate**
 
-- [ ] Fair offline selector comparisons are possible from immutable instances.
+- [x] Fair offline selector comparisons are possible from immutable instances.
 
 ---
 
