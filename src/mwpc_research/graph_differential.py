@@ -305,9 +305,7 @@ def run_graph_differential_campaign(
             if failure_path is not None:
                 fixture_name = f"seed-{seed}.json"
                 failure_name = f"seed-{seed}.failure.json"
-                (failure_path / fixture_name).write_text(
-                    instance.to_json(), encoding="utf-8"
-                )
+                (failure_path / fixture_name).write_text(instance.to_json(), encoding="utf-8")
                 (failure_path / failure_name).write_text(
                     json.dumps(
                         {
@@ -459,9 +457,7 @@ def _validate_normalization(
             _mismatch(instance, "normalization_provenance", "token provenance changed")
         if tuple(selected_ids) != normalized_edge.matched_proposal_ids:
             _mismatch(instance, "normalization_provenance", "proposal provenance changed")
-        if not isclose(
-            fsum(weights), normalized_edge.weight, rel_tol=1e-12, abs_tol=1e-12
-        ):
+        if not isclose(fsum(weights), normalized_edge.weight, rel_tol=1e-12, abs_tol=1e-12):
             _mismatch(instance, "normalization_provenance", "edge weight changed")
         checked += 1
     return checked

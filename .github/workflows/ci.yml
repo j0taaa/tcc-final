@@ -55,3 +55,17 @@ jobs:
         run: |
           .venv/bin/python scripts/exact_commit/run_m7_eos_finite_slot_differential.py \
             --campaign normal
+
+  epic-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Bootstrap pinned EPIC CPU environment
+        run: make bootstrap-epic
+      - name: Run pinned EPIC integration tests
+        run: PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/integration

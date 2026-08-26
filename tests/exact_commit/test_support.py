@@ -263,13 +263,9 @@ def test_input_source_must_match_scope_and_be_unambiguous() -> None:
             explicit_support={0: (1,)},
         )
     with pytest.raises(ValueError, match="TOP_K support must be constructed from logits"):
-        build_per_position_support(
-            canvas=(None,), policy=top_k_policy, explicit_support={0: (1,)}
-        )
+        build_per_position_support(canvas=(None,), policy=top_k_policy, explicit_support={0: (1,)})
     with pytest.raises(ValueError, match="EXPLICIT support must be constructed"):
-        build_per_position_support(
-            canvas=(None,), policy=explicit_policy, logits=((1, 2, 3, 4),)
-        )
+        build_per_position_support(canvas=(None,), policy=explicit_policy, logits=((1, 2, 3, 4),))
 
 
 @pytest.mark.parametrize(
@@ -349,9 +345,7 @@ def test_non_permitted_special_fixed_and_proposal_tokens_are_rejected() -> None:
         permitted_token_ids=(0, 1, 2),
     )
     with pytest.raises(ValueError, match=r"fixed canvas token.*not permitted"):
-        build_per_position_support(
-            canvas=(4,), policy=policy, explicit_support={0: (4,)}
-        )
+        build_per_position_support(canvas=(4,), policy=policy, explicit_support={0: (4,)})
     with pytest.raises(ValueError, match="non-permitted token ID"):
         build_per_position_support(
             canvas=(None,),
@@ -360,9 +354,7 @@ def test_non_permitted_special_fixed_and_proposal_tokens_are_rejected() -> None:
             proposals=(Proposal(10, position=0, token_id=4, weight=1),),
         )
     with pytest.raises(ValueError, match="non-permitted token IDs"):
-        build_per_position_support(
-            canvas=(None,), policy=policy, explicit_support={0: (1, 4)}
-        )
+        build_per_position_support(canvas=(None,), policy=policy, explicit_support={0: (1, 4)})
 
 
 def test_support_serialization_contains_scope_rows_and_replay_diagnostics() -> None:

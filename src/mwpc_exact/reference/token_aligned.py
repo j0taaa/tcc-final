@@ -152,8 +152,7 @@ def _validate_scope_against_support(
         fixed_token_id = canvas[position]
         if fixed_token_id is not None and fixed_token_id not in support:
             raise ValueError(
-                f"fixed canvas token at position {position} is absent from "
-                "the represented support"
+                f"fixed canvas token at position {position} is absent from the represented support"
             )
 
 

@@ -350,9 +350,7 @@ class PerPositionSupport:
     def permitted_token_ids_sha256(self) -> str:
         """Fingerprint the semantic token universe independently from rows."""
 
-        encoded = json.dumps(list(self.permitted_token_ids), separators=(",", ":")).encode(
-            "utf-8"
-        )
+        encoded = json.dumps(list(self.permitted_token_ids), separators=(",", ":")).encode("utf-8")
         return hashlib.sha256(encoded).hexdigest()
 
     @property
@@ -374,9 +372,7 @@ class PerPositionSupport:
             "proposal_token_ids_by_position": [
                 list(row) for row in self.proposal_token_ids_by_position
             ],
-            "top_k_token_ids_by_position": [
-                list(row) for row in self.top_k_token_ids_by_position
-            ],
+            "top_k_token_ids_by_position": [list(row) for row in self.top_k_token_ids_by_position],
             "fixed_positions": [
                 position for position, token_id in enumerate(self.canvas) if token_id is not None
             ],
@@ -477,9 +473,7 @@ def _logit_matrix(
         if isinstance(raw_row, (str, bytes)) or not isinstance(raw_row, Sequence):
             raise TypeError(f"logit row {position} must be a finite sequence")
         if len(raw_row) != vocabulary_size:
-            raise ValueError(
-                f"logit row {position} must contain exactly {vocabulary_size} scores"
-            )
+            raise ValueError(f"logit row {position} must contain exactly {vocabulary_size} scores")
         row: list[float] = []
         for token_id, raw_score in enumerate(raw_row):
             if isinstance(raw_score, bool) or not isinstance(raw_score, (int, float)):
@@ -612,9 +606,7 @@ def _build_per_position_support(
 
     represented_rows: list[tuple[int, ...]] = []
     required_specials = set(policy.required_special_token_ids)
-    for position, (fixed_token, base_row) in enumerate(
-        zip(canvas_tokens, base_rows, strict=True)
-    ):
+    for position, (fixed_token, base_row) in enumerate(zip(canvas_tokens, base_rows, strict=True)):
         if fixed_token is not None:
             if base_row != (fixed_token,):
                 raise ValueError(
@@ -627,8 +619,7 @@ def _build_per_position_support(
         if not row <= permitted_set:
             unsupported = sorted(row - permitted_set)
             raise ValueError(
-                f"support at position {position} contains non-permitted token IDs: "
-                f"{unsupported}"
+                f"support at position {position} contains non-permitted token IDs: {unsupported}"
             )
         row.update(required_specials)
         row.update(proposal_tokens[position])

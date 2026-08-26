@@ -11,9 +11,10 @@ from __future__ import annotations
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
 from enum import StrEnum
+from importlib import import_module
 from math import exp, inf, isfinite, isnan
 from types import MappingProxyType
-from typing import Protocol
+from typing import Any, Protocol
 
 from mwpc_exact.adaptive import solve_exact_commit_adaptive_validated
 from mwpc_exact.decoder import apply_exact_commit_result
@@ -28,6 +29,7 @@ from mwpc_exact.proposal_policy import (
     ScheduleProposalBatch,
     build_schedule_proposals,
 )
+from mwpc_exact.ranked_support import RankedSupportRows, rank_support_from_dense_logits
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.strategy import ExactStrategyConfig
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
@@ -53,6 +55,14 @@ class DecodedTracking(Protocol):
     def __len__(self) -> int: ...
 
     def __setitem__(self, position: int, value: object, /) -> None: ...
+
+
+def _integer(value: object, field_name: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise TypeError(f"{field_name} must be an integer")
+    if value < 0:
+        raise ValueError(f"{field_name} must be non-negative")
+    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -143,7 +153,8 @@ class LLaDAExactStepRequest:
     """Frozen generated-region input supplied to one validated exact solve."""
 
     canvas: tuple[int | None, ...]
-    logits: tuple[tuple[float, ...], ...]
+    ranked_support_rows: RankedSupportRows
+    logit_shape: tuple[int, int]
     proposal_batch: ScheduleProposalBatch
     schedule_mask: tuple[bool, ...]
     prompt_token_ids: tuple[int, ...]
@@ -158,8 +169,14 @@ class LLaDAExactStepRequest:
             raise TypeError("profile must be an LLaDAAdapterProfile")
         if len(self.canvas) != self.generation_length:
             raise ValueError("canvas length must equal generation_length")
-        if len(self.logits) != self.generation_length:
-            raise ValueError("logits length must equal generation_length")
+        if not isinstance(self.ranked_support_rows, RankedSupportRows):
+            raise TypeError("ranked_support_rows must be RankedSupportRows")
+        if len(self.ranked_support_rows.token_ids_by_position) != self.generation_length:
+            raise ValueError("ranked support length must equal generation_length")
+        if self.logit_shape[0] != self.generation_length:
+            raise ValueError("logit_shape position count must equal generation_length")
+        if self.logit_shape[1] != self.ranked_support_rows.vocabulary_size:
+            raise ValueError("logit_shape vocabulary must equal ranked support vocabulary")
         if len(self.schedule_mask) != self.generation_length:
             raise ValueError("schedule_mask length must equal generation_length")
         if len(self.prompt_token_ids) != self.prompt_length:
@@ -289,14 +306,6 @@ def _sequence(value: object, field_name: str) -> Sequence[object]:
     return snapshot
 
 
-def _integer(value: object, field_name: str) -> int:
-    if isinstance(value, bool) or not isinstance(value, int):
-        raise TypeError(f"{field_name} must be an integer")
-    if value < 0:
-        raise ValueError(f"{field_name} must be non-negative")
-    return value
-
-
 def _token_vector(value: object, field_name: str) -> tuple[int, ...]:
     return tuple(
         _integer(item, f"{field_name} item at position {position}")
@@ -329,6 +338,134 @@ def _logit_matrix(value: object) -> tuple[tuple[float, ...], ...]:
     return matrix
 
 
+def _optional_torch() -> Any | None:
+    """Load Torch only inside the model adapter when it is installed."""
+
+    try:
+        return import_module("torch")
+    except ModuleNotFoundError:
+        return None
+
+
+def _ranked_support_from_model_logits(
+    value: object,
+    *,
+    prompt_length: int,
+    generation_length: int,
+    vocabulary_size: int,
+    permitted_token_ids: Sequence[int],
+    max_k: int,
+) -> RankedSupportRows:
+    """Rank a compact prefix on device and transfer only selected IDs to CPU."""
+
+    expected_length = prompt_length + generation_length
+    torch = _optional_torch()
+    if torch is not None and isinstance(value, torch.Tensor):
+        if value.ndim != 2 or tuple(value.shape) != (expected_length, vocabulary_size):
+            raise ValueError("logits tensor must have shape prompt+generation by model vocabulary")
+        generated = value[prompt_length:expected_length]
+        if bool(torch.isnan(generated).any().item()):
+            raise ValueError("logits must not contain NaN")
+        permitted = tuple(sorted(set(int(token_id) for token_id in permitted_token_ids)))
+        if not permitted or permitted[0] < 0 or permitted[-1] >= vocabulary_size:
+            raise ValueError("permitted_token_ids must be valid model token IDs")
+        width = int(max_k)
+        if width <= 0 or width > len(permitted):
+            raise ValueError("support_k_max must be in [1, permitted token count]")
+        permitted_tensor = torch.tensor(permitted, device=generated.device, dtype=torch.long)
+        permitted_scores = generated.index_select(1, permitted_tensor)
+        rankings: list[tuple[int, ...]] = []
+        for row in permitted_scores:
+            threshold = torch.topk(row, k=width, largest=True, sorted=False).values.min()
+            greater_local = torch.nonzero(row > threshold, as_tuple=False).flatten()
+            needed = width - int(greater_local.numel())
+            equal_local = torch.nonzero(row == threshold, as_tuple=False).flatten()[:needed]
+            selected_local = torch.cat((greater_local, equal_local))
+            selected_ids = permitted_tensor.index_select(0, selected_local).detach().cpu().tolist()
+            selected_scores = row.index_select(0, selected_local).detach().cpu().tolist()
+            ranked = tuple(
+                token_id
+                for token_id, _ in sorted(
+                    zip(selected_ids, selected_scores, strict=True),
+                    key=lambda item: (-float(item[1]), int(item[0])),
+                )
+            )
+            if len(ranked) != width:
+                raise RuntimeError("compact tensor ranking did not produce max_k tokens")
+            rankings.append(ranked)
+        return RankedSupportRows(
+            vocabulary_size=vocabulary_size,
+            permitted_token_ids=permitted,
+            token_ids_by_position=tuple(rankings),
+            max_k=width,
+            source="torch_topk_threshold_tie_break_v1",
+        )
+
+    rows = _sequence(value, "logits")
+    if len(rows) != expected_length:
+        raise ValueError("logits must contain prompt_length + generation_length rows")
+    generated_rows = tuple(
+        _score_vector(row, f"logits row {prompt_length + position}")
+        for position, row in enumerate(rows[prompt_length:expected_length])
+    )
+    return rank_support_from_dense_logits(
+        generated_rows,
+        vocabulary_size=vocabulary_size,
+        permitted_token_ids=permitted_token_ids,
+        max_k=max_k,
+        source="sequence_dense_logits_compact_prefix_v1",
+    )
+
+
+def _witness_probabilities_from_model_logits(
+    value: object,
+    *,
+    prompt_length: int,
+    generation_length: int,
+    witness_token_ids: tuple[int, ...],
+) -> tuple[float, ...]:
+    """Gather only witness probabilities; never copy the full live vocabulary to CPU."""
+
+    if len(witness_token_ids) != generation_length:
+        raise ValueError("witness token count must equal generation_length")
+    expected_length = prompt_length + generation_length
+    torch = _optional_torch()
+    if torch is not None and isinstance(value, torch.Tensor):
+        if value.ndim != 2 or value.shape[0] != expected_length:
+            raise ValueError("logits tensor has an unexpected position shape")
+        rows = value[prompt_length:expected_length]
+        probabilities: list[float] = []
+        for position, witness_token_id in enumerate(witness_token_ids):
+            row = rows[position].to(torch.float64)
+            maximum = row.max()
+            if bool(torch.isposinf(maximum).item()):
+                probability = (
+                    1.0 / int(torch.isposinf(row).sum().item())
+                    if bool(torch.isposinf(row[witness_token_id]).item())
+                    else 0.0
+                )
+            elif bool(torch.isneginf(maximum).item()):
+                raise ValueError(f"all logits are -infinity at generated position {position}")
+            else:
+                denominator = torch.exp(row - maximum).sum()
+                probability = float(
+                    (torch.exp(row[witness_token_id] - maximum) / denominator).item()
+                )
+            if not isfinite(probability):
+                raise ValueError("witness probability must be finite")
+            probabilities.append(probability)
+        return tuple(probabilities)
+
+    raw_rows = _sequence(value, "logits")
+    if len(raw_rows) != expected_length:
+        raise ValueError("logits must contain prompt_length + generation_length rows")
+    generated = tuple(
+        _score_vector(row, f"logits row {prompt_length + position}")
+        for position, row in enumerate(raw_rows[prompt_length:expected_length])
+    )
+    return _witness_probabilities(generated, witness_token_ids)
+
+
 def prepare_llada_exact_step(
     *,
     token_ids: object,
@@ -340,6 +477,8 @@ def prepare_llada_exact_step(
     active_block_end: int,
     k_s: int,
     weight_mode: ProposalWeightMode,
+    permitted_token_ids: Sequence[int] | None = None,
+    support_k_max: int | None = None,
     profile: LLaDAAdapterProfile = PINNED_LLADA_PROFILE,
 ) -> LLaDAExactStepRequest:
     """Freeze one EPIC LLaDA step using its existing schedule budget.
@@ -360,16 +499,11 @@ def prepare_llada_exact_step(
     if schedule_budget == 0:
         raise ValueError("the LLaDA exact hook requires a positive baseline k_s budget")
     model_tokens = _token_vector(token_ids, "token_ids")
-    model_logits = _logit_matrix(logits)
     model_predictions = _token_vector(predicted_token_ids, "predicted_token_ids")
     model_confidences = _score_vector(confidence_values, "confidence_values")
     expected_length = prompt_count + generated_count
     if not (
-        len(model_tokens)
-        == len(model_logits)
-        == len(model_predictions)
-        == len(model_confidences)
-        == expected_length
+        len(model_tokens) == len(model_predictions) == len(model_confidences) == expected_length
     ):
         raise ValueError(
             "single-batch token, logit, prediction, and confidence rows must equal "
@@ -377,7 +511,36 @@ def prepare_llada_exact_step(
         )
     if not prompt_count <= block_end <= expected_length:
         raise ValueError("active_block_end must lie inside the generated region")
-    vocabulary_size = len(model_logits[0])
+    raw_shape = getattr(logits, "shape", None)
+    if raw_shape is not None:
+        if len(raw_shape) != 2:
+            raise ValueError("logits must be a two-dimensional matrix")
+        row_count = int(raw_shape[0])
+        vocabulary_size = int(raw_shape[1])
+    else:
+        raw_rows = _sequence(logits, "logits")
+        row_count = len(raw_rows)
+        if not raw_rows:
+            raise ValueError("logits must contain at least one row")
+        vocabulary_size = len(_sequence(raw_rows[0], "logits row 0"))
+    if row_count != expected_length:
+        raise ValueError("logits must contain prompt_length + generation_length rows")
+    effective_permitted = (
+        tuple(range(vocabulary_size)) if permitted_token_ids is None else tuple(permitted_token_ids)
+    )
+    effective_max_k = (
+        len(effective_permitted)
+        if support_k_max is None
+        else min(int(support_k_max), len(effective_permitted))
+    )
+    ranked_support_rows = _ranked_support_from_model_logits(
+        logits,
+        prompt_length=prompt_count,
+        generation_length=generated_count,
+        vocabulary_size=vocabulary_size,
+        permitted_token_ids=effective_permitted,
+        max_k=effective_max_k,
+    )
     if profile.mask_token_id >= vocabulary_size:
         raise ValueError("mask_token_id is outside the model vocabulary")
     if any(token_id >= vocabulary_size for token_id in model_tokens):
@@ -403,10 +566,10 @@ def prepare_llada_exact_step(
         k_s=schedule_budget,
         weight_mode=weight_mode,
     )
-    generation_logits = model_logits[generation_slice]
     return LLaDAExactStepRequest(
         canvas=canvas,
-        logits=generation_logits,
+        ranked_support_rows=ranked_support_rows,
+        logit_shape=(generated_count, vocabulary_size),
         proposal_batch=proposal_batch,
         schedule_mask=schedule_mask,
         prompt_token_ids=model_tokens[:prompt_count],
@@ -421,6 +584,8 @@ def prepare_llada_exact_step(
             "active_block_limit_applied_to_proposals": True,
             "support_covers_full_generated_canvas": True,
             "logit_shape": [generated_count, vocabulary_size],
+            "ranked_support": ranked_support_rows.to_dict(),
+            "dense_logits_copied_to_cpu": False,
             "exactness_scope": "exact_on_support",
         },
     )
@@ -555,6 +720,7 @@ def run_llada_exact_step(
         raise ValueError("configured failure fallback requires its matching adapter callback")
     if not callable(decode_token):
         raise TypeError("decode_token must be callable")
+    permitted_token_ids = _permitted_token_ids(tokenizer_adapter, config.eos_policy)
     request = prepare_llada_exact_step(
         token_ids=token_ids,
         logits=logits,
@@ -565,24 +731,26 @@ def run_llada_exact_step(
         active_block_end=active_block_end,
         k_s=k_s,
         weight_mode=config.weight_mode,
+        permitted_token_ids=permitted_token_ids,
+        support_k_max=min(config.adaptive_support.k_max, len(permitted_token_ids)),
         profile=profile,
     )
     expected_model_length = prompt_length + generation_length
     if len(decoded_tracking) != expected_model_length:
         raise ValueError("decoded_tracking must cover the full prompt and generated row")
-    if tokenizer_adapter.vocabulary_size != len(request.logits[0]):
+    if tokenizer_adapter.vocabulary_size != request.logit_shape[1]:
         raise ValueError("tokenizer adapter and model logits must have equal vocabularies")
 
     solver_output = solve_exact_commit_adaptive_validated(
         grammar,
         canvas=request.canvas,
-        logits=request.logits,
+        ranked_support_rows=request.ranked_support_rows,
         proposals=request.proposal_batch.proposals,
         tokenizer_adapter=tokenizer_adapter,
         eos_policy=config.eos_policy,
         config=config.adaptive_support,
         backend=config.backend,
-        permitted_token_ids=_permitted_token_ids(tokenizer_adapter, config.eos_policy),
+        permitted_token_ids=permitted_token_ids,
         include_proposal_tokens=True,
         pruning_description=("pinned EPIC LLaDA generated-canvas top-K support; exact_on_support"),
         profiler=profiler,
@@ -591,7 +759,12 @@ def run_llada_exact_step(
         solver_output.result if isinstance(solver_output, ValidatedExactCommit) else solver_output
     )
     witness_probabilities = (
-        _witness_probabilities(request.logits, solver_result.witness_token_ids)
+        _witness_probabilities_from_model_logits(
+            logits,
+            prompt_length=request.prompt_length,
+            generation_length=request.generation_length,
+            witness_token_ids=solver_result.witness_token_ids,
+        )
         if solver_result.status is SolveStatus.OPTIMAL and not solver_result.selected_proposal_ids
         else None
     )

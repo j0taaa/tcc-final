@@ -133,11 +133,8 @@ class ValidationReport:
             "issues": [issue.to_dict() for issue in self.issues],
             "skipped_checks": list(self.skipped_checks),
             "recomputed_objective": self.recomputed_objective,
-            "recomputed_selected_proposal_ids": list(
-                self.recomputed_selected_proposal_ids
-            ),
+            "recomputed_selected_proposal_ids": list(self.recomputed_selected_proposal_ids),
         }
-
 
     @classmethod
     def from_dict(cls, data: Mapping[str, object]) -> ValidationReport:
@@ -292,8 +289,7 @@ def _validate_eos_policy_configuration(
         raise ValueError("EOS tokenizer adapter and exactness scope must have equal vocabularies")
     special_ids = (*eos_policy.termination_token_ids, eos_policy.pad_token_id)
     if any(
-        token_id is not None and token_id >= eos_adapter.vocabulary_size
-        for token_id in special_ids
+        token_id is not None and token_id >= eos_adapter.vocabulary_size for token_id in special_ids
     ):
         raise ValueError("EOS policy token IDs must belong to the tokenizer vocabulary")
 
@@ -662,9 +658,7 @@ def validate_exact_commit_certificate(
         _run_injected_check(
             name="eos",
             call=(
-                None
-                if eos_validator is None
-                else partial(eos_validator, result.witness_token_ids)
+                None if eos_validator is None else partial(eos_validator, result.witness_token_ids)
             ),
             rejected_code=ValidationCode.EOS_REJECTED,
             issues=issues,

@@ -154,9 +154,7 @@ def run_dag_cky(grammar: CnfGrammar, graph: WeightedTerminalDAG) -> DagSolve:
     if not isinstance(grammar, CnfGrammar):
         raise TypeError("grammar must be a CnfGrammar")
     indexed = index_terminal_dag(graph)
-    epsilon_edge_ids = tuple(
-        edge.edge_id for edge in graph.edges if isinstance(edge, EpsilonEdge)
-    )
+    epsilon_edge_ids = tuple(edge.edge_id for edge in graph.edges if isinstance(edge, EpsilonEdge))
     if epsilon_edge_ids:
         raise EpsilonNormalizationRequired(
             "run_dag_cky accepts only epsilon-free graphs; normalize epsilon edges first "
@@ -279,11 +277,7 @@ def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
         if isinstance(pointer, DagTerminalBackpointer):
             terminal_production = terminal_productions.get(pointer.production_id)
             edge = edge_by_id.get(pointer.edge_id)
-            if (
-                terminal_production is None
-                or edge is None
-                or not isinstance(edge, TerminalEdge)
-            ):
+            if terminal_production is None or edge is None or not isinstance(edge, TerminalEdge):
                 raise DagCertificateReconstructionError(
                     "terminal backpointer references an unknown production or edge"
                 )
@@ -324,9 +318,7 @@ def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
         left = visit(pointer.left_nonterminal_id, source, middle)
         right = visit(pointer.right_nonterminal_id, middle, target)
         score = left + right
-        if not isfinite(score) or not isclose(
-            entry.score, score, rel_tol=1e-12, abs_tol=1e-12
-        ):
+        if not isfinite(score) or not isclose(entry.score, score, rel_tol=1e-12, abs_tol=1e-12):
             raise DagCertificateReconstructionError(
                 "binary chart score does not equal its child-score sum"
             )
@@ -389,9 +381,7 @@ def validate_dag_certificate(
         return False
     if tuple(selected_ids) != certificate.selected_proposal_ids:
         return False
-    if not isclose(
-        fsum(weights), certificate.objective_value, rel_tol=1e-12, abs_tol=1e-12
-    ):
+    if not isclose(fsum(weights), certificate.objective_value, rel_tol=1e-12, abs_tol=1e-12):
         return False
     return recognizes_cnf(grammar, tuple(labels))
 

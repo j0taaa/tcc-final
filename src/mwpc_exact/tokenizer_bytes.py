@@ -91,9 +91,7 @@ class CompositionalByteLevelAdapter:
                 raise ValueError(f"empty emission for token ID {token_id} is unsupported")
 
     @classmethod
-    def from_token_pieces(
-        cls, token_pieces: Sequence[str | None]
-    ) -> CompositionalByteLevelAdapter:
+    def from_token_pieces(cls, token_pieces: Sequence[str | None]) -> CompositionalByteLevelAdapter:
         """Build a mapping from ByteLevel pieces; ``None`` remains unsupported."""
 
         if isinstance(token_pieces, (str, bytes)) or not isinstance(token_pieces, Sequence):

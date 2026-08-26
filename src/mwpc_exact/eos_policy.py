@@ -90,8 +90,6 @@ class EOSPolicy:
         }
 
 
-
-
 __all__ = [
     "EOSMode",
     "EOSPolicy",

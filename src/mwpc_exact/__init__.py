@@ -7,22 +7,6 @@ from mwpc_exact.adaptive import (
     solve_exact_commit_adaptive_validated,
 )
 from mwpc_exact.backend import ExactBackend
-from mwpc_exact.benchmark_instance import (
-    BENCHMARK_INSTANCE_ARTIFACT_KIND,
-    BENCHMARK_INSTANCE_SCHEMA_VERSION,
-    BenchmarkGrammar,
-    BenchmarkInstance,
-    EpicCfgFactory,
-    EpicReplaySpec,
-    SavedLogits,
-    UnsupportedBenchmarkSchemaVersion,
-    migrate_benchmark_instance_data,
-    replay_benchmark_instance,
-)
-from mwpc_exact.brute_force_selection import (
-    select_brute_force,
-    select_brute_force_graph,
-)
 from mwpc_exact.byte_lattice import ByteLattice, ByteLatticePath, build_byte_lattice
 from mwpc_exact.decoder import (
     CommitGuarantee,
@@ -50,10 +34,44 @@ from mwpc_exact.eos_policy import (
     EOSState,
     TokenRole,
 )
-from mwpc_exact.epic_selection import (
+from mwpc_exact.evaluation.alignment import (
+    AlignmentCase,
+    SemanticAlignmentEvidence,
+    alignment_evidence_from_instance,
+    validate_semantic_alignment,
+)
+from mwpc_exact.evaluation.brute_force import (
+    select_brute_force,
+    select_brute_force_graph,
+)
+from mwpc_exact.evaluation.epic_regular_cover import (
     EPIC_UPSTREAM_COMMIT,
     EpicSelectionContext,
     select_epic,
+    select_epic_regular_cover,
+)
+from mwpc_exact.evaluation.instance import (
+    BENCHMARK_INSTANCE_ARTIFACT_KIND,
+    BENCHMARK_INSTANCE_SCHEMA_VERSION,
+    BenchmarkGrammar,
+    BenchmarkInstance,
+    EpicReplaySpec,
+    SavedLogits,
+    UnsupportedBenchmarkSchemaVersion,
+    migrate_benchmark_instance_data,
+)
+from mwpc_exact.evaluation.replay import EpicCfgFactory, replay_benchmark_instance
+from mwpc_exact.evaluation.selection import (
+    SelectionInput,
+    SelectionResult,
+    SelectionStatus,
+    SelectorKind,
+    recompute_witness_selection,
+    select_exact,
+    select_exact_mwpc,
+    select_greedy_exact_feasibility,
+    select_serial,
+    validate_ordinary_primary_proposal_comparison,
 )
 from mwpc_exact.finite_solver import solve_ordinary_support_reference
 from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent, ProfilingEvent
@@ -62,14 +80,10 @@ from mwpc_exact.proposal_policy import (
     ScheduleProposalBatch,
     build_schedule_proposals,
 )
-from mwpc_exact.selection import (
-    SelectionInput,
-    SelectionResult,
-    SelectionStatus,
-    SelectorKind,
-    recompute_witness_selection,
-    select_exact,
-    select_serial,
+from mwpc_exact.ranked_support import (
+    RankedSupportRows,
+    build_per_position_support_from_rankings,
+    rank_support_from_dense_logits,
 )
 from mwpc_exact.solver import solve_exact_commit, solve_validated_exact_commit
 from mwpc_exact.strategy import (
@@ -134,6 +148,7 @@ __all__ = [
     "EPIC_UPSTREAM_COMMIT",
     "AdaptiveSupportConfig",
     "AggregatedProposal",
+    "AlignmentCase",
     "BenchmarkGrammar",
     "BenchmarkInstance",
     "ByteLattice",
@@ -173,12 +188,14 @@ __all__ = [
     "ProfilingEvent",
     "Proposal",
     "ProposalWeightMode",
+    "RankedSupportRows",
     "SavedLogits",
     "ScheduleProposalBatch",
     "SelectionInput",
     "SelectionResult",
     "SelectionStatus",
     "SelectorKind",
+    "SemanticAlignmentEvidence",
     "SolveStatus",
     "SupportGrowthPolicy",
     "SupportInputSource",
@@ -202,11 +219,13 @@ __all__ = [
     "WeightedTerminalDAG",
     "add_commit_strategy_arguments",
     "aggregate_proposals",
+    "alignment_evidence_from_instance",
     "apply_exact_commit_result",
     "build_byte_lattice",
     "build_commit_strategy_parser",
     "build_eos_lattice",
     "build_per_position_support",
+    "build_per_position_support_from_rankings",
     "build_schedule_proposals",
     "build_token_lattice",
     "byte_level_piece_to_bytes",
@@ -215,12 +234,16 @@ __all__ = [
     "dispatch_commit_strategy",
     "legacy_commit_strategy",
     "migrate_benchmark_instance_data",
+    "rank_support_from_dense_logits",
     "recompute_witness_selection",
     "replay_benchmark_instance",
     "select_brute_force",
     "select_brute_force_graph",
     "select_epic",
+    "select_epic_regular_cover",
     "select_exact",
+    "select_exact_mwpc",
+    "select_greedy_exact_feasibility",
     "select_serial",
     "solve_exact_commit",
     "solve_exact_commit_adaptive",
@@ -229,4 +252,6 @@ __all__ = [
     "solve_validated_exact_commit",
     "support_rows_sha256",
     "validate_exact_commit_certificate",
+    "validate_ordinary_primary_proposal_comparison",
+    "validate_semantic_alignment",
 ]

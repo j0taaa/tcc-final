@@ -233,9 +233,7 @@ def test_nonproposal_support_alternatives_keep_zero_reward() -> None:
     )
     lattice = build_token_lattice(support=support, proposals=batch.proposals)
 
-    choices = {
-        (choice.position, choice.token_id): choice for choice in lattice.choices
-    }
+    choices = {(choice.position, choice.token_id): choice for choice in lattice.choices}
     assert choices[(0, 2)].weight == 0.8
     assert choices[(0, 2)].matched_proposal_ids == (0,)
     assert choices[(0, 0)].weight == 0.0

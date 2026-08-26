@@ -6,7 +6,7 @@ from typing import cast
 
 import pytest
 
-import mwpc_exact.epic_selection as epic_module
+import mwpc_exact.evaluation.epic_regular_cover as epic_module
 from mwpc_exact import (
     CompositionalByteLevelAdapter,
     EOSMode,
@@ -20,8 +20,8 @@ from mwpc_exact import (
     SupportKind,
     SupportPolicy,
     build_per_position_support,
-    select_epic,
-    select_exact,
+    select_epic_regular_cover,
+    select_exact_mwpc,
 )
 from mwpc_exact.reference.grammar import (
     BinaryProduction,
@@ -136,8 +136,8 @@ def test_epic_and_exact_consume_identical_proposals_but_keep_distinct_guarantees
 
     install_runtime(monkeypatch, fake_runtime(select_all))
 
-    epic = select_epic(selection_input, context())
-    exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+    epic = select_epic_regular_cover(selection_input, context())
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
     candidates = captured["candidates"]
     assert isinstance(candidates, list)
@@ -200,7 +200,7 @@ def test_epic_records_regular_cover_and_exact_shrink_profiler_deltas(
         ),
     )
 
-    result = select_epic(selection_input, context())
+    result = select_epic_regular_cover(selection_input, context())
 
     assert result.diagnostics["regular_cover_profiler_enabled"] is True
     assert result.diagnostics["regular_cover_selector_calls"] == 1
@@ -213,15 +213,13 @@ def test_epic_records_regular_cover_and_exact_shrink_profiler_deltas(
 def test_epic_applies_upstream_minimum_batch_before_and_after_selection(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    one_candidate = common_input(
-        (Proposal(0, 0, 0, weight=3.0, model_confidence=0.7),)
-    )
+    one_candidate = common_input((Proposal(0, 0, 0, weight=3.0, model_confidence=0.7),))
 
     def must_not_run(**_kwargs: object) -> object:
         pytest.fail("EPIC selector ran below its minimum candidate batch")
 
     install_runtime(monkeypatch, fake_runtime(must_not_run))
-    before = select_epic(one_candidate, context())
+    before = select_epic_regular_cover(one_candidate, context())
 
     assert before.status is SelectionStatus.HEURISTIC
     assert before.selected_proposal_ids == ()
@@ -243,7 +241,7 @@ def test_epic_applies_upstream_minimum_batch_before_and_after_selection(
         return candidates[:1]
 
     install_runtime(monkeypatch, fake_runtime(shrink_to_one))
-    after = select_epic(two_candidates, context())
+    after = select_epic_regular_cover(two_candidates, context())
 
     assert after.status is SelectionStatus.HEURISTIC
     assert after.selected_proposal_ids == ()
@@ -284,7 +282,7 @@ def test_epic_reports_schedule_inputs_it_cannot_represent_as_unsupported(
 
     install_runtime(monkeypatch, fake_runtime(must_not_run))
 
-    result = select_epic(selection_input, context())
+    result = select_epic_regular_cover(selection_input, context())
 
     assert result.status is SelectionStatus.UNSUPPORTED
     assert reason in result.diagnostics["unsupported_reason"]
@@ -310,7 +308,7 @@ def test_epic_rejects_unknown_upstream_candidate_without_partial_score(
 
     install_runtime(monkeypatch, fake_runtime(return_copy))
 
-    result = select_epic(selection_input, context())
+    result = select_epic_regular_cover(selection_input, context())
 
     assert result.status is SelectionStatus.ERROR
     assert result.diagnostics["error_stage"] == "upstream_result_validation"
@@ -336,4 +334,4 @@ def test_epic_current_words_must_match_common_canvas_mask_state(
     )
 
     with pytest.raises(ValueError, match="masked/fixed state at position 0"):
-        select_epic(selection_input, mismatched)
+        select_epic_regular_cover(selection_input, mismatched)

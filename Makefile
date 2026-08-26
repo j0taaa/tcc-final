@@ -4,7 +4,7 @@ VENV_PY := $(VENV)/bin/python
 VENV_PIP := $(VENV)/bin/pip
 EPIC_CPU_INDEX ?= https://download.pytorch.org/whl/cpu
 
-.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-upstream test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser paper clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -43,6 +43,9 @@ test-unit:
 test-exact:
 	$(VENV_PY) -m pytest -q tests/exact_commit
 
+test-integration:
+	$(VENV_PY) -m pytest -q tests/integration
+
 test-upstream:
 	PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=vendor/EPIC-Decoding \
 		$(VENV_PY) -m pytest -q vendor/EPIC-Decoding/tests
@@ -72,6 +75,8 @@ test-rust-parser:
 test: test-unit test-exact
 
 check: verify-upstream lint typecheck test
+
+check-integration: test-integration
 
 paper:
 	$(MAKE) -C paper

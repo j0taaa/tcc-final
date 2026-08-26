@@ -16,7 +16,11 @@ from time import monotonic
 
 from mwpc_exact.backend import ExactBackend
 from mwpc_exact.eos_policy import EOSPolicy
-from mwpc_exact.profiling import ComponentProfiler
+from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent
+from mwpc_exact.ranked_support import (
+    RankedSupportRows,
+    build_per_position_support_from_rankings,
+)
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.solver import solve_exact_commit
 from mwpc_exact.support import PerPositionSupport, SupportPolicy, build_per_position_support
@@ -276,7 +280,8 @@ def solve_exact_commit_adaptive(
     grammar: CnfGrammar,
     *,
     canvas: Sequence[int | None],
-    logits: Sequence[Sequence[float]],
+    logits: Sequence[Sequence[float]] | None = None,
+    ranked_support_rows: RankedSupportRows | None = None,
     proposals: Iterable[Proposal],
     tokenizer_adapter: CompositionalByteLevelAdapter,
     eos_policy: EOSPolicy,
@@ -317,6 +322,11 @@ def solve_exact_commit_adaptive(
         raise TypeError("backend must be an ExactBackend")
     if not isinstance(include_proposal_tokens, bool):
         raise TypeError("include_proposal_tokens must be a boolean")
+    if (logits is None) == (ranked_support_rows is None):
+        raise ValueError("provide exactly one of logits or ranked_support_rows")
+    if ranked_support_rows is not None:
+        if ranked_support_rows.vocabulary_size != tokenizer_adapter.vocabulary_size:
+            raise ValueError("ranked support and tokenizer adapter vocabularies differ")
     if config.k_max > tokenizer_adapter.vocabulary_size:
         raise ValueError("k_max cannot exceed the tokenizer vocabulary size")
 
@@ -335,6 +345,13 @@ def solve_exact_commit_adaptive(
     if normalized_permitted is None:
         raise AssertionError("SupportPolicy did not normalize permitted_token_ids")
     widths = config.attempt_widths(len(normalized_permitted))
+    if ranked_support_rows is not None:
+        if ranked_support_rows.permitted_token_ids != normalized_permitted:
+            raise ValueError("ranked support changed the permitted token universe")
+        if ranked_support_rows.max_k < max(widths):
+            raise ValueError("ranked support does not cover the configured maximum width")
+        if len(ranked_support_rows.token_ids_by_position) != len(canvas_items):
+            raise ValueError("ranked support and canvas must have equal slot counts")
 
     started_at = clock()
     latest_time = started_at
@@ -354,13 +371,32 @@ def solve_exact_commit_adaptive(
             include_proposal_tokens=include_proposal_tokens,
             pruning_description=pruning_description,
         )
-        support = build_per_position_support(
-            canvas=canvas_items,
-            policy=policy,
-            logits=logits,
-            proposals=proposal_items,
-            profiler=profiler,
-        )
+        if ranked_support_rows is None:
+            if logits is None:
+                raise AssertionError("validated adaptive input omitted dense logits")
+            support = build_per_position_support(
+                canvas=canvas_items,
+                policy=policy,
+                logits=logits,
+                proposals=proposal_items,
+                profiler=profiler,
+            )
+        else:
+            if profiler is None or not profiler.enabled:
+                support = build_per_position_support_from_rankings(
+                    canvas=canvas_items,
+                    policy=policy,
+                    rankings=ranked_support_rows,
+                    proposals=proposal_items,
+                )
+            else:
+                with profiler.measure(ProfilingComponent.SUPPORT_CONSTRUCTION):
+                    support = build_per_position_support_from_rankings(
+                        canvas=canvas_items,
+                        policy=policy,
+                        rankings=ranked_support_rows,
+                        proposals=proposal_items,
+                    )
         support_finished_at = clock()
         if previous_support is not None:
             _validate_support_superset(previous_support, support)
@@ -506,25 +542,6 @@ def solve_exact_commit_adaptive(
                 resource_limit_prevented_expansion=False,
                 total_elapsed_seconds=max(0.0, latest_time - started_at),
             )
-        if (
-            config.total_timeout_seconds is not None
-            and latest_time - started_at >= config.total_timeout_seconds
-        ):
-            timeout_result = ExactCommitResult(
-                status=SolveStatus.TIMEOUT,
-                exactness_scope=result.exactness_scope,
-                diagnostics=result.diagnostics,
-            )
-            return _finalize(
-                timeout_result,
-                config=config,
-                configured_widths=widths,
-                attempts=attempts,
-                backend=backend,
-                stopped_reason="total_timeout_before_next_expansion",
-                resource_limit_prevented_expansion=True,
-                total_elapsed_seconds=max(0.0, latest_time - started_at),
-            )
         previous_support = support
 
     raise AssertionError("validated adaptive schedule unexpectedly contained no attempts")
@@ -534,7 +551,8 @@ def solve_exact_commit_adaptive_validated(
     grammar: CnfGrammar,
     *,
     canvas: Sequence[int | None],
-    logits: Sequence[Sequence[float]],
+    logits: Sequence[Sequence[float]] | None = None,
+    ranked_support_rows: RankedSupportRows | None = None,
     proposals: Iterable[Proposal],
     tokenizer_adapter: CompositionalByteLevelAdapter,
     eos_policy: EOSPolicy,
@@ -555,6 +573,7 @@ def solve_exact_commit_adaptive_validated(
         grammar,
         canvas=canvas,
         logits=logits,
+        ranked_support_rows=ranked_support_rows,
         proposals=proposals,
         tokenizer_adapter=tokenizer_adapter,
         eos_policy=eos_policy,

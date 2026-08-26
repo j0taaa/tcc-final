@@ -2,7 +2,7 @@
 
 `mwpc_benchmark_instance` version 1 is the immutable input boundary for fair
 offline selector comparisons. The implementation and authoritative validator
-are in `mwpc_exact.benchmark_instance`; the versioned example is
+are in `mwpc_exact.evaluation.instance`; the versioned example is
 `tests/exact_commit/fixtures/benchmark_instance_v1.json`.
 
 ## Scientific meaning
@@ -62,6 +62,26 @@ future versioned representation.
 If the pinned EPIC runtime or CFG binding is unavailable, EPIC alone returns
 `UNSUPPORTED`; the other applicable selectors still replay. This is not treated
 as infeasibility.
+
+
+## Paired grammar semantics
+
+Instances that replay EPIC and exact selectors must include
+`expected_metadata.semantic_alignment`. It records a shared source grammar ID,
+exact and EPIC compiler versions, an alignment method, accepted and rejected
+token-sequence cases, and `alignment_sha256`. Replay reconstructs both grammar
+representations and recomputes every case before comparing selectors. Content
+hashes establish immutability; they do not by themselves establish semantic
+equivalence.
+
+## Comparison profile
+
+The common Q2 replay accepts only one ordinary primary proposal per masked
+position. Every proposal must be represented in the frozen support and retain
+model confidence. EOS/PAD proposals and decoder suffix side effects are outside
+this component-level comparison. The result IDs remain `serial`, `epic`, and
+`exact` for version-1 artifact compatibility, while the implementation-facing
+names are `greedy_exact_feasibility`, `epic_regular_cover`, and `exact_mwpc`.
 
 ## Migration policy
 

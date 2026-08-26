@@ -8,7 +8,7 @@ from typing import cast
 
 import pytest
 
-import mwpc_exact.epic_selection as epic_module
+import mwpc_exact.evaluation.epic_regular_cover as epic_module
 from mwpc_exact import (
     BENCHMARK_INSTANCE_SCHEMA_VERSION,
     BenchmarkInstance,
@@ -94,9 +94,13 @@ def test_one_file_replays_serial_epic_exact_and_guarded_brute_force(
     _install_select_all_epic(monkeypatch)
     seen_cfg: list[tuple[str, str]] = []
 
+    class _AlignedCfg:
+        def accepts(self, words: list[str]) -> bool:
+            return words == ["a", "x", "b", "y"]
+
     def cfg_factory(text: str, start_symbol: str) -> object:
         seen_cfg.append((text, start_symbol))
-        return object()
+        return _AlignedCfg()
 
     results = replay_benchmark_instance(
         instance,
@@ -122,8 +126,7 @@ def test_one_file_replays_serial_epic_exact_and_guarded_brute_force(
     assert results[SelectorKind.BRUTE_FORCE].witness_token_ids == (10, 11, 12, 13)
     assert seen_cfg == [
         (
-            "S -> A TAIL1\nTAIL1 -> X TAIL2\nTAIL2 -> B Y\n"
-            "A -> a\nX -> x\nB -> b\nY -> y",
+            "S -> A TAIL1\nTAIL1 -> X TAIL2\nTAIL2 -> B Y\nA -> a\nX -> x\nB -> b\nY -> y",
             "S",
         )
     ]

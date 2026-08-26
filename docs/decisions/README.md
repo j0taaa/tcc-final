@@ -14,3 +14,6 @@ Numbered architecture decision records live here. Each ADR states the affected s
 - `0010-validated-commit-boundary.md`: live independent validation required for commits.
 - `0011-feasibility-driven-support-expansion.md`: first-feasible adaptive top-K policy.
 - `0012-llada-exact-adapter-boundary.md`: generated-canvas tensor mapping and active-block/EOS rules.
+- `0013-compact-ranked-support.md`: compact top-K ranking at model boundaries.
+- `0014-fair-selector-comparison.md`: precise offline selector names and shared candidate universe.
+- `0015-paired-grammar-alignment.md`: executable alignment evidence for exact/EPIC grammar pairs.

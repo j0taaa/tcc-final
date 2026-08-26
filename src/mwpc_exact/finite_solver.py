@@ -284,6 +284,7 @@ def _finite_support_witness_is_exact(
         token_id in support.rows[position] for position, token_id in enumerate(token_ids)
     )
 
+
 def _error_result(
     *,
     support: PerPositionSupport,

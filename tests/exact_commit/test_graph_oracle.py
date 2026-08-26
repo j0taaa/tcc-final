@@ -51,9 +51,9 @@ def random_tiny_dag(seed: int) -> WeightedTerminalDAG:
                     )
                 )
                 edge_id += 1
-    finals = tuple(
-        node_id for node_id in range(1, node_count) if rng.random() < 0.5
-    ) or (node_count - 1,)
+    finals = tuple(node_id for node_id in range(1, node_count) if rng.random() < 0.5) or (
+        node_count - 1,
+    )
     return WeightedTerminalDAG(tuple(range(node_count)), 0, finals, tuple(edges))
 
 
