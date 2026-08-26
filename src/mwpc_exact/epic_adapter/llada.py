@@ -11,9 +11,10 @@ from __future__ import annotations
 from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass, field
 from enum import StrEnum
+from importlib import import_module
 from math import exp, inf, isfinite, isnan
 from types import MappingProxyType
-from typing import Protocol
+from typing import Any, Protocol
 
 from mwpc_exact.adaptive import solve_exact_commit_adaptive_validated
 from mwpc_exact.decoder import apply_exact_commit_result
@@ -337,6 +338,15 @@ def _logit_matrix(value: object) -> tuple[tuple[float, ...], ...]:
     return matrix
 
 
+def _optional_torch() -> Any | None:
+    """Load Torch only inside the model adapter when it is installed."""
+
+    try:
+        return import_module("torch")
+    except ModuleNotFoundError:
+        return None
+
+
 def _ranked_support_from_model_logits(
     value: object,
     *,
@@ -349,10 +359,7 @@ def _ranked_support_from_model_logits(
     """Rank a compact prefix on device and transfer only selected IDs to CPU."""
 
     expected_length = prompt_length + generation_length
-    try:
-        import torch
-    except ImportError:
-        torch = None  # type: ignore[assignment]
+    torch = _optional_torch()
     if torch is not None and isinstance(value, torch.Tensor):
         if value.ndim != 2 or tuple(value.shape) != (expected_length, vocabulary_size):
             raise ValueError("logits tensor must have shape prompt+generation by model vocabulary")
@@ -422,10 +429,7 @@ def _witness_probabilities_from_model_logits(
     if len(witness_token_ids) != generation_length:
         raise ValueError("witness token count must equal generation_length")
     expected_length = prompt_length + generation_length
-    try:
-        import torch
-    except ImportError:
-        torch = None  # type: ignore[assignment]
+    torch = _optional_torch()
     if torch is not None and isinstance(value, torch.Tensor):
         if value.ndim != 2 or value.shape[0] != expected_length:
             raise ValueError("logits tensor has an unexpected position shape")
