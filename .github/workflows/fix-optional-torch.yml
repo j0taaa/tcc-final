@@ -1,0 +1,81 @@
+name: fix-optional-torch
+
+on:
+  push:
+    branches: ["m10-5-hardening"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: m10-5-hardening
+          fetch-depth: 0
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Make Torch loading optional to static analysis
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("src/mwpc_exact/epic_adapter/llada.py")
+          text = path.read_text(encoding="utf-8")
+          text = text.replace(
+              "from enum import StrEnum\n",
+              "from enum import StrEnum\nfrom importlib import import_module\n",
+              1,
+          )
+          text = text.replace(
+              "from typing import Protocol\n",
+              "from typing import Any, Protocol\n",
+              1,
+          )
+          marker = "def _ranked_support_from_model_logits(\n"
+          helper = '''def _optional_torch() -> Any | None:
+              """Load Torch only inside the model adapter when it is installed."""
+
+              try:
+                  return import_module("torch")
+              except ModuleNotFoundError:
+                  return None
+
+
+          '''
+          if text.count(marker) != 1:
+              raise RuntimeError("compact-ranking marker is not unique")
+          text = text.replace(marker, helper + marker, 1)
+          old = '''    try:
+              import torch
+          except ImportError:
+              torch = None  # type: ignore[assignment]
+          '''
+          if text.count(old) != 2:
+              raise RuntimeError(f"expected two optional Torch import blocks, found {text.count(old)}")
+          text = text.replace(old, "    torch = _optional_torch()\n", 2)
+          path.write_text(text, encoding="utf-8")
+          PY
+      - name: Validate lightweight core
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+          python -m ruff format src/mwpc_exact/epic_adapter/llada.py
+          python -m ruff check src tests
+          python -m mypy src
+          python -m pytest -q tests/unit tests/exact_commit
+      - name: Commit source-only fix
+        run: |
+          git restore .github/workflows/fix-optional-torch.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/mwpc_exact/epic_adapter/llada.py
+          git diff --cached --check
+          git commit -m "fix: keep Torch optional in the core environment"
+          git push origin HEAD:m10-5-hardening
