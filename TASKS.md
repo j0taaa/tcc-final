@@ -14,9 +14,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M11 / T1103.** M0 through M10, the M10.5 hardening pass, and T1100 through
-T1102 are complete. The first incomplete required task is T1103: Q3
-finite-slot experiment.
+**M11 / T1104.** M0 through M10, the M10.5 hardening pass, and T1100 through
+T1103 are complete. The first incomplete required task is T1104: Q4 scaling
+experiment.
 
 ## Completed milestone summary
 
@@ -135,15 +135,41 @@ smoke diagnostics, not publication benchmark measurements.
 
 **Depends on:** T703, T1100
 
-- [ ] Run curated `Sigma*` counterexamples.
-- [ ] Optionally mine real decoder states where abstract and finite decisions differ.
-- [ ] Record available slots, minimum required tokens, abstract decision, finite decision, and witness/reason.
+- [x] Run curated `Sigma*` counterexamples.
+- [x] Decide whether to optionally mine real decoder states where abstract and
+  finite decisions differ. The curated-only v1 explicitly records zero real
+  states.
+- [x] Record available slots, minimum required tokens, abstract decision, finite decision, and witness/reason.
 
 **Acceptance criteria**
 
-- [ ] Results directly support the finite-slot claim.
+- [x] Results directly support the finite-slot claim.
 
-**Evidence:** `[command and artifacts]`
+**Evidence:** implementation commit `ac447a8644583052806c66f7b4deb39ac66f9378`;
+`python scripts/exact_commit/run_q3_finite_slots.py --config
+configs/experiments/q3_finite_slots_v1.toml --run-directory
+results/raw/q3_finite_slots_v1/ac447a8 --summary-output
+docs/evidence/t1103-q3-finite-slot-summary.json` from that clean commit -> 2/2
+curated rows passed with config hash
+`ac7e619520d69d7a86dd281e9d46a308f7f01d898e55e98583f921d531a09de6`.
+Both concrete abstract `Sigma*` witnesses were CFG-valid and accepted, but each
+needed two physical tokens (one content token plus required EOS) on a one-slot
+canvas. Complete finite-path enumeration independently agreed with the finite
+parser: one result was `INFEASIBLE_ON_SUPPORT`, and the other was an `OPTIMAL`
+EOS-only witness `[1]` with objective 1 instead of the abstract objective 10.
+The experiment deliberately used no real decoder states and records that count
+as zero. Raw rows with slot accounting, both decisions, support hashes, and
+witness/reason fields are in
+`results/raw/q3_finite_slots_v1/ac447a8/q3-finite-slot-rows.jsonl`; the
+versioned computed summary is
+`docs/evidence/t1103-q3-finite-slot-summary.json`. `make
+test-m7-counterexamples` reproduced both dependency fixtures; `python -m
+pytest -q tests/exact_commit/test_finite_slot_counterexamples.py
+tests/exact_commit/test_q3_finite_slots.py
+tests/exact_commit/test_t1103_evidence.py` -> 10 passed; `make check` -> Ruff
+clean, strict MyPy clean, 9 unit and 529 exact tests passed; `python -m pytest
+-q` -> 548 passed; `make paper` -> `main.pdf` built (15 pages). The recorded
+single-repetition runtimes are smoke diagnostics, not publication benchmarks.
 
 ## T1104 — Implement Q4 scaling experiment
 

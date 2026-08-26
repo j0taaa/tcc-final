@@ -1,0 +1,105 @@
+{
+  "abstract_accept_count": 2,
+  "all_results_support_finite_slot_claim": true,
+  "artifact_kind": "mwpc_q3_finite_slot_summary",
+  "case_count": 2,
+  "cases": [
+    {
+      "abstract_status": "accepted",
+      "abstract_witness_token_ids": [
+        0
+      ],
+      "available_physical_slots": 1,
+      "case_id": "required_eos_one_slot_infeasible_v1",
+      "claim_supported": true,
+      "finite_objective_value": null,
+      "finite_reason_code": "no_grammar_valid_finite_path_under_explicit_support_and_required_eos",
+      "finite_status": "infeasible_on_support",
+      "finite_witness_token_ids": null,
+      "minimum_required_physical_tokens": 2,
+      "slot_shortfall": 1
+    },
+    {
+      "abstract_status": "accepted",
+      "abstract_witness_token_ids": [
+        0
+      ],
+      "available_physical_slots": 1,
+      "case_id": "required_eos_one_slot_lower_empty_v1",
+      "claim_supported": true,
+      "finite_objective_value": 1.0,
+      "finite_reason_code": "abstract_witness_exceeds_canvas_lower_score_finite_path_selected",
+      "finite_status": "optimal",
+      "finite_witness_token_ids": [
+        1
+      ],
+      "minimum_required_physical_tokens": 2,
+      "slot_shortfall": 1
+    }
+  ],
+  "curated_case_count": 2,
+  "failed_cases": 0,
+  "failures": [],
+  "finite_slot_false_positive_count": 2,
+  "finite_status_counts": {
+    "infeasible_on_support": 1,
+    "optimal": 1
+  },
+  "passed_cases": 2,
+  "real_decoder_state_count": 0,
+  "run_metadata": {
+    "abstract_baseline": "ordered_anchor_sigma_star",
+    "abstract_sigma_star_semantics": "ordered proposal-token anchors separated and surrounded by unbounded token Sigma* gaps; physical canvas slots and the required EOS token are not allocated",
+    "case_ids": [
+      "required_eos_one_slot_infeasible_v1",
+      "required_eos_one_slot_lower_empty_v1"
+    ],
+    "config_sha256": "ac7e619520d69d7a86dd281e9d46a308f7f01d898e55e98583f921d531a09de6",
+    "dataset": "curated_t703_counterexamples_v1",
+    "exactness_guarantee": "per_step",
+    "exactness_scope": "exact_on_support",
+    "finite_slots": true,
+    "finite_solver": "python_reference_plus_exhaustive_path_enumeration",
+    "generated_at_utc": "2026-08-26T13:59:22.018425+00:00",
+    "git_commit": "ac447a8644583052806c66f7b4deb39ac66f9378",
+    "git_dirty": false,
+    "grammar_hash_policy": "sha256_per_instance",
+    "hardware": {
+      "cpu_threads": 1,
+      "cuda_device": null,
+      "device": "cpu",
+      "dtype": "float64",
+      "machine": "x86_64",
+      "processor": "x86_64",
+      "synchronize_cuda": false
+    },
+    "independent_oracle": "complete_finite_eos_lattice_path_enumeration",
+    "model_id": "not_applicable_curated_counterexamples",
+    "model_revision": "t703_fixture_v1",
+    "real_decoder_states_mined": false,
+    "run_id": "ac447a8",
+    "run_timeout_seconds": 300.0,
+    "seed": 1103,
+    "software_versions": {
+      "mwpc_exact": "0.1.0",
+      "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+      "python": "3.11.16"
+    },
+    "solver_timeout_seconds": 5.0,
+    "source_fixture_path": "tests/exact_commit/fixtures/finite_slot_counterexamples.json",
+    "source_fixture_sha256": "03dbe78fc12e9e2f82ff201b06e9101a151a14950be4e0366a2cd2b938dc7739",
+    "support_k_max": 2,
+    "support_policy": "curated_t703_explicit_per_position",
+    "support_top_k": 2,
+    "timeout_enforcement": "post_replay_case_deadline_and_between_case_run_deadline; tiny_python_reference_replay_is_not_preemptible",
+    "timing_scope": "single_repetition_smoke_not_publication_benchmark",
+    "tokenizer_id": "counterexample_raw_byte_vocabulary",
+    "tokenizer_revision": "finite_slot_fixture_v1"
+  },
+  "schema_version": 1,
+  "source_fixture": {
+    "path": "tests/exact_commit/fixtures/finite_slot_counterexamples.json",
+    "sha256": "03dbe78fc12e9e2f82ff201b06e9101a151a14950be4e0366a2cd2b938dc7739"
+  },
+  "total_runtime_seconds": 0.001037451031152159
+}
