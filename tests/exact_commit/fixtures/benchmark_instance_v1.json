@@ -1,0 +1,164 @@
+{
+  "artifact_kind": "mwpc_benchmark_instance",
+  "epic_replay": {
+    "decoded_tokens": [
+      {"token_id": 10, "word": "a"},
+      {"token_id": 11, "word": "x"},
+      {"token_id": 12, "word": "b"},
+      {"token_id": 13, "word": "y"}
+    ],
+    "inject_gap_size": 0,
+    "lex_map": null,
+    "max_total_injections": 0,
+    "prelex": null,
+    "prompt_length": 0,
+    "single_token_lexing": null,
+    "strip_chars": null,
+    "subtokens": {},
+    "supertokens": {},
+    "terminals": [],
+    "trace": false,
+    "words_full": [null, null, null, null]
+  },
+  "expected_metadata": {
+    "applicable_selectors": ["serial", "epic", "exact", "brute_force"],
+    "brute_force_search_space_size": 1,
+    "exactness_scope": "exact_on_explicit_support"
+  },
+  "grammar": {
+    "cnf": {
+      "accepts_empty": false,
+      "binary_productions": [
+        {
+          "head_id": 0,
+          "left_id": 3,
+          "production_id": 4,
+          "right_id": 1,
+          "source_production_ids": []
+        },
+        {
+          "head_id": 1,
+          "left_id": 4,
+          "production_id": 5,
+          "right_id": 2,
+          "source_production_ids": []
+        },
+        {
+          "head_id": 2,
+          "left_id": 5,
+          "production_id": 6,
+          "right_id": 6,
+          "source_production_ids": []
+        }
+      ],
+      "nonterminals": [
+        {"name": "S", "symbol_id": 0},
+        {"name": "TAIL1", "symbol_id": 1},
+        {"name": "TAIL2", "symbol_id": 2},
+        {"name": "A", "symbol_id": 3},
+        {"name": "X", "symbol_id": 4},
+        {"name": "B", "symbol_id": 5},
+        {"name": "Y", "symbol_id": 6}
+      ],
+      "start_nonterminal_id": 0,
+      "terminal_productions": [
+        {
+          "head_id": 3,
+          "production_id": 0,
+          "source_production_ids": [],
+          "terminal_id": 0
+        },
+        {
+          "head_id": 4,
+          "production_id": 1,
+          "source_production_ids": [],
+          "terminal_id": 1
+        },
+        {
+          "head_id": 5,
+          "production_id": 2,
+          "source_production_ids": [],
+          "terminal_id": 2
+        },
+        {
+          "head_id": 6,
+          "production_id": 3,
+          "source_production_ids": [],
+          "terminal_id": 3
+        }
+      ],
+      "terminals": [
+        {"label": 97, "symbol_id": 0},
+        {"label": 120, "symbol_id": 1},
+        {"label": 98, "symbol_id": 2},
+        {"label": 121, "symbol_id": 3}
+      ]
+    },
+    "epic_cfg": {
+      "start_symbol": "S",
+      "text": "S -> A TAIL1\nTAIL1 -> X TAIL2\nTAIL2 -> B Y\nA -> a\nX -> x\nB -> b\nY -> y"
+    },
+    "grammar_id": "fixture/axby-v1",
+    "grammar_sha256": "588f1b4a098114854703741df880add036d4f0fb521b5b85e09ee0804906ca8f"
+  },
+  "instance_id": "t1003-axby-saved-logits-v1",
+  "instance_sha256": "1e37e6889522da9e9102b5b130c299d7dc3662367569b8b52a22836a55fdd47a",
+  "metadata": {
+    "model_id": "offline/synthetic-logits",
+    "model_revision": "fixture-v1",
+    "notes": "Deterministic schema/replay fixture; not a benchmark or measured model result.",
+    "seed": 1003,
+    "source_kind": "synthetic_regression",
+    "tokenizer_id": "offline/byte-level-fixture",
+    "tokenizer_revision": "fixture-v1"
+  },
+  "saved_logits": {
+    "dtype": "float64",
+    "logits_sha256": "72794b616fd1fd6834d0dfd84ffac117567cfbf7a884d7537dcc8d210bf3def2",
+    "metadata": {"contains_model_weights": false, "logit_step": 0},
+    "shape": [4, 14],
+    "source": "synthetic_saved_model_forward",
+    "values": [
+      [-10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, 10.0, -10.0, -10.0, -10.0],
+      [-10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, 10.0, -10.0, -10.0],
+      [-10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, 10.0, -10.0],
+      [-10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, -10.0, 10.0]
+    ]
+  },
+  "schema_version": 1,
+  "selection_input": {
+    "canvas": [null, null, null, null],
+    "eos_policy": {
+      "mode": "absent",
+      "pad_token_id": null,
+      "termination_token_ids": []
+    },
+    "proposals": [
+      {"model_confidence": 0.9, "position": 0, "proposal_id": 0, "token_id": 10, "weight": 4.0},
+      {"model_confidence": 0.8, "position": 1, "proposal_id": 1, "token_id": 11, "weight": 30.0},
+      {"model_confidence": 0.7, "position": 2, "proposal_id": 2, "token_id": 12, "weight": 2.0},
+      {"model_confidence": 0.6, "position": 3, "proposal_id": 3, "token_id": 13, "weight": 20.0}
+    ],
+    "support": {
+      "exactness_scope": {
+        "adaptive_expansions": [],
+        "included_special_tokens": [],
+        "kind": "explicit",
+        "pruning_description": "T1003 immutable four-selector replay fixture",
+        "top_k": null,
+        "vocabulary_size": 14
+      },
+      "input_source": "explicit",
+      "permitted_token_ids": [10, 11, 12, 13],
+      "proposal_token_ids_by_position": [[], [], [], []],
+      "proposal_token_inclusion_enabled": false,
+      "represented_support_sha256": "e21692bfbbd92a08bead90a4b510c93da50c11523f55ddfa62491ca1d316c522",
+      "rows": [[10], [11], [12], [13]],
+      "top_k_token_ids_by_position": [[], [], [], []]
+    },
+    "tokenizer_adapter": {
+      "emissions_hex": [null, null, null, null, null, null, null, null, null, null, "61", "78", "62", "79"],
+      "kind": "compositional_byte_level"
+    }
+  }
+}

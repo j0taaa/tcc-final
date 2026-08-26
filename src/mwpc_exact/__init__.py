@@ -7,6 +7,18 @@ from mwpc_exact.adaptive import (
     solve_exact_commit_adaptive_validated,
 )
 from mwpc_exact.backend import ExactBackend
+from mwpc_exact.benchmark_instance import (
+    BENCHMARK_INSTANCE_ARTIFACT_KIND,
+    BENCHMARK_INSTANCE_SCHEMA_VERSION,
+    BenchmarkGrammar,
+    BenchmarkInstance,
+    EpicCfgFactory,
+    EpicReplaySpec,
+    SavedLogits,
+    UnsupportedBenchmarkSchemaVersion,
+    migrate_benchmark_instance_data,
+    replay_benchmark_instance,
+)
 from mwpc_exact.brute_force_selection import (
     select_brute_force,
     select_brute_force_graph,
@@ -116,10 +128,14 @@ from mwpc_exact.validator import (
 )
 
 __all__ = [
+    "BENCHMARK_INSTANCE_ARTIFACT_KIND",
+    "BENCHMARK_INSTANCE_SCHEMA_VERSION",
     "BYTE_LEVEL_ALPHABET",
     "EPIC_UPSTREAM_COMMIT",
     "AdaptiveSupportConfig",
     "AggregatedProposal",
+    "BenchmarkGrammar",
+    "BenchmarkInstance",
     "ByteLattice",
     "ByteLatticePath",
     "CommitGuarantee",
@@ -137,6 +153,8 @@ __all__ = [
     "EOSPolicyViolation",
     "EOSState",
     "EOSWitnessValidator",
+    "EpicCfgFactory",
+    "EpicReplaySpec",
     "EpicSelectionContext",
     "EpsilonEdge",
     "ExactBackend",
@@ -155,6 +173,7 @@ __all__ = [
     "ProfilingEvent",
     "Proposal",
     "ProposalWeightMode",
+    "SavedLogits",
     "ScheduleProposalBatch",
     "SelectionInput",
     "SelectionResult",
@@ -174,6 +193,7 @@ __all__ = [
     "TokenLatticePath",
     "TokenRole",
     "TokenizerWitnessValidator",
+    "UnsupportedBenchmarkSchemaVersion",
     "UnsupportedTokenError",
     "ValidatedExactCommit",
     "ValidationCode",
@@ -194,7 +214,9 @@ __all__ = [
     "decoder_strategy_config_from_namespace",
     "dispatch_commit_strategy",
     "legacy_commit_strategy",
+    "migrate_benchmark_instance_data",
     "recompute_witness_selection",
+    "replay_benchmark_instance",
     "select_brute_force",
     "select_brute_force_graph",
     "select_epic",
