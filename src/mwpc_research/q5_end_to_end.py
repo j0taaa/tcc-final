@@ -19,6 +19,7 @@ from pathlib import Path
 from types import MappingProxyType
 
 from mwpc_exact.types import SolveStatus
+from mwpc_research.robust_timing import summarize_distribution
 
 Q5_ARTIFACT_SCHEMA_VERSION = 1
 Q5_RAW_ARTIFACT_KIND = "mwpc_q5_end_to_end_row"
@@ -131,6 +132,8 @@ class Q5MethodRecord:
     process_high_water_rss_bytes: int
     cuda_peak_allocated_bytes: int
     cuda_peak_reserved_bytes: int
+    process_sampled_peak_rss_bytes: int | None = None
+    process_rss_sample_count: int = 0
     diagnostics: Mapping[str, object] = field(default_factory=dict)
 
     def __post_init__(self) -> None:
@@ -162,8 +165,14 @@ class Q5MethodRecord:
             "process_high_water_rss_bytes",
             "cuda_peak_allocated_bytes",
             "cuda_peak_reserved_bytes",
+            "process_rss_sample_count",
         ):
             _non_negative_integer(getattr(self, field_name), field_name)
+        if self.process_sampled_peak_rss_bytes is not None:
+            _non_negative_integer(
+                self.process_sampled_peak_rss_bytes,
+                "process_sampled_peak_rss_bytes",
+            )
         if self.configured_diffusion_steps == 0:
             raise ValueError("configured_diffusion_steps must be positive")
         for field_name in ("commit_batch_sizes", "physical_update_batch_sizes"):
@@ -187,12 +196,8 @@ class Q5MethodRecord:
                 raise ValueError("exact rows require a recorded Python or Rust backend")
             if not isinstance(self.solver_status, SolveStatus):
                 raise TypeError("exact rows require an explicit solver_status")
-            if (
-                self.execution_status is Q5ExecutionStatus.COMPLETE
-                and (
-                    self.support_expansion_count is None
-                    or self.empty_optimal_batch_count is None
-                )
+            if self.execution_status is Q5ExecutionStatus.COMPLETE and (
+                self.support_expansion_count is None or self.empty_optimal_batch_count is None
             ):
                 raise ValueError("exact rows require support-expansion and empty-batch counts")
             if self.solver_status is SolveStatus.OPTIMAL:
@@ -240,6 +245,16 @@ class Q5MethodRecord:
             self.process_rss_after_bytes,
         ):
             raise ValueError("process high-water RSS cannot be below an RSS snapshot")
+        if self.process_sampled_peak_rss_bytes is not None:
+            if self.process_rss_sample_count < 2:
+                raise ValueError("a sampled RSS peak requires at least two samples")
+            if self.process_sampled_peak_rss_bytes < max(
+                self.process_rss_before_bytes,
+                self.process_rss_after_bytes,
+            ):
+                raise ValueError("sampled RSS peak cannot be below an RSS snapshot")
+        elif self.process_rss_sample_count != 0:
+            raise ValueError("RSS sample count requires a sampled RSS peak")
         if self.cuda_peak_reserved_bytes < self.cuda_peak_allocated_bytes:
             raise ValueError("CUDA peak reserved bytes cannot be below allocated bytes")
         object.__setattr__(
@@ -314,6 +329,8 @@ class Q5MethodRecord:
                 "process_rss_before_bytes": self.process_rss_before_bytes,
                 "process_rss_after_bytes": self.process_rss_after_bytes,
                 "process_high_water_rss_bytes": self.process_high_water_rss_bytes,
+                "process_sampled_peak_rss_bytes": self.process_sampled_peak_rss_bytes,
+                "process_rss_sample_count": self.process_rss_sample_count,
                 "cuda_peak_allocated_bytes": self.cuda_peak_allocated_bytes,
                 "cuda_peak_reserved_bytes": self.cuda_peak_reserved_bytes,
             },
@@ -323,19 +340,30 @@ class Q5MethodRecord:
 
 @dataclass(frozen=True, slots=True)
 class Q5ExperimentResult:
-    """Four paired method records and a summary derived only from those rows."""
+    """Paired Q5 repetitions and a summary derived only from their raw rows."""
 
     records: tuple[Q5MethodRecord, ...]
     run_metadata: Mapping[str, object]
 
     def __post_init__(self) -> None:
         records = tuple(self.records)
-        if tuple(record.strategy for record in records) != Q5_STRATEGIES:
-            raise ValueError(f"Q5 records must use the configured order {Q5_STRATEGIES!r}")
+        if not records:
+            raise ValueError("Q5 results require at least one paired repetition")
         if len({record.comparison_fingerprint for record in records}) != 1:
             raise ValueError("Q5 methods did not use one frozen comparison input")
-        if len({(record.seed, record.repetition) for record in records}) != 1:
-            raise ValueError("Q5 methods did not use one seed/repetition pair")
+        if len({record.seed for record in records}) != 1:
+            raise ValueError("Q5 methods did not use one seed")
+        repetitions = tuple(sorted({record.repetition for record in records}))
+        if repetitions != tuple(range(len(repetitions))):
+            raise ValueError("Q5 repetition IDs must be contiguous from zero")
+        for repetition in repetitions:
+            group = tuple(record for record in records if record.repetition == repetition)
+            if len(group) != len(Q5_STRATEGIES) or {record.strategy for record in group} != set(
+                Q5_STRATEGIES
+            ):
+                raise ValueError("every Q5 repetition must contain each configured strategy once")
+        if len(records) != len(repetitions) * len(Q5_STRATEGIES):
+            raise ValueError("Q5 strategy/repetition identities must be unique")
         object.__setattr__(self, "records", records)
         object.__setattr__(
             self,
@@ -346,8 +374,7 @@ class Q5ExperimentResult:
     @property
     def failed_record_count(self) -> int:
         return sum(
-            record.execution_status is not Q5ExecutionStatus.COMPLETE
-            for record in self.records
+            record.execution_status is not Q5ExecutionStatus.COMPLETE for record in self.records
         )
 
     @property
@@ -371,13 +398,44 @@ class Q5ExperimentResult:
         return failures
 
     def summary_dict(self) -> dict[str, object]:
-        by_strategy = {record.strategy: record for record in self.records}
-        exact = by_strategy["exact"]
+        by_strategy = {
+            strategy: tuple(record for record in self.records if record.strategy == strategy)
+            for strategy in Q5_STRATEGIES
+        }
+        successful = {
+            strategy: tuple(
+                record
+                for record in records
+                if record.execution_status is Q5ExecutionStatus.COMPLETE
+            )
+            for strategy, records in by_strategy.items()
+        }
+        runtime_summaries = {
+            strategy: (
+                None
+                if not records
+                else summarize_distribution(tuple(record.elapsed_seconds for record in records))
+            )
+            for strategy, records in successful.items()
+        }
+        runtime_medians = {
+            strategy: None if summary is None else summary.median
+            for strategy, summary in runtime_summaries.items()
+        }
+        runtime_summary_payloads = {
+            strategy: None if summary is None else summary.to_dict()
+            for strategy, summary in runtime_summaries.items()
+        }
+        exact_runtime = runtime_summaries["exact"]
         overhead: dict[str, float | None] = {}
         for strategy in Q5_STRATEGIES[:-1]:
-            baseline_seconds = by_strategy[strategy].elapsed_seconds
+            baseline_runtime = runtime_summaries[strategy]
             overhead[strategy] = (
-                None if baseline_seconds == 0.0 else exact.elapsed_seconds / baseline_seconds
+                None
+                if exact_runtime is None
+                or baseline_runtime is None
+                or baseline_runtime.median == 0.0
+                else exact_runtime.median / baseline_runtime.median
             )
         execution_statuses = Counter(record.execution_status.value for record in self.records)
         solver_statuses = Counter(
@@ -390,6 +448,14 @@ class Q5ExperimentResult:
             "schema_version": Q5_ARTIFACT_SCHEMA_VERSION,
             "benchmark_claim": False,
             "measurement_count": len(self.records),
+            "repetition_count": len(self.records) // len(Q5_STRATEGIES),
+            "recorded_repetitions": sorted({record.repetition for record in self.records}),
+            "method_order_by_repetition": {
+                str(repetition): [
+                    record.strategy for record in self.records if record.repetition == repetition
+                ]
+                for repetition in sorted({record.repetition for record in self.records})
+            },
             "strategies": list(Q5_STRATEGIES),
             "paired_input_verified": True,
             "comparison_fingerprint": self.records[0].comparison_fingerprint,
@@ -403,33 +469,97 @@ class Q5ExperimentResult:
                 record.functional_success is True for record in self.records
             ),
             "fallback_count": sum(record.fallback_count for record in self.records),
-            "support_expansion_count": exact.support_expansion_count,
-            "empty_optimal_batch_count": exact.empty_optimal_batch_count,
+            "support_expansion_count": sum(
+                record.support_expansion_count or 0 for record in by_strategy["exact"]
+            ),
+            "empty_optimal_batch_count": sum(
+                record.empty_optimal_batch_count or 0 for record in by_strategy["exact"]
+            ),
             "diagnostic_exact_runtime_ratio": overhead,
+            "median_exact_runtime_ratio": overhead,
+            "runtime_aggregation": {
+                "included_execution_status": Q5ExecutionStatus.COMPLETE.value,
+                "failed_timeout_and_incomplete_rows_excluded": True,
+                "quartile_policy": "linear_interpolation_type7",
+            },
             "timing_interpretation": (
                 "single ordered smoke; ratios are diagnostic and not a publication benchmark"
+                if len(self.records) == len(Q5_STRATEGIES)
+                else "warm repeated CUDA timing sample; not a publication benchmark"
             ),
             "methods": {
-                record.strategy: {
-                    "execution_status": record.execution_status.value,
-                    "solver_status": (
-                        None if record.solver_status is None else record.solver_status.value
+                strategy: {
+                    "execution_status": (
+                        records[0].execution_status.value
+                        if len({record.execution_status for record in records}) == 1
+                        else None
                     ),
-                    "syntactic_valid": record.syntactic_valid,
-                    "functional_success": record.functional_success,
-                    "configured_diffusion_steps": record.configured_diffusion_steps,
-                    "model_forward_count": record.model_forward_count,
-                    "commit_batch_sizes": list(record.commit_batch_sizes),
-                    "average_commit_batch_size": record.average_commit_batch_size,
-                    "fallback_count": record.fallback_count,
-                    "support_expansion_count": record.support_expansion_count,
-                    "empty_optimal_batch_count": record.empty_optimal_batch_count,
-                    "elapsed_seconds": record.elapsed_seconds,
-                    "process_high_water_rss_bytes": record.process_high_water_rss_bytes,
-                    "cuda_peak_allocated_bytes": record.cuda_peak_allocated_bytes,
-                    "cuda_peak_reserved_bytes": record.cuda_peak_reserved_bytes,
+                    "execution_status_counts": dict(
+                        sorted(Counter(record.execution_status.value for record in records).items())
+                    ),
+                    "solver_status": (
+                        None
+                        if strategy != "exact"
+                        or len({record.solver_status for record in records}) != 1
+                        else records[0].solver_status.value  # type: ignore[union-attr]
+                    ),
+                    "syntactic_valid": all(record.syntactic_valid is True for record in records),
+                    "functional_success": all(
+                        record.functional_success is True for record in records
+                    ),
+                    "configured_diffusion_steps": records[0].configured_diffusion_steps,
+                    "model_forward_count": sum(record.model_forward_count for record in records),
+                    "commit_batch_sizes": [
+                        batch_size for record in records for batch_size in record.commit_batch_sizes
+                    ],
+                    "average_commit_batch_size": (
+                        None
+                        if not (
+                            batches := tuple(
+                                batch_size
+                                for record in records
+                                for batch_size in record.commit_batch_sizes
+                            )
+                        )
+                        else fsum(batches) / len(batches)
+                    ),
+                    "fallback_count": sum(record.fallback_count for record in records),
+                    "support_expansion_count": (
+                        sum(record.support_expansion_count or 0 for record in records)
+                        if strategy == "exact"
+                        else None
+                    ),
+                    "empty_optimal_batch_count": (
+                        sum(record.empty_optimal_batch_count or 0 for record in records)
+                        if strategy == "exact"
+                        else None
+                    ),
+                    "successful_runtime_count": len(successful[strategy]),
+                    "excluded_runtime_count": len(records) - len(successful[strategy]),
+                    "elapsed_seconds": runtime_medians[strategy],
+                    "runtime_seconds": runtime_summary_payloads[strategy],
+                    "process_high_water_rss_bytes": max(
+                        record.process_high_water_rss_bytes for record in records
+                    ),
+                    "process_sampled_peak_rss_bytes": (
+                        None
+                        if not (
+                            rss_peaks := tuple(
+                                record.process_sampled_peak_rss_bytes
+                                for record in records
+                                if record.process_sampled_peak_rss_bytes is not None
+                            )
+                        )
+                        else summarize_distribution(rss_peaks).to_dict()
+                    ),
+                    "cuda_peak_allocated_bytes": summarize_distribution(
+                        tuple(record.cuda_peak_allocated_bytes for record in records)
+                    ).to_dict(),
+                    "cuda_peak_reserved_bytes": summarize_distribution(
+                        tuple(record.cuda_peak_reserved_bytes for record in records)
+                    ).to_dict(),
                 }
-                for record in self.records
+                for strategy, records in by_strategy.items()
             },
             "run_metadata": dict(self.run_metadata),
         }

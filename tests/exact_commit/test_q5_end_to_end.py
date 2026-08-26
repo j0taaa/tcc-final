@@ -20,6 +20,7 @@ from mwpc_research.q5_end_to_end import (
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = REPOSITORY_ROOT / "configs/experiments/q5_end_to_end_v1.toml"
+TIMING_CONFIG_PATH = REPOSITORY_ROOT / "configs/experiments/q5_timing_v1.toml"
 
 
 def _record(
@@ -27,6 +28,7 @@ def _record(
     *,
     fingerprint: str = "paired-input",
     elapsed_seconds: float = 1.0,
+    repetition: int = 0,
 ) -> Q5MethodRecord:
     exact = strategy == "exact"
     return Q5MethodRecord(
@@ -34,7 +36,7 @@ def _record(
         execution_status=Q5ExecutionStatus.COMPLETE,
         comparison_fingerprint=fingerprint,
         seed=904,
-        repetition=0,
+        repetition=repetition,
         generated_token_ids=(15, 126348, 126081, 126081),
         decoded_with_specials="0<|eot_id|><|endoftext|><|endoftext|>",
         syntactic_valid=True,
@@ -111,9 +113,22 @@ def test_q5_config_freezes_live_task_model_prompt_schedule_and_seed() -> None:
     assert config.parameters["steps"] == 1
     assert config.parameters["exact_backend"] == "rust"
     assert config.parameters["warmup_runs"] == 0
-    assert hashlib.sha256(source_path.read_bytes()).hexdigest() == (
-        config.parameters["live_profile_source_sha256"]
+    assert (
+        hashlib.sha256(source_path.read_bytes()).hexdigest()
+        == (config.parameters["live_profile_source_sha256"])
     )
+
+
+def test_timing_config_adds_warmup_balanced_order_and_recorded_repetitions() -> None:
+    config = load_experiment_config(TIMING_CONFIG_PATH)
+
+    assert config.publication_mode is False
+    assert config.repetitions == 8
+    assert config.synchronize_cuda is True
+    assert config.parameters["warmup_runs"] == 1
+    assert config.parameters["method_order"] == "balanced_cyclic_by_repetition"
+    assert config.parameters["rss_sample_interval_seconds"] == 0.001
+    assert config.parameters["quartile_policy"] == "linear_interpolation_type7"
 
 
 def test_all_four_methods_must_share_one_comparison_fingerprint() -> None:
@@ -154,12 +169,10 @@ def test_summary_computes_batch_mean_and_diagnostic_overhead_without_dividing_by
 
 def test_upstream_eos_suffix_fill_is_not_counted_as_a_selected_batch() -> None:
     assert (
-        upstream_selection_batch_size(physical_update_count=3, regular_cover_selected_count=0)
-        == 1
+        upstream_selection_batch_size(physical_update_count=3, regular_cover_selected_count=0) == 1
     )
     assert (
-        upstream_selection_batch_size(physical_update_count=3, regular_cover_selected_count=3)
-        == 3
+        upstream_selection_batch_size(physical_update_count=3, regular_cover_selected_count=3) == 3
     )
     with pytest.raises(ValueError, match="cannot exceed"):
         upstream_selection_batch_size(physical_update_count=2, regular_cover_selected_count=3)
@@ -203,6 +216,49 @@ def test_timeout_remains_distinct_from_infeasible_on_support() -> None:
     assert summary["execution_status_counts"]["timeout"] == 1
     assert summary["exact_solver_status_counts"] == {"timeout": 1}
     assert "infeasible_on_support" not in summary["exact_solver_status_counts"]
+    assert summary["methods"]["exact"]["successful_runtime_count"] == 0
+    assert summary["methods"]["exact"]["runtime_seconds"] is None
+    assert summary["median_exact_runtime_ratio"] == {
+        "unconstrained": None,
+        "serial": None,
+        "epic": None,
+    }
+
+
+def test_repeated_summary_uses_raw_complete_rows_and_preserves_cyclic_order() -> None:
+    times = {
+        "unconstrained": (1.0, 2.0, 3.0, 4.0),
+        "serial": (2.0, 4.0, 6.0, 8.0),
+        "epic": (1.0, 1.0, 1.0, 1.0),
+        "exact": (4.0, 8.0, 12.0, 16.0),
+    }
+    records = tuple(
+        _record(
+            strategy,
+            repetition=repetition,
+            elapsed_seconds=times[strategy][repetition],
+        )
+        for repetition in range(4)
+        for strategy in (Q5_STRATEGIES[repetition:] + Q5_STRATEGIES[:repetition])
+    )
+
+    summary = Q5ExperimentResult(records, {}).summary_dict()
+
+    assert summary["repetition_count"] == 4
+    assert summary["measurement_count"] == 16
+    assert summary["method_order_by_repetition"]["1"] == [
+        "serial",
+        "epic",
+        "exact",
+        "unconstrained",
+    ]
+    assert summary["methods"]["exact"]["runtime_seconds"]["median"] == 10.0
+    assert summary["methods"]["exact"]["runtime_seconds"]["iqr"] == 6.0
+    assert summary["median_exact_runtime_ratio"] == {
+        "unconstrained": 4.0,
+        "serial": 2.0,
+        "epic": 10.0,
+    }
 
 
 def test_raw_rows_save_generated_outputs_checkers_and_exact_certificate(tmp_path: Path) -> None:

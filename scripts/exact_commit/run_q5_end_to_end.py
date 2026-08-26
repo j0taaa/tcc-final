@@ -14,11 +14,12 @@ import shutil
 import subprocess
 import sys
 import tomllib
-from collections.abc import Callable, Mapping, Sequence
+from collections.abc import Callable, Iterator, Mapping, Sequence
+from contextlib import contextmanager, nullcontext
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
-from time import monotonic, perf_counter
+from time import monotonic
 from typing import Any
 
 from mwpc_exact import (
@@ -49,6 +50,11 @@ from mwpc_research.q5_end_to_end import (
     Q5MethodRecord,
     upstream_selection_batch_size,
     write_q5_artifacts,
+)
+from mwpc_research.robust_timing import (
+    QUARTILE_POLICY,
+    cyclic_method_order,
+    measure_call,
 )
 
 sys.dont_write_bytecode = True
@@ -163,6 +169,8 @@ class Q5Parameters:
     warmup_runs: int
     method_order: str
     raw_output_root: str
+    rss_sample_interval_seconds: float | None
+    quartile_policy: str | None
 
 
 def _configuration_parameters(parameters: Mapping[str, object]) -> Q5Parameters:
@@ -197,8 +205,11 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> Q5Parameters:
         "method_order",
         "raw_output_root",
     }
-    if set(parameters) != required:
-        raise ValueError("Q5 parameters must contain exactly: " + ", ".join(sorted(required)))
+    timing_fields = {"rss_sample_interval_seconds", "quartile_policy"}
+    if set(parameters) not in (required, required | timing_fields):
+        raise ValueError(
+            "Q5 parameters must contain the base fields and either both or neither timing field"
+        )
     strategies = _string_sequence(parameters["strategies"], "parameters.strategies")
     if strategies != Q5_STRATEGIES:
         raise ValueError(f"Q5 strategies must be {Q5_STRATEGIES!r}")
@@ -225,16 +236,12 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> Q5Parameters:
         generation_length=_integer(
             parameters["generation_length"], "parameters.generation_length", minimum=1
         ),
-        block_length=_integer(
-            parameters["block_length"], "parameters.block_length", minimum=1
-        ),
+        block_length=_integer(parameters["block_length"], "parameters.block_length", minimum=1),
         steps=_integer(parameters["steps"], "parameters.steps", minimum=1),
         temperature=_real(parameters["temperature"], "parameters.temperature"),
         cfg_scale=_real(parameters["cfg_scale"], "parameters.cfg_scale"),
         remasking=_string(parameters["remasking"], "parameters.remasking"),
-        max_resamples=_integer(
-            parameters["max_resamples"], "parameters.max_resamples", minimum=1
-        ),
+        max_resamples=_integer(parameters["max_resamples"], "parameters.max_resamples", minimum=1),
         weight_mode=ProposalWeightMode(
             _string(parameters["weight_mode"], "parameters.weight_mode")
         ),
@@ -275,8 +282,19 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> Q5Parameters:
         ),
         warmup_runs=_integer(parameters["warmup_runs"], "parameters.warmup_runs"),
         method_order=_string(parameters["method_order"], "parameters.method_order"),
-        raw_output_root=_relative_path(
-            parameters["raw_output_root"], "parameters.raw_output_root"
+        raw_output_root=_relative_path(parameters["raw_output_root"], "parameters.raw_output_root"),
+        rss_sample_interval_seconds=(
+            None
+            if "rss_sample_interval_seconds" not in parameters
+            else _real(
+                parameters["rss_sample_interval_seconds"],
+                "parameters.rss_sample_interval_seconds",
+            )
+        ),
+        quartile_policy=(
+            None
+            if "quartile_policy" not in parameters
+            else _string(parameters["quartile_policy"], "parameters.quartile_policy")
         ),
     )
 
@@ -376,7 +394,8 @@ def _restore_environment(name: str, old_value: str | None) -> None:
         os.environ[name] = old_value
 
 
-def _run_upstream(
+@contextmanager
+def _prepare_upstream_call(
     strategy: str,
     *,
     model: Any,
@@ -386,7 +405,9 @@ def _run_upstream(
     lex_map: Any,
     preprocessed: Any,
     parameters: Q5Parameters,
-) -> dict[str, object]:
+) -> Iterator[Callable[[], Mapping[str, object]]]:
+    """Prepare upstream environment and observers outside the timed region."""
+
     from constrained_diffusion.eval.dllm.models.llada import generate_constrained
 
     constrain = strategy != "unconstrained"
@@ -427,8 +448,10 @@ def _run_upstream(
     observed_regular_batches = 0
     generation_length = parameters.generation_length
     previous = [PINNED_LLADA_PROFILE.mask_token_id] * generation_length
-    final_event: tuple[Any, list[Any], bool] | None = None
-    try:
+
+    def run() -> Mapping[str, object]:
+        nonlocal event_count, observed_regular_batches, previous
+        final_event: tuple[Any, list[Any], bool] | None = None
         for event in generate_constrained.generate(
             model,
             prompt,
@@ -469,52 +492,55 @@ def _run_upstream(
                 )
                 observed_regular_batches += len(new_regular_batches)
             previous = current
+        _require(final_event is not None, f"{strategy} emitted no generation event")
+        output, resamples, complete = final_event
+        generated_ids = tuple(int(value) for value in output[0, -generation_length:].tolist())
+        regular_commits = sum(regular_cover_batch_sizes)
+        return {
+            "complete": bool(complete),
+            "generated_token_ids": generated_ids,
+            "decoded_with_specials": tokenizer.decode(
+                list(generated_ids),
+                skip_special_tokens=False,
+                clean_up_tokenization_spaces=False,
+            ),
+            "commit_batch_sizes": tuple(commit_batch_sizes),
+            "physical_update_batch_sizes": tuple(physical_update_batch_sizes),
+            "fallback_count": (
+                sum(commit_batch_sizes) - regular_commits if strategy == "epic" else 0
+            ),
+            "diagnostics": {
+                "implementation": (
+                    "upstream_llada_unconstrained_loop"
+                    if strategy == "unconstrained"
+                    else "upstream_llada_serial_constrained_loop"
+                    if strategy == "serial"
+                    else "upstream_llada_regular_cover_enabled_loop"
+                ),
+                "constraint_enabled": constrain,
+                "regular_cover_batch_enabled": regular_cover,
+                "regular_cover_selector_calls": selector_calls,
+                "regular_cover_batch_sizes": regular_cover_batch_sizes,
+                "regular_cover_commit_count": regular_commits,
+                "serial_path_selection_count": sum(commit_batch_sizes) - regular_commits,
+                "physical_update_count": sum(physical_update_batch_sizes),
+                "event_count": event_count,
+                "resample_count": len(resamples),
+                "upstream_complete": bool(complete),
+                "baseline_eos_suffix_semantics": "repeat_detected_termination_token",
+            },
+        }
+
+    try:
+        yield run
     finally:
         generate_constrained.select_batch_with_regular_cover = original_selector
         generate_constrained._try_regular_cover_batch_commit_llada = original_try_batch
         for name, old_value in old_environment.items():
             _restore_environment(name, old_value)
-    _require(final_event is not None, f"{strategy} emitted no generation event")
-    output, resamples, complete = final_event
-    generated_ids = tuple(int(value) for value in output[0, -generation_length:].tolist())
-    regular_commits = sum(regular_cover_batch_sizes)
-    return {
-        "complete": bool(complete),
-        "generated_token_ids": generated_ids,
-        "decoded_with_specials": tokenizer.decode(
-            list(generated_ids),
-            skip_special_tokens=False,
-            clean_up_tokenization_spaces=False,
-        ),
-        "commit_batch_sizes": tuple(commit_batch_sizes),
-        "physical_update_batch_sizes": tuple(physical_update_batch_sizes),
-        "fallback_count": (
-            sum(commit_batch_sizes) - regular_commits if strategy == "epic" else 0
-        ),
-        "diagnostics": {
-            "implementation": (
-                "upstream_llada_unconstrained_loop"
-                if strategy == "unconstrained"
-                else "upstream_llada_serial_constrained_loop"
-                if strategy == "serial"
-                else "upstream_llada_regular_cover_enabled_loop"
-            ),
-            "constraint_enabled": constrain,
-            "regular_cover_batch_enabled": regular_cover,
-            "regular_cover_selector_calls": selector_calls,
-            "regular_cover_batch_sizes": regular_cover_batch_sizes,
-            "regular_cover_commit_count": regular_commits,
-            "serial_path_selection_count": sum(commit_batch_sizes) - regular_commits,
-            "physical_update_count": sum(physical_update_batch_sizes),
-            "event_count": event_count,
-            "resample_count": len(resamples),
-            "upstream_complete": bool(complete),
-            "baseline_eos_suffix_semantics": "repeat_detected_termination_token",
-        },
-    }
 
 
-def _run_exact(
+def _prepare_exact_call(
     *,
     torch: Any,
     model: Any,
@@ -524,19 +550,15 @@ def _run_exact(
     grammar: CnfGrammar,
     parameters: Q5Parameters,
     solver_timeout_seconds: float,
-) -> dict[str, object]:
+) -> Callable[[], Mapping[str, object]]:
+    """Allocate exact per-call state outside the measured region."""
+
     generation_length = parameters.generation_length
     token_row = torch.tensor(
         [list(prompt_ids) + [PINNED_LLADA_PROFILE.mask_token_id] * generation_length],
         device="cuda:0",
         dtype=torch.long,
     )
-    with torch.inference_mode():
-        logits = model(token_row).logits
-    _require(bool(torch.isfinite(logits).all().item()), "live model emitted non-finite logits")
-    predictions = logits.argmax(dim=-1)
-    probabilities = torch.softmax(logits.to(torch.float64), dim=-1)
-    confidence = probabilities.gather(-1, predictions.unsqueeze(-1)).squeeze(-1)
     tracking: list[object] = [
         tokenizer.decode(
             [int(token_id)],
@@ -557,98 +579,108 @@ def _run_exact(
         failure_fallback_strategy=None,
     )
     profiler = ComponentProfiler(enabled=True)
-    outcome = run_llada_exact_step(
-        grammar,
-        token_ids=token_row[0],
-        logits=logits[0],
-        predicted_token_ids=predictions[0],
-        confidence_values=confidence[0],
-        decoded_tracking=tracking,
-        decode_token=lambda token_id: tokenizer.decode(
-            [token_id],
-            skip_special_tokens=False,
-            clean_up_tokenization_spaces=False,
-        ),
-        eos_marker="<EOS>",
-        prompt_length=len(prompt_ids),
-        generation_length=generation_length,
-        active_block_end=len(prompt_ids) + generation_length,
-        k_s=parameters.schedule_budget,
-        tokenizer_adapter=tokenizer_adapter,
-        config=strategy_config,
-        profile=PINNED_LLADA_PROFILE,
-        profiler=profiler,
-    )
-    result = outcome.solver_result
-    adaptive = result.diagnostics.get("adaptive_support")
-    attempted_k = (
-        tuple(int(value) for value in adaptive.get("attempted_k", ()))
-        if isinstance(adaptive, Mapping)
-        else ()
-    )
-    certificate_validation = result.diagnostics.get("certificate_validation")
-    certificate_valid = (
-        isinstance(certificate_validation, Mapping)
-        and certificate_validation.get("is_valid") is True
-    )
-    certificate = (
-        {
-            "witness_token_ids": list(result.witness_token_ids),
-            "witness_terminal_labels": list(result.witness_terminal_labels),
-            "witness_graph_edge_ids": list(result.witness_graph_edge_ids),
-            "selected_proposal_ids": list(result.selected_proposal_ids),
-            "objective_value": result.objective_value,
-            "witness_eos_position": result.witness_eos_position,
-            "witness_content_endpoint_slot": result.witness_content_endpoint_slot,
-        }
-        if result.status is SolveStatus.OPTIMAL
-        else None
-    )
-    profile_event = profiler.snapshot()
-    generated_ids = tuple(int(value) for value in token_row[0, -generation_length:].tolist())
-    fallback_class = outcome.decoder_step.diagnostics.get("fallback_class")
-    return {
-        "complete": outcome.complete,
-        "generated_token_ids": generated_ids,
-        "decoded_with_specials": tokenizer.decode(
-            list(generated_ids),
-            skip_special_tokens=False,
-            clean_up_tokenization_spaces=False,
-        ),
-        "commit_batch_sizes": (
-            (len(outcome.decoder_step.commits),) if outcome.decoder_step.commits else ()
-        ),
-        "physical_update_batch_sizes": (
-            (len(outcome.model_updates),) if outcome.model_updates else ()
-        ),
-        "fallback_count": int(fallback_class != "none"),
-        "support_expansion_count": max(0, len(attempted_k) - 1),
-        "empty_optimal_batch_count": int(
-            result.status is SolveStatus.OPTIMAL and not result.selected_proposal_ids
-        ),
-        "solver_status": result.status,
-        "exactness_scope": {
-            "claim": "exact_on_support",
-            **result.exactness_scope.to_dict(),
-        },
-        "objective_value": result.objective_value,
-        "certificate_valid": certificate_valid,
-        "certificate": certificate,
-        "diagnostics": {
-            "implementation": "parent_llada_exact_step_with_rust_backend_v1",
-            "solver_backend": parameters.exact_backend.value,
-            "support_attempted_k": list(attempted_k),
-            "commit_source": outcome.decoder_step.commit_source.value,
-            "commit_guarantee": outcome.decoder_step.commit_guarantee.value,
-            "fallback_class": fallback_class,
-            "eos_pad_canonicalization_count": sum(
-                update.reason.value == "eos_pad_canonicalization"
-                for update in outcome.model_updates
+
+    def run() -> Mapping[str, object]:
+        with torch.inference_mode():
+            logits = model(token_row).logits
+        _require(bool(torch.isfinite(logits).all().item()), "live model emitted non-finite logits")
+        predictions = logits.argmax(dim=-1)
+        probabilities = torch.softmax(logits.to(torch.float64), dim=-1)
+        confidence = probabilities.gather(-1, predictions.unsqueeze(-1)).squeeze(-1)
+        outcome = run_llada_exact_step(
+            grammar,
+            token_ids=token_row[0],
+            logits=logits[0],
+            predicted_token_ids=predictions[0],
+            confidence_values=confidence[0],
+            decoded_tracking=tracking,
+            decode_token=lambda token_id: tokenizer.decode(
+                [token_id],
+                skip_special_tokens=False,
+                clean_up_tokenization_spaces=False,
             ),
-            "component_profile": None if profile_event is None else profile_event.to_dict(),
-            "outcome": outcome.to_dict(),
-        },
-    }
+            eos_marker="<EOS>",
+            prompt_length=len(prompt_ids),
+            generation_length=generation_length,
+            active_block_end=len(prompt_ids) + generation_length,
+            k_s=parameters.schedule_budget,
+            tokenizer_adapter=tokenizer_adapter,
+            config=strategy_config,
+            profile=PINNED_LLADA_PROFILE,
+            profiler=profiler,
+        )
+        result = outcome.solver_result
+        adaptive = result.diagnostics.get("adaptive_support")
+        attempted_k = (
+            tuple(int(value) for value in adaptive.get("attempted_k", ()))
+            if isinstance(adaptive, Mapping)
+            else ()
+        )
+        certificate_validation = result.diagnostics.get("certificate_validation")
+        certificate_valid = (
+            isinstance(certificate_validation, Mapping)
+            and certificate_validation.get("is_valid") is True
+        )
+        certificate = (
+            {
+                "witness_token_ids": list(result.witness_token_ids),
+                "witness_terminal_labels": list(result.witness_terminal_labels),
+                "witness_graph_edge_ids": list(result.witness_graph_edge_ids),
+                "selected_proposal_ids": list(result.selected_proposal_ids),
+                "objective_value": result.objective_value,
+                "witness_eos_position": result.witness_eos_position,
+                "witness_content_endpoint_slot": result.witness_content_endpoint_slot,
+            }
+            if result.status is SolveStatus.OPTIMAL
+            else None
+        )
+        profile_event = profiler.snapshot()
+        generated_ids = tuple(int(value) for value in token_row[0, -generation_length:].tolist())
+        fallback_class = outcome.decoder_step.diagnostics.get("fallback_class")
+        return {
+            "complete": outcome.complete,
+            "generated_token_ids": generated_ids,
+            "decoded_with_specials": tokenizer.decode(
+                list(generated_ids),
+                skip_special_tokens=False,
+                clean_up_tokenization_spaces=False,
+            ),
+            "commit_batch_sizes": (
+                (len(outcome.decoder_step.commits),) if outcome.decoder_step.commits else ()
+            ),
+            "physical_update_batch_sizes": (
+                (len(outcome.model_updates),) if outcome.model_updates else ()
+            ),
+            "fallback_count": int(fallback_class != "none"),
+            "support_expansion_count": max(0, len(attempted_k) - 1),
+            "empty_optimal_batch_count": int(
+                result.status is SolveStatus.OPTIMAL and not result.selected_proposal_ids
+            ),
+            "solver_status": result.status,
+            "exactness_scope": {
+                "claim": "exact_on_support",
+                **result.exactness_scope.to_dict(),
+            },
+            "objective_value": result.objective_value,
+            "certificate_valid": certificate_valid,
+            "certificate": certificate,
+            "diagnostics": {
+                "implementation": "parent_llada_exact_step_with_rust_backend_v1",
+                "solver_backend": parameters.exact_backend.value,
+                "support_attempted_k": list(attempted_k),
+                "commit_source": outcome.decoder_step.commit_source.value,
+                "commit_guarantee": outcome.decoder_step.commit_guarantee.value,
+                "fallback_class": fallback_class,
+                "eos_pad_canonicalization_count": sum(
+                    update.reason.value == "eos_pad_canonicalization"
+                    for update in outcome.model_updates
+                ),
+                "component_profile": (None if profile_event is None else profile_event.to_dict()),
+                "outcome": outcome.to_dict(),
+            },
+        }
+
+    return run
 
 
 @dataclass(frozen=True, slots=True)
@@ -660,6 +692,8 @@ class _MeasuredCall:
     process_rss_before_bytes: int
     process_rss_after_bytes: int
     process_high_water_rss_bytes: int
+    process_sampled_peak_rss_bytes: int
+    process_rss_sample_count: int
     cuda_peak_allocated_bytes: int
     cuda_peak_reserved_bytes: int
 
@@ -675,6 +709,7 @@ def _measure_call(
     model: Any,
     process: Any,
     remaining_seconds: float,
+    rss_sample_interval_seconds: float,
     run: Callable[[], Mapping[str, object]],
 ) -> _MeasuredCall:
     forward_count = 0
@@ -684,40 +719,33 @@ def _measure_call(
         forward_count += 1
 
     hook = model.register_forward_pre_hook(count_forward)
-    torch.cuda.synchronize()
-    torch.cuda.reset_peak_memory_stats()
-    rss_before = int(process.memory_info().rss)
-    start = perf_counter()
-    payload: Mapping[str, object] | None = None
-    error: Exception | None = None
     try:
-        if remaining_seconds <= 0.0:
-            raise TimeoutError("Q5 run deadline expired before this method started")
-        payload = run()
-        torch.cuda.synchronize()
-        elapsed = perf_counter() - start
-        if elapsed > remaining_seconds:
-            payload = None
-            raise TimeoutError("Q5 method completed after the configured run deadline")
-    except Exception as caught:
-        error = caught
-        try:
-            torch.cuda.synchronize()
-        except Exception:
-            pass
-        elapsed = perf_counter() - start
+        measured = measure_call(
+            run,
+            synchronize_accelerator=torch.cuda.synchronize,
+            reset_accelerator_peak=torch.cuda.reset_peak_memory_stats,
+            read_accelerator_peak=lambda: (
+                int(torch.cuda.max_memory_allocated()),
+                int(torch.cuda.max_memory_reserved()),
+            ),
+            read_process_rss=lambda: int(process.memory_info().rss),
+            maximum_elapsed_seconds=max(0.0, remaining_seconds),
+            rss_sample_interval_seconds=rss_sample_interval_seconds,
+        )
     finally:
         hook.remove()
     return _MeasuredCall(
-        payload=payload,
-        error=error,
-        elapsed_seconds=elapsed,
+        payload=measured.value,
+        error=measured.error,
+        elapsed_seconds=measured.elapsed_seconds,
         model_forward_count=forward_count,
-        process_rss_before_bytes=rss_before,
-        process_rss_after_bytes=int(process.memory_info().rss),
+        process_rss_before_bytes=measured.process_rss_before_bytes,
+        process_rss_after_bytes=measured.process_rss_after_bytes,
         process_high_water_rss_bytes=_high_water_rss_bytes(),
-        cuda_peak_allocated_bytes=int(torch.cuda.max_memory_allocated()),
-        cuda_peak_reserved_bytes=int(torch.cuda.max_memory_reserved()),
+        process_sampled_peak_rss_bytes=measured.process_sampled_peak_rss_bytes,
+        process_rss_sample_count=measured.process_rss_sample_count,
+        cuda_peak_allocated_bytes=measured.accelerator_peak_allocated_bytes,
+        cuda_peak_reserved_bytes=measured.accelerator_peak_reserved_bytes,
     )
 
 
@@ -727,6 +755,7 @@ def _record_from_measurement(
     measured: _MeasuredCall,
     comparison_fingerprint: str,
     seed: int,
+    repetition: int,
     parameters: Q5Parameters,
     tokenizer_adapter: Any,
     grammar: CnfGrammar,
@@ -746,7 +775,7 @@ def _record_from_measurement(
             execution_status=execution_status,
             comparison_fingerprint=comparison_fingerprint,
             seed=seed,
-            repetition=0,
+            repetition=repetition,
             generated_token_ids=(),
             decoded_with_specials="",
             syntactic_valid=None,
@@ -777,6 +806,8 @@ def _record_from_measurement(
             process_high_water_rss_bytes=measured.process_high_water_rss_bytes,
             cuda_peak_allocated_bytes=measured.cuda_peak_allocated_bytes,
             cuda_peak_reserved_bytes=measured.cuda_peak_reserved_bytes,
+            process_sampled_peak_rss_bytes=measured.process_sampled_peak_rss_bytes,
+            process_rss_sample_count=measured.process_rss_sample_count,
             diagnostics={"error_type": type(error).__name__, "error_message": str(error)},
         )
 
@@ -790,12 +821,10 @@ def _record_from_measurement(
     complete = bool(payload["complete"])
     return Q5MethodRecord(
         strategy=strategy,
-        execution_status=(
-            Q5ExecutionStatus.COMPLETE if complete else Q5ExecutionStatus.INCOMPLETE
-        ),
+        execution_status=(Q5ExecutionStatus.COMPLETE if complete else Q5ExecutionStatus.INCOMPLETE),
         comparison_fingerprint=comparison_fingerprint,
         seed=seed,
-        repetition=0,
+        repetition=repetition,
         generated_token_ids=generated_ids,
         decoded_with_specials=str(payload["decoded_with_specials"]),
         syntactic_valid=syntactic_valid,
@@ -808,12 +837,8 @@ def _record_from_measurement(
             int(value) for value in payload["physical_update_batch_sizes"]
         ),
         fallback_count=int(payload["fallback_count"]),
-        support_expansion_count=(
-            int(payload["support_expansion_count"]) if is_exact else None
-        ),
-        empty_optimal_batch_count=(
-            int(payload["empty_optimal_batch_count"]) if is_exact else None
-        ),
+        support_expansion_count=(int(payload["support_expansion_count"]) if is_exact else None),
+        empty_optimal_batch_count=(int(payload["empty_optimal_batch_count"]) if is_exact else None),
         solver_backend=parameters.exact_backend.value if is_exact else None,
         solver_status=payload["solver_status"] if is_exact else None,  # type: ignore[arg-type]
         exactness_scope=payload["exactness_scope"] if is_exact else None,  # type: ignore[arg-type]
@@ -830,6 +855,8 @@ def _record_from_measurement(
         process_high_water_rss_bytes=measured.process_high_water_rss_bytes,
         cuda_peak_allocated_bytes=measured.cuda_peak_allocated_bytes,
         cuda_peak_reserved_bytes=measured.cuda_peak_reserved_bytes,
+        process_sampled_peak_rss_bytes=measured.process_sampled_peak_rss_bytes,
+        process_rss_sample_count=measured.process_rss_sample_count,
         diagnostics=payload["diagnostics"],  # type: ignore[arg-type]
     )
 
@@ -904,8 +931,7 @@ def _validate_config_against_profile(
         "Q5 proposal weight mode differs from the frozen live profile",
     )
     _require(
-        parameters.epic_regular_cover_min_batch
-        == source["epic"]["regular_cover_min_batch"]
+        parameters.epic_regular_cover_min_batch == source["epic"]["regular_cover_min_batch"]
         and parameters.epic_regular_cover_exact is source["epic"]["regular_cover_exact"],
         "Q5 EPIC settings differ from the frozen live profile",
     )
@@ -922,11 +948,32 @@ def _validate_config_against_profile(
         "Q5 v1 functional checker must remain frozen",
     )
     _require(config.local_files_only, "Q5 v1 must not fetch model files during execution")
-    _require(parameters.warmup_runs == 0, "Q5 v1 deliberately has no warmup; T1106 adds it")
-    _require(
-        parameters.method_order == "fixed_as_configured",
-        "Q5 v1 method order must be explicit",
-    )
+    if parameters.method_order == "fixed_as_configured":
+        _require(
+            config.repetitions == 1
+            and parameters.warmup_runs == 0
+            and parameters.rss_sample_interval_seconds is None
+            and parameters.quartile_policy is None,
+            "the original Q5 smoke requires one fixed-order repetition without warmup",
+        )
+    elif parameters.method_order == "balanced_cyclic_by_repetition":
+        _require(
+            config.repetitions >= len(Q5_STRATEGIES)
+            and config.repetitions % len(Q5_STRATEGIES) == 0,
+            "balanced Q5 timing requires a positive multiple of four repetitions",
+        )
+        _require(parameters.warmup_runs >= 1, "robust Q5 timing requires warmup")
+        _require(
+            parameters.rss_sample_interval_seconds is not None
+            and parameters.rss_sample_interval_seconds > 0.0,
+            "robust Q5 timing requires a positive RSS sample interval",
+        )
+        _require(
+            parameters.quartile_policy == QUARTILE_POLICY,
+            "robust Q5 timing requires the implemented quartile policy",
+        )
+    else:
+        raise RuntimeError("unsupported Q5 method-order policy")
 
 
 def main(argv: Sequence[str] | None = None) -> int:
@@ -945,8 +992,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         raise ValueError("Q5 driver requires an end_to_end configuration")
     if config.publication_mode:
         raise ValueError("Q5 v1 is a diagnostic smoke, not publication mode")
-    if config.seeds != (904,) or config.repetitions != 1:
-        raise ValueError("Q5 v1 requires exactly seed 904 and one repetition")
+    if config.seeds != (904,):
+        raise ValueError("Q5 requires exactly seed 904")
     if config.device != "cuda" or not config.synchronize_cuda or config.cuda_device != 0:
         raise ValueError("Q5 v1 requires synchronized CUDA device 0")
     parameters = _configuration_parameters(config.parameters)
@@ -1051,9 +1098,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     comparison_contract = {
         "task_ids": list(parameters.task_ids),
         "prompt_id": parameters.prompt_id,
-        "prompt_instruction_sha256": _sha256_bytes(
-            parameters.prompt_instruction.encode("utf-8")
-        ),
+        "prompt_instruction_sha256": _sha256_bytes(parameters.prompt_instruction.encode("utf-8")),
         "chat_template_text_sha256": _sha256_bytes(prompt_text.encode("utf-8")),
         "prompt_token_ids_sha256": _canonical_sha256(list(prompt_ids)),
         "prompt_token_count": len(prompt_ids),
@@ -1084,57 +1129,124 @@ def main(argv: Sequence[str] | None = None) -> int:
     comparison_fingerprint = _canonical_sha256(comparison_contract)
     process = psutil.Process()
     run_deadline = monotonic() + config.run_timeout_seconds
-    records: list[Q5MethodRecord] = []
-    for strategy in Q5_STRATEGIES:
-        torch.manual_seed(config.seeds[0])
-        torch.cuda.manual_seed_all(config.seeds[0])
-        remaining = run_deadline - monotonic()
+
+    def prepared_call(
+        strategy: str,
+        remaining_seconds: float,
+    ) -> Any:
         if strategy == "exact":
-            def call(exact_remaining: float = remaining) -> Mapping[str, object]:
-                return _run_exact(
-                    torch=torch,
-                    model=model,
-                    tokenizer=tokenizer,
-                    prompt_ids=prompt_ids,
-                    tokenizer_adapter=tokenizer_adapter,
-                    grammar=exact_grammar,
-                    parameters=parameters,
-                    solver_timeout_seconds=min(
-                        config.solver_timeout_seconds,
-                        max(0.0, exact_remaining),
-                    ),
-                )
-        else:
-            def call(baseline_strategy: str = strategy) -> Mapping[str, object]:
-                return _run_upstream(
-                    baseline_strategy,
-                    model=model,
-                    tokenizer=tokenizer,
-                    prompt=prompt,
-                    grammar=epic_grammar,
-                    lex_map=lex_map,
-                    preprocessed=preprocessed,
-                    parameters=parameters,
-                )
-        measured = _measure_call(
-            torch=torch,
-            model=model,
-            process=process,
-            remaining_seconds=remaining,
-            run=call,
-        )
-        records.append(
-            _record_from_measurement(
-                strategy,
-                measured=measured,
-                comparison_fingerprint=comparison_fingerprint,
-                seed=config.seeds[0],
-                parameters=parameters,
+            call = _prepare_exact_call(
+                torch=torch,
+                model=model,
+                tokenizer=tokenizer,
+                prompt_ids=prompt_ids,
                 tokenizer_adapter=tokenizer_adapter,
                 grammar=exact_grammar,
-                target=target,
+                parameters=parameters,
+                solver_timeout_seconds=min(
+                    config.solver_timeout_seconds,
+                    max(0.0, remaining_seconds),
+                ),
             )
+            return nullcontext(call)
+        return _prepare_upstream_call(
+            strategy,
+            model=model,
+            tokenizer=tokenizer,
+            prompt=prompt,
+            grammar=epic_grammar,
+            lex_map=lex_map,
+            preprocessed=preprocessed,
+            parameters=parameters,
         )
+
+    warmup_records: list[dict[str, object]] = []
+    for warmup_index in range(parameters.warmup_runs):
+        for strategy in Q5_STRATEGIES:
+            torch.manual_seed(config.seeds[0])
+            torch.cuda.manual_seed_all(config.seeds[0])
+            remaining = run_deadline - monotonic()
+            status = Q5ExecutionStatus.COMPLETE
+            detail: dict[str, object] = {}
+            try:
+                if remaining <= 0.0:
+                    raise TimeoutError("Q5 run deadline expired before warmup")
+                with prepared_call(strategy, remaining) as call:
+                    payload = call()
+                    torch.cuda.synchronize()
+                generated_ids = tuple(int(value) for value in payload["generated_token_ids"])
+                checker, syntactic_valid, functional_success = _check_generated_tokens(
+                    generated_ids,
+                    tokenizer_adapter=tokenizer_adapter,
+                    grammar=exact_grammar,
+                    target=target,
+                )
+                complete = bool(payload["complete"])
+                status = Q5ExecutionStatus.COMPLETE if complete else Q5ExecutionStatus.INCOMPLETE
+                detail = {
+                    "syntactic_valid": syntactic_valid,
+                    "functional_success": functional_success,
+                    "generated_token_ids_sha256": _canonical_sha256(list(generated_ids)),
+                    "checker_id": checker["checker_id"],
+                    "solver_status": (
+                        payload["solver_status"].value if strategy == "exact" else None
+                    ),
+                    "certificate_valid": (
+                        bool(payload["certificate_valid"]) if strategy == "exact" else None
+                    ),
+                }
+            except Exception as error:
+                status = (
+                    Q5ExecutionStatus.TIMEOUT
+                    if isinstance(error, TimeoutError)
+                    else Q5ExecutionStatus.ERROR
+                )
+                detail = {
+                    "error_type": type(error).__name__,
+                    "error_message": str(error),
+                }
+            warmup_records.append(
+                {
+                    "warmup_index": warmup_index,
+                    "strategy": strategy,
+                    "execution_status": status.value,
+                    **detail,
+                }
+            )
+
+    records: list[Q5MethodRecord] = []
+    for repetition in range(config.repetitions):
+        method_order = (
+            Q5_STRATEGIES
+            if parameters.method_order == "fixed_as_configured"
+            else cyclic_method_order(Q5_STRATEGIES, repetition)
+        )
+        for strategy in method_order:
+            torch.manual_seed(config.seeds[0])
+            torch.cuda.manual_seed_all(config.seeds[0])
+            remaining = run_deadline - monotonic()
+            with prepared_call(strategy, remaining) as call:
+                measured = _measure_call(
+                    torch=torch,
+                    model=model,
+                    process=process,
+                    remaining_seconds=remaining,
+                    rss_sample_interval_seconds=(parameters.rss_sample_interval_seconds or 0.001),
+                    run=call,
+                )
+            records.append(
+                _record_from_measurement(
+                    strategy,
+                    measured=measured,
+                    comparison_fingerprint=comparison_fingerprint,
+                    seed=config.seeds[0],
+                    repetition=repetition,
+                    parameters=parameters,
+                    tokenizer_adapter=tokenizer_adapter,
+                    grammar=exact_grammar,
+                    target=target,
+                )
+            )
 
     git_commit = _command_output(("git", "rev-parse", "HEAD"))
     git_dirty = bool(_command_output(("git", "status", "--porcelain")))
@@ -1153,8 +1265,27 @@ def main(argv: Sequence[str] | None = None) -> int:
         "benchmark_claim": False,
         "publication_mode": config.publication_mode,
         "timing_scope": (
-            "single_fixed_order_cuda_smoke_without_warmup; model/tokenizer/grammar setup excluded"
+            "single_fixed_order_cuda_smoke_without_warmup; model/tokenizer/grammar and "
+            "per-method runner setup excluded"
+            if parameters.method_order == "fixed_as_configured"
+            else "warm repeated balanced-cyclic CUDA timing; model/tokenizer/grammar and "
+            "per-method runner setup excluded"
         ),
+        "timing_protocol": {
+            "warmup_runs_per_strategy": parameters.warmup_runs,
+            "recorded_repetitions_per_strategy": config.repetitions,
+            "method_order": parameters.method_order,
+            "cuda_synchronized_before_and_after_each_measurement": True,
+            "cuda_peak_counters_reset_before_each_measurement": True,
+            "model_load_inside_measured_region": False,
+            "tokenizer_grammar_and_shared_preprocessing_inside_measured_region": False,
+            "method_specific_runner_setup_inside_measured_region": False,
+            "rss_metric": "sampled_process_resident_set_peak_per_call",
+            "rss_sample_interval_seconds": (parameters.rss_sample_interval_seconds or 0.001),
+            "quartile_policy": parameters.quartile_policy or QUARTILE_POLICY,
+            "failed_timeout_and_incomplete_rows_in_runtime_aggregates": False,
+        },
+        "warmup_records": warmup_records,
         "timeout_enforcement": (
             "native_exact_parser_deadline plus post-method and between-method run deadline; "
             "upstream generation calls are not preemptible"
@@ -1209,19 +1340,25 @@ def main(argv: Sequence[str] | None = None) -> int:
     if arguments.summary_output is not None:
         _copy_summary(summary_path, arguments.summary_output)
 
-    exact_record = records[-1]
-    required_methods = records[1:]
-    contract_failure_count = sum(
-        record.execution_status is not Q5ExecutionStatus.COMPLETE
-        or record.syntactic_valid is not True
-        or record.functional_success is not True
-        for record in required_methods
+    warmup_failure_count = sum(
+        warmup["execution_status"] != Q5ExecutionStatus.COMPLETE.value
+        or (
+            warmup["strategy"] != "unconstrained"
+            and (
+                warmup.get("syntactic_valid") is not True
+                or warmup.get("functional_success") is not True
+            )
+        )
+        or (
+            warmup["strategy"] == "exact"
+            and (
+                warmup.get("solver_status") != SolveStatus.OPTIMAL.value
+                or warmup.get("certificate_valid") is not True
+            )
+        )
+        for warmup in warmup_records
     )
-    if (
-        exact_record.solver_status is not SolveStatus.OPTIMAL
-        or exact_record.certificate_valid is not True
-    ):
-        contract_failure_count += 1
+    contract_failure_count = result.required_contract_failure_count + warmup_failure_count
     print(
         json.dumps(
             {
@@ -1229,6 +1366,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "raw_rows": str(raw_path),
                 "summary": str(summary_path),
                 "method_count": len(records),
+                "warmup_count": len(warmup_records),
                 "contract_failure_count": contract_failure_count,
             },
             sort_keys=True,

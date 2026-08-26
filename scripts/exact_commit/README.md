@@ -121,6 +121,24 @@ fallback count, exact status/scope/certificate, elapsed time, process RSS, and
 CUDA peak allocation. This single fixed-order run has no warmup and supports
 only a diagnostic smoke conclusion; T1106 adds robust timing controls.
 
+The T1106 timing configuration uses the same executable Q5 driver after one
+warmup per strategy and records eight repetitions in balanced cyclic order:
+
+```bash
+.venv-live/bin/python scripts/exact_commit/run_q5_end_to_end.py \
+  --config configs/experiments/q5_timing_v1.toml
+```
+
+Model/tokenizer loading, grammar compilation, shared preprocessing, and each
+method's runner/environment setup occur before the measured call. The timer
+synchronizes CUDA before resetting peak counters and again after generation.
+Every raw row retains its repetition ID, elapsed time, sampled per-call process
+RSS peak, process lifetime RSS high-water mark, and CUDA allocated/reserved
+peaks. The computed summary uses type-7 linear interpolation for runtime median
+and IQR and excludes timeout, error, and incomplete rows from runtime samples.
+This small fixed-task result validates instrumentation; it is not a publication
+benchmark.
+
 The M5 Python/Rust/oracle campaigns are configured by
 `configs/exact_commit/m5_rust_differential.toml` and run with:
 
