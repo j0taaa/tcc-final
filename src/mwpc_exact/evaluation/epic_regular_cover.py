@@ -17,7 +17,7 @@ from math import fsum, isfinite
 from time import perf_counter
 from typing import Protocol, cast
 
-from mwpc_exact.selection import (
+from mwpc_exact.evaluation.selection import (
     SelectionInput,
     SelectionResult,
     SelectionStatus,
@@ -205,9 +205,7 @@ def _base_diagnostics(
         "optimization_guarantee": "none_heuristic",
         "finite_slot_witness_available": False,
         "input_support_sha256": selection_input.support.fingerprint,
-        "input_proposal_ids": [
-            proposal.proposal_id for proposal in selection_input.proposals
-        ],
+        "input_proposal_ids": [proposal.proposal_id for proposal in selection_input.proposals],
         "input_proposal_weights": [proposal.weight for proposal in selection_input.proposals],
         "candidate_ranking_score": "model_confidence",
         "comparison_score": "sum_of_selected_positive_mwpc_weights",
@@ -230,7 +228,7 @@ def _non_success_result(
     }:
         raise ValueError("non-success conversion requires an inconclusive status")
     return SelectionResult(
-        selector=SelectorKind.EPIC,
+        selector=SelectorKind.EPIC_REGULAR_COVER,
         status=status,
         exactness_scope=selection_input.support.exactness_scope,
         runtime_seconds=perf_counter() - started,
@@ -249,8 +247,7 @@ def _validate_current_words(
         word = context.words_full[context.prompt_length + position]
         if (token_id is None) != (word is None):
             raise ValueError(
-                "current words and canvas disagree about masked/fixed state at "
-                f"position {position}"
+                f"current words and canvas disagree about masked/fixed state at position {position}"
             )
 
 
@@ -272,7 +269,7 @@ def _recompute_selected_score(
     return tuple(proposal.proposal_id for proposal in selected), score
 
 
-def select_epic(
+def select_epic_regular_cover(
     selection_input: SelectionInput,
     context: EpicSelectionContext,
 ) -> SelectionResult:
@@ -391,9 +388,7 @@ def select_epic(
                 raise AssertionError("EPIC confidence validation lost a proposal")
             word = context.decode_token(proposal.token_id)
             if word is None:
-                raise ValueError(
-                    f"decode_token returned None for proposal {proposal.proposal_id}"
-                )
+                raise ValueError(f"decode_token returned None for proposal {proposal.proposal_id}")
             candidate = runtime.candidate_factory(
                 context.prompt_length + proposal.position,
                 proposal.token_id,
@@ -417,7 +412,7 @@ def select_epic(
     candidate_ids = [proposal.proposal_id for _, proposal in candidate_pairs]
     if len(candidate_pairs) < minimum_batch_size:
         return SelectionResult(
-            selector=SelectorKind.EPIC,
+            selector=SelectorKind.EPIC_REGULAR_COVER,
             status=SelectionStatus.HEURISTIC,
             exactness_scope=selection_input.support.exactness_scope,
             runtime_seconds=perf_counter() - started,
@@ -437,9 +432,7 @@ def select_epic(
             },
         )
 
-    candidate_by_identity = {
-        id(candidate): proposal for candidate, proposal in candidate_pairs
-    }
+    candidate_by_identity = {id(candidate): proposal for candidate, proposal in candidate_pairs}
     before = runtime.profiler_snapshot() if profiler_enabled else None
     try:
         raw_selected = tuple(
@@ -499,9 +492,7 @@ def select_epic(
             diagnostics={
                 **base_diagnostics,
                 "error_stage": "upstream_result_validation",
-                "error_message": (
-                    "EPIC returned an unknown or duplicate candidate object"
-                ),
+                "error_message": ("EPIC returned an unknown or duplicate candidate object"),
             },
         )
 
@@ -510,13 +501,11 @@ def select_epic(
     )
     minimum_batch_filter_applied = len(raw_selected) < minimum_batch_size
     effective_ids = (
-        frozenset[int]()
-        if minimum_batch_filter_applied
-        else frozenset(upstream_selected)
+        frozenset[int]() if minimum_batch_filter_applied else frozenset(upstream_selected)
     )
     selected_ids, score = _recompute_selected_score(selection_input, effective_ids)
     return SelectionResult(
-        selector=SelectorKind.EPIC,
+        selector=SelectorKind.EPIC_REGULAR_COVER,
         status=SelectionStatus.HEURISTIC,
         exactness_scope=selection_input.support.exactness_scope,
         runtime_seconds=perf_counter() - started,
@@ -555,8 +544,13 @@ def select_epic(
     )
 
 
+# Compatibility alias retained for version-1 callers and artifacts.
+select_epic = select_epic_regular_cover
+
+
 __all__ = [
     "EPIC_UPSTREAM_COMMIT",
     "EpicSelectionContext",
     "select_epic",
+    "select_epic_regular_cover",
 ]

@@ -139,6 +139,7 @@ def test_support_fingerprint_is_deterministic() -> None:
 
     assert isinstance(first_diagnostics, dict)
     assert isinstance(second_diagnostics, dict)
-    assert first_diagnostics["represented_support_sha256"] == second_diagnostics[
-        "represented_support_sha256"
-    ]
+    assert (
+        first_diagnostics["represented_support_sha256"]
+        == second_diagnostics["represented_support_sha256"]
+    )

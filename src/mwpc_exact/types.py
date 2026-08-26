@@ -177,9 +177,7 @@ class ExactnessScope:
             if top_k is not None:
                 raise ValueError(f"{self.kind.value} scope cannot define top_k")
             if expansions:
-                raise ValueError(
-                    f"{self.kind.value} scope cannot define adaptive_expansions"
-                )
+                raise ValueError(f"{self.kind.value} scope cannot define adaptive_expansions")
 
         if self.pruning_description is not None:
             if not isinstance(self.pruning_description, str):
@@ -418,9 +416,7 @@ class TerminalEdge:
             _finite_float(self.weight, "weight", non_negative=True),
         )
         if self.provenance_token_edge_id is not None:
-            provenance_id = _require_int(
-                self.provenance_token_edge_id, "provenance_token_edge_id"
-            )
+            provenance_id = _require_int(self.provenance_token_edge_id, "provenance_token_edge_id")
             if provenance_id < 0:
                 raise ValueError("provenance_token_edge_id must be non-negative")
         object.__setattr__(
@@ -480,9 +476,7 @@ class WeightedTerminalDAG:
         start_node_id = _require_int(self.start_node_id, "start_node_id")
         if start_node_id not in node_ids:
             raise ValueError("start_node_id must reference an existing node")
-        final_node_ids = _stable_ids(
-            self.final_node_ids, "final_node_ids", allow_empty=False
-        )
+        final_node_ids = _stable_ids(self.final_node_ids, "final_node_ids", allow_empty=False)
         missing_finals = set(final_node_ids) - set(node_ids)
         if missing_finals:
             raise ValueError("final_node_ids must reference existing nodes")
@@ -497,8 +491,7 @@ class WeightedTerminalDAG:
             raise ValueError("edge IDs must be unique")
         node_set = set(node_ids)
         if any(
-            edge.source_state not in node_set or edge.target_state not in node_set
-            for edge in edges
+            edge.source_state not in node_set or edge.target_state not in node_set for edge in edges
         ):
             raise ValueError("every edge endpoint must reference an existing node")
 
@@ -668,12 +661,8 @@ class ExactCommitResult:
             selected_proposal_ids=_int_tuple(
                 data.get("selected_proposal_ids", ()), "selected_proposal_ids"
             ),
-            witness_token_ids=_int_tuple(
-                data.get("witness_token_ids", ()), "witness_token_ids"
-            ),
-            witness_terminal_labels=_terminal_tuple(
-                data.get("witness_terminal_labels", ())
-            ),
+            witness_token_ids=_int_tuple(data.get("witness_token_ids", ()), "witness_token_ids"),
+            witness_terminal_labels=_terminal_tuple(data.get("witness_terminal_labels", ())),
             witness_graph_edge_ids=_int_tuple(
                 data.get("witness_graph_edge_ids", ()), "witness_graph_edge_ids"
             ),

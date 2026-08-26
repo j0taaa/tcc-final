@@ -26,10 +26,7 @@ pytest.importorskip(
 )
 
 FIXTURE_PATH = (
-    Path(__file__).parents[1]
-    / "exact_commit"
-    / "fixtures"
-    / "benchmark_instance_v1.json"
+    Path(__file__).parents[1] / "exact_commit" / "fixtures" / "benchmark_instance_v1.json"
 )
 
 
@@ -44,9 +41,7 @@ def test_versioned_file_reconstructs_pinned_epic_cfg_and_replays_all_selectors(
         assert isinstance(words, list)
         concrete_words = [word for word in words if word is not None]
         with epic_profiler.timer("regular_cover.generated_language"):
-            allowed = bool(concrete_words) and all(
-                word in allowed_words for word in concrete_words
-            )
+            allowed = bool(concrete_words) and all(word in allowed_words for word in concrete_words)
         with epic_profiler.timer("regular_cover.intersection"):
             return allowed
 

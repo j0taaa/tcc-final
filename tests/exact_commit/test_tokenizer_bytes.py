@@ -38,9 +38,7 @@ def test_piece_mapping_matches_known_llada_bytelevel_pieces(piece: str, expected
 
 
 def test_adapter_composes_byte_fragments_before_unicode_rendering() -> None:
-    adapter = CompositionalByteLevelAdapter.from_token_pieces(
-        ("hello", "Ġworld", "ðŁĳ", "©", None)
-    )
+    adapter = CompositionalByteLevelAdapter.from_token_pieces(("hello", "Ġworld", "ðŁĳ", "©", None))
 
     assert adapter.detokenize_bytes((0, 1)) == b"hello world"
     assert adapter.token_bytes(2) == bytes.fromhex("f09f91")

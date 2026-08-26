@@ -17,8 +17,8 @@ from mwpc_exact import (
     SupportKind,
     SupportPolicy,
     build_per_position_support,
-    select_epic,
-    select_exact,
+    select_epic_regular_cover,
+    select_exact_mwpc,
 )
 from mwpc_exact.reference.grammar import (
     BinaryProduction,
@@ -86,9 +86,7 @@ def test_common_adapter_matches_pinned_upstream_selection_and_keeps_exact_input_
         assert isinstance(words, list)
         concrete_words = [word for word in words if word is not None]
         with epic_profiler.timer("regular_cover.generated_language"):
-            allowed = bool(concrete_words) and all(
-                word in allowed_words for word in concrete_words
-            )
+            allowed = bool(concrete_words) and all(word in allowed_words for word in concrete_words)
         with epic_profiler.timer("regular_cover.intersection"):
             return allowed
 
@@ -140,9 +138,7 @@ def test_common_adapter_matches_pinned_upstream_selection_and_keeps_exact_input_
             permitted_token_ids=tuple(token_text),
             pruning_description="T1001 pinned EPIC saved-candidate fixture",
         ),
-        explicit_support={
-            proposal.position: (proposal.token_id,) for proposal in proposals
-        },
+        explicit_support={proposal.position: (proposal.token_id,) for proposal in proposals},
         proposals=proposals,
     )
     selection_input = SelectionInput(
@@ -153,7 +149,7 @@ def test_common_adapter_matches_pinned_upstream_selection_and_keeps_exact_input_
         tokenizer_adapter=adapter,
         eos_policy=EOSPolicy(EOSMode.ABSENT),
     )
-    epic = select_epic(
+    epic = select_epic_regular_cover(
         selection_input,
         EpicSelectionContext(
             words_full=tuple(fixture["words_full"]),
@@ -162,7 +158,7 @@ def test_common_adapter_matches_pinned_upstream_selection_and_keeps_exact_input_
             decode_token=lambda token_id: token_text[token_id],
         ),
     )
-    exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
     assert [(candidate.index, candidate.token_id) for candidate in direct] == [(0, 10), (2, 12)]
     assert epic.status is SelectionStatus.HEURISTIC
@@ -191,7 +187,7 @@ def test_common_adapter_matches_pinned_upstream_selection_and_keeps_exact_input_
     monkeypatch.setattr(regular_cover, "exact_allows_words", deterministic_exact)
     monkeypatch.setenv("CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT", "1")
 
-    with_exact_shrink = select_epic(
+    with_exact_shrink = select_epic_regular_cover(
         selection_input,
         EpicSelectionContext(
             words_full=tuple(fixture["words_full"]),

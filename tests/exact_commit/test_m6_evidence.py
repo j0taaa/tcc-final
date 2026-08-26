@@ -11,9 +11,7 @@ from mwpc_research.finite_differential import (
 )
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
-CONFIG_PATH = (
-    REPOSITORY_ROOT / "configs/exact_commit/m6_finite_lattice_differential.toml"
-)
+CONFIG_PATH = REPOSITORY_ROOT / "configs/exact_commit/m6_finite_lattice_differential.toml"
 T606_IMPLEMENTATION_COMMIT = "8d951f0777e4c22f8be286bd559ab3467be69fa0"
 
 EXPECTED_CAMPAIGN_RESULTS = {
@@ -46,9 +44,7 @@ def test_checked_in_m6_summaries_match_the_immutable_campaign_config() -> None:
     config_sha256 = hashlib.sha256(config_bytes).hexdigest()
 
     assert config["schema_version"] == 1
-    assert {campaign["name"] for campaign in config["campaigns"]} == set(
-        EXPECTED_CAMPAIGN_RESULTS
-    )
+    assert {campaign["name"] for campaign in config["campaigns"]} == set(EXPECTED_CAMPAIGN_RESULTS)
 
     for campaign in config["campaigns"]:
         campaign_name = campaign["name"]
@@ -67,14 +63,8 @@ def test_checked_in_m6_summaries_match_the_immutable_campaign_config() -> None:
         assert summary["failures"] == []
         assert summary["status_counts"] == expected["status_counts"]
         assert sum(summary["status_counts"].values()) == case_count
-        assert (
-            summary["total_enumerated_token_paths"]
-            == expected["total_enumerated_token_paths"]
-        )
-        assert (
-            summary["total_grammar_valid_paths"]
-            == expected["total_grammar_valid_paths"]
-        )
+        assert summary["total_enumerated_token_paths"] == expected["total_enumerated_token_paths"]
+        assert summary["total_grammar_valid_paths"] == expected["total_grammar_valid_paths"]
 
         feature_counts = summary["feature_case_counts"]
         for feature in ALWAYS_PRESENT_FEATURES:
@@ -86,9 +76,7 @@ def test_checked_in_m6_summaries_match_the_immutable_campaign_config() -> None:
         path_count = summary["total_enumerated_token_paths"]
         assert checks["status_agreement"] == case_count
         assert checks["exactness_scope"] == 2 * case_count
-        assert checks["certificate_validation"] + checks["nonoptimal_payload"] == (
-            2 * case_count
-        )
+        assert checks["certificate_validation"] + checks["nonoptimal_payload"] == (2 * case_count)
         for check_name in (
             "byte_expansion_path_validation",
             "byte_expansion_provenance",
@@ -100,13 +88,8 @@ def test_checked_in_m6_summaries_match_the_immutable_campaign_config() -> None:
         assert metadata["git_commit"] == T606_IMPLEMENTATION_COMMIT
         assert metadata["config_path"] == str(CONFIG_PATH.relative_to(REPOSITORY_ROOT))
         assert metadata["config_sha256"] == config_sha256
-        assert metadata["generator_schema_version"] == str(
-            FINITE_LATTICE_GENERATOR_SCHEMA_VERSION
-        )
+        assert metadata["generator_schema_version"] == str(FINITE_LATTICE_GENERATOR_SCHEMA_VERSION)
         assert metadata["grammar_family_sha256"] == finite_grammar_family_sha256()
         assert metadata["support_policy"] == "explicit_per_position_token_rows"
         assert metadata["exactness_scope"] == "exact_on_support"
-        assert (
-            metadata["finite_slot_policy"]
-            == "one_ordinary_token_per_physical_slot_no_eos_pad"
-        )
+        assert metadata["finite_slot_policy"] == "one_ordinary_token_per_physical_slot_no_eos_pad"

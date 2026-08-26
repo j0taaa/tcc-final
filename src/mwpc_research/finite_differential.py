@@ -177,9 +177,7 @@ class RandomFiniteLatticeInstance:
         )
         emissions = tuple(
             bytes.fromhex(_string(item, "emission"))
-            for item in _sequence(
-                data["emissions_hex_by_token_id"], "emissions_hex_by_token_id"
-            )
+            for item in _sequence(data["emissions_hex_by_token_id"], "emissions_hex_by_token_id")
         )
         proposals = tuple(
             _proposal_from_dict(_mapping(item, "proposal"))
@@ -598,9 +596,7 @@ def _audit_byte_expansion(
     for path in byte_lattice.iter_paths():
         byte_lattice.validate_path(path)
         token_ids = path.token_path.token_ids
-        expected_bytes, expected_objective, expected_proposals = _path_metadata(
-            instance, token_ids
-        )
+        expected_bytes, expected_objective, expected_proposals = _path_metadata(instance, token_ids)
         if path.emitted_bytes != expected_bytes:
             _mismatch(instance, "byte_expansion_bytes", f"token_ids={token_ids!r}")
         if not isclose(
@@ -821,9 +817,7 @@ def _proposal_from_dict(data: Mapping[str, object]) -> Proposal:
     weight = _real(data["weight"], "proposal weight")
     confidence_value = data["model_confidence"]
     confidence = (
-        None
-        if confidence_value is None
-        else _real(confidence_value, "proposal model_confidence")
+        None if confidence_value is None else _real(confidence_value, "proposal model_confidence")
     )
     return Proposal(
         proposal_id=_integer(data["proposal_id"], "proposal_id"),

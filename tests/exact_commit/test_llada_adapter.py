@@ -151,7 +151,14 @@ def test_fixed_logits_reach_exact_hook_with_generated_canvas_and_baseline_candid
     assert outcome.solver_result.status is SolveStatus.OPTIMAL
     assert outcome.request.prompt_token_ids == (2, 2)
     assert outcome.request.canvas == (None, None, None, None)
-    assert outcome.request.logits == logits[2:]
+    assert outcome.request.logit_shape == (4, ADAPTER.vocabulary_size)
+    assert outcome.request.ranked_support_rows.token_ids_by_position == (
+        (0, 2),
+        (1, 2),
+        (3, 4),
+        (3, 4),
+    )
+    assert outcome.request.diagnostics["dense_logits_copied_to_cpu"] is False
     assert outcome.request.schedule_mask == (True, True, False, False)
     assert outcome.request.proposal_batch.schedule_budget == 1
     assert outcome.request.proposal_batch.candidate_positions == (1,)

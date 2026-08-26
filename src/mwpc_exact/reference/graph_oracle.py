@@ -72,15 +72,11 @@ def enumerate_best_cfg_path(
                     f"graph path enumeration exceeded max_paths={max_paths}"
                 )
             completed_paths += 1
-            labels = tuple(
-                edge.terminal_label for edge in path if isinstance(edge, TerminalEdge)
-            )
+            labels = tuple(edge.terminal_label for edge in path if isinstance(edge, TerminalEdge))
             if recognizes_cnf(grammar, labels):
                 score = fsum(edge.weight for edge in path)
                 selected_ids = tuple(
-                    proposal_id
-                    for edge in path
-                    for proposal_id in edge.matched_proposal_ids
+                    proposal_id for edge in path for proposal_id in edge.matched_proposal_ids
                 )
                 certificate = DagParseCertificate(
                     objective_value=score,

@@ -1,35 +1,42 @@
 """Versioned immutable inputs for fair offline selector comparisons.
 
-The schema freezes the common :class:`~mwpc_exact.selection.SelectionInput`
+The schema freezes the common :class:`~mwpc_exact.evaluation.selection.SelectionInput`
 rather than rebuilding proposals or represented support during replay.  Saved
 logits are optional provenance data and never substitute for serialized rows.
 """
 
 from __future__ import annotations
 
-import hashlib
 import json
-from collections.abc import Callable, Collection, Mapping, Sequence
+from collections.abc import Mapping
 from dataclasses import dataclass, field
-from importlib import import_module
-from math import isfinite, isnan
 from pathlib import Path
-from types import MappingProxyType
-from typing import cast
 
-from mwpc_exact.backend import ExactBackend
-from mwpc_exact.brute_force_selection import select_brute_force
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
-from mwpc_exact.epic_selection import EpicSelectionContext, select_epic
-from mwpc_exact.reference.grammar import CnfGrammar
-from mwpc_exact.selection import (
-    SelectionInput,
-    SelectionResult,
-    SelectionStatus,
-    SelectorKind,
-    select_exact,
-    select_serial,
+from mwpc_exact.evaluation._serde import (
+    _decode_logit,
+    _encode_logit,
+    _exact_fields,
+    _float,
+    _freeze_json,
+    _freeze_json_mapping,
+    _integer,
+    _mapping,
+    _optional_string,
+    _optional_text,
+    _sequence,
+    _sha256,
+    _string,
+    _text,
+    _thaw_json,
+    _validate_sha256,
 )
+from mwpc_exact.evaluation.alignment import SemanticAlignmentEvidence
+from mwpc_exact.evaluation.epic_regular_cover import EpicSelectionContext
+from mwpc_exact.evaluation.selection import (
+    SelectionInput,
+)
+from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.support import PerPositionSupport, SupportInputSource
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from mwpc_exact.types import ExactnessScope, Proposal
@@ -40,154 +47,6 @@ BENCHMARK_INSTANCE_SCHEMA_VERSION = 1
 
 class UnsupportedBenchmarkSchemaVersion(ValueError):
     """Raised when no explicit migration exists for an instance version."""
-
-
-def _mapping(value: object, field_name: str) -> Mapping[str, object]:
-    if not isinstance(value, Mapping):
-        raise TypeError(f"{field_name} must be a mapping")
-    if not all(isinstance(key, str) for key in value):
-        raise TypeError(f"{field_name} keys must be strings")
-    return cast(Mapping[str, object], value)
-
-
-def _sequence(value: object, field_name: str) -> Sequence[object]:
-    if isinstance(value, (str, bytes)) or not isinstance(value, Sequence):
-        raise TypeError(f"{field_name} must be a finite sequence")
-    return cast(Sequence[object], value)
-
-
-def _integer(value: object, field_name: str, *, minimum: int = 0) -> int:
-    if isinstance(value, bool) or not isinstance(value, int):
-        raise TypeError(f"{field_name} must be an integer")
-    if value < minimum:
-        raise ValueError(f"{field_name} must be at least {minimum}")
-    return value
-
-
-def _string(value: object, field_name: str) -> str:
-    if not isinstance(value, str):
-        raise TypeError(f"{field_name} must be a string")
-    if not value.strip():
-        raise ValueError(f"{field_name} must be non-empty")
-    return value
-
-
-def _text(value: object, field_name: str) -> str:
-    if not isinstance(value, str):
-        raise TypeError(f"{field_name} must be a string")
-    return value
-
-
-def _optional_string(value: object, field_name: str) -> str | None:
-    if value is None:
-        return None
-    return _string(value, field_name)
-
-
-def _optional_text(value: object, field_name: str) -> str | None:
-    if value is None:
-        return None
-    return _text(value, field_name)
-
-
-def _exact_fields(
-    data: Mapping[str, object],
-    *,
-    required: set[str],
-    optional: Collection[str] = (),
-    field_name: str,
-) -> None:
-    missing = required - set(data)
-    if missing:
-        raise ValueError(f"missing {field_name} fields: {', '.join(sorted(missing))}")
-    unknown = set(data) - required - set(optional)
-    if unknown:
-        raise ValueError(f"unknown {field_name} fields: {', '.join(sorted(unknown))}")
-
-
-def _freeze_json(value: object, field_name: str) -> object:
-    if value is None or isinstance(value, (str, bool, int)):
-        return value
-    if isinstance(value, float):
-        if not isfinite(value):
-            raise ValueError(f"{field_name} must not contain NaN or infinity")
-        return value
-    if isinstance(value, Mapping):
-        frozen: dict[str, object] = {}
-        for key, item in value.items():
-            if not isinstance(key, str):
-                raise TypeError(f"{field_name} keys must be strings")
-            frozen[key] = _freeze_json(item, f"{field_name}.{key}")
-        return MappingProxyType(frozen)
-    if isinstance(value, (list, tuple)):
-        return tuple(_freeze_json(item, field_name) for item in value)
-    raise TypeError(f"{field_name} must contain only JSON-compatible values")
-
-
-def _freeze_json_mapping(value: object, field_name: str) -> Mapping[str, object]:
-    frozen = _freeze_json(_mapping(value, field_name), field_name)
-    if not isinstance(frozen, Mapping):
-        raise AssertionError("mapping freeze returned a non-mapping")
-    return cast(Mapping[str, object], frozen)
-
-
-def _thaw_json(value: object) -> object:
-    if isinstance(value, Mapping):
-        return {key: _thaw_json(item) for key, item in value.items()}
-    if isinstance(value, tuple):
-        return [_thaw_json(item) for item in value]
-    return value
-
-
-def _canonical_json(value: object) -> str:
-    return json.dumps(
-        _thaw_json(value),
-        allow_nan=False,
-        ensure_ascii=False,
-        separators=(",", ":"),
-        sort_keys=True,
-    )
-
-
-def _sha256(value: object) -> str:
-    return hashlib.sha256(_canonical_json(value).encode("utf-8")).hexdigest()
-
-
-def _validate_sha256(value: object, field_name: str) -> str:
-    digest = _string(value, field_name)
-    if len(digest) != 64 or any(character not in "0123456789abcdef" for character in digest):
-        raise ValueError(f"{field_name} must be a lowercase SHA-256 hex digest")
-    return digest
-
-
-def _float(value: object, field_name: str, *, allow_infinity: bool = False) -> float:
-    if isinstance(value, bool) or not isinstance(value, (int, float)):
-        raise TypeError(f"{field_name} must be a real number")
-    try:
-        result = float(value)
-    except OverflowError as error:
-        raise ValueError(f"{field_name} is outside the supported float range") from error
-    if isnan(result) or (not allow_infinity and not isfinite(result)):
-        raise ValueError(f"{field_name} must be finite")
-    return result
-
-
-def _encode_logit(value: float) -> float | str:
-    if value == float("inf"):
-        return "Infinity"
-    if value == float("-inf"):
-        return "-Infinity"
-    return value
-
-
-def _decode_logit(value: object, field_name: str) -> float:
-    if value == "Infinity":
-        return float("inf")
-    if value == "-Infinity":
-        return float("-inf")
-    if isinstance(value, str):
-        raise ValueError(f"{field_name} has an unknown encoded logit value")
-    return _float(value, field_name, allow_infinity=True)
 
 
 @dataclass(frozen=True, slots=True)
@@ -346,9 +205,11 @@ class SavedLogits:
             metadata=_mapping(data["metadata"], "saved_logits.metadata"),
         )
         shape = _sequence(data["shape"], "saved_logits.shape")
-        if len(shape) != 2 or tuple(
-            _integer(item, "saved_logits.shape item", minimum=1) for item in shape
-        ) != logits.shape:
+        if (
+            len(shape) != 2
+            or tuple(_integer(item, "saved_logits.shape item", minimum=1) for item in shape)
+            != logits.shape
+        ):
             raise ValueError("saved_logits.shape does not match the values matrix")
         recorded = _validate_sha256(data["logits_sha256"], "saved_logits.logits_sha256")
         if recorded != logits.fingerprint:
@@ -400,9 +261,7 @@ class EpicReplaySpec:
         object.__setattr__(self, "decoded_tokens", tuple(decoded))
         object.__setattr__(self, "terminals", terminals)
         object.__setattr__(self, "prelex", _optional_text(self.prelex, "prelex"))
-        object.__setattr__(
-            self, "strip_chars", _optional_text(self.strip_chars, "strip_chars")
-        )
+        object.__setattr__(self, "strip_chars", _optional_text(self.strip_chars, "strip_chars"))
         object.__setattr__(
             self,
             "inject_gap_size",
@@ -559,9 +418,7 @@ def _support_to_dict(support: PerPositionSupport) -> dict[str, object]:
         "permitted_token_ids": list(support.permitted_token_ids),
         "exactness_scope": support.exactness_scope.to_dict(),
         "input_source": support.input_source.value,
-        "top_k_token_ids_by_position": [
-            list(row) for row in support.top_k_token_ids_by_position
-        ],
+        "top_k_token_ids_by_position": [list(row) for row in support.top_k_token_ids_by_position],
         "proposal_token_ids_by_position": [
             list(row) for row in support.proposal_token_ids_by_position
         ],
@@ -633,9 +490,7 @@ def _canvas_from_json(value: object) -> tuple[int | None, ...]:
     canvas: list[int | None] = []
     for position, token_id in enumerate(_sequence(value, "selection_input.canvas")):
         canvas.append(
-            None
-            if token_id is None
-            else _integer(token_id, f"canvas token at position {position}")
+            None if token_id is None else _integer(token_id, f"canvas token at position {position}")
         )
     return tuple(canvas)
 
@@ -802,8 +657,7 @@ class BenchmarkInstance:
                 word = self.epic_replay.words_full[self.epic_replay.prompt_length + position]
                 if (token_id is None) != (word is None):
                     raise ValueError(
-                        "EPIC words_full and canvas disagree at generated position "
-                        f"{position}"
+                        f"EPIC words_full and canvas disagree at generated position {position}"
                     )
             decoded_ids = {token_id for token_id, _ in self.epic_replay.decoded_tokens}
             special_ids = set(self.selection_input.eos_policy.termination_token_ids)
@@ -813,12 +667,19 @@ class BenchmarkInstance:
                 proposal.token_id
                 for proposal in self.selection_input.proposals
                 if proposal.token_id not in special_ids
-                and proposal.token_id
-                in self.selection_input.support.rows[proposal.position]
+                and proposal.token_id in self.selection_input.support.rows[proposal.position]
             }
             missing = sorted(required_decodings - decoded_ids)
             if missing:
                 raise ValueError(f"EPIC replay omits proposal token decodings: {missing}")
+
+        if self.epic_replay is not None:
+            raw_alignment = self.expected_metadata.get("semantic_alignment")
+            alignment = SemanticAlignmentEvidence.from_dict(raw_alignment)
+            if alignment.source_grammar_id != self.grammar.grammar_id:
+                raise ValueError(
+                    "semantic alignment source_grammar_id must match benchmark grammar_id"
+                )
 
     def _payload_dict(self) -> dict[str, object]:
         return {
@@ -939,85 +800,13 @@ def migrate_benchmark_instance_data(value: object) -> Mapping[str, object]:
     return data
 
 
-EpicCfgFactory = Callable[[str, str], object]
-
-
-def _default_epic_cfg_factory(text: str, start_symbol: str) -> object:
-    cfg_module = import_module("rustformlang.cfg")
-    cfg_type = cfg_module.CFG
-    return cast(object, cfg_type.from_text(text, start_symbol))
-
-
-def _unsupported_epic_result(
-    selection_input: SelectionInput,
-    error: Exception,
-) -> SelectionResult:
-    return SelectionResult(
-        selector=SelectorKind.EPIC,
-        status=SelectionStatus.UNSUPPORTED,
-        exactness_scope=selection_input.support.exactness_scope,
-        runtime_seconds=0.0,
-        diagnostics={
-            "error_stage": "benchmark_epic_cfg_reconstruction",
-            "error_type": type(error).__name__,
-            "error_message": str(error),
-        },
-    )
-
-
-def replay_benchmark_instance(
-    instance: BenchmarkInstance,
-    *,
-    backend: ExactBackend = ExactBackend.PYTHON,
-    timeout_seconds: float | None = None,
-    brute_force_max_completions: int = 100_000,
-    epic_cfg_factory: EpicCfgFactory | None = None,
-) -> Mapping[SelectorKind, SelectionResult]:
-    """Replay every applicable selector against the same frozen input object."""
-
-    if not isinstance(instance, BenchmarkInstance):
-        raise TypeError("instance must be a BenchmarkInstance")
-    selection_input = instance.selection_input
-    results: dict[SelectorKind, SelectionResult] = {}
-    results[SelectorKind.SERIAL] = select_serial(
-        selection_input,
-        backend=backend,
-        timeout_seconds=timeout_seconds,
-    )
-    if instance.epic_replay is not None:
-        text = instance.grammar.epic_cfg_text
-        start_symbol = instance.grammar.epic_start_symbol
-        if text is None or start_symbol is None:
-            raise AssertionError("validated EPIC replay lost its grammar representation")
-        factory = epic_cfg_factory or _default_epic_cfg_factory
-        try:
-            cfg = factory(text, start_symbol)
-            context = instance.epic_replay.to_context(cfg)
-        except (ImportError, ModuleNotFoundError, AttributeError, TypeError, ValueError) as error:
-            results[SelectorKind.EPIC] = _unsupported_epic_result(selection_input, error)
-        else:
-            results[SelectorKind.EPIC] = select_epic(selection_input, context)
-    results[SelectorKind.EXACT] = select_exact(
-        selection_input,
-        backend=backend,
-        timeout_seconds=timeout_seconds,
-    )
-    results[SelectorKind.BRUTE_FORCE] = select_brute_force(
-        selection_input,
-        max_completions=brute_force_max_completions,
-    )
-    return MappingProxyType(results)
-
-
 __all__ = [
     "BENCHMARK_INSTANCE_ARTIFACT_KIND",
     "BENCHMARK_INSTANCE_SCHEMA_VERSION",
     "BenchmarkGrammar",
     "BenchmarkInstance",
-    "EpicCfgFactory",
     "EpicReplaySpec",
     "SavedLogits",
     "UnsupportedBenchmarkSchemaVersion",
     "migrate_benchmark_instance_data",
-    "replay_benchmark_instance",
 ]

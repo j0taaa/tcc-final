@@ -9,7 +9,7 @@ keeps its stronger ``OPTIMAL`` status separate.
 
 from __future__ import annotations
 
-from collections.abc import Iterable, Mapping, Sequence
+from collections.abc import Callable, Iterable, Mapping, Sequence
 from dataclasses import dataclass, field, replace
 from enum import StrEnum
 from math import fsum, isclose, isfinite
@@ -34,13 +34,18 @@ from mwpc_exact.types import (
 
 
 class SelectorKind(StrEnum):
-    """Named selectors supported by the common offline result contract."""
+    """Stable serialized selector IDs with precise evaluation-facing names."""
 
-    SERIAL = "serial"
-    EPIC = "epic"
-    EXACT = "exact"
+    GREEDY_EXACT_FEASIBILITY = "serial"
+    EPIC_REGULAR_COVER = "epic"
+    EXACT_MWPC = "exact"
     BRUTE_FORCE = "brute_force"
     UNCONSTRAINED = "unconstrained"
+
+    # Compatibility aliases for version-1 benchmark artifacts.
+    SERIAL = GREEDY_EXACT_FEASIBILITY
+    EPIC = EPIC_REGULAR_COVER
+    EXACT = EXACT_MWPC
 
 
 class SelectionStatus(StrEnum):
@@ -195,6 +200,28 @@ class SelectionInput:
         build_token_lattice(support=self.support, proposals=proposals)
         object.__setattr__(self, "canvas", canvas)
         object.__setattr__(self, "proposals", proposals)
+
+
+def validate_ordinary_primary_proposal_comparison(selection_input: SelectionInput) -> None:
+    """Enforce the shared ordinary-candidate universe used by Q2 comparisons."""
+
+    if not isinstance(selection_input, SelectionInput):
+        raise TypeError("selection_input must be a SelectionInput")
+    positions = tuple(proposal.position for proposal in selection_input.proposals)
+    if len(set(positions)) != len(positions):
+        raise ValueError("common comparison requires at most one primary proposal per position")
+    special_ids = set(selection_input.eos_policy.termination_token_ids)
+    if selection_input.eos_policy.pad_token_id is not None:
+        special_ids.add(selection_input.eos_policy.pad_token_id)
+    for proposal in selection_input.proposals:
+        if selection_input.canvas[proposal.position] is not None:
+            raise ValueError("common comparison proposals must target masked positions")
+        if proposal.token_id not in selection_input.support.rows[proposal.position]:
+            raise ValueError("common comparison proposals must be represented in support")
+        if proposal.token_id in special_ids:
+            raise ValueError("ordinary proposal comparison excludes EOS/PAD side effects")
+        if proposal.model_confidence is None:
+            raise ValueError("common comparison proposals must retain model_confidence")
 
 
 @dataclass(frozen=True, slots=True)
@@ -368,8 +395,7 @@ def recompute_witness_selection(
     matched = tuple(
         proposal
         for proposal in selection_input.proposals
-        if proposal.weight > 0.0
-        and token_ids[proposal.position] == proposal.token_id
+        if proposal.weight > 0.0 and token_ids[proposal.position] == proposal.token_id
     )
     try:
         score = fsum(proposal.weight for proposal in matched)
@@ -402,7 +428,7 @@ def _failure_result(
     )
 
 
-def select_exact(
+def select_exact_mwpc(
     selection_input: SelectionInput,
     *,
     backend: ExactBackend = ExactBackend.RUST,
@@ -429,7 +455,7 @@ def select_exact(
     )
     if result.status is not SolveStatus.OPTIMAL:
         return _failure_result(
-            selector=SelectorKind.EXACT,
+            selector=SelectorKind.EXACT_MWPC,
             result=result,
             runtime_seconds=perf_counter() - started,
             diagnostics={"solver_diagnostics": result.diagnostics},
@@ -446,7 +472,7 @@ def select_exact(
         abs_tol=1e-12,
     ):
         return SelectionResult(
-            selector=SelectorKind.EXACT,
+            selector=SelectorKind.EXACT_MWPC,
             status=SelectionStatus.ERROR,
             exactness_scope=result.exactness_scope,
             runtime_seconds=perf_counter() - started,
@@ -461,7 +487,7 @@ def select_exact(
         )
 
     return SelectionResult(
-        selector=SelectorKind.EXACT,
+        selector=SelectorKind.EXACT_MWPC,
         status=SelectionStatus.OPTIMAL,
         exactness_scope=result.exactness_scope,
         runtime_seconds=perf_counter() - started,
@@ -540,47 +566,96 @@ def _solve_feasibility(
     return result, support
 
 
-def select_serial(
+def select_greedy_exact_feasibility(
     selection_input: SelectionInput,
     *,
     backend: ExactBackend = ExactBackend.RUST,
+    total_timeout_seconds: float | None = None,
     timeout_seconds: float | None = None,
     deadline_check_interval: int = 1_024,
     deterministic_work_limit: int | None = None,
+    clock: Callable[[], float] | None = None,
 ) -> SelectionResult:
-    """Greedily retain saved proposals in order using exact feasibility checks.
-
-    A successful result is only ``FEASIBLE_ON_SUPPORT``.  The exact feasibility
-    oracle certifies each retained prefix but does not turn this order-greedy
-    selection into an MWPC optimum.
-    """
+    """Order-greedy proposal retention with a single total exact-feasibility budget."""
 
     if not isinstance(selection_input, SelectionInput):
         raise TypeError("selection_input must be a SelectionInput")
-    started = perf_counter()
+    if clock is None:
+        clock = perf_counter
+    elif not callable(clock):
+        raise TypeError("clock must be callable or None")
+    if timeout_seconds is not None:
+        if total_timeout_seconds is not None:
+            raise ValueError("use only total_timeout_seconds, not both timeout names")
+        total_timeout_seconds = timeout_seconds
+    if total_timeout_seconds is not None:
+        if isinstance(total_timeout_seconds, bool) or not isinstance(
+            total_timeout_seconds, (int, float)
+        ):
+            raise TypeError("total_timeout_seconds must be a real number or None")
+        total_timeout_seconds = float(total_timeout_seconds)
+        if not isfinite(total_timeout_seconds) or total_timeout_seconds < 0.0:
+            raise ValueError("total_timeout_seconds must be finite and non-negative")
+
+    started = clock()
     committed = list(selection_input.canvas)
     decisions: list[dict[str, object]] = []
     accepted_ids: list[int] = []
-    feasibility_calls = 1
-    result, witness_support = _solve_feasibility(
-        selection_input,
-        canvas=tuple(committed),
-        backend=backend,
-        timeout_seconds=timeout_seconds,
-        deadline_check_interval=deadline_check_interval,
-        deterministic_work_limit=deterministic_work_limit,
-    )
+    feasibility_calls = 0
+
+    def solve_current(
+        canvas: tuple[int | None, ...],
+    ) -> tuple[ExactCommitResult, PerPositionSupport]:
+        nonlocal feasibility_calls
+        support = _restrict_support(selection_input.support, canvas)
+        remaining: float | None = None
+        if total_timeout_seconds is not None:
+            remaining = max(0.0, total_timeout_seconds - (clock() - started))
+            if remaining <= 0.0:
+                return (
+                    ExactCommitResult(
+                        status=SolveStatus.TIMEOUT,
+                        exactness_scope=support.exactness_scope,
+                        diagnostics={"timeout_stage": "before_feasibility_call"},
+                    ),
+                    support,
+                )
+        feasibility_calls += 1
+        result, support = _solve_feasibility(
+            selection_input,
+            canvas=canvas,
+            backend=backend,
+            timeout_seconds=(remaining if backend is ExactBackend.RUST else None),
+            deadline_check_interval=deadline_check_interval,
+            deterministic_work_limit=deterministic_work_limit,
+        )
+        if (
+            total_timeout_seconds is not None
+            and clock() - started >= total_timeout_seconds
+            and result.status is not SolveStatus.TIMEOUT
+        ):
+            result = ExactCommitResult(
+                status=SolveStatus.TIMEOUT,
+                exactness_scope=result.exactness_scope,
+                diagnostics={
+                    "timeout_stage": "after_feasibility_call",
+                    "late_result_status": result.status.value,
+                },
+            )
+        return result, support
+
+    result, witness_support = solve_current(tuple(committed))
     if result.status is not SolveStatus.OPTIMAL:
         return _failure_result(
-            selector=SelectorKind.SERIAL,
+            selector=SelectorKind.GREEDY_EXACT_FEASIBILITY,
             result=result,
-            runtime_seconds=perf_counter() - started,
+            runtime_seconds=max(0.0, clock() - started),
             diagnostics={
+                "implementation": "greedy_exact_feasibility_v2",
                 "optimization_guarantee": "none_order_greedy",
-                "proposal_order": [
-                    proposal.proposal_id for proposal in selection_input.proposals
-                ],
+                "proposal_order": [proposal.proposal_id for proposal in selection_input.proposals],
                 "feasibility_call_count": feasibility_calls,
+                "total_timeout_seconds": total_timeout_seconds,
                 "initial_feasibility_diagnostics": result.diagnostics,
             },
         )
@@ -592,13 +667,9 @@ def select_serial(
             "token_id": proposal.token_id,
         }
         if proposal.token_id not in selection_input.support.rows[proposal.position]:
-            decision.update(
-                outcome="rejected",
-                reason="unrepresented_on_support",
-            )
+            decision.update(outcome="rejected", reason="unrepresented_on_support")
             decisions.append(decision)
             continue
-
         fixed_token = committed[proposal.position]
         if fixed_token is not None:
             if fixed_token == proposal.token_id:
@@ -608,18 +679,9 @@ def select_serial(
                 decision.update(outcome="rejected", reason="conflicts_with_prior_commitment")
             decisions.append(decision)
             continue
-
         tentative = list(committed)
         tentative[proposal.position] = proposal.token_id
-        feasibility_calls += 1
-        tentative_result, tentative_support = _solve_feasibility(
-            selection_input,
-            canvas=tuple(tentative),
-            backend=backend,
-            timeout_seconds=timeout_seconds,
-            deadline_check_interval=deadline_check_interval,
-            deterministic_work_limit=deterministic_work_limit,
-        )
+        tentative_result, tentative_support = solve_current(tuple(tentative))
         decision["feasibility_status"] = tentative_result.status.value
         if tentative_result.status is SolveStatus.OPTIMAL:
             committed = tentative
@@ -633,48 +695,43 @@ def select_serial(
             decision.update(outcome="rejected", reason="infeasible_with_prior_commitments")
             decisions.append(decision)
             continue
-
         decision.update(outcome="stopped", reason="inconclusive_feasibility_status")
         decisions.append(decision)
         return _failure_result(
-            selector=SelectorKind.SERIAL,
+            selector=SelectorKind.GREEDY_EXACT_FEASIBILITY,
             result=tentative_result,
-            runtime_seconds=perf_counter() - started,
+            runtime_seconds=max(0.0, clock() - started),
             diagnostics={
+                "implementation": "greedy_exact_feasibility_v2",
                 "optimization_guarantee": "none_order_greedy",
-                "proposal_order": [
-                    item.proposal_id for item in selection_input.proposals
-                ],
+                "proposal_order": [item.proposal_id for item in selection_input.proposals],
                 "accepted_proposal_ids_before_stop": accepted_ids,
                 "decisions": decisions,
                 "feasibility_call_count": feasibility_calls,
+                "total_timeout_seconds": total_timeout_seconds,
                 "last_feasibility_diagnostics": tentative_result.diagnostics,
             },
         )
 
-    selected_ids, score = recompute_witness_selection(
-        selection_input,
-        result.witness_token_ids,
-    )
+    selected_ids, score = recompute_witness_selection(selection_input, result.witness_token_ids)
     if not set(selected_ids) <= set(accepted_ids):
         return SelectionResult(
-            selector=SelectorKind.SERIAL,
+            selector=SelectorKind.GREEDY_EXACT_FEASIBILITY,
             status=SelectionStatus.ERROR,
             exactness_scope=selection_input.support.exactness_scope,
-            runtime_seconds=perf_counter() - started,
+            runtime_seconds=max(0.0, clock() - started),
             diagnostics={
                 "error_stage": "common_result_validation",
-                "error_message": "serial witness matches a rejected proposal",
+                "error_message": "greedy witness matches a rejected proposal",
                 "accepted_proposal_ids": accepted_ids,
                 "recomputed_selected_proposal_ids": list(selected_ids),
             },
         )
-
     return SelectionResult(
-        selector=SelectorKind.SERIAL,
+        selector=SelectorKind.GREEDY_EXACT_FEASIBILITY,
         status=SelectionStatus.FEASIBLE_ON_SUPPORT,
         exactness_scope=selection_input.support.exactness_scope,
-        runtime_seconds=perf_counter() - started,
+        runtime_seconds=max(0.0, clock() - started),
         selected_proposal_ids=selected_ids,
         score=score,
         witness_token_ids=result.witness_token_ids,
@@ -683,12 +740,14 @@ def select_serial(
         witness_eos_position=result.witness_eos_position,
         witness_content_endpoint_slot=result.witness_content_endpoint_slot,
         diagnostics={
+            "implementation": "greedy_exact_feasibility_v2",
             "optimization_guarantee": "none_order_greedy",
             "feasibility_guarantee": "feasible_on_represented_support",
             "proposal_order": [proposal.proposal_id for proposal in selection_input.proposals],
             "accepted_proposal_ids": accepted_ids,
             "decisions": decisions,
             "feasibility_call_count": feasibility_calls,
+            "total_timeout_seconds": total_timeout_seconds,
             "score_recomputed_from_witness": True,
             "input_support_sha256": selection_input.support.fingerprint,
             "witness_support_rows": [list(row) for row in witness_support.rows],
@@ -698,6 +757,11 @@ def select_serial(
     )
 
 
+# Compatibility aliases retained for version-1 callers and artifacts.
+select_exact = select_exact_mwpc
+select_serial = select_greedy_exact_feasibility
+
+
 __all__ = [
     "SelectionInput",
     "SelectionResult",
@@ -705,5 +769,8 @@ __all__ = [
     "SelectorKind",
     "recompute_witness_selection",
     "select_exact",
+    "select_exact_mwpc",
+    "select_greedy_exact_feasibility",
     "select_serial",
+    "validate_ordinary_primary_proposal_comparison",
 ]

@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-import mwpc_exact.brute_force_selection as brute_module
+import mwpc_exact.evaluation.brute_force as brute_module
 from mwpc_exact import (
     CompositionalByteLevelAdapter,
     EOSMode,
@@ -23,7 +23,7 @@ from mwpc_exact import (
     build_per_position_support,
     select_brute_force,
     select_brute_force_graph,
-    select_exact,
+    select_exact_mwpc,
 )
 from mwpc_exact.reference.dag_parser import reconstruct_dag_certificate, run_dag_cky
 from mwpc_exact.reference.grammar import (
@@ -114,7 +114,7 @@ def test_common_exact_and_completion_oracle_match_on_the_same_input() -> None:
     )
 
     brute_force = select_brute_force(selection_input, max_completions=4)
-    exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
     assert brute_force.selector is SelectorKind.BRUTE_FORCE
     assert brute_force.status is SelectionStatus.OPTIMAL
@@ -184,14 +184,14 @@ def test_common_exact_and_brute_force_agree_on_32_recorded_tiny_seeds() -> None:
         )
 
         brute_force = select_brute_force(selection_input, max_completions=27)
-        exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+        exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
         assert brute_force.status is exact.status, f"status mismatch at seed={seed}"
         assert brute_force.score == exact.score, f"objective mismatch at seed={seed}"
         if brute_force.status is SelectionStatus.OPTIMAL:
-            assert set(brute_force.selected_proposal_ids) == set(
-                exact.selected_proposal_ids
-            ), f"selected proposal mismatch at seed={seed}"
+            assert set(brute_force.selected_proposal_ids) == set(exact.selected_proposal_ids), (
+                f"selected proposal mismatch at seed={seed}"
+            )
             assert brute_force.diagnostics["certificate_independently_validated"] is True
 
 
@@ -217,7 +217,7 @@ def test_completion_oracle_common_result_preserves_infeasible_status() -> None:
     selection_input = common_input((), rows=((0,), (1,)))
 
     brute_force = select_brute_force(selection_input)
-    exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
     assert brute_force.status is SelectionStatus.INFEASIBLE_ON_SUPPORT
     assert brute_force.status is exact.status

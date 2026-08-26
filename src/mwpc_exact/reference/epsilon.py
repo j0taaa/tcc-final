@@ -126,9 +126,7 @@ def normalize_epsilon_edges(graph: WeightedTerminalDAG) -> EpsilonNormalizationR
                 current = best_from_source.get(edge.target_state)
                 if current is None or _epsilon_path_is_better(candidate, current):
                     best_from_source[edge.target_state] = candidate
-        closures.update(
-            {(source, target): path for target, path in best_from_source.items()}
-        )
+        closures.update({(source, target): path for target, path in best_from_source.items()})
 
     normalized_edges: list[TerminalEdge] = []
     provenance: dict[int, tuple[int, ...]] = {}
@@ -266,9 +264,7 @@ def _expand_normalized_certificate(
     edge_by_id = index_terminal_dag(normalization.original_graph).edge_by_id
     original_edges = tuple(edge_by_id[edge_id] for edge_id in original_ids)
     selected_ids = tuple(
-        proposal_id
-        for edge in original_edges
-        for proposal_id in edge.matched_proposal_ids
+        proposal_id for edge in original_edges for proposal_id in edge.matched_proposal_ids
     )
     objective = fsum(edge.weight for edge in original_edges)
     if not isclose(

@@ -77,8 +77,7 @@ def validate_case(
         proposals=proposals,
         graph=graph,
         grammar_recognizer=lambda labels: labels == ("a", "b"),
-        tokenizer_validator=lambda tokens, labels: (tokens, labels)
-        == ((10, 20), ("a", "b")),
+        tokenizer_validator=lambda tokens, labels: (tokens, labels) == ((10, 20), ("a", "b")),
         support_validator=lambda tokens: tokens == (10, 20),
         eos_validator=lambda tokens: len(tokens) == 2,
     )

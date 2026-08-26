@@ -50,8 +50,6 @@ def test_campaign_serializes_exact_instance_and_failure_metadata(tmp_path) -> No
 
     assert summary.failed_cases == 1
     fixture = json.loads((tmp_path / "seed-17.json").read_text(encoding="utf-8"))
-    failure = json.loads(
-        (tmp_path / "seed-17.failure.json").read_text(encoding="utf-8")
-    )
+    failure = json.loads((tmp_path / "seed-17.failure.json").read_text(encoding="utf-8"))
     assert fixture["seed"] == failure["seed"] == 17
     assert failure["fixture_file"] == "seed-17.json"

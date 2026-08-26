@@ -265,9 +265,7 @@ class DecoderStepResult:
         commit_by_position = {commit.position: commit for commit in commits}
         if len(commit_by_position) != len(commits):
             raise ValueError("commits must not update one position more than once")
-        for position, (before, after) in enumerate(
-            zip(input_canvas, updated_canvas, strict=True)
-        ):
+        for position, (before, after) in enumerate(zip(input_canvas, updated_canvas, strict=True)):
             commit = commit_by_position.get(position)
             if commit is None:
                 if before != after:
@@ -331,16 +329,15 @@ class DecoderStepResult:
                 raise ValueError("fallback source and configured strategy disagree")
             if selected_ids:
                 raise ValueError("baseline fallback cannot create exact selected proposal IDs")
-            if (
-                self.commit_guarantee
-                is not CommitGuarantee.BASELINE_FALLBACK_NO_EXACT_GUARANTEE
-            ):
+            if self.commit_guarantee is not CommitGuarantee.BASELINE_FALLBACK_NO_EXACT_GUARANTEE:
                 raise ValueError("baseline fallback must remain explicitly non-exact")
             if self.fallback_reason is None:
                 raise ValueError("baseline fallback requires a recorded reason")
         elif source is CommitSource.COMPLETE:
-            if status is not SolveStatus.OPTIMAL or commits or any(
-                token is None for token in input_canvas
+            if (
+                status is not SolveStatus.OPTIMAL
+                or commits
+                or any(token is None for token in input_canvas)
             ):
                 raise ValueError("complete requires an OPTIMAL result and a fully fixed canvas")
             if self.commit_guarantee is not CommitGuarantee.EXACT_WITNESS_PROGRESS:
@@ -381,8 +378,6 @@ class DecoderStepResult:
             "fallback_reason": self.fallback_reason,
             "diagnostics": _thaw_json(self.diagnostics),
         }
-
-
 
 
 FailureFallbackCallable = Callable[[FailureFallbackRequest], FallbackSelection]

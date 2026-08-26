@@ -74,9 +74,7 @@ class _LoggedStepEvent:
             "step_id": self.step_id,
             "input_token_ids": list(self.input_token_ids),
             "input_canvas": list(self.outcome.request.canvas),
-            "candidate_positions": list(
-                self.outcome.request.proposal_batch.candidate_positions
-            ),
+            "candidate_positions": list(self.outcome.request.proposal_batch.candidate_positions),
             "solver_status": result.status.value,
             "objective_value": result.objective_value,
             "selected_proposal_ids": list(result.selected_proposal_ids),

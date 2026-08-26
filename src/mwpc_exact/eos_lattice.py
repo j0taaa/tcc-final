@@ -143,9 +143,7 @@ class EOSLattice:
             raise TypeError("adapter must be a CompositionalByteLevelAdapter")
         if not isinstance(self.policy, EOSPolicy):
             raise TypeError("policy must be an EOSPolicy")
-        expected_vocabulary_size = (
-            self.token_lattice.support.exactness_scope.vocabulary_size
-        )
+        expected_vocabulary_size = self.token_lattice.support.exactness_scope.vocabulary_size
         if self.adapter.vocabulary_size != expected_vocabulary_size:
             raise ValueError(
                 "tokenizer adapter and exactness scope must have equal vocabulary sizes"
@@ -269,9 +267,7 @@ class EOSLattice:
 
     def _validate_arc_metadata(self, arc: EOSArc, choice: TokenChoice) -> None:
         expected_emission = (
-            self.adapter.token_bytes(choice.token_id)
-            if arc.role is TokenRole.ORDINARY
-            else b""
+            self.adapter.token_bytes(choice.token_id) if arc.role is TokenRole.ORDINARY else b""
         )
         if (
             arc.position != choice.position
@@ -534,9 +530,7 @@ class EOSLattice:
             "original_graph_node_count": len(self.graph.node_ids),
             "original_graph_edge_count": len(self.graph.edges),
             "normalized_graph_edge_count": len(self.normalized_graph.edges),
-            "epsilon_edge_count": sum(
-                isinstance(edge, EpsilonEdge) for edge in self.graph.edges
-            ),
+            "epsilon_edge_count": sum(isinstance(edge, EpsilonEdge) for edge in self.graph.edges),
             "special_reward_attachment": "own_epsilon_edge",
             "physical_slot_policy": "all_slots_consumed",
             "represented_support_sha256": self.token_lattice.support.fingerprint,
@@ -609,13 +603,9 @@ def build_eos_lattice(
         transitions: list[tuple[TokenRole, EOSState, EOSState, bytes]] = []
         special_mode = policy.mode is not EOSMode.ABSENT
         if special_mode and choice.token_id in policy.termination_token_ids:
-            transitions.append(
-                (TokenRole.EOS, EOSState.BEFORE_EOS, EOSState.AFTER_EOS, b"")
-            )
+            transitions.append((TokenRole.EOS, EOSState.BEFORE_EOS, EOSState.AFTER_EOS, b""))
         if special_mode and choice.token_id == policy.pad_token_id:
-            transitions.append(
-                (TokenRole.PAD, EOSState.AFTER_EOS, EOSState.AFTER_EOS, b"")
-            )
+            transitions.append((TokenRole.PAD, EOSState.AFTER_EOS, EOSState.AFTER_EOS, b""))
         is_special = special_mode and (
             choice.token_id in policy.termination_token_ids
             or choice.token_id == policy.pad_token_id

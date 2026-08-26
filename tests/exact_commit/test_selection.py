@@ -5,7 +5,7 @@ from importlib.util import find_spec
 
 import pytest
 
-import mwpc_exact.selection as selection_module
+import mwpc_exact.evaluation.selection as selection_module
 from mwpc_exact import (
     CompositionalByteLevelAdapter,
     EOSMode,
@@ -22,8 +22,8 @@ from mwpc_exact import (
     SupportPolicy,
     build_per_position_support,
     recompute_witness_selection,
-    select_exact,
-    select_serial,
+    select_exact_mwpc,
+    select_greedy_exact_feasibility,
 )
 from mwpc_exact.reference.grammar import (
     BinaryProduction,
@@ -106,8 +106,8 @@ def test_same_frozen_input_runs_serial_and_exact_without_overstating_serial() ->
         )
     )
 
-    serial = select_serial(selection_input, backend=ExactBackend.PYTHON)
-    exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+    serial = select_greedy_exact_feasibility(selection_input, backend=ExactBackend.PYTHON)
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
     assert serial.selector is SelectorKind.SERIAL
     assert serial.status is SelectionStatus.FEASIBLE_ON_SUPPORT
@@ -143,8 +143,8 @@ def test_same_common_input_runs_through_production_rust_backend() -> None:
         )
     )
 
-    serial = select_serial(selection_input, backend=ExactBackend.RUST)
-    exact = select_exact(selection_input, backend=ExactBackend.RUST)
+    serial = select_greedy_exact_feasibility(selection_input, backend=ExactBackend.RUST)
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.RUST)
 
     assert serial.status is SelectionStatus.FEASIBLE_ON_SUPPORT
     assert serial.selected_proposal_ids == (0,)
@@ -184,8 +184,8 @@ def test_same_input_contract_preserves_required_eos_and_pad_slots() -> None:
         eos_policy=eos_policy,
     )
 
-    serial = select_serial(selection_input, backend=ExactBackend.PYTHON)
-    exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+    serial = select_greedy_exact_feasibility(selection_input, backend=ExactBackend.PYTHON)
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
     for result in (serial, exact):
         assert result.selected_proposal_ids == (0, 1, 2)
@@ -204,8 +204,8 @@ def test_serial_consumes_saved_proposal_order_without_sorting_by_id_or_weight() 
     )
     high_then_low = frozen_input(tuple(reversed(low_then_high.proposals)))
 
-    first = select_serial(low_then_high, backend=ExactBackend.PYTHON)
-    second = select_serial(high_then_low, backend=ExactBackend.PYTHON)
+    first = select_greedy_exact_feasibility(low_then_high, backend=ExactBackend.PYTHON)
+    second = select_greedy_exact_feasibility(high_then_low, backend=ExactBackend.PYTHON)
 
     assert first.selected_proposal_ids == (20,)
     assert first.witness_token_ids == (0, 0)
@@ -229,7 +229,7 @@ def test_serial_preserves_duplicate_choice_provenance_and_zero_weight_contract()
         )
     )
 
-    result = select_serial(selection_input, backend=ExactBackend.PYTHON)
+    result = select_greedy_exact_feasibility(selection_input, backend=ExactBackend.PYTHON)
 
     assert result.status is SelectionStatus.FEASIBLE_ON_SUPPORT
     assert result.witness_token_ids == (0, 0)
@@ -246,8 +246,8 @@ def test_unrepresented_proposal_is_rejected_without_claiming_infeasibility() -> 
         rows=((0,), (0, 1)),
     )
 
-    serial = select_serial(selection_input, backend=ExactBackend.PYTHON)
-    exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+    serial = select_greedy_exact_feasibility(selection_input, backend=ExactBackend.PYTHON)
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
     assert serial.status is SelectionStatus.FEASIBLE_ON_SUPPORT
     assert serial.score == 0.0
@@ -262,8 +262,8 @@ def test_unrepresented_proposal_is_rejected_without_claiming_infeasibility() -> 
 def test_infeasible_saved_support_has_no_score_or_witness_for_either_selector() -> None:
     selection_input = frozen_input((), rows=((0,), (1,)))
 
-    serial = select_serial(selection_input, backend=ExactBackend.PYTHON)
-    exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+    serial = select_greedy_exact_feasibility(selection_input, backend=ExactBackend.PYTHON)
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
     assert serial.status is SelectionStatus.INFEASIBLE_ON_SUPPORT
     assert exact.status is SelectionStatus.INFEASIBLE_ON_SUPPORT
@@ -288,8 +288,8 @@ def test_timeout_is_preserved_and_never_converted_to_infeasible(
 
     monkeypatch.setattr(selection_module, "solve_exact_commit", timed_out)
 
-    serial = select_serial(selection_input, backend=ExactBackend.PYTHON)
-    exact = select_exact(selection_input, backend=ExactBackend.PYTHON)
+    serial = select_greedy_exact_feasibility(selection_input, backend=ExactBackend.PYTHON)
+    exact = select_exact_mwpc(selection_input, backend=ExactBackend.PYTHON)
 
     assert serial.status is SelectionStatus.TIMEOUT
     assert exact.status is SelectionStatus.TIMEOUT

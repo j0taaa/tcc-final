@@ -54,9 +54,7 @@ def _finite_sequence(value: object, field_name: str) -> Sequence[object]:
 def _position_tuple(value: object, field_name: str) -> tuple[int, ...]:
     if isinstance(value, (str, bytes)) or not isinstance(value, Iterable):
         raise TypeError(f"{field_name} must be an iterable of positions")
-    positions = tuple(
-        _non_negative_integer(position, f"{field_name} item") for position in value
-    )
+    positions = tuple(_non_negative_integer(position, f"{field_name} item") for position in value)
     if len(set(positions)) != len(positions):
         raise ValueError(f"{field_name} must not contain duplicates")
     return positions
@@ -118,9 +116,7 @@ class ScheduleProposalBatch:
             )
         for proposal in proposals:
             confidence = _required_confidence(proposal)
-            expected_weight = (
-                1.0 if self.weight_mode is ProposalWeightMode.UNIT else confidence
-            )
+            expected_weight = 1.0 if self.weight_mode is ProposalWeightMode.UNIT else confidence
             if proposal.weight != expected_weight:
                 raise ValueError(
                     f"proposal {proposal.proposal_id} weight does not match "

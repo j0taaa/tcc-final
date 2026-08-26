@@ -242,9 +242,7 @@ def run_rust_differential_campaign(
             if failure_path is not None:
                 fixture_name = f"seed-{seed}.json"
                 failure_name = f"seed-{seed}.failure.json"
-                (failure_path / fixture_name).write_text(
-                    instance.to_json(), encoding="utf-8"
-                )
+                (failure_path / fixture_name).write_text(instance.to_json(), encoding="utf-8")
                 (failure_path / failure_name).write_text(
                     json.dumps(
                         {
@@ -303,8 +301,7 @@ def _validate_rust_path_reward(
     assert certificate is not None and rust_solve.objective_value is not None
     indexed = index_terminal_dag(normalized_graph)
     path_edges = tuple(
-        indexed.edge_by_id[edge_id]
-        for edge_id in certificate.witness_graph_edge_ids
+        indexed.edge_by_id[edge_id] for edge_id in certificate.witness_graph_edge_ids
     )
     reward = fsum(edge.weight for edge in path_edges)
     if not isclose(reward, rust_solve.objective_value, rel_tol=1e-12, abs_tol=1e-12):
@@ -314,9 +311,7 @@ def _validate_rust_path_reward(
             f"certificate={rust_solve.objective_value} recomputed={reward}",
         )
     expected_token_ids = tuple(
-        edge.provenance_token_edge_id
-        for edge in path_edges
-        if isinstance(edge, TerminalEdge)
+        edge.provenance_token_edge_id for edge in path_edges if isinstance(edge, TerminalEdge)
     )
     if rust_solve.witness_token_edge_ids != expected_token_ids:
         _mismatch(

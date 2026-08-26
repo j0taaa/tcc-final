@@ -102,17 +102,14 @@ def index_terminal_dag(graph: WeightedTerminalDAG) -> IndexedTerminalDAG:
     if len(topological_order) != len(node_ids):
         cyclic_nodes = tuple(sorted(node_id for node_id, degree in indegree.items() if degree > 0))
         raise GraphCycleError(
-            "weighted terminal graph must be acyclic; "
-            f"cycle involves nodes {cyclic_nodes}"
+            f"weighted terminal graph must be acyclic; cycle involves nodes {cyclic_nodes}"
         )
 
     order = tuple(topological_order)
     order_index = {node_id: index for index, node_id in enumerate(order)}
     for edge in edges:
         if order_index[edge.source_state] >= order_index[edge.target_state]:
-            raise GraphCycleError(
-                f"edge {edge.edge_id} violates the computed topological order"
-            )
+            raise GraphCycleError(f"edge {edge.edge_id} violates the computed topological order")
 
     return IndexedTerminalDAG(
         graph=graph,

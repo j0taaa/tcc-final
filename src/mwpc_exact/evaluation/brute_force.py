@@ -13,6 +13,13 @@ from time import perf_counter
 
 from mwpc_exact.byte_lattice import build_byte_lattice
 from mwpc_exact.eos_policy import EOSMode
+from mwpc_exact.evaluation.selection import (
+    SelectionInput,
+    SelectionResult,
+    SelectionStatus,
+    SelectorKind,
+    recompute_witness_selection,
+)
 from mwpc_exact.reference.brute_force import (
     SearchSpaceLimitExceeded,
     exhaustive_completion_oracle,
@@ -26,13 +33,6 @@ from mwpc_exact.reference.graph import index_terminal_dag
 from mwpc_exact.reference.graph_oracle import (
     PathEnumerationLimitExceeded,
     enumerate_best_cfg_path,
-)
-from mwpc_exact.selection import (
-    SelectionInput,
-    SelectionResult,
-    SelectionStatus,
-    SelectorKind,
-    recompute_witness_selection,
 )
 from mwpc_exact.token_lattice import build_token_lattice
 from mwpc_exact.types import (
@@ -99,14 +99,12 @@ def _token_aligned_labels(
         emission = selection_input.tokenizer_adapter.emissions[token_id]
         if emission is None or len(emission) != 1:
             return None, (
-                "the completion oracle requires one unique grammar terminal per "
-                "represented token"
+                "the completion oracle requires one unique grammar terminal per represented token"
             )
         labels[token_id] = emission[0]
     if len(set(labels.values())) != len(labels):
         return None, (
-            "the completion oracle requires one unique grammar terminal per "
-            "represented token"
+            "the completion oracle requires one unique grammar terminal per represented token"
         )
     unknown_labels = sorted(
         set(labels.values()) - set(selection_input.grammar.terminal_labels.values())
