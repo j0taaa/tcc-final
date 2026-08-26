@@ -14,9 +14,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M11 / T1101.** M0 through M10, the M10.5 hardening pass, and T1100 are
-complete. The first incomplete required task is T1101: Q1 correctness
-experiment.
+**M11 / T1102.** M0 through M10, the M10.5 hardening pass, T1100, and T1101
+are complete. The first incomplete required task is T1102: Q2 heuristic
+optimality-gap experiment.
 
 ## Completed milestone summary
 
@@ -65,16 +65,32 @@ passed; `python -m pytest -q` -> 523 passed; `make paper` -> `main.pdf` built.
 
 **Depends on:** T1100, M3 gate, M6 gate
 
-- [ ] Run canonical, exhaustive, and randomized small instances.
-- [ ] Compare all available solvers.
-- [ ] Fail the experiment on any disagreement.
-- [ ] Output counts, sizes, seeds, timings, and mismatch fixtures.
+- [x] Run canonical, exhaustive, and randomized small instances.
+- [x] Compare all available solvers.
+- [x] Fail the experiment on any disagreement.
+- [x] Output counts, sizes, seeds, timings, and mismatch fixtures.
 
 **Acceptance criteria**
 
-- [ ] Reported agreement is computed, not manually entered.
+- [x] Reported agreement is computed, not manually entered.
 
-**Evidence:** `[command and raw/summary artifact]`
+**Evidence:** implementation commit `bd6b4455102f3b1a7603de8096b3380d4733b13e`;
+`python scripts/exact_commit/run_q1_correctness.py --config
+configs/experiments/q1_correctness_v1.toml --run-directory
+results/raw/q1_correctness_v1/bd6b445 --summary-output
+docs/evidence/t1101-q1-correctness-summary.json` from that clean commit -> 249/249
+agreements (5 canonical, 144 exhaustive, 100 randomized), with each of the
+direct exhaustive oracle, independent Python reference solver, and Rust
+production solver reporting 167 `OPTIMAL` and 82 `INFEASIBLE_ON_SUPPORT`;
+zero mismatch fixtures were emitted. Raw per-case records are in
+`results/raw/q1_correctness_v1/bd6b445/q1-cases.jsonl`, and the versioned,
+computed summary is `docs/evidence/t1101-q1-correctness-summary.json`.
+`python -m pytest -q tests/exact_commit/test_q1_correctness.py
+tests/exact_commit/test_t1101_evidence.py` -> 9 passed; `make check` -> Ruff
+clean, strict MyPy clean, 9 unit and 515 exact tests passed; `python -m pytest
+-q` -> 532 passed; `make test-rust-parser` -> Rust format, 17 unit, 3
+randomized differential, library Clippy, and binding Clippy checks passed;
+`make paper` -> `main.pdf` built (15 pages).
 
 ## T1102 — Implement Q2 heuristic optimality-gap experiment
 

@@ -1,0 +1,146 @@
+{
+  "agreement_rate": 1.0,
+  "artifact_kind": "mwpc_q1_correctness_summary",
+  "case_count": 249,
+  "failed_cases": 0,
+  "failures": [],
+  "families": {
+    "canonical": {
+      "case_count": 5,
+      "failed_cases": 0,
+      "passed_cases": 5
+    },
+    "exhaustive": {
+      "case_count": 144,
+      "failed_cases": 0,
+      "passed_cases": 144
+    },
+    "randomized": {
+      "case_count": 100,
+      "failed_cases": 0,
+      "passed_cases": 100
+    }
+  },
+  "passed_cases": 249,
+  "run_metadata": {
+    "commit_strategy": "exact_mwpc",
+    "config_sha256": "e5fe6f73f32e72d4023b0d0fbe4e1c9cf8e0066c25f4a06f85c7e82007770952",
+    "dataset": "synthetic_q1_finite_support",
+    "exactness_guarantee": "per_step",
+    "exactness_scope": "exact_on_support",
+    "finite_slots": true,
+    "generated_at_utc": "2026-08-26T12:31:21.043385+00:00",
+    "git_commit": "bd6b4455102f3b1a7603de8096b3380d4733b13e",
+    "git_dirty": false,
+    "grammar_hash_policy": "sha256_per_instance",
+    "hardware": {
+      "cpu_threads": 1,
+      "cuda_device": null,
+      "device": "cpu",
+      "dtype": "float64",
+      "machine": "x86_64",
+      "processor": "x86_64",
+      "synchronize_cuda": false
+    },
+    "model_id": "not_applicable",
+    "model_revision": "not_applicable",
+    "run_id": "bd6b445",
+    "run_timeout_seconds": 600.0,
+    "software_versions": {
+      "mwpc_exact": "0.1.0",
+      "mwpc_parser_py": "0.1.0",
+      "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+      "python": "3.11.16",
+      "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)"
+    },
+    "solver_timeout_seconds": 5.0,
+    "support_k_max": 6,
+    "support_policy": "canonical_exhaustive_and_random_explicit_per_position",
+    "support_top_k": 6,
+    "tokenizer_id": "generated_raw_byte_vocabulary",
+    "tokenizer_revision": "finite_lattice_generator_v1",
+    "weight_policy": "nonnegative_integer_proposal_weights"
+  },
+  "schema_version": 1,
+  "seed_ranges": {
+    "canonical": {
+      "count": 5,
+      "maximum": 1001105,
+      "minimum": 1001101
+    },
+    "exhaustive": {
+      "count": 144,
+      "maximum": 2001244,
+      "minimum": 2001101
+    },
+    "randomized": {
+      "count": 100,
+      "maximum": 1200,
+      "minimum": 1101
+    }
+  },
+  "size_ranges": {
+    "enumerated_token_paths": {
+      "maximum": 80,
+      "minimum": 1
+    },
+    "grammar_nonterminal_count": {
+      "maximum": 3,
+      "minimum": 1
+    },
+    "grammar_production_count": {
+      "maximum": 4,
+      "minimum": 1
+    },
+    "grammar_terminal_count": {
+      "maximum": 3,
+      "minimum": 2
+    },
+    "grammar_valid_paths": {
+      "maximum": 80,
+      "minimum": 0
+    },
+    "proposal_count": {
+      "maximum": 6,
+      "minimum": 0
+    },
+    "represented_token_choices": {
+      "maximum": 13,
+      "minimum": 2
+    },
+    "slot_count": {
+      "maximum": 3,
+      "minimum": 1
+    },
+    "vocabulary_size": {
+      "maximum": 6,
+      "minimum": 2
+    }
+  },
+  "solver_status_counts": {
+    "exhaustive_oracle": {
+      "infeasible_on_support": 82,
+      "optimal": 167
+    },
+    "python_reference": {
+      "infeasible_on_support": 82,
+      "optimal": 167
+    },
+    "rust_production": {
+      "infeasible_on_support": 82,
+      "optimal": 167
+    }
+  },
+  "status_counts": {
+    "infeasible_on_support": 82,
+    "optimal": 167
+  },
+  "timing_totals_seconds": {
+    "byte_lattice_audit": 0.09528277267236263,
+    "comparison": 0.025436807074584067,
+    "exhaustive_oracle": 0.013341144192963839,
+    "python_reference": 0.08104259514948353,
+    "rust_production": 0.07479730702470988,
+    "total": 0.2901464106980711
+  }
+}
