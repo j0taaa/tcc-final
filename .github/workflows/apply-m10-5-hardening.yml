@@ -198,6 +198,9 @@ jobs:
           git restore docs/evidence
       - name: Compile article and inspect patch
         run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-science
           make paper
           git diff --check
       - name: Commit validated hardening tree
