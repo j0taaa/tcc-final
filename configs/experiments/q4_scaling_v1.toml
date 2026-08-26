@@ -1,0 +1,61 @@
+schema_version = 1
+experiment_id = "q4_scaling_v1"
+question = "scaling"
+description = "Executable one-axis CPU scaling smoke for Python and Rust exact-on-support backends."
+publication_mode = false
+seeds = [1104]
+repetitions = 2
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "generated_top_k_or_explicit_per_position"
+top_k = 2
+k_max = 8
+finite_slots = true
+
+[model]
+model_id = "not_applicable_generated_scaling_instances"
+model_revision = "scaling_generator_v1"
+tokenizer_id = "generated_raw_byte_vocabulary"
+tokenizer_revision = "scaling_generator_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "generated_reachable_a_plus_cfgs"
+source = "m11_scaling_generator_v1"
+revision = "scaling_generator_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 10.0
+run_seconds = 1800.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+backends = ["python", "rust"]
+slot_counts = [1, 2, 4, 8]
+top_k_values = [1, 2, 4, 8]
+graph_size_scales = [1, 2, 4]
+grammar_production_counts = [4, 8, 16]
+token_byte_lengths = [1, 2, 4]
+proposal_counts = [1, 2, 4, 8]
+baseline_slot_count = 2
+baseline_top_k = 2
+baseline_grammar_production_count = 4
+baseline_token_byte_length = 1
+baseline_proposal_count = 2
+vocabulary_size = 9
+max_address_space_mib = 2048
+record_chart_size = true
+record_graph_size = true
+raw_output_root = "results/raw/q4_scaling_v1"

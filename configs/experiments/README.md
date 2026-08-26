@@ -35,3 +35,10 @@ configuration. It keeps the earlier Q3 schema smoke immutable and freezes the
 two T703 cases, relaxed ordered-anchor `Sigma*` baseline, explicit finite
 support, required independent path enumeration, and the fact that this version
 does not mine real decoder states.
+
+`q4_scaling_v1.toml` is the executable T1104 CPU scaling configuration. It
+keeps the earlier Q4 schema smoke immutable and defines one-axis sweeps for
+slots, top-K, realized graph size, reachable grammar productions, token byte
+length, and proposal count. Every backend repetition runs in an isolated,
+RAM-limited worker. Raw artifacts retain every status; the separate plot-input
+artifact contains only uncensored `OPTIMAL` or `INFEASIBLE_ON_SUPPORT` rows.
