@@ -51,6 +51,7 @@ class SelectionStatus(StrEnum):
     HEURISTIC = "heuristic"
     INFEASIBLE_ON_SUPPORT = "infeasible_on_support"
     TIMEOUT = "timeout"
+    SIZE_LIMIT_EXCEEDED = "size_limit_exceeded"
     UNSUPPORTED = "unsupported"
     ERROR = "error"
 
@@ -256,19 +257,26 @@ class SelectionResult:
         object.__setattr__(self, "witness_content_endpoint_slot", content_endpoint)
         object.__setattr__(self, "diagnostics", frozen)
 
+        has_graph_witness = bool(graph_edge_ids)
+        has_token_witness = bool(token_ids)
+        has_witness = has_token_witness or has_graph_witness
         has_witness_metadata = any(
             (
                 bool(terminal_labels),
-                bool(graph_edge_ids),
+                has_graph_witness,
                 eos_position is not None,
                 content_endpoint is not None,
             )
         )
-        if has_witness_metadata and not token_ids:
-            raise ValueError("witness metadata requires witness_token_ids")
+        if has_witness_metadata and not has_witness:
+            raise ValueError("witness metadata requires a token or graph witness")
+        if (eos_position is not None or content_endpoint is not None) and not has_token_witness:
+            raise ValueError("finite-slot witness metadata requires witness_token_ids")
         if self.status is SelectionStatus.OPTIMAL:
-            if score is None or not token_ids:
-                raise ValueError("OPTIMAL requires a score and witness token sequence")
+            if score is None or not has_witness:
+                raise ValueError("OPTIMAL requires a score and reconstructible witness")
+            if self.selector is not SelectorKind.BRUTE_FORCE and not has_token_witness:
+                raise ValueError("non-oracle OPTIMAL results require a witness token sequence")
         elif self.status in {
             SelectionStatus.FEASIBLE_ON_SUPPORT,
             SelectionStatus.HEURISTIC,
@@ -287,9 +295,21 @@ class SelectionResult:
 
     @property
     def witness_available(self) -> bool:
-        """Whether this selector returned a finite token completion witness."""
+        """Whether this selector returned a token or terminal-graph witness."""
+
+        return self.token_witness_available or self.graph_witness_available
+
+    @property
+    def token_witness_available(self) -> bool:
+        """Whether a finite physical-token completion is available."""
 
         return bool(self.witness_token_ids)
+
+    @property
+    def graph_witness_available(self) -> bool:
+        """Whether a stable terminal-graph edge path is available."""
+
+        return bool(self.witness_graph_edge_ids)
 
     def to_dict(self) -> dict[str, object]:
         """Return a JSON-compatible result for later benchmark schemas."""
@@ -301,6 +321,8 @@ class SelectionResult:
             "score": self.score,
             "runtime_seconds": self.runtime_seconds,
             "witness_available": self.witness_available,
+            "token_witness_available": self.token_witness_available,
+            "graph_witness_available": self.graph_witness_available,
             "witness_token_ids": list(self.witness_token_ids),
             "witness_terminal_labels": list(self.witness_terminal_labels),
             "witness_graph_edge_ids": list(self.witness_graph_edge_ids),

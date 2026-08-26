@@ -7,6 +7,10 @@ from mwpc_exact.adaptive import (
     solve_exact_commit_adaptive_validated,
 )
 from mwpc_exact.backend import ExactBackend
+from mwpc_exact.brute_force_selection import (
+    select_brute_force,
+    select_brute_force_graph,
+)
 from mwpc_exact.byte_lattice import ByteLattice, ByteLatticePath, build_byte_lattice
 from mwpc_exact.decoder import (
     CommitGuarantee,
@@ -191,6 +195,8 @@ __all__ = [
     "dispatch_commit_strategy",
     "legacy_commit_strategy",
     "recompute_witness_selection",
+    "select_brute_force",
+    "select_brute_force_graph",
     "select_epic",
     "select_exact",
     "select_serial",
