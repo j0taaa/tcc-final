@@ -24,6 +24,7 @@ jobs:
       - name: Make Torch loading optional to static analysis
         run: |
           python - <<'PY'
+          import re
           from pathlib import Path
 
           path = Path("src/mwpc_exact/epic_adapter/llada.py")
@@ -52,14 +53,13 @@ jobs:
           if text.count(marker) != 1:
               raise RuntimeError("compact-ranking marker is not unique")
           text = text.replace(marker, helper + marker, 1)
-          old = '''    try:
-              import torch
-          except ImportError:
-              torch = None  # type: ignore[assignment]
-          '''
-          if text.count(old) != 2:
-              raise RuntimeError(f"expected two optional Torch import blocks, found {text.count(old)}")
-          text = text.replace(old, "    torch = _optional_torch()\n", 2)
+          pattern = re.compile(
+              r"    try:\n        import torch\n    except ImportError:\n"
+              r"        torch = None  # type: ignore\[assignment\]\n"
+          )
+          text, count = pattern.subn("    torch = _optional_torch()\n", text)
+          if count != 2:
+              raise RuntimeError(f"expected two optional Torch import blocks, found {count}")
           path.write_text(text, encoding="utf-8")
           PY
       - name: Validate lightweight core
