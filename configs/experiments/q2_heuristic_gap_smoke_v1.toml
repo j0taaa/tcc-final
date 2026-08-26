@@ -1,0 +1,48 @@
+schema_version = 1
+experiment_id = "q2_heuristic_gap_smoke_v1"
+question = "heuristic_gap"
+description = "Offline smoke comparison of serial, EPIC regular-cover, and exact MWPC selectors."
+publication_mode = false
+seeds = [1102]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "benchmark_instance_explicit_per_position"
+top_k = 4
+k_max = 4
+finite_slots = true
+
+[model]
+model_id = "saved_logits_fixture"
+model_revision = "benchmark_instance_schema_v1"
+tokenizer_id = "benchmark_instance_token_bytes"
+tokenizer_revision = "benchmark_instance_schema_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "benchmark_instance_embedded_cfg"
+source = "tests/exact_commit/fixtures/benchmark_instance_v1.json"
+revision = "benchmark_instance_schema_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 5.0
+run_seconds = 600.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+selectors = ["greedy_exact_feasibility", "epic_regular_cover", "exact_mwpc"]
+weight_modes = ["unit", "confidence"]
+include_crafted_adversarial_cases = true
+raw_output_root = "results/raw/q2_heuristic_gap_smoke_v1"

@@ -1,0 +1,49 @@
+schema_version = 1
+experiment_id = "q1_correctness_smoke_v1"
+question = "correctness"
+description = "CPU smoke configuration for canonical, exhaustive, and seeded exactness checks."
+publication_mode = false
+seeds = [1101]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "generated_explicit_per_position"
+top_k = 4
+k_max = 4
+finite_slots = true
+
+[model]
+model_id = "not_applicable"
+model_revision = "not_applicable"
+tokenizer_id = "generated_raw_byte_vocabulary"
+tokenizer_revision = "generator_schema_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "generated_small_cfgs"
+source = "mwpc_exact.reference.random_instances"
+revision = "generator_schema_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 5.0
+run_seconds = 600.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+campaigns = ["canonical", "exhaustive", "randomized"]
+solvers = ["exhaustive_oracle", "python_reference", "rust_production"]
+case_count = 100
+failure_directory = "artifacts/m11/q1-correctness-failures"
+raw_output_root = "results/raw/q1_correctness_smoke_v1"

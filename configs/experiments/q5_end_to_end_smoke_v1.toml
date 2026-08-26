@@ -1,0 +1,52 @@
+schema_version = 1
+experiment_id = "q5_end_to_end_smoke_v1"
+question = "end_to_end"
+description = "Non-publication CUDA smoke using the already pinned T904 LLaDA model and literal grammar."
+publication_mode = false
+seeds = [904]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "model_top_k_plus_proposals_and_specials"
+top_k = 1
+k_max = 4
+finite_slots = true
+
+[model]
+model_id = "GSAI-ML/LLaDA-8B-Instruct"
+model_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+tokenizer_id = "GSAI-ML/LLaDA-8B-Instruct"
+tokenizer_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+local_files_only = true
+
+[grammar]
+grammar_id = "literal_ascii_zero"
+source = "configs/exact_commit/t904_llada_live_smoke.toml"
+revision = "t904_grammar_v1"
+hash_policy = "sha256_canonical_grammar"
+
+[timeouts]
+solver_seconds = 30.0
+run_seconds = 600.0
+
+[hardware]
+device = "cuda"
+dtype = "bfloat16"
+cpu_threads = 1
+cuda_device = 0
+synchronize_cuda = true
+
+[parameters]
+strategies = ["unconstrained", "serial", "epic", "exact"]
+prompt_id = "t904_literal_zero"
+generation_length = 4
+block_length = 4
+steps = 1
+weight_mode = "confidence"
+eos_mode = "required"
+raw_output_root = "results/raw/q5_end_to_end_smoke_v1"

@@ -14,8 +14,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M11 / T1100.** M0 through M10 and the M10.5 hardening pass are complete. The
-first incomplete required task is T1100: immutable experiment configuration.
+**M11 / T1101.** M0 through M10, the M10.5 hardening pass, and T1100 are
+complete. The first incomplete required task is T1101: Q1 correctness
+experiment.
 
 ## Completed milestone summary
 
@@ -42,16 +43,23 @@ commits, commands, configured-case boundaries, and result counts.
 
 **Depends on:** M10 gate
 
-- [ ] Define configs for correctness, gap, finite slots, scaling, and end-to-end runs.
-- [ ] Include exactness, support, model, grammar, seed, timeout, and hardware-relevant options.
-- [ ] Hash normalized configs.
-- [ ] Save the resolved config with every run.
+- [x] Define configs for correctness, gap, finite slots, scaling, and end-to-end runs.
+- [x] Include exactness, support, model, grammar, seed, timeout, and hardware-relevant options.
+- [x] Hash normalized configs.
+- [x] Save the resolved config with every run.
 
 **Acceptance criteria**
 
-- [ ] Re-running one config creates comparable metadata.
+- [x] Re-running one config creates comparable metadata.
 
-**Evidence:** `[config paths and test]`
+**Evidence:** `configs/experiments/q{1,2,3,4,5}_*_smoke_v1.toml` and
+`src/mwpc_exact/experiments/config.py`; `python -m pytest -q
+tests/exact_commit/test_experiment_config.py` -> 14 passed; two installed-CLI
+materializations of Q1 produced byte-identical `resolved-config.json` files
+with normalized SHA-256
+`eb8d397d22cc6a65881ed49465079e01f571666e64e76f452aa2ac10e63506b4`;
+`make check` -> Ruff clean, strict MyPy clean, 9 unit and 506 exact tests
+passed; `python -m pytest -q` -> 523 passed; `make paper` -> `main.pdf` built.
 
 ## T1101 — Implement Q1 correctness experiment
 

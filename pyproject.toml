@@ -14,6 +14,7 @@ dependencies = []
 
 [project.scripts]
 mwpc-commit-config = "mwpc_exact.strategy:main"
+mwpc-resolve-experiment-config = "mwpc_exact.experiments.config:main"
 
 [project.optional-dependencies]
 dev = [

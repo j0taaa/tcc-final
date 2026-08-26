@@ -1,0 +1,48 @@
+schema_version = 1
+experiment_id = "q3_finite_slots_smoke_v1"
+question = "finite_slots"
+description = "Replay smoke configuration for bounded-slot versus abstract Sigma-star counterexamples."
+publication_mode = false
+seeds = [1103]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "curated_counterexample_explicit_support"
+top_k = 4
+k_max = 4
+finite_slots = true
+
+[model]
+model_id = "not_applicable"
+model_revision = "not_applicable"
+tokenizer_id = "counterexample_raw_byte_vocabulary"
+tokenizer_revision = "finite_slot_fixture_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "finite_slot_counterexample_cfgs"
+source = "tests/exact_commit/fixtures/finite_slot_counterexamples.json"
+revision = "finite_slot_fixture_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 5.0
+run_seconds = 300.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+compare_abstract_sigma_star = true
+compare_finite_lattice = true
+require_minimum_token_witness = true
+raw_output_root = "results/raw/q3_finite_slots_smoke_v1"

@@ -1,0 +1,53 @@
+schema_version = 1
+experiment_id = "q4_scaling_smoke_v1"
+question = "scaling"
+description = "Small CPU scaling sweep for reference and production exact-on-support backends."
+publication_mode = false
+seeds = [1104]
+repetitions = 3
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "generated_explicit_per_position"
+top_k = 1
+k_max = 8
+finite_slots = true
+
+[model]
+model_id = "not_applicable"
+model_revision = "not_applicable"
+tokenizer_id = "generated_raw_byte_vocabulary"
+tokenizer_revision = "scaling_generator_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "generated_scaling_cfgs"
+source = "m11_scaling_generator"
+revision = "scaling_generator_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 10.0
+run_seconds = 1800.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+backends = ["python", "rust"]
+slot_counts = [1, 2, 4, 8]
+top_k_values = [1, 2, 4, 8]
+grammar_production_counts = [4, 8, 16]
+token_byte_lengths = [1, 2, 4]
+proposal_counts = [1, 2, 4, 8]
+record_chart_size = true
+record_graph_size = true
+raw_output_root = "results/raw/q4_scaling_smoke_v1"
