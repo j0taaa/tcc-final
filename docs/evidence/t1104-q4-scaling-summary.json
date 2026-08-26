@@ -1,0 +1,75 @@
+{
+  "artifact_kind": "mwpc_q4_scaling_summary",
+  "axis_counts": {
+    "grammar_production_count": 12,
+    "graph_size_scale": 12,
+    "proposal_count": 16,
+    "slot_count": 16,
+    "token_byte_length": 12,
+    "top_k": 16
+  },
+  "backend_comparison_count": 42,
+  "backend_mismatch_count": 0,
+  "backend_mismatches": [],
+  "backend_status_counts": {
+    "python": {
+      "optimal": 42
+    },
+    "rust": {
+      "optimal": 42
+    }
+  },
+  "censored_count": 0,
+  "censoring_integrity": true,
+  "failed_row_count": 0,
+  "measurement_count": 84,
+  "plot_ready_runtime_count": 84,
+  "run_metadata": {
+    "config_sha256": "fc27e36df5e957abd73f6dbd0d286dc6e890445d86580c1692f5362509546a4b",
+    "exactness_guarantee": "per_step",
+    "exactness_scope": "exact_on_support",
+    "finite_slots": true,
+    "generated_at_utc": "2026-08-26T14:24:47.832794+00:00",
+    "git_commit": "66b8b5d7ef908a40ea94018fbe3502cbc3a1c5c1",
+    "git_dirty": false,
+    "grammar_hash_policy": "sha256_per_instance",
+    "grammar_id": "generated_reachable_a_plus_cfgs",
+    "grammar_revision": "scaling_generator_v1",
+    "hardware": {
+      "cpu_threads": 1,
+      "cuda_device": null,
+      "device": "cpu",
+      "dtype": "float64",
+      "machine": "x86_64",
+      "processor": "x86_64",
+      "synchronize_cuda": false
+    },
+    "model_id": "not_applicable_generated_scaling_instances",
+    "model_revision": "scaling_generator_v1",
+    "point_count": 21,
+    "repetitions": 2,
+    "run_id": "66b8b5d",
+    "run_timeout_seconds": 1800.0,
+    "seeds": [
+      1104
+    ],
+    "software_versions": {
+      "mwpc_exact": "0.1.0",
+      "mwpc_parser_py": "0.1.0",
+      "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+      "python": "3.11.16"
+    },
+    "solver_timeout_seconds": 10.0,
+    "support_policy": "generated_top_k_or_explicit_per_position",
+    "timeout_enforcement": "fresh_subprocess_wall_deadline_for_both_backends_plus_native_rust_deadline",
+    "timing_scope": "component_profiled_cpu_smoke_not_publication_benchmark",
+    "tokenizer_id": "generated_raw_byte_vocabulary",
+    "tokenizer_revision": "scaling_generator_v1"
+  },
+  "schema_version": 1,
+  "status_counts": {
+    "optimal": 84
+  },
+  "timeout_count": 0,
+  "timeout_plot_runtime_count": 0
+}

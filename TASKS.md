@@ -14,8 +14,8 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M11 / T1104.** M0 through M10, the M10.5 hardening pass, and T1100 through
-T1103 are complete. The first incomplete required task is T1104: Q4 scaling
+**M11 / T1105.** M0 through M10, the M10.5 hardening pass, and T1100 through
+T1104 are complete. The first incomplete required task is T1105: Q5 end-to-end
 experiment.
 
 ## Completed milestone summary
@@ -175,16 +175,46 @@ single-repetition runtimes are smoke diagnostics, not publication benchmarks.
 
 **Depends on:** T1100, M8 gate
 
-- [ ] Sweep slots, top-`K`, graph size, grammar size, token byte length, and proposal count.
-- [ ] Separate Python reference and Rust production backends.
-- [ ] Record time breakdown, RAM, chart entries, nodes, and edges.
-- [ ] Enforce resource/time limits and report censored/timeouts explicitly.
+- [x] Sweep slots, top-`K`, graph size, grammar size, token byte length, and proposal count.
+- [x] Separate Python reference and Rust production backends.
+- [x] Record time breakdown, RAM, chart entries, nodes, and edges.
+- [x] Enforce resource/time limits and report censored/timeouts explicitly.
 
 **Acceptance criteria**
 
-- [ ] No timeout is plotted as a successful runtime or infeasibility.
+- [x] No timeout is plotted as a successful runtime or infeasibility.
 
-**Evidence:** `[command and artifacts]`
+**Evidence:** implementation commit
+`66b8b5d7ef908a40ea94018fbe3502cbc3a1c5c1`; `python
+scripts/exact_commit/run_q4_scaling.py --config
+configs/experiments/q4_scaling_v1.toml --run-directory
+results/raw/q4_scaling_v1/66b8b5d --summary-output
+docs/evidence/t1104-q4-scaling-summary.json` from that clean commit -> 84/84
+independently validated `OPTIMAL` measurements across 21 one-axis points, two
+repetitions, and the separate Python reference and Rust production backends.
+All 42 paired backend comparisons used matching instance, grammar, and support
+hashes and agreed on status and objective; there were zero mismatches,
+timeouts, censored rows, errors, or unsupported outcomes under config hash
+`fc27e36df5e957abd73f6dbd0d286dc6e890445d86580c1692f5362509546a4b`.
+Raw rows with complete certificates, support scopes, component timing
+breakdowns, isolated-worker peak RSS, chart entries, and token/terminal graph
+node and edge counts are in
+`results/raw/q4_scaling_v1/66b8b5d/q4-scaling-rows.jsonl`; the derived
+plot-input file contains only uncensored conclusive rows at
+`results/raw/q4_scaling_v1/66b8b5d/q4-scaling-plot-rows.jsonl`; and the
+versioned computed summary is
+`docs/evidence/t1104-q4-scaling-summary.json`. Each repetition ran in a fresh
+2 GiB address-space-limited subprocess with a 10-second wall deadline for both
+backends and the additional native Rust deadline. `python -m pytest -q
+tests/exact_commit/test_q4_scaling.py
+tests/exact_commit/test_t1104_evidence.py` -> 7 passed, including a
+deterministic injected-timeout regression that retained `TIMEOUT`, emitted no
+successful runtime, and produced no plot row. `make check` -> Ruff clean,
+strict MyPy clean, 9 unit and 536 exact tests passed; `python -m pytest -q` ->
+555 passed; `make test-rust-parser` -> Rust format, 17 unit, 3 randomized
+differential, library Clippy, and binding Clippy checks passed; `make paper` ->
+`main.pdf` built (15 pages). The recorded runtimes and RAM are diagnostic CPU
+smoke measurements, not publication benchmark results.
 
 ## T1105 — Implement Q5 end-to-end experiment
 
