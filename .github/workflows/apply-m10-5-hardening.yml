@@ -1,0 +1,71 @@
+name: apply-m10-5-hardening
+
+on:
+  push:
+    branches: ["m10-5-hardening"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-m10-5-hardening
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Reconstruct and apply verified hardening patch
+        run: |
+          cat .m10_5_gz/part-* | base64 -d | gzip -dc > scripts/apply_m10_5_hardening.py
+          python -m py_compile scripts/apply_m10_5_hardening.py
+          python scripts/apply_m10_5_hardening.py
+      - name: Normalize Python sources
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'ruff>=0.6'
+          python -m ruff check --fix src tests
+          python -m ruff format src tests
+      - name: Bootstrap pinned EPIC and production Rust environments
+        run: |
+          make bootstrap-epic
+          cd crates/mwpc_parser_py
+          ../../.venv/bin/maturin develop --release
+      - name: Run complete Python and EPIC integration checks
+        run: |
+          make check
+          PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/integration
+      - name: Run Rust checks
+        run: make test-rust-parser
+      - name: Replay normal correctness campaigns
+        run: |
+          .venv/bin/python scripts/exact_commit/run_m6_finite_lattice_differential.py --campaign normal
+          .venv/bin/python scripts/exact_commit/run_m7_eos_finite_slot_differential.py --campaign normal
+          git restore docs/evidence
+      - name: Compile article and inspect patch
+        run: |
+          make paper
+          git diff --check
+      - name: Commit validated hardening tree
+        run: |
+          rm -rf .m10_5_gz .m10_5_patch .m10_5_patch_small
+          rm -f scripts/apply_m10_5_hardening.py .github/workflows/apply-m10-5-hardening.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "refactor: harden evaluation boundary before M11"
+          git push origin HEAD:m10-5-hardening
