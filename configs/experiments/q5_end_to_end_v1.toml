@@ -1,0 +1,73 @@
+schema_version = 1
+experiment_id = "q5_end_to_end_v1"
+question = "end_to_end"
+description = "Executable paired CUDA smoke over the pinned T904 LLaDA literal-output task."
+publication_mode = false
+seeds = [904]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "model_top_k_plus_proposals_and_specials"
+top_k = 1
+k_max = 4
+finite_slots = true
+
+[model]
+model_id = "GSAI-ML/LLaDA-8B-Instruct"
+model_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+tokenizer_id = "GSAI-ML/LLaDA-8B-Instruct"
+tokenizer_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+local_files_only = true
+
+[grammar]
+grammar_id = "literal_ascii_zero"
+source = "configs/exact_commit/t904_llada_live_smoke.toml"
+revision = "t904_grammar_v1"
+hash_policy = "sha256_canonical_grammar"
+
+[timeouts]
+solver_seconds = 30.0
+run_seconds = 600.0
+
+[hardware]
+device = "cuda"
+dtype = "bfloat16"
+cpu_threads = 1
+cuda_device = 0
+synchronize_cuda = true
+
+[parameters]
+strategies = ["unconstrained", "serial", "epic", "exact"]
+task_ids = ["t904_literal_zero"]
+prompt_id = "t904_literal_zero_prompt_v1"
+prompt_instruction = "Reply with exactly the single digit 0 and nothing else."
+target_utf8 = "0"
+functional_checker = "exact_target_bytes_match_v1"
+generation_length = 4
+block_length = 4
+steps = 1
+temperature = 0.0
+cfg_scale = 0.0
+remasking = "low_confidence"
+max_resamples = 64
+weight_mode = "confidence"
+exact_backend = "rust"
+schedule_budget = 4
+eos_mode = "required"
+termination_token_ids = [126081, 126348]
+pad_token_id = 126081
+epic_regular_cover_min_batch = 2
+epic_regular_cover_exact = true
+quantization = "bitsandbytes_nf4_double_quant_bfloat16"
+expected_model_vocabulary_size = 126464
+expected_tokenizer_base_vocabulary_size = 126080
+expected_tokenizer_total_vocabulary_size = 126349
+live_profile_source_sha256 = "96340ce417b5a0736b949c03b8015fd2240ad6951d2da92224be4fdec25ce063"
+warmup_runs = 0
+method_order = "fixed_as_configured"
+raw_output_root = "results/raw/q5_end_to_end_v1"

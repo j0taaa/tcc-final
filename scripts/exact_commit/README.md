@@ -102,6 +102,25 @@ parser is checked against complete finite-path enumeration. Raw JSONL and the
 computed summary are immutable and separate; any replay error remains distinct
 from `INFEASIBLE_ON_SUPPORT` and makes the command exit nonzero.
 
+The T1105 Q5 paired live-model experiment reuses the pinned T904 CUDA
+environment and additionally installs the Rust production binding:
+
+```bash
+VIRTUAL_ENV="$PWD/.venv-live" PATH="$PWD/.venv-live/bin:$PATH" \
+  .venv-live/bin/maturin develop \
+  --manifest-path crates/mwpc_parser_py/Cargo.toml --release
+.venv-live/bin/python scripts/exact_commit/run_q5_end_to_end.py \
+  --config configs/experiments/q5_end_to_end_v1.toml
+```
+
+The driver loads one local-only NF4 model instance and resets seed and CUDA
+memory statistics before applying unconstrained, serial, EPIC, and Rust exact
+selection to the same prompt and generation schedule. Raw JSONL retains every
+generated token row, independent syntax/target checker result, batch and
+fallback count, exact status/scope/certificate, elapsed time, process RSS, and
+CUDA peak allocation. This single fixed-order run has no warmup and supports
+only a diagnostic smoke conclusion; T1106 adds robust timing controls.
+
 The M5 Python/Rust/oracle campaigns are configured by
 `configs/exact_commit/m5_rust_differential.toml` and run with:
 
