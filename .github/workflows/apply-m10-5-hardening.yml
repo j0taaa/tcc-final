@@ -61,39 +61,32 @@ jobs:
 
           ranked_path = Path("src/mwpc_exact/ranked_support.py")
           ranked = ranked_path.read_text(encoding="utf-8")
-          old_ranked = '''        if policy.kind is SupportKind.FULL:
-              ranked = ()
-              represented = set(rankings.permitted_token_ids)
-          '''
-          new_ranked = '''        if policy.kind is SupportKind.FULL:
-              ranked: tuple[int, ...] = ()
-              represented = set(rankings.permitted_token_ids)
-          '''
+          old_ranked = "            ranked = ()\n"
+          new_ranked = "            ranked: tuple[int, ...] = ()\n"
           if ranked.count(old_ranked) != 1:
-              raise RuntimeError("ranked-support FULL branch marker is not unique")
+              raise RuntimeError("ranked-support inferred tuple marker is not unique")
           ranked_path.write_text(ranked.replace(old_ranked, new_ranked), encoding="utf-8")
 
           llada_path = Path("src/mwpc_exact/epic_adapter/llada.py")
           llada = llada_path.read_text(encoding="utf-8")
-          old_fallback = '''    rows = _sequence(value, "logits")
-              if len(rows) != expected_length:
-                  raise ValueError("logits must contain prompt_length + generation_length rows")
-              generated = tuple(
-                  _score_vector(row, f"logits row {prompt_length + position}")
-                  for position, row in enumerate(rows[prompt_length:expected_length])
-              )
-          '''
-          new_fallback = '''    raw_rows = _sequence(value, "logits")
-              if len(raw_rows) != expected_length:
-                  raise ValueError("logits must contain prompt_length + generation_length rows")
-              generated = tuple(
-                  _score_vector(row, f"logits row {prompt_length + position}")
-                  for position, row in enumerate(raw_rows[prompt_length:expected_length])
-              )
-          '''
-          if llada.count(old_fallback) != 1:
-              raise RuntimeError("LLaDA witness-probability fallback marker is not unique")
-          llada_path.write_text(llada.replace(old_fallback, new_fallback), encoding="utf-8")
+          start = llada.index("def _witness_probabilities_from_model_logits(")
+          end = llada.index("\n\ndef prepare_llada_exact_step(", start)
+          block = llada[start:end]
+          old_assignment = '    rows = _sequence(value, "logits")\n'
+          if block.count(old_assignment) != 1:
+              raise RuntimeError("witness-probability fallback assignment is not unique")
+          block = block.replace(
+              old_assignment,
+              '    raw_rows = _sequence(value, "logits")\n',
+              1,
+          )
+          block = block.replace("    if len(rows) != expected_length:\n", "    if len(raw_rows) != expected_length:\n", 1)
+          block = block.replace(
+              "enumerate(rows[prompt_length:expected_length])",
+              "enumerate(raw_rows[prompt_length:expected_length])",
+              1,
+          )
+          llada_path.write_text(llada[:start] + block + llada[end:], encoding="utf-8")
           PY
       - name: Normalize Python sources
         run: |
