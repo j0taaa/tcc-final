@@ -111,10 +111,8 @@ jobs:
 
           benchmark_test = Path("tests/exact_commit/test_benchmark_instance.py")
           benchmark = benchmark_test.read_text(encoding="utf-8")
-          old_factory = '''    def cfg_factory(text: str, start_symbol: str) -> object:
-              seen_cfg.append((text, start_symbol))
-              return object()
-          '''
+          factory_start = benchmark.index("    def cfg_factory(")
+          factory_end = benchmark.index("\n\n    results = replay_benchmark_instance(", factory_start)
           new_factory = '''    class _AlignedCfg:
               def accepts(self, words: list[str]) -> bool:
                   return words == ["a", "x", "b", "y"]
@@ -123,10 +121,8 @@ jobs:
                   seen_cfg.append((text, start_symbol))
                   return _AlignedCfg()
           '''
-          if benchmark.count(old_factory) != 1:
-              raise RuntimeError("benchmark CFG factory marker is not unique")
           benchmark_test.write_text(
-              benchmark.replace(old_factory, new_factory),
+              benchmark[:factory_start] + new_factory + benchmark[factory_end:],
               encoding="utf-8",
           )
           PY
