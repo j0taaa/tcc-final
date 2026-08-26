@@ -1,0 +1,232 @@
+{
+  "all_required_methods_passed": true,
+  "artifact_kind": "mwpc_q5_end_to_end_summary",
+  "benchmark_claim": false,
+  "comparison_fingerprint": "d42225e38571331eeefa97dfd94f9bda506731edc958a27e27d026a7883ea5c3",
+  "diagnostic_exact_runtime_ratio": {
+    "epic": 4.358798066283175,
+    "serial": 6.820764481887394,
+    "unconstrained": 0.39153063593082554
+  },
+  "empty_optimal_batch_count": 0,
+  "exact_solver_status_counts": {
+    "optimal": 1
+  },
+  "execution_status_counts": {
+    "complete": 4
+  },
+  "failed_record_count": 0,
+  "fallback_count": 3,
+  "functional_success_count": 4,
+  "measurement_count": 4,
+  "methods": {
+    "epic": {
+      "average_commit_batch_size": 1.0,
+      "commit_batch_sizes": [
+        1,
+        1,
+        1
+      ],
+      "configured_diffusion_steps": 1,
+      "cuda_peak_allocated_bytes": 5811859456,
+      "cuda_peak_reserved_bytes": 5926551552,
+      "elapsed_seconds": 0.06780690100276843,
+      "empty_optimal_batch_count": null,
+      "execution_status": "complete",
+      "fallback_count": 3,
+      "functional_success": true,
+      "model_forward_count": 1,
+      "process_high_water_rss_bytes": 3978719232,
+      "solver_status": null,
+      "support_expansion_count": null,
+      "syntactic_valid": true
+    },
+    "exact": {
+      "average_commit_batch_size": 4.0,
+      "commit_batch_sizes": [
+        4
+      ],
+      "configured_diffusion_steps": 1,
+      "cuda_peak_allocated_bytes": 5753173504,
+      "cuda_peak_reserved_bytes": 5926551552,
+      "elapsed_seconds": 0.2955565889715217,
+      "empty_optimal_batch_count": 0,
+      "execution_status": "complete",
+      "fallback_count": 0,
+      "functional_success": true,
+      "model_forward_count": 1,
+      "process_high_water_rss_bytes": 3978719232,
+      "solver_status": "optimal",
+      "support_expansion_count": 0,
+      "syntactic_valid": true
+    },
+    "serial": {
+      "average_commit_batch_size": 1.0,
+      "commit_batch_sizes": [
+        1,
+        1,
+        1
+      ],
+      "configured_diffusion_steps": 1,
+      "cuda_peak_allocated_bytes": 5782518272,
+      "cuda_peak_reserved_bytes": 5926551552,
+      "elapsed_seconds": 0.043331886001396924,
+      "empty_optimal_batch_count": null,
+      "execution_status": "complete",
+      "fallback_count": 0,
+      "functional_success": true,
+      "model_forward_count": 1,
+      "process_high_water_rss_bytes": 3978719232,
+      "solver_status": null,
+      "support_expansion_count": null,
+      "syntactic_valid": true
+    },
+    "unconstrained": {
+      "average_commit_batch_size": 1.0,
+      "commit_batch_sizes": [
+        1,
+        1,
+        1
+      ],
+      "configured_diffusion_steps": 1,
+      "cuda_peak_allocated_bytes": 5782518272,
+      "cuda_peak_reserved_bytes": 5926551552,
+      "elapsed_seconds": 0.7548747450346127,
+      "empty_optimal_batch_count": null,
+      "execution_status": "complete",
+      "fallback_count": 0,
+      "functional_success": true,
+      "model_forward_count": 1,
+      "process_high_water_rss_bytes": 3978719232,
+      "solver_status": null,
+      "support_expansion_count": null,
+      "syntactic_valid": true
+    }
+  },
+  "paired_input_verified": true,
+  "required_contract_failure_count": 0,
+  "run_metadata": {
+    "benchmark_claim": false,
+    "comparison_contract": {
+      "block_length": 4,
+      "cfg_scale": 0.0,
+      "chat_template_text_sha256": "d4cd6f7e3818150c2a22a0d93b7edae647744e7d4b49bce9fa796ea9d309b6bb",
+      "dtype": "bfloat16",
+      "generation_length": 4,
+      "grammar_id": "literal_ascii_zero",
+      "grammar_sha256": "91ea7a7900d50a050e25d94411526e96db51f625fb0d327c49447a9878b0eecd",
+      "max_resamples": 64,
+      "method_differences": {
+        "epic": "upstream regular-cover batch selection with serial path retained",
+        "exact": "Rust MWPC exact_on_support selection plus canonical EOS/PAD updates",
+        "serial": "upstream one-token constrained selection",
+        "unconstrained": "grammar disabled during selection; same grammar used by checker"
+      },
+      "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+      "model_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+      "prompt_id": "t904_literal_zero_prompt_v1",
+      "prompt_instruction_sha256": "d2ab4f1c8795effa8276b5f7d93c088e26c7b64ecfd5e66b607100cb63f572be",
+      "prompt_token_count": 25,
+      "prompt_token_ids_sha256": "93f5531d28c4a2c671ea68d25ae1ac14e14304751b290eb7ae4a11702a649821",
+      "quantization": "bitsandbytes_nf4_double_quant_bfloat16",
+      "remasking": "low_confidence",
+      "seed": 904,
+      "steps": 1,
+      "target_bytes_hex": "30",
+      "task_ids": [
+        "t904_literal_zero"
+      ],
+      "temperature": 0.0,
+      "tokenizer_id": "GSAI-ML/LLaDA-8B-Instruct",
+      "tokenizer_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+    },
+    "comparison_fingerprint": "d42225e38571331eeefa97dfd94f9bda506731edc958a27e27d026a7883ea5c3",
+    "config_path": "configs/experiments/q5_end_to_end_v1.toml",
+    "config_sha256": "0d7ff568b1a3b9d9d7fb6f0550e7e1837e64dab866583d5deeddaa23cddf8235",
+    "exactness_guarantee": "per_step",
+    "exactness_scope": "exact_on_support",
+    "generated_at_utc": "2026-08-26T17:02:26.364196+00:00",
+    "git_commit": "c8587d26c02879fdc0996dd3db31038864d7a536",
+    "git_dirty": false,
+    "hardware": {
+      "cpu_logical_count": 16,
+      "cuda_compute_capability": "8.6",
+      "cuda_driver_version": "595.84",
+      "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+      "gpu_total_memory_bytes": 12490506240,
+      "host_total_memory_bytes": 16609329152,
+      "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39"
+    },
+    "live_profile_source_path": "configs/exact_commit/t904_llada_live_smoke.toml",
+    "live_profile_source_sha256": "96340ce417b5a0736b949c03b8015fd2240ad6951d2da92224be4fdec25ce063",
+    "model": {
+      "checkpoint_shards": [
+        {
+          "name": "model-00001-of-00006.safetensors",
+          "size_bytes": 2109747184
+        },
+        {
+          "name": "model-00002-of-00006.safetensors",
+          "size_bytes": 2948598128
+        },
+        {
+          "name": "model-00003-of-00006.safetensors",
+          "size_bytes": 2986883656
+        },
+        {
+          "name": "model-00004-of-00006.safetensors",
+          "size_bytes": 2952797224
+        },
+        {
+          "name": "model-00005-of-00006.safetensors",
+          "size_bytes": 2919239128
+        },
+        {
+          "name": "model-00006-of-00006.safetensors",
+          "size_bytes": 2113931792
+        }
+      ],
+      "class": "LLaDAModelLM",
+      "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+      "model_memory_footprint_bytes": 5562179584,
+      "requested_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+      "resolved_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+      "vocabulary_size": 126464
+    },
+    "publication_mode": false,
+    "run_id": "c8587d2",
+    "software_versions": {
+      "bitsandbytes": "0.50.1",
+      "mwpc_exact": "0.1.0",
+      "mwpc_parser_py": "0.1.0",
+      "python": "3.11.16",
+      "rustformlang": "0.1.0",
+      "torch": "2.8.0+cu128",
+      "torch_cuda_runtime": "12.8",
+      "transformers": "4.52.2"
+    },
+    "support_k_max": 4,
+    "support_policy": "model_top_k_plus_proposals_and_specials",
+    "support_top_k": 1,
+    "timeout_enforcement": "native_exact_parser_deadline plus post-method and between-method run deadline; upstream generation calls are not preemptible",
+    "timing_scope": "single_fixed_order_cuda_smoke_without_warmup; model/tokenizer/grammar setup excluded",
+    "tokenizer": {
+      "base_vocabulary_size": 126080,
+      "class": "PreTrainedTokenizerFast",
+      "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+      "tokenizer_id": "GSAI-ML/LLaDA-8B-Instruct",
+      "total_vocabulary_size": 126349
+    },
+    "upstream_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072"
+  },
+  "schema_version": 1,
+  "strategies": [
+    "unconstrained",
+    "serial",
+    "epic",
+    "exact"
+  ],
+  "support_expansion_count": 0,
+  "syntactic_valid_count": 4,
+  "timing_interpretation": "single ordered smoke; ratios are diagnostic and not a publication benchmark"
+}

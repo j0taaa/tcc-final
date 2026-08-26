@@ -220,16 +220,53 @@ smoke measurements, not publication benchmark results.
 
 **Depends on:** T904, T1100
 
-- [ ] Freeze `[MODEL_ID]`, tokenizer revision, tasks, grammars, prompts, generation settings, and seeds.
-- [ ] Run unconstrained, serial, EPIC, and exact as hardware permits.
-- [ ] Record syntactic validity, functional metric when available, steps, batch sizes, fallbacks, support expansions, statuses, time, RAM, and VRAM.
-- [ ] Save generated outputs and checker results.
+- [x] Freeze `[MODEL_ID]`, tokenizer revision, tasks, grammars, prompts, generation settings, and seeds.
+- [x] Run unconstrained, serial, EPIC, and exact as hardware permits.
+- [x] Record syntactic validity, functional metric when available, steps, batch sizes, fallbacks, support expansions, statuses, time, RAM, and VRAM.
+- [x] Save generated outputs and checker results.
 
 **Acceptance criteria**
 
-- [ ] Methods use the same prompts, model revision, and schedule unless the difference is documented.
+- [x] Methods use the same prompts, model revision, and schedule unless the difference is documented.
 
-**Evidence:** `[commands/configs/raw artifacts]`
+**Evidence:** implementation commit
+`c8587d26c02879fdc0996dd3db31038864d7a536`; the pinned executable config is
+`configs/experiments/q5_end_to_end_v1.toml` (config hash
+`0d7ff568b1a3b9d9d7fb6f0550e7e1837e64dab866583d5deeddaa23cddf8235`).
+After installing `requirements/t904-live-cu128.txt`, the read-only EPIC binding,
+and `crates/mwpc_parser_py` in `.venv-live`,
+`.venv-live/bin/python scripts/exact_commit/run_q5_end_to_end.py --config
+configs/experiments/q5_end_to_end_v1.toml --run-directory
+results/raw/q5_end_to_end_v1/c8587d2 --summary-output
+docs/evidence/t1105-q5-end-to-end-summary.json` from that clean commit -> all
+four paired methods completed one configured diffusion step and one model
+forward on the pinned local-only NF4 LLaDA revision. The comparison fingerprint
+`d42225e38571331eeefa97dfd94f9bda506731edc958a27e27d026a7883ea5c3`
+verifies the shared prompt, prompt tokens, model/tokenizer revisions, grammar,
+target, seed, and generation schedule. All four independently checked outputs
+were grammar-valid and exact target matches. The Rust exact method returned an
+independently validated `OPTIMAL` certificate with objective
+`3.2833624770448697`, four selected proposals in one batch, explicit top-1
+`exact_on_support` scope, zero support expansions, zero empty optimal batches,
+and zero fallbacks. Unconstrained, serial, and EPIC each made three one-token
+selection decisions plus a recorded EOS suffix update. EPIC was enabled, but
+the literal grammar exposed fewer than its configured minimum of two ordinary
+candidates, so the regular-cover selector made no call and the EPIC loop used
+three explicitly recorded serial-path fallbacks. Raw generated token IDs,
+decoded outputs, independent checker results, exact witness/certificate,
+statuses, batch and physical-update distributions, component profile, elapsed
+time, process RSS, and CUDA peak allocation/reservation are in
+`results/raw/q5_end_to_end_v1/c8587d2/q5-end-to-end-rows.jsonl`; the checked-in
+computed summary is `docs/evidence/t1105-q5-end-to-end-summary.json`.
+`python -m pytest -q tests/exact_commit/test_q5_end_to_end.py
+tests/exact_commit/test_t1105_evidence.py` -> 8 passed. `make check` -> Ruff
+clean, strict MyPy clean, 9 unit and 544 exact tests passed; `python -m pytest
+-q` -> 563 passed. `make test-rust-parser` -> Rust format, 17 unit, 3
+randomized differential, library Clippy, and binding Clippy checks passed;
+the constrained-decoding regression command -> 19 passed and 4 expected
+skips. `make paper` -> `main.pdf` built (15 pages). The recorded single
+fixed-order runtimes and memory values are diagnostic smoke measurements, not
+publication benchmark results; warmup and robust aggregation remain T1106.
 
 ## T1106 — Add robust timing and memory instrumentation
 
