@@ -33,6 +33,27 @@ jobs:
           cat .m10_5_gz/part-* | base64 -d | gzip -dc > scripts/apply_m10_5_hardening.py
           python -m py_compile scripts/apply_m10_5_hardening.py
           python scripts/apply_m10_5_hardening.py
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path("src/mwpc_exact/epic_adapter/llada.py")
+          text = path.read_text(encoding="utf-8")
+          helper = '''def _integer(value: object, field_name: str) -> int:
+              if isinstance(value, bool) or not isinstance(value, int):
+                  raise TypeError(f"{field_name} must be an integer")
+              if value < 0:
+                  raise ValueError(f"{field_name} must be non-negative")
+              return value
+          '''
+          if text.count(helper) != 1:
+              raise RuntimeError("expected one late LLaDA _integer helper")
+          marker = "@dataclass(frozen=True, slots=True)\nclass LLaDAAdapterProfile:"
+          if text.count(marker) != 1:
+              raise RuntimeError("LLaDA adapter profile marker is not unique")
+          text = text.replace(helper, "", 1)
+          text = text.replace(marker, helper + "\n\n" + marker, 1)
+          path.write_text(text, encoding="utf-8")
+          PY
       - name: Normalize Python sources
         run: |
           python -m pip install --upgrade pip
