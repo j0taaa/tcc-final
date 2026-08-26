@@ -14,9 +14,8 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M11 / T1105.** M0 through M10, the M10.5 hardening pass, and T1100 through
-T1104 are complete. The first incomplete required task is T1105: Q5 end-to-end
-experiment.
+**M12 / T1200.** M0 through M11 and the M10.5 hardening pass are complete. The
+first incomplete required task is T1200: run metadata capture.
 
 ## Completed milestone summary
 
@@ -266,28 +265,63 @@ randomized differential, library Clippy, and binding Clippy checks passed;
 the constrained-decoding regression command -> 19 passed and 4 expected
 skips. `make paper` -> `main.pdf` built (15 pages). The recorded single
 fixed-order runtimes and memory values are diagnostic smoke measurements, not
-publication benchmark results; warmup and robust aggregation remain T1106.
+publication benchmark results; warmup and robust aggregation were deferred to T1106.
+Those controls are implemented and evidenced separately by T1106; the T1105
+single-run measurements remain diagnostic only.
 
 ## T1106 — Add robust timing and memory instrumentation
 
 **Depends on:** T804, T1104, T1105
 
-- [ ] Add warmup control.
-- [ ] Synchronize CUDA around GPU timing.
-- [ ] Exclude model load from per-instance time.
-- [ ] Record repetitions.
-- [ ] Compute median and IQR for runtime.
-- [ ] Record CPU RAM and GPU peak memory where available.
+- [x] Add warmup control.
+- [x] Synchronize CUDA around GPU timing.
+- [x] Exclude model load from per-instance time.
+- [x] Record repetitions.
+- [x] Compute median and IQR for runtime.
+- [x] Record CPU RAM and GPU peak memory where available.
 
 **Acceptance criteria**
 
-- [ ] Timing code contains no method-specific unfair setup inside the measured region.
+- [x] Timing code contains no method-specific unfair setup inside the measured region.
 
-**Evidence:** `[tests and sample output]`
+**Evidence:** implementation commit
+`83ba41d1a29d84d8147319d33b85c6646d743b8e` adds a model-independent,
+CPU-tested measurement boundary with accelerator synchronization immediately
+before and after each timed call, per-call accelerator peak resets, a 1 ms
+process-RSS sampler, type-7 median/IQR aggregation, and explicit error/timeout
+exclusion. The Q5 driver now prepares method environments, observers, input
+state, model/tokenizer loading, grammar compilation, and shared preprocessing
+outside the timer. `configs/experiments/q5_timing_v1.toml` freezes one warmup
+per strategy and eight balanced-cyclic measured repetitions, placing every
+strategy twice in every order position.
+
+The clean live command `.venv-live/bin/python
+scripts/exact_commit/run_q5_end_to_end.py --config
+configs/experiments/q5_timing_v1.toml --run-directory
+results/raw/q5_timing_v1/83ba41d --summary-output
+docs/evidence/t1106-q5-timing-summary.json` produced four successful warmups
+and 32/32 successful measured rows. All eight exact rows were independently
+validated `OPTIMAL`/`exact_on_support` certificates with zero fallbacks,
+support expansions, or empty optimal batches. Raw rows are in the ignored run
+directory; the versioned computed summary records runtime median/IQR, per-call
+sampled CPU RSS, CUDA allocated/reserved peaks, clean commit/config hashes, and
+an explicit non-publication interpretation. On this small instrumentation
+sample, median seconds were unconstrained `0.037491226015845314`, serial
+`0.0374991940043401`, EPIC `0.03962741300347261`, and exact
+`0.15864853450329974`; these are not claimed as general model benchmarks.
+
+`python -m pytest -q tests/exact_commit/test_robust_timing.py
+tests/exact_commit/test_q5_end_to_end.py tests/exact_commit/test_t1106_evidence.py`
+passed 14 tests; `make check` passed the upstream pin, Ruff, strict MyPy, 9
+unit tests, and 551 exact-commit tests; `python -m pytest -q` passed all 570
+tests. `make test-rust-parser` passed Rust formatting, 17 unit and 3 randomized
+differential tests, plus strict parser/binding Clippy; the constrained-decoding
+regression command passed 19 tests with 4 expected skips. `make paper` produced
+the 15-page PDF.
 
 **M11 gate**
 
-- [ ] All five research-question experiments have executable scripts and versioned configs.
+- [x] All five research-question experiments have executable scripts and versioned configs.
 
 ---
 
