@@ -88,6 +88,48 @@ jobs:
           )
           llada_path.write_text(llada[:start] + block + llada[end:], encoding="utf-8")
           PY
+      - name: Refresh migrated test expectations
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          adapter_test = Path("tests/exact_commit/test_llada_adapter.py")
+          adapter = adapter_test.read_text(encoding="utf-8")
+          old_dense = "    assert outcome.request.logits == logits[2:]\n"
+          new_compact = '''    assert outcome.request.logit_shape == (4, ADAPTER.vocabulary_size)
+              assert outcome.request.ranked_support_rows.token_ids_by_position == (
+                  (0, 2),
+                  (1, 2),
+                  (3, 4),
+                  (3, 4),
+              )
+              assert outcome.request.diagnostics["dense_logits_copied_to_cpu"] is False
+          '''
+          if adapter.count(old_dense) != 1:
+              raise RuntimeError("dense request-logit assertion is not unique")
+          adapter_test.write_text(adapter.replace(old_dense, new_compact), encoding="utf-8")
+
+          benchmark_test = Path("tests/exact_commit/test_benchmark_instance.py")
+          benchmark = benchmark_test.read_text(encoding="utf-8")
+          old_factory = '''    def cfg_factory(text: str, start_symbol: str) -> object:
+              seen_cfg.append((text, start_symbol))
+              return object()
+          '''
+          new_factory = '''    class _AlignedCfg:
+              def accepts(self, words: list[str]) -> bool:
+                  return words == ["a", "x", "b", "y"]
+
+              def cfg_factory(text: str, start_symbol: str) -> object:
+                  seen_cfg.append((text, start_symbol))
+                  return _AlignedCfg()
+          '''
+          if benchmark.count(old_factory) != 1:
+              raise RuntimeError("benchmark CFG factory marker is not unique")
+          benchmark_test.write_text(
+              benchmark.replace(old_factory, new_factory),
+              encoding="utf-8",
+          )
+          PY
       - name: Normalize Python sources
         run: |
           python -m pip install --upgrade pip
