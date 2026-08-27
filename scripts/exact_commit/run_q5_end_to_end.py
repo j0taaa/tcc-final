@@ -8,12 +8,12 @@ import hashlib
 import importlib.metadata
 import json
 import os
-import platform
 import resource
 import shutil
 import subprocess
 import sys
 import tomllib
+from collections import Counter
 from collections.abc import Callable, Iterator, Mapping, Sequence
 from contextlib import contextmanager, nullcontext
 from dataclasses import dataclass
@@ -37,6 +37,8 @@ from mwpc_exact.epic_adapter.llada import (
 from mwpc_exact.experiments import (
     ExperimentConfig,
     ExperimentKind,
+    capture_run_metadata,
+    finalize_run_metadata,
     load_experiment_config,
     save_resolved_config,
 )
@@ -1248,93 +1250,107 @@ def main(argv: Sequence[str] | None = None) -> int:
                 )
             )
 
-    git_commit = _command_output(("git", "rev-parse", "HEAD"))
-    git_dirty = bool(_command_output(("git", "status", "--porcelain")))
-    run_metadata = {
-        "run_id": run_directory.name,
-        "generated_at_utc": datetime.now(UTC).isoformat(),
-        "git_commit": git_commit,
-        "git_dirty": git_dirty,
-        "upstream_epic_commit": _command_output(
-            ("git", "rev-parse", "HEAD"), cwd=REPOSITORY_ROOT / "vendor/EPIC-Decoding"
-        ),
-        "config_path": config_relative,
-        "config_sha256": config.config_sha256,
-        "live_profile_source_path": source_relative,
-        "live_profile_source_sha256": _sha256_bytes(source_bytes),
-        "benchmark_claim": False,
-        "publication_mode": config.publication_mode,
-        "timing_scope": (
-            "single_fixed_order_cuda_smoke_without_warmup; model/tokenizer/grammar and "
-            "per-method runner setup excluded"
-            if parameters.method_order == "fixed_as_configured"
-            else "warm repeated balanced-cyclic CUDA timing; model/tokenizer/grammar and "
-            "per-method runner setup excluded"
-        ),
-        "timing_protocol": {
-            "warmup_runs_per_strategy": parameters.warmup_runs,
-            "recorded_repetitions_per_strategy": config.repetitions,
-            "method_order": parameters.method_order,
-            "cuda_synchronized_before_and_after_each_measurement": True,
-            "cuda_peak_counters_reset_before_each_measurement": True,
-            "model_load_inside_measured_region": False,
-            "tokenizer_grammar_and_shared_preprocessing_inside_measured_region": False,
-            "method_specific_runner_setup_inside_measured_region": False,
-            "rss_metric": "sampled_process_resident_set_peak_per_call",
-            "rss_sample_interval_seconds": (parameters.rss_sample_interval_seconds or 0.001),
-            "quartile_policy": parameters.quartile_policy or QUARTILE_POLICY,
-            "failed_timeout_and_incomplete_rows_in_runtime_aggregates": False,
+    run_metadata = capture_run_metadata(
+        config,
+        run_id=run_directory.name,
+        repository_root=REPOSITORY_ROOT,
+        grammar_sha256=(grammar_sha256,),
+        require_rust=True,
+        require_ml_stack=True,
+        software_overrides={
+            "pytorch": str(torch.__version__),
+            "cuda_runtime": None if torch.version.cuda is None else str(torch.version.cuda),
         },
-        "warmup_records": warmup_records,
-        "timeout_enforcement": (
-            "native_exact_parser_deadline plus post-method and between-method run deadline; "
-            "upstream generation calls are not preemptible"
-        ),
-        "comparison_contract": comparison_contract,
-        "comparison_fingerprint": comparison_fingerprint,
-        "support_policy": config.support_policy,
-        "support_top_k": config.support_top_k,
-        "support_k_max": config.support_k_max,
-        "exactness_scope": config.exactness_scope,
-        "exactness_guarantee": config.exactness_guarantee,
-        "model": {
-            "model_id": config.model_id,
-            "requested_revision": config.model_revision,
-            "resolved_revision": resolved_revision,
-            "class": type(model).__name__,
-            "vocabulary_size": int(model.config.vocab_size),
-            "checkpoint_shards": shards,
-            "model_memory_footprint_bytes": int(model.get_memory_footprint()),
+        additional={
+            "upstream_epic_commit": _command_output(
+                ("git", "rev-parse", "HEAD"),
+                cwd=REPOSITORY_ROOT / "vendor/EPIC-Decoding",
+            ),
+            "config_path": config_relative,
+            "live_profile_source_path": source_relative,
+            "live_profile_source_sha256": _sha256_bytes(source_bytes),
+            "benchmark_claim": False,
+            "timing_scope": (
+                "single_fixed_order_cuda_smoke_without_warmup; model/tokenizer/grammar and "
+                "per-method runner setup excluded"
+                if parameters.method_order == "fixed_as_configured"
+                else "warm repeated balanced-cyclic CUDA timing; model/tokenizer/grammar and "
+                "per-method runner setup excluded"
+            ),
+            "timing_protocol": {
+                "warmup_runs_per_strategy": parameters.warmup_runs,
+                "recorded_repetitions_per_strategy": config.repetitions,
+                "method_order": parameters.method_order,
+                "cuda_synchronized_before_and_after_each_measurement": True,
+                "cuda_peak_counters_reset_before_each_measurement": True,
+                "model_load_inside_measured_region": False,
+                "tokenizer_grammar_and_shared_preprocessing_inside_measured_region": False,
+                "method_specific_runner_setup_inside_measured_region": False,
+                "rss_metric": "sampled_process_resident_set_peak_per_call",
+                "rss_sample_interval_seconds": (parameters.rss_sample_interval_seconds or 0.001),
+                "quartile_policy": parameters.quartile_policy or QUARTILE_POLICY,
+                "failed_timeout_and_incomplete_rows_in_runtime_aggregates": False,
+            },
+            "warmup_records": warmup_records,
+            "timeout_enforcement": (
+                "native_exact_parser_deadline plus post-method and between-method run deadline; "
+                "upstream generation calls are not preemptible"
+            ),
+            "comparison_contract": comparison_contract,
+            "comparison_fingerprint": comparison_fingerprint,
+            "loaded_model": {
+                "resolved_revision": resolved_revision,
+                "class": type(model).__name__,
+                "vocabulary_size": int(model.config.vocab_size),
+                "checkpoint_shards": shards,
+                "memory_footprint_bytes": int(model.get_memory_footprint()),
+            },
+            "loaded_tokenizer": {
+                "class": type(tokenizer).__name__,
+                "base_vocabulary_size": tokenizer.vocab_size,
+                "total_vocabulary_size": len(tokenizer),
+            },
+            "cuda_device_observation": {
+                "name": device_properties.name,
+                "total_vram_bytes": int(device_properties.total_memory),
+                "compute_capability": (f"{device_properties.major}.{device_properties.minor}"),
+            },
+            "live_dependency_versions": {
+                "bitsandbytes": _package_version("bitsandbytes"),
+            },
         },
-        "tokenizer": {
-            "tokenizer_id": config.tokenizer_id,
-            "revision": config.tokenizer_revision,
-            "class": type(tokenizer).__name__,
-            "base_vocabulary_size": tokenizer.vocab_size,
-            "total_vocabulary_size": len(tokenizer),
+    )
+    run_metadata = finalize_run_metadata(
+        run_metadata,
+        solver_status_counts={
+            "generation": {
+                strategy: dict(
+                    sorted(
+                        Counter(
+                            record.execution_status.value
+                            for record in records
+                            if record.strategy == strategy
+                        ).items()
+                    )
+                )
+                for strategy in Q5_STRATEGIES
+            },
+            "exact_mwpc": dict(
+                sorted(
+                    Counter(
+                        (
+                            "not_returned"
+                            if record.solver_status is None
+                            else record.solver_status.value
+                        )
+                        for record in records
+                        if record.strategy == "exact"
+                    ).items()
+                )
+            ),
         },
-        "hardware": {
-            "gpu_name": device_properties.name,
-            "gpu_total_memory_bytes": int(device_properties.total_memory),
-            "cuda_compute_capability": f"{device_properties.major}.{device_properties.minor}",
-            "cuda_driver_version": _command_output(
-                ("nvidia-smi", "--query-gpu=driver_version", "--format=csv,noheader")
-            ).splitlines()[0],
-            "host_total_memory_bytes": int(psutil.virtual_memory().total),
-            "cpu_logical_count": psutil.cpu_count(logical=True),
-            "platform": platform.platform(),
-        },
-        "software_versions": {
-            "python": platform.python_version(),
-            "torch": torch.__version__,
-            "torch_cuda_runtime": torch.version.cuda,
-            "mwpc_exact": _package_version("mwpc-exact"),
-            "mwpc_parser_py": _package_version("mwpc-parser-py"),
-            "rustformlang": _package_version("rustformlang"),
-            "transformers": _package_version("transformers"),
-            "bitsandbytes": _package_version("bitsandbytes"),
-        },
-    }
+        publication_mode=config.publication_mode,
+    )
     result = Q5ExperimentResult(tuple(records), run_metadata)
     raw_path, summary_path = write_q5_artifacts(result, run_directory)
     if arguments.summary_output is not None:

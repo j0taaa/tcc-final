@@ -5,24 +5,25 @@ from __future__ import annotations
 
 import argparse
 import json
-import platform
 import shutil
-import subprocess
 from collections.abc import Mapping, Sequence
+from dataclasses import replace
 from datetime import UTC, datetime
 from importlib import import_module
-from importlib.metadata import version
 from pathlib import Path
 
 from mwpc_exact import ExactBackend
 from mwpc_exact.experiments import (
-    ExperimentConfig,
     ExperimentKind,
+    canonical_json_sha256,
+    capture_run_metadata,
+    finalize_run_metadata,
     load_experiment_config,
     save_resolved_config,
 )
 from mwpc_research.finite_differential import check_finite_lattice_instance
 from mwpc_research.q1_correctness import (
+    Q1Case,
     Q1CaseFamily,
     configured_q1_cases,
     run_q1_correctness_cases,
@@ -35,14 +36,8 @@ EXPECTED_CAMPAIGNS = tuple(family.value for family in Q1CaseFamily)
 EXPECTED_SOLVERS = ("exhaustive_oracle", "python_reference", "rust_production")
 
 
-def _command_output(command: Sequence[str]) -> str:
-    return subprocess.run(
-        command,
-        cwd=REPOSITORY_ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
+def _grammar_hashes(cases: Sequence[Q1Case]) -> tuple[str, ...]:
+    return tuple(canonical_json_sha256(case.instance.grammar.to_dict()) for case in cases)
 
 
 def _string_sequence(value: object, field_name: str) -> tuple[str, ...]:
@@ -94,51 +89,6 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> tuple[int, st
     return random_case_count, failure_directory, raw_output_root
 
 
-def _run_metadata(
-    *, config_hash: str, run_id: str, config: ExperimentConfig
-) -> dict[str, object]:
-    git_status = _command_output(["git", "status", "--porcelain"])
-    return {
-        "run_id": run_id,
-        "generated_at_utc": datetime.now(UTC).isoformat(),
-        "git_commit": _command_output(["git", "rev-parse", "HEAD"]),
-        "git_dirty": bool(git_status),
-        "config_sha256": config_hash,
-        "exactness_scope": config.exactness_scope,
-        "exactness_guarantee": config.exactness_guarantee,
-        "support_policy": config.support_policy,
-        "support_top_k": config.support_top_k,
-        "support_k_max": config.support_k_max,
-        "finite_slots": config.finite_slots,
-        "model_id": config.model_id,
-        "model_revision": config.model_revision,
-        "tokenizer_id": config.tokenizer_id,
-        "tokenizer_revision": config.tokenizer_revision,
-        "grammar_hash_policy": config.grammar_hash_policy,
-        "dataset": "synthetic_q1_finite_support",
-        "commit_strategy": "exact_mwpc",
-        "weight_policy": "nonnegative_integer_proposal_weights",
-        "solver_timeout_seconds": config.solver_timeout_seconds,
-        "run_timeout_seconds": config.run_timeout_seconds,
-        "hardware": {
-            "device": config.device,
-            "dtype": config.dtype,
-            "cpu_threads": config.cpu_threads,
-            "cuda_device": config.cuda_device,
-            "synchronize_cuda": config.synchronize_cuda,
-            "machine": platform.machine() or "unknown",
-            "processor": platform.processor() or "unknown",
-        },
-        "software_versions": {
-            "python": platform.python_version(),
-            "mwpc_exact": version("mwpc-exact"),
-            "mwpc_parser_py": version("mwpc-parser-py"),
-            "rust": _command_output(["rustc", "--version"]),
-            "platform": platform.platform(),
-        },
-    }
-
-
 def _default_run_directory(raw_output_root: str, experiment_id: str) -> Path:
     timestamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
     return REPOSITORY_ROOT / raw_output_root / f"{experiment_id}-{timestamp}"
@@ -185,14 +135,21 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     run_id = run_directory.name
     save_resolved_config(config, run_directory)
-    metadata = _run_metadata(
-        config_hash=config.config_sha256,
-        run_id=run_id,
-        config=config,
-    )
     cases = configured_q1_cases(
         seed_start=config.seeds[0],
         random_case_count=random_case_count,
+    )
+    metadata = capture_run_metadata(
+        config,
+        run_id=run_id,
+        repository_root=REPOSITORY_ROOT,
+        grammar_sha256=_grammar_hashes(cases),
+        require_rust=True,
+        additional={
+            "dataset": "synthetic_q1_finite_support",
+            "commit_strategy": "exact_mwpc",
+            "weight_policy": "nonnegative_integer_proposal_weights",
+        },
     )
     result = run_q1_correctness_cases(
         cases,
@@ -205,6 +162,15 @@ def main(argv: Sequence[str] | None = None) -> int:
         run_metadata=metadata,
         failure_directory=run_directory / failure_name,
     )
+    status_counts = result.summary_dict()["solver_status_counts"]
+    if not isinstance(status_counts, Mapping):
+        raise TypeError("Q1 summary omitted solver status counts")
+    metadata = finalize_run_metadata(
+        metadata,
+        solver_status_counts=status_counts,
+        publication_mode=config.publication_mode,
+    )
+    result = replace(result, run_metadata=metadata)
     raw_path, summary_path = write_q1_artifacts(result, run_directory)
     if arguments.summary_output is not None:
         _copy_summary(summary_path, arguments.summary_output)

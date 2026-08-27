@@ -6,28 +6,28 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import platform
 import shutil
-import subprocess
 import sys
 from collections.abc import Iterator, Mapping, Sequence
 from contextlib import contextmanager
+from dataclasses import replace
 from datetime import UTC, datetime
 from importlib import import_module
-from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
 from mwpc_exact import ExactBackend, ProposalWeightMode, replay_benchmark_instance
 from mwpc_exact.evaluation.epic_regular_cover import EPIC_UPSTREAM_COMMIT
 from mwpc_exact.experiments import (
-    ExperimentConfig,
     ExperimentKind,
+    capture_run_metadata,
+    finalize_run_metadata,
     load_experiment_config,
     save_resolved_config,
 )
 from mwpc_research.q2_gap import (
     Q2_CASE_IDS,
     Q2_COMPONENT_SELECTORS,
+    Q2WeightedInstance,
     configured_q2_instances,
     run_q2_gap_instances,
     write_q2_artifacts,
@@ -39,14 +39,8 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG = REPOSITORY_ROOT / "configs/experiments/q2_heuristic_gap_v1.toml"
 
 
-def _command_output(command: Sequence[str]) -> str:
-    return subprocess.run(
-        command,
-        cwd=REPOSITORY_ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
+def _grammar_hashes(instances: Sequence[Q2WeightedInstance]) -> tuple[str, ...]:
+    return tuple(instance.benchmark_instance.grammar.fingerprint for instance in instances)
 
 
 def _string_sequence(value: object, field_name: str) -> tuple[str, ...]:
@@ -119,66 +113,6 @@ def _configuration_parameters(
     return modes, brute_force_limit, exact_shrink, minimum_batch, failure_directory, raw_output_root
 
 
-def _package_version(distribution: str) -> str:
-    try:
-        return version(distribution)
-    except PackageNotFoundError:
-        return "not_recorded_by_distribution"
-
-
-def _run_metadata(
-    *,
-    config: ExperimentConfig,
-    run_id: str,
-    exact_shrink: bool,
-    minimum_batch: int,
-) -> dict[str, object]:
-    return {
-        "run_id": run_id,
-        "generated_at_utc": datetime.now(UTC).isoformat(),
-        "git_commit": _command_output(["git", "rev-parse", "HEAD"]),
-        "git_dirty": bool(_command_output(["git", "status", "--porcelain"])),
-        "config_sha256": config.config_sha256,
-        "dataset": "configured_synthetic_q2_states_v1",
-        "exactness_scope": config.exactness_scope,
-        "exactness_guarantee": config.exactness_guarantee,
-        "finite_slots": config.finite_slots,
-        "support_policy": config.support_policy,
-        "support_top_k": config.support_top_k,
-        "support_k_max": config.support_k_max,
-        "model_id": config.model_id,
-        "model_revision": config.model_revision,
-        "tokenizer_id": config.tokenizer_id,
-        "tokenizer_revision": config.tokenizer_revision,
-        "grammar_hash_policy": config.grammar_hash_policy,
-        "component_selectors": list(Q2_COMPONENT_SELECTORS),
-        "exact_backend": "rust",
-        "epic_upstream_commit": EPIC_UPSTREAM_COMMIT,
-        "epic_exact_shrink": exact_shrink,
-        "epic_minimum_batch_size": minimum_batch,
-        "solver_timeout_seconds": config.solver_timeout_seconds,
-        "run_timeout_seconds": config.run_timeout_seconds,
-        "timing_scope": "single_repetition_smoke_not_publication_benchmark",
-        "hardware": {
-            "device": config.device,
-            "dtype": config.dtype,
-            "cpu_threads": config.cpu_threads,
-            "cuda_device": config.cuda_device,
-            "synchronize_cuda": config.synchronize_cuda,
-            "machine": platform.machine() or "unknown",
-            "processor": platform.processor() or "unknown",
-        },
-        "software_versions": {
-            "python": platform.python_version(),
-            "mwpc_exact": _package_version("mwpc-exact"),
-            "mwpc_parser_py": _package_version("mwpc-parser-py"),
-            "rustformlang": _package_version("rustformlang"),
-            "rust": _command_output(["rustc", "--version"]),
-            "platform": platform.platform(),
-        },
-    }
-
-
 @contextmanager
 def _epic_environment(*, exact_shrink: bool, minimum_batch: int) -> Iterator[None]:
     updates = {
@@ -246,15 +180,25 @@ def main(argv: Sequence[str] | None = None) -> int:
         else arguments.run_directory
     )
     save_resolved_config(config, run_directory)
-    metadata = _run_metadata(
-        config=config,
-        run_id=run_directory.name,
-        exact_shrink=exact_shrink,
-        minimum_batch=minimum_batch,
-    )
     instances = configured_q2_instances(
         seed_start=config.seeds[0],
         weight_modes=weight_modes,
+    )
+    metadata = capture_run_metadata(
+        config,
+        run_id=run_directory.name,
+        repository_root=REPOSITORY_ROOT,
+        grammar_sha256=_grammar_hashes(instances),
+        require_rust=True,
+        additional={
+            "dataset": "configured_synthetic_q2_states_v1",
+            "component_selectors": list(Q2_COMPONENT_SELECTORS),
+            "exact_backend": "rust",
+            "epic_upstream_commit": EPIC_UPSTREAM_COMMIT,
+            "epic_exact_shrink": exact_shrink,
+            "epic_minimum_batch_size": minimum_batch,
+            "timing_scope": "single_repetition_smoke_not_publication_benchmark",
+        },
     )
     with _epic_environment(exact_shrink=exact_shrink, minimum_batch=minimum_batch):
         result = run_q2_gap_instances(
@@ -269,6 +213,32 @@ def main(argv: Sequence[str] | None = None) -> int:
             failure_directory=run_directory / failure_name,
             run_timeout_seconds=config.run_timeout_seconds,
         )
+    summary = result.summary_dict()
+    weight_summaries = summary["weight_modes"]
+    if not isinstance(weight_summaries, Mapping):
+        raise TypeError("Q2 summary omitted weight-mode status counts")
+    solver_status_counts: dict[str, object] = {}
+    for mode, mode_summary in weight_summaries.items():
+        if not isinstance(mode, str) or not isinstance(mode_summary, Mapping):
+            raise TypeError("Q2 weight-mode summary is malformed")
+        selectors = mode_summary.get("selectors")
+        if not isinstance(selectors, Mapping):
+            raise TypeError("Q2 selector summary is malformed")
+        selector_counts: dict[str, object] = {}
+        for selector, selector_summary in selectors.items():
+            if not isinstance(selector, str) or not isinstance(selector_summary, Mapping):
+                raise TypeError("Q2 selector summary is malformed")
+            status_counts = selector_summary.get("status_counts")
+            if not isinstance(status_counts, Mapping):
+                raise TypeError("Q2 selector summary omitted status counts")
+            selector_counts[selector] = status_counts
+        solver_status_counts[mode] = selector_counts
+    metadata = finalize_run_metadata(
+        metadata,
+        solver_status_counts=solver_status_counts,
+        publication_mode=config.publication_mode,
+    )
+    result = replace(result, run_metadata=metadata)
     raw_path, summary_path = write_q2_artifacts(result, run_directory)
     if arguments.summary_output is not None:
         _copy_summary(summary_path, arguments.summary_output)

@@ -6,17 +6,17 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import platform
 import shutil
-import subprocess
 from collections.abc import Mapping, Sequence
+from dataclasses import replace
 from datetime import UTC, datetime
-from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
 from mwpc_exact.experiments import (
-    ExperimentConfig,
     ExperimentKind,
+    canonical_json_sha256,
+    capture_run_metadata,
+    finalize_run_metadata,
     load_experiment_config,
     save_resolved_config,
 )
@@ -34,16 +34,6 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG = REPOSITORY_ROOT / "configs/experiments/q3_finite_slots_v1.toml"
 EXPECTED_ABSTRACT_BASELINE = "ordered_anchor_sigma_star"
 EXPECTED_FINITE_SOLVER = "python_reference_plus_exhaustive_path_enumeration"
-
-
-def _command_output(command: Sequence[str]) -> str:
-    return subprocess.run(
-        command,
-        cwd=REPOSITORY_ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
 
 
 def _string_sequence(value: object, field_name: str) -> tuple[str, ...]:
@@ -88,73 +78,6 @@ def _configuration_parameters(
         raise ValueError("Q3 v1 is a curated-only experiment and must not mine real states")
     raw_output_root = _relative_path(parameters["raw_output_root"], "parameters.raw_output_root")
     return raw_output_root, mine_real, EXPECTED_FINITE_SOLVER
-
-
-def _package_version(distribution: str) -> str:
-    try:
-        return version(distribution)
-    except PackageNotFoundError:
-        return "not_recorded_by_distribution"
-
-
-def _run_metadata(
-    *,
-    config: ExperimentConfig,
-    run_id: str,
-    fixture_path: str,
-    fixture_sha256: str,
-    mine_real: bool,
-    finite_solver: str,
-) -> dict[str, object]:
-    return {
-        "run_id": run_id,
-        "generated_at_utc": datetime.now(UTC).isoformat(),
-        "git_commit": _command_output(["git", "rev-parse", "HEAD"]),
-        "git_dirty": bool(_command_output(["git", "status", "--porcelain"])),
-        "config_sha256": config.config_sha256,
-        "seed": config.seeds[0],
-        "dataset": "curated_t703_counterexamples_v1",
-        "source_fixture_path": fixture_path,
-        "source_fixture_sha256": fixture_sha256,
-        "case_ids": list(Q3_CASE_IDS),
-        "real_decoder_states_mined": mine_real,
-        "abstract_baseline": EXPECTED_ABSTRACT_BASELINE,
-        "abstract_sigma_star_semantics": ABSTRACT_SIGMA_STAR_SEMANTICS,
-        "finite_solver": finite_solver,
-        "independent_oracle": "complete_finite_eos_lattice_path_enumeration",
-        "exactness_scope": config.exactness_scope,
-        "exactness_guarantee": config.exactness_guarantee,
-        "finite_slots": config.finite_slots,
-        "support_policy": config.support_policy,
-        "support_top_k": config.support_top_k,
-        "support_k_max": config.support_k_max,
-        "model_id": config.model_id,
-        "model_revision": config.model_revision,
-        "tokenizer_id": config.tokenizer_id,
-        "tokenizer_revision": config.tokenizer_revision,
-        "grammar_hash_policy": config.grammar_hash_policy,
-        "solver_timeout_seconds": config.solver_timeout_seconds,
-        "run_timeout_seconds": config.run_timeout_seconds,
-        "timeout_enforcement": (
-            "post_replay_case_deadline_and_between_case_run_deadline; "
-            "tiny_python_reference_replay_is_not_preemptible"
-        ),
-        "timing_scope": "single_repetition_smoke_not_publication_benchmark",
-        "hardware": {
-            "device": config.device,
-            "dtype": config.dtype,
-            "cpu_threads": config.cpu_threads,
-            "cuda_device": config.cuda_device,
-            "synchronize_cuda": config.synchronize_cuda,
-            "machine": platform.machine() or "unknown",
-            "processor": platform.processor() or "unknown",
-        },
-        "software_versions": {
-            "python": platform.python_version(),
-            "mwpc_exact": _package_version("mwpc-exact"),
-            "platform": platform.platform(),
-        },
-    }
 
 
 def _default_run_directory(raw_output_root: str, experiment_id: str) -> Path:
@@ -204,13 +127,28 @@ def main(argv: Sequence[str] | None = None) -> int:
         else arguments.run_directory
     )
     save_resolved_config(config, run_directory)
-    metadata = _run_metadata(
-        config=config,
+    metadata = capture_run_metadata(
+        config,
         run_id=run_directory.name,
-        fixture_path=fixture_relative,
-        fixture_sha256=fixture_sha256,
-        mine_real=mine_real,
-        finite_solver=finite_solver,
+        repository_root=REPOSITORY_ROOT,
+        grammar_sha256=tuple(canonical_json_sha256(case.grammar.to_dict()) for case in cases),
+        require_rust=False,
+        additional={
+            "dataset": "curated_t703_counterexamples_v1",
+            "source_fixture_path": fixture_relative,
+            "source_fixture_sha256": fixture_sha256,
+            "case_ids": list(Q3_CASE_IDS),
+            "real_decoder_states_mined": mine_real,
+            "abstract_baseline": EXPECTED_ABSTRACT_BASELINE,
+            "abstract_sigma_star_semantics": ABSTRACT_SIGMA_STAR_SEMANTICS,
+            "finite_solver": finite_solver,
+            "independent_oracle": "complete_finite_eos_lattice_path_enumeration",
+            "timeout_enforcement": (
+                "post_replay_case_deadline_and_between_case_run_deadline; "
+                "tiny_python_reference_replay_is_not_preemptible"
+            ),
+            "timing_scope": "single_repetition_smoke_not_publication_benchmark",
+        },
     )
     result = run_q3_finite_slot_cases(
         cases,
@@ -220,6 +158,23 @@ def main(argv: Sequence[str] | None = None) -> int:
         case_timeout_seconds=config.solver_timeout_seconds,
         run_timeout_seconds=config.run_timeout_seconds,
     )
+    summary = result.summary_dict()
+    finite_status_counts = summary["finite_status_counts"]
+    abstract_accept_count = summary["abstract_accept_count"]
+    if not isinstance(finite_status_counts, Mapping) or not isinstance(abstract_accept_count, int):
+        raise TypeError("Q3 summary omitted solver status counts")
+    metadata = finalize_run_metadata(
+        metadata,
+        solver_status_counts={
+            "abstract_sigma_star": {
+                "accept": abstract_accept_count,
+                "reject": len(result.records) - abstract_accept_count,
+            },
+            "finite_exact_on_support": finite_status_counts,
+        },
+        publication_mode=config.publication_mode,
+    )
+    result = replace(result, run_metadata=metadata)
     raw_path, summary_path = write_q3_artifacts(result, run_directory)
     if arguments.summary_output is not None:
         _copy_summary(summary_path, arguments.summary_output)

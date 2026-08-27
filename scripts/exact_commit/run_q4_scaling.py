@@ -5,36 +5,29 @@ from __future__ import annotations
 
 import argparse
 import json
-import platform
 import shutil
-import subprocess
 from collections.abc import Mapping, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime
-from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
 from mwpc_exact.backend import ExactBackend
 from mwpc_exact.experiments import (
-    ExperimentConfig,
     ExperimentKind,
+    capture_run_metadata,
+    finalize_run_metadata,
     load_experiment_config,
     save_resolved_config,
 )
-from mwpc_research.q4_scaling import make_scaling_points, run_q4_scaling, write_q4_artifacts
+from mwpc_research.q4_scaling import (
+    make_scaling_points,
+    run_q4_scaling,
+    scaling_point_grammar_sha256,
+    write_q4_artifacts,
+)
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG = REPOSITORY_ROOT / "configs/experiments/q4_scaling_v1.toml"
-
-
-def _command_output(command: Sequence[str]) -> str:
-    return subprocess.run(
-        command,
-        cwd=REPOSITORY_ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-    ).stdout.strip()
 
 
 def _positive_integer(value: object, field_name: str) -> int:
@@ -166,60 +159,6 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> Q4Parameters:
     )
 
 
-def _package_version(distribution: str) -> str:
-    try:
-        return version(distribution)
-    except PackageNotFoundError:
-        return "not_recorded_by_distribution"
-
-
-def _run_metadata(
-    config: ExperimentConfig, *, run_id: str, point_count: int
-) -> dict[str, object]:
-    return {
-        "run_id": run_id,
-        "generated_at_utc": datetime.now(UTC).isoformat(),
-        "git_commit": _command_output(["git", "rev-parse", "HEAD"]),
-        "git_dirty": bool(_command_output(["git", "status", "--porcelain"])),
-        "config_sha256": config.config_sha256,
-        "seeds": list(config.seeds),
-        "repetitions": config.repetitions,
-        "point_count": point_count,
-        "exactness_scope": config.exactness_scope,
-        "exactness_guarantee": config.exactness_guarantee,
-        "support_policy": config.support_policy,
-        "finite_slots": config.finite_slots,
-        "model_id": config.model_id,
-        "model_revision": config.model_revision,
-        "tokenizer_id": config.tokenizer_id,
-        "tokenizer_revision": config.tokenizer_revision,
-        "grammar_id": config.grammar_id,
-        "grammar_revision": config.grammar_revision,
-        "grammar_hash_policy": config.grammar_hash_policy,
-        "solver_timeout_seconds": config.solver_timeout_seconds,
-        "run_timeout_seconds": config.run_timeout_seconds,
-        "timeout_enforcement": (
-            "fresh_subprocess_wall_deadline_for_both_backends_plus_native_rust_deadline"
-        ),
-        "timing_scope": "component_profiled_cpu_smoke_not_publication_benchmark",
-        "hardware": {
-            "device": config.device,
-            "dtype": config.dtype,
-            "cpu_threads": config.cpu_threads,
-            "cuda_device": config.cuda_device,
-            "synchronize_cuda": config.synchronize_cuda,
-            "machine": platform.machine() or "unknown",
-            "processor": platform.processor() or "unknown",
-        },
-        "software_versions": {
-            "python": platform.python_version(),
-            "mwpc_exact": _package_version("mwpc-exact"),
-            "mwpc_parser_py": _package_version("mwpc-parser-py"),
-            "platform": platform.platform(),
-        },
-    }
-
-
 def _default_run_directory(raw_output_root: str, experiment_id: str) -> Path:
     timestamp = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
     return REPOSITORY_ROOT / raw_output_root / f"{experiment_id}-{timestamp}"
@@ -276,7 +215,20 @@ def main(argv: Sequence[str] | None = None) -> int:
         else arguments.run_directory
     )
     save_resolved_config(config, run_directory)
-    metadata = _run_metadata(config, run_id=run_directory.name, point_count=len(points))
+    metadata = capture_run_metadata(
+        config,
+        run_id=run_directory.name,
+        repository_root=REPOSITORY_ROOT,
+        grammar_sha256=tuple(scaling_point_grammar_sha256(point) for point in points),
+        require_rust=True,
+        additional={
+            "point_count": len(points),
+            "timeout_enforcement": (
+                "fresh_subprocess_wall_deadline_for_both_backends_plus_native_rust_deadline"
+            ),
+            "timing_scope": "component_profiled_cpu_smoke_not_publication_benchmark",
+        },
+    )
     result = run_q4_scaling(
         points,
         backends=parameters.backends,
@@ -286,6 +238,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         address_space_limit_bytes=parameters.address_space_limit_bytes,
         run_metadata=metadata,
     )
+    summary = result.summary_dict()
+    backend_status_counts = summary["backend_status_counts"]
+    if not isinstance(backend_status_counts, Mapping):
+        raise TypeError("Q4 summary omitted backend status counts")
+    metadata = finalize_run_metadata(
+        metadata,
+        solver_status_counts=backend_status_counts,
+        publication_mode=config.publication_mode,
+    )
+    result = replace(result, run_metadata=metadata)
     raw_path, plot_path, summary_path = write_q4_artifacts(result, run_directory)
     if arguments.summary_output is not None:
         _copy_summary(summary_path, arguments.summary_output)

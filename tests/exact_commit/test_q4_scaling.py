@@ -16,6 +16,7 @@ from mwpc_research.q4_scaling import (
     measure_scaling_point,
     run_bounded_measurement,
     run_q4_scaling,
+    scaling_point_grammar_sha256,
     write_q4_artifacts,
 )
 
@@ -133,6 +134,7 @@ def test_python_measurement_records_breakdown_sizes_ram_and_certificate() -> Non
     assert row.witness_token_ids is not None
     assert row.witness_terminal_labels is not None
     assert row.witness_graph_edge_ids is not None
+    assert row.grammar_sha256 == scaling_point_grammar_sha256(_small_point())
     assert row.observed_profile is not None
     timings = row.observed_profile["timings_seconds"]
     sizes = row.observed_profile["sizes"]

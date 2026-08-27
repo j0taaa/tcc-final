@@ -335,6 +335,14 @@ def _grammar_sha256(grammar: CnfGrammar) -> str:
     return hashlib.sha256(payload).hexdigest()
 
 
+def scaling_point_grammar_sha256(point: ScalingPoint) -> str:
+    """Return the canonical generated grammar hash for one scaling point."""
+
+    if not isinstance(point, ScalingPoint):
+        raise TypeError("point must be a ScalingPoint")
+    return _grammar_sha256(_scaling_grammar(point.grammar_production_count))
+
+
 def _build_instance(
     point: ScalingPoint,
     profiler: ComponentProfiler,
@@ -1159,5 +1167,6 @@ __all__ = [
     "measure_scaling_point",
     "run_bounded_measurement",
     "run_q4_scaling",
+    "scaling_point_grammar_sha256",
     "write_q4_artifacts",
 ]
