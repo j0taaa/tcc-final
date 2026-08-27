@@ -1,0 +1,236 @@
+{
+  "agreement_rate": 1.0,
+  "artifact_kind": "mwpc_q1_correctness_summary",
+  "case_count": 249,
+  "failed_cases": 0,
+  "failures": [],
+  "families": {
+    "canonical": {
+      "case_count": 5,
+      "failed_cases": 0,
+      "passed_cases": 5
+    },
+    "exhaustive": {
+      "case_count": 144,
+      "failed_cases": 0,
+      "passed_cases": 144
+    },
+    "randomized": {
+      "case_count": 100,
+      "failed_cases": 0,
+      "passed_cases": 100
+    }
+  },
+  "passed_cases": 249,
+  "run_metadata": {
+    "commit_strategy": "exact_mwpc",
+    "config": {
+      "experiment_id": "q1_correctness_v1",
+      "publication_mode": false,
+      "question": "correctness",
+      "sha256": "e5fe6f73f32e72d4023b0d0fbe4e1c9cf8e0066c25f4a06f85c7e82007770952"
+    },
+    "config_sha256": "e5fe6f73f32e72d4023b0d0fbe4e1c9cf8e0066c25f4a06f85c7e82007770952",
+    "dataset": "synthetic_q1_finite_support",
+    "exactness": {
+      "guarantee": "per_step",
+      "independent_certificate_required": true,
+      "scope": "exact_on_support"
+    },
+    "generated_at_utc": "2026-08-27T00:30:43.578545+00:00",
+    "git_commit": "f62765d69ac8fd30d197077ae189ecd1f5607f02",
+    "git_dirty": false,
+    "grammar": {
+      "grammar_id": "q1_small_cfg_family",
+      "hash_policy": "sha256_per_instance",
+      "revision": "q1_generator_v1",
+      "sha256": [
+        "03ce3d06bfaf1ff52a27a4fff3b344f7312f9da9cde76923f9ee3ada1e9f8f91",
+        "0d82a0410a3ca0650313ea0a7fc99e90fab91df691d242efc791005faa5ddf0e",
+        "8b0f815dc45520215e703e7cde08cd1ad550ae99de1b4ab45c5414a061e8f4f0",
+        "9517feed233e9de13acbefdfd2b01513be637d5f363c27826835bb5c6e04bf88",
+        "aa83da2d722782b2c59c4ac8ab1283e29f2def866d5bf141aed931ca310943f9",
+        "e97041db1ac6223d4bd0669086015ff320471a0b89f75bfb495999b82f17db48"
+      ],
+      "source": "mwpc_research.q1_correctness"
+    },
+    "hardware": {
+      "accelerator_config": {
+        "cuda_device": null,
+        "device": "cpu",
+        "dtype": "float64",
+        "synchronize_cuda": false
+      },
+      "cpu": {
+        "affinity_count": 16,
+        "logical_count": 16,
+        "machine": "x86_64",
+        "model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz"
+      },
+      "gpu": {
+        "available": true,
+        "driver_version": "595.84",
+        "name": "NVIDIA GeForce RTX 3080 Ti",
+        "total_vram_bytes": 12884901888
+      },
+      "os": {
+        "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+        "release": "7.0.0-28-generic",
+        "system": "Linux"
+      },
+      "ram": {
+        "total_bytes": 16609329152
+      },
+      "threads": {
+        "configured_cpu_threads": 1,
+        "environment": {
+          "MKL_NUM_THREADS": null,
+          "NUMEXPR_NUM_THREADS": null,
+          "OMP_NUM_THREADS": null,
+          "OPENBLAS_NUM_THREADS": null,
+          "RAYON_NUM_THREADS": null,
+          "RUST_MIN_STACK": null
+        }
+      }
+    },
+    "metadata_integrity": {
+      "critical_fields_complete": true,
+      "missing_critical_fields": [],
+      "publication_blockers": []
+    },
+    "metadata_schema_version": 1,
+    "model": {
+      "local_files_only": true,
+      "model_id": "not_applicable",
+      "requested_revision": "not_applicable"
+    },
+    "repetitions": 1,
+    "run_id": "t1200-evidence-f62765d",
+    "seeds": [
+      1101
+    ],
+    "software_versions": {
+      "cuda_driver_supported_runtime": "13.2",
+      "cuda_runtime": null,
+      "cuda_toolkit": null,
+      "mwpc_exact": "0.1.0",
+      "mwpc_parser_py": "0.1.0",
+      "python": "3.11.16",
+      "pytorch": "2.8.0+cpu",
+      "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+      "rustformlang": "0.1.0",
+      "transformers": "4.52.2"
+    },
+    "solver_status_counts": {
+      "exhaustive_oracle": {
+        "infeasible_on_support": 82,
+        "optimal": 167
+      },
+      "python_reference": {
+        "infeasible_on_support": 82,
+        "optimal": 167
+      },
+      "rust_production": {
+        "infeasible_on_support": 82,
+        "optimal": 167
+      }
+    },
+    "support": {
+      "finite_slots": true,
+      "k_max": 6,
+      "policy": "canonical_exhaustive_and_random_explicit_per_position",
+      "top_k": 6
+    },
+    "timeouts": {
+      "run_seconds": 600.0,
+      "solver_seconds": 5.0
+    },
+    "tokenizer": {
+      "requested_revision": "finite_lattice_generator_v1",
+      "tokenizer_id": "generated_raw_byte_vocabulary"
+    },
+    "weight_policy": "nonnegative_integer_proposal_weights"
+  },
+  "schema_version": 1,
+  "seed_ranges": {
+    "canonical": {
+      "count": 5,
+      "maximum": 1001105,
+      "minimum": 1001101
+    },
+    "exhaustive": {
+      "count": 144,
+      "maximum": 2001244,
+      "minimum": 2001101
+    },
+    "randomized": {
+      "count": 100,
+      "maximum": 1200,
+      "minimum": 1101
+    }
+  },
+  "size_ranges": {
+    "enumerated_token_paths": {
+      "maximum": 80,
+      "minimum": 1
+    },
+    "grammar_nonterminal_count": {
+      "maximum": 3,
+      "minimum": 1
+    },
+    "grammar_production_count": {
+      "maximum": 4,
+      "minimum": 1
+    },
+    "grammar_terminal_count": {
+      "maximum": 3,
+      "minimum": 2
+    },
+    "grammar_valid_paths": {
+      "maximum": 80,
+      "minimum": 0
+    },
+    "proposal_count": {
+      "maximum": 6,
+      "minimum": 0
+    },
+    "represented_token_choices": {
+      "maximum": 13,
+      "minimum": 2
+    },
+    "slot_count": {
+      "maximum": 3,
+      "minimum": 1
+    },
+    "vocabulary_size": {
+      "maximum": 6,
+      "minimum": 2
+    }
+  },
+  "solver_status_counts": {
+    "exhaustive_oracle": {
+      "infeasible_on_support": 82,
+      "optimal": 167
+    },
+    "python_reference": {
+      "infeasible_on_support": 82,
+      "optimal": 167
+    },
+    "rust_production": {
+      "infeasible_on_support": 82,
+      "optimal": 167
+    }
+  },
+  "status_counts": {
+    "infeasible_on_support": 82,
+    "optimal": 167
+  },
+  "timing_totals_seconds": {
+    "byte_lattice_audit": 0.09667788096703589,
+    "comparison": 0.02609971846686676,
+    "exhaustive_oracle": 0.013303916435688734,
+    "python_reference": 0.08218118018703535,
+    "rust_production": 0.07654334895778447,
+    "total": 0.29505723871989176
+  }
+}

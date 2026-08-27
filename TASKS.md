@@ -14,8 +14,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M12 / T1200.** M0 through M11 and the M10.5 hardening pass are complete. The
-first incomplete required task is T1200: run metadata capture.
+**M12 / T1201.** M0 through M11, the M10.5 hardening pass, and T1200 are
+complete. The first incomplete required task is T1201: raw, processed, and
+paper artifact separation.
 
 ## Completed milestone summary
 
@@ -331,18 +332,41 @@ the 15-page PDF.
 
 **Depends on:** M11 gate
 
-- [ ] Capture git SHA and dirty status.
-- [ ] Capture config hash.
-- [ ] Capture model/tokenizer revisions and grammar hash.
-- [ ] Capture Python, Rust, CUDA, PyTorch, and Transformers versions.
-- [ ] Capture CPU, RAM, GPU, VRAM, OS, and thread settings.
-- [ ] Capture all solver status counts.
+- [x] Capture git SHA and dirty status.
+- [x] Capture config hash.
+- [x] Capture model/tokenizer revisions and grammar hash.
+- [x] Capture Python, Rust, CUDA, PyTorch, and Transformers versions.
+- [x] Capture CPU, RAM, GPU, VRAM, OS, and thread settings.
+- [x] Capture all solver status counts.
 
 **Acceptance criteria**
 
-- [ ] Missing critical metadata causes a warning or failed publication-mode run.
+- [x] Missing critical metadata causes a warning or failed publication-mode run.
 
-**Evidence:** `[sample metadata]`
+**Evidence:** implementation commit
+`f62765d69ac8fd30d197077ae189ecd1f5607f02`; clean computed sample
+[`docs/evidence/t1200-run-metadata-sample.json`](docs/evidence/t1200-run-metadata-sample.json)
+(SHA-256 `136e60fec7b679ed9274f821328380a9911d7ebeccb738254b24be2057fe52cf`).
+The sample was generated from that clean commit with
+`python scripts/exact_commit/run_q1_correctness.py --run-directory
+/tmp/t1200-evidence-f62765d --summary-output
+docs/evidence/t1200-run-metadata-sample.json`: all 249 cases agreed, the tree
+was recorded clean, metadata integrity had no blockers, and status counts were
+captured independently for the exhaustive, Python, and Rust solvers.
+
+Q1--Q4 driver smokes completed with 249/249 Q1 agreement, 0 Q2/Q3 failures,
+and 0 Q4 backend mismatches across 84 measurements. The live pinned LLaDA Q5
+smoke completed unconstrained, serial, EPIC, and exact runs with 0 contract
+failures; its diagnostic artifact recorded CUDA `12.8`, the pinned resolved
+model/tokenizer revision, GPU/VRAM, four complete generation statuses, and one
+exact `OPTIMAL` status. `python -m pytest -q
+tests/exact_commit/test_run_metadata.py
+tests/exact_commit/test_experiment_driver_metadata.py
+tests/exact_commit/test_t1200_evidence.py` passed 10 tests, including warning
+versus publication-failure behavior and the clean-worktree regression. `make
+check` passed the upstream pin, Ruff, strict MyPy, 9 unit tests, and 561
+exact-commit tests; `python -m pytest -q` passed all 580 tests. `make paper`
+produced the 15-page PDF.
 
 ## T1201 — Separate raw, processed, and paper artifacts
 
