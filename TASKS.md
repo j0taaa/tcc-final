@@ -14,9 +14,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M12 / T1201.** M0 through M11, the M10.5 hardening pass, and T1200 are
-complete. The first incomplete required task is T1201: raw, processed, and
-paper artifact separation.
+**M12 / T1202.** M0 through M11, the M10.5 hardening pass, and T1200--T1201
+are complete. The first incomplete required task is T1202: statistical
+summaries.
 
 ## Completed milestone summary
 
@@ -372,17 +372,39 @@ produced the 15-page PDF.
 
 **Depends on:** T1200
 
-- [ ] Write immutable raw JSONL.
-- [ ] Generate processed CSV/Parquet through scripts.
-- [ ] Generate figures and LaTeX tables through scripts.
-- [ ] Do not edit generated numbers manually.
-- [ ] Store small publication artifacts and document external storage for large raw data.
+- [x] Write immutable raw JSONL.
+- [x] Generate processed CSV/Parquet through scripts.
+- [x] Generate figures and LaTeX tables through scripts.
+- [x] Do not edit generated numbers manually.
+- [x] Store small publication artifacts and document external storage for large raw data.
 
 **Acceptance criteria**
 
-- [ ] Deleting processed outputs and rerunning scripts reproduces them from raw data.
+- [x] Deleting processed outputs and rerunning scripts reproduces them from raw data.
 
-**Evidence:** `[commands and paths]`
+**Evidence:** implementation commit
+`b463ca37a3225d5ca0eb688e0864fa7e66c1ce0b`; versioned build config
+[`configs/analysis/t1201_q3_artifacts_v1.toml`](configs/analysis/t1201_q3_artifacts_v1.toml)
+pins the clean two-row Q3 raw input at
+[`docs/artifacts/raw/t1201_q3_finite_slots_v1/`](docs/artifacts/raw/t1201_q3_finite_slots_v1/)
+(SHA-256 `454b2ec1efd6cff32913d501179050b0008eb974bc5ef4563bd6d62f0e2cd997`).
+The producing rows record that implementation commit, `git_dirty=false`, zero
+failures, and complete metadata. `make artifacts` generated the tracked CSV
+and manifest under
+[`docs/artifacts/processed/t1201_q3_finite_slots_v1/`](docs/artifacts/processed/t1201_q3_finite_slots_v1/)
+and the generated LaTeX/SVG under
+[`paper/generated/t1201_q3_finite_slots_v1/`](paper/generated/t1201_q3_finite_slots_v1/).
+After both derived directories were moved aside, `make artifacts` rebuilt all
+four files and `cmp` matched every original byte-for-byte; `make
+artifacts-check` then independently recomputed and verified their hashes.
+`tests/exact_commit/test_artifact_pipeline.py` covers deletion/rebuild,
+create-only output, pinned-input validation, and hand-edit rejection;
+`tests/exact_commit/test_t1201_evidence.py` verifies the versioned bundle.
+`make check` passed the upstream pin, Ruff, strict MyPy, 9 unit tests, and 567
+exact-commit tests; `python -m pytest -q` passed all 586 tests; `make paper`
+produced the 15-page PDF. Storage and external-archive requirements are
+documented in [`docs/artifacts/README.md`](docs/artifacts/README.md); T1201
+does not claim an external large-run archive.
 
 ## T1202 — Implement statistical summaries
 

@@ -1,0 +1,38 @@
+{
+  "artifact_id": "t1201_q3_finite_slots_v1",
+  "artifact_kind": "mwpc_publication_artifact_manifest",
+  "configuration": {
+    "file_sha256": "7275f64a0da0e9a401540833cc4054e709adeeba0c0c70c8aee4f59e689cb960",
+    "normalized_sha256": "b477329a0d238867e36d9c72d49f4453f60da7209bb9173b662d39e2e24863e2",
+    "path": "configs/analysis/t1201_q3_artifacts_v1.toml"
+  },
+  "generated_artifacts": [
+    {
+      "path": "docs/artifacts/processed/t1201_q3_finite_slots_v1/q3_finite_slot_rows.csv",
+      "sha256": "0b073202534bea277301ebbb28431440c43191fed35932a5b9bdb5c4f72d23c3"
+    },
+    {
+      "path": "paper/generated/t1201_q3_finite_slots_v1/artifact-inventory.tex",
+      "sha256": "040ebe421c236da01db741e834155c8f383df8471dde263abea7240151b133ec"
+    },
+    {
+      "path": "paper/generated/t1201_q3_finite_slots_v1/artifact-row-counts.svg",
+      "sha256": "be08804a25f320d1e6dffa3fc288d28969569a7c97d030e22c56e7630a53eb54"
+    }
+  ],
+  "schema_version": 1,
+  "sources": [
+    {
+      "artifact_kinds": [
+        "mwpc_q3_finite_slot_row"
+      ],
+      "input_id": "q3_finite_slot_rows",
+      "path": "docs/artifacts/raw/t1201_q3_finite_slots_v1/q3-finite-slot-rows.jsonl",
+      "row_count": 2,
+      "schema_versions": [
+        1
+      ],
+      "sha256": "454b2ec1efd6cff32913d501179050b0008eb974bc5ef4563bd6d62f0e2cd997"
+    }
+  ]
+}

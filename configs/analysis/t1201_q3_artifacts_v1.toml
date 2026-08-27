@@ -1,0 +1,9 @@
+schema_version = 1
+artifact_id = "t1201_q3_finite_slots_v1"
+processed_directory = "docs/artifacts/processed/t1201_q3_finite_slots_v1"
+paper_directory = "paper/generated/t1201_q3_finite_slots_v1"
+
+[[inputs]]
+input_id = "q3_finite_slot_rows"
+raw_jsonl = "docs/artifacts/raw/t1201_q3_finite_slots_v1/q3-finite-slot-rows.jsonl"
+expected_sha256 = "454b2ec1efd6cff32913d501179050b0008eb974bc5ef4563bd6d62f0e2cd997"

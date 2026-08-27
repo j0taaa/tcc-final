@@ -3,8 +3,9 @@ VENV ?= .venv
 VENV_PY := $(VENV)/bin/python
 VENV_PIP := $(VENV)/bin/pip
 EPIC_CPU_INDEX ?= https://download.pytorch.org/whl/cpu
+ARTIFACT_CONFIG ?= configs/analysis/t1201_q3_artifacts_v1.toml
 
-.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser paper clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser artifacts artifacts-check paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -71,6 +72,12 @@ test-rust-parser:
 	cargo clippy --manifest-path crates/mwpc_parser/Cargo.toml --all-targets -- -D warnings
 	cargo fmt --manifest-path crates/mwpc_parser_py/Cargo.toml --all -- --check
 	PYO3_PYTHON=$(CURDIR)/$(VENV_PY) cargo clippy --manifest-path crates/mwpc_parser_py/Cargo.toml --all-targets -- -D warnings
+
+artifacts:
+	$(VENV_PY) scripts/exact_commit/build_publication_artifacts.py --config $(ARTIFACT_CONFIG)
+
+artifacts-check:
+	$(VENV_PY) scripts/exact_commit/build_publication_artifacts.py --config $(ARTIFACT_CONFIG) --verify-existing
 
 test: test-unit test-exact
 
