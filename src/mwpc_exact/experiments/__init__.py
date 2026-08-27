@@ -1,5 +1,19 @@
 """Versioned experiment configuration and execution support."""
 
+from mwpc_exact.experiments.artifacts import (
+    ARTIFACT_BUILD_SCHEMA_VERSION,
+    ARTIFACT_FIGURE_FILENAME,
+    ARTIFACT_MANIFEST_FILENAME,
+    ARTIFACT_MANIFEST_KIND,
+    ARTIFACT_TABLE_FILENAME,
+    ArtifactBuildConfig,
+    ArtifactBuildResult,
+    RawArtifactInput,
+    build_publication_artifacts,
+    default_processed_directory,
+    load_artifact_build_config,
+    prepare_artifact_directories,
+)
 from mwpc_exact.experiments.config import (
     EXPERIMENT_CONFIG_SCHEMA_VERSION,
     RESOLVED_CONFIG_ARTIFACT_KIND,
@@ -21,19 +35,31 @@ from mwpc_exact.experiments.metadata import (
 )
 
 __all__ = [
+    "ARTIFACT_BUILD_SCHEMA_VERSION",
+    "ARTIFACT_FIGURE_FILENAME",
+    "ARTIFACT_MANIFEST_FILENAME",
+    "ARTIFACT_MANIFEST_KIND",
+    "ARTIFACT_TABLE_FILENAME",
     "EXPERIMENT_CONFIG_SCHEMA_VERSION",
     "RESOLVED_CONFIG_ARTIFACT_KIND",
     "RESOLVED_CONFIG_FILENAME",
     "RUN_METADATA_SCHEMA_VERSION",
+    "ArtifactBuildConfig",
+    "ArtifactBuildResult",
     "ExperimentConfig",
     "ExperimentKind",
     "MissingCriticalMetadataError",
     "MissingCriticalMetadataWarning",
+    "RawArtifactInput",
     "SystemMetadata",
+    "build_publication_artifacts",
     "canonical_json_sha256",
     "capture_run_metadata",
     "collect_system_metadata",
+    "default_processed_directory",
     "finalize_run_metadata",
+    "load_artifact_build_config",
     "load_experiment_config",
+    "prepare_artifact_directories",
     "save_resolved_config",
 ]

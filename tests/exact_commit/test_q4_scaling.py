@@ -202,7 +202,16 @@ def test_timeouts_remain_censored_and_never_enter_plot_artifact(tmp_path: Path) 
         run_metadata={"test": "censoring"},
         bounded_runner=timeout_runner,
     )
-    raw_path, plot_path, summary_path = write_q4_artifacts(result, tmp_path)
+    raw_directory = tmp_path / "raw"
+    processed_directory = tmp_path / "processed"
+    raw_path, plot_path, summary_path = write_q4_artifacts(
+        result,
+        raw_directory,
+        processed_directory,
+    )
+    assert raw_path.parent == raw_directory
+    assert plot_path.parent == processed_directory
+    assert summary_path.parent == processed_directory
     raw_rows = [json.loads(line) for line in raw_path.read_text().splitlines()]
     summary = json.loads(summary_path.read_text())
 
@@ -217,7 +226,7 @@ def test_timeouts_remain_censored_and_never_enter_plot_artifact(tmp_path: Path) 
     assert summary["censoring_integrity"] is True
 
     with pytest.raises(FileExistsError):
-        write_q4_artifacts(result, tmp_path)
+        write_q4_artifacts(result, raw_directory, processed_directory)
 
 
 def test_optimal_row_cannot_omit_independently_validated_witness() -> None:

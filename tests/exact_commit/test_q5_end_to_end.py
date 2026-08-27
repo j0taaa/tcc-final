@@ -262,7 +262,15 @@ def test_repeated_summary_uses_raw_complete_rows_and_preserves_cyclic_order() ->
 
 
 def test_raw_rows_save_generated_outputs_checkers_and_exact_certificate(tmp_path: Path) -> None:
-    raw_path, summary_path = write_q5_artifacts(_result(), tmp_path)
+    raw_directory = tmp_path / "raw"
+    processed_directory = tmp_path / "processed"
+    raw_path, summary_path = write_q5_artifacts(
+        _result(),
+        raw_directory,
+        processed_directory,
+    )
+    assert raw_path.parent == raw_directory
+    assert summary_path.parent == processed_directory
     rows = [json.loads(line) for line in raw_path.read_text(encoding="utf-8").splitlines()]
 
     assert len(rows) == 4
@@ -272,4 +280,4 @@ def test_raw_rows_save_generated_outputs_checkers_and_exact_certificate(tmp_path
     assert rows[-1]["exact_solver"]["certificate_valid"] is True
     assert json.loads(summary_path.read_text(encoding="utf-8"))["measurement_count"] == 4
     with pytest.raises(FileExistsError):
-        write_q5_artifacts(_result(), tmp_path)
+        write_q5_artifacts(_result(), raw_directory, processed_directory)

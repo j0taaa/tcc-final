@@ -19,7 +19,7 @@ crates/**/target/
 # Models, datasets and experiment outputs
 .cache/
 cache/
-artifacts/
+/artifacts/
 model-cache/
 models/
 checkpoints/

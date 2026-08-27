@@ -152,10 +152,18 @@ def test_raw_and_summary_artifacts_are_separate_and_immutable(tmp_path: Path) ->
         run_metadata={"config_sha256": "test-hash", "git_commit": "test-commit"},
     )
 
-    raw_path, summary_path = write_q1_artifacts(result, tmp_path)
+    raw_directory = tmp_path / "raw"
+    processed_directory = tmp_path / "processed"
+    raw_path, summary_path = write_q1_artifacts(
+        result,
+        raw_directory,
+        processed_directory,
+    )
 
     assert raw_path.name == Q1_RAW_FILENAME
     assert summary_path.name == Q1_SUMMARY_FILENAME
+    assert raw_path.parent == raw_directory
+    assert summary_path.parent == processed_directory
     raw_rows = [json.loads(line) for line in raw_path.read_text(encoding="utf-8").splitlines()]
     summary = json.loads(summary_path.read_text(encoding="utf-8"))
     assert len(raw_rows) == summary["case_count"] == 1
@@ -167,7 +175,7 @@ def test_raw_and_summary_artifacts_are_separate_and_immutable(tmp_path: Path) ->
     assert summary["agreement_rate"] == 1.0
 
     with pytest.raises(FileExistsError):
-        write_q1_artifacts(result, tmp_path)
+        write_q1_artifacts(result, raw_directory, processed_directory)
 
 
 def test_missing_configured_solver_is_a_replayable_failure(tmp_path: Path) -> None:

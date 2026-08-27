@@ -86,7 +86,15 @@ def test_raw_rows_include_slots_decisions_witnesses_reasons_and_scope(
 ) -> None:
     result = _run_cases()
 
-    raw_path, summary_path = write_q3_artifacts(result, tmp_path)
+    raw_directory = tmp_path / "raw"
+    processed_directory = tmp_path / "processed"
+    raw_path, summary_path = write_q3_artifacts(
+        result,
+        raw_directory,
+        processed_directory,
+    )
+    assert raw_path.parent == raw_directory
+    assert summary_path.parent == processed_directory
     rows = [json.loads(line) for line in raw_path.read_text(encoding="utf-8").splitlines()]
     summary = json.loads(summary_path.read_text(encoding="utf-8"))
 
@@ -113,7 +121,7 @@ def test_raw_rows_include_slots_decisions_witnesses_reasons_and_scope(
     assert rows[1]["finite_decision"]["witness"]["token_ids"] == [1]
 
     with pytest.raises(FileExistsError):
-        write_q3_artifacts(result, tmp_path)
+        write_q3_artifacts(result, raw_directory, processed_directory)
 
 
 def test_replay_error_is_not_reported_as_finite_infeasibility() -> None:

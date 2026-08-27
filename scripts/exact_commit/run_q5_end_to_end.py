@@ -38,6 +38,7 @@ from mwpc_exact.experiments import (
     ExperimentConfig,
     ExperimentKind,
     capture_run_metadata,
+    default_processed_directory,
     finalize_run_metadata,
     load_experiment_config,
     save_resolved_config,
@@ -982,6 +983,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run the paired Q5 live-model experiment.")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--run-directory", type=Path)
+    parser.add_argument("--processed-directory", type=Path)
     parser.add_argument("--summary-output", type=Path)
     arguments = parser.parse_args(argv)
 
@@ -1011,6 +1013,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         _default_run_directory(parameters.raw_output_root, config.experiment_id)
         if arguments.run_directory is None
         else arguments.run_directory
+    )
+    processed_directory = (
+        default_processed_directory(run_directory, REPOSITORY_ROOT)
+        if arguments.processed_directory is None
+        else arguments.processed_directory
     )
     save_resolved_config(config, run_directory)
 
@@ -1352,7 +1359,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         publication_mode=config.publication_mode,
     )
     result = Q5ExperimentResult(tuple(records), run_metadata)
-    raw_path, summary_path = write_q5_artifacts(result, run_directory)
+    raw_path, summary_path = write_q5_artifacts(
+        result,
+        run_directory,
+        processed_directory,
+    )
     if arguments.summary_output is not None:
         _copy_summary(summary_path, arguments.summary_output)
 
@@ -1379,6 +1390,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         json.dumps(
             {
                 "run_directory": str(run_directory),
+                "processed_directory": str(processed_directory),
                 "raw_rows": str(raw_path),
                 "summary": str(summary_path),
                 "method_count": len(records),

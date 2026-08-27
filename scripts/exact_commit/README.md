@@ -4,6 +4,30 @@ Versioned correctness campaigns, experiment drivers, and artifact-generation
 scripts live here. Scripts must write raw outputs separately from derived
 tables and figures.
 
+All Q1--Q5 drivers treat `--run-directory` as the immutable raw directory and
+accept an optional distinct `--processed-directory`. When the raw path is
+under `results/raw/`, the default processed path mirrors it under
+`results/processed/`; an arbitrary raw path defaults to a non-nested
+`<run>-processed` sibling. Resolved configs and replay failures stay with raw
+JSONL, while summaries and Q4 plot-ready rows go to the processed directory.
+Existing files are never silently overwritten.
+
+Publication-facing CSV, SVG, and LaTeX inventories are rebuilt only from raw
+JSONL with a versioned config:
+
+```bash
+python scripts/exact_commit/build_publication_artifacts.py \
+  --config configs/analysis/t1201_q3_artifacts_v1.toml
+python scripts/exact_commit/build_publication_artifacts.py \
+  --config configs/analysis/t1201_q3_artifacts_v1.toml \
+  --verify-existing
+```
+
+The first command is create-only. Delete the declared processed and paper
+output directories before rebuilding. The second command verifies every
+tracked derivative byte-for-byte and fails if a number or label was edited.
+See `docs/artifacts/README.md` for storage and publication rules.
+
 The M3 three-way oracle campaign is configured by
 `configs/exact_commit/m3_differential.toml` and runs with:
 
@@ -68,9 +92,9 @@ make bootstrap-rust-parser
 python scripts/exact_commit/run_q1_correctness.py
 ```
 
-The driver creates a unique ignored directory under `results/raw/` unless
-`--run-directory` is supplied. It writes immutable raw JSONL, a computed
-summary, the resolved config, and exact replay fixtures for every mismatch. A
+The driver creates unique ignored raw and processed directories unless paths
+are supplied. It writes immutable raw JSONL, the resolved config, and exact
+replay fixtures to raw storage, and writes the computed summary separately. A
 single disagreement makes the command exit nonzero.
 
 The T1102 Q2 heuristic-gap experiment requires both pinned EPIC and the exact

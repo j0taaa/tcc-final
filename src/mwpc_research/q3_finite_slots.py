@@ -12,6 +12,7 @@ from pathlib import Path
 from time import monotonic, perf_counter
 from types import MappingProxyType
 
+from mwpc_exact.experiments.artifacts import prepare_artifact_directories
 from mwpc_exact.types import SolveStatus
 from mwpc_research.finite_slot_counterexamples import (
     ABSTRACT_SIGMA_STAR_SEMANTICS,
@@ -349,16 +350,21 @@ def run_q3_finite_slot_cases(
 
 def write_q3_artifacts(
     result: Q3ExperimentResult,
-    run_directory: str | Path,
+    raw_directory: str | Path,
+    processed_directory: str | Path,
 ) -> tuple[Path, Path]:
-    """Write immutable raw Q3 rows and their computed summary."""
+    """Write immutable raw Q3 rows separately from their computed summary."""
 
     if not isinstance(result, Q3ExperimentResult):
         raise TypeError("result must be a Q3ExperimentResult")
-    directory = Path(run_directory)
-    directory.mkdir(parents=True, exist_ok=True)
-    raw_path = directory / Q3_RAW_FILENAME
-    summary_path = directory / Q3_SUMMARY_FILENAME
+    raw_output, processed_output = prepare_artifact_directories(
+        raw_directory,
+        processed_directory,
+    )
+    raw_path = raw_output / Q3_RAW_FILENAME
+    summary_path = processed_output / Q3_SUMMARY_FILENAME
+    if raw_path.exists() or summary_path.exists():
+        raise FileExistsError("refusing to overwrite Q3 raw or processed artifacts")
     with raw_path.open("x", encoding="utf-8") as output:
         for record in result.records:
             output.write(

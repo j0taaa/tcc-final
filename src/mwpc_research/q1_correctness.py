@@ -12,6 +12,7 @@ from math import fsum
 from pathlib import Path
 from types import MappingProxyType
 
+from mwpc_exact.experiments.artifacts import prepare_artifact_directories
 from mwpc_exact.reference.grammar import (
     BinaryProduction,
     CnfGrammar,
@@ -503,16 +504,21 @@ def run_q1_correctness_cases(
 
 def write_q1_artifacts(
     result: Q1ExperimentResult,
-    run_directory: str | Path,
+    raw_directory: str | Path,
+    processed_directory: str | Path,
 ) -> tuple[Path, Path]:
-    """Write immutable raw JSONL and its fully computed summary."""
+    """Write immutable raw JSONL separately from its computed summary."""
 
     if not isinstance(result, Q1ExperimentResult):
         raise TypeError("result must be a Q1ExperimentResult")
-    directory = Path(run_directory)
-    directory.mkdir(parents=True, exist_ok=True)
-    raw_path = directory / Q1_RAW_FILENAME
-    summary_path = directory / Q1_SUMMARY_FILENAME
+    raw_output, processed_output = prepare_artifact_directories(
+        raw_directory,
+        processed_directory,
+    )
+    raw_path = raw_output / Q1_RAW_FILENAME
+    summary_path = processed_output / Q1_SUMMARY_FILENAME
+    if raw_path.exists() or summary_path.exists():
+        raise FileExistsError("refusing to overwrite Q1 raw or processed artifacts")
     with raw_path.open("x", encoding="utf-8") as output:
         for record in result.records:
             output.write(

@@ -26,6 +26,7 @@ from typing import cast
 
 from mwpc_exact.backend import ExactBackend
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
+from mwpc_exact.experiments.artifacts import prepare_artifact_directories
 from mwpc_exact.profiling import ComponentProfiler
 from mwpc_exact.reference.grammar import (
     BinaryProduction,
@@ -1105,17 +1106,22 @@ def run_q4_scaling(
 
 def write_q4_artifacts(
     result: Q4ExperimentResult,
-    run_directory: str | Path,
+    raw_directory: str | Path,
+    processed_directory: str | Path,
 ) -> tuple[Path, Path, Path]:
-    """Write immutable raw, uncensored plot-input, and summary artifacts."""
+    """Write raw JSONL separately from derived plot-input and summary files."""
 
     if not isinstance(result, Q4ExperimentResult):
         raise TypeError("result must be a Q4ExperimentResult")
-    directory = Path(run_directory)
-    directory.mkdir(parents=True, exist_ok=True)
-    raw_path = directory / Q4_RAW_FILENAME
-    plot_path = directory / Q4_PLOT_FILENAME
-    summary_path = directory / Q4_SUMMARY_FILENAME
+    raw_output, processed_output = prepare_artifact_directories(
+        raw_directory,
+        processed_directory,
+    )
+    raw_path = raw_output / Q4_RAW_FILENAME
+    plot_path = processed_output / Q4_PLOT_FILENAME
+    summary_path = processed_output / Q4_SUMMARY_FILENAME
+    if raw_path.exists() or plot_path.exists() or summary_path.exists():
+        raise FileExistsError("refusing to overwrite Q4 raw or processed artifacts")
     with raw_path.open("x", encoding="utf-8") as output:
         for row in result.measurements:
             output.write(

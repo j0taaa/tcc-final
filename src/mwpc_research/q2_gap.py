@@ -33,6 +33,7 @@ from mwpc_exact import (
     build_per_position_support,
     build_schedule_proposals,
 )
+from mwpc_exact.experiments.artifacts import prepare_artifact_directories
 from mwpc_exact.reference.grammar import (
     BinaryProduction,
     CnfGrammar,
@@ -364,16 +365,21 @@ def run_q2_gap_instances(
 
 def write_q2_artifacts(
     result: Q2ExperimentResult,
-    run_directory: str | Path,
+    raw_directory: str | Path,
+    processed_directory: str | Path,
 ) -> tuple[Path, Path]:
-    """Write immutable per-instance JSONL and its computed summary."""
+    """Write immutable JSONL separately from its computed summary."""
 
     if not isinstance(result, Q2ExperimentResult):
         raise TypeError("result must be a Q2ExperimentResult")
-    directory = Path(run_directory)
-    directory.mkdir(parents=True, exist_ok=True)
-    raw_path = directory / Q2_RAW_FILENAME
-    summary_path = directory / Q2_SUMMARY_FILENAME
+    raw_output, processed_output = prepare_artifact_directories(
+        raw_directory,
+        processed_directory,
+    )
+    raw_path = raw_output / Q2_RAW_FILENAME
+    summary_path = processed_output / Q2_SUMMARY_FILENAME
+    if raw_path.exists() or summary_path.exists():
+        raise FileExistsError("refusing to overwrite Q2 raw or processed artifacts")
     with raw_path.open("x", encoding="utf-8") as output:
         for record in result.records:
             output.write(

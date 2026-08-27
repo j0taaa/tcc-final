@@ -127,7 +127,15 @@ def test_raw_rows_reference_common_instance_and_support_scope(tmp_path: Path) ->
         run_metadata={"config_sha256": "test-hash"},
     )
 
-    raw_path, summary_path = write_q2_artifacts(result, tmp_path)
+    raw_directory = tmp_path / "raw"
+    processed_directory = tmp_path / "processed"
+    raw_path, summary_path = write_q2_artifacts(
+        result,
+        raw_directory,
+        processed_directory,
+    )
+    assert raw_path.parent == raw_directory
+    assert summary_path.parent == processed_directory
     rows = [json.loads(line) for line in raw_path.read_text(encoding="utf-8").splitlines()]
     summary = json.loads(summary_path.read_text(encoding="utf-8"))
     assert len(rows) == summary["case_count"] == 2
@@ -144,7 +152,7 @@ def test_raw_rows_reference_common_instance_and_support_scope(tmp_path: Path) ->
         assert row["selector_results"]["greedy_exact_feasibility"]["selected_subset_feasible"]
         assert row["selector_results"]["epic_regular_cover"]["selected_subset_feasible"]
     with pytest.raises(FileExistsError):
-        write_q2_artifacts(result, tmp_path)
+        write_q2_artifacts(result, raw_directory, processed_directory)
 
 
 def test_replay_failure_emits_deterministic_benchmark_fixture(tmp_path: Path) -> None:

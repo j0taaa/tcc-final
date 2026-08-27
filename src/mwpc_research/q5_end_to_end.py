@@ -18,6 +18,7 @@ from math import fsum, isfinite
 from pathlib import Path
 from types import MappingProxyType
 
+from mwpc_exact.experiments.artifacts import prepare_artifact_directories
 from mwpc_exact.types import SolveStatus
 from mwpc_research.robust_timing import summarize_distribution
 
@@ -567,16 +568,21 @@ class Q5ExperimentResult:
 
 def write_q5_artifacts(
     result: Q5ExperimentResult,
-    run_directory: str | Path,
+    raw_directory: str | Path,
+    processed_directory: str | Path,
 ) -> tuple[Path, Path]:
-    """Write immutable raw generated/checker rows and their computed summary."""
+    """Write immutable raw rows separately from their computed summary."""
 
     if not isinstance(result, Q5ExperimentResult):
         raise TypeError("result must be a Q5ExperimentResult")
-    directory = Path(run_directory)
-    directory.mkdir(parents=True, exist_ok=True)
-    raw_path = directory / Q5_RAW_FILENAME
-    summary_path = directory / Q5_SUMMARY_FILENAME
+    raw_output, processed_output = prepare_artifact_directories(
+        raw_directory,
+        processed_directory,
+    )
+    raw_path = raw_output / Q5_RAW_FILENAME
+    summary_path = processed_output / Q5_SUMMARY_FILENAME
+    if raw_path.exists() or summary_path.exists():
+        raise FileExistsError("refusing to overwrite Q5 raw or processed artifacts")
     with raw_path.open("x", encoding="utf-8") as output:
         for record in result.records:
             output.write(

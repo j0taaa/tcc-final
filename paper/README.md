@@ -11,6 +11,8 @@ Na compilação fornecida, o artigo possui **15 páginas**. O texto inclui a par
 - `sbc-template.sty`, `sbc.bst` e `caption2.sty`: arquivos do formato SBC;
 - `main.pdf`: prévia compilada;
 - `CAMPOS_A_PREENCHER.md`: checklist dos dados que dependem da implementação;
+- `generated/`: tabelas e figuras pequenas produzidas somente por scripts a
+  partir de JSONL bruto versionado;
 - `Makefile`: comandos de compilação e limpeza.
 
 ## Compilação no Overleaf
@@ -50,6 +52,8 @@ grep -n '\\ph{' main.tex
 ```
 
 Substitua cada campo somente quando houver informação verificável. Resultados, tempos, uso de memória e métricas não devem ser estimados ou fabricados.
+Arquivos sob `generated/` não devem ter seus números editados manualmente;
+use o gerador e o manifesto descritos em `docs/artifacts/README.md`.
 
 ## Observações importantes
 

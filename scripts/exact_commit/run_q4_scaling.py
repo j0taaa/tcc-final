@@ -15,6 +15,7 @@ from mwpc_exact.backend import ExactBackend
 from mwpc_exact.experiments import (
     ExperimentKind,
     capture_run_metadata,
+    default_processed_directory,
     finalize_run_metadata,
     load_experiment_config,
     save_resolved_config,
@@ -176,6 +177,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--run-directory", type=Path)
+    parser.add_argument("--processed-directory", type=Path)
     parser.add_argument("--summary-output", type=Path)
     arguments = parser.parse_args(argv)
 
@@ -214,6 +216,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         if arguments.run_directory is None
         else arguments.run_directory
     )
+    processed_directory = (
+        default_processed_directory(run_directory, REPOSITORY_ROOT)
+        if arguments.processed_directory is None
+        else arguments.processed_directory
+    )
     save_resolved_config(config, run_directory)
     metadata = capture_run_metadata(
         config,
@@ -248,7 +255,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         publication_mode=config.publication_mode,
     )
     result = replace(result, run_metadata=metadata)
-    raw_path, plot_path, summary_path = write_q4_artifacts(result, run_directory)
+    raw_path, plot_path, summary_path = write_q4_artifacts(
+        result,
+        run_directory,
+        processed_directory,
+    )
     if arguments.summary_output is not None:
         _copy_summary(summary_path, arguments.summary_output)
     summary = result.summary_dict()
@@ -256,6 +267,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         json.dumps(
             {
                 "run_directory": str(run_directory),
+                "processed_directory": str(processed_directory),
                 "raw_rows": str(raw_path),
                 "plot_rows": str(plot_path),
                 "summary": str(summary_path),

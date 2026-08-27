@@ -17,6 +17,7 @@ from mwpc_exact.experiments import (
     ExperimentKind,
     canonical_json_sha256,
     capture_run_metadata,
+    default_processed_directory,
     finalize_run_metadata,
     load_experiment_config,
     save_resolved_config,
@@ -109,6 +110,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--run-directory", type=Path)
+    parser.add_argument("--processed-directory", type=Path)
     parser.add_argument(
         "--summary-output",
         type=Path,
@@ -134,6 +136,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         else arguments.run_directory
     )
     run_id = run_directory.name
+    processed_directory = (
+        default_processed_directory(run_directory, REPOSITORY_ROOT)
+        if arguments.processed_directory is None
+        else arguments.processed_directory
+    )
     save_resolved_config(config, run_directory)
     cases = configured_q1_cases(
         seed_start=config.seeds[0],
@@ -171,13 +178,18 @@ def main(argv: Sequence[str] | None = None) -> int:
         publication_mode=config.publication_mode,
     )
     result = replace(result, run_metadata=metadata)
-    raw_path, summary_path = write_q1_artifacts(result, run_directory)
+    raw_path, summary_path = write_q1_artifacts(
+        result,
+        run_directory,
+        processed_directory,
+    )
     if arguments.summary_output is not None:
         _copy_summary(summary_path, arguments.summary_output)
     print(
         json.dumps(
             {
                 "run_directory": str(run_directory),
+                "processed_directory": str(processed_directory),
                 "raw_cases": str(raw_path),
                 "summary": str(summary_path),
                 "case_count": len(result.records),
