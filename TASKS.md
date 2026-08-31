@@ -14,9 +14,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M12 / T1203.** M0 through M11, the M10.5 hardening pass, and T1200--T1202
-are complete. The first incomplete required task is T1203: final tables and
-figures.
+**M12 / T1204.** M0 through M11, the M10.5 hardening pass, and T1200--T1203
+are complete. The first incomplete required task is T1204: reproduction
+instructions.
 
 ## Completed milestone summary
 
@@ -453,19 +453,55 @@ PDF.
 
 **Depends on:** T1202
 
-- [ ] Correctness/oracle table.
-- [ ] Heuristic-gap table or distribution plot.
-- [ ] Finite-slot counterexample figure/table.
-- [ ] Runtime breakdown.
-- [ ] Scaling plot.
-- [ ] End-to-end summary.
-- [ ] Captions state support scope and model/task configuration.
+- [x] Correctness/oracle table.
+- [x] Heuristic-gap table or distribution plot.
+- [x] Finite-slot counterexample figure/table.
+- [x] Runtime breakdown.
+- [x] Scaling plot.
+- [x] End-to-end summary.
+- [x] Captions state support scope and model/task configuration.
 
 **Acceptance criteria**
 
-- [ ] Every displayed value traces to a raw run ID.
+- [x] Every displayed value traces to a raw run ID.
 
-**Evidence:** `[artifact paths]`
+**Evidence:** implementation commits
+`490a762c53eb923a33e44c3e7dba9d0d1fb37d59` and
+`bfaa544b76133eb905628ccc15b90449a2861b18`; the versioned build config is
+[`configs/analysis/t1203_final_artifacts_v1.toml`](configs/analysis/t1203_final_artifacts_v1.toml).
+It pins five newline-delimited raw inputs under
+[`docs/artifacts/raw/t1203_final_results_v1/`](docs/artifacts/raw/t1203_final_results_v1/):
+Q1 run `bd6b445` (249 rows, SHA-256 `62fb83b48c8809a3958df486b387e017ba245e97e4e74e475ca1fb55659ade8a`),
+Q2 run `a8b4e7c` (6 rows, SHA-256 `1af3865368c0cff24bf75fe103354bd51e0bd42bd7a381ba1b3cec3538a0a2e1`),
+Q3 run `ac447a8` (2 rows, SHA-256 `060957e2a68d71a30696b6406e43d737458f0a13ae0ca1abd750885220c3ce20`),
+Q4 run `66b8b5d` (84 rows, SHA-256 `4ece645bc4b9a497623738b378bf58bba05805c6fa03bf49a555973dcf8a0765`),
+and Q5 run `83ba41d` (32 rows, SHA-256 `1132d0f29561d7b3eca8a72d382c22422275f2f54eb462da264b4fc1da9508b4`).
+
+`make final-artifacts` generated the machine-readable
+[`final-results.json`](docs/artifacts/processed/t1203_final_results_v1/final-results.json)
+(SHA-256 `fb7910781aadbaa9b8c6706703f03384c3115c14ca120cd1c8c8cdf04a84f04d`),
+five LaTeX tables, the heuristic-gap distribution SVG, and the six-axis CPU
+scaling SVG under
+[`paper/generated/t1203_final_results_v1/`](paper/generated/t1203_final_results_v1/).
+The generated
+[`artifact-manifest.json`](docs/artifacts/processed/t1203_final_results_v1/artifact-manifest.json)
+(SHA-256 `8a2900f023257297a53cef3c8f6a76a2288c9a6003a26a25bc23d6a2d9841293`)
+records every input/output hash, raw run ID, model/revision, task
+configuration, support policy, and `exact_on_support` per-step scope. The Q2
+synthetic gap campaign and Q4 CPU scaling campaign remain diagnostics, and the
+Q5 fixed-task live-model rows retain `benchmark_claim=false`; none is promoted
+to a publication benchmark.
+
+A clean delete/rebuild followed by `diff -qr` reproduced both derived
+directories byte-for-byte, and `make final-artifacts-check` independently
+recomputed and verified every artifact. All five tables compiled in a
+five-page render rehearsal and were visually checked alongside both SVGs for
+clipping, overlap, and legibility. `python -m pytest -q
+tests/exact_commit/test_final_artifacts.py
+tests/exact_commit/test_t1203_evidence.py` -> 6 passed; `make check` -> upstream
+pin verified, Ruff clean, strict MyPy clean over 67 files, 9 unit tests and 591
+exact-commit tests passed; `python -m pytest -q` -> 610 passed; `make paper` ->
+`main.pdf` built (15 pages).
 
 ## T1204 — Write reproduction instructions
 
