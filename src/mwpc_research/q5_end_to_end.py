@@ -21,6 +21,11 @@ from types import MappingProxyType
 from mwpc_exact.experiments.artifacts import prepare_artifact_directories
 from mwpc_exact.types import SolveStatus
 from mwpc_research.robust_timing import summarize_distribution
+from mwpc_research.statistical_summaries import (
+    OperationalEvent,
+    summarize_operational_rates,
+    summarize_runtime_comparison,
+)
 
 Q5_ARTIFACT_SCHEMA_VERSION = 1
 Q5_RAW_ARTIFACT_KIND = "mwpc_q5_end_to_end_row"
@@ -427,17 +432,34 @@ class Q5ExperimentResult:
             strategy: None if summary is None else summary.to_dict()
             for strategy, summary in runtime_summaries.items()
         }
-        exact_runtime = runtime_summaries["exact"]
         overhead: dict[str, float | None] = {}
+        runtime_comparisons: dict[str, object] = {}
         for strategy in Q5_STRATEGIES[:-1]:
-            baseline_runtime = runtime_summaries[strategy]
-            overhead[strategy] = (
-                None
-                if exact_runtime is None
-                or baseline_runtime is None
-                or baseline_runtime.median == 0.0
-                else exact_runtime.median / baseline_runtime.median
+            comparison = summarize_runtime_comparison(
+                tuple(record.elapsed_seconds for record in successful["exact"]),
+                tuple(record.elapsed_seconds for record in successful[strategy]),
             )
+            overhead[strategy] = comparison.median_runtime_ratio
+            runtime_comparisons[strategy] = comparison.to_dict()
+        generation_rates_by_strategy: dict[str, object] = {}
+        for strategy, records in by_strategy.items():
+            rates = summarize_operational_rates(
+                tuple(
+                    OperationalEvent(
+                        fallback_used=record.fallback_count > 0,
+                        timed_out=record.execution_status is Q5ExecutionStatus.TIMEOUT,
+                        support_expanded=(record.support_expansion_count or 0) > 0,
+                    )
+                    for record in records
+                ),
+                analysis_unit="generation",
+            ).to_dict()
+            if strategy != "exact":
+                rates["support_expansion"] = None
+                rates["support_expansion_applicable"] = False
+            else:
+                rates["support_expansion_applicable"] = True
+            generation_rates_by_strategy[strategy] = rates
         execution_statuses = Counter(record.execution_status.value for record in self.records)
         solver_statuses = Counter(
             record.solver_status.value
@@ -478,6 +500,16 @@ class Q5ExperimentResult:
             ),
             "diagnostic_exact_runtime_ratio": overhead,
             "median_exact_runtime_ratio": overhead,
+            "runtime_comparisons": runtime_comparisons,
+            "generation_rates_by_strategy": generation_rates_by_strategy,
+            "step_level_rates": None,
+            "step_level_rate_availability": {
+                "available": False,
+                "reason": (
+                    "Q5 method rows aggregate generation events and do not retain one "
+                    "outcome row per optimizer step"
+                ),
+            },
             "runtime_aggregation": {
                 "included_execution_status": Q5ExecutionStatus.COMPLETE.value,
                 "failed_timeout_and_incomplete_rows_excluded": True,

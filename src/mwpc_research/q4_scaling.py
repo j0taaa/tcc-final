@@ -39,6 +39,7 @@ from mwpc_exact.solver import solve_exact_commit
 from mwpc_exact.support import PerPositionSupport, SupportPolicy, build_per_position_support
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from mwpc_exact.types import Proposal, SolveStatus, SupportKind
+from mwpc_research.statistical_summaries import summarize_proportion
 
 Q4_ARTIFACT_SCHEMA_VERSION = 1
 Q4_RAW_ARTIFACT_KIND = "mwpc_q4_scaling_row"
@@ -1009,6 +1010,11 @@ class Q4ExperimentResult:
             },
             "censored_count": sum(row.censored for row in self.measurements),
             "timeout_count": len(timeouts),
+            "timeout_rate": summarize_proportion(
+                len(timeouts),
+                len(self.measurements),
+                analysis_unit="solver_measurement",
+            ).to_dict(),
             "failed_row_count": self.failed_rows,
             "plot_ready_runtime_count": len(plot_rows),
             "timeout_plot_runtime_count": sum(

@@ -117,6 +117,10 @@ def test_gap_rows_and_equality_rates_are_computed_from_selector_results() -> Non
     assert unit_serial["equality_rate"] == pytest.approx(1 / 3)
     assert confidence_serial["equality_count"] == 2
     assert confidence_serial["equality_rate"] == pytest.approx(2 / 3)
+    assert unit_serial["gap_statistics"]["equality"]["event_count"] == 1
+    assert unit_serial["gap_statistics"]["absolute_gap"]["count"] == 3
+    assert unit_serial["gap_statistics"]["relative_gap_defined_count"] == 3
+    assert unit_serial["runtime_seconds"]["count"] == 3
 
 
 def test_raw_rows_reference_common_instance_and_support_scope(tmp_path: Path) -> None:

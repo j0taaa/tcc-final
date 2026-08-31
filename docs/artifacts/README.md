@@ -41,3 +41,21 @@ publication evidence.
 Deleting processed and generated-paper outputs is always safe. Rebuilding from
 the pinned raw input must reproduce the exact hashes recorded in
 `artifact-manifest.json`; otherwise publication is blocked.
+
+## Statistical summaries
+
+`make statistics-check` recomputes the T1202 statistical evidence from the
+pinned JSONL configured by `configs/analysis/t1202_statistics_v1.toml`. The
+shared implementation uses Wilson score intervals for binary rates and type-7
+linear interpolation for quartiles. It stores both the exact-to-baseline
+median runtime ratio and normalized overhead `(candidate - baseline) /
+baseline`; both are undefined when the baseline median is zero. Relative score
+gaps are undefined and excluded when the exact optimum is zero, while absolute
+gaps and equality still include that observation.
+
+Rates always record their analysis unit and denominator. Optimizer-step and
+generation rates are separate artifacts, never alternate labels for the same
+number. If raw rows aggregate steps, analysis must report the step-level rate
+as unavailable rather than infer a denominator. The checked-in T1202 input is
+a synthetic formula-regression fixture with `benchmark_claim=false`, not an
+experiment or performance claim.

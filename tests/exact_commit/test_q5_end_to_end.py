@@ -161,6 +161,17 @@ def test_summary_computes_batch_mean_and_diagnostic_overhead_without_dividing_by
         "serial": 2.0,
         "epic": None,
     }
+    assert summary["runtime_comparisons"]["serial"]["normalized_median_overhead"] == 1.0
+    assert summary["runtime_comparisons"]["epic"]["baseline_median_zero"] is True
+    exact_rates = summary["generation_rates_by_strategy"]["exact"]
+    assert exact_rates["analysis_unit"] == "generation"
+    assert exact_rates["fallback"]["rate"] == 0.0
+    assert exact_rates["support_expansion_applicable"] is True
+    assert summary["generation_rates_by_strategy"]["serial"][
+        "support_expansion"
+    ] is None
+    assert summary["step_level_rates"] is None
+    assert summary["step_level_rate_availability"]["available"] is False
     methods = summary["methods"]
     assert isinstance(methods, dict)
     assert methods["serial"]["average_commit_batch_size"] == 1.0

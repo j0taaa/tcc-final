@@ -136,6 +136,10 @@ def test_summary_agreement_is_computed_and_failures_are_replayable(tmp_path: Pat
     assert summary["passed_cases"] == 1
     assert summary["failed_cases"] == 1
     assert summary["agreement_rate"] == 0.5
+    assert summary["agreement"]["event_count"] == 1
+    assert summary["agreement"]["observation_count"] == 2
+    assert summary["agreement"]["rate"] == 0.5
+    assert summary["agreement"]["analysis_unit"] == "case"
     failure = summary["failures"][0]
     assert isinstance(failure, dict)
     fixture_path = tmp_path / "mismatches" / str(failure["fixture_file"])

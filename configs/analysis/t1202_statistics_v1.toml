@@ -1,0 +1,6 @@
+schema_version = 1
+artifact_id = "t1202_statistics_v1"
+input_jsonl = "docs/artifacts/raw/t1202_statistics_v1/statistical-observations.jsonl"
+expected_sha256 = "2f91b80894b45cf9ea7b816d59e7daa95a87bf1dab40dd8ab04ceb36b8c215a9"
+output_json = "docs/artifacts/processed/t1202_statistics_v1/statistical-summary.json"
+confidence_level = 0.95

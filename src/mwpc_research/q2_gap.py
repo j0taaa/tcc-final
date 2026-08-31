@@ -42,6 +42,10 @@ from mwpc_exact.reference.grammar import (
     TerminalProduction,
 )
 from mwpc_exact.reference.recognizer import recognizes_cnf
+from mwpc_research.statistical_summaries import (
+    summarize_gaps,
+    summarize_numeric_distribution,
+)
 
 Q2_ARTIFACT_SCHEMA_VERSION = 1
 Q2_RAW_ARTIFACT_KIND = "mwpc_q2_heuristic_gap_row"
@@ -229,6 +233,16 @@ class Q2ExperimentResult:
                     "total_runtime_seconds": fsum(
                         cast(float, item["runtime_seconds"]) for item in measurements
                     ),
+                    "runtime_seconds": (
+                        None
+                        if not measurements
+                        else summarize_numeric_distribution(
+                            tuple(
+                                cast(float, item["runtime_seconds"])
+                                for item in measurements
+                            )
+                        ).to_dict()
+                    ),
                 }
                 if selector_name in _BASELINE_NAMES:
                     comparisons = tuple(
@@ -249,6 +263,13 @@ class Q2ExperimentResult:
                     selector_summary["maximum_relative_gap"] = (
                         max(relative_gaps) if relative_gaps else None
                     )
+                    selector_summary["gap_statistics"] = summarize_gaps(
+                        tuple(cast(float, item["exact_score"]) for item in comparisons),
+                        tuple(
+                            cast(float, item["heuristic_score"])
+                            for item in comparisons
+                        ),
+                    ).to_dict()
                 selector_summaries[selector_name] = selector_summary
             modes[mode.value] = {
                 "case_count": len(mode_records),

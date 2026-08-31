@@ -28,6 +28,22 @@ output directories before rebuilding. The second command verifies every
 tracked derivative byte-for-byte and fails if a number or label was edited.
 See `docs/artifacts/README.md` for storage and publication rules.
 
+Statistical summaries use one shared, model-independent implementation for
+Wilson score intervals, absolute and relative gap distributions, type-7
+runtime quartiles, normalized median overhead, and explicitly labelled event
+rates. The versioned formula-regression artifact runs with:
+
+```bash
+make statistics-check
+```
+
+Its input is deliberately synthetic and carries `benchmark_claim=false`; it
+tests formulas and edge semantics rather than reporting model performance.
+Relative gaps for zero optima are undefined and excluded, with the excluded
+count retained. Per-step and per-generation event rates always carry separate
+denominators. Q5 generation rows report generation-level rates only and state
+that step-level rates are unavailable because those rows aggregate steps.
+
 The M3 three-way oracle campaign is configured by
 `configs/exact_commit/m3_differential.toml` and runs with:
 

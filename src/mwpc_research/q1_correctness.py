@@ -26,6 +26,7 @@ from mwpc_research.finite_differential import (
     RandomFiniteLatticeInstance,
     generate_random_finite_lattice_instance,
 )
+from mwpc_research.statistical_summaries import summarize_proportion
 
 Q1_ARTIFACT_SCHEMA_VERSION = 1
 Q1_RAW_ARTIFACT_KIND = "mwpc_q1_correctness_case"
@@ -192,6 +193,11 @@ class Q1ExperimentResult:
                 "case_count": count,
                 "passed_cases": family_passed.get(family, 0),
                 "failed_cases": count - family_passed.get(family, 0),
+                "agreement": summarize_proportion(
+                    family_passed.get(family, 0),
+                    count,
+                    analysis_unit="case",
+                ).to_dict(),
             }
             for family, count in sorted(family_counts.items())
         }
@@ -214,6 +220,11 @@ class Q1ExperimentResult:
             "passed_cases": passed,
             "failed_cases": total - passed,
             "agreement_rate": passed / total,
+            "agreement": summarize_proportion(
+                passed,
+                total,
+                analysis_unit="case",
+            ).to_dict(),
             "families": family_summaries,
             "seed_ranges": seed_ranges,
             "status_counts": dict(sorted(status_counts.items())),

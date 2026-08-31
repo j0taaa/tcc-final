@@ -221,6 +221,8 @@ def test_timeouts_remain_censored_and_never_enter_plot_artifact(tmp_path: Path) 
     assert all(row["successful_runtime_seconds"] is None for row in raw_rows)
     assert plot_path.read_text() == ""
     assert summary["timeout_count"] == 2
+    assert summary["timeout_rate"]["rate"] == 1.0
+    assert summary["timeout_rate"]["analysis_unit"] == "solver_measurement"
     assert summary["plot_ready_runtime_count"] == 0
     assert summary["timeout_plot_runtime_count"] == 0
     assert summary["censoring_integrity"] is True
