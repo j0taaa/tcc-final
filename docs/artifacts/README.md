@@ -63,8 +63,8 @@ experiment or performance claim.
 ## Final T1203 tables and figures
 
 `make final-artifacts-check` recomputes the T1203 machine-readable summary,
-five LaTeX tables, and the heuristic-gap SVG directly from the five pinned
-Q1--Q5 JSONL row files under
+five LaTeX tables, the heuristic-gap SVG, and the CPU scaling SVG directly
+from the five pinned Q1--Q5 JSONL row files under
 `docs/artifacts/raw/t1203_final_results_v1/`. The configuration records every
 source SHA-256; the generated manifest records the producing clean commit,
 run ID, config hash, exactness scope, row count, interpretation, and output

@@ -85,7 +85,17 @@
         }
       }
     ],
-    "interpretation": "finite_support_correctness_campaign_not_runtime_benchmark"
+    "interpretation": "finite_support_correctness_campaign_not_runtime_benchmark",
+    "source_context": {
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "model_id": "not_applicable",
+      "model_revision": "not_applicable",
+      "run_id": "bd6b445",
+      "support_k_max": 6,
+      "support_top_k": 6,
+      "task_configuration": "synthetic_q1_finite_support"
+    }
   },
   "end_to_end": {
     "all_required_methods_passed": true,
@@ -516,6 +526,16 @@
         }
       }
     ],
+    "source_context": {
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+      "model_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+      "run_id": "83ba41d",
+      "support_k_max": 4,
+      "support_top_k": 1,
+      "task_configuration": "t904_literal_zero"
+    },
     "step_level_rate_unavailability_reason": "raw generation rows aggregate optimizer steps and do not retain one event record per step",
     "step_level_rates": null
   },
@@ -552,7 +572,17 @@
       }
     ],
     "counterexample_count": 2,
-    "interpretation": "curated_finite_slot_counterexample_evidence"
+    "interpretation": "curated_finite_slot_counterexample_evidence",
+    "source_context": {
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "model_id": "not_applicable_curated_counterexamples",
+      "model_revision": "t703_fixture_v1",
+      "run_id": "ac447a8",
+      "support_k_max": 2,
+      "support_top_k": 2,
+      "task_configuration": "curated_t703_counterexamples_v1"
+    }
   },
   "heuristic_gap": {
     "case_count": 6,
@@ -766,6 +796,16 @@
         "q3": 0.0021549237571889535,
         "quartile_policy": "linear_interpolation_type7"
       }
+    },
+    "source_context": {
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "model_id": "not_applicable_synthetic_states",
+      "model_revision": "q2_generator_v1",
+      "run_id": "a8b4e7c",
+      "support_k_max": 4,
+      "support_top_k": 4,
+      "task_configuration": "configured_synthetic_q2_states_v1"
     }
   },
   "runtime_breakdown": {
@@ -1098,6 +1138,678 @@
     ],
     "interpretation": "component_profiled_cpu_smoke_not_publication_benchmark",
     "measurement_count": 84,
+    "scaling_series": [
+      {
+        "axis": "slot_count",
+        "backend": "python",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.0375020792707801e-05,
+              "maximum": 0.0006957950536161661,
+              "mean": 0.0006854200328234583,
+              "median": 0.0006854200328234583,
+              "minimum": 0.0006750450120307505,
+              "q1": 0.0006802325224271044,
+              "q3": 0.0006906075432198122,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.5588000426068902e-05,
+              "maximum": 0.0008485830039717257,
+              "mean": 0.0008229950035456568,
+              "median": 0.0008229950035456568,
+              "minimum": 0.0007974070031195879,
+              "q1": 0.0008102010033326223,
+              "q3": 0.0008357890037586913,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 3.617518814280629e-06,
+              "maximum": 0.0010717760305851698,
+              "mean": 0.0010681585117708892,
+              "median": 0.0010681585117708892,
+              "minimum": 0.0010645409929566085,
+              "q1": 0.0010663497523637488,
+              "q3": 0.0010699672711780295,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 8.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 4.633533535525203e-06,
+              "maximum": 0.0017162340227514505,
+              "mean": 0.0017116004892159253,
+              "median": 0.0017116004892159253,
+              "minimum": 0.0017069669556804001,
+              "q1": 0.0017092837224481627,
+              "q3": 0.001713917255983688,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "slot_count",
+        "backend": "rust",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 3.5355042200535536e-06,
+              "maximum": 0.0010511570144444704,
+              "mean": 0.0010476215102244169,
+              "median": 0.0010476215102244169,
+              "minimum": 0.0010440860060043633,
+              "q1": 0.00104585375811439,
+              "q3": 0.0010493892623344436,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 8.094648364931345e-07,
+              "maximum": 0.0011960149859078228,
+              "mean": 0.0011952055210713297,
+              "median": 0.0011952055210713297,
+              "minimum": 0.0011943960562348366,
+              "q1": 0.0011948007886530831,
+              "q3": 0.0011956102534895763,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.8132519219070673e-05,
+              "maximum": 0.0014706160291098058,
+              "mean": 0.0014424835098907351,
+              "median": 0.0014424835098907351,
+              "minimum": 0.0014143509906716645,
+              "q1": 0.0014284172502811998,
+              "q3": 0.0014565497695002705,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 8.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 4.131987225264311e-06,
+              "maximum": 0.00181259197415784,
+              "mean": 0.0018084599869325757,
+              "median": 0.0018084599869325757,
+              "minimum": 0.0018043279997073114,
+              "q1": 0.0018063939933199435,
+              "q3": 0.0018105259805452079,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "top_k",
+        "backend": "python",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 7.72473867982626e-07,
+              "maximum": 0.0007128019933588803,
+              "mean": 0.0007120295194908977,
+              "median": 0.0007120295194908977,
+              "minimum": 0.000711257045622915,
+              "q1": 0.0007116432825569063,
+              "q3": 0.000712415756424889,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.5733490474522114e-05,
+              "maximum": 0.0008328519761562347,
+              "mean": 0.0008071184856817126,
+              "median": 0.0008071184856817126,
+              "minimum": 0.0007813849952071905,
+              "q1": 0.0007942517404444516,
+              "q3": 0.0008199852309189737,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.9845989299938083e-05,
+              "maximum": 0.000941007980145514,
+              "mean": 0.0009211619908455759,
+              "median": 0.0009211619908455759,
+              "minimum": 0.0009013160015456378,
+              "q1": 0.0009112389961956069,
+              "q3": 0.000931084985495545,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 8.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.154798130504787e-05,
+              "maximum": 0.0011461409740149975,
+              "mean": 0.0011245929927099496,
+              "median": 0.0011245929927099496,
+              "minimum": 0.0011030450114049017,
+              "q1": 0.0011138190020574257,
+              "q3": 0.0011353669833624735,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "top_k",
+        "backend": "rust",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.7807004041969776e-05,
+              "maximum": 0.001155038014985621,
+              "mean": 0.0011372310109436512,
+              "median": 0.0011372310109436512,
+              "minimum": 0.0011194240069016814,
+              "q1": 0.0011283275089226663,
+              "q3": 0.001146134512964636,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 6.822103750891984e-05,
+              "maximum": 0.0013774650287814438,
+              "mean": 0.001309243991272524,
+              "median": 0.001309243991272524,
+              "minimum": 0.0012410229537636042,
+              "q1": 0.001275133472518064,
+              "q3": 0.001343354510026984,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.1731492122635245e-05,
+              "maximum": 0.0013353109825402498,
+              "mean": 0.0013235794904176146,
+              "median": 0.0013235794904176146,
+              "minimum": 0.0013118479982949793,
+              "q1": 0.001317713744356297,
+              "q3": 0.0013294452364789322,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 8.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 8.321978384628892e-06,
+              "maximum": 0.001525923958979547,
+              "mean": 0.0015176019805949181,
+              "median": 0.0015176019805949181,
+              "minimum": 0.0015092800022102892,
+              "q1": 0.0015134409914026037,
+              "q3": 0.0015217629697872326,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "graph_size_scale",
+        "backend": "python",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.688000677153468e-06,
+              "maximum": 0.0007194459903985262,
+              "mean": 0.0007167579897213727,
+              "median": 0.0007167579897213727,
+              "minimum": 0.0007140699890442193,
+              "q1": 0.000715413989382796,
+              "q3": 0.0007181019900599495,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 3.777997335419059e-06,
+              "maximum": 0.0009688669815659523,
+              "mean": 0.0009650889842305332,
+              "median": 0.0009650889842305332,
+              "minimum": 0.0009613109868951142,
+              "q1": 0.0009631999855628237,
+              "q3": 0.0009669779828982428,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 0.00017977500101551414,
+              "maximum": 0.0034982020151801407,
+              "mean": 0.0033184270141646266,
+              "median": 0.0033184270141646266,
+              "minimum": 0.0031386520131491125,
+              "q1": 0.0032285395136568695,
+              "q3": 0.0034083145146723837,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "graph_size_scale",
+        "backend": "rust",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.8576509319245815e-05,
+              "maximum": 0.0011800170177593827,
+              "mean": 0.001161440508440137,
+              "median": 0.001161440508440137,
+              "minimum": 0.001142863999120891,
+              "q1": 0.001152152253780514,
+              "q3": 0.0011707287630997598,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 0.0001428350224159658,
+              "maximum": 0.0015616060118190944,
+              "mean": 0.0014187709894031286,
+              "median": 0.0014187709894031286,
+              "minimum": 0.0012759359669871628,
+              "q1": 0.0013473534781951457,
+              "q3": 0.0014901885006111115,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.4112494429573417e-05,
+              "maximum": 0.0020899390219710767,
+              "mean": 0.0020658265275415033,
+              "median": 0.0020658265275415033,
+              "minimum": 0.00204171403311193,
+              "q1": 0.0020537702803267166,
+              "q3": 0.00207788277475629,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "grammar_production_count",
+        "backend": "python",
+        "points": [
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.63684890139848e-05,
+              "maximum": 0.0008388839778490365,
+              "mean": 0.0008225154888350517,
+              "median": 0.0008225154888350517,
+              "minimum": 0.0008061469998210669,
+              "q1": 0.0008143312443280593,
+              "q3": 0.0008306997333420441,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 8.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.1192518286406994e-05,
+              "maximum": 0.0008486120495945215,
+              "mean": 0.0008374195313081145,
+              "median": 0.0008374195313081145,
+              "minimum": 0.0008262270130217075,
+              "q1": 0.000831823272164911,
+              "q3": 0.000843015790451318,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 16.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.0758521966636181e-05,
+              "maximum": 0.0008781389915384352,
+              "mean": 0.000867380469571799,
+              "median": 0.000867380469571799,
+              "minimum": 0.0008566219476051629,
+              "q1": 0.000862001208588481,
+              "q3": 0.0008727597305551171,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "grammar_production_count",
+        "backend": "rust",
+        "points": [
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 4.400964826345444e-06,
+              "maximum": 0.0011959999683313072,
+              "mean": 0.0011915990035049617,
+              "median": 0.0011915990035049617,
+              "minimum": 0.0011871980386786163,
+              "q1": 0.001189398521091789,
+              "q3": 0.0011937994859181345,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 8.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.7507019694894552e-05,
+              "maximum": 0.0012301719980314374,
+              "mean": 0.0012026649783365428,
+              "median": 0.0012026649783365428,
+              "minimum": 0.0011751579586416483,
+              "q1": 0.0011889114684890956,
+              "q3": 0.0012164184881839901,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 16.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 4.790548700839281e-05,
+              "maximum": 0.0013247939641587436,
+              "mean": 0.0012768884771503508,
+              "median": 0.0012768884771503508,
+              "minimum": 0.001228982990141958,
+              "q1": 0.0012529357336461544,
+              "q3": 0.0013008412206545472,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "token_byte_length",
+        "backend": "python",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.1598516721278429e-05,
+              "maximum": 0.0008364900131709874,
+              "mean": 0.0008248914964497089,
+              "median": 0.0008248914964497089,
+              "minimum": 0.0008132929797284305,
+              "q1": 0.0008190922380890697,
+              "q3": 0.0008306907548103482,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 3.364984877407551e-07,
+              "maximum": 0.0009729680023156106,
+              "mean": 0.0009726315038278699,
+              "median": 0.0009726315038278699,
+              "minimum": 0.0009722950053401291,
+              "q1": 0.0009724632545839995,
+              "q3": 0.0009727997530717403,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.49560219142586e-05,
+              "maximum": 0.0016279990086331964,
+              "mean": 0.0016130429867189378,
+              "median": 0.0016130429867189378,
+              "minimum": 0.0015980869648046792,
+              "q1": 0.0016055649757618085,
+              "q3": 0.001620520997676067,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "token_byte_length",
+        "backend": "rust",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.7332000425085425e-05,
+              "maximum": 0.001236492011230439,
+              "mean": 0.0012191600108053535,
+              "median": 0.0012191600108053535,
+              "minimum": 0.001201828010380268,
+              "q1": 0.0012104940105928108,
+              "q3": 0.0012278260110178962,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 8.00550333224237e-06,
+              "maximum": 0.0013037020107731223,
+              "mean": 0.00129569650744088,
+              "median": 0.00129569650744088,
+              "minimum": 0.0012876910041086376,
+              "q1": 0.0012916937557747588,
+              "q3": 0.0012996992591070011,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 6.755493814125657e-06,
+              "maximum": 0.0016040820046328008,
+              "mean": 0.0015973265108186752,
+              "median": 0.0015973265108186752,
+              "minimum": 0.0015905710170045495,
+              "q1": 0.0015939487639116123,
+              "q3": 0.001600704257725738,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "proposal_count",
+        "backend": "python",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.9484461518004537e-05,
+              "maximum": 0.0008384789689444005,
+              "mean": 0.000818994507426396,
+              "median": 0.000818994507426396,
+              "minimum": 0.0007995100459083915,
+              "q1": 0.0008092522766673937,
+              "q3": 0.0008287367381853983,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.254647552035749e-05,
+              "maximum": 0.0008319299668073654,
+              "mean": 0.0008093834912870079,
+              "median": 0.0008093834912870079,
+              "minimum": 0.0007868370157666504,
+              "q1": 0.0007981102535268292,
+              "q3": 0.0008206567290471867,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.6980502298101783e-05,
+              "maximum": 0.0008768390398472548,
+              "mean": 0.000849858537549153,
+              "median": 0.000849858537549153,
+              "minimum": 0.0008228780352510512,
+              "q1": 0.0008363682864001021,
+              "q3": 0.0008633487886982039,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 8.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 2.577202394604683e-05,
+              "maximum": 0.0009315760107710958,
+              "mean": 0.0009058039868250489,
+              "median": 0.0009058039868250489,
+              "minimum": 0.0008800319628790021,
+              "q1": 0.0008929179748520255,
+              "q3": 0.0009186899987980723,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      },
+      {
+        "axis": "proposal_count",
+        "backend": "rust",
+        "points": [
+          {
+            "axis_value": 1.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 7.085036486387253e-07,
+              "maximum": 0.0011855349875986576,
+              "mean": 0.0011848264839500189,
+              "median": 0.0011848264839500189,
+              "minimum": 0.0011841179803013802,
+              "q1": 0.0011844722321256995,
+              "q3": 0.0011851807357743382,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 2.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 5.793050513602793e-05,
+              "maximum": 0.001322839001659304,
+              "mean": 0.001264908496523276,
+              "median": 0.001264908496523276,
+              "minimum": 0.001206977991387248,
+              "q1": 0.001235943243955262,
+              "q3": 0.00129387374909129,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 4.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.1832016753032804e-05,
+              "maximum": 0.001226780004799366,
+              "mean": 0.0012149479880463332,
+              "median": 0.0012149479880463332,
+              "minimum": 0.0012031159712933004,
+              "q1": 0.0012090319796698168,
+              "q3": 0.0012208639964228496,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          },
+          {
+            "axis_value": 8.0,
+            "runtime_seconds": {
+              "count": 2,
+              "iqr": 1.498498022556305e-06,
+              "maximum": 0.0012376069789752364,
+              "mean": 0.0012361084809526801,
+              "median": 0.0012361084809526801,
+              "minimum": 0.0012346099829301238,
+              "q1": 0.001235359231941402,
+              "q3": 0.0012368577299639583,
+              "quartile_policy": "linear_interpolation_type7"
+            }
+          }
+        ]
+      }
+    ],
+    "source_context": {
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "model_id": "not_applicable_generated_scaling_instances",
+      "model_revision": "scaling_generator_v1",
+      "run_id": "66b8b5d",
+      "support_k_max": null,
+      "support_top_k": null,
+      "task_configuration": "generated_reachable_a_plus_cfgs"
+    },
     "status_counts": {
       "optimal": 84
     }
@@ -1105,6 +1817,16 @@
   "schema_version": 1,
   "sources": [
     {
+      "analysis_context": {
+        "exactness_guarantee": "per_step",
+        "exactness_scope": "exact_on_support",
+        "model_id": "not_applicable",
+        "model_revision": "not_applicable",
+        "run_id": "bd6b445",
+        "support_k_max": 6,
+        "support_top_k": 6,
+        "task_configuration": "synthetic_q1_finite_support"
+      },
       "artifact_kind": "mwpc_q1_correctness_case",
       "benchmark_claim": null,
       "config_sha256": "e5fe6f73f32e72d4023b0d0fbe4e1c9cf8e0066c25f4a06f85c7e82007770952",
@@ -1120,6 +1842,16 @@
       "timing_scope": null
     },
     {
+      "analysis_context": {
+        "exactness_guarantee": "per_step",
+        "exactness_scope": "exact_on_support",
+        "model_id": "not_applicable_synthetic_states",
+        "model_revision": "q2_generator_v1",
+        "run_id": "a8b4e7c",
+        "support_k_max": 4,
+        "support_top_k": 4,
+        "task_configuration": "configured_synthetic_q2_states_v1"
+      },
       "artifact_kind": "mwpc_q2_heuristic_gap_row",
       "benchmark_claim": null,
       "config_sha256": "fcddc72d33427ff896fa9a9eccb35b8e75a7d6ceec3f7612771a8a36805e71af",
@@ -1135,6 +1867,16 @@
       "timing_scope": "single_repetition_smoke_not_publication_benchmark"
     },
     {
+      "analysis_context": {
+        "exactness_guarantee": "per_step",
+        "exactness_scope": "exact_on_support",
+        "model_id": "not_applicable_curated_counterexamples",
+        "model_revision": "t703_fixture_v1",
+        "run_id": "ac447a8",
+        "support_k_max": 2,
+        "support_top_k": 2,
+        "task_configuration": "curated_t703_counterexamples_v1"
+      },
       "artifact_kind": "mwpc_q3_finite_slot_row",
       "benchmark_claim": null,
       "config_sha256": "ac7e619520d69d7a86dd281e9d46a308f7f01d898e55e98583f921d531a09de6",
@@ -1150,6 +1892,16 @@
       "timing_scope": "single_repetition_smoke_not_publication_benchmark"
     },
     {
+      "analysis_context": {
+        "exactness_guarantee": "per_step",
+        "exactness_scope": "exact_on_support",
+        "model_id": "not_applicable_generated_scaling_instances",
+        "model_revision": "scaling_generator_v1",
+        "run_id": "66b8b5d",
+        "support_k_max": null,
+        "support_top_k": null,
+        "task_configuration": "generated_reachable_a_plus_cfgs"
+      },
       "artifact_kind": "mwpc_q4_scaling_row",
       "benchmark_claim": null,
       "config_sha256": "fc27e36df5e957abd73f6dbd0d286dc6e890445d86580c1692f5362509546a4b",
@@ -1165,6 +1917,16 @@
       "timing_scope": "component_profiled_cpu_smoke_not_publication_benchmark"
     },
     {
+      "analysis_context": {
+        "exactness_guarantee": "per_step",
+        "exactness_scope": "exact_on_support",
+        "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+        "model_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+        "run_id": "83ba41d",
+        "support_k_max": 4,
+        "support_top_k": 1,
+        "task_configuration": "t904_literal_zero"
+      },
       "artifact_kind": "mwpc_q5_end_to_end_row",
       "benchmark_claim": false,
       "config_sha256": "ef284d1b73d31848bbaa46635339170ed92a7ccaeef9d64b6f43987fb88f8b39",

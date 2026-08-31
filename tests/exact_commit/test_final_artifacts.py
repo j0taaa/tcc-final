@@ -13,6 +13,7 @@ from mwpc_research.final_artifacts import (
     FINAL_MANIFEST_FILENAME,
     FINAL_RESULTS_FILENAME,
     HEURISTIC_GAP_FIGURE_FILENAME,
+    SCALING_FIGURE_FILENAME,
     build_final_artifacts,
 )
 
@@ -137,6 +138,8 @@ def _fixture_repository(
                     "schema_version": 1,
                     "run_metadata": _metadata("q4"),
                     "backend": backend,
+                    "axis": "slot_count",
+                    "axis_value": 1,
                     "status": "optimal",
                     "censored": False,
                     "certificate_valid": True,
@@ -235,9 +238,10 @@ def test_final_bundle_is_generated_directly_from_pinned_rows(tmp_path: Path) -> 
     assert "100.0" in (paper / CORRECTNESS_TABLE_FILENAME).read_text()
     assert "0/0/0" in (paper / END_TO_END_TABLE_FILENAME).read_text()
     ElementTree.parse(paper / HEURISTIC_GAP_FIGURE_FILENAME)
+    ElementTree.parse(paper / SCALING_FIGURE_FILENAME)
     manifest = json.loads((processed / FINAL_MANIFEST_FILENAME).read_text())
     assert len(manifest["sources"]) == 5
-    assert len(manifest["generated_artifacts"]) == 7
+    assert len(manifest["generated_artifacts"]) == 8
     assert len(result.source_sha256) == 5
 
     verified = build_final_artifacts(

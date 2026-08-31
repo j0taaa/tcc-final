@@ -44,8 +44,8 @@ count retained. Per-step and per-generation event rates always carry separate
 denominators. Q5 generation rows report generation-level rates only and state
 that step-level rates are unavailable because those rows aggregate steps.
 
-The final Q1--Q5 evidence tables and heuristic-gap figure are regenerated
-from versioned raw rows with:
+The final Q1--Q5 evidence tables, heuristic-gap figure, and scaling figure are
+regenerated from versioned raw rows with:
 
 ```bash
 make final-artifacts-check

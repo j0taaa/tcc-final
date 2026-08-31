@@ -33,28 +33,31 @@ EXPECTED_HASHES = {
         "1132d0f29561d7b3eca8a72d382c22422275f2f54eb462da264b4fc1da9508b4"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/artifact-manifest.json": (
-        "a45b8aededf49b509ad1f63ace81f86feebd3ad1332d0068c176469d07ba336b"
+        "8a2900f023257297a53cef3c8f6a76a2288c9a6003a26a25bc23d6a2d9841293"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/final-results.json": (
-        "716ad951d1760d7817c3d6a466af5b45cd999445f3aeb1f56009b8419a78c31e"
+        "fb7910781aadbaa9b8c6706703f03384c3115c14ca120cd1c8c8cdf04a84f04d"
     ),
     "paper/generated/t1203_final_results_v1/correctness-oracle-table.tex": (
-        "a4ac0e3695ddba0c9101a215afbbbeb7e443c96bc2f244d9346aa1f396e1bfe8"
+        "b5af0c912778ac5bfecee95354de6b1fdd6820aad71359aedbd179b7f3329694"
     ),
     "paper/generated/t1203_final_results_v1/end-to-end-comparison-table.tex": (
-        "824c4743da410ab2874a54c1dcbbb4a0e4177b1a809070fede4c84b517afbdc5"
+        "bc95cdfe9aad10282e8ae12fb700f42381cbf7747e1d5a3012ba80d3754aeec6"
     ),
     "paper/generated/t1203_final_results_v1/finite-slot-counterexample-table.tex": (
-        "af4f2ac71ad418a6bc2942c8b73e48f00b5d4a6a6d11d22d2705a49d71581c2c"
+        "105796e828459894a3983d195adc7a895240af17ed3ce99348beae3b1e409014"
     ),
     "paper/generated/t1203_final_results_v1/heuristic-gap-distribution.svg": (
-        "e3900d3f65ff5b89adc4457318bd6b661a38bb37d321c7876f6e134ac6dc6180"
+        "fd93746d680d128816ea4b9908e320da06b49eda2662be3e6a9fc4a7b1bb5507"
     ),
     "paper/generated/t1203_final_results_v1/heuristic-gap-table.tex": (
-        "6aae1f29308316b862ed7db12682f277fe7200950c3adc7cea0f5e1d6c530b5f"
+        "a16be730136d8f4d63e661ab4b321c77e8ec13426b0883180009d6e4c4b3d484"
     ),
     "paper/generated/t1203_final_results_v1/runtime-breakdown-table.tex": (
-        "9cddef0c071c8249e846346f08e9d7776bc9c3d0c9436ed82873dba6016cb1de"
+        "08130e62ec8bd0de4f7d6882e221da223a7c8043bf9c6dfe2721b9ec9b2ba772"
+    ),
+    "paper/generated/t1203_final_results_v1/runtime-scaling.svg": (
+        "872ee33930d052a6bdb0eb1b4bbbf46ac5fac9fba22c60dfd11887c9a5029a2f"
     ),
 }
 
@@ -74,7 +77,7 @@ def test_t1203_tables_and_figure_are_pinned_to_raw_rows() -> None:
     assert len(results["sources"]) == 5
     assert [source["row_count"] for source in results["sources"]] == [249, 6, 2, 84, 32]
     assert all(source["exactness_scope"] == "exact_on_support" for source in results["sources"])
-    assert len(manifest["generated_artifacts"]) == 7
+    assert len(manifest["generated_artifacts"]) == 8
 
     correctness = results["correctness"]
     assert correctness["case_count"] == 249
@@ -107,6 +110,7 @@ def test_t1203_tables_and_figure_are_pinned_to_raw_rows() -> None:
     assert runtime["censored_count"] == 0
     assert runtime["status_counts"] == {"optimal": 84}
     assert all(row["runtime_seconds"]["count"] == 42 for row in runtime["component_breakdown"])
+    assert len(runtime["scaling_series"]) == 12
     assert "not_publication_benchmark" in runtime["interpretation"]
 
     end_to_end = results["end_to_end"]
@@ -124,13 +128,42 @@ def test_t1203_tables_and_figure_are_pinned_to_raw_rows() -> None:
     assert exact["exact_solver_status_counts"] == {"optimal": 8}
     assert exact["support_expansion_rate_per_generation"]["event_count"] == 0
 
+    source_contexts = {
+        key: results[key]["source_context"]
+        for key in (
+            "correctness",
+            "heuristic_gap",
+            "finite_slots",
+            "runtime_breakdown",
+            "end_to_end",
+        )
+    }
+    assert {key: value["run_id"] for key, value in source_contexts.items()} == {
+        "correctness": "bd6b445",
+        "heuristic_gap": "a8b4e7c",
+        "finite_slots": "ac447a8",
+        "runtime_breakdown": "66b8b5d",
+        "end_to_end": "83ba41d",
+    }
+    assert all(
+        context["exactness_scope"] == "exact_on_support" for context in source_contexts.values()
+    )
+    assert source_contexts["end_to_end"]["model_id"] == "GSAI-ML/LLaDA-8B-Instruct"
+    assert source_contexts["end_to_end"]["task_configuration"] == "t904_literal_zero"
+
     generated_text = "\n".join(
         path.read_text(encoding="utf-8") for path in sorted(PAPER.glob("*.tex"))
     )
     for placeholder in ("[TO BE MEASURED]", "[MODEL_ID]", "estimated"):
         assert placeholder not in generated_text
     assert "not a publication benchmark" in generated_text
+    assert generated_text.count(r"\texttt{exact\_on\_support}") == 5
+    for run_id in ("bd6b445", "a8b4e7c", "ac447a8", "66b8b5d", "83ba41d"):
+        assert f"run \\texttt{{{run_id}}}" in generated_text
+    assert r"GSAI-ML/LLaDA-8B-Instruct@08b83a6feb34" in generated_text
+    assert r"t904\_literal\_zero" in generated_text
     ElementTree.parse(PAPER / "heuristic-gap-distribution.svg")
+    ElementTree.parse(PAPER / "runtime-scaling.svg")
 
     verified = build_final_artifacts(
         CONFIG_PATH,

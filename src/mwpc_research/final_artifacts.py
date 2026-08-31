@@ -32,6 +32,7 @@ HEURISTIC_GAP_TABLE_FILENAME = "heuristic-gap-table.tex"
 HEURISTIC_GAP_FIGURE_FILENAME = "heuristic-gap-distribution.svg"
 FINITE_SLOT_TABLE_FILENAME = "finite-slot-counterexample-table.tex"
 RUNTIME_TABLE_FILENAME = "runtime-breakdown-table.tex"
+SCALING_FIGURE_FILENAME = "runtime-scaling.svg"
 END_TO_END_TABLE_FILENAME = "end-to-end-comparison-table.tex"
 
 _SAFE_ID = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
@@ -505,6 +506,7 @@ def _q4_summary(rows: Sequence[Mapping[str, object]]) -> dict[str, object]:
     status_values: list[str] = []
     component_values: dict[tuple[str, str], list[float]] = defaultdict(list)
     backend_runtime: dict[str, list[float]] = defaultdict(list)
+    scaling_values: dict[tuple[str, str, float], list[float]] = defaultdict(list)
     censored_count = 0
     for index, row in enumerate(rows):
         backend = _string(row.get("backend"), f"q4[{index}].backend")
@@ -518,6 +520,9 @@ def _q4_summary(rows: Sequence[Mapping[str, object]]) -> dict[str, object]:
             raise ValueError(f"Q4 OPTIMAL row {index} lacks a valid certificate")
         runtime = _number(row.get("successful_runtime_seconds"), f"q4[{index}].runtime")
         backend_runtime[backend].append(runtime)
+        axis = _string(row.get("axis"), f"q4[{index}].axis")
+        axis_value = _number(row.get("axis_value"), f"q4[{index}].axis_value")
+        scaling_values[(axis, backend, axis_value)].append(runtime)
         profile = _mapping(row.get("observed_profile"), f"q4[{index}].profile")
         timings = _mapping(profile.get("timings_seconds"), f"q4[{index}].timings")
         components = _mapping(timings.get("components"), f"q4[{index}].components")
@@ -557,6 +562,39 @@ def _q4_summary(rows: Sequence[Mapping[str, object]]) -> dict[str, object]:
             ),
         )
     ]
+    axis_order = {
+        "slot_count": 0,
+        "top_k": 1,
+        "graph_size_scale": 2,
+        "grammar_production_count": 3,
+        "token_byte_length": 4,
+        "proposal_count": 5,
+    }
+    scaling_series: list[dict[str, object]] = []
+    series: dict[tuple[str, str], list[tuple[float, list[float]]]] = defaultdict(list)
+    for (axis, backend, axis_value), values in scaling_values.items():
+        series[(axis, backend)].append((axis_value, values))
+    for (axis, backend), points in sorted(
+        series.items(),
+        key=lambda item: (
+            axis_order.get(item[0][0], 99),
+            item[0][0],
+            item[0][1],
+        ),
+    ):
+        scaling_series.append(
+            {
+                "axis": axis,
+                "backend": backend,
+                "points": [
+                    {
+                        "axis_value": axis_value,
+                        "runtime_seconds": summarize_numeric_distribution(values).to_dict(),
+                    }
+                    for axis_value, values in sorted(points)
+                ],
+            }
+        )
     return {
         "interpretation": _SOURCE_INTERPRETATIONS["q4_scaling"],
         "measurement_count": len(rows),
@@ -567,6 +605,7 @@ def _q4_summary(rows: Sequence[Mapping[str, object]]) -> dict[str, object]:
             for backend, values in sorted(backend_runtime.items())
         },
         "component_breakdown": breakdown,
+        "scaling_series": scaling_series,
     }
 
 
@@ -727,6 +766,46 @@ def _q5_summary(rows: Sequence[Mapping[str, object]], confidence_level: float) -
     }
 
 
+def _source_context(item: _LoadedInput) -> dict[str, object]:
+    metadata = item.run_metadata
+    nested_model = _mapping(metadata.get("model", {}), "run_metadata.model")
+    comparison = _mapping(
+        metadata.get("comparison_contract", {}),
+        "run_metadata.comparison_contract",
+    )
+    model_id_value = metadata.get("model_id", nested_model.get("model_id"))
+    model_revision_value = metadata.get("model_revision", nested_model.get("resolved_revision"))
+    model_id = "not_applicable" if model_id_value is None else _string(model_id_value, "model_id")
+    model_revision = (
+        "not_applicable"
+        if model_revision_value is None
+        else _string(model_revision_value, "model_revision")
+    )
+    task_configuration: str
+    if isinstance(metadata.get("dataset"), str):
+        task_configuration = _string(metadata["dataset"], "dataset")
+    elif "task_ids" in comparison:
+        task_configuration = ",".join(
+            _string(value, "task_id") for value in _sequence(comparison["task_ids"], "task_ids")
+        )
+    elif isinstance(metadata.get("grammar_id"), str):
+        task_configuration = _string(metadata["grammar_id"], "grammar_id")
+    else:
+        task_configuration = "not_applicable"
+    top_k = metadata.get("support_top_k")
+    k_max = metadata.get("support_k_max")
+    return {
+        "run_id": _string(metadata["run_id"], "run_id"),
+        "model_id": model_id,
+        "model_revision": model_revision,
+        "task_configuration": task_configuration,
+        "support_top_k": (None if top_k is None else _integer(top_k, "support_top_k")),
+        "support_k_max": (None if k_max is None else _integer(k_max, "support_k_max")),
+        "exactness_scope": "exact_on_support",
+        "exactness_guarantee": "per_step",
+    }
+
+
 def _source_entry(item: _LoadedInput) -> dict[str, object]:
     metadata = item.run_metadata
     return {
@@ -743,6 +822,7 @@ def _source_entry(item: _LoadedInput) -> dict[str, object]:
         "exactness_guarantee": "per_step",
         "timing_scope": metadata.get("timing_scope"),
         "benchmark_claim": metadata.get("benchmark_claim"),
+        "analysis_context": _source_context(item),
     }
 
 
@@ -770,7 +850,44 @@ def _generated_table(lines: Sequence[str]) -> bytes:
     return ("\n".join(lines) + "\n").encode("utf-8")
 
 
+def _caption_context(summary: Mapping[str, object]) -> str:
+    context = _mapping(summary["source_context"], "source_context")
+    model_id = _string(context["model_id"], "model_id")
+    model_revision = _string(context["model_revision"], "model_revision")
+    model = _latex_escape(model_id)
+    if model_revision != "not_applicable":
+        model += "@" + _latex_escape(model_revision[:12])
+    support_parts = [r"\texttt{exact\_on\_support}"]
+    if context["support_top_k"] is not None:
+        support_parts.append(f"top-K={_integer(context['support_top_k'], 'support_top_k')}")
+    if context["support_k_max"] is not None:
+        support_parts.append(f"Kmax={_integer(context['support_k_max'], 'support_k_max')}")
+    return (
+        f"run \\texttt{{{_latex_escape(_string(context['run_id'], 'run_id'))}}}; "
+        f"{', '.join(support_parts)}; model \\texttt{{{model}}}; task "
+        f"\\texttt{{{_latex_escape(_string(context['task_configuration'], 'task'))}}}"
+    )
+
+
+def _plain_context(summary: Mapping[str, object]) -> str:
+    context = _mapping(summary["source_context"], "source_context")
+    model = _string(context["model_id"], "model_id")
+    revision = _string(context["model_revision"], "model_revision")
+    if revision != "not_applicable":
+        model += "@" + revision[:12]
+    support = "exact_on_support"
+    if context["support_top_k"] is not None:
+        support += f", top-K={_integer(context['support_top_k'], 'support_top_k')}"
+    if context["support_k_max"] is not None:
+        support += f", Kmax={_integer(context['support_k_max'], 'support_k_max')}"
+    return (
+        f"run {_string(context['run_id'], 'run_id')}; {support}; model {model}; "
+        f"task {_string(context['task_configuration'], 'task')}"
+    )
+
+
 def _correctness_table(summary: Mapping[str, object]) -> bytes:
+    context = _caption_context(summary)
     lines = [
         "% Generated by scripts/exact_commit/build_final_artifacts.py.",
         "% Every numeric value is derived from pinned Q1 raw rows.",
@@ -778,7 +895,8 @@ def _correctness_table(summary: Mapping[str, object]) -> bytes:
         r"\centering",
         (
             r"\caption{Agreement of the exhaustive oracle, independent Python "
-            r"reference, and Rust production solver on finite represented support.}"
+            r"reference, and Rust production solver on finite represented support "
+            f"({context}).}}"
         ),
         r"\label{tab:mwpc-correctness-oracle}",
         r"\begin{tabular}{lrrrr}",
@@ -822,12 +940,13 @@ def _selector_label(selector: str) -> str:
 
 
 def _heuristic_gap_table(summary: Mapping[str, object]) -> bytes:
+    context = _caption_context(summary)
     lines = [
         "% Generated by scripts/exact_commit/build_final_artifacts.py.",
         "% Gap values are recomputed from paired exact and heuristic raw scores.",
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{Heuristic MWPC gaps on configured synthetic states.}",
+        f"\\caption{{Heuristic MWPC gaps on configured synthetic states ({context}).}}",
         r"\label{tab:mwpc-heuristic-gaps}",
         r"\begin{tabular}{llrrrr}",
         r"\toprule",
@@ -865,6 +984,7 @@ def _heuristic_gap_table(summary: Mapping[str, object]) -> bytes:
 
 
 def _heuristic_gap_figure(summary: Mapping[str, object]) -> bytes:
+    context = html.escape(_plain_context(summary), quote=True)
     rows = [_mapping(value, "gap row") for value in _sequence(summary["gap_rows"], "gap_rows")]
     maxima = [
         _number(
@@ -875,7 +995,7 @@ def _heuristic_gap_figure(summary: Mapping[str, object]) -> bytes:
     ]
     maximum = max(maxima, default=0.0)
     width = 980
-    top = 86
+    top = 112
     row_height = 64
     height = top + len(rows) * row_height + 70
     lines = [
@@ -890,13 +1010,17 @@ def _heuristic_gap_figure(summary: Mapping[str, object]) -> bytes:
             'font-weight="bold">Synthetic heuristic absolute gaps</text>'
         ),
         (
-            '<rect x="650" y="17" width="18" height="14" fill="#2f6f9f"/>'
-            '<text x="675" y="30" font-family="sans-serif" '
+            f'<text x="24" y="57" font-family="sans-serif" font-size="13" '
+            f'fill="#444">{context}</text>'
+        ),
+        (
+            '<rect x="650" y="70" width="18" height="14" fill="#2f6f9f"/>'
+            '<text x="675" y="83" font-family="sans-serif" '
             'font-size="13">median</text>'
         ),
         (
-            '<rect x="760" y="17" width="18" height="14" fill="#c96f24"/>'
-            '<text x="785" y="30" font-family="sans-serif" '
+            '<rect x="760" y="70" width="18" height="14" fill="#c96f24"/>'
+            '<text x="785" y="83" font-family="sans-serif" '
             'font-size="13">maximum</text>'
         ),
     ]
@@ -947,12 +1071,16 @@ def _heuristic_gap_figure(summary: Mapping[str, object]) -> bytes:
 
 
 def _finite_slot_table(summary: Mapping[str, object]) -> bytes:
+    context = _caption_context(summary)
     lines = [
         "% Generated by scripts/exact_commit/build_final_artifacts.py.",
         "% Counterexample values come directly from independently validated Q3 rows.",
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{Finite-slot counterexamples to an abstract unbounded-gap baseline.}",
+        (
+            r"\caption{Finite-slot counterexamples to an abstract unbounded-gap "
+            f"baseline ({context}).}}"
+        ),
         r"\label{tab:mwpc-finite-slot-counterexamples}",
         r"\small",
         r"\begin{tabular}{p{5.0cm}rrlll}",
@@ -1003,12 +1131,13 @@ def _component_label(component: str) -> str:
 
 
 def _runtime_table(summary: Mapping[str, object]) -> bytes:
+    context = _caption_context(summary)
     lines = [
         "% Generated by scripts/exact_commit/build_final_artifacts.py.",
         "% Component medians and IQRs are computed from uncensored OPTIMAL Q4 rows.",
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{Exact-commit CPU component timing breakdown.}",
+        f"\\caption{{Exact-commit CPU component timing breakdown ({context}).}}",
         r"\label{tab:mwpc-runtime-breakdown}",
         r"\small",
         r"\begin{tabular}{llrrr}",
@@ -1046,14 +1175,163 @@ def _runtime_table(summary: Mapping[str, object]) -> bytes:
     return _generated_table(lines)
 
 
+def _axis_label(axis: str) -> str:
+    return {
+        "slot_count": "Physical slots",
+        "top_k": "Top-K",
+        "graph_size_scale": "Graph-size scale",
+        "grammar_production_count": "Grammar productions",
+        "token_byte_length": "Token byte length",
+        "proposal_count": "Proposal count",
+    }.get(axis, axis)
+
+
+def _scale_x(value: float, minimum: float, maximum: float, left: float, right: float) -> float:
+    if minimum == maximum:
+        return (left + right) / 2.0
+    return left + (value - minimum) * (right - left) / (maximum - minimum)
+
+
+def _scale_y(value: float, limit: float, top: float, bottom: float) -> float:
+    return bottom - value * (bottom - top) / limit
+
+
+def _scaling_figure(summary: Mapping[str, object]) -> bytes:
+    grouped: dict[str, dict[str, list[tuple[float, float]]]] = defaultdict(dict)
+    for raw_series in _sequence(summary["scaling_series"], "scaling_series"):
+        series = _mapping(raw_series, "scaling series")
+        axis = _string(series["axis"], "axis")
+        backend = _string(series["backend"], "backend")
+        points: list[tuple[float, float]] = []
+        for raw_point in _sequence(series["points"], "scaling points"):
+            point = _mapping(raw_point, "scaling point")
+            runtime = _mapping(point["runtime_seconds"], "scaling runtime")
+            points.append(
+                (
+                    _number(point["axis_value"], "axis_value"),
+                    _number(runtime["median"], "runtime median") * 1000.0,
+                )
+            )
+        grouped[axis][backend] = sorted(points)
+    axis_order = (
+        "slot_count",
+        "top_k",
+        "graph_size_scale",
+        "grammar_production_count",
+        "token_byte_length",
+        "proposal_count",
+    )
+    axes = tuple(axis for axis in axis_order if axis in grouped)
+    if not axes:
+        raise ValueError("scaling figure requires at least one axis")
+
+    width = 1040
+    panel_width = 500
+    panel_height = 205
+    top = 105
+    rows = (len(axes) + 1) // 2
+    height = top + rows * panel_height + 45
+    context = html.escape(_plain_context(summary), quote=True)
+    colors = {"python": "#2f6f9f", "rust": "#c96f24"}
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        (
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" '
+            f'height="{height}" viewBox="0 0 {width} {height}">'
+        ),
+        '<rect width="100%" height="100%" fill="white"/>',
+        (
+            '<text x="24" y="31" font-family="sans-serif" font-size="21" '
+            'font-weight="bold">CPU exact-on-support scaling diagnostic</text>'
+        ),
+        (
+            f'<text x="24" y="55" font-family="sans-serif" font-size="12" '
+            f'fill="#444">{context}</text>'
+        ),
+        (
+            '<text x="24" y="76" font-family="sans-serif" font-size="12" '
+            'fill="#444">Median measured wall span; generated instances; '
+            "not a publication benchmark.</text>"
+        ),
+        '<line x1="770" y1="28" x2="798" y2="28" stroke="#2f6f9f" stroke-width="3"/>',
+        '<text x="806" y="32" font-family="sans-serif" font-size="13">python</text>',
+        '<line x1="890" y1="28" x2="918" y2="28" stroke="#c96f24" stroke-width="3"/>',
+        '<text x="926" y="32" font-family="sans-serif" font-size="13">rust</text>',
+    ]
+    for index, axis in enumerate(axes):
+        column = index % 2
+        row_index = index // 2
+        panel_x = 20 + column * panel_width
+        panel_y = top + row_index * panel_height
+        plot_left = panel_x + 70
+        plot_right = panel_x + 465
+        plot_top = panel_y + 38
+        plot_bottom = panel_y + 165
+        backend_points = grouped[axis]
+        all_points = [point for points in backend_points.values() for point in points]
+        x_min = min(value for value, _ in all_points)
+        x_max = max(value for value, _ in all_points)
+        y_max = max(runtime for _, runtime in all_points)
+        y_limit = 1.0 if y_max == 0.0 else y_max * 1.1
+
+        lines.extend(
+            (
+                f'<text x="{panel_x + 10}" y="{panel_y + 20}" '
+                f'font-family="sans-serif" font-size="15" font-weight="bold">'
+                f"{html.escape(_axis_label(axis), quote=True)}</text>",
+                f'<line x1="{plot_left}" y1="{plot_top}" x2="{plot_left}" '
+                f'y2="{plot_bottom}" stroke="#555"/>',
+                f'<line x1="{plot_left}" y1="{plot_bottom}" x2="{plot_right}" '
+                f'y2="{plot_bottom}" stroke="#555"/>',
+                f'<text x="{panel_x + 7}" y="{plot_top + 5}" '
+                f'font-family="sans-serif" font-size="11">{y_limit:.2f} ms</text>',
+                f'<text x="{plot_left - 4}" y="{plot_bottom + 18}" '
+                f'font-family="sans-serif" font-size="11">{x_min:g}</text>',
+                f'<text x="{plot_right - 18}" y="{plot_bottom + 18}" '
+                f'font-family="sans-serif" font-size="11">{x_max:g}</text>',
+            )
+        )
+        for backend in ("python", "rust"):
+            points = backend_points.get(backend, [])
+            if not points:
+                continue
+            coordinates = [
+                (
+                    _scale_x(value, x_min, x_max, plot_left, plot_right),
+                    _scale_y(runtime, y_limit, plot_top, plot_bottom),
+                )
+                for value, runtime in points
+            ]
+            color = colors[backend]
+            path = " ".join(
+                f"{'M' if point_index == 0 else 'L'} {x:.3f} {y:.3f}"
+                for point_index, (x, y) in enumerate(coordinates)
+            )
+            lines.append(f'<path d="{path}" fill="none" stroke="{color}" stroke-width="2.5"/>')
+            lines.extend(
+                f'<circle cx="{x:.3f}" cy="{y:.3f}" r="4" fill="{color}"/>' for x, y in coordinates
+            )
+    lines.extend(
+        (
+            f'<text x="24" y="{height - 18}" font-family="sans-serif" '
+            'font-size="12" fill="#444">Each point is recomputed from uncensored '
+            "OPTIMAL rows; other statuses remain separately counted.</text>",
+            "</svg>",
+            "",
+        )
+    )
+    return "\n".join(lines).encode("utf-8")
+
+
 def _end_to_end_table(summary: Mapping[str, object]) -> bytes:
     comparisons = _mapping(summary["exact_runtime_comparisons"], "runtime comparisons")
+    context = _caption_context(summary)
     lines = [
         "% Generated by scripts/exact_commit/build_final_artifacts.py.",
         "% Q5 rows explicitly carry benchmark_claim=false.",
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{Pinned LLaDA fixed-task end-to-end diagnostic.}",
+        f"\\caption{{Pinned LLaDA fixed-task end-to-end diagnostic ({context}).}}",
         r"\label{tab:mwpc-end-to-end}",
         r"\scriptsize",
         r"\begin{tabular}{lrrrrrrrrl}",
@@ -1165,6 +1443,20 @@ def build_final_artifacts(
             raise ValueError("raw artifacts cannot live inside derived output directories")
         loaded[declaration.role] = _load_input(raw_path, declaration)
 
+    correctness = _q1_summary(loaded["q1_correctness"].rows, config.confidence_level)
+    heuristic_gap = _q2_summary(loaded["q2_heuristic_gap"].rows, config.confidence_level)
+    finite_slots = _q3_summary(loaded["q3_finite_slots"].rows)
+    runtime_breakdown = _q4_summary(loaded["q4_scaling"].rows)
+    end_to_end = _q5_summary(loaded["q5_end_to_end"].rows, config.confidence_level)
+    for role, summary in (
+        ("q1_correctness", correctness),
+        ("q2_heuristic_gap", heuristic_gap),
+        ("q3_finite_slots", finite_slots),
+        ("q4_scaling", runtime_breakdown),
+        ("q5_end_to_end", end_to_end),
+    ):
+        summary["source_context"] = _source_context(loaded[role])
+
     results: dict[str, object] = {
         "artifact_kind": FINAL_RESULTS_KIND,
         "schema_version": FINAL_ARTIFACT_SCHEMA_VERSION,
@@ -1185,11 +1477,11 @@ def build_final_artifacts(
                 "q5_end_to_end",
             )
         ],
-        "correctness": _q1_summary(loaded["q1_correctness"].rows, config.confidence_level),
-        "heuristic_gap": _q2_summary(loaded["q2_heuristic_gap"].rows, config.confidence_level),
-        "finite_slots": _q3_summary(loaded["q3_finite_slots"].rows),
-        "runtime_breakdown": _q4_summary(loaded["q4_scaling"].rows),
-        "end_to_end": _q5_summary(loaded["q5_end_to_end"].rows, config.confidence_level),
+        "correctness": correctness,
+        "heuristic_gap": heuristic_gap,
+        "finite_slots": finite_slots,
+        "runtime_breakdown": runtime_breakdown,
+        "end_to_end": end_to_end,
     }
     results_payload = (
         json.dumps(results, allow_nan=False, indent=2, sort_keys=True) + "\n"
@@ -1209,6 +1501,9 @@ def build_final_artifacts(
             _mapping(results["finite_slots"], "finite_slots")
         ),
         paper / RUNTIME_TABLE_FILENAME: _runtime_table(
+            _mapping(results["runtime_breakdown"], "runtime_breakdown")
+        ),
+        paper / SCALING_FIGURE_FILENAME: _scaling_figure(
             _mapping(results["runtime_breakdown"], "runtime_breakdown")
         ),
         paper / END_TO_END_TABLE_FILENAME: _end_to_end_table(
@@ -1282,6 +1577,7 @@ __all__ = [
     "HEURISTIC_GAP_FIGURE_FILENAME",
     "HEURISTIC_GAP_TABLE_FILENAME",
     "RUNTIME_TABLE_FILENAME",
+    "SCALING_FIGURE_FILENAME",
     "FinalArtifactBuildResult",
     "FinalArtifactConfig",
     "FinalArtifactInput",
