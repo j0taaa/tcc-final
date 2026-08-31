@@ -14,9 +14,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M12 / T1202.** M0 through M11, the M10.5 hardening pass, and T1200--T1201
-are complete. The first incomplete required task is T1202: statistical
-summaries.
+**M12 / T1203.** M0 through M11, the M10.5 hardening pass, and T1200--T1202
+are complete. The first incomplete required task is T1203: final tables and
+figures.
 
 ## Completed milestone summary
 
@@ -410,17 +410,44 @@ does not claim an external large-run archive.
 
 **Depends on:** T1201
 
-- [ ] Compute agreement and confidence intervals where appropriate.
-- [ ] Compute gap distributions and equality rates.
-- [ ] Compute runtime median/IQR and normalized overhead.
-- [ ] Compute fallback, timeout, and support-expansion rates.
-- [ ] Clearly separate per-step and per-generation quantities.
+- [x] Compute agreement and confidence intervals where appropriate.
+- [x] Compute gap distributions and equality rates.
+- [x] Compute runtime median/IQR and normalized overhead.
+- [x] Compute fallback, timeout, and support-expansion rates.
+- [x] Clearly separate per-step and per-generation quantities.
 
 **Acceptance criteria**
 
-- [ ] Analysis code has unit tests for formulas and edge cases such as zero optimum.
+- [x] Analysis code has unit tests for formulas and edge cases such as zero optimum.
 
-**Evidence:** `[tests and outputs]`
+**Evidence:** implementation commit
+`8838ee0d41a27cd1f7bb87ae220ffee399901fae`; the versioned analysis config
+[`configs/analysis/t1202_statistics_v1.toml`](configs/analysis/t1202_statistics_v1.toml)
+pins the explicitly non-experimental synthetic formula fixture
+[`docs/artifacts/raw/t1202_statistics_v1/statistical-observations.jsonl`](docs/artifacts/raw/t1202_statistics_v1/statistical-observations.jsonl)
+(SHA-256 `2f91b80894b45cf9ea7b816d59e7daa95a87bf1dab40dd8ab04ceb36b8c215a9`).
+`make statistics-check` independently rebuilt and byte-verified
+[`docs/artifacts/processed/t1202_statistics_v1/statistical-summary.json`](docs/artifacts/processed/t1202_statistics_v1/statistical-summary.json)
+(SHA-256 `40b236f2e5988eca6ccdbe9aa2cb22b5df4cda087dfea34bade4f19f6e34a776`).
+The generated artifact records `benchmark_claim=false` and contains Wilson
+95% intervals for agreement and equality; type-7 quartile, IQR, and mean
+summaries for absolute and relative gaps; median runtime ratio and normalized
+median overhead; and separately labeled optimizer-step and generation rates
+for fallback, timeout, and support expansion. Exact-optimum-zero rows remain
+in equality and absolute-gap summaries but are counted as undefined and
+excluded from relative-gap summaries. Q5 generation summaries expose
+generation rates while explicitly leaving unavailable step-level rates null
+instead of inferring them from aggregated rows.
+
+Deterministic Q1/Q2/Q4 driver smokes produced 249/249 Q1 agreement with a
+Wilson interval, six valid Q2 rows with three greedy gap observations, and 84
+Q4 measurements with zero timeouts and a Wilson interval; these development
+smokes are not claimed as publication benchmarks. Formula, validation,
+artifact-integrity, zero-optimum, Wilson-boundary, and analysis-integration
+regressions are covered by the T1202 tests. `make check` passed the upstream
+pin, Ruff, strict MyPy over 66 files, 9 unit tests, and 585 exact-commit tests;
+`python -m pytest -q` passed all 604 tests; `make paper` produced the 15-page
+PDF.
 
 ## T1203 — Generate final tables and figures
 
