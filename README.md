@@ -25,6 +25,9 @@ source .venv/bin/activate
 make check
 ```
 
+Artifact regeneration, clean CPU rehearsal, parser-binding, and optional CUDA
+model instructions are in [`REPRODUCING.md`](REPRODUCING.md).
+
 Build and verify the independent Rust production parser when the current task requires it:
 
 ```bash
