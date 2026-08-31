@@ -1,0 +1,118 @@
+{
+  "artifact_id": "t1203_final_results_v1",
+  "artifact_kind": "mwpc_final_artifact_manifest",
+  "configuration": {
+    "confidence_level": 0.95,
+    "file_sha256": "efdb4af5384163f8b4293e2b55bf3181a87cb0276e3f8955a68a031e72a5e037",
+    "normalized_sha256": "ed46295d3e938451a63381279586abedf558fbb00fc1ed1f2b281c6a41792a0e",
+    "path": "configs/analysis/t1203_final_artifacts_v1.toml"
+  },
+  "generated_artifacts": [
+    {
+      "path": "docs/artifacts/processed/t1203_final_results_v1/final-results.json",
+      "sha256": "716ad951d1760d7817c3d6a466af5b45cd999445f3aeb1f56009b8419a78c31e"
+    },
+    {
+      "path": "paper/generated/t1203_final_results_v1/correctness-oracle-table.tex",
+      "sha256": "a4ac0e3695ddba0c9101a215afbbbeb7e443c96bc2f244d9346aa1f396e1bfe8"
+    },
+    {
+      "path": "paper/generated/t1203_final_results_v1/end-to-end-comparison-table.tex",
+      "sha256": "824c4743da410ab2874a54c1dcbbb4a0e4177b1a809070fede4c84b517afbdc5"
+    },
+    {
+      "path": "paper/generated/t1203_final_results_v1/finite-slot-counterexample-table.tex",
+      "sha256": "af4f2ac71ad418a6bc2942c8b73e48f00b5d4a6a6d11d22d2705a49d71581c2c"
+    },
+    {
+      "path": "paper/generated/t1203_final_results_v1/heuristic-gap-distribution.svg",
+      "sha256": "e3900d3f65ff5b89adc4457318bd6b661a38bb37d321c7876f6e134ac6dc6180"
+    },
+    {
+      "path": "paper/generated/t1203_final_results_v1/heuristic-gap-table.tex",
+      "sha256": "6aae1f29308316b862ed7db12682f277fe7200950c3adc7cea0f5e1d6c530b5f"
+    },
+    {
+      "path": "paper/generated/t1203_final_results_v1/runtime-breakdown-table.tex",
+      "sha256": "9cddef0c071c8249e846346f08e9d7776bc9c3d0c9436ed82873dba6016cb1de"
+    }
+  ],
+  "schema_version": 1,
+  "sources": [
+    {
+      "artifact_kind": "mwpc_q1_correctness_case",
+      "benchmark_claim": null,
+      "config_sha256": "e5fe6f73f32e72d4023b0d0fbe4e1c9cf8e0066c25f4a06f85c7e82007770952",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "finite_support_correctness_campaign_not_runtime_benchmark",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q1-correctness-cases.jsonl",
+      "producing_git_commit": "bd6b4455102f3b1a7603de8096b3380d4733b13e",
+      "role": "q1_correctness",
+      "row_count": 249,
+      "run_id": "bd6b445",
+      "sha256": "62fb83b48c8809a3958df486b387e017ba245e97e4e74e475ca1fb55659ade8a",
+      "timing_scope": null
+    },
+    {
+      "artifact_kind": "mwpc_q2_heuristic_gap_row",
+      "benchmark_claim": null,
+      "config_sha256": "fcddc72d33427ff896fa9a9eccb35b8e75a7d6ceec3f7612771a8a36805e71af",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "configured_synthetic_gap_diagnostic_not_model_benchmark",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q2-heuristic-gap-rows.jsonl",
+      "producing_git_commit": "a8b4e7c499dbf67c7f33a5110e95b4b02738729d",
+      "role": "q2_heuristic_gap",
+      "row_count": 6,
+      "run_id": "a8b4e7c",
+      "sha256": "1af3865368c0cff24bf75fe103354bd51e0bd42bd7a381ba1b3cec3538a0a2e1",
+      "timing_scope": "single_repetition_smoke_not_publication_benchmark"
+    },
+    {
+      "artifact_kind": "mwpc_q3_finite_slot_row",
+      "benchmark_claim": null,
+      "config_sha256": "ac7e619520d69d7a86dd281e9d46a308f7f01d898e55e98583f921d531a09de6",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "curated_finite_slot_counterexample_evidence",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q3-finite-slot-rows.jsonl",
+      "producing_git_commit": "ac447a8644583052806c66f7b4deb39ac66f9378",
+      "role": "q3_finite_slots",
+      "row_count": 2,
+      "run_id": "ac447a8",
+      "sha256": "060957e2a68d71a30696b6406e43d737458f0a13ae0ca1abd750885220c3ce20",
+      "timing_scope": "single_repetition_smoke_not_publication_benchmark"
+    },
+    {
+      "artifact_kind": "mwpc_q4_scaling_row",
+      "benchmark_claim": null,
+      "config_sha256": "fc27e36df5e957abd73f6dbd0d286dc6e890445d86580c1692f5362509546a4b",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "component_profiled_cpu_smoke_not_publication_benchmark",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q4-scaling-rows.jsonl",
+      "producing_git_commit": "66b8b5d7ef908a40ea94018fbe3502cbc3a1c5c1",
+      "role": "q4_scaling",
+      "row_count": 84,
+      "run_id": "66b8b5d",
+      "sha256": "4ece645bc4b9a497623738b378bf58bba05805c6fa03bf49a555973dcf8a0765",
+      "timing_scope": "component_profiled_cpu_smoke_not_publication_benchmark"
+    },
+    {
+      "artifact_kind": "mwpc_q5_end_to_end_row",
+      "benchmark_claim": false,
+      "config_sha256": "ef284d1b73d31848bbaa46635339170ed92a7ccaeef9d64b6f43987fb88f8b39",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "fixed_task_live_model_diagnostic_not_publication_benchmark",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q5-end-to-end-rows.jsonl",
+      "producing_git_commit": "83ba41d1a29d84d8147319d33b85c6646d743b8e",
+      "role": "q5_end_to_end",
+      "row_count": 32,
+      "run_id": "83ba41d",
+      "sha256": "1132d0f29561d7b3eca8a72d382c22422275f2f54eb462da264b4fc1da9508b4",
+      "timing_scope": "warm repeated balanced-cyclic CUDA timing; model/tokenizer/grammar and per-method runner setup excluded"
+    }
+  ]
+}

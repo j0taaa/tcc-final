@@ -44,6 +44,21 @@ count retained. Per-step and per-generation event rates always carry separate
 denominators. Q5 generation rows report generation-level rates only and state
 that step-level rates are unavailable because those rows aggregate steps.
 
+The final Q1--Q5 evidence tables and heuristic-gap figure are regenerated
+from versioned raw rows with:
+
+```bash
+make final-artifacts-check
+```
+
+`configs/analysis/t1203_final_artifacts_v1.toml` pins all five input hashes.
+The builder recomputes oracle agreement, paired gaps, finite-slot decisions,
+component timing distributions, live-model validity, generation-level event
+rates, and runtime overhead before rendering LaTeX/SVG. It is create-only by
+default and byte-verifying with `--verify-existing`. Every table states its
+scientific scope; synthetic, smoke, and fixed-task diagnostic data are never
+presented as publication benchmarks.
+
 The M3 three-way oracle campaign is configured by
 `configs/exact_commit/m3_differential.toml` and runs with:
 

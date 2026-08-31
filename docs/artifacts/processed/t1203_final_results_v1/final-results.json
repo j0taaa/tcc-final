@@ -1,0 +1,1183 @@
+{
+  "artifact_id": "t1203_final_results_v1",
+  "artifact_kind": "mwpc_final_results",
+  "configuration": {
+    "confidence_level": 0.95,
+    "file_sha256": "efdb4af5384163f8b4293e2b55bf3181a87cb0276e3f8955a68a031e72a5e037",
+    "normalized_sha256": "ed46295d3e938451a63381279586abedf558fbb00fc1ed1f2b281c6a41792a0e",
+    "path": "configs/analysis/t1203_final_artifacts_v1.toml"
+  },
+  "correctness": {
+    "case_count": 249,
+    "exactness_scope": "exact_on_support",
+    "failed_case_count": 0,
+    "families": [
+      {
+        "agreement": {
+          "analysis_unit": "finite_support_case",
+          "confidence_interval_lower": 0.5655175352168254,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 5,
+          "observation_count": 5,
+          "rate": 1.0
+        },
+        "case_count": 5,
+        "family": "canonical",
+        "oracle_status_counts": {
+          "infeasible_on_support": 1,
+          "optimal": 4
+        }
+      },
+      {
+        "agreement": {
+          "analysis_unit": "finite_support_case",
+          "confidence_interval_lower": 0.9740163628569632,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 144,
+          "observation_count": 144,
+          "rate": 1.0
+        },
+        "case_count": 144,
+        "family": "exhaustive",
+        "oracle_status_counts": {
+          "infeasible_on_support": 32,
+          "optimal": 112
+        }
+      },
+      {
+        "agreement": {
+          "analysis_unit": "finite_support_case",
+          "confidence_interval_lower": 0.9630065017930143,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 100,
+          "observation_count": 100,
+          "rate": 1.0
+        },
+        "case_count": 100,
+        "family": "randomized",
+        "oracle_status_counts": {
+          "infeasible_on_support": 49,
+          "optimal": 51
+        }
+      },
+      {
+        "agreement": {
+          "analysis_unit": "finite_support_case",
+          "confidence_interval_lower": 0.9848068475849985,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 249,
+          "observation_count": 249,
+          "rate": 1.0
+        },
+        "case_count": 249,
+        "family": "overall",
+        "oracle_status_counts": {
+          "infeasible_on_support": 82,
+          "optimal": 167
+        }
+      }
+    ],
+    "interpretation": "finite_support_correctness_campaign_not_runtime_benchmark"
+  },
+  "end_to_end": {
+    "all_required_methods_passed": true,
+    "analysis_unit": "generation",
+    "benchmark_claim": false,
+    "comparison_fingerprint": "d42225e38571331eeefa97dfd94f9bda506731edc958a27e27d026a7883ea5c3",
+    "exact_runtime_comparisons": {
+      "epic": {
+        "baseline_median_zero": false,
+        "baseline_runtime_seconds": {
+          "count": 8,
+          "iqr": 0.0006976365548325703,
+          "maximum": 0.044550624035764486,
+          "mean": 0.04024785514047835,
+          "median": 0.03962741300347261,
+          "minimum": 0.03927314101019874,
+          "q1": 0.0393725609901594,
+          "q3": 0.04007019754499197,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "candidate_runtime_seconds": {
+          "count": 8,
+          "iqr": 0.00042456749361008406,
+          "maximum": 0.16228083800524473,
+          "mean": 0.15909005299181445,
+          "median": 0.15864853450329974,
+          "minimum": 0.15788272296776995,
+          "q1": 0.15852295549120754,
+          "q3": 0.15894752298481762,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "median_runtime_ratio": 4.003504707445756,
+        "normalized_median_overhead": 3.0035047074457557,
+        "normalized_overhead_policy": "(candidate_median-baseline_median)/baseline_median"
+      },
+      "serial": {
+        "baseline_median_zero": false,
+        "baseline_runtime_seconds": {
+          "count": 8,
+          "iqr": 0.0001211047638207674,
+          "maximum": 0.04235736100235954,
+          "mean": 0.038101549878774676,
+          "median": 0.0374991940043401,
+          "minimum": 0.037352946994360536,
+          "q1": 0.03745469950081315,
+          "q3": 0.037575804264633916,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "candidate_runtime_seconds": {
+          "count": 8,
+          "iqr": 0.00042456749361008406,
+          "maximum": 0.16228083800524473,
+          "mean": 0.15909005299181445,
+          "median": 0.15864853450329974,
+          "minimum": 0.15788272296776995,
+          "q1": 0.15852295549120754,
+          "q3": 0.15894752298481762,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "median_runtime_ratio": 4.230718518508372,
+        "normalized_median_overhead": 3.2307185185083718,
+        "normalized_overhead_policy": "(candidate_median-baseline_median)/baseline_median"
+      },
+      "unconstrained": {
+        "baseline_median_zero": false,
+        "baseline_runtime_seconds": {
+          "count": 8,
+          "iqr": 0.00024917103291954845,
+          "maximum": 0.04334669699892402,
+          "mean": 0.03815149488218594,
+          "median": 0.037491226015845314,
+          "minimum": 0.0369532760232687,
+          "q1": 0.03737492498476058,
+          "q3": 0.03762409601768013,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "candidate_runtime_seconds": {
+          "count": 8,
+          "iqr": 0.00042456749361008406,
+          "maximum": 0.16228083800524473,
+          "mean": 0.15909005299181445,
+          "median": 0.15864853450329974,
+          "minimum": 0.15788272296776995,
+          "q1": 0.15852295549120754,
+          "q3": 0.15894752298481762,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "median_runtime_ratio": 4.231617670658421,
+        "normalized_median_overhead": 3.231617670658421,
+        "normalized_overhead_policy": "(candidate_median-baseline_median)/baseline_median"
+      }
+    },
+    "interpretation": "fixed_task_live_model_diagnostic_not_publication_benchmark",
+    "methods": [
+      {
+        "average_commit_batch_size": {
+          "count": 8,
+          "iqr": 0.0,
+          "maximum": 1.0,
+          "mean": 1.0,
+          "median": 1.0,
+          "minimum": 1.0,
+          "q1": 1.0,
+          "q3": 1.0,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "complete": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "exact_solver_status_counts": null,
+        "execution_status_counts": {
+          "complete": 8
+        },
+        "fallback_rate_per_generation": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.0,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 0.3244075648838801,
+          "confidence_level": 0.95,
+          "event_count": 0,
+          "observation_count": 8,
+          "rate": 0.0
+        },
+        "functional_success": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "generation_count": 8,
+        "runtime_seconds": {
+          "count": 8,
+          "iqr": 0.00024917103291954845,
+          "maximum": 0.04334669699892402,
+          "mean": 0.03815149488218594,
+          "median": 0.037491226015845314,
+          "minimum": 0.0369532760232687,
+          "q1": 0.03737492498476058,
+          "q3": 0.03762409601768013,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "strategy": "unconstrained",
+        "support_expansion_rate_per_generation": null,
+        "syntactic_validity": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "timeout_rate_per_generation": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.0,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 0.3244075648838801,
+          "confidence_level": 0.95,
+          "event_count": 0,
+          "observation_count": 8,
+          "rate": 0.0
+        }
+      },
+      {
+        "average_commit_batch_size": {
+          "count": 8,
+          "iqr": 0.0,
+          "maximum": 1.0,
+          "mean": 1.0,
+          "median": 1.0,
+          "minimum": 1.0,
+          "q1": 1.0,
+          "q3": 1.0,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "complete": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "exact_solver_status_counts": null,
+        "execution_status_counts": {
+          "complete": 8
+        },
+        "fallback_rate_per_generation": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.0,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 0.3244075648838801,
+          "confidence_level": 0.95,
+          "event_count": 0,
+          "observation_count": 8,
+          "rate": 0.0
+        },
+        "functional_success": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "generation_count": 8,
+        "runtime_seconds": {
+          "count": 8,
+          "iqr": 0.0001211047638207674,
+          "maximum": 0.04235736100235954,
+          "mean": 0.038101549878774676,
+          "median": 0.0374991940043401,
+          "minimum": 0.037352946994360536,
+          "q1": 0.03745469950081315,
+          "q3": 0.037575804264633916,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "strategy": "serial",
+        "support_expansion_rate_per_generation": null,
+        "syntactic_validity": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "timeout_rate_per_generation": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.0,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 0.3244075648838801,
+          "confidence_level": 0.95,
+          "event_count": 0,
+          "observation_count": 8,
+          "rate": 0.0
+        }
+      },
+      {
+        "average_commit_batch_size": {
+          "count": 8,
+          "iqr": 0.0,
+          "maximum": 1.0,
+          "mean": 1.0,
+          "median": 1.0,
+          "minimum": 1.0,
+          "q1": 1.0,
+          "q3": 1.0,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "complete": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "exact_solver_status_counts": null,
+        "execution_status_counts": {
+          "complete": 8
+        },
+        "fallback_rate_per_generation": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "functional_success": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "generation_count": 8,
+        "runtime_seconds": {
+          "count": 8,
+          "iqr": 0.0006976365548325703,
+          "maximum": 0.044550624035764486,
+          "mean": 0.04024785514047835,
+          "median": 0.03962741300347261,
+          "minimum": 0.03927314101019874,
+          "q1": 0.0393725609901594,
+          "q3": 0.04007019754499197,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "strategy": "epic",
+        "support_expansion_rate_per_generation": null,
+        "syntactic_validity": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "timeout_rate_per_generation": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.0,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 0.3244075648838801,
+          "confidence_level": 0.95,
+          "event_count": 0,
+          "observation_count": 8,
+          "rate": 0.0
+        }
+      },
+      {
+        "average_commit_batch_size": {
+          "count": 8,
+          "iqr": 0.0,
+          "maximum": 4.0,
+          "mean": 4.0,
+          "median": 4.0,
+          "minimum": 4.0,
+          "q1": 4.0,
+          "q3": 4.0,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "complete": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "exact_solver_status_counts": {
+          "optimal": 8
+        },
+        "execution_status_counts": {
+          "complete": 8
+        },
+        "fallback_rate_per_generation": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.0,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 0.3244075648838801,
+          "confidence_level": 0.95,
+          "event_count": 0,
+          "observation_count": 8,
+          "rate": 0.0
+        },
+        "functional_success": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "generation_count": 8,
+        "runtime_seconds": {
+          "count": 8,
+          "iqr": 0.00042456749361008406,
+          "maximum": 0.16228083800524473,
+          "mean": 0.15909005299181445,
+          "median": 0.15864853450329974,
+          "minimum": 0.15788272296776995,
+          "q1": 0.15852295549120754,
+          "q3": 0.15894752298481762,
+          "quartile_policy": "linear_interpolation_type7"
+        },
+        "strategy": "exact",
+        "support_expansion_rate_per_generation": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.0,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 0.3244075648838801,
+          "confidence_level": 0.95,
+          "event_count": 0,
+          "observation_count": 8,
+          "rate": 0.0
+        },
+        "syntactic_validity": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.6755924351161198,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 1.0,
+          "confidence_level": 0.95,
+          "event_count": 8,
+          "observation_count": 8,
+          "rate": 1.0
+        },
+        "timeout_rate_per_generation": {
+          "analysis_unit": "generation",
+          "confidence_interval_lower": 0.0,
+          "confidence_interval_method": "wilson_score",
+          "confidence_interval_upper": 0.3244075648838801,
+          "confidence_level": 0.95,
+          "event_count": 0,
+          "observation_count": 8,
+          "rate": 0.0
+        }
+      }
+    ],
+    "step_level_rate_unavailability_reason": "raw generation rows aggregate optimizer steps and do not retain one event record per step",
+    "step_level_rates": null
+  },
+  "finite_slots": {
+    "case_count": 2,
+    "cases": [
+      {
+        "abstract_objective_value": 10.0,
+        "abstract_status": "accepted",
+        "available_physical_slots": 1,
+        "case_id": "required_eos_one_slot_infeasible_v1",
+        "claim_supported": true,
+        "exactness_scope": "exact_on_support",
+        "finite_objective_value": null,
+        "finite_reason_code": "no_grammar_valid_finite_path_under_explicit_support_and_required_eos",
+        "finite_status": "infeasible_on_support",
+        "minimum_required_physical_tokens": 2,
+        "slot_shortfall": 1,
+        "title": "One content token plus required EOS cannot fit in one slot"
+      },
+      {
+        "abstract_objective_value": 10.0,
+        "abstract_status": "accepted",
+        "available_physical_slots": 1,
+        "case_id": "required_eos_one_slot_lower_empty_v1",
+        "claim_supported": true,
+        "exactness_scope": "exact_on_support",
+        "finite_objective_value": 1.0,
+        "finite_reason_code": "abstract_witness_exceeds_canvas_lower_score_finite_path_selected",
+        "finite_status": "optimal",
+        "minimum_required_physical_tokens": 2,
+        "slot_shortfall": 1,
+        "title": "Finite slots force a lower-score EOS-only completion"
+      }
+    ],
+    "counterexample_count": 2,
+    "interpretation": "curated_finite_slot_counterexample_evidence"
+  },
+  "heuristic_gap": {
+    "case_count": 6,
+    "exactness_scope": "exact_on_support",
+    "gap_rows": [
+      {
+        "selector": "greedy_exact_feasibility",
+        "statistics": {
+          "absolute_gap": {
+            "count": 3,
+            "iqr": 0.5,
+            "maximum": 1.0,
+            "mean": 0.6666666666666666,
+            "median": 1.0,
+            "minimum": 0.0,
+            "q1": 0.5,
+            "q3": 1.0,
+            "quartile_policy": "linear_interpolation_type7"
+          },
+          "comparison_count": 3,
+          "equality": {
+            "analysis_unit": "paired_score_comparison",
+            "confidence_interval_lower": 0.06149194472039632,
+            "confidence_interval_method": "wilson_score",
+            "confidence_interval_upper": 0.7923403991979523,
+            "confidence_level": 0.95,
+            "event_count": 1,
+            "observation_count": 3,
+            "rate": 0.3333333333333333
+          },
+          "relative_gap": {
+            "count": 3,
+            "iqr": 0.25,
+            "maximum": 0.5,
+            "mean": 0.3333333333333333,
+            "median": 0.5,
+            "minimum": 0.0,
+            "q1": 0.25,
+            "q3": 0.5,
+            "quartile_policy": "linear_interpolation_type7"
+          },
+          "relative_gap_defined_count": 3,
+          "relative_gap_undefined_count": 0,
+          "relative_gap_zero_optimum_policy": "undefined_and_excluded",
+          "zero_optimum_count": 0
+        },
+        "weight_mode": "unit"
+      },
+      {
+        "selector": "epic_regular_cover",
+        "statistics": {
+          "absolute_gap": {
+            "count": 3,
+            "iqr": 1.0,
+            "maximum": 2.0,
+            "mean": 1.3333333333333333,
+            "median": 2.0,
+            "minimum": 0.0,
+            "q1": 1.0,
+            "q3": 2.0,
+            "quartile_policy": "linear_interpolation_type7"
+          },
+          "comparison_count": 3,
+          "equality": {
+            "analysis_unit": "paired_score_comparison",
+            "confidence_interval_lower": 0.06149194472039632,
+            "confidence_interval_method": "wilson_score",
+            "confidence_interval_upper": 0.7923403991979523,
+            "confidence_level": 0.95,
+            "event_count": 1,
+            "observation_count": 3,
+            "rate": 0.3333333333333333
+          },
+          "relative_gap": {
+            "count": 3,
+            "iqr": 0.5,
+            "maximum": 1.0,
+            "mean": 0.6666666666666666,
+            "median": 1.0,
+            "minimum": 0.0,
+            "q1": 0.5,
+            "q3": 1.0,
+            "quartile_policy": "linear_interpolation_type7"
+          },
+          "relative_gap_defined_count": 3,
+          "relative_gap_undefined_count": 0,
+          "relative_gap_zero_optimum_policy": "undefined_and_excluded",
+          "zero_optimum_count": 0
+        },
+        "weight_mode": "unit"
+      },
+      {
+        "selector": "greedy_exact_feasibility",
+        "statistics": {
+          "absolute_gap": {
+            "count": 3,
+            "iqr": 0.10000000000000003,
+            "maximum": 0.20000000000000007,
+            "mean": 0.0666666666666667,
+            "median": 0.0,
+            "minimum": 0.0,
+            "q1": 0.0,
+            "q3": 0.10000000000000003,
+            "quartile_policy": "linear_interpolation_type7"
+          },
+          "comparison_count": 3,
+          "equality": {
+            "analysis_unit": "paired_score_comparison",
+            "confidence_interval_lower": 0.20765960080204782,
+            "confidence_interval_method": "wilson_score",
+            "confidence_interval_upper": 0.9385080552796038,
+            "confidence_level": 0.95,
+            "event_count": 2,
+            "observation_count": 3,
+            "rate": 0.6666666666666666
+          },
+          "relative_gap": {
+            "count": 3,
+            "iqr": 0.09090909090909093,
+            "maximum": 0.18181818181818185,
+            "mean": 0.060606060606060615,
+            "median": 0.0,
+            "minimum": 0.0,
+            "q1": 0.0,
+            "q3": 0.09090909090909093,
+            "quartile_policy": "linear_interpolation_type7"
+          },
+          "relative_gap_defined_count": 3,
+          "relative_gap_undefined_count": 0,
+          "relative_gap_zero_optimum_policy": "undefined_and_excluded",
+          "zero_optimum_count": 0
+        },
+        "weight_mode": "confidence"
+      },
+      {
+        "selector": "epic_regular_cover",
+        "statistics": {
+          "absolute_gap": {
+            "count": 3,
+            "iqr": 0.55,
+            "maximum": 1.1,
+            "mean": 0.6666666666666666,
+            "median": 0.9,
+            "minimum": 0.0,
+            "q1": 0.45,
+            "q3": 1.0,
+            "quartile_policy": "linear_interpolation_type7"
+          },
+          "comparison_count": 3,
+          "equality": {
+            "analysis_unit": "paired_score_comparison",
+            "confidence_interval_lower": 0.06149194472039632,
+            "confidence_interval_method": "wilson_score",
+            "confidence_interval_upper": 0.7923403991979523,
+            "confidence_level": 0.95,
+            "event_count": 1,
+            "observation_count": 3,
+            "rate": 0.3333333333333333
+          },
+          "relative_gap": {
+            "count": 3,
+            "iqr": 0.5,
+            "maximum": 1.0,
+            "mean": 0.6666666666666666,
+            "median": 1.0,
+            "minimum": 0.0,
+            "q1": 0.5,
+            "q3": 1.0,
+            "quartile_policy": "linear_interpolation_type7"
+          },
+          "relative_gap_defined_count": 3,
+          "relative_gap_undefined_count": 0,
+          "relative_gap_zero_optimum_policy": "undefined_and_excluded",
+          "zero_optimum_count": 0
+        },
+        "weight_mode": "confidence"
+      }
+    ],
+    "interpretation": "configured_synthetic_gap_diagnostic_not_model_benchmark",
+    "selector_runtime_seconds": {
+      "epic_regular_cover": {
+        "count": 6,
+        "iqr": 5.9068232076242566e-05,
+        "maximum": 0.0005801919614896178,
+        "mean": 0.0004216545009209464,
+        "median": 0.0004463079967536032,
+        "minimum": 0.00023149402113631368,
+        "q1": 0.0003916522691724822,
+        "q3": 0.00045072050124872476,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "exact_mwpc": {
+        "count": 6,
+        "iqr": 2.514275547582656e-05,
+        "maximum": 0.0005913759814575315,
+        "mean": 0.000545010834078615,
+        "median": 0.0005482499836944044,
+        "minimum": 0.0004959820071235299,
+        "q1": 0.0005318187613738701,
+        "q3": 0.0005569615168496966,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "greedy_exact_feasibility": {
+        "count": 6,
+        "iqr": 0.0003615407331380993,
+        "maximum": 0.0033138919970951974,
+        "mean": 0.0021277876706638685,
+        "median": 0.0018025334866251796,
+        "minimum": 0.0017850470030680299,
+        "q1": 0.0017933830240508541,
+        "q3": 0.0021549237571889535,
+        "quartile_policy": "linear_interpolation_type7"
+      }
+    }
+  },
+  "runtime_breakdown": {
+    "backend_runtime_seconds": {
+      "python": {
+        "count": 42,
+        "iqr": 0.0001648662582738325,
+        "maximum": 0.0034982020151801407,
+        "mean": 0.0010559653816190327,
+        "median": 0.0008526169985998422,
+        "minimum": 0.0006750450120307505,
+        "q1": 0.0008079334947979078,
+        "q3": 0.0009727997530717403,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "rust": {
+        "count": 42,
+        "iqr": 0.0002103324659401551,
+        "maximum": 0.0020899390219710767,
+        "mean": 0.0013386472363934097,
+        "median": 0.0012370494951028377,
+        "minimum": 0.0010440860060043633,
+        "q1": 0.0011947970342589542,
+        "q3": 0.0014051295001991093,
+        "quartile_policy": "linear_interpolation_type7"
+      }
+    },
+    "censored_count": 0,
+    "component_breakdown": [
+      {
+        "backend": "python",
+        "component": "proposal_policy",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 0.0,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "python",
+        "component": "support_construction",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 1.1613010428845882e-05,
+          "maximum": 0.00015649001579731703,
+          "mean": 9.11003125587567e-05,
+          "median": 8.795148460194468e-05,
+          "minimum": 6.602698704227805e-05,
+          "q1": 8.452378096990287e-05,
+          "q3": 9.613679139874876e-05,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "python",
+        "component": "token_lattice_construction",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 1.587146834935993e-05,
+          "maximum": 0.00011176400585100055,
+          "mean": 7.137393030071897e-05,
+          "median": 6.595751619897783e-05,
+          "minimum": 4.993198672309518e-05,
+          "q1": 6.313127232715487e-05,
+          "q3": 7.90027406765148e-05,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "python",
+        "component": "byte_lattice_expansion",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 8.262471237685531e-05,
+          "maximum": 0.0006003390299156308,
+          "mean": 0.00025744123628274317,
+          "median": 0.00021051449584774673,
+          "minimum": 0.00013945996761322021,
+          "q1": 0.00020016051712445915,
+          "q3": 0.00028278522950131446,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "python",
+        "component": "parser",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 5.6113494792953134e-05,
+          "maximum": 0.0021266359835863113,
+          "mean": 0.00020676306892363798,
+          "median": 7.474501035176218e-05,
+          "minimum": 5.303497891873121e-05,
+          "q1": 6.919250881765038e-05,
+          "q3": 0.0001253060036106035,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "python",
+        "component": "backtracking",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 1.7145983292721212e-05,
+          "maximum": 0.000205962045583874,
+          "mean": 9.770360165497376e-05,
+          "median": 8.280505426228046e-05,
+          "minimum": 6.653997115790844e-05,
+          "q1": 7.957201160024852e-05,
+          "q3": 9.671799489296973e-05,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "python",
+        "component": "validation",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 2.4826949811540544e-05,
+          "maximum": 0.00020739604951813817,
+          "mean": 0.00011508539180448722,
+          "median": 0.00010034147999249399,
+          "minimum": 8.782499935477972e-05,
+          "q1": 9.639578638598323e-05,
+          "q3": 0.00012122273619752377,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "python",
+        "component": "commit_update",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 0.0,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "python",
+        "component": "unattributed_measurement_overhead",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 1.6988968127407134e-05,
+          "maximum": 0.0003171528805978596,
+          "mean": 0.00021649784009371485,
+          "median": 0.00020817347103729844,
+          "minimum": 0.00019151606829836965,
+          "q1": 0.0002030192263191566,
+          "q3": 0.00022000819444656372,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "python",
+        "component": "wall_span",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 0.0001648662582738325,
+          "maximum": 0.0034982020151801407,
+          "mean": 0.0010559653816190327,
+          "median": 0.0008526169985998422,
+          "minimum": 0.0006750450120307505,
+          "q1": 0.0008079334947979078,
+          "q3": 0.0009727997530717403,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "proposal_policy",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 0.0,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "support_construction",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 1.1111522326245904e-05,
+          "maximum": 0.00015758199151605368,
+          "mean": 9.059556482714557e-05,
+          "median": 8.68729839567095e-05,
+          "minimum": 6.5087981056422e-05,
+          "q1": 8.258273010142148e-05,
+          "q3": 9.369425242766738e-05,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "token_lattice_construction",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 1.4774253941141069e-05,
+          "maximum": 0.00011059397365897894,
+          "mean": 7.109738293192571e-05,
+          "median": 6.504502380266786e-05,
+          "minimum": 5.2543997298926115e-05,
+          "q1": 6.282101094257087e-05,
+          "q3": 7.759526488371193e-05,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "byte_lattice_expansion",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 8.385998080484569e-05,
+          "maximum": 0.0006333360215649009,
+          "mean": 0.000259402643201784,
+          "median": 0.00020993847283534706,
+          "minimum": 0.0001349169760942459,
+          "q1": 0.00020004076941404492,
+          "q3": 0.0002839007502188906,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "parser",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 3.7305e-06,
+          "maximum": 0.000218228,
+          "mean": 1.8698428571428572e-05,
+          "median": 4.169e-06,
+          "minimum": 2.15e-06,
+          "q1": 3.82625e-06,
+          "q3": 7.55675e-06,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "backtracking",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 6.720722541257738e-06,
+          "maximum": 6.884202018594741e-05,
+          "mean": 4.9946092857292005e-05,
+          "median": 4.7808538891702895e-05,
+          "minimum": 4.2648998757004735e-05,
+          "q1": 4.638252531787008e-05,
+          "q3": 5.310324785912782e-05,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "validation",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 2.6679510483518243e-05,
+          "maximum": 0.00024389196187257767,
+          "mean": 0.00014318165042260218,
+          "median": 0.00012893701205030084,
+          "minimum": 0.00010445405496284366,
+          "q1": 0.0001202704879688099,
+          "q3": 0.00014694999845232815,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "commit_update",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 0.0,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "q1": 0.0,
+          "q3": 0.0,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "unattributed_measurement_overhead",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 6.627151804596931e-05,
+          "maximum": 0.0009208169364466369,
+          "mean": 0.0007057254735812318,
+          "median": 0.0006882549937055558,
+          "minimum": 0.0006332470104610324,
+          "q1": 0.0006685137657003403,
+          "q3": 0.0007347852837463096,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      },
+      {
+        "backend": "rust",
+        "component": "wall_span",
+        "runtime_seconds": {
+          "count": 42,
+          "iqr": 0.0002103324659401551,
+          "maximum": 0.0020899390219710767,
+          "mean": 0.0013386472363934097,
+          "median": 0.0012370494951028377,
+          "minimum": 0.0010440860060043633,
+          "q1": 0.0011947970342589542,
+          "q3": 0.0014051295001991093,
+          "quartile_policy": "linear_interpolation_type7"
+        }
+      }
+    ],
+    "interpretation": "component_profiled_cpu_smoke_not_publication_benchmark",
+    "measurement_count": 84,
+    "status_counts": {
+      "optimal": 84
+    }
+  },
+  "schema_version": 1,
+  "sources": [
+    {
+      "artifact_kind": "mwpc_q1_correctness_case",
+      "benchmark_claim": null,
+      "config_sha256": "e5fe6f73f32e72d4023b0d0fbe4e1c9cf8e0066c25f4a06f85c7e82007770952",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "finite_support_correctness_campaign_not_runtime_benchmark",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q1-correctness-cases.jsonl",
+      "producing_git_commit": "bd6b4455102f3b1a7603de8096b3380d4733b13e",
+      "role": "q1_correctness",
+      "row_count": 249,
+      "run_id": "bd6b445",
+      "sha256": "62fb83b48c8809a3958df486b387e017ba245e97e4e74e475ca1fb55659ade8a",
+      "timing_scope": null
+    },
+    {
+      "artifact_kind": "mwpc_q2_heuristic_gap_row",
+      "benchmark_claim": null,
+      "config_sha256": "fcddc72d33427ff896fa9a9eccb35b8e75a7d6ceec3f7612771a8a36805e71af",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "configured_synthetic_gap_diagnostic_not_model_benchmark",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q2-heuristic-gap-rows.jsonl",
+      "producing_git_commit": "a8b4e7c499dbf67c7f33a5110e95b4b02738729d",
+      "role": "q2_heuristic_gap",
+      "row_count": 6,
+      "run_id": "a8b4e7c",
+      "sha256": "1af3865368c0cff24bf75fe103354bd51e0bd42bd7a381ba1b3cec3538a0a2e1",
+      "timing_scope": "single_repetition_smoke_not_publication_benchmark"
+    },
+    {
+      "artifact_kind": "mwpc_q3_finite_slot_row",
+      "benchmark_claim": null,
+      "config_sha256": "ac7e619520d69d7a86dd281e9d46a308f7f01d898e55e98583f921d531a09de6",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "curated_finite_slot_counterexample_evidence",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q3-finite-slot-rows.jsonl",
+      "producing_git_commit": "ac447a8644583052806c66f7b4deb39ac66f9378",
+      "role": "q3_finite_slots",
+      "row_count": 2,
+      "run_id": "ac447a8",
+      "sha256": "060957e2a68d71a30696b6406e43d737458f0a13ae0ca1abd750885220c3ce20",
+      "timing_scope": "single_repetition_smoke_not_publication_benchmark"
+    },
+    {
+      "artifact_kind": "mwpc_q4_scaling_row",
+      "benchmark_claim": null,
+      "config_sha256": "fc27e36df5e957abd73f6dbd0d286dc6e890445d86580c1692f5362509546a4b",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "component_profiled_cpu_smoke_not_publication_benchmark",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q4-scaling-rows.jsonl",
+      "producing_git_commit": "66b8b5d7ef908a40ea94018fbe3502cbc3a1c5c1",
+      "role": "q4_scaling",
+      "row_count": 84,
+      "run_id": "66b8b5d",
+      "sha256": "4ece645bc4b9a497623738b378bf58bba05805c6fa03bf49a555973dcf8a0765",
+      "timing_scope": "component_profiled_cpu_smoke_not_publication_benchmark"
+    },
+    {
+      "artifact_kind": "mwpc_q5_end_to_end_row",
+      "benchmark_claim": false,
+      "config_sha256": "ef284d1b73d31848bbaa46635339170ed92a7ccaeef9d64b6f43987fb88f8b39",
+      "exactness_guarantee": "per_step",
+      "exactness_scope": "exact_on_support",
+      "interpretation": "fixed_task_live_model_diagnostic_not_publication_benchmark",
+      "path": "docs/artifacts/raw/t1203_final_results_v1/q5-end-to-end-rows.jsonl",
+      "producing_git_commit": "83ba41d1a29d84d8147319d33b85c6646d743b8e",
+      "role": "q5_end_to_end",
+      "row_count": 32,
+      "run_id": "83ba41d",
+      "sha256": "1132d0f29561d7b3eca8a72d382c22422275f2f54eb462da264b4fc1da9508b4",
+      "timing_scope": "warm repeated balanced-cyclic CUDA timing; model/tokenizer/grammar and per-method runner setup excluded"
+    }
+  ]
+}

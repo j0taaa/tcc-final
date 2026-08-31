@@ -1,0 +1,30 @@
+schema_version = 1
+artifact_id = "t1203_final_results_v1"
+processed_directory = "docs/artifacts/processed/t1203_final_results_v1"
+paper_directory = "paper/generated/t1203_final_results_v1"
+confidence_level = 0.95
+
+[[inputs]]
+role = "q1_correctness"
+raw_jsonl = "docs/artifacts/raw/t1203_final_results_v1/q1-correctness-cases.jsonl"
+expected_sha256 = "62fb83b48c8809a3958df486b387e017ba245e97e4e74e475ca1fb55659ade8a"
+
+[[inputs]]
+role = "q2_heuristic_gap"
+raw_jsonl = "docs/artifacts/raw/t1203_final_results_v1/q2-heuristic-gap-rows.jsonl"
+expected_sha256 = "1af3865368c0cff24bf75fe103354bd51e0bd42bd7a381ba1b3cec3538a0a2e1"
+
+[[inputs]]
+role = "q3_finite_slots"
+raw_jsonl = "docs/artifacts/raw/t1203_final_results_v1/q3-finite-slot-rows.jsonl"
+expected_sha256 = "060957e2a68d71a30696b6406e43d737458f0a13ae0ca1abd750885220c3ce20"
+
+[[inputs]]
+role = "q4_scaling"
+raw_jsonl = "docs/artifacts/raw/t1203_final_results_v1/q4-scaling-rows.jsonl"
+expected_sha256 = "4ece645bc4b9a497623738b378bf58bba05805c6fa03bf49a555973dcf8a0765"
+
+[[inputs]]
+role = "q5_end_to_end"
+raw_jsonl = "docs/artifacts/raw/t1203_final_results_v1/q5-end-to-end-rows.jsonl"
+expected_sha256 = "1132d0f29561d7b3eca8a72d382c22422275f2f54eb462da264b4fc1da9508b4"

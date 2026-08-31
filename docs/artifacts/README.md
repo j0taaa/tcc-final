@@ -59,3 +59,25 @@ number. If raw rows aggregate steps, analysis must report the step-level rate
 as unavailable rather than infer a denominator. The checked-in T1202 input is
 a synthetic formula-regression fixture with `benchmark_claim=false`, not an
 experiment or performance claim.
+
+## Final T1203 tables and figures
+
+`make final-artifacts-check` recomputes the T1203 machine-readable summary,
+five LaTeX tables, and the heuristic-gap SVG directly from the five pinned
+Q1--Q5 JSONL row files under
+`docs/artifacts/raw/t1203_final_results_v1/`. The configuration records every
+source SHA-256; the generated manifest records the producing clean commit,
+run ID, config hash, exactness scope, row count, interpretation, and output
+hashes. Verification rejects a changed raw input, an edited table or figure,
+a Q1 oracle disagreement, a mismatched stored Q2 gap, or an invalid Q5
+`OPTIMAL` certificate.
+
+The generated scope labels are part of the artifact contract. Q1 reports a
+finite-support correctness campaign. Q2 uses configured synthetic states, Q3
+uses curated finite-slot counterexamples, Q4 is a component-profiled CPU
+smoke, and Q5 is an eight-repetition fixed-task live-model diagnostic whose
+raw rows explicitly say `benchmark_claim=false`. The latter results validate
+integration and instrumentation but are not promoted to publication
+benchmarks. Q5 operational rates use generations as their denominator;
+step-level rates remain unavailable because the raw rows aggregate optimizer
+steps.
