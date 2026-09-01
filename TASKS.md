@@ -16,9 +16,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M12.5 gate audit.** M0 through M12, the M10.5 hardening pass, and tasks
-T1250--T1261 are complete. The first remaining required task is T1300, but M13
-remains paused until the blocking M12.5 checklist below is audited and closed.
+**M13 / T1300.** M0 through M12.5 and the M10.5 hardening pass are complete.
+The first incomplete required task is T1300, whose dependency on the closed
+M12.5 review-fix gate is satisfied.
 
 ## Completed milestone summary
 
@@ -597,15 +597,32 @@ the archived body against lines 43--575 of the pre-archive
 `355150d:TASKS.md` produced no differences; all versioned links checked by the
 regression resolve.
 
-**M12.5 review-fix gate — blocking**
+**M12.5 review-fix gate — complete**
 
-- [ ] The installed wheel contains and exercises both Python packages.
-- [ ] Q1 statistical presentation distinguishes fixed and random case families.
-- [ ] Evidence tier, genuine EPIC execution, and any selected Q2/Q4 expansion
+- [x] The installed wheel contains and exercises both Python packages.
+- [x] Q1 statistical presentation distinguishes fixed and random case families.
+- [x] Evidence tier, genuine EPIC execution, and any selected Q2/Q4 expansion
   are versioned without promoting diagnostics.
-- [ ] Artifact naming, architecture freeze, page budget, and language are settled.
-- [ ] Both reproduction levels pass and completed M11/M12 detail is archived.
-- [ ] No correctness gate regresses and no unsupported article claim remains.
+- [x] Artifact naming, architecture freeze, page budget, and language are settled.
+- [x] Both reproduction levels pass and completed M11/M12 detail is archived.
+- [x] No correctness gate regresses and no unsupported article claim remains.
+
+**Gate evidence:** commits `2c3092e` through `6a8f747` implement and document
+T1250--T1261. Follow-up commit `f47ee05` keeps optional EPIC/Rust imports out of
+the generic test environment while explicitly exercising the affected Q2/Q5
+tests in the pinned EPIC job. GitHub Actions run
+[`33467321623`](https://github.com/j0taaa/tcc-final/actions/runs/33467321623)
+passed all three jobs at `f47ee05837dcd8a66bbf353391fc49a3548bea98`:
+lightweight verification and release-wheel rehearsal, production Rust/full
+correctness campaigns, and pinned EPIC integration. The final local audit
+passed `make check` (11 unit and 644 exact tests), `make test-rust-parser` (20
+Rust tests plus formatting and Clippy), `make release-wheel-smoke`, `make
+final-artifacts-check`, `make paper` (15 pages), the 500-case M6 and 500-case
+M7 oracle campaigns, the ten pinned-EPIC integration tests, and the six-case
+Q2 smoke. T1260 separately records passing clean-clone artifact-rebuild and
+source-experiment-rerun rehearsals. ADR 0016, the T1257 artifact clarification,
+and the T1258 result budget prevent diagnostic evidence from being promoted to
+publication claims; no CUDA/model experiment is claimed as rerun by this gate.
 
 ---
 

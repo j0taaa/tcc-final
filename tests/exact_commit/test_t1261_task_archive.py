@@ -66,8 +66,9 @@ def test_active_file_keeps_m125_and_m13_full_and_names_next_work() -> None:
     active = ACTIVE.read_text(encoding="utf-8")
 
     assert len(active.splitlines()) < 900
-    assert "**M12.5 gate audit.**" in active
-    assert "The first remaining required task is T1300" in active
+    assert "**M13 / T1300.**" in active
+    assert "The first incomplete required task is T1300" in active
+    assert "**M12.5 review-fix gate — complete**" in active
     assert "# M12.5 — Review fixes before article writing" in active
     assert "## T1250 —" in active
     assert "## T1261 —" in active
