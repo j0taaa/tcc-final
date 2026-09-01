@@ -14,11 +14,11 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M12.5 / T1252.** M0 through M12 and the M10.5 hardening pass are complete.
+**M12.5 / T1253.** M0 through M12 and the M10.5 hardening pass are complete.
 An external review found release-packaging and evidence-presentation gaps that
 must be resolved before article writing. The first incomplete required task is
-T1252: freeze the evidence tier and allowed article claims. M13 is paused until
-the blocking M12.5 review-fix gate closes.
+T1253: exercise genuine EPIC parallel commitment end to end. M13 is paused
+until the blocking M12.5 review-fix gate closes.
 
 ## Completed milestone summary
 
@@ -666,26 +666,38 @@ unit and 595 exact tests passed; full `python -m pytest -q` -> 615 passed;
 **Review finding:** 2 — reproducible diagnostic results are not automatically
 publication-level experiments.
 
-- [ ] Record a versioned decision stating whether M13 targets a preliminary
+- [x] Record a versioned decision stating whether M13 targets a preliminary
   article with diagnostic evidence or a final article with new publication-mode
   runs.
-- [ ] Inventory, per Q1--Q5, what the current evidence supports and what it does
+- [x] Inventory, per Q1--Q5, what the current evidence supports and what it does
   not support.
-- [ ] Keep every existing `publication_mode=false` run classified as diagnostic.
-- [ ] If publication-mode runs are selected, define immutable configs, minimum
+- [x] Keep every existing `publication_mode=false` run classified as diagnostic.
+- [x] If publication-mode runs are selected, define immutable configs, minimum
   metadata, stopping/resource rules, and a new artifact bundle ID before runs.
-- [ ] If preliminary evidence is selected, explicitly defer broader empirical
-  claims and prohibit representative gap, overhead, scaling, or output-quality
-  conclusions in M13.
+- [x] Record that the preliminary-evidence branch was not selected; broader
+  claims remain blocked until the predeclared publication runs pass.
 
 **Acceptance criteria**
 
-- [ ] Every planned M13 empirical claim maps to an evidence tier and artifact;
+- [x] Every planned M13 empirical claim maps to an evidence tier and artifact;
   unsupported claims are explicitly excluded.
-- [ ] No existing smoke or diagnostic is renamed or promoted to publication
+- [x] No existing smoke or diagnostic is renamed or promoted to publication
   evidence.
 
-**Evidence:** `[decision record and claim-to-evidence matrix]`
+**Evidence:** decision/config commit
+`d454f922aca7b90565e44e8cb1c25562fc5924a4` records the final-article choice,
+Q1--Q5 claim matrix, metadata requirements, and stopping/resource rules in
+[`docs/decisions/0016-publication-evidence-tier.md`](docs/decisions/0016-publication-evidence-tier.md).
+The predeclared Q2, Q4, and Q5 config hashes are respectively
+`5e950bf7bd71a537a40ee50c282c30fd9d54a260933e53e2f17cce8cdc3bb5a3`,
+`265f812036df651bab9c585a8c95a496f5ab27f9ab0c073e56ff35897320cfa7`,
+and `ef6500bea33bf50a1b0ca112f3e1086f0f1f7c804dd49a86868705da1132b004`.
+All use `publication_mode=true` and reserve `m125_publication_results_v1`;
+tests also verify that the six existing full configs remain diagnostic and
+that the old bundle ID is not reused. `python -m pytest -q
+tests/exact_commit/test_publication_evidence_policy.py
+tests/exact_commit/test_experiment_config.py` -> 18 passed; `make check` -> 10
+unit and 599 exact tests passed.
 
 ## T1253 — Exercise genuine EPIC parallel commitment end to end
 
