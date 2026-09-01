@@ -9,7 +9,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 PUBLICATION_CONFIGS = {
     "q2": REPOSITORY_ROOT / "configs/experiments/q2_real_state_publication_v1.toml",
     "q4": REPOSITORY_ROOT / "configs/experiments/q4_scaling_publication_v1.toml",
-    "q5": REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v2.toml",
+    "q5": REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v3.toml",
 }
 LEGACY_FULL_CONFIGS = tuple(
     REPOSITORY_ROOT / "configs/experiments" / name
@@ -63,15 +63,19 @@ def test_publication_campaigns_are_predeclared_with_a_new_bundle() -> None:
 
 
 def test_structured_task_manifest_freezes_two_nontrivial_targets() -> None:
-    manifest_path = REPOSITORY_ROOT / "configs/experiments/q5_structured_tasks_v2.toml"
+    manifest_path = REPOSITORY_ROOT / "configs/experiments/q5_structured_tasks_v3.toml"
     manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
     tasks = manifest["tasks"]
 
     assert manifest["schema_version"] == 1
-    assert manifest["task_set_id"] == "q5_structured_tasks_v2"
-    assert [task["task_id"] for task in tasks] == ["json_x_zero", "parenthesized_sum"]
-    assert all(len(task["target_utf8"]) >= 5 for task in tasks)
+    assert manifest["task_set_id"] == "q5_structured_tasks_v3"
+    assert [task["task_id"] for task in tasks] == ["json_x_zero", "infix_sum"]
+    assert all(len(task["target_utf8"]) >= 3 for task in tasks)
     assert all(task["grammar_kind"] == "literal_utf8_cfg" for task in tasks)
+    assert [(task["generation_length"], task["steps"]) for task in tasks] == [
+        (16, 8),
+        (4, 1),
+    ]
 
 
 def test_decision_records_claim_boundaries_and_resource_rules() -> None:
@@ -109,3 +113,15 @@ def test_q5_amendment_records_rejected_pilot_without_weakening_gates() -> None:
         "exact_on_support",
     ):
         assert required in amendment
+
+    task_schedule = (
+        REPOSITORY_ROOT / "docs/decisions/0018-q5-task-specific-schedules.md"
+    ).read_text(encoding="utf-8")
+    for required in (
+        "70 EPIC selector",
+        "24",
+        "no ordinary regular-cover selector call",
+        "stratified by task",
+        "exact_on_support",
+    ):
+        assert required in task_schedule

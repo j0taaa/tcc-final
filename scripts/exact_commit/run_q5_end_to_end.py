@@ -16,7 +16,7 @@ import tomllib
 from collections import Counter
 from collections.abc import Callable, Iterator, Mapping, Sequence
 from contextlib import contextmanager, nullcontext
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import UTC, datetime
 from pathlib import Path
 from time import monotonic
@@ -193,6 +193,10 @@ class Q5Task:
     prompt_instruction: str
     target_utf8: str
     functional_checker: str
+    generation_length: int | None = None
+    block_length: int | None = None
+    steps: int | None = None
+    schedule_budget: int | None = None
 
 
 def _configuration_parameters(
@@ -401,16 +405,22 @@ def _load_task_manifest(path: Path, expected_task_ids: tuple[str, ...]) -> tuple
     tasks: list[Q5Task] = []
     for index, row in enumerate(rows):
         _require(isinstance(row, Mapping), f"Q5 task {index} must be a table")
-        _require(
-            set(row)
-            == {
+        base_fields = {
                 "task_id",
                 "prompt_id",
                 "prompt_instruction",
                 "target_utf8",
                 "grammar_kind",
                 "functional_checker",
-            },
+        }
+        schedule_fields = {
+            "generation_length",
+            "block_length",
+            "steps",
+            "schedule_budget",
+        }
+        _require(
+            set(row) in (base_fields, base_fields | schedule_fields),
             f"Q5 task {index} has unexpected fields",
         )
         _require(row["grammar_kind"] == "literal_utf8_cfg", "unsupported Q5 grammar kind")
@@ -424,11 +434,54 @@ def _load_task_manifest(path: Path, expected_task_ids: tuple[str, ...]) -> tuple
             ),
             target_utf8=_string(row["target_utf8"], f"tasks[{index}].target_utf8"),
             functional_checker=checker,
+            generation_length=(
+                None
+                if "generation_length" not in row
+                else _integer(
+                    row["generation_length"],
+                    f"tasks[{index}].generation_length",
+                    minimum=1,
+                )
+            ),
+            block_length=(
+                None
+                if "block_length" not in row
+                else _integer(
+                    row["block_length"],
+                    f"tasks[{index}].block_length",
+                    minimum=1,
+                )
+            ),
+            steps=(
+                None
+                if "steps" not in row
+                else _integer(row["steps"], f"tasks[{index}].steps", minimum=1)
+            ),
+            schedule_budget=(
+                None
+                if "schedule_budget" not in row
+                else _integer(
+                    row["schedule_budget"],
+                    f"tasks[{index}].schedule_budget",
+                    minimum=1,
+                )
+            ),
         )
         _require(
             len(task.target_utf8.encode("utf-8")) >= 2,
             "publication Q5 tasks must contain at least two content bytes",
         )
+        if task.generation_length is not None:
+            assert task.block_length is not None and task.steps is not None
+            _require(
+                task.generation_length % task.block_length == 0,
+                "Q5 generation length must be divisible by block length",
+            )
+            block_count = task.generation_length // task.block_length
+            _require(
+                task.steps % block_count == 0,
+                "Q5 steps must be divisible by block count",
+            )
         tasks.append(task)
     _require(
         tuple(task.task_id for task in tasks) == expected_task_ids,
@@ -1197,6 +1250,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         _require(len(selected) == 1, "selected Q5 task is not configured")
         task = selected[0]
         seed = arguments.seed
+        if task.generation_length is not None:
+            assert task.block_length is not None
+            assert task.steps is not None
+            assert task.schedule_budget is not None
+            parameters = replace(
+                parameters,
+                generation_length=task.generation_length,
+                block_length=task.block_length,
+                steps=task.steps,
+                schedule_budget=task.schedule_budget,
+            )
         source_relative = "configs/exact_commit/t904_llada_live_smoke.toml"
     else:
         _require(config.seeds == (904,), "diagnostic Q5 requires exactly seed 904")
