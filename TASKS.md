@@ -510,7 +510,16 @@ placeholders. `python -m pytest -q
 tests/exact_commit/test_t1259_language_and_terminology.py` -> 3 passed;
 `make check` -> 10 unit and 634 exact tests passed; `make paper` passed and the
 normalized article remained 15 pages. No generated artifact or measured result
-changed.
+changed. A final requirement-by-requirement audit then found two active
+Portuguese paper-support documents that the original regression did not cover.
+`paper/README.md` is now English and the translated checklist is
+`paper/FIELDS_TO_FILL.md`; the former Portuguese checklist path was removed.
+The added regression scans both active documents and rejects the old filename
+and Portuguese headings. `python -m pytest -q
+tests/exact_commit/test_t1259_language_and_terminology.py` -> 4 passed; `make
+check` -> 11 unit and 645 exact tests passed; `make paper` still produced 15
+pages. This documentation-only correction changed no generated artifact or
+measured result.
 
 ## T1260 — Add artifact-rebuild and source-rerun rehearsals
 

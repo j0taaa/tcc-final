@@ -1,28 +1,34 @@
-# TCC em LaTeX — MWPC para dLLMs sob CFGs
+# TCC in LaTeX — Exact MWPC for CFG-constrained dLLMs
 
-Este projeto contém uma base de artigo acadêmico no formato SBC para o TCC **“Compromisso Paralelo Exato de Peso Máximo sob Gramáticas Livres de Contexto para Modelos de Linguagem por Difusão”**.
+This directory contains the SBC-format article for the TCC **“Exact
+Maximum-Weight Parallel Commitment under Context-Free Grammars for Diffusion
+Language Models.”**
 
-Na compilação fornecida, o artigo possui **15 páginas**. O texto inclui a parte teórica essencial, definições formais, teoremas, demonstrações, três pseudocódigos, análise de complexidade, metodologia de implementação, protocolo experimental, resultados a preencher, limitações, cronograma e declaração de uso de IA.
+The current build has **15 pages**. The manuscript includes the essential
+theory, formal definitions, theorems, proofs, three pseudocode listings,
+complexity analysis, implementation methodology, experimental protocol,
+result placeholders, limitations, schedule, and AI-use declaration.
 
-## Arquivos
+## Files
 
-- `main.tex`: texto principal e ponto de entrada do projeto;
-- `referencias.bib`: base BibTeX;
-- `sbc-template.sty`, `sbc.bst` e `caption2.sty`: arquivos do formato SBC;
-- `main.pdf`: prévia compilada;
-- `CAMPOS_A_PREENCHER.md`: checklist dos dados que dependem da implementação;
-- `generated/`: tabelas e figuras pequenas produzidas somente por scripts a
-  partir de JSONL bruto versionado;
-- `Makefile`: comandos de compilação e limpeza.
+- `main.tex`: main manuscript and project entry point;
+- `referencias.bib`: BibTeX database;
+- `sbc-template.sty`, `sbc.bst`, and `caption2.sty`: SBC format files;
+- `main.pdf`: local compiled preview;
+- `FIELDS_TO_FILL.md`: checklist of implementation-dependent fields;
+- `generated/`: small tables and figures produced only by scripts from
+  versioned raw JSONL; and
+- `Makefile`: build and cleanup commands.
 
-## Compilação no Overleaf
+## Building with Overleaf
 
-1. Crie um projeto vazio e envie todos os arquivos deste diretório.
-2. Defina `main.tex` como documento principal.
-3. Use `pdfLaTeX` como compilador.
-4. O Overleaf executará BibTeX automaticamente; em caso de referências pendentes, use **Recompile from scratch**.
+1. Create an empty project and upload every file in this directory.
+2. Set `main.tex` as the main document.
+3. Select `pdfLaTeX` as the compiler.
+4. Overleaf runs BibTeX automatically. If references remain unresolved, use
+   **Recompile from scratch**.
 
-## Compilação local
+## Building locally
 
 ```bash
 pdflatex main.tex
@@ -31,34 +37,39 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-Ou:
+Or:
 
 ```bash
 make
 ```
 
-## Campos pendentes
+## Remaining fields
 
-Informações ainda desconhecidas aparecem por meio do comando:
+Information that has not yet been established appears through this command:
 
 ```latex
-\ph{informação a preencher}
+\ph{field to fill}
 ```
 
-No PDF, elas são exibidas em negrito e entre colchetes. Para localizar todas:
+The PDF renders these fields in bold and inside brackets. To find all of them:
 
 ```bash
 grep -n '\\ph{' main.tex
 ```
 
-Substitua cada campo somente quando houver informação verificável. Resultados, tempos, uso de memória e métricas não devem ser estimados ou fabricados.
-Arquivos sob `generated/` não devem ter seus números editados manualmente;
-use o gerador e o manifesto descritos em `docs/artifacts/README.md`.
+Replace a field only when verifiable evidence is available. Results, runtimes,
+memory use, and metrics must never be estimated or fabricated. Do not edit
+numbers under `generated/` manually; use the generator and manifest described
+in `docs/artifacts/README.md`.
 
-## Observações importantes
+## Important notes
 
-- A otimalidade demonstrada é relativa à etapa atual e ao suporte efetivamente representado no lattice.
-- Caso seja usado top-K, o texto final deve afirmar que o método é exato sobre o suporte truncado, e não sobre todo o vocabulário.
-- As provas pressupõem que o lattice e a interface lexical representam exatamente a semântica declarada; qualquer aproximação deve ser documentada.
-- A bibliografia e as afirmações de novidade devem ser atualizadas antes da versão final, pois a área é recente.
-- A declaração de uso de IA deve ser preenchida de acordo com o uso efetivo realizado pelo autor.
+- The proven optimality is per-step and relative to the finite support actually
+  represented by the lattice.
+- With top-K support, the final text must say `exact_on_support`; it must not
+  claim global exactness over the full vocabulary.
+- The proofs assume that the lattice and lexical interface exactly represent
+  their declared semantics. Every approximation must be documented.
+- The bibliography and novelty claims must be updated before the final version
+  because this is a rapidly evolving research area.
+- The AI-use declaration must describe the author's actual use of the tools.

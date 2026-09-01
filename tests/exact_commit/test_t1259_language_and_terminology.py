@@ -80,3 +80,29 @@ def test_legacy_plan_is_archived_and_superseded() -> None:
     assert archive.startswith("# Plano completo de implementação")
     assert len(archive.splitlines()) == 1030
     assert "never to override an accepted ADR or the current task" in notice
+
+
+def test_active_paper_documentation_is_english() -> None:
+    readme = (ROOT / "paper" / "README.md").read_text(encoding="utf-8")
+    checklist_path = ROOT / "paper" / "FIELDS_TO_FILL.md"
+    checklist = checklist_path.read_text(encoding="utf-8")
+
+    assert not (ROOT / "paper" / "CAMPOS_A_PREENCHER.md").exists()
+    assert checklist_path.is_file()
+    assert "# TCC in LaTeX" in readme
+    assert "## Building locally" in readme
+    assert "`exact_on_support`" in readme
+    assert "# Fields to fill before submission" in checklist
+    assert "## Academic integrity" in checklist
+    for portuguese_fragment in (
+        "## Arquivos",
+        "## Compilação",
+        "## Campos pendentes",
+        "## Observações importantes",
+        "# Campos a preencher",
+        "## Identificação",
+        "## Resultados",
+        "## Integridade acadêmica",
+    ):
+        assert portuguese_fragment not in readme
+        assert portuguese_fragment not in checklist
