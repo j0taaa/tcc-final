@@ -7,8 +7,10 @@
 
 This guide separates three different operations:
 
-1. rebuilding the tracked tables and figures from their pinned raw rows;
-2. rerunning the CPU correctness experiments to create new raw rows; and
+1. `artifact-rebuild`: rebuilding tracked tables and figures from pinned raw
+   rows;
+2. `source-experiment-rerun`: rerunning CPU correctness from code and config to
+   create new raw rows and a new table; and
 3. optionally rerunning the CUDA end-to-end diagnostic with the pinned model.
 
 They are not interchangeable. A fresh experiment run does not silently replace
@@ -88,18 +90,28 @@ make final-artifacts-check
 ```
 
 The generator is create-only. `make final-artifacts` is appropriate only when
-both configured output directories are absent. To exercise that path without
-altering the current checkout, run the disposable clean-clone rehearsal:
+both configured output directories are absent.
+
+### Rehearsal level 1: artifact-rebuild
+
+To exercise the create path without altering the current checkout, run:
 
 ```bash
-make rehearse-cpu-correctness
+make rehearse-artifact-rebuild
 ```
 
-The rehearsal clones the current clean commit into a temporary directory,
-initializes the pinned submodule, creates a new `.venv`, moves the tracked
-derivatives aside inside that disposable clone, runs `make final-artifacts`,
-byte-compares the regenerated correctness table with its tracked reference,
-and runs `make final-artifacts-check`. The temporary clone is removed at exit.
+This command requires a clean worktree. It clones the current commit into a
+temporary directory, initializes the pinned submodule, builds the release wheel
+from that clean clone, and installs it non-editably in a new virtual
+environment. From the wheel-installed packages, it moves the tracked
+derivatives aside, rebuilds the bundle, byte-compares **every** processed and
+paper output against its tracked reference, and verifies the rebuilt outputs.
+Expected temporary artifacts are
+`docs/artifacts/processed/t1203_final_results_v1/*` and
+`paper/generated/t1203_final_results_v1/*`. A missing package, source-tree
+import, hash error, missing/extra output, or byte difference fails the command.
+The temporary clone is removed at exit. `make rehearse-cpu-correctness` remains
+an alias for this level only.
 
 The full provenance chain for every displayed result is:
 
@@ -148,6 +160,38 @@ These commands create new ignored raw/processed run directories. They validate
 the executable experiment paths but do not overwrite or amend the pinned T1203
 evidence bundle.
 
+### Rehearsal level 2: source-experiment-rerun
+
+Run the clean release-oriented Q1 rehearsal with:
+
+```bash
+make rehearse-source-correctness
+```
+
+Like level 1, this command starts from a clean clone and a non-editable
+`mwpc-exact` release wheel. It also builds and non-editably installs the
+independent Rust-parser wheel. It then executes the configured 249-case Q1
+campaign and creates these temporary outputs:
+
+```text
+source-experiment-rerun/raw/q1-cases.jsonl
+source-experiment-rerun/processed/q1-summary.json
+source-experiment-rerun/semantic-summary.json
+source-experiment-rerun/correctness-rerun-table.tex
+```
+
+The semantic validator compares the new rows with the pinned Q1 rows by case
+ID, family, solver statuses, result status, objective value, agreement, and
+independent certificate-validation count. Timing and run-metadata fields are
+intentionally excluded from byte identity. Any missing/extra case or semantic
+mismatch fails the command; different legitimate timings do not. The generated
+table is a rehearsal product, not a new publication artifact, and is removed
+with the temporary clone.
+
+The equivalent manual Q1 command below is useful for keeping outputs for
+inspection, but it uses the active development environment rather than testing
+the release-wheel boundary.
+
 Q1 compares the exhaustive oracle, independent Python reference, and Rust
 production solver:
 
@@ -195,6 +239,12 @@ above. The commands in this section are needed only to create a new live-model
 diagnostic. They require CUDA device 0, a compatible CUDA driver, sufficient
 local storage, and the exact model snapshot already present in a Hugging Face
 cache. The run is deliberately local-files-only.
+
+Neither clean CPU rehearsal claims to rerun the EPIC-dependent Q2 study, Q4
+timing/scaling campaigns, or any Q5 CUDA/model campaign. Those remain explicit
+manual or external runs with their own configurations and dependencies. In
+particular, the T1260 rehearsal did not download a model, access a GPU, or
+recreate prior Q5 observations.
 
 Create the isolated CUDA environment without changing `.venv`:
 
