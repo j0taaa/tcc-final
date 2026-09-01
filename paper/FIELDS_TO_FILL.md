@@ -29,7 +29,7 @@
 - [x] PyTorch, CUDA, Transformers, and bitsandbytes versions
 - [x] Thread count
 - [x] Seeds, repetitions, and reported statistics
-- [ ] Reproduction commands and final repository tag
+- [x] Reproduction commands and final repository tag
 
 ## Results
 
