@@ -62,12 +62,12 @@ def test_archive_preserves_prior_history_chain_and_evidence() -> None:
         assert "**Evidence:**" in section.split("\n## ", maxsplit=1)[0]
 
 
-def test_active_file_keeps_m125_and_m13_full_and_names_next_work() -> None:
+def test_active_file_keeps_m125_and_m13_full_and_names_project_status() -> None:
     active = ACTIVE.read_text(encoding="utf-8")
 
     assert len(active.splitlines()) < 900
-    assert "**M13 / T1304.**" in active
-    assert "The first incomplete required task is T1304" in active
+    assert "**Required project complete.**" in active
+    assert "Optional O1--O4 remain outside the required scope" in active
     assert "**M12.5 review-fix gate — complete**" in active
     assert "# M12.5 — Review fixes before article writing" in active
     assert "## T1250 —" in active

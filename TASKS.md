@@ -16,9 +16,8 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M13 / T1304.** M0 through M12.5, the M10.5 hardening pass, and T1300--T1303
-are complete. The first incomplete required task is T1304, whose dependencies
-on T1301--T1303 are satisfied.
+**Required project complete.** M0 through M13, including the M10.5 hardening
+pass and M12.5 review-fix gate, are complete. Optional O1--O4 remain outside the required scope.
 
 ## Completed milestone summary
 
@@ -785,29 +784,29 @@ unreadable tables.
 
 **Depends on:** T1301, T1302, T1303
 
-- [ ] Run full Python tests.
-- [ ] Run Rust tests and formatting.
-- [ ] Rebuild bindings.
-- [ ] Re-run publication configs or verify immutable artifacts.
-- [ ] Build the final LaTeX PDF.
-- [ ] Create a release tag.
-- [ ] Archive configs, small raw evidence, processed data, figures, tables, and reproduction instructions.
-- [ ] Record known limitations and any non-reproducible external dependency.
+- [x] Run full Python tests.
+- [x] Run Rust tests and formatting.
+- [x] Rebuild bindings.
+- [x] Re-run publication configs or verify immutable artifacts.
+- [x] Build the final LaTeX PDF.
+- [x] Create a release tag.
+- [x] Archive configs, small raw evidence, processed data, figures, tables, and reproduction instructions.
+- [x] Record known limitations and any non-reproducible external dependency.
 
 **Acceptance criteria**
 
-- [ ] Repository and paper point to the same release commit.
-- [ ] Worktree is clean or intentional untracked artifacts are documented.
+- [x] Repository and paper point to the same release commit.
+- [x] Worktree is clean or intentional untracked artifacts are documented.
 
-**Evidence:** `[test summary, tag, archive paths]`
+**Evidence:** release payload commit `08f59455620630c3b5b0e29f69171af69f515662` is the dereferenced annotated tag [`v0.1.0`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.0) named by the repository and paper. The published release archives 132 config/raw/processed/evidence/table/figure/source/reproduction entries in `mwpc-exact-v0.1.0-evidence.tar.gz` (SHA-256 `e1ae69b6c9e2dbfd1cf69de6c2de2e9d47665a9573e6f9d911ca92f5bfbbf8d5`) plus the 16-page PDF (SHA-256 `5ba5858c549b063ffab0f965407009f3f29339077aee4187fe12cd4dd01716ab`); local and GitHub asset digests agree. `docs/releases/v0.1.0.md` records the exact archive command, scientific boundaries, external EPIC/model/toolchain dependencies, private-release/licensing constraint, and the three author-only identification fields. Gates: full pytest 688 passed; `make check` 11 unit + 667 exact tests; rebuilt PyO3 binding; Rust formatting/Clippy plus 17 unit and 3 randomized tests passed; M4 2000/2000, M5 500/500 + 2000/2000, M6 500/500 + 2000/2000, and M7 500/500 + 2000/2000 differential cases had zero failures; immutable artifact checks reproduced T1203 manifest `28a17dcd3e054d9ab4d676793caf081bbba75eafd6513d1f751fa38436c46acb`; clean-clone artifact rebuild matched byte-for-byte and source rerun reproduced 249/249 agreements with 334 certificate validations; release-wheel installation/import/experiment/artifact smoke passed; `make paper` and all-page Poppler inspection passed at 16 A4 pages. GitHub Actions run [`33554812631`](https://github.com/j0taaa/tcc-final/actions/runs/33554812631) passed verify, Rust correctness, and pinned EPIC integration. The tagged and final bookkeeping worktrees were clean; ignored local copies in `dist/release-v0.1.0/` correspond to the published checksummed assets.
 
 **Required project completion gate**
 
-- [ ] M0–M13 complete.
-- [ ] All scientific-contract rules in `AGENTS.md` hold.
-- [ ] Correctness evidence is 100% on configured oracle campaigns.
-- [ ] Exact end-to-end mode and baselines are reproducible.
-- [ ] TCC contains no fabricated or unsupported implementation/result fields.
+- [x] M0–M13 complete.
+- [x] All scientific-contract rules in `AGENTS.md` hold.
+- [x] Correctness evidence is 100% on configured oracle campaigns.
+- [x] Exact end-to-end mode and baselines are reproducible.
+- [x] TCC contains no fabricated or unsupported implementation/result fields.
 
 ---
 
@@ -894,5 +893,5 @@ Fill this section only with real artifacts.
   `docs/evidence/t1102-q2-heuristic-gap-summary.json`
 - Scaling experiment artifact: `docs/evidence/t1255-q4-publication-summary.json`
 - End-to-end experiment artifact: `docs/evidence/t1253-q5-publication-summary.json`
-- Reproduction release/tag: `[TO BE RECORDED]`
-- Final TCC PDF/source commit: `[TO BE RECORDED]`
+- Reproduction release/tag: [`v0.1.0`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.0), commit `08f59455620630c3b5b0e29f69171af69f515662`
+- Final TCC PDF/source commit: [`mwpc-exact-v0.1.0-paper.pdf`](https://github.com/j0taaa/tcc-final/releases/download/v0.1.0/mwpc-exact-v0.1.0-paper.pdf), source tag `v0.1.0`
