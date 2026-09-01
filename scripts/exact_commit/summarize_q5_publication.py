@@ -18,6 +18,10 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CONFIG = REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v4.toml"
 DEFAULT_RESULTS_ROOT = REPOSITORY_ROOT / "results/raw/q5_structured_publication_v4"
 DEFAULT_OUTPUT = REPOSITORY_ROOT / "docs/evidence/t1253-q5-publication-summary.json"
+DEFAULT_PINNED_RAW_OUTPUT = (
+    REPOSITORY_ROOT
+    / "docs/artifacts/raw/m125_publication_results_v1/q5-end-to-end-rows.jsonl"
+)
 STRATEGIES = ("unconstrained", "serial", "epic", "exact")
 
 
@@ -173,8 +177,24 @@ def main() -> int:
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--results-root", type=Path, default=DEFAULT_RESULTS_ROOT)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--pinned-raw-output", type=Path, default=DEFAULT_PINNED_RAW_OUTPUT)
     arguments = parser.parse_args()
     summary = summarize_campaign(arguments.config.resolve(), arguments.results_root.resolve())
+    runs = summary["runs"]
+    if not isinstance(runs, list):
+        raise TypeError("Q5 campaign summary has invalid runs")
+    raw_paths: list[Path] = []
+    for run in runs:
+        if not isinstance(run, dict):
+            raise TypeError("Q5 campaign summary has an invalid run")
+        raw_paths.append(REPOSITORY_ROOT / str(run["raw_path"]))
+    pinned_payload = b"".join(path.read_bytes() for path in raw_paths)
+    arguments.pinned_raw_output.parent.mkdir(parents=True, exist_ok=True)
+    arguments.pinned_raw_output.write_bytes(pinned_payload)
+    summary["pinned_raw_path"] = arguments.pinned_raw_output.relative_to(
+        REPOSITORY_ROOT
+    ).as_posix()
+    summary["pinned_raw_sha256"] = _sha256(arguments.pinned_raw_output)
     arguments.output.parent.mkdir(parents=True, exist_ok=True)
     arguments.output.write_text(
         json.dumps(summary, allow_nan=False, indent=2, sort_keys=True) + "\n",
