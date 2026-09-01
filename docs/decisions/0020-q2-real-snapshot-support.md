@@ -25,6 +25,10 @@ The EPIC CFG is generated from every grammar-valid token sequence in the saved
 finite support, and semantic alignment is exhaustively rechecked over that same
 support. This avoids pretending that arbitrary tokenizer pieces are grammar
 terminal names while preserving exactly the represented snapshot language.
+When every represented path is valid, the alignment fixture also includes the
+empty token sequence as an explicitly out-of-support negative sentinel because
+the shared semantic-alignment contract requires both a positive and a negative
+case. The sentinel is never added to the optimization support.
 
 All three selectors replay the identical snapshot hash. The represented row at
 each masked position is the saved primary proposal plus the independently known

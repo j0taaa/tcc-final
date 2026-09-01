@@ -158,6 +158,11 @@ def build_real_snapshot_instance(
             )
     if not accepted_symbol_sequences:
         raise ValueError("real Q2 support omitted every grammar-valid target tokenization")
+    negative_sentinel_added = not any(
+        not case.expected_accepts for case in alignment_cases
+    )
+    if negative_sentinel_added:
+        alignment_cases.append(AlignmentCase(token_ids=(), expected_accepts=False))
     epic_cfg_text = "S -> " + " | ".join(accepted_symbol_sequences)
     benchmark_grammar = BenchmarkGrammar(
         grammar_id=grammar_id,
@@ -169,7 +174,7 @@ def build_real_snapshot_instance(
         source_grammar_id=grammar_id,
         exact_compiler_version="mwpc_exact_literal_utf8_cnf_v1",
         epic_compiler_version="rustformlang_cfg_from_text_v1",
-        method="exhaustive_saved_support_token_sequences_v1",
+        method="exhaustive_saved_support_plus_optional_empty_negative_v1",
         cases=tuple(alignment_cases),
     )
     decoded_tokens = tuple((local, token_symbols[local]) for local in range(len(token_symbols)))
@@ -217,6 +222,7 @@ def build_real_snapshot_instance(
             "source_kind": "live_llada_epic_denoising_selector_state",
             "contains_model_weights": False,
             "support_interpretation": "explicit_primary_proposal_plus_target_witness",
+            "alignment_negative_sentinel_added": negative_sentinel_added,
             "actual_token_decodings": [
                 {
                     "actual_token_id": actual,

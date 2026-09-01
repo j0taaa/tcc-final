@@ -90,6 +90,31 @@ def test_real_snapshot_replays_three_selectors_and_validates_exact_certificate()
     )
 
 
+def test_all_valid_support_gets_out_of_support_negative_alignment_sentinel() -> None:
+    instance = build_real_snapshot_instance(
+        instance_id="real-ab-all-valid",
+        grammar=_literal_ab_grammar(),
+        target_token_ids=(0, 1),
+        canvas_token_ids=(None, None),
+        predicted_token_ids=(0, 1),
+        confidence_values=(0.9, 0.8),
+        source_adapter=CompositionalByteLevelAdapter((b"a", b"b")),
+        decode_actual_token=lambda token_id: ("a", "b")[token_id],
+        metadata={"task_id": "ab", "seed": 7, "selected_state_rank": 0},
+    )
+
+    cases = instance.to_dict()["expected_metadata"]["semantic_alignment"]["cases"]
+    assert cases == [
+        {"token_ids": [0, 1], "expected_accepts": True},
+        {"token_ids": [], "expected_accepts": False},
+    ]
+    assert instance.metadata["alignment_negative_sentinel_added"] is True
+    row = replay_real_snapshot(
+        instance, timeout_seconds=5.0, maximum_support_combinations=16
+    )
+    assert row["selector_results"]["exact_mwpc"]["status"] == "optimal"
+
+
 def test_real_summary_keeps_real_snapshot_denominators_and_zero_optima() -> None:
     row = replay_real_snapshot(_instance(), timeout_seconds=5.0, maximum_support_combinations=16)
     summary = summarize_real_rows((row,))
