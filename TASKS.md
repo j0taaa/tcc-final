@@ -1026,26 +1026,48 @@ changed.
 **Review finding:** 11 — the current clean-clone rehearsal rebuilds artifacts
 from pinned rows but does not rerun the source experiment.
 
-- [ ] Name and document two distinct rehearsal levels:
+- [x] Name and document two distinct rehearsal levels:
   `artifact-rebuild` (pinned raw rows to generated output) and
   `source-experiment-rerun` (code plus config to new raw rows and output).
-- [ ] Keep byte-for-byte comparison for deterministic artifact rebuilds.
-- [ ] For the CPU correctness source rerun, compare case IDs, statuses,
+- [x] Keep byte-for-byte comparison for deterministic artifact rebuilds.
+- [x] For the CPU correctness source rerun, compare case IDs, statuses,
   objectives, agreement counts, and certificate validity while excluding timing
   fields from byte-identity requirements.
-- [ ] Run the release-oriented rehearsal from a clean checkout and non-editable
+- [x] Run the release-oriented rehearsal from a clean checkout and non-editable
   wheel install so packaging and source availability are tested together.
-- [ ] Document which GPU/model experiments remain external or optional and do
+- [x] Document which GPU/model experiments remain external or optional and do
   not claim they were rerun when they were not.
 
 **Acceptance criteria**
 
-- [ ] Both rehearsal levels have distinct commands, expected artifacts, and
+- [x] Both rehearsal levels have distinct commands, expected artifacts, and
   failure conditions.
-- [ ] A deterministic test proves that a semantic correctness mismatch fails the
+- [x] A deterministic test proves that a semantic correctness mismatch fails the
   source-rerun rehearsal even when timing fields differ legitimately.
 
-**Evidence:** `[rehearsal commands, semantic comparison output, clean-clone test]`
+**Evidence:** `REPRODUCING.md` defines `make rehearse-artifact-rebuild` and
+`make rehearse-source-correctness` with separate inputs, temporary outputs,
+comparison rules, and failure conditions; it explicitly excludes Q2/Q4 and all
+CUDA/model Q5 runs from the T1260 claim. Both commands clone the clean commit,
+build `mwpc-exact` from that clone, install its wheel non-editably outside the
+source tree, and reject source-tree imports. On commit
+`8bd5ff5c69f896e1b799f2703eafe4dc6b71d869`, `make
+rehearse-artifact-rebuild` passed a recursive byte comparison of every
+processed/paper output and reproduced manifest SHA-256
+`28a17dcd3e054d9ab4d676793caf081bbba75eafd6513d1f751fa38436c46acb`.
+`make rehearse-source-correctness` additionally built and non-editably
+installed the independent Rust binding, reran all 249 configured Q1 cases, and
+reported `comparison=PASS`, 249 agreements, 334 independent certificate
+validations, semantic-summary SHA-256
+`8658c44a1d442e7dd63cc434ab65386daf66605d4baa18ba49015a1cf55fe682`,
+and table SHA-256
+`ea89d63ff989a629a0d60b05335d306b8f2de0401b591b9f5bd314d0cda17f9a`;
+timing fields were not compared. The first source run exposed that infeasible
+rows correctly omit optimal-certificate checks; the comparator now maps that
+absence to zero only for non-`optimal` rows, with a deterministic regression.
+`python -m pytest -q tests/exact_commit/test_t1260_correctness_rehearsal.py
+tests/exact_commit/test_reproduction_instructions.py` -> 9 passed; `make
+check` -> 10 unit and 640 exact tests passed.
 
 ## T1261 — Archive completed M11/M12 task detail
 
