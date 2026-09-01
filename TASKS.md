@@ -817,24 +817,51 @@ check` -> 10 unit and 617 exact tests passed; `make paper` -> 15 pages.
 **Review finding:** 6 — the current two-repetition ranges cannot support broad
 runtime or scaling claims.
 
-- [ ] Retain the current Q4 bundle as a CPU component smoke.
-- [ ] Label `graph_size_scale` as a compound graph-size setting because it
+- [x] Retain the current Q4 bundle as a CPU component smoke.
+- [x] Label `graph_size_scale` as a compound graph-size setting because it
   changes represented width and token byte length together.
-- [ ] Prevent median/IQR claims for groups with insufficient repetitions.
-- [ ] If T1252 selects publication-mode evidence, use an immutable config with
+- [x] Prevent median/IQR claims for groups with insufficient repetitions.
+- [x] If T1252 selects publication-mode evidence, use an immutable config with
   at least 10 repetitions per point (target 20 where the declared resource plan
   permits), broader slot and top-`K` ranges up to declared resource limits,
   explicit censoring/timeouts, and separate Python/Rust series.
-- [ ] If T1252 selects preliminary evidence, defer the expanded run and restrict
-  Q4 conclusions to pipeline operation on the configured smoke range.
+- [x] Preliminary-only branch is not applicable because T1252 selected
+  publication-mode evidence; the expanded run was completed instead.
 
 **Acceptance criteria**
 
-- [ ] No timeout or censored row is summarized as a successful runtime.
-- [ ] The article cannot describe the compound graph-size setting as an isolated
+- [x] No timeout or censored row is summarized as a successful runtime.
+- [x] The article cannot describe the compound graph-size setting as an isolated
   causal variable or the smoke curves as representative workload scaling.
 
-**Evidence:** `[wording/tests and, when selected, publication config/raw rows/summary]`
+**Evidence:** Commit `a4ea377570d730a32000cf376f29ff500da84a3b`
+enabled only the predeclared publication fields in the existing Q4 driver and
+changed the T1203 two-repetition smoke artifact to withhold all 42 per-point
+median/IQR distributions. Its replacement SVG says that the raw rows remain
+diagnostic and that `graph_size_scale` jointly changes support width and token
+byte length. `env PYTHONDONTWRITEBYTECODE=1 .venv/bin/python
+scripts/exact_commit/run_q4_scaling.py --config
+configs/experiments/q4_scaling_publication_v1.toml` ran 27 generated settings,
+10 repetitions and both backends in isolated 2 GiB workers: 540/540 `OPTIMAL`,
+zero censored/timeouts/errors, and zero mismatches across 270 Python/Rust
+pairs. Slots and top-`K` reached 16; grammar productions reached 32; compound
+graph size and token byte length reached 8; proposal count reached 16.
+`python scripts/exact_commit/summarize_q4_publication.py --raw-input
+results/raw/q4_scaling_publication_v1/q4_scaling_publication_v1-20260901T030111Z/q4-scaling-rows.jsonl`
+independently recomputed all witness objectives and selected IDs before
+pinning `docs/artifacts/raw/m125_publication_results_v1/q4-scaling-rows.jsonl`
+(SHA-256
+`63abf6a974bdd74f20b34f7f80e9c3d646a30f9385f359a76a4747c86f8eef51`)
+and `docs/evidence/t1255-q4-publication-summary.json` (SHA-256
+`8570ee64c462a8139302867be56a8abc3c7f116cbb589f363a4c29807b5505f1`).
+Every one of the 54 backend/point distributions contains 10 successful,
+uncensored runtimes and reports median/IQR separately by backend. `python -m
+pytest -q tests/exact_commit/test_t1255_evidence.py
+tests/exact_commit/test_q4_scaling.py tests/exact_commit/test_final_artifacts.py
+tests/exact_commit/test_t1203_evidence.py
+tests/exact_commit/test_publication_evidence_policy.py` -> 20 passed; `make
+final-artifacts-check` passed; `make check` -> 10 unit and 621 exact tests
+passed; `make paper` -> 15 pages.
 
 ## T1256 — Freeze the experiment and artifact architecture
 

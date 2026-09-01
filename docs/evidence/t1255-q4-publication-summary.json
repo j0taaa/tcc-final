@@ -1,0 +1,1336 @@
+{
+  "all_optimal_certificates_independently_rechecked": true,
+  "artifact_kind": "mwpc_q4_publication_campaign_summary",
+  "axis_values": {
+    "grammar_production_count": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "graph_size_scale": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "proposal_count": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "slot_count": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "token_byte_length": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "top_k": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ]
+  },
+  "backend_comparison_count": 270,
+  "backend_mismatch_count": 0,
+  "backend_status_counts": {
+    "python": {
+      "optimal": 270
+    },
+    "rust": {
+      "optimal": 270
+    }
+  },
+  "censored_count": 0,
+  "config_file_sha256": "5b336d864b8a9ba8e86ec5a9ca24a8961ed83c57d2d6c4da33517b8707d69b4f",
+  "config_normalized_sha256": "265f812036df651bab9c585a8c95a496f5ab27f9ab0c073e56ff35897320cfa7",
+  "config_path": "configs/experiments/q4_scaling_publication_v1.toml",
+  "configured_repetitions_per_backend_point": 10,
+  "error_count": 0,
+  "graph_size_scale_interpretation": "compound_support_width_and_token_byte_length",
+  "measurement_count": 540,
+  "minimum_repetitions_for_distribution": 10,
+  "pinned_raw_path": "docs/artifacts/raw/m125_publication_results_v1/q4-scaling-rows.jsonl",
+  "pinned_raw_sha256": "63abf6a974bdd74f20b34f7f80e9c3d646a30f9385f359a76a4747c86f8eef51",
+  "point_count": 27,
+  "producing_commit": "a4ea377570d730a32000cf376f29ff500da84a3b",
+  "publication_bundle_id": "m125_publication_results_v1",
+  "raw_sha256": "63abf6a974bdd74f20b34f7f80e9c3d646a30f9385f359a76a4747c86f8eef51",
+  "raw_source_path": "results/raw/q4_scaling_publication_v1/q4_scaling_publication_v1-20260901T030111Z/q4-scaling-rows.jsonl",
+  "run_metadata": {
+    "config": {
+      "experiment_id": "q4_scaling_publication_v1",
+      "publication_mode": true,
+      "question": "scaling",
+      "sha256": "265f812036df651bab9c585a8c95a496f5ab27f9ab0c073e56ff35897320cfa7"
+    },
+    "config_sha256": "265f812036df651bab9c585a8c95a496f5ab27f9ab0c073e56ff35897320cfa7",
+    "exactness": {
+      "guarantee": "per_step",
+      "independent_certificate_required": true,
+      "scope": "exact_on_support"
+    },
+    "generated_at_utc": "2026-09-01T03:01:11.352783+00:00",
+    "git_commit": "a4ea377570d730a32000cf376f29ff500da84a3b",
+    "git_dirty": false,
+    "grammar": {
+      "grammar_id": "generated_reachable_a_plus_cfgs",
+      "hash_policy": "sha256_per_instance",
+      "revision": "scaling_generator_v1",
+      "sha256": [
+        "1e5a9e27aa252fedc7d52484f5dc770a75026e94bc6f0f8acda4a85ca22ae29b",
+        "6ae6a67759fd004dc85bea7b2ce64623e0bdb985eaad2b0d8c7fc969b69e4545",
+        "6e09addbf98343de6e1d63032e3f94b9132a065d85b84f7325153aa5f68b8439",
+        "af24ebed6c24360ac6eeaa4c3788e2184d1ecfa0fb3bdf3defbecb0764d22a8f"
+      ],
+      "source": "m11_scaling_generator_v1"
+    },
+    "graph_size_scale_interpretation": "compound_support_width_and_token_byte_length",
+    "hardware": {
+      "accelerator_config": {
+        "cuda_device": null,
+        "device": "cpu",
+        "dtype": "float64",
+        "synchronize_cuda": false
+      },
+      "cpu": {
+        "affinity_count": 16,
+        "logical_count": 16,
+        "machine": "x86_64",
+        "model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz"
+      },
+      "gpu": {
+        "available": true,
+        "driver_version": "595.84",
+        "name": "NVIDIA GeForce RTX 3080 Ti",
+        "total_vram_bytes": 12884901888
+      },
+      "os": {
+        "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+        "release": "7.0.0-30-generic",
+        "system": "Linux"
+      },
+      "ram": {
+        "total_bytes": 16609316864
+      },
+      "threads": {
+        "configured_cpu_threads": 1,
+        "environment": {
+          "MKL_NUM_THREADS": null,
+          "NUMEXPR_NUM_THREADS": null,
+          "OMP_NUM_THREADS": null,
+          "OPENBLAS_NUM_THREADS": null,
+          "RAYON_NUM_THREADS": null,
+          "RUST_MIN_STACK": null
+        }
+      }
+    },
+    "metadata_integrity": {
+      "critical_fields_complete": true,
+      "missing_critical_fields": [],
+      "publication_blockers": []
+    },
+    "metadata_schema_version": 1,
+    "minimum_repetitions_for_distribution": 10,
+    "model": {
+      "local_files_only": true,
+      "model_id": "not_applicable_generated_scaling_instances",
+      "requested_revision": "scaling_generator_v1"
+    },
+    "point_count": 27,
+    "publication_bundle_id": "m125_publication_results_v1",
+    "repetitions": 10,
+    "run_id": "q4_scaling_publication_v1-20260901T030111Z",
+    "seeds": [
+      1255
+    ],
+    "software_versions": {
+      "cuda_driver_supported_runtime": "13.2",
+      "cuda_runtime": null,
+      "cuda_toolkit": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+      "mwpc_exact": "0.1.0",
+      "mwpc_parser_py": "0.1.0",
+      "python": "3.11.16",
+      "pytorch": "2.8.0+cpu",
+      "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+      "rustformlang": "0.1.0",
+      "transformers": "4.52.2"
+    },
+    "solver_status_counts": {
+      "python": {
+        "optimal": 270
+      },
+      "rust": {
+        "optimal": 270
+      }
+    },
+    "support": {
+      "finite_slots": true,
+      "k_max": 16,
+      "policy": "generated_top_k_or_explicit_per_position",
+      "top_k": 2
+    },
+    "timeout_enforcement": "fresh_subprocess_wall_deadline_for_both_backends_plus_native_rust_deadline",
+    "timeouts": {
+      "run_seconds": 7200.0,
+      "solver_seconds": 30.0
+    },
+    "timing_scope": "expanded_generated_cpu_scaling_publication_campaign",
+    "tokenizer": {
+      "requested_revision": "scaling_generator_v1",
+      "tokenizer_id": "generated_raw_byte_vocabulary"
+    }
+  },
+  "scaling_series": [
+    {
+      "axis": "grammar_production_count",
+      "axis_value": 4,
+      "backend": "python",
+      "case_id": "grammar_production_count-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.71879910340067e-05,
+        "maximum": 0.0009413670049980283,
+        "mean": 0.0009005917003378272,
+        "median": 0.0009008994966279715,
+        "minimum": 0.0008745999948587269,
+        "q1": 0.0008866392527124844,
+        "q3": 0.0009038272437464911,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "grammar_production_count",
+      "axis_value": 4,
+      "backend": "rust",
+      "case_id": "grammar_production_count-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.5954250304494053e-05,
+        "maximum": 0.0013959490024717525,
+        "mean": 0.0012612735023139975,
+        "median": 0.00124510150635615,
+        "minimum": 0.0012125290086260065,
+        "q1": 0.0012395929952617735,
+        "q3": 0.0012655472455662675,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "grammar_production_count",
+      "axis_value": 8,
+      "backend": "python",
+      "case_id": "grammar_production_count-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.1547745089046657e-05,
+        "maximum": 0.0009434710082132369,
+        "mean": 0.0009243067004717886,
+        "median": 0.0009247380075976253,
+        "minimum": 0.0009089020022656769,
+        "q1": 0.0009175749983114656,
+        "q3": 0.0009291227434005123,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "grammar_production_count",
+      "axis_value": 8,
+      "backend": "rust",
+      "case_id": "grammar_production_count-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.3693497243802994e-05,
+        "maximum": 0.0015824830043129623,
+        "mean": 0.001293745296425186,
+        "median": 0.001266321494767908,
+        "minimum": 0.0012258939968887717,
+        "q1": 0.0012466792468330823,
+        "q3": 0.0012803727440768853,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "grammar_production_count",
+      "axis_value": 16,
+      "backend": "python",
+      "case_id": "grammar_production_count-0016",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.3378248695516959e-05,
+        "maximum": 0.0010910419950960204,
+        "mean": 0.0009763220965396613,
+        "median": 0.0009638044939492829,
+        "minimum": 0.0009429869969608262,
+        "q1": 0.0009579484976711683,
+        "q3": 0.0009713267463666853,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "grammar_production_count",
+      "axis_value": 16,
+      "backend": "rust",
+      "case_id": "grammar_production_count-0016",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.7304260584060103e-05,
+        "maximum": 0.0013576350029325113,
+        "mean": 0.0012819579016650096,
+        "median": 0.001280802498513367,
+        "minimum": 0.0012363690038910136,
+        "q1": 0.0012645017486647703,
+        "q3": 0.0012918060092488304,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "grammar_production_count",
+      "axis_value": 32,
+      "backend": "python",
+      "case_id": "grammar_production_count-0032",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.179724833695218e-05,
+        "maximum": 0.0010704450105549768,
+        "mean": 0.0010381486994447187,
+        "median": 0.0010353990001021884,
+        "minimum": 0.001014851004583761,
+        "q1": 0.0010266979952575639,
+        "q3": 0.001048495243594516,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "grammar_production_count",
+      "axis_value": 32,
+      "backend": "rust",
+      "case_id": "grammar_production_count-0032",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.7417751223547384e-05,
+        "maximum": 0.0013519519998226315,
+        "mean": 0.0013018458004808054,
+        "median": 0.001293999004701618,
+        "minimum": 0.0012741760001517832,
+        "q1": 0.0012916547493659891,
+        "q3": 0.0013090725005895365,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "graph_size_scale",
+      "axis_value": 1,
+      "backend": "python",
+      "case_id": "graph_size_scale-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.793175033526495e-05,
+        "maximum": 0.0008151509973686188,
+        "mean": 0.0007989913006895222,
+        "median": 0.0007989725054358132,
+        "minimum": 0.0007827649969840422,
+        "q1": 0.0007915864989627153,
+        "q3": 0.0008095182492979802,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "graph_size_scale",
+      "axis_value": 1,
+      "backend": "rust",
+      "case_id": "graph_size_scale-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 5.125101233716123e-05,
+        "maximum": 0.0012135989964008331,
+        "mean": 0.0011322648977511562,
+        "median": 0.0011207339994143695,
+        "minimum": 0.0010837709996849298,
+        "q1": 0.001102613994589774,
+        "q3": 0.0011538650069269352,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "graph_size_scale",
+      "axis_value": 2,
+      "backend": "python",
+      "case_id": "graph_size_scale-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.749700095388107e-05,
+        "maximum": 0.001086796008166857,
+        "mean": 0.0010514799025258981,
+        "median": 0.0010446435044286773,
+        "minimum": 0.0010292170045431703,
+        "q1": 0.0010389789968030527,
+        "q3": 0.0010564759977569338,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "graph_size_scale",
+      "axis_value": 2,
+      "backend": "rust",
+      "case_id": "graph_size_scale-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.668649540282786e-05,
+        "maximum": 0.0013923859951319173,
+        "mean": 0.001333331799833104,
+        "median": 0.001324549004493747,
+        "minimum": 0.0012979079911019653,
+        "q1": 0.0013140870032657403,
+        "q3": 0.0013407734986685682,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "graph_size_scale",
+      "axis_value": 4,
+      "backend": "python",
+      "case_id": "graph_size_scale-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.32959825755097e-05,
+        "maximum": 0.003190190007444471,
+        "mean": 0.0031060684996191412,
+        "median": 0.003097973996773362,
+        "minimum": 0.0030673619912704453,
+        "q1": 0.003083832260017516,
+        "q3": 0.003117128242593026,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "graph_size_scale",
+      "axis_value": 4,
+      "backend": "rust",
+      "case_id": "graph_size_scale-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.648399847908877e-05,
+        "maximum": 0.0020811670110560954,
+        "mean": 0.0020159145977231676,
+        "median": 0.0020119599939789623,
+        "minimum": 0.0019979720091214404,
+        "q1": 0.0020006639970233664,
+        "q3": 0.002017147995502455,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "graph_size_scale",
+      "axis_value": 8,
+      "backend": "python",
+      "case_id": "graph_size_scale-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 0.0009575699914421421,
+        "maximum": 0.06841314799385145,
+        "mean": 0.06723031509900465,
+        "median": 0.06744691149651771,
+        "minimum": 0.06575122699723579,
+        "q1": 0.06671797451053862,
+        "q3": 0.06767554450198077,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "graph_size_scale",
+      "axis_value": 8,
+      "backend": "rust",
+      "case_id": "graph_size_scale-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.807500615948811e-05,
+        "maximum": 0.01760314499551896,
+        "mean": 0.017479231698962393,
+        "median": 0.01747712700307602,
+        "minimum": 0.01740152899583336,
+        "q1": 0.017448022746975766,
+        "q3": 0.017486097753135255,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 1,
+      "backend": "python",
+      "case_id": "proposal_count-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.7019501683535054e-05,
+        "maximum": 0.0009084339981200173,
+        "mean": 0.0008803983029793017,
+        "median": 0.0008800755022093654,
+        "minimum": 0.0008626580092823133,
+        "q1": 0.0008683230007591192,
+        "q3": 0.0008853425024426542,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 1,
+      "backend": "rust",
+      "case_id": "proposal_count-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.255149204051122e-05,
+        "maximum": 0.0012788150052074343,
+        "mean": 0.0012354714024695567,
+        "median": 0.0012326904980000108,
+        "minimum": 0.001205046006361954,
+        "q1": 0.0012169275069027208,
+        "q3": 0.001249478998943232,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 2,
+      "backend": "python",
+      "case_id": "proposal_count-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 5.075700391898863e-05,
+        "maximum": 0.0009725470008561388,
+        "mean": 0.0009115706008742564,
+        "median": 0.0009036680057761259,
+        "minimum": 0.000871493000886403,
+        "q1": 0.0008873317456163932,
+        "q3": 0.0009380887495353818,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 2,
+      "backend": "rust",
+      "case_id": "proposal_count-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.4498251150362194e-05,
+        "maximum": 0.0013296630058903247,
+        "mean": 0.00126004240300972,
+        "median": 0.001258501004485879,
+        "minimum": 0.001221407001139596,
+        "q1": 0.0012428227528289426,
+        "q3": 0.0012673210039793048,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 4,
+      "backend": "python",
+      "case_id": "proposal_count-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.3356493329629302e-05,
+        "maximum": 0.0009613930014893413,
+        "mean": 0.000925718602957204,
+        "median": 0.0009244720058632083,
+        "minimum": 0.0009002150036394596,
+        "q1": 0.0009115885077335406,
+        "q3": 0.0009349450010631699,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 4,
+      "backend": "rust",
+      "case_id": "proposal_count-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.3997254174901173e-05,
+        "maximum": 0.0013565600092988461,
+        "mean": 0.0012842532014474273,
+        "median": 0.0012839190021622926,
+        "minimum": 0.00125385400315281,
+        "q1": 0.0012645202477870043,
+        "q3": 0.0012885175019619055,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 8,
+      "backend": "python",
+      "case_id": "proposal_count-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.9327751942910254e-05,
+        "maximum": 0.0009870880021480843,
+        "mean": 0.0009447382006328553,
+        "median": 0.0009480470034759492,
+        "minimum": 0.0009141850023297593,
+        "q1": 0.0009329274980700575,
+        "q3": 0.0009522552500129677,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 8,
+      "backend": "rust",
+      "case_id": "proposal_count-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.516674794605933e-05,
+        "maximum": 0.0013417789887171239,
+        "mean": 0.001305831197532825,
+        "median": 0.0013081409997539595,
+        "minimum": 0.0012736970093101263,
+        "q1": 0.0012914344952150714,
+        "q3": 0.0013166012431611307,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 16,
+      "backend": "python",
+      "case_id": "proposal_count-0016",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.9878501663915813e-05,
+        "maximum": 0.0009866449981927872,
+        "mean": 0.0009633814974222332,
+        "median": 0.0009640894932090305,
+        "minimum": 0.0009457690030103549,
+        "q1": 0.0009475237457081676,
+        "q3": 0.0009774022473720834,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "proposal_count",
+      "axis_value": 16,
+      "backend": "rust",
+      "case_id": "proposal_count-0016",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.1692492737201974e-05,
+        "maximum": 0.001441225002054125,
+        "mean": 0.0013460747999488377,
+        "median": 0.0013339264987735078,
+        "minimum": 0.0013161829992895946,
+        "q1": 0.001321715499216225,
+        "q3": 0.001343407991953427,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 1,
+      "backend": "python",
+      "case_id": "slot_count-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.7682756151771173e-05,
+        "maximum": 0.0007230129995150492,
+        "mean": 0.0006984569990891032,
+        "median": 0.000697669995133765,
+        "minimum": 0.0006752609915565699,
+        "q1": 0.0006900629996380303,
+        "q3": 0.0007077457557898015,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 1,
+      "backend": "rust",
+      "case_id": "slot_count-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 4.32872366218362e-05,
+        "maximum": 0.0012228859995957464,
+        "mean": 0.0010832763990038074,
+        "median": 0.0010640420005074702,
+        "minimum": 0.001039029986714013,
+        "q1": 0.0010529502578719985,
+        "q3": 0.0010962374944938347,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 2,
+      "backend": "python",
+      "case_id": "slot_count-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.5332749171648175e-05,
+        "maximum": 0.00093037799524609,
+        "mean": 0.0009053764006239362,
+        "median": 0.0009051494998857379,
+        "minimum": 0.0008885850111255422,
+        "q1": 0.0008961574967543129,
+        "q3": 0.0009114902459259611,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 2,
+      "backend": "rust",
+      "case_id": "slot_count-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.953773557441309e-05,
+        "maximum": 0.0015020569990156218,
+        "mean": 0.0012787810963345691,
+        "median": 0.0012490979934227653,
+        "minimum": 0.001224467996507883,
+        "q1": 0.0012358127569314092,
+        "q3": 0.0012753504925058223,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 4,
+      "backend": "python",
+      "case_id": "slot_count-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.048801641445607e-05,
+        "maximum": 0.0011901300022145733,
+        "mean": 0.0011725063988706097,
+        "median": 0.0011710524995578453,
+        "minimum": 0.0011567469919100404,
+        "q1": 0.0011668802435451653,
+        "q3": 0.0011773682599596214,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 4,
+      "backend": "rust",
+      "case_id": "slot_count-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.9839997043600306e-05,
+        "maximum": 0.001534487004391849,
+        "mean": 0.00148926519905217,
+        "median": 0.0014824554964434355,
+        "minimum": 0.0014617709966842085,
+        "q1": 0.0014686480026284698,
+        "q3": 0.0015084879996720701,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 8,
+      "backend": "python",
+      "case_id": "slot_count-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.1368003470124677e-05,
+        "maximum": 0.001794413008610718,
+        "mean": 0.0017717033013468608,
+        "median": 0.0017702344921417534,
+        "minimum": 0.0017581529973540455,
+        "q1": 0.0017630857510084752,
+        "q3": 0.0017744537544785999,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 8,
+      "backend": "rust",
+      "case_id": "slot_count-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.5558991183061153e-05,
+        "maximum": 0.0027685390086844563,
+        "mean": 0.001971821900224313,
+        "median": 0.00188231000356609,
+        "minimum": 0.0018455140088917688,
+        "q1": 0.0018717877537710592,
+        "q3": 0.0018973467449541204,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 16,
+      "backend": "python",
+      "case_id": "slot_count-0016",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 5.6056989706121385e-05,
+        "maximum": 0.004100058009498753,
+        "mean": 0.004029834398534149,
+        "median": 0.0040326855014427565,
+        "minimum": 0.003975190993514843,
+        "q1": 0.0039987270029087085,
+        "q3": 0.00405478399261483,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "slot_count",
+      "axis_value": 16,
+      "backend": "rust",
+      "case_id": "slot_count-0016",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.841500074486248e-05,
+        "maximum": 0.0029632799996761605,
+        "mean": 0.0029225922029581853,
+        "median": 0.0029185935054556467,
+        "minimum": 0.0028779420099454,
+        "q1": 0.0029067132527416106,
+        "q3": 0.002945128253486473,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "token_byte_length",
+      "axis_value": 1,
+      "backend": "python",
+      "case_id": "token_byte_length-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.42392452491913e-05,
+        "maximum": 0.0009204499947372824,
+        "mean": 0.0009024212980875745,
+        "median": 0.0009040285003720783,
+        "minimum": 0.0008830149890854955,
+        "q1": 0.000889336002728669,
+        "q3": 0.0009135752479778603,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "token_byte_length",
+      "axis_value": 1,
+      "backend": "rust",
+      "case_id": "token_byte_length-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.2335516405291855e-05,
+        "maximum": 0.0013020759943174198,
+        "mean": 0.0012539556992123835,
+        "median": 0.001249214998097159,
+        "minimum": 0.0012335240026004612,
+        "q1": 0.0012387339920678642,
+        "q3": 0.001261069508473156,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "token_byte_length",
+      "axis_value": 2,
+      "backend": "python",
+      "case_id": "token_byte_length-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.7885747840628028e-05,
+        "maximum": 0.0015815499937161803,
+        "mean": 0.0011281092971330508,
+        "median": 0.001080241498129908,
+        "minimum": 0.0010601469984976575,
+        "q1": 0.0010650797448761296,
+        "q3": 0.0010929654927167576,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "token_byte_length",
+      "axis_value": 2,
+      "backend": "rust",
+      "case_id": "token_byte_length-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.9192502552177757e-05,
+        "maximum": 0.0014217879943316802,
+        "mean": 0.001357433700468391,
+        "median": 0.0013430719991447404,
+        "minimum": 0.0013265450106700882,
+        "q1": 0.0013379249940044247,
+        "q3": 0.0013671174965566024,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "token_byte_length",
+      "axis_value": 4,
+      "backend": "python",
+      "case_id": "token_byte_length-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.080399983446114e-05,
+        "maximum": 0.0016888819955056533,
+        "mean": 0.0016476921024150214,
+        "median": 0.001638989502680488,
+        "minimum": 0.001628404002985917,
+        "q1": 0.0016313380074279848,
+        "q3": 0.001662142007262446,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "token_byte_length",
+      "axis_value": 4,
+      "backend": "rust",
+      "case_id": "token_byte_length-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.773074786295183e-05,
+        "maximum": 0.0016385960043407977,
+        "mean": 0.0015794288017787039,
+        "median": 0.0015635184972779825,
+        "minimum": 0.0015460430004168302,
+        "q1": 0.0015576502555632032,
+        "q3": 0.001595381003426155,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "token_byte_length",
+      "axis_value": 8,
+      "backend": "python",
+      "case_id": "token_byte_length-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 4.305900074541569e-05,
+        "maximum": 0.004863508002017625,
+        "mean": 0.004787119798129425,
+        "median": 0.004777816000569146,
+        "minimum": 0.004730297994683497,
+        "q1": 0.004762378997838823,
+        "q3": 0.004805437998584239,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "token_byte_length",
+      "axis_value": 8,
+      "backend": "rust",
+      "case_id": "token_byte_length-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.974999759113416e-05,
+        "maximum": 0.002582948000053875,
+        "mean": 0.0024477592000039295,
+        "median": 0.002419716001895722,
+        "minimum": 0.0024112009996315464,
+        "q1": 0.0024160722532542422,
+        "q3": 0.0024358222508453764,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 1,
+      "backend": "python",
+      "case_id": "top_k-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.660075915628113e-05,
+        "maximum": 0.0008560279966332018,
+        "mean": 0.0008211950000259094,
+        "median": 0.0008223495024139993,
+        "minimum": 0.0007859339966671541,
+        "q1": 0.0008069607429206371,
+        "q3": 0.0008335615020769183,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 1,
+      "backend": "rust",
+      "case_id": "top_k-0001",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.7434252842795104e-05,
+        "maximum": 0.0011680869938572869,
+        "mean": 0.0011301984020974487,
+        "median": 0.0011289455069345422,
+        "minimum": 0.001102188994991593,
+        "q1": 0.001113706504838774,
+        "q3": 0.001141140757681569,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 2,
+      "backend": "python",
+      "case_id": "top_k-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.6691999917384237e-05,
+        "maximum": 0.0009353810019092634,
+        "mean": 0.000901723001152277,
+        "median": 0.0008986210013972595,
+        "minimum": 0.0008754379960009828,
+        "q1": 0.00089048975132755,
+        "q3": 0.0009071817512449343,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 2,
+      "backend": "rust",
+      "case_id": "top_k-0002",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 3.427250339882448e-05,
+        "maximum": 0.0013040460034972057,
+        "mean": 0.0012644077985896728,
+        "median": 0.0012593389983521774,
+        "minimum": 0.0012385360023472458,
+        "q1": 0.0012452847477106843,
+        "q3": 0.0012795572511095088,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 4,
+      "backend": "python",
+      "case_id": "top_k-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 9.759751264937222e-06,
+        "maximum": 0.0010294240055372939,
+        "mean": 0.0010159396988456137,
+        "median": 0.001015079498756677,
+        "minimum": 0.0009988099918700755,
+        "q1": 0.0010113947428180836,
+        "q3": 0.0010211544940830208,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 4,
+      "backend": "rust",
+      "case_id": "top_k-0004",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 5.1409242587396875e-05,
+        "maximum": 0.0014158950070850551,
+        "mean": 0.001367637598013971,
+        "median": 0.0013594689953606576,
+        "minimum": 0.0013321279984666035,
+        "q1": 0.0013405459976638667,
+        "q3": 0.0013919552402512636,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 8,
+      "backend": "python",
+      "case_id": "top_k-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 4.60597439086996e-05,
+        "maximum": 0.0014076069928705692,
+        "mean": 0.001225715602049604,
+        "median": 0.001195472497784067,
+        "minimum": 0.001180423001642339,
+        "q1": 0.001190444756502984,
+        "q3": 0.0012365045004116837,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 8,
+      "backend": "rust",
+      "case_id": "top_k-0008",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 8.01067435531877e-05,
+        "maximum": 0.0017275900027016178,
+        "mean": 0.0016032410989282654,
+        "median": 0.0015827154929866083,
+        "minimum": 0.0015286639973055571,
+        "q1": 0.0015503052563872188,
+        "q3": 0.0016304119999404065,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 16,
+      "backend": "python",
+      "case_id": "top_k-0016",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 1.3299752026796341e-05,
+        "maximum": 0.0016032779967645183,
+        "mean": 0.0015669559041270986,
+        "median": 0.0015614660078426823,
+        "minimum": 0.0015515519917244092,
+        "q1": 0.001557656258228235,
+        "q3": 0.0015709560102550313,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    },
+    {
+      "axis": "top_k",
+      "axis_value": 16,
+      "backend": "rust",
+      "case_id": "top_k-0016",
+      "censored_count": 0,
+      "configured_repetitions": 10,
+      "distribution_status": "available",
+      "runtime_seconds": {
+        "count": 10,
+        "iqr": 2.7308011340210214e-05,
+        "maximum": 0.0019308810005895793,
+        "mean": 0.0018899204020272008,
+        "median": 0.0018875305031542666,
+        "minimum": 0.001857313996879384,
+        "q1": 0.0018735482481133658,
+        "q3": 0.001900856259453576,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "successful_runtime_count": 10
+    }
+  ],
+  "schema_version": 1,
+  "status_counts": {
+    "optimal": 540
+  },
+  "timeout_count": 0
+}
