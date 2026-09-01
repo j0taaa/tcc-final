@@ -8,7 +8,6 @@ import hashlib
 import importlib.metadata
 import json
 import os
-import re
 import resource
 import shutil
 import subprocess
@@ -437,6 +436,14 @@ def _load_task_manifest(path: Path, expected_task_ids: tuple[str, ...]) -> tuple
     )
     _require(len(set(expected_task_ids)) == len(expected_task_ids), "duplicate Q5 task ID")
     return tuple(tasks)
+
+
+def _epic_literal_regex(target: str) -> str:
+    """Escape a literal with EPIC's Rust regex syntax, including raw newlines."""
+
+    from rustformlang.fa.bytes_dfa import regex_escape
+
+    return str(regex_escape(target))
 
 
 def _check_generated_tokens(
@@ -1305,7 +1312,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     epic_grammar = CFG.from_text("S -> lexTarget", "S")
     epic_grammar = epic_grammar.to_normal_form()
     lex_map = compile_lex_map(
-        {"lexTarget": re.escape(task.target_utf8)},
+        {"lexTarget": _epic_literal_regex(task.target_utf8)},
         subtokens={},
     )
     preprocessed = preprocessed_generate_stuff(tokenizer, epic_grammar, lex_map, trace=False)
