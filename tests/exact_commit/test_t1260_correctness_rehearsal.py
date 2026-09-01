@@ -59,6 +59,26 @@ def test_semantic_comparison_rejects_objective_change(tmp_path: Path) -> None:
         compare_correctness_semantics(reference, candidate)
 
 
+def test_nonoptimal_rows_have_zero_certificate_validations(tmp_path: Path) -> None:
+    reference = tmp_path / "reference.jsonl"
+    candidate = tmp_path / "candidate.jsonl"
+    row = _row()
+    row["status"] = "infeasible_on_support"
+    row["objective_value"] = None
+    row["property_checks"] = {"nonoptimal_payload": 2}
+    row["solver_statuses"] = {
+        "exhaustive_oracle": "infeasible_on_support",
+        "python_reference": "infeasible_on_support",
+        "rust_production": "infeasible_on_support",
+    }
+    _write_rows(reference, [row])
+    _write_rows(candidate, [row])
+
+    records = compare_correctness_semantics(reference, candidate)
+
+    assert records[0].certificate_validation_count == 0
+
+
 def test_cli_fails_on_certificate_mismatch_even_when_timing_differs(
     tmp_path: Path,
 ) -> None:
@@ -115,4 +135,3 @@ def test_cli_writes_semantic_summary_and_table(tmp_path: Path) -> None:
     assert payload["timing_fields_compared"] is False
     assert payload["agreement_count"] == 1
     assert "Certificate checks" in table.read_text(encoding="utf-8")
-

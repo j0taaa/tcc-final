@@ -82,6 +82,18 @@ def _case_semantics(row: Mapping[str, object], *, row_number: int) -> Correctnes
         raise ValueError(f"{prefix}.agreement must be boolean")
     property_checks = _mapping(row.get("property_checks"), f"{prefix}.property_checks")
     solver_statuses = _mapping(row.get("solver_statuses"), f"{prefix}.solver_statuses")
+    status = _string(row.get("status"), f"{prefix}.status")
+    raw_certificate_count = property_checks.get("certificate_validation")
+    if status == "optimal" and raw_certificate_count is None:
+        raise ValueError(f"{prefix}.property_checks.certificate_validation is required for optimal")
+    certificate_count = (
+        0
+        if raw_certificate_count is None
+        else _nonnegative_integer(
+            raw_certificate_count,
+            f"{prefix}.property_checks.certificate_validation",
+        )
+    )
     normalized_statuses = tuple(
         sorted(
             (
@@ -96,13 +108,10 @@ def _case_semantics(row: Mapping[str, object], *, row_number: int) -> Correctnes
     return CorrectnessCaseSemantics(
         case_id=_string(row.get("case_id"), f"{prefix}.case_id"),
         family=_string(row.get("family"), f"{prefix}.family"),
-        status=_string(row.get("status"), f"{prefix}.status"),
+        status=status,
         objective_value=_objective(row.get("objective_value"), f"{prefix}.objective_value"),
         agreement=agreement,
-        certificate_validation_count=_nonnegative_integer(
-            property_checks.get("certificate_validation"),
-            f"{prefix}.property_checks.certificate_validation",
-        ),
+        certificate_validation_count=certificate_count,
         solver_statuses=normalized_statuses,
     )
 
