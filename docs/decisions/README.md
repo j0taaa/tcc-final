@@ -22,3 +22,4 @@ Numbered architecture decision records live here. Each ADR states the affected s
 - `0018-q5-task-specific-schedules.md`: v3 task-specific finite-slot Q5 schedules after the v2 expression rejection.
 - `0019-q5-model-aligned-dsl-task.md`: v4 fenced DSL replacement after the v3 EPIC-candidate rejection.
 - `0020-q2-real-snapshot-support.md`: compact explicit support for 24 shared live Q2 snapshots.
+- `0021-freeze-experiment-artifact-architecture.md`: no new generic experiment or artifact layer during M12.5/M13.

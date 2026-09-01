@@ -870,23 +870,34 @@ passed; `make paper` -> 15 pages.
 **Review finding:** 7 — the infrastructure has reached the overengineering
 boundary.
 
-- [ ] Record that M13 may reuse the existing config, metadata, raw/processed,
+- [x] Record that M13 may reuse the existing config, metadata, raw/processed,
   statistics, and final-artifact paths but must not add another generic layer.
-- [ ] Treat T1201's two-row inventory and T1202's synthetic formula artifact as
+- [x] Treat T1201's two-row inventory and T1202's synthetic formula artifact as
   internal validation fixtures, not scientific findings.
-- [ ] Treat the T1203 Q1--Q5 bundle as the only current scientific-result bundle.
-- [ ] Prohibit a plugin system, workflow engine, artifact schema, charting
+- [x] Treat the T1203 Q1--Q5 bundle as the only current scientific-result bundle.
+- [x] Prohibit a plugin system, workflow engine, artifact schema, charting
   framework, database, dependency-injection layer, second statistical library,
   or second raw/processed convention during M12.5/M13.
-- [ ] Split a large module only when a required modification makes the split
+- [x] Split a large module only when a required modification makes the split
   necessary; do not refactor solely for file size or aesthetics.
 
 **Acceptance criteria**
 
-- [ ] M12.5 and M13 add no generic infrastructure unrelated to a concrete task.
-- [ ] Internal pipeline fixtures are not imported or cited as research results.
+- [x] M12.5 and M13 add no generic infrastructure unrelated to a concrete task.
+- [x] Internal pipeline fixtures are not imported or cited as research results.
 
-**Evidence:** `[architecture-freeze decision and review of M12.5/M13 diffs]`
+**Evidence:** ADR 0021 freezes the existing configuration, metadata,
+raw/processed, statistics, and final-artifact layers for M12.5/M13; lists the
+prohibited generic infrastructure; limits future splitting to required
+functional changes; and classifies T1201/T1202 as internal fixtures. It keeps
+T1203 as the only currently assembled Q1--Q5 scientific-result bundle while
+classifying `m125_publication_results_v1` as staged evidence consumed through
+the same paths. `git diff --name-status
+4deb73c7094004aedb5de8b2c3db20d57e353e89..HEAD` was reviewed: the M12.5
+changes are task-specific configs, drivers, validators, evidence, tests, and
+corrections to existing layers; no generic replacement layer was added.
+`python -m pytest -q tests/exact_commit/test_t1256_architecture_freeze.py
+tests/exact_commit/test_publication_evidence_policy.py` -> 7 passed.
 
 ## T1257 — Clarify the meaning of the existing final-results name
 
