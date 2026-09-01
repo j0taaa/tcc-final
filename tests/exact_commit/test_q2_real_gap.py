@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import subprocess
+import sys
+from pathlib import Path
+
 import pytest
 
 from mwpc_exact import CompositionalByteLevelAdapter
@@ -15,6 +19,8 @@ from mwpc_research.q2_real_gap import (
     replay_real_snapshot,
     summarize_real_rows,
 )
+
+REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 
 
 def _literal_ab_grammar() -> CnfGrammar:
@@ -99,3 +105,20 @@ def test_real_summary_keeps_real_snapshot_denominators_and_zero_optima() -> None
 def test_real_replay_enforces_independent_validation_limit() -> None:
     with pytest.raises(ValueError, match="independent-validation limit"):
         replay_real_snapshot(_instance(), timeout_seconds=5.0, maximum_support_combinations=1)
+
+
+def test_snapshot_collector_is_directly_executable() -> None:
+    completed = subprocess.run(
+        [
+            sys.executable,
+            str(REPOSITORY_ROOT / "scripts/exact_commit/collect_q2_real_snapshots.py"),
+            "--help",
+        ],
+        cwd=REPOSITORY_ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+
+    assert completed.returncode == 0, completed.stderr
+    assert "Capture compact real LLaDA selector states" in completed.stdout

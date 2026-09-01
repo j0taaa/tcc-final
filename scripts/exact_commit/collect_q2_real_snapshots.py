@@ -10,19 +10,34 @@ from collections.abc import Mapping
 from dataclasses import replace
 from pathlib import Path
 
-from scripts.exact_commit.run_q5_end_to_end import (
-    Q5Parameters,
-    Q5Task,
-    _cached_checkpoint_metadata,
-    _canonical_sha256,
-    _check_generated_tokens,
-    _configuration_parameters,
-    _epic_literal_regex,
-    _literal_grammar,
-    _load_task_manifest,
-    _package_version,
-    _prepare_upstream_call,
-)
+if __package__:
+    from scripts.exact_commit.run_q5_end_to_end import (
+        Q5Parameters,
+        Q5Task,
+        _cached_checkpoint_metadata,
+        _canonical_sha256,
+        _check_generated_tokens,
+        _configuration_parameters,
+        _epic_literal_regex,
+        _literal_grammar,
+        _load_task_manifest,
+        _package_version,
+        _prepare_upstream_call,
+    )
+else:
+    from run_q5_end_to_end import (
+        Q5Parameters,
+        Q5Task,
+        _cached_checkpoint_metadata,
+        _canonical_sha256,
+        _check_generated_tokens,
+        _configuration_parameters,
+        _epic_literal_regex,
+        _literal_grammar,
+        _load_task_manifest,
+        _package_version,
+        _prepare_upstream_call,
+    )
 
 from mwpc_exact.epic_adapter.llada import PINNED_LLADA_PROFILE, build_llada_byte_adapter
 from mwpc_exact.experiments import (
