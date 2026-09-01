@@ -24,6 +24,11 @@ from mwpc_research.q2_real_gap import (
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 
 
+def _require_replay_dependencies() -> None:
+    pytest.importorskip("mwpc_parser_py", reason="Q2 real replay requires the exact Rust binding")
+    pytest.importorskip("rustformlang", reason="Q2 real replay requires the pinned EPIC binding")
+
+
 def _literal_ab_grammar() -> CnfGrammar:
     return CnfGrammar(
         nonterminals=(
@@ -69,6 +74,7 @@ def test_real_snapshot_compacts_actual_tokens_without_changing_common_support() 
 
 
 def test_real_snapshot_replays_three_selectors_and_validates_exact_certificate() -> None:
+    _require_replay_dependencies()
     row = replay_real_snapshot(_instance(), timeout_seconds=5.0, maximum_support_combinations=16)
 
     assert set(row["selector_results"]) == {
@@ -93,6 +99,7 @@ def test_real_snapshot_replays_three_selectors_and_validates_exact_certificate()
 
 
 def test_all_valid_support_gets_out_of_support_negative_alignment_sentinel() -> None:
+    _require_replay_dependencies()
     instance = build_real_snapshot_instance(
         instance_id="real-ab-all-valid",
         grammar=_literal_ab_grammar(),
@@ -135,6 +142,7 @@ def test_fixed_position_infinite_confidence_is_not_serialized_as_a_weight() -> N
 
 
 def test_real_summary_keeps_real_snapshot_denominators_and_zero_optima() -> None:
+    _require_replay_dependencies()
     row = replay_real_snapshot(_instance(), timeout_seconds=5.0, maximum_support_combinations=16)
     summary = summarize_real_rows((row,))
 

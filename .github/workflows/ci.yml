@@ -85,6 +85,11 @@ jobs:
         run: PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/integration
       - name: Build exact Rust binding for Q2
         run: cd crates/mwpc_parser_py && ../../.venv/bin/maturin develop --release
+      - name: Run combined exact and EPIC tests
+        run: |
+          PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q \
+            tests/exact_commit/test_q2_real_gap.py \
+            tests/exact_commit/test_q5_end_to_end.py
       - name: Run Q2 heuristic-gap smoke
         run: |
           .venv/bin/python scripts/exact_commit/run_q2_heuristic_gap.py \

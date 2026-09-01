@@ -203,12 +203,15 @@ def test_exact_generation_rejects_partial_optimal_step_without_progress() -> Non
 
 
 def test_epic_literal_regex_accepts_structured_target_with_newlines() -> None:
-    from rustformlang.fa.bytes_dfa import regex_to_dfa
+    bytes_dfa = pytest.importorskip(
+        "rustformlang.fa.bytes_dfa",
+        reason="literal-regex acceptance requires the pinned EPIC binding",
+    )
 
     pattern = _epic_literal_regex('```json\n{"x": 0}\n```')
 
     assert "\\n" not in pattern
-    regex_to_dfa(pattern)
+    bytes_dfa.regex_to_dfa(pattern)
 
 
 def test_all_four_methods_must_share_one_comparison_fingerprint() -> None:
