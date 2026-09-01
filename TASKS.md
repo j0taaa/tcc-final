@@ -16,9 +16,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M13 / T1303.** M0 through M12.5, the M10.5 hardening pass, and T1300--T1302
-are complete. The first incomplete required task is T1303, whose dependency on
-T1300 is satisfied.
+**M13 / T1304.** M0 through M12.5, the M10.5 hardening pass, and T1300--T1303
+are complete. The first incomplete required task is T1304, whose dependencies
+on T1301--T1303 are satisfied.
 
 ## Completed milestone summary
 
@@ -769,17 +769,17 @@ unreadable tables.
 
 **Depends on:** T1300
 
-- [ ] Name tools, providers, and versions used.
-- [ ] State purposes: planning, drafting, review, coding assistance, and related uses.
-- [ ] Identify affected sections/components.
-- [ ] State that the author reviewed proofs, code, references, and results.
-- [ ] Ensure no fabricated data or unattributed text is included.
+- [x] Name tools, providers, and versions used.
+- [x] State purposes: planning, drafting, review, coding assistance, and related uses.
+- [x] Identify affected sections/components.
+- [x] State that the author reviewed proofs, code, references, and results.
+- [x] Ensure no fabricated data or unattributed text is included.
 
 **Acceptance criteria**
 
-- [ ] Declaration satisfies the institutional regulation.
+- [x] Declaration satisfies the institutional regulation.
 
-**Evidence:** `[paper section]`
+**Evidence:** commit `cca3f889342a0711b36ab9124f9c4ea3f32f7f39` replaces the placeholders with `paper/main.tex`'s `AI-Use Declaration` and closes the paper checklist. It names OpenAI Codex/OpenAI, Codex CLI 0.151.0, the GPT-5 basis, and the unexposed immutable hosted-build ID; purposes and affected manuscript/Python/Rust components; author review/responsibility; and excluded AI-proposed measurements, fabricated data, AI-generated figures, and unattributed text. Focused regression -> 3 passed; `make check` -> 11 unit + 663 exact tests; full pytest -> 684 passed; `make paper` -> 16 A4 pages; all-page Poppler inspection (pages 15--16 full-size) found no clipping, overlap, broken glyphs, or crowded references.
 
 ## T1304 — Create final reproducibility release
 
