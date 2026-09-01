@@ -49,7 +49,7 @@
 
 ## Academic integrity
 
-- [ ] Review every proof against the final implementation
+- [x] Review every proof against the final implementation
 - [ ] Update the related-work search
 - [ ] Verify every bibliographic reference
 - [x] Complete the AI-use declaration

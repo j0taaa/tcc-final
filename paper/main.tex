@@ -175,7 +175,7 @@ with position $i_j$, token $t_j\in\vocab$, and weight $w_j\geq 0$. Indexing perm
 
 For a completion $y$, define
 \begin{align}
-\Match_C(y)&=\{j\in\{1,\ldots,m\}:y_{i_j}=t_j\},\\
+\Match_C^+(y)&=\{j\in\{1,\ldots,m\}:y_{i_j}=t_j,\ w_j>0\},\\
 R_C(y)&=\sum_{j=1}^{m}w_j\indic[y_{i_j}=t_j].
 \end{align}
 
@@ -196,7 +196,7 @@ Explicit search examines up to $2^m$ sets. The problem, however, has additional 
 
 \subsection{Assumptions and scope of the guarantee}
 
-The main equivalence requires $w_j\geq 0$. With negative weights, a witness may match a proposal that should rationally be excluded; in that case, one can ignore nonpositive proposals or define $\Match_C^+(y)=\{j:y_{i_j}=t_j,\ w_j>0\}$. Strictly positive weights avoid committing zero-benefit proposals through a tie.
+The main equivalence requires $w_j\geq 0$; the APIs reject negative and non-finite weights. Zero-weight proposals do not change the objective and are omitted from certificates, so the canonical batch is $\Match_C^+(y)$; duplicate positive indices remain distinct.
 
 Optimization is conditioned on the represented support. If an implementation includes only the $K$ most probable tokens at each mask, the result is exact on that truncated lattice, not over all of $\vocab^n$. A full-vocabulary guarantee requires every relevant alternative to be represented explicitly or lazily without unsafe pruning.
 
@@ -217,25 +217,25 @@ If $\Feas_x=\varnothing$, both problems are declared infeasible.
 \end{theorem}
 
 \begin{proof}
-For any $y\in\Feas_x$, the set $\Match_C(y)$ is compatible because $y$ itself satisfies every proposal in that set. Hence,
+For any $y\in\Feas_x$, the set $\Match_C^+(y)$ is compatible because $y$ itself satisfies every proposal in that set. Since omitted matched proposals have weight zero,
 \begin{equation}
 \max_{J\text{ compatible}}W(J)
 \geq
-\max_{y\in\Feas_x}W(\Match_C(y))
+\max_{y\in\Feas_x}W(\Match_C^+(y))
 =
 \max_{y\in\Feas_x}R_C(y).
 \end{equation}
 
-Conversely, let $J$ be compatible. There is a witness $y\in\Feas_x$ that satisfies every proposal in $J$, so $J\subseteq\Match_C(y)$. Since all weights are non-negative,
+Conversely, let $J$ be compatible and define $J^+=\{j\in J:w_j>0\}$. There is a witness $y\in\Feas_x$ that satisfies every proposal in $J$, so $J^+\subseteq\Match_C^+(y)$. Since the removed indices have zero weight,
 \begin{equation}
- W(J)\leq W(\Match_C(y))=R_C(y)
+ W(J)=W(J^+)\leq W(\Match_C^+(y))=R_C(y)
  \leq\max_{y'\in\Feas_x}R_C(y').
 \end{equation}
 The inequality holds for every compatible $J$. Taking the maximum and combining both directions yields equality.
 \end{proof}
 
 \begin{corollary}[Optimal-batch recovery]
-If $y^*\in\argmax_{y\in\Feas_x}R_C(y)$, then $J^*=\Match_C(y^*)$ solves MWPC.
+If $y^*\in\argmax_{y\in\Feas_x}R_C(y)$, then the canonical batch $J^*=\Match_C^+(y^*)$ solves MWPC.
 \end{corollary}
 
 \begin{proof}
@@ -305,7 +305,7 @@ Impossible entries have value $\neginf$. Backpointers store the terminal, produc
 \EndFor
 \If{$D[S,1,n+1]=\neginf$} \Return \textsc{Infeasible} \EndIf
 \State $y^*\gets\textsc{Backtrack}(S,1,n+1)$
-\State $J^*\gets\{j:y^*_{i_j}=t_j\}$
+\State $J^*\gets\{j:y^*_{i_j}=t_j,\ w_j>0\}$
 \State \Return $(J^*,y^*,D[S,1,n+1])$
 \end{algorithmic}
 \end{algorithm}
@@ -331,7 +331,7 @@ The weight of an arc labeled $a$ in slot $i$ is
 \begin{equation}
 \omega(i,a)=\sum_{j:i_j=i,\ t_j=a}w_j.
 \end{equation}
-The function $\pi(i,a)$ stores the indices of proposals satisfied by that arc. A complete path chooses exactly one token per slot, and the sum of its weights is $R_C(y)$. Provenance recovers $J^*$ without inferring it again from detokenized text.
+The function $\pi(i,a)$ stores the indices of positive-weight proposals satisfied by that arc. A complete path chooses exactly one token per slot, and the sum of its weights is $R_C(y)$. Provenance recovers the canonical $J^*=\Match_C^+(y^*)$ without inferring it again from detokenized text.
 
 When the model permits early termination, the lattice is composed with a regular constraint that accepts one occurrence of $\eos$ followed only by $\pad$, or it uses final states at different layers under explicit semantics. In either case, the number of consumed token arcs remains tied to the real canvas slots.
 
@@ -525,7 +525,7 @@ Across Q5's \MThirteenQFiveRows{} warm CUDA generations (\MThirteenQFiveTasks{} 
 \begin{tabular}{p{3.65cm}p{7.55cm}}
 \toprule
 Claim and premise & Code/config enforcement and reported scope \\ \midrule
-Thm.~1: finite $C$, $w_j\geq0$ & \texttt{types.py} rejects negative/non-finite weights and retains duplicate provenance. Q5 records confidence weights; other arcs score zero. \\
+Thm.~1: finite $C$, $w_j\geq0$ & \texttt{types.py} rejects negative/non-finite weights; the lexical, lattice, and decoder paths omit zero-weight IDs while retaining duplicate positive provenance and the objective. Q5 records confidence weights; other arcs score zero. \\
 Thm.~2; Thm.~3(iii): strict CNF; complete weighted search/provenance & \texttt{reference/normalization.py} makes strict CNF; Rust \texttt{CnfGrammar} has neutral terminal/binary rules. Unpruned DPs reconstruct paths; \texttt{validator.py} rechecks grammar, support, fixed positions, IDs, and objective. Deadlines yield \texttt{TIMEOUT}, not certified conclusions. \\
 Thm.~3(i): lattice equals state, $H$, and declared support & \texttt{ranked\_support.py} uses fixed singletons and masked top-$K$ plus proposals/specials; \texttt{eos\_lattice.py} composes $H$. Q5 records $K=8\rightarrow16\rightarrow32$ and only \texttt{exact\_on\_support}. \\
 Thm.~3(ii): composition equals $\Lambda$ & \texttt{tokenizer\_bytes.py} reverses pinned ByteLevel. Live CFGs directly consume raw bytes, so $\Lambda$ is identity there; no lexer/maximal-munch claim is made. \\
