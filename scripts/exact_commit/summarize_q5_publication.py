@@ -137,6 +137,14 @@ def summarize_campaign(config_path: Path, results_root: Path) -> dict[str, objec
                     "row_count": len(rows),
                     "epic_regular_cover_selector_calls": selector_calls,
                     "epic_max_batch_size": max(batch_sizes),
+                    "fallback_count_by_strategy": {
+                        strategy: sum(
+                            int(row["generation"]["fallback_count"])
+                            for row in rows
+                            if row["strategy"] == strategy
+                        )
+                        for strategy in STRATEGIES
+                    },
                     "median_runtime_seconds_by_strategy": {
                         strategy: median(
                             float(row["resources"]["elapsed_seconds"])
