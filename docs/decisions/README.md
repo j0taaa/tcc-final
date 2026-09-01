@@ -17,3 +17,4 @@ Numbered architecture decision records live here. Each ADR states the affected s
 - `0013-compact-ranked-support.md`: compact top-K ranking at model boundaries.
 - `0014-fair-selector-comparison.md`: precise offline selector names and shared candidate universe.
 - `0015-paired-grammar-alignment.md`: executable alignment evidence for exact/EPIC grammar pairs.
+- `0016-publication-evidence-tier.md`: final-article evidence tiers, claim boundaries, and predeclared publication campaigns.

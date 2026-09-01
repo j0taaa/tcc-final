@@ -1,0 +1,59 @@
+schema_version = 1
+experiment_id = "q2_real_state_publication_v1"
+question = "heuristic_gap"
+description = "Predeclared final-article replay of shared real LLaDA selector snapshots."
+publication_mode = true
+seeds = [125401, 125402, 125403]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "saved_model_top_k_plus_proposals_and_specials"
+top_k = 8
+k_max = 32
+finite_slots = true
+
+[model]
+model_id = "GSAI-ML/LLaDA-8B-Instruct"
+model_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+tokenizer_id = "GSAI-ML/LLaDA-8B-Instruct"
+tokenizer_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+local_files_only = true
+
+[grammar]
+grammar_id = "q5_structured_literal_cfg_family_v1"
+source = "configs/experiments/q5_structured_tasks_v1.toml"
+revision = "q5_structured_tasks_v1"
+hash_policy = "sha256_canonical_grammar"
+
+[timeouts]
+solver_seconds = 30.0
+run_seconds = 3600.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+snapshot_source_experiment_id = "q5_structured_publication_v1"
+snapshot_selection = "first_five_exact_selector_states_per_task_seed"
+task_ids = ["json_x_zero", "parenthesized_sum"]
+snapshots_per_task_seed = 5
+expected_snapshot_count = 30
+selectors = ["greedy_exact_feasibility", "epic_regular_cover", "exact_mwpc"]
+weight_modes = ["confidence"]
+exact_backend = "rust"
+brute_force_max_completions = 4096
+epic_exact_shrink = true
+epic_minimum_batch_size = 2
+require_common_snapshot_hash = true
+failure_directory = "mismatches"
+publication_bundle_id = "m125_publication_results_v1"
+raw_output_root = "results/raw/q2_real_state_publication_v1"

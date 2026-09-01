@@ -1,0 +1,18 @@
+schema_version = 1
+task_set_id = "q5_structured_tasks_v1"
+
+[[tasks]]
+task_id = "json_x_zero"
+prompt_id = "json_x_zero_prompt_v1"
+prompt_instruction = "Reply with exactly the JSON object {\"x\":0} and nothing else."
+target_utf8 = "{\"x\":0}"
+grammar_kind = "literal_utf8_cfg"
+functional_checker = "exact_target_bytes_match_v1"
+
+[[tasks]]
+task_id = "parenthesized_sum"
+prompt_id = "parenthesized_sum_prompt_v1"
+prompt_instruction = "Reply with exactly the arithmetic expression (0+0) and nothing else."
+target_utf8 = "(0+0)"
+grammar_kind = "literal_utf8_cfg"
+functional_checker = "exact_target_bytes_match_v1"

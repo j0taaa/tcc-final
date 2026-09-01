@@ -1,0 +1,64 @@
+schema_version = 1
+experiment_id = "q4_scaling_publication_v1"
+question = "scaling"
+description = "Predeclared final-article CPU scaling campaign for separate Python and Rust exact backends."
+publication_mode = true
+seeds = [1255]
+repetitions = 10
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "generated_top_k_or_explicit_per_position"
+top_k = 2
+k_max = 16
+finite_slots = true
+
+[model]
+model_id = "not_applicable_generated_scaling_instances"
+model_revision = "scaling_generator_v1"
+tokenizer_id = "generated_raw_byte_vocabulary"
+tokenizer_revision = "scaling_generator_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "generated_reachable_a_plus_cfgs"
+source = "m11_scaling_generator_v1"
+revision = "scaling_generator_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 30.0
+run_seconds = 7200.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+backends = ["python", "rust"]
+slot_counts = [1, 2, 4, 8, 16]
+top_k_values = [1, 2, 4, 8, 16]
+graph_size_scales = [1, 2, 4, 8]
+grammar_production_counts = [4, 8, 16, 32]
+token_byte_lengths = [1, 2, 4, 8]
+proposal_counts = [1, 2, 4, 8, 16]
+baseline_slot_count = 2
+baseline_top_k = 2
+baseline_grammar_production_count = 4
+baseline_token_byte_length = 1
+baseline_proposal_count = 2
+vocabulary_size = 17
+max_address_space_mib = 2048
+record_chart_size = true
+record_graph_size = true
+graph_size_scale_interpretation = "compound_support_width_and_token_byte_length"
+minimum_repetitions_for_distribution = 10
+publication_bundle_id = "m125_publication_results_v1"
+raw_output_root = "results/raw/q4_scaling_publication_v1"
