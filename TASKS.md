@@ -947,22 +947,34 @@ passed.
 **Review finding:** 9 — inserting all seven artifacts would exceed the
 institutional 16-page limit.
 
-- [ ] Select at most three compact result elements for the article body.
-- [ ] Prefer replacing expected-results placeholders over appending new tables
+- [x] Select at most three compact result elements for the article body.
+- [x] Prefer replacing expected-results placeholders over appending new tables
   and figures.
-- [ ] Record which remaining artifacts stay in the repository or approved
+- [x] Record which remaining artifacts stay in the repository or approved
   supplementary material.
-- [ ] Define a page-budget allocation including references and the required
+- [x] Define a page-budget allocation including references and the required
   summaries before T1301 imports results.
-- [ ] Keep every omitted artifact traceable from the reproduction guide.
+- [x] Keep every omitted artifact traceable from the reproduction guide.
 
 **Acceptance criteria**
 
-- [ ] The versioned article plan stays within the 10--16 page regulation without
+- [x] The versioned article plan stays within the 10--16 page regulation without
   silently shrinking required content or claiming an unmeasured final page count.
-- [ ] T1301 depends on this selection and does not append all generated artifacts.
+- [x] T1301 depends on this selection and does not append all generated artifacts.
 
-**Evidence:** `[result-selection/page-budget record and paper outline/build check]`
+**Evidence:** `docs/article/M13_RESULTS_AND_PAGE_BUDGET.md` selects exactly
+three compact body elements: R1 combines Q1 correctness and Q3 finite-slot
+evidence, R2 separates illustrative Q2 cases from the bounded T1254 real-state
+replay, and R3 combines selected T1255 Q4 scaling facts with the structured Q5
+integration result. It requires replacement of `tab:resultados` and removal of
+the obsolete `tab:cronograma`, lists all seven T1203 artifacts retained in the
+repository/supplement, and keeps them indexed by `REPRODUCING.md`. The planning
+allocation is 14.25 pages including summaries and references, with 1.75 pages
+of contingency under the 16-page maximum; it explicitly preserves template
+font/margins and calls the final count unmeasured until T1301 rebuilds the PDF.
+`python -m pytest -q tests/exact_commit/test_t1258_article_budget.py` ->
+5 passed. `make paper` passed and `pdfinfo paper/main.pdf` reported the current
+pre-import baseline as 15 pages; this is not a final page-count claim.
 
 ## T1259 — Decide and normalize repository/article language
 
@@ -1078,7 +1090,11 @@ to locate.
 
 ## T1301 — Fill and analyze results
 
-**Depends on:** M12.5 gate
+**Depends on:** M12.5 gate, T1258
+
+T1301 must follow `docs/article/M13_RESULTS_AND_PAGE_BUDGET.md`: replace the
+two named placeholder/planning tables with R1--R3 and does not append all
+generated artifacts.
 
 - [ ] Import generated tables/figures.
 - [ ] Report correctness campaign size and agreement.
