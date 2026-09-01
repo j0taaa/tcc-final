@@ -14,11 +14,11 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M12.5 / T1250.** M0 through M12 and the M10.5 hardening pass are complete.
+**M12.5 / T1251.** M0 through M12 and the M10.5 hardening pass are complete.
 An external review found release-packaging and evidence-presentation gaps that
 must be resolved before article writing. The first incomplete required task is
-T1250: package `mwpc_research` and test the installed release wheel. M13 is
-paused until the blocking M12.5 review-fix gate closes.
+T1251: correct the Q1 agreement presentation. M13 is paused until the blocking
+M12.5 review-fix gate closes.
 
 ## Completed milestone summary
 
@@ -580,21 +580,34 @@ additional runs, but it may never relabel existing diagnostic evidence.
 
 **Review finding:** 1 — the release wheel omits `mwpc_research`.
 
-- [ ] Include both `src/mwpc_exact` and `src/mwpc_research` in the wheel.
-- [ ] Build the sdist and wheel with the locked project build toolchain.
-- [ ] Inspect the wheel contents so an editable checkout cannot mask omissions.
-- [ ] Install the wheel into a new isolated environment and import both packages.
-- [ ] From that wheel-installed environment, run one small experiment and one
+- [x] Include both `src/mwpc_exact` and `src/mwpc_research` in the wheel.
+- [x] Build the sdist and wheel with the locked project build toolchain.
+- [x] Inspect the wheel contents so an editable checkout cannot mask omissions.
+- [x] Install the wheel into a new isolated environment and import both packages.
+- [x] From that wheel-installed environment, run one small experiment and one
   artifact-generation smoke without importing either package from the checkout.
-- [ ] Add a deterministic release-packaging regression test or CI command.
+- [x] Add a deterministic release-packaging regression test or CI command.
 
 **Acceptance criteria**
 
-- [ ] A non-editable wheel install exposes `mwpc_exact` and `mwpc_research` and
+- [x] A non-editable wheel install exposes `mwpc_exact` and `mwpc_research` and
   completes both smokes without `PYTHONPATH` or source-tree leakage.
-- [ ] The release test fails if either package is removed from the wheel.
+- [x] The release test fails if either package is removed from the wheel.
 
-**Evidence:** `[packaging diff, wheel inventory, isolated-install commands, tests]`
+**Evidence:** implementation commit
+`2c3092ef2d34c6535c02afb8177d289f412781af`; `make
+release-wheel-smoke` from that clean commit built the sdist and wheel with
+`build==1.3.0` and `hatchling==1.27.0`, installed the wheel with `--no-index
+--no-deps` into a new temporary environment, and found 50 `mwpc_exact` plus 17
+`mwpc_research` Python files. Both imports resolved inside the temporary
+site-packages directory rather than the checkout. The installed wheel then ran
+the two-case Q3 experiment with zero failures and created the T1202 statistical
+artifact with pinned SHA-256
+`40b236f2e5988eca6ccdbe9aa2cb22b5df4cda087dfea34bade4f19f6e34a776`.
+`python -m pytest -q tests/unit/test_package_boundaries.py
+tests/exact_commit/test_reproduction_instructions.py` -> 5 passed; `make check`
+-> upstream pin verified, Ruff and strict MyPy clean, 10 unit and 594 exact
+tests passed. The same wheel rehearsal is a required `project-checks` CI step.
 
 ## T1251 — Correct the Q1 agreement presentation
 
