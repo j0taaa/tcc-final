@@ -14,11 +14,11 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M12.5 / T1251.** M0 through M12 and the M10.5 hardening pass are complete.
+**M12.5 / T1252.** M0 through M12 and the M10.5 hardening pass are complete.
 An external review found release-packaging and evidence-presentation gaps that
 must be resolved before article writing. The first incomplete required task is
-T1251: correct the Q1 agreement presentation. M13 is paused until the blocking
-M12.5 review-fix gate closes.
+T1252: freeze the evidence tier and allowed article claims. M13 is paused until
+the blocking M12.5 review-fix gate closes.
 
 ## Completed milestone summary
 
@@ -494,6 +494,14 @@ synthetic gap campaign and Q4 CPU scaling campaign remain diagnostics, and the
 Q5 fixed-task live-model rows retain `benchmark_claim=false`; none is promoted
 to a publication benchmark.
 
+T1251 later corrected only the Q1 uncertainty presentation from the same
+pinned raw rows. The current `final-results.json`, manifest, and correctness
+table hashes are respectively
+`b72d6fd08429e3eb3c18fca4e5788a4fe3617a62a1972deedd6801cd176884d0`,
+`06e9e8d86441b4f35a0fb863654b797081a62608ea729e7bab3dc870ea2f369f`,
+and `119fd38aeec70ef870941fe13a528a62170bb8e20bebf5f0b0842033e2fdad7b`;
+the five raw input hashes are unchanged.
+
 A clean delete/rebuild followed by `diff -qr` reproduced both derived
 directories byte-for-byte, and `make final-artifacts-check` independently
 recomputed and verified every artifact. All five tables compiled in a
@@ -615,23 +623,41 @@ tests passed. The same wheel rehearsal is a required `project-checks` CI step.
 
 **Review finding:** 4 — confidence intervals are attached to fixed case sets.
 
-- [ ] Report canonical agreement as an exact numerator/denominator only.
-- [ ] Report the complete configured exhaustive family as an exact
+- [x] Report canonical agreement as an exact numerator/denominator only.
+- [x] Report the complete configured exhaustive family as an exact
   numerator/denominator only.
-- [ ] Keep a Wilson interval only for the randomized-seed family and describe
+- [x] Keep a Wilson interval only for the randomized-seed family and describe
   the generator and seed distribution to which it applies.
-- [ ] Report the mixed overall configured total as an exact count with no
+- [x] Report the mixed overall configured total as an exact count with no
   confidence interval.
-- [ ] Regenerate the Q1 processed result, table, manifest hashes, and tests from
+- [x] Regenerate the Q1 processed result, table, manifest hashes, and tests from
   the pinned raw rows; do not hand-edit generated values.
 
 **Acceptance criteria**
 
-- [ ] No canonical, exhaustive, or mixed deterministic/random row has a
+- [x] No canonical, exhaustive, or mixed deterministic/random row has a
   probabilistic confidence interval.
-- [ ] The randomized interval remains formula-tested and traceable to raw rows.
+- [x] The randomized interval remains formula-tested and traceable to raw rows.
 
-**Evidence:** `[analysis commit, regenerated artifact hashes, formula/artifact tests]`
+**Evidence:** implementation commit
+`84ec0f4244a6db9a21d028536599bba9975f5f6f`; the unchanged 249-row Q1
+input retains SHA-256
+`62fb83b48c8809a3958df486b387e017ba245e97e4e74e475ca1fb55659ade8a`.
+`make final-artifacts-check` from that clean commit byte-verified
+`final-results.json` at
+`b72d6fd08429e3eb3c18fca4e5788a4fe3617a62a1972deedd6801cd176884d0`,
+the manifest at
+`06e9e8d86441b4f35a0fb863654b797081a62608ea729e7bab3dc870ea2f369f`,
+and the correctness table at
+`119fd38aeec70ef870941fe13a528a62170bb8e20bebf5f0b0842033e2fdad7b`.
+The table reports `5/5`, `144/144`, `100/100`, and `249/249`; only the
+randomized row has a 95% Wilson interval and it records the generator plus 100
+unique consecutive seeds 1101--1200. `python -m pytest -q
+tests/exact_commit/test_q1_correctness.py
+tests/exact_commit/test_final_artifacts.py
+tests/exact_commit/test_t1203_evidence.py` -> 15 passed; `make check` -> 10
+unit and 595 exact tests passed; full `python -m pytest -q` -> 615 passed;
+`make paper` -> 15 pages.
 
 ## T1252 — Freeze the evidence tier and allowed article claims
 
