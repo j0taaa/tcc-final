@@ -10,7 +10,7 @@
   "generated_artifacts": [
     {
       "path": "docs/artifacts/processed/t1203_final_results_v1/final-results.json",
-      "sha256": "b72d6fd08429e3eb3c18fca4e5788a4fe3617a62a1972deedd6801cd176884d0"
+      "sha256": "5d0afd430fcaddfcef935e1ca762f1b9e6b9b5edcff29f1d5a2eb72e535f45ab"
     },
     {
       "path": "paper/generated/t1203_final_results_v1/correctness-oracle-table.tex",
@@ -38,7 +38,7 @@
     },
     {
       "path": "paper/generated/t1203_final_results_v1/runtime-scaling.svg",
-      "sha256": "872ee33930d052a6bdb0eb1b4bbbf46ac5fac9fba22c60dfd11887c9a5029a2f"
+      "sha256": "a266f8b200ce59cbba87817e79514103ac373121aed709c3fdf73e39dbf17c79"
     }
   ],
   "schema_version": 1,

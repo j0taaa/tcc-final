@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 import pytest
+from scripts.exact_commit.run_q4_scaling import _configuration_parameters
 
 from mwpc_exact.backend import ExactBackend
 from mwpc_exact.experiments import ExperimentKind, load_experiment_config
@@ -22,6 +23,9 @@ from mwpc_research.q4_scaling import (
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = REPOSITORY_ROOT / "configs/experiments/q4_scaling_v1.toml"
+PUBLICATION_CONFIG_PATH = (
+    REPOSITORY_ROOT / "configs/experiments/q4_scaling_publication_v1.toml"
+)
 
 
 def _small_point() -> ScalingPoint:
@@ -86,6 +90,23 @@ def test_q4_config_freezes_all_required_scaling_axes_and_limits() -> None:
         "token_byte_length",
         "proposal_count",
     }
+
+
+def test_publication_q4_parameters_enable_only_the_predeclared_expansion() -> None:
+    config = load_experiment_config(PUBLICATION_CONFIG_PATH)
+    parameters = _configuration_parameters(
+        config.parameters, publication_mode=config.publication_mode
+    )
+
+    assert config.publication_mode is True
+    assert config.repetitions == 10
+    assert parameters.minimum_repetitions_for_distribution == 10
+    assert parameters.graph_size_scale_interpretation == (
+        "compound_support_width_and_token_byte_length"
+    )
+    assert parameters.publication_bundle_id == "m125_publication_results_v1"
+    assert parameters.slot_counts[-1] == 16
+    assert parameters.top_k_values[-1] == 16
 
 
 def test_scaling_points_change_one_axis_and_graph_size_is_explicit() -> None:

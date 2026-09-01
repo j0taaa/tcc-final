@@ -33,10 +33,10 @@ EXPECTED_HASHES = {
         "1132d0f29561d7b3eca8a72d382c22422275f2f54eb462da264b4fc1da9508b4"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/artifact-manifest.json": (
-        "532c433de1e0654fcde7781b51e9b0b14fd9a05b7782e8adfa7a8bbdd7600af2"
+        "d356057a7701b284025f37befbd0fc3fb6bd522e6c045fb5bb2903c5b0ac0620"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/final-results.json": (
-        "b72d6fd08429e3eb3c18fca4e5788a4fe3617a62a1972deedd6801cd176884d0"
+        "5d0afd430fcaddfcef935e1ca762f1b9e6b9b5edcff29f1d5a2eb72e535f45ab"
     ),
     "paper/generated/t1203_final_results_v1/correctness-oracle-table.tex": (
         "119fd38aeec70ef870941fe13a528a62170bb8e20bebf5f0b0842033e2fdad7b"
@@ -57,7 +57,7 @@ EXPECTED_HASHES = {
         "08130e62ec8bd0de4f7d6882e221da223a7c8043bf9c6dfe2721b9ec9b2ba772"
     ),
     "paper/generated/t1203_final_results_v1/runtime-scaling.svg": (
-        "872ee33930d052a6bdb0eb1b4bbbf46ac5fac9fba22c60dfd11887c9a5029a2f"
+        "a266f8b200ce59cbba87817e79514103ac373121aed709c3fdf73e39dbf17c79"
     ),
 }
 
@@ -124,6 +124,14 @@ def test_t1203_tables_and_figure_are_pinned_to_raw_rows() -> None:
     assert runtime["measurement_count"] == 84
     assert runtime["censored_count"] == 0
     assert runtime["status_counts"] == {"optimal": 84}
+    assert runtime["minimum_repetitions_for_distribution"] == 10
+    assert runtime["withheld_scaling_point_count"] == 42
+    assert all(
+        point["runtime_seconds"] is None
+        and point["distribution_status"] == "withheld_insufficient_repetitions"
+        for series in runtime["scaling_series"]
+        for point in series["points"]
+    )
     assert all(row["runtime_seconds"]["count"] == 42 for row in runtime["component_breakdown"])
     assert len(runtime["scaling_series"]) == 12
     assert "not_publication_benchmark" in runtime["interpretation"]

@@ -277,7 +277,16 @@ def test_final_bundle_is_generated_directly_from_pinned_rows(tmp_path: Path) -> 
     }
     assert summary["heuristic_gap"]["gap_rows"][0]["statistics"]["absolute_gap"]["median"] == 1.0
     assert summary["finite_slots"]["counterexample_count"] == 1
-    assert summary["runtime_breakdown"]["status_counts"] == {"optimal": 2}
+    runtime = summary["runtime_breakdown"]
+    assert runtime["status_counts"] == {"optimal": 2}
+    assert runtime["minimum_repetitions_for_distribution"] == 10
+    assert runtime["withheld_scaling_point_count"] == 2
+    assert all(
+        point["runtime_seconds"] is None
+        and point["distribution_status"] == "withheld_insufficient_repetitions"
+        for series in runtime["scaling_series"]
+        for point in series["points"]
+    )
     assert summary["end_to_end"]["benchmark_claim"] is False
     assert summary["end_to_end"]["step_level_rates"] is None
     assert (
@@ -290,6 +299,7 @@ def test_final_bundle_is_generated_directly_from_pinned_rows(tmp_path: Path) -> 
     assert "EPIC-enabled decoder with serial fallback" in end_to_end_table
     ElementTree.parse(paper / HEURISTIC_GAP_FIGURE_FILENAME)
     ElementTree.parse(paper / SCALING_FIGURE_FILENAME)
+    assert "Median/IQR curves withheld" in (paper / SCALING_FIGURE_FILENAME).read_text()
     manifest = json.loads((processed / FINAL_MANIFEST_FILENAME).read_text())
     assert len(manifest["sources"]) == 5
     assert len(manifest["generated_artifacts"]) == 8

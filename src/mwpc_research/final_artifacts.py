@@ -52,6 +52,7 @@ _SOURCE_INTERPRETATIONS = {
     "q4_scaling": "component_profiled_cpu_smoke_not_publication_benchmark",
     "q5_end_to_end": "fixed_task_live_model_diagnostic_not_publication_benchmark",
 }
+_Q4_MINIMUM_REPETITIONS_FOR_DISTRIBUTION = 10
 
 
 def _sha256_bytes(value: bytes) -> str:
@@ -611,6 +612,7 @@ def _q4_summary(rows: Sequence[Mapping[str, object]]) -> dict[str, object]:
         "proposal_count": 5,
     }
     scaling_series: list[dict[str, object]] = []
+    withheld_scaling_point_count = 0
     series: dict[tuple[str, str], list[tuple[float, list[float]]]] = defaultdict(list)
     for (axis, backend, axis_value), values in scaling_values.items():
         series[(axis, backend)].append((axis_value, values))
@@ -622,23 +624,41 @@ def _q4_summary(rows: Sequence[Mapping[str, object]]) -> dict[str, object]:
             item[0][1],
         ),
     ):
+        series_points: list[dict[str, object]] = []
+        for axis_value, values in sorted(points):
+            eligible = len(values) >= _Q4_MINIMUM_REPETITIONS_FOR_DISTRIBUTION
+            withheld_scaling_point_count += not eligible
+            series_points.append(
+                {
+                    "axis_value": axis_value,
+                    "successful_runtime_count": len(values),
+                    "runtime_seconds": (
+                        summarize_numeric_distribution(values).to_dict()
+                        if eligible
+                        else None
+                    ),
+                    "distribution_status": (
+                        "available"
+                        if eligible
+                        else "withheld_insufficient_repetitions"
+                    ),
+                }
+            )
         scaling_series.append(
             {
                 "axis": axis,
                 "backend": backend,
-                "points": [
-                    {
-                        "axis_value": axis_value,
-                        "runtime_seconds": summarize_numeric_distribution(values).to_dict(),
-                    }
-                    for axis_value, values in sorted(points)
-                ],
+                "points": series_points,
             }
         )
     return {
         "interpretation": _SOURCE_INTERPRETATIONS["q4_scaling"],
         "measurement_count": len(rows),
         "censored_count": censored_count,
+        "minimum_repetitions_for_distribution": (
+            _Q4_MINIMUM_REPETITIONS_FOR_DISTRIBUTION
+        ),
+        "withheld_scaling_point_count": withheld_scaling_point_count,
         "status_counts": _status_counts(status_values),
         "backend_runtime_seconds": {
             backend: summarize_numeric_distribution(values).to_dict()
@@ -1245,7 +1265,7 @@ def _axis_label(axis: str) -> str:
     return {
         "slot_count": "Physical slots",
         "top_k": "Top-K",
-        "graph_size_scale": "Graph-size scale",
+        "graph_size_scale": "Compound graph-size setting",
         "grammar_production_count": "Grammar productions",
         "token_byte_length": "Token byte length",
         "proposal_count": "Proposal count",
@@ -1264,6 +1284,7 @@ def _scale_y(value: float, limit: float, top: float, bottom: float) -> float:
 
 def _scaling_figure(summary: Mapping[str, object]) -> bytes:
     grouped: dict[str, dict[str, list[tuple[float, float]]]] = defaultdict(dict)
+    withheld_point_count = 0
     for raw_series in _sequence(summary["scaling_series"], "scaling_series"):
         series = _mapping(raw_series, "scaling series")
         axis = _string(series["axis"], "axis")
@@ -1271,6 +1292,9 @@ def _scaling_figure(summary: Mapping[str, object]) -> bytes:
         points: list[tuple[float, float]] = []
         for raw_point in _sequence(series["points"], "scaling points"):
             point = _mapping(raw_point, "scaling point")
+            if point["runtime_seconds"] is None:
+                withheld_point_count += 1
+                continue
             runtime = _mapping(point["runtime_seconds"], "scaling runtime")
             points.append(
                 (
@@ -1278,7 +1302,8 @@ def _scaling_figure(summary: Mapping[str, object]) -> bytes:
                     _number(runtime["median"], "runtime median") * 1000.0,
                 )
             )
-        grouped[axis][backend] = sorted(points)
+        if points:
+            grouped[axis][backend] = sorted(points)
     axis_order = (
         "slot_count",
         "top_k",
@@ -1289,7 +1314,28 @@ def _scaling_figure(summary: Mapping[str, object]) -> bytes:
     )
     axes = tuple(axis for axis in axis_order if axis in grouped)
     if not axes:
-        raise ValueError("scaling figure requires at least one axis")
+        context = html.escape(_plain_context(summary), quote=True)
+        return (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="205" '
+            'viewBox="0 0 1040 205">\n'
+            '<rect width="100%" height="100%" fill="white"/>\n'
+            '<text x="24" y="35" font-family="sans-serif" font-size="21" '
+            'font-weight="bold">CPU exact-on-support scaling diagnostic</text>\n'
+            f'<text x="24" y="63" font-family="sans-serif" font-size="12" '
+            f'fill="#444">{context}</text>\n'
+            '<text x="24" y="100" font-family="sans-serif" font-size="15" '
+            'fill="#7a3e00">Median/IQR curves withheld: each smoke point has '
+            f'fewer than {_Q4_MINIMUM_REPETITIONS_FOR_DISTRIBUTION} successful '
+            'repetitions.</text>\n'
+            f'<text x="24" y="130" font-family="sans-serif" font-size="13" '
+            f'fill="#444">Withheld backend/axis points: {withheld_point_count}. '
+            'The raw diagnostic rows remain versioned.</text>\n'
+            '<text x="24" y="160" font-family="sans-serif" font-size="13" '
+            'fill="#444">graph_size_scale is compound: it changes support width '
+            'and token byte length together.</text>\n'
+            '</svg>\n'
+        ).encode()
 
     width = 1040
     panel_width = 500
@@ -1381,7 +1427,8 @@ def _scaling_figure(summary: Mapping[str, object]) -> bytes:
         (
             f'<text x="24" y="{height - 18}" font-family="sans-serif" '
             'font-size="12" fill="#444">Each point is recomputed from uncensored '
-            "OPTIMAL rows; other statuses remain separately counted.</text>",
+            "OPTIMAL rows; other statuses remain separately counted; "
+            "graph_size_scale is compound.</text>",
             "</svg>",
             "",
         )

@@ -83,9 +83,14 @@ class Q4Parameters:
     vocabulary_size: int
     address_space_limit_bytes: int
     raw_output_root: str
+    graph_size_scale_interpretation: str | None
+    minimum_repetitions_for_distribution: int | None
+    publication_bundle_id: str | None
 
 
-def _configuration_parameters(parameters: Mapping[str, object]) -> Q4Parameters:
+def _configuration_parameters(
+    parameters: Mapping[str, object], *, publication_mode: bool
+) -> Q4Parameters:
     required = {
         "backends",
         "slot_counts",
@@ -105,7 +110,13 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> Q4Parameters:
         "record_graph_size",
         "raw_output_root",
     }
-    if set(parameters) != required:
+    publication_fields = {
+        "graph_size_scale_interpretation",
+        "minimum_repetitions_for_distribution",
+        "publication_bundle_id",
+    }
+    expected = required | publication_fields if publication_mode else required
+    if set(parameters) != expected:
         raise ValueError("Q4 parameters must contain exactly: " + ", ".join(sorted(required)))
     for flag in ("record_chart_size", "record_graph_size"):
         if parameters[flag] is not True:
@@ -157,6 +168,27 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> Q4Parameters:
         raw_output_root=_relative_path(
             parameters["raw_output_root"], "parameters.raw_output_root"
         ),
+        graph_size_scale_interpretation=(
+            str(parameters["graph_size_scale_interpretation"])
+            if publication_mode
+            else None
+        ),
+        minimum_repetitions_for_distribution=(
+            _positive_integer(
+                parameters["minimum_repetitions_for_distribution"],
+                "parameters.minimum_repetitions_for_distribution",
+            )
+            if publication_mode
+            else None
+        ),
+        publication_bundle_id=(
+            _relative_path(
+                parameters["publication_bundle_id"],
+                "parameters.publication_bundle_id",
+            )
+            if publication_mode
+            else None
+        ),
     )
 
 
@@ -184,13 +216,24 @@ def main(argv: Sequence[str] | None = None) -> int:
     config = load_experiment_config(arguments.config)
     if config.question is not ExperimentKind.SCALING:
         raise ValueError("Q4 driver requires a scaling configuration")
-    if config.publication_mode:
-        raise ValueError("Q4 v1 is a diagnostic smoke, not publication mode")
     if len(config.seeds) != 1:
-        raise ValueError("Q4 v1 requires exactly one base seed")
+        raise ValueError("Q4 requires exactly one base seed")
     if config.cpu_threads != 1:
         raise ValueError("Q4 v1 worker isolation requires hardware.cpu_threads = 1")
-    parameters = _configuration_parameters(config.parameters)
+    parameters = _configuration_parameters(
+        config.parameters, publication_mode=config.publication_mode
+    )
+    if config.publication_mode:
+        if parameters.minimum_repetitions_for_distribution is None:
+            raise AssertionError("publication Q4 lost its repetition threshold")
+        if parameters.minimum_repetitions_for_distribution < 10:
+            raise ValueError("publication Q4 requires a distribution threshold of at least 10")
+        if config.repetitions < parameters.minimum_repetitions_for_distribution:
+            raise ValueError("publication Q4 has too few repetitions for runtime distributions")
+        if parameters.graph_size_scale_interpretation != (
+            "compound_support_width_and_token_byte_length"
+        ):
+            raise ValueError("publication Q4 must label graph_size_scale as compound")
     if config.support_top_k != parameters.baseline_top_k:
         raise ValueError("support.top_k must equal parameters.baseline_top_k")
     maximum_width = max((*parameters.top_k_values, *parameters.graph_size_scales))
@@ -233,7 +276,19 @@ def main(argv: Sequence[str] | None = None) -> int:
             "timeout_enforcement": (
                 "fresh_subprocess_wall_deadline_for_both_backends_plus_native_rust_deadline"
             ),
-            "timing_scope": "component_profiled_cpu_smoke_not_publication_benchmark",
+            "timing_scope": (
+                "expanded_generated_cpu_scaling_publication_campaign"
+                if config.publication_mode
+                else "component_profiled_cpu_smoke_not_publication_benchmark"
+            ),
+            "graph_size_scale_interpretation": (
+                parameters.graph_size_scale_interpretation
+                or "compound_support_width_and_token_byte_length"
+            ),
+            "minimum_repetitions_for_distribution": (
+                parameters.minimum_repetitions_for_distribution
+            ),
+            "publication_bundle_id": parameters.publication_bundle_id,
         },
     )
     result = run_q4_scaling(
