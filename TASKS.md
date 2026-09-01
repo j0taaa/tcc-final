@@ -762,26 +762,53 @@ check` -> 10 unit and 608 exact tests passed; `make paper` -> 15 pages.
 **Review finding:** 5 — three synthetic states are a useful unit experiment,
 not an empirical heuristic-gap distribution.
 
-- [ ] Retain the existing six rows and classify them as illustrative canonical
+- [x] Retain the existing six rows and classify them as illustrative canonical
   and adversarial cases.
-- [ ] Remove or prevent prose that generalizes their mean gap to model behavior.
-- [ ] If T1252 selects publication-mode evidence, collect a predeclared,
+- [x] Remove or prevent prose that generalizes their mean gap to model behavior.
+- [x] If T1252 selects publication-mode evidence, collect a predeclared,
   versioned sample of saved real decoder states spanning multiple denoising
   steps and nontrivial tasks.
-- [ ] Replay greedy feasibility, EPIC regular cover, and exact MWPC over the same
+- [x] Replay greedy feasibility, EPIC regular cover, and exact MWPC over the same
   proposal/support snapshot for every sampled state.
-- [ ] Validate exact certificates independently and report selection failures,
+- [x] Validate exact certificates independently and report selection failures,
   timeouts, and zero-optimum rows without dropping them silently.
-- [ ] If T1252 selects preliminary evidence, record the real-state campaign as
-  deferred and restrict Q2 conclusions to the illustrative cases.
+- [x] Preliminary-only branch is not applicable because T1252 selected
+  publication-mode evidence; the real-state campaign was run instead.
 
 **Acceptance criteria**
 
-- [ ] Synthetic rows are never presented as a representative model-state sample.
-- [ ] Any empirical aggregate uses only the separately identified real-state
+- [x] Synthetic rows are never presented as a representative model-state sample.
+- [x] Any empirical aggregate uses only the separately identified real-state
   sample and traces every row to a saved common snapshot.
 
-**Evidence:** `[classification/tests and, when selected, real-state config/raw rows/summary]`
+**Evidence:** ADR 0020 amends the infeasible five-state-per-task predeclaration
+to four genuine EPIC selector states for each of two Q5 v4 tasks and three
+seeds. `env PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python
+scripts/exact_commit/collect_q2_real_snapshots.py` captured 24 clean,
+versioned snapshots from commit
+`fc2ba5507589d41ffd482f532061323b9c756100`; the pinned snapshot corpus is
+`docs/artifacts/raw/m125_publication_results_v1/q2-real-snapshots.jsonl`
+(SHA-256
+`443eda3bf4a7eb9d82c474fa9f0f3a9a11227779a07dc623e92c7f97c6f185b2`).
+`env PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python
+scripts/exact_commit/run_q2_real_state_gap.py` replayed all three selectors
+from commit `5b6d9349adec9ac910c7bb0601d92d7e5de6f956`: 24/24 rows completed,
+all exact certificates and objectives independently reproduced, with no
+timeouts, failures, or zero optima. The pinned replay rows are
+`docs/artifacts/raw/m125_publication_results_v1/q2-real-gap-rows.jsonl`
+(SHA-256
+`917aa8640ffea67305439d0526432f118801afee97932e0c120e26b7419386f7`)
+and the summary is `docs/evidence/t1254-q2-real-gap-summary.json` (SHA-256
+`dfa49cb7e9c7747475bebf89b28aedd64086f7368f1cda365a446e0c37745ec4`).
+All 24 supports collapsed to one completion after proposal/target
+deduplication, so the versioned interpretation is an execution/alignment
+check with zero observed gaps, explicitly not a difficult-state or population
+gap claim; no confidence interval is reported for the non-IID corpus. The old
+six rows and generated table remain labeled configured synthetic illustrative
+cases. `python -m pytest -q tests/exact_commit/test_t1254_evidence.py
+tests/exact_commit/test_q2_real_gap.py tests/exact_commit/test_q2_gap.py
+tests/exact_commit/test_publication_evidence_policy.py` -> 22 passed; `make
+check` -> 10 unit and 617 exact tests passed; `make paper` -> 15 pages.
 
 ## T1255 — Separate Q4 smoke diagnostics from scaling evidence
 

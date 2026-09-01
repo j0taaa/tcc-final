@@ -1,0 +1,251 @@
+{
+  "all_exact_certificates_independently_valid": true,
+  "all_snapshots_common_across_selectors": true,
+  "artifact_kind": "mwpc_q2_real_state_gap_summary",
+  "comparisons": {
+    "epic_regular_cover": {
+      "absolute_gap": {
+        "count": 24,
+        "iqr": 0.0,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "comparison_count": 24,
+      "equality": {
+        "analysis_unit": "paired_score_comparison",
+        "event_count": 24,
+        "inference_policy": "no_interval_non_iid_task_seed_state_corpus",
+        "observation_count": 24,
+        "rate": 1.0
+      },
+      "relative_gap": {
+        "count": 24,
+        "iqr": 0.0,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "relative_gap_defined_count": 24,
+      "relative_gap_undefined_count": 0,
+      "relative_gap_zero_optimum_policy": "undefined_and_excluded",
+      "zero_optimum_count": 0
+    },
+    "greedy_exact_feasibility": {
+      "absolute_gap": {
+        "count": 24,
+        "iqr": 0.0,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "comparison_count": 24,
+      "equality": {
+        "analysis_unit": "paired_score_comparison",
+        "event_count": 24,
+        "inference_policy": "no_interval_non_iid_task_seed_state_corpus",
+        "observation_count": 24,
+        "rate": 1.0
+      },
+      "relative_gap": {
+        "count": 24,
+        "iqr": 0.0,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "q3": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "relative_gap_defined_count": 24,
+      "relative_gap_undefined_count": 0,
+      "relative_gap_zero_optimum_policy": "undefined_and_excluded",
+      "zero_optimum_count": 0
+    }
+  },
+  "configured_snapshot_count": 24,
+  "empirical_interpretation": "execution_alignment_check_all_supports_singleton_after_deduplication",
+  "failure_count": 0,
+  "failures": [],
+  "non_singleton_support_count": 0,
+  "raw_sha256": "917aa8640ffea67305439d0526432f118801afee97932e0c120e26b7419386f7",
+  "run_metadata": {
+    "component_selectors": [
+      "greedy_exact_feasibility",
+      "epic_regular_cover",
+      "exact_mwpc"
+    ],
+    "config": {
+      "experiment_id": "q2_real_state_publication_v2",
+      "publication_mode": true,
+      "question": "heuristic_gap",
+      "sha256": "a565848ff63cf38459ee8299dca5838babfe175890b891459f21fe686bbef51d"
+    },
+    "config_sha256": "a565848ff63cf38459ee8299dca5838babfe175890b891459f21fe686bbef51d",
+    "dataset": "saved_real_llada_selector_states_v2",
+    "exactness": {
+      "guarantee": "per_step",
+      "independent_certificate_required": true,
+      "scope": "exact_on_support"
+    },
+    "generated_at_utc": "2026-09-01T02:52:33.914106+00:00",
+    "git_commit": "5b6d9349adec9ac910c7bb0601d92d7e5de6f956",
+    "git_dirty": false,
+    "grammar": {
+      "grammar_id": "q5_structured_literal_cfg_family_v4",
+      "hash_policy": "sha256_canonical_grammar",
+      "revision": "q5_structured_tasks_v4",
+      "sha256": [
+        "27e48f3ecf584faf67f28ace77ad5dcf161d5486b8a3a2864e4aba416f451948",
+        "3e399c96319453fc3dcfed5677643ecca5a4dc7b57c0808c499e634973a9f533"
+      ],
+      "source": "configs/experiments/q5_structured_tasks_v4.toml"
+    },
+    "hardware": {
+      "accelerator_config": {
+        "cuda_device": null,
+        "device": "cpu",
+        "dtype": "float64",
+        "synchronize_cuda": false
+      },
+      "cpu": {
+        "affinity_count": 16,
+        "logical_count": 16,
+        "machine": "x86_64",
+        "model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz"
+      },
+      "gpu": {
+        "available": true,
+        "driver_version": "595.84",
+        "name": "NVIDIA GeForce RTX 3080 Ti",
+        "total_vram_bytes": 12884901888
+      },
+      "os": {
+        "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+        "release": "7.0.0-30-generic",
+        "system": "Linux"
+      },
+      "ram": {
+        "total_bytes": 16609316864
+      },
+      "threads": {
+        "configured_cpu_threads": 1,
+        "environment": {
+          "MKL_NUM_THREADS": null,
+          "NUMEXPR_NUM_THREADS": null,
+          "OMP_NUM_THREADS": null,
+          "OPENBLAS_NUM_THREADS": null,
+          "RAYON_NUM_THREADS": null,
+          "RUST_MIN_STACK": null
+        }
+      }
+    },
+    "metadata_integrity": {
+      "critical_fields_complete": true,
+      "missing_critical_fields": [],
+      "publication_blockers": []
+    },
+    "metadata_schema_version": 1,
+    "model": {
+      "local_files_only": true,
+      "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+      "requested_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+    },
+    "publication_bundle_id": "m125_publication_results_v1",
+    "repetitions": 1,
+    "run_id": "q2_real_state_publication_v2",
+    "seeds": [
+      125401,
+      125402,
+      125403
+    ],
+    "snapshot_count": 24,
+    "snapshot_jsonl": "results/raw/q2_real_state_capture_v2/q2-real-snapshots.jsonl",
+    "snapshot_jsonl_sha256": "443eda3bf4a7eb9d82c474fa9f0f3a9a11227779a07dc623e92c7f97c6f185b2",
+    "software_versions": {
+      "cuda_driver_supported_runtime": "13.2",
+      "cuda_runtime": null,
+      "cuda_toolkit": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+      "mwpc_exact": "0.1.0",
+      "mwpc_parser_py": "0.1.0",
+      "python": "3.11.16",
+      "pytorch": "2.8.0+cu128",
+      "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+      "rustformlang": "0.1.0",
+      "transformers": "4.52.2"
+    },
+    "solver_status_counts": {
+      "replay": {
+        "complete": 24,
+        "error": 0
+      },
+      "selectors": {
+        "epic_regular_cover": {
+          "heuristic": 24
+        },
+        "exact_mwpc": {
+          "optimal": 24
+        },
+        "greedy_exact_feasibility": {
+          "feasible_on_support": 24
+        }
+      }
+    },
+    "support": {
+      "finite_slots": true,
+      "k_max": 2,
+      "policy": "saved_primary_proposal_plus_target_witness",
+      "top_k": 1
+    },
+    "synthetic_rows_included": false,
+    "timeouts": {
+      "run_seconds": 3600.0,
+      "solver_seconds": 30.0
+    },
+    "tokenizer": {
+      "requested_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+      "tokenizer_id": "GSAI-ML/LLaDA-8B-Instruct"
+    }
+  },
+  "sampling_inference": "none_non_iid_task_seed_state_corpus",
+  "schema_version": 1,
+  "seed_counts": {
+    "125401": 8,
+    "125402": 8,
+    "125403": 8
+  },
+  "snapshot_count": 24,
+  "status_counts_by_selector": {
+    "epic_regular_cover": {
+      "heuristic": 24
+    },
+    "exact_mwpc": {
+      "optimal": 24
+    },
+    "greedy_exact_feasibility": {
+      "feasible_on_support": 24
+    }
+  },
+  "support_combination_counts": {
+    "1": 24
+  },
+  "task_counts": {
+    "fenced_add_dsl": 12,
+    "json_x_zero": 12
+  },
+  "timeout_count": 0,
+  "zero_optimum_count": 0
+}

@@ -1,0 +1,185 @@
+{
+  "artifact_kind": "mwpc_q2_real_snapshot_capture_metadata",
+  "pair_counts": {
+    "fenced_add_dsl:125401": 4,
+    "fenced_add_dsl:125402": 4,
+    "fenced_add_dsl:125403": 4,
+    "json_x_zero:125401": 4,
+    "json_x_zero:125402": 4,
+    "json_x_zero:125403": 4
+  },
+  "run_metadata": {
+    "bitsandbytes_version": "0.50.1",
+    "config": {
+      "experiment_id": "q2_real_state_capture_v2",
+      "publication_mode": true,
+      "question": "heuristic_gap",
+      "sha256": "c1265a629a1154ca509c36209d0acfadc9f8bd09ef67020bf3e6d4d2807c649e"
+    },
+    "config_sha256": "c1265a629a1154ca509c36209d0acfadc9f8bd09ef67020bf3e6d4d2807c649e",
+    "exactness": {
+      "guarantee": "per_step",
+      "independent_certificate_required": true,
+      "scope": "exact_on_support"
+    },
+    "generated_at_utc": "2026-09-01T02:48:08.260475+00:00",
+    "git_commit": "fc2ba5507589d41ffd482f532061323b9c756100",
+    "git_dirty": false,
+    "grammar": {
+      "grammar_id": "q5_structured_literal_cfg_family_v4",
+      "hash_policy": "sha256_canonical_grammar",
+      "revision": "q5_structured_tasks_v4",
+      "sha256": [
+        "68f5417e04f45356ae4c1b6c7a5e983627c05df785382019c2b52300a60de18a",
+        "7f6faca12213b3026c2888e2bf13a094e2ace620685114a295132c4e85e5552b"
+      ],
+      "source": "configs/experiments/q5_structured_tasks_v4.toml"
+    },
+    "hardware": {
+      "accelerator_config": {
+        "cuda_device": 0,
+        "device": "cuda",
+        "dtype": "bfloat16",
+        "synchronize_cuda": true
+      },
+      "cpu": {
+        "affinity_count": 16,
+        "logical_count": 16,
+        "machine": "x86_64",
+        "model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz"
+      },
+      "gpu": {
+        "available": true,
+        "driver_version": "595.84",
+        "name": "NVIDIA GeForce RTX 3080 Ti",
+        "total_vram_bytes": 12884901888
+      },
+      "os": {
+        "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+        "release": "7.0.0-30-generic",
+        "system": "Linux"
+      },
+      "ram": {
+        "total_bytes": 16609316864
+      },
+      "threads": {
+        "configured_cpu_threads": 1,
+        "environment": {
+          "MKL_NUM_THREADS": null,
+          "NUMEXPR_NUM_THREADS": null,
+          "OMP_NUM_THREADS": null,
+          "OPENBLAS_NUM_THREADS": null,
+          "RAYON_NUM_THREADS": null,
+          "RUST_MIN_STACK": null
+        }
+      }
+    },
+    "loaded_checkpoint_shards": [
+      {
+        "name": "model-00001-of-00006.safetensors",
+        "size_bytes": 2109747184
+      },
+      {
+        "name": "model-00002-of-00006.safetensors",
+        "size_bytes": 2948598128
+      },
+      {
+        "name": "model-00003-of-00006.safetensors",
+        "size_bytes": 2986883656
+      },
+      {
+        "name": "model-00004-of-00006.safetensors",
+        "size_bytes": 2952797224
+      },
+      {
+        "name": "model-00005-of-00006.safetensors",
+        "size_bytes": 2919239128
+      },
+      {
+        "name": "model-00006-of-00006.safetensors",
+        "size_bytes": 2113931792
+      }
+    ],
+    "metadata_integrity": {
+      "critical_fields_complete": true,
+      "missing_critical_fields": [],
+      "publication_blockers": []
+    },
+    "metadata_schema_version": 1,
+    "model": {
+      "local_files_only": true,
+      "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+      "requested_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+    },
+    "publication_bundle_id": "m125_publication_results_v1",
+    "repetitions": 1,
+    "run_id": "q2_real_state_capture_v2",
+    "seeds": [
+      125401,
+      125402,
+      125403
+    ],
+    "snapshot_selection": "last_four_successful_epic_selector_states_per_task_seed",
+    "software_versions": {
+      "cuda_driver_supported_runtime": "13.2",
+      "cuda_runtime": "12.8",
+      "cuda_toolkit": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+      "mwpc_exact": "0.1.0",
+      "mwpc_parser_py": "0.1.0",
+      "python": "3.11.16",
+      "pytorch": "2.8.0+cu128",
+      "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+      "rustformlang": "0.1.0",
+      "transformers": "4.52.2"
+    },
+    "solver_status_counts": {
+      "snapshot_capture": {
+        "complete": 24
+      }
+    },
+    "source_q5_config": "configs/experiments/q5_structured_publication_v4.toml",
+    "source_q5_config_sha256": "6318a4c2810ac7926806ceda86ad4b013146f4d27f879cbb5ab7dfb7b08a28c4",
+    "support": {
+      "finite_slots": true,
+      "k_max": 2,
+      "policy": "saved_primary_proposal_plus_target_witness",
+      "top_k": 1
+    },
+    "timeouts": {
+      "run_seconds": 3600.0,
+      "solver_seconds": 30.0
+    },
+    "tokenizer": {
+      "requested_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+      "tokenizer_id": "GSAI-ML/LLaDA-8B-Instruct"
+    }
+  },
+  "schema_version": 1,
+  "snapshot_count": 24,
+  "snapshot_sha256": [
+    "52f0d56bc55b3f3b0915352f014c4c5f29c30ab79cf0ae551c50dc5275e427f2",
+    "598d77504881b64057ee800a65a2d2ed1c81cade4694a1ddda4ef9149a7a6f7c",
+    "c1fc9e11692d983d4ac6b22a4744115b512d3f2e8e82b08db2e906fe9e5ecff0",
+    "86ab55417249b428e8af34015360e3c370bc1ab4fd0f9f81ec265e1fa5eca1f3",
+    "3a0b4fade684e87706a70a73e9e0b1770b822eb8feb2aa3a8c06931dfc1006ea",
+    "7ee68fbee414ee77f307a534916458c4776629ab2496a65ea3e4d597de9a5155",
+    "3376c4ba117e00cc45d6691ebb61b1fd9918d6453e5a8e1fb320c973e8820de8",
+    "1ae312c6f4e1142b693e864341e00b35ebd41a000b3d74a756bd862d7caa065b",
+    "4297c53406d53b8035e842f81ddbdb74e1ef74df30dfca9e61ee808c2ac3eb2e",
+    "75dc73b40b425d6d12d1443d20d745f2a6c2f3f5401eb0f15edc5aad086f0a3f",
+    "82fbf20c9d01dc7be11cecd24af41b70fca0159bfc1bb8073217900c7ad60b75",
+    "5dd593efd8f8e9f6884257fc170f5910d3551e510f32ab96f4ba3e70922910fb",
+    "cdc58e294926231b38dd1d387767e2e4057a567658cfd6dcf17c0bf7e225c2c4",
+    "5e2ca554827fdc8af85d3a587d984f756a3862d1b09f16f9b4260fd5940df68f",
+    "6b6a447844a6e721599fe31096a6f5b91bda785b0a9066da5b38751a632290d9",
+    "0063223ab06704017132a8c5453dc43b31c02fa3f76fedcceaf81cd316784796",
+    "9ae103ef12442c8d3b94dcb64fcdddcc53732f8e2450a9b399925619fc9e98cb",
+    "f9f1798cca1a2f80c3759b7e5cac9d603df4474b8dcce2ed924336403ced7971",
+    "17462ed4c959cdeb0bf40937654ea44d01e29d99e9dd2e382c9ca08f5e2c3178",
+    "352d33c892e028e3e324107f4ecf5f60ccfaf8bd064274f33cf0d795540f4573",
+    "396d0e92b582bb2ba693a5126383b3f6e6e08c7a848181566283f8eb2f7a150d",
+    "0256a12c0ab6fef54c48fef7dbe63261fa3175d34d77ba20a1c5bd00949d170e",
+    "be811bbfda5a073bbce3d0097509aa0c9f16a2ba95ecb7056870fb06a2086934",
+    "5197fbaee55fc5318daa8cefe4d2d472ab33e9183b3331bea126163ebfad7ce9"
+  ]
+}
