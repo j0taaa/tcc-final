@@ -1,0 +1,57 @@
+schema_version = 1
+experiment_id = "q2_real_state_publication_v2"
+question = "heuristic_gap"
+description = "CPU replay of three selectors over 24 shared real LLaDA snapshots."
+publication_mode = true
+seeds = [125401, 125402, 125403]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "saved_primary_proposal_plus_target_witness"
+top_k = 1
+k_max = 2
+finite_slots = true
+
+[model]
+model_id = "GSAI-ML/LLaDA-8B-Instruct"
+model_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+tokenizer_id = "GSAI-ML/LLaDA-8B-Instruct"
+tokenizer_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+local_files_only = true
+
+[grammar]
+grammar_id = "q5_structured_literal_cfg_family_v4"
+source = "configs/experiments/q5_structured_tasks_v4.toml"
+revision = "q5_structured_tasks_v4"
+hash_policy = "sha256_canonical_grammar"
+
+[timeouts]
+solver_seconds = 30.0
+run_seconds = 3600.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+snapshot_capture_config = "configs/experiments/q2_real_state_capture_v2.toml"
+snapshot_jsonl = "results/raw/q2_real_state_capture_v2/q2-real-snapshots.jsonl"
+task_ids = ["json_x_zero", "fenced_add_dsl"]
+snapshots_per_task_seed = 4
+expected_snapshot_count = 24
+selectors = ["greedy_exact_feasibility", "epic_regular_cover", "exact_mwpc"]
+weight_modes = ["confidence"]
+exact_backend = "rust"
+independent_validation = "certificate_witness_score_and_baseline_subset_feasibility"
+maximum_support_combinations_for_baseline_validation = 4096
+require_common_snapshot_hash = true
+publication_bundle_id = "m125_publication_results_v1"
+raw_output_root = "results/raw/q2_real_state_publication_v2"

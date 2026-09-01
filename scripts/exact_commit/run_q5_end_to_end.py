@@ -595,6 +595,7 @@ def _prepare_upstream_call(
     lex_map: Any,
     preprocessed: Any,
     parameters: Q5Parameters,
+    regular_cover_observer: Callable[[Mapping[str, object]], None] | None = None,
 ) -> Iterator[Callable[[], Mapping[str, object]]]:
     """Prepare upstream environment and observers outside the timed region."""
 
@@ -625,9 +626,42 @@ def _prepare_upstream_call(
         return original_selector(*args, **kwargs)
 
     def observing_try_batch(*args: object, **kwargs: object) -> object:
+        observation: dict[str, object] | None = None
+        if regular_cover_observer is not None:
+            prompt_shape_1 = int(kwargs["prompt_shape_1"])
+            block_end = int(kwargs["block_end"])
+            x = kwargs["x"]
+            x0 = kwargs["x0"]
+            confidence = kwargs["confidence"]
+            observation = {
+                "canvas_token_ids": tuple(
+                    None
+                    if int(token_id) == PINNED_LLADA_PROFILE.mask_token_id
+                    else int(token_id)
+                    for token_id in x[0, prompt_shape_1:block_end].tolist()
+                ),
+                "predicted_token_ids": tuple(
+                    int(token_id) for token_id in x0[0, prompt_shape_1:block_end].tolist()
+                ),
+                "confidence_values": tuple(
+                    float(value)
+                    for value in confidence[0, prompt_shape_1:block_end].tolist()
+                ),
+            }
         selected = original_try_batch(*args, **kwargs)
         if selected:
             regular_cover_batch_sizes.append(len(selected))
+            if observation is not None:
+                regular_cover_observer(
+                    {
+                        **observation,
+                        "selected_positions": tuple(
+                            int(item.index) - int(kwargs["prompt_shape_1"])
+                            for item in selected
+                        ),
+                        "selected_token_ids": tuple(int(item.token_id) for item in selected),
+                    }
+                )
         return selected
 
     generate_constrained.select_batch_with_regular_cover = observing_selector

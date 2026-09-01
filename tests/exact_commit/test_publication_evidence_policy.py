@@ -7,7 +7,7 @@ from mwpc_exact.experiments import load_experiment_config
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 PUBLICATION_CONFIGS = {
-    "q2": REPOSITORY_ROOT / "configs/experiments/q2_real_state_publication_v1.toml",
+    "q2": REPOSITORY_ROOT / "configs/experiments/q2_real_state_publication_v2.toml",
     "q4": REPOSITORY_ROOT / "configs/experiments/q4_scaling_publication_v1.toml",
     "q5": REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v4.toml",
 }
@@ -42,9 +42,17 @@ def test_publication_campaigns_are_predeclared_with_a_new_bundle() -> None:
     }
 
     q2 = configs["q2"]
-    assert q2.parameters["expected_snapshot_count"] == 30
-    assert q2.parameters["snapshots_per_task_seed"] == 5
+    assert q2.parameters["expected_snapshot_count"] == 24
+    assert q2.parameters["snapshots_per_task_seed"] == 4
     assert q2.parameters["require_common_snapshot_hash"] is True
+    capture = load_experiment_config(
+        REPOSITORY_ROOT / "configs/experiments/q2_real_state_capture_v2.toml"
+    )
+    assert capture.publication_mode is True
+    assert capture.parameters["expected_snapshot_count"] == 24
+    assert capture.parameters["snapshot_selection"] == (
+        "last_four_successful_epic_selector_states_per_task_seed"
+    )
 
     q4 = configs["q4"]
     assert q4.repetitions == 10
@@ -137,3 +145,15 @@ def test_q5_amendment_records_rejected_pilot_without_weakening_gates() -> None:
         "exact_on_support",
     ):
         assert required in model_aligned
+
+    q2_support = (REPOSITORY_ROOT / "docs/decisions/0020-q2-real-snapshot-support.md").read_text(
+        encoding="utf-8"
+    )
+    for required in (
+        "24 real denoising snapshots",
+        "actual-to-local",
+        "exhaustively rechecked",
+        "exact_on_support",
+        "never mixed",
+    ):
+        assert required in q2_support

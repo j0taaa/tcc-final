@@ -1,0 +1,54 @@
+schema_version = 1
+experiment_id = "q2_real_state_capture_v2"
+question = "heuristic_gap"
+description = "Capture last four successful EPIC selector states per Q5 v4 task and seed."
+publication_mode = true
+seeds = [125401, 125402, 125403]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "saved_primary_proposal_plus_target_witness"
+top_k = 1
+k_max = 2
+finite_slots = true
+
+[model]
+model_id = "GSAI-ML/LLaDA-8B-Instruct"
+model_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+tokenizer_id = "GSAI-ML/LLaDA-8B-Instruct"
+tokenizer_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+local_files_only = true
+
+[grammar]
+grammar_id = "q5_structured_literal_cfg_family_v4"
+source = "configs/experiments/q5_structured_tasks_v4.toml"
+revision = "q5_structured_tasks_v4"
+hash_policy = "sha256_canonical_grammar"
+
+[timeouts]
+solver_seconds = 30.0
+run_seconds = 3600.0
+
+[hardware]
+device = "cuda"
+dtype = "bfloat16"
+cpu_threads = 1
+cuda_device = 0
+synchronize_cuda = true
+
+[parameters]
+source_q5_config = "configs/experiments/q5_structured_publication_v4.toml"
+task_ids = ["json_x_zero", "fenced_add_dsl"]
+snapshot_selection = "last_four_successful_epic_selector_states_per_task_seed"
+snapshots_per_task_seed = 4
+expected_snapshot_count = 24
+proposal_policy = "all_masked_ordinary_primary_model_proposals"
+support_policy = "primary_proposal_plus_target_witness_per_masked_slot"
+weight_mode = "confidence"
+publication_bundle_id = "m125_publication_results_v1"
+raw_output_root = "results/raw/q2_real_state_capture_v2"
