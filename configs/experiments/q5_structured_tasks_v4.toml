@@ -1,0 +1,32 @@
+schema_version = 1
+task_set_id = "q5_structured_tasks_v4"
+
+[[tasks]]
+task_id = "json_x_zero"
+prompt_id = "json_x_zero_fenced_prompt_v4"
+prompt_instruction = "Reply with this exact Markdown JSON block and nothing else: ```json\n{\n  \"x\": 0\n}\n```"
+target_utf8 = """```json
+{
+  "x": 0
+}
+```"""
+grammar_kind = "literal_utf8_cfg"
+functional_checker = "exact_target_bytes_match_v1"
+generation_length = 16
+block_length = 16
+steps = 8
+schedule_budget = 16
+
+[[tasks]]
+task_id = "fenced_add_dsl"
+prompt_id = "fenced_add_dsl_prompt_v4"
+prompt_instruction = "Reply with this exact fenced DSL block and nothing else: ```text\nADD 0 0\n```"
+target_utf8 = """```text
+ADD 0 0
+```"""
+grammar_kind = "literal_utf8_cfg"
+functional_checker = "exact_target_bytes_match_v1"
+generation_length = 12
+block_length = 12
+steps = 6
+schedule_budget = 12

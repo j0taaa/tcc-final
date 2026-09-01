@@ -31,7 +31,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = REPOSITORY_ROOT / "configs/experiments/q5_end_to_end_v1.toml"
 TIMING_CONFIG_PATH = REPOSITORY_ROOT / "configs/experiments/q5_timing_v1.toml"
 PUBLICATION_CONFIG_PATH = (
-    REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v3.toml"
+    REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v4.toml"
 )
 
 
@@ -152,8 +152,8 @@ def test_publication_config_loads_two_literal_tasks_and_multibyte_cnf() -> None:
         parameters.task_ids,
     )
 
-    assert [task.task_id for task in tasks] == ["json_x_zero", "infix_sum"]
-    assert [(task.generation_length, task.steps) for task in tasks] == [(16, 8), (4, 1)]
+    assert [task.task_id for task in tasks] == ["json_x_zero", "fenced_add_dsl"]
+    assert [(task.generation_length, task.steps) for task in tasks] == [(16, 8), (12, 6)]
     for task in tasks:
         target = tuple(task.target_utf8.encode("utf-8"))
         grammar = _literal_grammar(bytes(target))

@@ -20,3 +20,4 @@ Numbered architecture decision records live here. Each ADR states the affected s
 - `0016-publication-evidence-tier.md`: final-article evidence tiers, claim boundaries, and predeclared publication campaigns.
 - `0017-q5-publication-pilot-amendment.md`: rejected Q5 pilot and the pre-evidence v2 amendment.
 - `0018-q5-task-specific-schedules.md`: v3 task-specific finite-slot Q5 schedules after the v2 expression rejection.
+- `0019-q5-model-aligned-dsl-task.md`: v4 fenced DSL replacement after the v3 EPIC-candidate rejection.
