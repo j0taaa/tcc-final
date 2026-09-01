@@ -632,6 +632,13 @@ Q2 smoke. T1260 separately records passing clean-clone artifact-rebuild and
 source-experiment-rerun rehearsals. ADR 0016, the T1257 artifact clarification,
 and the T1258 result budget prevent diagnostic evidence from being promoted to
 publication claims; no CUDA/model experiment is claimed as rerun by this gate.
+The final requirement-by-requirement audit is versioned at
+[`docs/evidence/m125-completion-audit.md`](docs/evidence/m125-completion-audit.md).
+It found and corrected the remaining T1259 paper-documentation language gap in
+commit `7b0d9aabeeaa3388b4b652b9e24d66f0da9b784d`; GitHub Actions run
+[`33468417087`](https://github.com/j0taaa/tcc-final/actions/runs/33468417087)
+then passed all three jobs, including both 500-case oracle campaigns, release
+wheel rehearsal, pinned EPIC integration, and focused combined Q2/Q5 tests.
 
 ---
 
