@@ -6,8 +6,14 @@ from dataclasses import replace
 from pathlib import Path
 
 import pytest
+from scripts.exact_commit.run_q5_end_to_end import (
+    _configuration_parameters,
+    _literal_grammar,
+    _load_task_manifest,
+)
 
 from mwpc_exact.experiments import ExperimentKind, load_experiment_config
+from mwpc_exact.reference.recognizer import recognizes_cnf
 from mwpc_exact.types import SolveStatus
 from mwpc_research.q5_end_to_end import (
     Q5_STRATEGIES,
@@ -21,6 +27,9 @@ from mwpc_research.q5_end_to_end import (
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = REPOSITORY_ROOT / "configs/experiments/q5_end_to_end_v1.toml"
 TIMING_CONFIG_PATH = REPOSITORY_ROOT / "configs/experiments/q5_timing_v1.toml"
+PUBLICATION_CONFIG_PATH = (
+    REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v1.toml"
+)
 
 
 def _record(
@@ -129,6 +138,35 @@ def test_timing_config_adds_warmup_balanced_order_and_recorded_repetitions() -> 
     assert config.parameters["method_order"] == "balanced_cyclic_by_repetition"
     assert config.parameters["rss_sample_interval_seconds"] == 0.001
     assert config.parameters["quartile_policy"] == "linear_interpolation_type7"
+
+
+def test_publication_config_loads_two_literal_tasks_and_multibyte_cnf() -> None:
+    config = load_experiment_config(PUBLICATION_CONFIG_PATH)
+    parameters = _configuration_parameters(config.parameters, publication_mode=True)
+    assert parameters.task_manifest is not None
+    tasks = _load_task_manifest(
+        REPOSITORY_ROOT / parameters.task_manifest,
+        parameters.task_ids,
+    )
+
+    assert [task.task_id for task in tasks] == ["json_x_zero", "parenthesized_sum"]
+    for task in tasks:
+        target = tuple(task.target_utf8.encode("utf-8"))
+        grammar = _literal_grammar(bytes(target))
+        assert recognizes_cnf(grammar, target)
+        assert not recognizes_cnf(grammar, target[:-1])
+
+
+def test_publication_summary_preserves_benchmark_claim() -> None:
+    result = Q5ExperimentResult(
+        tuple(_record(strategy) for strategy in Q5_STRATEGIES),
+        {"run_id": "publication", "benchmark_claim": True},
+    )
+
+    summary = result.summary_dict()
+
+    assert summary["benchmark_claim"] is True
+    assert summary["timing_interpretation"] == "publication-mode paired CUDA campaign"
 
 
 def test_all_four_methods_must_share_one_comparison_fingerprint() -> None:

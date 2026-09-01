@@ -11,9 +11,9 @@ Strategy & Runs & Complete & Syntax & Functional & F/T/E gen. & Batch & Runtime 
 \midrule
 unconstrained & 8 & 8 & 8 & 8 & 0/0/-- & 1.00 & 37.49 [0.25] & 4.23$\times$ & -- \\
 serial & 8 & 8 & 8 & 8 & 0/0/-- & 1.00 & 37.50 [0.12] & 4.23$\times$ & -- \\
-epic & 8 & 8 & 8 & 8 & 8/0/-- & 1.00 & 39.63 [0.70] & 4.00$\times$ & -- \\
+EPIC-enabled (serial fallback) & 8 & 8 & 8 & 8 & 8/0/-- & 1.00 & 39.63 [0.70] & 4.00$\times$ & -- \\
 exact & 8 & 8 & 8 & 8 & 0/0/0 & 4.00 & 158.65 [0.42] & 1.00$\times$ & OPTIMAL (8) \\
 \bottomrule
 \end{tabular}
-\par\footnotesize Eight warm, balanced-cyclic repetitions of one literal-output task. This validates live integration and timing instrumentation only (\texttt{benchmark\_claim=false}); it is not a publication benchmark. F/T/E denotes generations with fallback, timeout, or support expansion; -- is not applicable. Rates are per generation; step-level rates are unavailable from these aggregated rows.
+\par\footnotesize Eight warm, balanced-cyclic repetitions of one literal-output task. This validates live integration and timing instrumentation only (\texttt{benchmark\_claim=false}); it is not a publication benchmark. F/T/E denotes generations with fallback, timeout, or support expansion; -- is not applicable. Rates are per generation; step-level rates are unavailable from these aggregated rows. The EPIC row is an EPIC-enabled decoder with serial fallback on the configured single-token task.
 \end{table}

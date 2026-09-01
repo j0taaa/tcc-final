@@ -404,6 +404,7 @@ class Q5ExperimentResult:
         return failures
 
     def summary_dict(self) -> dict[str, object]:
+        benchmark_claim = self.run_metadata.get("benchmark_claim", False) is True
         by_strategy = {
             strategy: tuple(record for record in self.records if record.strategy == strategy)
             for strategy in Q5_STRATEGIES
@@ -469,7 +470,7 @@ class Q5ExperimentResult:
         return {
             "artifact_kind": Q5_SUMMARY_ARTIFACT_KIND,
             "schema_version": Q5_ARTIFACT_SCHEMA_VERSION,
-            "benchmark_claim": False,
+            "benchmark_claim": benchmark_claim,
             "measurement_count": len(self.records),
             "repetition_count": len(self.records) // len(Q5_STRATEGIES),
             "recorded_repetitions": sorted({record.repetition for record in self.records}),
@@ -516,7 +517,9 @@ class Q5ExperimentResult:
                 "quartile_policy": "linear_interpolation_type7",
             },
             "timing_interpretation": (
-                "single ordered smoke; ratios are diagnostic and not a publication benchmark"
+                "publication-mode paired CUDA campaign"
+                if benchmark_claim
+                else "single ordered smoke; ratios are diagnostic and not a publication benchmark"
                 if len(self.records) == len(Q5_STRATEGIES)
                 else "warm repeated CUDA timing sample; not a publication benchmark"
             ),

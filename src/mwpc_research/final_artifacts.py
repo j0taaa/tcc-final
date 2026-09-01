@@ -1432,8 +1432,9 @@ def _end_to_end_table(summary: Mapping[str, object]) -> bytes:
         if strategy != "exact":
             comparison = _mapping(comparisons[strategy], f"comparison.{strategy}")
             ratio = _number(comparison["median_runtime_ratio"], "runtime ratio")
+        strategy_label = "EPIC-enabled (serial fallback)" if strategy == "epic" else strategy
         lines.append(
-            f"{_latex_escape(strategy)} & "
+            f"{_latex_escape(strategy_label)} & "
             f"{_integer(row['generation_count'], 'generation_count')} & "
             f"{_integer(complete['event_count'], 'complete_count')} & "
             f"{_integer(syntactic['event_count'], 'syntactic_count')} & "
@@ -1456,7 +1457,8 @@ def _end_to_end_table(summary: Mapping[str, object]) -> bytes:
                 r"a publication benchmark. F/T/E denotes generations with fallback, "
                 r"timeout, or support expansion; -- is not applicable. Rates are per "
                 r"generation; step-level rates are unavailable from these aggregated "
-                r"rows."
+                r"rows. The EPIC row is an EPIC-enabled decoder with serial fallback "
+                r"on the configured single-token task."
             ),
             r"\end{table}",
         )

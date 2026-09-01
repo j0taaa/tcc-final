@@ -284,7 +284,10 @@ def test_final_bundle_is_generated_directly_from_pinned_rows(tmp_path: Path) -> 
         summary["end_to_end"]["exact_runtime_comparisons"]["serial"]["median_runtime_ratio"] == 1.5
     )
     assert "100.0" in (paper / CORRECTNESS_TABLE_FILENAME).read_text()
-    assert "0/0/0" in (paper / END_TO_END_TABLE_FILENAME).read_text()
+    end_to_end_table = (paper / END_TO_END_TABLE_FILENAME).read_text()
+    assert "0/0/0" in end_to_end_table
+    assert "EPIC-enabled (serial fallback)" in end_to_end_table
+    assert "EPIC-enabled decoder with serial fallback" in end_to_end_table
     ElementTree.parse(paper / HEURISTIC_GAP_FIGURE_FILENAME)
     ElementTree.parse(paper / SCALING_FIGURE_FILENAME)
     manifest = json.loads((processed / FINAL_MANIFEST_FILENAME).read_text())

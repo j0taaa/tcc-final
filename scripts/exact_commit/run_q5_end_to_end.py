@@ -8,6 +8,7 @@ import hashlib
 import importlib.metadata
 import json
 import os
+import re
 import resource
 import shutil
 import subprocess
@@ -44,7 +45,13 @@ from mwpc_exact.experiments import (
     save_resolved_config,
 )
 from mwpc_exact.profiling import ComponentProfiler
-from mwpc_exact.reference.grammar import CnfGrammar, Nonterminal, Terminal, TerminalProduction
+from mwpc_exact.reference.grammar import CnfGrammar, Nonterminal, Terminal
+from mwpc_exact.reference.normalization import (
+    SourceGrammar,
+    SourceProduction,
+    TerminalRef,
+    normalize_to_cnf,
+)
 from mwpc_exact.reference.recognizer import recognizes_cnf
 from mwpc_research.q5_end_to_end import (
     Q5_STRATEGIES,
@@ -145,10 +152,11 @@ def _relative_path(value: object, field_name: str) -> str:
 class Q5Parameters:
     strategies: tuple[str, ...]
     task_ids: tuple[str, ...]
-    prompt_id: str
-    prompt_instruction: str
-    target_utf8: str
-    functional_checker: str
+    prompt_id: str | None
+    prompt_instruction: str | None
+    target_utf8: str | None
+    functional_checker: str | None
+    task_manifest: str | None
     generation_length: int
     block_length: int
     steps: int
@@ -174,16 +182,26 @@ class Q5Parameters:
     raw_output_root: str
     rss_sample_interval_seconds: float | None
     quartile_policy: str | None
+    require_regular_cover_selector_call: bool
+    require_epic_batch_larger_than_one: bool
+    publication_bundle_id: str | None
 
 
-def _configuration_parameters(parameters: Mapping[str, object]) -> Q5Parameters:
-    required = {
+@dataclass(frozen=True, slots=True)
+class Q5Task:
+    task_id: str
+    prompt_id: str
+    prompt_instruction: str
+    target_utf8: str
+    functional_checker: str
+
+
+def _configuration_parameters(
+    parameters: Mapping[str, object], *, publication_mode: bool = False
+) -> Q5Parameters:
+    common = {
         "strategies",
         "task_ids",
-        "prompt_id",
-        "prompt_instruction",
-        "target_utf8",
-        "functional_checker",
         "generation_length",
         "block_length",
         "steps",
@@ -209,15 +227,25 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> Q5Parameters:
         "raw_output_root",
     }
     timing_fields = {"rss_sample_interval_seconds", "quartile_policy"}
-    if set(parameters) not in (required, required | timing_fields):
-        raise ValueError(
-            "Q5 parameters must contain the base fields and either both or neither timing field"
-        )
+    inline_task_fields = {"prompt_id", "prompt_instruction", "target_utf8", "functional_checker"}
+    publication_fields = {
+        "task_manifest",
+        "require_regular_cover_selector_call",
+        "require_epic_batch_larger_than_one",
+        "snapshot_capture_strategy",
+        "snapshot_capture_steps_per_task_seed",
+        "publication_bundle_id",
+    }
+    expected = common | timing_fields | (
+        publication_fields if publication_mode else inline_task_fields
+    )
+    if set(parameters) != expected:
+        raise ValueError(f"Q5 parameters must contain exactly {sorted(expected)!r}")
     strategies = _string_sequence(parameters["strategies"], "parameters.strategies")
     if strategies != Q5_STRATEGIES:
         raise ValueError(f"Q5 strategies must be {Q5_STRATEGIES!r}")
     task_ids = _string_sequence(parameters["task_ids"], "parameters.task_ids")
-    if task_ids != ("t904_literal_zero",):
+    if not publication_mode and task_ids != ("t904_literal_zero",):
         raise ValueError("Q5 v1 must use only the frozen T904 literal-zero task")
     exact_backend = ExactBackend(_string(parameters["exact_backend"], "exact_backend"))
     if exact_backend is not ExactBackend.RUST:
@@ -225,16 +253,43 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> Q5Parameters:
     epic_exact = parameters["epic_regular_cover_exact"]
     if epic_exact is not True:
         raise ValueError("Q5 EPIC regular-cover verification must remain exact")
+    if publication_mode:
+        if parameters["require_regular_cover_selector_call"] is not True:
+            raise ValueError("publication Q5 must require an EPIC selector call")
+        if parameters["require_epic_batch_larger_than_one"] is not True:
+            raise ValueError("publication Q5 must require an EPIC batch larger than one")
+        if parameters["snapshot_capture_strategy"] != "exact":
+            raise ValueError("publication Q5 snapshot strategy must remain exact")
+        _integer(
+            parameters["snapshot_capture_steps_per_task_seed"],
+            "parameters.snapshot_capture_steps_per_task_seed",
+            minimum=1,
+        )
     return Q5Parameters(
         strategies=strategies,
         task_ids=task_ids,
-        prompt_id=_string(parameters["prompt_id"], "parameters.prompt_id"),
-        prompt_instruction=_string(
-            parameters["prompt_instruction"], "parameters.prompt_instruction"
+        prompt_id=(
+            None if publication_mode else _string(parameters["prompt_id"], "parameters.prompt_id")
         ),
-        target_utf8=_string(parameters["target_utf8"], "parameters.target_utf8"),
-        functional_checker=_string(
-            parameters["functional_checker"], "parameters.functional_checker"
+        prompt_instruction=(
+            None
+            if publication_mode
+            else _string(parameters["prompt_instruction"], "parameters.prompt_instruction")
+        ),
+        target_utf8=(
+            None
+            if publication_mode
+            else _string(parameters["target_utf8"], "parameters.target_utf8")
+        ),
+        functional_checker=(
+            None
+            if publication_mode
+            else _string(parameters["functional_checker"], "parameters.functional_checker")
+        ),
+        task_manifest=(
+            _relative_path(parameters["task_manifest"], "parameters.task_manifest")
+            if publication_mode
+            else None
         ),
         generation_length=_integer(
             parameters["generation_length"], "parameters.generation_length", minimum=1
@@ -299,17 +354,89 @@ def _configuration_parameters(parameters: Mapping[str, object]) -> Q5Parameters:
             if "quartile_policy" not in parameters
             else _string(parameters["quartile_policy"], "parameters.quartile_policy")
         ),
+        require_regular_cover_selector_call=(
+            parameters["require_regular_cover_selector_call"] is True
+            if publication_mode
+            else False
+        ),
+        require_epic_batch_larger_than_one=(
+            parameters["require_epic_batch_larger_than_one"] is True
+            if publication_mode
+            else False
+        ),
+        publication_bundle_id=(
+            _string(parameters["publication_bundle_id"], "parameters.publication_bundle_id")
+            if publication_mode
+            else None
+        ),
     )
 
 
 def _literal_grammar(target: bytes) -> CnfGrammar:
-    _require(len(target) == 1, "Q5 v1 target must be exactly one byte")
-    return CnfGrammar(
-        nonterminals=(Nonterminal(0, "S"),),
-        terminals=(Terminal(0, target[0]),),
-        start_nonterminal_id=0,
-        terminal_productions=(TerminalProduction(0, 0, 0),),
+    _require(bool(target), "Q5 literal target must contain at least one byte")
+    terminals = tuple(
+        Terminal(symbol_id=index, label=value)
+        for index, value in enumerate(dict.fromkeys(target))
     )
+    terminal_ids = {terminal.label: terminal.symbol_id for terminal in terminals}
+    source = SourceGrammar(
+        nonterminals=(Nonterminal(0, "S"),),
+        terminals=terminals,
+        start_nonterminal_id=0,
+        productions=(
+            SourceProduction(
+                production_id=0,
+                head_id=0,
+                body=tuple(TerminalRef(terminal_ids[value]) for value in target),
+            ),
+        ),
+    )
+    return normalize_to_cnf(source).grammar
+
+
+def _load_task_manifest(path: Path, expected_task_ids: tuple[str, ...]) -> tuple[Q5Task, ...]:
+    manifest = tomllib.loads(path.read_text(encoding="utf-8"))
+    _require(manifest.get("schema_version") == 1, "unsupported Q5 task-manifest schema")
+    rows = manifest.get("tasks")
+    _require(isinstance(rows, list) and bool(rows), "Q5 task manifest requires tasks")
+    tasks: list[Q5Task] = []
+    for index, row in enumerate(rows):
+        _require(isinstance(row, Mapping), f"Q5 task {index} must be a table")
+        _require(
+            set(row)
+            == {
+                "task_id",
+                "prompt_id",
+                "prompt_instruction",
+                "target_utf8",
+                "grammar_kind",
+                "functional_checker",
+            },
+            f"Q5 task {index} has unexpected fields",
+        )
+        _require(row["grammar_kind"] == "literal_utf8_cfg", "unsupported Q5 grammar kind")
+        checker = _string(row["functional_checker"], f"tasks[{index}].functional_checker")
+        _require(checker == "exact_target_bytes_match_v1", "unsupported Q5 checker")
+        task = Q5Task(
+            task_id=_string(row["task_id"], f"tasks[{index}].task_id"),
+            prompt_id=_string(row["prompt_id"], f"tasks[{index}].prompt_id"),
+            prompt_instruction=_string(
+                row["prompt_instruction"], f"tasks[{index}].prompt_instruction"
+            ),
+            target_utf8=_string(row["target_utf8"], f"tasks[{index}].target_utf8"),
+            functional_checker=checker,
+        )
+        _require(
+            len(task.target_utf8.encode("utf-8")) >= 2,
+            "publication Q5 tasks must contain at least two content bytes",
+        )
+        tasks.append(task)
+    _require(
+        tuple(task.task_id for task in tasks) == expected_task_ids,
+        "Q5 task manifest order/IDs differ from the publication config",
+    )
+    _require(len(set(expected_task_ids)) == len(expected_task_ids), "duplicate Q5 task ID")
+    return tuple(tasks)
 
 
 def _check_generated_tokens(
@@ -552,6 +679,8 @@ def _prepare_exact_call(
     tokenizer_adapter: Any,
     grammar: CnfGrammar,
     parameters: Q5Parameters,
+    support_initial_k: int,
+    support_k_max: int,
     solver_timeout_seconds: float,
 ) -> Callable[[], Mapping[str, object]]:
     """Allocate exact per-call state outside the measured region."""
@@ -572,8 +701,8 @@ def _prepare_exact_call(
     ] + [None] * generation_length
     strategy_config = ExactStrategyConfig(
         adaptive_support=AdaptiveSupportConfig(
-            initial_k=1,
-            k_max=4,
+            initial_k=support_initial_k,
+            k_max=support_k_max,
             total_timeout_seconds=solver_timeout_seconds,
         ),
         weight_mode=parameters.weight_mode,
@@ -878,6 +1007,7 @@ def _copy_summary(source: Path, destination: Path) -> None:
 def _validate_config_against_profile(
     config: ExperimentConfig,
     parameters: Q5Parameters,
+    task: Q5Task,
     source: Mapping[str, Any],
     source_bytes: bytes,
 ) -> None:
@@ -898,30 +1028,31 @@ def _validate_config_against_profile(
         and config.tokenizer_revision == source["tokenizer_revision"],
         "Q5 model/tokenizer pins differ from the frozen T904 live profile",
     )
-    _require(
-        parameters.prompt_instruction == source["generation"]["instruction"]
-        and parameters.target_utf8 == source["generation"]["target_utf8"],
-        "Q5 task prompt/target differs from the frozen T904 task",
-    )
-    for name in (
-        "generation_length",
-        "block_length",
-        "steps",
-        "temperature",
-        "cfg_scale",
-        "remasking",
-        "max_resamples",
-    ):
+    if not config.publication_mode:
         _require(
-            getattr(parameters, name) == source["generation"][name],
-            f"Q5 generation setting differs from T904: {name}",
+            task.prompt_instruction == source["generation"]["instruction"]
+            and task.target_utf8 == source["generation"]["target_utf8"],
+            "Q5 task prompt/target differs from the frozen T904 task",
         )
-    _require(
-        config.support_top_k == source["exact"]["support_initial_k"]
-        and config.support_k_max == source["exact"]["support_k_max"]
-        and parameters.schedule_budget == source["exact"]["schedule_budget"],
-        "Q5 exact support/schedule differs from the frozen live profile",
-    )
+        for name in (
+            "generation_length",
+            "block_length",
+            "steps",
+            "temperature",
+            "cfg_scale",
+            "remasking",
+            "max_resamples",
+        ):
+            _require(
+                getattr(parameters, name) == source["generation"][name],
+                f"Q5 generation setting differs from T904: {name}",
+            )
+        _require(
+            config.support_top_k == source["exact"]["support_initial_k"]
+            and config.support_k_max == source["exact"]["support_k_max"]
+            and parameters.schedule_budget == source["exact"]["schedule_budget"],
+            "Q5 exact support/schedule differs from the frozen live profile",
+        )
     _require(
         parameters.eos_mode == source["exact"]["eos_mode"]
         and parameters.termination_token_ids
@@ -947,7 +1078,7 @@ def _validate_config_against_profile(
         "Q5 quantization label differs from the loaded frozen profile",
     )
     _require(
-        parameters.functional_checker == "exact_target_bytes_match_v1",
+        task.functional_checker == "exact_target_bytes_match_v1",
         "Q5 v1 functional checker must remain frozen",
     )
     _require(config.local_files_only, "Q5 v1 must not fetch model files during execution")
@@ -960,10 +1091,10 @@ def _validate_config_against_profile(
             "the original Q5 smoke requires one fixed-order repetition without warmup",
         )
     elif parameters.method_order == "balanced_cyclic_by_repetition":
+        minimum_repetitions = 10 if config.publication_mode else len(Q5_STRATEGIES)
         _require(
-            config.repetitions >= len(Q5_STRATEGIES)
-            and config.repetitions % len(Q5_STRATEGIES) == 0,
-            "balanced Q5 timing requires a positive multiple of four repetitions",
+            config.repetitions >= minimum_repetitions,
+            f"balanced Q5 timing requires at least {minimum_repetitions} repetitions",
         )
         _require(parameters.warmup_runs >= 1, "robust Q5 timing requires warmup")
         _require(
@@ -982,6 +1113,8 @@ def _validate_config_against_profile(
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run the paired Q5 live-model experiment.")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    parser.add_argument("--task-id")
+    parser.add_argument("--seed", type=int)
     parser.add_argument("--run-directory", type=Path)
     parser.add_argument("--processed-directory", type=Path)
     parser.add_argument("--summary-output", type=Path)
@@ -994,20 +1127,48 @@ def main(argv: Sequence[str] | None = None) -> int:
     config = load_experiment_config(config_path)
     if config.question is not ExperimentKind.END_TO_END:
         raise ValueError("Q5 driver requires an end_to_end configuration")
-    if config.publication_mode:
-        raise ValueError("Q5 v1 is a diagnostic smoke, not publication mode")
-    if config.seeds != (904,):
-        raise ValueError("Q5 requires exactly seed 904")
     if config.device != "cuda" or not config.synchronize_cuda or config.cuda_device != 0:
         raise ValueError("Q5 v1 requires synchronized CUDA device 0")
-    parameters = _configuration_parameters(config.parameters)
-    source_relative = _relative_path(config.grammar_source, "grammar.source")
+    parameters = _configuration_parameters(
+        config.parameters, publication_mode=config.publication_mode
+    )
+    if config.publication_mode:
+        _require(arguments.task_id is not None, "publication Q5 requires --task-id")
+        _require(arguments.seed is not None, "publication Q5 requires --seed")
+        _require(arguments.seed in config.seeds, "selected Q5 seed is not configured")
+        assert parameters.task_manifest is not None
+        manifest_path = (REPOSITORY_ROOT / parameters.task_manifest).resolve()
+        _require(manifest_path.is_relative_to(REPOSITORY_ROOT), "task manifest escapes repository")
+        tasks = _load_task_manifest(manifest_path, parameters.task_ids)
+        selected = tuple(task for task in tasks if task.task_id == arguments.task_id)
+        _require(len(selected) == 1, "selected Q5 task is not configured")
+        task = selected[0]
+        seed = arguments.seed
+        source_relative = "configs/exact_commit/t904_llada_live_smoke.toml"
+    else:
+        _require(config.seeds == (904,), "diagnostic Q5 requires exactly seed 904")
+        _require(
+            arguments.task_id is None and arguments.seed is None,
+            "diagnostic Q5 fixes task/seed",
+        )
+        assert parameters.prompt_id is not None
+        assert parameters.prompt_instruction is not None
+        assert parameters.target_utf8 is not None
+        assert parameters.functional_checker is not None
+        task = Q5Task(
+            task_id=parameters.task_ids[0],
+            prompt_id=parameters.prompt_id,
+            prompt_instruction=parameters.prompt_instruction,
+            target_utf8=parameters.target_utf8,
+            functional_checker=parameters.functional_checker,
+        )
+        seed = config.seeds[0]
+        source_relative = _relative_path(config.grammar_source, "grammar.source")
     source_path = (REPOSITORY_ROOT / source_relative).resolve()
-    if not source_path.is_relative_to(REPOSITORY_ROOT):
-        raise ValueError("grammar.source resolves outside the repository")
+    _require(source_path.is_relative_to(REPOSITORY_ROOT), "live profile escapes repository")
     source_bytes = source_path.read_bytes()
     source: dict[str, Any] = tomllib.loads(source_bytes.decode("utf-8"))
-    _validate_config_against_profile(config, parameters, source, source_bytes)
+    _validate_config_against_profile(config, parameters, task, source, source_bytes)
 
     run_directory = (
         _default_run_directory(parameters.raw_output_root, config.experiment_id)
@@ -1031,8 +1192,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         ) from error
     _require(torch.cuda.is_available(), "Q5 requires a CUDA device")
     torch.cuda.set_device(config.cuda_device)
-    torch.manual_seed(config.seeds[0])
-    torch.cuda.manual_seed_all(config.seeds[0])
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
     device_properties = torch.cuda.get_device_properties(config.cuda_device)
     shards = _cached_checkpoint_metadata(source)
     quantization = BitsAndBytesConfig(
@@ -1078,11 +1239,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         profile=PINNED_LLADA_PROFILE,
     )
 
-    target = parameters.target_utf8.encode("utf-8")
+    target = task.target_utf8.encode("utf-8")
     exact_grammar = _literal_grammar(target)
     grammar_sha256 = _canonical_sha256(exact_grammar.to_dict())
     prompt_text = tokenizer.apply_chat_template(
-        [{"role": "user", "content": parameters.prompt_instruction}],
+        [{"role": "user", "content": task.prompt_instruction}],
         add_generation_prompt=True,
         tokenize=False,
     )
@@ -1095,19 +1256,19 @@ def main(argv: Sequence[str] | None = None) -> int:
     )
     from rustformlang.cfg import CFG
 
-    epic = source["epic"]
-    epic_grammar = CFG.from_text(str(epic["grammar_text"]), str(epic["grammar_start"]))
+    epic_grammar = CFG.from_text("S -> lexTarget", "S")
     epic_grammar = epic_grammar.to_normal_form()
     lex_map = compile_lex_map(
-        {str(epic["lexeme_name"]): str(epic["lexeme_regex"])},
+        {"lexTarget": re.escape(task.target_utf8)},
         subtokens={},
     )
     preprocessed = preprocessed_generate_stuff(tokenizer, epic_grammar, lex_map, trace=False)
 
     comparison_contract = {
-        "task_ids": list(parameters.task_ids),
-        "prompt_id": parameters.prompt_id,
-        "prompt_instruction_sha256": _sha256_bytes(parameters.prompt_instruction.encode("utf-8")),
+        "task_id": task.task_id,
+        "task_set_ids": list(parameters.task_ids),
+        "prompt_id": task.prompt_id,
+        "prompt_instruction_sha256": _sha256_bytes(task.prompt_instruction.encode("utf-8")),
         "chat_template_text_sha256": _sha256_bytes(prompt_text.encode("utf-8")),
         "prompt_token_ids_sha256": _canonical_sha256(list(prompt_ids)),
         "prompt_token_count": len(prompt_ids),
@@ -1127,7 +1288,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "max_resamples": parameters.max_resamples,
         "dtype": config.dtype,
         "quantization": parameters.quantization,
-        "seed": config.seeds[0],
+        "seed": seed,
         "method_differences": {
             "unconstrained": "grammar disabled during selection; same grammar used by checker",
             "serial": "upstream one-token constrained selection",
@@ -1152,6 +1313,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 tokenizer_adapter=tokenizer_adapter,
                 grammar=exact_grammar,
                 parameters=parameters,
+                support_initial_k=config.support_top_k,
+                support_k_max=config.support_k_max,
                 solver_timeout_seconds=min(
                     config.solver_timeout_seconds,
                     max(0.0, remaining_seconds),
@@ -1172,8 +1335,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     warmup_records: list[dict[str, object]] = []
     for warmup_index in range(parameters.warmup_runs):
         for strategy in Q5_STRATEGIES:
-            torch.manual_seed(config.seeds[0])
-            torch.cuda.manual_seed_all(config.seeds[0])
+            torch.manual_seed(seed)
+            torch.cuda.manual_seed_all(seed)
             remaining = run_deadline - monotonic()
             status = Q5ExecutionStatus.COMPLETE
             detail: dict[str, object] = {}
@@ -1231,8 +1394,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             else cyclic_method_order(Q5_STRATEGIES, repetition)
         )
         for strategy in method_order:
-            torch.manual_seed(config.seeds[0])
-            torch.cuda.manual_seed_all(config.seeds[0])
+            torch.manual_seed(seed)
+            torch.cuda.manual_seed_all(seed)
             remaining = run_deadline - monotonic()
             with prepared_call(strategy, remaining) as call:
                 measured = _measure_call(
@@ -1248,7 +1411,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                     strategy,
                     measured=measured,
                     comparison_fingerprint=comparison_fingerprint,
-                    seed=config.seeds[0],
+                    seed=seed,
                     repetition=repetition,
                     parameters=parameters,
                     tokenizer_adapter=tokenizer_adapter,
@@ -1276,7 +1439,15 @@ def main(argv: Sequence[str] | None = None) -> int:
             "config_path": config_relative,
             "live_profile_source_path": source_relative,
             "live_profile_source_sha256": _sha256_bytes(source_bytes),
-            "benchmark_claim": False,
+            "benchmark_claim": config.publication_mode,
+            "publication_bundle_id": parameters.publication_bundle_id,
+            "selected_task_id": task.task_id,
+            "selected_seed": seed,
+            "epic_method_label": (
+                "EPIC"
+                if config.publication_mode
+                else "EPIC-enabled decoder with serial fallback on the configured single-token task"
+            ),
             "timing_scope": (
                 "single_fixed_order_cuda_smoke_without_warmup; model/tokenizer/grammar and "
                 "per-method runner setup excluded"
@@ -1386,6 +1557,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         for warmup in warmup_records
     )
     contract_failure_count = result.required_contract_failure_count + warmup_failure_count
+    epic_records = tuple(record for record in records if record.strategy == "epic")
+    if parameters.require_regular_cover_selector_call:
+        contract_failure_count += not any(
+            int(record.diagnostics.get("regular_cover_selector_calls", 0)) > 0
+            for record in epic_records
+        )
+    if parameters.require_epic_batch_larger_than_one:
+        contract_failure_count += not any(
+            any(batch_size > 1 for batch_size in record.commit_batch_sizes)
+            for record in epic_records
+        )
     print(
         json.dumps(
             {
@@ -1396,6 +1578,14 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "method_count": len(records),
                 "warmup_count": len(warmup_records),
                 "contract_failure_count": contract_failure_count,
+                "epic_regular_cover_selector_calls": sum(
+                    int(record.diagnostics.get("regular_cover_selector_calls", 0))
+                    for record in epic_records
+                ),
+                "epic_max_commit_batch_size": max(
+                    (batch for record in epic_records for batch in record.commit_batch_sizes),
+                    default=0,
+                ),
             },
             sort_keys=True,
         )

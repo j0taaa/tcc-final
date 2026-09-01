@@ -33,7 +33,7 @@ EXPECTED_HASHES = {
         "1132d0f29561d7b3eca8a72d382c22422275f2f54eb462da264b4fc1da9508b4"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/artifact-manifest.json": (
-        "06e9e8d86441b4f35a0fb863654b797081a62608ea729e7bab3dc870ea2f369f"
+        "532c433de1e0654fcde7781b51e9b0b14fd9a05b7782e8adfa7a8bbdd7600af2"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/final-results.json": (
         "b72d6fd08429e3eb3c18fca4e5788a4fe3617a62a1972deedd6801cd176884d0"
@@ -42,7 +42,7 @@ EXPECTED_HASHES = {
         "119fd38aeec70ef870941fe13a528a62170bb8e20bebf5f0b0842033e2fdad7b"
     ),
     "paper/generated/t1203_final_results_v1/end-to-end-comparison-table.tex": (
-        "bc95cdfe9aad10282e8ae12fb700f42381cbf7747e1d5a3012ba80d3754aeec6"
+        "a294899f8615f49081bc73ad157099d2f6a99f6daca4775d94aa45fad36463aa"
     ),
     "paper/generated/t1203_final_results_v1/finite-slot-counterexample-table.tex": (
         "105796e828459894a3983d195adc7a895240af17ed3ce99348beae3b1e409014"
