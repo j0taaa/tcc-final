@@ -243,11 +243,7 @@ $J^*$ is compatible because $y^*$ is its witness. Its weight is $R_C(y^*)$, whic
 
 The theorem eliminates the need to represent subsets in the search space. The parser must find one valid completion whose reward is additive by position or arc. Backtracking that completion simultaneously provides a concrete compatibility certificate and the optimal set.
 
-The grammar need not be unambiguous: because reward is attached to tokens or arcs and productions have neutral weight, distinct derivations of the same completion receive the same value. For ties, an optional extension maximizes lexicographically
-\begin{equation}
-\left(R_C(y),\ \sum_{i=1}^{n}\log p_\theta(y_i\mid x)\right),
-\end{equation}
-without changing optimality in the first coordinate.
+The grammar need not be unambiguous: reward is attached to tokens or arcs and productions are neutral, so derivations of one completion have equal value. Equal scores use stable traversal; no lexicographic secondary objective is implemented or claimed.
 
 \section{Token-Aligned Algorithm}
 \label{sec:tokenaligned}
@@ -421,13 +417,7 @@ For an explicit graph with $q=|Q|$, a generic bound for the CNF version is $O(|P
 \section{Iterative Decoder and Progress Guarantee}
 \label{sec:decoder}
 
-The optimizer solves one step, but a complete decoder must define proposals, budget, ties, fallback, and termination. Let $k_s$ be the maximum number of positions to commit at step $s$. The basic version chooses one primary proposal for each candidate position and applies MWPC. If $|J^*|>k_s$, a budgeted variant can be solved, or $C$ can first be restricted to positions chosen by the schedule.
-
-The explicit variant adds a dimension $b$ to the chart:
-\begin{equation}
-D[A,p,q,b]=\text{best score using $b$ counted commitments}.
-\end{equation}
-For a binary rule, combine $b=b_1+b_2$. For $b\leq k$, memory grows to $O(|N|q^2k)$ and a direct implementation may take $O(|P_2|q^3k^2)$ time. With one primary proposal per position, $b$ counts preserved positions; multiple alternative proposals require an explicit budget definition.
+The optimizer solves one step, but the decoder must define proposals, budget, ties, fallback, and termination. The implemented schedule restricts $C$ to at most $k_s$ eligible positions before MWPC, with one primary proposal per position; a cardinality dimension inside the parser remains an unimplemented extension.
 
 An important case is $J^*=\varnothing$ even though a valid completion exists. The decoder cannot stall. Witness $y^*$ provides a safe progress fallback: committing its token at one masked position preserves that witness as feasible. This token may not be the model's primary proposal, but it guarantees progress without violating the grammar.
 
@@ -487,26 +477,22 @@ At each step, the baseline schedule ranks eligible masked positions by primary-t
 \caption{Implementation and primary Q4/Q5 reproduction fields.}
 \label{tab:config}
 \scriptsize
-\begin{tabular}{p{2.6cm}p{8.6cm}}
+\begin{tabular}{p{2.25cm}p{8.95cm}}
 \toprule
 Item & Recorded configuration \\ \midrule
-Model/tokenizer & \texttt{GSAI-ML/LLaDA-8B-Instruct}, model and tokenizer revision \href{https://huggingface.co/GSAI-ML/LLaDA-8B-Instruct/tree/08b83a6feb34df1a6011b80c3c00c7563e963b07}{\texttt{08b83a6f...b07}}; model head 126,464, tokenizer 126,080 base plus 269 added IDs; \texttt{bfloat16} with bitsandbytes NF4 double quantization. \\
-Code/parser & Audited parent snapshot \texttt{7b0d9aa}; EPIC \texttt{5b1b310}; Python 3.11 reference/orchestration and independent Rust 2021 CFG-on-DAG parser with PyO3 backtracking boundary. Parent release license is pending in \texttt{LICENSES.md}; EPIC notices are preserved. \\
-Decoding & Q5 JSON: 16 slots/8 steps/budget 16; DSL: 12/6/12; low-confidence remasking; top-$K$ $8\rightarrow16\rightarrow32$, first feasible; confidence weights; required EOS/PAD; 30-s exact deadline; no non-optimal exact fallback. \\
-Grammars/data & Versioned prompts and exact literal UTF-8 byte CFGs for fenced \texttt{\{"x":0\}} JSON and fenced \texttt{ADD 0 0}; no learned dataset or split. Q4 uses generated reachable byte CFG/DAG instances. \\
-Environment & i7-11700K (16 logical CPUs), 16.6-GB RAM, RTX 3080 Ti (12-GiB VRAM), Linux 7.0.0-30, driver 595.84; CUDA runtime 12.8/toolkit 12.0; one configured CPU thread. \\
-Software/protocol & Python 3.11.16, PyTorch 2.8.0 (Q4 CPU; Q5 \texttt{+cu128}), Transformers 4.52.2, Rust 1.98.0, bitsandbytes 0.50.1. Q5: seeds 125301--125303, 10 repetitions/task/strategy/seed, one warm-up, balanced cyclic order and CUDA synchronization; Q4: seed 1255 and 10 repetitions/backend/point. \\
+Model/tokenizer & \texttt{GSAI-ML/LLaDA-8B-Instruct} at model/tokenizer revision \href{https://huggingface.co/GSAI-ML/LLaDA-8B-Instruct/tree/08b83a6feb34df1a6011b80c3c00c7563e963b07}{\texttt{08b83a6f...b07}}; model head 126,464; tokenizer 126,080 base plus 269 added IDs; \texttt{bfloat16}, bitsandbytes NF4 double quantization. \\
+Code/parser & Parent \texttt{7b0d9aa}; EPIC \texttt{5b1b310}; Python 3.11 reference/orchestration; independent Rust 2021 CFG-on-DAG parser and PyO3 boundary. Parent release license is pending in \texttt{LICENSES.md}; EPIC notices are preserved. \\
+Decoding & JSON: 16 slots/8 steps/budget 16; DSL: 12/6/12. Upstream low-confidence ranking considers still-masked positions; exact commits never remask. Top-$K$ $8\rightarrow16\rightarrow32$, first feasible; confidence weights; required EOS/PAD; 30-s deadline; no non-optimal exact fallback. \\
+Grammars/data & Versioned prompts and literal UTF-8 byte CFGs for fenced \texttt{\{"x":0\}} and \texttt{ADD 0 0}; no dataset/split. Q4 uses generated reachable byte CFG/DAG instances. \\
+Environment & i7-11700K (16 logical CPUs), 16.6-GB RAM, RTX 3080 Ti (12-GiB), Linux 7.0.0-30, driver 595.84, CUDA runtime/toolkit 12.8/12.0; one CPU thread. \\
+Software/protocol & Python 3.11.16; PyTorch 2.8.0 (Q4 CPU; Q5 \texttt{+cu128}); Transformers 4.52.2; Rust 1.98.0; bitsandbytes 0.50.1. Q5: seeds 125301--125303, 10 repetitions/task/strategy/seed, one warm-up, cyclic order, CUDA synchronization; Q4: seed 1255, 10 repetitions/backend/point. \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-These fields are transcribed from the versioned Q4/Q5 TOML configurations, the tokenizer audit in \path{docs/evidence/t600-llada-tokenizer-audit.json}, the pinned Q4/Q5 JSONL metadata, and the M12.5 completion audit; they are not inferred from the current machine.
+Table~\ref{tab:config} is transcribed from versioned Q4/Q5 configs, tokenizer audit, pinned JSONL metadata, and the M12.5 audit; no field is inferred from the current machine.
 
-The evaluation addresses five questions: (Q1) does the DP agree with brute force? (Q2) how much weight or cardinality do heuristics lose? (Q3) which abstract false positives are eliminated by finite slots? (Q4) how do runtime and memory scale? and (Q5) does the decoder work end to end? Baselines are brute force, exact serial validation, EPIC/heuristic selection, and unconstrained decoding where available.
-
-For a heuristic $H$, the evaluation reports absolute gap $\Delta_H=W(J^*)-W(J_H)$ and, when $W(J^*)>0$, relative gap $\delta_H=\Delta_H/W(J^*)$. Other metrics include witness validity, oracle agreement, batch size, number of steps, fallback use, runtime, and peak RAM/VRAM. Profiling separates model forward, candidate construction, lattice construction, parsing, backtracking, and update. Comparisons run on the same hardware and also use normalized overhead $T_{\mathrm{method}}/T_{\mathrm{baseline}}$.
-
-Automated tests check witness acceptance with an independent parser; matching of every committed proposal; equality between the reconstructed objective and chart score; immutability of fixed positions; compliance with slots/EOS/PAD; and complete agreement with brute force on small instances. The repository contains locked dependencies, commands, configurations, raw results, and table-generation scripts.
+The five questions cover oracle agreement (Q1), heuristic loss (Q2), finite-slot false positives (Q3), scaling (Q4), and end-to-end decoding (Q5), against brute force, serial, EPIC/heuristic, and unconstrained baselines where applicable. Q2 reports $\Delta_H=W(J^*)-W(J_H)$ and $\delta_H=\Delta_H/W(J^*)$ when $W(J^*)>0$; Q4/Q5 record validity, batches, fallbacks, runtime, RAM/VRAM, and component timings on common hardware. Automated tests independently check grammar acceptance, proposal/objective reconstruction, fixed positions, EOS/PAD slots, and brute-force agreement. Locked dependencies, configs, raw results, and generators complete the reproduction path.
 
 \section{Results and Analysis}
 \label{sec:resultados}
@@ -530,12 +516,32 @@ Across Q5's \MThirteenQFiveRows{} warm CUDA generations (\MThirteenQFiveTasks{} 
 \section{Limitations and Threats to Validity}
 \label{sec:limitacoes}
 
-A CFG ensures syntax, not types, references, correct execution, or test satisfaction. Exactness also depends on representation: top-$K$ yields an optimum only on the truncated support; the implemented raw-byte interface does not provide programming-language lexer semantics; and an explicit lattice may consume substantial memory. The objective sums local utilities and represents neither the sequence's joint probability nor an optimum over the full future trajectory. Configurations state these limits. Brute force, an independent parser, property tests, recorded seeds, and reproducible artifacts mitigate errors; empirical conclusions remain conditioned on the pinned LLaDA checkpoint, generated byte grammars, two structured literal tasks, and recorded i7/RTX 3080 Ti host.
+\begin{table}[ht]
+\centering
+\caption{Executable correspondence for theorem premises.}
+\label{tab:theorem-code}
+\scriptsize
+\begin{tabular}{p{3.65cm}p{7.55cm}}
+\toprule
+Claim and premise & Code/config enforcement and reported scope \\ \midrule
+Thm.~1: finite $C$, $w_j\geq0$ & \texttt{types.py} rejects negative/non-finite weights and retains duplicate provenance. Q5 records confidence weights; other arcs score zero. \\
+Thm.~2; Thm.~3(iii): strict CNF; complete weighted search/provenance & \texttt{reference/normalization.py} makes strict CNF; Rust \texttt{CnfGrammar} has neutral terminal/binary rules. Unpruned DPs reconstruct paths; \texttt{validator.py} rechecks grammar, support, fixed positions, IDs, and objective. Deadlines yield \texttt{TIMEOUT}, not certified conclusions. \\
+Thm.~3(i): lattice equals state, $H$, and declared support & \texttt{ranked\_support.py} uses fixed singletons and masked top-$K$ plus proposals/specials; \texttt{eos\_lattice.py} composes $H$. Q5 records $K=8\rightarrow16\rightarrow32$ and only \texttt{exact\_on\_support}. \\
+Thm.~3(ii): composition equals $\Lambda$ & \texttt{tokenizer\_bytes.py} reverses pinned ByteLevel. Live CFGs directly consume raw bytes, so $\Lambda$ is identity there; no lexer/maximal-munch claim is made. \\
+Thm.~4: one token per physical slot, including EOS/PAD & \texttt{eos\_lattice.py} requires first EOS then PAD while traversing every slot; certificates retain all token IDs/content endpoint. Q3 tests the bound. \\
+Props.~1--2: finite-mask witness progress, no remasking & \texttt{decoder.py} updates only masks and cannot overwrite commits; exact Q5 requires progress and has no fallback. Upstream \texttt{low\_confidence} ranks still-masked baseline candidates; it does not remask exact commitments. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All optimality claims are per step and finite represented support. Q5's top-$K$ omits most vocabulary items, possibly changing feasibility or objective; it is not full-vocabulary exact and does not optimize the future trajectory, joint probability, or later logits. At 30 seconds, \texttt{TIMEOUT} leaves feasibility and optimality unknown and carries no certificate, unlike completed \texttt{INFEASIBLE\_ON\_SUPPORT} for the recorded lattice; larger lattices may exhaust time or memory.
+
+The tokenizer contract is the pinned raw ByteLevel byte stream, not singleton-\texttt{decode} Unicode. Added controls are content-unsupported except EOS/PAD; the live path has no programming-language lexer semantics (maximal munch, priority, or context) or semantic checks. A CFG constrains syntax only, not types, references, execution, or tests. Independent checks mitigate error, but evidence covers one checkpoint, generated byte grammars, two literal tasks, and one host.
 
 \section{Conclusion and Future Work}
 \label{sec:conclusao}
 
-For non-negative weights, the highest-reward representable CFG completion identifies an optimal per-step proposal batch and witness. Token-aligned CKY and the finite graph parser preserve the declared grammar, fixed positions, and slots; configured evidence supports oracle agreement and live integration. Singleton real-state supports do not establish a representative gap. Future work includes difficult real supports, incremental parsing, lazy full-vocabulary composition, richer commitment objectives, contextual constraints, and CFG-conditioned sampling, whose probability-mass problem remains distinct from this maximization.
+For non-negative weights, the highest-reward representable CFG completion identifies an optimal per-step batch and witness. The finite parser preserves grammar, fixed positions, and slots. Evidence supports oracle agreement and live integration, but singleton real supports do not establish a representative gap. Future work includes difficult supports, incremental/lazy composition, richer objectives, contextual constraints, and CFG-conditioned sampling.
 
 \section*{Acknowledgments and AI-Use Statement}
 
