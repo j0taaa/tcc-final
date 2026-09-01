@@ -33,6 +33,20 @@ make check
 license hashes recorded in `UPSTREAM.md`. It installs the project and its test
 tools in `.venv`; it does not install model weights or a CUDA PyTorch build.
 
+Verify the non-editable release artifact separately:
+
+```bash
+make release-wheel-smoke
+```
+
+This command builds an sdist and wheel with the pinned `build` and Hatchling
+versions, inspects the wheel for both `mwpc_exact` and `mwpc_research`, and
+installs it into a new temporary virtual environment. From a working directory
+outside the checkout, that environment runs the Q3 finite-slot experiment and
+creates the T1202 statistical-summary fixture. The rehearsal rejects imports
+whose module paths resolve into the checkout, so an editable installation or
+`PYTHONPATH` cannot hide a missing package.
+
 ## 2. Parser and EPIC bindings
 
 The independent Rust production parser is required for the Q1 and Q4 source

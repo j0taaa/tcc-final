@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 import ast
+import tomllib
 from pathlib import Path
 
 
-def test_runtime_package_does_not_import_unshipped_research_package() -> None:
+def test_runtime_package_does_not_depend_on_research_package() -> None:
     runtime_root = Path(__file__).parents[2] / "src" / "mwpc_exact"
     violations: list[str] = []
     for path in sorted(runtime_root.rglob("*.py")):
@@ -23,3 +24,11 @@ def test_runtime_package_does_not_import_unshipped_research_package() -> None:
                 violations.append(f"{path.relative_to(runtime_root)}:{node.lineno}")
 
     assert violations == []
+
+
+def test_release_wheel_declares_runtime_and_research_packages() -> None:
+    repository_root = Path(__file__).parents[2]
+    configuration = tomllib.loads((repository_root / "pyproject.toml").read_text(encoding="utf-8"))
+    packages = configuration["tool"]["hatch"]["build"]["targets"]["wheel"]["packages"]
+
+    assert packages == ["src/mwpc_exact", "src/mwpc_research"]

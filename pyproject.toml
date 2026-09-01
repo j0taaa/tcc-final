@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.25"]
+requires = ["hatchling==1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
@@ -18,6 +18,8 @@ mwpc-resolve-experiment-config = "mwpc_exact.experiments.config:main"
 
 [project.optional-dependencies]
 dev = [
+  "build==1.3.0",
+  "hatchling==1.27.0",
   "hypothesis>=6.100",
   "maturin>=1.7",
   "mypy>=1.10",
@@ -27,7 +29,10 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/mwpc_exact"]
+packages = [
+  "src/mwpc_exact",
+  "src/mwpc_research",
+]
 
 [tool.pytest.ini_options]
 addopts = "-ra --strict-markers --strict-config"

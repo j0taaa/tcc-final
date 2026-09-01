@@ -31,6 +31,8 @@ jobs:
         run: python -m mypy src
       - name: Unit and exact-commit tests
         run: python -m pytest -q tests/unit tests/exact_commit
+      - name: Build and rehearse release wheel
+        run: python scripts/rehearse_release_wheel.py
       - name: Run Q3 finite-slot smoke
         run: |
           python scripts/exact_commit/run_q3_finite_slots.py \

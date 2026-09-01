@@ -7,7 +7,7 @@ ARTIFACT_CONFIG ?= configs/analysis/t1201_q3_artifacts_v1.toml
 STATISTICS_CONFIG ?= configs/analysis/t1202_statistics_v1.toml
 FINAL_ARTIFACT_CONFIG ?= configs/analysis/t1203_final_artifacts_v1.toml
 
-.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser artifacts artifacts-check statistics statistics-check final-artifacts final-artifacts-check rehearse-cpu-correctness paper clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser artifacts artifacts-check statistics statistics-check final-artifacts final-artifacts-check release-wheel-smoke rehearse-cpu-correctness paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -92,6 +92,9 @@ final-artifacts:
 
 final-artifacts-check:
 	$(VENV_PY) scripts/exact_commit/build_final_artifacts.py --config $(FINAL_ARTIFACT_CONFIG) --verify-existing
+
+release-wheel-smoke:
+	$(VENV_PY) scripts/rehearse_release_wheel.py
 
 rehearse-cpu-correctness:
 	./scripts/rehearse_cpu_correctness.sh
