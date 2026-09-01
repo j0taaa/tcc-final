@@ -73,7 +73,10 @@ a Q1 oracle disagreement, a mismatched stored Q2 gap, or an invalid Q5
 `OPTIMAL` certificate.
 
 The generated scope labels are part of the artifact contract. Q1 reports a
-finite-support correctness campaign. Q2 uses configured synthetic states, Q3
+finite-support correctness campaign: canonical and exhaustive families are
+complete configured sets, the overall row is a mixed configured total, and
+only the 100 generated instances at consecutive seeds 1101--1200 receive a
+Wilson interval. Q2 uses configured synthetic states, Q3
 uses curated finite-slot counterexamples, Q4 is a component-profiled CPU
 smoke, and Q5 is an eight-repetition fixed-task live-model diagnostic whose
 raw rows explicitly say `benchmark_claim=false`. The latter results validate

@@ -11,6 +11,7 @@ from enum import StrEnum
 from math import fsum
 from pathlib import Path
 from types import MappingProxyType
+from typing import cast
 
 from mwpc_exact.experiments.artifacts import prepare_artifact_directories
 from mwpc_exact.reference.grammar import (
@@ -35,6 +36,16 @@ Q1_RAW_FILENAME = "q1-cases.jsonl"
 Q1_SUMMARY_FILENAME = "q1-summary.json"
 
 _SAFE_CASE_ID = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+
+
+def _configured_set_agreement(event_count: int, observation_count: int) -> dict[str, object]:
+    return {
+        "analysis_unit": "case",
+        "event_count": event_count,
+        "observation_count": observation_count,
+        "rate": event_count / observation_count,
+        "uncertainty_method": "not_applicable_complete_configured_set",
+    }
 
 
 class Q1CaseFamily(StrEnum):
@@ -188,19 +199,30 @@ class Q1ExperimentResult:
                     }
                 )
 
-        family_summaries = {
-            family: {
+        family_summaries: dict[str, dict[str, object]] = {}
+        for family, count in sorted(family_counts.items()):
+            family_agreement: dict[str, object]
+            if family == Q1CaseFamily.RANDOMIZED.value:
+                family_agreement = cast(
+                    dict[str, object],
+                    summarize_proportion(
+                        family_passed.get(family, 0),
+                        count,
+                        analysis_unit="case",
+                    ).to_dict(),
+                )
+                family_agreement["uncertainty_method"] = "wilson_score_seeded_randomized_family"
+            else:
+                family_agreement = _configured_set_agreement(
+                    family_passed.get(family, 0),
+                    count,
+                )
+            family_summaries[family] = {
                 "case_count": count,
                 "passed_cases": family_passed.get(family, 0),
                 "failed_cases": count - family_passed.get(family, 0),
-                "agreement": summarize_proportion(
-                    family_passed.get(family, 0),
-                    count,
-                    analysis_unit="case",
-                ).to_dict(),
+                "agreement": family_agreement,
             }
-            for family, count in sorted(family_counts.items())
-        }
         seed_ranges = {
             family: {
                 "minimum": min(seeds),
@@ -220,11 +242,7 @@ class Q1ExperimentResult:
             "passed_cases": passed,
             "failed_cases": total - passed,
             "agreement_rate": passed / total,
-            "agreement": summarize_proportion(
-                passed,
-                total,
-                analysis_unit="case",
-            ).to_dict(),
+            "agreement": _configured_set_agreement(passed, total),
             "families": family_summaries,
             "seed_ranges": seed_ranges,
             "status_counts": dict(sorted(status_counts.items())),
@@ -294,9 +312,7 @@ def canonical_q1_cases(*, seed_base: int) -> tuple[Q1Case, ...]:
                 features=("canonical", *features),
             ),
         )
-        for index, (case_id, canvas, support_rows, proposals, features) in enumerate(
-            specifications
-        )
+        for index, (case_id, canvas, support_rows, proposals, features) in enumerate(specifications)
     ]
     cases.append(
         Q1Case(
@@ -338,9 +354,7 @@ def exhaustive_q1_cases(*, seed_base: int) -> tuple[Q1Case, ...]:
         for second_row, second_fixed in position_options:
             rows = (first_row, second_row)
             proposal_choices = tuple(
-                (position, token_id)
-                for position, row in enumerate(rows)
-                for token_id in row
+                (position, token_id) for position, row in enumerate(rows) for token_id in row
             )
             for proposal_mask in range(1 << len(proposal_choices)):
                 proposals = tuple(

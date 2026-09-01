@@ -33,13 +33,13 @@ EXPECTED_HASHES = {
         "1132d0f29561d7b3eca8a72d382c22422275f2f54eb462da264b4fc1da9508b4"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/artifact-manifest.json": (
-        "8a2900f023257297a53cef3c8f6a76a2288c9a6003a26a25bc23d6a2d9841293"
+        "06e9e8d86441b4f35a0fb863654b797081a62608ea729e7bab3dc870ea2f369f"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/final-results.json": (
-        "fb7910781aadbaa9b8c6706703f03384c3115c14ca120cd1c8c8cdf04a84f04d"
+        "b72d6fd08429e3eb3c18fca4e5788a4fe3617a62a1972deedd6801cd176884d0"
     ),
     "paper/generated/t1203_final_results_v1/correctness-oracle-table.tex": (
-        "b5af0c912778ac5bfecee95354de6b1fdd6820aad71359aedbd179b7f3329694"
+        "119fd38aeec70ef870941fe13a528a62170bb8e20bebf5f0b0842033e2fdad7b"
     ),
     "paper/generated/t1203_final_results_v1/end-to-end-comparison-table.tex": (
         "bc95cdfe9aad10282e8ae12fb700f42381cbf7747e1d5a3012ba80d3754aeec6"
@@ -85,10 +85,25 @@ def test_t1203_tables_and_figure_are_pinned_to_raw_rows() -> None:
     overall = correctness["families"][-1]
     assert overall["family"] == "overall"
     assert overall["agreement"]["event_count"] == 249
-    assert overall["agreement"]["confidence_interval_method"] == "wilson_score"
+    assert "confidence_interval_method" not in overall["agreement"]
+    assert overall["agreement"]["uncertainty_method"] == "not_applicable_complete_configured_set"
     assert overall["oracle_status_counts"] == {
         "infeasible_on_support": 82,
         "optimal": 167,
+    }
+    families = {row["family"]: row for row in correctness["families"]}
+    for family in ("canonical", "exhaustive", "overall"):
+        assert "confidence_interval_lower" not in families[family]["agreement"]
+        assert "confidence_interval_upper" not in families[family]["agreement"]
+    assert families["randomized"]["agreement"]["confidence_interval_method"] == "wilson_score"
+    assert correctness["randomized_sampling"] == {
+        "generator": "mwpc_research.q1_correctness.generate_random_finite_lattice_instance",
+        "maximum_seed": 1200,
+        "minimum_seed": 1101,
+        "seed_count": 100,
+        "seed_selection": "consecutive_integer_seeds",
+        "seeds_are_consecutive": True,
+        "unique_seed_count": 100,
     }
 
     gap = results["heuristic_gap"]

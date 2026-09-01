@@ -4,15 +4,15 @@
 \centering
 \caption{Agreement of the exhaustive oracle, independent Python reference, and Rust production solver on finite represented support (run \texttt{bd6b445}; \texttt{exact\_on\_support}, top-K=6, Kmax=6; model \texttt{not\_applicable}; task \texttt{synthetic\_q1\_finite\_support}).}
 \label{tab:mwpc-correctness-oracle}
-\begin{tabular}{lrrrr}
+\begin{tabular}{p{4.0cm}rrlr}
 \toprule
-Family & Cases & Agreement (\%) & 95\% Wilson CI & Oracle OPT/INF \\
+Family & Cases & Agreement & 95\% Wilson CI & Oracle OPT/INF \\
 \midrule
-canonical & 5 & 100.0 & [56.6, 100.0] & 4/1 \\
-exhaustive & 144 & 100.0 & [97.4, 100.0] & 112/32 \\
-randomized & 100 & 100.0 & [96.3, 100.0] & 51/49 \\
-overall & 249 & 100.0 & [98.5, 100.0] & 167/82 \\
+Canonical & 5 & 5/5 & -- & 4/1 \\
+Exhaustive configured family & 144 & 144/144 & -- & 112/32 \\
+Randomized seeds & 100 & 100/100 & [96.3, 100.0] & 51/49 \\
+Overall configured cases & 249 & 249/249 & -- & 167/82 \\
 \bottomrule
 \end{tabular}
-\par\footnotesize Exactness is per optimizer step and only over each represented finite support; INF means \texttt{INFEASIBLE\_ON\_SUPPORT}, not timeout.
+\par\footnotesize Canonical and exhaustive families are complete configured sets, and the overall row mixes fixed and randomized cases; sampling intervals do not apply to those rows. The Wilson interval applies only to the seeded randomized family (consecutive seeds 1101--1200). Complete agreement was observed on every configured case. Exactness is per optimizer step and only over each represented finite support; INF means \texttt{INFEASIBLE\_ON\_SUPPORT}, not timeout.
 \end{table}

@@ -60,13 +60,40 @@ def _fixture_repository(
                     "schema_version": 1,
                     "run_metadata": _metadata("q1"),
                     "family": "canonical",
+                    "seed": 1,
                     "agreement": q1_agreement,
                     "solver_statuses": {
                         "exhaustive_oracle": "optimal",
                         "python_reference": "optimal",
                         "rust_production": "optimal",
                     },
-                }
+                },
+                {
+                    "artifact_kind": "mwpc_q1_correctness_case",
+                    "schema_version": 1,
+                    "run_metadata": _metadata("q1"),
+                    "family": "exhaustive",
+                    "seed": 2,
+                    "agreement": True,
+                    "solver_statuses": {
+                        "exhaustive_oracle": "optimal",
+                        "python_reference": "optimal",
+                        "rust_production": "optimal",
+                    },
+                },
+                {
+                    "artifact_kind": "mwpc_q1_correctness_case",
+                    "schema_version": 1,
+                    "run_metadata": _metadata("q1"),
+                    "family": "randomized",
+                    "seed": 17,
+                    "agreement": True,
+                    "solver_statuses": {
+                        "exhaustive_oracle": "optimal",
+                        "python_reference": "optimal",
+                        "rust_production": "optimal",
+                    },
+                },
             ],
         ),
         "q2_heuristic_gap": (
@@ -225,8 +252,29 @@ def test_final_bundle_is_generated_directly_from_pinned_rows(tmp_path: Path) -> 
     processed = tmp_path / "processed/test_final_v1"
     paper = tmp_path / "paper/generated/test_final_v1"
     summary = json.loads((processed / FINAL_RESULTS_FILENAME).read_text())
-    assert summary["correctness"]["case_count"] == 1
+    assert summary["correctness"]["case_count"] == 3
     assert summary["correctness"]["failed_case_count"] == 0
+    families = {row["family"]: row for row in summary["correctness"]["families"]}
+    for family in ("canonical", "exhaustive", "overall"):
+        assert "confidence_interval_method" not in families[family]["agreement"]
+        assert (
+            families[family]["agreement"]["uncertainty_method"]
+            == "not_applicable_complete_configured_set"
+        )
+    assert families["randomized"]["agreement"]["confidence_interval_method"] == "wilson_score"
+    assert (
+        families["randomized"]["agreement"]["uncertainty_method"]
+        == "wilson_score_seeded_randomized_family"
+    )
+    assert summary["correctness"]["randomized_sampling"] == {
+        "generator": "mwpc_research.q1_correctness.generate_random_finite_lattice_instance",
+        "maximum_seed": 17,
+        "minimum_seed": 17,
+        "seed_count": 1,
+        "seed_selection": "consecutive_integer_seeds",
+        "seeds_are_consecutive": True,
+        "unique_seed_count": 1,
+    }
     assert summary["heuristic_gap"]["gap_rows"][0]["statistics"]["absolute_gap"]["median"] == 1.0
     assert summary["finite_slots"]["counterexample_count"] == 1
     assert summary["runtime_breakdown"]["status_counts"] == {"optimal": 2}

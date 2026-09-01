@@ -19,6 +19,7 @@ from mwpc_research.q1_correctness import (
     canonical_q1_cases,
     configured_q1_cases,
     exhaustive_q1_cases,
+    randomized_q1_cases,
     run_q1_correctness_cases,
     write_q1_artifacts,
 )
@@ -101,10 +102,7 @@ def test_exhaustive_family_enumerates_every_valid_tiny_boundary_combination() ->
 
 def test_configured_cases_have_recorded_disjoint_seed_ranges() -> None:
     cases = configured_q1_cases(seed_start=1101, random_case_count=100)
-    counts = {
-        family: sum(case.family is family for case in cases)
-        for family in Q1CaseFamily
-    }
+    counts = {family: sum(case.family is family for case in cases) for family in Q1CaseFamily}
 
     assert counts == {
         Q1CaseFamily.CANONICAL: 5,
@@ -140,12 +138,32 @@ def test_summary_agreement_is_computed_and_failures_are_replayable(tmp_path: Pat
     assert summary["agreement"]["observation_count"] == 2
     assert summary["agreement"]["rate"] == 0.5
     assert summary["agreement"]["analysis_unit"] == "case"
+    assert "confidence_interval_method" not in summary["agreement"]
+    assert (
+        summary["families"]["canonical"]["agreement"]["uncertainty_method"]
+        == "not_applicable_complete_configured_set"
+    )
     failure = summary["failures"][0]
     assert isinstance(failure, dict)
     fixture_path = tmp_path / "mismatches" / str(failure["fixture_file"])
     failure_path = tmp_path / "mismatches" / str(failure["failure_file"])
     assert RandomFiniteLatticeInstance.read_json(fixture_path).seed == cases[1].instance.seed
     assert json.loads(failure_path.read_text(encoding="utf-8"))["case_id"] == cases[1].case_id
+
+
+def test_only_seeded_randomized_family_receives_wilson_interval() -> None:
+    result = run_q1_correctness_cases(
+        randomized_q1_cases(seed_start=17, case_count=2),
+        checker=_python_checker,
+        required_solvers=PYTHON_SOLVERS,
+        run_metadata={"test": "randomized-agreement"},
+    )
+    summary = result.summary_dict()
+
+    assert "confidence_interval_method" not in summary["agreement"]
+    randomized_agreement = summary["families"]["randomized"]["agreement"]
+    assert randomized_agreement["confidence_interval_method"] == "wilson_score"
+    assert randomized_agreement["uncertainty_method"] == "wilson_score_seeded_randomized_family"
 
 
 def test_raw_and_summary_artifacts_are_separate_and_immutable(tmp_path: Path) -> None:
