@@ -1,0 +1,163 @@
+{
+  "all_constrained_outputs_independently_valid": true,
+  "all_exact_optimizer_certificates_independently_valid": true,
+  "artifact_kind": "mwpc_q5_publication_campaign_summary",
+  "config_file_sha256": "0c7afd505e2dc1330d7d917f2dda0369a4033f7c43825967b3eeb04661b747a7",
+  "config_normalized_sha256": "6318a4c2810ac7926806ceda86ad4b013146f4d27f879cbb5ab7dfb7b08a28c4",
+  "config_path": "configs/experiments/q5_structured_publication_v4.toml",
+  "contract_failure_count": 0,
+  "epic_parallel_commit_observed_in_every_task_seed": true,
+  "exact_optimizer_step_count": 60,
+  "measured_row_count": 240,
+  "pinned_raw_path": "docs/artifacts/raw/m125_publication_results_v1/q5-end-to-end-rows.jsonl",
+  "pinned_raw_sha256": "8acfb789e14779c9c33c7fec50fb713194797a2a5ae1a2ad59a56f5f5e266f44",
+  "producing_commit": "b4a8ffde4cc2aabc61844a955ce98933ef03dfb9",
+  "publication_bundle_id": "m125_publication_results_v1",
+  "repetitions_per_strategy_task_seed": 10,
+  "runs": [
+    {
+      "comparison_fingerprint": "41cd3e14927704022451048f89873e33ccadf596f119c36ff8011954fc4c1497",
+      "epic_max_batch_size": 2,
+      "epic_regular_cover_selector_calls": 70,
+      "fallback_count_by_strategy": {
+        "epic": 20,
+        "exact": 0,
+        "serial": 0,
+        "unconstrained": 0
+      },
+      "median_runtime_seconds_by_strategy": {
+        "epic": 0.3755180414955248,
+        "exact": 0.20477189200755674,
+        "serial": 0.38997290450060973,
+        "unconstrained": 0.38515504850511206
+      },
+      "raw_path": "results/raw/q5_structured_publication_v4/json_x_zero-seed125301/q5-end-to-end-rows.jsonl",
+      "raw_sha256": "ccc9da384b1aa9b20585f6f07607cec07a9bec98ff4f095f48226597a3794322",
+      "row_count": 40,
+      "seed": 125301,
+      "task_id": "json_x_zero"
+    },
+    {
+      "comparison_fingerprint": "dae921579e7e7ac2cc8e0aba3f219552e5626b48410f1cd91c158651fa17617a",
+      "epic_max_batch_size": 2,
+      "epic_regular_cover_selector_calls": 70,
+      "fallback_count_by_strategy": {
+        "epic": 20,
+        "exact": 0,
+        "serial": 0,
+        "unconstrained": 0
+      },
+      "median_runtime_seconds_by_strategy": {
+        "epic": 0.38244574650161667,
+        "exact": 0.20608139349496923,
+        "serial": 0.3973494900055812,
+        "unconstrained": 0.39884226150024915
+      },
+      "raw_path": "results/raw/q5_structured_publication_v4/json_x_zero-seed125302/q5-end-to-end-rows.jsonl",
+      "raw_sha256": "b9044204e52a51d91119ad72ae4f2aeb8431b153e294cb81488d75df4987db17",
+      "row_count": 40,
+      "seed": 125302,
+      "task_id": "json_x_zero"
+    },
+    {
+      "comparison_fingerprint": "3f82b0e2d9c1c8c5b60d43c3627f777fb7bd9530aeb864a757df2528ee29f2aa",
+      "epic_max_batch_size": 2,
+      "epic_regular_cover_selector_calls": 70,
+      "fallback_count_by_strategy": {
+        "epic": 20,
+        "exact": 0,
+        "serial": 0,
+        "unconstrained": 0
+      },
+      "median_runtime_seconds_by_strategy": {
+        "epic": 0.39123552400269546,
+        "exact": 0.20606611749826698,
+        "serial": 0.40389691150630824,
+        "unconstrained": 0.40857687150128186
+      },
+      "raw_path": "results/raw/q5_structured_publication_v4/json_x_zero-seed125303/q5-end-to-end-rows.jsonl",
+      "raw_sha256": "890334354e0a5522972c41a84d8fc4a897f238485d9f38e300a83fa0c9d9436f",
+      "row_count": 40,
+      "seed": 125303,
+      "task_id": "json_x_zero"
+    },
+    {
+      "comparison_fingerprint": "e4fc66e8544b6ecc62446a869857c348cac65411a4eef5c67618598c1969c1c3",
+      "epic_max_batch_size": 2,
+      "epic_regular_cover_selector_calls": 40,
+      "fallback_count_by_strategy": {
+        "epic": 40,
+        "exact": 0,
+        "serial": 0,
+        "unconstrained": 0
+      },
+      "median_runtime_seconds_by_strategy": {
+        "epic": 0.313638161002018,
+        "exact": 0.19821671450335998,
+        "serial": 0.3148954815042089,
+        "unconstrained": 0.3145071824983461
+      },
+      "raw_path": "results/raw/q5_structured_publication_v4/fenced_add_dsl-seed125301/q5-end-to-end-rows.jsonl",
+      "raw_sha256": "673759ad39e1801c8fe87da2b8158eb6414cf226b2be440a1cb584ab5394aa4c",
+      "row_count": 40,
+      "seed": 125301,
+      "task_id": "fenced_add_dsl"
+    },
+    {
+      "comparison_fingerprint": "566ece0161af058351f6174ebb94e7b56c74bdf57f9a9c2e049fdab9d2d9382a",
+      "epic_max_batch_size": 2,
+      "epic_regular_cover_selector_calls": 40,
+      "fallback_count_by_strategy": {
+        "epic": 40,
+        "exact": 0,
+        "serial": 0,
+        "unconstrained": 0
+      },
+      "median_runtime_seconds_by_strategy": {
+        "epic": 0.32060867799737025,
+        "exact": 0.19833473749895347,
+        "serial": 0.3239561619993765,
+        "unconstrained": 0.3238115679996554
+      },
+      "raw_path": "results/raw/q5_structured_publication_v4/fenced_add_dsl-seed125302/q5-end-to-end-rows.jsonl",
+      "raw_sha256": "a45b09f803ec809e6633a3154dcf2deb9ce105c0649a2895e4882f300faade69",
+      "row_count": 40,
+      "seed": 125302,
+      "task_id": "fenced_add_dsl"
+    },
+    {
+      "comparison_fingerprint": "639a1a4aedd99941780819178b8f75f87478f672048a8e66c9c4995cc1fbafdc",
+      "epic_max_batch_size": 2,
+      "epic_regular_cover_selector_calls": 40,
+      "fallback_count_by_strategy": {
+        "epic": 40,
+        "exact": 0,
+        "serial": 0,
+        "unconstrained": 0
+      },
+      "median_runtime_seconds_by_strategy": {
+        "epic": 0.3379301570021198,
+        "exact": 0.20306914550019428,
+        "serial": 0.3304494770054589,
+        "unconstrained": 0.3279925709939562
+      },
+      "raw_path": "results/raw/q5_structured_publication_v4/fenced_add_dsl-seed125303/q5-end-to-end-rows.jsonl",
+      "raw_sha256": "210c8508bc08e82e2f6baa124aefc466c7fa7de2a5744e56ba91273ba80b2748",
+      "row_count": 40,
+      "seed": 125303,
+      "task_id": "fenced_add_dsl"
+    }
+  ],
+  "schema_version": 1,
+  "seeds": [
+    125301,
+    125302,
+    125303
+  ],
+  "task_manifest_path": "configs/experiments/q5_structured_tasks_v4.toml",
+  "task_manifest_sha256": "433c117b7d1244d652c9128506e0c95132e3b4156b8366792b093ea3ddc025bc",
+  "tasks": [
+    "json_x_zero",
+    "fenced_add_dsl"
+  ]
+}

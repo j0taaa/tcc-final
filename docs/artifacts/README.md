@@ -84,3 +84,16 @@ integration and instrumentation but are not promoted to publication
 benchmarks. Q5 operational rates use generations as their denominator;
 step-level rates remain unavailable because the raw rows aggregate optimizer
 steps.
+
+## M12.5 Q5 publication rows
+
+`scripts/exact_commit/summarize_q5_publication.py` validates the six clean Q5
+v4 task/seed runs before concatenating them into
+`docs/artifacts/raw/m125_publication_results_v1/q5-end-to-end-rows.jsonl`.
+The versioned T1253 summary pins the combined and per-run SHA-256 values. The
+240 rows cover two structured tasks, three seeds, ten repetitions, and four
+distinct strategies. Every constrained output is checked independently; every
+exact optimizer step retains an independently validated `exact_on_support`
+certificate. Every task/seed pair records a real EPIC regular-cover call and a
+two-token commit. These rows replace neither the diagnostic T1203 bundle nor
+its single-token fallback label.

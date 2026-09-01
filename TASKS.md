@@ -705,29 +705,55 @@ unit and 599 exact tests passed.
 
 **Review finding:** 3 — the current Q5 EPIC rows only exercise serial fallback.
 
-- [ ] Add one small structured task with at least two ordinary content tokens.
-- [ ] Feed exact and EPIC comparable candidate states and record their
+- [x] Add one small structured task with at least two ordinary content tokens.
+- [x] Feed exact and EPIC comparable candidate states and record their
   comparison fingerprint.
-- [ ] Require `regular_cover_selector_calls > 0` and at least one EPIC selected
+- [x] Require `regular_cover_selector_calls > 0` and at least one EPIC selected
   batch of cardinality greater than one.
-- [ ] Independently check the output and preserve exact-result certificate
+- [x] Independently check the output and preserve exact-result certificate
   validation and `exact_on_support` reporting.
-- [ ] Keep the existing single-token task, but label its row as an EPIC-enabled
+- [x] Keep the existing single-token task, but label its row as an EPIC-enabled
   decoder with serial fallback rather than evidence of EPIC parallel speed.
-- [ ] If T1252 selects publication-mode evidence, run at least two nontrivial
+- [x] If T1252 selects publication-mode evidence, run at least two nontrivial
   structured tasks in the new Q5 campaign; otherwise classify this addition as
   integration evidence rather than a representative benchmark.
-- [ ] Add a regression that fails if the new EPIC task silently falls back for
+- [x] Add a regression that fails if the new EPIC task silently falls back for
   every selection.
 
 **Acceptance criteria**
 
-- [ ] Versioned raw evidence proves that the regular-cover selector ran and made
+- [x] Versioned raw evidence proves that the regular-cover selector ran and made
   at least one parallel commitment on independently valid output.
-- [ ] Serial, EPIC, and exact remain distinct strategies with comparable inputs;
+- [x] Serial, EPIC, and exact remain distinct strategies with comparable inputs;
   fallback counts are reported rather than hidden.
 
-**Evidence:** `[config, raw run, computed summary, independent checker, tests]`
+**Evidence:** implementation commits `7bb73c3`, `9c4278f`, `3cc34e0`,
+`6914b96`, and `b4a8ffd` add structured task manifests, multi-byte literal
+grammars, task/seed comparison fingerprints, Rust-regex-safe EPIC literals,
+repeated exact steps, independent output checks, hard EPIC execution gates,
+and the old single-token fallback label. ADRs 0017--0019 preserve the rejected
+v1--v3 pilots and explain the v4 choice without promoting failed runs to
+evidence. The accepted immutable v4 config has file SHA-256
+`0c7afd505e2dc1330d7d917f2dda0369a4033f7c43825967b3eeb04661b747a7`
+and normalized SHA-256
+`6318a4c2810ac7926806ceda86ad4b013146f4d27f879cbb5ab7dfb7b08a28c4`.
+Six clean CUDA commands ran fenced JSON and `ADD 0 0` DSL tasks at seeds
+125301--125303, ten repetitions and four strategies each, from producing
+commit `b4a8ffde4cc2aabc61844a955ce98933ef03dfb9`. The resulting 240 versioned
+raw rows are at
+`docs/artifacts/raw/m125_publication_results_v1/q5-end-to-end-rows.jsonl`
+(SHA-256 `8acfb789e14779c9c33c7fec50fb713194797a2a5ae1a2ad59a56f5f5e266f44`).
+`python scripts/exact_commit/summarize_q5_publication.py` independently
+rechecked all outputs and 60 stored `OPTIMAL` step certificates, observed 330
+regular-cover selector calls total and a maximum EPIC batch of two in every
+task/seed pair, and wrote
+`docs/evidence/t1253-q5-publication-summary.json` (SHA-256
+`700aa99e870c06704bbd98a4bd481bb2ee1c73c3dbff7843f3cca16a2b7f5ec1`).
+That summary reports EPIC fallback counts per task/seed rather than hiding the
+remaining serial selections. `python -m pytest -q
+tests/exact_commit/test_t1253_evidence.py tests/exact_commit/test_q5_end_to_end.py
+tests/exact_commit/test_publication_evidence_policy.py` -> 22 passed; `make
+check` -> 10 unit and 608 exact tests passed; `make paper` -> 15 pages.
 
 ## T1254 — Separate illustrative Q2 cases from empirical gap evidence
 
