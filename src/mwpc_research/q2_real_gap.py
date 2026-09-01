@@ -397,7 +397,19 @@ def summarize_real_rows(rows: Iterable[Mapping[str, object]]) -> dict[str, objec
             float(cast(float, payload[name]["heuristic_score"]))
             for payload in comparison_payloads
         )
-        comparisons[name] = summarize_gaps(exact_scores, heuristic_scores).to_dict()
+        gap_summary = summarize_gaps(exact_scores, heuristic_scores).to_dict()
+        equality = cast(dict[str, object], gap_summary["equality"])
+        for field in (
+            "confidence_interval_lower",
+            "confidence_interval_method",
+            "confidence_interval_upper",
+            "confidence_level",
+        ):
+            equality.pop(field)
+        equality["inference_policy"] = (
+            "no_interval_non_iid_task_seed_state_corpus"
+        )
+        comparisons[name] = gap_summary
     return {
         "artifact_kind": Q2_REAL_SUMMARY_KIND,
         "schema_version": Q2_REAL_SCHEMA_VERSION,
@@ -412,6 +424,7 @@ def summarize_real_rows(rows: Iterable[Mapping[str, object]]) -> dict[str, objec
             if non_singleton_support_count
             else "execution_alignment_check_all_supports_singleton_after_deduplication"
         ),
+        "sampling_inference": "none_non_iid_task_seed_state_corpus",
         "task_counts": dict(
             sorted(Counter(str(payload["task_id"]) for payload in source_payloads).items())
         ),

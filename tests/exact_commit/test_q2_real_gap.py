@@ -142,6 +142,10 @@ def test_real_summary_keeps_real_snapshot_denominators_and_zero_optima() -> None
     assert summary["support_combination_counts"] == {"2": 1}
     assert summary["non_singleton_support_count"] == 1
     assert summary["empirical_interpretation"] == "bounded_real_state_gap_sample"
+    assert summary["sampling_inference"] == "none_non_iid_task_seed_state_corpus"
+    equality = summary["comparisons"]["epic_regular_cover"]["equality"]
+    assert equality["inference_policy"] == "no_interval_non_iid_task_seed_state_corpus"
+    assert "confidence_interval_lower" not in equality
     assert summary["task_counts"] == {"ab": 1}
     assert summary["seed_counts"] == {"7": 1}
     assert summary["zero_optimum_count"] == 0
