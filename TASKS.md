@@ -3,8 +3,9 @@
 ## How to use this file
 
 This is the authoritative checklist for current and future work. `AGENTS.md`
-defines stable scientific invariants; `IMPLEMENTATION_PLAN.md` explains the
-design. Detailed completed evidence through M10 is archived in
+defines stable scientific invariants; accepted ADRs explain the maintained
+design. `IMPLEMENTATION_PLAN.md` now indexes those sources and the archived
+legacy Portuguese plan. Detailed completed evidence through M10 is archived in
 [`docs/history/TASKS-through-M10.md`](docs/history/TASKS-through-M10.md).
 
 Status convention: `[ ]` incomplete, `[x]` completed with immutable evidence,
@@ -983,24 +984,40 @@ pre-import baseline as 15 pages; this is not a final page-count claim.
 **Review finding:** 10 — repository and article terminology are mixed between
 English and Portuguese.
 
-- [ ] Record the article-language decision before editing result prose; use an
+- [x] Record the article-language decision before editing result prose; use an
   English body unless an institutional or advisor constraint is documented.
-- [ ] Apply English consistently to the article body, section titles,
+- [x] Apply English consistently to the article body, section titles,
   theorem/algorithm names, captions, code, and repository terminology.
-- [ ] Preserve the institutionally required Portuguese `Resumo` and provide a
+- [x] Preserve the institutionally required Portuguese `Resumo` and provide a
   matching English `Abstract`.
-- [ ] Translate `IMPLEMENTATION_PLAN.md` or archive it with a clear supersession
+- [x] Translate `IMPLEMENTATION_PLAN.md` or archive it with a clear supersession
   notice if `TASKS.md` and ADRs have replaced it.
-- [ ] Add a terminology review for `exact_on_support`, statuses, finite slots,
+- [x] Add a terminology review for `exact_on_support`, statuses, finite slots,
   proposals, witness, fallback, and baseline names.
 
 **Acceptance criteria**
 
-- [ ] Mixed-language prose remains only where institutionally required or where
+- [x] Mixed-language prose remains only where institutionally required or where
   a cited title/quotation must retain its original language.
-- [ ] Language normalization does not alter scientific claims or generated data.
+- [x] Language normalization does not alter scientific claims or generated data.
 
-**Evidence:** `[language decision, documentation/paper diff, terminology check]`
+**Evidence:** ADR 0022 selects an English title/body, English theorem and
+algorithm names and captions, an institutionally required Portuguese `Resumo`,
+and a matching English `Abstract`; it also fixes the meanings of
+`exact_on_support`, all five solver statuses, finite slots, proposal, witness,
+progress fallback, and the `serial | epic | exact` strategies. The 1,030-line
+Portuguese implementation plan is preserved verbatim at
+`docs/history/IMPLEMENTATION_PLAN-legacy-pt.md` (SHA-256
+`fefe0b6f250e75c887455fcf3fe3459fa5d1be3fc92a385aef42dc0428c07f33`),
+while its root path now indexes maintained English sources. A structural
+pre/post translation check found identical sets/counts for 20 citations, 23
+labels, 13 references, 20 equation environments, one align environment, three
+algorithms, four theorems, three definitions, two propositions, and 34
+placeholders. `python -m pytest -q
+tests/exact_commit/test_t1259_language_and_terminology.py` -> 3 passed;
+`make check` -> 10 unit and 634 exact tests passed; `make paper` passed and the
+normalized article remained 15 pages. No generated artifact or measured result
+changed.
 
 ## T1260 — Add artifact-rebuild and source-rerun rehearsals
 

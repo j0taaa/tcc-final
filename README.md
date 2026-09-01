@@ -8,7 +8,8 @@ The project implements an exact, certificate-producing optimizer for selecting t
 
 - [`AGENTS.md`](AGENTS.md): scientific and engineering invariants;
 - [`TASKS.md`](TASKS.md): authoritative current milestone, completed evidence, and remaining work;
-- [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md): explanatory design and evaluation plan;
+- [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md): supersession index for
+  the archived legacy plan and maintained English sources;
 - [`UPSTREAM.md`](UPSTREAM.md): immutable EPIC provenance;
 - [`docs/decisions/`](docs/decisions/): accepted architecture and scientific decisions;
 - [`paper/`](paper/): SBC LaTeX article.

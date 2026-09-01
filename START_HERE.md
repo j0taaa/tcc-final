@@ -23,7 +23,8 @@ make test-rust-parser
 1. `AGENTS.md` in full;
 2. `UPSTREAM.md`;
 3. `TASKS.md`, beginning with the first incomplete required task;
-4. only the relevant sections of `IMPLEMENTATION_PLAN.md`;
+4. the short supersession index in `IMPLEMENTATION_PLAN.md` (consult its
+   archived legacy plan only for historical rationale);
 5. the affected source, ADRs, tests, and evidence files.
 
 `TASKS.md` is the sole source of the current milestone. This file intentionally does not repeat a task number, so it cannot become stale after a gate closes.

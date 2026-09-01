@@ -4,7 +4,7 @@
 \usepackage{graphicx,url}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[english,brazilian]{babel}
+\usepackage[brazilian,english]{babel}
 \usepackage{amsmath,amssymb,amsfonts,mathtools}
 \usepackage{amsthm}
 \usepackage{algorithm}
@@ -24,27 +24,17 @@
 \setlength{\floatsep}{6pt plus 2pt minus 2pt}
 \setlength{\intextsep}{6pt plus 2pt minus 2pt}
 
-\newtheorem{definition}{Definição}
-\newtheorem{theorem}{Teorema}
-\newtheorem{lemma}{Lema}
-\newtheorem{proposition}{Proposição}
-\newtheorem{corollary}{Corolário}
-\newtheorem{remark}{Observação}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
 
-\floatname{algorithm}{Algoritmo}
-\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
-\renewcommand{\algorithmicensure}{\textbf{Saída:}}
-\renewcommand{\proofname}{Demonstração}
-\algrenewcommand\algorithmicfor{\textbf{para}}
-\algrenewcommand\algorithmicforall{\textbf{para cada}}
-\algrenewcommand\algorithmicdo{\textbf{faça}}
-\algrenewcommand\algorithmicif{\textbf{se}}
-\algrenewcommand\algorithmicthen{\textbf{então}}
-\algrenewcommand\algorithmicelse{\textbf{senão}}
-\algrenewcommand\algorithmicrepeat{\textbf{repita}}
-\algrenewcommand\algorithmicuntil{\textbf{até que}}
-\algrenewcommand\algorithmicreturn{\textbf{retorne}}
-\algrenewcommand\algorithmicend{\textbf{fim}}
+\floatname{algorithm}{Algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\proofname}{Proof}
 
 \newcommand{\ph}[1]{\textbf{[#1]}}
 \newcommand{\mask}{\mathtt{[MASK]}}
@@ -61,514 +51,514 @@
 \newcommand{\argmax}{\operatorname*{arg\,max}}
 \newcommand{\indic}{\mathbf{1}}
 
-\title{Compromisso Paralelo Exato de Peso Máximo sob Gramáticas Livres de Contexto para Modelos de Linguagem por Difusão}
+\title{Exact Maximum-Weight Parallel Commitment under Context-Free Grammars for Diffusion Language Models}
 
-\author{Gabriel Jota Lizardo\inst{1}, \ph{Nome do orientador}\inst{1}}
+\author{Gabriel Jota Lizardo\inst{1}, \ph{Advisor name}\inst{1}}
 
-\address{Curso de Ciência da Computação\\
+\address{Computer Science Program\\
 Pontifícia Universidade Católica de Minas Gerais (PUC Minas)\\
-\ph{Campus e endereço institucional}
-\email{\ph{e-mails}}}
+\ph{Campus and institutional address}
+\email{\ph{email addresses}}}
 
 \begin{document}
 
 \maketitle
 
-\begin{otherlanguage}{english}
 \begin{abstract}
 Diffusion language models can reveal several positions in parallel, but independently plausible token proposals may be jointly incompatible with a context-free grammar. Existing CFG-constrained decoders can test whether a partial state remains completable, yet recent parallel methods select compatible proposal subsets heuristically. This work formulates maximum-weight parallel commitment as an exact weighted parsing problem. For a finite set of non-negative token proposals, it proves that the best compatible subset has the same value as the highest-reward grammar-valid completion. A max-plus parser therefore recovers both an optimal witness and the proposals that may be committed simultaneously. The formulation is first developed for token-aligned grammars and then generalized to a finite tokenizer-aware lattice composed with detokenization and lexical analysis. The resulting method targets soundness, completeness, per-step optimality, and finite-slot exactness. The practical evaluation will use \ph{model}, \ph{grammars/tasks}, and \ph{hardware}, comparing the exact method with exhaustive search on small instances and with heuristic constrained decoders on realistic instances.
 \end{abstract}
-\end{otherlanguage}
 
+\begin{otherlanguage}{brazilian}
 \begin{resumo}
 Modelos de linguagem por difusão podem revelar várias posições em paralelo, mas propostas de tokens individualmente plausíveis podem ser conjuntamente incompatíveis com uma gramática livre de contexto. Decodificadores recentes conseguem testar se um estado parcial ainda admite uma conclusão válida, porém a seleção de subconjuntos para compromisso paralelo permanece heurística. Este trabalho formula o compromisso paralelo de peso máximo como um problema exato de parsing ponderado. Para propostas de peso não negativo, demonstra-se que o melhor subconjunto compatível possui o mesmo valor que a conclusão gramaticalmente válida de maior recompensa. Um parser max-plus recupera, portanto, uma testemunha ótima e as propostas que podem ser comprometidas simultaneamente. A formulação é apresentada primeiro para gramáticas alinhadas aos tokens e depois generalizada para um lattice finito, sensível ao tokenizador, composto com detokenização e análise léxica. O método busca garantir correção, completude, otimalidade por etapa e exatidão quanto ao número real de slots. A avaliação prática utilizará \ph{modelo}, \ph{gramáticas/tarefas} e \ph{hardware}, comparando o método exato com busca exaustiva em instâncias pequenas e com decodificadores heurísticos em instâncias realistas.
 \end{resumo}
+\end{otherlanguage}
 
-\section{Introdução}
+\section{Introduction}
 
-Modelos de linguagem autoregressivos geram uma sequência da esquerda para a direita, condicionando cada novo token ao prefixo já produzido. Modelos de linguagem por difusão discreta seguem outra organização: partem de uma sequência corrompida, frequentemente composta por máscaras, e executam etapas sucessivas de denoising que estimam tokens para várias posições ainda desconhecidas. Processos discretos de difusão foram estudados por \cite{austin2021d3pm}; formulações masked diffusion mais simples e escaláveis foram propostas por \cite{sahoo2024mdlm}; e modelos de maior porte, como LLaDA, mostraram que a abordagem pode ser aplicada ao paradigma de grandes modelos de linguagem \cite{nie2025llada}. A possibilidade de atualizar diversas posições em uma mesma passagem é uma das principais motivações desse paradigma.
+Autoregressive language models generate a sequence from left to right, conditioning each new token on the previously generated prefix. Discrete diffusion language models use a different organization: they start from a corrupted sequence, often composed of masks, and perform successive denoising steps that estimate tokens for several still-unknown positions. Discrete diffusion processes were studied by \cite{austin2021d3pm}; simpler and more scalable masked-diffusion formulations were proposed by \cite{sahoo2024mdlm}; and larger models such as LLaDA showed that the approach can be applied to the large-language-model paradigm \cite{nie2025llada}. The ability to update several positions in one pass is a principal motivation for this paradigm.
 
-Essa geração paralela também dificulta a imposição de restrições estruturais. Em tarefas de código, JSON, expressões, linguagens específicas de domínio e outras saídas formais, a validade não é uma propriedade isolada de cada posição. Dois tokens podem ser aceitáveis quando considerados separadamente e, ainda assim, ser incompatíveis quando fixados em conjunto. Em um modelo autoregressivo, uma restrição formal pode filtrar os próximos tokens a partir do prefixo. Em um dLLM, máscaras permanecem em várias regiões, os tokens podem ser revelados fora de ordem e uma decisão deve preservar a existência de pelo menos uma conclusão válida para o canvas inteiro.
+Parallel generation also makes structural constraints harder to enforce. In code, JSON, expressions, domain-specific languages, and other formal outputs, validity is not an isolated property of each position. Two tokens may each be acceptable in isolation while becoming incompatible when fixed together. An autoregressive model can filter its next tokens from the current prefix. In a dLLM, masks remain in several regions, tokens may be revealed out of order, and every decision must preserve at least one valid completion of the entire canvas.
 
-DINGO demonstrou inferência restrita sob linguagens regulares por programação dinâmica \cite{suresh2025dingo}. Posteriormente, \cite{mundler2025cfg} reduziram o problema de decodificação CFG-constrained à verificação de completabilidade de uma saída parcial. O estado parcial é traduzido para uma linguagem regular de possíveis conclusões e testa-se se sua interseção com a linguagem da CFG é não vazia. EPIC reduziu custos dessa abordagem por memoização lexical, validação Earley diretamente sobre um grafo e seleção relaxada de subconjuntos para recuperar parte do paralelismo \cite{jin2026epic}. Entretanto, quando um lote completo falha, identificar o melhor subconjunto de propostas é tratado como uma escolha combinatória e resolvido por uma política heurística.
+DINGO demonstrated constrained inference under regular languages through dynamic programming \cite{suresh2025dingo}. Later, \cite{mundler2025cfg} reduced CFG-constrained decoding to checking whether a partial output remains completable. Their method translates the partial state into a regular language of possible completions and tests whether its intersection with the CFG language is nonempty. EPIC reduced the cost of this approach through lexical memoization, Earley validation directly over a graph, and relaxed subset selection that recovers part of the parallelism \cite{jin2026epic}. However, when a full batch fails, identifying the best proposal subset remains a combinatorial choice handled by a heuristic policy.
 
-Este trabalho investiga a seguinte pergunta: \emph{é possível selecionar exatamente, sem enumerar todos os subconjuntos, o conjunto de propostas paralelas de maior peso que ainda admite uma conclusão representável e válida pela CFG?} A hipótese central é que a enumeração em $2^{|C|}$ não é necessária. Cada conclusão válida determina automaticamente quais propostas ela preserva. Assim, a busca por subconjuntos pode ser substituída por uma busca por uma derivação de peso máximo, usando técnicas de parsing ponderado e o semiring max-plus \cite{goodman1999semiring,mohri2002}.
+This work asks: \emph{can we select exactly, without enumerating every subset, the maximum-weight set of parallel proposals that still admits a representable CFG-valid completion?} The central hypothesis is that enumeration over $2^{|C|}$ is unnecessary. Every valid completion automatically determines which proposals it preserves. Subset search can therefore be replaced by maximum-weight derivation search using weighted parsing and the max-plus semiring \cite{goodman1999semiring,mohri2002}.
 
-O objetivo geral é desenvolver e demonstrar um algoritmo de compromisso paralelo exato para dLLMs condicionados por CFGs. Os objetivos específicos são: (i) formalizar o problema de \emph{Maximum-Weight Parallel Commitment} (MWPC); (ii) provar sua equivalência com a conclusão factível de maior recompensa; (iii) construir uma versão token-aligned por CKY max-plus; (iv) generalizar o método para um lattice finito que preserve tokenização, análise léxica e proveniência; (v) provar correção, completude, otimalidade por etapa e \emph{finite-slot exactness}; e (vi) implementar e avaliar o método em \ph{tarefas selecionadas}.
+The overall goal is to develop and demonstrate an exact parallel-commitment algorithm for CFG-constrained dLLMs. The specific goals are: (i) formalize \emph{Maximum-Weight Parallel Commitment} (MWPC); (ii) prove its equivalence to the highest-reward feasible completion; (iii) construct a token-aligned max-plus CKY version; (iv) generalize it to a finite lattice that preserves tokenization, lexical analysis, and provenance; (v) prove soundness, completeness, per-step optimality, and \emph{finite-slot exactness}; and (vi) implement and evaluate the method on \ph{selected tasks}.
 
-As contribuições pretendidas não consistem na criação do weighted parsing, já estabelecido na literatura, mas na formulação do compromisso paralelo de dLLMs como uma única inferência ponderada, na construção tokenizer-aware com slots finitos e na integração dessa inferência a um decoder iterativo. A otimalidade reivindicada é local à etapa atual: o método maximiza a função definida sobre as propostas presentes e o conjunto de conclusões possíveis no estado atual. Ele não afirma otimizar toda a trajetória futura, pois os logits das etapas seguintes dependem das decisões tomadas.
+The intended contribution is not weighted parsing itself, which is established in the literature, but the formulation of dLLM parallel commitment as a single weighted inference, the tokenizer-aware construction with finite slots, and its integration into an iterative decoder. The claimed optimality is local to the current step: the method maximizes the defined objective over the current proposals and possible completions of the current state. It does not claim to optimize the entire future trajectory because subsequent logits depend on the commitments made.
 
-O restante do artigo está organizado da seguinte forma. A Seção~\ref{sec:fundamentacao} apresenta os conceitos e trabalhos relacionados. A Seção~\ref{sec:problema} formaliza o problema. A Seção~\ref{sec:reducao} demonstra a redução principal. As Seções~\ref{sec:tokenaligned} e~\ref{sec:lattice} descrevem os algoritmos token-aligned e tokenizer-aware. A Seção~\ref{sec:decoder} integra o otimizador ao denoising. A Seção~\ref{sec:metodologia} especifica implementação e avaliação. Por fim, as Seções~\ref{sec:resultados}--\ref{sec:conclusao} registram resultados a preencher, limitações e conclusão.
+The rest of this article is organized as follows. Section~\ref{sec:fundamentacao} presents background and related work. Section~\ref{sec:problema} formalizes the problem. Section~\ref{sec:reducao} proves the main reduction. Sections~\ref{sec:tokenaligned} and~\ref{sec:lattice} describe the token-aligned and tokenizer-aware algorithms. Section~\ref{sec:decoder} integrates the optimizer into denoising. Section~\ref{sec:metodologia} specifies implementation and evaluation. Finally, Sections~\ref{sec:resultados}--\ref{sec:conclusao} cover the results to be filled in, limitations, and conclusion.
 
-\section{Fundamentação e Trabalhos Relacionados}
+\section{Background and Related Work}
 \label{sec:fundamentacao}
 
-\subsection{Diffusion language models e compromisso paralelo}
+\subsection{Diffusion language models and parallel commitment}
 
-Considere um vocabulário finito de tokens $\vocab$ e um canvas de comprimento $n$. Um estado parcial é
+Consider a finite token vocabulary $\vocab$ and a canvas of length $n$. A partial state is
 \begin{equation}
  x \in (\vocab \cup \{\mask\})^n.
 \end{equation}
-Em uma etapa $s$, o modelo estima distribuições marginais $p_\theta^{(s)}(\cdot\mid x)$ para posições mascaradas. Uma política de revelação escolhe posições e tokens propostos, normalmente com base em confiança, entropia ou schedule de denoising. O compromisso de uma proposta substitui definitivamente uma máscara pelo token correspondente, salvo quando o sampler admite remasking.
+At step $s$, the model estimates marginal distributions $p_\theta^{(s)}(\cdot\mid x)$ for masked positions. A reveal policy chooses proposed positions and tokens, usually from confidence, entropy, or the denoising schedule. Committing a proposal permanently replaces a mask with the corresponding token unless the sampler allows remasking.
 
-O paralelismo cria uma distinção entre \emph{propor} e \emph{comprometer}. O forward do modelo pode propor muitos tokens simultaneamente. Sob uma restrição global, entretanto, é necessário decidir quais propostas podem se tornar irrevogáveis sem eliminar todas as conclusões válidas. Uma validação serial testa uma proposta, atualiza o estado e passa à próxima; esse procedimento é correto quando cada aceitação preserva uma testemunha, porém o resultado depende da ordem e pode descartar um lote melhor.
+Parallelism creates a distinction between \emph{proposing} and \emph{committing}. A model forward pass can propose many tokens simultaneously. Under a global constraint, however, the decoder must decide which proposals can become irrevocable without eliminating every valid completion. Serial validation tests one proposal, updates the state, and continues to the next; this is correct when every acceptance preserves a witness, but its outcome depends on order and may discard a better batch.
 
-\subsection{Restrições regulares e livres de contexto}
+\subsection{Regular and context-free constraints}
 
-Linguagens regulares são representáveis por autômatos finitos e capturam padrões locais, expressões regulares e muitos esquemas fixos. DINGO formula inferência restrita para dLLMs sob esse tipo de restrição e usa programação dinâmica para encontrar ou amostrar sequências aceitas \cite{suresh2025dingo}. Trabalhos posteriores mostram inferência exata sobre a distribuição mean-field condicionada por autômatos finitos, incluindo amostragem e decodificação gulosa \cite{dang2026automata}.
+Regular languages are representable by finite automata and capture local patterns, regular expressions, and many fixed schemas. DINGO formulates constrained inference for dLLMs under this class and uses dynamic programming to find or sample accepted sequences \cite{suresh2025dingo}. Later work provides exact inference over a mean-field distribution conditioned by finite automata, including sampling and greedy decoding \cite{dang2026automata}.
 
-Gramáticas livres de contexto $G=(N,\Sigma,P,S)$ possuem não terminais $N$, terminais $\Sigma$, produções $P$ e símbolo inicial $S$. Elas representam dependências recursivas, como parênteses balanceados, blocos aninhados e árvores sintáticas. O reconhecimento de uma string por CKY, para gramáticas em forma normal de Chomsky, usa uma tabela sobre intervalos e possui complexidade cúbica no comprimento da entrada \cite{kasami1965}. Earley reconhece CFGs gerais sem exigir a mesma normalização e também tem limite cúbico no caso geral \cite{earley1970}. A interseção entre uma linguagem livre de contexto e uma linguagem regular continua sendo livre de contexto e pode ser construída por estados que combinam não terminais com pares de estados do autômato \cite{barhillel1961,hopcroft2006}.
+A context-free grammar $G=(N,\Sigma,P,S)$ has nonterminals $N$, terminals $\Sigma$, productions $P$, and start symbol $S$. CFGs represent recursive dependencies such as balanced parentheses, nested blocks, and syntax trees. CKY string recognition for a grammar in Chomsky normal form uses a chart over spans and is cubic in input length \cite{kasami1965}. Earley recognizes general CFGs without the same normalization and also has a cubic worst-case bound \cite{earley1970}. The intersection of a context-free language with a regular language remains context-free and can be constructed with states that combine nonterminals and pairs of automaton states \cite{barhillel1961,hopcroft2006}.
 
-\subsection{Parsing ponderado e semirings}
+\subsection{Weighted parsing and semirings}
 
-Algoritmos de parsing podem ser parametrizados por um semiring. No booleano, a operação aditiva representa disjunção e a multiplicativa representa conjunção; a tabela registra apenas alcançabilidade. No semiring tropical max-plus,
+Parsing algorithms can be parameterized by a semiring. In the Boolean semiring, addition represents disjunction and multiplication represents conjunction, so the chart records reachability only. In the tropical max-plus semiring,
 \begin{equation}
  (\R\cup\{\neginf\},\;\oplus=\max,\;\otimes=+,\;\mathbf{0}=\neginf,\;\mathbf{1}=0),
 \end{equation}
-a tabela registra a maior pontuação de uma derivação. Essa abstração unifica reconhecimento, Viterbi, inside e outras quantidades \cite{goodman1999semiring}. Versões ponderadas de algoritmos de parsing e estruturas sobre grafos seguem os mesmos princípios algébricos \cite{goodman1999semiring,mohri2002}.
+the chart records the highest-scoring derivation. This abstraction unifies recognition, Viterbi, inside, and other quantities \cite{goodman1999semiring}. Weighted parsing algorithms and graph structures follow the same algebraic principles \cite{goodman1999semiring,mohri2002}.
 
-O presente problema usa max-plus, e não soma-produto. Isso é relevante diante do problema estudado por \cite{amarilli2026probabilistic}: calcular a massa total de palavras de uma CFG sob distribuições independentes pode exigir hipóteses de não ambiguidade e tornar-se \#P-difícil em classes gerais. Aqui não se soma a contribuição de todas as palavras ou derivações; procura-se somente a melhor conclusão. Desde que pesos de produção não contem artificialmente ambiguidades, a existência de várias derivações para a mesma string não altera a recompensa máxima.
+This problem uses max-plus rather than sum-product. The distinction matters for the problem studied by \cite{amarilli2026probabilistic}: computing the total mass of CFG words under independent distributions may require unambiguity assumptions and become \#P-hard for general classes. Here, contributions from all words or derivations are not summed; only the best completion is sought. Provided that production weights do not artificially count ambiguity, multiple derivations of the same string do not change its maximum reward.
 
-\subsection{Tokenização e interface lexical}
+\subsection{Tokenization and the lexical interface}
 
-Modelos operam sobre subpalavras produzidas por técnicas como BPE \cite{sennrich2016bpe} ou SentencePiece \cite{kudo2018sentencepiece}. Gramáticas de programação, por outro lado, costumam usar caracteres ou categorias como \texttt{IDENTIFIER}, \texttt{NUMBER} e \texttt{LPAREN}. Um token pode conter vários caracteres, atravessar fronteiras lexicais ou completar um lexema iniciado por outro token. Um método exato precisa preservar simultaneamente a identidade do token do modelo, os símbolos emitidos e o número de slots consumidos.
+Models operate over subwords produced by techniques such as BPE \cite{sennrich2016bpe} or SentencePiece \cite{kudo2018sentencepiece}. Programming-language grammars, by contrast, often use characters or categories such as \texttt{IDENTIFIER}, \texttt{NUMBER}, and \texttt{LPAREN}. One token may contain several characters, cross lexical boundaries, or complete a lexeme begun by another token. An exact method must simultaneously preserve model-token identity, emitted symbols, and the number of consumed slots.
 
-Se o programa detokenizar primeiro e apagar a proveniência, duas tokenizações que geram o mesmo texto tornam-se indistinguíveis, embora apenas uma possa coincidir com a proposta de uma posição. A solução adotada neste trabalho é manter cada escolha como arco de um lattice de tokens e compô-lo com uma relação de detokenização e lexing. Conceitos de análise lexical, maximal munch, prioridade de regras e palavras-chave versus identificadores seguem a literatura de compiladores \cite{aho2006}.
+If a program detokenizes first and discards provenance, two tokenizations that produce the same text become indistinguishable even when only one matches the proposal at a position. This work instead retains each choice as an arc in a token lattice and composes it with a detokenization and lexing relation. The lexical-analysis concepts of maximal munch, rule priority, and keywords versus identifiers follow compiler literature \cite{aho2006}.
 
-\subsection{Decodificação CFG-constrained para dLLMs}
+\subsection{CFG-constrained decoding for dLLMs}
 
-\cite{mundler2025cfg} definem a completabilidade de um estado parcial: deve existir pelo menos uma forma de preencher as máscaras de modo que a saída pertença à linguagem alvo. O procedimento constrói uma representação regular das possibilidades da saída parcial e decide a não vacuidade da interseção com a CFG. Essa formulação permite saídas com máscaras em diversas regiões, mas validações repetidas introduzem custo.
+\cite{mundler2025cfg} define completion feasibility for a partial state: at least one way of filling the masks must produce an output in the target language. Their procedure builds a regular representation of possible completions of the partial output and decides whether its intersection with the CFG is nonempty. This formulation supports outputs with masks in several regions, but repeated validation introduces cost.
 
-EPIC ataca três gargalos: repetições no lexing, determinização/minimização de autômatos e perda de paralelismo por verificações seriais \cite{jin2026epic}. Para o último ponto, propõe uma cobertura regular da CFG e uma divisão heurística do lote, seguida de validação exata e fallback serial. O trabalho explicita que determinar o subconjunto realmente compatível por verificações de subconjuntos levaria a uma quantidade exponencial de chamadas. O presente TCC muda a variável de busca: em vez de escolher $B\subseteq C$ e perguntar repetidamente se $B$ é válido, inclui todas as escolhas opcionais em uma única estrutura ponderada e procura uma conclusão válida de peso máximo.
+EPIC addresses three bottlenecks: repeated lexing, automaton determinization/minimization, and lost parallelism from serial checks \cite{jin2026epic}. For the last, it proposes a regular cover of the CFG and a heuristic split of the batch, followed by exact validation and serial fallback. The work notes that determining the truly compatible subset through subset checks would require exponentially many calls. This thesis changes the search variable: instead of choosing $B\subseteq C$ and repeatedly asking whether $B$ is valid, it puts all optional choices in one weighted structure and seeks a maximum-weight valid completion.
 
-O posicionamento é, portanto, específico: DINGO e a inferência de Dang--Ermon são exatos para restrições regulares; Mündler et al. oferecem o teste exato de completabilidade sob CFG; e EPIC recupera paralelismo sob CFG por seleção relaxada seguida de verificação. Este trabalho não reivindica inventar parsing ponderado nem inferência restrita exata em geral. Sua contribuição proposta é resolver, em uma única inferência max-plus sobre um canvas finito, o lote CFG-compatível de maior peso da etapa atual, recuperando também a testemunha e a proveniência dos tokens.
+The positioning is therefore specific: DINGO and Dang--Ermon inference are exact for regular constraints; Mündler et al. provide an exact CFG completion-feasibility test; and EPIC recovers CFG parallelism through relaxed selection followed by verification. This work does not claim to invent weighted parsing or exact constrained inference in general. Its proposed contribution is to solve the maximum-weight CFG-compatible batch of the current step through one max-plus inference over a finite canvas, while recovering the witness and token provenance.
 
-\section{Formulação do Problema}
+\section{Problem Formulation}
 \label{sec:problema}
 
-\subsection{Sequências de tokens e conclusões factíveis}
+\subsection{Token sequences and feasible completions}
 
-Seja $\vocab$ o vocabulário do modelo e $n$ o número de slots do canvas. O estado atual é $x\in(\vocab\cup\{\mask\})^n$. Uma conclusão de tokens é $y\in\vocab^n$. Diz-se que $y$ respeita $x$ quando
+Let $\vocab$ be the model vocabulary and $n$ the number of canvas slots. The current state is $x\in(\vocab\cup\{\mask\})^n$. A token completion is $y\in\vocab^n$. We say that $y$ preserves $x$ when
 \begin{equation}
  \forall i\in\{1,\ldots,n\},\qquad x_i\neq\mask \Rightarrow y_i=x_i.
 \end{equation}
 
-Seja $\operatorname{detok}:\vocab^n\rightarrow\bytealpha^*$ a detokenização. Para admitir léxers determinísticos ou relações lexicais mais gerais, define-se
+Let $\operatorname{detok}:\vocab^n\rightarrow\bytealpha^*$ denote detokenization. To support deterministic lexers or more general lexical relations, define
 \begin{equation}
  \Lambda\subseteq\bytealpha^*\times\lexalpha^*,
 \end{equation}
-onde $(b,\ell)\in\Lambda$ significa que a sequência de bytes $b$ pode produzir a sequência de lexemas $\ell$. A CFG $G=(N,\lexalpha,P,S)$ é definida sobre lexemas. Convenções de comprimento, $\eos$ e $\pad$ são representadas por um predicado regular $H(y)$.
+where $(b,\ell)\in\Lambda$ means that byte sequence $b$ can produce lexeme sequence $\ell$. The CFG $G=(N,\lexalpha,P,S)$ is defined over lexemes. Length, $\eos$, and $\pad$ conventions are represented by a regular predicate $H(y)$.
 
-\begin{definition}[Conclusão factível]
-O conjunto de conclusões factíveis no estado $x$ é
+\begin{definition}[Feasible completion]
+The set of feasible completions at state $x$ is
 \begin{equation}
 \Feas_x=\left\{y\in\vocab^n\;\middle|\;
 \begin{array}{l}
-y\text{ respeita }x,\ H(y),\text{ e existe }\ell\in\lexalpha^*\\
-\text{tal que }(\operatorname{detok}(y),\ell)\in\Lambda
-\text{ e }\ell\in L(G)
+y\text{ preserves }x,\ H(y),\text{ and there exists }\ell\in\lexalpha^*\\
+\text{such that }(\operatorname{detok}(y),\ell)\in\Lambda
+\text{ and }\ell\in L(G)
 \end{array}\right\}.
 \end{equation}
 \end{definition}
 
-Essa definição separa os níveis que não devem ser confundidos: posição no canvas, token do modelo, bytes detokenizados, lexemas e terminais da gramática. A versão token-aligned, usada inicialmente, é o caso especial em que $\vocab=\lexalpha$, $\operatorname{detok}$ e $\Lambda$ são identidades e $H$ apenas exige comprimento $n$.
+This definition separates levels that must not be conflated: canvas position, model token, detokenized bytes, lexemes, and grammar terminals. The initial token-aligned version is the special case where $\vocab=\lexalpha$, $\operatorname{detok}$ and $\Lambda$ are identities, and $H$ only requires length $n$.
 
-\subsection{Propostas, pesos e compatibilidade}
+\subsection{Proposals, weights, and compatibility}
 
-O conjunto de propostas é tratado como uma família indexada
+The proposal set is treated as an indexed family
 \begin{equation}
  C=(c_1,\ldots,c_m),\qquad c_j=(i_j,t_j,w_j),
 \end{equation}
-com posição $i_j$, token $t_j\in\vocab$ e peso $w_j\geq 0$. A indexação permite multiplicidades, embora a política mais comum produza uma proposta principal por posição. Os pesos podem representar confiança transformada, prioridade ou valor unitário. Se forem probabilidades marginais, a soma deve ser interpretada como utilidade de preservação, não como probabilidade conjunta da sequência.
+with position $i_j$, token $t_j\in\vocab$, and weight $w_j\geq 0$. Indexing permits multiplicities, although the common policy produces one primary proposal per position. Weights may represent transformed confidence, priority, or unit value. If they are marginal probabilities, their sum must be interpreted as preservation utility rather than the joint probability of the sequence.
 
-Para uma conclusão $y$, sejam
+For a completion $y$, define
 \begin{align}
 \Match_C(y)&=\{j\in\{1,\ldots,m\}:y_{i_j}=t_j\},\\
 R_C(y)&=\sum_{j=1}^{m}w_j\indic[y_{i_j}=t_j].
 \end{align}
 
-\begin{definition}[Compatibilidade]
-Um conjunto de índices $J\subseteq\{1,\ldots,m\}$ é compatível se existe $y\in\Feas_x$ tal que $y_{i_j}=t_j$ para todo $j\in J$.
+\begin{definition}[Compatibility]
+An index set $J\subseteq\{1,\ldots,m\}$ is compatible if there exists $y\in\Feas_x$ such that $y_{i_j}=t_j$ for every $j\in J$.
 \end{definition}
 
 \begin{definition}[MWPC]
-O problema de compromisso paralelo de peso máximo consiste em calcular
+The maximum-weight parallel commitment problem is to compute
 \begin{equation}
- J^*\in\argmax_{J\text{ compatível}}W(J),
+ J^*\in\argmax_{J\text{ compatible}}W(J),
  \qquad W(J)=\sum_{j\in J}w_j.
 \label{eq:mwpc}
 \end{equation}
 \end{definition}
 
-A busca explícita examina até $2^m$ conjuntos. O problema, contudo, possui estrutura adicional: todo conjunto compatível tem uma conclusão como testemunha, e toda conclusão define o conjunto de propostas com as quais coincide.
+Explicit search examines up to $2^m$ sets. The problem, however, has additional structure: every compatible set has a completion as a witness, and every completion defines the proposals it matches.
 
-\subsection{Hipóteses e alcance da garantia}
+\subsection{Assumptions and scope of the guarantee}
 
-A equivalência principal exige $w_j\geq 0$. Com pesos negativos, uma testemunha pode coincidir com uma proposta que seria racional excluir; nesse caso, basta ignorar propostas de peso não positivo ou definir $\Match_C^+(y)=\{j:y_{i_j}=t_j,\ w_j>0\}$. Recomenda-se usar pesos estritamente positivos para evitar que propostas sem benefício sejam comprometidas apenas por empate.
+The main equivalence requires $w_j\geq 0$. With negative weights, a witness may match a proposal that should rationally be excluded; in that case, one can ignore nonpositive proposals or define $\Match_C^+(y)=\{j:y_{i_j}=t_j,\ w_j>0\}$. Strictly positive weights avoid committing zero-benefit proposals through a tie.
 
-A otimização é condicionada ao suporte representado. Se uma implementação inclui somente os $K$ tokens mais prováveis em cada máscara, o resultado é exato sobre esse lattice truncado, não sobre todo $\vocab^n$. A garantia sobre o vocabulário completo exige que todas as alternativas relevantes sejam representadas de forma explícita ou lazy sem poda incorreta.
+Optimization is conditioned on the represented support. If an implementation includes only the $K$ most probable tokens at each mask, the result is exact on that truncated lattice, not over all of $\vocab^n$. A full-vocabulary guarantee requires every relevant alternative to be represented explicitly or lazily without unsafe pruning.
 
-Finalmente, MWPC escolhe o melhor lote na etapa corrente. O compromisso modifica a entrada do próximo forward e, portanto, as distribuições futuras. Não se afirma que $J^*$ maximize recompensa acumulada até o fim do denoising.
+Finally, MWPC chooses the best batch at the current step. Commitment changes the next forward-pass input and therefore the future distributions. No claim is made that $J^*$ maximizes cumulative reward through the end of denoising.
 
-\section{Redução para a Conclusão Factível de Maior Recompensa}
+\section{Reduction to the Highest-Reward Feasible Completion}
 \label{sec:reducao}
 
-\begin{theorem}[Equivalência fundamental]
-Se $w_j\geq 0$ para todo $j$, então
+\begin{theorem}[Fundamental equivalence]
+If $w_j\geq 0$ for every $j$, then
 \begin{equation}
-\max_{J\text{ compatível}}W(J)
+\max_{J\text{ compatible}}W(J)
 =
 \max_{y\in\Feas_x}R_C(y).
 \label{eq:equiv}
 \end{equation}
-Se $\Feas_x=\varnothing$, ambos os problemas são declarados inviáveis.
+If $\Feas_x=\varnothing$, both problems are declared infeasible.
 \end{theorem}
 
 \begin{proof}
-Para qualquer $y\in\Feas_x$, o conjunto $\Match_C(y)$ é compatível, pois o próprio $y$ satisfaz todas as propostas nele contidas. Logo,
+For any $y\in\Feas_x$, the set $\Match_C(y)$ is compatible because $y$ itself satisfies every proposal in that set. Hence,
 \begin{equation}
-\max_{J\text{ compatível}}W(J)
+\max_{J\text{ compatible}}W(J)
 \geq
 \max_{y\in\Feas_x}W(\Match_C(y))
 =
 \max_{y\in\Feas_x}R_C(y).
 \end{equation}
 
-Na direção oposta, seja $J$ um conjunto compatível. Existe uma testemunha $y\in\Feas_x$ que satisfaz todas as propostas de $J$, portanto $J\subseteq\Match_C(y)$. Como os pesos são não negativos,
+Conversely, let $J$ be compatible. There is a witness $y\in\Feas_x$ that satisfies every proposal in $J$, so $J\subseteq\Match_C(y)$. Since all weights are non-negative,
 \begin{equation}
  W(J)\leq W(\Match_C(y))=R_C(y)
  \leq\max_{y'\in\Feas_x}R_C(y').
 \end{equation}
-A desigualdade vale para todo $J$ compatível. Tomando o máximo e combinando as duas direções, obtém-se a igualdade.
+The inequality holds for every compatible $J$. Taking the maximum and combining both directions yields equality.
 \end{proof}
 
-\begin{corollary}[Recuperação do lote ótimo]
-Se $y^*\in\argmax_{y\in\Feas_x}R_C(y)$, então $J^*=\Match_C(y^*)$ é solução de MWPC.
+\begin{corollary}[Optimal-batch recovery]
+If $y^*\in\argmax_{y\in\Feas_x}R_C(y)$, then $J^*=\Match_C(y^*)$ solves MWPC.
 \end{corollary}
 
 \begin{proof}
-$J^*$ é compatível por ter $y^*$ como testemunha. Seu peso é $R_C(y^*)$, igual ao ótimo de MWPC pelo Teorema~1.
+$J^*$ is compatible because $y^*$ is its witness. Its weight is $R_C(y^*)$, which equals the MWPC optimum by Theorem~1.
 \end{proof}
 
-O teorema elimina a necessidade de representar subconjuntos no espaço de busca. O parser deve encontrar uma única conclusão válida cuja recompensa seja aditiva por posição/arco. O backtracking dessa conclusão fornece simultaneamente uma prova concreta de compatibilidade e o conjunto ótimo.
+The theorem eliminates the need to represent subsets in the search space. The parser must find one valid completion whose reward is additive by position or arc. Backtracking that completion simultaneously provides a concrete compatibility certificate and the optimal set.
 
-A gramática não precisa ser não ambígua: como a recompensa é anexada aos tokens/arcos e as produções têm peso neutro, derivações distintas da mesma conclusão recebem o mesmo valor. Em caso de empate, uma extensão opcional maximiza lexicograficamente
+The grammar need not be unambiguous: because reward is attached to tokens or arcs and productions have neutral weight, distinct derivations of the same completion receive the same value. For ties, an optional extension maximizes lexicographically
 \begin{equation}
 \left(R_C(y),\ \sum_{i=1}^{n}\log p_\theta(y_i\mid x)\right),
 \end{equation}
-sem alterar a otimalidade da primeira coordenada.
+without changing optimality in the first coordinate.
 
-\section{Algoritmo Token-Aligned}
+\section{Token-Aligned Algorithm}
 \label{sec:tokenaligned}
 
-Nesta primeira versão, cada token do modelo é um terminal da CFG, e a saída tem exatamente $n$ terminais. Suponha $G$ em forma normal de Chomsky, com produções $A\rightarrow BC$ e $A\rightarrow a$. Produções unitárias, vazias e símbolos especiais devem ser removidos ou tratados por fecho separado.
+In this first version, each model token is a CFG terminal and the output has exactly $n$ terminals. Assume that $G$ is in Chomsky normal form, with productions $A\rightarrow BC$ and $A\rightarrow a$. Unit productions, empty productions, and special symbols must be removed or handled by a separate closure.
 
-Para cada posição $i$ e terminal $a$, define-se a recompensa lexical
+For each position $i$ and terminal $a$, define the lexical reward
 \begin{equation}
 s_i(a)=
 \begin{cases}
-\neginf, & x_i\neq\mask\text{ e }a\neq x_i,\\
-\displaystyle\sum_{j:i_j=i,\ t_j=a}w_j, & \text{caso contrário.}
+\neginf, & x_i\neq\mask\text{ and }a\neq x_i,\\
+\displaystyle\sum_{j:i_j=i,\ t_j=a}w_j, & \text{otherwise.}
 \end{cases}
 \label{eq:lexscore}
 \end{equation}
-A soma vazia vale zero. Assim, tokens incompatíveis com posições fixadas são impossíveis; tokens permitidos recebem exatamente a soma das propostas que satisfazem.
+The empty sum is zero. Thus, tokens incompatible with fixed positions are impossible, while permitted tokens receive exactly the sum of the proposals they satisfy.
 
-Defina $D[A,i,j]$ como a maior recompensa de uma string derivável de $A$ que ocupa as posições $i,\ldots,j-1$. Os casos-base são
+Define $D[A,i,j]$ as the highest reward of a string derivable from $A$ that occupies positions $i,\ldots,j-1$. The base cases are
 \begin{equation}
 D[A,i,i+1]=\max_{A\rightarrow a\in P}s_i(a).
 \label{eq:basecky}
 \end{equation}
-Para intervalos maiores,
+For longer spans,
 \begin{equation}
 D[A,i,j]=
 \max_{A\rightarrow BC\in P}\ \max_{i<k<j}
 \left(D[B,i,k]+D[C,k,j]\right).
 \label{eq:cky}
 \end{equation}
-Entradas impossíveis valem $\neginf$. Backpointers armazenam o terminal, a produção e a divisão que atingiram cada máximo.
+Impossible entries have value $\neginf$. Backpointers store the terminal, production, and split that attain each maximum.
 
 \begin{algorithm}[ht]
-\caption{MWPC token-aligned por CKY max-plus}
+\caption{Token-aligned MWPC through max-plus CKY}
 \label{alg:cky}
 \small
 \footnotesize
 \begin{algorithmic}[1]
-\Require CFG $G=(N,\vocab,P,S)$ em CNF, estado $x$, propostas $C$
-\Ensure lote ótimo $J^*$, testemunha $y^*$ e valor $v^*$, ou \textsc{Inviável}
-\State Inicialize $D[A,i,j]\gets\neginf$ e backpointers vazios
-\For{$i\gets 1$ até $n$}
+\Require CFG $G=(N,\vocab,P,S)$ in CNF, state $x$, proposals $C$
+\Ensure optimal batch $J^*$, witness $y^*$, and value $v^*$, or \textsc{Infeasible}
+\State Initialize $D[A,i,j]\gets\neginf$ and empty backpointers
+\For{$i\gets 1$ to $n$}
   \ForAll{$A\rightarrow a\in P$}
     \If{$s_i(a)>D[A,i,i+1]$}
-      \State $D[A,i,i+1]\gets s_i(a)$; registre $(\textsc{Terminal},a)$
+      \State $D[A,i,i+1]\gets s_i(a)$; record $(\textsc{Terminal},a)$
     \EndIf
   \EndFor
 \EndFor
-\For{$\ell\gets 2$ até $n$}
-  \For{$i\gets 1$ até $n-\ell+1$}
+\For{$\ell\gets 2$ to $n$}
+  \For{$i\gets 1$ to $n-\ell+1$}
     \State $j\gets i+\ell$
-    \ForAll{$A\rightarrow BC\in P$ e $k\in\{i+1,\ldots,j-1\}$}
+    \ForAll{$A\rightarrow BC\in P$ and $k\in\{i+1,\ldots,j-1\}$}
       \State $v\gets D[B,i,k]+D[C,k,j]$
       \If{$v>D[A,i,j]$}
-        \State $D[A,i,j]\gets v$; registre $(B,C,k)$
+        \State $D[A,i,j]\gets v$; record $(B,C,k)$
       \EndIf
     \EndFor
   \EndFor
 \EndFor
-\If{$D[S,1,n+1]=\neginf$} \Return \textsc{Inviável} \EndIf
+\If{$D[S,1,n+1]=\neginf$} \Return \textsc{Infeasible} \EndIf
 \State $y^*\gets\textsc{Backtrack}(S,1,n+1)$
 \State $J^*\gets\{j:y^*_{i_j}=t_j\}$
 \State \Return $(J^*,y^*,D[S,1,n+1])$
 \end{algorithmic}
 \end{algorithm}
 
-\begin{theorem}[Correção do CKY ponderado]
-Para toda entrada $D[A,i,j]$ calculada pelo Algoritmo~\ref{alg:cky}, seu valor é o máximo de $\sum_{r=i}^{j-1}s_r(y_r)$ entre strings $y_i\cdots y_{j-1}$ deriváveis de $A$. Consequentemente, o algoritmo retorna uma conclusão $y^*\in\Feas_x$ de recompensa máxima e um lote ótimo de MWPC.
+\begin{theorem}[Correctness of weighted CKY]
+For every entry $D[A,i,j]$ computed by Algorithm~\ref{alg:cky}, its value is the maximum of $\sum_{r=i}^{j-1}s_r(y_r)$ over strings $y_i\cdots y_{j-1}$ derivable from $A$. Consequently, the algorithm returns a maximum-reward completion $y^*\in\Feas_x$ and an optimal MWPC batch.
 \end{theorem}
 
 \begin{proof}
-A prova é por indução no comprimento $j-i$. Para comprimento um, a Equação~\ref{eq:basecky} examina todas as produções terminais e associa o score correto. Para comprimento maior, toda derivação em CNF começa com alguma produção $A\rightarrow BC$ e divide a string em $k$. Pela hipótese de indução, as duas entradas filhas possuem os melhores valores para seus subintervalos; somá-las produz a melhor derivação para aquela produção e divisão. O máximo sobre todas as escolhas cobre todas as derivações possíveis. A entrada inicial representa, portanto, a conclusão factível de maior recompensa. O Corolário~1 transforma essa conclusão no lote ótimo.
+The proof is by induction on length $j-i$. For length one, Equation~\ref{eq:basecky} examines every terminal production and assigns the correct score. For a longer span, every CNF derivation begins with some production $A\rightarrow BC$ and splits the string at $k$. By the induction hypothesis, both child entries contain the best values for their subspans; adding them yields the best derivation for that production and split. Taking the maximum over all choices covers every possible derivation. The start entry therefore represents the highest-reward feasible completion. Corollary~1 converts that completion into the optimal batch.
 \end{proof}
 
-Se $|P_2|$ é o número de produções binárias, o tempo é $O(|P_2|n^3+|P_1|n)$ para uma implementação direta e a memória é $O(|N|n^2)$, além dos backpointers. Essa versão constitui a implementação de referência: sua saída pode ser comparada com enumeração de todos os subconjuntos e todas as strings em instâncias pequenas.
+If $|P_2|$ is the number of binary productions, a direct implementation takes $O(|P_2|n^3+|P_1|n)$ time and $O(|N|n^2)$ memory, in addition to backpointers. This version is the reference implementation: its output can be compared with enumeration of all subsets and all strings on small instances.
 
-\section{Generalização para Lattice Finito Tokenizer-Aware}
+\section{Generalization to a Finite Tokenizer-Aware Lattice}
 \label{sec:lattice}
 
-\subsection{Lattice de tokens e proveniência}
+\subsection{Token lattice and provenance}
 
-Um \emph{weighted token lattice} é um grafo acíclico em camadas $A_{\mathrm{tok}}=(Q,E,q_0,F,\omega,\pi)$. Para um canvas sem EOS antecipado, $Q$ contém camadas $0,\ldots,n$; cada arco da camada $i-1$ para $i$ corresponde a um token admissível no slot $i$. Se $x_i$ está fixado, existe somente o arco de $x_i$. Se está mascarado, existe um arco para cada token do suporte representado $S_i\subseteq\vocab$.
+A \emph{weighted token lattice} is a layered directed acyclic graph $A_{\mathrm{tok}}=(Q,E,q_0,F,\omega,\pi)$. For a canvas without early EOS, $Q$ contains layers $0,\ldots,n$; every arc from layer $i-1$ to $i$ corresponds to a token permitted in slot $i$. If $x_i$ is fixed, only its arc exists. If it is masked, there is one arc for every token in the represented support $S_i\subseteq\vocab$.
 
-O peso de um arco rotulado por $a$ no slot $i$ é
+The weight of an arc labeled $a$ in slot $i$ is
 \begin{equation}
 \omega(i,a)=\sum_{j:i_j=i,\ t_j=a}w_j.
 \end{equation}
-A função $\pi(i,a)$ armazena os índices das propostas satisfeitas por esse arco. Um caminho completo escolhe exatamente um token por slot, e a soma de seus pesos é $R_C(y)$. A proveniência permite recuperar $J^*$ sem inferi-lo novamente a partir do texto detokenizado.
+The function $\pi(i,a)$ stores the indices of proposals satisfied by that arc. A complete path chooses exactly one token per slot, and the sum of its weights is $R_C(y)$. Provenance recovers $J^*$ without inferring it again from detokenized text.
 
-Quando o modelo permite término antecipado, compõe-se o lattice com uma restrição regular que aceita uma ocorrência de $\eos$ e somente $\pad$ depois dela, ou usa estados finais em camadas diferentes com uma semântica explícita. Em qualquer caso, o número de arcos de token consumidos permanece ligado aos slots reais do canvas.
+When the model permits early termination, the lattice is composed with a regular constraint that accepts one occurrence of $\eos$ followed only by $\pad$, or it uses final states at different layers under explicit semantics. In either case, the number of consumed token arcs remains tied to the real canvas slots.
 
-\subsection{Composição com detokenização e lexing}
+\subsection{Composition with detokenization and lexing}
 
-Cada token pode emitir uma cadeia de bytes. Conceitualmente, compõe-se
+Each token may emit a byte string. Conceptually, compose
 \begin{equation}
 A_{\mathrm{lex}}=
 A_{\mathrm{tok}}\circ T_{\mathrm{detok}}\circ T_{\mathrm{lex}}\circ A_H,
 \label{eq:composition}
 \end{equation}
-onde $T_{\mathrm{detok}}$ transforma tokens em bytes, $T_{\mathrm{lex}}$ transforma bytes em lexemas e $A_H$ implementa EOS/PAD e outras condições regulares. Os pesos e a proveniência nascem nos arcos de token e são transportados pela composição. A implementação não precisa materializar toda a composição; pode calcular transições de forma lazy e compartilhar prefixos por uma trie do tokenizador.
+where $T_{\mathrm{detok}}$ maps tokens to bytes, $T_{\mathrm{lex}}$ maps bytes to lexemes, and $A_H$ implements EOS/PAD and other regular conditions. Weights and provenance originate on token arcs and are carried through composition. An implementation need not materialize the full composition; it may compute transitions lazily and share prefixes in a tokenizer trie.
 
-Para um lexer de linguagem de programação, a relação deve refletir a política declarada, inclusive maximal munch e prioridades. Aceitar qualquer segmentação possível pode reconhecer uma sequência lexical que o lexer real nunca produziria. O escopo inicial adotará \ph{estratégia lexical escolhida: gramática byte-level ou lexer determinístico}, deixando léxers contextuais complexos como extensão.
+For a programming-language lexer, the relation must reflect its declared policy, including maximal munch and priorities. Accepting every possible segmentation may recognize a lexical sequence that the real lexer would never produce. The initial scope will use \ph{chosen lexical strategy: byte-level grammar or deterministic lexer}, leaving complex contextual lexers as an extension.
 
-\subsection{Parsing max-plus sobre o grafo}
+\subsection{Max-plus parsing over the graph}
 
-Seja $Q$ o conjunto de estados do grafo lexical resultante. Para uma CFG em CNF, define-se
+Let $Q$ be the state set of the resulting lexical graph. For a CFG in CNF, define
 \begin{equation}
-D[A,p,q]=\text{maior peso de um caminho de $p$ a $q$ derivável de $A$}.
+D[A,p,q]=\text{maximum weight of a path from $p$ to $q$ derivable from $A$}.
 \end{equation}
-Para cada arco terminal $e=(p,a,q)$,
+For each terminal arc $e=(p,a,q)$,
 \begin{equation}
 D[A,p,q]\gets\max(D[A,p,q],\omega(e))
-\quad\text{para toda }A\rightarrow a.
+\quad\text{for every }A\rightarrow a.
 \end{equation}
-Para produções binárias,
+For binary productions,
 \begin{equation}
 D[A,p,q]=
 \max_{A\rightarrow BC}\ \max_{r\in Q}
 \left(D[B,p,r]+D[C,r,q]\right).
 \label{eq:graphdp}
 \end{equation}
-O algoritmo é a versão Viterbi da interseção CFG--autômato. Uma implementação Earley ponderada pode evitar CNF e explorar orientação top-down, mas deve manter a mesma semântica de máximo e backpointers.
+The algorithm is the Viterbi version of CFG--automaton intersection. A weighted Earley implementation may avoid CNF and exploit top-down guidance, but it must preserve the same maximum and backpointer semantics.
 
 \begin{algorithm}[ht]
-\caption{Parsing max-plus sobre lattice finito}
+\caption{Max-plus parsing over a finite lattice}
 \label{alg:graph}
 \small
 \footnotesize
 \begin{algorithmic}[1]
-\Require CFG $G$, lattice lexical ponderado $A=(Q,E,q_0,F,\omega,\pi)$
-\Ensure melhor caminho aceito, derivação, proveniência e score
-\State Inicialize $D[A,p,q]\gets\neginf$ para $A\in N$ e $p,q\in Q$
-\ForAll{arcos $e=(p,a,q)\in E$ e produções $A\rightarrow a$}
-  \State relaxe $D[A,p,q]$ com $\omega(e)$ e registre $e$
+\Require CFG $G$, weighted lexical lattice $A=(Q,E,q_0,F,\omega,\pi)$
+\Ensure best accepted path, derivation, provenance, and score
+\State Initialize $D[A,p,q]\gets\neginf$ for $A\in N$ and $p,q\in Q$
+\ForAll{arcs $e=(p,a,q)\in E$ and productions $A\rightarrow a$}
+  \State relax $D[A,p,q]$ with $\omega(e)$ and record $e$
 \EndFor
 \Repeat
-  \State $\textit{mudou}\gets\textbf{false}$
-  \ForAll{$A\rightarrow BC\in P$, $p,r,q\in Q$ compatíveis com a ordem do DAG}
+  \State $\textit{changed}\gets\textbf{false}$
+  \ForAll{$A\rightarrow BC\in P$, $p,r,q\in Q$ compatible with DAG order}
     \State $v\gets D[B,p,r]+D[C,r,q]$
     \If{$v>D[A,p,q]$}
-      \State atualize $D[A,p,q]$, registre $(B,C,r)$ e marque $\textit{mudou}$
+      \State update $D[A,p,q]$, record $(B,C,r)$, and set $\textit{changed}$
     \EndIf
   \EndFor
-\Until{nenhuma entrada melhorar}
+\Until{no entry improves}
 \State $(f^*,v^*)\gets\argmax_{f\in F}D[S,q_0,f]$
-\If{$v^*=\neginf$} \Return \textsc{Inviável} \EndIf
-\State reconstrua derivação, caminho de tokens $y^*$ e $J^*=\bigcup_{e\in y^*}\pi(e)$
+\If{$v^*=\neginf$} \Return \textsc{Infeasible} \EndIf
+\State reconstruct the derivation, token path $y^*$, and $J^*=\bigcup_{e\in y^*}\pi(e)$
 \State \Return $(J^*,y^*,v^*)$
 \end{algorithmic}
 \end{algorithm}
 
-O pseudocódigo explicita a semântica, não a implementação mais eficiente. Em um DAG, as combinações podem ser ordenadas por extensão do caminho; em Earley, itens são processados por agenda e só são reinseridos quando o score melhora. Fechos de $\varepsilon$ e produções unitárias exigem uma rotina algébrica específica para evitar ciclos sem progresso.
+The pseudocode makes the semantics explicit rather than prescribing the most efficient implementation. In a DAG, combinations can be ordered by path span; in Earley, items are processed by an agenda and reinserted only when their score improves. Closures for $\varepsilon$ and unit productions require a specific algebraic routine to avoid cycles without progress.
 
-\begin{theorem}[Correção, completude e otimalidade no lattice]
-Suponha que: (i) o lattice represente exatamente as sequências de tokens permitidas pelo estado e por $H$; (ii) a composição lexical represente exatamente $\Lambda$; e (iii) o parser max-plus examine todas as derivações e preserve pesos/proveniência. Então o Algoritmo~\ref{alg:graph}: (a) retorna somente uma conclusão em $\Feas_x$; (b) encontra uma conclusão sempre que $\Feas_x$ não é vazio no suporte representado; e (c) retorna um lote de peso máximo para MWPC nesse suporte.
+\begin{theorem}[Lattice soundness, completeness, and optimality]
+Assume that: (i) the lattice represents exactly the token sequences permitted by the state and $H$; (ii) lexical composition represents exactly $\Lambda$; and (iii) the max-plus parser examines all derivations while preserving weights and provenance. Then Algorithm~\ref{alg:graph}: (a) returns only a completion in $\Feas_x$; (b) finds a completion whenever $\Feas_x$ is nonempty on the represented support; and (c) returns a maximum-weight MWPC batch on that support.
 \end{theorem}
 
 \begin{proof}
-Todo backtracking parte de $q_0$, termina em um estado final e segue arcos existentes. Pela hipótese (i), ele corresponde a uma sequência de tokens permitida; pela hipótese (ii) e pela derivação a partir de $S$, sua saída lexical pertence a $L(G)$. Isso prova correção. Para completude, toda conclusão factível corresponde a um caminho do lattice e a alguma derivação da CFG; as regras terminais e binárias do DP podem reconstruí-la. Para otimalidade, a indução usada no Teorema~2 generaliza intervalos para pares de estados: cada entrada contém o máximo entre todos os caminhos/derivações compatíveis. O valor inicial é, portanto, $\max_{y\in\Feas_x}R_C(y)$, e o Teorema~1 fornece MWPC.
+Every backtracking begins at $q_0$, ends at a final state, and follows existing arcs. By assumption (i), it corresponds to a permitted token sequence; by assumption (ii) and the derivation from $S$, its lexical output belongs to $L(G)$. This proves soundness. For completeness, every feasible completion corresponds to a lattice path and some CFG derivation, which the terminal and binary DP rules can reconstruct. For optimality, the induction used in Theorem~2 generalizes spans to state pairs: each entry contains the maximum over all compatible paths and derivations. The start value is therefore $\max_{y\in\Feas_x}R_C(y)$, and Theorem~1 yields MWPC.
 \end{proof}
 
 \begin{theorem}[Finite-slot exactness]
-Se cada caminho completo de $A_{\mathrm{tok}}$ atravessa exatamente um arco de token por slot permitido e a composição não cria nem remove arcos de token, toda testemunha retornada é representável no número real de posições do canvas.
+If every complete path through $A_{\mathrm{tok}}$ traverses exactly one token arc per permitted slot and composition neither creates nor removes token arcs, every returned witness is representable in the actual number of canvas positions.
 \end{theorem}
 
 \begin{proof}
-Por construção em camadas, um caminho de início a fim escolhe um arco da camada $i-1$ para $i$ para cada slot $i$. Transições internas de detokenização/lexing podem emitir zero ou mais símbolos, mas permanecem associadas aos mesmos macro-arcos de token. Logo, nenhum caminho aceito usa mais slots do que os existentes nem depende de uma região abstrata de comprimento ilimitado.
+By the layered construction, a start-to-finish path chooses one arc from layer $i-1$ to $i$ for each slot $i$. Internal detokenization or lexing transitions may emit zero or more symbols, but remain associated with the same token macro-arcs. Thus, no accepted path uses more slots than exist or depends on an abstract unbounded region.
 \end{proof}
 
-Para um grafo explícito com $q=|Q|$, uma cota genérica da versão CNF é $O(|P_2|q^3+|P_1||E|)$ em tempo e $O(|N|q^2)$ em memória. O lattice ingênuo pode ter $O(n|\vocab|)$ arcos. Portanto, polinomialidade não implica baixo custo; composição lazy, tries e suporte controlado são importantes. Caso seja usado top-$K$, o artigo deverá declarar explicitamente: ``exato em relação ao suporte truncado $S_i$''.
+For an explicit graph with $q=|Q|$, a generic bound for the CNF version is $O(|P_2|q^3+|P_1||E|)$ time and $O(|N|q^2)$ memory. A naive lattice may have $O(n|\vocab|)$ arcs. Polynomial complexity therefore does not imply low cost; lazy composition, tries, and controlled support are important. When top-$K$ is used, the article must explicitly say ``exact on the truncated support $S_i$.''
 
-\section{Decoder Iterativo e Garantia de Progresso}
+\section{Iterative Decoder and Progress Guarantee}
 \label{sec:decoder}
 
-O otimizador resolve uma etapa, mas um decoder completo precisa definir propostas, orçamento, empate, fallback e término. Seja $k_s$ o número máximo de posições a comprometer na etapa $s$. A versão básica escolhe uma proposta principal para cada posição candidata e aplica MWPC. Se $|J^*|>k_s$, pode-se resolver uma variante com orçamento ou limitar previamente $C$ às posições selecionadas pelo schedule.
+The optimizer solves one step, but a complete decoder must define proposals, budget, ties, fallback, and termination. Let $k_s$ be the maximum number of positions to commit at step $s$. The basic version chooses one primary proposal for each candidate position and applies MWPC. If $|J^*|>k_s$, a budgeted variant can be solved, or $C$ can first be restricted to positions chosen by the schedule.
 
-Na variante explícita, adiciona-se uma dimensão $b$ ao chart:
+The explicit variant adds a dimension $b$ to the chart:
 \begin{equation}
-D[A,p,q,b]=\text{melhor score usando $b$ compromissos contabilizados}.
+D[A,p,q,b]=\text{best score using $b$ counted commitments}.
 \end{equation}
-Em uma regra binária, combina-se $b=b_1+b_2$. Para $b\leq k$, a memória cresce para $O(|N|q^2k)$ e uma implementação direta pode alcançar $O(|P_2|q^3k^2)$. Para uma proposta primária por posição, $b$ conta posições preservadas; múltiplas propostas alternativas exigem uma definição explícita do orçamento.
+For a binary rule, combine $b=b_1+b_2$. For $b\leq k$, memory grows to $O(|N|q^2k)$ and a direct implementation may take $O(|P_2|q^3k^2)$ time. With one primary proposal per position, $b$ counts preserved positions; multiple alternative proposals require an explicit budget definition.
 
-Um caso importante é $J^*=\varnothing$ mesmo quando há conclusão válida. O decoder não pode permanecer parado. A testemunha $y^*$ fornece um fallback seguro: comprometer um token de uma posição mascarada conforme $y^*$ mantém a própria testemunha factível. Esse token pode não ser a proposta principal do modelo, mas garante progresso sem violar a gramática.
+An important case is $J^*=\varnothing$ even though a valid completion exists. The decoder cannot stall. Witness $y^*$ provides a safe progress fallback: committing its token at one masked position preserves that witness as feasible. This token may not be the model's primary proposal, but it guarantees progress without violating the grammar.
 
 \begin{algorithm}[ht]
-\caption{Etapa exata de compromisso paralelo}
+\caption{Exact parallel-commitment step}
 \label{alg:step}
 \small
 \footnotesize
 \begin{algorithmic}[1]
-\Require modelo $M$, estado $x$, CFG $G$, orçamento $k_s$, configurações $\Theta$
-\Ensure novo estado $x'$ com completabilidade preservada, ou diagnóstico de inviabilidade
-\State $P\gets M(x)$ \Comment{logits/distribuições da etapa}
-\State $C\gets\textsc{GerarPropostas}(P,x,k_s,\Theta)$
-\State $A\gets\textsc{ConstruirLatticeFinito}(x,C,\Theta)$
+\Require model $M$, state $x$, CFG $G$, budget $k_s$, configuration $\Theta$
+\Ensure new state $x'$ with completion feasibility preserved, or an infeasibility diagnostic
+\State $P\gets M(x)$ \Comment{step logits/distributions}
+\State $C\gets\textsc{GenerateProposals}(P,x,k_s,\Theta)$
+\State $A\gets\textsc{BuildFiniteLattice}(x,C,\Theta)$
 \State $(J^*,y^*,v^*)\gets\textsc{ParseMaxPlus}(G,A)$
-\If{a instância for inviável}
-  \State amplie o suporte ou execute \ph{política de diagnóstico/fallback}
+\If{the instance is infeasible}
+  \State expand support or execute the \ph{diagnostic/fallback policy}
 \ElsIf{$J^*\neq\varnothing$}
-  \State comprometa em $x$ as posições das propostas em $J^*$
+  \State commit in $x$ the positions of proposals in $J^*$
 \Else
-  \State escolha uma posição mascarada $i$ segundo \ph{regra de fallback}
-  \State comprometa $y^*_i$ em $x_i$
+  \State choose a masked position $i$ according to the \ph{fallback rule}
+  \State commit $y^*_i$ at $x_i$
 \EndIf
 \State \Return $x$
 \end{algorithmic}
 \end{algorithm}
 
-\begin{proposition}[Invariante de completabilidade]
-Se $x$ possui uma testemunha factível e uma etapa compromete somente tokens coincidentes com uma testemunha retornada pelo parser, o novo estado continua possuindo uma testemunha factível.
+\begin{proposition}[Completion-feasibility invariant]
+If $x$ has a feasible witness and a step commits only tokens matching a witness returned by the parser, then the new state still has a feasible witness.
 \end{proposition}
 
 \begin{proof}
-A testemunha usada na etapa já respeita todas as posições fixadas de $x$. Como os novos compromissos coincidem com ela, ela também respeita o novo estado e continua satisfazendo as condições lexical, gramatical e de slots.
+The witness used at the step already preserves every fixed position in $x$. Since the new commitments match it, the witness also preserves the new state and continues to satisfy the lexical, grammatical, and slot conditions.
 \end{proof}
 
-\begin{proposition}[Terminação]
-Suponha que o canvas tenha quantidade finita de máscaras, que não haja remasking e que cada etapa factível comprometa pelo menos uma posição. Então o decoder termina após no máximo o número inicial de máscaras; a sequência final pertence à linguagem imposta.
+\begin{proposition}[Termination]
+Assume that the canvas has finitely many masks, remasking is disabled, and every feasible step commits at least one position. The decoder then terminates after at most the initial number of masks, and the final sequence belongs to the constrained language.
 \end{proposition}
 
 \begin{proof}
-A quantidade de máscaras decresce estritamente e não pode ser negativa. No estado final, a testemunha que sustenta o invariante deve coincidir com todos os tokens fixados, logo a própria saída é válida.
+The number of masks strictly decreases and cannot be negative. At the final state, the witness that maintains the invariant must match every fixed token, so the output itself is valid.
 \end{proof}
 
-\section{Metodologia de Implementação e Avaliação}
+\section{Implementation and Evaluation Methodology}
 \label{sec:metodologia}
 
-A implementação seguirá três marcos. No \textbf{Marco A}, será construído o CKY max-plus token-aligned, com backtracking e um oráculo de força bruta para instâncias pequenas. No \textbf{Marco B}, serão adicionados lattice em camadas, proveniência, EOS/PAD e composição com \ph{interface lexical escolhida}; os pesos poderão ser sintéticos ou logits salvos. No \textbf{Marco C}, o otimizador será integrado a \ph{modelo usado}, executando geração de candidatos, parsing e compromisso em cada etapa. A base prevista é \ph{repositório/base e commit}, reaproveitando componentes do EPIC quando compatíveis.
+Implementation follows three stages. \textbf{Stage A} builds token-aligned max-plus CKY with backtracking and a brute-force oracle for small instances. \textbf{Stage B} adds a layered lattice, provenance, EOS/PAD semantics, and composition with the \ph{chosen lexical interface}; weights may be synthetic or derived from saved logits. \textbf{Stage C} integrates the optimizer with the \ph{model used}, running candidate generation, parsing, and commitment at each step. The intended baseline is \ph{repository/baseline and commit}, reusing EPIC components where compatible.
 
-A arquitetura separará: adaptador do modelo; política de candidatos; construtor do lattice; interface de detokenização/lexing; parser ponderado; decoder; verificadores; e scripts experimentais. O artigo final deverá descrever as decisões que conectam programa e prova: forma da gramática, tratamento de $\varepsilon$ e produções unitárias, semântica de EOS/PAD, suporte por posição, política lexical, desempate, fallback e definição dos pesos.
+The architecture separates the model adapter, candidate policy, lattice builder, detokenization/lexing interface, weighted parser, decoder, validators, and experiment scripts. The final article must describe the decisions connecting program and proof: grammar form, handling of $\varepsilon$ and unit productions, EOS/PAD semantics, per-position support, lexical policy, tie-breaking, fallback, and the weight definition.
 
 \begin{table}[ht]
 \centering
-\caption{Campos de implementação e reprodução.}
+\caption{Implementation and reproduction fields.}
 \label{tab:config}
 \footnotesize
 \begin{tabular}{p{3.2cm}p{8.0cm}}
 \toprule
-Item & Informação a registrar \\ \midrule
-Modelo/tokenizador & \ph{checkpoint e revisão; vocabulário; tokens especiais; dtype/quantização} \\
-Código/parser & \ph{repositório, commit, licença, linguagens, CKY/Earley e backtracking} \\
-Decoding & \ph{etapas, schedule, top-$K$/suporte, orçamento, fórmula dos pesos e fallback} \\
-Gramáticas/dados & \ph{tarefas, origem, tamanhos, transformações, prompts e partições} \\
-Ambiente & \ph{CPU, RAM, GPU/VRAM, SO, CUDA, PyTorch, compiladores e threads} \\
-Protocolo & \ph{seeds, repetições, aquecimento, sincronização e estatística reportada} \\
+Item & Information to record \\ \midrule
+Model/tokenizer & \ph{checkpoint and revision; vocabulary; special tokens; dtype/quantization} \\
+Code/parser & \ph{repository, commit, license, languages, CKY/Earley, and backtracking} \\
+Decoding & \ph{steps, schedule, top-$K$/support, budget, weight formula, and fallback} \\
+Grammars/data & \ph{tasks, origin, sizes, transformations, prompts, and splits} \\
+Environment & \ph{CPU, RAM, GPU/VRAM, OS, CUDA, PyTorch, compilers, and threads} \\
+Protocol & \ph{seeds, repetitions, warm-up, synchronization, and reported statistics} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-A avaliação responderá cinco perguntas: (Q1) o DP coincide com força bruta? (Q2) qual peso/cardinalidade heurísticas perdem? (Q3) quais falsos positivos são eliminados pelos slots finitos? (Q4) como tempo e memória escalam? e (Q5) o decoder funciona end-to-end? Os baselines serão força bruta, validação serial exata, EPIC/seleção heurística e decoder sem restrição, conforme disponibilidade.
+The evaluation addresses five questions: (Q1) does the DP agree with brute force? (Q2) how much weight or cardinality do heuristics lose? (Q3) which abstract false positives are eliminated by finite slots? (Q4) how do runtime and memory scale? and (Q5) does the decoder work end to end? Baselines are brute force, exact serial validation, EPIC/heuristic selection, and unconstrained decoding where available.
 
-Para uma heurística $H$, serão reportados o gap absoluto $\Delta_H=W(J^*)-W(J_H)$ e, se $W(J^*)>0$, o gap relativo $\delta_H=\Delta_H/W(J^*)$. Outras métricas incluem validade da testemunha, concordância com o oráculo, tamanho do lote, número de etapas, uso de fallback, tempo e pico de RAM/VRAM. O profiling separará forward, candidatos, lattice, parsing, backtracking e atualização. Comparações ocorrerão no mesmo hardware e também usarão o overhead normalizado $T_{\mathrm{met}}/T_{\mathrm{base}}$.
+For a heuristic $H$, the evaluation reports absolute gap $\Delta_H=W(J^*)-W(J_H)$ and, when $W(J^*)>0$, relative gap $\delta_H=\Delta_H/W(J^*)$. Other metrics include witness validity, oracle agreement, batch size, number of steps, fallback use, runtime, and peak RAM/VRAM. Profiling separates model forward, candidate construction, lattice construction, parsing, backtracking, and update. Comparisons run on the same hardware and also use normalized overhead $T_{\mathrm{method}}/T_{\mathrm{baseline}}$.
 
-Os testes automatizados verificarão: aceitação da testemunha por parser independente; coincidência de cada proposta comprometida; igualdade entre score reconstruído e chart; imutabilidade das posições fixadas; respeito a slots/EOS/PAD; e concordância integral com força bruta em instâncias pequenas. O repositório deverá conter dependências fixadas, comandos, configurações, resultados brutos e scripts das tabelas.
+Automated tests check witness acceptance with an independent parser; matching of every committed proposal; equality between the reconstructed objective and chart score; immutability of fixed positions; compliance with slots/EOS/PAD; and complete agreement with brute force on small instances. The repository must contain locked dependencies, commands, configurations, raw results, and table-generation scripts.
 
-\section{Resultados Preliminares, Resultados Esperados e Cronograma}
+\section{Preliminary and Expected Results}
 \label{sec:resultados}
 
-Até a execução dos experimentos, não se atribuem valores aos resultados. A Tabela~\ref{tab:resultados} indica o conjunto mínimo a preencher. Concordância inferior a $100\%$ com força bruta será tratada como erro de implementação ou divergência de semântica, e não como variação estatística. O método não precisa superar a heurística em tempo: a contribuição principal é fornecer o ótimo certificado e caracterizar seu custo.
+No result receives a value before its experiment is run. Table~\ref{tab:resultados} identifies the minimum set to fill in. Agreement below $100\%$ against brute force is treated as an implementation error or semantic disagreement, not statistical variation. The method need not outperform the heuristic in runtime: its principal contribution is to provide a certified optimum and characterize its cost.
 
 \begin{table}[ht]
 \centering
-\caption{Resultados a completar após a implementação.}
+\caption{Results to complete after implementation.}
 \label{tab:resultados}
 \footnotesize
 \begin{tabular}{p{4.2cm}p{3.0cm}p{4.0cm}}
 \toprule
-Grupo & Métrica & Resultado \\ \midrule
-Exatidão & instâncias, concordância e falhas & \ph{valores} \\
-Testemunha & validade lexical, CFG e slots & \ph{valores obtidos} \\
-Compromisso & peso, cardinalidade e gap & \ph{valores por método} \\
-Custo & tempo, overhead, RAM/VRAM & \ph{valores e dispersão} \\
-End-to-end & validade, etapas e fallback & \ph{valores por tarefa/modelo} \\
+Group & Metric & Result \\ \midrule
+Exactness & instances, agreement, and failures & \ph{values} \\
+Witness & lexical, CFG, and slot validity & \ph{measured values} \\
+Commitment & weight, cardinality, and gap & \ph{values by method} \\
+Cost & runtime, overhead, RAM/VRAM & \ph{values and dispersion} \\
+End-to-end & validity, steps, and fallback & \ph{values by task/model} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-A análise final discutirá onde a heurística já atinge o ótimo, quando o ganho de compromisso justifica o overhead, qual componente domina o custo, em quais tamanhos o lattice se torna limitante e quantos estados abstratamente completáveis são impossíveis dentro do canvas real.
+The final analysis will discuss where the heuristic already reaches the optimum, when commitment gains justify overhead, which component dominates cost, at which sizes the lattice becomes limiting, and how many abstractly completable states are impossible within the real canvas.
 
 \begin{table}[ht]
 \centering
-\caption{Cronograma proposto, ajustável com o orientador.}
+\caption{Proposed schedule, adjustable with the advisor.}
 \label{tab:cronograma}
 \footnotesize
 \begin{tabular}{p{1.7cm}p{9.5cm}}
 \toprule
-Semanas & Atividade \\ \midrule
-1--4 & formalização final, CKY, backtracking, força bruta e testes \\
-5--8 & lattice, proveniência, EOS/PAD e parser sobre grafo \\
-9--11 & interface tokenizer-aware e integração com \ph{modelo} \\
-12--14 & baselines, experimentos, profiling e análise \\
-15--16 & redação, reprodução, revisão e preparação da defesa \\
+Weeks & Activity \\ \midrule
+1--4 & final formalization, CKY, backtracking, brute force, and tests \\
+5--8 & lattice, provenance, EOS/PAD, and graph parser \\
+9--11 & tokenizer-aware interface and integration with \ph{model} \\
+12--14 & baselines, experiments, profiling, and analysis \\
+15--16 & writing, reproduction, review, and defense preparation \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\section{Limitações e Ameaças à Validade}
+\section{Limitations and Threats to Validity}
 \label{sec:limitacoes}
 
-Uma CFG assegura sintaxe, não tipos, referências, execução correta ou satisfação de testes. Além disso, a exatidão depende da representação: top-$K$ produz ótimo apenas sobre o suporte truncado; uma interface lexical aproximada limita a garantia à semântica implementada; e um lattice explícito pode consumir muita memória. O objetivo soma utilidades locais e não representa a probabilidade conjunta nem otimiza toda a trajetória futura. Esses limites serão declarados por configuração. Erros serão mitigados por força bruta, parser independente, testes de propriedades, seeds e artefatos reproduzíveis; as conclusões empíricas permanecerão condicionadas a \ph{modelos, gramáticas, dados e hardware usados}.
+A CFG ensures syntax, not types, references, correct execution, or test satisfaction. Exactness also depends on representation: top-$K$ yields an optimum only on the truncated support; an approximate lexical interface limits the guarantee to the implemented semantics; and an explicit lattice may consume substantial memory. The objective sums local utilities and represents neither the sequence's joint probability nor an optimum over the full future trajectory. Configurations will state these limits. Brute force, an independent parser, property tests, recorded seeds, and reproducible artifacts mitigate errors; empirical conclusions remain conditioned on the \ph{models, grammars, data, and hardware used}.
 
-\section{Conclusões e Trabalhos Futuros}
+\section{Conclusion and Future Work}
 \label{sec:conclusao}
 
-Este artigo apresentou a base teórica de um decoder que substitui a escolha heurística de subconjuntos por uma única inferência global ponderada. O resultado principal mostra que, com pesos não negativos, maximizar o peso de propostas compatíveis é equivalente a encontrar a conclusão factível de maior recompensa. Em uma versão token-aligned, CKY max-plus resolve o problema em tempo polinomial. Em uma versão tokenizer-aware, um lattice finito preserva posições, tokens, pesos, detokenização, lexing e número real de slots; um parser max-plus sobre o grafo recupera a testemunha e o lote ótimo.
+This article presented the theoretical basis of a decoder that replaces heuristic subset choice with one global weighted inference. The main result shows that, with non-negative weights, maximizing compatible-proposal weight is equivalent to finding the highest-reward feasible completion. In the token-aligned version, max-plus CKY solves the problem in polynomial time. In the tokenizer-aware version, a finite lattice preserves positions, tokens, weights, detokenization, lexing, and the actual number of slots; a max-plus graph parser recovers the witness and optimal batch.
 
-As propriedades pretendidas são verificáveis separadamente de ganhos empíricos: correção garante que todo lote retornado possui testemunha; completude garante que conclusões representadas não são ignoradas; otimalidade garante máximo peso na etapa; e finite-slot exactness impede testemunhas que exigiriam mais tokens do que o canvas fornece. O decoder iterativo preserva completabilidade por indução e termina quando cada etapa compromete ao menos uma máscara.
+The intended properties are verifiable independently of empirical gains: soundness guarantees that every returned batch has a witness; completeness guarantees that represented completions are not ignored; optimality guarantees maximum weight at the step; and finite-slot exactness excludes witnesses that require more tokens than the canvas provides. The iterative decoder preserves completion feasibility by induction and terminates when every step commits at least one mask.
 
-A versão final preencherá \ph{resultados principais} e discutirá o custo observado. Trabalhos futuros incluem parsing incremental entre etapas, composição lazy com o vocabulário completo, objetivos lexicográficos, orçamento exato de compromisso, suporte a restrições contextuais leves e investigação de amostragem condicionada por CFG. Esta última não deve ser confundida com a maximização desenvolvida aqui, pois soma de massas sob gramáticas ambíguas possui dificuldades distintas.
+The final version will fill in the \ph{main results} and discuss observed cost. Future work includes incremental parsing between steps, lazy composition with the full vocabulary, lexicographic objectives, an exact commitment budget, support for lightweight contextual constraints, and CFG-conditioned sampling. The latter must not be conflated with the maximization developed here because summing probability mass under ambiguous grammars has different difficulties.
 
-\section*{Agradecimentos e Declaração de Uso de IA}
+\section*{Acknowledgments and AI-Use Statement}
 
-\ph{Agradecimentos}. Ferramentas de inteligência artificial foram utilizadas para \ph{finalidade do uso}, com contribuição nas seções \ph{seções afetadas}. Ferramenta: \ph{nome, fornecedor e versão}. O autor revisou integralmente o conteúdo, as provas, as referências e os resultados, permanecendo responsável por sua correção e originalidade.
+\ph{Acknowledgments}. Artificial-intelligence tools were used for \ph{purpose of use}, contributing to \ph{affected sections}. Tool: \ph{name, provider, and version}. The author reviewed all content, proofs, references, and results and remains responsible for their correctness and originality.
 
 \bibliographystyle{sbc}
 \bibliography{referencias}
