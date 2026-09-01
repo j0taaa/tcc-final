@@ -16,9 +16,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M13 / T1302.** M0 through M12.5, the M10.5 hardening pass, and T1300--T1301
-are complete. The first incomplete required task is T1302, whose dependencies
-on T1300 and T1301 are satisfied.
+**M13 / T1303.** M0 through M12.5, the M10.5 hardening pass, and T1300--T1302
+are complete. The first incomplete required task is T1303, whose dependency on
+T1300 is satisfied.
 
 ## Completed milestone summary
 
@@ -735,18 +735,35 @@ with no clipping or overlap.
 
 **Depends on:** T1300, T1301
 
-- [ ] State exact-on-support limitations.
-- [ ] State tokenizer and byte-level language limitations.
-- [ ] State the CFG syntax-versus-semantics limitation.
-- [ ] State per-step versus trajectory optimality.
-- [ ] State timeout and resource limits.
-- [ ] Add a table mapping theorem assumptions to code/config enforcement.
+- [x] State exact-on-support limitations.
+- [x] State tokenizer and byte-level language limitations.
+- [x] State the CFG syntax-versus-semantics limitation.
+- [x] State per-step versus trajectory optimality.
+- [x] State timeout and resource limits.
+- [x] Add a table mapping theorem assumptions to code/config enforcement.
 
 **Acceptance criteria**
 
-- [ ] No theorem assumption is silently violated by the reported experiment.
+- [x] No theorem assumption is silently violated by the reported experiment.
 
-**Evidence:** `[paper section/commit]`
+**Evidence:** commit `4cabaef8b98c1f7e973e0205ef2d9214da426e0e`
+expands Section~10 of `paper/main.tex` and adds Table~5, which maps Theorems
+1--4 and the decoder propositions to executable weight, CNF/parser,
+support/EOS, tokenizer-byte, validation, and monotone-commit boundaries. The
+paper now states top-K and per-step scope, raw-byte/no-lexer semantics,
+syntax-versus-semantics, timeout-versus-infeasibility, and time/memory limits.
+The audit also resolves two presentation ambiguities: the upstream
+`low_confidence` label ranks still-masked baseline candidates but exact Q5
+never remasks, and the lexicographic tie/cardinality-chart variants are named
+unimplemented rather than implied as active. The Q5 config-to-execution
+regression in `tests/exact_commit/test_t1302_paper_limitations.py` protects
+these claims. `make article-results-check` reproduced the pinned processed and
+R1--R3 hashes; the focused T1261/T1302 regressions passed 9 tests; `make check`
+passed 11 unit and 660 exact-commit tests; full `python -m pytest -q` passed
+681 tests. `make paper` passed without overfull boxes or unresolved references, and
+`pdfinfo paper/main.pdf` reported 16 A4 pages. Poppler renders of all 16 pages
+were visually inspected with no clipping, overlap, broken glyphs, or
+unreadable tables.
 
 ## T1303 — Fill AI-use declaration
 
