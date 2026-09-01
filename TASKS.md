@@ -14,9 +14,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M12 / T1204.** M0 through M11, the M10.5 hardening pass, and T1200--T1203
-are complete. The first incomplete required task is T1204: reproduction
-instructions.
+**M13 / T1300.** M0 through M12 and the M10.5 hardening pass are complete.
+The first incomplete required task is T1300: fill implementation-method fields
+in LaTeX from versioned evidence.
 
 ## Completed milestone summary
 
@@ -507,22 +507,58 @@ exact-commit tests passed; `python -m pytest -q` -> 610 passed; `make paper` ->
 
 **Depends on:** T1201, T1203
 
-- [ ] Document environment creation.
-- [ ] Document binding build.
-- [ ] Document model/data preparation without embedding secrets.
-- [ ] Provide commands for each main table/figure.
-- [ ] Distinguish CPU-only correctness reproduction from GPU end-to-end reproduction.
-- [ ] Record expected artifact filenames, not unmeasured scientific values.
+- [x] Document environment creation.
+- [x] Document binding build.
+- [x] Document model/data preparation without embedding secrets.
+- [x] Provide commands for each main table/figure.
+- [x] Distinguish CPU-only correctness reproduction from GPU end-to-end reproduction.
+- [x] Record expected artifact filenames, not unmeasured scientific values.
 
 **Acceptance criteria**
 
-- [ ] A clean-environment rehearsal reproduces at least the CPU correctness table.
+- [x] A clean-environment rehearsal reproduces at least the CPU correctness table.
 
-**Evidence:** `[rehearsal log]`
+**Evidence:** implementation commit
+`28a42e4d93791d32d0d356a6234023cee93dc242`; the authoritative
+[`REPRODUCING.md`](REPRODUCING.md) documents the Python 3.11 CPU environment,
+exact Rust and pinned EPIC binding builds, versioned raw-data boundary, commands
+and expected filenames for all five tables and two figures, CPU experiment
+reruns, and the separately isolated optional CUDA environment. Model weights
+remain in an external Hugging Face cache at the exact configured revision;
+credentials are neither embedded nor written to captured logs, and Q5 remains
+local-files-only with no external task dataset.
+
+`make rehearse-cpu-correctness` ran
+[`scripts/rehearse_cpu_correctness.sh`](scripts/rehearse_cpu_correctness.sh)
+from the clean implementation commit. It cloned that commit into a new
+temporary checkout, initialized EPIC at
+`5b1b31098f34ed3691d2a9f4aae14fdf5839d072`, created a new `.venv` with
+`make bootstrap`, moved the tracked derivatives aside inside the disposable
+clone, ran `make final-artifacts`, and byte-compared the regenerated
+`paper/generated/t1203_final_results_v1/correctness-oracle-table.tex` with its
+tracked reference. The rehearsal emitted `T1204_CPU_REHEARSAL=PASS` and SHA-256
+`b5af0c912778ac5bfecee95354de6b1fdd6820aad71359aedbd179b7f3329694`, then
+`make final-artifacts-check` verified the complete regenerated bundle. The
+temporary checkout was removed at exit.
+
+`python -m pytest -q tests/exact_commit/test_reproduction_instructions.py` ->
+3 passed, covering manifest-to-document filename synchronization, CPU/GPU and
+scope wording, credential safety, shell syntax, clean-clone behavior, and the
+non-destructive temporary-directory policy. `make check` -> upstream pin
+verified, Ruff clean, strict MyPy clean over 67 files, 9 unit tests and 594
+exact-commit tests passed; `python -m pytest -q` -> 613 passed; `make paper` ->
+`main.pdf` built (15 pages). No GPU/model rerun was needed or claimed for this
+CPU reproduction acceptance test.
 
 **M12 reproducibility gate — blocking**
 
-- [ ] Main claims trace to code, config, raw data, and generated artifacts.
+- [x] Main claims trace to code, config, raw data, and generated artifacts.
+
+**Gate evidence:** `REPRODUCING.md` records the explicit path from
+`src/mwpc_research/final_artifacts.py` and its CLI through the pinned T1203
+analysis config and versioned Q1--Q5 JSONL rows to `final-results.json`, the
+hash manifest, and each generated LaTeX/SVG artifact. The clean rehearsal and
+T1203 evidence tests independently verified that chain.
 
 ---
 
