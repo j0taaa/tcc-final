@@ -906,23 +906,39 @@ tests/exact_commit/test_publication_evidence_policy.py` -> 7 passed.
 **Review finding:** 8 — `final-results` can be mistaken for final empirical
 evidence even though parts of the bundle are diagnostic.
 
-- [ ] Keep the T1203 bundle ID and pinned raw input paths/hashes stable; update
+- [x] Keep the T1203 bundle ID and pinned raw input paths/hashes stable; update
   derived hashes only through the existing generator when presentation changes.
-- [ ] Add a prominent generated-manifest, reproduction, and M13-source note that
+- [x] Add a prominent generated-manifest, reproduction, and M13-source note that
   "final" means deterministic output of that artifact build, not publication-
   level benchmark status.
-- [ ] Require any later publication-mode evidence to use a new bundle ID and
+- [x] Require any later publication-mode evidence to use a new bundle ID and
   never overwrite `t1203_final_results_v1`.
-- [ ] Add a regression that keeps the clarification synchronized across the
+- [x] Add a regression that keeps the clarification synchronized across the
   processed bundle and documentation.
 
 **Acceptance criteria**
 
-- [ ] A reader following the T1203 manifest or reproduction guide encounters
+- [x] A reader following the T1203 manifest or reproduction guide encounters
   the diagnostic-status clarification before interpreting its results.
-- [ ] Existing artifact provenance remains verifiable after the clarification.
+- [x] Existing artifact provenance remains verifiable after the clarification.
 
-**Evidence:** `[documentation/manifest changes, stable input hashes, tests]`
+**Evidence:** `FINAL_NAME_CLARIFICATION` is emitted into both
+`docs/artifacts/processed/t1203_final_results_v1/final-results.json` and
+`artifact-manifest.json`, and the same rule appears before results in
+`REPRODUCING.md` and the `docs/artifacts/README.md` M13 source note: `final`
+means deterministic build output, not publication-level benchmark status;
+later publication evidence uses a new bundle ID and never overwrites T1203.
+All five config-pinned T1203 raw paths and hashes remain unchanged. The existing
+generator produced only new derived hashes: manifest
+`28a17dcd3e054d9ab4d676793caf081bbba75eafd6513d1f751fa38436c46acb`
+and results
+`1dd39f7f115c5363ab6340faaee178e1ca4d48aa665f7c85d135cfb2fb03827f`;
+all table/figure hashes stayed stable. `python -m pytest -q
+tests/exact_commit/test_t1257_final_name.py
+tests/exact_commit/test_final_artifacts.py
+tests/exact_commit/test_t1203_evidence.py` -> 9 passed; `make
+final-artifacts-check` passed; `make check` -> 10 unit and 626 exact tests
+passed.
 
 ## T1258 — Set the article result and page budget
 

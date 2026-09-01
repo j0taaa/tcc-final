@@ -10,7 +10,7 @@
   "generated_artifacts": [
     {
       "path": "docs/artifacts/processed/t1203_final_results_v1/final-results.json",
-      "sha256": "5d0afd430fcaddfcef935e1ca762f1b9e6b9b5edcff29f1d5a2eb72e535f45ab"
+      "sha256": "1dd39f7f115c5363ab6340faaee178e1ca4d48aa665f7c85d135cfb2fb03827f"
     },
     {
       "path": "paper/generated/t1203_final_results_v1/correctness-oracle-table.tex",
@@ -41,6 +41,7 @@
       "sha256": "a266f8b200ce59cbba87817e79514103ac373121aed709c3fdf73e39dbf17c79"
     }
   ],
+  "name_clarification": "final denotes the deterministic output of this artifact build, not publication-level benchmark status; later publication-mode evidence must use a new bundle ID and never overwrite t1203_final_results_v1",
   "schema_version": 1,
   "sources": [
     {

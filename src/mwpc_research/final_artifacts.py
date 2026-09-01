@@ -25,6 +25,11 @@ from mwpc_research.statistical_summaries import (
 FINAL_ARTIFACT_SCHEMA_VERSION = 1
 FINAL_RESULTS_KIND = "mwpc_final_results"
 FINAL_MANIFEST_KIND = "mwpc_final_artifact_manifest"
+FINAL_NAME_CLARIFICATION = (
+    "final denotes the deterministic output of this artifact build, not "
+    "publication-level benchmark status; later publication-mode evidence must use "
+    "a new bundle ID and never overwrite t1203_final_results_v1"
+)
 FINAL_RESULTS_FILENAME = "final-results.json"
 FINAL_MANIFEST_FILENAME = "artifact-manifest.json"
 CORRECTNESS_TABLE_FILENAME = "correctness-oracle-table.tex"
@@ -1576,6 +1581,7 @@ def build_final_artifacts(
         "artifact_kind": FINAL_RESULTS_KIND,
         "schema_version": FINAL_ARTIFACT_SCHEMA_VERSION,
         "artifact_id": config.artifact_id,
+        "name_clarification": FINAL_NAME_CLARIFICATION,
         "configuration": {
             "path": config_file.relative_to(root).as_posix(),
             "normalized_sha256": config.normalized_sha256,
@@ -1636,6 +1642,7 @@ def build_final_artifacts(
         "artifact_kind": FINAL_MANIFEST_KIND,
         "schema_version": FINAL_ARTIFACT_SCHEMA_VERSION,
         "artifact_id": config.artifact_id,
+        "name_clarification": FINAL_NAME_CLARIFICATION,
         "configuration": results["configuration"],
         "sources": results["sources"],
         "generated_artifacts": generated_entries,
@@ -1686,6 +1693,7 @@ __all__ = [
     "FINAL_ARTIFACT_SCHEMA_VERSION",
     "FINAL_MANIFEST_FILENAME",
     "FINAL_MANIFEST_KIND",
+    "FINAL_NAME_CLARIFICATION",
     "FINAL_RESULTS_FILENAME",
     "FINAL_RESULTS_KIND",
     "FINITE_SLOT_TABLE_FILENAME",

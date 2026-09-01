@@ -33,10 +33,10 @@ EXPECTED_HASHES = {
         "1132d0f29561d7b3eca8a72d382c22422275f2f54eb462da264b4fc1da9508b4"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/artifact-manifest.json": (
-        "d356057a7701b284025f37befbd0fc3fb6bd522e6c045fb5bb2903c5b0ac0620"
+        "28a17dcd3e054d9ab4d676793caf081bbba75eafd6513d1f751fa38436c46acb"
     ),
     "docs/artifacts/processed/t1203_final_results_v1/final-results.json": (
-        "5d0afd430fcaddfcef935e1ca762f1b9e6b9b5edcff29f1d5a2eb72e535f45ab"
+        "1dd39f7f115c5363ab6340faaee178e1ca4d48aa665f7c85d135cfb2fb03827f"
     ),
     "paper/generated/t1203_final_results_v1/correctness-oracle-table.tex": (
         "119fd38aeec70ef870941fe13a528a62170bb8e20bebf5f0b0842033e2fdad7b"

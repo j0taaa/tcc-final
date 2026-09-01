@@ -1,5 +1,13 @@
 # Research artifact storage and rebuild policy
 
+## M13 source note
+
+`final` denotes the deterministic output of the T1203 artifact build, not
+publication-level benchmark status. M13 must preserve each diagnostic label
+when it uses T1203 as a source. Later publication-mode evidence must use a new
+bundle ID and never overwrite `t1203_final_results_v1`; the M12.5 publication
+rows therefore use `m125_publication_results_v1`.
+
 Research outputs have three explicit layers:
 
 ```text

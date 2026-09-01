@@ -1,5 +1,10 @@
 # Reproducing the MWPC research artifacts
 
+> **T1203 name clarification.** `final` denotes the deterministic output of
+> this artifact build, not publication-level benchmark status. Later
+> publication-mode evidence must use a new bundle ID and never overwrite
+> `t1203_final_results_v1`.
+
 This guide separates three different operations:
 
 1. rebuilding the tracked tables and figures from their pinned raw rows;

@@ -809,6 +809,7 @@
       "task_configuration": "configured_synthetic_q2_states_v1"
     }
   },
+  "name_clarification": "final denotes the deterministic output of this artifact build, not publication-level benchmark status; later publication-mode evidence must use a new bundle ID and never overwrite t1203_final_results_v1",
   "runtime_breakdown": {
     "backend_runtime_seconds": {
       "python": {
