@@ -14,9 +14,11 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M13 / T1300.** M0 through M12 and the M10.5 hardening pass are complete.
-The first incomplete required task is T1300: fill implementation-method fields
-in LaTeX from versioned evidence.
+**M12.5 / T1250.** M0 through M12 and the M10.5 hardening pass are complete.
+An external review found release-packaging and evidence-presentation gaps that
+must be resolved before article writing. The first incomplete required task is
+T1250: package `mwpc_research` and test the installed release wheel. M13 is
+paused until the blocking M12.5 review-fix gate closes.
 
 ## Completed milestone summary
 
@@ -562,11 +564,343 @@ T1203 evidence tests independently verified that chain.
 
 ---
 
+# M12.5 — Review fixes before article writing
+
+This milestone addresses the twelve findings from the post-M12 review. It must
+not redesign the parser, certificate model, finite-support representation, Rust
+backend, or decoder integration. Preserve serial and EPIC as baselines, keep
+the existing diagnostic raw evidence immutable, regenerate derived artifacts
+only through their scripts, and add no new generic experiment or artifact
+framework. A publication-scope decision may restrict claims or require
+additional runs, but it may never relabel existing diagnostic evidence.
+
+## T1250 — Package and smoke-test the research modules
+
+**Depends on:** M12 gate
+
+**Review finding:** 1 — the release wheel omits `mwpc_research`.
+
+- [ ] Include both `src/mwpc_exact` and `src/mwpc_research` in the wheel.
+- [ ] Build the sdist and wheel with the locked project build toolchain.
+- [ ] Inspect the wheel contents so an editable checkout cannot mask omissions.
+- [ ] Install the wheel into a new isolated environment and import both packages.
+- [ ] From that wheel-installed environment, run one small experiment and one
+  artifact-generation smoke without importing either package from the checkout.
+- [ ] Add a deterministic release-packaging regression test or CI command.
+
+**Acceptance criteria**
+
+- [ ] A non-editable wheel install exposes `mwpc_exact` and `mwpc_research` and
+  completes both smokes without `PYTHONPATH` or source-tree leakage.
+- [ ] The release test fails if either package is removed from the wheel.
+
+**Evidence:** `[packaging diff, wheel inventory, isolated-install commands, tests]`
+
+## T1251 — Correct the Q1 agreement presentation
+
+**Depends on:** T1203
+
+**Review finding:** 4 — confidence intervals are attached to fixed case sets.
+
+- [ ] Report canonical agreement as an exact numerator/denominator only.
+- [ ] Report the complete configured exhaustive family as an exact
+  numerator/denominator only.
+- [ ] Keep a Wilson interval only for the randomized-seed family and describe
+  the generator and seed distribution to which it applies.
+- [ ] Report the mixed overall configured total as an exact count with no
+  confidence interval.
+- [ ] Regenerate the Q1 processed result, table, manifest hashes, and tests from
+  the pinned raw rows; do not hand-edit generated values.
+
+**Acceptance criteria**
+
+- [ ] No canonical, exhaustive, or mixed deterministic/random row has a
+  probabilistic confidence interval.
+- [ ] The randomized interval remains formula-tested and traceable to raw rows.
+
+**Evidence:** `[analysis commit, regenerated artifact hashes, formula/artifact tests]`
+
+## T1252 — Freeze the evidence tier and allowed article claims
+
+**Depends on:** M12 gate
+
+**Review finding:** 2 — reproducible diagnostic results are not automatically
+publication-level experiments.
+
+- [ ] Record a versioned decision stating whether M13 targets a preliminary
+  article with diagnostic evidence or a final article with new publication-mode
+  runs.
+- [ ] Inventory, per Q1--Q5, what the current evidence supports and what it does
+  not support.
+- [ ] Keep every existing `publication_mode=false` run classified as diagnostic.
+- [ ] If publication-mode runs are selected, define immutable configs, minimum
+  metadata, stopping/resource rules, and a new artifact bundle ID before runs.
+- [ ] If preliminary evidence is selected, explicitly defer broader empirical
+  claims and prohibit representative gap, overhead, scaling, or output-quality
+  conclusions in M13.
+
+**Acceptance criteria**
+
+- [ ] Every planned M13 empirical claim maps to an evidence tier and artifact;
+  unsupported claims are explicitly excluded.
+- [ ] No existing smoke or diagnostic is renamed or promoted to publication
+  evidence.
+
+**Evidence:** `[decision record and claim-to-evidence matrix]`
+
+## T1253 — Exercise genuine EPIC parallel commitment end to end
+
+**Depends on:** T1105, T1106, T1252
+
+**Review finding:** 3 — the current Q5 EPIC rows only exercise serial fallback.
+
+- [ ] Add one small structured task with at least two ordinary content tokens.
+- [ ] Feed exact and EPIC comparable candidate states and record their
+  comparison fingerprint.
+- [ ] Require `regular_cover_selector_calls > 0` and at least one EPIC selected
+  batch of cardinality greater than one.
+- [ ] Independently check the output and preserve exact-result certificate
+  validation and `exact_on_support` reporting.
+- [ ] Keep the existing single-token task, but label its row as an EPIC-enabled
+  decoder with serial fallback rather than evidence of EPIC parallel speed.
+- [ ] If T1252 selects publication-mode evidence, run at least two nontrivial
+  structured tasks in the new Q5 campaign; otherwise classify this addition as
+  integration evidence rather than a representative benchmark.
+- [ ] Add a regression that fails if the new EPIC task silently falls back for
+  every selection.
+
+**Acceptance criteria**
+
+- [ ] Versioned raw evidence proves that the regular-cover selector ran and made
+  at least one parallel commitment on independently valid output.
+- [ ] Serial, EPIC, and exact remain distinct strategies with comparable inputs;
+  fallback counts are reported rather than hidden.
+
+**Evidence:** `[config, raw run, computed summary, independent checker, tests]`
+
+## T1254 — Separate illustrative Q2 cases from empirical gap evidence
+
+**Depends on:** T1252
+
+**Review finding:** 5 — three synthetic states are a useful unit experiment,
+not an empirical heuristic-gap distribution.
+
+- [ ] Retain the existing six rows and classify them as illustrative canonical
+  and adversarial cases.
+- [ ] Remove or prevent prose that generalizes their mean gap to model behavior.
+- [ ] If T1252 selects publication-mode evidence, collect a predeclared,
+  versioned sample of saved real decoder states spanning multiple denoising
+  steps and nontrivial tasks.
+- [ ] Replay greedy feasibility, EPIC regular cover, and exact MWPC over the same
+  proposal/support snapshot for every sampled state.
+- [ ] Validate exact certificates independently and report selection failures,
+  timeouts, and zero-optimum rows without dropping them silently.
+- [ ] If T1252 selects preliminary evidence, record the real-state campaign as
+  deferred and restrict Q2 conclusions to the illustrative cases.
+
+**Acceptance criteria**
+
+- [ ] Synthetic rows are never presented as a representative model-state sample.
+- [ ] Any empirical aggregate uses only the separately identified real-state
+  sample and traces every row to a saved common snapshot.
+
+**Evidence:** `[classification/tests and, when selected, real-state config/raw rows/summary]`
+
+## T1255 — Separate Q4 smoke diagnostics from scaling evidence
+
+**Depends on:** T1252
+
+**Review finding:** 6 — the current two-repetition ranges cannot support broad
+runtime or scaling claims.
+
+- [ ] Retain the current Q4 bundle as a CPU component smoke.
+- [ ] Label `graph_size_scale` as a compound graph-size setting because it
+  changes represented width and token byte length together.
+- [ ] Prevent median/IQR claims for groups with insufficient repetitions.
+- [ ] If T1252 selects publication-mode evidence, use an immutable config with
+  at least 10 repetitions per point (target 20 where the declared resource plan
+  permits), broader slot and top-`K` ranges up to declared resource limits,
+  explicit censoring/timeouts, and separate Python/Rust series.
+- [ ] If T1252 selects preliminary evidence, defer the expanded run and restrict
+  Q4 conclusions to pipeline operation on the configured smoke range.
+
+**Acceptance criteria**
+
+- [ ] No timeout or censored row is summarized as a successful runtime.
+- [ ] The article cannot describe the compound graph-size setting as an isolated
+  causal variable or the smoke curves as representative workload scaling.
+
+**Evidence:** `[wording/tests and, when selected, publication config/raw rows/summary]`
+
+## T1256 — Freeze the experiment and artifact architecture
+
+**Depends on:** M12 gate
+
+**Review finding:** 7 — the infrastructure has reached the overengineering
+boundary.
+
+- [ ] Record that M13 may reuse the existing config, metadata, raw/processed,
+  statistics, and final-artifact paths but must not add another generic layer.
+- [ ] Treat T1201's two-row inventory and T1202's synthetic formula artifact as
+  internal validation fixtures, not scientific findings.
+- [ ] Treat the T1203 Q1--Q5 bundle as the only current scientific-result bundle.
+- [ ] Prohibit a plugin system, workflow engine, artifact schema, charting
+  framework, database, dependency-injection layer, second statistical library,
+  or second raw/processed convention during M12.5/M13.
+- [ ] Split a large module only when a required modification makes the split
+  necessary; do not refactor solely for file size or aesthetics.
+
+**Acceptance criteria**
+
+- [ ] M12.5 and M13 add no generic infrastructure unrelated to a concrete task.
+- [ ] Internal pipeline fixtures are not imported or cited as research results.
+
+**Evidence:** `[architecture-freeze decision and review of M12.5/M13 diffs]`
+
+## T1257 — Clarify the meaning of the existing final-results name
+
+**Depends on:** T1203, T1252
+
+**Review finding:** 8 — `final-results` can be mistaken for final empirical
+evidence even though parts of the bundle are diagnostic.
+
+- [ ] Keep the T1203 bundle ID and pinned raw input paths/hashes stable; update
+  derived hashes only through the existing generator when presentation changes.
+- [ ] Add a prominent generated-manifest, reproduction, and M13-source note that
+  "final" means deterministic output of that artifact build, not publication-
+  level benchmark status.
+- [ ] Require any later publication-mode evidence to use a new bundle ID and
+  never overwrite `t1203_final_results_v1`.
+- [ ] Add a regression that keeps the clarification synchronized across the
+  processed bundle and documentation.
+
+**Acceptance criteria**
+
+- [ ] A reader following the T1203 manifest or reproduction guide encounters
+  the diagnostic-status clarification before interpreting its results.
+- [ ] Existing artifact provenance remains verifiable after the clarification.
+
+**Evidence:** `[documentation/manifest changes, stable input hashes, tests]`
+
+## T1258 — Set the article result and page budget
+
+**Depends on:** T1252, T1257
+
+**Review finding:** 9 — inserting all seven artifacts would exceed the
+institutional 16-page limit.
+
+- [ ] Select at most three compact result elements for the article body.
+- [ ] Prefer replacing expected-results placeholders over appending new tables
+  and figures.
+- [ ] Record which remaining artifacts stay in the repository or approved
+  supplementary material.
+- [ ] Define a page-budget allocation including references and the required
+  summaries before T1301 imports results.
+- [ ] Keep every omitted artifact traceable from the reproduction guide.
+
+**Acceptance criteria**
+
+- [ ] The versioned article plan stays within the 10--16 page regulation without
+  silently shrinking required content or claiming an unmeasured final page count.
+- [ ] T1301 depends on this selection and does not append all generated artifacts.
+
+**Evidence:** `[result-selection/page-budget record and paper outline/build check]`
+
+## T1259 — Decide and normalize repository/article language
+
+**Depends on:** T1258
+
+**Review finding:** 10 — repository and article terminology are mixed between
+English and Portuguese.
+
+- [ ] Record the article-language decision before editing result prose; use an
+  English body unless an institutional or advisor constraint is documented.
+- [ ] Apply English consistently to the article body, section titles,
+  theorem/algorithm names, captions, code, and repository terminology.
+- [ ] Preserve the institutionally required Portuguese `Resumo` and provide a
+  matching English `Abstract`.
+- [ ] Translate `IMPLEMENTATION_PLAN.md` or archive it with a clear supersession
+  notice if `TASKS.md` and ADRs have replaced it.
+- [ ] Add a terminology review for `exact_on_support`, statuses, finite slots,
+  proposals, witness, fallback, and baseline names.
+
+**Acceptance criteria**
+
+- [ ] Mixed-language prose remains only where institutionally required or where
+  a cited title/quotation must retain its original language.
+- [ ] Language normalization does not alter scientific claims or generated data.
+
+**Evidence:** `[language decision, documentation/paper diff, terminology check]`
+
+## T1260 — Add artifact-rebuild and source-rerun rehearsals
+
+**Depends on:** T1250, T1251, T1252, T1253, T1254, T1255
+
+**Review finding:** 11 — the current clean-clone rehearsal rebuilds artifacts
+from pinned rows but does not rerun the source experiment.
+
+- [ ] Name and document two distinct rehearsal levels:
+  `artifact-rebuild` (pinned raw rows to generated output) and
+  `source-experiment-rerun` (code plus config to new raw rows and output).
+- [ ] Keep byte-for-byte comparison for deterministic artifact rebuilds.
+- [ ] For the CPU correctness source rerun, compare case IDs, statuses,
+  objectives, agreement counts, and certificate validity while excluding timing
+  fields from byte-identity requirements.
+- [ ] Run the release-oriented rehearsal from a clean checkout and non-editable
+  wheel install so packaging and source availability are tested together.
+- [ ] Document which GPU/model experiments remain external or optional and do
+  not claim they were rerun when they were not.
+
+**Acceptance criteria**
+
+- [ ] Both rehearsal levels have distinct commands, expected artifacts, and
+  failure conditions.
+- [ ] A deterministic test proves that a semantic correctness mismatch fails the
+  source-rerun rehearsal even when timing fields differ legitimately.
+
+**Evidence:** `[rehearsal commands, semantic comparison output, clean-clone test]`
+
+## T1261 — Archive completed M11/M12 task detail
+
+**Depends on:** T1250, T1251, T1252, T1253, T1254, T1255, T1256, T1257,
+T1258, T1259, T1260
+
+**Review finding:** 12 — the active task file is large and its next work is hard
+to locate.
+
+- [ ] Archive the complete M11/M12 task text and evidence under
+  `docs/history/TASKS-through-M12.md` without losing prior history links.
+- [ ] Replace completed M11/M12 detail in this file with a concise summary and
+  stable links to evidence and the archive.
+- [ ] Keep M12.5 and M13 in full detail until their gates close.
+- [ ] Verify that task IDs, dependencies, evidence links, and current starting
+  point remain unambiguous after the move.
+
+**Acceptance criteria**
+
+- [ ] A new agent can identify the first incomplete task and its dependencies
+  without reading completed command logs.
+- [ ] No completed evidence or blocking scientific contract is lost.
+
+**Evidence:** `[archive commit, link/dependency checks]`
+
+**M12.5 review-fix gate — blocking**
+
+- [ ] The installed wheel contains and exercises both Python packages.
+- [ ] Q1 statistical presentation distinguishes fixed and random case families.
+- [ ] Evidence tier, genuine EPIC execution, and any selected Q2/Q4 expansion
+  are versioned without promoting diagnostics.
+- [ ] Artifact naming, architecture freeze, page budget, and language are settled.
+- [ ] Both reproduction levels pass and completed M11/M12 detail is archived.
+- [ ] No correctness gate regresses and no unsupported article claim remains.
+
+---
+
 # M13 — Synchronize implementation with the TCC
 
 ## T1300 — Fill implementation-method fields in LaTeX
 
-**Depends on:** M12 gate
+**Depends on:** M12.5 gate
 
 - [ ] Insert exact repository and upstream commits.
 - [ ] Insert module/backend architecture.
@@ -586,7 +920,7 @@ T1203 evidence tests independently verified that chain.
 
 ## T1301 — Fill and analyze results
 
-**Depends on:** T1203
+**Depends on:** M12.5 gate
 
 - [ ] Import generated tables/figures.
 - [ ] Report correctness campaign size and agreement.
