@@ -139,6 +139,9 @@ def test_real_summary_keeps_real_snapshot_denominators_and_zero_optima() -> None
     summary = summarize_real_rows((row,))
 
     assert summary["snapshot_count"] == 1
+    assert summary["support_combination_counts"] == {"2": 1}
+    assert summary["non_singleton_support_count"] == 1
+    assert summary["empirical_interpretation"] == "bounded_real_state_gap_sample"
     assert summary["task_counts"] == {"ab": 1}
     assert summary["seed_counts"] == {"7": 1}
     assert summary["zero_optimum_count"] == 0

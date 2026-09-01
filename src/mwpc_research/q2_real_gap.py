@@ -380,6 +380,12 @@ def summarize_real_rows(rows: Iterable[Mapping[str, object]]) -> dict[str, objec
     validation_payloads = tuple(
         cast(Mapping[str, object], row["independent_exact_validation"]) for row in records
     )
+    support_combination_counts = Counter(
+        int(cast(int, row["support_combination_count"])) for row in records
+    )
+    non_singleton_support_count = sum(
+        count for combinations, count in support_combination_counts.items() if combinations > 1
+    )
     comparison_names = ("greedy_exact_feasibility", "epic_regular_cover")
     comparisons: dict[str, object] = {}
     for name in comparison_names:
@@ -396,6 +402,16 @@ def summarize_real_rows(rows: Iterable[Mapping[str, object]]) -> dict[str, objec
         "artifact_kind": Q2_REAL_SUMMARY_KIND,
         "schema_version": Q2_REAL_SCHEMA_VERSION,
         "snapshot_count": len(records),
+        "support_combination_counts": {
+            str(combinations): count
+            for combinations, count in sorted(support_combination_counts.items())
+        },
+        "non_singleton_support_count": non_singleton_support_count,
+        "empirical_interpretation": (
+            "bounded_real_state_gap_sample"
+            if non_singleton_support_count
+            else "execution_alignment_check_all_supports_singleton_after_deduplication"
+        ),
         "task_counts": dict(
             sorted(Counter(str(payload["task_id"]) for payload in source_payloads).items())
         ),
