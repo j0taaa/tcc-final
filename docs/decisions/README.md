@@ -18,3 +18,4 @@ Numbered architecture decision records live here. Each ADR states the affected s
 - `0014-fair-selector-comparison.md`: precise offline selector names and shared candidate universe.
 - `0015-paired-grammar-alignment.md`: executable alignment evidence for exact/EPIC grammar pairs.
 - `0016-publication-evidence-tier.md`: final-article evidence tiers, claim boundaries, and predeclared publication campaigns.
+- `0017-q5-publication-pilot-amendment.md`: rejected Q5 pilot and the pre-evidence v2 amendment.

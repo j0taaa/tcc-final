@@ -4,12 +4,14 @@ import hashlib
 import json
 from dataclasses import replace
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 from scripts.exact_commit.run_q5_end_to_end import (
     _configuration_parameters,
     _literal_grammar,
     _load_task_manifest,
+    _run_exact_generation_steps,
 )
 
 from mwpc_exact.experiments import ExperimentKind, load_experiment_config
@@ -28,7 +30,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 CONFIG_PATH = REPOSITORY_ROOT / "configs/experiments/q5_end_to_end_v1.toml"
 TIMING_CONFIG_PATH = REPOSITORY_ROOT / "configs/experiments/q5_timing_v1.toml"
 PUBLICATION_CONFIG_PATH = (
-    REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v1.toml"
+    REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v2.toml"
 )
 
 
@@ -167,6 +169,35 @@ def test_publication_summary_preserves_benchmark_claim() -> None:
 
     assert summary["benchmark_claim"] is True
     assert summary["timing_interpretation"] == "publication-mode paired CUDA campaign"
+
+
+def test_exact_generation_repeats_partial_optimal_steps_until_complete() -> None:
+    pending = SimpleNamespace(
+        complete=False,
+        solver_result=SimpleNamespace(status=SolveStatus.OPTIMAL),
+        model_updates=(object(),),
+    )
+    complete = SimpleNamespace(
+        complete=True,
+        solver_result=SimpleNamespace(status=SolveStatus.OPTIMAL),
+        model_updates=(object(),),
+    )
+    scheduled = iter((pending, complete))
+
+    outcomes = _run_exact_generation_steps(lambda: next(scheduled), max_steps=4)
+
+    assert outcomes == (pending, complete)
+
+
+def test_exact_generation_rejects_partial_optimal_step_without_progress() -> None:
+    stalled = SimpleNamespace(
+        complete=False,
+        solver_result=SimpleNamespace(status=SolveStatus.OPTIMAL),
+        model_updates=(),
+    )
+
+    with pytest.raises(RuntimeError, match="made no progress"):
+        _run_exact_generation_steps(lambda: stalled, max_steps=2)
 
 
 def test_all_four_methods_must_share_one_comparison_fingerprint() -> None:

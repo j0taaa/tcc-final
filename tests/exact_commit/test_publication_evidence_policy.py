@@ -9,7 +9,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 PUBLICATION_CONFIGS = {
     "q2": REPOSITORY_ROOT / "configs/experiments/q2_real_state_publication_v1.toml",
     "q4": REPOSITORY_ROOT / "configs/experiments/q4_scaling_publication_v1.toml",
-    "q5": REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v1.toml",
+    "q5": REPOSITORY_ROOT / "configs/experiments/q5_structured_publication_v2.toml",
 }
 LEGACY_FULL_CONFIGS = tuple(
     REPOSITORY_ROOT / "configs/experiments" / name
@@ -63,12 +63,12 @@ def test_publication_campaigns_are_predeclared_with_a_new_bundle() -> None:
 
 
 def test_structured_task_manifest_freezes_two_nontrivial_targets() -> None:
-    manifest_path = REPOSITORY_ROOT / "configs/experiments/q5_structured_tasks_v1.toml"
+    manifest_path = REPOSITORY_ROOT / "configs/experiments/q5_structured_tasks_v2.toml"
     manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
     tasks = manifest["tasks"]
 
     assert manifest["schema_version"] == 1
-    assert manifest["task_set_id"] == "q5_structured_tasks_v1"
+    assert manifest["task_set_id"] == "q5_structured_tasks_v2"
     assert [task["task_id"] for task in tasks] == ["json_x_zero", "parenthesized_sum"]
     assert all(len(task["target_utf8"]) >= 5 for task in tasks)
     assert all(task["grammar_kind"] == "literal_utf8_cfg" for task in tasks)
@@ -92,3 +92,20 @@ def test_decision_records_claim_boundaries_and_resource_rules() -> None:
         "local-only",
     ):
         assert required in decision
+
+
+def test_q5_amendment_records_rejected_pilot_without_weakening_gates() -> None:
+    amendment = (
+        REPOSITORY_ROOT / "docs/decisions/0017-q5-publication-pilot-amendment.md"
+    ).read_text(encoding="utf-8")
+
+    for required in (
+        "50 times",
+        "34 constrained",
+        "q5_structured_publication_v2.toml",
+        "regular_cover_selector_calls > 0",
+        "cardinality greater than one",
+        "independently valid certificate",
+        "exact_on_support",
+    ):
+        assert required in amendment

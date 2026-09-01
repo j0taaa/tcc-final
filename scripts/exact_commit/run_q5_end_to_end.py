@@ -670,6 +670,22 @@ def _prepare_upstream_call(
             _restore_environment(name, old_value)
 
 
+def _run_exact_generation_steps(
+    run_step: Callable[[], Any], *, max_steps: int
+) -> tuple[Any, ...]:
+    """Repeat independently certified exact steps until completion or a terminal status."""
+
+    _require(max_steps >= 1, "exact generation requires at least one step")
+    outcomes: list[Any] = []
+    for _step_index in range(max_steps):
+        outcome = run_step()
+        outcomes.append(outcome)
+        if outcome.complete or outcome.solver_result.status is not SolveStatus.OPTIMAL:
+            break
+        _require(bool(outcome.model_updates), "exact generation made no progress")
+    return tuple(outcomes)
+
+
 def _prepare_exact_call(
     *,
     torch: Any,
@@ -712,10 +728,13 @@ def _prepare_exact_call(
     )
     profiler = ComponentProfiler(enabled=True)
 
-    def run() -> Mapping[str, object]:
+    def run_step() -> Any:
         with torch.inference_mode():
             logits = model(token_row).logits
-        _require(bool(torch.isfinite(logits).all().item()), "live model emitted non-finite logits")
+        _require(
+            bool(torch.isfinite(logits).all().item()),
+            "live model emitted non-finite logits",
+        )
         predictions = logits.argmax(dim=-1)
         probabilities = torch.softmax(logits.to(torch.float64), dim=-1)
         confidence = probabilities.gather(-1, predictions.unsqueeze(-1)).squeeze(-1)
@@ -741,18 +760,29 @@ def _prepare_exact_call(
             profile=PINNED_LLADA_PROFILE,
             profiler=profiler,
         )
+        return outcome
+
+    def run() -> Mapping[str, object]:
+        outcomes = _run_exact_generation_steps(run_step, max_steps=parameters.steps)
+        attempted_k_by_step: list[tuple[int, ...]] = []
+        certificate_valid_by_step: list[bool] = []
+        for outcome in outcomes:
+            result = outcome.solver_result
+            adaptive = result.diagnostics.get("adaptive_support")
+            attempted_k_by_step.append(
+                tuple(int(value) for value in adaptive.get("attempted_k", ()))
+                if isinstance(adaptive, Mapping)
+                else ()
+            )
+            certificate_validation = result.diagnostics.get("certificate_validation")
+            certificate_valid_by_step.append(
+                isinstance(certificate_validation, Mapping)
+                and certificate_validation.get("is_valid") is True
+            )
+        outcome = outcomes[-1]
         result = outcome.solver_result
-        adaptive = result.diagnostics.get("adaptive_support")
-        attempted_k = (
-            tuple(int(value) for value in adaptive.get("attempted_k", ()))
-            if isinstance(adaptive, Mapping)
-            else ()
-        )
-        certificate_validation = result.diagnostics.get("certificate_validation")
-        certificate_valid = (
-            isinstance(certificate_validation, Mapping)
-            and certificate_validation.get("is_valid") is True
-        )
+        attempted_k = attempted_k_by_step[-1]
+        certificate_valid = all(certificate_valid_by_step)
         certificate = (
             {
                 "witness_token_ids": list(result.witness_token_ids),
@@ -777,16 +807,26 @@ def _prepare_exact_call(
                 skip_special_tokens=False,
                 clean_up_tokenization_spaces=False,
             ),
-            "commit_batch_sizes": (
-                (len(outcome.decoder_step.commits),) if outcome.decoder_step.commits else ()
+            "commit_batch_sizes": tuple(
+                len(item.decoder_step.commits)
+                for item in outcomes
+                if item.decoder_step.commits
             ),
-            "physical_update_batch_sizes": (
-                (len(outcome.model_updates),) if outcome.model_updates else ()
+            "physical_update_batch_sizes": tuple(
+                len(item.model_updates) for item in outcomes if item.model_updates
             ),
-            "fallback_count": int(fallback_class != "none"),
-            "support_expansion_count": max(0, len(attempted_k) - 1),
-            "empty_optimal_batch_count": int(
-                result.status is SolveStatus.OPTIMAL and not result.selected_proposal_ids
+            "fallback_count": sum(
+                item.decoder_step.diagnostics.get("fallback_class") != "none"
+                for item in outcomes
+            ),
+            "support_expansion_count": sum(
+                max(0, len(step_attempted_k) - 1)
+                for step_attempted_k in attempted_k_by_step
+            ),
+            "empty_optimal_batch_count": sum(
+                item.solver_result.status is SolveStatus.OPTIMAL
+                and not item.solver_result.selected_proposal_ids
+                for item in outcomes
             ),
             "solver_status": result.status,
             "exactness_scope": {
@@ -800,6 +840,12 @@ def _prepare_exact_call(
                 "implementation": "parent_llada_exact_step_with_rust_backend_v1",
                 "solver_backend": parameters.exact_backend.value,
                 "support_attempted_k": list(attempted_k),
+                "support_attempted_k_by_step": [
+                    list(step_attempted_k) for step_attempted_k in attempted_k_by_step
+                ],
+                "optimizer_step_count": len(outcomes),
+                "all_optimal_certificates_independently_valid": certificate_valid,
+                "optimizer_outcomes": [item.to_dict() for item in outcomes],
                 "commit_source": outcome.decoder_step.commit_source.value,
                 "commit_guarantee": outcome.decoder_step.commit_guarantee.value,
                 "fallback_class": fallback_class,
