@@ -16,9 +16,9 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**M13 / T1300.** M0 through M12.5 and the M10.5 hardening pass are complete.
-The first incomplete required task is T1300, whose dependency on the closed
-M12.5 review-fix gate is satisfied.
+**M13 / T1301.** M0 through M12.5, the M10.5 hardening pass, and T1300 are
+complete. The first incomplete required task is T1301, whose dependencies on
+the closed M12.5 review-fix gate and T1258 result/page budget are satisfied.
 
 ## Completed milestone summary
 
@@ -648,21 +648,45 @@ wheel rehearsal, pinned EPIC integration, and focused combined Q2/Q5 tests.
 
 **Depends on:** M12.5 gate
 
-- [ ] Insert exact repository and upstream commits.
-- [ ] Insert module/backend architecture.
-- [ ] Insert grammar normalization and epsilon handling.
-- [ ] Insert tokenizer byte semantics.
-- [ ] Insert support/top-`K` policy and exactness wording.
-- [ ] Insert candidate/weight policy.
-- [ ] Insert EOS/PAD, timeout, tie, and fallback behavior.
-- [ ] Insert model, tokenizer, hardware, and software versions.
+- [x] Insert exact repository and upstream commits.
+- [x] Insert module/backend architecture.
+- [x] Insert grammar normalization and epsilon handling.
+- [x] Insert tokenizer byte semantics.
+- [x] Insert support/top-`K` policy and exactness wording.
+- [x] Insert candidate/weight policy.
+- [x] Insert EOS/PAD, timeout, tie, and fallback behavior.
+- [x] Insert model, tokenizer, hardware, and software versions.
 
 **Acceptance criteria**
 
-- [ ] No implementation field is filled from memory when an artifact can provide it.
-- [ ] Paper claims match the actual code path.
+- [x] No implementation field is filled from memory when an artifact can provide it.
+- [x] Paper claims match the actual code path.
 
-**Evidence:** `[LaTeX commit and metadata source]`
+**Evidence:** commit `02aabd239a3d76ef4d9176c6d8257651c27af5ac`
+fills the method fields in `paper/main.tex` and keeps the parent license status
+explicitly pending rather than inventing one. Repository/upstream provenance
+comes from `docs/evidence/m125-completion-audit.md` and `UPSTREAM.md`; grammar,
+epsilon, tokenizer, support, proposal, EOS/PAD, timeout, tie, and fallback
+semantics come from ADRs 0001--0013 and their referenced implementation paths.
+The exact model/tokenizer revision and vocabulary audit come from
+`docs/evidence/t600-llada-tokenizer-audit.json`; Q5 schedules, support, weights,
+specials, and protocol come from
+`configs/experiments/q5_structured_publication_v4.toml` and
+`configs/experiments/q5_structured_tasks_v4.toml`; hardware/software values
+come from the pinned Q4 summary and Q5 raw JSONL metadata under
+`docs/artifacts/raw/m125_publication_results_v1/`. The paper now states that
+the live path uses a raw-byte CFG without a production lexical transducer,
+reports only per-step `exact_on_support`, retries wider support only after
+`INFEASIBLE_ON_SUPPORT`, and preserves non-optimal statuses and baseline
+separation. `python -m pytest -q
+tests/exact_commit/test_t1300_paper_method.py` -> 6 passed; `make check` ->
+11 unit and 651 exact-commit tests passed; full `python -m pytest -q` -> 672
+passed. `make paper` passed and `pdfinfo paper/main.pdf` reported 16 pages.
+Poppler renders of pages 1--2 and 11--16 were visually checked with no
+clipping, overlap, unreadable table text, or broken identifiers. Advancing the
+active pointer exposed a stale T1261 test that hard-coded T1300 as the next
+task; `tests/exact_commit/test_t1261_task_archive.py` now deterministically
+expects T1301 while continuing to protect the archived M0--M12 content.
 
 ## T1301 — Fill and analyze results
 
