@@ -65,12 +65,12 @@ Pontifícia Universidade Católica de Minas Gerais (PUC Minas)\\
 \maketitle
 
 \begin{abstract}
-Diffusion language models can reveal several positions in parallel, but independently plausible token proposals may be jointly incompatible with a context-free grammar. Existing CFG-constrained decoders can test whether a partial state remains completable, yet recent parallel methods select compatible proposal subsets heuristically. This work formulates maximum-weight parallel commitment as an exact weighted parsing problem. For a finite set of non-negative token proposals, it proves that the best compatible subset has the same value as the highest-reward grammar-valid completion. A max-plus parser therefore recovers both an optimal witness and the proposals that may be committed simultaneously. The formulation is first developed for token-aligned grammars and then generalized to a finite tokenizer-aware lattice composed with detokenization and lexical analysis. The resulting method targets soundness, completeness, per-step optimality, and finite-slot exactness. The practical evaluation will use \ph{model}, \ph{grammars/tasks}, and \ph{hardware}, comparing the exact method with exhaustive search on small instances and with heuristic constrained decoders on realistic instances.
+Diffusion language models can reveal several positions in parallel, but independently plausible token proposals may be jointly incompatible with a context-free grammar. Existing CFG-constrained decoders can test whether a partial state remains completable, yet recent parallel methods select compatible proposal subsets heuristically. This work formulates maximum-weight parallel commitment as an exact weighted parsing problem. For a finite set of non-negative token proposals, it proves that the best compatible subset has the same value as the highest-reward grammar-valid completion. A max-plus parser therefore recovers both an optimal witness and the proposals that may be committed simultaneously. The formulation is first developed for token-aligned grammars and then generalized to a finite tokenizer-aware lattice composed with detokenization and lexical analysis. The resulting method targets soundness, completeness, per-step optimality, and finite-slot exactness. The practical evaluation uses the revision-pinned LLaDA-8B-Instruct model, raw-byte CFGs including two structured literal tasks, and an Intel i7/RTX 3080 Ti workstation. It compares the exact method with exhaustive search on small instances and with serial and EPIC constrained decoders on the two structured tasks.
 \end{abstract}
 
 \begin{otherlanguage}{brazilian}
 \begin{resumo}
-Modelos de linguagem por difusão podem revelar várias posições em paralelo, mas propostas de tokens individualmente plausíveis podem ser conjuntamente incompatíveis com uma gramática livre de contexto. Decodificadores recentes conseguem testar se um estado parcial ainda admite uma conclusão válida, porém a seleção de subconjuntos para compromisso paralelo permanece heurística. Este trabalho formula o compromisso paralelo de peso máximo como um problema exato de parsing ponderado. Para propostas de peso não negativo, demonstra-se que o melhor subconjunto compatível possui o mesmo valor que a conclusão gramaticalmente válida de maior recompensa. Um parser max-plus recupera, portanto, uma testemunha ótima e as propostas que podem ser comprometidas simultaneamente. A formulação é apresentada primeiro para gramáticas alinhadas aos tokens e depois generalizada para um lattice finito, sensível ao tokenizador, composto com detokenização e análise léxica. O método busca garantir correção, completude, otimalidade por etapa e exatidão quanto ao número real de slots. A avaliação prática utilizará \ph{modelo}, \ph{gramáticas/tarefas} e \ph{hardware}, comparando o método exato com busca exaustiva em instâncias pequenas e com decodificadores heurísticos em instâncias realistas.
+Modelos de linguagem por difusão podem revelar várias posições em paralelo, mas propostas de tokens individualmente plausíveis podem ser conjuntamente incompatíveis com uma gramática livre de contexto. Decodificadores recentes conseguem testar se um estado parcial ainda admite uma conclusão válida, porém a seleção de subconjuntos para compromisso paralelo permanece heurística. Este trabalho formula o compromisso paralelo de peso máximo como um problema exato de parsing ponderado. Para propostas de peso não negativo, demonstra-se que o melhor subconjunto compatível possui o mesmo valor que a conclusão gramaticalmente válida de maior recompensa. Um parser max-plus recupera, portanto, uma testemunha ótima e as propostas que podem ser comprometidas simultaneamente. A formulação é apresentada primeiro para gramáticas alinhadas aos tokens e depois generalizada para um lattice finito, sensível ao tokenizador, composto com detokenização e análise léxica. O método busca garantir correção, completude, otimalidade por etapa e exatidão quanto ao número real de slots. A avaliação prática utiliza o modelo LLaDA-8B-Instruct com revisão fixada, GLCs sobre bytes que incluem duas tarefas literais estruturadas e uma estação Intel i7/RTX 3080 Ti. O método exato é comparado com busca exaustiva em instâncias pequenas e com os decodificadores restritos serial e EPIC nas duas tarefas estruturadas.
 \end{resumo}
 \end{otherlanguage}
 
@@ -84,7 +84,7 @@ DINGO demonstrated constrained inference under regular languages through dynamic
 
 This work asks: \emph{can we select exactly, without enumerating every subset, the maximum-weight set of parallel proposals that still admits a representable CFG-valid completion?} The central hypothesis is that enumeration over $2^{|C|}$ is unnecessary. Every valid completion automatically determines which proposals it preserves. Subset search can therefore be replaced by maximum-weight derivation search using weighted parsing and the max-plus semiring \cite{goodman1999semiring,mohri2002}.
 
-The overall goal is to develop and demonstrate an exact parallel-commitment algorithm for CFG-constrained dLLMs. The specific goals are: (i) formalize \emph{Maximum-Weight Parallel Commitment} (MWPC); (ii) prove its equivalence to the highest-reward feasible completion; (iii) construct a token-aligned max-plus CKY version; (iv) generalize it to a finite lattice that preserves tokenization, lexical analysis, and provenance; (v) prove soundness, completeness, per-step optimality, and \emph{finite-slot exactness}; and (vi) implement and evaluate the method on \ph{selected tasks}.
+The overall goal is to develop and demonstrate an exact parallel-commitment algorithm for CFG-constrained dLLMs. The specific goals are: (i) formalize \emph{Maximum-Weight Parallel Commitment} (MWPC); (ii) prove its equivalence to the highest-reward feasible completion; (iii) construct a token-aligned max-plus CKY version; (iv) generalize it to a finite lattice that preserves tokenization, lexical analysis, and provenance; (v) prove soundness, completeness, per-step optimality, and \emph{finite-slot exactness}; and (vi) implement and evaluate the method on finite generated instances and two revision-pinned structured literal tasks.
 
 The intended contribution is not weighted parsing itself, which is established in the literature, but the formulation of dLLM parallel commitment as a single weighted inference, the tokenizer-aware construction with finite slots, and its integration into an iterative decoder. The claimed optimality is local to the current step: the method maximizes the defined objective over the current proposals and possible completions of the current state. It does not claim to optimize the entire future trajectory because subsequent logits depend on the commitments made.
 
@@ -347,7 +347,7 @@ A_{\mathrm{tok}}\circ T_{\mathrm{detok}}\circ T_{\mathrm{lex}}\circ A_H,
 \end{equation}
 where $T_{\mathrm{detok}}$ maps tokens to bytes, $T_{\mathrm{lex}}$ maps bytes to lexemes, and $A_H$ implements EOS/PAD and other regular conditions. Weights and provenance originate on token arcs and are carried through composition. An implementation need not materialize the full composition; it may compute transitions lazily and share prefixes in a tokenizer trie.
 
-For a programming-language lexer, the relation must reflect its declared policy, including maximal munch and priorities. Accepting every possible segmentation may recognize a lexical sequence that the real lexer would never produce. The initial scope will use \ph{chosen lexical strategy: byte-level grammar or deterministic lexer}, leaving complex contextual lexers as an extension.
+For a programming-language lexer, the relation must reflect its declared policy, including maximal munch and priorities. Accepting every possible segmentation may recognize a lexical sequence that the real lexer would never produce. The implemented production path instead gives the CFG raw-byte terminals after the tokenizer mapping; it does not insert a lexer or claim maximal-munch semantics. The separate reference lexical interface is not used by the live model experiments, and contextual lexers remain an extension.
 
 \subsection{Max-plus parsing over the graph}
 
@@ -441,13 +441,13 @@ An important case is $J^*=\varnothing$ even though a valid completion exists. Th
 \State $P\gets M(x)$ \Comment{step logits/distributions}
 \State $C\gets\textsc{GenerateProposals}(P,x,k_s,\Theta)$
 \State $A\gets\textsc{BuildFiniteLattice}(x,C,\Theta)$
-\State $(J^*,y^*,v^*)\gets\textsc{ParseMaxPlus}(G,A)$
-\If{the instance is infeasible}
-  \State expand support or execute the \ph{diagnostic/fallback policy}
+\State $(s_{\mathrm{solve}},J^*,y^*,v^*)\gets\textsc{ParseMaxPlus}(G,A)$
+\If{$s_{\mathrm{solve}}\neq\texttt{OPTIMAL}$}
+  \State retry wider support only after \texttt{INFEASIBLE\_ON\_SUPPORT}; otherwise retain $s_{\mathrm{solve}}$ and apply the configured failure policy
 \ElsIf{$J^*\neq\varnothing$}
   \State commit in $x$ the positions of proposals in $J^*$
 \Else
-  \State choose a masked position $i$ according to the \ph{fallback rule}
+  \State choose eligible masked $i$ maximizing the model probability of $y^*_i$; break ties by lowest absolute position
   \State commit $y^*_i$ at $x_i$
 \EndIf
 \State \Return $x$
@@ -473,27 +473,33 @@ The number of masks strictly decreases and cannot be negative. At the final stat
 \section{Implementation and Evaluation Methodology}
 \label{sec:metodologia}
 
-Implementation follows three stages. \textbf{Stage A} builds token-aligned max-plus CKY with backtracking and a brute-force oracle for small instances. \textbf{Stage B} adds a layered lattice, provenance, EOS/PAD semantics, and composition with the \ph{chosen lexical interface}; weights may be synthetic or derived from saved logits. \textbf{Stage C} integrates the optimizer with the \ph{model used}, running candidate generation, parsing, and commitment at each step. The intended baseline is \ph{repository/baseline and commit}, reusing EPIC components where compatible.
+The audited implementation snapshot is \href{https://github.com/j0taaa/tcc-final/commit/7b0d9aabeeaa3388b4b652b9e24d66f0da9b784d}{\texttt{j0taaa/tcc-final@7b0d9aa}}, while the read-only EPIC submodule is pinned to \href{https://github.com/hyundong98/EPIC-Decoding/commit/5b1b31098f34ed3691d2a9f4aae14fdf5839d072}{\texttt{5b1b310}}. Measurement artifacts retain their own producing commits. The Python package contains independently readable reference solvers, proposal/support/lattice construction, orchestration, validation, the LLaDA adapter, and experiment code. The independent Rust 2021 crate \texttt{mwpc\_parser} implements the production max-plus CFG-on-acyclic-DAG dynamic program and backtracking; \texttt{mwpc\_parser\_py} is a thin PyO3 boundary. The integration exposes mutually exclusive \texttt{serial}, \texttt{epic}, and \texttt{exact} strategies and does not modify the baseline submodule.
 
-The architecture separates the model adapter, candidate policy, lattice builder, detokenization/lexing interface, weighted parser, decoder, validators, and experiment scripts. The final article must describe the decisions connecting program and proof: grammar form, handling of $\varepsilon$ and unit productions, EOS/PAD semantics, per-position support, lexical policy, tie-breaking, fallback, and the weight definition.
+The controlled Python normalizer computes nullable nonterminals, records start-symbol empty acceptance, removes $\varepsilon$ and unit productions, introduces terminal proxies, and right-binarizes longer rules while retaining source-production IDs. The parser boundary accepts only strict terminal/binary CNF plus that empty-string flag. Explicit graph $\varepsilon$-edges are normalized before parsing by maximum-weight acyclic closure; a returned path is expanded to original edge IDs. Thus $\varepsilon$ consumes no physical slot, and neither the Python nor Rust parser performs an implicit cyclic closure. The live structured tasks supply literal UTF-8 byte CFGs directly, so the production path uses no lexical transducer.
+
+For the pinned LLaDA tokenizer, every ordinary base-token piece is mapped compositionally to raw bytes by reversing the GPT-2 ByteLevel bijection; singleton calls to \texttt{decode} are not used to construct lattice emissions. The 126,080 base IDs are ordinary byte-emitting tokens, whereas all 269 added IDs are unsupported as content. The live adapter ranks the maximum needed support once on-device by logit descending and token ID ascending. Each masked row represents its current top-$K$ prefix, the frozen proposal token, and required termination/PAD IDs; fixed rows are singletons. Q5 uses $K=8$ and feasibility-driven doubling to 16 and 32, stopping at the first feasible support. Every optimum is therefore reported as \texttt{exact\_on\_support} for the current finite canvas and step, never as a full-vocabulary or future-trajectory optimum.
+
+At each step, the baseline schedule ranks eligible masked positions by primary-token confidence descending and absolute position ascending, retains at most its budget, and creates one frozen primary proposal per position. Q5 uses the model softmax confidence itself as the non-negative proposal weight; non-proposal alternatives have zero reward. Equal MWPC scores use stable implementation traversal only---there is no claimed secondary objective. The required EOS profile accepts IDs 126081 and 126348 as the first termination event and uses 126081 as canonical PAD afterward; all specials consume physical slots but emit no CFG byte. The adaptive Rust deadline is 30 seconds total, with remaining time passed to each attempt, and \texttt{TIMEOUT} remains distinct from support infeasibility. An optimal zero-match witness advances at the eligible position whose witness token has highest model probability. The reported Q5 exact configuration has no non-optimal fallback; the generic adapter can invoke an explicitly configured serial or EPIC callback while retaining the original solver status and without assigning an exact guarantee to that update.
 
 \begin{table}[ht]
 \centering
-\caption{Implementation and reproduction fields.}
+\caption{Implementation and primary Q4/Q5 reproduction fields.}
 \label{tab:config}
-\footnotesize
-\begin{tabular}{p{3.2cm}p{8.0cm}}
+\scriptsize
+\begin{tabular}{p{2.6cm}p{8.6cm}}
 \toprule
-Item & Information to record \\ \midrule
-Model/tokenizer & \ph{checkpoint and revision; vocabulary; special tokens; dtype/quantization} \\
-Code/parser & \ph{repository, commit, license, languages, CKY/Earley, and backtracking} \\
-Decoding & \ph{steps, schedule, top-$K$/support, budget, weight formula, and fallback} \\
-Grammars/data & \ph{tasks, origin, sizes, transformations, prompts, and splits} \\
-Environment & \ph{CPU, RAM, GPU/VRAM, OS, CUDA, PyTorch, compilers, and threads} \\
-Protocol & \ph{seeds, repetitions, warm-up, synchronization, and reported statistics} \\
+Item & Recorded configuration \\ \midrule
+Model/tokenizer & \texttt{GSAI-ML/LLaDA-8B-Instruct}, model and tokenizer revision \href{https://huggingface.co/GSAI-ML/LLaDA-8B-Instruct/tree/08b83a6feb34df1a6011b80c3c00c7563e963b07}{\texttt{08b83a6f...b07}}; model head 126,464, tokenizer 126,080 base plus 269 added IDs; \texttt{bfloat16} with bitsandbytes NF4 double quantization. \\
+Code/parser & Audited parent snapshot \texttt{7b0d9aa}; EPIC \texttt{5b1b310}; Python 3.11 reference/orchestration and independent Rust 2021 CFG-on-DAG parser with PyO3 backtracking boundary. Parent release license is pending in \texttt{LICENSES.md}; EPIC notices are preserved. \\
+Decoding & Q5 JSON: 16 slots/8 steps/budget 16; DSL: 12/6/12; low-confidence remasking; top-$K$ $8\rightarrow16\rightarrow32$, first feasible; confidence weights; required EOS/PAD; 30-s exact deadline; no non-optimal exact fallback. \\
+Grammars/data & Versioned prompts and exact literal UTF-8 byte CFGs for fenced \texttt{\{"x":0\}} JSON and fenced \texttt{ADD 0 0}; no learned dataset or split. Q4 uses generated reachable byte CFG/DAG instances. \\
+Environment & i7-11700K (16 logical CPUs), 16.6-GB RAM, RTX 3080 Ti (12-GiB VRAM), Linux 7.0.0-30, driver 595.84; CUDA runtime 12.8/toolkit 12.0; one configured CPU thread. \\
+Software/protocol & Python 3.11.16, PyTorch 2.8.0 (Q4 CPU; Q5 \texttt{+cu128}), Transformers 4.52.2, Rust 1.98.0, bitsandbytes 0.50.1. Q5: seeds 125301--125303, 10 repetitions/task/strategy/seed, one warm-up, balanced cyclic order and CUDA synchronization; Q4: seed 1255 and 10 repetitions/backend/point. \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+These fields are transcribed from the versioned Q4/Q5 TOML configurations, the tokenizer audit in \path{docs/evidence/t600-llada-tokenizer-audit.json}, the pinned Q4/Q5 JSONL metadata, and the M12.5 completion audit; they are not inferred from the current machine.
 
 The evaluation addresses five questions: (Q1) does the DP agree with brute force? (Q2) how much weight or cardinality do heuristics lose? (Q3) which abstract false positives are eliminated by finite slots? (Q4) how do runtime and memory scale? and (Q5) does the decoder work end to end? Baselines are brute force, exact serial validation, EPIC/heuristic selection, and unconstrained decoding where available.
 
@@ -535,7 +541,7 @@ The final analysis will discuss where the heuristic already reaches the optimum,
 Weeks & Activity \\ \midrule
 1--4 & final formalization, CKY, backtracking, brute force, and tests \\
 5--8 & lattice, provenance, EOS/PAD, and graph parser \\
-9--11 & tokenizer-aware interface and integration with \ph{model} \\
+9--11 & tokenizer-aware interface and integration with the pinned LLaDA adapter \\
 12--14 & baselines, experiments, profiling, and analysis \\
 15--16 & writing, reproduction, review, and defense preparation \\
 \bottomrule
@@ -545,7 +551,7 @@ Weeks & Activity \\ \midrule
 \section{Limitations and Threats to Validity}
 \label{sec:limitacoes}
 
-A CFG ensures syntax, not types, references, correct execution, or test satisfaction. Exactness also depends on representation: top-$K$ yields an optimum only on the truncated support; an approximate lexical interface limits the guarantee to the implemented semantics; and an explicit lattice may consume substantial memory. The objective sums local utilities and represents neither the sequence's joint probability nor an optimum over the full future trajectory. Configurations will state these limits. Brute force, an independent parser, property tests, recorded seeds, and reproducible artifacts mitigate errors; empirical conclusions remain conditioned on the \ph{models, grammars, data, and hardware used}.
+A CFG ensures syntax, not types, references, correct execution, or test satisfaction. Exactness also depends on representation: top-$K$ yields an optimum only on the truncated support; the implemented raw-byte interface does not provide programming-language lexer semantics; and an explicit lattice may consume substantial memory. The objective sums local utilities and represents neither the sequence's joint probability nor an optimum over the full future trajectory. Configurations state these limits. Brute force, an independent parser, property tests, recorded seeds, and reproducible artifacts mitigate errors; empirical conclusions remain conditioned on the pinned LLaDA checkpoint, generated byte grammars, two structured literal tasks, and recorded i7/RTX 3080 Ti host.
 
 \section{Conclusion and Future Work}
 \label{sec:conclusao}

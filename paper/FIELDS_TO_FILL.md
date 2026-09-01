@@ -8,26 +8,27 @@
 
 ## Practical scope
 
-- [ ] Exact model and revision
-- [ ] Tokenizer and revision
-- [ ] Grammars and tasks
-- [ ] Selected lexical interface
-- [ ] Codebase, fork, commit, and license
-- [ ] Candidate and top-K/support policy
-- [ ] Weight formula
-- [ ] Denoising schedule, per-step budget, and remasking policy
-- [ ] Tie-breaking rule
-- [ ] Progress-fallback rule and infeasibility diagnostics
-- [ ] EOS, PAD, epsilon, and unit-production handling
+- [x] Exact model and revision
+- [x] Tokenizer and revision
+- [x] Grammars and tasks
+- [x] Selected lexical interface
+- [x] Codebase, fork, and implementation/upstream commits
+- [ ] Parent repository release license
+- [x] Candidate and top-K/support policy
+- [x] Weight formula
+- [x] Denoising schedule, per-step budget, and remasking policy
+- [x] Tie-breaking rule
+- [x] Progress-fallback rule and infeasibility diagnostics
+- [x] EOS, PAD, epsilon, and unit-production handling
 
 ## Environment and reproduction
 
-- [ ] CPU, RAM, GPU, and VRAM
-- [ ] Operating system
-- [ ] Python, Rust/C++, and compiler versions
-- [ ] PyTorch, CUDA, and Transformers versions
-- [ ] Thread count
-- [ ] Seeds, repetitions, and reported statistics
+- [x] CPU, RAM, GPU, and VRAM
+- [x] Operating system
+- [x] Python, Rust, and CUDA compiler versions
+- [x] PyTorch, CUDA, Transformers, and bitsandbytes versions
+- [x] Thread count
+- [x] Seeds, repetitions, and reported statistics
 - [ ] Reproduction commands and final repository tag
 
 ## Results
