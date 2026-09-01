@@ -58,8 +58,10 @@ def test_t1301_explicitly_depends_on_t1258() -> None:
     assert "does not append all generated artifacts" in normalized
 
 
-def test_replacement_targets_exist_in_current_manuscript() -> None:
+def test_replacement_targets_were_replaced_by_exactly_r1_through_r3() -> None:
     manuscript = (ROOT / "paper" / "main.tex").read_text(encoding="utf-8")
 
-    assert r"\label{tab:resultados}" in manuscript
-    assert r"\label{tab:cronograma}" in manuscript
+    assert r"\label{tab:resultados}" not in manuscript
+    assert r"\label{tab:cronograma}" not in manuscript
+    assert manuscript.count("generated/m1301_article_results_v1/r") == 3
+    assert r"\section{Results and Analysis}" in manuscript

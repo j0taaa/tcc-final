@@ -105,3 +105,20 @@ exact optimizer step retains an independently validated `exact_on_support`
 certificate. Every task/seed pair records a real EPIC regular-cover call and a
 two-token commit. These rows replace neither the diagnostic T1203 bundle nor
 its single-token fallback label.
+
+## M13 article result selection
+
+`make article-results-check` recomputes the three page-budgeted R1--R3 tables,
+the LaTeX value macros used by the analysis prose, and
+`docs/artifacts/processed/m1301_article_results_v1/article-results.json`.
+`configs/analysis/m1301_article_results_v1.toml` pins the T1203 processed
+summary, Q1 rows, and the M12.5 Q2/Q4/Q5 publication evidence by SHA-256. The
+task-specific builder rejects a Q1 disagreement, a Q4 backend mismatch, an
+unchecked optimal certificate, or a Q5 campaign that did not exercise EPIC
+regular-cover batching. It reuses the existing raw/processed/generated
+convention and does not introduce another generic artifact framework.
+
+The manuscript imports exactly R1--R3. T1203 diagnostic tables and figures
+remain supplementary repository evidence; publication-mode Q4/Q5 values are
+kept separate from those smokes. Generated result files and values must never
+be edited by hand.

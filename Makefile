@@ -6,8 +6,9 @@ EPIC_CPU_INDEX ?= https://download.pytorch.org/whl/cpu
 ARTIFACT_CONFIG ?= configs/analysis/t1201_q3_artifacts_v1.toml
 STATISTICS_CONFIG ?= configs/analysis/t1202_statistics_v1.toml
 FINAL_ARTIFACT_CONFIG ?= configs/analysis/t1203_final_artifacts_v1.toml
+ARTICLE_RESULT_CONFIG ?= configs/analysis/m1301_article_results_v1.toml
 
-.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser artifacts artifacts-check statistics statistics-check final-artifacts final-artifacts-check release-wheel-smoke rehearse-artifact-rebuild rehearse-source-correctness rehearse-cpu-correctness paper clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser artifacts artifacts-check statistics statistics-check final-artifacts final-artifacts-check article-results article-results-check release-wheel-smoke rehearse-artifact-rebuild rehearse-source-correctness rehearse-cpu-correctness paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -93,6 +94,12 @@ final-artifacts:
 final-artifacts-check:
 	$(VENV_PY) scripts/exact_commit/build_final_artifacts.py --config $(FINAL_ARTIFACT_CONFIG) --verify-existing
 
+article-results:
+	$(VENV_PY) scripts/exact_commit/build_article_results.py --config $(ARTICLE_RESULT_CONFIG)
+
+article-results-check:
+	$(VENV_PY) scripts/exact_commit/build_article_results.py --config $(ARTICLE_RESULT_CONFIG) --verify-existing
+
 release-wheel-smoke:
 	$(VENV_PY) scripts/rehearse_release_wheel.py
 
@@ -111,7 +118,7 @@ check: verify-upstream lint typecheck test
 
 check-integration: test-integration
 
-paper:
+paper: article-results-check
 	$(MAKE) -C paper
 
 clean:

@@ -154,6 +154,32 @@ These are expected filenames, not promises of particular measured values.
 Inspect `artifact-manifest.json` for the exact source run IDs, configurations,
 and hashes used by the checked-out commit.
 
+### M13 article result selection
+
+The article uses exactly three compact generated result elements. Verify their
+hash-pinned derivation with:
+
+```bash
+make article-results-check
+```
+
+The provenance chain is:
+
+```text
+configs/analysis/m1301_article_results_v1.toml
+  <- T1203 processed results and pinned Q1 rows
+  <- M12.5 Q2/Q4/Q5 publication summaries and pinned rows
+  -> docs/artifacts/processed/m1301_article_results_v1/article-results.json
+  -> paper/generated/m1301_article_results_v1/article-result-values.tex
+  -> paper/generated/m1301_article_results_v1/r1--r3*.tex
+```
+
+The builder verifies every input SHA-256 and recomputes all displayed values.
+It keeps the synthetic Q2 results illustrative, the real-state singleton gap
+as a null alignment result, and the Q4 compound graph-size axis distinct from
+representative workload scaling. `make paper` depends on this byte-verification
+step, so hand-edited article values fail before LaTeX runs.
+
 ## 4. CPU source-experiment reruns
 
 These commands create new ignored raw/processed run directories. They validate

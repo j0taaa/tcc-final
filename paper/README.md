@@ -4,10 +4,10 @@ This directory contains the SBC-format article for the TCC **“Exact
 Maximum-Weight Parallel Commitment under Context-Free Grammars for Diffusion
 Language Models.”**
 
-The current build has **15 pages**. The manuscript includes the essential
+The current build has **16 pages**. The manuscript includes the essential
 theory, formal definitions, theorems, proofs, three pseudocode listings,
 complexity analysis, implementation methodology, experimental protocol,
-result placeholders, limitations, schedule, and AI-use declaration.
+three generated result elements, limitations, and the AI-use declaration.
 
 ## Files
 

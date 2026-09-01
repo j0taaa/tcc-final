@@ -1,0 +1,39 @@
+schema_version = 1
+artifact_id = "m1301_article_results_v1"
+processed_directory = "docs/artifacts/processed/m1301_article_results_v1"
+paper_directory = "paper/generated/m1301_article_results_v1"
+
+[[inputs]]
+role = "t1203_results"
+path = "docs/artifacts/processed/t1203_final_results_v1/final-results.json"
+expected_sha256 = "1dd39f7f115c5363ab6340faaee178e1ca4d48aa665f7c85d135cfb2fb03827f"
+
+[[inputs]]
+role = "q1_rows"
+path = "docs/artifacts/raw/t1203_final_results_v1/q1-correctness-cases.jsonl"
+expected_sha256 = "62fb83b48c8809a3958df486b387e017ba245e97e4e74e475ca1fb55659ade8a"
+
+[[inputs]]
+role = "q2_real_summary"
+path = "docs/evidence/t1254-q2-real-gap-summary.json"
+expected_sha256 = "dfa49cb7e9c7747475bebf89b28aedd64086f7368f1cda365a446e0c37745ec4"
+
+[[inputs]]
+role = "q4_publication_summary"
+path = "docs/evidence/t1255-q4-publication-summary.json"
+expected_sha256 = "8570ee64c462a8139302867be56a8abc3c7f116cbb589f363a4c29807b5505f1"
+
+[[inputs]]
+role = "q4_publication_rows"
+path = "docs/artifacts/raw/m125_publication_results_v1/q4-scaling-rows.jsonl"
+expected_sha256 = "63abf6a974bdd74f20b34f7f80e9c3d646a30f9385f359a76a4747c86f8eef51"
+
+[[inputs]]
+role = "q5_publication_summary"
+path = "docs/evidence/t1253-q5-publication-summary.json"
+expected_sha256 = "700aa99e870c06704bbd98a4bd481bb2ee1c73c3dbff7843f3cca16a2b7f5ec1"
+
+[[inputs]]
+role = "q5_publication_rows"
+path = "docs/artifacts/raw/m125_publication_results_v1/q5-end-to-end-rows.jsonl"
+expected_sha256 = "8acfb789e14779c9c33c7fec50fb713194797a2a5ae1a2ad59a56f5f5e266f44"

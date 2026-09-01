@@ -33,19 +33,19 @@
 
 ## Results
 
-- [ ] Number and size of brute-force instances
-- [ ] Agreement between dynamic programming and brute force
-- [ ] Observed failures
-- [ ] Witness validity
-- [ ] Weight and cardinality by method
-- [ ] Absolute and relative heuristic gaps
-- [ ] Abstract false positives rejected by finite slots
-- [ ] Per-component and total runtime
-- [ ] Normalized overhead
-- [ ] Peak RAM and VRAM
-- [ ] Number of states, arcs, and chart items
-- [ ] End-to-end validity, steps, and fallback use
-- [ ] Interpretation and limitations of the results
+- [x] Number and size of brute-force instances
+- [x] Agreement between dynamic programming and brute force
+- [x] Observed failures
+- [x] Witness validity
+- [x] Weight and cardinality by method
+- [x] Absolute and relative heuristic gaps
+- [x] Abstract false positives rejected by finite slots
+- [x] Per-component and total runtime
+- [x] Normalized overhead
+- [x] Peak RAM and VRAM
+- [x] Number of states, arcs, and chart items
+- [x] End-to-end validity, steps, and fallback use
+- [x] Interpretation and limitations of the results
 
 ## Academic integrity
 

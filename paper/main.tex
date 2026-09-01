@@ -50,6 +50,7 @@
 \newcommand{\neginf}{-\infty}
 \newcommand{\argmax}{\operatorname*{arg\,max}}
 \newcommand{\indic}{\mathbf{1}}
+\input{generated/m1301_article_results_v1/article-result-values.tex}
 
 \title{Exact Maximum-Weight Parallel Commitment under Context-Free Grammars for Diffusion Language Models}
 
@@ -88,7 +89,7 @@ The overall goal is to develop and demonstrate an exact parallel-commitment algo
 
 The intended contribution is not weighted parsing itself, which is established in the literature, but the formulation of dLLM parallel commitment as a single weighted inference, the tokenizer-aware construction with finite slots, and its integration into an iterative decoder. The claimed optimality is local to the current step: the method maximizes the defined objective over the current proposals and possible completions of the current state. It does not claim to optimize the entire future trajectory because subsequent logits depend on the commitments made.
 
-The rest of this article is organized as follows. Section~\ref{sec:fundamentacao} presents background and related work. Section~\ref{sec:problema} formalizes the problem. Section~\ref{sec:reducao} proves the main reduction. Sections~\ref{sec:tokenaligned} and~\ref{sec:lattice} describe the token-aligned and tokenizer-aware algorithms. Section~\ref{sec:decoder} integrates the optimizer into denoising. Section~\ref{sec:metodologia} specifies implementation and evaluation. Finally, Sections~\ref{sec:resultados}--\ref{sec:conclusao} cover the results to be filled in, limitations, and conclusion.
+The rest of this article is organized as follows. Section~\ref{sec:fundamentacao} presents background and related work. Section~\ref{sec:problema} formalizes the problem. Section~\ref{sec:reducao} proves the main reduction. Sections~\ref{sec:tokenaligned} and~\ref{sec:lattice} describe the token-aligned and tokenizer-aware algorithms. Section~\ref{sec:decoder} integrates the optimizer into denoising. Section~\ref{sec:metodologia} specifies implementation and evaluation. Finally, Sections~\ref{sec:resultados}--\ref{sec:conclusao} present the results, limitations, and conclusion.
 
 \section{Background and Related Work}
 \label{sec:fundamentacao}
@@ -505,48 +506,26 @@ The evaluation addresses five questions: (Q1) does the DP agree with brute force
 
 For a heuristic $H$, the evaluation reports absolute gap $\Delta_H=W(J^*)-W(J_H)$ and, when $W(J^*)>0$, relative gap $\delta_H=\Delta_H/W(J^*)$. Other metrics include witness validity, oracle agreement, batch size, number of steps, fallback use, runtime, and peak RAM/VRAM. Profiling separates model forward, candidate construction, lattice construction, parsing, backtracking, and update. Comparisons run on the same hardware and also use normalized overhead $T_{\mathrm{method}}/T_{\mathrm{baseline}}$.
 
-Automated tests check witness acceptance with an independent parser; matching of every committed proposal; equality between the reconstructed objective and chart score; immutability of fixed positions; compliance with slots/EOS/PAD; and complete agreement with brute force on small instances. The repository must contain locked dependencies, commands, configurations, raw results, and table-generation scripts.
+Automated tests check witness acceptance with an independent parser; matching of every committed proposal; equality between the reconstructed objective and chart score; immutability of fixed positions; compliance with slots/EOS/PAD; and complete agreement with brute force on small instances. The repository contains locked dependencies, commands, configurations, raw results, and table-generation scripts.
 
-\section{Preliminary and Expected Results}
+\section{Results and Analysis}
 \label{sec:resultados}
 
-No result receives a value before its experiment is run. Table~\ref{tab:resultados} identifies the minimum set to fill in. Agreement below $100\%$ against brute force is treated as an implementation error or semantic disagreement, not statistical variation. The method need not outperform the heuristic in runtime: its principal contribution is to provide a certified optimum and characterize its cost.
+Every value in this section is generated from hash-pinned evidence by \path{scripts/exact_commit/build_article_results.py}; fuller T1203 artifacts remain in the repository.
 
-\begin{table}[ht]
-\centering
-\caption{Results to complete after implementation.}
-\label{tab:resultados}
-\footnotesize
-\begin{tabular}{p{4.2cm}p{3.0cm}p{4.0cm}}
-\toprule
-Group & Metric & Result \\ \midrule
-Exactness & instances, agreement, and failures & \ph{values} \\
-Witness & lexical, CFG, and slot validity & \ph{measured values} \\
-Commitment & weight, cardinality, and gap & \ph{values by method} \\
-Cost & runtime, overhead, RAM/VRAM & \ph{values and dispersion} \\
-End-to-end & validity, steps, and fallback & \ph{values by task/model} \\
-\bottomrule
-\end{tabular}
-\end{table}
+\input{generated/m1301_article_results_v1/r1-correctness-finite-slots.tex}
 
-The final analysis will discuss where the heuristic already reaches the optimum, when commitment gains justify overhead, which component dominates cost, at which sizes the lattice becomes limiting, and how many abstractly completable states are impossible within the real canvas.
+Across Q1's \MThirteenQOneCases{} cases (\MThirteenQOneMinSlots--\MThirteenQOneMaxSlots{} slots; at most \MThirteenQOneMaxPaths{} paths), the oracle, Python, and Rust agreed with \MThirteenQOneFailures{} failures; \MThirteenQOneOptimalCases{} optima yielded \MThirteenQOneCertificateChecks{} independent certificate validations. This supports configured \texttt{exact\_on\_support}, not full-vocabulary exactness. In Q3, an abstract witness needed \MThirteenQThreeRequiredTokens{} tokens in \MThirteenQThreeAvailableSlots{} slot; finite accounting instead returned support infeasibility or the lower-weight EOS-only witness.
 
-\begin{table}[ht]
-\centering
-\caption{Proposed schedule, adjustable with the advisor.}
-\label{tab:cronograma}
-\footnotesize
-\begin{tabular}{p{1.7cm}p{9.5cm}}
-\toprule
-Weeks & Activity \\ \midrule
-1--4 & final formalization, CKY, backtracking, brute force, and tests \\
-5--8 & lattice, provenance, EOS/PAD, and graph parser \\
-9--11 & tokenizer-aware interface and integration with the pinned LLaDA adapter \\
-12--14 & baselines, experiments, profiling, and analysis \\
-15--16 & writing, reproduction, review, and defense preparation \\
-\bottomrule
-\end{tabular}
-\end{table}
+\input{generated/m1301_article_results_v1/r2-heuristic-gap.tex}
+
+The synthetic Q2 cases demonstrate losses: unit-weight median gaps were \MThirteenQTwoUnitSerialGap{} (serial) and \MThirteenQTwoUnitEpicGap{} (EPIC), while confidence-mode EPIC's median gap was \MThirteenQTwoConfidenceEpicGap{}. They are illustrative, not typical-model estimates. All \MThirteenQTwoRealSnapshots{} replayed snapshots became singleton supports after deduplication, so both heuristics tied exact; this null result checks alignment but cannot estimate a representative gap.
+
+\input{generated/m1301_article_results_v1/r3-scaling-integration.tex}
+
+Q4 recorded \MThirteenQFourMeasurements{} certified measurements over \MThirteenQFourPoints{} settings and \MThirteenQFourRepetitions{} repetitions, with all \MThirteenQFourComparisons{} backend pairs agreeing and no timeout, censoring, or error. The envelope reached \MThirteenQFourMaxNodes{} nodes, \MThirteenQFourMaxEdges{} edges, and \MThirteenQFourMaxChart{} chart entries. Pooled descriptively, byte expansion was the largest named median component (\MThirteenQFourPythonNamedMs{} ms Python; \MThirteenQFourRustNamedMs{} ms Rust), while Rust's largest bucket was \MThirteenQFourRustOverheadMs{} ms of unattributed instrumentation/FFI overhead. The compound graph axis does not isolate a cause or represent code workloads.
+
+Across Q5's \MThirteenQFiveRows{} warm CUDA generations (\MThirteenQFiveTasks{} tasks, \MThirteenQFiveSeeds{} seeds, \MThirteenQFiveStrategies{} strategies), every constrained output passed the independent checker. EPIC batched up to \MThirteenQFiveEpicMaxBatch{} yet retained serial selections; exact produced \MThirteenQFiveExactCertificates{} valid certificates with no fallback/expansion. Exact/serial median-runtime ratios were \MThirteenQFiveJsonRatio{} (JSON) and \MThirteenQFiveDslRatio{} (DSL). These literal-target results demonstrate integration, not broad quality or workload superiority.
 
 \section{Limitations and Threats to Validity}
 \label{sec:limitacoes}
@@ -556,11 +535,7 @@ A CFG ensures syntax, not types, references, correct execution, or test satisfac
 \section{Conclusion and Future Work}
 \label{sec:conclusao}
 
-This article presented the theoretical basis of a decoder that replaces heuristic subset choice with one global weighted inference. The main result shows that, with non-negative weights, maximizing compatible-proposal weight is equivalent to finding the highest-reward feasible completion. In the token-aligned version, max-plus CKY solves the problem in polynomial time. In the tokenizer-aware version, a finite lattice preserves positions, tokens, weights, detokenization, lexing, and the actual number of slots; a max-plus graph parser recovers the witness and optimal batch.
-
-The intended properties are verifiable independently of empirical gains: soundness guarantees that every returned batch has a witness; completeness guarantees that represented completions are not ignored; optimality guarantees maximum weight at the step; and finite-slot exactness excludes witnesses that require more tokens than the canvas provides. The iterative decoder preserves completion feasibility by induction and terminates when every step commits at least one mask.
-
-The final version will fill in the \ph{main results} and discuss observed cost. Future work includes incremental parsing between steps, lazy composition with the full vocabulary, lexicographic objectives, an exact commitment budget, support for lightweight contextual constraints, and CFG-conditioned sampling. The latter must not be conflated with the maximization developed here because summing probability mass under ambiguous grammars has different difficulties.
+For non-negative weights, the highest-reward representable CFG completion identifies an optimal per-step proposal batch and witness. Token-aligned CKY and the finite graph parser preserve the declared grammar, fixed positions, and slots; configured evidence supports oracle agreement and live integration. Singleton real-state supports do not establish a representative gap. Future work includes difficult real supports, incremental parsing, lazy full-vocabulary composition, richer commitment objectives, contextual constraints, and CFG-conditioned sampling, whose probability-mass problem remains distinct from this maximization.
 
 \section*{Acknowledgments and AI-Use Statement}
 

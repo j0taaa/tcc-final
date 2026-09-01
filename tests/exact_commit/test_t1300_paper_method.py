@@ -24,7 +24,7 @@ def test_t1300_method_section_has_no_implementation_placeholders() -> None:
     article = _article()
     method = article.split(
         r"\section{Implementation and Evaluation Methodology}", maxsplit=1
-    )[1].split(r"\section{Preliminary and Expected Results}", maxsplit=1)[0]
+    )[1].split(r"\section{Results and Analysis}", maxsplit=1)[0]
 
     assert r"\ph{" not in method
     for stale_placeholder in (
