@@ -2,9 +2,9 @@
 
 ## Identification
 
-- [ ] Advisor name
-- [ ] Campus and institutional address
-- [ ] Email addresses
+- [x] Advisor name
+- [x] Campus and institutional address
+- [x] Email addresses
 
 ## Practical scope
 
