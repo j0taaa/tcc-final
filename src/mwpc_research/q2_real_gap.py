@@ -7,7 +7,7 @@ import json
 from collections import Counter
 from collections.abc import Iterable, Mapping, Sequence
 from itertools import product
-from math import fsum, isclose, prod
+from math import fsum, isclose, isfinite, prod
 from pathlib import Path
 from typing import Any, cast
 
@@ -82,6 +82,8 @@ def build_real_snapshot_instance(
     for position, fixed in enumerate(canvas_actual):
         if fixed is not None and fixed != target_actual[position]:
             raise ValueError("real Q2 fixed canvas token differs from the target witness")
+        if fixed is None and (not isfinite(confidence[position]) or confidence[position] < 0.0):
+            raise ValueError("real Q2 masked-position confidence must be finite and non-negative")
 
     proposal_actual = {
         token_id
@@ -192,7 +194,10 @@ def build_real_snapshot_instance(
     snapshot_payload = {
         "actual_canvas_token_ids": list(canvas_actual),
         "actual_predicted_token_ids": list(predicted_actual),
-        "confidence_values": list(confidence),
+        "confidence_values": [
+            None if fixed is not None else confidence[position]
+            for position, fixed in enumerate(canvas_actual)
+        ],
         "actual_to_local_token_ids": [
             {"actual_token_id": actual, "local_token_id": local}
             for local, actual in enumerate(actual_vocabulary)

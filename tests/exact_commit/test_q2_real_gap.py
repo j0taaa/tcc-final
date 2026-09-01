@@ -115,6 +115,23 @@ def test_all_valid_support_gets_out_of_support_negative_alignment_sentinel() -> 
     assert row["selector_results"]["exact_mwpc"]["status"] == "optimal"
 
 
+def test_fixed_position_infinite_confidence_is_not_serialized_as_a_weight() -> None:
+    instance = build_real_snapshot_instance(
+        instance_id="real-ab-fixed-confidence",
+        grammar=_literal_ab_grammar(),
+        target_token_ids=(0, 1),
+        canvas_token_ids=(0, None),
+        predicted_token_ids=(0, 1),
+        confidence_values=(float("inf"), 0.8),
+        source_adapter=CompositionalByteLevelAdapter((b"a", b"b")),
+        decode_actual_token=lambda token_id: ("a", "b")[token_id],
+        metadata={"task_id": "ab", "seed": 7, "selected_state_rank": 0},
+    )
+
+    assert instance.metadata["snapshot_payload"]["confidence_values"] == (None, 0.8)
+    assert "Infinity" not in instance.to_json(indent=None)
+
+
 def test_real_summary_keeps_real_snapshot_denominators_and_zero_optima() -> None:
     row = replay_real_snapshot(_instance(), timeout_seconds=5.0, maximum_support_combinations=16)
     summary = summarize_real_rows((row,))
