@@ -158,7 +158,7 @@ def main() -> int:
                     "schema_version": Q2_REAL_SCHEMA_VERSION,
                     "snapshot_id": instance.instance_id,
                     "snapshot_sha256": instance.fingerprint,
-                    "source": dict(instance.metadata),
+                    "source": instance.to_dict()["metadata"],
                     "success": False,
                     "error_type": type(error).__name__,
                     "error_message": str(error),

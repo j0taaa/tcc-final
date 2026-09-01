@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -88,6 +89,7 @@ def test_real_snapshot_replays_three_selectors_and_validates_exact_certificate()
         row["selector_results"][name]["selected_subset_feasible"] is True
         for name in ("greedy_exact_feasibility", "epic_regular_cover")
     )
+    assert json.loads(json.dumps(row, allow_nan=False))["snapshot_id"] == "real-ab-state0"
 
 
 def test_all_valid_support_gets_out_of_support_negative_alignment_sentinel() -> None:

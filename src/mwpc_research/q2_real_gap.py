@@ -269,6 +269,10 @@ def replay_real_snapshot(
 ) -> dict[str, object]:
     """Replay three selectors and independently validate exact and baseline outputs."""
 
+    serialized_instance = instance.to_dict()
+    source_metadata = serialized_instance["metadata"]
+    if not isinstance(source_metadata, Mapping):
+        raise TypeError("real Q2 snapshot metadata must be a mapping")
     if maximum_support_combinations <= 0:
         raise ValueError("maximum support combinations must be positive")
     support_combinations = prod(len(row) for row in instance.selection_input.support.rows)
@@ -345,7 +349,7 @@ def replay_real_snapshot(
         "schema_version": Q2_REAL_SCHEMA_VERSION,
         "snapshot_id": instance.instance_id,
         "snapshot_sha256": instance.fingerprint,
-        "source": dict(instance.metadata),
+        "source": dict(source_metadata),
         "support_sha256": selection_input.support.fingerprint,
         "support_combination_count": support_combinations,
         "support_specification": selection_input.support.exactness_scope.to_dict(),
