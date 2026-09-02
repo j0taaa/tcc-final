@@ -51,6 +51,6 @@
 
 - [x] Review every proof against the final implementation
 - [x] Update the related-work search
-- [ ] Verify every bibliographic reference
+- [x] Verify every bibliographic reference
 - [x] Complete the AI-use declaration
 - [ ] Submit the manuscript for advisor review
