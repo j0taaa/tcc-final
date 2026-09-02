@@ -893,5 +893,7 @@ Fill this section only with real artifacts.
   `docs/evidence/t1102-q2-heuristic-gap-summary.json`
 - Scaling experiment artifact: `docs/evidence/t1255-q4-publication-summary.json`
 - End-to-end experiment artifact: `docs/evidence/t1253-q5-publication-summary.json`
-- Reproduction release/tag: [`v0.1.0`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.0), commit `08f59455620630c3b5b0e29f69171af69f515662`
-- Final TCC PDF/source commit: [`mwpc-exact-v0.1.0-paper.pdf`](https://github.com/j0taaa/tcc-final/releases/download/v0.1.0/mwpc-exact-v0.1.0-paper.pdf), source tag `v0.1.0`
+- Parent release license: MIT; scope and release evidence in
+  `docs/evidence/submission-license-release.md`
+- Reproduction release/tag: [`v0.1.1`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.1), commit `3db85bb0ec7e4416352b74832e8a6750af8bcaf2`
+- Final TCC PDF/source commit: [`mwpc-exact-v0.1.1-paper.pdf`](https://github.com/j0taaa/tcc-final/releases/download/v0.1.1/mwpc-exact-v0.1.1-paper.pdf), source tag `v0.1.1`

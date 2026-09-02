@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 MIT_COPYRIGHT = "Copyright (c) 2026 Gabriel Jota Lizardo"
+EVIDENCE = "docs/evidence/submission-license-release.md"
 
 
 def _read(relative: str) -> str:
@@ -55,3 +56,20 @@ def test_submission_checklist_and_article_record_the_resolved_license() -> None:
     assert "Parent software and research artifacts use MIT" in article
     assert "Parent release license is pending" not in article
     assert "j0taaa/tcc-final@v0.1.1" in article
+
+
+def test_licensed_release_evidence_is_versioned_and_current() -> None:
+    evidence = _read(EVIDENCE)
+    tasks = _read("TASKS.md")
+
+    for value in (
+        "3db85bb0ec7e4416352b74832e8a6750af8bcaf2",
+        "33584766533",
+        "26195f5129bcfb9a09f4c8f892aa4c1708f3f405c78a7d9e3a57858f76ecd1be",
+        "f1bb235b40f17ad5f3fd2840fd6511f6fe4ba819fa43c5c1f9d5d90594d86037",
+        "249/249 agreement",
+        "334 certificate validations",
+    ):
+        assert value in evidence
+    assert "v0.1.1" in tasks
+    assert EVIDENCE in tasks
