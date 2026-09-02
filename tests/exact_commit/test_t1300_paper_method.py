@@ -164,9 +164,12 @@ def test_hardware_and_software_fields_match_pinned_q4_q5_metadata() -> None:
         assert recorded_value in article
 
 
-def test_unresolved_parent_license_is_reported_instead_of_invented() -> None:
+def test_resolved_parent_license_is_reported_with_separate_scopes() -> None:
     article = _article()
     licenses = (ROOT / "LICENSES.md").read_text(encoding="utf-8")
 
-    assert "[LICENSE TO BE CHOSEN]" in licenses
-    assert "Parent release license is pending" in article
+    assert "[LICENSE TO BE CHOSEN]" not in licenses
+    assert "MIT License" in licenses
+    assert "manuscript" in licenses
+    assert "Parent software and research artifacts use MIT" in article
+    assert "manuscript rights remain separate" in article

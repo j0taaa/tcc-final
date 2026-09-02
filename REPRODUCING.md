@@ -1,7 +1,7 @@
 # Reproducing the MWPC research artifacts
 
 The immutable private-repository reproducibility release is
-[`v0.1.0`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.0). Its tag is
+[`v0.1.1`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.1). Its tag is
 the common source reference for the code, paper, configurations, and evidence
 archive; individual experiment rows retain their earlier producing commits.
 
@@ -34,7 +34,7 @@ Clone the repository and its read-only EPIC submodule, then create the main CPU
 environment:
 
 ```bash
-git clone --branch v0.1.0 --recurse-submodules \
+git clone --branch v0.1.1 --recurse-submodules \
   https://github.com/j0taaa/tcc-final.git
 cd tcc-final
 make bootstrap
@@ -342,8 +342,8 @@ make paper
 
 The expected local output is `paper/main.pdf`. It is ignored because it is a
 build product; the versioned LaTeX sources and generated table/figure inputs
-are the reproducibility boundary. The `v0.1.0` GitHub release also carries the
+are the reproducibility boundary. The `v0.1.1` GitHub release also carries the
 verified PDF, an evidence-only archive, and their `SHA256SUMS`. The archive is
 not a substitute for the tagged recursive clone because it intentionally does
 not copy the EPIC submodule; its exact contents and rebuild command are in
-`docs/releases/v0.1.0.md`.
+`docs/releases/v0.1.1.md`.

@@ -30,9 +30,13 @@ def _isolated_python(environment: Path) -> Path:
     return environment / "bin" / "python"
 
 
-def _inspect_wheel(wheel: Path) -> dict[str, int]:
+def _inspect_wheel(wheel: Path) -> dict[str, object]:
     with zipfile.ZipFile(wheel) as archive:
         names = tuple(archive.namelist())
+        metadata_names = [name for name in names if name.endswith(".dist-info/METADATA")]
+        if len(metadata_names) != 1:
+            raise RuntimeError(f"expected one wheel METADATA file, found {metadata_names!r}")
+        metadata = archive.read(metadata_names[0]).decode("utf-8")
     counts = {
         package: sum(name.startswith(f"{package}/") and name.endswith(".py") for name in names)
         for package in ("mwpc_exact", "mwpc_research")
@@ -40,7 +44,12 @@ def _inspect_wheel(wheel: Path) -> dict[str, int]:
     missing = [package for package, count in counts.items() if count == 0]
     if missing:
         raise RuntimeError(f"release wheel omits package trees: {', '.join(missing)}")
-    return counts
+    license_files = [name for name in names if name.endswith(".dist-info/licenses/LICENSE")]
+    if len(license_files) != 1:
+        raise RuntimeError(f"expected one packaged MIT license, found {license_files!r}")
+    if "License-Expression: MIT" not in metadata:
+        raise RuntimeError("wheel METADATA does not declare License-Expression: MIT")
+    return {"license": "MIT", "license_files": len(license_files), "python_files": counts}
 
 
 def _copy_statistical_fixture(smoke_root: Path) -> Path:
@@ -73,7 +82,7 @@ def main() -> int:
         if len(wheels) != 1:
             raise RuntimeError(f"expected one built wheel, found {len(wheels)}")
         wheel = wheels[0]
-        package_file_counts = _inspect_wheel(wheel)
+        wheel_inventory = _inspect_wheel(wheel)
 
         environment = root / "wheel-environment"
         venv.EnvBuilder(with_pip=True, clear=False).create(environment)
@@ -152,7 +161,7 @@ def main() -> int:
                 {
                     "artifact_generator": "PASS",
                     "experiment": "PASS",
-                    "package_python_files": package_file_counts,
+                    "wheel_inventory": wheel_inventory,
                     "source_tree_leakage": False,
                     "wheel": wheel.name,
                 },

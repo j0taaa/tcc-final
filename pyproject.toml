@@ -4,11 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mwpc-exact"
-version = "0.1.0"
+version = "0.1.1"
 description = "Exact maximum-weight parallel commitment for CFG-constrained diffusion language models"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
-license = { text = "Research code; see LICENSES.md and the pinned EPIC submodule licenses" }
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [{ name = "Gabriel Jota Lizardo" }]
 dependencies = []
 

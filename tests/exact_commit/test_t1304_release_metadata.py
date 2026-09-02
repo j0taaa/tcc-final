@@ -5,7 +5,8 @@ import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-TAG = "v0.1.0"
+TAG = "v0.1.1"
+RELEASE_PATH = "docs/releases/v0.1.1.md"
 
 
 def _read(relative: str) -> str:
@@ -19,21 +20,22 @@ def test_release_reference_is_consistent_across_repository_and_paper() -> None:
     for relative in (
         "README.md",
         "REPRODUCING.md",
-        "docs/releases/v0.1.0.md",
+        RELEASE_PATH,
         "paper/main.tex",
     ):
         assert TAG in _read(relative), relative
-    assert "git clone --branch v0.1.0 --recurse-submodules" in _read(
+    assert "git clone --branch v0.1.1 --recurse-submodules" in _read(
         "REPRODUCING.md"
     ).replace("\\\n  ", "")
 
 
 def test_release_archive_covers_required_versioned_evidence_layers() -> None:
-    release = _read("docs/releases/v0.1.0.md")
+    release = _read(RELEASE_PATH)
 
     for required_path in (
         "REPRODUCING.md",
         "UPSTREAM.md",
+        "LICENSE",
         "LICENSES.md",
         "configs",
         "docs/artifacts",
@@ -42,15 +44,15 @@ def test_release_archive_covers_required_versioned_evidence_layers() -> None:
     ):
         assert required_path in release
         assert (ROOT / required_path).exists()
-    assert "mwpc-exact-v0.1.0-paper.pdf" in release
-    assert "mwpc-exact-v0.1.0-evidence.tar.gz" in release
+    assert "mwpc-exact-v0.1.1-paper.pdf" in release
+    assert "mwpc-exact-v0.1.1-evidence.tar.gz" in release
     assert "SHA256SUMS" in release
     assert "evidence-only archive" in release
     assert "not a standalone source checkout" in release
 
 
 def test_release_records_scientific_and_external_boundaries() -> None:
-    release = _read("docs/releases/v0.1.0.md")
+    release = _read(RELEASE_PATH)
     normalized = " ".join(release.split())
 
     for boundary in (
@@ -62,7 +64,7 @@ def test_release_records_scientific_and_external_boundaries() -> None:
         "two literal structured tasks",
         "GSAI-ML/LLaDA-8B-Instruct",
         "Weights, caches, and credentials are not archived",
-        "parent research-code license remains an author decision",
+        "The MIT parent license does not replace EPIC's license",
     ):
         assert boundary in normalized
 

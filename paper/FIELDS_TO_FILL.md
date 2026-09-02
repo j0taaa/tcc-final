@@ -13,7 +13,7 @@
 - [x] Grammars and tasks
 - [x] Selected lexical interface
 - [x] Codebase, fork, and implementation/upstream commits
-- [ ] Parent repository release license
+- [x] Parent repository release license
 - [x] Candidate and top-K/support policy
 - [x] Weight formula
 - [x] Denoising schedule, per-step budget, and remasking policy

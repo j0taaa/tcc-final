@@ -3,6 +3,7 @@ name = "mwpc_parser_py"
 version = "0.1.0"
 edition = "2021"
 description = "Thin PyO3 boundary for the independent MWPC Rust parser"
+license = "MIT"
 
 [lib]
 name = "mwpc_parser_py"

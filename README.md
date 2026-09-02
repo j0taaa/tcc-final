@@ -19,11 +19,11 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 ## Setup
 
 The immutable reproducibility release is
-[`v0.1.0`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.0). Check it
+[`v0.1.1`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.1). Check it
 out explicitly so the source, configs, paper, and evidence paths stay aligned:
 
 ```bash
-git clone --branch v0.1.0 --recurse-submodules \
+git clone --branch v0.1.1 --recurse-submodules \
   https://github.com/j0taaa/tcc-final.git
 cd tcc-final
 make bootstrap
@@ -31,7 +31,7 @@ source .venv/bin/activate
 make check
 ```
 
-Omit `--branch v0.1.0` only when intentionally following development on
+Omit `--branch v0.1.1` only when intentionally following development on
 `main`.
 
 Artifact regeneration, clean CPU rehearsal, parser-binding, and optional CUDA
@@ -107,4 +107,8 @@ paper/                     SBC LaTeX article
 
 ## Attribution
 
-EPIC remains governed by its own license and third-party notices inside the submodule. The exact upstream commit is recorded in `UPSTREAM.md`.
+Gabriel Jota Lizardo's original parent-repository software and research
+artifacts are MIT-licensed; the manuscript's publication rights remain
+separate. EPIC remains governed by its own license and third-party notices
+inside the submodule. See `LICENSE`, `LICENSES.md`, and `UPSTREAM.md` for the
+exact scopes and pinned upstream commit.
