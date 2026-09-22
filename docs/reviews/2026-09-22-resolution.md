@@ -82,5 +82,15 @@ upstream indicados em AGENTS.md; ruff check src tests scripts; mypy src;
 make final-artifacts-check article-results-check; scripts/rehearse_release_wheel.py;
 make -C paper. Os executáveis Python foram os ambientes locais fixados do projeto.
 
-Os gates de checkout limpo e os arquivos finais da release são registrados
-abaixo depois de concluídos. A entrega v0.2.0 é local; não houve push remoto.
+Os dois gates de checkout limpo passaram no commit
+f7eeccca96874c6bb4792d494c7f51657d818565:
+reconstrução byte a byte dos artefatos históricos e novos; e experimento Q1
+a partir de wheel/binding novos, com 249/249 acordos e 334 validações.
+A suíte completa nesse checkout passou novamente com 837 testes.
+O PDF final tem 18 páginas, sem referências indefinidas ou caixas excedendo
+as margens. O registro estruturado é docs/evidence/m17-review-verification.json.
+
+A entrega v0.2.0 é local, com PDF, bundle Git, arquivo de evidências e SHA256SUMS
+em dist/. Não houve push remoto. As últimas alterações de fechamento apenas
+registram esses gates; código, configurações e resultados medidos permanecem
+os que foram verificados.

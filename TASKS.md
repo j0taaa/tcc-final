@@ -16,8 +16,8 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-The 22 September review reopens the resource correctness gate before further
-measurements. The user authorized resolving every review finding except LAVE.
+M17 closes the 22 September review, except LAVE as requested. The current local
+submission is v0.2.0; verification is in docs/evidence/m17-review-verification.json.
 
 ## M17 — Review closure and local submission release
 
@@ -33,7 +33,7 @@ remaining live-evidence work in T1603; T1703 closes T1604 when its gates pass.
 - [x] T1702: Correct normalized-DAG pseudocode and token-level H composition;
   add a worked example; revise abstracts, result interpretation and table layout.
   Keep LAVE outside the requested changes.
-- [ ] T1703: Align a new local release, manuscript and reproducible evidence;
+- [x] T1703: Align a new local release, manuscript and reproducible evidence;
   run complete tests, packaging/artifact and clean-checkout gates. No remote push.
 
 **Evidence:** Timeout regressions and 1,500 M5/M6/M7 oracle cases pass. New raw
@@ -68,12 +68,12 @@ reproducible tests of explicit hypotheses, not necessarily positive results.
   failures and measuring functional quality separately from syntax/runtime.
   - Resolved by M17: GPU became available; both pilots and disjoint confirmation
     completed, and all saved-state replay conditions were retained.
-- [ ] T1604: Generate source-linked analyses; rerun correctness, baseline,
+- [x] T1604: Generate source-linked analyses; rerun correctness, baseline,
   packaging and artifact gates. Update manuscript claims only from committed
   code/configs and immutable raw evidence. No broad superiority claim without
   supporting measurements.
-  - Source/config checkpoints are now local commits. Final clean release gates
-    are tracked by T1703; no remote branch or history was changed.
+  - Resolved by T1703: local source checkpoints, immutable measured evidence,
+    both clean-checkout gates and the revised manuscript are complete.
 
 **Evidence:** Prospective design in ADR 0023; 817 Python tests, 22 Rust tests,
 strict MyPy (75 files), Ruff, format/Clippy, isolated wheel/sdist and preserved
@@ -989,7 +989,7 @@ unreadable tables.
 
 ---
 
-# Final evidence index
+# Historical v0.1.1 evidence index
 
 Fill this section only with real artifacts.
 
@@ -1008,3 +1008,13 @@ Fill this section only with real artifacts.
   `docs/evidence/submission-license-release.md`
 - Reproduction release/tag: [`v0.1.1`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.1), commit `3db85bb0ec7e4416352b74832e8a6750af8bcaf2`
 - Final TCC PDF/source commit: [`mwpc-exact-v0.1.1-paper.pdf`](https://github.com/j0taaa/tcc-final/releases/download/v0.1.1/mwpc-exact-v0.1.1-paper.pdf), source tag `v0.1.1`
+
+## Current v0.2.0 evidence index
+
+- Local release: docs/releases/v0.2.0.md; no remote publication.
+- Review corrections: docs/reviews/2026-09-22-resolution.md.
+- Verification: docs/evidence/m17-review-verification.json.
+- Immutable new measurements: docs/artifacts/raw/m17_review_v1/.
+- Generated analysis: paper/generated/m17_review_v1/summary.json.
+- Revised PDF: dist/mwpc-exact-v0.2.0-paper.pdf, source tag v0.2.0.
+- Source delivery: dist/mwpc-exact-v0.2.0.bundle; checksums in dist/SHA256SUMS.

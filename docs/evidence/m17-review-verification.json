@@ -1,0 +1,61 @@
+{
+  "validated_commit": "f7eeccca96874c6bb4792d494c7f51657d818565",
+  "python": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+    "passed": 837
+  },
+  "rust": {
+    "command": "make test-rust-parser",
+    "unit_passed": 21,
+    "differential_passed": 3,
+    "format": "pass",
+    "clippy": "pass"
+  },
+  "upstream": {
+    "passed": 19,
+    "existing_skips": 4,
+    "source_unchanged": true
+  },
+  "normal_differential_campaigns": {
+    "m5": 500,
+    "m6": 500,
+    "m7": 500,
+    "failures": 0
+  },
+  "lint": "pass",
+  "mypy": {
+    "status": "pass",
+    "files": 78
+  },
+  "artifacts": {
+    "historical": "byte_verified",
+    "m17": "raw_hashes_and_generated_outputs_verified"
+  },
+  "wheel": {
+    "version": "0.2.0",
+    "isolated_imports": "pass",
+    "experiment": "pass",
+    "artifact_generator": "pass",
+    "source_tree_leakage": false
+  },
+  "clean_artifact_rebuild": {
+    "status": "pass",
+    "source_commit": "f7eeccca96874c6bb4792d494c7f51657d818565",
+    "includes_m17": true
+  },
+  "clean_source_experiment": {
+    "status": "pass",
+    "source_commit": "f7eeccca96874c6bb4792d494c7f51657d818565",
+    "oracle_cases": 249,
+    "certificate_checks": 334,
+    "timing_fields_compared": false
+  },
+  "pdf": {
+    "pages": 18,
+    "undefined_references": false,
+    "overfull_boxes": false,
+    "visual_review": "all_pages_checked"
+  },
+  "exclusion": "LAVE discussion not changed",
+  "publication": "local_only_no_remote_push"
+}

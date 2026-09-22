@@ -397,8 +397,7 @@ make paper
 
 The expected local output is `paper/main.pdf`. It is ignored because it is a
 build product; the versioned LaTeX sources and generated table/figure inputs
-are the reproducibility boundary. The `v0.1.1` GitHub release also carries the
-verified PDF, an evidence-only archive, and their `SHA256SUMS`. The archive is
-not a substitute for the tagged recursive clone because it intentionally does
-not copy the EPIC submodule; its exact contents and rebuild command are in
-`docs/releases/v0.1.1.md`.
+are the reproducibility boundary. The current local v0.2.0 delivery in dist/
+contains the PDF, Git bundle, evidence archive and SHA256SUMS; see
+docs/releases/v0.2.0.md. The source bundle requires the pinned EPIC submodule
+for baseline execution. The historical remote v0.1.1 assets remain unchanged.
