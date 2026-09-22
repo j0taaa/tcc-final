@@ -8,6 +8,16 @@ torch = pytest.importorskip("torch")
 baseline = pytest.importorskip("constrained_diffusion.eval.dllm.models.llada.generate_constrained")
 
 
+def test_live_observer_keeps_logits_mutable_for_upstream_resampling():
+    from scripts.exact_commit.run_nonliteral_live import observed_forward
+
+    result = observed_forward(torch, lambda _: torch.ones(2, requires_grad=True) * 2, None)
+    assert not result.requires_grad
+    assert not result.is_inference()
+    result[0] = -float("inf")
+    assert result[0] == -float("inf")
+
+
 @pytest.mark.parametrize("slots,steps", [(16, 8), (12, 6), (32, 16), (7, 3)])
 def test_schedule_equals_the_actual_upstream_transfer_counts(slots: int, steps: int) -> None:
     actual = baseline.get_num_transfer_tokens(torch.ones((1, slots), dtype=torch.bool), steps)

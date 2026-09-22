@@ -46,6 +46,13 @@ from mwpc_research.recursive_tasks import RecursiveTask, epic_grammar_spec, recu
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def observed_forward(torch, model, tokens, *args, **kwargs):
+    # Baseline resampling modifies logits after this call. Inference tensors
+    # cannot be modified there; no_grad preserves the baseline's own contract.
+    with torch.no_grad():
+        return model(tokens, *args, **kwargs)
+
+
 def write_json(path, value, *, exclusive=True):
     with path.open("x" if exclusive else "w", encoding="utf-8") as output:
         json.dump(value, output, allow_nan=False, sort_keys=True)
@@ -233,8 +240,7 @@ def worker(directory, config):
                 def __call__(self, tokens, *args, **kwargs):
                     torch.cuda.synchronize()
                     begin = time.perf_counter()
-                    with torch.inference_mode():
-                        output = model(tokens, *args, **kwargs)
+                    output = observed_forward(torch, model, tokens, *args, **kwargs)
                     torch.cuda.synchronize()
                     self.forward_seconds += time.perf_counter() - begin
                     if (
@@ -429,6 +435,10 @@ def main():
         canonical_json_sha256(recursive_grammar(f).to_dict())
         for f in ("brackets", "arithmetic", "nested_json")
     ]
+    import importlib.metadata
+
+    import torch
+
     metadata = capture_run_metadata(
         config,
         run_id=directory.name,
@@ -436,6 +446,12 @@ def main():
         grammar_sha256=hashes,
         require_rust=True,
         require_ml_stack=True,
+        software_overrides={"cuda_runtime": torch.version.cuda},
+        additional={
+            "live_dependency_versions": {
+                name: importlib.metadata.version(name) for name in ("bitsandbytes", "tokenizers")
+            }
+        },
     )
     if metadata["git_dirty"]:
         raise RuntimeError("commit the generating code/config before live measurements")

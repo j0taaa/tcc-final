@@ -37,3 +37,13 @@ Source and configuration changes after a failed pilot require a new commit
 and configuration ID. Keep every attempted campaign, including operational
 failures. The manuscript must distinguish corrected nonliteral observations
 from historical literal tasks whose unequal proposal budgets confounded speed.
+
+## Pilot v1 operational correction
+
+The first frozen pilot (source 9444c84) produced all 60 rows and 24 snapshots.
+Its observation wrapper created inference tensors, conflicting with upstream
+resampling that modifies logits outside inference mode (18 error rows). The
+wrapper now uses no_grad, matching the baseline, with an executable regression.
+The parent also records the observed CUDA runtime in common metadata; v1 kept
+its missing-metadata warning. Pilot v2 changes only these observation details;
+no tasks, budgets, rankings or success criteria are tuned. Preserve both runs.

@@ -246,6 +246,12 @@ The theorem eliminates the need to represent subsets in the search space. The pa
 
 The grammar need not be unambiguous: reward is attached to tokens or arcs and productions are neutral, so derivations of one completion have equal value. Equal scores use stable traversal; no lexicographic secondary objective is implemented or claimed.
 
+\subsection{A worked commitment example}
+
+Let $G$ generate exactly \texttt{abx}, \texttt{bax}, and \texttt{bby}, and let the three-slot canvas be entirely masked. Consider proposals $(1,\mathtt{a},4)$, $(2,\mathtt{a},3)$, and $(3,\mathtt{y},2)$. Each proposal is individually feasible. However, the first two cannot coexist because no valid string starts with \texttt{aa}. The three completions score 4, 3, and 2, respectively; thus the optimum is \texttt{abx}, committing the first proposal with weight 4. A policy that first accepts the second proposal can retain only weight 3. The completion certifies compatibility; the decoder need not commit every token it contains.
+
+Slot accounting is a separate issue. With one remaining slot whose tokens emit only \texttt{a} or \texttt{b}, the grammar $S\rightarrow\mathtt{a}\mathtt{b}$ is infeasible. An abstract $\Sigma^*$ gap accepts \texttt{ab} and gives a false positive. If the tokenizer also contains a single token emitting \texttt{ab} and that token is represented in the slot, the same grammar becomes feasible. The bound counts token choices, not emitted characters.
+
 \section{Token-Aligned Algorithm}
 \label{sec:tokenaligned}
 
@@ -340,10 +346,10 @@ When the model permits early termination, the lattice is composed with a regular
 Each token may emit a byte string. Conceptually, compose
 \begin{equation}
 A_{\mathrm{lex}}=
-A_{\mathrm{tok}}\circ T_{\mathrm{detok}}\circ T_{\mathrm{lex}}\circ A_H,
+(A_{\mathrm{tok}}\cap A_H)\circ T_{\mathrm{detok}}\circ T_{\mathrm{lex}},
 \label{eq:composition}
 \end{equation}
-where $T_{\mathrm{detok}}$ maps tokens to bytes, $T_{\mathrm{lex}}$ maps bytes to lexemes, and $A_H$ implements EOS/PAD and other regular conditions. Weights and provenance originate on token arcs and are carried through composition. An implementation need not materialize the full composition; it may compute transitions lazily and share prefixes in a tokenizer trie.
+where $T_{\mathrm{detok}}$ maps tokens to bytes, $T_{\mathrm{lex}}$ maps bytes to lexemes, and $A_H$ is an automaton over model-token IDs implementing EOS/PAD and other regular conditions. The synchronized product $A_{\mathrm{tok}}\cap A_H$ precedes detokenization, so both operands read the same alphabet. Weights and provenance originate on token arcs and are carried through composition. An implementation may compute transitions lazily and share prefixes in a tokenizer trie.
 
 For a programming-language lexer, the relation must reflect its declared policy, including maximal munch and priorities. Accepting every possible segmentation may recognize a lexical sequence that the real lexer would never produce. The implemented production path instead gives the CFG raw-byte terminals after the tokenizer mapping; it does not insert a lexer or claim maximal-munch semantics. The separate reference lexical interface is not used by the live model experiments, and contextual lexers remain an extension.
 
@@ -373,36 +379,42 @@ The algorithm is the Viterbi version of CFG--automaton intersection. A weighted 
 \small
 \footnotesize
 \begin{algorithmic}[1]
-\Require CFG $G$, weighted lexical lattice $A=(Q,E,q_0,F,\omega,\pi)$
-\Ensure best accepted path, derivation, provenance, and score
-\State Initialize $D[A,p,q]\gets\neginf$ for $A\in N$ and $p,q\in Q$
-\ForAll{arcs $e=(p,a,q)\in E$ and productions $A\rightarrow a$}
-  \State relax $D[A,p,q]$ with $\omega(e)$ and record $e$
+\Require strict CNF $G$ with flag $\nu=[\varepsilon\in L(G)]$; finite weighted DAG $A$
+\Ensure status, best original path, provenance, and score
+\State $(\bar A,\rho,z_\varepsilon)\gets\Call{NormalizeEpsilon}{A}$ \Comment{see text}
+\State Index states $q_0,\ldots,q_{m-1}$ in topological order
+\State Initialize $D[B,p,q]\gets\neginf$ for $B\in N$ and $p,q\in Q$
+\ForAll{arcs $e=(p,a,q)\in\bar E$ and productions $B\rightarrow a$}
+  \State relax $D[B,p,q]$ with $\omega(e)$ and record $e$
 \EndFor
-\Repeat
-  \State $\textit{changed}\gets\textbf{false}$
-  \ForAll{$A\rightarrow BC\in P$, $p,r,q\in Q$ compatible with DAG order}
-    \State $v\gets D[B,p,r]+D[C,r,q]$
-    \If{$v>D[A,p,q]$}
-      \State update $D[A,p,q]$, record $(B,C,r)$, and set $\textit{changed}$
-    \EndIf
+\For{$\ell=1,\ldots,m-1$}
+  \For{$i=0,\ldots,m-1-\ell$}
+    \State $j\gets i+\ell$
+    \ForAll{$B\rightarrow CD\in P_2$ and $i<k<j$}
+      \State relax $D[B,q_i,q_j]$ with $D[C,q_i,q_k]+D[D,q_k,q_j]$
+      \State record $(C,D,q_k)$ whenever the score improves
+    \EndFor
   \EndFor
-\Until{no entry improves}
-\State $(f^*,v^*)\gets\argmax_{f\in F}D[S,q_0,f]$
-\If{$v^*=\neginf$} \Return \textsc{Infeasible} \EndIf
-\State reconstruct the derivation, token path $y^*$, and $J^*=\bigcup_{e\in y^*}\pi(e)$
-\State \Return $(J^*,y^*,v^*)$
+\EndFor
+\State $z\gets$ best reconstructed $D[S,q_{\mathrm{start}},f]$ over $f\in F$, or none
+\If{$z$ exists} \State expand its edges through $\rho$ \EndIf
+\If{$\nu$ and $z_\varepsilon$ exists} \State compare $z$ with $z_\varepsilon$ by original weight \EndIf
+\If{neither candidate exists} \State \Return \textsc{InfeasibleOnSupport} \EndIf
+\State Recover tokens and all matched positive proposal IDs from the winning original path
+\State \Return \textsc{Optimal}, witness, proposal IDs, score, support specification
 \end{algorithmic}
 \end{algorithm}
 
-The pseudocode makes the semantics explicit rather than prescribing the most efficient implementation. In a DAG, combinations can be ordered by path span; in Earley, items are processed by an agenda and reinserted only when their score improves. Closures for $\varepsilon$ and unit productions require a specific algebraic routine to avoid cycles without progress.
+Here strict CNF contains only terminal and binary productions; a separate flag records empty-word acceptance. Grammar normalization removes nullable and unit productions before parsing. \textsc{NormalizeEpsilon} computes maximum-weight epsilon-only paths between state pairs in the DAG. For each terminal arc, it creates saturated arcs consisting of an epsilon prefix, that terminal, and an epsilon suffix. Each saturated arc retains its original edge sequence in $\rho$; $z_\varepsilon$ is the best entirely epsilon path from the start to any final state, including a zero-edge path when permitted. Comparing it separately is necessary when a canvas emits only EOS/PAD.
+
+Any original nonempty path can be partitioned around its terminal edges; replacing an epsilon segment by the maximum between the same endpoints cannot reduce its score. Conversely, concatenated saturated arcs expand to an existing original DAG path with the same weight. Equal-score alternatives may share a representative because the objective requires one optimal witness, not every optimum. Original edge IDs preserve token provenance. A completed search alone can return \textsc{Optimal} or \textsc{InfeasibleOnSupport}; a deadline interruption returns \textsc{Timeout} without a certificate.
 
 \begin{theorem}[Lattice soundness, completeness, and optimality]
-Assume that: (i) the lattice represents exactly the token sequences permitted by the state and $H$; (ii) lexical composition represents exactly $\Lambda$; and (iii) the max-plus parser examines all derivations while preserving weights and provenance. Then Algorithm~\ref{alg:graph}: (a) returns only a completion in $\Feas_x$; (b) finds a completion whenever $\Feas_x$ is nonempty on the represented support; and (c) returns a maximum-weight MWPC batch on that support.
+Assume that: (i) the lattice represents exactly the token sequences permitted by the state and $H$; (ii) lexical composition represents exactly $\Lambda$; (iii) grammar normalization, epsilon saturation, and the separate empty-output candidate preserve maximum scores and reconstructible original paths; and (iv) the span dynamic program completes without unsafe pruning. Then Algorithm~\ref{alg:graph}: (a) returns only a completion in $\Feas_x$; (b) finds a completion whenever $\Feas_x$ is nonempty on the represented support; and (c) returns a maximum-weight MWPC batch on that support.
 \end{theorem}
 
 \begin{proof}
-Every backtracking begins at $q_0$, ends at a final state, and follows existing arcs. By assumption (i), it corresponds to a permitted token sequence; by assumption (ii) and the derivation from $S$, its lexical output belongs to $L(G)$. This proves soundness. For completeness, every feasible completion corresponds to a lattice path and some CFG derivation, which the terminal and binary DP rules can reconstruct. For optimality, the induction used in Theorem~2 generalizes spans to state pairs: each entry contains the maximum over all compatible paths and derivations. The start value is therefore $\max_{y\in\Feas_x}R_C(y)$, and Theorem~1 yields MWPC.
+Every reconstructed original path starts at $q_0$, ends at a final state, and follows existing arcs. By assumption (i), it corresponds to a permitted token sequence; by assumption (ii) and the derivation from $S$, its lexical output belongs to $L(G)$. This proves soundness. For completeness, every feasible completion corresponds to a lattice path and some CFG derivation, recovered by epsilon normalization and the terminal/binary rules; entirely epsilon paths are covered by the separate candidate. For optimality, the induction used in Theorem~2 generalizes spans to state pairs: each entry contains the maximum over all compatible paths and derivations. Comparing the best start entry with the empty-output candidate yields $\max_{y\in\Feas_x}R_C(y)$, and Theorem~1 yields MWPC.
 \end{proof}
 
 \begin{theorem}[Finite-slot exactness]
@@ -413,7 +425,7 @@ If every complete path through $A_{\mathrm{tok}}$ traverses exactly one token ar
 By the layered construction, a start-to-finish path chooses one arc from layer $i-1$ to $i$ for each slot $i$. Internal detokenization or lexing transitions may emit zero or more symbols, but remain associated with the same token macro-arcs. Thus, no accepted path uses more slots than exist or depends on an abstract unbounded region.
 \end{proof}
 
-For an explicit graph with $q=|Q|$, a generic bound for the CNF version is $O(|P_2|q^3+|P_1||E|)$ time and $O(|N|q^2)$ memory. A naive lattice may have $O(n|\vocab|)$ arcs. Polynomial complexity therefore does not imply low cost; lazy composition, tries, and controlled support are important. When top-$K$ is used, the article must explicitly say ``exact on the truncated support $S_i$.''
+For an explicit epsilon-free graph with $q=|Q|$, the span parser takes $O(|P_2|q^3+|P_1||E|)$ time and $O(|N|q^2)$ chart memory. This excludes grammar normalization and epsilon saturation; $|E|$ counts saturated edges, which may greatly outnumber the original arcs. A naive token lattice may have $O(n|\vocab|)$ arcs. Polynomial complexity therefore does not imply low cost. With top-$K$ support, optimality holds only over the represented alternatives $S_i$.
 
 \section{Iterative Decoder and Progress Guarantee}
 \label{sec:decoder}
