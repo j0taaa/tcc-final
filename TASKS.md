@@ -26,18 +26,26 @@ certificates, fixed slots and all baseline tests. LAVE remains out of scope.
 - [x] T1800: Remove repeated token-validation work without weakening input
   checks; retire superseded measurement launchers, retaining their immutable
   v0.2.0 source and current artifact reconstruction. Run correctness gates.
-- [ ] T1801: Compare simultaneous MWPC against sequential exact feasibility
+- [x] T1801: Compare simultaneous MWPC against sequential exact feasibility
   on every saved confirmation snapshot, K=2/4/8, budgets=2/8/32, three repeated
   timings with alternating order. Use saved top-permitted-token probabilities,
   common supports/proposals and no answer injection; retain all failed cases.
-- [ ] T1802: Generate a source-linked report with paired timing and score results,
+- [x] T1802: Generate a source-linked report with paired timing and score results,
   distinguish selector utility from end-to-end gains, and report net code reduction.
 
 **Evidence:** T1800: full pytest 838 passed; Ruff and MyPy (78 files) pass;
 `make test-rust-parser` passes 24 tests, formatting and Clippy; archived review
 results reproduce with `build_review_results.py --check`. No baseline tests
 removed. The three retired measurement CLIs remain at v0.2.0; REPRODUCING.md
-documents a separate worktree for their historical executions. T1801 pending.
+documents a separate worktree for their historical executions. T1801/T1802:
+1,296 runs from committed config/source `3d573b2`; every confirmation state
+retained. Raw records in docs/artifacts/raw/m18_batch_selection_v1, regenerated
+analysis in paper/generated/m18_batch_selection_v1. One real-state score gain
+confirmed by both independent solvers; all paired negative gaps are zero.
+Final suite: 839 Python tests; unchanged Rust/baseline gates as above. Article
+built and visually checked at 18 pages. Net code reduction: 705 lines versus
+a309b1c. Commands, scope and outcomes:
+docs/reviews/2026-09-22-practical-selection.md.
 
 ## Previous submission
 

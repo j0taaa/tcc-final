@@ -1,0 +1,197 @@
+{
+  "rows": 1296,
+  "solver_status_counts": {
+    "optimal": 540,
+    "feasible_on_support": 464,
+    "timeout": 76,
+    "infeasible_on_support": 216
+  },
+  "analysis_unit": "snapshot; K/budget/method/repetition are repeated measures",
+  "timing_scope": "selection including lattice, parsing and certificate; excludes model",
+  "comparisons": [
+    {
+      "width": 2,
+      "proposal_budget": 2,
+      "states": 24,
+      "paired_feasible_states": 20,
+      "paired_feasible_repetitions": 60,
+      "exact_statuses": {
+        "optimal": 60,
+        "infeasible_on_support": 12
+      },
+      "greedy_statuses": {
+        "feasible_on_support": 60,
+        "infeasible_on_support": 12
+      },
+      "median_state_speedup": 2.6407832176873933,
+      "exact_faster_states": 20,
+      "positive_gap_repetitions": 0,
+      "negative_gap_repetitions": 0,
+      "maximum_score_gap": 0.0
+    },
+    {
+      "width": 2,
+      "proposal_budget": 8,
+      "states": 24,
+      "paired_feasible_states": 20,
+      "paired_feasible_repetitions": 60,
+      "exact_statuses": {
+        "optimal": 60,
+        "infeasible_on_support": 12
+      },
+      "greedy_statuses": {
+        "feasible_on_support": 60,
+        "infeasible_on_support": 12
+      },
+      "median_state_speedup": 6.124545536085023,
+      "exact_faster_states": 20,
+      "positive_gap_repetitions": 0,
+      "negative_gap_repetitions": 0,
+      "maximum_score_gap": 0.0
+    },
+    {
+      "width": 2,
+      "proposal_budget": 32,
+      "states": 24,
+      "paired_feasible_states": 20,
+      "paired_feasible_repetitions": 60,
+      "exact_statuses": {
+        "optimal": 60,
+        "infeasible_on_support": 12
+      },
+      "greedy_statuses": {
+        "feasible_on_support": 60,
+        "infeasible_on_support": 12
+      },
+      "median_state_speedup": 15.922666226195634,
+      "exact_faster_states": 20,
+      "positive_gap_repetitions": 0,
+      "negative_gap_repetitions": 0,
+      "maximum_score_gap": 0.0
+    },
+    {
+      "width": 4,
+      "proposal_budget": 2,
+      "states": 24,
+      "paired_feasible_states": 20,
+      "paired_feasible_repetitions": 60,
+      "exact_statuses": {
+        "optimal": 60,
+        "infeasible_on_support": 12
+      },
+      "greedy_statuses": {
+        "feasible_on_support": 60,
+        "infeasible_on_support": 12
+      },
+      "median_state_speedup": 2.4849158657826695,
+      "exact_faster_states": 20,
+      "positive_gap_repetitions": 0,
+      "negative_gap_repetitions": 0,
+      "maximum_score_gap": 0.0
+    },
+    {
+      "width": 4,
+      "proposal_budget": 8,
+      "states": 24,
+      "paired_feasible_states": 20,
+      "paired_feasible_repetitions": 60,
+      "exact_statuses": {
+        "optimal": 60,
+        "infeasible_on_support": 12
+      },
+      "greedy_statuses": {
+        "feasible_on_support": 60,
+        "infeasible_on_support": 12
+      },
+      "median_state_speedup": 6.48218314257633,
+      "exact_faster_states": 20,
+      "positive_gap_repetitions": 0,
+      "negative_gap_repetitions": 0,
+      "maximum_score_gap": 0.0
+    },
+    {
+      "width": 4,
+      "proposal_budget": 32,
+      "states": 24,
+      "paired_feasible_states": 16,
+      "paired_feasible_repetitions": 48,
+      "exact_statuses": {
+        "optimal": 60,
+        "infeasible_on_support": 12
+      },
+      "greedy_statuses": {
+        "feasible_on_support": 48,
+        "timeout": 12,
+        "infeasible_on_support": 12
+      },
+      "median_state_speedup": 9.692505373774797,
+      "exact_faster_states": 16,
+      "positive_gap_repetitions": 3,
+      "negative_gap_repetitions": 0,
+      "maximum_score_gap": 0.11535544031052147
+    },
+    {
+      "width": 8,
+      "proposal_budget": 2,
+      "states": 24,
+      "paired_feasible_states": 17,
+      "paired_feasible_repetitions": 50,
+      "exact_statuses": {
+        "optimal": 60,
+        "infeasible_on_support": 12
+      },
+      "greedy_statuses": {
+        "feasible_on_support": 50,
+        "timeout": 10,
+        "infeasible_on_support": 12
+      },
+      "median_state_speedup": 2.3679294980503136,
+      "exact_faster_states": 17,
+      "positive_gap_repetitions": 0,
+      "negative_gap_repetitions": 0,
+      "maximum_score_gap": 0.0
+    },
+    {
+      "width": 8,
+      "proposal_budget": 8,
+      "states": 24,
+      "paired_feasible_states": 14,
+      "paired_feasible_repetitions": 42,
+      "exact_statuses": {
+        "optimal": 60,
+        "infeasible_on_support": 12
+      },
+      "greedy_statuses": {
+        "feasible_on_support": 42,
+        "timeout": 18,
+        "infeasible_on_support": 12
+      },
+      "median_state_speedup": 4.892446692551008,
+      "exact_faster_states": 14,
+      "positive_gap_repetitions": 0,
+      "negative_gap_repetitions": 0,
+      "maximum_score_gap": 0.0
+    },
+    {
+      "width": 8,
+      "proposal_budget": 32,
+      "states": 24,
+      "paired_feasible_states": 8,
+      "paired_feasible_repetitions": 24,
+      "exact_statuses": {
+        "optimal": 60,
+        "infeasible_on_support": 12
+      },
+      "greedy_statuses": {
+        "timeout": 36,
+        "feasible_on_support": 24,
+        "infeasible_on_support": 12
+      },
+      "median_state_speedup": 4.546470145259391,
+      "exact_faster_states": 8,
+      "positive_gap_repetitions": 0,
+      "negative_gap_repetitions": 0,
+      "maximum_score_gap": 0.0
+    }
+  ]
+}

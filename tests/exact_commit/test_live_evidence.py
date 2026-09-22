@@ -1,5 +1,6 @@
 """Saved model evidence must not acquire answers or hide failed attempts."""
 
+import gzip
 import json
 import subprocess
 import sys
@@ -8,26 +9,28 @@ from pathlib import Path
 import pytest
 
 from mwpc_research.live_evidence import (
-    live_jobs,
     snapshot_instance,
-    study_tasks,
     summarize_live_rows,
 )
 
 
 def test_confirmation_is_disjoint_and_every_strategy_uses_identical_tasks_and_seeds():
-    pilot = study_tasks("pilot")
-    confirmation = study_tasks("confirmation")
-    assert len(pilot) == len(confirmation) == 12
-    assert not {t.prompt for t in pilot} & {t.prompt for t in confirmation}
-    jobs = live_jobs("pilot", (71,), 2)
-    for task in pilot:
-        selected = [job for job in jobs if job["task"]["task_id"] == task.task_id]
-        assert len(selected) == 9
-        assert {job["seed"] for job in selected} == {71}
-        assert len([job for job in selected if job["strategy"] == "capture"]) == 1
-        for strategy in ("unconstrained", "serial", "epic", "exact"):
-            assert len([job for job in selected if job["strategy"] == strategy]) == 2
+    root = Path(__file__).resolve().parents[2] / "docs/artifacts/raw/m17_review_v1"
+    prompts = []
+    for cohort, seed, repetitions in (("pilot-v2", 170301, 1), ("confirmation", 170302, 2)):
+        with gzip.open(root / cohort / "rows.jsonl.gz", "rt") as source:
+            rows = [json.loads(line) for line in source]
+        tasks = {row["task"]["task_id"]: row["task"] for row in rows}
+        assert len(tasks) == 12
+        prompts.append({task["prompt"] for task in tasks.values()})
+        for task_id, task in tasks.items():
+            selected = [row for row in rows if row["task"]["task_id"] == task_id]
+            assert len(selected) == 4 * repetitions + 1
+            assert all(row["task"] == task and row["seed"] == seed for row in selected)
+            assert sum(row["strategy"] == "capture" for row in selected) == 1
+            for strategy in ("unconstrained", "serial", "epic", "exact"):
+                assert sum(row["strategy"] == strategy for row in selected) == repetitions
+    assert not prompts[0] & prompts[1]
 
 
 def test_saved_support_is_nested_preserves_fixed_positions_and_never_injects_a_target():
@@ -140,3 +143,22 @@ def test_batch_replay_uses_saved_probabilities_and_validates_both_methods(tmp_pa
         )
         assert set(ids) == set(result["result"]["selected_proposal_ids"])
         assert score == result["score"]
+
+
+def test_real_batch_optimum_agrees_with_independent_python_reference():
+    from mwpc_exact import ExactBackend
+    from mwpc_exact.evaluation.selection import select_exact_mwpc
+
+    root = Path(__file__).resolve().parents[2] / "docs/artifacts/raw/m17_review_v1"
+    snapshot = json.loads(
+        (
+            root / "confirmation/snapshots" / "confirm-brackets-3-170302-capture-forward0.json"
+        ).read_text()
+    )
+    state = snapshot_instance(snapshot, 4, 32).selection_input
+    results = [
+        select_exact_mwpc(state, backend=backend)
+        for backend in (ExactBackend.PYTHON, ExactBackend.RUST)
+    ]
+    assert all(result.score == 14.318663361719748 for result in results)
+    assert all(len(result.selected_proposal_ids) == 31 for result in results)

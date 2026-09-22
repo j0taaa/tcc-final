@@ -1,16 +1,19 @@
 from __future__ import annotations
 
+import gzip
+import json
 from itertools import product
+from pathlib import Path
 
 import pytest
 
 from mwpc_exact.reference.recognizer import recognizes_cnf
 from mwpc_research.recursive_tasks import (
     FAMILIES,
+    RecursiveTask,
     check_syntax,
     epic_grammar_spec,
     generated_witness,
-    pilot_tasks,
     recursive_grammar,
 )
 
@@ -71,7 +74,15 @@ def test_generated_context_is_valid_and_seeded(family: str) -> None:
 
 
 def test_tasks_have_multiple_correct_answers_and_separate_semantic_failures() -> None:
-    tasks = {task.task_id: task for task in pilot_tasks()}
+    root = Path(__file__).resolve().parents[2]
+    with gzip.open(
+        root / "docs/artifacts/raw/m17_review_v1/pilot-v2/rows.jsonl.gz", "rt"
+    ) as source:
+        recorded = {row["task"]["task_id"]: row["task"] for row in map(json.loads, source)}
+    tasks = {
+        key: RecursiveTask(**{**task, "required_leaves": tuple(task["required_leaves"])})
+        for key, task in recorded.items()
+    }
     assert len(tasks) == 12
     alternatives = {
         "brackets-0": (b"[()]()", b"([]())"),

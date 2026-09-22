@@ -19,6 +19,23 @@ The batch-selection experiment uses the same offline runner:
   --run-directory results/raw/m18-batch-selection-new
 ```
 
+Regenerate its analysis and manuscript values from the checked-in raw archive:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.run_review_offline \
+  --analyze-directory docs/artifacts/raw/m18_batch_selection_v1 \
+  > paper/generated/m18_batch_selection_v1/summary.json
+.venv/bin/python -m scripts.exact_commit.run_review_offline \
+  --analyze-directory docs/artifacts/raw/m18_batch_selection_v1 --latex \
+  > paper/generated/m18_batch_selection_v1/batch-values.tex
+make paper
+```
+
+This verifies the archive manifest before analysis. Producing source/config:
+`3d573b2c8ea2312b681f81108abaa11f8a497d3f`; observations and scope are documented
+in `docs/reviews/2026-09-22-practical-selection.md`. The current manuscript
+includes this follow-up; the historical v0.2.0 release remains unchanged.
+
 
 ## Current review evidence
 

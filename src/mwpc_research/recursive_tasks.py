@@ -237,51 +237,6 @@ class RecursiveTask:
         return checked, success
 
 
-def pilot_tasks() -> tuple[RecursiveTask, ...]:
-    """Twelve fixed pilot prompts; repeated model seeds do not create new tasks."""
-
-    tasks = []
-    for index in range(4):
-        round_count, square_count = 2 + index % 2, 1 + index // 2
-        tasks.append(
-            RecursiveTask(
-                f"brackets-{index}",
-                "brackets",
-                f"Output only a balanced bracket sequence containing exactly {round_count} pairs "
-                f"of () and {square_count} pairs of []. Nest brackets at least two levels deep. "
-                "Use no spaces, Markdown or explanation.",
-                (round_count, square_count),
-                2,
-            )
-        )
-        digits = (index + 1, 2, 3)
-        tasks.append(
-            RecursiveTask(
-                f"arithmetic-{index}",
-                "arithmetic",
-                f"Output only one fully parenthesized arithmetic expression that evaluates to "
-                f"{sum(digits)}. Use the digits {', '.join(map(str, digits))} exactly once each "
-                "and only the operators + or *. Parenthesize every binary operation. "
-                "No Markdown or explanation.",
-                digits,
-                2,
-                sum(digits),
-            )
-        )
-        tasks.append(
-            RecursiveTask(
-                f"nested_json-{index}",
-                "nested_json",
-                f"Output only a JSON array containing the digits {', '.join(map(str, digits))} "
-                "in that order when flattened. Use at least two levels of array nesting. "
-                "Do not add other numbers, strings, objects, Markdown or explanation.",
-                digits,
-                2,
-            )
-        )
-    return tuple(tasks)
-
-
 def generated_witness(family: str, seed: int) -> bytes:
     """Seeded feasible synthetic context; never a claimed sample of model logits."""
 

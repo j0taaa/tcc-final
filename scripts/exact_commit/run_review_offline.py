@@ -150,6 +150,7 @@ def main():
     parser.add_argument("--config", type=Path)
     parser.add_argument("--run-directory", type=Path)
     parser.add_argument("--analyze-directory", type=Path)
+    parser.add_argument("--latex", action="store_true", help="emit manuscript values from analysis")
     parser.add_argument("--child-job", type=Path)
     parser.add_argument("--child-result", type=Path)
     parser.add_argument("--timeout", type=float, default=1)
@@ -158,7 +159,27 @@ def main():
     if args.analyze_directory:
         from scripts.exact_commit.build_review_results import verified_rows
 
-        print(json.dumps(summarize(verified_rows(args.analyze_directory)), indent=2))
+        rows = verified_rows(args.analyze_directory)
+        summary = summarize(rows)
+        if args.latex:
+            for budget, name in ((2, "Two"), (8, "Eight"), (32, "All")):
+                values = [
+                    c["median_state_speedup"]
+                    for c in summary["comparisons"]
+                    if c["proposal_budget"] == budget
+                ]
+                for suffix, value in (("Min", min(values)), ("Max", max(values))):
+                    print(f"\\newcommand{{\\MBatch{name}{suffix}}}{{{value:.1f}}}")
+            counts = Counter((row["method"], row["status"]) for row in rows)
+            for name, method, status in (
+                ("Optimal", "rust_exact", "optimal"),
+                ("Infeasible", "rust_exact", "infeasible_on_support"),
+                ("GreedyFeasible", "greedy_exact_feasibility", "feasible_on_support"),
+                ("Timeouts", "greedy_exact_feasibility", "timeout"),
+            ):
+                print(f"\\newcommand{{\\MBatch{name}}}{{{counts[method, status]}}}")
+        else:
+            print(json.dumps(summary, indent=2))
         return
     if args.child_job:
         child(args.child_job, args.child_result, args.timeout, args.memory_mib)
