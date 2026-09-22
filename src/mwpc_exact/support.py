@@ -43,17 +43,13 @@ def _token_id_tuple(
 ) -> tuple[int, ...]:
     if isinstance(value, (str, bytes)) or not isinstance(value, Iterable):
         raise TypeError(f"{field_name} must be an iterable of token IDs")
-    result_items: list[int] = []
-    for item in value:
-        item_name = f"{field_name} item"
-        if vocabulary_size is None:
-            token_id = _integer(item, item_name)
-            if token_id < 0:
-                raise ValueError(f"{item_name} must be non-negative")
-        else:
-            token_id = _token_id(item, item_name, vocabulary_size)
-        result_items.append(token_id)
-    result = tuple(result_items)
+    result = tuple(value)
+    if any(isinstance(item, bool) or not isinstance(item, int) for item in result):
+        raise TypeError(f"{field_name} item must be an integer")
+    if any(
+        item < 0 or (vocabulary_size is not None and item >= vocabulary_size) for item in result
+    ):
+        raise ValueError(f"{field_name} item is outside the token vocabulary")
     if not allow_empty and not result:
         raise ValueError(f"{field_name} must not be empty")
     if len(set(result)) != len(result):

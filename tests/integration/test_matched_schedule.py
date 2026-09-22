@@ -9,7 +9,7 @@ baseline = pytest.importorskip("constrained_diffusion.eval.dllm.models.llada.gen
 
 
 def test_live_observer_keeps_logits_mutable_for_upstream_resampling():
-    from scripts.exact_commit.run_nonliteral_live import observed_forward
+    from scripts.exact_commit.run_q5_end_to_end import observed_forward
 
     result = observed_forward(torch, lambda _: torch.ones(2, requires_grad=True) * 2, None)
     assert not result.requires_grad
@@ -44,7 +44,7 @@ def test_exact_driver_passes_each_scheduled_budget_to_the_model_hook(monkeypatch
         tensor=lambda *args, **kw: real_tensor(*args, **{**kw, "device": "cpu"}),
         long=torch.long,
         float64=torch.float64,
-        inference_mode=torch.inference_mode,
+        no_grad=torch.no_grad,
         softmax=torch.softmax,
         isfinite=torch.isfinite,
     )

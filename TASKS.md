@@ -16,6 +16,31 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+M18 follows the request for a practical use and less experimental scaffolding.
+
+## M18 — Bounded practical selection and smaller maintenance surface
+
+Depends on M17. Preserve exact_on_support, positive proposal matches, independent
+certificates, fixed slots and all baseline tests. LAVE remains out of scope.
+
+- [x] T1800: Remove repeated token-validation work without weakening input
+  checks; retire superseded measurement launchers, retaining their immutable
+  v0.2.0 source and current artifact reconstruction. Run correctness gates.
+- [ ] T1801: Compare simultaneous MWPC against sequential exact feasibility
+  on every saved confirmation snapshot, K=2/4/8, budgets=2/8/32, three repeated
+  timings with alternating order. Use saved top-permitted-token probabilities,
+  common supports/proposals and no answer injection; retain all failed cases.
+- [ ] T1802: Generate a source-linked report with paired timing and score results,
+  distinguish selector utility from end-to-end gains, and report net code reduction.
+
+**Evidence:** T1800: full pytest 838 passed; Ruff and MyPy (78 files) pass;
+`make test-rust-parser` passes 24 tests, formatting and Clippy; archived review
+results reproduce with `build_review_results.py --check`. No baseline tests
+removed. The three retired measurement CLIs remain at v0.2.0; REPRODUCING.md
+documents a separate worktree for their historical executions. T1801 pending.
+
+## Previous submission
+
 M17 closes the 22 September review, except LAVE as requested. The current local
 submission is v0.2.0; verification is in docs/evidence/m17-review-verification.json.
 

@@ -1,5 +1,12 @@
 """Saved model evidence must not acquire answers or hide failed attempts."""
 
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+import pytest
+
 from mwpc_research.live_evidence import (
     live_jobs,
     snapshot_instance,
@@ -69,3 +76,67 @@ def test_runtime_summary_keeps_timeout_and_incomplete_attempts_in_denominator():
     assert group["statuses"] == {"complete": 1, "timeout": 1, "incomplete": 1}
     assert group["complete_runtime_median_seconds"] == 2
     assert group["complete_runtime_sample_count"] == 1
+
+
+def test_batch_replay_uses_saved_probabilities_and_validates_both_methods(tmp_path):
+    from mwpc_exact.evaluation.selection import recompute_witness_selection
+
+    root = Path(__file__).resolve().parents[2]
+    path = next(
+        (root / "docs/artifacts/raw/m17_review_v1/confirmation/snapshots").glob(
+            "confirm-brackets-*-forward0.json"
+        )
+    )
+    snapshot = json.loads(path.read_text())
+    original = json.dumps(snapshot, sort_keys=True)
+    instances = [snapshot_instance(snapshot, 8, budget) for budget in (2, 8, 32)]
+    assert [len(i.selection_input.proposals) for i in instances] == [2, 8, 32]
+    assert len({i.selection_input.support.fingerprint for i in instances}) == 1
+    for instance in instances:
+        for p in instance.selection_input.proposals:
+            assert p.weight == snapshot["ranked_probabilities"][p.position][0]
+            assert (
+                instance.metadata["model_token_ids"][p.token_id]
+                == snapshot["rankings"][p.position][0]
+            )
+    assert json.dumps(snapshot, sort_keys=True) == original
+    for invalid in (True, 0, -1, 1.5):
+        with pytest.raises((TypeError, ValueError)):
+            snapshot_instance(snapshot, 8, invalid)
+    # A small feasible fixture exercises both certificate checks even when
+    # a real model snapshot happens to have no grammar-valid completion.
+    snapshot.update(
+        canvas=[None] * 4,
+        rankings=[[10, 11], [11, 10], [20, 10], [20, 10]],
+        ranked_probabilities=[[0.8, 0.2]] * 4,
+        proposals=[],
+        termination_token_ids=[20],
+        pad_token_id=20,
+        emissions={"10": "28", "11": "29", "20": None},
+    )
+    instance = snapshot_instance(snapshot, 2, 4)
+    for method in ("rust_exact", "greedy_exact_feasibility"):
+        job = tmp_path / f"{method}.json"
+        result_path = tmp_path / f"{method}-result.json"
+        job.write_text(json.dumps({"instance": instance.to_dict(), "method": method}))
+        subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "scripts.exact_commit.run_review_offline",
+                "--child-job",
+                str(job),
+                "--child-result",
+                str(result_path),
+            ],
+            check=True,
+            cwd=root,
+            timeout=15,
+        )
+        result = json.loads(result_path.read_text())
+        assert result["independent_syntax"] is True
+        ids, score = recompute_witness_selection(
+            instance.selection_input, result["result"]["witness_token_ids"]
+        )
+        assert set(ids) == set(result["result"]["selected_proposal_ids"])
+        assert score == result["score"]

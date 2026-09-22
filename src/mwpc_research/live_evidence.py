@@ -97,7 +97,9 @@ def live_jobs(split: str, seeds: Sequence[int], repetitions: int) -> tuple[dict[
     return tuple(jobs)
 
 
-def snapshot_instance(snapshot: Mapping[str, Any], width: int) -> BenchmarkInstance:
+def snapshot_instance(
+    snapshot: Mapping[str, Any], width: int, proposal_budget: int | None = None
+) -> BenchmarkInstance:
     """Compact only saved model choices, never a task's known answer.
 
     The local-to-model-ID map is retained. Proposal IDs/weights are frozen
@@ -107,6 +109,26 @@ def snapshot_instance(snapshot: Mapping[str, Any], width: int) -> BenchmarkInsta
     if width < 1 or any(len(row) < width for row in rankings):
         raise ValueError("requested width exceeds the captured ranking")
     proposals = tuple(Proposal(**item) for item in snapshot["proposals"])
+    if proposal_budget is not None:
+        if isinstance(proposal_budget, bool) or not isinstance(proposal_budget, int):
+            raise TypeError("proposal_budget must be an integer")
+        if proposal_budget < 1:
+            raise ValueError("proposal_budget must be positive")
+        # Saved full-vocabulary probabilities, not a softmax over the top-K.
+        candidates = sorted(
+            (position for position, token in enumerate(snapshot["canvas"]) if token is None),
+            key=lambda position: (-snapshot["ranked_probabilities"][position][0], position),
+        )[:proposal_budget]
+        proposals = tuple(
+            Proposal(
+                position,
+                position,
+                rankings[position][0],
+                snapshot["ranked_probabilities"][position][0],
+                model_confidence=snapshot["ranked_probabilities"][position][0],
+            )
+            for position in candidates
+        )
     specials = tuple(snapshot["termination_token_ids"])
     pad = snapshot["pad_token_id"]
     model_rows = []
@@ -162,7 +184,8 @@ def snapshot_instance(snapshot: Mapping[str, Any], width: int) -> BenchmarkInsta
     )
     grammar = recursive_grammar(snapshot["family"])
     return BenchmarkInstance(
-        instance_id=f"{snapshot['snapshot_id']}-k{width}",
+        instance_id=f"{snapshot['snapshot_id']}-k{width}"
+        + (f"-b{proposal_budget}" if proposal_budget is not None else ""),
         grammar=BenchmarkGrammar(snapshot["family"], grammar),
         selection_input=SelectionInput(
             grammar,
@@ -180,6 +203,10 @@ def snapshot_instance(snapshot: Mapping[str, Any], width: int) -> BenchmarkInsta
             "origin": "real_model_precommit",
             "snapshot_id": snapshot["snapshot_id"],
             "width": width,
+            "proposal_budget": proposal_budget,
+            "proposal_policy": "saved_original"
+            if proposal_budget is None
+            else "top_permitted_token_by_saved_full_vocabulary_probability",
             "model_token_ids": model_ids,
             "source_strategy": "unconstrained",
             "target_injected": False,

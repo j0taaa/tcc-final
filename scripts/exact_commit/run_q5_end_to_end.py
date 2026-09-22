@@ -781,6 +781,12 @@ def _run_exact_generation_steps(
     return tuple(outcomes)
 
 
+def observed_forward(torch, model, tokens, *args, **kwargs):
+    # Upstream resampling may modify returned logits outside this context.
+    with torch.no_grad():
+        return model(tokens, *args, **kwargs)
+
+
 def _prepare_exact_call(
     *,
     torch: Any,
@@ -829,8 +835,7 @@ def _prepare_exact_call(
 
     def run_step() -> Any:
         nonlocal step_index
-        with torch.inference_mode():
-            logits = model(token_row).logits
+        logits = observed_forward(torch, model, token_row).logits
         _require(
             bool(torch.isfinite(logits).all().item()),
             "live model emitted non-finite logits",

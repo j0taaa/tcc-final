@@ -189,20 +189,20 @@ def build_per_position_support_from_rankings(
         raise TypeError("canvas must be a finite sequence")
     if len(canvas) != len(rankings.token_ids_by_position):
         raise ValueError("canvas and ranked support must have equal slot counts")
+    permitted_set = set(rankings.permitted_token_ids)
     canvas_items: list[int | None] = []
     for position, token_id in enumerate(canvas):
         if token_id is None:
             canvas_items.append(None)
         else:
             normalized = _integer(token_id, f"canvas token at position {position}")
-            if normalized not in rankings.permitted_token_ids:
+            if normalized not in permitted_set:
                 raise ValueError(f"fixed token at position {position} is not permitted")
             canvas_items.append(normalized)
     canvas_tuple = tuple(canvas_items)
 
     proposal_items = tuple(proposals)
     aggregate_proposals(proposal_items)
-    permitted_set = set(rankings.permitted_token_ids)
     proposal_tokens: list[set[int]] = [set() for _ in canvas_tuple]
     for proposal in proposal_items:
         if proposal.position >= len(canvas_tuple):

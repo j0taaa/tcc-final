@@ -1,5 +1,25 @@
 # Reproducing the MWPC research artifacts
 
+## Maintained and historical measurement commands
+
+M18 retires the separate branching launcher, branching report CLI and nonliteral
+live supervisor. Their complete source remains at the immutable `v0.2.0` tag;
+the M16/M17 measurement commands below refer to that source version. To repeat
+them without changing your working branch, use `git worktree add --detach
+/tmp/mwpc-v020 v0.2.0` and follow the setup there. The current tree retains all
+raw evidence, independent oracles, baseline tests and `build_review_results`
+for regenerating the submitted tables. It maintains one bounded offline runner
+for recursive scaling and model-state replay, and the original Q5 live driver.
+
+The batch-selection experiment uses the same offline runner:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.run_review_offline \
+  --config configs/experiments/m18_batch_selection_v1.toml \
+  --run-directory results/raw/m18-batch-selection-new
+```
+
+
 ## Current review evidence
 
 The corrected experiments add evidence without overwriting Q1--Q5. The protocol
