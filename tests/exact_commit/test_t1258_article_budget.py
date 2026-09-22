@@ -58,10 +58,11 @@ def test_t1301_explicitly_depends_on_t1258() -> None:
     assert "does not append all generated artifacts" in normalized
 
 
-def test_replacement_targets_were_replaced_by_exactly_r1_through_r3() -> None:
+def test_main_text_uses_two_historical_tables_and_nonliteral_confirmation() -> None:
     manuscript = (ROOT / "paper" / "main.tex").read_text(encoding="utf-8")
 
     assert r"\label{tab:resultados}" not in manuscript
     assert r"\label{tab:cronograma}" not in manuscript
-    assert manuscript.count("generated/m1301_article_results_v1/r") == 3
+    assert manuscript.count("generated/m1301_article_results_v1/r") == 2
+    assert "generated/m17_review_v1/confirmation.tex" in manuscript
     assert r"\section{Results and Analysis}" in manuscript

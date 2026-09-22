@@ -9,13 +9,15 @@ Q5_CONFIG = ROOT / "configs" / "experiments" / "q5_structured_publication_v4.tom
 
 
 def _article() -> str:
-    return ARTICLE.read_text(encoding="utf-8")
+    return ARTICLE.read_text(encoding="utf-8") + (ROOT / "paper/supplement-method.tex").read_text(
+        encoding="utf-8"
+    )
 
 
 def _limitations() -> str:
-    return _article().split(
-        r"\section{Limitations and Threats to Validity}", maxsplit=1
-    )[1].split(r"\section{Conclusion and Future Work}", maxsplit=1)[0]
+    return _article().split(r"\section{Limitations and Threats to Validity}", maxsplit=1)[1].split(
+        r"\section{Conclusion and Future Work}", maxsplit=1
+    )[0] + (ROOT / "paper/supplement-method.tex").read_text(encoding="utf-8")
 
 
 def test_t1302_states_every_required_limit_without_conflating_statuses() -> None:
@@ -76,9 +78,9 @@ def test_q5_theorem_premises_match_config_and_the_exact_execution_path() -> None
     assert parameters["termination_token_ids"] == [126081, 126348]
     assert parameters["pad_token_id"] == 126081
 
-    q5_driver = (
-        ROOT / "scripts" / "exact_commit" / "run_q5_end_to_end.py"
-    ).read_text(encoding="utf-8")
+    q5_driver = (ROOT / "scripts" / "exact_commit" / "run_q5_end_to_end.py").read_text(
+        encoding="utf-8"
+    )
     exact_path = q5_driver.split("def _prepare_exact_call(", maxsplit=1)[1].split(
         "def _monitor_process_resources(", maxsplit=1
     )[0]
@@ -89,9 +91,9 @@ def test_q5_theorem_premises_match_config_and_the_exact_execution_path() -> None
     assert "low-confidence ranking" in article
     assert "still-masked positions" in article
     assert "exact commits never remask" in article
-    assert (
-        "does not remask exact commitments" in limitations
-    ), "the upstream remasking label must not silently weaken the exact termination premise"
+    assert "does not remask exact commitments" in limitations, (
+        "the upstream remasking label must not silently weaken the exact termination premise"
+    )
 
 
 def test_correspondence_names_real_enforcement_files() -> None:

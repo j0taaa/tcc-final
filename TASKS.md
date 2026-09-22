@@ -25,9 +25,9 @@ Preserve all historical evidence, finite-support exactness and baseline source.
 Complete T1700 before new model/performance experiments. T1701 also closes the
 remaining live-evidence work in T1603; T1703 closes T1604 when its gates pass.
 
-- [ ] T1700: Bound sparse-chart work and classify every late conclusive Rust
+- [x] T1700: Bound sparse-chart work and classify every late conclusive Rust
   result as TIMEOUT; add deterministic regressions and rerun correctness gates.
-- [ ] T1701: Freeze and run matched-budget, nonliteral live pilot/confirmation,
+- [x] T1701: Freeze and run matched-budget, nonliteral live pilot/confirmation,
   pre-commit ranked-support replay, and recursive resource scaling. Retain all
   failures and statuses; use committed code/configs and independent checkers.
 - [ ] T1702: Correct normalized-DAG pseudocode and token-level H composition;
@@ -36,14 +36,17 @@ remaining live-evidence work in T1603; T1703 closes T1604 when its gates pass.
 - [ ] T1703: Align a new local release, manuscript and reproducible evidence;
   run complete tests, packaging/artifact and clean-checkout gates. No remote push.
 
-**Evidence:** In progress; see `docs/reviews/2026-09-22.md` for findings.
+**Evidence:** Timeout regressions and 1,500 M5/M6/M7 oracle cases pass. New raw
+measurements are in docs/artifacts/raw/m17_review_v1; producing commits and
+derived outcomes are in paper/generated/m17_review_v1/summary.json. See
+docs/reviews/2026-09-22-resolution.md for commands and final release gates.
 
 ## Previous starting point
 
 M0 through M13, including the M10.5 hardening pass and M12.5 review-fix gate,
 record the completed release baseline. **M14 review hardening and M15
 behavior-preserving simplification are complete.**
-M16's nontrivial CPU study is complete; live confirmation remains open.
+M16's CPU and live studies are complete; final submission gates are tracked in M17.
 Optional O1--O4 remain outside the required scope.
 
 ## M16 — Nontrivial scientific evidence
@@ -60,23 +63,17 @@ reproducible tests of explicit hypotheses, not necessarily positive results.
 - [x] T1602: Run paired branching-support studies with oracle optima,
   full status accounting, support-sensitivity and cost/gap measurements.
   Keep generated cases distinct from real-model states.
-- [ ] T1603: Capture real model states without a known-answer support token;
+- [x] T1603: Capture real model states without a known-answer support token;
   compare common supports and evaluate nonliteral end-to-end tasks, retaining
   failures and measuring functional quality separately from syntax/runtime.
-  - BLOCKED: GPU preflight repeatedly reports llama-server PID 190495 using
-    10,622 MiB, leaving under 1 GiB free. No unrelated process was stopped.
-    All six pinned LLaDA shards and the CUDA/binding environment are available.
-    Smallest next experiment: after the user frees the GPU, implement/run one
-    nonliteral pilot with a matched proposal schedule and pre-commit top-K
-    capture; retain infeasibility and timeout instead of injecting a target.
+  - Resolved by M17: GPU became available; both pilots and disjoint confirmation
+    completed, and all saved-state replay conditions were retained.
 - [ ] T1604: Generate source-linked analyses; rerun correctness, baseline,
   packaging and artifact gates. Update manuscript claims only from committed
   code/configs and immutable raw evidence. No broad superiority claim without
   supporting measurements.
-  - BLOCKED: The code remains uncommitted. Permission for a local checkpoint
-    commit was requested; no commit, branch change or push was performed.
-    Correctness/release/artifact gates pass, but live confirmation and a clean
-    producing commit are required before replacing manuscript measurements.
+  - Source/config checkpoints are now local commits. Final clean release gates
+    are tracked by T1703; no remote branch or history was changed.
 
 **Evidence:** Prospective design in ADR 0023; 817 Python tests, 22 Rust tests,
 strict MyPy (75 files), Ruff, format/Clippy, isolated wheel/sdist and preserved

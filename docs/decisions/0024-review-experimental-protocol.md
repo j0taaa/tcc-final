@@ -68,3 +68,12 @@ do not trigger parameter tuning. Confirmation retains 32 slots, 16 steps,
 K=2 up to 8 and the same limits. It uses the twelve predefined disjoint prompts,
 seed 170302 and two repetitions (96 generations plus 12 capture jobs). Report
 the two observations per task explicitly, without counting them as new tasks.
+
+## Replay provenance correction
+
+Replay does not draw random numbers, but its v1 config inherited seed 170401
+from the scaling config rather than naming the saved pilot's seed 170301.
+Keep the completed v1 rows as replay-v1. Freeze v2 with the correct source seed,
+the full grammar-family ID, and per-instance source seed/task/forward/revisions.
+Repeat all 144 selector runs without changing inputs or selection policies.
+Only v2 supplies the main replay table; this correction does not tune outcomes.

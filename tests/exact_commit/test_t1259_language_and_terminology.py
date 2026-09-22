@@ -22,7 +22,7 @@ def _article_without_resumo() -> tuple[str, str]:
 def test_article_body_is_english_and_resumo_remains_portuguese() -> None:
     body, resumo = _article_without_resumo()
 
-    assert "Modelos de linguagem por difusão" in resumo
+    assert "modelos de linguagem por difusão" in resumo.lower()
     assert r"\section{Introduction}" in body
     assert r"\section{Conclusion and Future Work}" in body
     assert r"\newtheorem{theorem}{Theorem}" in body

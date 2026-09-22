@@ -26,6 +26,11 @@ def test_confirmation_is_disjoint_and_every_strategy_uses_identical_tasks_and_se
 def test_saved_support_is_nested_preserves_fixed_positions_and_never_injects_a_target():
     snapshot = {
         "snapshot_id": "test",
+        "seed": 71,
+        "task_id": "test-task",
+        "forward_index": 0,
+        "model_revision": "fake-model",
+        "tokenizer_revision": "fake-tokenizer",
         "family": "brackets",
         "canvas": [None, 11, None],
         "rankings": [[10, 11], [10, 11], [11, 10]],
@@ -36,6 +41,8 @@ def test_saved_support_is_nested_preserves_fixed_positions_and_never_injects_a_t
     }
     narrow, wide = (snapshot_instance(snapshot, width) for width in (1, 2))
     assert narrow.metadata["target_injected"] is False
+    assert narrow.metadata["source_seed"] == 71
+    assert narrow.metadata["source_task_id"] == "test-task"
     assert set(wide.metadata["model_token_ids"]) == {10, 11, 12, 20}
     assert narrow.selection_input.proposals == wide.selection_input.proposals
     assert narrow.selection_input.canvas == wide.selection_input.canvas

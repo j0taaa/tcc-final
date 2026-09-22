@@ -21,21 +21,20 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 
 ## Setup
 
-The immutable reproducibility release is
-[`v0.1.1`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.1). Check it
-out explicitly so the source, configs, paper, and evidence paths stay aligned:
+The current submission is the **local release v0.2.0**, described in
+[`docs/releases/v0.2.0.md`](docs/releases/v0.2.0.md). It includes the review
+corrections and new experiments; historical v0.1.1 results remain unchanged.
+No remote release or push is implied. From the delivered Git bundle:
 
 ```bash
-git clone --branch v0.1.1 --recurse-submodules \
-  https://github.com/j0taaa/tcc-final.git
+git clone ./mwpc-exact-v0.2.0.bundle tcc-final
 cd tcc-final
+git checkout v0.2.0
+git submodule update --init --recursive
 make bootstrap
 source .venv/bin/activate
 make check
 ```
-
-Omit `--branch v0.1.1` only when intentionally following development on
-`main`.
 
 Artifact regeneration, clean CPU rehearsal, parser-binding, and optional CUDA
 model instructions are in [`REPRODUCING.md`](REPRODUCING.md).

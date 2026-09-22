@@ -37,7 +37,7 @@ def test_python_and_rust_package_metadata_declare_mit() -> None:
     project = tomllib.loads(_read("pyproject.toml"))["project"]
     binding = tomllib.loads(_read("crates/mwpc_parser_py/pyproject.toml"))["project"]
 
-    assert project["version"] == "0.1.1"
+    assert project["version"] == "0.2.0"
     assert project["license"] == "MIT"
     assert project["license-files"] == ["LICENSE"]
     assert binding["license"] == "MIT"
@@ -55,7 +55,8 @@ def test_submission_checklist_and_article_record_the_resolved_license() -> None:
     assert "- [x] Parent repository release license" in checklist
     assert "Parent software and research artifacts use MIT" in article
     assert "Parent release license is pending" not in article
-    assert "j0taaa/tcc-final@v0.1.1" in article
+    assert "v0.2.0" in article
+    assert "local submission release" in article
 
 
 def test_licensed_release_evidence_is_versioned_and_current() -> None:

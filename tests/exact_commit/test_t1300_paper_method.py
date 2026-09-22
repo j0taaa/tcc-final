@@ -10,7 +10,9 @@ ARTICLE = ROOT / "paper" / "main.tex"
 
 
 def _article() -> str:
-    return ARTICLE.read_text(encoding="utf-8")
+    return ARTICLE.read_text(encoding="utf-8") + (ROOT / "paper/supplement-method.tex").read_text(
+        encoding="utf-8"
+    )
 
 
 def _first_jsonl_row(path: Path) -> dict[str, object]:
@@ -22,9 +24,9 @@ def _first_jsonl_row(path: Path) -> dict[str, object]:
 
 def test_t1300_method_section_has_no_implementation_placeholders() -> None:
     article = _article()
-    method = article.split(
-        r"\section{Implementation and Evaluation Methodology}", maxsplit=1
-    )[1].split(r"\section{Results and Analysis}", maxsplit=1)[0]
+    method = article.split(r"\section{Implementation and Evaluation Methodology}", maxsplit=1)[
+        1
+    ].split(r"\section{Results and Analysis}", maxsplit=1)[0]
 
     assert r"\ph{" not in method
     for stale_placeholder in (
@@ -42,9 +44,7 @@ def test_t1300_method_section_has_no_implementation_placeholders() -> None:
 
 def test_repository_and_upstream_revisions_come_from_versioned_records() -> None:
     article = _article()
-    audit = (ROOT / "docs" / "evidence" / "m125-completion-audit.md").read_text(
-        encoding="utf-8"
-    )
+    audit = (ROOT / "docs" / "evidence" / "m125-completion-audit.md").read_text(encoding="utf-8")
     upstream = (ROOT / "UPSTREAM.md").read_text(encoding="utf-8")
     audited_commit = re.search(r"Audited implementation commit:\s*\n\s*`([0-9a-f]{40})`", audit)
     upstream_commit = re.search(r"Pinned commit: `([0-9a-f]{40})`", upstream)
@@ -84,9 +84,7 @@ def test_model_support_and_decoder_fields_match_q5_config_and_code() -> None:
     proposal_policy = (ROOT / "src" / "mwpc_exact" / "proposal_policy.py").read_text(
         encoding="utf-8"
     )
-    ranked_support = (ROOT / "src" / "mwpc_exact" / "ranked_support.py").read_text(
-        encoding="utf-8"
-    )
+    ranked_support = (ROOT / "src" / "mwpc_exact" / "ranked_support.py").read_text(encoding="utf-8")
     q5_driver = (ROOT / "scripts" / "exact_commit" / "run_q5_end_to_end.py").read_text(
         encoding="utf-8"
     )
@@ -99,9 +97,7 @@ def test_model_support_and_decoder_fields_match_q5_config_and_code() -> None:
 def test_grammar_tokenizer_and_backend_description_matches_implementation() -> None:
     article = _article()
     tokenizer_audit = json.loads(
-        (ROOT / "docs" / "evidence" / "t600-llada-tokenizer-audit.json").read_text(
-            encoding="utf-8"
-        )
+        (ROOT / "docs" / "evidence" / "t600-llada-tokenizer-audit.json").read_text(encoding="utf-8")
     )
 
     assert tokenizer_audit["mapping"]["base_vocabulary_size"] == 126080

@@ -106,6 +106,13 @@ if [ "$mode" = "artifact-rebuild" ]; then
     --config "$config" \
     --verify-existing
 
+  review_relative="paper/generated/m17_review_v1"
+  mv "$checkout/$review_relative" "$reference/paper/generated/"
+  "$environment_python" -I "$checkout/scripts/exact_commit/build_review_results.py"
+  diff --recursive --no-dereference \
+    "$reference/$review_relative" "$checkout/$review_relative"
+  "$environment_python" -I "$checkout/scripts/exact_commit/build_review_results.py" --check
+
   manifest="$checkout/$processed_relative/artifact-manifest.json"
   printf '%s\n' \
     "REHEARSAL_LEVEL=artifact-rebuild" \

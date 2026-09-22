@@ -1,0 +1,914 @@
+{
+  "branching": {
+    "cases": 1200,
+    "failures": 0,
+    "multiple_valid_paths_cases": 828,
+    "positive_gap_cases": 12
+  },
+  "confirmation": {
+    "analysis_unit": "task; repetitions are repeated measures",
+    "groups": [
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": null,
+        "complete_runtime_sample_count": 0,
+        "family": "arithmetic",
+        "forward_counts": [
+          14,
+          14,
+          15,
+          15,
+          14,
+          14,
+          14,
+          14
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 8
+        },
+        "statuses": {
+          "incomplete": 8
+        },
+        "strategy": "epic",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": null,
+        "complete_runtime_sample_count": 0,
+        "family": "arithmetic",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "optimal": 8
+        },
+        "statuses": {
+          "incomplete": 8
+        },
+        "strategy": "exact",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": null,
+        "complete_runtime_sample_count": 0,
+        "family": "arithmetic",
+        "forward_counts": [
+          14,
+          14,
+          15,
+          15,
+          14,
+          14,
+          14,
+          14
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 8
+        },
+        "statuses": {
+          "incomplete": 8
+        },
+        "strategy": "serial",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": 1.1248657350006397,
+        "complete_runtime_sample_count": 8,
+        "family": "arithmetic",
+        "forward_counts": [
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15,
+          15
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 8
+        },
+        "statuses": {
+          "complete": 8
+        },
+        "strategy": "unconstrained",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": 1.0203174494999985,
+        "complete_runtime_sample_count": 8,
+        "family": "brackets",
+        "forward_counts": [
+          13,
+          13,
+          16,
+          16,
+          13,
+          13,
+          13,
+          13
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 8
+        },
+        "statuses": {
+          "complete": 8
+        },
+        "strategy": "epic",
+        "syntax_valid": 8,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": 3.1292879054999503,
+        "complete_runtime_sample_count": 8,
+        "family": "brackets",
+        "forward_counts": [
+          14,
+          14,
+          16,
+          16,
+          15,
+          15,
+          14,
+          14
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "optimal": 8
+        },
+        "statuses": {
+          "complete": 8
+        },
+        "strategy": "exact",
+        "syntax_valid": 8,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": 0.974629594002181,
+        "complete_runtime_sample_count": 8,
+        "family": "brackets",
+        "forward_counts": [
+          13,
+          13,
+          16,
+          16,
+          13,
+          13,
+          13,
+          13
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 8
+        },
+        "statuses": {
+          "complete": 8
+        },
+        "strategy": "serial",
+        "syntax_valid": 8,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": 0.9664588984996954,
+        "complete_runtime_sample_count": 8,
+        "family": "brackets",
+        "forward_counts": [
+          13,
+          13,
+          16,
+          16,
+          13,
+          13,
+          13,
+          13
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 8
+        },
+        "statuses": {
+          "complete": 8
+        },
+        "strategy": "unconstrained",
+        "syntax_valid": 6,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": 1.3264842169992335,
+        "complete_runtime_sample_count": 2,
+        "family": "nested_json",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 2,
+        "solver_statuses": {
+          "None": 8
+        },
+        "statuses": {
+          "complete": 2,
+          "incomplete": 6
+        },
+        "strategy": "epic",
+        "syntax_valid": 2,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": null,
+        "complete_runtime_sample_count": 0,
+        "family": "nested_json",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "optimal": 8
+        },
+        "statuses": {
+          "incomplete": 8
+        },
+        "strategy": "exact",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": 1.3050041549977323,
+        "complete_runtime_sample_count": 2,
+        "family": "nested_json",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 2,
+        "solver_statuses": {
+          "None": 8
+        },
+        "statuses": {
+          "complete": 2,
+          "incomplete": 6
+        },
+        "strategy": "serial",
+        "syntax_valid": 2,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 8,
+        "complete_runtime_median_seconds": 1.1971417330023542,
+        "complete_runtime_sample_count": 8,
+        "family": "nested_json",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 8
+        },
+        "statuses": {
+          "complete": 8
+        },
+        "strategy": "unconstrained",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      }
+    ],
+    "runtime_censoring": "timeouts excluded from complete-runtime medians, counted in statuses"
+  },
+  "pilot": {
+    "analysis_unit": "task; repetitions are repeated measures",
+    "groups": [
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 1.254292235003959,
+        "complete_runtime_sample_count": 1,
+        "family": "arithmetic",
+        "forward_counts": [
+          14,
+          14,
+          15,
+          13
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 4
+        },
+        "statuses": {
+          "complete": 1,
+          "incomplete": 3
+        },
+        "strategy": "epic",
+        "syntax_valid": 1,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": null,
+        "complete_runtime_sample_count": 0,
+        "family": "arithmetic",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "optimal": 4
+        },
+        "statuses": {
+          "incomplete": 4
+        },
+        "strategy": "exact",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 1.2109028400009265,
+        "complete_runtime_sample_count": 1,
+        "family": "arithmetic",
+        "forward_counts": [
+          14,
+          14,
+          15,
+          13
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 4
+        },
+        "statuses": {
+          "complete": 1,
+          "incomplete": 3
+        },
+        "strategy": "serial",
+        "syntax_valid": 1,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 1.0451152305031428,
+        "complete_runtime_sample_count": 4,
+        "family": "arithmetic",
+        "forward_counts": [
+          14,
+          14,
+          15,
+          14
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 4
+        },
+        "statuses": {
+          "complete": 4
+        },
+        "strategy": "unconstrained",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 1.2631918614970346,
+        "complete_runtime_sample_count": 4,
+        "family": "brackets",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 1,
+        "solver_statuses": {
+          "None": 4
+        },
+        "statuses": {
+          "complete": 4
+        },
+        "strategy": "epic",
+        "syntax_valid": 4,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 3.476840599993011,
+        "complete_runtime_sample_count": 1,
+        "family": "brackets",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "optimal": 4
+        },
+        "statuses": {
+          "complete": 1,
+          "incomplete": 3
+        },
+        "strategy": "exact",
+        "syntax_valid": 1,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 1.208978233498783,
+        "complete_runtime_sample_count": 4,
+        "family": "brackets",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 1,
+        "solver_statuses": {
+          "None": 4
+        },
+        "statuses": {
+          "complete": 4
+        },
+        "strategy": "serial",
+        "syntax_valid": 4,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 1.2092775224955403,
+        "complete_runtime_sample_count": 4,
+        "family": "brackets",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 1,
+        "solver_statuses": {
+          "None": 4
+        },
+        "statuses": {
+          "complete": 4
+        },
+        "strategy": "unconstrained",
+        "syntax_valid": 3,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 1.2293373854990932,
+        "complete_runtime_sample_count": 2,
+        "family": "nested_json",
+        "forward_counts": [
+          16,
+          16,
+          14,
+          14
+        ],
+        "functional_success": 2,
+        "solver_statuses": {
+          "None": 4
+        },
+        "statuses": {
+          "complete": 2,
+          "incomplete": 2
+        },
+        "strategy": "epic",
+        "syntax_valid": 2,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": null,
+        "complete_runtime_sample_count": 0,
+        "family": "nested_json",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "optimal": 4
+        },
+        "statuses": {
+          "incomplete": 4
+        },
+        "strategy": "exact",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 1.2357505070031038,
+        "complete_runtime_sample_count": 2,
+        "family": "nested_json",
+        "forward_counts": [
+          16,
+          16,
+          14,
+          14
+        ],
+        "functional_success": 2,
+        "solver_statuses": {
+          "None": 4
+        },
+        "statuses": {
+          "complete": 2,
+          "incomplete": 2
+        },
+        "strategy": "serial",
+        "syntax_valid": 2,
+        "unique_tasks": 4
+      },
+      {
+        "attempts": 4,
+        "complete_runtime_median_seconds": 1.186432408499968,
+        "complete_runtime_sample_count": 4,
+        "family": "nested_json",
+        "forward_counts": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "functional_success": 0,
+        "solver_statuses": {
+          "None": 4
+        },
+        "statuses": {
+          "complete": 4
+        },
+        "strategy": "unconstrained",
+        "syntax_valid": 0,
+        "unique_tasks": 4
+      }
+    ],
+    "runtime_censoring": "timeouts excluded from complete-runtime medians, counted in statuses"
+  },
+  "pilot_v1_errors": 18,
+  "producing_commits": {
+    "branching": [
+      "9444c846be6c0c9330d90d8e08f1970a15a30cc1"
+    ],
+    "confirmation": [
+      "76be4fa830634609fc5c997f53f74f558ffa285b"
+    ],
+    "pilot-v1": [
+      "9444c846be6c0c9330d90d8e08f1970a15a30cc1"
+    ],
+    "pilot-v2": [
+      "ad3f7454407d0bec47da42fab2e36466f638c9ee"
+    ],
+    "replay": [
+      "4ed7ceffab85ae1f01c1619a0008a61befd228f0"
+    ],
+    "scaling": [
+      "ef1ee7f1e29ac326f715b10b16b966770d082e42"
+    ]
+  },
+  "replay": {
+    "paired_conditions": 72,
+    "paired_feasible_conditions": 60,
+    "positive_gaps": 0,
+    "positive_score_optima": 60,
+    "rows": 144,
+    "statuses": {
+      "greedy_exact_feasibility:feasible_on_support": 60,
+      "greedy_exact_feasibility:infeasible_on_support": 12,
+      "rust_exact:infeasible_on_support": 12,
+      "rust_exact:optimal": 60
+    },
+    "zero_score_optima": 0
+  },
+  "scaling": {
+    "max_edges": 2048,
+    "max_nodes": 1282,
+    "max_rss_bytes": 80785408,
+    "rows": 72,
+    "settings": [
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 32161792,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.0037085739968460985,
+        "slots": 16,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 2
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 32161792,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.0032386629973188974,
+        "slots": 16,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 2
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 32292864,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.0043894959962926805,
+        "slots": 16,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 4
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 32292864,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.0038637559991911985,
+        "slots": 16,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 4
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 32292864,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.014179990001139231,
+        "slots": 16,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 8
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 32292864,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.006545418000314385,
+        "slots": 16,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 8
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 32555008,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.012516424998466391,
+        "slots": 32,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 2
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 32555008,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.011148468001920264,
+        "slots": 32,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 2
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 32555008,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.014542027005518321,
+        "slots": 32,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 4
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 32555008,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.013370602995564695,
+        "slots": 32,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 4
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 34963456,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.06581345699669328,
+        "slots": 32,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 8
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 33439744,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.0425915240048198,
+        "slots": 32,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 8
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 32686080,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.06231951300287619,
+        "slots": 64,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 2
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 32948224,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.061529018996225204,
+        "slots": 64,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 2
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 33079296,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.07322051099617966,
+        "slots": 64,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 4
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 33079296,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.07041210299939848,
+        "slots": 64,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 4
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 50806784,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.42967338899325114,
+        "slots": 64,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 8
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 48439296,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.3346260149992304,
+        "slots": 64,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 8
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 40722432,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.43215185000008205,
+        "slots": 128,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 2
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 40800256,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.41300457299803384,
+        "slots": 128,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 2
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 43446272,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.48302994000550825,
+        "slots": 128,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 4
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 43200512,
+        "optimal_runtime_count": 3,
+        "optimal_runtime_median_seconds": 0.47697871000127634,
+        "slots": 128,
+        "statuses": {
+          "optimal": 3
+        },
+        "width": 4
+      },
+      {
+        "fixed_depth": 0,
+        "max_rss_bytes": 80785408,
+        "optimal_runtime_count": 0,
+        "optimal_runtime_median_seconds": null,
+        "slots": 128,
+        "statuses": {
+          "timeout": 3
+        },
+        "width": 8
+      },
+      {
+        "fixed_depth": 4,
+        "max_rss_bytes": 80691200,
+        "optimal_runtime_count": 0,
+        "optimal_runtime_median_seconds": null,
+        "slots": 128,
+        "statuses": {
+          "timeout": 3
+        },
+        "width": 8
+      }
+    ],
+    "statuses": {
+      "optimal": 66,
+      "timeout": 6
+    }
+  }
+}

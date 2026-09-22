@@ -1,9 +1,48 @@
 # Reproducing the MWPC research artifacts
 
-The immutable private-repository reproducibility release is
-[`v0.1.1`](https://github.com/j0taaa/tcc-final/releases/tag/v0.1.1). Its tag is
-the common source reference for the code, paper, configurations, and evidence
-archive; individual experiment rows retain their earlier producing commits.
+## Current review evidence
+
+The corrected experiments add evidence without overwriting Q1--Q5. The protocol
+and pilot observation correction are in
+docs/decisions/0024-review-experimental-protocol.md. Raw records are archived
+under docs/artifacts/raw/m17_review_v1 with checksummed compressed JSONL and
+original per-run metadata. The first pilot's observation failures are retained.
+
+Rebuild the new manuscript results without a model or network:
+
+    .venv/bin/python scripts/exact_commit/build_review_results.py
+    .venv/bin/python scripts/exact_commit/build_review_results.py --check
+    make article-results-check
+    make -C paper
+
+Fresh experiments require a clean committed checkout and a new output directory:
+
+    PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m scripts.exact_commit.run_branching_study --run-directory results/raw/new-branching-run
+    PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m scripts.exact_commit.run_review_offline --config configs/experiments/m17_recursive_scaling_v1.toml --run-directory results/raw/new-scaling-run
+    PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m scripts.exact_commit.run_review_offline --config configs/experiments/m17_real_replay_v2.toml --run-directory results/raw/new-replay-run
+
+Replay consumes all 24 archived corrected-pilot snapshots at K=2,4,8 without
+loading the model. The independent unit for an inference about tasks would be
+the prompt, not each forward/width/method condition. Replay counts are
+descriptive conditions, with no population confidence claim.
+
+For fresh GPU generation, use the pinned CUDA environment and local checkpoint
+described below:
+
+    PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python -m scripts.exact_commit.run_nonliteral_live --config configs/experiments/m17_nonliteral_pilot_v2.toml --run-directory results/raw/new-pilot-run
+    PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python -m scripts.exact_commit.run_nonliteral_live --config configs/experiments/m17_nonliteral_confirmation_v1.toml --run-directory results/raw/new-confirmation-run
+
+Pilot v1 is excluded from performance comparisons because its observation
+wrapper interfered with baseline resampling. All corrected-pilot/confirmation
+failures and incomplete outputs remain included. Generation is bounded by
+60 seconds and setup by 180 seconds. Scaling/replay use a one-second native
+limit, a 15-second process limit and 2048 MiB address space. New timings and
+statuses are new measurements; never replace archived rows to make checks pass.
+
+The current submission is the local release **v0.2.0**. Use the delivered
+Git bundle and release assets described in [`docs/releases/v0.2.0.md`](docs/releases/v0.2.0.md).
+The historical remote v0.1.1 remains unchanged; it does not contain the current
+review fixes. Each experiment row names its own producing commit.
 
 > **T1203 name clarification.** `final` denotes the deterministic output of
 > this artifact build, not publication-level benchmark status. Later
@@ -49,9 +88,10 @@ Clone the repository and its read-only EPIC submodule, then create the main CPU
 environment:
 
 ```bash
-git clone --branch v0.1.1 --recurse-submodules \
-  https://github.com/j0taaa/tcc-final.git
+git clone ./mwpc-exact-v0.2.0.bundle tcc-final
 cd tcc-final
+git checkout v0.2.0
+git submodule update --init --recursive
 make bootstrap
 source .venv/bin/activate
 make check

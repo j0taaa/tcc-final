@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mwpc-exact"
-version = "0.1.1"
+version = "0.2.0"
 description = "Exact maximum-weight parallel commitment for CFG-constrained diffusion language models"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"

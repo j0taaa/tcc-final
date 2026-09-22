@@ -183,6 +183,11 @@ def snapshot_instance(snapshot: Mapping[str, Any], width: int) -> BenchmarkInsta
             "model_token_ids": model_ids,
             "source_strategy": "unconstrained",
             "target_injected": False,
+            "source_seed": snapshot["seed"],
+            "source_task_id": snapshot["task_id"],
+            "source_forward_index": snapshot["forward_index"],
+            "model_revision": snapshot["model_revision"],
+            "tokenizer_revision": snapshot["tokenizer_revision"],
         },
     )
 

@@ -1,3 +1,7 @@
+> Update 2026-09-22: historical blockers below were resolved in M17.
+> See [review resolution](reviews/2026-09-22-resolution.md) and ADR 0024 for
+> committed live/replay/scaling evidence. Earlier observations are preserved.
+
 # M16: scientific evidence beyond fixed literal tasks
 
 ## Contribution and a falsifiable motivation
