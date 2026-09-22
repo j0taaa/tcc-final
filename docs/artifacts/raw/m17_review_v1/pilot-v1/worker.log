@@ -1,0 +1,61 @@
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:06<00:32,  6.59s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [00:17<00:35,  8.90s/it]Loading checkpoint shards:  50%|█████     | 3/6 [00:27<00:28,  9.47s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:42<00:23, 11.94s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:52<00:11, 11.11s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:59<00:00,  9.75s/it]Loading checkpoint shards: 100%|██████████| 6/6 [00:59<00:00,  9.96s/it]
+{"job": "brackets-0-170301-0-unconstrained", "status": "complete"}
+{"job": "brackets-0-170301-0-serial", "status": "complete"}
+{"job": "brackets-0-170301-0-epic", "status": "complete"}
+{"job": "brackets-0-170301-0-exact", "status": "complete"}
+{"job": "brackets-0-170301-capture", "status": "complete"}
+{"job": "arithmetic-0-170301-0-serial", "status": "error"}
+{"job": "arithmetic-0-170301-0-epic", "status": "error"}
+{"job": "arithmetic-0-170301-0-exact", "status": "incomplete"}
+{"job": "arithmetic-0-170301-0-unconstrained", "status": "complete"}
+{"job": "arithmetic-0-170301-capture", "status": "complete"}
+{"job": "nested_json-0-170301-0-epic", "status": "error"}
+{"job": "nested_json-0-170301-0-exact", "status": "incomplete"}
+{"job": "nested_json-0-170301-0-unconstrained", "status": "complete"}
+{"job": "nested_json-0-170301-0-serial", "status": "error"}
+{"job": "nested_json-0-170301-capture", "status": "complete"}
+{"job": "brackets-1-170301-0-exact", "status": "incomplete"}
+{"job": "brackets-1-170301-0-unconstrained", "status": "complete"}
+{"job": "brackets-1-170301-0-serial", "status": "error"}
+{"job": "brackets-1-170301-0-epic", "status": "error"}
+{"job": "brackets-1-170301-capture", "status": "complete"}
+{"job": "arithmetic-1-170301-0-unconstrained", "status": "complete"}
+{"job": "arithmetic-1-170301-0-serial", "status": "error"}
+{"job": "arithmetic-1-170301-0-epic", "status": "error"}
+{"job": "arithmetic-1-170301-0-exact", "status": "incomplete"}
+{"job": "arithmetic-1-170301-capture", "status": "complete"}
+{"job": "nested_json-1-170301-0-serial", "status": "error"}
+{"job": "nested_json-1-170301-0-epic", "status": "error"}
+{"job": "nested_json-1-170301-0-exact", "status": "incomplete"}
+{"job": "nested_json-1-170301-0-unconstrained", "status": "complete"}
+{"job": "nested_json-1-170301-capture", "status": "complete"}
+{"job": "brackets-2-170301-0-epic", "status": "complete"}
+{"job": "brackets-2-170301-0-exact", "status": "incomplete"}
+{"job": "brackets-2-170301-0-unconstrained", "status": "complete"}
+{"job": "brackets-2-170301-0-serial", "status": "complete"}
+{"job": "brackets-2-170301-capture", "status": "complete"}
+{"job": "arithmetic-2-170301-0-exact", "status": "incomplete"}
+{"job": "arithmetic-2-170301-0-unconstrained", "status": "complete"}
+{"job": "arithmetic-2-170301-0-serial", "status": "error"}
+{"job": "arithmetic-2-170301-0-epic", "status": "error"}
+{"job": "arithmetic-2-170301-capture", "status": "complete"}
+{"job": "nested_json-2-170301-0-unconstrained", "status": "complete"}
+{"job": "nested_json-2-170301-0-serial", "status": "error"}
+{"job": "nested_json-2-170301-0-epic", "status": "error"}
+{"job": "nested_json-2-170301-0-exact", "status": "incomplete"}
+{"job": "nested_json-2-170301-capture", "status": "complete"}
+{"job": "brackets-3-170301-0-serial", "status": "complete"}
+{"job": "brackets-3-170301-0-epic", "status": "complete"}
+{"job": "brackets-3-170301-0-exact", "status": "incomplete"}
+{"job": "brackets-3-170301-0-unconstrained", "status": "complete"}
+{"job": "brackets-3-170301-capture", "status": "complete"}
+{"job": "arithmetic-3-170301-0-epic", "status": "error"}
+{"job": "arithmetic-3-170301-0-exact", "status": "incomplete"}
+{"job": "arithmetic-3-170301-0-unconstrained", "status": "complete"}
+{"job": "arithmetic-3-170301-0-serial", "status": "error"}
+{"job": "arithmetic-3-170301-capture", "status": "complete"}
+{"job": "nested_json-3-170301-0-exact", "status": "incomplete"}
+{"job": "nested_json-3-170301-0-unconstrained", "status": "complete"}
+{"job": "nested_json-3-170301-0-serial", "status": "error"}
+{"job": "nested_json-3-170301-0-epic", "status": "error"}
+{"job": "nested_json-3-170301-capture", "status": "complete"}

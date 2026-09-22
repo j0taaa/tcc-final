@@ -1,0 +1,75 @@
+{
+  "artifact_kind": "mwpc_resolved_experiment_config",
+  "config_sha256": "b78d8615af47756fe728bfc38c878c780cb0c36d5779de1f986bd5d8965b3f39",
+  "resolved_config": {
+    "description": "Predeclared recursive-language branching-support oracle and paired selector study.",
+    "exactness": {
+      "guarantee": "per_step",
+      "require_independent_certificate": true,
+      "scope": "exact_on_support"
+    },
+    "experiment_id": "m16_branching_v1",
+    "grammar": {
+      "grammar_id": "m16_recursive_byte_families_v1",
+      "hash_policy": "sha256_canonical_grammar",
+      "revision": "m16_recursive_tasks_v1",
+      "source": "mwpc_research.recursive_tasks"
+    },
+    "hardware": {
+      "cpu_threads": 1,
+      "cuda_device": null,
+      "device": "cpu",
+      "dtype": "float64",
+      "synchronize_cuda": false
+    },
+    "model": {
+      "local_files_only": true,
+      "model_id": "not_applicable_synthetic_states",
+      "model_revision": "m16_branching_generator_v1",
+      "tokenizer_id": "generated_single_byte_vocabulary",
+      "tokenizer_revision": "m16_branching_generator_v1"
+    },
+    "parameters": {
+      "families": [
+        "brackets",
+        "arithmetic",
+        "nested_json"
+      ],
+      "masked_positions": 4,
+      "maximum_oracle_paths": 4096,
+      "raw_output_root": "results/raw/m16_branching_v1",
+      "seed_count": 100,
+      "selectors": [
+        "python_exact",
+        "rust_exact",
+        "greedy_exact_feasibility"
+      ],
+      "support_widths": [
+        2,
+        4
+      ],
+      "weight_modes": [
+        "unit",
+        "integer_utility"
+      ]
+    },
+    "publication_mode": false,
+    "question": "heuristic_gap",
+    "repetitions": 1,
+    "schema_version": 1,
+    "seeds": [
+      160100
+    ],
+    "support": {
+      "finite_slots": true,
+      "k_max": 4,
+      "policy": "synthetic_feasible_witness_plus_seeded_alternatives",
+      "top_k": 2
+    },
+    "timeouts": {
+      "run_seconds": 1800.0,
+      "solver_seconds": 5.0
+    }
+  },
+  "schema_version": 1
+}

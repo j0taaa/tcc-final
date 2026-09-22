@@ -1,0 +1,10 @@
+{
+  "raw_rows_sha256": "4aed8e3f431e1e50d85ca41789c71f37fa491e3a9adaa8255dc150ddea27b676",
+  "row_count": 1200,
+  "files": {
+    "initial-metadata.json": "23e50c35c13962527ec515a375317be67cb700c743b431720f4e22c37558f569",
+    "resolved-config.json": "eee724cd0fa07a788a69aeefd05094123ff3d22946ebf1a64c285d42a6c4f48c",
+    "rows.jsonl.gz": "ac22b3d99741dac327e8852ce7d00a745e21b9a96f7d75a12dd56d0b15cfdbe9",
+    "summary.json": "822708014859ffb1ecf4dec8bd02f0f49aae4291106f9b39a56423d8e6be9e44"
+  }
+}

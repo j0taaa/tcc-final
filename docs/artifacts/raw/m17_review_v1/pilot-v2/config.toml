@@ -1,0 +1,54 @@
+schema_version = 1
+experiment_id = "m17_nonliteral_pilot_v2"
+question = "end_to_end"
+description = "Corrected observation context nonliteral pilot with matched transfer budgets and pre-commit capture."
+publication_mode = false
+seeds = [170301]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "model_top_k_plus_proposals_and_specials"
+top_k = 2
+k_max = 8
+finite_slots = true
+
+[model]
+model_id = "GSAI-ML/LLaDA-8B-Instruct"
+model_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+tokenizer_id = "GSAI-ML/LLaDA-8B-Instruct"
+tokenizer_revision = "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+local_files_only = true
+
+[grammar]
+grammar_id = "recursive_nonliteral_families_v1"
+source = "src/mwpc_research/recursive_tasks.py"
+revision = "m16_recursive_tasks_v1"
+hash_policy = "sha256_canonical_grammar"
+
+[timeouts]
+solver_seconds = 5.0
+run_seconds = 3600.0
+
+[hardware]
+device = "cuda"
+dtype = "bfloat16"
+cpu_threads = 1
+cuda_device = 0
+synchronize_cuda = true
+
+[parameters]
+split = "pilot"
+slots = 32
+steps = 16
+generation_timeout_seconds = 60.0
+setup_timeout_seconds = 180.0
+warmup_forwards = 2
+capture_forward_indices = [0, 8]
+replay_widths = [2, 4, 8]
+replay_timeout_seconds = 1.0
+raw_output_root = "results/raw/m17_nonliteral_pilot_v2"
