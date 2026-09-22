@@ -41,6 +41,40 @@ requires_rust = pytest.mark.skipif(
 )
 
 
+@pytest.mark.parametrize("backend", (ExactBackend.PYTHON, ExactBackend.RUST))
+def test_witness_reuse_preserves_greedy_decisions_and_reduces_parser_calls(backend):
+    from random import Random
+
+    if backend is ExactBackend.RUST:
+        pytest.importorskip("mwpc_parser_py")
+    saved_calls = 0
+    for seed in range(190000, 190040):
+        rng = Random(seed)
+        state = frozen_input(
+            tuple(
+                Proposal(i, rng.randrange(2), rng.randrange(2), rng.randrange(3)) for i in range(5)
+            )
+        )
+        original = select_greedy_exact_feasibility(state, backend=backend)
+        reused = select_greedy_exact_feasibility(state, backend=backend, reuse_witness=True)
+        assert original.status == reused.status, seed
+        assert original.score == reused.score, seed
+        assert set(original.selected_proposal_ids) == set(reused.selected_proposal_ids), seed
+        assert (
+            original.diagnostics["accepted_proposal_ids"]
+            == reused.diagnostics["accepted_proposal_ids"]
+        ), seed
+        saved = (
+            original.diagnostics["feasibility_call_count"]
+            - reused.diagnostics["feasibility_call_count"]
+        )
+        assert saved >= 0, seed
+        saved_calls += saved
+        ids, score = recompute_witness_selection(state, reused.witness_token_ids)
+        assert set(ids) == set(reused.selected_proposal_ids) and score == reused.score, seed
+    assert saved_calls > 0
+
+
 def same_pair_grammar() -> CnfGrammar:
     """Accept exactly ``aa`` and ``bb``."""
 

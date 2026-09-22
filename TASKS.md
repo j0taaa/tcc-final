@@ -16,6 +16,28 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M19 — Audit the practical-benefit claim
+
+Depends on M18. Preserve baseline defaults, the same proposal objective and
+finite supports, independently validated witnesses, and immutable prior results.
+
+- [x] T1900: Audit timing boundaries, censoring, EOS/PAD contributions and
+  functional meaning; test a greedy variant that reuses its valid witness.
+- [ ] T1901: Freeze and rerun all 24 confirmation states, K=2/4/8 and
+  budgets=2/8/32, three rotated-order repetitions, original greedy, witness-reuse
+  greedy and exact. Use a common ten-second total-selection limit and retain
+  every status. Report absolute times and paired wins/losses, not just ratios.
+- [ ] T1902: Correct manuscript/report claims to match the audit and verify
+  the generated evidence. Keep the implementation small and leave LAVE untouched.
+
+**Evidence:** T1900: 842 Python tests, 24 Rust tests, Ruff and MyPy pass.
+Forty recorded seeds per backend preserve greedy decisions with fewer parser
+calls; an injected clock rejects an exact result that exceeds the whole-call
+deadline. M18's unique score-gain case includes 23 EOS/PAD matches in each
+method and only 8 versus 7 ordinary proposal matches; both witnesses fail the
+prompt. M18's exact native-parser deadline differed from greedy's total deadline,
+although no old exact call exceeded one second. New matched audit pending.
+
 M18 follows the request for a practical use and less experimental scaffolding.
 
 ## M18 — Bounded practical selection and smaller maintenance surface

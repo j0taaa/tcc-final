@@ -19,6 +19,7 @@ from time import perf_counter
 from mwpc_exact import BenchmarkInstance, ComponentProfiler, ExactBackend, solve_exact_commit
 from mwpc_exact.evaluation.selection import (
     recompute_witness_selection,
+    select_exact_mwpc,
     select_greedy_exact_feasibility,
 )
 from mwpc_exact.experiments import capture_run_metadata, load_experiment_config
@@ -44,12 +45,16 @@ def child(job_path, result_path, timeout, memory_mib):
     profiler = ComponentProfiler(enabled=True)
     started = perf_counter()
     try:
-        if job["method"] == "greedy_exact_feasibility":
+        if job["method"] in {"greedy_exact_feasibility", "greedy_witness_reuse"}:
             result = select_greedy_exact_feasibility(
                 state,
                 backend=ExactBackend.RUST,
                 total_timeout_seconds=timeout,
+                reuse_witness=job["method"] == "greedy_witness_reuse",
             )
+            status, score = result.status.value, result.score
+        elif job.get("audit", False):
+            result = select_exact_mwpc(state, backend=ExactBackend.RUST, timeout_seconds=timeout)
             status, score = result.status.value, result.score
         else:
             result = solve_exact_commit(
@@ -75,6 +80,8 @@ def child(job_path, result_path, timeout, memory_mib):
             ).syntax_valid
             if not valid:
                 raise RuntimeError("independent syntax check rejected an optimal certificate")
+        if job.get("audit", False):
+            elapsed = perf_counter() - started
         row = {
             "status": status,
             "score": score,
@@ -83,6 +90,14 @@ def child(job_path, result_path, timeout, memory_mib):
             "independent_syntax": valid,
             "profile": profiler.snapshot().to_dict(),
         }
+        if job.get("audit", False) and elapsed >= timeout:
+            row = {
+                "status": "timeout",
+                "score": None,
+                "runtime_seconds": elapsed,
+                "timeout_phase": "total_selection",
+                "late_result_status": status,
+            }
     except Exception as error:
         row = {
             "status": "error",
@@ -101,21 +116,27 @@ def summarize(rows):
     for row in rows:
         paired[row["instance"]["instance_id"], row["repetition"]][row["method"]] = row
     for pair in paired.values():
-        if set(pair) != {"rust_exact", "greedy_exact_feasibility"}:
+        if "rust_exact" not in pair:
             continue
-        exact, greedy = pair["rust_exact"], pair["greedy_exact_feasibility"]
-        metadata = exact["instance"]["metadata"]
-        if "proposal_budget" not in metadata:
-            continue
-        groups[metadata["width"], metadata["proposal_budget"]].append((exact, greedy))
+        for method in pair.keys() - {"rust_exact"}:
+            exact, greedy = pair["rust_exact"], pair[method]
+            metadata = exact["instance"]["metadata"]
+            if "proposal_budget" in metadata:
+                groups[method, metadata["width"], metadata["proposal_budget"]].append(
+                    (exact, greedy)
+                )
     comparisons = []
-    for (width, budget), pairs in sorted(groups.items()):
+    for (method, width, budget), pairs in sorted(groups.items()):
         states = defaultdict(list)
+        times = defaultdict(list)
         gaps = []
         for exact, greedy in pairs:
             if exact["status"] == "optimal" and greedy["status"] == "feasible_on_support":
                 states[exact["instance"]["instance_id"]].append(
                     greedy["runtime_seconds"] / exact["runtime_seconds"]
+                )
+                times[exact["instance"]["instance_id"]].append(
+                    (exact["runtime_seconds"], greedy["runtime_seconds"])
                 )
                 gaps.append(exact["score"] - greedy["score"])
         comparisons.append(
@@ -134,6 +155,26 @@ def summarize(rows):
                 "positive_gap_repetitions": sum(gap > 1e-12 for gap in gaps),
                 "negative_gap_repetitions": sum(gap < -1e-12 for gap in gaps),
                 "maximum_score_gap": max(gaps) if gaps else None,
+                **({"comparator": method} if method != "greedy_exact_feasibility" else {}),
+                **(
+                    {
+                        "exact_slower_states": sum(
+                            median(ratios) < 1 for ratios in states.values()
+                        ),
+                        "paired_median_exact_seconds": median(
+                            median(t[0] for t in samples) for samples in times.values()
+                        )
+                        if times
+                        else None,
+                        "paired_median_comparator_seconds": median(
+                            median(t[1] for t in samples) for samples in times.values()
+                        )
+                        if times
+                        else None,
+                    }
+                    if pairs[0][0].get("audit", False)
+                    else {}
+                ),
             }
         )
     return {
@@ -232,7 +273,10 @@ def main():
     for instance in instances:
         for repetition in range(config.repetitions):
             methods = list(parameters["methods"])
-            if repetition % 2:
+            if parameters.get("audit", False):
+                offset = repetition % len(methods)
+                methods = methods[offset:] + methods[:offset]
+            elif repetition % 2:
                 methods.reverse()
             for method in methods:
                 jobs.append(
@@ -241,6 +285,7 @@ def main():
                         "instance": instance.to_dict(),
                         "method": method,
                         "repetition": repetition,
+                        "audit": parameters.get("audit", False),
                     }
                 )
     dump(directory / "jobs.json", jobs)

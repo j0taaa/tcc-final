@@ -162,3 +162,31 @@ def test_real_batch_optimum_agrees_with_independent_python_reference():
     ]
     assert all(result.score == 14.318663361719748 for result in results)
     assert all(len(result.selected_proposal_ids) == 31 for result in results)
+
+
+def test_audit_discards_exact_result_exceeding_total_deadline(tmp_path, monkeypatch):
+    from scripts.exact_commit import run_review_offline as runner
+
+    root = Path(__file__).resolve().parents[2] / "docs/artifacts/raw/m17_review_v1"
+    snapshot = json.loads(
+        (
+            root / "confirmation/snapshots" / "confirm-brackets-3-170302-capture-forward0.json"
+        ).read_text()
+    )
+    job, output = tmp_path / "job.json", tmp_path / "result.json"
+    job.write_text(
+        json.dumps(
+            {
+                "instance": snapshot_instance(snapshot, 4, 32).to_dict(),
+                "method": "rust_exact",
+                "audit": True,
+            }
+        )
+    )
+    times = iter((0.0, 0.1, 2.0))
+    monkeypatch.setattr(runner, "perf_counter", lambda: next(times))
+    monkeypatch.setattr(runner.resource, "setrlimit", lambda *_: None)
+    runner.child(job, output, timeout=1, memory_mib=2048)
+    row = json.loads(output.read_text())
+    assert row["status"] == "timeout" and row["score"] is None
+    assert row["late_result_status"] == "optimal" and "result" not in row

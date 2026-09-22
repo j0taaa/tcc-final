@@ -548,11 +548,14 @@ def select_greedy_exact_feasibility(
     deadline_check_interval: int = 1_024,
     deterministic_work_limit: int | None = None,
     clock: Callable[[], float] | None = None,
+    reuse_witness: bool = False,
 ) -> SelectionResult:
     """Order-greedy proposal retention with a single total exact-feasibility budget."""
 
     if not isinstance(selection_input, SelectionInput):
         raise TypeError("selection_input must be a SelectionInput")
+    if not isinstance(reuse_witness, bool):
+        raise TypeError("reuse_witness must be a boolean")
     if clock is None:
         clock = perf_counter
     elif not callable(clock):
@@ -654,6 +657,19 @@ def select_greedy_exact_feasibility(
             continue
         tentative = list(committed)
         tentative[proposal.position] = proposal.token_id
+        # The current certified completion already satisfies all commitments.
+        # Matching it adds a constraint it satisfies, so feasibility is preserved.
+        # Subsequent parser calls still receive every accumulated commitment.
+        if (
+            reuse_witness
+            and result.witness_token_ids[proposal.position] == proposal.token_id
+            and (total_timeout_seconds is None or clock() - started < total_timeout_seconds)
+        ):
+            committed = tentative
+            accepted_ids.append(proposal.proposal_id)
+            decision.update(outcome="accepted", reason="current_witness_match")
+            decisions.append(decision)
+            continue
         tentative_result, tentative_support = solve_current(tuple(tentative))
         decision["feasibility_status"] = tentative_result.status.value
         if tentative_result.status is SolveStatus.OPTIMAL:
@@ -716,6 +732,7 @@ def select_greedy_exact_feasibility(
             "implementation": "greedy_exact_feasibility_v2",
             "optimization_guarantee": "none_order_greedy",
             "feasibility_guarantee": "feasible_on_represented_support",
+            "reuse_witness": reuse_witness,
             "proposal_order": [proposal.proposal_id for proposal in selection_input.proposals],
             "accepted_proposal_ids": accepted_ids,
             "decisions": decisions,
