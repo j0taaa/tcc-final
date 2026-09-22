@@ -47,3 +47,14 @@ wrapper now uses no_grad, matching the baseline, with an executable regression.
 The parent also records the observed CUDA runtime in common metadata; v1 kept
 its missing-metadata warning. Pilot v2 changes only these observation details;
 no tasks, budgets, rankings or success criteria are tuned. Preserve both runs.
+
+## Recursive scaling extension
+
+Use 16/32/64/128 slots, support widths 2/4/8 and fixed outer nesting depths
+0/4; three repetitions per setting. The first four tokens emit individual
+brackets; the next four emit (), [], (()) and [[]], exposing multi-byte
+expansion as width increases. This is a compound width/byte-length axis, not
+an isolated causal estimate. Save every instance and certificate; independently
+check bracket syntax and use exhaustive agreement on small instances as a gate.
+Limit native parsing to one second, each process to 15 seconds and address space
+to 2048 MiB. Report all statuses and peak process RSS, including failed cases.

@@ -1,0 +1,51 @@
+schema_version = 1
+experiment_id = "m17_recursive_scaling_v1"
+question = "scaling"
+description = "Recursive branching lattices with bounded native parsing and process resources."
+publication_mode = false
+seeds = [170401]
+repetitions = 3
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "generated_top_k_or_explicit_per_position"
+top_k = 2
+k_max = 8
+finite_slots = true
+
+[model]
+model_id = "not_applicable_generated_scaling_instances"
+model_revision = "m17_recursive_scaling_v1"
+tokenizer_id = "generated_raw_byte_vocabulary"
+tokenizer_revision = "m17_recursive_scaling_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "recursive_brackets"
+source = "src/mwpc_research/recursive_scaling.py"
+revision = "m17_recursive_scaling_v1"
+hash_policy = "sha256_per_instance"
+
+[timeouts]
+solver_seconds = 1.0
+run_seconds = 1200.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+study = "scaling"
+slot_counts = [16, 32, 64, 128]
+widths = [2, 4, 8]
+fixed_depths = [0, 4]
+methods = ["rust_exact"]
+process_timeout_seconds = 15.0
+max_address_space_mib = 2048
