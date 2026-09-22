@@ -17,7 +17,7 @@ from mwpc_research.live_evidence import summarize_live_rows
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "docs/artifacts/raw/m17_review_v1"
 OUTPUT = ROOT / "paper/generated/m17_review_v1"
-BUNDLES = ("branching", "pilot-v1", "pilot-v2", "confirmation", "scaling", "replay")
+BUNDLES = ("branching", "pilot-v1", "pilot-v2", "confirmation", "scaling", "replay-v1", "replay")
 
 
 def verified_rows(directory):

@@ -40,7 +40,7 @@ o replay real não é. O piloto com erro operacional permanece separado da
 comparação. A confirmação não alterou tarefas, orçamento ou critérios para
 obter um resultado positivo.
 
-Esses resultados resolvem as lacunas de medição, mas não demonstram vantagem
+O replay v1 herdava o seed da configuração de escala, embora não sorteasse\nnovas entradas. Foi preservado como replay-v1; o replay principal foi repetido\ncom o seed correto da captura e proveniência por tarefa/passo.\n\nEsses resultados resolvem as lacunas de medição, mas não demonstram vantagem
 prática geral. O artigo agora explicita essa conclusão. Os antigos fatores
 de tempo 0,524 e 0,625 são identificados como confundidos por orçamentos
 diferentes; as medições históricas não foram reescritas.

@@ -1,0 +1,11 @@
+{
+  "raw_rows_sha256": "06cad69c8e84517f260a9caca268ee542488e6ea51663e8015b027baa0cc369d",
+  "row_count": 144,
+  "files": {
+    "config.toml": "63a05937624726742a61c6684c694e8ff1d6a5084923048ad63a9c03f69e3920",
+    "input-hashes.json": "097ad06ad82f2a6ca6b5648ec51762956c134c732a93d5ad20450665a49f948d",
+    "metadata.json": "580881d9b70affd2fd1e310714761b8c8289d8a0c2dc55d92d974d19243bf3b7",
+    "rows.jsonl.gz": "2df02c47b0bb37d0726fb324b288d02405a34146316d6e9a573e721dddab0af6",
+    "summary.json": "ffd8a773b779c46b6301c7951b95844617be959f2e23566d8c1ddcb9e0919da2"
+  }
+}

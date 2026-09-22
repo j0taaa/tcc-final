@@ -30,7 +30,7 @@ remaining live-evidence work in T1603; T1703 closes T1604 when its gates pass.
 - [x] T1701: Freeze and run matched-budget, nonliteral live pilot/confirmation,
   pre-commit ranked-support replay, and recursive resource scaling. Retain all
   failures and statuses; use committed code/configs and independent checkers.
-- [ ] T1702: Correct normalized-DAG pseudocode and token-level H composition;
+- [x] T1702: Correct normalized-DAG pseudocode and token-level H composition;
   add a worked example; revise abstracts, result interpretation and table layout.
   Keep LAVE outside the requested changes.
 - [ ] T1703: Align a new local release, manuscript and reproducible evidence;

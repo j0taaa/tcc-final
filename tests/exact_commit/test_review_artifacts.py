@@ -20,6 +20,7 @@ def test_review_results_recompute_and_all_measured_sources_are_clean():
         "pilot-v2",
         "confirmation",
         "scaling",
+        "replay-v1",
         "replay",
     }
 
