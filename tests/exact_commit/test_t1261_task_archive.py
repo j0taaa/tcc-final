@@ -65,8 +65,10 @@ def test_archive_preserves_prior_history_chain_and_evidence() -> None:
 def test_active_file_keeps_m125_and_m13_full_and_names_project_status() -> None:
     active = ACTIVE.read_text(encoding="utf-8")
 
-    assert len(active.splitlines()) < 900
-    assert "**Required project complete.**" in active
+    # Future maintenance milestones may extend the active checklist. The
+    # archived implementation evidence, not a prose/line-count lock, is stable.
+    assert "release baseline" in active
+    assert "# M14" in active
     assert "Optional O1--O4 remain outside the required scope" in active
     assert "**M12.5 review-fix gate — complete**" in active
     assert "# M12.5 — Review fixes before article writing" in active

@@ -521,128 +521,6 @@ def _explicit_rows(
     )
 
 
-def _build_per_position_support(
-    *,
-    canvas: Sequence[int | None],
-    policy: SupportPolicy,
-    logits: Sequence[Sequence[float]] | None = None,
-    explicit_support: Mapping[int, Sequence[int]] | None = None,
-    proposals: Iterable[Proposal] = (),
-) -> PerPositionSupport:
-    """Construct deterministic support from logits or explicit position rows.
-
-    Exactly one input source is required. ``TOP_K`` requires logits,
-    ``EXPLICIT`` requires an explicit map, and ``FULL`` accepts either while
-    validating complete coverage. Fixed slots are never widened.
-    """
-
-    if not isinstance(policy, SupportPolicy):
-        raise TypeError("policy must be a SupportPolicy")
-    if (logits is None) == (explicit_support is None):
-        raise ValueError("provide exactly one of logits or explicit_support")
-    if policy.kind is SupportKind.TOP_K and logits is None:
-        raise ValueError("TOP_K support must be constructed from logits")
-    if policy.kind is SupportKind.EXPLICIT and explicit_support is None:
-        raise ValueError("EXPLICIT support must be constructed from an explicit map")
-
-    canvas_tokens = _canvas(canvas, vocabulary_size=policy.vocabulary_size)
-    permitted = policy.permitted_token_ids
-    if permitted is None:
-        raise AssertionError("SupportPolicy did not normalize permitted_token_ids")
-    permitted_set = frozenset(permitted)
-    for position, fixed_token in enumerate(canvas_tokens):
-        if fixed_token is not None and fixed_token not in permitted_set:
-            raise ValueError(
-                f"fixed canvas token at position {position} is not permitted: {fixed_token}"
-            )
-    proposal_items = _validate_proposals(
-        proposals,
-        canvas=canvas_tokens,
-        vocabulary_size=policy.vocabulary_size,
-        permitted_token_ids=permitted_set,
-    )
-    proposal_tokens: list[set[int]] = [set() for _ in canvas_tokens]
-    if policy.include_proposal_tokens:
-        for proposal in proposal_items:
-            proposal_tokens[proposal.position].add(proposal.token_id)
-
-    top_k_rows: list[tuple[int, ...]] = [() for _ in canvas_tokens]
-    if logits is not None:
-        scores = _logit_matrix(
-            logits,
-            slot_count=len(canvas_tokens),
-            vocabulary_size=policy.vocabulary_size,
-        )
-        base_rows: list[tuple[int, ...]] = []
-        for position, fixed_token in enumerate(canvas_tokens):
-            if fixed_token is not None:
-                base_rows.append((fixed_token,))
-                continue
-            if policy.kind is SupportKind.TOP_K:
-                effective_k = policy.effective_top_k
-                if effective_k is None:
-                    raise AssertionError("TOP_K policy has no effective width")
-                ranked = tuple(
-                    sorted(permitted, key=lambda token_id: (-scores[position][token_id], token_id))[
-                        :effective_k
-                    ]
-                )
-                top_k_rows[position] = ranked
-                base_rows.append(tuple(sorted(ranked)))
-            else:
-                base_rows.append(permitted)
-        input_source = SupportInputSource.LOGITS
-    else:
-        if explicit_support is None:
-            raise AssertionError("input source validation lost explicit_support")
-        base_rows = list(
-            _explicit_rows(
-                explicit_support,
-                slot_count=len(canvas_tokens),
-                vocabulary_size=policy.vocabulary_size,
-            )
-        )
-        input_source = SupportInputSource.EXPLICIT
-
-    represented_rows: list[tuple[int, ...]] = []
-    required_specials = set(policy.required_special_token_ids)
-    for position, (fixed_token, base_row) in enumerate(zip(canvas_tokens, base_rows, strict=True)):
-        if fixed_token is not None:
-            if base_row != (fixed_token,):
-                raise ValueError(
-                    f"fixed position {position} explicit support must contain exactly "
-                    f"token {fixed_token}"
-                )
-            represented_rows.append((fixed_token,))
-            continue
-        row = set(base_row)
-        if not row <= permitted_set:
-            unsupported = sorted(row - permitted_set)
-            raise ValueError(
-                f"support at position {position} contains non-permitted token IDs: {unsupported}"
-            )
-        row.update(required_specials)
-        row.update(proposal_tokens[position])
-        if not row:
-            raise ValueError(f"masked support row {position} must not be empty")
-        represented_rows.append(tuple(sorted(row)))
-
-    proposal_rows = tuple(
-        tuple(sorted(tokens)) if policy.include_proposal_tokens else ()
-        for tokens in proposal_tokens
-    )
-    return PerPositionSupport(
-        canvas=canvas_tokens,
-        rows=tuple(represented_rows),
-        permitted_token_ids=permitted,
-        exactness_scope=policy.exactness_scope,
-        input_source=input_source,
-        top_k_token_ids_by_position=tuple(top_k_rows),
-        proposal_token_ids_by_position=proposal_rows,
-        proposal_token_inclusion_enabled=policy.include_proposal_tokens,
-    )
-
-
 def build_per_position_support(
     *,
     canvas: Sequence[int | None],
@@ -662,22 +540,118 @@ def build_per_position_support(
 
     if profiler is not None and not isinstance(profiler, ComponentProfiler):
         raise TypeError("profiler must be a ComponentProfiler or None")
-    if profiler is None or not profiler.enabled:
-        return _build_per_position_support(
-            canvas=canvas,
-            policy=policy,
-            logits=logits,
-            explicit_support=explicit_support,
-            proposals=proposals,
-        )
+    profiler = ComponentProfiler() if profiler is None else profiler
     with profiler.measure(ProfilingComponent.SUPPORT_CONSTRUCTION):
-        support = _build_per_position_support(
-            canvas=canvas,
-            policy=policy,
-            logits=logits,
-            explicit_support=explicit_support,
-            proposals=proposals,
+        if not isinstance(policy, SupportPolicy):
+            raise TypeError("policy must be a SupportPolicy")
+        if (logits is None) == (explicit_support is None):
+            raise ValueError("provide exactly one of logits or explicit_support")
+        if policy.kind is SupportKind.TOP_K and logits is None:
+            raise ValueError("TOP_K support must be constructed from logits")
+        if policy.kind is SupportKind.EXPLICIT and explicit_support is None:
+            raise ValueError("EXPLICIT support must be constructed from an explicit map")
+
+        canvas_tokens = _canvas(canvas, vocabulary_size=policy.vocabulary_size)
+        permitted = policy.permitted_token_ids
+        if permitted is None:
+            raise AssertionError("SupportPolicy did not normalize permitted_token_ids")
+        permitted_set = frozenset(permitted)
+        for position, fixed_token in enumerate(canvas_tokens):
+            if fixed_token is not None and fixed_token not in permitted_set:
+                raise ValueError(
+                    f"fixed canvas token at position {position} is not permitted: {fixed_token}"
+                )
+        proposal_items = _validate_proposals(
+            proposals,
+            canvas=canvas_tokens,
+            vocabulary_size=policy.vocabulary_size,
+            permitted_token_ids=permitted_set,
         )
+        proposal_tokens: list[set[int]] = [set() for _ in canvas_tokens]
+        if policy.include_proposal_tokens:
+            for proposal in proposal_items:
+                proposal_tokens[proposal.position].add(proposal.token_id)
+
+        top_k_rows: list[tuple[int, ...]] = [() for _ in canvas_tokens]
+        if logits is not None:
+            scores = _logit_matrix(
+                logits,
+                slot_count=len(canvas_tokens),
+                vocabulary_size=policy.vocabulary_size,
+            )
+            base_rows: list[tuple[int, ...]] = []
+            for position, fixed_token in enumerate(canvas_tokens):
+                if fixed_token is not None:
+                    base_rows.append((fixed_token,))
+                    continue
+                if policy.kind is SupportKind.TOP_K:
+                    effective_k = policy.effective_top_k
+                    if effective_k is None:
+                        raise AssertionError("TOP_K policy has no effective width")
+                    ranked = tuple(
+                        sorted(
+                            permitted, key=lambda token_id: (-scores[position][token_id], token_id)
+                        )[:effective_k]
+                    )
+                    top_k_rows[position] = ranked
+                    base_rows.append(tuple(sorted(ranked)))
+                else:
+                    base_rows.append(permitted)
+            input_source = SupportInputSource.LOGITS
+        else:
+            if explicit_support is None:
+                raise AssertionError("input source validation lost explicit_support")
+            base_rows = list(
+                _explicit_rows(
+                    explicit_support,
+                    slot_count=len(canvas_tokens),
+                    vocabulary_size=policy.vocabulary_size,
+                )
+            )
+            input_source = SupportInputSource.EXPLICIT
+
+        represented_rows: list[tuple[int, ...]] = []
+        required_specials = set(policy.required_special_token_ids)
+        for position, (fixed_token, base_row) in enumerate(
+            zip(canvas_tokens, base_rows, strict=True)
+        ):
+            if fixed_token is not None:
+                if base_row != (fixed_token,):
+                    raise ValueError(
+                        f"fixed position {position} explicit support must contain exactly "
+                        f"token {fixed_token}"
+                    )
+                represented_rows.append((fixed_token,))
+                continue
+            row = set(base_row)
+            if not row <= permitted_set:
+                unsupported = sorted(row - permitted_set)
+                raise ValueError(
+                    f"support at position {position} contains non-permitted token IDs: "
+                    f"{unsupported}"
+                )
+            row.update(required_specials)
+            row.update(proposal_tokens[position])
+            if not row:
+                raise ValueError(f"masked support row {position} must not be empty")
+            represented_rows.append(tuple(sorted(row)))
+
+        proposal_rows = tuple(
+            tuple(sorted(tokens)) if policy.include_proposal_tokens else ()
+            for tokens in proposal_tokens
+        )
+        support = PerPositionSupport(
+            canvas=canvas_tokens,
+            rows=tuple(represented_rows),
+            permitted_token_ids=permitted,
+            exactness_scope=policy.exactness_scope,
+            input_source=input_source,
+            top_k_token_ids_by_position=tuple(top_k_rows),
+            proposal_token_ids_by_position=proposal_rows,
+            proposal_token_inclusion_enabled=policy.include_proposal_tokens,
+        )
+    if not profiler.enabled:
+        return support
     row_sizes = tuple(len(row) for row in support.rows)
     profiler.set_support_row_sizes(row_sizes)
     profiler.set_counter("support_slot_count", len(row_sizes))

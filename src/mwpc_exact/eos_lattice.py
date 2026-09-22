@@ -436,7 +436,7 @@ class EOSLattice:
 
         choices = tuple(self.token_lattice.choices[arc.token_edge_id] for arc in selected_arcs)
         try:
-            objective = fsum(choice.weight for choice in choices)
+            objective = fsum(term for choice in choices for term in choice.weight_terms)
         except OverflowError as exc:
             raise ValueError("reconstructed token objective must remain finite") from exc
         if not isfinite(objective):
@@ -507,7 +507,7 @@ class EOSLattice:
         if terminal_labels != path.terminal_labels:
             raise ValueError("EOS path terminal labels do not match its ordinary token bytes")
         try:
-            objective = fsum(edge.weight for edge in edges)
+            objective = fsum(term for edge in edges for term in edge.weight_terms)
         except OverflowError as exc:
             raise ValueError("EOS path graph objective must remain finite") from exc
         if not isfinite(objective) or objective != path.objective_value:
@@ -641,6 +641,7 @@ def build_eos_lattice(
                             target_state=next_state,
                             terminal_label=byte_value,
                             weight=choice.weight if offset == 0 else 0.0,
+                            weight_terms=choice.weight_terms if offset == 0 else (),
                             provenance_token_edge_id=choice.token_edge_id,
                             matched_proposal_ids=(
                                 choice.matched_proposal_ids if offset == 0 else ()
@@ -657,6 +658,7 @@ def build_eos_lattice(
                         source_state=source_node_id,
                         target_state=target_node_id,
                         weight=choice.weight,
+                        weight_terms=choice.weight_terms,
                         matched_proposal_ids=choice.matched_proposal_ids,
                     )
                 )

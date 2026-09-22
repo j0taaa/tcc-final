@@ -41,3 +41,35 @@ def test_live_tensor_boundary_keeps_only_kmax_rankings_on_cpu() -> None:
     assert sum(len(row) for row in request.ranked_support_rows.token_ids_by_position) == 12
     assert request.ranked_support_rows.token_ids_by_position[0][0] == 17
     assert not hasattr(request, "logits")
+
+
+@pytest.mark.parametrize("width", [1, 3, 7])
+def test_batched_ranking_matches_dense_reference_with_ties_and_infinities(width: int) -> None:
+    from mwpc_exact.epic_adapter.llada import _ranked_support_from_model_logits
+
+    rows = [
+        [0.0, 1.0, 1.0, -float("inf"), float("inf"), float("inf"), -2.0],
+        [0.0] * 7,
+        [-float("inf")] * 7,
+        [4.0, 3.0, 2.0, 1.0, 0.0, -1.0, -2.0],
+    ]
+    kwargs = dict(
+        prompt_length=0,
+        generation_length=4,
+        vocabulary_size=7,
+        permitted_token_ids=tuple(range(7)),
+        max_k=width,
+    )
+    dense = _ranked_support_from_model_logits(rows, **kwargs)
+    batched = _ranked_support_from_model_logits(torch.tensor(rows), **kwargs)
+    assert batched.token_ids_by_position == dense.token_ids_by_position
+
+
+def test_batched_witness_probabilities_match_dense_reference_including_infinities() -> None:
+    from mwpc_exact.epic_adapter.llada import _witness_probabilities_from_model_logits
+
+    rows = [[0.0, 1.0, 2.0], [float("inf"), float("inf"), 0.0], [0.0, float("inf"), -float("inf")]]
+    kwargs = dict(prompt_length=0, generation_length=3, witness_token_ids=(2, 0, 0))
+    dense = _witness_probabilities_from_model_logits(rows, **kwargs)
+    batched = _witness_probabilities_from_model_logits(torch.tensor(rows), **kwargs)
+    assert batched == pytest.approx(dense, rel=1e-14)

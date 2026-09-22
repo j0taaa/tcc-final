@@ -197,6 +197,13 @@ fn extract_graph(graph: &Bound<'_, PyAny>) -> PyResult<WeightedTerminalDag> {
             .map_err(|error| PyTypeError::new_err(format!("edge must expose weight: {error}")))?
             .extract::<f64>()
             .map_err(|error| PyTypeError::new_err(format!("edge weight must be real: {error}")))?;
+        let terms = match item.getattr("weight_terms") {
+            Ok(value) => value.extract::<Vec<f64>>()?,
+            Err(error) if error.is_instance_of::<pyo3::exceptions::PyAttributeError>(item.py()) => {
+                Vec::new()
+            }
+            Err(error) => return Err(error),
+        };
         edges.push(
             TerminalEdge::new(
                 extract_id_attr(&item, "edge_id")?,
@@ -207,6 +214,7 @@ fn extract_graph(graph: &Bound<'_, PyAny>) -> PyResult<WeightedTerminalDag> {
                 extract_optional_id_attr(&item, "provenance_token_edge_id")?,
                 extract_id_sequence_attr(&item, "matched_proposal_ids")?,
             )
+            .and_then(|edge| edge.with_weight_terms(&terms))
             .map_err(|error| value_error(&format!("invalid graph edge at index {index}"), error))?,
         );
     }

@@ -4,9 +4,11 @@ from __future__ import annotations
 
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
+from fractions import Fraction
 from itertools import product
-from math import fsum, prod
+from math import prod
 
+from mwpc_exact._scores import exact_sum
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.reference.recognizer import recognizes_cnf
 from mwpc_exact.types import Proposal, SolveStatus, TerminalLabel
@@ -150,7 +152,7 @@ def exhaustive_completion_oracle(
     enumerated = 0
     fixed_compatible = 0
     grammar_valid = 0
-    best_score: float | None = None
+    best_score: Fraction | None = None
     best: list[CompletionOptimum] = []
     for completion in product(*supports):
         enumerated += 1
@@ -170,11 +172,12 @@ def exhaustive_completion_oracle(
             if proposal.weight > 0 and completion[proposal.position] == proposal.token_id
         )
         try:
-            score = fsum(proposal.weight for proposal in matched)
+            score = exact_sum(proposal.weight for proposal in matched)
+            rounded_score = float(score)
         except OverflowError as exc:
             raise ValueError("completion objective overflowed finite float range") from exc
         optimum = CompletionOptimum(
-            objective_value=score,
+            objective_value=rounded_score,
             selected_proposal_ids=tuple(proposal.proposal_id for proposal in matched),
             witness_token_ids=completion,
             witness_terminal_labels=terminal_labels,
@@ -197,7 +200,7 @@ def exhaustive_completion_oracle(
         )
     return CompletionOracleResult(
         status=SolveStatus.OPTIMAL,
-        objective_value=best_score,
+        objective_value=None if best_score is None else float(best_score),
         optima=tuple(best),
         search_space_size=search_space_size,
         enumerated_completions=enumerated,
@@ -269,7 +272,7 @@ def exhaustive_subset_oracle(
             grammar_valid_completions=0,
         )
 
-    best_score: float | None = None
+    best_score: Fraction | None = None
     best_subset: tuple[Proposal, ...] = ()
     best_witness: tuple[int, ...] = ()
     best_labels: tuple[TerminalLabel, ...] = ()
@@ -290,7 +293,8 @@ def exhaustive_subset_oracle(
         if witness is None:
             continue
         try:
-            score = fsum(proposal.weight for proposal in subset)
+            score = exact_sum(proposal.weight for proposal in subset)
+            float(score)  # Fail explicitly before claiming an unrepresentable objective.
         except OverflowError as exc:
             raise ValueError("subset objective overflowed finite float range") from exc
         if best_score is None or score > best_score:
@@ -306,7 +310,7 @@ def exhaustive_subset_oracle(
         for proposal in proposal_items
         if proposal.weight > 0 and best_witness[proposal.position] == proposal.token_id
     )
-    matched_score = fsum(proposal.weight for proposal in matched_positive)
+    matched_score = exact_sum(proposal.weight for proposal in matched_positive)
     if matched_score != best_score or {item.proposal_id for item in matched_positive} != {
         item.proposal_id for item in positive_subset
     }:
@@ -315,7 +319,7 @@ def exhaustive_subset_oracle(
         )
     return SubsetOracleResult(
         status=SolveStatus.OPTIMAL,
-        objective_value=best_score,
+        objective_value=None if best_score is None else float(best_score),
         selected_proposal_ids=tuple(item.proposal_id for item in positive_subset),
         witness_token_ids=best_witness,
         witness_terminal_labels=best_labels,

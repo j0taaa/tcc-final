@@ -24,3 +24,8 @@ The pinned EPIC code is not copied into the parent repository; it is referenced 
 
 Any other file that carries its own license notice remains governed by that
 notice. The parent MIT License does not replace third-party terms.
+
+The production parser uses pinned `num-bigint` 0.4.6 and `num-traits` 0.2.19
+for exact ordering and rounding of binary64 weight sums. Both are licensed
+`MIT OR Apache-2.0`; their upstream notices remain authoritative. Their exact
+transitive resolutions and checksums are recorded in both Rust lockfiles.

@@ -1,5 +1,6 @@
 //! Validated stable-ID contracts shared by the Rust solver and PyO3 binding.
 
+use crate::score::ExactScore;
 use std::cmp::Reverse;
 use std::collections::{BTreeMap, BTreeSet, BinaryHeap};
 use std::error::Error;
@@ -59,6 +60,7 @@ pub struct TerminalEdge {
     target_state: NodeId,
     terminal_label: TerminalLabel,
     weight: f64,
+    exact_weight: ExactScore,
     provenance_token_edge_id: Option<TokenEdgeId>,
     matched_proposal_ids: Vec<ProposalId>,
 }
@@ -84,9 +86,31 @@ impl TerminalEdge {
             target_state,
             terminal_label,
             weight,
+            exact_weight: ExactScore::from_float(weight),
             provenance_token_edge_id,
             matched_proposal_ids,
         })
+    }
+
+    /// Preserve original summands when upstream aggregation has rounded weight.
+    pub fn with_weight_terms(mut self, terms: &[f64]) -> Result<Self, ValidationError> {
+        if !terms.is_empty() {
+            for term in terms {
+                require_weight(*term, "edge weight term")?;
+            }
+            let exact = ExactScore::sum(terms);
+            if exact.to_float() != self.weight {
+                return Err(ValidationError::new(
+                    "weight must equal the rounded sum of weight_terms",
+                ));
+            }
+            self.exact_weight = exact;
+        }
+        Ok(self)
+    }
+
+    pub(crate) fn exact_weight(&self) -> &ExactScore {
+        &self.exact_weight
     }
 
     pub fn edge_id(&self) -> EdgeId {

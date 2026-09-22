@@ -178,7 +178,24 @@ def test_validator_requires_all_injected_checks_for_validity(certificate_case) -
     )
 
     assert not report.is_valid
-    assert report.skipped_checks == ("tokenizer", "eos")
+    assert report.skipped_checks == ("tokenizer", "support", "eos")
+
+
+def test_omitted_support_check_never_claims_full_validation(certificate_case) -> None:
+    result, scope, canvas, proposals, graph = certificate_case
+    report = validate_exact_commit_certificate(
+        result,
+        expected_scope=scope,
+        canvas=canvas,
+        proposals=proposals,
+        graph=graph,
+        grammar_recognizer=lambda labels: labels == ("a", "b"),
+        tokenizer_validator=lambda tokens, labels: tokens == (10, 20),
+        eos_validator=lambda tokens: len(tokens) == 2,
+    )
+    assert not report.is_valid
+    assert report.issues == ()
+    assert report.skipped_checks == ("support",)
 
 
 @pytest.mark.parametrize(

@@ -147,6 +147,7 @@ def test_public_result_passes_independent_validator() -> None:
         tokenizer_validator=lambda token_ids, labels: (
             token_ids == (100, 200) and labels == ("x", "y")
         ),
+        support_validator=lambda token_ids: token_ids == (100, 200),
         eos_validator=lambda token_ids: len(token_ids) == 2,
     )
 

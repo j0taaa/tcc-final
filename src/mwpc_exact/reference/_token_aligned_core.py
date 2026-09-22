@@ -4,11 +4,13 @@ from __future__ import annotations
 
 from collections.abc import Iterable, Mapping, Sequence
 from dataclasses import dataclass
+from fractions import Fraction
 from functools import partial
-from math import fsum, isclose, isfinite
+from math import fsum, isfinite
 from types import MappingProxyType
 from typing import TypeAlias
 
+from mwpc_exact._scores import exact_sum
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.reference.lexical import (
     NEGATIVE_INFINITY,
@@ -62,6 +64,11 @@ class ChartEntry:
 
     score: float
     backpointer: CkyBackpointer
+    _exact_score: Fraction | None = None
+
+    @property
+    def exact_score(self) -> Fraction:
+        return self._exact_score if self._exact_score is not None else Fraction(self.score)
 
     def __post_init__(self) -> None:
         if isinstance(self.score, bool) or not isinstance(self.score, (int, float)):
@@ -183,7 +190,7 @@ def run_cky(grammar: CnfGrammar, lexical_rewards: LexicalRewardTable) -> CkySolv
             _stable_update(
                 entries,
                 (terminal_production.head_id, position, position + 1),
-                lexical.score,
+                exact_sum(lexical.weight_terms),
                 TerminalBackpointer(
                     terminal_production.production_id,
                     terminal_production.terminal_id,
@@ -201,8 +208,8 @@ def run_cky(grammar: CnfGrammar, lexical_rewards: LexicalRewardTable) -> CkySolv
                     right = entries.get((binary_production.right_id, split, end))
                     if right is None:
                         continue
-                    candidate = left.score + right.score
-                    if not isfinite(candidate):
+                    candidate = left.exact_score + right.exact_score
+                    if not isfinite(float(candidate)):
                         raise ValueError("CKY objective overflowed finite float range")
                     _stable_update(
                         entries,
@@ -255,7 +262,7 @@ def reconstruct_cky_certificate(
     labels: list[TerminalLabel] = []
     selected_ids: list[int] = []
 
-    def visit(nonterminal_id: int, start: int, end: int) -> float:
+    def visit(nonterminal_id: int, start: int, end: int) -> Fraction:
         entry = chart.entry(nonterminal_id, start, end)
         if entry is None:
             raise CertificateReconstructionError(
@@ -267,7 +274,7 @@ def reconstruct_cky_certificate(
                 raise CertificateReconstructionError("invalid empty backpointer span")
             if entry.score != 0:
                 raise CertificateReconstructionError("empty backpointer must have score zero")
-            return 0.0
+            return Fraction()
         if isinstance(pointer, TerminalBackpointer):
             if end != start + 1:
                 raise CertificateReconstructionError(
@@ -286,8 +293,10 @@ def reconstruct_cky_certificate(
                     "terminal backpointer does not match its production and chart key"
                 )
             lexical = chart.lexical_rewards.reward(start, pointer.terminal_id)
-            if lexical.score == NEGATIVE_INFINITY or not isclose(
-                entry.score, lexical.score, rel_tol=1e-12, abs_tol=1e-12
+            if (
+                lexical.score == NEGATIVE_INFINITY
+                or entry.score != lexical.score
+                or entry.exact_score != exact_sum(lexical.weight_terms)
             ):
                 raise CertificateReconstructionError(
                     "terminal chart score does not match the lexical reward"
@@ -296,7 +305,7 @@ def reconstruct_cky_certificate(
             token_ids.append(chart.lexical_rewards.terminal_token_ids[pointer.terminal_id])
             labels.append(terminal_labels[pointer.terminal_id])
             selected_ids.extend(lexical.matched_proposal_ids)
-            return lexical.score
+            return exact_sum(lexical.weight_terms)
         if not isinstance(pointer, BinaryBackpointer):
             raise CertificateReconstructionError("unknown backpointer type")
         if (
@@ -329,9 +338,7 @@ def reconstruct_cky_certificate(
             end,
         )
         recomputed = left_score + right_score
-        if not isfinite(recomputed) or not isclose(
-            entry.score, recomputed, rel_tol=1e-12, abs_tol=1e-12
-        ):
+        if entry.score != float(recomputed) or entry.exact_score != recomputed:
             raise CertificateReconstructionError(
                 "binary chart score does not equal its child-score sum"
             )
@@ -354,7 +361,7 @@ def reconstruct_cky_certificate(
                 f"proposal {proposal.proposal_id} does not match the reconstructed witness"
             )
     objective = fsum(proposal.weight for proposal in selected_proposals)
-    if not isclose(objective, root_score, rel_tol=1e-12, abs_tol=1e-12):
+    if objective != float(root_score):
         raise CertificateReconstructionError(
             "recomputed proposal objective does not match the root chart score"
         )
@@ -394,6 +401,7 @@ def build_token_aligned_support_graph(
                     target_state=position + 1,
                     terminal_label=labels[terminal_id],
                     weight=lexical.score,
+                    weight_terms=lexical.weight_terms,
                     provenance_token_edge_id=next_edge_id,
                     matched_proposal_ids=lexical.matched_proposal_ids,
                 )
@@ -513,6 +521,17 @@ def solve_token_aligned(
                     for token_id, label in zip(token_ids, labels, strict=True)
                 )
             ),
+            support_validator=lambda token_ids: (
+                len(token_ids) == lexical.slot_count
+                and all(
+                    any(
+                        token_id == lexical.terminal_token_ids[terminal_id]
+                        and cell.score != NEGATIVE_INFINITY
+                        for terminal_id, cell in lexical.rows[position].items()
+                    )
+                    for position, token_id in enumerate(token_ids)
+                )
+            ),
             eos_validator=lambda token_ids: len(token_ids) == len(canvas_tokens),
         )
         if not report.is_valid:
@@ -555,9 +574,9 @@ def solve_token_aligned(
 def _stable_update(
     entries: dict[ChartKey, ChartEntry],
     key: ChartKey,
-    candidate_score: float,
+    candidate_score: Fraction,
     backpointer: CkyBackpointer,
 ) -> None:
     existing = entries.get(key)
-    if existing is None or candidate_score > existing.score:
-        entries[key] = ChartEntry(candidate_score, backpointer)
+    if existing is None or candidate_score > existing.exact_score:
+        entries[key] = ChartEntry(float(candidate_score), backpointer, candidate_score)

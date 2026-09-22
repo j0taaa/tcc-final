@@ -9,6 +9,7 @@ import pytest
 
 import mwpc_exact.solver as orchestrator
 from mwpc_exact import (
+    ComponentProfiler,
     CompositionalByteLevelAdapter,
     EOSMode,
     EOSPolicy,
@@ -383,11 +384,14 @@ def test_non_byte_grammar_is_rejected_before_lattice_construction() -> None:
         )
 
 
-def test_corrupted_normalized_backend_certificate_becomes_error(monkeypatch) -> None:
+@pytest.mark.parametrize("profiled", [False, True])
+def test_corrupted_normalized_backend_certificate_becomes_error(
+    monkeypatch, profiled: bool
+) -> None:
     original = orchestrator._run_python_backend
 
-    def corrupted(grammar: CnfGrammar, lattice):
-        outcome = original(grammar, lattice)
+    def corrupted(grammar: CnfGrammar, lattice, profiler=None):
+        outcome = original(grammar, lattice, profiler)
         assert outcome.certificate is not None
         certificate = replace(
             outcome.certificate,
@@ -397,7 +401,7 @@ def test_corrupted_normalized_backend_certificate_becomes_error(monkeypatch) -> 
 
     monkeypatch.setattr(orchestrator, "_run_python_backend", corrupted)
 
-    result = solve_offline()
+    result = solve_offline(profiler=ComponentProfiler(enabled=profiled))
 
     assert result.status is SolveStatus.ERROR
     assert result.objective_value is None

@@ -638,14 +638,17 @@ def validate_exact_commit_certificate(
         )
     elif eos_policy is None:
         skipped.append("tokenizer")
-    if support_validator is not None:
-        _run_injected_check(
-            name="support",
-            call=partial(support_validator, result.witness_token_ids),
-            rejected_code=ValidationCode.SUPPORT_REJECTED,
-            issues=issues,
-            skipped=skipped,
-        )
+    _run_injected_check(
+        name="support",
+        call=(
+            None
+            if support_validator is None
+            else partial(support_validator, result.witness_token_ids)
+        ),
+        rejected_code=ValidationCode.SUPPORT_REJECTED,
+        issues=issues,
+        skipped=skipped,
+    )
     if eos_policy is not None and eos_adapter is not None:
         _validate_finite_eos_policy(
             result=result,

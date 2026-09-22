@@ -6,8 +6,10 @@ from collections.abc import Iterable, Mapping
 from dataclasses import dataclass, field
 from enum import StrEnum
 from math import fsum, isfinite
-from types import MappingProxyType
 from typing import Self, TypeAlias
+
+from mwpc_exact._json import _freeze_json, _thaw_json
+from mwpc_exact._scores import weight_terms
 
 
 class SolveStatus(StrEnum):
@@ -91,33 +93,6 @@ def _terminal_tuple(value: object) -> tuple[TerminalLabel, ...]:
     if isinstance(value, (str, bytes)) or not isinstance(value, Iterable):
         raise TypeError("witness_terminal_labels must be a sequence")
     return tuple(_terminal_label(label) for label in value)
-
-
-def _freeze_json(value: object, field_name: str) -> object:
-    if value is None or isinstance(value, (str, bool, int)):
-        return value
-    if isinstance(value, float):
-        if not isfinite(value):
-            raise ValueError(f"{field_name} must not contain NaN or infinity")
-        return value
-    if isinstance(value, Mapping):
-        frozen: dict[str, object] = {}
-        for key, item in value.items():
-            if not isinstance(key, str):
-                raise TypeError(f"{field_name} keys must be strings")
-            frozen[key] = _freeze_json(item, f"{field_name}.{key}")
-        return MappingProxyType(frozen)
-    if isinstance(value, (list, tuple)):
-        return tuple(_freeze_json(item, field_name) for item in value)
-    raise TypeError(f"{field_name} must contain only JSON-compatible values")
-
-
-def _thaw_json(value: object) -> object:
-    if isinstance(value, Mapping):
-        return {key: _thaw_json(item) for key, item in value.items()}
-    if isinstance(value, tuple):
-        return [_thaw_json(item) for item in value]
-    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -296,6 +271,7 @@ class AggregatedProposal:
     token_id: int
     weight: float
     proposal_ids: tuple[int, ...]
+    weight_terms: tuple[float, ...] = ()
 
     def __post_init__(self) -> None:
         if _require_int(self.position, "position") < 0:
@@ -307,6 +283,7 @@ class AggregatedProposal:
             "weight",
             _finite_float(self.weight, "weight", non_negative=True),
         )
+        object.__setattr__(self, "weight_terms", weight_terms(self.weight, self.weight_terms))
         proposal_ids = _int_tuple(self.proposal_ids, "proposal_ids")
         if not proposal_ids:
             raise ValueError("proposal_ids must be non-empty")
@@ -346,6 +323,7 @@ def aggregate_proposals(proposals: Iterable[Proposal]) -> tuple[AggregatedPropos
                 position=position,
                 token_id=token_id,
                 weight=total_weight,
+                weight_terms=tuple(proposal.weight for proposal in group),
                 proposal_ids=tuple(proposal.proposal_id for proposal in group),
             )
         )
@@ -364,6 +342,7 @@ class TokenArc:
     emitted_bytes: bytes
     weight: float = 0.0
     matched_proposal_ids: tuple[int, ...] = ()
+    weight_terms: tuple[float, ...] = ()
 
     def __post_init__(self) -> None:
         for field_name in ("token_edge_id", "slot", "token_id", "source_boundary"):
@@ -383,6 +362,7 @@ class TokenArc:
             "weight",
             _finite_float(self.weight, "weight", non_negative=True),
         )
+        object.__setattr__(self, "weight_terms", weight_terms(self.weight, self.weight_terms))
         object.__setattr__(
             self,
             "matched_proposal_ids",
@@ -401,6 +381,7 @@ class TerminalEdge:
     weight: float = 0.0
     provenance_token_edge_id: int | None = None
     matched_proposal_ids: tuple[int, ...] = ()
+    weight_terms: tuple[float, ...] = ()
 
     def __post_init__(self) -> None:
         for field_name in ("edge_id", "source_state", "target_state"):
@@ -415,6 +396,7 @@ class TerminalEdge:
             "weight",
             _finite_float(self.weight, "weight", non_negative=True),
         )
+        object.__setattr__(self, "weight_terms", weight_terms(self.weight, self.weight_terms))
         if self.provenance_token_edge_id is not None:
             provenance_id = _require_int(self.provenance_token_edge_id, "provenance_token_edge_id")
             if provenance_id < 0:
@@ -435,6 +417,7 @@ class EpsilonEdge:
     target_state: int
     weight: float = 0.0
     matched_proposal_ids: tuple[int, ...] = ()
+    weight_terms: tuple[float, ...] = ()
 
     def __post_init__(self) -> None:
         for field_name in ("edge_id", "source_state", "target_state"):
@@ -448,6 +431,7 @@ class EpsilonEdge:
             "weight",
             _finite_float(self.weight, "weight", non_negative=True),
         )
+        object.__setattr__(self, "weight_terms", weight_terms(self.weight, self.weight_terms))
         object.__setattr__(
             self,
             "matched_proposal_ids",

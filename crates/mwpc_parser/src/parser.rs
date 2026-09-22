@@ -1,8 +1,9 @@
 //! Indexed max-plus dynamic program over an epsilon-free terminal DAG.
 
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 use std::time::{Duration, Instant};
 
+use crate::score::ExactScore;
 use crate::types::{
     BinaryProduction, Certificate, CnfGrammar, Diagnostics, EdgeId, NodeId, NonterminalId,
     ProductionId, SolveResult, SolveStatus, TerminalId, TerminalLabel, TerminalProduction,
@@ -27,6 +28,7 @@ pub(crate) enum Backpointer {
 #[derive(Clone, Debug, PartialEq)]
 pub(crate) struct ChartEntry {
     pub score: f64,
+    pub exact_score: ExactScore,
     pub backpointer: Backpointer,
 }
 
@@ -246,7 +248,7 @@ fn run_max_plus_with_options(
                     &mut entries,
                     (edge.source_state(), edge.target_state()),
                     production.head_id,
-                    edge.weight(),
+                    edge.exact_weight().clone(),
                     Backpointer::Terminal {
                         production_id: production.production_id,
                         terminal_id: production.terminal_id,
@@ -278,13 +280,42 @@ fn run_max_plus_with_options(
     }
 
     let order = graph.topological_order();
+    // A split with no left chart entry cannot derive a binary production.
+    // Index only represented left spans, retaining topological tie order.
+    let mut ends_by_source: BTreeMap<NodeId, BTreeSet<usize>> = BTreeMap::new();
+    for (source, target) in entries.keys() {
+        ends_by_source.entry(*source).or_default().insert(
+            graph
+                .topological_index(*target)
+                .expect("validated endpoint"),
+        );
+    }
     for width in 1..order.len() {
         for source_index in 0..(order.len() - width) {
+            // Empty chart spans still cost work. Without this check, a sparse
+            // or incompatible graph can traverse O(|Q|^2) pairs uninterruptibly.
+            if controller.step() {
+                return Ok(finish_computation(
+                    SolveStatus::Timeout,
+                    entries,
+                    None,
+                    relaxations,
+                    grammar,
+                    graph,
+                    &controller,
+                ));
+            }
             let target_index = source_index + width;
             let source = order[source_index];
             let target = order[target_index];
-            let mut candidates = Vec::new();
-            for middle in &order[(source_index + 1)..target_index] {
+            let mut candidates: BTreeMap<NonterminalId, ChartEntry> = BTreeMap::new();
+            let middles: Vec<_> = ends_by_source
+                .get(&source)
+                .into_iter()
+                .flat_map(|ends| ends.range((source_index + 1)..target_index))
+                .map(|index| order[*index])
+                .collect();
+            for middle in &middles {
                 if controller.step() {
                     return Ok(finish_computation(
                         SolveStatus::Timeout,
@@ -320,29 +351,50 @@ fn run_max_plus_with_options(
                             continue;
                         };
                         for production in productions {
-                            let score = left.score + right.score;
-                            if !score.is_finite() {
+                            let score = left.exact_score.add(&right.exact_score);
+                            if !score.to_float().is_finite() {
                                 return Err(ValidationError::new(
                                     "max-plus objective overflowed finite f64 range",
                                 ));
                             }
                             relaxations += 1;
-                            candidates.push((
-                                production.head_id,
-                                score,
-                                Backpointer::Binary {
-                                    production_id: production.production_id,
-                                    intermediate_state: *middle,
-                                    left_nonterminal_id: *left_id,
-                                    right_nonterminal_id: *right_id,
-                                },
-                            ));
+                            let backpointer = Backpointer::Binary {
+                                production_id: production.production_id,
+                                intermediate_state: *middle,
+                                left_nonterminal_id: *left_id,
+                                right_nonterminal_id: *right_id,
+                            };
+                            if candidates
+                                .get(&production.head_id)
+                                .is_none_or(|current| score > current.exact_score)
+                            {
+                                candidates.insert(
+                                    production.head_id,
+                                    ChartEntry {
+                                        score: score.to_float(),
+                                        exact_score: score,
+                                        backpointer,
+                                    },
+                                );
+                            }
                         }
                     }
                 }
             }
-            for (head_id, score, backpointer) in candidates {
-                stable_update(&mut entries, (source, target), head_id, score, backpointer);
+            for (head_id, candidate) in candidates {
+                stable_update(
+                    &mut entries,
+                    (source, target),
+                    head_id,
+                    candidate.exact_score,
+                    candidate.backpointer,
+                );
+            }
+            if entries.contains_key(&(source, target)) {
+                ends_by_source
+                    .entry(source)
+                    .or_default()
+                    .insert(target_index);
             }
         }
     }
@@ -371,15 +423,15 @@ fn run_max_plus_with_options(
             ));
         }
         let candidate = if final_node == graph.start_node_id() && grammar.accepts_empty() {
-            Some(0.0)
+            Some(ExactScore::default())
         } else {
             entries
                 .get(&(graph.start_node_id(), final_node))
                 .and_then(|span| span.get(&grammar.start_nonterminal_id()))
-                .map(|entry| entry.score)
+                .map(|entry| entry.exact_score.clone())
         };
         if let Some(score) = candidate {
-            if best_score.is_none_or(|current| score > current) {
+            if best_score.as_ref().is_none_or(|current| &score > current) {
                 best_score = Some(score);
                 best_final = Some(final_node);
             }
@@ -411,6 +463,23 @@ fn finish_computation(
     controller: &DeadlineController,
 ) -> ParseComputation {
     let elapsed_chart_seconds = controller.started.elapsed().as_secs_f64();
+    // Final checks apply to infeasibility as well as a successful chart; the
+    // periodic check may not run again before the last work unit completes.
+    let check_final_deadline = status != SolveStatus::Timeout && controller.deadline.is_some();
+    let expired = check_final_deadline
+        && controller
+            .deadline
+            .is_some_and(|deadline| Instant::now() >= deadline);
+    let status = if expired {
+        SolveStatus::Timeout
+    } else {
+        status
+    };
+    let final_node_id = if status == SolveStatus::Timeout {
+        None
+    } else {
+        final_node_id
+    };
     let diagnostics = Diagnostics {
         chart_entries: entries.values().map(BTreeMap::len).sum::<usize>() as u64,
         relaxations,
@@ -421,7 +490,7 @@ fn finish_computation(
         elapsed_chart_seconds,
         elapsed_backtracking_seconds: 0.0,
         elapsed_parser_seconds: elapsed_chart_seconds,
-        deadline_checks: controller.deadline_checks,
+        deadline_checks: controller.deadline_checks + u64::from(check_final_deadline),
     };
     ParseComputation {
         status,
@@ -501,8 +570,8 @@ fn reconstruct_certificate(
     let recorded_root_score = computation
         .root_score(grammar, graph)
         .ok_or_else(|| ValidationError::new("optimal chart omitted its root score"))?;
-    if !scores_close(certificate.objective_value, reconstructed_tree_score)
-        || !scores_close(certificate.objective_value, recorded_root_score)
+    if certificate.objective_value != reconstructed_tree_score.to_float()
+        || certificate.objective_value != recorded_root_score
     {
         return Err(ValidationError::new(
             "recomputed path objective does not match the root chart objective",
@@ -520,7 +589,7 @@ fn visit_backpointer(
     source: NodeId,
     target: NodeId,
     edge_ids: &mut Vec<EdgeId>,
-) -> Result<f64, ValidationError> {
+) -> Result<ExactScore, ValidationError> {
     let entry = computation
         .entry(nonterminal_id, source, target)
         .ok_or_else(|| {
@@ -554,13 +623,13 @@ fn visit_backpointer(
                     "terminal backpointer does not match its production, edge, and chart key",
                 ));
             }
-            if !scores_close(entry.score, edge.weight()) {
+            if entry.score != edge.weight() || &entry.exact_score != edge.exact_weight() {
                 return Err(ValidationError::new(
                     "terminal chart score does not equal its edge weight",
                 ));
             }
             edge_ids.push(*edge_id);
-            Ok(edge.weight())
+            Ok(edge.exact_weight().clone())
         }
         Backpointer::Binary {
             production_id,
@@ -615,8 +684,8 @@ fn visit_backpointer(
                 target,
                 edge_ids,
             )?;
-            let score = left_score + right_score;
-            if !score.is_finite() || !scores_close(entry.score, score) {
+            let score = left_score.add(&right_score);
+            if entry.score != score.to_float() || entry.exact_score != score {
                 return Err(ValidationError::new(
                     "binary chart score does not equal its child-score sum",
                 ));
@@ -631,7 +700,7 @@ fn validate_and_build_certificate(
     edge_ids: &[EdgeId],
 ) -> Result<Certificate, ValidationError> {
     let mut current = graph.start_node_id();
-    let mut weights = Vec::with_capacity(edge_ids.len());
+    let mut exact_objective = ExactScore::default();
     let mut labels: Vec<TerminalLabel> = Vec::with_capacity(edge_ids.len());
     let mut proposal_ids = Vec::new();
     let mut token_edge_ids = Vec::with_capacity(edge_ids.len());
@@ -645,7 +714,7 @@ fn validate_and_build_certificate(
             ));
         }
         current = edge.target_state();
-        weights.push(edge.weight());
+        exact_objective = exact_objective.add(edge.exact_weight());
         labels.push(edge.terminal_label().clone());
         proposal_ids.extend_from_slice(edge.matched_proposal_ids());
         token_edge_ids.push(edge.provenance_token_edge_id());
@@ -655,7 +724,7 @@ fn validate_and_build_certificate(
             "reconstructed graph path does not end at a final node",
         ));
     }
-    let objective = compensated_sum(&weights);
+    let objective = exact_objective.to_float();
     Certificate::new(
         objective,
         proposal_ids,
@@ -665,38 +734,25 @@ fn validate_and_build_certificate(
     )
 }
 
-fn compensated_sum(values: &[f64]) -> f64 {
-    let mut sum = 0.0;
-    let mut compensation = 0.0;
-    for value in values {
-        let tentative = sum + value;
-        if sum.abs() >= value.abs() {
-            compensation += (sum - tentative) + value;
-        } else {
-            compensation += (value - tentative) + sum;
-        }
-        sum = tentative;
-    }
-    sum + compensation
-}
-
-fn scores_close(left: f64, right: f64) -> bool {
-    let scale = left.abs().max(right.abs()).max(1.0);
-    (left - right).abs() <= 1e-12 * scale
-}
-
 fn stable_update(
     entries: &mut BTreeMap<SpanKey, BTreeMap<NonterminalId, ChartEntry>>,
     span: SpanKey,
     nonterminal_id: NonterminalId,
-    score: f64,
+    exact_score: ExactScore,
     backpointer: Backpointer,
 ) {
     let span_entries = entries.entry(span).or_default();
     match span_entries.get(&nonterminal_id) {
-        Some(existing) if existing.score >= score => {}
+        Some(existing) if existing.exact_score >= exact_score => {}
         _ => {
-            span_entries.insert(nonterminal_id, ChartEntry { score, backpointer });
+            span_entries.insert(
+                nonterminal_id,
+                ChartEntry {
+                    score: exact_score.to_float(),
+                    exact_score,
+                    backpointer,
+                },
+            );
         }
     }
 }
@@ -705,6 +761,35 @@ fn stable_update(
 mod tests {
     use super::*;
     use crate::types::{TerminalEdge, TerminalLabel, TerminalProduction};
+
+    #[test]
+    fn empty_chart_spans_consume_the_deterministic_work_budget() {
+        let graph = WeightedTerminalDag::new((0..100).collect(), 0, vec![99], vec![]).unwrap();
+        let options = SolveOptions::new(None, 1024, Some(20)).unwrap();
+        let result = solve_with_options(&pair_grammar(), &graph, &options).unwrap();
+        assert_eq!(result.status, SolveStatus::Timeout);
+        assert!(result.certificate.is_none());
+        assert_eq!(result.diagnostics.chart_entries, 0);
+    }
+
+    #[test]
+    fn final_deadline_check_discards_late_infeasibility_without_sleeping() {
+        let graph = WeightedTerminalDag::new(vec![0, 1], 0, vec![1], vec![]).unwrap();
+        let mut controller = DeadlineController::new(&SolveOptions::default()).unwrap();
+        controller.deadline = Some(controller.started);
+        let result = finish_computation(
+            SolveStatus::InfeasibleOnSupport,
+            BTreeMap::new(),
+            None,
+            0,
+            &pair_grammar(),
+            &graph,
+            &controller,
+        );
+        assert_eq!(result.status, SolveStatus::Timeout);
+        assert_eq!(result.diagnostics.deadline_checks, 1);
+        assert!(result.final_node_id.is_none());
+    }
 
     fn pair_grammar() -> CnfGrammar {
         CnfGrammar::new(

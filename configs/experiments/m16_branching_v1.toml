@@ -1,0 +1,52 @@
+schema_version = 1
+experiment_id = "m16_branching_v1"
+question = "heuristic_gap"
+description = "Predeclared recursive-language branching-support oracle and paired selector study."
+publication_mode = false
+seeds = [160100]
+repetitions = 1
+
+[exactness]
+scope = "exact_on_support"
+guarantee = "per_step"
+require_independent_certificate = true
+
+[support]
+policy = "synthetic_feasible_witness_plus_seeded_alternatives"
+top_k = 2
+k_max = 4
+finite_slots = true
+
+[model]
+model_id = "not_applicable_synthetic_states"
+model_revision = "m16_branching_generator_v1"
+tokenizer_id = "generated_single_byte_vocabulary"
+tokenizer_revision = "m16_branching_generator_v1"
+local_files_only = true
+
+[grammar]
+grammar_id = "m16_recursive_byte_families_v1"
+source = "mwpc_research.recursive_tasks"
+revision = "m16_recursive_tasks_v1"
+hash_policy = "sha256_canonical_grammar"
+
+[timeouts]
+solver_seconds = 5.0
+run_seconds = 1800.0
+
+[hardware]
+device = "cpu"
+dtype = "float64"
+cpu_threads = 1
+cuda_device = "none"
+synchronize_cuda = false
+
+[parameters]
+families = ["brackets", "arithmetic", "nested_json"]
+seed_count = 100
+support_widths = [2, 4]
+weight_modes = ["unit", "integer_utility"]
+masked_positions = 4
+maximum_oracle_paths = 4096
+selectors = ["python_exact", "rust_exact", "greedy_exact_feasibility"]
+raw_output_root = "results/raw/m16_branching_v1"

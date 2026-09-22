@@ -178,76 +178,6 @@ def _required_confidence(proposal: Proposal) -> float:
     return confidence
 
 
-def _build_schedule_proposals(
-    *,
-    predicted_token_ids: Sequence[int],
-    confidence_values: Sequence[float],
-    schedule_mask: Sequence[bool],
-    k_s: int,
-    weight_mode: ProposalWeightMode,
-    first_proposal_id: int = 0,
-) -> ScheduleProposalBatch:
-    """Build the candidate collection used by one baseline schedule step.
-
-    ``schedule_mask`` must be the decoder's final eligibility mask (currently
-    masked positions inside any active block/window). Values at excluded
-    positions are deliberately ignored, so tensor adapters may retain their
-    ``-inf`` confidence sentinels there. Eligible confidences must be finite;
-    confidence weights must additionally be non-negative.
-    """
-
-    if not isinstance(weight_mode, ProposalWeightMode):
-        raise TypeError("weight_mode must be a ProposalWeightMode")
-    budget = _non_negative_integer(k_s, "k_s")
-    proposal_id_start = _non_negative_integer(first_proposal_id, "first_proposal_id")
-    predictions = _finite_sequence(predicted_token_ids, "predicted_token_ids")
-    confidences = _finite_sequence(confidence_values, "confidence_values")
-    mask = _finite_sequence(schedule_mask, "schedule_mask")
-    if not len(predictions) == len(confidences) == len(mask):
-        raise ValueError(
-            "predicted_token_ids, confidence_values, and schedule_mask must have equal length"
-        )
-
-    eligible: list[tuple[int, int, float]] = []
-    for position, included in enumerate(mask):
-        if not isinstance(included, bool):
-            raise TypeError(f"schedule_mask item at position {position} must be a boolean")
-        if not included:
-            continue
-        token_id = _non_negative_integer(
-            predictions[position], f"predicted token ID at position {position}"
-        )
-        confidence = _finite_confidence(confidences[position], position)
-        eligible.append((position, token_id, confidence))
-
-    ranked = sorted(eligible, key=lambda item: (-item[2], item[0]))
-    selected = ranked[:budget]
-    if weight_mode is ProposalWeightMode.CONFIDENCE:
-        negative_positions = [position for position, _, confidence in selected if confidence < 0.0]
-        if negative_positions:
-            raise ValueError(
-                "selected confidence must be non-negative in confidence mode; "
-                f"negative positions={negative_positions}"
-            )
-    proposals = tuple(
-        Proposal(
-            proposal_id=proposal_id_start + rank,
-            position=position,
-            token_id=token_id,
-            weight=(1.0 if weight_mode is ProposalWeightMode.UNIT else confidence),
-            model_confidence=confidence,
-        )
-        for rank, (position, token_id, confidence) in enumerate(selected)
-    )
-    return ScheduleProposalBatch(
-        proposals=proposals,
-        eligible_positions=tuple(position for position, _, _ in eligible),
-        schedule_budget=budget,
-        weight_mode=weight_mode,
-        first_proposal_id=proposal_id_start,
-    )
-
-
 def build_schedule_proposals(
     *,
     predicted_token_ids: Sequence[int],
@@ -268,23 +198,59 @@ def build_schedule_proposals(
 
     if profiler is not None and not isinstance(profiler, ComponentProfiler):
         raise TypeError("profiler must be a ComponentProfiler or None")
-    if profiler is None or not profiler.enabled:
-        return _build_schedule_proposals(
-            predicted_token_ids=predicted_token_ids,
-            confidence_values=confidence_values,
-            schedule_mask=schedule_mask,
-            k_s=k_s,
-            weight_mode=weight_mode,
-            first_proposal_id=first_proposal_id,
-        )
+    profiler = ComponentProfiler() if profiler is None else profiler
     with profiler.measure(ProfilingComponent.PROPOSAL_POLICY):
-        batch = _build_schedule_proposals(
-            predicted_token_ids=predicted_token_ids,
-            confidence_values=confidence_values,
-            schedule_mask=schedule_mask,
-            k_s=k_s,
+        if not isinstance(weight_mode, ProposalWeightMode):
+            raise TypeError("weight_mode must be a ProposalWeightMode")
+        budget = _non_negative_integer(k_s, "k_s")
+        proposal_id_start = _non_negative_integer(first_proposal_id, "first_proposal_id")
+        predictions = _finite_sequence(predicted_token_ids, "predicted_token_ids")
+        confidences = _finite_sequence(confidence_values, "confidence_values")
+        mask = _finite_sequence(schedule_mask, "schedule_mask")
+        if not len(predictions) == len(confidences) == len(mask):
+            raise ValueError(
+                "predicted_token_ids, confidence_values, and schedule_mask must have equal length"
+            )
+
+        eligible: list[tuple[int, int, float]] = []
+        for position, included in enumerate(mask):
+            if not isinstance(included, bool):
+                raise TypeError(f"schedule_mask item at position {position} must be a boolean")
+            if not included:
+                continue
+            token_id = _non_negative_integer(
+                predictions[position], f"predicted token ID at position {position}"
+            )
+            confidence = _finite_confidence(confidences[position], position)
+            eligible.append((position, token_id, confidence))
+
+        ranked = sorted(eligible, key=lambda item: (-item[2], item[0]))
+        selected = ranked[:budget]
+        if weight_mode is ProposalWeightMode.CONFIDENCE:
+            negative_positions = [
+                position for position, _, confidence in selected if confidence < 0.0
+            ]
+            if negative_positions:
+                raise ValueError(
+                    "selected confidence must be non-negative in confidence mode; "
+                    f"negative positions={negative_positions}"
+                )
+        proposals = tuple(
+            Proposal(
+                proposal_id=proposal_id_start + rank,
+                position=position,
+                token_id=token_id,
+                weight=(1.0 if weight_mode is ProposalWeightMode.UNIT else confidence),
+                model_confidence=confidence,
+            )
+            for rank, (position, token_id, confidence) in enumerate(selected)
+        )
+        batch = ScheduleProposalBatch(
+            proposals=proposals,
+            eligible_positions=tuple(position for position, _, _ in eligible),
+            schedule_budget=budget,
             weight_mode=weight_mode,
-            first_proposal_id=first_proposal_id,
+            first_proposal_id=proposal_id_start,
         )
     profiler.set_counter("proposal_count", len(batch.proposals))
     return batch

@@ -12,8 +12,10 @@ from dataclasses import dataclass
 from enum import StrEnum
 from math import isfinite
 from pathlib import Path
-from types import MappingProxyType
 from typing import cast
+
+from mwpc_exact._json import _canonical_json as _canonical_json
+from mwpc_exact._json import _freeze_json, _thaw_json
 
 EXPERIMENT_CONFIG_SCHEMA_VERSION = 1
 RESOLVED_CONFIG_ARTIFACT_KIND = "mwpc_resolved_experiment_config"
@@ -103,48 +105,11 @@ def _seeds(value: object) -> tuple[int, ...]:
     return result
 
 
-def _freeze_json(value: object, field_name: str) -> object:
-    if value is None or isinstance(value, (str, bool, int)):
-        return value
-    if isinstance(value, float):
-        if not isfinite(value):
-            raise ValueError(f"{field_name} must not contain NaN or infinity")
-        return value
-    if isinstance(value, Mapping):
-        frozen: dict[str, object] = {}
-        for key, item in value.items():
-            if not isinstance(key, str):
-                raise TypeError(f"{field_name} keys must be strings")
-            frozen[key] = _freeze_json(item, f"{field_name}.{key}")
-        return MappingProxyType(frozen)
-    if isinstance(value, (list, tuple)):
-        return tuple(_freeze_json(item, field_name) for item in value)
-    raise TypeError(f"{field_name} must contain only JSON-compatible values")
-
-
 def _freeze_json_mapping(value: object, field_name: str) -> Mapping[str, object]:
     frozen = _freeze_json(_mapping(value, field_name), field_name)
     if not isinstance(frozen, Mapping):
         raise AssertionError("mapping freeze returned a non-mapping")
     return cast(Mapping[str, object], frozen)
-
-
-def _thaw_json(value: object) -> object:
-    if isinstance(value, Mapping):
-        return {key: _thaw_json(item) for key, item in value.items()}
-    if isinstance(value, tuple):
-        return [_thaw_json(item) for item in value]
-    return value
-
-
-def _canonical_json(value: object) -> str:
-    return json.dumps(
-        _thaw_json(value),
-        allow_nan=False,
-        ensure_ascii=False,
-        separators=(",", ":"),
-        sort_keys=True,
-    )
 
 
 @dataclass(frozen=True, slots=True)
@@ -233,9 +198,7 @@ class ExperimentConfig:
             allowed = ", ".join(sorted(_GRAMMAR_HASH_POLICIES))
             raise ValueError(f"grammar.hash_policy must be one of: {allowed}")
 
-        solver_timeout = _positive_float(
-            self.solver_timeout_seconds, "timeouts.solver_seconds"
-        )
+        solver_timeout = _positive_float(self.solver_timeout_seconds, "timeouts.solver_seconds")
         run_timeout = _positive_float(self.run_timeout_seconds, "timeouts.run_seconds")
         object.__setattr__(self, "solver_timeout_seconds", solver_timeout)
         object.__setattr__(self, "run_timeout_seconds", run_timeout)
@@ -363,9 +326,7 @@ class ExperimentConfig:
             model_id=_string(model["model_id"], "model.model_id"),
             model_revision=_string(model["model_revision"], "model.model_revision"),
             tokenizer_id=_string(model["tokenizer_id"], "model.tokenizer_id"),
-            tokenizer_revision=_string(
-                model["tokenizer_revision"], "model.tokenizer_revision"
-            ),
+            tokenizer_revision=_string(model["tokenizer_revision"], "model.tokenizer_revision"),
             local_files_only=_boolean(model["local_files_only"], "model.local_files_only"),
             grammar_id=_string(grammar["grammar_id"], "grammar.grammar_id"),
             grammar_source=_string(grammar["source"], "grammar.source"),
@@ -374,18 +335,12 @@ class ExperimentConfig:
             solver_timeout_seconds=_positive_float(
                 timeouts["solver_seconds"], "timeouts.solver_seconds"
             ),
-            run_timeout_seconds=_positive_float(
-                timeouts["run_seconds"], "timeouts.run_seconds"
-            ),
+            run_timeout_seconds=_positive_float(timeouts["run_seconds"], "timeouts.run_seconds"),
             device=_string(hardware["device"], "hardware.device"),
             dtype=_string(hardware["dtype"], "hardware.dtype"),
-            cpu_threads=_integer(
-                hardware["cpu_threads"], "hardware.cpu_threads", minimum=1
-            ),
+            cpu_threads=_integer(hardware["cpu_threads"], "hardware.cpu_threads", minimum=1),
             cuda_device=cuda_device,
-            synchronize_cuda=_boolean(
-                hardware["synchronize_cuda"], "hardware.synchronize_cuda"
-            ),
+            synchronize_cuda=_boolean(hardware["synchronize_cuda"], "hardware.synchronize_cuda"),
             parameters=_freeze_json_mapping(data["parameters"], "parameters"),
         )
 

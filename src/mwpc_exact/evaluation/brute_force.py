@@ -404,7 +404,7 @@ def select_brute_force_graph(
 
     edge_by_id = {edge.edge_id: edge for edge in graph.edges}
     edges = tuple(edge_by_id[edge_id] for edge_id in certificate.witness_graph_edge_ids)
-    recomputed_score = fsum(edge.weight for edge in edges)
+    recomputed_score = fsum(term for edge in edges for term in edge.weight_terms)
     recomputed_ids = tuple(
         proposal_id for edge in edges for proposal_id in edge.matched_proposal_ids
     )

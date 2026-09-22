@@ -138,6 +138,7 @@ class _PeakRssSampler:
         self._ready = Event()
         self._peak = 0
         self._sample_count = 0
+        self._error: Exception | None = None
         self._thread = Thread(target=self._sample, name="mwpc-rss-sampler", daemon=True)
 
     def _read(self) -> None:
@@ -149,8 +150,11 @@ class _PeakRssSampler:
     def _sample(self) -> None:
         self._ready.set()
         self._started.wait()
-        while not self._stop.wait(self._interval):
-            self._read()
+        try:
+            while not self._stop.wait(self._interval):
+                self._read()
+        except Exception as error:
+            self._error = error
 
     def launch(self) -> None:
         self._thread.start()
@@ -163,12 +167,20 @@ class _PeakRssSampler:
         self._started.set()
 
     def finish(self, final_rss_bytes: int) -> tuple[int, int]:
+        self.close()
+        if self._error is not None:
+            raise self._error
         normalized = _non_negative_integer(final_rss_bytes, "final process RSS")
         self._peak = max(self._peak, normalized)
         self._sample_count += 1
-        self._stop.set()
-        self._thread.join()
         return self._peak, self._sample_count
+
+    def close(self) -> None:
+        """Stop and join even when setup failed before ``begin``."""
+
+        self._stop.set()
+        self._started.set()
+        self._thread.join()
 
 
 def measure_call(
@@ -194,40 +206,43 @@ def measure_call(
     budget = _non_negative_finite(maximum_elapsed_seconds, "maximum elapsed seconds")
     sampler = _PeakRssSampler(read_process_rss, rss_sample_interval_seconds)
     sampler.launch()
-    synchronize_accelerator()
-    reset_accelerator_peak()
-    rss_before = _non_negative_integer(read_process_rss(), "process RSS before")
-    sampler.begin(rss_before)
-    start = float(clock())
-    if not isfinite(start):
-        raise ValueError("measurement clock must return finite values")
-    value: _T | None = None
-    error: Exception | None = None
     try:
-        if budget == 0.0:
-            raise TimeoutError("run deadline expired before the measured call started")
-        value = run()
         synchronize_accelerator()
-    except Exception as caught:
-        error = caught
+        reset_accelerator_peak()
+        rss_before = _non_negative_integer(read_process_rss(), "process RSS before")
+        sampler.begin(rss_before)
+        start = float(clock())
+        if not isfinite(start):
+            raise ValueError("measurement clock must return finite values")
+        value: _T | None = None
+        error: Exception | None = None
         try:
+            if budget == 0.0:
+                raise TimeoutError("run deadline expired before the measured call started")
+            value = run()
             synchronize_accelerator()
-        except Exception:
-            pass
-    end = float(clock())
-    if not isfinite(end) or end < start:
-        raise ValueError("measurement clock must be finite and monotonic")
-    elapsed = end - start
-    if error is None and elapsed > budget:
-        value = None
-        error = TimeoutError("measured call completed after the configured run deadline")
-    rss_after = _non_negative_integer(read_process_rss(), "process RSS after")
-    rss_peak, rss_sample_count = sampler.finish(rss_after)
-    accelerator_allocated, accelerator_reserved = read_accelerator_peak()
-    allocated = _non_negative_integer(accelerator_allocated, "accelerator allocated peak")
-    reserved = _non_negative_integer(accelerator_reserved, "accelerator reserved peak")
-    if reserved < allocated:
-        raise ValueError("accelerator reserved peak cannot be below allocated peak")
+        except Exception as caught:
+            error = caught
+            try:
+                synchronize_accelerator()
+            except Exception:
+                pass
+        end = float(clock())
+        if not isfinite(end) or end < start:
+            raise ValueError("measurement clock must be finite and monotonic")
+        elapsed = end - start
+        if error is None and elapsed > budget:
+            value = None
+            error = TimeoutError("measured call completed after the configured run deadline")
+        rss_after = _non_negative_integer(read_process_rss(), "process RSS after")
+        rss_peak, rss_sample_count = sampler.finish(rss_after)
+        accelerator_allocated, accelerator_reserved = read_accelerator_peak()
+        allocated = _non_negative_integer(accelerator_allocated, "accelerator allocated peak")
+        reserved = _non_negative_integer(accelerator_reserved, "accelerator reserved peak")
+        if reserved < allocated:
+            raise ValueError("accelerator reserved peak cannot be below allocated peak")
+    finally:
+        sampler.close()
     return CallMeasurement(
         value=value,
         error=error,

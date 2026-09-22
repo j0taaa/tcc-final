@@ -7,7 +7,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from math import isclose
 
-from mwpc_exact.types import ExactCommitResult, SolveStatus
+from mwpc_exact.types import ExactCommitResult, ExactnessScope, Proposal, SolveStatus, TerminalLabel
 from mwpc_exact.validator import ValidationReport
 
 _VALIDATION_AUTHORITY = object()
@@ -19,6 +19,8 @@ class ValidatedExactCommit:
 
     result: ExactCommitResult
     validation_report: ValidationReport
+    input_canvas: tuple[int | None, ...]
+    input_proposals: tuple[Proposal, ...]
 
     def __init__(
         self,
@@ -26,6 +28,8 @@ class ValidatedExactCommit:
         validation_report: ValidationReport,
         *,
         _authority: object | None = None,
+        input_canvas: tuple[int | None, ...] | None = None,
+        input_proposals: tuple[Proposal, ...] | None = None,
     ) -> None:
         if _authority is not _VALIDATION_AUTHORITY:
             raise TypeError("ValidatedExactCommit must come from a validated solve API")
@@ -37,6 +41,8 @@ class ValidatedExactCommit:
             raise ValueError("ValidatedExactCommit requires an OPTIMAL result")
         if not validation_report.is_valid:
             raise ValueError("ValidatedExactCommit requires a fully valid report")
+        if input_canvas is None or input_proposals is None:
+            raise TypeError("ValidatedExactCommit requires the frozen solve inputs")
         if Counter(result.selected_proposal_ids) != Counter(
             validation_report.recomputed_selected_proposal_ids
         ):
@@ -50,13 +56,15 @@ class ValidatedExactCommit:
             raise ValueError("validation report objective disagrees with the result")
         object.__setattr__(self, "result", result)
         object.__setattr__(self, "validation_report", validation_report)
+        object.__setattr__(self, "input_canvas", tuple(input_canvas))
+        object.__setattr__(self, "input_proposals", tuple(input_proposals))
 
     @property
     def status(self) -> SolveStatus:
         return self.result.status
 
     @property
-    def exactness_scope(self):  # type: ignore[no-untyped-def]
+    def exactness_scope(self) -> ExactnessScope:
         return self.result.exactness_scope
 
     @property
@@ -73,7 +81,7 @@ class ValidatedExactCommit:
         return self.result.witness_token_ids
 
     @property
-    def witness_terminal_labels(self):  # type: ignore[no-untyped-def]
+    def witness_terminal_labels(self) -> tuple[TerminalLabel, ...]:
         return self.result.witness_terminal_labels
 
     @property
@@ -99,6 +107,9 @@ class ValidatedExactCommit:
 def _validated_exact_commit(
     result: ExactCommitResult,
     validation_report: ValidationReport,
+    *,
+    canvas: tuple[int | None, ...],
+    proposals: tuple[Proposal, ...],
 ) -> ValidatedExactCommit:
     """Create commit authority from the live independent validator result."""
 
@@ -108,6 +119,8 @@ def _validated_exact_commit(
         result=result,
         validation_report=validation_report,
         _authority=_VALIDATION_AUTHORITY,
+        input_canvas=canvas,
+        input_proposals=proposals,
     )
 
 

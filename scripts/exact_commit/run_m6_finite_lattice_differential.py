@@ -12,6 +12,7 @@ import sys
 import tomllib
 from pathlib import Path
 
+from mwpc_research.campaign_output import prepare_output_directory, write_summary
 from mwpc_research.finite_differential import (
     FINITE_LATTICE_GENERATOR_SCHEMA_VERSION,
     finite_grammar_family_sha256,
@@ -36,15 +37,17 @@ def main() -> int:
     parser.add_argument(
         "--config",
         type=Path,
-        default=(
-            REPOSITORY_ROOT
-            / "configs/exact_commit/m6_finite_lattice_differential.toml"
-        ),
+        default=(REPOSITORY_ROOT / "configs/exact_commit/m6_finite_lattice_differential.toml"),
     )
     parser.add_argument(
         "--campaign",
         action="append",
         help="run only a named campaign; repeat to select more than one",
+    )
+    parser.add_argument(
+        "--output-directory",
+        type=Path,
+        help="new summary directory (default: temporary); existing files are protected",
     )
     arguments = parser.parse_args()
 
@@ -57,7 +60,19 @@ def main() -> int:
     if selected_names is not None and not selected_names <= known_names:
         parser.error(f"unknown campaigns: {sorted(selected_names - known_names)!r}")
 
+    try:
+        output_directory = prepare_output_directory(
+            arguments.output_directory,
+            (
+                campaign["summary"]
+                for campaign in campaigns
+                if selected_names is None or str(campaign["name"]) in selected_names
+            ),
+        )
+    except FileExistsError as error:
+        parser.error(str(error))
     common_metadata = {
+        "git_dirty_worktree": bool(_command_output(["git", "status", "--porcelain"])),
         "git_commit": _command_output(["git", "rev-parse", "HEAD"]),
         "config_path": str(config_path.relative_to(REPOSITORY_ROOT)),
         "config_sha256": hashlib.sha256(config_bytes).hexdigest(),
@@ -77,7 +92,7 @@ def main() -> int:
         "token_byte_alphabet": "raw_bytes_0x61_0x62",
         "weight_policy": "nonnegative_integer_proposal_weights",
     }
-    failure_root = REPOSITORY_ROOT / config["output"]["failure_directory"]
+    failure_root = output_directory / "failures"
     summaries: list[dict[str, object]] = []
     failed_cases = 0
     for campaign in campaigns:
@@ -91,10 +106,11 @@ def main() -> int:
             failure_directory=failure_root / campaign_name,
             metadata=common_metadata,
         )
-        summary.write_json(REPOSITORY_ROOT / campaign["summary"])
+        write_summary(output_directory, campaign["summary"], summary.to_dict())
         summaries.append(summary.to_dict())
         failed_cases += summary.failed_cases
     print(json.dumps(summaries, sort_keys=True))
+    print(f"New summaries: {output_directory}", file=sys.stderr)
     return 1 if failed_cases else 0
 
 

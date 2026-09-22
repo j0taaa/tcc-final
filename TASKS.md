@@ -16,8 +16,122 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-**Required project complete.** M0 through M13, including the M10.5 hardening
-pass and M12.5 review-fix gate, are complete. Optional O1--O4 remain outside the required scope.
+The 22 September review reopens the resource correctness gate before further
+measurements. The user authorized resolving every review finding except LAVE.
+
+## M17 — Review closure and local submission release
+
+Preserve all historical evidence, finite-support exactness and baseline source.
+Complete T1700 before new model/performance experiments. T1701 also closes the
+remaining live-evidence work in T1603; T1703 closes T1604 when its gates pass.
+
+- [ ] T1700: Bound sparse-chart work and classify every late conclusive Rust
+  result as TIMEOUT; add deterministic regressions and rerun correctness gates.
+- [ ] T1701: Freeze and run matched-budget, nonliteral live pilot/confirmation,
+  pre-commit ranked-support replay, and recursive resource scaling. Retain all
+  failures and statuses; use committed code/configs and independent checkers.
+- [ ] T1702: Correct normalized-DAG pseudocode and token-level H composition;
+  add a worked example; revise abstracts, result interpretation and table layout.
+  Keep LAVE outside the requested changes.
+- [ ] T1703: Align a new local release, manuscript and reproducible evidence;
+  run complete tests, packaging/artifact and clean-checkout gates. No remote push.
+
+**Evidence:** In progress; see `docs/reviews/2026-09-22.md` for findings.
+
+## Previous starting point
+
+M0 through M13, including the M10.5 hardening pass and M12.5 review-fix gate,
+record the completed release baseline. **M14 review hardening and M15
+behavior-preserving simplification are complete.**
+M16's nontrivial CPU study is complete; live confirmation remains open.
+Optional O1--O4 remain outside the required scope.
+
+## M16 — Nontrivial scientific evidence
+
+Depends on M15. Preserve the scientific contract, independent oracles, pinned
+baselines and all historical artifacts. Strong evidence means discriminating,
+reproducible tests of explicit hypotheses, not necessarily positive results.
+
+- [x] T1600: Freeze a bounded protocol, grammar families, seeds, controls,
+  analysis units, resource limits and stopping rules before experiments.
+- [x] T1601: Implement recursive multi-output tasks with independent syntax
+  and functional checkers. Check grammar/checker agreement exhaustively on
+  small inputs and against the existing Python/Rust certificate oracles.
+- [x] T1602: Run paired branching-support studies with oracle optima,
+  full status accounting, support-sensitivity and cost/gap measurements.
+  Keep generated cases distinct from real-model states.
+- [ ] T1603: Capture real model states without a known-answer support token;
+  compare common supports and evaluate nonliteral end-to-end tasks, retaining
+  failures and measuring functional quality separately from syntax/runtime.
+  - BLOCKED: GPU preflight repeatedly reports llama-server PID 190495 using
+    10,622 MiB, leaving under 1 GiB free. No unrelated process was stopped.
+    All six pinned LLaDA shards and the CUDA/binding environment are available.
+    Smallest next experiment: after the user frees the GPU, implement/run one
+    nonliteral pilot with a matched proposal schedule and pre-commit top-K
+    capture; retain infeasibility and timeout instead of injecting a target.
+- [ ] T1604: Generate source-linked analyses; rerun correctness, baseline,
+  packaging and artifact gates. Update manuscript claims only from committed
+  code/configs and immutable raw evidence. No broad superiority claim without
+  supporting measurements.
+  - BLOCKED: The code remains uncommitted. Permission for a local checkpoint
+    commit was requested; no commit, branch change or push was performed.
+    Correctness/release/artifact gates pass, but live confirmation and a clean
+    producing commit are required before replacing manuscript measurements.
+
+**Evidence:** Prospective design in ADR 0023; 817 Python tests, 22 Rust tests,
+strict MyPy (75 files), Ruff, format/Clippy, isolated wheel/sdist and preserved
+baseline/artifact checks passed. The 1,200-condition study covers 300 family/seed
+states sharing 100 seed clusters: both exact backends agree with exhaustive
+independent completion checks, with no failed certificates. The complete
+generated report is `docs/evidence/m16-branching-development-v2/report.md`.
+Commands, immutable raw paths, interpretation and remaining gates are in
+[`docs/m16-scientific-evidence.md`](docs/m16-scientific-evidence.md).
+
+## M15 — Behavior-preserving simplification
+
+Depends on M14. Preserve exact-on-support objectives and certificates, status
+and timeout distinctions, independent reference algorithms, baseline decoders,
+profiling semantics, and all versioned evidence. Add no dependency or framework.
+
+- [x] T1500: Remove duplicated profiled/unprofiled execution paths and manual
+  immutable-record copying. Keep disabled profiling clock-free and retain all
+  enabled component boundaries and counters.
+- [x] T1501: Consolidate identical serialization helpers, remove unused private
+  arguments, and verify full tests, type/lint checks, packaging and artifacts.
+
+**Evidence:** 192 net implementation lines removed across nine Python files,
+with four additional regression cases. Full Python suite: 771 passed; Rust:
+22 passed. Ruff, strict MyPy (73 files), Rust format/Clippy, isolated release
+wheel/sdist rehearsal, baseline tests (19 passed, 4 upstream skips), upstream
+pin and existing artifact checks passed. Commands and scope are recorded in
+the M15 section of [`docs/review-hardening.md`](docs/review-hardening.md).
+
+## M14 — Repository review hardening
+
+Depends on the M13 release baseline. Preserve published raw inputs and derived
+artifacts; new correctness evidence does not retroactively update measurements.
+
+- [x] T1400: Bind commit authority to frozen inputs, correct EOS completion,
+  report missing support validation, and guarantee sampler cleanup. Every
+  reported failure has a minimal regression.
+- [x] T1401: Preserve exact ordering of represented proposal sums despite
+  floating-point rounding; retain float/f64 public scores and independent
+  Python/Rust algorithms. Pass adversarial and exhaustive differential gates.
+- [x] T1402: Exclude build artifacts from sdists, inspect both release archives,
+  and pin development/EPIC environments and the Rust toolchain.
+- [x] T1403: Consolidate duplicated non-algorithmic helpers and orchestration,
+  remove unused code and brittle prose checks, and eliminate unnecessary
+  normalization, parsing, validation, and model-adapter work. Document and test
+  correctness of any skipped work.
+- [x] T1404: Run full Python, Rust, binding, baseline, packaging and artifact
+  gates; document remaining empirical limits and exact reproduction commands.
+
+**Evidence:** 767 Python tests; 22 Rust tests; lint/type/format/Clippy, wheel/sdist
+rehearsal, pinned baseline and artifact checks passed. Each normal M5/M6/M7
+campaign passed 500 cases. Commands, numerical/skipped-work proofs, limitations
+and the finding-to-regression mapping are in
+[`docs/review-hardening.md`](docs/review-hardening.md); new summaries are in
+`docs/evidence/review-hardening/`. Historical campaign summaries remain unchanged.
 
 ## Completed milestone summary
 

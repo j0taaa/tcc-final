@@ -315,12 +315,13 @@ def _build_step_result(
     fallback_handler_diagnostics: Mapping[str, object] | None = None,
     fallback_error: Exception | None = None,
 ) -> DecoderStepResult:
-    if profiler is None or not profiler.enabled:
+    profiler = ComponentProfiler() if profiler is None else profiler
+    with profiler.measure(ProfilingComponent.COMMIT_UPDATE):
         updated = _apply_commits(canvas, commits)
-    else:
-        with profiler.measure(ProfilingComponent.COMMIT_UPDATE):
-            updated = _apply_commits(canvas, commits)
-        profiler.set_counter("commit_count", len(commits))
+    profiler.set_counter("commit_count", len(commits))
+    if witness_compatible:
+        assert result.witness_token_ids is not None
+        _assert_witness_compatible(updated, result.witness_token_ids)
     return DecoderStepResult(
         solver_result=result,
         input_canvas=canvas,
@@ -368,6 +369,7 @@ def apply_exact_commit_result(
     match.
     """
 
+    validated = result if isinstance(result, ValidatedExactCommit) else None
     if isinstance(result, ValidatedExactCommit):
         result = result.result
     elif not isinstance(result, ExactCommitResult):
@@ -392,6 +394,11 @@ def apply_exact_commit_result(
 
     if result.status is SolveStatus.OPTIMAL:
         _validate_optimal_result(result, canvas=canvas_tokens, proposals=proposal_items)
+        assert validated is not None
+        if canvas_tokens != validated.input_canvas:
+            raise ValueError("canvas differs from the frozen validated solve input")
+        if proposal_items != validated.input_proposals:
+            raise ValueError("proposals differ from the frozen validated solve input")
         if result.selected_proposal_ids:
             commits = _exact_proposal_commits(
                 result,
@@ -400,8 +407,6 @@ def apply_exact_commit_result(
             )
             if not commits:
                 raise ValueError("non-empty selected proposal set produced no physical commit")
-            updated = _apply_commits(canvas_tokens, commits)
-            _assert_witness_compatible(updated, result.witness_token_ids)
             return _build_step_result(
                 result=result,
                 canvas=canvas_tokens,
@@ -441,8 +446,6 @@ def apply_exact_commit_result(
             proposals=proposal_items,
             selected_ids=frozenset(),
         )
-        updated = _apply_commits(canvas_tokens, (commit,))
-        _assert_witness_compatible(updated, result.witness_token_ids)
         return _build_step_result(
             result=result,
             canvas=canvas_tokens,

@@ -10,7 +10,7 @@ physical canvas slot.
 from __future__ import annotations
 
 from collections.abc import Iterable, Mapping, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from math import fsum, isclose, isfinite
 from typing import cast
 
@@ -234,7 +234,7 @@ def _reconstruct_token_path(
     path = TokenLatticePath(
         token_edge_ids=tuple(token_edge_ids),
         token_ids=tuple(choice.token_id for choice in choices),
-        objective_value=fsum(choice.weight for choice in choices),
+        objective_value=fsum(term for choice in choices for term in choice.weight_terms),
         matched_proposal_ids=tuple(
             proposal_id for choice in choices for proposal_id in choice.matched_proposal_ids
         ),
@@ -460,18 +460,7 @@ def solve_exact_commit(
             error=error,
         )
 
-    return ExactCommitResult(
-        status=preliminary_result.status,
-        exactness_scope=preliminary_result.exactness_scope,
-        objective_value=preliminary_result.objective_value,
-        selected_proposal_ids=preliminary_result.selected_proposal_ids,
-        witness_token_ids=preliminary_result.witness_token_ids,
-        witness_terminal_labels=preliminary_result.witness_terminal_labels,
-        witness_graph_edge_ids=preliminary_result.witness_graph_edge_ids,
-        witness_eos_position=preliminary_result.witness_eos_position,
-        witness_content_endpoint_slot=preliminary_result.witness_content_endpoint_slot,
-        diagnostics=diagnostics,
-    )
+    return replace(preliminary_result, diagnostics=diagnostics)
 
 
 solve_ordinary_support_reference = solve_exact_commit

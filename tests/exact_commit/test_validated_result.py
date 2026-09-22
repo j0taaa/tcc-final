@@ -7,6 +7,7 @@ import pytest
 from mwpc_exact import (
     ExactCommitResult,
     ExactnessScope,
+    Proposal,
     SolveStatus,
     SupportKind,
     ValidatedExactCommit,
@@ -43,6 +44,8 @@ def test_validated_boundary_requires_a_fully_valid_typed_report() -> None:
             recomputed_objective=1.0,
             recomputed_selected_proposal_ids=(7,),
         ),
+        canvas=(None,),
+        proposals=(Proposal(7, 0, 0, 1.0),),
     )
 
     assert validated.status is SolveStatus.OPTIMAL
@@ -59,6 +62,8 @@ def test_validated_boundary_rejects_mismatched_objective() -> None:
                 recomputed_objective=0.0,
                 recomputed_selected_proposal_ids=(7,),
             ),
+            canvas=(None,),
+            proposals=(Proposal(7, 0, 0, 1.0),),
         )
 
 

@@ -303,7 +303,7 @@ def _validate_rust_path_reward(
     path_edges = tuple(
         indexed.edge_by_id[edge_id] for edge_id in certificate.witness_graph_edge_ids
     )
-    reward = fsum(edge.weight for edge in path_edges)
+    reward = fsum(term for edge in path_edges for term in edge.weight_terms)
     if not isclose(reward, rust_solve.objective_value, rel_tol=1e-12, abs_tol=1e-12):
         _mismatch(
             instance,

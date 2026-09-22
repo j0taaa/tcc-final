@@ -6,6 +6,9 @@ The project implements an exact, certificate-producing optimizer for selecting t
 
 ## Sources of truth
 
+Post-release fixes and their verification record:
+[`Repository review hardening`](docs/review-hardening.md).
+
 - [`AGENTS.md`](AGENTS.md): scientific and engineering invariants;
 - [`TASKS.md`](TASKS.md): authoritative current milestone, completed evidence, and remaining work;
 - [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md): supersession index for

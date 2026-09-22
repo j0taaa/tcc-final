@@ -325,19 +325,6 @@ def _score_vector(value: object, field_name: str) -> tuple[float, ...]:
     return tuple(scores)
 
 
-def _logit_matrix(value: object) -> tuple[tuple[float, ...], ...]:
-    rows = _sequence(value, "logits")
-    matrix = tuple(
-        _score_vector(row, f"logits row {position}") for position, row in enumerate(rows)
-    )
-    if not matrix or not matrix[0]:
-        raise ValueError("logits must contain at least one position and vocabulary score")
-    vocabulary_size = len(matrix[0])
-    if any(len(row) != vocabulary_size for row in matrix):
-        raise ValueError("all logit rows must have the same vocabulary size")
-    return matrix
-
-
 def _optional_torch() -> Any | None:
     """Load Torch only inside the model adapter when it is installed."""
 
@@ -374,29 +361,27 @@ def _ranked_support_from_model_logits(
             raise ValueError("support_k_max must be in [1, permitted token count]")
         permitted_tensor = torch.tensor(permitted, device=generated.device, dtype=torch.long)
         permitted_scores = generated.index_select(1, permitted_tensor)
-        rankings: list[tuple[int, ...]] = []
-        for row in permitted_scores:
-            threshold = torch.topk(row, k=width, largest=True, sorted=False).values.min()
-            greater_local = torch.nonzero(row > threshold, as_tuple=False).flatten()
-            needed = width - int(greater_local.numel())
-            equal_local = torch.nonzero(row == threshold, as_tuple=False).flatten()[:needed]
-            selected_local = torch.cat((greater_local, equal_local))
-            selected_ids = permitted_tensor.index_select(0, selected_local).detach().cpu().tolist()
-            selected_scores = row.index_select(0, selected_local).detach().cpu().tolist()
-            ranked = tuple(
-                token_id
-                for token_id, _ in sorted(
-                    zip(selected_ids, selected_scores, strict=True),
-                    key=lambda item: (-float(item[1]), int(item[0])),
-                )
-            )
-            if len(ranked) != width:
-                raise RuntimeError("compact tensor ranking did not produce max_k tokens")
-            rankings.append(ranked)
+        thresholds = torch.topk(permitted_scores, k=width, dim=1, sorted=False).values.amin(
+            dim=1, keepdim=True
+        )
+        local_ids = torch.arange(len(permitted), device=generated.device)
+        # Strictly greater scores precede threshold ties; ties use token ID.
+        priorities = torch.where(
+            permitted_scores > thresholds,
+            local_ids,
+            torch.where(
+                permitted_scores == thresholds, local_ids + len(permitted), 2 * len(permitted)
+            ),
+        )
+        selected = priorities.topk(k=width, dim=1, largest=False, sorted=True).indices
+        scores = permitted_scores.gather(1, selected)
+        score_order = torch.argsort(scores, dim=1, descending=True, stable=True)
+        selected = selected.gather(1, score_order)
+        rankings = permitted_tensor[selected].detach().cpu().tolist()
         return RankedSupportRows(
             vocabulary_size=vocabulary_size,
             permitted_token_ids=permitted,
-            token_ids_by_position=tuple(rankings),
+            token_ids_by_position=tuple(tuple(row) for row in rankings),
             max_k=width,
             source="torch_topk_threshold_tie_break_v1",
         )
@@ -433,28 +418,24 @@ def _witness_probabilities_from_model_logits(
     if torch is not None and isinstance(value, torch.Tensor):
         if value.ndim != 2 or value.shape[0] != expected_length:
             raise ValueError("logits tensor has an unexpected position shape")
-        rows = value[prompt_length:expected_length]
-        probabilities: list[float] = []
-        for position, witness_token_id in enumerate(witness_token_ids):
-            row = rows[position].to(torch.float64)
-            maximum = row.max()
-            if bool(torch.isposinf(maximum).item()):
-                probability = (
-                    1.0 / int(torch.isposinf(row).sum().item())
-                    if bool(torch.isposinf(row[witness_token_id]).item())
-                    else 0.0
-                )
-            elif bool(torch.isneginf(maximum).item()):
-                raise ValueError(f"all logits are -infinity at generated position {position}")
-            else:
-                denominator = torch.exp(row - maximum).sum()
-                probability = float(
-                    (torch.exp(row[witness_token_id] - maximum) / denominator).item()
-                )
-            if not isfinite(probability):
-                raise ValueError("witness probability must be finite")
-            probabilities.append(probability)
-        return tuple(probabilities)
+        rows = value[prompt_length:expected_length].to(torch.float64)
+        indices = torch.tensor(witness_token_ids, device=rows.device, dtype=torch.long)
+        if any(token < 0 or token >= rows.shape[1] for token in witness_token_ids):
+            raise ValueError("witness token ID is outside the model vocabulary")
+        chosen = rows.gather(1, indices[:, None]).squeeze(1)
+        maxima = rows.amax(dim=1)
+        if bool(torch.isneginf(maxima).any().item()):
+            raise ValueError("all logits are -infinity at a generated position")
+        infinite_counts = torch.isposinf(rows).sum(dim=1)
+        ordinary = torch.exp(chosen - maxima) / torch.exp(rows - maxima[:, None]).sum(dim=1)
+        probabilities = torch.where(
+            infinite_counts > 0,
+            torch.isposinf(chosen).to(torch.float64) / infinite_counts.clamp_min(1),
+            ordinary,
+        )
+        if not bool(torch.isfinite(probabilities).all().item()):
+            raise ValueError("witness probability must be finite")
+        return tuple(probabilities.detach().cpu().tolist())
 
     raw_rows = _sequence(value, "logits")
     if len(raw_rows) != expected_length:
@@ -805,8 +786,11 @@ def run_llada_exact_step(
         profile.mask_token_id if token_id is None else token_id for token_id in updated_canvas
     ):
         raise RuntimeError("model tensor updates disagree with the recorded generated canvas")
-    complete = eos_position is not None and all(
-        token_id is not None for token_id in updated_canvas[:eos_position]
+    complete = (
+        all(token_id is not None for token_id in updated_canvas[:eos_position])
+        if eos_position is not None
+        else config.eos_policy.mode is not EOSMode.REQUIRED
+        and all(token_id is not None for token_id in updated_canvas)
     )
     return LLaDAExactStepResult(
         request=request,

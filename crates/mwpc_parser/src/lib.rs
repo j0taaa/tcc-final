@@ -4,6 +4,7 @@
 //! solver. The public data contracts reject malformed inputs before solving.
 
 mod parser;
+mod score;
 pub mod types;
 
 pub use parser::{solve, solve_with_options, SolveOptions};

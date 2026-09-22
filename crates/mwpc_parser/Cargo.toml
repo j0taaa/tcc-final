@@ -10,3 +10,5 @@ name = "mwpc_parser"
 path = "src/lib.rs"
 
 [dependencies]
+num-bigint = "=0.4.6"
+num-traits = "=0.2.19"

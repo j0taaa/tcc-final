@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from math import fsum, isclose, isfinite
 from types import MappingProxyType
 
+from mwpc_exact._scores import exact_sum
 from mwpc_exact.reference.dag_parser import (
     DagParseCertificate,
     DagSolve,
@@ -32,6 +33,7 @@ class EpsilonPath:
     weight: float
     original_edge_ids: tuple[int, ...]
     matched_proposal_ids: tuple[int, ...]
+    weight_terms: tuple[float, ...] = ()
 
 
 @dataclass(frozen=True, slots=True)
@@ -92,6 +94,16 @@ def normalize_epsilon_edges(graph: WeightedTerminalDAG) -> EpsilonNormalizationR
     stable lexicographic edge-ID tie-break, which is not part of the objective.
     """
     indexed = index_terminal_dag(graph)
+    if not any(isinstance(edge, EpsilonEdge) for edge in graph.edges):
+        # No closure can add an edge or change a reward. Preserve stable IDs.
+        empty = (
+            EpsilonPath(graph.start_node_id, graph.start_node_id, 0.0, (), ())
+            if graph.start_node_id in graph.final_node_ids
+            else None
+        )
+        return EpsilonNormalizationResult(
+            graph, graph, {edge.edge_id: (edge.edge_id,) for edge in graph.edges}, empty
+        )
     order = indexed.topological_order
     closures: dict[tuple[int, int], EpsilonPath] = {}
 
@@ -106,7 +118,8 @@ def normalize_epsilon_edges(graph: WeightedTerminalDAG) -> EpsilonNormalizationR
             for edge in indexed.outgoing_edges[state]:
                 if not isinstance(edge, EpsilonEdge):
                     continue
-                candidate_weight = prefix.weight + edge.weight
+                candidate_terms = (*prefix.weight_terms, *edge.weight_terms)
+                candidate_weight = fsum(candidate_terms)
                 if not isfinite(candidate_weight):
                     raise EpsilonNormalizationError(
                         "epsilon closure objective overflowed finite float range"
@@ -122,6 +135,7 @@ def normalize_epsilon_edges(graph: WeightedTerminalDAG) -> EpsilonNormalizationR
                     candidate_weight,
                     candidate_ids,
                     candidate_proposals,
+                    candidate_terms,
                 )
                 current = best_from_source.get(edge.target_state)
                 if current is None or _epsilon_path_is_better(candidate, current):
@@ -157,7 +171,8 @@ def normalize_epsilon_edges(graph: WeightedTerminalDAG) -> EpsilonNormalizationR
                     *terminal_edge.matched_proposal_ids,
                     *suffix.matched_proposal_ids,
                 )
-                weight = prefix.weight + terminal_edge.weight + suffix.weight
+                terms = (*prefix.weight_terms, *terminal_edge.weight_terms, *suffix.weight_terms)
+                weight = fsum(terms)
                 if not isfinite(weight):
                     raise EpsilonNormalizationError(
                         "saturated terminal edge weight overflowed finite float range"
@@ -170,6 +185,7 @@ def normalize_epsilon_edges(graph: WeightedTerminalDAG) -> EpsilonNormalizationR
                         target_state=suffix.target_state,
                         terminal_label=terminal_edge.terminal_label,
                         weight=weight,
+                        weight_terms=terms,
                         provenance_token_edge_id=terminal_edge.provenance_token_edge_id,
                         matched_proposal_ids=matched_ids,
                     )
@@ -183,7 +199,7 @@ def normalize_epsilon_edges(graph: WeightedTerminalDAG) -> EpsilonNormalizationR
     )
     best_epsilon_only = min(
         epsilon_only_candidates,
-        key=lambda path: (-path.weight, path.original_edge_ids, path.target_state),
+        key=lambda path: (-exact_sum(path.weight_terms), path.original_edge_ids, path.target_state),
         default=None,
     )
     normalized = WeightedTerminalDAG(
@@ -232,10 +248,15 @@ def solve_cfg_on_epsilon_dag(
             normalization=normalization,
             normalized_solve=normalized_solve,
         )
+    edge_by_id = index_terminal_dag(graph).edge_by_id
     best = min(
         candidates,
         key=lambda certificate: (
-            -certificate.objective_value,
+            -exact_sum(
+                term
+                for edge_id in certificate.witness_graph_edge_ids
+                for term in edge_by_id[edge_id].weight_terms
+            ),
             certificate.witness_graph_edge_ids,
         ),
     )
@@ -266,7 +287,7 @@ def _expand_normalized_certificate(
     selected_ids = tuple(
         proposal_id for edge in original_edges for proposal_id in edge.matched_proposal_ids
     )
-    objective = fsum(edge.weight for edge in original_edges)
+    objective = fsum(term for edge in original_edges for term in edge.weight_terms)
     if not isclose(
         objective,
         certificate.objective_value,
@@ -285,7 +306,8 @@ def _expand_normalized_certificate(
 
 
 def _epsilon_path_is_better(candidate: EpsilonPath, current: EpsilonPath) -> bool:
-    return candidate.weight > current.weight or (
-        candidate.weight == current.weight
-        and candidate.original_edge_ids < current.original_edge_ids
+    candidate_score = exact_sum(candidate.weight_terms)
+    current_score = exact_sum(current.weight_terms)
+    return candidate_score > current_score or (
+        candidate_score == current_score and candidate.original_edge_ids < current.original_edge_ids
     )

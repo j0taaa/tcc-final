@@ -21,8 +21,8 @@ jobs:
           python-version: "3.11"
       - name: Install development environment
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install -e '.[dev]'
+          python -m pip install --upgrade 'pip==26.2.1'
+          python -m pip install -c requirements/constraints-py311-linux.txt --build-constraint requirements/constraints-py311-linux.txt -e '.[dev]'
       - name: Verify pinned EPIC provenance
         run: ./scripts/verify_upstream.sh
       - name: Lint
@@ -84,7 +84,7 @@ jobs:
       - name: Run pinned EPIC integration tests
         run: PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/integration
       - name: Build exact Rust binding for Q2
-        run: cd crates/mwpc_parser_py && ../../.venv/bin/maturin develop --release
+        run: cd crates/mwpc_parser_py && ../../.venv/bin/maturin develop --release --locked
       - name: Run combined exact and EPIC tests
         run: |
           PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q \

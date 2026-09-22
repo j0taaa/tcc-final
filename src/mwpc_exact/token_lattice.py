@@ -12,6 +12,7 @@ from dataclasses import dataclass
 from itertools import product
 from math import fsum, isfinite, prod
 
+from mwpc_exact._scores import weight_terms
 from mwpc_exact.support import PerPositionSupport
 from mwpc_exact.types import Proposal, aggregate_proposals
 
@@ -58,6 +59,7 @@ class TokenChoice:
     target_boundary: int
     weight: float = 0.0
     matched_proposal_ids: tuple[int, ...] = ()
+    weight_terms: tuple[float, ...] = ()
 
     def __post_init__(self) -> None:
         for field_name in (
@@ -82,6 +84,7 @@ class TokenChoice:
                 "positive-weight proposal IDs"
             )
         object.__setattr__(self, "weight", normalized_weight)
+        object.__setattr__(self, "weight_terms", weight_terms(self.weight, self.weight_terms))
         object.__setattr__(self, "matched_proposal_ids", proposal_ids)
 
     def to_dict(self) -> dict[str, object]:
@@ -312,7 +315,7 @@ class TokenLattice:
 
     def _path_from_choices(self, choices: Sequence[TokenChoice]) -> TokenLatticePath:
         try:
-            objective = fsum(choice.weight for choice in choices)
+            objective = fsum(term for choice in choices for term in choice.weight_terms)
         except OverflowError as exc:
             raise ValueError("token path objective must be finite") from exc
         return TokenLatticePath(
@@ -408,6 +411,7 @@ def build_token_lattice(
     reward_by_choice = {
         (proposal.position, proposal.token_id): proposal.weight for proposal in aggregated
     }
+    terms_by_choice = {(item.position, item.token_id): item.weight_terms for item in aggregated}
     positive_ids_by_choice: dict[tuple[int, int], list[int]] = {}
     for proposal in proposal_items:
         if proposal.weight > 0.0:
@@ -427,6 +431,7 @@ def build_token_lattice(
                     source_boundary=position,
                     target_boundary=position + 1,
                     weight=reward_by_choice.get(key, 0.0),
+                    weight_terms=terms_by_choice.get(key, ()),
                     matched_proposal_ids=tuple(positive_ids_by_choice.get(key, ())),
                 )
             )

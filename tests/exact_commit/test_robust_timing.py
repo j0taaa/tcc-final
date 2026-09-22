@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import threading
 from math import nan
 
 import pytest
@@ -108,3 +109,59 @@ def test_failed_and_over_budget_calls_retain_distinct_errors() -> None:
     assert failed.value is None
     assert isinstance(timed_out.error, TimeoutError)
     assert timed_out.value is None
+
+
+@pytest.mark.parametrize(
+    "failure", ["synchronize", "reset", "rss", "start_clock", "end_clock", "peak"]
+)
+def test_sampler_is_always_joined_when_measurement_boundaries_raise(failure: str) -> None:
+    before = set(threading.enumerate())
+    ticks = 0
+
+    def checked(name: str, value: object) -> object:
+        if failure == name:
+            raise RuntimeError(name)
+        return value
+
+    def clock() -> float:
+        nonlocal ticks
+        ticks += 1
+        checked("start_clock" if ticks == 1 else "end_clock", None)
+        return float(ticks)
+
+    with pytest.raises(RuntimeError, match=failure):
+        measure_call(
+            lambda: None,
+            synchronize_accelerator=lambda: checked("synchronize", None),
+            reset_accelerator_peak=lambda: checked("reset", None),
+            read_process_rss=lambda: checked("rss", 1),
+            read_accelerator_peak=lambda: checked("peak", (0, 0)),
+            maximum_elapsed_seconds=5.0,
+            rss_sample_interval_seconds=1.0,
+            clock=clock,
+        )
+    assert set(threading.enumerate()) == before
+
+
+def test_background_rss_reader_failure_is_reported_and_joined() -> None:
+    sampled = threading.Event()
+    before = set(threading.enumerate())
+
+    def read_rss() -> int:
+        if threading.current_thread().name == "mwpc-rss-sampler":
+            sampled.set()
+            raise RuntimeError("background reader failed")
+        return 1
+
+    with pytest.raises(RuntimeError, match="background reader failed"):
+        measure_call(
+            lambda: sampled.wait(1.0),
+            synchronize_accelerator=lambda: None,
+            reset_accelerator_peak=lambda: None,
+            read_process_rss=read_rss,
+            read_accelerator_peak=lambda: (0, 0),
+            maximum_elapsed_seconds=2.0,
+            rss_sample_interval_seconds=0.001,
+        )
+    assert sampled.is_set()
+    assert set(threading.enumerate()) == before

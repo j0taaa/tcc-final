@@ -13,6 +13,7 @@ from mwpc_exact import (
     EOSPolicy,
     ExactBackend,
     ProfilingComponent,
+    Proposal,
     ProposalWeightMode,
     SolveStatus,
     SupportKind,
@@ -95,6 +96,87 @@ def test_disabled_profiler_never_reads_clock_and_emits_no_event() -> None:
     profiler.set_support_row_sizes((1, 2))
 
     assert profiler.snapshot() is None
+
+
+@pytest.mark.parametrize("grammar_label", [ord("a"), ord("b")])
+def test_pipeline_results_match_with_absent_disabled_and_enabled_profiling(
+    grammar_label: int,
+) -> None:
+    def forbidden_clock() -> float:
+        raise AssertionError("disabled pipeline profiling read its clock")
+
+    outcomes = []
+    disabled = ComponentProfiler(clock=forbidden_clock)
+    for profiler in (None, disabled, ComponentProfiler(enabled=True)):
+        adapter = CompositionalByteLevelAdapter((b"a", None))
+        eos_policy = EOSPolicy(EOSMode.REQUIRED, termination_token_ids=(1,), pad_token_id=1)
+        proposals = build_schedule_proposals(
+            predicted_token_ids=(0, 1),
+            confidence_values=(1.0, 1.0),
+            schedule_mask=(True, True),
+            k_s=2,
+            weight_mode=ProposalWeightMode.UNIT,
+            profiler=profiler,
+        ).proposals
+        support = build_per_position_support(
+            canvas=(None, None),
+            policy=SupportPolicy(
+                kind=SupportKind.FULL, vocabulary_size=2, required_special_token_ids=(1,)
+            ),
+            logits=((1.0, 0.0), (0.0, 1.0)),
+            profiler=profiler,
+        )
+        result = solve_validated_exact_commit(
+            _one_byte_grammar(grammar_label),
+            canvas=support.canvas,
+            support=support,
+            proposals=proposals,
+            tokenizer_adapter=adapter,
+            eos_policy=eos_policy,
+            backend=ExactBackend.PYTHON,
+            profiler=profiler,
+        )
+        step = apply_exact_commit_result(
+            result, canvas=support.canvas, proposals=proposals, profiler=profiler
+        )
+        outcomes.append(step.to_dict())
+    assert outcomes[0] == outcomes[1] == outcomes[2]
+    assert disabled.snapshot() is None
+
+
+def test_empty_grammar_keeps_separate_epsilon_backtracking_and_validation_spans() -> None:
+    adapter = CompositionalByteLevelAdapter((b"a", None))
+    eos_policy = EOSPolicy(EOSMode.REQUIRED, termination_token_ids=(1,), pad_token_id=1)
+    support = build_per_position_support(
+        canvas=(None,),
+        policy=SupportPolicy(
+            kind=SupportKind.FULL, vocabulary_size=2, required_special_token_ids=(1,)
+        ),
+        logits=((0.0, 1.0),),
+    )
+    profiler = ComponentProfiler(enabled=True)
+    result = solve_exact_commit(
+        CnfGrammar(
+            nonterminals=(Nonterminal(0, "S"),),
+            terminals=(),
+            start_nonterminal_id=0,
+            accepts_empty=True,
+        ),
+        canvas=support.canvas,
+        support=support,
+        proposals=(Proposal(0, 0, 1, 1),),
+        tokenizer_adapter=adapter,
+        eos_policy=eos_policy,
+        backend=ExactBackend.PYTHON,
+        profiler=profiler,
+    )
+    event = profiler.snapshot()
+    assert result.status is SolveStatus.OPTIMAL
+    assert result.witness_token_ids == (1,)
+    assert event is not None
+    assert event.component_invocations["parser"] == 1
+    assert event.component_invocations["backtracking"] == 1
+    assert event.component_invocations["validation"] == 2
 
 
 def test_profiled_python_step_is_observational_and_records_every_component() -> None:

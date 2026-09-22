@@ -4,10 +4,12 @@ from __future__ import annotations
 
 from collections.abc import Mapping
 from dataclasses import dataclass
+from fractions import Fraction
 from math import fsum, isclose, isfinite
 from types import MappingProxyType
 from typing import TypeAlias
 
+from mwpc_exact._scores import exact_sum
 from mwpc_exact.reference.grammar import CnfGrammar, TerminalProduction
 from mwpc_exact.reference.graph import IndexedTerminalDAG, index_terminal_dag
 from mwpc_exact.reference.recognizer import recognizes_cnf
@@ -49,6 +51,11 @@ class DagChartEntry:
 
     score: float
     backpointer: DagBackpointer
+    _exact_score: Fraction | None = None
+
+    @property
+    def exact_score(self) -> Fraction:
+        return self._exact_score if self._exact_score is not None else Fraction(self.score)
 
     def __post_init__(self) -> None:
         if isinstance(self.score, bool) or not isinstance(self.score, (int, float)):
@@ -177,7 +184,7 @@ def run_dag_cky(grammar: CnfGrammar, graph: WeightedTerminalDAG) -> DagSolve:
             _stable_update(
                 entries,
                 (terminal_production.head_id, edge.source_state, edge.target_state),
-                edge.weight,
+                exact_sum(edge.weight_terms),
                 DagTerminalBackpointer(
                     production_id=terminal_production.production_id,
                     terminal_id=terminal_id,
@@ -201,8 +208,8 @@ def run_dag_cky(grammar: CnfGrammar, graph: WeightedTerminalDAG) -> DagSolve:
                     right = entries.get((binary_production.right_id, middle, target))
                     if right is None:
                         continue
-                    candidate = left.score + right.score
-                    if not isfinite(candidate):
+                    candidate = left.exact_score + right.exact_score
+                    if not isfinite(float(candidate)):
                         raise ValueError("DAG objective overflowed finite float range")
                     _stable_update(
                         entries,
@@ -219,18 +226,18 @@ def run_dag_cky(grammar: CnfGrammar, graph: WeightedTerminalDAG) -> DagSolve:
     chart = DagChart(grammar, indexed, entries)
     start = graph.start_node_id
     best_final: int | None = None
-    best_score: float | None = None
+    best_score: Fraction | None = None
     for final in sorted(
         graph.final_node_ids,
         key=lambda node_id: (indexed.topological_index[node_id], node_id),
     ):
         if final == start and grammar.accepts_empty:
-            candidate = 0.0
+            candidate = Fraction()
         else:
             root = chart.entry(grammar.start_nonterminal_id, start, final)
             if root is None:
                 continue
-            candidate = root.score
+            candidate = root.exact_score
         if best_score is None or candidate > best_score:
             best_score = candidate
             best_final = final
@@ -241,7 +248,18 @@ def run_dag_cky(grammar: CnfGrammar, graph: WeightedTerminalDAG) -> DagSolve:
 
 
 def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
-    """Reconstruct a graph path and independently re-sum its edge weights."""
+    """Reconstruct a graph path and independently validate it."""
+    certificate = _reconstruct_dag_path(solve)
+    if not validate_dag_certificate(
+        solve.chart.grammar, solve.chart.indexed_graph.graph, certificate
+    ):
+        raise DagCertificateReconstructionError("reconstructed DAG certificate is invalid")
+    return certificate
+
+
+def _reconstruct_dag_path(solve: DagSolve) -> DagParseCertificate:
+    """Internal reconstruction; the public commit boundary validates grammar."""
+
     if not isinstance(solve, DagSolve):
         raise TypeError("solve must be a DagSolve")
     if solve.status is not SolveStatus.OPTIMAL or solve.final_node_id is None:
@@ -267,7 +285,7 @@ def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
     path_labels: list[TerminalLabel] = []
     selected_ids: list[int] = []
 
-    def visit(nonterminal_id: int, source: int, target: int) -> float:
+    def visit(nonterminal_id: int, source: int, target: int) -> Fraction:
         entry = solve.chart.entry(nonterminal_id, source, target)
         if entry is None:
             raise DagCertificateReconstructionError(
@@ -291,14 +309,14 @@ def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
                 raise DagCertificateReconstructionError(
                     "terminal backpointer does not match its chart key"
                 )
-            if not isclose(entry.score, edge.weight, rel_tol=1e-12, abs_tol=1e-12):
+            if entry.score != edge.weight or entry.exact_score != exact_sum(edge.weight_terms):
                 raise DagCertificateReconstructionError(
                     "terminal chart score does not equal its edge weight"
                 )
             path_edges.append(edge.edge_id)
             path_labels.append(edge.terminal_label)
             selected_ids.extend(edge.matched_proposal_ids)
-            return edge.weight
+            return exact_sum(edge.weight_terms)
 
         binary_production = binary_productions.get(pointer.production_id)
         if binary_production is None:
@@ -318,7 +336,7 @@ def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
         left = visit(pointer.left_nonterminal_id, source, middle)
         right = visit(pointer.right_nonterminal_id, middle, target)
         score = left + right
-        if not isfinite(score) or not isclose(entry.score, score, rel_tol=1e-12, abs_tol=1e-12):
+        if entry.score != float(score) or entry.exact_score != score:
             raise DagCertificateReconstructionError(
                 "binary chart score does not equal its child-score sum"
             )
@@ -331,8 +349,8 @@ def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
     )
     if len(set(path_edges)) != len(path_edges):
         raise DagCertificateReconstructionError("reconstructed path repeats an edge")
-    objective = fsum(edge_by_id[edge_id].weight for edge_id in path_edges)
-    if not isclose(objective, root_score, rel_tol=1e-12, abs_tol=1e-12):
+    objective = fsum(term for edge_id in path_edges for term in edge_by_id[edge_id].weight_terms)
+    if objective != float(root_score):
         raise DagCertificateReconstructionError(
             "recomputed path objective does not equal the root chart score"
         )
@@ -342,7 +360,7 @@ def reconstruct_dag_certificate(solve: DagSolve) -> DagParseCertificate:
         witness_terminal_labels=tuple(path_labels),
         witness_graph_edge_ids=tuple(path_edges),
     )
-    if not validate_dag_certificate(solve.chart.grammar, graph, certificate):
+    if not _validate_dag_path(graph, certificate):
         raise DagCertificateReconstructionError("independent certificate validation failed")
     return certificate
 
@@ -355,11 +373,17 @@ def validate_dag_certificate(
     """Validate a parser-local certificate without reading its chart."""
     if not isinstance(grammar, CnfGrammar):
         raise TypeError("grammar must be a CnfGrammar")
+    return _validate_dag_path(graph, certificate) and recognizes_cnf(
+        grammar, certificate.witness_terminal_labels
+    )
+
+
+def _validate_dag_path(graph: WeightedTerminalDAG, certificate: DagParseCertificate) -> bool:
+    """Structural/provenance checks only; never grants commit authority."""
     indexed = index_terminal_dag(graph)
     if not isinstance(certificate, DagParseCertificate):
         raise TypeError("certificate must be a DagParseCertificate")
     current = graph.start_node_id
-    labels: list[TerminalLabel] = []
     selected_ids: list[int] = []
     weights: list[float] = []
     claimed_labels = iter(certificate.witness_terminal_labels)
@@ -372,9 +396,8 @@ def validate_dag_certificate(
             claimed_label = next(claimed_labels, None)
             if edge.terminal_label != claimed_label:
                 return False
-            labels.append(edge.terminal_label)
         selected_ids.extend(edge.matched_proposal_ids)
-        weights.append(edge.weight)
+        weights.extend(edge.weight_terms)
     if next(claimed_labels, None) is not None:
         return False
     if current not in graph.final_node_ids:
@@ -383,15 +406,15 @@ def validate_dag_certificate(
         return False
     if not isclose(fsum(weights), certificate.objective_value, rel_tol=1e-12, abs_tol=1e-12):
         return False
-    return recognizes_cnf(grammar, tuple(labels))
+    return True
 
 
 def _stable_update(
     entries: dict[DagChartKey, DagChartEntry],
     key: DagChartKey,
-    candidate_score: float,
+    candidate_score: Fraction,
     backpointer: DagBackpointer,
 ) -> None:
     existing = entries.get(key)
-    if existing is None or candidate_score > existing.score:
-        entries[key] = DagChartEntry(candidate_score, backpointer)
+    if existing is None or candidate_score > existing.exact_score:
+        entries[key] = DagChartEntry(float(candidate_score), backpointer, candidate_score)

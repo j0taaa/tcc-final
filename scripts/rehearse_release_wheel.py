@@ -7,6 +7,7 @@ import json
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
 import venv
 import zipfile
@@ -52,6 +53,33 @@ def _inspect_wheel(wheel: Path) -> dict[str, object]:
     return {"license": "MIT", "license_files": len(license_files), "python_files": counts}
 
 
+def _inspect_sdist(sdist: Path) -> dict[str, object]:
+    with tarfile.open(sdist, "r:gz") as archive:
+        members = archive.getmembers()
+    forbidden = {"target", ".git", "__pycache__", ".venv", ".venv-live", ".cache"}
+    bad = [member.name for member in members if forbidden.intersection(Path(member.name).parts)]
+    unpacked_bytes = sum(member.size for member in members)
+    if bad:
+        raise RuntimeError(f"source archive contains generated/local files: {bad[:5]}")
+    if unpacked_bytes > 50_000_000:
+        raise RuntimeError(f"source archive exceeds the 50 MB source budget: {unpacked_bytes}")
+    names = {"/".join(Path(member.name).parts[1:]) for member in members}
+    required = {
+        "pyproject.toml",
+        "LICENSE",
+        "vendor/EPIC-Decoding/THIRD_PARTY_LICENSES.md",
+        "src/mwpc_exact/__init__.py",
+        "crates/mwpc_parser/Cargo.lock",
+    }
+    if not required <= names:
+        raise RuntimeError(f"source archive omits required sources: {sorted(required - names)}")
+    return {
+        "files": len(members),
+        "unpacked_bytes": unpacked_bytes,
+        "compressed_bytes": sdist.stat().st_size,
+    }
+
+
 def _copy_statistical_fixture(smoke_root: Path) -> Path:
     config = smoke_root / STATISTICS_CONFIG_RELATIVE
     raw = smoke_root / STATISTICS_RAW_RELATIVE
@@ -81,6 +109,10 @@ def main() -> int:
         wheels = sorted(dist.glob("*.whl"))
         if len(wheels) != 1:
             raise RuntimeError(f"expected one built wheel, found {len(wheels)}")
+        sdists = sorted(dist.glob("*.tar.gz"))
+        if len(sdists) != 1:
+            raise RuntimeError(f"expected one built sdist, found {len(sdists)}")
+        sdist_inventory = _inspect_sdist(sdists[0])
         wheel = wheels[0]
         wheel_inventory = _inspect_wheel(wheel)
 
@@ -162,6 +194,7 @@ def main() -> int:
                     "artifact_generator": "PASS",
                     "experiment": "PASS",
                     "wheel_inventory": wheel_inventory,
+                    "sdist_inventory": sdist_inventory,
                     "source_tree_leakage": False,
                     "wheel": wheel.name,
                 },

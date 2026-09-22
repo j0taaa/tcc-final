@@ -34,6 +34,8 @@ def optimal_result(
     *,
     selected: tuple[int, ...] = (),
     objective: float = 0.0,
+    canvas: tuple[int | None, ...] | None = None,
+    proposals: tuple[Proposal, ...] = (),
 ) -> ValidatedExactCommit:
     raw_result = ExactCommitResult(
         status=SolveStatus.OPTIMAL,
@@ -62,6 +64,8 @@ def optimal_result(
             recomputed_objective=objective,
             recomputed_selected_proposal_ids=selected,
         ),
+        canvas=(None,) * len(witness) if canvas is None else canvas,
+        proposals=proposals,
     )
 
 
@@ -85,7 +89,9 @@ def test_optimal_nonempty_selection_commits_exactly_matching_proposals() -> None
         Proposal(12, position=1, token_id=5, weight=1),
         Proposal(13, position=3, token_id=7, weight=4),
     )
-    result = optimal_result((4, 5, 9, 6), selected=(10, 11, 12), objective=6)
+    result = optimal_result(
+        (4, 5, 9, 6), selected=(10, 11, 12), objective=6, canvas=canvas, proposals=proposals
+    )
 
     step = apply_exact_commit_result(result, canvas=canvas, proposals=proposals)
 
@@ -148,8 +154,10 @@ def test_optimal_witness_must_preserve_fixed_canvas_before_commit() -> None:
 
 
 def test_selected_decoder_proposal_cannot_target_an_already_fixed_slot() -> None:
-    result = optimal_result((4, 5), selected=(10,), objective=1)
     proposals = (Proposal(10, position=0, token_id=4, weight=1),)
+    result = optimal_result(
+        (4, 5), selected=(10,), objective=1, canvas=(4, None), proposals=proposals
+    )
 
     with pytest.raises(ValueError, match="currently masked positions"):
         apply_exact_commit_result(result, canvas=(4, None), proposals=proposals)
@@ -157,8 +165,8 @@ def test_selected_decoder_proposal_cannot_target_an_already_fixed_slot() -> None
 
 def test_zero_score_optimum_uses_probability_then_position_tie_break() -> None:
     canvas = (None, None, 7, None)
-    result = optimal_result((1, 2, 7, 3))
     proposals = (Proposal(20, position=1, token_id=2, weight=0),)
+    result = optimal_result((1, 2, 7, 3), canvas=canvas, proposals=proposals)
 
     step = apply_exact_commit_result(
         result,
@@ -189,7 +197,7 @@ def test_zero_score_optimum_uses_probability_then_position_tie_break() -> None:
 
 def test_witness_progress_respects_the_adapter_eligibility_boundary() -> None:
     step = apply_exact_commit_result(
-        optimal_result((1, 2, 3)),
+        optimal_result((1, 2, 3), proposals=(Proposal(20, position=0, token_id=9, weight=1),)),
         canvas=(None, None, None),
         proposals=(Proposal(20, position=0, token_id=9, weight=1),),
         witness_token_probabilities=(0.1, 0.2, 0.99),
@@ -209,7 +217,7 @@ def test_witness_progress_rejects_invalid_adapter_eligibility(
 ) -> None:
     with pytest.raises((TypeError, ValueError)):
         apply_exact_commit_result(
-            optimal_result((1, 2)),
+            optimal_result((1, 2), canvas=(None, 2)),
             canvas=(None, 2),
             proposals=(),
             witness_token_probabilities=(0.5, 0.5),
@@ -256,7 +264,7 @@ def test_empty_selected_set_cannot_hide_a_positive_matching_proposal() -> None:
 
 
 def test_fully_fixed_optimal_witness_is_complete_without_a_fake_commit() -> None:
-    result = optimal_result((4, 5))
+    result = optimal_result((4, 5), canvas=(4, 5))
 
     step = apply_exact_commit_result(result, canvas=(4, 5), proposals=())
 

@@ -249,7 +249,7 @@ class ByteLattice:
         if tuple(edge.terminal_label for edge in edges) != path.terminal_labels:
             raise ValueError("byte path terminal labels do not match its emitted bytes")
         try:
-            recomputed_objective = fsum(edge.weight for edge in edges)
+            recomputed_objective = fsum(term for edge in edges for term in edge.weight_terms)
         except OverflowError as exc:
             raise ValueError("byte path edge weights must have a finite sum") from exc
         if not isfinite(recomputed_objective) or recomputed_objective != path.objective_value:
@@ -347,6 +347,7 @@ def build_byte_lattice(
             target_boundary=choice.target_boundary,
             emitted_bytes=emission,
             weight=choice.weight,
+            weight_terms=choice.weight_terms,
             matched_proposal_ids=choice.matched_proposal_ids,
         )
         for choice, emission in zip(token_lattice.choices, emissions, strict=True)
@@ -372,6 +373,7 @@ def build_byte_lattice(
                     target_state=target_state,
                     terminal_label=byte_value,
                     weight=arc.weight if offset == 0 else 0.0,
+                    weight_terms=arc.weight_terms if offset == 0 else (),
                     provenance_token_edge_id=arc.token_edge_id,
                     matched_proposal_ids=(arc.matched_proposal_ids if offset == 0 else ()),
                 )

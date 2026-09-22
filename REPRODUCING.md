@@ -23,6 +23,21 @@ the versioned raw evidence, and a top-`K` result is only
 `exact_on_support` for one optimizer step. `TIMEOUT` remains distinct from
 `INFEASIBLE_ON_SUPPORT` throughout the pipeline.
 
+## Post-release maintenance checkout
+
+The current working tree includes the fixes documented in
+[`docs/review-hardening.md`](docs/review-hardening.md); they are not part of
+the historical `v0.1.1` measurements. The maintained CPU/dev setup uses exact
+Python package constraints in `requirements/constraints-py311-linux.txt` and
+Rust 1.98.0 in `rust-toolchain.toml`. Those constraints target Linux x86_64,
+CPython 3.11; they are not a newly verified CUDA lock or a cross-platform lock.
+`make bootstrap`, `make bootstrap-epic`, and CI consume the constraints.
+
+M5/M6/M7 differential scripts now write fresh temporary output directories by
+default. Use `--output-directory <new-directory>` to keep a new run. Existing
+summary files are protected against overwriting; the historical paths inside
+the campaign configurations identify prior evidence, not mutable output files.
+
 ## 1. Prerequisites and checkout
 
 The reproducibility baseline is Linux, CPython 3.11, Git, GNU Make, and a C/C++

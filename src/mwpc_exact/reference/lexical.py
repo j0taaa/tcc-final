@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from math import inf, isfinite
 from types import MappingProxyType
 
+from mwpc_exact._scores import weight_terms
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.types import Proposal, aggregate_proposals
 
@@ -27,6 +28,7 @@ class LexicalReward:
 
     score: float
     matched_proposal_ids: tuple[int, ...] = ()
+    weight_terms: tuple[float, ...] = ()
 
     def __post_init__(self) -> None:
         if isinstance(self.score, bool) or not isinstance(self.score, (int, float)):
@@ -44,6 +46,8 @@ class LexicalReward:
         if normalized == NEGATIVE_INFINITY and proposal_ids:
             raise ValueError("a conflicting lexical choice cannot match proposals")
         object.__setattr__(self, "score", normalized)
+        if normalized != NEGATIVE_INFINITY:
+            object.__setattr__(self, "weight_terms", weight_terms(normalized, self.weight_terms))
         object.__setattr__(self, "matched_proposal_ids", proposal_ids)
 
 
@@ -130,6 +134,7 @@ def build_lexical_rewards(
     )
     aggregated = aggregate_proposals(proposal_items)
     reward_by_choice = {(item.position, item.token_id): item.weight for item in aggregated}
+    terms_by_choice = {(item.position, item.token_id): item.weight_terms for item in aggregated}
     positive_ids_by_choice: dict[tuple[int, int], list[int]] = {}
     for proposal in proposal_items:
         if proposal.weight > 0:
@@ -150,6 +155,7 @@ def build_lexical_rewards(
             choice = (position, token_id)
             row[terminal.symbol_id] = LexicalReward(
                 score=reward_by_choice.get(choice, 0.0),
+                weight_terms=terms_by_choice.get(choice, ()),
                 matched_proposal_ids=tuple(positive_ids_by_choice.get(choice, ())),
             )
         rows.append(row)

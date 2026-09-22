@@ -223,7 +223,7 @@ def test_validation_rejects_duplicated_reward_on_suffix_byte() -> None:
         byte_lattice.graph,
         edges=(
             byte_lattice.graph.edges[0],
-            replace(suffix, weight=5, matched_proposal_ids=(2,)),
+            replace(suffix, weight=5, weight_terms=(5,), matched_proposal_ids=(2,)),
         ),
     )
 

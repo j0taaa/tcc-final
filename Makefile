@@ -2,6 +2,7 @@ PYTHON ?= python3.11
 VENV ?= .venv
 VENV_PY := $(VENV)/bin/python
 VENV_PIP := $(VENV)/bin/pip
+PYTHON_CONSTRAINTS := requirements/constraints-py311-linux.txt
 EPIC_CPU_INDEX ?= https://download.pytorch.org/whl/cpu
 ARTIFACT_CONFIG ?= configs/analysis/t1201_q3_artifacts_v1.toml
 STATISTICS_CONFIG ?= configs/analysis/t1202_statistics_v1.toml
@@ -13,19 +14,19 @@ ARTICLE_RESULT_CONFIG ?= configs/analysis/m1301_article_results_v1.toml
 bootstrap:
 	git submodule update --init --recursive
 	$(PYTHON) -m venv $(VENV)
-	$(VENV_PIP) install --upgrade pip
-	$(VENV_PIP) install -e '.[dev]'
+	$(VENV_PIP) install --upgrade 'pip==26.2.1'
+	$(VENV_PIP) install -c $(PYTHON_CONSTRAINTS) --build-constraint $(PYTHON_CONSTRAINTS) -e '.[dev]'
 	./scripts/verify_upstream.sh
 
 bootstrap-epic: bootstrap
-	$(VENV_PIP) install --index-url $(EPIC_CPU_INDEX) 'torch==2.8.0+cpu'
-	$(VENV_PIP) install -r requirements/epic-baseline-cpu.txt
-	cd vendor/EPIC-Decoding/rustformlang_bindings && ../../../$(VENV)/bin/maturin develop --release
+	$(VENV_PIP) install -c $(PYTHON_CONSTRAINTS) --index-url $(EPIC_CPU_INDEX) 'torch==2.8.0+cpu'
+	$(VENV_PIP) install -c $(PYTHON_CONSTRAINTS) -r requirements/epic-baseline-cpu.txt
+	cd vendor/EPIC-Decoding/rustformlang_bindings && ../../../$(VENV)/bin/maturin develop --release --locked
 	$(VENV_PY) scripts/install_epic_checkout.py
 	PYTHONDONTWRITEBYTECODE=1 $(VENV_PY) -c "import constrained_diffusion, rustformlang; print('EPIC imports ok')"
 
 bootstrap-rust-parser: bootstrap
-	cd crates/mwpc_parser_py && ../../$(VENV)/bin/maturin develop --release
+	cd crates/mwpc_parser_py && ../../$(VENV)/bin/maturin develop --release --locked
 	$(VENV_PY) -c "import mwpc_parser_py; print('MWPC Rust parser import ok')"
 
 verify-upstream:

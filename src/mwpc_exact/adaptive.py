@@ -8,7 +8,7 @@ and the complete attempt history is attached to the final structured result.
 from __future__ import annotations
 
 from collections.abc import Callable, Iterable, Mapping, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from enum import StrEnum
 from itertools import pairwise
 from math import isfinite
@@ -172,20 +172,12 @@ def _support_policy_for_attempt(
     include_proposal_tokens: bool,
     pruning_description: str | None,
 ) -> SupportPolicy:
-    if width == permitted_token_count:
-        return SupportPolicy(
-            kind=SupportKind.FULL,
-            vocabulary_size=vocabulary_size,
-            required_special_token_ids=special_token_ids,
-            include_proposal_tokens=include_proposal_tokens,
-            permitted_token_ids=permitted_token_ids,
-            pruning_description=pruning_description,
-        )
+    is_full = width == permitted_token_count
     return SupportPolicy(
-        kind=SupportKind.TOP_K,
+        kind=SupportKind.FULL if is_full else SupportKind.TOP_K,
         vocabulary_size=vocabulary_size,
-        top_k=widths[0],
-        adaptive_expansions=widths[1 : attempt_index + 1],
+        top_k=None if is_full else widths[0],
+        adaptive_expansions=() if is_full else widths[1 : attempt_index + 1],
         required_special_token_ids=special_token_ids,
         include_proposal_tokens=include_proposal_tokens,
         permitted_token_ids=permitted_token_ids,
@@ -206,24 +198,6 @@ def _validate_support_superset(
             raise RuntimeError(
                 f"adaptive support row {position} is not a superset of its predecessor"
             )
-
-
-def _copy_result_with_diagnostics(
-    result: ExactCommitResult,
-    diagnostics: Mapping[str, object],
-) -> ExactCommitResult:
-    return ExactCommitResult(
-        status=result.status,
-        exactness_scope=result.exactness_scope,
-        objective_value=result.objective_value,
-        selected_proposal_ids=result.selected_proposal_ids,
-        witness_token_ids=result.witness_token_ids,
-        witness_terminal_labels=result.witness_terminal_labels,
-        witness_graph_edge_ids=result.witness_graph_edge_ids,
-        witness_eos_position=result.witness_eos_position,
-        witness_content_endpoint_slot=result.witness_content_endpoint_slot,
-        diagnostics=diagnostics,
-    )
 
 
 def _finalize(
@@ -273,7 +247,7 @@ def _finalize(
             else "late_reference_results_discarded_attempts_not_interruptible"
         ),
     }
-    return _copy_result_with_diagnostics(result, diagnostics)
+    return replace(result, diagnostics=diagnostics)
 
 
 def solve_exact_commit_adaptive(
@@ -312,6 +286,7 @@ def solve_exact_commit_adaptive(
         raise TypeError("config must be an AdaptiveSupportConfig")
     if profiler is not None and not isinstance(profiler, ComponentProfiler):
         raise TypeError("profiler must be a ComponentProfiler or None")
+    profiler = ComponentProfiler() if profiler is None else profiler
     if _validation_sink is not None and not callable(_validation_sink):
         raise TypeError("_validation_sink must be callable or None")
     if not isinstance(tokenizer_adapter, CompositionalByteLevelAdapter):
@@ -382,21 +357,13 @@ def solve_exact_commit_adaptive(
                 profiler=profiler,
             )
         else:
-            if profiler is None or not profiler.enabled:
+            with profiler.measure(ProfilingComponent.SUPPORT_CONSTRUCTION):
                 support = build_per_position_support_from_rankings(
                     canvas=canvas_items,
                     policy=policy,
                     rankings=ranked_support_rows,
                     proposals=proposal_items,
                 )
-            else:
-                with profiler.measure(ProfilingComponent.SUPPORT_CONSTRUCTION):
-                    support = build_per_position_support_from_rankings(
-                        canvas=canvas_items,
-                        policy=policy,
-                        rankings=ranked_support_rows,
-                        proposals=proposal_items,
-                    )
         support_finished_at = clock()
         if previous_support is not None:
             _validate_support_superset(previous_support, support)
@@ -431,7 +398,7 @@ def solve_exact_commit_adaptive(
                         superset_of_previous=(None if previous_support is None else True),
                     )
                 )
-                if profiler is not None and profiler.enabled:
+                if profiler.enabled:
                     profiler.set_counter("support_attempt_count", len(attempts))
                     profiler.set_counter(
                         "support_expansion_count",
@@ -478,7 +445,7 @@ def solve_exact_commit_adaptive(
             superset_of_previous=None if previous_support is None else True,
         )
         attempts.append(attempt)
-        if profiler is not None and profiler.enabled:
+        if profiler.enabled:
             profiler.set_counter("support_attempt_count", len(attempts))
             profiler.set_counter("support_expansion_count", max(0, len(attempts) - 1))
 
@@ -493,17 +460,7 @@ def solve_exact_commit_adaptive(
                 exactness_scope=result.exactness_scope,
                 diagnostics=result.diagnostics,
             )
-            attempts[-1] = _AttemptRecord(
-                attempt_index=attempt.attempt_index,
-                requested_k=attempt.requested_k,
-                support=attempt.support,
-                result=timeout_result,
-                support_construction_seconds=attempt.support_construction_seconds,
-                solve_seconds=attempt.solve_seconds,
-                cumulative_elapsed_seconds=attempt.cumulative_elapsed_seconds,
-                backend_timeout_seconds=attempt.backend_timeout_seconds,
-                superset_of_previous=attempt.superset_of_previous,
-            )
+            attempts[-1] = replace(attempt, result=timeout_result)
             return _finalize(
                 timeout_result,
                 config=config,
@@ -516,33 +473,26 @@ def solve_exact_commit_adaptive(
             )
 
         if result.status is not SolveStatus.INFEASIBLE_ON_SUPPORT:
-            return _finalize(
-                result,
-                config=config,
-                configured_widths=widths,
-                attempts=attempts,
-                backend=backend,
-                stopped_reason=f"terminal_status_{result.status.value}",
-                resource_limit_prevented_expansion=False,
-                total_elapsed_seconds=max(0.0, latest_time - started_at),
-            )
-        if attempt_index + 1 == len(widths):
+            stopped_reason = f"terminal_status_{result.status.value}"
+        elif attempt_index + 1 == len(widths):
             stopped_reason = (
                 "full_permitted_support_reached"
                 if support.exactness_scope.kind is SupportKind.FULL
                 else "k_max_reached"
             )
-            return _finalize(
-                result,
-                config=config,
-                configured_widths=widths,
-                attempts=attempts,
-                backend=backend,
-                stopped_reason=stopped_reason,
-                resource_limit_prevented_expansion=False,
-                total_elapsed_seconds=max(0.0, latest_time - started_at),
-            )
-        previous_support = support
+        else:
+            previous_support = support
+            continue
+        return _finalize(
+            result,
+            config=config,
+            configured_widths=widths,
+            attempts=attempts,
+            backend=backend,
+            stopped_reason=stopped_reason,
+            resource_limit_prevented_expansion=False,
+            total_elapsed_seconds=total_elapsed,
+        )
 
     raise AssertionError("validated adaptive schedule unexpectedly contained no attempts")
 
@@ -568,6 +518,8 @@ def solve_exact_commit_adaptive_validated(
 ) -> ValidatedExactCommit | ExactCommitResult:
     """Return a typed validated optimum under feasibility-driven support expansion."""
 
+    canvas = tuple(canvas)
+    proposals = tuple(proposals)
     validation_reports: list[ValidationReport] = []
     result = solve_exact_commit_adaptive(
         grammar,
@@ -592,7 +544,9 @@ def solve_exact_commit_adaptive_validated(
         return result
     if len(validation_reports) != 1:
         raise RuntimeError("OPTIMAL adaptive solve omitted its live validation report")
-    return _validated_exact_commit(result, validation_reports[0])
+    return _validated_exact_commit(
+        result, validation_reports[0], canvas=canvas, proposals=proposals
+    )
 
 
 __all__ = [

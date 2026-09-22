@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 
 import pytest
 
@@ -93,6 +94,33 @@ def _config(*, top_k: int) -> ExactStrategyConfig:
 def _row(*scores: float) -> tuple[float, ...]:
     assert len(scores) == ADAPTER.vocabulary_size
     return scores
+
+
+@pytest.mark.parametrize("mode", [EOSMode.ABSENT, EOSMode.OPTIONAL])
+def test_fully_committed_canvas_without_eos_completes_when_eos_is_not_required(
+    mode: EOSMode,
+) -> None:
+    policy = EOSPolicy(mode) if mode is EOSMode.ABSENT else replace(PROFILE.eos_policy, mode=mode)
+    row = _TensorRow([MASK, MASK])
+    outcome = run_llada_exact_step(
+        _grammar_ab(),
+        token_ids=row,
+        logits=(_row(10, 0, -1, -2, -3, -4), _row(0, 10, -1, -2, -3, -4)),
+        predicted_token_ids=(0, 1),
+        confidence_values=(0.9, 0.9),
+        decoded_tracking=[None, None],
+        decode_token=str,
+        eos_marker="<EOS>",
+        prompt_length=0,
+        generation_length=2,
+        active_block_end=2,
+        k_s=2,
+        tokenizer_adapter=ADAPTER,
+        config=replace(_config(top_k=2), eos_policy=policy),
+        profile=replace(PROFILE, eos_policy=policy),
+    )
+    assert row.values == [0, 1]
+    assert outcome.complete
 
 
 def test_live_byte_adapter_marks_added_and_model_only_rows_unsupported() -> None:

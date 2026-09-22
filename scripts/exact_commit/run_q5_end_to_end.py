@@ -52,6 +52,7 @@ from mwpc_exact.reference.normalization import (
     normalize_to_cnf,
 )
 from mwpc_exact.reference.recognizer import recognizes_cnf
+from mwpc_research.matched_schedule import transfer_schedule
 from mwpc_research.q5_end_to_end import (
     Q5_STRATEGIES,
     Q5ExecutionStatus,
@@ -796,6 +797,10 @@ def _prepare_exact_call(
     """Allocate exact per-call state outside the measured region."""
 
     generation_length = parameters.generation_length
+    if parameters.block_length != generation_length:
+        raise ValueError("Q5 exact experiments currently require a single full block")
+    proposal_schedule = transfer_schedule(generation_length, parameters.steps)
+    step_index = 0
     token_row = torch.tensor(
         [list(prompt_ids) + [PINNED_LLADA_PROFILE.mask_token_id] * generation_length],
         device="cuda:0",
@@ -823,6 +828,7 @@ def _prepare_exact_call(
     profiler = ComponentProfiler(enabled=True)
 
     def run_step() -> Any:
+        nonlocal step_index
         with torch.inference_mode():
             logits = model(token_row).logits
         _require(
@@ -848,12 +854,13 @@ def _prepare_exact_call(
             prompt_length=len(prompt_ids),
             generation_length=generation_length,
             active_block_end=len(prompt_ids) + generation_length,
-            k_s=parameters.schedule_budget,
+            k_s=proposal_schedule[step_index],
             tokenizer_adapter=tokenizer_adapter,
             config=strategy_config,
             profile=PINNED_LLADA_PROFILE,
             profiler=profiler,
         )
+        step_index += 1
         return outcome
 
     def run() -> Mapping[str, object]:
@@ -895,6 +902,7 @@ def _prepare_exact_call(
         fallback_class = outcome.decoder_step.diagnostics.get("fallback_class")
         return {
             "complete": outcome.complete,
+            "proposal_schedule": proposal_schedule,
             "generated_token_ids": generated_ids,
             "decoded_with_specials": tokenizer.decode(
                 list(generated_ids),
@@ -1433,6 +1441,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         "generation_length": parameters.generation_length,
         "block_length": parameters.block_length,
         "steps": parameters.steps,
+        "proposal_schedule": list(
+            transfer_schedule(parameters.generation_length, parameters.steps)
+        ),
         "temperature": parameters.temperature,
         "cfg_scale": parameters.cfg_scale,
         "remasking": parameters.remasking,

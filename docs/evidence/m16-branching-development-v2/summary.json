@@ -1,0 +1,1117 @@
+{
+  "artifact_kind": "mwpc_recursive_branching_summary_v2",
+  "row_count": 1200,
+  "generated_state_count": 300,
+  "seed_cluster_count": 100,
+  "correctness_failure_rows": 0,
+  "width_pairs": 600,
+  "width_objective_improvements": 62,
+  "width_monotonicity_violations": 0,
+  "groups": [
+    {
+      "family": "arithmetic",
+      "width": 2,
+      "weight_mode": "integer_utility",
+      "state_count": 100,
+      "branching_valid_states": 54,
+      "singleton_valid_states": 46,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 0,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 0.0,
+        "iqr": 0.0,
+        "mean": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.003193754004314542,
+            "q1": 0.0032617195101920515,
+            "median": 0.0033080890134442598,
+            "q3": 0.003332927488372661,
+            "maximum": 0.036070834030397236,
+            "iqr": 7.120797818060964e-05,
+            "mean": 0.003631852313410491,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0012025210307911038,
+            "q1": 0.0012261777301318944,
+            "median": 0.001236339972820133,
+            "q3": 0.0012569002574309707,
+            "maximum": 0.0017423450481146574,
+            "iqr": 3.072252729907632e-05,
+            "mean": 0.0012574038607999682,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0037094810395501554,
+            "q1": 0.004840591718675569,
+            "median": 0.004953777504852042,
+            "q3": 0.005410510289948434,
+            "maximum": 0.006041061016730964,
+            "iqr": 0.0005699185712728649,
+            "mean": 0.0050539808283792806,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "arithmetic",
+      "width": 2,
+      "weight_mode": "unit",
+      "state_count": 100,
+      "branching_valid_states": 54,
+      "singleton_valid_states": 46,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 0,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 0.0,
+        "iqr": 0.0,
+        "mean": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.003198852005880326,
+            "q1": 0.003278386269812472,
+            "median": 0.0033139995066449046,
+            "q3": 0.003346529745613225,
+            "maximum": 0.045015757030341774,
+            "iqr": 6.814347580075264e-05,
+            "mean": 0.003729556860635057,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0012108039809390903,
+            "q1": 0.001230575013323687,
+            "median": 0.0012378785177133977,
+            "q3": 0.0012533902481663972,
+            "maximum": 0.0014450059970840812,
+            "iqr": 2.2815234842710197e-05,
+            "mean": 0.001252748352708295,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0036634299904108047,
+            "q1": 0.004804064708878286,
+            "median": 0.004954384989105165,
+            "q3": 0.005391987724578939,
+            "maximum": 0.0060904030106030405,
+            "iqr": 0.0005879230157006532,
+            "mean": 0.0050647283397847786,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "arithmetic",
+      "width": 4,
+      "weight_mode": "integer_utility",
+      "state_count": 100,
+      "branching_valid_states": 87,
+      "singleton_valid_states": 13,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 0,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 0.0,
+        "iqr": 0.0,
+        "mean": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0034117420436814427,
+            "q1": 0.003487768495688215,
+            "median": 0.003517792996717617,
+            "q3": 0.003551259738742374,
+            "maximum": 0.0037655020132660866,
+            "iqr": 6.349124305415899e-05,
+            "mean": 0.00352569833106827,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0013539029750972986,
+            "q1": 0.0013839244929840788,
+            "median": 0.0013957455230411142,
+            "q3": 0.0014462662802543491,
+            "maximum": 0.001570194959640503,
+            "iqr": 6.234178727027029e-05,
+            "mean": 0.0014145135373109952,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.004356378980446607,
+            "q1": 0.005287062027491629,
+            "median": 0.005443545000161976,
+            "q3": 0.0058645982353482395,
+            "maximum": 0.006475787027738988,
+            "iqr": 0.0005775362078566104,
+            "mean": 0.00552713468845468,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "arithmetic",
+      "width": 4,
+      "weight_mode": "unit",
+      "state_count": 100,
+      "branching_valid_states": 87,
+      "singleton_valid_states": 13,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 0,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 0.0,
+        "iqr": 0.0,
+        "mean": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.003417347965296358,
+            "q1": 0.0034705227590166032,
+            "median": 0.003505642991513014,
+            "q3": 0.003529510519001633,
+            "maximum": 0.0036428039893507957,
+            "iqr": 5.89877599850297e-05,
+            "mean": 0.003505841156002134,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0013579549849964678,
+            "q1": 0.0013892660062992945,
+            "median": 0.0014415495097637177,
+            "q3": 0.0014661009918199852,
+            "maximum": 0.0018279619980603456,
+            "iqr": 7.683498552069068e-05,
+            "mean": 0.001437532029231079,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.004280549997929484,
+            "q1": 0.0052735830104211345,
+            "median": 0.005462036497192457,
+            "q3": 0.005888736239285208,
+            "maximum": 0.006515090994071215,
+            "iqr": 0.0006151532288640738,
+            "mean": 0.005539585538790561,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "brackets",
+      "width": 2,
+      "weight_mode": "integer_utility",
+      "state_count": 100,
+      "branching_valid_states": 33,
+      "singleton_valid_states": 67,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 2,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 6.0,
+        "iqr": 0.0,
+        "mean": 0.09,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.001307713973801583,
+            "q1": 0.0013406657672021538,
+            "median": 0.001355052023427561,
+            "q3": 0.0014072799822315574,
+            "maximum": 0.010332492005545646,
+            "iqr": 6.661421502940357e-05,
+            "mean": 0.001463512490154244,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0007875330047681928,
+            "q1": 0.0008034964848775417,
+            "median": 0.0008088520262390375,
+            "q3": 0.0008191242523025721,
+            "maximum": 0.0010499519994482398,
+            "iqr": 1.562776742503047e-05,
+            "mean": 0.0008204588567605242,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0027229529805481434,
+            "q1": 0.0032226727344095707,
+            "median": 0.0033200779871549457,
+            "q3": 0.003487348250928335,
+            "maximum": 0.004032605967950076,
+            "iqr": 0.0002646755165187642,
+            "mean": 0.0033235824876464903,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "brackets",
+      "width": 2,
+      "weight_mode": "unit",
+      "state_count": 100,
+      "branching_valid_states": 33,
+      "singleton_valid_states": 67,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 3,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 1.0,
+        "iqr": 0.0,
+        "mean": 0.03,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0013174070045351982,
+            "q1": 0.0013386810314841568,
+            "median": 0.001352041494101286,
+            "q3": 0.0014050594909349456,
+            "maximum": 0.002983581041917205,
+            "iqr": 6.63784594507888e-05,
+            "mean": 0.0013862100418191403,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0007854309515096247,
+            "q1": 0.000798986220615916,
+            "median": 0.0008114324591588229,
+            "q3": 0.0008209722145693377,
+            "maximum": 0.0017733090207912028,
+            "iqr": 2.1985993953421712e-05,
+            "mean": 0.0008297202043468133,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.002743938995990902,
+            "q1": 0.003213600008166395,
+            "median": 0.003293138957815245,
+            "q3": 0.0035138895036652684,
+            "maximum": 0.004026542010251433,
+            "iqr": 0.0003002894954988733,
+            "mean": 0.0033302707562688737,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "brackets",
+      "width": 4,
+      "weight_mode": "integer_utility",
+      "state_count": 100,
+      "branching_valid_states": 100,
+      "singleton_valid_states": 0,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 2,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 3.0,
+        "iqr": 0.0,
+        "mean": 0.04,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0015407680184580386,
+            "q1": 0.001577481220010668,
+            "median": 0.0016076400061137974,
+            "q3": 0.0016540972574148327,
+            "maximum": 0.006757719966117293,
+            "iqr": 7.661603740416467e-05,
+            "mean": 0.0016726391785778106,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0009453670354560018,
+            "q1": 0.0009641027572797611,
+            "median": 0.0009728524892125279,
+            "q3": 0.0010306934855179861,
+            "maximum": 0.0012369869509711862,
+            "iqr": 6.659072823822498e-05,
+            "mean": 0.0009929426707094536,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0034605960245244205,
+            "q1": 0.0037172467564232647,
+            "median": 0.0038406109961215407,
+            "q3": 0.003970509016653523,
+            "maximum": 0.019056944991461933,
+            "iqr": 0.0002532622602302581,
+            "mean": 0.003999733100645244,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "brackets",
+      "width": 4,
+      "weight_mode": "unit",
+      "state_count": 100,
+      "branching_valid_states": 100,
+      "singleton_valid_states": 0,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 3,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 1.0,
+        "iqr": 0.0,
+        "mean": 0.03,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0015500200097449124,
+            "q1": 0.0015874054952291772,
+            "median": 0.001612797990674153,
+            "q3": 0.0016502857761224732,
+            "maximum": 0.0023802920477464795,
+            "iqr": 6.2880280893296e-05,
+            "mean": 0.0016367443290073425,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0009509680094197392,
+            "q1": 0.0009653307206463069,
+            "median": 0.0009734884952194989,
+            "q3": 0.0010248269973089918,
+            "maximum": 0.0015210449928417802,
+            "iqr": 5.949627666268498e-05,
+            "mean": 0.0009968710265820845,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0034523559734225273,
+            "q1": 0.003712406993145123,
+            "median": 0.003862180485157296,
+            "q3": 0.0039706449751975015,
+            "maximum": 0.004252117010764778,
+            "iqr": 0.00025823798205237836,
+            "mean": 0.003853441398823634,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "nested_json",
+      "width": 2,
+      "weight_mode": "integer_utility",
+      "state_count": 100,
+      "branching_valid_states": 53,
+      "singleton_valid_states": 47,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 0,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 0.0,
+        "iqr": 0.0,
+        "mean": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0043121459893882275,
+            "q1": 0.00441690202569589,
+            "median": 0.004457991482922807,
+            "q3": 0.0045250045077409595,
+            "maximum": 0.004798891022801399,
+            "iqr": 0.00010810248204506934,
+            "mean": 0.0044743491028202695,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0014120640116743743,
+            "q1": 0.0014341430069180205,
+            "median": 0.0014439729857258499,
+            "q3": 0.001455952733522281,
+            "maximum": 0.0017197379493154585,
+            "iqr": 2.1809726604260504e-05,
+            "mean": 0.0014524861215613782,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.003979473956860602,
+            "q1": 0.004854112499742769,
+            "median": 0.00555845902999863,
+            "q3": 0.006232513769646175,
+            "maximum": 0.007132017984986305,
+            "iqr": 0.0013784012699034065,
+            "mean": 0.0056780183914816006,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "nested_json",
+      "width": 2,
+      "weight_mode": "unit",
+      "state_count": 100,
+      "branching_valid_states": 53,
+      "singleton_valid_states": 47,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 0,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 0.0,
+        "iqr": 0.0,
+        "mean": 0.0,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.004324462031945586,
+            "q1": 0.004410601279232651,
+            "median": 0.004463171004317701,
+            "q3": 0.004537654516752809,
+            "maximum": 0.004769352963194251,
+            "iqr": 0.0001270532375201583,
+            "mean": 0.004477559417136945,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0014116999809630215,
+            "q1": 0.0014361222565639764,
+            "median": 0.0014421690138988197,
+            "q3": 0.001457780017517507,
+            "maximum": 0.001552011992316693,
+            "iqr": 2.165776095353067e-05,
+            "mean": 0.0014541603723773732,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.003959543013479561,
+            "q1": 0.004997593743610196,
+            "median": 0.005513608019100502,
+            "q3": 0.006245328739169054,
+            "maximum": 0.0072951699839904904,
+            "iqr": 0.001247734995558858,
+            "mean": 0.005681310981162824,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "nested_json",
+      "width": 4,
+      "weight_mode": "integer_utility",
+      "state_count": 100,
+      "branching_valid_states": 87,
+      "singleton_valid_states": 13,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 1,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 1.0,
+        "iqr": 0.0,
+        "mean": 0.01,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.004614117962773889,
+            "q1": 0.004788598700542934,
+            "median": 0.004831071011722088,
+            "q3": 0.004929236019961536,
+            "maximum": 0.005253742972854525,
+            "iqr": 0.0001406373194186017,
+            "mean": 0.0048546366032678635,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.001578981988132,
+            "q1": 0.0015996792499208823,
+            "median": 0.0016164659755304456,
+            "q3": 0.0016523494705324993,
+            "maximum": 0.001714773999992758,
+            "iqr": 5.267022061161697e-05,
+            "mean": 0.001626576412236318,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.004552059981506318,
+            "q1": 0.005462411500047892,
+            "median": 0.006136724987300113,
+            "q3": 0.00671216675254982,
+            "maximum": 0.0076261929934844375,
+            "iqr": 0.0012497552525019273,
+            "mean": 0.006170614788425155,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    },
+    {
+      "family": "nested_json",
+      "width": 4,
+      "weight_mode": "unit",
+      "state_count": 100,
+      "branching_valid_states": 87,
+      "singleton_valid_states": 13,
+      "infeasible_states": 0,
+      "gap_pair_count": 100,
+      "positive_gap_count": 1,
+      "absolute_gap": {
+        "count": 100,
+        "minimum": 0.0,
+        "q1": 0.0,
+        "median": 0.0,
+        "q3": 0.0,
+        "maximum": 1.0,
+        "iqr": 0.0,
+        "mean": 0.01,
+        "quartile_policy": "linear_interpolation_type7"
+      },
+      "selectors": {
+        "python_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.004606642003636807,
+            "q1": 0.004771981504745781,
+            "median": 0.004846713010920212,
+            "q3": 0.004889387739240192,
+            "maximum": 0.005309947009664029,
+            "iqr": 0.00011740623449441046,
+            "mean": 0.004841236571082846,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "rust_exact": {
+          "status_counts": {
+            "optimal": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.0015700749936513603,
+            "q1": 0.001606395235285163,
+            "median": 0.001620122988242656,
+            "q3": 0.001656442487728782,
+            "maximum": 0.05333530902862549,
+            "iqr": 5.004725244361907e-05,
+            "mean": 0.002152737971046008,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        },
+        "greedy_exact_feasibility": {
+          "status_counts": {
+            "feasible_on_support": 100
+          },
+          "all_status_runtime_seconds": {
+            "count": 100,
+            "minimum": 0.004550597979687154,
+            "q1": 0.005503509732079692,
+            "median": 0.006112745497375727,
+            "q3": 0.006729878528858535,
+            "maximum": 0.007434142986312509,
+            "iqr": 0.0012263687967788428,
+            "mean": 0.006183639161172323,
+            "quartile_policy": "linear_interpolation_type7"
+          }
+        }
+      }
+    }
+  ],
+  "scope": "generated feasibility-conditioned states, not real logits or end-to-end speedups",
+  "interval_policy": "descriptive strata; widths/modes are not independent samples",
+  "raw_sha256": "5e8cd203cca175ef911e14125b2d3acee9e3b5d4bd82ec1e4474a94c05808642",
+  "expected_rows": 1200,
+  "complete": true,
+  "source_changed_during_run": false,
+  "run_metadata": {
+    "metadata_schema_version": 1,
+    "run_id": "20260905T164909861792Z",
+    "generated_at_utc": "2026-09-05T16:49:09.964993+00:00",
+    "git_commit": "feabbfda8ff4266388926bc8a8fee1f0f9882e2d",
+    "git_dirty": true,
+    "config_sha256": "b78d8615af47756fe728bfc38c878c780cb0c36d5779de1f986bd5d8965b3f39",
+    "config": {
+      "experiment_id": "m16_branching_v1",
+      "question": "heuristic_gap",
+      "publication_mode": false,
+      "sha256": "b78d8615af47756fe728bfc38c878c780cb0c36d5779de1f986bd5d8965b3f39"
+    },
+    "seeds": [
+      160100
+    ],
+    "repetitions": 1,
+    "model": {
+      "model_id": "not_applicable_synthetic_states",
+      "requested_revision": "m16_branching_generator_v1",
+      "local_files_only": true
+    },
+    "tokenizer": {
+      "tokenizer_id": "generated_single_byte_vocabulary",
+      "requested_revision": "m16_branching_generator_v1"
+    },
+    "grammar": {
+      "grammar_id": "m16_recursive_byte_families_v1",
+      "source": "mwpc_research.recursive_tasks",
+      "revision": "m16_recursive_tasks_v1",
+      "hash_policy": "sha256_canonical_grammar",
+      "sha256": [
+        "1aa8bec225a512d2519fe15313104c79f209637cf9508cd6cc2242a27008778a",
+        "921d0a0c989c62e63b661eb697312080b586e63d3e913c62c68b6b7bcf8fcc16",
+        "cb593be015fb1a8a81cc542977660b172807726b4ee147720ba3b228cd45d363"
+      ]
+    },
+    "exactness": {
+      "scope": "exact_on_support",
+      "guarantee": "per_step",
+      "independent_certificate_required": true
+    },
+    "support": {
+      "policy": "synthetic_feasible_witness_plus_seeded_alternatives",
+      "top_k": 2,
+      "k_max": 4,
+      "finite_slots": true
+    },
+    "timeouts": {
+      "solver_seconds": 5.0,
+      "run_seconds": 1800.0
+    },
+    "hardware": {
+      "accelerator_config": {
+        "device": "cpu",
+        "dtype": "float64",
+        "cuda_device": null,
+        "synchronize_cuda": false
+      },
+      "cpu": {
+        "machine": "x86_64",
+        "model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+        "logical_count": 16,
+        "affinity_count": 16
+      },
+      "ram": {
+        "total_bytes": 16609316864
+      },
+      "gpu": {
+        "available": true,
+        "name": "NVIDIA GeForce RTX 3080 Ti",
+        "total_vram_bytes": 12884901888,
+        "driver_version": "595.84"
+      },
+      "os": {
+        "system": "Linux",
+        "release": "7.0.0-30-generic",
+        "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39"
+      },
+      "threads": {
+        "configured_cpu_threads": 1,
+        "environment": {
+          "OMP_NUM_THREADS": null,
+          "MKL_NUM_THREADS": null,
+          "OPENBLAS_NUM_THREADS": null,
+          "NUMEXPR_NUM_THREADS": null,
+          "RAYON_NUM_THREADS": null,
+          "RUST_MIN_STACK": null
+        }
+      }
+    },
+    "software_versions": {
+      "python": "3.11.16",
+      "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+      "cuda_toolkit": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+      "cuda_driver_supported_runtime": "13.2",
+      "cuda_runtime": null,
+      "pytorch": "2.8.0+cpu",
+      "transformers": "4.52.2",
+      "mwpc_exact": "0.1.1",
+      "mwpc_parser_py": "0.1.0",
+      "rustformlang": "0.1.0"
+    },
+    "solver_status_counts": {
+      "python_exact": {
+        "optimal": 1200
+      },
+      "rust_exact": {
+        "optimal": 1200
+      },
+      "greedy_exact_feasibility": {
+        "feasible_on_support": 1200
+      }
+    },
+    "metadata_integrity": {
+      "critical_fields_complete": false,
+      "missing_critical_fields": [],
+      "publication_blockers": [
+        "git.dirty_worktree"
+      ]
+    },
+    "actual_source_sha256": {
+      "crates/mwpc_parser/Cargo.lock": "fed8a22c8dcdea8dad09439f561b5593658ef5d8d6b17966580e4b1999a83147",
+      "crates/mwpc_parser/Cargo.toml": "ca79913b7fae784ab6c0690fcce808e56e958d8ce47e625949aca689dcb7e147",
+      "crates/mwpc_parser/src/lib.rs": "10b2b8c1396ba5a990bf5cfed86b5ca863b1e575222473007b467a8022f775b0",
+      "crates/mwpc_parser/src/parser.rs": "ee80908f8adc42167c5b9588baa1528cd01dfc139cc935f1c733f4d90f1de9be",
+      "crates/mwpc_parser/src/score.rs": "4a6cabfd65a17ac0c47306b84b859b14c4b826574a28290499bf13047fa9b7b9",
+      "crates/mwpc_parser/src/types.rs": "ac888b44f166106508fbb7899c07c7fd5adbe626477a0cda11ccde27cd89ef66",
+      "crates/mwpc_parser_py/Cargo.lock": "0a4f767ca6ed87bfaba0b2198b4daa188ca28751a310bebe50a758600a7cd047",
+      "crates/mwpc_parser_py/Cargo.toml": "3f9f98b1c6536e5319d1408aeacfd6562950eb89e225b3ee6a52254ced013962",
+      "crates/mwpc_parser_py/src/lib.rs": "6917a1ffe74cb2bb257e37a47fab9aeee988699ccc5644db6a3f691f497d15a1",
+      "pyproject.toml": "ea7cd868c252c822731189acce7ced12a4a540393f79172aafc648ff9b603165",
+      "rust-toolchain.toml": "f2c82031ae793bfe2c19b2f9828259fbb6eb79081849cca5294706ab46ff2d32",
+      "scripts/exact_commit/analyze_branching_study.py": "37e2d63e407524ad7d72af90c74734758d9c98eaef50878c4d3b4b22b1e062d1",
+      "scripts/exact_commit/audit_t600_llada_tokenizer.py": "f98a4c766b9ea83f8035f7c1232d73514d06fce7cc0b5035c1f1c1ca66795a38",
+      "scripts/exact_commit/build_article_results.py": "7625d90dd29be5d0fc670bdc9b3332182e6134cb14bcc578ba5e72394e45721f",
+      "scripts/exact_commit/build_final_artifacts.py": "081fe8efab66001855daabc342b0fc7dea5ed9be973e9ef8dd4d2f1d54e2d8d8",
+      "scripts/exact_commit/build_publication_artifacts.py": "82f7c08875e7b0234ed480983bb1c5e0e821956adafbc772475fdceca761c6e2",
+      "scripts/exact_commit/build_statistical_summary.py": "c5bd379a8c54841f66737bb42441bba063996e6a5d41a90df2f3e632350212d4",
+      "scripts/exact_commit/collect_q2_real_snapshots.py": "067eb2f99e0a99826a1c2948eb3c3b3cbea908a055680e4e0f1253d8e070a7ef",
+      "scripts/exact_commit/replay_t703_finite_slot_counterexamples.py": "f784f4bd3b9f603083343b4f4a4daf50706e63089386567661101a3436a1ddba",
+      "scripts/exact_commit/run_branching_study.py": "c66547ffd4d3a2d8b53e3c53d8513589ae3d598c8f1045c72f70b50a817300b0",
+      "scripts/exact_commit/run_m3_differential.py": "c0376918994579ce26e9a734a386c7bf045ddb68f45f99d446f4c837d4e03162",
+      "scripts/exact_commit/run_m4_graph_differential.py": "967a5d97ec144d6428571d424bca13bc66ae03096bf198599c89e23f02fec2b9",
+      "scripts/exact_commit/run_m5_rust_differential.py": "e8949c817013300c73f10bfeabec07f7570594e49976a6fe72b78a9574539c35",
+      "scripts/exact_commit/run_m6_finite_lattice_differential.py": "f9acef43c89dc7729b9b2f1ae586f064e345594d6c2a0ef0ed38ee1f6051ecaf",
+      "scripts/exact_commit/run_m7_eos_finite_slot_differential.py": "5519b4dac4c5708d5ece123e879fb4cf243121d573febf15fd02244911e34581",
+      "scripts/exact_commit/run_q1_correctness.py": "099c683de7c52304552b2789d211c130897459239889bcd3dc8f6c91c560390c",
+      "scripts/exact_commit/run_q2_heuristic_gap.py": "238031fe0426c525fe7f51d6856ef00cea098ff6602c902bd64a99bde2c5448a",
+      "scripts/exact_commit/run_q2_real_state_gap.py": "37f935e01d10dd71abd7e9576458569b616c4b8adf9fdfeec773adfd2df889fe",
+      "scripts/exact_commit/run_q3_finite_slots.py": "815900524255da473105e9e4bf10f25c1a3b85f21af1edcf7aa6962e2db1edf5",
+      "scripts/exact_commit/run_q4_scaling.py": "2e6ade1b8caad8dc2e39220512d04bb1927902fe6c417e477dfaabadeab16b63",
+      "scripts/exact_commit/run_q5_end_to_end.py": "452b3b444ab9ff948b94cfec91ac59af7309f4b82f6ce20b0cd36d240998b5d3",
+      "scripts/exact_commit/run_t904_llada_live_smoke.py": "9e5b20248bd51f7c6cb7a5264373834df2e8413b2981865a9b426fefa59e8c66",
+      "scripts/exact_commit/summarize_q4_publication.py": "a2bb61f87f3e4b5cbd54f77710bdbe693cc93798cbbddf0d100b063b7f710a76",
+      "scripts/exact_commit/summarize_q5_publication.py": "34b55c3cf8188171839790240aaac954ab9b3cb9a77129b9b5ff3809741b6a43",
+      "src/mwpc_exact/__init__.py": "62053726332f45b31014c9a062799226772a2fc3ae91b5ff70a63188c4584b79",
+      "src/mwpc_exact/_json.py": "896e96f02467e1adefd8c5bc824d6130b09289fd372ed9035d72cbfe61b9e165",
+      "src/mwpc_exact/_scores.py": "f1e5e7e38a8cf3fe380081b586ef7a3d6c19db4db97777879b48d25f8f67fc22",
+      "src/mwpc_exact/adaptive.py": "bc6b1e378c164ddc25ebd65164fbd947f1cbbcd46a0010d2f4ce87b89067852d",
+      "src/mwpc_exact/backend.py": "a85b83e11098ad34671363e9e42cf3e2d53a37b60686ff87d48d2f6f74e84f39",
+      "src/mwpc_exact/byte_lattice.py": "215d450d730a847b63026bbfd4aa061cb0465cf6c8a4a67ea157ea16d1bdb891",
+      "src/mwpc_exact/decoder.py": "3171097a9d701ec4a2b91d88e3604b1678603e109ee79a716aba25566171bb0f",
+      "src/mwpc_exact/decoder_types.py": "6c2d16291345c506e56cd287cd04b1ff8ad226f80ba7005d8093fb9668aef10b",
+      "src/mwpc_exact/eos_lattice.py": "716a9d51226d0c0abb2bdfa277a5f3ad306b1d42699954041ee27391f04075d6",
+      "src/mwpc_exact/eos_policy.py": "eee660842e9b038d7d38d43920f1e6a4ed909960c00dd63bd1abc5445cc45410",
+      "src/mwpc_exact/epic_adapter/__init__.py": "109c93a682d77482806d73cdfb6e614e95dea9447096d1eac2506937824f1224",
+      "src/mwpc_exact/epic_adapter/baseline_graph.py": "131838a72843e3b3d7946de9c402cb40095abfc3f61dfe9ac7dbf8d699e5ce4b",
+      "src/mwpc_exact/epic_adapter/llada.py": "7627bc1a6ce97350f02a415945812ae36277f00ce8955b31ed978e895ea7e81a",
+      "src/mwpc_exact/evaluation/__init__.py": "67f8463628778b18adb1523cd79935566cc894ae7414ea680edf532f999202c0",
+      "src/mwpc_exact/evaluation/_serde.py": "df112dbde7a34876c564d33aca3e7415eeaf51d4005efe8c895f3600b9be368f",
+      "src/mwpc_exact/evaluation/alignment.py": "3888f5cad557307f8eacba35915fb2b8ccbd4a10700f53537f8242360400a890",
+      "src/mwpc_exact/evaluation/brute_force.py": "2e1b65feb2ff361b14537b3fcef212377bc79778ba1c6eca9cd0bcee5f73f078",
+      "src/mwpc_exact/evaluation/epic_regular_cover.py": "d1b1f18e8092f3d1b809b7d4335ff253f8efb8969544056a998bb8a84c2a9f9b",
+      "src/mwpc_exact/evaluation/instance.py": "138a2c43d099ca44e499f16e83cc7479193189be0c4064b6c5d07140e145d770",
+      "src/mwpc_exact/evaluation/replay.py": "71d921b4fe5da2f0ba5f328d40fa9266cfc77d37f0c720d49edfab8bcf07ee6d",
+      "src/mwpc_exact/evaluation/selection.py": "d1b098cf96dec5036a16c5a8d724a0cce5531b1962b433a5c4a9db6f65f1a31b",
+      "src/mwpc_exact/experiments/__init__.py": "fe88c25fed5131a1bdc5909367141c4e67f4c770cb1f168e4392c7fa2b36a08e",
+      "src/mwpc_exact/experiments/artifacts.py": "f23f5a66d9d28545a59b9fc9eb02a5b5145862aa0c730f0059f9a8c52c300f47",
+      "src/mwpc_exact/experiments/config.py": "0464a767fc174a3a6b7a091ac76a006b927d054dc4647922758137b64a18c119",
+      "src/mwpc_exact/experiments/metadata.py": "b37ebf63f3af58bf06c0716bf80a3f5a5780a0be2e06e214d8268586caa60991",
+      "src/mwpc_exact/finite_solver.py": "64a72d6051b664646aae8f5948f85d08c4e1221bc3d9b5a8fde8cf2ec320dcc9",
+      "src/mwpc_exact/profiling.py": "2099881fc929367c1183968fe7d8a22de7e1c3c8228e91eb42be812a3c619b9c",
+      "src/mwpc_exact/proposal_policy.py": "361f51fe599a03f01d1a32aa6af65d50b45b9bdf4801b73848eb425b71bd6006",
+      "src/mwpc_exact/ranked_support.py": "99b1aefdb2093ea0ebfbadfbe06c983339b94a41131b91fb7e611a338c2a6cc9",
+      "src/mwpc_exact/reference/__init__.py": "6b903fad74a60688042fbe0724db0b50ee9ca262f34b05f922ff4bc1341d865b",
+      "src/mwpc_exact/reference/_token_aligned_core.py": "25c66f7dd6c2e66f6d4377a56c7acc985eef51bf2dbfd77d1fccd2cc7dbba127",
+      "src/mwpc_exact/reference/brute_force.py": "3da639888c6ca75388e8421a69ce70a579905c60b7a428eb0a40df89b3e20c90",
+      "src/mwpc_exact/reference/byte_grammars.py": "6fb3b00a2bfa671df8a62370cb07dfd0b31b022d060683ab337427b2ea287d96",
+      "src/mwpc_exact/reference/dag_parser.py": "8578a96b266aefbb3801c99310efba17c6fc068e38c3ffb3679a7dc34e9a5390",
+      "src/mwpc_exact/reference/epsilon.py": "a0276b11d0f4e41c95f2eb6a5b167590eee27af237e8df72ee74dfa3733ca4b5",
+      "src/mwpc_exact/reference/grammar.py": "2502f7fdc3ac0a19fe3bff85485508d12790a4fa3914a82ee5dd057981f753ef",
+      "src/mwpc_exact/reference/graph.py": "406948c82021c1ca0bf77ccb69b18890eb7a01d236085882c1008c8f41d03954",
+      "src/mwpc_exact/reference/graph_oracle.py": "ff39acd776455c8d10dd0fccce17ce77b9b5e378da59b6443e5f978b9be79225",
+      "src/mwpc_exact/reference/lexical.py": "daedd6f5c020eba77c1ebe45829dd773040fa33afb464e3c2eb5f9c74d5d7b93",
+      "src/mwpc_exact/reference/normalization.py": "627c3e71dd5838c112bc7bd5dd939f1620583d2cd171cc968dc0d51bcf02b6c6",
+      "src/mwpc_exact/reference/random_instances.py": "d23c49b98bb25b909542dd7a12d7d3d730b0965bf06124533197e871a6184176",
+      "src/mwpc_exact/reference/recognizer.py": "984a7c705721d6c6ff1dc4f16a8fba3ce6c6dd0bb1efad90f1a54b3169066ec4",
+      "src/mwpc_exact/reference/token_aligned.py": "b29b07521656bbfe83304357ee07f8a272ca83d78fbdae595e79fa3daacfdf15",
+      "src/mwpc_exact/rust_solver.py": "bd2fe0a6800683e57166c8c75924a615179166621feb10471a8074c318298f34",
+      "src/mwpc_exact/solver.py": "dccd5e317c55d4856b394e6a84dcc95e3a7846f9218a84d552365a53c8918701",
+      "src/mwpc_exact/strategy.py": "dfbaa6617e37e215b6920433f666dee687e7733d599a4f561060ecb7725a5b06",
+      "src/mwpc_exact/support.py": "f4c1e73916e412f59e3bc78f665dfe17ca83ef78dcde054680f8c394c5f1cd73",
+      "src/mwpc_exact/token_lattice.py": "6efc921304f5c0f265a0db212497372194045b684844fb69133aa9fcdaf205c5",
+      "src/mwpc_exact/tokenizer_bytes.py": "681973506b5e59df4978dec201ffab406ec0e782dab38572528b78162fe65355",
+      "src/mwpc_exact/types.py": "90c382061b7b0eabd42dbef1aa1dce30612eea8d54e78e09a0e99105283c0689",
+      "src/mwpc_exact/validated.py": "545d9dccbf2bbe4f9b527da3a0f9770be978e4846252f5a04c24afef2f5c88b7",
+      "src/mwpc_exact/validator.py": "cd7e399c4c84e15f9256d44ab1c575fc7e6ac21d7ddd6094e2a1527328968d57",
+      "src/mwpc_research/__init__.py": "8eb671683ed1adb2875880d7d7a37e5914d01c00cfd9230ecce47d854bd5d916",
+      "src/mwpc_research/article_results.py": "2cb12a2ef24c042c70e96cc9ba35083b8e24bf299ac5c61b816511a8f4ef1d33",
+      "src/mwpc_research/branching_study.py": "dbd9ee5f427dda339356aaa914f35e99b944256ce4d10e0f73c1810b9a85f5fc",
+      "src/mwpc_research/campaign_output.py": "a608aa079d7e47d131552de11141536c0074d34d5e500fbd86ba52bb9eecc42d",
+      "src/mwpc_research/correctness_rehearsal.py": "55d2dccc4d4316a0b9b88f46c1c9f44d84b4da806535c19f91e967c5daca8778",
+      "src/mwpc_research/eos_differential.py": "d99d1edf54942f829bcc2d6f894054295900e6694a2bc422a1500fd7af09c226",
+      "src/mwpc_research/final_artifacts.py": "0e37872ae47d5ef74afc3f8d6384f50eb5c5ea86713a74539a5354322dbbfb32",
+      "src/mwpc_research/finite_differential.py": "de867f1dd9644875fd50878777a5cd3a91b9933dd5672c0279d64c953cde143e",
+      "src/mwpc_research/finite_slot_counterexamples.py": "5a325a2d03ab464fbe7b118ab9581fa027b0d482ef278bdbdb7b0932ebc7f185",
+      "src/mwpc_research/graph_differential.py": "c8ca30c358be1f5ff178e222b72ed51a88308ded5311e477609fba4172b18def",
+      "src/mwpc_research/q1_correctness.py": "d26527871b84ec4f9542d886463d26caa31498e0fb5994304c933ea747c11cd6",
+      "src/mwpc_research/q2_gap.py": "a7dc604a503f61008360bc19f1805149aa161364d93ca23995047346c318fcc1",
+      "src/mwpc_research/q2_real_gap.py": "2207b42a0f211673c930853d46d1bb4909b16bccf56bebb15f133f1f9031fe60",
+      "src/mwpc_research/q3_finite_slots.py": "9e19b98b7e6fa777eb327ddcaf420b3eba01726b206f75abf38b5bdf8f5951f0",
+      "src/mwpc_research/q4_scaling.py": "42131d4b0dbe6b1d5673e2ccf39f4e31883496faef47644b2be75e29020f5242",
+      "src/mwpc_research/q5_end_to_end.py": "68770877d66c97600da6d40ae626b95db2c6c2677d10f267480dc7cf69300510",
+      "src/mwpc_research/recursive_tasks.py": "cf41dbc0e76a51aa292d8de0d394a16fd5ed471ac84dfacac77df40f648a442a",
+      "src/mwpc_research/regressions.py": "7320cef81c5d31a7d56b19b4fa842faace3521ecca483775162c201205b298ca",
+      "src/mwpc_research/robust_timing.py": "9884added02ae2a564daf8d1a7862ade2612df5c235d3475e39f255f5dac8282",
+      "src/mwpc_research/rust_differential.py": "40bb7a5aeb5ee8cffad3850f92c5aa8f0e22575645191dd41f6777a23500a686",
+      "src/mwpc_research/statistical_artifacts.py": "01a1e392b3864996a64f69031fb9eb182d6634bd25921c282b92ffd2a6eada54",
+      "src/mwpc_research/statistical_summaries.py": "36ff7e021efc6dca0fc5d67a1d47c41eb36c3f06ed8fbc31f7825dbb976a0195",
+      "src/mwpc_research/token_aligned_differential.py": "7a4fe3e60cb70c9578f3ba4e4228a2c69ebe169870dffcb3e67320927c2ba9d0"
+    },
+    "analysis_units": "family/seed, repeated widths and objectives",
+    "origin": "synthetic_feasibility_conditioned"
+  }
+}

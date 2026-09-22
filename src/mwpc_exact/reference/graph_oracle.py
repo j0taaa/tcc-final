@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import fsum
+from fractions import Fraction
 
+from mwpc_exact._scores import exact_sum
 from mwpc_exact.reference.dag_parser import DagParseCertificate, validate_dag_certificate
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.reference.graph import index_terminal_dag
@@ -60,7 +61,7 @@ def enumerate_best_cfg_path(
     indexed = index_terminal_dag(graph)
 
     completed_paths = 0
-    best_score: float | None = None
+    best_score: Fraction | None = None
     best_certificate: DagParseCertificate | None = None
     path: list[GraphEdge] = []
 
@@ -74,12 +75,12 @@ def enumerate_best_cfg_path(
             completed_paths += 1
             labels = tuple(edge.terminal_label for edge in path if isinstance(edge, TerminalEdge))
             if recognizes_cnf(grammar, labels):
-                score = fsum(edge.weight for edge in path)
+                score = exact_sum(term for edge in path for term in edge.weight_terms)
                 selected_ids = tuple(
                     proposal_id for edge in path for proposal_id in edge.matched_proposal_ids
                 )
                 certificate = DagParseCertificate(
-                    objective_value=score,
+                    objective_value=float(score),
                     selected_proposal_ids=selected_ids,
                     witness_terminal_labels=labels,
                     witness_graph_edge_ids=tuple(edge.edge_id for edge in path),
@@ -108,7 +109,7 @@ def enumerate_best_cfg_path(
         )
     return GraphPathOracleResult(
         status=SolveStatus.OPTIMAL,
-        objective_value=best_score,
+        objective_value=None if best_score is None else float(best_score),
         certificate=best_certificate,
         enumerated_path_count=completed_paths,
     )

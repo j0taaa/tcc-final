@@ -13,8 +13,7 @@ dist/
 build/
 
 # Rust
-/target/
-crates/**/target/
+target/
 
 # Models, datasets and experiment outputs
 .cache/
