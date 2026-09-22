@@ -1,5 +1,10 @@
 # Vantagem prática e redução de código
 
+**Registro histórico, revisto pela [auditoria posterior](2026-09-22-selection-audit.md).**
+O comparador com reaproveitamento de testemunha reduz bastante o ganho de tempo;
+o caso de maior pontuação não melhora o cumprimento do prompt. As afirmações
+abaixo descrevem a comparação original, não uma vantagem prática geral.
+
 O uso demonstrado é selecionar um lote de propostas com certificado de
 compatibilidade no suporte finito. A seleção simultânea evita reconstruir e
 consultar o parser para cada tentativa de aceitação do seletor sequencial.

@@ -9,8 +9,8 @@ The project implements an exact, certificate-producing optimizer for selecting t
 Post-release fixes and their verification record:
 [`Repository review hardening`](docs/review-hardening.md).
 
-Measured batch-selection benefit and code reduction:
-[`Practical selection follow-up`](docs/reviews/2026-09-22-practical-selection.md).
+Audit of batch-selection timing and practical-benefit claims:
+[`Selection audit`](docs/reviews/2026-09-22-selection-audit.md).
 
 - [`AGENTS.md`](AGENTS.md): scientific and engineering invariants;
 - [`TASKS.md`](TASKS.md): authoritative current milestone, completed evidence, and remaining work;

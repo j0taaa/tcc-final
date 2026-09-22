@@ -1,5 +1,28 @@
 # Reproducing the MWPC research artifacts
 
+## Current practical-benefit audit
+
+The current manuscript uses M19's stronger comparator and common deadline;
+M18 remains historical evidence. Frozen measurement source/config: `196d48c`.
+Run from a clean checkout into a new directory:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.run_review_offline \
+  --config configs/experiments/m19_selection_audit_v1.toml \
+  --run-directory results/raw/m19-selection-audit-new
+.venv/bin/python -m scripts.exact_commit.run_review_offline \
+  --analyze-directory docs/artifacts/raw/m19_selection_audit_v1 \
+  > paper/generated/m19_selection_audit_v1/summary.json
+.venv/bin/python -m scripts.exact_commit.run_review_offline \
+  --analyze-directory docs/artifacts/raw/m19_selection_audit_v1 --latex \
+  > paper/generated/m19_selection_audit_v1/audit-values.tex
+make paper
+```
+
+Analysis verifies archive hashes and uses the independently checked confirmation
+tasks for the witness/functional audit. See
+`docs/reviews/2026-09-22-selection-audit.md` for findings and limits.
+
 ## Maintained and historical measurement commands
 
 M18 retires the separate branching launcher, branching report CLI and nonliteral
@@ -34,7 +57,7 @@ make paper
 This verifies the archive manifest before analysis. Producing source/config:
 `3d573b2c8ea2312b681f81108abaa11f8a497d3f`; observations and scope are documented
 in `docs/reviews/2026-09-22-practical-selection.md`. The current manuscript
-includes this follow-up; the historical v0.2.0 release remains unchanged.
+supersedes these claims with the M19 audit; the historical v0.2.0 release remains unchanged.
 
 
 ## Current review evidence

@@ -26,7 +26,7 @@ from mwpc_exact.experiments import capture_run_metadata, load_experiment_config
 from mwpc_exact.experiments.metadata import canonical_json_sha256
 from mwpc_research.live_evidence import snapshot_instance
 from mwpc_research.recursive_scaling import scaling_instance
-from mwpc_research.recursive_tasks import check_syntax, recursive_grammar
+from mwpc_research.recursive_tasks import RecursiveTask, check_syntax, recursive_grammar
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -202,23 +202,44 @@ def main():
 
         rows = verified_rows(args.analyze_directory)
         summary = summarize(rows)
+        audited = any(row.get("audit", False) for row in rows)
+        comparator = "greedy_witness_reuse" if audited else "greedy_exact_feasibility"
+        if audited:
+            tasks = {
+                r["task"]["task_id"]: r["task"]
+                for r in verified_rows(ROOT / "docs/artifacts/raw/m17_review_v1/confirmation")
+            }
+            checked = defaultdict(Counter)
+            for row in rows:
+                if row["status"] in {"optimal", "feasible_on_support"}:
+                    task = tasks[row["instance"]["metadata"]["source_task_id"]]
+                    checker = RecursiveTask(
+                        **{**task, "required_leaves": tuple(task["required_leaves"])}
+                    )
+                    success = checker.check(bytes(row["result"]["witness_terminal_labels"]))[1]
+                    checked[row["method"]]["checked_witnesses"] += 1
+                    checked[row["method"]]["functional_witnesses"] += success
+            summary["witness_audit"] = checked
         if args.latex:
+            prefix = "MAudit" if audited else "MBatch"
             for budget, name in ((2, "Two"), (8, "Eight"), (32, "All")):
                 values = [
                     c["median_state_speedup"]
                     for c in summary["comparisons"]
                     if c["proposal_budget"] == budget
+                    and c.get("comparator", "greedy_exact_feasibility") == comparator
                 ]
                 for suffix, value in (("Min", min(values)), ("Max", max(values))):
-                    print(f"\\newcommand{{\\MBatch{name}{suffix}}}{{{value:.1f}}}")
+                    rounded = f"{value:.2f}" if audited else f"{value:.1f}"
+                    print(f"\\newcommand{{\\{prefix}{name}{suffix}}}{{{rounded}}}")
             counts = Counter((row["method"], row["status"]) for row in rows)
             for name, method, status in (
                 ("Optimal", "rust_exact", "optimal"),
                 ("Infeasible", "rust_exact", "infeasible_on_support"),
-                ("GreedyFeasible", "greedy_exact_feasibility", "feasible_on_support"),
-                ("Timeouts", "greedy_exact_feasibility", "timeout"),
+                ("GreedyFeasible", comparator, "feasible_on_support"),
+                ("Timeouts", comparator, "timeout"),
             ):
-                print(f"\\newcommand{{\\MBatch{name}}}{{{counts[method, status]}}}")
+                print(f"\\newcommand{{\\{prefix}{name}}}{{{counts[method, status]}}}")
         else:
             print(json.dumps(summary, indent=2))
         return

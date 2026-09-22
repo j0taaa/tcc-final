@@ -23,11 +23,11 @@ finite supports, independently validated witnesses, and immutable prior results.
 
 - [x] T1900: Audit timing boundaries, censoring, EOS/PAD contributions and
   functional meaning; test a greedy variant that reuses its valid witness.
-- [ ] T1901: Freeze and rerun all 24 confirmation states, K=2/4/8 and
+- [x] T1901: Freeze and rerun all 24 confirmation states, K=2/4/8 and
   budgets=2/8/32, three rotated-order repetitions, original greedy, witness-reuse
   greedy and exact. Use a common ten-second total-selection limit and retain
   every status. Report absolute times and paired wins/losses, not just ratios.
-- [ ] T1902: Correct manuscript/report claims to match the audit and verify
+- [x] T1902: Correct manuscript/report claims to match the audit and verify
   the generated evidence. Keep the implementation small and leave LAVE untouched.
 
 **Evidence:** T1900: 842 Python tests, 24 Rust tests, Ruff and MyPy pass.
@@ -36,7 +36,17 @@ calls; an injected clock rejects an exact result that exceeds the whole-call
 deadline. M18's unique score-gain case includes 23 EOS/PAD matches in each
 method and only 8 versus 7 ordinary proposal matches; both witnesses fail the
 prompt. M18's exact native-parser deadline differed from greedy's total deadline,
-although no old exact call exceeded one second. New matched audit pending.
+although no old exact call exceeded one second. T1901: 1,944 completed calls
+from frozen source/config `196d48c`, no timeout/error. Both greedy variants
+agree on all 648 statuses and all 540 feasible selections. Ratios against
+witness reuse: 0.96–1.00 (budget 2), 1.71–2.05 (8), 2.35–3.82 (32).
+No replay witness passes the functional task checker. Raw records and generated
+analysis: docs/artifacts/raw/m19_selection_audit_v1 and
+paper/generated/m19_selection_audit_v1. T1902: assertions corrected in the
+manuscript and docs/reviews/2026-09-22-selection-audit.md; old measurements retained.
+All archive/config/input hashes and generated values reproduced; PDF built at
+18 pages without overfull boxes or undefined references, with changed pages
+and their neighbors visually inspected. Final full Python suite: 842 passed.
 
 M18 follows the request for a practical use and less experimental scaffolding.
 
