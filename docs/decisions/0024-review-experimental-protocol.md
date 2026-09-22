@@ -58,3 +58,13 @@ an isolated causal estimate. Save every instance and certificate; independently
 check bracket syntax and use exhaustive agreement on small instances as a gate.
 Limit native parsing to one second, each process to 15 seconds and address space
 to 2048 MiB. Report all statuses and peak process RSS, including failed cases.
+
+## Frozen confirmation
+
+Pilot v2 completed all 60 jobs without observation errors: exact completed
+1/12 task generations and had no functional success; serial and EPIC each
+completed 7/12 and succeeded functionally on 3/12. These negative pilot results
+do not trigger parameter tuning. Confirmation retains 32 slots, 16 steps,
+K=2 up to 8 and the same limits. It uses the twelve predefined disjoint prompts,
+seed 170302 and two repetitions (96 generations plus 12 capture jobs). Report
+the two observations per task explicitly, without counting them as new tasks.
