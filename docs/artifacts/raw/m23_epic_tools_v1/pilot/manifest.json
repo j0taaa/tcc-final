@@ -1,0 +1,12 @@
+{
+  "source_experiment": "m23_epic_pilot_v1",
+  "records": 25,
+  "uncompressed_results_sha256": "0491bc4c30fb214f7fbe0f0dc4c8b2b6399d513bdfbf90691634da9562c339e2",
+  "sha256": {
+    "config.json": "fc13a5e4bdfe0bb4d00a6ac453d57d7fe77bdcc6df3d0a386bdad398e7d8909f",
+    "metadata.json": "264a2e2a0c29d2435a444945002ee3a9cf013e724ca016eb8a7258f3cd039676",
+    "support.json": "4c54525c8661bc143196ca593da942b50943f08ad15dd075f7c9f8338de6429d",
+    "token_emissions.json": "75cab7a4ebc28563a5180b3e239ec16df4151553a8beaa597f63ed36d23a9299",
+    "results.jsonl.gz": "c6ac9e259295daebd3473dfade8590fa3d3109f6b3d9950296fa46aad14315be"
+  }
+}

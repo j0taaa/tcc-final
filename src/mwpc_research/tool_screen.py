@@ -7,6 +7,7 @@ Model dependencies are confined to the executable experiment driver.
 
 from __future__ import annotations
 
+import ast
 from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass
@@ -153,3 +154,24 @@ def select_catalog(
         fsum(w for p, t, w in proposals if paths[witness][p] == t),
         tuple(paths[witness]),
     )
+
+
+def normalize_tool_call(text: str) -> str | None:
+    """Parse call structure without executing code; ignore only legal whitespace."""
+
+    def visit(node: ast.AST) -> str:
+        if isinstance(node, ast.Constant) and type(node.value) is int and 0 <= node.value <= 9:
+            return str(node.value)
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and not node.keywords:
+            arity = {"add": 2, "sub": 2, "mul": 2, "neg": 1, "abs": 1}.get(node.func.id)
+            if arity == len(node.args):
+                return node.func.id + "(" + ",".join(visit(arg) for arg in node.args) + ")"
+        raise ValueError("not a calculator call")
+
+    try:
+        tree = ast.parse(text.strip(), mode="eval")
+        if not isinstance(tree.body, ast.Call):
+            return None
+        return visit(tree.body)
+    except (SyntaxError, ValueError, RecursionError):
+        return None

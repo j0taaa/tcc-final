@@ -50,7 +50,7 @@ def test_real_upstream_batch_executes_and_hooks_are_restored(method, monkeypatch
     class Tokenizer:
         special_tokens_map: ClassVar = {"eos_token": "<eos>"}
 
-        def decode(self, ids, skip_special_tokens=False):
+        def decode(self, ids, skip_special_tokens=False, clean_up_tokenization_spaces=False):
             if isinstance(ids, torch.Tensor):
                 ids = ids.tolist()
             if isinstance(ids, int):
@@ -114,6 +114,25 @@ def test_comparison_uses_all_frozen_requests_and_two_schedules():
         "epic_native_4",
         "epic_domains_1",
         "epic_domains_4",
+        "epic_native_24",
+        "epic_domains_24",
     }
     for key in ("model_id", "revision", "seed", "slots", "max_forwards", "quantization"):
         assert new[key] == repeat[key] == old[key]
+
+
+def test_structural_evaluation_allows_whitespace_without_repair_or_execution():
+    from mwpc_research.tool_screen import normalize_tool_call
+
+    assert normalize_tool_call(" sub( mul(3,\n 1), 1 ) ") == "sub(mul(3,1),1)"
+    for invalid in (
+        "sub(mul(3,1),1",
+        "s ub(1,2)",
+        "add(True,1)",
+        "add(x,1)",
+        "__import__('os')",
+        "add(a=1,b=2)",
+        "1",
+        "add(1,2); exit()",
+    ):
+        assert normalize_tool_call(invalid) is None

@@ -21,11 +21,11 @@ milestone unless a regression invalidates its evidence.
 Depends on M22 and the M19 fairness audit. Preserve the pinned upstream source,
 MWPC finite-support guarantees, answer-independent languages and all failures.
 
-- [ ] T2300: Test an adapter that runs upstream EPIC with regular-cover selection,
+- [x] T2300: Test an adapter that runs upstream EPIC with regular-cover selection,
   DFA-free checking and caching enabled. Freeze native-vocabulary and explicitly
-  domain-restricted variants, two parallel reveal schedules, identical prompts,
+  domain-restricted variants, two parallel reveal schedules plus the 24-step control, identical prompts,
   model, language, slot/forward/time limits and a bounded pilot.
-  **Evidence:** pending.
+  **Evidence:** 18 targeted CPU tests and full suite 952 passed; native selector executes batches; language equivalence and structural grading pass. Pilot commit `2067ec3`, all 25 outputs preserved in `docs/artifacts/raw/m23_epic_tools_v1/pilot`. `docs/research/m23-epic-protocol.md` records the pre-confirmation whitespace correction and schedule control; upstream source unchanged.
 - [ ] T2301: Run every variant on the same frozen 100 M22 requests, with MWPC
   rerun in rotated order; repeat with reversed order. Preserve native EPIC events,
   rejection counts, selector calls/errors, actual forwards, timing and statuses.

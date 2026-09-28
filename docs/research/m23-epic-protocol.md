@@ -58,3 +58,22 @@ falhas; gerar tabelas via script com hashes e verificação semântica dos outpu
 Métrica principal: chamada exata correta. Secundárias: validade na linguagem
 permitida, forwards, tempo total e pares de sucesso/derrota. Repetições não são
 novas tarefas. Nenhuma superioridade é pressuposta.
+
+## Correção de avaliação após o piloto, antes da coorte completa
+
+O piloto de 25 gerações (commit `2067ec3`) identificou espaços e quebras de linha
+legais nas chamadas EPIC. Seu registro original de igualdade textual é preservado,
+mas não sustenta uma comparação funcional justa. Na coorte completa a avaliação
+usa AST de chamada, sem executar código, reparar ou simplificar operações. Só
+ignora whitespace aceito pelo parser e mantém a exigência de geração completa
+(um MASK ocultado pelo decoder não conta como resposta). O MWPC usa o mesmo
+critério, equivalente à igualdade textual para seus outputs canônicos.
+
+Também incluir `epic_native_24` e `epic_domains_24` antes da coorte completa: têm
+o mesmo teto de etapas MWPC; transferem um token por etapa, então o próprio
+upstream não ativa lotes nesse schedule. São controles de maior orçamento,
+explicitamente distinguíveis das execuções paralelas 1/4. Não escolher um
+schedule vencedor depois de observar a coorte; relatar todos os sete métodos.
+A confirmação e a repetição têm 700 gerações cada. Os cinco pedidos do piloto
+continuam na coorte, sem alegação de holdout novo. A alteração não dependeu de
+vantagem de acurácia; corrige o avaliador e amplia o controle de orçamento.

@@ -20,6 +20,7 @@ def run_epic(*, model, tokenizer, prompt, grammar, rows, calls, config, method):
     from rustformlang.cfg import CFG
 
     from mwpc_research.tool_parser import epic_byte_grammar
+    from mwpc_research.tool_screen import normalize_tool_call
 
     def synchronize():
         if torch.device(model.device).type == "cuda":
@@ -169,11 +170,18 @@ def run_epic(*, model, tokenizer, prompt, grammar, rows, calls, config, method):
     synchronize()
     elapsed = time.perf_counter() - start
     decoded = tokenizer.decode(last, skip_special_tokens=True)
+    normalized = normalize_tool_call(decoded)
     return {
         "status": status,
         "failure": failure,
         "output": decoded,
-        "syntax_valid": status == "complete" and decoded in calls,
+        "normalized_output": normalized,
+        "syntax_valid": status == "complete" and normalized in calls,
+        "token_emissions": {
+            str(t): list(tokenizer.decode([t], clean_up_tokenization_spaces=False).encode())
+            for t in sorted(set(last))
+            if t not in (126081, 126336)
+        },
         "forwards": len(forwards),
         "elapsed_excluding_shadow_seconds": elapsed,
         "elapsed_with_diagnostics_seconds": elapsed,

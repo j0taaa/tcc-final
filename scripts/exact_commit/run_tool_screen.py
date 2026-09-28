@@ -230,7 +230,7 @@ def main() -> None:
                             json.dumps(calls).encode()
                         ).hexdigest(),
                         "correct": outcome["status"] == "complete"
-                        and outcome["output"] == task["expected"],
+                        and outcome["normalized_output"] == task["expected"],
                     }
                     with (output / "results.jsonl").open("a") as stream:
                         stream.write(json.dumps(record, allow_nan=False) + "\n")

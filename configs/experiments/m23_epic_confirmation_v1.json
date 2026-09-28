@@ -12,7 +12,9 @@
     "epic_native_1",
     "epic_domains_1",
     "epic_native_4",
-    "epic_domains_4"
+    "epic_domains_4",
+    "epic_native_24",
+    "epic_domains_24"
   ],
   "proposal_budgets": [
     24
@@ -529,5 +531,6 @@
     }
   ],
   "backend": "rust",
-  "epic_max_resamples": 100
+  "epic_max_resamples": 100,
+  "evaluation": "complete generation and exact parsed call structure; legal whitespace ignored"
 }
