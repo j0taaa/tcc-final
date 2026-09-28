@@ -45,3 +45,20 @@ def test_secondary_pairs_require_matching_methods_and_both_repetitions(monkeypat
         module.build("a", "b", controls_first="c", controls_second="d")
     with pytest.raises(AssertionError):
         module.build("a", "b", secondary_first="a", secondary_second="b")
+
+
+def test_whitespace_sensitivity_handles_indentation_without_changing_strings(monkeypatch):
+    monkeypatch.syspath_prepend(str(ROOT / "scripts/exact_commit"))
+    from diagnose_policy_whitespace import normalize_lexical_whitespace
+
+    from mwpc_research.schema_calls import normalize_schema_call
+
+    output = "\n    get_service_id\n\n (service_id = 2)\n"
+    assert normalize_schema_call(output) is None
+    assert (
+        normalize_schema_call(normalize_lexical_whitespace(output))
+        == "get_service_id(service_id=2)"
+    )
+    output = "f\n (x='a  b\\nc')"
+    assert normalize_schema_call(normalize_lexical_whitespace(output)) == "f(x='a  b\\nc')"
+    assert normalize_lexical_whitespace("f(") == "f("

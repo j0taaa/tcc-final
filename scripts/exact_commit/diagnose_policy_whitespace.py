@@ -13,10 +13,12 @@ def normalize_lexical_whitespace(output):
     """Preserve token strings, including quoted contents, while joining physical lines."""
     ignored = {tokenize.NL, tokenize.NEWLINE, tokenize.INDENT, tokenize.DEDENT, tokenize.ENDMARKER}
     try:
-        tokens = list(tokenize.generate_tokens(io.StringIO(output).readline))
+        # Outer parentheses suppress Python indentation rules during lexical analysis.
+        tokens = list(tokenize.generate_tokens(io.StringIO("(" + output + "\n)").readline))
     except (tokenize.TokenError, IndentationError, SyntaxError):
         return output
-    return " ".join(token.string for token in tokens if token.type not in ignored)
+    kept = [token for token in tokens if token.type not in ignored]
+    return " ".join(token.string for token in kept[1:-1])
 
 
 def diagnose(config, rows):
