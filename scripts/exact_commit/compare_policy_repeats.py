@@ -158,7 +158,8 @@ def build(
         "",
         result["scope"],
         "",
-        "| Método | Chamadas corretas 1 / 2 | Resultado numérico 1 / 2 | Forwards 1 / 2 | Mediana total (ms) | p95 (ms) |",
+        "| Método | Chamadas corretas 1 / 2 | Resultado numérico 1 / 2 | "
+        "Forwards 1 / 2 | Mediana total (ms) | p95 (ms) |",
         "|---|---:|---:|---:|---:|---:|",
     ]
     for r in table:
