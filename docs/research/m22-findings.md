@@ -1,5 +1,10 @@
 # Benefício encontrado dentro da geração por dLLM
 
+**Atualização M23:** a [comparação com EPIC e sua recuperação oficial](m23-findings.md)
+está concluída. Ela mostra vantagens de tempo em configurações específicas, mas
+EPIC alcança maior precisão com outros orçamentos. Os resultados M22 abaixo
+continuam sendo apenas a comparação com o guloso de viabilidade correspondente.
+
 O recorte encontrado é a **geração de pequenas chamadas de funções aninhadas,
 preservando os operandos do pedido**, com seleção exata durante o denoising do
 LLaDA. Não há reparo posterior. O modelo é executado em todos os forwards; pesos
@@ -55,7 +60,7 @@ benefício delimitado de ponta a ponta diante de um seletor guloso comparável.
 O domínio de programas executáveis permite verificar o efeito funcional da
 operação errada, além de apenas checar sintaxe ou pontuação.
 
-Ainda não é uma demonstração de superioridade sobre EPIC, geração livre,
+O M22 isolado não é uma demonstração de superioridade sobre EPIC, geração livre,
 enumeradores especializados ou métodos de inferência probabilística em autômatos.
 Há apenas um modelo quantizado, uma GPU, poucos formatos e uma linguagem finita.
 A enumeração continua especialmente competitiva em catálogos pequenos. Os dois
@@ -70,9 +75,10 @@ já avalia chamadas de funções com dLLMs e inferência sob restrições:
 [Dang e Ermon, 2026](https://arxiv.org/abs/2607.07026). A novidade deve ser
 reivindicada na adaptação e avaliação específica de MWPC, não nessa aplicação geral.
 
-Para o mês restante, a prioridade é comparar EPIC e um método especializado
-competitivo, ampliar os pedidos para um benchmark de chamadas de funções e
-testar a hipótese da tokenização em uma coorte pré-especificada. O resultado M22
+O M23 completou a comparação EPIC, incluindo recuperação. Permanecem como
+trabalho futuro um método especializado competitivo, ampliar os pedidos para
+um benchmark de chamadas de funções e testar a hipótese da tokenização em
+uma coorte pré-especificada. O resultado M22
 é uma base positiva para essa investigação, sem garantia de que a vantagem se
 mantenha fora deste recorte.
 

@@ -6,6 +6,11 @@ priorizar dLLMs. O [protocolo M22](m22-dllm-discovery-protocol.md) e os
 principal. A proposta de reparo externo abaixo é histórica e auxiliar; a revisão
 de antecedentes continua válida dentro do seu recorte.
 
+**Atualização experimental M23:** a [comparação com EPIC completo](m23-findings.md)
+foi executada e limita a alegação prática: há vantagens de tempo delimitadas,
+mas não superioridade geral de precisão. Essa evidência não estabelece prioridade
+mundial nem transforma o algoritmo clássico de base em novidade.
+
 Consulta: **28/09/2026**. Código examinado: commit
 `87ceedb6315acf6a41bd16b19cd450da49a0e84c`.
 Resultados locais: M21, produzidos pelo commit `47b93c4`.

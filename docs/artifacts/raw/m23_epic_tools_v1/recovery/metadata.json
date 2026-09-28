@@ -1,0 +1,12 @@
+{
+  "git_commit": "9acda68ea36cae69e5d704485e1440d332b4dc4c",
+  "seed": 230003,
+  "python": "3.11.16",
+  "cpu": "x86_64",
+  "torch": "2.8.0+cpu",
+  "config_sha256": "a14024c8ddd36c2ced1d2065bacdb976c0b7c1433b232c3eb3008ca207758645",
+  "upstream_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+  "model_forwards": 0,
+  "kind": "official_wrapper_recovery_replay",
+  "timing_scope": "CPU recovery only; setup recreated outside timing; not a jointly timed pipeline"
+}

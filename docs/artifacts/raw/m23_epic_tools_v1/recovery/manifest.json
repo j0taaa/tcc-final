@@ -1,0 +1,10 @@
+{
+  "source_experiment": "m23_epic_recovery_v1",
+  "records": 2000,
+  "uncompressed_results_sha256": "b76c4e759437812e49561e1f74432253fce4b1b153fddad8e056a17a48aa9621",
+  "sha256": {
+    "config.json": "a14024c8ddd36c2ced1d2065bacdb976c0b7c1433b232c3eb3008ca207758645",
+    "metadata.json": "1fdea872dbcc9c9973b683c32466f77285abf7aa19722ebb427f2caec87fa6c3",
+    "results.jsonl.gz": "d2970845b92b04a19dfbd9f03217f4a1cfd70cb26893c3248ce38c12387d828e"
+  }
+}

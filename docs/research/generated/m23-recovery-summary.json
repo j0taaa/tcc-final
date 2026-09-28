@@ -1,0 +1,309 @@
+{
+  "metadata": {
+    "git_commit": "9acda68ea36cae69e5d704485e1440d332b4dc4c",
+    "seed": 230003,
+    "python": "3.11.16",
+    "cpu": "x86_64",
+    "torch": "2.8.0+cpu",
+    "config_sha256": "a14024c8ddd36c2ced1d2065bacdb976c0b7c1433b232c3eb3008ca207758645",
+    "upstream_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+    "model_forwards": 0,
+    "kind": "official_wrapper_recovery_replay",
+    "timing_scope": "CPU recovery only; setup recreated outside timing; not a jointly timed pipeline"
+  },
+  "records": 2000,
+  "cells": [
+    {
+      "family": "bytes",
+      "method": "exact",
+      "correct": [
+        65,
+        65
+      ],
+      "numeric_correct": [
+        81,
+        81
+      ],
+      "recovery_statuses": [
+        {
+          "not_needed": 100
+        },
+        {
+          "not_needed": 100
+        }
+      ],
+      "median_reconstructed_ms": 276.18663196335547,
+      "median_recovery_ms_when_needed": 0.0,
+      "stable": true
+    },
+    {
+      "family": "bytes",
+      "method": "epic_native_1",
+      "correct": [
+        64,
+        63
+      ],
+      "numeric_correct": [
+        77,
+        76
+      ],
+      "recovery_statuses": [
+        {
+          "not_needed": 66,
+          "recovered": 34
+        },
+        {
+          "not_needed": 66,
+          "recovered": 34
+        }
+      ],
+      "median_reconstructed_ms": 439.33633927372284,
+      "median_recovery_ms_when_needed": 5.026674421969801,
+      "stable": false
+    },
+    {
+      "family": "bytes",
+      "method": "epic_domains_1",
+      "correct": [
+        40,
+        40
+      ],
+      "numeric_correct": [
+        64,
+        68
+      ],
+      "recovery_statuses": [
+        {
+          "recovered": 64,
+          "not_needed": 36
+        },
+        {
+          "recovered": 64,
+          "not_needed": 36
+        }
+      ],
+      "median_reconstructed_ms": 159.87655124627054,
+      "median_recovery_ms_when_needed": 5.61879453016445,
+      "stable": false
+    },
+    {
+      "family": "bytes",
+      "method": "epic_native_4",
+      "correct": [
+        81,
+        81
+      ],
+      "numeric_correct": [
+        84,
+        84
+      ],
+      "recovery_statuses": [
+        {
+          "recovered": 12,
+          "not_needed": 88
+        },
+        {
+          "recovered": 12,
+          "not_needed": 88
+        }
+      ],
+      "median_reconstructed_ms": 620.8057482144795,
+      "median_recovery_ms_when_needed": 5.913130939006805,
+      "stable": true
+    },
+    {
+      "family": "bytes",
+      "method": "epic_domains_4",
+      "correct": [
+        58,
+        58
+      ],
+      "numeric_correct": [
+        80,
+        80
+      ],
+      "recovery_statuses": [
+        {
+          "recovered": 52,
+          "not_needed": 48
+        },
+        {
+          "recovered": 52,
+          "not_needed": 48
+        }
+      ],
+      "median_reconstructed_ms": 258.2587419892661,
+      "median_recovery_ms_when_needed": 5.22196147358045,
+      "stable": true
+    },
+    {
+      "family": "bytes",
+      "method": "epic_native_24",
+      "correct": [
+        92,
+        92
+      ],
+      "numeric_correct": [
+        100,
+        100
+      ],
+      "recovery_statuses": [
+        {
+          "not_needed": 100
+        },
+        {
+          "not_needed": 100
+        }
+      ],
+      "median_reconstructed_ms": 2314.040299708722,
+      "median_recovery_ms_when_needed": 0.0,
+      "stable": true
+    },
+    {
+      "family": "bytes",
+      "method": "epic_domains_24",
+      "correct": [
+        63,
+        60
+      ],
+      "numeric_correct": [
+        77,
+        73
+      ],
+      "recovery_statuses": [
+        {
+          "not_needed": 76,
+          "recovered": 24
+        },
+        {
+          "not_needed": 76,
+          "recovered": 24
+        }
+      ],
+      "median_reconstructed_ms": 1117.2775702434592,
+      "median_recovery_ms_when_needed": 4.262508999090642,
+      "stable": false
+    },
+    {
+      "family": "lexical",
+      "method": "exact",
+      "correct": [
+        65,
+        65
+      ],
+      "numeric_correct": [
+        81,
+        81
+      ],
+      "recovery_statuses": [
+        {
+          "not_needed": 100
+        },
+        {
+          "not_needed": 100
+        }
+      ],
+      "median_reconstructed_ms": 280.9425981831737,
+      "median_recovery_ms_when_needed": 0.0,
+      "stable": true
+    },
+    {
+      "family": "lexical",
+      "method": "epic_lexical_1",
+      "correct": [
+        65,
+        63
+      ],
+      "numeric_correct": [
+        78,
+        77
+      ],
+      "recovery_statuses": [
+        {
+          "not_needed": 66,
+          "recovered": 34
+        },
+        {
+          "not_needed": 66,
+          "recovered": 34
+        }
+      ],
+      "median_reconstructed_ms": 442.52353845513426,
+      "median_recovery_ms_when_needed": 3.9560539880767465,
+      "stable": false
+    },
+    {
+      "family": "lexical",
+      "method": "epic_lexical_2",
+      "correct": [
+        74,
+        74
+      ],
+      "numeric_correct": [
+        81,
+        81
+      ],
+      "recovery_statuses": [
+        {
+          "not_needed": 84,
+          "recovered": 16
+        },
+        {
+          "not_needed": 84,
+          "recovered": 16
+        }
+      ],
+      "median_reconstructed_ms": 368.96461943979375,
+      "median_recovery_ms_when_needed": 4.995419469196349,
+      "stable": true
+    },
+    {
+      "family": "lexical",
+      "method": "epic_lexical_4",
+      "correct": [
+        81,
+        81
+      ],
+      "numeric_correct": [
+        84,
+        84
+      ],
+      "recovery_statuses": [
+        {
+          "recovered": 12,
+          "not_needed": 88
+        },
+        {
+          "recovered": 12,
+          "not_needed": 88
+        }
+      ],
+      "median_reconstructed_ms": 631.4063512254506,
+      "median_recovery_ms_when_needed": 4.8849619925022125,
+      "stable": true
+    },
+    {
+      "family": "lexical",
+      "method": "epic_lexical_24",
+      "correct": [
+        92,
+        92
+      ],
+      "numeric_correct": [
+        100,
+        100
+      ],
+      "recovery_statuses": [
+        {
+          "not_needed": 100
+        },
+        {
+          "not_needed": 100
+        }
+      ],
+      "median_reconstructed_ms": 2427.75209620595,
+      "median_recovery_ms_when_needed": 0.0,
+      "stable": true
+    }
+  ]
+}

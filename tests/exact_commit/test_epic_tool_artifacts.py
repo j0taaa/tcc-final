@@ -58,3 +58,23 @@ def test_epic_archive_rejects_corruption(tmp_path, mutation):
         (target / "results.jsonl").write_text("\n".join(json.dumps(row) for row in rows) + "\n")
     with pytest.raises(AssertionError):
         reader()(target)
+
+
+def test_lexical_archives_include_real_parallel_commits_and_all_requests():
+    for name in ("lexical_confirmation", "lexical_repeat"):
+        config, _, rows = reader()(ARCHIVE.parent / name)
+        assert len(config["tasks"]) == 100 and len(rows) == 500
+        for method in ("epic_lexical_1", "epic_lexical_2", "epic_lexical_4"):
+            batches = 0
+            for (_, current), row in rows.items():
+                if current != method:
+                    continue
+                previous = [126336] * config["slots"]
+                for event in row["epic_events"]:
+                    new_ordinary = sum(
+                        a == 126336 and b not in (126336, 126081, 126348)
+                        for a, b in zip(previous, event["canvas"], strict=True)
+                    )
+                    batches += new_ordinary >= 2
+                    previous = event["canvas"]
+            assert batches > 0, method

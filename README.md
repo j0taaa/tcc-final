@@ -5,10 +5,13 @@ Research and implementation workspace for the TCC **Exact Maximum-Weight Paralle
 The project implements an exact, certificate-producing optimizer for selecting the maximum-weight compatible set of token proposals at one denoising step. EPIC's serial and heuristic decoders remain read-only baselines. Results over pruned alternatives are reported as exact on the represented support, never as full-vocabulary or future-trajectory optimality.
 
 The current research focus is **selection during actual dLLM generation**.
-[M22 live results](docs/research/generated/m22-results.md) compare the validated
-Rust optimizer with confidence-greedy feasibility during LLaDA generation of
-operand-preserving tool calls. The held-out cohort and reversed-order timing
-repeat are archived; the comparison is not against EPIC or all decoding methods.
+[M23 findings](docs/research/m23-findings.md) compare the Rust optimizer with the
+actual EPIC decoder, natural and byte lexemes, several schedules, and EPIC's
+official recovery. MWPC has lower measured latency in specific configurations;
+EPIC with more steps achieves higher call accuracy. There is no general
+accuracy-superiority claim. Both repetitions and all failures are archived.
+[M22](docs/research/generated/m22-results.md) remains the separate, matched
+comparison against confidence-greedy feasibility, which must not be called EPIC.
 JSON repair without model inference remains an auxiliary experiment.
 
 ## Sources of truth
@@ -34,7 +37,7 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 The archived **M21 2026-09-28 source snapshot** includes certified JSON repair and
 4,992 controlled comparison calls (M21). Its local bundle, PDF and checksums are
 described in [`docs/releases/repair-2026-09-28.md`](docs/releases/repair-2026-09-28.md).
-That bundle/PDF predates the new M22 live results; use the current checkout for M22.
+That bundle/PDF predates M22/M23; use the current checkout for their live results.
 The historical v0.2.0 and M20 bundle/patch remain unchanged. No remote publication
 was performed. From the new delivery directory:
 

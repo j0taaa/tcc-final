@@ -1,0 +1,112 @@
+{
+  "milestone": "M23",
+  "date": "2026-09-28",
+  "upstream_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+  "cohorts": {
+    "confirmation": {
+      "records": 700,
+      "producing_commit": "657bbc4ebe54593219e967d90c25f20ca30f303c",
+      "manifest_sha256": "88b367661da207626fb186e9743ec5d7ca321685689086099802cf987eb2250e",
+      "config": "m23_epic_confirmation_v1",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_tool_screen.py --config configs/experiments/m23_epic_confirmation_v1.json"
+    },
+    "lexical_confirmation": {
+      "records": 500,
+      "producing_commit": "aa1b14d5999a75822469ef6d48e3950861e22953",
+      "manifest_sha256": "27e4916d6c1493fec85360914050ea7abd46f3fd30916344b23db9eee85ebf79",
+      "config": "m23_epic_lexical_confirmation_v1",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_tool_screen.py --config configs/experiments/m23_epic_lexical_confirmation_v1.json"
+    },
+    "lexical_repeat": {
+      "records": 500,
+      "producing_commit": "aa1b14d5999a75822469ef6d48e3950861e22953",
+      "manifest_sha256": "c077ca4b3520544894f9068555969ec20e0428380972e93e7205bdd07f004eca",
+      "config": "m23_epic_lexical_repeat_v1",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_tool_screen.py --config configs/experiments/m23_epic_lexical_repeat_v1.json"
+    },
+    "pilot": {
+      "records": 25,
+      "producing_commit": "2067ec31f87cc16a345b93408ff9ebbdde36d684",
+      "manifest_sha256": "ade9418709d829da42a0acfee145dd674a5646500cce36d077b2587647fb21a1",
+      "config": "m23_epic_pilot_v1",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_tool_screen.py --config configs/experiments/m23_epic_pilot_v1.json"
+    },
+    "recovery": {
+      "records": 2000,
+      "producing_commit": "9acda68ea36cae69e5d704485e1440d332b4dc4c",
+      "manifest_sha256": "cb473e0c74227977352ec827437e38aa56d326a0c8e6ada1416d0ce0681a032e",
+      "config": "m23_epic_recovery_v1",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/run_epic_recovery.py --config configs/experiments/m23_epic_recovery_v1.json"
+    },
+    "repeat": {
+      "records": 700,
+      "producing_commit": "aa1b14d5999a75822469ef6d48e3950861e22953",
+      "manifest_sha256": "91456f36142a62178ea774aad89aab332f4603e391415769214add96f742cbd6",
+      "config": "m23_epic_repeat_v1",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_tool_screen.py --config configs/experiments/m23_epic_repeat_v1.json"
+    }
+  },
+  "live_generations": 2425,
+  "recovery_records": 2000,
+  "recovery_actual_attempts": 496,
+  "independent_task_requests": 100,
+  "checks": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "passed": 970
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 make test-upstream",
+      "exit_code": 0,
+      "passed": 406,
+      "skipped": 8,
+      "warnings": 2
+    },
+    {
+      "command": "make test-rust-parser",
+      "exit_code": 0,
+      "passed": 24,
+      "includes": [
+        "cargo fmt",
+        "cargo clippy parser",
+        "cargo clippy bindings"
+      ]
+    },
+    {
+      "command": ".venv/bin/python -m mypy src",
+      "exit_code": 0,
+      "source_files": 81
+    },
+    {
+      "command": ".venv/bin/python -m ruff check src tests scripts/exact_commit/run_tool_screen.py scripts/exact_commit/epic_tool_runner.py scripts/exact_commit/summarize_epic_tools.py scripts/exact_commit/run_epic_recovery.py scripts/exact_commit/summarize_epic_recovery.py scripts/exact_commit/archive_epic_tools.py",
+      "exit_code": 0
+    },
+    {
+      "command": "./scripts/verify_upstream.sh",
+      "exit_code": 0
+    },
+    {
+      "command": "summarize_epic_tools.py byte pair --check; summarize_epic_tools.py lexical pair --check; summarize_epic_recovery.py recovery --check",
+      "exit_code": 0,
+      "details": "Full commands in docs/research/m23-findings.md; hashes, complete cohorts, objectives, outputs, EOS/EOT, preserved fragments and success labels independently checked."
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "reports": [
+    "docs/research/generated/m23-byte-results.md",
+    "docs/research/generated/m23-lexical-results.md",
+    "docs/research/generated/m23-recovery-results.md",
+    "docs/research/m23-findings.md"
+  ],
+  "scope": [
+    "real EPIC decoder plus official wrapper recovery",
+    "no general accuracy superiority",
+    "recovery latency replayed separately; reconstructed total is not jointly timed",
+    "two repetitions are not independent new tasks",
+    "no PDF update or remote push"
+  ]
+}
