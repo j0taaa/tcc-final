@@ -36,7 +36,7 @@ Preserve the MWPC selected set; record the actual committed subset separately.
 - [ ] T2403: Freeze and commit a bounded live development pilot with confidence
   and budget controls and full EPIC recovery timed together. Audit external BFCL
   coverage without gold-based support. Archive every result; apply day-7 stop rule.
-  **Evidence:** not started; no new model result.
+  **Evidence:** source `db64201` smoke 40 calls; source `080e252` development 600 calls, all 20 policies retained in `docs/artifacts/raw/m24_policy_v1/`. Generated `m24-development-results.md` and diagnosis: all 11 baseline errors exclude a representable answer while the objective prefers a wrong completion. Full pytest 1,099 passed; external schema compiler and corruption tests added. BFCL audit: 8 schema-finite cases out of 658; external live pilot pending, so task not yet complete.
 - [ ] T2404: If pilot supports continuation, freeze primary comparison, uncertainty
   analysis and disjoint external test before measurement; generate paired results,
   a runnable read-only API demo and an evidence-grounded manuscript update.

@@ -10,6 +10,7 @@ from math import fsum, isclose
 from pathlib import Path
 from statistics import median
 
+from mwpc_research.schema_calls import normalize_schema_call, schema_catalog, strict_schema_grade
 from mwpc_research.tool_screen import (
     execute_tool_call,
     normalize_tool_call,
@@ -53,20 +54,36 @@ def read(directory):
         assert key not in seen
         seen.add(key)
         assert row["config_sha256"] == hashlib.sha256(cfg_bytes).hexdigest()
-        indices = list(operand_preserving_indices(support["catalog"], task["instruction"]))
+        is_schema = config.get("schema_calls", False)
+        indices = (
+            [support["catalog"].index(call) for call in schema_catalog(task["function"])]
+            if is_schema
+            else list(operand_preserving_indices(support["catalog"], task["instruction"]))
+        )
         assert row["active_catalog_indices"] == indices
         calls = [support["catalog"][i] for i in indices]
         paths = [support["paths"][i] for i in indices]
         domains = [set(path[p] for path in paths) for p in range(config["slots"])]
         assert row["active_grammar_hash"] == hashlib.sha256(json.dumps(calls).encode()).hexdigest()
-        normal = normalize_tool_call(row["output"])
+        normal = (normalize_schema_call if is_schema else normalize_tool_call)(row["output"])
         complete = row["status"] == "complete"
-        assert row["correct"] == (complete and normal == task["expected"])
+        assert row["correct"] == (
+            complete
+            and (
+                strict_schema_grade(row["output"], task["function"], task["ground_truth"])
+                if is_schema
+                else normal == task["expected"]
+            )
+        )
         assert row["syntax_valid"] == (complete and normal in calls)
         assert row["numeric_correct"] == (
-            complete
-            and normal in calls
-            and execute_tool_call(normal) == execute_tool_call(task["expected"])
+            None
+            if is_schema
+            else (
+                complete
+                and normal in calls
+                and execute_tool_call(normal) == execute_tool_call(task["expected"])
+            )
         )
         assert row["total_seconds_including_setup"] >= row["elapsed_seconds"] >= 0
         if policy["kind"] == "epic":
@@ -165,7 +182,7 @@ def summarize(directory):
                 "method": name,
                 "n": len(rows),
                 "correct": sum(r["correct"] for r in rows),
-                "numeric_correct": sum(r["numeric_correct"] for r in rows),
+                "numeric_correct": sum(r["numeric_correct"] is True for r in rows),
                 "valid": sum(r["syntax_valid"] for r in rows),
                 "forwards": sum(r["forwards"] for r in rows),
                 "median_total_ms": 1000 * median(r["total_seconds_including_setup"] for r in rows),

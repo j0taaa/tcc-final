@@ -29,3 +29,14 @@ The production parser uses pinned `num-bigint` 0.4.6 and `num-traits` 0.2.19
 for exact ordering and rounding of binary64 weight sums. Both are licensed
 `MIT OR Apache-2.0`; their upstream notices remain authoritative. Their exact
 transitive resolutions and checksums are recorded in both Rust lockfiles.
+
+The eight BFCL examples and acceptable answers embedded in
+`configs/experiments/m24_bfcl_enum_pilot_v1.json` and derived M24 archives are
+third-party dataset excerpts from the Berkeley/Gorilla project, repository
+`ShishirPatil/gorilla`, commit `6ea57973c7a6097fd7c5915698c54c17c5b1b6c8`.
+Upstream `berkeley-function-call-leaderboard/bfcl_eval/data/README.md` declares
+the data Apache-2.0. Source files and hashes are recorded in
+`docs/evidence/m24-bfcl-coverage.json`; these data are excluded from the parent
+MIT grant. Question/schema/answer fields were regrouped into the experiment
+config. Apache-2.0 license text is available in the preserved
+`vendor/EPIC-Decoding/regex-dfa/LICENSE-APACHE`.

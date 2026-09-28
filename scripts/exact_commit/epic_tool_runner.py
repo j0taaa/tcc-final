@@ -19,7 +19,11 @@ def run_epic(*, model, tokenizer, prompt, grammar, rows, calls, config, method):
     from constrained_diffusion.eval.dllm.models.llada import generate_constrained as upstream
     from rustformlang.cfg import CFG
 
-    from mwpc_research.tool_parser import epic_byte_grammar, epic_lexical_grammar
+    from mwpc_research.tool_parser import (
+        epic_byte_grammar,
+        epic_lexical_grammar,
+        epic_python_call_grammar,
+    )
     from mwpc_research.tool_screen import normalize_tool_call
 
     def synchronize():
@@ -55,7 +59,13 @@ def run_epic(*, model, tokenizer, prompt, grammar, rows, calls, config, method):
     setup_start = time.perf_counter()
     lexical = method.startswith("epic_lexical_")
     cfg_text, cfg_start, lex_rules = (
-        epic_lexical_grammar(calls) if lexical else epic_byte_grammar(grammar)
+        (
+            epic_python_call_grammar(calls)
+            if config.get("schema_calls", False)
+            else epic_lexical_grammar(calls)
+        )
+        if lexical
+        else epic_byte_grammar(grammar)
     )
     native_grammar = CFG.from_text(cfg_text, cfg_start).to_normal_form()
     if lexical:

@@ -45,6 +45,32 @@ O tempo total inclui a preparação por pedido e eventuais duas fases; carregame
 separadamente. A auditoria BFCL mede primeiro cobertura dos tipos/esquemas; não
 converter um catálogo de calculadora em benchmark real apenas renomeando funções.
 
+Auditoria externa: revisão BFCL `6ea57973c7a6097fd7c5915698c54c17c5b1b6c8`,
+400 simple-python e 258 live-simple. Oito exemplos têm somente enums/booleanos
+ou nenhum argumento; todos entram no piloto `m24_bfcl_enum_pilot_v1.json`, com
+as vinte políticas, antes de qualquer seleção pelo resultado sintético. O
+catálogo de cada caso é gerado exclusivamente pelo esquema, incluindo omissão
+de opcionais. A revisão dos dados revelou quatro exemplos da mesma função e
+uma chamada sem argumentos: não são oito famílias independentes.
+
+Esse piloto usa um avaliador próprio estrito de AST escalar contra os valores
+aceitáveis públicos; ele não é o checker oficial, que também normaliza strings.
+Logo, reportar "piloto externo de oito casos BFCL", nunca score BFCL oficial.
+É uma extensão de cobertura/integração, não a confirmação externa ampla prevista
+em T2404. Os outros 650 casos foram excluídos pela regra do esquema, sem executar
+o modelo neles e sem usar respostas para completar seus domínios.
+
+Congelamento após desenvolvimento, antes de inferência na confirmação: a regra
+selecionou `confidence_0.8`, `exact_b4`, `confidence_0.2`. A primeira é a comparação
+primária, contra `epic_lexical_24`, a configuração EPIC mais rápida que atingiu
+seus 28/30 acertos no desenvolvimento. Critério primário: pelo menos 20% menos
+latência mediana e limite inferior do intervalo pareado de acurácia acima de
+-2 pontos percentuais. Usar intervalo conservador da diferença entre frequências
+de vitórias e derrotas, com limites binomiais exatos e Bonferroni; bootstrap
+pareado também é descritivo, mas não deve provar não inferioridade quando não
+há pares discordantes. As outras configurações e os EPIC 2/4 permanecem controles
+secundários, sem ajuste de multiplicidade. A amostra pode ser inconclusiva.
+
 ## Decisão e utilidade
 
 Investigar uma política que usa o MWPC existente para decidir **o que pode ser

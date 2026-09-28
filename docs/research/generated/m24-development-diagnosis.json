@@ -1,0 +1,439 @@
+{
+  "source_commit": "080e252489a908138b0c9308337c5bf15a0a5d2c",
+  "method": "exact_b24",
+  "counts": {
+    "objective_prefers_wrong_completion": 11,
+    "correct": 19
+  },
+  "limitations": "gold used only after generation; score mismatch does not establish a causal benefit of deferral",
+  "details": [
+    {
+      "task_id": "nested-220004-0",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.29441386461257935,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        0,
+        22,
+        20,
+        21,
+        1,
+        4,
+        19,
+        2,
+        18,
+        17,
+        15,
+        14,
+        16,
+        12,
+        13,
+        11,
+        10,
+        9
+      ]
+    },
+    {
+      "task_id": "nested-220004-1",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-2",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.1902952864766121,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        2,
+        1,
+        0,
+        22,
+        20,
+        21,
+        19,
+        17,
+        18,
+        5,
+        16,
+        6,
+        15,
+        8,
+        14,
+        13,
+        12,
+        11,
+        10
+      ]
+    },
+    {
+      "task_id": "nested-220004-3",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-4",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-5",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.004701763391494751,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        0,
+        22,
+        1,
+        20,
+        2,
+        21,
+        19,
+        17,
+        18,
+        16,
+        5,
+        15,
+        7,
+        14,
+        8,
+        13,
+        12,
+        11,
+        10
+      ]
+    },
+    {
+      "task_id": "nested-220004-6",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.6239485740661621,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        1,
+        0,
+        22,
+        20,
+        21,
+        4,
+        3,
+        19,
+        18,
+        2,
+        17,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9
+      ]
+    },
+    {
+      "task_id": "nested-220004-7",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-8",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-9",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-10",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-11",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.0927160307765007,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        0,
+        2,
+        22,
+        5,
+        21,
+        20,
+        7,
+        19,
+        17,
+        18,
+        8,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10
+      ]
+    },
+    {
+      "task_id": "nested-220004-12",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.7489859014749527,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        22,
+        0,
+        20,
+        21,
+        19,
+        1,
+        17,
+        18,
+        5,
+        2,
+        7,
+        16,
+        3,
+        15,
+        14,
+        13,
+        12,
+        8,
+        11,
+        10
+      ]
+    },
+    {
+      "task_id": "nested-220004-13",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-14",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-15",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.4273792840540409,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        0,
+        22,
+        20,
+        21,
+        19,
+        2,
+        18,
+        17,
+        3,
+        16,
+        14,
+        15,
+        6,
+        8,
+        13,
+        12,
+        11,
+        10
+      ]
+    },
+    {
+      "task_id": "nested-220004-16",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-17",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.21542149037122726,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        2,
+        1,
+        0,
+        22,
+        20,
+        21,
+        5,
+        19,
+        17,
+        18,
+        3,
+        6,
+        8,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9
+      ]
+    },
+    {
+      "task_id": "nested-220004-18",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-19",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-20",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.1855209469795227,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        0,
+        22,
+        1,
+        2,
+        20,
+        21,
+        19,
+        17,
+        18,
+        8,
+        5,
+        6,
+        7,
+        16,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10
+      ]
+    },
+    {
+      "task_id": "nested-220004-21",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.6430062651634216,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        0,
+        1,
+        22,
+        20,
+        21,
+        4,
+        19,
+        2,
+        18,
+        17,
+        3,
+        6,
+        16,
+        13,
+        14,
+        15,
+        12,
+        11,
+        10,
+        9
+      ]
+    },
+    {
+      "task_id": "nested-220004-22",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-23",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-24",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-25",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-26",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-27",
+      "correct": false,
+      "gold_in_initial_support": true,
+      "first_gold_excluding_step": 0,
+      "score_gap": 0.8417418152093887,
+      "category": "objective_prefers_wrong_completion",
+      "excluded_by_positions": [
+        23,
+        0,
+        22,
+        20,
+        1,
+        19,
+        21,
+        17,
+        2,
+        18,
+        5,
+        7,
+        3,
+        16,
+        15,
+        14,
+        8,
+        13,
+        12,
+        11,
+        10
+      ]
+    },
+    {
+      "task_id": "nested-220004-28",
+      "correct": true,
+      "gold_in_initial_support": true
+    },
+    {
+      "task_id": "nested-220004-29",
+      "correct": true,
+      "gold_in_initial_support": true
+    }
+  ]
+}

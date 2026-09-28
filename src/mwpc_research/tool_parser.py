@@ -7,7 +7,9 @@ therefore exist and must not be described as the canonical-only catalog.
 
 from __future__ import annotations
 
+import io
 import re
+import tokenize
 from collections.abc import Sequence
 from dataclasses import dataclass, field
 
@@ -109,6 +111,22 @@ def epic_lexical_grammar(calls: Sequence[str]) -> tuple[str, str, dict[str, str]
     symbols = sorted({symbol for parts in sequences for symbol in parts})
     names = {symbol: f"lex{i}" for i, symbol in enumerate(symbols)}
     text = "\n".join("S -> " + " ".join(names[s] for s in parts) for parts in sequences)
+    return text, "S", {names[s]: re.escape(s) for s in symbols}
+
+
+def epic_python_call_grammar(calls: Sequence[str]) -> tuple[str, str, dict[str, str]]:
+    """Natural Python lexemes for the schema-enumerated API pilot."""
+    sequences = [
+        [
+            t.string
+            for t in tokenize.generate_tokens(io.StringIO(call).readline)
+            if t.type in (tokenize.NAME, tokenize.OP, tokenize.STRING, tokenize.NUMBER)
+        ]
+        for call in calls
+    ]
+    symbols = sorted({symbol for seq in sequences for symbol in seq})
+    names = {symbol: f"lex{i}" for i, symbol in enumerate(symbols)}
+    text = "\n".join("S -> " + " ".join(names[s] for s in seq) for seq in sequences)
     return text, "S", {names[s]: re.escape(s) for s in symbols}
 
 

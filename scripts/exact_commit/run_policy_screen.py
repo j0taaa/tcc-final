@@ -25,6 +25,7 @@ from mwpc_exact import (
 )
 from mwpc_exact.commit_gate import select_stable_commit
 from mwpc_exact.profiling import ComponentProfiler
+from mwpc_research.schema_calls import normalize_schema_call, schema_catalog, strict_schema_grade
 from mwpc_research.tool_parser import catalog_byte_grammar, production_input
 from mwpc_research.tool_screen import (
     execute_tool_call,
@@ -272,7 +273,14 @@ def main():
         ),
     ).eval()
     assert model.config._commit_hash == config["revision"]
-    catalog = tool_catalog("nested")
+    is_schema = config.get("schema_calls", False)
+    catalog = (
+        tuple(
+            sorted({call for task in config["tasks"] for call in schema_catalog(task["function"])})
+        )
+        if is_schema
+        else tool_catalog("nested")
+    )
     paths = []
     for call in catalog:
         tokens = tokenizer.encode(call, add_special_tokens=False)
@@ -330,13 +338,25 @@ def main():
     torch.cuda.synchronize()
     for task_index, task in enumerate(config["tasks"]):
         begin = time.perf_counter()
-        indices = list(operand_preserving_indices(catalog, task["instruction"]))
+        indices = (
+            [catalog.index(call) for call in schema_catalog(task["function"])]
+            if is_schema
+            else list(operand_preserving_indices(catalog, task["instruction"]))
+        )
         active_paths = [paths[i] for i in indices]
         calls = [catalog[i] for i in indices]
         rows = [sorted({path[p] for path in active_paths}) for p in range(config["slots"])]
         grammar = catalog_byte_grammar(calls)
         setup = time.perf_counter() - begin
-        request = INSTRUCTION + task["instruction"]
+        request = (
+            "Return only one Python function call using keyword arguments. "
+            "Use the documented function and argument values. Function schema: "
+            + json.dumps(task["function"], ensure_ascii=False)
+            + "\nRequest: "
+            + task["instruction"]
+            if is_schema
+            else INSTRUCTION + task["instruction"]
+        )
         policies = config["policies"]
         offset = task_index % len(policies)
         for policy in policies[offset:] + policies[:offset]:
@@ -403,8 +423,15 @@ def main():
                 )
             torch.cuda.synchronize()
             total_seconds = time.perf_counter() - method_started + setup
-            normalized = normalize_tool_call(outcome["output"])
+            normalized = (normalize_schema_call if is_schema else normalize_tool_call)(
+                outcome["output"]
+            )
             complete = outcome["status"] == "complete"
+            correct = complete and (
+                strict_schema_grade(outcome["output"], task["function"], task["ground_truth"])
+                if is_schema
+                else normalized == task["expected"]
+            )
             record = {
                 **metadata,
                 **outcome,
@@ -418,9 +445,11 @@ def main():
                 "grammar_setup_seconds": setup,
                 "total_seconds_including_setup": total_seconds,
                 "normalized_output": normalized,
-                "correct": complete and normalized == task["expected"],
+                "correct": correct,
                 "syntax_valid": complete and normalized in calls,
-                "numeric_correct": complete
+                "numeric_correct": None
+                if is_schema
+                else complete
                 and normalized in calls
                 and execute_tool_call(normalized) == execute_tool_call(task["expected"]),
             }
