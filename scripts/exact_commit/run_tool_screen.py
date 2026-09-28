@@ -14,10 +14,12 @@ import json
 import platform
 import subprocess
 import time
+from collections import Counter
 from datetime import UTC, datetime
 from pathlib import Path
 
 from mwpc_research.tool_screen import (
+    CatalogSelection,
     operand_preserving_indices,
     screen_tasks,
     select_catalog,
@@ -78,6 +80,7 @@ def main() -> None:
     rows = [sorted({path[p] for path in paths}) for p in range(config["slots"])]
     row_tensors = [torch.tensor(row, device="cuda") for row in rows]
     support_hash = hashlib.sha256(json.dumps(paths).encode()).hexdigest()
+    backend = config.get("backend", "catalog")
     metadata = {
         "git_commit": commit,
         "seed": config["seed"],
@@ -89,25 +92,49 @@ def main() -> None:
         "grammar_hash": hashlib.sha256(json.dumps(catalog).encode()).hexdigest(),
         "support_sha256": support_hash,
         "support_policy": config["support"],
-        "exactness_scope": f"exact_on_support: {len(paths)} canonical legal token paths",
+        "exactness_scope": "exact_on_support; per-record active domains and language",
         "hardware": torch.cuda.get_device_name(0),
         "python": platform.python_version(),
         "versions": {
             name: importlib.metadata.version(name)
             for name in ("torch", "transformers", "bitsandbytes", "tokenizers")
         },
-        "implementation": "exhaustive_catalog_oracle_not_production_CFG_parser",
+        "implementation": "production_CFG_on_bytes"
+        if backend == "rust"
+        else "exhaustive_catalog_oracle_not_production_CFG_parser",
         "limitations": [
-            "exploratory",
+            config["phase"],
             "small synthetic tool requests",
             "no EPIC baseline",
             "one quantized model",
-            "canonical tokenizations only",
+            "finite positional domains" if backend == "rust" else "canonical tokenizations only",
         ],
     }
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     (output / "support.json").write_text(json.dumps({"catalog": catalog, "paths": paths}) + "\n")
     all_paths = paths
+    adapter = None
+    if backend == "rust":
+        from mwpc_exact import (
+            CompositionalByteLevelAdapter,
+            select_exact_mwpc,
+            select_greedy_exact_feasibility,
+        )
+        from mwpc_research.tool_parser import catalog_byte_grammar, production_input
+
+        ordinary_ids = {t for path in paths for t in path if t != eos}
+        emissions = {
+            t: tokenizer.decode([t], clean_up_tokenization_spaces=False).encode()
+            for t in ordinary_ids
+        }
+        adapter = CompositionalByteLevelAdapter(
+            tuple(emissions.get(i) for i in range(model.config.vocab_size))
+        )
+        for call, path in zip(catalog, paths, strict=True):
+            assert b"".join(emissions[t] for t in path if t != eos).decode() == call
+        (output / "token_emissions.json").write_text(
+            json.dumps({t: list(b) for t, b in emissions.items()}) + "\n"
+        )
     instruction = (
         "You control a calculator using function calls. Available functions: "
         "add(a,b), sub(a,b), mul(a,b), neg(a), abs(a). "
@@ -132,16 +159,39 @@ def main() -> None:
         for _ in range(2):
             model(torch.tensor([warmup_prompt + [mask] * config["slots"]], device="cuda"))
     torch.cuda.synchronize()
+    tasks = config.get("tasks") or screen_tasks(config["seed"], config["task_count"], family)
     for budget in config["proposal_budgets"]:
-        for task_index, task in enumerate(
-            screen_tasks(config["seed"], config["task_count"], family)
-        ):
+        for task_index, task in enumerate(tasks):
+            setup_start = time.perf_counter()
             active_indices = list(range(len(catalog)))
             if config.get("preserve_operands", False):
                 active_indices = list(operand_preserving_indices(catalog, task["instruction"]))
             paths = [all_paths[i] for i in active_indices]
             rows = [sorted({path[p] for path in paths}) for p in range(config["slots"])]
             row_tensors = [torch.tensor(row, device="cuda") for row in rows]
+            calls = [catalog[i] for i in active_indices]
+            grammar = catalog_byte_grammar(calls) if backend == "rust" else None
+            setup_seconds = time.perf_counter() - setup_start
+
+            def choose(canvas, proposals, method, paths=paths, grammar=grammar, rows=rows):
+                if backend == "catalog":
+                    return select_catalog(paths, canvas, proposals, method=method), None
+                state = production_input(grammar, canvas, proposals, rows, adapter, eos)
+                result = (
+                    select_exact_mwpc(state, timeout_seconds=10)
+                    if method == "exact"
+                    else select_greedy_exact_feasibility(
+                        state, total_timeout_seconds=10, reuse_witness=True
+                    )
+                )
+                if result.score is None:
+                    return None, result.to_dict()
+                witness = tuple(result.witness_token_ids)
+                index = paths.index(witness) if witness in paths else -1
+                return CatalogSelection(
+                    index, tuple(result.selected_proposal_ids), result.score, witness
+                ), result.to_dict()
+
             prompt = tokenizer.apply_chat_template(
                 [{"role": "user", "content": instruction + task["instruction"]}],
                 add_generation_prompt=True,
@@ -154,6 +204,8 @@ def main() -> None:
                 generator.manual_seed(config["seed"] + task_index + 1000 * budget)
                 canvas: list[int | None] = [None] * config["slots"]
                 trace = []
+                failure = None
+                forward_calls = 0
                 status = "forward_limit"
                 torch.cuda.synchronize()
                 start = time.perf_counter()
@@ -168,6 +220,7 @@ def main() -> None:
                     forward_start = time.perf_counter()
                     with torch.inference_mode():
                         logits = model(x).logits[0, len(prompt) :].float()
+                    forward_calls += 1
                     torch.cuda.synchronize()
                     forward_seconds = time.perf_counter() - forward_start
                     candidate_start = time.perf_counter()
@@ -192,15 +245,19 @@ def main() -> None:
                     proposals = proposals[:budget]
                     candidate_seconds = time.perf_counter() - candidate_start
                     selection_start = time.perf_counter()
-                    selection = select_catalog(paths, canvas, proposals, method=method)
+                    selection, native = choose(canvas, proposals, method)
                     selector_seconds = time.perf_counter() - selection_start
+                    if selection is None:
+                        status = native["status"]
+                        failure = {"result": native, "canvas": canvas, "proposals": proposals}
+                        break
                     # Paired counterfactual at identical logits/state, excluded from main timing.
                     diagnostic_start = time.perf_counter()
-                    other = select_catalog(
-                        paths, canvas, proposals, method="greedy" if method == "exact" else "exact"
+                    other, other_native = choose(
+                        canvas, proposals, "greedy" if method == "exact" else "exact"
                     )
                     diagnostic_seconds = time.perf_counter() - diagnostic_start
-                    witness = paths[selection.witness_index]
+                    witness = selection.witness_token_ids
                     before = list(canvas)
                     commits = list(selection.selected_positions)
                     fallback = not commits
@@ -209,7 +266,7 @@ def main() -> None:
                         commits = [next(p for p, token in enumerate(canvas) if token is None)]
                     for p in commits:
                         canvas[p] = witness[p]
-                    assert any(
+                    assert backend == "rust" or any(
                         all(t is None or t == path[p] for p, t in enumerate(canvas))
                         for path in paths
                     )
@@ -219,10 +276,13 @@ def main() -> None:
                             "canvas_before": before,
                             "proposals": proposals,
                             "witness_index": selection.witness_index,
+                            "witness_token_ids": list(witness),
+                            "production_result": native,
                             "selected_positions": selection.selected_positions,
                             "objective": selection.objective,
-                            "other_objective": other.objective,
-                            "other_witness_index": other.witness_index,
+                            "other_objective": other.objective if other else None,
+                            "other_witness_index": other.witness_index if other else None,
+                            "other_failure": other_native if other is None else None,
                             "committed_positions": commits,
                             "fallback": fallback,
                             "ordinary_commits": sum(witness[p] != eos for p in commits),
@@ -247,16 +307,34 @@ def main() -> None:
                     "method": method,
                     "budget": budget,
                     "active_catalog_indices": active_indices,
+                    "backend": backend,
+                    "exactness_scope": (
+                        "exact_on_support: positional domains, byte CFG, finite EOS slots"
+                        if backend == "rust"
+                        else f"exact_on_support: {len(paths)} active canonical token paths"
+                    ),
+                    "implementation": "production_CFG_on_bytes"
+                    if backend == "rust"
+                    else "exhaustive_catalog_oracle_not_production_CFG_parser",
+                    "grammar_setup_seconds": setup_seconds,
+                    "active_grammar_hash": hashlib.sha256(json.dumps(calls).encode()).hexdigest(),
                     "status": status,
-                    "solver_status_counts": {
-                        "optimal_on_catalog" if method == "exact" else "feasible_on_catalog": len(
-                            trace
+                    "solver_status_counts": dict(
+                        Counter(
+                            t["production_result"]["status"]
+                            if t["production_result"]
+                            else (
+                                "optimal_on_catalog" if method == "exact" else "feasible_on_catalog"
+                            )
+                            for t in trace
                         )
-                    },
+                        + Counter([failure["result"]["status"]] if failure else [])
+                    ),
+                    "failure": failure,
                     "output": decoded,
                     "correct": complete and decoded == task["expected"],
                     "syntax_valid": complete and decoded in catalog,
-                    "forwards": len(trace),
+                    "forwards": forward_calls,
                     "elapsed_with_diagnostics_seconds": elapsed,
                     "elapsed_excluding_shadow_seconds": elapsed
                     - sum(t["diagnostic_seconds"] for t in trace),

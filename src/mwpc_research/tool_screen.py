@@ -105,6 +105,7 @@ class CatalogSelection:
     witness_index: int
     selected_positions: tuple[int, ...]
     objective: float
+    witness_token_ids: tuple[int, ...] = ()
 
 
 def select_catalog(
@@ -147,5 +148,8 @@ def select_catalog(
         )
     matched = tuple(p for p, t, w in proposals if w > 0 and paths[witness][p] == t)
     return CatalogSelection(
-        witness, matched, fsum(w for p, t, w in proposals if paths[witness][p] == t)
+        witness,
+        matched,
+        fsum(w for p, t, w in proposals if paths[witness][p] == t),
+        tuple(paths[witness]),
     )

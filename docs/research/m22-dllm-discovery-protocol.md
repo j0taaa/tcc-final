@@ -103,3 +103,38 @@ dois métodos dentro da geração. O número de candidatos ativos fica registrad
 por índices no catálogo comum. Temperatura 0, seed 220004, 60 pedidos novos,
 orçamento 24; permanece exploratório. Não alegar equivalência com uma gramática
 JSON genérica nem novidade da otimização sob restrições de inventário.
+
+## Confirmação com parser de produção v1
+
+V4 encontrou uma vitória e uma derrota de acerto do exato. O estado inicial da
+vitória (pedido `nested-220004-56`) também foi checado pelo parser Rust: ele
+escolhe `sub(mul(2,1),1)`, enquanto a viabilidade gulosa com reutilização de
+witness escolhe `sub(sub(2,1),1)`. Isso é motivação para confirmar, não uma
+estimativa de ganho médio.
+
+A configuração `m22_tool_parser_confirmation_v1.json` congela 100 pedidos únicos
+não presentes nas três coortes aninhadas anteriores. São novas combinações de
+operandos/operações, mas compartilham templates e domínio pequeno. Nenhuma
+alegação de generalização para novos templates, modelos ou tarefas é autorizada.
+
+Agora ambos usam o parser de produção Rust com bytes e validação independente,
+inclusive o guloso com reutilização de testemunha. A linguagem é uma CFG
+compilada do catálogo filtrado apenas pelos operandos do pedido. O suporte é o
+produto dos domínios posicionais intersectado com essa linguagem e com slots
+EOS finitos. **Pode conter tokenizações alternativas**; não é o mesmo suporte
+canônico mais estreito da triagem. A garantia é `exact_on_support` para esse
+novo contrato comum. Gramática e tokens têm seus dados salvos; a compilação
+por pedido tem tempo separado, que deve entrar na avaliação de latência total.
+
+Métrica primária: chamada final exatamente pedida. Métricas secundárias:
+forwards e tempo em pares que ambos acertaram, e taxa de sucesso por unidade de
+tempo incluindo todos os pedidos. O contrafactual no mesmo estado é diagnóstico;
+não entra no tempo de execução do método. Não chamar esse comparador de EPIC:
+é seleção gulosa com viabilidade exata no mesmo suporte e mesma gramática.
+O resultado total da coorte e todos os casos contrários devem ser publicados.
+
+Os metadados globais de v4 nomeiam a cardinalidade do catálogo-base; os índices
+`active_catalog_indices` em cada linha especificam o suporte ativo menor. A
+versão de confirmação explicita o contrato ativo no campo `exactness_scope`.
+Isso não muda o algoritmo ou os resultados de v4; evita interpretar o ótimo
+como se tivesse sido calculado sobre o catálogo-base inteiro.
