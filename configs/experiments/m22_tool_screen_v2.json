@@ -1,0 +1,25 @@
+{
+  "experiment_id": "m22_tool_screen_v2",
+  "phase": "exploratory_development",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "seed": 220002,
+  "slots": 24,
+  "max_forwards": 24,
+  "task_count": 30,
+  "methods": [
+    "greedy",
+    "exact"
+  ],
+  "proposal_budgets": [
+    8,
+    24
+  ],
+  "support": "1512 canonical nested tool calls; digits 0..3, at most one nested call; EOS-padded; same catalog for all tasks",
+  "weight": "full_vocabulary_probability",
+  "quantization": "NF4 double quantization, bfloat16 compute",
+  "cpu_threads": 1,
+  "max_generation_seconds": 120,
+  "output_root": "results/raw/m22_tool_screen_v2",
+  "family": "nested"
+}

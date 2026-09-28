@@ -70,3 +70,12 @@ Execução opt-in, com pesos previamente em cache e código/configuração conge
 .venv-live/bin/python scripts/exact_commit/run_tool_screen.py \
   --config configs/experiments/m22_tool_screen_v1.json
 ```
+
+## Extensão exploratória v2: chamadas aninhadas
+
+Após v1 não mostrar diferença funcional (ambos 24/24 em cada orçamento), v2
+mantém o protocolo e amplia a dependência estrutural: 1.512 chamadas legais
+com no máximo uma chamada aninhada, literais 0..3, 24 slots, orçamentos 8/24,
+30 pedidos, seed 220002. A instrução pede preservar operações e explicita a
+ordem dos argumentos. Não é uma coorte confirmatória: domínio e configuração
+foram escolhidos após v1. Configuração nova, resultados anteriores preservados.

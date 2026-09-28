@@ -14,6 +14,13 @@ def test_catalog_is_prompt_independent_and_tasks_are_nonliteral():
     assert screen_tasks(220001, 24) != screen_tasks(220002, 24)
 
 
+def test_nested_catalog_covers_tasks_without_being_answer_specific():
+    catalog = tool_catalog("nested")
+    assert len(catalog) == len(set(catalog)) == 1512
+    for seed in (220002, 220102):
+        assert all(t["expected"] in catalog for t in screen_tasks(seed, 100, "nested"))
+
+
 def test_exact_can_reject_one_confident_proposal_for_two_joint_matches():
     paths = ((0, 0, 0), (1, 1, 1))
     proposals = ((0, 0, 0.9), (1, 1, 0.6), (2, 1, 0.6))

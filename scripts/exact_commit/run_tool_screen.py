@@ -63,7 +63,8 @@ def main() -> None:
     ).eval()
     assert model.config._commit_hash == config["revision"]
     eos, mask = 126081, 126336
-    catalog = tool_catalog()
+    family = config.get("family", "simple")
+    catalog = tool_catalog(family)
     paths = []
     for call in catalog:
         tokens = tokenizer.encode(call, add_special_tokens=False)
@@ -83,7 +84,7 @@ def main() -> None:
         "grammar_hash": hashlib.sha256(json.dumps(catalog).encode()).hexdigest(),
         "support_sha256": support_hash,
         "support_policy": config["support"],
-        "exactness_scope": "exact_on_support: 320 canonical legal token paths",
+        "exactness_scope": f"exact_on_support: {len(paths)} canonical legal token paths",
         "hardware": torch.cuda.get_device_name(0),
         "python": platform.python_version(),
         "versions": {
@@ -108,6 +109,14 @@ def main() -> None:
         "Return ONLY the requested function call, without spaces or explanation. "
         "Do not calculate its result.\nRequest: "
     )
+    if family == "nested":
+        instruction = (
+            "Translate the request to a nested calculator function call. Functions: "
+            "add(a,b), sub(a,b), mul(a,b), neg(a), abs(a). "
+            "Literal arguments are digits 0 to 3. Calls may be nested once. "
+            "Preserve every requested operation; do NOT simplify or calculate. "
+            "Return ONLY the call, without spaces or explanation.\nRequest: "
+        )
     warmup_prompt = tokenizer.apply_chat_template(
         [{"role": "user", "content": instruction + "Add 1 and 2."}],
         add_generation_prompt=True,
@@ -118,7 +127,9 @@ def main() -> None:
             model(torch.tensor([warmup_prompt + [mask] * config["slots"]], device="cuda"))
     torch.cuda.synchronize()
     for budget in config["proposal_budgets"]:
-        for task_index, task in enumerate(screen_tasks(config["seed"], config["task_count"])):
+        for task_index, task in enumerate(
+            screen_tasks(config["seed"], config["task_count"], family)
+        ):
             prompt = tokenizer.apply_chat_template(
                 [{"role": "user", "content": instruction + task["instruction"]}],
                 add_generation_prompt=True,
