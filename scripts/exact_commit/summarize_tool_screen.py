@@ -9,7 +9,12 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-from mwpc_research.tool_screen import screen_tasks, select_catalog, tool_catalog
+from mwpc_research.tool_screen import (
+    operand_preserving_indices,
+    screen_tasks,
+    select_catalog,
+    tool_catalog,
+)
 
 
 def summarize(directory: Path) -> dict:
@@ -26,6 +31,13 @@ def summarize(directory: Path) -> dict:
     seen = set()
     gaps = []
     for row in records:
+        active_indices = list(range(len(support["catalog"])))
+        if config.get("preserve_operands", False):
+            active_indices = list(
+                operand_preserving_indices(support["catalog"], row["task"]["instruction"])
+            )
+        assert row.get("active_catalog_indices", active_indices) == active_indices
+        paths = [support["paths"][i] for i in active_indices]
         key = (row["task"]["id"], row["method"], row["budget"])
         assert key not in seen
         seen.add(key)
@@ -71,7 +83,7 @@ def summarize(directory: Path) -> dict:
         assert complete == (row["status"] == "complete")
         if complete:
             assert canvas in paths
-            assert row["output"] == support["catalog"][paths.index(canvas)]
+            assert row["output"] == support["catalog"][active_indices[paths.index(canvas)]]
         assert row["correct"] == (complete and row["output"] == row["task"]["expected"])
         groups[(row["budget"], row["method"])].append(row)
         paired[(row["budget"], key[0])][row["method"]] = row

@@ -90,3 +90,16 @@ pesos ainda iguais às probabilidades originais sobre o vocabulário completo.
 Métodos usam os mesmos números aleatórios em cada passo/posição. Trata-se de
 uma condição estocástica legítima, mas escolhida depois dos resultados neutros;
 qualquer vantagem ainda exige confirmação separada e comparação com temperatura 0.
+
+## Extensão exploratória v4: preservação de operandos durante a geração
+
+V3 produziu diferenças de pontuação, mas não melhoria de acerto ou de forwards
+em respostas corretas. V4 testa geração de programas que preservam exatamente
+as ocorrências de operandos fornecidas pelo usuário. O catálogo é filtrado pelo
+multiconjunto de dígitos do pedido, sem ler a resposta esperada, operação ou
+ordem corretas. Ainda há múltiplos programas possíveis em cada tarefa. Isso é
+uma restrição de conteúdo da tarefa, além da sintaxe, aplicada igualmente aos
+dois métodos dentro da geração. O número de candidatos ativos fica registrado
+por índices no catálogo comum. Temperatura 0, seed 220004, 60 pedidos novos,
+orçamento 24; permanece exploratório. Não alegar equivalência com uma gramática
+JSON genérica nem novidade da otimização sob restrições de inventário.

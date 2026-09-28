@@ -17,7 +17,12 @@ import time
 from datetime import UTC, datetime
 from pathlib import Path
 
-from mwpc_research.tool_screen import screen_tasks, select_catalog, tool_catalog
+from mwpc_research.tool_screen import (
+    operand_preserving_indices,
+    screen_tasks,
+    select_catalog,
+    tool_catalog,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -102,6 +107,7 @@ def main() -> None:
     }
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     (output / "support.json").write_text(json.dumps({"catalog": catalog, "paths": paths}) + "\n")
+    all_paths = paths
     instruction = (
         "You control a calculator using function calls. Available functions: "
         "add(a,b), sub(a,b), mul(a,b), neg(a), abs(a). "
@@ -130,6 +136,12 @@ def main() -> None:
         for task_index, task in enumerate(
             screen_tasks(config["seed"], config["task_count"], family)
         ):
+            active_indices = list(range(len(catalog)))
+            if config.get("preserve_operands", False):
+                active_indices = list(operand_preserving_indices(catalog, task["instruction"]))
+            paths = [all_paths[i] for i in active_indices]
+            rows = [sorted({path[p] for path in paths}) for p in range(config["slots"])]
+            row_tensors = [torch.tensor(row, device="cuda") for row in rows]
             prompt = tokenizer.apply_chat_template(
                 [{"role": "user", "content": instruction + task["instruction"]}],
                 add_generation_prompt=True,
@@ -234,6 +246,7 @@ def main() -> None:
                     "task": task,
                     "method": method,
                     "budget": budget,
+                    "active_catalog_indices": active_indices,
                     "status": status,
                     "solver_status_counts": {
                         "optimal_on_catalog" if method == "exact" else "feasible_on_catalog": len(

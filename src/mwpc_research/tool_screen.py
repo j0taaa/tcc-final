@@ -7,6 +7,7 @@ Model dependencies are confined to the executable experiment driver.
 
 from __future__ import annotations
 
+from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass
 from math import fsum, isfinite
@@ -87,6 +88,16 @@ def screen_tasks(seed: int, count: int, family: str = "simple") -> tuple[dict[st
         expected = f"{op}({a},{b})" if op in ("add", "sub", "mul") else f"{op}({a})"
         tasks.append({"id": f"tool-{seed}-{i}", "instruction": instruction, "expected": expected})
     return tuple(tasks)
+
+
+def operand_preserving_indices(catalog: Sequence[str], instruction: str) -> tuple[int, ...]:
+    """Preserve the literal multiset in the request, without reading its answer."""
+    operands = Counter(c for c in instruction if c.isascii() and c.isdigit())
+    if not operands:
+        raise ValueError("request has no literal operands")
+    return tuple(
+        i for i, call in enumerate(catalog) if Counter(c for c in call if c.isdigit()) == operands
+    )
 
 
 @dataclass(frozen=True)

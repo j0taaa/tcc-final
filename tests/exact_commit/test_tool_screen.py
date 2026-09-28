@@ -3,7 +3,12 @@ from random import Random
 
 import pytest
 
-from mwpc_research.tool_screen import screen_tasks, select_catalog, tool_catalog
+from mwpc_research.tool_screen import (
+    operand_preserving_indices,
+    screen_tasks,
+    select_catalog,
+    tool_catalog,
+)
 
 
 def test_catalog_is_prompt_independent_and_tasks_are_nonliteral():
@@ -19,6 +24,17 @@ def test_nested_catalog_covers_tasks_without_being_answer_specific():
     assert len(catalog) == len(set(catalog)) == 1512
     for seed in (220002, 220102):
         assert all(t["expected"] in catalog for t in screen_tasks(seed, 100, "nested"))
+
+
+def test_operand_inventory_reads_request_not_answer_and_retains_alternatives():
+    catalog = tool_catalog("nested")
+    for task in screen_tasks(220004, 60, "nested"):
+        indices = operand_preserving_indices(catalog, task["instruction"])
+        assert len(indices) > 1
+        assert task["expected"] in [catalog[i] for i in indices]
+    assert operand_preserving_indices(catalog, "Add 1 to the product of 2 and 3.") == (
+        operand_preserving_indices(catalog, "Subtract 3 from the sum of 1 and 2.")
+    )
 
 
 def test_exact_can_reject_one_confident_proposal_for_two_joint_matches():
