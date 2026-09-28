@@ -184,7 +184,9 @@ def summarize(directory):
                 "method": name,
                 "n": len(rows),
                 "correct": sum(r["correct"] for r in rows),
-                "numeric_correct": sum(r["numeric_correct"] is True for r in rows),
+                "numeric_correct": None
+                if config.get("schema_calls", False)
+                else sum(r["numeric_correct"] is True for r in rows),
                 "valid": sum(r["syntax_valid"] for r in rows),
                 "forwards": sum(r["forwards"] for r in rows),
                 "median_total_ms": 1000 * median(r["total_seconds_including_setup"] for r in rows),

@@ -76,7 +76,8 @@ def build(
     maps = [{(r["task"]["id"], r["method"]): r for r in rows} for rows in (a, b)]
     ids = [t["id"] for t in config["tasks"]]
     table, pairs = [], {}
-    comparator = config["primary_comparator"]
+    is_schema = config.get("schema_calls", False)
+    comparator = config.get("primary_comparator", "epic_lexical_24")
     for policy in policies:
         name = policy["name"]
         repetitions = [[m[tid, name] for tid in ids] for m in maps]
@@ -122,14 +123,14 @@ def build(
         table.append(
             {
                 "method": name,
-                "analysis": "frozen_confirmation"
+                "analysis": ("external_pilot" if is_schema else "frozen_confirmation")
                 if name in primary_names
                 else "secondary_ablation",
                 "n": len(ids),
                 "correct": [sum(r["correct"] for r in rows) for rows in repetitions],
-                "numeric_correct": [
-                    sum(r["numeric_correct"] is True for r in rows) for rows in repetitions
-                ],
+                "numeric_correct": None
+                if is_schema
+                else [sum(r["numeric_correct"] is True for r in rows) for rows in repetitions],
                 "valid": [sum(r["syntax_valid"] for r in rows) for rows in repetitions],
                 "forwards": [sum(r["forwards"] for r in rows) for rows in repetitions],
                 "median_total_ms": 1000 * median(total),
@@ -149,12 +150,17 @@ def build(
         "paired_vs_primary_comparator": pairs,
         "primary_comparator": comparator,
         "scope": (
+            "eight schema-finite public BFCL cases; own strict AST evaluator, not official "
+            "BFCL score; two repetitions, not independent samples; exploratory CIs"
+        )
+        if is_schema
+        else (
             "same synthetic calculator templates; two timing repetitions, not independent "
             "samples; CIs unadjusted across secondary comparisons"
         ),
     }
     lines = [
-        "# M24 — confirmação pareada",
+        "# M24 — piloto externo pareado" if is_schema else "# M24 — confirmação pareada",
         "",
         result["scope"],
         "",
@@ -163,9 +169,14 @@ def build(
         "|---|---:|---:|---:|---:|---:|",
     ]
     for r in table:
+        numeric = (
+            "não se aplica"
+            if r["numeric_correct"] is None
+            else f"{r['numeric_correct'][0]} / {r['numeric_correct'][1]}"
+        )
         lines.append(
             f"| {r['method']} | {r['correct'][0]} / {r['correct'][1]} de {r['n']} | "
-            f"{r['numeric_correct'][0]} / {r['numeric_correct'][1]} | "
+            f"{numeric} | "
             f"{r['forwards'][0]} / {r['forwards'][1]} | "
             f"{r['median_total_ms']:.1f} | {r['p95_total_ms']:.1f} |"
         )
