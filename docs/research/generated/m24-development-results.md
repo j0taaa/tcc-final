@@ -27,6 +27,6 @@ Tempo total inclui setup por pedido e recuperação oficial; exclui carregar o m
 | exact_b24 | 19/30 | 30/30 | 62 | 271.7 | 410.5 |
 | margin_0 | 19/30 | 30/30 | 62 | 885.8 | 1106.6 |
 
-Candidatas pela regra congelada: confidence_0.8, exact_b4, confidence_0.2.
+Regra de seleção (aplicada à confirmação apenas na fase de desenvolvimento): confidence_0.8, exact_b4, confidence_0.2.
 
 Acurácia observada não prova superioridade populacional. Todos os métodos e falhas estão incluídos.

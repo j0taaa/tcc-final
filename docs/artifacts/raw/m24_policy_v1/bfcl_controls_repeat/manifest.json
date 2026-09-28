@@ -1,0 +1,12 @@
+{
+  "source_experiment": "m24_bfcl_controls_repeat_v1",
+  "records": 48,
+  "uncompressed_results_sha256": "03db52cf0ecab40e5c8679a8afa80aefed6e39fccac0241a37cf2e589b4efb59",
+  "sha256": {
+    "config.json": "9d83d2ead515392d282e2400bdf3d0af62977cf93f3d8d507b97f0f7c383a6ee",
+    "metadata.json": "c64b6a6d99c5588f9caba25b57d5f8094a157ef472167c1b8df6a1738e64f280",
+    "support.json": "298e121ddd91bfa4ca834414c8375a662d57ca8a09786ca376840e7283971d9e",
+    "token_emissions.json": "7ba84418078b032f295cbd22973f4f126b43252b238d12809144a666b11eabd9",
+    "results.jsonl.gz": "3ccbe5d31dfa1b84861995a4c91e2074cda3eefcc672123eb01ab3491b2f1552"
+  }
+}

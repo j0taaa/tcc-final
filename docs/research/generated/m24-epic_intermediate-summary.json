@@ -1,0 +1,79 @@
+{
+  "experiment_id": "m24_epic_intermediate_v1",
+  "phase": "secondary EPIC schedule controls near selected policies forward budgets; primary comparison unchanged",
+  "records": 300,
+  "source_commit": "ceb594185a6329ac6a7c365f340e7e71614e1354",
+  "table": [
+    {
+      "method": "epic_lexical_6",
+      "n": 100,
+      "correct": 77,
+      "numeric_correct": 84,
+      "valid": 98,
+      "forwards": 592,
+      "median_total_ms": 783.4850694052875,
+      "p95_total_ms": 1121.9990968238562,
+      "median_decode_ms": 776.6524754697457,
+      "statuses": {
+        "complete": 100
+      },
+      "recovery_statuses": {
+        "not_needed": 88,
+        "recovered": 12
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.819404125213623
+    },
+    {
+      "method": "epic_lexical_8",
+      "n": 100,
+      "correct": 74,
+      "numeric_correct": 86,
+      "valid": 96,
+      "forwards": 772,
+      "median_total_ms": 963.0042824428529,
+      "p95_total_ms": 1241.3561650319025,
+      "median_decode_ms": 956.0167975141667,
+      "statuses": {
+        "complete": 100
+      },
+      "recovery_statuses": {
+        "not_needed": 87,
+        "recovered": 13
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.819404125213623
+    },
+    {
+      "method": "epic_lexical_12",
+      "n": 100,
+      "correct": 72,
+      "numeric_correct": 92,
+      "valid": 95,
+      "forwards": 1186,
+      "median_total_ms": 1332.3431555181742,
+      "p95_total_ms": 1626.8738941289485,
+      "median_decode_ms": 1324.8745845048688,
+      "statuses": {
+        "complete": 100
+      },
+      "recovery_statuses": {
+        "not_needed": 97,
+        "recovered": 3
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.819404125213623
+    }
+  ],
+  "frontier": [
+    "epic_lexical_6"
+  ],
+  "frontier_scope": "catalog-only MAP is excluded as a dominator of production candidates",
+  "confirmation_candidates": []
+}

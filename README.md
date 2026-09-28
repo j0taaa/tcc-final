@@ -5,11 +5,15 @@ Research and implementation workspace for the TCC **Exact Maximum-Weight Paralle
 The project implements an exact, certificate-producing optimizer for selecting the maximum-weight compatible set of token proposals at one denoising step. EPIC's serial and heuristic decoders remain read-only baselines. Results over pruned alternatives are reported as exact on the represented support, never as full-vocabulary or future-trajectory optimality.
 
 The current research focus is **selection during actual dLLM generation**.
-[M23 findings](docs/research/m23-findings.md) compare the Rust optimizer with the
-actual EPIC decoder, natural and byte lexemes, several schedules, and EPIC's
-official recovery. MWPC has lower measured latency in specific configurations;
-EPIC with more steps achieves higher call accuracy. There is no general
-accuracy-superiority claim. Both repetitions and all failures are archived.
+[M24 findings](docs/research/m24-findings.md) report 3,856 live generations across
+26 policy configurations, with actual EPIC decoding and official recovery.
+Simple confidence/budget policies offer useful measured cost–quality tradeoffs
+on synthetic tool calls; counterfactual margins did not justify their cost.
+On the narrow eight-case external pilot, enumerative MAP was the best measured
+small-catalog option. There is no general accuracy-superiority or statistically
+established two-point non-inferiority claim. All repetitions and failures remain
+archived; [one command regenerates the campaign](docs/research/m24-reproduction.md).
+[M23](docs/research/m23-findings.md) remains the earlier byte/lexical EPIC audit.
 [M22](docs/research/generated/m22-results.md) remains the separate, matched
 comparison against confidence-greedy feasibility, which must not be called EPIC.
 JSON repair without model inference remains an auxiliary experiment.
@@ -37,7 +41,7 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 The archived **M21 2026-09-28 source snapshot** includes certified JSON repair and
 4,992 controlled comparison calls (M21). Its local bundle, PDF and checksums are
 described in [`docs/releases/repair-2026-09-28.md`](docs/releases/repair-2026-09-28.md).
-That bundle/PDF predates M22/M23; use the current checkout for their live results.
+That bundle/PDF predates M22–M24; use the current checkout for their live results.
 The historical v0.2.0 and M20 bundle/patch remain unchanged. No remote publication
 was performed. From the new delivery directory:
 

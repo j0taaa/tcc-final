@@ -1,0 +1,160 @@
+{
+  "cohorts": {
+    "smoke": {
+      "records": 40,
+      "producing_commits": [
+        "db6420172ce0f2cb9a4b6f6667f714d7fda8bbd0"
+      ],
+      "manifest_sha256": "c54fb4f4a036b0edc8dbf57b78355a7359be53dabd61f809afbd3b69e1273344",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_policy_smoke_v1.json"
+    },
+    "development": {
+      "records": 600,
+      "producing_commits": [
+        "080e252489a908138b0c9308337c5bf15a0a5d2c"
+      ],
+      "manifest_sha256": "150852db691dd3aab41c6c0fd2e523cb99f7a1e0b992d706af92eb61e3054e02",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_policy_development_v1.json"
+    },
+    "confirmation": {
+      "records": 700,
+      "producing_commits": [
+        "5d8bc52722ebbb179b3f3515850d4e3ca5d32446"
+      ],
+      "manifest_sha256": "e876eb61c8b174c31c35d7410fd3086078fbf5d77eced8a741ce352d56edb276",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_policy_confirmation_v1.json"
+    },
+    "repeat": {
+      "records": 700,
+      "producing_commits": [
+        "ac82bf678697c61f13a81378b245e852351c76c8"
+      ],
+      "manifest_sha256": "1652e02703a75b7a7f2ea54dbde00ea81097bda7ab792eb2b2b6f23df360ae80",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_policy_repeat_v1.json"
+    },
+    "secondary": {
+      "records": 400,
+      "producing_commits": [
+        "ac82bf678697c61f13a81378b245e852351c76c8"
+      ],
+      "manifest_sha256": "7c5c395b9507ad29101c0d6917c42288362a0c14c7aab08f6d37bd65a59db3e3",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_policy_secondary_v1.json"
+    },
+    "secondary_repeat": {
+      "records": 400,
+      "producing_commits": [
+        "ac82bf678697c61f13a81378b245e852351c76c8"
+      ],
+      "manifest_sha256": "da8bf1ed50fa5a47403ba13e4cb401e7d817dbfa946a6367cd219aa6592b52d6",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_policy_secondary_repeat_v1.json"
+    },
+    "bfcl": {
+      "records": 160,
+      "producing_commits": [
+        "ed3ac841c24b13d6b2fa05fba1206cb825028e2b"
+      ],
+      "manifest_sha256": "260b9ff311ed86fb44f545705c084b898ea24cac8f260086062b937cba4aa6e7",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_bfcl_enum_pilot_v1.json"
+    },
+    "bfcl_repeat": {
+      "records": 160,
+      "producing_commits": [
+        "8a23da24bb6f6be6423984e6ae3e998e8fec0c4d"
+      ],
+      "manifest_sha256": "7c0edbe9d1b9079ed3056dcb52459ef099bddc298ccdadc6dae1197ac58ad7cd",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_bfcl_enum_repeat_v1.json"
+    },
+    "epic_intermediate": {
+      "records": 300,
+      "producing_commits": [
+        "ceb594185a6329ac6a7c365f340e7e71614e1354"
+      ],
+      "manifest_sha256": "164cfd537737a06e313ef00c9830b67315c2b84c4d660242ab324a21ab19a44e",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_epic_intermediate_v1.json"
+    },
+    "epic_intermediate_repeat": {
+      "records": 300,
+      "producing_commits": [
+        "f8b762b0f01f6985584147ab3c129d69fe4ba060"
+      ],
+      "manifest_sha256": "fe8b2eebc734f33d76fe107bd15dc02f3ce14f246fbd4ad429ceabb6d99c0c76",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_epic_intermediate_repeat_v1.json"
+    },
+    "bfcl_controls": {
+      "records": 48,
+      "producing_commits": [
+        "48230ab000443d23308d80e80e9739fe31b54ee9"
+      ],
+      "manifest_sha256": "4cccd3538dda10199c96f2eb55a5f01407ff55c4c9029f9b57123c406772c17e",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_bfcl_controls_v1.json"
+    },
+    "bfcl_controls_repeat": {
+      "records": 48,
+      "producing_commits": [
+        "0d7c126af7f7e8bec85e33ed33b05295b898b062"
+      ],
+      "manifest_sha256": "ec94729ca0877f07bcfadfdfdd0e63803f8f2c9f405c4db1c03554c8f09ec87c",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m24_bfcl_controls_repeat_v1.json"
+    }
+  },
+  "live_final_generations": 3856,
+  "additional_review_canvases": 48,
+  "unique_task_ids": 138,
+  "policies": [
+    "catalog_map24",
+    "catalog_map4",
+    "confidence_0.2",
+    "confidence_0.5",
+    "confidence_0.8",
+    "epic_lexical_12",
+    "epic_lexical_2",
+    "epic_lexical_24",
+    "epic_lexical_4",
+    "epic_lexical_6",
+    "epic_lexical_8",
+    "exact_b1",
+    "exact_b12",
+    "exact_b2",
+    "exact_b24",
+    "exact_b4",
+    "exact_b8",
+    "exact_multi2",
+    "exact_multi3",
+    "exact_review",
+    "greedy_b8",
+    "greedy_confidence_0.2",
+    "greedy_confidence_0.8",
+    "margin_0",
+    "margin_0.02",
+    "margin_0.1"
+  ],
+  "status_counts": {
+    "complete": 3856
+  },
+  "selector_status_counts": {
+    "catalog_map": 552,
+    "complete": 1392,
+    "feasible_on_support": 2746,
+    "optimal": 8437
+  },
+  "counterfactual_query_status_counts": {
+    "optimal": 3995
+  },
+  "total_model_forwards": 24404,
+  "model_revisions": [
+    "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+  ],
+  "tokenizer_revisions": [
+    "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+  ],
+  "hardware": [
+    "NVIDIA GeForce RTX 3080 Ti"
+  ],
+  "limitations": [
+    "repetitions are not independent tasks",
+    "100 confirmation requests use the same synthetic templates as development",
+    "eight external cases cover only 8/658 audited BFCL examples and four function names",
+    "historical greedy row scope labels name the exact feasibility parser; their feasible_on_support status does not guarantee optimal proposal selection",
+    "GPU allocation includes model weights; CPU peak memory was not measured"
+  ]
+}

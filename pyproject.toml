@@ -46,6 +46,14 @@ exclude = [
   "**/target/**", "**/.git/**", "**/.git", "**/__pycache__/**",
   "**/.venv*/**", "**/.cache/**", "**/.pytest_cache/**", "**/.ruff_cache/**",
   "**/.mypy_cache/**", "**/build/**", "**/dist/**", "**/*.so", "**/*.pyc",
+  # Full M24 campaigns are research data in Git, not library-installation inputs.
+  # Keep the small smoke cohort used by offline regression tests.
+  "/docs/artifacts/raw/m24_policy_v1/development/**",
+  "/docs/artifacts/raw/m24_policy_v1/confirmation/**",
+  "/docs/artifacts/raw/m24_policy_v1/repeat/**",
+  "/docs/artifacts/raw/m24_policy_v1/secondary*/**",
+  "/docs/artifacts/raw/m24_policy_v1/bfcl*/**",
+  "/docs/artifacts/raw/m24_policy_v1/epic_intermediate*/**",
 ]
 
 [tool.pytest.ini_options]

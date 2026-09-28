@@ -1,0 +1,930 @@
+{
+  "smoke": {
+    "catalog_map4": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "confidence_0.2": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "confidence_0.5": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "epic_lexical_2": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "epic_lexical_24": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "epic_lexical_4": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "exact_b1": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "exact_b12": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "exact_b2": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "exact_b24": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "exact_b4": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "exact_b8": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "exact_multi2": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "exact_multi3": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "exact_review": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "greedy_b8": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "margin_0": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "margin_0.02": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "margin_0.1": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    }
+  },
+  "development": {
+    "catalog_map4": {
+      "n": 30,
+      "primary_correct": 27,
+      "after_whitespace_correct": 27,
+      "changed_grades": []
+    },
+    "confidence_0.2": {
+      "n": 30,
+      "primary_correct": 24,
+      "after_whitespace_correct": 24,
+      "changed_grades": []
+    },
+    "confidence_0.5": {
+      "n": 30,
+      "primary_correct": 24,
+      "after_whitespace_correct": 24,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 30,
+      "primary_correct": 28,
+      "after_whitespace_correct": 28,
+      "changed_grades": []
+    },
+    "epic_lexical_2": {
+      "n": 30,
+      "primary_correct": 21,
+      "after_whitespace_correct": 21,
+      "changed_grades": []
+    },
+    "epic_lexical_24": {
+      "n": 30,
+      "primary_correct": 28,
+      "after_whitespace_correct": 28,
+      "changed_grades": []
+    },
+    "epic_lexical_4": {
+      "n": 30,
+      "primary_correct": 22,
+      "after_whitespace_correct": 22,
+      "changed_grades": []
+    },
+    "exact_b1": {
+      "n": 30,
+      "primary_correct": 28,
+      "after_whitespace_correct": 28,
+      "changed_grades": []
+    },
+    "exact_b12": {
+      "n": 30,
+      "primary_correct": 23,
+      "after_whitespace_correct": 23,
+      "changed_grades": []
+    },
+    "exact_b2": {
+      "n": 30,
+      "primary_correct": 24,
+      "after_whitespace_correct": 24,
+      "changed_grades": []
+    },
+    "exact_b24": {
+      "n": 30,
+      "primary_correct": 19,
+      "after_whitespace_correct": 19,
+      "changed_grades": []
+    },
+    "exact_b4": {
+      "n": 30,
+      "primary_correct": 27,
+      "after_whitespace_correct": 27,
+      "changed_grades": []
+    },
+    "exact_b8": {
+      "n": 30,
+      "primary_correct": 24,
+      "after_whitespace_correct": 24,
+      "changed_grades": []
+    },
+    "exact_multi2": {
+      "n": 30,
+      "primary_correct": 19,
+      "after_whitespace_correct": 19,
+      "changed_grades": []
+    },
+    "exact_multi3": {
+      "n": 30,
+      "primary_correct": 21,
+      "after_whitespace_correct": 21,
+      "changed_grades": []
+    },
+    "exact_review": {
+      "n": 30,
+      "primary_correct": 20,
+      "after_whitespace_correct": 20,
+      "changed_grades": []
+    },
+    "greedy_b8": {
+      "n": 30,
+      "primary_correct": 23,
+      "after_whitespace_correct": 23,
+      "changed_grades": []
+    },
+    "margin_0": {
+      "n": 30,
+      "primary_correct": 19,
+      "after_whitespace_correct": 19,
+      "changed_grades": []
+    },
+    "margin_0.02": {
+      "n": 30,
+      "primary_correct": 24,
+      "after_whitespace_correct": 24,
+      "changed_grades": []
+    },
+    "margin_0.1": {
+      "n": 30,
+      "primary_correct": 27,
+      "after_whitespace_correct": 27,
+      "changed_grades": []
+    }
+  },
+  "confirmation": {
+    "confidence_0.2": {
+      "n": 100,
+      "primary_correct": 74,
+      "after_whitespace_correct": 74,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 100,
+      "primary_correct": 87,
+      "after_whitespace_correct": 87,
+      "changed_grades": []
+    },
+    "epic_lexical_2": {
+      "n": 100,
+      "primary_correct": 72,
+      "after_whitespace_correct": 72,
+      "changed_grades": []
+    },
+    "epic_lexical_24": {
+      "n": 100,
+      "primary_correct": 89,
+      "after_whitespace_correct": 89,
+      "changed_grades": []
+    },
+    "epic_lexical_4": {
+      "n": 100,
+      "primary_correct": 74,
+      "after_whitespace_correct": 74,
+      "changed_grades": []
+    },
+    "exact_b24": {
+      "n": 100,
+      "primary_correct": 54,
+      "after_whitespace_correct": 54,
+      "changed_grades": []
+    },
+    "exact_b4": {
+      "n": 100,
+      "primary_correct": 86,
+      "after_whitespace_correct": 86,
+      "changed_grades": []
+    }
+  },
+  "repeat": {
+    "confidence_0.2": {
+      "n": 100,
+      "primary_correct": 74,
+      "after_whitespace_correct": 74,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 100,
+      "primary_correct": 87,
+      "after_whitespace_correct": 87,
+      "changed_grades": []
+    },
+    "epic_lexical_2": {
+      "n": 100,
+      "primary_correct": 72,
+      "after_whitespace_correct": 72,
+      "changed_grades": []
+    },
+    "epic_lexical_24": {
+      "n": 100,
+      "primary_correct": 89,
+      "after_whitespace_correct": 89,
+      "changed_grades": []
+    },
+    "epic_lexical_4": {
+      "n": 100,
+      "primary_correct": 75,
+      "after_whitespace_correct": 75,
+      "changed_grades": []
+    },
+    "exact_b24": {
+      "n": 100,
+      "primary_correct": 54,
+      "after_whitespace_correct": 54,
+      "changed_grades": []
+    },
+    "exact_b4": {
+      "n": 100,
+      "primary_correct": 86,
+      "after_whitespace_correct": 86,
+      "changed_grades": []
+    }
+  },
+  "secondary": {
+    "catalog_map24": {
+      "n": 100,
+      "primary_correct": 58,
+      "after_whitespace_correct": 58,
+      "changed_grades": []
+    },
+    "exact_multi3": {
+      "n": 100,
+      "primary_correct": 59,
+      "after_whitespace_correct": 59,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.2": {
+      "n": 100,
+      "primary_correct": 73,
+      "after_whitespace_correct": 73,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.8": {
+      "n": 100,
+      "primary_correct": 91,
+      "after_whitespace_correct": 91,
+      "changed_grades": []
+    }
+  },
+  "secondary_repeat": {
+    "catalog_map24": {
+      "n": 100,
+      "primary_correct": 58,
+      "after_whitespace_correct": 58,
+      "changed_grades": []
+    },
+    "exact_multi3": {
+      "n": 100,
+      "primary_correct": 59,
+      "after_whitespace_correct": 59,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.2": {
+      "n": 100,
+      "primary_correct": 73,
+      "after_whitespace_correct": 73,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.8": {
+      "n": 100,
+      "primary_correct": 91,
+      "after_whitespace_correct": 91,
+      "changed_grades": []
+    }
+  },
+  "bfcl": {
+    "catalog_map4": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "confidence_0.2": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "confidence_0.5": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "epic_lexical_2": {
+      "n": 8,
+      "primary_correct": 6,
+      "after_whitespace_correct": 6,
+      "changed_grades": []
+    },
+    "epic_lexical_24": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 7,
+      "changed_grades": []
+    },
+    "epic_lexical_4": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 8,
+      "changed_grades": [
+        {
+          "task_id": "live_simple_175-101-0",
+          "before": false,
+          "after": true,
+          "raw_output": "\n\n\n\n\n    get_service_id\n\n\n\n\n\n (service_id = 2)\n",
+          "normalized": "get_service_id ( service_id = 2 )"
+        }
+      ]
+    },
+    "exact_b1": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_b12": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 7,
+      "changed_grades": []
+    },
+    "exact_b2": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_b24": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_b4": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_b8": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_multi2": {
+      "n": 8,
+      "primary_correct": 5,
+      "after_whitespace_correct": 5,
+      "changed_grades": []
+    },
+    "exact_multi3": {
+      "n": 8,
+      "primary_correct": 5,
+      "after_whitespace_correct": 5,
+      "changed_grades": []
+    },
+    "exact_review": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 7,
+      "changed_grades": []
+    },
+    "greedy_b8": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "margin_0": {
+      "n": 8,
+      "primary_correct": 5,
+      "after_whitespace_correct": 5,
+      "changed_grades": []
+    },
+    "margin_0.02": {
+      "n": 8,
+      "primary_correct": 6,
+      "after_whitespace_correct": 6,
+      "changed_grades": []
+    },
+    "margin_0.1": {
+      "n": 8,
+      "primary_correct": 6,
+      "after_whitespace_correct": 6,
+      "changed_grades": []
+    }
+  },
+  "bfcl_repeat": {
+    "catalog_map4": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "confidence_0.2": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "confidence_0.5": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "epic_lexical_2": {
+      "n": 8,
+      "primary_correct": 4,
+      "after_whitespace_correct": 4,
+      "changed_grades": []
+    },
+    "epic_lexical_24": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 7,
+      "changed_grades": []
+    },
+    "epic_lexical_4": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 8,
+      "changed_grades": [
+        {
+          "task_id": "live_simple_175-101-0",
+          "before": false,
+          "after": true,
+          "raw_output": "\n\n\n\n\n    get_service_id\n\n\n\n\n\n (service_id = 2)\n",
+          "normalized": "get_service_id ( service_id = 2 )"
+        }
+      ]
+    },
+    "exact_b1": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_b12": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 7,
+      "changed_grades": []
+    },
+    "exact_b2": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_b24": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_b4": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_b8": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "exact_multi2": {
+      "n": 8,
+      "primary_correct": 5,
+      "after_whitespace_correct": 5,
+      "changed_grades": []
+    },
+    "exact_multi3": {
+      "n": 8,
+      "primary_correct": 5,
+      "after_whitespace_correct": 5,
+      "changed_grades": []
+    },
+    "exact_review": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 7,
+      "changed_grades": []
+    },
+    "greedy_b8": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "margin_0": {
+      "n": 8,
+      "primary_correct": 5,
+      "after_whitespace_correct": 5,
+      "changed_grades": []
+    },
+    "margin_0.02": {
+      "n": 8,
+      "primary_correct": 6,
+      "after_whitespace_correct": 6,
+      "changed_grades": []
+    },
+    "margin_0.1": {
+      "n": 8,
+      "primary_correct": 6,
+      "after_whitespace_correct": 6,
+      "changed_grades": []
+    }
+  },
+  "epic_intermediate": {
+    "epic_lexical_12": {
+      "n": 100,
+      "primary_correct": 72,
+      "after_whitespace_correct": 77,
+      "changed_grades": [
+        {
+          "task_id": "nested-240104-12",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n \n\n \n\n \n\n\n(add(1, 3), 2)",
+          "normalized": "mul ( add ( 1 , 3 ) , 2 )"
+        },
+        {
+          "task_id": "nested-240104-42",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n\n\n   \n(\n\n \n        add(1, 1), 3)",
+          "normalized": "mul ( add ( 1 , 1 ) , 3 )"
+        },
+        {
+          "task_id": "nested-240104-72",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n(\n    \n    \n    add(3, 3), 0)",
+          "normalized": "mul ( add ( 3 , 3 ) , 0 )"
+        },
+        {
+          "task_id": "nested-240104-162",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n\n\n \n\n \n\n\n(add(3, 2), 3)",
+          "normalized": "mul ( add ( 3 , 2 ) , 3 )"
+        },
+        {
+          "task_id": "nested-240104-192",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n\n\n\n\n(\n\n \n\n add(0, 1), 3)",
+          "normalized": "mul ( add ( 0 , 1 ) , 3 )"
+        }
+      ]
+    },
+    "epic_lexical_6": {
+      "n": 100,
+      "primary_correct": 77,
+      "after_whitespace_correct": 79,
+      "changed_grades": [
+        {
+          "task_id": "nested-240104-15",
+          "before": false,
+          "after": true,
+          "raw_output": "add\n  \n \n  \n \n(add(0, 1), 2)",
+          "normalized": "add ( add ( 0 , 1 ) , 2 )"
+        },
+        {
+          "task_id": "nested-240104-192",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n(\n\n \n\n \n\n    add(0, 1), 3)",
+          "normalized": "mul ( add ( 0 , 1 ) , 3 )"
+        }
+      ]
+    },
+    "epic_lexical_8": {
+      "n": 100,
+      "primary_correct": 74,
+      "after_whitespace_correct": 78,
+      "changed_grades": [
+        {
+          "task_id": "nested-240104-12",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n\n\n \n\n \n\n\n(add(1, 3), 2)",
+          "normalized": "mul ( add ( 1 , 3 ) , 2 )"
+        },
+        {
+          "task_id": "nested-240104-72",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n\n\n \n\n \n\n\n(add(3, 3), 0)",
+          "normalized": "mul ( add ( 3 , 3 ) , 0 )"
+        },
+        {
+          "task_id": "nested-240104-162",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n\n\n \n\n \n\n\n(add(3, 2), 3)",
+          "normalized": "mul ( add ( 3 , 2 ) , 3 )"
+        },
+        {
+          "task_id": "nested-240104-192",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n \n\n \n\n \n\n\n(add(0, 1), 3)",
+          "normalized": "mul ( add ( 0 , 1 ) , 3 )"
+        }
+      ]
+    }
+  },
+  "epic_intermediate_repeat": {
+    "epic_lexical_12": {
+      "n": 100,
+      "primary_correct": 72,
+      "after_whitespace_correct": 77,
+      "changed_grades": [
+        {
+          "task_id": "nested-240104-12",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n \n\n \n\n \n\n\n(add(1, 3), 2)",
+          "normalized": "mul ( add ( 1 , 3 ) , 2 )"
+        },
+        {
+          "task_id": "nested-240104-42",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n\n\n   \n(\n\n \n        add(1, 1), 3)",
+          "normalized": "mul ( add ( 1 , 1 ) , 3 )"
+        },
+        {
+          "task_id": "nested-240104-72",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n(\n    \n    \n    add(3, 3), 0)",
+          "normalized": "mul ( add ( 3 , 3 ) , 0 )"
+        },
+        {
+          "task_id": "nested-240104-162",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n\n\n \n\n \n\n\n(add(3, 2), 3)",
+          "normalized": "mul ( add ( 3 , 2 ) , 3 )"
+        },
+        {
+          "task_id": "nested-240104-192",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n\n\n\n\n(\n\n \n\n add(0, 1), 3)",
+          "normalized": "mul ( add ( 0 , 1 ) , 3 )"
+        }
+      ]
+    },
+    "epic_lexical_6": {
+      "n": 100,
+      "primary_correct": 77,
+      "after_whitespace_correct": 79,
+      "changed_grades": [
+        {
+          "task_id": "nested-240104-15",
+          "before": false,
+          "after": true,
+          "raw_output": "add\n  \n \n  \n \n(add(0, 1), 2)",
+          "normalized": "add ( add ( 0 , 1 ) , 2 )"
+        },
+        {
+          "task_id": "nested-240104-192",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n(\n\n \n\n \n\n    add(0, 1), 3)",
+          "normalized": "mul ( add ( 0 , 1 ) , 3 )"
+        }
+      ]
+    },
+    "epic_lexical_8": {
+      "n": 100,
+      "primary_correct": 74,
+      "after_whitespace_correct": 78,
+      "changed_grades": [
+        {
+          "task_id": "nested-240104-12",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n\n\n \n\n \n\n\n(add(1, 3), 2)",
+          "normalized": "mul ( add ( 1 , 3 ) , 2 )"
+        },
+        {
+          "task_id": "nested-240104-72",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n\n\n \n\n \n\n\n(add(3, 3), 0)",
+          "normalized": "mul ( add ( 3 , 3 ) , 0 )"
+        },
+        {
+          "task_id": "nested-240104-162",
+          "before": false,
+          "after": true,
+          "raw_output": "mul \n\n\n \n\n \n\n\n(add(3, 2), 3)",
+          "normalized": "mul ( add ( 3 , 2 ) , 3 )"
+        },
+        {
+          "task_id": "nested-240104-192",
+          "before": false,
+          "after": true,
+          "raw_output": "mul\n \n\n \n\n \n\n\n(add(0, 1), 3)",
+          "normalized": "mul ( add ( 0 , 1 ) , 3 )"
+        }
+      ]
+    }
+  },
+  "bfcl_controls": {
+    "catalog_map24": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "epic_lexical_12": {
+      "n": 8,
+      "primary_correct": 6,
+      "after_whitespace_correct": 6,
+      "changed_grades": []
+    },
+    "epic_lexical_6": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 7,
+      "changed_grades": []
+    },
+    "epic_lexical_8": {
+      "n": 8,
+      "primary_correct": 6,
+      "after_whitespace_correct": 7,
+      "changed_grades": [
+        {
+          "task_id": "live_simple_179-104-0",
+          "before": false,
+          "after": true,
+          "raw_output": "\n get_service_id \n(province_id=2,service_id= 2)\n",
+          "normalized": "get_service_id ( province_id = 2 , service_id = 2 )"
+        }
+      ]
+    },
+    "greedy_confidence_0.2": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.8": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    }
+  },
+  "bfcl_controls_repeat": {
+    "catalog_map24": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "epic_lexical_12": {
+      "n": 8,
+      "primary_correct": 6,
+      "after_whitespace_correct": 6,
+      "changed_grades": []
+    },
+    "epic_lexical_6": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 7,
+      "changed_grades": []
+    },
+    "epic_lexical_8": {
+      "n": 8,
+      "primary_correct": 7,
+      "after_whitespace_correct": 7,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.2": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.8": {
+      "n": 8,
+      "primary_correct": 8,
+      "after_whitespace_correct": 8,
+      "changed_grades": []
+    }
+  }
+}

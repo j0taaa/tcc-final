@@ -435,6 +435,7 @@
     "exact_b12",
     "exact_multi3"
   ],
+  "frontier_scope": "catalog-only MAP is excluded as a dominator of production candidates",
   "confirmation_candidates": [
     "confidence_0.8",
     "exact_b4",

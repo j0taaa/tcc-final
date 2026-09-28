@@ -23,6 +23,12 @@ A verificação dos certificados estabelece validade e consistência dos escores
 a garantia de ótimo depende do algoritmo e dos testes diferenciais contra
 oráculos, não apenas de observar um certificado viável.
 
+Usar o checkout Git completo para regenerar a campanha. A distribuição Python
+de instalação (`sdist`) inclui o pequeno smoke usado pelos testes, mas exclui os
+registros volumosos M24; o limite de 50 MB do pacote permanece protegido. Nenhum
+arquivo bruto foi removido do repositório. O pacote não substitui o arquivo de
+evidências da pesquisa.
+
 Os arquivos brutos estão em `docs/artifacts/raw/m24_policy_v1/`, com gzip
 sem perda e manifests SHA-256. O inventário gerado registra os commits produtores
 e o comando exato de cada coorte. São 12 coortes; os nomes de políticas repetidos

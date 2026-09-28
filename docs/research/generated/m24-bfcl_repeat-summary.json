@@ -1,0 +1,439 @@
+{
+  "experiment_id": "m24_bfcl_enum_repeat_v1",
+  "phase": "external schema-defined pilot: ALL 8 finite-enum cases among 658 BFCL examples; own strict AST evaluator, not official BFCL score",
+  "records": 160,
+  "source_commit": "8a23da24bb6f6be6423984e6ae3e998e8fec0c4d",
+  "table": [
+    {
+      "method": "exact_b24",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 20,
+      "median_total_ms": 343.2387774810195,
+      "p95_total_ms": 941.962786950171,
+      "median_decode_ms": 340.42878658510745,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 83,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "exact_b8",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 32,
+      "median_total_ms": 614.373923977837,
+      "p95_total_ms": 810.8645828906447,
+      "median_decode_ms": 608.6332184495404,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 79,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "greedy_b8",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 32,
+      "median_total_ms": 768.7454160186462,
+      "p95_total_ms": 1009.3711819499731,
+      "median_decode_ms": 763.657740491908,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 79,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "confidence_0.2",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 42,
+      "median_total_ms": 785.7755924924277,
+      "p95_total_ms": 1574.1344408597797,
+      "median_decode_ms": 778.2329205656424,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 83,
+      "fallback_steps": 10,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "catalog_map4",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 64,
+      "median_total_ms": 1063.7324170675129,
+      "p95_total_ms": 1423.6971309874207,
+      "median_decode_ms": 1056.716455030255,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 83,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "exact_b4",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 64,
+      "median_total_ms": 1218.425158469472,
+      "p95_total_ms": 1667.649784940295,
+      "median_decode_ms": 1208.986254525371,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 83,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "confidence_0.5",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 65,
+      "median_total_ms": 1293.3128420263529,
+      "p95_total_ms": 2260.3109459159896,
+      "median_decode_ms": 1283.8788844528608,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 83,
+      "fallback_steps": 20,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "confidence_0.8",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 94,
+      "median_total_ms": 1816.8973000138067,
+      "p95_total_ms": 3541.3981650490314,
+      "median_decode_ms": 1807.4819530011155,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 83,
+      "fallback_steps": 31,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "exact_b2",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 128,
+      "median_total_ms": 2420.2988914912567,
+      "p95_total_ms": 3415.7592188566923,
+      "median_decode_ms": 2417.539784044493,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 83,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "exact_b1",
+      "n": 8,
+      "correct": 8,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 256,
+      "median_total_ms": 4882.121408532839,
+      "p95_total_ms": 6722.889487980865,
+      "median_decode_ms": 4872.1929245512,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 83,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "exact_b12",
+      "n": 8,
+      "correct": 7,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 26,
+      "median_total_ms": 467.96670398907736,
+      "p95_total_ms": 747.8042730363086,
+      "median_decode_ms": 461.0055915545672,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 82,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.4406418800354
+    },
+    {
+      "method": "exact_review",
+      "n": 8,
+      "correct": 7,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 28,
+      "median_total_ms": 623.6895965412259,
+      "p95_total_ms": 1152.2300279466435,
+      "median_decode_ms": 618.9892169786617,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 160,
+      "fallback_steps": 1,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.444233417510986
+    },
+    {
+      "method": "epic_lexical_4",
+      "n": 8,
+      "correct": 7,
+      "numeric_correct": null,
+      "valid": 7,
+      "forwards": 31,
+      "median_total_ms": 825.6723015219904,
+      "p95_total_ms": 1304.1168560739607,
+      "median_decode_ms": 820.7072220393457,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_needed": 7,
+        "recovered": 1
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 6.328781604766846
+    },
+    {
+      "method": "epic_lexical_24",
+      "n": 8,
+      "correct": 7,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 141,
+      "median_total_ms": 2403.669481049292,
+      "p95_total_ms": 3089.743440039456,
+      "median_decode_ms": 2398.1035329634324,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_needed": 6,
+        "recovered": 2
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 6.328781604766846
+    },
+    {
+      "method": "margin_0.02",
+      "n": 8,
+      "correct": 6,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 19,
+      "median_total_ms": 1456.6196345258504,
+      "p95_total_ms": 2501.854659989476,
+      "median_decode_ms": 1453.9199610007927,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 77,
+      "fallback_steps": 1,
+      "counterfactual_queries": 272,
+      "peak_gpu_gib": 5.440001010894775
+    },
+    {
+      "method": "margin_0.1",
+      "n": 8,
+      "correct": 6,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 19,
+      "median_total_ms": 1468.643135507591,
+      "p95_total_ms": 2408.1461400492117,
+      "median_decode_ms": 1465.9502319991589,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 77,
+      "fallback_steps": 1,
+      "counterfactual_queries": 272,
+      "peak_gpu_gib": 5.440001010894775
+    },
+    {
+      "method": "exact_multi3",
+      "n": 8,
+      "correct": 5,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 8,
+      "median_total_ms": 159.97954102931544,
+      "p95_total_ms": 213.65582989528775,
+      "median_decode_ms": 156.33579751010984,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 77,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.425654888153076
+    },
+    {
+      "method": "exact_multi2",
+      "n": 8,
+      "correct": 5,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 11,
+      "median_total_ms": 204.63932846905664,
+      "p95_total_ms": 310.8525440329686,
+      "median_decode_ms": 201.71027700416744,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 77,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.434029579162598
+    },
+    {
+      "method": "margin_0",
+      "n": 8,
+      "correct": 5,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 16,
+      "median_total_ms": 1459.7508500446565,
+      "p95_total_ms": 4360.991770983674,
+      "median_decode_ms": 1457.0000450476073,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "not_applicable": 8
+      },
+      "ordinary_commits": 77,
+      "fallback_steps": 1,
+      "counterfactual_queries": 255,
+      "peak_gpu_gib": 5.440001010894775
+    },
+    {
+      "method": "epic_lexical_2",
+      "n": 8,
+      "correct": 4,
+      "numeric_correct": null,
+      "valid": 8,
+      "forwards": 16,
+      "median_total_ms": 970.662922016345,
+      "p95_total_ms": 1333.128180820495,
+      "median_decode_ms": 963.2987970253453,
+      "statuses": {
+        "complete": 8
+      },
+      "recovery_statuses": {
+        "recovered": 6,
+        "not_needed": 2
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 6.328781604766846
+    }
+  ],
+  "frontier": [
+    "exact_b24",
+    "exact_multi3"
+  ],
+  "frontier_scope": "catalog-only MAP is excluded as a dominator of production candidates",
+  "confirmation_candidates": [
+    "exact_multi3"
+  ]
+}

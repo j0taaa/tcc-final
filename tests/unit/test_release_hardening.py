@@ -30,6 +30,16 @@ def test_archive_inspection_rejects_a_nested_vendor_target(tmp_path: Path) -> No
         inspect(archive)
 
 
+def test_sdist_keeps_offline_policy_fixture_without_bulk_model_campaigns() -> None:
+    from hatchling.builders.sdist import SdistBuilder
+
+    names = {item.relative_path for item in SdistBuilder(str(ROOT)).recurse_included_files()}
+    prefix = "docs/artifacts/raw/m24_policy_v1/"
+    assert prefix + "smoke/results.jsonl.gz" in names
+    assert prefix + "smoke/manifest.json" in names
+    assert all(name.startswith(prefix + "smoke/") for name in names if name.startswith(prefix))
+
+
 def test_reproducibility_entrypoints_use_exact_constraints() -> None:
     config = tomllib.loads((ROOT / "pyproject.toml").read_text())
     assert all(

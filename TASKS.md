@@ -18,7 +18,8 @@ milestone unless a regression invalidates its evidence.
 
 ## M24 — Investigate structurally stable commitment for useful tool calls
 
-Depends on M23, M22 and M19. This is a new hypothesis, not a measured benefit.
+Depends on M23, M22 and M19. The broad campaign is measured; margins did not
+justify continuation. Simple policies show scoped cost–quality benefits.
 Preserve the MWPC selected set; record the actual committed subset separately.
 
 - [x] T2400: Specify a one-month incremental plan, prior-art boundaries, useful
@@ -33,14 +34,14 @@ Preserve the MWPC selected set; record the actual committed subset separately.
   explicit unknown counterfactual statuses. Preserve existing decoder defaults.
   Pass differential, full Python and relevant integration gates before timing.
   **Evidence:** `src/mwpc_exact/commit_gate.py` reduces each counterfactual to a non-negative bonus query on unchanged support, including EOS/PAD; proof in M24 plan. 67 targeted tests (Python/Rust oracle comparisons, duplicate matches, fixed tokens, late/unknown queries and numerical ties); full pytest 1,085 passed. Ruff, MyPy (83 files), upstream pin pass; upstream integration 19 passed/4 pre-existing skips. In-process official recovery CPU test passes. No new solver timing claimed before frozen live run.
-- [ ] T2403: Freeze and commit a bounded live development pilot with confidence
+- [x] T2403: Freeze and commit a bounded live development pilot with confidence
   and budget controls and full EPIC recovery timed together. Audit external BFCL
   coverage without gold-based support. Archive every result; apply day-7 stop rule.
-  **Evidence:** source `db64201` smoke 40 calls; source `080e252` development 600 calls, all 20 policies retained in `docs/artifacts/raw/m24_policy_v1/`. Generated `m24-development-results.md` and diagnosis: all 11 baseline errors exclude a representable answer while the objective prefers a wrong completion. Full pytest 1,099 passed; external schema compiler and corruption tests added. BFCL audit: 8 schema-finite cases out of 658; external live pilot pending, so task not yet complete.
+  **Evidence:** `docs/research/m24-findings.md`, immutable archives under `docs/artifacts/raw/m24_policy_v1/`, and generated campaign inventory: 40 smoke + 600 development calls; 320 external pilot calls plus 96 secondary external controls, all retained. All 11 original development errors exclude a representable answer while the objective prefers a wrong completion. Schema-only BFCL audit selects all 8 eligible cases out of 658; MAP is best on this narrow external subset. Day-7 rule applied: stop margins as the principal extension; retain confidence/budget policies. Complete verification commands and outcomes in `docs/evidence/m24-policy-verification.json`.
 - [ ] T2404: If pilot supports continuation, freeze primary comparison, uncertainty
   analysis and disjoint external test before measurement; generate paired results,
   a runnable read-only API demo and an evidence-grounded manuscript update.
-  **Evidence:** conditional on T2403; no superiority or novelty claim established.
+  **Evidence (partial):** 2,800 confirmed/secondary synthetic generations on 100 new requests, two repetitions, actual EPIC 2/4/6/8/12/24 and matched greedy/MAP controls. Frozen primary confidence 0.8 is faster than EPIC 24, but two-point accuracy non-inferiority remains unestablished. Budget four beats EPIC eight in observed accuracy at similar cost, including a whitespace sensitivity analysis. The 8-case BFCL pilot covers only 1.2% of audited data; it does not close broad external validation. Read-only API demo and evidence-grounded manuscript update remain pending; historical PDF is unchanged. Do not mark this entire task complete or claim novel confidence decoding.
 
 ## M23 — Compare the tool task with the actual EPIC decoder
 

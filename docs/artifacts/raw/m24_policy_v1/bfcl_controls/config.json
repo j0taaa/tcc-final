@@ -1,0 +1,349 @@
+{
+  "experiment_id": "m24_bfcl_controls_v1",
+  "phase": "secondary external pilot controls; same eight audited cases; no official BFCL score or new independent holdout",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "seed": 240001,
+  "slots": 32,
+  "max_forwards": 32,
+  "task_count": 8,
+  "support": "per-position union of canonical task-filtered tokens, intersect finite byte CFG preserving operand multiset and required EOS; alternative tokenizations permitted",
+  "weight": "full_vocabulary_probability",
+  "quantization": "NF4 double quantization, bfloat16 compute",
+  "cpu_threads": 1,
+  "max_generation_seconds": 120,
+  "output_root": "results/raw/m24_bfcl_controls_v1",
+  "family": "nested",
+  "temperature": 0.0,
+  "preserve_operands": true,
+  "backend": "rust",
+  "epic_max_resamples": 100,
+  "selection_timeout_seconds": 10,
+  "recover_in_process": true,
+  "policies": [
+    {
+      "name": "greedy_confidence_0.8",
+      "kind": "confidence",
+      "selector": "greedy",
+      "threshold": 0.8
+    },
+    {
+      "name": "greedy_confidence_0.2",
+      "kind": "confidence",
+      "selector": "greedy",
+      "threshold": 0.2
+    },
+    {
+      "name": "catalog_map24",
+      "kind": "catalog_map",
+      "commit_cap": 24
+    },
+    {
+      "name": "epic_lexical_6",
+      "kind": "epic",
+      "method": "epic_lexical_6"
+    },
+    {
+      "name": "epic_lexical_8",
+      "kind": "epic",
+      "method": "epic_lexical_8"
+    },
+    {
+      "name": "epic_lexical_12",
+      "kind": "epic",
+      "method": "epic_lexical_12"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "live_simple_22-5-0",
+      "instruction": "I need Whopper also known old folks as the burger.",
+      "function": {
+        "name": "ChaFod",
+        "description": "Changes the selection of food based on the customer's request, ensuring the food name provided is in uppercase as per the requirement.",
+        "parameters": {
+          "type": "dict",
+          "required": [
+            "TheFod"
+          ],
+          "properties": {
+            "TheFod": {
+              "type": "string",
+              "description": "The name of the food to be changed, provided in uppercase letters only (e.g., 'PIZZA', 'BURGER').",
+              "enum": [
+                "PIZZA",
+                "BURGER",
+                "SALAD",
+                "SOUP",
+                "STEAK"
+              ]
+            }
+          }
+        }
+      },
+      "ground_truth": [
+        {
+          "ChaFod": {
+            "TheFod": [
+              "BURGER"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_23-5-1",
+      "instruction": "Order me pizza",
+      "function": {
+        "name": "ChaFod",
+        "description": "Changes the selection of food based on the customer's request, ensuring the food name provided is in uppercase as per the requirement.",
+        "parameters": {
+          "type": "dict",
+          "required": [
+            "TheFod"
+          ],
+          "properties": {
+            "TheFod": {
+              "type": "string",
+              "description": "The name of the food to be changed, provided in uppercase letters only (e.g., 'PIZZA', 'BURGER').",
+              "enum": [
+                "PIZZA",
+                "BURGER",
+                "SALAD",
+                "SOUP",
+                "STEAK"
+              ]
+            }
+          }
+        }
+      },
+      "ground_truth": [
+        {
+          "ChaFod": {
+            "TheFod": [
+              "PIZZA"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_24-5-2",
+      "instruction": "I would like to switch my order from pizza to a BURGER.",
+      "function": {
+        "name": "ChaFod",
+        "description": "Changes the selection of food based on the customer's request, ensuring the food name provided is in uppercase as per the requirement.",
+        "parameters": {
+          "type": "dict",
+          "required": [
+            "TheFod"
+          ],
+          "properties": {
+            "TheFod": {
+              "type": "string",
+              "description": "The name of the food to be changed, provided in uppercase letters only (e.g., 'PIZZA', 'BURGER').",
+              "enum": [
+                "PIZZA",
+                "BURGER",
+                "SALAD",
+                "SOUP",
+                "STEAK"
+              ]
+            }
+          }
+        }
+      },
+      "ground_truth": [
+        {
+          "ChaFod": {
+            "TheFod": [
+              "BURGER"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_25-5-3",
+      "instruction": "I've changed my mind, can I get a greens instead of what I previously ordered?",
+      "function": {
+        "name": "ChaFod",
+        "description": "Changes the selection of food based on the customer's request, ensuring the food name provided is in uppercase as per the requirement.",
+        "parameters": {
+          "type": "dict",
+          "required": [
+            "TheFod"
+          ],
+          "properties": {
+            "TheFod": {
+              "type": "string",
+              "description": "The name of the food to be changed, provided in uppercase letters only (e.g., 'PIZZA', 'BURGER').",
+              "enum": [
+                "PIZZA",
+                "BURGER",
+                "SALAD",
+                "SOUP",
+                "STEAK"
+              ]
+            }
+          }
+        }
+      },
+      "ground_truth": [
+        {
+          "ChaFod": {
+            "TheFod": [
+              "SALAD"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_175-101-0",
+      "instruction": "ช่วยหาคุณแม่บ้านที่ให้บริการรีดผ้า.",
+      "function": {
+        "name": "get_service_id",
+        "description": "Retrieve the unique identifier for a specific service provided. This identifier is used to reference available housekeeping services such as cleaning or ironing.",
+        "parameters": {
+          "type": "dict",
+          "properties": {
+            "service_id": {
+              "type": "integer",
+              "description": "The unique ID of the service. For example, '1' for cleaning, '2' for ironing.",
+              "enum": [
+                1,
+                2
+              ]
+            },
+            "unit": {
+              "type": "string",
+              "description": "The unit of measurement used for the service count, such as 'session' or 'hour'.",
+              "enum": [
+                "session",
+                "hour"
+              ],
+              "default": "session"
+            }
+          },
+          "required": [
+            "service_id"
+          ]
+        }
+      },
+      "ground_truth": [
+        {
+          "get_service_id": {
+            "service_id": [
+              2
+            ],
+            "unit": [
+              "",
+              "session"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_179-104-0",
+      "instruction": "get unique identifier for an ironing service within Chiang Mai?",
+      "function": {
+        "name": "get_service_id",
+        "description": "Retrieve the unique identifier for a specific service within a given province.",
+        "parameters": {
+          "type": "dict",
+          "required": [
+            "service_id",
+            "province_id"
+          ],
+          "properties": {
+            "service_id": {
+              "type": "integer",
+              "description": "The unique identifier of the service. For example, '1' for cleaning service, '2' for ironing service, and '3' for extensive cleaning service.",
+              "enum": [
+                1,
+                2,
+                3
+              ]
+            },
+            "province_id": {
+              "type": "integer",
+              "description": "The unique identifier of the province where the service is located. For example, '1' for Bangkok, '2' for Chiang Mai, and '3' for Chonburi.",
+              "enum": [
+                1,
+                2,
+                3
+              ]
+            }
+          }
+        }
+      },
+      "ground_truth": [
+        {
+          "get_service_id": {
+            "service_id": [
+              2
+            ],
+            "province_id": [
+              2
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_229-120-0",
+      "instruction": "Retrieve the list of Business Unit products that are associated with me?",
+      "function": {
+        "name": "requests.get",
+        "description": "Retrieve a list of Business Unit (BU) products from the specified API endpoint.",
+        "parameters": {
+          "type": "dict",
+          "required": [
+            "anchor"
+          ],
+          "properties": {
+            "anchor": {
+              "type": "string",
+              "description": "Specifies the subset of BU products to retrieve, either all available products or only those associated with the user.",
+              "enum": [
+                "all",
+                "user"
+              ]
+            }
+          }
+        }
+      },
+      "ground_truth": [
+        {
+          "requests.get": {
+            "anchor": [
+              "user"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "live_simple_247-129-0",
+      "instruction": "Give me the application version.",
+      "function": {
+        "name": "version_api.VersionApi.get_version",
+        "description": "Retrieves the current version information of the application, including its name and version number.",
+        "parameters": {
+          "type": "dict",
+          "required": [],
+          "properties": {}
+        }
+      },
+      "ground_truth": [
+        {
+          "version_api.VersionApi.get_version": {}
+        }
+      ]
+    }
+  ],
+  "schema_calls": true,
+  "dataset_commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8"
+}
