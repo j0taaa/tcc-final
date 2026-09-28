@@ -24,20 +24,26 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 
 ## Setup
 
-The current submission is the **local release v0.2.0**, described in
-[`docs/releases/v0.2.0.md`](docs/releases/v0.2.0.md). It includes the review
-corrections and new experiments; historical v0.1.1 results remain unchanged.
-No remote release or push is implied. From the delivered Git bundle:
+The current reviewed delivery is the **2026-09-28 source snapshot**, described in
+[`docs/releases/review-2026-09-28.md`](docs/releases/review-2026-09-28.md).
+It combines a base Git bundle with the review patch, including M18/M19 and M20.
+The local release v0.2.0 is historical and does not contain these later changes.
+No new tag, commit or remote publication is implied. From the snapshot directory:
 
 ```bash
-git clone ./mwpc-exact-v0.2.0.bundle tcc-final
+git clone ./mwpc-review-base.bundle tcc-final
 cd tcc-final
-git checkout v0.2.0
+git checkout --detach a43e1cf904eceff8bbcc802b5c0b2abb1c10c059
+git apply ../mwpc-review.patch
 git submodule update --init --recursive
 make bootstrap
 source .venv/bin/activate
 make check
 ```
+
+Scientific direction for the remaining month:
+[certified JSON repair with protected fields](docs/research/2026-09-28-json-repair-plan.md).
+This is a planned study; no repair results are claimed yet.
 
 Artifact regeneration, clean CPU rehearsal, parser-binding, and optional CUDA
 model instructions are in [`REPRODUCING.md`](REPRODUCING.md).

@@ -20,7 +20,7 @@ def test_m1301_outputs_recompute_byte_for_byte_from_pinned_evidence() -> None:
     assert len(result["outputs"]) == 5
 
 
-def test_article_imports_historical_correctness_gap_and_new_confirmation() -> None:
+def test_article_imports_correctness_audit_and_confirmation() -> None:
     article = ARTICLE.read_text(encoding="utf-8")
     result_section = article.split(r"\section{Results and Analysis}", maxsplit=1)[1].split(
         r"\section{Limitations and Threats to Validity}", maxsplit=1
@@ -32,12 +32,12 @@ def test_article_imports_historical_correctness_gap_and_new_confirmation() -> No
 
     assert table_inputs == [
         "r1-correctness-finite-slots.tex",
-        "r2-heuristic-gap.tex",
     ]
     assert r"\label{tab:resultados}" not in article
     assert r"\label{tab:cronograma}" not in article
     assert "Preliminary and Expected Results" not in article
     assert "T1203 tables and figures remain" not in article
+    assert "generated/m19_selection_audit_v1/audit-timing.tex" in article
     assert "generated/m17_review_v1/confirmation.tex" in article
     assert (ROOT / "paper/generated/m1301_article_results_v1/r3-scaling-integration.tex").is_file()
 

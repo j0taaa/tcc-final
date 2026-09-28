@@ -332,6 +332,54 @@ def test_timeout_is_preserved_and_never_converted_to_infeasible(
     assert serial.score is exact.score is None
 
 
+@pytest.mark.parametrize("backend", (ExactBackend.PYTHON, ExactBackend.RUST))
+@pytest.mark.parametrize("path", ("reuse", "query", "fixed", "unrepresented", "empty"))
+@pytest.mark.parametrize("finished_at", (0.5, 1.0, 2.0))
+def test_greedy_total_deadline_includes_final_certificate_accounting(
+    monkeypatch: pytest.MonkeyPatch, backend: ExactBackend, path: str, finished_at: float
+) -> None:
+    if backend is ExactBackend.RUST:
+        pytest.importorskip("mwpc_parser_py")
+    proposal = Proposal(0, 0, 0, 1.0)
+    if path == "fixed":
+        state = frozen_input((proposal,), canvas=(0, None), rows=((0,), (0, 1)))
+    elif path == "unrepresented":
+        state = frozen_input((Proposal(0, 0, 1, 1.0),), rows=((0,), (0, 1)))
+    else:
+        state = frozen_input(() if path == "empty" else (proposal,))
+    reuse = path == "reuse"
+    expected = select_greedy_exact_feasibility(state, backend=backend, reuse_witness=reuse)
+    now = 0.0
+    recompute = selection_module.recompute_witness_selection
+
+    def finish_accounting(*args, **kwargs):
+        nonlocal now
+        certificate = recompute(*args, **kwargs)
+        now = finished_at
+        return certificate
+
+    monkeypatch.setattr(selection_module, "recompute_witness_selection", finish_accounting)
+    result = select_greedy_exact_feasibility(
+        state,
+        backend=backend,
+        reuse_witness=reuse,
+        total_timeout_seconds=1.0,
+        clock=lambda: now,
+    )
+    assert result.runtime_seconds == finished_at
+    if finished_at >= 1.0:
+        assert result.status is SelectionStatus.TIMEOUT
+        assert result.score is None
+        assert result.selected_proposal_ids == ()
+        assert not result.witness_available
+        assert result.diagnostics["timeout_stage"] == "final_certificate_accounting"
+    else:
+        assert result.status == expected.status
+        assert result.score == expected.score
+        assert result.selected_proposal_ids == expected.selected_proposal_ids
+        assert result.witness_token_ids == expected.witness_token_ids
+
+
 def test_score_recomputation_checks_fixed_canvas_and_saved_support() -> None:
     selection_input = frozen_input(
         (Proposal(0, position=1, token_id=0, weight=2.5),),

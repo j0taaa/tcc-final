@@ -16,6 +16,59 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M21 — Certified JSON repair and a bounded comparative pilot
+
+Depends on M20. Implement the chosen idea and measure a useful, explicitly scoped
+case; do not promise population superiority or suppress unsuccessful repairs.
+
+- [x] T2100: Implement model-independent protected token-slot repair and a useful
+  JSON CLI. Check substitution optimality with independent exhaustive examples,
+  both parser backends, token/byte provenance, locks, invalid inputs and deadlines.
+  **Evidence:** `make check` and full pytest pass (921 tests); Rust parser 24 tests; upstream 406 passed/8 skips. New repair tests cover independent enumeration, Python/Rust, whole-token locks, grammar language preservation, late results, input validation and profiler invariance.
+- [x] T2101: Freeze a controlled development/confirmation protocol with unmodified,
+  substitution and out-of-support errors; compare no repair, json_repair default
+  and schema modes, witness-reusing greedy, and bounded minimum-edit enumeration.
+  Include real-tokenizer coverage, common evaluation and all statuses. Keep
+  semantic target out of support/grammar construction. Lock dependencies.
+  **Evidence:** `docs/research/m21-repair-protocol.md`, three frozen M21 TOML configs, optional pinned json-repair 0.63.5, schema standard/salvage, enumeration and single-feasibility controls. No model-generation result is claimed.
+- [ ] T2102: Commit tested source/config locally before measurement; run and archive
+  the pilot plus held-out controlled confirmation, preserving failures. Generate
+  tables and paired comparisons; report any measured advantage with its domain,
+  comparator, tradeoffs and uncertainty. Real-model/retry evidence is separate.
+  **Evidence:** pending.
+- [ ] T2103: Deliver a runnable example, reproduction commands and scientific
+  interpretation; run full Python and relevant Rust/baseline/artifact gates.
+  Update the manuscript only for supported results, with producing source/config.
+  **Evidence:** pending.
+
+## M20 — Close the September audit and plan useful exact decoding
+
+Depends on M19. Preserve existing objectives, finite-support exactness, baseline
+defaults and immutable historical measurements. This milestone fixes the reviewed
+software/delivery issues and designs new research; it does not claim new model results.
+
+- [x] T2000: Enforce the greedy selector's final total deadline, including paths
+  that reuse witnesses or make no final parser call. Add deterministic regressions
+  for both backends and verify in-budget decisions remain unchanged.
+  **Evidence:** `tests/exact_commit/test_selection.py`: 42 passed; before-fix regression reproduced; deterministic Python/Rust late results now TIMEOUT without certificate.
+- [x] T2001: Verify every M19 manuscript derivative in the article/CI gate;
+  exercise corruption detection without modifying archived evidence.
+  **Evidence:** `make article-results-check` verifies M13/M17/M19. Seven artifact tests pass, including six missing/corrupted derivative cases; CI gate added.
+- [x] T2002: Add the closest weighted-intersection/epsilon and parallel-selection
+  references, focus the manuscript on current evidence, and restore the recorded
+  16-page limit without changing template fonts/margins or concealing failures.
+  Compile, check references/page count and visually inspect the PDF.
+  **Evidence:** `make paper`: 16 pages, no undefined references or overfull boxes; all pages visually checked. Four primary-source references added; historical detail retained in supplement; compiled-PDF gate tested.
+- [x] T2003: Specify a prioritized scientific plan with a useful target task,
+  testable mechanisms, fair baselines, ablations, development/confirmation splits,
+  costs, measurable success criteria and stopping rules. Distinguish planned work
+  from implemented/proven/measured results; freeze new configs before measurement.
+  **Evidence:** `docs/research/2026-09-28-json-repair-plan.md`: four-week repair protocol, five comparators, no unrestricted edit-distance/semantic guarantee, development/confirmation separation and day-7 stopping rule.
+- [x] T2004: Align current setup/reproduction instructions and a new local delivery
+  containing the reviewed source, PDF and evidence; preserve historical releases.
+  Run full Python, relevant Rust/binding/baseline, artifact and packaging gates.
+  **Evidence:** `docs/reviews/2026-09-28-resolution.md`: 885 Python tests, 24 Rust tests, 406 upstream tests (8 skips), Ruff/MyPy, artifact, PDF and wheel gates pass. `dist/review-2026-09-28/` contains base bundle + patch + 16-page PDF + evidence/manifest/checksums. Fresh checkout applies patch, matches 26 file hashes, regenerates artifacts and passes 54 targeted tests. No commit/tag/push performed.
+
 ## M19 — Audit the practical-benefit claim
 
 Depends on M18. Preserve baseline defaults, the same proposal objective and
@@ -81,7 +134,7 @@ docs/reviews/2026-09-22-practical-selection.md.
 
 ## Previous submission
 
-M17 closes the 22 September review, except LAVE as requested. The current local
+M17 closes the 22 September review, except LAVE as requested. That historical local
 submission is v0.2.0; verification is in docs/evidence/m17-review-verification.json.
 
 ## M17 — Review closure and local submission release

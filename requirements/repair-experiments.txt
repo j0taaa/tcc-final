@@ -1,0 +1,3 @@
+# Optional empirical comparator; never imported by the repair core.
+# Schema support uses the existing jsonschema stack constrained by the CPU lock.
+json-repair==0.63.5

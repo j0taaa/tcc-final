@@ -14,6 +14,7 @@ authors = [{ name = "Gabriel Jota Lizardo" }]
 dependencies = []
 
 [project.scripts]
+mwpc-repair-json = "mwpc_exact.repair:main"
 mwpc-commit-config = "mwpc_exact.strategy:main"
 mwpc-resolve-experiment-config = "mwpc_exact.experiments.config:main"
 

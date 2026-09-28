@@ -1,0 +1,14 @@
+experiment_id = "m21_repair_pilot_v1"
+cohort = "controlled_development"
+seed = 210100
+documents = 4
+record_counts = [1, 2]
+families = ["valid", "opening", "closing", "separator", "missing_suffix", "semantic"]
+profiles = ["bytes", "llada"]
+grammar_profile = "schema"
+methods = ["unchanged", "json_repair", "schema_standard", "schema_salvage", "enumeration", "feasibility", "greedy", "exact"]
+repetitions = 1
+timeout_seconds = 2.0
+supervisor_grace_seconds = 0.5
+memory_mib = 2048
+json_repair_version = "0.63.5"

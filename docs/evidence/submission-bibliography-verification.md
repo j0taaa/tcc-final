@@ -106,3 +106,18 @@ must be inspected after the final build.
 - Poppler renders of all 16 pages were inspected, with pages 13--16 checked at
   original detail. No clipping, overlap, broken glyph, unreadable reference, or
   page-boundary defect was found.
+
+## Follow-up verification: 2026-09-28
+
+The historical inventory above covers all 19 BibTeX records at that date. Four
+additional cited records were checked against their primary publication pages
+for this revision (23 records total). Historical verification is unchanged.
+
+| Key | Status | Primary metadata source and relevance |
+|---|---|---|
+| `nederhof2003intersection` | Cited | https://aclanthology.org/W03-3016/ — Nederhof/Satta, 2003, IWPT, 137–148; weighted parsing as intersection. |
+| `hanneforth2011intersection` | Cited | https://aclanthology.org/W11-4408/ — Thomas Hanneforth, 2011, FSMNLP, 57–64; practical weighted intersection. |
+| `pasti2023intersection` | Cited | https://aclanthology.org/2023.eacl-main.52/ — Pasti, Opedal, Pimentel, Vieira, Eisner, Cotterell, 2023, EACL, 737–749; epsilon arcs and structural correspondence. |
+| `qi2026clad` | Cited | https://arxiv.org/abs/2605.29607 — Heqiang Qi, Wei Huang, Mingyuan Bai, Xiangming Meng, 2026; preprint, attention-cluster matching conflicts, not CFG feasibility. |
+
+No general weighted-intersection or exact-parallel-selection novelty is claimed.

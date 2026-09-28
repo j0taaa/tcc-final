@@ -18,6 +18,7 @@ from time import perf_counter
 from mwpc_exact._json import _freeze_json, _thaw_json
 from mwpc_exact.backend import ExactBackend
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
+from mwpc_exact.profiling import ComponentProfiler
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.solver import solve_exact_commit
 from mwpc_exact.support import PerPositionSupport
@@ -408,6 +409,7 @@ def select_exact_mwpc(
     timeout_seconds: float | None = None,
     deadline_check_interval: int = 1_024,
     deterministic_work_limit: int | None = None,
+    profiler: ComponentProfiler | None = None,
 ) -> SelectionResult:
     """Run MWPC optimization through the common frozen-instance interface."""
 
@@ -425,6 +427,7 @@ def select_exact_mwpc(
         timeout_seconds=timeout_seconds,
         deadline_check_interval=deadline_check_interval,
         deterministic_work_limit=deterministic_work_limit,
+        profiler=profiler,
     )
     if result.status is not SolveStatus.OPTIMAL:
         return _failure_result(
@@ -522,6 +525,7 @@ def _solve_feasibility(
     timeout_seconds: float | None,
     deadline_check_interval: int,
     deterministic_work_limit: int | None,
+    profiler: ComponentProfiler | None = None,
 ) -> tuple[ExactCommitResult, PerPositionSupport]:
     support = _restrict_support(selection_input.support, canvas)
     result = solve_exact_commit(
@@ -535,6 +539,7 @@ def _solve_feasibility(
         timeout_seconds=timeout_seconds,
         deadline_check_interval=deadline_check_interval,
         deterministic_work_limit=deterministic_work_limit,
+        profiler=profiler,
     )
     return result, support
 
@@ -547,10 +552,11 @@ def select_greedy_exact_feasibility(
     timeout_seconds: float | None = None,
     deadline_check_interval: int = 1_024,
     deterministic_work_limit: int | None = None,
+    profiler: ComponentProfiler | None = None,
     clock: Callable[[], float] | None = None,
     reuse_witness: bool = False,
 ) -> SelectionResult:
-    """Order-greedy proposal retention with a single total exact-feasibility budget."""
+    """Order-greedy retention with a total deadline including final witness checks."""
 
     if not isinstance(selection_input, SelectionInput):
         raise TypeError("selection_input must be a SelectionInput")
@@ -604,6 +610,7 @@ def select_greedy_exact_feasibility(
             timeout_seconds=(remaining if backend is ExactBackend.RUST else None),
             deadline_check_interval=deadline_check_interval,
             deterministic_work_limit=deterministic_work_limit,
+            profiler=profiler,
         )
         if (
             total_timeout_seconds is not None
@@ -716,11 +723,24 @@ def select_greedy_exact_feasibility(
                 "recomputed_selected_proposal_ids": list(selected_ids),
             },
         )
+    elapsed = max(0.0, clock() - started)
+    if total_timeout_seconds is not None and elapsed >= total_timeout_seconds:
+        return SelectionResult(
+            selector=SelectorKind.GREEDY_EXACT_FEASIBILITY,
+            status=SelectionStatus.TIMEOUT,
+            exactness_scope=selection_input.support.exactness_scope,
+            runtime_seconds=elapsed,
+            diagnostics={
+                "timeout_stage": "final_certificate_accounting",
+                "total_timeout_seconds": total_timeout_seconds,
+                "feasibility_call_count": feasibility_calls,
+            },
+        )
     return SelectionResult(
         selector=SelectorKind.GREEDY_EXACT_FEASIBILITY,
         status=SelectionStatus.FEASIBLE_ON_SUPPORT,
         exactness_scope=selection_input.support.exactness_scope,
-        runtime_seconds=max(0.0, clock() - started),
+        runtime_seconds=elapsed,
         selected_proposal_ids=selected_ids,
         score=score,
         witness_token_ids=result.witness_token_ids,

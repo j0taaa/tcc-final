@@ -10,12 +10,8 @@ Run from a clean checkout into a new directory:
 .venv/bin/python -m scripts.exact_commit.run_review_offline \
   --config configs/experiments/m19_selection_audit_v1.toml \
   --run-directory results/raw/m19-selection-audit-new
-.venv/bin/python -m scripts.exact_commit.run_review_offline \
-  --analyze-directory docs/artifacts/raw/m19_selection_audit_v1 \
-  > paper/generated/m19_selection_audit_v1/summary.json
-.venv/bin/python -m scripts.exact_commit.run_review_offline \
-  --analyze-directory docs/artifacts/raw/m19_selection_audit_v1 --latex \
-  > paper/generated/m19_selection_audit_v1/audit-values.tex
+.venv/bin/python scripts/exact_commit/build_selection_audit.py
+make article-results-check
 make paper
 ```
 
@@ -99,10 +95,10 @@ failures and incomplete outputs remain included. Generation is bounded by
 limit, a 15-second process limit and 2048 MiB address space. New timings and
 statuses are new measurements; never replace archived rows to make checks pass.
 
-The current submission is the local release **v0.2.0**. Use the delivered
-Git bundle and release assets described in [`docs/releases/v0.2.0.md`](docs/releases/v0.2.0.md).
-The historical remote v0.1.1 remains unchanged; it does not contain the current
-review fixes. Each experiment row names its own producing commit.
+The current reviewed delivery is the **2026-09-28 source snapshot**; see
+[`docs/releases/review-2026-09-28.md`](docs/releases/review-2026-09-28.md).
+The local v0.2.0 release and remote v0.1.1 remain historical. Each experiment row
+names its own producing commit. The review patch does not create new measurements.
 
 > **T1203 name clarification.** `final` denotes the deterministic output of
 > this artifact build, not publication-level benchmark status. Later
@@ -148,9 +144,10 @@ Clone the repository and its read-only EPIC submodule, then create the main CPU
 environment:
 
 ```bash
-git clone ./mwpc-exact-v0.2.0.bundle tcc-final
+git clone ./mwpc-review-base.bundle tcc-final
 cd tcc-final
-git checkout v0.2.0
+git checkout --detach a43e1cf904eceff8bbcc802b5c0b2abb1c10c059
+git apply ../mwpc-review.patch
 git submodule update --init --recursive
 make bootstrap
 source .venv/bin/activate
@@ -457,7 +454,23 @@ make paper
 
 The expected local output is `paper/main.pdf`. It is ignored because it is a
 build product; the versioned LaTeX sources and generated table/figure inputs
-are the reproducibility boundary. The current local v0.2.0 delivery in dist/
-contains the PDF, Git bundle, evidence archive and SHA256SUMS; see
-docs/releases/v0.2.0.md. The source bundle requires the pinned EPIC submodule
+are the reproducibility boundary. The review snapshot in
+`dist/review-2026-09-28/` contains the PDF, base Git bundle, review patch,
+evidence archive, manifest and SHA256SUMS; see
+`docs/releases/review-2026-09-28.md`. The source bundle requires the pinned EPIC submodule
 for baseline execution. The historical remote v0.1.1 assets remain unchanged.
+
+## Historical release checkout (M17 only)
+
+For the historical local submission release, not the current reviewed article:
+
+```bash
+git clone ./mwpc-exact-v0.2.0.bundle tcc-final
+cd tcc-final
+git checkout v0.2.0
+```
+
+Current `make paper` checks M13, M17 and M19 derivatives and then checks the
+compiled PDF's 10–16 pages, unresolved references and overfull boxes. Poppler's
+`pdfinfo` is required along with TeX. The historical result tables retained in
+`paper/supplement-method.tex` are not additional tables in the main article.

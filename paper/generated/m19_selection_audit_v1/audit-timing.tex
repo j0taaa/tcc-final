@@ -1,0 +1,17 @@
+\begin{table}[ht]
+\centering\small
+\caption{Saved-state selection against witness-reusing greedy. Absolute times are medians of state medians; ratios are medians of paired within-state ratios, not ratios of the absolute columns. Each row has 20 feasible states and 3 repetitions. Model inference and top-$K$ preparation are excluded.}
+\label{tab:selection-audit}
+\begin{tabular}{rrrrr}\toprule
+$K$ & Budget & Exact (ms) & Greedy (ms) & Greedy/exact\\ \midrule
+2 & 2 & 12.4 & 14.0 & 1.00 \\
+2 & 8 & 12.7 & 29.5 & 2.05 \\
+2 & 32 & 14.2 & 44.9 & 3.82 \\
+4 & 2 & 34.1 & 37.7 & 0.96 \\
+4 & 8 & 36.1 & 67.8 & 2.01 \\
+4 & 32 & 43.3 & 95.8 & 2.89 \\
+8 & 2 & 121.8 & 116.8 & 0.96 \\
+8 & 8 & 127.0 & 141.4 & 1.71 \\
+8 & 32 & 149.8 & 213.5 & 2.35 \\
+\bottomrule\end{tabular}
+\end{table}

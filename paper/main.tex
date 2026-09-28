@@ -82,62 +82,30 @@ Propostas de tokens em modelos de linguagem por difusão podem ser plausíveis i
 
 \section{Introduction}
 
-Autoregressive language models generate a sequence from left to right, conditioning each new token on the previously generated prefix. Discrete diffusion language models use a different organization: they start from a corrupted sequence, often composed of masks, and perform successive denoising steps that estimate tokens for several still-unknown positions. Discrete diffusion processes were studied by \cite{austin2021d3pm}; simpler and more scalable masked-diffusion formulations were proposed by \cite{sahoo2024mdlm}; and larger models such as LLaDA showed that the approach can be applied to the large-language-model paradigm \cite{nie2025llada}. The ability to update several positions in one pass is a principal motivation for this paradigm.
+Masked diffusion language models estimate several unknown positions in one forward pass \cite{austin2021d3pm,sahoo2024mdlm,nie2025llada}. Parallel proposals can nevertheless conflict: individually acceptable tokens may jointly eliminate every completion of a JSON document or program. The decoder must select a compatible batch while preserving already committed positions and the finite canvas.
 
-Parallel generation also makes structural constraints harder to enforce. In code, JSON, expressions, domain-specific languages, and other formal outputs, validity is not an isolated property of each position. Two tokens may each be acceptable in isolation while becoming incompatible when fixed together. An autoregressive model can filter its next tokens from the current prefix. In a dLLM, masks remain in several regions, tokens may be revealed out of order, and every decision must preserve at least one valid completion of the entire canvas.
-
-DINGO demonstrated constrained inference under regular languages through dynamic programming \cite{suresh2025dingo}. Later, \cite{mundler2025cfg} reduced CFG-constrained decoding to checking whether a partial output remains completable. Their method translates the partial state into a regular language of possible completions and tests whether its intersection with the CFG language is nonempty. EPIC reduced the cost of this approach through lexical memoization, Earley validation directly over a graph, and relaxed subset selection that recovers part of the parallelism \cite{jin2026epic}. However, when a full batch fails, identifying the best proposal subset remains a combinatorial choice handled by a heuristic policy.
-
-This work asks: \emph{can we select exactly, without enumerating every subset, the maximum-weight set of parallel proposals that still admits a representable CFG-valid completion?} The central hypothesis is that enumeration over $2^{|C|}$ is unnecessary. Every valid completion automatically determines which proposals it preserves. Subset search can therefore be replaced by maximum-weight derivation search using weighted parsing and the max-plus semiring \cite{goodman1999semiring,mohri2002}.
-
-The overall goal is to develop and demonstrate an exact parallel-commitment algorithm for CFG-constrained dLLMs. The specific goals are: (i) formalize \emph{Maximum-Weight Parallel Commitment} (MWPC); (ii) prove its equivalence to the highest-reward feasible completion; (iii) construct a token-aligned max-plus CKY version; (iv) generalize it to a finite lattice that preserves tokenization, lexical analysis, and provenance; (v) prove soundness, completeness, per-step optimality, and \emph{finite-slot exactness}; and (vi) implement and evaluate the method on finite generated instances and matched-budget nonliteral tasks.
-
-Weighted parsing is established in the literature. The contribution is the formulation of dLLM parallel commitment as a single weighted inference, the tokenizer-aware construction with finite slots, and its integration into an iterative decoder. The claimed optimality is local to the current step: the method maximizes the defined objective over the current proposals and possible completions of the current state. It does not claim to optimize the entire future trajectory because subsequent logits depend on the commitments made.
-
-The rest of this article is organized as follows. Section~\ref{sec:fundamentacao} presents background and related work. Section~\ref{sec:problema} formalizes the problem. Section~\ref{sec:reducao} proves the main reduction. Sections~\ref{sec:tokenaligned} and~\ref{sec:lattice} describe the token-aligned and tokenizer-aware algorithms. Section~\ref{sec:decoder} integrates the optimizer into denoising. Section~\ref{sec:metodologia} specifies implementation and evaluation. Finally, Sections~\ref{sec:resultados}--\ref{sec:conclusao} present the results, limitations, and conclusion.
+This work asks whether the maximum-weight compatible batch can be found without enumerating $2^{|C|}$ subsets. For non-negative proposal weights, every completion determines all proposals it matches. Maximizing their reward is therefore one max-plus parsing problem. The contribution is this per-step formulation together with a token-provenance-preserving finite lattice, independent implementations and validated certificates. Weighted parsing itself is established; neither full-vocabulary optimality under truncated support nor optimality over future denoising steps is claimed.
 
 \section{Background and Related Work}
 \label{sec:fundamentacao}
 
-\subsection{Diffusion language models and parallel commitment}
+\subsection{Constrained parallel decoding}
 
-Consider a finite token vocabulary $\vocab$ and a canvas of length $n$. A partial state is
-\begin{equation}
- x \in (\vocab \cup \{\mask\})^n.
-\end{equation}
-At step $s$, the model estimates marginal distributions $p_\theta^{(s)}(\cdot\mid x)$ for masked positions. A reveal policy chooses proposed positions and tokens, usually from confidence, entropy, or the denoising schedule. Committing a proposal permanently replaces a mask with the corresponding token unless the sampler allows remasking.
+At each denoising step, a reveal policy chooses proposed tokens from marginal distributions at masked positions. Proposing many tokens is inexpensive relative to checking their joint compatibility. Serial acceptance preserves feasibility but is order-dependent and may discard a better batch.
 
-Parallelism creates a distinction between \emph{proposing} and \emph{committing}. A model forward pass can propose many tokens simultaneously. Under a global constraint, however, the decoder must decide which proposals can become irrevocable without eliminating every valid completion. Serial validation tests one proposal, updates the state, and continues to the next; this is correct when every acceptance preserves a witness, but its outcome depends on order and may discard a better batch.
+DINGO uses dynamic programming for regular-language constraints \cite{suresh2025dingo}; Dang and Ermon study exact inference over mean-field distributions conditioned by finite automata \cite{dang2026automata}. For CFGs, Mündler et al. test completion feasibility through intersection with a regular representation of partial outputs \cite{mundler2025cfg}. EPIC accelerates this process with lexical memoization, graph-based Earley validation and relaxed batch selection followed by verification \cite{jin2026epic}. MWPC replaces repeated subset checks with one weighted inference on the represented finite support.
 
-\subsection{Regular and context-free constraints}
+CLAD also performs exact weighted selection in parallel diffusion decoding, but on a matching conflict graph derived from attention-based clusters \cite{qi2026clad}. Its compatibility criterion differs from the existence of a CFG-valid completion. Thus exact parallel subset selection in general is not a novelty claim here.
 
-Regular languages are representable by finite automata and capture local patterns, regular expressions, and many fixed schemas. DINGO formulates constrained inference for dLLMs under this class and uses dynamic programming to find or sample accepted sequences \cite{suresh2025dingo}. Later work provides exact inference over a mean-field distribution conditioned by finite automata, including sampling and greedy decoding \cite{dang2026automata}.
+\subsection{Weighted grammar--automaton intersection}
 
-A context-free grammar $G=(N,\Sigma,P,S)$ has nonterminals $N$, terminals $\Sigma$, productions $P$, and start symbol $S$. CFGs represent recursive dependencies such as balanced parentheses, nested blocks, and syntax trees. CKY string recognition for a grammar in Chomsky normal form uses a chart over spans and is cubic in input length \cite{kasami1965}. Earley recognizes general CFGs without the same normalization and also has a cubic worst-case bound \cite{earley1970}. The intersection of a context-free language with a regular language remains context-free and can be constructed with states that combine nonterminals and pairs of automaton states \cite{barhillel1961,hopcroft2006}.
+CFGs express recursion, including nested arrays and balanced delimiters. CKY parses normalized grammars over spans; Earley supports general productions \cite{kasami1965,earley1970}. Intersecting a CFG with a regular language preserves context-freeness \cite{barhillel1961,hopcroft2006}. Weighted intersection is also established: Nederhof and Satta formulate probabilistic parsing as intersection, and Hanneforth presents a practical weighted algorithm \cite{nederhof2003intersection,hanneforth2011intersection}. Pasti et al. extend the construction to epsilon arcs while preserving structural correspondence \cite{pasti2023intersection}. Our finite DAG implementation instead uses maximum-weight epsilon closure with original-path backpointers; it needs one optimal witness, not an encoding of all derivations.
 
-\subsection{Weighted parsing and semirings}
+Semiring parsing separates chart structure from its arithmetic \cite{goodman1999semiring,mohri2002}. Here max-plus uses $\max$ for alternatives, addition for composition, $-\infty$ for impossibility and zero for an empty reward. This maximizes one completion rather than summing probability mass over all CFG words, whose complexity can depend on ambiguity \cite{amarilli2026probabilistic}. Neutral grammar-production weights ensure that multiple derivations do not multiply a token's reward.
 
-Parsing algorithms can be parameterized by a semiring. In the Boolean semiring, addition represents disjunction and multiplication represents conjunction, so the chart records reachability only. In the tropical max-plus semiring,
-\begin{equation}
- (\R\cup\{\neginf\},\;\oplus=\max,\;\otimes=+,\;\mathbf{0}=\neginf,\;\mathbf{1}=0),
-\end{equation}
-the chart records the highest-scoring derivation. This abstraction unifies recognition, Viterbi, inside, and other quantities \cite{goodman1999semiring}. Weighted parsing algorithms and graph structures follow the same algebraic principles \cite{goodman1999semiring,mohri2002}.
+\subsection{Tokenization and finite slots}
 
-This problem uses max-plus rather than sum-product. The distinction matters for the problem studied by \cite{amarilli2026probabilistic}: computing the total mass of CFG words under independent distributions may require unambiguity assumptions and become \#P-hard for general classes. Here, contributions from all words or derivations are not summed; only the best completion is sought. Provided that production weights do not artificially count ambiguity, multiple derivations of the same string do not change its maximum reward.
-
-\subsection{Tokenization and the lexical interface}
-
-Models operate over subwords produced by techniques such as BPE \cite{sennrich2016bpe} or SentencePiece \cite{kudo2018sentencepiece}. Programming-language grammars, by contrast, often use characters or categories such as \texttt{IDENTIFIER}, \texttt{NUMBER}, and \texttt{LPAREN}. One token may contain several characters, cross lexical boundaries, or complete a lexeme begun by another token. An exact method must simultaneously preserve model-token identity, emitted symbols, and the number of consumed slots.
-
-If a program detokenizes first and discards provenance, two tokenizations that produce the same text become indistinguishable even when only one matches the proposal at a position. This work instead retains each choice as an arc in a token lattice and composes it with a detokenization and lexing relation. The lexical-analysis concepts of maximal munch, rule priority, and keywords versus identifiers follow compiler literature \cite{aho2006}.
-
-\subsection{CFG-constrained decoding for dLLMs}
-
-\cite{mundler2025cfg} define completion feasibility for a partial state: at least one way of filling the masks must produce an output in the target language. Their procedure builds a regular representation of possible completions of the partial output and decides whether its intersection with the CFG is nonempty. This formulation supports outputs with masks in several regions, but repeated validation introduces cost.
-
-EPIC addresses three bottlenecks: repeated lexing, automaton determinization/minimization, and lost parallelism from serial checks \cite{jin2026epic}. For the last, it proposes a regular cover of the CFG and a heuristic split of the batch, followed by exact validation and serial fallback. The work notes that determining the truly compatible subset through subset checks would require exponentially many calls. This thesis changes the search variable: instead of choosing $B\subseteq C$ and repeatedly asking whether $B$ is valid, it puts all optional choices in one weighted structure and seeks a maximum-weight valid completion.
-
-The positioning is therefore specific: DINGO and Dang--Ermon inference are exact for regular constraints; Mündler et al. provide an exact CFG completion-feasibility test; and EPIC recovers CFG parallelism through relaxed selection followed by verification. This work does not claim to invent weighted parsing or exact constrained inference in general. Its proposed contribution is to solve the maximum-weight CFG-compatible batch of the current step through one max-plus inference over a finite canvas, while recovering the witness and token provenance.
+Subword vocabularies \cite{sennrich2016bpe,kudo2018sentencepiece} do not align with grammar terminals. One model token can emit several bytes or cross a lexical boundary; distinct token sequences can emit identical text. Discarding token provenance would therefore lose both proposal identity and slot accounting. Lexers may additionally impose maximal munch and priorities \cite{aho2006}. We distinguish the general lexical relation from the implemented raw-byte path, which performs no programming-language lexing.
 
 \section{Problem Formulation}
 \label{sec:problema}
@@ -294,24 +262,11 @@ Impossible entries have value $\neginf$. Backpointers store the terminal, produc
 \begin{algorithmic}[1]
 \Require CFG $G=(N,\vocab,P,S)$ in CNF, state $x$, proposals $C$
 \Ensure optimal batch $J^*$, witness $y^*$, and value $v^*$, or \textsc{Infeasible}
-\State Initialize $D[A,i,j]\gets\neginf$ and empty backpointers
-\For{$i\gets 1$ to $n$}
-  \ForAll{$A\rightarrow a\in P$}
-    \If{$s_i(a)>D[A,i,i+1]$}
-      \State $D[A,i,i+1]\gets s_i(a)$; record $(\textsc{Terminal},a)$
-    \EndIf
-  \EndFor
-\EndFor
-\For{$\ell\gets 2$ to $n$}
-  \For{$i\gets 1$ to $n-\ell+1$}
-    \State $j\gets i+\ell$
-    \ForAll{$A\rightarrow BC\in P$ and $k\in\{i+1,\ldots,j-1\}$}
-      \State $v\gets D[B,i,k]+D[C,k,j]$
-      \If{$v>D[A,i,j]$}
-        \State $D[A,i,j]\gets v$; record $(B,C,k)$
-      \EndIf
-    \EndFor
-  \EndFor
+\State Initialize entries to $\neginf$ and empty backpointers
+\State Fill length-one entries using Equation~\ref{eq:basecky}; record maximizing terminals
+\For{$\ell=2,\ldots,n$ and $i=1,\ldots,n-\ell+1$}
+  \State $j\gets i+\ell$
+  \State Evaluate Equation~\ref{eq:cky}; record a maximizing production and split
 \EndFor
 \If{$D[S,1,n+1]=\neginf$} \Return \textsc{Infeasible} \EndIf
 \State $y^*\gets\textsc{Backtrack}(S,1,n+1)$
@@ -481,17 +436,9 @@ The number of masks strictly decreases and cannot be negative. At the final stat
 \section{Implementation and Evaluation Methodology}
 \label{sec:metodologia}
 
-The local submission release is \texttt{v0.2.0}; its source, evidence and reproduction instructions are delivered together (\path{docs/releases/v0.2.0.md}). Each measurement retains its own clean producing commit. The read-only EPIC submodule remains pinned to \texttt{5b1b310}. Python provides independent reference solvers, proposal/support/lattice construction, validation and the LLaDA adapter. The independent Rust crate \texttt{mwpc\_parser} implements production weighted parsing and reconstruction; \texttt{mwpc\_parser\_py} is a thin PyO3 boundary. The integration preserves \texttt{serial}, \texttt{epic} and \texttt{exact}. Parent software and research artifacts use MIT; manuscript rights remain separate, and upstream notices are retained.
+The reviewed source snapshot is dated 2026-09-28 and includes a base bundle, patch and checksum manifest; the local submission release \texttt{v0.2.0} is historical. Each measurement retains its own clean producing commit. The read-only EPIC submodule remains pinned to \texttt{5b1b310}. Python provides independent reference solvers, proposal/support/lattice construction, validation and the LLaDA adapter. The independent Rust crate \texttt{mwpc\_parser} implements production weighted parsing and reconstruction; \texttt{mwpc\_parser\_py} is a thin PyO3 boundary. The integration preserves \texttt{serial}, \texttt{epic} and \texttt{exact}. Parent software and research artifacts use MIT; manuscript rights remain separate, and upstream notices are retained.
 
-The controlled Python normalizer computes nullable nonterminals, records start-symbol empty acceptance, removes $\varepsilon$ and unit productions, introduces terminal proxies, and right-binarizes longer rules while retaining source-production IDs. The parser boundary accepts only strict terminal/binary CNF plus that empty-string flag. Explicit graph $\varepsilon$-edges are normalized before parsing by maximum-weight acyclic closure; a returned path is expanded to original edge IDs. Thus $\varepsilon$ consumes no physical slot, and neither the Python nor Rust parser performs an implicit cyclic closure. The live structured tasks supply literal UTF-8 byte CFGs directly, so the production path uses no lexical transducer.
-
-For the pinned LLaDA tokenizer, every ordinary base-token piece is mapped compositionally to raw bytes by reversing the GPT-2 ByteLevel bijection; singleton calls to \texttt{decode} are not used to construct lattice emissions. The 126,080 base IDs are ordinary byte-emitting tokens, whereas all 269 added IDs are unsupported as content. The live adapter ranks the maximum needed support once on-device by logit descending and token ID ascending. Each masked row represents its current top-$K$ prefix, the frozen proposal token, and required termination/PAD IDs; fixed rows are singletons. Historical Q5 used $K=8$ and feasibility-driven doubling to 16 and 32, stopping at the first feasible support. Every optimum is therefore reported as \texttt{exact\_on\_support} for the current finite canvas and step, never as a full-vocabulary or future-trajectory optimum.
-
-At each step, the baseline schedule ranks eligible masked positions by primary-token confidence descending and absolute position ascending, retains at most its budget, and creates one frozen primary proposal per position. The live studies use the model softmax confidence itself as the non-negative proposal weight; non-proposal alternatives have zero reward. Equal MWPC scores use stable implementation traversal only---there is no claimed secondary objective. The required EOS profile accepts IDs 126081 and 126348 as the first termination event and uses 126081 as canonical PAD afterward; all specials consume physical slots but emit no CFG byte. The historical adaptive Rust deadline was 30 seconds total, with remaining time passed to each attempt, and \texttt{TIMEOUT} remains distinct from support infeasibility. An optimal zero-match witness advances at the eligible position whose witness token has highest model probability. The reported Q5 exact configuration has no non-optimal fallback; the generic adapter can invoke an explicitly configured serial or EPIC callback while retaining the original solver status and without assigning an exact guarantee to that update.
-
-
-
-Hardware, dependency versions, theorem-to-code correspondence, and historical configurations are recorded in the supplementary reproduction notes, \path{paper/supplement-method.tex}, and the immutable raw metadata.
+Grammar normalization removes nullable/unit rules and produces strict CNF with an empty-word flag. Epsilon closure retains original edge paths. The LLaDA tokenizer is mapped compositionally to bytes; unsupported controls never become ordinary content. Required EOS/PAD IDs consume physical slots without emitting bytes. Each support retains its frozen proposals, top-$K$ alternatives and required controls; committed rows are singletons. Certificates independently check the full witness, provenance and score. Detailed tokenizer IDs, normalization, historical schedules, hardware and dependency revisions remain in \path{paper/supplement-method.tex} and raw metadata.
 
 The corrected nonliteral study uses the same \texttt{GSAI-ML/LLaDA-8B-Instruct} checkpoint on an RTX 3080 Ti, quantized with NF4. Twelve pilot prompts and twelve disjoint confirmation prompts cover balanced brackets, parenthesized arithmetic and nested JSON arrays. Each family has one recursive byte grammar shared across prompts, rather than a literal target grammar. Independent checkers distinguish syntactic validity from bracket counts/depth, arithmetic value and leaf multiset, or ordered JSON leaves/depth. All strategies receive 32 slots, 16 steps and two initial transfer proposals per step. The exact support starts at $K=2$ and expands to 4 and 8 with a five-second solver budget; a supervisor also limits generation to 60 seconds. Two warm-up forwards precede each measured shape, CUDA timing is synchronized, strategy order rotates, and model loading is excluded. Confirmation uses two repetitions per task, which are repeated measurements rather than additional tasks. Fixed steps can leave an incomplete canvas after rejected proposals; such outcomes remain in the denominator.
 
@@ -510,17 +457,7 @@ Historical tables are regenerated by \path{scripts/exact_commit/build_article_re
 
 Across Q1's \MThirteenQOneCases{} cases (\MThirteenQOneMinSlots--\MThirteenQOneMaxSlots{} slots; at most \MThirteenQOneMaxPaths{} paths), the oracle, Python, and Rust agreed with \MThirteenQOneFailures{} failures; \MThirteenQOneOptimalCases{} optima yielded \MThirteenQOneCertificateChecks{} independent certificate validations. The implementations therefore agreed on optimum values and independently valid witnesses throughout this configured small-case suite. In Q3, an abstract witness needed \MThirteenQThreeRequiredTokens{} tokens in \MThirteenQThreeAvailableSlots{} slot; finite accounting instead returned support infeasibility or the lower-weight EOS-only witness.
 
-\begingroup\let\scriptsize\footnotesize
-\input{generated/m1301_article_results_v1/r2-heuristic-gap.tex}
-\endgroup
-
-The synthetic Q2 cases demonstrate losses: unit-weight median gaps were \MThirteenQTwoUnitSerialGap{} (serial) and \MThirteenQTwoUnitEpicGap{} (EPIC), while confidence-mode EPIC's median gap was \MThirteenQTwoConfidenceEpicGap{}. They are illustrative, not typical-model estimates. All \MThirteenQTwoRealSnapshots{} replayed snapshots became singleton supports after deduplication, so both heuristics tied exact; this null result checks alignment but cannot estimate a representative gap.
-
-% The full historical runtime table remains in the generated supplementary artifacts.
-
-Q4 recorded \MThirteenQFourMeasurements{} measurements with valid certificates over \MThirteenQFourPoints{} settings and \MThirteenQFourRepetitions{} repetitions, with all \MThirteenQFourComparisons{} backend pairs agreeing and no timeout, censoring, or error. The envelope reached \MThirteenQFourMaxNodes{} nodes, \MThirteenQFourMaxEdges{} edges, and \MThirteenQFourMaxChart{} chart entries. Pooled descriptively, byte expansion was the largest named median component (\MThirteenQFourPythonNamedMs{} ms Python; \MThirteenQFourRustNamedMs{} ms Rust), while Rust's largest bucket was \MThirteenQFourRustOverheadMs{} ms of unattributed instrumentation/FFI overhead. The compound graph axis does not isolate a cause or represent code workloads.
-
-In the historical literal-task Q5 study, \MThirteenQFiveRows{} warm CUDA generations (\MThirteenQFiveTasks{} tasks, \MThirteenQFiveSeeds{} seeds, \MThirteenQFiveStrategies{} strategies), every constrained output passed the independent checker. EPIC batched up to \MThirteenQFiveEpicMaxBatch{} yet retained serial selections; exact produced \MThirteenQFiveExactCertificates{} valid certificates with no fallback/expansion. Exact/serial median-runtime ratios were \MThirteenQFiveJsonRatio{} (JSON) and \MThirteenQFiveDslRatio{} (DSL). These runtime ratios are confounded: exact received a proposal budget of 16 (JSON) or 12 (DSL) per step, whereas the upstream schedule transferred two tokens per step. Exact used one forward pass; the baselines used eight or six. The ratios therefore do not isolate a benefit from MWPC selection. The corrected nonliteral study below uses the same initial transfer schedule for every strategy.
+Historical Q2 gaps are illustrative, not typical-model estimates: its real snapshots collapsed to singleton supports and cannot estimate a representative gap. Q4's compound graph axis does not isolate a cause or represent code workloads. Literal-task Q5 runtime ratios are confounded by unequal proposal budgets (16/12 for exact versus two initial transfers for the baselines). Those artifacts and detailed results remain in the supplement; the following studies address recursive supports and matched schedules.
 
 \subsection{Recursive and nonliteral review experiments}
 
@@ -531,6 +468,8 @@ All 24 unconstrained pre-commit pilot states were retained, including failed gen
 The larger-batch replay uses all 24 confirmation states, budgets 2/8/32, $K=2,4,8$, and three fresh-process repetitions with rotating method order. Besides original greedy, it tests witness reuse: an already matched proposal needs no new feasibility query. Each method receives the same saved proposals/support and a ten-second whole-selection deadline, including certificate checks. All 1,944 calls finished; each method had 540 feasible and 108 support-infeasible outcomes. Reuse preserved all greedy decisions.
 
 Against witness reuse, median paired greedy/exact time ratios across widths were \MAuditTwoMin{}--\MAuditTwoMax{} for budget 2, \MAuditEightMin{}--\MAuditEightMax{} for budget 8, and \MAuditAllMin{}--\MAuditAllMax{} for budget 32. Repetitions are aggregated within states; ratios below one favor greedy. At budget 32, exact was faster in all 20 feasible states at each width, but budget 2 showed no clear gain. Timings exclude model inference and top-$K$ preparation; the original comparator inflated the earlier speedups. Raw data and controls: \texttt{m19\_selection\_audit\_v1}.
+
+\input{generated/m19_selection_audit_v1/audit-timing.tex}
 
 Only one bracket state ($K=4$, budget 32) had a reward gain, confirmed independently in Python and Rust: eight versus seven content proposals, plus 23 EOS/PAD matches for each method. Both witnesses failed the prompt. No feasible replay witness passed the functional checker. The gain concerns the proposal objective, not demonstrated output quality.
 
@@ -552,7 +491,7 @@ The tokenizer contract is the pinned raw ByteLevel byte stream, not singleton-\t
 \section{Conclusion and Future Work}
 \label{sec:conclusao}
 
-For non-negative weights, the highest-reward representable CFG completion identifies an optimal per-step batch and witness. The finite parser preserves grammar, fixed positions, and slots. The experiments support oracle agreement and expose greedy losses on some synthetic recursive supports. The larger-batch replay shows lower selector latency against a witness-reusing greedy baseline, while small batches show no clear gain. Its reward improvement does not establish better task output. The matched-budget nonliteral study did not establish a completion, functional-quality or end-to-end runtime advantage. Future work should reduce repeated support preparation, reuse parsing state, and evaluate larger batches within matched live schedules and richer workloads. Such changes require new configurations and measurements rather than extrapolation from the current small study.
+For non-negative weights, the highest-reward representable CFG completion identifies an optimal per-step batch and witness. The finite parser preserves grammar, fixed positions, and slots. The experiments support oracle agreement and expose greedy losses on some synthetic recursive supports. The larger-batch replay shows lower selector latency against a witness-reusing greedy baseline, while small batches show no clear gain. Its reward improvement does not establish better task output. The matched-budget nonliteral study did not establish a completion, functional-quality or end-to-end runtime advantage. A planned application is bounded JSON repair with protected fields: rewarding original tokens would minimize weighted substitutions on the represented support. It requires independent evaluation against practical repair tools and model retries; no repair results are claimed here. Such changes require new configurations and measurements rather than extrapolation from the current small study.
 
 \section*{AI-Use Declaration}
 

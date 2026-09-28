@@ -93,3 +93,13 @@ def test_paper_has_no_unresolved_placeholder_and_submission_identity_is_complete
     for forbidden in ("[TO BE MEASURED]", "[MODEL_ID]", "[paper section]"):
         assert forbidden not in article
     assert "- [x] Reproduction commands and final repository tag" in checklist
+
+
+def test_current_snapshot_does_not_route_readers_to_the_historical_tag() -> None:
+    setup = _read("README.md").split("## Setup", 1)[1].split("## Decoder", 1)[0]
+    assert "2026-09-28 source snapshot" in setup
+    assert "git apply ../mwpc-review.patch" in setup
+    assert "git checkout v0.2.0" not in setup
+    release = _read("docs/releases/review-2026-09-28.md")
+    for item in ("mwpc-review-base.bundle", "mwpc-review.patch", "manifest.json", "SHA256SUMS"):
+        assert item in release
