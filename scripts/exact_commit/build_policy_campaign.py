@@ -8,6 +8,7 @@ from collections import Counter
 from pathlib import Path
 
 from compare_policy_repeats import build
+from diagnose_policy_whitespace import diagnose
 from summarize_policy_screen import read, summarize
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -42,7 +43,7 @@ def main():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(text)
 
-    all_rows, cohorts = [], {}
+    all_rows, cohorts, whitespace = [], {}, {}
     for name, count in COHORTS.items():
         directory = RAW / name
         config, rows = read(directory)
@@ -51,6 +52,7 @@ def main():
         write(OUT / f"m24-{name}-summary.json", summary)
         write(OUT / f"m24-{name}-results.md", report)
         all_rows += rows
+        whitespace[name] = diagnose(config, rows)
         cohorts[name] = {
             "records": count,
             "producing_commits": sorted({r["git_commit"] for r in rows}),
@@ -99,6 +101,7 @@ def main():
         ],
     }
     write(OUT / "m24-campaign-inventory.json", inventory)
+    write(OUT / "m24-whitespace-sensitivity.json", whitespace)
     print(json.dumps({k: v for k, v in inventory.items() if k != "cohorts"}, indent=2))
 
 
