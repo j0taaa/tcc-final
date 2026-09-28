@@ -1,8 +1,21 @@
+import argparse
 import hashlib
 import json
 from pathlib import Path
 
 from mwpc_research.schema_calls import schema_catalog
+
+parser = argparse.ArgumentParser(description="Rebuild the schema-only BFCL pilot and coverage audit")
+parser.add_argument("--check", action="store_true")
+args = parser.parse_args()
+
+
+def write(path, text):
+    if args.check:
+        assert path.read_text() == text, path
+    else:
+        path.write_text(text)
+
 
 root = Path("results/raw/m24_external/bfcl")
 rev = (root / "revision.txt").read_text().strip()
@@ -47,7 +60,7 @@ for name in ["BFCL_v4_simple_python.json", "BFCL_v4_live_simple.json"]:
         "exclusions": exclusions,
     }
 audit["answer_sha256"] = hashlib.sha256((root / "possible_answer.json").read_bytes()).hexdigest()
-Path("docs/evidence/m24-bfcl-coverage.json").write_text(json.dumps(audit, indent=2) + "\n")
+write(Path("docs/evidence/m24-bfcl-coverage.json"), json.dumps(audit, indent=2) + "\n")
 cfg = json.loads(Path("configs/experiments/m24_policy_development_v1.json").read_text())
 cfg.update(
     experiment_id="m24_bfcl_enum_pilot_v1",
@@ -63,7 +76,8 @@ cfg.update(
     max_forwards=32,
     dataset_commit=rev,
 )
-Path("configs/experiments/m24_bfcl_enum_pilot_v1.json").write_text(
-    json.dumps(cfg, indent=2, ensure_ascii=False) + "\n"
+write(
+    Path("configs/experiments/m24_bfcl_enum_pilot_v1.json"),
+    json.dumps(cfg, indent=2, ensure_ascii=False) + "\n",
 )
 print(len(chosen))
