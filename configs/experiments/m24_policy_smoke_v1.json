@@ -1,0 +1,137 @@
+{
+  "experiment_id": "m24_policy_smoke_v1",
+  "phase": "integration smoke, not selection or confirmation",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "seed": 240001,
+  "slots": 24,
+  "max_forwards": 24,
+  "task_count": 2,
+  "support": "per-position union of canonical task-filtered tokens, intersect finite byte CFG preserving operand multiset and required EOS; alternative tokenizations permitted",
+  "weight": "full_vocabulary_probability",
+  "quantization": "NF4 double quantization, bfloat16 compute",
+  "cpu_threads": 1,
+  "max_generation_seconds": 120,
+  "output_root": "results/raw/m24_policy_smoke_v1",
+  "family": "nested",
+  "temperature": 0.0,
+  "preserve_operands": true,
+  "backend": "rust",
+  "epic_max_resamples": 100,
+  "selection_timeout_seconds": 10,
+  "recover_in_process": true,
+  "policies": [
+    {
+      "name": "exact_b1",
+      "kind": "exact",
+      "proposal_budget": 1
+    },
+    {
+      "name": "exact_b2",
+      "kind": "exact",
+      "proposal_budget": 2
+    },
+    {
+      "name": "exact_b4",
+      "kind": "exact",
+      "proposal_budget": 4
+    },
+    {
+      "name": "exact_b8",
+      "kind": "exact",
+      "proposal_budget": 8
+    },
+    {
+      "name": "exact_b12",
+      "kind": "exact",
+      "proposal_budget": 12
+    },
+    {
+      "name": "exact_b24",
+      "kind": "exact",
+      "proposal_budget": 24
+    },
+    {
+      "name": "confidence_0.2",
+      "kind": "confidence",
+      "threshold": 0.2
+    },
+    {
+      "name": "confidence_0.5",
+      "kind": "confidence",
+      "threshold": 0.5
+    },
+    {
+      "name": "confidence_0.8",
+      "kind": "confidence",
+      "threshold": 0.8
+    },
+    {
+      "name": "margin_0",
+      "kind": "margin",
+      "relative_tolerance": 0
+    },
+    {
+      "name": "margin_0.02",
+      "kind": "margin",
+      "relative_tolerance": 0.02
+    },
+    {
+      "name": "margin_0.1",
+      "kind": "margin",
+      "relative_tolerance": 0.1
+    },
+    {
+      "name": "exact_multi2",
+      "kind": "exact",
+      "top_k": 2
+    },
+    {
+      "name": "exact_multi3",
+      "kind": "exact",
+      "top_k": 3
+    },
+    {
+      "name": "greedy_b8",
+      "kind": "greedy",
+      "proposal_budget": 8
+    },
+    {
+      "name": "exact_review",
+      "kind": "exact",
+      "review": true
+    },
+    {
+      "name": "catalog_map4",
+      "kind": "catalog_map",
+      "commit_cap": 4
+    },
+    {
+      "name": "epic_lexical_2",
+      "kind": "epic",
+      "method": "epic_lexical_2"
+    },
+    {
+      "name": "epic_lexical_4",
+      "kind": "epic",
+      "method": "epic_lexical_4"
+    },
+    {
+      "name": "epic_lexical_24",
+      "kind": "epic",
+      "method": "epic_lexical_24"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "nested-220004-0",
+      "instruction": "Add 2 to the sum of 1 and 2. Put the nested expression in the first argument.",
+      "expected": "add(add(1,2),2)"
+    },
+    {
+      "id": "nested-220004-1",
+      "instruction": "Subtract 3 from the difference of 2 minus 0. Put the nested expression in the first argument.",
+      "expected": "sub(sub(2,0),3)"
+    }
+  ]
+}

@@ -206,3 +206,39 @@ def test_numeric_secondary_metric_keeps_call_identity_distinct():
     assert execute_tool_call("sub(sub(3,1),1)") == 1
     assert execute_tool_call("abs(neg(3))") == 3
     assert execute_tool_call("__import__('os')") is None
+
+
+def test_in_process_official_recovery_uses_same_grammar_and_is_timed(monkeypatch):
+    torch = pytest.importorskip("torch")
+    from constrained_diffusion.eval.dllm.models.llada import generate_constrained as upstream
+
+    class Tokenizer:
+        def decode(self, ids, skip_special_tokens=False, clean_up_tokenization_spaces=False):
+            words = {0: "a", 1: "b", 126081: "<eos>", 126336: "<mask>"}
+            return "".join(words[t] for t in ids if not skip_special_tokens or t < 126081)
+
+    def incomplete(*args, **kwargs):
+        yield torch.tensor([[9, 0, 126336, 126081, 126081]]), [], False
+
+    monkeypatch.setattr(upstream, "generate", incomplete)
+    result = load_runner().run_epic(
+        model=SimpleNamespace(device="cpu", config=SimpleNamespace(vocab_size=126337)),
+        tokenizer=Tokenizer(),
+        prompt=[9],
+        grammar=catalog_byte_grammar(("ab",)),
+        rows=[[0], [1], [126081], [126081]],
+        calls=["ab"],
+        config={
+            "max_forwards": 4,
+            "slots": 4,
+            "max_generation_seconds": 20,
+            "epic_max_resamples": 100,
+            "recover_in_process": True,
+        },
+        method="epic_native_1",
+    )
+    assert result["generator_status"] == "incomplete"
+    assert result["recovery_status"] == "recovered"
+    assert result["output"] == "ab" and result["status"] == "complete"
+    assert result["forwards"] == 0
+    assert 0 < result["recovery_seconds"] <= result["elapsed_excluding_shadow_seconds"]

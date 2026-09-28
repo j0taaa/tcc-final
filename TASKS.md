@@ -16,6 +16,32 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M24 — Investigate structurally stable commitment for useful tool calls
+
+Depends on M23, M22 and M19. This is a new hypothesis, not a measured benefit.
+Preserve the MWPC selected set; record the actual committed subset separately.
+
+- [x] T2400: Specify a one-month incremental plan, prior-art boundaries, useful
+  task, strong EPIC baselines, ablations, development/test separation and stop rule.
+  **Evidence:** `docs/research/m24-stable-commit-plan.md`: seven primary prior-art sources, explicit counterfactual rule and proof scope, BFCL coverage gate, full EPIC recovery, simple controls, uncertainty requirements and day-7 stop rule. No new model result or novelty assurance.
+- [x] T2401: Implement a small exhaustive reference for counterfactual margins
+  and a separate commitment gate. Test near-optimal consensus independently,
+  strict threshold ties, fixed tokens, invalid weights and unscored fallback.
+  **Evidence:** `PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/exact_commit/test_commit_stability.py`: 47 passed, including 40 recorded randomized seeds against independent near-optimal consensus. Full `PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q`: 1,017 passed. `.venv/bin/ruff check src tests`, `.venv/bin/mypy` (82 source files), and `git diff --check` pass. Reference is not production integration; no runtime or semantic-accuracy claim.
+- [x] T2402: Add the gate around the production solver with a common deadline,
+  conservative numerical comparisons, independent certificate validation and
+  explicit unknown counterfactual statuses. Preserve existing decoder defaults.
+  Pass differential, full Python and relevant integration gates before timing.
+  **Evidence:** `src/mwpc_exact/commit_gate.py` reduces each counterfactual to a non-negative bonus query on unchanged support, including EOS/PAD; proof in M24 plan. 67 targeted tests (Python/Rust oracle comparisons, duplicate matches, fixed tokens, late/unknown queries and numerical ties); full pytest 1,085 passed. Ruff, MyPy (83 files), upstream pin pass; upstream integration 19 passed/4 pre-existing skips. In-process official recovery CPU test passes. No new solver timing claimed before frozen live run.
+- [ ] T2403: Freeze and commit a bounded live development pilot with confidence
+  and budget controls and full EPIC recovery timed together. Audit external BFCL
+  coverage without gold-based support. Archive every result; apply day-7 stop rule.
+  **Evidence:** not started; no new model result.
+- [ ] T2404: If pilot supports continuation, freeze primary comparison, uncertainty
+  analysis and disjoint external test before measurement; generate paired results,
+  a runnable read-only API demo and an evidence-grounded manuscript update.
+  **Evidence:** conditional on T2403; no superiority or novelty claim established.
+
 ## M23 — Compare the tool task with the actual EPIC decoder
 
 Depends on M22 and the M19 fairness audit. Preserve the pinned upstream source,

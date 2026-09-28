@@ -175,13 +175,72 @@ def run_epic(*, model, tokenizer, prompt, grammar, rows, calls, config, method):
                 os.environ[key] = value
     synchronize()
     elapsed = time.perf_counter() - start
+    generator_status = status
     decoded = tokenizer.decode(last, skip_special_tokens=True)
+    generator_output = decoded
+    recovery_status = "disabled"
+    recovery_seconds = 0.0
+    if config.get("recover_in_process", False):
+        recovery_status = "not_needed"
+        if status != "complete":
+            from constrained_diffusion.constrain_utils import (
+                EOS,
+                autocomplete_valid,
+                generated_language,
+                partial_output_from_tokens,
+            )
+
+            words = [
+                None
+                if t == 126336
+                else EOS
+                if t in (126081, 126348)
+                else tokenizer.decode([t], clean_up_tokenization_spaces=False)
+                for t in last
+            ]
+            begin = time.perf_counter()
+            remaining = config["max_generation_seconds"] - (begin - start)
+            signal.signal(signal.SIGALRM, deadline)
+            try:
+                if remaining <= 0:
+                    raise DecodeLimit("timeout")
+                signal.setitimer(signal.ITIMER_REAL, remaining)
+                partial, first_gap, eos_adj = partial_output_from_tokens(words, None)
+                completion = autocomplete_valid(
+                    partial_output=partial,
+                    first_token_gap=first_gap,
+                    last_token_eos_adj=eos_adj,
+                    generated_lang=generated_language(
+                        words, lex_map, native_grammar.get_terminals()
+                    ),
+                    lex_map=lex_rules,
+                    subtokens={},
+                    constraint_lang=native_grammar,
+                )
+                recovery_status = "recovered" if completion is not None else "no_completion"
+                if completion is not None:
+                    decoded, status = completion, "complete"
+            except DecodeLimit:
+                recovery_status, status = "timeout", "timeout"
+            except Exception as exc:
+                recovery_status, status = "error", "error"
+                failure = {"type": type(exc).__name__, "message": str(exc)}
+            finally:
+                signal.setitimer(signal.ITIMER_REAL, 0)
+                signal.signal(signal.SIGALRM, prior_handler)
+                recovery_seconds = time.perf_counter() - begin
+        synchronize()
+        elapsed = time.perf_counter() - start
     normalized = normalize_tool_call(decoded)
     return {
         "status": status,
         "failure": failure,
         "output": decoded,
         "normalized_output": normalized,
+        "generator_status": generator_status,
+        "generator_output": generator_output,
+        "recovery_status": recovery_status,
+        "recovery_seconds": recovery_seconds,
         "syntax_valid": status == "complete" and normalized in calls,
         "token_emissions": {
             str(t): list(tokenizer.decode([t], clean_up_tokenization_spaces=False).encode())

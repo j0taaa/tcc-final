@@ -1,0 +1,277 @@
+{
+  "experiment_id": "m24_policy_development_v1",
+  "phase": "exploratory development, first 30 M22 v4 requests; no held-out claim",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "seed": 240001,
+  "slots": 24,
+  "max_forwards": 24,
+  "task_count": 30,
+  "support": "per-position union of canonical task-filtered tokens, intersect finite byte CFG preserving operand multiset and required EOS; alternative tokenizations permitted",
+  "weight": "full_vocabulary_probability",
+  "quantization": "NF4 double quantization, bfloat16 compute",
+  "cpu_threads": 1,
+  "max_generation_seconds": 120,
+  "output_root": "results/raw/m24_policy_development_v1",
+  "family": "nested",
+  "temperature": 0.0,
+  "preserve_operands": true,
+  "backend": "rust",
+  "epic_max_resamples": 100,
+  "selection_timeout_seconds": 10,
+  "recover_in_process": true,
+  "policies": [
+    {
+      "name": "exact_b1",
+      "kind": "exact",
+      "proposal_budget": 1
+    },
+    {
+      "name": "exact_b2",
+      "kind": "exact",
+      "proposal_budget": 2
+    },
+    {
+      "name": "exact_b4",
+      "kind": "exact",
+      "proposal_budget": 4
+    },
+    {
+      "name": "exact_b8",
+      "kind": "exact",
+      "proposal_budget": 8
+    },
+    {
+      "name": "exact_b12",
+      "kind": "exact",
+      "proposal_budget": 12
+    },
+    {
+      "name": "exact_b24",
+      "kind": "exact",
+      "proposal_budget": 24
+    },
+    {
+      "name": "confidence_0.2",
+      "kind": "confidence",
+      "threshold": 0.2
+    },
+    {
+      "name": "confidence_0.5",
+      "kind": "confidence",
+      "threshold": 0.5
+    },
+    {
+      "name": "confidence_0.8",
+      "kind": "confidence",
+      "threshold": 0.8
+    },
+    {
+      "name": "margin_0",
+      "kind": "margin",
+      "relative_tolerance": 0
+    },
+    {
+      "name": "margin_0.02",
+      "kind": "margin",
+      "relative_tolerance": 0.02
+    },
+    {
+      "name": "margin_0.1",
+      "kind": "margin",
+      "relative_tolerance": 0.1
+    },
+    {
+      "name": "exact_multi2",
+      "kind": "exact",
+      "top_k": 2
+    },
+    {
+      "name": "exact_multi3",
+      "kind": "exact",
+      "top_k": 3
+    },
+    {
+      "name": "greedy_b8",
+      "kind": "greedy",
+      "proposal_budget": 8
+    },
+    {
+      "name": "exact_review",
+      "kind": "exact",
+      "review": true
+    },
+    {
+      "name": "catalog_map4",
+      "kind": "catalog_map",
+      "commit_cap": 4
+    },
+    {
+      "name": "epic_lexical_2",
+      "kind": "epic",
+      "method": "epic_lexical_2"
+    },
+    {
+      "name": "epic_lexical_4",
+      "kind": "epic",
+      "method": "epic_lexical_4"
+    },
+    {
+      "name": "epic_lexical_24",
+      "kind": "epic",
+      "method": "epic_lexical_24"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "nested-220004-0",
+      "instruction": "Add 2 to the sum of 1 and 2. Put the nested expression in the first argument.",
+      "expected": "add(add(1,2),2)"
+    },
+    {
+      "id": "nested-220004-1",
+      "instruction": "Subtract 3 from the difference of 2 minus 0. Put the nested expression in the first argument.",
+      "expected": "sub(sub(2,0),3)"
+    },
+    {
+      "id": "nested-220004-2",
+      "instruction": "Multiply the product of 2 and 1 by 0. Put the nested expression in the first argument.",
+      "expected": "mul(mul(2,1),0)"
+    },
+    {
+      "id": "nested-220004-3",
+      "instruction": "Negate the sum of 3 and 3.",
+      "expected": "neg(add(3,3))"
+    },
+    {
+      "id": "nested-220004-4",
+      "instruction": "Take the absolute value of the difference of 2 minus 0.",
+      "expected": "abs(sub(2,0))"
+    },
+    {
+      "id": "nested-220004-5",
+      "instruction": "Add 0 to the product of 1 and 3. Put the nested expression in the first argument.",
+      "expected": "add(mul(1,3),0)"
+    },
+    {
+      "id": "nested-220004-6",
+      "instruction": "Subtract 1 from the sum of 2 and 3. Put the nested expression in the first argument.",
+      "expected": "sub(add(2,3),1)"
+    },
+    {
+      "id": "nested-220004-7",
+      "instruction": "Multiply the difference of 1 minus 0 by 0. Put the nested expression in the first argument.",
+      "expected": "mul(sub(1,0),0)"
+    },
+    {
+      "id": "nested-220004-8",
+      "instruction": "Negate the product of 3 and 3.",
+      "expected": "neg(mul(3,3))"
+    },
+    {
+      "id": "nested-220004-9",
+      "instruction": "Take the absolute value of the sum of 1 and 1.",
+      "expected": "abs(add(1,1))"
+    },
+    {
+      "id": "nested-220004-10",
+      "instruction": "Add 0 to the difference of 3 minus 2. Put the nested expression in the first argument.",
+      "expected": "add(sub(3,2),0)"
+    },
+    {
+      "id": "nested-220004-11",
+      "instruction": "Subtract 0 from the product of 2 and 1. Put the nested expression in the first argument.",
+      "expected": "sub(mul(2,1),0)"
+    },
+    {
+      "id": "nested-220004-12",
+      "instruction": "Multiply the sum of 2 and 1 by 2. Put the nested expression in the first argument.",
+      "expected": "mul(add(2,1),2)"
+    },
+    {
+      "id": "nested-220004-13",
+      "instruction": "Negate the difference of 2 minus 1.",
+      "expected": "neg(sub(2,1))"
+    },
+    {
+      "id": "nested-220004-14",
+      "instruction": "Take the absolute value of the product of 2 and 1.",
+      "expected": "abs(mul(2,1))"
+    },
+    {
+      "id": "nested-220004-15",
+      "instruction": "Add 1 to the sum of 1 and 3. Put the nested expression in the first argument.",
+      "expected": "add(add(1,3),1)"
+    },
+    {
+      "id": "nested-220004-16",
+      "instruction": "Subtract 3 from the difference of 3 minus 0. Put the nested expression in the first argument.",
+      "expected": "sub(sub(3,0),3)"
+    },
+    {
+      "id": "nested-220004-17",
+      "instruction": "Multiply the product of 0 and 1 by 2. Put the nested expression in the first argument.",
+      "expected": "mul(mul(0,1),2)"
+    },
+    {
+      "id": "nested-220004-18",
+      "instruction": "Negate the sum of 1 and 1.",
+      "expected": "neg(add(1,1))"
+    },
+    {
+      "id": "nested-220004-19",
+      "instruction": "Take the absolute value of the difference of 0 minus 0.",
+      "expected": "abs(sub(0,0))"
+    },
+    {
+      "id": "nested-220004-20",
+      "instruction": "Add 0 to the product of 1 and 1. Put the nested expression in the first argument.",
+      "expected": "add(mul(1,1),0)"
+    },
+    {
+      "id": "nested-220004-21",
+      "instruction": "Subtract 2 from the sum of 1 and 0. Put the nested expression in the first argument.",
+      "expected": "sub(add(1,0),2)"
+    },
+    {
+      "id": "nested-220004-22",
+      "instruction": "Multiply the difference of 3 minus 2 by 3. Put the nested expression in the first argument.",
+      "expected": "mul(sub(3,2),3)"
+    },
+    {
+      "id": "nested-220004-23",
+      "instruction": "Negate the product of 0 and 0.",
+      "expected": "neg(mul(0,0))"
+    },
+    {
+      "id": "nested-220004-24",
+      "instruction": "Take the absolute value of the sum of 0 and 1.",
+      "expected": "abs(add(0,1))"
+    },
+    {
+      "id": "nested-220004-25",
+      "instruction": "Add 0 to the difference of 2 minus 0. Put the nested expression in the first argument.",
+      "expected": "add(sub(2,0),0)"
+    },
+    {
+      "id": "nested-220004-26",
+      "instruction": "Subtract 2 from the product of 2 and 3. Put the nested expression in the first argument.",
+      "expected": "sub(mul(2,3),2)"
+    },
+    {
+      "id": "nested-220004-27",
+      "instruction": "Multiply the sum of 1 and 2 by 3. Put the nested expression in the first argument.",
+      "expected": "mul(add(1,2),3)"
+    },
+    {
+      "id": "nested-220004-28",
+      "instruction": "Negate the difference of 3 minus 2.",
+      "expected": "neg(sub(3,2))"
+    },
+    {
+      "id": "nested-220004-29",
+      "instruction": "Take the absolute value of the product of 3 and 3.",
+      "expected": "abs(mul(3,3))"
+    }
+  ]
+}
