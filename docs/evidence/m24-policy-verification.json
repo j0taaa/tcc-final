@@ -1,0 +1,144 @@
+{
+  "milestone": "M24",
+  "date": "2026-09-28",
+  "verified_source_commit": "1ceffb4a8ad97b4421a69b30adaa4759714d0794",
+  "upstream_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+  "campaign_inventory": "docs/research/generated/m24-campaign-inventory.json",
+  "live_final_generations": 3856,
+  "additional_review_canvases": 48,
+  "model_forwards": 24404,
+  "unique_task_ids": 138,
+  "policy_count": 26,
+  "hardware": [
+    "NVIDIA GeForce RTX 3080 Ti"
+  ],
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.52.2",
+    "bitsandbytes": "0.50.1",
+    "tokenizers": "0.21.4"
+  },
+  "checks": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "exit_code": 0,
+      "passed": 1105
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 make test-upstream",
+      "exit_code": 0,
+      "passed": 406,
+      "skipped": 8,
+      "warnings": 2
+    },
+    {
+      "command": "make test-rust-parser",
+      "exit_code": 0,
+      "passed": 24,
+      "includes": [
+        "parser unit/integration tests",
+        "parser and bindings cargo fmt",
+        "parser and bindings clippy -D warnings"
+      ]
+    },
+    {
+      "command": ".venv/bin/ruff check src tests scripts/exact_commit/run_policy_screen.py scripts/exact_commit/epic_tool_runner.py scripts/exact_commit/summarize_policy_screen.py scripts/exact_commit/compare_policy_repeats.py scripts/exact_commit/build_policy_campaign.py scripts/exact_commit/diagnose_policy_errors.py scripts/exact_commit/diagnose_policy_whitespace.py scripts/exact_commit/prepare_bfcl_enum_pilot.py",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/mypy",
+      "exit_code": 0,
+      "source_files": 84
+    },
+    {
+      "command": "./scripts/verify_upstream.sh",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/build_policy_campaign.py --check",
+      "exit_code": 0,
+      "cohorts": 12,
+      "records_independently_checked": 3856
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/prepare_bfcl_enum_pilot.py --check",
+      "exit_code": 0,
+      "audited_cases": 658,
+      "schema_eligible_cases": 8
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 make release-wheel-smoke",
+      "exit_code": 0,
+      "source_tree_leakage": false,
+      "artifact_generator": "PASS",
+      "experiment": "PASS",
+      "measured_sdist_unpacked_bytes": 38730496,
+      "measured_sdist_compressed_bytes": 19414109,
+      "note": "Non-publication isolated diagnostic emitted the expected dirty-worktree metadata warning before final documentation commit."
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "fixed_regressions": [
+    {
+      "initial_result": "1 failed, 1103 passed: source distribution grew to 55,299,179 bytes, exceeding existing 50 MB guard",
+      "fix": "Keep full M24 data in Git, exclude bulk cohorts from library sdist, retain smoke regression fixture; preserve size limit and add package-content regression test."
+    },
+    {
+      "fix": "Greedy top-level scope now says feasible_on_support with no optimal-selection guarantee; historical records preserved, native statuses were already correct."
+    },
+    {
+      "fix": "Reports require compatible paired cohorts, distinguish numeric outcomes and external pilot scope, and do not treat zero observed losses as proof of two-point non-inferiority."
+    }
+  ],
+  "primary_decision": {
+    "method": "confidence_0.8",
+    "comparator": "epic_lexical_24",
+    "latency_target_met": true,
+    "two_point_accuracy_noninferiority_established": false
+  },
+  "research_decision": "Stop counterfactual margins as principal extension. Use simple confidence/budget policies for compound-call experiments; prefer enumerative MAP for the measured small external catalogs.",
+  "remaining_work": [
+    "broader external tool-family validation without gold-based support",
+    "read-only API demo",
+    "evidence-grounded manuscript/presentation update; historical M21 PDF is unchanged"
+  ],
+  "reports_sha256": {
+    "docs/research/generated/m24-bfcl-results.md": "5d4792284d524a4bf156a4c33d46ed9042f37a10628d57255ac93fbb93387506",
+    "docs/research/generated/m24-bfcl-summary.json": "aa77af09a2322377948295eac91b26cc7fde9cedd9a11c81abc24ae12fcda8ba",
+    "docs/research/generated/m24-bfcl_controls-results.md": "cb4c40702f6a704a2d90e7b1a1ba7c2711db03add9d341a16066eef73dbe7095",
+    "docs/research/generated/m24-bfcl_controls-summary.json": "9beb47d03399fb1e01b2b002120104db48ef2e70d0009cd10ec8aa5a11c998a2",
+    "docs/research/generated/m24-bfcl_controls_repeat-results.md": "daa76b0e409ac85807ef93cab4d65a7ff9bba37fb43c1ec58a5ae6010beb6a89",
+    "docs/research/generated/m24-bfcl_controls_repeat-summary.json": "2039683f8436bdbca55cf0484dc5f8e917b0fd90d58a2deacf49b1609e5adcd2",
+    "docs/research/generated/m24-bfcl_repeat-results.md": "55d56eda4b23e45a16c2964b18bcb52f6a9e6e61905b485195884bcc251c6c27",
+    "docs/research/generated/m24-bfcl_repeat-summary.json": "a2779a344c7448cdd2093b23633c04de75871036002c677da3210a0de4720bf2",
+    "docs/research/generated/m24-campaign-inventory.json": "10199cf2c80baa627da2c36c34e9b2bb3aa7f7aa7f25343c25715c3557add162",
+    "docs/research/generated/m24-confirmation-paired-results.md": "2dd288d058a6ea5d82aaa4edab8f955e8eb29854e2f2860fc9ca3a01e52387fc",
+    "docs/research/generated/m24-confirmation-paired-summary.json": "f9719eddcdde68e79cfa150b678d6ef591c7e6e1e671946c168260984683b73f",
+    "docs/research/generated/m24-confirmation-results.md": "add66d616620f43645c3df1bf834b3aa032f1eddcbb48cb1a604b3bcb9aa4b39",
+    "docs/research/generated/m24-confirmation-summary.json": "c8d29cc924d3d3f67aaa573b074042963dd643843535a502ec9a7ad96e44bf09",
+    "docs/research/generated/m24-development-diagnosis.json": "a39ff8de1358df17b955b6c6449b27998ea95af1a749f63903784ca64fb03647",
+    "docs/research/generated/m24-development-results.md": "d2aa48d2c1b41513820a5ecc840e18b7169fef6766928cac4e9cf0350269dda7",
+    "docs/research/generated/m24-development-summary.json": "4cec5101dba562ca3fa074b4bb134afdaa97676706b756959bb2dcbfd3681eac",
+    "docs/research/generated/m24-epic_intermediate-results.md": "0215f41864f51597e87b829fcf76556a28ebbf08679766aa08dd74c6529e185b",
+    "docs/research/generated/m24-epic_intermediate-summary.json": "01ecf05d95acd0c58632f385c718c21200ebcb9c2779361c802d38d24f90cebe",
+    "docs/research/generated/m24-epic_intermediate_repeat-results.md": "614034ff535fa1ac0c8c22cbb359965552681a6b4f7f38a9436fd16f197f61a8",
+    "docs/research/generated/m24-epic_intermediate_repeat-summary.json": "e53770c5b06e45214dda326e0593af539355c49a1edcf47e6c5746a8d32cb757",
+    "docs/research/generated/m24-external-paired-results.md": "d7ad43bdd4c7e7ee0f6352a5031154c43cc3318b4af8875ef053f8ee155f8890",
+    "docs/research/generated/m24-external-paired-summary.json": "5f8f41678bf07dbe1d884ede64fc50f9e593e675f5ac5bfcb78fbf4b73b5145f",
+    "docs/research/generated/m24-repeat-results.md": "7c57e14c94b56a3135c96949d65fc41cebf37f789c39e39e1dd9f4a303b1a52b",
+    "docs/research/generated/m24-repeat-summary.json": "c378e71b9634c29172d6a48b719cfe47cd8c756826af787174c874d3fd68b8cd",
+    "docs/research/generated/m24-secondary-results.md": "a83bb698bd92a83e38da33190a27c5615b4c53e17d2107748a852bf223154946",
+    "docs/research/generated/m24-secondary-summary.json": "828225a66b2ae8b159bc760abc70035545a737c01fe192e1782d8a8386f4036d",
+    "docs/research/generated/m24-secondary-vs-epic_lexical_8.json": "58f18fbef958ee02bbe88c3ffe7eecce8db7b8f0b247ccbb3471c4ab2e7b6d2f",
+    "docs/research/generated/m24-secondary-vs-greedy_confidence_0.2.json": "04876a3402049b02e766810faeb5e00cd6985743d38450d2ff7d6ed17a0b8171",
+    "docs/research/generated/m24-secondary-vs-greedy_confidence_0.8.json": "0f05af7d2823e9d2bc6346c98c4967f9450893b7afd6601646ae1cc226b212e4",
+    "docs/research/generated/m24-secondary_repeat-results.md": "4d9301795f4b06e7729a9211b7134e97fcd1297687e3a6f4060953619059d377",
+    "docs/research/generated/m24-secondary_repeat-summary.json": "65fcbc50e83809a8a4e2cc63b4412dab40efef8153fb3167422844aa418932a3",
+    "docs/research/generated/m24-smoke-results.md": "3d21404a65b33623d4902197d6c850daea8ddea78f4d680384825ae349c9aed1",
+    "docs/research/generated/m24-smoke-summary.json": "acca9f33f1a5582259fd4148ef2818c2a8a886c5a730c9aadf5f78571f80ee84",
+    "docs/research/generated/m24-whitespace-sensitivity.json": "38e228853be6306509879f4fdcc7fafd11c21d1c20d097c114d5deca43b6f13b"
+  }
+}
