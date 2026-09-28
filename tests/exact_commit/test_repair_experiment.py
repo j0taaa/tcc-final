@@ -65,3 +65,21 @@ def test_independent_enumerator_finds_the_minimum_without_cfg():
         perf_counter() - 1,
     )
     assert expired["status"] == "timeout" and expired["output_text"] is None
+
+
+def test_metadata_mapping_proxy_serializes_without_deepcopy():
+    from dataclasses import dataclass
+    from types import MappingProxyType
+
+    from scripts.exact_commit.run_json_repair import system_metadata_dict
+
+    @dataclass
+    class System:
+        python_version: str
+        thread_environment: object
+
+    system = System("3.11", MappingProxyType({"OMP_NUM_THREADS": None}))
+    assert system_metadata_dict(system) == {
+        "python_version": "3.11",
+        "thread_environment": {"OMP_NUM_THREADS": None},
+    }

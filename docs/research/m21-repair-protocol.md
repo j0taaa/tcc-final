@@ -142,3 +142,11 @@ Report this cohort separately, without pooling its weaker-grammar objective with
 the full-schema objective. This tests whether minimizing edits can matter when
 several structures are legal. The frozen configuration is
 `configs/experiments/m21_repair_mechanism_v1.toml`.
+
+## Initialization correction
+
+The first launch from `dfb857d` stopped before creating any run directory or
+measurement row: `dataclasses.asdict` cannot deepcopy the existing immutable
+`SystemMetadata.thread_environment` mapping proxy. A serialization regression
+test and field-wise conversion fix this; the corrected pilot uses a new run
+directory `m21-repair-pilot-v2`. No data was discarded or replaced.

@@ -12,7 +12,8 @@ import resource
 import subprocess
 import tomllib
 from collections import Counter, defaultdict
-from dataclasses import asdict
+from collections.abc import Mapping
+from dataclasses import fields
 from itertools import combinations, product
 from pathlib import Path
 from random import Random
@@ -55,6 +56,16 @@ SCHEMA = {
         },
     },
 }
+
+
+def system_metadata_dict(system):
+    """Dataclass fields may contain immutable mapping proxies; do not deepcopy them."""
+    return {
+        field.name: dict(value)
+        if isinstance(value := getattr(system, field.name), Mapping)
+        else value
+        for field in fields(system)
+    }
 
 
 def compact(value):
@@ -448,7 +459,7 @@ def main():
             "structural same-byte-length token alternatives; original retained; "
             "max 32 variants; finite slots; no EOS"
         ),
-        "system": asdict(collect_system_metadata(ROOT)),
+        "system": system_metadata_dict(collect_system_metadata(ROOT)),
         "versions": {
             name: importlib.metadata.version(name)
             for name in ("json-repair", "jsonschema", "tokenizers")
