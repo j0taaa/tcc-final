@@ -138,3 +138,12 @@ Os metadados globais de v4 nomeiam a cardinalidade do catálogo-base; os índice
 versão de confirmação explicita o contrato ativo no campo `exactness_scope`.
 Isso não muda o algoritmo ou os resultados de v4; evita interpretar o ótimo
 como se tivesse sido calculado sobre o catálogo-base inteiro.
+
+## Repetição de tempo
+
+A confirmação observou 65/100 acertos do exato e 63/100 do guloso, com o mesmo
+número total de forwards. Antes de concluir sobre latência, repetir os mesmos
+100 pedidos com ordem inicial dos métodos invertida. Configuração nova
+`m22_tool_parser_repeat_v1.json`; não é uma nova amostra de 100 tarefas. Usar a
+mediana das duas execuções por pedido/método antes de agregar. Não interpretar
+as duas vitórias de acerto como significância estatística populacional.
