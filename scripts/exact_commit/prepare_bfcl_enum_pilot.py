@@ -5,7 +5,9 @@ from pathlib import Path
 
 from mwpc_research.schema_calls import schema_catalog
 
-parser = argparse.ArgumentParser(description="Rebuild the schema-only BFCL pilot and coverage audit")
+parser = argparse.ArgumentParser(
+    description="Rebuild the schema-only BFCL pilot and coverage audit"
+)
 parser.add_argument("--check", action="store_true")
 args = parser.parse_args()
 
