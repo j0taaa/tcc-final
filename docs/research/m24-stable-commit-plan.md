@@ -71,6 +71,14 @@ pareado também é descritivo, mas não deve provar não inferioridade quando n�
 há pares discordantes. As outras configurações e os EPIC 2/4 permanecem controles
 secundários, sem ajuste de multiplicidade. A amostra pode ser inconclusiva.
 
+Ablações secundárias congeladas durante a execução da confirmação, antes de
+consultar seus agregados: confiança 0,8/0,2 com seletor guloso no mesmo suporte;
+três propostas por posição; MAP que completa o catálogo em um forward. Essas
+execuções usam os mesmos cem pedidos, em duas ordens, e não mudam a comparação
+primária nem viram novo holdout. São análises secundárias exploratórias. O
+piloto externo de oito casos também é repetido em ordem inversa; não multiplicar
+seu tamanho amostral por dois.
+
 ## Decisão e utilidade
 
 Investigar uma política que usa o MWPC existente para decidir **o que pode ser

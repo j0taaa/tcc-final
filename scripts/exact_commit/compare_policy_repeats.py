@@ -40,18 +40,28 @@ def binomial_interval(count, n):
     return lower, upper
 
 
-def build(first, second):
+def build(first, second, secondary_first=None, secondary_second=None):
     config, a = read(first)
     config_b, b = read(second)
     assert config["tasks"] == config_b["tasks"]
     assert sorted(p["name"] for p in config["policies"]) == sorted(
         p["name"] for p in config_b["policies"]
     )
+    primary_names = {p["name"] for p in config["policies"]}
+    policies = list(config["policies"])
+    if secondary_first is not None:
+        extra_config, extra_a = read(secondary_first)
+        extra_config_b, extra_b = read(secondary_second)
+        assert extra_config["tasks"] == extra_config_b["tasks"] == config["tasks"]
+        assert not primary_names & {p["name"] for p in extra_config["policies"]}
+        policies += extra_config["policies"]
+        a += extra_a
+        b += extra_b
     maps = [{(r["task"]["id"], r["method"]): r for r in rows} for rows in (a, b)]
     ids = [t["id"] for t in config["tasks"]]
     table, pairs = [], {}
     comparator = config["primary_comparator"]
-    for policy in config["policies"]:
+    for policy in policies:
         name = policy["name"]
         repetitions = [[m[tid, name] for tid in ids] for m in maps]
         total = [median(m[tid, name]["total_seconds_including_setup"] for m in maps) for tid in ids]
@@ -96,6 +106,9 @@ def build(first, second):
         table.append(
             {
                 "method": name,
+                "analysis": "frozen_confirmation"
+                if name in primary_names
+                else "secondary_ablation",
                 "n": len(ids),
                 "correct": [sum(r["correct"] for r in rows) for rows in repetitions],
                 "forwards": [sum(r["forwards"] for r in rows) for rows in repetitions],
@@ -108,7 +121,7 @@ def build(first, second):
         )
     table.sort(key=lambda r: (-r["correct"][0], r["median_total_ms"]))
     result = {
-        "source_commits": [a[0]["git_commit"], b[0]["git_commit"]],
+        "source_commits": sorted({r["git_commit"] for r in a + b}),
         "unique_requests": len(ids),
         "records": len(a) + len(b),
         "primary_method": config.get("primary_method"),
@@ -152,8 +165,10 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--secondary-first", type=Path)
+    parser.add_argument("--secondary-second", type=Path)
     args = parser.parse_args()
-    result, report = build(args.first, args.second)
+    result, report = build(args.first, args.second, args.secondary_first, args.secondary_second)
     for path, text in ((args.output, json.dumps(result, indent=2) + "\n"), (args.report, report)):
         if args.check:
             assert path.read_text() == text

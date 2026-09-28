@@ -164,7 +164,7 @@ def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, p
                 select_greedy_exact_feasibility(
                     state, total_timeout_seconds=remaining, reuse_witness=True, profiler=profile
                 )
-                if kind == "greedy"
+                if kind == "greedy" or policy.get("selector") == "greedy"
                 else select_exact_mwpc(state, timeout_seconds=remaining, profiler=profile)
             )
             if result.score is None:

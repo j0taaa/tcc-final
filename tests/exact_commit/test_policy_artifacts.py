@@ -49,3 +49,60 @@ def test_semantic_corruption_is_rejected(tmp_path, mutation):
     path.write_bytes(gzip.compress("\n".join(json.dumps(r) for r in rows).encode()))
     with pytest.raises((AssertionError, ValueError)):
         load().read(directory)
+
+
+def test_confidence_filter_also_applies_to_matched_greedy(monkeypatch):
+    from types import SimpleNamespace
+
+    import torch
+
+    from mwpc_exact import CompositionalByteLevelAdapter
+    from mwpc_research.tool_parser import catalog_byte_grammar
+
+    spec = importlib.util.spec_from_file_location(
+        "policy_driver", ROOT / "scripts/exact_commit/run_policy_screen.py"
+    )
+    driver = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(driver)
+    original_tensor = torch.tensor
+    monkeypatch.setattr(
+        torch, "tensor", lambda *a, **kw: original_tensor(*a, **{**kw, "device": "cpu"})
+    )
+    monkeypatch.setattr(torch.cuda, "synchronize", lambda: None)
+    monkeypatch.setattr(torch.cuda, "max_memory_allocated", lambda: 0)
+
+    class Tokenizer:
+        def apply_chat_template(self, *args, **kwargs):
+            return [2]
+
+        def decode(self, ids, **kwargs):
+            return "".join({0: "a", 1: "b"}.get(t, "") for t in ids)
+
+    def model(tokens):
+        logits = torch.full((1, 4, 126337), -100.0)
+        logits[0, 1:3, :2] = torch.tensor([[0.4, 0.0], [0.0, 0.4]])
+        logits[0, 3, 126081] = 100.0
+        return SimpleNamespace(logits=logits)
+
+    adapter = CompositionalByteLevelAdapter(tuple({0: b"a", 1: b"b"}.get(t) for t in range(126337)))
+    result = driver.decode(
+        model=model,
+        tokenizer=Tokenizer(),
+        request="arbitrary",
+        calls=["aa", "bb"],
+        paths=[[0, 0, 126081], [1, 1, 126081]],
+        grammar=catalog_byte_grammar(["aa", "bb"]),
+        rows=[[0, 1, 126081], [0, 1, 126081], [126081]],
+        adapter=adapter,
+        policy={"name": "test", "kind": "confidence", "selector": "greedy", "threshold": 0.8},
+        config={
+            "slots": 3,
+            "max_forwards": 3,
+            "max_generation_seconds": 30,
+            "selection_timeout_seconds": 10,
+        },
+    )
+    assert result["status"] == "complete"
+    assert result["trace"][0]["committed_positions"] == [2]
+    assert all(t["production_result"]["status"] == "feasible_on_support" for t in result["trace"])
+    assert result["forwards"] > 1

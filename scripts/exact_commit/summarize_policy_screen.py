@@ -123,7 +123,9 @@ def read(directory):
                     assert isclose(native["score"], score, abs_tol=1e-9)
                     assert native["witness_token_ids"] == witness
                     assert native["status"] == (
-                        "feasible_on_support" if policy["kind"] == "greedy" else "optimal"
+                        "feasible_on_support"
+                        if policy["kind"] == "greedy" or policy.get("selector") == "greedy"
+                        else "optimal"
                     )
                 gate = step["gate"]
                 if gate:
