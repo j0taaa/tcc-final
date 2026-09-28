@@ -1,0 +1,12 @@
+{
+  "source_experiment": "m24_epic_intermediate_repeat_v1",
+  "records": 300,
+  "uncompressed_results_sha256": "b716d82c30e26e532ecb93f128adbc161bc449e93a7a7f7d96b9dd14a18009ba",
+  "sha256": {
+    "config.json": "f1c817e619bce6c5d49ba8213ea3fa95893637d9028b64a2ba56c4502d3f4fa4",
+    "metadata.json": "63171d67285b1b42031d05c70ae10b6eb52e05ab8dd7ad292e2fc4f14c78289b",
+    "support.json": "4c54525c8661bc143196ca593da942b50943f08ad15dd075f7c9f8338de6429d",
+    "token_emissions.json": "192cf5a177157e4c3175664a8cc911dd9219c7143210fc724b15bb7764e37ce9",
+    "results.jsonl.gz": "fb7f4866b2e1f6989539163318386b94d2be6596106f31f2e665e67c6c734fdc"
+  }
+}
