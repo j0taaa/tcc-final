@@ -48,7 +48,8 @@ python -m mwpc_exact.repair --profile records '{"id":7,"payload":[["a":1,"b":2}]
 
 [Usage and boundaries](docs/research/json-repair.md) ·
 [Complete controlled results](paper/generated/m21_repair_v1/report.md) ·
-[Scientific interpretation](docs/research/m21-findings.md).
+[Scientific interpretation](docs/research/m21-findings.md) ·
+[Novelty and practical-use review](docs/research/2026-09-28-novelty-and-usefulness-review.md).
 The original [four-week plan](docs/research/2026-09-28-json-repair-plan.md)
 remains broader: real-model error collection and model retries are still future work.
 

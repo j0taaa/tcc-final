@@ -59,12 +59,23 @@ mesma gramática, suporte, pesos e intervalos protegidos, sem o objeto esperado.
 
 ## Contribuição defendível
 
+Complemento de posicionamento: a [revisão de novidade e utilidade de
+28/09/2026](2026-09-28-novelty-and-usefulness-review.md) identifica antecedentes
+diretos, especialmente *The Weighted CFG Constraint* (2008), e evidências de uso
+de reparadores no Dify. A contribuição é aplicada e incremental; os resultados
+controlados abaixo não comprovam eficácia em produção nem novidade do objetivo.
+
 O trabalho entrega uma aplicação executável do MWPC a reparo de substituições,
 com custo mínimo no suporte, preservação de trechos por token, certificado e
 validação independente. O experimento identifica um domínio restrito em que ela
 preserva informações que uma biblioteca prática perde; a ablação explica quando
 os pesos fazem diferença. O artefato reproduzível permite verificar as vantagens,
 os empates e os contraexemplos.
+
+O certificado permite verificar a viabilidade e recalcular o objetivo da
+testemunha. Sua verificação isolada não prova ausência de uma solução melhor;
+a otimalidade depende do algoritmo, de sua justificativa e da validação por
+oráculos e testes diferenciais.
 
 O tokenizer é real, mas **os erros são corrupções controladas de registros fictícios**.
 Não houve inferência nem comparação com uma nova tentativa do modelo. Os casos

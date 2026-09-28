@@ -16,6 +16,25 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M22 — Find an end-to-end dLLM benefit (exploratory, not confirmation)
+
+Depends on M21 correctness and the M19 comparison audit. Keep repair secondary.
+Preserve the per-step MWPC objective, named finite support, independent witnesses,
+and all unsuccessful trials. Do not encode prompt answers in the grammar.
+
+- [x] T2200: Freeze and test a small live-model screening protocol with an
+  answer-independent tool language and matched confidence-greedy/exact selection.
+  Use enumeration only as an explicitly named screening oracle, not the production
+  CFG solver or EPIC. Record complete trajectories, versions and timing.
+  **Evidence:** `docs/research/m22-dllm-discovery-protocol.md`; six new oracle tests, full pytest 935 passed; targeted Ruff and `git diff --check` pass. Frozen v1 config and opt-in live driver; no positive model result claimed by this task.
+- [ ] T2201: Run the screening with pinned LLaDA weights; retain every prompt and
+  failure. Check functional outputs, ordinary-token gains and model evaluations.
+  Separate an exploratory discovery from held-out confirmation.
+- [ ] T2202: If screening identifies a benefit, validate the mechanism with the
+  production parser and compare relevant baselines on a frozen held-out cohort.
+  Otherwise document the exact failure and next bounded experiment; never mark
+  practical benefit established based only on selection scores.
+
 ## M21 — Certified JSON repair and a bounded comparative pilot
 
 Depends on M20. Implement the chosen idea and measure a useful, explicitly scoped
