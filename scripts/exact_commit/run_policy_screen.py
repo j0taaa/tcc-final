@@ -45,6 +45,17 @@ INSTRUCTION = (
 )
 
 
+def policy_scope(policy):
+    if policy["kind"] == "epic":
+        return "EPIC native vocabulary and abstract gaps; official recovery included"
+    if policy["kind"] == "catalog_map":
+        return "canonical token paths only; exhaustive mean-field MAP control"
+    support = "positional domains, byte CFG, finite EOS/PAD slots"
+    if policy["kind"] == "greedy" or policy.get("selector") == "greedy":
+        return "feasible_on_support; no optimal-selection guarantee: " + support
+    return "exact_on_support: " + support
+
+
 def fallback_positions(result, proposals):
     selected = set(result.selected_proposal_ids)
     candidates = [p for p in proposals if p.proposal_id in selected]
@@ -381,7 +392,6 @@ def main():
                 )
                 outcome["elapsed_seconds"] = outcome["elapsed_excluding_shadow_seconds"]
                 outcome["gpu_peak_allocated_bytes"] = torch.cuda.max_memory_allocated()
-                scope = "EPIC native vocabulary and abstract gaps; official recovery included"
             else:
                 common = dict(
                     model=model,
@@ -416,11 +426,7 @@ def main():
                     outcome["draft"] = draft
                     outcome["elapsed_seconds"] += draft["elapsed_seconds"]
                     outcome["forwards"] += draft["forwards"]
-                scope = (
-                    "canonical token paths only; exhaustive mean-field MAP control"
-                    if policy["kind"] == "catalog_map"
-                    else "exact_on_support: positional domains, byte CFG, finite EOS/PAD slots"
-                )
+            scope = policy_scope(policy)
             torch.cuda.synchronize()
             total_seconds = time.perf_counter() - method_started + setup
             normalized = (normalize_schema_call if is_schema else normalize_tool_call)(

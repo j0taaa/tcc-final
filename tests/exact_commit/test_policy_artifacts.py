@@ -64,6 +64,12 @@ def test_confidence_filter_also_applies_to_matched_greedy(monkeypatch):
     )
     driver = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(driver)
+    # The exact feasibility subroutine does not make greedy selection optimal.
+    assert driver.policy_scope({"kind": "confidence", "selector": "greedy"}).startswith(
+        "feasible_on_support; no optimal-selection guarantee"
+    )
+    assert driver.policy_scope({"kind": "greedy"}).startswith("feasible_on_support")
+    assert driver.policy_scope({"kind": "confidence"}).startswith("exact_on_support")
     original_tensor = torch.tensor
     monkeypatch.setattr(
         torch, "tensor", lambda *a, **kw: original_tensor(*a, **{**kw, "device": "cpu"})
