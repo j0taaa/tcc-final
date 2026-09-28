@@ -1,0 +1,53 @@
+{
+  "milestone": "M22",
+  "scope": "bounded end-to-end LLaDA discovery and held-out comparison; not EPIC or general superiority",
+  "live_generations": 856,
+  "confirmation_unique_requests": 100,
+  "confirmation_repetitions": 2,
+  "producing_commits": [
+    "0d52a75edc9787ccdb45361b8f75c7a25a18d917",
+    "108309e98e94f025cbf6916e4d8a4188a371ad29",
+    "289bf8cabfabc1469686ddbd1c2e06c976ad0539",
+    "8f80c6c105b84ea4544468aa1692558d5542a767",
+    "9d4e8e33e01492c161bf1456e1b554e40419063a",
+    "ed2f4d131b122e789ced0094ac8535903d614d7f"
+  ],
+  "checks": [
+    {
+      "command": "make check",
+      "result": "pass: Ruff, MyPy 81 source files, 14 unit + 913 exact tests, upstream pin"
+    },
+    {
+      "command": ".venv/bin/python -m pytest -q",
+      "result": "947 passed"
+    },
+    {
+      "command": "make test-rust-parser",
+      "result": "24 Rust tests, fmt and Clippy passed"
+    },
+    {
+      "command": "make test-upstream",
+      "result": "406 passed, 8 existing skips, 2 upstream deprecation warnings"
+    },
+    {
+      "command": ".venv/bin/python scripts/exact_commit/summarize_tool_screen.py <six archived cohort directories> --output docs/research/generated/m22-summary.json --report docs/research/generated/m22-results.md --check",
+      "result": "all cohorts complete; hashes, witnesses, objectives, task answers and generated artifacts verified; exact full command in docs/research/m22-findings.md"
+    }
+  ],
+  "artifact_manifests_sha256": {
+    "docs/artifacts/raw/m22_dllm_discovery_v1/confirmation/manifest.json": "e50f9fe0c4c0392c3ad937bd31a75cfd7d51640473741db24cc7e79157a86a9d",
+    "docs/artifacts/raw/m22_dllm_discovery_v1/repeat/manifest.json": "475b180e1ea1589b3314e94d44eed52276d2d2c1c403030437423e09657a080c",
+    "docs/artifacts/raw/m22_dllm_discovery_v1/screen_v1/manifest.json": "13c59d45d994142e81c44578f98e97cf133fee246dbfd0d797aa91f9b645cdc2",
+    "docs/artifacts/raw/m22_dllm_discovery_v1/screen_v2/manifest.json": "43f112457c40b49be7a2c8039d19b612fe02f690b8171589b9668e84d83cf888",
+    "docs/artifacts/raw/m22_dllm_discovery_v1/screen_v3/manifest.json": "f6768f13290c913aca8bc4c7dd9af5ff6675d30f5aa0439351de38c48b26cd63",
+    "docs/artifacts/raw/m22_dllm_discovery_v1/screen_v4/manifest.json": "b5c8e9578635abe7a039cd8053dbd5da364fbf37d68b1482c4ebb381a7fb85d3"
+  },
+  "manuscript": "M21 PDF unchanged; M22 results not yet integrated into manuscript",
+  "limitations": [
+    "one quantized model and GPU",
+    "small synthetic DSL with shared templates",
+    "finite regular language",
+    "matched greedy comparator; no new EPIC measurement",
+    "two discordant accuracy pairs do not establish population superiority"
+  ]
+}

@@ -16,7 +16,7 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-## M22 — Find an end-to-end dLLM benefit (exploratory, not confirmation)
+## M22 — Find an end-to-end dLLM benefit and check a bounded held-out cohort
 
 Depends on M21 correctness and the M19 comparison audit. Keep repair secondary.
 Preserve the per-step MWPC objective, named finite support, independent witnesses,
@@ -27,13 +27,15 @@ and all unsuccessful trials. Do not encode prompt answers in the grammar.
   Use enumeration only as an explicitly named screening oracle, not the production
   CFG solver or EPIC. Record complete trajectories, versions and timing.
   **Evidence:** `docs/research/m22-dllm-discovery-protocol.md`; six new oracle tests, full pytest 935 passed; targeted Ruff and `git diff --check` pass. Frozen v1 config and opt-in live driver; no positive model result claimed by this task.
-- [ ] T2201: Run the screening with pinned LLaDA weights; retain every prompt and
+- [x] T2201: Run the screening with pinned LLaDA weights; retain every prompt and
   failure. Check functional outputs, ordinary-token gains and model evaluations.
   Separate an exploratory discovery from held-out confirmation.
-- [ ] T2202: If screening identifies a benefit, validate the mechanism with the
+  **Evidence:** four frozen development configs/producing commits; 456 real-model generations archived under `docs/artifacts/raw/m22_dllm_discovery_v1/screen_v{1,2,3,4}`. All neutral/negative trials retained. Operand-preserving v4 has one correctness win and one loss; ordinary proposals and EOS/PAD are separately counted. `summarize_tool_screen.py` rechecks complete trajectories and task outcomes.
+- [x] T2202: If screening identifies a benefit, validate the mechanism with the
   production parser and compare relevant baselines on a frozen held-out cohort.
   Otherwise document the exact failure and next bounded experiment; never mark
   practical benefit established based only on selection scores.
+  **Evidence:** producing commits `108309e` / `9d4e8e3`, frozen 100-request confirmation plus reversed-order repeat, 400 live generations, Rust byte CFG and independent certificates. Exact 65/100 vs witness-reusing greedy 63/100 in both runs; 205 forwards each; median paired speed ratio 2.13 on 63 jointly correct requests. Two new functional wins, no losses in confirmation; no EPIC/general-accuracy claim. Generated report `docs/research/generated/m22-results.md`; verification `docs/evidence/m22-dllm-verification.json`: 947 Python tests, make check, Rust 24, upstream 406 passed/8 skips, archive/semantic corruption gates and reproducible report pass.
 
 ## M21 — Certified JSON repair and a bounded comparative pilot
 

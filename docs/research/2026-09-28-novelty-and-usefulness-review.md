@@ -1,5 +1,11 @@
 # Novidade e utilidade do MWPC e do reparo JSON: revisão crítica
 
+**Atualização de escopo:** após esta revisão, o usuário reafirmou que o TCC deve
+priorizar dLLMs. O [protocolo M22](m22-dllm-discovery-protocol.md) e os
+[resultados ao vivo](generated/m22-results.md) passam a orientar a aplicação
+principal. A proposta de reparo externo abaixo é histórica e auxiliar; a revisão
+de antecedentes continua válida dentro do seu recorte.
+
 Consulta: **28/09/2026**. Código examinado: commit
 `87ceedb6315acf6a41bd16b19cd450da49a0e84c`.
 Resultados locais: M21, produzidos pelo commit `47b93c4`.

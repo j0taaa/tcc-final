@@ -1,0 +1,10 @@
+{
+  "source_directory": "results/raw/m22_tool_screen_v3/20260928T164719Z",
+  "uncompressed_results_sha256": "42fba3c5fff26f196d3a861b962a362b3385e5d4a8bfe16b2b4d450a2b032163",
+  "sha256": {
+    "config.json": "5fb759fc017add72c8ea9848296924fdbf8aa0df3b882a8b8854fe4497f07fda",
+    "metadata.json": "c4cf11e221dd26e016217bad82ab2f4ceadf82c5d145aed7011fd76a637e714c",
+    "results.jsonl.gz": "a393040e3e43c2e9213b3354e8c780e8188500a0ab8c885628380804b9711446",
+    "support.json": "4c54525c8661bc143196ca593da942b50943f08ad15dd075f7c9f8338de6429d"
+  }
+}

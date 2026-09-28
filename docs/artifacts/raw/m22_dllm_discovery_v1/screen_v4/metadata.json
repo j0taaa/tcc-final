@@ -1,0 +1,29 @@
+{
+  "git_commit": "289bf8cabfabc1469686ddbd1c2e06c976ad0539",
+  "seed": 220004,
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "model_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "tokenizer_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "quantization": "NF4 double quantization, bfloat16 compute",
+  "config_sha256": "e542ed1772bbd1130e44d6ee9d2d96228a2cf3be5a26d32e9ef0066c8a9c32ca",
+  "grammar_hash": "eabf0cf88fbb19718653fdceb0d7a0c0d51d7ff9f1a65a03a8f78aa1ccc8b313",
+  "support_sha256": "956533092456ca679b29c918db88b4991d88a3e5bd417f9e6048d0a074a95197",
+  "support_policy": "1512 canonical nested tool calls; digits 0..3, at most one nested call; EOS-padded; same catalog for all tasks; filter only by the multiset of operand digits explicitly in the request, never by expected operation/order",
+  "exactness_scope": "exact_on_support: 1512 canonical legal token paths",
+  "hardware": "NVIDIA GeForce RTX 3080 Ti",
+  "python": "3.11.16",
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.52.2",
+    "bitsandbytes": "0.50.1",
+    "tokenizers": "0.21.4"
+  },
+  "implementation": "exhaustive_catalog_oracle_not_production_CFG_parser",
+  "limitations": [
+    "exploratory",
+    "small synthetic tool requests",
+    "no EPIC baseline",
+    "one quantized model",
+    "canonical tokenizations only"
+  ]
+}

@@ -1,0 +1,478 @@
+[
+  {
+    "experiment": "m22_tool_screen_v1",
+    "records": 96,
+    "unique_tasks": 24,
+    "cells": [
+      {
+        "budget": 4,
+        "method": "exact",
+        "n": 24,
+        "correct": 24,
+        "forwards": 96,
+        "median_seconds_including_grammar_setup": 0.27019565406953916
+      },
+      {
+        "budget": 4,
+        "method": "greedy",
+        "n": 24,
+        "correct": 24,
+        "forwards": 96,
+        "median_seconds_including_grammar_setup": 0.2698476000223309
+      },
+      {
+        "budget": 16,
+        "method": "exact",
+        "n": 24,
+        "correct": 24,
+        "forwards": 24,
+        "median_seconds_including_grammar_setup": 0.0685649630613625
+      },
+      {
+        "budget": 16,
+        "method": "greedy",
+        "n": 24,
+        "correct": 24,
+        "forwards": 24,
+        "median_seconds_including_grammar_setup": 0.06802062498172745
+      }
+    ],
+    "comparisons": [
+      {
+        "budget": 4,
+        "exact_only_correct": [],
+        "greedy_only_correct": [],
+        "both_correct_exact_fewer_forwards": [],
+        "both_correct_exact_more_forwards": [],
+        "both_correct_median_speed_ratio_greedy_over_exact": 1.0015679653781255
+      },
+      {
+        "budget": 16,
+        "exact_only_correct": [],
+        "greedy_only_correct": [],
+        "both_correct_exact_fewer_forwards": [],
+        "both_correct_exact_more_forwards": [],
+        "both_correct_median_speed_ratio_greedy_over_exact": 1.0022222382503236
+      }
+    ],
+    "score_gap_states": [],
+    "producing_commits": [
+      "ed2f4d131b122e789ced0094ac8535903d614d7f"
+    ]
+  },
+  {
+    "experiment": "m22_tool_screen_v2",
+    "records": 120,
+    "unique_tasks": 30,
+    "cells": [
+      {
+        "budget": 8,
+        "method": "exact",
+        "n": 30,
+        "correct": 24,
+        "forwards": 111,
+        "median_seconds_including_grammar_setup": 0.28532206505769864
+      },
+      {
+        "budget": 8,
+        "method": "greedy",
+        "n": 30,
+        "correct": 24,
+        "forwards": 111,
+        "median_seconds_including_grammar_setup": 0.2841400614124723
+      },
+      {
+        "budget": 24,
+        "method": "exact",
+        "n": 30,
+        "correct": 19,
+        "forwards": 71,
+        "median_seconds_including_grammar_setup": 0.18711067002732307
+      },
+      {
+        "budget": 24,
+        "method": "greedy",
+        "n": 30,
+        "correct": 19,
+        "forwards": 71,
+        "median_seconds_including_grammar_setup": 0.18669621739536524
+      }
+    ],
+    "comparisons": [
+      {
+        "budget": 8,
+        "exact_only_correct": [],
+        "greedy_only_correct": [],
+        "both_correct_exact_fewer_forwards": [],
+        "both_correct_exact_more_forwards": [],
+        "both_correct_median_speed_ratio_greedy_over_exact": 0.9995585403695055
+      },
+      {
+        "budget": 24,
+        "exact_only_correct": [],
+        "greedy_only_correct": [],
+        "both_correct_exact_fewer_forwards": [],
+        "both_correct_exact_more_forwards": [],
+        "both_correct_median_speed_ratio_greedy_over_exact": 0.9841744791431692
+      }
+    ],
+    "score_gap_states": [],
+    "producing_commits": [
+      "8f80c6c105b84ea4544468aa1692558d5542a767"
+    ]
+  },
+  {
+    "experiment": "m22_tool_screen_v3",
+    "records": 120,
+    "unique_tasks": 60,
+    "cells": [
+      {
+        "budget": 24,
+        "method": "exact",
+        "n": 60,
+        "correct": 24,
+        "forwards": 138,
+        "median_seconds_including_grammar_setup": 0.18837989395251498
+      },
+      {
+        "budget": 24,
+        "method": "greedy",
+        "n": 60,
+        "correct": 24,
+        "forwards": 140,
+        "median_seconds_including_grammar_setup": 0.18734769948059693
+      }
+    ],
+    "comparisons": [
+      {
+        "budget": 24,
+        "exact_only_correct": [],
+        "greedy_only_correct": [],
+        "both_correct_exact_fewer_forwards": [],
+        "both_correct_exact_more_forwards": [],
+        "both_correct_median_speed_ratio_greedy_over_exact": 0.9920909182449125
+      }
+    ],
+    "score_gap_states": [
+      {
+        "task": "nested-220003-12",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 3.9476895220577717,
+        "other_score": 4.25652090087533
+      },
+      {
+        "task": "nested-220003-12",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 4.25652090087533,
+        "other_score": 3.9476895220577717
+      },
+      {
+        "task": "nested-220003-16",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 2.5843152534216642,
+        "other_score": 3.129146868363023
+      },
+      {
+        "task": "nested-220003-16",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 3.129146868363023,
+        "other_score": 2.5843152534216642
+      },
+      {
+        "task": "nested-220003-37",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 3.4196825958788395,
+        "other_score": 2.9969046292826533
+      },
+      {
+        "task": "nested-220003-37",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 2.9969046292826533,
+        "other_score": 3.4196825958788395
+      },
+      {
+        "task": "nested-220003-45",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 4.175797840580344,
+        "other_score": 4.118119401391596
+      },
+      {
+        "task": "nested-220003-45",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 4.118119401391596,
+        "other_score": 4.175797840580344
+      }
+    ],
+    "producing_commits": [
+      "0d52a75edc9787ccdb45361b8f75c7a25a18d917"
+    ]
+  },
+  {
+    "experiment": "m22_tool_screen_v4",
+    "records": 120,
+    "unique_tasks": 60,
+    "cells": [
+      {
+        "budget": 24,
+        "method": "exact",
+        "n": 60,
+        "correct": 41,
+        "forwards": 120,
+        "median_seconds_including_grammar_setup": 0.18102579499827698
+      },
+      {
+        "budget": 24,
+        "method": "greedy",
+        "n": 60,
+        "correct": 41,
+        "forwards": 118,
+        "median_seconds_including_grammar_setup": 0.1809007429983467
+      }
+    ],
+    "comparisons": [
+      {
+        "budget": 24,
+        "exact_only_correct": [
+          "nested-220004-56"
+        ],
+        "greedy_only_correct": [
+          "nested-220004-42"
+        ],
+        "both_correct_exact_fewer_forwards": [],
+        "both_correct_exact_more_forwards": [],
+        "both_correct_median_speed_ratio_greedy_over_exact": 0.9983544732082568
+      }
+    ],
+    "score_gap_states": [
+      {
+        "task": "nested-220004-11",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 4.0752189345657825,
+        "other_score": 3.6222307924181223
+      },
+      {
+        "task": "nested-220004-11",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 3.6222307924181223,
+        "other_score": 4.0752189345657825
+      },
+      {
+        "task": "nested-220004-15",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 5.301086381077766,
+        "other_score": 5.176906358450651
+      },
+      {
+        "task": "nested-220004-15",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 5.176906358450651,
+        "other_score": 5.301086381077766
+      },
+      {
+        "task": "nested-220004-42",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 5.301765840500593,
+        "other_score": 5.465373016893864
+      },
+      {
+        "task": "nested-220004-42",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 5.465373016893864,
+        "other_score": 5.301765840500593
+      },
+      {
+        "task": "nested-220004-56",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 4.041616812348366,
+        "other_score": 4.424348380416632
+      },
+      {
+        "task": "nested-220004-56",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 4.424348380416632,
+        "other_score": 4.041616812348366
+      }
+    ],
+    "producing_commits": [
+      "289bf8cabfabc1469686ddbd1c2e06c976ad0539"
+    ]
+  },
+  {
+    "experiment": "m22_tool_parser_confirmation_v1",
+    "records": 200,
+    "unique_tasks": 100,
+    "cells": [
+      {
+        "budget": 24,
+        "method": "exact",
+        "n": 100,
+        "correct": 65,
+        "forwards": 205,
+        "median_seconds_including_grammar_setup": 0.26321144157554954
+      },
+      {
+        "budget": 24,
+        "method": "greedy",
+        "n": 100,
+        "correct": 63,
+        "forwards": 205,
+        "median_seconds_including_grammar_setup": 0.5601120024221018
+      }
+    ],
+    "comparisons": [
+      {
+        "budget": 24,
+        "exact_only_correct": [
+          "nested-220104-71",
+          "nested-220104-161"
+        ],
+        "greedy_only_correct": [],
+        "both_correct_exact_fewer_forwards": [],
+        "both_correct_exact_more_forwards": [],
+        "both_correct_median_speed_ratio_greedy_over_exact": 2.1703364156562897
+      }
+    ],
+    "score_gap_states": [
+      {
+        "task": "nested-220104-71",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 4.130808364599943,
+        "other_score": 4.502903273329139
+      },
+      {
+        "task": "nested-220104-71",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 4.502903273329139,
+        "other_score": 4.130808364599943
+      },
+      {
+        "task": "nested-220104-161",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 3.8155507631599903,
+        "other_score": 4.532067589461803
+      },
+      {
+        "task": "nested-220104-161",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 4.532067589461803,
+        "other_score": 3.8155507631599903
+      }
+    ],
+    "producing_commits": [
+      "108309e98e94f025cbf6916e4d8a4188a371ad29"
+    ]
+  },
+  {
+    "experiment": "m22_tool_parser_repeat_v1",
+    "records": 200,
+    "unique_tasks": 100,
+    "cells": [
+      {
+        "budget": 24,
+        "method": "exact",
+        "n": 100,
+        "correct": 65,
+        "forwards": 205,
+        "median_seconds_including_grammar_setup": 0.26640170050086454
+      },
+      {
+        "budget": 24,
+        "method": "greedy",
+        "n": 100,
+        "correct": 63,
+        "forwards": 205,
+        "median_seconds_including_grammar_setup": 0.5592303336015902
+      }
+    ],
+    "comparisons": [
+      {
+        "budget": 24,
+        "exact_only_correct": [
+          "nested-220104-71",
+          "nested-220104-161"
+        ],
+        "greedy_only_correct": [],
+        "both_correct_exact_fewer_forwards": [],
+        "both_correct_exact_more_forwards": [],
+        "both_correct_median_speed_ratio_greedy_over_exact": 2.1571809397778163
+      }
+    ],
+    "score_gap_states": [
+      {
+        "task": "nested-220104-71",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 4.502903273329139,
+        "other_score": 4.130808364599943
+      },
+      {
+        "task": "nested-220104-71",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 4.130808364599943,
+        "other_score": 4.502903273329139
+      },
+      {
+        "task": "nested-220104-161",
+        "method": "exact",
+        "budget": 24,
+        "step": 0,
+        "score": 4.532067589461803,
+        "other_score": 3.8155507631599903
+      },
+      {
+        "task": "nested-220104-161",
+        "method": "greedy",
+        "budget": 24,
+        "step": 0,
+        "score": 3.8155507631599903,
+        "other_score": 4.532067589461803
+      }
+    ],
+    "producing_commits": [
+      "9d4e8e33e01492c161bf1456e1b554e40419063a"
+    ]
+  }
+]

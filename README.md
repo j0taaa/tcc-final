@@ -4,6 +4,13 @@ Research and implementation workspace for the TCC **Exact Maximum-Weight Paralle
 
 The project implements an exact, certificate-producing optimizer for selecting the maximum-weight compatible set of token proposals at one denoising step. EPIC's serial and heuristic decoders remain read-only baselines. Results over pruned alternatives are reported as exact on the represented support, never as full-vocabulary or future-trajectory optimality.
 
+The current research focus is **selection during actual dLLM generation**.
+[M22 live results](docs/research/generated/m22-results.md) compare the validated
+Rust optimizer with confidence-greedy feasibility during LLaDA generation of
+operand-preserving tool calls. The held-out cohort and reversed-order timing
+repeat are archived; the comparison is not against EPIC or all decoding methods.
+JSON repair without model inference remains an auxiliary experiment.
+
 ## Sources of truth
 
 Post-release fixes and their verification record:
@@ -24,9 +31,10 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 
 ## Setup
 
-The current **2026-09-28 source snapshot** includes certified JSON repair and
+The archived **M21 2026-09-28 source snapshot** includes certified JSON repair and
 4,992 controlled comparison calls (M21). Its local bundle, PDF and checksums are
 described in [`docs/releases/repair-2026-09-28.md`](docs/releases/repair-2026-09-28.md).
+That bundle/PDF predates the new M22 live results; use the current checkout for M22.
 The historical v0.2.0 and M20 bundle/patch remain unchanged. No remote publication
 was performed. From the new delivery directory:
 

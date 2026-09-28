@@ -1,0 +1,11 @@
+{
+  "source_directory": "results/raw/m22_tool_parser_repeat_v1/20260928T170458Z",
+  "uncompressed_results_sha256": "3b53d80d289c1ad619e3ce2381453c8980b9757d5a7de119ac69964d8c1790df",
+  "sha256": {
+    "config.json": "5190323d6accc8c5b26e6c415315ddb7ac992f973d4afebfe218af14590b8579",
+    "metadata.json": "aab4c8f61e63e02c23e7ab7536fd58a6ae8cef1e62f969f1633dfe44dc115e97",
+    "results.jsonl.gz": "67a2e6982f27713738b8e72c5b32627ea94cbba53dd445df65496427b8868f83",
+    "support.json": "4c54525c8661bc143196ca593da942b50943f08ad15dd075f7c9f8338de6429d",
+    "token_emissions.json": "75cab7a4ebc28563a5180b3e239ec16df4151553a8beaa597f63ed36d23a9299"
+  }
+}
