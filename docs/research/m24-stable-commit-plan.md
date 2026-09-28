@@ -79,6 +79,13 @@ primária nem viram novo holdout. São análises secundárias exploratórias. O
 piloto externo de oito casos também é repetido em ordem inversa; não multiplicar
 seu tamanho amostral por dois.
 
+Controle adicional necessário após observar o custo em forwards das políticas:
+EPIC 6/8/12, nos mesmos cem pedidos e em duas ordens, para preencher a lacuna
+entre 4 e 24 etapas. São comparações secundárias, congeladas antes de suas
+execuções. Não alterar o resultado da hipótese primária, mas usar esses controles
+na recomendação prática; uma vitória sobre EPIC-24 não implica vencer o melhor
+schedule intermediário.
+
 ## Decisão e utilidade
 
 Investigar uma política que usa o MWPC existente para decidir **o que pode ser
