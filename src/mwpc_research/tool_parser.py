@@ -81,6 +81,23 @@ def catalog_byte_grammar(calls: Sequence[str]) -> CnfGrammar:
     ).grammar
 
 
+def epic_byte_grammar(grammar: CnfGrammar) -> tuple[str, str, dict[str, str]]:
+    """Serialize exactly the same byte CNF for upstream EPIC's lexical interface."""
+    if any(not isinstance(t.label, int) for t in grammar.terminals):
+        raise ValueError("byte terminals required")
+    names = {t.symbol_id: f"lex{t.label}" for t in grammar.terminals}
+    lines = [f"N{p.head_id} -> {names[p.terminal_id]}" for p in grammar.terminal_productions]
+    lines.extend(f"N{p.head_id} -> N{p.left_id} N{p.right_id}" for p in grammar.binary_productions)
+    if grammar.accepts_empty:
+        lines.append(f"N{grammar.start_nonterminal_id} -> epsilon")
+    # Upstream regular_cover reads the first production as its start symbol.
+    # Emit the actual start first so both upstream representations agree.
+    start = f"N{grammar.start_nonterminal_id}"
+    lines.sort(key=lambda line: line.split()[0] != start)
+    lex_map = {names[t.symbol_id]: rf"\x{t.label:02x}" for t in grammar.terminals}
+    return "\n".join(lines), start, lex_map
+
+
 def production_input(
     grammar: CnfGrammar,
     canvas: Sequence[int | None],

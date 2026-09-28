@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Opt-in CUDA discovery experiment: actual LLaDA, exhaustive finite catalog.
+"""Opt-in CUDA tool experiment: live LLaDA, declared selectors and optional EPIC.
 
-This is not an EPIC benchmark or a production-parser latency measurement.
 Every call is retained, and expected answers are used only after decoding.
 """
 
@@ -81,6 +80,7 @@ def main() -> None:
     row_tensors = [torch.tensor(row, device="cuda") for row in rows]
     support_hash = hashlib.sha256(json.dumps(paths).encode()).hexdigest()
     backend = config.get("backend", "catalog")
+    has_epic = any(m.startswith("epic_") for m in config["methods"])
     metadata = {
         "git_commit": commit,
         "seed": config["seed"],
@@ -105,11 +105,15 @@ def main() -> None:
         "limitations": [
             config["phase"],
             "small synthetic tool requests",
-            "no EPIC baseline",
+            "EPIC support/schedule differences declared" if has_epic else "no EPIC baseline",
             "one quantized model",
             "finite positional domains" if backend == "rust" else "canonical tokenizations only",
         ],
     }
+    if has_epic:
+        metadata["upstream_epic_commit"] = subprocess.check_output(
+            ["git", "-C", "vendor/EPIC-Decoding", "rev-parse", "HEAD"], cwd=ROOT, text=True
+        ).strip()
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     (output / "support.json").write_text(json.dumps({"catalog": catalog, "paths": paths}) + "\n")
     all_paths = paths
@@ -200,6 +204,46 @@ def main() -> None:
             methods = config["methods"]
             offset = task_index % len(methods)
             for method in methods[offset:] + methods[:offset]:
+                if method.startswith("epic_"):
+                    from epic_tool_runner import run_epic
+
+                    outcome = run_epic(
+                        model=model,
+                        tokenizer=tokenizer,
+                        prompt=prompt,
+                        grammar=grammar,
+                        rows=rows,
+                        calls=calls,
+                        config=config,
+                        method=method,
+                    )
+                    record = {
+                        **metadata,
+                        **outcome,
+                        "task": task,
+                        "method": method,
+                        "budget": budget,
+                        "active_catalog_indices": active_indices,
+                        "backend": "upstream_epic",
+                        "grammar_setup_seconds": setup_seconds,
+                        "active_grammar_hash": hashlib.sha256(
+                            json.dumps(calls).encode()
+                        ).hexdigest(),
+                        "correct": outcome["status"] == "complete"
+                        and outcome["output"] == task["expected"],
+                    }
+                    with (output / "results.jsonl").open("a") as stream:
+                        stream.write(json.dumps(record, allow_nan=False) + "\n")
+                    print(
+                        json.dumps(
+                            {
+                                k: record[k]
+                                for k in ("method", "output", "correct", "forwards", "status")
+                            }
+                        ),
+                        flush=True,
+                    )
+                    continue
                 generator = torch.Generator(device="cuda")
                 generator.manual_seed(config["seed"] + task_index + 1000 * budget)
                 canvas: list[int | None] = [None] * config["slots"]

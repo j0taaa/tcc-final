@@ -16,6 +16,26 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M23 — Compare the tool task with the actual EPIC decoder
+
+Depends on M22 and the M19 fairness audit. Preserve the pinned upstream source,
+MWPC finite-support guarantees, answer-independent languages and all failures.
+
+- [ ] T2300: Test an adapter that runs upstream EPIC with regular-cover selection,
+  DFA-free checking and caching enabled. Freeze native-vocabulary and explicitly
+  domain-restricted variants, two parallel reveal schedules, identical prompts,
+  model, language, slot/forward/time limits and a bounded pilot.
+  **Evidence:** pending.
+- [ ] T2301: Run every variant on the same frozen 100 M22 requests, with MWPC
+  rerun in rotated order; repeat with reversed order. Preserve native EPIC events,
+  rejection counts, selector calls/errors, actual forwards, timing and statuses.
+  **Evidence:** pending.
+- [ ] T2302: Generate validated paired results and correct the current research
+  claims. Explain support, confidence normalization, completion and scheduling
+  differences; do not identify upstream EPIC with the matched greedy selector.
+  Run full Python and relevant upstream checks, and archive reproducible evidence.
+  **Evidence:** pending.
+
 ## M22 — Find an end-to-end dLLM benefit and check a bounded held-out cohort
 
 Depends on M21 correctness and the M19 comparison audit. Keep repair secondary.
