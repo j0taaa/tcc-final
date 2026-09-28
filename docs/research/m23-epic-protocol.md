@@ -77,3 +77,31 @@ schedule vencedor depois de observar a coorte; relatar todos os sete métodos.
 A confirmação e a repetição têm 700 gerações cada. Os cinco pedidos do piloto
 continuam na coorte, sem alegação de holdout novo. A alteração não dependeu de
 vantagem de acurácia; corrige o avaliador e amplia o controle de orçamento.
+
+## Controle lexical adicional
+
+Adicionado enquanto a primeira coorte completa ainda estava em execução, antes
+de conhecer sua tabela final: três configurações EPIC de vocabulário nativo com
+lexemas naturais (funções inteiras, dígitos e pontuação), 1/4/24 etapas. A gramática
+é construída exclusivamente do mesmo catálogo permitido, não da resposta.
+A linguagem canônica é testada contra todos os 1.512 elementos do catálogo; o
+lexer upstream pode admitir whitespace, avaliado pelo mesmo AST. Manter os
+resultados por bytes também, sem substituir a representação menos favorável.
+
+Arquivos `m23_epic_lexical_{confirmation,repeat}_v1.json`: os mesmos 100 pedidos,
+três EPIC + nova execução MWPC em cada rodada; 800 gerações adicionais, repetição
+com ordem invertida. O MWPC é reexecutado como controle contemporâneo. Essa
+sensibilidade de representação é parte da comparação, não nova evidência
+independente de generalização. O leitor de regular cover recebe símbolo inicial
+primeiro; o CFG normalizado tem seu cache inicializado antes da primeira consulta.
+
+Antes das execuções lexicais, acrescentar também 2 etapas EPIC: aproxima o número
+habitual de forwards do MWPC M22 (205/100). Assim são quatro EPIC + MWPC por rodada
+lexical, **1.000** gerações adicionais. Isso substitui a contagem planejada de 800
+acima; nenhum pedido ou resultado anterior é removido.
+
+Métrica secundária acrescentada na análise, sem mudar a primária: executar apenas
+a AST validada de calculadora e comparar o inteiro resultante. Identidade de
+chamada pode penalizar expressões aritmeticamente equivalentes; relatar ambos.
+Coincidência do valor não prova preservação das operações solicitadas. Nunca
+usar `eval`, reparar textos ou aceitar MASKs escondidos como respostas completas.

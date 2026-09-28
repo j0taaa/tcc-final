@@ -175,3 +175,26 @@ def normalize_tool_call(text: str) -> str | None:
         return visit(tree.body)
     except (SyntaxError, ValueError, RecursionError):
         return None
+
+
+def execute_tool_call(text: str) -> int | None:
+    """Interpret only validated calculator ASTs, never Python eval or user code."""
+    normalized = normalize_tool_call(text)
+    if normalized is None:
+        return None
+
+    def value(node: ast.AST) -> int:
+        if isinstance(node, ast.Constant):
+            assert isinstance(node.value, int)
+            return node.value
+        assert isinstance(node, ast.Call) and isinstance(node.func, ast.Name)
+        args = [value(arg) for arg in node.args]
+        if node.func.id == "add":
+            return args[0] + args[1]
+        if node.func.id == "sub":
+            return args[0] - args[1]
+        if node.func.id == "mul":
+            return args[0] * args[1]
+        return -args[0] if node.func.id == "neg" else abs(args[0])
+
+    return value(ast.parse(normalized, mode="eval").body)

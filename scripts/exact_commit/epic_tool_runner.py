@@ -19,7 +19,7 @@ def run_epic(*, model, tokenizer, prompt, grammar, rows, calls, config, method):
     from constrained_diffusion.eval.dllm.models.llada import generate_constrained as upstream
     from rustformlang.cfg import CFG
 
-    from mwpc_research.tool_parser import epic_byte_grammar
+    from mwpc_research.tool_parser import epic_byte_grammar, epic_lexical_grammar
     from mwpc_research.tool_screen import normalize_tool_call
 
     def synchronize():
@@ -53,8 +53,14 @@ def run_epic(*, model, tokenizer, prompt, grammar, rows, calls, config, method):
     failure = None
     status = "incomplete"
     setup_start = time.perf_counter()
-    cfg_text, cfg_start, lex_rules = epic_byte_grammar(grammar)
+    lexical = method.startswith("epic_lexical_")
+    cfg_text, cfg_start, lex_rules = (
+        epic_lexical_grammar(calls) if lexical else epic_byte_grammar(grammar)
+    )
     native_grammar = CFG.from_text(cfg_text, cfg_start).to_normal_form()
+    if lexical:
+        # Initialize the normal-form cache on the grammar returned by normalization.
+        native_grammar = native_grammar.to_normal_form()
     lex_map = compile_lex_map(lex_rules)
     prompt_tensor = torch.tensor([prompt], device=model.device)
     permitted = None
@@ -194,6 +200,7 @@ def run_epic(*, model, tokenizer, prompt, grammar, rows, calls, config, method):
         "confidence_policy": "softmax_after_domain_mask" if restricted else "upstream_native",
         "epic_grammar_sha256": hashlib.sha256(cfg_text.encode()).hexdigest(),
         "epic_lex_rules": lex_rules,
+        "epic_representation": "lexical" if lexical else "bytes",
         "epic_counters": counters,
         "epic_times": times,
         "epic_batch_errors": batch_errors,

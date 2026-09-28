@@ -1,0 +1,30 @@
+{
+  "git_commit": "657bbc4ebe54593219e967d90c25f20ca30f303c",
+  "seed": 220104,
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "model_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "tokenizer_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "quantization": "NF4 double quantization, bfloat16 compute",
+  "config_sha256": "d932281826f715742e9be1ef4abb63dd9693db0996d278ec0ff6a26348ca897d",
+  "grammar_hash": "eabf0cf88fbb19718653fdceb0d7a0c0d51d7ff9f1a65a03a8f78aa1ccc8b313",
+  "support_sha256": "956533092456ca679b29c918db88b4991d88a3e5bd417f9e6048d0a074a95197",
+  "support_policy": "per-position union of canonical task-filtered tokens, intersect finite byte CFG preserving operand multiset and required EOS; alternative tokenizations permitted",
+  "exactness_scope": "exact_on_support; per-record active domains and language",
+  "hardware": "NVIDIA GeForce RTX 3080 Ti",
+  "python": "3.11.16",
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.52.2",
+    "bitsandbytes": "0.50.1",
+    "tokenizers": "0.21.4"
+  },
+  "implementation": "production_CFG_on_bytes",
+  "limitations": [
+    "EPIC comparison on previously measured M22 tasks; not a new held-out discovery",
+    "small synthetic tool requests",
+    "EPIC support/schedule differences declared",
+    "one quantized model",
+    "finite positional domains"
+  ],
+  "upstream_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072"
+}

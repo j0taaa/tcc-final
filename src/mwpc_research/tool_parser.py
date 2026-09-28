@@ -7,6 +7,7 @@ therefore exist and must not be described as the canonical-only catalog.
 
 from __future__ import annotations
 
+import re
 from collections.abc import Sequence
 from dataclasses import dataclass, field
 
@@ -96,6 +97,19 @@ def epic_byte_grammar(grammar: CnfGrammar) -> tuple[str, str, dict[str, str]]:
     lines.sort(key=lambda line: line.split()[0] != start)
     lex_map = {names[t.symbol_id]: rf"\x{t.label:02x}" for t in grammar.terminals}
     return "\n".join(lines), start, lex_map
+
+
+def epic_lexical_grammar(calls: Sequence[str]) -> tuple[str, str, dict[str, str]]:
+    """Natural function-name/digit/punctuation lexemes for the same call catalogue."""
+    if not calls:
+        raise ValueError("nonempty tool language required")
+    sequences = [re.findall(r"add|sub|mul|neg|abs|[0-9(),]", call) for call in calls]
+    if any("".join(parts) != call for parts, call in zip(sequences, calls, strict=True)):
+        raise ValueError("unsupported calculator lexeme")
+    symbols = sorted({symbol for parts in sequences for symbol in parts})
+    names = {symbol: f"lex{i}" for i, symbol in enumerate(symbols)}
+    text = "\n".join("S -> " + " ".join(names[s] for s in parts) for parts in sequences)
+    return text, "S", {names[s]: re.escape(s) for s in symbols}
 
 
 def production_input(

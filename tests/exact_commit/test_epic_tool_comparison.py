@@ -136,3 +136,73 @@ def test_structural_evaluation_allows_whitespace_without_repair_or_execution():
         "add(1,2); exit()",
     ):
         assert normalize_tool_call(invalid) is None
+
+
+def test_natural_epic_lexemes_accept_exactly_the_catalogue():
+    pytest.importorskip("rustformlang")
+    import re
+
+    from rustformlang.cfg import CFG
+
+    from mwpc_research.tool_parser import epic_lexical_grammar
+    from mwpc_research.tool_screen import tool_catalog
+
+    all_calls = tool_catalog("nested")
+    allowed = all_calls[::7]
+    text, start, rules = epic_lexical_grammar(allowed)
+    grammar = CFG.from_text(text, start).to_normal_form().to_normal_form()
+
+    def symbols(call):
+        parts = re.findall(r"add|sub|mul|neg|abs|[0-9(),]", call)
+        return [
+            next(name for name, pattern in rules.items() if re.fullmatch(pattern, part))
+            for part in parts
+        ]
+
+    for call in all_calls:
+        assert grammar.accepts(symbols(call)) == (call in allowed), call
+    for wrong in ("add(1)", "neg(1,2)", "add(add(1,2),neg(3))"):
+        assert not grammar.accepts(symbols(wrong))
+
+
+def test_natural_lexical_cover_executes_a_compatible_batch(monkeypatch):
+    pytest.importorskip("rustformlang")
+    from constrained_diffusion.constrain_utils import compile_lex_map
+    from constrained_diffusion.regular_cover import BatchCandidate, select_batch_with_regular_cover
+    from rustformlang.cfg import CFG
+
+    from mwpc_research.tool_parser import epic_lexical_grammar
+
+    monkeypatch.setenv("CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER", "1")
+    monkeypatch.setenv("CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT", "1")
+    text, start, rules = epic_lexical_grammar(("neg(1)", "abs(1)"))
+    grammar = CFG.from_text(text, start).to_normal_form().to_normal_form()
+    candidates = [BatchCandidate(i, i, word, 1.0) for i, word in enumerate(("neg(", "1", ")"))]
+    selected = select_batch_with_regular_cover(
+        words_full=[None] * 3,
+        candidates=candidates,
+        prompt_len=0,
+        cfg=grammar,
+        lex_map=compile_lex_map(rules),
+        terminals=grammar.get_terminals(),
+        prelex=None,
+        single_token_lexing=None,
+        inject_gap_size=0,
+        max_total_injections=0,
+        subtokens={},
+        supertokens={},
+        strip_chars=None,
+    )
+    assert selected == candidates
+
+
+def test_numeric_secondary_metric_keeps_call_identity_distinct():
+    from mwpc_research.tool_screen import execute_tool_call, normalize_tool_call
+
+    left, right = "mul(mul(2,2),3)", "mul(mul(3,2),2)"
+    assert normalize_tool_call(left) != normalize_tool_call(right)
+    assert execute_tool_call(left) == execute_tool_call(right) == 12
+    assert execute_tool_call("sub(mul(3,1),1)") == 2
+    assert execute_tool_call("sub(sub(3,1),1)") == 1
+    assert execute_tool_call("abs(neg(3))") == 3
+    assert execute_tool_call("__import__('os')") is None

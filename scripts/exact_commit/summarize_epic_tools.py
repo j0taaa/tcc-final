@@ -12,7 +12,12 @@ from math import fsum, isfinite
 from pathlib import Path
 from statistics import median
 
-from mwpc_research.tool_screen import normalize_tool_call, operand_preserving_indices, tool_catalog
+from mwpc_research.tool_screen import (
+    execute_tool_call,
+    normalize_tool_call,
+    operand_preserving_indices,
+    tool_catalog,
+)
 
 
 def read_cohort(directory):
@@ -64,6 +69,11 @@ def read_cohort(directory):
         assert row["active_grammar_hash"] == hashlib.sha256(json.dumps(calls).encode()).hexdigest()
         complete = row["status"] == "complete"
         normalized = normalize_tool_call(row["output"])
+        row["numeric_correct"] = (
+            complete
+            and normalized in calls
+            and execute_tool_call(row["output"]) == execute_tool_call(task["expected"])
+        )
         assert row["correct"] == (complete and normalized == task["expected"])
         assert row["syntax_valid"] == (complete and normalized in calls)
         assert 0 <= row["forwards"] <= config["max_forwards"]
@@ -113,8 +123,8 @@ def read_cohort(directory):
                 assert complete == row["epic_events"][-1]["complete"]
             if complete:
                 assert 126336 not in row["token_ids"]
-                end = row["token_ids"].index(126081)
-                assert all(t == 126081 for t in row["token_ids"][end:])
+                end = next(i for i, t in enumerate(row["token_ids"]) if t in (126081, 126348))
+                assert all(t == row["token_ids"][end] for t in row["token_ids"][end:])
                 # All completed calls in this language use the archived byte adapter.
                 # Unknown IDs require an explicitly archived emission, never guessing.
                 native_emissions = {int(t): bytes(b) for t, b in row["token_emissions"].items()}
@@ -166,6 +176,10 @@ def build(directories):
                     sum(r["correct"] for (t, m), r in c[2].items() if m == method) for c in primary
                 ],
                 "syntax_valid": sum(r["syntax_valid"] for r in rows),
+                "numeric_correct_per_repeat": [
+                    sum(r["numeric_correct"] for (t, m), r in c[2].items() if m == method)
+                    for c in primary
+                ],
                 "statuses": dict(Counter(r["status"] for r in rows)),
                 "forwards_per_repeat": [
                     sum(r["forwards"] for (t, m), r in c[2].items() if m == method) for c in primary
@@ -237,12 +251,14 @@ def build(directories):
         "Gerado dos arquivos validados; 100 pedidos sintéticos já usados no M22, duas",
         "execuções por método. Repetições não são tarefas independentes.",
         "",
-        "| Método | Acertos (execuções 1 / 2) | Forwards (1 / 2) | Mediana total (ms) |",
-        "|---|---:|---:|---:|",
+        "| Método | Chamadas corretas (1 / 2) | Resultado numérico correto (1 / 2) | "
+        "Forwards (1 / 2) | Mediana total (ms) |",
+        "|---|---:|---:|---:|---:|",
     ]
     for c in cells:
         lines.append(
             f"| {c['method']} | {' / '.join(map(str, c['correct_per_repeat']))} | "
+            f"{' / '.join(map(str, c['numeric_correct_per_repeat']))} | "
             f"{' / '.join(map(str, c['forwards_per_repeat']))} | {c['median_total_ms']:.1f} |"
         )
     lines += [
@@ -268,13 +284,18 @@ def build(directories):
         "",
         "## Limites da comparação",
         "",
+        "Chamadas corretas: AST idêntico ao pedido, ignorando whitespace legal. Resultado",
+        "numérico é métrica secundária: aceita equivalências aritméticas, mas não prova",
+        "preservação das operações pedidas. Nenhuma métrica aceita geração incompleta.",
+        "",
         "EPIC original usa vocabulário nativo, rejeições no mesmo forward e lacunas",
         "abstratas. A variante `domains` recebe os domínios do MWPC, mas a máscara",
         "renormaliza a confiança; não torna os seletores isoladamente equivalentes.",
         "Etapas EPIC 1/4/24 são orçamentos de geração distintos, não 24 forwards garantidos.",
         "MWPC usa até 24 forwards e otimiza propostas dentro de suporte finito por etapa.",
-        "A representação de lexemas de um byte é compartilhada por equivalência de",
-        "linguagem; não se afirma que seja a representação mais rápida para EPIC.",
+        "Métodos native/domains usam lexemas por byte; lexical usa nomes de funções,",
+        "dígitos e pontuação. Ambos representam o mesmo catálogo canônico, mas o",
+        "lexer EPIC admite whitespace. O controle lexical testa a sensibilidade a isso.",
         "Um modelo quantizado, uma GPU e uma linguagem pequena e finita. Não há",
         "evidência aqui de superioridade geral em APIs reais ou sobre outras configurações.",
         "",
