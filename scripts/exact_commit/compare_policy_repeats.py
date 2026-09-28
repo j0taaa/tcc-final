@@ -149,8 +149,9 @@ def build(
         "records": len(a) + len(b),
         "primary_method": config.get("primary_method"),
         "table": table,
-        "paired_vs_primary_comparator": pairs,
-        "primary_comparator": comparator,
+        "paired_comparisons": pairs,
+        "comparator": comparator,
+        "frozen_primary_comparator": config.get("primary_comparator"),
         "comparison_role": "secondary" if is_schema or comparator_override else "frozen_primary",
         "scope": (
             "eight schema-finite public BFCL cases; own strict AST evaluator, not official "
