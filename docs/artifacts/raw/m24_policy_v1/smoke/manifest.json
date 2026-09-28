@@ -1,0 +1,12 @@
+{
+  "source_experiment": "m24_policy_smoke_v1",
+  "records": 40,
+  "uncompressed_results_sha256": "010089f8bfbd7dc605ffa771502ec40a667d8ecac8d77d2e6e7a8e1c791fedee",
+  "sha256": {
+    "config.json": "518c117db212e5bbb1037f7065b6915b46d2708e55fa9a72c99378407aa60152",
+    "metadata.json": "a9c3b383a259f2146aa3c7efdb30afdd2ea329dc8f3bf941f8655f86016ded52",
+    "support.json": "4c54525c8661bc143196ca593da942b50943f08ad15dd075f7c9f8338de6429d",
+    "token_emissions.json": "192cf5a177157e4c3175664a8cc911dd9219c7143210fc724b15bb7764e37ce9",
+    "results.jsonl.gz": "c154028e3ed7c878b121bd9026ef74e6905e2c999cffd9ac81d3503d0a796118"
+  }
+}
