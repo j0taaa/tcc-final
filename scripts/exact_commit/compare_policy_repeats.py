@@ -47,6 +47,8 @@ def build(
     secondary_second=None,
     controls_first=None,
     controls_second=None,
+    *,
+    comparator_override=None,
 ):
     config, a = read(first)
     config_b, b = read(second)
@@ -77,7 +79,7 @@ def build(
     ids = [t["id"] for t in config["tasks"]]
     table, pairs = [], {}
     is_schema = config.get("schema_calls", False)
-    comparator = config.get("primary_comparator", "epic_lexical_24")
+    comparator = comparator_override or config.get("primary_comparator", "epic_lexical_24")
     for policy in policies:
         name = policy["name"]
         repetitions = [[m[tid, name] for tid in ids] for m in maps]
@@ -149,6 +151,7 @@ def build(
         "table": table,
         "paired_vs_primary_comparator": pairs,
         "primary_comparator": comparator,
+        "comparison_role": "secondary" if is_schema or comparator_override else "frozen_primary",
         "scope": (
             "eight schema-finite public BFCL cases; own strict AST evaluator, not official "
             "BFCL score; two repetitions, not independent samples; exploratory CIs"
@@ -202,6 +205,9 @@ def main():
     parser.add_argument("--secondary-second", type=Path)
     parser.add_argument("--controls-first", type=Path)
     parser.add_argument("--controls-second", type=Path)
+    parser.add_argument(
+        "--comparator", help="Secondary comparison; never alters the frozen primary"
+    )
     args = parser.parse_args()
     result, report = build(
         args.first,
@@ -210,6 +216,7 @@ def main():
         args.secondary_second,
         args.controls_first,
         args.controls_second,
+        comparator_override=args.comparator,
     )
     for path, text in ((args.output, json.dumps(result, indent=2) + "\n"), (args.report, report)):
         if args.check:

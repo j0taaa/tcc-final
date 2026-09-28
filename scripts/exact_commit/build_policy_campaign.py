@@ -80,6 +80,10 @@ def main():
         summary, report = build(*(RAW / d for d in dirs))
         write(OUT / f"m24-{name}-summary.json", summary)
         write(OUT / f"m24-{name}-results.md", report)
+        if name == "confirmation-paired":
+            for comparator in ("epic_lexical_8", "greedy_confidence_0.8", "greedy_confidence_0.2"):
+                extra, _ = build(*(RAW / d for d in dirs), comparator_override=comparator)
+                write(OUT / f"m24-secondary-vs-{comparator}.json", extra)
     inventory = {
         "cohorts": cohorts,
         "live_final_generations": len(all_rows),
