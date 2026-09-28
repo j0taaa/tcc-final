@@ -79,3 +79,14 @@ com no máximo uma chamada aninhada, literais 0..3, 24 slots, orçamentos 8/24,
 30 pedidos, seed 220002. A instrução pede preservar operações e explicita a
 ordem dos argumentos. Não é uma coorte confirmatória: domínio e configuração
 foram escolhidos após v1. Configuração nova, resultados anteriores preservados.
+
+## Extensão exploratória v3: propostas amostradas
+
+V2 terminou sem diferenças de objetivo ou resultado entre seletores. V3 testa
+uma hipótese diferente: conflitos entre propostas amostradas, em vez de argmax.
+Mesma linguagem de v2, temperatura 1, 60 pedidos novos (seed 220003), orçamento
+24. Amostragem categórica via Gumbel dentro de cada domínio posicional, com
+pesos ainda iguais às probabilidades originais sobre o vocabulário completo.
+Métodos usam os mesmos números aleatórios em cada passo/posição. Trata-se de
+uma condição estocástica legítima, mas escolhida depois dos resultados neutros;
+qualquer vantagem ainda exige confirmação separada e comparação com temperatura 0.

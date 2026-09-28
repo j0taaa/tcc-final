@@ -138,6 +138,8 @@ def main() -> None:
             methods = config["methods"]
             offset = task_index % len(methods)
             for method in methods[offset:] + methods[:offset]:
+                generator = torch.Generator(device="cuda")
+                generator.manual_seed(config["seed"] + task_index + 1000 * budget)
                 canvas: list[int | None] = [None] * config["slots"]
                 trace = []
                 status = "forward_limit"
@@ -159,10 +161,17 @@ def main() -> None:
                     candidate_start = time.perf_counter()
                     proposals = []
                     for p, row in enumerate(rows):
+                        # Draw even for fixed positions: equal step/position shares randomness.
+                        temperature = config.get("temperature", 0.0)
+                        noise = None
+                        if temperature > 0:
+                            uniform = torch.rand(len(row), device="cuda", generator=generator)
+                            noise = -torch.log(-torch.log(uniform.clamp(1e-7, 1 - 1e-7)))
                         if canvas[p] is not None:
                             continue
                         values = logits[p, row_tensors[p]]
-                        best = int(values.argmax().item())
+                        sampled = values if noise is None else values / temperature + noise
+                        best = int(sampled.argmax().item())
                         probability = float(
                             torch.exp(values[best] - torch.logsumexp(logits[p], dim=-1)).item()
                         )
