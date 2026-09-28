@@ -245,3 +245,12 @@ Rust nem prometer superioridade. Fechar essa hipótese e entregar a integração
 útil com a melhor política validada, delimitando a contribuição experimental.
 O plano maximiza a chance de um resultado útil; não torna um resultado positivo
 garantido nem autoriza trocar o teste depois de vê-lo.
+
+Complemento secundário após o primeiro piloto externo: medir também EPIC 6/8/12,
+MAP com compromisso completo e os dois filtros de confiança com seletor guloso
+nos mesmos oito casos. As políticas já existiam na confirmação sintética; não
+ajustar seus parâmetros aos acertos externos. Configs `m24_bfcl_controls_v1` e
+repetição, 48 registros cada. Esse complemento evita comparar o MWPC apenas com
+MAP de quatro commits no caso em que o catálogo pequeno pode ser suficiente.
+É análise secundária no mesmo piloto, sem transformar oito casos em confirmação
+ampla ou alterar a comparação primária congelada.
