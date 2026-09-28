@@ -1,6 +1,7 @@
 # Plano de quatro semanas: reparo certificado de JSON com preservação de dados
 
-Decisão de 28/09/2026. **Proposta de pesquisa, ainda sem implementação ou resultados de reparo.**
+Decisão original de 28/09/2026. **Plano preservado; a implementação e o primeiro estudo controlado foram concluídos em M21.**
+Consulte [uso](json-repair.md) e [resultados e limites](m21-findings.md). A coorte de erros reais e a comparação com nova tentativa do modelo continuam futuras.
 Prazo relativo: 28 dias de trabalho, reservando os dias 29–30 para contingências.
 Os resultados atuais de geração continuam válidos e não serão substituídos.
 

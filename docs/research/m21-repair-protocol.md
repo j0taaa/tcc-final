@@ -150,3 +150,15 @@ measurement row: `dataclasses.asdict` cannot deepcopy the existing immutable
 `SystemMetadata.thread_environment` mapping proxy. A serialization regression
 test and field-wise conversion fix this; the corrected pilot uses a new run
 directory `m21-repair-pilot-v2`. No data was discarded or replaced.
+
+## Execution record (added after measurement)
+
+All three cohorts completed from clean `47b93c4`: 384 pilot, 3,840 confirmation,
+and 768 ambiguity calls. Immutable outputs are archived in
+`docs/artifacts/raw/m21_repair_v1/`; derived tables and all paired outcomes in
+`paper/generated/m21_repair_v1/`. `docs/research/m21-findings.md` discusses both
+wins and losses. Offline verification now additionally rejects missing/duplicate
+cells and changed inputs/support/metadata, and uses a stdlib task-schema checker
+regression-tested against jsonschema. It reproduces the recorded evaluations.
+The optional dependency list now explicitly includes the already-used pinned
+schema/tokenizer dependencies for installation in a clean environment.

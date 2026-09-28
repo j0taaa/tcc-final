@@ -98,11 +98,13 @@ final-artifacts-check:
 article-results:
 	$(VENV_PY) scripts/exact_commit/build_article_results.py --config $(ARTICLE_RESULT_CONFIG)
 	$(VENV_PY) scripts/exact_commit/build_selection_audit.py
+	$(VENV_PY) -m scripts.exact_commit.build_json_repair_results
 
 article-results-check:
 	$(VENV_PY) scripts/exact_commit/build_article_results.py --config $(ARTICLE_RESULT_CONFIG) --verify-existing
 	$(VENV_PY) scripts/exact_commit/build_review_results.py --check
 	$(VENV_PY) scripts/exact_commit/build_selection_audit.py --check
+	$(VENV_PY) -m scripts.exact_commit.build_json_repair_results --check
 
 release-wheel-smoke:
 	$(VENV_PY) scripts/rehearse_release_wheel.py

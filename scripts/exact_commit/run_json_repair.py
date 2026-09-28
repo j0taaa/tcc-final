@@ -279,6 +279,28 @@ def run_job(job, adapter, grammar, validator, config):
     return result
 
 
+def record_schema_valid(value):
+    """Independent checker for SCHEMA; no optional library needed to audit archives."""
+
+    def integer(item):
+        # JSON Schema accepts integral JSON numbers; bool is not an integer.
+        return type(item) is int or (type(item) is float and item.is_integer())
+
+    return (
+        isinstance(value, dict)
+        and set(value) == {"id", "payload"}
+        and integer(value["id"])
+        and isinstance(value["payload"], list)
+        and all(
+            isinstance(item, dict)
+            and set(item) == {"a", "b"}
+            and integer(item["a"])
+            and integer(item["b"])
+            for item in value["payload"]
+        )
+    )
+
+
 def evaluate(output, expected):
     result = {
         "syntax_valid": False,
@@ -293,9 +315,7 @@ def evaluate(output, expected):
     except (ValueError, UnicodeError):
         return result
     result["syntax_valid"] = True
-    from jsonschema import Draft202012Validator
-
-    result["schema_valid"] = Draft202012Validator(SCHEMA).is_valid(value)
+    result["schema_valid"] = record_schema_valid(value)
     result["semantic_success"] = json.dumps(value, sort_keys=True) == json.dumps(
         expected, sort_keys=True
     )
@@ -400,9 +420,39 @@ def read_archive(directory):
         rows = [json.loads(line) for line in file]
     if len(rows) != manifest["rows"]:
         raise ValueError("archive row count mismatch")
+    metadata = json.loads((directory / "metadata.json").read_text())
+    config = metadata["config"]
+    expected_cases = {(case["document_id"], case["family"]): case for case in cases(config)}
+    expected_keys = {
+        (doc, family, profile, method, repetition)
+        for doc, family in expected_cases
+        for profile in config["profiles"]
+        for method in config["methods"]
+        for repetition in range(config["repetitions"])
+    }
+    observed_keys = set()
     for row in rows:
-        if evaluate(row["result"].get("output_text"), row["case"]["expected"]) != row["evaluation"]:
+        case = row["case"]
+        key = (
+            case["document_id"],
+            case["family"],
+            row["profile"],
+            row["method"],
+            row["repetition"],
+        )
+        if key in observed_keys or key not in expected_keys:
+            raise ValueError("duplicate or unexpected experimental cell")
+        observed_keys.add(key)
+        if case != expected_cases[key[:2]] or row["metadata"] != metadata:
+            raise ValueError("case or metadata differs from frozen protocol")
+        if row["input_sha256"] != canonical_json_sha256(case["draft"]):
+            raise ValueError("input hash mismatch")
+        if row["support_sha256"] != canonical_json_sha256(row["support_rows"]):
+            raise ValueError("support hash mismatch")
+        if evaluate(row["result"].get("output_text"), case["expected"]) != row["evaluation"]:
             raise ValueError("independent output evaluation mismatch")
+    if observed_keys != expected_keys:
+        raise ValueError("missing experimental cells")
     return rows
 
 

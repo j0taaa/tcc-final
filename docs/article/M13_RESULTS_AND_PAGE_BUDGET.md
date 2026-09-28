@@ -85,3 +85,12 @@ silently shrinking required content. After results are imported, run
 if the measured total exceeds 16 pages. The 15-page T1258 build is only a
 baseline measurement and is not a final page-count claim.
 
+
+## M21 display replacement (2026-09-28)
+
+The current main text has three result tables: M19 selector timings, M17 live
+confirmation failures, and M21 controlled repair. The R1 correctness table is
+retained in `paper/supplement-method.tex`; its complete counts stay in the main
+text and all original correctness/artifact tests remain. This replaces one
+result display without changing template fonts, margins or the 16-page gate.
+The historical three-element selection above remains an audit of M13.

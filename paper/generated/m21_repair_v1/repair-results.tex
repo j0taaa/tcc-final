@@ -1,0 +1,24 @@
+\begin{table}[ht]
+\centering\small
+\caption{Controlled JSON repair with the real LLaDA tokenizer, without model inference. Cells count documents correct in every repetition. J: json\_repair; S/V: its schema standard/salvage modes; N: enumeration; U: unweighted CFG; G: greedy; E: exact. Schema cohort: 20 documents, two repetitions; ambiguous cohort: eight documents, one repetition.}
+\label{tab:repair}
+\begin{tabular}{lrrrrrrr}\toprule
+Error class & J & S & V & N & U & G & E\\\midrule
+\multicolumn{8}{l}{\emph{Shared record schema}}\\
+Valid control & 20/20 & 20/20 & 20/20 & 20/20 & 20/20 & 20/20 & 20/20 \\
+Opening swaps & 0/20 & 0/20 & 0/20 & 20/20 & 20/20 & 20/20 & 20/20 \\
+Closing swaps & 0/20 & 0/20 & 0/20 & 20/20 & 20/20 & 20/20 & 20/20 \\
+Separator swaps & 20/20 & 20/20 & 20/20 & 10/20 & 20/20 & 20/20 & 20/20 \\
+Missing suffix & 20/20 & 20/20 & 20/20 & 0/20 & 0/20 & 0/20 & 0/20 \\
+Wrong value & 0/20 & 0/20 & 0/20 & 0/20 & 0/20 & 0/20 & 0/20 \\
+\midrule
+\multicolumn{8}{l}{\emph{Ambiguous JSON grammar}}\\
+Valid control & 8/8 & 8/8 & 8/8 & 8/8 & 0/8 & 8/8 & 8/8 \\
+Opening swaps & 0/8 & 0/8 & 0/8 & 8/8 & 0/8 & 0/8 & 8/8 \\
+Closing swaps & 4/8 & 4/8 & 4/8 & 8/8 & 0/8 & 8/8 & 8/8 \\
+Separator swaps & 8/8 & 8/8 & 8/8 & 8/8 & 0/8 & 8/8 & 0/8 \\
+Missing suffix & 8/8 & 8/8 & 8/8 & 0/8 & 0/8 & 0/8 & 0/8 \\
+Wrong value & 0/8 & 0/8 & 0/8 & 0/8 & 0/8 & 0/8 & 0/8 \\
+\bottomrule
+\end{tabular}
+\end{table}

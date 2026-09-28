@@ -1,0 +1,60 @@
+{
+  "milestone": "M21",
+  "measurement_commit": "47b93c475ca961b97063d409f9b8c4c29ba580c8",
+  "scope": "controlled synthetic corruptions; real LLaDA tokenizer; no model inference/retry",
+  "archives": {
+    "pilot": {
+      "rows": 384,
+      "rows_sha256": "f3ef4ffbfa121beb88e1420004ec79a7587366ed3d200ab782e1ea1454d8369d",
+      "metadata_sha256": "d67d0ccca89412a6f7d027946cb23a2e0979d53ea985b708524cdf62114e2772"
+    },
+    "confirmation": {
+      "rows": 3840,
+      "rows_sha256": "3aec1c4a1887ed51358e40da7b4ad4a4a46289b8d8ece2738a3631b6705e1a75",
+      "metadata_sha256": "07c81114a5d4aa20a857c2337d7ed7da23f9442bde9c8d7c74d316c8f03c375a"
+    },
+    "mechanism": {
+      "rows": 768,
+      "rows_sha256": "a6f3465736b6d7611e7d4a3dd30908f81f7ab8f34887f823d38c5f0bedd961bd",
+      "metadata_sha256": "d72f125f76833e71a5a3119c4d9064b9f0b91f257bf61dcf0aa81bb021a0f48d"
+    }
+  },
+  "calls": 4992,
+  "checks": [
+    {
+      "command": ".venv/bin/python -m pytest -q",
+      "result": "929 passed"
+    },
+    {
+      "command": "make check",
+      "result": "upstream provenance, Ruff, MyPy (79 source files), 14 unit and 895 exact tests passed"
+    },
+    {
+      "command": "make test-rust-parser",
+      "result": "21 unit + 3 randomized tests, formatting and Clippy passed; no subsequent Rust changes"
+    },
+    {
+      "command": "make test-upstream",
+      "result": "406 passed, 8 existing skips; no subsequent vendor/integration changes"
+    },
+    {
+      "command": "make article-results-check",
+      "result": "M13/M17/M19/M21 immutable artifact derivatives verified"
+    },
+    {
+      "command": "make release-wheel-smoke",
+      "result": "isolated wheel import, experiment and artifact generator passed; smoke dirty-worktree warning retained, not research data"
+    },
+    {
+      "command": "make paper",
+      "result": "16 pages; no overflow or unresolved references; rendered pages inspected"
+    },
+    {
+      "command": "python -m mwpc_exact.repair --profile records --protect 6:7 ...",
+      "result": "CLI example returns optimal, one substitution, ID byte protected"
+    }
+  ],
+  "paper_sha256": "f172c583547a76c97368db191f76ee21102776afdbddfb3f7a3c4c618f1ac9e5",
+  "interpretation": "docs/research/m21-findings.md",
+  "deferred": "real generated errors, model retries, insertion/deletion support; no success claim for these"
+}

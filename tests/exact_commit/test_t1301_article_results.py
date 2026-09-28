@@ -30,9 +30,10 @@ def test_article_imports_correctness_audit_and_confirmation() -> None:
         result_section,
     )
 
-    assert table_inputs == [
-        "r1-correctness-finite-slots.tex",
-    ]
+    assert table_inputs == []
+    assert "generated/m21_repair_v1/repair-results.tex" in article
+    supplement = (ROOT / "paper/supplement-method.tex").read_text()
+    assert "generated/m1301_article_results_v1/r1-correctness-finite-slots.tex" in supplement
     assert r"\label{tab:resultados}" not in article
     assert r"\label{tab:cronograma}" not in article
     assert "Preliminary and Expected Results" not in article

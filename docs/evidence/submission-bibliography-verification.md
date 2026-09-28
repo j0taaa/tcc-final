@@ -121,3 +121,15 @@ for this revision (23 records total). Historical verification is unchanged.
 | `qi2026clad` | Cited | https://arxiv.org/abs/2605.29607 — Heqiang Qi, Wei Huang, Mingyuan Bai, Xiangming Meng, 2026; preprint, attention-cluster matching conflicts, not CFG feasibility. |
 
 No general weighted-intersection or exact-parallel-selection novelty is claimed.
+
+## M21 repair references: 2026-09-28
+
+Two further records (25 total), checked against primary sources. Scored parsing
+and language edit distance are prior work, not claimed inventions. The cited
+2024 arXiv revision corrects the earlier conference upper bound; no such running
+bound is used in the repair implementation.
+
+| Key | Status | Primary metadata source and relevance |
+|---|---|---|
+| `kociumaka2024edit` | Cited | https://arxiv.org/abs/1411.7315v4 — Tomasz Kociumaka and Barna Saha, revised 24 October 2024; scored parsing and edit distance background. |
+| `baccianella2025jsonrepair` | Cited | https://github.com/mangiucugna/json_repair — Stefano Baccianella, software citation year 2025; measured version 0.63.5, including schema standard/salvage. |

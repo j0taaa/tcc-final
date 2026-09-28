@@ -24,26 +24,33 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 
 ## Setup
 
-The current reviewed delivery is the **2026-09-28 source snapshot**, described in
-[`docs/releases/review-2026-09-28.md`](docs/releases/review-2026-09-28.md).
-It combines a base Git bundle with the review patch, including M18/M19 and M20.
-The local release v0.2.0 is historical and does not contain these later changes.
-No new tag, commit or remote publication is implied. From the snapshot directory:
+The current **2026-09-28 source snapshot** includes certified JSON repair and
+4,992 controlled comparison calls (M21). Its local bundle, PDF and checksums are
+described in [`docs/releases/repair-2026-09-28.md`](docs/releases/repair-2026-09-28.md).
+The historical v0.2.0 and M20 bundle/patch remain unchanged. No remote publication
+was performed. From the new delivery directory:
 
 ```bash
-git clone ./mwpc-review-base.bundle tcc-final
+git clone ./source.bundle tcc-final
 cd tcc-final
-git checkout --detach a43e1cf904eceff8bbcc802b5c0b2abb1c10c059
-git apply ../mwpc-review.patch
 git submodule update --init --recursive
 make bootstrap
 source .venv/bin/activate
+make bootstrap-rust-parser
 make check
 ```
 
-Scientific direction for the remaining month:
-[certified JSON repair with protected fields](docs/research/2026-09-28-json-repair-plan.md).
-This is a planned study; no repair results are claimed yet.
+Try the implemented repair without a model:
+
+```bash
+python -m mwpc_exact.repair --profile records '{"id":7,"payload":[["a":1,"b":2}]}'
+```
+
+[Usage and boundaries](docs/research/json-repair.md) ·
+[Complete controlled results](paper/generated/m21_repair_v1/report.md) ·
+[Scientific interpretation](docs/research/m21-findings.md).
+The original [four-week plan](docs/research/2026-09-28-json-repair-plan.md)
+remains broader: real-model error collection and model retries are still future work.
 
 Artifact regeneration, clean CPU rehearsal, parser-binding, and optional CUDA
 model instructions are in [`REPRODUCING.md`](REPRODUCING.md).
@@ -90,7 +97,7 @@ Install the heavier pinned EPIC environment only for baseline or model-integrati
 make bootstrap-epic
 ```
 
-Model weights, datasets, caches, credentials, and generated raw results are not committed.
+Model weights, private datasets, caches and credentials are not committed. Small, checksummed research outputs are archived under `docs/artifacts/raw/`.
 
 ## Agent handoff
 

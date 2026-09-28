@@ -1,3 +1,6 @@
-# Optional empirical comparator; never imported by the repair core.
-# Schema support uses the existing jsonschema stack constrained by the CPU lock.
+# Optional comparison/real-tokenizer tools; never imported by the repair core.
+# All transitive versions remain constrained by constraints-py311-linux.txt.
 json-repair==0.63.5
+jsonschema==4.25.1
+tokenizers==0.21.4
+huggingface_hub==0.36.2

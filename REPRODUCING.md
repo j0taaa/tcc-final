@@ -1,6 +1,47 @@
 # Reproducing the MWPC research artifacts
 
-## Current practical-benefit audit
+## Current certified JSON repair study (M21)
+
+Current source delivery: [2026-09-28 repair snapshot](docs/releases/repair-2026-09-28.md).
+The former M20 bundle/patch and v0.2.0 remain historical. No remote publication.
+
+Rebuild the complete analysis from hash-verified archived output without a GPU,
+model, tokenizer or json_repair installation:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.build_json_repair_results
+.venv/bin/python -m scripts.exact_commit.build_json_repair_results --check
+make article-results-check
+make paper
+```
+
+Raw evidence: `docs/artifacts/raw/m21_repair_v1/{pilot,confirmation,mechanism}`.
+Analysis: `paper/generated/m21_repair_v1/`; includes a full report, all status
+counts, document-level paired comparisons and descriptive bootstrap intervals.
+The source run commit is `47b93c4`. To repeat precisely, create a detached worktree
+at that commit and install the pinned experiment tools. Current source also
+accepts the frozen configs but records its different source commit.
+
+```bash
+.venv/bin/python -m pip install -c requirements/constraints-py311-linux.txt -r requirements/repair-experiments.txt
+.venv/bin/python -m scripts.exact_commit.run_json_repair --config configs/experiments/m21_repair_pilot_v1.toml --run-directory results/raw/repair-pilot-new
+.venv/bin/python -m scripts.exact_commit.run_json_repair --config configs/experiments/m21_repair_confirmation_v1.toml --run-directory results/raw/repair-confirmation-new
+.venv/bin/python -m scripts.exact_commit.run_json_repair --config configs/experiments/m21_repair_mechanism_v1.toml --run-directory results/raw/repair-mechanism-new
+```
+
+Runs require a clean checkout, production binding, Linux resource limits and
+cached `tokenizer.json` for `GSAI-ML/LLaDA-8B-Instruct` revision
+`08b83a6feb34df1a6011b80c3c00c7563e963b07`. If absent, download that tokenizer file
+explicitly through Hugging Face before running; no model weights are needed.
+At the producing commit, the optional requirements file lists only json-repair:
+install `jsonschema==4.25.1`, `tokenizers==0.21.4` and `huggingface_hub==0.36.2`
+under its constraints as well. All rows record the installed versions.
+Outputs require new directories and preserve failure/timeout rows. These are
+controlled corruptions, not observed model errors. See the [frozen protocol](docs/research/m21-repair-protocol.md)
+and [interpretation](docs/research/m21-findings.md).
+
+
+## Earlier selector audit
 
 The current manuscript uses M19's stronger comparator and common deadline;
 M18 remains historical evidence. Frozen measurement source/config: `196d48c`.

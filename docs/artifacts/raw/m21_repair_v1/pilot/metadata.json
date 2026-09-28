@@ -1,0 +1,94 @@
+{
+  "git_commit": "47b93c475ca961b97063d409f9b8c4c29ba580c8",
+  "git_dirty": false,
+  "config": {
+    "experiment_id": "m21_repair_pilot_v1",
+    "cohort": "controlled_development",
+    "seed": 210100,
+    "documents": 4,
+    "record_counts": [
+      1,
+      2
+    ],
+    "families": [
+      "valid",
+      "opening",
+      "closing",
+      "separator",
+      "missing_suffix",
+      "semantic"
+    ],
+    "profiles": [
+      "bytes",
+      "llada"
+    ],
+    "grammar_profile": "schema",
+    "methods": [
+      "unchanged",
+      "json_repair",
+      "schema_standard",
+      "schema_salvage",
+      "enumeration",
+      "feasibility",
+      "greedy",
+      "exact"
+    ],
+    "repetitions": 1,
+    "timeout_seconds": 2.0,
+    "supervisor_grace_seconds": 0.5,
+    "memory_mib": 2048,
+    "json_repair_version": "0.63.5"
+  },
+  "config_sha256": "569f84f94ee5d45a1eb68305631812e14cd636bda15ed66e990b6ae5ae7ceab2",
+  "grammar_sha256": "318415b884af1cb7b8f2ae830cf1e07ce10f9a5248c9f8e2d530637d8307869e",
+  "schema_sha256": "33b7620ef68f2a436c5c9cb7b331978546e016997389f79fc9e763fb03fa5b7d",
+  "model": {
+    "id": null,
+    "revision": null,
+    "reason": "controlled corruption; no model inference"
+  },
+  "tokenizer": {
+    "id": "GSAI-ML/LLaDA-8B-Instruct",
+    "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "file_sha256": "071eb20fe7bd601550b1b7838ff696d6c93b88f51257f753303d3df23163c381"
+  },
+  "exactness_scope": "exact_on_support",
+  "support_policy": "structural same-byte-length token alternatives; original retained; max 32 variants; finite slots; no EOS",
+  "system": {
+    "git_commit": "47b93c475ca961b97063d409f9b8c4c29ba580c8",
+    "git_dirty": false,
+    "python_version": "3.11.16",
+    "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+    "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+    "cuda_driver_supported_runtime": "13.2",
+    "pytorch_version": "2.8.0+cpu",
+    "transformers_version": "4.52.2",
+    "mwpc_exact_version": "0.2.0",
+    "mwpc_parser_py_version": "0.1.0",
+    "rustformlang_version": "0.1.0",
+    "machine": "x86_64",
+    "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+    "logical_cpu_count": 16,
+    "affinity_cpu_count": 16,
+    "total_ram_bytes": 16609312768,
+    "os_system": "Linux",
+    "os_release": "7.0.0-31-generic",
+    "os_platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+    "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+    "gpu_total_vram_bytes": 12884901888,
+    "cuda_driver_version": "595.84",
+    "thread_environment": {
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null,
+      "RAYON_NUM_THREADS": null,
+      "RUST_MIN_STACK": null
+    }
+  },
+  "versions": {
+    "json-repair": "0.63.5",
+    "jsonschema": "4.25.1",
+    "tokenizers": "0.21.4"
+  }
+}

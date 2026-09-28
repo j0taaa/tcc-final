@@ -1,0 +1,2491 @@
+{
+  "groups": [
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 4.099353507626802
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 69.27860149880871
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 68.07662744540721
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 72.30376353254542
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 2,
+      "schema_valid": 2,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.3935404820367694
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 2,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.9080115123651922
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 2,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.9541475446894765
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.007015536539256573
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "infeasible_on_support": 4
+      },
+      "median_total_ms": 969.8228684719652
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "infeasible_on_support": 4
+      },
+      "median_total_ms": 10.079326573759317
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "infeasible_on_support": 4
+      },
+      "median_total_ms": 9.26692847860977
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "infeasible_on_support": 4
+      },
+      "median_total_ms": 9.788826515432447
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.42621901957318187
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 1.0888284887187183
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 1.1138119734823704
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.008351460564881563
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 5.322501470800489
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 71.27546449191868
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 75.95385995227844
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 75.65669901669025
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.41439500637352467
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.9283730178140104
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "error": 4
+      },
+      "median_total_ms": 0.49953197594732046
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.006664544343948364
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 3.5986125003546476
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 69.27664601244032
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 69.08337952336296
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 70.62156242318451
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.1060439390130341
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.5407319986261427
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.5245039938017726
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.006214948371052742
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 29.15132202906534
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 68.92344955122098
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 68.33340652519837
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 76.46058197133243
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.4636520170606673
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.9736134670674801
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.9939125156961381
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.006667978595942259
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 3.217179444618523
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 68.43305297661573
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 69.24055347917601
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 69.88093291874975
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.10131049202755094
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.5104899755679071
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.5451535689644516
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.006734451744705439
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 66.62903190590441
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 166.7818634887226
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 165.91350856469944
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 258.8249274995178
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 2,
+      "schema_valid": 2,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.4016085877083242
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 2,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.9260204387828708
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 2,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 1.029124017804861
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.0069364323280751705
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "infeasible_on_support": 4
+      },
+      "median_total_ms": 228.76847197767347
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "infeasible_on_support": 4
+      },
+      "median_total_ms": 112.34926659381017
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "infeasible_on_support": 4
+      },
+      "median_total_ms": 110.26089946972206
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "infeasible_on_support": 4
+      },
+      "median_total_ms": 137.07332295598462
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.3824435407295823
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.983662495855242
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.9166504605673254
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.006684509571641684
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 62.646352977026254
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 170.751262397971
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 171.60363838775083
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 251.58094591461122
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.4125210107304156
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.9237540070898831
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "error": 4
+      },
+      "median_total_ms": 0.4743364988826215
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.006891554221510887
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 61.904507456347346
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 167.4134189961478
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 166.79209796711802
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 193.23252950562164
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.11791248107329011
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.5120310233905911
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.5180700100027025
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.007107562851160765
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 77.46490457793698
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 165.2871380210854
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 163.94254053011537
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 299.1164604900405
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.4797290894202888
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 1.01686199195683
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 1.019499497488141
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 0,
+      "schema_valid": 0,
+      "id_preserved": 0,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.006697431672364473
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "method": "enumeration",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 61.74351694062352
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "method": "exact",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "optimal": 4
+      },
+      "median_total_ms": 170.37343309493735
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "method": "feasibility",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 167.8633550181985
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "method": "greedy",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "feasible_on_support": 4
+      },
+      "median_total_ms": 196.6865014983341
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "method": "json_repair",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.1020710333250463
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "method": "schema_salvage",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.504021008964628
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "method": "schema_standard",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "repaired": 4
+      },
+      "median_total_ms": 0.5048240418545902
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "method": "unchanged",
+      "runs": 4,
+      "documents": 4,
+      "successes": 4,
+      "schema_valid": 4,
+      "id_preserved": 4,
+      "status_counts": {
+        "unchanged": 4
+      },
+      "median_total_ms": 0.006956455763429403
+    }
+  ],
+  "paired_documents": [
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.0627361626504061,
+      "speedup_bootstrap_95": [
+        0.055144705228260565,
+        0.07028648499613833
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.000952389074601,
+      "speedup_bootstrap_95": [
+        0.9139684327226139,
+        1.0250815598637835
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.0585025643564379,
+      "speedup_bootstrap_95": [
+        0.9989551166219628,
+        1.082016334144219
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 2,
+      "comparator_only_success": 0,
+      "both_success": 2,
+      "neither_success": 0,
+      "median_paired_speedup": 0.008953039482108412,
+      "speedup_bootstrap_95": [
+        0.0087973610519063,
+        0.009108717912310525
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 2,
+      "comparator_only_success": 0,
+      "both_success": 2,
+      "neither_success": 0,
+      "median_paired_speedup": 0.02067050453248287,
+      "speedup_bootstrap_95": [
+        0.020142905125609536,
+        0.0211981039393562
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 2,
+      "comparator_only_success": 0,
+      "both_success": 2,
+      "neither_success": 0,
+      "median_paired_speedup": 0.020899971340751,
+      "speedup_bootstrap_95": [
+        0.02045684800581361,
+        0.02134309467568839
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "closing",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 4,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 4,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 4,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "missing_suffix",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.0862264667712814,
+      "speedup_bootstrap_95": [
+        0.06276243417240646,
+        0.14863653819522157
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.9917597262709025,
+      "speedup_bootstrap_95": [
+        0.9595910793922748,
+        1.2436002820817138
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.0554597309289235,
+      "speedup_bootstrap_95": [
+        1.0229323265855335,
+        1.085521450797455
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "opening",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "semantic",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.32887650894944986,
+      "speedup_bootstrap_95": [
+        0.0893084844792092,
+        0.5631605816568216
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.9813344845472911,
+      "speedup_bootstrap_95": [
+        0.969180386701636,
+        1.013181103122941
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.1053182725766058,
+      "speedup_bootstrap_95": [
+        1.088376381310419,
+        1.1131087553507015
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.007828246126721701,
+      "speedup_bootstrap_95": [
+        0.005069914463988781,
+        0.01056310134645375
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.01754983762312469,
+      "speedup_bootstrap_95": [
+        0.010412166908338629,
+        0.022730355713107598
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.017180978370212048,
+      "speedup_bootstrap_95": [
+        0.010253984551289876,
+        0.024071368016003677
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "separator",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.05041430316346407,
+      "speedup_bootstrap_95": [
+        0.03324196235620555,
+        0.08336444385684451
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.004977535949223,
+      "speedup_bootstrap_95": [
+        0.9751585787776692,
+        1.0476674876502152
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.999464825736536,
+      "speedup_bootstrap_95": [
+        0.989418223575133,
+        1.0680551062607353
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.0017230070469721514,
+      "speedup_bootstrap_95": [
+        0.0010225969641187355,
+        0.002809019142592003
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.008687708309017304,
+      "speedup_bootstrap_95": [
+        0.005336543241985717,
+        0.017204064676648603
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.009457387749616552,
+      "speedup_bootstrap_95": [
+        0.005403311750255546,
+        0.014844047159700493
+      ]
+    },
+    {
+      "profile": "bytes",
+      "family": "valid",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.0001158849574602283,
+      "speedup_bootstrap_95": [
+        5.20761825128922e-05,
+        0.00039866752052121447
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.4082016721503366,
+      "speedup_bootstrap_95": [
+        0.330167227516658,
+        0.4885962170594827
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.9945680680701515,
+      "speedup_bootstrap_95": [
+        0.968405812643663,
+        0.998060107512013
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.5010660748493638,
+      "speedup_bootstrap_95": [
+        1.4286954289588158,
+        1.5928177480487085
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 2,
+      "comparator_only_success": 0,
+      "both_success": 2,
+      "neither_success": 0,
+      "median_paired_speedup": 0.0026063552075725393,
+      "speedup_bootstrap_95": [
+        0.002422143693121577,
+        0.0027905667220235017
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 2,
+      "comparator_only_success": 0,
+      "both_success": 2,
+      "neither_success": 0,
+      "median_paired_speedup": 0.010285100859842947,
+      "speedup_bootstrap_95": [
+        0.0062440112961760705,
+        0.014326190423509823
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 2,
+      "comparator_only_success": 0,
+      "both_success": 2,
+      "neither_success": 0,
+      "median_paired_speedup": 0.01100284402507591,
+      "speedup_bootstrap_95": [
+        0.0066521226770299416,
+        0.015353565373121877
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "closing",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 4,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 4,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 4,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "missing_suffix",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.39317215242745324,
+      "speedup_bootstrap_95": [
+        0.317462607794407,
+        0.5168997425923432
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.0021797008658437,
+      "speedup_bootstrap_95": [
+        0.9948159187641854,
+        1.0130502309657414
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.5021647545297747,
+      "speedup_bootstrap_95": [
+        1.4006510081307983,
+        1.5362794348085473
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "opening",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "semantic",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 4,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.4677265510937041,
+      "speedup_bootstrap_95": [
+        0.4500145732274019,
+        0.5110226742181385
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.9944049187853178,
+      "speedup_bootstrap_95": [
+        0.9841707742431421,
+        0.9976259981731554
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.7901201900496675,
+      "speedup_bootstrap_95": [
+        1.6946700986161751,
+        1.8957868630319996
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.002864313502398239,
+      "speedup_bootstrap_95": [
+        0.002447326075034002,
+        0.0034325074098767753
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.00635556294693092,
+      "speedup_bootstrap_95": [
+        0.004975987193836795,
+        0.007385758019789759
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.006039770968227375,
+      "speedup_bootstrap_95": [
+        0.005030071713446542,
+        0.007556932357605617
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "separator",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 4,
+      "comparator_only_success": 0,
+      "both_success": 0,
+      "neither_success": 0,
+      "median_paired_speedup": null,
+      "speedup_bootstrap_95": null
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "comparator": "enumeration",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.38846872773037744,
+      "speedup_bootstrap_95": [
+        0.2838212570637093,
+        0.508444720662202
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "comparator": "feasibility",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.9954043297982798,
+      "speedup_bootstrap_95": [
+        0.9850964283947932,
+        1.0129379013816804
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "comparator": "greedy",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 1.1555318700090305,
+      "speedup_bootstrap_95": [
+        1.1357430508447108,
+        1.1893223123778522
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "comparator": "json_repair",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.0005685212113094091,
+      "speedup_bootstrap_95": [
+        0.0005167012143689302,
+        0.0007563562627763996
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "comparator": "schema_salvage",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.002892460169703618,
+      "speedup_bootstrap_95": [
+        0.0025582089752817024,
+        0.004037499123417254
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "comparator": "schema_standard",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 0.002971927756498612,
+      "speedup_bootstrap_95": [
+        0.0026950375767659245,
+        0.00364396737148908
+      ]
+    },
+    {
+      "profile": "llada",
+      "family": "valid",
+      "comparator": "unchanged",
+      "documents": 4,
+      "exact_only_success": 0,
+      "comparator_only_success": 0,
+      "both_success": 4,
+      "neither_success": 0,
+      "median_paired_speedup": 3.984913916745998e-05,
+      "speedup_bootstrap_95": [
+        3.2122210388972786e-05,
+        5.301180134452701e-05
+      ]
+    }
+  ],
+  "scope": "controlled corruption; no model inference; no population error-rate claim"
+}

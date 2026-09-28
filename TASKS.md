@@ -31,15 +31,15 @@ case; do not promise population superiority or suppress unsuccessful repairs.
   Include real-tokenizer coverage, common evaluation and all statuses. Keep
   semantic target out of support/grammar construction. Lock dependencies.
   **Evidence:** `docs/research/m21-repair-protocol.md`, three frozen M21 TOML configs, optional pinned json-repair 0.63.5, schema standard/salvage, enumeration and single-feasibility controls. No model-generation result is claimed.
-- [ ] T2102: Commit tested source/config locally before measurement; run and archive
+- [x] T2102: Commit tested source/config locally before measurement; run and archive
   the pilot plus held-out controlled confirmation, preserving failures. Generate
   tables and paired comparisons; report any measured advantage with its domain,
   comparator, tradeoffs and uncertainty. Real-model/retry evidence is separate.
-  **Evidence:** pending.
-- [ ] T2103: Deliver a runnable example, reproduction commands and scientific
+  **Evidence:** clean producing commit `47b93c4`; 384 pilot + 3,840 confirmation + 768 mechanism calls archived with hashes in `docs/artifacts/raw/m21_repair_v1/`. `build_json_repair_results` verifies every cell/output and generates all comparisons. Full findings, including weaker classes and baseline ties, are in `docs/research/m21-findings.md`.
+- [x] T2103: Deliver a runnable example, reproduction commands and scientific
   interpretation; run full Python and relevant Rust/baseline/artifact gates.
   Update the manuscript only for supported results, with producing source/config.
-  **Evidence:** pending.
+  **Evidence:** `docs/evidence/m21-repair-verification.json`; full pytest 929 passed, `make check` (14 unit/895 exact + Ruff/MyPy), Rust 24 tests and upstream 406 passed/8 skips, all artifact gates and isolated release-wheel smoke passed. CLI example returns a validated one-substitution repair. `make paper`: 16 pages, no overflow/unresolved references; rendered pages inspected. Reproduction and local delivery instructions are updated. No real-model/retry or general-superiority claim.
 
 ## M20 — Close the September audit and plan useful exact decoding
 
