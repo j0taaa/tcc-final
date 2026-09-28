@@ -91,6 +91,24 @@ def main():
         "unique_task_ids": len({r["task"]["id"] for r in all_rows}),
         "policies": sorted({r["method"] for r in all_rows}),
         "status_counts": dict(sorted(Counter(r["status"] for r in all_rows).items())),
+        "selector_status_counts": dict(
+            sorted(
+                sum(
+                    (Counter(r.get("solver_status_counts", {})) for r in all_rows), Counter()
+                ).items()
+            )
+        ),
+        "counterfactual_query_status_counts": dict(
+            sorted(
+                Counter(
+                    q["result"]["status"]
+                    for r in all_rows
+                    for step in r["trace"]
+                    if step.get("gate")
+                    for q in step["gate"]["queries"]
+                ).items()
+            )
+        ),
         "total_model_forwards": sum(r["forwards"] for r in all_rows),
         "model_revisions": sorted({r["model_revision"] for r in all_rows}),
         "tokenizer_revisions": sorted({r["tokenizer_revision"] for r in all_rows}),
