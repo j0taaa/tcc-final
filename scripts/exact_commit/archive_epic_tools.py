@@ -12,9 +12,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("source", type=Path)
     parser.add_argument("destination", type=Path)
+    parser.add_argument("--recovery", action="store_true")
     args = parser.parse_args()
     args.destination.mkdir(parents=True, exist_ok=False)
-    names = ["config.json", "metadata.json", "support.json", "token_emissions.json"]
+    names = ["config.json", "metadata.json"]
+    if not args.recovery:
+        names += ["support.json", "token_emissions.json"]
     for name in names:
         (args.destination / name).write_bytes((args.source / name).read_bytes())
     raw = (args.source / "results.jsonl").read_bytes()

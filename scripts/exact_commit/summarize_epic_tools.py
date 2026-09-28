@@ -246,10 +246,13 @@ def build(directories):
         ],
     }
     lines = [
-        "# M23 — comparação com EPIC",
+        "# M23 — gerador EPIC, antes da recuperação",
         "",
         "Gerado dos arquivos validados; 100 pedidos sintéticos já usados no M22, duas",
         "execuções por método. Repetições não são tarefas independentes.",
+        "",
+        "A conclusão sobre o fluxo completo deve usar também o relatório",
+        "[EPIC com recuperação oficial](m23-recovery-results.md).",
         "",
         "| Método | Chamadas corretas (1 / 2) | Resultado numérico correto (1 / 2) | "
         "Forwards (1 / 2) | Mediana total (ms) |",
@@ -291,7 +294,7 @@ def build(directories):
         "EPIC original usa vocabulário nativo, rejeições no mesmo forward e lacunas",
         "abstratas. A variante `domains` recebe os domínios do MWPC, mas a máscara",
         "renormaliza a confiança; não torna os seletores isoladamente equivalentes.",
-        "Etapas EPIC 1/4/24 são orçamentos de geração distintos, não 24 forwards garantidos.",
+        "Etapas EPIC 1/2/4/24 são orçamentos distintos, não 24 forwards garantidos.",
         "MWPC usa até 24 forwards e otimiza propostas dentro de suporte finito por etapa.",
         "Métodos native/domains usam lexemas por byte; lexical usa nomes de funções,",
         "dígitos e pontuação. Ambos representam o mesmo catálogo canônico, mas o",

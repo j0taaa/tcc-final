@@ -105,3 +105,30 @@ a AST validada de calculadora e comparar o inteiro resultante. Identidade de
 chamada pode penalizar expressões aritmeticamente equivalentes; relatar ambos.
 Coincidência do valor não prova preservação das operações solicitadas. Nunca
 usar `eval`, reparar textos ou aceitar MASKs escondidos como respostas completas.
+
+## Fechamento obrigatório: recuperação oficial do wrapper EPIC
+
+A comparação do gerador isolado não encerra a avaliação do EPIC: o método
+`LLaDAModel` em `eval/dllm/models/llada/model.py` chama `autocomplete_valid` quando
+a geração não termina. A restrição inicial deste protocolo a "sem infilling
+externo" é insuficiente para representar esse fluxo completo e é corrigida aqui.
+Preservar as tabelas do gerador, mas a conclusão deve considerar também **EPIC +
+recuperação oficial**, sem confundir recuperação determinística com novo forward.
+
+Reexecutar a função original sobre TODOS os estados finais incompletos arquivados,
+nas duas representações e duas repetições. Mesmos lexemas/gramáticas/pedaços fixos,
+sem consultar gabarito. O wrapper original e o replay usam lacunas abstratas: a
+recuperação não está limitada aos domínios posicionais ou ao comprimento em slots
+do MWPC. Isso deve ser explícito, inclusive para a variante domains.
+
+Config `m23_epic_recovery_v1.json`, fonte congelada antes do replay. Testes CPU
+verificam preenchimento de MASK pelos dois léxicos sem modelo nem resposta e que
+saídas já completas ficam intactas. Avaliar AST, resultado numérico e preservação
+dos fragmentos fixos independentemente. Guardar None, timeout e erro separadamente.
+
+A recuperação não modifica a trajetória anterior; replay permite reaproveitar
+os estados exatos sem repetir inferência. Executar após terminar a GPU. Medir
+separadamente o custo de recuperação CPU, excluindo reconstruir gramática/lexer
+que o wrapper já possui. Se somado ao tempo anterior, nomear **tempo reconstruído**,
+não latência de pipeline medida conjuntamente. Não usar vantagens sobre o gerador
+sem recuperação para afirmar superioridade sobre o EPIC completo.

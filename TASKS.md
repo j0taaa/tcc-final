@@ -26,10 +26,10 @@ MWPC finite-support guarantees, answer-independent languages and all failures.
   domain-restricted variants, two parallel reveal schedules plus the 24-step control, identical prompts,
   model, language, slot/forward/time limits and a bounded pilot.
   **Evidence:** 18 targeted CPU tests and full suite 952 passed; native selector executes batches; language equivalence and structural grading pass. Pilot commit `2067ec3`, all 25 outputs preserved in `docs/artifacts/raw/m23_epic_tools_v1/pilot`. `docs/research/m23-epic-protocol.md` records the pre-confirmation whitespace correction and schedule control; upstream source unchanged.
-- [ ] T2301: Run every variant on the same frozen 100 M22 requests, with MWPC
+- [x] T2301: Run every variant on the same frozen 100 M22 requests, with MWPC
   rerun in rotated order; repeat with reversed order. Preserve native EPIC events,
   rejection counts, selector calls/errors, actual forwards, timing and statuses.
-  **Evidence:** pending.
+  **Evidence:** 2,425 live generations including the 25-call pilot; source `657bbc4` / `aa1b14d`; both byte and lexical representations, native and masked vocabularies, schedules 1/2/4/24 where declared. All 100 requests retained, twice; outputs/status/forwards stable. Immutable archives under `docs/artifacts/raw/m23_epic_tools_v1/`; 20 targeted tests, upstream pin and artifact semantic checks pass. The decoder-only result is not the full EPIC baseline: T2302 must include official wrapper recovery.
 - [ ] T2302: Generate validated paired results and correct the current research
   claims. Explain support, confidence normalization, completion and scheduling
   differences; do not identify upstream EPIC with the matched greedy selector.

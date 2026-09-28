@@ -1,0 +1,503 @@
+{
+  "stable_outputs_status_forwards": true,
+  "cells": [
+    {
+      "method": "exact",
+      "correct_per_repeat": [
+        65,
+        65
+      ],
+      "syntax_valid": 100,
+      "numeric_correct_per_repeat": [
+        81,
+        81
+      ],
+      "statuses": {
+        "complete": 100
+      },
+      "forwards_per_repeat": [
+        205,
+        205
+      ],
+      "median_total_ms": 276.18663196335547,
+      "median_forward_ms": 185.15583747648634,
+      "batch_calls": 0,
+      "batch_selected": 0,
+      "rejections": 0
+    },
+    {
+      "method": "epic_native_1",
+      "correct_per_repeat": [
+        46,
+        46
+      ],
+      "syntax_valid": 66,
+      "numeric_correct_per_repeat": [
+        54,
+        54
+      ],
+      "statuses": {
+        "complete": 66,
+        "resample_limit": 34
+      },
+      "forwards_per_repeat": [
+        100,
+        100
+      ],
+      "median_total_ms": 439.33633927372284,
+      "median_forward_ms": 91.47391351871192,
+      "batch_calls": 100,
+      "batch_selected": 663,
+      "rejections": 5522
+    },
+    {
+      "method": "epic_domains_1",
+      "correct_per_repeat": [
+        18,
+        18
+      ],
+      "syntax_valid": 36,
+      "numeric_correct_per_repeat": [
+        30,
+        30
+      ],
+      "statuses": {
+        "incomplete": 64,
+        "complete": 36
+      },
+      "forwards_per_repeat": [
+        100,
+        100
+      ],
+      "median_total_ms": 157.292872259859,
+      "median_forward_ms": 91.636599478079,
+      "batch_calls": 100,
+      "batch_selected": 651,
+      "rejections": 542
+    },
+    {
+      "method": "epic_native_4",
+      "correct_per_repeat": [
+        76,
+        76
+      ],
+      "syntax_valid": 88,
+      "numeric_correct_per_repeat": [
+        77,
+        77
+      ],
+      "statuses": {
+        "resample_limit": 12,
+        "complete": 88
+      },
+      "forwards_per_repeat": [
+        394,
+        394
+      ],
+      "median_total_ms": 620.8057482144795,
+      "median_forward_ms": 371.6810249898117,
+      "batch_calls": 341,
+      "batch_selected": 934,
+      "rejections": 3462
+    },
+    {
+      "method": "epic_domains_4",
+      "correct_per_repeat": [
+        32,
+        32
+      ],
+      "syntax_valid": 48,
+      "numeric_correct_per_repeat": [
+        40,
+        40
+      ],
+      "statuses": {
+        "incomplete": 52,
+        "complete": 48
+      },
+      "forwards_per_repeat": [
+        200,
+        200
+      ],
+      "median_total_ms": 256.9273007684387,
+      "median_forward_ms": 186.35426051332615,
+      "batch_calls": 100,
+      "batch_selected": 339,
+      "rejections": 377
+    },
+    {
+      "method": "epic_native_24",
+      "correct_per_repeat": [
+        92,
+        92
+      ],
+      "syntax_valid": 100,
+      "numeric_correct_per_repeat": [
+        100,
+        100
+      ],
+      "statuses": {
+        "complete": 100
+      },
+      "forwards_per_repeat": [
+        2272,
+        2272
+      ],
+      "median_total_ms": 2314.040299708722,
+      "median_forward_ms": 2178.7039172195364,
+      "batch_calls": 0,
+      "batch_selected": 0,
+      "rejections": 538
+    },
+    {
+      "method": "epic_domains_24",
+      "correct_per_repeat": [
+        49,
+        49
+      ],
+      "syntax_valid": 76,
+      "numeric_correct_per_repeat": [
+        57,
+        57
+      ],
+      "statuses": {
+        "complete": 76,
+        "incomplete": 24
+      },
+      "forwards_per_repeat": [
+        1037,
+        1037
+      ],
+      "median_total_ms": 1117.2775702434592,
+      "median_forward_ms": 1041.3277669576928,
+      "batch_calls": 0,
+      "batch_selected": 0,
+      "rejections": 149
+    }
+  ],
+  "pairs": [
+    {
+      "method": "epic_native_1",
+      "exact_only_correct": [
+        "nested-220104-22",
+        "nested-220104-25",
+        "nested-220104-26",
+        "nested-220104-35",
+        "nested-220104-37",
+        "nested-220104-52",
+        "nested-220104-71",
+        "nested-220104-82",
+        "nested-220104-87",
+        "nested-220104-97",
+        "nested-220104-100",
+        "nested-220104-101",
+        "nested-220104-102",
+        "nested-220104-106",
+        "nested-220104-110",
+        "nested-220104-130",
+        "nested-220104-136",
+        "nested-220104-145",
+        "nested-220104-146",
+        "nested-220104-150",
+        "nested-220104-151",
+        "nested-220104-160",
+        "nested-220104-161",
+        "nested-220104-166"
+      ],
+      "epic_only_correct": [
+        "nested-220104-41",
+        "nested-220104-56",
+        "nested-220104-77",
+        "nested-220104-152",
+        "nested-220104-167"
+      ],
+      "both_correct": 41,
+      "median_paired_epic_over_exact_seconds": 1.1419299498392737
+    },
+    {
+      "method": "epic_domains_1",
+      "exact_only_correct": [
+        "nested-220104-1",
+        "nested-220104-3",
+        "nested-220104-7",
+        "nested-220104-9",
+        "nested-220104-11",
+        "nested-220104-13",
+        "nested-220104-16",
+        "nested-220104-22",
+        "nested-220104-25",
+        "nested-220104-33",
+        "nested-220104-34",
+        "nested-220104-35",
+        "nested-220104-37",
+        "nested-220104-39",
+        "nested-220104-46",
+        "nested-220104-48",
+        "nested-220104-52",
+        "nested-220104-54",
+        "nested-220104-61",
+        "nested-220104-63",
+        "nested-220104-73",
+        "nested-220104-76",
+        "nested-220104-78",
+        "nested-220104-82",
+        "nested-220104-84",
+        "nested-220104-87",
+        "nested-220104-88",
+        "nested-220104-97",
+        "nested-220104-100",
+        "nested-220104-102",
+        "nested-220104-106",
+        "nested-220104-110",
+        "nested-220104-112",
+        "nested-220104-115",
+        "nested-220104-118",
+        "nested-220104-124",
+        "nested-220104-127",
+        "nested-220104-130",
+        "nested-220104-136",
+        "nested-220104-142",
+        "nested-220104-145",
+        "nested-220104-150",
+        "nested-220104-151",
+        "nested-220104-157",
+        "nested-220104-160",
+        "nested-220104-162",
+        "nested-220104-163",
+        "nested-220104-166"
+      ],
+      "epic_only_correct": [
+        "nested-220104-92"
+      ],
+      "both_correct": 17,
+      "median_paired_epic_over_exact_seconds": 0.5871215760879811
+    },
+    {
+      "method": "epic_native_4",
+      "exact_only_correct": [
+        "nested-220104-1",
+        "nested-220104-71",
+        "nested-220104-76",
+        "nested-220104-106",
+        "nested-220104-127",
+        "nested-220104-151",
+        "nested-220104-161"
+      ],
+      "epic_only_correct": [
+        "nested-220104-2",
+        "nested-220104-32",
+        "nested-220104-41",
+        "nested-220104-47",
+        "nested-220104-56",
+        "nested-220104-62",
+        "nested-220104-77",
+        "nested-220104-80",
+        "nested-220104-86",
+        "nested-220104-92",
+        "nested-220104-117",
+        "nested-220104-125",
+        "nested-220104-132",
+        "nested-220104-135",
+        "nested-220104-137",
+        "nested-220104-140",
+        "nested-220104-152",
+        "nested-220104-167"
+      ],
+      "both_correct": 58,
+      "median_paired_epic_over_exact_seconds": 2.1827802752732994
+    },
+    {
+      "method": "epic_domains_4",
+      "exact_only_correct": [
+        "nested-220104-1",
+        "nested-220104-3",
+        "nested-220104-7",
+        "nested-220104-9",
+        "nested-220104-13",
+        "nested-220104-16",
+        "nested-220104-22",
+        "nested-220104-25",
+        "nested-220104-33",
+        "nested-220104-34",
+        "nested-220104-35",
+        "nested-220104-37",
+        "nested-220104-48",
+        "nested-220104-52",
+        "nested-220104-54",
+        "nested-220104-61",
+        "nested-220104-63",
+        "nested-220104-73",
+        "nested-220104-76",
+        "nested-220104-78",
+        "nested-220104-82",
+        "nested-220104-84",
+        "nested-220104-88",
+        "nested-220104-97",
+        "nested-220104-100",
+        "nested-220104-106",
+        "nested-220104-110",
+        "nested-220104-112",
+        "nested-220104-115",
+        "nested-220104-118",
+        "nested-220104-124",
+        "nested-220104-127",
+        "nested-220104-136",
+        "nested-220104-142",
+        "nested-220104-150",
+        "nested-220104-151",
+        "nested-220104-157",
+        "nested-220104-160",
+        "nested-220104-162",
+        "nested-220104-163",
+        "nested-220104-166"
+      ],
+      "epic_only_correct": [
+        "nested-220104-12",
+        "nested-220104-15",
+        "nested-220104-30",
+        "nested-220104-45",
+        "nested-220104-92",
+        "nested-220104-105",
+        "nested-220104-135",
+        "nested-220104-167"
+      ],
+      "both_correct": 24,
+      "median_paired_epic_over_exact_seconds": 0.9056670642651389
+    },
+    {
+      "method": "epic_native_24",
+      "exact_only_correct": [
+        "nested-220104-5",
+        "nested-220104-25",
+        "nested-220104-100",
+        "nested-220104-130",
+        "nested-220104-145",
+        "nested-220104-160"
+      ],
+      "epic_only_correct": [
+        "nested-220104-2",
+        "nested-220104-6",
+        "nested-220104-12",
+        "nested-220104-15",
+        "nested-220104-21",
+        "nested-220104-30",
+        "nested-220104-32",
+        "nested-220104-36",
+        "nested-220104-41",
+        "nested-220104-45",
+        "nested-220104-47",
+        "nested-220104-51",
+        "nested-220104-56",
+        "nested-220104-57",
+        "nested-220104-60",
+        "nested-220104-62",
+        "nested-220104-66",
+        "nested-220104-75",
+        "nested-220104-77",
+        "nested-220104-80",
+        "nested-220104-81",
+        "nested-220104-86",
+        "nested-220104-92",
+        "nested-220104-105",
+        "nested-220104-111",
+        "nested-220104-117",
+        "nested-220104-125",
+        "nested-220104-131",
+        "nested-220104-132",
+        "nested-220104-135",
+        "nested-220104-137",
+        "nested-220104-152",
+        "nested-220104-167"
+      ],
+      "both_correct": 59,
+      "median_paired_epic_over_exact_seconds": 7.891571797199512
+    },
+    {
+      "method": "epic_domains_24",
+      "exact_only_correct": [
+        "nested-220104-3",
+        "nested-220104-5",
+        "nested-220104-8",
+        "nested-220104-9",
+        "nested-220104-11",
+        "nested-220104-17",
+        "nested-220104-26",
+        "nested-220104-33",
+        "nested-220104-34",
+        "nested-220104-35",
+        "nested-220104-38",
+        "nested-220104-39",
+        "nested-220104-48",
+        "nested-220104-54",
+        "nested-220104-59",
+        "nested-220104-63",
+        "nested-220104-71",
+        "nested-220104-73",
+        "nested-220104-78",
+        "nested-220104-83",
+        "nested-220104-84",
+        "nested-220104-88",
+        "nested-220104-101",
+        "nested-220104-110",
+        "nested-220104-113",
+        "nested-220104-114",
+        "nested-220104-118",
+        "nested-220104-119",
+        "nested-220104-124",
+        "nested-220104-128",
+        "nested-220104-146",
+        "nested-220104-158",
+        "nested-220104-161",
+        "nested-220104-163",
+        "nested-220104-164"
+      ],
+      "epic_only_correct": [
+        "nested-220104-6",
+        "nested-220104-12",
+        "nested-220104-15",
+        "nested-220104-21",
+        "nested-220104-30",
+        "nested-220104-36",
+        "nested-220104-45",
+        "nested-220104-51",
+        "nested-220104-57",
+        "nested-220104-60",
+        "nested-220104-66",
+        "nested-220104-70",
+        "nested-220104-75",
+        "nested-220104-81",
+        "nested-220104-105",
+        "nested-220104-111",
+        "nested-220104-117",
+        "nested-220104-132",
+        "nested-220104-135"
+      ],
+      "both_correct": 30,
+      "median_paired_epic_over_exact_seconds": 4.013127056358678
+    }
+  ],
+  "producing_commits": [
+    "657bbc4ebe54593219e967d90c25f20ca30f303c",
+    "aa1b14d5999a75822469ef6d48e3950861e22953"
+  ],
+  "all_cohorts": [
+    {
+      "experiment": "m23_epic_confirmation_v1",
+      "records": 700,
+      "statuses": {
+        "complete": 514,
+        "incomplete": 140,
+        "resample_limit": 46
+      }
+    },
+    {
+      "experiment": "m23_epic_repeat_v1",
+      "records": 700,
+      "statuses": {
+        "complete": 514,
+        "incomplete": 140,
+        "resample_limit": 46
+      }
+    }
+  ]
+}
