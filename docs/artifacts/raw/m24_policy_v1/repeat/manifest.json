@@ -1,0 +1,12 @@
+{
+  "source_experiment": "m24_policy_repeat_v1",
+  "records": 700,
+  "uncompressed_results_sha256": "600eb7beb499239fb5352e999a97d7fae0e703c6724e272f8a0b04cd4267e257",
+  "sha256": {
+    "config.json": "42d9cec52c8ff8145d8187ae562b30d20016130ad092025f0bde5c3c0e3beb42",
+    "metadata.json": "015400f8562172bf28136ca2b23c1a263e2e17a1e33968e5d856759712c702e7",
+    "support.json": "4c54525c8661bc143196ca593da942b50943f08ad15dd075f7c9f8338de6429d",
+    "token_emissions.json": "192cf5a177157e4c3175664a8cc911dd9219c7143210fc724b15bb7764e37ce9",
+    "results.jsonl.gz": "661d17fc823e72667517c700fcb13e04b2cc7f70223465547bc88e837af5739b"
+  }
+}

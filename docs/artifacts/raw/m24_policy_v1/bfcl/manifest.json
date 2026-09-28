@@ -1,0 +1,12 @@
+{
+  "source_experiment": "m24_bfcl_enum_pilot_v1",
+  "records": 160,
+  "uncompressed_results_sha256": "b946a13f562f212d7ca48ab0f638e5612b1deba908fb20cb7a89f327467f4566",
+  "sha256": {
+    "config.json": "d37c858a7a3e202a2ac67f3f59e341176fc43770c8f500c66bb4c4a37429645e",
+    "metadata.json": "9d21279f73cdfae5855be02e9946cb069583681a038862a4278fbb84c8cfcf04",
+    "support.json": "298e121ddd91bfa4ca834414c8375a662d57ca8a09786ca376840e7283971d9e",
+    "token_emissions.json": "7ba84418078b032f295cbd22973f4f126b43252b238d12809144a666b11eabd9",
+    "results.jsonl.gz": "d5acffd9a1b603ff3ceca60fc09ba07fc87ecef2c8b64ea4e80775740727f854"
+  }
+}

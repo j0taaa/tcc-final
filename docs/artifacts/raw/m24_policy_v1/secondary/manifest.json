@@ -1,0 +1,12 @@
+{
+  "source_experiment": "m24_policy_secondary_v1",
+  "records": 400,
+  "uncompressed_results_sha256": "7333f9595c8da1ff415e238e740c1da01b5acc84b5c4b99c6246ac89da57111d",
+  "sha256": {
+    "config.json": "fc70214f8b1e7ec6ca35ebc045a7d6d66b0724d26abfa58354a00b05b02b3956",
+    "metadata.json": "28a46ef637be8aaedad0b4081917532cdec6c9430f799993a1958ecf71a9b42e",
+    "support.json": "4c54525c8661bc143196ca593da942b50943f08ad15dd075f7c9f8338de6429d",
+    "token_emissions.json": "192cf5a177157e4c3175664a8cc911dd9219c7143210fc724b15bb7764e37ce9",
+    "results.jsonl.gz": "3529852953369b6dc35aa882b636f5bff9e96c646e6db245a6b9e3aa13149756"
+  }
+}
