@@ -216,6 +216,7 @@ def summarize(directory):
         for p in config["policies"]
         if p["kind"] not in ("epic", "catalog_map") and p["name"] != "exact_b24"
     }
+    catalog_controls = {p["name"] for p in config["policies"] if p["kind"] == "catalog_map"}
     frontier = [
         r
         for r in table
@@ -224,7 +225,7 @@ def summarize(directory):
             and other["median_total_ms"] <= r["median_total_ms"]
             and (other["correct"] > r["correct"] or other["median_total_ms"] < r["median_total_ms"])
             for other in table
-            if other["method"] != "catalog_map4"
+            if other["method"] not in catalog_controls
         )
     ]
     candidates = [r["method"] for r in frontier if r["method"] in eligible][:3]
@@ -255,7 +256,9 @@ def summarize(directory):
     ]
     lines += [
         "",
-        "Candidatas pela regra congelada: " + ", ".join(candidates) + ".",
+        "Regra de seleção (aplicada à confirmação apenas na fase de desenvolvimento): "
+        + (", ".join(candidates) or "nenhuma")
+        + ".",
         "",
         "Acurácia observada não prova superioridade populacional. "
         "Todos os métodos e falhas estão incluídos.",

@@ -40,7 +40,14 @@ def binomial_interval(count, n):
     return lower, upper
 
 
-def build(first, second, secondary_first=None, secondary_second=None):
+def build(
+    first,
+    second,
+    secondary_first=None,
+    secondary_second=None,
+    controls_first=None,
+    controls_second=None,
+):
     config, a = read(first)
     config_b, b = read(second)
     assert config["tasks"] == config_b["tasks"]
@@ -49,11 +56,20 @@ def build(first, second, secondary_first=None, secondary_second=None):
     )
     primary_names = {p["name"] for p in config["policies"]}
     policies = list(config["policies"])
-    if secondary_first is not None:
-        extra_config, extra_a = read(secondary_first)
-        extra_config_b, extra_b = read(secondary_second)
+    for extra_first, extra_second in (
+        (secondary_first, secondary_second),
+        (controls_first, controls_second),
+    ):
+        if (extra_first is None) != (extra_second is None):
+            raise ValueError("Both repetitions are required for each additional cohort")
+        if extra_first is None:
+            continue
+        extra_config, extra_a = read(extra_first)
+        extra_config_b, extra_b = read(extra_second)
         assert extra_config["tasks"] == extra_config_b["tasks"] == config["tasks"]
-        assert not primary_names & {p["name"] for p in extra_config["policies"]}
+        extra_names = {p["name"] for p in extra_config["policies"]}
+        assert extra_names == {p["name"] for p in extra_config_b["policies"]}
+        assert not {p["name"] for p in policies} & extra_names
         policies += extra_config["policies"]
         a += extra_a
         b += extra_b
@@ -111,6 +127,10 @@ def build(first, second, secondary_first=None, secondary_second=None):
                 else "secondary_ablation",
                 "n": len(ids),
                 "correct": [sum(r["correct"] for r in rows) for rows in repetitions],
+                "numeric_correct": [
+                    sum(r["numeric_correct"] is True for r in rows) for rows in repetitions
+                ],
+                "valid": [sum(r["syntax_valid"] for r in rows) for rows in repetitions],
                 "forwards": [sum(r["forwards"] for r in rows) for rows in repetitions],
                 "median_total_ms": 1000 * median(total),
                 "p95_total_ms": 1000 * sorted(total)[min(len(total) - 1, int(0.95 * len(total)))],
@@ -138,12 +158,13 @@ def build(first, second, secondary_first=None, secondary_second=None):
         "",
         result["scope"],
         "",
-        "| Método | Acertos rodada 1 / 2 | Forwards 1 / 2 | Mediana total (ms) | p95 (ms) |",
-        "|---|---:|---:|---:|---:|",
+        "| Método | Chamadas corretas 1 / 2 | Resultado numérico 1 / 2 | Forwards 1 / 2 | Mediana total (ms) | p95 (ms) |",
+        "|---|---:|---:|---:|---:|---:|",
     ]
     for r in table:
         lines.append(
             f"| {r['method']} | {r['correct'][0]} / {r['correct'][1]} de {r['n']} | "
+            f"{r['numeric_correct'][0]} / {r['numeric_correct'][1]} | "
             f"{r['forwards'][0]} / {r['forwards'][1]} | "
             f"{r['median_total_ms']:.1f} | {r['p95_total_ms']:.1f} |"
         )
@@ -167,8 +188,17 @@ def main():
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--secondary-first", type=Path)
     parser.add_argument("--secondary-second", type=Path)
+    parser.add_argument("--controls-first", type=Path)
+    parser.add_argument("--controls-second", type=Path)
     args = parser.parse_args()
-    result, report = build(args.first, args.second, args.secondary_first, args.secondary_second)
+    result, report = build(
+        args.first,
+        args.second,
+        args.secondary_first,
+        args.secondary_second,
+        args.controls_first,
+        args.controls_second,
+    )
     for path, text in ((args.output, json.dumps(result, indent=2) + "\n"), (args.report, report)):
         if args.check:
             assert path.read_text() == text
