@@ -238,6 +238,7 @@ def summarize(directory):
         "source_commit": records[0]["git_commit"],
         "table": table,
         "frontier": [r["method"] for r in frontier],
+        "frontier_scope": "catalog-only MAP is excluded as a dominator of production candidates",
         "confirmation_candidates": candidates,
     }
     lines = [

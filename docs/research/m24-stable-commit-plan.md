@@ -1,7 +1,8 @@
 # M24 — Compromisso por estabilidade estrutural em dLLMs
 
-Estado: plano e referência enumerativa; **sem integração de produção ou novo
-resultado com modelo**. Data: 2026-09-28. Depende de M22/M23 e preserva M19.
+Estado: protocolo histórico, integração de produção implementada e campanha real
+executada. Resultados e decisão em `m24-findings.md`; comandos em
+`m24-reproduction.md`. Data: 2026-09-28. Depende de M22/M23 e preserva M19.
 
 ## Ampliação autorizada: triagem prática de políticas
 
@@ -247,10 +248,16 @@ O plano maximiza a chance de um resultado útil; não torna um resultado positiv
 garantido nem autoriza trocar o teste depois de vê-lo.
 
 Complemento secundário após o primeiro piloto externo: medir também EPIC 6/8/12,
-MAP com compromisso completo e os dois filtros de confiança com seletor guloso
+MAP com orçamento de 24 commits e os dois filtros de confiança com seletor guloso
 nos mesmos oito casos. As políticas já existiam na confirmação sintética; não
 ajustar seus parâmetros aos acertos externos. Configs `m24_bfcl_controls_v1` e
 repetição, 48 registros cada. Esse complemento evita comparar o MWPC apenas com
 MAP de quatro commits no caso em que o catálogo pequeno pode ser suficiente.
 É análise secundária no mesmo piloto, sem transformar oito casos em confirmação
 ampla ou alterar a comparação primária congelada.
+
+O controle `catalog_map24` compromete no máximo 24 posições: isso preenche o
+canvas sintético de 24 slots em uma inferência; nos 32 slots externos requer
+duas. Não foi medido um controle MAP de 32 commits. Todos os slots incluem a
+semântica EOS/PAD declarada, e os nomes não devem ser interpretados como número
+de forwards.
