@@ -1,0 +1,486 @@
+{
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "tokenizer_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "config_sha256": {
+    "m25_grounded_development_v1.json": "d9a29a2c692445d796cc98ade5b8afcd1e6b64bd08901154a7a9494aa9797f5d",
+    "m25_grounded_confirmation_v1.json": "e11f417534470a922596b917e2f17a0e075b48e816068d987300402fb295e643"
+  },
+  "tasks": [
+    {
+      "id": "simple_python_55",
+      "status": "represented",
+      "catalog_size": 153,
+      "max_ordinary_tokens": 19,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_177",
+      "status": "represented",
+      "catalog_size": 272,
+      "max_ordinary_tokens": 33,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_187",
+      "status": "represented",
+      "catalog_size": 513,
+      "max_ordinary_tokens": 27,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_218",
+      "status": "represented",
+      "catalog_size": 1425,
+      "max_ordinary_tokens": 35,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_255",
+      "status": "represented",
+      "catalog_size": 138,
+      "max_ordinary_tokens": 26,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_263",
+      "status": "represented",
+      "catalog_size": 279,
+      "max_ordinary_tokens": 22,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_285",
+      "status": "represented",
+      "catalog_size": 558,
+      "max_ordinary_tokens": 28,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_331",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 41,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_4-3-0",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 20,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_5-3-1",
+      "status": "represented",
+      "catalog_size": 165,
+      "max_ordinary_tokens": 28,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_6-3-2",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 19,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_7-3-3",
+      "status": "represented",
+      "catalog_size": 240,
+      "max_ordinary_tokens": 22,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_8-3-4",
+      "status": "represented",
+      "catalog_size": 285,
+      "max_ordinary_tokens": 21,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_9-3-5",
+      "status": "represented",
+      "catalog_size": 111,
+      "max_ordinary_tokens": 21,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_10-3-6",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 23,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_11-3-7",
+      "status": "represented",
+      "catalog_size": 207,
+      "max_ordinary_tokens": 20,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_12-3-8",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 21,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_13-3-9",
+      "status": "represented",
+      "catalog_size": 18,
+      "max_ordinary_tokens": 29,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_14-3-10",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 22,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_15-3-11",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 24,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_16-3-12",
+      "status": "represented",
+      "catalog_size": 249,
+      "max_ordinary_tokens": 19,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_17-3-13",
+      "status": "represented",
+      "catalog_size": 96,
+      "max_ordinary_tokens": 20,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_18-3-14",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 21,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_19-3-15",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 22,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_96-57-0",
+      "status": "represented",
+      "catalog_size": 207,
+      "max_ordinary_tokens": 20,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_97-57-1",
+      "status": "represented",
+      "catalog_size": 243,
+      "max_ordinary_tokens": 22,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_35",
+      "status": "represented",
+      "catalog_size": 192,
+      "max_ordinary_tokens": 27,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_47",
+      "status": "represented",
+      "catalog_size": 78,
+      "max_ordinary_tokens": 32,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_56",
+      "status": "represented",
+      "catalog_size": 168,
+      "max_ordinary_tokens": 23,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_68",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 28,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_69",
+      "status": "represented",
+      "catalog_size": 516,
+      "max_ordinary_tokens": 32,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_159",
+      "status": "represented",
+      "catalog_size": 88,
+      "max_ordinary_tokens": 28,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_167",
+      "status": "represented",
+      "catalog_size": 192,
+      "max_ordinary_tokens": 28,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_170",
+      "status": "represented",
+      "catalog_size": 228,
+      "max_ordinary_tokens": 40,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_171",
+      "status": "represented",
+      "catalog_size": 384,
+      "max_ordinary_tokens": 37,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_172",
+      "status": "represented",
+      "catalog_size": 192,
+      "max_ordinary_tokens": 20,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_185",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 30,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_188",
+      "status": "represented",
+      "catalog_size": 188,
+      "max_ordinary_tokens": 31,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_189",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 26,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_194",
+      "status": "represented",
+      "catalog_size": 87,
+      "max_ordinary_tokens": 22,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_203",
+      "status": "represented",
+      "catalog_size": 279,
+      "max_ordinary_tokens": 18,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_228",
+      "status": "represented",
+      "catalog_size": 90,
+      "max_ordinary_tokens": 21,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_232",
+      "status": "represented",
+      "catalog_size": 198,
+      "max_ordinary_tokens": 32,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_236",
+      "status": "represented",
+      "catalog_size": 336,
+      "max_ordinary_tokens": 23,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_237",
+      "status": "represented",
+      "catalog_size": 352,
+      "max_ordinary_tokens": 41,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_238",
+      "status": "represented",
+      "catalog_size": 1056,
+      "max_ordinary_tokens": 20,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_242",
+      "status": "represented",
+      "catalog_size": 56,
+      "max_ordinary_tokens": 19,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_243",
+      "status": "represented",
+      "catalog_size": 108,
+      "max_ordinary_tokens": 21,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_245",
+      "status": "represented",
+      "catalog_size": 324,
+      "max_ordinary_tokens": 20,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_248",
+      "status": "represented",
+      "catalog_size": 102,
+      "max_ordinary_tokens": 21,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_251",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 22,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_270",
+      "status": "represented",
+      "catalog_size": 192,
+      "max_ordinary_tokens": 19,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_324",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 24,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_342",
+      "status": "represented",
+      "catalog_size": 180,
+      "max_ordinary_tokens": 36,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_347",
+      "status": "represented",
+      "catalog_size": 288,
+      "max_ordinary_tokens": 23,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_351",
+      "status": "represented",
+      "catalog_size": 1020,
+      "max_ordinary_tokens": 31,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_356",
+      "status": "represented",
+      "catalog_size": 558,
+      "max_ordinary_tokens": 30,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_360",
+      "status": "represented",
+      "catalog_size": 207,
+      "max_ordinary_tokens": 25,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_362",
+      "status": "represented",
+      "catalog_size": 522,
+      "max_ordinary_tokens": 34,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_372",
+      "status": "represented",
+      "catalog_size": 576,
+      "max_ordinary_tokens": 25,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "simple_python_398",
+      "status": "represented",
+      "catalog_size": 672,
+      "max_ordinary_tokens": 23,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_0-0-0",
+      "status": "represented",
+      "catalog_size": 97,
+      "max_ordinary_tokens": 26,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_50-22-0",
+      "status": "represented",
+      "catalog_size": 51,
+      "max_ordinary_tokens": 18,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_79-40-0",
+      "status": "represented",
+      "catalog_size": 96,
+      "max_ordinary_tokens": 16,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_84-45-0",
+      "status": "represented",
+      "catalog_size": 96,
+      "max_ordinary_tokens": 19,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_98-58-0",
+      "status": "represented",
+      "catalog_size": 384,
+      "max_ordinary_tokens": 43,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_124-80-0",
+      "status": "represented",
+      "catalog_size": 40,
+      "max_ordinary_tokens": 38,
+      "all_byte_reconstructions_valid": true
+    },
+    {
+      "id": "live_simple_248-130-0",
+      "status": "represented",
+      "catalog_size": 756,
+      "max_ordinary_tokens": 29,
+      "all_byte_reconstructions_valid": true
+    }
+  ]
+}

@@ -40,3 +40,10 @@ the data Apache-2.0. Source files and hashes are recorded in
 MIT grant. Question/schema/answer fields were regrouped into the experiment
 config. Apache-2.0 license text is available in the preserved
 `vendor/EPIC-Decoding/regex-dfa/LICENSE-APACHE`.
+
+The 68 scalar-query examples embedded in `configs/experiments/m25_grounded_*`
+and derived M25 archives have the same BFCL source revision and Apache-2.0
+attribution. `docs/evidence/m25-grounding-coverage.json` records the question and
+answer file hashes. Their fields are regrouped, and query-derived finite domains
+are generated locally; the original dataset excerpts remain outside the parent
+MIT grant.

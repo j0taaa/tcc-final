@@ -5,6 +5,7 @@ import io
 import tokenize
 from collections import defaultdict
 
+from mwpc_research.grounded_calls import grounded_grade
 from mwpc_research.schema_calls import strict_schema_grade
 from mwpc_research.tool_screen import normalize_tool_call
 
@@ -27,7 +28,9 @@ def diagnose(config, rows):
         output = normalize_lexical_whitespace(row["output"])
         task = row["task"]
         correct = row["status"] == "complete" and (
-            strict_schema_grade(output, task["function"], task["ground_truth"])
+            (grounded_grade if config.get("grounded_calls", False) else strict_schema_grade)(
+                output, task["function"], task["ground_truth"]
+            )
             if config.get("schema_calls", False)
             else normalize_tool_call(output) == task["expected"]
         )

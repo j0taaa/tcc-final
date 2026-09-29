@@ -25,6 +25,8 @@ from mwpc_exact import (
 )
 from mwpc_exact.commit_gate import select_stable_commit
 from mwpc_exact.profiling import ComponentProfiler
+from mwpc_research.catalog_tokens import encode_call
+from mwpc_research.grounded_calls import grounded_catalog, grounded_grade
 from mwpc_research.schema_calls import normalize_schema_call, schema_catalog, strict_schema_grade
 from mwpc_research.tool_parser import catalog_byte_grammar, production_input
 from mwpc_research.tool_screen import (
@@ -285,24 +287,36 @@ def main():
     ).eval()
     assert model.config._commit_hash == config["revision"]
     is_schema = config.get("schema_calls", False)
+    is_grounded = config.get("grounded_calls", False)
+    prepared_catalogs = {}
+    grounding_seconds = {}
+    if is_grounded:
+        for task in config["tasks"]:
+            begin = time.perf_counter()
+            prepared_catalogs[task["id"]] = grounded_catalog(task["function"], task["instruction"])
+            grounding_seconds[task["id"]] = time.perf_counter() - begin
     catalog = (
-        tuple(
-            sorted({call for task in config["tasks"] for call in schema_catalog(task["function"])})
+        tuple(sorted({call for calls in prepared_catalogs.values() for call in calls}))
+        if is_grounded
+        else (
+            tuple(
+                sorted(
+                    {call for task in config["tasks"] for call in schema_catalog(task["function"])}
+                )
+            )
+            if is_schema
+            else tool_catalog("nested")
         )
-        if is_schema
-        else tool_catalog("nested")
     )
     paths = []
+    emissions = {}
+    tokenization_seconds = {}
     for call in catalog:
-        tokens = tokenizer.encode(call, add_special_tokens=False)
-        assert len(tokens) < config["slots"]
-        paths.append(tokens + [EOS] * (config["slots"] - len(tokens)))
-    emissions = {
-        t: tokenizer.decode([t], clean_up_tokenization_spaces=False).encode()
-        for path in paths
-        for t in path
-        if t != EOS
-    }
+        begin = time.perf_counter()
+        path, call_emissions = encode_call(tokenizer, call, slots=config["slots"], eos=EOS)
+        paths.append(path)
+        emissions.update(call_emissions)
+        tokenization_seconds[call] = time.perf_counter() - begin
     adapter = CompositionalByteLevelAdapter(
         tuple(emissions.get(i) for i in range(model.config.vocab_size))
     )
@@ -350,15 +364,21 @@ def main():
     for task_index, task in enumerate(config["tasks"]):
         begin = time.perf_counter()
         indices = (
-            [catalog.index(call) for call in schema_catalog(task["function"])]
-            if is_schema
-            else list(operand_preserving_indices(catalog, task["instruction"]))
+            [catalog.index(call) for call in prepared_catalogs[task["id"]]]
+            if is_grounded
+            else (
+                [catalog.index(call) for call in schema_catalog(task["function"])]
+                if is_schema
+                else list(operand_preserving_indices(catalog, task["instruction"]))
+            )
         )
         active_paths = [paths[i] for i in indices]
         calls = [catalog[i] for i in indices]
         rows = [sorted({path[p] for path in active_paths}) for p in range(config["slots"])]
         grammar = catalog_byte_grammar(calls)
         setup = time.perf_counter() - begin
+        if is_grounded:
+            setup += grounding_seconds[task["id"]] + sum(tokenization_seconds[c] for c in calls)
         request = (
             "Return only one Python function call using keyword arguments. "
             "Use the documented function and argument values. Function schema: "
@@ -434,7 +454,9 @@ def main():
             )
             complete = outcome["status"] == "complete"
             correct = complete and (
-                strict_schema_grade(outcome["output"], task["function"], task["ground_truth"])
+                (grounded_grade if is_grounded else strict_schema_grade)(
+                    outcome["output"], task["function"], task["ground_truth"]
+                )
                 if is_schema
                 else normalized == task["expected"]
             )
@@ -459,6 +481,13 @@ def main():
                 and normalized in calls
                 and execute_tool_call(normalized) == execute_tool_call(task["expected"]),
             }
+            if is_grounded:
+                # Coverage is evaluated only after generation, never fed into decoding.
+                record["answer_in_support"] = any(
+                    grounded_grade(c, task["function"], task["ground_truth"]) for c in calls
+                )
+                record["grounding_seconds"] = grounding_seconds[task["id"]]
+                record["active_catalog_size"] = len(calls)
             with (output / "results.jsonl").open("a") as stream:
                 stream.write(json.dumps(record, allow_nan=False) + "\n")
             print(

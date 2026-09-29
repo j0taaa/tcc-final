@@ -16,6 +16,34 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M25 — External grounded calls, runnable project and final article
+
+Authorized 2026-09-29; slides, defense script and presentation are explicitly out
+of scope. Closes the remaining T2404 work without changing historical evidence.
+Preserve exact_on_support, immutable fixed slots, all failures and real EPIC.
+
+- [x] T2500: Freeze a schema/question-only external eligibility rule, family split,
+  candidate grounding policy, coverage audit and primary comparison before live
+  evaluation. Keep ground truth out of support construction.
+  **Evidence:** `docs/research/m25-external-protocol.md`, `prepare_grounded_bfcl.py --check`, frozen configs and `docs/evidence/m25-grounding-coverage.json`: all 68 eligible cases retained (26 development/42 confirmation), 50 function-name families with no split overlap, 56 answers represented; no labels enter grounding.
+- [x] T2501: Implement and test free scalar argument grounding, independent grading,
+  support/length diagnostics and experiment integration; preserve M24 behavior.
+  Check oracles, malformed inputs and full regression gates before timing.
+  **Evidence:** full `PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q`: 1,119 passed; targeted grounding/schema/artifact suite: 30 passed; upstream integration: 19 passed/4 existing skips. Ruff and MyPy (86 files) pass. M24 campaign `--check` reproduces unchanged. `preflight_grounded_calls.py` with pinned cached tokenizer verifies all 68 catalogs and byte reconstruction (20,140 calls, at most 43 ordinary tokens within 64 slots); evidence `docs/evidence/m25-tokenizer-preflight.json`. Split-UTF-8 regression covers the corrected tokenizer boundary.
+- [ ] T2502: Run a bounded development pilot and frozen external confirmation with
+  strong EPIC, matched greedy and catalog controls; repeat timings, archive all
+  outputs and regenerate paired uncertainty and coverage reports.
+  **Evidence:** pending.
+- [ ] T2503: Deliver a runnable dLLM-to-read-only-query demo with validated calls,
+  explicit live/replay modes, failure handling and reproducible local evidence.
+  **Evidence:** pending.
+- [ ] T2504: Update the article from versioned M24/M25 artifacts, clarify novelty
+  and limitations, regenerate tables/figures, build and visually verify the PDF.
+  **Evidence:** pending.
+- [ ] T2505: Complete clean installation/reproduction checks, project documentation
+  and a local source/PDF/evidence delivery; record unresolved external limitations.
+  **Evidence:** pending.
+
 ## M24 — Investigate structurally stable commitment for useful tool calls
 
 Depends on M23, M22 and M19. The broad campaign is measured; margins did not

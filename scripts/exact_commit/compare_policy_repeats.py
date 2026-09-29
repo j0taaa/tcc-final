@@ -79,6 +79,7 @@ def build(
     ids = [t["id"] for t in config["tasks"]]
     table, pairs = [], {}
     is_schema = config.get("schema_calls", False)
+    is_grounded = config.get("grounded_calls", False)
     comparator = comparator_override or config.get("primary_comparator", "epic_lexical_24")
     for policy in policies:
         name = policy["name"]
@@ -125,7 +126,11 @@ def build(
         table.append(
             {
                 "method": name,
-                "analysis": ("external_pilot" if is_schema else "frozen_confirmation")
+                "analysis": (
+                    "external_grounded_confirmation"
+                    if is_grounded
+                    else ("external_pilot" if is_schema else "frozen_confirmation")
+                )
                 if name in primary_names
                 else "secondary_ablation",
                 "n": len(ids),
@@ -152,8 +157,16 @@ def build(
         "paired_comparisons": pairs,
         "comparator": comparator,
         "frozen_primary_comparator": config.get("primary_comparator"),
-        "comparison_role": "secondary" if is_schema or comparator_override else "frozen_primary",
+        "comparison_role": "secondary"
+        if (is_schema and not is_grounded) or comparator_override
+        else "frozen_primary",
         "scope": (
+            "family-disjoint public BFCL scalar queries; question/schema-derived finite support; "
+            "own strict AST evaluator, not official BFCL score; all selected cases retained; "
+            "two timing repetitions, not independent samples; secondary CIs unadjusted"
+        )
+        if is_grounded
+        else (
             "eight schema-finite public BFCL cases; own strict AST evaluator, not official "
             "BFCL score; two repetitions, not independent samples; exploratory CIs"
         )
@@ -164,7 +177,9 @@ def build(
         ),
     }
     lines = [
-        "# M24 — piloto externo pareado" if is_schema else "# M24 — confirmação pareada",
+        "# M25 — confirmação externa pareada"
+        if is_grounded
+        else ("# M24 — piloto externo pareado" if is_schema else "# M24 — confirmação pareada"),
         "",
         result["scope"],
         "",

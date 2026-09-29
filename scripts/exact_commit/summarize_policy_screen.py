@@ -10,6 +10,7 @@ from math import fsum, isclose
 from pathlib import Path
 from statistics import median
 
+from mwpc_research.grounded_calls import grounded_catalog, grounded_grade
 from mwpc_research.schema_calls import normalize_schema_call, schema_catalog, strict_schema_grade
 from mwpc_research.tool_screen import (
     execute_tool_call,
@@ -55,10 +56,18 @@ def read(directory):
         seen.add(key)
         assert row["config_sha256"] == hashlib.sha256(cfg_bytes).hexdigest()
         is_schema = config.get("schema_calls", False)
+        is_grounded = config.get("grounded_calls", False)
         indices = (
-            [support["catalog"].index(call) for call in schema_catalog(task["function"])]
-            if is_schema
-            else list(operand_preserving_indices(support["catalog"], task["instruction"]))
+            [
+                support["catalog"].index(call)
+                for call in grounded_catalog(task["function"], task["instruction"])
+            ]
+            if is_grounded
+            else (
+                [support["catalog"].index(call) for call in schema_catalog(task["function"])]
+                if is_schema
+                else list(operand_preserving_indices(support["catalog"], task["instruction"]))
+            )
         )
         assert row["active_catalog_indices"] == indices
         calls = [support["catalog"][i] for i in indices]
@@ -70,7 +79,9 @@ def read(directory):
         assert row["correct"] == (
             complete
             and (
-                strict_schema_grade(row["output"], task["function"], task["ground_truth"])
+                (grounded_grade if is_grounded else strict_schema_grade)(
+                    row["output"], task["function"], task["ground_truth"]
+                )
                 if is_schema
                 else normal == task["expected"]
             )
@@ -86,6 +97,11 @@ def read(directory):
             )
         )
         assert row["total_seconds_including_setup"] >= row["elapsed_seconds"] >= 0
+        if is_grounded:
+            assert row["active_catalog_size"] == len(calls)
+            assert row["answer_in_support"] == any(
+                grounded_grade(c, task["function"], task["ground_truth"]) for c in calls
+            )
         if policy["kind"] == "epic":
             assert row["recovery_status"] != "disabled"
             assert row["epic_steps"] == int(policy["method"].rsplit("_", 1)[1])
