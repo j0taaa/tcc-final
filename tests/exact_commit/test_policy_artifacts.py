@@ -112,3 +112,12 @@ def test_confidence_filter_also_applies_to_matched_greedy(monkeypatch):
     assert result["trace"][0]["committed_positions"] == [2]
     assert all(t["production_result"]["status"] == "feasible_on_support" for t in result["trace"])
     assert result["forwards"] > 1
+
+
+def test_interrupted_external_smoke_is_not_a_complete_cohort():
+    directory = ROOT / "docs/artifacts/raw/m25_grounded_v1/interrupted_smoke"
+    with pytest.raises(AssertionError):
+        load().read(directory)
+    config, rows = load().read(directory, allow_incomplete=True)
+    assert len(rows) == 4 < len(config["tasks"]) * len(config["policies"])
+    assert all(row["git_commit"].startswith("b71e3c6") for row in rows)

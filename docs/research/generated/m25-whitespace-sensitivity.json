@@ -1,0 +1,84 @@
+{
+  "interrupted_smoke": {
+    "confidence_0.8": {
+      "n": 1,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    },
+    "exact_b4": {
+      "n": 1,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    },
+    "exact_b64": {
+      "n": 1,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.8": {
+      "n": 1,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    }
+  },
+  "smoke": {
+    "catalog_map64": {
+      "n": 2,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    },
+    "catalog_map8": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 2,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    },
+    "epic_lexical_32": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "epic_lexical_64": {
+      "n": 2,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "epic_lexical_8": {
+      "n": 2,
+      "primary_correct": 1,
+      "after_whitespace_correct": 1,
+      "changed_grades": []
+    },
+    "exact_b4": {
+      "n": 2,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    },
+    "exact_b64": {
+      "n": 2,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.8": {
+      "n": 2,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    }
+  }
+}

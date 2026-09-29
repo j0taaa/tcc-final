@@ -1,0 +1,9 @@
+{
+  "summary_sha256": {
+    "m24-confirmation-paired-summary.json": "f9719eddcdde68e79cfa150b678d6ef591c7e6e1e671946c168260984683b73f",
+    "m24-secondary-vs-epic_lexical_8.json": "58f18fbef958ee02bbe88c3ffe7eecce8db7b8f0b247ccbb3471c4ab2e7b6d2f"
+  },
+  "validation_commands": [
+    "scripts/exact_commit/build_policy_campaign.py --check"
+  ]
+}

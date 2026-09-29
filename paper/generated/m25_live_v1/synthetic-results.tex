@@ -1,0 +1,25 @@
+\begin{table}[ht]
+\centering\small
+\caption{Synthetic tool-call confirmation with real LLaDA. Strict call accuracy preserves the requested operations. Correct calls are shown separately for two repetitions; total latency includes setup and upstream recovery, with repeats aggregated within each request. Forwards are summed over the first repetition.}
+\label{tab:live-synthetic}
+\begin{tabular}{lrrrr}
+\toprule
+Method & Correct 1/2 & Valid 1/2 & Median ms & Forwards \\
+\midrule
+Greedy, $\tau=0.8$ & 91/91 & 100/100 & 2278 & 785 \\
+EPIC, 24 steps & 89/89 & 99/99 & 2377 & 2300 \\
+MWPC, $\tau=0.8$ & 87/87 & 100/100 & 1108 & 792 \\
+MWPC, budget 4 & 86/86 & 100/100 & 926 & 682 \\
+EPIC, 6 steps & 77/77 & 98/98 & 793 & 592 \\
+MWPC, $\tau=0.2$ & 74/74 & 100/100 & 430 & 354 \\
+EPIC, 4 steps & 74/75 & 100/100 & 626 & 399 \\
+EPIC, 8 steps & 74/74 & 96/96 & 968 & 772 \\
+Greedy, $\tau=0.2$ & 73/73 & 100/100 & 790 & 359 \\
+EPIC, 2 steps & 72/72 & 100/100 & 312 & 200 \\
+EPIC, 12 steps & 72/72 & 95/95 & 1332 & 1186 \\
+MWPC, three proposals/slot & 59/59 & 100/100 & 145 & 131 \\
+MAP, cap 24 & 58/58 & 100/100 & 117 & 100 \\
+MWPC, budget 24 & 54/54 & 100/100 & 280 & 210 \\
+\bottomrule
+\end{tabular}
+\end{table}

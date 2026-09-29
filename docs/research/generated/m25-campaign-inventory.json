@@ -1,0 +1,50 @@
+{
+  "cohorts": {
+    "interrupted_smoke": {
+      "records": 4,
+      "planned_records": 18,
+      "interrupted": true,
+      "producing_commits": [
+        "b71e3c6be6139bb5fa82d4724d07813b331496cf"
+      ],
+      "manifest_sha256": "bca2a26737e8bf8e851c4e66c6f73f0c4fca626b3e2db72c15caa6c84deea721",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m25_grounded_smoke_v1.json"
+    },
+    "smoke": {
+      "records": 18,
+      "planned_records": 18,
+      "interrupted": false,
+      "producing_commits": [
+        "c0dd9edc0e12dc546a1f110fb15c67a7c3b6f75b"
+      ],
+      "manifest_sha256": "dc8cdae91264de5eac3c07b4e807d00e8f7dafb49e5a0759c3164dbea3705372",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m25_grounded_smoke_v2.json"
+    }
+  },
+  "complete_campaign": false,
+  "recorded_generations": 22,
+  "distinct_task_ids": 2,
+  "model_forwards": 372,
+  "statuses": {
+    "complete": 22
+  },
+  "source_commits": [
+    "b71e3c6be6139bb5fa82d4724d07813b331496cf",
+    "c0dd9edc0e12dc546a1f110fb15c67a7c3b6f75b"
+  ],
+  "model_revisions": [
+    "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+  ],
+  "hardware": [
+    "NVIDIA GeForce RTX 3080 Ti"
+  ],
+  "limitations": [
+    "own scalar AST grader; not official BFCL score",
+    "schema/query-based eligibility is a restricted external subset",
+    "family split separates function names, not every semantic domain",
+    "answer-independent finite support can omit the correct value",
+    "two timings per request are not independent samples",
+    "secondary comparisons have no multiplicity adjustment",
+    "partial interrupted smoke retained separately"
+  ]
+}

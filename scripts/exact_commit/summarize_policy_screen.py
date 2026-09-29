@@ -19,7 +19,7 @@ from mwpc_research.tool_screen import (
 )
 
 
-def read(directory):
+def read(directory, *, allow_incomplete=False):
     if (directory / "manifest.json").exists():
         manifest = json.loads((directory / "manifest.json").read_text())
         for name, checksum in manifest["sha256"].items():
@@ -181,7 +181,13 @@ def read(directory):
             assert phase["token_ids"] == canvas
             if phase["status"] == "complete":
                 assert decoded(canvas) == phase["output"]
-    assert len(seen) == len(tasks) * len(policies), (len(seen), len(tasks) * len(policies))
+    if allow_incomplete:
+        # Used only for explicitly archived process interruptions, never confirmation.
+        note = json.loads((directory / "interruption.json").read_text())
+        assert note["status"] == "interrupted" and note["completed_records"] == len(seen)
+        assert note["planned_records"] == len(tasks) * len(policies) > len(seen)
+    else:
+        assert len(seen) == len(tasks) * len(policies), (len(seen), len(tasks) * len(policies))
     return config, records
 
 
