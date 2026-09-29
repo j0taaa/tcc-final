@@ -1,0 +1,165 @@
+{
+  "experiment_id": "m25_grounded_smoke_v1",
+  "phase": "grounded external development smoke; not confirmation",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "seed": 250929,
+  "slots": 64,
+  "max_forwards": 64,
+  "task_count": 2,
+  "support": "question spans up to six words, schema enums/defaults, question numbers; top96 strings; byte CFG and finite 64 slots; exact_on_support",
+  "weight": "full_vocabulary_probability",
+  "quantization": "NF4 double quantization, bfloat16 compute",
+  "cpu_threads": 1,
+  "max_generation_seconds": 120,
+  "output_root": "results/raw/m25_grounded_smoke_v1",
+  "family": "nested",
+  "temperature": 0.0,
+  "preserve_operands": true,
+  "backend": "rust",
+  "epic_max_resamples": 100,
+  "selection_timeout_seconds": 10,
+  "recover_in_process": true,
+  "policies": [
+    {
+      "name": "confidence_0.8",
+      "kind": "confidence",
+      "threshold": 0.8
+    },
+    {
+      "name": "exact_b4",
+      "kind": "exact",
+      "proposal_budget": 4
+    },
+    {
+      "name": "exact_b64",
+      "kind": "exact",
+      "proposal_budget": 64
+    },
+    {
+      "name": "greedy_confidence_0.8",
+      "kind": "confidence",
+      "threshold": 0.8,
+      "selector": "greedy"
+    },
+    {
+      "name": "epic_lexical_8",
+      "kind": "epic",
+      "method": "epic_lexical_8"
+    },
+    {
+      "name": "epic_lexical_32",
+      "kind": "epic",
+      "method": "epic_lexical_32"
+    },
+    {
+      "name": "epic_lexical_64",
+      "kind": "epic",
+      "method": "epic_lexical_64"
+    },
+    {
+      "name": "catalog_map8",
+      "kind": "catalog_map",
+      "commit_cap": 8
+    },
+    {
+      "name": "catalog_map64",
+      "kind": "catalog_map",
+      "commit_cap": 64
+    }
+  ],
+  "tasks": [
+    {
+      "id": "simple_python_55",
+      "instruction": "Find me detailed information about the structure of human cell",
+      "function": {
+        "name": "biology.get_cell_info",
+        "description": "Retrieve information about the structure and functioning of a specified type of cell",
+        "parameters": {
+          "type": "dict",
+          "properties": {
+            "cell_type": {
+              "type": "string",
+              "description": "Type of cell you want information about"
+            },
+            "detailed": {
+              "type": "boolean",
+              "description": "Indicate if you want a detailed description of the cell",
+              "default": "false"
+            }
+          },
+          "required": [
+            "cell_type"
+          ]
+        }
+      },
+      "ground_truth": [
+        {
+          "biology.get_cell_info": {
+            "cell_type": [
+              "human"
+            ],
+            "detailed": [
+              true
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "simple_python_177",
+      "instruction": "Find all Patent lawsuit cases of Facebook in 2018.",
+      "function": {
+        "name": "get_lawsuit_cases",
+        "description": "Retrieve all lawsuit cases related to a specific company during a particular year.",
+        "parameters": {
+          "type": "dict",
+          "properties": {
+            "company_name": {
+              "type": "string",
+              "description": "The name of the company."
+            },
+            "year": {
+              "type": "integer",
+              "description": "The specific year to search for lawsuit cases."
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "open",
+                "closed",
+                "all"
+              ],
+              "description": "The status of the lawsuit cases to retrieve. If not specified, defaults to 'all'."
+            }
+          },
+          "required": [
+            "company_name",
+            "year"
+          ]
+        }
+      },
+      "ground_truth": [
+        {
+          "get_lawsuit_cases": {
+            "company_name": [
+              "Facebook"
+            ],
+            "year": [
+              2018
+            ],
+            "status": [
+              "all",
+              ""
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "schema_calls": true,
+  "dataset_commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+  "grounded_calls": true,
+  "primary_method": "confidence_0.8",
+  "primary_comparator": "epic_lexical_32"
+}

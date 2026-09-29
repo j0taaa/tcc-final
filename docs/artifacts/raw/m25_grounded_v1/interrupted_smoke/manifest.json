@@ -1,0 +1,13 @@
+{
+  "source_experiment": "m25_grounded_smoke_v1",
+  "records": 4,
+  "uncompressed_results_sha256": "46a8a5eece616ffa8f0e6a0136ccd01662ec0f342668a0974b3bf29e39785ffb",
+  "sha256": {
+    "config.json": "0daa5029fa6de2cb8a9cef779612d139e1c0ab8283d80a335d432a150bf66e7a",
+    "metadata.json": "eff5bd087b511bc74e09fda01d98762d7e528f8dee78c899b5d4ae7c45255767",
+    "support.json": "e8d8058c1dd8682ac716366364b43f82bfe2b2363a5ed982f705fe44d25c2c96",
+    "token_emissions.json": "539019f8ab14f7dbc8a0c603855b5a25e734eb1529dc4a01b8f14fdae7305b70",
+    "results.jsonl.gz": "f15ed94facf50e104e30018fba5fdae0fa5ecbbe5f17d8ed2c886abe084c3511",
+    "interruption.json": "c56af39ac844b7656103edb54d8a1e454f1dd3cb6a8ba61661f5a708cf0be095"
+  }
+}

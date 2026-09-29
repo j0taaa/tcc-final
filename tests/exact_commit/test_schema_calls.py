@@ -72,3 +72,17 @@ def test_python_lexemes_accept_all_frozen_schema_calls():
         lex_map = compile_lex_map(rules)
         for call in calls:
             assert not check_valid([call, EOS], grammar, lex_map, grammar.get_terminals()), call
+
+
+def test_epic_literal_strings_preserve_spaces_unicode_and_regex_punctuation():
+    from constrained_diffusion.constrain_utils import EOS, compile_lex_map
+    from constrained_diffusion.eval.dllm.models.llada.generate_constrained import check_valid
+    from rustformlang.cfg import CFG
+
+    calls = ["get(name='São Paulo')", "get(name='a#b&c~d e')", r"get(name='a+b[x].*?(x){}|^$\\z')"]
+    text, start, rules = epic_python_call_grammar(calls)
+    grammar = CFG.from_text(text, start).to_normal_form().to_normal_form()
+    lex_map = compile_lex_map(rules)
+    for call in calls:
+        assert not check_valid([call, EOS], grammar, lex_map, grammar.get_terminals())
+    assert check_valid(["get(name='SãoXPaulo')", EOS], grammar, lex_map, grammar.get_terminals())

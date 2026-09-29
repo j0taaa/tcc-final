@@ -127,7 +127,12 @@ def epic_python_call_grammar(calls: Sequence[str]) -> tuple[str, str, dict[str, 
     symbols = sorted({symbol for seq in sequences for symbol in seq})
     names = {symbol: f"lex{i}" for i, symbol in enumerate(symbols)}
     text = "\n".join("S -> " + " ".join(names[s] for s in seq) for seq in sequences)
-    return text, "S", {names[s]: re.escape(s) for s in symbols}
+    # Python re.escape also escapes spaces/#/&/~, which the pinned upstream
+    # regex-syntax 0.4 rejects. Escape only syntax characters outside classes.
+    meta = frozenset(r"\.*+?()[]{}|^$")
+    return text, "S", {
+        names[s]: "".join("\\" + c if c in meta else c for c in s) for s in symbols
+    }
 
 
 def production_input(

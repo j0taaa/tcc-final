@@ -71,3 +71,14 @@ dLLM, validada e despachada por allowlist. Manter replay reproduzível separado 
 inferência ao vivo e respostas de rede com data e origem. Atualizar artigo e
 resumo em português a partir dos artefatos; manter autoria, modelo SBC e limite
 de páginas. Entregar código, comandos, PDF verificado e pacote local de evidências.
+
+## Correção de engenharia antes do piloto completo
+
+O smoke v1 foi interrompido após quatro das dezoito células: `re.escape`
+produzia escapes de espaços incompatíveis com a biblioteca de regex do EPIC.
+A execução parcial e o diagnóstico ficam em
+`docs/artifacts/raw/m25_grounded_v1/interrupted_smoke/`. A correção está na
+conversão local de literais, sem modificar o EPIC ou a linguagem permitida.
+Regressões cobrem espaços, Unicode e metacaracteres; compilação CPU dos 68
+suportes passou. Suíte completa após a correção: 1.123 testes; Ruff e MyPy
+(87 arquivos) passaram. O smoke v2 repete os mesmos casos e políticas.

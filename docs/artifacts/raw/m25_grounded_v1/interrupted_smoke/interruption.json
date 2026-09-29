@@ -1,0 +1,10 @@
+{
+  "status": "interrupted",
+  "completed_records": 4,
+  "planned_records": 18,
+  "producing_commit": "b71e3c6",
+  "command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m25_grounded_smoke_v1.json",
+  "exception": "pyo3_runtime.PanicException",
+  "reason": "Python re.escape escapes spaces; pinned upstream regex-syntax 0.4 rejects that escape during lex-map compilation. No EPIC forward executed.",
+  "resolution": "Escape only regex metacharacters at our adapter boundary; upstream unchanged. CPU regression and lexical compilation of all 68 supports precede smoke v2."
+}
