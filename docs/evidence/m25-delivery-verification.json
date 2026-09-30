@@ -1,7 +1,7 @@
 {
   "python": {
     "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
-    "result": "1130 passed in 61.09s"
+    "result": "1131 passed in 65.17s"
   },
   "article_regressions_after_prose_edit": {
     "result": "24 passed in 0.31s",
@@ -45,12 +45,17 @@
   "interim_failures_resolved": [
     "Initial article 17 pages; reduced prose with scientific cautions and proofs preserved",
     "README historical date label restored; release metadata tests pass",
-    "A historical results caution moved during shortening was restored; article regression tests pass"
+    "A historical results caution moved during shortening was restored; article regression tests pass",
+    "Clean clone exposed a missing M24 diagnosis rebuild; aggregate generator now reproduces it with Python and a historical-output regression."
   ],
   "clean_clone_reproduction": {
     "status": "pending"
   },
   "local_delivery": {
     "status": "pending"
+  },
+  "reference_diagnosis_regression": {
+    "command": "diagnose_policy_errors.py --backend python; cmp against archived M24 diagnosis; full pytest",
+    "result": "Complete historical Rust diagnosis reproduces byte for byte with the independent Python solver; aggregate rebuild now includes it"
   }
 }

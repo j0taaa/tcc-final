@@ -9,6 +9,24 @@ import pytest
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def test_reference_rebuild_preserves_historical_development_diagnosis(monkeypatch):
+    from mwpc_exact import ExactBackend
+
+    monkeypatch.syspath_prepend(str(ROOT / "scripts/exact_commit"))
+    spec = importlib.util.spec_from_file_location(
+        "development_diagnosis", ROOT / "scripts/exact_commit/diagnose_policy_errors.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    actual = module.diagnose(
+        ROOT / "docs/artifacts/raw/m24_policy_v1/development", backend=ExactBackend.PYTHON
+    )
+    expected = json.loads(
+        (ROOT / "docs/research/generated/m24-development-diagnosis.json").read_text()
+    )
+    assert actual == expected
+
+
 def load():
     spec = importlib.util.spec_from_file_location(
         "policy_summary", ROOT / "scripts/exact_commit/summarize_policy_screen.py"

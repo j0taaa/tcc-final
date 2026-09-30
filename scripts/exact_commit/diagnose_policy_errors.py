@@ -9,20 +9,16 @@ from pathlib import Path
 
 from summarize_policy_screen import read
 
-from mwpc_exact import CompositionalByteLevelAdapter, Proposal, select_exact_mwpc
+from mwpc_exact import CompositionalByteLevelAdapter, ExactBackend, Proposal, select_exact_mwpc
 from mwpc_research.tool_parser import catalog_byte_grammar, production_input
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("directory", type=Path)
-    parser.add_argument("--output", type=Path, required=True)
-    args = parser.parse_args()
-    config, records = read(args.directory)
-    support = json.loads((args.directory / "support.json").read_text())
+def diagnose(directory: Path, *, backend: ExactBackend = ExactBackend.RUST):
+    config, records = read(directory)
+    support = json.loads((directory / "support.json").read_text())
     emissions = {
         int(t): bytes(b)
-        for t, b in json.loads((args.directory / "token_emissions.json").read_text()).items()
+        for t, b in json.loads((directory / "token_emissions.json").read_text()).items()
     }
     adapter = CompositionalByteLevelAdapter(tuple(emissions.get(t) for t in range(126464)))
     details = []
@@ -46,7 +42,7 @@ def main():
                 for p in trace["committed_positions"]:
                     after[p] = trace["witness_token_ids"][p]
                 feasible = select_exact_mwpc(
-                    production_input(gold, after, (), rows, adapter, 126081)
+                    production_input(gold, after, (), rows, adapter, 126081), backend=backend
                 )
                 if feasible.status.value == "infeasible_on_support":
                     before = production_input(
@@ -55,7 +51,9 @@ def main():
                     proposals = tuple(
                         Proposal(i, p, t, w) for i, (p, t, w) in enumerate(trace["proposals"])
                     )
-                    gold_best = select_exact_mwpc(replace(before, proposals=proposals))
+                    gold_best = select_exact_mwpc(
+                        replace(before, proposals=proposals), backend=backend
+                    )
                     assert gold_best.score is not None
                     gap = trace["production_result"]["score"] - gold_best.score
                     detail.update(
@@ -83,6 +81,16 @@ def main():
         ),
         "details": details,
     }
+    return result
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("directory", type=Path)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--backend", choices=("python", "rust"), default="rust")
+    args = parser.parse_args()
+    result = diagnose(args.directory, backend=ExactBackend(args.backend))
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2) + "\n")
     print(json.dumps(result["counts"]))

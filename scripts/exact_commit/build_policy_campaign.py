@@ -8,8 +8,11 @@ from collections import Counter
 from pathlib import Path
 
 from compare_policy_repeats import build
+from diagnose_policy_errors import diagnose as diagnose_errors
 from diagnose_policy_whitespace import diagnose
 from summarize_policy_screen import read, summarize
+
+from mwpc_exact import ExactBackend
 
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "docs/artifacts/raw/m24_policy_v1"
@@ -122,6 +125,10 @@ def main():
             "GPU allocation includes model weights; CPU peak memory was not measured",
         ],
     }
+    write(
+        OUT / "m24-development-diagnosis.json",
+        diagnose_errors(RAW / "development", backend=ExactBackend.PYTHON),
+    )
     write(OUT / "m24-campaign-inventory.json", inventory)
     write(OUT / "m24-whitespace-sensitivity.json", whitespace)
     print(json.dumps({k: v for k, v in inventory.items() if k != "cohorts"}, indent=2))

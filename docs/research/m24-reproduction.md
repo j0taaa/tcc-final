@@ -86,3 +86,10 @@ verifica os hashes publicados em `docs/evidence/m24-bfcl-coverage.json`.
 O gabarito é associado depois da elegibilidade; não fornece domínios de geração.
 Licença e atribuição: `LICENSES.md`. O avaliador é próprio e estrito, não o score
 oficial BFCL. Nenhuma função/API externa é executada pelo experimento.
+
+
+O gerador agregado também regenera o diagnóstico pós-hoc do desenvolvimento
+com o solver de referência Python. Um teste compara o produto completo com o
+arquivo originalmente produzido pelo solver Rust: valores e classificação são
+idênticos. Assim, a reprodução dos relatórios não exige instalar a binding Rust
+nem acessar o modelo; a CLI separada continua oferecendo `--backend rust`.
