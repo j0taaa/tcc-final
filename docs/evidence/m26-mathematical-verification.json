@@ -1,0 +1,186 @@
+{
+  "milestone": "M26",
+  "date": "2026-09-30",
+  "mathematical_implementation_commit": "7287707d09043908c2974d4a6679987dea51a2f9",
+  "manuscript_source_commit": "ca2a6faa28cbb0491d8101c3ed0d954f6e5fbcac",
+  "prior_delivery_source": "0f0f3d3667c8d61b503b77dde53223b4576f569a",
+  "contribution": {
+    "kind": "incremental mathematical construction, proofs and reference realization; not benchmark superiority",
+    "core": "joint finite-support completion and physical-position commitment under budget",
+    "proofs": "docs/research/m26-mathematical-core.md",
+    "manuscript_proofs": "paper/budgeted-math.tex",
+    "review": "docs/evidence/submission-proof-audit.md",
+    "guarantees": [
+      "exact_on_support budget frontier",
+      "independently checkable optimality upper bound and attaining original witness",
+      "universal dominance of feasible batches on identical input/support/budget",
+      "fixed-grammar infinite preselection/confidence ratio 7/(6B) -> 0",
+      "fixed-budget post-filter ratio 2/n -> 0",
+      "minimum capacity for reward target",
+      "ceil(M/B) irreversible update rounds under witness-preserving support"
+    ],
+    "not_claimed": [
+      "semantic accuracy",
+      "lower wall-clock latency",
+      "future/global denoising optimum",
+      "full-vocabulary optimum",
+      "worldwide novelty priority",
+      "proof-assistant formalization",
+      "production Rust implementation of new budget dimension"
+    ]
+  },
+  "gates": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "result": "PASS",
+      "passed": 1229,
+      "seconds": 71.57,
+      "log": "docs/evidence/m26/full-python.log"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/exact_commit/test_budgeted_math.py",
+      "result": "PASS",
+      "passed": 98,
+      "seconds": 1.5,
+      "log": "docs/evidence/m26/math-tests.log",
+      "random_seeds": "260000..260063",
+      "upstream_control_flow_specializations": 8
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/exact_commit/test_budgeted_math.py tests/exact_commit/test_t1300_paper_method.py tests/exact_commit/test_t1302_paper_limitations.py tests/exact_commit/test_t1259_language_and_terminology.py tests/exact_commit/test_submission_bibliography_verification.py",
+      "result": "PASS",
+      "passed": 117,
+      "includes": [
+        "budgeted mathematics",
+        "methodology",
+        "limitations",
+        "language",
+        "bibliography"
+      ]
+    },
+    {
+      "command": "make test-rust-parser",
+      "result": "PASS",
+      "passed": 24,
+      "format": "PASS",
+      "clippy": "PASS",
+      "log": "docs/evidence/m26/rust.log"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 make test-upstream",
+      "result": "PASS",
+      "passed": 406,
+      "existing_skips": 8,
+      "warnings": 2,
+      "seconds": 61.7,
+      "log": "docs/evidence/m26/upstream.log"
+    },
+    {
+      "command": ".venv/bin/ruff check src tests scripts/exact_commit/budget_math_example.py scripts/rehearse_release_wheel.py",
+      "result": "PASS"
+    },
+    {
+      "command": ".venv/bin/mypy src",
+      "result": "PASS",
+      "source_files": 91
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "make article-results-check",
+      "result": "PASS",
+      "includes": "all retained historical products and unchanged M24/M25 archives, confirmation freeze, eight geographic records and live article derivatives"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 make release-wheel-smoke",
+      "result": "PASS",
+      "source_commit": "7287707d09043908c2974d4a6679987dea51a2f9",
+      "non_editable_install_outside_checkout": true,
+      "source_tree_leakage": false,
+      "budget_example_generate_and_independently_verify": "PASS",
+      "existing_Q3_and_statistical_checks": "PASS",
+      "packaged_python_files": {
+        "mwpc_exact": 58,
+        "mwpc_research": 33
+      }
+    },
+    {
+      "command": "make -C paper",
+      "result": "PASS",
+      "source_commit": "ca2a6faa28cbb0491d8101c3ed0d954f6e5fbcac",
+      "build_gate": "16 pages, no overflow or unresolved references"
+    }
+  ],
+  "paper": {
+    "path": "paper/main.pdf",
+    "sha256": "e2d6c642a1076ba20f838218365a8eac731f8c4a8cf0c10989a5a2c9908a7949",
+    "pages": 16,
+    "render_command": "pdftoppm -r 100 -png paper/main.pdf results/raw/m25_external/m26-paper-pages/page",
+    "all_16_pages_visually_inspected": true,
+    "final_changed_pages_reinspected": [
+      9,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "other_pages_pixel_identical_to_reviewed_renders": true,
+    "historical_proofs_preserved": "paper/supplement-foundations.tex",
+    "historical_empirical_narrative_preserved": "paper/supplement-empirical.tex",
+    "fonts_margins_unchanged": true
+  },
+  "portable_example": {
+    "command": "python scripts/exact_commit/budget_math_example.py --output <new-json-path>; python scripts/exact_commit/budget_math_example.py --verify <json-path>",
+    "artifact": "docs/artifacts/math/m26-budget-proof.json",
+    "sha256": "303188b8c3c84edd9b889b411be4fbfe631dd6fde2670912a6fe8c4bd1473bca",
+    "checked_frontier": [
+      "0",
+      "7/8",
+      "1",
+      "1"
+    ],
+    "is_accuracy_benchmark": false,
+    "verification_imports_optimizer": false
+  },
+  "bibliography": {
+    "inventory_records": 34,
+    "new_primary_records": [
+      "demirovic2024certifying",
+      "ayoub2026axon"
+    ],
+    "audit": "docs/evidence/submission-bibliography-verification.md",
+    "priority_proved": false
+  },
+  "development_failures_and_fixes": [
+    "Initial EOS/support test fixture omitted required special IDs; corrected fixture.",
+    "Witness-retaining update fixture needed singleton committed support rows; corrected fixture.",
+    "Input fingerprint serialization/type issues were corrected before passing gates.",
+    "First full revised article run: 2 failed/1227 passed, due to omitted historical release wording and a language test reading only main.tex. Restored wording; expanded language check to include new mathematics and preserved foundations. Final full run 1229 passed; no baseline algorithm/test was removed.",
+    "First article revisions exceeded 16 pages (19 then 17); preserved old foundations/empirical prose in separate supplementary sources and condensed background, without shrinking template fonts/margins.",
+    "Equation overflow, Ruff line lengths and supplementary trailing whitespace were corrected; final gates pass.",
+    "Review corrected post-filter proof wording at n=2, where both witnesses tie; no theorem-level secondary tie-break claimed.",
+    "Boolean graph start/final IDs could alias integer IDs; rejected at construction and covered by two minimal regressions."
+  ],
+  "delivery_validation": {
+    "directory": "dist/math-2026-09-30",
+    "verified_source_commit": "ca2a6faa28cbb0491d8101c3ed0d954f6e5fbcac",
+    "bundle_verify": "PASS",
+    "fresh_bundle_clone_and_commit": "PASS",
+    "source_inventory_files": 1007,
+    "source_inventory_sha256": "PASS",
+    "portable_proof_from_clone": "PASS",
+    "sha256sum_c": "PASS",
+    "payloads": [
+      "source.bundle",
+      "paper.pdf",
+      "budget-proof.json",
+      "manifest.json",
+      "SHA256SUMS"
+    ],
+    "final_source_and_payload_hashes": "Recorded in the local manifest after rebuilding with this evidence commit; previous M25 delivery is untouched."
+  },
+  "logs_note": "Recorded command logs are normalized only to remove machine-specific repository paths. Tests check the implementation; mathematical validity is established by written proofs."
+}

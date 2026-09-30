@@ -1,0 +1,34 @@
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=vendor/EPIC-Decoding \
+	.venv/bin/python -m pytest -q vendor/EPIC-Decoding/tests
+........................................................................ [ 17%]
+........................................................................ [ 34%]
+................................................................ss...... [ 52%]
+........................................................................ [ 69%]
+..............................................ss........................ [ 86%]
+.....................................s......s...s.s...                   [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.11/site-packages/_pytest/python.py:124
+  <repository>/.venv/lib/python3.11/site-packages/_pytest/python.py:124: PytestRemovedIn10Warning: Passing a non-Collection iterable to parametrize is deprecated.
+  Test: vendor/EPIC-Decoding/tests/test_cfgs/test_cpp.py::test_cpp_simple_examples, argvalues type: enumerate
+  Please convert to a list or tuple.
+  See https://docs.pytest.org/en/stable/deprecations.html#parametrize-iterators
+    metafunc.parametrize(*marker.args, **marker.kwargs, _param_mark=marker)
+
+.venv/lib/python3.11/site-packages/_pytest/python.py:124
+  <repository>/.venv/lib/python3.11/site-packages/_pytest/python.py:124: PytestRemovedIn10Warning: Passing a non-Collection iterable to parametrize is deprecated.
+  Test: vendor/EPIC-Decoding/tests/test_cfgs/test_jsonmode.py::test_jsonmode_dataset, argvalues type: enumerate
+  Please convert to a list or tuple.
+  See https://docs.pytest.org/en/stable/deprecations.html#parametrize-iterators
+    metafunc.parametrize(*marker.args, **marker.kwargs, _param_mark=marker)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] vendor/EPIC-Decoding/tests/test_cfgs/test_cpp.py:537: unconditional skip
+SKIPPED [1] vendor/EPIC-Decoding/tests/test_cfgs/test_cpp.py:587: unconditional skip
+SKIPPED [1] vendor/EPIC-Decoding/tests/test_cfgs/test_jsonmode.py:453: unconditional skip
+SKIPPED [1] vendor/EPIC-Decoding/tests/test_cfgs/test_jsonmode.py:518: unconditional skip
+SKIPPED [1] vendor/EPIC-Decoding/tests/test_constrain_utils.py:177: not implemented
+SKIPPED [1] vendor/EPIC-Decoding/tests/test_constrain_utils.py:463: unconditional skip
+SKIPPED [1] vendor/EPIC-Decoding/tests/test_constrain_utils.py:601: unconditional skip
+SKIPPED [1] vendor/EPIC-Decoding/tests/test_constrain_utils.py:711: unconditional skip
+406 passed, 8 skipped, 2 warnings in 61.70s (0:01:01)

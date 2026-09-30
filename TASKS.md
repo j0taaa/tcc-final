@@ -38,10 +38,10 @@ complete selected set of an ordinary MWPC certificate.
   differential/regression tests. Exercise pinned EPIC selection control flow
   without presenting constructed counterexamples as population benchmarks.
   **Evidence:** 98 new exact-rational/oracle/certificate regressions, including 64 recorded random seeds, split UTF-8, paid EOS/PAD, duplicate/fixed positions, feasible suboptimal witnesses, input identity and eight unchanged upstream-selector control-flow tests. Full Python 1,229 passed; Rust 24 tests/fmt/clippy and upstream 406 passed/8 existing skips. Ruff and MyPy (91 source files) pass. `budget_math_example.py` emits and independently verifies all four budget certificates offline; modes preserve ordinary MWPC contracts.
-- [ ] T2603: Reframe the article and project around the proved mathematical
+- [x] T2603: Reframe the article and project around the proved mathematical
   result, preserve all historical experiments as secondary evidence, verify
   the manuscript and produce a separate local mathematical delivery.
-  **Evidence:** pending.
+  **Evidence:** `docs/evidence/m26-mathematical-verification.json`: exact-rational API/proof/wheel checks and full regression gates pass; the rebuilt SBC manuscript has 16 visually inspected pages, no overflow/unresolved references, unchanged fonts/margins and 34 audited bibliography records. Core results are complete universal proofs; unchanged negative M24/M25 experiments remain secondary and prior prose/proofs remain supplementary. `dist/math-2026-09-30/` is independently bundle-verified and freshly cloned (1,007 source hashes), with portable optimality proof and all payload checksums passing. README, reproduction and separate release guides describe actual implementation/limitations; no slides or remote publication.
 
 ## M25 — External grounded calls, runnable project and final article
 

@@ -1,0 +1,50 @@
+cargo fmt --manifest-path crates/mwpc_parser/Cargo.toml --all -- --check
+cargo test --manifest-path crates/mwpc_parser/Cargo.toml
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running unittests src/lib.rs (crates/mwpc_parser/target/debug/deps/mwpc_parser-8b23183680943c5a)
+
+running 21 tests
+test parser::tests::deadline_check_interval_must_be_positive ... ok
+test types::tests::edge_rejects_non_finite_negative_and_self_loop_weights ... ok
+test score::tests::round_trips_normal_subnormal_and_extreme_weights ... ok
+test score::tests::addition_preserves_tiny_rewards_and_rounds_only_once ... ok
+test types::tests::grammar_and_scope_reject_invalid_references ... ok
+test parser::tests::final_deadline_check_discards_late_infeasibility_without_sleeping ... ok
+test parser::tests::empty_chart_spans_consume_the_deterministic_work_budget ... ok
+test parser::tests::parallel_edges_select_the_heavier_path_deterministically ... ok
+test parser::tests::adequate_deterministic_work_limit_preserves_optimal_result ... ok
+test parser::tests::public_solve_reconstructs_path_labels_and_all_provenance ... ok
+test types::tests::graph_computes_stable_order_and_keeps_parallel_edges ... ok
+test parser::tests::public_infeasible_result_has_no_partial_certificate ... ok
+test types::tests::caller_topological_order_is_validated ... ok
+test parser::tests::valid_infeasible_input_returns_explicit_status_without_panic ... ok
+test parser::tests::corrupted_backpointer_is_rejected_during_reconstruction ... ok
+test parser::tests::binary_index_skips_grammar_bodies_absent_from_child_charts ... ok
+test parser::tests::certificate_preserves_repeated_proposal_id_occurrences ... ok
+test parser::tests::canonical_chain_matches_python_reference_score ... ok
+test parser::tests::deterministic_work_limit_returns_timeout_without_partial_certificate ... ok
+test types::tests::non_optimal_result_never_exposes_partial_certificate ... ok
+test types::tests::graph_rejects_unknown_endpoints_duplicate_ids_and_cycles ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/randomized.rs (crates/mwpc_parser/target/debug/deps/randomized-5bf512c1fa2ba193)
+
+running 3 tests
+test accepts_epsilon_normalization_output_as_an_epsilon_free_terminal_dag ... ok
+test canonical_ambiguity_parallel_tie_and_multiple_final_fixture ... ok
+test randomized_small_dags_match_independent_path_and_boolean_cyk_oracle ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+   Doc-tests mwpc_parser
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+cargo clippy --manifest-path crates/mwpc_parser/Cargo.toml --all-targets -- -D warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.03s
+cargo fmt --manifest-path crates/mwpc_parser_py/Cargo.toml --all -- --check
+PYO3_PYTHON=<repository>/.venv/bin/python cargo clippy --manifest-path crates/mwpc_parser_py/Cargo.toml --all-targets -- -D warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s
