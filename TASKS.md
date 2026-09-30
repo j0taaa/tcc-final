@@ -34,9 +34,9 @@ Preserve exact_on_support, immutable fixed slots, all failures and real EPIC.
   strong EPIC, matched greedy and catalog controls; repeat timings, archive all
   outputs and regenerate paired uncertainty and coverage reports.
   **Evidence:** independently validated development 234/234 and two frozen confirmation grids of 336/336 each; all archives under `docs/artifacts/raw/m25_grounded_v1/`. `build_grounded_campaign.py --check` reproduces 928 recorded generations/15,596 forwards including smoke and every failure, without double-counting the interrupted development prefix. Confidence reaches 5/42 versus EPIC 32's 15/42 in both repetitions; EPIC 8 reaches 16/17. Coverage is 38/42, and paired uncertainty/status/component products are generated under `docs/research/generated/m25-*`. Primary and support remain frozen; budget 64 was selected on development only. Full Python 1,130 passed; integration 19 passed/4 existing skips; Ruff/MyPy and upstream pin pass. Process ledgers and gates are recorded in `docs/evidence/m25-experiment-verification.json`.
-- [ ] T2503: Deliver a runnable dLLM-to-read-only-query demo with validated calls,
+- [x] T2503: Deliver a runnable dLLM-to-read-only-query demo with validated calls,
   explicit live/replay modes, failure handling and reproducible local evidence.
-  **Evidence:** pending.
+  **Evidence:** eight real LLaDA/Open-Meteo trajectories archived under `docs/artifacts/demo/`; `build_query_demo_results.py --check` independently verifies all checksums, support, finite slots, fixed positions and matched objectives offline. All four v1 queries were empty; the separately declared quote-free v2 support yields Belo Horizonte for confidence/MAP/EPIC, while budget 64 stays empty. Defaults use the correct confidence v2 recording; `run_query_demo.py --mode replay` returns the attributed saved result without model/network. Both immutable configs, process ledgers, original failures and the post-hoc limitation are preserved; scientific benchmark results are unchanged.
 - [ ] T2504: Update the article from versioned M24/M25 artifacts, clarify novelty
   and limitations, regenerate tables/figures, build and visually verify the PDF.
   **Evidence:** pending.

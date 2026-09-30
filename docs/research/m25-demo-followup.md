@@ -26,8 +26,7 @@ benchmark improvement. Exactness is still per step on the newly declared
 support. The original M25/v1 construction stays available and its 928 generations
 remain unchanged. Replay selects the recorded policy, preserving old records.
 
-The same four policies (confidence 0.8, budget 64, canonical MAP 8, EPIC 32) will
-run sequentially on the unchanged request and model revision. All follow-up
+The same four policies (confidence 0.8, budget 64, canonical MAP 8, EPIC 32) ran sequentially on the unchanged request and model revision. All follow-up
 attempts, including empty queries or failures, will be retained. This is a
 post-hoc application diagnosis, not a preregistered accuracy estimate.
 
@@ -40,3 +39,12 @@ Ruff, MyPy (87 files) and the upstream pin also pass. Gate evidence is
 `docs/evidence/m25-experiment-verification.json`, recorded before committing
 and launching live follow-up. No GPU timings are collected
 while these checks run.
+
+
+## Observed follow-up
+
+All four follow-up records were produced by clean source `e7f6b43`.
+Confidence 0.8, iterative MAP and EPIC generate Belo Horizonte and receive
+nonempty API responses. Budget 64 generates a request fragment and again gets
+an empty response. All eight v1/v2 attempts remain in the generated query
+inventory. These observations do not change the 42-case benchmark conclusions.

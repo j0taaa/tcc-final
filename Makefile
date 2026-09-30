@@ -9,7 +9,7 @@ STATISTICS_CONFIG ?= configs/analysis/t1202_statistics_v1.toml
 FINAL_ARTIFACT_CONFIG ?= configs/analysis/t1203_final_artifacts_v1.toml
 ARTICLE_RESULT_CONFIG ?= configs/analysis/m1301_article_results_v1.toml
 
-.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser artifacts artifacts-check statistics statistics-check final-artifacts final-artifacts-check article-results article-results-check release-wheel-smoke rehearse-artifact-rebuild rehearse-source-correctness rehearse-cpu-correctness paper clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser artifacts artifacts-check statistics statistics-check final-artifacts final-artifacts-check article-results article-results-check release-wheel-smoke rehearse-artifact-rebuild rehearse-source-correctness rehearse-cpu-correctness query-demo-check paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -99,12 +99,24 @@ article-results:
 	$(VENV_PY) scripts/exact_commit/build_article_results.py --config $(ARTICLE_RESULT_CONFIG)
 	$(VENV_PY) scripts/exact_commit/build_selection_audit.py
 	$(VENV_PY) -m scripts.exact_commit.build_json_repair_results
+	$(VENV_PY) scripts/exact_commit/build_policy_campaign.py
+	$(VENV_PY) scripts/exact_commit/build_grounded_campaign.py
+	$(VENV_PY) scripts/exact_commit/build_query_demo_results.py
+	$(VENV_PY) scripts/exact_commit/build_live_article_results.py --grounded
 
 article-results-check:
 	$(VENV_PY) scripts/exact_commit/build_article_results.py --config $(ARTICLE_RESULT_CONFIG) --verify-existing
 	$(VENV_PY) scripts/exact_commit/build_review_results.py --check
 	$(VENV_PY) scripts/exact_commit/build_selection_audit.py --check
 	$(VENV_PY) -m scripts.exact_commit.build_json_repair_results --check
+	$(VENV_PY) scripts/exact_commit/build_policy_campaign.py --check
+	$(VENV_PY) scripts/exact_commit/build_grounded_campaign.py --check
+	$(VENV_PY) scripts/exact_commit/freeze_grounded_confirmation.py --check
+	$(VENV_PY) scripts/exact_commit/build_query_demo_results.py --check
+	$(VENV_PY) scripts/exact_commit/build_live_article_results.py --grounded --check
+
+query-demo-check:
+	$(VENV_PY) scripts/exact_commit/build_query_demo_results.py --check
 
 release-wheel-smoke:
 	$(VENV_PY) scripts/rehearse_release_wheel.py

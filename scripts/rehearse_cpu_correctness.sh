@@ -113,13 +113,52 @@ if [ "$mode" = "artifact-rebuild" ]; then
     "$reference/$review_relative" "$checkout/$review_relative"
   "$environment_python" -I "$checkout/scripts/exact_commit/build_review_results.py" --check
 
+  # Rebuild current dLLM study products using only the installed wheel.
+  # These command-line scripts also import sibling analysis modules; expose
+  # only their script directory, never checkout/src or an editable package.
+  run_live_analysis() {
+    "$environment_python" -I -c \
+      'import runpy, sys; from pathlib import Path; script=Path(sys.argv[1]); sys.path.insert(0, str(script.parent)); sys.argv=sys.argv[1:]; runpy.run_path(str(script), run_name="__main__")' \
+      "$checkout/scripts/exact_commit/$1" "${@:2}"
+  }
+  live_reference="$reference/docs/research/generated"
+  mkdir -p "$live_reference"
+  for output in "$checkout"/docs/research/generated/m24-* "$checkout"/docs/research/generated/m25-*; do
+    mv "$output" "$live_reference/"
+  done
+  live_paper_relative="paper/generated/m25_live_v1"
+  mv "$checkout/$live_paper_relative" "$reference/paper/generated/"
+  run_live_analysis build_policy_campaign.py
+  run_live_analysis build_grounded_campaign.py
+  run_live_analysis freeze_grounded_confirmation.py --check
+  run_live_analysis build_query_demo_results.py
+  run_live_analysis build_live_article_results.py --grounded
+  for expected in "$live_reference"/*; do
+    diff --no-dereference "$expected" "$checkout/docs/research/generated/$(basename "$expected")"
+  done
+  expected_count=$(find "$live_reference" -maxdepth 1 -type f | wc -l)
+  actual_count=$(find "$checkout/docs/research/generated" -maxdepth 1 -type f \
+    \( -name 'm24-*' -o -name 'm25-*' \) | wc -l)
+  test "$expected_count" -eq "$actual_count"
+  diff --recursive --no-dereference \
+    "$reference/$live_paper_relative" "$checkout/$live_paper_relative"
+  run_live_analysis build_policy_campaign.py --check
+  run_live_analysis build_grounded_campaign.py --check
+  run_live_analysis build_query_demo_results.py --check
+  run_live_analysis build_live_article_results.py --grounded --check
+  run_live_analysis run_query_demo.py --mode replay
+  run_live_analysis verify_query_demo.py
+  for record in "$checkout"/docs/artifacts/demo/geocoding_v1 "$checkout"/docs/artifacts/demo/geocoding_comparators_v1/* "$checkout"/docs/artifacts/demo/geocoding_comparators_v2/*; do
+    run_live_analysis verify_query_demo.py --record "$record"
+  done
+
   manifest="$checkout/$processed_relative/artifact-manifest.json"
   printf '%s\n' \
     "REHEARSAL_LEVEL=artifact-rebuild" \
     "ARTIFACT_REBUILD=PASS" \
     "source_commit=$source_commit" \
     "wheel=$(basename "$main_wheel")" \
-    "byte_comparison=all_processed_and_paper_outputs" \
+    "byte_comparison=all_processed_and_paper_outputs_including_M24_M25" \
     "manifest_sha256=$(sha256sum "$manifest" | cut -d ' ' -f 1)"
   exit 0
 fi

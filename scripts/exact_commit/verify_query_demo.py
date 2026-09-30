@@ -80,7 +80,7 @@ def verify(directory):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--record", type=Path, default=ROOT / "docs/artifacts/demo/geocoding_v1")
+    parser.add_argument("--record", type=Path, default=ROOT / "docs/artifacts/demo/geocoding_v2")
     args = parser.parse_args()
     print(json.dumps(verify(args.record), indent=2))
 

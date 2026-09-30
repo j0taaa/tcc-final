@@ -1,8 +1,42 @@
 # Reproducing the MWPC research artifacts
 
-## Current certified JSON repair study (M21)
+## Current live dLLM study (M24/M25)
 
-Current source delivery: [2026-09-28 repair snapshot](docs/releases/repair-2026-09-28.md).
+Current local delivery: [2026-09-30 dLLM snapshot](docs/releases/dllm-2026-09-30.md).
+Source, frozen configs, raw archives, generated tables and recorded query
+attempts are versioned. No model weights or remote publication are included.
+
+With the CPU environment described below, independently validate archives and
+regenerate the manuscript products without model inference or network:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/build_policy_campaign.py --check
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/build_grounded_campaign.py --check
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/freeze_grounded_confirmation.py --check
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/build_live_article_results.py --grounded --check
+make query-demo-check
+make paper
+```
+
+Removing `--check` regenerates derived tables from unchanged raw archives.
+`make article-results` performs this regeneration for the current article;
+`make article-results-check` checks both historical and current study products.
+[Detailed M24 commands](docs/research/m24-reproduction.md),
+[M25 commands/data audit](docs/research/m25-reproduction.md) and
+[live/replay query](docs/research/m25-query-demo.md) distinguish archive
+verification from new GPU measurements. Each raw row retains its producing
+commit and revisions; the final documentation commit does not replace them.
+
+`make rehearse-artifact-rebuild` clones clean committed source, builds a wheel,
+installs it non-editably in a new Python 3.11 environment and regenerates the
+M24/M25 report collection and article tables byte for byte, alongside historical
+products. It also verifies all eight query records offline. This checks clean
+artifact reproduction, not remeasurement of GPU timings. New inference needs
+a cached pinned checkpoint and an idle GPU; tests never download models.
+
+## Auxiliary certified JSON repair study (M21)
+
+Historical repair delivery: [2026-09-28 repair snapshot](docs/releases/repair-2026-09-28.md).
 The former M20 bundle/patch and v0.2.0 remain historical. No remote publication.
 
 Rebuild the complete analysis from hash-verified archived output without a GPU,

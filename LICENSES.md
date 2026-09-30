@@ -47,3 +47,10 @@ attribution. `docs/evidence/m25-grounding-coverage.json` records the question an
 answer file hashes. Their fields are regrouped, and query-derived finite domains
 are generated locally; the original dataset excerpts remain outside the parent
 MIT grant.
+
+
+Recorded public geocoding responses under `docs/artifacts/demo/` are third-party
+service data, outside the parent MIT grant. Each record retains its retrieval
+date, source URL and attribution to Open-Meteo and GeoNames. Service documentation:
+https://open-meteo.com/en/docs/geocoding-api; location source:
+https://www.geonames.org/. No model weights are included.

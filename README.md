@@ -5,18 +5,27 @@ Research and implementation workspace for the TCC **Exact Maximum-Weight Paralle
 The project implements an exact, certificate-producing optimizer for selecting the maximum-weight compatible set of token proposals at one denoising step. EPIC's serial and heuristic decoders remain read-only baselines. Results over pruned alternatives are reported as exact on the represented support, never as full-vocabulary or future-trajectory optimality.
 
 The current research focus is **selection during actual dLLM generation**.
-[M24 findings](docs/research/m24-findings.md) report 3,856 live generations across
-26 policy configurations, with actual EPIC decoding and official recovery.
-Simple confidence/budget policies offer useful measured cost–quality tradeoffs
-on synthetic tool calls; counterfactual margins did not justify their cost.
-On the narrow eight-case external pilot, enumerative MAP was the best measured
-small-catalog option. There is no general accuracy-superiority or statistically
-established two-point non-inferiority claim. All repetitions and failures remain
-archived; [one command regenerates the campaign](docs/research/m24-reproduction.md).
-[M23](docs/research/m23-findings.md) remains the earlier byte/lexical EPIC audit.
-[M22](docs/research/generated/m22-results.md) remains the separate, matched
-comparison against confidence-greedy feasibility, which must not be called EPIC.
-JSON repair without model inference remains an auxiliary experiment.
+[M24 findings](docs/research/m24-findings.md) preserve 3,856 live generations
+and a scoped cost–quality benefit on synthetic tool calls, compared with actual
+EPIC and its official recovery. The [M25 external study](docs/research/m25-findings.md)
+adds a schema/question-grounded development/confirmation split, strong EPIC,
+greedy and canonical-MAP controls, and all failures. Its finite support and
+own AST grader are explicitly distinguished from an official BFCL evaluation.
+[Novelty boundaries](docs/research/m25-novelty-boundaries.md) identify established
+weighted-parsing and exact-dLLM antecedents; no universal superiority is claimed.
+
+Run the archived **real LLaDA geographic query** without a model or network:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/run_query_demo.py --mode replay
+make query-demo-check
+```
+
+The [live/replay guide](docs/research/m25-query-demo.md) explains both sets of four
+recorded policy attempts and the validated read-only API dispatch. The replay
+is an archived execution, not new inference. New live generation needs the
+pinned CUDA environment and locally cached model. Model-free JSON repair
+remains an auxiliary application.
 
 ## Sources of truth
 
@@ -38,12 +47,12 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 
 ## Setup
 
-The archived **M21 2026-09-28 source snapshot** includes certified JSON repair and
-4,992 controlled comparison calls (M21). Its local bundle, PDF and checksums are
-described in [`docs/releases/repair-2026-09-28.md`](docs/releases/repair-2026-09-28.md).
-That bundle/PDF predates M22–M24; use the current checkout for their live results.
-The historical v0.2.0 and M20 bundle/patch remain unchanged. No remote publication
-was performed. From the new delivery directory:
+The current local source/PDF delivery is described in
+[`dLLM study, 2026-09-30`](docs/releases/dllm-2026-09-30.md).
+It includes the versioned measurements and their reproduction scripts. The
+[2026-09-28 repair snapshot](docs/releases/repair-2026-09-28.md), M20 delivery
+and v0.2.0 remain historical; no remote publication was performed.
+From the current delivery directory:
 
 ```bash
 git clone ./source.bundle tcc-final

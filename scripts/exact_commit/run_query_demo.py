@@ -163,8 +163,8 @@ def live(args):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--mode", choices=("live", "replay"), default="replay")
-    p.add_argument("--record", type=Path, default=ROOT / "docs/artifacts/demo/geocoding_v1")
-    p.add_argument("--config", type=Path, default=ROOT / "configs/demo/geocoding_v1.json")
+    p.add_argument("--record", type=Path, default=ROOT / "docs/artifacts/demo/geocoding_v2")
+    p.add_argument("--config", type=Path, default=ROOT / "configs/demo/geocoding_v2.json")
     p.add_argument("--request")
     p.add_argument("--method", default="confidence_0.8")
     p.add_argument("--output", type=Path)
