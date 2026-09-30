@@ -144,5 +144,105 @@
       "after_whitespace_correct": 0,
       "changed_grades": []
     }
+  },
+  "confirmation": {
+    "catalog_map64": {
+      "n": 42,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "catalog_map8": {
+      "n": 42,
+      "primary_correct": 11,
+      "after_whitespace_correct": 11,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 42,
+      "primary_correct": 5,
+      "after_whitespace_correct": 5,
+      "changed_grades": []
+    },
+    "epic_lexical_32": {
+      "n": 42,
+      "primary_correct": 15,
+      "after_whitespace_correct": 15,
+      "changed_grades": []
+    },
+    "epic_lexical_64": {
+      "n": 42,
+      "primary_correct": 15,
+      "after_whitespace_correct": 15,
+      "changed_grades": []
+    },
+    "epic_lexical_8": {
+      "n": 42,
+      "primary_correct": 16,
+      "after_whitespace_correct": 16,
+      "changed_grades": []
+    },
+    "exact_b64": {
+      "n": 42,
+      "primary_correct": 3,
+      "after_whitespace_correct": 3,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.8": {
+      "n": 42,
+      "primary_correct": 4,
+      "after_whitespace_correct": 4,
+      "changed_grades": []
+    }
+  },
+  "repeat": {
+    "catalog_map64": {
+      "n": 42,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "catalog_map8": {
+      "n": 42,
+      "primary_correct": 11,
+      "after_whitespace_correct": 11,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 42,
+      "primary_correct": 5,
+      "after_whitespace_correct": 5,
+      "changed_grades": []
+    },
+    "epic_lexical_32": {
+      "n": 42,
+      "primary_correct": 15,
+      "after_whitespace_correct": 15,
+      "changed_grades": []
+    },
+    "epic_lexical_64": {
+      "n": 42,
+      "primary_correct": 15,
+      "after_whitespace_correct": 15,
+      "changed_grades": []
+    },
+    "epic_lexical_8": {
+      "n": 42,
+      "primary_correct": 17,
+      "after_whitespace_correct": 17,
+      "changed_grades": []
+    },
+    "exact_b64": {
+      "n": 42,
+      "primary_correct": 3,
+      "after_whitespace_correct": 3,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.8": {
+      "n": 42,
+      "primary_correct": 4,
+      "after_whitespace_correct": 4,
+      "changed_grades": []
+    }
   }
 }

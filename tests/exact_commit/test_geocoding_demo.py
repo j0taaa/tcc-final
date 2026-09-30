@@ -2,6 +2,7 @@ import copy
 import hashlib
 import json
 from contextlib import contextmanager
+from pathlib import Path
 
 import pytest
 
@@ -9,6 +10,43 @@ from mwpc_research import geocoding
 
 QUESTION = 'Locate "São Paulo".'
 CALL = "get_location(name='São Paulo')"
+
+
+def test_independent_checker_accepts_all_archived_live_v1_records_without_network(monkeypatch):
+    from scripts.exact_commit.verify_query_demo import verify
+
+    def no_network(*args, **kwargs):
+        raise AssertionError("certificate checking must remain offline")
+
+    monkeypatch.setattr(geocoding, "urlopen", no_network)
+    root = Path(__file__).resolve().parents[2] / "docs/artifacts/demo"
+    records = [root / "geocoding_v1", *sorted((root / "geocoding_comparators_v1").iterdir())]
+    assert len(records) == 4
+    for directory in records:
+        result = verify(directory)
+        assert result["status"] == "query_empty"
+        assert result["api_recorded"]
+
+
+def test_quote_free_profile_excludes_corrupted_spans_and_preserves_place_names():
+    question = 'Find the geographic coordinates of "Belo Horizonte".'
+    legacy = geocoding.geocoding_catalog(question)
+    restricted = geocoding.geocoding_catalog(question, "quote_free_names_v2")
+    assert "get_location(name='Belo Horizonte')" in restricted
+    assert "get_location(name='Belo')" in restricted
+    assert "get_location(name='Horizonte')" in restricted
+    bad = """get_location(name='of "Belo Horizonte')"""
+    assert bad in legacy and bad not in restricted
+    geocoding.validated_url(bad, question)
+    with pytest.raises(ValueError):
+        geocoding.validated_url(bad, question, "quote_free_names_v2")
+    apostrophe = geocoding.geocoding_catalog("Locate O'Fallon.", "quote_free_names_v2")
+    assert any(
+        "O'Fallon" == geocoding.scalar_call_arguments(c, geocoding.FUNCTION)["name"]
+        for c in apostrophe
+    )
+    with pytest.raises(ValueError, match="Unknown"):
+        geocoding.geocoding_catalog(question, "undeclared")
 
 
 def test_dispatch_encodes_only_the_validated_allowlisted_call():

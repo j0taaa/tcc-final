@@ -30,6 +30,26 @@
       ],
       "manifest_sha256": "af157a5f7050a020c581be71ee2451e6bccf32f3e7d4c93a8d054f3f0220ccba",
       "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m25_grounded_development_v1.json"
+    },
+    "confirmation": {
+      "records": 336,
+      "planned_records": 336,
+      "interrupted": false,
+      "producing_commits": [
+        "128c584b407d0aa994162f059614fd274dfbcc14"
+      ],
+      "manifest_sha256": "107fa2ea7e0a359a69f0da679f6913539d7c413b3f74f2a9dc1e593aeeed2b6a",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m25_grounded_confirmation_v2.json"
+    },
+    "repeat": {
+      "records": 336,
+      "planned_records": 336,
+      "interrupted": false,
+      "producing_commits": [
+        "128c584b407d0aa994162f059614fd274dfbcc14"
+      ],
+      "manifest_sha256": "eb9b31f4f8041541506c73fe75952c8475530d7d57c4fca60fd213aa7f926438",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m25_grounded_confirmation_repeat_v2.json"
     }
   },
   "interruption_snapshots": {
@@ -40,16 +60,17 @@
       "reason": "Snapshot of the same prefix retained in the resumed development cohort"
     }
   },
-  "complete_campaign": false,
-  "recorded_generations": 256,
-  "distinct_task_ids": 26,
-  "model_forwards": 4366,
+  "complete_campaign": true,
+  "recorded_generations": 928,
+  "distinct_task_ids": 68,
+  "model_forwards": 15596,
   "statuses": {
-    "complete": 240,
-    "resample_limit": 3,
-    "timeout": 13
+    "complete": 868,
+    "resample_limit": 9,
+    "timeout": 51
   },
   "source_commits": [
+    "128c584b407d0aa994162f059614fd274dfbcc14",
     "321926bfc968e0a899ac0ced9e2b6bcea5f684f0",
     "81ce949a821ace36489b100ae494359d290b7ca4",
     "b71e3c6be6139bb5fa82d4724d07813b331496cf",

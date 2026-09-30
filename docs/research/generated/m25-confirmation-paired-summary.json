@@ -1,0 +1,360 @@
+{
+  "source_commits": [
+    "128c584b407d0aa994162f059614fd274dfbcc14"
+  ],
+  "unique_requests": 42,
+  "records": 672,
+  "primary_method": "confidence_0.8",
+  "table": [
+    {
+      "method": "epic_lexical_8",
+      "analysis": "external_grounded_confirmation",
+      "n": 42,
+      "correct": [
+        16,
+        17
+      ],
+      "numeric_correct": null,
+      "valid": [
+        40,
+        40
+      ],
+      "forwards": [
+        281,
+        281
+      ],
+      "median_total_ms": 1990.3690730861854,
+      "p95_total_ms": 2876.7068972811103,
+      "changed_outputs_between_repeats": 7
+    },
+    {
+      "method": "epic_lexical_32",
+      "analysis": "external_grounded_confirmation",
+      "n": 42,
+      "correct": [
+        15,
+        15
+      ],
+      "numeric_correct": null,
+      "valid": [
+        41,
+        41
+      ],
+      "forwards": [
+        1181,
+        1181
+      ],
+      "median_total_ms": 4609.465609537438,
+      "p95_total_ms": 6168.804776738398,
+      "changed_outputs_between_repeats": 11
+    },
+    {
+      "method": "epic_lexical_64",
+      "analysis": "external_grounded_confirmation",
+      "n": 42,
+      "correct": [
+        15,
+        15
+      ],
+      "numeric_correct": null,
+      "valid": [
+        41,
+        41
+      ],
+      "forwards": [
+        2353,
+        2353
+      ],
+      "median_total_ms": 7382.268758112332,
+      "p95_total_ms": 10583.818360231817,
+      "changed_outputs_between_repeats": 10
+    },
+    {
+      "method": "catalog_map8",
+      "analysis": "external_grounded_confirmation",
+      "n": 42,
+      "correct": [
+        11,
+        11
+      ],
+      "numeric_correct": null,
+      "valid": [
+        42,
+        42
+      ],
+      "forwards": [
+        336,
+        336
+      ],
+      "median_total_ms": 1162.148630595766,
+      "p95_total_ms": 1559.840801754035,
+      "changed_outputs_between_repeats": 0
+    },
+    {
+      "method": "confidence_0.8",
+      "analysis": "external_grounded_confirmation",
+      "n": 42,
+      "correct": [
+        5,
+        5
+      ],
+      "numeric_correct": null,
+      "valid": [
+        41,
+        41
+      ],
+      "forwards": [
+        757,
+        758
+      ],
+      "median_total_ms": 36157.09936749772,
+      "p95_total_ms": 78816.56804203521,
+      "changed_outputs_between_repeats": 1
+    },
+    {
+      "method": "greedy_confidence_0.8",
+      "analysis": "external_grounded_confirmation",
+      "n": 42,
+      "correct": [
+        4,
+        4
+      ],
+      "numeric_correct": null,
+      "valid": [
+        24,
+        24
+      ],
+      "forwards": [
+        474,
+        471
+      ],
+      "median_total_ms": 30711.828985688044,
+      "p95_total_ms": 96539.13535317406,
+      "changed_outputs_between_repeats": 1
+    },
+    {
+      "method": "exact_b64",
+      "analysis": "external_grounded_confirmation",
+      "n": 42,
+      "correct": [
+        3,
+        3
+      ],
+      "numeric_correct": null,
+      "valid": [
+        42,
+        42
+      ],
+      "forwards": [
+        192,
+        192
+      ],
+      "median_total_ms": 8928.489550889935,
+      "p95_total_ms": 24677.240188000724,
+      "changed_outputs_between_repeats": 0
+    },
+    {
+      "method": "catalog_map64",
+      "analysis": "external_grounded_confirmation",
+      "n": 42,
+      "correct": [
+        2,
+        2
+      ],
+      "numeric_correct": null,
+      "valid": [
+        42,
+        42
+      ],
+      "forwards": [
+        42,
+        42
+      ],
+      "median_total_ms": 206.8246795097366,
+      "p95_total_ms": 348.9956004777923,
+      "changed_outputs_between_repeats": 0
+    }
+  ],
+  "paired_comparisons": {
+    "confidence_0.8": {
+      "comparator": "epic_lexical_32",
+      "wins_first_repeat": 2,
+      "losses_first_repeat": 12,
+      "mcnemar_exact_two_sided": 0.012939453125,
+      "accuracy_difference_pp": -23.80952380952381,
+      "paired_accuracy_conservative95_pp": [
+        -46.371914776069815,
+        3.6706969714399573
+      ],
+      "accuracy_difference_bootstrap95_pp": [
+        -40.476190476190474,
+        -7.142857142857143
+      ],
+      "median_paired_speed_ratio": 0.14287449727177104,
+      "speed_ratio_bootstrap95": [
+        0.11509674760706116,
+        0.17632631765589774
+      ],
+      "bootstrap_seed": 240999,
+      "bootstrap_replicates": 2000
+    },
+    "exact_b64": {
+      "comparator": "epic_lexical_32",
+      "wins_first_repeat": 3,
+      "losses_first_repeat": 15,
+      "mcnemar_exact_two_sided": 0.007537841796875,
+      "accuracy_difference_pp": -28.571428571428573,
+      "paired_accuracy_conservative95_pp": [
+        -52.98283135311359,
+        1.4835341873962737
+      ],
+      "accuracy_difference_bootstrap95_pp": [
+        -45.23809523809524,
+        -9.523809523809524
+      ],
+      "median_paired_speed_ratio": 0.5132444371760332,
+      "speed_ratio_bootstrap95": [
+        0.4294515073262426,
+        0.7446118587594591
+      ],
+      "bootstrap_seed": 240999,
+      "bootstrap_replicates": 2000
+    },
+    "greedy_confidence_0.8": {
+      "comparator": "epic_lexical_32",
+      "wins_first_repeat": 1,
+      "losses_first_repeat": 12,
+      "mcnemar_exact_two_sided": 0.00341796875,
+      "accuracy_difference_pp": -26.19047619047619,
+      "paired_accuracy_conservative95_pp": [
+        -46.74385533583753,
+        -0.055635282112265205
+      ],
+      "accuracy_difference_bootstrap95_pp": [
+        -40.476190476190474,
+        -11.904761904761905
+      ],
+      "median_paired_speed_ratio": 0.13614909741554254,
+      "speed_ratio_bootstrap95": [
+        0.10912931137967491,
+        0.23705402481276522
+      ],
+      "bootstrap_seed": 240999,
+      "bootstrap_replicates": 2000
+    },
+    "epic_lexical_8": {
+      "comparator": "epic_lexical_32",
+      "wins_first_repeat": 1,
+      "losses_first_repeat": 0,
+      "mcnemar_exact_two_sided": 1.0,
+      "accuracy_difference_pp": 2.380952380952381,
+      "paired_accuracy_conservative95_pp": [
+        -9.87761823077944,
+        14.254977315453981
+      ],
+      "accuracy_difference_bootstrap95_pp": [
+        0.0,
+        7.142857142857143
+      ],
+      "median_paired_speed_ratio": 2.317254996920542,
+      "speed_ratio_bootstrap95": [
+        2.1854273713354857,
+        2.526276914383756
+      ],
+      "bootstrap_seed": 240999,
+      "bootstrap_replicates": 2000
+    },
+    "epic_lexical_32": {
+      "comparator": "epic_lexical_32",
+      "wins_first_repeat": 0,
+      "losses_first_repeat": 0,
+      "mcnemar_exact_two_sided": 1.0,
+      "accuracy_difference_pp": 0.0,
+      "paired_accuracy_conservative95_pp": [
+        -9.907563227814848,
+        9.907563227814848
+      ],
+      "accuracy_difference_bootstrap95_pp": [
+        0.0,
+        0.0
+      ],
+      "median_paired_speed_ratio": 1.0,
+      "speed_ratio_bootstrap95": [
+        1.0,
+        1.0
+      ],
+      "bootstrap_seed": 240999,
+      "bootstrap_replicates": 2000
+    },
+    "epic_lexical_64": {
+      "comparator": "epic_lexical_32",
+      "wins_first_repeat": 0,
+      "losses_first_repeat": 0,
+      "mcnemar_exact_two_sided": 1.0,
+      "accuracy_difference_pp": 0.0,
+      "paired_accuracy_conservative95_pp": [
+        -9.907563227814848,
+        9.907563227814848
+      ],
+      "accuracy_difference_bootstrap95_pp": [
+        0.0,
+        0.0
+      ],
+      "median_paired_speed_ratio": 0.614612154829264,
+      "speed_ratio_bootstrap95": [
+        0.5925722874239656,
+        0.6398703679764686
+      ],
+      "bootstrap_seed": 240999,
+      "bootstrap_replicates": 2000
+    },
+    "catalog_map8": {
+      "comparator": "epic_lexical_32",
+      "wins_first_repeat": 2,
+      "losses_first_repeat": 6,
+      "mcnemar_exact_two_sided": 0.2890625,
+      "accuracy_difference_pp": -9.523809523809524,
+      "paired_accuracy_conservative95_pp": [
+        -30.22852275580144,
+        13.33700119810497
+      ],
+      "accuracy_difference_bootstrap95_pp": [
+        -21.428571428571427,
+        2.380952380952381
+      ],
+      "median_paired_speed_ratio": 3.9067312842220807,
+      "speed_ratio_bootstrap95": [
+        3.8282193307573396,
+        3.9690255697164374
+      ],
+      "bootstrap_seed": 240999,
+      "bootstrap_replicates": 2000
+    },
+    "catalog_map64": {
+      "comparator": "epic_lexical_32",
+      "wins_first_repeat": 2,
+      "losses_first_repeat": 15,
+      "mcnemar_exact_two_sided": 0.002349853515625,
+      "accuracy_difference_pp": -30.952380952380953,
+      "paired_accuracy_conservative95_pp": [
+        -53.73087805505592,
+        -1.9309767933730293
+      ],
+      "accuracy_difference_bootstrap95_pp": [
+        -47.61904761904762,
+        -14.285714285714286
+      ],
+      "median_paired_speed_ratio": 23.037433640567833,
+      "speed_ratio_bootstrap95": [
+        21.305347200327162,
+        24.83688055220415
+      ],
+      "bootstrap_seed": 240999,
+      "bootstrap_replicates": 2000
+    }
+  },
+  "comparator": "epic_lexical_32",
+  "frozen_primary_comparator": "epic_lexical_32",
+  "comparison_role": "frozen_primary",
+  "scope": "family-disjoint public BFCL scalar queries; question/schema-derived finite support; own strict AST evaluator, not official BFCL score; all selected cases retained; two timing repetitions, not independent samples; secondary CIs unadjusted"
+}

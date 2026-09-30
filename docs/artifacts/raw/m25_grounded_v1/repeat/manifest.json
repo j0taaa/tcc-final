@@ -1,0 +1,12 @@
+{
+  "source_experiment": "m25_grounded_confirmation_repeat_v2",
+  "records": 336,
+  "uncompressed_results_sha256": "fe09aabc1451c213ca5d7b2f736539a34baec467f1ebf66bce45ad35bed0a890",
+  "sha256": {
+    "config.json": "72db79cb1f65c4eb76f308a70e3848afd5b29438b0263d47d5115cd6233021dc",
+    "metadata.json": "df8595f5b628c299d5d73829da07441780f608ef2f8c1a8ca8d9adf788e8dea6",
+    "support.json": "3fc1d1c8f51807fe52968b63ff2dcafb71427ee4fd4c9603088955a41d962eb9",
+    "token_emissions.json": "ad02c86bf63c3b952af2c8936e6575c36d88e2eff82beedb78b8e427a9f01ae4",
+    "results.jsonl.gz": "0ee43929597c388c7717844365b961e423074ede2afa288f0236fef30a481a49"
+  }
+}

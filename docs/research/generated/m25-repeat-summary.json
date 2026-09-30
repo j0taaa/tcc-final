@@ -1,0 +1,195 @@
+{
+  "experiment_id": "m25_grounded_confirmation_repeat_v2",
+  "phase": "frozen grounded external confirmation; reversed method order",
+  "records": 336,
+  "source_commit": "128c584b407d0aa994162f059614fd274dfbcc14",
+  "table": [
+    {
+      "method": "epic_lexical_8",
+      "n": 42,
+      "correct": 17,
+      "numeric_correct": null,
+      "valid": 40,
+      "forwards": 281,
+      "median_total_ms": 1962.96220831573,
+      "p95_total_ms": 2869.2718108650297,
+      "median_decode_ms": 1870.5283040180802,
+      "statuses": {
+        "complete": 41,
+        "resample_limit": 1
+      },
+      "recovery_statuses": {
+        "recovered": 22,
+        "not_needed": 19,
+        "no_completion": 1
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 6.4609293937683105
+    },
+    {
+      "method": "epic_lexical_32",
+      "n": 42,
+      "correct": 15,
+      "numeric_correct": null,
+      "valid": 41,
+      "forwards": 1181,
+      "median_total_ms": 4637.651562865358,
+      "p95_total_ms": 6248.8178526982665,
+      "median_decode_ms": 4500.171916501131,
+      "statuses": {
+        "complete": 41,
+        "resample_limit": 1
+      },
+      "recovery_statuses": {
+        "recovered": 24,
+        "not_needed": 17,
+        "no_completion": 1
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 6.4609293937683105
+    },
+    {
+      "method": "epic_lexical_64",
+      "n": 42,
+      "correct": 15,
+      "numeric_correct": null,
+      "valid": 41,
+      "forwards": 2353,
+      "median_total_ms": 7414.3743246095255,
+      "p95_total_ms": 10597.324052709155,
+      "median_decode_ms": 7295.9269900457,
+      "statuses": {
+        "complete": 41,
+        "resample_limit": 1
+      },
+      "recovery_statuses": {
+        "recovered": 22,
+        "not_needed": 19,
+        "no_completion": 1
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 6.186733245849609
+    },
+    {
+      "method": "catalog_map8",
+      "n": 42,
+      "correct": 11,
+      "numeric_correct": null,
+      "valid": 42,
+      "forwards": 336,
+      "median_total_ms": 1156.0719195986167,
+      "p95_total_ms": 1623.1919438578188,
+      "median_decode_ms": 1080.3502654889598,
+      "statuses": {
+        "complete": 42
+      },
+      "recovery_statuses": {
+        "not_applicable": 42
+      },
+      "ordinary_commits": 759,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.459400653839111
+    },
+    {
+      "method": "confidence_0.8",
+      "n": 42,
+      "correct": 5,
+      "numeric_correct": null,
+      "valid": 41,
+      "forwards": 758,
+      "median_total_ms": 36134.84976923792,
+      "p95_total_ms": 78809.58187673241,
+      "median_decode_ms": 35966.80925501278,
+      "statuses": {
+        "complete": 41,
+        "timeout": 1
+      },
+      "recovery_statuses": {
+        "not_applicable": 42
+      },
+      "ordinary_commits": 813,
+      "fallback_steps": 347,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.459400653839111
+    },
+    {
+      "method": "greedy_confidence_0.8",
+      "n": 42,
+      "correct": 4,
+      "numeric_correct": null,
+      "valid": 24,
+      "forwards": 471,
+      "median_total_ms": 30591.87074500369,
+      "p95_total_ms": 96449.66045976616,
+      "median_decode_ms": 30554.72027353244,
+      "statuses": {
+        "timeout": 18,
+        "complete": 24
+      },
+      "recovery_statuses": {
+        "not_applicable": 42
+      },
+      "ordinary_commits": 437,
+      "fallback_steps": 212,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.45805025100708
+    },
+    {
+      "method": "exact_b64",
+      "n": 42,
+      "correct": 3,
+      "numeric_correct": null,
+      "valid": 42,
+      "forwards": 192,
+      "median_total_ms": 8959.244202880654,
+      "p95_total_ms": 24720.737879746594,
+      "median_decode_ms": 8923.478470998816,
+      "statuses": {
+        "complete": 42
+      },
+      "recovery_statuses": {
+        "not_applicable": 42
+      },
+      "ordinary_commits": 919,
+      "fallback_steps": 35,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.459400653839111
+    },
+    {
+      "method": "catalog_map64",
+      "n": 42,
+      "correct": 2,
+      "numeric_correct": null,
+      "valid": 42,
+      "forwards": 42,
+      "median_total_ms": 204.93623620131984,
+      "p95_total_ms": 395.8818087121472,
+      "median_decode_ms": 138.5327295283787,
+      "statuses": {
+        "complete": 42
+      },
+      "recovery_statuses": {
+        "not_applicable": 42
+      },
+      "ordinary_commits": 805,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.427737712860107
+    }
+  ],
+  "frontier": [
+    "epic_lexical_8",
+    "catalog_map8",
+    "catalog_map64"
+  ],
+  "frontier_scope": "catalog-only MAP is excluded as a dominator of production candidates",
+  "confirmation_candidates": [],
+  "scope": "M25 question/schema-grounded scalar calls; own checker, not official BFCL"
+}

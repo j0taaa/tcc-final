@@ -28,9 +28,28 @@ ENDPOINT = "https://geocoding-api.open-meteo.com/v1/search"
 ATTRIBUTION = "Open-Meteo Geocoding API; location data by GeoNames (https://www.geonames.org/)"
 
 
-def validated_url(call: str, question: str) -> str:
+def geocoding_catalog(question: str, support_policy: str = "question_spans_v1") -> tuple[str, ...]:
+    """Build a declared application support; keep historical query records readable."""
+    calls = grounded_catalog(FUNCTION, question)
+    if support_policy == "question_spans_v1":
+        return calls
+    if support_policy != "quote_free_names_v2":
+        raise ValueError("Unknown geocoding support policy")
+    # Question delimiters are not place-name content in this application profile.
+    # This is explicit support restriction, not safe pruning of a larger optimum.
+    filtered = tuple(
+        call for call in calls if '"' not in (scalar_call_arguments(call, FUNCTION) or {})["name"]
+    )
+    if not filtered:
+        raise ValueError("No represented quote-free geographic name")
+    return filtered
+
+
+def validated_url(call: str, question: str, support_policy: str = "question_spans_v1") -> str:
     arguments = scalar_call_arguments(call, FUNCTION)
-    if arguments is None or normalize_schema_call(call) not in grounded_catalog(FUNCTION, question):
+    if arguments is None or normalize_schema_call(call) not in geocoding_catalog(
+        question, support_policy
+    ):
         raise ValueError("Call fails the schema or question-derived support validation")
     name = arguments["name"]
     if not 2 <= len(name) <= 100 or any(ord(c) < 32 for c in name):
@@ -40,8 +59,10 @@ def validated_url(call: str, question: str) -> str:
     )
 
 
-def fetch_location(call: str, question: str) -> dict[str, Any]:
-    url = validated_url(call, question)
+def fetch_location(
+    call: str, question: str, support_policy: str = "question_spans_v1"
+) -> dict[str, Any]:
+    url = validated_url(call, question, support_policy)
     request = Request(url, headers={"User-Agent": "MWPC-TCC-research-demo/1.0"})
     with urlopen(request, timeout=15) as response:
         raw = response.read(1_048_577)
@@ -80,7 +101,11 @@ def read_record(directory: Path) -> dict[str, Any]:
     if record["generation"]["status"] == "complete":
         api = record.get("api")
         try:
-            url = validated_url(record["generation"]["output"], record["request"])
+            url = validated_url(
+                record["generation"]["output"],
+                record["request"],
+                record.get("config", {}).get("grounding_policy", "question_spans_v1"),
+            )
         except ValueError:
             # Failed dispatch is evidence too. It cannot authorize a recorded query.
             failure = record.get("failure")

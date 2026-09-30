@@ -7,8 +7,7 @@ import json
 from math import fsum, isclose, isfinite
 from pathlib import Path
 
-from mwpc_research.geocoding import FUNCTION, read_record
-from mwpc_research.grounded_calls import grounded_catalog
+from mwpc_research.geocoding import geocoding_catalog, read_record
 
 ROOT = Path(__file__).resolve().parents[2]
 EOS = 126081
@@ -17,8 +16,10 @@ EOS = 126081
 def verify(directory):
     record = read_record(directory)
     generation, config, support = record["generation"], record["config"], record["support"]
-    calls = grounded_catalog(FUNCTION, record["request"])
-    assert support["catalog"] == calls
+    calls = geocoding_catalog(
+        record["request"], config.get("grounding_policy", "question_spans_v1")
+    )
+    assert support["catalog"] == list(calls)
     assert record["grammar_sha256"] == hashlib.sha256(json.dumps(calls).encode()).hexdigest()
     emissions = {int(t): bytes(b) for t, b in support["emissions"].items()}
     paths = support["paths"]
@@ -31,7 +32,7 @@ def verify(directory):
         assert all(t == EOS for t in tokens[end:])
         return b"".join(emissions[t] for t in tokens[:end]).decode("utf-8")
 
-    assert [decode(path) for path in paths] == calls
+    assert [decode(path) for path in paths] == list(calls)
     certificates = 0
     if record["policy"]["kind"] != "epic":
         canvas = [None] * config["slots"]

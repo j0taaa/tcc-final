@@ -1,0 +1,29 @@
+{
+  "full_python": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+    "result": "1130 passed in 59.96s"
+  },
+  "targeted_demo": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/exact_commit/test_geocoding_demo.py",
+    "result": "6 passed in 0.17s"
+  },
+  "upstream_integration": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q vendor/EPIC-Decoding/tests/test_constrain_utils.py vendor/EPIC-Decoding/tests/test_bindings.py",
+    "result": "19 passed, 4 pre-existing skips in 8.92s"
+  },
+  "ruff": "src, tests and both changed query scripts pass",
+  "mypy": "87 source files pass",
+  "upstream": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072 verified unchanged",
+  "campaign_check": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/build_grounded_campaign.py --check",
+    "records": 928,
+    "model_forwards": 15596,
+    "complete": true
+  },
+  "confirmation_source": "128c584b407d0aa994162f059614fd274dfbcc14",
+  "confirmation_grids": [
+    336,
+    336
+  ],
+  "demo_v1": "All four original attempts preserved and independently validated; all API queries empty. Follow-up policy is explicitly post-hoc and changes only application support, not benchmark or optimizer behavior."
+}

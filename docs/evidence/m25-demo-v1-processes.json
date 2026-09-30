@@ -1,0 +1,26 @@
+[
+  {
+    "method": "confidence_0.8",
+    "started_utc": "2026-09-30T04:41:55.976044+00:00",
+    "returncode": 0,
+    "ended_utc": "2026-09-30T04:43:14.980928+00:00"
+  },
+  {
+    "method": "exact_b64",
+    "started_utc": "2026-09-30T04:43:14.994457+00:00",
+    "returncode": 0,
+    "ended_utc": "2026-09-30T04:44:30.805156+00:00"
+  },
+  {
+    "method": "catalog_map8",
+    "started_utc": "2026-09-30T04:44:30.814420+00:00",
+    "returncode": 0,
+    "ended_utc": "2026-09-30T04:45:38.526077+00:00"
+  },
+  {
+    "method": "epic_lexical_32",
+    "started_utc": "2026-09-30T04:45:38.530311+00:00",
+    "returncode": 0,
+    "ended_utc": "2026-09-30T04:46:48.135428+00:00"
+  }
+]

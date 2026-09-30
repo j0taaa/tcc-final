@@ -1,0 +1,91 @@
+{
+  "cases": 42,
+  "answer_in_support": 38,
+  "methods": {
+    "catalog_map64": {
+      "all_correct": 2,
+      "covered_correct": 2,
+      "uncovered_correct": 0,
+      "min_catalog_size": 40,
+      "max_catalog_size": 1056,
+      "status_counts": {
+        "complete": 42
+      }
+    },
+    "catalog_map8": {
+      "all_correct": 11,
+      "covered_correct": 11,
+      "uncovered_correct": 0,
+      "min_catalog_size": 40,
+      "max_catalog_size": 1056,
+      "status_counts": {
+        "complete": 42
+      }
+    },
+    "confidence_0.8": {
+      "all_correct": 5,
+      "covered_correct": 5,
+      "uncovered_correct": 0,
+      "min_catalog_size": 40,
+      "max_catalog_size": 1056,
+      "status_counts": {
+        "complete": 41,
+        "timeout": 1
+      }
+    },
+    "epic_lexical_32": {
+      "all_correct": 15,
+      "covered_correct": 15,
+      "uncovered_correct": 0,
+      "min_catalog_size": 40,
+      "max_catalog_size": 1056,
+      "status_counts": {
+        "complete": 41,
+        "resample_limit": 1
+      }
+    },
+    "epic_lexical_64": {
+      "all_correct": 15,
+      "covered_correct": 15,
+      "uncovered_correct": 0,
+      "min_catalog_size": 40,
+      "max_catalog_size": 1056,
+      "status_counts": {
+        "complete": 41,
+        "resample_limit": 1
+      }
+    },
+    "epic_lexical_8": {
+      "all_correct": 16,
+      "covered_correct": 16,
+      "uncovered_correct": 0,
+      "min_catalog_size": 40,
+      "max_catalog_size": 1056,
+      "status_counts": {
+        "complete": 41,
+        "resample_limit": 1
+      }
+    },
+    "exact_b64": {
+      "all_correct": 3,
+      "covered_correct": 3,
+      "uncovered_correct": 0,
+      "min_catalog_size": 40,
+      "max_catalog_size": 1056,
+      "status_counts": {
+        "complete": 42
+      }
+    },
+    "greedy_confidence_0.8": {
+      "all_correct": 4,
+      "covered_correct": 4,
+      "uncovered_correct": 0,
+      "min_catalog_size": 40,
+      "max_catalog_size": 1056,
+      "status_counts": {
+        "timeout": 18,
+        "complete": 24
+      }
+    }
+  }
+}

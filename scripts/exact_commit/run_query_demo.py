@@ -17,11 +17,11 @@ from mwpc_research.geocoding import (
     FUNCTION,
     display_record,
     fetch_location,
+    geocoding_catalog,
     read_record,
     save_record,
     validated_url,
 )
-from mwpc_research.grounded_calls import grounded_catalog
 from mwpc_research.tool_parser import catalog_byte_grammar
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -48,7 +48,8 @@ def live(args):
     tokenizer = AutoTokenizer.from_pretrained(
         config["model_id"], revision=config["revision"], local_files_only=True
     )
-    calls = grounded_catalog(FUNCTION, request)
+    support_policy = config.get("grounding_policy", "question_spans_v1")
+    calls = geocoding_catalog(request, support_policy)
     paths, emissions = [], {}
     for call in calls:
         path, pieces = encode_call(tokenizer, call, slots=config["slots"], eos=EOS)
@@ -144,8 +145,8 @@ def live(args):
     }
     if generation["status"] == "complete":
         try:
-            validated_url(generation["output"], request)
-            record["api"] = fetch_location(generation["output"], request)
+            validated_url(generation["output"], request, support_policy)
+            record["api"] = fetch_location(generation["output"], request, support_policy)
             record["status"] = (
                 "query_complete" if record["api"]["payload"].get("results") else "query_empty"
             )
