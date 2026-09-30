@@ -1,0 +1,56 @@
+{
+  "python": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+    "result": "1130 passed in 61.09s"
+  },
+  "article_regressions_after_prose_edit": {
+    "result": "24 passed in 0.31s",
+    "scope": "result cautions, method, proofs, bibliography, AI disclosure and release metadata"
+  },
+  "rust": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 make test-rust-parser",
+    "result": "21 unit tests and 3 independent randomized/oracle tests passed; parser and binding fmt/clippy passed"
+  },
+  "upstream": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 make test-upstream",
+    "result": "406 passed, 8 pre-existing skips, 2 upstream parametrization warnings in 57.37s"
+  },
+  "style": "Ruff src/tests/changed analysis scripts and MyPy 87 source files pass",
+  "raw_derivatives": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 make article-results-check",
+    "result": "all historical/M24/M25 archives and generated article/query products verified"
+  },
+  "wheel": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 make release-wheel-smoke",
+    "result": "fresh non-editable installation, Q3 and statistical generation passed; no source-tree leakage",
+    "sdist_unpacked_bytes": 41795173,
+    "sdist_budget_bytes": 50000000,
+    "note": "Q3 packaging smoke ran while documentation was uncommitted and explicitly warned about dirty source metadata; it is not a performance or TCC measurement."
+  },
+  "paper": {
+    "command": "make -C paper; pdftoppm -r 120 -png paper/main.pdf results/raw/m25_external/pdf-pages/page",
+    "pages": 16,
+    "final_log_overflow_or_unresolved_references": false,
+    "visual_review": "All 16 final rendered pages inspected; equations, tables and bibliography legible with no clipping/overlap",
+    "sha256": "45fac9e0483ab14f512f6532fd808e6739ab1e51cf7528eb587dcd80e25efcc8"
+  },
+  "query_records": {
+    "command": "scripts/exact_commit/build_query_demo_results.py --check",
+    "records": 8,
+    "v1_empty": 4,
+    "v2_nonempty": 3,
+    "v2_empty": 1,
+    "scope": "Post-hoc support diagnosis; not benchmark accuracy evidence"
+  },
+  "interim_failures_resolved": [
+    "Initial article 17 pages; reduced prose with scientific cautions and proofs preserved",
+    "README historical date label restored; release metadata tests pass",
+    "A historical results caution moved during shortening was restored; article regression tests pass"
+  ],
+  "clean_clone_reproduction": {
+    "status": "pending"
+  },
+  "local_delivery": {
+    "status": "pending"
+  }
+}

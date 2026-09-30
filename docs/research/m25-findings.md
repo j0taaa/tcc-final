@@ -15,12 +15,12 @@ e confirmação. Todos os 68 casos elegíveis permanecem: 26 de desenvolvimento 
 
 A confirmação completa contém 42 pedidos por oito políticas e duas execuções:
 672 gerações, incluídas nos 928 registros de M25. Confiança 0,8 acerta 5/42 em
-ambas, contra 15/42 do EPIC 32. As medianas totais são 36.157 e 4.610 ms.
+ambas, contra 15/42 do EPIC 32. As medianas totais são 36.157 e 4.609 ms.
 A diferença primária é −23,81 pontos; o intervalo conservador de 95% é
 [−46,37; 3,67]. Não há não inferioridade nem redução de latência nesse recorte.
 
 EPIC 8 acerta 16/17 nas duas execuções, a 1.990 ms; MAP iterativo chega a 11/42,
-a 1.162 ms. Orçamento 64 acerta 3/42 a 8.929 ms, e MAP de uma passagem 2/42
+a 1.162 ms. Orçamento 64 acerta 3/42 a 8.928 ms, e MAP de uma passagem 2/42
 a 207 ms. Essas observações favorecem EPIC ou MAP iterativo para este conjunto,
 com seu custo e objetivo próprios. [Tabela completa e pareamento](generated/m25-confirmation-paired-results.md).
 

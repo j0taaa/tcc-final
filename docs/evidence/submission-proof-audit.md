@@ -59,3 +59,26 @@ No theorem premise was weakened, no benchmark or model observation was added,
 and no implementation-dependent placeholder was replaced. Subject to the
 explicit finite-support and per-step limitations already stated in the paper,
 the audited formal claims agree with the final implementation.
+
+
+## M25 formulation clarification, 2026-09-30
+
+The main feasible set explicitly uses the declared per-slot alternatives
+`S_i`, and the token-aligned lexical score makes `a not in S_i` impossible.
+Its CKY theorem assumes only fixed-length `H`; EOS/PAD restrictions are handled
+by composition in the finite-lattice theorem. Production terminal expansion
+is the compositional-byte `emit` map. The general lexical relation remains in
+the supplementary source as an optional extension, not a live lexer claim.
+
+The main graph pseudocode is now Algorithm 1; token-aligned and decoder
+pseudocode remain supplementary. Historical algorithm numbers above refer
+to the earlier audited manuscript.
+
+These clarifications retain the same non-negative-score equivalence, positive
+matched-ID recovery, neutral productions and finite-slot proof premises.
+The optimizer still guarantees only one-step `exact_on_support`; the confidence
+and budget policies keep the complete certificate separate from actual commits.
+No theorem promises task correctness or future-trajectory optimality.
+
+Final reproduction, tests and rendered-PDF evidence are recorded in
+`docs/evidence/m25-delivery-verification.json`.

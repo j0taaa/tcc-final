@@ -50,7 +50,7 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 The current local source/PDF delivery is described in
 [`dLLM study, 2026-09-30`](docs/releases/dllm-2026-09-30.md).
 It includes the versioned measurements and their reproduction scripts. The
-[2026-09-28 repair snapshot](docs/releases/repair-2026-09-28.md), M20 delivery
+[2026-09-28 source snapshot](docs/releases/repair-2026-09-28.md), M20 delivery
 and v0.2.0 remain historical; no remote publication was performed.
 From the current delivery directory:
 

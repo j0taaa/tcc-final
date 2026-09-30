@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\centering\small
+\caption{External scalar queries, disjoint function-name families. Own AST grading; not an official BFCL score. There are 42 requests. Correct calls are shown separately for two repetitions; total latency includes setup and upstream recovery, with repeats aggregated within each request. Forwards are summed over the first repetition.}
+\label{tab:live-grounded}
+\begin{tabular}{lrrrr}
+\toprule
+Method & Correct 1/2 & Valid 1/2 & Median ms & Forwards \\
+\midrule
+EPIC, 8 steps & 16/17 & 40/40 & 1990 & 281 \\
+EPIC, 32 steps & 15/15 & 41/41 & 4609 & 1181 \\
+EPIC, 64 steps & 15/15 & 41/41 & 7382 & 2353 \\
+MAP, cap 8 & 11/11 & 42/42 & 1162 & 336 \\
+MWPC, $\tau=0.8$ & 5/5 & 41/41 & 36157 & 757 \\
+Greedy, $\tau=0.8$ & 4/4 & 24/24 & 30712 & 474 \\
+MWPC, budget 64 & 3/3 & 42/42 & 8928 & 192 \\
+MAP, cap 64 & 2/2 & 42/42 & 207 & 42 \\
+\bottomrule
+\end{tabular}
+\end{table}

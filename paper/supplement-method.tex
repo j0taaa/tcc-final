@@ -191,3 +191,25 @@ Conceptually,
 A_{\mathrm{lex}}=(A_{\mathrm{tok}}\cap A_H)\circ T_{\mathrm{detok}}\circ T_{\mathrm{lex}}.
 \end{equation}
 $T_{\mathrm{detok}}$ maps tokens to bytes, $T_{\mathrm{lex}}$ maps bytes to lexemes, and $A_H$ implements EOS/PAD over token IDs. The synchronized product precedes detokenization so its operands read the same alphabet. Token-arc weights and provenance survive composition. The relation must reflect maximal munch and priorities: accepting arbitrary segmentations can accept a sequence a real lexer would reject. No such programming-language lexer is integrated into the live production path.
+
+
+% General lexical-relation formulation retained at M25.
+Let $\operatorname{detok}:\vocab^n\rightarrow\bytealpha^*$ denote detokenization. To support deterministic lexers or more general lexical relations, define
+\begin{equation}
+ \Lambda\subseteq\bytealpha^*\times\lexalpha^*,
+\end{equation}
+where $(b,\ell)\in\Lambda$ means that byte sequence $b$ can produce lexeme sequence $\ell$. The CFG $G=(N,\lexalpha,P,S)$ is defined over lexemes. Length, $\eos$, and $\pad$ conventions are represented by a regular predicate $H(y)$.
+
+\begin{definition}[Feasible completion]
+The set of feasible completions at state $x$ is
+\begin{equation}
+\Feas_x=\left\{y\in\vocab^n\;\middle|\;
+\begin{array}{l}
+y\text{ preserves }x,\ H(y),\text{ and there exists }\ell\in\lexalpha^*\\
+\text{such that }(\operatorname{detok}(y),\ell)\in\Lambda
+\text{ and }\ell\in L(G)
+\end{array}\right\}.
+\end{equation}
+\end{definition}
+
+This definition separates levels that must not be conflated: canvas position, model token, detokenized bytes, lexemes, and grammar terminals. The initial token-aligned version is the special case where $\vocab=\lexalpha$, $\operatorname{detok}$ and $\Lambda$ are identities, and $H$ only requires length $n$.

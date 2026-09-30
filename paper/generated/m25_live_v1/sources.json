@@ -1,9 +1,14 @@
 {
   "summary_sha256": {
     "m24-confirmation-paired-summary.json": "f9719eddcdde68e79cfa150b678d6ef591c7e6e1e671946c168260984683b73f",
-    "m24-secondary-vs-epic_lexical_8.json": "58f18fbef958ee02bbe88c3ffe7eecce8db7b8f0b247ccbb3471c4ab2e7b6d2f"
+    "m24-secondary-vs-epic_lexical_8.json": "58f18fbef958ee02bbe88c3ffe7eecce8db7b8f0b247ccbb3471c4ab2e7b6d2f",
+    "m25-confirmation-paired-summary.json": "018acf603729689043081c988fbcbf55baafec6cb86ca962bbd40a36d6381ae1",
+    "m25-confirmation-coverage.json": "65a9ef0bd382eac4f4ede9fe1276646dc6618e72c99bc34af08b528e543bda69",
+    "m25-query-demo-summary.json": "f312845b55a2058de94a756f5b4270a2bea0e1d1e431eda6e4c96b80a999d15b"
   },
   "validation_commands": [
-    "scripts/exact_commit/build_policy_campaign.py --check"
+    "scripts/exact_commit/build_policy_campaign.py --check",
+    "scripts/exact_commit/build_grounded_campaign.py --check",
+    "scripts/exact_commit/build_query_demo_results.py --check"
   ]
 }

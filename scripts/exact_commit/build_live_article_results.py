@@ -117,6 +117,9 @@ def build(*, grounded):
         values["MGroundedPrimaryDifference"] = f"{primary['accuracy_difference_pp']:.2f}"
         values["MGroundedPrimaryLower"] = f"{primary['paired_accuracy_conservative95_pp'][0]:.2f}"
         values["MGroundedPrimaryUpper"] = f"{primary['paired_accuracy_conservative95_pp'][1]:.2f}"
+        demo = read("m25-query-demo-summary.json")
+        values["MQueryRecords"] = str(len(demo["records"]))
+        values["MQueryInitialEmpty"] = str(demo["phases"]["1"].get("query_empty", 0))
     output["live-values.tex"] = (
         "\n".join("\\newcommand{\\" + name + "}{" + value + "}" for name, value in values.items())
         + "\n"
@@ -126,7 +129,14 @@ def build(*, grounded):
             {
                 "summary_sha256": sources,
                 "validation_commands": ["scripts/exact_commit/build_policy_campaign.py --check"]
-                + (["scripts/exact_commit/build_grounded_campaign.py --check"] if grounded else []),
+                + (
+                    [
+                        "scripts/exact_commit/build_grounded_campaign.py --check",
+                        "scripts/exact_commit/build_query_demo_results.py --check",
+                    ]
+                    if grounded
+                    else []
+                ),
             },
             indent=2,
         )

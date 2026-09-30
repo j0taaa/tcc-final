@@ -37,9 +37,9 @@ Preserve exact_on_support, immutable fixed slots, all failures and real EPIC.
 - [x] T2503: Deliver a runnable dLLM-to-read-only-query demo with validated calls,
   explicit live/replay modes, failure handling and reproducible local evidence.
   **Evidence:** eight real LLaDA/Open-Meteo trajectories archived under `docs/artifacts/demo/`; `build_query_demo_results.py --check` independently verifies all checksums, support, finite slots, fixed positions and matched objectives offline. All four v1 queries were empty; the separately declared quote-free v2 support yields Belo Horizonte for confidence/MAP/EPIC, while budget 64 stays empty. Defaults use the correct confidence v2 recording; `run_query_demo.py --mode replay` returns the attributed saved result without model/network. Both immutable configs, process ledgers, original failures and the post-hoc limitation are preserved; scientific benchmark results are unchanged.
-- [ ] T2504: Update the article from versioned M24/M25 artifacts, clarify novelty
+- [x] T2504: Update the article from versioned M24/M25 artifacts, clarify novelty
   and limitations, regenerate tables/figures, build and visually verify the PDF.
-  **Evidence:** pending.
+  **Evidence:** M24/M25 tables and macros generated from versioned validated archives; source hashes and generating commands in `paper/generated/m25_live_v1/sources.json`. The final SBC PDF has 16 pages, no overflow/unresolved references, and all 16 rendered pages visually inspected. Main claims preserve the scoped synthetic benefit, failed external transfer, post-hoc demo restriction and exact_on_support; proofs explicitly declare slot support/H. Bibliography has 32 audited entries including weighted CFG, max-marginals, TACG and FactorDLM. Full Python 1,130 passed; 24 article regressions pass after prose adjustment; Rust 24 tests/fmt/clippy, upstream 406 passed/8 existing skips and artifact checks pass. Evidence `docs/evidence/m25-delivery-verification.json`.
 - [ ] T2505: Complete clean installation/reproduction checks, project documentation
   and a local source/PDF/evidence delivery; record unresolved external limitations.
   **Evidence:** pending.
