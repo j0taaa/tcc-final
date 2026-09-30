@@ -1,0 +1,104 @@
+% Historical unbudgeted parser proofs, preserved from 0f0f3d3.
+% Original numbering: CKY Theorem 2, graph Theorem 3.
+% Main mathematical proofs now concern the larger joint-budget problem.
+\section{Token-Aligned Algorithm}
+\label{sec:tokenaligned}
+
+In this version, each model token is a CFG terminal and $H$ requires only length $n$. EOS/PAD restrictions are composed in the lattice version. Assume that $G$ is in Chomsky normal form, with productions $A\rightarrow BC$ and $A\rightarrow a$. Unit productions, empty productions, and special symbols must be removed or handled by a separate closure.
+
+For each position $i$ and terminal $a$, define the lexical reward
+\begin{equation}
+s_i(a)=
+\begin{cases}
+\neginf, & a\notin S_i\text{ or }(x_i\neq\mask\text{ and }a\neq x_i),\\
+\displaystyle\sum_{j:i_j=i,\ t_j=a}w_j, & \text{otherwise.}
+\end{cases}
+\label{eq:lexscore}
+\end{equation}
+The empty sum is zero. Thus, tokens outside the declared support or incompatible with fixed positions are impossible, while permitted tokens receive exactly the sum of the proposals they satisfy.
+
+Define $D[A,i,j]$ as the highest reward of a string derivable from $A$ that occupies positions $i,\ldots,j-1$. The base cases are
+\begin{equation}
+D[A,i,i+1]=\max_{A\rightarrow a\in P}s_i(a).
+\label{eq:basecky}
+\end{equation}
+For longer spans,
+\begin{equation}
+D[A,i,j]=
+\max_{A\rightarrow BC\in P}\ \max_{i<k<j}
+\left(D[B,i,k]+D[C,k,j]\right).
+\label{eq:cky}
+\end{equation}
+Impossible entries have value $\neginf$. Backpointers store the terminal, production, and split that attain each maximum.
+
+
+
+\begin{theorem}[Correctness of weighted CKY]
+For every entry $D[A,i,j]$ computed by Equations~\ref{eq:basecky}--\ref{eq:cky}, its value is the maximum of $\sum_{r=i}^{j-1}s_r(y_r)$ over strings $y_i\cdots y_{j-1}$ derivable from $A$. Consequently, the algorithm returns a maximum-reward completion $y^*\in\Feas_x$ and an optimal MWPC batch.
+\end{theorem}
+
+\begin{proof}
+The proof is by induction on length $j-i$. For length one, Equation~\ref{eq:basecky} examines every terminal production and assigns the correct score. For a longer span, every CNF derivation begins with some production $A\rightarrow BC$ and splits the string at $k$. By the induction hypothesis, both child entries contain the best values for their subspans; adding them yields the best derivation for that production and split. Taking the maximum over all choices covers every possible derivation. The start entry therefore represents the highest-reward feasible completion. Corollary~1 converts that completion into the optimal batch.
+\end{proof}
+
+If $|P_2|$ is the number of binary productions, a direct implementation takes $O(|P_2|n^3+|P_1|n)$ time and $O(|N|n^2)$ memory, in addition to backpointers. This version is the reference implementation: its output can be compared with enumeration of all subsets and all strings on small instances.
+
+\subsection{Max-plus parsing over the graph}
+
+Let $Q$ be the state set of the resulting lexical graph. For a CFG in CNF, define
+\begin{equation}
+D[A,p,q]=\text{maximum weight of a path from $p$ to $q$ derivable from $A$}.
+\end{equation}
+For each terminal arc $e=(p,a,q)$,
+\begin{equation}
+D[A,p,q]\gets\max(D[A,p,q],\omega(e))
+\quad\text{for every }A\rightarrow a.
+\end{equation}
+For binary productions,
+\begin{equation}
+D[A,p,q]=
+\max_{A\rightarrow BC}\ \max_{r\in Q}
+\left(D[B,p,r]+D[C,r,q]\right).
+\label{eq:graphdp}
+\end{equation}
+The algorithm is the Viterbi version of CFG--automaton intersection. A weighted Earley implementation may avoid CNF and exploit top-down guidance, but it must preserve the same maximum and backpointer semantics.
+
+\begin{algorithm}[ht]
+\caption{Max-plus parsing over a finite lattice}
+\label{alg:graph}
+\footnotesize
+\begin{algorithmic}[1]
+\Require strict CNF $G$ with flag $\nu=[\varepsilon\in L(G)]$; finite weighted DAG $A$
+\Ensure status, best original path, provenance, and score
+\State $(\bar A,\rho,z_\varepsilon)\gets\Call{NormalizeEpsilon}{A}$ \Comment{see text}
+\State Topologically index states; initialize every $D[B,p,q]\gets\neginf$
+\State Seed terminal entries using saturated arc weights and edge backpointers
+\State Apply recurrence~\eqref{eq:graphdp} by increasing span, storing each winning split
+\State $z\gets$ best reconstructed $D[S,q_{\mathrm{start}},f]$ over $f\in F$, or none
+\State Expand $z$ through $\rho$; compare with $z_\varepsilon$ when $\nu$ permits it
+\If{neither candidate exists} \State \Return \textsc{InfeasibleOnSupport} \EndIf
+\State Recover tokens $y^*$ from the winning original path
+\State $J^*\gets\{j:y^*_{i_j}=t_j,\ w_j>0\}$
+\State \Return \textsc{Optimal}, witness, proposal IDs, score, support specification
+\end{algorithmic}
+\end{algorithm}
+
+Here strict CNF contains only terminal and binary productions; a separate flag records empty-word acceptance. Grammar normalization removes nullable and unit productions before parsing. \textsc{NormalizeEpsilon} computes maximum-weight epsilon-only paths between state pairs in the DAG. For each terminal arc, it creates saturated arcs consisting of an epsilon prefix, that terminal, and an epsilon suffix. Each saturated arc retains its original edge sequence in $\rho$; $z_\varepsilon$ is the best entirely epsilon path from the start to any final state, including a zero-edge path when permitted. Comparing it separately is necessary when a canvas emits only EOS/PAD.
+
+Any original nonempty path can be partitioned around its terminal edges; replacing an epsilon segment by the maximum between the same endpoints cannot reduce its score. Conversely, concatenated saturated arcs expand to an existing original DAG path with the same weight. Equal-score alternatives may share a representative because the objective requires one optimal witness, not every optimum. Original edge IDs preserve token provenance. A completed search alone can return \textsc{Optimal} or \textsc{InfeasibleOnSupport}; a deadline interruption returns \textsc{Timeout} without a certificate.
+
+\begin{theorem}[Lattice soundness, completeness, and optimality]
+Assume that: (i) the lattice represents exactly the token sequences permitted by the state and $H$; (ii) terminal expansion represents exactly $\operatorname{emit}$; (iii) grammar normalization, epsilon saturation, and the separate empty-output candidate preserve maximum scores and reconstructible original paths; and (iv) the span dynamic program completes without unsafe pruning. Then Algorithm~\ref{alg:graph}: (a) returns only a completion in $\Feas_x$; (b) finds a completion whenever $\Feas_x$ is nonempty on the represented support; and (c) returns a maximum-weight MWPC batch on that support.
+\end{theorem}
+
+\begin{proof}
+Every reconstructed original path starts at $q_0$, ends at a final state, and follows existing arcs. By assumption (i), it corresponds to a permitted token sequence; by assumption (ii) and the derivation from $S$, its emitted terminals belong to $L(G)$. This proves soundness. For completeness, every feasible completion corresponds to a lattice path and some CFG derivation, recovered by epsilon normalization and the terminal/binary rules; entirely epsilon paths are covered by the separate candidate. For optimality, the induction used in Theorem~2 generalizes spans to state pairs: each entry contains the maximum over all compatible paths and derivations. Comparing the best start entry with the empty-output candidate yields $\max_{y\in\Feas_x}R_C(y)$, and Theorem~1 yields MWPC.
+\end{proof}
+
+
+\subsection{A worked commitment example}
+
+Let $G$ generate exactly \texttt{ayz} and \texttt{xbc}, and let the three-slot canvas be entirely masked. Consider proposals $(1,\mathtt{a},4)$, $(2,\mathtt{b},3)$, and $(3,\mathtt{c},2)$. Each is individually feasible. The first proposal is incompatible with either of the others, whereas the second and third can coexist. The two completions score 4 and 5, respectively; thus the optimum is \texttt{xbc}, committing the last two proposals. A greedy policy that accepts the highest-weight proposal first retains only weight 4. The completion certifies compatibility; the decoder need not commit every token it contains.
+
+Slot accounting is a separate issue. With one remaining slot whose tokens emit only \texttt{a} or \texttt{b}, the grammar $S\rightarrow\mathtt{a}\mathtt{b}$ is infeasible. An abstract $\Sigma^*$ gap accepts \texttt{ab} and gives a false positive. If the tokenizer also contains a single token emitting \texttt{ab} and that token is represented in the slot, the same grammar becomes feasible. The bound counts token choices, not emitted characters.
+

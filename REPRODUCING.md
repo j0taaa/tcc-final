@@ -1,8 +1,51 @@
 # Reproducing the MWPC research artifacts
 
-## Current live dLLM study (M24/M25)
+## Current mathematical contribution (M26)
 
-Current local delivery: [2026-09-30 dLLM snapshot](docs/releases/dllm-2026-09-30.md).
+Current local delivery: [mathematical source/PDF snapshot](docs/releases/math-2026-09-30.md).
+The [mathematical core](docs/research/m26-mathematical-core.md) contains definitions,
+six fully written theorems and corollaries. Their universal claims follow from
+proofs; random/exhaustive tests check the implementation, not theorem validity.
+No model, GPU, downloads or performance benchmark is needed for this contribution.
+
+With the installed CPU package, use a new output path:
+
+```bash
+.venv/bin/python scripts/exact_commit/budget_math_example.py --output /tmp/budget-proof.json
+.venv/bin/python scripts/exact_commit/budget_math_example.py --verify /tmp/budget-proof.json
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/exact_commit/test_budgeted_math.py
+make release-wheel-smoke
+make paper
+```
+
+The example emits the original resource graph, normalized CFG, rational upper
+potentials and every budget witness. Verification loads the independent checker
+without importing the optimizer. A valid path with reward equal to the checked
+upper bound proves optimality relative to the supplied graph. This small example
+illustrates a budget-dependent witness; it is explicitly not an accuracy benchmark.
+`make release-wheel-smoke` installs a fresh non-editable wheel outside the checkout
+and generates/verifies this proof, in addition to its existing artifact checks.
+
+`mwpc_exact.budgeted_commit.budgeted_commit_frontier(SelectionInput, max_budget)`
+accepts the existing frozen model-independent state with grammar, canvas, all
+proposals, finite support, compositional-byte adapter and EOS policy. It returns
+`BudgetedCommitResult` for each cap. `committed_proposal_ids` include every positive
+matched ID at paid positions; `matched_proposal_ids` include the full witness
+matches. `budgeted_progress_update` fills remaining capacity using witness tokens,
+reports unscored fallback and rejects another input's result. The original MWPC
+result and serial/EPIC/exact strategies remain unchanged. The new dimension is
+implemented in the rational Python reference, not the fast Rust production solver.
+
+Status remains explicit and exactness is current-step `exact_on_support`.
+The update-round bound requires no remasking and support retaining the witness.
+Dominance compares batches with the same proposals, support, fixed positions and
+physical budget; native EPIC system runs do not automatically meet those premises.
+The proofs do not imply higher semantic accuracy, lower latency, full-vocabulary
+or future-trajectory optimality, or proof-assistant formalization.
+
+## Historical live dLLM study (M24/M25)
+
+Historical local delivery: [2026-09-30 dLLM snapshot](docs/releases/dllm-2026-09-30.md).
 Source, frozen configs, raw archives, generated tables and recorded query
 attempts are versioned. No model weights or remote publication are included.
 

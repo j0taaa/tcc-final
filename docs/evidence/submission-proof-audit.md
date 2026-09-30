@@ -82,3 +82,32 @@ No theorem promises task correctness or future-trajectory optimality.
 
 Final reproduction, tests and rendered-PDF evidence are recorded in
 `docs/evidence/m25-delivery-verification.json`.
+
+## M26 mathematical extension, 2026-09-30
+
+The current main theorem numbers change: fundamental equivalence is Theorem 1,
+finite slots is Theorem 2, and new resource-DAG, potential-certificate, universal
+dominance, confidence-preselection and post-filter separation results are
+Theorems 3–7. The old token-aligned/graph proofs and pseudocode are preserved
+verbatim in `paper/supplement-foundations.tex`; earlier numbering and the
+historical correspondence table above refer to that prior manuscript.
+
+| Current statement | Construction / independent review | Result |
+|---|---|---|
+| Budgeted equivalence and resource compilation lemmas | `budgeted_commit.py`; token/subset oracle; duplicate/fixed-byte/EOS/PAD checks | Physical positions are charged once on the first original token arc, including epsilon controls. All witness matches and committed IDs are distinct fields; ordinary MWPC selected-set semantics remain intact. |
+| Exact budget frontier | `reference/budgeted_parser.py`; 64 recorded-seed exhaustive DAG oracles; token/subset oracle | Epsilon closure keeps exact-cost states; strict-CNF nonempty children have smaller topological spans. Original arc backpointers preserve finite slots and rational scores. No unsafe pruning or global/future claim. |
+| Independent optimality certificate | `reference/budget_certificate.py`; altered/missing bounds, feasible suboptimal witness, wrong scope/path regressions | Checker imports no optimizer, validates every upper-potential inequality, independently recognizes the path and requires equality with the upper bound. Tests are evidence of implementation, not substitutes for proof. |
+| Universal same-input batch dominance | Budget definition and exactness theorem | Any feasible compared batch is in the optimizer's domain; all matched positive duplicate IDs at paid positions are included. Native EPIC runs with other support/resampling/gaps are outside this automatic comparison. |
+| Infinite confidence/preselection family | Fixed regular language, constant weights; original pinned EPIC control flow with exact/universal cover oracles | Ratio 7/(6B) tends to zero by algebra and quantification over all B. Original control-flow tests do not claim a native lexer/model benchmark. |
+| Infinite post-filter family | Same fixed language; fixed B=1; existing ordinary MWPC solver as independent regression baseline | Ratio 2/n tends to zero; optimal completion changes with budget. This is a strict objective extension, not a renamed full-MWPC optimum. |
+| Capacity frontier and optimal irreversible update rounds | `budgeted_progress_update`; foreign-input, no-remasking/witness-retention and zero-reward fallback regressions | Minimum budget follows from the monotone exact frontier; ceil(M/B) update rounds follow from slot counting and witness filling. No model-call or semantic guarantee. |
+
+Full proofs are in `paper/budgeted-math.tex` and
+`docs/research/m26-mathematical-core.md`. Exact binary-rational input semantics,
+CNF/empty-word handling, statuses, negative/invalid rewards, finite support and
+bit-cost boundaries were reviewed against the implementation. Certificates prove
+optimality for the given instance; universal theorems are written mathematics,
+not proof-assistant formalizations. The finite regression suite independently
+compares all objectives and witness validity; it is not used to claim typical
+accuracy or relevance. Final executed gates are recorded in
+`docs/evidence/m26-mathematical-verification.json`.

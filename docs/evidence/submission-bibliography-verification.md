@@ -160,3 +160,20 @@ invention of weighted CFG optimization, confidence decoding or commitment gating
 | `wang2026tacg` | Cited | arXiv `2607.03236v1`, 3 July 2026; authors and identity/timing distinction checked in primary HTML. No TACG baseline or sampling theorem is claimed as implemented here. |
 | `cai2026confidence` | Cited | arXiv `2603.22248v1`, 23 March 2026; Changxiao Cai and Gen Li. Its entropy-sum sampling result is distinct from this project's fixed probability threshold. |
 | `su2026factor` | Cited | Primary arXiv HTML `2609.32900v1`, 26 September 2026, Jianchang Su and Wei Zhang; direct download succeeded after a browser-tool fetch error. FactorDLM uses finite-domain factor graphs, exact variable elimination and mean-field logits; it is not an implemented baseline here. No general exact-dLLM-inference novelty is claimed. |
+
+## M26 mathematical extension, 2026-09-30
+
+The inventory now has 34 records; the preceding 32-record audit remains
+historical. Primary publication metadata was opened and checked, including
+all authors, version/year, title, volume/pages and stable identifiers.
+
+| Key | Current use | Verification |
+|---|---|---|
+| `demirovic2024certifying` | Cited | Official Dagstuhl page/BibTeX, DOI `10.4230/LIPIcs.CP.2024.9`, CP 2024, LIPIcs 307, 9:1–9:21; Emir Demirović, Ciaran McCreesh, Matthew J. McIlree, Jakob Nordström, Andy Oertel, Konstantin Sidorov. Certifying DP/proof logging is prior art, not claimed invention. |
+| `ayoub2026axon` | Cited | Primary arXiv `2606.04236v1`, submitted 2 June 2026, Supportive Token Revealing for Fast Diffusion Language Model Decoding; Giries Abu Ayoub, Mario Barbara, Lluís Pastor-Pérez, Tanja Bien, Aneesh Barthakur, Alaa Maalouf, Loay Mualem. Supportive reveal selection is an antecedent; AXON is not a reproduced baseline here. |
+
+M26 additionally rechecked EPIC `2606.00722v1`, FactorDLM `2609.32900v1`,
+Goodman J99-4004 and the weighted-GRAMMAR journal DOI
+`10.1007/s10479-010-0697-y`. No first-ever parsing, exact dLLM inference,
+resource DP or certifying-algorithm novelty is claimed. The mathematical
+contribution is incremental and its validity does not establish global priority.

@@ -145,6 +145,15 @@ def main() -> int:
         )
         _run([str(python), "-I", "-c", import_check], cwd=work)
 
+        # Verify the new research API and portable proof checker outside source.
+        math_example = work / "budget_math_example.py"
+        shutil.copyfile(
+            REPOSITORY_ROOT / "scripts/exact_commit/budget_math_example.py", math_example
+        )
+        math_proof = work / "budget-proof.json"
+        _run([str(python), "-I", str(math_example), "--output", str(math_proof)], cwd=work)
+        _run([str(python), "-I", str(math_example), "--verify", str(math_proof)], cwd=work)
+
         q3_raw = root / "q3-smoke" / "raw"
         q3_processed = root / "q3-smoke" / "processed"
         _run(
@@ -196,6 +205,7 @@ def main() -> int:
                     "wheel_inventory": wheel_inventory,
                     "sdist_inventory": sdist_inventory,
                     "source_tree_leakage": False,
+                    "budgeted_math_and_independent_proof": "PASS",
                     "wheel": wheel.name,
                 },
                 sort_keys=True,

@@ -16,6 +16,33 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M26 — Mathematical budgeted commitment and independently checkable optimality
+
+Authorized by the user's mathematical requirement on 2026-09-30. Depends on
+M25 and the existing independently tested finite-lattice/MWPC core. Mathematical
+value must follow from stated theorems, not synthetic or external win rates.
+Existing measured archives and strategies remain intact. This extension has a
+separate budgeted-batch objective/result; it must not relabel a subset as the
+complete selected set of an ordinary MWPC certificate.
+
+- [x] T2600: Audit the relevant prior art; state the budgeted optimization problem,
+  universal comparison scope, theorem obligations and exact-arithmetic boundary.
+  **Evidence:** primary-source audit in `docs/research/m26-mathematical-core.md` and the 34-record bibliography audit; rechecked EPIC, FactorDLM, weighted CFG, semiring parsing, AXON and certifying DP. Explicit objective, same-input comparison hypotheses, binary-rational semantics and incremental novelty boundaries are recorded.
+- [x] T2601: Prove budgeted completion equivalence, resource-DAG dynamic programming,
+  certificate soundness/completeness, universal same-input batch dominance and
+  an infinite-family approximation obstruction for confidence-first/preselection.
+  Include finite slots, original paths, epsilon emissions and duplicate IDs.
+  **Evidence:** six complete proofs and capacity/update corollaries in `docs/research/m26-mathematical-core.md`; main lemmas/Theorems 3–7 in `paper/budgeted-math.tex`. Proof-to-code review in `docs/evidence/submission-proof-audit.md`. Both infinite separations use one fixed regular language; no model-frequency or accuracy inference.
+- [x] T2602: Implement an exact rational reference optimizer and independent
+  optimality-certificate checker, finite-byte token adapter and exhaustive
+  differential/regression tests. Exercise pinned EPIC selection control flow
+  without presenting constructed counterexamples as population benchmarks.
+  **Evidence:** 98 new exact-rational/oracle/certificate regressions, including 64 recorded random seeds, split UTF-8, paid EOS/PAD, duplicate/fixed positions, feasible suboptimal witnesses, input identity and eight unchanged upstream-selector control-flow tests. Full Python 1,229 passed; Rust 24 tests/fmt/clippy and upstream 406 passed/8 existing skips. Ruff and MyPy (91 source files) pass. `budget_math_example.py` emits and independently verifies all four budget certificates offline; modes preserve ordinary MWPC contracts.
+- [ ] T2603: Reframe the article and project around the proved mathematical
+  result, preserve all historical experiments as secondary evidence, verify
+  the manuscript and produce a separate local mathematical delivery.
+  **Evidence:** pending.
+
 ## M25 — External grounded calls, runnable project and final article
 
 Authorized 2026-09-29; slides, defense script and presentation are explicitly out

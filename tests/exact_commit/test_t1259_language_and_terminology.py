@@ -8,6 +8,10 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def _article_without_resumo() -> tuple[str, str]:
     article = (ROOT / "paper" / "main.tex").read_text(encoding="utf-8")
+    # M26 keeps the prior parser algorithm in a separate foundations source;
+    # check its language and the included mathematical section as well.
+    for name in ("budgeted-math.tex", "supplement-foundations.tex"):
+        article += (ROOT / "paper" / name).read_text(encoding="utf-8")
     match = re.search(
         r"\\begin\{otherlanguage\}\{brazilian\}.*?"
         r"\\begin\{resumo\}(.*?)\\end\{resumo\}.*?"

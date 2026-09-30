@@ -1,0 +1,75 @@
+% Historical M25 empirical narrative, preserved verbatim from 0f0f3d3.
+% This separate supplementary source is not included in the main page budget.
+\section{Implementation and Evaluation Methodology}
+\label{sec:metodologia}
+
+EPIC remains read-only at \texttt{5b1b310}; \texttt{serial}, \texttt{epic} and \texttt{exact} remain available. Python implements the readable reference, support construction and independent validation; Rust implements the production parser through thin PyO3 bindings. Parent software and research artifacts use MIT; manuscript rights and upstream notices remain separate. Every measured cohort records its source commit, immutable configuration, seed, grammar/support hashes, model/tokenizer revisions, hardware and statuses. Full traces and generating scripts are versioned separately from derived tables.
+
+The historical local submission release \texttt{v0.2.0} remains available; subsequent studies retain their own producing commits.
+
+Normalization produces strict CNF and an empty-word flag; epsilon closure retains original paths. The LLaDA tokenizer reverses ByteLevel pieces to compositional bytes, including split UTF-8 characters. EOS/PAD consumes physical slots without emitting bytes. Fixed rows are singletons; independent checks validate witness acceptance, provenance, selected proposals and recomputed score. Python rational sums and Rust integer-scaled sums compare binary64 weights without intermediate-rounding order changes; the public score remains a float. Arithmetic-operation bounds do not imply constant bit cost. Detailed contracts and historical configurations remain in \path{paper/supplement-method.tex}.
+
+\subsection{Correctness, selection quality and scaling}
+
+Exhaustive completion/subset oracles compare the Python and Rust objectives, allowing different optimal witnesses. Tests cover duplicate proposals, invalid weights, finite-slot counterexamples, empty outputs, fixed positions, timeouts and byte provenance. Recursive synthetic configurations measure possible heuristic loss; saved real-model states compare selectors on identical logits, canvases and supports. Runtime replays aggregate repetitions within each state. Their score and selector-time results are distinguished from end-to-end task success.
+
+The recursive generation study uses twelve development and twelve disjoint confirmation prompts for brackets, arithmetic and JSON, with 32 slots and matched initial proposal budgets. Its incomplete and incorrect outputs remain failures. Controlled minimum-substitution JSON repair is a separate model-free application: one proposal per original token minimizes represented substitutions while preserving protected spans. Its full protocol, positive and negative classes, and library/enumeration controls remain in the supplement; tokenizer use alone is not dLLM inference.
+
+\subsection{Live commitment-policy comparison}
+
+All new live studies use \texttt{GSAI-ML/LLaDA-8B-Instruct}, revision \texttt{08b83a6}, NF4 double quantization with bfloat16 compute, on an RTX 3080 Ti and one CPU thread. Two warm-ups precede measurement. CUDA is synchronized; loading is excluded and support/grammar preparation plus EPIC's official recovery are included. Method order rotates by request and is reversed in the second confirmation execution. Model forward, candidate construction, support construction, selection and update times are separately recorded. Repetitions measure timing stability, not additional independent tasks.
+
+The synthetic tool study translates requests to nested calculator calls without evaluating away requested operations. Thirty requests develop policies; 100 new requests from the same templates form confirmation. A fixed call grammar and question-derived operand filter never read the expected call. Each method receives 24 canvas slots and at most 24 model forwards. MWPC takes the highest-probability allowed proposal at each free position, with weights normalized over the model's full vocabulary. Budget policies restrict this proposal set before solving. Confidence policies keep the optimizer's full certificate but commit only matched tokens above threshold $\tau$, falling back to one matched proposal or a witness token to make progress.
+
+Controls include confidence-greedy selection with witness reuse, actual upstream EPIC with several reveal schedules, and canonical-catalog mean-field MAP using sums of token log probabilities. MAP maximizes a different objective and is explicitly limited to canonical token paths; the byte CFG can accept other represented tokenizations. EPIC uses its native vocabulary, lexical whitespace and abstract gaps, so it is a system comparison rather than an identical-support optimality comparison. A matched greedy/exact comparison isolates selection under shared supports.
+
+The frozen primary comparison is MWPC with $\tau=0.8$ versus EPIC with 24 steps. We report paired correctness differences, a conservative 95\% interval from exact win/loss binomial intervals, exact McNemar tests and paired latency ratios with 2,000 request-level bootstrap resamples. Secondary policy/schedule comparisons have no multiplicity adjustment. Strict grading preserves the requested syntax tree; a declared sensitivity check removes lexical layout differences while preserving quoted string contents. Numeric equivalence is reported separately.
+
+\subsection{External grounded calls and practical dispatch}
+
+Eight enum-only BFCL cases were too narrow to support external generalization. The extension audits 658 public records at pinned Gorilla revision \texttt{6ea5797} \cite{bfcldataset}. Eligibility uses schemas only: one query-named function, one to three scalar arguments and exactly one unrestricted string field. All 68 eligible cases are retained. Hash-ordering function-name families assigns 26 requests from eight families to development and 42 requests from 42 other families to confirmation; this does not guarantee unrelated semantic domains.
+
+The free field receives at most 96 deterministic candidates from quoted/capitalized spans and contiguous question spans up to six words, plus schema defaults. Numeric values come from the request or defaults, with a declared 0--10 fallback; enums and optional omissions follow the schema. The cap is 4,096 canonical calls and 64 slots. All 68 catalogs fit, with at most 43 ordinary tokens. Only after construction, an independent coverage audit finds acceptable answers in 56 of the 68 supports; the other twelve remain evaluation failures. A strict scalar AST checker evaluates original schemas and public acceptable values. This is not the official BFCL score or unrestricted argument generation.
+
+The protocol retains strong EPIC schedules, matched greedy and iterative/one-pass MAP controls, at most 64 forwards, 120 seconds per generation and ten seconds per selection. A local demonstration uses the same decoder to produce a geographic lookup, validates the AST and dispatches only a read-only Open-Meteo query \cite{openmeteogeocoding}. Live inference and archived replay are explicit modes. Such a runnable flow establishes integration, not population accuracy or a need for an LLM in geocoding itself.
+
+\section{Results and Analysis}
+\label{sec:resultados}
+
+Article tables are generated from independently validated archives. Historical generators and the new \path{scripts/exact_commit/build_policy_campaign.py} retain each cohort's producing commands and commits. No timed-out, incorrect or interrupted trial is relabelled a success.
+
+\subsection{Correctness and selector-level evidence}
+
+Q1's \MThirteenQOneCases{} oracle/Python/Rust cases yield \MThirteenQOneFailures{} failures and \MThirteenQOneCertificateChecks{} independent certificate checks. A counterexample needs \MThirteenQThreeRequiredTokens{} tokens in \MThirteenQThreeAvailableSlots{} slot: abstract gaps do not certify the canvas. All \MReviewBranchingCases{} recursive synthetic cases agree with oracles; greedy loses reward in \MReviewBranchingGaps{}, demonstrating possible loss rather than prevalence under model logits.
+
+Across 24 saved confirmation states, budgets 2/8/32, widths $K=2,4,8$ and three process repetitions, 1,944 selectors finish without timeout/error. Paired greedy/exact median time ratios are \MAuditTwoMin{}--\MAuditTwoMax{}, \MAuditEightMin{}--\MAuditEightMax{} and \MAuditAllMin{}--\MAuditAllMax{}, respectively; budget 2 does not benefit. A bracket state improves ordinary matches from seven to eight alongside 23 EOS/PAD matches. No replay witness passes the functional checker.
+
+Recursive scaling spans 16--128 slots and widths 2/4/8. Of \MReviewScalingCases{} runs, \MReviewScalingTimeouts{} reach the native one-second limit; completed optima pass validation. Maximum observed RSS is \MReviewScalingMaxMiB{} MiB, not a universal bound. In the matched-budget recursive live experiment, the study establishes no end-to-end advantage: exact completes brackets but misses requested counts/depth, while arithmetic and JSON stay incomplete. Serial/EPIC succeed only on one confirmation JSON request.
+
+Historical Q2 gaps are illustrative, not typical-model estimates: singleton snapshots cannot estimate a representative gap. Q4's compound graph axis does not isolate a cause or represent code workloads. Historical literal-task runtime ratios are confounded by unequal proposal budgets. These artifacts and full negative results remain in the supplement.
+
+\subsection{A scoped end-to-end cost--quality benefit}
+
+The policy campaign preserves 3,856 final generations, 48 additional review canvases and 24,404 model forwards across development, confirmation, external pilot and secondary controls. Counterfactual-margin policies incur extra parsing without a benefit sufficient to continue; they are not the selected extension. The simple confidence and budget policies produce the useful tradeoffs in Table~\ref{tab:live-synthetic}.
+
+\input{generated/m25_live_v1/synthetic-results.tex}
+
+For the frozen primary comparison, MWPC confidence 0.8 achieves \MLiveConfidenceCorrect{}/100 correct calls versus \MLiveEpicFullCorrect{}/100 for EPIC 24 in both repetitions. Its median paired speed ratio is \MLivePrimarySpeed{}, but the conservative accuracy-difference interval is $[\MLivePrimaryLower{},\MLivePrimaryUpper{}]$ percentage points. Thus the experiment supports reduced latency, not accuracy non-inferiority within two points. Matched greedy reaches 91/100 with higher latency; an exact proposal objective does not guarantee the best later trajectory.
+
+In the secondary comparison, budget-four MWPC reaches \MLiveBudgetFourCorrect{}/100 versus \MLiveEpicEightCorrect{}/100 for EPIC eight, with median total latencies of \MLiveBudgetFourMs{} and \MLiveEpicEightMs{} ms. There are thirteen paired wins and one loss ($p=\MLiveSecondaryP{}$, unadjusted). Whitespace normalization raises EPIC eight to 78/100, leaving an eight-point observed difference. Other schedules matter: EPIC six reaches 77/100 at 793 ms, whereas EPIC 24 is more accurate and slower. Numeric equivalence additionally favors EPIC 24 and greedy. This is a measured operating-point advantage on these synthetic requests, not dominance over every baseline or task.
+
+A one-pass canonical MAP control is fastest but reaches only 58/100 on the synthetic task. Conversely, in the eight enum-only external cases it reaches 8/8 in both repetitions and beats the iterative policies in latency. The finite catalog can make exact CFG machinery unnecessary. This result motivates broader grounding while retaining MAP as a required control, rather than treating support validity as evidence of scientific superiority.
+
+\subsection{External transfer and practical dispatch}
+
+\input{generated/m25_live_v1/grounded-results.tex}
+
+The frozen primary reaches \MGroundedConfidenceCorrect{}/\MGroundedCases{} correct calls versus \MGroundedEpicThirtyTwoCorrect{}/\MGroundedCases{} for EPIC 32 in both executions, with median latencies of \MGroundedConfidenceMs{} and \MGroundedEpicThirtyTwoMs{} ms. The paired difference is \MGroundedPrimaryDifference{} points, with conservative interval $[\MGroundedPrimaryLower{},\MGroundedPrimaryUpper{}]$. EPIC eight reaches 16/17 correct calls; iterative MAP reaches \MGroundedMapEightCorrect{}, budget 64 only \MGroundedBudgetFullCorrect{}. The synthetic advantage therefore does not transfer to these free-text calls. Coverage is \MGroundedCovered{}/\MGroundedCases{}, so omitted answers do not explain most failures. The grammar protects represented structure, not argument meaning or later predictions.
+
+The initial geographic demonstration sends four supported but incorrect names and receives \MQueryInitialEmpty{} empty API responses. The archived trajectories pass independent checks. An explicitly post-hoc quote-free-name profile excludes delimiter-corrupted spans while retaining multiple alternatives; its result is reported separately, without altering the benchmark. In the follow-up, confidence, iterative MAP and EPIC produce Belo Horizonte and receive locations; budget 64 still yields an empty query. All \MQueryRecords{} attempts are archived; this single request is not an accuracy or superiority estimate.
+
+
+\subsection{Secondary repair application}
+
+The auxiliary model-free JSON study applies established scored parsing \cite{kociumaka2024edit} and tests a repair library \cite{baccianella2025jsonrepair}. Its restricted opening-swap benefit, failed separators and controls remain in the supplement; they do not establish improved dLLM generation.
+

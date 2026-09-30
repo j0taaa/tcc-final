@@ -113,4 +113,10 @@ def test_optional_objectives_are_not_presented_as_implemented_behavior() -> None
     article = _article()
 
     assert "no lexicographic secondary objective is implemented or claimed" in article
-    assert "a cardinality dimension inside the parser remains an unimplemented extension" in article
+    assert (
+        "a cardinality dimension inside the parser remains an unimplemented extension"
+        not in article
+    )
+    assert "new rational reference instead retains all original proposals" in article
+    assert "not retroactively used in those measurements" in article
+    assert "budgeted solver is a rational reference, not the Rust production decoder" in article

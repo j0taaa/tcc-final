@@ -4,15 +4,35 @@ Research and implementation workspace for the TCC **Exact Maximum-Weight Paralle
 
 The project implements an exact, certificate-producing optimizer for selecting the maximum-weight compatible set of token proposals at one denoising step. EPIC's serial and heuristic decoders remain read-only baselines. Results over pruned alternatives are reported as exact on the represented support, never as full-vocabulary or future-trajectory optimality.
 
-The current research focus is **selection during actual dLLM generation**.
-[M24 findings](docs/research/m24-findings.md) preserve 3,856 live generations
-and a scoped cost–quality benefit on synthetic tool calls, compared with actual
-EPIC and its official recovery. The [M25 external study](docs/research/m25-findings.md)
-adds a schema/question-grounded development/confirmation split, strong EPIC,
-greedy and canonical-MAP controls, and all failures. Its finite support and
-own AST grader are explicitly distinguished from an official BFCL evaluation.
-[Novelty boundaries](docs/research/m25-novelty-boundaries.md) identify established
-weighted-parsing and exact-dLLM antecedents; no universal superiority is claimed.
+The current contribution is **mathematical budgeted commitment**, independent of
+benchmark win rates. The [complete definitions and proofs](docs/research/m26-mathematical-core.md)
+solve joint completion and position selection, give an exact budget frontier
+and independently checkable optimality certificates. For the same input,
+finite support and physical budget, no feasible proposal batch has greater
+reward. Infinite-family proofs show that confidence preselection and filtering
+an unbudgeted optimum can retain an arbitrarily small fraction of this reward.
+These are optimization guarantees, not semantic accuracy or latency guarantees.
+
+The new exact-rational reference API is in `mwpc_exact.budgeted_commit`; it is
+separate from the existing Rust production strategy and historical live policies.
+Generate and verify a portable mathematical example without a model or network:
+
+```bash
+.venv/bin/python scripts/exact_commit/budget_math_example.py --output /tmp/budget-proof.json
+.venv/bin/python scripts/exact_commit/budget_math_example.py --verify /tmp/budget-proof.json
+.venv/bin/python -m pytest -q tests/exact_commit/test_budgeted_math.py
+```
+
+The output path must be new. [Reproduction and API scope](REPRODUCING.md)
+explain the proof checker and update premises. Weighted parsing, resource DP,
+certification and exact dLLM inference are acknowledged antecedents; this is an
+incremental formulation/solution, not a claim to invent their principles.
+
+Historical [M24](docs/research/m24-findings.md) and
+[M25](docs/research/m25-findings.md) experiments remain secondary evidence,
+including worse external accuracy and latency than EPIC. All original failures,
+configs and outputs are retained; their policies do not use the new joint-budget
+algorithm. Own scalar-AST grading is not the official BFCL evaluation.
 
 Run the archived **real LLaDA geographic query** without a model or network:
 
@@ -48,8 +68,9 @@ Do not duplicate the current task in this README. Locate the first incomplete re
 ## Setup
 
 The current local source/PDF delivery is described in
-[`dLLM study, 2026-09-30`](docs/releases/dllm-2026-09-30.md).
-It includes the versioned measurements and their reproduction scripts. The
+[`Mathematical contribution, 2026-09-30`](docs/releases/math-2026-09-30.md).
+It includes the proofs, exact reference, checker and historical evidence.
+The [M25 dLLM delivery](docs/releases/dllm-2026-09-30.md) is preserved separately. The
 [2026-09-28 source snapshot](docs/releases/repair-2026-09-28.md), M20 delivery
 and v0.2.0 remain historical; no remote publication was performed.
 From the current delivery directory:

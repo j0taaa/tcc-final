@@ -1,0 +1,122 @@
+\section{Budget-Optimal Commitment and Checkable Optimality}
+\label{sec:budgeted}
+
+Limiting proposals before optimization can discard a better compatible batch; filtering an unconstrained optimum afterwards can choose the wrong witness. We instead optimize the witness and committed positions jointly. This is a distinct problem from ordinary MWPC and from constrained mean-field MAP.
+
+Let $I=\{i:x_i=\mask\}$ and $r_i(a)=\sum_{j:i_j=i,t_j=a,w_j>0}w_j$. A budget counts physical positions, not proposal IDs or emitted bytes. For integer $B\geq0$, define
+\begin{equation}
+ \operatorname{OPT}_B=\max_{y\in\Feas_x,\ T\subseteq I,\ |T|\leq B}
+       \sum_{i\in T}r_i(y_i).
+ \label{eq:budget-objective}
+\end{equation}
+Every positive duplicate matched in a committed position contributes once; fixed positions contribute no new commitment reward. All positive witness matches and the actually committed IDs remain separate result fields. Empty support is infeasible; budget zero has value zero whenever a completion exists.
+
+\begin{lemma}[Budgeted completion equivalence]
+If $\operatorname{top}_B(r(y))$ sums the $B$ largest free-position rewards, or all when fewer exist, then $\operatorname{OPT}_B=\max_{y\in\Feas_x}\operatorname{top}_B(r(y))$.
+\end{lemma}
+\begin{proof}
+Fixing $y$, non-negativity makes its largest $B$ rewards an optimal choice of $T$. These positions have the common witness $y$. Conversely, any compatible batch has such a witness and its reward is bounded by that witness's largest $B$ rewards. Maximizing both directions proves equality.
+\end{proof}
+
+In the original byte/EOS DAG, replace the first arc of every free token choice of positive reward by two parallel alternatives: unpaid $(c,w)=(0,0)$ and paid $(1,r_i(a))$. Remaining bytes and fixed choices have zero cost and reward. An EOS/PAD choice has an epsilon arc and is charged there. Private internal token states preserve original paths; the budget never counts individual bytes.
+
+\begin{lemma}[Resource compilation]
+Accepted resource paths of cost at most $B$ represent precisely the feasible pairs $(y,T)$ of Equation~\ref{eq:budget-objective}, after removing zero-reward positions from $T$, with identical reward.
+\end{lemma}
+\begin{proof}
+A complete path selects one token per physical slot. Private expansion states prevent splicing different tokens, and EOS/PAD transitions enforce $H$ before emission. Each paid first arc identifies one free position; their count is $|T|$ and their reward is $\sum_{i\in T}r_i(y_i)$. Conversely, expand any feasible $y$ and pay exactly at its positive-reward positions in $T$. Removing zero-reward positions changes neither feasibility nor objective. Thus the two representations have equal optima and reconstructible token provenance.
+\end{proof}
+
+\subsection{Exact resource dynamic programming}
+
+An original arc $e=(u,v)$ carries terminal $a_e$ or epsilon, cost $c_e\in\N$, and rational reward $w_e\geq0$. For $k=0,\ldots,B$, let $E[u,v,k]$ be the maximum reward of an epsilon-only path of exact cost $k$. Initialize $E[u,u,0]=0$, with absent cells $-\infty$, and relax epsilon arcs in topological order:
+\begin{equation}
+ E[u,v,k+c_e]\gets\max\{E[u,v,k+c_e],E[u,a,k]+w_e\},\quad e=(a,v).
+ \label{eq:budget-epsilon}
+\end{equation}
+Let $D[A,u,v,k]$ represent nonempty emissions derived from $A$. For $A\to t$ and terminal arc $e=(a,b,t)$, seed
+\begin{equation}
+ D[A,u,v,k_1+c_e+k_2]\gets\max\{D[A,u,v,k_1+c_e+k_2],
+       E[u,a,k_1]+w_e+E[b,v,k_2]\}.
+ \label{eq:budget-leaf}
+\end{equation}
+For binary productions, compute by increasing topological span:
+\begin{equation}
+ \begin{aligned}
+ D[A,u,v,k]\gets\max\bigl\{&D[A,u,v,k],\\
+ &\max_{A\to BC,\,u<z<v,\,k_1+k_2=k}
+       \bigl(D[B,u,z,k_1]+D[C,z,v,k_2]\bigr)\bigr\}.
+ \end{aligned}
+ \label{eq:budget-binary}
+\end{equation}
+Here node inequalities denote topological indices. For each cap $b\leq B$, maximize final start-symbol cells with $k\leq b$, also comparing $E[q_0,f,k]$ when $G$ accepts epsilon. Backpointers reconstruct original arcs, including paid epsilon choices. Taking an unbudgeted epsilon maximum would be unsound here: different costs must remain distinct.
+
+\begin{theorem}[Exact budget frontier]
+Equations~\ref{eq:budget-epsilon}--\ref{eq:budget-binary}, with strict CNF, explicit empty-word acceptance and no unsafe pruning, compute $\operatorname{OPT}_b$ and a witness for every $0\leq b\leq B$ on the declared finite support.
+\label{thm:budget-dp}
+\end{theorem}
+\begin{proof}
+Induction on the final node proves the epsilon recurrence: every nonempty epsilon path has a last arc, and every relaxation appends an existing arc with the stated cost and reward. For $D$, induct on topological span. A terminal derivation is a terminal arc surrounded by epsilon paths. Replacing either epsilon segment by its optimum with the same endpoints and cost cannot decrease reward; acyclicity prevents overlapping segments. A binary derivation splits the path at a node $z$ and splits its cost into $k_1+k_2$. Both nonempty child paths have smaller spans, so induction gives their optima. Every composition is an existing path and every derivation is covered. The separate epsilon roots cover empty emissions. Maximizing over final states and $k\leq b$ therefore gives the exact resource-path optimum; compilation and budgeted equivalence give $\operatorname{OPT}_b$. Neutral productions make ambiguity irrelevant to reward.
+\end{proof}
+
+For $q$ nodes, $m_\varepsilon$ epsilon and $m_t$ terminal arcs, the direct bounds are $O(q^2(B+1)+qm_\varepsilon(B+1)+(|P_1|+1)m_tq^2(B+1)^2+(|P_2|+1)q^3(B+1)^2)$ arithmetic/chart operations and $O((|N|+1)q^2(B+1))$ entries, plus input and backpointers. This is pseudopolynomial for a generic binary-encoded resource cap; physical commitment needs only $B\leq|I|$. Rational bit costs are additional; this is not a GPU latency bound.
+
+\subsection{An independently checkable optimality proof}
+
+A feasible witness alone proves a lower bound. Supply upper potentials $U_E,U_D$ instead: missing cells mean $-\infty$; identities satisfy $U_E[u,u,0]\geq0$; each transition, terminal initialization and binary composition satisfies the inequality obtained from Equations~\ref{eq:budget-epsilon}--\ref{eq:budget-binary} by replacing assignment with $\geq$. Let $U_b$ be their maximum over permitted final roots.
+
+\begin{theorem}[Optimality-certificate soundness and completeness]
+If all potential inequalities hold and an independently recognized original path has cost at most $b$ and reward $L=U_b$, that path is optimal. If every permitted final root is absent, the inequalities prove infeasibility. Every completed exact dynamic program supplies an acceptable certificate.
+\label{thm:budget-certificate}
+\end{theorem}
+\begin{proof}
+Induction along an epsilon path bounds its reward by $U_E$. Induction on a CFG derivation bounds every terminal leaf using its epsilon potentials and bounds every binary node by the sum of its children's bounds. Thus every feasible path has reward at most $U_b$. An independently checked witness gives $L\leq\operatorname{OPT}_b\leq U_b=L$, proving optimality. If no root has a finite bound, existence of an accepted path would contradict the same induction. For completeness, exact chart values satisfy every inequality, and reconstruction attains the best root, or all roots are absent.
+\end{proof}
+
+The checker neither imports the optimizer nor trusts its backpointers: it checks inequalities, graph continuity, cost, grammar acceptance and reward. Finite binary64 inputs are converted to exact binary rationals; no tolerance weakens the proof. The guarantee concerns supplied weights, not unknown ideal probabilities. These are written mathematical proofs with an executable checker, not Lean/Coq formalization; finite tests validate implementation, not the universal theorem.
+
+\subsection{Universal dominance and strict mathematical separations}
+
+\begin{theorem}[Same-input batch dominance]
+For any algorithm $H$ returning a batch of represented proposals on at most $B$ free positions with a witness in $\Feas_x$, $W(H)\leq\operatorname{OPT}_B$.
+\label{thm:budget-dominance}
+\end{theorem}
+\begin{proof}
+Its witness and positions form a feasible pair in Equation~\ref{eq:budget-objective}. Summing all matched positive IDs at those positions can only increase its reward. The exact maximum includes that pair.
+\end{proof}
+
+This includes an EPIC batch satisfying the same proposals, support, slots and budget. Native EPIC may resample tokens or use abstract gaps and a different support; the theorem does not identify those runs with this common input or compare answer accuracy.
+
+\begin{theorem}[No constant approximation from confidence preselection]
+For the single fixed regular language $L=0^*h0^*\cup0^*l^+0^*$, preselecting the $B$ highest-confidence proposals before optimization, or accepting the highest-confidence extensible proposal first, can achieve only $7/(6B)$ of $\operatorname{OPT}_B$. Consequently neither rule has a positive constant approximation ratio over all instances, even with an exact feasibility oracle.
+\label{thm:budget-confidence}
+\end{theorem}
+\begin{proof}
+For any $B\geq2$, use $2B$ slots: the first $B$ allow $\{0,h\}$ and propose $h$ with weight $7/8$; the last $B$ allow $\{0,l\}$ and propose $l$ with weight $3/4$. Every proposal is individually extensible. Any completion containing $h$ has one such token and no $l$, giving reward at most $7/8$. The completion $0^Bl^B$ permits committing $B$ low proposals with reward $3B/4$, which is optimal. Preselection retains only $h$ proposals, so even exact optimization afterwards scores $7/8$. Confidence-first acceptance commits an $h$, making every other proposal incompatible. The ratio is $(7/8)/(3B/4)=7/(6B)\to0$. For any proposed constant $\alpha>0$, choose $B>7/(6\alpha)$.
+\end{proof}
+
+For pinned EPIC's confidence-ordered recursive selector with exact shrinking enabled and a cover without false negatives, the same priority obstruction holds. Its highest candidate survives cover selection: a passing subset retains it, while a failing subset recurses first into the left half containing it, ultimately reaching its feasible singleton. Exact shrinking has the same left priority; recursion on the right then uses the retained $h$ as fixed context, so exact checking rejects every other proposal. This concerns selection control flow under the stated oracles, not the native lexer's completeness or frequency of such inputs. Tests execute the unchanged upstream selector with exact and universal cover oracles.
+
+\begin{theorem}[Post-filtering an unbudgeted optimum is insufficient]
+Even at fixed budget $B=1$, choosing the best one-position subset of an ordinary MWPC-optimal witness can have approximation ratio tending to zero.
+\label{thm:budget-postfilter}
+\end{theorem}
+\begin{proof}
+In the same language, use $n+1$ slots: the first allows $0,h$ with proposal $h$ of weight $7/8$; each remaining slot allows $0,l$ with proposal $l$ of weight $7/(4n)$, for $n=2^k\geq2$. Unbudgeted MWPC strictly prefers $0l^n$, scoring $7/4$ rather than $7/8$. Its best one-position subset scores $7/(4n)$. Joint budget-one optimization chooses the $h$ witness and scores $7/8$; their ratio is $2/n\to0$.
+\end{proof}
+
+These infinite families prove limitations of algorithmic rules, not a benchmark win rate. The constructive exact solver supplies a solution for all inputs satisfying the hypotheses, including ties and cases where heuristics already attain the optimum.
+
+\begin{corollary}[Certified capacity planning]
+For nonempty support, $\operatorname{OPT}_b$ is nondecreasing. The smallest $b$ with $\operatorname{OPT}_b\geq Q$ is the minimum number of physical commitments needed to achieve reward target $Q$, or no such budget exists.
+\end{corollary}
+\begin{proof}
+Every feasible batch at budget $b$ is feasible at $b+1$. A qualifying batch exists exactly when the corresponding optimum reaches $Q$; taking the first qualifying cap proves minimality.
+\end{proof}
+
+\begin{proposition}[Optimal number of irreversible update rounds]
+With $M$ initially free positions, fixed $B\geq1$, no remasking, a feasible witness at every step, and support updates retaining that witness, filling unused capacity from the witness finishes in $\lceil M/B\rceil$ rounds, the minimum possible under this update budget.
+\end{proposition}
+\begin{proof}
+Every round fixes at most $B$ positions, giving the lower bound. Adding witness tokens to the optimal batch preserves its feasibility and fixes $\min(B,M_{\mathrm{remaining}})$ positions. If such a fallback matched an unpaid positive reward, adding it would improve the purported optimum, a contradiction. Thus fallback is unscored and the bound is attained. This counts updates, not model calls or semantic correctness.
+\end{proof}

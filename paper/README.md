@@ -1,13 +1,13 @@
 # TCC in LaTeX — Exact MWPC for CFG-constrained dLLMs
 
-This directory contains the SBC-format article for the TCC **“Exact
-Maximum-Weight Parallel Commitment under Context-Free Grammars for Diffusion
-Language Models.”**
+This directory contains the SBC-format article **Budget-Optimal Parallel
+Commitment with Checkable Proofs for CFG-Constrained Diffusion Language Models**.
 
-The current build has **16 pages**. The manuscript includes the essential
-theory, formal definitions, theorems, proofs, three pseudocode listings,
-complexity analysis, implementation methodology, experimental protocol,
-three generated result elements, limitations, and the AI-use declaration.
+The current build has **16 pages**, with definitions, complete proofs,
+resource recurrences, checkable optimality, complexity and implementation
+contracts, two unchanged historical result tables, limitations and the AI-use
+declaration. Earlier algorithms and empirical detail are preserved in separate
+supplementary sources.
 
 ## Files
 
@@ -27,6 +27,21 @@ three generated result elements, limitations, and the AI-use declaration.
 3. Select `pdfLaTeX` as the compiler.
 4. Overleaf runs BibTeX automatically. If references remain unresolved, use
    **Recompile from scratch**.
+
+## Current mathematical focus
+
+The M26 article centers joint budgeted commitment and independently checkable
+optimality. `budgeted-math.tex` contains the exact resource-DAG construction,
+complete proofs, universal same-input batch comparison and infinite-family
+separations. The mathematical contribution does not depend on benchmark wins.
+Original parser proofs are preserved in `supplement-foundations.tex`; full M25
+empirical prose is preserved verbatim in `supplement-empirical.tex`. These separate
+sources supplement the main page budget. Historical negative evidence remains
+in the main text and unchanged generated tables.
+
+The rational reference budget API is implemented. Production Rust integration
+for this new dimension and proof-assistant formalization are future work.
+The earlier GPU results measure the old policies, not this new algorithm.
 
 ## Building locally
 
@@ -54,7 +69,7 @@ Information that has not yet been established appears through this command:
 The PDF renders these fields in bold and inside brackets. To find all of them:
 
 ```bash
-grep -n '\\ph{' main.tex
+rg -n '\\ph\{' main.tex
 ```
 
 Replace a field only when verifiable evidence is available. Results, runtimes,
