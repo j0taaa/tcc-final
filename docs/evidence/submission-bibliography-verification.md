@@ -133,3 +133,16 @@ bound is used in the repair implementation.
 |---|---|---|
 | `kociumaka2024edit` | Cited | https://arxiv.org/abs/1411.7315v4 — Tomasz Kociumaka and Barna Saha, revised 24 October 2024; scored parsing and edit distance background. |
 | `baccianella2025jsonrepair` | Cited | https://github.com/mangiucugna/json_repair — Stefano Baccianella, software citation year 2025; measured version 0.63.5, including schema standard/salvage. |
+
+## M25 primary-source extension, 2026-09-29
+
+The original verification date and earlier inventories above are historical.
+The manuscript now has 27 bibliography records, including two additional primary
+sources for the public external data and the read-only application. Their URLs
+were opened on 2026-09-29; they support the exact dataset revision and API
+interface, rather than a claim of research novelty.
+
+| Key | Current use | Verification |
+|---|---|---|
+| `bfcldataset` | Cited | Pinned Gorilla data directory at commit `6ea57973c7a6097fd7c5915698c54c17c5b1b6c8`; original README declares Apache-2.0. Individual source hashes and eligible IDs are in `docs/evidence/m25-grounding-coverage.json`. |
+| `openmeteogeocoding` | Cited | Official `https://open-meteo.com/en/docs/geocoding-api`, GET `/v1/search` with `name`, `count`, `language` and JSON output; GeoNames attribution. No model performance claim is attributed to this API. |

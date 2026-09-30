@@ -41,6 +41,12 @@ def read(directory, *, allow_incomplete=False):
     tasks = {t["id"]: t for t in config["tasks"]}
     policies = {p["name"]: p for p in config["policies"]}
     seen = set()
+    source_metadata = [json.loads((directory / "metadata.json").read_text())]
+    if (directory / "resume_segments.jsonl").exists():
+        source_metadata += [
+            json.loads(line)["metadata"]
+            for line in (directory / "resume_segments.jsonl").read_text().splitlines()
+        ]
 
     def decoded(tokens):
         assert len(tokens) == config["slots"]
@@ -55,6 +61,7 @@ def read(directory, *, allow_incomplete=False):
         assert key not in seen
         seen.add(key)
         assert row["config_sha256"] == hashlib.sha256(cfg_bytes).hexdigest()
+        assert any(all(row[k] == v for k, v in source.items()) for source in source_metadata)
         is_schema = config.get("schema_calls", False)
         is_grounded = config.get("grounded_calls", False)
         indices = (

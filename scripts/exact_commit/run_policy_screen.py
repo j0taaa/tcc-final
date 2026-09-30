@@ -66,6 +66,28 @@ def fallback_positions(result, proposals):
     return []
 
 
+def resume_keys(directory, raw_config):
+    """Resume only an intact prefix of the frozen, rotated evaluation order."""
+    if (directory / "config.json").read_bytes() != raw_config:
+        raise ValueError("Resume configuration differs from the recorded configuration")
+    config = json.loads(raw_config)
+    expected = []
+    policies = config["policies"]
+    for index, task in enumerate(config["tasks"]):
+        offset = index % len(policies)
+        expected.extend((task["id"], p["name"]) for p in policies[offset:] + policies[:offset])
+    keys = []
+    checksum = hashlib.sha256(raw_config).hexdigest()
+    for line in (directory / "results.jsonl").read_text().splitlines():
+        row = json.loads(line)
+        if row["config_sha256"] != checksum:
+            raise ValueError("Recorded result has a different configuration hash")
+        keys.append((row["task"]["id"], row["method"]))
+    if keys != expected[: len(keys)] or len(keys) > len(expected):
+        raise ValueError("Recorded results are not a unique prefix of the frozen order")
+    return set(keys)
+
+
 def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, policy, config):
     import torch
 
@@ -255,9 +277,14 @@ def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, p
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
+    parser.add_argument("--resume", type=Path, help="Append only missing cells to an intact run")
     args = parser.parse_args()
     raw_config = args.config.read_bytes()
     config = json.loads(raw_config)
+    seen = resume_keys(args.resume, raw_config) if args.resume else set()
+    if len(seen) == len(config["tasks"]) * len(config["policies"]):
+        print("Run already complete; no inference performed")
+        return
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).strip():
         raise SystemExit("Freeze source/config in a clean commit before measurement")
@@ -322,8 +349,11 @@ def main():
     )
     for call, path in zip(catalog, paths, strict=True):
         assert b"".join(emissions[t] for t in path if t != EOS).decode() == call
-    output = ROOT / config["output_root"] / datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
-    output.mkdir(parents=True, exist_ok=False)
+    output = args.resume or ROOT / config["output_root"] / datetime.now(UTC).strftime(
+        "%Y%m%dT%H%M%SZ"
+    )
+    if not args.resume:
+        output.mkdir(parents=True, exist_ok=False)
     metadata = {
         "git_commit": commit,
         "seed": config["seed"],
@@ -350,8 +380,31 @@ def main():
         ("support", {"catalog": catalog, "paths": paths}),
         ("token_emissions", {t: list(b) for t, b in emissions.items()}),
     ):
-        (output / f"{name}.json").write_text(json.dumps(value) + "\n")
-    (output / "config.json").write_bytes(raw_config)
+        if args.resume:
+            original = json.loads((output / f"{name}.json").read_text())
+            if name == "metadata":
+                if any(value[k] != v for k, v in original.items() if k != "git_commit"):
+                    raise ValueError("Resume model/software/hardware identity changed")
+            elif original != json.loads(json.dumps(value)):
+                raise ValueError(f"Resume {name} differs from recorded support")
+        else:
+            (output / f"{name}.json").write_text(json.dumps(value) + "\n")
+    if args.resume:
+        with (output / "resume_segments.jsonl").open("a") as stream:
+            stream.write(
+                json.dumps(
+                    {
+                        "metadata": metadata,
+                        "started_at_utc": datetime.now(UTC).isoformat(),
+                        "completed_cells_before_resume": len(seen),
+                        "random_state": "reset to configured seed; "
+                        "EPIC recovery may differ across processes",
+                    }
+                )
+                + "\n"
+            )
+    else:
+        (output / "config.json").write_bytes(raw_config)
     warmup = tokenizer.apply_chat_template(
         [{"role": "user", "content": INSTRUCTION + "Add 1 and 2."}],
         add_generation_prompt=True,
@@ -362,6 +415,8 @@ def main():
             model(torch.tensor([warmup + [MASK] * config["slots"]], device="cuda"))
     torch.cuda.synchronize()
     for task_index, task in enumerate(config["tasks"]):
+        if all((task["id"], p["name"]) in seen for p in config["policies"]):
+            continue
         begin = time.perf_counter()
         indices = (
             [catalog.index(call) for call in prepared_catalogs[task["id"]]]
@@ -391,6 +446,8 @@ def main():
         policies = config["policies"]
         offset = task_index % len(policies)
         for policy in policies[offset:] + policies[:offset]:
+            if (task["id"], policy["name"]) in seen:
+                continue
             torch.cuda.reset_peak_memory_stats()
             torch.cuda.synchronize()
             method_started = time.perf_counter()

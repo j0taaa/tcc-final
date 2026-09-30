@@ -58,15 +58,19 @@ def test_t1301_explicitly_depends_on_t1258() -> None:
     assert "does not append all generated artifacts" in normalized
 
 
-def test_main_text_uses_audit_nonliteral_confirmation_and_repair() -> None:
+def test_live_article_keeps_historical_controls_in_supplement() -> None:
     manuscript = (ROOT / "paper" / "main.tex").read_text(encoding="utf-8")
 
     assert r"\label{tab:resultados}" not in manuscript
     assert r"\label{tab:cronograma}" not in manuscript
     assert manuscript.count("generated/m1301_article_results_v1/r") == 0
-    assert "generated/m21_repair_v1/repair-results.tex" in manuscript
     supplement = (ROOT / "paper/supplement-method.tex").read_text()
+    assert "generated/m21_repair_v1/repair-results.tex" in supplement
     assert "generated/m1301_article_results_v1/r1-correctness-finite-slots.tex" in supplement
-    assert "generated/m19_selection_audit_v1/audit-timing.tex" in manuscript
-    assert "generated/m17_review_v1/confirmation.tex" in manuscript
+    assert "generated/m19_selection_audit_v1/audit-timing.tex" in supplement
+    assert "generated/m17_review_v1/confirmation.tex" in supplement
+    assert "generated/m25_live_v1/synthetic-results.tex" in manuscript
+    assert "External grounded calls" in manuscript
+    assert "same templates" in manuscript and "not the official BFCL score" in manuscript
+    assert "Counterfactual-margin policies" in manuscript
     assert r"\section{Results and Analysis}" in manuscript

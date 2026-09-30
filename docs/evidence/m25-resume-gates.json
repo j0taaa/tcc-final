@@ -1,0 +1,9 @@
+{
+  "full_python": "1125 passed in 60.97s",
+  "upstream_integration": "19 passed, 4 pre-existing skips",
+  "ruff": "passed (src/tests and changed experiment scripts)",
+  "mypy": "87 source files; no issues",
+  "historical_m24": "build_policy_campaign.py --check passed; original artifacts unchanged",
+  "resume_contract": "identical config/support/model/software/hardware; intact frozen order prefix; source/session/RNG reset recorded",
+  "draft_article": "make -C paper: 16 pages, no overflow/unresolved references; final M25 insertion and visual review pending"
+}

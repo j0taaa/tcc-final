@@ -31,15 +31,16 @@ def test_article_imports_correctness_audit_and_confirmation() -> None:
     )
 
     assert table_inputs == []
-    assert "generated/m21_repair_v1/repair-results.tex" in article
     supplement = (ROOT / "paper/supplement-method.tex").read_text()
+    assert "generated/m21_repair_v1/repair-results.tex" in supplement
     assert "generated/m1301_article_results_v1/r1-correctness-finite-slots.tex" in supplement
     assert r"\label{tab:resultados}" not in article
     assert r"\label{tab:cronograma}" not in article
     assert "Preliminary and Expected Results" not in article
     assert "T1203 tables and figures remain" not in article
-    assert "generated/m19_selection_audit_v1/audit-timing.tex" in article
-    assert "generated/m17_review_v1/confirmation.tex" in article
+    assert "generated/m19_selection_audit_v1/audit-timing.tex" in supplement
+    assert "generated/m17_review_v1/confirmation.tex" in supplement
+    assert "generated/m25_live_v1/synthetic-results.tex" in article
     assert (ROOT / "paper/generated/m1301_article_results_v1/r3-scaling-integration.tex").is_file()
 
 

@@ -1,0 +1,13 @@
+{
+  "source_experiment": "m25_grounded_development_v1",
+  "records": 127,
+  "uncompressed_results_sha256": "1ba04921bb0e8e67b79be00c72be3a051e943780caa946cb51b6b93548bb38df",
+  "sha256": {
+    "config.json": "d9a29a2c692445d796cc98ade5b8afcd1e6b64bd08901154a7a9494aa9797f5d",
+    "metadata.json": "d7c5b2c829e9fac53731d0241ebea7822af29d662e7d1d0b496f0a835eff6aba",
+    "support.json": "ca759ef06ebd36bc974918ac198830fb3085212da6850c854008e83a225d9312",
+    "token_emissions.json": "dd36911c69b6b8b476c24080aad3aee2b3c8e7970a17ef6369247f61f470acb1",
+    "results.jsonl.gz": "5d00be4460de064ee60f1858342fe6b3d3bd97a587e022e940454a0f6488d263",
+    "interruption.json": "1e6805353b40ea8c2e022ab59cda6952c1dd8d4f8e34263b058b0eeeedd3a292"
+  }
+}

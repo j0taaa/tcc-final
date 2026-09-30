@@ -16,6 +16,8 @@ def main():
     args = parser.parse_args()
     args.destination.mkdir(parents=True, exist_ok=False)
     names = ["config.json", "metadata.json"]
+    if (args.source / "resume_segments.jsonl").exists():
+        names.append("resume_segments.jsonl")
     if not args.recovery:
         names += ["support.json", "token_emissions.json"]
     for name in names:

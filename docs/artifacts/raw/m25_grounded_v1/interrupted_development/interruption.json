@@ -1,0 +1,10 @@
+{
+  "status": "interrupted",
+  "completed_records": 127,
+  "planned_records": 234,
+  "producing_commit": "321926b",
+  "command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m25_grounded_development_v1.json",
+  "reason": "Process/session ended between records; no exception was logged. Exact termination cause is unknown.",
+  "resolution": "Preserve the original prefix; resume only missing cells with the identical config and support. Record resumed source and RNG reset explicitly.",
+  "snapshot_of": "development; prefix is reused, not additional independent generations"
+}

@@ -53,6 +53,12 @@ exclude = [
   "/docs/artifacts/raw/m24_policy_v1/repeat/**",
   "/docs/artifacts/raw/m24_policy_v1/secondary*/**",
   "/docs/artifacts/raw/m24_policy_v1/bfcl*/**",
+  # M25 full traces are reproduced from the Git evidence checkout.
+  # Keep smoke fixtures and the small interrupted-smoke regression archive.
+  "/docs/artifacts/raw/m25_grounded_v1/development/**",
+  "/docs/artifacts/raw/m25_grounded_v1/interrupted_development/**",
+  "/docs/artifacts/raw/m25_grounded_v1/confirmation/**",
+  "/docs/artifacts/raw/m25_grounded_v1/repeat/**",
   "/docs/artifacts/raw/m24_policy_v1/epic_intermediate*/**",
 ]
 

@@ -82,3 +82,15 @@ conversão local de literais, sem modificar o EPIC ou a linguagem permitida.
 Regressões cobrem espaços, Unicode e metacaracteres; compilação CPU dos 68
 suportes passou. Suíte completa após a correção: 1.123 testes; Ruff e MyPy
 (87 arquivos) passaram. O smoke v2 repete os mesmos casos e políticas.
+
+## Retomada auditável do desenvolvimento
+
+O processo de desenvolvimento foi interrompido entre registros após 127/234
+células, sem exceção registrada. A causa exata do encerramento é desconhecida.
+O prefixo original fica em `interrupted_development`, com manifest e diagnóstico;
+é um snapshot dos mesmos registros, não uma segunda amostra. A retomada aceita
+somente um prefixo íntegro da ordem congelada, configuração/suporte idênticos e
+mesmas revisões, versões e GPU. Ela não repete células já concluídas. Cada sessão
+registra seu commit, início, número de células anteriores e reinicialização da
+semente; escolhas de recuperação do EPIC continuam podendo variar entre processos.
+Não há seleção de políticas a partir de resultados de confirmação.
