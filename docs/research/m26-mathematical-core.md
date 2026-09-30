@@ -253,7 +253,7 @@ para uma única posição retém no máximo 7/(4n). Entretanto, OPT_1=7/8.
 **Prova.** As duas formas de L excluem a coexistência de h e l. Qualquer
 conclusão com h tem somente seu peso, e a conclusão com todos os l atinge 7/4.
 Assim, toda testemunha ótima sem orçamento contém exclusivamente propostas l.
-Com uma posição permitida, o melhor lote é h, pois 7/(4n)<=7/8. A razão do
+Com uma posição permitida, um lote ótimo é h, pois 7/(4n)<=7/8 (há empate quando n=2). A razão do
 pós-filtro para OPT_1 é 2/n, que tende a zero quando k aumenta. Os pesos são
 racionais binários exatos e a linguagem e orçamento permanecem fixos. QED.
 

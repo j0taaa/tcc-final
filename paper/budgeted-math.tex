@@ -102,7 +102,7 @@ Even at fixed budget $B=1$, choosing the best one-position subset of an ordinary
 \label{thm:budget-postfilter}
 \end{theorem}
 \begin{proof}
-In the same language, use $n+1$ slots: the first allows $0,h$ with proposal $h$ of weight $7/8$; each remaining slot allows $0,l$ with proposal $l$ of weight $7/(4n)$, for $n=2^k\geq2$. Unbudgeted MWPC strictly prefers $0l^n$, scoring $7/4$ rather than $7/8$. Its best one-position subset scores $7/(4n)$. Joint budget-one optimization chooses the $h$ witness and scores $7/8$; their ratio is $2/n\to0$.
+In the same language, use $n+1$ slots: the first allows $0,h$ with proposal $h$ of weight $7/8$; each remaining slot allows $0,l$ with proposal $l$ of weight $7/(4n)$, for $n=2^k\geq2$. Unbudgeted MWPC strictly prefers $0l^n$, scoring $7/4$ rather than $7/8$. Its best one-position subset scores $7/(4n)$. The $h$ witness attains the joint budget-one optimum $7/8$; their ratio is $2/n\to0$.
 \end{proof}
 
 These infinite families prove limitations of algorithmic rules, not a benchmark win rate. The constructive exact solver supplies a solution for all inputs satisfying the hypotheses, including ties and cases where heuristics already attain the optimum.
