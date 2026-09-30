@@ -1,0 +1,11 @@
+{
+  "full_python": {"command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q", "result": "1128 passed in 63.06s"},
+  "targeted_new_regressions": {"command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/exact_commit/test_geocoding_demo.py tests/exact_commit/test_policy_artifacts.py tests/exact_commit/test_grounded_confirmation_freeze.py tests/exact_commit/test_submission_bibliography_verification.py", "result": "18 passed in 2.58s"},
+  "upstream_integration": {"command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q vendor/EPIC-Decoding/tests/test_constrain_utils.py vendor/EPIC-Decoding/tests/test_bindings.py", "result": "19 passed, 4 pre-existing skips in 9.03s"},
+  "ruff": "src/tests and changed experiment scripts pass",
+  "mypy": "87 source files pass",
+  "historical_m24": "build_policy_campaign.py --check passes with unchanged raw archives",
+  "development": "Complete 234-cell grid validated; interruption snapshot equals the original 127-cell prefix",
+  "selection": "Frozen primary unchanged; secondary budget selected only from complete development, before any confirmation output",
+  "diagnostics_change": "Driver now counts a failed selector before any commitment and stores its stage timings; no proposal, support, score, witness or commitment-policy change"
+}

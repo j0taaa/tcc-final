@@ -80,5 +80,69 @@
       "after_whitespace_correct": 0,
       "changed_grades": []
     }
+  },
+  "development": {
+    "catalog_map64": {
+      "n": 26,
+      "primary_correct": 4,
+      "after_whitespace_correct": 4,
+      "changed_grades": []
+    },
+    "catalog_map8": {
+      "n": 26,
+      "primary_correct": 5,
+      "after_whitespace_correct": 5,
+      "changed_grades": []
+    },
+    "confidence_0.8": {
+      "n": 26,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    },
+    "epic_lexical_32": {
+      "n": 26,
+      "primary_correct": 14,
+      "after_whitespace_correct": 14,
+      "changed_grades": []
+    },
+    "epic_lexical_64": {
+      "n": 26,
+      "primary_correct": 12,
+      "after_whitespace_correct": 12,
+      "changed_grades": []
+    },
+    "epic_lexical_8": {
+      "n": 26,
+      "primary_correct": 13,
+      "after_whitespace_correct": 14,
+      "changed_grades": [
+        {
+          "task_id": "simple_python_255",
+          "before": false,
+          "after": true,
+          "raw_output": "religious_history\n\n\n.get_papal_biography(include_contributions=True,papal_name='Innocent III')",
+          "normalized": "religious_history . get_papal_biography ( include_contributions = True , papal_name = 'Innocent III' )"
+        }
+      ]
+    },
+    "exact_b4": {
+      "n": 26,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "exact_b64": {
+      "n": 26,
+      "primary_correct": 2,
+      "after_whitespace_correct": 2,
+      "changed_grades": []
+    },
+    "greedy_confidence_0.8": {
+      "n": 26,
+      "primary_correct": 0,
+      "after_whitespace_correct": 0,
+      "changed_grades": []
+    }
   }
 }

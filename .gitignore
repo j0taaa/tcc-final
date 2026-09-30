@@ -25,6 +25,7 @@ checkpoints/
 datasets/
 results/raw/
 results/processed/
+results/demo/
 runs/
 wandb/
 *.safetensors

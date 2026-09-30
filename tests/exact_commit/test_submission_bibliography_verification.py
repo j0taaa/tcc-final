@@ -10,6 +10,11 @@ EVIDENCE = ROOT / "docs" / "evidence" / "submission-bibliography-verification.md
 CHECKLIST = ROOT / "paper" / "FIELDS_TO_FILL.md"
 
 EXPECTED_KEYS = {
+    "su2026factor",
+    "katsirelos2008weighted",
+    "weiss2010cascades",
+    "wang2026tacg",
+    "cai2026confidence",
     "bfcldataset",
     "openmeteogeocoding",
     "kociumaka2024edit",

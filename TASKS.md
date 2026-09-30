@@ -33,7 +33,7 @@ Preserve exact_on_support, immutable fixed slots, all failures and real EPIC.
 - [ ] T2502: Run a bounded development pilot and frozen external confirmation with
   strong EPIC, matched greedy and catalog controls; repeat timings, archive all
   outputs and regenerate paired uncertainty and coverage reports.
-  **Evidence (partial):** smoke v1 interrupted after 4/18 cells; fixed literal-regex integration and complete smoke v2 (18/18) archived. Development prefix 127/234 independently validated and archived as an interruption snapshot; same-config continuation records session provenance and RNG reset. `docs/evidence/m25-resume-gates.json`: full Python 1,125 passed, upstream integration 19 passed/4 existing skips, Ruff/MyPy and unchanged M24 reconstruction pass. Full development and frozen confirmation remain pending.
+  **Evidence (partial):** interrupted smoke 4/18 and complete smoke 18/18 retained. Development complete: 234/234, independently validated; the 127-row interruption snapshot exactly matches its prefix and is not double-counted. EPIC 32 reaches 14/26, budget 4/64 reach 2/26 each; confidence reaches 0/26. Frozen secondary budget 64 wins the development latency tie; confidence 0.8 versus EPIC 32 remains primary. Both 42-case/8-policy confirmation configs frozen before measurement (`docs/evidence/m25-confirmation-freeze.json`). Full Python 1,128 passed, upstream integration 19 passed/4 existing skips, Ruff/MyPy and unchanged M24 reconstruction pass. Confirmation and repeat remain pending.
 - [ ] T2503: Deliver a runnable dLLM-to-read-only-query demo with validated calls,
   explicit live/replay modes, failure handling and reproducible local evidence.
   **Evidence:** pending.

@@ -87,3 +87,26 @@ def test_replay_never_contacts_network_and_rejects_changed_record(tmp_path, monk
     geocoding.save_record(tmp_path / "bad_payload", record)
     with pytest.raises(ValueError, match="payload"):
         geocoding.read_record(tmp_path / "bad_payload")
+
+
+def test_rejected_dispatch_can_be_replayed_without_claiming_a_query(tmp_path, monkeypatch):
+    def no_network(*args, **kwargs):
+        raise AssertionError("rejected dispatch replay must not contact a service")
+
+    monkeypatch.setattr(geocoding, "urlopen", no_network)
+    record = {
+        "mode": "live",
+        "function": copy.deepcopy(geocoding.FUNCTION),
+        "request": QUESTION,
+        "generation": {"status": "complete", "output": "get_location(name='unmentioned')"},
+        "policy": {"name": "confidence_0.8"},
+        "status": "query_failed",
+        "api": None,
+        "failure": {"type": "ValueError", "message": "Call rejected before dispatch"},
+    }
+    geocoding.save_record(tmp_path / "rejected", record)
+    assert geocoding.read_record(tmp_path / "rejected") == record
+    record["status"] = "query_complete"
+    geocoding.save_record(tmp_path / "false_success", record)
+    with pytest.raises(ValueError):
+        geocoding.read_record(tmp_path / "false_success")

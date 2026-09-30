@@ -19,16 +19,39 @@
       ],
       "manifest_sha256": "dc8cdae91264de5eac3c07b4e807d00e8f7dafb49e5a0759c3164dbea3705372",
       "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m25_grounded_smoke_v2.json"
+    },
+    "development": {
+      "records": 234,
+      "planned_records": 234,
+      "interrupted": false,
+      "producing_commits": [
+        "321926bfc968e0a899ac0ced9e2b6bcea5f684f0",
+        "81ce949a821ace36489b100ae494359d290b7ca4"
+      ],
+      "manifest_sha256": "af157a5f7050a020c581be71ee2451e6bccf32f3e7d4c93a8d054f3f0220ccba",
+      "producing_command": "PYTHONDONTWRITEBYTECODE=1 .venv-live/bin/python scripts/exact_commit/run_policy_screen.py --config configs/experiments/m25_grounded_development_v1.json"
+    }
+  },
+  "interruption_snapshots": {
+    "interrupted_development": {
+      "records": 127,
+      "manifest_sha256": "f173bec49b1c53b18e41eac6b76dd9284c16271c2c6713d350e7a8c7ed65579c",
+      "counted_as_additional_generations": false,
+      "reason": "Snapshot of the same prefix retained in the resumed development cohort"
     }
   },
   "complete_campaign": false,
-  "recorded_generations": 22,
-  "distinct_task_ids": 2,
-  "model_forwards": 372,
+  "recorded_generations": 256,
+  "distinct_task_ids": 26,
+  "model_forwards": 4366,
   "statuses": {
-    "complete": 22
+    "complete": 240,
+    "resample_limit": 3,
+    "timeout": 13
   },
   "source_commits": [
+    "321926bfc968e0a899ac0ced9e2b6bcea5f684f0",
+    "81ce949a821ace36489b100ae494359d290b7ca4",
     "b71e3c6be6139bb5fa82d4724d07813b331496cf",
     "c0dd9edc0e12dc546a1f110fb15c67a7c3b6f75b"
   ],

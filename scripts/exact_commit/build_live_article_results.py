@@ -44,7 +44,8 @@ def table(summary, *, external):
         r"\centering\small",
         r"\caption{"
         + caption
-        + " Correct calls are shown separately for two repetitions; total latency includes "
+        + f" There are {summary['unique_requests']} requests. Correct calls are shown "
+        "separately for two repetitions; total latency includes "
         "setup and upstream recovery, with repeats aggregated within each request. "
         "Forwards are summed over the first repetition.}",
         r"\label{tab:live-" + name + "}",
@@ -58,8 +59,7 @@ def table(summary, *, external):
         va, vb = row["valid"]
         lines.append(
             f"{label(row['method'])} & {a}/{b} & {va}/{vb} & "
-            f"{row['median_total_ms']:.0f} & {row['forwards'][0]} "
-            + r"\\"
+            f"{row['median_total_ms']:.0f} & {row['forwards'][0]} " + r"\\"
         )
     lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
     return "\n".join(lines)
@@ -78,14 +78,21 @@ def build(*, grounded):
     values = {}
 
     def numbers(prefix, summary):
+        suffixes = {
+            "confidence_0.8": "Confidence",
+            "exact_b4": "BudgetFour",
+            "exact_b64": "BudgetFull",
+            "epic_lexical_8": "EpicEight",
+            "epic_lexical_24": "EpicFull",
+            "epic_lexical_32": "EpicThirtyTwo",
+            "epic_lexical_64": "EpicSixtyFour",
+            "catalog_map8": "MapEight",
+            "catalog_map64": "MapFull",
+            "greedy_confidence_0.8": "Greedy",
+        }
         for row in summary["table"]:
-            if row["method"] in ("confidence_0.8", "exact_b4", "epic_lexical_8", "epic_lexical_24"):
-                suffix = {
-                    "confidence_0.8": "Confidence",
-                    "exact_b4": "BudgetFour",
-                    "epic_lexical_8": "EpicEight",
-                    "epic_lexical_24": "EpicFull",
-                }[row["method"]]
+            if row["method"] in suffixes:
+                suffix = suffixes[row["method"]]
                 values[prefix + suffix + "Correct"] = str(row["correct"][0])
                 values[prefix + suffix + "Ms"] = f"{row['median_total_ms']:.0f}"
 
@@ -105,6 +112,11 @@ def build(*, grounded):
         values["MGroundedCases"] = str(external["unique_requests"])
         values["MGroundedCovered"] = str(coverage["answer_in_support"])
         numbers("MGrounded", external)
+        primary = external["paired_comparisons"][external["primary_method"]]
+        values["MGroundedPrimarySpeed"] = f"{primary['median_paired_speed_ratio']:.2f}"
+        values["MGroundedPrimaryDifference"] = f"{primary['accuracy_difference_pp']:.2f}"
+        values["MGroundedPrimaryLower"] = f"{primary['paired_accuracy_conservative95_pp'][0]:.2f}"
+        values["MGroundedPrimaryUpper"] = f"{primary['paired_accuracy_conservative95_pp'][1]:.2f}"
     output["live-values.tex"] = (
         "\n".join("\\newcommand{\\" + name + "}{" + value + "}" for name, value in values.items())
         + "\n"

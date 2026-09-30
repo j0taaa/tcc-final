@@ -78,8 +78,21 @@ def read_record(directory: Path) -> dict[str, Any]:
     if record.get("mode") != "live" or record.get("function") != FUNCTION:
         raise ValueError("Replay must originate from the recorded live demo schema")
     if record["generation"]["status"] == "complete":
-        url = validated_url(record["generation"]["output"], record["request"])
         api = record.get("api")
+        try:
+            url = validated_url(record["generation"]["output"], record["request"])
+        except ValueError:
+            # Failed dispatch is evidence too. It cannot authorize a recorded query.
+            failure = record.get("failure")
+            if (
+                api is not None
+                or record.get("status") != "query_failed"
+                or not isinstance(failure, dict)
+                or failure.get("type") != "ValueError"
+                or not isinstance(failure.get("message"), str)
+            ):
+                raise
+            return record
         if api:
             if api["url"] != url:
                 raise ValueError("Recorded API URL does not match the validated call")

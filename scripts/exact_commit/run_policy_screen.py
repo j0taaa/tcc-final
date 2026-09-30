@@ -96,6 +96,7 @@ def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, p
     row_tensors = [torch.tensor(row, device="cuda") for row in rows]
     canvas = [None] * config["slots"]
     trace, status, failure = [], "forward_limit", None
+    solver_counts = Counter()
     forwards = 0
     torch.cuda.synchronize()
     started = time.perf_counter()
@@ -151,6 +152,7 @@ def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, p
                 profiler=profile,
             )
             result = gate.optimizer
+            solver_counts[result.status.value] += 1
             gate_data = {
                 "status": gate.status.value,
                 "certified_positions": list(gate.certified_positions),
@@ -168,6 +170,12 @@ def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, p
             }
             if gate.status is not SelectionStatus.OPTIMAL:
                 status, failure = gate.status.value, gate_data
+                failure["timings"] = {
+                    "forward_seconds": forward_seconds,
+                    "candidate_seconds": candidate_seconds,
+                    "support_seconds": support_seconds,
+                    "selector_seconds": time.perf_counter() - begin,
+                }
                 break
             commits = list(gate.committed_positions)
             fallback = gate.progress_fallback
@@ -179,6 +187,7 @@ def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, p
                 if all(t is None or t == path[p] for p, t in enumerate(canvas))
             ]
             if not feasible:
+                solver_counts["infeasible_on_support"] += 1
                 status = "infeasible_on_support"
                 break
             scores = [
@@ -194,6 +203,7 @@ def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, p
             free.sort(key=lambda p: (-distributions[p][rows[p].index(witness[p])], p))
             commits = free[: policy["commit_cap"]]
             result, fallback = None, False
+            solver_counts["catalog_map"] += 1
         else:
             result = (
                 select_greedy_exact_feasibility(
@@ -202,8 +212,15 @@ def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, p
                 if kind == "greedy" or policy.get("selector") == "greedy"
                 else select_exact_mwpc(state, timeout_seconds=remaining, profiler=profile)
             )
+            solver_counts[result.status.value] += 1
             if result.score is None:
                 status, failure = result.status.value, result.to_dict()
+                failure["timings"] = {
+                    "forward_seconds": forward_seconds,
+                    "candidate_seconds": candidate_seconds,
+                    "support_seconds": support_seconds,
+                    "selector_seconds": time.perf_counter() - begin,
+                }
                 break
             selected = set(result.selected_proposal_ids)
             accepted = [p for p in proposals if p.proposal_id in selected]
@@ -265,12 +282,7 @@ def decode(*, model, tokenizer, request, calls, paths, grammar, rows, adapter, p
         "trace": trace,
         "elapsed_seconds": elapsed,
         "gpu_peak_allocated_bytes": torch.cuda.max_memory_allocated(),
-        "solver_status_counts": dict(
-            Counter(
-                t["production_result"]["status"] if t["production_result"] else "catalog_map"
-                for t in trace
-            )
-        ),
+        "solver_status_counts": dict(solver_counts),
     }
 
 

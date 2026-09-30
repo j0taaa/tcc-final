@@ -12,6 +12,7 @@ Reprodução de uma execução registrada, sem GPU nem rede:
 
 ```bash
 PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/run_query_demo.py --mode replay
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/verify_query_demo.py
 ```
 
 Inferência nova, com o ambiente CUDA e o snapshot local descritos em
@@ -35,6 +36,11 @@ configuração, commit, suporte, trajetórias e resultado da consulta. Erros de
 rede, consulta vazia e geração incompleta têm estados distintos. O serviço pode
 mudar depois da data registrada. Texto de entrada deve ser público: o nome
 selecionado é enviado ao serviço de geocodificação.
+
+O segundo comando confere também cada testemunha e atualização arquivada:
+bytes, suporte, slots físicos, posições já fixadas, propostas selecionadas e
+valor objetivo. Essa conferência de viabilidade não substitui os testes do
+algoritmo contra os oráculos de otimalidade.
 
 Validade estrutural não prova que a cidade escolhida corresponde à intenção.
 A demonstração é um fluxo de uso, não uma estimativa de acurácia ou superioridade.

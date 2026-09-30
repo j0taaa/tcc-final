@@ -73,12 +73,12 @@ Av. Brasil, 2023, Savassi, Belo Horizonte - MG, 30140-002, Brazil
 \maketitle
 
 \begin{abstract}
-Parallel token proposals in diffusion language models can jointly violate a grammar. We formulate maximum-weight parallel commitment (MWPC) as highest-reward feasible completion and implement independent Python and Rust solvers with finite token slots, byte provenance and independently checked certificates. Optimality is per step on the represented support. We then separate optimal batch selection from the policy deciding how much to commit. With quantized LLaDA-8B-Instruct on 100 new synthetic tool requests, a four-proposal MWPC policy produces \MLiveBudgetFourCorrect{} correct calls versus \MLiveEpicEightCorrect{} for eight-step EPIC, at median total latencies of \MLiveBudgetFourMs{} and \MLiveEpicEightMs{} ms. This secondary comparison includes upstream recovery; whitespace normalization reduces the accuracy difference to eight points. The frozen confidence-policy comparison is faster than 24-step EPIC but does not establish accuracy non-inferiority. Finite-catalog MAP and matched greedy controls expose important tradeoffs. External grounded calls and a read-only query demonstration further delimit practical scope. The contribution is a certified integration and reproducible cost--quality evidence, not a new parsing algorithm or universal superiority.
+Parallel dLLM proposals can jointly violate a grammar. We formulate maximum-weight parallel commitment (MWPC) as highest-reward feasible completion. Independent Python/Rust solvers preserve finite slots, byte provenance and checked certificates; optimality is per step on represented support. With quantized LLaDA-8B-Instruct on 100 new synthetic tool requests, four-proposal MWPC produces \MLiveBudgetFourCorrect{} correct calls versus \MLiveEpicEightCorrect{} for eight-step EPIC, at median total latencies of \MLiveBudgetFourMs{} and \MLiveEpicEightMs{} ms. This secondary comparison includes upstream recovery; whitespace normalization reduces the difference to eight points. The frozen confidence comparison is faster than EPIC 24 but does not establish accuracy non-inferiority. External queries, MAP/greedy controls and read-only dispatch delimit practical scope. The contribution is a certified integration and reproducible cost--quality evidence, not a new parsing algorithm or universal superiority.
 \end{abstract}
 
 \begin{otherlanguage}{brazilian}
 \begin{resumo}
-Propostas paralelas de tokens em modelos de linguagem por difusão podem violar conjuntamente uma gramática. Formulamos a fixação paralela de peso máximo (MWPC) como busca da sequência viável de maior recompensa. Implementações independentes em Python e Rust preservam posições finitas, proveniência dos bytes e certificados verificados. A exatidão vale por etapa no suporte representado. Separamos a seleção do lote ótimo da política que decide quanto fixar. Com LLaDA-8B-Instruct quantizado e 100 novos pedidos sintéticos de ferramentas, MWPC com quatro propostas acerta \MLiveBudgetFourCorrect{} chamadas, contra \MLiveEpicEightCorrect{} do EPIC com oito etapas, com medianas de \MLiveBudgetFourMs{} e \MLiveEpicEightMs{} ms. Essa comparação secundária inclui a recuperação original; normalizar espaços reduz a diferença a oito pontos. A comparação primária com política de confiança é mais rápida que EPIC com 24 etapas, mas não estabelece não inferioridade de acurácia. Controles MAP e guloso, consultas externas e uma demonstração de leitura delimitam o uso prático. A contribuição é uma integração certificada com evidência reproduzível de custo e qualidade, sem alegar um novo algoritmo de parsing ou superioridade universal.
+Propostas paralelas em modelos de linguagem por difusão podem violar conjuntamente uma gramática. Formulamos a fixação paralela de peso máximo (MWPC) como busca da sequência viável de maior recompensa. Implementações independentes em Python/Rust preservam posições finitas, bytes e certificados verificados; a exatidão vale por etapa no suporte representado. Com LLaDA-8B-Instruct quantizado e 100 novos pedidos sintéticos, MWPC com quatro propostas acerta \MLiveBudgetFourCorrect{} chamadas, contra \MLiveEpicEightCorrect{} do EPIC com oito etapas, com medianas de \MLiveBudgetFourMs{} e \MLiveEpicEightMs{} ms. Essa comparação secundária inclui a recuperação original; normalizar espaços reduz a diferença a oito pontos. A comparação primária por confiança é mais rápida que EPIC 24, mas não estabelece não inferioridade de acurácia. Consultas externas, controles MAP/guloso e uma demonstração de leitura delimitam o uso. A contribuição é uma integração certificada com evidência reproduzível de custo e qualidade, sem alegar novo parsing ou superioridade universal.
 \end{resumo}
 \end{otherlanguage}
 
@@ -97,11 +97,15 @@ At each denoising step, a reveal policy chooses proposed tokens from marginal di
 
 DINGO uses dynamic programming for regular-language constraints \cite{suresh2025dingo}; Dang and Ermon study exact inference over mean-field distributions conditioned by finite automata \cite{dang2026automata}. For CFGs, Mündler et al. test completion feasibility through intersection with a regular representation of partial outputs \cite{mundler2025cfg}. EPIC accelerates this process with lexical memoization, graph-based Earley validation and relaxed batch selection followed by verification \cite{jin2026epic}. MWPC replaces repeated subset checks with one weighted inference on the represented finite support. Its proposal-agreement objective differs from constrained mean-field MAP: maximizing selected proposal weights is not maximizing the product of all token probabilities. We therefore include an exhaustive canonical-catalog MAP control, without identifying it with a full reimplementation of DINGO or Dang and Ermon.
 
-CLAD also performs exact weighted selection in parallel diffusion decoding, but on a matching conflict graph derived from attention-based clusters \cite{qi2026clad}. Its compatibility criterion differs from the existence of a CFG-valid completion. Thus exact parallel subset selection in general is not a novelty claim here.
+FactorDLM performs exact mean-field inference with finite-domain factor graphs and variable elimination \cite{su2026factor}. Our CFG proposal-agreement solver does not implement that decoder or claim general exact-dLLM-inference novelty.
+
+CLAD performs exact weighted selection on matching conflicts from attention clusters \cite{qi2026clad}, rather than CFG-valid completion. Exact parallel subset selection is therefore not a general novelty claim here.
+
+Confidence-controlled decoding is established \cite{cai2026confidence}; TACG already separates token identity from commitment timing using prediction history \cite{wang2026tacg}. Our confidence gate is a simple control around a grammar-certified witness, not a reproduction of their algorithms or theoretical sampling guarantees. Structured max-marginal filtering also predates dLLMs \cite{weiss2010cascades}; the tested counterfactual-margin extension does not claim to invent it.
 
 \subsection{Weighted grammar--automaton intersection}
 
-CFGs express recursion, including nested arrays and balanced delimiters. CKY parses normalized grammars over spans; Earley supports general productions \cite{kasami1965,earley1970}. Intersecting a CFG with a regular language preserves context-freeness \cite{barhillel1961,hopcroft2006}. Weighted intersection is also established: Nederhof and Satta formulate probabilistic parsing as intersection, and Hanneforth presents a practical weighted algorithm \cite{nederhof2003intersection,hanneforth2011intersection}. Pasti et al. extend the construction to epsilon arcs while preserving structural correspondence \cite{pasti2023intersection}. Our finite DAG implementation instead uses maximum-weight epsilon closure with original-path backpointers; it needs one optimal witness, not an encoding of all derivations.
+CFGs express recursion, including nested arrays and balanced delimiters. CKY parses normalized grammars over spans; Earley supports general productions \cite{kasami1965,earley1970}. Intersecting a CFG with a regular language preserves context-freeness \cite{barhillel1961,hopcroft2006}. Weighted CFG optimization predates dLLMs \cite{katsirelos2008weighted}. Weighted intersection is also established: Nederhof and Satta formulate probabilistic parsing as intersection, and Hanneforth presents a practical weighted algorithm \cite{nederhof2003intersection,hanneforth2011intersection}. Pasti et al. extend the construction to epsilon arcs while preserving structural correspondence \cite{pasti2023intersection}. Our finite DAG implementation instead uses maximum-weight epsilon closure with original-path backpointers; it needs one optimal witness, not an encoding of all derivations.
 
 Semiring parsing separates chart structure from its arithmetic \cite{goodman1999semiring,mohri2002}. Here max-plus uses $\max$ for alternatives, addition for composition, $-\infty$ for impossibility and zero for an empty reward. This maximizes one completion rather than summing probability mass over all CFG words, whose complexity can depend on ambiguity \cite{amarilli2026probabilistic}. Neutral grammar-production weights ensure that multiple derivations do not multiply a token's reward.
 
@@ -187,21 +191,7 @@ If $\Feas_x=\varnothing$, both problems are declared infeasible.
 \end{theorem}
 
 \begin{proof}
-For any $y\in\Feas_x$, the set $\Match_C^+(y)$ is compatible because $y$ itself satisfies every proposal in that set. Since omitted matched proposals have weight zero,
-\begin{equation}
-\max_{J\text{ compatible}}W(J)
-\geq
-\max_{y\in\Feas_x}W(\Match_C^+(y))
-=
-\max_{y\in\Feas_x}R_C(y).
-\end{equation}
-
-Conversely, let $J$ be compatible and define $J^+=\{j\in J:w_j>0\}$. There is a witness $y\in\Feas_x$ that satisfies every proposal in $J$, so $J^+\subseteq\Match_C^+(y)$. Since the removed indices have zero weight,
-\begin{equation}
- W(J)=W(J^+)\leq W(\Match_C^+(y))=R_C(y)
- \leq\max_{y'\in\Feas_x}R_C(y').
-\end{equation}
-The inequality holds for every compatible $J$. Taking the maximum and combining both directions yields equality.
+For any $y\in\Feas_x$, $\Match_C^+(y)$ is compatible with witness $y$ and has weight $R_C(y)$, since omitted matched proposals have zero weight. Therefore the left maximum is at least the right maximum. Conversely, a compatible $J$ has a witness $y$. Its positive-weight indices $J^+=\{j\in J:w_j>0\}$ satisfy $J^+\subseteq\Match_C^+(y)$, so non-negativity gives $W(J)=W(J^+)\leq W(\Match_C^+(y))=R_C(y)$. Taking maxima gives the opposite inequality and equality follows.
 \end{proof}
 
 \begin{corollary}[Optimal-batch recovery]
@@ -281,15 +271,7 @@ When the model permits early termination, the lattice is composed with a regular
 
 \subsection{Composition with detokenization and lexing}
 
-Each token may emit a byte string. Conceptually, compose
-\begin{equation}
-A_{\mathrm{lex}}=
-(A_{\mathrm{tok}}\cap A_H)\circ T_{\mathrm{detok}}\circ T_{\mathrm{lex}},
-\label{eq:composition}
-\end{equation}
-where $T_{\mathrm{detok}}$ maps tokens to bytes, $T_{\mathrm{lex}}$ maps bytes to lexemes, and $A_H$ is an automaton over model-token IDs implementing EOS/PAD and other regular conditions. The synchronized product $A_{\mathrm{tok}}\cap A_H$ precedes detokenization, so both operands read the same alphabet. Weights and provenance originate on token arcs and are carried through composition. An implementation may compute transitions lazily and share prefixes in a tokenizer trie.
-
-For a programming-language lexer, the relation must reflect its declared policy, including maximal munch and priorities. Accepting every possible segmentation may recognize a lexical sequence that the real lexer would never produce. The implemented production path instead gives the CFG raw-byte terminals after the tokenizer mapping; it does not insert a lexer or claim maximal-munch semantics. The separate reference lexical interface is not used by the live model experiments, and contextual lexers remain an extension.
+EOS/PAD conditions apply to token IDs before detokenization. Expanding each token arc to bytes preserves its weight and provenance. The implemented CFG consumes raw-byte terminals; it does not insert a lexer or claim maximal-munch semantics. Optional composition with a lexical transducer must implement its declared priorities rather than accept arbitrary segmentation. That reference interface and its composition equation are detailed in the supplement and remain unused in live experiments.
 
 \subsection{Max-plus parsing over the graph}
 
@@ -314,26 +296,16 @@ The algorithm is the Viterbi version of CFG--automaton intersection. A weighted 
 \begin{algorithm}[ht]
 \caption{Max-plus parsing over a finite lattice}
 \label{alg:graph}
-\small
 \footnotesize
 \begin{algorithmic}[1]
 \Require strict CNF $G$ with flag $\nu=[\varepsilon\in L(G)]$; finite weighted DAG $A$
 \Ensure status, best original path, provenance, and score
 \State $(\bar A,\rho,z_\varepsilon)\gets\Call{NormalizeEpsilon}{A}$ \Comment{see text}
-\State Index states $q_0,\ldots,q_{m-1}$ in topological order
-\State Initialize $D[B,p,q]\gets\neginf$ for $B\in N$ and $p,q\in Q$
-\ForAll{arcs $e=(p,a,q)\in\bar E$ and productions $B\rightarrow a$}
-  \State relax $D[B,p,q]$ with $\omega(e)$ and record $e$
-\EndFor
-\ForAll{state pairs $(q_i,q_j)$ in increasing $j-i$}
-  \ForAll{$B\rightarrow CD\in P_2$ and $i<k<j$}
-    \State relax $D[B,q_i,q_j]$ with $D[C,q_i,q_k]+D[D,q_k,q_j]$
-    \State record $(C,D,q_k)$ whenever the score improves
-  \EndFor
-\EndFor
+\State Topologically index states; initialize every $D[B,p,q]\gets\neginf$
+\State Seed terminal entries using saturated arc weights and edge backpointers
+\State Apply recurrence~\eqref{eq:graphdp} by increasing span, storing each winning split
 \State $z\gets$ best reconstructed $D[S,q_{\mathrm{start}},f]$ over $f\in F$, or none
-\If{$z$ exists} \State expand its edges through $\rho$ \EndIf
-\If{$\nu$ and $z_\varepsilon$ exists} \State compare $z$ with $z_\varepsilon$ by original weight \EndIf
+\State Expand $z$ through $\rho$; compare with $z_\varepsilon$ when $\nu$ permits it
 \If{neither candidate exists} \State \Return \textsc{InfeasibleOnSupport} \EndIf
 \State Recover tokens $y^*$ from the winning original path
 \State $J^*\gets\{j:y^*_{i_j}=t_j,\ w_j>0\}$

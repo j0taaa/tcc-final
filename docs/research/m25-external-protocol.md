@@ -94,3 +94,19 @@ mesmas revisões, versões e GPU. Ela não repete células já concluídas. Cada
 registra seu commit, início, número de células anteriores e reinicialização da
 semente; escolhas de recuperação do EPIC continuam podendo variar entre processos.
 Não há seleção de políticas a partir de resultados de confirmação.
+
+## Decisão após desenvolvimento completo
+
+O piloto de 234 gerações foi concluído e validado antes da confirmação. EPIC 32
+acerta 14/26; os orçamentos quatro e 64 acertam 2/26 cada, e confiança 0,8 acerta
+0/26. Na fronteira entre os dois orçamentos, 64 empata em acurácia e custa menos
+(mediana total 11.782 contra 40.070 ms). Retém-se esse orçamento como secundário,
+sem mudar a comparação primária confiança 0,8 versus EPIC 32. O piloto não
+mostra vantagem MWPC neste recorte externo; a confirmação não será usada para
+esconder esse resultado nem ajustar suporte ou parâmetros.
+
+`freeze_grounded_confirmation.py` aplica a regra de maior acurácia de
+desenvolvimento, depois menor tempo, e gera as configurações v2 das duas ordens
+antes de medir qualquer caso de confirmação. Mantém seis controles fortes e
+todos os 42 pedidos, 336 gerações por repetição. A evidência de escolha registra
+o manifest do piloto e seus commits em `docs/evidence/m25-confirmation-freeze.json`.

@@ -1,0 +1,225 @@
+{
+  "development_manifest_sha256": "af157a5f7050a020c581be71ee2451e6bccf32f3e7d4c93a8d054f3f0220ccba",
+  "development_source_commits": [
+    "321926bfc968e0a899ac0ced9e2b6bcea5f684f0",
+    "81ce949a821ace36489b100ae494359d290b7ca4"
+  ],
+  "development_table": [
+    {
+      "method": "epic_lexical_32",
+      "n": 26,
+      "correct": 14,
+      "numeric_correct": null,
+      "valid": 25,
+      "forwards": 741,
+      "median_total_ms": 5581.021128280554,
+      "p95_total_ms": 6625.130980741233,
+      "median_decode_ms": 5475.318429002073,
+      "statuses": {
+        "complete": 25,
+        "resample_limit": 1
+      },
+      "recovery_statuses": {
+        "not_needed": 14,
+        "recovered": 11,
+        "no_completion": 1
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 6.508983135223389
+    },
+    {
+      "method": "epic_lexical_8",
+      "n": 26,
+      "correct": 13,
+      "numeric_correct": null,
+      "valid": 24,
+      "forwards": 168,
+      "median_total_ms": 2150.972248695325,
+      "p95_total_ms": 3007.967682206072,
+      "median_decode_ms": 2064.950125059113,
+      "statuses": {
+        "complete": 25,
+        "resample_limit": 1
+      },
+      "recovery_statuses": {
+        "not_needed": 11,
+        "recovered": 14,
+        "no_completion": 1
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 6.508983135223389
+    },
+    {
+      "method": "epic_lexical_64",
+      "n": 26,
+      "correct": 12,
+      "numeric_correct": null,
+      "valid": 25,
+      "forwards": 1462,
+      "median_total_ms": 9537.229317473248,
+      "p95_total_ms": 10232.23106842488,
+      "median_decode_ms": 9393.596782989334,
+      "statuses": {
+        "complete": 25,
+        "resample_limit": 1
+      },
+      "recovery_statuses": {
+        "not_needed": 13,
+        "recovered": 12,
+        "no_completion": 1
+      },
+      "ordinary_commits": 0,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 6.223480224609375
+    },
+    {
+      "method": "catalog_map8",
+      "n": 26,
+      "correct": 5,
+      "numeric_correct": null,
+      "valid": 26,
+      "forwards": 208,
+      "median_total_ms": 1456.0539496014826,
+      "p95_total_ms": 1582.6506576268002,
+      "median_decode_ms": 1406.6553140291944,
+      "statuses": {
+        "complete": 26
+      },
+      "recovery_statuses": {
+        "not_applicable": 26
+      },
+      "ordinary_commits": 434,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.459949970245361
+    },
+    {
+      "method": "catalog_map64",
+      "n": 26,
+      "correct": 4,
+      "numeric_correct": null,
+      "valid": 26,
+      "forwards": 26,
+      "median_total_ms": 224.64521107031032,
+      "p95_total_ms": 288.1753840483725,
+      "median_decode_ms": 176.5702610136941,
+      "statuses": {
+        "complete": 26
+      },
+      "recovery_statuses": {
+        "not_applicable": 26
+      },
+      "ordinary_commits": 419,
+      "fallback_steps": 0,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.428943157196045
+    },
+    {
+      "method": "exact_b64",
+      "n": 26,
+      "correct": 2,
+      "numeric_correct": null,
+      "valid": 26,
+      "forwards": 122,
+      "median_total_ms": 11781.568831182085,
+      "p95_total_ms": 31948.192443465814,
+      "median_decode_ms": 11742.066289996728,
+      "statuses": {
+        "complete": 26
+      },
+      "recovery_statuses": {
+        "not_applicable": 26
+      },
+      "ordinary_commits": 542,
+      "fallback_steps": 19,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.459949970245361
+    },
+    {
+      "method": "exact_b4",
+      "n": 26,
+      "correct": 2,
+      "numeric_correct": null,
+      "valid": 26,
+      "forwards": 527,
+      "median_total_ms": 40070.02951041795,
+      "p95_total_ms": 87820.479756454,
+      "median_decode_ms": 40011.166125535965,
+      "statuses": {
+        "complete": 26
+      },
+      "recovery_statuses": {
+        "not_applicable": 26
+      },
+      "ordinary_commits": 475,
+      "fallback_steps": 41,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.459949970245361
+    },
+    {
+      "method": "greedy_confidence_0.8",
+      "n": 26,
+      "correct": 0,
+      "numeric_correct": null,
+      "valid": 13,
+      "forwards": 253,
+      "median_total_ms": 25896.27991861198,
+      "p95_total_ms": 99418.39047253598,
+      "median_decode_ms": 25863.947888021357,
+      "statuses": {
+        "complete": 13,
+        "timeout": 13
+      },
+      "recovery_statuses": {
+        "not_applicable": 26
+      },
+      "ordinary_commits": 230,
+      "fallback_steps": 123,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.45933198928833
+    },
+    {
+      "method": "confidence_0.8",
+      "n": 26,
+      "correct": 0,
+      "numeric_correct": null,
+      "valid": 26,
+      "forwards": 487,
+      "median_total_ms": 41245.60442636721,
+      "p95_total_ms": 80848.88044768013,
+      "median_decode_ms": 41180.66816451028,
+      "statuses": {
+        "complete": 26
+      },
+      "recovery_statuses": {
+        "not_applicable": 26
+      },
+      "ordinary_commits": 464,
+      "fallback_steps": 245,
+      "counterfactual_queries": 0,
+      "peak_gpu_gib": 5.459949970245361
+    }
+  ],
+  "selected_budget": "exact_b64",
+  "omitted_budget": "exact_b4",
+  "primary_method": "confidence_0.8",
+  "primary_comparator": "epic_lexical_32",
+  "rule": "Maximum development accuracy among budget four/64, then minimum total latency. Confidence 0.8 is retained as the frozen primary, irrespective of its rank.",
+  "controls": [
+    "greedy_confidence_0.8",
+    "epic_lexical_8",
+    "epic_lexical_32",
+    "epic_lexical_64",
+    "catalog_map8",
+    "catalog_map64"
+  ],
+  "confirmation_cases": 42,
+  "runs_per_repetition": 336,
+  "support_changes": false,
+  "limitations": "Selection uses development only. It does not establish superiority; all eligible confirmation cases and strong controls remain."
+}

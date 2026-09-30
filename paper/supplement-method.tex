@@ -184,3 +184,10 @@ For confirmation opening swaps, median LLaDA-profile latency is \MRepairConfirmO
 \State \Return $x$
 \end{algorithmic}
 \end{algorithm}
+% Optional lexical composition, retained separately from the implemented byte path.
+\subsection{Optional lexical composition}
+Conceptually,
+\begin{equation}
+A_{\mathrm{lex}}=(A_{\mathrm{tok}}\cap A_H)\circ T_{\mathrm{detok}}\circ T_{\mathrm{lex}}.
+\end{equation}
+$T_{\mathrm{detok}}$ maps tokens to bytes, $T_{\mathrm{lex}}$ maps bytes to lexemes, and $A_H$ implements EOS/PAD over token IDs. The synchronized product precedes detokenization so its operands read the same alphabet. Token-arc weights and provenance survive composition. The relation must reflect maximal munch and priorities: accepting arbitrary segmentations can accept a sequence a real lexer would reject. No such programming-language lexer is integrated into the live production path.

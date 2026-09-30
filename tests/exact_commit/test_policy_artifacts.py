@@ -121,3 +121,71 @@ def test_interrupted_external_smoke_is_not_a_complete_cohort():
     config, rows = load().read(directory, allow_incomplete=True)
     assert len(rows) == 4 < len(config["tasks"]) * len(config["policies"])
     assert all(row["git_commit"].startswith("b71e3c6") for row in rows)
+
+
+def test_failed_first_selection_is_counted_and_has_stage_timings(monkeypatch):
+    from types import SimpleNamespace
+
+    import torch
+
+    from mwpc_exact import CompositionalByteLevelAdapter, SelectionStatus
+    from mwpc_research.tool_parser import catalog_byte_grammar
+
+    spec = importlib.util.spec_from_file_location(
+        "policy_driver_failure", ROOT / "scripts/exact_commit/run_policy_screen.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    tensor = torch.tensor
+    monkeypatch.setattr(torch, "tensor", lambda *a, **kw: tensor(*a, **{**kw, "device": "cpu"}))
+    monkeypatch.setattr(torch.cuda, "synchronize", lambda: None)
+    monkeypatch.setattr(torch.cuda, "max_memory_allocated", lambda: 0)
+    monkeypatch.setattr(
+        module,
+        "select_exact_mwpc",
+        lambda *a, **kw: SimpleNamespace(
+            score=None,
+            status=SelectionStatus.TIMEOUT,
+            to_dict=lambda: {"status": "timeout", "score": None, "witness_available": False},
+        ),
+    )
+
+    class Tokenizer:
+        def apply_chat_template(self, *args, **kwargs):
+            return [2]
+
+        def decode(self, *args, **kwargs):
+            return ""
+
+    def model(tokens):
+        return SimpleNamespace(logits=torch.zeros((1, 3, 126337)))
+
+    adapter = CompositionalByteLevelAdapter(tuple(b"a" if i == 0 else None for i in range(126337)))
+    result = module.decode(
+        model=model,
+        tokenizer=Tokenizer(),
+        request="arbitrary",
+        calls=["a"],
+        paths=[[0, 126081]],
+        grammar=catalog_byte_grammar(["a"]),
+        rows=[[0], [126081]],
+        adapter=adapter,
+        policy={"kind": "exact"},
+        config={
+            "slots": 2,
+            "max_forwards": 2,
+            "max_generation_seconds": 30,
+            "selection_timeout_seconds": 10,
+        },
+    )
+    assert result["status"] == "timeout" and result["forwards"] == 1 and result["trace"] == []
+    assert result["token_ids"] == [None, None]
+    assert result["solver_status_counts"] == {"timeout": 1}
+    assert not result["failure"]["witness_available"]
+    assert all(t >= 0 for t in result["failure"]["timings"].values())
+    assert set(result["failure"]["timings"]) == {
+        "forward_seconds",
+        "candidate_seconds",
+        "support_seconds",
+        "selector_seconds",
+    }

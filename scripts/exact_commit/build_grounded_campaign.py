@@ -16,6 +16,72 @@ RAW = ROOT / "docs/artifacts/raw/m25_grounded_v1"
 OUT = ROOT / "docs/research/generated"
 
 
+def component_diagnostics(rows):
+    """Keep failed generations separate from timings of committed steps."""
+    groups = defaultdict(list)
+    for row in rows:
+        groups[row["method"]].append(row)
+    result = {}
+    for name, records in sorted(groups.items()):
+        steps = [step for row in records for step in row.get("trace", [])]
+        failures = [row["failure"] for row in records if row.get("failure")]
+        counts = Counter()
+        for row in records:
+            counts.update(row.get("solver_status_counts", {}))
+        result[name] = {
+            "generations": len(records),
+            "generation_status_counts": dict(Counter(row["status"] for row in records)),
+            "model_forwards": sum(row["forwards"] for row in records),
+            "committed_steps": len(steps),
+            "recorded_solver_status_counts": dict(counts),
+            "terminal_failure_status_counts": dict(
+                Counter(failure["status"] for failure in failures if "status" in failure)
+            ),
+            "committed_step_stage_seconds": {
+                stage: sum(step.get(stage, 0.0) for step in steps)
+                for stage in (
+                    "forward_seconds",
+                    "candidate_seconds",
+                    "support_seconds",
+                    "selector_seconds",
+                    "update_seconds",
+                )
+            },
+            "committed_step_profile_seconds": {
+                component: sum(
+                    step.get("profile", {})
+                    .get("timings_seconds", {})
+                    .get("components", {})
+                    .get(component, 0.0)
+                    for step in steps
+                )
+                for component in (
+                    "token_lattice_construction",
+                    "byte_lattice_expansion",
+                    "parser",
+                    "backtracking",
+                    "validation",
+                )
+            },
+            "failed_selection_stage_seconds": {
+                stage: sum(failure.get("timings", {}).get(stage, 0.0) for failure in failures)
+                for stage in (
+                    "forward_seconds",
+                    "candidate_seconds",
+                    "support_seconds",
+                    "selector_seconds",
+                )
+            },
+            "failures_with_stage_timings": sum("timings" in failure for failure in failures),
+            "timing_scope": "Stage sums cover committed trace steps and explicitly timed "
+            "terminal failures only, not every attempted forward. Legacy development "
+            "counters omit failed selectors; failure statuses are reported separately. "
+            "Do not add the two status counters: newer records include terminal failures. "
+            "EPIC uses its native trace and separately recorded recovery time.",
+        }
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
@@ -35,7 +101,7 @@ def main():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(text)
 
-    inventory, all_rows, whitespace = {}, [], {}
+    inventory, all_rows, whitespace, cohort_rows = {}, [], {}, {}
     names = ["interrupted_smoke", "smoke", "development", "confirmation", "repeat"]
     for name in names:
         directory = RAW / name
@@ -43,6 +109,7 @@ def main():
             continue
         interrupted = name == "interrupted_smoke"
         config, rows = read(directory, allow_incomplete=interrupted)
+        cohort_rows[name] = rows
         manifest = json.loads((directory / "manifest.json").read_text())
         assert manifest["records"] == len(rows)
         all_rows += rows
@@ -66,6 +133,7 @@ def main():
             )
             write(f"m25-{name}-summary.json", summary)
             write(f"m25-{name}-results.md", report.replace("# M24", "# M25"))
+            write(f"m25-{name}-components.json", component_diagnostics(rows))
     if all((RAW / d).exists() for d in ("confirmation", "repeat")):
         summary, report = build(RAW / "confirmation", RAW / "repeat")
         write("m25-confirmation-paired-summary.json", summary)
@@ -92,8 +160,23 @@ def main():
             },
         }
         write("m25-confirmation-coverage.json", coverage)
+    snapshots = {}
+    snapshot = RAW / "interrupted_development"
+    if snapshot.exists():
+        _, prior_rows = read(snapshot, allow_incomplete=True)
+        if "development" in cohort_rows:
+            assert cohort_rows["development"][: len(prior_rows)] == prior_rows
+        snapshots["interrupted_development"] = {
+            "records": len(prior_rows),
+            "manifest_sha256": hashlib.sha256(
+                (snapshot / "manifest.json").read_bytes()
+            ).hexdigest(),
+            "counted_as_additional_generations": False,
+            "reason": "Snapshot of the same prefix retained in the resumed development cohort",
+        }
     result = {
         "cohorts": inventory,
+        "interruption_snapshots": snapshots,
         "complete_campaign": len(inventory) == len(names),
         "recorded_generations": len(all_rows),
         "distinct_task_ids": len({r["task"]["id"] for r in all_rows}),

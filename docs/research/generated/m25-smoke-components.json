@@ -1,0 +1,308 @@
+{
+  "catalog_map64": {
+    "generations": 2,
+    "generation_status_counts": {
+      "complete": 2
+    },
+    "model_forwards": 2,
+    "committed_steps": 2,
+    "recorded_solver_status_counts": {
+      "catalog_map": 2
+    },
+    "terminal_failure_status_counts": {},
+    "committed_step_stage_seconds": {
+      "forward_seconds": 0.21490525198169053,
+      "candidate_seconds": 0.008382978034205735,
+      "support_seconds": 0.04591623693704605,
+      "selector_seconds": 0.002877214108593762,
+      "update_seconds": 4.189903847873211e-06
+    },
+    "committed_step_profile_seconds": {
+      "token_lattice_construction": 0.0,
+      "byte_lattice_expansion": 0.0,
+      "parser": 0.0,
+      "backtracking": 0.0,
+      "validation": 0.0
+    },
+    "failed_selection_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0
+    },
+    "failures_with_stage_timings": 0,
+    "timing_scope": "Stage sums cover committed trace steps and explicitly timed terminal failures only, not every attempted forward. Legacy development counters omit failed selectors; failure statuses are reported separately. Do not add the two status counters: newer records include terminal failures. EPIC uses its native trace and separately recorded recovery time."
+  },
+  "catalog_map8": {
+    "generations": 2,
+    "generation_status_counts": {
+      "complete": 2
+    },
+    "model_forwards": 16,
+    "committed_steps": 16,
+    "recorded_solver_status_counts": {
+      "catalog_map": 16
+    },
+    "terminal_failure_status_counts": {},
+    "committed_step_stage_seconds": {
+      "forward_seconds": 1.682337841950357,
+      "candidate_seconds": 0.05585476418491453,
+      "support_seconds": 0.3804482725681737,
+      "selector_seconds": 0.01820361043792218,
+      "update_seconds": 1.3023964129388332e-05
+    },
+    "committed_step_profile_seconds": {
+      "token_lattice_construction": 0.0,
+      "byte_lattice_expansion": 0.0,
+      "parser": 0.0,
+      "backtracking": 0.0,
+      "validation": 0.0
+    },
+    "failed_selection_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0
+    },
+    "failures_with_stage_timings": 0,
+    "timing_scope": "Stage sums cover committed trace steps and explicitly timed terminal failures only, not every attempted forward. Legacy development counters omit failed selectors; failure statuses are reported separately. Do not add the two status counters: newer records include terminal failures. EPIC uses its native trace and separately recorded recovery time."
+  },
+  "confidence_0.8": {
+    "generations": 2,
+    "generation_status_counts": {
+      "complete": 2
+    },
+    "model_forwards": 34,
+    "committed_steps": 34,
+    "recorded_solver_status_counts": {
+      "optimal": 34
+    },
+    "terminal_failure_status_counts": {},
+    "committed_step_stage_seconds": {
+      "forward_seconds": 3.555864844005555,
+      "candidate_seconds": 0.2570727865677327,
+      "support_seconds": 0.7885958860861138,
+      "selector_seconds": 38.98114396107849,
+      "update_seconds": 3.102852497249842e-05
+    },
+    "committed_step_profile_seconds": {
+      "token_lattice_construction": 0.076182781602256,
+      "byte_lattice_expansion": 2.2080845091259107,
+      "parser": 3.2260096810000003,
+      "backtracking": 0.01670466848710704,
+      "validation": 32.59116782923229
+    },
+    "failed_selection_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0
+    },
+    "failures_with_stage_timings": 0,
+    "timing_scope": "Stage sums cover committed trace steps and explicitly timed terminal failures only, not every attempted forward. Legacy development counters omit failed selectors; failure statuses are reported separately. Do not add the two status counters: newer records include terminal failures. EPIC uses its native trace and separately recorded recovery time."
+  },
+  "epic_lexical_32": {
+    "generations": 2,
+    "generation_status_counts": {
+      "complete": 2
+    },
+    "model_forwards": 56,
+    "committed_steps": 0,
+    "recorded_solver_status_counts": {
+      "complete": 2
+    },
+    "terminal_failure_status_counts": {},
+    "committed_step_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0,
+      "update_seconds": 0
+    },
+    "committed_step_profile_seconds": {
+      "token_lattice_construction": 0,
+      "byte_lattice_expansion": 0,
+      "parser": 0,
+      "backtracking": 0,
+      "validation": 0
+    },
+    "failed_selection_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0
+    },
+    "failures_with_stage_timings": 0,
+    "timing_scope": "Stage sums cover committed trace steps and explicitly timed terminal failures only, not every attempted forward. Legacy development counters omit failed selectors; failure statuses are reported separately. Do not add the two status counters: newer records include terminal failures. EPIC uses its native trace and separately recorded recovery time."
+  },
+  "epic_lexical_64": {
+    "generations": 2,
+    "generation_status_counts": {
+      "complete": 2
+    },
+    "model_forwards": 115,
+    "committed_steps": 0,
+    "recorded_solver_status_counts": {
+      "complete": 2
+    },
+    "terminal_failure_status_counts": {},
+    "committed_step_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0,
+      "update_seconds": 0
+    },
+    "committed_step_profile_seconds": {
+      "token_lattice_construction": 0,
+      "byte_lattice_expansion": 0,
+      "parser": 0,
+      "backtracking": 0,
+      "validation": 0
+    },
+    "failed_selection_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0
+    },
+    "failures_with_stage_timings": 0,
+    "timing_scope": "Stage sums cover committed trace steps and explicitly timed terminal failures only, not every attempted forward. Legacy development counters omit failed selectors; failure statuses are reported separately. Do not add the two status counters: newer records include terminal failures. EPIC uses its native trace and separately recorded recovery time."
+  },
+  "epic_lexical_8": {
+    "generations": 2,
+    "generation_status_counts": {
+      "complete": 2
+    },
+    "model_forwards": 13,
+    "committed_steps": 0,
+    "recorded_solver_status_counts": {
+      "complete": 2
+    },
+    "terminal_failure_status_counts": {},
+    "committed_step_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0,
+      "update_seconds": 0
+    },
+    "committed_step_profile_seconds": {
+      "token_lattice_construction": 0,
+      "byte_lattice_expansion": 0,
+      "parser": 0,
+      "backtracking": 0,
+      "validation": 0
+    },
+    "failed_selection_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0
+    },
+    "failures_with_stage_timings": 0,
+    "timing_scope": "Stage sums cover committed trace steps and explicitly timed terminal failures only, not every attempted forward. Legacy development counters omit failed selectors; failure statuses are reported separately. Do not add the two status counters: newer records include terminal failures. EPIC uses its native trace and separately recorded recovery time."
+  },
+  "exact_b4": {
+    "generations": 2,
+    "generation_status_counts": {
+      "complete": 2
+    },
+    "model_forwards": 35,
+    "committed_steps": 35,
+    "recorded_solver_status_counts": {
+      "optimal": 35
+    },
+    "terminal_failure_status_counts": {},
+    "committed_step_stage_seconds": {
+      "forward_seconds": 3.6557394999545068,
+      "candidate_seconds": 0.11697096400894225,
+      "support_seconds": 0.7671788529260084,
+      "selector_seconds": 29.859408741933294,
+      "update_seconds": 3.268977161496878e-05
+    },
+    "committed_step_profile_seconds": {
+      "token_lattice_construction": 0.07389885792508721,
+      "byte_lattice_expansion": 3.4074357408098876,
+      "parser": 4.8646573889999996,
+      "backtracking": 0.01648919430201739,
+      "validation": 20.647909371415153
+    },
+    "failed_selection_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0
+    },
+    "failures_with_stage_timings": 0,
+    "timing_scope": "Stage sums cover committed trace steps and explicitly timed terminal failures only, not every attempted forward. Legacy development counters omit failed selectors; failure statuses are reported separately. Do not add the two status counters: newer records include terminal failures. EPIC uses its native trace and separately recorded recovery time."
+  },
+  "exact_b64": {
+    "generations": 2,
+    "generation_status_counts": {
+      "complete": 2
+    },
+    "model_forwards": 10,
+    "committed_steps": 10,
+    "recorded_solver_status_counts": {
+      "optimal": 10
+    },
+    "terminal_failure_status_counts": {},
+    "committed_step_stage_seconds": {
+      "forward_seconds": 1.094784386223182,
+      "candidate_seconds": 0.028873339062556624,
+      "support_seconds": 0.21786038612481207,
+      "selector_seconds": 20.521951349102892,
+      "update_seconds": 1.1628959327936172e-05
+    },
+    "committed_step_profile_seconds": {
+      "token_lattice_construction": 0.020598671049810946,
+      "byte_lattice_expansion": 0.5143771331058815,
+      "parser": 0.6668101679999999,
+      "backtracking": 0.004020465650790871,
+      "validation": 19.13190728239715
+    },
+    "failed_selection_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0
+    },
+    "failures_with_stage_timings": 0,
+    "timing_scope": "Stage sums cover committed trace steps and explicitly timed terminal failures only, not every attempted forward. Legacy development counters omit failed selectors; failure statuses are reported separately. Do not add the two status counters: newer records include terminal failures. EPIC uses its native trace and separately recorded recovery time."
+  },
+  "greedy_confidence_0.8": {
+    "generations": 2,
+    "generation_status_counts": {
+      "complete": 2
+    },
+    "model_forwards": 34,
+    "committed_steps": 34,
+    "recorded_solver_status_counts": {
+      "feasible_on_support": 34
+    },
+    "terminal_failure_status_counts": {},
+    "committed_step_stage_seconds": {
+      "forward_seconds": 3.666743936133571,
+      "candidate_seconds": 0.10319040401373059,
+      "support_seconds": 0.7693742103874683,
+      "selector_seconds": 75.69074221840128,
+      "update_seconds": 3.074272535741329e-05
+    },
+    "committed_step_profile_seconds": {
+      "token_lattice_construction": 0.4612208635080606,
+      "byte_lattice_expansion": 10.89793777721934,
+      "parser": 7.8071056599999995,
+      "backtracking": 0.023861719025560727,
+      "validation": 47.171940815867856
+    },
+    "failed_selection_stage_seconds": {
+      "forward_seconds": 0,
+      "candidate_seconds": 0,
+      "support_seconds": 0,
+      "selector_seconds": 0
+    },
+    "failures_with_stage_timings": 0,
+    "timing_scope": "Stage sums cover committed trace steps and explicitly timed terminal failures only, not every attempted forward. Legacy development counters omit failed selectors; failure statuses are reported separately. Do not add the two status counters: newer records include terminal failures. EPIC uses its native trace and separately recorded recovery time."
+  }
+}

@@ -146,3 +146,17 @@ interface, rather than a claim of research novelty.
 |---|---|---|
 | `bfcldataset` | Cited | Pinned Gorilla data directory at commit `6ea57973c7a6097fd7c5915698c54c17c5b1b6c8`; original README declares Apache-2.0. Individual source hashes and eligible IDs are in `docs/evidence/m25-grounding-coverage.json`. |
 | `openmeteogeocoding` | Cited | Official `https://open-meteo.com/en/docs/geocoding-api`, GET `/v1/search` with `name`, `count`, `language` and JSON output; GeoNames attribution. No model performance claim is attributed to this API. |
+
+## Closest-method extension, 2026-09-30
+
+The complete inventory now contains 32 records. These five primary sources
+clarify that the present contribution is an integration/evaluation and not
+invention of weighted CFG optimization, confidence decoding or commitment gating.
+
+| Key | Current use | Verification |
+|---|---|---|
+| `katsirelos2008weighted` | Cited | Author-hosted PDF, CPAIOR 2008, LNCS 5015, 323–327; UNSW publication record verifies DOI `10.1007/978-3-540-68155-7_31`. Browser fetch failed but direct download and text extraction succeeded; weighted grammar optimization and soft Hamming/edit constraints are explicit antecedents. |
+| `weiss2010cascades` | Cited | Official PMLR 9:916–923 (2010), David Weiss and Benjamin Taskar; max-marginal filtering explicitly stated in the abstract. |
+| `wang2026tacg` | Cited | arXiv `2607.03236v1`, 3 July 2026; authors and identity/timing distinction checked in primary HTML. No TACG baseline or sampling theorem is claimed as implemented here. |
+| `cai2026confidence` | Cited | arXiv `2603.22248v1`, 23 March 2026; Changxiao Cai and Gen Li. Its entropy-sum sampling result is distinct from this project's fixed probability threshold. |
+| `su2026factor` | Cited | Primary arXiv HTML `2609.32900v1`, 26 September 2026, Jianchang Su and Wei Zhang; direct download succeeded after a browser-tool fetch error. FactorDLM uses finite-domain factor graphs, exact variable elimination and mean-field logits; it is not an implemented baseline here. No general exact-dLLM-inference novelty is claimed. |
