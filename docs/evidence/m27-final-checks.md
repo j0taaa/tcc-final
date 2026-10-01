@@ -2,7 +2,9 @@
 
 The machine-readable record is `m27-final-checks.json`; source hashes bind the
 new code, Lean definitions, portable mathematical example and paper sources.
-These are correctness/formal/build checks, not model-performance measurements.
+Scientific implementation commit: `93a3def3f01c183bedb97d201cc1ba956cad8533`.
+Subsequent evidence-only updates do not change the checked source hashes. These
+are correctness/formal/build checks, not model-performance measurements.
 
 | Gate | Executed result |
 | --- | --- |

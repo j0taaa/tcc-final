@@ -111,6 +111,7 @@
     "sha256": "1e8d60918b8db8802da120703f57f1acb127a2c81ab8ea1ffca1c1207b673791"
   },
   "formal_boundary": "Kernel-checked resource CFG certificates and specified universal lemmas; original-input compiler correspondence independently checked in Python. Not whole foreign-source/model verification.",
+  "implementation_commit": "93a3def3f01c183bedb97d201cc1ba956cad8533",
   "kind": "m27_executed_verification_not_model_benchmark",
   "python": "3.11.16",
   "rustc": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
@@ -142,5 +143,5 @@
     "src/mwpc_exact/experiments/_artifact_io.py": "db96df7000abec81538e24c776fd99e7fed986ea17825056571b6cdee6588172",
     "src/mwpc_exact/lean_bridge.py": "7633595a24c65d45a0324ddb9b024040bc7eef8897081d71c28d412d9993fadb"
   },
-  "source_state": "M27 reviewed working tree, hashes below; final code commit recorded separately"
+  "source_state": "Versioned scientific implementation_commit; subsequent changes only record verification provenance"
 }
