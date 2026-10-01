@@ -16,6 +16,42 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M27 — Certified bounds, compact token graphs, Lean and focused simplification
+
+Authorized 2026-10-01. Depends on M26 and the preserved M25 reproduction
+pipeline. Assess each proposed extension before adopting it. Maintain ordinary
+MWPC, all baselines and archived negative results. Formal claims must name the
+Lean definitions proved and the implementation correspondence actually checked;
+Lean does not automatically verify Python, Rust, external libraries or models.
+
+- [x] T2700: Audit the three extensions, state proofs and scope, inventory actual
+  code dependencies and pin a reproducible Lean toolchain.
+  **Evidence:** `docs/research/m27-certified-extensions.md` records proofs, loose-bound cases, scope and primary antecedents. AST inventory of 145 Python files/45,386 lines found duplicated artifact helpers and unnecessary epsilon normalization, but no standalone private name occurring only once. Lean 4.34.0 installed from the official release and pinned in `formal/lean-toolchain`; no external proof-library dependency.
+- [x] T2701: Add independently validated exact-rational batch bounds and support
+  expansion certificates, including useful handling of a feasible incumbent.
+  Preserve timeout/status distinctions and verify against exhaustive oracles.
+  **Evidence:** `test_budget_bounds.py`: 48 passing checks, including exhaustive token/subset optima (seeds 270000–270031), outside-support proposals, loose/zero bounds, duplicate IDs, fixed slots and EOS/PAD. New features plus artifact-regression suites: 135 passed (`python -m pytest -q` with the five M27 feature test files and `test_artifact_pipeline.py`, `test_statistical_artifacts.py`, `test_final_artifacts.py`). Exact rational values and the retained-input expansion premise are documented in `docs/research/m27-certified-extensions.md`.
+- [x] T2702: Implement token-prefix sharing with original token provenance,
+  EOS/PAD and exact physical budgets; prove equivalence and graph-size bounds.
+  Compare both graph representations with independent completion/path oracles.
+  **Evidence:** `test_compact_budget_graph.py`: 38 passing checks; seeds 270100–270131 compare both layouts with independently enumerated original completions/subsets for every configured budget. Alias/prefix closures, split UTF-8, fixed slots, EOS/PAD and forbidden unused normalization regressions pass. Eight-token common-prefix family verifies exactly `q_private=4+8l`, `q_compact=4+l` for l=2,8,32; this is graph-size mathematics, not a latency benchmark. Proof and node/emission lemmas are in the M27 research note and `formal/MWPC/Prefixes.lean`.
+- [x] T2703: Bind portable certificates to their original input and validate
+  token choices, fixed slots, emissions, charges and complete graph construction
+  independently. Reject tampered inputs, graphs and token metadata.
+  **Evidence:** `test_original_budget_certificate.py` (22) and `test_portable_budget_proof.py` (11) pass, rejecting altered rewards, deleted choices, foreign inputs, alias/EOS meanings, forged token/commitment metadata and Boolean/float aliases of integer IDs. Verification subprocess imports neither weighted optimizer. `budget_math_example.py --verify docs/artifacts/math/m27-budget-proof.json`: PASS for caps 0–3; historical M26 graph-only verification remains available with explicit narrower scope.
+- [x] T2704: Formalize the mathematical specification and certificate guarantees
+  in Lean without admitted proofs; check concrete project certificates through a
+  reproducible bridge. Add CI and an explicit verification/trust coverage map.
+  **Evidence:** pinned Lean 4.34.0 `lake build` passes; `check_formal_project.py --lake $HOME/.elan/bin/lake` checks 17 audited universal theorems and 16 concrete optimum/infeasibility claims across five profiles, and rejects an altered root bound. `docs/evidence/m27-formal-checks.json` records source/input hashes, exact denominators, version and only standard logical axiom dependencies. No admissions, native shortcuts or project axioms. Twelve bridge/export/axiom-audit Python tests pass. Mandatory CI job and `check-formal`/`check-project` targets added; `formal/README.md` explicitly excludes unproved foreign-source refinement, model semantics and the written separation/completeness proofs.
+- [x] T2705: Remove proven unused code and simplify duplication without merging
+  independent oracles or deleting scientific reproduction dependencies. Record
+  each removal's evidence; pass full regressions, packaging and artifact checks.
+  **Evidence:** `docs/evidence/m27-simplification.md` records AST-identical helper consolidation, unused normalization/duplicate checking removal, strict metadata-ID regression and preserved reproduction dependencies. Final full Python: 1,360 passed; Ruff/MyPy (98 files), production Rust (24), upstream Python (406/8 skips), upstream Rust (63/1 ignored), provenance and artifact byte checks pass. Isolated wheel verifies/generates v2 proof and exports Lean; sdist contains formal sources without `.lake`. Read-only upstream formatting failure is explicitly recorded, not hidden or "fixed" by editing the baseline.
+- [x] T2706: Update the project and article from the established proofs and
+  checks, build and inspect the PDF, and record reproducible final evidence.
+  No slides, remote publication or new model-performance claim.
+  **Evidence:** `paper/main.tex` and `budgeted-math.tex` now describe quality/support-expansion bounds, token-closing prefix sharing, original-input certification and precise Lean coverage; 37 bibliography records audited. Every manuscript data derivative verified by `make paper`; final `make -C paper`: 16 pages, no overflow/unresolved references. All 16 final rendered pages visually reviewed. Full command results, source hashes, deviations and PDF hash in `docs/evidence/m27-final-checks.{md,json}`. README/reproduction/handoff and proof coverage updated. No slides, model benchmark, remote publication or push.
+
 ## M26 — Mathematical budgeted commitment and independently checkable optimality
 
 Authorized by the user's mathematical requirement on 2026-09-30. Depends on

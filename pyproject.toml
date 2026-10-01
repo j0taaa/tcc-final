@@ -39,13 +39,13 @@ packages = [
 [tool.hatch.build.targets.sdist]
 include = [
   "/src", "/crates", "/tests", "/scripts", "/requirements",
-  "/configs", "/docs", "/paper", "/vendor", "/.github", "/.gitmodules",
+  "/configs", "/docs", "/paper", "/formal", "/vendor", "/.github", "/.gitmodules",
   "/*.md", "/LICENSE", "/Makefile", "/pyproject.toml", "/rust-toolchain.toml",
 ]
 exclude = [
   "**/target/**", "**/.git/**", "**/.git", "**/__pycache__/**",
   "**/.venv*/**", "**/.cache/**", "**/.pytest_cache/**", "**/.ruff_cache/**",
-  "**/.mypy_cache/**", "**/build/**", "**/dist/**", "**/*.so", "**/*.pyc",
+  "**/.mypy_cache/**", "**/.lake/**", "**/build/**", "**/dist/**", "**/*.so", "**/*.pyc",
   # Full M24 campaigns are research data in Git, not library-installation inputs.
   # Keep the small smoke cohort used by offline regression tests.
   "/docs/artifacts/raw/m24_policy_v1/development/**",

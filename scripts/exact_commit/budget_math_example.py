@@ -1,8 +1,9 @@
 """Emit or independently verify a finite mathematical example, not a benchmark.
 
 The verification mode imports the proof checker without importing the optimizer.
-Input grammar, original resource graph and exact rational potentials are supplied
-in the JSON proof. No model, tokenizer download, GPU or network is needed.
+New proofs bind the graph and token witness to their original input. Historical
+M26 files remain verifiable with their explicitly narrower resource-graph scope.
+No model, tokenizer download, GPU or network is needed.
 """
 
 from __future__ import annotations
@@ -12,6 +13,7 @@ import json
 from fractions import Fraction
 from pathlib import Path
 
+from mwpc_exact.budget_proof import budget_proof_data, verify_budget_proof
 from mwpc_exact.reference.budget_certificate import check_budget_certificate
 from mwpc_exact.reference.budget_types import (
     BudgetCertificate,
@@ -21,10 +23,6 @@ from mwpc_exact.reference.budget_types import (
 )
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.types import SolveStatus
-
-
-def fraction_json(value):
-    return None if value is None else [value.numerator, value.denominator]
 
 
 def generate():
@@ -75,47 +73,15 @@ def generate():
         EOSPolicy(EOSMode.ABSENT),
     )
     frontier = budgeted_commit_frontier(state, 3)
-    graph = frontier[0].proof_graph
-    proof = frontier[0].path_result.certificate
-    data = {
-        "kind": "mathematical_example_not_accuracy_benchmark",
-        "description": "B=1 chooses abc for reward 7/8; B=2 chooses xyz for reward 1.",
-        "grammar": grammar.to_dict(),
-        "graph": {
-            "nodes": graph.nodes,
-            "start": graph.start,
-            "finals": graph.finals,
-            "support_description": graph.support_description,
-            "arcs": [
-                [a.arc_id, a.source, a.target, a.label, fraction_json(a.reward), a.cost]
-                for a in graph.arcs
-            ],
-        },
-        "certificate": {
-            "max_budget": proof.max_budget,
-            "epsilon_bounds": [[*r[:-1], fraction_json(r[-1])] for r in proof.epsilon_bounds],
-            "grammar_bounds": [[*r[:-1], fraction_json(r[-1])] for r in proof.grammar_bounds],
-        },
-        "frontier": [
-            {
-                "budget": r.budget,
-                "status": r.status.value,
-                "objective_value": fraction_json(r.objective_value),
-                "witness_arc_ids": r.path_result.witness_arc_ids,
-                "witness_terminal_labels": r.path_result.witness_terminal_labels,
-                "consumed_budget": r.path_result.consumed_budget,
-                "committed_positions": r.committed_positions,
-                "committed_proposal_ids": r.committed_proposal_ids,
-                "matched_proposal_ids": r.matched_proposal_ids,
-                "witness_token_ids": r.witness_token_ids,
-            }
-            for r in frontier
-        ],
-    }
+    data = budget_proof_data(state, frontier)
+    data["example_kind"] = "mathematical_example_not_accuracy_benchmark"
+    data["description"] = "B=1 chooses abc for reward 7/8; B=2 chooses xyz for reward 1."
     return data
 
 
 def verify(data):
+    if "schema_version" in data:
+        return verify_budget_proof(data)
     grammar = CnfGrammar.from_dict(data["grammar"])
     raw = data["graph"]
     graph = ResourceDAG(
@@ -153,7 +119,12 @@ def verify(data):
         if not report.accepted:
             raise ValueError(f"Budget {result.budget}: {report.errors}")
         checked.append({"budget": result.budget, "objective": str(result.objective_value)})
-    return {"verification": "PASS", "scope": graph.support_description, "frontier": checked}
+    return {
+        "verification": "PASS",
+        "verification_scope": "historical_resource_graph_only",
+        "scope": graph.support_description,
+        "frontier": checked,
+    }
 
 
 def main():
@@ -161,10 +132,13 @@ def main():
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--output", type=Path, help="write a new JSON proof (refuses replacement)")
     group.add_argument("--verify", type=Path, help="check an existing resource-graph proof offline")
+    parser.add_argument("--lean", action="store_true", help="also check v2 resource proof in Lean")
+    parser.add_argument("--lake", default="lake", help="installed Lake executable")
+    parser.add_argument("--lean-source", type=Path, help="export generated Lean certificate")
     args = parser.parse_args()
     if args.verify:
         data = json.loads(args.verify.read_text())
-        print(json.dumps(verify(data), indent=2))
+        report = verify(data)
     else:
         data = generate()
         verify(data)
@@ -172,9 +146,26 @@ def main():
         if args.output:
             with args.output.open("x") as file:
                 file.write(output)
-            print(json.dumps(verify(data), indent=2))
+            report = verify(data)
         else:
-            print(output, end="")
+            if not (args.lean or args.lean_source):
+                print(output, end="")
+                return
+            report = verify(data)
+    if args.lean_source or args.lean:
+        from mwpc_exact.lean_bridge import export_lean_budget_proof, verify_with_lean
+
+        if args.lean_source:
+            args.lean_source.parent.mkdir(parents=True, exist_ok=True)
+            with args.lean_source.open("x") as file:
+                file.write(export_lean_budget_proof(data).source)
+        if args.lean:
+            report["lean"] = verify_with_lean(
+                data,
+                formal_directory=Path(__file__).resolve().parents[2] / "formal",
+                lake=args.lake,
+            )
+    print(json.dumps(report, indent=2))
 
 
 if __name__ == "__main__":

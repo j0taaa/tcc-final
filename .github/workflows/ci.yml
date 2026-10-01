@@ -10,6 +10,23 @@ permissions:
   contents: read
 
 jobs:
+  formal-correctness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install project and pinned proof toolchain
+        run: |
+          python -m pip install -e .
+          curl -fLsS https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz -o "$RUNNER_TEMP/elan.tar.gz"
+          tar -xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP"
+          "$RUNNER_TEMP/elan-init" -y --no-modify-path --default-toolchain none
+          "$HOME/.elan/bin/elan" toolchain install "$(cat formal/lean-toolchain)"
+      - name: Verify universal theorems and concrete project certificates
+        run: make check-formal VENV_PY=python LAKE="$HOME/.elan/bin/lake"
+
   verify:
     runs-on: ubuntu-latest
     steps:

@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import html
 import json
 import re
@@ -14,6 +13,15 @@ from math import isclose, isfinite
 from pathlib import Path
 from typing import cast
 
+from mwpc_exact.experiments._artifact_io import (
+    _boolean,
+    _latex_escape,
+    _mapping,
+    _reject_json_constant,
+    _resolved_within,
+    _sha256_bytes,
+    _sha256_file,
+)
 from mwpc_exact.experiments.metadata import canonical_json_sha256
 from mwpc_research.statistical_summaries import (
     summarize_gaps,
@@ -58,24 +66,6 @@ _SOURCE_INTERPRETATIONS = {
     "q5_end_to_end": "fixed_task_live_model_diagnostic_not_publication_benchmark",
 }
 _Q4_MINIMUM_REPETITIONS_FOR_DISTRIBUTION = 10
-
-
-def _sha256_bytes(value: bytes) -> str:
-    return hashlib.sha256(value).hexdigest()
-
-
-def _sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as source:
-        for chunk in iter(lambda: source.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
-
-
-def _mapping(value: object, field_name: str) -> Mapping[str, object]:
-    if not isinstance(value, Mapping) or not all(isinstance(key, str) for key in value):
-        raise TypeError(f"{field_name} must be a string-keyed mapping")
-    return cast(Mapping[str, object], value)
 
 
 def _sequence(value: object, field_name: str) -> Sequence[object]:
@@ -141,18 +131,8 @@ def _number(value: object, field_name: str, *, minimum: float = 0.0) -> float:
     return result
 
 
-def _boolean(value: object, field_name: str) -> bool:
-    if not isinstance(value, bool):
-        raise TypeError(f"{field_name} must be a boolean")
-    return value
-
-
 def _optional_number(value: object, field_name: str) -> float | None:
     return None if value is None else _number(value, field_name)
-
-
-def _reject_json_constant(value: str) -> object:
-    raise ValueError(f"raw JSONL contains non-finite constant: {value}")
 
 
 @dataclass(frozen=True, slots=True)
@@ -638,14 +618,10 @@ def _q4_summary(rows: Sequence[Mapping[str, object]]) -> dict[str, object]:
                     "axis_value": axis_value,
                     "successful_runtime_count": len(values),
                     "runtime_seconds": (
-                        summarize_numeric_distribution(values).to_dict()
-                        if eligible
-                        else None
+                        summarize_numeric_distribution(values).to_dict() if eligible else None
                     ),
                     "distribution_status": (
-                        "available"
-                        if eligible
-                        else "withheld_insufficient_repetitions"
+                        "available" if eligible else "withheld_insufficient_repetitions"
                     ),
                 }
             )
@@ -660,9 +636,7 @@ def _q4_summary(rows: Sequence[Mapping[str, object]]) -> dict[str, object]:
         "interpretation": _SOURCE_INTERPRETATIONS["q4_scaling"],
         "measurement_count": len(rows),
         "censored_count": censored_count,
-        "minimum_repetitions_for_distribution": (
-            _Q4_MINIMUM_REPETITIONS_FOR_DISTRIBUTION
-        ),
+        "minimum_repetitions_for_distribution": (_Q4_MINIMUM_REPETITIONS_FOR_DISTRIBUTION),
         "withheld_scaling_point_count": withheld_scaling_point_count,
         "status_counts": _status_counts(status_values),
         "backend_runtime_seconds": {
@@ -889,22 +863,6 @@ def _source_entry(item: _LoadedInput) -> dict[str, object]:
         "benchmark_claim": metadata.get("benchmark_claim"),
         "analysis_context": _source_context(item),
     }
-
-
-def _latex_escape(value: str) -> str:
-    replacements = {
-        "\\": r"\textbackslash{}",
-        "&": r"\&",
-        "%": r"\%",
-        "$": r"\$",
-        "#": r"\#",
-        "_": r"\_",
-        "{": r"\{",
-        "}": r"\}",
-        "~": r"\textasciitilde{}",
-        "^": r"\textasciicircum{}",
-    }
-    return "".join(replacements.get(character, character) for character in value)
 
 
 def _percentage(value: object) -> str:
@@ -1331,15 +1289,15 @@ def _scaling_figure(summary: Mapping[str, object]) -> bytes:
             f'fill="#444">{context}</text>\n'
             '<text x="24" y="100" font-family="sans-serif" font-size="15" '
             'fill="#7a3e00">Median/IQR curves withheld: each smoke point has '
-            f'fewer than {_Q4_MINIMUM_REPETITIONS_FOR_DISTRIBUTION} successful '
-            'repetitions.</text>\n'
+            f"fewer than {_Q4_MINIMUM_REPETITIONS_FOR_DISTRIBUTION} successful "
+            "repetitions.</text>\n"
             f'<text x="24" y="130" font-family="sans-serif" font-size="13" '
             f'fill="#444">Withheld backend/axis points: {withheld_point_count}. '
-            'The raw diagnostic rows remain versioned.</text>\n'
+            "The raw diagnostic rows remain versioned.</text>\n"
             '<text x="24" y="160" font-family="sans-serif" font-size="13" '
             'fill="#444">graph_size_scale is compound: it changes support width '
-            'and token byte length together.</text>\n'
-            '</svg>\n'
+            "and token byte length together.</text>\n"
+            "</svg>\n"
         ).encode()
 
     width = 1040
@@ -1526,14 +1484,6 @@ class FinalArtifactBuildResult:
     source_sha256: Mapping[str, str]
     output_sha256: Mapping[str, str]
     verified_existing: bool
-
-
-def _resolved_within(repository_root: Path, relative: Path, field_name: str) -> Path:
-    root = repository_root.resolve()
-    resolved = (root / relative).resolve()
-    if not resolved.is_relative_to(root):
-        raise ValueError(f"{field_name} resolves outside the repository")
-    return resolved
 
 
 def build_final_artifacts(

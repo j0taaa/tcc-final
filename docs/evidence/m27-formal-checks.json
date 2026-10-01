@@ -1,0 +1,208 @@
+{
+  "cases": {
+    "budget_frontier": {
+      "axiom_audit": "'MWPC.Generated.optimal_0' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_1' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_2' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_3' depends on axioms: [propext, Quot.sound]",
+      "axiom_dependencies": {
+        "MWPC.Generated.optimal_0": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_1": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_2": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_3": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "input_fingerprint": "2b79ca0715898174e002a415c70a7003a02c98860f6925b5378cf61493826d7e",
+      "integer_denominator": 8,
+      "lean_source_sha256": "e976b73bcd75a8b914e459e67c2780a5e2804f5e49f96e68a3dfbc398785cfbc",
+      "lean_version": "Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+      "original_input_correspondence": "independent_python_checker",
+      "theorems": [
+        "MWPC.Generated.optimal_0",
+        "MWPC.Generated.optimal_1",
+        "MWPC.Generated.optimal_2",
+        "MWPC.Generated.optimal_3"
+      ],
+      "verification": "PASS",
+      "verification_scope": "kernel_checked_resource_cfg_optimality"
+    },
+    "empty_epsilon": {
+      "axiom_audit": "'MWPC.Generated.optimal_0' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_1' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_2' depends on axioms: [propext, Quot.sound]",
+      "axiom_dependencies": {
+        "MWPC.Generated.optimal_0": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_1": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_2": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "input_fingerprint": "e7796c9d006aafc7d0eda92dc739f21ab5a879bee300942e1a39111d9b4553de",
+      "integer_denominator": 2,
+      "lean_source_sha256": "b1c22619954a6c79c1b6c6bdb04fbbdf61ae5398bbda445df129e1669892b62d",
+      "lean_version": "Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+      "original_input_correspondence": "independent_python_checker",
+      "theorems": [
+        "MWPC.Generated.optimal_0",
+        "MWPC.Generated.optimal_1",
+        "MWPC.Generated.optimal_2"
+      ],
+      "verification": "PASS",
+      "verification_scope": "kernel_checked_resource_cfg_optimality"
+    },
+    "fixed_utf8_eos_pad": {
+      "axiom_audit": "'MWPC.Generated.optimal_0' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_1' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_2' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_3' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_4' depends on axioms: [propext, Quot.sound]",
+      "axiom_dependencies": {
+        "MWPC.Generated.optimal_0": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_1": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_2": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_3": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_4": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "input_fingerprint": "c43057cc61be197d97bc84429fdf424384e19cac1ee2bc9be94333e7dc70d1f2",
+      "integer_denominator": 2,
+      "lean_source_sha256": "623248af2567d9823ce1b140363a5d4f0ffd651ba658148d5a6e0f268c1d8ec9",
+      "lean_version": "Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+      "original_input_correspondence": "independent_python_checker",
+      "theorems": [
+        "MWPC.Generated.optimal_0",
+        "MWPC.Generated.optimal_1",
+        "MWPC.Generated.optimal_2",
+        "MWPC.Generated.optimal_3",
+        "MWPC.Generated.optimal_4"
+      ],
+      "verification": "PASS",
+      "verification_scope": "kernel_checked_resource_cfg_optimality"
+    },
+    "infeasible": {
+      "axiom_audit": "'MWPC.Generated.infeasible_0' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.infeasible_1' depends on axioms: [propext, Quot.sound]",
+      "axiom_dependencies": {
+        "MWPC.Generated.infeasible_0": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.infeasible_1": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "input_fingerprint": "46d5e1e8d0cd6c0706ee6952a1246d9ed4ea4ceb27386a8b79928f8d8bfe4b27",
+      "integer_denominator": 1,
+      "lean_source_sha256": "5472f6ecc7eb8ba4f143f9a6397105346b36258851e9c76d40709bf69151c321",
+      "lean_version": "Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+      "original_input_correspondence": "independent_python_checker",
+      "theorems": [
+        "MWPC.Generated.infeasible_0",
+        "MWPC.Generated.infeasible_1"
+      ],
+      "verification": "PASS",
+      "verification_scope": "kernel_checked_resource_cfg_optimality"
+    },
+    "shared_prefix_alias": {
+      "axiom_audit": "'MWPC.Generated.optimal_0' depends on axioms: [propext, Quot.sound]\n'MWPC.Generated.optimal_1' depends on axioms: [propext, Quot.sound]",
+      "axiom_dependencies": {
+        "MWPC.Generated.optimal_0": [
+          "propext",
+          "Quot.sound"
+        ],
+        "MWPC.Generated.optimal_1": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "input_fingerprint": "e79e2ccaa1969d98c51c7c186a21797706e2e7ed4e6a781cd97978e0d0260c10",
+      "integer_denominator": 36028797018963968,
+      "lean_source_sha256": "115836aa957ec8ed6c8b4f091746dacab1f741c0634c78a1e8ba01493e63a6af",
+      "lean_version": "Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+      "original_input_correspondence": "independent_python_checker",
+      "theorems": [
+        "MWPC.Generated.optimal_0",
+        "MWPC.Generated.optimal_1"
+      ],
+      "verification": "PASS",
+      "verification_scope": "kernel_checked_resource_cfg_optimality"
+    }
+  },
+  "excluded": [
+    "source-level Python/Rust refinement",
+    "model inference",
+    "external tokenizer implementation",
+    "runtime and semantic accuracy"
+  ],
+  "kernel_rejects_forged_bound": true,
+  "original_input_correspondence": "independent_python_checker",
+  "universal_axiom_dependencies": {
+    "MWPC.batch_upper": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.bound_attainment": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.certified_gap": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.certified_infeasible": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.certified_optimal": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.closing_emits_token": [
+      "propext"
+    ],
+    "MWPC.compact_node_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.fixed_reward_preserves_optimum": [],
+    "MWPC.minimum_capacity": [],
+    "MWPC.multiplicative_bound": [],
+    "MWPC.optimum_monotone": [],
+    "MWPC.representation_preserves_optima": [],
+    "MWPC.same_input_dominance": [],
+    "MWPC.support_expansion_certificate": [],
+    "MWPC.unique_prefixes_membership": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.upper_attained": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.witness_update_preserves_feasibility": []
+  },
+  "verification": "PASS"
+}

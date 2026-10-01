@@ -7,160 +7,78 @@ Full witness matches and actual budgeted commitments are distinct fields.
 
 from __future__ import annotations
 
-import hashlib
-import json
-from dataclasses import dataclass
-from fractions import Fraction
-
-from mwpc_exact.eos_lattice import build_eos_lattice
+from mwpc_exact.budget_bounds import budget_input_fingerprint, validate_budget_batch
+from mwpc_exact.budget_certificate import check_budget_commit_certificate
+from mwpc_exact.budget_graph import (
+    BudgetGraphLayout,
+    compile_budget_graph,
+    reconstruct_budget_tokens,
+)
+from mwpc_exact.budget_result import BudgetedCommitResult as BudgetedCommitResult
 from mwpc_exact.evaluation.selection import SelectionInput
-from mwpc_exact.reference.budget_certificate import check_budget_certificate
-from mwpc_exact.reference.budget_types import BudgetPathResult, ResourceArc, ResourceDAG
 from mwpc_exact.reference.budgeted_parser import budgeted_frontier
-from mwpc_exact.reference.graph import index_terminal_dag
-from mwpc_exact.token_lattice import build_token_lattice
-from mwpc_exact.types import ExactnessScope, SolveStatus, TerminalEdge
-
-
-@dataclass(frozen=True)
-class BudgetedCommitResult:
-    status: SolveStatus
-    budget: int
-    objective_value: Fraction | None
-    committed_positions: tuple[int, ...]
-    committed_proposal_ids: tuple[int, ...]
-    matched_proposal_ids: tuple[int, ...]
-    witness_token_ids: tuple[int, ...] | None
-    witness_terminal_labels: tuple[int | str, ...] | None
-    exactness_scope: ExactnessScope
-    path_result: BudgetPathResult
-    proof_graph: ResourceDAG
-    input_fingerprint: str
-
-
-def _input_fingerprint(state: SelectionInput) -> str:
-    used = sorted({t for row in state.support.rows for t in row})
-    emissions: dict[int, str | None] = {}
-    for token in used:
-        emission = state.tokenizer_adapter.emissions[token]
-        emissions[token] = None if emission is None else emission.hex()
-    data = {
-        "grammar": state.grammar.to_dict(),
-        "canvas": state.canvas,
-        "rows": state.support.rows,
-        "scope": state.support.exactness_scope.to_dict(),
-        "proposals": [(p.proposal_id, p.position, p.token_id, p.weight) for p in state.proposals],
-        "eos": state.eos_policy.to_dict(),
-        "emissions": emissions,
-    }
-    return hashlib.sha256(json.dumps(data, sort_keys=True).encode()).hexdigest()
+from mwpc_exact.types import SolveStatus
 
 
 def budgeted_commit_frontier(
-    state: SelectionInput, max_budget: int
+    state: SelectionInput,
+    max_budget: int,
+    *,
+    graph_layout: BudgetGraphLayout = BudgetGraphLayout.COMPACT,
 ) -> tuple[BudgetedCommitResult, ...]:
     """Maximize committed proposal reward jointly over all free slots and tokens."""
-    fingerprint = _input_fingerprint(state)
-    lattice = build_eos_lattice(
-        token_lattice=build_token_lattice(support=state.support, proposals=state.proposals),
-        adapter=state.tokenizer_adapter,
-        policy=state.eos_policy,
-    )
-    first = {arc.graph_edge_ids[0]: arc for arc in lattice.arcs}
-    resource_arcs: list[ResourceArc] = []
-    origins: dict[int, int] = {}
-    charged_positions: dict[int, int] = {}
-    for edge in lattice.graph.edges:
-        label = edge.terminal_label if isinstance(edge, TerminalEdge) else None
-        arc_id = len(resource_arcs)
-        resource_arcs.append(
-            ResourceArc(arc_id, edge.source_state, edge.target_state, label, Fraction(), 0)
-        )
-        origins[arc_id] = edge.edge_id
-        token_arc = first.get(edge.edge_id)
-        if token_arc is None or state.canvas[token_arc.position] is not None:
-            continue
-        reward = sum(
-            (
-                Fraction(p.weight)
-                for p in state.proposals
-                if p.position == token_arc.position
-                and p.token_id == token_arc.token_id
-                and p.weight > 0
-            ),
-            Fraction(),
-        )
-        if reward:
-            arc_id = len(resource_arcs)
-            resource_arcs.append(
-                ResourceArc(arc_id, edge.source_state, edge.target_state, label, reward, 1)
-            )
-            origins[arc_id] = edge.edge_id
-            charged_positions[arc_id] = token_arc.position
-    graph = ResourceDAG(
-        index_terminal_dag(lattice.graph).topological_order,
-        lattice.graph.start_node_id,
-        lattice.graph.final_node_ids,
-        tuple(resource_arcs),
-        f"exact_on_support: {state.support.fingerprint}; EOS={state.eos_policy.to_dict()}",
-    )
+    fingerprint = budget_input_fingerprint(state)
+    compiled = compile_budget_graph(state, layout=graph_layout)
+    graph = compiled.graph
     results: list[BudgetedCommitResult] = []
     for path in budgeted_frontier(state.grammar, graph, max_budget):
-        report = check_budget_certificate(state.grammar, graph, path)
-        if not report.accepted:
-            raise RuntimeError(f"Independent budget optimality proof rejected: {report.errors}")
         tokens = None
         commits: tuple[int, ...] = ()
         matched: tuple[int, ...] = ()
         committed_ids: tuple[int, ...] = ()
         if path.witness_arc_ids is not None:
-            original = tuple(origins[i] for i in path.witness_arc_ids)
-            token_path = lattice.reconstruct_original_path(original)
-            lattice.validate_path(token_path)
-            tokens = token_path.token_path.token_ids
-            commits = tuple(
-                sorted(charged_positions[i] for i in path.witness_arc_ids if i in charged_positions)
-            )
+            tokens, commits = reconstruct_budget_tokens(compiled, path.witness_arc_ids)
             if len(set(commits)) != len(commits) or len(commits) != path.consumed_budget:
                 raise RuntimeError("Resource path double charges a physical slot")
-            matched = tuple(
-                p.proposal_id
-                for p in state.proposals
-                if p.weight > 0 and tokens[p.position] == p.token_id
+            batch = validate_budget_batch(
+                state, budget=path.budget, witness_token_ids=tokens, committed_positions=commits
             )
-            committed_ids = tuple(
-                p.proposal_id
-                for p in state.proposals
-                if p.proposal_id in matched and p.position in commits
-            )
-            recomputed = sum(
-                (Fraction(p.weight) for p in state.proposals if p.proposal_id in committed_ids),
-                Fraction(),
-            )
-            if recomputed != path.objective_value:
+            matched, committed_ids = batch.matched_proposal_ids, batch.committed_proposal_ids
+            if (
+                batch.reward != path.objective_value
+                or tuple(batch.emitted_bytes) != path.witness_terminal_labels
+            ):
                 raise RuntimeError("Budgeted objective does not equal original committed weights")
-        results.append(
-            BudgetedCommitResult(
-                path.status,
-                path.budget,
-                path.objective_value,
-                commits,
-                committed_ids,
-                matched,
-                tokens,
-                path.witness_terminal_labels,
-                state.support.exactness_scope,
-                path,
-                graph,
-                fingerprint,
-            )
+        result = BudgetedCommitResult(
+            path.status,
+            path.budget,
+            path.objective_value,
+            commits,
+            committed_ids,
+            matched,
+            tokens,
+            path.witness_terminal_labels,
+            state.support.exactness_scope,
+            path,
+            graph,
+            fingerprint,
+            compiled,
         )
+        full_report = check_budget_commit_certificate(state, result)
+        if not full_report.accepted:
+            raise RuntimeError(f"Original-input budget proof rejected: {full_report.errors}")
+        results.append(result)
     return tuple(results)
 
 
-def solve_budgeted_commit(state: SelectionInput, budget: int) -> BudgetedCommitResult:
+def solve_budgeted_commit(
+    state: SelectionInput,
+    budget: int,
+    *,
+    graph_layout: BudgetGraphLayout = BudgetGraphLayout.COMPACT,
+) -> BudgetedCommitResult:
     """One-cap convenience API; existing serial/EPIC/exact strategies are unchanged."""
-    return budgeted_commit_frontier(state, budget)[budget]
+    return budgeted_commit_frontier(state, budget, graph_layout=graph_layout)[budget]
 
 
 def budgeted_progress_update(
@@ -172,13 +90,11 @@ def budgeted_progress_update(
     if result.budget == 0 and any(t is None for t in state.canvas):
         raise ValueError("a zero budget cannot guarantee progress")
     # Check state compatibility rather than silently accepting another state's witness.
-    if result.input_fingerprint != _input_fingerprint(state):
+    if result.input_fingerprint != budget_input_fingerprint(state):
         raise ValueError("result belongs to a different frozen input")
-    if len(result.witness_token_ids) != len(state.canvas) or any(
-        token is not None and token != result.witness_token_ids[i]
-        for i, token in enumerate(state.canvas)
-    ):
-        raise ValueError("witness does not preserve this canvas")
+    report = check_budget_commit_certificate(state, result)
+    if not report.accepted:
+        raise ValueError(f"invalid original-input budget certificate: {report.errors}")
     chosen = list(result.committed_positions)
     fallback: list[int] = []
     for i, token in enumerate(state.canvas):

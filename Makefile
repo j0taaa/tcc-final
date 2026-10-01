@@ -2,6 +2,7 @@ PYTHON ?= python3.11
 VENV ?= .venv
 VENV_PY := $(VENV)/bin/python
 VENV_PIP := $(VENV)/bin/pip
+LAKE ?= lake
 PYTHON_CONSTRAINTS := requirements/constraints-py311-linux.txt
 EPIC_CPU_INDEX ?= https://download.pytorch.org/whl/cpu
 ARTIFACT_CONFIG ?= configs/analysis/t1201_q3_artifacts_v1.toml
@@ -9,7 +10,7 @@ STATISTICS_CONFIG ?= configs/analysis/t1202_statistics_v1.toml
 FINAL_ARTIFACT_CONFIG ?= configs/analysis/t1203_final_artifacts_v1.toml
 ARTICLE_RESULT_CONFIG ?= configs/analysis/m1301_article_results_v1.toml
 
-.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser artifacts artifacts-check statistics statistics-check final-artifacts final-artifacts-check article-results article-results-check release-wheel-smoke rehearse-artifact-rebuild rehearse-source-correctness rehearse-cpu-correctness query-demo-check paper clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream install check check-formal check-project lint format typecheck test test-unit test-exact test-integration test-upstream check-integration test-m4-extended test-m5-differential test-m6-differential test-m7-counterexamples test-m7-differential test-rust-parser artifacts artifacts-check statistics statistics-check final-artifacts final-artifacts-check article-results article-results-check release-wheel-smoke rehearse-artifact-rebuild rehearse-source-correctness rehearse-cpu-correctness query-demo-check paper clean
 
 bootstrap:
 	git submodule update --init --recursive
@@ -133,6 +134,12 @@ rehearse-cpu-correctness: rehearse-artifact-rebuild
 test: test-unit test-exact
 
 check: verify-upstream lint typecheck test
+
+check-formal:
+	$(VENV_PY) scripts/exact_commit/check_formal_project.py --lake $(LAKE)
+
+# All scientific layers: theorem kernel, implementations, baselines and paper data.
+check-project: check check-formal test-rust-parser test-integration test-upstream article-results-check
 
 check-integration: test-integration
 

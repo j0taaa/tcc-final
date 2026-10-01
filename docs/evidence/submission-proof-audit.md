@@ -106,8 +106,33 @@ Full proofs are in `paper/budgeted-math.tex` and
 `docs/research/m26-mathematical-core.md`. Exact binary-rational input semantics,
 CNF/empty-word handling, statuses, negative/invalid rewards, finite support and
 bit-cost boundaries were reviewed against the implementation. Certificates prove
-optimality for the given instance; universal theorems are written mathematics,
-not proof-assistant formalizations. The finite regression suite independently
+optimality for the given instance. At the M26 audit, the universal results
+were written mathematics rather than proof-assistant formalizations; the M27
+extension below adds explicitly scoped Lean coverage. The finite regression suite independently
 compares all objectives and witness validity; it is not used to claim typical
 accuracy or relevance. Final executed gates are recorded in
 `docs/evidence/m26-mathematical-verification.json`.
+
+## M27 certificate and bound mechanization (1 October 2026)
+
+The implemented compact compiler charges only token-identifying closing arcs.
+The portable v2 checker additionally verifies complete original-support graph
+construction, EOS/PAD transitions, fixed slots, exact rewards and reconstructed
+token/commitment metadata. It still imports no weighted optimizer. Historical
+M26 graph-only proofs retain their explicit narrower verification scope.
+
+Lean 4.34.0 proves resource-CFG upper-potential soundness, attained-bound
+optimality and absent-root infeasibility, free-position relaxation, gap/ratio
+and tightness reasoning, prefix emission/membership/node-count statements, and
+conditional dominance, fixed offsets and capacity consequences. Five concrete
+bridge profiles are kernel-checked, including exact scaling of binary64 0.1.
+An altered root bound is rejected. Every audited axiom dependency is standard
+Lean logic, with no project axiom, admission or native-decision shortcut.
+
+The [formal coverage map](../../formal/README.md) names the actual propositions
+and premises. Original-input compiler correspondence remains independently
+checked **in Python**. Universal Python/Rust source refinement, complete DP
+algorithm correctness, infinite-language separations and the update-round
+formula are not silently claimed as Lean proofs. The written proofs and
+independent oracles remain scientifically necessary. Execution evidence is
+`m27-formal-checks.json` and `m27-final-checks.md`.

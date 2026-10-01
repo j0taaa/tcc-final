@@ -564,6 +564,35 @@ worktree so the recorded commit and configuration provenance remain valid.
 
 ## 6. Paper build
 
+### Formal and original-input certificate gates (M27)
+
+Install Elan explicitly, then `elan toolchain install leanprover/lean4:v4.34.0`.
+No Mathlib or additional Lean package is required. The checking command does not
+download a missing toolchain and fails rather than skipping missing verification.
+
+```bash
+make check-formal
+make check-project
+.venv/bin/python scripts/exact_commit/budget_math_example.py \
+  --verify docs/artifacts/math/m27-budget-proof.json --lean
+```
+
+If Elan is outside `PATH`, use `LAKE="$HOME/.elan/bin/lake"` with Make, or
+`--lake "$HOME/.elan/bin/lake"` with the script. Ordinary `pytest` stays offline
+and does not require Lean. The CI formal job is mandatory and uses the pinned
+toolchain. [The coverage and trust map](formal/README.md) identifies the exact
+kernel statements and the separate Python check of original-input graph
+correspondence. The five concrete bridge profiles and rejection result are in
+`docs/evidence/m27-formal-checks.json`.
+
+The budget API defaults to prefix sharing; `graph_layout=BudgetGraphLayout.PRIVATE`
+retains the independently checked comparison construction. Physical token
+identity and paid closings remain explicit. `certify_budget_batch` independently
+validates an incumbent and returns exact lower/upper bounds; it does not make
+an interrupted solver `OPTIMAL`, nor promise continually improving search.
+The tightness test uses all frozen proposals, including outside-support choices,
+and assumes later support expansion changes none of the other input semantics.
+
 After artifact verification, build the article separately:
 
 ```bash

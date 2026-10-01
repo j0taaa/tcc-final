@@ -15,6 +15,9 @@ build/
 # Rust
 target/
 
+# Lean build products (source/toolchain/manifest remain tracked)
+/formal/.lake/
+
 # Models, datasets and experiment outputs
 .cache/
 cache/

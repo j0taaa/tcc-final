@@ -56,7 +56,7 @@ def _inspect_wheel(wheel: Path) -> dict[str, object]:
 def _inspect_sdist(sdist: Path) -> dict[str, object]:
     with tarfile.open(sdist, "r:gz") as archive:
         members = archive.getmembers()
-    forbidden = {"target", ".git", "__pycache__", ".venv", ".venv-live", ".cache"}
+    forbidden = {"target", ".git", ".lake", "__pycache__", ".venv", ".venv-live", ".cache"}
     bad = [member.name for member in members if forbidden.intersection(Path(member.name).parts)]
     unpacked_bytes = sum(member.size for member in members)
     if bad:
@@ -70,6 +70,10 @@ def _inspect_sdist(sdist: Path) -> dict[str, object]:
         "vendor/EPIC-Decoding/THIRD_PARTY_LICENSES.md",
         "src/mwpc_exact/__init__.py",
         "crates/mwpc_parser/Cargo.lock",
+        "formal/lean-toolchain",
+        "formal/MWPC/Certificates.lean",
+        "formal/examples/BudgetExample.lean",
+        "docs/artifacts/math/m27-budget-proof.json",
     }
     if not required <= names:
         raise RuntimeError(f"source archive omits required sources: {sorted(required - names)}")
@@ -153,6 +157,18 @@ def main() -> int:
         math_proof = work / "budget-proof.json"
         _run([str(python), "-I", str(math_example), "--output", str(math_proof)], cwd=work)
         _run([str(python), "-I", str(math_example), "--verify", str(math_proof)], cwd=work)
+        _run(
+            [
+                str(python),
+                "-I",
+                str(math_example),
+                "--verify",
+                str(math_proof),
+                "--lean-source",
+                str(work / "Certificate.lean"),
+            ],
+            cwd=work,
+        )
 
         q3_raw = root / "q3-smoke" / "raw"
         q3_processed = root / "q3-smoke" / "processed"
@@ -206,6 +222,7 @@ def main() -> int:
                     "sdist_inventory": sdist_inventory,
                     "source_tree_leakage": False,
                     "budgeted_math_and_independent_proof": "PASS",
+                    "installed_wheel_lean_export": "PASS",
                     "wheel": wheel.name,
                 },
                 sort_keys=True,

@@ -101,3 +101,29 @@ Every reconstructed original path starts at $q_0$, ends at a final state, and fo
 Let $G$ generate exactly \texttt{ayz} and \texttt{xbc}, and let the three-slot canvas be entirely masked. Consider proposals $(1,\mathtt{a},4)$, $(2,\mathtt{b},3)$, and $(3,\mathtt{c},2)$. Each is individually feasible. The first proposal is incompatible with either of the others, whereas the second and third can coexist. The two completions score 4 and 5, respectively; thus the optimum is \texttt{xbc}, committing the last two proposals. A greedy policy that accepts the highest-weight proposal first retains only weight 4. The completion certifies compatibility; the decoder need not commit every token it contains.
 
 Slot accounting is a separate issue. With one remaining slot whose tokens emit only \texttt{a} or \texttt{b}, the grammar $S\rightarrow\mathtt{a}\mathtt{b}$ is infeasible. An abstract $\Sigma^*$ gap accepts \texttt{ab} and gives a false positive. If the tokenizer also contains a single token emitting \texttt{ab} and that token is represented in the slot, the same grammar becomes feasible. The bound counts token choices, not emitted characters.
+
+% Decoder invariant proofs retained from the main article in M27.
+\section{Iterative Decoder and Progress Guarantee}
+\label{sec:decoder}
+
+The optimizer solves one step, but the decoder must define proposals, budget, ties, fallback, and termination. In the policy study, its complete selected set remains in the certificate while a separate gate commits a subset. A confidence threshold applies to raw full-vocabulary model probabilities; it is not a calibrated probability of semantic correctness. Committing fewer witness-matching tokens preserves feasibility but changes the future model trajectory. Historical live policies restrict $C$ to at most $k_s$ eligible positions before ordinary MWPC. The new rational reference instead retains all original proposals and optimizes physical commitments inside the parser (Section~\ref{sec:budgeted}); it is not retroactively used in those measurements.
+
+An important case is $J^*=\varnothing$ even though a valid completion exists. The decoder cannot stall. Witness $y^*$ provides a safe progress fallback: committing its token at one masked position preserves that witness as feasible. This token may not be the model's primary proposal, but it guarantees progress without violating the grammar.
+
+
+
+\begin{proposition}[Completion-feasibility invariant]
+If $x$ has a feasible witness and a step commits only tokens matching a witness returned by the parser, then the new state still has a feasible witness.
+\end{proposition}
+
+\begin{proof}
+The witness used at the step already preserves every fixed position in $x$. Since the new commitments match it, the witness also preserves the new state and continues to satisfy the lexical, grammatical, and slot conditions.
+\end{proof}
+
+\begin{proposition}[Termination]
+Assume that the canvas has finitely many masks, remasking is disabled, every optimizer call returns a feasible witness, and every step commits at least one position. If no earlier step-budget stop is imposed, the decoder completes after at most the initial number of masks, and the final sequence belongs to the constrained language.
+\end{proposition}
+
+\begin{proof}
+The number of masks strictly decreases and cannot be negative. At the final state, the witness that maintains the invariant must match every fixed token, so the output itself is valid.
+\end{proof}

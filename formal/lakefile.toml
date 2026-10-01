@@ -1,0 +1,6 @@
+name = "mwpc"
+version = "0.1.0"
+defaultTargets = ["MWPC"]
+
+[[lean_lib]]
+name = "MWPC"

@@ -9,6 +9,13 @@ contracts, two unchanged historical result tables, limitations and the AI-use
 declaration. Earlier algorithms and empirical detail are preserved in separate
 supplementary sources.
 
+M27 adds certified incumbent-quality/support-expansion bounds, compact token
+prefixes and Lean-checked resource certificates. The precise coverage in
+[`formal/README.md`](../formal/README.md) distinguishes mathematical kernel
+proofs from the independent Python original-input check and unproved foreign
+source refinement. No new latency, semantic-accuracy or benchmark-win claim
+is introduced.
+
 ## Files
 
 - `main.tex`: main manuscript and project entry point;

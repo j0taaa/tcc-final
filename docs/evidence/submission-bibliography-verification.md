@@ -177,3 +177,14 @@ Goodman J99-4004 and the weighted-GRAMMAR journal DOI
 `10.1007/s10479-010-0697-y`. No first-ever parsing, exact dLLM inference,
 resource DP or certifying-algorithm novelty is claimed. The mathematical
 contribution is incremental and its validity does not establish global priority.
+
+## M27 additions, 1 October 2026
+
+The current inventory contains 37 records. Three new primary sources acknowledge
+established quality bounds, prefix sharing and the actual proof toolchain.
+
+| Key | Status | Primary source | Verification |
+| --- | --- | --- | --- |
+| `likhachev2003ara` | Cited | [NeurIPS 2003 official record](https://papers.nips.cc/paper_files/paper/2003/hash/ee8fe9093fbbb687bef15a38facc44d2-Abstract.html) | Title, Likhachev/Gordon/Thrun and volume 16 verified. ARA* improves bounds with time; M27 only implements an incumbent certifier, not that search. |
+| `xu2026trie` | Cited | [arXiv 2608.12574v1](https://arxiv.org/abs/2608.12574v1) | Xu/Bouyarmane, title and 12 August 2026 submission verified. Shared prefixes are prior art; no speedup from that paper is attributed to this project. |
+| `lean2026reference` | Cited | [Official versioned reference](https://lean-lang.org/doc/reference/4.34.0/) | The manual explicitly covers Lean 4.34.0 and kernel checking. No claim that Lean automatically verifies foreign Python/Rust programs. |

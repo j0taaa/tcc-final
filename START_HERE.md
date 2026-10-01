@@ -18,6 +18,17 @@ make bootstrap-rust-parser
 make test-rust-parser
 ```
 
+For the complete scientific gate, explicitly install the pinned toolchain and
+include formal verification:
+
+```bash
+elan toolchain install leanprover/lean4:v4.34.0
+make check-project
+```
+
+`formal/README.md` defines the kernel coverage and the independent Python
+correspondence boundary. Missing Lean is a failing formal gate, never a skip.
+
 ## Read in this order
 
 1. `AGENTS.md` in full;

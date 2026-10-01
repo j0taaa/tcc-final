@@ -125,6 +125,28 @@ class BudgetPathResult:
     certificate: BudgetCertificate
     exactness_scope: str
 
+    def __post_init__(self) -> None:
+        if not isinstance(self.status, SolveStatus):
+            raise ValueError("status must be a SolveStatus")
+        nonnegative_integer(self.budget, "budget")
+        if self.objective_value is not None:
+            if not isinstance(self.objective_value, Fraction) or self.objective_value < 0:
+                raise ValueError("objective must be a non-negative exact Fraction")
+        if self.consumed_budget is not None:
+            nonnegative_integer(self.consumed_budget, "consumed_budget")
+        if self.witness_arc_ids is not None:
+            for arc_id in self.witness_arc_ids:
+                nonnegative_integer(arc_id, "witness arc ID")
+        if self.witness_terminal_labels is not None:
+            for label in self.witness_terminal_labels:
+                if (
+                    isinstance(label, bool)
+                    or not isinstance(label, (int, str))
+                    or (isinstance(label, int) and not 0 <= label <= 255)
+                    or label == ""
+                ):
+                    raise ValueError("witness label must be a byte or nonempty string")
+
 
 @dataclass(frozen=True)
 class BudgetCertificateReport:

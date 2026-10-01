@@ -3,17 +3,26 @@
 from __future__ import annotations
 
 import csv
-import hashlib
 import html
 import io
 import json
-import re
 import tomllib
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import cast
 
+from mwpc_exact.experiments._artifact_io import (
+    _digest,
+    _exact_fields,
+    _latex_escape,
+    _mapping,
+    _reject_json_constant,
+    _relative_path,
+    _resolved_within,
+    _safe_id,
+    _sha256_bytes,
+    _sha256_file,
+)
 from mwpc_exact.experiments.metadata import canonical_json_sha256
 
 ARTIFACT_BUILD_SCHEMA_VERSION = 1
@@ -21,61 +30,6 @@ ARTIFACT_MANIFEST_KIND = "mwpc_publication_artifact_manifest"
 ARTIFACT_MANIFEST_FILENAME = "artifact-manifest.json"
 ARTIFACT_TABLE_FILENAME = "artifact-inventory.tex"
 ARTIFACT_FIGURE_FILENAME = "artifact-row-counts.svg"
-
-_SAFE_ID = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
-_SHA256 = re.compile(r"^[0-9a-f]{64}$")
-
-
-def _sha256_bytes(value: bytes) -> str:
-    return hashlib.sha256(value).hexdigest()
-
-
-def _sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as source:
-        for chunk in iter(lambda: source.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
-
-
-def _exact_fields(
-    value: Mapping[str, object],
-    required: set[str],
-    field_name: str,
-) -> None:
-    missing = required - set(value)
-    if missing:
-        raise ValueError(f"missing {field_name} fields: {', '.join(sorted(missing))}")
-    unknown = set(value) - required
-    if unknown:
-        raise ValueError(f"unknown {field_name} fields: {', '.join(sorted(unknown))}")
-
-
-def _mapping(value: object, field_name: str) -> Mapping[str, object]:
-    if not isinstance(value, Mapping) or not all(isinstance(key, str) for key in value):
-        raise TypeError(f"{field_name} must be a string-keyed mapping")
-    return cast(Mapping[str, object], value)
-
-
-def _safe_id(value: object, field_name: str) -> str:
-    if not isinstance(value, str) or _SAFE_ID.fullmatch(value) is None:
-        raise ValueError(f"{field_name} must be a safe lowercase identifier")
-    return value
-
-
-def _relative_path(value: object, field_name: str) -> Path:
-    if not isinstance(value, str) or not value:
-        raise ValueError(f"{field_name} must be a non-empty repository-relative path")
-    path = Path(value)
-    if path.is_absolute() or ".." in path.parts or path == Path("."):
-        raise ValueError(f"{field_name} must stay inside the repository")
-    return path
-
-
-def _digest(value: object, field_name: str) -> str:
-    if not isinstance(value, str) or _SHA256.fullmatch(value) is None:
-        raise ValueError(f"{field_name} must be a lowercase SHA-256 digest")
-    return value
 
 
 @dataclass(frozen=True, slots=True)
@@ -110,9 +64,7 @@ class ArtifactBuildConfig:
 
     def __post_init__(self) -> None:
         if self.schema_version != ARTIFACT_BUILD_SCHEMA_VERSION:
-            raise ValueError(
-                f"schema_version must be {ARTIFACT_BUILD_SCHEMA_VERSION}"
-            )
+            raise ValueError(f"schema_version must be {ARTIFACT_BUILD_SCHEMA_VERSION}")
         _safe_id(self.artifact_id, "artifact_id")
         _relative_path(self.processed_directory.as_posix(), "processed_directory")
         _relative_path(self.paper_directory.as_posix(), "paper_directory")
@@ -163,9 +115,7 @@ def load_artifact_build_config(path: str | Path) -> ArtifactBuildConfig:
         inputs.append(
             RawArtifactInput(
                 input_id=_safe_id(item["input_id"], f"inputs[{index}].input_id"),
-                raw_jsonl=_relative_path(
-                    item["raw_jsonl"], f"inputs[{index}].raw_jsonl"
-                ),
+                raw_jsonl=_relative_path(item["raw_jsonl"], f"inputs[{index}].raw_jsonl"),
                 expected_sha256=_digest(
                     item["expected_sha256"], f"inputs[{index}].expected_sha256"
                 ),
@@ -177,22 +127,12 @@ def load_artifact_build_config(path: str | Path) -> ArtifactBuildConfig:
     return ArtifactBuildConfig(
         schema_version=schema,
         artifact_id=_safe_id(root["artifact_id"], "artifact_id"),
-        processed_directory=_relative_path(
-            root["processed_directory"], "processed_directory"
-        ),
+        processed_directory=_relative_path(root["processed_directory"], "processed_directory"),
         paper_directory=_relative_path(root["paper_directory"], "paper_directory"),
         inputs=tuple(inputs),
         config_sha256=canonical_json_sha256(raw),
         config_file_sha256=_sha256_bytes(payload),
     )
-
-
-def _resolved_within(repository_root: Path, relative: Path, field_name: str) -> Path:
-    root = repository_root.resolve()
-    resolved = (root / relative).resolve()
-    if not resolved.is_relative_to(root):
-        raise ValueError(f"{field_name} resolves outside the repository")
-    return resolved
 
 
 def prepare_artifact_directories(
@@ -222,10 +162,6 @@ def default_processed_directory(
     if raw.is_relative_to(standard_raw):
         return root / "results/processed" / raw.relative_to(standard_raw)
     return raw.parent / f"{raw.name}-processed"
-
-
-def _reject_json_constant(value: str) -> object:
-    raise ValueError(f"raw JSONL contains non-finite constant: {value}")
 
 
 @dataclass(frozen=True, slots=True)
@@ -320,22 +256,6 @@ def _csv_bytes(rows: Sequence[Mapping[str, object]]) -> bytes:
     return output.getvalue().encode("utf-8")
 
 
-def _latex_escape(value: str) -> str:
-    replacements = {
-        "\\": r"\textbackslash{}",
-        "&": r"\&",
-        "%": r"\%",
-        "$": r"\$",
-        "#": r"\#",
-        "_": r"\_",
-        "{": r"\{",
-        "}": r"\}",
-        "~": r"\textasciitilde{}",
-        "^": r"\textasciicircum{}",
-    }
-    return "".join(replacements.get(character, character) for character in value)
-
-
 def _table_bytes(inputs: Sequence[_LoadedInput]) -> bytes:
     lines = [
         "% Generated by scripts/exact_commit/build_publication_artifacts.py.",
@@ -380,10 +300,8 @@ def _figure_bytes(inputs: Sequence[_LoadedInput]) -> bytes:
         label = html.escape(item.declaration.input_id, quote=True)
         lines.extend(
             (
-                f'<text x="20" y="{y + 20}" font-family="sans-serif" '
-                f'font-size="15">{label}</text>',
-                f'<rect x="220" y="{y}" width="{bar_width}" height="28" '
-                'fill="#2f6f9f"/>',
+                f'<text x="20" y="{y + 20}" font-family="sans-serif" font-size="15">{label}</text>',
+                f'<rect x="220" y="{y}" width="{bar_width}" height="28" fill="#2f6f9f"/>',
                 f'<text x="{230 + bar_width}" y="{y + 20}" '
                 f'font-family="sans-serif" font-size="15">{len(item.rows)}</text>',
             )
@@ -433,8 +351,7 @@ def build_publication_artifacts(
     table_path = paper / ARTIFACT_TABLE_FILENAME
     figure_path = paper / ARTIFACT_FIGURE_FILENAME
     rendered: dict[Path, bytes] = {
-        processed / item.declaration.csv_filename: _csv_bytes(item.rows)
-        for item in loaded
+        processed / item.declaration.csv_filename: _csv_bytes(item.rows) for item in loaded
     }
     rendered[table_path] = _table_bytes(loaded)
     rendered[figure_path] = _figure_bytes(loaded)

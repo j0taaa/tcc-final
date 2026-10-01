@@ -28,6 +28,23 @@ explain the proof checker and update premises. Weighted parsing, resource DP,
 certification and exact dLLM inference are acknowledged antecedents; this is an
 incremental formulation/solution, not a claim to invent their principles.
 
+The [certified extensions](docs/research/m27-certified-extensions.md) add a
+validated incumbent's quality bound, tightness certificates under retained-input
+support expansion, and compact token-prefix graphs preserving every represented
+completion. Portable v2 proofs also check graph completeness against the original
+input. [Lean coverage](formal/README.md) distinguishes universal mathematical
+proofs, concrete kernel checks, Python correspondence checks and external code.
+After installing the pinned toolchain:
+
+```bash
+make check-formal
+make check-project
+```
+
+Lean proves the specified certificate/bound theorems and checks exported resource
+instances. It does not automatically prove the whole Python/Rust source or model
+accuracy. Existing independent oracles and baseline tests remain essential.
+
 Historical [M24](docs/research/m24-findings.md) and
 [M25](docs/research/m25-findings.md) experiments remain secondary evidence,
 including worse external accuracy and latency than EPIC. All original failures,

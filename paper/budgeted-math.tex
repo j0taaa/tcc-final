@@ -18,14 +18,16 @@ If $\operatorname{top}_B(r(y))$ sums the $B$ largest free-position rewards, or a
 Fixing $y$, non-negativity makes its largest $B$ rewards an optimal choice of $T$. These positions have the common witness $y$. Conversely, any compatible batch has such a witness and its reward is bounded by that witness's largest $B$ rewards. Maximizing both directions proves equality.
 \end{proof}
 
-In the original byte/EOS DAG, replace the first arc of every free token choice of positive reward by two parallel alternatives: unpaid $(c,w)=(0,0)$ and paid $(1,r_i(a))$. Remaining bytes and fixed choices have zero cost and reward. An EOS/PAD choice has an epsilon arc and is charged there. Private internal token states preserve original paths; the budget never counts individual bytes.
+In the byte/EOS DAG, each token closes with unpaid $(c,w)=(0,0)$ and, at a free position of positive reward, paid $(1,r_i(a))$ alternatives. Prefix arcs and fixed choices have zero cost and reward. EOS/PAD closes by epsilon. Charging at the identified token's closing permits shared prefixes without paying for an unfinished choice.
 
 \begin{lemma}[Resource compilation]
 Accepted resource paths of cost at most $B$ represent precisely the feasible pairs $(y,T)$ of Equation~\ref{eq:budget-objective}, after removing zero-reward positions from $T$, with identical reward.
 \end{lemma}
 \begin{proof}
-A complete path selects one token per physical slot. Private expansion states prevent splicing different tokens, and EOS/PAD transitions enforce $H$ before emission. Each paid first arc identifies one free position; their count is $|T|$ and their reward is $\sum_{i\in T}r_i(y_i)$. Conversely, expand any feasible $y$ and pay exactly at its positive-reward positions in $T$. Removing zero-reward positions changes neither feasibility nor objective. Thus the two representations have equal optima and reconstructible token provenance.
+A complete path selects one token per physical slot. Prefix states encode the bytes already emitted; a closing identifies the full token, preventing foreign suffixes or alias confusion. EOS/PAD transitions enforce $H$. Paid closings identify free positions; their count is $|T|$ and their reward is $\sum_{i\in T}r_i(y_i)$. Conversely, follow each token's prefixes and pay at its positive-reward positions in $T$. Removing zero-reward positions changes neither feasibility nor objective. Thus both representations have equal optima and reconstructible token provenance.
 \end{proof}
+
+For slot $i$, share its distinct nonempty proper byte prefixes $P_i$. Private expansion uses $\sum_{a\in S_i^{\rm ord}}(|\operatorname{emit}(a)|-1)$ internal nodes; compact expansion uses $|P_i|$, never more. Each closing retains its token ID, including aliases; when the entire token is another token's proper prefix, its closing is epsilon. The two encodings preserve every completion, reward and budget. Shared prefixes strictly reduce nodes, not necessarily measured latency; no path is pruned.
 
 \subsection{Exact resource dynamic programming}
 
@@ -73,7 +75,19 @@ If all potential inequalities hold and an independently recognized original path
 Induction along an epsilon path bounds its reward by $U_E$. Induction on a CFG derivation bounds every terminal leaf using its epsilon potentials and bounds every binary node by the sum of its children's bounds. Thus every feasible path has reward at most $U_b$. An independently checked witness gives $L\leq\operatorname{OPT}_b\leq U_b=L$, proving optimality. If no root has a finite bound, existence of an accepted path would contradict the same induction. For completeness, exact chart values satisfy every inequality, and reconstruction attains the best root, or all roots are absent.
 \end{proof}
 
-The checker neither imports the optimizer nor trusts its backpointers: it checks inequalities, graph continuity, cost, grammar acceptance and reward. Finite binary64 inputs are converted to exact binary rationals; no tolerance weakens the proof. The guarantee concerns supplied weights, not unknown ideal probabilities. These are written mathematical proofs with an executable checker, not Lean/Coq formalization; finite tests validate implementation, not the universal theorem.
+The checker imports no optimizer and checks graph completeness against the original support, token emissions, fixed slots, EOS/PAD and aggregated rewards, then checks potentials and the token witness. Portable proofs bind this input explicitly; an external expected input can be supplied. Binary64 weights become exact binary rationals. Lean mechanizes certificate soundness and checks exported concrete resource proofs; it does not prove all foreign source code (Section~\ref{sec:metodologia}).
+
+\subsection{Certified quality without completing the exact search}
+
+Let $m_i=\max_a r_i(a)$ include every frozen proposal, even outside the current support; let $U_B$ sum the $\min(B,|I|)$ largest $m_i$. A separately validated completion and batch give reward $L$.
+\begin{theorem}[Relaxation and support-expansion certificate]
+For any such batch, $L\leq\operatorname{OPT}_B\leq U_B$. Its additive loss is at most $U_B-L$; for $U_B>0$, it achieves at least $L/U_B$ of optimum. If $L=U_B$, no support expansion preserving the frozen proposals, weights, fixed slots, grammar and EOS/PAD can improve its reward.
+\label{thm:quality-bound}
+\end{theorem}
+\begin{proof}
+For any feasible $(y,T)$, $\sum_{i\in T}r_i(y_i)\leq\sum_{i\in T}m_i\leq U_B$. A valid witness supplies the lower bound. Division gives the ratio; equality gives optimality in every retained-input expansion, since the same relaxation bounds each one. If $U_B=0$, every feasible batch has zero reward.
+\end{proof}
+The bound can be arbitrarily loose. This is a cheap incumbent certifier, not an implemented improving anytime search. A timeout without a valid incumbent proves no lower bound; support scope remains explicit.
 
 \subsection{Universal dominance and strict mathematical separations}
 
@@ -105,7 +119,7 @@ Even at fixed budget $B=1$, choosing the best one-position subset of an ordinary
 In the same language, use $n+1$ slots: the first allows $0,h$ with proposal $h$ of weight $7/8$; each remaining slot allows $0,l$ with proposal $l$ of weight $7/(4n)$, for $n=2^k\geq2$. Unbudgeted MWPC strictly prefers $0l^n$, scoring $7/4$ rather than $7/8$. Its best one-position subset scores $7/(4n)$. The $h$ witness attains the joint budget-one optimum $7/8$; their ratio is $2/n\to0$.
 \end{proof}
 
-These infinite families prove limitations of algorithmic rules, not a benchmark win rate. The constructive exact solver supplies a solution for all inputs satisfying the hypotheses, including ties and cases where heuristics already attain the optimum.
+These infinite families limit algorithmic rules; they do not estimate a benchmark win rate.
 
 \begin{corollary}[Certified capacity planning]
 For nonempty support, $\operatorname{OPT}_b$ is nondecreasing. The smallest $b$ with $\operatorname{OPT}_b\geq Q$ is the minimum number of physical commitments needed to achieve reward target $Q$, or no such budget exists.
