@@ -9,8 +9,10 @@ from __future__ import annotations
 
 from collections import defaultdict
 from fractions import Fraction
+from time import perf_counter
 from typing import TypeAlias
 
+from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent
 from mwpc_exact.reference.budget_types import (
     BudgetCertificate,
     BudgetPathResult,
@@ -28,9 +30,22 @@ Binary: TypeAlias = tuple[ChartKey, ChartKey]
 
 
 def budgeted_frontier(
-    grammar: CnfGrammar, graph: ResourceDAG, max_budget: int
+    grammar: CnfGrammar,
+    graph: ResourceDAG,
+    max_budget: int,
+    *,
+    profiler: ComponentProfiler | None = None,
 ) -> tuple[BudgetPathResult, ...]:
     """Return a proved optimum or support infeasibility for every cap 0..max_budget."""
+    monitor = profiler if profiler is not None else ComponentProfiler()
+    with monitor.observe_wall_span():
+        return _frontier(grammar, graph, max_budget, monitor)
+
+
+def _frontier(
+    grammar: CnfGrammar, graph: ResourceDAG, max_budget: int, monitor: ComponentProfiler
+) -> tuple[BudgetPathResult, ...]:
+    started = perf_counter() if monitor.enabled else 0.0
     nonnegative_integer(max_budget, "max_budget")
     outgoing: dict[int, list[ResourceArc]] = defaultdict(list)
     for arc in graph.arcs:
@@ -127,6 +142,10 @@ def budgeted_frontier(
         tuple((*key, value) for key, value in sorted(chart.items())),
     )
     by_id = {arc.arc_id: arc for arc in graph.arcs}
+    if monitor.enabled:
+        monitor.add_duration(ProfilingComponent.PARSER, perf_counter() - started)
+        monitor.set_counter("chart_entries", len(chart))
+        started = perf_counter()
     results: list[BudgetPathResult] = []
     for cap in range(max_budget + 1):
         score: Fraction | None = None
@@ -159,4 +178,6 @@ def budgeted_frontier(
                 graph.support_description,
             )
         )
+    if monitor.enabled:
+        monitor.add_duration(ProfilingComponent.BACKTRACKING, perf_counter() - started)
     return tuple(results)

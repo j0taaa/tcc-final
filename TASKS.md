@@ -16,6 +16,39 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M28 — Budgeted commitment on archived real dLLM states
+
+Authorized 2026-10-02. Depends on M27 and the immutable M17/M25 model
+archives. Run the new budgeted method on authentic saved model inputs, without
+selecting examples by outcome or calling a replay a new end-to-end generation.
+Preserve per-step `exact_on_support`, original probabilities, fixed slots,
+EOS/PAD, all statuses, and independently checked original-input certificates.
+
+- [x] T2800: Freeze input hashes and the replay protocol before evaluating:
+  all 24 M17 confirmation snapshots and all 12 geocoding-v2 pre-commit states;
+  budgets 0--2; both all-primary and ordinary-primary reward profiles. The
+  latter excludes EOS/PAD proposals for an aligned native EPIC comparison,
+  while preserving EOS/PAD support. No answer injection or outcome filtering.
+  **Evidence:** `configs/experiments/m28_budgeted_real_replay_v1.json` records
+  27 source SHA-256 values, complete cohort, budgets, both reward policies,
+  methods and limits. `docs/research/m28-real-state-replay.md` specifies the
+  comparison and timing boundaries. Eight new offline tests check 72 rebuilt
+  inputs, probabilities, token-ID mappings, EOS additions, profiles, profiling
+  invariance, baseline separation and timeout accounting; full Python suite:
+  1,368 passed. No real-state outcome was evaluated before this freeze.
+- [ ] T2801: Implement and test offline reconstruction, bounded execution,
+  disjoint timings, portable proofs, baseline comparisons and independent
+  archive verification. Native EPIC batches require finite-support feasibility
+  validation; unknown feasibility and timeouts cannot count as losing scores.
+  **Evidence:** pending.
+- [ ] T2802: Execute every frozen case; retain failures/timeouts and compact
+  original-input certificates. Report feasible objective comparisons separately
+  from model quality and historical forward times. Record exact source commits.
+  **Evidence:** pending.
+- [ ] T2803: Generate the report/table from raw results, update the article and
+  reproduction instructions, run regressions and inspect the resulting PDF.
+  **Evidence:** pending.
+
 ## M27 — Certified bounds, compact token graphs, Lean and focused simplification
 
 Authorized 2026-10-01. Depends on M26 and the preserved M25 reproduction

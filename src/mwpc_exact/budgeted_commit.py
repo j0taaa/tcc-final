@@ -16,6 +16,7 @@ from mwpc_exact.budget_graph import (
 )
 from mwpc_exact.budget_result import BudgetedCommitResult as BudgetedCommitResult
 from mwpc_exact.evaluation.selection import SelectionInput
+from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent
 from mwpc_exact.reference.budgeted_parser import budgeted_frontier
 from mwpc_exact.types import SolveStatus
 
@@ -25,24 +26,33 @@ def budgeted_commit_frontier(
     max_budget: int,
     *,
     graph_layout: BudgetGraphLayout = BudgetGraphLayout.COMPACT,
+    profiler: ComponentProfiler | None = None,
 ) -> tuple[BudgetedCommitResult, ...]:
     """Maximize committed proposal reward jointly over all free slots and tokens."""
-    fingerprint = budget_input_fingerprint(state)
-    compiled = compile_budget_graph(state, layout=graph_layout)
+    monitor = profiler if profiler is not None else ComponentProfiler()
+    with monitor.measure(ProfilingComponent.TOKEN_LATTICE_CONSTRUCTION):
+        fingerprint = budget_input_fingerprint(state)
+        compiled = compile_budget_graph(state, layout=graph_layout)
     graph = compiled.graph
+    monitor.set_counter("terminal_graph_node_count", len(graph.nodes))
+    monitor.set_counter("terminal_graph_edge_count", len(graph.arcs))
+    monitor.set_counter("proposal_count", len(state.proposals))
+    monitor.set_support_row_sizes(tuple(map(len, state.support.rows)))
     results: list[BudgetedCommitResult] = []
-    for path in budgeted_frontier(state.grammar, graph, max_budget):
+    for path in budgeted_frontier(state.grammar, graph, max_budget, profiler=monitor):
         tokens = None
         commits: tuple[int, ...] = ()
         matched: tuple[int, ...] = ()
         committed_ids: tuple[int, ...] = ()
         if path.witness_arc_ids is not None:
-            tokens, commits = reconstruct_budget_tokens(compiled, path.witness_arc_ids)
+            with monitor.measure(ProfilingComponent.BACKTRACKING):
+                tokens, commits = reconstruct_budget_tokens(compiled, path.witness_arc_ids)
             if len(set(commits)) != len(commits) or len(commits) != path.consumed_budget:
                 raise RuntimeError("Resource path double charges a physical slot")
-            batch = validate_budget_batch(
-                state, budget=path.budget, witness_token_ids=tokens, committed_positions=commits
-            )
+            with monitor.measure(ProfilingComponent.VALIDATION):
+                batch = validate_budget_batch(
+                    state, budget=path.budget, witness_token_ids=tokens, committed_positions=commits
+                )
             matched, committed_ids = batch.matched_proposal_ids, batch.committed_proposal_ids
             if (
                 batch.reward != path.objective_value
@@ -64,7 +74,8 @@ def budgeted_commit_frontier(
             fingerprint,
             compiled,
         )
-        full_report = check_budget_commit_certificate(state, result)
+        with monitor.measure(ProfilingComponent.VALIDATION):
+            full_report = check_budget_commit_certificate(state, result)
         if not full_report.accepted:
             raise RuntimeError(f"Original-input budget proof rejected: {full_report.errors}")
         results.append(result)
@@ -76,9 +87,12 @@ def solve_budgeted_commit(
     budget: int,
     *,
     graph_layout: BudgetGraphLayout = BudgetGraphLayout.COMPACT,
+    profiler: ComponentProfiler | None = None,
 ) -> BudgetedCommitResult:
     """One-cap convenience API; existing serial/EPIC/exact strategies are unchanged."""
-    return budgeted_commit_frontier(state, budget, graph_layout=graph_layout)[budget]
+    return budgeted_commit_frontier(state, budget, graph_layout=graph_layout, profiler=profiler)[
+        budget
+    ]
 
 
 def budgeted_progress_update(
