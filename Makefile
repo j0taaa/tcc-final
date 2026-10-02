@@ -104,6 +104,7 @@ article-results:
 	$(VENV_PY) scripts/exact_commit/build_grounded_campaign.py
 	$(VENV_PY) scripts/exact_commit/build_query_demo_results.py
 	$(VENV_PY) scripts/exact_commit/build_live_article_results.py --grounded
+	$(VENV_PY) -m scripts.exact_commit.build_budgeted_real_results
 
 article-results-check:
 	$(VENV_PY) scripts/exact_commit/build_article_results.py --config $(ARTICLE_RESULT_CONFIG) --verify-existing
@@ -115,6 +116,7 @@ article-results-check:
 	$(VENV_PY) scripts/exact_commit/freeze_grounded_confirmation.py --check
 	$(VENV_PY) scripts/exact_commit/build_query_demo_results.py --check
 	$(VENV_PY) scripts/exact_commit/build_live_article_results.py --grounded --check
+	$(VENV_PY) -m scripts.exact_commit.build_budgeted_real_results --check
 
 query-demo-check:
 	$(VENV_PY) scripts/exact_commit/build_query_demo_results.py --check

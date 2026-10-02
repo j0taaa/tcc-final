@@ -1,0 +1,111 @@
+{
+  "certificate_status_counts": {
+    "infeasible_on_support": 24,
+    "optimal": 192
+  },
+  "checks": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "result": "1373 passed in 136.75s"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/exact_commit/test_budgeted_real_replay.py",
+      "result": "13 passed in 56.95s after final report clarification"
+    },
+    {
+      "command": ".venv/bin/python -m ruff check src tests scripts/exact_commit/run_budgeted_real_replay.py scripts/exact_commit/build_budgeted_real_results.py",
+      "result": "PASS"
+    },
+    {
+      "command": ".venv/bin/python -m mypy src",
+      "result": "PASS, 98 source files"
+    },
+    {
+      "command": "make test-rust-parser",
+      "result": "PASS, 21 unit and 3 randomized tests; parser/binding fmt and clippy"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q vendor/EPIC-Decoding/tests/test_constrain_utils.py vendor/EPIC-Decoding/tests/test_bindings.py",
+      "result": "19 passed, 4 existing skips"
+    },
+    {
+      "command": "./scripts/verify_upstream.sh",
+      "result": "PASS, baseline unchanged at 5b1b31098f34ed3691d2a9f4aae14fdf5839d072"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 make paper",
+      "result": "PASS, historical and new artifact gates and 16-page build"
+    },
+    {
+      "command": "make -C paper",
+      "result": "Final PDF PASS, 16 pages, no overflow or unresolved references"
+    }
+  ],
+  "generated_at_utc": "2026-10-02T14:57:18.104960+00:00",
+  "independently_checked_certificates": 216,
+  "limitations": [
+    "Saved-state replay, not a fresh denoising trajectory.",
+    "Native EPIC batch selector plus cap; pending serial fallback excluded.",
+    "One CPU timing repetition; no hybrid-policy speed measurement.",
+    "Concrete replay certificates checked in Python; existing Lean coverage unchanged.",
+    "No remote CI or publication."
+  ],
+  "method_jobs": 252,
+  "model_inputs": 72,
+  "ordinary_comparisons": {
+    "confidence_preselection": {
+      "paired_budget_cases": 64,
+      "strict_gaps": 2
+    },
+    "epic_regular_cover_then_cap": {
+      "paired_budget_cases": 50,
+      "strict_gaps": 0
+    },
+    "unbudgeted_then_cap": {
+      "paired_budget_cases": 64,
+      "strict_gaps": 0
+    }
+  },
+  "pdf": {
+    "pages": 16,
+    "path": "paper/main.pdf",
+    "sha256": "3e1c46e2dac3c301a7b4cbadf9415a0f6c4e99d693292780d19397f8171be0b6",
+    "visually_inspected_final_pages": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ]
+  },
+  "producing_commit": "ac0e5da9300db83adbacf2fee312bcca082d7aec",
+  "protocol_commit": "7b4d7ce",
+  "reward_profiles": 2,
+  "scope": "Offline execution of the new budgeted solver on genuine archived LLaDA states; no new model generation.",
+  "source_and_artifact_sha256": {
+    "Makefile": "10d9e7779020450617bd595881cef8186e6c554837732796fa482322d96eecb9",
+    "README.md": "3777cbf28818dde0178d2c0ee51c12eebf28f2e9bb47b8f8b18d8ca79a12e411",
+    "REPRODUCING.md": "886e8974265e0e687f31e3cee6ac43ac1704f4171704d5b631e0e713779d22c0",
+    "TASKS.md": "770373191e9fabfc9fc5b6434a8386c6f2aac1f3c1b341412f06a0ac69be1096",
+    "configs/experiments/m28_budgeted_real_replay_v1.json": "aa6ad04b72feb28438d8ec9a9d56734f4cfbfbced5cdafef8d414000d2a22413",
+    "docs/artifacts/processed/m28_budgeted_real_v1/report.md": "9c66513aa97439b32f19b62ff0f08b8e44c08088f0df27b2d7d941867312d84b",
+    "docs/artifacts/processed/m28_budgeted_real_v1/summary.json": "7f1d2d5e209ccc573673e9ef348bb567411b13ce3583a63626ed81ccb876b9d9",
+    "docs/artifacts/raw/m28_budgeted_real_v1/completed/manifest.json": "3ce2dc3d170a394f68fa904973a84b98a203c649e00f8b54e4c878468a6e30b9",
+    "docs/artifacts/raw/m28_budgeted_real_v1/interrupted/manifest.json": "0ecd30bc58004025be8819175de8b09e23964bcf8ef0ea24c07dfbb931638a40",
+    "docs/research/m28-real-state-replay.md": "0c56ba8911e235ca5db31b36bd56ca081104fa4ac90d8ae7759d80c4a0109e04",
+    "paper/generated/m28_budgeted_real_v1/budgeted-real-table.tex": "16839bc338a04a950da9b9b0f5fc9f4537f2ee7cdeb833a9be9403da0f61b26c",
+    "paper/generated/m28_budgeted_real_v1/numbers.tex": "24cbd6474a84f3dbf0d73caed95f88cf32ba2f811e9eb65b6544cbf095373196",
+    "paper/main.tex": "2492167adb2d6e761fc040dcdc60e4e0a68b32eb45c3901ed56a48e9c1c55bdb",
+    "pyproject.toml": "634b0ecd8c298daeaddfffb83ac58bf9b43ebfe5971008b01a567ee25a64f188",
+    "scripts/exact_commit/build_budgeted_real_results.py": "1e89bb695be3fd461512c9f1fca2516856dc91c863e89c0469acde0b5c2f9ebf",
+    "scripts/exact_commit/run_budgeted_real_replay.py": "57d2eb3692cd04d558c608a414d4fccdb2cfc29f99372f389c232ab2fd9b57e4",
+    "src/mwpc_exact/budgeted_commit.py": "171e4b51eb25489af64e7c5982e080da4eb87c907644b725e41ec1d09b9e2862",
+    "src/mwpc_exact/reference/budgeted_parser.py": "255da9fc802aecc0e3626d190365dadecb333211d88a26c9719a6d33794fef1c",
+    "tests/exact_commit/test_budgeted_real_replay.py": "6cb656f43b4d6aa8d0536d55b2d24a47ce9425f739d1f1e0365b6e2711c20083"
+  },
+  "source_states": 36,
+  "worker_errors": 0,
+  "worker_timeouts": 0
+}

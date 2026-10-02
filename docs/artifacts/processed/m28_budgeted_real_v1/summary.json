@@ -1,0 +1,2539 @@
+{
+  "analysis_sources_sha256": {
+    "scripts/exact_commit/build_budgeted_real_results.py": "1e89bb695be3fd461512c9f1fca2516856dc91c863e89c0469acde0b5c2f9ebf",
+    "scripts/exact_commit/run_budgeted_real_replay.py": "57d2eb3692cd04d558c608a414d4fccdb2cfc29f99372f389c232ab2fd9b57e4",
+    "src/mwpc_exact/budget_bounds.py": "8535e50f3b1910134fb2270b0a29f894323ae47318e8902aea54a53210b1fc47"
+  },
+  "analysis_unit": "Source states; profiles and budgets are repeated measures, not independent tasks",
+  "attempts": 252,
+  "certificates": 216,
+  "epic_pending_serial_fallback_instances": [
+    "confirm-nested_json-0-170302-capture-forward8-k2-b32-ordinary-primary",
+    "confirm-nested_json-1-170302-capture-forward8-k2-b32-ordinary-primary",
+    "confirm-nested_json-2-170302-capture-forward8-k2-b32-ordinary-primary",
+    "confirm-nested_json-3-170302-capture-forward8-k2-b32-ordinary-primary",
+    "geocoding-v2-step09-ordinary-primary",
+    "geocoding-v2-step10-ordinary-primary",
+    "geocoding-v2-step11-ordinary-primary"
+  ],
+  "exact_frontier_statuses": {
+    "infeasible_on_support": 24,
+    "optimal": 192
+  },
+  "groups": [
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 0,
+      "completed_worker_seconds_median": 1.3751458310289308,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "arithmetic",
+      "frontier_statuses": {
+        "optimal": 24
+      },
+      "max_gap": null,
+      "method": "budgeted_rational",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 16,
+      "completed_worker_seconds_median": 0.03733107855077833,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "arithmetic",
+      "frontier_statuses": {
+        "feasible_on_support": 16
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "confidence_preselection",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 16,
+      "completed_worker_seconds_median": 0.022901999531313777,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "arithmetic",
+      "frontier_statuses": {
+        "feasible_on_support": 16
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "unbudgeted_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 0,
+      "completed_worker_seconds_median": 0.8691790170269087,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "arithmetic",
+      "frontier_statuses": {
+        "optimal": 24
+      },
+      "max_gap": null,
+      "method": "budgeted_rational",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 16,
+      "completed_worker_seconds_median": 0.033468379464466125,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "arithmetic",
+      "frontier_statuses": {
+        "feasible_on_support": 16
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "confidence_preselection",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 16,
+      "completed_worker_seconds_median": 0.9150833010207862,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "arithmetic",
+      "frontier_statuses": {
+        "feasible_on_support": 16
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "epic_regular_cover_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 16,
+      "completed_worker_seconds_median": 0.020287875027861446,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "arithmetic",
+      "frontier_statuses": {
+        "feasible_on_support": 16
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "unbudgeted_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 0,
+      "completed_worker_seconds_median": 0.463325031043496,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "brackets",
+      "frontier_statuses": {
+        "optimal": 24
+      },
+      "max_gap": null,
+      "method": "budgeted_rational",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 16,
+      "completed_worker_seconds_median": 0.02023794746492058,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "brackets",
+      "frontier_statuses": {
+        "feasible_on_support": 16
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "confidence_preselection",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 16,
+      "completed_worker_seconds_median": 0.01215869898442179,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "brackets",
+      "frontier_statuses": {
+        "feasible_on_support": 16
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "unbudgeted_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 0,
+      "completed_worker_seconds_median": 0.36986606899881735,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "brackets",
+      "frontier_statuses": {
+        "optimal": 24
+      },
+      "max_gap": null,
+      "method": "budgeted_rational",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 16,
+      "completed_worker_seconds_median": 0.019868784467689693,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "brackets",
+      "frontier_statuses": {
+        "feasible_on_support": 16
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "confidence_preselection",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 8,
+      "completed_worker_seconds_median": 0.7284225780167617,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "brackets",
+      "frontier_statuses": {
+        "feasible_on_support": 8,
+        "infeasible_batch_on_support": 8
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "epic_regular_cover_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 16,
+      "completed_worker_seconds_median": 0.011673955013975501,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "brackets",
+      "frontier_statuses": {
+        "feasible_on_support": 16
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "unbudgeted_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 12,
+      "certified_paired_budget_cases": 0,
+      "completed_worker_seconds_median": 51.02608813846018,
+      "execution_statuses": {
+        "complete": 12
+      },
+      "family": "geocoding",
+      "frontier_statuses": {
+        "optimal": 36
+      },
+      "max_gap": null,
+      "method": "budgeted_rational",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 12,
+      "certified_paired_budget_cases": 24,
+      "completed_worker_seconds_median": 0.2775077105034143,
+      "execution_statuses": {
+        "complete": 12
+      },
+      "family": "geocoding",
+      "frontier_statuses": {
+        "feasible_on_support": 24
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "confidence_preselection",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 12,
+      "certified_paired_budget_cases": 24,
+      "completed_worker_seconds_median": 0.2135066845221445,
+      "execution_statuses": {
+        "complete": 12
+      },
+      "family": "geocoding",
+      "frontier_statuses": {
+        "feasible_on_support": 24
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "unbudgeted_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 12,
+      "certified_paired_budget_cases": 0,
+      "completed_worker_seconds_median": 49.38966102397535,
+      "execution_statuses": {
+        "complete": 12
+      },
+      "family": "geocoding",
+      "frontier_statuses": {
+        "optimal": 36
+      },
+      "max_gap": null,
+      "method": "budgeted_rational",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 12,
+      "certified_paired_budget_cases": 24,
+      "completed_worker_seconds_median": 0.26409966504434124,
+      "execution_statuses": {
+        "complete": 12
+      },
+      "family": "geocoding",
+      "frontier_statuses": {
+        "feasible_on_support": 24
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "confidence_preselection",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 12,
+      "certified_paired_budget_cases": 18,
+      "completed_worker_seconds_median": 1.0434515004744753,
+      "execution_statuses": {
+        "complete": 12
+      },
+      "family": "geocoding",
+      "frontier_statuses": {
+        "feasible_on_support": 24
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "epic_regular_cover_then_cap",
+      "pending_serial_fallback_states": 3,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 12,
+      "certified_paired_budget_cases": 24,
+      "completed_worker_seconds_median": 0.204957012552768,
+      "execution_statuses": {
+        "complete": 12
+      },
+      "family": "geocoding",
+      "frontier_statuses": {
+        "feasible_on_support": 24
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "unbudgeted_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 0,
+      "completed_worker_seconds_median": 2.6056605355697684,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "nested_json",
+      "frontier_statuses": {
+        "infeasible_on_support": 12,
+        "optimal": 12
+      },
+      "max_gap": null,
+      "method": "budgeted_rational",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 8,
+      "completed_worker_seconds_median": 0.05969691899372265,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "nested_json",
+      "frontier_statuses": {
+        "feasible_on_support": 8,
+        "infeasible_on_support": 8
+      },
+      "max_gap": [
+        7402561852650297,
+        9007199254740992
+      ],
+      "method": "confidence_preselection",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 4
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 8,
+      "completed_worker_seconds_median": 0.0432945845532231,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "nested_json",
+      "frontier_statuses": {
+        "feasible_on_support": 8,
+        "infeasible_on_support": 8
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "unbudgeted_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "all_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 0,
+      "completed_worker_seconds_median": 2.5777943080174737,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "nested_json",
+      "frontier_statuses": {
+        "infeasible_on_support": 12,
+        "optimal": 12
+      },
+      "max_gap": null,
+      "method": "budgeted_rational",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 8,
+      "completed_worker_seconds_median": 0.06885106599656865,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "nested_json",
+      "frontier_statuses": {
+        "feasible_on_support": 8,
+        "infeasible_on_support": 8
+      },
+      "max_gap": [
+        52823785632945,
+        70368744177664
+      ],
+      "method": "confidence_preselection",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 2
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 8,
+      "completed_worker_seconds_median": 0.7803178249741904,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "nested_json",
+      "frontier_statuses": {
+        "feasible_on_support": 8,
+        "infeasible_batch_on_support": 8
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "epic_regular_cover_then_cap",
+      "pending_serial_fallback_states": 4,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    },
+    {
+      "attempts": 8,
+      "certified_paired_budget_cases": 8,
+      "completed_worker_seconds_median": 0.04395432001911104,
+      "execution_statuses": {
+        "complete": 8
+      },
+      "family": "nested_json",
+      "frontier_statuses": {
+        "feasible_on_support": 8,
+        "infeasible_on_support": 8
+      },
+      "max_gap": [
+        0,
+        1
+      ],
+      "method": "unbudgeted_then_cap",
+      "pending_serial_fallback_states": 0,
+      "reward_profile": "ordinary_primary",
+      "strict_gaps": 0
+    }
+  ],
+  "instances": 72,
+  "metadata": {
+    "comparison_scope": "Same frozen state/profile and physical cap. EPIC native byte selector then deterministic score cap, independently validated on finite support, ordinary_primary only. This is not the complete EPIC decoder.",
+    "config_sha256": "aa6ad04b72feb28438d8ec9a9d56734f4cfbfbced5cdafef8d414000d2a22413",
+    "config_source": "configs/experiments/m28_budgeted_real_replay_v1.json",
+    "created_at_utc": "2026-10-02T14:09:25.503112+00:00",
+    "exactness_scope": "exact_on_support",
+    "git_commit": "ac0e5da9300db83adbacf2fee312bcca082d7aec",
+    "git_dirty": false,
+    "hardware_software": {
+      "affinity_cpu_count": 16,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+      "cuda_driver_supported_runtime": "13.2",
+      "cuda_driver_version": "595.84",
+      "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+      "git_commit": "ac0e5da9300db83adbacf2fee312bcca082d7aec",
+      "git_dirty": false,
+      "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+      "gpu_total_vram_bytes": 12884901888,
+      "logical_cpu_count": 16,
+      "machine": "x86_64",
+      "mwpc_exact_version": "0.2.0",
+      "mwpc_parser_py_version": "0.1.0",
+      "os_platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+      "os_release": "7.0.0-31-generic",
+      "os_system": "Linux",
+      "python_version": "3.11.16",
+      "pytorch_version": "2.8.0+cpu",
+      "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+      "rustformlang_version": "0.1.0",
+      "thread_environment": {
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": null,
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "RAYON_NUM_THREADS": "1",
+        "RUST_MIN_STACK": null
+      },
+      "total_ram_bytes": 16609312768,
+      "transformers_version": "4.52.2"
+    },
+    "instance_count": 72,
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "model_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "new_model_forward_seconds": null,
+    "new_model_forwards": 0,
+    "source_model_metadata": {
+      "config": {
+        "experiment_id": "m17_nonliteral_confirmation_v1",
+        "publication_mode": true,
+        "question": "end_to_end",
+        "sha256": "2ef905b6b60b9ac9a090b6f21e819dde0d94d580b05ad1d64a932cb0910df6cf"
+      },
+      "config_sha256": "2ef905b6b60b9ac9a090b6f21e819dde0d94d580b05ad1d64a932cb0910df6cf",
+      "exactness": {
+        "guarantee": "per_step",
+        "independent_certificate_required": true,
+        "scope": "exact_on_support"
+      },
+      "generated_at_utc": "2026-09-22T16:25:39.588888+00:00",
+      "git_commit": "76be4fa830634609fc5c997f53f74f558ffa285b",
+      "git_dirty": false,
+      "grammar": {
+        "grammar_id": "recursive_nonliteral_families_v1",
+        "hash_policy": "sha256_canonical_grammar",
+        "revision": "m16_recursive_tasks_v1",
+        "sha256": [
+          "1aa8bec225a512d2519fe15313104c79f209637cf9508cd6cc2242a27008778a",
+          "921d0a0c989c62e63b661eb697312080b586e63d3e913c62c68b6b7bcf8fcc16",
+          "cb593be015fb1a8a81cc542977660b172807726b4ee147720ba3b228cd45d363"
+        ],
+        "source": "src/mwpc_research/recursive_tasks.py"
+      },
+      "hardware": {
+        "accelerator_config": {
+          "cuda_device": 0,
+          "device": "cuda",
+          "dtype": "bfloat16",
+          "synchronize_cuda": true
+        },
+        "cpu": {
+          "affinity_count": 16,
+          "logical_count": 16,
+          "machine": "x86_64",
+          "model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz"
+        },
+        "gpu": {
+          "available": true,
+          "driver_version": "595.84",
+          "name": "NVIDIA GeForce RTX 3080 Ti",
+          "total_vram_bytes": 12884901888
+        },
+        "os": {
+          "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+          "release": "7.0.0-31-generic",
+          "system": "Linux"
+        },
+        "ram": {
+          "total_bytes": 16609312768
+        },
+        "threads": {
+          "configured_cpu_threads": 1,
+          "environment": {
+            "MKL_NUM_THREADS": null,
+            "NUMEXPR_NUM_THREADS": null,
+            "OMP_NUM_THREADS": null,
+            "OPENBLAS_NUM_THREADS": null,
+            "RAYON_NUM_THREADS": null,
+            "RUST_MIN_STACK": null
+          }
+        }
+      },
+      "live_dependency_versions": {
+        "bitsandbytes": "0.50.1",
+        "tokenizers": "0.21.4"
+      },
+      "metadata_integrity": {
+        "critical_fields_complete": true,
+        "missing_critical_fields": [],
+        "publication_blockers": []
+      },
+      "metadata_schema_version": 1,
+      "model": {
+        "local_files_only": true,
+        "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+        "requested_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+      },
+      "repetitions": 2,
+      "run_id": "frozen-20260922",
+      "seeds": [
+        170302
+      ],
+      "software_versions": {
+        "cuda_driver_supported_runtime": "13.2",
+        "cuda_runtime": "12.8",
+        "cuda_toolkit": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+        "mwpc_exact": "0.1.0",
+        "mwpc_parser_py": "0.1.0",
+        "python": "3.11.16",
+        "pytorch": "2.8.0+cu128",
+        "rust": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+        "rustformlang": "0.1.0",
+        "transformers": "4.52.2"
+      },
+      "solver_status_counts": {},
+      "support": {
+        "finite_slots": true,
+        "k_max": 8,
+        "policy": "model_top_k_plus_proposals_and_specials",
+        "top_k": 2
+      },
+      "timeouts": {
+        "run_seconds": 3600.0,
+        "solver_seconds": 5.0
+      },
+      "tokenizer": {
+        "requested_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+        "tokenizer_id": "GSAI-ML/LLaDA-8B-Instruct"
+      }
+    },
+    "timing_scope": "CPU replay; separate current optimization and checking from historical model forward; no new model forward and no resampling.",
+    "tokenizer_revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07"
+  },
+  "posthoc_relaxation_certificates": [
+    {
+      "budget": 1,
+      "input_fingerprint": "cd477db6b7cadd539be6607e7a35064bb528ab358eb96cdbce0809edcb935850",
+      "instance_id": "confirm-arithmetic-0-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        4471314262783345,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4471314262783345,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "cd477db6b7cadd539be6607e7a35064bb528ab358eb96cdbce0809edcb935850",
+      "instance_id": "confirm-arithmetic-0-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        7526893296191967,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7526893296191967,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "ee523f3ec75ca2e58af5a0805db91a0817bbd197a1e9fbfff4e7b48233eec99e",
+      "instance_id": "confirm-arithmetic-0-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        618461484324955,
+        1125899906842624
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        618461484324955,
+        1125899906842624
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "ee523f3ec75ca2e58af5a0805db91a0817bbd197a1e9fbfff4e7b48233eec99e",
+      "instance_id": "confirm-arithmetic-0-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        2173753164578007,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2173753164578007,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "11f91568ed432c98de5baf784154e3117605a5d3cd69178704f95dc15042b7e3",
+      "instance_id": "confirm-arithmetic-0-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        7360114478729371,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7360114478729371,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "11f91568ed432c98de5baf784154e3117605a5d3cd69178704f95dc15042b7e3",
+      "instance_id": "confirm-arithmetic-0-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        1743905565700009,
+        1125899906842624
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        1743905565700009,
+        1125899906842624
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "696bdf11d9055a91c1ce1eceaed4368abeb6bbad7d7ab52beb11b5ceb7eb2036",
+      "instance_id": "confirm-arithmetic-0-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        6591130046870701,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        6591130046870701,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "696bdf11d9055a91c1ce1eceaed4368abeb6bbad7d7ab52beb11b5ceb7eb2036",
+      "instance_id": "confirm-arithmetic-0-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        6366802686355381,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        6366802686355381,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "1a4032a7274a1eaf0f9c611780c5ba0019f8a67c1a2c2fd83e598e8f36a72bb0",
+      "instance_id": "confirm-arithmetic-1-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        2235653191648037,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2235653191648037,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "1a4032a7274a1eaf0f9c611780c5ba0019f8a67c1a2c2fd83e598e8f36a72bb0",
+      "instance_id": "confirm-arithmetic-1-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        1887930002783963,
+        1125899906842624
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        1887930002783963,
+        1125899906842624
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "2209e33e6fbccc3452e71424b6e395c838e299e8bcb5730497f0c584e5703985",
+      "instance_id": "confirm-arithmetic-1-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        4994890308259281,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4994890308259281,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "2209e33e6fbccc3452e71424b6e395c838e299e8bcb5730497f0c584e5703985",
+      "instance_id": "confirm-arithmetic-1-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        2202123383953285,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2202123383953285,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "0fd55f7ccee21561b5f7463a3b32f382e64de83c24a919b5ccbc950da76428c1",
+      "instance_id": "confirm-arithmetic-1-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        4288322956844611,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4288322956844611,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "0fd55f7ccee21561b5f7463a3b32f382e64de83c24a919b5ccbc950da76428c1",
+      "instance_id": "confirm-arithmetic-1-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        16395447215617535,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16395447215617535,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "f7f15d29afb3adb813cee4df8e571ce063f23d90f8288d90fce7a8c84ccdd96b",
+      "instance_id": "confirm-arithmetic-1-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        7818801301928313,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7818801301928313,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "f7f15d29afb3adb813cee4df8e571ce063f23d90f8288d90fce7a8c84ccdd96b",
+      "instance_id": "confirm-arithmetic-1-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        3729261991463681,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        3729261991463681,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "b71e3e707df9a45ccee9b290d72e283cc256a179b259e87a46226cd85d8562f3",
+      "instance_id": "confirm-arithmetic-2-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        4471273902350101,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4471273902350101,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "b71e3e707df9a45ccee9b290d72e283cc256a179b259e87a46226cd85d8562f3",
+      "instance_id": "confirm-arithmetic-2-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        7638470368217867,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7638470368217867,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "5b1f5e0f5e568bb9fb1014cfe3fe7f71b8fda95dd213517324f08d2af458ca9e",
+      "instance_id": "confirm-arithmetic-2-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        1249459509381817,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        1249459509381817,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "5b1f5e0f5e568bb9fb1014cfe3fe7f71b8fda95dd213517324f08d2af458ca9e",
+      "instance_id": "confirm-arithmetic-2-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        16981464692314067,
+        18014398509481984
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16981464692314067,
+        18014398509481984
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "936a286db0498b071345e77b128c47272cca0ae017d19c824e044346f2b344c0",
+      "instance_id": "confirm-arithmetic-2-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        7670121018295407,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7670121018295407,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "936a286db0498b071345e77b128c47272cca0ae017d19c824e044346f2b344c0",
+      "instance_id": "confirm-arithmetic-2-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        3569819486220633,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        3569819486220633,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "54f3a5f4c7c3d603ce396b2cd1c6424fe79e34dd4376c9e0b004cdcd95f032d4",
+      "instance_id": "confirm-arithmetic-2-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        6609156926587125,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        6609156926587125,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "54f3a5f4c7c3d603ce396b2cd1c6424fe79e34dd4376c9e0b004cdcd95f032d4",
+      "instance_id": "confirm-arithmetic-2-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        12439523514468269,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        12439523514468269,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "b3435791b36c2edcd3b2aca4b54c0cf618ca592a09c52b3b0c83484e289c0579",
+      "instance_id": "confirm-arithmetic-3-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        8934946085674511,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        8934946085674511,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "b3435791b36c2edcd3b2aca4b54c0cf618ca592a09c52b3b0c83484e289c0579",
+      "instance_id": "confirm-arithmetic-3-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        14849651349416015,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        14849651349416015,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "79939ca7825d68421ca54266a4fa4b7c5c0ee4d2aed13193bc28ad24bad8b06b",
+      "instance_id": "confirm-arithmetic-3-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        4894939259300205,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4894939259300205,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "79939ca7825d68421ca54266a4fa4b7c5c0ee4d2aed13193bc28ad24bad8b06b",
+      "instance_id": "confirm-arithmetic-3-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        16085898613928917,
+        18014398509481984
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16085898613928917,
+        18014398509481984
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "2c484a9a47685452cdbeac594c699c30574eae3e7fdb21f9d79edc02fd6c31c3",
+      "instance_id": "confirm-arithmetic-3-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        1917486722231815,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        1917486722231815,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "2c484a9a47685452cdbeac594c699c30574eae3e7fdb21f9d79edc02fd6c31c3",
+      "instance_id": "confirm-arithmetic-3-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        7226652530385559,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7226652530385559,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "17f8ed8a9ed0bf8e94e8f356c15cecb44cd5b6ff95f0fbabbd8f9390b693c655",
+      "instance_id": "confirm-arithmetic-3-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        3391679085921929,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        3391679085921929,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "17f8ed8a9ed0bf8e94e8f356c15cecb44cd5b6ff95f0fbabbd8f9390b693c655",
+      "instance_id": "confirm-arithmetic-3-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        12130581264025743,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        12130581264025743,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "c901b5c85f7766dc09244720adf8367a047ea88df0e9b4a89dece160f91190c0",
+      "instance_id": "confirm-brackets-0-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        2242481725002701,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2242481725002701,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "c901b5c85f7766dc09244720adf8367a047ea88df0e9b4a89dece160f91190c0",
+      "instance_id": "confirm-brackets-0-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        16716598758910193,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16716598758910193,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "e8f6f5dfb30e4189b2091cb17febdd71cdec3a7ebb0a60ab686212330104f360",
+      "instance_id": "confirm-brackets-0-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        596566646036947,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        596566646036947,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "e8f6f5dfb30e4189b2091cb17febdd71cdec3a7ebb0a60ab686212330104f360",
+      "instance_id": "confirm-brackets-0-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        18309276837337659,
+        36028797018963968
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        18309276837337659,
+        36028797018963968
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "82f33de5f72377bfaf06db07d1524dd3bf9f188e917b2715971941695ab57805",
+      "instance_id": "confirm-brackets-0-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        2113872011092095,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2113872011092095,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "82f33de5f72377bfaf06db07d1524dd3bf9f188e917b2715971941695ab57805",
+      "instance_id": "confirm-brackets-0-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        15772943810576137,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        15772943810576137,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "d597a6cfb2c47550963f636e9b82969ed8ec094db630f61ba7b3a56c52ddc19b",
+      "instance_id": "confirm-brackets-0-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        1678687363950085,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "d597a6cfb2c47550963f636e9b82969ed8ec094db630f61ba7b3a56c52ddc19b",
+      "instance_id": "confirm-brackets-0-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        5726902448118831,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "ed8d2ff3c8c56aa565d146bfdf16e62376d4531f098246452b6e5bdc9e6bbae5",
+      "instance_id": "confirm-brackets-1-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        4485665695961059,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4485665695961059,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "ed8d2ff3c8c56aa565d146bfdf16e62376d4531f098246452b6e5bdc9e6bbae5",
+      "instance_id": "confirm-brackets-1-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        16320381424113845,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16320381424113845,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "8db8d5cbd2623e031b006895619809483ad04f9202b491e1ec539c4289680fdc",
+      "instance_id": "confirm-brackets-1-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        733895685518511,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        733895685518511,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "8db8d5cbd2623e031b006895619809483ad04f9202b491e1ec539c4289680fdc",
+      "instance_id": "confirm-brackets-1-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        2659787101817485,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2659787101817485,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "dfef45d5803f895b2c7958155350f454ca8eea2cac430294011f1465ccd97c5c",
+      "instance_id": "confirm-brackets-1-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        8767424420751771,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        8767424420751771,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "dfef45d5803f895b2c7958155350f454ca8eea2cac430294011f1465ccd97c5c",
+      "instance_id": "confirm-brackets-1-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        8566702613565907,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        8566702613565907,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "7cdf4a52c70b1fb7ecafd44c1843cbb32c52be60b913123d6cf65849341f819e",
+      "instance_id": "confirm-brackets-1-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        2437009957262481,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "7cdf4a52c70b1fb7ecafd44c1843cbb32c52be60b913123d6cf65849341f819e",
+      "instance_id": "confirm-brackets-1-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        17319400525176151,
+        18014398509481984
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "0e73b21065a1470da88bf821d24e154758eb700b90f425491b817ec5e792c406",
+      "instance_id": "confirm-brackets-2-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        4484178561632343,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4484178561632343,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "0e73b21065a1470da88bf821d24e154758eb700b90f425491b817ec5e792c406",
+      "instance_id": "confirm-brackets-2-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        15817998095492369,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        15817998095492369,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "bf4bc8f6c63463901c0416f93882aa21fc30b7cd21d99368c9ac6475c480284d",
+      "instance_id": "confirm-brackets-2-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        1893085545657013,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        1893085545657013,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "bf4bc8f6c63463901c0416f93882aa21fc30b7cd21d99368c9ac6475c480284d",
+      "instance_id": "confirm-brackets-2-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        13469303678970609,
+        18014398509481984
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        13469303678970609,
+        18014398509481984
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "9f8a10090165665d95207076bd9631467c7cf26d330b5aaf6f4421ec74bc58af",
+      "instance_id": "confirm-brackets-2-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        8232198827156197,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        8232198827156197,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "9f8a10090165665d95207076bd9631467c7cf26d330b5aaf6f4421ec74bc58af",
+      "instance_id": "confirm-brackets-2-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        14939065215655147,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        14939065215655147,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "3395690d64ae79225d8adcdeed364b5b478e1d59574f12519203f46e185942cf",
+      "instance_id": "confirm-brackets-2-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        1213143350749927,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "3395690d64ae79225d8adcdeed364b5b478e1d59574f12519203f46e185942cf",
+      "instance_id": "confirm-brackets-2-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        8614302905934951,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "6c98ad73f9ee6b68048de218bcaec840c0e28b543df1788abbf1f73d615d7f9c",
+      "instance_id": "confirm-brackets-3-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        8959039433074129,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        8959039433074129,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "6c98ad73f9ee6b68048de218bcaec840c0e28b543df1788abbf1f73d615d7f9c",
+      "instance_id": "confirm-brackets-3-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        7480188006360267,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7480188006360267,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "42dc72f760ca09376466a69eb6bb1265ed4fc93b1a8990afba172b9597df78d4",
+      "instance_id": "confirm-brackets-3-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        6078895362712945,
+        18014398509481984
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        6078895362712945,
+        18014398509481984
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "42dc72f760ca09376466a69eb6bb1265ed4fc93b1a8990afba172b9597df78d4",
+      "instance_id": "confirm-brackets-3-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        5537269727386759,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        5537269727386759,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "fe552b04954d77764cd14f103973dc98246bc3ca0fea88df46d918ea710cd180",
+      "instance_id": "confirm-brackets-3-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        8137966231825621,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        8137966231825621,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "fe552b04954d77764cd14f103973dc98246bc3ca0fea88df46d918ea710cd180",
+      "instance_id": "confirm-brackets-3-170302-capture-forward8-k2-b32-all-primary",
+      "lower_bound": [
+        1784925375869775,
+        1125899906842624
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        1784925375869775,
+        1125899906842624
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "2eba9aba084f245e98755304ea80c333e5d284f4cdff86616e0f9fa483cac47b",
+      "instance_id": "confirm-brackets-3-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        4011310501181123,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "2eba9aba084f245e98755304ea80c333e5d284f4cdff86616e0f9fa483cac47b",
+      "instance_id": "confirm-brackets-3-170302-capture-forward8-k2-b32-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        14047110061130911,
+        18014398509481984
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "69ae0f41fc457229cbe06956b1e206714de7786361fabad6caf3aea315fc984f",
+      "instance_id": "confirm-nested_json-0-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        4452820072094435,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4452820072094435,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "69ae0f41fc457229cbe06956b1e206714de7786361fabad6caf3aea315fc984f",
+      "instance_id": "confirm-nested_json-0-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        4028999635439855,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        16667346919733007,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "fd422420593cccdc6dddcbd16b5361e21dd76b061f44675688b5cc6f14b71876",
+      "instance_id": "confirm-nested_json-0-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        3605179198785275,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        3605179198785275,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "fd422420593cccdc6dddcbd16b5361e21dd76b061f44675688b5cc6f14b71876",
+      "instance_id": "confirm-nested_json-0-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        14128189790927847,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        14128189790927847,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "1864d47d345dc356f5dd65adede1a77cfcbc01d63bbfc1327e52ca0ba1405952",
+      "instance_id": "confirm-nested_json-1-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        8892634501720929,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        8892634501720929,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "1864d47d345dc356f5dd65adede1a77cfcbc01d63bbfc1327e52ca0ba1405952",
+      "instance_id": "confirm-nested_json-1-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        16040730133213959,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        16651921941484811,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "c3e03d3c5704f3afb943ba91a24ac6da34c4f3b5df4a21a56b29582e0988f513",
+      "instance_id": "confirm-nested_json-1-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        3574047815746515,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        3574047815746515,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "c3e03d3c5704f3afb943ba91a24ac6da34c4f3b5df4a21a56b29582e0988f513",
+      "instance_id": "confirm-nested_json-1-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        3476264341788175,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        3476264341788175,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "ca2450a80bd14fbe1d72acb2e8688477a7bbcbf4b3e7dc3071c2659b30f83370",
+      "instance_id": "confirm-nested_json-2-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        2229355101500745,
+        2251799813685248
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2229355101500745,
+        2251799813685248
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "ca2450a80bd14fbe1d72acb2e8688477a7bbcbf4b3e7dc3071c2659b30f83370",
+      "instance_id": "confirm-nested_json-2-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        16154583044781373,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        8338346514072601,
+        4503599627370496
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "a8c1c12498e4c12a726d35c07774e25a44a2499e9b1be8c1aa21ccb11167ef86",
+      "instance_id": "confirm-nested_json-2-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        7237162638778393,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7237162638778393,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "a8c1c12498e4c12a726d35c07774e25a44a2499e9b1be8c1aa21ccb11167ef86",
+      "instance_id": "confirm-nested_json-2-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        13865575048033589,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        14062919402848171,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "b376e29e1c15844328db2e63e2f3c6522825a3f4c8293ae6a88bff9a3724b56c",
+      "instance_id": "confirm-nested_json-3-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        8906154517536377,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        8906154517536377,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "b376e29e1c15844328db2e63e2f3c6522825a3f4c8293ae6a88bff9a3724b56c",
+      "instance_id": "confirm-nested_json-3-170302-capture-forward0-k2-b32-all-primary",
+      "lower_bound": [
+        8154358185093337,
+        4503599627370496
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        16666253281464151,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "bc205a9988b5cd5948e74df27b6390a90ba8d1ab4b01866f37d4e11f1a74d084",
+      "instance_id": "confirm-nested_json-3-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        7402561852650297,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7402561852650297,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "bc205a9988b5cd5948e74df27b6390a90ba8d1ab4b01866f37d4e11f1a74d084",
+      "instance_id": "confirm-nested_json-3-170302-capture-forward0-k2-b32-ordinary-primary",
+      "lower_bound": [
+        14164006413667257,
+        9007199254740992
+      ],
+      "optimal_under_support_expansion": false,
+      "upper_bound": [
+        14409512728777591,
+        9007199254740992
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "92c57e361f4178058795a50270a1df9414d4c7c6d8b0d641e39d0bcbef90afc8",
+      "instance_id": "geocoding-v2-step00-all-primary",
+      "lower_bound": [
+        16642623,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16642623,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "92c57e361f4178058795a50270a1df9414d4c7c6d8b0d641e39d0bcbef90afc8",
+      "instance_id": "geocoding-v2-step00-all-primary",
+      "lower_bound": [
+        4032659,
+        2097152
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4032659,
+        2097152
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "442862d3aad49055207ffb3504e15ad486d6392bfcb2619fa282e2f010707631",
+      "instance_id": "geocoding-v2-step00-ordinary-primary",
+      "lower_bound": [
+        14466913,
+        134217728
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        14466913,
+        134217728
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "442862d3aad49055207ffb3504e15ad486d6392bfcb2619fa282e2f010707631",
+      "instance_id": "geocoding-v2-step00-ordinary-primary",
+      "lower_bound": [
+        45146719,
+        268435456
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        45146719,
+        268435456
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "d617fef7afed8fee0fb6b9818bae2b559092308bc7511cb8cc86ec96ee713f34",
+      "instance_id": "geocoding-v2-step01-all-primary",
+      "lower_bound": [
+        1,
+        1
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        1,
+        1
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "d617fef7afed8fee0fb6b9818bae2b559092308bc7511cb8cc86ec96ee713f34",
+      "instance_id": "geocoding-v2-step01-all-primary",
+      "lower_bound": [
+        2,
+        1
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2,
+        1
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "86c65296c2bba1dc5c9f4b68da86531d0dfaecab09238eec6854cb1e637b4dc4",
+      "instance_id": "geocoding-v2-step01-ordinary-primary",
+      "lower_bound": [
+        4988489,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4988489,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "86c65296c2bba1dc5c9f4b68da86531d0dfaecab09238eec6854cb1e637b4dc4",
+      "instance_id": "geocoding-v2-step01-ordinary-primary",
+      "lower_bound": [
+        36125249,
+        67108864
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        36125249,
+        67108864
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "ec516336eeae3abca7f0e6fd69266716e4f2591ffc11827a993648893adb98b0",
+      "instance_id": "geocoding-v2-step02-all-primary",
+      "lower_bound": [
+        250917,
+        262144
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        250917,
+        262144
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "ec516336eeae3abca7f0e6fd69266716e4f2591ffc11827a993648893adb98b0",
+      "instance_id": "geocoding-v2-step02-all-primary",
+      "lower_bound": [
+        30633457,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        30633457,
+        16777216
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "38052166090b404fd28df56499a6bba41481ce6cf38fb919bc978878c7dfbb5b",
+      "instance_id": "geocoding-v2-step02-ordinary-primary",
+      "lower_bound": [
+        10039155,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        10039155,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "38052166090b404fd28df56499a6bba41481ce6cf38fb919bc978878c7dfbb5b",
+      "instance_id": "geocoding-v2-step02-ordinary-primary",
+      "lower_bound": [
+        7596731,
+        8388608
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7596731,
+        8388608
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "3e2dbb16cd73ab11876e125acc0508ccd7e9ea13a85d55d3d3cf18c9a782a5cb",
+      "instance_id": "geocoding-v2-step03-all-primary",
+      "lower_bound": [
+        15487885,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        15487885,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "3e2dbb16cd73ab11876e125acc0508ccd7e9ea13a85d55d3d3cf18c9a782a5cb",
+      "instance_id": "geocoding-v2-step03-all-primary",
+      "lower_bound": [
+        28367799,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        28367799,
+        16777216
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "2dd576f160af0e4cf3d6104c5bf79fdc447430b01fa311b8b71b8f76811a804d",
+      "instance_id": "geocoding-v2-step03-ordinary-primary",
+      "lower_bound": [
+        3573849,
+        8388608
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        3573849,
+        8388608
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "2dd576f160af0e4cf3d6104c5bf79fdc447430b01fa311b8b71b8f76811a804d",
+      "instance_id": "geocoding-v2-step03-ordinary-primary",
+      "lower_bound": [
+        27359805,
+        33554432
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        27359805,
+        33554432
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "e8de72ad118e8ecbb0e481d5efb41177f2efd4380f42e3ca0b7cf9ce094eaf81",
+      "instance_id": "geocoding-v2-step04-all-primary",
+      "lower_bound": [
+        7879331,
+        8388608
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7879331,
+        8388608
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "e8de72ad118e8ecbb0e481d5efb41177f2efd4380f42e3ca0b7cf9ce094eaf81",
+      "instance_id": "geocoding-v2-step04-all-primary",
+      "lower_bound": [
+        3667789,
+        2097152
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        3667789,
+        2097152
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "506e8a61a29845894ddd6c9f33c87102f02824385ab04ed39a419cc249b9e7b6",
+      "instance_id": "geocoding-v2-step04-ordinary-primary",
+      "lower_bound": [
+        4494031,
+        8388608
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        4494031,
+        8388608
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "506e8a61a29845894ddd6c9f33c87102f02824385ab04ed39a419cc249b9e7b6",
+      "instance_id": "geocoding-v2-step04-ordinary-primary",
+      "lower_bound": [
+        31174705,
+        33554432
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        31174705,
+        33554432
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "60d88ab624d26dfc50c6fd375cc879cda180d21008b2f88fd0d477f80a638c89",
+      "instance_id": "geocoding-v2-step05-all-primary",
+      "lower_bound": [
+        16144773,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16144773,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "60d88ab624d26dfc50c6fd375cc879cda180d21008b2f88fd0d477f80a638c89",
+      "instance_id": "geocoding-v2-step05-all-primary",
+      "lower_bound": [
+        31455139,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        31455139,
+        16777216
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "951e73f56085083d9fb5cb2440f8a8e100642a850558a182c1114507347a68bb",
+      "instance_id": "geocoding-v2-step05-ordinary-primary",
+      "lower_bound": [
+        7655183,
+        8388608
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        7655183,
+        8388608
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "951e73f56085083d9fb5cb2440f8a8e100642a850558a182c1114507347a68bb",
+      "instance_id": "geocoding-v2-step05-ordinary-primary",
+      "lower_bound": [
+        29972967,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        29972967,
+        16777216
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "1eb2f473e3279ba23173639dafc44ec2b582c7dde0cb51f6203743f62c068972",
+      "instance_id": "geocoding-v2-step06-all-primary",
+      "lower_bound": [
+        16565823,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16565823,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "1eb2f473e3279ba23173639dafc44ec2b582c7dde0cb51f6203743f62c068972",
+      "instance_id": "geocoding-v2-step06-all-primary",
+      "lower_bound": [
+        16268529,
+        8388608
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16268529,
+        8388608
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "4434820a182a252e202de933ddcaa5fa49b7d2e5a53b7ff5be9117984fa1b70f",
+      "instance_id": "geocoding-v2-step06-ordinary-primary",
+      "lower_bound": [
+        10124679,
+        67108864
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        10124679,
+        67108864
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "4434820a182a252e202de933ddcaa5fa49b7d2e5a53b7ff5be9117984fa1b70f",
+      "instance_id": "geocoding-v2-step06-ordinary-primary",
+      "lower_bound": [
+        1307201755,
+        8589934592
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        1307201755,
+        8589934592
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "e74aba47b27f84532b07dc74e41c5df8da25754707fdfa2600cd5b30a1685f41",
+      "instance_id": "geocoding-v2-step07-all-primary",
+      "lower_bound": [
+        2950507,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2950507,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "e74aba47b27f84532b07dc74e41c5df8da25754707fdfa2600cd5b30a1685f41",
+      "instance_id": "geocoding-v2-step07-all-primary",
+      "lower_bound": [
+        39587823,
+        134217728
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        39587823,
+        134217728
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "ac34d59f062198c5daaa514f44d9f1872ac647ae1546b4bac88e7686140be79b",
+      "instance_id": "geocoding-v2-step07-ordinary-primary",
+      "lower_bound": [
+        2950507,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2950507,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "ac34d59f062198c5daaa514f44d9f1872ac647ae1546b4bac88e7686140be79b",
+      "instance_id": "geocoding-v2-step07-ordinary-primary",
+      "lower_bound": [
+        194486489,
+        1073741824
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        194486489,
+        1073741824
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "6c451789e61d5a27597fbd55b50a3992a21b6712269cccd4e48e362c5d53a829",
+      "instance_id": "geocoding-v2-step08-all-primary",
+      "lower_bound": [
+        16748665,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16748665,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "6c451789e61d5a27597fbd55b50a3992a21b6712269cccd4e48e362c5d53a829",
+      "instance_id": "geocoding-v2-step08-all-primary",
+      "lower_bound": [
+        33471251,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        33471251,
+        16777216
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "a1b29c0562571c395a91c0eceff88b3e09dbd11941bd6d0b232338ea368d9886",
+      "instance_id": "geocoding-v2-step08-ordinary-primary",
+      "lower_bound": [
+        16748665,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        16748665,
+        16777216
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "a1b29c0562571c395a91c0eceff88b3e09dbd11941bd6d0b232338ea368d9886",
+      "instance_id": "geocoding-v2-step08-ordinary-primary",
+      "lower_bound": [
+        33471251,
+        16777216
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        33471251,
+        16777216
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "25998123bc39fecc7943cc79fbadb0de596d0f959e58b988a43539a259373e3c",
+      "instance_id": "geocoding-v2-step09-all-primary",
+      "lower_bound": [
+        2219863,
+        67108864
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2219863,
+        67108864
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "25998123bc39fecc7943cc79fbadb0de596d0f959e58b988a43539a259373e3c",
+      "instance_id": "geocoding-v2-step09-all-primary",
+      "lower_bound": [
+        15842091,
+        268435456
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        15842091,
+        268435456
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "27ab2d7225a7e7b26625af87460590c0188a6395c18f2907827df7f8c8040eed",
+      "instance_id": "geocoding-v2-step09-ordinary-primary",
+      "lower_bound": [
+        2219863,
+        67108864
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        2219863,
+        67108864
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "27ab2d7225a7e7b26625af87460590c0188a6395c18f2907827df7f8c8040eed",
+      "instance_id": "geocoding-v2-step09-ordinary-primary",
+      "lower_bound": [
+        15842091,
+        268435456
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        15842091,
+        268435456
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "5660cc0bb7007fe8db79b6fb7515ffe8ccfd9f22a767d237412acc4bdb15814f",
+      "instance_id": "geocoding-v2-step10-all-primary",
+      "lower_bound": [
+        262127,
+        262144
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        262127,
+        262144
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "5660cc0bb7007fe8db79b6fb7515ffe8ccfd9f22a767d237412acc4bdb15814f",
+      "instance_id": "geocoding-v2-step10-all-primary",
+      "lower_bound": [
+        549725076951,
+        549755813888
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        549725076951,
+        549755813888
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "e39fb42671e410121c3042bba427609a51bf6f50855fceb5bab57ca900857227",
+      "instance_id": "geocoding-v2-step10-ordinary-primary",
+      "lower_bound": [
+        262127,
+        262144
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        262127,
+        262144
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "e39fb42671e410121c3042bba427609a51bf6f50855fceb5bab57ca900857227",
+      "instance_id": "geocoding-v2-step10-ordinary-primary",
+      "lower_bound": [
+        262127,
+        262144
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        262127,
+        262144
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "88c46951d90042ab9b7d2bd1cc9c0ca347176765729761c2aefa54f7eeccee1f",
+      "instance_id": "geocoding-v2-step11-all-primary",
+      "lower_bound": [
+        9941015,
+        4398046511104
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        9941015,
+        4398046511104
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "88c46951d90042ab9b7d2bd1cc9c0ca347176765729761c2aefa54f7eeccee1f",
+      "instance_id": "geocoding-v2-step11-all-primary",
+      "lower_bound": [
+        9941015,
+        4398046511104
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        9941015,
+        4398046511104
+      ]
+    },
+    {
+      "budget": 1,
+      "input_fingerprint": "8866b1f8f151e874bcae2557043396f5d013a6a70ac71a12032b75747f36c5f2",
+      "instance_id": "geocoding-v2-step11-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        0,
+        1
+      ]
+    },
+    {
+      "budget": 2,
+      "input_fingerprint": "8866b1f8f151e874bcae2557043396f5d013a6a70ac71a12032b75747f36c5f2",
+      "instance_id": "geocoding-v2-step11-ordinary-primary",
+      "lower_bound": [
+        0,
+        1
+      ],
+      "optimal_under_support_expansion": true,
+      "upper_bound": [
+        0,
+        1
+      ]
+    }
+  ],
+  "raw_manifest_sha256": "3ce2dc3d170a394f68fa904973a84b98a203c649e00f8b54e4c878468a6e30b9",
+  "solver_status_counts": {
+    "budgeted_rational:infeasible_on_support": 24,
+    "budgeted_rational:optimal": 192,
+    "confidence_preselection:feasible_on_support": 128,
+    "confidence_preselection:infeasible_on_support": 16,
+    "epic_regular_cover_then_cap:feasible_on_support": 56,
+    "epic_regular_cover_then_cap:infeasible_batch_on_support": 16,
+    "unbudgeted_then_cap:feasible_on_support": 128,
+    "unbudgeted_then_cap:infeasible_on_support": 16
+  },
+  "timing_censoring": "Complete-worker median excludes timed-out/error jobs, which remain in status counts; includes checking/proof serialization/update replay. No GPU speed claim.",
+  "verification": "PASS"
+}

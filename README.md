@@ -45,6 +45,20 @@ Lean proves the specified certificate/bound theorems and checks exported resourc
 instances. It does not automatically prove the whole Python/Rust source or model
 accuracy. Existing independent oracles and baseline tests remain essential.
 
+The new budgeted method also has a
+[real-state replay protocol](docs/research/m28-real-state-replay.md) and a
+[generated demonstration report](docs/artifacts/processed/m28_budgeted_real_v1/report.md).
+The complete cohort contains 24 archived LLaDA recursive-task snapshots and
+12 steps of one geographic query, with both all-token and ordinary-token
+reward profiles. Inputs, finite-slot witnesses and independently checkable
+optimality certificates are archived. This runs the new optimizer on authentic
+saved model outputs; it is not a new end-to-end model trajectory.
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/run_budgeted_real_replay.py \
+  --verify docs/artifacts/raw/m28_budgeted_real_v1/completed
+```
+
 Historical [M24](docs/research/m24-findings.md) and
 [M25](docs/research/m25-findings.md) experiments remain secondary evidence,
 including worse external accuracy and latency than EPIC. All original failures,

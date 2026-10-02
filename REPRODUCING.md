@@ -43,6 +43,35 @@ physical budget; native EPIC system runs do not automatically meet those premise
 The proofs do not imply higher semantic accuracy, lower latency, full-vocabulary
 or future-trajectory optimality, or proof-assistant formalization.
 
+## New budgeted method on real saved states (M28)
+
+The [frozen protocol](docs/research/m28-real-state-replay.md) records all source
+hashes and reconstruction rules. Read the
+[generated report](docs/artifacts/processed/m28_budgeted_real_v1/report.md) for
+certificates, exact objective comparisons and measured CPU cost. Rebuild from
+the complete corrected archive, without a model or network:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/run_budgeted_real_replay.py \
+  --verify docs/artifacts/raw/m28_budgeted_real_v1/completed
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m scripts.exact_commit.build_budgeted_real_results --check
+```
+
+For a fresh execution, use a clean checkout, a new output directory and the
+committed `configs/experiments/m28_budgeted_real_replay_v1.json`. CPU MWPC and
+EPIC bindings are required for baselines. `inputs/` stores losslessly mapped
+model token IDs and source references; `proofs/` stores gzip-compressed original
+input certificates. `rows.jsonl` retains statuses, scores, committed positions,
+full witnesses, baseline diagnostics and timings. Timings cover the shared
+budget-0--2 frontier, not three independent single-cap solves; no new model
+forward is measured. Input reconstruction is timed outside the optimizer.
+
+The ordinary-reward comparison uses the native EPIC byte batch selector plus
+a cap and finite-support validation. Pending serial fallback is excluded from
+scored comparisons. These results do not replace the complete historical EPIC
+decoder experiments. The interrupted first attempt is retained separately;
+its harness errors are not treated as algorithm failures or scored losses.
+
 ## Historical live dLLM study (M24/M25)
 
 Historical local delivery: [2026-09-30 dLLM snapshot](docs/releases/dllm-2026-09-30.md).

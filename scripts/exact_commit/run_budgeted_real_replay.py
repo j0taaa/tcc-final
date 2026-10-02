@@ -527,6 +527,15 @@ def verify(directory):
         if key in seen:
             raise ValueError("Duplicate attempted method/state")
         seen.add(key)
+        for field in (
+            "git_commit",
+            "model_id",
+            "model_revision",
+            "tokenizer_revision",
+            "config_sha256",
+        ):
+            if row[field] != metadata[field]:
+                raise ValueError(f"Row provenance differs from run metadata: {field}")
         original = expected[row["instance_id"]].selection_input
         instance = BenchmarkInstance.from_dict(read_json(directory / row["input"]))
         state = instance.selection_input
@@ -534,6 +543,20 @@ def verify(directory):
             "input_fingerprint"
         ] != budget_input_fingerprint(state):
             raise ValueError("Saved instance differs from frozen source")
+        if row["support"] != state.support.to_dict() or row[
+            "grammar_hash"
+        ] != canonical_json_sha256(state.grammar.to_dict()):
+            raise ValueError("Row grammar/support differs from its original input")
+        if row["status"] not in ("complete", "timeout", "error"):
+            raise ValueError("Unknown worker status")
+        if row["status"] == "complete":
+            first = 0 if row["method"] == "budgeted_rational" else 1
+            if [i["budget"] for i in row["frontier"]] != list(
+                range(first, config["max_budget"] + 1)
+            ):
+                raise ValueError("Incomplete or reordered method frontier")
+        elif row["frontier"]:
+            raise ValueError("Unresolved job carries scored outcomes")
         if row["method"] == "budgeted_rational" and row["status"] == "complete":
             proof = read_json(directory / row["proof"])
             verify_budget_proof(proof)
@@ -608,6 +631,14 @@ def verify(directory):
 def summary(rows):
     groups = defaultdict(list)
     paired = {}
+    pending_serial = {
+        row["instance_id"]
+        for row in rows
+        if row["method"] == "epic_regular_cover_then_cap"
+        and (row.get("native_result") or {})
+        .get("diagnostics", {})
+        .get("serial_fallback_required", False)
+    }
     for row in rows:
         groups[row["family"], row["reward_profile"], row["method"]].append(row)
         paired[row["instance_id"], row["method"]] = row
@@ -619,6 +650,8 @@ def summary(rows):
         for row in items:
             exact = paired.get((row["instance_id"], "budgeted_rational"))
             if method == "budgeted_rational" or exact is None:
+                continue
+            if method == "epic_regular_cover_then_cap" and row["instance_id"] in pending_serial:
                 continue
             by_cap = {i["budget"]: i for i in exact["frontier"]}
             for item in row["frontier"]:
@@ -644,12 +677,17 @@ def summary(rows):
                 if completed
                 else None,
                 "certified_paired_budget_cases": len(gaps),
+                "pending_serial_fallback_states": sum(
+                    method == "epic_regular_cover_then_cap" and r["instance_id"] in pending_serial
+                    for r in items
+                ),
                 "strict_gaps": sum(g > 0 for g in gaps),
                 "max_gap": fraction_data(max(gaps)) if gaps else None,
             }
         )
     return {
         "groups": result,
+        "epic_pending_serial_fallback_instances": sorted(pending_serial),
         "analysis_unit": "Source states; profiles and budgets are repeated measures, "
         "not independent tasks",
         "timing_censoring": "Complete-worker median excludes timed-out/error jobs, which remain "

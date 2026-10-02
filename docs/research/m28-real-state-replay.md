@@ -76,12 +76,20 @@ cap. It is **not** a replay of the full EPIC denoising/resampling policy. An
 infeasible finite batch, an unresolved validation or an unsupported call is
 reported distinctly and excluded from feasible objective-gap comparisons.
 Native selector diagnostics and selected IDs are retained.
+When the native selector requests serial fallback, the batch-only replay has
+not completed the decoder's action. Those cases are excluded from scored
+comparisons, rather than presenting an empty intermediate batch as a zero-score
+EPIC loss. The raw native output remains available for auditing.
 
 Model forwards are historical observations only. Current CPU measurements
 separate lattice construction, parsing, backtracking and certificate checking;
 validated updates and worker/process overhead are recorded separately. The
 frontier solver time amortizes budgets 0--2; it is not a single-cap time. One
 repetition provides descriptive timings, not a statistical speed claim.
+Input reconstruction (candidate extraction, support and grammar decoding) is
+measured separately as one preparation interval. Profiler components with zero
+invocations were not executed inside the optimizer; they are not measurements
+of a zero-cost model forward or candidate-construction pipeline.
 
 ## Reproduction
 

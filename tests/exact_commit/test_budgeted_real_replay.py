@@ -188,3 +188,47 @@ def test_baseline_infeasibility_does_not_index_an_empty_witness(method):
     )
     assert all(r["status"] == "infeasible_on_support" for r in result["frontier"])
     assert all(r["objective_value"] is None for r in result["frontier"])
+
+
+def test_native_serial_fallback_request_is_not_counted_as_an_exact_win():
+    common = {
+        "instance_id": "a",
+        "family": "test",
+        "reward_profile": "ordinary_primary",
+        "status": "complete",
+        "worker_seconds": 1,
+    }
+    rows = [
+        {
+            **common,
+            "method": "budgeted_rational",
+            "frontier": [{"budget": 1, "status": "optimal", "objective_value": [7, 8]}],
+        },
+        {
+            **common,
+            "method": "epic_regular_cover_then_cap",
+            "native_result": {"diagnostics": {"serial_fallback_required": True}},
+            "frontier": [{"budget": 1, "status": "feasible_on_support", "objective_value": [0, 1]}],
+        },
+    ]
+    data = replay.summary(rows)
+    group = next(g for g in data["groups"] if g["method"] == "epic_regular_cover_then_cap")
+    assert group["certified_paired_budget_cases"] == group["strict_gaps"] == 0
+    assert data["epic_pending_serial_fallback_instances"] == ["a"]
+    assert rows[1]["frontier"][0]["status"] == "feasible_on_support"  # raw output is retained
+
+
+def test_real_archive_and_generated_results_verify_without_running_an_optimizer(monkeypatch):
+    from scripts.exact_commit import build_budgeted_real_results as builder
+
+    from mwpc_exact import budgeted_commit
+    from mwpc_exact.reference import budgeted_parser
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("Reproduction must check certificates, not re-run an optimizer")
+
+    monkeypatch.setattr(replay, "select_exact_mwpc", forbidden)
+    monkeypatch.setattr(budgeted_commit, "budgeted_commit_frontier", forbidden)
+    monkeypatch.setattr(budgeted_parser, "budgeted_frontier", forbidden)
+    for path, content in builder.generate(builder.RAW).items():
+        assert path.read_text() == content, path

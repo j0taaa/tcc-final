@@ -60,6 +60,9 @@ exclude = [
   "/docs/artifacts/raw/m25_grounded_v1/confirmation/**",
   "/docs/artifacts/raw/m25_grounded_v1/repeat/**",
   "/docs/artifacts/raw/m24_policy_v1/epic_intermediate*/**",
+  # The interrupted M28 harness-debugging attempt stays in Git for the audit.
+  # Final replay inputs/certificates remain in the sdist for offline verification.
+  "/docs/artifacts/raw/m28_budgeted_real_v1/interrupted/**",
 ]
 
 [tool.pytest.ini_options]

@@ -122,3 +122,24 @@ The manuscript imports exactly R1--R3. T1203 diagnostic tables and figures
 remain supplementary repository evidence; publication-mode Q4/Q5 values are
 kept separate from those smokes. Generated result files and values must never
 be edited by hand.
+
+## M28 budgeted replay on authentic saved states
+
+`raw/m28_budgeted_real_v1/completed/` contains the new rational solver's
+complete frozen replay: original scientific inputs with model-token mappings,
+compressed original-input proofs, raw JSONL rows, native baseline diagnostics,
+configuration, machine metadata and file hashes. The separate `interrupted/`
+archive retains the first harness-debugging attempt; none of its rows supplies
+the final comparisons. Original M17/M25 captures remain unchanged.
+
+`processed/m28_budgeted_real_v1/` contains the generated report and JSON
+summary, including exact objective gaps and application of the existing M27
+quality bound to every eligible post-filtered batch. These are saved-state
+decisions, not new live model trajectories. EPIC comparisons concern its native
+batch selector followed by a cap; pending serial fallback and unresolved finite
+feasibility are excluded from scored pairs.
+
+Rebuild with `python -m scripts.exact_commit.build_budgeted_real_results`;
+`--check` verifies every raw hash, reconstructs the inputs, independently checks
+the certificates and compares all generated files byte for byte. Manuscript
+macros and the optional full table live in `paper/generated/m28_budgeted_real_v1/`.

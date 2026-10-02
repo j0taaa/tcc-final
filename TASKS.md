@@ -36,18 +36,41 @@ EOS/PAD, all statuses, and independently checked original-input certificates.
   inputs, probabilities, token-ID mappings, EOS additions, profiles, profiling
   invariance, baseline separation and timeout accounting; full Python suite:
   1,368 passed. No real-state outcome was evaluated before this freeze.
-- [ ] T2801: Implement and test offline reconstruction, bounded execution,
+- [x] T2801: Implement and test offline reconstruction, bounded execution,
   disjoint timings, portable proofs, baseline comparisons and independent
   archive verification. Native EPIC batches require finite-support feasibility
   validation; unknown feasibility and timeouts cannot count as losing scores.
-  **Evidence:** pending.
-- [ ] T2802: Execute every frozen case; retain failures/timeouts and compact
+  **Evidence:** `run_budgeted_real_replay.py` reconstructs all sources with
+  lossless token-ID maps, runs bounded workers and verifies portable proofs
+  against source inputs. Optional profiling preserves exact results. Thirteen
+  replay tests pass, including both harness-bug regressions, serial-fallback
+  exclusion and full archive/derivative verification with optimizers disabled.
+  Full Python: 1,373 passed; Ruff/MyPy (98 source files), Rust (24 tests,
+  fmt/clippy) and existing EPIC regressions (19 passed/4 existing skips) pass.
+- [x] T2802: Execute every frozen case; retain failures/timeouts and compact
   original-input certificates. Report feasible objective comparisons separately
   from model quality and historical forward times. Record exact source commits.
-  **Evidence:** pending.
-- [ ] T2803: Generate the report/table from raw results, update the article and
+  **Evidence:** corrected execution at `ac0e5da9300db83adbacf2fee312bcca082d7aec`
+  uses the unchanged config frozen at `7b4d7ce`. Archive:
+  `docs/artifacts/raw/m28_budgeted_real_v1/completed/`; 252 method jobs over
+  36 source states/two profiles, 216 independently checked certificates
+  (192 optimal/24 support-infeasible), zero worker errors/timeouts. The first
+  interrupted harness attempt is separately retained with its exact reason.
+  `run_budgeted_real_replay.py --verify` validates hashes, source correspondence,
+  all proofs/batches and complete cohort coverage without model inference.
+- [x] T2803: Generate the report/table from raw results, update the article and
   reproduction instructions, run regressions and inspect the resulting PDF.
-  **Evidence:** pending.
+  **Evidence:** `build_budgeted_real_results.py` generates the report, summary,
+  table and manuscript macros from verified raw files. Ordinary-profile gains:
+  2/64 versus confidence preselection; ties in all 64 post-filter and 50 eligible
+  EPIC-selector/cap pairs. Pending native serial fallback is excluded. Existing
+  relaxation certifies 114/128 post-filtered batches; the report separates
+  profiles and zero rewards. README/reproduction guide and article Section 8.1
+  updated; `make paper` passes artifact checks, final `make -C paper` gives
+  16 pages with no overflow/unresolved references, pages 10--16 visually checked.
+  Source distribution excludes only the interrupted audit duplicate, retained
+  in Git; final replay remains installable/reproducible offline. Full verification
+  and source/artifact hashes: `docs/evidence/m28-real-replay-verification.{md,json}`.
 
 ## M27 — Certified bounds, compact token graphs, Lean and focused simplification
 

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{New budgeted replay on saved LLaDA states. Inputs include both reward profiles; certificates cover caps 0--2. Median CPU seconds measure the full frontier including its internal certificate checks, excluding model inference.}
+\label{tab:budgeted-real}
+\begin{tabular}{lrrrrr}
+\hline
+Family & Inputs & Optimal & Infeasible & Timeouts & Seconds \\
+\hline
+arithmetic & 16 & 48 & 0 & 0 & 0.714 \\
+brackets & 16 & 48 & 0 & 0 & 0.337 \\
+geocoding & 24 & 72 & 0 & 0 & 48.491 \\
+nested\_json & 16 & 24 & 24 & 0 & 1.852 \\
+\hline
+\end{tabular}
+\end{table}
