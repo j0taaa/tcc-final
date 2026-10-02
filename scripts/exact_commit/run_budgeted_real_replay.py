@@ -205,7 +205,10 @@ def finite_witness(state, assignments, timeout):
             vocabulary_size=state.tokenizer_adapter.vocabulary_size,
             required_special_token_ids=state.support.exactness_scope.included_special_tokens,
         ),
-        explicit_support={p: row for p, row in enumerate(state.support.rows)},
+        explicit_support={
+            p: row if canvas[p] is None else (canvas[p],)
+            for p, row in enumerate(state.support.rows)
+        },
     )
     restricted = replace(state, canvas=canvas, support=support, proposals=())
     return select_exact_mwpc(restricted, backend=ExactBackend.RUST, timeout_seconds=timeout)
@@ -262,13 +265,17 @@ def baseline(state, method, config):
             witness = result.witness_token_ids
             positions = (
                 ()
-                if witness is None
+                if result.status.value != "optimal" or not witness
                 else top_positions(state, witness, cap, {p.proposal_id for p in chosen})
             )
         elif method == "unbudgeted_then_cap":
             result = common
             witness = result.witness_token_ids
-            positions = () if witness is None else top_positions(state, witness, cap)
+            positions = (
+                ()
+                if result.status.value != "optimal" or not witness
+                else top_positions(state, witness, cap)
+            )
         else:
             if common.status.value != "heuristic":
                 rows.append({"budget": cap, "status": common.status.value, "objective_value": None})

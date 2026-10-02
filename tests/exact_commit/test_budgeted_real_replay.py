@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+from dataclasses import replace
 from fractions import Fraction
 
 import pytest
@@ -157,3 +158,33 @@ def test_summary_counts_unresolved_jobs_without_pairing_them():
     groups = replay.summary(rows)["groups"]
     assert all(g["certified_paired_budget_cases"] == 0 for g in groups)
     assert any(g["execution_statuses"] == {"timeout": 1} for g in groups)
+
+
+def test_epic_batch_validator_restricts_newly_fixed_rows():
+    state, _ = read_budget_proof(
+        replay.read_json(replay.ROOT / "docs/artifacts/math/m27-budget-proof.json")
+    )
+    result = replay.finite_witness(state, {0: 0}, 10)
+    assert result.status.value == "optimal"
+    assert result.witness_token_ids == (0, 1, 2)
+    assert replay.batch_row(state, 1, result.witness_token_ids, (0,))["objective_value"] == [7, 8]
+
+
+@pytest.mark.parametrize("method", ("confidence_preselection", "unbudgeted_then_cap"))
+def test_baseline_infeasibility_does_not_index_an_empty_witness(method):
+    state, _ = read_budget_proof(
+        replay.read_json(replay.ROOT / "docs/artifacts/math/m27-budget-proof.json")
+    )
+    support = replay.build_per_position_support(
+        canvas=state.canvas,
+        policy=replay.SupportPolicy(kind=replay.SupportKind.EXPLICIT, vocabulary_size=6),
+        explicit_support={0: (0,), 1: (4,), 2: (5,)},
+        proposals=state.proposals,
+    )
+    result = replay.baseline(
+        replace(state, support=support),
+        method,
+        {"max_budget": 2, "finite_validation_timeout_seconds": 10},
+    )
+    assert all(r["status"] == "infeasible_on_support" for r in result["frontier"])
+    assert all(r["objective_value"] is None for r in result["frontier"])
