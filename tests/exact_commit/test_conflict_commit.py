@@ -231,3 +231,59 @@ def test_experiment_metadata_preserves_immutable_mapping_without_deepcopy():
         "git_commit": "pinned",
         "thread_environment": {"OMP_NUM_THREADS": "1"},
     }
+
+
+def test_two_sided_reuse_avoids_all_oracles_after_certified_conflicting_choice(monkeypatch):
+    from mwpc_exact.proof_reuse import ProofReuseSolver
+
+    state = conflicting_state()
+    solver = ProofReuseSolver(backend=ExactBackend.PYTHON)
+    initial = solver.solve(state, 2)
+    assert initial.oracle_calls == 4
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("retained exact proof invoked a CFG oracle")
+
+    monkeypatch.setattr(solver._solver, "solve", forbidden)
+    for factor in range(1, 12):
+        changed = replace(
+            state, proposals=tuple(replace(p, weight=p.weight * factor) for p in state.proposals)
+        )
+        result = solver.solve(changed, 2)
+        assert result.oracle_calls == 0 and result.objective_value == 7 * factor
+        assert result.reused_conflicts == 1
+        check_conflict_commit(changed, result)
+
+
+def test_witness_only_ablation_does_not_secretly_reuse_conflicts():
+    from mwpc_exact.proof_reuse import ProofReuseSolver
+
+    solver = ProofReuseSolver(backend=ExactBackend.PYTHON, use_conflicts=False)
+    assert solver.solve(conflicting_state(), 2).oracle_calls == 4
+    assert solver.solve(conflicting_state(), 2).oracle_calls == 4
+
+
+def test_feasible_witness_can_survive_expansion_but_negative_conflicts_cannot():
+    from mwpc_exact.proof_reuse import ProofReuseSolver
+
+    proposals = (Proposal(0, 0, 0, 2),)
+    old = state_for((b"ab", b"aa"), (b"a", b"b"), ((0,), (1,)), proposals)
+    expanded = state_for((b"ab", b"aa"), (b"a", b"b"), ((0, 1), (0, 1)), proposals)
+    solver = ProofReuseSolver(backend=ExactBackend.PYTHON)
+    first = solver.solve(old, 1)
+    result = solver.solve(expanded, 1)
+    assert result.witness_token_ids == first.witness_token_ids
+    assert result.oracle_calls == 0 and result.reused_conflicts == 0
+    check_conflict_commit(expanded, result)
+
+
+def test_reused_witness_is_revalidated_after_fixed_slots_and_grammar_change():
+    from mwpc_exact.proof_reuse import ProofReuseSolver
+
+    solver = ProofReuseSolver(backend=ExactBackend.PYTHON)
+    state = conflicting_state()
+    solver.solve(state, 2)
+    new = state_for((b"bb",), (b"a", b"b"), ((1,), (1,)), (), canvas=(1, None))
+    answer = solver.solve(new, 1)
+    assert answer.witness_token_ids == (1, 1) and answer.oracle_calls > 0
+    check_conflict_commit(new, answer)

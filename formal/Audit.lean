@@ -17,3 +17,11 @@ import MWPC
 #print axioms MWPC.optimum_monotone
 #print axioms MWPC.minimum_capacity
 #print axioms MWPC.witness_update_preserves_feasibility
+#print axioms MWPC.conflict_missing_member
+#print axioms MWPC.empty_conflict_infeasible
+#print axioms MWPC.conflict_cover_bound
+#print axioms MWPC.conflict_certified_optimal
+#print axioms MWPC.conflict_transport
+#print axioms MWPC.fixed_conflict_discharge
+#print axioms MWPC.amortized_conflict_queries
+#print axioms MWPC.feasible_witness_transport

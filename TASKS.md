@@ -16,6 +16,31 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M30 — Certified probabilistic commitment beyond the replay cohort
+
+Authorized by the 2026-10-05 request to broaden the scientific search. Depends
+on M26/M27 correctness and certificates, not on favorable M29 timings. Preserve
+all MWPC/baselines. A separate API studies the frozen **mean-field predictive**
+distribution at one dLLM step, not the model's full generative distribution.
+No invented probabilities may be described as model output.
+
+- [ ] T3000: Investigate ambiguity-safe probability mass, certified support-tail
+  error, and practical admission/abstention. Attribute GAD/ASAp, CARS, exact DFA
+  and factor inference, and probabilistic-language counting. Freeze proofs,
+  application/protocol and novelty limits before collecting new model outcomes.
+  **Evidence:** Pending.
+- [ ] T3001: Implement an anytime disjoint token-space partition and independent
+  original-input certificate checker. Exact rational mass must count tokens once,
+  preserve fixed slots/EOS/PAD and expose unresolved/omitted mass. Prove and
+  exhaustively check conditional total-variation bounds, sharpness, marginal
+  transport and finite-trajectory error composition. Add precise Lean scope.
+  **Evidence:** Pending.
+- [ ] T3002: Demonstrate the application on new inputs and, if available, fresh
+  CPU dLLM predictions. Include unresolved/rejected cases and exact controls.
+  Do not call constructed probabilities empirical model results. Generate
+  report/article changes from versioned evidence and pass full relevant checks.
+  **Evidence:** Pending.
+
 ## M29 — Useful exact commitment through certified conflict learning
 
 Authorized 2026-10-05. Depends on M26--M28. Preserve the exact rational

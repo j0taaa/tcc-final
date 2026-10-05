@@ -171,3 +171,45 @@ proofs and cover; `conflict_commit.py` implements the master and deletion loop;
 Rust CFG feasibility remain independent. Exhaustive seeded tests compare all
 token/subset choices, resource DP and the conflict result, including token
 aliases, duplicate scores, EOS/PAD, split UTF-8 and fixed-position discharging.
+
+## Follow-up: two-sided proof reuse
+
+After the complete conflict-only/ranked runs (before fresh DP timing finished),
+a further engineering improvement was specified: retain full feasible token
+witnesses as well as infeasible conflicts. `m29_proof_reuse_real_v1.json` freezes
+the same complete 72-input cohort and budgets, three repetitions of two-sided
+reuse and a witness-only ablation. This is development on the same known inputs,
+not a new held-out statistical confirmation. No input, weight or support changes.
+
+A previously valid full witness can survive support expansion, provided its
+tokens remain allowed, its fixed positions agree and it passes original-input
+grammar/byte/EOS validation. In contrast, an infeasible conflict is retained
+only under the contraction rule. These two transport directions are asymmetric.
+If this witness realizes the current master optimum, the master certificate
+and checked token witness again sandwich the true optimum. **Zero additional
+CFG-oracle queries** are needed; the independent original-input checker still
+runs. `proof_reuse.py` implements this mechanism with private instance caches.
+
+In the fixed two-slot family above, retaining both the learned aa conflict and
+the feasible ab witness requires four oracle calls in the first solve and zero
+in every later score-scaled solve: total four rather than 4T. An unchanged
+witness does not imply unchanged objective: the master and exact reward are
+recomputed from every new input. The witness-only ablation cannot bypass the
+infeasible top aa pair and keeps four calls per solve. Tests prohibit any hidden
+oracle call in retained exact returns and exercise expansion and grammar/fixed
+slot changes. This proves a computation saving for a declared infinite family;
+real occurrence and wall time are measured separately on the frozen cohort.
+
+## Execution interruption and completion protocol
+
+After the steered user turn, the original worker no longer existed. The resource
+DP file contains 68 complete JSON records and a zero-filled suffix, with one
+unreferenced proof. The cause of the zero suffix was not established. Preserve
+all original bytes separately. `complete_conflict_campaign.py` requires exactly
+parseable completed records before an all-zero suffix and completes only the four
+missing independent DP inputs. It records the new producing commit/hardware; no
+previous result, including a timeout, may be rerun or replaced. Fast-method rows
+and their proofs are copied byte for byte. The complete archive contains both
+producing provenance records, and the interrupted source is retained for audit.
+These measurements remain engineering evidence, secondary to the mathematical
+result and the subsequent broader scientific investigation requested by the user.

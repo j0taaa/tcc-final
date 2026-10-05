@@ -1,0 +1,49 @@
+\subsection{Exact commitment through certified conflicts}
+\label{sec:conflicts}
+
+Implicit hitting sets and SAT--optimization separation are established
+\cite{davies2011maxhs,saikko2016lmhs}. We specialize this principle to physical
+token commitments, keeping rational rewards and original-input certificates.
+Let $C$ be a set of position/token choices with no witness in $\Feas_x$.
+Every feasible batch must omit a member of $C$. A master maximizes the budgeted
+reward while excluding certified conflicts; a finite-slot CFG oracle tests its
+candidate. Rejected candidates are reduced by exact deletion tests and given
+independently checked zero-budget resource infeasibility proofs.
+
+For excluded choices $E$, the sum $U(E)$ of the $B$ largest allowed
+per-position maxima bounds every remaining batch. When a relaxed optimum
+contains conflict $C$, the children $E\cup\{c\}$, for all $c\in C$, cover every
+feasible parent batch. Leaves record $U(E)$ and branches record the maximum
+child bound. An empty conflict proves infeasibility. The original-input checker
+verifies this complete cover and each conflict proof without running the master.
+
+\begin{theorem}[Conflict-guided exactness and reusable certification]
+A feasible master optimum is an $\operatorname{OPT}_B$ witness. Certified
+conflicts remain sound under completion-set contraction. A stored full witness
+attaining the current master bound certifies optimality without a new CFG-oracle
+query, even after changed rewards or support expansion, provided the witness
+passes the new original-input validation.
+\label{thm:conflict-reuse}
+\end{theorem}
+\begin{proof}
+Every genuine feasible batch obeys the certified conflicts, so the master is an
+upper bound. A checked witness supplies its matching lower bound. The
+member-complete branching cover proves the same bound by induction. If
+$\Feas_{x'}\subseteq\Feas_x$, a choice set with no witness in the latter has none
+in the former; already fixed matching members can be discharged. Positive
+witness transport instead requires direct validation in the new support and
+fixed canvas. Recomputing the current reward and master bound then gives the
+same sandwich. No score-stability or semantic premise is assumed.
+\end{proof}
+
+With $h$ applicable conflicts, master depth is at most $h$, each branch has at
+most $B$ children, and each node scans/sorts $m$ rewarded choices. Learning $H$
+conflicts costs at most $(B+1)H+1$ feasibility queries, including deletions.
+Along $T$ retained-support solves with budgets at most $B_{\max}$, the bound is
+$T+(B_{\max}+1)H$. Large conflict sets can still be expensive. In the fixed
+language $\{ab,ba\}$ with two high-weight $a$ proposals and budget two, cold
+solving uses $4T$ queries; retaining its forbidden $aa$ pair and valid $ab$
+witness uses four total over all score-scaled solves. This is a computation
+separation, not an empirical occurrence estimate. Full proofs are in
+\path{docs/research/m29-conflict-commitment.md}; Lean checks the stated cover,
+transport and query-count specifications.

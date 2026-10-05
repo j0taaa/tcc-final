@@ -258,6 +258,26 @@ All \MRealCertificates{} original-input certificates verify: \MRealOptimal{} opt
 
 Median geocoding frontier cost is \MRealGeoSeconds{} CPU seconds. Post-hoc relaxation certifies \MRealBoundTight{}/\MRealBoundChecked{} post-filtered batches directly by coincident bounds. A supplied witness can thus avoid resource optimization; hybrid-decoder speedup is unmeasured. Reproduce inputs, proofs and timings with \path{run_budgeted_real_replay.py}; the report is under \path{docs/artifacts/processed/m28_budgeted_real_v1/}. No semantic superiority follows.
 
+\subsection{Certified computation reuse on the same inputs}
+
+\input{generated/m29_conflict_v1/numbers.tex}
+M29 repeats every input and cap with a classical descending-score subset
+enumerator, cold conflict solving, conflict-only reuse, witness-only reuse and
+two-sided reuse. All resolved scores/statuses agree with the archived independent
+optima. The DP computes one frontier; the other times sum three cap queries,
+using three repetitions. Internal certificate checks are included; serialization
+and external verification are separate. Two-sided reuse was developed after
+conflict-only evaluation on this cohort, so this is development/replay evidence.
+Its median paired speed ratio is \MReuseDPSpeed{} against fresh DP and
+\MReuseRankSpeed{} against ranked subsets, faster on \MReuseRankWins{}/72 inputs
+against the latter. Geocoding frontier medians are \MReuseGeoSeconds{} versus
+\MReuseGeoDPSeconds{} CPU seconds. Across repetitions, reuse uses \MReuseCalls{}
+CFG-oracle calls versus \MReuseRankCalls{} for enumeration; \MReuseZeroPositive{}
+positive-reward optima require no new oracle query. Complete family/ablation
+tables and all certificates are in the M29 generated report. These computation
+savings preserve the mathematical objective; they establish no new generation
+accuracy, full-EPIC superiority or population timing guarantee.
+
 \subsection{Historical experiments and failed transfer}
 
 Counterfactual-margin policies did not justify continuation. Historical synthetic confirmation uses 100 requests from the same templates as development, 24 slots and question-derived operands (Table~\ref{tab:live-synthetic}); it does not evaluate the new joint-budget algorithm.

@@ -2,6 +2,7 @@ import MWPC.Certificates
 import MWPC.Bounds
 import MWPC.Prefixes
 import MWPC.Selection
+import MWPC.Conflicts
 
 /-! Mathematical verification of finite, per-step commitment.
     No model, floating-point arithmetic or foreign code is part of this module. -/

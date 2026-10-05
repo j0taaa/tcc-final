@@ -31,41 +31,32 @@ For slot $i$, share its distinct nonempty proper byte prefixes $P_i$. Private ex
 
 \subsection{Exact resource dynamic programming}
 
-An original arc $e=(u,v)$ carries terminal $a_e$ or epsilon, cost $c_e\in\N$, and rational reward $w_e\geq0$. For $k=0,\ldots,B$, let $E[u,v,k]$ be the maximum reward of an epsilon-only path of exact cost $k$. Initialize $E[u,u,0]=0$, with absent cells $-\infty$, and relax epsilon arcs in topological order:
-\begin{equation}
- E[u,v,k+c_e]\gets\max\{E[u,v,k+c_e],E[u,a,k]+w_e\},\quad e=(a,v).
- \label{eq:budget-epsilon}
-\end{equation}
-Let $D[A,u,v,k]$ represent nonempty emissions derived from $A$. For $A\to t$ and terminal arc $e=(a,b,t)$, seed
-\begin{equation}
- D[A,u,v,k_1+c_e+k_2]\gets\max\{D[A,u,v,k_1+c_e+k_2],
-       E[u,a,k_1]+w_e+E[b,v,k_2]\}.
- \label{eq:budget-leaf}
-\end{equation}
-For binary productions, compute by increasing topological span:
-\begin{equation}
- \begin{aligned}
- D[A,u,v,k]\gets\max\bigl\{&D[A,u,v,k],\\
- &\max_{A\to BC,\,u<z<v,\,k_1+k_2=k}
-       \bigl(D[B,u,z,k_1]+D[C,z,v,k_2]\bigr)\bigr\}.
- \end{aligned}
- \label{eq:budget-binary}
-\end{equation}
-Here node inequalities denote topological indices. For each cap $b\leq B$, maximize final start-symbol cells with $k\leq b$, also comparing $E[q_0,f,k]$ when $G$ accepts epsilon. Backpointers reconstruct original arcs, including paid epsilon choices. Taking an unbudgeted epsilon maximum would be unsound here: different costs must remain distinct.
+The reference algorithm indexes epsilon-only and CFG derivation cells by exact
+cost $k=0,\ldots,B$. Epsilon arcs relax in topological order; terminal cells
+combine leading/suffix epsilon paths; binary productions split both the path
+and its cost. Final roots maximize over $k\leq b$, including epsilon roots when
+$G$ accepts the empty word. Original arc backpointers reconstruct tokens.
 
 \begin{theorem}[Exact budget frontier]
-Equations~\ref{eq:budget-epsilon}--\ref{eq:budget-binary}, with strict CNF, explicit empty-word acceptance and no unsafe pruning, compute $\operatorname{OPT}_b$ and a witness for every $0\leq b\leq B$ on the declared finite support.
+With strict CNF, explicit empty-word acceptance and no unsafe pruning, the
+resource dynamic program computes $\operatorname{OPT}_b$ and a witness for every
+$0\leq b\leq B$ on the declared finite support.
 \label{thm:budget-dp}
 \end{theorem}
 \begin{proof}
-Induction on the final node proves the epsilon recurrence: every nonempty epsilon path has a last arc, and every relaxation appends an existing arc with the stated cost and reward. For $D$, induct on topological span. A terminal derivation is a terminal arc surrounded by epsilon paths. Replacing either epsilon segment by its optimum with the same endpoints and cost cannot decrease reward; acyclicity prevents overlapping segments. A binary derivation splits the path at a node $z$ and splits its cost into $k_1+k_2$. Both nonempty child paths have smaller spans, so induction gives their optima. Every composition is an existing path and every derivation is covered. The separate epsilon roots cover empty emissions. Maximizing over final states and $k\leq b$ therefore gives the exact resource-path optimum; compilation and budgeted equivalence give $\operatorname{OPT}_b$. Neutral productions make ambiguity irrelevant to reward.
+Induction on the final node covers every epsilon path. Induction on topological
+span covers terminal paths surrounded by epsilon paths and binary paths split
+at an intermediate node and cost. Substituting a child optimum with identical
+endpoints and cost preserves feasibility; acyclicity prevents overlap. Every
+composition is a real path and every derivation is covered. Empty roots and
+resource compilation complete both directions. The full recurrences, induction
+and operation/space bounds are preserved in
+\path{paper/supplement-resource-dp.tex}.
 \end{proof}
-
-For $q$ nodes, $m_\varepsilon$ epsilon and $m_t$ terminal arcs, the direct bounds are $O(q^2(B+1)+qm_\varepsilon(B+1)+(|P_1|+1)m_tq^2(B+1)^2+(|P_2|+1)q^3(B+1)^2)$ arithmetic/chart operations and $O((|N|+1)q^2(B+1))$ entries, plus input and backpointers. This is pseudopolynomial for a generic binary-encoded resource cap; physical commitment needs only $B\leq|I|$. Rational bit costs are additional; this is not a GPU latency bound.
 
 \subsection{An independently checkable optimality proof}
 
-A feasible witness alone proves a lower bound. Supply upper potentials $U_E,U_D$ instead: missing cells mean $-\infty$; identities satisfy $U_E[u,u,0]\geq0$; each transition, terminal initialization and binary composition satisfies the inequality obtained from Equations~\ref{eq:budget-epsilon}--\ref{eq:budget-binary} by replacing assignment with $\geq$. Let $U_b$ be their maximum over permitted final roots.
+A feasible witness alone proves a lower bound. Supply upper potentials $U_E,U_D$ instead: missing cells mean $-\infty$; identities satisfy $U_E[u,u,0]\geq0$; each transition, terminal initialization and binary composition satisfies the corresponding max-plus relaxation inequality with $\geq$. Let $U_b$ be their maximum over permitted final roots.
 
 \begin{theorem}[Optimality-certificate soundness and completeness]
 If all potential inequalities hold and an independently recognized original path has cost at most $b$ and reward $L=U_b$, that path is optimal. If every permitted final root is absent, the inequalities prove infeasibility. Every completed exact dynamic program supplies an acceptable certificate.
@@ -120,6 +111,8 @@ In the same language, use $n+1$ slots: the first allows $0,h$ with proposal $h$ 
 \end{proof}
 
 These infinite families limit algorithmic rules; they do not estimate a benchmark win rate.
+
+\input{conflict-commitment.tex}
 
 \begin{corollary}[Certified capacity planning]
 For nonempty support, $\operatorname{OPT}_b$ is nondecreasing. The smallest $b$ with $\operatorname{OPT}_b\geq Q$ is the minimum number of physical commitments needed to achieve reward target $Q$, or no such budget exists.

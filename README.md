@@ -13,6 +13,18 @@ reward. Infinite-family proofs show that confidence preselection and filtering
 an unbudgeted optimum can retain an arbitrarily small fraction of this reward.
 These are optimization guarantees, not semantic accuracy or latency guarantees.
 
+A second exact implementation, `ConflictCommitSolver`, separates rational
+budget selection from finite CFG feasibility. `ProofReuseSolver` retains
+certified conflicts and valid full witnesses across changing inputs. The
+[conflict/transport proofs](docs/research/m29-conflict-commitment.md) show when
+reuse eliminates new grammar-oracle calls. These established algorithmic ideas
+are specialized here; speed and scientific priority are separate claims.
+
+```bash
+.venv/bin/python -m mwpc_exact.conflict_cli --input saved-instance.json.gz --budget 2 --proof /tmp/commit.json.gz
+.venv/bin/python -m mwpc_exact.conflict_cli --verify /tmp/commit.json.gz
+```
+
 The new exact-rational reference API is in `mwpc_exact.budgeted_commit`; it is
 separate from the existing Rust production strategy and historical live policies.
 Generate and verify a portable mathematical example without a model or network:

@@ -31,6 +31,9 @@ combined gate does **not** mean the Lean kernel proves all foreign source code.
 | Reward-preserving encodings preserve optima | `representation_preserves_optima` | General lemma has explicit encoding/decoding premises; the actual Python compiler is not universally refined in Lean |
 | Same-input dominance, fixed reward offset, budget monotonicity, capacity targets | `Selection.lean` | These assume the specified optimum; generated resource certificates establish it for checked instances |
 | Updating with a retained witness preserves feasibility | `witness_update_preserves_feasibility` | Explicit preservation premise; Python update and fixed-slot tests |
+| Certified conflicts and a member-complete search cover bound every feasible batch | `Conflicts.lean`: `conflict_cover_bound`, `conflict_certified_optimal` | Original-input Python checker validates each CFG infeasibility proof, cover branch and rational bound |
+| Infeasible conflicts transport under contraction; feasible witnesses under expansion | `conflict_transport`, `feasible_witness_transport`, `fixed_conflict_discharge` | Conservative support/semantics containment and independent validation of retained full token witnesses |
+| Amortized feasibility-query count | `amortized_conflict_queries` | Trace charges one failed main query plus at most B deletion queries per learned conflict; Python counter/oracle tests |
 
 `scripts/exact_commit/check_formal_project.py` verifies the main four-budget
 example, aliases/shared prefixes, fixed split UTF-8 with EOS/PAD, empty emission
@@ -61,6 +64,13 @@ constructions and exact update-round formula remain written proofs; the
 formalized certificate soundness does not silently mechanize all of them.
 Model probabilities, quantization, CUDA, system timing, semantic correctness
 and future denoising trajectories are outside the formal guarantee.
+
+The new conflict cover is a mathematical specification with explicit leaf
+bounds and valid-conflict premises. It does not prove the master/Python source
+or tokenizer compiler correct. Concrete learned CFG-conflict certificates can
+be exported through the existing resource bridge with
+`python -m scripts.exact_commit.build_conflict_results --lean /path/to/lake`;
+the report names the concrete certificates checked and retains this boundary.
 
 ## Export and verify a portable proof
 
