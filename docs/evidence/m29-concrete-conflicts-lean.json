@@ -1,0 +1,33 @@
+{
+  "verification": "PASS",
+  "verification_scope": "constructed_two_slot_conflict_resource_proofs",
+  "source": "docs/artifacts/math/m29-conflict-proof.json",
+  "cases": [
+    {
+      "verification": "PASS",
+      "verification_scope": "kernel_checked_resource_cfg_optimality",
+      "original_input_correspondence": "independent_python_checker",
+      "input_fingerprint": "fb4fba7c6a6c0149fd354e99dd25d05b17b6add66098453df81bcab12bcee771",
+      "integer_denominator": 1,
+      "lean_version": "Lean (version 4.34.0, x86_64-unknown-linux-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+      "lean_source_sha256": "6e3d3e3077a8a77a971d4ed729d9d39131ae9b45642e677fedd48f498b5eba72",
+      "theorems": [
+        "MWPC.Generated.infeasible_0"
+      ],
+      "axiom_audit": "'MWPC.Generated.infeasible_0' depends on axioms: [propext, Quot.sound]",
+      "axiom_dependencies": {
+        "MWPC.Generated.infeasible_0": [
+          "propext",
+          "Quot.sound"
+        ]
+      }
+    }
+  ],
+  "excluded": "all replay resource certificates and implementation source",
+  "large_replay_export_attempt": {
+    "fingerprint": "00884eb1d12745a4d9ccdbdbf1e37386ce5a48ea2a1028c63fa1e58ea013ff3b",
+    "status": "TIMEOUT",
+    "limit_seconds": 180,
+    "interpretation": "kernel export unfinished, not a false or valid proof"
+  }
+}

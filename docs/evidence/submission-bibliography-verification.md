@@ -188,3 +188,19 @@ established quality bounds, prefix sharing and the actual proof toolchain.
 | `likhachev2003ara` | Cited | [NeurIPS 2003 official record](https://papers.nips.cc/paper_files/paper/2003/hash/ee8fe9093fbbb687bef15a38facc44d2-Abstract.html) | Title, Likhachev/Gordon/Thrun and volume 16 verified. ARA* improves bounds with time; M27 only implements an incumbent certifier, not that search. |
 | `xu2026trie` | Cited | [arXiv 2608.12574v1](https://arxiv.org/abs/2608.12574v1) | Xu/Bouyarmane, title and 12 August 2026 submission verified. Shared prefixes are prior art; no speedup from that paper is attributed to this project. |
 | `lean2026reference` | Cited | [Official versioned reference](https://lean-lang.org/doc/reference/4.34.0/) | The manual explicitly covers Lean 4.34.0 and kernel checking. No claim that Lean automatically verifies foreign Python/Rust programs. |
+
+## M29/M30 additions, 5 October 2026
+
+The inventory now contains 43 records. Prior invention/priority claims remain
+excluded. The new universal guarantees specialize established exact solving,
+WMC, conditioning and token-support principles, rather than being firsts for
+those principles.
+
+| Key | Current use | Primary verification |
+| --- | --- | --- |
+| `davies2011maxhs` | Cited | Fahiem Bacchus/MaxHS primary paper, CP 2011, Davies and Bacchus; implicit hitting-set separation is explicitly attributed. DOI `10.1007/978-3-642-23786-7_19`. |
+| `saikko2016lmhs` | Cited | Primary LMHS paper, Saikko, Berg and Järvisalo, SAT 2016; DOI `10.1007/978-3-319-40970-2_45`. The project does not invent hitting-set reuse. |
+| `dubray2024anytime` | Cited | Official Dagstuhl metadata/full paper: Dubray, Schaus, Nijssen; CP 2024, LIPIcs 307, 10:1–10:16; DOI `10.4230/LIPIcs.CP.2024.10`. Deterministic anytime lower/upper WMC guarantees are established. |
+| `renkens2014wmc` | Cited | Official AAAI record: Renkens, Kimmig, Van den Broeck, De Raedt; 2014, volume 28(1); DOI `10.1609/aaai.v28i1.9067`. Explanation-based bounded approximate counting is an antecedent. |
+| `park2024gad` | Cited | Primary arXiv `2405.21047`, accepted NeurIPS 2024; Park, Wang, Berg-Kirkpatrick, Polikarpova, D'Antoni. ASAp's grammar-aligned AR sampling is not a new project discovery or reproduced baseline. |
+| `parys2025cars` | Cited | Primary arXiv `2510.01902v2`, original 2 October 2025/revised 2 June 2026; Parys, Vaidya, Berg-Kirkpatrick, D'Antoni. Exact constrained AR sampling is acknowledged; project mean-field bounds do not claim its full-joint guarantee. |

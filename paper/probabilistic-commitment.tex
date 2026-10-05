@@ -1,0 +1,90 @@
+\section{Certified Probability and Sampling Error}
+\label{sec:probability}
+
+Reward maximization does not preserve sampling probabilities. We add a separate
+API for the frozen mean-field predictive $q(y)=\prod_i p_i(y_i)$, conditioning
+fixed slots to probability one. Retained $p_i$ are original rational probabilities,
+not top-$K$ renormalizations. Let $\Omega=\prod_i S_i$ and
+$\delta=1-\prod_i\sum_{t\in S_i}p_i(t)$. The target $P$ is $q$ conditioned on
+CFG validity, fixed slots and EOS/PAD in the \emph{full vocabulary}; it is not
+the model's full generative joint.
+
+A binary partition splits one slot's token alternatives into disjoint subsets.
+Leaves are checked valid singleton paths, independently certified infeasible
+boxes, zero-mass boxes, or unresolved boxes. For a box $D$, its mass is
+$\prod_i\sum_{t\in D_i}p_i(t)$. Let $K$ contain accepted paths, with mass $L$;
+let $R$ be unresolved mass. Let $d\leq\delta$ be a certified bound on valid
+omitted mass, using $d=\delta$ without additional coverage evidence.
+
+\begin{theorem}[Mass envelope and sharp conditional error]
+The full valid mass $Z$ satisfies $L\leq Z\leq L+R+d$. If $L>0$, sampling
+$Q(y)=q(y)/L$ on $K$ gives
+\begin{equation}
+ \operatorname{TV}(Q,P)=1-L/Z\leq\frac{R+d}{L+R+d}.
+ \label{eq:probability-error}
+\end{equation}
+These claims do not require an unambiguous grammar. The error bound is sharp
+from the supplied mass evidence.
+\label{thm:probability-error}
+\end{theorem}
+\begin{proof}
+Splits partition $\Omega$; invalid and zero leaves contribute no valid mass.
+Accepted token paths contribute $L$ exactly once, irrespective of parse or
+emission multiplicity. The remaining valid mass is between zero and $R+d$.
+On $K$, $Q(y)\geq P(y)$ and the summed difference is $1-L/Z$. Outside $K$,
+$Q$ is zero and $P$ sums to the same quantity. Half their L1 sum gives the
+identity. Writing $Z=L+v$, $v/(L+v)$ increases over $0\leq v\leq R+d$.
+Equality holds when all unresolved/omitted mass is valid.
+\end{proof}
+
+\begin{theorem}[Sound support coverage]
+With compositional bytes and absent EOS, retaining every original vocabulary
+token whose emission uses only grammar-terminal bytes in every free slot
+omits no valid completion: $d=0$, even for recursive, ambiguous grammars.
+Closed finite yield bounds with every finite-slot tokenization retained also
+imply $d=0$.
+\label{thm:probability-coverage}
+\end{theorem}
+\begin{proof}
+Derivation induction shows every accepted word uses grammar terminals only.
+Each nonempty token emission in a valid path is a substring of that word, so
+its token is retained; fixed tokens are preserved separately. For finite yields,
+terminal inclusion and binary-concatenation closure bound each derivable word
+by induction; checking every original-vocabulary tokenization covers its paths.
+Token aliases are distinct choices and must all be retained.
+\end{proof}
+
+For independent rejection draws from the same frozen $q$, acceptance has
+probability $Z$ and expected work $1/Z$, since
+$\sum_{k\geq0}\Pr(N>k)=\sum_{k\geq0}(1-Z)^k=1/Z$.
+Thus positive certified bounds $L\leq Z\leq V$ give work bounds
+$1/V\leq\mathbb{E}N\leq1/L$. This established geometric identity quantifies
+rare-validity sampling cost; it counts draws, not new model forwards or wall time.
+
+The independent checker binds the complete partition and probabilities to the
+original state, validates singleton witnesses and zero-budget CFG infeasibility
+proofs, and recomputes rational masses. Best-first exploration can stop with an
+incomplete or timeout certificate; zero represented mass need not mean full
+infeasibility. The sampler refuses when Equation~\ref{eq:probability-error}
+exceeds the declared tolerance. It never turns an uncertified fallback into
+an admitted update. Grammar evidence may be reweighted, but old zero-mass leaves
+become unresolved when their new probability is positive.
+
+\begin{theorem}[Parallel-update and trajectory transport]
+Applying the same position-update map to $Q$ and $P$ cannot increase their TV.
+If at every common state, step $t$ has certified transition TV at most
+$\epsilon_t$, the length-$T$ history distributions differ by at most
+$\min(1,\sum_{t=1}^{T}\epsilon_t)$.
+\end{theorem}
+\begin{proof}
+An output event pulls back to an input event, proving the first claim.
+Maximally couple transitions while histories agree; at step $t$ the probability
+of their first disagreement is at most $\epsilon_t$. The union bound bounds
+any disagreement by the sum; coupling bounds history TV, also at most one.
+\end{proof}
+The trajectory premise concerns grammar-conditioned mean-field transitions
+at \emph{every} state, not merely the recorded probes. Lean checks partition,
+error algebra and coverage; this coupling construction remains a written proof.
+Counting bounds and conditioning are established \cite{dubray2024anytime,renkens2014wmc}.
+The contribution is their portable finite-slot/token certification and admission
+interface, not a new WMC principle or polynomial-time counting for arbitrary CFGs.

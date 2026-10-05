@@ -9,8 +9,10 @@ does not claim source-level verification of Python/Rust or model inference.
 from __future__ import annotations
 
 import hashlib
+import os
 import re
 import shutil
+import signal
 import subprocess
 import tempfile
 from dataclasses import dataclass
@@ -22,6 +24,28 @@ from mwpc_exact.budget_proof import read_budget_proof, verify_budget_proof
 from mwpc_exact.reference.budget_types import ResourceArc
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.types import SolveStatus, TerminalLabel
+
+
+def _run_lean(command: list[str], *, cwd: Path, timeout: float) -> subprocess.CompletedProcess[str]:
+    """Terminate the whole Lake/Lean process tree on a formal-check deadline."""
+    with subprocess.Popen(
+        command,
+        cwd=cwd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        start_new_session=True,
+    ) as process:
+        try:
+            stdout, stderr = process.communicate(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            if os.name == "posix":
+                os.killpg(process.pid, signal.SIGKILL)
+            else:
+                process.kill()
+            process.communicate()
+            raise
+    return subprocess.CompletedProcess(command, process.returncode, stdout, stderr)
 
 
 @dataclass(frozen=True)
@@ -256,30 +280,24 @@ def verify_with_lean(
     # `elan run` without --install fails locally if the pinned toolchain is
     # missing. Unlike the usual Lake proxy it cannot download it implicitly.
     command = [elan, "run", toolchain, "lake"] if elan is not None else [executable]
-    version = subprocess.run(
+    version = _run_lean(
         [*command, "env", "lean", "--version"],
         cwd=root,
-        capture_output=True,
-        text=True,
         timeout=timeout_seconds,
     )
     if version.returncode or f"version {toolchain.split(':v')[-1]}" not in version.stdout:
         raise RuntimeError(
             f"Installed Lean does not match {toolchain}: {version.stdout}{version.stderr}"
         )
-    build = subprocess.run(
-        [*command, "build"], cwd=root, capture_output=True, text=True, timeout=timeout_seconds
-    )
+    build = _run_lean([*command, "build"], cwd=root, timeout=timeout_seconds)
     if build.returncode:
         raise RuntimeError(f"Lean library build failed: {build.stdout}{build.stderr}")
     with tempfile.TemporaryDirectory(prefix="mwpc-lean-") as temporary:
         source = Path(temporary) / "Certificate.lean"
         source.write_text(export.source, encoding="utf-8")
-        run = subprocess.run(
+        run = _run_lean(
             [*command, "env", "lean", str(source)],
             cwd=root,
-            capture_output=True,
-            text=True,
             timeout=timeout_seconds,
         )
     if run.returncode or "sorryAx" in run.stdout or "Lean.ofReduceBool" in run.stdout:

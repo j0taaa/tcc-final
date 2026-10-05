@@ -54,3 +54,17 @@ service data, outside the parent MIT grant. Each record retains its retrieval
 date, source URL and attribution to Open-Meteo and GeoNames. Service documentation:
 https://open-meteo.com/en/docs/geocoding-api; location source:
 https://www.geonames.org/. No model weights are included.
+
+## Fresh MDLM CPU probes (M30)
+
+The model architecture/checkpoint is downloaded from the official
+[kuleshov-group/mdlm-owt](https://huggingface.co/kuleshov-group/mdlm-owt),
+revision `d0958fa851335ece6c15260ce0025f030673c0fb`, under Apache-2.0.
+The upstream [MDLM repository](https://github.com/kuleshov-group/mdlm) and its
+license govern the cached source and weights. They are not copied into Git or
+redistributed with the package. `scripts/exact_commit/mdlm_cpu.py` records and
+checks upstream hashes and provides native CPU attention/rotary/reshape kernels;
+it does not replace the upstream license or claim a bitwise FlashAttention port.
+The official GPT-2 tokenizer revision is recorded in both M30 configs.
+Only newly measured outputs, probabilities and portable project certificates
+are versioned as scientific evidence. No downloaded weights are distributed.

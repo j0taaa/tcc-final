@@ -1,5 +1,89 @@
 # Reproducing the MWPC research artifacts
 
+## Certified probability and fresh CPU dLLM predictions (M30)
+
+Read [definitions, complete proofs and limits](docs/research/m30-probability-certificates.md)
+and the [generated report](docs/artifacts/processed/m30_probability_v1/report.md).
+This is a separate probability/admission API, preserving original MWPC reward
+semantics and serial/EPIC/exact baselines. The model-independent input is
+`ProbabilityInput(SelectionInput, probabilities)` with exact rational original
+per-support probabilities; fixed rows have probability one. `probability_partition`
+returns a portable partition; `verify_mass_proof` recomputes its mass and
+conditional TV without an optimizer. `certified_parallel_update` refuses an
+uncertified tolerance and never inserts an unbounded fallback. Mean-field
+trajectory transport has explicit every-state premises, not automatic model
+accuracy or future-trajectory reward optimality.
+
+From the complete Git evidence checkout, verify/rebuild all 192 evaluation cells
+and 12 source predictions offline:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.build_probability_results --check
+.venv/bin/python -m mwpc_exact.mass_cli --verify docs/artifacts/raw/m30_probability_v1/probes/proofs/json_schema_type-2-top8_plus_catalog-finite_language_coverage-64.json.gz --sample --max-tv 1/20
+.venv/bin/python -m mwpc_exact.mass_cli --verify docs/artifacts/raw/m30_probability_v1/recursive_probes/proofs/one_child_arrays_depth3-2-top8_plus_alphabet-terminal_alphabet_coverage-64.json.gz --sample --max-tv 1/20
+```
+
+Drop `--check` only to regenerate derived prose/macros. Verification checks
+complete file inventories, every hash/config/row, full original F64 softmax,
+independent exact one/two-token controls and original-input proofs. It performs
+no model inference or probability search. The full-vocabulary rational reference
+normalizes the recorded F64 row once, before restriction; retained top-K rows
+are never renormalized. Unsupported controls have no ordinary byte emission.
+Coverage currently requires ABSENT EOS; generic probability certificates also
+support existing EOS/PAD semantics. Full/represented scopes remain distinct.
+
+Fresh inference is opt-in, downloads the hash-pinned Apache-2.0 official MDLM
+checkpoint (~680 MB) into ignored `.cache/mdlm`, and requires the pinned CPU
+Torch/transformers dependencies from the existing EPIC environment. No new
+package dependency or GPU is necessary. Work from a clean producing commit and
+use **new** output paths:
+
+```bash
+OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=4 RAYON_NUM_THREADS=1 \
+  .venv/bin/python -m scripts.exact_commit.capture_mdlm_probability \
+  --config configs/experiments/m30_probability_cpu_v1.json --output results/raw/fresh-capture
+OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=4 RAYON_NUM_THREADS=1 \
+  .venv/bin/python -m scripts.exact_commit.run_probability_probes \
+  --capture results/raw/fresh-capture --output results/raw/fresh-probes
+```
+
+Repeat with `m30_probability_recursive_cpu_v1.json` and new paths for the
+recursive phase. Frozen protocol limits/tolerances and all errors/refusals are
+retained. Official source/checkpoint hashes and adapted-kernel hash are in
+metadata; CPU kernels are independently tested but are not claimed bitwise
+GPU-equivalent. Model loading/warmup is excluded from forward timings; support
+construction, coverage, search/checking and serialization are separate fields.
+The configurations preceded each phase's predictions; the recursive follow-up
+is development evidence after finite-catalog observations, not held-out accuracy.
+Specialized exact controls remain preferable for these small cases.
+
+## Certified conflicts and computation reuse (M29)
+
+[Complete report](docs/artifacts/processed/m29_conflict_v1/report.md) and
+[proof/reuse specification](docs/research/m29-conflict-commitment.md):
+
+```bash
+.venv/bin/python -m scripts.exact_commit.build_conflict_results --check
+.venv/bin/python -m mwpc_exact.conflict_cli --input docs/artifacts/raw/m28_budgeted_real_v1/completed/inputs/geocoding-v2-step01-ordinary-primary.json.gz --budget 2 --proof /tmp/geocoding-commit.json.gz
+.venv/bin/python -m mwpc_exact.conflict_cli --verify /tmp/geocoding-commit.json.gz
+```
+
+The two-sided engine revalidates full token witnesses and checks conflicts under
+safe containment, recalculating every changed reward. Its complete cohort is 72
+repeated-measure inputs from 36 saved LLaDA states, not fresh model generation.
+All six exact comparator/ablation results remain visible. The primary DP run was
+interrupted: 68 original measurements remain; four missing measurements were
+run separately. Two missing proof files were regenerated with archived scores
+checked, without replacing timing rows. Content-addressed interrupted inventories
+retain original bytes under `interruption-audit/`; continuation metadata names
+all producing commits. This recovery is not counted as a timing improvement.
+
+M29/M30 bulk research archives remain versioned in Git and excluded from the
+library sdist/wheel, like earlier large model campaigns. Installations preserve
+core APIs, proof/oracle tests, formal sources and small existing offline fixtures;
+full manuscript reproduction uses the Git evidence checkout. No weights or
+Hugging Face caches are distributed.
+
 ## Current mathematical contribution (M26)
 
 Current local delivery: [mathematical source/PDF snapshot](docs/releases/math-2026-09-30.md).

@@ -255,3 +255,26 @@ independently checked with Python JSON parsing and the recursive schema predicat
 for an exact mass/posterior control. Keep all outcomes. Run the same four limits,
 60-second soft deadlines and 5%/exact tolerances as phase one, using the pinned
 MDLM/CPU backend and a separate versioned config before these forwards.
+
+## Corollary: certifying the work of mean-field rejection sampling
+
+For independent draws from the **same frozen** normalized q, acceptance
+probability is the valid mass Z. If Z>0, the expected number N of draws before
+the first valid path is E[N]=1/Z. A certified positive lower mass L and upper
+mass V give 1/V <= E[N] <= 1/L. With V=0 no sample can succeed. With L=0<V,
+the expected work has no finite certified upper bound.
+
+**Proof.** Independent trials give Pr(N>k)=(1-Z)^k for k>=0. Summing tail
+probabilities gives the convergent geometric series 1/Z. Reciprocation of
+0<L<=Z<=V reverses both inequalities. The zero cases follow from acceptance
+probability zero or the absence of a positive lower bound. □
+
+This elementary corollary is established geometric-distribution mathematics.
+Its practical use here is quantified **after** the new probe observations from
+all twelve original distributions: rare admissible token paths may make naive
+validity rejection impractical, while certified finite-token inference can
+admit a sample or prove no sample fits. The specialized exact controls also
+avoid this rejection cost and may be cheaper than our generic solver. No
+additional measured rejection experiment, model-forward count, EPIC latency
+advantage or held-out confirmation is claimed. The report's derived expected
+number of sampling draws is not a measured wall time.

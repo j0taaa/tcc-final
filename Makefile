@@ -106,6 +106,7 @@ article-results:
 	$(VENV_PY) scripts/exact_commit/build_live_article_results.py --grounded
 	$(VENV_PY) -m scripts.exact_commit.build_budgeted_real_results
 	$(VENV_PY) -m scripts.exact_commit.build_conflict_results
+	$(VENV_PY) -m scripts.exact_commit.build_probability_results
 
 article-results-check:
 	$(VENV_PY) scripts/exact_commit/build_article_results.py --config $(ARTICLE_RESULT_CONFIG) --verify-existing
@@ -119,6 +120,7 @@ article-results-check:
 	$(VENV_PY) scripts/exact_commit/build_live_article_results.py --grounded --check
 	$(VENV_PY) -m scripts.exact_commit.build_budgeted_real_results --check
 	$(VENV_PY) -m scripts.exact_commit.build_conflict_results --check
+	$(VENV_PY) -m scripts.exact_commit.build_probability_results --check
 
 query-demo-check:
 	$(VENV_PY) scripts/exact_commit/build_query_demo_results.py --check

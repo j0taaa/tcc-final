@@ -10,6 +10,12 @@ EVIDENCE = ROOT / "docs" / "evidence" / "submission-bibliography-verification.md
 CHECKLIST = ROOT / "paper" / "FIELDS_TO_FILL.md"
 
 EXPECTED_KEYS = {
+    "davies2011maxhs",
+    "saikko2016lmhs",
+    "dubray2024anytime",
+    "renkens2014wmc",
+    "park2024gad",
+    "parys2025cars",
     "likhachev2003ara",
     "xu2026trie",
     "lean2026reference",

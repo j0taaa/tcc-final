@@ -5,24 +5,24 @@ resource_dp r0 4/72 b2: completed 11.3286s
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/home/jota/projects/tcc-final/scripts/exact_commit/complete_conflict_campaign.py", line 126, in <module>
+  File "<project>/scripts/exact_commit/complete_conflict_campaign.py", line 126, in <module>
     main()
-  File "/home/jota/projects/tcc-final/scripts/exact_commit/complete_conflict_campaign.py", line 122, in main
+  File "<project>/scripts/exact_commit/complete_conflict_campaign.py", line 122, in main
     (worker if args.worker else run)(args.source.resolve(), args.output.resolve())
-  File "/home/jota/projects/tcc-final/scripts/exact_commit/complete_conflict_campaign.py", line 113, in run
+  File "<project>/scripts/exact_commit/complete_conflict_campaign.py", line 113, in run
     original.verify(directory)
-  File "/home/jota/projects/tcc-final/scripts/exact_commit/run_conflict_real.py", line 360, in verify
+  File "<project>/scripts/exact_commit/run_conflict_real.py", line 360, in verify
     proof = read(directory / row["proof"])
             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jota/projects/tcc-final/scripts/exact_commit/run_conflict_real.py", line 42, in read
+  File "<project>/scripts/exact_commit/run_conflict_real.py", line 42, in read
     return json.loads(gzip.decompress(raw) if path.suffix == ".gz" else raw)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/__init__.py", line 346, in loads
+  File "<local-environment>", line 346, in loads
     return _default_decoder.decode(s)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/decoder.py", line 337, in decode
+  File "<local-environment>", line 337, in decode
     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/json/decoder.py", line 355, in raw_decode
+  File "<local-environment>", line 355, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

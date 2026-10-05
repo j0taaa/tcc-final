@@ -105,3 +105,13 @@ not a full probability-library coupling or source-level Python/Rust refinement.
 terminal-alphabet containment and its explicit support-coverage consequence,
 including productive recursive grammars. The Python checker scans every
 original vocabulary emission and checks all masked rows (ABSENT EOS only).
+
+M29's small constructed two-slot conflict certificate is kernel-checked in
+`docs/evidence/m29-concrete-conflicts-lean.json`. A real 75-node replay resource
+export exceeded the 180-second deadline; that report retains the incomplete
+attempt explicitly. All replay certificates pass the independent Python
+checker, but no claim that every large replay certificate passed Lean is made.
+The optional `--lean-limit N` selects the N smallest serialized distinct cores
+with stable fingerprint tie-breaking and records its scope; without it all
+31 distinct replay cores are attempted. Formal subprocess deadlines now kill
+Lake's actual Lean descendants, covered by an executing process regression.

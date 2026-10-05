@@ -342,7 +342,7 @@ def outputs():
     }
 
 
-def lean_conflicts(lake):
+def lean_conflicts(lake, limit=None):
     unique = {}
     for directory in (PRIMARY, FOLLOWUP):
         for path in sorted((directory / "proofs").glob("*.json.gz")):
@@ -350,14 +350,26 @@ def lean_conflicts(lake):
             for conflict in data.get("conflicts", []):
                 proof = conflict["proof"]
                 unique[proof["input_fingerprint"]] = proof
+    ordered = sorted(unique.items(), key=lambda item: (len(json.dumps(item[1])), item[0]))
+    selected = ordered if limit is None else ordered[:limit]
     results = {
         fingerprint: verify_with_lean(proof, formal_directory=ROOT / "formal", lake=lake)
-        for fingerprint, proof in sorted(unique.items())
+        for fingerprint, proof in selected
     }
     destination = ROOT / "docs/evidence/m29-concrete-conflicts-lean.json"
     destination.write_text(
         json.dumps(
-            {"verification": "PASS", "unique_conflicts": len(results), "cases": results},
+            {
+                "verification": "PASS",
+                "verification_scope": "specified_selected_concrete_resource_proofs",
+                "unique_conflicts": len(unique),
+                "selected_proofs": len(results),
+                "selection": "all"
+                if limit is None
+                else "smallest serialized proofs, stable fingerprint",
+                "cases": results,
+                "excluded": "not a Lean verification of every replay certificate or source code",
+            },
             sort_keys=True,
             indent=2,
         )
@@ -370,7 +382,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--lean")
+    parser.add_argument("--lean-limit", type=int)
     args = parser.parse_args()
+    if args.lean_limit is not None and (not args.lean or args.lean_limit < 1):
+        parser.error("--lean-limit requires --lean and a positive limit")
     for path, content in outputs().items():
         if args.check:
             if path.read_text() != content:
@@ -379,7 +394,7 @@ def main():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content)
     if args.lean:
-        lean_conflicts(args.lean)
+        lean_conflicts(args.lean, args.lean_limit)
 
 
 if __name__ == "__main__":

@@ -4,7 +4,27 @@ Research and implementation workspace for the TCC **Exact Maximum-Weight Paralle
 
 The project implements an exact, certificate-producing optimizer for selecting the maximum-weight compatible set of token proposals at one denoising step. EPIC's serial and heuristic decoders remain read-only baselines. Results over pruned alternatives are reported as exact on the represented support, never as full-vocabulary or future-trajectory optimality.
 
-The current contribution is **mathematical budgeted commitment**, independent of
+The project now also answers a different practical question: **can a valid
+parallel sample be admitted with a declared bound on distributional distortion?**
+The [probability proofs](docs/research/m30-probability-certificates.md) and
+[generated fresh-MDLM report](docs/artifacts/processed/m30_probability_v1/report.md)
+describe a separate anytime certificate API. Disjoint original-token boxes avoid
+counting ambiguous parses repeatedly. Original omitted mass remains visible;
+finite-yield or grammar-alphabet coverage can certify that no valid completion
+was omitted. The sharp total-variation bound either admits the update at a
+chosen tolerance or refuses it. The reference is the frozen grammar-conditioned
+mean-field prediction, not the model's complete generative joint or semantic
+correctness. Twelve new CPU MDLM predictions and all 192 evaluation cells,
+including 48 zero-mass evaluations, are archived independently of the old replay cohort.
+
+Verify a real new model prediction and sample without downloading a model:
+
+```bash
+.venv/bin/python -m mwpc_exact.mass_cli --verify docs/artifacts/raw/m30_probability_v1/probes/proofs/json_schema_type-2-top8_plus_catalog-finite_language_coverage-64.json.gz --sample --max-tv 1/20
+.venv/bin/python -m scripts.exact_commit.build_probability_results --check
+```
+
+The original contribution remains **mathematical budgeted commitment**, independent of
 benchmark win rates. The [complete definitions and proofs](docs/research/m26-mathematical-core.md)
 solve joint completion and position selection, give an exact budget frontier
 and independently checkable optimality certificates. For the same input,
@@ -18,7 +38,7 @@ budget selection from finite CFG feasibility. `ProofReuseSolver` retains
 certified conflicts and valid full witnesses across changing inputs. The
 [conflict/transport proofs](docs/research/m29-conflict-commitment.md) show when
 reuse eliminates new grammar-oracle calls. These established algorithmic ideas
-are specialized here; speed and scientific priority are separate claims.
+are specialized here; speed and scientific priority are separate claims. The [complete timing/ablation report](docs/artifacts/processed/m29_conflict_v1/report.md) retains every exact comparator and explains interrupted-proof recovery.
 
 ```bash
 .venv/bin/python -m mwpc_exact.conflict_cli --input saved-instance.json.gz --budget 2 --proof /tmp/commit.json.gz

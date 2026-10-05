@@ -54,8 +54,8 @@ The two-sided/witness-only follow-up was developed after seeing conflict-only co
 
 Status counts: `{"conflict_cold:completed": 648, "conflict_reuse:completed": 648, "proof_reuse:completed": 648, "ranked_subsets:completed": 648, "resource_dp:completed": 72, "witness_only:completed": 648}`.
 
-Producing commits: `e60922525aad5fcab173209708ba573095d5720a`, `bb6613661bb2723e832aee443fc22012e724c6e1`.
+Producing commits: `bb6613661bb2723e832aee443fc22012e724c6e1`, `e31b6517ff7b9d0762d6c4f4ffeb0479ea64a9a3`, `e60922525aad5fcab173209708ba573095d5720a`.
 
-Configs, raw rows and compressed certificates are retained under `docs/artifacts/raw/m29_conflict_v1/`. The initial metadata-serialization failure occurred before any model-state evaluation and is documented separately.
+Configs, raw rows and compressed certificates are retained under `docs/artifacts/raw/m29_conflict_v1/`. The initial metadata-serialization failure occurred before any model-state evaluation. An interrupted run retained 68/72 DP measurements; four missing measurements were run separately. Two missing proofs were regenerated against their archived scores without replacing timing rows. Content-addressed `interruption-audit/inventory.json` retains every file from the failed/interrupted attempts; regeneration time is excluded from solve comparisons. Continuation metadata records all producing commits.
 
 The method optimizes provided model weights; neither these proofs nor the timings certify correct interpretation of a request. Large conflict sets can make the master search expensive. Exact-on-support, finite slots and deadline/infeasibility distinctions remain explicit.

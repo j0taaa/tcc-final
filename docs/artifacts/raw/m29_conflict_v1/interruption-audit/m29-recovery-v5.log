@@ -1,16 +1,16 @@
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
-  File "/home/jota/projects/tcc-final/scripts/exact_commit/complete_conflict_campaign.py", line 154, in <module>
+  File "<project>/scripts/exact_commit/complete_conflict_campaign.py", line 154, in <module>
     main()
-  File "/home/jota/projects/tcc-final/scripts/exact_commit/complete_conflict_campaign.py", line 150, in main
+  File "<project>/scripts/exact_commit/complete_conflict_campaign.py", line 150, in main
     (worker if args.worker else run)(args.source.resolve(), args.output.resolve())
-  File "/home/jota/projects/tcc-final/scripts/exact_commit/complete_conflict_campaign.py", line 131, in run
+  File "<project>/scripts/exact_commit/complete_conflict_campaign.py", line 131, in run
     original.write(directory / "continuation-metadata.json", metadata)
-  File "/home/jota/projects/tcc-final/scripts/exact_commit/run_conflict_real.py", line 48, in write
+  File "<project>/scripts/exact_commit/run_conflict_real.py", line 48, in write
     with path.open("xb") as stream:
          ^^^^^^^^^^^^^^^
-  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/pathlib.py", line 1044, in open
+  File "<local-environment>", line 1044, in open
     return io.open(self, mode, buffering, encoding, errors, newline)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileExistsError: [Errno 17] File exists: '/home/jota/projects/tcc-final/results/raw/m29_conflict_real_v5/continuation-metadata.json'
+FileExistsError: [Errno 17] File exists: '<project>/results/raw/m29_conflict_real_v5/continuation-metadata.json'

@@ -33,3 +33,34 @@ Induction on the final node proves the epsilon recurrence: every nonempty epsilo
 
 For $q$ nodes, $m_\varepsilon$ epsilon and $m_t$ terminal arcs, the direct bounds are $O(q^2(B+1)+qm_\varepsilon(B+1)+(|P_1|+1)m_tq^2(B+1)^2+(|P_2|+1)q^3(B+1)^2)$ arithmetic/chart operations and $O((|N|+1)q^2(B+1))$ entries, plus input and backpointers. This is pseudopolynomial for a generic binary-encoded resource cap; physical commitment needs only $B\leq|I|$. Rational bit costs are additional; this is not a GPU latency bound.
 
+
+% M30 compact-main relocation; original proofs preserved.
+For slot $i$, share its distinct nonempty proper byte prefixes $P_i$. Private expansion uses $\sum_{a\in S_i^{\rm ord}}(|\operatorname{emit}(a)|-1)$ internal nodes; compact expansion uses $|P_i|$, never more. Each closing retains its token ID, including aliases; when the entire token is another token's proper prefix, its closing is epsilon. The two encodings preserve every completion, reward and budget. Shared prefixes strictly reduce nodes, not necessarily measured latency; no path is pruned.
+
+
+\subsection{Certified quality without completing the exact search}
+
+Let $m_i=\max_a r_i(a)$ include every frozen proposal, even outside the current support; let $U_B$ sum the $\min(B,|I|)$ largest $m_i$. A separately validated completion and batch give reward $L$.
+\begin{theorem}[Relaxation and support-expansion certificate]
+For any such batch, $L\leq\operatorname{OPT}_B\leq U_B$. Its additive loss is at most $U_B-L$; for $U_B>0$, it achieves at least $L/U_B$ of optimum. If $L=U_B$, no support expansion preserving the frozen proposals, weights, fixed slots, grammar and EOS/PAD can improve its reward.
+\label{thm:quality-bound}
+\end{theorem}
+\begin{proof}
+For any feasible $(y,T)$, $\sum_{i\in T}r_i(y_i)\leq\sum_{i\in T}m_i\leq U_B$. A valid witness supplies the lower bound. Division gives the ratio; equality gives optimality in every retained-input expansion, since the same relaxation bounds each one. If $U_B=0$, every feasible batch has zero reward.
+\end{proof}
+The bound can be arbitrarily loose. This is a cheap incumbent certifier, not an implemented improving anytime search. A timeout without a valid incumbent proves no lower bound; support scope remains explicit.
+
+
+\begin{corollary}[Certified capacity planning]
+For nonempty support, $\operatorname{OPT}_b$ is nondecreasing. The smallest $b$ with $\operatorname{OPT}_b\geq Q$ is the minimum number of physical commitments needed to achieve reward target $Q$, or no such budget exists.
+\end{corollary}
+\begin{proof}
+Every feasible batch at budget $b$ is feasible at $b+1$. A qualifying batch exists exactly when the corresponding optimum reaches $Q$; taking the first qualifying cap proves minimality.
+\end{proof}
+
+\begin{proposition}[Optimal number of irreversible update rounds]
+With $M$ initially free positions, fixed $B\geq1$, no remasking, a feasible witness at every step, and support updates retaining that witness, filling unused capacity from the witness finishes in $\lceil M/B\rceil$ rounds, the minimum possible under this update budget.
+\end{proposition}
+\begin{proof}
+Every round fixes at most $B$ positions, giving the lower bound. Adding witness tokens to the optimal batch preserves its feasibility and fixes $\min(B,M_{\mathrm{remaining}})$ positions. If such a fallback matched an unpaid positive reward, adding it would improve the purported optimum, a contradiction. Thus fallback is unscored and the bound is attained. This counts updates, not model calls or semantic correctness.
+\end{proof}

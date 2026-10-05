@@ -74,3 +74,31 @@ def test_axiom_audit_requires_all_named_theorems_and_accepts_only_standard_logic
     }
     with pytest.raises(ValueError, match="exactly"):
         audit_lean_axioms(output, ("MWPC.a", "MWPC.b", "MWPC.c"))
+
+
+def test_formal_timeout_terminates_the_actual_descendant_process(tmp_path):
+    import os
+    import subprocess
+    import sys
+    import time
+
+    from mwpc_exact.lean_bridge import _run_lean
+
+    if os.name != "posix":
+        pytest.skip("process-group regression targets the supported Linux environment")
+    delayed = tmp_path / "orphan-output"
+    started = tmp_path / "started"
+    child = (
+        "import time;from pathlib import Path;time.sleep(.5);"
+        f"Path({str(delayed)!r}).write_text('alive')"
+    )
+    parent = (
+        "import subprocess,sys,time;from pathlib import Path;"
+        f"subprocess.Popen([sys.executable,'-c',{child!r}]);"
+        f"Path({str(started)!r}).write_text('started');time.sleep(10)"
+    )
+    with pytest.raises(subprocess.TimeoutExpired):
+        _run_lean([sys.executable, "-c", parent], cwd=tmp_path, timeout=0.25)
+    assert started.read_text() == "started"
+    time.sleep(0.5)
+    assert not delayed.exists(), "Lean deadline left a live descendant"

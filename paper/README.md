@@ -1,12 +1,13 @@
 # TCC in LaTeX — Exact MWPC for CFG-constrained dLLMs
 
-This directory contains the SBC-format article **Budget-Optimal Parallel
-Commitment with Checkable Proofs for CFG-Constrained Diffusion Language Models**.
+This directory contains the SBC-format article **Certifying Parallel Commitment
+and Sampling Error for CFG-Constrained Diffusion Language Models**.
 
 The current build has **16 pages**, with definitions, complete proofs,
 resource recurrences, checkable optimality, complexity and implementation
-contracts, two unchanged historical result tables, limitations and the AI-use
-declaration. Earlier algorithms and empirical detail are preserved in separate
+contracts, fresh prediction/admission results, historical negative findings,
+limitations and the AI-use declaration. Complete historical tables remain
+unchanged in their generated files and supplementary sources. Earlier algorithms and empirical detail are preserved in separate
 supplementary sources.
 
 M27 adds certified incumbent-quality/support-expansion bounds, compact token
@@ -35,19 +36,20 @@ is introduced.
 4. Overleaf runs BibTeX automatically. If references remain unresolved, use
    **Recompile from scratch**.
 
-## Current mathematical focus
+## Budgeted-reward foundation
 
-The M26 article centers joint budgeted commitment and independently checkable
+The M26 foundation centers joint budgeted commitment and independently checkable
 optimality. `budgeted-math.tex` contains the exact resource-DAG construction,
 complete proofs, universal same-input batch comparison and infinite-family
 separations. The mathematical contribution does not depend on benchmark wins.
 Original parser proofs are preserved in `supplement-foundations.tex`; full M25
 empirical prose is preserved verbatim in `supplement-empirical.tex`. These separate
 sources supplement the main page budget. Historical negative evidence remains
-in the main text and unchanged generated tables.
+in the main text and unchanged supplementary generated tables.
 
 The rational reference budget API is implemented. Production Rust integration
-for this new dimension and proof-assistant formalization are future work.
+for this dimension and full source refinement remain future work; Lean already
+checks the documented mathematical specifications and selected resource cases.
 The earlier GPU results measure the old policies, not this new algorithm.
 
 ## Building locally
@@ -95,3 +97,19 @@ in `docs/artifacts/README.md`.
 - The bibliography and novelty claims must be updated before the final version
   because this is a rapidly evolving research area.
 - The AI-use declaration must describe the author's actual use of the tools.
+
+The current main article is *Certifying Parallel Commitment and Sampling Error
+for CFG-Constrained Diffusion Language Models*. It separates exact reward
+optimization from certified mean-field sampling/admission. `probabilistic-commitment.tex`
+contains the mass, sharp conditional-error, coverage and transport statements.
+Twelve fresh CPU MDLM predictions and all 192 outcomes are documented by the
+[generated report](../docs/artifacts/processed/m30_probability_v1/report.md).
+Established WMC/conditioning, support filtering and AR grammar alignment are
+explicit antecedents; no world-first principle or general decoder superiority
+is claimed. The nine-theorem correspondence is in the
+[current proof audit](../docs/evidence/submission-proof-audit.md).
+
+The page-limited main preserves complete historical negative findings in prose;
+full historical tables and longer DP/foundation/conflict proofs remain in the
+supplement sources. `make article-results-check` verifies all generated products,
+including M29/M30. `scripts/check_paper.py` retains the 16-page/no-overflow gate.

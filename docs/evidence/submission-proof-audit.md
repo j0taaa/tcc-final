@@ -136,3 +136,28 @@ algorithm correctness, infinite-language separations and the update-round
 formula are not silently claimed as Lean proofs. The written proofs and
 independent oracles remain scientifically necessary. Execution evidence is
 `m27-formal-checks.json` and `m27-final-checks.md`.
+
+## Current M30 article correspondence (5 October 2026)
+
+The preceding theorem numbers describe the historical unbudgeted source now
+preserved verbatim in `paper/supplement-foundations.tex`. They must not be read
+as the current main article's numbering. Its nine numbered theorems now map as
+follows; all proofs have been inspected against the actual contracts.
+
+| Main theorem | Statement and implementation | Formal boundary |
+| --- | --- | --- |
+| 1 | Exact budget frontier; `reference/budgeted_parser.py` and `budgeted_commit.py` | Full written induction in `supplement-resource-dp.tex`; Lean certifies resource upper potentials, not Python DP source completeness |
+| 2 | Optimality-certificate soundness/completeness; `budget_certificate.py`, `budget_proof.py` | Universal soundness plus concrete original-graph kernel exports; Python checks original token/state correspondence |
+| 3 | Same-input batch dominance | `Selection.lean` and written feasible-pair proof; does not equate different native EPIC supports |
+| 4 | Confidence/preselection no constant approximation | Infinite-family written proof and unchanged upstream-selector regressions; not a model prevalence result |
+| 5 | Post-filtered ordinary optimum can lose arbitrarily much | Infinite-family written proof plus exact enumeration; not an empirical win-rate claim |
+| 6 | Conflict exactness and safe two-sided reuse; `conflict_commit.py`, `proof_reuse.py`, independent checker | `Conflicts.lean` covers master cover, transport and amortized queries; one constructed small conflict is additionally exported and checked. A 75-node real replay export timed out at 180 s, recorded in `m29-concrete-conflicts-lean.json`; no blanket concrete Lean pass is claimed |
+| 7 | Disjoint token mass envelope and sharp conditional TV; `mass_certificate.py`, `mass_solver.py` | `Probability.lean` proves partition/ratio/scaled-L1/event algebra; independent exhaustive distribution controls check the implementation |
+| 8 | Closed-yield and terminal-alphabet support coverage; `language_coverage.py` | Universal derivation-induction yield/alphabet/transport proofs, with full original-vocabulary Python checks; current coverage requires ABSENT EOS |
+| 9 | Parallel-update data processing and conditional history-TV composition; `probabilistic_update.py` | Complete written event/coupling proof, exact small history-distribution controls; Lean checks finite error-budget arithmetic, not a full probabilistic coupling construction |
+
+The geometric rejection-work identity is an explicitly established corollary,
+not a measured timing result or a new sampling principle. The source-level
+correctness of all Python, Rust, kernels, tokenizers and models remains outside
+Lean. Tests and independently checked certificates complement, rather than
+replace or overstate, this mathematical proof scope.

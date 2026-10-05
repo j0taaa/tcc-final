@@ -1,0 +1,734 @@
+{
+  "by_mode": {
+    "finite_language_coverage": {
+      "certified_tolerance": 33,
+      "incomplete": 15
+    },
+    "generic_tail": {
+      "incomplete": 72,
+      "zero_valid_probability_on_support": 24
+    },
+    "terminal_alphabet_coverage": {
+      "certified_tolerance": 18,
+      "incomplete": 6,
+      "zero_valid_probability_on_support": 24
+    }
+  },
+  "evaluations": 192,
+  "examples": [
+    {
+      "actual_tv": [
+        0,
+        1
+      ],
+      "case": "http_method-1",
+      "check_seconds": 0.5630709560000469,
+      "coverage_status": "certified_tolerance",
+      "coverage_tv": [
+        0,
+        1
+      ],
+      "expected_rejection_draws": [
+        5192296858534823192876902525308501,
+        185931985889435220968851942408192
+      ],
+      "full_valid_mass": [
+        185931985889435220968851942408192,
+        5192296858534823192876902525308501
+      ],
+      "generic_status": "incomplete",
+      "generic_tv": [
+        518862540999238966079909078896213,
+        704794526888674187048761021304405
+      ],
+      "oracle_calls": 5,
+      "raw_omitted_mass": [
+        518862540999238966079909078896213,
+        5192296858534823192876902525308501
+      ],
+      "sample": "{\"method\":\"POST\",\"path\":\"/status\"}",
+      "solve_seconds": 1.8696272329998465,
+      "valid_paths": 4
+    },
+    {
+      "actual_tv": [
+        0,
+        1
+      ],
+      "case": "http_method-2",
+      "check_seconds": 1.891291289000037,
+      "coverage_status": "certified_tolerance",
+      "coverage_tv": [
+        0,
+        1
+      ],
+      "expected_rejection_draws": [
+        51422017416287945630089369248068625406355182135182742329133175,
+        1705597753730026013600411058072885202009127306739580928
+      ],
+      "full_valid_mass": [
+        1705597753730026013600411058072885202009127306739580928,
+        51422017416287945630089369248068625406355182135182742329133175
+      ],
+      "generic_status": "incomplete",
+      "generic_tv": [
+        33784020879784089972639343281586905737034062378627596957157495,
+        33784022585381843702665356881997963809919264387754903696738423
+      ],
+      "oracle_calls": 20,
+      "raw_omitted_mass": [
+        6756804175956817994527868656317381147406812475725519391431499,
+        10284403483257589126017873849613725081271036427036548465826635
+      ],
+      "sample": "{\"method\":\"PUT\",\"path\":\"/status\"}",
+      "solve_seconds": 18.769962951000252,
+      "valid_paths": 10
+    },
+    {
+      "actual_tv": [
+        0,
+        1
+      ],
+      "case": "json_schema_type-1",
+      "check_seconds": 0.16212801400024546,
+      "coverage_status": "certified_tolerance",
+      "coverage_tv": [
+        0,
+        1
+      ],
+      "expected_rejection_draws": [
+        10141204801825817661849002609329,
+        42213272993448848212197638144
+      ],
+      "full_valid_mass": [
+        42213272993448848212197638144,
+        10141204801825817661849002609329
+      ],
+      "generic_status": "incomplete",
+      "generic_tv": [
+        6010549898059423353113249352369,
+        6052763171052872201325446990513
+      ],
+      "oracle_calls": 7,
+      "raw_omitted_mass": [
+        6010549898059423353113249352369,
+        10141204801825817661849002609329
+      ],
+      "sample": "{\"type\":\"object\"}",
+      "solve_seconds": 0.37290959500023746,
+      "valid_paths": 6
+    },
+    {
+      "actual_tv": [
+        6981757337631858558890444920164,
+        9033849174403655587756641629592566933
+      ],
+      "case": "json_schema_type-2",
+      "check_seconds": 1.844218668999929,
+      "coverage_status": "certified_tolerance",
+      "coverage_tv": [
+        36085290922176268104428551438749921991,
+        1192417091580904966459383142049648708423
+      ],
+      "expected_rejection_draws": [
+        4285168118023970938181382605763333447219800183677869196569331,
+        5207659491272392478230673125177246886224494293684322304
+      ],
+      "full_valid_mass": [
+        5207659491272392478230673125177246886224494293684322304,
+        4285168118023970938181382605763333447219800183677869196569331
+      ],
+      "generic_status": "incomplete",
+      "generic_tv": [
+        11542650830353104300113085613516863202406551150321908176634073,
+        11542666453331578117290520305536238734147209823804789229600985
+      ],
+      "oracle_calls": 28,
+      "raw_omitted_mass": [
+        11542650830353104300113085613516863202406551150321908176634073,
+        12855504354071912814544147817290000341659400551033607589707993
+      ],
+      "sample": "{\"type\":\"string\"}",
+      "solve_seconds": 12.374652184000297,
+      "valid_paths": 16
+    },
+    {
+      "actual_tv": [
+        0,
+        1
+      ],
+      "case": "one_child_arrays_depth1-1",
+      "check_seconds": 0.07596684100008133,
+      "coverage_status": "certified_tolerance",
+      "coverage_tv": [
+        0,
+        1
+      ],
+      "expected_rejection_draws": [
+        5794974172471916033332133189287,
+        1125500783589079191972661428224
+      ],
+      "full_valid_mass": [
+        1125500783589079191972661428224,
+        5794974172471916033332133189287
+      ],
+      "generic_status": "incomplete",
+      "generic_tv": [
+        1128982284825191606309897068177,
+        9007487769948745950118527065745
+      ],
+      "oracle_calls": 2,
+      "raw_omitted_mass": [
+        1128982284825191606309897068177,
+        40564819207303412233324932325009
+      ],
+      "sample": "[]",
+      "solve_seconds": 0.11820252099914796,
+      "valid_paths": 1
+    },
+    {
+      "actual_tv": [
+        0,
+        1
+      ],
+      "case": "one_child_arrays_depth1-2",
+      "check_seconds": 0.14977110200015886,
+      "coverage_status": "certified_tolerance",
+      "coverage_tv": [
+        1127176240144566188016891213917465641,
+        6168554111970015342572442546798421617705
+      ],
+      "expected_rejection_draws": [
+        286174705621077975504779594973121045807252273885204395585945049,
+        3798893510457154340356486798932057105103549007994247377321984
+      ],
+      "full_valid_mass": [
+        3798893510457154340356486798932057105103549007994247377321984,
+        286174705621077975504779594973121045807252273885204395585945049
+      ],
+      "generic_status": "incomplete",
+      "generic_tv": [
+        243845980682647710308112144536877423311036890926635224654810751,
+        331220531423162260136311340912314736728418518110502914333216383
+      ],
+      "oracle_calls": 4,
+      "raw_omitted_mass": [
+        243845980682647710308112144536877423311036890926635224654810751,
+        6582018229284793436609930684381784053566802299359701098476736127
+      ],
+      "sample": "[[]]",
+      "solve_seconds": 0.22121765399970172,
+      "valid_paths": 2
+    },
+    {
+      "actual_tv": null,
+      "case": "one_child_arrays_depth3-1",
+      "check_seconds": 0.07704176800052664,
+      "coverage_status": "zero_valid_probability_on_support",
+      "coverage_tv": null,
+      "expected_rejection_draws": null,
+      "full_valid_mass": [
+        0,
+        1
+      ],
+      "generic_status": "zero_valid_probability_on_support",
+      "generic_tv": null,
+      "oracle_calls": 1,
+      "raw_omitted_mass": [
+        13933088528288125246499650969,
+        211275100038038489671282916761
+      ],
+      "sample": null,
+      "solve_seconds": 0.11119067599975097,
+      "valid_paths": 0
+    },
+    {
+      "actual_tv": [
+        0,
+        1
+      ],
+      "case": "one_child_arrays_depth3-2",
+      "check_seconds": 0.19411167500038573,
+      "coverage_status": "certified_tolerance",
+      "coverage_tv": [
+        0,
+        1
+      ],
+      "expected_rejection_draws": [
+        4184734490257770620275966134386301905551166657193254717999,
+        348975891055550539047566814500817634591476554177043234816
+      ],
+      "full_valid_mass": [
+        348975891055550539047566814500817634591476554177043234816,
+        4184734490257770620275966134386301905551166657193254717999
+      ],
+      "generic_status": "incomplete",
+      "generic_tv": [
+        1561131140290818021759514180905548012539462575033622333999,
+        1910107031346368560807080995406365647130939129210665568815
+      ],
+      "oracle_calls": 5,
+      "raw_omitted_mass": [
+        1561131140290818021759514180905548012539462575033622333999,
+        4184734490257770620275966134386301905551166657193254717999
+      ],
+      "sample": "[[[]]]",
+      "solve_seconds": 0.29020440400017833,
+      "valid_paths": 2
+    },
+    {
+      "actual_tv": null,
+      "case": "one_child_arrays_depth8-1",
+      "check_seconds": 0.07775224699980754,
+      "coverage_status": "zero_valid_probability_on_support",
+      "coverage_tv": null,
+      "expected_rejection_draws": null,
+      "full_valid_mass": [
+        0,
+        1
+      ],
+      "generic_status": "zero_valid_probability_on_support",
+      "generic_tv": null,
+      "oracle_calls": 1,
+      "raw_omitted_mass": [
+        13702335334896914360710847511,
+        10141204801825826851368509758487
+      ],
+      "sample": null,
+      "solve_seconds": 0.11190759100009018,
+      "valid_paths": 0
+    },
+    {
+      "actual_tv": null,
+      "case": "one_child_arrays_depth8-2",
+      "check_seconds": 0.07907578599952103,
+      "coverage_status": "zero_valid_probability_on_support",
+      "coverage_tv": null,
+      "expected_rejection_draws": null,
+      "full_valid_mass": [
+        0,
+        1
+      ],
+      "generic_status": "zero_valid_probability_on_support",
+      "generic_tv": null,
+      "oracle_calls": 1,
+      "raw_omitted_mass": [
+        21202351525016677885443591059707330976854305924206548808591,
+        6427752177035958137191705959943616145792730715342719558939535
+      ],
+      "sample": null,
+      "solve_seconds": 0.1163091570006145,
+      "valid_paths": 0
+    },
+    {
+      "actual_tv": [
+        0,
+        1
+      ],
+      "case": "package_license_policy-1",
+      "check_seconds": 0.14000203200021133,
+      "coverage_status": "certified_tolerance",
+      "coverage_tv": [
+        0,
+        1
+      ],
+      "expected_rejection_draws": [
+        10384593717069639406203294813165341,
+        745160460022889820740745428992
+      ],
+      "full_valid_mass": [
+        745160460022889820740745428992,
+        10384593717069639406203294813165341
+      ],
+      "generic_status": "incomplete",
+      "generic_tv": [
+        439840872673439951948010584971037,
+        440586033133462841768751330400029
+      ],
+      "oracle_calls": 2,
+      "raw_omitted_mass": [
+        439840872673439951948010584971037,
+        10384593717069639406203294813165341
+      ],
+      "sample": "{\"license\":\"MIT\"}",
+      "solve_seconds": 0.2273255310001332,
+      "valid_paths": 1
+    },
+    {
+      "actual_tv": [
+        0,
+        1
+      ],
+      "case": "package_license_policy-2",
+      "check_seconds": 0.19686592500011102,
+      "coverage_status": "certified_tolerance",
+      "coverage_tv": [
+        0,
+        1
+      ],
+      "expected_rejection_draws": [
+        1684996666696917035234503143396460484144486799148653005342574731953,
+        10844114362545429244305242696905467256972672671124815872
+      ],
+      "full_valid_mass": [
+        10844114362545429244305242696905467256972672671124815872,
+        1684996666696917035234503143396460484144486799148653005342574731953
+      ],
+      "generic_status": "incomplete",
+      "generic_tv": [
+        487539162514109051481038527735247629610542456548140571359770665649,
+        487539162524953165843583956979552872307447923805113244030895481521
+      ],
+      "oracle_calls": 5,
+      "raw_omitted_mass": [
+        487539162514109051481038527735247629610542456548140571359770665649,
+        1684996666696917035234503143396460484144486799148653005342574731953
+      ],
+      "sample": "{\"license\":\"MIT\"}",
+      "solve_seconds": 1.1530883720001839,
+      "valid_paths": 2
+    }
+  ],
+  "fresh_canvases": 12,
+  "portable_proofs": 192,
+  "provenance": [
+    {
+      "capture_manifest_sha256": "47647a2094305a2ddad638453c403893fb12c15216e177d062ad10663520fc5f",
+      "capture_metadata": {
+        "adapted_model_sha256": "90caa71ec43c77ff92735dba5fdc97a6a546c9f087a35b1a43e8b6e469251fd8",
+        "checkpoint_sha256": {
+          "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+          "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+          "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4",
+          "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7"
+        },
+        "config_sha256": "9e2cfaf2b29ddab563436756b2eaa61f179e45deeede20d87dd999122275f1ed",
+        "config_source": "configs/experiments/m30_probability_cpu_v1.json",
+        "device": "cpu",
+        "git_commit": "8e891f8e79bbb471c0bb21e60f542a939302788f",
+        "git_dirty": false,
+        "hardware_software": {
+          "affinity_cpu_count": 16,
+          "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+          "cuda_driver_supported_runtime": "13.2",
+          "cuda_driver_version": "595.91.07",
+          "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+          "git_commit": "8e891f8e79bbb471c0bb21e60f542a939302788f",
+          "git_dirty": false,
+          "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+          "gpu_total_vram_bytes": 12884901888,
+          "logical_cpu_count": 16,
+          "machine": "x86_64",
+          "mwpc_exact_version": "0.2.0",
+          "mwpc_parser_py_version": "0.1.0",
+          "os_platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+          "os_release": "7.0.0-34-generic",
+          "os_system": "Linux",
+          "python_version": "3.11.16",
+          "pytorch_version": "2.8.0+cpu",
+          "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+          "rustformlang_version": "0.1.0",
+          "thread_environment": {
+            "MKL_NUM_THREADS": "4",
+            "NUMEXPR_NUM_THREADS": null,
+            "OMP_NUM_THREADS": "4",
+            "OPENBLAS_NUM_THREADS": "1",
+            "RAYON_NUM_THREADS": "1",
+            "RUST_MIN_STACK": null
+          },
+          "total_ram_bytes": 16533815296,
+          "transformers_version": "4.52.2"
+        },
+        "model_id": "kuleshov-group/mdlm-owt",
+        "model_revision": "d0958fa851335ece6c15260ce0025f030673c0fb",
+        "numeric_reference": "F32 CPU network; F64 softmax excluding MASK; exact binary rationals normalized over the entire non-mask vocabulary; retained rows are never renormalized",
+        "recorded_forwards": 6,
+        "tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+        "torch_threads": 4,
+        "warmup_forwards": 1
+      },
+      "evaluation_manifest_sha256": "4a183d815609f173461b6f4e60eaccef01a6bcc0a7c6c46804e5e5606fdef647",
+      "evaluation_metadata": {
+        "capture_archive": "results/raw/m30_probability_capture_v1",
+        "capture_manifest_sha256": "47647a2094305a2ddad638453c403893fb12c15216e177d062ad10663520fc5f",
+        "capture_metadata": {
+          "adapted_model_sha256": "90caa71ec43c77ff92735dba5fdc97a6a546c9f087a35b1a43e8b6e469251fd8",
+          "checkpoint_sha256": {
+            "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+            "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+            "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4",
+            "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7"
+          },
+          "config_sha256": "9e2cfaf2b29ddab563436756b2eaa61f179e45deeede20d87dd999122275f1ed",
+          "config_source": "configs/experiments/m30_probability_cpu_v1.json",
+          "device": "cpu",
+          "git_commit": "8e891f8e79bbb471c0bb21e60f542a939302788f",
+          "git_dirty": false,
+          "hardware_software": {
+            "affinity_cpu_count": 16,
+            "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+            "cuda_driver_supported_runtime": "13.2",
+            "cuda_driver_version": "595.91.07",
+            "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+            "git_commit": "8e891f8e79bbb471c0bb21e60f542a939302788f",
+            "git_dirty": false,
+            "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+            "gpu_total_vram_bytes": 12884901888,
+            "logical_cpu_count": 16,
+            "machine": "x86_64",
+            "mwpc_exact_version": "0.2.0",
+            "mwpc_parser_py_version": "0.1.0",
+            "os_platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+            "os_release": "7.0.0-34-generic",
+            "os_system": "Linux",
+            "python_version": "3.11.16",
+            "pytorch_version": "2.8.0+cpu",
+            "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+            "rustformlang_version": "0.1.0",
+            "thread_environment": {
+              "MKL_NUM_THREADS": "4",
+              "NUMEXPR_NUM_THREADS": null,
+              "OMP_NUM_THREADS": "4",
+              "OPENBLAS_NUM_THREADS": "1",
+              "RAYON_NUM_THREADS": "1",
+              "RUST_MIN_STACK": null
+            },
+            "total_ram_bytes": 16533815296,
+            "transformers_version": "4.52.2"
+          },
+          "model_id": "kuleshov-group/mdlm-owt",
+          "model_revision": "d0958fa851335ece6c15260ce0025f030673c0fb",
+          "numeric_reference": "F32 CPU network; F64 softmax excluding MASK; exact binary rationals normalized over the entire non-mask vocabulary; retained rows are never renormalized",
+          "recorded_forwards": 6,
+          "tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+          "torch_threads": 4,
+          "warmup_forwards": 1
+        },
+        "claim_scope": "Six new application probes, not a held-out accuracy benchmark or EPIC speed comparison",
+        "git_commit": "8e891f8e79bbb471c0bb21e60f542a939302788f",
+        "git_dirty": false,
+        "hardware_software": {
+          "affinity_cpu_count": 16,
+          "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+          "cuda_driver_supported_runtime": "13.2",
+          "cuda_driver_version": "595.91.07",
+          "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+          "git_commit": "8e891f8e79bbb471c0bb21e60f542a939302788f",
+          "git_dirty": false,
+          "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+          "gpu_total_vram_bytes": 12884901888,
+          "logical_cpu_count": 16,
+          "machine": "x86_64",
+          "mwpc_exact_version": "0.2.0",
+          "mwpc_parser_py_version": "0.1.0",
+          "os_platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+          "os_release": "7.0.0-34-generic",
+          "os_system": "Linux",
+          "python_version": "3.11.16",
+          "pytorch_version": "2.8.0+cpu",
+          "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+          "rustformlang_version": "0.1.0",
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": null,
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "RAYON_NUM_THREADS": "1",
+            "RUST_MIN_STACK": null
+          },
+          "total_ram_bytes": 16533815296,
+          "transformers_version": "4.52.2"
+        },
+        "new_model_forwards": 0,
+        "seed": 300000
+      },
+      "forward_seconds": {
+        "http_method-1": 0.09942351300014707,
+        "http_method-2": 0.08842634499978885,
+        "json_schema_type-1": 0.08331462600017403,
+        "json_schema_type-2": 0.08425845200008553,
+        "package_license_policy-1": 0.06033446599985837,
+        "package_license_policy-2": 0.05939753200027553
+      },
+      "fresh_canvases": 6,
+      "portable_proofs": 96,
+      "verification": "PASS"
+    },
+    {
+      "capture_manifest_sha256": "310f768d8e065d1ab1dcee6c9bb64684d80628f177817049c86f8c77286b1041",
+      "capture_metadata": {
+        "adapted_model_sha256": "90caa71ec43c77ff92735dba5fdc97a6a546c9f087a35b1a43e8b6e469251fd8",
+        "checkpoint_sha256": {
+          "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+          "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+          "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4",
+          "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7"
+        },
+        "config_sha256": "24402337874b5315d8a3e4e6dc6bbb5fa9e3cbf3c437620da1b9ee41a47a9f37",
+        "config_source": "configs/experiments/m30_probability_recursive_cpu_v1.json",
+        "device": "cpu",
+        "git_commit": "b0ed276858eb9f74e932ff192729654c8034d71c",
+        "git_dirty": false,
+        "hardware_software": {
+          "affinity_cpu_count": 16,
+          "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+          "cuda_driver_supported_runtime": "13.2",
+          "cuda_driver_version": "595.91.07",
+          "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+          "git_commit": "b0ed276858eb9f74e932ff192729654c8034d71c",
+          "git_dirty": false,
+          "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+          "gpu_total_vram_bytes": 12884901888,
+          "logical_cpu_count": 16,
+          "machine": "x86_64",
+          "mwpc_exact_version": "0.2.0",
+          "mwpc_parser_py_version": "0.1.0",
+          "os_platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+          "os_release": "7.0.0-34-generic",
+          "os_system": "Linux",
+          "python_version": "3.11.16",
+          "pytorch_version": "2.8.0+cpu",
+          "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+          "rustformlang_version": "0.1.0",
+          "thread_environment": {
+            "MKL_NUM_THREADS": "4",
+            "NUMEXPR_NUM_THREADS": null,
+            "OMP_NUM_THREADS": "4",
+            "OPENBLAS_NUM_THREADS": "1",
+            "RAYON_NUM_THREADS": "1",
+            "RUST_MIN_STACK": null
+          },
+          "total_ram_bytes": 16533815296,
+          "transformers_version": "4.52.2"
+        },
+        "model_id": "kuleshov-group/mdlm-owt",
+        "model_revision": "d0958fa851335ece6c15260ce0025f030673c0fb",
+        "numeric_reference": "F32 CPU network; F64 softmax excluding MASK; exact binary rationals normalized over the entire non-mask vocabulary; retained rows are never renormalized",
+        "recorded_forwards": 6,
+        "tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+        "torch_threads": 4,
+        "warmup_forwards": 1
+      },
+      "evaluation_manifest_sha256": "d86c3895f2393d53e4a29bfa4ded5e2542bfb6e3110b532e2d16eb2c7a80d915",
+      "evaluation_metadata": {
+        "capture_archive": "results/raw/m30_probability_recursive_capture_v1",
+        "capture_manifest_sha256": "310f768d8e065d1ab1dcee6c9bb64684d80628f177817049c86f8c77286b1041",
+        "capture_metadata": {
+          "adapted_model_sha256": "90caa71ec43c77ff92735dba5fdc97a6a546c9f087a35b1a43e8b6e469251fd8",
+          "checkpoint_sha256": {
+            "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+            "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+            "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4",
+            "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7"
+          },
+          "config_sha256": "24402337874b5315d8a3e4e6dc6bbb5fa9e3cbf3c437620da1b9ee41a47a9f37",
+          "config_source": "configs/experiments/m30_probability_recursive_cpu_v1.json",
+          "device": "cpu",
+          "git_commit": "b0ed276858eb9f74e932ff192729654c8034d71c",
+          "git_dirty": false,
+          "hardware_software": {
+            "affinity_cpu_count": 16,
+            "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+            "cuda_driver_supported_runtime": "13.2",
+            "cuda_driver_version": "595.91.07",
+            "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+            "git_commit": "b0ed276858eb9f74e932ff192729654c8034d71c",
+            "git_dirty": false,
+            "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+            "gpu_total_vram_bytes": 12884901888,
+            "logical_cpu_count": 16,
+            "machine": "x86_64",
+            "mwpc_exact_version": "0.2.0",
+            "mwpc_parser_py_version": "0.1.0",
+            "os_platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+            "os_release": "7.0.0-34-generic",
+            "os_system": "Linux",
+            "python_version": "3.11.16",
+            "pytorch_version": "2.8.0+cpu",
+            "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+            "rustformlang_version": "0.1.0",
+            "thread_environment": {
+              "MKL_NUM_THREADS": "4",
+              "NUMEXPR_NUM_THREADS": null,
+              "OMP_NUM_THREADS": "4",
+              "OPENBLAS_NUM_THREADS": "1",
+              "RAYON_NUM_THREADS": "1",
+              "RUST_MIN_STACK": null
+            },
+            "total_ram_bytes": 16533815296,
+            "transformers_version": "4.52.2"
+          },
+          "model_id": "kuleshov-group/mdlm-owt",
+          "model_revision": "d0958fa851335ece6c15260ce0025f030673c0fb",
+          "numeric_reference": "F32 CPU network; F64 softmax excluding MASK; exact binary rationals normalized over the entire non-mask vocabulary; retained rows are never renormalized",
+          "recorded_forwards": 6,
+          "tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+          "torch_threads": 4,
+          "warmup_forwards": 1
+        },
+        "claim_scope": "Six additional recursive-grammar application probes after finite-probe development, not held-out confirmation or accuracy claims",
+        "git_commit": "b0ed276858eb9f74e932ff192729654c8034d71c",
+        "git_dirty": false,
+        "hardware_software": {
+          "affinity_cpu_count": 16,
+          "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+          "cuda_driver_supported_runtime": "13.2",
+          "cuda_driver_version": "595.91.07",
+          "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+          "git_commit": "b0ed276858eb9f74e932ff192729654c8034d71c",
+          "git_dirty": false,
+          "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+          "gpu_total_vram_bytes": 12884901888,
+          "logical_cpu_count": 16,
+          "machine": "x86_64",
+          "mwpc_exact_version": "0.2.0",
+          "mwpc_parser_py_version": "0.1.0",
+          "os_platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+          "os_release": "7.0.0-34-generic",
+          "os_system": "Linux",
+          "python_version": "3.11.16",
+          "pytorch_version": "2.8.0+cpu",
+          "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+          "rustformlang_version": "0.1.0",
+          "thread_environment": {
+            "MKL_NUM_THREADS": "4",
+            "NUMEXPR_NUM_THREADS": null,
+            "OMP_NUM_THREADS": "4",
+            "OPENBLAS_NUM_THREADS": "1",
+            "RAYON_NUM_THREADS": "1",
+            "RUST_MIN_STACK": null
+          },
+          "total_ram_bytes": 16533815296,
+          "transformers_version": "4.52.2"
+        },
+        "new_model_forwards": 0,
+        "seed": 300000
+      },
+      "forward_seconds": {
+        "one_child_arrays_depth1-1": 0.04460084899983485,
+        "one_child_arrays_depth1-2": 0.04436828699999751,
+        "one_child_arrays_depth3-1": 0.041733627999747114,
+        "one_child_arrays_depth3-2": 0.0679783680006949,
+        "one_child_arrays_depth8-1": 0.06946039899958123,
+        "one_child_arrays_depth8-2": 0.06497341500016773
+      },
+      "fresh_canvases": 6,
+      "portable_proofs": 96,
+      "verification": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "scripts/exact_commit/build_probability_results.py": "1723875151e2d2787ef5aa32777f35583df7ddd19b0ec023c3dd202bc065a10e",
+    "scripts/exact_commit/run_probability_probes.py": "28863c17d507befd7bf14602c69585091d5424772a6cc72967974c790b48df43",
+    "src/mwpc_exact/language_coverage.py": "e1ef207487a291cd606ef90ffb02eaeb25578f4606a577e5f6b0c7e72de3cb3f",
+    "src/mwpc_exact/mass_certificate.py": "6f75e077a6fc1a5d37eb08d59f98787a2d4f1434347635c5d68f7a9f38a8eb46",
+    "src/mwpc_exact/mass_solver.py": "ce8a00b38f1ea279a8228cf7806588d33c733238077e955b8643a885ac6e5ff2",
+    "src/mwpc_exact/probabilistic_update.py": "3cd915e9bfdd8970dc4376ded7bf9785221e3c54d7da84a5f6fb94302f50dc57"
+  },
+  "status_counts": {
+    "certified_tolerance": 51,
+    "incomplete": 93,
+    "zero_valid_probability_on_support": 48
+  },
+  "verification": "PASS"
+}

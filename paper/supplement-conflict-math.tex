@@ -1,0 +1,12 @@
+% Details relocated from the page-limited main article.
+With $h$ applicable conflicts, master depth is at most $h$, each branch has at
+most $B$ children, and each node scans/sorts $m$ rewarded choices. Learning $H$
+conflicts costs at most $(B+1)H+1$ feasibility queries, including deletions.
+Along $T$ retained-support solves with budgets at most $B_{\max}$, the bound is
+$T+(B_{\max}+1)H$. Large conflict sets can still be expensive. In the fixed
+language $\{ab,ba\}$ with two high-weight $a$ proposals and budget two, cold
+solving uses $4T$ queries; retaining its forbidden $aa$ pair and valid $ab$
+witness uses four total over all score-scaled solves. This is a computation
+separation, not an empirical occurrence estimate. Full proofs are in
+\path{docs/research/m29-conflict-commitment.md}; Lean checks the stated cover,
+transport and query-count specifications.

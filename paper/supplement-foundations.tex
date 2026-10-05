@@ -1,3 +1,72 @@
+% M30 original ordinary MWPC formulation and finite-lattice proofs.
+\section{Reduction to the Highest-Reward Feasible Completion}
+\label{sec:reducao}
+
+\begin{theorem}[Fundamental equivalence]
+If $w_j\geq 0$ for every $j$, then
+\begin{equation}
+\max_{J\text{ compatible}}W(J)
+=
+\max_{y\in\Feas_x}R_C(y).
+\label{eq:equiv}
+\end{equation}
+If $\Feas_x=\varnothing$, both problems are declared infeasible.
+\end{theorem}
+
+\begin{proof}
+For any $y\in\Feas_x$, $\Match_C^+(y)$ is compatible with witness $y$ and has weight $R_C(y)$, since omitted matched proposals have zero weight. Therefore the left maximum is at least the right maximum. Conversely, a compatible $J$ has a witness $y$. Its positive-weight indices $J^+=\{j\in J:w_j>0\}$ satisfy $J^+\subseteq\Match_C^+(y)$, so non-negativity gives $W(J)=W(J^+)\leq W(\Match_C^+(y))=R_C(y)$. Taking maxima gives the opposite inequality and equality follows.
+\end{proof}
+
+\begin{corollary}[Optimal-batch recovery]
+If $y^*\in\argmax_{y\in\Feas_x}R_C(y)$, then the canonical batch $J^*=\Match_C^+(y^*)$ solves MWPC.
+\end{corollary}
+
+\begin{proof}
+$J^*$ is compatible because $y^*$ is its witness. Its weight is $R_C(y^*)$, which equals the MWPC optimum by Theorem~1.
+\end{proof}
+
+The grammar need not be unambiguous: reward is attached to tokens or arcs and productions are neutral, so derivations of one completion have equal value. Equal scores use stable traversal; no lexicographic secondary objective is implemented or claimed.
+
+\section{Generalization to a Finite Tokenizer-Aware Lattice}
+\label{sec:lattice}
+
+\subsection{Token lattice and provenance}
+
+A \emph{weighted token lattice} is a layered directed acyclic graph $A_{\mathrm{tok}}=(Q,E,q_0,F,\omega,\pi)$. For a canvas without early EOS, $Q$ contains layers $0,\ldots,n$; every arc from layer $i-1$ to $i$ corresponds to a token permitted in slot $i$. If $x_i$ is fixed, only its arc exists. If it is masked, there is one arc for every token in the represented support $S_i\subseteq\vocab$.
+
+The weight of an arc labeled $a$ in slot $i$ is
+\begin{equation}
+\omega(i,a)=\sum_{j:i_j=i,\ t_j=a}w_j.
+\end{equation}
+The function $\pi(i,a)$ stores the indices of positive-weight proposals satisfied by that arc. A complete path chooses exactly one token per slot, and the sum of its weights is $R_C(y)$. Provenance recovers the canonical $J^*=\Match_C^+(y^*)$ without inferring it again from detokenized text.
+
+When the model permits early termination, the lattice is composed with a regular constraint that accepts one occurrence of $\eos$ followed only by $\pad$, or it uses final states at different layers under explicit semantics. In either case, the number of consumed token arcs remains tied to the real canvas slots.
+
+\subsection{Composition with detokenization and lexing}
+
+EOS/PAD conditions apply to token IDs before detokenization. Expanding each token arc to bytes preserves its weight and provenance. The implemented CFG consumes raw-byte terminals; it does not insert a lexer or claim maximal-munch semantics. Optional composition with a lexical transducer must implement its declared priorities rather than accept arbitrary segmentation. That reference interface and its composition equation are detailed in the supplement and remain unused in live experiments.
+
+\subsection{Parsing and witness recovery}
+
+The ordinary solver computes a maximum-reward CFG path by max-plus parsing and reconstructs original token arcs. Epsilon closure and strict-CNF normalization retain original-path backpointers, with an explicit empty-word candidate. Terminal/binary span inference is the unbudgeted case of the resource construction proved in Section~\ref{sec:budgeted}. Its token-aligned CKY proof, complete graph algorithm and original soundness/completeness proof are preserved in \path{paper/supplement-foundations.tex}.
+
+Backtracking yields witness $y^*$ and the canonical ordinary MWPC set
+\[
+J^*\gets\{j:y^*_{i_j}=t_j,\ w_j>0\}.
+\]
+A completed search alone returns \textsc{Optimal} or \textsc{InfeasibleOnSupport}; a deadline interruption returns \textsc{Timeout} without a certificate.
+
+\begin{theorem}[Finite-slot exactness]
+If every complete path through $A_{\mathrm{tok}}$ traverses exactly one token arc per permitted slot and composition neither creates nor removes token arcs, every returned witness is representable in the actual number of canvas positions.
+\end{theorem}
+
+\begin{proof}
+By the layered construction, a start-to-finish path chooses one arc from layer $i-1$ to $i$ for each slot $i$. Internal detokenization or lexing transitions may emit zero or more symbols, but remain associated with the same token macro-arcs. Thus, no accepted path uses more slots than exist or depends on an abstract unbounded region.
+\end{proof}
+
+For an explicit epsilon-free graph, ordinary parsing takes $O(|P_2|q^3+|P_1||E|)$ operations and $O(|N|q^2)$ entries, excluding normalization and saturation. Polynomial complexity does not imply low practical cost. Top-$K$ optimality is restricted to the represented alternatives.
+
+
 % Historical unbudgeted parser proofs, preserved from 0f0f3d3.
 % Original numbering: CKY Theorem 2, graph Theorem 3.
 % Main mathematical proofs now concern the larger joint-budget problem.

@@ -1,0 +1,21 @@
+{
+  "scope": "Derived diagnostic logs only; configs, measured rows and original-file content-addressed inventory remain byte-for-byte unchanged. Machine-specific path strings replaced by declared markers.",
+  "logs": {
+    "m29-recovery.log": {
+      "original_sha256": "d3933a42992d3d840f4ae2c4234de9fb0e9bdd8bdd9e2479faa29da1f60b472e",
+      "sanitized_sha256": "eee1768cea0580dd16870a21981f56d90c2d3174821bb00ab1c15c5c876e2466"
+    },
+    "m29-recovery-v5.log": {
+      "original_sha256": "574e8c6f5aa7b5154d573de71847aea8f720b11b9c12d6294cdff091f54e3097",
+      "sanitized_sha256": "8cbaeed1ffff41f99c8880de3b52359616ba026955f990c6dfd8570f9e0c0c76"
+    },
+    "m29-execution.log": {
+      "original_sha256": "db5cb94429e62238606662523b5a18989aa1ab0de8300656decc2fe6b35359ab",
+      "sanitized_sha256": "dbccf50c09ccb528eb2522e73f315e0dfd580f198d34ae5f385ad1028dbf0bff"
+    },
+    "m29-completion.log": {
+      "original_sha256": "c4d126a63ef133f44f808472d107c81319500ca5adbd2c7fabba99a903aba8bb",
+      "sanitized_sha256": "6982cd528dcd2400475663c39a263f53dd98dbe2b87588273547d7b6a3e9168e"
+    }
+  }
+}
