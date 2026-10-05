@@ -12,7 +12,7 @@ import resource
 import signal
 import subprocess
 import sys
-from dataclasses import asdict
+from dataclasses import fields
 from fractions import Fraction
 from itertools import combinations
 from pathlib import Path
@@ -47,6 +47,15 @@ def write(path, value):
     raw = (json.dumps(value, sort_keys=True, allow_nan=False) + "\n").encode()
     with path.open("xb") as stream:
         stream.write(gzip.compress(raw, mtime=0) if path.suffix == ".gz" else raw)
+
+
+def system_data(system):
+    return {
+        field.name: dict(getattr(system, field.name))
+        if field.name == "thread_environment"
+        else getattr(system, field.name)
+        for field in fields(system)
+    }
 
 
 class JobTimeout(Exception):
@@ -276,7 +285,7 @@ def run(config_path, directory):
             "git_dirty": system.git_dirty,
             "config_source": str(config_path.relative_to(ROOT)),
             "config_sha256": sha(config_path),
-            "hardware_software": asdict(system),
+            "hardware_software": system_data(system),
             "new_model_forwards": 0,
             "comparison_scope": config["comparison_scope"],
             "timing_scope": config["timing_scope"],

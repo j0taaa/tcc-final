@@ -212,3 +212,22 @@ def test_portable_conflict_proof_roundtrip_and_independent_verification(monkeypa
     encoded["conflicts"][0]["choices"] = []
     with pytest.raises(ValueError):
         verify_conflict_proof(encoded, expected_input=state)
+
+
+def test_experiment_metadata_preserves_immutable_mapping_without_deepcopy():
+    import json
+    from dataclasses import dataclass
+    from types import MappingProxyType
+
+    from scripts.exact_commit.run_conflict_real import system_data
+
+    @dataclass(frozen=True)
+    class Metadata:
+        git_commit: str
+        thread_environment: object
+
+    source = Metadata("pinned", MappingProxyType({"OMP_NUM_THREADS": "1"}))
+    assert json.loads(json.dumps(system_data(source))) == {
+        "git_commit": "pinned",
+        "thread_environment": {"OMP_NUM_THREADS": "1"},
+    }
