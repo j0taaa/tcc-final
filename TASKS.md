@@ -16,6 +16,39 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M29 — Useful exact commitment through certified conflict learning
+
+Authorized 2026-10-05. Depends on M26--M28. Preserve the exact rational
+budgeted objective and every baseline. The new engine separates a small
+proposal master problem from finite-slot CFG feasibility, with portable
+infeasibility proofs and safe conflict reuse. Attribute implicit hitting sets
+and branch-and-bound to their established sources. Practical usefulness must
+be demonstrated on the complete existing real-state cohort, with the same
+objective/support as the reference; no semantic-quality or priority claim.
+
+- [x] T2900: Freeze the mathematical contract, prior-art boundaries and a
+  same-input protocol before evaluating the new engine. Include classical
+  ranked-subset enumeration and the resource DP as exact comparators.
+  **Evidence:** `docs/research/m29-conflict-commitment.md` acknowledges MaxHS,
+  LMHS, certifying DP, EPIC and FactorDLM, and fixes the same rational objective,
+  finite-support/status/certificate scope. `m29_conflict_real_v1.json` freezes
+  all 72 existing inputs, budgets 0--2, four exact methods, repetitions and
+  deadlines before any evaluation of the new engine on real states.
+- [ ] T2901: Implement the conflict master, independent certificate checker,
+  safe reuse and model-independent API. Prove exactness, termination and
+  the conflict-count/oracle-call bound. Exhaustive tests must cover aliases,
+  duplicates, fixed slots, EOS/PAD, infeasibility, timeout and unsafe expansion.
+  **Evidence:** Pending.
+- [ ] T2902: Execute the entire frozen real-state cohort, compare exact scores
+  and independently verify every certificate. Measure total solve/check time,
+  oracle calls and failures separately. Retain all outcomes and producing code.
+  **Evidence:** Pending.
+- [ ] T2903: Add Lean proofs for the new mathematical certificate/reuse scope;
+  provide a concrete runnable application and generated comparative report;
+  update the article only from audited results. Run full relevant regressions
+  and inspect the PDF. State precisely the achieved and unachieved advantages.
+  **Evidence:** Pending.
+
 ## M28 — Budgeted commitment on archived real dLLM states
 
 Authorized 2026-10-02. Depends on M27 and the immutable M17/M25 model

@@ -1,0 +1,42 @@
+{
+  "address_space_bytes": 4294967296,
+  "budgets": [
+    0,
+    1,
+    2
+  ],
+  "campaign_id": "m29_conflict_real_v1",
+  "cohort_config": "configs/experiments/m28_budgeted_real_replay_v1.json",
+  "cohort_config_sha256": "aa6ad04b72feb28438d8ec9a9d56734f4cfbfbced5cdafef8d414000d2a22413",
+  "comparison_scope": "same frozen original input and rational budget objective; no new denoising or semantic improvement claim",
+  "expected_inputs": 72,
+  "input_archive": "docs/artifacts/raw/m28_budgeted_real_v1/completed",
+  "input_manifest_sha256": "3ce2dc3d170a394f68fa904973a84b98a203c649e00f8b54e4c878468a6e30b9",
+  "methods": [
+    "ranked_subsets",
+    "conflict_cold",
+    "conflict_reuse",
+    "resource_dp"
+  ],
+  "pin_first_available_cpu": true,
+  "repetitions": {
+    "conflict_cold": 3,
+    "conflict_reuse": 3,
+    "ranked_subsets": 3,
+    "resource_dp": 1
+  },
+  "schema_version": 1,
+  "thread_environment": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "RAYON_NUM_THREADS": "1"
+  },
+  "timeout_seconds": {
+    "conflict_cold": 90,
+    "conflict_reuse": 90,
+    "ranked_subsets": 90,
+    "resource_dp": 180
+  },
+  "timing_scope": "solve includes required internal certificate construction and checks; serialization and external verification separate; frontier DP once for B0..2; sums per-budget queries also reported"
+}
