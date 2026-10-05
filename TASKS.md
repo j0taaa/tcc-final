@@ -54,6 +54,9 @@ reference must not be renamed as an execution of FactorDLM or Dang--Ermon.
   and tests. Capture metadata now derives its forward count from the actual
   validated grid, fixing the former hard-coded six-count without changing old
   archived measurements.
+  A further adversarial saved-input test rejects Boolean/float aliases of
+  serialized rational numerators/denominators; the new audit reader now uses
+  the existing strict rational codec. The relevant gate is 95 passed in 1.70 s.
 - [ ] T3102: Capture every frozen larger MDLM canvas; compare certified partial
   inference with an independent exact forward/backward reference on the same
   original probabilities. Preserve all outcomes, independent checks, disjoint

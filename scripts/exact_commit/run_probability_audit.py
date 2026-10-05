@@ -33,7 +33,7 @@ from mwpc_exact import (
     SupportPolicy,
     build_per_position_support,
 )
-from mwpc_exact.budget_proof import fraction_data
+from mwpc_exact.budget_proof import _fraction, fraction_data
 from mwpc_exact.conflict_proof import read_state, state_data
 from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.experiments.metadata import collect_system_metadata
@@ -83,7 +83,7 @@ def encode_input(inputs):
 def decode_input(data):
     result = ProbabilityInput(
         read_state(data["input"]),
-        tuple(tuple(Fraction(*p) for p in row) for row in data["probabilities"]),
+        tuple(tuple(_fraction(p) for p in row) for row in data["probabilities"]),
     )
     if result.fingerprint != data["input_fingerprint"]:
         raise ValueError("original probability input fingerprint differs")
@@ -157,6 +157,7 @@ def prepare_input(capture, case, config):
 
 
 def reference(inputs, one_child, seed, repetitions):
+    coverage_started = perf_counter()
     alphabet = {91, 93} if one_child else {91, 93, 44}
     required = {
         token
@@ -166,6 +167,7 @@ def reference(inputs, one_child, seed, repetitions):
     for fixed, row in zip(inputs.state.canvas, inputs.state.support.rows, strict=True):
         if fixed is None and not required <= set(row):
             raise ValueError("exact full-vocabulary reference lacks a compatible original token")
+    coverage_seconds = perf_counter() - coverage_started
     started = perf_counter()
     plan = compile_array_plan(
         inputs.state.tokenizer_adapter.emissions, inputs.state.support.rows, one_child=one_child
@@ -201,6 +203,7 @@ def reference(inputs, one_child, seed, repetitions):
         "valid_mass": fraction_data(z),
         "positive_valid_token_paths": paths,
         "compilation_seconds": compilation,
+        "coverage_seconds": coverage_seconds,
         "timings": times,
         "sample": sample,
         "state_cells": plan.state_cells,
@@ -208,6 +211,18 @@ def reference(inputs, one_child, seed, repetitions):
         "exactness_scope": "full_predictive_by_independent_terminal_alphabet_coverage",
         "implementation": "independent_standard_counter_forward_backward_not_published_decoder",
     }
+
+
+def reference_worker(input_path, config_path, output):
+    config = read(config_path)
+    resource.setrlimit(resource.RLIMIT_AS, (config["address_space_bytes"],) * 2)
+    encoded = read(input_path)
+    inputs = decode_input(encoded)
+    one_child = encoded["case"]["probe"]["grammar"] == "recursive_one_child_arrays"
+    result = reference(inputs, one_child, config["seed"], config["reference_repetitions"])
+    result["max_rss_kib"] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    result["peak_memory_scope"] = "fresh_reference_worker_max_RSS_including_imports"
+    write(output, result)
 
 
 def worker(input_path, config_path, output, limit):
@@ -431,16 +446,93 @@ def run(capture, output):
     )
 
 
+def run_reference_followup(primary, output):
+    """Fresh workers include coverage validation and comparable RSS boundaries.
+
+    Preserve the original controller-reference timings; no model forward or
+    partition job is repeated. The follow-up is separately versioned evidence.
+    """
+    config = read(primary / "config.json")
+    system = collect_system_metadata(ROOT)
+    if system.git_dirty is not False:
+        raise ValueError("commit timing-audit corrections before measurement")
+    output.mkdir(parents=True, exist_ok=False)
+    write(
+        output / "metadata.json",
+        {
+            "git_commit": system.git_commit,
+            "git_dirty": False,
+            "primary_manifest_sha256": sha(primary / "manifest.json"),
+            "hardware_software": system_data(system),
+            "reason": "include_reference_coverage_validation_and_fresh_worker_RSS",
+            "new_model_forwards": 0,
+        },
+    )
+    for case_id in planned_case_ids(config):
+        input_path = primary / "inputs" / f"{case_id}.json.gz"
+        artifact = output / f"{case_id}.json"
+        command = [
+            sys.executable,
+            "-m",
+            "scripts.exact_commit.run_probability_audit",
+            "--reference-worker",
+            "--input",
+            str(input_path),
+            "--config",
+            str(primary / "config.json"),
+            "--output",
+            str(artifact),
+        ]
+        started = perf_counter()
+        process = subprocess.Popen(
+            command,
+            cwd=ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            start_new_session=True,
+        )
+        try:
+            stdout, stderr = process.communicate(timeout=config["external_timeout_seconds"])
+        except subprocess.TimeoutExpired:
+            os.killpg(process.pid, signal.SIGKILL)
+            process.communicate()
+            raise RuntimeError(f"reference worker timed out: {case_id}") from None
+        if process.returncode:
+            raise RuntimeError((stdout + stderr).decode(errors="replace"))
+        result = read(artifact)
+        if result["valid_mass"] != read(primary / "references" / f"{case_id}.json")["valid_mass"]:
+            raise ValueError("corrected reference timing changed the original exact mass")
+        write(
+            output / f"{case_id}-lineage.json",
+            {
+                "input_sha256": sha(input_path),
+                "git_commit": system.git_commit,
+                "external_wall_seconds": perf_counter() - started,
+            },
+        )
+        print(json.dumps({"id": case_id, "status": "exact_reference_completed"}), flush=True)
+    write(
+        output / "manifest.json",
+        {str(p.relative_to(output)): sha(p) for p in sorted(output.rglob("*")) if p.is_file()},
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--capture", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--worker", action="store_true")
+    parser.add_argument("--reference-worker", action="store_true")
+    parser.add_argument("--reference-followup", type=Path)
     parser.add_argument("--input", type=Path)
     parser.add_argument("--config", type=Path)
     parser.add_argument("--limit", type=int)
     args = parser.parse_args()
-    if args.worker:
+    if args.reference_followup:
+        run_reference_followup(args.reference_followup.resolve(), args.output.resolve())
+    elif args.reference_worker:
+        reference_worker(args.input, args.config, args.output)
+    elif args.worker:
         worker(args.input, args.config, args.output, args.limit)
     else:
         run(args.capture.resolve(), args.output.resolve())

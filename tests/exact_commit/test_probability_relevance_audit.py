@@ -16,7 +16,13 @@ from scripts.exact_commit.probability_audit_controls import (
     compile_array_plan,
 )
 from scripts.exact_commit.run_conflict_real import write
-from scripts.exact_commit.run_probability_audit import prepare_input, reference, validate_partition
+from scripts.exact_commit.run_probability_audit import (
+    decode_input,
+    encode_input,
+    prepare_input,
+    reference,
+    validate_partition,
+)
 from tests.exact_commit.test_budget_bounds import state_for
 
 from mwpc_exact import ExactBackend
@@ -216,6 +222,18 @@ def test_full_reference_refuses_missing_alias_even_when_emitted_bytes_are_retain
     )
     with pytest.raises(ValueError, match="compatible original token"):
         reference(ProbabilityInput(state, ((Fraction(1, 2),),)), True, 31, 1)
+
+
+def test_saved_audit_input_rejects_boolean_and_float_rational_aliases():
+    state = state_for((b"a",), (b"a",), ((0,),), ())
+    packet = encode_input(ProbabilityInput(state, ((Fraction(1),),)))
+    assert decode_input(packet).fingerprint == packet["input_fingerprint"]
+    for alias in (True, 1.0):
+        for column in (0, 1):
+            bad = deepcopy(packet)
+            bad["probabilities"][0][0][column] = alias
+            with pytest.raises((ValueError, TypeError)):
+                decode_input(bad)
 
 
 def test_audit_capture_preserves_original_probabilities_and_rejects_fabricated_softmax(tmp_path):

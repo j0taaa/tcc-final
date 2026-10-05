@@ -97,3 +97,16 @@ boundary. All returned samples must pass independent JSON/schema validation.
 
 The final report must state which of these claims survive. No decision criterion
 requires our method to win.
+
+## Timing-audit correction after the primary campaign
+
+The complete primary measurement is retained at producing commit `7780d94`.
+Its exact controller reference validated alphabet coverage before starting the
+reported compilation timer, and its memory boundary differed from the fresh
+parser worker. Preserve those original observations; do not compare an omitted
+coverage phase as a total reference cost. A separately committed follow-up runs
+all 18 exact references on the same original inputs in fresh workers, records
+coverage/compile/forward/backward/sample separately and RSS with the same import
+boundary, and verifies equality with every original exact mass. No prediction,
+partition outcome or case selection is changed. The final report uses these
+complete reference costs and records both producing commits.
