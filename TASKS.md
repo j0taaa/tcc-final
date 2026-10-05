@@ -33,17 +33,17 @@ No invented probabilities may be described as model output.
   mean-field/support scopes, work limits and the six-probe fresh CPU protocol
   before any new model prediction. Exact probability inference and WMC are
   explicitly established principles, rather than novelty claims.
-- [ ] T3001: Implement an anytime disjoint token-space partition and independent
+- [x] T3001: Implement an anytime disjoint token-space partition and independent
   original-input certificate checker. Exact rational mass must count tokens once,
   preserve fixed slots/EOS/PAD and expose unresolved/omitted mass. Prove and
   exhaustively check conditional total-variation bounds, sharpness, marginal
   transport and finite-trajectory error composition. Add precise Lean scope.
-  **Evidence:** Pending.
-- [ ] T3002: Demonstrate the application on new inputs and, if available, fresh
+  **Evidence:** `mass_certificate.py`, `mass_solver.py`, `language_coverage.py` and `probabilistic_update.py` implement independently checked rational token partitions, full/represented error bounds, strict admission and safe reweighting. Mass/kernel/coverage tests (54) and provenance regressions (2) pass, including seeds 300000–300023/300500–300501, aliases, ambiguity, EOS/PAD, zero mass, timeouts and exact trajectory controls. Full Python: 1,482 passed; Ruff/MyPy (108 files), Rust (24) and EPIC regressions (19/4 existing skips) pass. `docs/evidence/m30-formal-checks.json`: 35 audited universal theorems plus 16 concrete claims; written coupling/source-refinement exclusions remain explicit.
+- [x] T3002: Demonstrate the application on new inputs and, if available, fresh
   CPU dLLM predictions. Include unresolved/rejected cases and exact controls.
   Do not call constructed probabilities empirical model results. Generate
   report/article changes from versioned evidence and pass full relevant checks.
-  **Evidence:** Pending.
+  **Evidence:** Two immutable configs produced six fresh CPU MDLM canvases each at commits `8e891f8` and `b0ed276`, not a repeat of the 72-state cohort. `docs/artifacts/raw/m30_probability_v1/`: complete logits/probabilities, revisions/hashes and 192 original-input proofs; 51 admitted, 93 incomplete and 48 zero-mass outcomes retained. At limit 64/top-eight plus declared support, coverage admits 9/12, generic bounds 0/12. Exact specialized controls and post-hoc geometric rejection expectations remain labeled. `build_probability_results --check`, all article-product checks, isolated dependency-free installed-wheel sampling/refusal and 16-page visual PDF QA pass. Complete commands/hashes and scope: `docs/evidence/m30-final-checks.{md,json}`.
 
 ## M29 — Useful exact commitment through certified conflict learning
 
@@ -63,20 +63,20 @@ objective/support as the reference; no semantic-quality or priority claim.
   finite-support/status/certificate scope. `m29_conflict_real_v1.json` freezes
   all 72 existing inputs, budgets 0--2, four exact methods, repetitions and
   deadlines before any evaluation of the new engine on real states.
-- [ ] T2901: Implement the conflict master, independent certificate checker,
+- [x] T2901: Implement the conflict master, independent certificate checker,
   safe reuse and model-independent API. Prove exactness, termination and
   the conflict-count/oracle-call bound. Exhaustive tests must cover aliases,
   duplicates, fixed slots, EOS/PAD, infeasibility, timeout and unsafe expansion.
-  **Evidence:** Pending.
-- [ ] T2902: Execute the entire frozen real-state cohort, compare exact scores
+  **Evidence:** Independent conflict/master cover and safe two-sided reuse pass 51 exhaustive/random/alias/fixed-slot/EOS/timeout/unsafe-expansion regressions (seeds 290000–290031), the interrupted-campaign regression and 13 Lean-bridge tests including real process-tree deadline termination. Every archived optimum/infeasibility certificate validates against its original input. Full Python 1,482; Ruff/MyPy, Rust 24 and existing EPIC 19/4 skips pass. The primary rational objective and ordinary decoder/baselines remain separate.
+- [x] T2902: Execute the entire frozen real-state cohort, compare exact scores
   and independently verify every certificate. Measure total solve/check time,
   oracle calls and failures separately. Retain all outcomes and producing code.
-  **Evidence:** Pending.
-- [ ] T2903: Add Lean proofs for the new mathematical certificate/reuse scope;
+  **Evidence:** `docs/artifacts/raw/m29_conflict_v1/{primary,followup}` retain all 3,312 frozen jobs, with 2,664 independently checked original-input proofs and complete same-score/status correspondence; zero worker errors/timeouts. Primary 68 retained DP measurements plus four independently completed measurements are attributed to `e609225`/`e31b651`; two missing proof files were regenerated at `bb661366` with archived scores checked and recovery excluded from timing rows. 5,527 original-file inventory entries across five attempts verify by SHA-256; additional diagnostic logs have explicitly recorded path sanitization. Complete ablations and unfavorable nested-JSON timings remain visible in the generated report.
+- [x] T2903: Add Lean proofs for the new mathematical certificate/reuse scope;
   provide a concrete runnable application and generated comparative report;
   update the article only from audited results. Run full relevant regressions
   and inspect the PDF. State precisely the achieved and unachieved advantages.
-  **Evidence:** Pending.
+  **Evidence:** `Conflicts.lean` provides eight audited cover/exactness/transport/query-count specifications; one constructed concrete learned conflict additionally passes the resource kernel bridge. A 75-node real replay export exceeded 180 s and is explicitly recorded as unfinished, not a Lean pass, in `m29-concrete-conflicts-lean.json`. Actual geocoding saved-input `conflict_cli` solve and optimizer-free verification pass. `build_conflict_results --check`, generated six-method report/macros, 16-page article/PDF QA, full Python and relevant Rust/binding/baseline/package gates pass. No new generation accuracy or full-EPIC advantage is claimed; complete final evidence is in `docs/evidence/m30-final-checks.{md,json}`.
 
 ## M28 — Budgeted commitment on archived real dLLM states
 

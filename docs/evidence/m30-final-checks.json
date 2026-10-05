@@ -1,0 +1,246 @@
+{
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "log": "results/processed/m30-full-python-delivery.log",
+      "result": "1482 passed in 140.20s"
+    },
+    {
+      "command": ".venv/bin/ruff check src tests scripts/exact_commit/build_probability_results.py scripts/exact_commit/build_conflict_results.py",
+      "result": "PASS"
+    },
+    {
+      "command": ".venv/bin/mypy",
+      "result": "PASS: 108 source files"
+    },
+    {
+      "command": "make test-rust-parser",
+      "log": "results/processed/m30-rust.log",
+      "result": "24 passed; fmt/clippy parser and bindings PASS"
+    },
+    {
+      "command": ".venv/bin/python -m pytest -q vendor/EPIC-Decoding/tests/test_constrain_utils.py vendor/EPIC-Decoding/tests/test_bindings.py",
+      "log": "results/processed/m30-epic-regressions.log",
+      "result": "19 passed, 4 existing skips"
+    },
+    {
+      "command": "./scripts/verify_upstream.sh",
+      "result": "PASS: unchanged 5b1b31098f34ed3691d2a9f4aae14fdf5839d072"
+    },
+    {
+      "command": ".venv/bin/python scripts/exact_commit/check_formal_project.py --lake <installed-pinned-lake> --output docs/evidence/m30-formal-checks.json",
+      "result": "35 audited universal theorems, 16 concrete claims across 5 fixtures, forged-bound rejection PASS"
+    },
+    {
+      "command": "make article-results-check",
+      "log": "results/processed/m30-article-products-check.log",
+      "result": "PASS: all current/historical derivatives, complete archives, 2664 M29 and 192 M30 proofs"
+    },
+    {
+      "command": "make release-wheel-smoke",
+      "log": "results/processed/m30-package-smoke.log",
+      "result": "PASS: independent budget proof, experiment/artifact generator, installed Lean export and sdist guard; fixture run before final clean commit emitted dirty-worktree warning, not published measurements"
+    },
+    {
+      "command": ".venv/bin/python -m build --no-isolation --outdir results/processed/m30-dist",
+      "result": "sdist and wheel built from clean source commit"
+    },
+    {
+      "command": "isolated venv, local wheel pip install --no-deps, python -I -m mwpc_exact.mass_cli --verify <each real proof> --sample --max-tv 1/20",
+      "result": "PASS: two admitted samples, one refusal; isolated imports, no model/optimizer/network dependencies"
+    },
+    {
+      "command": "make -C paper; pdftoppm -r 100 -png paper/main.pdf <render-prefix>",
+      "log": "results/processed/m30-paper-final.log",
+      "result": "16 pages, no overflow/unresolved references; all 16 final pages visually inspected"
+    },
+    {
+      "command": "verify each interruption-audit/inventory.json content reference against its original SHA-256",
+      "result": "5527 exact original-file entries across 5 attempts; only additional diagnostic logs have explicit path sanitization"
+    }
+  ],
+  "date": "2026-10-05",
+  "implementation_commit": "b4a4746d28e56171d57e1a82163d8a6b0f4eb43f",
+  "installed_wheel_probability": {
+    "dependencies_installed": false,
+    "installed_isolated_import": true,
+    "results": [
+      {
+        "proof": "docs/artifacts/raw/m30_probability_v1/probes/proofs/json_schema_type-2-top8_plus_catalog-finite_language_coverage-64.json.gz",
+        "result": {
+          "conditional_tv_bound": [
+            36085290922176268104428551438749921991,
+            1192417091580904966459383142049648708423
+          ],
+          "decoded": "{\"type\":\"string\"}",
+          "original_omitted_mass": [
+            11542650830353104300113085613516863202406551150321908176634073,
+            12855504354071912814544147817290000341659400551033607589707993
+          ],
+          "outside_valid_upper": [
+            0,
+            1
+          ],
+          "reference": "frozen_mean_field_conditioned_on_declared_grammar",
+          "reference_scope": "full_predictive_with_omitted_mass",
+          "sampling_status": "accepted",
+          "valid_mass_lower": [
+            5207655466563305227022425355702898732712883417641910272,
+            4285168118023970938181382605763333447219800183677869196569331
+          ],
+          "valid_mass_upper": [
+            5370169169313974210031284395638221555331681206096887808,
+            4285168118023970938181382605763333447219800183677869196569331
+          ],
+          "verification": "PASS",
+          "witness_token_ids": [
+            4895,
+            4906,
+            2404,
+            2536,
+            278,
+            20662
+          ]
+        }
+      },
+      {
+        "proof": "docs/artifacts/raw/m30_probability_v1/recursive_probes/proofs/one_child_arrays_depth3-2-top8_plus_alphabet-terminal_alphabet_coverage-64.json.gz",
+        "result": {
+          "conditional_tv_bound": [
+            0,
+            1
+          ],
+          "decoded": "[[[]]]",
+          "original_omitted_mass": [
+            1561131140290818021759514180905548012539462575033622333999,
+            4184734490257770620275966134386301905551166657193254717999
+          ],
+          "outside_valid_upper": [
+            0,
+            1
+          ],
+          "reference": "frozen_mean_field_conditioned_on_declared_grammar",
+          "reference_scope": "full_predictive_with_omitted_mass",
+          "sampling_status": "accepted",
+          "valid_mass_lower": [
+            348975891055550539047566814500817634591476554177043234816,
+            4184734490257770620275966134386301905551166657193254717999
+          ],
+          "valid_mass_upper": [
+            348975891055550539047566814500817634591476554177043234816,
+            4184734490257770620275966134386301905551166657193254717999
+          ],
+          "verification": "PASS",
+          "witness_token_ids": [
+            30109,
+            58,
+            11907,
+            60
+          ]
+        }
+      },
+      {
+        "proof": "docs/artifacts/raw/m30_probability_v1/probes/proofs/json_schema_type-2-top8_plus_catalog-generic_tail-64.json.gz",
+        "result": {
+          "conditional_tv_bound": [
+            11542650830353104300113085613516863202406551150321908176634073,
+            11542666453331578117290520305536238734147209823804789229600985
+          ],
+          "original_omitted_mass": [
+            11542650830353104300113085613516863202406551150321908176634073,
+            12855504354071912814544147817290000341659400551033607589707993
+          ],
+          "outside_valid_upper": [
+            11542650830353104300113085613516863202406551150321908176634073,
+            12855504354071912814544147817290000341659400551033607589707993
+          ],
+          "reason": "sampling refused: requested posterior tolerance is not certified",
+          "reference": "frozen_mean_field_conditioned_on_declared_grammar",
+          "reference_scope": "full_predictive_with_omitted_mass",
+          "sampling_status": "refused",
+          "valid_mass_lower": [
+            5207659491272392478230673125177246886224494293684322304,
+            4285168118023970938181382605763333447219800183677869196569331
+          ],
+          "valid_mass_upper": [
+            11542666453331578117290520305536238734147209823804789229600985,
+            12855504354071912814544147817290000341659400551033607589707993
+          ],
+          "verification": "PASS"
+        }
+      }
+    ],
+    "verification": "PASS",
+    "wheel_sha256": "02efc561b404054579ebaa4f4cd8a29b3fa1771f1d32d6b3d91051c326f930d1"
+  },
+  "limits": [
+    "frozen per-step mean-field conditioning, not complete model joint or semantic accuracy",
+    "incremental WMC/conditional-support certification specialization, no world-first principle",
+    "recursive follow-up development, not held-out confirmation",
+    "small one/two-slot controls do not establish general-JSON scaling or full EPIC superiority",
+    "geometric expected rejection draws are derived mathematics, not measured latency/forwards",
+    "Lean universal specifications and selected concrete proofs, not all source code or every large replay proof",
+    "one real 75-node resource kernel export timed out at 180 seconds; timeout is not kernel acceptance",
+    "bulk evidence stays in Git, excluded from installation archives; no model weights/cache distributed"
+  ],
+  "m29": {
+    "checked_certificates": 2664,
+    "jobs": 3312,
+    "scope": "same-input saved-state development/replay, not new generation"
+  },
+  "m30": {
+    "checked_proofs": 192,
+    "coverage_at_64_calls": {
+      "admitted": 9,
+      "generic_admitted": 0,
+      "total": 12
+    },
+    "evaluations": 192,
+    "fresh_canvases": 12,
+    "producer_commits": [
+      "8e891f8e79bbb471c0bb21e60f542a939302788f",
+      "b0ed276858eb9f74e932ff192729654c8034d71c"
+    ],
+    "statuses": {
+      "certified_tolerance": 51,
+      "incomplete": 93,
+      "zero_valid_probability_on_support": 48
+    }
+  },
+  "sha256": {
+    "AGENTS.md": "48018213f1293d088491252f9fe2deb72d7cef7df90fcf289bc600ed4dd97fa6",
+    "TASKS.md": "9a7520f422e3ed721357892d4b6457212e509d59fec4aac368ef7982930f5fb1",
+    "configs/experiments/m30_probability_cpu_v1.json": "9e2cfaf2b29ddab563436756b2eaa61f179e45deeede20d87dd999122275f1ed",
+    "configs/experiments/m30_probability_recursive_cpu_v1.json": "24402337874b5315d8a3e4e6dc6bbb5fa9e3cbf3c437620da1b9ee41a47a9f37",
+    "docs/artifacts/processed/m29_conflict_v1/summary.json": "0791c243aec8944e01c6d9729ca4e6fe250043d015c8ab5d8e6449cc7eba10e4",
+    "docs/artifacts/processed/m30_probability_v1/summary.json": "479483ac116250e7eef5bb6ff64687c6b16a59741b087229b689c97dff2e0be4",
+    "docs/artifacts/raw/m29_conflict_v1/followup/manifest.json": "4deb4c45287462cc9154319757a80c9a9dd6e418b838f4c5c3cac94001bed758",
+    "docs/artifacts/raw/m29_conflict_v1/interruption-audit/inventory.json": "f0e6a71a58842ee7c76acb15c92ad08dbd9c94da83d7f9c3de934a2b89709d0a",
+    "docs/artifacts/raw/m29_conflict_v1/primary/manifest.json": "c85a4d4a7889f02a92ab7b862ddae32ef6e775d05ee4e9ea07284ea66d2fc17f",
+    "docs/artifacts/raw/m30_probability_v1/capture/manifest.json": "47647a2094305a2ddad638453c403893fb12c15216e177d062ad10663520fc5f",
+    "docs/artifacts/raw/m30_probability_v1/probes/manifest.json": "4a183d815609f173461b6f4e60eaccef01a6bcc0a7c6c46804e5e5606fdef647",
+    "docs/artifacts/raw/m30_probability_v1/recursive_capture/manifest.json": "310f768d8e065d1ab1dcee6c9bb64684d80628f177817049c86f8c77286b1041",
+    "docs/artifacts/raw/m30_probability_v1/recursive_probes/manifest.json": "d86c3895f2393d53e4a29bfa4ded5e2542bfb6e3110b532e2d16eb2c7a80d915",
+    "docs/evidence/m29-concrete-conflicts-lean.json": "7edbcb1d2d49d1286bb945cf63e2fbc3605134fcbdeb1e5f8251eee387674712",
+    "docs/evidence/m30-formal-checks.json": "ddb65fbdf1b8ee4f1b957a751f12c2984a9a81515ba61e241764b20f6cceca6c",
+    "docs/research/m29-conflict-commitment.md": "8960b930e3aa791199abdc17eb351540dd933a008fa9ed693086f0d93499bdf1",
+    "docs/research/m30-probability-certificates.md": "8a0f09eae8725b8b91fa135d1dd10bdc097a3ee886315b4ac2ccf3efd7b42dd3",
+    "formal/Audit.lean": "d4814f22c5c3d1c2f45eb65d7848ba3f1ecc7cdc792e4022fa6f637ad255bbf9",
+    "formal/MWPC/Conflicts.lean": "73dc260de68b567d7247561375dfbedd7b6d4bdd1559a90ec478dd4d46c578e7",
+    "formal/MWPC/Probability.lean": "998ebdd269104282c63fb91a20c33d149190b841c99eb6c0f99617cd2546cadf",
+    "formal/README.md": "1174e910fc41d88f5d205668b1727bda40a2e448d6d40a3bbcc50f33a73dae1f",
+    "paper/budgeted-math.tex": "8b2a6ae80e61f736e49dec7e1b28833a02102dff5c33619b543a3a595eea8437",
+    "paper/main.pdf": "45a03316e0a2da05212e34da38dd2107fe73314659526e568c96946831d88c9a",
+    "paper/main.tex": "1e52a05c7db776c504e5983f3f49bd23dd97437456adc1f2e398903647429d68",
+    "paper/probabilistic-commitment.tex": "9f6cacd35a61b5a989a2a2ea046e8a01b8ad7859fb0527a2f95e1b572721e0bf",
+    "paper/referencias.bib": "9782905bb438bd2382f1a85b66a0b671c0e66309859db14c1bd0d0d7efe5ac57",
+    "scripts/exact_commit/build_conflict_results.py": "a951c04c902a35bf8db1555049cd50c2ff88453593f9063a29dab853a912ef08",
+    "scripts/exact_commit/build_probability_results.py": "1723875151e2d2787ef5aa32777f35583df7ddd19b0ec023c3dd202bc065a10e",
+    "src/mwpc_exact/language_coverage.py": "e1ef207487a291cd606ef90ffb02eaeb25578f4606a577e5f6b0c7e72de3cb3f",
+    "src/mwpc_exact/lean_bridge.py": "0beb6d46212c3afa9587abe4c262b34bb3c3f186a5505f2ff793fbe7af7c740c",
+    "src/mwpc_exact/mass_certificate.py": "6f75e077a6fc1a5d37eb08d59f98787a2d4f1434347635c5d68f7a9f38a8eb46",
+    "src/mwpc_exact/mass_solver.py": "ce8a00b38f1ea279a8228cf7806588d33c733238077e955b8643a885ac6e5ff2",
+    "src/mwpc_exact/probabilistic_update.py": "3cd915e9bfdd8970dc4376ded7bf9785221e3c54d7da84a5f6fb94302f50dc57"
+  },
+  "verification": "PASS"
+}
