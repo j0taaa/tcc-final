@@ -94,7 +94,7 @@ def run(source, directory):
                 target = directory / row["proof"]
                 target.parent.mkdir(exist_ok=True)
                 shutil.copyfile(source / row["proof"], target)
-    for path in (stage / "proofs").iterdir():
+    for path in stage.glob("proofs/*"):
         target = directory / "proofs" / path.name
         if target.exists():
             raise ValueError("continuation would overwrite a completed proof")
