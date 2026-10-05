@@ -138,4 +138,25 @@ theorem support_coverage_transport {tokens : Type} {emitted : tokens → List Na
     (coverage : ∀ word ∈ bounds g.start, ∀ t, emitted t = word → represented t)
     (accepted : WordYield g g.start (emitted path)) : represented path := by
   exact coverage _ (closed_yield_envelope closed accepted) path rfl
+
+-- A necessary byte condition needs no finite-language or unambiguity assumption.
+theorem grammar_yield_alphabet (derivation : WordYield g head word) :
+    ∀ byte ∈ word, byte ∈ g.terminals.map Prod.snd := by
+  induction derivation with
+  | terminal production =>
+      intro byte member
+      simp only [List.mem_singleton] at member
+      subst byte
+      exact List.mem_map_of_mem production
+  | binary production lhs rhs ih₁ ih₂ =>
+      intro byte member
+      rcases List.mem_append.mp member with left | right
+      · exact ih₁ byte left
+      · exact ih₂ byte right
+
+theorem alphabet_support_transport {tokens : Type} {emitted : tokens → List Nat}
+    {represented : tokens → Prop} {path : tokens}
+    (coverage : ∀ t, (∀ byte ∈ emitted t, byte ∈ g.terminals.map Prod.snd) → represented t)
+    (accepted : WordYield g g.start (emitted path)) : represented path := by
+  exact coverage path (grammar_yield_alphabet accepted)
 end MWPC

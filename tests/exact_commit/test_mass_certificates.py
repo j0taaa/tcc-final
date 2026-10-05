@@ -397,3 +397,76 @@ assert result.lower>0
 """
     run = subprocess.run([sys.executable, "-c", code, str(path)], capture_output=True, text=True)
     assert run.returncode == 0, run.stderr
+
+
+def recursive_probability(rows=((0, 1, 2, 3, 4, 5),) * 2, eos=None):
+    from mwpc_exact.reference.byte_grammars import _SourceGrammarBuilder
+    from mwpc_exact.reference.normalization import normalize_to_cnf
+
+    builder = _SourceGrammarBuilder(("S",), start="S")
+    builder.rule("S", b"[]")
+    builder.rule("S", b"[", "S", b"]")
+    state = state_for(
+        (b"[]",), (b"[", b"]", b"[]", b"[[", b"]]", b"[]", b"a", None), rows, (), eos=eos
+    )
+    state = replace(state, grammar=normalize_to_cnf(builder.build()).grammar)
+    return ProbabilityInput(state, tuple(tuple(Fraction(1, 100) for _ in row) for row in rows))
+
+
+def test_recursive_alphabet_coverage_certifies_all_vocabulary_aliases_without_finite_yields():
+    from mwpc_exact.language_coverage import terminal_alphabet_coverage
+
+    predictive = recursive_probability()
+    proof = probability_partition(
+        predictive,
+        language_coverage=terminal_alphabet_coverage(predictive.state.grammar),
+        scope=PosteriorScope.FULL,
+        requested_tv=Fraction(),
+        backend=ExactBackend.PYTHON,
+    )
+    result = verify_mass_proof(proof)
+    exact = exact_distribution(predictive)
+    assert result.lower == sum(exact.values(), Fraction()) > 0
+    assert result.omitted == Fraction(2491, 2500) and result.outside_valid_upper == 0
+    assert result.tv_bound(PosteriorScope.FULL) == 0
+    assert result.sample(Random(1), scope=PosteriorScope.FULL, max_tv=Fraction()) in exact
+
+
+def test_alphabet_coverage_rejects_deleted_alias_and_malformed_alphabet():
+    from mwpc_exact.language_coverage import check_language_coverage, terminal_alphabet_coverage
+
+    state = recursive_probability().state
+    coverage = terminal_alphabet_coverage(state.grammar)
+    incomplete = recursive_probability(rows=((0, 1, 2, 3, 4),) * 2).state
+    with pytest.raises(ValueError, match="missing"):
+        check_language_coverage(incomplete, coverage)
+    for alphabet in ([91.0, 93], [True, 93], [91, 93, 93], [91, 93, 97]):
+        with pytest.raises((ValueError, TypeError)):
+            check_language_coverage(state, {**coverage, "alphabet": alphabet})
+    with pytest.raises(ValueError, match="ABSENT"):
+        eos_state = recursive_probability(
+            rows=((*range(6), 7),) * 2,
+            eos=EOSPolicy(EOSMode.OPTIONAL, (7,), 7),
+        ).state
+        check_language_coverage(eos_state, coverage)
+
+
+def test_independent_recursive_application_control_agrees_with_original_token_validator():
+    from scripts.exact_commit.run_probability_probes import independent_recursive_paths
+
+    emissions = (b"[", b"]", b"[]", b"[[", b"]]", b"[]", b"a", None)
+    for slots in (1, 2):
+        state = recursive_probability(rows=(tuple(range(7)),) * slots).state
+        for prefix in ("", "[", "[[["):
+            case = {"slots": slots, "probe": {"prefix": prefix, "suffix": ""}}
+            relevant = set(range(6))
+            actual = set(independent_recursive_paths(case, emissions, relevant))
+            expected = set()
+            # An independent CFG recognizer validates the full emitted byte word.
+            from mwpc_exact.reference.recognizer import recognizes_cnf
+
+            for path in product(range(7), repeat=slots):
+                raw = prefix.encode() + b"".join(emissions[t] for t in path)
+                if recognizes_cnf(state.grammar, tuple(raw)):
+                    expected.add(path)
+            assert actual == expected

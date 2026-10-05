@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/scripts/exact_commit/run_conflict_real.py", line 377, in <module>
+    main()
+  File "/home/jota/projects/tcc-final/scripts/exact_commit/run_conflict_real.py", line 373, in main
+    run(args.config.resolve(), args.output.resolve())
+  File "/home/jota/projects/tcc-final/scripts/exact_commit/run_conflict_real.py", line 279, in run
+    "hardware_software": asdict(system),
+                         ^^^^^^^^^^^^^^
+  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/dataclasses.py", line 1286, in asdict
+    return _asdict_inner(obj, dict_factory)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/dataclasses.py", line 1293, in _asdict_inner
+    value = _asdict_inner(getattr(obj, f.name), dict_factory)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/dataclasses.py", line 1327, in _asdict_inner
+    return copy.deepcopy(obj)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/copy.py", line 161, in deepcopy
+    rv = reductor(4)
+         ^^^^^^^^^^^
+TypeError: cannot pickle 'mappingproxy' object

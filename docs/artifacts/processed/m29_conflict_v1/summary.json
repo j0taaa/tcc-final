@@ -1,0 +1,352 @@
+{
+  "family_frontiers": [
+    {
+      "family": "arithmetic",
+      "methods": {
+        "conflict_cold": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.04318710499978806
+        },
+        "conflict_reuse": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.04258052599971052
+        },
+        "proof_reuse": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.00417390699999487
+        },
+        "ranked_subsets": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.040994851999812454
+        },
+        "resource_dp": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.5522843855005704
+        },
+        "witness_only": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.0041644590002078985
+        }
+      }
+    },
+    {
+      "family": "brackets",
+      "methods": {
+        "conflict_cold": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.032818582999880164
+        },
+        "conflict_reuse": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.034262678499089816
+        },
+        "proof_reuse": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.010593510000035167
+        },
+        "ranked_subsets": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.032851486500021565
+        },
+        "resource_dp": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.32100076550023005
+        },
+        "witness_only": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.010587217000306737
+        }
+      }
+    },
+    {
+      "family": "geocoding",
+      "methods": {
+        "conflict_cold": {
+          "inputs": 24,
+          "median_frontier_seconds": 0.47118388049989335
+        },
+        "conflict_reuse": {
+          "inputs": 24,
+          "median_frontier_seconds": 0.46650833800003966
+        },
+        "proof_reuse": {
+          "inputs": 24,
+          "median_frontier_seconds": 0.23290103199997247
+        },
+        "ranked_subsets": {
+          "inputs": 24,
+          "median_frontier_seconds": 0.3790351084996928
+        },
+        "resource_dp": {
+          "inputs": 24,
+          "median_frontier_seconds": 45.007742964000045
+        },
+        "witness_only": {
+          "inputs": 24,
+          "median_frontier_seconds": 0.23329570500015961
+        }
+      }
+    },
+    {
+      "family": "nested_json",
+      "methods": {
+        "conflict_cold": {
+          "inputs": 16,
+          "median_frontier_seconds": 1.3176879705001738
+        },
+        "conflict_reuse": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.6069151029996647
+        },
+        "proof_reuse": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.6011771090001048
+        },
+        "ranked_subsets": {
+          "inputs": 16,
+          "median_frontier_seconds": 0.11084975999960989
+        },
+        "resource_dp": {
+          "inputs": 16,
+          "median_frontier_seconds": 1.7817897694999374
+        },
+        "witness_only": {
+          "inputs": 16,
+          "median_frontier_seconds": 1.308657599000071
+        }
+      }
+    }
+  ],
+  "job_status_counts": {
+    "conflict_cold:completed": 648,
+    "conflict_reuse:completed": 648,
+    "proof_reuse:completed": 648,
+    "ranked_subsets:completed": 648,
+    "resource_dp:completed": 72,
+    "witness_only:completed": 648
+  },
+  "paired_speed": {
+    "conflict_cold": {
+      "faster_inputs": 68,
+      "median_paired_speed_ratio": 2.7400206608399307,
+      "paired_inputs": 72
+    },
+    "conflict_reuse": {
+      "faster_inputs": 66,
+      "median_paired_speed_ratio": 2.174087003102823,
+      "paired_inputs": 72
+    },
+    "ranked_subsets": {
+      "faster_inputs": 54,
+      "median_paired_speed_ratio": 2.161487620820429,
+      "paired_inputs": 72
+    },
+    "resource_dp": {
+      "faster_inputs": 68,
+      "median_paired_speed_ratio": 42.92909469841369,
+      "paired_inputs": 72
+    },
+    "witness_only": {
+      "faster_inputs": 47,
+      "median_paired_speed_ratio": 1.0063523931649667,
+      "paired_inputs": 72
+    }
+  },
+  "portable_certificates": 2664,
+  "provenance": [
+    {
+      "comparison_scope": "same frozen original input and rational budget objective; no new denoising or semantic improvement claim",
+      "config_sha256": "71d84266811c50a4ac6e3744aa2621efbd41f6eb3087d76abbbf6707779e4239",
+      "config_source": "configs/experiments/m29_conflict_real_v1.json",
+      "continuation": {
+        "comparison_scope": "same frozen original input and rational budget objective; no new denoising or semantic improvement claim",
+        "completion_scope": "Only previously unexecuted independent resource-DP jobs; no rescoring/reselection",
+        "config_sha256": "71d84266811c50a4ac6e3744aa2621efbd41f6eb3087d76abbbf6707779e4239",
+        "config_source": "configs/experiments/m29_conflict_real_v1.json",
+        "git_commit": "bb6613661bb2723e832aee443fc22012e724c6e1",
+        "git_dirty": false,
+        "hardware_software": {
+          "affinity_cpu_count": 16,
+          "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+          "cuda_driver_supported_runtime": "13.2",
+          "cuda_driver_version": "595.91.07",
+          "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+          "git_commit": "bb6613661bb2723e832aee443fc22012e724c6e1",
+          "git_dirty": false,
+          "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+          "gpu_total_vram_bytes": 12884901888,
+          "logical_cpu_count": 16,
+          "machine": "x86_64",
+          "mwpc_exact_version": "0.2.0",
+          "mwpc_parser_py_version": "0.1.0",
+          "os_platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+          "os_release": "7.0.0-34-generic",
+          "os_system": "Linux",
+          "python_version": "3.11.16",
+          "pytorch_version": "2.8.0+cpu",
+          "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+          "rustformlang_version": "0.1.0",
+          "thread_environment": {
+            "MKL_NUM_THREADS": "1",
+            "NUMEXPR_NUM_THREADS": null,
+            "OMP_NUM_THREADS": "1",
+            "OPENBLAS_NUM_THREADS": "1",
+            "RAYON_NUM_THREADS": "1",
+            "RUST_MIN_STACK": null
+          },
+          "total_ram_bytes": 16533815296,
+          "transformers_version": "4.52.2"
+        },
+        "interrupted_rows_sha256": "82b8eb14c7caf9ae4c03db750617ace91f1776e78df1718c3ffa6c23e81b6828",
+        "interrupted_source": "results/raw/m29_conflict_real_v3",
+        "missing_input_ids": [],
+        "new_model_forwards": 0,
+        "recovery_timing_scope": "Proof regeneration is not a new timing measurement",
+        "regenerated_empty_proofs": [
+          "proofs/resource_dp-r0-geocoding-v2-step09-all-primary-b2.json.gz",
+          "proofs/resource_dp-r0-geocoding-v2-step09-ordinary-primary-b2.json.gz"
+        ],
+        "retained_completed_rows": 72,
+        "retained_producer_commits": [
+          "e31b6517ff7b9d0762d6c4f4ffeb0479ea64a9a3",
+          "e60922525aad5fcab173209708ba573095d5720a"
+        ],
+        "timing_scope": "solve includes required internal certificate construction and checks; serialization and external verification separate; frontier DP once for B0..2; sums per-budget queries also reported"
+      },
+      "git_commit": "e60922525aad5fcab173209708ba573095d5720a",
+      "git_dirty": false,
+      "hardware_software": {
+        "affinity_cpu_count": 16,
+        "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+        "cuda_driver_supported_runtime": null,
+        "cuda_driver_version": null,
+        "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+        "git_commit": "e60922525aad5fcab173209708ba573095d5720a",
+        "git_dirty": false,
+        "gpu_name": null,
+        "gpu_total_vram_bytes": null,
+        "logical_cpu_count": 16,
+        "machine": "x86_64",
+        "mwpc_exact_version": "0.2.0",
+        "mwpc_parser_py_version": "0.1.0",
+        "os_platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+        "os_release": "7.0.0-34-generic",
+        "os_system": "Linux",
+        "python_version": "3.11.16",
+        "pytorch_version": "2.8.0+cpu",
+        "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+        "rustformlang_version": "0.1.0",
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "NUMEXPR_NUM_THREADS": null,
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "RAYON_NUM_THREADS": "1",
+          "RUST_MIN_STACK": null
+        },
+        "total_ram_bytes": 16609312768,
+        "transformers_version": "4.52.2"
+      },
+      "new_model_forwards": 0,
+      "timing_scope": "solve includes required internal certificate construction and checks; serialization and external verification separate; frontier DP once for B0..2; sums per-budget queries also reported"
+    },
+    {
+      "comparison_scope": "same frozen original input and rational budget objective; no new denoising or semantic improvement claim",
+      "config_sha256": "200c8a7d0578694cbe8dc3bd6f200944edb5250683f3d4fbed1f9762e8cf1eea",
+      "config_source": "configs/experiments/m29_proof_reuse_real_v1.json",
+      "created_at_utc": "2026-10-05T21:38:44.548100+00:00",
+      "development_scope": "Follow-up implementation improvement on the unchanged complete M28 cohort after conflict-only evaluation; not independent held-out confirmation.",
+      "git_commit": "bb6613661bb2723e832aee443fc22012e724c6e1",
+      "git_dirty": false,
+      "hardware_software": {
+        "affinity_cpu_count": 16,
+        "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+        "cuda_driver_supported_runtime": "13.2",
+        "cuda_driver_version": "595.91.07",
+        "cuda_toolkit_version": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2023 NVIDIA Corporation\nBuilt on Fri_Jan__6_16:45:21_PST_2023\nCuda compilation tools, release 12.0, V12.0.140\nBuild cuda_12.0.r12.0/compiler.32267302_0",
+        "git_commit": "bb6613661bb2723e832aee443fc22012e724c6e1",
+        "git_dirty": false,
+        "gpu_name": "NVIDIA GeForce RTX 3080 Ti",
+        "gpu_total_vram_bytes": 12884901888,
+        "logical_cpu_count": 16,
+        "machine": "x86_64",
+        "mwpc_exact_version": "0.2.0",
+        "mwpc_parser_py_version": "0.1.0",
+        "os_platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+        "os_release": "7.0.0-34-generic",
+        "os_system": "Linux",
+        "python_version": "3.11.16",
+        "pytorch_version": "2.8.0+cpu",
+        "rust_version": "rustc 1.98.0 (88d9e12ae 2026-08-18)",
+        "rustformlang_version": "0.1.0",
+        "thread_environment": {
+          "MKL_NUM_THREADS": "1",
+          "NUMEXPR_NUM_THREADS": null,
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "RAYON_NUM_THREADS": "1",
+          "RUST_MIN_STACK": null
+        },
+        "total_ram_bytes": 16533815296,
+        "transformers_version": "4.52.2"
+      },
+      "new_model_forwards": 0,
+      "timing_scope": "solve includes required internal certificate construction and checks; serialization and external verification separate; frontier DP once for B0..2; sums per-budget queries also reported"
+    }
+  ],
+  "queries": {
+    "conflict_cold": {
+      "budget_results": 648,
+      "max_process_peak_rss_kib": 50440,
+      "oracle_calls": 1077,
+      "positive_zero_oracle_optimal": 0,
+      "zero_oracle_optimal": 0
+    },
+    "conflict_reuse": {
+      "budget_results": 648,
+      "max_process_peak_rss_kib": 66444,
+      "oracle_calls": 768,
+      "positive_zero_oracle_optimal": 0,
+      "zero_oracle_optimal": 0
+    },
+    "proof_reuse": {
+      "budget_results": 648,
+      "max_process_peak_rss_kib": 66144,
+      "oracle_calls": 294,
+      "positive_zero_oracle_optimal": 303,
+      "zero_oracle_optimal": 474
+    },
+    "ranked_subsets": {
+      "budget_results": 648,
+      "max_process_peak_rss_kib": 48344,
+      "oracle_calls": 1044,
+      "positive_zero_oracle_optimal": 0,
+      "zero_oracle_optimal": 0
+    },
+    "resource_dp": {
+      "budget_results": 216,
+      "max_process_peak_rss_kib": 79404,
+      "oracle_calls": 0,
+      "positive_zero_oracle_optimal": 0,
+      "zero_oracle_optimal": 0
+    },
+    "witness_only": {
+      "budget_results": 648,
+      "max_process_peak_rss_kib": 65676,
+      "oracle_calls": 615,
+      "positive_zero_oracle_optimal": 303,
+      "zero_oracle_optimal": 462
+    }
+  },
+  "raw_manifest_sha256": [
+    "c85a4d4a7889f02a92ab7b862ddae32ef6e775d05ee4e9ea07284ea66d2fc17f",
+    "4deb4c45287462cc9154319757a80c9a9dd6e418b838f4c5c3cac94001bed758"
+  ],
+  "rows": 3312,
+  "source_sha256": {
+    "scripts/exact_commit/build_conflict_results.py": "c2115393baafdbc9f2cd78510b04150225acc9f823917e6824c365800e29898e",
+    "src/mwpc_exact/conflict_certificate.py": "3662d454ebfac145ed7f0e69243fe3d35f058baf9473fcdf77e956d9805ce177",
+    "src/mwpc_exact/conflict_commit.py": "4929c27bf21f41e1cbad5a531436bfc74cea15730145584a0b0cb9c05507c8f0",
+    "src/mwpc_exact/proof_reuse.py": "eba1d36de4c3adfc4b73378fefcb26346917fedb5cc4ec0027a727b78a68061b"
+  }
+}

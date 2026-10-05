@@ -33,3 +33,5 @@ import MWPC
 #print axioms MWPC.finite_error_budget
 #print axioms MWPC.closed_yield_envelope
 #print axioms MWPC.support_coverage_transport
+#print axioms MWPC.grammar_yield_alphabet
+#print axioms MWPC.alphabet_support_transport

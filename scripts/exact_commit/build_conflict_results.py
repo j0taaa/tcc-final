@@ -261,11 +261,30 @@ def render(summary, provenance):
             "",
             "Status counts: `" + json.dumps(summary["job_status_counts"], sort_keys=True) + "`.",
             "",
-            "Producing commits: `" + "`, `".join(p["git_commit"] for p in provenance) + "`.",
+            "Producing commits: `"
+            + "`, `".join(
+                sorted(
+                    {
+                        commit
+                        for p in provenance
+                        for commit in (
+                            p["git_commit"],
+                            *p.get("continuation", {}).get("retained_producer_commits", []),
+                            *([p["continuation"]["git_commit"]] if "continuation" in p else []),
+                        )
+                    }
+                )
+            )
+            + "`.",
             "",
             "Configs, raw rows and compressed certificates are retained under "
             "`docs/artifacts/raw/m29_conflict_v1/`. The initial metadata-serialization failure "
-            "occurred before any model-state evaluation and is documented separately.",
+            "occurred before any model-state evaluation. An interrupted run retained 68/72 "
+            "DP measurements; four missing measurements were run separately. Two missing "
+            "proofs were regenerated against their archived scores without replacing timing "
+            "rows. Content-addressed `interruption-audit/inventory.json` retains every file "
+            "from the failed/interrupted attempts; regeneration time is excluded from solve "
+            "comparisons. Continuation metadata records all producing commits.",
             "",
             "The method optimizes provided model weights; neither these proofs nor "
             "the timings certify correct interpretation of a request. Large conflict sets "

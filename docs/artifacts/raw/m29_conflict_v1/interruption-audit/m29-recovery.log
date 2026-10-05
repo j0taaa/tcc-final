@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/jota/projects/tcc-final/scripts/exact_commit/complete_conflict_campaign.py", line 154, in <module>
+    main()
+  File "/home/jota/projects/tcc-final/scripts/exact_commit/complete_conflict_campaign.py", line 150, in main
+    (worker if args.worker else run)(args.source.resolve(), args.output.resolve())
+  File "/home/jota/projects/tcc-final/scripts/exact_commit/complete_conflict_campaign.py", line 97, in run
+    for path in (stage / "proofs").iterdir():
+  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/pathlib.py", line 931, in iterdir
+    for name in os.listdir(self):
+                ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/jota/projects/tcc-final/results/raw/m29_conflict_real_v4/continuation/proofs'

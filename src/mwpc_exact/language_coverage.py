@@ -59,6 +59,28 @@ def check_language_coverage(state: SelectionInput, value: object) -> tuple[bytes
     data = _mapping(value, "language coverage")
     if _integer(data["schema_version"], "version") != 1:
         raise ValueError("unsupported language coverage certificate")
+    if data.get("coverage_kind") == "terminal_alphabet":
+        if state.eos_policy.mode is not EOSMode.ABSENT:
+            raise ValueError("alphabet coverage currently requires ABSENT EOS")
+        alphabet = set(state.grammar.terminal_labels.values())
+        if any(not isinstance(label, int) for label in alphabet):
+            raise ValueError("alphabet coverage requires byte grammar terminals")
+        supplied = [_integer(v, "alphabet byte") for v in _sequence(data["alphabet"], "alphabet")]
+        if len(supplied) != len(set(supplied)) or set(supplied) != alphabet:
+            raise ValueError("coverage alphabet differs from the original grammar")
+        relevant = {
+            token
+            for token, emission in enumerate(state.tokenizer_adapter.emissions)
+            if emission is not None and set(emission) <= alphabet
+        }
+        if any(
+            fixed is None and not relevant <= set(row)
+            for fixed, row in zip(state.canvas, state.support.rows, strict=True)
+        ):
+            raise ValueError("alphabet-compatible vocabulary token is missing from support")
+        return ()
+    if data.get("coverage_kind", "finite_yields") != "finite_yields":
+        raise ValueError("unknown support coverage kind")
     bounds: dict[int, set[bytes]] = {}
     for raw in _sequence(data["yield_bounds"], "yield bounds"):
         pair = _sequence(raw, "yield entry")
@@ -139,3 +161,11 @@ def finite_yield_bounds(
                 ],
             }
     raise ValueError("finite yield closure did not converge within the declared limit")
+
+
+def terminal_alphabet_coverage(grammar: CnfGrammar) -> dict[str, object]:
+    """A candidate certificate; the independent checker tests the complete vocabulary."""
+    alphabet = set(grammar.terminal_labels.values())
+    if any(not isinstance(label, int) for label in alphabet):
+        raise ValueError("alphabet coverage requires byte grammar terminals")
+    return {"schema_version": 1, "coverage_kind": "terminal_alphabet", "alphabet": sorted(alphabet)}

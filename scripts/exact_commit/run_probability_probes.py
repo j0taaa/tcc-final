@@ -24,7 +24,7 @@ from mwpc_exact import (
 from mwpc_exact.budget_proof import fraction_data
 from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.experiments.metadata import collect_system_metadata
-from mwpc_exact.language_coverage import finite_yield_bounds
+from mwpc_exact.language_coverage import finite_yield_bounds, terminal_alphabet_coverage
 from mwpc_exact.mass_certificate import PosteriorScope, ProbabilityInput, verify_mass_proof
 from mwpc_exact.mass_solver import probability_partition
 from mwpc_exact.probabilistic_update import certified_parallel_update
@@ -53,6 +53,22 @@ def independent_catalog_paths(values, emissions, slots):
     return tuple(sorted(paths))
 
 
+def independent_recursive_paths(case, emissions, relevant):
+    paths = []
+    for tokens in product(sorted(relevant), repeat=case["slots"]):
+        raw = case["probe"]["prefix"].encode() + b"".join(emissions[t] for t in tokens)
+        raw += case["probe"]["suffix"].encode()
+        try:
+            value = json.loads(raw)
+        except (ValueError, UnicodeError):
+            continue
+        while isinstance(value, list) and len(value) == 1:
+            value = value[0]
+        if value == []:
+            paths.append(tokens)
+    return tuple(paths)
+
+
 def inputs_for(archive, case, policy):
     import numpy as np
 
@@ -75,13 +91,23 @@ def inputs_for(archive, case, policy):
         if not total:
             raise ValueError("zero predictive row")
         full.append(tuple(v / total for v in rationals))
-    allowed = tuple(v.encode() for v in case["probe"]["values"])
-    catalog = independent_catalog_paths(allowed, adapter.emissions, case["slots"])
+    recursive = case["probe"].get("grammar") == "recursive_one_child_arrays"
+    allowed = () if recursive else tuple(v.encode() for v in case["probe"]["values"])
+    relevant = (
+        {t for t, e in enumerate(adapter.emissions) if e is not None and set(e) <= {91, 93}}
+        if recursive
+        else set()
+    )
+    catalog = (
+        independent_recursive_paths(case, adapter.emissions, relevant)
+        if recursive
+        else independent_catalog_paths(allowed, adapter.emissions, case["slots"])
+    )
     masked = case["masked_positions"]
     rows = {i: (t,) for i, t in enumerate(case["canvas"]) if t is not None}
     for offset, position in enumerate(masked):
-        options = {path[offset] for path in catalog}
-        if policy == "top8_plus_catalog":
+        options = set(relevant) if recursive else {path[offset] for path in catalog}
+        if policy.startswith("top8_plus_"):
             options.update(
                 int(t)
                 for t in np.argsort(-raw[offset], kind="stable")[: config["top_k"]]
@@ -107,6 +133,9 @@ def inputs_for(archive, case, policy):
         explicit_support=rows,
     )
     builder = _SourceGrammarBuilder(("S",), start="S")
+    if recursive:
+        builder.rule("S", b"[]")
+        builder.rule("S", b"[", "S", b"]")
     for value in allowed:
         builder.rule(
             "S", case["probe"]["prefix"].encode() + value + case["probe"]["suffix"].encode()
@@ -170,7 +199,11 @@ def run(archive, output):
                     construction = perf_counter() - started
                     z = sum(exact.values(), Fraction())
                     before = perf_counter()
-                    coverage = finite_yield_bounds(predictive.state.grammar)
+                    coverage = (
+                        terminal_alphabet_coverage(predictive.state.grammar)
+                        if case["probe"].get("grammar")
+                        else finite_yield_bounds(predictive.state.grammar)
+                    )
                     coverage_construction = perf_counter() - before
                     for mode in config["posterior_scopes"]:
                         for limit in config["oracle_limits"]:
@@ -208,9 +241,7 @@ def run(archive, output):
                                     else Fraction(*config["tolerance"]),
                                     scope=PosteriorScope.FULL,
                                     timeout_seconds=config["soft_timeout_seconds"],
-                                    language_coverage=coverage
-                                    if mode == "finite_language_coverage"
-                                    else None,
+                                    language_coverage=coverage if mode != "generic_tail" else None,
                                 )
                                 elapsed = perf_counter() - before
                                 started = perf_counter()

@@ -101,3 +101,7 @@ units. Python independently checks disjoint token boxes, actual tokenizer/EOS
 correspondence and finite-language coverage. The written coupling proof gives
 trajectory-TV composition; Lean checks its finite error-budget arithmetic,
 not a full probability-library coupling or source-level Python/Rust refinement.
+`grammar_yield_alphabet` and `alphabet_support_transport` additionally prove
+terminal-alphabet containment and its explicit support-coverage consequence,
+including productive recursive grammars. The Python checker scans every
+original vocabulary emission and checks all masked rows (ABSENT EOS only).

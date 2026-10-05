@@ -220,3 +220,38 @@ this simple application; do not hide that. The mathematical utility is bounded
 error and refusal under unfinished or truncated inference, not an invented
 speed win over a specialized exact catalog method. Broader recursive-grammar
 utility is mathematical scope unless separately demonstrated.
+
+## Recursive follow-up: terminal-alphabet support coverage
+
+Specified after observing the finite-probe generic-tail conservatism, before
+any recursive-probe forward. This is another development/application phase,
+not held-out confirmation or a search for benchmark wins.
+
+**Theorem.** In ABSENT-EOS byte semantics, every token in a valid completion
+emits only bytes in the grammar's terminal alphabet. If each free support row
+contains every full-vocabulary token with this property, omitted valid mass is
+zero, even for a productive recursive or ambiguous CFG. Fixed rows keep their
+original singleton. The proof follows by induction on the grammar derivation
+and by compositional concatenation of nonempty token emissions. Controls with
+no ordinary emission are inadmissible under this declared ABSENT-EOS semantics.
+This certificate cannot be silently used for another tokenizer or EOS policy.
+
+A terminal-alphabet filter is an established necessary condition, not a newly
+invented pruning technique. Its quantitative use here is to justify full-scope
+posterior error certificates after support reduction, without enumerating all
+grammar yields or requiring unambiguity. For wide alphabets it may retain most
+of the vocabulary; the full support/cartesian search can remain expensive.
+
+Freeze six fresh probes: depths 1, 3 and 8 with one/two masked suffix slots in
+recursive single-child-array JSON completion. The grammar accepts exactly
+`[`^d `]`^d for d>=1, including possible further nesting in the masked tokens.
+This models the declared recursive JSON Schema (arrays, at most one element,
+whose element is recursively an array). It is a restrictive real syntax
+application, not a claim about general JSON accuracy. Whitespace is excluded
+explicitly by the canonical grammar. Use all-alphabet-token support and top-8
+plus that same complete alphabet support, all original probabilities unchanged.
+Every one/two-slot combination of alphabet-compatible full-vocabulary tokens is
+independently checked with Python JSON parsing and the recursive schema predicate
+for an exact mass/posterior control. Keep all outcomes. Run the same four limits,
+60-second soft deadlines and 5%/exact tolerances as phase one, using the pinned
+MDLM/CPU backend and a separate versioned config before these forwards.
