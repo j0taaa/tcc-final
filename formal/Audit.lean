@@ -25,3 +25,11 @@ import MWPC
 #print axioms MWPC.fixed_conflict_discharge
 #print axioms MWPC.amortized_conflict_queries
 #print axioms MWPC.feasible_witness_transport
+#print axioms MWPC.partition_mass_envelope
+#print axioms MWPC.conditional_missing_bound
+#print axioms MWPC.conditional_l1_numerator
+#print axioms MWPC.conditional_event_lower
+#print axioms MWPC.conditional_event_upper
+#print axioms MWPC.finite_error_budget
+#print axioms MWPC.closed_yield_envelope
+#print axioms MWPC.support_coverage_transport

@@ -24,11 +24,15 @@ all MWPC/baselines. A separate API studies the frozen **mean-field predictive**
 distribution at one dLLM step, not the model's full generative distribution.
 No invented probabilities may be described as model output.
 
-- [ ] T3000: Investigate ambiguity-safe probability mass, certified support-tail
+- [x] T3000: Investigate ambiguity-safe probability mass, certified support-tail
   error, and practical admission/abstention. Attribute GAD/ASAp, CARS, exact DFA
   and factor inference, and probabilistic-language counting. Freeze proofs,
   application/protocol and novelty limits before collecting new model outcomes.
-  **Evidence:** Pending.
+  **Evidence:** `docs/research/m30-probability-certificates.md` records primary
+  antecedents, four complete mathematical proofs and sharpness, declared
+  mean-field/support scopes, work limits and the six-probe fresh CPU protocol
+  before any new model prediction. Exact probability inference and WMC are
+  explicitly established principles, rather than novelty claims.
 - [ ] T3001: Implement an anytime disjoint token-space partition and independent
   original-input certificate checker. Exact rational mass must count tokens once,
   preserve fixed slots/EOS/PAD and expose unresolved/omitted mass. Prove and

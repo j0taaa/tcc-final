@@ -93,3 +93,11 @@ every budget's witness. `examples/BudgetExample.lean` is its checked-in export.
 Historical M26 proofs remain readable with their narrower graph-only scope.
 Normal Python tests have no network/Lean dependency; the separate mandatory
 CI formal job installs the pinned toolchain and cannot skip the formal gate.
+
+M30 adds `MWPC/Probability.lean`: universal disjoint-partition mass bounds,
+scaled L1/conditional error arithmetic, event intervals, finite error-budget
+sums and closed CFG yield/support transport. Rational inputs use common natural
+units. Python independently checks disjoint token boxes, actual tokenizer/EOS
+correspondence and finite-language coverage. The written coupling proof gives
+trajectory-TV composition; Lean checks its finite error-budget arithmetic,
+not a full probability-library coupling or source-level Python/Rust refinement.
