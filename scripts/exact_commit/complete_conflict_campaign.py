@@ -83,7 +83,7 @@ def run(source, directory):
         check=True,
     )
     for path in source.glob("*.json"):
-        if path.name != "manifest.json":
+        if path.name not in ("manifest.json", "continuation-metadata.json"):
             shutil.copyfile(path, directory / path.name)
     for path in source.glob("*-r*.jsonl"):
         if path.name != "resource_dp-r0.jsonl":
