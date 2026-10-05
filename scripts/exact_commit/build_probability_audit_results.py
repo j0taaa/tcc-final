@@ -26,6 +26,7 @@ from mwpc_exact.experiments._artifact_io import _reject_json_constant, _sha256_f
 from mwpc_exact.mass_certificate import PosteriorScope, ProbabilityInput, verify_mass_proof
 from mwpc_exact.reference.byte_grammars import _SourceGrammarBuilder
 from mwpc_exact.reference.normalization import normalize_to_cnf
+from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 
 ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "docs/artifacts/raw/m31_probability_v1"
@@ -90,6 +91,11 @@ def check_capture(capture, encoded, inputs, config):
     import numpy as np
 
     case = encoded["case"]
+    original_adapter = CompositionalByteLevelAdapter.from_token_pieces(
+        read(capture / "tokenizer-pieces.json.gz")
+    )
+    if original_adapter.emissions != inputs.state.tokenizer_adapter.emissions:
+        raise ValueError("original tokenizer bytes differ from archived input semantics")
     path = capture / case["array_file"]
     if _sha256_file(path) != encoded["source_array_sha256"]:
         raise ValueError("full-logit source changed")
@@ -457,6 +463,8 @@ Reference time includes coverage validation, transition compilation and a median
 of three query repetitions after one warmup. Each query includes forward,
 backward and sampled-output JSON/schema validation. Parser time includes proof
 construction and internal validation; external portable checking is separate.
+Call caps count primary selection queries; proof construction can issue further
+parsing queries and is included in measured solver time.
 Input/logit reconstruction and model forward are separate/shared in raw rows.
 Process startup and serialization are outside reference/solver core; external
 wall times are retained. A certifying engine and an exact numeric control expose
@@ -475,9 +483,9 @@ traces are not committed. Git contains complete tokenizer semantics, retained
 exact rational inputs, normalization/array hashes, every returned proof, all
 statuses and generated evidence. The default verifier reproduces mathematics
 and tables offline. `--capture` additionally checks every retained probability
-and normalization against the full local logits/softmax. Full-logit availability
-is limited accordingly. A fresh opt-in checkpoint run is a reproduction, not a
-claim of bitwise GPU equivalence.
+and normalization against the full local logits/softmax and tokenizer bytes.
+Full-logit availability is limited accordingly. A fresh opt-in checkpoint run
+is a reproduction, not a claim of bitwise GPU equivalence.
 
 Producing commit: `{p["producing_commit"]}`.
 Reference timing follow-up: `{p["reference_followup_commit"]}`.
@@ -496,14 +504,14 @@ def products(capture=None):
     provenance["full_local_logits_checked"] = "optional_external_check_not_part_of_generated_tables"
     summary = summarize(rows, references, provenance)
     macros = {
-        "MAuditCanvases": str(provenance["new_model_forwards"]),
-        "MAuditJobs": str(summary["jobs"]),
-        "MAuditProofs": str(provenance["certificates_checked"]),
-        "MAuditTimeouts": str(summary["status_counts"].get("external_timeout", 0)),
-        "MAuditFourAdmitted": str(summary["by_slots_at_64"][0]["admitted"]),
-        "MAuditEightAdmitted": str(summary["by_slots_at_64"][1]["admitted"]),
-        "MAuditSixteenAdmitted": str(summary["by_slots_at_64"][2]["admitted"]),
-        "MAuditReferenceFaster": str(summary["reference_faster_returned_jobs"]),
+        "MProbAuditCanvases": str(provenance["new_model_forwards"]),
+        "MProbAuditJobs": str(summary["jobs"]),
+        "MProbAuditProofs": str(provenance["certificates_checked"]),
+        "MProbAuditTimeouts": str(summary["status_counts"].get("external_timeout", 0)),
+        "MProbAuditFourAdmitted": str(summary["by_slots_at_64"][0]["admitted"]),
+        "MProbAuditEightAdmitted": str(summary["by_slots_at_64"][1]["admitted"]),
+        "MProbAuditSixteenAdmitted": str(summary["by_slots_at_64"][2]["admitted"]),
+        "MProbAuditReferenceFaster": str(summary["reference_faster_returned_jobs"]),
     }
     tex = (
         "% Generated from the complete independently audited larger-canvas grid.\n"

@@ -17,6 +17,17 @@ mean-field prediction, not the model's complete generative joint or semantic
 correctness. Twelve new CPU MDLM predictions and all 192 evaluation cells,
 including 48 zero-mass evaluations, are archived independently of the old replay cohort.
 
+The [larger-canvas falsification audit](docs/artifacts/processed/m31_probability_v1/report.md)
+adds 18 fresh predictions with 4/8/16 free slots and retains every outcome.
+All 35 returned certificates validate; one job reaches its external deadline.
+At the 64-query cap, admission falls from 5/6 to 1/6 to 0/6. An independent
+compact exact counter reference solves every canvas with zero approximation
+error and lower measured inference cost in all 35 completed comparisons.
+Thus certification is demonstrated, but practical superiority and substantial
+scientific novelty are not established. The control uses established inference;
+it is not an execution of FactorDLM, Dang--Ermon or CARS. Complete probabilities
+and tokenizer semantics are shared; runtime interfaces differ.
+
 Verify a real new model prediction and sample without downloading a model:
 
 ```bash

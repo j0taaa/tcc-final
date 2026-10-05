@@ -63,9 +63,10 @@ exclude = [
   # The interrupted M28 harness-debugging attempt stays in Git for the audit.
   # Final replay inputs/certificates remain in the sdist for offline verification.
   "/docs/artifacts/raw/m28_budgeted_real_v1/interrupted/**",
-  # M29/M30 research evidence stays in Git; library tests need no bulk campaign.
+  # M29--M31 research evidence stays in Git; library tests need no bulk campaign.
   "/docs/artifacts/raw/m29_conflict_v1/**",
   "/docs/artifacts/raw/m30_probability_v1/**",
+  "/docs/artifacts/raw/m31_probability_v1/**",
 ]
 
 [tool.pytest.ini_options]

@@ -57,14 +57,36 @@ reference must not be renamed as an execution of FactorDLM or Dang--Ermon.
   A further adversarial saved-input test rejects Boolean/float aliases of
   serialized rational numerators/denominators; the new audit reader now uses
   the existing strict rational codec. The relevant gate is 95 passed in 1.70 s.
-- [ ] T3102: Capture every frozen larger MDLM canvas; compare certified partial
+  A tokenizer-lineage regression additionally rejects changed byte emissions
+  even when original token IDs/probabilities are unchanged; the same three-file
+  gate passes 95 tests in 1.71 s after this audit-reader correction.
+- [x] T3102: Capture every frozen larger MDLM canvas; compare certified partial
   inference with an independent exact forward/backward reference on the same
   original probabilities. Preserve all outcomes, independent checks, disjoint
   timing/memory/provenance and immutable raw evidence.
   **Acceptance:** every configured job is recorded; exact masses bound-check
   every returned certificate; external wall-time cutoffs are not infeasibility;
   reference advantages and refusals remain visible.
-  **Evidence:** pending.
+  **Evidence:** official offline CPU capture and `run_probability_audit` at
+  `7780d94763d146799de564b38a328f3dd4686756` retain all 18 new forwards and 36
+  jobs: 8 certified, 27 incomplete, 1 external timeout, no worker errors.
+  `run_probability_audit --reference-followup` at
+  `bb93550c6d5754ff193a612f05d9364dfc9514ca` repeats all 18 numeric references
+  with separately recorded coverage/compile/query and fresh-worker RSS; original
+  reference observations are unchanged. Independent `build_probability_audit_results
+  --capture results/raw/m31_probability_v1/capture` verifies all 35 returned
+  proofs against true mass, source softmax/normalization and original tokenizer
+  bytes; offline regeneration also passes. At 64 calls, 4/8/16-slot admissions
+  are 5/6, 1/6, 0/6. The exact control solves every canvas, up to 14,082,354,344
+  positive token paths, and costs 11.714--81.180 ms including coverage/compile
+  and median query. It is cheaper in 35/35 returned diagnostic pairs; differing
+  numeric/certificate interfaces and source reconstruction exclusions are explicit.
+  Compact archive: `docs/artifacts/raw/m31_probability_v1/{primary,reference-followup}`;
+  manifests `3c677037d41fa7dda5f14f22e134e0226811227ebcc94b8692e8e5237affa486`
+  and `c900665d75685ed9c0c44dc529146e5955f89cc82d3812bc62729f0952770b24`.
+  Full large-logit traces stay ignored locally; Git's complete rational inputs,
+  tokenizer, lineage and proofs reproduce mathematics/tables offline. Commands,
+  immutable config and this availability boundary are in `REPRODUCING.md`.
 - [ ] T3103: Generate an auditable claim-by-claim verdict, update project/article
   conclusions from measured evidence, and run complete correctness/formal,
   upstream, artifact and relevant packaging/document gates.

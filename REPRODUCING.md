@@ -1,5 +1,51 @@
 # Reproducing the MWPC research artifacts
 
+## Larger-canvas falsification audit (M31)
+
+Read the [frozen protocol](docs/research/m31-relevance-audit.md) and the
+[complete result and claim verdict](docs/artifacts/processed/m31_probability_v1/report.md).
+All six prefixes crossed with 4/8/16 slots were fixed before the 18 new official
+CPU MDLM predictions. Both call caps, refusals and the external timeout remain
+recorded. The exact control is an independent standard array-counter transfer,
+not execution of a published competitor. It is preferable on these schemas;
+the certifying prototype has no demonstrated general performance advantage.
+
+From the complete Git evidence checkout, recompute reference masses, verify all
+35 returned certificates and regenerate/check the complete tables offline:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.build_probability_audit_results --check
+```
+
+Full logits/probability matrices are large traces retained in ignored local
+`results/raw/m31_probability_v1/capture`, not distributed with Git. Git contains
+original retained rational probabilities, complete tokenizer semantics, full-row
+normalization, source hashes and all proof/job artifacts. If that capture is
+available, additionally check every retained value against the full softmax and
+original token bytes with `--capture results/raw/m31_probability_v1/capture`.
+The default offline check validates mathematics and tables, not unavailable
+source logits. A fresh opt-in model reproduction uses new output paths:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.capture_mdlm_probability \
+  --config configs/experiments/m31_probability_scaling_cpu_v1.json \
+  --output results/raw/fresh-m31-capture
+.venv/bin/python -m scripts.exact_commit.run_probability_audit \
+  --capture results/raw/fresh-m31-capture --output results/raw/fresh-m31-audit
+.venv/bin/python -m scripts.exact_commit.run_probability_audit \
+  --reference-followup results/raw/fresh-m31-audit \
+  --output results/raw/fresh-m31-reference
+```
+
+Use a clean producing commit and the pinned CPU model environment described
+below. Raw original reference times remain archived; final timing comparisons
+use the separately attributed follow-up including coverage and fresh worker RSS.
+Neither model predictions nor partition outcomes were replaced. Core inference
+times compare different numeric/certificate interfaces, not full deployment.
+Call caps limit primary selection queries; proof construction can perform
+additional parsing and is included in solver time. Formal verification scope
+and the limits of statistical/novelty claims remain explicit.
+
 ## Certified probability and fresh CPU dLLM predictions (M30)
 
 Read [definitions, complete proofs and limits](docs/research/m30-probability-certificates.md)
@@ -78,7 +124,7 @@ checked, without replacing timing rows. Content-addressed interrupted inventorie
 retain original bytes under `interruption-audit/`; continuation metadata names
 all producing commits. This recovery is not counted as a timing improvement.
 
-M29/M30 bulk research archives remain versioned in Git and excluded from the
+M29--M31 bulk research archives remain versioned in Git and excluded from the
 library sdist/wheel, like earlier large model campaigns. Installations preserve
 core APIs, proof/oracle tests, formal sources and small existing offline fixtures;
 full manuscript reproduction uses the Git evidence checkout. No weights or

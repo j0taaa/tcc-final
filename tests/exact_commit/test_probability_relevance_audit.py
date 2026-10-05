@@ -4,10 +4,12 @@ import json
 from copy import deepcopy
 from dataclasses import replace
 from fractions import Fraction
+from hashlib import sha256
 from itertools import product
 from random import Random
 
 import pytest
+from scripts.exact_commit.build_probability_audit_results import check_capture
 from scripts.exact_commit.capture_mdlm_probability import planned_case_ids
 from scripts.exact_commit.probability_audit_controls import (
     ACCEPT,
@@ -273,7 +275,22 @@ def test_audit_capture_preserves_original_probabilities_and_rejects_fabricated_s
     case["canvas"] = [0, 0, None, None, None, None]
     case["masked_positions"] = [2, 3, 4, 5]
     case["probe"]["prefix"] = "[["
-    inputs, _ = prepare_input(tmp_path, case, config)
+    inputs, normalization = prepare_input(tmp_path, case, config)
+    packet = {
+        **encode_input(inputs),
+        "case": case,
+        "normalization": normalization,
+        "source_array_sha256": sha256((tmp_path / "case.npz").read_bytes()).hexdigest(),
+    }
+    check_capture(tmp_path, packet, inputs, config)
+    changed_adapter = replace(
+        inputs.state.tokenizer_adapter, emissions=(b"[", b"]", b",", b"y", None)
+    )
+    changed_input = ProbabilityInput(
+        replace(inputs.state, tokenizer_adapter=changed_adapter), inputs.probabilities
+    )
+    with pytest.raises(ValueError, match="tokenizer bytes"):
+        check_capture(tmp_path, packet, changed_input, config)
     exact = reference(inputs, True, 31, 1)
     proof = probability_partition(
         inputs, requested_tv=Fraction(1), max_oracle_calls=4, backend=ExactBackend.PYTHON

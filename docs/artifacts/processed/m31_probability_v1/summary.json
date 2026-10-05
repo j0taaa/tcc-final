@@ -1,0 +1,52 @@
+{
+  "by_slots_at_64": [
+    {
+      "admitted": 5,
+      "cases": 6,
+      "slots": 4
+    },
+    {
+      "admitted": 1,
+      "cases": 6,
+      "slots": 8
+    },
+    {
+      "admitted": 0,
+      "cases": 6,
+      "slots": 16
+    }
+  ],
+  "exact_reference_cases": 18,
+  "jobs": 36,
+  "largest_positive_valid_token_path_count": 14082354344,
+  "provenance": {
+    "certificates_checked": 35,
+    "full_local_logits_checked": "optional_external_check_not_part_of_generated_tables",
+    "new_model_forwards": 18,
+    "primary_manifest_sha256": "3c677037d41fa7dda5f14f22e134e0226811227ebcc94b8692e8e5237affa486",
+    "producing_commit": "7780d94763d146799de564b38a328f3dd4686756",
+    "reference_followup_commit": "bb93550c6d5754ff193a612f05d9364dfc9514ca",
+    "reference_manifest_sha256": "c900665d75685ed9c0c44dc529146e5955f89cc82d3812bc62729f0952770b24"
+  },
+  "reference_core_ms_range": [
+    11.713714002326014,
+    81.18028399985633
+  ],
+  "reference_faster_returned_jobs": 35,
+  "returned_job_pairs": 35,
+  "status_counts": {
+    "certified_tolerance": 8,
+    "external_timeout": 1,
+    "incomplete": 27
+  },
+  "verdict": {
+    "certainty": "no finite test campaign establishes 100 percent relevance, priority or universal correctness",
+    "engineering_utility": "portable checked certificates and fail-closed admission demonstrated as a prototype",
+    "mathematical_validity": "supported under stated hypotheses; no observed bound/path violation",
+    "practical_superiority": "not established; compact exact transfer is preferable on these schemas",
+    "scaling": "limited-work admission declines on this complete grid; no general JSON scaling claim",
+    "scientific_priority": "incremental specialization of established principles; world novelty not established",
+    "semantic_accuracy": "not measured or implied by these guarantees"
+  },
+  "verification": "PASS"
+}

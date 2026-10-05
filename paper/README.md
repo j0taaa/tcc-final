@@ -104,6 +104,12 @@ optimization from certified mean-field sampling/admission. `probabilistic-commit
 contains the mass, sharp conditional-error, coverage and transport statements.
 Twelve fresh CPU MDLM predictions and all 192 outcomes are documented by the
 [generated report](../docs/artifacts/processed/m30_probability_v1/report.md).
+The [complete larger-canvas audit](../docs/artifacts/processed/m31_probability_v1/report.md)
+adds 18 fresh predictions and retains all 36 cells, including one external
+timeout. All 35 returned proofs pass, but admission declines at 8/16 slots and
+the independent compact exact control has lower measured inference cost on
+every completed pair. This explicitly limits practical-benefit claims. It is
+not an execution or ranking of published competitor implementations.
 Established WMC/conditioning, support filtering and AR grammar alignment are
 explicit antecedents; no world-first principle or general decoder superiority
 is claimed. The nine-theorem correspondence is in the
@@ -112,4 +118,4 @@ is claimed. The nine-theorem correspondence is in the
 The page-limited main preserves complete historical negative findings in prose;
 full historical tables and longer DP/foundation/conflict proofs remain in the
 supplement sources. `make article-results-check` verifies all generated products,
-including M29/M30. `scripts/check_paper.py` retains the 16-page/no-overflow gate.
+including M29--M31. `scripts/check_paper.py` retains the 16-page/no-overflow gate.
