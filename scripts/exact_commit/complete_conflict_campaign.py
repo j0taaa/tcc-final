@@ -12,6 +12,8 @@ from pathlib import Path
 
 from scripts.exact_commit import run_conflict_real as original
 
+from mwpc_exact.budget_proof import budget_proof_data
+from mwpc_exact.budgeted_commit import budgeted_commit_frontier
 from mwpc_exact.experiments.metadata import collect_system_metadata
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -58,12 +60,12 @@ def run(source, directory):
         "git_commit": system.git_commit,
         "hardware_software": original.system_data(system),
         "completion_scope": (
-            "Only previously unexecuted independent resource-DP jobs; "
-            "no rescoring/reselection"
+            "Only previously unexecuted independent resource-DP jobs; no rescoring/reselection"
         ),
         "interrupted_source": str(source.relative_to(ROOT)),
         "interrupted_rows_sha256": original.sha(source / "resource_dp-r0.jsonl"),
         "retained_completed_rows": len(rows),
+        "retained_producer_commits": sorted({r["git_commit"] for r in rows}),
         "missing_input_ids": sorted(expected - set(ids)),
     }
     original.write(stage / "metadata.json", metadata)
@@ -100,6 +102,32 @@ def run(source, directory):
     (directory / "resource_dp-r0.jsonl").write_bytes(
         prefix + (stage / "resource_dp-r0.jsonl").read_bytes()
     )
+    regenerated = []
+    inputs = {i.instance_id: i.selection_input for i, _ in original.cohort(config)}
+    all_rows = [
+        json.loads(line) for line in (directory / "resource_dp-r0.jsonl").read_text().splitlines()
+    ]
+    for row in all_rows:
+        target = directory / row["proof"]
+        if target.stat().st_size == 0:
+            state = inputs[row["instance_id"]]
+            results = budgeted_commit_frontier(state, row["max_budget"])
+            proof = budget_proof_data(state, results)
+            actual = [
+                {
+                    "budget": r.budget,
+                    "status": r.status.value,
+                    "objective_value": original.fraction_data(r.objective_value),
+                }
+                for r in results
+            ]
+            if actual != row["batches"]:
+                raise ValueError("reconstructed missing proof disagrees with saved outcome")
+            target.unlink()  # only the copied empty file; source bytes stay untouched
+            original.write(target, proof)
+            regenerated.append(row["proof"])
+    metadata["regenerated_empty_proofs"] = regenerated
+    metadata["recovery_timing_scope"] = "Proof regeneration is not a new timing measurement"
     original.write(directory / "continuation-metadata.json", metadata)
     shutil.rmtree(stage)  # copied new rows, proofs and provenance; not the interrupted source
     original.write(

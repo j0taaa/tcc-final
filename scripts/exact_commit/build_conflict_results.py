@@ -49,6 +49,7 @@ def audit(directory):
     if (directory / "continuation-metadata.json").exists():
         continuation = read(directory / "continuation-metadata.json")
         commits.add(continuation["git_commit"])
+        commits.update(continuation.get("retained_producer_commits", []))
         metadata = {**metadata, "continuation": continuation}
     rows = []
     for filename in sorted(expected_files):

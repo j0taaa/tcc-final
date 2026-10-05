@@ -213,3 +213,10 @@ and their proofs are copied byte for byte. The complete archive contains both
 producing provenance records, and the interrupted source is retained for audit.
 These measurements remain engineering evidence, secondary to the mathematical
 result and the subsequent broader scientific investigation requested by the user.
+
+The first completion gate additionally found two referenced resource proofs
+with zero bytes in the interrupted source, despite complete result rows. The
+next archive regenerates only those missing certificates, requires exact
+status/objective equality with the retained rows, and records the recovery
+commit and filenames. Recovery is excluded from timing statistics. Originals
+and failed completion bytes remain untouched; no row/outcome is replaced.
