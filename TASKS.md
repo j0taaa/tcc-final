@@ -16,6 +16,59 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M31 — Falsification audit of scientific and practical relevance
+
+Authorized by the request to run every necessary test before claiming relevance.
+Depends on M30 and its M26/M27 mathematical/checker gates. Keep all archived
+measurements, baseline decoders and scientific objectives unchanged. No finite
+test campaign proves universal relevance or priority. Constructed distributions
+are correctness controls, never empirical model predictions. A compact exact
+reference must not be renamed as an execution of FactorDLM or Dang--Ermon.
+
+- [x] T3100: Freeze falsifiable claims, adversarial controls, complete new CPU
+  canvas cohort and same-input exact-reference comparison before measurement.
+  **Acceptance:** scope/premises, failure outcomes and decision criteria are
+  explicit; no favorable-case selection or a promised winner.
+  **Evidence:** `docs/research/m31-relevance-audit.md` fixes six falsification
+  criteria and data-availability/competitor boundaries. The immutable
+  `m31_probability_scaling_cpu_v1.json` crosses all six declared prefixes with
+  4/8/16 slots (18 new forwards), limits 8/64, exact controls, 30-second external
+  process deadlines and 2 GiB parser workers before any new prediction.
+- [x] T3101: Independently audit mass, error, ambiguity/aliases, omitted support,
+  sampling and reweighting across recorded seeds; test exact finite-state
+  inference against exhaustive original-token enumeration and a separate JSON
+  parser; reject forged evidence. Fix every observed correctness failure before
+  the practical study.
+  **Acceptance:** all relevant regressions pass; constructed controls include
+  counterexamples to unconditional quality, exactness and scaling claims.
+  **Evidence:** `.venv/bin/python -m pytest -q
+  tests/exact_commit/test_probability_relevance_audit.py
+  tests/exact_commit/test_mass_certificates.py
+  tests/exact_commit/test_probability_provenance.py`: 94 passed in 1.80 s.
+  New controls compare 19,680 byte strings with Python JSON, enumerate 6,272
+  original token paths at seeds 310000--310031, and check 128 partial/exhaustive
+  partitions, full/represented mass/TV/event bounds, exact sampling tickets,
+  reweighting, aliases, missing-coverage refusal, zero feasible mass, forged
+  envelopes and fabricated softmax. Existing ambiguity/EOS/timeout/provenance
+  regressions remain intact. Ruff passes all four added/changed audit scripts
+  and tests. Capture metadata now derives its forward count from the actual
+  validated grid, fixing the former hard-coded six-count without changing old
+  archived measurements.
+- [ ] T3102: Capture every frozen larger MDLM canvas; compare certified partial
+  inference with an independent exact forward/backward reference on the same
+  original probabilities. Preserve all outcomes, independent checks, disjoint
+  timing/memory/provenance and immutable raw evidence.
+  **Acceptance:** every configured job is recorded; exact masses bound-check
+  every returned certificate; external wall-time cutoffs are not infeasibility;
+  reference advantages and refusals remain visible.
+  **Evidence:** pending.
+- [ ] T3103: Generate an auditable claim-by-claim verdict, update project/article
+  conclusions from measured evidence, and run complete correctness/formal,
+  upstream, artifact and relevant packaging/document gates.
+  **Acceptance:** mathematical validity, engineering utility, novelty and general
+  superiority are distinguished; no "100% certainty" claim about relevance.
+  **Evidence:** pending.
+
 ## M30 — Certified probabilistic commitment beyond the replay cohort
 
 Authorized by the 2026-10-05 request to broaden the scientific search. Depends

@@ -7,7 +7,6 @@ import json
 import time
 from pathlib import Path
 
-from scripts.exact_commit.mdlm_cpu import load_cpu_model
 from scripts.exact_commit.run_conflict_real import sha, system_data, write
 
 from mwpc_exact.experiments.metadata import collect_system_metadata
@@ -15,12 +14,28 @@ from mwpc_exact.experiments.metadata import collect_system_metadata
 ROOT = Path(__file__).resolve().parents[2]
 
 
+def planned_case_ids(config):
+    slots = config["slots"]
+    if (
+        not slots
+        or any(type(n) is not int or n <= 0 for n in slots)
+        or len(set(slots)) != len(slots)
+    ):
+        raise ValueError("capture slots must be distinct positive integers")
+    ids = tuple(f"{probe['id']}-{n}" for probe in config["probes"] for n in slots)
+    if not ids or len(set(ids)) != len(ids):
+        raise ValueError("capture case IDs must be nonempty and unique")
+    return ids
+
+
 def capture(config_path, output):
     import numpy as np
     import torch
+    from scripts.exact_commit.mdlm_cpu import load_cpu_model
     from transformers import AutoTokenizer
 
     config = json.loads(config_path.read_text())
+    expected_ids = planned_case_ids(config)
     system = collect_system_metadata(ROOT)
     if system.git_dirty is not False:
         raise ValueError("commit producing code/config before fresh forwards")
@@ -50,7 +65,7 @@ def capture(config_path, output):
             "numeric_reference": config["numeric_reference"],
             "torch_threads": torch.get_num_threads(),
             "device": "cpu",
-            "recorded_forwards": 6,
+            "recorded_forwards": len(expected_ids),
             "warmup_forwards": 1,
         },
     )
