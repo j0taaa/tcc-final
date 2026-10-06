@@ -87,12 +87,28 @@ reference must not be renamed as an execution of FactorDLM or Dang--Ermon.
   Full large-logit traces stay ignored locally; Git's complete rational inputs,
   tokenizer, lineage and proofs reproduce mathematics/tables offline. Commands,
   immutable config and this availability boundary are in `REPRODUCING.md`.
-- [ ] T3103: Generate an auditable claim-by-claim verdict, update project/article
+- [x] T3103: Generate an auditable claim-by-claim verdict, update project/article
   conclusions from measured evidence, and run complete correctness/formal,
   upstream, artifact and relevant packaging/document gates.
   **Acceptance:** mathematical validity, engineering utility, novelty and general
   superiority are distinguished; no "100% certainty" claim about relevance.
-  **Evidence:** pending.
+  **Evidence:** `docs/artifacts/processed/m31_probability_v1/{summary.json,report.md}`
+  and generated article macros retain all cells and explicitly reject practical
+  superiority on these schemas. README/reproduction/article conclusions now
+  distinguish certification from performance, semantic quality and priority.
+  Full Python: 1,523 passed in 134.72 s; Ruff and MyPy (108 files) pass; Rust
+  parser/binding tests (24), fmt/clippy and upstream EPIC regressions (19 passed,
+  4 existing skips) pass. Upstream commit unchanged. `m31-formal-checks.json`
+  records 35 universal statements and 16 concrete claims plus forged-bound
+  rejection; full source refinement and the older large replay timeout remain
+  excluded. `make article-results-check` verifies every current/historical
+  derivative and all 2,664 M29, 192 M30 and 35 M31 original-input proofs.
+  Clean-freeze isolated installed-wheel smoke passes, including the unchanged
+  50 MB source-archive gate (48,868,031 bytes); M31 bulk research data stays in
+  Git, excluded from library distributions. The rebuilt article passes the
+  unchanged 16-page/no-overflow/reference gate; all pages were rendered and
+  visually inspected. Complete commands, provenance, hashes, data availability
+  and scientific limitations: `docs/evidence/m31-final-checks.{md,json}`.
 
 ## M30 — Certified probabilistic commitment beyond the replay cohort
 

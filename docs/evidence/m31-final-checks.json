@@ -1,0 +1,166 @@
+{
+  "command_log_sha256": {
+    "results/processed/m31-article-products-check.log": "57e54802749b6eb692cc3dbc9c581e36c62c09839e2cf14afe0187b56261c8cc",
+    "results/processed/m31-epic-regressions.log": "6631f544ceeebce57d720617cf4868bd0260bce3aaa34bf571cdf124b35cd280",
+    "results/processed/m31-formal-checks.log": "ddb65fbdf1b8ee4f1b957a751f12c2984a9a81515ba61e241764b20f6cceca6c",
+    "results/processed/m31-full-python.log": "a35c9b26faeb193227a9fb4c348e444867a61f9c743bb8f471d154ec1e2534b2",
+    "results/processed/m31-package-smoke.log": "571c9503c1ffcb5e81ba92ef467f31f0716b26cdfe383d6d5982f3378293f261",
+    "results/processed/m31-paper.log": "8d662a1b913b5d2df982c7251b1496254d2407479588232e6eab33eff2f3ab0f",
+    "results/processed/m31-rust.log": "9e51670a74f681a95e5a6d77cdeb92f2ca95687c7c380d2f8772a4595a30897f"
+  },
+  "commands": [
+    {
+      "command": ".venv/bin/python -m pytest -q tests/exact_commit/test_probability_relevance_audit.py tests/exact_commit/test_mass_certificates.py tests/exact_commit/test_probability_provenance.py",
+      "result": "95 passed in 1.71s"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q",
+      "log": "results/processed/m31-full-python.log",
+      "result": "1523 passed in 134.72s"
+    },
+    {
+      "command": ".venv/bin/ruff check src tests scripts/exact_commit/capture_mdlm_probability.py scripts/exact_commit/probability_audit_controls.py scripts/exact_commit/run_probability_audit.py scripts/exact_commit/build_probability_audit_results.py",
+      "result": "PASS"
+    },
+    {
+      "command": ".venv/bin/ruff format --check <four audit scripts and new regression file>",
+      "result": "PASS"
+    },
+    {
+      "command": ".venv/bin/mypy",
+      "result": "PASS: 108 source files"
+    },
+    {
+      "command": "make test-rust-parser",
+      "log": "results/processed/m31-rust.log",
+      "result": "24 passed; parser/binding fmt and clippy PASS"
+    },
+    {
+      "command": ".venv/bin/python -m pytest -q vendor/EPIC-Decoding/tests/test_constrain_utils.py vendor/EPIC-Decoding/tests/test_bindings.py",
+      "log": "results/processed/m31-epic-regressions.log",
+      "result": "19 passed, 4 existing upstream skips"
+    },
+    {
+      "command": "./scripts/verify_upstream.sh",
+      "result": "PASS: unchanged 5b1b31098f34ed3691d2a9f4aae14fdf5839d072"
+    },
+    {
+      "command": ".venv/bin/python scripts/exact_commit/check_formal_project.py --lake <installed-pinned-lake> --output results/processed/m31-formal-checks.json",
+      "log": "results/processed/m31-formal-checks.log",
+      "result": "PASS: 35 universal declarations, 16 concrete claims, forged-bound rejection"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m scripts.exact_commit.build_probability_audit_results --capture results/raw/m31_probability_v1/capture",
+      "result": "PASS: full local source checks and 35 proofs; final regeneration with offline reference repeats only the check, not model measurements"
+    },
+    {
+      "command": "make article-results-check",
+      "log": "results/processed/m31-article-products-check.log",
+      "result": "PASS: all historical/current products; 2664 M29, 192 M30 and 35 M31 certificates; complete inventories and derived tables"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 make release-wheel-smoke",
+      "log": "results/processed/m31-package-smoke.log",
+      "result": "PASS: isolated installed-wheel proof/experiment/artifact/Lean-export; no editable-source leakage; sdist 48868031 bytes under unchanged 50MB gate"
+    },
+    {
+      "command": "make -C paper; pdftoppm -r 100 -png paper/main.pdf <local-render-prefix>",
+      "log": "results/processed/m31-paper.log",
+      "result": "PASS: 16 pages, no overflow/unresolved references, all 16 rendered pages visually inspected"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "current_results": {
+    "by_slots_at_64": [
+      {
+        "admitted": 5,
+        "cases": 6,
+        "slots": 4
+      },
+      {
+        "admitted": 1,
+        "cases": 6,
+        "slots": 8
+      },
+      {
+        "admitted": 0,
+        "cases": 6,
+        "slots": 16
+      }
+    ],
+    "jobs": 36,
+    "largest_positive_valid_token_path_count": 14082354344,
+    "reference_core_ms_range": [
+      11.713714002326014,
+      81.18028399985633
+    ],
+    "reference_faster_returned_jobs": 35,
+    "returned_job_pairs": 35,
+    "status_counts": {
+      "certified_tolerance": 8,
+      "external_timeout": 1,
+      "incomplete": 27
+    },
+    "verdict": {
+      "certainty": "no finite test campaign establishes 100 percent relevance, priority or universal correctness",
+      "engineering_utility": "portable checked certificates and fail-closed admission demonstrated as a prototype",
+      "mathematical_validity": "supported under stated hypotheses; no observed bound/path violation",
+      "practical_superiority": "not established; compact exact transfer is preferable on these schemas",
+      "scaling": "limited-work admission declines on this complete grid; no general JSON scaling claim",
+      "scientific_priority": "incremental specialization of established principles; world novelty not established",
+      "semantic_accuracy": "not measured or implied by these guarantees"
+    }
+  },
+  "date": "2026-10-05",
+  "empirical_provenance": {
+    "certificates_checked": 35,
+    "full_local_logits_checked": "optional_external_check_not_part_of_generated_tables",
+    "new_model_forwards": 18,
+    "primary_manifest_sha256": "3c677037d41fa7dda5f14f22e134e0226811227ebcc94b8692e8e5237affa486",
+    "producing_commit": "7780d94763d146799de564b38a328f3dd4686756",
+    "reference_followup_commit": "bb93550c6d5754ff193a612f05d9364dfc9514ca",
+    "reference_manifest_sha256": "c900665d75685ed9c0c44dc529146e5955f89cc82d3812bc62729f0952770b24"
+  },
+  "formal_scope": {
+    "audited_universal_statements": 35,
+    "concrete_resource_claims": 16,
+    "excluded": [
+      "source-level Python/Rust refinement",
+      "model inference",
+      "external tokenizer implementation",
+      "runtime and semantic accuracy"
+    ],
+    "kernel_rejects_forged_bound": true,
+    "older_large_replay_check": "75-node M29 replay Lean export exceeded 180s; remains unfinished, not a pass"
+  },
+  "implementation_evidence_freeze": "d137a36acf2dca4a7837686ebaaff415f9de1333",
+  "scope_limits": [
+    "No finite test campaign proves 100 percent relevance, priority or universal source correctness.",
+    "Controlled recursive-array syntax/scaling probes, not external production requests or semantic accuracy.",
+    "Numeric counter transfer and certifying partition expose different interfaces; diagnostic core-cost comparison, not published competitor executions or whole deployment.",
+    "All primary jobs and original reference timings preserved; final costs use separately attributed coverage-inclusive fresh-worker followup.",
+    "Full logits/probabilities remain ignored local large traces; complete retained rational inputs, tokenizer bytes, source hashes and proofs remain in Git.",
+    "CPU official-MDLM adaptation, not new GPU/end-to-end trajectory; no bitwise GPU equivalence claim.",
+    "Bulk research evidence excluded from library source/wheel; complete manuscript reproduction uses Git evidence checkout."
+  ],
+  "source_checks": {
+    "full_local_logits_softmax_normalization_and_tokenizer_bytes": "PASS",
+    "immutable_original_and_followup_manifests": "PASS",
+    "offline_generated_products": "PASS"
+  },
+  "source_sha256": {
+    "configs/experiments/m31_probability_scaling_cpu_v1.json": "80241ec93e4c994a12996f322096b7ff1b125e28a9061ceadd2e85b1b21919a4",
+    "docs/artifacts/processed/m31_probability_v1/report.md": "bddda7ea448d2004cafe3b493e40b1e20245e970dd7689db3b137e1ecb6f9c43",
+    "docs/evidence/m31-formal-checks.json": "ddb65fbdf1b8ee4f1b957a751f12c2984a9a81515ba61e241764b20f6cceca6c",
+    "paper/main.pdf": "883e703cc795e762dbb3f640bb7a5bdc763f0e959386d3fb4ca063287261445a",
+    "paper/main.tex": "fe531b6e7e04f1e66158b575cb0472d3194fe6330fb8c74694a877fbf211b563",
+    "scripts/exact_commit/build_probability_audit_results.py": "7d4926eaa6a0dcc8cf65abeace085b7884a66b119eb3591acaf1ee7a8cb8e1bb",
+    "scripts/exact_commit/probability_audit_controls.py": "d3d58b4b0a9028c0210cf2a46fc28f89d016c6d25a68b91a30167f9ed889ccb2",
+    "scripts/exact_commit/run_probability_audit.py": "b137091d7a5b68979d78b422374a25b5caa07edb19bf2e113304eefdc6f97cf6",
+    "tests/exact_commit/test_probability_relevance_audit.py": "41e53372d876658f65f5da3864191662da368754f7652fb277df5296c1828e2e"
+  },
+  "verification": "PASS"
+}
