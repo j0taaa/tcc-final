@@ -11,7 +11,6 @@ from mwpc_exact.types import (
     EpsilonEdge,
     GraphEdge,
     TerminalEdge,
-    TerminalLabel,
     WeightedTerminalDAG,
 )
 
@@ -33,9 +32,6 @@ class IndexedTerminalDAG:
     topological_index: Mapping[int, int]
     edge_by_id: Mapping[int, GraphEdge]
     outgoing_edges: Mapping[int, tuple[GraphEdge, ...]]
-    incoming_edges: Mapping[int, tuple[GraphEdge, ...]]
-    edges_by_label: Mapping[TerminalLabel, tuple[TerminalEdge, ...]]
-    edges_by_endpoints: Mapping[tuple[int, int], tuple[GraphEdge, ...]]
 
     def __post_init__(self) -> None:
         if not isinstance(self.graph, WeightedTerminalDAG):
@@ -66,9 +62,6 @@ def index_terminal_dag(graph: WeightedTerminalDAG) -> IndexedTerminalDAG:
     edges = tuple(sorted(graph.edges, key=lambda edge: edge.edge_id))
     edge_by_id: dict[int, GraphEdge] = {}
     outgoing: dict[int, list[GraphEdge]] = {node_id: [] for node_id in node_ids}
-    incoming: dict[int, list[GraphEdge]] = {node_id: [] for node_id in node_ids}
-    by_label: dict[TerminalLabel, list[TerminalEdge]] = {}
-    by_endpoints: dict[tuple[int, int], list[GraphEdge]] = {}
     indegree = dict.fromkeys(node_ids, 0)
 
     for edge in edges:
@@ -82,10 +75,6 @@ def index_terminal_dag(graph: WeightedTerminalDAG) -> IndexedTerminalDAG:
             )
         edge_by_id[edge.edge_id] = edge
         outgoing[edge.source_state].append(edge)
-        incoming[edge.target_state].append(edge)
-        if isinstance(edge, TerminalEdge):
-            by_label.setdefault(edge.terminal_label, []).append(edge)
-        by_endpoints.setdefault((edge.source_state, edge.target_state), []).append(edge)
         indegree[edge.target_state] += 1
 
     ready = [node_id for node_id, degree in indegree.items() if degree == 0]
@@ -118,14 +107,5 @@ def index_terminal_dag(graph: WeightedTerminalDAG) -> IndexedTerminalDAG:
         edge_by_id=MappingProxyType(edge_by_id),
         outgoing_edges=MappingProxyType(
             {node_id: tuple(node_edges) for node_id, node_edges in outgoing.items()}
-        ),
-        incoming_edges=MappingProxyType(
-            {node_id: tuple(node_edges) for node_id, node_edges in incoming.items()}
-        ),
-        edges_by_label=MappingProxyType(
-            {label: tuple(label_edges) for label, label_edges in by_label.items()}
-        ),
-        edges_by_endpoints=MappingProxyType(
-            {endpoints: tuple(endpoint_edges) for endpoints, endpoint_edges in by_endpoints.items()}
         ),
     )

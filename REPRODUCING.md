@@ -43,18 +43,14 @@ certificates against exact counter inference and their original rational inputs.
 `article-results` regenerates only the maintained M31 products. Earlier generated
 products remain frozen; their original generators live at the historical commit.
 
-## One maintained experiment
+## Offline audit and archived experiment producers
 
 Read the [frozen M31 protocol](docs/research/m31-relevance-audit.md) and the
 [complete outcomes](docs/artifacts/processed/m31_probability_v1/report.md).
-Fresh model execution is opt-in, requires the pinned CPU model environment,
-a clean producing commit and new output paths:
-
-```bash
-.venv/bin/python -m scripts.exact_commit.capture_mdlm_probability   --config configs/experiments/m31_probability_scaling_cpu_v1.json   --output results/raw/fresh-capture
-.venv/bin/python -m scripts.exact_commit.run_probability_audit   --capture results/raw/fresh-capture --output results/raw/fresh-audit
-.venv/bin/python -m scripts.exact_commit.run_probability_audit   --reference-followup results/raw/fresh-audit   --output results/raw/fresh-reference
-```
+Only offline certificate/control checking and table regeneration remain in
+the maintained scripts. The fresh-model campaign drivers and hardware metadata
+layer are retired; recover them at `9deb3df` and follow that revision's commands.
+The immutable campaign config remains at its original path for provenance.
 
 The existing full logits remain ignored locally at
 `results/raw/m31_probability_v1/capture`; large traces are not distributed.
@@ -85,6 +81,18 @@ git -C /tmp/tcc-before-cleanup submodule update --init --recursive
 Follow `REPRODUCING.md` in that checkout for the historical commands/environments.
 The old suite is intentionally absent from the maintained branch. No archived
 measurement was rerun, overwritten or relabeled during cleanup.
+
+For the last fresh-model probability campaign and the pre-M33 comparison/byte
+APIs, use a separate checkout (EPIC is already versioned there):
+
+```bash
+git worktree add --detach /tmp/tcc-campaign-source 9deb3df
+```
+
+Current version 0.4 uses `mwpc_exact.solver.solve_state` for finite-state
+oracles and `mwpc_exact.serde` for private strict JSON helpers. The unused
+`evaluation`, `experiments`, byte-only and enumeration APIs are retired.
+Serial/EPIC generation and the exact LLaDA adapter remain available.
 
 Bulk raw research evidence is excluded from the library sdist/wheel and retained
 in Git. Full manuscript reproduction uses the Git evidence checkout. Build an

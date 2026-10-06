@@ -11,8 +11,8 @@ from random import Random
 
 from mwpc_exact.budget_proof import fraction_data
 from mwpc_exact.conflict_proof import read_state
-from mwpc_exact.evaluation._serde import _mapping
 from mwpc_exact.mass_certificate import PosteriorScope, verify_mass_proof
+from mwpc_exact.serde import _mapping
 
 
 def main() -> None:

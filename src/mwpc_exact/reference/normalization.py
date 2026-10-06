@@ -21,7 +21,6 @@ from mwpc_exact.reference.grammar import (
     Terminal,
     TerminalProduction,
 )
-from mwpc_exact.types import TerminalLabel
 
 
 def _stable_id(value: object, field_name: str) -> int:
@@ -290,69 +289,6 @@ def normalize_to_cnf(source: SourceGrammar) -> NormalizationResult:
     return NormalizationResult(grammar, normalized_provenance, tuple(synthetic_ids))
 
 
-def enumerate_source_language(
-    grammar: SourceGrammar, *, max_length: int
-) -> frozenset[tuple[TerminalLabel, ...]]:
-    """Enumerate a bounded source language by monotone fixed point."""
-    if not isinstance(grammar, SourceGrammar):
-        raise TypeError("grammar must be a SourceGrammar")
-    limit = _length_limit(max_length)
-    labels = {item.symbol_id: item.label for item in grammar.terminals}
-    language: dict[int, set[tuple[TerminalLabel, ...]]] = {
-        item.symbol_id: set() for item in grammar.nonterminals
-    }
-    changed = True
-    while changed:
-        changed = False
-        for production in grammar.productions:
-            words: set[tuple[TerminalLabel, ...]] = {()}
-            for symbol in production.body:
-                fragments = (
-                    {(labels[symbol.symbol_id],)}
-                    if isinstance(symbol, TerminalRef)
-                    else language[symbol.symbol_id]
-                )
-                words = _bounded_concatenation(words, fragments, limit)
-                if not words:
-                    break
-            before = len(language[production.head_id])
-            language[production.head_id].update(words)
-            changed = changed or len(language[production.head_id]) != before
-    return frozenset(language[grammar.start_nonterminal_id])
-
-
-def enumerate_cnf_language(
-    grammar: CnfGrammar, *, max_length: int
-) -> frozenset[tuple[TerminalLabel, ...]]:
-    """Independently enumerate the bounded language of normalized CNF."""
-    if not isinstance(grammar, CnfGrammar):
-        raise TypeError("grammar must be a CnfGrammar")
-    limit = _length_limit(max_length)
-    labels = grammar.terminal_labels
-    language: dict[int, set[tuple[TerminalLabel, ...]]] = {
-        item.symbol_id: set() for item in grammar.nonterminals
-    }
-    for terminal_production in grammar.terminal_productions:
-        if limit >= 1:
-            language[terminal_production.head_id].add((labels[terminal_production.terminal_id],))
-    changed = True
-    while changed:
-        changed = False
-        for binary_production in grammar.binary_productions:
-            generated = _bounded_concatenation(
-                language[binary_production.left_id],
-                language[binary_production.right_id],
-                limit,
-            )
-            before = len(language[binary_production.head_id])
-            language[binary_production.head_id].update(generated)
-            changed = changed or len(language[binary_production.head_id]) != before
-    result = set(language[grammar.start_nonterminal_id])
-    if grammar.accepts_empty:
-        result.add(())
-    return frozenset(result)
-
-
 def _nullable_nonterminals(source: SourceGrammar) -> set[int]:
     nullable: set[int] = set()
     changed = True
@@ -462,24 +398,3 @@ def _unique_tuple(values: Iterable[int]) -> tuple[int, ...]:
     result: list[int] = []
     _append_unique(result, values)
     return tuple(result)
-
-
-def _length_limit(value: object) -> int:
-    if isinstance(value, bool) or not isinstance(value, int):
-        raise TypeError("max_length must be an integer")
-    if value < 0:
-        raise ValueError("max_length must be non-negative")
-    return value
-
-
-def _bounded_concatenation(
-    left: Iterable[tuple[TerminalLabel, ...]],
-    right: Iterable[tuple[TerminalLabel, ...]],
-    limit: int,
-) -> set[tuple[TerminalLabel, ...]]:
-    return {
-        (*left_word, *right_word)
-        for left_word in left
-        for right_word in right
-        if len(left_word) + len(right_word) <= limit
-    }

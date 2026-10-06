@@ -1,0 +1,49 @@
+{
+  "distribution_sha256": {
+    "mwpc_exact-0.4.0-py3-none-any.whl": "cc0cfcb360620394d8d91d687021e04a5edd97f8cbe03bb2149ebc1c948161cf",
+    "mwpc_exact-0.4.0.tar.gz": "ff931ad96ad80d37f4adebbda7de1fdb473fe42b9ba34b9501519c4f50358477"
+  },
+  "optimizers_not_imported": true,
+  "real_certificate_and_sample": {
+    "conditional_tv_bound": [
+      36085290922176268104428551438749921991,
+      1192417091580904966459383142049648708423
+    ],
+    "decoded": "{\"type\":\"string\"}",
+    "original_omitted_mass": [
+      11542650830353104300113085613516863202406551150321908176634073,
+      12855504354071912814544147817290000341659400551033607589707993
+    ],
+    "outside_valid_upper": [
+      0,
+      1
+    ],
+    "reference": "frozen_mean_field_conditioned_on_declared_grammar",
+    "reference_scope": "full_predictive_with_omitted_mass",
+    "sampling_status": "accepted",
+    "valid_mass_lower": [
+      5207655466563305227022425355702898732712883417641910272,
+      4285168118023970938181382605763333447219800183677869196569331
+    ],
+    "valid_mass_upper": [
+      5370169169313974210031284395638221555331681206096887808,
+      4285168118023970938181382605763333447219800183677869196569331
+    ],
+    "verification": "PASS",
+    "witness_token_ids": [
+      4895,
+      4906,
+      2404,
+      2536,
+      278,
+      20662
+    ]
+  },
+  "retired_absent": true,
+  "scope": "Isolated installed library and packaging operations; not a replacement test suite.",
+  "sdist_compressed_bytes": 2877057,
+  "sdist_unpacked_bytes": 8931070,
+  "unchanged_upstream_packaged_hashes": 158,
+  "verification": "PASS",
+  "wheel_python_modules": 54
+}

@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
-from mwpc_exact.evaluation._serde import (
+from mwpc_exact.reference.grammar import CnfGrammar
+from mwpc_exact.serde import (
     _exact_fields,
     _float,
     _integer,
@@ -12,7 +13,6 @@ from mwpc_exact.evaluation._serde import (
     _string,
     _validate_sha256,
 )
-from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.state import SelectionInput
 from mwpc_exact.support import PerPositionSupport, SupportInputSource
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter

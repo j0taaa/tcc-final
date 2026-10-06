@@ -16,6 +16,47 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M33 — Further reduction of owned code
+
+Authorized by the request to reduce further while leaving external EPIC alone.
+Depends on M32. Keep the existing mathematical/input/status contracts, live
+independent certificate validation, original probabilities, finite slots and
+serial/EPIC/exact integration. Do not alter the pinned baseline, Lean sources,
+archived scientific outcomes or recreate a test suite.
+
+- [x] T3300: Remove remaining retired comparison/campaign layers and duplicate
+  byte-lattice implementation; route current oracles to the existing validated
+  solver result instead of a second benchmark result hierarchy. Keep strict
+  JSON helpers without the obsolete evaluation package.
+  **Acceptance:** active consumers import/build and verify actual certificates;
+  finite-byte/EOS/PAD handling remains in the production EOS lattice; baseline
+  files and scientific artifacts retain their hashes.
+  **Evidence:** obsolete comparison result/selector hierarchy, byte-only lattice,
+  unused enumerators/graph indices and fresh-campaign/metadata layers removed.
+  Conflict/probability consumers use `solver.solve_state` and `SolveStatus` with
+  the unchanged live independent validator. `make check` passes (54 modules),
+  all retained/baseline/binding imports work, Python/Rust agree on the real
+  geocoding state, and its budget-2 certificate is identical to pre-cleanup and
+  independently verifies. Eight-query probability API output verifies against
+  the original saved input and honestly remains incomplete. `make
+  article-results-check` preserves all 3,683 scientific hashes/35 M31 checks;
+  external EPIC/formal source diffs are empty. Details: `docs/evidence/m33-runtime.json`.
+- [x] T3301: Update maintained command/documentation surface and record exact
+  before/after owned source counts. Keep retired producers recoverable at
+  `9deb3df`; perform operational/formal/package checks without claiming a suite
+  pass or new scientific results.
+  **Acceptance:** reproducible checks/counts recorded, no EPIC edits, no new
+  tests, old measurements/proofs retained and limitations explicit.
+  **Evidence:** version 0.4, README/reproduction/tool documentation point to the
+  current direct state API/offline checks and retired producers at `9deb3df`.
+  Own source falls 20,705 -> 17,679 lines (14.6% additional; 78.1% from before
+  both cleanups), implementation 17,798 -> 15,623 and scripts 1,892 -> 1,041.
+  `make check`, `make build-rust`, pinned Lean (35 statements/canonical example),
+  original-input resource/certificate checks, packaging and isolated dependency-free
+  wheel verification/sampling pass. All 158 pinned upstream package files retain
+  their hashes. No new/restored suite, model forward, benchmark or article result.
+  Exact scope, counts, commands/hashes and limitations: `docs/evidence/m33-cleanup.{md,json}`.
+
 ## M32 — User-authorized reset of tests and code reduction
 
 Authorized by the explicit request on 2026-10-05 to remove all tests and start

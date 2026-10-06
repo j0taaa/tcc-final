@@ -1,6 +1,6 @@
 """Finite-slot product lattice for explicit EOS/PAD semantics.
 
-The ordinary byte lattice remains unchanged.  This module composes the same
+This module handles ordinary byte expansion and explicit EOS/PAD, composing
 finite token choices with the two-state automaton frozen by ADR 0007, then
 normalizes the resulting weighted epsilon edges for the CFG parser while
 retaining enough provenance to reconstruct every physical token slot.
@@ -8,7 +8,7 @@ retaining enough provenance to reconstruct every physical token slot.
 
 from __future__ import annotations
 
-from collections.abc import Iterable, Iterator
+from collections.abc import Iterable
 from dataclasses import dataclass
 from itertools import pairwise
 from math import fsum, isfinite
@@ -407,15 +407,6 @@ class EOSLattice:
                 self.token_lattice.slot_count if eos_position is None else eos_position
             ),
         )
-
-    def iter_paths(self) -> Iterator[EOSLatticePath]:
-        """Enumerate legal full-slot paths for tiny fixtures and exhaustive oracles."""
-
-        for token_path in self.token_lattice.iter_paths():
-            try:
-                yield self.expand_path(token_path)
-            except EOSPolicyViolation:
-                continue
 
     def reconstruct_original_path(self, graph_edge_ids: Iterable[int]) -> EOSLatticePath:
         """Reconstruct all physical token IDs from one complete original-graph path."""

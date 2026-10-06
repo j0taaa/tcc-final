@@ -9,8 +9,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
-from math import lcm
-from random import Random
 
 State = tuple[int, int]
 START: State = (0, 0)
@@ -81,36 +79,6 @@ class ArrayPlan:
                     next_counts[end] = next_counts.get(end, 0) + counts[state]
             masses, counts = following, next_counts
         return masses.get(ACCEPT, Fraction()), counts.get(ACCEPT, 0)
-
-    def sample(
-        self,
-        probabilities: tuple[tuple[Fraction, ...], ...],
-        suffix: list[dict[State, Fraction]],
-        rng: Random,
-    ) -> tuple[int, ...]:
-        weights = self._weights(probabilities)
-        if not suffix[0].get(START, Fraction()):
-            raise ValueError("no positive-probability valid array")
-        state = START
-        tokens = []
-        for index, (layer, row) in enumerate(zip(self.edges, weights, strict=True)):
-            options = [
-                (token, end, row[token] * suffix[index + 1][end])
-                for token, end in layer[state]
-                if row[token] * suffix[index + 1][end]
-            ]
-            unit = lcm(*(mass.denominator for _, _, mass in options))
-            tickets = [int(mass * unit) for _, _, mass in options]
-            draw = rng.randrange(sum(tickets))
-            for (token, end, _), ticket in zip(options, tickets, strict=True):
-                if draw < ticket:
-                    tokens.append(token)
-                    state = end
-                    break
-                draw -= ticket
-        if state != ACCEPT:
-            raise AssertionError("backward sampling did not finish the root")
-        return tuple(tokens)
 
     def _weights(
         self, probabilities: tuple[tuple[Fraction, ...], ...]

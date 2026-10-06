@@ -7,7 +7,6 @@ additionally binds retained probabilities to the locally archived full logits.
 from __future__ import annotations
 
 import argparse
-import gzip
 import json
 from collections import Counter
 from fractions import Fraction
@@ -17,12 +16,12 @@ from pathlib import Path
 from random import Random
 from statistics import median
 
+from scripts.exact_commit.io_utils import _reject_json_constant, read, sha
 from scripts.exact_commit.probability_audit_controls import START, compile_array_plan
 
 from mwpc_exact.budget_proof import _fraction, fraction_data
 from mwpc_exact.conflict_proof import read_state
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
-from mwpc_exact.experiments._artifact_io import _reject_json_constant, _sha256_file
 from mwpc_exact.mass_certificate import PosteriorScope, ProbabilityInput, verify_mass_proof
 from mwpc_exact.reference.byte_grammars import _SourceGrammarBuilder
 from mwpc_exact.reference.normalization import normalize_to_cnf
@@ -32,13 +31,6 @@ ROOT = Path(__file__).resolve().parents[2]
 RAW = ROOT / "docs/artifacts/raw/m31_probability_v1"
 PROCESSED = ROOT / "docs/artifacts/processed/m31_probability_v1"
 GENERATED = ROOT / "paper/generated/m31_probability_v1"
-
-
-def read(path):
-    raw = path.read_bytes()
-    return json.loads(
-        gzip.decompress(raw) if path.suffix == ".gz" else raw, parse_constant=_reject_json_constant
-    )
 
 
 def manifest(directory):
@@ -51,13 +43,9 @@ def manifest(directory):
     if paths != set(values):
         raise ValueError("manifest differs from complete archive inventory")
     for name, digest in values.items():
-        if (
-            Path(name).is_absolute()
-            or ".." in Path(name).parts
-            or _sha256_file(directory / name) != digest
-        ):
+        if Path(name).is_absolute() or ".." in Path(name).parts or sha(directory / name) != digest:
             raise ValueError("archive path/hash changed")
-    return _sha256_file(directory / "manifest.json")
+    return sha(directory / "manifest.json")
 
 
 def schema_array(raw, one_child):
@@ -97,7 +85,7 @@ def check_capture(capture, encoded, inputs, config):
     if original_adapter.emissions != inputs.state.tokenizer_adapter.emissions:
         raise ValueError("original tokenizer bytes differ from archived input semantics")
     path = capture / case["array_file"]
-    if _sha256_file(path) != encoded["source_array_sha256"]:
+    if sha(path) != encoded["source_array_sha256"]:
         raise ValueError("full-logit source changed")
     with np.load(path, allow_pickle=False) as data:
         logits, raw = data["logits"], data["probabilities"]
@@ -128,7 +116,7 @@ def audit(primary, followup, capture=None):
     source_config = ROOT / cap["config_source"]
     if (
         config != read(source_config)
-        or cap["config_sha256"] != _sha256_file(source_config)
+        or cap["config_sha256"] != sha(source_config)
         or meta["config_sha256"] != cap["config_sha256"]
         or cap["git_commit"] != meta["git_commit"]
         or any(m["git_dirty"] is not False for m in (meta, cap, later))
@@ -194,7 +182,7 @@ def audit(primary, followup, capture=None):
         ref = read(followup / f"{case_id}.json")
         lineage = read(followup / f"{case_id}-lineage.json")
         if (
-            lineage["input_sha256"] != _sha256_file(input_path)
+            lineage["input_sha256"] != sha(input_path)
             or lineage["git_commit"] != later["git_commit"]
         ):
             raise ValueError("reference worker input/code lineage differs")

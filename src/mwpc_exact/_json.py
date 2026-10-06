@@ -1,6 +1,5 @@
 """Shared strict JSON freezing; no parsing or model dependencies."""
 
-import json
 from collections.abc import Mapping
 from math import isfinite
 from types import MappingProxyType
@@ -31,14 +30,3 @@ def _thaw_json(value: object) -> object:
     if isinstance(value, tuple):
         return [_thaw_json(item) for item in value]
     return value
-
-
-def _canonical_json(value: object) -> str:
-    """Stable artifact encoding, including immutable nested mappings."""
-    return json.dumps(
-        _thaw_json(value),
-        allow_nan=False,
-        ensure_ascii=False,
-        separators=(",", ":"),
-        sort_keys=True,
-    )

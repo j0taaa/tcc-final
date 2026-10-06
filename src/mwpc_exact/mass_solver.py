@@ -16,7 +16,6 @@ from mwpc_exact.backend import ExactBackend
 from mwpc_exact.budget_proof import budget_proof_data, fraction_data
 from mwpc_exact.budgeted_commit import budgeted_commit_frontier
 from mwpc_exact.conflict_proof import state_data
-from mwpc_exact.evaluation.selection import SelectionStatus, select_exact_mwpc
 from mwpc_exact.language_coverage import check_language_coverage
 from mwpc_exact.mass_certificate import (
     Box,
@@ -28,6 +27,7 @@ from mwpc_exact.mass_certificate import (
     verify_mass_proof,
 )
 from mwpc_exact.reference.budget_types import nonnegative_integer
+from mwpc_exact.solver import solve_state
 from mwpc_exact.types import Proposal, SolveStatus
 
 
@@ -131,18 +131,18 @@ def probability_partition(
             if deadline is not None and backend is ExactBackend.RUST
             else None
         )
-        result = select_exact_mwpc(query, backend=backend, timeout_seconds=timeout)
-        if result.status is SelectionStatus.TIMEOUT:
+        result = solve_state(query, backend=backend, timeout_seconds=timeout)
+        if result.status is SolveStatus.TIMEOUT:
             heapq.heappush(queue, (negative_mass, index))
             timed_out = True
             break
-        if result.status is SelectionStatus.OPTIMAL:
+        if result.status is SolveStatus.OPTIMAL:
             witness = result.witness_token_ids
             extract(index, witness)
             accepted_mass = inputs.box_mass(tuple((t,) for t in witness))
             lower += accepted_mass
             remaining -= accepted_mass
-        elif result.status is SelectionStatus.INFEASIBLE_ON_SUPPORT:
+        elif result.status is SolveStatus.INFEASIBLE_ON_SUPPORT:
             proof_result = budgeted_commit_frontier(restricted, 0)
             if proof_result[0].status is not SolveStatus.INFEASIBLE_ON_SUPPORT:
                 raise RuntimeError("independent infeasibility proof disagrees with CFG oracle")

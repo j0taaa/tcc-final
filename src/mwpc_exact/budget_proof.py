@@ -15,7 +15,6 @@ from mwpc_exact.budget_graph import (
 )
 from mwpc_exact.budget_result import BudgetedCommitResult
 from mwpc_exact.eos_policy import TokenRole
-from mwpc_exact.evaluation._serde import _integer, _mapping, _sequence, _string, _text
 from mwpc_exact.reference.budget_types import (
     BudgetCertificate,
     BudgetPathResult,
@@ -23,6 +22,7 @@ from mwpc_exact.reference.budget_types import (
     ResourceDAG,
 )
 from mwpc_exact.reference.grammar import CnfGrammar
+from mwpc_exact.serde import _integer, _mapping, _sequence, _string, _text
 from mwpc_exact.serialization import _selection_input_from_dict, _selection_input_to_dict
 from mwpc_exact.state import SelectionInput
 from mwpc_exact.types import SolveStatus, TerminalLabel

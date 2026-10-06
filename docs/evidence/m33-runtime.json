@@ -1,0 +1,26 @@
+{
+  "baseline_binding_imports": "PASS",
+  "fresh_probability_lower": [
+    15621172903852896759448910884094373212412888306956632064,
+    12855504354071912814544147817290000341659400551033607589707993
+  ],
+  "fresh_probability_oracle_calls": 8,
+  "fresh_probability_original_input_check": "PASS",
+  "fresh_probability_status": "incomplete",
+  "geocoding_certificate_identical_to_pre_cleanup": true,
+  "retained_module_imports": 54,
+  "same_real_input_backend_results": {
+    "python": {
+      "certificate_valid": true,
+      "objective": 0.5635608219672577,
+      "status": "optimal"
+    },
+    "rust": {
+      "certificate_valid": true,
+      "objective": 0.5635608219672577,
+      "status": "optimal"
+    }
+  },
+  "scope": "Operational checks of retained APIs on saved real inputs; not a replacement suite, benchmark or new model forward.",
+  "zero_work_limit_status": "timeout"
+}

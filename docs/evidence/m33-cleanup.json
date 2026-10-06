@@ -1,0 +1,259 @@
+{
+  "completed_checks": {
+    ".venv/bin/python -m build --no-isolation --outdir results/processed/m33-dist": {
+      "ignored_local_log": "results/processed/m33-packaging.log",
+      "result": "PASS",
+      "sha256": "a82bb0d7b4d9b1b91bdd7414eb4b0b2651dea323d0a281b5daa8d6c936248086"
+    },
+    ".venv/bin/python scripts/exact_commit/check_formal_project.py --lake \"$HOME/.elan/bin/lake\" --output results/processed/m33-formal.json": {
+      "ignored_local_log": "results/processed/m33-formal.log",
+      "result": "PASS",
+      "sha256": "272be4a258af3425247858450e018608bc5fd8b530aee97876c294b94b0bbc53"
+    },
+    "make article-results-check": {
+      "ignored_local_log": "results/processed/m33-artifacts.log",
+      "result": "PASS",
+      "sha256": "9ef46ea33ecfb79d1d42e0633016df6356c3fbf9c9ecd3bd1b67431068710311"
+    },
+    "make build-rust": {
+      "ignored_local_log": "results/processed/m33-rust.log",
+      "result": "PASS",
+      "sha256": "fcb9923475bbf6eb0f7f311a87cb4a4524265a5012a5d931b535f7a33e186e45"
+    },
+    "make check": {
+      "ignored_local_log": "results/processed/m33-check.log",
+      "result": "PASS",
+      "sha256": "25139154cfbe93a4d012a85b3aad110f252dcb63be75b374f130bf14855118c8"
+    }
+  },
+  "file_sha256": {
+    "docs/evidence/m32-preserved-artifacts.json": "6565e6158c39ad935bb0e485506cc28313a7e4d4e28d8c4e6891990d6ccb4220",
+    "docs/evidence/m33-formal.json": "272be4a258af3425247858450e018608bc5fd8b530aee97876c294b94b0bbc53",
+    "docs/evidence/m33-line-count.json": "dd79d7d51014185b70bba7d2f044da3cef4be0b1ab3c089b5cabb22d480bcb67",
+    "docs/evidence/m33-package.json": "4b6614a02025942ea4ccc45bc7f83ce17dac69c7e1ab4764b442cba64b692c8e",
+    "docs/evidence/m33-runtime.json": "811fabf7024c7baa9fa8f0c0bd6b72bcc9eba3322bcbbe2b0156e2a46d55da4a",
+    "vendor/EPIC-Decoding/.upstream-manifest.json": "c1d037606e6f4b1e1017af1e43a54bf37cd7f1f9d293b82bdb87210da8b03ec5"
+  },
+  "formal_record": "docs/evidence/m33-formal.json",
+  "geocoding_independent_verification": {
+    "certificate_verified": true,
+    "committed_positions": [
+      0,
+      1
+    ],
+    "committed_proposal_ids": [
+      1,
+      0
+    ],
+    "exactness_scope": {
+      "adaptive_expansions": [],
+      "included_special_tokens": [
+        25
+      ],
+      "kind": "explicit",
+      "pruning_description": "tool positional domains; byte CFG; EOS-padded slots",
+      "top_k": null,
+      "vocabulary_size": 26
+    },
+    "objective_value": [
+      36125249,
+      67108864
+    ],
+    "oracle_calls": 1,
+    "status": "optimal",
+    "witness_token_ids": [
+      5,
+      22,
+      12,
+      8,
+      4,
+      13,
+      9,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25,
+      25
+    ]
+  },
+  "historical_source_commit": "9deb3df7c9168e381bef569eb33061db5ff45f6a",
+  "immutable_scientific_files_verified": 3683,
+  "lean_source_diff": "empty",
+  "limitations": [
+    "Operational checks on saved real inputs are not a replacement regression/oracle suite or source refinement.",
+    "The new eight-query probability API check returned incomplete; it was not claimed to satisfy the requested posterior tolerance.",
+    "Lean verifies the unchanged 35 specifications/canonical example, not the whole Python/Rust/model source.",
+    "No new model forward, denoising trajectory, benchmark, performance/quality advantage or novelty result was claimed.",
+    "Removed comparison/campaign/byte-only/enumeration APIs are recoverable at the historical source commit.",
+    "Package size/hashes describe the final code/dependencies before adding final M33 evidence documentation.",
+    "CI commands were checked locally; GitHub CI was not executed remotely."
+  ],
+  "line_counts": {
+    "after": {
+      "groups": {
+        "build": {
+          "files": 8,
+          "nonblank_lines": 161,
+          "physical_lines": 197
+        },
+        "experiments_and_tools": {
+          "files": 10,
+          "nonblank_lines": 920,
+          "physical_lines": 1041
+        },
+        "implementation": {
+          "files": 59,
+          "nonblank_lines": 13972,
+          "physical_lines": 15623
+        },
+        "proofs": {
+          "files": 9,
+          "nonblank_lines": 715,
+          "physical_lines": 818
+        },
+        "tests": {
+          "files": 0,
+          "nonblank_lines": 0,
+          "physical_lines": 0
+        }
+      },
+      "own": {
+        "files": 86,
+        "nonblank_lines": 15768,
+        "physical_lines": 17679
+      }
+    },
+    "before": {
+      "groups": {
+        "build": {
+          "files": 8,
+          "nonblank_lines": 161,
+          "physical_lines": 197
+        },
+        "experiments_and_tools": {
+          "files": 13,
+          "nonblank_lines": 1705,
+          "physical_lines": 1892
+        },
+        "implementation": {
+          "files": 66,
+          "nonblank_lines": 15908,
+          "physical_lines": 17798
+        },
+        "proofs": {
+          "files": 9,
+          "nonblank_lines": 715,
+          "physical_lines": 818
+        },
+        "tests": {
+          "files": 0,
+          "nonblank_lines": 0,
+          "physical_lines": 0
+        }
+      },
+      "own": {
+        "files": 96,
+        "nonblank_lines": 18489,
+        "physical_lines": 20705
+      }
+    },
+    "own_line_reduction_fraction": 0.14614827336392178,
+    "reduction_from_before_first_cleanup_fraction": 0.7810704378838914
+  },
+  "milestone": "M33",
+  "package_record": "docs/evidence/m33-package.json",
+  "package_version": "0.4.0",
+  "resource_independent_verification": {
+    "frontier": [
+      {
+        "budget": 0,
+        "gap_bound": "0",
+        "objective": "0",
+        "optimal_under_support_expansion": true,
+        "upper_bound": "0"
+      },
+      {
+        "budget": 1,
+        "gap_bound": "0",
+        "objective": "7/8",
+        "optimal_under_support_expansion": true,
+        "upper_bound": "7/8"
+      },
+      {
+        "budget": 2,
+        "gap_bound": "3/8",
+        "objective": "1",
+        "optimal_under_support_expansion": false,
+        "upper_bound": "11/8"
+      },
+      {
+        "budget": 3,
+        "gap_bound": "7/8",
+        "objective": "1",
+        "optimal_under_support_expansion": false,
+        "upper_bound": "15/8"
+      }
+    ],
+    "input_fingerprint": "2b79ca0715898174e002a415c70a7003a02c98860f6925b5378cf61493826d7e",
+    "scope": "exact_on_support: ad24a73911e4bbcd5f48d44f010390e7226d82cb3da7d77dcb19010a2e5678d4; EOS={'mode': 'absent', 'termination_token_ids': [], 'pad_token_id': None}",
+    "verification": "PASS",
+    "verification_scope": "original_input_and_resource_optimality"
+  },
+  "retained_m31_certificates_verified": 35,
+  "runtime_record": "docs/evidence/m33-runtime.json",
+  "scope": "Further reduction of owned implementation/experiment maintenance, with external EPIC unchanged.",
+  "test_suite": "Absent by request; no suite restored or created.",
+  "upstream_diff": "empty"
+}

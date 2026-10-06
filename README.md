@@ -25,10 +25,19 @@ removed from the maintained source tree. The prior implementation and tests
 remain recoverable at Git commit `a98ae8e09f2066157ebf6df05f8873b8600e00fb`.
 No replacement test suite was created; `make test` explicitly reports its absence.
 
-Only the current larger-canvas probability campaign/configuration and exact
-counter control remain maintained. Recorded outcomes, original inputs/proofs, generated paper
-products, all Lean mathematical sources and license notices remain unchanged.
+The further reduction removes the retired comparison result hierarchy, unused
+byte-only lattice and fresh-campaign drivers/metadata. Ordinary byte expansion
+and EOS/PAD use the same existing production lattice. Exact oracles return the
+shared `ExactCommitResult` through `solve_state`.
+
+Only offline audit/table regeneration and its independent exact counter remain
+maintained. The last campaign's drivers are recoverable at `9deb3df`; its frozen
+configuration remains versioned. Recorded outcomes, original inputs/proofs,
+generated paper products, Lean sources and external EPIC remain unchanged.
 [Reproduction and historical recovery](REPRODUCING.md).
+
+The [second cleanup](docs/evidence/m33-cleanup.md) reduces owned source from
+20,705 to 17,679 physical lines; external EPIC is unchanged.
 
 ## Use
 
@@ -44,7 +53,7 @@ only shared data contracts:
 
 ```python
 from mwpc_exact import SelectionInput, Proposal, EOSPolicy
-from mwpc_exact.solver import solve_exact_commit
+from mwpc_exact.solver import solve_exact_commit, solve_state
 from mwpc_exact.budgeted_commit import budgeted_commit_frontier
 from mwpc_exact.mass_solver import probability_partition
 from mwpc_exact.mass_certificate import verify_mass_proof

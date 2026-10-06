@@ -27,6 +27,7 @@ from mwpc_exact.reference.dag_parser import (
 from mwpc_exact.reference.grammar import CnfGrammar
 from mwpc_exact.reference.recognizer import recognizes_cnf
 from mwpc_exact.rust_solver import RustBindingUnavailable, solve_rust_dag
+from mwpc_exact.state import SelectionInput
 from mwpc_exact.support import PerPositionSupport
 from mwpc_exact.token_lattice import build_token_lattice
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
@@ -610,4 +611,31 @@ def solve_validated_exact_commit(
     )
 
 
-__all__ = ["solve_exact_commit", "solve_validated_exact_commit"]
+def solve_state(
+    state: SelectionInput,
+    *,
+    backend: ExactBackend = ExactBackend.RUST,
+    timeout_seconds: float | None = None,
+    deadline_check_interval: int = 1_024,
+    deterministic_work_limit: int | None = None,
+    profiler: ComponentProfiler | None = None,
+) -> ExactCommitResult:
+    """Solve a frozen finite-token state using the same independent validator."""
+    if not isinstance(state, SelectionInput):
+        raise TypeError("state must be a SelectionInput")
+    return solve_exact_commit(
+        state.grammar,
+        canvas=state.canvas,
+        support=state.support,
+        proposals=state.proposals,
+        tokenizer_adapter=state.tokenizer_adapter,
+        eos_policy=state.eos_policy,
+        backend=backend,
+        timeout_seconds=timeout_seconds,
+        deadline_check_interval=deadline_check_interval,
+        deterministic_work_limit=deterministic_work_limit,
+        profiler=profiler,
+    )
+
+
+__all__ = ["solve_exact_commit", "solve_state", "solve_validated_exact_commit"]

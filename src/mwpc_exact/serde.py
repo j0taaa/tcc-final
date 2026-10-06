@@ -1,15 +1,10 @@
-"""Private strict JSON and numeric helpers for benchmark artifacts."""
+"""Strict JSON/numeric helpers for original-input certificates."""
 
 from __future__ import annotations
 
-import hashlib
 from collections.abc import Collection, Mapping, Sequence
 from math import isfinite, isnan
 from typing import cast
-
-from mwpc_exact._json import _canonical_json as _canonical_json
-from mwpc_exact._json import _freeze_json as _freeze_json
-from mwpc_exact._json import _thaw_json as _thaw_json
 
 
 def _mapping(value: object, field_name: str) -> Mapping[str, object]:
@@ -48,18 +43,6 @@ def _text(value: object, field_name: str) -> str:
     return value
 
 
-def _optional_string(value: object, field_name: str) -> str | None:
-    if value is None:
-        return None
-    return _string(value, field_name)
-
-
-def _optional_text(value: object, field_name: str) -> str | None:
-    if value is None:
-        return None
-    return _text(value, field_name)
-
-
 def _exact_fields(
     data: Mapping[str, object],
     *,
@@ -73,17 +56,6 @@ def _exact_fields(
     unknown = set(data) - required - set(optional)
     if unknown:
         raise ValueError(f"unknown {field_name} fields: {', '.join(sorted(unknown))}")
-
-
-def _freeze_json_mapping(value: object, field_name: str) -> Mapping[str, object]:
-    frozen = _freeze_json(_mapping(value, field_name), field_name)
-    if not isinstance(frozen, Mapping):
-        raise AssertionError("mapping freeze returned a non-mapping")
-    return cast(Mapping[str, object], frozen)
-
-
-def _sha256(value: object) -> str:
-    return hashlib.sha256(_canonical_json(value).encode("utf-8")).hexdigest()
 
 
 def _validate_sha256(value: object, field_name: str) -> str:
@@ -103,21 +75,3 @@ def _float(value: object, field_name: str, *, allow_infinity: bool = False) -> f
     if isnan(result) or (not allow_infinity and not isfinite(result)):
         raise ValueError(f"{field_name} must be finite")
     return result
-
-
-def _encode_logit(value: float) -> float | str:
-    if value == float("inf"):
-        return "Infinity"
-    if value == float("-inf"):
-        return "-Infinity"
-    return value
-
-
-def _decode_logit(value: object, field_name: str) -> float:
-    if value == "Infinity":
-        return float("inf")
-    if value == "-Infinity":
-        return float("-inf")
-    if isinstance(value, str):
-        raise ValueError(f"{field_name} has an unknown encoded logit value")
-    return _float(value, field_name, allow_infinity=True)

@@ -1,31 +1,25 @@
-"""Small immutable JSON/gzip and provenance helpers for the current campaign."""
+"""Strict JSON/gzip and file hashing for offline artifact verification."""
 
 import gzip
 import hashlib
 import json
-from dataclasses import fields
 
 
 def sha(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    digest = hashlib.sha256()
+    with path.open("rb") as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _reject_json_constant(value):
+    raise ValueError(f"raw JSONL contains non-finite constant: {value}")
 
 
 def read(path):
     raw = path.read_bytes()
-    return json.loads(gzip.decompress(raw) if path.suffix == ".gz" else raw)
-
-
-def write(path, value):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    raw = (json.dumps(value, sort_keys=True, allow_nan=False) + "\n").encode()
-    with path.open("xb") as stream:
-        stream.write(gzip.compress(raw, mtime=0) if path.suffix == ".gz" else raw)
-
-
-def system_data(system):
-    return {
-        field.name: dict(getattr(system, field.name))
-        if field.name == "thread_environment"
-        else getattr(system, field.name)
-        for field in fields(system)
-    }
+    return json.loads(
+        gzip.decompress(raw) if path.suffix == ".gz" else raw,
+        parse_constant=_reject_json_constant,
+    )

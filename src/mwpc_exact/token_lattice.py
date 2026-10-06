@@ -2,14 +2,13 @@
 
 This module deliberately stops before detokenization. A :class:`TokenChoice`
 identifies one represented token alternative across one physical canvas slot;
-the byte-lattice layer expands those choices into byte-bearing ``TokenArc`` objects.
+the EOS lattice expands those choices into byte paths under every EOS policy.
 """
 
 from __future__ import annotations
 
-from collections.abc import Iterable, Iterator, Sequence
+from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
-from itertools import product
 from math import fsum, isfinite, prod
 
 from mwpc_exact._scores import weight_terms
@@ -283,16 +282,6 @@ class TokenLattice:
             for proposal_id in self.unrepresented_proposal_ids
             if proposal_id not in zero_ids
         )
-
-    def iter_paths(self) -> Iterator[TokenLatticePath]:
-        """Enumerate complete paths in deterministic Cartesian-product order.
-
-        This is intended for tiny correctness fixtures and exhaustive oracles;
-        production code should consume the lattice graph directly.
-        """
-
-        for choices in product(*self.choices_by_position):
-            yield self._path_from_choices(choices)
 
     def validate_path(self, path: TokenLatticePath) -> None:
         """Independently verify that ``path`` consumes each slot exactly once."""

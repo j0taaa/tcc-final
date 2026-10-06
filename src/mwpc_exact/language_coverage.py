@@ -11,8 +11,8 @@ from __future__ import annotations
 from collections.abc import Iterable
 
 from mwpc_exact.eos_policy import EOSMode
-from mwpc_exact.evaluation._serde import _integer, _mapping, _sequence, _string
 from mwpc_exact.reference.grammar import CnfGrammar
+from mwpc_exact.serde import _integer, _mapping, _sequence, _string
 from mwpc_exact.state import SelectionInput
 
 

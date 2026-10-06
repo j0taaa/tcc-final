@@ -30,14 +30,10 @@ from mwpc_exact.conflict_certificate import (
     rewarded_choices,
     token_path_ids,
 )
-from mwpc_exact.evaluation.selection import (
-    SelectionInput,
-    SelectionResult,
-    SelectionStatus,
-    select_exact_mwpc,
-)
 from mwpc_exact.reference.budget_types import nonnegative_integer
-from mwpc_exact.types import SolveStatus
+from mwpc_exact.solver import solve_state
+from mwpc_exact.state import SelectionInput
+from mwpc_exact.types import ExactCommitResult, SolveStatus
 
 
 class _Deadline(Exception):
@@ -125,7 +121,7 @@ class ConflictCommitSolver:
         calls = 0
         choices = rewarded_choices(state)
 
-        def oracle(batch: tuple[Choice, ...]) -> SelectionResult:
+        def oracle(batch: tuple[Choice, ...]) -> ExactCommitResult:
             nonlocal calls
             if (max_oracle_calls is not None and calls >= max_oracle_calls) or (
                 deadline is not None and monotonic() >= deadline
@@ -138,12 +134,12 @@ class ConflictCommitSolver:
                 if deadline is not None and self.backend is ExactBackend.RUST
                 else None
             )
-            answer = select_exact_mwpc(restricted, backend=self.backend, timeout_seconds=timeout)
-            if answer.status is SelectionStatus.TIMEOUT:
+            answer = solve_state(restricted, backend=self.backend, timeout_seconds=timeout)
+            if answer.status is SolveStatus.TIMEOUT:
                 raise _Deadline
             if answer.status not in (
-                SelectionStatus.OPTIMAL,
-                SelectionStatus.INFEASIBLE_ON_SUPPORT,
+                SolveStatus.OPTIMAL,
+                SolveStatus.INFEASIBLE_ON_SUPPORT,
             ):
                 raise RuntimeError(f"finite CFG oracle failed: {answer.status}")
             return answer
@@ -173,7 +169,7 @@ class ConflictCommitSolver:
                     return result
                 batch = tuple(choices[j][0] for j in candidate)
                 answer = oracle(batch)
-                if answer.status is SelectionStatus.OPTIMAL:
+                if answer.status is SolveStatus.OPTIMAL:
                     assert answer.witness_token_ids is not None
                     checked = validate_budget_batch(
                         state,
@@ -203,7 +199,7 @@ class ConflictCommitSolver:
                 core = list(batch)
                 for choice in batch:
                     trial = tuple(c for c in core if c != choice)
-                    if oracle(trial).status is SelectionStatus.INFEASIBLE_ON_SUPPORT:
+                    if oracle(trial).status is SolveStatus.INFEASIBLE_ON_SUPPORT:
                         core.remove(choice)
                 basis = replace(state, proposals=())
                 restricted = restrict_choices(basis, tuple(core))

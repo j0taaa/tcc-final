@@ -331,46 +331,6 @@ def aggregate_proposals(proposals: Iterable[Proposal]) -> tuple[AggregatedPropos
 
 
 @dataclass(frozen=True, slots=True)
-class TokenArc:
-    """One token choice crossing a physical slot boundary."""
-
-    token_edge_id: int
-    slot: int
-    token_id: int
-    source_boundary: int
-    target_boundary: int
-    emitted_bytes: bytes
-    weight: float = 0.0
-    matched_proposal_ids: tuple[int, ...] = ()
-    weight_terms: tuple[float, ...] = ()
-
-    def __post_init__(self) -> None:
-        for field_name in ("token_edge_id", "slot", "token_id", "source_boundary"):
-            value = _require_int(getattr(self, field_name), field_name)
-            if value < 0:
-                raise ValueError(f"{field_name} must be non-negative")
-        target_boundary = _require_int(self.target_boundary, "target_boundary")
-        if target_boundary <= self.source_boundary:
-            raise ValueError("target_boundary must be greater than source_boundary")
-        if not isinstance(self.emitted_bytes, (bytes, bytearray)):
-            raise TypeError("emitted_bytes must be bytes")
-        object.__setattr__(self, "emitted_bytes", bytes(self.emitted_bytes))
-        if not self.emitted_bytes:
-            raise ValueError("empty token emissions are unsupported")
-        object.__setattr__(
-            self,
-            "weight",
-            _finite_float(self.weight, "weight", non_negative=True),
-        )
-        object.__setattr__(self, "weight_terms", weight_terms(self.weight, self.weight_terms))
-        object.__setattr__(
-            self,
-            "matched_proposal_ids",
-            _id_occurrences(self.matched_proposal_ids, "matched_proposal_ids"),
-        )
-
-
-@dataclass(frozen=True, slots=True)
 class TerminalEdge:
     """One weighted terminal edge with stable token provenance."""
 
