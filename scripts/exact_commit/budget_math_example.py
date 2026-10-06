@@ -37,7 +37,6 @@ def generate():
         build_per_position_support,
     )
     from mwpc_exact.budgeted_commit import budgeted_commit_frontier
-    from mwpc_exact.evaluation.selection import SelectionInput
     from mwpc_exact.reference.grammar import Nonterminal, Terminal
     from mwpc_exact.reference.normalization import (
         SourceGrammar,
@@ -45,6 +44,7 @@ def generate():
         TerminalRef,
         normalize_to_cnf,
     )
+    from mwpc_exact.state import SelectionInput
 
     emissions = tuple(bytes((a,)) for a in b"abcxyz")
     source = SourceGrammar(

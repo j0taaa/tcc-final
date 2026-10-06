@@ -2,7 +2,12 @@
 
 ## Scope and source of truth
 
-This file applies to the entire repository. It is intentionally concise. Detailed work items, dependencies, acceptance criteria, and evidence requirements live in `TASKS.md`.
+This file applies to the repository. Current work and evidence live in `TASKS.md`.
+
+The user explicitly removed the old test suite on 2026-10-05 to rebuild it from
+scratch. M32 supersedes the old mandatory suite/benchmark workflow. Do not
+restore the deleted suite, create an unsolicited replacement, or call an empty
+test run a correctness pass. Historical test evidence belongs to its source commit.
 
 The repository implements **Exact Maximum-Weight Parallel Commitment (MWPC)** for CFG-constrained diffusion language models, using the EPIC codebase as the integration baseline. Preserve the existing serial and EPIC heuristic decoders as baselines; add the exact method as a separate strategy.
 
@@ -10,7 +15,7 @@ Before changing code:
 
 1. Read this file.
 2. Read only the current milestone and its dependencies in `TASKS.md`.
-3. Inspect the relevant existing code and tests.
+3. Inspect the relevant retained code, proofs and archived evidence.
 4. State the scientific/behavioral contract that the change must preserve.
 
 ## Execution workflow
@@ -41,9 +46,9 @@ Before changing code:
 
 ## Architecture boundaries
 
-- `src/mwpc_exact/reference/`: small, readable Python reference algorithms and exhaustive oracles. Correctness first; no model dependencies.
+- `src/mwpc_exact/reference/`: independent, readable Python reference parsing and grammar construction. Correctness first; no model dependencies.
 - `src/mwpc_exact/`: proposal policy, finite-support construction, tokenizer adapter, orchestration, validation, diagnostics, and decoder integration.
-- `vendor/EPIC-Decoding/rustformlang/` (read-only baseline) and `crates/mwpc_parser/` (new production solver): performance-critical weighted CFG-on-DAG parser and certificate reconstruction.
+- `vendor/EPIC-Decoding/rustformlang/` (pinned production snapshot; upstream tests removed) and `crates/mwpc_parser/` (new production solver): performance-critical weighted CFG-on-DAG parser and certificate reconstruction.
 - `crates/mwpc_parser_py/`: thin PyO3 bindings. Do not duplicate parsing logic here.
 - Existing EPIC modules remain usable without the exact strategy enabled.
 - Model-specific code must call a model-independent exact-commit API. Do not put LLaDA/Dream/Qwen-specific logic inside the solver.
@@ -65,29 +70,14 @@ ExactCommitResult
 
 Do not expose a bare tuple whose fields are easy to confuse.
 
-## Required implementation order
-
-1. Reproduce the unmodified EPIC baseline.
-2. Freeze data contracts and exactness terminology.
-3. Implement token-aligned CKY max-plus in Python.
-4. Implement exhaustive completion/subset oracles and randomized differential tests.
-5. Implement a generic weighted acyclic terminal-graph solver and backtracking.
-6. Port the production solver to Rust and expose it through bindings.
-7. Build a finite token-slot lattice with exact token provenance.
-8. Implement the mandatory byte-level tokenizer-aware path; add a lexical transducer only as an optional extension.
-9. Add EOS/PAD semantics and independent witness validation.
-10. Integrate as `serial | epic | exact` without deleting baselines.
-11. Run correctness, optimality-gap, finite-slot, scaling, and end-to-end experiments.
-12. Update the TCC only from versioned code, configurations, and generated result artifacts.
-
 ## Repository and dependency rules
 
 - Preserve `LICENSE` and `THIRD_PARTY_LICENSES.md`; record the upstream EPIC commit used.
 - Do not commit model weights, Hugging Face caches, private datasets, credentials, tokens, large traces, or machine-specific absolute paths.
-- Tests must not require network access. GPU/model tests must be opt-in and clearly marked.
+- Future tests must not require network access; new GPU/model runs are opt-in.
 - Lock dependency changes. Add a dependency only when the current task requires it and document why.
 - Do not change branches, rewrite history, force-push, or push remotely unless the user explicitly requests it.
-- Do not delete or weaken existing baseline tests to make a change pass.
+- The user-authorized reset removed owned/upstream tests; preserve the baseline production source and its manifest.
 
 ## Coding conventions
 
@@ -101,73 +91,27 @@ Do not expose a bare tuple whose fields are easy to confuse.
 
 ### Rust
 
-- Put weighted parsing logic in a dedicated CFG module with unit tests.
+- Put weighted parsing logic in a dedicated CFG module. A future test suite must verify it independently.
 - Return `Result`/explicit solver status for user-controlled input; do not panic on malformed graphs, timeouts, or infeasible instances.
 - Store backpointers by stable IDs, not borrowed transient objects.
 - Validate topological order and graph endpoints at construction.
 - Keep production weights neutral unless a task explicitly introduces weighted grammar productions.
 
-### Tests
-
-- Compare objective values and certificate validity; do not require identical witnesses when several optima exist.
-- Every bug fix adds a minimal regression test.
-- Random tests use recorded seeds and print the seed on failure.
-- An independent validator must check the final witness rather than trusting parser internals.
-- A correctness test failing against brute force blocks integration and benchmarking work.
-
-## Commands
-
-Initial lightweight setup for reference work:
+### Current verification commands
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e .
+make check
+make build-rust
+make check-formal LAKE="$HOME/.elan/bin/lake"
+make article-results-check
+make paper
 ```
 
-Pinned EPIC CPU baseline and Rust binding:
-
-```bash
-make bootstrap-epic
-source .venv/bin/activate
-python -c "import constrained_diffusion, rustformlang; print('ok')"
-```
-
-Baseline/complete Python tests:
-
-```bash
-python -m pytest -q
-```
-
-Exact-commit Python tests after they exist:
-
-```bash
-python -m pytest -q tests/exact_commit
-```
-
-Rust parser tests after Rust changes:
-
-```bash
-cargo test --manifest-path vendor/EPIC-Decoding/rustformlang/Cargo.toml
-cargo fmt --manifest-path vendor/EPIC-Decoding/rustformlang/Cargo.toml --all -- --check
-```
-
-Bindings and differential tests after changing the Rust API:
-
-```bash
-(cd vendor/EPIC-Decoding/rustformlang_bindings && maturin develop --release)
-python -m pytest -q tests/exact_commit/test_rust_differential.py
-```
-
-Run the existing constrained-decoding regression tests after integration changes:
-
-```bash
-python -m pytest -q vendor/EPIC-Decoding/tests/test_constrain_utils.py \
-  vendor/EPIC-Decoding/tests/test_bindings.py
-```
-
-Use the smallest relevant command while developing. Before completing a milestone that changes public behavior, run the full Python suite plus relevant Rust and binding tests. Report commands that could not run and why.
+These check structure/builds, mathematical proofs and recorded artifacts. They
+are not a substitute for the future independent regression/oracle suite.
+`make test` intentionally reports that no suite exists. When tests are rebuilt,
+compare objectives and independently validated certificates, use recorded
+seeds, and keep failures distinct from timeouts and support infeasibility.
 
 ## Experimental integrity
 
@@ -178,14 +122,9 @@ Use the smallest relevant command while developing. Before completing a mileston
 - Synchronize CUDA around GPU timing and exclude one-time model loading from per-instance decoding time.
 - Never write a result into the LaTeX paper unless the producing command, config, raw artifact, and code commit are recorded.
 
-## Definition of done for the required implementation
+## Completion boundaries
 
-The required implementation is complete only when:
-
-- the token-aligned and finite-lattice solvers agree with exhaustive oracles on all configured small cases;
-- the independent validator accepts every returned `OPTIMAL` certificate;
-- the finite-slot tests distinguish bounded canvases from abstract unbounded gaps;
-- the exact strategy works through one real dLLM adapter without breaking serial or EPIC modes;
-- heuristic-gap, runtime/memory, and end-to-end scripts run from versioned configs;
-- a clean environment can reproduce the main tables/figures; and
-- the TCC accurately states the implemented support, tokenizer semantics, limitations, and measured results.
+Preserve the per-step/support/probability contracts above. Keep serial/EPIC/exact
+usable and mathematical/provenance checks independent of optimization. No
+cleanup, compiler run, model demo or certificate check establishes universal
+source correctness, scientific priority or practical superiority.

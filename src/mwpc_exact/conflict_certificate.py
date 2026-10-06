@@ -18,8 +18,8 @@ from mwpc_exact.budget_bounds import (
 )
 from mwpc_exact.budget_certificate import check_budget_commit_certificate
 from mwpc_exact.budget_result import BudgetedCommitResult
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.reference.budget_types import nonnegative_integer
+from mwpc_exact.state import SelectionInput
 from mwpc_exact.support import SupportPolicy, build_per_position_support
 from mwpc_exact.types import ExactnessScope, SolveStatus, SupportKind
 

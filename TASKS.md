@@ -16,6 +16,59 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M32 — User-authorized reset of tests and code reduction
+
+Authorized by the explicit request on 2026-10-05 to remove all tests and start
+again, and to reduce implementation/experiments. This overrides the historical
+requirement to retain/run the old test suite for this cleanup only. Keep exact
+objectives, finite token semantics, status separation, independent certificate
+checks, serial/EPIC/exact behavior, mathematical proofs and recorded outcomes.
+No deleted-suite run or smoke command is a new correctness certification.
+
+- [x] T3200: Remove all owned Python/Rust tests and obsolete differential/test
+  infrastructure; exclude upstream tests from the pinned EPIC production snapshot.
+  **Acceptance:** no maintained test suite/fixtures/CI test jobs remain; the
+  upstream production algorithms/provenance remain unchanged; no replacement
+  suite is fabricated.
+  **Evidence:** all 154 owned Python test files, owned Rust test modules and
+  randomized integration file are removed. EPIC's original `5b1b310` snapshot
+  becomes versioned production files, with 12 upstream test files and ten
+  test-only sections removed, documented by `.upstream-manifest.json`.
+  `scripts/verify_upstream.sh` verifies all 158 retained file hashes;
+  `make test` intentionally refuses to claim a suite pass. No new suite created.
+- [x] T3201: Remove unused historical experiment implementation and narrow the
+  package/export/build surface to the retained inference and certificate APIs.
+  Keep one current probability campaign and its independent exact comparator.
+  **Acceptance:** removed modules are absent from the installed package; retained
+  imports/commands/builds work; mathematical/data semantics are unchanged.
+  **Evidence:** the wheel contains only 61 retained `mwpc_exact` modules;
+  `mwpc_research`, historical campaigns/oracles/repair and 87 retired configs
+  are absent. One M31 campaign/config and independent exact control remain.
+  `make check`, `make build-rust`, upstream `cargo check --locked`, all retained
+  imports and isolated wheel installation pass. Serial/EPIC/exact configuration
+  commands work, explicit exact support remains mandatory, and a real archived
+  geocoding state yields an independently verified optimal budget-2 certificate.
+  Own source drops from 80,752 to 20,705 physical lines (74.4%). Complete counts,
+  API changes and commands: `docs/evidence/m32-cleanup.{md,json}`.
+- [x] T3202: Update documentation/CI/reproduction routes; preserve immutable
+  scientific artifacts and producer-code recovery via the previous commit.
+  Verify imports, certificates, Rust build, Lean and packaging without a suite.
+  Record an actual before/after source count, explicit exclusions and limitations.
+  **Acceptance:** completed operational checks and hashes are recorded; no claim
+  that removing tests establishes correctness or scientific relevance.
+  **Evidence:** `make article-results-check` verifies 3,683 unchanged scientific
+  files and all 35 returned M31 proofs against exact controls. The unchanged
+  Lean library checks 35 universal statements and the canonical resource proof;
+  no current 16-fixture regression pass or full-source refinement is claimed.
+  Strict original-input resource/probability checks, real sampling and isolated
+  dependency-free wheel packaging pass; sdist is 9,059,035 bytes unpacked before
+  final package evidence metadata, with all 158 baseline files hash-checked.
+  The updated paper compiles to 16 pages with no
+  unresolved references/overflow; all pages visually inspected. Build/CI/docs
+  reflect the absent suite and historical recovery at `a98ae8e`. Frozen hash
+  inventory, counts, Lean/package records and precise limitations are versioned
+  under `docs/evidence/m32-*`.
+
 ## M31 — Falsification audit of scientific and practical relevance
 
 Authorized by the request to run every necessary test before claiming relevance.

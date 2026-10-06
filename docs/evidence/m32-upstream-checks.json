@@ -1,0 +1,8 @@
+{
+  "verification": "PASS",
+  "upstream_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+  "original_git_blobs_checked": 170,
+  "unchanged_or_test_only_retained_files": 158,
+  "removed_test_files": 12,
+  "test_only_section_removals": 10
+}

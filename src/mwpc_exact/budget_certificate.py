@@ -13,9 +13,9 @@ from typing import TYPE_CHECKING
 
 from mwpc_exact.budget_bounds import budget_input_fingerprint, validate_budget_batch
 from mwpc_exact.eos_policy import EOSMode, TokenRole
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.reference.budget_certificate import check_budget_certificate
 from mwpc_exact.reference.budget_types import BudgetCertificateReport
+from mwpc_exact.state import SelectionInput
 from mwpc_exact.types import SolveStatus, TerminalLabel
 
 if TYPE_CHECKING:

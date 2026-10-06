@@ -1,4 +1,0 @@
-[submodule "vendor/EPIC-Decoding"]
-	path = vendor/EPIC-Decoding
-	url = https://github.com/hyundong98/EPIC-Decoding.git
-	branch = main

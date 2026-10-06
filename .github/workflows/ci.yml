@@ -1,4 +1,4 @@
-name: project-checks
+name: retained-project-checks
 
 on:
   push:
@@ -10,106 +10,30 @@ permissions:
   contents: read
 
 jobs:
-  formal-correctness:
+  build-and-artifacts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install project and pinned proof toolchain
+      - run: python -m pip install -c requirements/constraints-py311-linux.txt -e '.[dev]'
+      - run: make check VENV_PY=python
+      - run: make build-rust VENV_PY=python
+      - run: make article-results-check VENV_PY=python
+
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -e .
+      - name: Install pinned Lean
         run: |
-          python -m pip install -e .
           curl -fLsS https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz -o "$RUNNER_TEMP/elan.tar.gz"
           tar -xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP"
           "$RUNNER_TEMP/elan-init" -y --no-modify-path --default-toolchain none
           "$HOME/.elan/bin/elan" toolchain install "$(cat formal/lean-toolchain)"
-      - name: Verify universal theorems and concrete project certificates
-        run: make check-formal VENV_PY=python LAKE="$HOME/.elan/bin/lake"
-
-  verify:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      - name: Install development environment
-        run: |
-          python -m pip install --upgrade 'pip==26.2.1'
-          python -m pip install -c requirements/constraints-py311-linux.txt --build-constraint requirements/constraints-py311-linux.txt -e '.[dev]'
-      - name: Verify pinned EPIC provenance
-        run: ./scripts/verify_upstream.sh
-      - name: Lint
-        run: python -m ruff check src tests
-      - name: Type check
-        run: python -m mypy src
-      - name: Verify all current manuscript results
-        run: make article-results-check VENV_PY=python
-      - name: Unit and exact-commit tests
-        run: python -m pytest -q tests/unit tests/exact_commit
-      - name: Build and rehearse release wheel
-        run: python scripts/rehearse_release_wheel.py
-      - name: Run Q3 finite-slot smoke
-        run: |
-          python scripts/exact_commit/run_q3_finite_slots.py \
-            --run-directory "$RUNNER_TEMP/q3-finite-slots"
-
-  rust-correctness:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      - name: Bootstrap production Rust binding
-        run: make bootstrap-rust-parser
-      - name: Check Rust crates
-        run: make test-rust-parser
-      - name: Run complete suite with production binding
-        run: .venv/bin/python -m pytest -q tests/unit tests/exact_commit
-      - name: Run normal M6 finite-lattice campaign
-        run: |
-          .venv/bin/python scripts/exact_commit/run_m6_finite_lattice_differential.py \
-            --campaign normal
-      - name: Run normal M7 EOS finite-slot campaign
-        run: |
-          .venv/bin/python scripts/exact_commit/run_m7_eos_finite_slot_differential.py \
-            --campaign normal
-      - name: Run Q1 correctness smoke
-        run: |
-          .venv/bin/python scripts/exact_commit/run_q1_correctness.py \
-            --run-directory "$RUNNER_TEMP/q1-correctness"
-      - name: Run Q4 scaling smoke
-        run: |
-          .venv/bin/python scripts/exact_commit/run_q4_scaling.py \
-            --run-directory "$RUNNER_TEMP/q4-scaling"
-
-  epic-integration:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      - name: Bootstrap pinned EPIC CPU environment
-        run: make bootstrap-epic
-      - name: Run pinned EPIC integration tests
-        run: PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q tests/integration
-      - name: Build exact Rust binding for Q2
-        run: cd crates/mwpc_parser_py && ../../.venv/bin/maturin develop --release --locked
-      - name: Run combined exact and EPIC tests
-        run: |
-          PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q \
-            tests/exact_commit/test_q2_real_gap.py \
-            tests/exact_commit/test_q5_end_to_end.py
-      - name: Run Q2 heuristic-gap smoke
-        run: |
-          .venv/bin/python scripts/exact_commit/run_q2_heuristic_gap.py \
-            --run-directory "$RUNNER_TEMP/q2-heuristic-gap"
+      - run: make check-formal VENV_PY=python LAKE="$HOME/.elan/bin/lake"

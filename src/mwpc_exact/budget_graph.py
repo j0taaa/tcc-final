@@ -12,8 +12,8 @@ from fractions import Fraction
 
 from mwpc_exact.budget_bounds import proposal_rewards
 from mwpc_exact.eos_policy import EOSMode, TokenRole
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.reference.budget_types import ResourceArc, ResourceDAG, nonnegative_integer
+from mwpc_exact.state import SelectionInput
 
 
 class BudgetGraphLayout(StrEnum):

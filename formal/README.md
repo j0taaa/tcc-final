@@ -12,8 +12,11 @@ make check-project
 ```
 
 `check-formal` fails if the toolchain is unavailable. It does not install one
-silently or treat missing verification as success. `check-project` also runs
-Python/Rust tests, baseline integration and manuscript artifact checks. This
+silently or treat missing verification as success. `check-project` also checks
+Python/Rust builds and recorded manuscript artifacts; the user removed the
+regression suite in M32. Historical suite evidence remains attributed to its
+source revisions. The current formal command checks the library/axiom audit
+and canonical resource example, not the deleted fixture/rejection campaign. This
 combined gate does **not** mean the Lean kernel proves all foreign source code.
 
 ## Universal claims and concrete evidence
@@ -58,8 +61,8 @@ graph optimality; original-input correspondence is a separate checked boundary.
 
 The universal implementation correctness of the Python graph compiler, Python
 DP, Rust parser, PyO3/FFI and external tokenizer has not been proved in Lean.
-The existing independent oracles and differential/regression tests remain
-necessary. The paper's DP completeness proof, infinite-language separation
+Independent oracles and differential/regression tests must be rebuilt after
+the user-authorized reset; the current branch does not contain that suite. The paper's DP completeness proof, infinite-language separation
 constructions and exact update-round formula remain written proofs; the
 formalized certificate soundness does not silently mechanize all of them.
 Model probabilities, quantization, CUDA, system timing, semantic correctness

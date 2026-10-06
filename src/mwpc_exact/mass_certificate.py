@@ -25,8 +25,8 @@ from mwpc_exact.budget_proof import (
 )
 from mwpc_exact.conflict_proof import read_state, state_data
 from mwpc_exact.evaluation._serde import _integer, _mapping, _sequence, _string
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.language_coverage import check_language_coverage
+from mwpc_exact.state import SelectionInput
 from mwpc_exact.support import SupportPolicy, build_per_position_support
 from mwpc_exact.types import SolveStatus, SupportKind
 

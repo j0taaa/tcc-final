@@ -15,9 +15,9 @@ from dataclasses import dataclass
 from fractions import Fraction
 
 from mwpc_exact.eos_policy import EOSMode
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.reference.budget_types import nonnegative_integer
 from mwpc_exact.reference.recognizer import recognizes_cnf
+from mwpc_exact.state import SelectionInput
 from mwpc_exact.types import ExactnessScope
 
 

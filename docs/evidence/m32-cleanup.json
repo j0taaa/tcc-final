@@ -1,0 +1,492 @@
+{
+  "checks": [
+    {
+      "command": [
+        ".venv/bin/mwpc-commit-config",
+        "--commit-strategy",
+        "serial"
+      ],
+      "exit_code": 0,
+      "output": {
+        "commit_strategy": "serial",
+        "exact": null
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/mwpc-commit-config",
+        "--commit-strategy",
+        "epic"
+      ],
+      "exit_code": 0,
+      "output": {
+        "commit_strategy": "epic",
+        "exact": null
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/mwpc-commit-config",
+        "--commit-strategy",
+        "exact",
+        "--exact-support-top-k",
+        "8",
+        "--exact-support-k-max",
+        "8",
+        "--exact-eos-policy",
+        "absent"
+      ],
+      "exit_code": 0,
+      "output": {
+        "commit_strategy": "exact",
+        "exact": {
+          "adaptive_support": {
+            "growth_policy": "doubling",
+            "initial_k": 8,
+            "k_max": 8,
+            "total_timeout_seconds": null
+          },
+          "backend": "rust",
+          "eos_policy": {
+            "mode": "absent",
+            "pad_token_id": null,
+            "termination_token_ids": []
+          },
+          "exactness_scope": "exact_on_support",
+          "failure_fallback_strategy": "serial",
+          "weight_mode": "confidence"
+        }
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/mwpc-commit",
+        "--verify",
+        "docs/evidence/m32-geocoding-proof.json.gz"
+      ],
+      "exit_code": 0,
+      "output": {
+        "certificate_verified": true,
+        "committed_positions": [
+          0,
+          1
+        ],
+        "committed_proposal_ids": [
+          1,
+          0
+        ],
+        "exactness_scope": {
+          "adaptive_expansions": [],
+          "included_special_tokens": [
+            25
+          ],
+          "kind": "explicit",
+          "pruning_description": "tool positional domains; byte CFG; EOS-padded slots",
+          "top_k": null,
+          "vocabulary_size": 26
+        },
+        "objective_value": [
+          36125249,
+          67108864
+        ],
+        "oracle_calls": 1,
+        "status": "optimal",
+        "witness_token_ids": [
+          5,
+          22,
+          12,
+          8,
+          4,
+          13,
+          9,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25,
+          25
+        ]
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "scripts/exact_commit/budget_math_example.py",
+        "--verify",
+        "docs/artifacts/math/m27-budget-proof.json"
+      ],
+      "exit_code": 0,
+      "output": {
+        "frontier": [
+          {
+            "budget": 0,
+            "gap_bound": "0",
+            "objective": "0",
+            "optimal_under_support_expansion": true,
+            "upper_bound": "0"
+          },
+          {
+            "budget": 1,
+            "gap_bound": "0",
+            "objective": "7/8",
+            "optimal_under_support_expansion": true,
+            "upper_bound": "7/8"
+          },
+          {
+            "budget": 2,
+            "gap_bound": "3/8",
+            "objective": "1",
+            "optimal_under_support_expansion": false,
+            "upper_bound": "11/8"
+          },
+          {
+            "budget": 3,
+            "gap_bound": "7/8",
+            "objective": "1",
+            "optimal_under_support_expansion": false,
+            "upper_bound": "15/8"
+          }
+        ],
+        "input_fingerprint": "2b79ca0715898174e002a415c70a7003a02c98860f6925b5378cf61493826d7e",
+        "scope": "exact_on_support: ad24a73911e4bbcd5f48d44f010390e7226d82cb3da7d77dcb19010a2e5678d4; EOS={'mode': 'absent', 'termination_token_ids': [], 'pad_token_id': None}",
+        "verification": "PASS",
+        "verification_scope": "original_input_and_resource_optimality"
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "mwpc_exact.mass_cli",
+        "--verify",
+        "docs/artifacts/raw/m30_probability_v1/probes/proofs/json_schema_type-2-top8_plus_catalog-finite_language_coverage-64.json.gz",
+        "--sample",
+        "--max-tv",
+        "1/20"
+      ],
+      "exit_code": 0,
+      "output": {
+        "conditional_tv_bound": [
+          36085290922176268104428551438749921991,
+          1192417091580904966459383142049648708423
+        ],
+        "decoded": "{\"type\":\"string\"}",
+        "original_omitted_mass": [
+          11542650830353104300113085613516863202406551150321908176634073,
+          12855504354071912814544147817290000341659400551033607589707993
+        ],
+        "outside_valid_upper": [
+          0,
+          1
+        ],
+        "reference": "frozen_mean_field_conditioned_on_declared_grammar",
+        "reference_scope": "full_predictive_with_omitted_mass",
+        "sampling_status": "accepted",
+        "valid_mass_lower": [
+          5207655466563305227022425355702898732712883417641910272,
+          4285168118023970938181382605763333447219800183677869196569331
+        ],
+        "valid_mass_upper": [
+          5370169169313974210031284395638221555331681206096887808,
+          4285168118023970938181382605763333447219800183677869196569331
+        ],
+        "verification": "PASS",
+        "witness_token_ids": [
+          4895,
+          4906,
+          2404,
+          2536,
+          278,
+          20662
+        ]
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/mwpc-commit-config",
+        "--commit-strategy",
+        "exact"
+      ],
+      "exit_code": 2,
+      "expected_rejection": true,
+      "stderr": "usage: mwpc-commit-config [-h] [--commit-strategy {serial,epic,exact}]\n                          [--exact-support-top-k EXACT_SUPPORT_TOP_K]\n                          [--exact-support-k-max EXACT_SUPPORT_K_MAX]\n                          [--exact-weight-mode {unit,confidence}]\n                          [--exact-timeout-seconds EXACT_TIMEOUT_SECONDS]\n                          [--exact-eos-policy {absent,required,optional}]\n                          [--exact-eos-token-id EXACT_EOS_TOKEN_ID]\n                          [--exact-pad-token-id EXACT_PAD_TOKEN_ID]\n                          [--exact-backend {python,rust}]\n                          [--exact-fallback {none,serial,epic}]\nmwpc-commit-config: error: exact strategy requires --exact-support-top-k"
+    }
+  ],
+  "completed_operational_commands": {
+    ".venv/bin/python -m build --no-isolation --outdir results/processed/m32-final-dist": {
+      "local_log": "results/processed/m32-final-package-build.log",
+      "log_sha256": "77ee647b7a16b4ed20e3d39fa11b5811a99e73f1c161a856d06c90fa7b4fd0e9",
+      "result": "PASS"
+    },
+    ".venv/bin/python -m pip install --no-deps --no-build-isolation -e .": {
+      "local_log": "results/processed/m32-editable-install.log",
+      "log_sha256": "bcce422257b51dbfbc27bbe772840e69b13c5e201d3829a964cb004d27b90b87",
+      "result": "PASS"
+    },
+    ".venv/bin/python scripts/exact_commit/check_formal_project.py --lake \"$HOME/.elan/bin/lake\"": {
+      "local_log": "results/processed/m32-formal.log",
+      "log_sha256": "272be4a258af3425247858450e018608bc5fd8b530aee97876c294b94b0bbc53",
+      "result": "PASS"
+    },
+    "cargo check --manifest-path vendor/EPIC-Decoding/rustformlang/Cargo.toml --locked": {
+      "local_log": "results/processed/m32-upstream-build.log",
+      "log_sha256": "1d0f60ec694e165c0f180192f1e269113022705c4e1847dc2953c781f810587e",
+      "result": "PASS"
+    },
+    "make -C paper": {
+      "local_log": "results/processed/m32-paper.log",
+      "log_sha256": "73e9643be0419450a60114485ed42bfcd15fe2ca426805ca06f0030415e6ea71",
+      "result": "PASS"
+    },
+    "make article-results-check": {
+      "local_log": "results/processed/m32-final-artifact-check.log",
+      "log_sha256": "9ef46ea33ecfb79d1d42e0633016df6356c3fbf9c9ecd3bd1b67431068710311",
+      "result": "PASS"
+    },
+    "make build-rust": {
+      "local_log": "results/processed/m32-rust-build.log",
+      "log_sha256": "2a78620aee70652cfb7bcb483601f6fcaac7ceeb79d3dbab41401ad2063ca961",
+      "result": "PASS"
+    },
+    "make check": {
+      "local_log": "results/processed/m32-project-check.log",
+      "log_sha256": "efc54edaade3bb56e275b560141236f2b1b520b3de486c2bc2af21d9a8880189",
+      "result": "PASS"
+    }
+  },
+  "date": "2026-10-05",
+  "file_sha256": {
+    "docs/evidence/m32-formal-checks.json": "272be4a258af3425247858450e018608bc5fd8b530aee97876c294b94b0bbc53",
+    "docs/evidence/m32-geocoding-proof.json.gz": "364cbfaf996b928eb46e4c5d4a84664ac2ff78ed110ae1a8113389d6f5781dce",
+    "docs/evidence/m32-line-count.json": "e01ab4be9dfa80571ff1bc7c7382bea4efead05d47543f0eb6513c9af211aae2",
+    "docs/evidence/m32-package-checks.json": "f385b468b094338df3ec5c4488ea807c7c5bd71006e0449ef197b0acd16ffba2",
+    "docs/evidence/m32-preserved-artifacts.json": "6565e6158c39ad935bb0e485506cc28313a7e4d4e28d8c4e6891990d6ccb4220",
+    "docs/evidence/m32-upstream-checks.json": "ac0eab8cc0942937fbc6503aef989d936d7943b695bf388b58a259e432dfb8dc",
+    "paper/main.pdf": "7fdb7abc00cf00b56ca72ff2027e590b3c4837e0d0b96e6a16e33ba08e3e5046",
+    "paper/main.tex": "02478942b491f17f921f5ba829502158332333138694430c7b414141f7392239",
+    "vendor/EPIC-Decoding/.upstream-manifest.json": "c1d037606e6f4b1e1017af1e43a54bf37cd7f1f9d293b82bdb87210da8b03ec5"
+  },
+  "final_package_build": {
+    "command": ".venv/bin/python -m build --no-isolation --outdir results/processed/m32-packaging-final",
+    "result": "PASS",
+    "sdist_compressed_bytes": 2902984,
+    "sdist_unpacked_bytes": 9059035,
+    "sdist_upstream_files_sha256_verified": 158
+  },
+  "formal_record": "docs/evidence/m32-formal-checks.json",
+  "historical_source_commit": "a98ae8e09f2066157ebf6df05f8873b8600e00fb",
+  "limitations": [
+    "Operational/proof/certificate checks are not a replacement implementation test suite.",
+    "Lean verifies stated specifications and the canonical resource example, not Python/Rust/model source refinement.",
+    "Historical tests, regression fixtures, campaigns and results retain their original producing commits; the historical 16-claim gate was not rerun.",
+    "No new model benchmark, semantic-quality gain, practical superiority or scientific novelty was established by cleanup.",
+    "Version 0.3 removes historical research APIs, root algorithm reexports and obsolete CLI commands; use retained explicit modules.",
+    "GitHub CI was updated but not executed remotely in this local cleanup.",
+    "Wheel execution was checked without model dependencies; a new complete LLaDA decoding trajectory was not run."
+  ],
+  "line_count_record": "docs/evidence/m32-line-count.json",
+  "line_counts": {
+    "after": {
+      "groups": {
+        "build": {
+          "files": 8,
+          "nonblank_lines": 161,
+          "physical_lines": 197
+        },
+        "experiments_and_tools": {
+          "files": 13,
+          "nonblank_lines": 1705,
+          "physical_lines": 1892
+        },
+        "implementation": {
+          "files": 66,
+          "nonblank_lines": 15908,
+          "physical_lines": 17798
+        },
+        "proofs": {
+          "files": 9,
+          "nonblank_lines": 715,
+          "physical_lines": 818
+        },
+        "tests": {
+          "files": 0,
+          "nonblank_lines": 0,
+          "physical_lines": 0
+        },
+        "upstream": {
+          "files": 125,
+          "nonblank_lines": 21722,
+          "physical_lines": 24291
+        }
+      },
+      "own": {
+        "files": 96,
+        "nonblank_lines": 18489,
+        "physical_lines": 20705
+      },
+      "total": {
+        "files": 221,
+        "nonblank_lines": 40211,
+        "physical_lines": 44996
+      }
+    },
+    "before": {
+      "groups": {
+        "build": {
+          "files": 8,
+          "nonblank_lines": 260,
+          "physical_lines": 317
+        },
+        "experiments_and_tools": {
+          "files": 71,
+          "nonblank_lines": 15909,
+          "physical_lines": 17118
+        },
+        "implementation": {
+          "files": 114,
+          "nonblank_lines": 35142,
+          "physical_lines": 38911
+        },
+        "proofs": {
+          "files": 9,
+          "nonblank_lines": 715,
+          "physical_lines": 818
+        },
+        "tests": {
+          "files": 154,
+          "nonblank_lines": 19994,
+          "physical_lines": 23588
+        },
+        "upstream": {
+          "files": 137,
+          "nonblank_lines": 30036,
+          "physical_lines": 33172
+        }
+      },
+      "own": {
+        "files": 356,
+        "nonblank_lines": 72020,
+        "physical_lines": 80752
+      },
+      "total": {
+        "files": 493,
+        "nonblank_lines": 102056,
+        "physical_lines": 113924
+      }
+    },
+    "count_scope": {
+      "build_files": [
+        "Makefile",
+        "crates/mwpc_parser/Cargo.toml",
+        "crates/mwpc_parser_py/Cargo.toml",
+        "crates/mwpc_parser_py/pyproject.toml",
+        "formal/lakefile.toml",
+        "paper/Makefile",
+        "pyproject.toml",
+        "rust-toolchain.toml"
+      ],
+      "excludes": [
+        "document prose/review source",
+        "other declarative configs",
+        "artifacts/data",
+        "installed dependencies/caches",
+        "compiled files"
+      ],
+      "extensions": [
+        ".lean",
+        ".py",
+        ".pyi",
+        ".rs",
+        ".sh"
+      ],
+      "own_roots": [
+        "src",
+        "crates",
+        "scripts",
+        "formal",
+        "tests"
+      ],
+      "physical_lines": "UTF-8 text splitlines(), including comments and blanks",
+      "upstream_root": "vendor/EPIC-Decoding"
+    },
+    "own_line_reduction_fraction": 0.7435976817911631
+  },
+  "milestone": "M32",
+  "owned_whitespace_check": {
+    "command": "git diff --cached --check -- . ':!vendor/EPIC-Decoding'",
+    "result": "PASS",
+    "upstream_exclusion": "Inherited original upstream whitespace remains byte-for-byte preserved."
+  },
+  "package_measurement_scope": "Final code/dependencies/canonical upstream snapshot; source archive before final package evidence metadata updates.",
+  "package_record": "docs/evidence/m32-package-checks.json",
+  "paper": {
+    "overflow": false,
+    "pages": 16,
+    "sha256": "7fdb7abc00cf00b56ca72ff2027e590b3c4837e0d0b96e6a16e33ba08e3e5046",
+    "unresolved_references": false,
+    "visual_inspection": "all 16 pages"
+  },
+  "recorded_scientific_files_unchanged": 3683,
+  "staged_source_and_archive_check": {
+    "counted_source_files": 221,
+    "method": "SHA-256 of staged Git blobs equals versioned source inventory and pre-cleanup scientific manifest",
+    "old_test_source_files_present": false,
+    "removed_research_package_present": false,
+    "result": "PASS",
+    "unchanged_scientific_files": 3683
+  },
+  "test_suite": "removed_by_explicit_user_request; no replacement exists",
+  "upstream_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+  "upstream_comparison_record": "docs/evidence/m32-upstream-checks.json"
+}

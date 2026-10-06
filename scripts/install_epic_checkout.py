@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Expose the read-only EPIC checkout to one Python environment.
+"""Expose the pinned EPIC production snapshot to one Python environment.
 
 The pinned upstream metadata is not valid PEP 621 (`project.authors` is a
 string rather than a table), so recent setuptools cannot perform an editable
-install. This script keeps the submodule unchanged and writes a `.pth` file
+install. This script keeps production sources unchanged and writes a `.pth` file
 into the active environment instead.
 """
 

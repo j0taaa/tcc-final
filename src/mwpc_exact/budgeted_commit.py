@@ -15,9 +15,9 @@ from mwpc_exact.budget_graph import (
     reconstruct_budget_tokens,
 )
 from mwpc_exact.budget_result import BudgetedCommitResult as BudgetedCommitResult
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.profiling import ComponentProfiler, ProfilingComponent
 from mwpc_exact.reference.budgeted_parser import budgeted_frontier
+from mwpc_exact.state import SelectionInput
 from mwpc_exact.types import SolveStatus
 
 

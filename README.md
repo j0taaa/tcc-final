@@ -1,252 +1,70 @@
-# Exact CFG-Constrained Parallel Commitment for Diffusion Language Models
+# Exact commitment and probability certificates for diffusion language models
 
-Research and implementation workspace for the TCC **Exact Maximum-Weight Parallel Commitment for CFG-Constrained Diffusion Language Models**.
+The retained TCC implementation has three parts:
 
-The project implements an exact, certificate-producing optimizer for selecting the maximum-weight compatible set of token proposals at one denoising step. EPIC's serial and heuristic decoders remain read-only baselines. Results over pruned alternatives are reported as exact on the represented support, never as full-vocabulary or future-trajectory optimality.
+- Finite-token CFG inference with independent Python and Rust parsers, exact
+  proposal commitment, and the serial/EPIC baselines through a LLaDA adapter.
+- Rational budgeted/conflict commitment with portable optimality certificates
+  and safe reuse of conflicts/witnesses.
+- Probability-mass/error certificates and admission/refusal for one frozen
+  mean-field prediction. Grammar ambiguity does not duplicate original tokens;
+  unresolved and omitted mass remain explicit.
 
-The project now also answers a different practical question: **can a valid
-parallel sample be admitted with a declared bound on distributional distortion?**
-The [probability proofs](docs/research/m30-probability-certificates.md) and
-[generated fresh-MDLM report](docs/artifacts/processed/m30_probability_v1/report.md)
-describe a separate anytime certificate API. Disjoint original-token boxes avoid
-counting ambiguous parses repeatedly. Original omitted mass remains visible;
-finite-yield or grammar-alphabet coverage can certify that no valid completion
-was omitted. The sharp total-variation bound either admits the update at a
-chosen tolerance or refuses it. The reference is the frozen grammar-conditioned
-mean-field prediction, not the model's complete generative joint or semantic
-correctness. Twelve new CPU MDLM predictions and all 192 evaluation cells,
-including 48 zero-mass evaluations, are archived independently of the old replay cohort.
+Exact reward means `exact_on_support` at the current step, not globally optimal
+future generation. A probability certificate bounds the declared conditional
+mean-field distribution, not semantic accuracy. [Mathematical definitions](docs/research/m26-mathematical-core.md),
+[probability proofs](docs/research/m30-probability-certificates.md),
+[Lean scope](formal/README.md).
 
-The [larger-canvas falsification audit](docs/artifacts/processed/m31_probability_v1/report.md)
-adds 18 fresh predictions with 4/8/16 free slots and retains every outcome.
-All 35 returned certificates validate; one job reaches its external deadline.
-At the 64-query cap, admission falls from 5/6 to 1/6 to 0/6. An independent
-compact exact counter reference solves every canvas with zero approximation
-error and lower measured inference cost in all 35 completed comparisons.
-Thus certification is demonstrated, but practical superiority and substantial
-scientific novelty are not established. The control uses established inference;
-it is not an execution of FactorDLM, Dang--Ermon or CARS. Complete probabilities
-and tokenizer semantics are shared; runtime interfaces differ.
+## Small working tree
 
-Verify a real new model prediction and sample without downloading a model:
+The user requested a clean test restart and code reduction. All old owned tests,
+Rust test modules and upstream tests were removed. The historical campaign
+framework, duplicate oracles, repair experiment and `mwpc_research` package were
+removed from the maintained source tree. The prior implementation and tests
+remain recoverable at Git commit `a98ae8e09f2066157ebf6df05f8873b8600e00fb`.
+No replacement test suite was created; `make test` explicitly reports its absence.
+
+Only the current larger-canvas probability campaign/configuration and exact
+counter control remain maintained. Recorded outcomes, original inputs/proofs, generated paper
+products, all Lean mathematical sources and license notices remain unchanged.
+[Reproduction and historical recovery](REPRODUCING.md).
+
+## Use
+
+```bash
+make bootstrap
+make check
+make bootstrap-rust-parser
+make build-rust
+```
+
+Algorithms are imported from their explicit modules; the root package exposes
+only shared data contracts:
+
+```python
+from mwpc_exact import SelectionInput, Proposal, EOSPolicy
+from mwpc_exact.solver import solve_exact_commit
+from mwpc_exact.budgeted_commit import budgeted_commit_frontier
+from mwpc_exact.mass_solver import probability_partition
+from mwpc_exact.mass_certificate import verify_mass_proof
+```
+
+Verify and sample an archived real model prediction offline:
 
 ```bash
 .venv/bin/python -m mwpc_exact.mass_cli --verify docs/artifacts/raw/m30_probability_v1/probes/proofs/json_schema_type-2-top8_plus_catalog-finite_language_coverage-64.json.gz --sample --max-tv 1/20
-.venv/bin/python -m scripts.exact_commit.build_probability_results --check
+make article-results-check
+make check-formal LAKE="$HOME/.elan/bin/lake"
+make paper
 ```
 
-The original contribution remains **mathematical budgeted commitment**, independent of
-benchmark win rates. The [complete definitions and proofs](docs/research/m26-mathematical-core.md)
-solve joint completion and position selection, give an exact budget frontier
-and independently checkable optimality certificates. For the same input,
-finite support and physical budget, no feasible proposal batch has greater
-reward. Infinite-family proofs show that confidence preselection and filtering
-an unbudgeted optimum can retain an arbitrarily small fraction of this reward.
-These are optimization guarantees, not semantic accuracy or latency guarantees.
+These are operational, proof and artifact checks; they do not constitute an
+implementation regression suite. EPIC is a pinned production snapshot;
+[its provenance](UPSTREAM.md) records every retained hash and test-only removal.
 
-A second exact implementation, `ConflictCommitSolver`, separates rational
-budget selection from finite CFG feasibility. `ProofReuseSolver` retains
-certified conflicts and valid full witnesses across changing inputs. The
-[conflict/transport proofs](docs/research/m29-conflict-commitment.md) show when
-reuse eliminates new grammar-oracle calls. These established algorithmic ideas
-are specialized here; speed and scientific priority are separate claims. The [complete timing/ablation report](docs/artifacts/processed/m29_conflict_v1/report.md) retains every exact comparator and explains interrupted-proof recovery.
-
-```bash
-.venv/bin/python -m mwpc_exact.conflict_cli --input saved-instance.json.gz --budget 2 --proof /tmp/commit.json.gz
-.venv/bin/python -m mwpc_exact.conflict_cli --verify /tmp/commit.json.gz
-```
-
-The new exact-rational reference API is in `mwpc_exact.budgeted_commit`; it is
-separate from the existing Rust production strategy and historical live policies.
-Generate and verify a portable mathematical example without a model or network:
-
-```bash
-.venv/bin/python scripts/exact_commit/budget_math_example.py --output /tmp/budget-proof.json
-.venv/bin/python scripts/exact_commit/budget_math_example.py --verify /tmp/budget-proof.json
-.venv/bin/python -m pytest -q tests/exact_commit/test_budgeted_math.py
-```
-
-The output path must be new. [Reproduction and API scope](REPRODUCING.md)
-explain the proof checker and update premises. Weighted parsing, resource DP,
-certification and exact dLLM inference are acknowledged antecedents; this is an
-incremental formulation/solution, not a claim to invent their principles.
-
-The [certified extensions](docs/research/m27-certified-extensions.md) add a
-validated incumbent's quality bound, tightness certificates under retained-input
-support expansion, and compact token-prefix graphs preserving every represented
-completion. Portable v2 proofs also check graph completeness against the original
-input. [Lean coverage](formal/README.md) distinguishes universal mathematical
-proofs, concrete kernel checks, Python correspondence checks and external code.
-After installing the pinned toolchain:
-
-```bash
-make check-formal
-make check-project
-```
-
-Lean proves the specified certificate/bound theorems and checks exported resource
-instances. It does not automatically prove the whole Python/Rust source or model
-accuracy. Existing independent oracles and baseline tests remain essential.
-
-The new budgeted method also has a
-[real-state replay protocol](docs/research/m28-real-state-replay.md) and a
-[generated demonstration report](docs/artifacts/processed/m28_budgeted_real_v1/report.md).
-The complete cohort contains 24 archived LLaDA recursive-task snapshots and
-12 steps of one geographic query, with both all-token and ordinary-token
-reward profiles. Inputs, finite-slot witnesses and independently checkable
-optimality certificates are archived. This runs the new optimizer on authentic
-saved model outputs; it is not a new end-to-end model trajectory.
-
-```bash
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/run_budgeted_real_replay.py \
-  --verify docs/artifacts/raw/m28_budgeted_real_v1/completed
-```
-
-Historical [M24](docs/research/m24-findings.md) and
-[M25](docs/research/m25-findings.md) experiments remain secondary evidence,
-including worse external accuracy and latency than EPIC. All original failures,
-configs and outputs are retained; their policies do not use the new joint-budget
-algorithm. Own scalar-AST grading is not the official BFCL evaluation.
-
-Run the archived **real LLaDA geographic query** without a model or network:
-
-```bash
-PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/exact_commit/run_query_demo.py --mode replay
-make query-demo-check
-```
-
-The [live/replay guide](docs/research/m25-query-demo.md) explains both sets of four
-recorded policy attempts and the validated read-only API dispatch. The replay
-is an archived execution, not new inference. New live generation needs the
-pinned CUDA environment and locally cached model. Model-free JSON repair
-remains an auxiliary application.
-
-## Sources of truth
-
-Post-release fixes and their verification record:
-[`Repository review hardening`](docs/review-hardening.md).
-
-Audit of batch-selection timing and practical-benefit claims:
-[`Selection audit`](docs/reviews/2026-09-22-selection-audit.md).
-
-- [`AGENTS.md`](AGENTS.md): scientific and engineering invariants;
-- [`TASKS.md`](TASKS.md): authoritative current milestone, completed evidence, and remaining work;
-- [`IMPLEMENTATION_PLAN.md`](IMPLEMENTATION_PLAN.md): supersession index for
-  the archived legacy plan and maintained English sources;
-- [`UPSTREAM.md`](UPSTREAM.md): immutable EPIC provenance;
-- [`docs/decisions/`](docs/decisions/): accepted architecture and scientific decisions;
-- [`paper/`](paper/): SBC LaTeX article.
-
-Do not duplicate the current task in this README. Locate the first incomplete required task in `TASKS.md`.
-
-## Setup
-
-The current local source/PDF delivery is described in
-[`Mathematical contribution, 2026-09-30`](docs/releases/math-2026-09-30.md).
-It includes the proofs, exact reference, checker and historical evidence.
-The [M25 dLLM delivery](docs/releases/dllm-2026-09-30.md) is preserved separately. The
-[2026-09-28 source snapshot](docs/releases/repair-2026-09-28.md), M20 delivery
-and v0.2.0 remain historical; no remote publication was performed.
-From the current delivery directory:
-
-```bash
-git clone ./source.bundle tcc-final
-cd tcc-final
-git submodule update --init --recursive
-make bootstrap
-source .venv/bin/activate
-make bootstrap-rust-parser
-make check
-```
-
-Try the implemented repair without a model:
-
-```bash
-python -m mwpc_exact.repair --profile records '{"id":7,"payload":[["a":1,"b":2}]}'
-```
-
-[Usage and boundaries](docs/research/json-repair.md) ·
-[Complete controlled results](paper/generated/m21_repair_v1/report.md) ·
-[Scientific interpretation](docs/research/m21-findings.md) ·
-[Novelty and practical-use review](docs/research/2026-09-28-novelty-and-usefulness-review.md).
-The original [four-week plan](docs/research/2026-09-28-json-repair-plan.md)
-remains broader: real-model error collection and model retries are still future work.
-
-Artifact regeneration, clean CPU rehearsal, parser-binding, and optional CUDA
-model instructions are in [`REPRODUCING.md`](REPRODUCING.md).
-
-Build and verify the independent Rust production parser when the current task requires it:
-
-```bash
-make bootstrap-rust-parser
-make test-rust-parser
-make test-m6-differential
-```
-
-## Decoder strategy configuration
-
-The reusable integration boundary validates `serial`, `epic`, and `exact`
-commitment before model loading:
-
-```bash
-mwpc-commit-config --help
-mwpc-commit-config \
-  --commit-strategy exact \
-  --exact-support-top-k 8 \
-  --exact-eos-policy absent
-```
-
-Omitting `--commit-strategy` preserves EPIC's existing
-`CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH` switch. Exact top-`K` decoding is
-reported as `exact_on_support`; it is not a full-vocabulary or future-trajectory
-optimality claim.
-
-The first parent-side model hook is
-`mwpc_exact.epic_adapter.llada.run_llada_exact_step`. It consumes the pinned
-LLaDA loop's single-batch token, logit, prediction, and confidence rows after
-the existing `k_s` schedule is known. It excludes prompt tokens from the CFG
-canvas, restricts ordinary commits to the active block, applies only a live
-independently validated optimum, and records canonical EOS/PAD suffix updates.
-The vendor LLaDA implementation remains unchanged. A configured serial or EPIC
-failure fallback must be supplied by its baseline adapter; selecting
-`--exact-fallback none` requires no such callback.
-
-Install the heavier pinned EPIC environment only for baseline or model-integration work:
-
-```bash
-make bootstrap-epic
-```
-
-Model weights, private datasets, caches and credentials are not committed. Small, checksummed research outputs are archived under `docs/artifacts/raw/`.
-
-## Agent handoff
-
-```text
-Read START_HERE.md, AGENTS.md, UPSTREAM.md, and TASKS.md. Locate the first
-incomplete required task and continue in dependency order. Do not repeat
-completed milestones or bypass correctness gates. Update a task's Evidence
-field only after every acceptance criterion and required command passes.
-Never invent measurements or replace article placeholders without versioned,
-reproducible artifacts. Keep vendor/EPIC-Decoding read-only.
-```
-
-## Repository map
-
-```text
-src/mwpc_exact/            Runtime contracts, reference solvers, validation, and orchestration
-crates/                    Independent Rust parser and thin PyO3 binding
-vendor/EPIC-Decoding/      Read-only pinned EPIC baseline
-configs/                   Immutable correctness and experiment configurations
-scripts/exact_commit/      Reproduction and campaign entry points
-tests/                     Unit, oracle, differential, regression, and integration tests
-docs/                      ADRs, evidence, history, and reproducibility records
-paper/                     SBC LaTeX article
-```
-
-## Attribution
-
-Gabriel Jota Lizardo's original parent-repository software and research
-artifacts are MIT-licensed; the manuscript's publication rights remain
-separate. EPIC remains governed by its own license and third-party notices
-inside the submodule. See `LICENSE`, `LICENSES.md`, and `UPSTREAM.md` for the
-exact scopes and pinned upstream commit.
+The [complete scaling audit](docs/artifacts/processed/m31_probability_v1/report.md)
+retains all 18 new CPU MDLM predictions and all 36 jobs. At 64 queries, admission
+at 4/8/16 free slots is 5/6, 1/6 and 0/6. The compact exact control is cheaper on
+every completed pair. General practical superiority and substantial novelty
+remain unestablished; removing code/tests does not change that conclusion.

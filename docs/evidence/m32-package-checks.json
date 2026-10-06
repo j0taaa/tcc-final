@@ -1,0 +1,49 @@
+{
+  "command": ".venv/bin/python -m build --no-isolation --outdir results/processed/m32-packaging-final",
+  "distribution_sha256": {
+    "mwpc_exact-0.3.0-py3-none-any.whl": "8da99b01afd84fb5c8f801cf03d1c4f79b847be28c16b1903d86b30e086f8010",
+    "mwpc_exact-0.3.0.tar.gz": "41a2e2992a4ff4c47c63fe24e7d6c398e2d59d3fc4690b227c16a4adba5744ae"
+  },
+  "isolated_real_certificate_and_sample": {
+    "conditional_tv_bound": [
+      36085290922176268104428551438749921991,
+      1192417091580904966459383142049648708423
+    ],
+    "decoded": "{\"type\":\"string\"}",
+    "original_omitted_mass": [
+      11542650830353104300113085613516863202406551150321908176634073,
+      12855504354071912814544147817290000341659400551033607589707993
+    ],
+    "outside_valid_upper": [
+      0,
+      1
+    ],
+    "reference": "frozen_mean_field_conditioned_on_declared_grammar",
+    "reference_scope": "full_predictive_with_omitted_mass",
+    "sampling_status": "accepted",
+    "valid_mass_lower": [
+      5207655466563305227022425355702898732712883417641910272,
+      4285168118023970938181382605763333447219800183677869196569331
+    ],
+    "valid_mass_upper": [
+      5370169169313974210031284395638221555331681206096887808,
+      4285168118023970938181382605763333447219800183677869196569331
+    ],
+    "verification": "PASS",
+    "witness_token_ids": [
+      4895,
+      4906,
+      2404,
+      2536,
+      278,
+      20662
+    ]
+  },
+  "removed_package_absent": true,
+  "sdist_compressed_bytes": 2902984,
+  "sdist_unpacked_bytes": 9059035,
+  "sdist_upstream_files_sha256_verified": 158,
+  "verification": "PASS",
+  "verifier_does_not_import_optimizers": true,
+  "wheel_python_files": 61
+}

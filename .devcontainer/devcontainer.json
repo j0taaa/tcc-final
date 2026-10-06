@@ -1,7 +1,9 @@
 {
   "name": "Exact CFG dLLM TCC",
-  "build": { "dockerfile": "Dockerfile" },
-  "postCreateCommand": "git submodule update --init --recursive && python -m pip install -e '.[dev]'",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "python -m pip install -e '.[dev]' && ./scripts/verify_upstream.sh",
   "customizations": {
     "vscode": {
       "extensions": [

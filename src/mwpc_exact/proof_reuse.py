@@ -20,8 +20,8 @@ from mwpc_exact.conflict_certificate import (
     token_path_ids,
 )
 from mwpc_exact.conflict_commit import ConflictCommitSolver, _master
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.reference.budget_types import nonnegative_integer
+from mwpc_exact.state import SelectionInput
 from mwpc_exact.types import SolveStatus
 
 

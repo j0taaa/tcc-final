@@ -119,3 +119,14 @@ The page-limited main preserves complete historical negative findings in prose;
 full historical tables and longer DP/foundation/conflict proofs remain in the
 supplement sources. `make article-results-check` verifies all generated products,
 including M29--M31. `scripts/check_paper.py` retains the 16-page/no-overflow gate.
+
+
+## Source cleanup and test reset (M32)
+
+The user removed the old Python/Rust/upstream tests and historical campaign
+framework. Their results remain attributed to the pre-cleanup source freeze
+`a98ae8e09f2066157ebf6df05f8873b8600e00fb`, recoverable via Git. The reduced tree
+maintains inference/certification, the current M31 campaign, immutable paper
+products and unchanged Lean sources. `make article-results-check` checks frozen
+hashes and M31 certificates; earlier generators run from the historical source.
+Current operational checks are not a replacement correctness suite.

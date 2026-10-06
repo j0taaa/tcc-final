@@ -1,0 +1,105 @@
+{
+  "canonical_lean_example": "PASS",
+  "regression_suite": "removed_by_user_request",
+  "scope": "Lean specifications/canonical proof; not Python/Rust source refinement",
+  "universal_axiom_dependencies": {
+    "MWPC.alphabet_support_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.amortized_conflict_queries": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.batch_upper": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.bound_attainment": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.certified_gap": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.certified_infeasible": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.certified_optimal": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.closed_yield_envelope": [],
+    "MWPC.closing_emits_token": [
+      "propext"
+    ],
+    "MWPC.compact_node_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.conditional_event_lower": [],
+    "MWPC.conditional_event_upper": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.conditional_l1_numerator": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.conditional_missing_bound": [],
+    "MWPC.conflict_certified_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.conflict_cover_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.conflict_missing_member": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.conflict_transport": [],
+    "MWPC.empty_conflict_infeasible": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.feasible_witness_transport": [],
+    "MWPC.finite_error_budget": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.fixed_conflict_discharge": [],
+    "MWPC.fixed_reward_preserves_optimum": [],
+    "MWPC.grammar_yield_alphabet": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.minimum_capacity": [],
+    "MWPC.multiplicative_bound": [],
+    "MWPC.optimum_monotone": [],
+    "MWPC.partition_mass_envelope": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.representation_preserves_optima": [],
+    "MWPC.same_input_dominance": [],
+    "MWPC.support_coverage_transport": [],
+    "MWPC.support_expansion_certificate": [],
+    "MWPC.unique_prefixes_membership": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.upper_attained": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.witness_update_preserves_feasibility": []
+  },
+  "verification": "PASS"
+}

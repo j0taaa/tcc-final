@@ -21,8 +21,8 @@ from random import Random
 from time import perf_counter
 
 from scripts.exact_commit.capture_mdlm_probability import planned_case_ids
+from scripts.exact_commit.io_utils import read, sha, system_data, write
 from scripts.exact_commit.probability_audit_controls import START, compile_array_plan
-from scripts.exact_commit.run_conflict_real import read, sha, system_data, write
 
 from mwpc_exact import (
     CompositionalByteLevelAdapter,
@@ -35,13 +35,13 @@ from mwpc_exact import (
 )
 from mwpc_exact.budget_proof import _fraction, fraction_data
 from mwpc_exact.conflict_proof import read_state, state_data
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.experiments.metadata import collect_system_metadata
 from mwpc_exact.language_coverage import terminal_alphabet_coverage
 from mwpc_exact.mass_certificate import PosteriorScope, ProbabilityInput, verify_mass_proof
 from mwpc_exact.mass_solver import probability_partition
 from mwpc_exact.reference.byte_grammars import _SourceGrammarBuilder
 from mwpc_exact.reference.normalization import normalize_to_cnf
+from mwpc_exact.state import SelectionInput
 
 ROOT = Path(__file__).resolve().parents[2]
 

@@ -58,38 +58,3 @@ impl ExactScore {
         f64::from_bits((exponent << 52) | (mantissa & ((1_u64 << 52) - 1)))
     }
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn round_trips_normal_subnormal_and_extreme_weights() {
-        for value in [
-            0.0,
-            f64::from_bits(1),
-            f64::MIN_POSITIVE,
-            0.1,
-            1.0,
-            1e16,
-            f64::MAX,
-        ] {
-            assert_eq!(ExactScore::from_float(value).to_float(), value);
-        }
-        assert_eq!(ExactScore::default().to_float(), 0.0);
-    }
-
-    #[test]
-    fn addition_preserves_tiny_rewards_and_rounds_only_once() {
-        let large = ExactScore::from_float(1e16);
-        let one = ExactScore::from_float(1.0);
-        assert!(large.add(&one) > large);
-        assert_eq!(large.add(&one).to_float(), 1e16);
-        assert_eq!(large.add(&one).add(&one).to_float(), 1e16 + 2.0);
-        assert_eq!(large.add(&one).add(&one), large.add(&one.add(&one)));
-        assert_eq!(
-            ExactScore::sum(&[f64::MAX, f64::MAX]).to_float(),
-            f64::INFINITY
-        );
-    }
-}

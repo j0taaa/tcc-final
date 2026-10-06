@@ -1,0 +1,4417 @@
+{
+  "after": {
+    "groups": {
+      "build": {
+        "files": 8,
+        "nonblank_lines": 161,
+        "physical_lines": 197
+      },
+      "experiments_and_tools": {
+        "files": 13,
+        "nonblank_lines": 1705,
+        "physical_lines": 1892
+      },
+      "implementation": {
+        "files": 66,
+        "nonblank_lines": 15908,
+        "physical_lines": 17798
+      },
+      "proofs": {
+        "files": 9,
+        "nonblank_lines": 715,
+        "physical_lines": 818
+      },
+      "tests": {
+        "files": 0,
+        "nonblank_lines": 0,
+        "physical_lines": 0
+      },
+      "upstream": {
+        "files": 125,
+        "nonblank_lines": 21722,
+        "physical_lines": 24291
+      }
+    },
+    "inventory": {
+      "Makefile": {
+        "group": "build",
+        "nonblank_lines": 52,
+        "physical_lines": 69,
+        "sha256": "00b0d0d67812d92508c29b69fc84a2861efd38adb9bd8c6dfcdf2debbcb706f9"
+      },
+      "crates/mwpc_parser/Cargo.toml": {
+        "group": "build",
+        "nonblank_lines": 12,
+        "physical_lines": 14,
+        "sha256": "ca79913b7fae784ab6c0690fcce808e56e958d8ce47e625949aca689dcb7e147"
+      },
+      "crates/mwpc_parser/src/lib.rs": {
+        "group": "implementation",
+        "nonblank_lines": 13,
+        "physical_lines": 15,
+        "sha256": "10b2b8c1396ba5a990bf5cfed86b5ca863b1e575222473007b467a8022f775b0"
+      },
+      "crates/mwpc_parser/src/parser.rs": {
+        "group": "implementation",
+        "nonblank_lines": 720,
+        "physical_lines": 750,
+        "sha256": "4592b403f3e961edb0185444995ed8ba839f1a1abc7c3d6a58f2a5325b10759b"
+      },
+      "crates/mwpc_parser/src/score.rs": {
+        "group": "implementation",
+        "nonblank_lines": 54,
+        "physical_lines": 60,
+        "sha256": "9b1aef6d577730359bbed41853b68e6c8e4c5fffe9a22138b93e20e950a5afd1"
+      },
+      "crates/mwpc_parser/src/types.rs": {
+        "group": "implementation",
+        "nonblank_lines": 655,
+        "physical_lines": 717,
+        "sha256": "7b55b3b8bd9b94100c6339a4eb99f70b36e10e54d52303cd45763347efe3cfb1"
+      },
+      "crates/mwpc_parser_py/Cargo.toml": {
+        "group": "build",
+        "nonblank_lines": 12,
+        "physical_lines": 14,
+        "sha256": "3f9f98b1c6536e5319d1408aeacfd6562950eb89e225b3ee6a52254ced013962"
+      },
+      "crates/mwpc_parser_py/pyproject.toml": {
+        "group": "build",
+        "nonblank_lines": 12,
+        "physical_lines": 14,
+        "sha256": "890bc72365664ba5d3f9b177555d68a6bc211bd0e345d9e86b57373facb3496f"
+      },
+      "crates/mwpc_parser_py/src/lib.rs": {
+        "group": "implementation",
+        "nonblank_lines": 318,
+        "physical_lines": 339,
+        "sha256": "6917a1ffe74cb2bb257e37a47fab9aeee988699ccc5644db6a3f691f497d15a1"
+      },
+      "formal/Audit.lean": {
+        "group": "proofs",
+        "nonblank_lines": 36,
+        "physical_lines": 37,
+        "sha256": "d4814f22c5c3d1c2f45eb65d7848ba3f1ecc7cdc792e4022fa6f637ad255bbf9"
+      },
+      "formal/MWPC.lean": {
+        "group": "proofs",
+        "nonblank_lines": 13,
+        "physical_lines": 19,
+        "sha256": "4a416aaa958fc908bc7d7a2ca440306f01064fe2daf9a46f929dd88d903c4229"
+      },
+      "formal/MWPC/Bounds.lean": {
+        "group": "proofs",
+        "nonblank_lines": 75,
+        "physical_lines": 87,
+        "sha256": "f387475bc3b5493a74826a89b23239ace3d9556338d31846f826682f68ec8c86"
+      },
+      "formal/MWPC/Certificates.lean": {
+        "group": "proofs",
+        "nonblank_lines": 168,
+        "physical_lines": 196,
+        "sha256": "02938ac57009330234a8453227ff53c14fba3609fd923ac9fd2c2c492509620e"
+      },
+      "formal/MWPC/Conflicts.lean": {
+        "group": "proofs",
+        "nonblank_lines": 90,
+        "physical_lines": 104,
+        "sha256": "73dc260de68b567d7247561375dfbedd7b6d4bdd1559a90ec478dd4d46c578e7"
+      },
+      "formal/MWPC/Prefixes.lean": {
+        "group": "proofs",
+        "nonblank_lines": 56,
+        "physical_lines": 66,
+        "sha256": "3673836f13b0093c86803ee728135f5a9355e8675886944a779cb800d85b7d92"
+      },
+      "formal/MWPC/Probability.lean": {
+        "group": "proofs",
+        "nonblank_lines": 140,
+        "physical_lines": 162,
+        "sha256": "998ebdd269104282c63fb91a20c33d149190b841c99eb6c0f99617cd2546cadf"
+      },
+      "formal/MWPC/Selection.lean": {
+        "group": "proofs",
+        "nonblank_lines": 52,
+        "physical_lines": 62,
+        "sha256": "4da7efe9aaf7ea411acff05e8e0376c128f1f7079fa7438d365bb7a0967c977e"
+      },
+      "formal/examples/BudgetExample.lean": {
+        "group": "proofs",
+        "nonblank_lines": 85,
+        "physical_lines": 85,
+        "sha256": "e976b73bcd75a8b914e459e67c2780a5e2804f5e49f96e68a3dfbc398785cfbc"
+      },
+      "formal/lakefile.toml": {
+        "group": "build",
+        "nonblank_lines": 5,
+        "physical_lines": 6,
+        "sha256": "9b0aa342f79f450f2d438e16aa131d58c8e9a92bd2b3c96329fa5ceec7155f1e"
+      },
+      "paper/Makefile": {
+        "group": "build",
+        "nonblank_lines": 10,
+        "physical_lines": 13,
+        "sha256": "1175a09ccdf4554b0d2285e65d7eb0110875d9cf708a87727afe0fb3346af749"
+      },
+      "pyproject.toml": {
+        "group": "build",
+        "nonblank_lines": 54,
+        "physical_lines": 63,
+        "sha256": "63ff9ea6347b1b5e3a3e857a23edae016f0dd185aacd7bce05433d5811d57384"
+      },
+      "rust-toolchain.toml": {
+        "group": "build",
+        "nonblank_lines": 4,
+        "physical_lines": 4,
+        "sha256": "f2c82031ae793bfe2c19b2f9828259fbb6eb79081849cca5294706ab46ff2d32"
+      },
+      "scripts/bootstrap.sh": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 3,
+        "physical_lines": 3,
+        "sha256": "94178cc2ce402c442bc7fb78aafd40101a3ff88f999f69da1e8ebbe78aa6f1f2"
+      },
+      "scripts/check_paper.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 24,
+        "physical_lines": 32,
+        "sha256": "294e750dd9446ea7a3a84b2d14bfab16c681e4204afefc26361465d4039cc8e8"
+      },
+      "scripts/exact_commit/budget_math_example.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 158,
+        "physical_lines": 172,
+        "sha256": "34dbf6b51f26fd97d1c7a9062be8ebaac1fdd288f46ab7b983d910a9fc9e210a"
+      },
+      "scripts/exact_commit/build_probability_audit_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 492,
+        "physical_lines": 546,
+        "sha256": "7d4926eaa6a0dcc8cf65abeace085b7884a66b119eb3591acaf1ee7a8cb8e1bb"
+      },
+      "scripts/exact_commit/capture_mdlm_probability.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 125,
+        "physical_lines": 139,
+        "sha256": "0b3a90cd7831ee233be2f805476063d470ec2614d0cd6fb10f6a76fcef068286"
+      },
+      "scripts/exact_commit/check_formal_project.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 45,
+        "physical_lines": 52,
+        "sha256": "c8b3edb8760dbefa3b1043de0af9f318dcfceaeeab7c863d35c4cc43237a099f"
+      },
+      "scripts/exact_commit/io_utils.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 22,
+        "physical_lines": 31,
+        "sha256": "e154e19f0c9f6137e36695df47e3671c682ccd0ccac59f46a41c123c8d9a4365"
+      },
+      "scripts/exact_commit/mdlm_cpu.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 107,
+        "physical_lines": 120,
+        "sha256": "ae010fa84e006716b33b934ff8d9bb838049f9a07bfd75604868f7dee2bed648"
+      },
+      "scripts/exact_commit/probability_audit_controls.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 151,
+        "physical_lines": 167,
+        "sha256": "d3d58b4b0a9028c0210cf2a46fc28f89d016c6d25a68b91a30167f9ed889ccb2"
+      },
+      "scripts/exact_commit/run_probability_audit.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 508,
+        "physical_lines": 542,
+        "sha256": "bdf3c23fe37d43ca6adcb8de34496d5ebe9a272a86b1d334d72d6f8f566016bf"
+      },
+      "scripts/install_epic_checkout.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 36,
+        "physical_lines": 46,
+        "sha256": "551867ba57aff7a7a709713880c4f842dca0a94e6e160139331e0c94f1fb2566"
+      },
+      "scripts/verify_artifacts.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 15,
+        "physical_lines": 22,
+        "sha256": "aee24c581f947be161222ff6096d1e66f82c8dc32c225f4b1a4d486f9ecc1bf4"
+      },
+      "scripts/verify_upstream.sh": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 19,
+        "physical_lines": 20,
+        "sha256": "d6c1d3e64e4efcc4cf01cba7bbca173693f6e0731a46702b37ab16ebd08b987d"
+      },
+      "src/mwpc_exact/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 22,
+        "physical_lines": 24,
+        "sha256": "b0523aa32285ca309c70873db6db36807794acbefee49966da306717dccdcd39"
+      },
+      "src/mwpc_exact/_json.py": {
+        "group": "implementation",
+        "nonblank_lines": 37,
+        "physical_lines": 44,
+        "sha256": "896e96f02467e1adefd8c5bc824d6130b09289fd372ed9035d72cbfe61b9e165"
+      },
+      "src/mwpc_exact/_scores.py": {
+        "group": "implementation",
+        "nonblank_lines": 20,
+        "physical_lines": 26,
+        "sha256": "f1e5e7e38a8cf3fe380081b586ef7a3d6c19db4db97777879b48d25f8f67fc22"
+      },
+      "src/mwpc_exact/adaptive.py": {
+        "group": "implementation",
+        "nonblank_lines": 511,
+        "physical_lines": 557,
+        "sha256": "bc6b1e378c164ddc25ebd65164fbd947f1cbbcd46a0010d2f4ce87b89067852d"
+      },
+      "src/mwpc_exact/backend.py": {
+        "group": "implementation",
+        "nonblank_lines": 7,
+        "physical_lines": 13,
+        "sha256": "a85b83e11098ad34671363e9e42cf3e2d53a37b60686ff87d48d2f6f74e84f39"
+      },
+      "src/mwpc_exact/budget_bounds.py": {
+        "group": "implementation",
+        "nonblank_lines": 192,
+        "physical_lines": 219,
+        "sha256": "478e35c6efaba913b7418cff46524d7e5c82ed232a82856c4a053aa5cf06a950"
+      },
+      "src/mwpc_exact/budget_certificate.py": {
+        "group": "implementation",
+        "nonblank_lines": 212,
+        "physical_lines": 225,
+        "sha256": "4bd582f7376e744f5ba40720ebfd62e90ae9d205748cbe93a49beba54923a46b"
+      },
+      "src/mwpc_exact/budget_graph.py": {
+        "group": "implementation",
+        "nonblank_lines": 184,
+        "physical_lines": 208,
+        "sha256": "4f3374c2b9659ee87c8a713f2ff6a1b8a2c312e274e69e4326ccf75c9cc30205"
+      },
+      "src/mwpc_exact/budget_proof.py": {
+        "group": "implementation",
+        "nonblank_lines": 302,
+        "physical_lines": 324,
+        "sha256": "2b3b24eef0680c709e40492a2aa05d6c4e93c7c887432172f58d2e117c9929ac"
+      },
+      "src/mwpc_exact/budget_result.py": {
+        "group": "implementation",
+        "nonblank_lines": 58,
+        "physical_lines": 64,
+        "sha256": "71a30dd9f2a6b0afb159103a72d183a2182a67a83eeb18299b8dbcaf6b25e391"
+      },
+      "src/mwpc_exact/budgeted_commit.py": {
+        "group": "implementation",
+        "nonblank_lines": 121,
+        "physical_lines": 130,
+        "sha256": "682f623b79660a057f2d5ee6a235f5baf9e32b231eeea112cdea74728e050062"
+      },
+      "src/mwpc_exact/byte_lattice.py": {
+        "group": "implementation",
+        "nonblank_lines": 349,
+        "physical_lines": 395,
+        "sha256": "215d450d730a847b63026bbfd4aa061cb0465cf6c8a4a67ea157ea16d1bdb891"
+      },
+      "src/mwpc_exact/conflict_certificate.py": {
+        "group": "implementation",
+        "nonblank_lines": 248,
+        "physical_lines": 275,
+        "sha256": "fceb4e17aa0dd16aaaa4fa79df2682fd051a8cd62cdc2eddb38907c6743b8b7b"
+      },
+      "src/mwpc_exact/conflict_cli.py": {
+        "group": "implementation",
+        "nonblank_lines": 63,
+        "physical_lines": 73,
+        "sha256": "5022f31480331c6badc55f07a555e189f03308479d6bd43a96c24732f32298b2"
+      },
+      "src/mwpc_exact/conflict_commit.py": {
+        "group": "implementation",
+        "nonblank_lines": 215,
+        "physical_lines": 231,
+        "sha256": "4929c27bf21f41e1cbad5a531436bfc74cea15730145584a0b0cb9c05507c8f0"
+      },
+      "src/mwpc_exact/conflict_proof.py": {
+        "group": "implementation",
+        "nonblank_lines": 143,
+        "physical_lines": 155,
+        "sha256": "ad03819b24bf11efff9a7cd16aed4d154ef28fd8a33d28b3f6bbbd943a2bdc31"
+      },
+      "src/mwpc_exact/decoder.py": {
+        "group": "implementation",
+        "nonblank_lines": 513,
+        "physical_lines": 552,
+        "sha256": "3171097a9d701ec4a2b91d88e3604b1678603e109ee79a716aba25566171bb0f"
+      },
+      "src/mwpc_exact/decoder_types.py": {
+        "group": "implementation",
+        "nonblank_lines": 313,
+        "physical_lines": 370,
+        "sha256": "6c2d16291345c506e56cd287cd04b1ff8ad226f80ba7005d8093fb9668aef10b"
+      },
+      "src/mwpc_exact/eos_lattice.py": {
+        "group": "implementation",
+        "nonblank_lines": 642,
+        "physical_lines": 706,
+        "sha256": "716a9d51226d0c0abb2bdfa277a5f3ad306b1d42699954041ee27391f04075d6"
+      },
+      "src/mwpc_exact/eos_policy.py": {
+        "group": "implementation",
+        "nonblank_lines": 73,
+        "physical_lines": 99,
+        "sha256": "eee660842e9b038d7d38d43920f1e6a4ed909960c00dd63bd1abc5445cc45410"
+      },
+      "src/mwpc_exact/epic_adapter/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 35,
+        "physical_lines": 38,
+        "sha256": "109c93a682d77482806d73cdfb6e614e95dea9447096d1eac2506937824f1224"
+      },
+      "src/mwpc_exact/epic_adapter/llada.py": {
+        "group": "implementation",
+        "nonblank_lines": 735,
+        "physical_lines": 821,
+        "sha256": "7627bc1a6ce97350f02a415945812ae36277f00ce8955b31ed978e895ea7e81a"
+      },
+      "src/mwpc_exact/evaluation/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "927b09b712d082ae512f63bf64e8a5d03fae2f7099018d756c346e4f3dd216ea"
+      },
+      "src/mwpc_exact/evaluation/_serde.py": {
+        "group": "implementation",
+        "nonblank_lines": 92,
+        "physical_lines": 123,
+        "sha256": "df112dbde7a34876c564d33aca3e7415eeaf51d4005efe8c895f3600b9be368f"
+      },
+      "src/mwpc_exact/evaluation/epic_regular_cover.py": {
+        "group": "implementation",
+        "nonblank_lines": 507,
+        "physical_lines": 556,
+        "sha256": "d1b1f18e8092f3d1b809b7d4335ff253f8efb8969544056a998bb8a84c2a9f9b"
+      },
+      "src/mwpc_exact/evaluation/selection.py": {
+        "group": "implementation",
+        "nonblank_lines": 644,
+        "physical_lines": 710,
+        "sha256": "2b720d8829c0fc0e49c856c7e3de9e8da4dedae55b34d04cc0b5759414bf9952"
+      },
+      "src/mwpc_exact/experiments/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "76fc43e085f1f36032311ad533d19cacec7556ab85e5ba080063fbb6c1a06806"
+      },
+      "src/mwpc_exact/experiments/_artifact_io.py": {
+        "group": "implementation",
+        "nonblank_lines": 73,
+        "physical_lines": 98,
+        "sha256": "db96df7000abec81538e24c776fd99e7fed986ea17825056571b6cdee6588172"
+      },
+      "src/mwpc_exact/experiments/metadata.py": {
+        "group": "implementation",
+        "nonblank_lines": 192,
+        "physical_lines": 215,
+        "sha256": "5f61daf6a158bb55b5b82bcc5826627b98cac071ba60d288b4b8587e9b931f37"
+      },
+      "src/mwpc_exact/language_coverage.py": {
+        "group": "implementation",
+        "nonblank_lines": 156,
+        "physical_lines": 171,
+        "sha256": "430430587c24f443f24a4c5365d2cf9c55071b8da97194df6ecdeca071718781"
+      },
+      "src/mwpc_exact/lean_bridge.py": {
+        "group": "implementation",
+        "nonblank_lines": 289,
+        "physical_lines": 317,
+        "sha256": "0beb6d46212c3afa9587abe4c262b34bb3c3f186a5505f2ff793fbe7af7c740c"
+      },
+      "src/mwpc_exact/mass_certificate.py": {
+        "group": "implementation",
+        "nonblank_lines": 279,
+        "physical_lines": 310,
+        "sha256": "fd018105ea092ba4c6d649ff7e6e885fa8739ec3183f445cdaa79eb6a549e943"
+      },
+      "src/mwpc_exact/mass_cli.py": {
+        "group": "implementation",
+        "nonblank_lines": 52,
+        "physical_lines": 59,
+        "sha256": "cf0098bdb2b9d83815eaac96f72faa964fda2a67ebf5b0ac02b463caa3a17055"
+      },
+      "src/mwpc_exact/mass_solver.py": {
+        "group": "implementation",
+        "nonblank_lines": 186,
+        "physical_lines": 195,
+        "sha256": "ce8a00b38f1ea279a8228cf7806588d33c733238077e955b8643a885ac6e5ff2"
+      },
+      "src/mwpc_exact/probabilistic_update.py": {
+        "group": "implementation",
+        "nonblank_lines": 51,
+        "physical_lines": 62,
+        "sha256": "3cd915e9bfdd8970dc4376ded7bf9785221e3c54d7da84a5f6fb94302f50dc57"
+      },
+      "src/mwpc_exact/profiling.py": {
+        "group": "implementation",
+        "nonblank_lines": 278,
+        "physical_lines": 321,
+        "sha256": "2099881fc929367c1183968fe7d8a22de7e1c3c8228e91eb42be812a3c619b9c"
+      },
+      "src/mwpc_exact/proof_reuse.py": {
+        "group": "implementation",
+        "nonblank_lines": 87,
+        "physical_lines": 94,
+        "sha256": "f41e5a585058b574419def54b5214fcced0d49cc993cb7684b2043debf468cec"
+      },
+      "src/mwpc_exact/proposal_policy.py": {
+        "group": "implementation",
+        "nonblank_lines": 219,
+        "physical_lines": 256,
+        "sha256": "361f51fe599a03f01d1a32aa6af65d50b45b9bdf4801b73848eb425b71bd6006"
+      },
+      "src/mwpc_exact/ranked_support.py": {
+        "group": "implementation",
+        "nonblank_lines": 241,
+        "physical_lines": 266,
+        "sha256": "81ff3400d763757183d6a0523d898b4d0068116c67803cc2334876882ab22c84"
+      },
+      "src/mwpc_exact/reference/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "acf87862bf7ae9b880f9d4def36eb7f8c626d7e4a3f2540d0b6502fa0726dffd"
+      },
+      "src/mwpc_exact/reference/budget_certificate.py": {
+        "group": "implementation",
+        "nonblank_lines": 160,
+        "physical_lines": 168,
+        "sha256": "377ed7e0923dffb8a78db61cf076d8231cd92d6c153567f44ff0ff9e6bed1b24"
+      },
+      "src/mwpc_exact/reference/budget_types.py": {
+        "group": "implementation",
+        "nonblank_lines": 128,
+        "physical_lines": 154,
+        "sha256": "c6a1f01f38bdefbe018935f951f287dd5621fa3c787b7ce75d4b2bc94a7d7443"
+      },
+      "src/mwpc_exact/reference/budgeted_parser.py": {
+        "group": "implementation",
+        "nonblank_lines": 170,
+        "physical_lines": 183,
+        "sha256": "255da9fc802aecc0e3626d190365dadecb333211d88a26c9719a6d33794fef1c"
+      },
+      "src/mwpc_exact/reference/byte_grammars.py": {
+        "group": "implementation",
+        "nonblank_lines": 71,
+        "physical_lines": 80,
+        "sha256": "a58aee2c8c578c9d28ffd0c3522c55d66fcbe5f183db8a399c89c8f9e18aa9b6"
+      },
+      "src/mwpc_exact/reference/dag_parser.py": {
+        "group": "implementation",
+        "nonblank_lines": 364,
+        "physical_lines": 420,
+        "sha256": "8578a96b266aefbb3801c99310efba17c6fc068e38c3ffb3679a7dc34e9a5390"
+      },
+      "src/mwpc_exact/reference/epsilon.py": {
+        "group": "implementation",
+        "nonblank_lines": 282,
+        "physical_lines": 313,
+        "sha256": "a0276b11d0f4e41c95f2eb6a5b167590eee27af237e8df72ee74dfa3733ca4b5"
+      },
+      "src/mwpc_exact/reference/grammar.py": {
+        "group": "implementation",
+        "nonblank_lines": 395,
+        "physical_lines": 465,
+        "sha256": "2502f7fdc3ac0a19fe3bff85485508d12790a4fa3914a82ee5dd057981f753ef"
+      },
+      "src/mwpc_exact/reference/graph.py": {
+        "group": "implementation",
+        "nonblank_lines": 110,
+        "physical_lines": 131,
+        "sha256": "406948c82021c1ca0bf77ccb69b18890eb7a01d236085882c1008c8f41d03954"
+      },
+      "src/mwpc_exact/reference/normalization.py": {
+        "group": "implementation",
+        "nonblank_lines": 419,
+        "physical_lines": 485,
+        "sha256": "627c3e71dd5838c112bc7bd5dd939f1620583d2cd171cc968dc0d51bcf02b6c6"
+      },
+      "src/mwpc_exact/reference/recognizer.py": {
+        "group": "implementation",
+        "nonblank_lines": 33,
+        "physical_lines": 41,
+        "sha256": "984a7c705721d6c6ff1dc4f16a8fba3ce6c6dd0bb1efad90f1a54b3169066ec4"
+      },
+      "src/mwpc_exact/rust_solver.py": {
+        "group": "implementation",
+        "nonblank_lines": 180,
+        "physical_lines": 206,
+        "sha256": "bd2fe0a6800683e57166c8c75924a615179166621feb10471a8074c318298f34"
+      },
+      "src/mwpc_exact/serialization.py": {
+        "group": "implementation",
+        "nonblank_lines": 199,
+        "physical_lines": 225,
+        "sha256": "5bc169a1f77fafaa72ddedf070d9167d38cdfe184c96e88f172fe734aab0efa1"
+      },
+      "src/mwpc_exact/solver.py": {
+        "group": "implementation",
+        "nonblank_lines": 562,
+        "physical_lines": 613,
+        "sha256": "dccd5e317c55d4856b394e6a84dcc95e3a7846f9218a84d552365a53c8918701"
+      },
+      "src/mwpc_exact/state.py": {
+        "group": "implementation",
+        "nonblank_lines": 72,
+        "physical_lines": 85,
+        "sha256": "ef953e0bd79bc9cc3d065b8dd3677c426daa73f3f517cfae250fef4915cceb20"
+      },
+      "src/mwpc_exact/strategy.py": {
+        "group": "implementation",
+        "nonblank_lines": 281,
+        "physical_lines": 324,
+        "sha256": "dfbaa6617e37e215b6920433f666dee687e7733d599a4f561060ecb7725a5b06"
+      },
+      "src/mwpc_exact/support.py": {
+        "group": "implementation",
+        "nonblank_lines": 585,
+        "physical_lines": 657,
+        "sha256": "e80b1b8d06728ba82e6fba15c3d4292a1c0c115166fab6753d2e5533c342504f"
+      },
+      "src/mwpc_exact/token_lattice.py": {
+        "group": "implementation",
+        "nonblank_lines": 396,
+        "physical_lines": 455,
+        "sha256": "6efc921304f5c0f265a0db212497372194045b684844fb69133aa9fcdaf205c5"
+      },
+      "src/mwpc_exact/tokenizer_bytes.py": {
+        "group": "implementation",
+        "nonblank_lines": 106,
+        "physical_lines": 137,
+        "sha256": "681973506b5e59df4978dec201ffab406ec0e782dab38572528b78162fe65355"
+      },
+      "src/mwpc_exact/types.py": {
+        "group": "implementation",
+        "nonblank_lines": 577,
+        "physical_lines": 667,
+        "sha256": "90c382061b7b0eabd42dbef1aa1dce30612eea8d54e78e09a0e99105283c0689"
+      },
+      "src/mwpc_exact/validated.py": {
+        "group": "implementation",
+        "nonblank_lines": 103,
+        "physical_lines": 127,
+        "sha256": "545d9dccbf2bbe4f9b527da3a0f9770be978e4846252f5a04c24afef2f5c88b7"
+      },
+      "src/mwpc_exact/validator.py": {
+        "group": "implementation",
+        "nonblank_lines": 611,
+        "physical_lines": 676,
+        "sha256": "cd7e399c4c84e15f9256d44ab1c575fc7e6ac21d7ddd6094e2a1527328968d57"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/cpp.py": {
+        "group": "upstream",
+        "nonblank_lines": 222,
+        "physical_lines": 253,
+        "sha256": "f3e3dfa2d53d0cbb87d66b92a468971ac9a811eeab2cde02460c92618fe90b7d"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/json.py": {
+        "group": "upstream",
+        "nonblank_lines": 13,
+        "physical_lines": 19,
+        "sha256": "86e85dc07950f4d9e0fddf27e47ccb6811f81219563d508d51b4d31787d1ea96"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/jsonschema.py": {
+        "group": "upstream",
+        "nonblank_lines": 352,
+        "physical_lines": 397,
+        "sha256": "ee7d386f9db0a37f0e9c87fad84576341fe8670ea4225f60b81f4162676a2ef0"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/smiles.py": {
+        "group": "upstream",
+        "nonblank_lines": 61,
+        "physical_lines": 96,
+        "sha256": "bbde63d81d6baa9543a3b4bc70f53b0257ce7464697d5d673002e255a3ccd198"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/constrain_utils.py": {
+        "group": "upstream",
+        "nonblank_lines": 1076,
+        "physical_lines": 1189,
+        "sha256": "47799b4387ee97794a3a18a12b7dfd959a6edf5edf3eff360fa912fd9c5a7386"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/dataset.py": {
+        "group": "upstream",
+        "nonblank_lines": 27,
+        "physical_lines": 35,
+        "sha256": "c6243aa5395073c40b68567c67299154066fa9fe981d34b3f57a29a2278529c3"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/cpp.py": {
+        "group": "upstream",
+        "nonblank_lines": 114,
+        "physical_lines": 135,
+        "sha256": "0946e446a837fd853af53adb501215b36f11cbb97f88bf2254bed5f0bcf7314e"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/generic.py": {
+        "group": "upstream",
+        "nonblank_lines": 100,
+        "physical_lines": 120,
+        "sha256": "55ea61f78af05777e8d0d297a3553a463f65671edf9b86f22e47f994c16e7c67"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/jsonschema.py": {
+        "group": "upstream",
+        "nonblank_lines": 91,
+        "physical_lines": 105,
+        "sha256": "ba3759f491e938c4fc03eb38eecb5cf80a327e25827e2bce6c9c0f0809feed45"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/smiles.py": {
+        "group": "upstream",
+        "nonblank_lines": 109,
+        "physical_lines": 134,
+        "sha256": "5f4acd5ba7c52bf3b4aa308e23dc5d80a724cdc2e6444edbcc4816d87bdaca35"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/generic_inference.py": {
+        "group": "upstream",
+        "nonblank_lines": 200,
+        "physical_lines": 218,
+        "sha256": "42942c2d3ca3eea0e868e23369bca2ee8cdcd6ebf73d3f857762edc8d6993381"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/model.py": {
+        "group": "upstream",
+        "nonblank_lines": 34,
+        "physical_lines": 42,
+        "sha256": "ebd9684fb27f5895a048804da829c1f2107d771d3337645697305c78b72cb133"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/dream/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/dream/generate.py": {
+        "group": "upstream",
+        "nonblank_lines": 328,
+        "physical_lines": 374,
+        "sha256": "78370276770c587c0712f06400e19e12b51ed014622f0cd4f3351e36bcce270c"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/dream/generate_constrained.py": {
+        "group": "upstream",
+        "nonblank_lines": 795,
+        "physical_lines": 854,
+        "sha256": "60ff74cf8a62a04cbc2c41d156ee7efe9c180a244e6a7b2186852462360824d1"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/dream/model.py": {
+        "group": "upstream",
+        "nonblank_lines": 265,
+        "physical_lines": 284,
+        "sha256": "228df42338ac6a53b94a222352e68265e7b68646d98ac63d887afcbca00fe0b2"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/generic.py": {
+        "group": "upstream",
+        "nonblank_lines": 70,
+        "physical_lines": 76,
+        "sha256": "3b65f6c7b0492f1a81390b13dbf48dc062c5f4c0f3ae7291a3026c9f4555296f"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/llada/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/llada/generate.py": {
+        "group": "upstream",
+        "nonblank_lines": 150,
+        "physical_lines": 181,
+        "sha256": "5297b69a75176d3fc3376d197fce4dac96414fa8cd57869bf2c67e730161bda2"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/llada/generate_constrained.py": {
+        "group": "upstream",
+        "nonblank_lines": 633,
+        "physical_lines": 686,
+        "sha256": "d99195fe7cc3080acfc608a2e6d70b7567564d533ee8fb1cb79e9d534637340c"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/llada/model.py": {
+        "group": "upstream",
+        "nonblank_lines": 249,
+        "physical_lines": 266,
+        "sha256": "b1bc17aee70413d12ac4778c99e6a872df05302fe3f4034c980db028cac5608b"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/dataset.py": {
+        "group": "upstream",
+        "nonblank_lines": 26,
+        "physical_lines": 34,
+        "sha256": "c35d058baaa89019abb11b99023b9682e00609f965a59b0dcc80b57fe6f49133"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/datasets/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/datasets/generic.py": {
+        "group": "upstream",
+        "nonblank_lines": 70,
+        "physical_lines": 85,
+        "sha256": "565a6854364d8cc27ecca6b0e9259fcd0a7062cf1dc7df6e7b7c6048c3698d97"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/datasets/humaneval_mri_cpp.py": {
+        "group": "upstream",
+        "nonblank_lines": 106,
+        "physical_lines": 123,
+        "sha256": "d427941a36f71fcdeaac9b76f09ec1a89a4d98a751bd75967829f4daa3bb03a2"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/generic_inference.py": {
+        "group": "upstream",
+        "nonblank_lines": 186,
+        "physical_lines": 204,
+        "sha256": "e9b776ac74c6f34954ec47809013feecce636a4fb166d8a74af8d1a6c30f5b39"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/model.py": {
+        "group": "upstream",
+        "nonblank_lines": 35,
+        "physical_lines": 43,
+        "sha256": "108e16e1fc79f5778ac789b0c1bb37d66fc348036c49fbae66ddea8d4ec1b86d"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/fim.py": {
+        "group": "upstream",
+        "nonblank_lines": 325,
+        "physical_lines": 344,
+        "sha256": "e79d341a531fa1774732be9b7d2185f3d04ca66901115c7726165fd36ae6d747"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/generate_constrained.py": {
+        "group": "upstream",
+        "nonblank_lines": 773,
+        "physical_lines": 845,
+        "sha256": "4c6e87d02d158a3895b6a8de469938defcc58f08772b46e4e59194fb38bfa201"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/generic.py": {
+        "group": "upstream",
+        "nonblank_lines": 61,
+        "physical_lines": 67,
+        "sha256": "ed53df299a5c9b686144ccf8ed69578238b077bebaf689a254f537e3973f2a03"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/util.py": {
+        "group": "upstream",
+        "nonblank_lines": 10,
+        "physical_lines": 12,
+        "sha256": "7f651399da81c2764b16d9c8d07df63fc4e23866b53c5300120ee3389edb2a09"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/fast_enfa_profiler.py": {
+        "group": "upstream",
+        "nonblank_lines": 188,
+        "physical_lines": 231,
+        "sha256": "8c447460227da63fbdaec1d41f7a030797796ed45d0d0ce044ba583a3ba18e45"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/regular_cover.py": {
+        "group": "upstream",
+        "nonblank_lines": 312,
+        "physical_lines": 350,
+        "sha256": "9a3705b5d20869a8f80d54b0fec343ec67d77a15d218eac0698fc51d3d3e989e"
+      },
+      "vendor/EPIC-Decoding/eval/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/eval/collect_analysis_results.py": {
+        "group": "upstream",
+        "nonblank_lines": 691,
+        "physical_lines": 803,
+        "sha256": "fff6df70bd772decd9006915f5e9dff7e5e65c9bfa315f2c31794aa694677b32"
+      },
+      "vendor/EPIC-Decoding/eval/collect_eval_results.py": {
+        "group": "upstream",
+        "nonblank_lines": 376,
+        "physical_lines": 481,
+        "sha256": "67613d52326210e554e7bb61e653e88f393a5a75a2827c3e44ddb099665f7cf9"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/cpp/checker.py": {
+        "group": "upstream",
+        "nonblank_lines": 219,
+        "physical_lines": 256,
+        "sha256": "1555f20190abf25ef8c9588279c1c9210b5f1138bbb1f9296add9e2f83e3b5bb"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/jsonmode/checker.py": {
+        "group": "upstream",
+        "nonblank_lines": 60,
+        "physical_lines": 73,
+        "sha256": "61c9b71f70acb73818a73392a32578ad41bc160d1e1c37cb4c73359945fff979"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/jsonmode/run_jsonmode.sh": {
+        "group": "upstream",
+        "nonblank_lines": 10,
+        "physical_lines": 12,
+        "sha256": "06cc703a147a6e31c601b8dfa93fbfede621db740f57d1edac95f7bde8fdacb8"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/run_dllm.py": {
+        "group": "upstream",
+        "nonblank_lines": 128,
+        "physical_lines": 140,
+        "sha256": "bf9a9a01340241fe0efbf0b389ec9dbc4682cc4817ac2480f6e10be07edef34e"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/run_dllm_step_ablation.py": {
+        "group": "upstream",
+        "nonblank_lines": 125,
+        "physical_lines": 137,
+        "sha256": "cf30b55595c3c4d944db6998d0aeedc9ebdabdb416e5cf8afe82451988ea5b41"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/smiles/checker.py": {
+        "group": "upstream",
+        "nonblank_lines": 94,
+        "physical_lines": 113,
+        "sha256": "737c3de2ba0947482ddec9925349321df10b0e52c085cb9c6307313bd7907b8f"
+      },
+      "vendor/EPIC-Decoding/eval/download_models.py": {
+        "group": "upstream",
+        "nonblank_lines": 48,
+        "physical_lines": 56,
+        "sha256": "f532a72cb909b2b1e0c2d70c2a27716f7b5801f21b228467d3e24dbb91f51aa8"
+      },
+      "vendor/EPIC-Decoding/eval/evaluate_all.py": {
+        "group": "upstream",
+        "nonblank_lines": 335,
+        "physical_lines": 393,
+        "sha256": "cf3ca3a5bea2193906ae0cc3884ca4328348c8f60b0407bc57d50002776bea7e"
+      },
+      "vendor/EPIC-Decoding/eval/evaluate_all.sh": {
+        "group": "upstream",
+        "nonblank_lines": 28,
+        "physical_lines": 30,
+        "sha256": "4a0ddb0df9934d5e3830cd2913a6f3624f4f9c3b4789a36ca72a3acb312223ac"
+      },
+      "vendor/EPIC-Decoding/eval/figures/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/eval/figures/dllm.py": {
+        "group": "upstream",
+        "nonblank_lines": 170,
+        "physical_lines": 186,
+        "sha256": "70049d7c809ba2315112ecbc030dd8fed352b87e7bd53ae2c981ff3ed5e58fa0"
+      },
+      "vendor/EPIC-Decoding/eval/figures/dllm_ablation_steps.py": {
+        "group": "upstream",
+        "nonblank_lines": 169,
+        "physical_lines": 184,
+        "sha256": "3e77c101075c47550dcc19bb6458caeceaea26395f66178e0b9004830c36e67a"
+      },
+      "vendor/EPIC-Decoding/eval/figures/dllm_ablation_steps_time.py": {
+        "group": "upstream",
+        "nonblank_lines": 68,
+        "physical_lines": 76,
+        "sha256": "5b8674b6e6a4bd4271f493539f1229412d5b4fe9a5a2e85b9ebf3c48531c0a7a"
+      },
+      "vendor/EPIC-Decoding/eval/figures/dllm_time.py": {
+        "group": "upstream",
+        "nonblank_lines": 68,
+        "physical_lines": 76,
+        "sha256": "1b0cbec8099ba2d437bae851b23a61ba2e288a269981cc7a85379769c317feaf"
+      },
+      "vendor/EPIC-Decoding/eval/figures/mri.py": {
+        "group": "upstream",
+        "nonblank_lines": 177,
+        "physical_lines": 192,
+        "sha256": "f6c01d6a34ff699e1744a008b114578ddd7ff8676b035aba291927c847e037ec"
+      },
+      "vendor/EPIC-Decoding/eval/figures/mri_time.py": {
+        "group": "upstream",
+        "nonblank_lines": 79,
+        "physical_lines": 89,
+        "sha256": "9498651045ce0fa084ff7c340c55cbb1bc591ca1c6160e5e765741dc9231db34"
+      },
+      "vendor/EPIC-Decoding/eval/figures/util.py": {
+        "group": "upstream",
+        "nonblank_lines": 265,
+        "physical_lines": 313,
+        "sha256": "d2462733d693f07ce00c72f16111bd556502dc00b7b106beec7fba8f4c119eaa"
+      },
+      "vendor/EPIC-Decoding/eval/mri/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/eval/mri/run_mri.py": {
+        "group": "upstream",
+        "nonblank_lines": 132,
+        "physical_lines": 145,
+        "sha256": "6ff53fd529532e7fde68fbb7e91ea15fa1045b5bc8fffd1aee5a1f5caf1225ea"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/dfa/minimizer.rs": {
+        "group": "upstream",
+        "nonblank_lines": 130,
+        "physical_lines": 149,
+        "sha256": "e52630585f22670a1fe1069cee2e41940e146b734dea12313d735880c6486f98"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/dfa/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 385,
+        "physical_lines": 443,
+        "sha256": "e676864804dde04d5b90253113b59528bffa7073269d384e56ab2be03f216a49"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/dfa/prefix_searcher.rs": {
+        "group": "upstream",
+        "nonblank_lines": 210,
+        "physical_lines": 237,
+        "sha256": "fecd8ecbd5c8d9781a956b7d259689e97ba9cde1fad61e88c3d2d7e58fc1e04a"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/dfa/trie.rs": {
+        "group": "upstream",
+        "nonblank_lines": 62,
+        "physical_lines": 70,
+        "sha256": "53c2c700246b5b602fcc8ac556b61b4755cf9f8ff9eda05d43dbf953f944a332"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/error.rs": {
+        "group": "upstream",
+        "nonblank_lines": 39,
+        "physical_lines": 44,
+        "sha256": "3aa6bdec71dfab4705d856f20be42399e72598dfe9151ec903410898d42083c0"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/graph.rs": {
+        "group": "upstream",
+        "nonblank_lines": 187,
+        "physical_lines": 209,
+        "sha256": "dcc4bae66d926f2f7d13e195ccfe5a44cfff9b08c58727b3e6ddd709742271ac"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/lib.rs": {
+        "group": "upstream",
+        "nonblank_lines": 66,
+        "physical_lines": 84,
+        "sha256": "287dd13e175f0d3e6ae7fdd2e5ed528a56ccd4f0aba0de16468fd1e22705870d"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/look.rs": {
+        "group": "upstream",
+        "nonblank_lines": 132,
+        "physical_lines": 149,
+        "sha256": "7c8d364c7e99d7463774dedbaf0e8c6651bc791cc62d4ae2763747c2fb8882ac"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/nfa/has_looks.rs": {
+        "group": "upstream",
+        "nonblank_lines": 535,
+        "physical_lines": 586,
+        "sha256": "6ad3d4fda03b1b20777c25d732984f34101361fec97dd1bfa0263d3c6d2a21f9"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/nfa/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 308,
+        "physical_lines": 343,
+        "sha256": "4ca74d4d7e20e68e4139c6ab8b057274bc36a7d951f0ccd4db975c34a6be8837"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/nfa/no_looks.rs": {
+        "group": "upstream",
+        "nonblank_lines": 708,
+        "physical_lines": 787,
+        "sha256": "e7cb3b32dbbcc7f96af2e92b62c3ab56c5e4936a8b3f60a761861e11a2cdd9a8"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/refinery.rs": {
+        "group": "upstream",
+        "nonblank_lines": 256,
+        "physical_lines": 289,
+        "sha256": "6daaf4ed21daee446c22a35ea43a2ea37cfba114f6f795f16ac9d5e91d5e878f"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/regex.rs": {
+        "group": "upstream",
+        "nonblank_lines": 115,
+        "physical_lines": 134,
+        "sha256": "8e785b2d6f89136ca7a6434531b04da76b862572043115afcbc51e8acfc3aeb4"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/runner/anchored.rs": {
+        "group": "upstream",
+        "nonblank_lines": 34,
+        "physical_lines": 39,
+        "sha256": "d533879fe6f337bcc739a870c1af170c8bce216864af328aca38466a620a1bd3"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/runner/forward_backward.rs": {
+        "group": "upstream",
+        "nonblank_lines": 195,
+        "physical_lines": 216,
+        "sha256": "d9fe02908d63eea50199175ba901b5966c4358beb856e904fdac145fbb847aca"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/runner/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 8,
+        "physical_lines": 10,
+        "sha256": "ae439a5280883c4096f1af387bb99392ab77b1b95225169d9f4d24490f6ee697"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/runner/program.rs": {
+        "group": "upstream",
+        "nonblank_lines": 148,
+        "physical_lines": 165,
+        "sha256": "be10194a4d8685e26ba26bdb8df425d7a3a4502123cd10d8fd87969cc5340db9"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/unicode.rs": {
+        "group": "upstream",
+        "nonblank_lines": 659,
+        "physical_lines": 659,
+        "sha256": "1297ef9865528abbd304d20325c86b38b368fe09f25908bac487c9c5238ca2ad"
+      },
+      "vendor/EPIC-Decoding/rustformlang/bench/js_grammar_bench.rs": {
+        "group": "upstream",
+        "nonblank_lines": 316,
+        "physical_lines": 366,
+        "sha256": "2f1f2e333e42d87b49f9354fa1dd53203be7810cf6da3db3f154b85353da2ff4"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/cfg.rs": {
+        "group": "upstream",
+        "nonblank_lines": 2311,
+        "physical_lines": 2466,
+        "sha256": "b9f5a3a9e4cf2832e66801159aa0745814916fb06bbad497902fa1a95f5f991b"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 4,
+        "physical_lines": 4,
+        "sha256": "21ce6a51b3bfe5c739d868f5929cfa5fcab9c9ef704d635fdd384aca02014ee6"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/production.rs": {
+        "group": "upstream",
+        "nonblank_lines": 41,
+        "physical_lines": 46,
+        "sha256": "aa14fc62d84e1185d34118f95cad1c84abd2c5b1cafe777c81f16d79846d0c6c"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/terminal.rs": {
+        "group": "upstream",
+        "nonblank_lines": 5,
+        "physical_lines": 6,
+        "sha256": "1888503b2f3ddbad5c86b08cb98c571268f7ffa956a28a7d8bf431fed089ab83"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/variable.rs": {
+        "group": "upstream",
+        "nonblank_lines": 39,
+        "physical_lines": 47,
+        "sha256": "b4743438e4c8db2e98425c0ed5467d7084aa5966888b36b0dfae25dc39a96c30"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/constraining.rs": {
+        "group": "upstream",
+        "nonblank_lines": 414,
+        "physical_lines": 440,
+        "sha256": "5435526816f6bd7dbccee083ee74318eeece95174bca029e1990c9a29ed041b2"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/bytes_dfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 635,
+        "physical_lines": 703,
+        "sha256": "10842fe0d6ba241ef1e86e1570b351c3eedbca9708cbae7aaa7efbb3cffd9086"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/dfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 714,
+        "physical_lines": 785,
+        "sha256": "9ca8f82002656c3731dcf3576900f835964c11812820afcdfd13a6532d169835"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/epsilon_nfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 519,
+        "physical_lines": 564,
+        "sha256": "1cf95cde091db5c7c5b1f9ca38aeda91ecaf66f4bdcf325dfaf64c7c3442ce4c"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/finite_automaton.rs": {
+        "group": "upstream",
+        "nonblank_lines": 211,
+        "physical_lines": 235,
+        "sha256": "de254c705fd1c27dbd0ce20a7f9958fb4da89cdf7f51fbdac5d481df563dc5b9"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 6,
+        "physical_lines": 6,
+        "sha256": "f28af593dbd9aee14948ef6531e88c08d93d8bc3caa761981d451afc22edf823"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/nfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 230,
+        "physical_lines": 253,
+        "sha256": "01557c106c29ba1bcbc93b7e399b885e397ead4059416449e84c36ef8e656dd4"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/state.rs": {
+        "group": "upstream",
+        "nonblank_lines": 38,
+        "physical_lines": 45,
+        "sha256": "fb69c4ddce6ff3432184c8426e021bcac3bdb704bf02c81e01378147a95d9377"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/input_symbol.rs": {
+        "group": "upstream",
+        "nonblank_lines": 61,
+        "physical_lines": 71,
+        "sha256": "1ab7abf45a31674d541bee92a55f0bb5f223377eccaf77acdef20cffe664ea06"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/language.rs": {
+        "group": "upstream",
+        "nonblank_lines": 23,
+        "physical_lines": 29,
+        "sha256": "f2f2a6bb69758ae1dd2d1d1a16d5ce17697b91618bef289623c2b5f299a81b89"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/lib.rs": {
+        "group": "upstream",
+        "nonblank_lines": 8,
+        "physical_lines": 9,
+        "sha256": "afd239aa0a7504831627d7fad410f62a887ea7fdb882ead81e46c0bf21c17b52"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/regex/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "e9d86e45d59c7968445b8170c874df3ee06e57447c1f2b0033f09f654ef5fa0c"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/regex/regex.rs": {
+        "group": "upstream",
+        "nonblank_lines": 63,
+        "physical_lines": 71,
+        "sha256": "7c1f29e20a23fd5eb2d707fc2372eb7a593e585e9738e734e446cd829a18faed"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "eac90e7ea7b4bd0d224c0b158c621da068370ef5feedc729cdc17d2540e3adbc"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/cfg/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/cfg/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 70,
+        "physical_lines": 87,
+        "sha256": "6489e22a9f01be289e8e173d97a02be2205bf78f7956be64a21f3d2f6b247814"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/constraining/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/constraining/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 103,
+        "physical_lines": 130,
+        "sha256": "b0c909f6b6fd6e5c3eeb1328efb9b5610407b0c3ff81558c35c942de7abd4fec"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/bytes_dfa/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/bytes_dfa/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 101,
+        "physical_lines": 124,
+        "sha256": "486cfa96b52b2f18a9fdf9936edb16a5387844dae4ecd0c2a99edf8a0e1266ac"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/dfa/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/dfa/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 91,
+        "physical_lines": 112,
+        "sha256": "e6082cfb5db6ef22f1539946dc7346b8ef87f99eac72da428306bb45e9634c2f"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/epsilon_nfa/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/epsilon_nfa/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 82,
+        "physical_lines": 101,
+        "sha256": "2aa6f922823e1e6a3ba403561617d65025fad03df69033d86dca3f1a54f6f9c4"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/cfg.rs": {
+        "group": "upstream",
+        "nonblank_lines": 203,
+        "physical_lines": 230,
+        "sha256": "3e246dbc744734e53f0fa146fb3024afa12470534a1651de22c2fd8a43d3666c"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/constraining.rs": {
+        "group": "upstream",
+        "nonblank_lines": 155,
+        "physical_lines": 170,
+        "sha256": "91a70cf64b4434456b700abc9943fb67442ea819809585c16a700e28cc5ee7ce"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/fa/bytes_dfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 125,
+        "physical_lines": 150,
+        "sha256": "a8f7409287f66bee8bbdc73c65d1e1bbd6f4de8f85951642e219f90637e4ae35"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/fa/dfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 117,
+        "physical_lines": 140,
+        "sha256": "f961025a7c3a839c6b9f30a5f597f9497db779142ded09b8c579fc0dd8871c9e"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/fa/epsilon_nfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 127,
+        "physical_lines": 149,
+        "sha256": "e059f6866f6c45cdd8215ce433b1107b4bf23e21077f258e765c13c1200e0b4a"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/fa/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 16,
+        "physical_lines": 18,
+        "sha256": "22372ed528c42abfe98083c97089ade732421140c271c8172b6086fb7aa002c0"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/lib.rs": {
+        "group": "upstream",
+        "nonblank_lines": 15,
+        "physical_lines": 17,
+        "sha256": "e02833391039ad3f1c4e9073fa1ee606bd2dcbddd065ffb35f25da897feec93a"
+      },
+      "vendor/EPIC-Decoding/scripts/run.sh": {
+        "group": "upstream",
+        "nonblank_lines": 19,
+        "physical_lines": 25,
+        "sha256": "2308d5af35d861e2e6e6d17f5caa3a25916e88766ab9508eba2b7621931061f3"
+      },
+      "vendor/EPIC-Decoding/scripts/run_ablation.py": {
+        "group": "upstream",
+        "nonblank_lines": 214,
+        "physical_lines": 238,
+        "sha256": "e952dfd65f3eefee8acb5c55757d249b1d95e105cb5466e50d81568dd04fb639"
+      },
+      "vendor/EPIC-Decoding/scripts/run_main.py": {
+        "group": "upstream",
+        "nonblank_lines": 238,
+        "physical_lines": 276,
+        "sha256": "b20530de7c5029697c38c7bc7d1e3d0697d4752f1a4a854fc4680cc007e80c07"
+      }
+    },
+    "own": {
+      "files": 96,
+      "nonblank_lines": 18489,
+      "physical_lines": 20705
+    },
+    "total": {
+      "files": 221,
+      "nonblank_lines": 40211,
+      "physical_lines": 44996
+    }
+  },
+  "before": {
+    "groups": {
+      "build": {
+        "files": 8,
+        "nonblank_lines": 260,
+        "physical_lines": 317
+      },
+      "experiments_and_tools": {
+        "files": 71,
+        "nonblank_lines": 15909,
+        "physical_lines": 17118
+      },
+      "implementation": {
+        "files": 114,
+        "nonblank_lines": 35142,
+        "physical_lines": 38911
+      },
+      "proofs": {
+        "files": 9,
+        "nonblank_lines": 715,
+        "physical_lines": 818
+      },
+      "tests": {
+        "files": 154,
+        "nonblank_lines": 19994,
+        "physical_lines": 23588
+      },
+      "upstream": {
+        "files": 137,
+        "nonblank_lines": 30036,
+        "physical_lines": 33172
+      }
+    },
+    "inventory": {
+      "Makefile": {
+        "group": "build",
+        "nonblank_lines": 121,
+        "physical_lines": 159,
+        "sha256": "61af1053925692cf45320476a9b8601d569aa5fb5c5a1c3d9f388ae31b2f33e3"
+      },
+      "crates/mwpc_parser/Cargo.toml": {
+        "group": "build",
+        "nonblank_lines": 12,
+        "physical_lines": 14,
+        "sha256": "ca79913b7fae784ab6c0690fcce808e56e958d8ce47e625949aca689dcb7e147"
+      },
+      "crates/mwpc_parser/src/lib.rs": {
+        "group": "implementation",
+        "nonblank_lines": 13,
+        "physical_lines": 15,
+        "sha256": "10b2b8c1396ba5a990bf5cfed86b5ca863b1e575222473007b467a8022f775b0"
+      },
+      "crates/mwpc_parser/src/parser.rs": {
+        "group": "implementation",
+        "nonblank_lines": 1078,
+        "physical_lines": 1146,
+        "sha256": "fad1f5a2111e78f413136251ce88b052aaaeb7b1b3d523864f97c9e4d25f3aa3"
+      },
+      "crates/mwpc_parser/src/score.rs": {
+        "group": "implementation",
+        "nonblank_lines": 86,
+        "physical_lines": 95,
+        "sha256": "4a6cabfd65a17ac0c47306b84b859b14c4b826574a28290499bf13047fa9b7b9"
+      },
+      "crates/mwpc_parser/src/types.rs": {
+        "group": "implementation",
+        "nonblank_lines": 767,
+        "physical_lines": 840,
+        "sha256": "ac888b44f166106508fbb7899c07c7fd5adbe626477a0cda11ccde27cd89ef66"
+      },
+      "crates/mwpc_parser/tests/randomized.rs": {
+        "group": "implementation",
+        "nonblank_lines": 373,
+        "physical_lines": 394,
+        "sha256": "5a6a46432572bedef9bd7f1301c4550a4e24d9ea35aa9c430c6664506e266926"
+      },
+      "crates/mwpc_parser_py/Cargo.toml": {
+        "group": "build",
+        "nonblank_lines": 12,
+        "physical_lines": 14,
+        "sha256": "3f9f98b1c6536e5319d1408aeacfd6562950eb89e225b3ee6a52254ced013962"
+      },
+      "crates/mwpc_parser_py/pyproject.toml": {
+        "group": "build",
+        "nonblank_lines": 12,
+        "physical_lines": 14,
+        "sha256": "890bc72365664ba5d3f9b177555d68a6bc211bd0e345d9e86b57373facb3496f"
+      },
+      "crates/mwpc_parser_py/src/lib.rs": {
+        "group": "implementation",
+        "nonblank_lines": 318,
+        "physical_lines": 339,
+        "sha256": "6917a1ffe74cb2bb257e37a47fab9aeee988699ccc5644db6a3f691f497d15a1"
+      },
+      "formal/Audit.lean": {
+        "group": "proofs",
+        "nonblank_lines": 36,
+        "physical_lines": 37,
+        "sha256": "d4814f22c5c3d1c2f45eb65d7848ba3f1ecc7cdc792e4022fa6f637ad255bbf9"
+      },
+      "formal/MWPC.lean": {
+        "group": "proofs",
+        "nonblank_lines": 13,
+        "physical_lines": 19,
+        "sha256": "4a416aaa958fc908bc7d7a2ca440306f01064fe2daf9a46f929dd88d903c4229"
+      },
+      "formal/MWPC/Bounds.lean": {
+        "group": "proofs",
+        "nonblank_lines": 75,
+        "physical_lines": 87,
+        "sha256": "f387475bc3b5493a74826a89b23239ace3d9556338d31846f826682f68ec8c86"
+      },
+      "formal/MWPC/Certificates.lean": {
+        "group": "proofs",
+        "nonblank_lines": 168,
+        "physical_lines": 196,
+        "sha256": "02938ac57009330234a8453227ff53c14fba3609fd923ac9fd2c2c492509620e"
+      },
+      "formal/MWPC/Conflicts.lean": {
+        "group": "proofs",
+        "nonblank_lines": 90,
+        "physical_lines": 104,
+        "sha256": "73dc260de68b567d7247561375dfbedd7b6d4bdd1559a90ec478dd4d46c578e7"
+      },
+      "formal/MWPC/Prefixes.lean": {
+        "group": "proofs",
+        "nonblank_lines": 56,
+        "physical_lines": 66,
+        "sha256": "3673836f13b0093c86803ee728135f5a9355e8675886944a779cb800d85b7d92"
+      },
+      "formal/MWPC/Probability.lean": {
+        "group": "proofs",
+        "nonblank_lines": 140,
+        "physical_lines": 162,
+        "sha256": "998ebdd269104282c63fb91a20c33d149190b841c99eb6c0f99617cd2546cadf"
+      },
+      "formal/MWPC/Selection.lean": {
+        "group": "proofs",
+        "nonblank_lines": 52,
+        "physical_lines": 62,
+        "sha256": "4da7efe9aaf7ea411acff05e8e0376c128f1f7079fa7438d365bb7a0967c977e"
+      },
+      "formal/examples/BudgetExample.lean": {
+        "group": "proofs",
+        "nonblank_lines": 85,
+        "physical_lines": 85,
+        "sha256": "e976b73bcd75a8b914e459e67c2780a5e2804f5e49f96e68a3dfbc398785cfbc"
+      },
+      "formal/lakefile.toml": {
+        "group": "build",
+        "nonblank_lines": 5,
+        "physical_lines": 6,
+        "sha256": "9b0aa342f79f450f2d438e16aa131d58c8e9a92bd2b3c96329fa5ceec7155f1e"
+      },
+      "paper/Makefile": {
+        "group": "build",
+        "nonblank_lines": 10,
+        "physical_lines": 13,
+        "sha256": "1175a09ccdf4554b0d2285e65d7eb0110875d9cf708a87727afe0fb3346af749"
+      },
+      "pyproject.toml": {
+        "group": "build",
+        "nonblank_lines": 84,
+        "physical_lines": 93,
+        "sha256": "2427dde4481e4668a2eaced5e04bcc410bffb95dbb7bb5a560218969c7c50c1c"
+      },
+      "rust-toolchain.toml": {
+        "group": "build",
+        "nonblank_lines": 4,
+        "physical_lines": 4,
+        "sha256": "f2c82031ae793bfe2c19b2f9828259fbb6eb79081849cca5294706ab46ff2d32"
+      },
+      "scripts/bootstrap.sh": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 3,
+        "physical_lines": 3,
+        "sha256": "94178cc2ce402c442bc7fb78aafd40101a3ff88f999f69da1e8ebbe78aa6f1f2"
+      },
+      "scripts/check_paper.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 24,
+        "physical_lines": 32,
+        "sha256": "294e750dd9446ea7a3a84b2d14bfab16c681e4204afefc26361465d4039cc8e8"
+      },
+      "scripts/exact_commit/archive_epic_tools.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 37,
+        "physical_lines": 42,
+        "sha256": "96013a78f2404bea4e607e1fe546f00c930b202e18d9c66e5d74c78022c1908f"
+      },
+      "scripts/exact_commit/archive_review_evidence.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 47,
+        "physical_lines": 52,
+        "sha256": "f52be21ea66e13232d20864dd2de29ae94bf184e9d652b4551dc5f0ccb5ee8c1"
+      },
+      "scripts/exact_commit/audit_t600_llada_tokenizer.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 350,
+        "physical_lines": 379,
+        "sha256": "f98a4c766b9ea83f8035f7c1232d73514d06fce7cc0b5035c1f1c1ca66795a38"
+      },
+      "scripts/exact_commit/budget_math_example.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 158,
+        "physical_lines": 172,
+        "sha256": "ba3cb5c80e038e20cbd7114ffb0dcc2cdf7c32955906f36c2cc7679a61bdf1f5"
+      },
+      "scripts/exact_commit/build_article_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 27,
+        "physical_lines": 35,
+        "sha256": "7625d90dd29be5d0fc670bdc9b3332182e6134cb14bcc578ba5e72394e45721f"
+      },
+      "scripts/exact_commit/build_budgeted_real_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 302,
+        "physical_lines": 313,
+        "sha256": "1e89bb695be3fd461512c9f1fca2516856dc91c863e89c0469acde0b5c2f9ebf"
+      },
+      "scripts/exact_commit/build_conflict_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 382,
+        "physical_lines": 401,
+        "sha256": "a951c04c902a35bf8db1555049cd50c2ff88453593f9063a29dab853a912ef08"
+      },
+      "scripts/exact_commit/build_final_artifacts.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 37,
+        "physical_lines": 45,
+        "sha256": "081fe8efab66001855daabc342b0fc7dea5ed9be973e9ef8dd4d2f1d54e2d8d8"
+      },
+      "scripts/exact_commit/build_grounded_campaign.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 193,
+        "physical_lines": 204,
+        "sha256": "af5b70960e9e09b006adb879fe112212e558ba15a29a4ea9854529b672716205"
+      },
+      "scripts/exact_commit/build_json_repair_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 238,
+        "physical_lines": 250,
+        "sha256": "379e8cf4d2fb0ac30803d9d45737d9e764de211e883927d2f58c674e67aceb96"
+      },
+      "scripts/exact_commit/build_live_article_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 150,
+        "physical_lines": 166,
+        "sha256": "2754e7f900b5c31803958175e463dfe3e18d6a7fee777eecdc19a5a8b6bfb804"
+      },
+      "scripts/exact_commit/build_policy_campaign.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 128,
+        "physical_lines": 138,
+        "sha256": "a3e4c15d6624f9dba507a6152ccf927b8df1e00bb9544518b102c1bfcf9300c8"
+      },
+      "scripts/exact_commit/build_probability_audit_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 492,
+        "physical_lines": 546,
+        "sha256": "7d4926eaa6a0dcc8cf65abeace085b7884a66b119eb3591acaf1ee7a8cb8e1bb"
+      },
+      "scripts/exact_commit/build_probability_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 462,
+        "physical_lines": 489,
+        "sha256": "1723875151e2d2787ef5aa32777f35583df7ddd19b0ec023c3dd202bc065a10e"
+      },
+      "scripts/exact_commit/build_publication_artifacts.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 37,
+        "physical_lines": 45,
+        "sha256": "82f7c08875e7b0234ed480983bb1c5e0e821956adafbc772475fdceca761c6e2"
+      },
+      "scripts/exact_commit/build_query_demo_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 74,
+        "physical_lines": 83,
+        "sha256": "a6a261051e169dbc974f3700c7b57f0f6bc04a8e503aa2aeea7dd127b4cf075c"
+      },
+      "scripts/exact_commit/build_review_results.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 194,
+        "physical_lines": 210,
+        "sha256": "35a5568d3febdf1c0f30eb1f5cf839e4cd07485b411b9b8ac58eb5f93e8a3bda"
+      },
+      "scripts/exact_commit/build_selection_audit.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 79,
+        "physical_lines": 92,
+        "sha256": "77bb79de0003ce71480162c92bfeeb3467b16cbcf49172baf6befa8f4b96b543"
+      },
+      "scripts/exact_commit/build_statistical_summary.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 37,
+        "physical_lines": 45,
+        "sha256": "c5bd379a8c54841f66737bb42441bba063996e6a5d41a90df2f3e632350212d4"
+      },
+      "scripts/exact_commit/capture_mdlm_probability.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 125,
+        "physical_lines": 139,
+        "sha256": "0356ccc8a79aa06ad1b2126723dad652cd9187508a66063bd4fe7f617babe732"
+      },
+      "scripts/exact_commit/check_formal_project.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 155,
+        "physical_lines": 166,
+        "sha256": "d21167e34e26cac19e7988348b39a520536d10bc4f588377c9a1c657a36b76af"
+      },
+      "scripts/exact_commit/collect_q2_real_snapshots.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 319,
+        "physical_lines": 338,
+        "sha256": "067eb2f99e0a99826a1c2948eb3c3b3cbea908a055680e4e0f1253d8e070a7ef"
+      },
+      "scripts/exact_commit/compare_policy_repeats.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 235,
+        "physical_lines": 247,
+        "sha256": "aa770c111d3f350798a48925280969fdd56f5e04e1f0d2fb06b2ac72d5cb3b64"
+      },
+      "scripts/exact_commit/complete_conflict_campaign.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 139,
+        "physical_lines": 154,
+        "sha256": "b1343a2d4d2683257b3d9454441006b4855938ead756f2ddb3fb34eab689f5de"
+      },
+      "scripts/exact_commit/diagnose_policy_errors.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 91,
+        "physical_lines": 100,
+        "sha256": "6be644a232c57f570a159b35da02aa6acec7bd95e1501421bc7e72e23c606b12"
+      },
+      "scripts/exact_commit/diagnose_policy_whitespace.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 50,
+        "physical_lines": 56,
+        "sha256": "06a5ff3c2df55eba6d41b7d20e063853281ba71622698f01967d0880b00f7ea0"
+      },
+      "scripts/exact_commit/epic_tool_runner.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 266,
+        "physical_lines": 282,
+        "sha256": "25c54532617a69f339f371a2136d671b284040ab160ed3ea1f71757e1c451963"
+      },
+      "scripts/exact_commit/freeze_grounded_confirmation.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 84,
+        "physical_lines": 95,
+        "sha256": "95628a148eb541758f57065f332b4d54e41fe847d7f9b9780c23abb9e37c97e2"
+      },
+      "scripts/exact_commit/mdlm_cpu.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 107,
+        "physical_lines": 120,
+        "sha256": "ae010fa84e006716b33b934ff8d9bb838049f9a07bfd75604868f7dee2bed648"
+      },
+      "scripts/exact_commit/preflight_grounded_calls.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 60,
+        "physical_lines": 67,
+        "sha256": "e05ecf666ad60f3a1790f01d6d512ba210f19213b36504dd20a1ac7c64ddb0b1"
+      },
+      "scripts/exact_commit/prepare_bfcl_enum_pilot.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 79,
+        "physical_lines": 85,
+        "sha256": "8accb2e93088a873ac5b7360263bfd0ee0c0799aea97322ed00bce94fe9c3ece"
+      },
+      "scripts/exact_commit/prepare_grounded_bfcl.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 154,
+        "physical_lines": 163,
+        "sha256": "f4239bba07fe53d7ae468aab7717a1caf9405b453240da5c7b343a9ae0c3a14b"
+      },
+      "scripts/exact_commit/probability_audit_controls.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 151,
+        "physical_lines": 167,
+        "sha256": "d3d58b4b0a9028c0210cf2a46fc28f89d016c6d25a68b91a30167f9ed889ccb2"
+      },
+      "scripts/exact_commit/replay_t703_finite_slot_counterexamples.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 42,
+        "physical_lines": 53,
+        "sha256": "f784f4bd3b9f603083343b4f4a4daf50706e63089386567661101a3436a1ddba"
+      },
+      "scripts/exact_commit/run_budgeted_real_replay.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 676,
+        "physical_lines": 722,
+        "sha256": "57d2eb3692cd04d558c608a414d4fccdb2cfc29f99372f389c232ab2fd9b57e4"
+      },
+      "scripts/exact_commit/run_conflict_real.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 356,
+        "physical_lines": 386,
+        "sha256": "9a6e5b8898b903bea09a92e3dbaa311bc1a6cf692469eeaad0320f63c59a4414"
+      },
+      "scripts/exact_commit/run_epic_recovery.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 175,
+        "physical_lines": 189,
+        "sha256": "687bcfaece6659739ae6949b4c88b593f0cf329b6a11b1729e635654edc74122"
+      },
+      "scripts/exact_commit/run_json_repair.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 556,
+        "physical_lines": 594,
+        "sha256": "ddc99766bcb2d62932b49d39724e57233ac9e33c17da548760d4816ceec279ce"
+      },
+      "scripts/exact_commit/run_m3_differential.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 60,
+        "physical_lines": 69,
+        "sha256": "c0376918994579ce26e9a734a386c7bf045ddb68f45f99d446f4c837d4e03162"
+      },
+      "scripts/exact_commit/run_m4_graph_differential.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 64,
+        "physical_lines": 73,
+        "sha256": "967a5d97ec144d6428571d424bca13bc66ae03096bf198599c89e23f02fec2b9"
+      },
+      "scripts/exact_commit/run_m5_rust_differential.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 95,
+        "physical_lines": 107,
+        "sha256": "e8949c817013300c73f10bfeabec07f7570594e49976a6fe72b78a9574539c35"
+      },
+      "scripts/exact_commit/run_m6_finite_lattice_differential.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 106,
+        "physical_lines": 118,
+        "sha256": "f9acef43c89dc7729b9b2f1ae586f064e345594d6c2a0ef0ed38ee1f6051ecaf"
+      },
+      "scripts/exact_commit/run_m7_eos_finite_slot_differential.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 108,
+        "physical_lines": 120,
+        "sha256": "5519b4dac4c5708d5ece123e879fb4cf243121d573febf15fd02244911e34581"
+      },
+      "scripts/exact_commit/run_policy_screen.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 564,
+        "physical_lines": 582,
+        "sha256": "288617c156677a57259b34cf58a9a40a09bc266161599f4141c9782199047736"
+      },
+      "scripts/exact_commit/run_probability_audit.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 508,
+        "physical_lines": 542,
+        "sha256": "b137091d7a5b68979d78b422374a25b5caa07edb19bf2e113304eefdc6f97cf6"
+      },
+      "scripts/exact_commit/run_probability_probes.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 323,
+        "physical_lines": 346,
+        "sha256": "28863c17d507befd7bf14602c69585091d5424772a6cc72967974c790b48df43"
+      },
+      "scripts/exact_commit/run_proof_reuse_real.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 189,
+        "physical_lines": 202,
+        "sha256": "fe4483725510ac80ad13525ca064ed709a61fd1f04b8c07bd360466a736078ec"
+      },
+      "scripts/exact_commit/run_q1_correctness.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 184,
+        "physical_lines": 206,
+        "sha256": "099c683de7c52304552b2789d211c130897459239889bcd3dc8f6c91c560390c"
+      },
+      "scripts/exact_commit/run_q2_heuristic_gap.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 248,
+        "physical_lines": 273,
+        "sha256": "238031fe0426c525fe7f51d6856ef00cea098ff6602c902bd64a99bde2c5448a"
+      },
+      "scripts/exact_commit/run_q2_real_state_gap.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 221,
+        "physical_lines": 235,
+        "sha256": "37f935e01d10dd71abd7e9576458569b616c4b8adf9fdfeec773adfd2df889fe"
+      },
+      "scripts/exact_commit/run_q3_finite_slots.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 191,
+        "physical_lines": 211,
+        "sha256": "815900524255da473105e9e4bf10f25c1a3b85f21af1edcf7aa6962e2db1edf5"
+      },
+      "scripts/exact_commit/run_q4_scaling.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 316,
+        "physical_lines": 341,
+        "sha256": "2e6ade1b8caad8dc2e39220512d04bb1927902fe6c417e477dfaabadeab16b63"
+      },
+      "scripts/exact_commit/run_q5_end_to_end.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 1662,
+        "physical_lines": 1764,
+        "sha256": "78feba30571783d5c374d939a08ccd707e6e2fb7096eaa4337d1281256f6fa66"
+      },
+      "scripts/exact_commit/run_query_demo.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 173,
+        "physical_lines": 185,
+        "sha256": "b30457b68116e3f2086b04db3cbee34c5b0dba8bf47d2f89866a53af73da3526"
+      },
+      "scripts/exact_commit/run_review_offline.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 364,
+        "physical_lines": 379,
+        "sha256": "ba1cec65c5c111b2faece4f5869e201ebeaaca312d270ab10e6f78bd62a89c90"
+      },
+      "scripts/exact_commit/run_t904_llada_live_smoke.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 598,
+        "physical_lines": 644,
+        "sha256": "9e5b20248bd51f7c6cb7a5264373834df2e8413b2981865a9b426fefa59e8c66"
+      },
+      "scripts/exact_commit/run_tool_screen.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 387,
+        "physical_lines": 402,
+        "sha256": "78b271068748d44cb28edfc19cfce83cc6ff52f2b9988a80aef5046080f20d6b"
+      },
+      "scripts/exact_commit/summarize_epic_recovery.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 211,
+        "physical_lines": 222,
+        "sha256": "bdf2a5d1f0297a7c6ed48001702a2b68a5f29caa16e719ff4521d6aa1fc398f1"
+      },
+      "scripts/exact_commit/summarize_epic_tools.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 317,
+        "physical_lines": 330,
+        "sha256": "2f7b6a598a6403d77d3091d3226ca4a46984eaea9f04556178795595bae7ba6e"
+      },
+      "scripts/exact_commit/summarize_policy_screen.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 306,
+        "physical_lines": 319,
+        "sha256": "1f07dd9d89ef0c305a7adf4401ec5bd6e4663777b3ac73b7600e6fc21e638b55"
+      },
+      "scripts/exact_commit/summarize_q4_publication.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 272,
+        "physical_lines": 294,
+        "sha256": "a2bb61f87f3e4b5cbd54f77710bdbe693cc93798cbbddf0d100b063b7f710a76"
+      },
+      "scripts/exact_commit/summarize_q5_publication.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 194,
+        "physical_lines": 216,
+        "sha256": "34b55c3cf8188171839790240aaac954ab9b3cb9a77129b9b5ff3809741b6a43"
+      },
+      "scripts/exact_commit/summarize_tool_screen.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 381,
+        "physical_lines": 394,
+        "sha256": "3fd90378b2c2f829be58d507d3593c55b4fc06db52d53f371d369d77ff64ab53"
+      },
+      "scripts/exact_commit/verify_query_demo.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 78,
+        "physical_lines": 89,
+        "sha256": "91007d18fd6b1c7e5dcd87bb491fbcf97196a5b1252df4948d763aa5e6dd49cd"
+      },
+      "scripts/install_epic_checkout.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 36,
+        "physical_lines": 46,
+        "sha256": "eb19e728b1b0bb90b816f92ab39fad1196c768cb23ca618e86f6e6285ad57351"
+      },
+      "scripts/rehearse_cpu_correctness.sh": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 190,
+        "physical_lines": 209,
+        "sha256": "c27b912339492d192795907e1264a924b171394c640d2f93e08ec64d7d2e214e"
+      },
+      "scripts/rehearse_release_wheel.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 212,
+        "physical_lines": 235,
+        "sha256": "dd4410d47f82695fbe0e303109e636b82e8b71e9cc4f935999d99125bed3c72d"
+      },
+      "scripts/smoke_epic_baseline.py": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 32,
+        "physical_lines": 43,
+        "sha256": "1e246dbe17023714e0f307c9bd412be40fc3fe21dc8d2a6dce00c53553c83dda"
+      },
+      "scripts/verify_upstream.sh": {
+        "group": "experiments_and_tools",
+        "nonblank_lines": 48,
+        "physical_lines": 57,
+        "sha256": "b6b063f3d2096cff697934e122e6b9c8f987daef1e9b3b11d12f182ad709df4b"
+      },
+      "src/mwpc_exact/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 255,
+        "physical_lines": 257,
+        "sha256": "62053726332f45b31014c9a062799226772a2fc3ae91b5ff70a63188c4584b79"
+      },
+      "src/mwpc_exact/_json.py": {
+        "group": "implementation",
+        "nonblank_lines": 37,
+        "physical_lines": 44,
+        "sha256": "896e96f02467e1adefd8c5bc824d6130b09289fd372ed9035d72cbfe61b9e165"
+      },
+      "src/mwpc_exact/_scores.py": {
+        "group": "implementation",
+        "nonblank_lines": 20,
+        "physical_lines": 26,
+        "sha256": "f1e5e7e38a8cf3fe380081b586ef7a3d6c19db4db97777879b48d25f8f67fc22"
+      },
+      "src/mwpc_exact/adaptive.py": {
+        "group": "implementation",
+        "nonblank_lines": 511,
+        "physical_lines": 557,
+        "sha256": "bc6b1e378c164ddc25ebd65164fbd947f1cbbcd46a0010d2f4ce87b89067852d"
+      },
+      "src/mwpc_exact/backend.py": {
+        "group": "implementation",
+        "nonblank_lines": 7,
+        "physical_lines": 13,
+        "sha256": "a85b83e11098ad34671363e9e42cf3e2d53a37b60686ff87d48d2f6f74e84f39"
+      },
+      "src/mwpc_exact/budget_bounds.py": {
+        "group": "implementation",
+        "nonblank_lines": 192,
+        "physical_lines": 219,
+        "sha256": "8535e50f3b1910134fb2270b0a29f894323ae47318e8902aea54a53210b1fc47"
+      },
+      "src/mwpc_exact/budget_certificate.py": {
+        "group": "implementation",
+        "nonblank_lines": 212,
+        "physical_lines": 225,
+        "sha256": "31652edd83fac1099668df420fe9165329e6682a26438cc729cbee35c7d883fc"
+      },
+      "src/mwpc_exact/budget_graph.py": {
+        "group": "implementation",
+        "nonblank_lines": 184,
+        "physical_lines": 208,
+        "sha256": "98ee51f7dd69342f09b16107262607e461a24e15cb014e342e986d6875457ac0"
+      },
+      "src/mwpc_exact/budget_proof.py": {
+        "group": "implementation",
+        "nonblank_lines": 302,
+        "physical_lines": 324,
+        "sha256": "5bbbe1e585470070be69f49add7ddef5f0fe4db2f7bbf023819a5b5ce4cf7456"
+      },
+      "src/mwpc_exact/budget_result.py": {
+        "group": "implementation",
+        "nonblank_lines": 58,
+        "physical_lines": 64,
+        "sha256": "71a30dd9f2a6b0afb159103a72d183a2182a67a83eeb18299b8dbcaf6b25e391"
+      },
+      "src/mwpc_exact/budgeted_commit.py": {
+        "group": "implementation",
+        "nonblank_lines": 121,
+        "physical_lines": 130,
+        "sha256": "171e4b51eb25489af64e7c5982e080da4eb87c907644b725e41ec1d09b9e2862"
+      },
+      "src/mwpc_exact/byte_lattice.py": {
+        "group": "implementation",
+        "nonblank_lines": 349,
+        "physical_lines": 395,
+        "sha256": "215d450d730a847b63026bbfd4aa061cb0465cf6c8a4a67ea157ea16d1bdb891"
+      },
+      "src/mwpc_exact/commit_gate.py": {
+        "group": "implementation",
+        "nonblank_lines": 149,
+        "physical_lines": 163,
+        "sha256": "708e92ecd1608f376c4a96ddedbec0e13d2b245df53c13ec4ca66b5d5eca99b7"
+      },
+      "src/mwpc_exact/conflict_certificate.py": {
+        "group": "implementation",
+        "nonblank_lines": 248,
+        "physical_lines": 275,
+        "sha256": "3662d454ebfac145ed7f0e69243fe3d35f058baf9473fcdf77e956d9805ce177"
+      },
+      "src/mwpc_exact/conflict_cli.py": {
+        "group": "implementation",
+        "nonblank_lines": 51,
+        "physical_lines": 61,
+        "sha256": "e49f6ad5ee2d197bda575c641e611b21c4eca0a7e15e1f5d67c17a759a105e12"
+      },
+      "src/mwpc_exact/conflict_commit.py": {
+        "group": "implementation",
+        "nonblank_lines": 215,
+        "physical_lines": 231,
+        "sha256": "4929c27bf21f41e1cbad5a531436bfc74cea15730145584a0b0cb9c05507c8f0"
+      },
+      "src/mwpc_exact/conflict_proof.py": {
+        "group": "implementation",
+        "nonblank_lines": 143,
+        "physical_lines": 155,
+        "sha256": "a20ca3cb6ea99f8c5c305c499a7066b5a64fd59b90a32493435ffc7aa0c81328"
+      },
+      "src/mwpc_exact/decoder.py": {
+        "group": "implementation",
+        "nonblank_lines": 513,
+        "physical_lines": 552,
+        "sha256": "3171097a9d701ec4a2b91d88e3604b1678603e109ee79a716aba25566171bb0f"
+      },
+      "src/mwpc_exact/decoder_types.py": {
+        "group": "implementation",
+        "nonblank_lines": 313,
+        "physical_lines": 370,
+        "sha256": "6c2d16291345c506e56cd287cd04b1ff8ad226f80ba7005d8093fb9668aef10b"
+      },
+      "src/mwpc_exact/eos_lattice.py": {
+        "group": "implementation",
+        "nonblank_lines": 642,
+        "physical_lines": 706,
+        "sha256": "716a9d51226d0c0abb2bdfa277a5f3ad306b1d42699954041ee27391f04075d6"
+      },
+      "src/mwpc_exact/eos_policy.py": {
+        "group": "implementation",
+        "nonblank_lines": 73,
+        "physical_lines": 99,
+        "sha256": "eee660842e9b038d7d38d43920f1e6a4ed909960c00dd63bd1abc5445cc45410"
+      },
+      "src/mwpc_exact/epic_adapter/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 35,
+        "physical_lines": 38,
+        "sha256": "109c93a682d77482806d73cdfb6e614e95dea9447096d1eac2506937824f1224"
+      },
+      "src/mwpc_exact/epic_adapter/baseline_graph.py": {
+        "group": "implementation",
+        "nonblank_lines": 19,
+        "physical_lines": 29,
+        "sha256": "131838a72843e3b3d7946de9c402cb40095abfc3f61dfe9ac7dbf8d699e5ce4b"
+      },
+      "src/mwpc_exact/epic_adapter/llada.py": {
+        "group": "implementation",
+        "nonblank_lines": 735,
+        "physical_lines": 821,
+        "sha256": "7627bc1a6ce97350f02a415945812ae36277f00ce8955b31ed978e895ea7e81a"
+      },
+      "src/mwpc_exact/evaluation/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 69,
+        "physical_lines": 71,
+        "sha256": "67f8463628778b18adb1523cd79935566cc894ae7414ea680edf532f999202c0"
+      },
+      "src/mwpc_exact/evaluation/_serde.py": {
+        "group": "implementation",
+        "nonblank_lines": 92,
+        "physical_lines": 123,
+        "sha256": "df112dbde7a34876c564d33aca3e7415eeaf51d4005efe8c895f3600b9be368f"
+      },
+      "src/mwpc_exact/evaluation/alignment.py": {
+        "group": "implementation",
+        "nonblank_lines": 188,
+        "physical_lines": 216,
+        "sha256": "3888f5cad557307f8eacba35915fb2b8ccbd4a10700f53537f8242360400a890"
+      },
+      "src/mwpc_exact/evaluation/brute_force.py": {
+        "group": "implementation",
+        "nonblank_lines": 420,
+        "physical_lines": 455,
+        "sha256": "2e1b65feb2ff361b14537b3fcef212377bc79778ba1c6eca9cd0bcee5f73f078"
+      },
+      "src/mwpc_exact/evaluation/epic_regular_cover.py": {
+        "group": "implementation",
+        "nonblank_lines": 507,
+        "physical_lines": 556,
+        "sha256": "d1b1f18e8092f3d1b809b7d4335ff253f8efb8969544056a998bb8a84c2a9f9b"
+      },
+      "src/mwpc_exact/evaluation/instance.py": {
+        "group": "implementation",
+        "nonblank_lines": 731,
+        "physical_lines": 812,
+        "sha256": "138a2c43d099ca44e499f16e83cc7479193189be0c4064b6c5d07140e145d770"
+      },
+      "src/mwpc_exact/evaluation/replay.py": {
+        "group": "implementation",
+        "nonblank_lines": 140,
+        "physical_lines": 158,
+        "sha256": "71d921b4fe5da2f0ba5f328d40fa9266cfc77d37f0c720d49edfab8bcf07ee6d"
+      },
+      "src/mwpc_exact/evaluation/selection.py": {
+        "group": "implementation",
+        "nonblank_lines": 710,
+        "physical_lines": 786,
+        "sha256": "bb15003223668239db911d375fbf0cedab289c37c26ff82f6955e6a077e561a2"
+      },
+      "src/mwpc_exact/experiments/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 63,
+        "physical_lines": 65,
+        "sha256": "fe88c25fed5131a1bdc5909367141c4e67f4c770cb1f168e4392c7fa2b36a08e"
+      },
+      "src/mwpc_exact/experiments/_artifact_io.py": {
+        "group": "implementation",
+        "nonblank_lines": 73,
+        "physical_lines": 98,
+        "sha256": "db96df7000abec81538e24c776fd99e7fed986ea17825056571b6cdee6588172"
+      },
+      "src/mwpc_exact/experiments/artifacts.py": {
+        "group": "implementation",
+        "nonblank_lines": 388,
+        "physical_lines": 438,
+        "sha256": "5b3ff9eeb40154874d172d3fc4e0c42e630bfd61d955ff8c557926ee46907e3c"
+      },
+      "src/mwpc_exact/experiments/config.py": {
+        "group": "implementation",
+        "nonblank_lines": 417,
+        "physical_lines": 473,
+        "sha256": "0464a767fc174a3a6b7a091ac76a006b927d054dc4647922758137b64a18c119"
+      },
+      "src/mwpc_exact/experiments/metadata.py": {
+        "group": "implementation",
+        "nonblank_lines": 504,
+        "physical_lines": 550,
+        "sha256": "b37ebf63f3af58bf06c0716bf80a3f5a5780a0be2e06e214d8268586caa60991"
+      },
+      "src/mwpc_exact/finite_solver.py": {
+        "group": "implementation",
+        "nonblank_lines": 424,
+        "physical_lines": 469,
+        "sha256": "64a72d6051b664646aae8f5948f85d08c4e1221bc3d9b5a8fde8cf2ec320dcc9"
+      },
+      "src/mwpc_exact/language_coverage.py": {
+        "group": "implementation",
+        "nonblank_lines": 156,
+        "physical_lines": 171,
+        "sha256": "e1ef207487a291cd606ef90ffb02eaeb25578f4606a577e5f6b0c7e72de3cb3f"
+      },
+      "src/mwpc_exact/lean_bridge.py": {
+        "group": "implementation",
+        "nonblank_lines": 289,
+        "physical_lines": 317,
+        "sha256": "0beb6d46212c3afa9587abe4c262b34bb3c3f186a5505f2ff793fbe7af7c740c"
+      },
+      "src/mwpc_exact/mass_certificate.py": {
+        "group": "implementation",
+        "nonblank_lines": 279,
+        "physical_lines": 310,
+        "sha256": "6f75e077a6fc1a5d37eb08d59f98787a2d4f1434347635c5d68f7a9f38a8eb46"
+      },
+      "src/mwpc_exact/mass_cli.py": {
+        "group": "implementation",
+        "nonblank_lines": 52,
+        "physical_lines": 59,
+        "sha256": "cf0098bdb2b9d83815eaac96f72faa964fda2a67ebf5b0ac02b463caa3a17055"
+      },
+      "src/mwpc_exact/mass_solver.py": {
+        "group": "implementation",
+        "nonblank_lines": 186,
+        "physical_lines": 195,
+        "sha256": "ce8a00b38f1ea279a8228cf7806588d33c733238077e955b8643a885ac6e5ff2"
+      },
+      "src/mwpc_exact/probabilistic_update.py": {
+        "group": "implementation",
+        "nonblank_lines": 51,
+        "physical_lines": 62,
+        "sha256": "3cd915e9bfdd8970dc4376ded7bf9785221e3c54d7da84a5f6fb94302f50dc57"
+      },
+      "src/mwpc_exact/profiling.py": {
+        "group": "implementation",
+        "nonblank_lines": 278,
+        "physical_lines": 321,
+        "sha256": "2099881fc929367c1183968fe7d8a22de7e1c3c8228e91eb42be812a3c619b9c"
+      },
+      "src/mwpc_exact/proof_reuse.py": {
+        "group": "implementation",
+        "nonblank_lines": 87,
+        "physical_lines": 94,
+        "sha256": "eba1d36de4c3adfc4b73378fefcb26346917fedb5cc4ec0027a727b78a68061b"
+      },
+      "src/mwpc_exact/proposal_policy.py": {
+        "group": "implementation",
+        "nonblank_lines": 219,
+        "physical_lines": 256,
+        "sha256": "361f51fe599a03f01d1a32aa6af65d50b45b9bdf4801b73848eb425b71bd6006"
+      },
+      "src/mwpc_exact/ranked_support.py": {
+        "group": "implementation",
+        "nonblank_lines": 241,
+        "physical_lines": 266,
+        "sha256": "81ff3400d763757183d6a0523d898b4d0068116c67803cc2334876882ab22c84"
+      },
+      "src/mwpc_exact/reference/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 3,
+        "physical_lines": 4,
+        "sha256": "6b903fad74a60688042fbe0724db0b50ee9ca262f34b05f922ff4bc1341d865b"
+      },
+      "src/mwpc_exact/reference/_token_aligned_core.py": {
+        "group": "implementation",
+        "nonblank_lines": 527,
+        "physical_lines": 582,
+        "sha256": "25c66f7dd6c2e66f6d4377a56c7acc985eef51bf2dbfd77d1fccd2cc7dbba127"
+      },
+      "src/mwpc_exact/reference/brute_force.py": {
+        "group": "implementation",
+        "nonblank_lines": 373,
+        "physical_lines": 415,
+        "sha256": "3da639888c6ca75388e8421a69ce70a579905c60b7a428eb0a40df89b3e20c90"
+      },
+      "src/mwpc_exact/reference/budget_certificate.py": {
+        "group": "implementation",
+        "nonblank_lines": 160,
+        "physical_lines": 168,
+        "sha256": "377ed7e0923dffb8a78db61cf076d8231cd92d6c153567f44ff0ff9e6bed1b24"
+      },
+      "src/mwpc_exact/reference/budget_types.py": {
+        "group": "implementation",
+        "nonblank_lines": 128,
+        "physical_lines": 154,
+        "sha256": "c6a1f01f38bdefbe018935f951f287dd5621fa3c787b7ce75d4b2bc94a7d7443"
+      },
+      "src/mwpc_exact/reference/budgeted_parser.py": {
+        "group": "implementation",
+        "nonblank_lines": 170,
+        "physical_lines": 183,
+        "sha256": "255da9fc802aecc0e3626d190365dadecb333211d88a26c9719a6d33794fef1c"
+      },
+      "src/mwpc_exact/reference/byte_grammars.py": {
+        "group": "implementation",
+        "nonblank_lines": 206,
+        "physical_lines": 244,
+        "sha256": "6fb3b00a2bfa671df8a62370cb07dfd0b31b022d060683ab337427b2ea287d96"
+      },
+      "src/mwpc_exact/reference/dag_parser.py": {
+        "group": "implementation",
+        "nonblank_lines": 364,
+        "physical_lines": 420,
+        "sha256": "8578a96b266aefbb3801c99310efba17c6fc068e38c3ffb3679a7dc34e9a5390"
+      },
+      "src/mwpc_exact/reference/epsilon.py": {
+        "group": "implementation",
+        "nonblank_lines": 282,
+        "physical_lines": 313,
+        "sha256": "a0276b11d0f4e41c95f2eb6a5b167590eee27af237e8df72ee74dfa3733ca4b5"
+      },
+      "src/mwpc_exact/reference/grammar.py": {
+        "group": "implementation",
+        "nonblank_lines": 395,
+        "physical_lines": 465,
+        "sha256": "2502f7fdc3ac0a19fe3bff85485508d12790a4fa3914a82ee5dd057981f753ef"
+      },
+      "src/mwpc_exact/reference/graph.py": {
+        "group": "implementation",
+        "nonblank_lines": 110,
+        "physical_lines": 131,
+        "sha256": "406948c82021c1ca0bf77ccb69b18890eb7a01d236085882c1008c8f41d03954"
+      },
+      "src/mwpc_exact/reference/graph_oracle.py": {
+        "group": "implementation",
+        "nonblank_lines": 99,
+        "physical_lines": 115,
+        "sha256": "ff39acd776455c8d10dd0fccce17ce77b9b5e378da59b6443e5f978b9be79225"
+      },
+      "src/mwpc_exact/reference/lexical.py": {
+        "group": "implementation",
+        "nonblank_lines": 204,
+        "physical_lines": 231,
+        "sha256": "daedd6f5c020eba77c1ebe45829dd773040fa33afb464e3c2eb5f9c74d5d7b93"
+      },
+      "src/mwpc_exact/reference/normalization.py": {
+        "group": "implementation",
+        "nonblank_lines": 419,
+        "physical_lines": 485,
+        "sha256": "627c3e71dd5838c112bc7bd5dd939f1620583d2cd171cc968dc0d51bcf02b6c6"
+      },
+      "src/mwpc_exact/reference/random_instances.py": {
+        "group": "implementation",
+        "nonblank_lines": 387,
+        "physical_lines": 433,
+        "sha256": "d23c49b98bb25b909542dd7a12d7d3d730b0965bf06124533197e871a6184176"
+      },
+      "src/mwpc_exact/reference/recognizer.py": {
+        "group": "implementation",
+        "nonblank_lines": 33,
+        "physical_lines": 41,
+        "sha256": "984a7c705721d6c6ff1dc4f16a8fba3ce6c6dd0bb1efad90f1a54b3169066ec4"
+      },
+      "src/mwpc_exact/reference/token_aligned.py": {
+        "group": "implementation",
+        "nonblank_lines": 156,
+        "physical_lines": 171,
+        "sha256": "b29b07521656bbfe83304357ee07f8a272ca83d78fbdae595e79fa3daacfdf15"
+      },
+      "src/mwpc_exact/repair.py": {
+        "group": "implementation",
+        "nonblank_lines": 433,
+        "physical_lines": 474,
+        "sha256": "5688b55edb06bcde81ed0a98441b81711723251821cbea974b9a0c47e39e7b17"
+      },
+      "src/mwpc_exact/rust_solver.py": {
+        "group": "implementation",
+        "nonblank_lines": 180,
+        "physical_lines": 206,
+        "sha256": "bd2fe0a6800683e57166c8c75924a615179166621feb10471a8074c318298f34"
+      },
+      "src/mwpc_exact/solver.py": {
+        "group": "implementation",
+        "nonblank_lines": 562,
+        "physical_lines": 613,
+        "sha256": "dccd5e317c55d4856b394e6a84dcc95e3a7846f9218a84d552365a53c8918701"
+      },
+      "src/mwpc_exact/strategy.py": {
+        "group": "implementation",
+        "nonblank_lines": 281,
+        "physical_lines": 324,
+        "sha256": "dfbaa6617e37e215b6920433f666dee687e7733d599a4f561060ecb7725a5b06"
+      },
+      "src/mwpc_exact/support.py": {
+        "group": "implementation",
+        "nonblank_lines": 585,
+        "physical_lines": 657,
+        "sha256": "e80b1b8d06728ba82e6fba15c3d4292a1c0c115166fab6753d2e5533c342504f"
+      },
+      "src/mwpc_exact/token_lattice.py": {
+        "group": "implementation",
+        "nonblank_lines": 396,
+        "physical_lines": 455,
+        "sha256": "6efc921304f5c0f265a0db212497372194045b684844fb69133aa9fcdaf205c5"
+      },
+      "src/mwpc_exact/tokenizer_bytes.py": {
+        "group": "implementation",
+        "nonblank_lines": 106,
+        "physical_lines": 137,
+        "sha256": "681973506b5e59df4978dec201ffab406ec0e782dab38572528b78162fe65355"
+      },
+      "src/mwpc_exact/types.py": {
+        "group": "implementation",
+        "nonblank_lines": 577,
+        "physical_lines": 667,
+        "sha256": "90c382061b7b0eabd42dbef1aa1dce30612eea8d54e78e09a0e99105283c0689"
+      },
+      "src/mwpc_exact/validated.py": {
+        "group": "implementation",
+        "nonblank_lines": 103,
+        "physical_lines": 127,
+        "sha256": "545d9dccbf2bbe4f9b527da3a0f9770be978e4846252f5a04c24afef2f5c88b7"
+      },
+      "src/mwpc_exact/validator.py": {
+        "group": "implementation",
+        "nonblank_lines": 611,
+        "physical_lines": 676,
+        "sha256": "cd7e399c4c84e15f9256d44ab1c575fc7e6ac21d7ddd6094e2a1527328968d57"
+      },
+      "src/mwpc_research/__init__.py": {
+        "group": "implementation",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "8eb671683ed1adb2875880d7d7a37e5914d01c00cfd9230ecce47d854bd5d916"
+      },
+      "src/mwpc_research/article_results.py": {
+        "group": "implementation",
+        "nonblank_lines": 736,
+        "physical_lines": 799,
+        "sha256": "2cb12a2ef24c042c70e96cc9ba35083b8e24bf299ac5c61b816511a8f4ef1d33"
+      },
+      "src/mwpc_research/branching_study.py": {
+        "group": "implementation",
+        "nonblank_lines": 319,
+        "physical_lines": 337,
+        "sha256": "dbd9ee5f427dda339356aaa914f35e99b944256ce4d10e0f73c1810b9a85f5fc"
+      },
+      "src/mwpc_research/campaign_output.py": {
+        "group": "implementation",
+        "nonblank_lines": 17,
+        "physical_lines": 22,
+        "sha256": "a608aa079d7e47d131552de11141536c0074d34d5e500fbd86ba52bb9eecc42d"
+      },
+      "src/mwpc_research/catalog_tokens.py": {
+        "group": "implementation",
+        "nonblank_lines": 17,
+        "physical_lines": 21,
+        "sha256": "584b711b3fd91b862bfebfafcc5d25b90d4baab94c3455b11c462c920fc3c0f9"
+      },
+      "src/mwpc_research/commit_stability.py": {
+        "group": "implementation",
+        "nonblank_lines": 76,
+        "physical_lines": 87,
+        "sha256": "b91d6c41ec770c9af45398d61c2c987568b3efe2c1235f3d585e62645015923b"
+      },
+      "src/mwpc_research/correctness_rehearsal.py": {
+        "group": "implementation",
+        "nonblank_lines": 271,
+        "physical_lines": 312,
+        "sha256": "55d2dccc4d4316a0b9b88f46c1c9f44d84b4da806535c19f91e967c5daca8778"
+      },
+      "src/mwpc_research/eos_differential.py": {
+        "group": "implementation",
+        "nonblank_lines": 944,
+        "physical_lines": 1040,
+        "sha256": "d99d1edf54942f829bcc2d6f894054295900e6694a2bc422a1500fd7af09c226"
+      },
+      "src/mwpc_research/final_artifacts.py": {
+        "group": "implementation",
+        "nonblank_lines": 1550,
+        "physical_lines": 1659,
+        "sha256": "37d685b0d873f17d86937141c7c6f2381bbcbe2978d1543b28dd1abe58473363"
+      },
+      "src/mwpc_research/finite_differential.py": {
+        "group": "implementation",
+        "nonblank_lines": 852,
+        "physical_lines": 941,
+        "sha256": "de867f1dd9644875fd50878777a5cd3a91b9933dd5672c0279d64c953cde143e"
+      },
+      "src/mwpc_research/finite_slot_counterexamples.py": {
+        "group": "implementation",
+        "nonblank_lines": 527,
+        "physical_lines": 582,
+        "sha256": "5a325a2d03ab464fbe7b118ab9581fa027b0d482ef278bdbdb7b0932ebc7f185"
+      },
+      "src/mwpc_research/geocoding.py": {
+        "group": "implementation",
+        "nonblank_lines": 131,
+        "physical_lines": 147,
+        "sha256": "3768259e2b49b5203172a3fb7c2576aa14794e1e2ce86d5f931308b18e499c4d"
+      },
+      "src/mwpc_research/graph_differential.py": {
+        "group": "implementation",
+        "nonblank_lines": 447,
+        "physical_lines": 493,
+        "sha256": "c8ca30c358be1f5ff178e222b72ed51a88308ded5311e477609fba4172b18def"
+      },
+      "src/mwpc_research/grounded_calls.py": {
+        "group": "implementation",
+        "nonblank_lines": 165,
+        "physical_lines": 184,
+        "sha256": "6d2a6b3b64ab36b9869756361f700d75bc595f64e30b7ca48b5a9ec993a74fb6"
+      },
+      "src/mwpc_research/live_evidence.py": {
+        "group": "implementation",
+        "nonblank_lines": 171,
+        "physical_lines": 179,
+        "sha256": "4fce7c81c09788218edd25fc11ef83099984344919b527880d0589d604fb76e7"
+      },
+      "src/mwpc_research/matched_schedule.py": {
+        "group": "implementation",
+        "nonblank_lines": 12,
+        "physical_lines": 15,
+        "sha256": "f945a5c94158588e0f7380a64fad075ca081070fcbc1f17f9f7e1549b2f39422"
+      },
+      "src/mwpc_research/q1_correctness.py": {
+        "group": "implementation",
+        "nonblank_lines": 596,
+        "physical_lines": 657,
+        "sha256": "d26527871b84ec4f9542d886463d26caa31498e0fb5994304c933ea747c11cd6"
+      },
+      "src/mwpc_research/q2_gap.py": {
+        "group": "implementation",
+        "nonblank_lines": 790,
+        "physical_lines": 852,
+        "sha256": "a7dc604a503f61008360bc19f1805149aa161364d93ca23995047346c318fcc1"
+      },
+      "src/mwpc_research/q2_real_gap.py": {
+        "group": "implementation",
+        "nonblank_lines": 450,
+        "physical_lines": 475,
+        "sha256": "2207b42a0f211673c930853d46d1bb4909b16bccf56bebb15f133f1f9031fe60"
+      },
+      "src/mwpc_research/q3_finite_slots.py": {
+        "group": "implementation",
+        "nonblank_lines": 367,
+        "physical_lines": 398,
+        "sha256": "9e19b98b7e6fa777eb327ddcaf420b3eba01726b206f75abf38b5bdf8f5951f0"
+      },
+      "src/mwpc_research/q4_scaling.py": {
+        "group": "implementation",
+        "nonblank_lines": 1098,
+        "physical_lines": 1184,
+        "sha256": "42131d4b0dbe6b1d5673e2ccf39f4e31883496faef47644b2be75e29020f5242"
+      },
+      "src/mwpc_research/q5_end_to_end.py": {
+        "group": "implementation",
+        "nonblank_lines": 608,
+        "physical_lines": 648,
+        "sha256": "68770877d66c97600da6d40ae626b95db2c6c2677d10f267480dc7cf69300510"
+      },
+      "src/mwpc_research/recursive_scaling.py": {
+        "group": "implementation",
+        "nonblank_lines": 50,
+        "physical_lines": 53,
+        "sha256": "5680eef9a7c301cd60cb75d67514495e354a137a645ec1e4ecf1d6602d9bf2ef"
+      },
+      "src/mwpc_research/recursive_tasks.py": {
+        "group": "implementation",
+        "nonblank_lines": 221,
+        "physical_lines": 253,
+        "sha256": "efcefb7a2cda6fecd1dd65af50b21faf39d84e4c8a201f3b1d694b78f40659a8"
+      },
+      "src/mwpc_research/regressions.py": {
+        "group": "implementation",
+        "nonblank_lines": 173,
+        "physical_lines": 192,
+        "sha256": "7320cef81c5d31a7d56b19b4fa842faace3521ecca483775162c201205b298ca"
+      },
+      "src/mwpc_research/robust_timing.py": {
+        "group": "implementation",
+        "nonblank_lines": 226,
+        "physical_lines": 266,
+        "sha256": "9884added02ae2a564daf8d1a7862ade2612df5c235d3475e39f255f5dac8282"
+      },
+      "src/mwpc_research/rust_differential.py": {
+        "group": "implementation",
+        "nonblank_lines": 312,
+        "physical_lines": 342,
+        "sha256": "40bb7a5aeb5ee8cffad3850f92c5aa8f0e22575645191dd41f6777a23500a686"
+      },
+      "src/mwpc_research/schema_calls.py": {
+        "group": "implementation",
+        "nonblank_lines": 91,
+        "physical_lines": 102,
+        "sha256": "def580fd4c1d3f20c47a6a26511596ca41fdb60a9d747511fac7d3f2b21c80c4"
+      },
+      "src/mwpc_research/statistical_artifacts.py": {
+        "group": "implementation",
+        "nonblank_lines": 339,
+        "physical_lines": 373,
+        "sha256": "174b42f0c731b183d49c4164a4afad0b09f9ab0c54f1fdca81af79be6abf43c6"
+      },
+      "src/mwpc_research/statistical_summaries.py": {
+        "group": "implementation",
+        "nonblank_lines": 337,
+        "physical_lines": 393,
+        "sha256": "36ff7e021efc6dca0fc5d67a1d47c41eb36c3f06ed8fbc31f7825dbb976a0195"
+      },
+      "src/mwpc_research/token_aligned_differential.py": {
+        "group": "implementation",
+        "nonblank_lines": 485,
+        "physical_lines": 532,
+        "sha256": "7a4fe3e60cb70c9578f3ba4e4228a2c69ebe169870dffcb3e67320927c2ba9d0"
+      },
+      "src/mwpc_research/tool_parser.py": {
+        "group": "implementation",
+        "nonblank_lines": 151,
+        "physical_lines": 169,
+        "sha256": "90c9aa16b15180f0b5c3cfe19c4b7ce9848c34de9de0aa5921ba0b0bb3300c26"
+      },
+      "src/mwpc_research/tool_screen.py": {
+        "group": "implementation",
+        "nonblank_lines": 179,
+        "physical_lines": 200,
+        "sha256": "fee8a7221ea95cdc6f9f098a6d3a3e433975b5558eaf74aec6aa131e5a050d69"
+      },
+      "tests/exact_commit/test_adaptive_support.py": {
+        "group": "tests",
+        "nonblank_lines": 538,
+        "physical_lines": 611,
+        "sha256": "805fb91fe8c2c9b7483daca36fe49b8e94a04128ee102c6635aec77b13f42d41"
+      },
+      "tests/exact_commit/test_artifact_pipeline.py": {
+        "group": "tests",
+        "nonblank_lines": 157,
+        "physical_lines": 183,
+        "sha256": "0cd54732425c15ec1f9089d2eaf8168c4bb05ae967305bba51dc32e9d07baf08"
+      },
+      "tests/exact_commit/test_benchmark_instance.py": {
+        "group": "tests",
+        "nonblank_lines": 184,
+        "physical_lines": 221,
+        "sha256": "efdb719dc1425eae0e521d368254586fb3d76778daab5266724f1cf1165e572a"
+      },
+      "tests/exact_commit/test_branching_study.py": {
+        "group": "tests",
+        "nonblank_lines": 66,
+        "physical_lines": 81,
+        "sha256": "6de798aaeaf095fe33c8cd7e83ba595b3bc889245a545da1635d3bb43af83ab9"
+      },
+      "tests/exact_commit/test_brute_force_selection.py": {
+        "group": "tests",
+        "nonblank_lines": 325,
+        "physical_lines": 378,
+        "sha256": "9a4f91153c759049a49af0b5c502a4b502af9bb0e30b1cf4d3a34bd2f178e5fb"
+      },
+      "tests/exact_commit/test_budget_bounds.py": {
+        "group": "tests",
+        "nonblank_lines": 165,
+        "physical_lines": 186,
+        "sha256": "346af030bea4b1ccfa43ae20e94deaf9446802de87181bde1823d3df73d4d7f5"
+      },
+      "tests/exact_commit/test_budgeted_math.py": {
+        "group": "tests",
+        "nonblank_lines": 346,
+        "physical_lines": 396,
+        "sha256": "355e7c399bbc47378b02b8f0506983f3fe6efabb3b8cb09568371e9f2f50333d"
+      },
+      "tests/exact_commit/test_budgeted_real_replay.py": {
+        "group": "tests",
+        "nonblank_lines": 202,
+        "physical_lines": 234,
+        "sha256": "6cb656f43b4d6aa8d0536d55b2d24a47ce9425f739d1f1e0365b6e2711c20083"
+      },
+      "tests/exact_commit/test_byte_grammars.py": {
+        "group": "tests",
+        "nonblank_lines": 86,
+        "physical_lines": 102,
+        "sha256": "ab1072f7018bd3f4920eee16724a3b57f91c690992c5b4c0e36754ab781f9b39"
+      },
+      "tests/exact_commit/test_byte_lattice.py": {
+        "group": "tests",
+        "nonblank_lines": 213,
+        "physical_lines": 260,
+        "sha256": "b0cd806cdc148e8ddec2f0e1a3ef6732cef64f8154510eb646458d457f3c49f1"
+      },
+      "tests/exact_commit/test_campaign_completion.py": {
+        "group": "tests",
+        "nonblank_lines": 13,
+        "physical_lines": 15,
+        "sha256": "24e695c2085751e58b862c52f85230f14482cce945e55b207ac8b893de7daf47"
+      },
+      "tests/exact_commit/test_campaign_output.py": {
+        "group": "tests",
+        "nonblank_lines": 51,
+        "physical_lines": 59,
+        "sha256": "b148ebd9e83e77440f7172d81d50d58ecc3fe2582a8b7d7e36e5e929dfc0d0bd"
+      },
+      "tests/exact_commit/test_commit_gate.py": {
+        "group": "tests",
+        "nonblank_lines": 95,
+        "physical_lines": 114,
+        "sha256": "a35bcb1573d7e20e33e97816edc6416985d7e3729c8014068dc1a924ce19836a"
+      },
+      "tests/exact_commit/test_commit_stability.py": {
+        "group": "tests",
+        "nonblank_lines": 62,
+        "physical_lines": 76,
+        "sha256": "0f94a19ad5464a657978d591c5de162bec1dda6bb5ba4144b62759098e93d21b"
+      },
+      "tests/exact_commit/test_compact_budget_graph.py": {
+        "group": "tests",
+        "nonblank_lines": 181,
+        "physical_lines": 203,
+        "sha256": "78503fd704ab8ad190e6ea114dd48f904f741db174400e4bde73267db9079565"
+      },
+      "tests/exact_commit/test_comparison_contract.py": {
+        "group": "tests",
+        "nonblank_lines": 70,
+        "physical_lines": 78,
+        "sha256": "525d6cd458829679832217a131b23cc6620b1b47fe0a1b1d27cee3904f3cdb44"
+      },
+      "tests/exact_commit/test_compiled_paper_gate.py": {
+        "group": "tests",
+        "nonblank_lines": 19,
+        "physical_lines": 23,
+        "sha256": "fa5436c0efef8a44a96f0060b62b6a8e287a27a7ad1072487e5afb072dc8e80c"
+      },
+      "tests/exact_commit/test_completion_oracle.py": {
+        "group": "tests",
+        "nonblank_lines": 129,
+        "physical_lines": 155,
+        "sha256": "f3957dfd32891b47bbadf4cc1bd590cf66a7500be433481dbc6cbf67b753ca06"
+      },
+      "tests/exact_commit/test_conflict_commit.py": {
+        "group": "tests",
+        "nonblank_lines": 234,
+        "physical_lines": 289,
+        "sha256": "bd6908e754e84d971251a57114406beb2ddc1861d226c271799ac45a0acede11"
+      },
+      "tests/exact_commit/test_dag_parser.py": {
+        "group": "tests",
+        "nonblank_lines": 141,
+        "physical_lines": 172,
+        "sha256": "7ead79518bc537eca894e86c19122cd348040943d500e416de72573232b899a1"
+      },
+      "tests/exact_commit/test_decoder.py": {
+        "group": "tests",
+        "nonblank_lines": 389,
+        "physical_lines": 464,
+        "sha256": "52d6be09a2db16927bd66fe07bffd94faf3c7ac3916dbdc93a16c3fe1e50eb51"
+      },
+      "tests/exact_commit/test_differential_campaign.py": {
+        "group": "tests",
+        "nonblank_lines": 56,
+        "physical_lines": 70,
+        "sha256": "6b7ee9ba9bf359df8ea322ac59e663e8fc64fba3c6580a389387cba96e7a0d98"
+      },
+      "tests/exact_commit/test_eos_differential.py": {
+        "group": "tests",
+        "nonblank_lines": 105,
+        "physical_lines": 128,
+        "sha256": "57caa859e405267c1dede212c1f3ea36f7c440b2ac0a785c6d0bb13e2aa6856d"
+      },
+      "tests/exact_commit/test_eos_lattice.py": {
+        "group": "tests",
+        "nonblank_lines": 369,
+        "physical_lines": 445,
+        "sha256": "2dbebd6cf22e0de15316a8d1da6bc435f21e49ca500611175db8951269d58cde"
+      },
+      "tests/exact_commit/test_epic_recovery.py": {
+        "group": "tests",
+        "nonblank_lines": 79,
+        "physical_lines": 94,
+        "sha256": "d28bd985731ab807b956c80029f0264441211d165e4f3a0a64d157965bdae257"
+      },
+      "tests/exact_commit/test_epic_recovery_artifacts.py": {
+        "group": "tests",
+        "nonblank_lines": 33,
+        "physical_lines": 41,
+        "sha256": "1738407c79e1c9e3b25c698e15af7e7086f77aff8040f7f0a73d38bfe3cbdb24"
+      },
+      "tests/exact_commit/test_epic_selection.py": {
+        "group": "tests",
+        "nonblank_lines": 285,
+        "physical_lines": 337,
+        "sha256": "87cd80b777871da651e4ea8a9fb47f47051c77c19792745b131f8034d51fe16c"
+      },
+      "tests/exact_commit/test_epic_tool_artifacts.py": {
+        "group": "tests",
+        "nonblank_lines": 69,
+        "physical_lines": 80,
+        "sha256": "99e17340cdded8ae97f1551f5a791ff7f27bb2e0dc5deb2fe05867baba290d96"
+      },
+      "tests/exact_commit/test_epic_tool_comparison.py": {
+        "group": "tests",
+        "nonblank_lines": 202,
+        "physical_lines": 244,
+        "sha256": "fdfd3d03c374fc26713a310cd0cafd806f818faf1e9d7b511ea737e1d39912b2"
+      },
+      "tests/exact_commit/test_epsilon_normalization.py": {
+        "group": "tests",
+        "nonblank_lines": 137,
+        "physical_lines": 167,
+        "sha256": "e26a770dee5af88e1194d69b0b698c89bcc903bb54ccf37e8660b96ffeea84a8"
+      },
+      "tests/exact_commit/test_exact_scores.py": {
+        "group": "tests",
+        "nonblank_lines": 177,
+        "physical_lines": 190,
+        "sha256": "932e6f45e795f5bc4d384f36368e9bbbc28a4fcf83994f526fe9fa3b6e520811"
+      },
+      "tests/exact_commit/test_exactness_scope.py": {
+        "group": "tests",
+        "nonblank_lines": 121,
+        "physical_lines": 138,
+        "sha256": "813ec9d3adbf6ead0ed3b2a842132b7f5a24460c7fd61a4cdd1e9d2cf47d55e6"
+      },
+      "tests/exact_commit/test_experiment_config.py": {
+        "group": "tests",
+        "nonblank_lines": 116,
+        "physical_lines": 142,
+        "sha256": "210e415a406cfa97d8be3e3aba736d1a025759b52dcc3c9df93ad2e02d9eff0a"
+      },
+      "tests/exact_commit/test_experiment_driver_metadata.py": {
+        "group": "tests",
+        "nonblank_lines": 19,
+        "physical_lines": 29,
+        "sha256": "a95077f3a932a30425bd35ddd36978085f38cf45ce53ef4d8b4d49ca228c4be2"
+      },
+      "tests/exact_commit/test_final_artifacts.py": {
+        "group": "tests",
+        "nonblank_lines": 332,
+        "physical_lines": 358,
+        "sha256": "a810cbc514bb2e4dff2fc0c0714a6f11768fb78a7711134a72ffcc0479b333e4"
+      },
+      "tests/exact_commit/test_finite_differential.py": {
+        "group": "tests",
+        "nonblank_lines": 105,
+        "physical_lines": 134,
+        "sha256": "ec5e8fa7e04db9f70695e3a78130624f4947039bf3c90058d77c0bda17f06c65"
+      },
+      "tests/exact_commit/test_finite_eos_validator.py": {
+        "group": "tests",
+        "nonblank_lines": 402,
+        "physical_lines": 481,
+        "sha256": "244086584977bc20023611537b0a1929269cba454cfa2b2643f84f73a4242ca6"
+      },
+      "tests/exact_commit/test_finite_slot_counterexamples.py": {
+        "group": "tests",
+        "nonblank_lines": 79,
+        "physical_lines": 94,
+        "sha256": "2a012eac99dae8a3cce5aaf1453f3be6aeedaed503d761510c5787ebc4db2714"
+      },
+      "tests/exact_commit/test_finite_solver.py": {
+        "group": "tests",
+        "nonblank_lines": 269,
+        "physical_lines": 325,
+        "sha256": "94406d634ff5ed0247130dd28b4720699a2275e4dbb77cbd654c695df6e7682f"
+      },
+      "tests/exact_commit/test_geocoding_demo.py": {
+        "group": "tests",
+        "nonblank_lines": 128,
+        "physical_lines": 150,
+        "sha256": "19c0248d2c714a0bdc6d6bfbc20b2874bdea5426d5c82515f7a8ed485f9cb8ef"
+      },
+      "tests/exact_commit/test_graph_and_result_contracts.py": {
+        "group": "tests",
+        "nonblank_lines": 178,
+        "physical_lines": 218,
+        "sha256": "4aa202c115d13726ddbdf5029b7672cacdfd4665e6ebefac2404da1168ca53c7"
+      },
+      "tests/exact_commit/test_graph_differential.py": {
+        "group": "tests",
+        "nonblank_lines": 72,
+        "physical_lines": 88,
+        "sha256": "8a43284e9a4b706b3019f6f3bd153da4b95de011031d374e4ac3a1507d1a2395"
+      },
+      "tests/exact_commit/test_graph_index.py": {
+        "group": "tests",
+        "nonblank_lines": 54,
+        "physical_lines": 74,
+        "sha256": "407db91189d699a985e73ca677e08dbf12598520e90de7b425cd607362c6fe6e"
+      },
+      "tests/exact_commit/test_graph_oracle.py": {
+        "group": "tests",
+        "nonblank_lines": 97,
+        "physical_lines": 117,
+        "sha256": "67d5564e46f55549a7cc1960b700aaafc813d378fc15a609ff210550fa297d82"
+      },
+      "tests/exact_commit/test_greedy_worst_case.py": {
+        "group": "tests",
+        "nonblank_lines": 81,
+        "physical_lines": 86,
+        "sha256": "acb6dc22a7a36f657d147564a7e149263918c6ad30fcb41ee212011e28cf41df"
+      },
+      "tests/exact_commit/test_grounded_calls.py": {
+        "group": "tests",
+        "nonblank_lines": 107,
+        "physical_lines": 131,
+        "sha256": "8e2461697e8d2ab6426b0a6b7b060aff1fdb39606c088c0458a18a840784d63e"
+      },
+      "tests/exact_commit/test_grounded_confirmation_freeze.py": {
+        "group": "tests",
+        "nonblank_lines": 25,
+        "physical_lines": 31,
+        "sha256": "cd64655f462d5dac7d57e255160fa2b15f89ed9da82cd50d62f00b014dbc119b"
+      },
+      "tests/exact_commit/test_lean_bridge.py": {
+        "group": "tests",
+        "nonblank_lines": 83,
+        "physical_lines": 104,
+        "sha256": "ff6f05752b46792d6907551d396c318e514ecc0e61a28e2981f0f0e7a348b029"
+      },
+      "tests/exact_commit/test_lexical_rewards.py": {
+        "group": "tests",
+        "nonblank_lines": 124,
+        "physical_lines": 156,
+        "sha256": "0c84627278c91e432bb3611e474a3eae750719741eb51a3054dd4eb643c0f28f"
+      },
+      "tests/exact_commit/test_live_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 174,
+        "physical_lines": 192,
+        "sha256": "d3933234c048c6b6d76de6c729c8a619b458120422cd9912a353527015fbf63d"
+      },
+      "tests/exact_commit/test_llada_adapter.py": {
+        "group": "tests",
+        "nonblank_lines": 274,
+        "physical_lines": 314,
+        "sha256": "d195829996b524a955dac6fc065bd27bd9b8bdf77418974b73733a8c4d3b1fb6"
+      },
+      "tests/exact_commit/test_llada_saved_logit_loop.py": {
+        "group": "tests",
+        "nonblank_lines": 200,
+        "physical_lines": 229,
+        "sha256": "16d9dc9ce774fad18c8423dc79b0e86bf206182d92a96a814b150b12366e978e"
+      },
+      "tests/exact_commit/test_m6_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 82,
+        "physical_lines": 95,
+        "sha256": "b8715d2b9ddeac90ac379295f9871d1ac572a09432270db765f8517afb5f3783"
+      },
+      "tests/exact_commit/test_m7_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 121,
+        "physical_lines": 134,
+        "sha256": "64dd07de0ef3f5789cf4212b75d27e0046125fa6aab66192bcaabd5b24a8748c"
+      },
+      "tests/exact_commit/test_mass_certificates.py": {
+        "group": "tests",
+        "nonblank_lines": 399,
+        "physical_lines": 472,
+        "sha256": "c09954497d387d71fba1624952b2ff60ab238943d5e498527939f0293788f4e6"
+      },
+      "tests/exact_commit/test_mdlm_cpu_kernels.py": {
+        "group": "tests",
+        "nonblank_lines": 36,
+        "physical_lines": 41,
+        "sha256": "039108dd2d50af5719504f088ce3a5b1a2e92eee19b9bc08ab7b06db6317512a"
+      },
+      "tests/exact_commit/test_normalization.py": {
+        "group": "tests",
+        "nonblank_lines": 136,
+        "physical_lines": 158,
+        "sha256": "f4fd7589e25dcece1704645f8f5bdff14503c78d259c735ae3604a7e6375eb4b"
+      },
+      "tests/exact_commit/test_offline_exact_step.py": {
+        "group": "tests",
+        "nonblank_lines": 338,
+        "physical_lines": 372,
+        "sha256": "7fc33f5b923b0968c6aea5038ee3e190a7a91497e9a9041c6203eb333b85a5e4"
+      },
+      "tests/exact_commit/test_original_budget_certificate.py": {
+        "group": "tests",
+        "nonblank_lines": 123,
+        "physical_lines": 144,
+        "sha256": "0fe2032950d559fd6805efef65287ce36e16c9a031b82d68f8d9530b0dad2698"
+      },
+      "tests/exact_commit/test_policy_artifacts.py": {
+        "group": "tests",
+        "nonblank_lines": 178,
+        "physical_lines": 209,
+        "sha256": "033ec3627d296dc03f370a272ef35714ea544a25f0bebc9a0f025f960398db8d"
+      },
+      "tests/exact_commit/test_policy_resume.py": {
+        "group": "tests",
+        "nonblank_lines": 47,
+        "physical_lines": 55,
+        "sha256": "d1d8f8b4d326bc83012eaa47e80eb1ab97951cebbb8e689976a24faa86ad0a29"
+      },
+      "tests/exact_commit/test_policy_statistics.py": {
+        "group": "tests",
+        "nonblank_lines": 52,
+        "physical_lines": 64,
+        "sha256": "95e5118527591c2f3cae3ff6d4af104d7845a91bb2aa9b50b06346983a0cc756"
+      },
+      "tests/exact_commit/test_portable_budget_proof.py": {
+        "group": "tests",
+        "nonblank_lines": 85,
+        "physical_lines": 96,
+        "sha256": "1a6d3782d4ae5f993b8034679bfac68e752e9443da391c0c58fd14b930e20cd1"
+      },
+      "tests/exact_commit/test_probability_provenance.py": {
+        "group": "tests",
+        "nonblank_lines": 54,
+        "physical_lines": 64,
+        "sha256": "cb7a99b732a5be3679f34effea2336ba7c1d761a9a9321a0418b637559fac8f0"
+      },
+      "tests/exact_commit/test_probability_relevance_audit.py": {
+        "group": "tests",
+        "nonblank_lines": 279,
+        "physical_lines": 309,
+        "sha256": "41e53372d876658f65f5da3864191662da368754f7652fb277df5296c1828e2e"
+      },
+      "tests/exact_commit/test_profiling.py": {
+        "group": "tests",
+        "nonblank_lines": 269,
+        "physical_lines": 299,
+        "sha256": "86121022f11ba87a0f417e17186c6c83a3d9c472abd737c9ab935fbf3d64bc95"
+      },
+      "tests/exact_commit/test_proposal_policy.py": {
+        "group": "tests",
+        "nonblank_lines": 235,
+        "physical_lines": 270,
+        "sha256": "58d9bf163c142f8d000461f57d2d51814b1c4e96ea21eea2ef922c3648e15c6b"
+      },
+      "tests/exact_commit/test_proposals.py": {
+        "group": "tests",
+        "nonblank_lines": 66,
+        "physical_lines": 89,
+        "sha256": "99071225ca4d4cd0fc8ef885cb351a39338283cabc5bea4c42ff9fbb76d1c864"
+      },
+      "tests/exact_commit/test_publication_evidence_policy.py": {
+        "group": "tests",
+        "nonblank_lines": 136,
+        "physical_lines": 159,
+        "sha256": "a4041d28a7c349cbfd3d24124404639717d03d9216cca82bfb55a9c5ab2c4f47"
+      },
+      "tests/exact_commit/test_q1_correctness.py": {
+        "group": "tests",
+        "nonblank_lines": 187,
+        "physical_lines": 229,
+        "sha256": "ebe35c5c091295ccdd56ed46491456258457693305f8ad295b8f7af523e154ad"
+      },
+      "tests/exact_commit/test_q2_gap.py": {
+        "group": "tests",
+        "nonblank_lines": 209,
+        "physical_lines": 243,
+        "sha256": "01e134d53f3a7ec5834bd3747a650458253c5c1c550c2660a5d9aff9f02e298b"
+      },
+      "tests/exact_commit/test_q2_real_gap.py": {
+        "group": "tests",
+        "nonblank_lines": 153,
+        "physical_lines": 183,
+        "sha256": "c40af4e8183a61d21d2ea87aefda91ad3ed4d593f678df1017585bd40f09ed7f"
+      },
+      "tests/exact_commit/test_q3_finite_slots.py": {
+        "group": "tests",
+        "nonblank_lines": 140,
+        "physical_lines": 167,
+        "sha256": "45484ce61eedd96dbd75b4332482573f5dc8bb9010f1309f6f0124a0ad0fb036"
+      },
+      "tests/exact_commit/test_q4_scaling.py": {
+        "group": "tests",
+        "nonblank_lines": 248,
+        "physical_lines": 280,
+        "sha256": "c149c2cf136c2768919fab29ba6a2a6430c16c5f862911d79ae314c258c31d2b"
+      },
+      "tests/exact_commit/test_q5_end_to_end.py": {
+        "group": "tests",
+        "nonblank_lines": 324,
+        "physical_lines": 377,
+        "sha256": "56620d413ebe459955ffda2b857339071756fd2a5aa3c43f008d3b7d2359ecfe"
+      },
+      "tests/exact_commit/test_random_instances.py": {
+        "group": "tests",
+        "nonblank_lines": 44,
+        "physical_lines": 66,
+        "sha256": "c420a98e9ed5870a6a3877fa664d6100250a9a3d45eeac1be5cc1c8d11c00f60"
+      },
+      "tests/exact_commit/test_ranked_support.py": {
+        "group": "tests",
+        "nonblank_lines": 55,
+        "physical_lines": 60,
+        "sha256": "664b19766af55c63f1cfca25821893f4db386ea1901102bdb15d08abbbc94913"
+      },
+      "tests/exact_commit/test_recursive_scaling.py": {
+        "group": "tests",
+        "nonblank_lines": 12,
+        "physical_lines": 17,
+        "sha256": "6d78bb1a6809eb72ea19fe9eb899500370f964be0fc65e929e4700eb9d39ca89"
+      },
+      "tests/exact_commit/test_recursive_tasks.py": {
+        "group": "tests",
+        "nonblank_lines": 116,
+        "physical_lines": 131,
+        "sha256": "3e780c3783f0a2011f0082ed4952d028b18771bf5efd85d0d2bc87a1711612b4"
+      },
+      "tests/exact_commit/test_reference_grammar.py": {
+        "group": "tests",
+        "nonblank_lines": 122,
+        "physical_lines": 149,
+        "sha256": "e543c6e5857d3550008bb16038702c1cace75bc68473158260704dfbf98945c4"
+      },
+      "tests/exact_commit/test_regression_corpus.py": {
+        "group": "tests",
+        "nonblank_lines": 22,
+        "physical_lines": 32,
+        "sha256": "c9caed3ce29102b7f10f7e8c8075d1eac6c46edbff96a87c1e8c9eb7a6a83301"
+      },
+      "tests/exact_commit/test_repair.py": {
+        "group": "tests",
+        "nonblank_lines": 208,
+        "physical_lines": 252,
+        "sha256": "b13caa1ef085b35628e742f59dc96ba58c10f60188fdef4172979c845aae6d9c"
+      },
+      "tests/exact_commit/test_repair_experiment.py": {
+        "group": "tests",
+        "nonblank_lines": 116,
+        "physical_lines": 140,
+        "sha256": "1c0625cec61d7bd6b20b0a891e9fd6568e6cf8668e3b4ba801f779fbcf043635"
+      },
+      "tests/exact_commit/test_reproduction_instructions.py": {
+        "group": "tests",
+        "nonblank_lines": 72,
+        "physical_lines": 86,
+        "sha256": "ce79460cd1e1152ffb604b30cb7258c090a64f67085f595068ccd5d4f2ee4ecb"
+      },
+      "tests/exact_commit/test_review_artifacts.py": {
+        "group": "tests",
+        "nonblank_lines": 48,
+        "physical_lines": 56,
+        "sha256": "727f0cfd0897ec5b0c587b8ac5b2a88e2b41be4b12cfed34e9d729bb1a7362b0"
+      },
+      "tests/exact_commit/test_review_boundaries.py": {
+        "group": "tests",
+        "nonblank_lines": 99,
+        "physical_lines": 114,
+        "sha256": "eefecd8ed942ef5b8759be81da360e3adf298b0a412b35659dcf62910be53d62"
+      },
+      "tests/exact_commit/test_robust_timing.py": {
+        "group": "tests",
+        "nonblank_lines": 141,
+        "physical_lines": 167,
+        "sha256": "6fe682e9f1eb2cc6e2e2f4dc477bc9a23e1c509ce619ee00ca9182bb76d86a6a"
+      },
+      "tests/exact_commit/test_run_metadata.py": {
+        "group": "tests",
+        "nonblank_lines": 211,
+        "physical_lines": 239,
+        "sha256": "50d924b6abe01b0a22eb128d74ec300178396f9f32e3c0e0a1b9b12d46704340"
+      },
+      "tests/exact_commit/test_rust_binding.py": {
+        "group": "tests",
+        "nonblank_lines": 137,
+        "physical_lines": 164,
+        "sha256": "83b23c7a1ddae5be2f63272b3d05836b81b126d33c1c932e5454271559b55454"
+      },
+      "tests/exact_commit/test_rust_differential.py": {
+        "group": "tests",
+        "nonblank_lines": 41,
+        "physical_lines": 55,
+        "sha256": "a45e33e2f04a4965743ad773cc5accf382fa4caccce4839ada582365418dff8c"
+      },
+      "tests/exact_commit/test_schema_calls.py": {
+        "group": "tests",
+        "nonblank_lines": 71,
+        "physical_lines": 88,
+        "sha256": "ac1fbe77d3d8f72032ba8d77f30c0770d742c3069db6a39d1fd686aaa40ca242"
+      },
+      "tests/exact_commit/test_selection.py": {
+        "group": "tests",
+        "nonblank_lines": 345,
+        "physical_lines": 406,
+        "sha256": "7dfef0c20723016e36b635576e05d676476162f71577bb656235f203674443bc"
+      },
+      "tests/exact_commit/test_selection_audit_artifacts.py": {
+        "group": "tests",
+        "nonblank_lines": 27,
+        "physical_lines": 35,
+        "sha256": "b24ef2b10f3a8914b617667ebc6cfbb41f9b8968b8cdf379f0adb817d8ad0c52"
+      },
+      "tests/exact_commit/test_semantic_alignment.py": {
+        "group": "tests",
+        "nonblank_lines": 22,
+        "physical_lines": 33,
+        "sha256": "f66ab9701bd5d45d86c89105a051d5987e86318017b0cf701a07b3217bf49865"
+      },
+      "tests/exact_commit/test_solver.py": {
+        "group": "tests",
+        "nonblank_lines": 414,
+        "physical_lines": 487,
+        "sha256": "4c0bfee2f1a72df630546d1cdb613ccb5a61c2a897e358b7a67404f5a1d3b22e"
+      },
+      "tests/exact_commit/test_statistical_artifacts.py": {
+        "group": "tests",
+        "nonblank_lines": 213,
+        "physical_lines": 243,
+        "sha256": "213fb6c0f6aa5c3c92d1a7efeaab03f15ce8f9a279d905c00f83e1c53a514549"
+      },
+      "tests/exact_commit/test_statistical_summaries.py": {
+        "group": "tests",
+        "nonblank_lines": 132,
+        "physical_lines": 160,
+        "sha256": "e63eab70e2664a97958926c5873619846f0fd1a72fd25e3f1cf3a5f65ea04792"
+      },
+      "tests/exact_commit/test_strategy.py": {
+        "group": "tests",
+        "nonblank_lines": 185,
+        "physical_lines": 210,
+        "sha256": "e869038736e1903c81da5589be7518d6fd63919368fe562841876ae85cd83181"
+      },
+      "tests/exact_commit/test_submission_bibliography_verification.py": {
+        "group": "tests",
+        "nonblank_lines": 103,
+        "physical_lines": 124,
+        "sha256": "fe35a8af43da7a22a8037d1c93e57076a01436b0830b419781c8c039344d10bf"
+      },
+      "tests/exact_commit/test_submission_license.py": {
+        "group": "tests",
+        "nonblank_lines": 57,
+        "physical_lines": 76,
+        "sha256": "2fd0308268cc14eaf19b55fe687ce0ca8360b6d074beacf8d87219ced554834c"
+      },
+      "tests/exact_commit/test_submission_proof_audit.py": {
+        "group": "tests",
+        "nonblank_lines": 51,
+        "physical_lines": 62,
+        "sha256": "84f3c12189e1aced456e095787c9999d6d8bf32cdafc3f517704e5d6f2e37ea6"
+      },
+      "tests/exact_commit/test_submission_related_work_search.py": {
+        "group": "tests",
+        "nonblank_lines": 56,
+        "physical_lines": 69,
+        "sha256": "f3abe9eb1db9501ff5c58e772fb9130280cb6fd73c58592d9bda46241100a116"
+      },
+      "tests/exact_commit/test_subset_oracle.py": {
+        "group": "tests",
+        "nonblank_lines": 157,
+        "physical_lines": 172,
+        "sha256": "6820c73c541ce02f793cd6116675f60ddbf8bfd29a6ad3dfc75dbb4c91ab3a62"
+      },
+      "tests/exact_commit/test_support.py": {
+        "group": "tests",
+        "nonblank_lines": 309,
+        "physical_lines": 381,
+        "sha256": "fd51e7fec04c288a1ef69525434be9d1a0daaa1b9223c3b384519fd15dafcae8"
+      },
+      "tests/exact_commit/test_support_scope_enforcement.py": {
+        "group": "tests",
+        "nonblank_lines": 119,
+        "physical_lines": 145,
+        "sha256": "a6c56103c32ad18f44d8273c8cba4154b5837a151d29789ce18f071e2d82ae72"
+      },
+      "tests/exact_commit/test_t1101_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 59,
+        "physical_lines": 70,
+        "sha256": "b4a51ad688a9e4c75ca7069e04aa2cd7223564fa8e5c64af2742bfc9712befd0"
+      },
+      "tests/exact_commit/test_t1102_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 78,
+        "physical_lines": 91,
+        "sha256": "66f43d94165a50e3a8b5377b7f81f26521b38b3e09ad30db9a59eda795a65f8f"
+      },
+      "tests/exact_commit/test_t1103_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 75,
+        "physical_lines": 85,
+        "sha256": "ee70f8bdd9f624beabcf44d26e24f4ad44c381ee8533a43a534f61d54896c636"
+      },
+      "tests/exact_commit/test_t1104_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 46,
+        "physical_lines": 53,
+        "sha256": "d37625dbca7f8cb79ce3317192b1c82d279c901a15cc78b915b3a2f826d35e21"
+      },
+      "tests/exact_commit/test_t1105_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 84,
+        "physical_lines": 93,
+        "sha256": "0c3d45d969f09e4a93c2543d316728a643ceff69008db052456846df2c71b149"
+      },
+      "tests/exact_commit/test_t1106_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 70,
+        "physical_lines": 79,
+        "sha256": "ea84571d674bc8cfd6292ee8f9ebb53d6feb28b463643101744dc765bfe2f70e"
+      },
+      "tests/exact_commit/test_t1200_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 60,
+        "physical_lines": 68,
+        "sha256": "1ff005e23cafbe94a47ec66763aa43a37f2a82a82f2dc52edc1a1a64bb355f60"
+      },
+      "tests/exact_commit/test_t1201_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 73,
+        "physical_lines": 82,
+        "sha256": "cff45ebe0f786a508cd3d3f186d1289b9513aee5e36922841c730b2789ef6f9b"
+      },
+      "tests/exact_commit/test_t1202_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 72,
+        "physical_lines": 86,
+        "sha256": "0c3dfc2368aa295fba4ea9344a7e030ad99c0965751b3c554ccd99d00fe2c3bc"
+      },
+      "tests/exact_commit/test_t1203_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 182,
+        "physical_lines": 199,
+        "sha256": "fee269f9d8b49364c0f97662e759b081ef437bbddf2482d871e6da0912006768"
+      },
+      "tests/exact_commit/test_t1253_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 80,
+        "physical_lines": 95,
+        "sha256": "ab42da182c35beae7516a8ce012a320f646a5605f1809525af32a6318c472000"
+      },
+      "tests/exact_commit/test_t1254_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 115,
+        "physical_lines": 134,
+        "sha256": "9c94686ad101404f85d46acf6fc4c8ed0bcde9426849637eaf55e5e9f74f75ad"
+      },
+      "tests/exact_commit/test_t1255_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 86,
+        "physical_lines": 98,
+        "sha256": "959c59a3802480450eb7e43e0ffaa0bfe7953b0b7f03ab45f0e912c75fb2c276"
+      },
+      "tests/exact_commit/test_t1256_architecture_freeze.py": {
+        "group": "tests",
+        "nonblank_lines": 43,
+        "physical_lines": 51,
+        "sha256": "16d6f9f896712c31cf73d4adc15e6752af8a31a97fb4d9e50ba6a1519445f537"
+      },
+      "tests/exact_commit/test_t1257_final_name.py": {
+        "group": "tests",
+        "nonblank_lines": 47,
+        "physical_lines": 59,
+        "sha256": "22a8635469307f32ecbc747bf4aa8d9cb9c85c21f56a39a0fdeacd0ad88ab219"
+      },
+      "tests/exact_commit/test_t1258_article_budget.py": {
+        "group": "tests",
+        "nonblank_lines": 59,
+        "physical_lines": 76,
+        "sha256": "0fdf1e0307c75f5dec14217337d0634fdc12a8e290c0fb5c3c860b831e323ff5"
+      },
+      "tests/exact_commit/test_t1259_language_and_terminology.py": {
+        "group": "tests",
+        "nonblank_lines": 95,
+        "physical_lines": 112,
+        "sha256": "a96b7c31b4cc82c26c7334ea33f13b723be8aec07f22faaa341647b7d6267528"
+      },
+      "tests/exact_commit/test_t1260_correctness_rehearsal.py": {
+        "group": "tests",
+        "nonblank_lines": 111,
+        "physical_lines": 137,
+        "sha256": "0cd68a1034e83efe1a1da4894b39ae9faf2d11dff8de9cb9970cae2a2d4f26f1"
+      },
+      "tests/exact_commit/test_t1261_task_archive.py": {
+        "group": "tests",
+        "nonblank_lines": 74,
+        "physical_lines": 88,
+        "sha256": "8cc1e9645445ef230f94be219f44e497422aff87103202cfb3d84af73bf9658e"
+      },
+      "tests/exact_commit/test_t1300_paper_method.py": {
+        "group": "tests",
+        "nonblank_lines": 145,
+        "physical_lines": 171,
+        "sha256": "b556b8888ce855b18538fcb0187ab31e00a7a6562ad64a7e985dccf6c0622904"
+      },
+      "tests/exact_commit/test_t1301_article_results.py": {
+        "group": "tests",
+        "nonblank_lines": 84,
+        "physical_lines": 102,
+        "sha256": "ac38bd8335054ea0e30c51ee49a92577ba89c77261eb3e1501a27ad63bca621c"
+      },
+      "tests/exact_commit/test_t1302_paper_limitations.py": {
+        "group": "tests",
+        "nonblank_lines": 99,
+        "physical_lines": 122,
+        "sha256": "682e7abe9ff03c72147d25be48b4ae7bf846fdc0418646e8211e437384667b4c"
+      },
+      "tests/exact_commit/test_t1303_ai_use_declaration.py": {
+        "group": "tests",
+        "nonblank_lines": 53,
+        "physical_lines": 67,
+        "sha256": "6f49c07e5df7a7bb9beca4a80db9fe6861c6675823c9d7c9611c42396b731610"
+      },
+      "tests/exact_commit/test_t1304_release_metadata.py": {
+        "group": "tests",
+        "nonblank_lines": 88,
+        "physical_lines": 106,
+        "sha256": "37106afadcb1b09a7ec1e50ee8ab79323832083fb68f6ecc78eceb88f34b55e6"
+      },
+      "tests/exact_commit/test_t600_tokenizer_audit_evidence.py": {
+        "group": "tests",
+        "nonblank_lines": 87,
+        "physical_lines": 106,
+        "sha256": "5995aec22aba532918adfd13389491730d766c1901b82f037320c460459ce300"
+      },
+      "tests/exact_commit/test_t904_live_smoke_config.py": {
+        "group": "tests",
+        "nonblank_lines": 107,
+        "physical_lines": 124,
+        "sha256": "a6063e9aec0eb458091c11b7496cb7a6eacedce3d8864837f86c8f4a975ca51d"
+      },
+      "tests/exact_commit/test_token_aligned_certificate.py": {
+        "group": "tests",
+        "nonblank_lines": 187,
+        "physical_lines": 223,
+        "sha256": "f326b49d1af526d4f4365334804c4ae420c2b9c2348ce35b3b3229fb2f01343b"
+      },
+      "tests/exact_commit/test_token_aligned_cky.py": {
+        "group": "tests",
+        "nonblank_lines": 154,
+        "physical_lines": 187,
+        "sha256": "bad85db80ffae08c84e02e0b5a747235916098f9a65b54a0f2993a508be9c920"
+      },
+      "tests/exact_commit/test_token_aligned_examples.py": {
+        "group": "tests",
+        "nonblank_lines": 111,
+        "physical_lines": 138,
+        "sha256": "f6f305fcc8fa94647edd62eadd084250a7855da24f6875071ae2d254313b49b8"
+      },
+      "tests/exact_commit/test_token_lattice.py": {
+        "group": "tests",
+        "nonblank_lines": 204,
+        "physical_lines": 248,
+        "sha256": "dd5883a85257475a7f54f007cebf3ace8fd1052596155a3cc5a4fa564ee3dcd8"
+      },
+      "tests/exact_commit/test_tokenizer_bytes.py": {
+        "group": "tests",
+        "nonblank_lines": 54,
+        "physical_lines": 70,
+        "sha256": "90c6610bf17f5ff9595a0e9297046d2b3b1a9380d2e9c2b6425dfadca2191dc6"
+      },
+      "tests/exact_commit/test_tool_parser.py": {
+        "group": "tests",
+        "nonblank_lines": 53,
+        "physical_lines": 63,
+        "sha256": "cdb6d64d6ba96ba67cc0b21435442624c531b7c018947fa6cb4dab01dd41ab9c"
+      },
+      "tests/exact_commit/test_tool_screen.py": {
+        "group": "tests",
+        "nonblank_lines": 62,
+        "physical_lines": 76,
+        "sha256": "d5867f2f57cdb758ffb3699265d1131970dc917b8ec959d6d0b4fda820bf513b"
+      },
+      "tests/exact_commit/test_tool_screen_artifacts.py": {
+        "group": "tests",
+        "nonblank_lines": 43,
+        "physical_lines": 51,
+        "sha256": "4fd44d24e4310bd66b8b4b8f93b1be99ab5c75f30850e12a1bb814a8481a6e9b"
+      },
+      "tests/exact_commit/test_upstream_normalization_audit.py": {
+        "group": "tests",
+        "nonblank_lines": 45,
+        "physical_lines": 53,
+        "sha256": "bfbabced94647b676866996516d4e2796708b76df65eaaa4fbfb1a6abbb2a190"
+      },
+      "tests/exact_commit/test_validated_result.py": {
+        "group": "tests",
+        "nonblank_lines": 81,
+        "physical_lines": 95,
+        "sha256": "f29533139a41e106ffc3c8bcd5ac3bb653ee900db82ab49223e3c3a083217745"
+      },
+      "tests/exact_commit/test_validator.py": {
+        "group": "tests",
+        "nonblank_lines": 188,
+        "physical_lines": 238,
+        "sha256": "d83b06aa8c710c72eb07cb2bff5a193667eac91828c0ea804d488aed42eac90c"
+      },
+      "tests/integration/test_benchmark_instance_replay.py": {
+        "group": "tests",
+        "nonblank_lines": 83,
+        "physical_lines": 98,
+        "sha256": "d25ac2f6ede8e3915d534a19575023e129d941bfb3a9f3453c9c0bcc10432e4f"
+      },
+      "tests/integration/test_epic_baseline.py": {
+        "group": "tests",
+        "nonblank_lines": 16,
+        "physical_lines": 24,
+        "sha256": "25d4d37fa48b77d8e1122c48eaa3abc9cd87c15d2430ee43d595a78f9c728ce8"
+      },
+      "tests/integration/test_epic_common_selection.py": {
+        "group": "tests",
+        "nonblank_lines": 187,
+        "physical_lines": 206,
+        "sha256": "7fa3e55be2aba69e3fda4ffa016d6571349a254e859592dfd8d620517496046f"
+      },
+      "tests/integration/test_llada_baseline_preservation.py": {
+        "group": "tests",
+        "nonblank_lines": 139,
+        "physical_lines": 174,
+        "sha256": "ad8012522b707232f1c7e296c08a93e93942d1ab3ddfdbb9bfdc5c1b87eeaeba"
+      },
+      "tests/integration/test_llada_compact_rankings.py": {
+        "group": "tests",
+        "nonblank_lines": 64,
+        "physical_lines": 75,
+        "sha256": "02c2b8d10c4173802cb61254d08fb5a76ceb9c5892da61b27b2349dbace6da7c"
+      },
+      "tests/integration/test_llada_exact_tensor_hook.py": {
+        "group": "tests",
+        "nonblank_lines": 83,
+        "physical_lines": 90,
+        "sha256": "2323aadc684d18dab886501787a760a5466e18a63d0063434332404ab71cbda5"
+      },
+      "tests/integration/test_matched_schedule.py": {
+        "group": "tests",
+        "nonblank_lines": 64,
+        "physical_lines": 79,
+        "sha256": "0af300a06b0f2ce6e3804330bb061bc3c61bd2642344598d1429e1571a04034f"
+      },
+      "tests/integration/test_q2_gap_replay.py": {
+        "group": "tests",
+        "nonblank_lines": 48,
+        "physical_lines": 55,
+        "sha256": "fe8c1c9273195468a95736d9503e5406c05464c14716b05ef1a99f14d1788851"
+      },
+      "tests/unit/test_ci_optional_dependency_partition.py": {
+        "group": "tests",
+        "nonblank_lines": 20,
+        "physical_lines": 26,
+        "sha256": "b270e36b857e313c5a536dcb8efe95cf164c6b7fce3a2ba0f033e1d82b74da54"
+      },
+      "tests/unit/test_package_boundaries.py": {
+        "group": "tests",
+        "nonblank_lines": 27,
+        "physical_lines": 34,
+        "sha256": "bab1d076776dfaab5ea7813898fe0e072cbd69b17a594c134eed5df5b94936aa"
+      },
+      "tests/unit/test_release_hardening.py": {
+        "group": "tests",
+        "nonblank_lines": 42,
+        "physical_lines": 55,
+        "sha256": "9fada26e7c0d2927ba7de03ff889d1958af15760d0b5ac7722efd98cce2d022a"
+      },
+      "tests/unit/test_types.py": {
+        "group": "tests",
+        "nonblank_lines": 47,
+        "physical_lines": 61,
+        "sha256": "e303424bc5ea2429ba9b6b98f69d868a0b4b9d564b8747ac896c08a3e9c49f28"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/cpp.py": {
+        "group": "upstream",
+        "nonblank_lines": 222,
+        "physical_lines": 253,
+        "sha256": "f3e3dfa2d53d0cbb87d66b92a468971ac9a811eeab2cde02460c92618fe90b7d"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/json.py": {
+        "group": "upstream",
+        "nonblank_lines": 13,
+        "physical_lines": 19,
+        "sha256": "86e85dc07950f4d9e0fddf27e47ccb6811f81219563d508d51b4d31787d1ea96"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/jsonschema.py": {
+        "group": "upstream",
+        "nonblank_lines": 352,
+        "physical_lines": 397,
+        "sha256": "ee7d386f9db0a37f0e9c87fad84576341fe8670ea4225f60b81f4162676a2ef0"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/cfgs/smiles.py": {
+        "group": "upstream",
+        "nonblank_lines": 61,
+        "physical_lines": 96,
+        "sha256": "bbde63d81d6baa9543a3b4bc70f53b0257ce7464697d5d673002e255a3ccd198"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/constrain_utils.py": {
+        "group": "upstream",
+        "nonblank_lines": 1076,
+        "physical_lines": 1189,
+        "sha256": "47799b4387ee97794a3a18a12b7dfd959a6edf5edf3eff360fa912fd9c5a7386"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/dataset.py": {
+        "group": "upstream",
+        "nonblank_lines": 27,
+        "physical_lines": 35,
+        "sha256": "c6243aa5395073c40b68567c67299154066fa9fe981d34b3f57a29a2278529c3"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/cpp.py": {
+        "group": "upstream",
+        "nonblank_lines": 114,
+        "physical_lines": 135,
+        "sha256": "0946e446a837fd853af53adb501215b36f11cbb97f88bf2254bed5f0bcf7314e"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/generic.py": {
+        "group": "upstream",
+        "nonblank_lines": 100,
+        "physical_lines": 120,
+        "sha256": "55ea61f78af05777e8d0d297a3553a463f65671edf9b86f22e47f994c16e7c67"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/jsonschema.py": {
+        "group": "upstream",
+        "nonblank_lines": 91,
+        "physical_lines": 105,
+        "sha256": "ba3759f491e938c4fc03eb38eecb5cf80a327e25827e2bce6c9c0f0809feed45"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/datasets/smiles.py": {
+        "group": "upstream",
+        "nonblank_lines": 109,
+        "physical_lines": 134,
+        "sha256": "5f4acd5ba7c52bf3b4aa308e23dc5d80a724cdc2e6444edbcc4816d87bdaca35"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/generic_inference.py": {
+        "group": "upstream",
+        "nonblank_lines": 200,
+        "physical_lines": 218,
+        "sha256": "42942c2d3ca3eea0e868e23369bca2ee8cdcd6ebf73d3f857762edc8d6993381"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/model.py": {
+        "group": "upstream",
+        "nonblank_lines": 34,
+        "physical_lines": 42,
+        "sha256": "ebd9684fb27f5895a048804da829c1f2107d771d3337645697305c78b72cb133"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/dream/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/dream/generate.py": {
+        "group": "upstream",
+        "nonblank_lines": 328,
+        "physical_lines": 374,
+        "sha256": "78370276770c587c0712f06400e19e12b51ed014622f0cd4f3351e36bcce270c"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/dream/generate_constrained.py": {
+        "group": "upstream",
+        "nonblank_lines": 795,
+        "physical_lines": 854,
+        "sha256": "60ff74cf8a62a04cbc2c41d156ee7efe9c180a244e6a7b2186852462360824d1"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/dream/model.py": {
+        "group": "upstream",
+        "nonblank_lines": 265,
+        "physical_lines": 284,
+        "sha256": "228df42338ac6a53b94a222352e68265e7b68646d98ac63d887afcbca00fe0b2"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/generic.py": {
+        "group": "upstream",
+        "nonblank_lines": 70,
+        "physical_lines": 76,
+        "sha256": "3b65f6c7b0492f1a81390b13dbf48dc062c5f4c0f3ae7291a3026c9f4555296f"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/llada/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/llada/generate.py": {
+        "group": "upstream",
+        "nonblank_lines": 150,
+        "physical_lines": 181,
+        "sha256": "5297b69a75176d3fc3376d197fce4dac96414fa8cd57869bf2c67e730161bda2"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/llada/generate_constrained.py": {
+        "group": "upstream",
+        "nonblank_lines": 633,
+        "physical_lines": 686,
+        "sha256": "d99195fe7cc3080acfc608a2e6d70b7567564d533ee8fb1cb79e9d534637340c"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/dllm/models/llada/model.py": {
+        "group": "upstream",
+        "nonblank_lines": 249,
+        "physical_lines": 266,
+        "sha256": "b1bc17aee70413d12ac4778c99e6a872df05302fe3f4034c980db028cac5608b"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/dataset.py": {
+        "group": "upstream",
+        "nonblank_lines": 26,
+        "physical_lines": 34,
+        "sha256": "c35d058baaa89019abb11b99023b9682e00609f965a59b0dcc80b57fe6f49133"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/datasets/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/datasets/generic.py": {
+        "group": "upstream",
+        "nonblank_lines": 70,
+        "physical_lines": 85,
+        "sha256": "565a6854364d8cc27ecca6b0e9259fcd0a7062cf1dc7df6e7b7c6048c3698d97"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/datasets/humaneval_mri_cpp.py": {
+        "group": "upstream",
+        "nonblank_lines": 106,
+        "physical_lines": 123,
+        "sha256": "d427941a36f71fcdeaac9b76f09ec1a89a4d98a751bd75967829f4daa3bb03a2"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/generic_inference.py": {
+        "group": "upstream",
+        "nonblank_lines": 186,
+        "physical_lines": 204,
+        "sha256": "e9b776ac74c6f34954ec47809013feecce636a4fb166d8a74af8d1a6c30f5b39"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/model.py": {
+        "group": "upstream",
+        "nonblank_lines": 35,
+        "physical_lines": 43,
+        "sha256": "108e16e1fc79f5778ac789b0c1bb37d66fc348036c49fbae66ddea8d4ec1b86d"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/fim.py": {
+        "group": "upstream",
+        "nonblank_lines": 325,
+        "physical_lines": 344,
+        "sha256": "e79d341a531fa1774732be9b7d2185f3d04ca66901115c7726165fd36ae6d747"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/generate_constrained.py": {
+        "group": "upstream",
+        "nonblank_lines": 773,
+        "physical_lines": 845,
+        "sha256": "4c6e87d02d158a3895b6a8de469938defcc58f08772b46e4e59194fb38bfa201"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/generic.py": {
+        "group": "upstream",
+        "nonblank_lines": 61,
+        "physical_lines": 67,
+        "sha256": "ed53df299a5c9b686144ccf8ed69578238b077bebaf689a254f537e3973f2a03"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/eval/mri/models/util.py": {
+        "group": "upstream",
+        "nonblank_lines": 10,
+        "physical_lines": 12,
+        "sha256": "7f651399da81c2764b16d9c8d07df63fc4e23866b53c5300120ee3389edb2a09"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/fast_enfa_profiler.py": {
+        "group": "upstream",
+        "nonblank_lines": 188,
+        "physical_lines": 231,
+        "sha256": "8c447460227da63fbdaec1d41f7a030797796ed45d0d0ce044ba583a3ba18e45"
+      },
+      "vendor/EPIC-Decoding/constrained_diffusion/regular_cover.py": {
+        "group": "upstream",
+        "nonblank_lines": 312,
+        "physical_lines": 350,
+        "sha256": "9a3705b5d20869a8f80d54b0fec343ec67d77a15d218eac0698fc51d3d3e989e"
+      },
+      "vendor/EPIC-Decoding/eval/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/eval/collect_analysis_results.py": {
+        "group": "upstream",
+        "nonblank_lines": 691,
+        "physical_lines": 803,
+        "sha256": "fff6df70bd772decd9006915f5e9dff7e5e65c9bfa315f2c31794aa694677b32"
+      },
+      "vendor/EPIC-Decoding/eval/collect_eval_results.py": {
+        "group": "upstream",
+        "nonblank_lines": 376,
+        "physical_lines": 481,
+        "sha256": "67613d52326210e554e7bb61e653e88f393a5a75a2827c3e44ddb099665f7cf9"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/cpp/checker.py": {
+        "group": "upstream",
+        "nonblank_lines": 219,
+        "physical_lines": 256,
+        "sha256": "1555f20190abf25ef8c9588279c1c9210b5f1138bbb1f9296add9e2f83e3b5bb"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/jsonmode/checker.py": {
+        "group": "upstream",
+        "nonblank_lines": 60,
+        "physical_lines": 73,
+        "sha256": "61c9b71f70acb73818a73392a32578ad41bc160d1e1c37cb4c73359945fff979"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/jsonmode/run_jsonmode.sh": {
+        "group": "upstream",
+        "nonblank_lines": 10,
+        "physical_lines": 12,
+        "sha256": "06cc703a147a6e31c601b8dfa93fbfede621db740f57d1edac95f7bde8fdacb8"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/run_dllm.py": {
+        "group": "upstream",
+        "nonblank_lines": 128,
+        "physical_lines": 140,
+        "sha256": "bf9a9a01340241fe0efbf0b389ec9dbc4682cc4817ac2480f6e10be07edef34e"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/run_dllm_step_ablation.py": {
+        "group": "upstream",
+        "nonblank_lines": 125,
+        "physical_lines": 137,
+        "sha256": "cf30b55595c3c4d944db6998d0aeedc9ebdabdb416e5cf8afe82451988ea5b41"
+      },
+      "vendor/EPIC-Decoding/eval/dllm/smiles/checker.py": {
+        "group": "upstream",
+        "nonblank_lines": 94,
+        "physical_lines": 113,
+        "sha256": "737c3de2ba0947482ddec9925349321df10b0e52c085cb9c6307313bd7907b8f"
+      },
+      "vendor/EPIC-Decoding/eval/download_models.py": {
+        "group": "upstream",
+        "nonblank_lines": 48,
+        "physical_lines": 56,
+        "sha256": "f532a72cb909b2b1e0c2d70c2a27716f7b5801f21b228467d3e24dbb91f51aa8"
+      },
+      "vendor/EPIC-Decoding/eval/evaluate_all.py": {
+        "group": "upstream",
+        "nonblank_lines": 335,
+        "physical_lines": 393,
+        "sha256": "cf3ca3a5bea2193906ae0cc3884ca4328348c8f60b0407bc57d50002776bea7e"
+      },
+      "vendor/EPIC-Decoding/eval/evaluate_all.sh": {
+        "group": "upstream",
+        "nonblank_lines": 28,
+        "physical_lines": 30,
+        "sha256": "4a0ddb0df9934d5e3830cd2913a6f3624f4f9c3b4789a36ca72a3acb312223ac"
+      },
+      "vendor/EPIC-Decoding/eval/figures/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/eval/figures/dllm.py": {
+        "group": "upstream",
+        "nonblank_lines": 170,
+        "physical_lines": 186,
+        "sha256": "70049d7c809ba2315112ecbc030dd8fed352b87e7bd53ae2c981ff3ed5e58fa0"
+      },
+      "vendor/EPIC-Decoding/eval/figures/dllm_ablation_steps.py": {
+        "group": "upstream",
+        "nonblank_lines": 169,
+        "physical_lines": 184,
+        "sha256": "3e77c101075c47550dcc19bb6458caeceaea26395f66178e0b9004830c36e67a"
+      },
+      "vendor/EPIC-Decoding/eval/figures/dllm_ablation_steps_time.py": {
+        "group": "upstream",
+        "nonblank_lines": 68,
+        "physical_lines": 76,
+        "sha256": "5b8674b6e6a4bd4271f493539f1229412d5b4fe9a5a2e85b9ebf3c48531c0a7a"
+      },
+      "vendor/EPIC-Decoding/eval/figures/dllm_time.py": {
+        "group": "upstream",
+        "nonblank_lines": 68,
+        "physical_lines": 76,
+        "sha256": "1b0cbec8099ba2d437bae851b23a61ba2e288a269981cc7a85379769c317feaf"
+      },
+      "vendor/EPIC-Decoding/eval/figures/mri.py": {
+        "group": "upstream",
+        "nonblank_lines": 177,
+        "physical_lines": 192,
+        "sha256": "f6c01d6a34ff699e1744a008b114578ddd7ff8676b035aba291927c847e037ec"
+      },
+      "vendor/EPIC-Decoding/eval/figures/mri_time.py": {
+        "group": "upstream",
+        "nonblank_lines": 79,
+        "physical_lines": 89,
+        "sha256": "9498651045ce0fa084ff7c340c55cbb1bc591ca1c6160e5e765741dc9231db34"
+      },
+      "vendor/EPIC-Decoding/eval/figures/util.py": {
+        "group": "upstream",
+        "nonblank_lines": 265,
+        "physical_lines": 313,
+        "sha256": "d2462733d693f07ce00c72f16111bd556502dc00b7b106beec7fba8f4c119eaa"
+      },
+      "vendor/EPIC-Decoding/eval/mri/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/eval/mri/run_mri.py": {
+        "group": "upstream",
+        "nonblank_lines": 132,
+        "physical_lines": 145,
+        "sha256": "6ff53fd529532e7fde68fbb7e91ea15fa1045b5bc8fffd1aee5a1f5caf1225ea"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/dfa/minimizer.rs": {
+        "group": "upstream",
+        "nonblank_lines": 130,
+        "physical_lines": 149,
+        "sha256": "e52630585f22670a1fe1069cee2e41940e146b734dea12313d735880c6486f98"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/dfa/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 560,
+        "physical_lines": 643,
+        "sha256": "198bcd5bf6e2b7d1c418259016844015fe70f3ef33937851425e534d16d1e87d"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/dfa/prefix_searcher.rs": {
+        "group": "upstream",
+        "nonblank_lines": 289,
+        "physical_lines": 330,
+        "sha256": "3c143f5ba2f083e4474edfffb28226c470f1cf87f94a01a00232d4f679ca73c7"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/dfa/trie.rs": {
+        "group": "upstream",
+        "nonblank_lines": 62,
+        "physical_lines": 70,
+        "sha256": "53c2c700246b5b602fcc8ac556b61b4755cf9f8ff9eda05d43dbf953f944a332"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/error.rs": {
+        "group": "upstream",
+        "nonblank_lines": 39,
+        "physical_lines": 44,
+        "sha256": "3aa6bdec71dfab4705d856f20be42399e72598dfe9151ec903410898d42083c0"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/graph.rs": {
+        "group": "upstream",
+        "nonblank_lines": 212,
+        "physical_lines": 237,
+        "sha256": "40a59a47b4d2400d6d5ca44c17f312abcb74848147dae4428f45994be4e0c5a3"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/lib.rs": {
+        "group": "upstream",
+        "nonblank_lines": 73,
+        "physical_lines": 94,
+        "sha256": "f0c86f8262e1b5bd91bae5e03ced87f9f21c4e48cf0f0f6830b75b61b900130d"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/look.rs": {
+        "group": "upstream",
+        "nonblank_lines": 172,
+        "physical_lines": 195,
+        "sha256": "fa254610a80b5c5b50924bfb9219099922fd593e72e30782cbd27a6a4f49e8d0"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/nfa/has_looks.rs": {
+        "group": "upstream",
+        "nonblank_lines": 649,
+        "physical_lines": 727,
+        "sha256": "5a63c71b30130e7ce180b89a310b35b23fb25e4bfc013dbfb42b295b6e136397"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/nfa/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 356,
+        "physical_lines": 395,
+        "sha256": "caa180e4ba64aecbe79fd289bda66e2f37092b25e1fa814eb3e05b8c26d5588e"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/nfa/no_looks.rs": {
+        "group": "upstream",
+        "nonblank_lines": 814,
+        "physical_lines": 906,
+        "sha256": "8f783606026a961986359ddb21c85e7482360f81c3c4cf42d24bb218cb9b1e67"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/refinery.rs": {
+        "group": "upstream",
+        "nonblank_lines": 326,
+        "physical_lines": 370,
+        "sha256": "cbb20cf97cf9ec2c2b5b27066c665d1b8b9b17e0eb38e56e34266b87b68f0505"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/regex.rs": {
+        "group": "upstream",
+        "nonblank_lines": 115,
+        "physical_lines": 134,
+        "sha256": "8e785b2d6f89136ca7a6434531b04da76b862572043115afcbc51e8acfc3aeb4"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/runner/anchored.rs": {
+        "group": "upstream",
+        "nonblank_lines": 34,
+        "physical_lines": 39,
+        "sha256": "d533879fe6f337bcc739a870c1af170c8bce216864af328aca38466a620a1bd3"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/runner/forward_backward.rs": {
+        "group": "upstream",
+        "nonblank_lines": 224,
+        "physical_lines": 249,
+        "sha256": "5de0864911b2e574855292a9e8366fd2ffd0b9fbe7739401bc5ee6d7d64972be"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/runner/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 8,
+        "physical_lines": 10,
+        "sha256": "ae439a5280883c4096f1af387bb99392ab77b1b95225169d9f4d24490f6ee697"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/runner/program.rs": {
+        "group": "upstream",
+        "nonblank_lines": 148,
+        "physical_lines": 165,
+        "sha256": "be10194a4d8685e26ba26bdb8df425d7a3a4502123cd10d8fd87969cc5340db9"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/src/unicode.rs": {
+        "group": "upstream",
+        "nonblank_lines": 659,
+        "physical_lines": 659,
+        "sha256": "1297ef9865528abbd304d20325c86b38b368fe09f25908bac487c9c5238ca2ad"
+      },
+      "vendor/EPIC-Decoding/regex-dfa/tests/matches.rs": {
+        "group": "upstream",
+        "nonblank_lines": 2775,
+        "physical_lines": 2798,
+        "sha256": "8d5be941925b318fad4e4527fa6087faaef6742d4ff8925a34f8b763d7a10e09"
+      },
+      "vendor/EPIC-Decoding/rustformlang/bench/js_grammar_bench.rs": {
+        "group": "upstream",
+        "nonblank_lines": 316,
+        "physical_lines": 366,
+        "sha256": "2f1f2e333e42d87b49f9354fa1dd53203be7810cf6da3db3f154b85353da2ff4"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/cfg.rs": {
+        "group": "upstream",
+        "nonblank_lines": 2311,
+        "physical_lines": 2466,
+        "sha256": "b9f5a3a9e4cf2832e66801159aa0745814916fb06bbad497902fa1a95f5f991b"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 4,
+        "physical_lines": 4,
+        "sha256": "21ce6a51b3bfe5c739d868f5929cfa5fcab9c9ef704d635fdd384aca02014ee6"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/production.rs": {
+        "group": "upstream",
+        "nonblank_lines": 41,
+        "physical_lines": 46,
+        "sha256": "aa14fc62d84e1185d34118f95cad1c84abd2c5b1cafe777c81f16d79846d0c6c"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/terminal.rs": {
+        "group": "upstream",
+        "nonblank_lines": 5,
+        "physical_lines": 6,
+        "sha256": "1888503b2f3ddbad5c86b08cb98c571268f7ffa956a28a7d8bf431fed089ab83"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/cfg/variable.rs": {
+        "group": "upstream",
+        "nonblank_lines": 39,
+        "physical_lines": 47,
+        "sha256": "b4743438e4c8db2e98425c0ed5467d7084aa5966888b36b0dfae25dc39a96c30"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/constraining.rs": {
+        "group": "upstream",
+        "nonblank_lines": 414,
+        "physical_lines": 440,
+        "sha256": "5435526816f6bd7dbccee083ee74318eeece95174bca029e1990c9a29ed041b2"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/bytes_dfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 635,
+        "physical_lines": 703,
+        "sha256": "10842fe0d6ba241ef1e86e1570b351c3eedbca9708cbae7aaa7efbb3cffd9086"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/dfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 714,
+        "physical_lines": 785,
+        "sha256": "9ca8f82002656c3731dcf3576900f835964c11812820afcdfd13a6532d169835"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/epsilon_nfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 519,
+        "physical_lines": 564,
+        "sha256": "1cf95cde091db5c7c5b1f9ca38aeda91ecaf66f4bdcf325dfaf64c7c3442ce4c"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/finite_automaton.rs": {
+        "group": "upstream",
+        "nonblank_lines": 211,
+        "physical_lines": 235,
+        "sha256": "de254c705fd1c27dbd0ce20a7f9958fb4da89cdf7f51fbdac5d481df563dc5b9"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 6,
+        "physical_lines": 6,
+        "sha256": "f28af593dbd9aee14948ef6531e88c08d93d8bc3caa761981d451afc22edf823"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/nfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 230,
+        "physical_lines": 253,
+        "sha256": "01557c106c29ba1bcbc93b7e399b885e397ead4059416449e84c36ef8e656dd4"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/fa/state.rs": {
+        "group": "upstream",
+        "nonblank_lines": 38,
+        "physical_lines": 45,
+        "sha256": "fb69c4ddce6ff3432184c8426e021bcac3bdb704bf02c81e01378147a95d9377"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/input_symbol.rs": {
+        "group": "upstream",
+        "nonblank_lines": 61,
+        "physical_lines": 71,
+        "sha256": "1ab7abf45a31674d541bee92a55f0bb5f223377eccaf77acdef20cffe664ea06"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/language.rs": {
+        "group": "upstream",
+        "nonblank_lines": 23,
+        "physical_lines": 29,
+        "sha256": "f2f2a6bb69758ae1dd2d1d1a16d5ce17697b91618bef289623c2b5f299a81b89"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/lib.rs": {
+        "group": "upstream",
+        "nonblank_lines": 8,
+        "physical_lines": 9,
+        "sha256": "afd239aa0a7504831627d7fad410f62a887ea7fdb882ead81e46c0bf21c17b52"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/regex/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "e9d86e45d59c7968445b8170c874df3ee06e57447c1f2b0033f09f654ef5fa0c"
+      },
+      "vendor/EPIC-Decoding/rustformlang/src/regex/regex.rs": {
+        "group": "upstream",
+        "nonblank_lines": 63,
+        "physical_lines": 71,
+        "sha256": "7c1f29e20a23fd5eb2d707fc2372eb7a593e585e9738e734e446cd829a18faed"
+      },
+      "vendor/EPIC-Decoding/rustformlang/tests/cfg.rs": {
+        "group": "upstream",
+        "nonblank_lines": 780,
+        "physical_lines": 892,
+        "sha256": "d5d13fc34e7d9ceb4d3da7c2acd801654427fe6b2ed610030628ad26b0a82750"
+      },
+      "vendor/EPIC-Decoding/rustformlang/tests/constraining.rs": {
+        "group": "upstream",
+        "nonblank_lines": 185,
+        "physical_lines": 200,
+        "sha256": "ec820687d3c5dffc818004c341690da83b8424f561496e5f143798bdf96fd0c2"
+      },
+      "vendor/EPIC-Decoding/rustformlang/tests/dfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 248,
+        "physical_lines": 279,
+        "sha256": "3a45284fb96cf6874efabbacef234fb34d00cdfeff29ff233d35d7cdaf6a3e47"
+      },
+      "vendor/EPIC-Decoding/rustformlang/tests/epsilon_nfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 253,
+        "physical_lines": 295,
+        "sha256": "544d0bd8de8aeff22dd0529f8b7d9924db5c00d481d4510e229505315b7be1f3"
+      },
+      "vendor/EPIC-Decoding/rustformlang/tests/graph_parser.rs": {
+        "group": "upstream",
+        "nonblank_lines": 55,
+        "physical_lines": 59,
+        "sha256": "59e8bca498af66bfddb3e11e34825b0ed7b6d70eb09d6058b84d2316d0944aed"
+      },
+      "vendor/EPIC-Decoding/rustformlang/tests/regex.rs": {
+        "group": "upstream",
+        "nonblank_lines": 150,
+        "physical_lines": 166,
+        "sha256": "08058bfddf64cb806cf39555a9721d3fd9a6378083cb1e594e1d078d5cb0314b"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "eac90e7ea7b4bd0d224c0b158c621da068370ef5feedc729cdc17d2540e3adbc"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/cfg/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/cfg/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 70,
+        "physical_lines": 87,
+        "sha256": "6489e22a9f01be289e8e173d97a02be2205bf78f7956be64a21f3d2f6b247814"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/constraining/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/constraining/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 103,
+        "physical_lines": 130,
+        "sha256": "b0c909f6b6fd6e5c3eeb1328efb9b5610407b0c3ff81558c35c942de7abd4fec"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 0,
+        "physical_lines": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/bytes_dfa/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/bytes_dfa/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 101,
+        "physical_lines": 124,
+        "sha256": "486cfa96b52b2f18a9fdf9936edb16a5387844dae4ecd0c2a99edf8a0e1266ac"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/dfa/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/dfa/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 91,
+        "physical_lines": 112,
+        "sha256": "e6082cfb5db6ef22f1539946dc7346b8ef87f99eac72da428306bb45e9634c2f"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/epsilon_nfa/__init__.py": {
+        "group": "upstream",
+        "nonblank_lines": 1,
+        "physical_lines": 1,
+        "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/fa/epsilon_nfa/__init__.pyi": {
+        "group": "upstream",
+        "nonblank_lines": 82,
+        "physical_lines": 101,
+        "sha256": "2aa6f922823e1e6a3ba403561617d65025fad03df69033d86dca3f1a54f6f9c4"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/cfg.rs": {
+        "group": "upstream",
+        "nonblank_lines": 203,
+        "physical_lines": 230,
+        "sha256": "3e246dbc744734e53f0fa146fb3024afa12470534a1651de22c2fd8a43d3666c"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/constraining.rs": {
+        "group": "upstream",
+        "nonblank_lines": 155,
+        "physical_lines": 170,
+        "sha256": "91a70cf64b4434456b700abc9943fb67442ea819809585c16a700e28cc5ee7ce"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/fa/bytes_dfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 125,
+        "physical_lines": 150,
+        "sha256": "a8f7409287f66bee8bbdc73c65d1e1bbd6f4de8f85951642e219f90637e4ae35"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/fa/dfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 117,
+        "physical_lines": 140,
+        "sha256": "f961025a7c3a839c6b9f30a5f597f9497db779142ded09b8c579fc0dd8871c9e"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/fa/epsilon_nfa.rs": {
+        "group": "upstream",
+        "nonblank_lines": 127,
+        "physical_lines": 149,
+        "sha256": "e059f6866f6c45cdd8215ce433b1107b4bf23e21077f258e765c13c1200e0b4a"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/fa/mod.rs": {
+        "group": "upstream",
+        "nonblank_lines": 16,
+        "physical_lines": 18,
+        "sha256": "22372ed528c42abfe98083c97089ade732421140c271c8172b6086fb7aa002c0"
+      },
+      "vendor/EPIC-Decoding/rustformlang_bindings/src/lib.rs": {
+        "group": "upstream",
+        "nonblank_lines": 15,
+        "physical_lines": 17,
+        "sha256": "e02833391039ad3f1c4e9073fa1ee606bd2dcbddd065ffb35f25da897feec93a"
+      },
+      "vendor/EPIC-Decoding/scripts/run.sh": {
+        "group": "upstream",
+        "nonblank_lines": 19,
+        "physical_lines": 25,
+        "sha256": "2308d5af35d861e2e6e6d17f5caa3a25916e88766ab9508eba2b7621931061f3"
+      },
+      "vendor/EPIC-Decoding/scripts/run_ablation.py": {
+        "group": "upstream",
+        "nonblank_lines": 214,
+        "physical_lines": 238,
+        "sha256": "e952dfd65f3eefee8acb5c55757d249b1d95e105cb5466e50d81568dd04fb639"
+      },
+      "vendor/EPIC-Decoding/scripts/run_main.py": {
+        "group": "upstream",
+        "nonblank_lines": 238,
+        "physical_lines": 276,
+        "sha256": "b20530de7c5029697c38c7bc7d1e3d0697d4752f1a4a854fc4680cc007e80c07"
+      },
+      "vendor/EPIC-Decoding/tests/test_bindings.py": {
+        "group": "upstream",
+        "nonblank_lines": 29,
+        "physical_lines": 35,
+        "sha256": "541a37b34c9b3e65ed7b941690232638d701bd896bc87663386138d3be692a15"
+      },
+      "vendor/EPIC-Decoding/tests/test_cfgs/test_cpp.py": {
+        "group": "upstream",
+        "nonblank_lines": 734,
+        "physical_lines": 804,
+        "sha256": "9e9a200fe09d9beda76de1ee5f2bcbd7a38bcdc6d015e00dfd606b87d8a718b3"
+      },
+      "vendor/EPIC-Decoding/tests/test_cfgs/test_jsonmode.py": {
+        "group": "upstream",
+        "nonblank_lines": 534,
+        "physical_lines": 580,
+        "sha256": "efbd8f6ee9846bfbb5647efe5836958e90a10cf9bfdb7eb59c351f08b659f479"
+      },
+      "vendor/EPIC-Decoding/tests/test_cfgs/test_smiles.py": {
+        "group": "upstream",
+        "nonblank_lines": 128,
+        "physical_lines": 140,
+        "sha256": "7957156186d72f7e552848083469094a77af57409ce664b042a381411925ced6"
+      },
+      "vendor/EPIC-Decoding/tests/test_constrain_utils.py": {
+        "group": "upstream",
+        "nonblank_lines": 1750,
+        "physical_lines": 1830,
+        "sha256": "4d9e0a2dc6e604afad05d2214b63189593c61681b947f8bacaa16e7c4debfe41"
+      }
+    },
+    "own": {
+      "files": 356,
+      "nonblank_lines": 72020,
+      "physical_lines": 80752
+    },
+    "total": {
+      "files": 493,
+      "nonblank_lines": 102056,
+      "physical_lines": 113924
+    }
+  },
+  "count_scope": {
+    "build_files": [
+      "Makefile",
+      "crates/mwpc_parser/Cargo.toml",
+      "crates/mwpc_parser_py/Cargo.toml",
+      "crates/mwpc_parser_py/pyproject.toml",
+      "formal/lakefile.toml",
+      "paper/Makefile",
+      "pyproject.toml",
+      "rust-toolchain.toml"
+    ],
+    "excludes": [
+      "document prose/review source",
+      "other declarative configs",
+      "artifacts/data",
+      "installed dependencies/caches",
+      "compiled files"
+    ],
+    "extensions": [
+      ".lean",
+      ".py",
+      ".pyi",
+      ".rs",
+      ".sh"
+    ],
+    "own_roots": [
+      "src",
+      "crates",
+      "scripts",
+      "formal",
+      "tests"
+    ],
+    "physical_lines": "UTF-8 text splitlines(), including comments and blanks",
+    "upstream_root": "vendor/EPIC-Decoding"
+  },
+  "historical_source_commit": "a98ae8e09f2066157ebf6df05f8873b8600e00fb",
+  "own_line_reduction_fraction": 0.7435976817911631,
+  "supersedes_working_count": "Uses the same explicit build-file inventory before and after; final source file lists and SHA-256 are recorded.",
+  "upstream_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072"
+}

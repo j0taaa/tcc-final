@@ -18,9 +18,9 @@ from mwpc_exact.conflict_certificate import (
     restrict_choices,
 )
 from mwpc_exact.evaluation._serde import _integer, _mapping, _sequence, _string
-from mwpc_exact.evaluation.instance import _selection_input_from_dict, _selection_input_to_dict
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.reference.grammar import CnfGrammar
+from mwpc_exact.serialization import _selection_input_from_dict, _selection_input_to_dict
+from mwpc_exact.state import SelectionInput
 from mwpc_exact.types import SolveStatus
 
 

@@ -23,9 +23,9 @@ target/
 cache/
 /artifacts/
 model-cache/
-models/
+/models/
 checkpoints/
-datasets/
+/datasets/
 results/raw/
 results/processed/
 results/demo/

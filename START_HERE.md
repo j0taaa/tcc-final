@@ -1,62 +1,23 @@
-# Start here - AI agent handoff
+# Start here
 
-You are implementing a correctness-critical research artifact. A passing demo is insufficient unless the mathematical contract, exactness scope, and independent certificate checks remain valid.
-
-## First session
+Read `AGENTS.md`, then the current milestone in `TASKS.md`. The user removed
+all previous tests to start a new suite; do not silently restore them.
 
 ```bash
-git submodule update --init --recursive
 make bootstrap
-source .venv/bin/activate
 make check
-```
-
-Build the Rust binding only when the current task depends on it:
-
-```bash
 make bootstrap-rust-parser
-make test-rust-parser
+make build-rust
+make check-formal LAKE="$HOME/.elan/bin/lake"
+make article-results-check
 ```
 
-For the complete scientific gate, explicitly install the pinned toolchain and
-include formal verification:
+The checks compile/lint, verify Lean declarations and recheck recorded artifacts.
+They are not a replacement regression suite. `make test` explicitly fails until
+new tests are implemented. EPIC is now a versioned production snapshot of the
+same pinned upstream commit, with its test-only files/sections removed.
+`UPSTREAM.md` documents the original and retained SHA-256 inventories.
 
-```bash
-elan toolchain install leanprover/lean4:v4.34.0
-make check-project
-```
-
-`formal/README.md` defines the kernel coverage and the independent Python
-correspondence boundary. Missing Lean is a failing formal gate, never a skip.
-
-## Read in this order
-
-1. `AGENTS.md` in full;
-2. `UPSTREAM.md`;
-3. `TASKS.md`, beginning with the first incomplete required task;
-4. the short supersession index in `IMPLEMENTATION_PLAN.md` (consult its
-   archived legacy plan only for historical rationale);
-5. the affected source, ADRs, tests, and evidence files.
-
-`TASKS.md` is the sole source of the current milestone. This file intentionally does not repeat a task number, so it cannot become stale after a gate closes.
-
-## Non-negotiable rules
-
-- Keep `vendor/EPIC-Decoding` read-only and integrate through adapters.
-- Preserve serial and EPIC baseline behavior.
-- Never return or report `OPTIMAL` without a reconstructible witness and independently recomputable objective.
-- Never call top-`K` or explicit support globally exact.
-- Never treat `TIMEOUT` as `INFEASIBLE_ON_SUPPORT`.
-- Keep represented-support validation distinct from EOS/PAD-policy validation.
-- Any disagreement with an exhaustive oracle blocks later optimization and model integration.
-- Preserve deterministic seeds and save every discovered counterexample as a regression fixture.
-- Do not enter measured values in the article until their raw artifacts, configuration, generation script, and commit are versioned.
-
-When blocked, record:
-
-```text
-BLOCKED:
-Cause:
-Evidence:
-Smallest next experiment:
-```
+Use `REPRODUCING.md` for current commands and historical-source recovery. Keep
+scientific objectives, support scope, original probabilities, status separation
+and independent certificate validation intact. Do not replace negative results.

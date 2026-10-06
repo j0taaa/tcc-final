@@ -8,8 +8,9 @@ import json
 from pathlib import Path
 
 from mwpc_exact.budget_proof import fraction_data
-from mwpc_exact.conflict_proof import verify_conflict_proof
-from mwpc_exact.evaluation.instance import BenchmarkInstance
+from mwpc_exact.conflict_proof import read_state, verify_conflict_proof
+from mwpc_exact.reference.grammar import CnfGrammar
+from mwpc_exact.serialization import _selection_input_from_dict
 
 
 def _read(path: Path) -> object:
@@ -19,7 +20,9 @@ def _read(path: Path) -> object:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, help="saved BenchmarkInstance JSON or JSON.gz")
+    parser.add_argument(
+        "--input", type=Path, help="original token state JSON/JSON.gz (or archived benchmark input)"
+    )
     parser.add_argument("--budget", type=int, default=2)
     parser.add_argument("--proof", type=Path, help="new portable certificate output")
     parser.add_argument("--verify", type=Path, help="certificate to verify without optimization")
@@ -32,7 +35,16 @@ def main() -> None:
         from mwpc_exact.conflict_commit import ConflictCommitSolver
         from mwpc_exact.conflict_proof import conflict_proof_data
 
-        state = BenchmarkInstance.from_dict(_read(args.input)).selection_input
+        data = _read(args.input)
+        if not isinstance(data, dict):
+            raise ValueError("input must be an original-token state object")
+        state = (
+            read_state(data)
+            if "selection" in data
+            else _selection_input_from_dict(
+                data["selection_input"], CnfGrammar.from_dict(data["grammar"]["cnf"])
+            )
+        )
         result = ConflictCommitSolver().solve(state, args.budget)
         if result.certificate is None:
             raise RuntimeError(f"unresolved solve: {result.status}")

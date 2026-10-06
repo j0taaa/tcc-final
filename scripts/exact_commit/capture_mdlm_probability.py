@@ -7,7 +7,7 @@ import json
 import time
 from pathlib import Path
 
-from scripts.exact_commit.run_conflict_real import sha, system_data, write
+from scripts.exact_commit.io_utils import sha, system_data, write
 
 from mwpc_exact.experiments.metadata import collect_system_metadata
 

@@ -12,8 +12,8 @@ from collections.abc import Iterable
 
 from mwpc_exact.eos_policy import EOSMode
 from mwpc_exact.evaluation._serde import _integer, _mapping, _sequence, _string
-from mwpc_exact.evaluation.selection import SelectionInput
 from mwpc_exact.reference.grammar import CnfGrammar
+from mwpc_exact.state import SelectionInput
 
 
 def tokenizations(

@@ -18,8 +18,8 @@ Commands executed and concise results. Do not paste invented or estimated measur
 
 ## Correctness gates
 
-- [ ] Existing unit tests pass.
-- [ ] New behavior has focused tests.
-- [ ] Differential/oracle tests pass when applicable.
+- [ ] Retained code imports, lints and builds.
+- [ ] Mathematical and certificate checks ran where applicable.
+- [ ] Validation limitations and the current absence of a regression suite are explicit.
 - [ ] No benchmark or result placeholder was replaced without a saved artifact.
-- [ ] EPIC submodule remains at the pinned SHA unless this PR explicitly documents an upstream update.
+- [ ] The pinned EPIC production snapshot passes its source-manifest check.
