@@ -21,6 +21,17 @@
     "informational_prefixes": ["i_"],
     "selection": "all files satisfying the declared byte bound, before observing outcomes"
   },
+  "fresh_model_demonstration": {
+    "slots": [4, 8, 16],
+    "top_k": 32,
+    "torch_cpu_threads": 4,
+    "prefix_suffix": [
+      ["{\"params\":", "}"],
+      ["{\"payload\":{\"items\":[", "]}}"],
+      ["{\"message\":\"", "\"}"]
+    ],
+    "scope": "exact_on_support; original discarded probability explicit; syntax demonstration only"
+  },
   "replay": {
     "capture": "m31_probability_v1",
     "case_count": 18,

@@ -26,6 +26,7 @@ from mwpc_exact.conflict_proof import read_state, state_data
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.mass_certificate import ProbabilityInput
 from mwpc_exact.reference.byte_grammars import _SourceGrammarBuilder
+from mwpc_exact.reference.json_grammar import json_source_grammar
 from mwpc_exact.reference.normalization import normalize_to_cnf
 from mwpc_exact.state import SelectionInput
 from mwpc_exact.support import SupportPolicy, build_per_position_support
@@ -37,6 +38,8 @@ CONFIG = ROOT / "configs/experiments/m34_cfg_posterior_v1.json"
 
 
 def source_grammar(kind):
+    if kind == "json":
+        return json_source_grammar()
     if kind == "dyck":
         b = _SourceGrammarBuilder(("S", "N"), start="S")
         b.rule("S", "N", "S")
@@ -176,7 +179,8 @@ def worker(queue, data, kind, method, grid):
                 if stack:
                     raise ValueError("unfinished sample")
             else:
-                if not isinstance(json.loads(word), list):
+                decoded = json.loads(word)
+                if kind != "json" and not isinstance(decoded, list):
                     raise ValueError("invalid recursive-array sample")
         record["max_rss_kib"] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     except (CompilationLimit, StackLimit) as error:

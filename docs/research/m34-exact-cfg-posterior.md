@@ -149,3 +149,36 @@ implemented by a close antecedent, or offers no defensible useful distinction,
 continue the search. Favorable measurements cannot manufacture novelty. The
 representation theorem, not a chosen win rate, is the candidate mathematical
 reason to use this approach for recursive grammars.
+
+## Additional direction rejected by primary literature
+
+After the first grid we investigated a polynomial all-different MAP backend
+instead of generic factor elimination. DiffuRank already formulates dLLM
+permutation generation as Hungarian assignment (2026,
+https://arxiv.org/abs/2602.12528, section 4.3.1). Merely adding that algorithm
+would not fill a new dLLM capability gap. No assignment backend is added or
+described as an invention. FactorDLM's trip-planning difficulty also includes
+connectivity and date windows; plain assignment does not solve that problem.
+
+## Fresh model application protocol (fixed before its forwards)
+
+Supplement the archived predictions with all nine combinations of 4, 8 and 16
+free original token slots and these fixed surrounding byte strings:
+
+| Input prefix | Input suffix |
+| --- | --- |
+| `{"params":` | `}` |
+| `{"payload":{"items":[` | `]}}` |
+| `{"message":"` | `"}` |
+
+Use the same pinned official CPU MDLM/GPT-2 artifacts as M31, its audited CPU
+kernel adapter and full-row F64 softmax excluding MASK. Retain top 32 original
+tokens per free position, original probabilities normalized over the *entire*
+non-mask vocabulary; fixed surrounding tokens have probability one. No extra
+answer/grammar tokens are injected. The declared constraint is the complete
+recursive JSON syntax grammar, not a prescribed completion. State exactness
+on this support and the original discarded mass explicitly. This is a syntax
+application demonstration, not a semantic task/quality benchmark. Every
+refusal, zero mass and timeout stays in the record. Save full logits locally,
+compact original inputs and lineage in the audit archive, and independently
+validate every returned JSON sample. Limits remain those of the frozen grid.
