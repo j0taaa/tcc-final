@@ -81,7 +81,11 @@ Do not expose a bare tuple whose fields are easy to confuse.
 - Do not commit model weights, Hugging Face caches, private datasets, credentials, tokens, large traces, or machine-specific absolute paths.
 - Future tests must not require network access; new GPU/model runs are opt-in.
 - Lock dependency changes. Add a dependency only when the current task requires it and document why.
-- Do not change branches, rewrite history, force-push, or push remotely unless the user explicitly requests it.
+- The user requires local/GitHub synchronization (2026-10-06). Commit and push
+  completed repository changes to the configured upstream before reporting
+  completion. This is standing authorization for normal fast-forward pushes;
+  report any synchronization failure explicitly.
+- Do not change branches, rewrite history or force-push unless the user explicitly requests it.
 - The user-authorized reset removed owned/upstream tests; preserve the baseline production source and its manifest.
 
 ## Coding conventions
