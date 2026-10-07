@@ -18,7 +18,7 @@ from pathlib import Path
 from random import Random
 from time import perf_counter
 
-from scripts.exact_commit.cfg_stack_control import StackLimit, compile_stack_plan
+from scripts.exact_commit.cfg_stack_control import StackLimit, StackPlan, compile_stack_plan
 from scripts.exact_commit.probability_audit_controls import compile_array_plan
 
 from mwpc_exact.cfg_posterior import CompilationLimit, compile_cfg_sampler
@@ -112,15 +112,30 @@ def worker(queue, data, kind, method, grid):
             )
             cells, arcs = plan.cells, plan.transitions
         else:
-            plan = compile_array_plan(
+            array = compile_array_plan(
                 data.state.tokenizer_adapter.emissions,
                 data.state.support.rows,
                 one_child=kind == "recursive_one_child_arrays",
                 max_state_cells=grid["compiler_cell_limit"],
             )
-            cells = plan.state_cells
-            arcs = sum(len(arcs) for layer in plan.edges for arcs in layer.values())
+            layers = tuple(
+                {
+                    state: tuple((row.index(token), end) for token, end in choices)
+                    for state, choices in layer.items()
+                }
+                for row, layer in zip(data.state.support.rows, array.edges, strict=True)
+            )
+            cells = array.state_cells
+            arcs = sum(len(choices) for layer in layers for choices in layer.values())
+            if arcs > grid["compiler_alternative_limit"]:
+                raise StackLimit("array transition budget")
+            plan = StackPlan(data.state.support.rows, layers, cells, arcs, (0, 0), (0, 3))
         record.update(compilation_seconds=perf_counter() - started, cells=cells, alternatives=arcs)
+        record["numeric_engine"] = "exact_row_scaled_integers"
+        if method == "cfg":
+            record["compiled_grammar_sha256"] = hashlib.sha256(
+                json.dumps(plan.grammar.to_dict(), sort_keys=True).encode()
+            ).hexdigest()
         timings = []
         for repetition in range(grid["timing_repeats"] + 1):
             started = perf_counter()
@@ -134,7 +149,7 @@ def worker(queue, data, kind, method, grid):
                 }
                 sample_start = perf_counter()
                 sample = posterior.sample(Random(repetition)) if mass else ()
-            elif kind == "dyck":
+            else:
                 posterior = plan.evaluate(data.probabilities)
                 mass = posterior.valid_mass
                 marginal = [[str(x) for x in row] for row in posterior.marginals]
@@ -144,16 +159,6 @@ def worker(queue, data, kind, method, grid):
                 }
                 sample_start = perf_counter()
                 sample = posterior.sample(Random(repetition)) if mass else ()
-            else:
-                mass, count = plan.forward(data.probabilities)
-                plan.backward(data.probabilities)
-                detail = {
-                    "mass_backward_seconds": perf_counter() - started,
-                    "positive_token_paths": count,
-                }
-                marginal = None  # original M31 control interface; do not invent timing
-                sample_start = perf_counter()
-                sample = ()
             detail.update(
                 query_seconds=sample_start - started, sample_seconds=perf_counter() - sample_start
             )
@@ -216,7 +221,10 @@ def run_job(data, kind, method, grid):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--mode", choices=("scaling", "replay"), required=True)
+    parser.add_argument("--mode", choices=("scaling", "replay", "json_replay"), required=True)
+    parser.add_argument(
+        "--replay-from", type=Path, help="Reuse every original saved input in this run"
+    )
     args = parser.parse_args()
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit producing code/config before measurements")
@@ -228,7 +236,14 @@ def main():
         "config_sha256": hashlib.sha256(CONFIG.read_bytes()).hexdigest(),
         "python": platform.python_version(),
         "platform": platform.platform(),
-        "cpu": platform.processor(),
+        "cpu": next(
+            (
+                line.split(":", 1)[1].strip()
+                for line in Path("/proc/cpuinfo").read_text().splitlines()
+                if line.startswith("model name")
+            ),
+            platform.processor(),
+        ),
         "memory_scope": "fresh 2-GiB worker, including imports",
         "distribution_scope": "frozen mean-field; exact on original represented tokens",
         "model_id": None if args.mode == "scaling" else config["replay"]["model_id"],
@@ -237,13 +252,40 @@ def main():
         if args.mode == "scaling"
         else config["replay"]["tokenizer_revision"],
         "sampling_seeds": [0, 1, 2, 3],
-        "saved_model_prediction_seed": None if args.mode == "scaling" else 310000,
+        "saved_model_prediction_seed": None
+        if args.mode == "scaling"
+        else (config["seed"] if args.mode == "json_replay" else 310000),
     }
     args.output.mkdir(parents=True, exist_ok=False)
     (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     (args.output / "config.json").write_bytes(CONFIG.read_bytes())
     cases = []
-    if args.mode == "scaling":
+    if args.replay_from:
+        previous = [
+            json.loads(line) for line in (args.replay_from / "rows.jsonl").read_text().splitlines()
+        ]
+        expected = {"scaling": 28, "replay": 18, "json_replay": 9}[args.mode]
+        if len(previous) != expected:
+            raise ValueError("incomplete saved-input cohort")
+        for row in previous:
+            name = row["case"]
+            path = args.replay_from / f"{name}-input.json.gz"
+            archived = json.load(gzip.open(path, "rt"))
+            data = ProbabilityInput(
+                read_state(archived["input"]),
+                tuple(tuple(Fraction(*p) for p in r) for r in archived["probabilities"]),
+            )
+            cases.append(
+                (name, row.get("kind", "json"), data, hashlib.sha256(path.read_bytes()).hexdigest())
+            )
+        metadata["original_run_commit"] = previous[0]["git_commit"]
+        metadata["original_rows_sha256"] = hashlib.sha256(
+            (args.replay_from / "rows.jsonl").read_bytes()
+        ).hexdigest()
+        (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
+    elif args.mode == "json_replay":
+        raise ValueError("json_replay requires --replay-from; no replacement forwards allowed")
+    elif args.mode == "scaling":
         grid = config["scaling"]
         for slots in grid["slots"]:
             for distribution in grid["distributions"]:
@@ -284,11 +326,12 @@ def main():
             payload = json.dumps(raw, sort_keys=True, separators=(",", ":")).encode()
             with gzip.open(args.output / f"{name}-input.json.gz", "wb") as stream:
                 stream.write(payload)
-            pair = [run_job(data, kind, method, config["scaling"]) for method in ("cfg", "stack")]
-            if all("valid_mass" in result for result in pair):
+            methods = ("cfg",) if args.mode == "json_replay" else ("cfg", "stack")
+            pair = [run_job(data, kind, method, config["scaling"]) for method in methods]
+            if len(pair) == 2 and all("valid_mass" in result for result in pair):
                 if pair[0]["valid_mass"] != pair[1]["valid_mass"]:
                     raise ValueError(f"independent mass disagreement: {name}")
-                if kind == "dyck" and pair[0]["marginals"] != pair[1]["marginals"]:
+                if pair[0]["marginals"] != pair[1]["marginals"]:
                     raise ValueError(f"independent marginal disagreement: {name}")
             if "-uniform-all_masked" in name and "valid_mass" in pair[0]:
                 n = len(data.state.canvas) // 2

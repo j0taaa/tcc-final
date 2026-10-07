@@ -135,7 +135,7 @@ def main():
                     policy=SupportPolicy(
                         kind=SupportKind.EXPLICIT,
                         vocabulary_size=adapter.vocabulary_size,
-                        pruning_description=f"original top-{profile['top_k']}; original probabilities",
+                        pruning_description=f"original top-{profile['top_k']}; unrenormalized",
                     ),
                     explicit_support=rows,
                 )

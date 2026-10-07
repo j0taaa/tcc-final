@@ -7,6 +7,17 @@ import Std
 
 namespace MWPC
 
+/- A complete path consumes the same row set: integer row scaling therefore
+   factors into one constant product. Input rationalization and forest/path
+   bijection remain explicit written obligations, not Lean source refinement. -/
+theorem row_product_scaling (rows : List (Nat × Nat)) :
+    (rows.map (fun row => row.1 * row.2)).prod =
+      (rows.map Prod.fst).prod * (rows.map Prod.snd).prod := by
+  induction rows with
+  | nil => simp
+  | cons row rows ih =>
+      simp [ih, Nat.mul_assoc, Nat.mul_comm, Nat.mul_left_comm]
+
 def openingStacks : Nat → List (List Bool)
   | 0 => [[]]
   | n + 1 => (openingStacks n).map (false :: ·) ++

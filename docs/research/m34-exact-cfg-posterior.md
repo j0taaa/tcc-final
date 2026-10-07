@@ -182,3 +182,38 @@ application demonstration, not a semantic task/quality benchmark. Every
 refusal, zero mass and timeout stays in the record. Save full logits locally,
 compact original inputs and lineage in the audit archive, and independently
 validate every returned JSON sample. Limits remain those of the frozen grid.
+
+## Exact implementation refinement after the initial complete audit
+
+Retain every original result. The rational implementation finishes six fresh
+JSON cells and fails three 16-slot cells by explicit budgets/deadline. This
+motivates two semantics-preserving refinements, not case replacement.
+
+**Integer unaries.** Choose a common positive denominator `d_i` for each
+original row and set `a_i(t)=d_i q_i(t)`, without renormalizing retained mass.
+Every complete graph path chooses one closure per row; therefore its integer
+weight is exactly `D q(y)`, with the same `D=product_i d_i` for *all* paths.
+The integer inside root is `N=D Z`. Outside closure totals divided by `N`
+give the same conditional marginals, and integer-weight tree sampling gives
+`D q(y)/N=q(y)/Z`. This remains true with aliases, fixed slots, zero unaries
+and discarded original mass. The optimization would be invalid for paths that
+consume different row sets. The independent stack controller receives the same
+integer scaling benefit; comparing against a needlessly rational controller
+cannot substantiate a speed claim.
+
+**Binarize before nullable expansion.** Replace each long source body by its
+own private right-associated chain before eliminating nullable symbols. Each
+source tree has one forced expansion through that chain and each transformed
+tree collapses to one source tree. Language and multiplicity are preserved.
+Nullable expansion now considers bodies of at most two symbols, avoiding the
+exponential optional-subset expansion of a long body. Terminal isolation/unit
+elimination remain the established normalizer's operations. Check the original
+input against the original normalized source before applying this internal
+encoding; do not silently alter the declared constraint. All external syntax
+and original-token probability oracles must continue to agree.
+
+The follow-up replays the exact saved inputs of all 28 scaling cells, 18 M31
+canvases and nine fresh model cells. No model forward, logits, support, answer
+or case is replaced, and previous outcomes remain attributed to their producing
+commits. The refinements are classical exact arithmetic/grammar transformations,
+not a claim to invent their principles.

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction
-from math import lcm
+from math import lcm, prod
 from random import Random
 from time import monotonic, perf_counter
 
@@ -31,8 +31,8 @@ def step(stack: Stack, byte: int) -> Stack | None:
 @dataclass(frozen=True)
 class StackPosterior:
     plan: StackPlan
-    probabilities: tuple[tuple[Fraction, ...], ...]
-    suffix: tuple[dict[Stack, Fraction], ...]
+    weights: tuple[tuple[int, ...], ...]
+    suffix: tuple[dict[Stack, int], ...]
     valid_mass: Fraction
     marginals: tuple[tuple[Fraction, ...], ...]
     mass_seconds: float
@@ -41,16 +41,11 @@ class StackPosterior:
     def sample(self, rng: Random) -> tuple[int, ...]:
         if not self.valid_mass:
             raise ValueError("zero valid mass")
-        stack: Stack = ()
+        stack = self.plan.initial
         output = []
         for i, layer in enumerate(self.plan.layers):
             arcs = layer[stack]
-            weights = [
-                self.probabilities[i][j] * self.suffix[i + 1].get(end, Fraction())
-                for j, end in arcs
-            ]
-            scale = lcm(*(w.denominator for w in weights))
-            integers = [w.numerator * (scale // w.denominator) for w in weights]
+            integers = [self.weights[i][j] * self.suffix[i + 1].get(end, 0) for j, end in arcs]
             draw = rng.randrange(sum(integers))
             for (j, end), integer in zip(arcs, integers, strict=True):
                 if draw < integer:
@@ -67,6 +62,8 @@ class StackPlan:
     layers: tuple[dict[Stack, tuple[tuple[int, Stack], ...]], ...]
     cells: int
     transitions: int
+    initial: Stack = ()
+    final: Stack = ()
 
     def evaluate(self, probabilities: tuple[tuple[Fraction, ...], ...]) -> StackPosterior:
         if len(probabilities) != len(self.rows) or any(
@@ -75,38 +72,42 @@ class StackPlan:
         ):
             raise ValueError("invalid original probability rows")
         started = perf_counter()
-        suffix: list[dict[Stack, Fraction]] = [{} for _ in range(len(self.rows) + 1)]
-        suffix[-1][()] = Fraction(1)
+        denominators = [lcm(*(p.denominator for p in row)) for row in probabilities]
+        weights = tuple(
+            tuple(p.numerator * (d // p.denominator) for p in row)
+            for row, d in zip(probabilities, denominators, strict=True)
+        )
+        suffix: list[dict[Stack, int]] = [{} for _ in range(len(self.rows) + 1)]
+        suffix[-1][self.final] = 1
         for i in reversed(range(len(self.rows))):
             suffix[i] = {
                 state: sum(
-                    (probabilities[i][j] * suffix[i + 1].get(end, Fraction()) for j, end in arcs),
-                    Fraction(),
+                    (weights[i][j] * suffix[i + 1].get(end, 0) for j, end in arcs),
                 )
                 for state, arcs in self.layers[i].items()
             }
-        total = suffix[0].get((), Fraction())
+        total = suffix[0].get(self.initial, 0)
         mass_seconds = perf_counter() - started
         started = perf_counter()
         marginal = []
-        prefix = {(): Fraction(1)}
+        prefix = {self.initial: 1}
         for i, layer in enumerate(self.layers):
-            masses = [Fraction()] * len(self.rows[i])
-            next_prefix: dict[Stack, Fraction] = {}
+            masses = [0] * len(self.rows[i])
+            next_prefix: dict[Stack, int] = {}
             for state, mass in prefix.items():
                 for j, end in layer[state]:
-                    contribution = mass * probabilities[i][j]
-                    next_prefix[end] = next_prefix.get(end, Fraction()) + contribution
-                    masses[j] += contribution * suffix[i + 1].get(end, Fraction())
-            marginal.append(tuple(m / total if total else Fraction() for m in masses))
+                    contribution = mass * weights[i][j]
+                    next_prefix[end] = next_prefix.get(end, 0) + contribution
+                    masses[j] += contribution * suffix[i + 1].get(end, 0)
+            marginal.append(tuple(Fraction(m, total) if total else Fraction() for m in masses))
             prefix = next_prefix
-        if prefix.get((), Fraction()) != total:
+        if prefix.get(self.final, 0) != total:
             raise RuntimeError("forward/backward disagreement")
         return StackPosterior(
             self,
-            probabilities,
+            weights,
             tuple(suffix),
-            total,
+            Fraction(total, prod(denominators)),
             tuple(marginal),
             mass_seconds,
             perf_counter() - started,

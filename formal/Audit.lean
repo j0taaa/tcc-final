@@ -36,6 +36,7 @@ import MWPC
 #print axioms MWPC.grammar_yield_alphabet
 #print axioms MWPC.alphabet_support_transport
 #print axioms MWPC.opening_stacks_count
+#print axioms MWPC.row_product_scaling
 #print axioms MWPC.opening_stacks_distinct
 #print axioms MWPC.fooling_routes_injective
 #print axioms MWPC.fooling_state_count

@@ -64,6 +64,15 @@ by a search, theorem, compilation or demonstration alone.
   finite fooling-set/state bound; Python/normalizer/model source refinement and
   a fully mechanized sampling law are not claimed. New controls/protocol code
   is not practical-benefit evidence; T3402 remains open.
+- [ ] T3401a: Use exactly scaled integer unaries and binarize before nullable
+  expansion; give the independent controller the same numerical benefit.
+  **Acceptance:** common-denominator/path and private-binarization proofs,
+  unchanged masses/marginals/sampling law against independent oracles; fixed
+  original model inputs reused before/after, all earlier failures retained.
+  **Evidence:** pending. Initial rational comparisons and all nine fresh
+  captures completed at recorded commits. Fresh JSON returns six exact results,
+  two work limits and one external deadline. Improve computation without
+  changing the inputs, grammar language or declared success criteria.
 - [ ] T3402: Evaluate every predeclared comparison/application; keep failures
   and losing cases. Include genuine saved/fresh dLLM predictions, external
   structured inputs and an independently implemented exact stack controller.

@@ -66,7 +66,7 @@ def inputs(source, emissions, rows, probabilities=None, canvas=None):
     return ProbabilityInput(state, tuple(map(tuple, probabilities)))
 
 
-def oracle(data):
+def oracle(data, recognizes=valid_dyck):
     """Enumerate original tokens and recognize with a stack, never project parsing."""
     weights = [
         dict(zip(row, p, strict=True))
@@ -75,7 +75,7 @@ def oracle(data):
     accepted = {}
     for path in itertools.product(*data.state.support.rows):
         emissions = [data.state.tokenizer_adapter.emissions[t] for t in path]
-        if any(e is None for e in emissions) or not valid_dyck(b"".join(emissions)):
+        if any(e is None for e in emissions) or not recognizes(b"".join(emissions)):
             continue
         weight = F(1)
         for i, token in enumerate(path):
@@ -114,6 +114,44 @@ class EnumeratedRandom(Random):
 
 
 class CfgPosteriorOracleTests(unittest.TestCase):
+    def test_json_weighted_original_token_products(self):
+        def recognizes(word):
+            try:
+                json.loads(word)
+                return True
+            except (ValueError, UnicodeError):
+                return False
+
+        source, rng = json_source_grammar(), Random(20261007)
+        words = (
+            b"{",
+            b"}",
+            b"[",
+            b"]",
+            b"null",
+            b"0",
+            b"00",
+            b'"a"',
+            b'"a":',
+            b"true",
+            b",",
+            b" ",
+            b"[]",
+            b"{}",
+            b"null",
+            None,
+        )
+        for slots in (1, 2, 3):
+            for _ in range(20):
+                rows = tuple(tuple(sorted(rng.sample(range(len(words)), 4))) for _ in range(slots))
+                raw = [[rng.randrange(6) for _ in row] for row in rows]
+                probabilities = tuple(tuple(F(w, sum(row) + 3) for w in row) for row in raw)
+                data = inputs(source, words, rows, probabilities)
+                posterior = compile_cfg_sampler(source, data.state).evaluate(data)
+                self.assertEqual(
+                    (posterior.valid_mass, posterior.marginals), oracle(data, recognizes)[:2]
+                )
+
     def test_independent_stack_control_against_token_products(self):
         rng = Random(20261006)
         for slots in (2, 4, 6):

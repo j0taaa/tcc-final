@@ -13,14 +13,20 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from enum import StrEnum
 from fractions import Fraction
-from math import isfinite, lcm
+from math import isfinite, lcm, prod
 from random import Random
 from time import monotonic, perf_counter
 
 from mwpc_exact.eos_policy import EOSMode
 from mwpc_exact.mass_certificate import ProbabilityInput
+from mwpc_exact.reference.grammar import CnfGrammar, Nonterminal
 from mwpc_exact.reference.ll1 import UnsupportedGrammar, check_ll1
-from mwpc_exact.reference.normalization import SourceGrammar, normalize_to_cnf
+from mwpc_exact.reference.normalization import (
+    NonterminalRef,
+    SourceGrammar,
+    SourceProduction,
+    normalize_to_cnf,
+)
 from mwpc_exact.state import SelectionInput
 from mwpc_exact.types import ExactnessScope
 
@@ -43,11 +49,9 @@ class _Term:
     choice: Choice | None = None
 
 
-def _categorical(weights: tuple[Fraction, ...], rng: Random) -> int:
-    scale = lcm(*(w.denominator for w in weights))
-    integers = tuple(w.numerator * (scale // w.denominator) for w in weights)
-    draw = rng.randrange(sum(integers))
-    for i, weight in enumerate(integers):
+def _categorical(weights: tuple[int, ...], rng: Random) -> int:
+    draw = rng.randrange(sum(weights))
+    for i, weight in enumerate(weights):
         if draw < weight:
             return i
         draw -= weight
@@ -62,7 +66,8 @@ class CfgPosterior:
     valid_mass: Fraction
     marginals: tuple[tuple[Fraction, ...], ...]
     _plan: CfgSampler
-    _inside: tuple[Fraction, ...]
+    _inside: tuple[int, ...]
+    _weights: tuple[tuple[int, ...], ...]
     inside_seconds: float
     marginal_seconds: float
 
@@ -93,7 +98,7 @@ class CfgPosterior:
         while pending:
             node = pending.pop()
             terms = self._plan.terms[node]
-            values = tuple(self._plan.term_mass(t, self.inputs, self._inside) for t in terms)
+            values = tuple(self._plan.term_mass(t, self._weights, self._inside) for t in terms)
             term = terms[_categorical(values, rng)]
             if term.choice is not None:
                 position, index = term.choice
@@ -111,6 +116,7 @@ class CfgSampler:
     """Immutable arithmetic forest reusable under arbitrary unary reweighting."""
 
     state: SelectionInput
+    grammar: CnfGrammar
     terms: tuple[tuple[_Term, ...], ...]
     order: tuple[int, ...]
     root: int | None
@@ -122,14 +128,14 @@ class CfgSampler:
         return sum(map(len, self.terms))
 
     @staticmethod
-    def term_mass(term: _Term, inputs: ProbabilityInput, inside: Sequence[Fraction]) -> Fraction:
+    def term_mass(term: _Term, weights: tuple[tuple[int, ...], ...], inside: Sequence[int]) -> int:
         if term.choice is not None:
             position, index = term.choice
-            return inputs.probabilities[position][index]
+            return weights[position][index]
         if term.children:
             left, right = term.children
             return inside[left] * inside[right]
-        return Fraction(1)
+        return 1
 
     def evaluate(self, inputs: ProbabilityInput) -> CfgPosterior:
         """Inside and outside evaluation; no compilation or feasibility oracle."""
@@ -143,35 +149,48 @@ class CfgSampler:
         ):
             raise ValueError("reweighting changed the compiled constraint/token support")
         started = perf_counter()
-        inside = [Fraction()] * len(self.terms)
+        scales = tuple(lcm(*(p.denominator for p in row)) for row in inputs.probabilities)
+        weights = tuple(
+            tuple(p.numerator * (scale // p.denominator) for p in row)
+            for row, scale in zip(inputs.probabilities, scales, strict=True)
+        )
+        denominator = prod(scales)
+        inside = [0] * len(self.terms)
         for node in self.order:
-            inside[node] = sum(
-                (self.term_mass(t, inputs, inside) for t in self.terms[node]), Fraction()
-            )
+            inside[node] = sum(self.term_mass(t, weights, inside) for t in self.terms[node])
         values = tuple(inside)
-        total = values[self.root] if self.root is not None else Fraction()
+        total = values[self.root] if self.root is not None else 0
         inside_seconds = perf_counter() - started
         started = perf_counter()
-        outside = [Fraction()] * len(self.terms)
-        masses = [[Fraction()] * len(row) for row in state.support.rows]
+        outside = [0] * len(self.terms)
+        masses = [[0] * len(row) for row in state.support.rows]
         if self.root is not None:
-            outside[self.root] = Fraction(1)
+            outside[self.root] = 1
         for node in reversed(self.order):
             if not outside[node]:
                 continue
             for term in self.terms[node]:
                 if term.choice is not None:
                     position, index = term.choice
-                    masses[position][index] += outside[node] * self.term_mass(term, inputs, values)
+                    masses[position][index] += outside[node] * self.term_mass(term, weights, values)
                 elif term.children:
                     left, right = term.children
                     outside[left] += outside[node] * values[right]
                     outside[right] += outside[node] * values[left]
-        if total > 1 or any(sum(row) != total for row in masses):
+        if total > denominator or any(sum(row) != total for row in masses):
             raise RuntimeError("probability/physical-slot invariant failed")
-        marginals = tuple(tuple(v / total if total else Fraction() for v in row) for row in masses)
+        marginals = tuple(
+            tuple(Fraction(v, total) if total else Fraction() for v in row) for row in masses
+        )
         return CfgPosterior(
-            inputs, total, marginals, self, values, inside_seconds, perf_counter() - started
+            inputs,
+            Fraction(total, denominator),
+            marginals,
+            self,
+            values,
+            weights,
+            inside_seconds,
+            perf_counter() - started,
         )
 
 
@@ -211,7 +230,7 @@ def compile_cfg_sampler(
         raise ValueError("input grammar does not match the checked source normalization")
     if state.eos_policy.mode is not EOSMode.ABSENT:
         raise UnsupportedGrammar("CFG posterior currently supports only ABSENT EOS")
-    grammar = state.grammar
+    grammar = normalize_to_cnf(_binarize_source(source)).grammar
     labels = {t.label: t.symbol_id for t in grammar.terminals}
     edges: list[tuple[int, int, int, Choice | None]] = []
     boundary = 0
@@ -286,4 +305,31 @@ def compile_cfg_sampler(
         ends[head, end].append((start, node))
         order.append(node)
     root = ids.get((grammar.start_nonterminal_id, 0, boundary))
-    return CfgSampler(state, tuple(map(tuple, terms)), tuple(order), root, vertices, len(edges))
+    return CfgSampler(
+        state, grammar, tuple(map(tuple, terms)), tuple(order), root, vertices, len(edges)
+    )
+
+
+def _binarize_source(source: SourceGrammar) -> SourceGrammar:
+    """Private forced chains: preserve trees before expanding nullable bodies."""
+    nonterminals = list(source.nonterminals)
+    names = {n.name for n in nonterminals}
+    next_head = max(n.symbol_id for n in nonterminals) + 1
+    next_rule = max((r.production_id for r in source.productions), default=-1) + 1
+    rules = []
+    for rule in source.productions:
+        head, body, identity = rule.head_id, rule.body, rule.production_id
+        while len(body) > 2:
+            name = f"__posterior_chain_{next_head}"
+            while name in names:
+                name += "_"
+            names.add(name)
+            nonterminals.append(Nonterminal(next_head, name))
+            rules.append(SourceProduction(identity, head, (body[0], NonterminalRef(next_head))))
+            head, body, identity = next_head, body[1:], next_rule
+            next_head += 1
+            next_rule += 1
+        rules.append(SourceProduction(identity, head, body))
+    return SourceGrammar(
+        tuple(nonterminals), source.terminals, source.start_nonterminal_id, tuple(rules)
+    )
