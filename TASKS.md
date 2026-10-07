@@ -81,6 +81,14 @@ by a search, theorem, compilation or demonstration alone.
   verdict. If the proposed useful advantage does not survive, continue the
   scientific search instead of relabeling the failed experiment a win.
   **Evidence:** pending.
+- [ ] T3402a: Demonstrate posterior reuse under actual support/canvas contraction
+  and compare exact represented-support rejection on every saved model case.
+  **Acceptance:** independently checked reuse equals fresh compilation; fixed
+  tokens preserved. Rejection uses the same original probabilities, renormalized
+  only for represented-support draws, so expected attempts are retained mass/Z,
+  not 1/Z. All 27 cases and favorable rejection outcomes included; this is a
+  transparently added control, not a preregistered new population benchmark.
+  **Evidence:** pending.
 - [ ] T3403: Integrate the surviving contribution into the maintained project
   and article with reproducible checks and precise novelty/utility boundaries.
   **Acceptance:** operational/formal/new targeted checks and article artifacts

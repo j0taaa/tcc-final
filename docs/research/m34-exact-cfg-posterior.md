@@ -217,3 +217,28 @@ canvases and nine fresh model cells. No model forward, logits, support, answer
 or case is replaced, and previous outcomes remain attributed to their producing
 commits. The refinements are classical exact arithmetic/grammar transformations,
 not a claim to invent their principles.
+
+## Reuse and rejection follow-up (added after the complete integer audit)
+
+Reweighting may also contract token rows and commit previously free positions,
+without changing the grammar, tokenizer, number of physical slots or existing
+commitments. Align each new row by original token identity to the compiled row,
+assigning exactly zero to excluded choices. Surviving token paths and their
+weights are unchanged, so inside/outside/sampling compute the new posterior
+without recompilation. Expansion, undoing a commitment or changing grammar
+requires a new compilation. Fixed tokens receive probability one according to
+the existing conditional-input contract. This is exact restriction of an
+arithmetic circuit, an established principle specialized to this interface.
+
+Add a transparent follow-up on **every** saved model input (18 arrays + nine
+JSON canvases), not just successes: independently draw from normalized retained
+rows with integer categorical choices, recognize bytes without project parsing,
+and reject up to 10,000 attempts or 30 seconds with seed 20261006. Let
+`Q=product_i sum_t q_i(t)` be represented mass. Acceptance probability is `Z/Q`
+and the expected independent trial count is `Q/Z`. Using `1/Z` here would
+unfairly charge this control for omitted tokens it never draws. Report first
+sample costs including compilation for the new method; low-constraint cases
+may favor rejection. This is a local classical control, not an EPIC execution.
+Reuse checks commit half the originally free positions from an actual witness,
+compare exact mass/marginals to fresh compilation and independently validate the
+result. No further model forward or semantic/trajectory guarantee is inferred.

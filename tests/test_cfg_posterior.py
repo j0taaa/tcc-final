@@ -264,6 +264,37 @@ class CfgPosteriorOracleTests(unittest.TestCase):
         self.assertEqual(result.valid_mass, F(2, 3))
         self.assertEqual(result.marginals, ((F(), F(1, 2), F(1, 2)),))
 
+    def test_reuse_after_support_restriction_and_commitment(self):
+        source, rng = dyck(), Random(20261008)
+        words = (b"(", b")", b"[", b"]", b"()", b"[]", b"(")
+        base = inputs(source, words, (tuple(range(len(words))),) * 4)
+        plan = compile_cfg_sampler(source, base.state)
+        for _ in range(30):
+            rows = tuple(
+                tuple(rng.sample(range(len(words)), rng.randrange(1, 5))) for _ in range(4)
+            )
+            raw = [[rng.randrange(1, 6) for _ in row] for row in rows]
+            probabilities = tuple(tuple(F(w, sum(row) + 1) for w in row) for row in raw)
+            changed = inputs(source, words, rows, probabilities)
+            actual = plan.evaluate(changed)
+            self.assertEqual((actual.valid_mass, actual.marginals), oracle(changed)[:2])
+            if not actual.valid_mass:
+                continue
+            witness = actual.sample(rng)
+            fixed = inputs(
+                source,
+                words,
+                ((witness[0],), *rows[1:]),
+                ((F(1),), *probabilities[1:]),
+                canvas=(witness[0], None, None, None),
+            )
+            result = plan.evaluate(fixed)
+            self.assertEqual((result.valid_mass, result.marginals), oracle(fixed)[:2])
+            self.assertEqual(result.sample(rng)[0], witness[0])
+        committed_plan = compile_cfg_sampler(source, fixed.state)
+        with self.assertRaises(ValueError):
+            committed_plan.evaluate(base)  # an existing commitment cannot be undone
+
     def test_fail_closed_boundaries(self):
         source = dyck()
         b = _SourceGrammarBuilder(("S",), start="S")
@@ -289,7 +320,9 @@ class CfgPosteriorOracleTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 compile_cfg_sampler(source, data.state, timeout_seconds=timeout)
         with self.assertRaises(ValueError):
-            plan.evaluate(inputs(source, (b"(", b")"), ((0,), (1,))))
+            compile_cfg_sampler(source, inputs(source, (b"(", b")"), ((0,), (1,))).state).evaluate(
+                data
+            )
         with self.assertRaises(ValueError):
             ProbabilityInput(data.state, ((F(-1), F(2)), (F(1, 2), F(1, 2))))
         with self.assertRaises(ValueError):

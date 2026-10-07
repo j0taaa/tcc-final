@@ -104,7 +104,7 @@ class CfgPosterior:
                 position, index = term.choice
                 if position != len(output):
                     raise RuntimeError("sample did not preserve physical token order")
-                output.append(self.inputs.state.support.rows[position][index])
+                output.append(self._plan.state.support.rows[position][index])
             pending.extend(reversed(term.children))
         if len(output) != len(self.inputs.state.canvas):
             raise RuntimeError("sample did not consume exactly the original token slots")
@@ -113,7 +113,7 @@ class CfgPosterior:
 
 @dataclass(frozen=True)
 class CfgSampler:
-    """Immutable arithmetic forest reusable under arbitrary unary reweighting."""
+    """Immutable forest reusable under reweighting and support/canvas restriction."""
 
     state: SelectionInput
     grammar: CnfGrammar
@@ -142,18 +142,32 @@ class CfgSampler:
         state = inputs.state
         if (
             state.grammar != self.state.grammar
-            or state.canvas != self.state.canvas
-            or state.support != self.state.support
+            or len(state.canvas) != len(self.state.canvas)
+            or any(
+                old is not None and new != old
+                for old, new in zip(self.state.canvas, state.canvas, strict=True)
+            )
             or state.tokenizer_adapter != self.state.tokenizer_adapter
             or state.eos_policy != self.state.eos_policy
         ):
             raise ValueError("reweighting changed the compiled constraint/token support")
+        indices = []
+        for old, new in zip(self.state.support.rows, state.support.rows, strict=True):
+            lookup = {token: j for j, token in enumerate(old)}
+            if any(token not in lookup for token in new):
+                raise ValueError("reweighting expanded the compiled token support")
+            indices.append(tuple(lookup[token] for token in new))
         started = perf_counter()
         scales = tuple(lcm(*(p.denominator for p in row)) for row in inputs.probabilities)
-        weights = tuple(
-            tuple(p.numerator * (scale // p.denominator) for p in row)
-            for row, scale in zip(inputs.probabilities, scales, strict=True)
-        )
+        aligned = []
+        for old, row, scale, mapping in zip(
+            self.state.support.rows, inputs.probabilities, scales, indices, strict=True
+        ):
+            aligned_row = [0] * len(old)
+            for p, index in zip(row, mapping, strict=True):
+                aligned_row[index] = p.numerator * (scale // p.denominator)
+            aligned.append(tuple(aligned_row))
+        weights = tuple(aligned)
         denominator = prod(scales)
         inside = [0] * len(self.terms)
         for node in self.order:
@@ -163,7 +177,7 @@ class CfgSampler:
         inside_seconds = perf_counter() - started
         started = perf_counter()
         outside = [0] * len(self.terms)
-        masses = [[0] * len(row) for row in state.support.rows]
+        masses = [[0] * len(row) for row in self.state.support.rows]
         if self.root is not None:
             outside[self.root] = 1
         for node in reversed(self.order):
@@ -180,7 +194,8 @@ class CfgSampler:
         if total > denominator or any(sum(row) != total for row in masses):
             raise RuntimeError("probability/physical-slot invariant failed")
         marginals = tuple(
-            tuple(Fraction(v, total) if total else Fraction() for v in row) for row in masses
+            tuple(Fraction(row[j], total) if total else Fraction() for j in mapping)
+            for row, mapping in zip(masses, indices, strict=True)
         )
         return CfgPosterior(
             inputs,
