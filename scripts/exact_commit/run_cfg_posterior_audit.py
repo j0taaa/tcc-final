@@ -59,7 +59,11 @@ def scaling_inputs(slots, distribution, control, seed):
     fixed = tuple((0 if i % 2 == 0 else 2) if i < slots // 2 else None for i in range(slots))
     canvas = fixed if control == "fixed_alternating_opening_half" else (None,) * slots
     support = build_per_position_support(
-        canvas=canvas, policy=SupportPolicy(kind=SupportKind.FULL, vocabulary_size=4)
+        canvas=canvas,
+        policy=SupportPolicy(kind=SupportKind.FULL, vocabulary_size=4),
+        explicit_support={
+            i: (token,) if token is not None else (0, 1, 2, 3) for i, token in enumerate(canvas)
+        },
     )
     state = SelectionInput(
         normalize_to_cnf(source).grammar,
@@ -223,6 +227,13 @@ def main():
         "cpu": platform.processor(),
         "memory_scope": "fresh 2-GiB worker, including imports",
         "distribution_scope": "frozen mean-field; exact on original represented tokens",
+        "model_id": None if args.mode == "scaling" else config["replay"]["model_id"],
+        "model_revision": None if args.mode == "scaling" else config["replay"]["model_revision"],
+        "tokenizer_revision": None
+        if args.mode == "scaling"
+        else config["replay"]["tokenizer_revision"],
+        "sampling_seeds": [0, 1, 2, 3],
+        "saved_model_prediction_seed": None if args.mode == "scaling" else 310000,
     }
     args.output.mkdir(parents=True, exist_ok=False)
     (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
