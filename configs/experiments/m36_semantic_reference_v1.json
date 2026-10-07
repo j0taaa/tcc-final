@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "seed": 20261007,
+  "model_config": "configs/experiments/m31_probability_scaling_cpu_v1.json",
+  "segments": ["{\"", null, "\":[{\"var\":\"", null, "\"},{\"", null, "\":[{\"var\":\"", null, "\"},{\"var\":\"", null, "\"}]}]}"],
+  "domains": [["and", "or"], ["a", "b", "c"], ["and", "or"], ["a", "b", "c"], ["a", "b", "c"]],
+  "fields": ["a", "b", "c"],
+  "records": [
+    {"a": false, "b": false, "c": false},
+    {"a": false, "b": false, "c": true},
+    {"a": false, "b": true, "c": false},
+    {"a": false, "b": true, "c": true},
+    {"a": true, "b": false, "c": false},
+    {"a": true, "b": false, "c": true},
+    {"a": true, "b": true, "c": false},
+    {"a": true, "b": true, "c": true}
+  ],
+  "targets": [
+    {"id": "stock_and_delivery_choice", "profile": 224},
+    {"id": "alternate_permission", "profile": 248},
+    {"id": "parity_not_represented_by_this_canvas", "profile": 150}
+  ],
+  "samples_per_positive_target": 16,
+  "max_profile_entries": 1000000,
+  "max_work": 10000000,
+  "compilation_timeout_seconds": 30,
+  "consumer_url": "https://raw.githubusercontent.com/jwadhams/json-logic-js/c5c73601c90b11e98f6846609bac4dec203d1c18/logic.js",
+  "consumer_revision": "c5c73601c90b11e98f6846609bac4dec203d1c18",
+  "consumer_sha256": "73a6dc521e8990c2eed330dcfdb35605d7e1065a6e19d26673cb7ad4cd09d881",
+  "support_policy": "Declared lexical template domains, fixed before model execution and independent of requested labels; full-softmax probabilities retained without renormalizing rows",
+  "claim_scope": "Illustrative software-consumption/reproduction check, not an external benchmark, learned semantic quality, novelty proof, end-to-end decoding comparison or performance claim"
+}

@@ -776,3 +776,222 @@ Revisão documental e `git diff --check`; nenhuma mudança em código/provas/
 artigo exige reapresentar os checks anteriores como evidência nova.
 O commit anterior `9ed17c1` teve CI aprovado no run `37642046640`: o log
 confirma os 12 testes e 8.016 eventos, além de Rust/artefatos e Lean existentes.
+
+## 14. Continuação substantiva: condicionamento de regras por execução
+
+A orientação posterior do usuário foi trabalhar até obter uma realização útil,
+e não apenas criar tarefas. O candidato de likelihood de ações permanece como
+diagnóstico conhecido. A direção abaixo tem uma operação diferente, um limite
+de custo demonstrável e um protótipo de pesquisa pequeno; não é uma aprovação
+humana, declaração de prioridade mundial nem um novo decoder de produção.
+
+### Contrato e aplicação
+
+Entrada: a mesma predição fatorizada congelada `q`, slots/tokens originais,
+suporte declarado, canvas e EOS `ABSENT`; uma gramática de regras booleanas
+recursivas; `m` registros de campos booleanos; um vetor de resultados desejados.
+Saída: massa de cada vetor de execução e amostra original de tokens condicionada
+simultaneamente à sintaxe e aos resultados solicitados. O alvo não altera a
+gramática, o suporte ou os pesos. Massa zero não é orçamento esgotado.
+
+É preenchimento de uma regra executável a partir de exemplos: filtros,
+visibilidade de formulários e condições de habilitação podem usar regras
+JsonLogic consumidas diretamente pelo software. A garantia é acertar os
+**registros declarados**. Não garante uma intenção não especificada ou acerto
+em registros novos. A biblioteca JsonLogic é um consumidor real; uma aplicação
+ilustrativa com essa biblioteca não vira automaticamente benchmark externo.
+
+O protótipo admite `{"var":"a"}`, `{"and":[E,E]}`, `{"or":[E,E]}`,
+`{"!":[E]}`, sem espaços, campos de uma letra ASCII e valores estritamente
+booleanos. Apelidos de campos podem ser explicitamente mapeados pela aplicação.
+Não implementa toda a linguagem JsonLogic, coerção numérica, treinamento ou
+garantia sobre a trajetória neural. Admite 1–12 registros, com caps explícitos
+de entradas e trabalho. A ciência geral não pressupõe que esse limite prático
+seja removido silenciosamente. Probabilidades truncadas não são renormalizadas.
+
+### Antecedentes e a diferença delimitada
+
+1. Wang, Dillig e Singh, *Synthesis of Data Completion Scripts using Finite
+   Tree Automata* (2017), [§6.1–6.3, Exemplo 6.2 e Teorema 6.3](https://arxiv.org/pdf/1707.01469):
+   estados de execução de subprogramas, interseção por exemplos e síntese já
+   existem. O exemplo 6.2 já apresenta fórmulas booleanas! Não reivindicamos
+   inventar geração semanticamente restrita, FTAs ou parsing com atributos.
+   O ranking de §6.3 é distinto da lei ponderada sobre tokens originais, mas
+   autômatos ponderados e inferência gramatical já fornecem esse princípio.
+2. Björklund, Husfeldt, Kaski e Koivisto, *Fourier meets Möbius* (2007),
+   [§2.2 e §2.5, eqs. (7), (8), (15), (17)](https://arxiv.org/pdf/cs/0611101):
+   produto de cobertura em `O(m 2^m)` por transformadas é **conhecido**.
+   É o produto OR, não a convolução de subconjuntos disjuntos que usa
+   `O(m² 2^m)`. Atribuímos o algoritmo aos autores.
+3. [FactorDLM §3.1](https://arxiv.org/html/2609.32900v1): fatores e auxiliares
+   determinísticos podem codificar execução. Eliminação e amostragem exatas
+   são comparadores competentes; não alegamos incapacidade de resolver a
+   tarefa. Uma implementação que incorpore o mesmo produto de cobertura
+   compartilha nossa vantagem algébrica.
+4. [JsonLogic oficial](https://jsonlogic.com/operations.html): `and` e `or`
+   retornam operandos, não necessariamente booleanos. No domínio declarado,
+   todos os operandos são booleanos e a álgebra coincide exatamente. O
+   consumidor foi fixado no commit `c5c73601c90b11e98f6846609bac4dec203d1c18`,
+   `logic.js`, 14.844 bytes, SHA-256
+   `73a6dc521e8990c2eed330dcfdb35605d7e1065a6e19d26673cb7ad4cd09d881`.
+   MIT, Copyright Jeremy Wadhams; permanece cache local, não nova dependência.
+
+O resultado delimitado é um condicionador de **sintaxe e comportamento**,
+com interpretação explícita de tokens e uma separação entre planos bilineares
+não negativos e planos que usam inversão de Möbius. A busca primária adicional
+não encontrou o enunciado exato da rank não negativa abaixo, mas ausência em
+busca não prova novidade. A rank é uma consequência de um argumento clássico
+de retângulos/fooling sets. Sua prioridade e suficiência acadêmica continuam
+pendentes de revisão independente. O limite/correção não dependem dessa
+prioridade: são afirmações matemáticas verificáveis com escopo declarado.
+
+### Teorema A2.1 — operação e amostragem
+
+Seja `h(y) ⊆ [m]` o conjunto de registros em que a regra `y` resulta em `true`.
+Para cada nó da floresta, guarde `W[S]`, a soma dos pesos dos caminhos cujo
+subprograma tem perfil `S`. Terminais de variável têm perfil fixo; pontuação
+de sintaxe é escalar. NOT permuta `S` para seu complemento. OR combina
+
+`C[T] = sum_{A union B = T} U[A] V[B]`;
+
+AND é o mesmo produto conjugado por complemento. Nós com uma expressão e
+pontuação apenas multiplicam sua distribuição pelo peso escalar. Alternativas
+de parsing somam distribuições. A floresta só admite sintaxe LL(1) não ambígua;
+aliases são eventos de tokens distintos, fechados pelas arestas originais.
+
+**Prova.** Indução sobre spans estritamente crescentes. Cada derivação válida
+tem exatamente um perfil determinado pelos filhos. As alternativas são
+disjuntas por caminho original; a multiplicação combina escolhas em spans
+disjuntos. Assim, o vetor da raiz é exatamente a partição do conjunto de
+completions por execução, sem acrescentar multiplicidade semântica.
+Escalas inteiras por posição multiplicam todo caminho pelo mesmo denominador
+`D`; a massa final é `W[T]/D`, preservando os pesos do suporte original.
+
+Para amostrar OR condicionado a `T`, defina `V_T[B]=V[B]` se `B⊆T`, zero
+caso contrário, e `sup[S]=sum_{B⊇S} V_T[B]` por zeta superior. Escolha `A⊆T`
+com peso `U[A] sup[T\A]`; depois escolha `B` com peso `V[B]` entre os que
+satisfazem `A∪B=T`. O produto das duas probabilidades é
+`U[A] V[B]/C[T]`. AND usa complementos; NOT e pontuação são determinísticos
+quanto ao perfil. Escolha alternativas com a massa do perfil solicitado e
+aplique a mesma recursão. Os fatores telescopam para
+`Pr(Y=y | syntax,h(Y)=T) = prod_i q_i(y_i)/Z_T`.
+
+A implementação tipa os helpers da binarização forçada pela presença de um
+filho booleano. AND/OR já têm dois filhos booleanos antes da normalização;
+NOT aplica-se ao filho booleano com pontuação escalar; Field tem um terminal
+ASCII. Não há regras epsilon ou unit nessa gramática. Logo, a normalização
+só cria cadeias e proxies de pontuação; não mistura duas ações semânticas.
+Essa restrição é essencial: não estendemos o argumento a normalização
+arbitrária com atributos. Os metadados de cabeça/produção na floresta são
+inertes para a API posterior anterior.
+Quando o produto dos tamanhos dos suportes positivos dos filhos é no máximo
+`2^m`, a implementação enumera só esses pares, também na amostragem. Caso
+contrário usa as transformadas. Essa seleção é conhecida e preserva as mesmas
+somas; ignorar pesos zero na consulta não remove caminhos da floresta compilada
+nem impede reponderação futura. O custo continua `O(m 2^m)` e há no máximo
+`2^m` produtos bilineares por join. A adaptação não pertence à classe de planos
+fixos não negativos do lower bound.
+
+### Teorema A2.2 — comparação competente, não uma codificação ruim
+
+Considere o mapa **completo** de perfis de OR, para vetores não negativos
+arbitrários de dimensão `2^m`. Um plano bilinear não negativo de `r` produtos
+tem a forma
+
+`C[T] = sum_j w[j,T] (sum_A u[j,A] U[A]) (sum_B v[j,B] V[B])`,
+
+com todos os coeficientes não negativos. Então o menor `r` é exatamente
+`3^m`. Permitindo coeficientes de qualquer sinal, o menor `r` é `2^m`.
+São multiplicações **bilineares entre as duas entradas**, não todo custo
+de software, coeficientes constantes, memória ou tempo físico.
+
+**Limite inferior não negativo.** Cada produto induz um retângulo de suporte
+`L_j × R_j × O_j`. Como não há cancelamento e cada monômio `U[A]V[B]`
+aparece em apenas `C[A∪B]`, um retângulo útil só pode contribuir ao seu
+único perfil de saída. Para cada `T` considere as `2^|T|` testemunhas
+`(A,T\A,T)`, `A⊆T`. Um retângulo que contém duas testemunhas com o mesmo
+`T` também contém os dois cruzamentos. Eles teriam que satisfazer
+`A∪(T\A')=T` e `A'∪(T\A)=T`, implicando `A'⊆A` e `A⊆A'`: são a mesma
+testemunha. Saídas diferentes também não compartilham um retângulo útil.
+Logo precisa de pelo menos `sum_T 2^|T|=3^m` produtos. Equivalentemente,
+cada coordenada da testemunha está em `00`, `01` ou `10`.
+
+**Limite superior não negativo.** Para cada `T` e `A⊆T` multiplique
+`U[A]` por `sum_{B⊆T, B⊇T\A} V[B]` e some no respectivo `T`.
+Há exatamente `3^m` produtos. Existe também um controle recursivo competente:
+particione pela última coordenada; compute
+`C0=join(U0,V0)` e
+`C1=join(U1,V0+V1)+join(U0,V1)`.
+São `3^m` produtos e `2(3^m−2^m)` adições, sem tabela densa `4^m`.
+Assim, o adversário do teorema já é ótimo na classe declarada.
+
+**Caso com sinais.** Zeta, produto pontual e inversão de Möbius realizam o
+mapa com `2^m` produtos e `3m 2^(m−1)` adições/subtrações. Os polinômios
+`C[T]` são linearmente independentes: o monômio `U[T]V[∅]` ocorre só no
+polinômio de saída `T`. Toda realização bilinear com `r` produtos gera um
+espaço de dimensão no máximo `r`. Logo `r≥2^m`, atingido pelo algoritmo
+conhecido. AND herda os limites por permutação de complementos.
+
+**Fronteiras.** Não é um lower bound de toda inferência, de uma só massa
+alvo, de programas com divisão/branching dependente das entradas, circuitos
+que exploram esparsidade específica, ou toda representação por fatores.
+Não diz que o FactorDLM precisa materializar esse join, nem que todo input
+real atinge o pior caso. Não é superioridade sobre EPIC em latência neural:
+EPIC com um executor/reparador resolve outra estratégia; rejeição a partir
+do mesmo posterior sintático também resolve a operação de amostragem,
+com custo esperado `1/Pr(h(Y)=T | syntax)` tentativas (quando positivo).
+
+### Custo total e em bits
+
+Sejam `F` as alternativas/nós da floresta sintática já compilada, `S` o
+tamanho do suporte e `B` o custo limitado da preparação gramatical/token-DAG.
+A avaliação semântica custa `B + O(S+F m 2^m)` operações aritméticas e
+`O(F 2^m)` entradas de memória. A implementação também chama o posterior
+escalar em `O(F+S)` para validar as restrições/alinhamento e conferir que os
+perfis particionam exatamente a massa sintática; esse custo não é omitido.
+Uma amostra recalcule contribuições em nós visitados e usa zeta superior
+para pares: custa no máximo `O(F m 2^m)`, não tempo constante. Há caps de
+entradas e trabalho cooperativo antes de expansão; não há promessa de hard
+timeout para uma multiplicação de inteiros arbitrariamente grandes.
+
+Se `L` limita os bits dos pesos/massas de spans (limitável pelos bits dos
+pesos por posição, número de caminhos do DAG e univocidade da gramática),
+as transformadas somam até `2^m` valores, o produto dobra os bits e a
+inversão acrescenta no máximo `m` bits. Intermediários têm `O(L+m)` bits.
+Cada join custa `O(m 2^m (L+m) + 2^m M(L+m))` em bits, para custo de
+multiplicação `M`; custos de conversão racional, `lcm`, leitura e escrita
+também existem. A redução de multiplicações não elimina esses custos nem
+prova menor tempo para qualquer `m`. O método é exponencial no número de
+registros, linear/polinomial no tamanho explícito da floresta com `m` fixo.
+
+### Evidência de pesquisa e revisão que permanece necessária
+
+O algoritmo está em `scripts/exact_commit/semantic_json.py`; não foi ligado
+ao decoder de produção. `tests/test_semantic_json.py` usa `json.loads` e
+avaliação recursiva independente, produtos exaustivos de tokens, pesos
+reduzidos/zero, commitments, aliases, recusas por orçamento e enumeração
+de todas as decisões aleatórias de um caso pequeno. O núcleo de OR foi
+confrontado com pares enumerados para `m=0..7`, seed `20261007`; a lei
+condicional dos pares foi calculada por todas as decisões inteiras, não
+frequências. São verificações de correção, não benchmarks favoráveis.
+
+`formal/MWPC/SemanticProfiles.lean` mecaniza a separação de testemunhas,
+a lista ternária distinta de cardinalidade `3^m` e o lower bound de cobertura
+por retângulos, além de reduzir diretamente planos de coeficientes naturais
+com escala positiva comum a essa cobertura. A rota é sobre o subtipo **finito** de testemunhas enumeradas;
+não exige cobrir listas de todos os comprimentos com uma família finita,
+o que tornaria a hipótese impossível. O caso racional usa limpeza de
+denominadores na prova escrita; a redução dos coeficientes reais a
+retângulos, optimalidade com sinais, distribuição de amostragem e compilador
+Python permanecem provas escritas/obrigações; Lean não verificou o software
+inteiro. O audit usa o checker do kernel, sem novas admissões.
+
+`configs/experiments/m36_semantic_reference_v1.json` foi definido antes de
+uma captura. Ele fixa dois alvos positivos e paridade não representável nesse
+canvas, oito registros, 108 regras na mesma sintaxe, lexical domains
+independentes dos alvos, modelo/tokenizer via config M31 e consumidor oficial.
+É uma demonstração declaradamente ilustrativa de execução, não o protocolo
+externo de §13 ou uma comparação de desempenho. Ainda é necessário obter
+parecer humano e verificar prioridade bibliográfica para promover o recorte
+a protagonista publicado. A realização concreta e a matemática não dependem
+de inventar esse parecer.

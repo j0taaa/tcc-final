@@ -45,6 +45,7 @@ class PosteriorStatus(StrEnum):
 class _Term:
     children: tuple[int, ...] = ()
     choice: Choice | None = None
+    production_id: int = -1
 
 
 def _categorical(weights: tuple[int, ...], rng: Random) -> int:
@@ -120,6 +121,7 @@ class CfgSampler:
     root: int | None
     graph_vertices: int
     graph_edges: int
+    cell_heads: tuple[int, ...] = ()
 
     @property
     def alternatives(self) -> int:
@@ -276,16 +278,16 @@ def compile_cfg_sampler(
             edges.append((nodes[word[:-1]], end, word[-1], (position, j)))
         boundary = end
 
-    terminal_heads: dict[int, list[int]] = defaultdict(list)
-    left_rules: dict[int, list[tuple[int, int]]] = defaultdict(list)
-    right_rules: dict[int, list[tuple[int, int]]] = defaultdict(list)
+    terminal_heads: dict[int, list[tuple[int, int]]] = defaultdict(list)
+    left_rules: dict[int, list[tuple[int, int, int]]] = defaultdict(list)
+    right_rules: dict[int, list[tuple[int, int, int]]] = defaultdict(list)
     for rule in grammar.terminal_productions:
         budget.consume()
-        terminal_heads[rule.terminal_id].append(rule.head_id)
+        terminal_heads[rule.terminal_id].append((rule.head_id, rule.production_id))
     for binary in grammar.binary_productions:
         budget.consume()
-        left_rules[binary.left_id].append((binary.head_id, binary.right_id))
-        right_rules[binary.right_id].append((binary.head_id, binary.left_id))
+        left_rules[binary.left_id].append((binary.head_id, binary.right_id, binary.production_id))
+        right_rules[binary.right_id].append((binary.head_id, binary.left_id, binary.production_id))
     ids: dict[Cell, int] = {}
     keys: list[Cell] = []
     terms: list[list[_Term]] = []
@@ -307,8 +309,8 @@ def compile_cfg_sampler(
 
     for start, end, label, choice in edges:
         budget.check()
-        for head in terminal_heads.get(labels.get(label, -1), ()):
-            add((head, start, end), _Term(choice=choice))
+        for head, rule_id in terminal_heads.get(labels.get(label, -1), ()):
+            add((head, start, end), _Term(choice=choice, production_id=rule_id))
     starts: dict[tuple[int, int], list[tuple[int, int]]] = defaultdict(list)
     ends: dict[tuple[int, int], list[tuple[int, int]]] = defaultdict(list)
     order = []
@@ -316,20 +318,27 @@ def compile_cfg_sampler(
         budget.check()
         _, node = heapq.heappop(agenda)
         head, start, end = keys[node]
-        for parent, right in left_rules[head]:
+        for parent, right, rule_id in left_rules[head]:
             budget.check()
             for target, child in starts[right, end]:
-                add((parent, start, target), _Term((node, child)))
-        for parent, left in right_rules[head]:
+                add((parent, start, target), _Term((node, child), production_id=rule_id))
+        for parent, left, rule_id in right_rules[head]:
             budget.check()
             for origin, child in ends[left, start]:
-                add((parent, origin, end), _Term((child, node)))
+                add((parent, origin, end), _Term((child, node), production_id=rule_id))
         starts[head, start].append((end, node))
         ends[head, end].append((start, node))
         order.append(node)
     root = ids.get((grammar.start_nonterminal_id, 0, boundary))
     result = CfgSampler(
-        state, grammar, tuple(map(tuple, terms)), tuple(order), root, vertices, len(edges)
+        state,
+        grammar,
+        tuple(map(tuple, terms)),
+        tuple(order),
+        root,
+        vertices,
+        len(edges),
+        tuple(key[0] for key in keys),
     )
     budget.check()
     return result

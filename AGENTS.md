@@ -20,6 +20,12 @@ The 2026-10-07 staged research request (M36) authorizes one focused exhaustive
 commitment-event check. It tests a candidate reduction, not a new production
 decoder, scientific novelty or practical superiority. Human review/novelty
 gates remain separate from passing these finite checks.
+The subsequent 2026-10-07 instruction to continue substantive work authorizes
+the bounded semantic-rule research reference, focused execution/sampling
+oracles and one frozen opt-in local CPU MDLM/JsonLogic integration capture.
+Preliminary Lean checks support research; they do not supply the absent human
+review or authorize a priority/production-superiority claim. Keep this reference
+separate from the maintained serial/EPIC/exact decoder strategies.
 
 The repository implements **Exact Maximum-Weight Parallel Commitment (MWPC)** for CFG-constrained diffusion language models, using the EPIC codebase as the integration baseline. Preserve the existing serial and EPIC heuristic decoders as baselines; add the exact method as a separate strategy.
 

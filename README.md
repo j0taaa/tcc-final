@@ -33,6 +33,7 @@ make build-rust
 make check-formal LAKE="$HOME/.elan/bin/lake"
 make article-results-check
 make paper
+make research-note
 
 # Recompute and sample a genuine archived MDLM prediction; no model/network needed.
 .venv/bin/python -m scripts.exact_commit.build_cfg_posterior_results --sample json-context0-16
@@ -90,7 +91,8 @@ The user removed the historical test suite and experiment framework in M32/M33;
 they remain recoverable at `a98ae8e09f2066157ebf6df05f8873b8600e00fb` and `9deb3df`.
 M34 introduced eight focused posterior tests; M35 extends them to eleven with
 archived recomputation and preprocessing/deadline checks. M36 adds one research
-oracle for confidence-selected commitment events. CI runs the twelve checks;
+oracle for confidence-selected commitment events and three focused checks for
+the execution-conditioning research reference. CI runs these fifteen checks;
 this is not restoration of the old suite or whole-project correctness. Pinned external
 JSON cases are packed in one small archive, with original hashes and license.
 The opt-in model capture retains only the necessary audited official MDLM CPU
@@ -99,7 +101,29 @@ adapter. External EPIC production stays unchanged at `5b1b310`.
 [Current research notebook](docs/research/contribution-plan.md): primary-source
 novelty review, candidate event-reduction proof and explicit human-review gates.
 This investigation does not establish a new scientific priority or change the
-article's contribution or the production decoders.
+production decoders. A separate [research supplement](paper/semantic-conditioning.tex)
+specifies the execution-conditioning algorithm and a tight scoped comparison:
+all union-profile masses require `3^m` products in a non-negative bilinear plan,
+versus `2^m` using the known signed covering-product transform. It does not
+claim a general lower bound for FactorDLM, sparse inputs or single target masses.
+
+The small research API reuses an original-token forest:
+
+```python
+from scripts.exact_commit.semantic_json import boolean_rule_grammar, evaluate_semantics
+
+source = boolean_rule_grammar(("a", "b"))  # independent of records and labels
+plan = compile_cfg_sampler(source, selection_input)  # input uses this source grammar
+posterior = evaluate_semantics(plan, probability_input, boolean_records)
+tokens = posterior.sample(target_profile, Random(42))  # only if its mass is positive
+```
+
+It fills Boolean rules matching the declared records, not arbitrary JsonLogic
+programs or unseen-record labels. Slots, probabilities and support retain their
+previous contracts. Work caps refuse unresolved instances. The frozen integration
+config and opt-in CPU capture/replay are in
+`configs/experiments/m36_semantic_reference_v1.json` and
+`scripts/exact_commit/capture_semantic_reference.py`.
 
 [Reproduction](REPRODUCING.md), [baseline provenance](UPSTREAM.md),
 [previous cleanup](docs/evidence/m33-cleanup.md).

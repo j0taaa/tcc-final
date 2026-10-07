@@ -5,7 +5,7 @@ VENV_PIP := $(VENV)/bin/pip
 LAKE ?= lake
 CONSTRAINTS := requirements/constraints-py311-linux.txt
 
-.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream lint format typecheck check check-formal check-project build-rust article-results article-results-check paper test clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream lint format typecheck check check-formal check-project build-rust article-results article-results-check paper research-note test clean
 
 bootstrap:
 	$(PYTHON) -m venv $(VENV)
@@ -61,6 +61,9 @@ article-results-check:
 
 paper: article-results-check
 	$(MAKE) -C paper
+
+research-note:
+	$(MAKE) -C paper research-note
 
 test:
 	$(VENV_PY) -m unittest discover -s tests -v

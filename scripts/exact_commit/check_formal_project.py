@@ -21,7 +21,11 @@ def main():
             r"\b(sorry|admit|native_decide)\b|^\s*axiom\b", source.read_text(), re.MULTILINE
         ):
             raise ValueError(f"Unapproved admission or axiom: {source.name}")
-    build = _run_lean([args.lake, "build", "MWPC", "MWPC.CfgSampling"], cwd=formal, timeout=180)
+    build = _run_lean(
+        [args.lake, "build", "MWPC", "MWPC.CfgSampling", "MWPC.SemanticProfiles"],
+        cwd=formal,
+        timeout=180,
+    )
     if build.returncode:
         raise RuntimeError(build.stdout + build.stderr)
     axioms = {}

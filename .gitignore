@@ -53,6 +53,7 @@ paper/*.fls
 paper/*.fdb_latexmk
 paper/*.synctex.gz
 paper/main.pdf
+paper/semantic-conditioning.pdf
 
 # Local environment records (templates remain tracked)
 docs/environment-local.md

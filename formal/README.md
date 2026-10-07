@@ -39,12 +39,12 @@ combined gate does **not** mean the Lean kernel proves all foreign source code.
 | Amortized feasibility-query count | `amortized_conflict_queries` | Trace charges one failed main query plus at most B deletion queries per learned conflict; Python counter/oracle tests |
 
 `scripts/exact_commit/check_formal_project.py` builds the retained library and
-new `MWPC.CfgSampling` module, audits 41 statements across `Audit.lean` and
+new `MWPC.CfgSampling` and `MWPC.SemanticProfiles` modules, audits 50 statements across `Audit.lean` and
 `AuditCfgSampling.lean`, and checks the canonical resource example. Historical
 fixture/forgery campaigns are recoverable in their source commits; they do not
 run in the reduced tree. The focused posterior suite runs separately: eight
 M34 checks, three M35 regressions and one M36 research event oracle. M36's
-written reduction has not been mechanized; its finite oracle is not a novelty
+action-event reduction has not been mechanized; its finite oracle is not a novelty
 proof or a substitute for the requested independent human review.
 
 M34 adds row-product scaling, two-type opening-stack counting/distinctness and
@@ -54,6 +54,17 @@ proof. This is not a Lean-verified tokenizer, grammar normalizer, forest compile
 inside/outside implementation or complete sampling-law refinement. Existing
 formal sources and their archived hashes remain unchanged; the new module/audit
 are separate additions.
+
+The continued M36 research adds nine audited semantic-profile statements,
+including `semantic_nonnegative_bilinear_lower_bound`: the full `3^m` lower
+bound for non-negative natural-coefficient bilinear plans with a positive
+uniform tensor scale. It reduces coefficients to finite support rectangles
+and counts distinct ternary witnesses in the kernel. Rational denominator
+clearing and the arbitrary-real coefficient case remain written arguments.
+Signed `2^m` optimality, the execution-conditioned sampling law and Python
+semantic lifting are not source-refined in Lean. The three focused semantic
+oracles and opt-in MDLM/JsonLogic demonstration are separate evidence; they
+do not provide the missing independent human novelty review.
 
 ## Trust map
 

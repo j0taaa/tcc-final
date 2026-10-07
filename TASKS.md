@@ -66,11 +66,18 @@ Use one notebook: `docs/research/contribution-plan.md`.
   only restate CAR/conditioning or compare with an incorrect likelihood.
   The §8.1 TV/KL diagnostic is a known conditional-probability consequence,
   not a resolution of this novelty gate.
+  **Continuation:** notebook §14 replaces that operation as the research focus
+  with execution-conditioned Boolean rule infilling. A tight `3^m` versus `2^m`
+  bilinear-plan comparison and sampling law are written; the finite rectangle
+  obstruction is checked in Lean. The transform and weighted synthesis are
+  credited antecedents. Scientific priority/significance over a competent
+  classical signed solver remain unestablished, so this gate stays open.
 - [ ] T3603: Obtain actual advisor/calendar alignment and independent human
   mathematical/novelty review (plan 3, 9, 19).
   **Acceptance:** real comments and their responses recorded; no inferred
-  approval, no automatic contacting others. Formalization is considered only
-  after this review, with precise kernel/source boundaries.
+  approval, no automatic contacting others. Promotion to the final contribution
+  follows this review. User-authorized preliminary Lean checks have precise
+  kernel/source boundaries and cannot substitute for independent comments.
   **BLOCKED:** no advisor/expert comments or confirmed institutional calendar
   have been supplied; the user explicitly confirmed no comments yet.
   Notebook supplies a concrete review dossier, not an approval.
@@ -105,6 +112,31 @@ Use one notebook: `docs/research/contribution-plan.md`.
   `a202b65edda0d7ab687c758b8f10cfe9ba75561cd7166e5650710f88f26303a4`).
   No rules were enumerated, model captured, solver timed or result selected.
   `git diff --check` validates document whitespace; scientific gates stay open.
+- [x] T3607: Under the continued substantive-work instruction, deliver a small
+  execution-conditioning research reference and a proved, scoped comparator
+  (independent investigation for T3602; not production promotion for T3604).
+  **Acceptance:** grammar/weights/support independent of labels; exact original
+  token mass and sampling, finite slots, zero mass and resource refusal distinct.
+  Independent token/tree and sampling-decision oracles pass. Non-negative
+  comparator is optimal in its explicit bilinear class; signed-transform
+  antecedents and full/target/sparse/global limitations remain explicit.
+  **Evidence:** `make check test` passes the fifteen focused checks; reran the
+  three semantic oracles after strengthening the nested-shape case; the latest
+  full run also validates the sparse/transform dispatch.
+  `make build-rust`, `make check-formal LAKE="$HOME/.elan/bin/lake"`, and
+  `make paper` pass, preserving all 3,683 frozen archive files and the 16-page
+  main manuscript. `make research-note` builds the three-page supplement with
+  no overflow/unresolved references; all pages were visually inspected.
+  Nine new Lean statements are audited, including the natural-coefficient
+  bilinear lower bound. Scientific priority/human review and
+  production promotion remain separate incomplete gates, not implied passes.
+- [ ] T3608: Materialize the frozen semantic integration demonstration.
+  **Acceptance:** actual pinned local CPU MDLM probabilities, source/config
+  commit, preserved full-softmax normalization, offline archived recomputation,
+  independent enumeration and official pinned JsonLogic execution. Preserve the
+  preregistered unsupported-by-canvas target as zero mass; no performance,
+  external-test-set or out-of-example correctness claim.
+  **Evidence:** config `m36_semantic_reference_v1.json`; capture/replay pending.
 
 ## M35 — Consolidate posterior correctness gates and bounded compilation
 

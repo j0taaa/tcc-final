@@ -178,3 +178,26 @@ no work cap; callers preparing custom input grammars should pass a budget too.
 Compilation's forest caps remain `max_chart_cells`/`max_alternatives`.
 Cooperative checks cannot preempt an individual Python operation or enforce an
 OS memory cap. This change does not relabel historical runtime measurements.
+# Execution-conditioning research reference (M36)
+
+The source and mathematical supplement are separate from production decoder
+strategies. Build the supplement with `make research-note`; its PDF is copied
+to `output/pdf/semantic-conditioning.pdf`. `make test` includes three focused
+execution/profile/sampling oracles. They do not establish scientific priority.
+
+The frozen MDLM/JsonLogic integration config is
+`configs/experiments/m36_semantic_reference_v1.json`. A capture requires the
+already audited local CPU MDLM environment/cache and a clean producing commit;
+it never belongs to the default network-free test path. Use
+`scripts.exact_commit.capture_semantic_reference --capture --directory PATH` in
+that environment, where PATH is new. Optional `--consumer PATH/logic.js` checks
+the pinned official JsonLogic implementation under Node; its exact URL and hash
+are in the config. Optional `--full-capture .cache/semantic-reference-v1.npz`
+independently checks full softmax/rational rows. Full logits remain local.
+
+Without `--capture`, the same module recomputes the archived inputs and checks
+every template completion independently without loading a model. The illustration
+declares lexical support before logits/targets; it is not an external benchmark,
+an end-to-end decoder comparison or accuracy on unseen records. The target not
+representable by the frozen canvas must remain zero mass. The signed covering
+transform is known; the research dossier and supplement delimit the comparator.
