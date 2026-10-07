@@ -19,7 +19,8 @@ milestone unless a regression invalidates its evidence.
 ## M36 — Scientific contribution gates before another implementation
 
 Authorized on 2026-10-07 by the user's staged research plan (items 1–22;
-the supplied item 22 ends mid-sentence). Depends on completed M35. Preserve
+the user subsequently authorized completing item 22 and choosing later tasks,
+and confirmed no external comments are available). Depends on completed M35. Preserve
 `c018c3843b7b5c4dda41cb72f3f7cfc19ad7af80`, all unfavorable evidence and the
 existing decoders. Research calculations do not authorize a novelty claim,
 invented advisor approval, or replacing the article's established contribution.
@@ -41,9 +42,9 @@ Use one notebook: `docs/research/contribution-plan.md`.
   fairly with exact locators. Known projection/cache reductions are rejected as
   sole novelty. Any surviving result remains a candidate pending review.
   **Evidence:** notebook sections 4–6 record directed original-source
-  readings with theorem/equation/algorithm locators, a 12-row novelty matrix,
+  readings with theorem/equation/algorithm locators, a 14-row novelty matrix,
   SparseMAP/coherence and cache reductions, EPIC's dated v2 and the additional
-  DUEL/trajectory/ranking antecedents required by the narrower candidate.
+  DUEL/trajectory/ranking/CAR antecedents required by the narrower candidate.
   Scientific novelty/significance is explicitly not established.
 - [ ] T3602: Develop the surviving candidate's specification, comparator,
   written proof, total/bit costs, JSON corollary and integration boundaries
@@ -60,13 +61,18 @@ Use one notebook: `docs/research/contribution-plan.md`.
   **BLOCKED:** no distinctive theoretical advantage over competent WMC/ranking
   methods has been established. The scoped reduction may be a direct known
   consequence; T3602 stays open until that scientific gate is resolved.
+  **Next investigation:** assess whether a genuinely requested operation needs
+  more than the event-specific unary WMC reduction; reject improvements that
+  only restate CAR/conditioning or compare with an incorrect likelihood.
+  The §8.1 TV/KL diagnostic is a known conditional-probability consequence,
+  not a resolution of this novelty gate.
 - [ ] T3603: Obtain actual advisor/calendar alignment and independent human
   mathematical/novelty review (plan 3, 9, 19).
   **Acceptance:** real comments and their responses recorded; no inferred
   approval, no automatic contacting others. Formalization is considered only
   after this review, with precise kernel/source boundaries.
   **BLOCKED:** no advisor/expert comments or confirmed institutional calendar
-  have been supplied. The user was asked for these while research continues.
+  have been supplied; the user explicitly confirmed no comments yet.
   Notebook supplies a concrete review dossier, not an approval.
   **Evidence:** pending external input.
 - [ ] T3604: Once the novelty/advantage/review gates pass, implement only the
@@ -75,16 +81,30 @@ Use one notebook: `docs/research/contribution-plan.md`.
   **Acceptance:** small implementation matches the reviewed theorem; CI runs
   focused independent checks. Strong classical controls, failures, fixed
   budgets, immutable configs and provenance precede any performance claims.
-  **BLOCKED:** T3603 is open; the remainder of item 22 is also missing. No new
+  **BLOCKED:** T3602–T3603 are open. Item 22 is now completed by authorized
+  decision, removing the missing-text blocker. No new
   production decoder, model training or favorable benchmark is a substitute.
-  **Evidence:** pending; provisional protocol is explicitly unexecuted.
+  **Evidence:** implementation/measurements pending; notebook §13 defines
+  the protocol and tasks 23–27, explicitly without execution or gate approval.
 - [ ] T3605: Prepare the reviewed publication change and synchronize completed
   work, without submitting or promising publication acceptance.
   **Acceptance:** bibliography, claim/proof/code/evidence map and manuscript
   are consistent with the actual result; user-required local/GitHub sync holds.
-  **BLOCKED:** scientific scope/review T3603–T3604 remains open. Existing paper
+  **BLOCKED:** scientific scope/review T3602–T3604 remains open. Existing paper
   and historical results remain the stable submission, not a new-result claim.
   **Evidence:** pending.
+- [x] T3606: Complete item 22 and choose the remaining publication/reproduction
+  steps independently of implementing a new candidate.
+  **Acceptance:** prior inputs are development, not retrospective held-out
+  evaluation; prospective source/split, competent controls, same inputs,
+  budgets, statuses, analysis and freeze rules are specified before timing.
+  Later tasks and external review remain distinct from completed planning.
+  **Evidence:** notebook §13 defines item 22 and tasks 23–27. Read the official
+  JsonLogic consumer at `c5c73601c90b11e98f6846609bac4dec203d1c18`;
+  fetched only the external corpus byte identity (17,574 bytes, SHA-256
+  `a202b65edda0d7ab687c758b8f10cfe9ba75561cd7166e5650710f88f26303a4`).
+  No rules were enumerated, model captured, solver timed or result selected.
+  `git diff --check` validates document whitespace; scientific gates stay open.
 
 ## M35 — Consolidate posterior correctness gates and bounded compilation
 

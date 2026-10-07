@@ -3,6 +3,8 @@
 Data da investigação: 2026-10-07. Este caderno executa as partes independentes
 do plano recebido; não registra aprovação do orientador, revisão humana,
 prioridade científica ou resultados experimentais que não ocorreram.
+O usuário autorizou completar o item 22 e decidir as tarefas posteriores;
+também confirmou que ainda não dispõe de comentários externos.
 
 ## 1. Base e decisão atual
 
@@ -203,6 +205,12 @@ restrições. Isso elimina a direção B genérica como contribuição central.
   Nosso evento também é um evento top-k. A diferença candidata fica no
   condicionamento gramatical e na interface da transição dLLM, não em
   descobrir que se pode somar os mundos que produzem um ranking.
+- [Grünwald e Halpern, Updating Probabilities, 2003](https://arxiv.org/pdf/cs/0306124),
+  §3, Teorema 3.1: ignorar como uma observação foi selecionada preserva o
+  posterior se a probabilidade de revelá-la é constante entre os mundos
+  compatíveis de massa positiva (CAR). É antecedente direto para a pergunta
+  sobre os tokens descartados. O diagnóstico quantitativo abaixo é uma
+  especialização de condicionamento, não um novo princípio estatístico.
 
 Leitura direcionada: formulações, algoritmos e resultados citados; não
 alegamos leitura integral de todos os apêndices ou auditoria dos experimentos
@@ -224,6 +232,8 @@ databases” e “coarsening at random”. A busca é datada e não exaustiva.
 | Parser MAP + projeção esparsa seria um método novo. | Consequência direta | SparseMAP eq. (5), §3.2. Rejeitado como protagonista. |
 | Likelihood exata com posições escolhidas a partir só do canvas. | Conhecido | DUEL Def. 3.1 e Teorema 4.3. |
 | Probabilidade de um resultado top-k integra mundos possíveis. | Conhecido | Zhang–Chomicki Def. 2.5, §§3–4. |
+| Ignorar seleção só preserva o posterior quando o mecanismo é constante nos mundos compatíveis de massa positiva. | Conhecido | CAR, Grünwald–Halpern Teorema 3.1. |
+| Quantificar a diferença entre condicionar na ação e só nos valores revelados. | Consequência direta | Identidades de condicionamento em eventos aninhados; §8.1. |
 | A seleção posterior aos valores pode ser integrada por filtros unários sem nova compilação. | Candidato delimitado | Proposição E abaixo; avaliar se a especialização acrescenta suficiente conteúdo além de WMC/ranking. |
 | Probabilidade da trajetória observada é produto das transições E. | Consequência direta | Regra da cadeia; não soma trajetórias de um mesmo texto. |
 | Backend CFG supera todo FactorDLM/EPIC nessa operação. | Sem sustentação | FactorDLM também admite os filtros; EPIC resolve outra lei/política. |
@@ -347,6 +357,44 @@ recebia de um log contendo somente os tokens fixados.
 **O que a prova não faz:** ela não prova que ninguém já publicou a redução,
 não fornece amostragem global da distribuição neural, nem melhora o
 tempo de gerar um documento que já era gerado pelo sampler.
+
+### 8.1. Diagnóstico exato da informação de seleção omitida
+
+Seja `A = {y em F : y_B=a_B}` o evento que considera só os valores
+revelados. O evento completo E da Proposição E satisfaz `E contido em A`.
+Para `P(E)>0`, defina `beta = P(E)/P(A)`. Então:
+
+```text
+beta = Z(q^E) / Z(q^A), com q^A filtrado só nos valores de B
+TV(P(.|E), P(.|A)) = 1 - beta
+KL(P(.|E) || P(.|A)) = -log(beta).
+```
+
+TV usa metade da soma das diferenças absolutas. A igualdade de TV resulta
+de separar E de A\E: dentro de E, `P(.|E)=P(.|A)/beta`; fora de E,
+o primeiro posterior tem massa zero e o segundo massa `1-beta`.
+A razão das densidades em E é constante `1/beta`, provando KL. Os demais
+mundos têm massa zero nas duas leis e não contribuem. A orientação oposta
+de KL pode ser infinita quando `beta<1`; não confundir as duas.
+
+Portanto condicionar só nos valores é correto para esse evento positivo
+**se e somente se beta=1**. Para seleção determinística, isso é a condição
+CAR no suporte de A: o indicador de escolher B deve ser constante nele;
+como E tem massa positiva, a constante deve ser 1. Para seleção aleatória,
+CAR admite outras constantes e o filtro binário top-k não se aplica.
+
+No exemplo `[A,B]` abaixo, observar B=0 dá `beta=(1/6)/(2/3)=1/4`:
+TV entre as leis dos **tokens propostos restantes** é `3/4`, e KL é
+`log(4)`. Duas consultas de massa quantificam essa diferença sem estimar
+frequências. São identidades clássicas aplicadas ao evento; não estabelecem
+novidade nem erro semântico do JSON.
+
+**Limite essencial:** comparar esses dois posteriors do mesmo sorteio
+latente não mede automaticamente o desvio do próximo passo do decoder.
+Ele pode intencionalmente descartar o sorteio e fazer outro forward.
+Também não certifica qualidade, distribuição do texto final ou ganho RL.
+Este diagnóstico serve para uma auditoria que realmente procure reconstruir
+a lei da proposta a partir do log, não para declarar incorreto outro alvo.
 
 ## 9. Exemplo manual e corolário JSON
 
@@ -486,25 +534,140 @@ de fronteira+posterior atual. Deve cobrir **todos** os k e eventos dessas
 instâncias, incluindo eventos impossíveis. Isso procura erros na Proposição E;
 não mede novidade, superioridade de latência ou software inteiro.
 
-Protocolo de desempenho **provisório, não executado**: só registrar versão
-imutável depois de completar o item 22 recebido e passar pelo gate humano.
-Separar os exemplos usados para encontrar erros de uma população de avaliação
-selecionada por origem/tamanho antes de executar o candidato. Usar todos os
-eventos viáveis nas instâncias pequenas; nas grandes, escolher eventos por
-semente/política fixa, incluindo massa rara e recusas. Não selecionar vitórias.
+### Item 22 concluído por decisão autorizada: protocolo de avaliação
 
-Comparadores: WMC com filtro correto, FactorDLM quando a mesma codificação é
-admitida, fórmula acumulada independente quando aplicável, enumeração pequena
-e Monte Carlo com o mesmo orçamento. Produtos que omitem seleção são controles
-negativos, nunca a única comparação de “superioridade”. EPIC continua baseline
-de geração/validade; não recebe artificialmente outra distribuição-alvo.
+**Estado: desenho definido; execução e configuração final não liberadas.**
+A escolha do teorema e os gates de novidade/revisão continuam necessários.
+Estes parâmetros são uma decisão prévia, não resultados nem uma aprovação de
+A1. Se outro candidato mudar a operação, versionar o protocolo **antes** da
+avaliação; não aplicar retrospectivamente essas decisões a dados já vistos.
 
-Métricas: igualdade racional onde há oráculo; tempo/preparação/consulta,
-memória/bitlength, recusas/status; variância/erro de MC. Separar forward,
-construção de suporte/token-DAG, compilação e consulta; contabilizar total.
-Salvar commit, config, seed, revisões de modelo/tokenizer, hash de gramática,
-escores/política de suporte e ambiente nos JSONL. Nenhuma captura de modelo,
-treinamento ou timing novo é resultado deste caderno.
+1. **Desenvolvimento versus avaliação.** Todos os inputs M34, casos externos
+   já examinados no projeto, exemplos deste caderno e os 8.016 eventos são
+   desenvolvimento/regressão. Reparti-los agora por hash não cria avaliação
+   inédita. Usar uma captura prospectiva de regras externas como avaliação;
+   nenhum resultado do solver decide sua inclusão.
+2. **Uma aplicação real.** Manter árvores de filtros como aplicação principal,
+   ligando-as ao formato [JsonLogic oficial](https://jsonlogic.com/): regras
+   JSON aninhadas executadas sobre dados. O AST explicativo da §3 pode ser
+   traduzido: `eq/ne` para `===/!==`, `field` para `var`, `all/any/not` para
+   `and/or/!`. Por exemplo,
+   `{"===":[{"var":"status"},"open"]}`. Não há adaptador implementado nem
+   garantia de equivalência semântica para coerções/tipos não especificados.
+   Uma primeira avaliação pode usar a gramática JSON atual: então só a
+   sintaxe é garantida, não aridade, operadores válidos ou resposta correta.
+3. **Origem externa previamente definida.** Os testes oficiais de aplicação
+   usam `https://jsonlogic.com/tests.json`, conforme
+   [tests/tests.js, linhas 58–79](https://github.com/jwadhams/json-logic-js/blob/c5c73601c90b11e98f6846609bac4dec203d1c18/tests/tests.js#L58).
+   Revisão do consumidor: `c5c73601c90b11e98f6846609bac4dec203d1c18`.
+   Em 2026-10-07 a identidade dos bytes do corpus foi obtida, sem enumerar
+   regras nem executar modelos/solvers: 17.574 bytes, SHA-256
+   `a202b65edda0d7ab687c758b8f10cfe9ba75561cd7166e5650710f88f26303a4`.
+   A URL é mutável: exigir esse hash; se não estiver mais disponível, registrar
+   falha de aquisição e uma nova versão, nunca substituir silenciosamente.
+   Conferir licença/permissão de redistribuição do corpus antes de copiá-lo
+   ao repositório. O consumidor MIT não determina sozinho a licença do site.
+4. **Seleção e divisão antes dos resultados.** Considerar todas as entradas
+   não comentário que sejam triplas `(regra,dados,esperado)`, com regra
+   serializada em JSON compacto UTF-8 de até 4.096 bytes. Preservar tipos;
+   proibir NaN/Infinity. Deduplicar/agrupar pelo JSON canônico da regra,
+   independentemente dos dados, para não colocar a mesma regra em ambos os
+   conjuntos. Remover da avaliação qualquer regra já utilizada no projeto,
+   com motivo registrado. Ordenar grupos pelo SHA-256 de
+   `"m36-v1:20261007:" + regra_canônica`; os de digest inteiro módulo 5 igual
+   a zero são calibração, os demais avaliação. Se exceder 128 grupos de
+   avaliação, usar os primeiros 128 nessa ordem. Não alegar generalização
+   para famílias de AST inteiramente novas só por essa divisão. Salvar IDs,
+   hashes, contagens e todas as exclusões antes de rodar o candidato.
+5. **Capture uma vez, compare no mesmo input.** Para todos os métodos, mesmos
+   canvas, probabilidades racionais originais, bytes/IDs, posições fixas e
+   EOS ABSENT. Captura nova de dLLM é opt-in; modelo/tokenizer e suas revisões
+   devem ser fixados antes dela, reaproveitando o pipeline existente quando
+   adequado. Não prometer uma captura sem esses artefatos. Na avaliação de
+   infilling, ocultar posições por semente `20261007`, com frações
+   `1/4, 1/2, 3/4`, arredondadas para cima e limitadas ao número de posições.
+   Suportes top-K `16,32,64` são declarados; não inserir a referência no
+   suporte após observar massa zero. Logs continuam distinguindo massa
+   omitida e massa gramatical válida.
+6. **Operação e comparadores.** Para A1, o alvo é a probabilidade de uma
+   transição, não a perplexidade do texto final. Usar WMC/inside-outside com
+   os filtros corretos e FactorDLM com boa codificação/evidência unária quando
+   a classe for admitida. Enumeração é oráculo pequeno; a fórmula acumulada
+   é o controle competente no produto independente. Monte Carlo estima a
+   mesma transição e recebe o mesmo orçamento total, incluindo amostragem
+   condicionada. Produtos que omitem seleção são controles negativos, nunca
+   o único adversário. EPIC/serial continuam comparadores da operação de
+   geração/validade, sem lhes atribuir a distribuição deste sampler.
+7. **Consultas sem seleção favorável.** Nos casos pequenos, enumerar todos
+   os eventos quando o espaço declarado couber em 100.000 combinações de
+   IDs; o limite depende do tamanho, não do resultado. Nas instâncias maiores,
+   usar `k` em `{1,ceil(|U|/2),|U|}` (sem duplicatas) e 16 propostas válidas
+   por semente para consultas observadas. Adicionar 16 eventos escolhidos
+   uniformemente entre posições/IDs do suporte por k, independentemente da
+   viabilidade. Relatar separadamente essa população; ela não é amostragem
+   do decoder. Falha em produzir propostas é registrada, não substituída por
+   um caso mais fácil. Sem posições livres, só o evento vazio é admitido.
+8. **Recursos e medição.** Por processo de solver: 30 segundos para preparar
+   e 30 por consulta; limite externo de memória de 2 GiB. O backend CFG usa
+   200.000 células, 1.000.000 alternativas e 1.000.000 unidades de preparação.
+   Orçamentos sem correspondência em outro método não são chamados de iguais;
+   manter iguais os tetos externos. Uma repetição de aquecimento e cinco
+   medidas, ordem de métodos alternada por semente. Medir preparação e
+   consulta separadas e o total para 1, 16 e 64 consultas, além de memória e
+   bitlength. Separar forward, suporte/DAG, compilação e consulta; CUDA
+   sincronizada quando houver GPU. Excluir loading somente da métrica por
+   passo e informá-lo no custo de reprodução. Não confundir refusas com zero.
+9. **Análise previamente escolhida.** Igualdade racional com oráculo é o
+   gate de correção. Reportar contagens por status e cobertura sobre todos os
+   inputs inscritos, mediana por caso e razões pareadas apenas nos casos
+   resolvidos por ambos, sempre junto à cobertura. Mostrar também censura por
+   tempo/memória; não converter timeout em um tempo exato. Intervalos de 95%
+   por bootstrap pareado de grupos de regras, 2.000 reamostragens, semente
+   `20261007`, somente com pelo menos 20 grupos pareados; abaixo disso,
+   mostrar resultados por grupo sem um intervalo agregado de bootstrap.
+   MC relata erro/incerteza, não igualdade racional. `beta`/TV da §8.1 medem
+   informação descartada nesse sorteio, não qualidade do texto ou drift global.
+10. **Proveniência e decisões.** Congelar uma config versionada, manifesto
+    de inputs e código num commit antes do primeiro timing. JSONL inclui
+    commit, hash de config/input/gramática, seed, revisões modelo/tokenizer,
+    política/ranking/suporte/exactness_scope, hardware, versões, recursos,
+    status e tempos; logits opcionais permanecem separados. Dados brutos
+    append-only, produtos derivados por script. Correções que usem avaliação
+    tornam esse conjunto desenvolvimento para uma próxima rodada. Preservar
+    resultados desfavoráveis e registrar desvios do protocolo.
+
+**Critério científico:** igualdade com WMC competente não demonstra novidade.
+Se A1 apenas especializar inferência/ranking conhecidos e não houver resultado
+adicional distintivo, rejeitá-lo como protagonista, mesmo com erro mensurável
+do controle negativo. Não escolher a contribuição pelo maior speedup observado.
+Uma conclusão negativa sobre A1 orienta a pesquisa; não é o resultado novo
+positivo que o usuário exige para o TCC. Nenhum timing ou captura foi executado.
+
+### Tarefas posteriores escolhidas: 23–27
+
+- **23 — Executar o protocolo congelado após os gates.** Conferir correção
+  antes de desempenho, registrar todos os status e comparar a mesma operação.
+  Entregável: JSONL brutos, manifesto e relatório gerado, incluindo derrotas.
+- **24 — Demonstrar consumo real de uma regra.** Completar uma regra JsonLogic
+  admitida preservando o canvas, executar o resultado no intérprete de revisão
+  fixada e mostrar a consulta/auditoria exigida pela contribuição escolhida.
+  Sintaxe, execução e decisão semanticamente desejada são critérios distintos.
+  Uma regra executável sozinha não comprova necessidade de um algoritmo novo.
+- **25 — Fechar revisão e formalização delimitada.** Responder a críticas
+  humanas reais, formalizar o resultado distintivo em Lean se apropriado e
+  declarar a fronteira entre especificação e implementação. Provas existentes
+  não passam a verificar automaticamente um decoder novo.
+- **26 — Revisar o artigo sobre o resultado efetivamente aprovado.** Mapear
+  cada afirmação a fonte/prova/código/evidência, manter os antecedentes e
+  limitações, gerar tabelas e verificar PDF. Sem substituir o protagonista por
+  uma hipótese nem transformar superioridade condicionada em promessa geral.
+- **27 — Preparar pacote de reprodução e publicação.** Uma reprodução mínima
+  offline, config/artefatos pequenos/licenças, limitações e escopo formal claros;
+  revisão final, commit/push/CI e candidato de publicação. Escolher veículo
+  somente com resultado e orientação; não submeter nem prometer aceite.
+
+Essas tarefas ficam sob T3604–T3605; não criam outra estrutura de código.
+Marcos são relativos às dependências, não confirmação das datas institucionais.
 
 ## 14. Dossiê pronto para revisão, sem aprovação fictícia
 
@@ -525,6 +688,10 @@ Datas trazidas pelo usuário, ainda **não conferidas no regulamento original**:
 resultados/análises 21/10/2026, artigo para banca 23/11/2026, defesas 02–10/12/2026.
 Não há contato autorizado com destinatário/canal nem parecer fornecido.
 Preparar o dossiê não equivale a obter revisão independente.
+O usuário confirmou não ter comentários externos. Essa ausência não impede
+investigação própria ou rejeição de um candidato fraco; tampouco constitui
+parecer favorável. A próxima revisão recebe também o diagnóstico CAR da §8.1
+e o protocolo completo da §13. As datas continuam sem confirmação.
 
 Após o parecer: se insuficiente, rejeitar A1 como protagonista sem apagar
 seu contraexemplo; formular outro gargalo antes de ampliar código. Se aceito,
@@ -587,10 +754,25 @@ está mecanizada em Lean. Builds não validam novidade ou toda a implementação
 | 10–18 | Especificação/prova/custos/integração exploratórios e verificação pequena; não são aprovação da novidade. |
 | 3, 19 | Alinhamento e revisão humana reais pendentes. |
 | 20, 21 | Implementação principal e sua validação aguardam os gates; só foi acrescentado o oráculo de pesquisa do item 18. |
-| 22 | Protocolo provisório sem medições; texto recebido termina em “Separe casos usados”. |
+| 22 | Completado por decisão autorizada: protocolo definido, ainda sem congelamento final/medições. |
+| 23–27 | Execução, consumo real, revisão/formalização, artigo e pacote definidos; seus gates continuam pendentes. |
 | Publicação | Dossiê/estrutura preparados; artigo central não foi reescrito nem submetido. |
 
 Sem nova implementação principal, novos resultados de modelo,
-alteração das tabelas do artigo, revisão humana ou submissão. O restante do
-item 22 e o calendário/parecer foram solicitados ao usuário enquanto as partes
-independentes continuam.
+alteração das tabelas do artigo, revisão humana ou submissão. A falta do
+restante do item 22 foi resolvida pela autorização do usuário. Calendário e
+parecer permanecem externos; a investigação da novidade permanece nossa
+obrigação, não uma aprovação que possa ser inferida desse silêncio.
+
+Follow-up: consulta ao Teorema 3.1 de Grünwald–Halpern e derivação do diagnóstico
+TV/KL em §8.1; conferência da documentação JsonLogic e do consumidor fixado;
+identificação dos bytes do corpus com `urllib.request.urlopen`/SHA-256, sem
+enumerar regras ou executar inferência. O corpo do corpus não foi arquivado.
+Uma enumeração analítica independente dos quatro mundos do exemplo, com
+`Fraction` e ordenação direta, confirmou `beta=1/4`, `TV=3/4` e razão constante
+4 no evento (portanto `KL=log(4)`). Não acrescentou outro teste à suíte nem
+constitui benchmark ou prova geral.
+Revisão documental e `git diff --check`; nenhuma mudança em código/provas/
+artigo exige reapresentar os checks anteriores como evidência nova.
+O commit anterior `9ed17c1` teve CI aprovado no run `37642046640`: o log
+confirma os 12 testes e 8.016 eventos, além de Rust/artefatos e Lean existentes.
