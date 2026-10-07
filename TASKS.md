@@ -46,7 +46,7 @@ new checks do not establish whole-source refinement or semantic superiority.
   `build_cfg_posterior_results --recompute` attempts all 55 final inputs: 54
   match rational mass/all marginals exactly, one remains unresolved without an
   archived numerical oracle. No historical timing/result is overwritten.
-- [ ] T3502: Center the article's introduction/formulation on the posterior;
+- [x] T3502: Center the article's introduction/formulation on the posterior;
   document CI, bounded preprocessing and the offline/full-logit reproduction
   boundary. Keep MWPC and certificates as complementary contributions.
   **Acceptance:** mathematical/artifact/build gates and paper layout pass;
@@ -57,7 +57,10 @@ new checks do not establish whole-source refinement or semantic superiority.
   scientific hashes, 16-page/no-overflow/reference gate). Render overview and
   detailed changed-page review pass. Posterior formulation/results now precede
   complementary MWPC/certificates. Source/archive/optional-logit boundaries are
-  documented. Publication and required remote CI remain pending.
+  documented. Implementation `c5c84b9` is pushed; GitHub Actions run
+  `37565587358` passes both jobs. Its log confirms all 11 tests, including the
+  current-solver recomputation, actually ran. Complete commands/limits/evidence:
+  `docs/evidence/m35-consolidation.md`.
 
 ## M34 — Exact recursive-CFG posterior: investigate, prove, then falsify
 

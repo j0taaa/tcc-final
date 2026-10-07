@@ -59,7 +59,10 @@ still not an offline checkout guarantee.
   16 pages, no overflow or undefined references. All-page render overview and
   detailed review of introduction/formulation/method/table/limits/conclusion
   confirm the final layout.
-- Remote CI gate: pending publication and execution of the changed workflow.
+- GitHub Actions on implementation commit `c5c84b9`: both jobs pass;
+  the Python job log confirms `Ran 11 tests` and all new regressions pass,
+  followed by Rust and artifact checks. Lean passes separately. Run:
+  https://github.com/j0taaa/tcc-final/actions/runs/37565587358.
 
 No universal source refinement, semantic benefit, new scientific priority or
 general decoder superiority follows from these checks.
