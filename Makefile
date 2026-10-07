@@ -47,8 +47,8 @@ build-rust:
 check-formal:
 	$(VENV_PY) scripts/exact_commit/check_formal_project.py --lake $(LAKE)
 
-# Operational, artifact and theorem checks; there is no regression suite yet.
-check-project: check build-rust check-formal article-results-check
+# M34's focused new suite is authorized; the deleted historical suite stays absent.
+check-project: check test build-rust check-formal article-results-check
 
 article-results:
 	$(VENV_PY) -m scripts.exact_commit.build_probability_audit_results
@@ -61,8 +61,7 @@ paper: article-results-check
 	$(MAKE) -C paper
 
 test:
-	@echo 'The previous test suite was removed by request. No replacement suite exists yet.'
-	@exit 1
+	$(VENV_PY) -m unittest discover -s tests -v
 
 clean:
 	rm -rf .pytest_cache .mypy_cache .ruff_cache dist build

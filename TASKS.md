@@ -43,7 +43,7 @@ by a search, theorem, compilation or demonstration alone.
   controls, 18 M31 replays, resource limits and pinned JSONTestSuite's complete
   <=128-byte conformance subset. Source FIRST/FOLLOW checking and initial
   independent token-product tests are implemented; later gates remain open.
-- [ ] T3401: Implement the smallest reusable, model-independent compiler and
+- [x] T3401: Implement the smallest reusable, model-independent compiler and
   exact sampler that satisfy T3400. Reuse immutable grammar/tokenizer contracts;
   fail explicitly on unsupported grammar/control semantics and work limits.
   **Acceptance:** independently enumerated token-path masses/marginals and
@@ -51,7 +51,19 @@ by a search, theorem, compilation or demonstration alone.
   fixed positions, missing support, zero mass and changed weights. No old suite
   restored; focused new tests may falsify this extension. Mathematical proof
   obligations and Lean coverage/limits stated accurately.
-  **Evidence:** pending.
+  **Evidence:** `cfg_posterior.py` compiles a sparse probability-independent
+  forest, evaluates rational inside/outside masses and samples original tokens;
+  `reference/ll1.py` checks the source contract and `json_grammar.py` includes
+  recursive RFC JSON syntax/UTF-8. `make check` passes (57 source modules).
+  `make test` runs six newly authorized focused tests: 180 random reweighted
+  product-oracle cases, exact RNG-transcript law with aliases, prefixes/fixed
+  slots, explicit refusals/limits, independent stack-control oracle, and all
+  281 defined plus 33 informational pinned <=128-byte JSON cases (empty JSON
+  rejected at the nonempty canvas boundary). `make check-formal
+  LAKE=/home/jota/.elan/bin/lake` checks 40 statements, including the conditional
+  finite fooling-set/state bound; Python/normalizer/model source refinement and
+  a fully mechanized sampling law are not claimed. New controls/protocol code
+  is not practical-benefit evidence; T3402 remains open.
 - [ ] T3402: Evaluate every predeclared comparison/application; keep failures
   and losing cases. Include genuine saved/fresh dLLM predictions, external
   structured inputs and an independently implemented exact stack controller.

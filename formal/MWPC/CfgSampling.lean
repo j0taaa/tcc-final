@@ -58,4 +58,15 @@ theorem fooling_state_count {U S : Type}
     exact complete u
   simpa using distinct.length_le_of_subset contained
 
+theorem exponential_fooling_state_bound {S : Type} (depth : Nat)
+    (prefixReach : Fin (2 ^ depth) → S → Prop)
+    (suffix : S → Fin (2 ^ depth) → Prop) (route : Fin (2 ^ depth) → S)
+    (left : ∀ u, prefixReach u (route u))
+    (right : ∀ u, suffix (route u) u)
+    (cross : ∀ u v s, prefixReach u s → suffix s v → u = v)
+    (states : List S) (complete : ∀ u, route u ∈ states) :
+    2 ^ depth ≤ states.length := by
+  simpa using fooling_state_count prefixReach suffix route left right cross
+    (List.finRange (2 ^ depth)) states (List.nodup_finRange _) complete
+
 end MWPC

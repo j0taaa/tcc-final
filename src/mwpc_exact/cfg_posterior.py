@@ -15,7 +15,7 @@ from enum import StrEnum
 from fractions import Fraction
 from math import isfinite, lcm
 from random import Random
-from time import monotonic
+from time import monotonic, perf_counter
 
 from mwpc_exact.eos_policy import EOSMode
 from mwpc_exact.mass_certificate import ProbabilityInput
@@ -63,6 +63,8 @@ class CfgPosterior:
     marginals: tuple[tuple[Fraction, ...], ...]
     _plan: CfgSampler
     _inside: tuple[Fraction, ...]
+    inside_seconds: float
+    marginal_seconds: float
 
     @property
     def status(self) -> PosteriorStatus:
@@ -140,6 +142,7 @@ class CfgSampler:
             or state.eos_policy != self.state.eos_policy
         ):
             raise ValueError("reweighting changed the compiled constraint/token support")
+        started = perf_counter()
         inside = [Fraction()] * len(self.terms)
         for node in self.order:
             inside[node] = sum(
@@ -147,6 +150,8 @@ class CfgSampler:
             )
         values = tuple(inside)
         total = values[self.root] if self.root is not None else Fraction()
+        inside_seconds = perf_counter() - started
+        started = perf_counter()
         outside = [Fraction()] * len(self.terms)
         masses = [[Fraction()] * len(row) for row in state.support.rows]
         if self.root is not None:
@@ -165,7 +170,9 @@ class CfgSampler:
         if total > 1 or any(sum(row) != total for row in masses):
             raise RuntimeError("probability/physical-slot invariant failed")
         marginals = tuple(tuple(v / total if total else Fraction() for v in row) for row in masses)
-        return CfgPosterior(inputs, total, marginals, self, values)
+        return CfgPosterior(
+            inputs, total, marginals, self, values, inside_seconds, perf_counter() - started
+        )
 
 
 def compile_cfg_sampler(

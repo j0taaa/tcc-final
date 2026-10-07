@@ -9,6 +9,11 @@ scratch. M32 supersedes the old mandatory suite/benchmark workflow. Do not
 restore the deleted suite, create an unsolicited replacement, or call an empty
 test run a correctness pass. Historical test evidence belongs to its source commit.
 
+The explicit 2026-10-06 request authorizes necessary fair new tests for M34.
+`tests/test_cfg_posterior.py` is a focused independent suite for that extension,
+including a pinned external syntax corpus; it does not restore the old suite
+or establish correctness of the whole repository.
+
 The repository implements **Exact Maximum-Weight Parallel Commitment (MWPC)** for CFG-constrained diffusion language models, using the EPIC codebase as the integration baseline. Preserve the existing serial and EPIC heuristic decoders as baselines; add the exact method as a separate strategy.
 
 Before changing code:
@@ -109,7 +114,7 @@ make paper
 
 These check structure/builds, mathematical proofs and recorded artifacts. They
 are not a substitute for the future independent regression/oracle suite.
-`make test` intentionally reports that no suite exists. When tests are rebuilt,
+`make test` now runs only the user-authorized focused M34 suite. Future tests must
 compare objectives and independently validated certificates, use recorded
 seeds, and keep failures distinct from timeouts and support infeasibility.
 
