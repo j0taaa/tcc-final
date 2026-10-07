@@ -97,3 +97,57 @@ Serial/EPIC generation and the exact LLaDA adapter remain available.
 Bulk raw research evidence is excluded from the library sdist/wheel and retained
 in Git. Full manuscript reproduction uses the Git evidence checkout. Build an
 installed package with `.venv/bin/python -m build --no-isolation`.
+
+## M34: exact recursive-CFG posterior (current extension)
+
+The old suite stays removed. `make test` runs eight newly authorized focused
+independent tests, including every pinned <=128-byte external JSON syntax case;
+no network/model is required. `make article-results-check` additionally checks
+M34's losslessly packed input archive, every config/source hash and all 52
+unchanged before/after mass/marginal pairs, then regenerates products in memory.
+
+```bash
+.venv/bin/python -m scripts.exact_commit.build_cfg_posterior_results --check
+.venv/bin/python -m scripts.exact_commit.build_cfg_posterior_results --sample json-context0-16
+```
+
+`components.json.gz` deduplicates grammar/tokenizer/permitted-vocabulary values;
+`inputs.json.gz` restores exact original inputs by SHA-256; `runs.json.gz` retains
+all phase configs, metadata and outcomes. The manifest records original compressed
+input hashes and producing command forms. Recorded commits are `952c24d` (initial
+array replay), `5ec4a89` (corrected initial scaling grid), `03630c9` (all nine fresh
+JSON forwards), `6331e37` (all 55 identical-input integer replays), and `e5b28e1`
+(all 27 rejection/reuse follow-ups). The aborted first scaling input construction
+has no measured case and remains explicitly recorded. The first fresh-capture
+commit had a formatting error later fixed; it is not a claim of a passing lint gate.
+
+To repeat campaigns, use a clean producing commit and a new output directory:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.run_cfg_posterior_audit --mode scaling --output results/raw/new-scaling
+.venv/bin/python -m scripts.exact_commit.run_cfg_posterior_audit --mode replay --output results/raw/new-arrays
+# Opt-in: needs the pinned official MDLM/GPT-2 artifacts and CPU model dependencies.
+.venv/bin/python -m scripts.exact_commit.capture_cfg_json_demo --output results/raw/new-json
+```
+
+The replay source is the complete archived M31 cohort, not chosen successes.
+Post-refinement timings are attributed to their actual producing code; current
+reweight/restriction handling can incur different overhead. Rejection follow-up
+is transparently added after the initial audit, with an independent recognizer,
+integer categorical draws from the same represented rows, seed 20261006 and
+10,000-attempt/30-second limits. Exact posterior probability and implied geometric
+trial counts are not end-to-end model accuracy or measured universal speedups.
+Full logits/checkpoints remain excluded from Git. No new dependencies were added.
+
+Full local logits can also be checked opt-in, without new model forwards:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.check_cfg_model_capture --capture results/raw/m34_cfg_posterior_v1/json-model
+.venv/bin/python -m scripts.exact_commit.build_probability_audit_results --check --capture results/raw/m31_probability_v1/capture
+```
+
+Both checks were executed on all nine new JSON and all 18 original array
+captures. They verify source hashes, full non-mask softmax, rational normalization
+and retained original probabilities. The fresh check additionally checks the
+entire declared top-32 cohort, rather than selecting solved cases. These local
+logits are intentionally absent from the default offline checkout audit.

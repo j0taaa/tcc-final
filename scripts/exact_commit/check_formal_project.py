@@ -21,14 +21,16 @@ def main():
             r"\b(sorry|admit|native_decide)\b|^\s*axiom\b", source.read_text(), re.MULTILINE
         ):
             raise ValueError(f"Unapproved admission or axiom: {source.name}")
-    build = _run_lean([args.lake, "build"], cwd=formal, timeout=180)
+    build = _run_lean([args.lake, "build", "MWPC", "MWPC.CfgSampling"], cwd=formal, timeout=180)
     if build.returncode:
         raise RuntimeError(build.stdout + build.stderr)
-    audited = _run_lean([args.lake, "env", "lean", "Audit.lean"], cwd=formal, timeout=180)
-    if audited.returncode:
-        raise RuntimeError(audited.stdout + audited.stderr)
-    expected = tuple(re.findall(r"#print axioms (\S+)", (formal / "Audit.lean").read_text()))
-    axioms = audit_lean_axioms(audited.stdout, expected)
+    axioms = {}
+    for source in ("Audit.lean", "AuditCfgSampling.lean"):
+        audited = _run_lean([args.lake, "env", "lean", source], cwd=formal, timeout=180)
+        if audited.returncode:
+            raise RuntimeError(audited.stdout + audited.stderr)
+        expected = tuple(re.findall(r"#print axioms (\S+)", (formal / source).read_text()))
+        axioms.update(audit_lean_axioms(audited.stdout, expected))
     example = _run_lean(
         [args.lake, "env", "lean", "examples/BudgetExample.lean"], cwd=formal, timeout=180
     )
@@ -38,7 +40,7 @@ def main():
         "verification": "PASS",
         "universal_axiom_dependencies": axioms,
         "canonical_lean_example": "PASS",
-        "regression_suite": "removed_by_user_request",
+        "regression_suite": "historical suite removed; focused M34 tests run separately",
         "scope": "Lean specifications/canonical proof; not Python/Rust source refinement",
     }
     raw = json.dumps(report, indent=2, sort_keys=True) + "\n"

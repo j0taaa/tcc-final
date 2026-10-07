@@ -1,0 +1,44 @@
+\section{Complementary Commitment Certificates}
+\label{sec:budgeted}
+
+Sampling and proposal preservation are different objectives. The retained MWPC
+backend maximizes matched positive proposal reward. With free positions
+$I=\{i:x_i=\mask\}$ and $r_i(a)=\sum_{j:i_j=i,t_j=a,w_j>0}w_j$, its budgeted
+extension computes
+\begin{equation}
+ \operatorname{OPT}_B=\max_{y\in\Feas_x,\ T\subseteq I,\ |T|\leq B}
+ \sum_{i\in T}r_i(y_i).
+ \label{eq:budget-objective}
+\end{equation}
+The budget counts positions, preserving positive duplicate IDs. For a fixed
+witness, its largest $B$ rewards are optimal; maximizing this value over witnesses
+gives the joint optimum. Selecting confidence before optimization or filtering
+an unbudgeted witness afterwards can have vanishing approximation ratios, as
+shown by the infinite families preserved in \path{paper/budgeted-math.tex}.
+
+\begin{theorem}[Budget frontier and certificate]
+Paid/unpaid token closings compile Equation~\ref{eq:budget-objective} into a
+finite CFG-on-DAG resource program. Complete unpruned inference computes every
+budget optimum and witness. Max-plus upper potentials satisfying all epsilon,
+terminal and binary relaxation inequalities bound every accepted path; a valid
+witness attaining the bound proves optimality. Absent bounds for all permissible
+roots prove support infeasibility.
+\label{thm:budget-certificate}
+\end{theorem}
+\begin{proof}
+A paid closing contributes one position and its aggregated reward; every
+feasible witness/position pair has the same resource path. Induction on
+acyclic epsilon paths and topological CFG spans establishes complete inference
+and the potential upper bound. Witness attainment gives equal lower and upper
+bounds. The detailed recurrence, certificate and separation proofs remain in
+\path{paper/budgeted-math.tex} and \path{paper/supplement-resource-dp.tex}.
+\end{proof}
+
+The independent checker verifies original tokens, fixed slots, complete support
+and EOS/PAD correspondence before evaluating potentials. A common-input EPIC
+batch with the same support, positions and budget is a feasible competitor, so
+its reward cannot exceed the joint optimum; native decoding may have different
+inputs and no accuracy comparison follows. Classical implicit-hitting-set
+conflict search \cite{davies2011maxhs,saikko2016lmhs} supplies alternative upper
+bounds and safe conflict/witness reuse. These are complementary retained APIs,
+not implementations of the exact posterior law in Section~\ref{sec:cfg-posterior}.

@@ -14,7 +14,7 @@ make check-project
 `check-formal` fails if the toolchain is unavailable. It does not install one
 silently or treat missing verification as success. `check-project` also checks
 Python/Rust builds and recorded manuscript artifacts; the user removed the
-regression suite in M32. Historical suite evidence remains attributed to its
+historical regression suite in M32 and authorized focused M34 tests later. Historical suite evidence remains attributed to its
 source revisions. The current formal command checks the library/axiom audit
 and canonical resource example, not the deleted fixture/rejection campaign. This
 combined gate does **not** mean the Lean kernel proves all foreign source code.
@@ -38,10 +38,19 @@ combined gate does **not** mean the Lean kernel proves all foreign source code.
 | Infeasible conflicts transport under contraction; feasible witnesses under expansion | `conflict_transport`, `feasible_witness_transport`, `fixed_conflict_discharge` | Conservative support/semantics containment and independent validation of retained full token witnesses |
 | Amortized feasibility-query count | `amortized_conflict_queries` | Trace charges one failed main query plus at most B deletion queries per learned conflict; Python counter/oracle tests |
 
-`scripts/exact_commit/check_formal_project.py` verifies the main four-budget
-example, aliases/shared prefixes, fixed split UTF-8 with EOS/PAD, empty emission
-and infeasibility. It also changes an upper bound and requires kernel rejection.
-These finite cases exercise the bridge; they are not a benchmark win rate.
+`scripts/exact_commit/check_formal_project.py` builds the retained library and
+new `MWPC.CfgSampling` module, audits 41 statements across `Audit.lean` and
+`AuditCfgSampling.lean`, and checks the canonical resource example. Historical
+fixture/forgery campaigns are recoverable in their source commits; they do not
+run in the reduced tree. The eight focused M34 tests run separately.
+
+M34 adds row-product scaling, two-type opening-stack counting/distinctness and
+a finite fooling-set state lower bound. The state bound assumes explicit
+prefix/suffix soundness; instantiation with balanced delimiters is a written
+proof. This is not a Lean-verified tokenizer, grammar normalizer, forest compiler,
+inside/outside implementation or complete sampling-law refinement. Existing
+formal sources and their archived hashes remain unchanged; the new module/audit
+are separate additions.
 
 ## Trust map
 
@@ -62,8 +71,8 @@ graph optimality; original-input correspondence is a separate checked boundary.
 The universal implementation correctness of the Python graph compiler, Python
 DP, Rust parser, PyO3/FFI and external tokenizer has not been proved in Lean.
 Independent oracles and differential/regression tests must be rebuilt after
-the user-authorized reset; the current branch does not contain that suite. The paper's DP completeness proof, infinite-language separation
-constructions and exact update-round formula remain written proofs; the
+the user-authorized reset; the current branch contains only the newly authorized focused M34 posterior tests, not that historical suite. The paper's DP completeness proof, infinite-language separation
+constructions, the CFG posterior/sampling law and exact update-round formula remain written proofs; the
 formalized certificate soundness does not silently mechanize all of them.
 Model probabilities, quantization, CUDA, system timing, semantic correctness
 and future denoising trajectories are outside the formal guarantee.

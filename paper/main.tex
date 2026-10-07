@@ -58,7 +58,7 @@
 \input{generated/m21_repair_v1/repair-values.tex}
 \input{generated/m25_live_v1/live-values.tex}
 
-\title{Certifying Parallel Commitment and Sampling Error for CFG-Constrained Diffusion Language Models}
+\title{Exact Finite-Token Inference for CFG-Constrained Diffusion Language Models}
 
 \author{Gabriel Jota Lizardo\inst{1}, Gabriel Barbosa da Fonseca\inst{1}}
 
@@ -73,18 +73,47 @@ Av. Brasil, 2023, Savassi, Belo Horizonte - MG, 30140-002, Brazil
 \maketitle
 
 \begin{abstract}
-We develop checkable guarantees for two decisions in constrained diffusion decoding: maximizing token-commitment reward under a physical-position budget, and admitting a sampled parallel update with bounded distributional error. Resource and conflict certificates prove exact-on-support reward optima. A separate anytime partition of original token space bounds grammar-valid probability mass without counting ambiguous parses multiple times. Its sharp total-variation bound accounts for unresolved and discarded mass; byte-language coverage can certify that discarded tokens cannot be valid. The bounds transport to parallel updates and compose under explicit transition premises. Exact-rational checkers, documented Lean specifications, independent exhaustive controls and fresh CPU MDLM predictions instantiate the construction. Historical EPIC comparisons and failed transfer remain visible. The incremental contribution is certifying finite-slot inference and error-controlled admission; it guarantees neither semantic correctness nor a universally faster decoder.
+Diffusion language models predict many positions simultaneously, but independent
+samples can violate recursive syntax. We implement exact grammar conditioning
+of a frozen mean-field prediction over finite original-token supports. A checked
+LL(1) grammar and reusable sum-product forest yield valid mass, token marginals
+and exact samples without sequence or stack enumeration. Token aliases,
+subword prefixes, fixed positions and omitted probability remain explicit.
+Written proofs establish the distribution and a scoped exponential automaton
+representation separation; Lean verifies selected algebraic specifications.
+Independent token-product oracles, pinned external JSON cases and genuine MDLM
+predictions test the implementation. Strong controls and failures remain
+visible: specialized counters and small-case rejection can be cheaper.
+Budgeted commitment and ambiguity-safe mass certificates provide complementary
+general-CFG APIs. The contribution is an incremental finite-token inference
+backend with a useful mathematical guarantee, not a new weighted-parsing
+principle, semantic-quality claim or universally faster decoder.
 \end{abstract}
 
 \begin{otherlanguage}{brazilian}
 \begin{resumo}
-Desenvolvemos garantias verificáveis para duas decisões em modelos de linguagem por difusão: maximizar a recompensa de um lote sob orçamento de posições físicas e autorizar uma atualização amostrada com erro distribucional limitado. Certificados de recursos e conflitos comprovam ótimos no suporte declarado. Uma partição progressiva do espaço de tokens originais limita a massa de probabilidade gramaticalmente válida sem contar derivações ambíguas repetidamente. Seu limite exato de variação total inclui massas não resolvida e descartada; provas de cobertura por bytes podem certificar que nenhum token descartado é válido. Os limites se transportam a atualizações paralelas e se compõem sob premissas explícitas. Verificadores racionais, especificações em Lean, controles exaustivos independentes e novas predições do MDLM em CPU realizam a construção. Comparações históricas com EPIC e a falha de transferência permanecem visíveis. A contribuição incremental é a inferência certificadora em posições finitas e a autorização com erro controlado; não garante correção semântica nem um decodificador universalmente mais rápido.
+Modelos de linguagem por difusão predizem várias posições simultaneamente, mas
+amostras independentes podem violar estruturas recursivas. Implementamos o
+condicionamento gramatical exato de uma predição fatorizada por passo, no suporte
+finito de tokens originais. Uma gramática LL(1) verificada e uma floresta de
+inferência reutilizável calculam massa válida, marginais e amostras exatas sem
+enumerar sequências ou configurações de pilha. Preservamos aliases, subpalavras,
+posições fixas e massa descartada. Demonstrações justificam a distribuição e
+uma separação exponencial de representação frente a autômatos explícitos; Lean
+verifica especificações algébricas selecionadas. Oráculos independentes, casos
+externos de JSON e predições reais do MDLM verificam a implementação. Controles
+fortes e falhas permanecem visíveis: contadores especializados e rejeição em
+casos pequenos podem ser mais baratos. A contribuição é um componente
+incremental de inferência com garantia matemática útil; não é um novo princípio
+de parsing ponderado, nem garantia de qualidade semântica ou velocidade universal.
 \end{resumo}
 \end{otherlanguage}
 
 \section{Introduction}
 
 Masked diffusion language models estimate several unknown positions in one forward pass \cite{austin2021d3pm,sahoo2024mdlm,nie2025llada}. Parallel proposals can nevertheless conflict: individually acceptable tokens may jointly eliminate every completion of a JSON document or program. The decoder must select a compatible batch while preserving already committed positions and the finite canvas.
+
+For checkable unambiguous syntax, we additionally compute and sample the exact represented posterior in a reusable finite-token forest. This avoids rare-event rejection and explicit stack expansion, while preserving the original token probabilities. The underlying weighted parsing is established; the contribution is its checked dLLM integration and precise finite-support guarantees.
 
 A reveal budget requires optimizing the completion and committed positions jointly: selecting confidence first or filtering an unbudgeted optimum can lose arbitrarily much reward. A separate practical question is whether truncating and partially exploring predictions distorts grammar-conditioned sampling beyond an application's tolerance. We supply independently checkable certificates for both decisions, with original-token provenance, finite slots and explicit support scope. Mathematical bounds justify admission or refusal without a favorable benchmark. Fresh MDLM predictions demonstrate this interface beyond the archived replay cohort; historical negative EPIC comparisons delimit rather than establish the contribution.
 
@@ -176,15 +205,16 @@ $O(|N|q^2)$ entries, excluding normalization. Exactness remains on represented
 support. Complete ordinary MWPC equivalence, finite-slot, CKY, graph-parser and
 update-invariant proofs are preserved in \path{paper/supplement-foundations.tex}.
 
-\input{budgeted-math.tex}
+\input{commitment-summary.tex}
 \input{probabilistic-commitment.tex}
+\input{cfg-posterior.tex}
 
 \section{Implementation and Evaluation Methodology}
 \label{sec:metodologia}
 
-The conflict engine specializes implicit hitting sets \cite{davies2011maxhs,saikko2016lmhs}. EPIC production remains pinned at \texttt{5b1b310}; \texttt{serial}, \texttt{epic} and ordinary \texttt{exact} remain available. Python/Rust independently implement ordinary inference through PyO3; the budgeted and probability engines are rational Python references. Original-input checkers validate graph/partition completeness, tokens, fixed slots, probabilities and EOS/PAD without running optimizers. Historical controls/regressions covered small token/path/subset cases, aliases, split UTF-8, duplicates, ties, forged bounds and timeouts. The user-requested source reduction removes that suite and historical campaign framework; their evidence belongs to recoverable freeze \texttt{a98ae8e}, not a new correctness pass. Current checks verify retained builds, proofs and recorded inputs. No new budgeted GPU performance is reported. Parent software and research artifacts use MIT; manuscript and upstream rights remain separate. Historical local submission release \texttt{v0.2.0} remains available.
+The conflict engine specializes implicit hitting sets \cite{davies2011maxhs,saikko2016lmhs}. EPIC production remains pinned at \texttt{5b1b310}; \texttt{serial}, \texttt{epic} and ordinary \texttt{exact} remain available. Python/Rust independently implement ordinary inference through PyO3; the budgeted and probability engines are rational Python references. Original-input checkers validate graph/partition completeness, tokens, fixed slots, probabilities and EOS/PAD without running optimizers. Historical controls/regressions covered small token/path/subset cases, aliases, split UTF-8, duplicates, ties, forged bounds and timeouts. The user-requested source reduction removes that suite and historical campaign framework; their evidence belongs to recoverable freeze \texttt{a98ae8e}, not a new correctness pass. Current checks verify retained builds, proofs and recorded inputs, plus a newly authorized focused posterior suite. The compiled posterior is model-independent Python; serial/EPIC/exact production strategies remain separate. No new budgeted GPU performance is reported. Parent software and research artifacts use MIT; manuscript and upstream rights remain separate. Historical local submission release \texttt{v0.2.0} remains available.
 
-Lean 4.34.0 \cite{lean2026reference} checks resource, reward-bound, conflict/transport, partition, probability-error and coverage specifications, using exact natural units for rational weights. Historical concrete gates covered aliases, EOS/PAD, empty words, infeasibility and forged-bound rejection without admissions or native shortcuts; the reduced tree checks the unchanged universal library and canonical resource proof. Original-input correspondence is independently checked in Python; universal Python/Rust refinement and the trajectory coupling remain outside Lean. \path{formal/README.md} gives precise coverage; implementation tests remain necessary.
+Lean 4.34.0 \cite{lean2026reference} checks resource, reward-bound, conflict/transport, partition, probability-error and coverage specifications, using exact natural units for rational weights. Historical concrete gates covered aliases, EOS/PAD, empty words, infeasibility and forged-bound rejection without admissions or native shortcuts; the reduced tree checks the universal library, canonical resource proof and new finite state-counting/row-scaling specifications. Original-input correspondence is independently checked in Python; universal Python/Rust refinement and the trajectory coupling remain outside Lean. \path{formal/README.md} gives precise coverage; implementation tests remain necessary.
 
 Experiments record producing commits, frozen configs, seeds, grammar/support hashes, checkpoint revisions, hardware, timings and statuses. Historical quantized \texttt{GSAI-ML/LLaDA-8B-Instruct} revision \texttt{08b83a6} uses RTX 3080 Ti, synchronized CUDA, excluded loading and official EPIC recovery. Full protocols are in the method/empirical supplements. Historical budget/confidence policies filter ordinary MWPC. The new rational reference instead retains all original proposals and is not retroactively used in those measurements.
 
@@ -195,95 +225,68 @@ External grounded calls audit 658 public BFCL records at \texttt{6ea5797} \cite{
 
 The principal results are constructive budget exactness, checkable optimality, two infinite-family separations and Theorems~\ref{thm:probability-error}--\ref{thm:probability-coverage}: ambiguity-safe probability/error bounds and sound support coverage. Tests check implementations; proofs establish the stated universal guarantees. New predictions demonstrate probabilistic admission, while saved-state timings and historical decoder accuracy are separate evidence.
 
-\subsection{Fresh dLLM predictions and certified sampling}
+\subsection{Earlier probability and commitment evidence}
 
 \input{generated/m30_probability_v1/numbers.tex}
-The pinned official MDLM-OWT checkpoint and GPT-2 tokenizer produce
-\MProbCanvases{} new CPU canvases. Six use JSON-Schema type names, RFC9110
-methods and a declared three-license policy; six use canonical one-child JSON
-arrays, depths 1, 3 and 8, with recursive $S\to[]\mid[S]$. One/two masked
-slots permit independent exact controls including every vocabulary alias.
-CPU F32 attention/rotary kernels are tested mathematical ports, not bitwise GPU
-claims; F64 softmax excludes MASK and rational normalization uses the full
-vocabulary. Fixed slots have probability one; retained rows are not renormalized.
-
-Two support policies, coverage/no-coverage evidence and four call limits give
-\MProbEvaluations{} repeated-measure cells, not independent requests.
-All \MProbProofs{} certificates pass independent checks against original logits
-and exact controls. At limit 64 with top-eight plus declared coverage support,
-coverage admits \MProbCoverageAtLimit{}/\MProbCanvases{} updates at TV tolerance 0.05;
-generic discarded-mass bounds admit \MProbGenericAtLimit{}. Unresolved and zero-mass
-cases are retained. Complete outcomes and sampled documents are in
-\path{docs/artifacts/processed/m30_probability_v1/report.md}.
-
-For example, a schema-type sample is \texttt{\{"type":"string"\}} with certified
-TV at most \MProbSchemaTV{}. The two-slot license case's exact valid mass implies
-\MProbLicenseRejectDraws{} expected independent rejection draws; certified inference
-admits its sample without such a trial. This is post-hoc algebra from the archived
-probabilities, not measured runtime. Specialized exact controls avoid rejection too.
-
-Configs precede predictions; these controlled syntax probes are not held-out
-production requests. Specialized exact inference also avoids rejection.
 \input{generated/m31_probability_v1/numbers.tex}
-A frozen larger-canvas audit crosses six prefixes with 4/8/16 free slots:
-\MProbAuditCanvases{} fresh MDLM predictions and \MProbAuditJobs{} partition jobs at
-caps 8/64, tolerance 0.05, and 30-second external deadlines. One-child and
-multi-child recursive arrays share original token probabilities with an
-independent exact counter-transfer control. All \MProbAuditProofs{} returned
-certificates validate; \MProbAuditTimeouts{} job times out externally. At cap 64,
-admission is respectively \MProbAuditFourAdmitted{}/6, \MProbAuditEightAdmitted{}/6 and
-\MProbAuditSixteenAdmitted{}/6. The control resolves every canvas with zero
-approximation error and lower inference cost in all
-\MProbAuditReferenceFaster{}/\MProbAuditProofs{} completed pairs, including coverage,
-compilation and query work. Certificate/numeric interfaces differ; this is not
-execution of published competitors or a deployment ranking. Full source logits
-remain local; Git records retained rational inputs, tokenizer bytes, source
-hashes and proofs. Complete outcomes:
-\path{docs/artifacts/processed/m31_probability_v1/report.md}.
-Certification survives; practical superiority, semantic quality and general-JSON
-scaling are unestablished.
+M30 captures \MProbCanvases{} official CPU MDLM canvases for declared structured
+formats and recursive arrays, using original F64 probabilities and rational
+normalization over the full non-mask vocabulary. Its \MProbEvaluations{} repeated
+policy/cap cells produce \MProbProofs{} independently checked certificates.
+Coverage admits \MProbCoverageAtLimit{}/\MProbCanvases{} updates at TV 0.05 and cap
+64, versus \MProbGenericAtLimit{} with generic omitted-mass bounds. These
+controlled syntax probes are not held-out semantic requests; complete inputs,
+checks and refusals are in the generated M30 report.
 
-\subsection{Budgeted replay on authentic model states}
+The subsequent frozen M31 audit captures \MProbAuditCanvases{} larger MDLM
+canvases, crossing six array prefixes with 4/8/16 free slots, and runs
+\MProbAuditJobs{} partition jobs at caps 8/64. All \MProbAuditProofs{} returned
+certificates verify; \MProbAuditTimeouts{} job times out externally. Cap-64
+admission falls to \MProbAuditFourAdmitted{}/6, \MProbAuditEightAdmitted{}/6 and
+\MProbAuditSixteenAdmitted{}/6. The compact independent exact counter is cheaper
+on all \MProbAuditReferenceFaster{}/\MProbAuditProofs{} completed pairs. This
+negative outcome motivates the compiled posterior extension rather than
+establishing a practical advantage for box partitioning. Full logits remain
+local; original probabilities, tokenizer bytes and proofs are archived in
+\path{docs/artifacts/processed/m31_probability_v1/report.md}.
 
 \input{generated/m28_budgeted_real_v1/numbers.tex}
-Frozen replay uses all 24 archived LLaDA states from researcher-authored recursive tasks and all 12 states of the Belo Horizonte request. Probabilities, fixed slots and bytes are preserved. Support uses top-2 recursive alternatives plus proposals/EOS/PAD, or the query's original domains. One primary proposal per free position, with all-token and ordinary-only reward profiles, gives \MRealInputs{} inputs and caps 0--2. These are repeated measures of 36 states, not independent requests or a new trajectory.
-
-All \MRealCertificates{} original-input certificates verify: \MRealOptimal{} optimal and \MRealInfeasible{} support-infeasible, with \MRealTimeouts{} timeout and \MRealErrors{} error jobs. On ordinary rewards, exact improves over confidence preselection in \MRealPreselectionStrict{}/\MRealPreselectionPairs{} pairs and ties all \MRealPostfilterPairs{} post-filtered MWPC and \MRealEpicPairs{} native EPIC byte-selector/cap pairs. Pending serial fallback and unverified finite batches are excluded; EPIC's full decoder is not evaluated here.
-
-Median geocoding frontier cost is \MRealGeoSeconds{} CPU seconds. Post-hoc relaxation certifies \MRealBoundTight{}/\MRealBoundChecked{} post-filtered batches directly by coincident bounds. A supplied witness can thus avoid resource optimization; hybrid-decoder speedup is unmeasured. Reproduce inputs, proofs and timings with \path{run_budgeted_real_replay.py}; the report is under \path{docs/artifacts/processed/m28_budgeted_real_v1/}. No semantic superiority follows.
-
-\subsection{Certified computation reuse on the same inputs}
-
 \input{generated/m29_conflict_v1/numbers.tex}
-M29 repeats every input and cap with a classical descending-score subset
-enumerator, cold conflict solving, conflict-only reuse, witness-only reuse and
-two-sided reuse. All resolved scores/statuses agree with the archived independent
-optima. The DP computes one frontier; the other times sum three cap queries,
-using three repetitions. Internal certificate checks are included; serialization
-and external verification are separate. Two-sided reuse was developed after
-conflict-only evaluation on this cohort, so this is development/replay evidence.
-Its median paired speed ratio is \MReuseDPSpeed{} against fresh DP and
-\MReuseRankSpeed{} against ranked subsets, faster on \MReuseRankWins{}/72 inputs
-against the latter. Geocoding frontier medians are \MReuseGeoSeconds{} versus
-\MReuseGeoDPSeconds{} CPU seconds. Across repetitions, reuse uses \MReuseCalls{}
-CFG-oracle calls versus \MReuseRankCalls{} for enumeration; \MReuseZeroPositive{}
-positive-reward optima require no new oracle query. Complete family/ablation
-tables and all certificates are in the M29 generated report. These computation
-savings preserve the mathematical objective; they establish no new generation
-accuracy, full-EPIC superiority or population timing guarantee.
+M28 replays 24 archived LLaDA structured states and 12 states of a geocoding
+request, with unchanged probabilities and fixed tokens. Its \MRealInputs{} reward
+inputs and caps 0--2 give \MRealCertificates{} independently verified certificates:
+\MRealOptimal{} optimal, \MRealInfeasible{} support-infeasible, no timeout/error.
+Exact beats confidence preselection in \MRealPreselectionStrict{}/\MRealPreselectionPairs{}
+ordinary-reward pairs and ties every admitted post-filtered/native-EPIC batch;
+this is a common-input selection comparison, not full EPIC decoding.
+M29's same-cohort conflict/witness reuse agrees on resolved objectives, with
+median paired speed ratios \MReuseDPSpeed{} versus fresh DP and \MReuseRankSpeed{}
+versus ranked subsets. Development on this cohort, repeated measures and
+differing interfaces prevent population or semantic claims. All cases and
+ablations remain in the generated M28/M29 reports, with proof details retained
+in the supplementary sources.
 
 \subsection{Historical experiments and failed transfer}
 
-Counterfactual-margin policies did not justify continuation. Historical synthetic confirmation uses 100 requests from the same templates as development, 24 slots and question-derived operands (complete table in the empirical supplement); it does not evaluate the new joint-budget algorithm.
-The full table is preserved as \path{generated/m25_live_v1/synthetic-results.tex} in the empirical supplement.
+Counterfactual policies did not justify continuation. Historical synthetic
+confirmation uses 100 requests from development templates, question-derived
+support and unequal proposal budgets. Its complete table remains in
+\path{generated/m25_live_v1/synthetic-results.tex}. The primary gives
+\MLiveConfidenceCorrect{}/100 correct calls versus \MLiveEpicFullCorrect{}/100
+for EPIC 24; the correctness interval
+$[\MLivePrimaryLower{},\MLivePrimaryUpper{}]$ does not establish two-point
+non-inferiority. Secondary/layout observations do not establish general accuracy.
 
-The frozen primary gives \MLiveConfidenceCorrect{}/100 correct calls versus \MLiveEpicFullCorrect{}/100 for EPIC 24, with median paired speed ratio \MLivePrimarySpeed{}. The conservative correctness-difference interval is $[\MLivePrimaryLower{},\MLivePrimaryUpper{}]$ points, so two-point non-inferiority is unestablished. Secondary budget four yields \MLiveBudgetFourCorrect{}/100 versus \MLiveEpicEightCorrect{}/100 for EPIC eight; layout normalization reduces the gap to eight points. These template-specific observations do not imply universal task superiority.
-
-The external table is preserved in the empirical supplement.
-
-External confirmation gives \MGroundedConfidenceCorrect{}/\MGroundedCases{} correct calls versus \MGroundedEpicThirtyTwoCorrect{}/\MGroundedCases{} for EPIC 32, at \MGroundedConfidenceMs{} versus \MGroundedEpicThirtyTwoMs{} ms. EPIC eight gives 16 and 17 correct calls across executions. Coverage is \MGroundedCovered{}/\MGroundedCases{}; the synthetic benefit does not transfer. Four geographic attempts return empty queries; a declared post-hoc support yields Belo Horizonte for three policies, while budget 64 fails. All eight attempts remain archived; one request establishes integration only.
-
-Historical Q2 gaps are illustrative, not typical-model estimates: singleton snapshots cannot estimate a representative gap. Q4's compound graph axis does not isolate a cause or represent code workloads. Literal-task runtime ratios are confounded by unequal proposal budgets. For recursive live tasks, the study establishes no end-to-end advantage. Negative outputs and producing commands remain supplementary; timeouts are never promoted to success.
+External confirmation gives \MGroundedConfidenceCorrect{}/\MGroundedCases{}
+correct calls versus \MGroundedEpicThirtyTwoCorrect{}/\MGroundedCases{} for EPIC
+32; the synthetic benefit does not transfer. Coverage is
+\MGroundedCovered{}/\MGroundedCases{}. Four geocoding attempts return empty
+queries; a declared post-hoc support succeeds under three policies, while budget
+64 fails. Every attempt remains archived; one request establishes integration
+only. Earlier singleton Q2 and compound-axis Q4 probes establish neither typical
+model gaps nor isolated causal scaling. Historical runtime comparisons are
+confounded by budget and support differences. Negative results and complete
+producing commands remain in the empirical supplement; no timeout is a success.
 
 \section{Limitations and Threats to Validity}
 \label{sec:limitacoes}
@@ -292,6 +295,8 @@ Historical Q2 gaps are illustrative, not typical-model estimates: singleton snap
 
 Reward guarantees are per-step \texttt{exact\_on\_support}: truncation may change feasibility/reward; it is not full-vocabulary exact and does not optimize the future trajectory. \texttt{TIMEOUT} leaves feasibility and optimality unknown for reward search, unlike completed \texttt{INFEASIBLE\_ON\_SUPPORT}; large lattices may exhaust time or memory. Partial probability certificates retain sound bounds but need not authorize sampling.
 
+The posterior compiler requires checked LL(1) source grammars, nonempty byte emissions and absent EOS. Its resource limits can refuse valid inputs; changing support by expansion requires recompilation. Exactness is on the declared support, and general JSON syntax allows duplicate keys. Polynomial arithmetic work does not imply low bit cost or universal latency superiority.
+
 The probability target is frozen mean-field, not the complete generative joint. Full-vocabulary bounds require original normalization and omitted-mass evidence; coverage currently requires absent EOS. Search can be exponential, refusal is supported, and recorded probes do not verify the trajectory theorem's every-state premises. Small specialized exact controls can be cheaper. The budgeted solver is a rational reference, not the Rust production decoder. Budgeted references, Lean specifications and independent checkers do not constitute universal source refinement; DP completeness and separation constructions remain written proofs.
 
 ByteLevel bytes do not supply programming-language lexical semantics or factual/functional correctness. Historical decoder evidence uses finite regular catalogs, one quantized checkpoint/host, and question-derived support that may omit the answer. BFCL cases are a restricted subset; family disjointness is weaker than domain disjointness. EPIC recovery/layout affects grading, repetitions do not enlarge the sample, and secondary comparisons are exploratory. Unequal proposal budgets confound some historical timings. EOS/PAD reward can inflate scores. GPU peak includes weights; historical live CPU peak is unmeasured. Repair excludes general edits/naturally observed model errors. These limitations remain separate from the stated mathematical guarantees.
@@ -299,7 +304,7 @@ ByteLevel bytes do not supply programming-language lexical semantics or factual/
 \section{Conclusion and Future Work}
 \label{sec:conclusao}
 
-Finite-token certificates prove a maximum-reward batch or authorize a grammar-valid sampled update at a declared distributional tolerance. Exact budget frontiers, separation proofs, safe reuse and ambiguity-safe mass envelopes justify these decisions mathematically. Coverage can eliminate valid omitted mass without hiding truncation. Fresh MDLM executions exercise admission and refusal; the larger-canvas audit finds declining admission and cheaper compact exact inference. The contribution is incremental certification and integration of established ideas, with production benefit and priority unestablished. Lean's documented specifications complement independent implementation checks; scalable probability search, production budgeted Rust and full source refinement remain future work.
+Finite-token certificates prove a maximum-reward batch or authorize a grammar-valid sampled update at a declared distributional tolerance. Exact budget frontiers, separation proofs, safe reuse and ambiguity-safe mass envelopes justify these decisions mathematically. Coverage can eliminate valid omitted mass without hiding truncation. Fresh MDLM executions exercise admission and refusal; the larger-canvas audit finds declining admission and cheaper compact exact inference. The new posterior backend provides exact finite-token recursive conditioning and reusable marginals/samples, avoiding the acceptance-probability dependence of rejection and the exponential state representation of typed nesting. This useful capability is proved under declared premises and demonstrated on original MDLM predictions; weighted CFG inference is established. General deployment superiority, semantic gains and world priority remain unestablished. Lean's documented specifications complement independent implementation checks; scalable probability search, production budgeted Rust and full source refinement remain future work.
 
 \section*{AI-Use Declaration}
 

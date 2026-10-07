@@ -1,5 +1,4 @@
 import MWPC.Probability
-import MWPC.CfgSampling
 import MWPC.Certificates
 import MWPC.Bounds
 import MWPC.Prefixes
@@ -17,3 +16,4 @@ theorem score_append (a b : List Nat) : score (a ++ b) = score a + score b := by
   simp [score]
 
 end MWPC
+

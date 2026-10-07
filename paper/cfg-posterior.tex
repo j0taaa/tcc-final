@@ -1,0 +1,156 @@
+\section{Exact Recursive-Grammar Posterior Compilation}
+\label{sec:cfg-posterior}
+
+The larger-canvas negative result motivates replacing token-box search when
+unambiguity is checkable. This extension compiles the \emph{represented}
+conditional distribution
+\begin{equation}
+ P_S(y)=q(y)\indic[y\in\Feas_x]/Z_S,\qquad
+ Z_S=\sum_{y\in\Feas_x}q(y).
+\end{equation}
+It computes $Z_S$, original-token marginals and exact samples without enumerating
+valid sequences or every parser-stack configuration. Weighted CFG sampling is
+established: Rivaud and Pachet already prove tractability for unambiguous
+CFG/Markov constraints \cite{rivaud2017sampling}. Our contribution is its checked,
+reusable finite-token interface for frozen dLLM predictions, including subword
+aliases, physical positions and explicit support loss. It is not a new
+sum-product parsing principle or a claim of scientific priority.
+
+\begin{theorem}[Finite-token posterior]
+Assume a checked LL(1) byte source grammar, nonempty compositional ordinary-token
+emissions, absent EOS, $n$ physical slots and nonnegative rational unaries.
+The compiled forest computes $Z_S$ and all token marginals exactly. If $Z_S>0$,
+its integer categorical sampler returns each original sequence $y$ with
+probability $P_S(y)$, preserving every fixed position and consuming exactly $n$
+tokens. With $v$ token-DAG vertices, $e$ edges, $h$ nonterminals and $r$ binary
+rules, forest construction uses at most $O(rv^3+eh)$ arithmetic alternatives and
+$O(hv^2)$ chart cells; subsequent evaluation is linear in forest size.
+\label{thm:cfg-posterior}
+\end{theorem}
+\begin{proof}
+Private proper-prefix sharing closes each token on its own last-byte edge.
+Every complete DAG path consequently chooses exactly one original token per
+slot. Prefix tokens can close or continue; byte aliases remain distinct weighted
+closures. FIRST/FOLLOW disjointness and absence of nullable left recursion
+certify unique source parses. Private binarization, nullable and unit elimination
+lift normalized trees to source trees, so a token path is counted once.
+Inside induction on topological span sums precisely the accepted path weights.
+Reverse differentiation attributes each path to its one closure in each slot,
+giving token masses and marginals after division by $Z_S$. Sampling alternatives
+proportional to their inside contributions telescopes to $q(y)/Z_S$.
+Each binary rule can join at most $v^3$ endpoint triples; terminal alternatives
+contribute at most $eh$. Bit cost of exact integers is additional to this
+arithmetic-work bound; cubic parsing need not be cheap.
+\end{proof}
+These bounds concern the finite DAG/normalized grammar after validation;
+source normalization and comparison to the supplied input have separate costs.
+For the fixed JSON grammars below, that source cost is independent of depth.
+
+\paragraph{Exact arithmetic and reuse.}
+For row denominators $d_i$, set $a_i(t)=d_iq_i(t)$ and $D=\prod_i d_i$.
+Every complete path has integer weight $Dq(y)$, hence root mass $DZ_S$.
+The factor $D$ cancels from marginals and categorical sampling; retained rows
+are never silently renormalized. Binarizing long source bodies \emph{before}
+nullable expansion preserves trees and avoids exponential optional-subset
+expansion of those bodies. When subsequent steps reweight, remove alternatives
+or commit previously free positions, zero the removed original-token choices
+and reuse the same forest. This exactly restricts its path sum. Expansion or
+undoing an existing commitment requires recompilation. Committing any subset
+of a returned full witness preserves finite-support feasibility; applying a
+fixed update map preserves the corresponding posterior pushforward. Neither
+fact proves the neural model's complete denoising distribution correct.
+
+\paragraph{Mathematical reason to use this representation.}
+Two-type balanced delimiters have $2^d$ opening stacks of length $d$, each with
+its unique reversed closing suffix. Matching pairs concatenate to a valid word;
+crossed pairs do not. An accepting NFA run for each pair must therefore visit
+a distinct midpoint state, implying at least $2^d$ states even for this
+finite-length slice. A fixed LL(1) grammar and the preceding polynomial forest
+avoid this explicit sequential-state expansion. This is the classical
+fooling-set argument specialized to the interface, not a lower bound for all
+factor graphs or specialized algorithms. Lean checks finite distinctness/counting,
+the conditional state bound and row-product scaling; the full sampling law,
+normalizer and Python implementation are not mechanized source refinements.
+
+The separation applies to genuine JSON forms: choose each of $d$ opening tokens
+from \texttt{[} and \texttt{\{"x":}, fix the middle token to \texttt{0}, and choose
+each closing from \texttt{]} and \texttt{\}}. Every opening sequence has exactly
+one valid closing sequence, so the $2^{2d}$ represented sequences contain
+$2^d$ valid documents. Under uniform row choices, $Z_S=2^{-d}$ and independent
+rejection needs $2^d$ trials in expectation. A fixed LL(1) grammar recognizes
+these recursive JSON forms; our token DAG has $O(d)$ vertices and polynomial
+inference work. This is a mathematical family, not a model benchmark or a
+new discovery of grammar-sampling tractability. Specialized CFG algorithms
+can achieve this advantage too.
+
+Exact arithmetic does not hide an exponential bit requirement here. If $b$
+is the total bit length of input denominators, then $\log_2 D\leq b$. A span
+path contains at most $v-1$ byte edges and one closure per encountered slot,
+with each integer closure weight at most its row denominator. Strict-CNF trees
+over those edges have $O(v)$ nodes; their shapes, rules and edge choices number
+at most $(4(e+r+h+1))^{O(v)}$. Inside and outside integers thus need at most
+$b+O(v\log(e+r+h+1))$ bits. Together with the polynomial forest bound, standard
+integer arithmetic gives polynomial inference bit work, while constants and memory can
+still make compilation impractical.
+
+\paragraph{Useful capability and competing methods.}
+The use is a probabilistic backend for recursive JSON/DSL generation and
+multi-region infilling: obtain a valid completion and its original-token
+marginals without repeated independent guessing or repair-induced distortion.
+EPIC optimizes practical CFG-constrained decoding, not this exact posterior.
+LAVE samples lookahead prefixes and explicitly allows rejecting extendable
+proposals \cite{zhang2026lave}; it does not compute $Z_S$ or this joint law.
+Exact automaton conditioning \cite{dang2026automata} explicitly excludes CFGs;
+FactorDLM \cite{su2026factor} is an exact-inference alternative whose cost depends
+on its factor encoding. We claim neither general speed superiority over these
+decoders nor that all factor encodings suffer the stated automaton bound.
+
+\input{generated/m34_cfg_posterior_v1/numbers.tex}
+\paragraph{Independent checks and complete model audit.}
+New focused tests compare token products with independent stack/JSON recognition,
+exact RNG-transcript laws, aliases, prefixes, zero/missing mass and contracted
+canvases. All 281 defined JSONTestSuite syntax cases of the predeclared
+128-byte subset satisfy their external verdicts; 33 implementation-dependent
+cases run without a correctness assertion. The empty negative document is
+rejected at the nonempty-canvas boundary. This suite does not restore the
+removed historical tests or certify the whole repository.
+
+The frozen grid includes all 28 two-type delimiter cases, including fixed-opening
+controls favoring stack transfer. All resolve with the forest; six explicit-stack
+cases exceed the identical work budget. All \MCfgReplayExact{}/18 original MDLM
+array inputs resolve and agree with the independently implemented counter,
+which generally remains cheaper. Nine fresh official CPU MDLM predictions use
+three declared JSON surroundings, 4/8/16 free slots and original top-32 tokens;
+no target tokens are injected. Exact integer/pre-binarization refinement,
+with the same optimization given to the controls, preserves all 52 previously
+resolved masses/marginals and resolves \MCfgFreshExact{}/9 full-JSON cases.
+One 16-slot case still exceeds the work budget. The paired median query ratio
+against our initial rational implementation is \MCfgRefinementSpeed{}, a local
+engineering improvement, not a comparison against published decoders.
+
+\begin{table}[htbp]
+\centering\small
+\input{generated/m34_cfg_posterior_v1/application-table.tex}
+\caption{All nine new JSON canvases. C0/C1/C2 identify the declared parameter,
+items and message surroundings; the suffix is free token slots. First sample
+includes construction, evaluation and sampling; reuse commits half the free
+positions. $^{*}$Expected rejection trials are algebraic $Q/Z_S$, where
+$Q=\prod_i\sum_{t\in S_i}q_i(t)$, not measured wall-time speedups.}
+\label{tab:cfg-posterior}
+\end{table}
+
+A transparently added represented-support rejection control runs all 27 model
+inputs, with 10,000 attempts and the same probabilities. It returns 14 samples
+and exhausts the trial budget on 13, without asserting infeasibility. Rejection
+is faster on all six smaller JSON cases in the recorded seed. Its acceptance
+probability is $Z_S/Q$, so expected attempts are $Q/Z_S$, not $1/Z_S$:
+charging discarded tokens would unfairly favor our method. The forest avoids
+this dependence on rare acceptance; specialized exact controls do too.
+Reuse agrees exactly with recompilation on all \MCfgReuseExact{} resolved
+clamped canvases. Every initial failure and timeout remains archived.
+Full model logits stay local; losslessly deduplicated original inputs,
+probabilities, tokenizer bytes, configs, commits, hashes and all outcomes are
+rechecked offline by \path{build_cfg_posterior_results}. The full report is
+\path{docs/artifacts/processed/m34_cfg_posterior_v1/report.md}.
+These are controlled syntax applications, not held-out semantic benchmarks;
+valid JSON may still contain meaningless values or duplicate keys.

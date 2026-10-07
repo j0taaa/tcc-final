@@ -52,10 +52,12 @@ check-project: check test build-rust check-formal article-results-check
 
 article-results:
 	$(VENV_PY) -m scripts.exact_commit.build_probability_audit_results
+	$(VENV_PY) -m scripts.exact_commit.build_cfg_posterior_results
 
 article-results-check:
 	$(VENV_PY) scripts/verify_artifacts.py
 	$(VENV_PY) -m scripts.exact_commit.build_probability_audit_results --check
+	$(VENV_PY) -m scripts.exact_commit.build_cfg_posterior_results --check
 
 paper: article-results-check
 	$(MAKE) -C paper

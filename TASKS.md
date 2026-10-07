@@ -64,37 +64,74 @@ by a search, theorem, compilation or demonstration alone.
   finite fooling-set/state bound; Python/normalizer/model source refinement and
   a fully mechanized sampling law are not claimed. New controls/protocol code
   is not practical-benefit evidence; T3402 remains open.
-- [ ] T3401a: Use exactly scaled integer unaries and binarize before nullable
+- [x] T3401a: Use exactly scaled integer unaries and binarize before nullable
   expansion; give the independent controller the same numerical benefit.
   **Acceptance:** common-denominator/path and private-binarization proofs,
   unchanged masses/marginals/sampling law against independent oracles; fixed
   original model inputs reused before/after, all earlier failures retained.
-  **Evidence:** pending. Initial rational comparisons and all nine fresh
-  captures completed at recorded commits. Fresh JSON returns six exact results,
-  two work limits and one external deadline. Improve computation without
-  changing the inputs, grammar language or declared success criteria.
-- [ ] T3402: Evaluate every predeclared comparison/application; keep failures
+  **Evidence:** `6331e37` reruns all 28/18/9 saved inputs, no new forwards;
+  all 52 previously resolved masses/marginals are exactly unchanged. Both
+  independent controllers use row-scaled integer arithmetic. The median paired
+  query ratio over those 52 cases is 10.23 versus our rational prototype, not
+  a competitor speed claim. The forest/private-binarization and scaling proofs
+  are in M34's research note/article; `row_product_scaling` is audited in Lean.
+  All initial failures remain in the packed raw archive. `make test` passes
+  eight focused independent tests, including 60 weighted JSON token-product
+  cases, four direct JSON-family instantiations and 30 contracted-state oracles.
+- [x] T3402: Evaluate every predeclared comparison/application; keep failures
   and losing cases. Include genuine saved/fresh dLLM predictions, external
   structured inputs and an independently implemented exact stack controller.
   **Acceptance:** immutable config/raw lineage, identical inputs, separately
   recorded construction/query/sample costs, correct outputs and an honest
   verdict. If the proposed useful advantage does not survive, continue the
   scientific search instead of relabeling the failed experiment a win.
-  **Evidence:** pending.
-- [ ] T3402a: Demonstrate posterior reuse under actual support/canvas contraction
+  **Evidence:** complete immutable configs/outcomes/input hashes/producing
+  commits/commands are losslessly packed under
+  `docs/artifacts/raw/m34_cfg_posterior_v1/`; every final comparison is generated
+  in the processed report. CFG resolves 28/28 scaling and 18/18 model arrays;
+  six large explicit-stack cases hit their unchanged representation budget.
+  Compact array inference generally remains cheaper. Fresh full-JSON resolves
+  8/9, one work limit; syntax samples do not establish semantic quality.
+  All 281 defined and 33 informational external JSON cases are retained.
+  `build_cfg_posterior_results --check` checks original-input equality and
+  control mass/marginal agreement, all statuses and generated products. Opt-in
+  full-logit checks pass on all nine fresh and all 18 older captures, including
+  full non-mask softmax/rational normalization and original retained unaries.
+  Utility is exact recursive finite-token inference with a written scoped
+  polynomial-versus-exponential JSON-family argument, not manufactured model
+  superiority or a claim to invent classical weighted CFG sampling.
+- [x] T3402a: Demonstrate posterior reuse under actual support/canvas contraction
   and compare exact represented-support rejection on every saved model case.
   **Acceptance:** independently checked reuse equals fresh compilation; fixed
   tokens preserved. Rejection uses the same original probabilities, renormalized
   only for represented-support draws, so expected attempts are retained mass/Z,
   not 1/Z. All 27 cases and favorable rejection outcomes included; this is a
   transparently added control, not a preregistered new population benchmark.
-  **Evidence:** pending.
-- [ ] T3403: Integrate the surviving contribution into the maintained project
+  **Evidence:** `e5b28e1` executes every one of the 27 saved model cases.
+  Rejection samples 14 and exhausts 10,000 trials on 13; it is cheaper on every
+  smaller JSON case in the recorded seed. Computed expected attempts use Q/Z,
+  with no penalty for omitted tokens. Cached/recompiled mass and marginals
+  agree in all 26 resolved clamped canvases; the remaining case keeps its work
+  refusal. Fixed slots and sampled syntax independently check. The follow-up
+  was added after the initial grid and is explicitly labeled accordingly.
+- [x] T3403: Integrate the surviving contribution into the maintained project
   and article with reproducible checks and precise novelty/utility boundaries.
   **Acceptance:** operational/formal/new targeted checks and article artifacts
   pass; no universal source-correctness, semantic-quality or global-trajectory
   claim; scientific gain explained relative to actual alternatives.
-  **Evidence:** pending.
+  **Evidence:** maintained model-independent API supports reweighting,
+  restriction and new commitments; offline original-model sampling runs via
+  `build_cfg_posterior_results --sample json-context0-16`. README, reproduction,
+  primary references and article describe the achieved capability/antecedents
+  precisely. `make check`, eight focused tests, Rust/FFI format/Clippy, 41 Lean
+  statements/canonical example and old/new article artifact checks pass.
+  Existing 3,683 scientific hashes and EPIC production remain unchanged.
+  `make paper` passes the unchanged 16-page/no-overflow/reference gate; final
+  PDF is visually reviewed, including all new method/timing-table pages.
+  External syntax cases occupy one small archive with every original hash and
+  license; no old suite or model weights/logits committed. New source has no
+  dependency changes. Full prior proof sources and negative observations stay
+  available. Precise commands/results/limits: `docs/evidence/m34-result.md`.
 
 ## M33 — Further reduction of owned code
 

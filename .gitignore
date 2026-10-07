@@ -56,3 +56,6 @@ paper/main.pdf
 
 # Local environment records (templates remain tracked)
 docs/environment-local.md
+
+# Local PDF review intermediates
+/tmp/pdfs/

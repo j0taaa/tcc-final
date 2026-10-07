@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import base64
+import gzip
 import hashlib
 import itertools
 import json
@@ -151,6 +153,14 @@ class CfgPosteriorOracleTests(unittest.TestCase):
                 self.assertEqual(
                     (posterior.valid_mass, posterior.marginals), oracle(data, recognizes)[:2]
                 )
+        # Instantiate the written JSON family; an independent recognizer sees
+        # every matching and crossed opening/closing pattern, not a speed probe.
+        for depth in range(1, 5):
+            rows = ((0, 1),) * depth + ((2,),) + ((3, 4),) * depth
+            data = inputs(source, (b"[", b'{"x":', b"0", b"]", b"}"), rows)
+            actual = compile_cfg_sampler(source, data.state).evaluate(data)
+            self.assertEqual(actual.valid_mass, F(1, 2**depth))
+            self.assertEqual((actual.valid_mass, actual.marginals), oracle(data, recognizes)[:2])
 
     def test_independent_stack_control_against_token_products(self):
         rng = Random(20261006)
@@ -170,11 +180,12 @@ class CfgPosteriorOracleTests(unittest.TestCase):
     def test_pinned_external_json_conformance(self):
         root = Path(__file__).parent / "data/json_suite"
         manifest = json.loads((root / "manifest.json").read_text())
+        cases = json.load(gzip.open(root / "cases.json.gz", "rt"))
         source = json_source_grammar()
         emissions = tuple(bytes([byte]) for byte in range(256))
         for case in manifest["files"]:
             with self.subTest(case=case["name"]):
-                word = (root / case["name"]).read_bytes()
+                word = base64.b64decode(cases[case["name"]], validate=True)
                 self.assertEqual(hashlib.sha256(word).hexdigest(), case["sha256"])
                 self.assertLessEqual(len(word), manifest["max_bytes"])
                 if not word:

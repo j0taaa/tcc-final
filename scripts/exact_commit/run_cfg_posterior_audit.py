@@ -27,6 +27,7 @@ from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.mass_certificate import ProbabilityInput
 from mwpc_exact.reference.byte_grammars import _SourceGrammarBuilder
 from mwpc_exact.reference.json_grammar import json_source_grammar
+from mwpc_exact.reference.ll1 import UnsupportedGrammar
 from mwpc_exact.reference.normalization import normalize_to_cnf
 from mwpc_exact.state import SelectionInput
 from mwpc_exact.support import SupportPolicy, build_per_position_support
@@ -190,6 +191,8 @@ def worker(queue, data, kind, method, grid):
         record["max_rss_kib"] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     except (CompilationLimit, StackLimit) as error:
         record.update(status="TIMEOUT_WORK_LIMIT", detail=str(error))
+    except UnsupportedGrammar as error:
+        record.update(status="UNSUPPORTED", detail=str(error))
     except Exception as error:
         record.update(status="ERROR", detail=f"{type(error).__name__}: {error}")
     queue.put(record)

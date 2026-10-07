@@ -80,7 +80,7 @@ antecedents and a plausible integration gap, not world priority.
    `Z`; (1–2) identify that path with one original token sequence. Integer
    categorical choices implement rational probabilities without float rounding.
 5. **Polynomial arithmetic work.** With `v` DAG vertices, `e` edges, `r`
-   binary rules and `h` heads, chart construction has at most `O(r v^3 + e h)`
+   binary rules and `h` heads, forest construction after source validation/normalization has at most `O(r v^3 + e h)`
    alternatives and `O(h v^2)` cells. Evaluation/reweighting and outside passes
    are linear in the compiled forest. These are arithmetic-operation bounds;
    rational bit cost and compiled-forest memory must also be reported. No
@@ -242,3 +242,64 @@ may favor rejection. This is a local classical control, not an EPIC execution.
 Reuse checks commit half the originally free positions from an actual witness,
 compare exact mass/marginals to fresh compilation and independently validate the
 result. No further model forward or semantic/trajectory guarantee is inferred.
+
+## Further primary-source check and achieved boundary
+
+LAVE (Zhang et al., 2026, https://arxiv.org/abs/2602.00612, sections 3.2.3/6.2)
+uses sampled lookahead prefixes and explicitly permits false rejection of
+extendable proposals. It neither computes this exact valid mass nor claims the
+same complete joint posterior. Diffusion On Syntax Trees (2024,
+https://arxiv.org/abs/2405.20519) trains a syntax-tree diffusion representation;
+that is a different interface from conditioning a pretrained original-token
+mean-field prediction. These antecedents further limit the novelty statement:
+checked finite-token posterior integration, not first CFG-constrained diffusion
+or first grammar-aware sampling. No literature search proves world priority.
+
+The implemented result is a useful exact backend for recursive syntax,
+with proofs independent of selected measurements and complete falsifiable
+implementation evidence. The primary advantage over explicit automata is
+representation; over independent rejection it is avoiding rare acceptance;
+over heuristic commitment it is preserving the specified joint sampling law.
+It does not dominate compact specialized parsing, factor encodings or cheap
+rejection. Complete outcomes are in the generated M34 report; every case and
+failed initial attempt remains attributed to its producing commit.
+
+## Direct JSON instance of the mathematical utility
+
+For depth d, use d original opening-token slots with alternatives `[` and
+`{"x":`, one fixed `0` token, and d closing-token slots with alternatives `]`
+and `}`. A fixed LL(1) grammar `S -> 0 | [ S ] | { "x" : S }` recognizes
+all these nested JSON forms. Every opening pattern has one valid reversed
+closing pattern, while every crossed pair is invalid even under full JSON
+syntax. Thus a finite automaton for this token-language slice needs >=2^d
+states. Uniform row probabilities put mass 2^-d on valid documents, giving
+expected represented-support rejection attempts 2^d; the compiled CFG inference
+uses O(d) graph vertices and polynomial arithmetic work. No experiment,
+chosen model output or manufactured benchmark is needed for this statement.
+It is a specialization of known grammar/automaton and sampling facts, and other
+appropriate exact CFG algorithms enjoy the same advantage. The practical
+contribution is an available checked original-token backend, not exclusivity.
+
+## Bit complexity of the integer construction
+
+Let b be the sum of bit lengths of all original unary denominators. Row LCMs
+have product D with log2(D)<=b, and scaled unaries are <=their row denominator.
+A DAG span path crosses each physical slot at most once and uses <=v-1 byte
+edges, so its integer weight is <=D. A strict-CNF derivation over that path
+has O(v) nodes. Catalan tree shapes and bounded rule/edge alternatives give
+at most (4(e+r+h+1))^O(v) derivations/contexts. Hence all relevant inside/outside
+integers have b+O(v log(e+r+h+1)) bits, polynomial in encoded input size.
+Standard integer multiplication/addition over the polynomial forest gives a
+polynomial bit-work bound as well. Marginals use integer ratios with polynomial
+size. Under uniform integer-draw semantics, categorical tree sampling uses
+O(v) branch choices with these bit sizes; this does not depend on rare valid
+mass. These bounds do not imply favorable constants or low memory on all CFGs.
+
+Complexity scope clarification: v/e/r/h describe the constructed byte DAG and
+internally normalized grammar. Source checking and comparison with the caller's
+original normalized grammar are separate preprocessing costs; the old canonical
+normalizer used for that comparison can expand nullable long bodies. The stated
+forest/inference bound does not silently include that preprocessing. For the
+fixed JSON/DSL grammar families, preprocessing is independent of nesting depth,
+so the polynomial-versus-exponential utility statement remains valid. The
+internally binarized grammar avoids the old expansion in actual inference.
