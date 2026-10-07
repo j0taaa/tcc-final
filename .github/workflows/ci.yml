@@ -19,6 +19,7 @@ jobs:
           python-version: "3.11"
       - run: python -m pip install -c requirements/constraints-py311-linux.txt -e '.[dev]'
       - run: make check VENV_PY=python
+      - run: make test VENV_PY=python
       - run: make build-rust VENV_PY=python
       - run: make article-results-check VENV_PY=python
 

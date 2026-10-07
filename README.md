@@ -59,6 +59,14 @@ mass and work limits are different outcomes. Expanding support or undoing an
 existing commitment requires a new plan. See the focused independent examples
 in [tests](tests/test_cfg_posterior.py).
 
+Compilation uses one cooperative deadline through LL(1) admission, both
+normalizations, token-DAG and forest construction. `max_preprocessing_work`
+(default 1,000,000 symbol/copy/alternative units) bounds preprocessing, including
+projected nullable-body expansion before allocation. Canonical comparison can
+still be exponential and is refused at its cap; it is not skipped or replaced
+by an unchecked equivalence assumption. Chart/forest caps remain separate.
+These are work/cancellation limits, not hard OS memory or preemption guarantees.
+
 ## Evidence and honest comparison
 
 All 52 previously resolved exact masses/marginals survive the integer/grammar
@@ -80,8 +88,9 @@ logits remain local; compact scientific data are losslessly deduplicated.
 
 The user removed the historical test suite and experiment framework in M32/M33;
 they remain recoverable at `a98ae8e09f2066157ebf6df05f8873b8600e00fb` and `9deb3df`.
-The 2026-10-06 request authorizes eight focused new posterior tests, not a
-restoration of that suite or a whole-project correctness claim. Pinned external
+M34 introduced eight focused posterior tests; M35 extends them to eleven with
+archived recomputation and preprocessing/deadline checks. CI runs the suite;
+this is not restoration of the old suite or whole-project correctness. Pinned external
 JSON cases are packed in one small archive, with original hashes and license.
 The opt-in model capture retains only the necessary audited official MDLM CPU
 adapter. External EPIC production stays unchanged at `5b1b310`.

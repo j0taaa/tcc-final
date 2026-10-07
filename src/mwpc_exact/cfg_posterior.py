@@ -20,6 +20,8 @@ from time import monotonic, perf_counter
 from mwpc_exact.eos_policy import EOSMode
 from mwpc_exact.mass_certificate import ProbabilityInput
 from mwpc_exact.reference.grammar import CnfGrammar, Nonterminal
+from mwpc_exact.reference.limits import CompilationLimit as CompilationLimit
+from mwpc_exact.reference.limits import WorkBudget
 from mwpc_exact.reference.ll1 import UnsupportedGrammar, check_ll1
 from mwpc_exact.reference.normalization import (
     NonterminalRef,
@@ -32,10 +34,6 @@ from mwpc_exact.types import ExactnessScope
 
 Cell = tuple[int, int, int]  # head, DAG start, DAG end
 Choice = tuple[int, int]  # physical position, original support-row index
-
-
-class CompilationLimit(TimeoutError):
-    """Unresolved work/deadline limit, never evidence of zero valid mass."""
 
 
 class PosteriorStatus(StrEnum):
@@ -215,6 +213,7 @@ def compile_cfg_sampler(
     *,
     max_chart_cells: int = 200_000,
     max_alternatives: int = 1_000_000,
+    max_preprocessing_work: int = 1_000_000,
     timeout_seconds: float | None = None,
 ) -> CfgSampler:
     """Compile a sparse sum-product forest with explicit unresolved limits.
@@ -222,8 +221,10 @@ def compile_cfg_sampler(
     Each finalized child span is strictly smaller than its parent. A priority
     agenda therefore joins each pair once, after both children are finalized.
     No probability-based pruning is performed: zero unaries may later change.
+    The preprocessing cap includes LL(1), both normalizations and the token DAG.
+    One cooperative deadline covers those stages and forest construction.
     """
-    for limit in (max_chart_cells, max_alternatives):
+    for limit in (max_chart_cells, max_alternatives, max_preprocessing_work):
         if type(limit) is not int or limit < 0:
             raise ValueError("compilation limits must be non-negative integers")
     if timeout_seconds is not None and (
@@ -235,42 +236,43 @@ def compile_cfg_sampler(
         raise ValueError("timeout must be finite and non-negative")
     deadline = None if timeout_seconds is None else monotonic() + timeout_seconds
 
-    def check_limit() -> None:
-        if deadline is not None and monotonic() >= deadline:
-            raise CompilationLimit("compilation deadline; feasibility remains unresolved")
-
-    check_limit()
-    check_ll1(source)
-    if state.grammar != normalize_to_cnf(source).grammar:
+    budget = WorkBudget(max_work=max_preprocessing_work, deadline=deadline)
+    budget.check()
+    check_ll1(source, budget=budget)
+    canonical = normalize_to_cnf(source, budget=budget).grammar
+    budget.consume(len(canonical.terminal_productions) + len(canonical.binary_productions))
+    if state.grammar != canonical:
         raise ValueError("input grammar does not match the checked source normalization")
     if state.eos_policy.mode is not EOSMode.ABSENT:
         raise UnsupportedGrammar("CFG posterior currently supports only ABSENT EOS")
-    grammar = normalize_to_cnf(_binarize_source(source)).grammar
+    grammar = normalize_to_cnf(_binarize_source(source, budget), budget=budget).grammar
     labels = {t.label: t.symbol_id for t in grammar.terminals}
     edges: list[tuple[int, int, int, Choice | None]] = []
     boundary = 0
     vertices = 1
     # Last-byte closures avoid epsilon arcs even when a token prefixes another.
     for position, row in enumerate(state.support.rows):
-        check_limit()
-        words = {
-            j: state.tokenizer_adapter.emissions[token]
-            for j, token in enumerate(row)
-            if state.tokenizer_adapter.emissions[token] is not None
-        }
-        prefixes = sorted(
-            {w[:i] for w in words.values() if w for i in range(1, len(w))},
-            key=lambda p: (len(p), p),
-        )
+        words = {}
+        proper_prefixes: set[bytes] = set()
+        for j, token in enumerate(row):
+            budget.consume()
+            word = state.tokenizer_adapter.emissions[token]
+            if word is not None:
+                budget.consume(len(word) * (len(word) + 1) // 2)
+                words[j] = word
+                proper_prefixes.update(word[:i] for i in range(1, len(word)))
+        budget.consume(len(proper_prefixes) * (len(proper_prefixes).bit_length() + 1))
+        prefixes = sorted(proper_prefixes, key=lambda p: (len(p), p))
         nodes = {b"": boundary}
         for p in prefixes:
+            budget.consume()
             nodes[p] = vertices
             vertices += 1
             edges.append((nodes[p[:-1]], nodes[p], p[-1], None))
         end = vertices
         vertices += 1
         for j, word in words.items():
-            assert word is not None
+            budget.consume()
             edges.append((nodes[word[:-1]], end, word[-1], (position, j)))
         boundary = end
 
@@ -278,8 +280,10 @@ def compile_cfg_sampler(
     left_rules: dict[int, list[tuple[int, int]]] = defaultdict(list)
     right_rules: dict[int, list[tuple[int, int]]] = defaultdict(list)
     for rule in grammar.terminal_productions:
+        budget.consume()
         terminal_heads[rule.terminal_id].append(rule.head_id)
     for binary in grammar.binary_productions:
+        budget.consume()
         left_rules[binary.left_id].append((binary.head_id, binary.right_id))
         right_rules[binary.right_id].append((binary.head_id, binary.left_id))
     ids: dict[Cell, int] = {}
@@ -290,6 +294,7 @@ def compile_cfg_sampler(
 
     def add(key: Cell, term: _Term) -> None:
         nonlocal alternatives
+        budget.check()
         if alternatives >= max_alternatives or (key not in ids and len(ids) >= max_chart_cells):
             raise CompilationLimit("compiled forest budget; feasibility remains unresolved")
         if key not in ids:
@@ -301,31 +306,36 @@ def compile_cfg_sampler(
         alternatives += 1
 
     for start, end, label, choice in edges:
+        budget.check()
         for head in terminal_heads.get(labels.get(label, -1), ()):
             add((head, start, end), _Term(choice=choice))
     starts: dict[tuple[int, int], list[tuple[int, int]]] = defaultdict(list)
     ends: dict[tuple[int, int], list[tuple[int, int]]] = defaultdict(list)
     order = []
     while agenda:
-        check_limit()
+        budget.check()
         _, node = heapq.heappop(agenda)
         head, start, end = keys[node]
         for parent, right in left_rules[head]:
+            budget.check()
             for target, child in starts[right, end]:
                 add((parent, start, target), _Term((node, child)))
         for parent, left in right_rules[head]:
+            budget.check()
             for origin, child in ends[left, start]:
                 add((parent, origin, end), _Term((child, node)))
         starts[head, start].append((end, node))
         ends[head, end].append((start, node))
         order.append(node)
     root = ids.get((grammar.start_nonterminal_id, 0, boundary))
-    return CfgSampler(
+    result = CfgSampler(
         state, grammar, tuple(map(tuple, terms)), tuple(order), root, vertices, len(edges)
     )
+    budget.check()
+    return result
 
 
-def _binarize_source(source: SourceGrammar) -> SourceGrammar:
+def _binarize_source(source: SourceGrammar, budget: WorkBudget) -> SourceGrammar:
     """Private forced chains: preserve trees before expanding nullable bodies."""
     nonterminals = list(source.nonterminals)
     names = {n.name for n in nonterminals}
@@ -333,10 +343,13 @@ def _binarize_source(source: SourceGrammar) -> SourceGrammar:
     next_rule = max((r.production_id for r in source.productions), default=-1) + 1
     rules = []
     for rule in source.productions:
+        budget.consume(1 + len(rule.body))
         head, body, identity = rule.head_id, rule.body, rule.production_id
         while len(body) > 2:
+            budget.consume(len(body))
             name = f"__posterior_chain_{next_head}"
             while name in names:
+                budget.consume()
                 name += "_"
             names.add(name)
             nonterminals.append(Nonterminal(next_head, name))
@@ -345,6 +358,8 @@ def _binarize_source(source: SourceGrammar) -> SourceGrammar:
             next_head += 1
             next_rule += 1
         rules.append(SourceProduction(identity, head, body))
-    return SourceGrammar(
+    result = SourceGrammar(
         tuple(nonterminals), source.terminals, source.start_nonterminal_id, tuple(rules)
     )
+    budget.check()
+    return result

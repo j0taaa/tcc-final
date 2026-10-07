@@ -12,14 +12,19 @@ from dataclasses import replace
 from fractions import Fraction as F
 from pathlib import Path
 from random import Random
+from unittest.mock import patch
 
+from scripts.exact_commit.build_cfg_posterior_results import PHASES, load_inputs, results
 from scripts.exact_commit.cfg_stack_control import compile_stack_plan
+from scripts.exact_commit.run_cfg_posterior_audit import source_grammar
 
 from mwpc_exact.cfg_posterior import CompilationLimit, PosteriorStatus, compile_cfg_sampler
+from mwpc_exact.conflict_proof import read_state
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.mass_certificate import ProbabilityInput
 from mwpc_exact.reference.byte_grammars import _SourceGrammarBuilder
 from mwpc_exact.reference.json_grammar import json_source_grammar
+from mwpc_exact.reference.limits import WorkBudget
 from mwpc_exact.reference.ll1 import UnsupportedGrammar, check_ll1
 from mwpc_exact.reference.normalization import normalize_to_cnf
 from mwpc_exact.state import SelectionInput
@@ -116,6 +121,98 @@ class EnumeratedRandom(Random):
 
 
 class CfgPosteriorOracleTests(unittest.TestCase):
+    def test_preprocessing_limits_and_duplicate_nullable_bodies(self):
+        # A distinct nullable symbol at each of 24 positions has 2**24 bodies.
+        # Admit the LL(1) grammar, then refuse canonical expansion before it
+        # allocates that list. No clock speed or measured benchmark is involved.
+        names = tuple(f"A{i}" for i in range(24))
+        b = _SourceGrammarBuilder(("S", *names), start="S")
+        b.rule("S", *names, b"x")
+        for i, name in enumerate(names):
+            b.rule(name, bytes([65 + i]))
+            b.rule(name)
+        source = b.build()
+        check_ll1(source)
+        budget = WorkBudget(max_work=20_000)
+        with self.assertRaisesRegex(CompilationLimit, "preprocessing"):
+            normalize_to_cnf(source, budget=budget)
+        self.assertLessEqual(budget.used, budget.max_work)
+        tiny = _SourceGrammarBuilder(("S",), start="S")
+        tiny.rule("S", b"x")
+        data = inputs(tiny.build(), (b"x",), ((0,),))
+        with self.assertRaisesRegex(CompilationLimit, "preprocessing"):
+            compile_cfg_sampler(source, data.state, max_preprocessing_work=20_000)
+
+        # Repeated epsilon-only symbols produce duplicate bodies, rather than
+        # distinct choices. Stable deduplication lets this legitimate input work.
+        b = _SourceGrammarBuilder(("S", "A"), start="S")
+        b.rule("S", *("A",) * 24, b"x")
+        b.rule("A")
+        source = b.build()
+        data = inputs(source, (b"x",), ((0,),))
+        result = compile_cfg_sampler(source, data.state).evaluate(data)
+        self.assertEqual((result.valid_mass, result.marginals), (F(1), ((F(1),),)))
+        self.assertEqual(result.sample(Random(0)), (0,))
+
+        # Budget applies before constructing all quadratic byte prefixes too.
+        large_token = inputs(dyck(), (b"(" * 3000,), ((0,),))
+        with self.assertRaisesRegex(CompilationLimit, "preprocessing"):
+            compile_cfg_sampler(dyck(), large_token.state)
+        for invalid in (-1, True, F(1)):
+            with self.assertRaises(ValueError):
+                compile_cfg_sampler(dyck(), large_token.state, max_preprocessing_work=invalid)
+
+    def test_deadline_checks_inside_admission_and_normalization(self):
+        source = dyck()
+        for operation in (check_ll1, normalize_to_cnf):
+            with self.subTest(operation=operation.__name__):
+                budget = WorkBudget(deadline=1)
+                # Time expires after preprocessing has begun, not at API entry.
+                with patch(
+                    "mwpc_exact.reference.limits.monotonic", side_effect=(0, 0, 0, 2)
+                ) as clock:
+                    with self.assertRaisesRegex(CompilationLimit, "deadline"):
+                        operation(source, budget=budget)
+                    self.assertEqual(clock.call_count, 4)
+                    self.assertGreater(budget.used, 0)
+
+        data = inputs(source, (b"(", b")"), ((0,), (1,)))
+        with (
+            patch("mwpc_exact.cfg_posterior.monotonic", return_value=0),
+            patch("mwpc_exact.reference.limits.monotonic", side_effect=(0, 0, 0, 2)),
+            patch("mwpc_exact.cfg_posterior.normalize_to_cnf") as normalizer,
+        ):
+            with self.assertRaisesRegex(CompilationLimit, "deadline"):
+                compile_cfg_sampler(source, data.state, timeout_seconds=1)
+            normalizer.assert_not_called()  # expiry really occurs inside LL(1)
+
+    def test_recompute_archived_inputs(self):
+        runs, archived, _ = load_inputs()
+        for phase in PHASES[3:]:
+            # Selection uses only input size and stable ID, never measured success
+            # or speed. Cover the final scaling, array-model and JSON-model cohorts.
+            row = min(
+                runs[phase]["rows"],
+                key=lambda r: (
+                    archived[r["archived_input"]]["input"]["selection"]["canvas"].count(None),
+                    r["case"],
+                ),
+            )
+            with self.subTest(phase=phase, case=row["case"]):
+                raw = archived[row["archived_input"]]
+                data = ProbabilityInput(
+                    read_state(raw["input"]),
+                    tuple(tuple(F(*p) for p in r) for r in raw["probabilities"]),
+                )
+                expected = results(row)[0]
+                actual = compile_cfg_sampler(
+                    source_grammar(row["kind"]), data.state, timeout_seconds=30
+                ).evaluate(data)
+                self.assertEqual(actual.valid_mass, F(expected["valid_mass"]))
+                self.assertEqual(
+                    actual.marginals, tuple(tuple(map(F, r)) for r in expected["marginals"])
+                )
+
     def test_json_weighted_original_token_products(self):
         def recognizes(word):
             try:

@@ -1,15 +1,16 @@
 # Reproducing the reduced project
 
 The user requested removal of the old test suite and excess implementation.
-There is no replacement suite yet. The commands below check builds, actual
-mathematical proofs and original-input certificates; they do not prove universal
-implementation correctness or scientific relevance.
+M34/M35 add a small focused posterior suite; the historical suite remains
+removed. The commands below check that extension, builds, selected mathematical
+proofs and original-input certificates, not universal implementation correctness.
 
 ## Setup
 
 ```bash
 make bootstrap
 make check
+make test
 make bootstrap-rust-parser
 make build-rust
 ```
@@ -40,7 +41,7 @@ Lean does not refine the whole Python/Rust/model source.
 `article-results-check` verifies the pre-cleanup SHA-256 inventory of 3,683
 scientific files and independently rechecks all 35 returned M31 probability
 certificates against exact counter inference and their original rational inputs.
-`article-results` regenerates only the maintained M31 products. Earlier generated
+`article-results` regenerates the maintained M31/M34 products. Earlier generated
 products remain frozen; their original generators live at the historical commit.
 
 ## Offline audit and archived experiment producers
@@ -100,14 +101,21 @@ installed package with `.venv/bin/python -m build --no-isolation`.
 
 ## M34: exact recursive-CFG posterior (current extension)
 
-The old suite stays removed. `make test` runs eight newly authorized focused
-independent tests, including every pinned <=128-byte external JSON syntax case;
-no network/model is required. `make article-results-check` additionally checks
+The old suite stays removed. `make test` runs eleven focused independent tests,
+including every pinned <=128-byte external JSON syntax case, deadline/work limits
+and live archived recomputation; no network/model is required. CI requires this
+target. `make article-results-check` separately checks
 M34's losslessly packed input archive, every config/source hash and all 52
 unchanged before/after mass/marginal pairs, then regenerates products in memory.
+That artifact check does not run the current posterior implementation. The new
+suite recomputes the smallest free canvas (case ID breaks ties) from each final
+scaling, array-model and JSON-model cohort against archived rational mass and
+all marginals. Selection never reads success or timing. To recompute every one
+of the 55 final inputs, without changing recorded timings or artifacts:
 
 ```bash
 .venv/bin/python -m scripts.exact_commit.build_cfg_posterior_results --check
+.venv/bin/python -m scripts.exact_commit.build_cfg_posterior_results --recompute
 .venv/bin/python -m scripts.exact_commit.build_cfg_posterior_results --sample json-context0-16
 ```
 
@@ -151,3 +159,22 @@ captures. They verify source hashes, full non-mask softmax, rational normalizati
 and retained original probabilities. The fresh check additionally checks the
 entire declared top-32 cohort, rather than selecting solved cases. These local
 logits are intentionally absent from the default offline checkout audit.
+
+## Bounded posterior compilation
+
+`compile_cfg_sampler(..., timeout_seconds=30, max_preprocessing_work=1_000_000)`
+shares a cooperative deadline across admission, canonical source/input matching,
+private binarization/normalization, token graph and forest construction. The
+preprocessing budget counts symbol visits/copies and intermediate alternatives;
+it checks projected nullable expansion before allocation. Identical nullable
+bodies are deduplicated in stable first-occurrence order. Distinct optional
+symbols can still require exponential canonical output and trigger
+`CompilationLimit`, never an infeasibility/zero-mass verdict. This preserves
+exact structural source/input verification and the old CNF representation.
+
+Standalone `check_ll1` and `normalize_to_cnf` accept an optional shared
+`mwpc_exact.reference.limits.WorkBudget`. Their default reference behavior has
+no work cap; callers preparing custom input grammars should pass a budget too.
+Compilation's forest caps remain `max_chart_cells`/`max_alternatives`.
+Cooperative checks cannot preempt an individual Python operation or enforce an
+OS memory cap. This change does not relabel historical runtime measurements.

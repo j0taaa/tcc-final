@@ -142,6 +142,39 @@ def median_query(result):
     return statistics.median(t["query_seconds"] for t in result["timings"])
 
 
+def recompute(runs, inputs):
+    """Current-code correctness replay; never replace recorded timings/results."""
+    counts = Counter()
+    for phase in PHASES[3:]:
+        for row in runs[phase]["rows"]:
+            raw = inputs[row["archived_input"]]
+            data = ProbabilityInput(
+                read_state(raw["input"]),
+                tuple(tuple(Fraction(*p) for p in r) for r in raw["probabilities"]),
+            )
+            expected = results(row)[0]
+            try:
+                actual = compile_cfg_sampler(
+                    source_grammar(row["kind"]), data.state, timeout_seconds=30
+                ).evaluate(data)
+            except CompilationLimit as error:
+                if "valid_mass" in expected:
+                    raise ValueError(
+                        f"current code refused archived solved case: {row['case']}"
+                    ) from error
+                counts["unresolved_without_archived_oracle"] += 1
+                continue
+            if "valid_mass" not in expected:
+                counts["resolved_without_archived_oracle"] += 1
+                continue
+            if actual.valid_mass != Fraction(expected["valid_mass"]) or actual.marginals != tuple(
+                tuple(map(Fraction, r)) for r in expected["marginals"]
+            ):
+                raise ValueError(f"current posterior differs from archived result: {row['case']}")
+            counts["exact_mass_and_marginals_agree"] += 1
+    return dict(counts)
+
+
 def summarize(runs, raw_inputs, manifest):
     report = {
         "phases": {},
@@ -412,10 +445,16 @@ def main():
     parser.add_argument("--archive-from", type=Path)
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--sample", help="Recompute and sample an archived case offline")
+    parser.add_argument(
+        "--recompute", action="store_true", help="Recompute all 55 final inputs; no timing claims"
+    )
     args = parser.parse_args()
     if args.archive_from:
         archive(args.archive_from)
     runs, inputs, manifest = load_inputs()
+    if args.recompute:
+        print(json.dumps(recompute(runs, inputs), sort_keys=True))
+        return
     if args.sample:
         from random import Random
 

@@ -16,6 +16,49 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M35 — Consolidate posterior correctness gates and bounded compilation
+
+Authorized by the 2026-10-06 review follow-up. Depends on M34. Preserve the
+original-token posterior, LL(1) admission, exact finite-support scope, fixed
+positions and existing baselines. Resource refusal is unresolved, never zero
+mass or infeasibility. Historical experiment inputs/outcomes remain immutable;
+new checks do not establish whole-source refinement or semantic superiority.
+
+- [x] T3500: Run the existing focused suite in CI and recompute a small,
+  deterministic sample of archived inputs against recorded mass/marginals.
+  **Acceptance:** `make test` is mandatory in the Python job; one input selected
+  by smallest free canvas then case ID from each final M34 cohort is recomputed
+  with current code. No model/network dependency or historical suite restored.
+  **Evidence:** Python CI now invokes `make test VENV_PY=python`. `make test`
+  passes nine focused tests, including live recomputation of one input per
+  final scaling/array/JSON cohort against the immutable rational mass/marginals.
+  Selection depends only on free-slot count and case ID, never solver outcomes.
+- [x] T3501: Bound admission, canonical normalization, private binarization,
+  token-DAG construction and forest construction under one compilation deadline.
+  **Acceptance:** preprocessing work is bounded before nullable expansion
+  allocations; exact source/input comparison is retained. Independent oracles,
+  archived regressions and focused work/deadline/mismatch checks pass. Limits
+  terminate with `CompilationLimit`, preserving earlier archive outcomes.
+  **Evidence:** `make check test` passes all 11 focused tests. A shared
+  `WorkBudget` caps preprocessing before projected nullable/prefix allocations
+  and carries the compiler deadline through all stages. Stable nullable-body
+  deduplication preserves first occurrences; exact canonical equality remains.
+  `build_cfg_posterior_results --recompute` attempts all 55 final inputs: 54
+  match rational mass/all marginals exactly, one remains unresolved without an
+  archived numerical oracle. No historical timing/result is overwritten.
+- [ ] T3502: Center the article's introduction/formulation on the posterior;
+  document CI, bounded preprocessing and the offline/full-logit reproduction
+  boundary. Keep MWPC and certificates as complementary contributions.
+  **Acceptance:** mathematical/artifact/build gates and paper layout pass;
+  scope and historical evidence remain accurate. Changes are committed/pushed
+  and the GitHub checks including the focused suite pass.
+  **Evidence:** Local `make build-rust`, `make check-formal`, article artifact
+  checks and `make paper` pass (41 audited statements, 3,683 unchanged prior
+  scientific hashes, 16-page/no-overflow/reference gate). Render overview and
+  detailed changed-page review pass. Posterior formulation/results now precede
+  complementary MWPC/certificates. Source/archive/optional-logit boundaries are
+  documented. Publication and required remote CI remain pending.
+
 ## M34 — Exact recursive-CFG posterior: investigate, prove, then falsify
 
 Authorized on 2026-10-06: pursue a useful scientific contribution and add

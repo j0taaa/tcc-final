@@ -111,20 +111,20 @@ de parsing ponderado, nem garantia de qualidade semântica ou velocidade univers
 
 \section{Introduction}
 
-Masked diffusion language models estimate several unknown positions in one forward pass \cite{austin2021d3pm,sahoo2024mdlm,nie2025llada}. Parallel proposals can nevertheless conflict: individually acceptable tokens may jointly eliminate every completion of a JSON document or program. The decoder must select a compatible batch while preserving already committed positions and the finite canvas.
+Masked diffusion language models estimate several unknown positions in one forward pass \cite{austin2021d3pm,sahoo2024mdlm,nie2025llada}. Independent samples can violate recursive syntax even when each token is individually plausible. For structured generation and multi-region infilling, the central question is how to condition a frozen prediction on grammatical validity while preserving original tokens, fixed positions and the finite canvas.
 
-For checkable unambiguous syntax, we additionally compute and sample the exact represented posterior in a reusable finite-token forest. This avoids rare-event rejection and explicit stack expansion, while preserving the original token probabilities. The underlying weighted parsing is established; the contribution is its checked dLLM integration and precise finite-support guarantees.
+For checkable unambiguous syntax, we compute the exact represented valid mass, token marginals and conditional samples in a reusable finite-token forest. This avoids rare-event rejection and explicit stack expansion. Weighted CFG inference is established \cite{rivaud2017sampling}; our incremental contribution is a checked dLLM interface handling byte aliases, subwords, finite slots and support contraction. Its usefulness follows from the stated distributional guarantee and a scoped representation separation, rather than universal decoder speed or semantic superiority.
 
-A reveal budget requires optimizing the completion and committed positions jointly: selecting confidence first or filtering an unbudgeted optimum can lose arbitrarily much reward. A separate practical question is whether truncating and partially exploring predictions distorts grammar-conditioned sampling beyond an application's tolerance. We supply independently checkable certificates for both decisions, with original-token provenance, finite slots and explicit support scope. Mathematical bounds justify admission or refusal without a favorable benchmark. Fresh MDLM predictions demonstrate this interface beyond the archived replay cohort; historical negative EPIC comparisons delimit rather than establish the contribution.
+Two complementary APIs address different questions. Joint-budget MWPC maximizes declared proposal utility when committing a batch; ambiguity-safe mass certificates bound sampling error when exact posterior compilation is unavailable. Neither reward maximization nor a valid witness alone determines a conditional sampling law. Genuine MDLM predictions and independent controls exercise the principal posterior API; negative historical EPIC comparisons remain visible.
 
 \section{Background and Related Work}
 \label{sec:fundamentacao}
 
 \subsection{Constrained parallel decoding}
 
-Regular constraints admit exact inference \cite{suresh2025dingo,dang2026automata}; CFG decoding can use completion-language intersection \cite{mundler2025cfg}. EPIC accelerates validation through lexical memoization, Earley parsing and relaxed selection followed by verification \cite{jin2026epic}. Our proposal-agreement objective differs from mean-field MAP; the canonical-catalog MAP control is not a reimplementation of these decoders.
+Regular constraints admit exact inference \cite{suresh2025dingo,dang2026automata}; CFG decoding can use completion-language intersection \cite{mundler2025cfg}. EPIC accelerates validation through lexical memoization, Earley parsing and relaxed selection followed by verification \cite{jin2026epic}. EPIC tests completion compatibility; our principal API instead computes the grammar-conditioned frozen distribution. The complementary proposal-agreement objective differs from mean-field MAP; the historical canonical-catalog MAP control is not a reimplementation of these decoders.
 
-FactorDLM performs exact mean-field inference with finite-domain factor graphs and variable elimination \cite{su2026factor}. Our CFG proposal-agreement solver does not implement that decoder or claim general exact-dLLM-inference novelty.
+FactorDLM performs exact mean-field inference with finite-domain factor graphs and variable elimination \cite{su2026factor}. Its reusable exact inference is an antecedent, not a decoder reimplemented or defeated here. Our grammar-specific posterior and complementary proposal-agreement solver claim no general exact-dLLM-inference novelty.
 
 Grammar-aligned ASAp and CARS already address constrained-sampling distortion in autoregressive LMs \cite{park2024gad,parys2025cars}. Deterministic anytime weighted model counting also predates our work \cite{dubray2024anytime,renkens2014wmc}. We specialize certificate boundaries to finite diffusion canvases; exact DFA/factor inference remains preferable when its representation is affordable. CFG ambiguity prevents a general polynomial-time probability promise \cite{amarilli2026probabilistic}.
 
@@ -158,6 +158,39 @@ y\text{ preserves }x,\ H(y),\ \operatorname{emit}(y)\in L(G)\right\}.
 \end{equation}
 \end{definition}
 
+\subsection{Frozen grammar-conditioned prediction}
+
+Let $p_i(t)$ be the original rational token probability at this denoising step,
+with committed singleton positions assigned probability one. On the represented
+support, define $q(y)=\prod_i p_i(y_i)$, valid mass
+$Z_S=\sum_{y\in\Feas_x}q(y)$ and, when $Z_S>0$,
+\begin{equation}
+ P_S(y)=q(y)\indic[y\in\Feas_x]/Z_S.
+ \label{eq:represented-posterior}
+\end{equation}
+The principal task is to compute $Z_S$, all original-token marginals and exact
+samples from $P_S$. Retained probabilities are not top-$K$ renormalizations;
+$\delta=1-\prod_i\sum_{t\in S_i}p_i(t)$ remains explicit. This is exact on the
+finite support for one frozen mean-field prediction, not the neural model's
+complete generative joint. The compiler admits checked LL(1) byte grammars,
+nonempty emissions and absent EOS; zero mass, unsupported inputs and unresolved
+resource limits are distinct outcomes.
+
+\section{Finite Token Inference Foundation}
+\label{sec:lattice}
+
+A layered token DAG selects exactly one original token per permitted physical
+slot. Byte expansion and regular EOS/PAD states retain token identity; the implementation does not insert a lexer. Sum-product CFG intersection computes the unambiguous posterior; max-plus recovers a maximum-reward path. In both cases,
+unbounded abstract gaps would not certify a finite canvas. For an epsilon-free
+graph with $q$ nodes, span parsing takes $O(|P_2|q^3+|P_1||E|)$ operations and
+$O(|N|q^2)$ entries, excluding normalization. Exactness remains on represented
+support. Complete ordinary MWPC equivalence, finite-slot, CKY, graph-parser and
+update-invariant proofs are preserved in \path{paper/supplement-foundations.tex}.
+
+\input{cfg-posterior.tex}
+
+\section{Complementary Commitment Formulation}
+
 \subsection{Proposals, weights, and compatibility}
 
 The proposal set is treated as an indexed family
@@ -189,30 +222,18 @@ The maximum-weight parallel commitment problem is to compute
 
 Weights must be finite and non-negative. Zero-weight proposals do not change the objective; certificates omit them and retain distinct positive duplicates. Optimization is exact only on represented alternatives: top-$K$ truncation may change feasibility and reward. Commitments also change later model distributions; this per-step guarantee implies neither full-vocabulary nor future-trajectory optimality.
 
-\section{Finite Token Inference Foundation}
-\label{sec:lattice}
-
 For nonnegative proposals, ordinary MWPC equals
 $\max_{y\in\Feas_x}R_C(y)$: every compatible subset is contained in the matched
 positive IDs of its witness; conversely those IDs are compatible. The canonical set $J^*=\Match_C^+(y^*)$ is recovered as
 $J^*\gets\{j:y^*_{i_j}=t_j,\ w_j>0\}$, including every positive duplicate. Equal scores use stable traversal; no lexicographic secondary objective is implemented or claimed.
 
-A layered token DAG selects exactly one original token per permitted physical
-slot. Byte expansion and regular EOS/PAD states retain token identity; the implementation does not insert a lexer. Max-plus CFG intersection recovers an optimal original path, while
-unbounded abstract gaps would not certify a finite canvas. For an epsilon-free
-graph with $q$ nodes, span parsing takes $O(|P_2|q^3+|P_1||E|)$ operations and
-$O(|N|q^2)$ entries, excluding normalization. Exactness remains on represented
-support. Complete ordinary MWPC equivalence, finite-slot, CKY, graph-parser and
-update-invariant proofs are preserved in \path{paper/supplement-foundations.tex}.
-
 \input{commitment-summary.tex}
 \input{probabilistic-commitment.tex}
-\input{cfg-posterior.tex}
 
 \section{Implementation and Evaluation Methodology}
 \label{sec:metodologia}
 
-The conflict engine specializes implicit hitting sets \cite{davies2011maxhs,saikko2016lmhs}. EPIC production remains pinned at \texttt{5b1b310}; \texttt{serial}, \texttt{epic} and ordinary \texttt{exact} remain available. Python/Rust independently implement ordinary inference through PyO3; the budgeted and probability engines are rational Python references. Original-input checkers validate graph/partition completeness, tokens, fixed slots, probabilities and EOS/PAD without running optimizers. Historical controls/regressions covered small token/path/subset cases, aliases, split UTF-8, duplicates, ties, forged bounds and timeouts. The user-requested source reduction removes that suite and historical campaign framework; their evidence belongs to recoverable freeze \texttt{a98ae8e}, not a new correctness pass. Current checks verify retained builds, proofs and recorded inputs, plus a newly authorized focused posterior suite. The compiled posterior is model-independent Python; serial/EPIC/exact production strategies remain separate. No new budgeted GPU performance is reported. Parent software and research artifacts use MIT; manuscript and upstream rights remain separate. Historical local submission release \texttt{v0.2.0} remains available.
+The conflict engine specializes implicit hitting sets \cite{davies2011maxhs,saikko2016lmhs}. EPIC production remains pinned at \texttt{5b1b310}; \texttt{serial}, \texttt{epic} and ordinary \texttt{exact} remain available. Python/Rust independently implement ordinary inference through PyO3; the budgeted and probability engines are rational Python references. Original-input checkers validate graph/partition completeness, tokens, fixed slots, probabilities and EOS/PAD without running optimizers. Historical controls/regressions covered small token/path/subset cases, aliases, split UTF-8, duplicates, ties, forged bounds and timeouts. The user-requested source reduction removes that suite and historical campaign framework; their evidence belongs to recoverable freeze \texttt{a98ae8e}, not a new correctness pass. CI requires the focused posterior suite, including recomputation of three archived inputs with current code, alongside retained build, formal and artifact gates. Archive consistency alone is not a current-solver correctness check. The compiled posterior is model-independent Python; serial/EPIC/exact production strategies remain separate. No new budgeted GPU performance is reported. Parent software and research artifacts use MIT; manuscript and upstream rights remain separate. Historical local submission release \texttt{v0.2.0} remains available.
 
 Lean 4.34.0 \cite{lean2026reference} checks resource, reward-bound, conflict/transport, partition, probability-error and coverage specifications, using exact natural units for rational weights. Historical concrete gates covered aliases, EOS/PAD, empty words, infeasibility and forged-bound rejection without admissions or native shortcuts; the reduced tree checks the universal library, canonical resource proof and new finite state-counting/row-scaling specifications. Original-input correspondence is independently checked in Python; universal Python/Rust refinement and the trajectory coupling remain outside Lean. \path{formal/README.md} gives precise coverage; implementation tests remain necessary.
 
@@ -223,7 +244,9 @@ External grounded calls audit 658 public BFCL records at \texttt{6ea5797} \cite{
 \section{Results and Analysis}
 \label{sec:resultados}
 
-The principal results are constructive budget exactness, checkable optimality, two infinite-family separations and Theorems~\ref{thm:probability-error}--\ref{thm:probability-coverage}: ambiguity-safe probability/error bounds and sound support coverage. Tests check implementations; proofs establish the stated universal guarantees. New predictions demonstrate probabilistic admission, while saved-state timings and historical decoder accuracy are separate evidence.
+The principal result is the exact represented posterior and scoped recursive representation advantage of Theorem~\ref{thm:cfg-posterior}, exercised by independent oracles and original MDLM inputs. Complementary results are constructive budget exactness, checkable optimality, and Theorems~\ref{thm:probability-error}--\ref{thm:probability-coverage}: ambiguity-safe probability/error bounds and sound support coverage. Tests check implementations; proofs establish the stated universal guarantees. New predictions demonstrate probabilistic admission, while saved-state timings and historical decoder accuracy are separate evidence.
+
+\input{cfg-posterior-results.tex}
 
 \subsection{Earlier probability and commitment evidence}
 
@@ -295,7 +318,7 @@ producing commands remain in the empirical supplement; no timeout is a success.
 
 Reward guarantees are per-step \texttt{exact\_on\_support}: truncation may change feasibility/reward; it is not full-vocabulary exact and does not optimize the future trajectory. \texttt{TIMEOUT} leaves feasibility and optimality unknown for reward search, unlike completed \texttt{INFEASIBLE\_ON\_SUPPORT}; large lattices may exhaust time or memory. Partial probability certificates retain sound bounds but need not authorize sampling.
 
-The posterior compiler requires checked LL(1) source grammars, nonempty byte emissions and absent EOS. Its resource limits can refuse valid inputs; changing support by expansion requires recompilation. Exactness is on the declared support, and general JSON syntax allows duplicate keys. Polynomial arithmetic work does not imply low bit cost or universal latency superiority.
+The posterior compiler requires checked LL(1) source grammars, nonempty byte emissions and absent EOS. A shared cooperative deadline covers admission, both normalizations, token-DAG and forest construction; a preprocessing work cap checks projected nullable expansions before allocation. The canonical source/input comparison can still require exponential output and is refused at its cap, rather than assumed polynomial. These are not OS memory limits or hard preemption. Resource limits can refuse valid inputs; changing support by expansion requires recompilation. Exactness is on the declared support, and general JSON syntax allows duplicate keys. Polynomial arithmetic work does not imply low bit cost or universal latency superiority.
 
 The probability target is frozen mean-field, not the complete generative joint. Full-vocabulary bounds require original normalization and omitted-mass evidence; coverage currently requires absent EOS. Search can be exponential, refusal is supported, and recorded probes do not verify the trajectory theorem's every-state premises. Small specialized exact controls can be cheaper. The budgeted solver is a rational reference, not the Rust production decoder. Budgeted references, Lean specifications and independent checkers do not constitute universal source refinement; DP completeness and separation constructions remain written proofs.
 
@@ -304,7 +327,9 @@ ByteLevel bytes do not supply programming-language lexical semantics or factual/
 \section{Conclusion and Future Work}
 \label{sec:conclusao}
 
-Finite-token certificates prove a maximum-reward batch or authorize a grammar-valid sampled update at a declared distributional tolerance. Exact budget frontiers, separation proofs, safe reuse and ambiguity-safe mass envelopes justify these decisions mathematically. Coverage can eliminate valid omitted mass without hiding truncation. Fresh MDLM executions exercise admission and refusal; the larger-canvas audit finds declining admission and cheaper compact exact inference. The new posterior backend provides exact finite-token recursive conditioning and reusable marginals/samples, avoiding the acceptance-probability dependence of rejection and the exponential state representation of typed nesting. This useful capability is proved under declared premises and demonstrated on original MDLM predictions; weighted CFG inference is established. General deployment superiority, semantic gains and world priority remain unestablished. Lean's documented specifications complement independent implementation checks; scalable probability search, production budgeted Rust and full source refinement remain future work.
+The principal backend provides exact recursive grammar conditioning of a frozen dLLM prediction on finite original-token support, with reusable mass, marginals and samples. Written proofs establish this law and a scoped advantage over rare-event rejection and explicit nesting-state expansion; classical CFG inference can share that advantage. Independent oracles, external syntax cases and genuine MDLM predictions exercise the implementation, while specialized controls and small-case rejection remain cheaper. Bounded preprocessing makes resource refusal explicit without weakening source/input verification.
+
+Complementary budget frontiers and ambiguity-safe mass envelopes certify proposal preservation and sampling tolerance under their separate premises. Historical negative decoding results remain evidence against general speed or semantic superiority. Full model provenance needs optional logits; Lean verifies selected specifications, not universal source refinement. Practical deployment comparisons, broader grammar admission and mechanized implementation refinement remain future work.
 
 \section*{AI-Use Declaration}
 

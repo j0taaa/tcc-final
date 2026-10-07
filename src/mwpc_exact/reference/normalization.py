@@ -21,6 +21,7 @@ from mwpc_exact.reference.grammar import (
     Terminal,
     TerminalProduction,
 )
+from mwpc_exact.reference.limits import WorkBudget
 
 
 def _stable_id(value: object, field_name: str) -> int:
@@ -171,15 +172,19 @@ class NormalizationResult:
 RuleKey: TypeAlias = tuple[int, tuple[SourceSymbol, ...]]
 
 
-def normalize_to_cnf(source: SourceGrammar) -> NormalizationResult:
-    """Normalize ``source`` to strict binary/terminal CNF deterministically."""
+def normalize_to_cnf(
+    source: SourceGrammar, *, budget: WorkBudget | None = None
+) -> NormalizationResult:
+    """Normalize deterministically; an optional shared budget bounds preprocessing."""
     if not isinstance(source, SourceGrammar):
         raise TypeError("source must be a SourceGrammar")
+    budget = budget if budget is not None else WorkBudget()
+    budget.consume(len(source.nonterminals) + len(source.terminals))
 
-    nullable = _nullable_nonterminals(source)
+    nullable = _nullable_nonterminals(source, budget)
     accepts_empty = source.start_nonterminal_id in nullable
-    epsilon_free = _expand_nullable_bodies(source, nullable)
-    unit_free = _remove_unit_productions(source, epsilon_free)
+    epsilon_free = _expand_nullable_bodies(source, nullable, budget)
+    unit_free = _remove_unit_productions(source, epsilon_free, budget)
 
     nonterminals = list(source.nonterminals)
     used_names = {item.name for item in nonterminals}
@@ -188,9 +193,11 @@ def normalize_to_cnf(source: SourceGrammar) -> NormalizationResult:
 
     def new_nonterminal(name_hint: str) -> int:
         nonlocal next_nonterminal_id
+        budget.consume()
         name = name_hint
         suffix = 1
         while name in used_names:
+            budget.consume()
             name = f"{name_hint}_{suffix}"
             suffix += 1
         symbol_id = next_nonterminal_id
@@ -204,11 +211,13 @@ def normalize_to_cnf(source: SourceGrammar) -> NormalizationResult:
     terminal_proxy_ids: dict[int, int] = {}
     terminal_proxy_sources: dict[int, list[int]] = {}
     for (head_id, body), source_ids in unit_free.items():
+        budget.consume(1 + len(body) + len(source_ids))
         if len(body) < 2:
             _merge_rule(isolated, head_id, body, source_ids)
             continue
         rewritten: list[SourceSymbol] = []
         for symbol in body:
+            budget.consume(1 + len(source_ids))
             if isinstance(symbol, NonterminalRef):
                 rewritten.append(symbol)
                 continue
@@ -222,6 +231,7 @@ def normalize_to_cnf(source: SourceGrammar) -> NormalizationResult:
         _merge_rule(isolated, head_id, tuple(rewritten), source_ids)
 
     for terminal_id, proxy_id in terminal_proxy_ids.items():
+        budget.consume(1 + len(terminal_proxy_sources[terminal_id]))
         _merge_rule(
             isolated,
             proxy_id,
@@ -231,11 +241,13 @@ def normalize_to_cnf(source: SourceGrammar) -> NormalizationResult:
 
     cnf_rules: dict[RuleKey, list[int]] = {}
     for (head_id, body), source_ids in isolated.items():
+        budget.consume(1 + len(body) + len(source_ids))
         if len(body) <= 2:
             _merge_rule(cnf_rules, head_id, body, source_ids)
             continue
         current_head = head_id
         for offset in range(len(body) - 2):
+            budget.consume(1 + len(source_ids))
             next_head = new_nonterminal(f"__mwpc_binary_{head_id}_{len(synthetic_ids)}_{offset}")
             _merge_rule(
                 cnf_rules,
@@ -250,6 +262,7 @@ def normalize_to_cnf(source: SourceGrammar) -> NormalizationResult:
     binary_productions: list[BinaryProduction] = []
     next_production_id = 0
     for (head_id, body), source_ids in cnf_rules.items():
+        budget.consume(1 + len(source_ids))
         source_provenance = tuple(source_ids)
         if len(body) == 1 and isinstance(body[0], TerminalRef):
             terminal_productions.append(
@@ -286,15 +299,17 @@ def normalize_to_cnf(source: SourceGrammar) -> NormalizationResult:
         accepts_empty=accepts_empty,
     )
     normalized_provenance = _production_provenance(grammar)
+    budget.check()
     return NormalizationResult(grammar, normalized_provenance, tuple(synthetic_ids))
 
 
-def _nullable_nonterminals(source: SourceGrammar) -> set[int]:
+def _nullable_nonterminals(source: SourceGrammar, budget: WorkBudget) -> set[int]:
     nullable: set[int] = set()
     changed = True
     while changed:
         changed = False
         for production in source.productions:
+            budget.consume(1 + len(production.body))
             if production.head_id in nullable:
                 continue
             if all(
@@ -320,17 +335,25 @@ def _production_provenance(grammar: CnfGrammar) -> dict[int, tuple[int, ...]]:
     return result
 
 
-def _expand_nullable_bodies(source: SourceGrammar, nullable: set[int]) -> dict[RuleKey, list[int]]:
+def _expand_nullable_bodies(
+    source: SourceGrammar, nullable: set[int], budget: WorkBudget
+) -> dict[RuleKey, list[int]]:
     rules: dict[RuleKey, list[int]] = {}
     for production in source.productions:
+        budget.consume()
         bodies: list[tuple[SourceSymbol, ...]] = [()]
-        for symbol in production.body:
+        for offset, symbol in enumerate(production.body):
+            optional = isinstance(symbol, NonterminalRef) and symbol.symbol_id in nullable
+            # Refuse before doubling the list or copying long tuples. Counting
+            # duplicates too is intentional: they consume intermediate memory.
+            budget.consume(len(bodies) * (2 if optional else 1) * (offset + 1))
             extended = [(*body, symbol) for body in bodies]
-            if isinstance(symbol, NonterminalRef) and symbol.symbol_id in nullable:
-                bodies = [*extended, *bodies]
+            if optional:
+                bodies = list(dict.fromkeys((*extended, *bodies)))
             else:
                 bodies = extended
         for body in bodies:
+            budget.consume(1 + len(body))
             if body:
                 _merge_rule(
                     rules,
@@ -342,8 +365,9 @@ def _expand_nullable_bodies(source: SourceGrammar, nullable: set[int]) -> dict[R
 
 
 def _remove_unit_productions(
-    source: SourceGrammar, rules: dict[RuleKey, list[int]]
+    source: SourceGrammar, rules: dict[RuleKey, list[int]], budget: WorkBudget
 ) -> dict[RuleKey, list[int]]:
+    budget.consume(2 * len(source.nonterminals))
     units_by_head: dict[int, list[tuple[int, tuple[int, ...]]]] = {
         item.symbol_id: [] for item in source.nonterminals
     }
@@ -351,6 +375,7 @@ def _remove_unit_productions(
         item.symbol_id: [] for item in source.nonterminals
     }
     for (head_id, body), source_ids in rules.items():
+        budget.consume(1 + len(body) + len(source_ids))
         if len(body) == 1 and isinstance(body[0], NonterminalRef):
             units_by_head[head_id].append((body[0].symbol_id, tuple(source_ids)))
         else:
@@ -358,17 +383,22 @@ def _remove_unit_productions(
 
     result: dict[RuleKey, list[int]] = {}
     for nonterminal in source.nonterminals:
+        budget.consume()
         paths: dict[int, tuple[int, ...]] = {nonterminal.symbol_id: ()}
         queue = deque((nonterminal.symbol_id,))
         while queue:
+            budget.consume()
             current = queue.popleft()
             for target, edge_sources in units_by_head[current]:
+                budget.consume(1 + len(paths[current]) + len(edge_sources))
                 if target in paths:
                     continue
                 paths[target] = _unique_tuple((*paths[current], *edge_sources))
                 queue.append(target)
         for reachable_id, path_sources in paths.items():
+            budget.consume()
             for body, body_sources in nonunits_by_head[reachable_id]:
+                budget.consume(1 + len(body) + len(path_sources) + len(body_sources))
                 _merge_rule(
                     result,
                     nonterminal.symbol_id,

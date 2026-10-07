@@ -1,0 +1,55 @@
+\subsection{Recursive-grammar posterior evidence}
+
+\input{generated/m34_cfg_posterior_v1/numbers.tex}
+\paragraph{Independent checks and complete model audit.}
+New focused tests compare token products with independent stack/JSON recognition,
+exact RNG-transcript laws, aliases, prefixes, zero/missing mass and contracted
+canvases. All 281 defined JSONTestSuite syntax cases of the predeclared
+128-byte subset satisfy their external verdicts; 33 implementation-dependent
+cases run without a correctness assertion. The empty negative document is
+rejected at the nonempty-canvas boundary. This suite does not restore the
+removed historical tests or certify the whole repository.
+
+The frozen grid includes all 28 two-type delimiter cases, including fixed-opening
+controls favoring stack transfer. All resolve with the forest; six explicit-stack
+cases exceed the identical work budget. All \MCfgReplayExact{}/18 original MDLM
+array inputs resolve and agree with the independently implemented counter,
+which generally remains cheaper. Nine fresh official CPU MDLM predictions use
+three declared JSON surroundings, 4/8/16 free slots and original top-32 tokens;
+no target tokens are injected. Exact integer/pre-binarization refinement,
+with the same optimization given to the controls, preserves all 52 previously
+resolved masses/marginals and resolves \MCfgFreshExact{}/9 full-JSON cases.
+One 16-slot case still exceeds the work budget. The paired median query ratio
+against our initial rational implementation is \MCfgRefinementSpeed{}, a local
+engineering improvement, not a comparison against published decoders.
+
+\begin{table}[htbp]
+\centering\small
+\input{generated/m34_cfg_posterior_v1/application-table.tex}
+\caption{All nine new JSON canvases. C0/C1/C2 identify the declared parameter,
+items and message surroundings; the suffix is free token slots. First sample
+includes construction, evaluation and sampling; reuse commits half the free
+positions. $^{*}$Expected rejection trials are algebraic $Q/Z_S$, where
+$Q=\prod_i\sum_{t\in S_i}q_i(t)$, not measured wall-time speedups.}
+\label{tab:cfg-posterior}
+\end{table}
+
+A transparently added represented-support rejection control runs all 27 model
+inputs, with 10,000 attempts and the same probabilities. It returns 14 samples
+and exhausts the trial budget on 13, without asserting infeasibility. Rejection
+is faster on all six smaller JSON cases in the recorded seed. Its acceptance
+probability is $Z_S/Q$, so expected attempts are $Q/Z_S$, not $1/Z_S$:
+charging discarded tokens would unfairly favor our method. The forest avoids
+this dependence on rare acceptance; specialized exact controls do too.
+Reuse agrees exactly with recompilation on all \MCfgReuseExact{} resolved
+clamped canvases. Every initial failure and timeout remains archived.
+Full model logits stay local; losslessly deduplicated original inputs,
+probabilities, tokenizer bytes, configs, commits, hashes and all outcomes are
+checked offline by \path{build_cfg_posterior_results --check}; this validates
+archived products, not current solver outputs. The separate \texttt{--recompute}
+mode recomputes all final inputs with current code. Complete full-softmax lineage
+requires the optional local logits, which the Git checkout does not contain.
+The full report is
+\path{docs/artifacts/processed/m34_cfg_posterior_v1/report.md}.
+These are controlled syntax applications, not held-out semantic benchmarks;
+valid JSON may still contain meaningless values or duplicate keys.

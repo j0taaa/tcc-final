@@ -13,6 +13,9 @@ The explicit 2026-10-06 request authorizes necessary fair new tests for M34.
 `tests/test_cfg_posterior.py` is a focused independent suite for that extension,
 including a pinned external syntax corpus; it does not restore the old suite
 or establish correctness of the whole repository.
+The M35 review follow-up authorizes focused archived-recomputation and
+preprocessing-limit regressions. CI must run `make test` alongside build,
+formal and artifact checks; archive consistency is not solver recomputation.
 
 The repository implements **Exact Maximum-Weight Parallel Commitment (MWPC)** for CFG-constrained diffusion language models, using the EPIC codebase as the integration baseline. Preserve the existing serial and EPIC heuristic decoders as baselines; add the exact method as a separate strategy.
 
@@ -110,6 +113,7 @@ Do not expose a bare tuple whose fields are easy to confuse.
 
 ```bash
 make check
+make test
 make build-rust
 make check-formal LAKE="$HOME/.elan/bin/lake"
 make article-results-check
