@@ -42,7 +42,10 @@ combined gate does **not** mean the Lean kernel proves all foreign source code.
 new `MWPC.CfgSampling` module, audits 41 statements across `Audit.lean` and
 `AuditCfgSampling.lean`, and checks the canonical resource example. Historical
 fixture/forgery campaigns are recoverable in their source commits; they do not
-run in the reduced tree. The eight focused M34 tests run separately.
+run in the reduced tree. The focused posterior suite runs separately: eight
+M34 checks, three M35 regressions and one M36 research event oracle. M36's
+written reduction has not been mechanized; its finite oracle is not a novelty
+proof or a substitute for the requested independent human review.
 
 M34 adds row-product scaling, two-type opening-stack counting/distinctness and
 a finite fooling-set state lower bound. The state bound assumes explicit

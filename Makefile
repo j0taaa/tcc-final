@@ -47,7 +47,7 @@ build-rust:
 check-formal:
 	$(VENV_PY) scripts/exact_commit/check_formal_project.py --lake $(LAKE)
 
-# M34's focused new suite is authorized; the deleted historical suite stays absent.
+# Focused M34/M35 checks and M36 research oracle; historical suite stays absent.
 check-project: check test build-rust check-formal article-results-check
 
 article-results:

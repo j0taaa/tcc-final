@@ -16,6 +16,10 @@ or establish correctness of the whole repository.
 The M35 review follow-up authorizes focused archived-recomputation and
 preprocessing-limit regressions. CI must run `make test` alongside build,
 formal and artifact checks; archive consistency is not solver recomputation.
+The 2026-10-07 staged research request (M36) authorizes one focused exhaustive
+commitment-event check. It tests a candidate reduction, not a new production
+decoder, scientific novelty or practical superiority. Human review/novelty
+gates remain separate from passing these finite checks.
 
 The repository implements **Exact Maximum-Weight Parallel Commitment (MWPC)** for CFG-constrained diffusion language models, using the EPIC codebase as the integration baseline. Preserve the existing serial and EPIC heuristic decoders as baselines; add the exact method as a separate strategy.
 
@@ -122,7 +126,8 @@ make paper
 
 These check structure/builds, mathematical proofs and recorded artifacts. They
 are not a substitute for the future independent regression/oracle suite.
-`make test` now runs only the user-authorized focused M34 suite. Future tests must
+`make test` runs the user-authorized focused posterior suite and M35/M36
+extensions. Future tests must
 compare objectives and independently validated certificates, use recorded
 seeds, and keep failures distinct from timeouts and support infeasibility.
 

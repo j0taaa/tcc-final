@@ -16,6 +16,76 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M36 — Scientific contribution gates before another implementation
+
+Authorized on 2026-10-07 by the user's staged research plan (items 1–22;
+the supplied item 22 ends mid-sentence). Depends on completed M35. Preserve
+`c018c3843b7b5c4dda41cb72f3f7cfc19ad7af80`, all unfavorable evidence and the
+existing decoders. Research calculations do not authorize a novelty claim,
+invented advisor approval, or replacing the article's established contribution.
+Use one notebook: `docs/research/contribution-plan.md`.
+
+- [x] T3600: Record the stable base, precise candidate contract and one
+  recursive structured-generation application (plan 1, 2, 4).
+  **Acceptance:** original-token/fixed-slot/support/EOS/status guarantees stay
+  explicit; an operation, competent comparator and falsifiable advantage are
+  defined without a benchmark win or a unique answer built into the grammar.
+  **Evidence:** clean `main` at the recorded full base hash, followed by
+  `git fetch origin`/`git rev-list --left-right --count HEAD...origin/main`
+  yielding `0 0` before edits were committed. Notebook sections 1–3, 7 and 11
+  define the candidate contract, recursive filter application and exclusions.
+- [x] T3601: Read the directed primary antecedents, build the novelty matrix
+  and attempt reductions for at most two directions (plan 5–9).
+  **Acceptance:** EPIC v2 dated 2026-10-04, CFG probabilistic-word/Markov
+  inference, automata, FactorDLM and relevant coherence antecedents are treated
+  fairly with exact locators. Known projection/cache reductions are rejected as
+  sole novelty. Any surviving result remains a candidate pending review.
+  **Evidence:** notebook sections 4–6 record directed original-source
+  readings with theorem/equation/algorithm locators, a 12-row novelty matrix,
+  SparseMAP/coherence and cache reductions, EPIC's dated v2 and the additional
+  DUEL/trajectory/ranking antecedents required by the narrower candidate.
+  Scientific novelty/significance is explicitly not established.
+- [ ] T3602: Develop the surviving candidate's specification, comparator,
+  written proof, total/bit costs, JSON corollary and integration boundaries
+  (plan 10–18). Small independent enumeration may falsify the derivation;
+  it is not a performance experiment or proof of novelty.
+  **Acceptance:** distinguishing step proved or explicitly diagnosed; invalid
+  cases, zero probability and local/global likelihood distinctions covered.
+  **Evidence:** notebook sections 7–12 contain the event equivalence, mass
+  identity, written total/bit-cost analysis, JSON application and objections.
+  The one new research oracle checks 8,016 events across 24 small inputs
+  (13 positive, 11 zero mass) against independent stack/JSON recognition and
+  direct sort/group enumeration. `make test` passes all 12 focused checks;
+  the historical suite remains deleted. This is no performance/novelty proof.
+  **BLOCKED:** no distinctive theoretical advantage over competent WMC/ranking
+  methods has been established. The scoped reduction may be a direct known
+  consequence; T3602 stays open until that scientific gate is resolved.
+- [ ] T3603: Obtain actual advisor/calendar alignment and independent human
+  mathematical/novelty review (plan 3, 9, 19).
+  **Acceptance:** real comments and their responses recorded; no inferred
+  approval, no automatic contacting others. Formalization is considered only
+  after this review, with precise kernel/source boundaries.
+  **BLOCKED:** no advisor/expert comments or confirmed institutional calendar
+  have been supplied. The user was asked for these while research continues.
+  Notebook supplies a concrete review dossier, not an approval.
+  **Evidence:** pending external input.
+- [ ] T3604: Once the novelty/advantage/review gates pass, implement only the
+  selected result, validate it independently and register the complete
+  experiment protocol before timing (plan 20–22).
+  **Acceptance:** small implementation matches the reviewed theorem; CI runs
+  focused independent checks. Strong classical controls, failures, fixed
+  budgets, immutable configs and provenance precede any performance claims.
+  **BLOCKED:** T3603 is open; the remainder of item 22 is also missing. No new
+  production decoder, model training or favorable benchmark is a substitute.
+  **Evidence:** pending; provisional protocol is explicitly unexecuted.
+- [ ] T3605: Prepare the reviewed publication change and synchronize completed
+  work, without submitting or promising publication acceptance.
+  **Acceptance:** bibliography, claim/proof/code/evidence map and manuscript
+  are consistent with the actual result; user-required local/GitHub sync holds.
+  **BLOCKED:** scientific scope/review T3603–T3604 remains open. Existing paper
+  and historical results remain the stable submission, not a new-result claim.
+  **Evidence:** pending.
+
 ## M35 — Consolidate posterior correctness gates and bounded compilation
 
 Authorized by the 2026-10-06 review follow-up. Depends on M34. Preserve the

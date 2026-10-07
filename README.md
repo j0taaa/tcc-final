@@ -89,11 +89,17 @@ logits remain local; compact scientific data are losslessly deduplicated.
 The user removed the historical test suite and experiment framework in M32/M33;
 they remain recoverable at `a98ae8e09f2066157ebf6df05f8873b8600e00fb` and `9deb3df`.
 M34 introduced eight focused posterior tests; M35 extends them to eleven with
-archived recomputation and preprocessing/deadline checks. CI runs the suite;
+archived recomputation and preprocessing/deadline checks. M36 adds one research
+oracle for confidence-selected commitment events. CI runs the twelve checks;
 this is not restoration of the old suite or whole-project correctness. Pinned external
 JSON cases are packed in one small archive, with original hashes and license.
 The opt-in model capture retains only the necessary audited official MDLM CPU
 adapter. External EPIC production stays unchanged at `5b1b310`.
+
+[Current research notebook](docs/research/contribution-plan.md): primary-source
+novelty review, candidate event-reduction proof and explicit human-review gates.
+This investigation does not establish a new scientific priority or change the
+article's contribution or the production decoders.
 
 [Reproduction](REPRODUCING.md), [baseline provenance](UPSTREAM.md),
 [previous cleanup](docs/evidence/m33-cleanup.md).

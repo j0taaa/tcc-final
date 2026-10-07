@@ -1,4 +1,4 @@
-"""New, focused offline oracles authorized in M34; no historical suite restored."""
+"""User-authorized focused offline oracles; no historical suite restored."""
 
 from __future__ import annotations
 
@@ -121,6 +121,118 @@ class EnumeratedRandom(Random):
 
 
 class CfgPosteriorOracleTests(unittest.TestCase):
+    def test_top_k_commitment_event_reduction(self):
+        """M36 research: sort/group every path, independently of threshold filters.
+
+        No decoder is changed. This falsifies the written event-reduction lemma
+        on small inputs; it establishes neither novelty nor speed superiority.
+        """
+
+        def valid_json(word):
+            try:
+                json.loads(word)
+                return True
+            except (ValueError, UnicodeError):
+                return False
+
+        json_source = json_source_grammar()
+        fixtures = (
+            (
+                dyck(),
+                (b"(", b")", b"(", b"()", b"[]"),
+                ((0, 2, 3), (0, 1, 3), (1, 3, 4), (1, 3, 4)),
+                (None,) * 4,
+                valid_dyck,
+            ),
+            (
+                json_source,
+                (b"[", b"0", b"1", b",", b"]", b"0"),
+                ((0,), (1, 2, 5), (3,), (1, 2, 5), (4,)),
+                (0, None, 3, None, 4),
+                valid_json,
+            ),
+            (
+                json_source,
+                (b"[", b'{"a":', b"0", b"1", b",", b"]", b"}", b" ", b'{"b":'),
+                ((0, 1), (0, 2, 8), (2, 3, 4, 5, 6), (2, 3, 5, 6, 7), (5, 6, 7)),
+                (None,) * 5,
+                valid_json,
+            ),
+            (json_source, (b"]", b"}"), ((0, 1),) * 2, (None,) * 2, valid_json),
+        )
+        rng = Random(20261007)
+        checked = positive = zero_mass = 0
+        for source, emissions, rows, canvas, recognizes in fixtures:
+            base = inputs(source, emissions, rows, canvas=canvas)
+            plan = compile_cfg_sampler(source, base.state)
+            for variant in range(6):
+                probabilities = []
+                for fixed, row in zip(canvas, rows, strict=True):
+                    raw = [1 if variant == 0 else rng.randrange(4) for _ in row]
+                    probabilities.append(
+                        (F(1),)
+                        if fixed is not None
+                        else tuple(F(w, 2 * (sum(raw) or 1)) for w in raw)
+                        if variant != 5
+                        else (F(),) * len(row)
+                    )
+                data = ProbabilityInput(base.state, tuple(probabilities))
+                result = plan.evaluate(data)
+                mass, _, law = oracle(data, recognizes)
+                self.assertEqual(result.valid_mass, mass)
+                if not mass:
+                    zero_mass += 1
+                    self.assertEqual(result.status, PosteriorStatus.ZERO_MASS_ON_SUPPORT)
+                    continue
+                positive += 1
+                free = tuple(i for i, fixed in enumerate(canvas) if fixed is None)
+                scores = tuple(
+                    dict(zip(row, (F(1) for _ in row) if variant == 0 else p, strict=True))
+                    for row, p in zip(rows, data.probabilities, strict=True)
+                )
+                for k in range(len(free) + 1):
+                    grouped = {}
+                    for path, weight in law.items():
+                        chosen = sorted(free, key=lambda i: (-scores[i][path[i]], i))[:k]
+                        event = tuple(sorted((i, path[i]) for i in chosen))
+                        grouped[event] = grouped.get(event, F()) + weight
+                    self.assertEqual(sum(grouped.values(), F()), F(1))
+                    for positions in itertools.combinations(free, k):
+                        for tokens in itertools.product(*(rows[i] for i in positions)):
+                            event = tuple(zip(positions, tokens, strict=True))
+                            selected = dict(event)
+                            boundary = min(((scores[i][v], -i) for i, v in event), default=None)
+                            gated = tuple(
+                                tuple(
+                                    p
+                                    if (
+                                        v == selected[i]
+                                        if i in selected
+                                        else boundary is None
+                                        or i not in free
+                                        or (scores[i][v], -i) < boundary
+                                    )
+                                    else F()
+                                    for v, p in zip(row, ps, strict=True)
+                                )
+                                for i, (row, ps) in enumerate(
+                                    zip(rows, data.probabilities, strict=True)
+                                )
+                            )
+                            actual = plan.evaluate(ProbabilityInput(base.state, gated))
+                            self.assertEqual(
+                                actual.valid_mass / mass,
+                                grouped.get(event, F()),
+                                (variant, k, event),
+                            )
+                            checked += 1
+        self.assertGreater(positive, 0)
+        self.assertGreater(zero_mass, 0)
+        print(
+            f"M36 event oracles: {checked} events, {positive} positive, "
+            f"{zero_mass} zero-mass inputs"
+        )
+
     def test_preprocessing_limits_and_duplicate_nullable_bodies(self):
         # A distinct nullable symbol at each of 24 positions has 2**24 bodies.
         # Admit the LL(1) grammar, then refuse canonical expansion before it
