@@ -16,6 +16,57 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M34 — Exact recursive-CFG posterior: investigate, prove, then falsify
+
+Authorized on 2026-10-06: pursue a useful scientific contribution and add
+necessary fair tests. Depends on M31 and M33; the old suite stays deleted.
+Preserve MWPC, finite-slot/support/status/probability contracts and all negative
+evidence. Candidate: ambiguity-checked LL(1) byte grammars and sum-product
+inference on a token DAG, rather than enumerating valid sequences or expanding
+all stack configurations. Classical weighted parsing is an antecedent, not a
+new invention. No claim of world priority or general superiority is authorized
+by a search, theorem, compilation or demonstration alone.
+
+- [x] T3400: Establish the precise useful capability, primary antecedents,
+  mathematical contract and falsifiable protocol before new measurements.
+  **Acceptance:** exact original-token posterior under an automatically checked
+  unambiguity condition; explicit support/EOS scope; polynomial arithmetic-work
+  bound and a scoped automaton representation separation; known Markov/CFG
+  inference credited. Predeclare exhaustive oracles, negative controls, external
+  inputs and strong comparisons, including cases expected to favor alternatives.
+  **Evidence:** `docs/research/m34-exact-cfg-posterior.md` states token-path,
+  LL(1)/normalization, inside/outside/sampling obligations and the scoped NFA
+  fooling-set separation. Primary literature includes Goodman/Stolcke and
+  Rivaud--Pachet's already established CFG/Markov tractability, DINGO, EPIC,
+  Dang--Ermon and FactorDLM; no first-ever claim. Before measurements,
+  `configs/experiments/m34_cfg_posterior_v1.json` fixes all grid cells, losing
+  controls, 18 M31 replays, resource limits and pinned JSONTestSuite's complete
+  <=128-byte conformance subset. Source FIRST/FOLLOW checking and initial
+  independent token-product tests are implemented; later gates remain open.
+- [ ] T3401: Implement the smallest reusable, model-independent compiler and
+  exact sampler that satisfy T3400. Reuse immutable grammar/tokenizer contracts;
+  fail explicitly on unsupported grammar/control semantics and work limits.
+  **Acceptance:** independently enumerated token-path masses/marginals and
+  sampling transition probabilities agree, including aliases, token prefixes,
+  fixed positions, missing support, zero mass and changed weights. No old suite
+  restored; focused new tests may falsify this extension. Mathematical proof
+  obligations and Lean coverage/limits stated accurately.
+  **Evidence:** pending.
+- [ ] T3402: Evaluate every predeclared comparison/application; keep failures
+  and losing cases. Include genuine saved/fresh dLLM predictions, external
+  structured inputs and an independently implemented exact stack controller.
+  **Acceptance:** immutable config/raw lineage, identical inputs, separately
+  recorded construction/query/sample costs, correct outputs and an honest
+  verdict. If the proposed useful advantage does not survive, continue the
+  scientific search instead of relabeling the failed experiment a win.
+  **Evidence:** pending.
+- [ ] T3403: Integrate the surviving contribution into the maintained project
+  and article with reproducible checks and precise novelty/utility boundaries.
+  **Acceptance:** operational/formal/new targeted checks and article artifacts
+  pass; no universal source-correctness, semantic-quality or global-trajectory
+  claim; scientific gain explained relative to actual alternatives.
+  **Evidence:** pending.
+
 ## M33 — Further reduction of owned code
 
 Authorized by the request to reduce further while leaving external EPIC alone.

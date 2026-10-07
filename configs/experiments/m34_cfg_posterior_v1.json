@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "seed": 20261006,
+  "purpose": "Falsify exact original-token recursive-CFG conditioning and compare representation costs; no semantic benchmark",
+  "scaling": {
+    "language": "two_type_dyck",
+    "slots": [4, 8, 16, 24, 32, 48, 64],
+    "distributions": ["uniform", "seeded_positive_integer_rows"],
+    "controls": ["all_masked", "fixed_alternating_opening_half"],
+    "compiler_cell_limit": 200000,
+    "compiler_alternative_limit": 1000000,
+    "external_deadline_seconds": 30,
+    "timing_repeats": 3
+  },
+  "external_conformance": {
+    "source": "https://github.com/nst/JSONTestSuite",
+    "revision": "1ef36fa01286573e846ac449e8683f8833c5b26a",
+    "path": "test_parsing",
+    "max_bytes": 128,
+    "required_prefixes": ["y_", "n_"],
+    "informational_prefixes": ["i_"],
+    "selection": "all files satisfying the declared byte bound, before observing outcomes"
+  },
+  "replay": {
+    "capture": "m31_probability_v1",
+    "case_count": 18,
+    "model_id": "kuleshov-group/mdlm-owt",
+    "model_revision": "d0958fa851335ece6c15260ce0025f030673c0fb",
+    "tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "selection": "all archived canvases, identical original token rows and rational unaries"
+  }
+}
