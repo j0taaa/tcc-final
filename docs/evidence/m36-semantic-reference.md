@@ -61,8 +61,11 @@ consumer/full-logit successes are kept distinct from ordinary offline replay.
 Source commit `2be61a9` passed Rust builds, unchanged historical artifact checks,
 Lean's 50 audited statements and the main 16-page PDF check. Its GitHub Actions
 run [37704248806](https://github.com/j0taaa/tcc-final/actions/runs/37704248806)
-passed both jobs, including all then-existing 15 tests. This follow-up adds the
-sixteenth real-input recomputation; its CI result must be verified separately. The updated research supplement
+passed both jobs, including all then-existing 15 tests. Follow-up source
+`d3223d7b45a5ff002d0c57e8973b458c7ad5bcb5` passed both jobs in run
+[37705745997](https://github.com/j0taaa/tcc-final/actions/runs/37705745997).
+Its log confirms all 16 tests ran, including real-input recomputation, with
+Rust, Lean and unchanged artifact checks also passing. The updated research supplement
 builds as a four-page PDF without overflow or unresolved references; all four
 rendered pages were visually inspected.
 

@@ -148,6 +148,8 @@ Use one notebook: `docs/research/contribution-plan.md`.
   final normalization. Commands and boundaries are recorded in
   `docs/evidence/m36-semantic-reference.md`; derived probabilities/trial counts
   are script-generated, not measured superiority. T3602–T3605 stay separate.
+  Source/archive follow-up `d3223d7` is pushed; Actions run `37705745997`
+  passes both jobs and its log confirms all sixteen tests actually ran.
 
 ## M35 — Consolidate posterior correctness gates and bounded compilation
 
