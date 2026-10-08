@@ -184,8 +184,22 @@ Clearing rational denominators, the real-coefficient support reduction, signed
 optimality, sampling law and source implementation remain written proofs or
 tested obligations; the whole software is not Lean-verified.
 
-A frozen opt-in MDLM/JsonLogic integration protocol is provided separately.
-It is an illustrative application check, not a held-out external benchmark
+The frozen MDLM/JsonLogic integration capture was produced from clean commit
+\texttt{2be61a9}. Its rational inputs, config, original results and checksums
+are archived in \path{docs/artifacts/raw/m36_semantic_reference_v1/}.
+An actual pinned CPU MDLM prediction fills five lexical slots; support domains
+were declared before execution and independently of target labels. All 108
+represented rules agree with the official pinned JsonLogic consumer on eight
+Boolean records. Two positive targets yield sixteen samples each; the declared
+parity target has zero mass on this canvas. Full local logits passed an
+independent softmax audit; those logits are not part of the Git archive.
+Offline replay recomputes the published rational inputs against independent
+enumeration and recorded masses, and is now a focused CI check. It does not
+load a model or repeat the optional consumer/full-logit audits.
+
+The producing \texttt{--capture} command, archived directory, pinned consumer
+and local full-capture options are recorded in \texttt{REPRODUCING.md}.
+This is an illustrative application check, not a held-out external benchmark
 or proof of semantic generalization. Human mathematical and novelty review
 are still required before promoting this supplement to the article's main
 scientific claim. Known transforms and weighted synthesis are credited;

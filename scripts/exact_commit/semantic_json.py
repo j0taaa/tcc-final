@@ -269,6 +269,9 @@ def evaluate_semantics(
             budget.consume(len(values))
             for j, value in enumerate(contribution):
                 values[j] += value
+        budget.consume(len(values))
+        if sum(values) != syntax._inside[node]:
+            raise RuntimeError("execution profiles did not partition a syntax cell")
         inside[node] = tuple(values)
     root_values = inside[plan.root] if plan.root is not None else (0,) * size
     denominator = sum(root_values)

@@ -130,13 +130,24 @@ Use one notebook: `docs/research/contribution-plan.md`.
   Nine new Lean statements are audited, including the natural-coefficient
   bilinear lower bound. Scientific priority/human review and
   production promotion remain separate incomplete gates, not implied passes.
-- [ ] T3608: Materialize the frozen semantic integration demonstration.
+- [x] T3608: Materialize the frozen semantic integration demonstration.
   **Acceptance:** actual pinned local CPU MDLM probabilities, source/config
   commit, preserved full-softmax normalization, offline archived recomputation,
   independent enumeration and official pinned JsonLogic execution. Preserve the
   preregistered unsupported-by-canvas target as zero mass; no performance,
   external-test-set or out-of-example correctness claim.
-  **Evidence:** config `m36_semantic_reference_v1.json`; capture/replay pending.
+  **Evidence:** clean producing commit `2be61a9773a016930dc407ab051d6f2d497704a0`,
+  frozen config and complete raw artifacts at
+  `docs/artifacts/raw/m36_semantic_reference_v1/`. Actual local CPU MDLM forward,
+  independent full-softmax audit, all 108 template rules on eight records and
+  pinned official JsonLogic execution pass. Both positive targets yield sixteen
+  samples; the preregistered parity target is zero mass. Dependency-free offline
+  replay exactly reproduces archived masses/statuses, and `make check test`
+  passes all sixteen focused checks including that current-solver recomputation.
+  Per-cell semantic/syntax mass partition checks now detect losses before
+  final normalization. Commands and boundaries are recorded in
+  `docs/evidence/m36-semantic-reference.md`; derived probabilities/trial counts
+  are script-generated, not measured superiority. T3602–T3605 stay separate.
 
 ## M35 — Consolidate posterior correctness gates and bounded compilation
 

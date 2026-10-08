@@ -91,8 +91,8 @@ The user removed the historical test suite and experiment framework in M32/M33;
 they remain recoverable at `a98ae8e09f2066157ebf6df05f8873b8600e00fb` and `9deb3df`.
 M34 introduced eight focused posterior tests; M35 extends them to eleven with
 archived recomputation and preprocessing/deadline checks. M36 adds one research
-oracle for confidence-selected commitment events and three focused checks for
-the execution-conditioning research reference. CI runs these fifteen checks;
+oracle for confidence-selected commitment events and four focused checks for
+the execution-conditioning research reference. CI runs these sixteen checks;
 this is not restoration of the old suite or whole-project correctness. Pinned external
 JSON cases are packed in one small archive, with original hashes and license.
 The opt-in model capture retains only the necessary audited official MDLM CPU
@@ -124,6 +124,12 @@ previous contracts. Work caps refuse unresolved instances. The frozen integratio
 config and opt-in CPU capture/replay are in
 `configs/experiments/m36_semantic_reference_v1.json` and
 `scripts/exact_commit/capture_semantic_reference.py`.
+The [archived real MDLM illustration](docs/artifacts/raw/m36_semantic_reference_v1/)
+was checked against all 108 represented rules and the pinned official JsonLogic
+consumer on eight Boolean records. Both declared positive targets were sampled;
+the impossible canvas target remains zero mass. CI recomputes the archive with
+current code without a model or network. This is an application/reproduction
+check, not an external benchmark or proof of novelty/generalization.
 
 [Reproduction](REPRODUCING.md), [baseline provenance](UPSTREAM.md),
 [previous cleanup](docs/evidence/m33-cleanup.md).

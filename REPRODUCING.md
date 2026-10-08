@@ -178,12 +178,14 @@ no work cap; callers preparing custom input grammars should pass a budget too.
 Compilation's forest caps remain `max_chart_cells`/`max_alternatives`.
 Cooperative checks cannot preempt an individual Python operation or enforce an
 OS memory cap. This change does not relabel historical runtime measurements.
-# Execution-conditioning research reference (M36)
+
+## Execution-conditioning research reference (M36)
 
 The source and mathematical supplement are separate from production decoder
 strategies. Build the supplement with `make research-note`; its PDF is copied
 to `output/pdf/semantic-conditioning.pdf`. `make test` includes three focused
-execution/profile/sampling oracles. They do not establish scientific priority.
+execution/profile/sampling oracles and a real archived-input recomputation.
+They do not establish scientific priority.
 
 The frozen MDLM/JsonLogic integration config is
 `configs/experiments/m36_semantic_reference_v1.json`. A capture requires the
@@ -201,3 +203,25 @@ declares lexical support before logits/targets; it is not an external benchmark,
 an end-to-end decoder comparison or accuracy on unseen records. The target not
 representable by the frozen canvas must remain zero mass. The signed covering
 transform is known; the research dossier and supplement delimit the comparator.
+
+The completed capture is in `docs/artifacts/raw/m36_semantic_reference_v1/`,
+produced from clean source `2be61a9773a016930dc407ab051d6f2d497704a0`.
+`SHA256SUMS` fixes the config, input and original results; replay verifies those
+hashes, recomputes all profile masses against independent enumeration, and
+compares recorded target masses/statuses. Run the offline check and regenerate
+the displayed probabilities/geometric trial counts with:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.capture_semantic_reference --directory docs/artifacts/raw/m36_semantic_reference_v1
+.venv/bin/python -m scripts.exact_commit.capture_semantic_reference --directory docs/artifacts/raw/m36_semantic_reference_v1 --summary > docs/research/generated/m36-semantic-summary.md
+# Optional: pinned consumer and full local logits, without another model forward.
+.venv-live/bin/python -m scripts.exact_commit.capture_semantic_reference --directory docs/artifacts/raw/m36_semantic_reference_v1 --consumer .cache/jsonlogic/logic.js --full-capture .cache/semantic-reference-v1.npz
+```
+
+Ordinary replay reports `official_consumer=NOT_RUN` and
+`full_logits_checked=false`. The original capture records both optional checks
+as passed; those observations are not attributed to the offline run. External
+users can verify inference on published rational rows; auditing their entire
+softmax origin additionally needs the local NPZ or a fresh opt-in capture.
+The consumer file is not vendored. See `docs/evidence/m36-semantic-reference.md`
+for commands, licenses, scope and the remaining human-review boundary.

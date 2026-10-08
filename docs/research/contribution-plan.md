@@ -995,3 +995,36 @@ externo de §13 ou uma comparação de desempenho. Ainda é necessário obter
 parecer humano e verificar prioridade bibliográfica para promover o recorte
 a protagonista publicado. A realização concreta e a matemática não dependem
 de inventar esse parecer.
+
+### Captura concluída e utilidade demonstrada
+
+O commit limpo `2be61a9773a016930dc407ab051d6f2d497704a0` produziu a captura
+real de MDLM em `docs/artifacts/raw/m36_semantic_reference_v1/`. Os logits
+completos foram verificados localmente por softmax NumPy independente; o Git
+contém os pesos racionais declarados, hashes e todas as saídas, não o checkpoint
+ou o NPZ local. O consumidor oficial executou todas as 108 regras nos oito
+registros. As duas metas positivas produziram dezesseis amostras cada; paridade
+permaneceu massa zero nesse canvas. Não foram descartadas saídas desfavoráveis.
+
+Uma recomputação sem modelo/rede reproduz as massas arquivadas e as confronta
+com a enumeração completa por JSON/executor independente. Esse caminho passa
+a integrar o CI. A soma dos perfis de **cada célula** é agora comparada com
+sua massa sintática antes da normalização final; uma perda/duplicação não pode
+ser escondida por renormalização. Isso não equivale a uma prova do código.
+
+`docs/research/generated/m36-semantic-summary.md` é gerado pelo replayer e
+mostra probabilidades condicionadas à sintaxe e `Z_syntax/Z_target`. A segunda
+quantidade é o número esperado de tentativas de **rejeição independente com
+a mesma lei**, uma identidade geométrica, não um tempo medido nem o EPIC
+nativo. Para massa positiva, rejeição é correta e termina quase certamente,
+mas não tem limite determinístico de tentativas; para massa zero nunca aceita.
+O condicionador, quando cabe nos caps declarados, decide essa impossibilidade
+e oferece amostragem sem tentativas de rejeição. Outros inferidores exatos
+competentes podem compartilhar essa capacidade.
+
+Essa aplicação demonstrou regras executáveis e exatidão no suporte; não
+estabeleceu o recorte de teste externo de §13, desempenho de todo decoder,
+qualidade semântica aprendida ou prioridade científica. A contribuição
+matemática é o enunciado delimitado A2.2 com seu comparador ótimo na classe,
+e sua utilidade está ligada à operação especificada A2.1. A avaliação humana
+da originalidade/suficiência acadêmica permanece T3603, sem aprovação criada.

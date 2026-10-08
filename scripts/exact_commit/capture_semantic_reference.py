@@ -159,6 +159,11 @@ def capture(config, output):
 
 
 def replay(config, directory, consumer):
+    if (directory / "SHA256SUMS").exists():
+        for line in (directory / "SHA256SUMS").read_text().splitlines():
+            digest, name = line.split()
+            if hashlib.sha256((directory / name).read_bytes()).hexdigest() != digest:
+                raise ValueError(f"archived input/result changed: {name}")
     with gzip.open(directory / "input.json.gz", "rt") as stream:
         raw = json.load(stream)
     if (directory / "config.json").read_bytes() != CONFIG.read_bytes() or (
@@ -235,7 +240,7 @@ def replay(config, directory, consumer):
                 "samples": samples,
             }
         )
-    return {
+    result = {
         "verification": "PASS",
         "metadata": raw["metadata"],
         "independent_programs": len(rules),
@@ -246,6 +251,15 @@ def replay(config, directory, consumer):
         "results": results,
         "claim_scope": config["claim_scope"],
     }
+    if (directory / "rows.jsonl").exists():
+        recorded = json.loads((directory / "rows.jsonl").read_text())
+        for key in ("metadata", "syntax_mass", "omitted_mass", "independent_programs", "records"):
+            if result[key] != recorded[key]:
+                raise ValueError(f"current recomputation disagrees with archive: {key}")
+        for current, old in zip(results, recorded["results"], strict=True):
+            if any(current[k] != old[k] for k in ("id", "profile", "status", "mass")):
+                raise ValueError("current target mass/status disagrees with archive")
+    return result
 
 
 def check_full_capture(directory, path):
@@ -284,6 +298,7 @@ def main():
     parser.add_argument("--directory", required=True, type=Path)
     parser.add_argument("--consumer", type=Path)
     parser.add_argument("--full-capture", type=Path)
+    parser.add_argument("--summary", action="store_true", help="derived Markdown; no timings")
     args = parser.parse_args()
     config = json.loads(CONFIG.read_text())
     if args.capture:
@@ -299,7 +314,48 @@ def main():
     if args.capture:
         with (args.directory / "rows.jsonl").open("x") as stream:
             stream.write(json.dumps(result, sort_keys=True) + "\n")
-    print(json.dumps(result, indent=2))
+    if args.summary:
+        print("# M36: frozen MDLM / JsonLogic execution check\n")
+        print(
+            f"Capture code: `{result['metadata']['git_commit']}`. "
+            f"Seed: `{result['metadata']['seed']}`.\n"
+        )
+        print(
+            "Analysis script SHA-256: "
+            f"`{hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}`.\n"
+        )
+        print(
+            f"Independent enumeration: {result['independent_programs']} rules, "
+            f"{result['records']} records.\n"
+        )
+        print(
+            "| Target | Status | Samples | Probability given syntax | Expected rejection trials |"
+        )
+        print("|---|---|---:|---:|---:|")
+        syntax = Fraction(result["syntax_mass"])
+        for row in result["results"]:
+            mass = Fraction(row["mass"])
+            probability = f"{float(mass / syntax):.9g}" if syntax else "undefined"
+            trials = f"{float(syntax / mass):.9g}" if mass else "never succeeds"
+            print(
+                f"| {row['id']} | {row['status']} | {len(row['samples'])} | "
+                f"{probability} | {trials} |"
+            )
+        print(
+            "\nProbabilities and trial counts are rounded displays computed from archived "
+            "exact fractions, not measured performance. Rejection means independent "
+            "draws from the same syntax-conditioned product law; it is not native EPIC. "
+            "This is an illustrative consumer check, not an external benchmark or "
+            "a guarantee on unseen records. The archived capture also records the "
+            "optional pinned consumer and full-logit audits; ordinary offline replay "
+            "does not rerun those checks.\n"
+        )
+        print(
+            "Generate: `python -m scripts.exact_commit.capture_semantic_reference "
+            "--directory docs/artifacts/raw/m36_semantic_reference_v1 --summary`."
+        )
+    else:
+        print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":

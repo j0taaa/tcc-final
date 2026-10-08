@@ -1,5 +1,6 @@
 """Focused research oracles: execution via JSON trees, never grammar parsing."""
 
+import hashlib
 import itertools
 import json
 import unittest
@@ -14,11 +15,10 @@ from scripts.exact_commit.semantic_json import (
     covering_product,
     evaluate_semantics,
 )
+from test_cfg_posterior import inputs
 
 from mwpc_exact.cfg_posterior import CompilationLimit, compile_cfg_sampler
 from mwpc_exact.reference.limits import WorkBudget
-
-from test_cfg_posterior import inputs
 
 
 def execute(rule, record):
@@ -39,7 +39,9 @@ def enumeration(data, records):
     masses = defaultdict(dict)
     for path in itertools.product(*data.state.support.rows):
         weight = F(1)
-        for token, row, probabilities in zip(path, data.state.support.rows, data.probabilities):
+        for token, row, probabilities in zip(
+            path, data.state.support.rows, data.probabilities, strict=True
+        ):
             weight *= probabilities[row.index(token)]
         try:
             rule = json.loads(data.state.tokenizer_adapter.detokenize_bytes(path))
@@ -51,7 +53,42 @@ def enumeration(data, records):
 
 
 class SemanticJsonTests(unittest.TestCase):
+    def test_archived_mdlm_recomputation(self):
+        from scripts.exact_commit.capture_semantic_reference import CONFIG, replay
+
+        archive = CONFIG.parents[2] / "docs/artifacts/raw/m36_semantic_reference_v1"
+        for line in (archive / "SHA256SUMS").read_text().splitlines():
+            digest, name = line.split()
+            self.assertEqual(hashlib.sha256((archive / name).read_bytes()).hexdigest(), digest)
+        recorded = json.loads((archive / "rows.jsonl").read_text())
+        result = replay(json.loads(CONFIG.read_text()), archive, consumer=None)
+        self.assertEqual(result["verification"], "PASS")
+        self.assertEqual(result["official_consumer"], "NOT_RUN")
+        for key in ("metadata", "independent_programs", "records", "syntax_mass", "omitted_mass"):
+            self.assertEqual(result[key], recorded[key])
+        self.assertEqual(result["independent_programs"], 108)
+        for current, old in zip(result["results"], recorded["results"], strict=True):
+            for key in ("id", "profile", "status", "mass"):
+                self.assertEqual(current[key], old[key])
+        self.assertEqual(
+            [r["status"] for r in result["results"]],
+            ["exact_on_support", "exact_on_support", "zero_valid_probability_on_support"],
+        )
+
     def test_covering_product_and_conditional_pair_law(self):
+        def monotone(left, right, counts):
+            # Competent optimal non-negative plan, not dense pair enumeration.
+            if len(left) == 1:
+                counts[0] += 1
+                return [left[0] * right[0]]
+            half = len(left) // 2
+            low = monotone(left[:half], right[:half], counts)
+            mixed = [x + y for x, y in zip(right[:half], right[half:], strict=True)]
+            first = monotone(left[half:], mixed, counts)
+            second = monotone(left[:half], right[half:], counts)
+            counts[1] += 2 * half
+            return low + [x + y for x, y in zip(first, second, strict=True)]
+
         rng = Random(20261007)
         for m in range(8):
             size = 1 << m
@@ -60,6 +97,9 @@ class SemanticJsonTests(unittest.TestCase):
             for x, y in itertools.product(range(size), repeat=2):
                 expected[x | y] += a[x] * b[y]
             self.assertEqual(covering_product(a, b, WorkBudget()), expected)
+            counts = [0, 0]
+            self.assertEqual(monotone(a, b, counts), expected)
+            self.assertEqual(counts, [3**m, 2 * (3**m - 2**m)])
 
         # Enumerate integer random decisions, not empirical frequencies.
         class Draws(Random):
