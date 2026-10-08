@@ -26,15 +26,18 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [14-boolean-execution-profiles](14-boolean-execution-profiles/README.md) | Condicionamento de regras Booleanas por execução — M36 |
 | [15-adaptive-semantic-cores](15-adaptive-semantic-cores/README.md) | Refinamento adaptativo e núcleos semânticos — M36 |
 | [16-cars-rejection-bound](16-cars-rejection-bound/README.md) | Limite de rejeições contra a atualização publicada do CARS — M36 |
+| [17-pl-latent-resampling](17-pl-latent-resampling/README.md) | Auditoria de reamostragem latente após seleção PL |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
 é a consolidação posterior da mesma abordagem; ela não foi apresentada como
 o estado literal do primeiro commit.
 
-A direção atual é `16-cars-rejection-bound`; suas hipóteses e limites estão no
-README e no artigo congelado. Organização, testes e provas selecionadas não
-substituem avaliação humana de prioridade/significância.
+As direções 15/16 foram rejeitadas pelo usuário como protagonistas: a aplicação
+não justificou usar uma dLLM. Seus resultados continuam preservados. A direção
+em investigação é `17-pl-latent-resampling`, ainda sem conquista confirmada.
+Organização, testes e provas selecionadas não substituem avaliação humana de
+prioridade/significância.
 
 ## Abrir uma versão
 

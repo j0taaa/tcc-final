@@ -146,6 +146,16 @@ existing decoders. Research calculations do not authorize a novelty claim,
 invented advisor approval, or replacing the article's established contribution.
 Use one notebook: `docs/research/contribution-plan.md`.
 
+- [ ] T3613: Independently audit the received PL-latent resampling note.
+  **Acceptance:** freeze the protocol before measurement; check exact posterior
+  and gradient laws with independent enumeration; compare competent rejection
+  and enumeration on every predeclared JSON model input, preserving losses and
+  resource refusals. Separate correctness, novelty and training usefulness.
+  **In progress:** `attempts/17-pl-latent-resampling/` preserves the received
+  note and eight scientific criteria. Directions 15/16 are no longer selected
+  protagonists after the user's explicit objection to their dLLM application.
+  No new decoder or training success is claimed.
+
 - [x] T3600: Record the stable base, precise candidate contract and one
   recursive structured-generation application (plan 1, 2, 4).
   **Acceptance:** original-token/fixed-slot/support/EOS/status guarantees stay

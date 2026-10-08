@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "date": "2026-10-08",
+  "base_commit": "161031d2e069d3194ed53fd64b175b47f6d3cb15",
+  "seed": 20261008,
+  "purpose": "Falsify the proposed exact PL-latent sampler and assess cost; no favorable-case selection or training claim",
+  "correctness": {
+    "binary_json_array_free_slots": [1, 2, 3, 4],
+    "weights": ["uniform", "seeded_positive_integer"],
+    "rate_powers": [1, 2],
+    "selected_counts": "all k from 1 to n-1",
+    "events": "all positive observed ordered selections in the enumerated law",
+    "edge_cases": ["constant rates", "aliases", "shared token prefixes", "fixed positions", "impossible evidence", "zero/negative rates", "k=0", "k=n", "large rational rates", "rounded-sum alternative"],
+    "oracle": "original-token product enumeration and Python JSON recognition; exact Fraction identities, not sampling frequencies"
+  },
+  "gradient": {
+    "free_slots": [2, 3, 4],
+    "weights": ["uniform", "seeded_positive_integer"],
+    "rate_powers": [1, 2],
+    "selected_counts": "all k from 1 to n-1",
+    "reward": "sum of the observed selected binary JSON values; correctness fixture, not application benchmark",
+    "checks": ["dual-number objective derivative versus mean full score", "exact total covariance", "explicit two-replica covariance", "conditional-mean baseline", "bias of dropping latent scores"]
+  },
+  "replay": {
+    "archive": "docs/artifacts/raw/m34_cfg_posterior_v1",
+    "phase": "json-model",
+    "cases": "all nine archived cases, including previously unresolved cases",
+    "rate_powers": [1, 2],
+    "selected_counts": "unique values among 1, ceil(n/2), n-1",
+    "event": "one syntax-conditioned proposal followed by native PL sampling using the fixed seed, never selected by expected speedup",
+    "timing_repetitions": 3,
+    "accepted_batch_sizes": [1, 4, 16],
+    "methods": ["certified_tangent_mixture", "rejection_with_f_L_envelope", "enumeration_when_product_at_most_1000000"],
+    "compiler_deadline_seconds": 30,
+    "preparation_deadline_seconds": 30,
+    "sampling_deadline_seconds": 10,
+    "max_components": 256,
+    "max_cells": 200000,
+    "max_alternatives": 1000000,
+    "scope": "offline frozen forward inputs; compilation and query costs measured; no new neural forward/backward or reward calls"
+  },
+  "success_gates": {
+    "correctness": "no unexplained exact-law or gradient mismatch",
+    "performance": "report all paired cold and amortized costs; a loss or refusal remains a loss or unresolved result",
+    "scientific": "correctness alone does not establish novelty, training efficiency, quality, or publication significance"
+  }
+}
