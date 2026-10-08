@@ -189,6 +189,26 @@ Use one notebook: `docs/research/contribution-plan.md`.
   Scientific priority and external review remain separate from these technical
   acceptance criteria. No production promotion or native CARS speed claim.
 
+- [x] T3610: Prove a finite-batch expected-rejection comparison against the
+  published CARS visited-prefix update, beyond the zero-rejection representation
+  bound. Keep the perfect oracle, exact output law and preparation costs explicit.
+  **Acceptance:** stopped expectation argument is complete; uniform and
+  nonuniform assumptions distinct. Independent exact decision trees agree with
+  a finite-state recursion, including a worst-case feasible branch. Do not
+  infer wall-time/automata/priority superiority or call the written law Lean-proved.
+  **Evidence:** supplement Proposition C1 and notebook §16 include the
+  bounded stopping argument, group occupancy lower bound, weighted extension
+  and comparison to the one-rejection stream. `make check test research-note`
+  passes lint/type/format, all 25 focused checks and the eight-page PDF build
+  without overflow/unresolved references. The new oracle independently sums
+  the finite control's whole decision trees and checks rational expectations
+  against a finite-state recursion; it also realizes every still-uncut invalid
+  path before the first valid output with positive probability. Final pages
+  are visually inspected. The 768-row archive and its producing commit remain
+  unchanged; C1 is a written universal comparison, not a new timing campaign.
+  Kernel/source/priority boundaries stay explicit. Sync is required before
+  reporting delivery.
+
 ## M35 — Consolidate posterior correctness gates and bounded compilation
 
 Authorized by the 2026-10-06 review follow-up. Depends on M34. Preserve the

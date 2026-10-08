@@ -97,7 +97,9 @@ adaptive-stream/prefix-control checks and two structural-core checks.
 One additional check replays the complete adaptive archive and recomputes
 its first positive/zero cases with current adaptive/core code.
 A further syntax/execution oracle covers real identifier names, shared
-prefixes and token boundaries inside identifiers. CI runs these twenty-four checks;
+prefixes and token boundaries inside identifiers. A finite decision-tree oracle
+checks the CARS batch rejection bound against an independent aggregate-state
+recursion. CI runs these twenty-five checks;
 this is not restoration of the old suite or whole-project correctness. Pinned external
 JSON cases are packed in one small archive, with original hashes and license.
 The opt-in model capture retains only the necessary audited official MDLM CPU
@@ -144,7 +146,12 @@ over the entire stream, for `m` requirements. Active profiles remain capped
 at twelve; a refusal is unresolved. The supplement proves a scoped exponential
 representation gap for non-prefix behavior against zero-rejection prefix
 exclusion, including CARS's trie; automata and other competent compact semantic
-solvers can share that advantage. The frozen complete-label audit protocol is
+solvers can share that advantage. The supplement also proves an expected
+rejection separation for CARS's actual visited-prefix update on the uniform
+non-prefix family: `Omega(min(N, 2**(n-1)))` rejected candidates over `N` accepted
+outputs, while execution refinement needs at most one. This is a count bound
+with polynomial preparation, not a universal latency or automata advantage.
+The frozen complete-label audit protocol is
 `configs/experiments/m36_adaptive_semantics_v1.json`. It includes eager inference,
 enumeration and a perfect-oracle prefix control, not native EPIC/CARS timing.
 

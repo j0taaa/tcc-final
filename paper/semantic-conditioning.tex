@@ -8,6 +8,7 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}{Corollary}
 \newtheorem{refinement}{Theorem R}
+\newtheorem{streamcost}{Proposition C}
 \title{Exact Execution Conditioning for Boolean Rule Infilling\\
 \large Research supplement: algorithm, guarantees and comparison boundaries}
 \author{Gabriel Jota Lizardo}
@@ -16,26 +17,22 @@
 \maketitle
 
 \begin{abstract}
-We extend a finite-original-token grammar posterior with execution profiles
-for Boolean JsonLogic rules. Conditional samples satisfy declared input-output
-examples while retaining the frozen dLLM product weights. The implementation
-uses the established covering-product transform. We give a tight scoped
-comparison: computing all union-profile masses needs $3^m$ products in a
-non-negative bilinear plan, whereas a signed plan needs exactly $2^m$.
-We additionally condition only on counterexamples discovered during sampling.
-For $m$ finite execution requirements, the entire stream rejects at most $m$
-rules and retains the exact conditional law. A non-prefix parity requirement
-exhibits an exponential representation gap against zero-rejection prefix
-exclusion. Lean checks the finite progress and prefix-cover obstructions,
-as well as the earlier rectangle bound.
-Further, positive auxiliary weights certify when active requirements imply
-every omitted example; this certificate survives arbitrary subsequent model
-reweightings and admitted support contractions. The inference exponent then
-depends on the certified core size rather than the number of supplied records.
-This is an
-incremental reference implementation and a delimited mathematical argument,
-not a claim of priority for transforms, program synthesis or exact inference.
-Independent human review and practical deployment evaluation remain pending.
+We condition finite-original-token dLLM predictions on Boolean JsonLogic
+execution examples. Counterexample refinement preserves the exact conditional
+sampling law and rejects at most $m$ complete rules over an entire stream of
+outputs, for $m$ requirements. For a non-prefix family, standard path-driven
+CARS with a perfect oracle needs $\Omega(\min(N,2^{n-1}))$ expected rejected
+candidates before $N$ outputs, whereas execution refinement needs at most one
+after polynomial preparation. This is a scoped rejection-count result, not a
+universal latency advantage; compact semantic automata can share the gain.
+Positive auxiliary weights also certify a sufficient example core that survives
+arbitrary model reweightings and compatible support contraction. Its inference
+exponent depends on core size, not the total example count. Known weighted
+parsing, conditional sampling, example selection and covering transforms are
+credited. A complementary tight bilinear-plan comparison and selected Lean
+checks delimit the formal evidence. This is an incremental implementation and
+comparison contribution; independent human novelty review and practical
+deployment evaluation remain pending.
 \end{abstract}
 
 \section{Operation and antecedents}
@@ -202,6 +199,62 @@ factor graph or another tree-automaton semantic solver shares the compactness
 advantage. This mathematical family diagnoses a representation limit; it is
 not a favorable performance benchmark. EPIC is a syntax/progress baseline
 and does not, by itself, implement this execution-conditioned sampling task.
+
+\begin{streamcost}[Finite-batch rejection advantage over path-driven CARS]
+In the preceding family, take independent uniform choices and let
+$L=2^{n-1}$. Run CARS Algorithm 1 with its stated visited-prefix update,
+initial empty exclusion set and a perfect prefix oracle. Let $R_N$ count
+complete rejected candidates before $N$ accepted samples. Then
+\[
+ \mathbb E[R_N]\ \geq\ \frac L2\bigl(1-(1-1/L)^N\bigr).
+\]
+Over an infinite accepted stream the expected total is $L/2=2^{n-2}$.
+If its single-example refinement fits the declared resources, the execution
+stream rejects at most one candidate in total and has expectation $1-2^{-N}$.
+\end{streamcost}
+\begin{proof}
+Pair each valid path with the invalid path sharing its first $n-1$ choices.
+There are $L$ groups. At a group's first visit its last choice remains an
+unbiased coin: no earlier visited-prefix update can exclude a proper prefix,
+and other groups' exclusions do not change the ratio of these two paths.
+The update removes that group's sole invalid continuation even when the
+visited path is valid. It removes no other group's invalid path. A group
+therefore causes one rejection with probability $1/2$, and none thereafter.
+
+Let $U_N$ count groups visited before the $N$th accepted candidate. Stopping
+requires at most $N+L$ draws. Before each draw, the event that it is needed is
+already determined; conditional on selecting a previously unvisited group,
+the failure probability is $1/2$. Summing these bounded conditional
+expectations gives $\mathbb E[R_N]=\mathbb E[U_N]/2$. The $N$ accepted paths
+are iid uniform on the $L$ valid paths by exactness of CARS. Their number of
+distinct groups has expectation $L(1-(1-1/L)^N)$ and is at most $U_N$, proving
+the bound. Every group is eventually visited almost surely, giving total
+expectation $L/2$. For refinement, a first failure activates the sole example;
+zero failures before $N$ accepted paths occurs precisely when its first $N$
+unconditioned draws are all valid, with probability $2^{-N}$.
+\end{proof}
+
+For positive nonuniform row weights, let $\pi_g$ be group $g$'s valid-path
+probability under the target law, and let $\alpha$ be the smaller last-row
+token probability after normalizing its two-token domain. The same stopped
+sum replaces $1/2$ by a lower bound $\alpha$, giving
+\[
+ \mathbb E[R_N]\geq\alpha\sum_g\bigl(1-(1-\pi_g)^N\bigr).
+\]
+Concentrated weights weaken this finite-batch bound; execution refinement's
+one-rejection budget still holds. Weighted as well as uniform decision trees
+are checked against an independently enumerated finite-state recursion.
+
+This proves $\Omega(\min(N,L))$ expected rejected candidates for the stated
+CARS update, versus at most one after polynomial profile preparation. It
+does not lower-bound elapsed time, apply to every possible CARS update or
+defeat a compact semantic automaton. Preloading all invalid prefixes is an
+alternative exponential preparation; active validity masking before a draw
+is another algorithm whose conditional sampling law needs separate analysis.
+The family and uniform weights define a mathematical comparison, not a
+selected speed benchmark. Small exhaustive decision trees check the actual
+finite control against an independent aggregate-state recursion; the general
+expectation argument is written, not mechanized in Lean.
 
 If $k$ records become active, the retained syntax forest is not recompiled.
 For a source grammar of size $g$, profile work across refinements is at most
@@ -440,6 +493,7 @@ deterministic seeded samples. No method returned an incorrect classification
 or a resource refusal. The maximum adaptive rejected-rule count was
 \AdaptiveMaxReject{}, within the eight-record bound.
 
+\begin{samepage}
 The strongest small-support control is enumeration. The core's shorter
 median batch does not offset its preparation here: certification summed over
 targets costs \AdaptiveCorePrep{} seconds, and evaluating their archived
@@ -452,6 +506,8 @@ The prefix control uses CARS's trie subtraction with a perfect finite oracle;
 it does not time native CARS or EPIC. These results expose overheads;
 Theorems R1--R3, with their stated comparator and reuse conditions, supply the
 mathematical guarantees independently of these timings.
+\par
+\end{samepage}
 
 \bibliographystyle{plain}
 \bibliography{referencias}

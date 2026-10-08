@@ -6,6 +6,8 @@ import unittest
 from collections import defaultdict
 from dataclasses import replace
 from fractions import Fraction as F
+from functools import cache
+from math import prod
 from pathlib import Path
 from random import Random
 from unittest.mock import patch
@@ -196,6 +198,112 @@ class AdaptiveSemanticTests(unittest.TestCase):
                 law[path] += probability
                 self.assertLessEqual(session.rejections, 1)
         self.assertEqual(dict(law), {(0, 1): F(2, 3), (1, 0): F(1, 3)})
+
+    def test_prefix_batch_expected_rejections(self):
+        from scripts.exact_commit.audit_adaptive_semantics import PrefixControl
+
+        class NeedCategory(Exception):
+            pass
+
+        for row_weights, count in (
+            (((1, 1),), 3),
+            (((1, 1),) * 2, 3),
+            (((1, 1),) * 3, 1),
+            (((1, 1),) * 3, 3),
+            (((2, 1), (1, 3)), 3),
+            (((2, 1), (1, 3), (2, 5)), 1),
+        ):
+            n = len(row_weights)
+            paths = tuple(
+                (
+                    path,
+                    prod(row[b] for row, b in zip(row_weights, path, strict=True)),
+                    sum(path) % 2,
+                )
+                for path in itertools.product((0, 1), repeat=n)
+            )
+            groups = 1 << (n - 1)
+            pending, expectation, total_probability = [((), F(1))], F(), F()
+            while pending:
+                decisions, probability = pending.pop()
+                cursor = iter(decisions)
+
+                def category(weights, _rng):
+                    try:
+                        index = next(cursor)
+                    except StopIteration:
+                        raise NeedCategory(weights) from None
+                    self.assertGreater(weights[index], 0)
+                    return index
+
+                control = PrefixControl(paths, 1)
+                with patch("scripts.exact_commit.audit_adaptive_semantics._categorical", category):
+                    try:
+                        for _ in range(count):
+                            path = control.sample(Random(20261008))
+                            self.assertEqual(sum(path) % 2, 1)
+                    except NeedCategory as need:
+                        weights = need.args[0]
+                        pending.extend(
+                            ((*decisions, i), probability * F(weight, sum(weights)))
+                            for i, weight in enumerate(weights)
+                            if weight
+                        )
+                    else:
+                        total_probability += probability
+                        expectation += probability * control.rejections
+
+            # Independent finite Markov recursion over visited pair groups,
+            # using the independently listed valid/invalid original weights.
+            group_weights = []
+            for prefix in itertools.product((0, 1), repeat=n - 1):
+                group_weights.append(
+                    tuple(
+                        next(
+                            w for p, w, profile in paths if p[:-1] == prefix and profile == desired
+                        )
+                        for desired in (1, 0)
+                    )
+                )
+
+            @cache
+            def expected(remaining, visited):
+                if remaining == 0 or visited == (1 << groups) - 1:
+                    return F()
+                denominator = sum(
+                    v + (0 if visited & (1 << i) else b) for i, (v, b) in enumerate(group_weights)
+                )
+                result = F()
+                for i, (valid, invalid) in enumerate(group_weights):
+                    new = visited | (1 << i)
+                    result += F(valid, denominator) * expected(remaining - 1, new)
+                    if new != visited:
+                        result += F(invalid, denominator) * (1 + expected(remaining, new))
+                return result
+
+            self.assertEqual(total_probability, 1)
+            self.assertEqual(expectation, expected(count, 0))
+            alpha = F(min(row_weights[-1]), sum(row_weights[-1]))
+            total_valid = sum(v for v, _ in group_weights)
+            lower = alpha * sum(1 - (1 - F(v, total_valid)) ** count for v, _ in group_weights)
+            self.assertGreaterEqual(expectation, lower)
+            if n == 3 and count == 3 and all(row == (1, 1) for row in row_weights):
+                self.assertGreater(lower, 1)  # Already exceeds refinement's total budget.
+            # A worst-case branch has positive probability: every still-uncut
+            # invalid path followed by a valid path, even with the perfect oracle.
+            bad = [p for p, _, profile in paths if profile == 0]
+            good = next(p for p, _, profile in paths if profile == 1)
+            forced = iter((*[bit for p in bad for bit in p], *good))
+
+            def force(weights, _rng):
+                i = next(forced)
+                self.assertGreater(weights[i], 0)
+                return i
+
+            control = PrefixControl(paths, 1)
+            with patch("scripts.exact_commit.audit_adaptive_semantics._categorical", force):
+                self.assertEqual(control.sample(Random(20261008)), good)
+            self.assertEqual(control.rejections, groups)
 
     def test_nonprefix_refinement_family(self):
         # Mathematical diagnostic, not a speed benchmark. All bit assignments

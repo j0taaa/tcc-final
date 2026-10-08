@@ -1040,7 +1040,7 @@ Serial, EPIC e MWPC de produção permanecem separados.
 ### Antecedentes que eliminaram falsas novidades
 
 - [CARS, versão 2 de 2/6/2026](https://arxiv.org/html/2510.01902v2), algoritmo 1,
-  equações 1–3, teorema 3.1 e apêndice E: já preserva a distribuição ao remover
+  equações 1–3, teorema 3.2 e apêndice E: já preserva a distribuição ao remover
   prefixes comprovadamente inválidos. O teorema R1 não inventa esse princípio.
   A implementação descrita mantém uma trie e pode continuar rejeitando quando
   não registra todas as classes de prefixos. Seu oracle perfeito foi concedido
@@ -1194,6 +1194,59 @@ resta a restrição artificial de campos de uma letra; caminhos pontuados e tipo
 não Booleanos continuam fora do contrato. A construção tradicional por trie
 não é reivindicada como novidade e preserva a identidade da gramática arquivada.
 Um oráculo independente adicional verifica massas/comportamentos desses nomes.
+### C1: uma vantagem comparativa em rejeições, não apenas representação
+
+A leitura novamente do original CARS v2 confirmou o update publicado em §3,
+``Updating W``: depois de cada candidato, adicionar todos os continuadores
+inválidos dos prefixos visitados, inclusive quando o candidato foi válido.
+Algoritmo 1, equações 1–3 e **Teorema 3.2**, não 3.1, são os locadores
+corretos dessa versão. O controle implementa esse update com oracle perfeito.
+
+Na família R2 com escolhas uniformes, há L=2^(n−1) grupos. Cada grupo contém
+uma regra válida e uma inválida com o mesmo prefixo de n−1 escolhas. A primeira
+visita falha com probabilidade 1/2; o update elimina a única regra inválida desse
+grupo, sem eliminar nenhum outro grupo. Depois, o grupo nunca mais rejeita.
+
+Se U_N é o número de grupos visitados até a N-ésima saída, somar expectativas
+condicionais antes dos sorteios dá E[R_N]=E[U_N]/2. O tempo de parada é limitado
+por N+L candidatos, portanto não há troca informal de uma parada não limitada.
+As saídas válidas do CARS são iid uniformes nos L grupos; elas visitam em média
+L(1−(1−1/L)^N) grupos distintos, número no máximo U_N. Assim:
+
+    E[R_N] >= L/2 * (1 - (1 - 1/L)**N).
+
+Isso cresce como Omega(min(N,L)); no fluxo infinito a expectativa total é
+L/2. Nosso refinamento usa no máximo uma rejeição nessa mesma tarefa/law,
+com preparação polinomial, e sua expectativa até N saídas é 1−2^(−N).
+Para pesos positivos não uniformes, a mesma prova dá
+E[R_N] >= alpha * sum_g(1−(1−pi_g)^N), com pi_g a lei dos programas válidos
+e alpha a menor probabilidade relativa das duas escolhas da última posição.
+Uma distribuição muito concentrada enfraquece o ganho finito; não é omitida
+essa hipótese. O orçamento de uma rejeição do refinamento independe dela.
+
+O resultado é **uma análise comparativa delimitada de um algoritmo publicado**,
+não uma reivindicação de novo princípio de amostragem. Não mede wall time e
+não impede um automato semântico de dois estados de compartilhar a vantagem.
+Pré-carregar todos os prefixos inválidos transfere trabalho exponencial para
+a preparação; uma mudança na regra de update requer outra comparação.
+O caso não é um benchmark com dados escolhidos: o ganho segue do argumento
+para todos os n e N admitidos e recursos suficientes para o compilador.
+
+O novo oráculo enumera todas as decisões categóricas do controle, incluindo
+rejeições, e compara expectativas racionais a uma recursão Markov independente
+sobre grupos visitados. Cobre casos uniformes e pesos desiguais, incluindo
+um lote em que o lower bound já supera o orçamento total do refinamento.
+Também verifica um ramo de probabilidade positiva com L rejeições antes da
+primeira saída. Isso procura erros na derivação, não mede superioridade empírica.
+A prova de expectativa C1 é escrita; não é atribuída às 66 provas Lean.
+
+Buscas direcionadas por CARS/parity, counterexample/exact sampling/program
+synthesis e counterexample-guided rejection sampling não localizaram a mesma
+fórmula no antecedente principal. Ausência em buscas não prova prioridade.
+O alcance próprio é construção/implementação para tokens de dLLM e essa
+comparação explícita; métodos clássicos compactos continuam antecedentes e
+controles competentes. Revisão humana real continua separada.
+
 O artigo principal e sua avaliação histórica continuam
 preservados; o suplemento contém as novas provas e seus limites. A novidade
 defensável é o recorte operacional/implementação de certificação e inferência

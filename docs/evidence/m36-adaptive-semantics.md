@@ -23,8 +23,9 @@ paths, non-Boolean values and correctness on unseen records are excluded.
 - Queries whose profile exponent is certified core size `k`, rather than total
   supplied examples `m`. Preparation and integer bit costs are additional.
 
-The seven-page supplement contains written proofs R1–R3, a scoped exponential
-zero-rejection prefix representation gap, all-profile join bounds and total/bit
+The supplement contains written proofs R1–R3, Proposition C1's finite-batch
+expected-rejection comparison, a scoped exponential zero-rejection prefix
+representation gap, all-profile join bounds and total/bit
 costs. Classical conditional sampling, CEGIS, example selection, transforms and
 compact semantic automata/factor representations remain credited antecedents.
 These guarantees do not establish an exclusive new inference principle.
@@ -54,7 +55,12 @@ decoder performance. This is developmental evidence, not held-out generalization
 ## Current verification and source boundaries
 
 - `make check`: pinned upstream, lint, formatting and typing pass.
-- `make test`: 24 focused checks pass. This includes exact sampling-decision
+- `make check test research-note` passes all 25 focused checks, including C1's
+  exhaustive decision-tree oracle
+  against an independent finite Markov recursion, with uniform and unequal
+  weights and a positive-probability worst-case rejection branch. It brings the
+  suite to 25. C1's general expectation proof is written, not mechanized.
+- The preceding `make test`: 24 focused checks pass. This includes sampling-decision
   laws, independent execution/token enumeration, zero-weight reweighting and
   archived current-code recomputation of the first positive and zero targets.
 - A correctness corollary independently enumerates 72 generic AND/OR programs
@@ -68,13 +74,17 @@ decoder performance. This is developmental evidence, not held-out generalization
   prefix exclusions and structural-core implications. The full iid law,
   positive-uniform CFG count construction and Python source remain written or
   independently tested obligations, not Lean source refinement.
-- `make research-note`: seven pages, no overflow/unresolved references; all
-  final rendered pages were inspected.
+- `make research-note`: final eight-page C1 supplement passes layout/reference
+  checks; rendered pages are inspected. The main manuscript remains sixteen pages.
 
 Source CI [37723768912](https://github.com/j0taaa/tcc-final/actions/runs/37723768912)
 passes the source-stage 22 tests, Rust, historical artifacts and Lean. Subsequent
 archive/current-code and identifier checks bring the suite to 24; final CI
 confirmation is recorded separately rather than attributed to this older run.
+The archive/identifier source `3b983020fa43e1a8e45ebbe460242aa9dc1e6951`
+passes [37725286998](https://github.com/j0taaa/tcc-final/actions/runs/37725286998),
+including all 24 then-existing tests, Rust, artifacts and Lean. That run does
+not include the subsequent C1 oracle.
 
 The optional local pinned JsonLogic consumer additionally passed 144 execution
 checks under Node `v24.19.0`: all 16 assignments of four ordinary identifier
