@@ -49,7 +49,7 @@ does not establish correctness, novelty, practical superiority or review approva
   and previous snapshots are excluded. All principal reading paths exist inside
   their respective source archives. These are preservation checks, not new
   scientific experiments or restored historical test runs.
-- [ ] T3701: Make archive integrity mandatory in CI and document access and
+- [x] T3701: Make archive integrity mandatory in CI and document access and
   future preservation. Commit/push the completed organization.
   **Acceptance:** existing scientific archives and baseline source unchanged;
   validation distinguishes preservation from solver correctness. Local and
@@ -61,7 +61,13 @@ does not establish correctness, novelty, practical superiority or review approva
   probability/CFG products and the generated complete semantic table.
   `formal/MWPC.lean` matches the pre-organization Git blob exactly.
   Instructions and future folder/version policy are in `attempts/README.md`
-  and `AGENTS.md`. Synchronization pending.
+  and `AGENTS.md`. Source commit `40061d2695d3d8e54c3fe37e2841961c6ebc80c9`
+  was pushed normally to `main`; local/upstream counts are `0 0`. Source CI
+  [37771169655](https://github.com/j0taaa/tcc-final/actions/runs/37771169655)
+  passes both jobs: mandatory archive integrity, the focused suite, Rust,
+  original artifact products and selected Lean checks. Frozen version files
+  remain unchanged after publication; this checklist records preservation,
+  not resolution of the independent M36 scientific review gates.
 
 ## M36 — Scientific contribution gates before another implementation
 
