@@ -16,6 +16,47 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M38 — Align standing instructions with the current scientific objective
+
+Authorized on 2026-10-08: update `AGENTS.md` to reflect the current research
+workflow and require useful, significant, preferably mathematical improvements
+to CFG/JSON generation with dLLMs. Publication is an objective, not a promised
+outcome. Depends on M37 preservation and the existing M36 research evidence;
+does not assert that the open scientific-priority/review gates have passed.
+
+- [x] T3800: Replace obsolete project framing and authorization chronology
+  with the current state, mandatory idea/implementation questions, mathematical
+  preference, fair empirical fallback, practical relevance and publication
+  criteria. Check Jev against primary sources and define the dJev motivation.
+  **Acceptance:** independent attempts, current focused tests and component
+  contracts remain explicit. MWPC is a retained component, not a compulsory
+  objective for every new approach. Distinguish typed decisions, grammar-valid
+  text, semantic correctness, proved bounds and empirical speed. Preserve
+  existing guarantees and clearly state unmet novelty/application claims.
+  **Evidence:** `AGENTS.md` now describes the maintained posterior/commitment
+  components and separate semantic research, with eight mandatory questions
+  per idea/implementation. Written mathematics is preferred; empirical work is
+  permitted with fair predeclared evaluation. Explicit rules cover significance,
+  adoption, comparative advantage, total costs, counterexamples, publication,
+  willingness to change direction and preservation of every attempt.
+  Primary TypeSafe launch/API pages were consulted on 2026-10-08 and linked:
+  Jev supplies typed parallel decisions rather than free string generation;
+  vendor speed claims are not this project's evidence. dJev remains a research
+  motivation, not a trained model or claimed speed win. Existing support,
+  slots, statuses, certificate, probability and formal-scope contracts retained.
+- [ ] T3801: Verify the instructions against retained paths, tasks and current
+  evidence, preserve every frozen archive and synchronize the documentation.
+  **Acceptance:** no solver/archived data/frozen-version edits, no restored
+  historical suite, no invented approval or scientific result. Normal push;
+  local and upstream main agree.
+  **Evidence:** `make check` passes upstream verification, lint/format, typing
+  and all 16 attempt / 18 version integrity checks. `verify_artifacts.py`
+  confirms 3,683 scientific files unchanged; `git diff --check` passes.
+  A structural read verifies all eight questions and every local Markdown link.
+  Only `AGENTS.md` and `TASKS.md` differ; protected `formal/MWPC.lean` and the
+  attempt catalog match their original Git blobs. Solver sources, active tests
+  and frozen versions are unchanged. Synchronization pending.
+
 ## M37 — Preserve every research direction in its own folder
 
 Authorized on 2026-10-08 by the user's request for independent folders for

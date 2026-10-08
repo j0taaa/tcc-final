@@ -1,162 +1,269 @@
 # AGENTS.md
 
-## Scope and source of truth
+## Objetivo e estado atual
 
-This file applies to the repository. Current work and evidence live in `TASKS.md`.
+Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
+contribuição científica útil para **geração de textos estruturados por GLCs
+com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.
+O usuário pretende publicar o artigo e usar esse trabalho na candidatura ao
+mestrado. A meta exige uma vantagem relevante e bem sustentada sobre métodos
+competentes; organizar tentativas ou documentar que uma ideia não funcionou
+não satisfaz, por si só, esse objetivo.
 
-The user explicitly removed the old test suite on 2026-10-05 to rebuild it from
-scratch. M32 supersedes the old mandatory suite/benchmark workflow. Do not
-restore the deleted suite, create an unsolicited replacement, or call an empty
-test run a correctness pass. Historical test evidence belongs to its source commit.
+O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
 
-The explicit 2026-10-06 request authorizes necessary fair new tests for M34.
-`tests/test_cfg_posterior.py` is a focused independent suite for that extension,
-including a pinned external syntax corpus; it does not restore the old suite
-or establish correctness of the whole repository.
-The M35 review follow-up authorizes focused archived-recomputation and
-preprocessing-limit regressions. CI must run `make test` alongside build,
-formal and artifact checks; archive consistency is not solver recomputation.
-The 2026-10-07 staged research request (M36) authorizes one focused exhaustive
-commitment-event check. It tests a candidate reduction, not a new production
-decoder, scientific novelty or practical superiority. Human review/novelty
-gates remain separate from passing these finite checks.
-The subsequent 2026-10-07 instruction to continue substantive work authorizes
-the bounded semantic-rule research reference, focused execution/sampling
-oracles and one frozen opt-in local CPU MDLM/JsonLogic integration capture.
-Preliminary Lean checks support research; they do not supply the absent human
-review or authorize a priority/production-superiority claim. Keep this reference
-separate from the maintained serial/EPIC/exact decoder strategies.
+- `src/mwpc_exact/` mantém posterior gramatical exato no suporte declarado,
+  commitment MWPC, certificados e integração. Serial, EPIC e exact continuam
+  como estratégias separadas; suas garantias devem ser preservadas.
+- `scripts/exact_commit/semantic_json.py` e `adaptive_semantics.py` são
+  referências de pesquisa sobre regras Booleanas condicionadas por execução,
+  refinamento adaptativo e núcleos semânticos certificados. Não são um novo
+  decoder de produção nem um modelo dJev treinado.
+- Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
+  A comparação escrita com CARS trata sua atualização de prefixos visitados
+  sob hipóteses explícitas; não demonstra superioridade geral de latência.
+  A auditoria pequena preserva enumeração mais rápida e custos de preparação.
+- Novidade, significância suficiente para publicação e vantagem prática ampla
+  não estão confirmadas. Não apresentar esses objetivos como já atingidos.
 
-The repository implements **Exact Maximum-Weight Parallel Commitment (MWPC)** for CFG-constrained diffusion language models, using the EPIC codebase as the integration baseline. Preserve the existing serial and EPIC heuristic decoders as baselines; add the exact method as a separate strategy.
+Use [TASKS.md](TASKS.md) para tarefas/evidências atuais e
+[attempts/README.md](attempts/README.md) e `attempts/catalog.json` para versões
+preservadas. O [caderno científico](docs/research/contribution-plan.md) registra
+antecedentes, provas, objeções e decisões. Histórico não é instrução para
+restaurar código retirado ou insistir em uma hipótese refutada.
 
-Before changing code:
+## Perguntas obrigatórias para cada ideia ou implementação
 
-1. Read this file.
-2. Read only the current milestone and its dependencies in `TASKS.md`.
-3. Inspect the relevant retained code, proofs and archived evidence.
-4. State the scientific/behavioral contract that the change must preserve.
+Antes de propor, implementar ou ampliar uma solução, responda às perguntas
+abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma
+correção pode referenciar respostas existentes e explicar o que muda ou
+permanece válido; não pode ignorar esses critérios.
 
-## Execution workflow
+1. **Qual uso real será melhorado?** Identifique a operação, quem a usaria,
+   entradas disponíveis e saídas consumidas por software. Explique a ligação
+   com uma dLLM e uma GLC. Produzir JSON válido, isoladamente, já é possível;
+   explicite o que este trabalho acrescenta.
+2. **A contribuição é relevante ou pequena demais?** Qual é a diferença
+   precisa para o antecedente mais próximo? A solução é uma aplicação direta
+   de algo conhecido, um ajuste trivial ou um avanço com consequência útil?
+   Explique por que o resultado sustenta um TCC e uma proposta de artigo.
+   Incrementos são aceitáveis; quantidade de código, esforço gasto e uso de
+   Lean não medem novidade. Não prometer aceitação acadêmica.
+3. **Por que alguém a escolheria?** Declare uma vantagem verificável em
+   velocidade, custo, memória, resultado, capacidade ou garantia relevante.
+   Nomeie um comparador competente que resolva a mesma operação, com informações
+   e restrições equivalentes. Quantifique a vantagem e suas condições. Não é
+   necessário vencer sempre, mas a condição favorável precisa ter utilidade.
+4. **A vantagem pode ser provada sem executar código?** Priorize um resultado
+   matemático: definições, algoritmo, hipóteses, teorema, prova e análise de
+   custo independentes da implementação. Provar correção de um método conhecido
+   não basta para demonstrar avanço; localize também o benefício comparativo.
+   Inclua um corolário que conecte a vantagem à aplicação proposta.
+5. **Se depender de experimentos, qual hipótese será testada honestamente?**
+   Essa alternativa é autorizada, mas tem prioridade menor que uma contribuição
+   matemática adequada. Declare previamente métricas, casos, comparadores,
+   orçamento e critérios de sucesso/falha. Use evidência independente e
+   relevante; não crie ou selecione benchmarks para fabricar uma vitória.
+6. **O ganho sobrevive ao custo completo e ao uso com dLLMs?** Contabilize
+   preparação, normalização, tokenização, forward do modelo, consultas,
+   atualizações, saída, memória e aritmética em bits. Distinga primeira saída,
+   lote e consultas repetidas. Separe exatidão de um passo de garantias para
+   a trajetória inteira, e validade sintática de acerto semântico.
+7. **Qual objeção pode derrubar a proposta?** Procure reduções a técnicas
+   conhecidas, contraexemplos, um comparador melhor e condições nas quais a
+   vantagem desaparece. Explique quando a solução não seria escolhida. Se uma
+   codificação clássica compacta obtém o mesmo benefício, reconheça isso.
+8. **O que ainda falta para um artigo defensável?** Identifique a afirmação
+   própria, antecedentes conferidos, prova/validação, aplicação e limites.
+   Separe conjectura, prova escrita, resultado mecanizado, teste de correção
+   e medição. Revisão humana e publicação nunca podem ser inventadas.
 
-- Work through `TASKS.md` in dependency order. Prefer the first unchecked required task whose dependencies are complete.
-- Implement one coherent task or tightly coupled task group at a time. Avoid unrelated refactors.
-- Do not mark a task complete until all of its acceptance criteria and required tests pass.
-- When completing a task, update its **Evidence** field with the commands run and the relevant result or artifact path.
-- If blocked, add a `BLOCKED:` note under that task with the exact technical reason, observations, and the smallest next experiment. Do not claim completion.
-- Continue with independent tasks when possible. Do not bypass a failed correctness gate to start performance work.
-- Never invent test results, benchmark values, model behavior, citations, or TCC results.
-- Do not replace `[TO BE MEASURED]`, `[MODEL_ID]`, or similar placeholders with guesses.
+As respostas são critérios de decisão, não um formulário para justificar toda
+ideia. Antes de uma implementação extensa, estabeleça a diferença científica
+e um argumento plausível para a vantagem. Use protótipos mínimos para encontrar
+contraexemplos quando necessário; um protótipo que funciona não resolve a
+questão de novidade ou utilidade.
 
-## Scientific contract — never violate these rules
+Se a direção não atender aos critérios, diga isso claramente, preserve-a e
+investigue outra. O usuário autoriza mudar o recorte ou começar outro TCC;
+não force utilidade no tema atual por causa do trabalho acumulado. Proponha e
+fundamente a alternativa antes de desenvolver outra implementação grande.
+Resultados negativos devem permanecer acessíveis, mas não são o produto final
+pretendido. Se uma direção atender aos critérios, consolide-a; não reinicie a
+busca ou expanda funcionalidades sem uma razão concreta.
 
-1. **Objective.** For proposals `c_j = (position, token_id, weight)` with non-negative weights, maximize the sum of weights matched by one grammar-valid completion represented by the current finite support.
-2. **Exactness scope.** A result over top-`K` or any pruned support is named `exact_on_support`, never globally exact over the full vocabulary. Every result must carry its support specification.
-3. **Statuses are distinct.** `OPTIMAL`, `INFEASIBLE_ON_SUPPORT`, `TIMEOUT`, `UNSUPPORTED`, and `ERROR` must never be silently conflated. A timeout is not evidence of infeasibility.
-4. **Certificate.** `OPTIMAL` requires a reconstructible witness path, witness token sequence, selected proposal IDs, and an independently recomputable objective value.
-5. **Selected set.** For non-negative weights, the selected proposal IDs must equal all represented positive-weight proposals matched by the witness, including duplicate proposal IDs when applicable.
-6. **Fixed positions.** A witness must preserve every already committed canvas position.
-7. **Finite slots.** A witness must consume exactly the token slots permitted by the configured EOS/PAD semantics. Abstract `Sigma*` gaps are not accepted as finite-slot certificates.
-8. **No hidden pruning.** Any pruning that can remove an optimal represented path invalidates `OPTIMAL`. Safe pruning needs a proof, a test, and documentation.
-9. **Fallback separation.** A progress fallback may commit a token from the returned witness, but that fallback token is not retroactively counted as a matched model proposal unless it actually matches one.
-10. **Per-step guarantee.** The optimizer is exact for the current proposal set and state. Do not claim global optimality over the future denoising trajectory.
-11. **Weights.** Reject NaN, infinity, and negative proposal weights at API boundaries. Use `f64`/Python `float` for production scores and integer weights in most oracle tests.
-12. **Determinism.** Equal-score solutions may use a deterministic stable tie-break, but only the primary MWPC score is a theorem-level guarantee unless a lexicographic objective is explicitly implemented and tested.
+## Motivação Jev e direção dJev
 
-## Architecture boundaries
+A consulta às fontes oficiais em 2026-10-08 confirma que Jev recebe estado e
+perguntas tipadas e retorna decisões/probabilidades em paralelo, abrindo mão
+da geração livre de strings. A API oferece tipos como Choice, Score e Noul.
+As alegações de velocidade são resultados reportados pelo fornecedor, não
+medições deste TCC. Fontes: [apresentação oficial](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+e [referência da API](https://api.typesafe.ai/redoc).
 
-- `src/mwpc_exact/reference/`: independent, readable Python reference parsing and grammar construction. Correctness first; no model dependencies.
-- `src/mwpc_exact/`: proposal policy, finite-support construction, tokenizer adapter, orchestration, validation, diagnostics, and decoder integration.
-- `vendor/EPIC-Decoding/rustformlang/` (pinned production snapshot; upstream tests removed) and `crates/mwpc_parser/` (new production solver): performance-critical weighted CFG-on-DAG parser and certificate reconstruction.
-- `crates/mwpc_parser_py/`: thin PyO3 bindings. Do not duplicate parsing logic here.
-- Existing EPIC modules remain usable without the exact strategy enabled.
-- Model-specific code must call a model-independent exact-commit API. Do not put LLaDA/Dream/Qwen-specific logic inside the solver.
-- The Python reference solver and the Rust production solver must remain independently implemented so differential tests are meaningful.
+Use Jev como motivação para decisões estruturadas consumidas por software.
+**dJev é uma direção de pesquisa**, não o nome de um modelo já implementado:
+usar dLLMs para gerar estruturas/textos sob GLCs com uma melhoria útil sobre
+uma solução competente já existente. Só combinar uma dLLM com um validador
+JSON ou reproduzir uma interface de decisões tipadas não constitui o avanço.
 
-Recommended public result shape:
+Escolha uma aplicação concreta: por exemplo, preenchimento de configurações,
+chamadas estruturadas ou regras JSON recursivas com dependências entre campos.
+Mostre por que a operação se beneficia do resultado e admite várias respostas
+válidas. Não presuma que Jev resolve geração textual recursiva geral ou que o
+projeto o supera. Para comparar desempenho, alinhe tarefa, qualidade, estrutura,
+probabilidades exigidas e custos; não compare um serviço com uma única etapa
+de parsing. Não deduza acerto semântico ou calibração apenas de type safety.
 
-```text
-ExactCommitResult
-  status
-  objective_value
-  selected_proposal_ids
-  witness_token_ids
-  witness_terminal_labels
-  witness_graph_edge_ids
-  exactness_scope
-  diagnostics
-```
+## Fluxo de trabalho e preservação
 
-Do not expose a bare tuple whose fields are easy to confuse.
+- Antes de alterar código, leia este arquivo, o marco atual e suas dependências
+  em `TASKS.md`, e os fontes/provas/evidências pertinentes. Declare a operação
+  e o contrato que a alteração deve preservar.
+- Cada nova direção começa em `attempts/<id>/`, com README, as respostas
+  obrigatórias e um protótipo isolado em `work/`. Cada refinamento conserva
+  as versões anteriores. Não dependa de código mutável de outra tentativa.
+- Congele código, provas, configuração e evidências com commits completos e
+  hashes. `scripts/archive_attempts.py` inclui o `work/` da tentativa e recusa
+  sobrescrever versões. Modelos/caches ficam fora dos snapshots. Os testes
+  históricos dentro dos ZIPs são dados arquivados, não testes ativos restaurados.
+- Preserve os arquivos científicos congelados nos inventários existentes,
+  incluindo `formal/MWPC.lean`. Novas evidências/provas ficam em arquivos novos;
+  correções não devem sobrescrever resultados históricos.
+- Preserve o núcleo e baselines mantidos enquanto investiga alternativas.
+  Promova código experimental quando a contribuição/contrato estiverem claros
+  e a implementação tiver validação apropriada. Evite refatorações amplas,
+  infraestrutura desnecessária e otimização anterior à correção.
+- Execute trabalho concreto em grupos coerentes. Atualize `TASKS.md` com
+  comandos, resultados e caminhos. Não declare conclusão quando apenas criou
+  tarefas. Não marque conjecturas, revisão ausente ou medições pendentes como
+  concluídas; registre o impedimento e o menor próximo passo útil.
+- A ausência de comentários do orientador não impede continuar a investigação
+  autorizada. Ela não autoriza alegar revisão independente. Não contate pessoas
+  nem submeta trabalhos externamente sem instrução explícita.
+- Commit e push normal para o upstream configurado são obrigatórios antes de
+  reportar conclusão. Confirme sincronização e informe falhas. Não mude de
+  branch, reescreva histórico ou force-push sem pedido explícito.
 
-## Repository and dependency rules
+## Contratos dos componentes mantidos
 
-- Preserve `LICENSE` and `THIRD_PARTY_LICENSES.md`; record the upstream EPIC commit used.
-- Do not commit model weights, Hugging Face caches, private datasets, credentials, tokens, large traces, or machine-specific absolute paths.
-- Future tests must not require network access; new GPU/model runs are opt-in.
-- Lock dependency changes. Add a dependency only when the current task requires it and document why.
-- The user requires local/GitHub synchronization (2026-10-06). Commit and push
-  completed repository changes to the configured upstream before reporting
-  completion. This is standing authorization for normal fast-forward pushes;
-  report any synchronization failure explicitly.
-- Do not change branches, rewrite history or force-push unless the user explicitly requests it.
-- The user-authorized reset removed owned/upstream tests; preserve the baseline production source and its manifest.
-- The 2026-10-08 request requires a separate `attempts/<id>/` folder for each
-  research direction, including discarded ones. Create its hypothesis/contract
-  README and isolated `work/` before exploring a new direction. Freeze completed
-  versions with source, proofs, configuration, evidence and commit provenance;
-  never overwrite a frozen version. Use a new version for further refinements.
-  Archived historical tests are preserved data, not restored active tests.
-  Keep the maintained decoder APIs and external EPIC baseline in their current
-  locations; archive snapshots must not depend on mutable live source links.
+Não imponha o objetivo de MWPC a métodos que calculam um posterior ou executam
+outra operação. Defina o contrato próprio de cada proposta e preserve os
+contratos existentes ao reutilizar seus componentes.
 
-## Coding conventions
+### MWPC e certificados de commitment
 
-### Python
+1. Para propostas `(position, token_id, weight)` com pesos não negativos,
+   maximize a soma dos pesos casados por uma conclusão gramaticalmente válida
+   no suporte finito atual. A garantia é por passo, não da trajetória futura.
+2. Suporte podado/top-K é `exact_on_support`, nunca exatidão no vocabulário
+   inteiro. Todo resultado deve identificar o suporte.
+3. `OPTIMAL`, `INFEASIBLE_ON_SUPPORT`, `TIMEOUT`, `UNSUPPORTED` e `ERROR` são
+   distintos. Timeout não prova inviabilidade.
+4. `OPTIMAL` exige caminho e tokens reconstruíveis, IDs das propostas
+   selecionadas e objetivo recomputável independentemente.
+5. O conjunto selecionado contém todas as propostas de peso positivo casadas
+   pelo testemunho, preservando IDs e multiplicidades de propostas duplicadas
+   quando aplicável.
+6. Preserve posições fixadas e consuma exatamente os slots permitidos pela
+   política EOS/PAD. Lacunas abstratas `Sigma*` não são certificados finitos.
+7. Poda que possa remover um ótimo invalida `OPTIMAL`; poda segura exige prova,
+   documentação e teste independente.
+8. Fallback de progresso não vira proposta casada retroativamente. Rejeite
+   pesos negativos, NaN e infinito. Produção usa float/f64 conforme a API;
+   prefira pesos inteiros nos oráculos do objetivo.
+9. Desempate estável pode ser determinístico. Somente o objetivo primário é
+   garantia matemática, salvo objetivo lexicográfico implementado e validado.
 
-- Target the Python versions declared by the repository, with Python 3.11 as the reproducibility baseline.
-- Use type hints for public APIs and dataclasses/enums for scientific data contracts.
-- Keep reference solvers free of `torch`, model downloads, global caches, and hidden mutable state.
-- Raise explicit validation errors for malformed inputs; return solver statuses for valid-but-unsolved instances such as timeouts.
-- Keep tensor-to-CPU conversion at integration boundaries, not inside generic graph/parser code.
+### Posterior gramatical e pesquisa semântica
 
-### Rust
+- A distribuição condicionada é a predição produto congelada de um passo
+  sobre tokens originais. Preserve aliases, bytes, posições fixadas e slots.
+  Conte eventos de tokens, sem multiplicidade artificial de derivações.
+- O posterior CFG atual admite gramáticas LL(1) verificadas e EOS ausente.
+  Não amplie essas hipóteses no artigo sem implementar/provar a ampliação.
+- Massa e amostragem exatas usam aritmética racional/inteira. Distinga massa
+  válida zero, ausência de soluções estruturais, suporte omitido e recusa
+  por recursos. Não renormalize uma cauda descartada silenciosamente.
+- Reutilização de plano/núcleo admite os pesos, contrações de suporte e novos
+  commitments compatíveis previstos na API. Expansão de suporte, liberação de
+  posições fixadas ou mudanças de gramática/tokenizer/EOS exigem nova preparação.
+- Um núcleo semântico deve certificar implicações sobre todo o suporte
+  estrutural original com pesos auxiliares positivos; zero probabilidade do
+  modelo não justifica descartar um requisito para consultas futuras.
+- A referência semântica atual trata campos Booleanos e seus operadores
+  admitidos, com limites de trabalho/perfis. Não cobre JsonLogic geral ou
+  correção em exemplos não declarados. Recusa de recursos permanece inconclusiva.
+- O limite de rejeições do fluxo adaptativo pressupõe pesos/requisitos fixos
+  e recursos suficientes. Não transforme-o em garantia de velocidade geral,
+  inferência da dLLM inteira ou benefício exclusivo sobre todo solver.
 
-- Put weighted parsing logic in a dedicated CFG module. A future test suite must verify it independently.
-- Return `Result`/explicit solver status for user-controlled input; do not panic on malformed graphs, timeouts, or infeasible instances.
-- Store backpointers by stable IDs, not borrowed transient objects.
-- Validate topological order and graph endpoints at construction.
-- Keep production weights neutral unless a task explicitly introduces weighted grammar productions.
+## Arquitetura, código e dependências
 
-### Current verification commands
+- `src/mwpc_exact/reference/`: referência Python legível, sem dependências de
+  modelo, caches globais ou estado mutável oculto. Referência e solver Rust
+  permanecem independentes para que comparações sejam informativas.
+- `crates/mwpc_parser/`: parsing e reconstrução Rust; `crates/mwpc_parser_py/`:
+  bindings finos. Valide grafos, use IDs estáveis para backpointers e retorne
+  erros/status explícitos para entradas controladas pelo usuário; não use panic.
+  Produções permanecem neutras, salvo extensão ponderada explicitamente definida.
+- A conversão tensor/CPU e o código específico de modelo ficam na integração,
+  não nos solvers genéricos. Use tipos públicos explícitos e resultados com
+  status/escopo/certificado identificáveis.
+- Preserve `LICENSE`, `THIRD_PARTY_LICENSES.md`, o EPIC pinado em `UPSTREAM.md`
+  e seu manifesto. Não altere o snapshot externo para favorecer a comparação.
+- Python segue versões declaradas, com 3.11 como base de reprodução. Adicione
+  dependências apenas quando necessárias, com pins/locks e justificativa.
+- Não versione pesos, caches, dados privados, credenciais, grandes traces novos
+  ou caminhos absolutos específicos da máquina. Novas execuções de modelos são
+  opt-in; testes automáticos devem funcionar offline.
+
+## Provas, testes, experimentos e conclusão
+
+Prefira demonstrar a contribuição matematicamente sem depender de benchmarks.
+Uma prova precisa de hipóteses e custo completo, inclusive custo em bits; não
+prova prioridade na literatura ou velocidade física em qualquer hardware.
+Lean verifica os enunciados/specs mecanizados: não o Python/Rust inteiro, o
+tokenizer, o modelo ou toda a lei escrita de amostragem. Declare essa fronteira.
+
+A suíte histórica foi retirada por pedido do usuário. A suíte atual em
+`tests/` contém oráculos independentes focados no posterior e nas extensões
+semânticas. Preserve-a; não restaure a antiga indiscriminadamente. Crie novos
+testes apenas necessários, pequenos e capazes de encontrar erros reais.
+Enumeração e famílias construídas são verificações de correção ou objetos de
+prova, não observações de modelo nem superioridade prática demonstrada.
+
+Quando houver experimentos, congele o protocolo antes de medir, separe
+desenvolvimento de avaliação independente e publique todos os resultados,
+incluindo perdas, massa zero, recusas, timeouts e tentativas interrompidas.
+Não selecione apenas saídas favoráveis nem altere o adversário para piorá-lo.
+Use os mesmos logits/canvas quando comparar operações de seleção equivalentes;
+controles próprios não são execuções nativas de EPIC, CARS ou FactorDLM.
+Registre commit, configuração, seed, revisões de modelo/tokenizer, hash de
+gramática, política/escopo do suporte, hardware/software e contagens de status.
+Separe timings, sincronize CUDA e exclua carregamento único apenas quando isso
+estiver declarado. Gere tabelas/figuras dos dados; não edite números à mão.
+
+Os comandos disponíveis têm alcances diferentes; rode os pertinentes à mudança:
 
 ```bash
-make check
-make test
-make build-rust
-make check-formal LAKE="$HOME/.elan/bin/lake"
-make article-results-check
-make paper
+make check                 # upstream, lint, tipos e integridade das tentativas
+make attempts-check        # preservação dos snapshots; não correção científica
+make test                  # suíte independente focada atual
+make build-rust            # formatação/build/clippy dos componentes Rust
+make check-formal LAKE="$HOME/.elan/bin/lake"  # provas selecionadas
+make article-results-check # arquivos e derivados; não toda recomputação do solver
+make paper                 # artigo principal
+make research-note         # nota da pesquisa semântica
 ```
 
-These check structure/builds, mathematical proofs and recorded artifacts. They
-are not a substitute for the future independent regression/oracle suite.
-`make test` runs the user-authorized focused posterior suite and M35/M36
-extensions. Future tests must
-compare objectives and independently validated certificates, use recorded
-seeds, and keep failures distinct from timeouts and support infeasibility.
+CI deve executar testes, build, provas e verificações de artefatos; CI verde
+não estabelece novidade ou utilidade. Não escreva resultados no artigo sem
+comando, configuração, dados e código produtor registrados. Declare quais
+inputs são reproduzíveis offline e quais traces completos permanecem locais.
 
-## Experimental integrity
-
-- All experiment runs use immutable config files and emit JSONL metadata containing git commit, seed, model and tokenizer revisions, grammar hash, support policy, exactness scope, hardware, software versions, and solver status counts.
-- Store raw outputs separately from analysis products. Tables and figures must be generated by scripts, not edited by hand.
-- Compare methods on the same saved logits/canvas instances whenever measuring selection quality.
-- Time model forward, candidate construction, lattice construction, parsing, backtracking, and update separately.
-- Synchronize CUDA around GPU timing and exclude one-time model loading from per-instance decoding time.
-- Never write a result into the LaTeX paper unless the producing command, config, raw artifact, and code commit are recorded.
-
-## Completion boundaries
-
-Preserve the per-step/support/probability contracts above. Keep serial/EPIC/exact
-usable and mathematical/provenance checks independent of optimization. No
-cleanup, compiler run, model demo or certificate check establishes universal
-source correctness, scientific priority or practical superiority.
+A conclusão científica deve explicar **o que melhorou, para quem, contra qual
+alternativa, sob quais hipóteses e por que importa**. Se isso ainda não estiver
+sustentado, diga exatamente o que falta e continue o trabalho autorizado que
+possa resolver a lacuna. Não chame organização, compilação ou um exemplo que
+funcionou de cumprimento dos requisitos científicos do usuário.
