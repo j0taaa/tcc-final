@@ -6,6 +6,7 @@ import unittest
 from collections import defaultdict
 from dataclasses import replace
 from fractions import Fraction as F
+from pathlib import Path
 from random import Random
 from unittest.mock import patch
 
@@ -18,6 +19,40 @@ from mwpc_exact.cfg_posterior import CompilationLimit, _categorical, compile_cfg
 
 
 class AdaptiveSemanticTests(unittest.TestCase):
+    def test_archived_adaptive_and_core_recomputation(self):
+        from scripts.exact_commit.audit_adaptive_semantics import load, replay
+
+        archive = (
+            Path(__file__).resolve().parents[1] / "docs/artifacts/raw/m36_adaptive_semantics_v1"
+        )
+        config, preparation, rows = replay(archive)
+        self.assertEqual(len(rows), preparation["targets"] * len(config["seeds"]))
+        _, data, capture = load(config)
+        plan = compile_cfg_sampler(boolean_rule_grammar(capture["fields"]), data.state)
+        # Fixed selection rule: first positive and first zero target, first seed.
+        chosen = (
+            next(r for r in rows if F(*r["mass"]) > 0),
+            next(r for r in rows if F(*r["mass"]) == 0),
+        )
+        for row in chosen:
+            labels = tuple(bool(row["target"] & (1 << i)) for i in range(len(capture["records"])))
+            core = compile_semantic_core(plan, data, capture["records"], labels)
+            self.assertTrue(core.verify())
+            self.assertEqual(core.active, tuple(row["core"]["active"]))
+            posterior = core.evaluate(data)
+            self.assertEqual(posterior.valid_mass, F(*row["mass"]))
+            adaptive = AdaptiveSemanticSampler(plan, data, capture["records"], labels)
+            for name, draw in (("adaptive", adaptive.sample), ("certified_core", posterior.sample)):
+                rng = Random(row["metadata"]["seed"])
+                if posterior.valid_mass:
+                    current = [
+                        list(draw(rng)) for _ in range(config["samples_per_positive_target"])
+                    ]
+                    self.assertEqual(current, row["methods"][name]["samples"])
+                else:
+                    with self.assertRaisesRegex(ValueError, "ZERO_MASS_ON_SUPPORT"):
+                        draw(rng)
+
     def test_structural_core_reweighting_and_reuse_boundaries(self):
         source = boolean_rule_grammar(("a", "b"))
         pieces = (b'{"var":"a"}', b'{"var":"b"}')
@@ -97,35 +132,36 @@ class AdaptiveSemanticTests(unittest.TestCase):
 
         # Distinct records, multiple correct programs, unchanged generic grammar:
         # a monotone filter is fixed on the cube by two boundary requirements.
-        source = boolean_rule_grammar(("a", "b", "c"))
+        fields = tuple("abcdef")
+        source = boolean_rule_grammar(fields)
         pieces = (
             b'{"and":[',
             b'{"or":[',
-            b'{"var":"a"}',
-            b'{"var":"b"}',
-            b'{"var":"c"}',
+            *(f'{{"var":"{f}"}}'.encode() for f in fields),
             b",",
             b"]}",
         )
-        data = inputs(source, pieces, ((0, 1), (2, 3, 4), (5,), (2, 3, 4), (6,)))
+        data = inputs(source, pieces, ((0, 1), tuple(range(2, 8)), (8,), tuple(range(2, 8)), (9,)))
         plan = compile_cfg_sampler(source, data.state)
         records = tuple(
-            dict(zip(("a", "b", "c"), bits, strict=True))
-            for bits in itertools.product((False, True), repeat=3)
+            dict(zip(fields, bits, strict=True))
+            for bits in itertools.product((False, True), repeat=len(fields))
         )
         labels = tuple(r["a"] for r in records)
-        core = compile_semantic_core(plan, data, records, labels, initial_active=(3, 4))
-        self.assertEqual(core.active, (3, 4))
+        core = compile_semantic_core(plan, data, records, labels, initial_active=(31, 32))
+        self.assertEqual(core.active, (31, 32))
         self.assertTrue(core.verify())
+        with self.assertRaisesRegex(ValueError, "twelve|12"):
+            evaluate_semantics(plan, data, records)
         oracle = enumeration(data, records)
         expected = {
             p
             for profile, paths in oracle.items()
             for p in paths
-            if all(bool(profile & (1 << i)) == labels[i] for i in range(8))
+            if all(bool(profile & (1 << i)) == labels[i] for i in range(len(records)))
         }
         self.assertEqual(len(expected), 2)
-        self.assertEqual(core.evaluate(data).valid_mass, F(1, 9))
+        self.assertEqual(core.evaluate(data).valid_mass, F(1, 36))
         for seed in range(20):
             self.assertIn(core.evaluate(data).sample(Random(seed)), expected)
 

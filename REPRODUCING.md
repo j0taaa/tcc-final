@@ -236,6 +236,7 @@ control timing is not native CARS or EPIC timing. From a clean producing commit:
 .venv/bin/python -m scripts.exact_commit.audit_adaptive_semantics --output docs/artifacts/raw/m36_adaptive_semantics_v1
 .venv/bin/python -m scripts.exact_commit.audit_adaptive_semantics --output docs/artifacts/raw/m36_adaptive_semantics_v1 --check
 .venv/bin/python -m scripts.exact_commit.audit_adaptive_semantics --output docs/artifacts/raw/m36_adaptive_semantics_v1 --summary > docs/research/generated/m36-adaptive-summary.md
+.venv/bin/python -m scripts.exact_commit.audit_adaptive_semantics --output docs/artifacts/raw/m36_adaptive_semantics_v1 --latex > paper/generated/m36-adaptive-table.tex
 ```
 
 The first command requires a new output directory and a clean worktree; the

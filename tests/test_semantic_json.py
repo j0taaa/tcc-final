@@ -53,6 +53,47 @@ def enumeration(data, records):
 
 
 class SemanticJsonTests(unittest.TestCase):
+    def test_identifier_prefixes_and_application_fields(self):
+        from scripts.exact_commit.adaptive_semantics import compile_semantic_core
+
+        fields = ("active", "active_admin", "is_employee", "_flag2")
+        source = boolean_rule_grammar(fields)
+        pieces = (
+            b'{"var":"active"}',
+            b'{"var":"active_admin"}',
+            b'{"and":[{"var":"active"},{"var":"is_employee"}]}',
+            b'{"var":"_flag2"}',
+            b'{"var":"active"}',
+        )
+        data = inputs(source, pieces, (tuple(range(5)),))
+        records = tuple(
+            dict(zip(fields, bits, strict=True))
+            for bits in itertools.product((False, True), repeat=4)
+        )
+        plan = compile_cfg_sampler(source, data.state)
+        oracle = enumeration(data, records)
+        labels = tuple(r["active"] and r["is_employee"] for r in records)
+        target = sum(1 << i for i, b in enumerate(labels) if b)
+        core = compile_semantic_core(plan, data, records, labels)
+        self.assertTrue(core.verify())
+        posterior = core.evaluate(data)
+        self.assertEqual(posterior.valid_mass, sum(oracle[target].values(), F()))
+        self.assertEqual(posterior.sample(Random(20261008)), (2,))
+        # Token boundaries can cut inside a field or its prefix; aliases stay distinct.
+        pieces = (b'{"var":"active', b'"}', b'_admin"}')
+        data = inputs(source, pieces, ((0,), (1, 2)))
+        plan = compile_cfg_sampler(source, data.state)
+        small = tuple(records[i] for i in (0, 4, 8, 12))
+        posterior = evaluate_semantics(plan, data, small)
+        expected = enumeration(data, small)
+        self.assertEqual(
+            posterior.profile_masses,
+            tuple(sum(expected[p].values(), F()) for p in range(1 << len(small))),
+        )
+        for fields in (("a.b",), ("has space",), ("",), ("9name",), ("ação",)):
+            with self.assertRaises(ValueError):
+                boolean_rule_grammar(fields)
+
     def test_archived_mdlm_recomputation(self):
         from scripts.exact_commit.capture_semantic_reference import CONFIG, replay
 

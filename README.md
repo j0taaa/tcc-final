@@ -94,7 +94,10 @@ archived recomputation and preprocessing/deadline checks. M36 adds one research
 oracle for confidence-selected commitment events and four focused checks for
 the execution-conditioning research reference. The continuation adds four
 adaptive-stream/prefix-control checks and two structural-core checks.
-CI runs these twenty-two checks;
+One additional check replays the complete adaptive archive and recomputes
+its first positive/zero cases with current adaptive/core code.
+A further syntax/execution oracle covers real identifier names, shared
+prefixes and token boundaries inside identifiers. CI runs these twenty-four checks;
 this is not restoration of the old suite or whole-project correctness. Pinned external
 JSON cases are packed in one small archive, with original hashes and license.
 The opt-in model capture retains only the necessary audited official MDLM CPU
@@ -153,6 +156,25 @@ the actual model probabilities. Expansion/released commitments require a new
 certificate. Certification and all later queries are included in the cost
 analysis; neither minimum-core selection nor universal speed superiority is
 promised. A zero model probability alone cannot justify removing a requirement.
+The [complete audit](docs/research/generated/m36-adaptive-summary.md) preserves
+all 256 labels and three seeds, including zeros and every control. Enumeration
+wins this small case; core certification adds overhead despite cheaper batch
+sampling than eager profiles. An exhaustive correctness corollary verifies
+64 distinct records through a certified two-record core, beyond the twelve-record
+all-profile admission cap. This is a capability check, not a performance benchmark.
+Fields can use ordinary ASCII identifiers such as `active`, `active_admin` and
+`is_employee`; the trie grammar distinguishes shared prefixes and split tokens.
+Fields are Boolean and operators are binary AND/OR, unary NOT and optional
+Boolean identity. Dotted paths, general JsonLogic types and unseen-record
+correctness are outside this reference. Given a compiled plan and finite-token
+probabilities, the reusable API is:
+
+```python
+core = compile_semantic_core(plan, inputs, records, labels)
+posterior = core.evaluate(new_inputs)  # Compatible new probabilities/support.
+mass = posterior.valid_mass
+token_ids = posterior.sample(rng)     # Explicit Random; positive mass required.
+```
 
 [Reproduction](REPRODUCING.md), [baseline provenance](UPSTREAM.md),
 [previous cleanup](docs/evidence/m33-cleanup.md).

@@ -2,7 +2,7 @@
 
 Not a production decoder. Uses the retained original-token CFG forest; adds
 execution profiles with classical covering products (Björklund et al., §2.5).
-Single ASCII-letter Boolean fields, binary and/or, unary !, no whitespace/EOS.
+ASCII identifier Boolean fields, binary and/or, unary !, no whitespace/EOS.
 """
 
 from __future__ import annotations
@@ -27,15 +27,25 @@ def boolean_rule_grammar(
         not fields
         or len(set(fields)) != len(fields)
         or any(
-            not isinstance(f, str) or len(f) != 1 or not f.isascii() or not f.isalpha()
+            not isinstance(f, str)
+            or not f
+            or not f.isascii()
+            or not (f[0].isalpha() or f[0] == "_")
+            or any(not (c.isalnum() or c == "_") for c in f)
             for f in fields
         )
     ):
-        raise ValueError("fields must be distinct single ASCII letters")
+        raise ValueError("fields must be distinct ASCII identifiers")
     fields = tuple(sorted(fields))
+    legacy = all(len(f) == 1 and f.isalpha() for f in fields)
+    prefixes = {f[:i] for f in fields for i in range(1, len(f) + 1)} if not legacy else set()
+    trie_names = {
+        p: ("FieldValue:" if p in fields else "FieldPrefix:") + p for p in sorted(prefixes)
+    }
     b = _SourceGrammarBuilder(
         ("E", "Body", "And", "Or", "AndTail", "OrTail", "Close", "Not", "Var", "Field")
-        + (("Bang", "Identity") if identity_operator else ()),
+        + (("Bang", "Identity") if identity_operator else ())
+        + tuple(trie_names.values()),
         start="E",
     )
     b.rule("E", b'{"', "Body")
@@ -55,9 +65,21 @@ def boolean_rule_grammar(
     b.rule("OrTail", b",", "Close")
     b.rule("Close", "E", b"]}")
     b.rule("Not", "E", b"]}")
-    b.rule("Var", "Field", b'"}')
-    for field in fields:
-        b.rule("Field", field.encode("ascii"))
+    if legacy:
+        # Preserve the pinned single-letter capture's exact grammar identity.
+        b.rule("Var", "Field", b'"}')
+        for field in fields:
+            b.rule("Field", field.encode("ascii"))
+    else:
+        b.rule("Var", "Field", b"}")
+        for prefix in ("", *sorted(prefixes)):
+            head = trie_names[prefix] if prefix else "Field"
+            if prefix in fields:
+                b.rule(head, b'"')  # A complete field emits its Boolean profile here.
+            for char in sorted(
+                {f[len(prefix)] for f in fields if f.startswith(prefix) and f != prefix}
+            ):
+                b.rule(head, char.encode("ascii"), trie_names[prefix + char])
     return b.build()
 
 
@@ -251,13 +273,17 @@ def evaluate_semantics(
         raise CompilationLimit("semantic profile memory cap; feasibility remains unresolved")
     budget.consume(entries)
     labels = {t.symbol_id: t.label for t in plan.grammar.terminals}
-    constants = {
-        r.production_id: sum(
-            1 << i for i, row in enumerate(records) if row[chr(labels[r.terminal_id])]
-        )
-        for r in plan.grammar.terminal_productions
-        if r.head_id == names["Field"]
-    }
+    head_names = {n.symbol_id: n.name for n in source.nonterminals}
+    constants = {}
+    for rule in plan.grammar.terminal_productions:
+        head = head_names.get(rule.head_id, "")
+        if rule.head_id == names["Field"]:
+            field = chr(labels[rule.terminal_id])
+        elif head.startswith("FieldValue:") and labels[rule.terminal_id] == ord('"'):
+            field = head.removeprefix("FieldValue:")
+        else:
+            continue
+        constants[rule.production_id] = sum(1 << i for i, row in enumerate(records) if row[field])
     syntax = plan.evaluate(inputs)  # also enforces fixed positions/reweighting compatibility
     inside: list[tuple[int, ...]] = [()] * len(plan.terms)
     posterior = SemanticPosterior(

@@ -1157,8 +1157,44 @@ sementes. Nenhum dado externo novo ou subconjunto de vitórias é inventado.
 A captura é desenvolvimento, não um benchmark externo/held-out. O controle
 de prefixos não mede velocidade do CARS nativo; EPIC nativo tampouco é executado.
 
-Evidência de execução, números e commit produtor serão acrescentados somente
-após o comando real. O artigo principal e sua avaliação histórica continuam
+### Auditoria concluída, incluindo os custos desfavoráveis
+
+O commit limpo `30e6ac38aac69ddc0e9ccad6c0ac06d36016fa9c` produziu
+`docs/artifacts/raw/m36_adaptive_semantics_v1/` com o comando registrado em
+REPRODUCING.md. Todos os 256 alvos e três sementes foram executados: 768 linhas,
+108 programas originais, 17 alvos de massa positiva. Os cinco métodos resolvem
+51 linhas positivas e 717 negativas, sem recusas. A enumeração independente
+recalcula massas, executa todas as amostras e verifica equivalência de todos os
+núcleos contra **todos** os caminhos, não apenas os amostrados.
+
+`docs/research/generated/m36-adaptive-summary.md` e a tabela LaTeX são gerados
+pelo replayer. Enumeração é o controle mais rápido neste suporte pequeno. O
+lote mediano do núcleo é mais barato que o do posterior completo, mas sua
+certificação e avaliação total custam mais, inclusive quando compartilhadas
+entre sementes. A hipótese de amortização em várias novas predições continua
+uma condição matemática, não um ganho de trajetória já medido. Nenhum resultado
+desfavorável foi omitido. O máximo de rejeições adaptativas foi sete, sob o
+limite de oito requisitos. A origem dos logits é a captura anterior; não houve
+novo forward de modelo.
+
+Uma verificação de capacidade separada usa os 64 registros **distintos** de
+seis campos e todas as 72 conclusões de um canvas AND/OR genérico. Duas
+exigências de fronteira certificadas implicam todos os registros; os dois
+programas restantes são enumerados independentemente. O posterior ávido recusa
+64 registros pelo seu cap de doze; o núcleo usa três dimensões por prova e duas
+por consulta. Isso é um corolário de correção/capacidade, sem medidas de tempo
+ou pretensão de derrotar todo algoritmo semântico competente. O caso não é
+usado como benchmark científico favorável.
+
+CI acrescenta uma recomputação corrente dos primeiros alvos positivo e zero,
+com massas e amostras determinísticas do fluxo adaptativo e do núcleo.
+O trie de identificadores admite nomes ASCII reais e prefixos compartilhados,
+como `active`/`active_admin`, inclusive quando os tokens cortam o nome. Não
+resta a restrição artificial de campos de uma letra; caminhos pontuados e tipos
+não Booleanos continuam fora do contrato. A construção tradicional por trie
+não é reivindicada como novidade e preserva a identidade da gramática arquivada.
+Um oráculo independente adicional verifica massas/comportamentos desses nomes.
+O artigo principal e sua avaliação histórica continuam
 preservados; o suplemento contém as novas provas e seus limites. A novidade
 defensável é o recorte operacional/implementação de certificação e inferência
 semântica reutilizável em tokens de uma dLLM; prioridade teórica exclusiva e

@@ -55,8 +55,12 @@ The concrete language consists of Boolean fields, binary \texttt{and}/\texttt{or
 and unary \texttt{!}, serialized as recursive JsonLogic objects. Matching the
 examples is a useful guarantee for completing a software-consumed filter or
 visibility condition. It is not correctness on unseen records. The reference
-supports single-letter ASCII fields and 1--12 records; it is not the entire
-JsonLogic language. Its grammar is independent of examples and desired labels.
+admits 1--12 records in its profile backend and ASCII identifier fields.
+Its grammar is independent of examples and desired labels.
+An identifier trie distinguishes names such as \texttt{active} and
+\texttt{active\_admin}, including token boundaries inside their common prefix.
+Records have Boolean values; dotted paths and general JsonLogic types are not
+admitted.
 An opt-in \texttt{!!} production passes through a Boolean value and preserves
 the original grammar by default. The adaptive stream can verify more than
 twelve records, but its active-profile backend still refuses a thirteenth
@@ -298,6 +302,14 @@ later regain mass, support expansion beyond a narrower certified state,
 released commitments, contradictory specifications, aliases and independently
 enumerated alternative programs. These reject unsound probability-dependent
 constraint removal.
+One finite correctness corollary uses all 64 distinct records of six Boolean
+fields and a generic AND/OR canvas with 72 original-token programs. Two supplied
+boundary requirements are certified to imply all 64; exactly two programs
+remain, independently enumerated. The all-record reference refuses its
+twelve-record admission cap, whereas certification uses only three profile
+dimensions per probe and two per later query. This is an admitted-operation
+and correctness check, not a timed benchmark or a claim that other semantic
+algorithms cannot solve it.
 
 \section{A tight comparison for the required join}
 We compare the same complete profile operation on arbitrary dense arrays,
@@ -396,13 +408,50 @@ Offline replay recomputes the published rational inputs against independent
 enumeration and recorded masses, and is now a focused CI check. It does not
 load a model or repeat the optional consumer/full-logit audits.
 
-The producing \texttt{--capture} command, archived directory, pinned consumer
-and local full-capture options are recorded in \texttt{REPRODUCING.md}.
-This is an illustrative application check, not a held-out external benchmark
-or proof of semantic generalization. Human mathematical and novelty review
-are still required before promoting this supplement to the article's main
-scientific claim. Known transforms and weighted synthesis are credited;
-priority for the delimited result is not asserted.
+Capture commands and optional audits are in \texttt{REPRODUCING.md}.
+This illustration is not a held-out generalization benchmark. Human review
+remains required before promoting the supplement to the main scientific claim.
+
+\section{Complete adaptive and core audit}
+The continuation was frozen in clean producing commit \texttt{30e6ac3}, before
+running \path{configs/experiments/m36_adaptive_semantics_v1.json}. It uses the
+unchanged capture above, enumerates every label vector, and shares eager and
+enumeration preparation across targets. Raw configuration, preparation costs,
+all outcomes, support/provenance metadata and checksums are in
+\path{docs/artifacts/raw/m36_adaptive_semantics_v1/}. The table is generated
+from that archive; no favorable subset or new benchmark was selected.
+
+\input{generated/m36-adaptive-table.tex}
+\begin{table}[ht]
+\centering
+\AdaptiveAuditTable
+\caption{All \AdaptiveTargets{} label vectors, \AdaptiveSeeds{} seeds:
+\AdaptiveRows{} rows and \AdaptivePrograms{} original-token programs.
+\AdaptivePositiveTargets{} labels have positive mass. Batch time is the
+median over positive rows, each requesting \AdaptiveSamples{} samples;
+shared preparation is additional.}
+\end{table}
+
+Independent enumeration checks every target mass, every returned token path
+and equivalence of each structural core against every original path, including
+paths of zero model weight. Current-code CI recomputes the first positive and
+first zero target under both adaptive and certified-core inference, including
+deterministic seeded samples. No method returned an incorrect classification
+or a resource refusal. The maximum adaptive rejected-rule count was
+\AdaptiveMaxReject{}, within the eight-record bound.
+
+The strongest small-support control is enumeration. The core's shorter
+median batch does not offset its preparation here: certification summed over
+targets costs \AdaptiveCorePrep{} seconds, and evaluating their archived
+weights costs \AdaptiveCoreEval{} seconds. Shared all-profile preparation is
+\AdaptiveEagerPrep{} seconds; enumeration/oracle preparation is
+\AdaptiveEnumPrep{} seconds. Per-target core preparation is charged once,
+not three times for three seeds. Core certificates may be amortized over later
+compatible predictions, but this short audit does not measure that trajectory.
+The prefix control uses CARS's trie subtraction with a perfect finite oracle;
+it does not time native CARS or EPIC. These results expose overheads;
+Theorems R1--R3, with their stated comparator and reuse conditions, supply the
+mathematical guarantees independently of these timings.
 
 \bibliographystyle{plain}
 \bibliography{referencias}

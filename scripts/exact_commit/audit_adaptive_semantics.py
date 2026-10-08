@@ -207,6 +207,10 @@ def summarize(output):
     unique = {r["target"]: r for r in rows}
     certified = [r for r in unique.values() if r["core"]["active"] is not None]
     histogram = {k: sum(len(r["core"]["active"]) == k for r in certified) for k in range(12)}
+    syntax_mass = sum((Fraction(*r["mass"]) for r in unique.values()), Fraction())
+    rejection_trials = [
+        syntax_mass / Fraction(*r["mass"]) for r in unique.values() if Fraction(*r["mass"]) > 0
+    ]
     lines.extend(
         [
             "",
@@ -227,9 +231,70 @@ def summarize(output):
             "Four samples per positive row do not establish long-run amortization, "
             "denoising speed, universal superiority or scientific priority. "
             "Recorded slow paths and zeros are retained.",
+            "",
+            "For independent rejection from the same syntax-conditioned token-product law, "
+            "the expected trials are Z_syntax/Z_target. Across ALL positive labels: "
+            f"min {float(min(rejection_trials)):.6g}, "
+            f"median {float(median(rejection_trials)):.6g}, "
+            f"max {float(max(rejection_trials)):.6g}. "
+            "These are derived geometric expectations, not timed rejection or native EPIC. "
+            "Zero-probability labels never accept by rejection. The bounded adaptive stream "
+            "and certified core instead report zero when their exact evaluations fit the caps.",
         ]
     )
     return "\n".join(lines) + "\n"
+
+
+def latex_table(output):
+    config, prep, rows = replay(output)
+    positive = [r for r in rows if Fraction(*r["mass"]) > 0]
+    unique = {r["target"]: r for r in rows}
+    table = [
+        "% Generated from immutable m36_adaptive_semantics_v1; never edit manually.",
+        f"% Producing commit: {prep['metadata']['git_commit']}",
+        r"\begin{tabular}{lrrrr}",
+        r"\hline Method & Positive & Zero & Refused & Batch ms \\",
+        r"\hline",
+    ]
+    for name, label in (
+        ("adaptive", "Adaptive"),
+        ("certified_core", "Certified core"),
+        ("eager", "Eager profiles"),
+        ("enumeration", "Enumeration"),
+        ("prefix_control", "Prefix control"),
+    ):
+        results = [r["methods"][name] for r in rows]
+        counts = [
+            sum(r["status"] == s for r in results)
+            for s in (
+                "exact_on_support",
+                "zero_valid_probability_on_support",
+                "UNRESOLVED_RESOURCE_LIMIT",
+            )
+        ]
+        milliseconds = median(r["methods"][name]["query_seconds"] for r in positive) * 1000
+        table.append(
+            f"{label} & {counts[0]} & {counts[1]} & {counts[2]} & {milliseconds:.3f} " + r"\\"
+        )
+    table.extend([r"\hline", r"\end{tabular}"])
+    numbers = {
+        "AdaptiveTargets": prep["targets"],
+        "AdaptiveRows": len(rows),
+        "AdaptivePrograms": prep["programs"],
+        "AdaptivePositiveTargets": prep["positive_targets"],
+        "AdaptiveSeeds": len(config["seeds"]),
+        "AdaptiveSamples": config["samples_per_positive_target"],
+        "AdaptiveMaxReject": max(r["methods"]["adaptive"]["rejections"] for r in rows),
+        "AdaptiveCorePrep": sum(r["core"]["certification_shared_seconds"] for r in unique.values()),
+        "AdaptiveCoreEval": sum(r["core"]["evaluate_shared_seconds"] for r in unique.values()),
+        "AdaptiveEagerPrep": prep["eager_shared_seconds"],
+        "AdaptiveEnumPrep": prep["enumeration_and_oracle_shared_seconds"],
+    }
+    macros = ["% Generated numbers; preparation is shared, not multiplied by seed count."]
+    for name, value in numbers.items():
+        formatted = f"{value:.6f}" if isinstance(value, float) else str(value)
+        macros.append(f"\\newcommand{{\\{name}}}{{{formatted}}}")
+    return "\n".join([*macros, r"\newcommand{\AdaptiveAuditTable}{%", *table, "}"]) + "\n"
 
 
 def run(config, output):
@@ -458,8 +523,16 @@ if __name__ == "__main__":
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--summary", action="store_true")
+    parser.add_argument("--latex", action="store_true")
+    parser.add_argument("--latex-check", type=Path)
     args = parser.parse_args()
-    if args.summary:
+    if args.latex_check:
+        if args.latex_check.read_text() != latex_table(args.output):
+            raise ValueError("generated audit table differs from the immutable results")
+        print("Generated complete audit table PASS")
+    elif args.latex:
+        print(latex_table(args.output), end="")
+    elif args.summary:
         print(summarize(args.output.resolve()), end="")
     elif args.check:
         config, preparation, rows = replay(args.output)

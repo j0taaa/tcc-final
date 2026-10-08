@@ -1,0 +1,26 @@
+% Generated numbers; preparation is shared, not multiplied by seed count.
+\newcommand{\AdaptiveTargets}{256}
+\newcommand{\AdaptiveRows}{768}
+\newcommand{\AdaptivePrograms}{108}
+\newcommand{\AdaptivePositiveTargets}{17}
+\newcommand{\AdaptiveSeeds}{3}
+\newcommand{\AdaptiveSamples}{4}
+\newcommand{\AdaptiveMaxReject}{7}
+\newcommand{\AdaptiveCorePrep}{2.532941}
+\newcommand{\AdaptiveCoreEval}{0.232866}
+\newcommand{\AdaptiveEagerPrep}{0.002862}
+\newcommand{\AdaptiveEnumPrep}{0.003114}
+\newcommand{\AdaptiveAuditTable}{%
+% Generated from immutable m36_adaptive_semantics_v1; never edit manually.
+% Producing commit: 30e6ac38aac69ddc0e9ccad6c0ac06d36016fa9c
+\begin{tabular}{lrrrr}
+\hline Method & Positive & Zero & Refused & Batch ms \\
+\hline
+Adaptive & 51 & 717 & 0 & 5.343 \\
+Certified core & 51 & 717 & 0 & 1.009 \\
+Eager profiles & 51 & 717 & 0 & 2.050 \\
+Enumeration & 51 & 717 & 0 & 0.007 \\
+Prefix control & 51 & 717 & 0 & 0.611 \\
+\hline
+\end{tabular}
+}

@@ -72,6 +72,12 @@ Use one notebook: `docs/research/contribution-plan.md`.
   obstruction is checked in Lean. The transform and weighted synthesis are
   credited antecedents. Scientific priority/significance over a competent
   classical signed solver remain unestablished, so this gate stays open.
+  **2026-10-08 continuation:** notebook §16 and T3609 establish a bounded
+  exact refinement stream, a zero-rejection prefix representation gap and a
+  weight-independent sufficient semantic core. These are useful scoped
+  guarantees and an implemented specialization; compact automata/tree/factor
+  methods can share them. The selected claim is not promoted to a novel
+  general inference principle or exclusive priority without T3603.
 - [ ] T3603: Obtain actual advisor/calendar alignment and independent human
   mathematical/novelty review (plan 3, 9, 19).
   **Acceptance:** real comments and their responses recorded; no inferred
@@ -151,7 +157,7 @@ Use one notebook: `docs/research/contribution-plan.md`.
   Source/archive follow-up `d3223d7` is pushed; Actions run `37705745997`
   passes both jobs and its log confirms all sixteen tests actually ran.
 
-- [ ] T3609: Continue the scientific investigation with execution-counterexample
+- [x] T3609: Continue the scientific investigation with execution-counterexample
   refinement, its exact stream law/finite rejection bound and a competent
   prefix-representation comparison. Keep classical compact controls explicit.
   **Acceptance:** proof includes preparation, all-record verification, integer
@@ -164,11 +170,22 @@ Use one notebook: `docs/research/contribution-plan.md`.
   eager inference, enumeration, perfect-oracle prefix exclusion and certified
   cores. Preserve
   zero cases, losses and complete producing provenance; no new favorable corpus.
-  **Evidence:** `make check test check-formal LAKE="$HOME/.elan/bin/lake"`
-  passes 22 focused checks and 66 audited selected Lean statements.
-  Notebook §16 and supplement Theorems R1–R3 include written proofs and costs;
-  `make research-note` builds seven pages. Frozen all-label audit and final
-  visual inspection are pending, so this task is not complete.
+  **Evidence:** producing source `30e6ac38aac69ddc0e9ccad6c0ac06d36016fa9c`
+  was clean before `python -m scripts.exact_commit.audit_adaptive_semantics
+  --output docs/artifacts/raw/m36_adaptive_semantics_v1`. All 256 labels,
+  three seeds and five methods are retained: 51 positive and 717 zero rows
+  per method, no resource refusals. Independent `--check` verifies all masses,
+  returned token paths and each core's equivalence on all 108 original paths.
+  `make check test` passes 24 focused checks, including current-code first
+  positive/zero recomputation and the 64-distinct-record/two-core oracle.
+  The identifier trie additionally verifies real field names, shared prefixes
+  and token splits without changing the pinned single-letter grammar/archive.
+  `make check-formal LAKE="$HOME/.elan/bin/lake"` audits 66 selected statements;
+  source CI run `37723768912` passes tests/build/artifacts/formal.
+  Notebook §16 and supplement R1–R3 include written proofs and preparation/bit
+  costs. `make research-note` builds seven pages without overflow/unresolved
+  references; all final pages visually inspected. The generated complete report
+  and table retain enumeration's faster result and core-preparation overhead.
   Scientific priority and external review remain separate from these technical
   acceptance criteria. No production promotion or native CARS speed claim.
 
