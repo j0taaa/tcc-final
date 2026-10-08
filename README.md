@@ -1,5 +1,10 @@
 # Exact finite-token inference for diffusion language models
 
+Historical and current research directions have independent frozen source,
+proof and evidence snapshots in [attempts/](attempts/README.md), including
+discarded directions. `make attempts-check` verifies their integrity offline;
+it does not establish scientific correctness or novelty.
+
 This TCC implements a model-independent backend for constrained dLLM predictions:
 
 - **Exact recursive-grammar posterior:** checked LL(1) byte grammars, original-token

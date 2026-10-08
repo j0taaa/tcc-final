@@ -100,6 +100,14 @@ Do not expose a bare tuple whose fields are easy to confuse.
   report any synchronization failure explicitly.
 - Do not change branches, rewrite history or force-push unless the user explicitly requests it.
 - The user-authorized reset removed owned/upstream tests; preserve the baseline production source and its manifest.
+- The 2026-10-08 request requires a separate `attempts/<id>/` folder for each
+  research direction, including discarded ones. Create its hypothesis/contract
+  README and isolated `work/` before exploring a new direction. Freeze completed
+  versions with source, proofs, configuration, evidence and commit provenance;
+  never overwrite a frozen version. Use a new version for further refinements.
+  Archived historical tests are preserved data, not restored active tests.
+  Keep the maintained decoder APIs and external EPIC baseline in their current
+  locations; archive snapshots must not depend on mutable live source links.
 
 ## Coding conventions
 

@@ -1,0 +1,274 @@
+{
+  "schema": 1,
+  "preserved_on": "2026-10-08",
+  "attempts": [
+    {
+      "id": "01-mwpc-original",
+      "title": "MWPC original e validação inicial",
+      "conclusion": "Base preservada: ótimo de um passo no suporte declarado; não implica vantagem geral de geração.",
+      "reading": "TASKS.md; paper/main.tex; docs/evidence/m17-review-verification.json",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "a309b1c847bd7396db60aadcca255be93ff7d140",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m125_publication_results_v1",
+            "docs/artifacts/raw/m17_review_v1",
+            "docs/artifacts/raw/t1201_q3_finite_slots_v1",
+            "docs/artifacts/processed/t1201_q3_finite_slots_v1",
+            "docs/artifacts/raw/t1202_statistics_v1",
+            "docs/artifacts/processed/t1202_statistics_v1",
+            "docs/artifacts/raw/t1203_final_results_v1",
+            "docs/artifacts/processed/t1203_final_results_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "02-parallel-batch-selection",
+      "title": "Seleção paralela em estados reais — M18",
+      "conclusion": "Histórica: a auditoria seguinte limita os ganhos; não usar as razões antigas como superioridade geral.",
+      "reading": "docs/reviews/2026-09-22-practical-selection.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "798fad58ffe5e17a374e31cae3193df229b82624",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m18_batch_selection_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03-witness-reuse-audit",
+      "title": "Controle com reutilização de testemunho — M19/M20",
+      "conclusion": "Resultado desfavorável preservado: reutilização reduz a vantagem de seleção; nenhum testemunho do replay passou a tarefa funcional.",
+      "reading": "docs/reviews/2026-09-22-selection-audit.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "a43e1cf904eceff8bbcc802b5c0b2abb1c10c059",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m19_selection_audit_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "04-minimal-json-repair",
+      "title": "Reparo mínimo de JSON — M21",
+      "conclusion": "Reparo útil dentro do contrato, mas não é, por si só, uma contribuição de dLLM; direção superada como protagonista.",
+      "reading": "docs/research/m21-findings.md; docs/research/m21-repair-protocol.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "87ceedb6315acf6a41bd16b19cd450da49a0e84c",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m21_repair_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "05-dllm-tool-infilling",
+      "title": "Preenchimento de chamadas com dLLM — M22",
+      "conclusion": "Histórica: resultados locais de geração não estabelecem ganho externo geral ou novidade teórica.",
+      "reading": "docs/research/m22-findings.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "c0ae187a84015bef62b9e67befe2b5e967f9abb0",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m22_dllm_discovery_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "06-epic-tool-comparison",
+      "title": "Comparação com o decoder EPIC — M23",
+      "conclusion": "Controles EPIC e recuperação preservados; consultar resultados completos, sem substituir EPIC por um controle simplificado.",
+      "reading": "docs/research/m23-findings.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "f3fb7b1b6d27e620c1dfaabc325ecd9d04c90a21",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m23_epic_tools_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "07-stable-commitment-policies",
+      "title": "Políticas de commitment e confirmação externa — M24",
+      "conclusion": "Histórica: manter perdas, resultados externos, ablações e análises posteriores separados dos protocolos primários.",
+      "reading": "docs/research/m24-findings.md; docs/research/m24-reproduction.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "3ecfd44dec63d9afa74e89201e6b807080439d7b",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m24_policy_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "08-grounded-json-generation",
+      "title": "Geração de consultas com dados externos — M25",
+      "conclusion": "Demonstração de aplicação; não prova superioridade geral. Tentativas interrompidas e falhas continuam preservadas.",
+      "reading": "docs/research/m25-findings.md; docs/research/m25-reproduction.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "0f0f3d3667c8d61b503b77dde53223b4576f569a",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m25_grounded_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "09-budgeted-commitment",
+      "title": "Commitment com orçamento e certificados — M26–M28",
+      "conclusion": "Ótimo do objetivo com orçamento, com custos de preparação e comparadores próprios; não é otimalidade da trajetória inteira.",
+      "reading": "docs/research/m26-mathematical-core.md; docs/research/m28-real-state-replay.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "8e01f68c5ae09484b7f1f04430975b74aa9ad1e1",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m28_budgeted_real_v1",
+            "docs/artifacts/processed/m28_budgeted_real_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10-conflict-guided-commitment",
+      "title": "Aprendizagem de conflitos certificada — M29",
+      "conclusion": "Motor exato especializado; preservar controles, perdas de JSON aninhado e proveniência das recuperações.",
+      "reading": "docs/research/m29-conflict-commitment.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "b0ed276858eb9f74e932ff192729654c8034d71c",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m29_conflict_v1",
+            "docs/artifacts/processed/m29_conflict_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11-probability-certificates",
+      "title": "Certificados de massa e auditoria de relevância — M30/M31",
+      "conclusion": "Resultado desfavorável preservado: o controle exato especializado foi mais barato em todos os 35 pares retornados da auditoria M31.",
+      "reading": "docs/research/m30-probability-certificates.md; docs/research/m31-relevance-audit.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "a98ae8e09f2066157ebf6df05f8873b8600e00fb",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m30_probability_v1",
+            "docs/artifacts/processed/m30_probability_v1",
+            "docs/artifacts/raw/m31_probability_v1",
+            "docs/artifacts/processed/m31_probability_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12-exact-cfg-posterior",
+      "title": "Posterior gramatical exato — M34/M35",
+      "conclusion": "Componente mantido: exatidão no suporte e gramáticas admitidas. Parsing probabilístico é antecedente; não há superioridade universal.",
+      "reading": "docs/research/m34-exact-cfg-posterior.md; docs/evidence/m35-consolidation.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "c018c3843b7b5c4dda41cb72f3f7cfc19ad7af80",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m34_cfg_posterior_v1",
+            "docs/artifacts/processed/m34_cfg_posterior_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13-commitment-event-reduction",
+      "title": "Probabilidade de eventos de commitment — M36",
+      "conclusion": "Descartada como novidade central: redução a contagem ponderada/ranking conhecidos. O oráculo finito testa a redução, não prioridade.",
+      "reading": "docs/research/contribution-plan.md; tests/test_cfg_posterior.py",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "d82f9fb5a63c6c4ce484254921671236a5102ea6",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": []
+        }
+      ]
+    },
+    {
+      "id": "14-boolean-execution-profiles",
+      "title": "Condicionamento de regras Booleanas por execução — M36",
+      "conclusion": "Referência de pesquisa: transformação conhecida e aplicação delimitada; captura real não demonstra novidade ou generalização.",
+      "reading": "docs/evidence/m36-semantic-reference.md; paper/semantic-conditioning.tex",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "1589162656d242a12d4991d99d300bf51e891794",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m36_semantic_reference_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15-adaptive-semantic-cores",
+      "title": "Refinamento adaptativo e núcleos semânticos — M36",
+      "conclusion": "Garantias delimitadas de rejeições e reutilização. Auditoria completa preserva enumeração mais rápida e custo de certificação.",
+      "reading": "docs/evidence/m36-adaptive-semantics.md; paper/semantic-conditioning.tex",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "3b983020fa43e1a8e45ebbe460242aa9dc1e6951",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m36_adaptive_semantics_v1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "16-cars-rejection-bound",
+      "title": "Limite de rejeições contra a atualização publicada do CARS — M36",
+      "conclusion": "Direção atual de pesquisa: vantagem provada na contagem sob hipóteses explícitas; não é latência universal, prioridade confirmada ou revisão humana.",
+      "reading": "docs/evidence/m36-adaptive-semantics.md; paper/semantic-conditioning.tex; tests/test_adaptive_semantics.py",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_commit": "2af7b8f572bca8b1d61d397a275707c2ce8bd343",
+          "evidence_roots": [
+            "docs/artifacts/raw/m36_adaptive_semantics_v1",
+            "docs/artifacts/raw/m36_semantic_reference_v1"
+          ]
+        }
+      ]
+    }
+  ]
+}

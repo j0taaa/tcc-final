@@ -1,0 +1,93 @@
+# Tentativas de pesquisa preservadas
+
+Cada direção tem sua própria pasta. Cada versão contém **cópias reais e
+imutáveis** do código, das provas, das configurações e das evidências. Os
+arquivos estão compactados para preservar versões sem ampliar o código mantido.
+Não são links para arquivos atuais; nenhuma tentativa foi apagada por ter perdido
+uma comparação. As fases e repetições de cada campanha mantêm suas subpastas.
+
+## Índice
+
+| Pasta | Direção |
+| --- | --- |
+| [01-mwpc-original](01-mwpc-original/README.md) | MWPC original e validação inicial |
+| [02-parallel-batch-selection](02-parallel-batch-selection/README.md) | Seleção paralela em estados reais — M18 |
+| [03-witness-reuse-audit](03-witness-reuse-audit/README.md) | Controle com reutilização de testemunho — M19/M20 |
+| [04-minimal-json-repair](04-minimal-json-repair/README.md) | Reparo mínimo de JSON — M21 |
+| [05-dllm-tool-infilling](05-dllm-tool-infilling/README.md) | Preenchimento de chamadas com dLLM — M22 |
+| [06-epic-tool-comparison](06-epic-tool-comparison/README.md) | Comparação com o decoder EPIC — M23 |
+| [07-stable-commitment-policies](07-stable-commitment-policies/README.md) | Políticas de commitment e confirmação externa — M24 |
+| [08-grounded-json-generation](08-grounded-json-generation/README.md) | Geração de consultas com dados externos — M25 |
+| [09-budgeted-commitment](09-budgeted-commitment/README.md) | Commitment com orçamento e certificados — M26–M28 |
+| [10-conflict-guided-commitment](10-conflict-guided-commitment/README.md) | Aprendizagem de conflitos certificada — M29 |
+| [11-probability-certificates](11-probability-certificates/README.md) | Certificados de massa e auditoria de relevância — M30/M31 |
+| [12-exact-cfg-posterior](12-exact-cfg-posterior/README.md) | Posterior gramatical exato — M34/M35 |
+| [13-commitment-event-reduction](13-commitment-event-reduction/README.md) | Probabilidade de eventos de commitment — M36 |
+| [14-boolean-execution-profiles](14-boolean-execution-profiles/README.md) | Condicionamento de regras Booleanas por execução — M36 |
+| [15-adaptive-semantic-cores](15-adaptive-semantic-cores/README.md) | Refinamento adaptativo e núcleos semânticos — M36 |
+| [16-cars-rejection-bound](16-cars-rejection-bound/README.md) | Limite de rejeições contra a atualização publicada do CARS — M36 |
+
+A direção atual é `16-cars-rejection-bound`; suas hipóteses e limites estão no
+README e no artigo congelado. Organização, testes e provas selecionadas não
+substituem avaliação humana de prioridade/significância.
+
+## Abrir uma versão
+
+Por exemplo, a partir da raiz do repositório:
+
+```bash
+make attempts-check
+python3 -m zipfile -e attempts/16-cars-rejection-bound/v1/source.zip .cache/attempt-16
+python3 -m zipfile -e attempts/16-cars-rejection-bound/v1/evidence.zip .cache/attempt-16
+```
+
+O diretório extraído preserva os caminhos originais (`src/`, `scripts/`,
+`formal/`, `paper/`, `configs/`, `docs/`, etc.). A lista completa e os hashes
+estão em `v1/manifest.json`. Não extraia sobre o projeto mantido.
+
+O código é congelado no commit de cada tentativa. As evidências foram copiadas
+da versão indicada pelo `evidence_commit`, que pode ser posterior: correções de
+proveniência e resultados finais foram arquivados depois da execução. O commit
+de preservação **não é** o commit produtor de uma medição. Metadados, perdas,
+casos impossíveis, timeouts e relatórios originais são mantidos sem alterações.
+
+Nos casos sem campanha própria, `evidence.zip` está vazio; os argumentos,
+diagnósticos e oráculos ficam no snapshot de código. A última direção reutiliza
+as capturas anteriores explicitamente, sem apresentá-las como nova medição.
+
+## Integridade e novas tentativas
+
+`make attempts-check` verifica todos os ZIPs e os arquivos internos offline,
+sem modelos, rede ou histórico Git. Para comparar também com as árvores Git
+originais disponíveis localmente:
+
+```bash
+python3 scripts/archive_attempts.py --check --git
+```
+
+Antes de investigar outra abordagem, crie `attempts/<id>/README.md` com a
+hipótese, contrato e critério de descarte, e guarde seu protótipo em `work/`.
+Preserve resultados negativos e anote cada revisão em vez de sobrescrever a
+tentativa anterior. Não duplique EPIC, pesos de modelo ou caches nesse protótipo.
+
+Para congelar uma versão concluída, registre em `catalog.json` os hashes completos
+de código/evidência e as raízes de evidência pertinentes. A partir de commits
+já existentes e sincronizados, execute (o snapshot inclui o `work/` desta
+tentativa; outros snapshots são excluídos para evitar cópias recursivas):
+
+```bash
+python3 scripts/archive_attempts.py --create <id> --git
+```
+
+O comando recusa substituir uma versão existente; use `v2`, `v3`, etc. Para
+acrescentar uma versão a uma pasta existente, registre-a e use
+`--create <id> --version v2 --git`. Cada fonte já congelada continua acessível
+dentro da sua versão.
+Snapshots não entram nos imports, lint, suíte ativa ou distribuição da biblioteca.
+A verificação de integridade integra o CI; ela verifica preservação, não a
+correção científica do método.
+
+Arquivos originais permanecem nos seus caminhos de reprodução. Modelos, caches
+e logits completos que nunca foram publicados continuam fora do Git. Submódulos
+históricos são pinados nos manifestos; o código externo e as dependências não
+são invenções deste trabalho.

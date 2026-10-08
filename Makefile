@@ -5,7 +5,7 @@ VENV_PIP := $(VENV)/bin/pip
 LAKE ?= lake
 CONSTRAINTS := requirements/constraints-py311-linux.txt
 
-.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream lint format typecheck check check-formal check-project build-rust article-results article-results-check paper research-note test clean
+.PHONY: bootstrap bootstrap-epic bootstrap-rust-parser verify-upstream lint format typecheck check attempts-check check-formal check-project build-rust article-results article-results-check paper research-note test clean
 
 bootstrap:
 	$(PYTHON) -m venv $(VENV)
@@ -36,7 +36,10 @@ format:
 typecheck:
 	$(VENV_PY) -m mypy
 
-check: verify-upstream lint typecheck
+check: verify-upstream lint typecheck attempts-check
+
+attempts-check:
+	$(VENV_PY) scripts/archive_attempts.py --check
 
 build-rust:
 	cargo fmt --manifest-path crates/mwpc_parser/Cargo.toml --all -- --check

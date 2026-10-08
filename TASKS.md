@@ -16,6 +16,53 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M37 — Preserve every research direction in its own folder
+
+Authorized on 2026-10-08 by the user's request for independent folders for
+every attempt. Depends on the existing historical commits and archives, not
+on the open M36 human-review/priority gates. Preserve the maintained decoders,
+all original scientific artifacts and their producing provenance. Archiving
+does not establish correctness, novelty, practical superiority or review approval.
+
+- [x] T3700: Inventory the historical research directions and create separate
+  immutable source/evidence snapshots with an index, recorded conclusions,
+  full source commits and per-file checksums. Include discarded directions.
+  **Acceptance:** each folder contains actual source and evidence bytes, not
+  links to mutable live files; every existing raw archive is represented.
+  Dependencies/model availability and source/evidence commit differences are
+  explicit. Historical tests remain inside archives, outside the active suite.
+  Snapshot creation refuses to overwrite an existing version. Integrity checks
+  work offline without historical Git objects and also check origin trees when
+  requested. Future attempts begin in their own folders before exploration.
+  **Evidence:** `attempts/catalog.json` registers 16 directions, covering all
+  19 existing raw-archive families, including discarded event reductions and
+  unfavorable comparisons. Each `attempts/<id>/v1/` contains actual source and
+  evidence archives plus original commits, submodule pins and per-file SHA-256.
+  `python3 scripts/archive_attempts.py --create all --git` freezes/checks 13,012
+  file copies (330,297,221 uncompressed bytes). `--check --git` confirms the
+  complete selected origin trees, not just a few example files. Offline
+  `env PATH= .venv/bin/python scripts/archive_attempts.py --check` passes without
+  access to Git executables. A temporary-copy corruption check updates the outer
+  ZIP checksum and still fails on the changed internal file; originals untouched.
+  Attempting to freeze the existing event snapshot raises `FileExistsError`.
+  A selection fixture confirms future `work/` is included while sibling work
+  and previous snapshots are excluded. All principal reading paths exist inside
+  their respective source archives. These are preservation checks, not new
+  scientific experiments or restored historical test runs.
+- [ ] T3701: Make archive integrity mandatory in CI and document access and
+  future preservation. Commit/push the completed organization.
+  **Acceptance:** existing scientific archives and baseline source unchanged;
+  validation distinguishes preservation from solver correctness. Local and
+  upstream main agree after a normal fast-forward push.
+  **Evidence:** `make check` passes upstream verification, lint/format (79
+  source/script files), typing (58 package files) and the new mandatory offline
+  `attempts-check` target; existing CI calls this target through `make check`.
+  `make article-results-check` passes all 3,683 frozen-file checks, archived
+  probability/CFG products and the generated complete semantic table.
+  `formal/MWPC.lean` matches the pre-organization Git blob exactly.
+  Instructions and future folder/version policy are in `attempts/README.md`
+  and `AGENTS.md`. Synchronization pending.
+
 ## M36 — Scientific contribution gates before another implementation
 
 Authorized on 2026-10-07 by the user's staged research plan (items 1–22;
