@@ -22,6 +22,18 @@
             "docs/artifacts/raw/t1203_final_results_v1",
             "docs/artifacts/processed/t1203_final_results_v1"
           ]
+        },
+        {
+          "id": "initial-repository",
+          "source_commit": "836540d18fd0c37ae9f0d577e5c25ca508dfd13b",
+          "evidence_commit": "836540d18fd0c37ae9f0d577e5c25ca508dfd13b",
+          "evidence_roots": []
+        },
+        {
+          "id": "first-working-prototype",
+          "source_commit": "6a5945bef2e9c6dc55ad8d0d02f91656215ac6aa",
+          "evidence_commit": "6a5945bef2e9c6dc55ad8d0d02f91656215ac6aa",
+          "evidence_roots": []
         }
       ]
     },

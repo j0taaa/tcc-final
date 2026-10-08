@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "attempt_id": "01-mwpc-original",
+  "version": {
+    "id": "initial-repository",
+    "source_commit": "836540d18fd0c37ae9f0d577e5c25ca508dfd13b",
+    "evidence_commit": "836540d18fd0c37ae9f0d577e5c25ca508dfd13b",
+    "evidence_roots": []
+  },
+  "source_omissions": [
+    "attempts/",
+    "docs/artifacts/raw/",
+    "docs/artifacts/processed/"
+  ],
+  "gitlinks": {},
+  "archives": {
+    "source.zip": {
+      "sha256": "378ecbad5f51def729f0cd5a55283b8c7db62c1fd91418bc1af290f8038a7a62",
+      "files": {
+        "README.md": {
+          "sha256": "0dbd8196e6f57ad7f2d5deb6367943e1930befd73ce755a912c7cb665733c665",
+          "git_blob": "feeb8bcdee3103026770b4b68f51455569468bef",
+          "mode": "100644",
+          "bytes": 11
+        }
+      }
+    },
+    "evidence.zip": {
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+      "files": {}
+    }
+  }
+}

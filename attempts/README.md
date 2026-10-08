@@ -27,6 +27,11 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [15-adaptive-semantic-cores](15-adaptive-semantic-cores/README.md) | Refinamento adaptativo e núcleos semânticos — M36 |
 | [16-cars-rejection-bound](16-cars-rejection-bound/README.md) | Limite de rejeições contra a atualização publicada do CARS — M36 |
 
+A primeira pasta inclui também o commit inicial do repositório (README apenas)
+e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
+é a consolidação posterior da mesma abordagem; ela não foi apresentada como
+o estado literal do primeiro commit.
+
 A direção atual é `16-cars-rejection-bound`; suas hipóteses e limites estão no
 README e no artigo congelado. Organização, testes e provas selecionadas não
 substituem avaliação humana de prioridade/significância.

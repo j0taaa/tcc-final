@@ -69,6 +69,26 @@ does not establish correctness, novelty, practical superiority or review approva
   remain unchanged after publication; this checklist records preservation,
   not resolution of the independent M36 scientific review gates.
 
+- [ ] T3702: Preserve the literal initial repository and the first completed
+  MWPC prototype as separate versions of the original direction, following the
+  user's question about the very first attempt.
+  **Acceptance:** distinguish the initial README-only commit, the completed M2
+  prototype and the consolidated M17 source. Copy historical bytes with full
+  commits/hashes; do not modify any published frozen version or active tests.
+  Check all snapshots against origin trees, preserve the existing scientific
+  archive and synchronize the new versions to GitHub.
+  **Evidence:** `archive_attempts.py --create 01-mwpc-original --version
+  initial-repository --git` preserves the initial README-only Git tree
+  (`836540d18fd0c37ae9f0d577e5c25ca508dfd13b`, one file). The same command with
+  `--version first-working-prototype` preserves the completed M2 tree
+  (`6a5945bef2e9c6dc55ad8d0d02f91656215ac6aa`, 86 files), including the original
+  token-aligned parser, normalizer and validator. `--check --git` passes all
+  16 directions / 18 versions / 13,099 file copies (330,825,529 bytes).
+  `make attempts-check` passes offline integrity and `verify_artifacts.py`
+  confirms all 3,683 original scientific files unchanged. Published `v1/`
+  paths have no Git diff; historical tests stay inside the new ZIP only.
+  Synchronization pending.
+
 ## M36 — Scientific contribution gates before another implementation
 
 Authorized on 2026-10-07 by the user's staged research plan (items 1–22;
