@@ -44,7 +44,7 @@ does not assert that the open scientific-priority/review gates have passed.
   vendor speed claims are not this project's evidence. dJev remains a research
   motivation, not a trained model or claimed speed win. Existing support,
   slots, statuses, certificate, probability and formal-scope contracts retained.
-- [ ] T3801: Verify the instructions against retained paths, tasks and current
+- [x] T3801: Verify the instructions against retained paths, tasks and current
   evidence, preserve every frozen archive and synchronize the documentation.
   **Acceptance:** no solver/archived data/frozen-version edits, no restored
   historical suite, no invented approval or scientific result. Normal push;
@@ -55,7 +55,11 @@ does not assert that the open scientific-priority/review gates have passed.
   A structural read verifies all eight questions and every local Markdown link.
   Only `AGENTS.md` and `TASKS.md` differ; protected `formal/MWPC.lean` and the
   attempt catalog match their original Git blobs. Solver sources, active tests
-  and frozen versions are unchanged. Synchronization pending.
+  and frozen versions are unchanged. Instruction source
+  `339b804de5e9d6b6f4977444d75a3723f47502c9` was pushed normally; local/upstream
+  counts are `0 0`. CI [37778210371](https://github.com/j0taaa/tcc-final/actions/runs/37778210371)
+  passes. This is completion of the requested standing-instruction update,
+  not a claim that the publication/novelty objectives have been achieved.
 
 ## M37 — Preserve every research direction in its own folder
 
