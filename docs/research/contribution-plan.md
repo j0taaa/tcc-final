@@ -1253,3 +1253,22 @@ defensável é o recorte operacional/implementação de certificação e inferê
 semântica reutilizável em tokens de uma dLLM; prioridade teórica exclusiva e
 superioridade universal não estão estabelecidas. T3603 segue sem comentários
 reais do orientador. Isso não impede continuar as obrigações técnicas autorizadas.
+
+## 17. Reavaliação de direção em 2026-10-08
+
+A revisão substantiva está preservada na própria tentativa 15:
+[antecedente VSampler, redução, limite dos núcleos e decisão](../../attempts/15-adaptive-semantic-cores/work/2026-10-08-direction-review.md).
+Foi conferido o original de Ji et al. (PLDI 2020), §§3.2 e 5.1–5.3,
+Teorema 5.7; a amostragem de programas condicionada a exemplos é antecedente
+direto. Uma normalização telescópica liga a floresta ponderada de tokens à
+representação probabilística acíclica conhecida, mantendo aliases distintos.
+Um argumento por indicadores em DNF mostra por que núcleos pequenos não podem
+ser presumidos para Booleanos com NOT e tamanho irrestrito; isso não refuta
+certificados sobre suportes finitos específicos ou linguagens monotônicas.
+
+A recomendação é investigar uma vantagem de **custo total em consultas
+sucessivas da dLLM** contra VSA/circuitos/fatores também reutilizados, antes de
+uma implementação maior. O resultado C1 continua complementar e delimitado;
+não se torna comparação contra todos os solvers. Os oito critérios, condições
+de descarte e custos de amortização estão no documento. T3602/T3603 continuam
+abertos. Não houve novo benchmark, modelo ou alegação de contribuição inédita.

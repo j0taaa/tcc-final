@@ -5,6 +5,18 @@ Garantias delimitadas de rejeições e reutilização. Auditoria completa preser
 Esta pasta preserva a abordagem, incluindo resultados desfavoráveis, sem
 promovê-la a contribuição inédita ou a decoder de produção.
 
+## Continuação da investigação
+
+A [revisão de direção de 2026-10-08](work/2026-10-08-direction-review.md)
+responde aos oito critérios científicos atuais. Acrescenta VSampler (PLDI
+2020) como antecedente direto e uma objeção de expressividade: com AND/OR/NOT
+irrestritos, registros distintos podem ser todos indispensáveis. Recomenda
+investigar o custo total de consultas sucessivas contra estruturas igualmente
+reutilizadas antes de ampliar o método. Não estabelece nova contribuição,
+superioridade ou revisão humana; `v1/` continua imutável.
+
+## Versão preservada
+
 - [Código, provas, dependências e artigo congelados](v1/source.zip).
 - [Entradas, saídas e resultados arquivados](v1/evidence.zip).
 - [Proveniência e inventário SHA-256 por arquivo](v1/manifest.json).

@@ -198,6 +198,17 @@ Use one notebook: `docs/research/contribution-plan.md`.
   guarantees and an implemented specialization; compact automata/tree/factor
   methods can share them. The selected claim is not promoted to a novel
   general inference principle or exclusive priority without T3603.
+  **Direction review, 2026-10-08:** notebook §17 and
+  `attempts/15-adaptive-semantic-cores/work/2026-10-08-direction-review.md`
+  add a checked primary antecedent: VSampler, Ji et al. PLDI 2020, §5 and
+  Theorem 5.7. A classical telescoping reduction explains the overlap; a DNF
+  expressivity argument rules out assuming small cores in unrestricted Boolean
+  languages. Eight current scientific criteria and a total-cost comparison
+  define the next investigation. No new solver, benchmark or novelty claim;
+  this task remains open. `make check` passes; all 16 attempts / 18 versions
+  retain their 13,099 frozen files. `verify_artifacts.py` confirms 3,683
+  scientific files unchanged; local links/eight criteria and `git diff --check`
+  pass. This is a documentation/mathematical review, not new solver testing.
 - [ ] T3603: Obtain actual advisor/calendar alignment and independent human
   mathematical/novelty review (plan 3, 9, 19).
   **Acceptance:** real comments and their responses recorded; no inferred
