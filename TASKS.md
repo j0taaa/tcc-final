@@ -69,7 +69,7 @@ does not establish correctness, novelty, practical superiority or review approva
   remain unchanged after publication; this checklist records preservation,
   not resolution of the independent M36 scientific review gates.
 
-- [ ] T3702: Preserve the literal initial repository and the first completed
+- [x] T3702: Preserve the literal initial repository and the first completed
   MWPC prototype as separate versions of the original direction, following the
   user's question about the very first attempt.
   **Acceptance:** distinguish the initial README-only commit, the completed M2
@@ -87,7 +87,9 @@ does not establish correctness, novelty, practical superiority or review approva
   `make attempts-check` passes offline integrity and `verify_artifacts.py`
   confirms all 3,683 original scientific files unchanged. Published `v1/`
   paths have no Git diff; historical tests stay inside the new ZIP only.
-  Synchronization pending.
+  Preservation source `11d773889dd2c1c21c33a7bace9da19fbe82f611` was pushed
+  normally to `main`; local/upstream counts are `0 0`. This does not assert
+  access to attempts or files that predate the repository's recorded history.
 
 ## M36 — Scientific contribution gates before another implementation
 
