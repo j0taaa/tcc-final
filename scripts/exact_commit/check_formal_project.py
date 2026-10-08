@@ -22,7 +22,14 @@ def main():
         ):
             raise ValueError(f"Unapproved admission or axiom: {source.name}")
     build = _run_lean(
-        [args.lake, "build", "MWPC", "MWPC.CfgSampling", "MWPC.SemanticProfiles"],
+        [
+            args.lake,
+            "build",
+            "MWPC",
+            "MWPC.CfgSampling",
+            "MWPC.SemanticProfiles",
+            "MWPC.AdaptiveSemantics",
+        ],
         cwd=formal,
         timeout=180,
     )

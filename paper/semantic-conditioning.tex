@@ -7,10 +7,11 @@
 \usepackage[hidelinks]{hyperref}
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}{Corollary}
+\newtheorem{refinement}{Theorem R}
 \title{Exact Execution Conditioning for Boolean Rule Infilling\\
 \large Research supplement: algorithm, guarantees and comparison boundaries}
 \author{Gabriel Jota Lizardo}
-\date{October 7, 2026}
+\date{October 8, 2026}
 \begin{document}
 \maketitle
 
@@ -21,7 +22,17 @@ examples while retaining the frozen dLLM product weights. The implementation
 uses the established covering-product transform. We give a tight scoped
 comparison: computing all union-profile masses needs $3^m$ products in a
 non-negative bilinear plan, whereas a signed plan needs exactly $2^m$.
-Lean checks the underlying finite rectangle-cover obstruction. This is an
+We additionally condition only on counterexamples discovered during sampling.
+For $m$ finite execution requirements, the entire stream rejects at most $m$
+rules and retains the exact conditional law. A non-prefix parity requirement
+exhibits an exponential representation gap against zero-rejection prefix
+exclusion. Lean checks the finite progress and prefix-cover obstructions,
+as well as the earlier rectangle bound.
+Further, positive auxiliary weights certify when active requirements imply
+every omitted example; this certificate survives arbitrary subsequent model
+reweightings and admitted support contractions. The inference exponent then
+depends on the certified core size rather than the number of supplied records.
+This is an
 incremental reference implementation and a delimited mathematical argument,
 not a claim of priority for transforms, program synthesis or exact inference.
 Independent human review and practical deployment evaluation remain pending.
@@ -46,6 +57,10 @@ examples is a useful guarantee for completing a software-consumed filter or
 visibility condition. It is not correctness on unseen records. The reference
 supports single-letter ASCII fields and 1--12 records; it is not the entire
 JsonLogic language. Its grammar is independent of examples and desired labels.
+An opt-in \texttt{!!} production passes through a Boolean value and preserves
+the original grammar by default. The adaptive stream can verify more than
+twelve records, but its active-profile backend still refuses a thirteenth
+active requirement. That refusal cannot establish infeasibility.
 
 Tree automata for synthesis from examples, including Boolean formulas,
 are established: see Wang et al., Example 6.2 and Theorem 6.3
@@ -99,6 +114,190 @@ $U[A]V[B]/(U\star V)[T]$. AND uses complements; NOT and punctuation are
 deterministic in the profile. Choosing forest alternatives by their requested
 profile masses telescopes these conditional probabilities to the stated law.
 \end{proof}
+
+\section{Counterexamples replace repeated blind rejections}
+Let $G_i\subseteq\mathcal V$ be the rules satisfying execution requirement $i$,
+$G=\bigcap_{i=1}^m G_i$, and $w(y)=\prod_iq_i(y_i)$. Initially $A=\varnothing$.
+Sample exactly from $w$ conditioned on
+$H_A=\mathcal V\cap\bigcap_{i\in A}G_i$. Execute the sampled rule on all
+requirements, stopping at the first violation. Return it only if it satisfies
+all requirements; otherwise add one violated index to $A$, recompute the
+profile posterior on those active records, and try again. Preserve $A$ across
+returned samples. Neither the canvas nor the model probabilities change.
+
+\begin{refinement}[Exact stream and a finite rejection budget]
+Assume exact conditional sampling and finite evaluable requirements. If
+$Z_G=\sum_{y\in G}w(y)>0$, every returned rule has law $w(y)/Z_G$, and any
+$N$ returned rules are independent with this law. Over the entire stream,
+there are at most $m$ rejected rules: producing $N$ rules uses at most $N+m$
+complete candidate draws. If $Z_G=0$, after at most $m$ rejections an active
+posterior has zero mass and proves zero mass on the full declared support.
+These guarantees assume sufficient resources for each required refinement.
+\end{refinement}
+\begin{proof}
+A conditional candidate satisfies every active requirement. Its violated
+index is therefore new. Each rejection increases $|A|$ by one; at $A=[m]$
+the proposal is already conditioned on $G$. Also $G\subseteq H_A$, so a zero
+active mass certifies zero full mass. When $Z_G>0$, every active mass is positive.
+
+For the law, fix any active set $A$ and earlier output history. Induct on the
+number of inactive requirements. Write $Z_A=\sum_{y\in H_A}w(y)$ and
+$F_A(y)$ for the probability of the next returned valid rule. The first draw
+either returns $y$ or rejects some $x\in H_A\setminus G$ and adds its violated
+index $i(x)$. The induction hypothesis gives
+\[
+ F_A(y)=\frac{w(y)}{Z_A}
+ +\sum_{x\in H_A\setminus G}\frac{w(x)}{Z_A}
+        \frac{w(y)}{Z_G}
+ =\frac{w(y)}{Z_A}+
+   \left(1-\frac{Z_G}{Z_A}\right)\frac{w(y)}{Z_G}
+ =\frac{w(y)}{Z_G}.
+\]
+The base case $H_A=G$ is immediate. The same law holds after every output
+history, even though active sets are random, proving independence.
+\end{proof}
+
+Adaptive exactness is an established principle, including CARS
+\cite[Section 3 and Appendix E]{parys2025cars}; learning requirements from
+counterexamples is established in example-guided synthesis
+\cite{wang2017completion}. The application-specific refinement differs from
+CARS's prefix exclusions: it removes \emph{all} rules violating a selected
+record, including rules with unrelated prefixes. It supplies the finite $m$
+bound without an exponentially enumerated perfect prefix oracle. This is
+a scoped algorithmic extension, not an invention of adaptive rejection.
+
+\begin{refinement}[A prefix-exclusion representation gap]
+Consider $n\geq1$ independent unary-operator choices, each either
+\texttt{!} or \texttt{!!}, wrapping a fixed Boolean variable, with fixed closing
+punctuation. All $2^n$ choices are syntactically valid original-token paths.
+Require one output Boolean value on one record. With strictly positive row
+weights, a prefix-exclusion proposal supported exactly on satisfying programs
+needs at least $2^{n-1}$ excluded prefixes. Execution-profile inference needs
+two profile values per Boolean forest cell, and the adaptive stream rejects
+at most one rule before all later draws satisfy the requirement.
+\end{refinement}
+\begin{proof}
+The output is the variable value toggled by the parity of \texttt{!} choices.
+Exactly half the choices violate the target. Every proper prefix of the $n$
+choices extends to a satisfying program by choosing the last toggle; it cannot
+be excluded soundly. Thus each excluded prefix fixes all $n$ choices and covers
+at most one of the $2^{n-1}$ invalid assignments. This applies even with a
+perfect prefix-validity oracle, independent of how the trie is optimized.
+For the profile representation, one record has two possible values; NOT
+exchanges them and identity preserves them. The fixed grammar/token DAG have
+$O(n)$ size, a CFG forest has at most $O(n^3)$ alternatives, and preparation
+and profile inference are polynomial rather than an enumeration of $2^n$
+programs. One failed candidate activates the sole requirement.
+\end{proof}
+
+The gap concerns a \emph{zero-rejection representation}, not time to obtain
+one valid sample or a universal expected-time lower bound for CARS. A trie
+that remains small can keep rejecting; ordinary rejection for balanced parity
+uses only two trials on average. A two-state parity automaton, an adequate
+factor graph or another tree-automaton semantic solver shares the compactness
+advantage. This mathematical family diagnoses a representation limit; it is
+not a favorable performance benchmark. EPIC is a syntax/progress baseline
+and does not, by itself, implement this execution-conditioned sampling task.
+
+If $k$ records become active, the retained syntax forest is not recompiled.
+For a source grammar of size $g$, profile work across refinements is at most
+$O((g+S+F)k+F\sum_{j=1}^k j2^j)=O((g+S+F)k+Fk2^k)$;
+candidate sampling uses at most $N+k$ draws and
+$O((N+k)F\max(1,k2^k))$ arithmetic work. Verifying records costs at most
+$O(m(N+k)B)$, with $B$ bounding one rule's execution size. Memory includes
+the input records, $O(md)$ for $d$ fields, and $O(F2^k)$ profile entries.
+Bit costs of the exact integers and syntax preparation remain additional as
+below. There is no guarantee that $k\ll m$ or that this is faster than eager
+conditioning or enumeration on small supports. The exact proposal mass is
+an upper bound on $Z_G$; it is not reported as full-specification mass.
+
+Every CNF derivation has at most twice as many nodes as byte-path edges,
+and an acyclic path has fewer edges than graph vertices. Using this fact,
+the reference reserves a conservative whole-traversal work bound before
+conditional sampling, rather than timing out selected paths during a draw.
+Profile admission/refinement caps fail between complete candidate draws and
+make the session terminal. Returning only paths whose randomly selected
+traversals happened to fit a budget would require a separate bias analysis.
+External interruption and hard integer-operation preemption are not covered.
+
+\section{Certifying a reusable semantic core}
+An active set need not include every supplied record. Let
+$c_i(A)=|H_A\setminus G_i|$ count original-token paths violating an omitted
+requirement. Compute each $c_i(A)$ separately with profiles for $A\cup\{i\}$
+and positive auxiliary weights: use $1/|D_j|$ for every token in slot $j$,
+including tokens with zero probability in the current model prediction.
+Multiplying the resulting rational mass by $\prod_j|D_j|$ gives an integer
+path count. Committed rows are singletons with probability one. This calculation
+does not replace the model weights used to generate samples.
+
+\begin{refinement}[Structural core and arbitrary reweighting]
+If $c_i(A)=0$ for every omitted requirement, then $H_A=G$ on the declared
+finite support. Consequently conditioning any subsequent non-negative product
+weights on $A$ gives exactly the full-specification mass and sampling law.
+This remains true after support contraction or adding fixed positions.
+Support expansion, releasing fixed positions, changing examples or changing
+grammar/tokenizer/EOS semantics requires a new certificate.
+\end{refinement}
+\begin{proof}
+$G\subseteq H_A$ always. Any $y\in H_A\setminus G$ violates some $G_i$,
+so contributes one to $c_i(A)$, contradicting zero. Positive auxiliary weights
+ensure no represented path is hidden merely because its current model weight
+vanishes. Thus the two indicator functions agree pointwise, independently of
+weights. Multiplying by any new path weight and summing proves mass equality;
+normalizing a positive mass proves law equality. The pointwise equality is
+preserved on subsets of the certified path domain. New paths are not covered.
+\end{proof}
+
+The compiler greedily adds the omitted requirement with the greatest structural
+violation count, breaking ties by its declared index, until every count is zero.
+Each positive refinement removes at least one path and adds a fresh requirement.
+It finds a sufficient core, not necessarily a minimum one; an empty active
+language also certifies an impossible specification. An optional candidate core
+may be supplied, but is checked rather than assumed sound. Selecting examples,
+teaching dimension and set-cover formulations are established antecedents
+\cite[Section 5]{jha2010oracle}. The operation here preserves \emph{every}
+consistent original-token completion and its changing product weights, rather
+than identifying just one desired program. This is a specialization and
+implementation contribution, not a claim to invent logical redundancy.
+
+For a returned core of size $k$, certification uses at most $k+1$ profile
+dimensions, even with $m>12$ supplied records. It evaluates at most
+$m(k+1)$ individual probes. Its arithmetic cost is
+$O(m(k+1)(g+S+F)+Fm(k+1)2^k)$, and peak profile space is $O(F2^{k+1})$,
+plus the $O(md)$ supplied data. After certification, each new weight query
+uses $O(g+S+F\max(1,k2^k))$ arithmetic work and $O(F2^k)$ profile space.
+Integer bit costs remain as below. For $T$ predictions, include the one-time
+certification cost plus all $T$ reweightings; compilation is not free.
+Compared with the retained dense all-record profile implementation, profile
+array lengths decrease from $2^m$ to $2^k$ per query. This is a conditional
+implementation advantage, not a lower bound on a competent single-target or
+sparse semantic algorithm. When $k$ is large or few queries are requested,
+certification can cost more than the work it saves.
+
+There are application families with genuinely distinct, redundant records.
+For monotone Boolean rules, matching all minimal positive and maximal negative
+records in the coordinatewise order implies matching every supplied record:
+each positive has a positive boundary record below it, and each negative has
+a negative boundary record above it. In particular, the specification
+$f(x)=x_a$ over all $2^d$ Boolean records has a two-record sufficient core:
+$(x_a=1,x_{b\ne a}=0)\mapsto1$ and
+$(x_a=0,x_{b\ne a}=1)\mapsto0$. Monotonicity sandwiches all other values.
+The syntax and probabilities need not specify the correct program: many
+redundant formulas, such as $a\land a$ and $a\lor a$, remain different valid
+token events. This observation motivates filters and monotone visibility rules;
+it is an elementary consequence of monotonicity, not a new learning theorem.
+The compiler checks implication even when the provided grammar/support also
+admits non-monotone programs, and adds requirements or refuses if necessary.
+
+Lean checks the finite zero-violation implication, complete-predicate equality
+and equality of arbitrary natural-weight sums on restricted domains. Positive
+uniform CFG path counts, rational denominator clearing, normalization and the
+Python compiler remain written or independently enumerated obligations.
+Focused tests deliberately include initially zero-weight invalid tokens that
+later regain mass, support expansion beyond a narrower certified state,
+released commitments, contradictory specifications, aliases and independently
+enumerated alternative programs. These reject unsound probability-dependent
+constraint removal.
 
 \section{A tight comparison for the required join}
 We compare the same complete profile operation on arbitrary dense arrays,

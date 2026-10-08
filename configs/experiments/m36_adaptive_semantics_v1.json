@@ -1,0 +1,25 @@
+{
+  "input_archive": "docs/artifacts/raw/m36_semantic_reference_v1",
+  "input_sha256": "ead8811b5e3e33e5a796c5c7e612f8816808954575327d919664aa8ddfd48a73",
+  "targets": "all 256 Boolean label profiles; no result-based exclusions",
+  "seeds": [
+    20261007,
+    20261008,
+    20261009
+  ],
+  "samples_per_positive_target": 4,
+  "max_active": 12,
+  "max_profile_entries": 1000000,
+  "max_work": 10000000,
+  "counterexample_policy": "first violated record in the frozen archive order",
+  "controls": [
+    "eager exact semantic posterior reused across every target",
+    "complete enumeration reused across every target",
+    "finite prefix-trie CARS Algorithm 1/Equation 1 with a perfect enumeration-backed prefix oracle",
+    "structural sufficient-core certificate; preparation once per target, evaluated once for the unchanged model weights"
+  ],
+  "claim_scope": "complete audit of the existing developmental MDLM capture; not held-out evaluation, native CARS/EPIC speed, generalization, scientific priority or a new favorable benchmark",
+  "preparation": "include compilation and shared enumeration/eager setup separately; record every target, including zero mass and refusal",
+  "provenance": "require a clean producing commit; rational weights, original token support, fixed slots, EOS and model/tokenizer revisions inherited unchanged",
+  "core_policy": "greedy maximum structural violation count with smallest-index ties; positive uniform weights on every supported token; cap 11 plus one probe dimension"
+}

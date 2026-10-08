@@ -1,4 +1,4 @@
-import MWPC.SemanticProfiles
+import MWPC.AdaptiveSemantics
 
 #print axioms MWPC.row_product_scaling
 #print axioms MWPC.opening_stacks_count
@@ -15,3 +15,19 @@ import MWPC.SemanticProfiles
 #print axioms MWPC.semantic_coordinate_union
 #print axioms MWPC.semantic_witness_union
 #print axioms MWPC.semantic_nonnegative_bilinear_lower_bound
+#print axioms MWPC.semantic_refinement_new
+#print axioms MWPC.semantic_refinement_progress
+#print axioms MWPC.semantic_refinement_bound
+#print axioms MWPC.semantic_zero_violations_imply
+#print axioms MWPC.semantic_core_complete
+#print axioms MWPC.semantic_core_arbitrary_reweighting
+#print axioms MWPC.parity_append
+#print axioms MWPC.parity_zeros
+#print axioms MWPC.parity_prefix_extend
+#print axioms MWPC.binary_words_count
+#print axioms MWPC.binary_words_length
+#print axioms MWPC.binary_words_distinct
+#print axioms MWPC.parity_bad_value
+#print axioms MWPC.parity_bad_injective
+#print axioms MWPC.parity_exclusion_prefix_unique
+#print axioms MWPC.parity_prefix_exclusion_bound

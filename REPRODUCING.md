@@ -225,3 +225,27 @@ users can verify inference on published rational rows; auditing their entire
 softmax origin additionally needs the local NPZ or a fresh opt-in capture.
 The consumer file is not vendored. See `docs/evidence/m36-semantic-reference.md`
 for commands, licenses, scope and the remaining human-review boundary.
+
+The adaptive/core continuation uses the same capture, without another model
+forward. Its frozen protocol audits every one of the 256 label vectors and
+three seeds against shared enumeration, shared eager inference and a finite
+CARS-style prefix control with a perfect enumeration-backed oracle. Prefix
+control timing is not native CARS or EPIC timing. From a clean producing commit:
+
+```bash
+.venv/bin/python -m scripts.exact_commit.audit_adaptive_semantics --output docs/artifacts/raw/m36_adaptive_semantics_v1
+.venv/bin/python -m scripts.exact_commit.audit_adaptive_semantics --output docs/artifacts/raw/m36_adaptive_semantics_v1 --check
+.venv/bin/python -m scripts.exact_commit.audit_adaptive_semantics --output docs/artifacts/raw/m36_adaptive_semantics_v1 --summary > docs/research/generated/m36-adaptive-summary.md
+```
+
+The first command requires a new output directory and a clean worktree; the
+other two verify checksums and independently enumerate all original-token
+programs, masses, samples and structural core equivalences without model/network
+access. They do not rerun the archived timing. Core certification uses positive
+uniform auxiliary weights, including tokens with zero model probability;
+subsequent samples use the actual archived/model weights. The certificate is
+valid after compatible reweighting, support contraction and added commitments.
+Support expansion, released commitments or changed examples require a new
+certificate. Each label's preparation is charged once; all-label shared
+enumeration/eager preparation is also reported. This developmental illustration
+does not establish external generalization, priority or universal speed.

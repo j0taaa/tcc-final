@@ -27,9 +27,9 @@ def execute(rule, record):
     op, value = next(iter(rule.items()))
     if op == "var" and isinstance(value, str) and value in record:
         return record[value]
-    if op not in ("and", "or", "!") or not isinstance(value, list):
+    if op not in ("and", "or", "!", "!!") or not isinstance(value, list):
         raise ValueError("unsupported operator")
-    if len(value) != (1 if op == "!" else 2):
+    if len(value) != (1 if op in ("!", "!!") else 2):
         raise ValueError("incorrect arity")
     values = [execute(child, record) for child in value]
     return not values[0] if op == "!" else all(values) if op == "and" else any(values)

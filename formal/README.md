@@ -39,7 +39,8 @@ combined gate does **not** mean the Lean kernel proves all foreign source code.
 | Amortized feasibility-query count | `amortized_conflict_queries` | Trace charges one failed main query plus at most B deletion queries per learned conflict; Python counter/oracle tests |
 
 `scripts/exact_commit/check_formal_project.py` builds the retained library and
-new `MWPC.CfgSampling` and `MWPC.SemanticProfiles` modules, audits 50 statements across `Audit.lean` and
+new `MWPC.CfgSampling`, `MWPC.SemanticProfiles` and `MWPC.AdaptiveSemantics`
+modules, audits 66 statements across `Audit.lean` and
 `AuditCfgSampling.lean`, and checks the canonical resource example. Historical
 fixture/forgery campaigns are recoverable in their source commits; they do not
 run in the reduced tree. The focused posterior suite runs separately: eight
@@ -65,6 +66,21 @@ Signed `2^m` optimality, the execution-conditioned sampling law and Python
 semantic lifting are not source-refined in Lean. The three focused semantic
 oracles and opt-in MDLM/JsonLogic demonstration are separate evidence; they
 do not provide the missing independent human novelty review.
+
+`MWPC.AdaptiveSemantics` adds thirteen selected statements: a rejected
+candidate violates a fresh requirement, distinct refinement indices number at
+most `m`, and eliminating all invalid parity words through sound prefix
+exclusions needs `2^(n-1)` prefixes for `n` choices. The latter applies even
+with a perfect prefix-validity oracle. It is a zero-rejection representation
+bound, not an expected-time bound on native CARS. The exact adaptive stream
+law, JsonLogic encoding, complexity instantiation and Python source are written
+or independently tested obligations; they are not fully mechanized.
+
+Three additional core statements check that zero counted violations imply an
+omitted requirement, that every requirement then agrees with the core predicate,
+and that this equality preserves arbitrary natural-weight sums after domain
+restriction. These statements do not certify the CFG-to-path-count compiler;
+uniform positive counting and rational scaling are explicit separate obligations.
 
 ## Trust map
 

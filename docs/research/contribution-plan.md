@@ -1028,3 +1028,139 @@ qualidade semântica aprendida ou prioridade científica. A contribuição
 matemática é o enunciado delimitado A2.2 com seu comparador ótimo na classe,
 e sua utilidade está ligada à operação especificada A2.1. A avaliação humana
 da originalidade/suficiência acadêmica permanece T3603, sem aprovação criada.
+## 16. Continuação de 8 de outubro: refinamento e núcleo semântico certificado
+
+O pedido para não parar foi retomado como investigação e implementação, não
+como mera abertura de tarefas. A transformação anterior continua atribuída
+aos antecedentes. O novo recorte é uma operação de inferência que admite
+requisitos de execução não expressos por prefixos e mudanças posteriores dos
+pesos de uma dLLM, preservando todas as conclusões válidas no suporte original.
+Serial, EPIC e MWPC de produção permanecem separados.
+
+### Antecedentes que eliminaram falsas novidades
+
+- [CARS, versão 2 de 2/6/2026](https://arxiv.org/html/2510.01902v2), algoritmo 1,
+  equações 1–3, teorema 3.1 e apêndice E: já preserva a distribuição ao remover
+  prefixes comprovadamente inválidos. O teorema R1 não inventa esse princípio.
+  A implementação descrita mantém uma trie e pode continuar rejeitando quando
+  não registra todas as classes de prefixos. Seu oracle perfeito foi concedido
+  ao controle desta investigação, não artificialmente enfraquecido.
+- [Denise e Zimmermann, 1999](https://doi.org/10.1016/S0304-3975(98)00323-5),
+  relatório INRIA 3242, seção 4, proposição 4.2 e teorema 4.3: a geração ADZ
+  já usa intervalos certificados e conserva o número aleatório ao aumentar a
+  precisão. O texto menciona explicitamente dobrar a mantissa. Essa direção
+  foi descartada como novidade baseada apenas em precisão adaptativa.
+- [Björklund e coautores, Fast Zeta Transforms for Lattices with Few
+  Irreducibles](https://thorehusfeldt.com/wp-content/uploads/2010/08/7c52e3293a74298f.pdf),
+  equações 1.1–1.3 e teoremas 1.1–1.3: o produto em reticulados e a compressão
+  por cadeias também são antecedentes; não bastam para reivindicar novo método.
+- [Jha, Gulwani, Seshia e Tiwari, ICSE 2010](https://www.csl.sri.com/users/tiwari/papers/icse2010.pdf),
+  seção 5: seleção de exemplos, teaching dimension e cobertura já são conhecidos.
+  O núcleo suficiente aqui não é apresentado como invenção desses conceitos.
+
+### Contrato e resultados escritos
+
+Fixar gramática LL(1), tokens originais, probabilidades racionais por posição,
+slots físicos e EOS ausente. Os exemplos e suas respostas não alteram a sintaxe,
+o suporte ou os pesos. Cada conclusão deve preservar o canvas comprometido.
+Mudanças de modelo são novas consultas locais, não uma inferência exata da
+trajetória inteira. Zero massa, zero soluções estruturais e recusa de recursos
+são afirmações distintas. A exatidão continua `exact_on_support`.
+
+**R1 — Fluxo exato com orçamento finito de rejeições.** Amostrar condicionado
+apenas nos exemplos ativos; verificar o candidato contra todos os exemplos;
+se falhar, adicionar um exemplo violado. A distribuição de cada saída aceita
+é o produto original condicionado em todos os exemplos. As saídas são iid,
+embora os conjuntos ativos sejam adaptativos. Um lote de N saídas rejeita no
+máximo m candidatos, para m requisitos, desde que as avaliações necessárias
+caibam nos recursos. A prova por indução em requisitos ainda inativos está
+no suplemento. Os pesos e o prompt permanecem fixos após cada falha.
+
+**R2 — Separação de representação, não um benchmark.** N escolhas de `!`/`!!`
+envolvendo uma variável codificam paridade em JsonLogic. Nenhum prefixo próprio
+determina a resposta. Para uma proposta sem qualquer rejeição, exclusões de
+prefixo precisam distinguir pelo menos `2^(n-1)` escolhas inválidas. Isso vale
+com oracle perfeito. Um perfil de execução de um exemplo tem dois estados;
+uma rejeição ativa o exemplo e elimina toda a classe inválida. O compilador
+CFG permanece polinomial em n. A rejeição simples de paridade balanceada usa
+apenas duas tentativas em média; portanto esse resultado não promete ganho de
+latência para a primeira amostra. Um DFA de paridade com dois estados ou outro
+solver semântico compacto compartilha a vantagem. A comparação não é exclusiva.
+
+**R3 — Certificado independente dos pesos.** Para um conjunto ativo A, contar
+separadamente as conclusões que satisfazem A e violam cada exemplo omitido i.
+Usar pesos auxiliares estritamente positivos em todo o suporte, inclusive nos
+tokens cuja probabilidade atual é zero. Se todos os contadores forem zero,
+então satisfazer A equivale a satisfazer todos os exemplos, para cada caminho
+de tokens representado. A equivalência preserva massa e amostragem para
+quaisquer pesos posteriores e sobre contrações do suporte/novos commitments.
+Expansão de suporte, desfazer commitments ou mudar exemplos exige recertificar.
+Certificar com os pesos do modelo, que podem ter zeros, seria incorreto.
+
+O compilador escolhe a maior contagem de violações, com desempate por índice,
+e verifica cada obrigação com `|A|+1` dimensões, sem construir a distribuição
+conjunta dos exemplos omitidos. Encontra um núcleo suficiente, não mínimo.
+Um núcleo sugerido também precisa ser verificado. Um domínio ativo vazio
+certifica impossibilidade estrutural; um limite esgotado continua não resolvido.
+O tamanho ativo permanece limitado a onze para deixar uma dimensão de prova.
+
+### Uso e custo que justificam a operação
+
+O usuário de um gerador de filtros/regras pode declarar muitos exemplos,
+certificar uma vez um núcleo e então amostrar regras válidas sob novas
+probabilidades da dLLM. Os pesos auxiliares são usados apenas na certificação;
+as amostras conservam os pesos reais do modelo e os aliases de tokens.
+
+Há famílias com exemplos distintos e núcleo pequeno: regras monotônicas são
+determinadas nos exemplos pelas fronteiras positivas mínimas e negativas
+máximas. Para o comportamento `f(x)=x_a` no cubo Booleano de d campos, dois
+exemplos de fronteira implicam os `2^d` exemplos. A gramática permanece genérica
+e fórmulas diferentes, como `a and a` e `a or a`, continuam saídas distintas.
+Isso é consequência conhecida de monotonicidade. O compilador não supõe que
+a gramática inteira seja monotônica: ele verifica cada implicação no suporte.
+
+Com F alternativas/células, S suporte, g gramática e núcleo final k, a
+certificação custa `O(m(k+1)(g+S+F)+Fm(k+1)2^k)` operações e usa no máximo
+`O(F2^(k+1)+md)` entradas/dados. Cada nova consulta usa
+`O(g+S+F max(1,k2^k))`. Para T consultas, somar a preparação mais todas as T
+avaliações. Os custos em bits dos inteiros/racionais também são necessários.
+Comparado ao backend denso atual, a dimensão de perfil por consulta cai de
+`2^m` para `2^k`. Isso não é lower bound para todo solver competente de um alvo.
+Núcleo grande ou poucas consultas podem tornar a certificação mais cara.
+
+### Verificação e protocolo antes das medidas
+
+`scripts/exact_commit/adaptive_semantics.py` materializa R1 e R3. O limite de
+trabalho para amostrar é reservado para toda a derivação CNF antes do sorteio;
+uma recusa dependente do caminho escolhido poderia introduzir viés. As recusas
+de refinamento ocorrem entre candidatos completos e encerram a sessão.
+Não há promessa de preempção dura de uma multiplicação inteira.
+
+Seis oráculos novos verificam a lei conjunta de duas saídas por toda a árvore
+de decisões (consolidando intervalos categóricos após verificar todos os
+sorteios inteiros do helper), a lei ponderada do controle de prefixos, a
+família `!`/`!!`, recusas/snapshots, todos os alvos pequenos e certificados sob
+novos pesos, inclusive tokens inicialmente zerados. Enumeradores independentes
+executam árvores JSON, sem usar o parser/normalizador como reconhecedor.
+Lean mecaniza dezesseis resultados selecionados de progresso, prefixos e
+núcleos; lei iid completa, construção CFG e código Python não estão refinados
+em Lean. Revisão humana e prioridade científica não são inferidas desses checks.
+
+O protocolo `configs/experiments/m36_adaptive_semantics_v1.json` foi definido
+antes de executar a auditoria. Usa a captura MDLM já existente e TODOS os 256
+vetores de respostas, com três sementes e quatro amostras por alvo positivo.
+São cinco métodos: fluxo adaptativo, posterior exato ávido compartilhado,
+enumeração compartilhada, controle de trie do algoritmo CARS com oracle
+perfeito por enumeração, e núcleo estrutural certificado. Preparação e consulta
+são separadas; cada núcleo é preparado uma vez por alvo e reutilizado nas
+sementes. Nenhum dado externo novo ou subconjunto de vitórias é inventado.
+A captura é desenvolvimento, não um benchmark externo/held-out. O controle
+de prefixos não mede velocidade do CARS nativo; EPIC nativo tampouco é executado.
+
+Evidência de execução, números e commit produtor serão acrescentados somente
+após o comando real. O artigo principal e sua avaliação histórica continuam
+preservados; o suplemento contém as novas provas e seus limites. A novidade
+defensável é o recorte operacional/implementação de certificação e inferência
+semântica reutilizável em tokens de uma dLLM; prioridade teórica exclusiva e
+superioridade universal não estão estabelecidas. T3603 segue sem comentários
+reais do orientador. Isso não impede continuar as obrigações técnicas autorizadas.

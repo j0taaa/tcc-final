@@ -92,7 +92,9 @@ they remain recoverable at `a98ae8e09f2066157ebf6df05f8873b8600e00fb` and `9deb3
 M34 introduced eight focused posterior tests; M35 extends them to eleven with
 archived recomputation and preprocessing/deadline checks. M36 adds one research
 oracle for confidence-selected commitment events and four focused checks for
-the execution-conditioning research reference. CI runs these sixteen checks;
+the execution-conditioning research reference. The continuation adds four
+adaptive-stream/prefix-control checks and two structural-core checks.
+CI runs these twenty-two checks;
 this is not restoration of the old suite or whole-project correctness. Pinned external
 JSON cases are packed in one small archive, with original hashes and license.
 The opt-in model capture retains only the necessary audited official MDLM CPU
@@ -130,6 +132,27 @@ consumer on eight Boolean records. Both declared positive targets were sampled;
 the impossible canvas target remains zero mass. CI recomputes the archive with
 current code without a model or network. This is an application/reproduction
 check, not an external benchmark or proof of novelty/generalization.
+
+The [adaptive research stream](scripts/exact_commit/adaptive_semantics.py)
+conditions on requirements discovered through rejected rules and verifies
+every declared record before returning tokens. With sufficient resources it
+preserves the exact conditional distribution and rejects at most `m` rules
+over the entire stream, for `m` requirements. Active profiles remain capped
+at twelve; a refusal is unresolved. The supplement proves a scoped exponential
+representation gap for non-prefix behavior against zero-rejection prefix
+exclusion, including CARS's trie; automata and other competent compact semantic
+solvers can share that advantage. The frozen complete-label audit protocol is
+`configs/experiments/m36_adaptive_semantics_v1.json`. It includes eager inference,
+enumeration and a perfect-oracle prefix control, not native EPIC/CARS timing.
+
+`compile_semantic_core` certifies a smaller subset of requirements using
+positive auxiliary weights on every original supported token. Omitted records
+must have exactly zero violating paths, so the certificate survives arbitrary
+new model weights, support contraction and added commitments. Samples still use
+the actual model probabilities. Expansion/released commitments require a new
+certificate. Certification and all later queries are included in the cost
+analysis; neither minimum-core selection nor universal speed superiority is
+promised. A zero model probability alone cannot justify removing a requirement.
 
 [Reproduction](REPRODUCING.md), [baseline provenance](UPSTREAM.md),
 [previous cleanup](docs/evidence/m33-cleanup.md).

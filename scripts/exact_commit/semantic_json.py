@@ -19,7 +19,9 @@ from mwpc_exact.reference.limits import CompilationLimit, WorkBudget
 from mwpc_exact.reference.normalization import NonterminalRef, SourceGrammar, normalize_to_cnf
 
 
-def boolean_rule_grammar(fields: Sequence[str]) -> SourceGrammar:
+def boolean_rule_grammar(
+    fields: Sequence[str], *, identity_operator: bool = False
+) -> SourceGrammar:
     """Recursive rule syntax independent of records, labels and probabilities."""
     if (
         not fields
@@ -32,13 +34,20 @@ def boolean_rule_grammar(fields: Sequence[str]) -> SourceGrammar:
         raise ValueError("fields must be distinct single ASCII letters")
     fields = tuple(sorted(fields))
     b = _SourceGrammarBuilder(
-        ("E", "Body", "And", "Or", "AndTail", "OrTail", "Close", "Not", "Var", "Field"),
+        ("E", "Body", "And", "Or", "AndTail", "OrTail", "Close", "Not", "Var", "Field")
+        + (("Bang", "Identity") if identity_operator else ()),
         start="E",
     )
     b.rule("E", b'{"', "Body")
     b.rule("Body", b'and":[', "And")
     b.rule("Body", b'or":[', "Or")
-    b.rule("Body", b'!":[', "Not")
+    if identity_operator:
+        b.rule("Body", b"!", "Bang")
+        b.rule("Bang", b'":[', "Not")
+        b.rule("Bang", b'!":[', "Identity")
+        b.rule("Identity", "E", b"]}")
+    else:
+        b.rule("Body", b'!":[', "Not")
     b.rule("Body", b'var":"', "Var")
     b.rule("And", "E", "AndTail")
     b.rule("Or", "E", "OrTail")
@@ -209,6 +218,7 @@ def evaluate_semantics(
     *,
     max_profile_entries: int = 1_000_000,
     max_work: int = 10_000_000,
+    identity_operator: bool = False,
 ) -> SemanticPosterior:
     """Exact syntax/execution conditioning; finite work refusal is unresolved.
 
@@ -224,7 +234,7 @@ def evaluate_semantics(
     if any(set(r) != set(fields) or any(type(v) is not bool for v in r.values()) for r in records):
         raise ValueError("records must share exactly the same Boolean fields")
     budget = WorkBudget(max_work=max_work)
-    source = boolean_rule_grammar(fields)
+    source = boolean_rule_grammar(fields, identity_operator=identity_operator)
     binary = _binarize_source(source, budget)
     expected = normalize_to_cnf(binary, budget=budget).grammar
     if plan.grammar != expected or len(plan.cell_heads) != len(plan.terms):

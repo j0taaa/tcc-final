@@ -151,6 +151,27 @@ Use one notebook: `docs/research/contribution-plan.md`.
   Source/archive follow-up `d3223d7` is pushed; Actions run `37705745997`
   passes both jobs and its log confirms all sixteen tests actually ran.
 
+- [ ] T3609: Continue the scientific investigation with execution-counterexample
+  refinement, its exact stream law/finite rejection bound and a competent
+  prefix-representation comparison. Keep classical compact controls explicit.
+  **Acceptance:** proof includes preparation, all-record verification, integer
+  costs, caps and original-token probabilities. Independent stream-law and
+  prefix-control oracles pass; selected finite obligations compile in Lean.
+  Certify a sufficient example core with positive auxiliary weights on the
+  entire support; retain correctness under reweighting, support contraction
+  and new commitments, and reject expansion/released commitments.
+  Audit all 256 labels of the unchanged MDLM capture with three frozen seeds,
+  eager inference, enumeration, perfect-oracle prefix exclusion and certified
+  cores. Preserve
+  zero cases, losses and complete producing provenance; no new favorable corpus.
+  **Evidence:** `make check test check-formal LAKE="$HOME/.elan/bin/lake"`
+  passes 22 focused checks and 66 audited selected Lean statements.
+  Notebook §16 and supplement Theorems R1–R3 include written proofs and costs;
+  `make research-note` builds seven pages. Frozen all-label audit and final
+  visual inspection are pending, so this task is not complete.
+  Scientific priority and external review remain separate from these technical
+  acceptance criteria. No production promotion or native CARS speed claim.
+
 ## M35 — Consolidate posterior correctness gates and bounded compilation
 
 Authorized by the 2026-10-06 review follow-up. Depends on M34. Preserve the
