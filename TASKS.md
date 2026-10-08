@@ -206,8 +206,11 @@ Use one notebook: `docs/research/contribution-plan.md`.
   path before the first valid output with positive probability. Final pages
   are visually inspected. The 768-row archive and its producing commit remain
   unchanged; C1 is a written universal comparison, not a new timing campaign.
-  Kernel/source/priority boundaries stay explicit. Sync is required before
-  reporting delivery.
+  Source `69cf9acaf04bd480a2299bd8af31a1a74423b468` is synchronized and CI
+  [37727393243](https://github.com/j0taaa/tcc-final/actions/runs/37727393243)
+  passes both jobs. Its log confirms all 25 tests (including C1), Rust,
+  3,683 preserved artifacts, the generated table and the Lean audit ran.
+  Kernel/source/priority boundaries stay explicit.
 
 ## M35 — Consolidate posterior correctness gates and bounded compilation
 

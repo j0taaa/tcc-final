@@ -85,6 +85,17 @@ The archive/identifier source `3b983020fa43e1a8e45ebbe460242aa9dc1e6951`
 passes [37725286998](https://github.com/j0taaa/tcc-final/actions/runs/37725286998),
 including all 24 then-existing tests, Rust, artifacts and Lean. That run does
 not include the subsequent C1 oracle.
+The C1 source `69cf9acaf04bd480a2299bd8af31a1a74423b468` passes both jobs in
+[37727393243](https://github.com/j0taaa/tcc-final/actions/runs/37727393243).
+The run log confirms all 25 tests, including weighted/uniform C1 enumeration,
+Rust, all 3,683 protected artifacts, generated-table consistency and Lean.
+
+The family also has literal original-token realizations in the pinned MDLM
+tokenizer `openai-community/gpt2@607a30d783dfa663caf39e06633721c8d4cfcd7e`:
+`!` encodes as token `[0]`, and `!!` as `[3228]`. This was checked offline
+with the existing `.cache/mdlm` tokenizer, without a model forward. The lookup
+establishes token availability, not a uniform real-model prediction or a
+new benchmark win; C1 separately states its weighted extension.
 
 The optional local pinned JsonLogic consumer additionally passed 144 execution
 checks under Node `v24.19.0`: all 16 assignments of four ordinary identifier
