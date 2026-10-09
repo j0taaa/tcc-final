@@ -356,6 +356,52 @@
             "attempts/17-pl-latent-resampling/work",
             "docs/artifacts/raw/m34_cfg_posterior_v1"
           ]
+        },
+        {
+          "id": "v6",
+          "source_commit": "d88b60312a76c05f5069f2cf2c62b9fd774c7a85",
+          "evidence_commit": "a48d476f838f06c3c6ea816754fad496758f3c2b",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/evidence/utility/full-dyadic-replay",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/full-dyadic-oracle.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/full-dyadic-summary.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/provenance.json",
+            "docs/artifacts/raw/m34_cfg_posterior_v1"
+          ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "a861bf1c37bd94e8f47dae440207f350bf5fd9af",
+          "evidence_commit": "a48d476f838f06c3c6ea816754fad496758f3c2b",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/evidence/utility/neural-utility-v1",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/external-source",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/provenance.json",
+            "docs/artifacts/raw/m34_cfg_posterior_v1"
+          ]
+        },
+        {
+          "id": "v8",
+          "source_commit": "ba94688678264160baf8d6f1df5e180da7b7cb0e",
+          "evidence_commit": "a48d476f838f06c3c6ea816754fad496758f3c2b",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/evidence/utility/bulk-utility-v1",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/provenance.json",
+            "docs/artifacts/raw/m34_cfg_posterior_v1"
+          ]
+        },
+        {
+          "id": "v9",
+          "source_commit": "090f7342be683a4847bbe7b6ed290da7978d3ab0",
+          "evidence_commit": "a48d476f838f06c3c6ea816754fad496758f3c2b",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/evidence/utility/bulk-utility-v2",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/neural-utility-v2",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/cached-oracle.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/neural-geometry-verification.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/provenance.json",
+            "docs/artifacts/raw/m34_cfg_posterior_v1"
+          ]
         }
       ]
     }
