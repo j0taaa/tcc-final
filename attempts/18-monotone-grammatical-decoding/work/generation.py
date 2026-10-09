@@ -16,6 +16,7 @@ from enumeration import Enumeration
 from grammar_selectors import CachedPrefix, Recompute
 from monotone import Monotone
 from native_sat import SatPrefix
+from relevant_forest import relevant_forest
 
 from mwpc_exact.cfg_posterior import CompilationLimit, compile_cfg_sampler
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
@@ -68,7 +69,7 @@ def deadline(signum, frame):
     raise TimeoutError("generation_total_deadline")
 
 
-def run_case(model, adapter, source, grammar, example, size, method, config, protocol):
+def run_case(model, adapter, source, grammar, example, size, method, config, protocol, trim=False):
     import torch
 
     device = next(model.parameters()).device
@@ -165,6 +166,9 @@ def run_case(model, adapter, source, grammar, example, size, method, config, pro
                     max_alternatives=limits["alternatives"],
                 ),
             )
+            result["raw_forest"] = dict(nodes=len(plan.terms), alternatives=plan.alternatives)
+            if trim:
+                plan = clock("root_pruning", lambda: relevant_forest(plan))
             result["forest"] = dict(nodes=len(plan.terms), alternatives=plan.alternatives)
             factories = {
                 "monotone": Monotone,
@@ -270,6 +274,9 @@ def main():
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--phase", choices=("development", "heldout"), required=True)
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cpu")
+    parser.add_argument(
+        "--trim", action="store_true", help="Shared classical root-dependency pruning"
+    )
     args = parser.parse_args()
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source/protocol before measurement")
@@ -320,6 +327,10 @@ def main():
         development_keys=[x["key"] for x in dev],
         heldout_keys=[x["key"] for x in heldout],
         device=args.device,
+        root_pruning=args.trim,
+        relevance_addendum_sha256=digest((WORK / "relevance-addendum.json").read_bytes())
+        if args.trim
+        else None,
         gpu_addendum_sha256=digest((WORK / "gpu-addendum.json").read_bytes())
         if args.device == "cuda"
         else None,
@@ -355,7 +366,16 @@ def main():
                     for method in methods[shift:] + methods[:shift]:
                         gc.collect()
                         row = run_case(
-                            model, adapter, source, grammar, example, size, method, config, protocol
+                            model,
+                            adapter,
+                            source,
+                            grammar,
+                            example,
+                            size,
+                            method,
+                            config,
+                            protocol,
+                            trim=args.trim,
                         )
                         row["repetition"] = repetition
                         output.write(json.dumps(row) + "\n")

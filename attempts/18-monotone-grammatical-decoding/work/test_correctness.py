@@ -7,6 +7,7 @@ import unittest
 
 from grammar_selectors import CachedPrefix, Recompute, witness
 from monotone import Monotone
+from relevant_forest import relevant_forest
 
 from mwpc_exact.cfg_posterior import compile_cfg_sampler
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
@@ -84,12 +85,19 @@ class Correctness(unittest.TestCase):
         for emissions, rows in fixtures:
             plan, valid = setup(emissions, rows)
             self.assertTrue(valid)
+            trimmed = relevant_forest(plan)
+            self.assertEqual(relevant_forest(trimmed), trimmed)
+            self.assertLessEqual(trimmed.alternatives, plan.alternatives)
             for trial in range(50):
                 engines = [
-                    Monotone(plan),
-                    Recompute(plan),
-                    Recompute(plan, lex=True),
-                    CachedPrefix(plan),
+                    engine(p)
+                    for p in (plan, trimmed)
+                    for engine in (
+                        Monotone,
+                        Recompute,
+                        lambda p: Recompute(p, lex=True),
+                        CachedPrefix,
+                    )
                 ]
                 canvas = [None] * len(rows)
                 while None in canvas:

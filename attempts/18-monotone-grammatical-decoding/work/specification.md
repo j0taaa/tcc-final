@@ -100,6 +100,15 @@ que adicionar o nome dLLM cria uma nova contribuição teórica.
 
 ## Corolário de uso e limites
 
+Poda comum de relevância: retenha o fechamento transitivo da raiz pelas
+dependências de TODAS as alternativas. Cada derivação da raiz só visita esse
+fechamento, portanto nenhuma conclusão, escolha de token ou objetivo é perdido.
+Conversamente, cada derivação do grafo retido já pertence ao original. A lei
+de massa/amostragem e os seletores são preservados. Essa eliminação clássica
+de células sem contexto custa O(H) e é cobrada igualmente a todos os métodos
+baseados na floresta. O limite amortizado passa a usar H_retido, sem esconder
+H_original pago na compilação/poda. Não constitui novidade científica.
+
 Infilling de JSON com suporte inicial congelado, sem remasking, satisfaz as
 hipóteses. Pode-se conservar a política de confiança e as saídas e pagar uma
 compilação por documento, amortizando a propagação durante a geração. Isso

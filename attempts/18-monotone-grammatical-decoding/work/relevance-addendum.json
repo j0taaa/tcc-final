@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "registered_before_refinement_timings": true,
+  "reason": "Adversarial review found that compiled circuits retain cells with no root context. Competent classical compilation removes them. Original GPU wins must not rely on dead-code work in controls.",
+  "algorithm": "Keep the transitive dependency closure of the root over ALL alternatives; remap in topological order. No probability-based pruning and no choice removal from original support. Root without solutions stays infeasible.",
+  "methods": "Apply the SAME root-dependency pass to greedy_witness, lex_integer, greedy_cached_prefix, monotone and native sat_cached_prefix, before their preparation. Enumeration is independent and unchanged.",
+  "cost": "Charge original compilation AND pruning to each forest decoder, report original/relevant node and alternative counts separately. No prepared-vs-unprepared comparison.",
+  "cases": "All original six development and twelve held-out documents, 4/8/16 masks, top16, threshold/cap/fallback, three rotated repeats. Same CPU and GPU protocols, no outcome-based exclusions or replacing failed cases.",
+  "success": "Unchanged >=20% median total wall AND CPU reduction versus EVERY completed control, favorable sign in all repeats. Exact shared support/proposals/commitments/output; compare with original campaigns as an additional correctness check.",
+  "scientific_scope": "This is a strengthening of competent comparators, not a new theoretical result. Original campaigns remain archived. Publication and native EPIC superiority remain unconfirmed. If prior gains disappear, reject them as a reason to choose this implementation."
+}

@@ -36,6 +36,13 @@ os mesmos documentos/máscaras e custos totais, sem substituir dados originais.
 Os oito critérios permanecem iguais: isso é um controle mais forte, não uma
 nova contribuição ou seleção de casos favoráveis.
 
+[Plano de relevância](work/relevance-addendum.json), congelado antes das novas
+medições, aplica a mesma poda a TODOS os controles de floresta e ao propagador.
+Contabiliza sua execução e preserva todas as derivações da raiz; os oráculos
+independentes verificam trajetórias antes/depois. Reavalia os critérios 3/6/7:
+um ganho perdido frente a controles adequados não será usado para justificar
+adoção. Critérios 1/2/4/5/8 e a divisão de casos permanecem iguais.
+
 ## Contrato e oito critérios
 
 1. **Uso:** completar lacunas de documentos JSON com uma dLLM, preservando
