@@ -25,6 +25,7 @@ from replay import EnumeratedTarget
 from resampling import (
     BaseRejection,
     Problem,
+    RoundedProfiles,
     SingleTilt,
     TangentMixture,
     decision_cache_statistics,
@@ -145,7 +146,7 @@ class Scores:
         return out
 
 
-def variance_oracle(paths, weights, p0, scores, targets, power):
+def variance_oracle(paths, weights, p0, scores, targets, power, strengthened=False):
     groups, all_prob, all_score = {}, [], []
     direction_mean = 0.0
     rates = tuple(tuple(q**power for q in row) for row in p0.probabilities)
@@ -183,7 +184,10 @@ def variance_oracle(paths, weights, p0, scores, targets, power):
         )
         for name, constructor in (
             ("base_imh_rb", BaseRejection),
-            ("single_imh_rb", partial(SingleTilt, dyadic_coefficients=True)),
+            (
+                "single_imh_rb",
+                partial(SingleTilt, dyadic_coefficients=True, precise_envelope=strengthened),
+            ),
         ):
             sampler = constructor(p)
             proposal = np.array(
@@ -260,6 +264,7 @@ def run(args):
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit code/protocol before measuring")
     protocol_path = WORK / "neural-utility-protocol.json"
+    strengthened = args.strengthened
     protocol = json.loads(protocol_path.read_text())
     config = json.loads((ROOT / protocol["model_config"]).read_text())
     torch.set_num_threads(4)
@@ -305,6 +310,11 @@ def run(args):
         adapted_sha256=adapted,
         torch=torch.__version__,
         cpu_threads=4,
+        strengthened=strengthened,
+        methods=7 if strengthened else 6,
+        refinement_sha256=digest((WORK / "envelope-profile-refinement.md").read_bytes())
+        if strengthened
+        else None,
         source_revision=protocol["external_source"]["revision"],
         selected=selected,
     )
@@ -395,7 +405,9 @@ def run(args):
                 )
                 (args.output / f"{key}-input.json").write_text(json.dumps(capture) + "\n")
                 for power in (1, 2):
-                    oracle = variance_oracle(paths, weights, p0, scores, targets, power)
+                    oracle = variance_oracle(
+                        paths, weights, p0, scores, targets, power, args.strengthened
+                    )
                     finite_difference = directional_check(paths, scores, targets, power)
                     derivative_error = abs(finite_difference - oracle["directional_mean"]) / max(
                         1, abs(finite_difference)
@@ -423,21 +435,35 @@ def run(args):
                     rates = tuple(tuple(v**power for v in row) for row in data.probabilities)
                     constructors = [
                         ("base_iid", partial(BaseRejection, tight_bounds=True)),
-                        ("single_iid", partial(SingleTilt, dyadic_coefficients=True)),
+                        (
+                            "single_iid",
+                            partial(
+                                SingleTilt, dyadic_coefficients=True, precise_envelope=strengthened
+                            ),
+                        ),
                         (
                             "mixture_iid",
                             partial(
                                 TangentMixture,
-                                decision_cache_statistics,
                                 dyadic_unaries=True,
                                 tight_bounds=True,
                                 dyadic_coefficients=True,
+                                certify_scale=strengthened,
                             ),
                         ),
                         ("base_imh_rb", partial(BaseRejection, tight_bounds=True)),
-                        ("single_imh_rb", partial(SingleTilt, dyadic_coefficients=True)),
+                        (
+                            "single_imh_rb",
+                            partial(
+                                SingleTilt, dyadic_coefficients=True, precise_envelope=strengthened
+                            ),
+                        ),
                         ("conditional_mean", EnumeratedTarget),
                     ]
+                    if strengthened:
+                        constructors.append(
+                            ("profiles_iid", partial(RoundedProfiles, dyadic_root=True))
+                        )
                     for rollout in range(12):
                         seed = protocol["seed"] + int(key[:8], 16) + 1000 * power + rollout
                         rng = Random(seed)
@@ -593,4 +619,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--strengthened", action="store_true")
     run(parser.parse_args())

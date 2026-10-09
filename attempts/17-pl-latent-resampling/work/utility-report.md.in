@@ -14,7 +14,7 @@ $table
 
 ## Posterior auditado em lote
 
-A campanha contém todos os nove inputs originais: oito compilam, gerando 48 eventos x quatro métodos x três repetições. Foram registrados $accepted draws aceitos e $complete/576 consultas completas de $batch_size draws; a compilação recusada permanece inconclusiva. A mistura vence todos os controles concluídos em tempo de parede e CPU em $wins/48 eventos pelas medianas. Pequenas diferenças na máquina compartilhada não provam superioridade robusta.
+A campanha contém todos os nove inputs originais: oito compilam, gerando 48 eventos x $method_count métodos x três repetições. Foram registrados $accepted draws aceitos e $complete/$query_count consultas completas de $batch_size draws; a compilação recusada permanece inconclusiva. A mistura vence todos os controles concluídos em tempo de parede e CPU em $wins/48 eventos pelas medianas. Pequenas diferenças na máquina compartilhada não provam superioridade robusta.
 
 $statuses
 

@@ -229,11 +229,14 @@ class TangentMixture:
         dyadic_unaries=False,
         tight_bounds=False,
         dyadic_coefficients=False,
+        certify_scale=False,
     ):
         if tight_bounds:
             problem = problem.tightened(end)
         self.problem = p = problem
         self.components = []
+        self.rejection_factor = Q(2)
+        self.certificate_points = 0
         self.component_cdf = None
         self.integer_envelope = None
         if not p.order or not p.hidden or p.L == p.H:
@@ -303,6 +306,11 @@ class TangentMixture:
                 )
             self.integer_envelope = (coefficients, ticks, coefficient_scale * unary_scale**m)
 
+        if certify_scale:
+            from envelope_control import scale_certificate
+
+            self.rejection_factor, self.certificate_points = scale_certificate(p, grid, end)
+
     def envelope(self, path):
         p = self.problem
         if self.integer_envelope is not None:
@@ -323,14 +331,18 @@ class TangentMixture:
     def acceptance(self, path):
         if self.constant:
             return Q(1)
-        acceptance = self.problem.likelihood(path) / (2 * self.envelope(path))
+        acceptance = self.problem.likelihood(path) / (self.rejection_factor * self.envelope(path))
         if not 0 < acceptance <= 1:
             raise AssertionError("invalid certified rejection envelope")
         return acceptance
 
     @property
     def rejection_normalizer(self):
-        return self.problem.f(self.problem.L) * self.mass if self.constant else 2 * self.mass
+        return (
+            self.problem.f(self.problem.L) * self.mass
+            if self.constant
+            else self.rejection_factor * self.mass
+        )
 
     def sample(self, rng, end=None):
         count = 0
@@ -383,7 +395,7 @@ class BaseRejection:
 class SingleTilt(BaseRejection):
     """Classical single exponential proposal with a global endpoint majorant."""
 
-    def __init__(self, problem, end=None, dyadic_coefficients=False):
+    def __init__(self, problem, end=None, dyadic_coefficients=False, precise_envelope=False):
         p = self.problem = problem.tightened(end)
         self.integer_envelope = None
         if not p.order or p.L == p.H:
@@ -400,7 +412,7 @@ class SingleTilt(BaseRejection):
             Q(log_cap) / (p.H - p.L),
             logarithm / (p.H - p.L),
         )
-        delta = p.f(p.H) / 4
+        delta = p.f(p.H) / (1024 if precise_envelope else 4)
         alpha_error = delta / 2 if dyadic_coefficients else delta
         self.upper = max(
             p.f(s) * exp_bounds(t * s, alpha_error / p.f(s), end)[1] for s in (p.L, p.H)
@@ -459,42 +471,141 @@ def select_order(free, rates, path, indices, k, rng):
 class RoundedProfiles:
     """Alternative in section 8, epsilon=1; fixed-tree rounding, not a semiring."""
 
-    def __init__(self, problem):
-        self.problem = p = problem
+    def __init__(
+        self, problem, end=None, dyadic_root=False, max_cells=1000000, max_transitions=3000000
+    ):
+        self.problem = p = problem.tightened(end)
+        self.end = end
+        self.base = WeightedForest.prepare(p.plan, p.evidence_weights, end)
+        if not self.base.mass:
+            raise ValueError("zero evidence mass")
         k, m = len(p.order), len(p.hidden)
-        if not k or not m:
-            raise ValueError("profile oracle requires selected and hidden positions")
+        self.constant = not k or not m or p.L == p.H
+        self.profile_cells = self.profile_transitions = 0
+        self.profile_cache = {}
+        self.backpointers = {}
+        if self.constant:
+            return
         self.gamma = 1 + Q(1, 2 * k * m)
         self.grid = [min(min(p.rates[i]) for i in p.hidden)]
-        self.base = WeightedForest.prepare(p.plan, p.evidence_weights)
         self.profiles = [{} for _ in p.plan.terms]
         for node in p.plan.order:
+            deadline(end)
             profile = self.profiles[node]
             for term in p.plan.terms[node]:
                 if term.choice is not None:
                     i, index = term.choice
-                    value = self.round(p.rates[i][index]) if i in p.hidden else Q()
-                    profile[value] = profile.get(value, 0) + self.base.integers[i][index]
+                    variants = [
+                        (
+                            self.round(p.rates[i][index]) if i in p.hidden else Q(),
+                            (),
+                            self.base.integers[i][index],
+                        )
+                    ]
                 elif not term.children:
-                    profile[Q()] = profile.get(Q(), 0) + 1
+                    variants = [(Q(), (), 1)]
                 else:
                     left, right = term.children
-                    for a, va in self.profiles[left].items():
-                        for b, vb in self.profiles[right].items():
-                            value = self.round(a + b)
-                            profile[value] = profile.get(value, 0) + va * vb
-            self.profiles[node] = {s: v for s, v in profile.items() if v}
+                    variants = (
+                        (self.round(a + b), (a, b), va * vb)
+                        for a, va in self.profiles[left].items()
+                        for b, vb in self.profiles[right].items()
+                    )
+                for value, children, mass in variants:
+                    deadline(end)
+                    if not mass:
+                        continue
+                    self.profile_transitions += 1
+                    if self.profile_transitions > max_transitions:
+                        raise TimeoutError("profile transition budget; unresolved")
+                    if value not in profile:
+                        self.profile_cells += 1
+                        if self.profile_cells > max_cells:
+                            raise TimeoutError("profile cell budget; unresolved")
+                    profile[value] = profile.get(value, 0) + mass
+                    self.backpointers.setdefault((node, value), []).append((term, children, mass))
+        self.root_profiles = tuple(self.profiles[p.plan.root])
+        error = p.f(max(self.root_profiles)) / 1024
+        self.root_upper = {
+            value: dyadic_round_upper(p.f(value), error) if dyadic_root else p.f(value)
+            for value in self.root_profiles
+        }
+        weights = [self.profiles[p.plan.root][v] * self.root_upper[v] for v in self.root_profiles]
+        scale = lcm(*(w.denominator for w in weights))
+        total, self.root_cdf = 0, []
+        for weight in weights:
+            total += weight.numerator * (scale // weight.denominator)
+            self.root_cdf.append(total)
+        self.root_mass = sum(weights, Q())
 
     def round(self, value):
         if not value:
             return Q()
         while self.grid[-1] < value:
+            deadline(self.end)
             self.grid.append(self.grid[-1] * self.gamma)
         return self.grid[bisect_left(self.grid, value)]
+
+    @property
+    def rejection_normalizer(self):
+        if self.constant:
+            return self.problem.f(self.problem.L) * self.base.mass
+        return 2 * self.root_mass * self.base.mass / self.base.inside[self.problem.plan.root]
+
+    def proposal(self, rng):
+        if self.constant:
+            return self.base.sample(rng), None
+        p = self.problem
+        value = self.root_profiles[bisect_right(self.root_cdf, rng.randrange(self.root_cdf[-1]))]
+        output, pending = [None] * len(p.rows), [(p.plan.root, value)]
+        while pending:
+            node, profile = pending.pop()
+            key = (node, profile)
+            alternatives = self.backpointers[key]
+            if key not in self.profile_cache:
+                total, cumulative = 0, []
+                for _, _, mass in alternatives:
+                    total += mass
+                    cumulative.append(total)
+                self.profile_cache[key] = tuple(cumulative)
+            cdf = self.profile_cache[key]
+            term, children, _ = alternatives[bisect_right(cdf, rng.randrange(cdf[-1]))]
+            if term.choice is not None:
+                i, index = term.choice
+                if output[i] is not None:
+                    raise AssertionError("nondecomposable profile choices")
+                output[i] = p.rows[i][index]
+            pending.extend(zip(term.children, children, strict=True))
+        if any(t is None for t in output):
+            raise AssertionError("missing profile token slot")
+        return tuple(output), value
+
+    def acceptance(self, path, profile):
+        return (
+            Q(1)
+            if self.constant
+            else self.problem.likelihood(path) / (2 * self.root_upper[profile])
+        )
+
+    def sample(self, rng, end=None):
+        count = 0
+        while True:
+            deadline(end)
+            path, value = self.proposal(rng)
+            count += 1
+            probability = self.acceptance(path, value)
+            if not 0 < probability <= 1:
+                raise AssertionError("rounded profile envelope violated")
+            if rng.randrange(probability.denominator) < probability.numerator:
+                return path, count
 
     def law(self):
         """Exact integration of the root/profile/backpointer categorical law."""
         p, laws = self.problem, {}
+        if self.constant:
+            from audit import forest_law
+
+            return forest_law(self.base)
         for node in p.plan.order:
             result = {}
             for term in p.plan.terms[node]:
@@ -514,18 +625,18 @@ class RoundedProfiles:
                             result[key] = result.get(key, 0) + va * vb
             laws[node] = {key: mass for key, mass in result.items() if mass}
         root = laws[p.plan.root]
-        z = sum((v * p.f(s) for (s, _), v in root.items()), Q())
+        z = sum((v * self.root_upper[s] for (s, _), v in root.items()), Q())
         accepted, success = {}, Q()
         for (s, pairs), weight in root.items():
             path = tuple(token for _, token in pairs)
             actual = p.total_rate(path)
             assert actual <= s <= self.gamma ** len(p.hidden) * actual
             assert p.f(s) <= p.f(actual) <= 2 * p.f(s)
-            probability = weight * p.f(s) / z
-            acceptance = p.f(actual) / (2 * p.f(s))
+            probability = weight * self.root_upper[s] / z
+            acceptance = self.acceptance(path, s)
             accepted[path] = accepted.get(path, Q()) + probability * acceptance
             success += probability * acceptance
-        assert 1 / success <= 2
+        assert 1 / success <= 2 * (1 + Q(1, 1024))
         return {path: mass / success for path, mass in accepted.items()}
 
 
@@ -537,7 +648,10 @@ def decision_cache_statistics(sampler):
         else [component for _, _, component in getattr(sampler, "components", ())]
     )
     cdfs = [cdf for forest in forests for cdf in forest.decision_cache.values()]
+    cdfs.extend(getattr(sampler, "profile_cache", {}).values())
     return {
+        "profile_cells": getattr(sampler, "profile_cells", 0),
+        "profile_transitions": getattr(sampler, "profile_transitions", 0),
         "cdf_nodes": len(cdfs),
         "cdf_entries": sum(map(len, cdfs)),
         "cdf_integer_bits": sum(value.bit_length() for cdf in cdfs for value in cdf),

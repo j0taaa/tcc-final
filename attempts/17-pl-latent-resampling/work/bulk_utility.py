@@ -18,6 +18,7 @@ from replay import EnumeratedTarget, recognized
 from resampling import (
     BaseRejection,
     Problem,
+    RoundedProfiles,
     SingleTilt,
     TangentMixture,
     WeightedForest,
@@ -35,7 +36,7 @@ WORK = Path(__file__).resolve().parent
 ROOT = WORK.parents[2]
 
 
-def run(output, batch_size=1024):
+def run(output, batch_size=1024, strengthened=False):
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source and protocol before measuring")
     protocol_path = WORK / "bulk-utility-protocol.json"
@@ -49,13 +50,19 @@ def run(output, batch_size=1024):
         (
             "mixture",
             partial(
-                TangentMixture, dyadic_unaries=True, tight_bounds=True, dyadic_coefficients=True
+                TangentMixture,
+                dyadic_unaries=True,
+                tight_bounds=True,
+                dyadic_coefficients=True,
+                certify_scale=strengthened,
             ),
         ),
         ("base", partial(BaseRejection, tight_bounds=True)),
-        ("single", partial(SingleTilt, dyadic_coefficients=True)),
+        ("single", partial(SingleTilt, dyadic_coefficients=True, precise_envelope=strengthened)),
         ("enumeration", EnumeratedTarget),
     ]
+    if strengthened:
+        methods.append(("profiles", partial(RoundedProfiles, dyadic_root=True)))
     output.mkdir(parents=True, exist_ok=False)
     (output / "metadata.json").write_text(
         json.dumps(
@@ -66,6 +73,13 @@ def run(output, batch_size=1024):
                 protocol_sha256=hashlib.sha256(protocol_path.read_bytes()).hexdigest(),
                 source_inputs=manifest["files"],
                 batch_size=batch_size,
+                methods=[name for name, _ in methods],
+                strengthened=strengthened,
+                refinement_sha256=hashlib.sha256(
+                    (WORK / "envelope-profile-refinement.md").read_bytes()
+                ).hexdigest()
+                if strengthened
+                else None,
                 precision_addendum_sha256=hashlib.sha256(addendum.read_bytes()).hexdigest()
                 if batch_size == 4096
                 else None,
@@ -192,6 +206,9 @@ def run(output, batch_size=1024):
                             )
                             if sampler is not None:
                                 row.update(decision_cache_statistics(sampler))
+                                row["rejection_factor"] = str(
+                                    getattr(sampler, "rejection_factor", "not_applicable")
+                                )
                             emit(row)
                     print(archived["case"], power, k, "bulk recorded", flush=True)
 
@@ -200,5 +217,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--batch-size", type=int, choices=(1024, 4096), default=1024)
+    parser.add_argument("--strengthened", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.batch_size)
+    run(args.output, args.batch_size, args.strengthened)

@@ -18,6 +18,7 @@ METHOD_VARIANCE = {
     "base_iid": "two_iid",
     "single_iid": "two_iid",
     "mixture_iid": "two_iid",
+    "profiles_iid": "two_iid",
     "base_imh_rb": "base_imh_rb",
     "single_imh_rb": "single_imh_rb",
     "conditional_mean": "conditional_mean",
@@ -31,7 +32,12 @@ def read_rows(folder):
 def neural(folder):
     rows = read_rows(folder)
     meta = json.loads((folder / "metadata.json").read_text())
-    assert len(meta["selected"]) == 6 and len(rows) == 2748
+    active = {
+        name: variance
+        for name, variance in METHOD_VARIANCE.items()
+        if name != "profiles_iid" or meta.get("strengthened", False)
+    }
+    assert len(meta["selected"]) == 6 and len(rows) == 156 + 432 * len(active)
     assert all(row["status"] == "complete" for row in rows)
     cases = []
     for case in meta["selected"]:
@@ -41,7 +47,7 @@ def neural(folder):
             baseline = [r for r in chosen if r["stage"] == "neural_cost"]
             assert len(baseline) == 12
             comparisons = {}
-            for method, vname in METHOD_VARIANCE.items():
+            for method, vname in active.items():
                 extra = [r for r in chosen if r["stage"] == "extra_cost" and r["method"] == method]
                 assert len(extra) == 36
                 ratios = defaultdict(list)
@@ -116,7 +122,8 @@ def bulk(folder):
     runs, inputs, _ = load_inputs()
     assert {r["case"] for r in rows} == {r["case"] for r in runs["json-model"]["rows"]}
     queries = [r for r in rows if r["stage"] == "query"]
-    assert len(queries) == 576
+    methods = metadata.get("methods", ["mixture", "base", "single", "enumeration"])
+    assert len(queries) == 144 * len(methods)
     groups = {}
     for row in queries:
         key = (row["case"], row["power"], row["k"], row["repetition"], row["method"])
@@ -143,7 +150,7 @@ def bulk(folder):
     comparisons = []
     for event in events:
         values = {}
-        for method in ("mixture", "base", "single", "enumeration"):
+        for method in methods:
             selected = [groups[(*event, rep, method)] for rep in range(3)]
             values[method] = dict(
                 statuses=[r["status"] for r in selected],
@@ -184,10 +191,12 @@ def bulk(folder):
     return dict(
         producer=metadata["producer"],
         batch_size=batch_size,
+        methods=methods,
+        query_count=len(queries),
         events=comparisons,
         statuses={
             method: dict(Counter(r["status"] for r in queries if r["method"] == method))
-            for method in ("mixture", "base", "single", "enumeration")
+            for method in methods
         },
         compile_refusals=[r for r in rows if r["stage"] == "compile"],
         accepted_draws=sum(r["accepted"] for r in queries),
@@ -233,7 +242,7 @@ def build(args):
         )
         < min(
             median(c["comparisons"][m]["relative_cost_times_variance"]["neural_wall_floor"])
-            for m in METHOD_VARIANCE
+            for m in c["comparisons"]
             if m != "conditional_mean"
         )
         for c in configs
@@ -271,6 +280,8 @@ def build(args):
         accepted=f"{b['accepted_draws']:,}",
         complete=b["completed_queries"],
         batch_size=b["batch_size"],
+        method_count=len(b["methods"]),
+        query_count=b["query_count"],
         wins=len(wins),
         statuses="\n".join(statuses),
         winner_details="\n\n".join(details) if details else "Nenhum evento.",

@@ -123,7 +123,13 @@ def forest_law(base):
 
 
 def check_problem(
-    p, paths, dyadic_unaries=False, tight_bounds=False, single_tilt=False, dyadic_coefficients=False
+    p,
+    paths,
+    dyadic_unaries=False,
+    tight_bounds=False,
+    single_tilt=False,
+    dyadic_coefficients=False,
+    strengthened=False,
 ):
     target = {
         y: w * direct_pl(y, p.order, p.free, p.rates, p.indices)
@@ -140,6 +146,7 @@ def check_problem(
         dyadic_unaries=dyadic_unaries,
         tight_bounds=tight_bounds,
         dyadic_coefficients=dyadic_coefficients,
+        certify_scale=strengthened,
     )
     rejection = BaseRejection(p, tight_bounds=tight_bounds)
     proposal = defaultdict(Q)
@@ -161,9 +168,13 @@ def check_problem(
         y: w / z for y, w in target.items()
     }
     if p.order and p.hidden:
-        assert RoundedProfiles(p).law() == {y: w / z for y, w in target.items()}
+        assert RoundedProfiles(p, dyadic_root=strengthened).law() == {
+            y: w / z for y, w in target.items()
+        }
     if single_tilt:
-        single = SingleTilt(p, dyadic_coefficients=dyadic_coefficients)
+        single = SingleTilt(
+            p, dyadic_coefficients=dyadic_coefficients, precise_envelope=strengthened
+        )
         law = forest_law(single.base)
         accepted_single = {y: prob * single.acceptance(y) for y, prob in law.items()}
         single_success = sum(accepted_single.values(), Q())
@@ -175,7 +186,11 @@ def check_problem(
     for path, weight in target.items():
         assert p.likelihood(path) == weight / paths[path]
         if not mixture.constant:
-            assert p.likelihood(path) <= 2 * mixture.envelope(path) <= bound * p.likelihood(path)
+            assert (
+                p.likelihood(path)
+                <= mixture.rejection_factor * mixture.envelope(path)
+                <= bound * p.likelihood(path)
+            )
     for method in (mixture, rejection):
         for seed in range(2):
             path, _ = method.sample(Random(seed))
@@ -184,7 +199,12 @@ def check_problem(
 
 
 def correctness(
-    max_n=4, dyadic_unaries=False, tight_bounds=False, single_tilt=False, dyadic_coefficients=False
+    max_n=4,
+    dyadic_unaries=False,
+    tight_bounds=False,
+    single_tilt=False,
+    dyadic_coefficients=False,
+    strengthened=False,
 ):
     events = paths_checked = 0
     for n in range(1, max_n + 1):
@@ -213,6 +233,7 @@ def correctness(
                                 tight_bounds,
                                 single_tilt,
                                 dyadic_coefficients,
+                                strengthened,
                             )
                             events += 1
             print(
@@ -240,6 +261,7 @@ def correctness(
                     tight_bounds,
                     single_tilt,
                     dyadic_coefficients,
+                    strengthened,
                 )
                 events += 1
     plan, data = fixture(2)
@@ -248,7 +270,7 @@ def correctness(
     for order in [(), (1,), (1, 3)]:
         p = Problem(plan, data.probabilities, rates, order, {i: 3 for i in order})
         paths_checked += check_problem(
-            p, paths, dyadic_unaries, tight_bounds, single_tilt, dyadic_coefficients
+            p, paths, dyadic_unaries, tight_bounds, single_tilt, dyadic_coefficients, strengthened
         )
         events += 1
     return {"events": events, "conditional_original_paths": paths_checked, "exact_mismatches": 0}
@@ -431,6 +453,7 @@ def main():
     parser.add_argument("--tight-bounds", action="store_true")
     parser.add_argument("--single-tilt", action="store_true")
     parser.add_argument("--dyadic-coefficients", action="store_true")
+    parser.add_argument("--strengthened", action="store_true")
     args = parser.parse_args()
     start = perf_counter()
     report = {
@@ -439,11 +462,13 @@ def main():
         "tight_bounds": args.tight_bounds,
         "single_tilt": args.single_tilt,
         "dyadic_coefficients": args.dyadic_coefficients,
+        "strengthened": args.strengthened,
         "correctness": correctness(
             dyadic_unaries=args.dyadic,
             tight_bounds=args.tight_bounds,
             single_tilt=args.single_tilt,
             dyadic_coefficients=args.dyadic_coefficients,
+            strengthened=args.strengthened,
         ),
         "gradient": gradient_audit(),
         "elapsed_seconds": perf_counter() - start,
