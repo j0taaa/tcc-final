@@ -73,12 +73,19 @@ def main():
             if len({r[field] for r in exact if field in r}) > 1:
                 raise ValueError(f"unequal exact {field} for {case}/{masks}")
         all_local = methods.get("local", [])
-        conclusive = len(all_local) > 0 and all(r["status"] == "complete" for r in all_local)
+        required_repeats = (
+            protocol["fresh_repetitions"]
+            if metadata["capture"]["phase"] == "fresh"
+            else protocol["repetitions"]
+        )
+        conclusive = len(all_local) == required_repeats and all(
+            r["status"] == "complete" for r in all_local
+        )
         benefit = conclusive
-        for comparator in ("raw", "global"):
+        for comparator in ("raw", "global", "position"):
             controls = methods.get(comparator, [])
             comparison = dict(comparator=comparator)
-            if not controls or not conclusive:
+            if len(controls) != required_repeats or not conclusive:
                 comparison["utility"] = False
             elif all(r["status"] == "resource_refusal" for r in controls):
                 comparison.update(utility=True, reason="capacity_at_equal_predeclared_limits")
@@ -125,7 +132,7 @@ def main():
                 )
             if item["sampling"].get("useful"):
                 sampling_wins.append([case, masks])
-        for method in ("raw", "global", "local"):
+        for method in ("raw", "global", "position", "local"):
             mass = item["methods"].get(method, {}).get("valid_mass")
             if mass is not None and Fraction(mass) > 0:
                 item["expected_rejection_attempts"] = float(1 / Fraction(mass))

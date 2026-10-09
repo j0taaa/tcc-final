@@ -23,10 +23,11 @@ class Prepared:
         max_terms=5_000_000,
         timeout_seconds=120,
     ):
-        if kind not in ("raw", "global", "local"):
+        if kind not in ("raw", "global", "position", "local"):
             raise ValueError("unknown representation")
         self.table, self.canvas, self.kind = table, tuple(canvas), kind
         self.members, self.source_state = {}, {}
+        self.position_groups, self.position_of = {}, {}
         self.rows = []
         edges, closes = [], {}
         layer, vertices = {OUT: 0}, 1
@@ -40,6 +41,28 @@ class Prepared:
 
         for p, fixed in enumerate(canvas):
             pending, codes = [], set()
+            if kind == "position" and fixed is not None:
+                self.position_groups[p] = ((table.class_of[fixed],),)
+                self.position_of[p] = (0,) * len(table.classes)
+                position_members = ((fixed,),)
+            elif kind == "position":
+                # Competent per-variable quotient: ignore unreachable incoming
+                # states, but retain ALL reachable states, not a witness/gold state.
+                signatures, groups, mapping = {}, [], []
+                for cid in range(len(table.classes)):
+                    signature = tuple(table.class_to_local[q][cid] for q in sorted(layer))
+                    code = signatures.get(signature)
+                    if code is None:
+                        code = len(groups)
+                        signatures[signature] = code
+                        groups.append([])
+                    groups[code].append(cid)
+                    mapping.append(code)
+                self.position_groups[p] = tuple(map(tuple, groups))
+                self.position_of[p] = tuple(mapping)
+                position_members = tuple(
+                    tuple(t for cid in group for t in table.classes[cid]) for group in groups
+                )
             for q, node in sorted(layer.items()):
                 if fixed is not None:
                     gid = table.by_token[q][fixed]
@@ -56,6 +79,12 @@ class Prepared:
                         for cid, gid in enumerate(table.class_to_local[q])
                         if gid >= 0
                     )
+                elif kind == "position":
+                    candidates = (
+                        (code, gid, position_members[code])
+                        for code, group in enumerate(self.position_groups[p])
+                        if (gid := table.class_to_local[q][group[0]]) >= 0
+                    )
                 else:
                     candidates = ((gid, gid, table.groups[gid][3]) for gid in table.by_state[q])
                 for code, gid, members in candidates:
@@ -66,6 +95,8 @@ class Prepared:
                             if kind == "raw"
                             else table.class_of[fixed]
                             if kind == "global"
+                            else self.position_of[p][table.class_of[fixed]]
+                            if kind == "position"
                             else gid
                         )
                     self.members[p, code] = members

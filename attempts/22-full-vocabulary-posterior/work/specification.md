@@ -71,3 +71,13 @@ dos restantes escolhe somente t. A prova de massa/lei não muda. Bytes inicialme
 fixados continuam fixados; tokenizer, gramática, n e política EOS são imutáveis.
 Não é a API atual topK: esta capacidade pressupõe TODOS os originais retidos
 nas lacunas iniciais, e não demonstra novidade geral de planos reutilizáveis.
+
+
+**Controle global por posição (v2).** Determine os estados lexicais alcançáveis
+ANTES do slot pelas escolhas de TODOS os originais nas lacunas prefixas e dos
+originais inicialmente fixados, sem usar pesos ou gabarito. Restrinja as
+assinaturas globais a esse conjunto de estados; uniões de classes originais
+com assinatura igual são uma partição própria por variável, admitida pelo
+quociente clássico. Não usa uma testemunha arbitrária. Agregue pesos somando
+as classes refinadas e expanda marginais pela classe daquele slot. Todas as
+provas acima continuam válidas. A preparação correspondente entra na medição.

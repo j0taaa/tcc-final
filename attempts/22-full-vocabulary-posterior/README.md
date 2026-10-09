@@ -20,7 +20,9 @@ Fontes independentes de21; nenhuma dependência mutável de outra tentativa.
 3. **Por que escolher:** exatidão no vocabulário inteiro, não exact_on_topK;
    dimensões do parsing dependem do efeito lexical em vez de50000 folhas de
    tokens. Comparar lexer com originais, classes globais (competente) e locais;
-   todos usam o mesmo parser, gramática e tabela lexical. Rejeição exata é
+   todos usam o mesmo parser, gramática e tabela lexical. O controle global por
+   posição usa APENAS estados alcançáveis por prefixos lexicais, sem gabarito.
+   Rejeição exata é
    controle de amostragem, não calcula massa/marginais exatas finitamente.
 4. **Matemática:** cada original determina caminho lexical e grupos únicos;
    fechar grupo tem peso soma dos originais. Inside calcula massa; derivadas
@@ -59,3 +61,13 @@ Antecedentes:
 [SynCode](https://arxiv.org/html/2403.01632v3),
 [DOMINO](https://arxiv.org/abs/2403.06988),
 [Opedal et al.2023](https://aclanthology.org/2023.acl-long.204.pdf).
+
+
+Refinamento v2 antes da confirmação fresca:116/216 registros da rodada v1
+preservados em work/evidence/development-v1-partial. Sem conclusão confirmada:
+faltava controle de quociente por posição e os limites de contagem podiam
+causar recusa antes de esgotar tempo/memória. Interrompemos a rodada inteira,
+sem excluir caso desfavorável. Mesmos floats de modelo capturados em f900bd7.
+A nova rodada compara CINCO métodos, com guardas10x maiores,120s/8GiB iguais.
+Métricas/limiar20% não mudam. A classificação por posição é antecedente
+conhecido; pode eliminar o benefício. Repetir TODOS os casos de desenvolvimento.

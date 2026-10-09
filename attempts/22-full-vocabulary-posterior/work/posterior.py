@@ -60,6 +60,8 @@ class Posterior:
                 mass = weights.at(p, c)
             elif prepared.kind == "global":
                 mass = self.class_weights[p][c]
+            elif prepared.kind == "position":
+                mass = sum(self.class_weights[p][cid] for cid in prepared.position_groups[p][c])
             else:
                 mass = sum(self.class_weights[p][cid] for cid in table.local_to_class[c])
             self.leaf[p, c] = mass
@@ -171,6 +173,11 @@ class Posterior:
                 ]
             elif self.prepared.kind == "global":
                 factors = [coefficient.get((p, cid), 0) for cid in range(len(table.classes))]
+            elif self.prepared.kind == "position":
+                factors = [
+                    coefficient.get((p, self.prepared.position_of[p][cid]), 0)
+                    for cid in range(len(table.classes))
+                ]
             else:
                 factors = None
             row = tuple(

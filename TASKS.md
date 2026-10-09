@@ -2349,3 +2349,11 @@ Fill this section only with real artifacts.
   complete, 897 equal comparisons, zero strong wins primary/secondary against
   all noncontextual controls. Archive commands/data/statuses/provenance.
   Do not weaken gate or expand this candidate to heldout/fresh. Utility goal open.
+
+
+- [x] T4203: Preserve incomplete v1 full-vocabulary campaign (116/216 rows,
+ 91 complete,25 refusals), explicit interruption. Do NOT call it confirmed:
+ add per-position reachable-state quotient as competent comparator; increase
+ count guards10x, keep120s/8GiB physics equally. Written proof/oracles cover
+ all FOUR exact representations, including clamps and remasking. Freeze v2
+ before timings on SAME archived full model floats; no fresh case evaluated.

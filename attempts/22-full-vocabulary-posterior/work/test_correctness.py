@@ -112,7 +112,7 @@ class FullVocabularyCorrectness(unittest.TestCase):
                 row[0] += 1
             weights = Weights(raw, canvas, len(emissions))
             _, total, marginal = enumerate_expected(table, canvas, weights)
-            for kind in ("raw", "global", "local"):
+            for kind in ("raw", "global", "position", "local"):
                 prepared = Prepared(table, canvas, lexical_grammar(), kind)
                 result = Posterior(prepared, weights)
                 self.assertEqual(result.total, total, (case, kind))
@@ -138,7 +138,7 @@ class FullVocabularyCorrectness(unittest.TestCase):
             weights = Weights(raw, canvas, 6)
             expected, total, _ = enumerate_expected(table, canvas, weights)
             law = {word: Fraction(w, total) for word, w in expected.items() if w}
-            for kind in ("raw", "global", "local"):
+            for kind in ("raw", "global", "position", "local"):
                 posterior = Posterior(Prepared(table, canvas, lexical_grammar(), kind), weights)
                 self.assertEqual(sampler_law(posterior), law)
 
@@ -147,7 +147,7 @@ class FullVocabularyCorrectness(unittest.TestCase):
             CompositionalByteLevelAdapter((b'"', b"a", b"b", b"0", b" ", b"\xc3", b"\xa1"))
         )
         frames = ((0, None, None, 0), (0, 1, None, 0), (0, None, 6, 0), (0, None, None, 0))
-        for kind in ("raw", "global", "local"):
+        for kind in ("raw", "global", "position", "local"):
             prepared = Prepared(table, frames[0], lexical_grammar(), kind)
             for step, canvas in enumerate(frames):
                 probabilities = [[1 + ((t + step) % 3) for t in range(7)] for _ in canvas]

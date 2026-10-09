@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 2,
   "purpose": "Full original-vocabulary exact JSON posterior, original marginals and sampling",
   "seed": 2026100918,
   "external": {
@@ -25,16 +25,17 @@
   "methods": [
     "raw",
     "global",
+    "position",
     "local",
     "rejection"
   ],
-  "comparison": "Same rooted CNF parser, same common full lexical table including global refinement, fixed original frames and exact normalized rational probabilities. Global quotient competent, raw uses lexical memoization; no native EPIC mass comparison since it does not compute this law. Table/grammar/model startup recorded cold/prepared, shared forward and rational input conversion costs charged to each operation. No claim of full-generation timing from frozen inference.",
+  "comparison": "Same rooted CNF parser, same common full lexical table including global refinement, fixed original frames and exact normalized rational probabilities. Global quotient competent, raw uses lexical memoization; no native EPIC mass comparison since it does not compute this law. Table/grammar/model startup recorded cold/prepared, shared forward and rational input conversion costs charged to each operation. No claim of full-generation timing from frozen inference. Position quotient refines only lexical-prefix reachable states at each physical slot; mandatory competent control. Count guards raised10x to avoid a capacity claim from a small chart budget; memory8GiB and whole-operation120s identical.",
   "repetitions": 3,
   "fresh_repetitions": 9,
   "limits": {
-    "max_edges": 2000000,
-    "max_cells": 1000000,
-    "max_terms": 5000000,
+    "max_edges": 10000000,
+    "max_cells": 10000000,
+    "max_terms": 50000000,
     "timeout_seconds": 120,
     "rejection_seconds": 120,
     "rejection_attempts": 2000000,
@@ -42,8 +43,12 @@
   },
   "success": {
     "correctness": "Mass and all original marginal numerator vectors EXACTLY agree among every conclusive exact method. Samples satisfy strict UTF8 JSON and fixed original IDs; independent law oracles before model.",
-    "utility": "At least20% median prepared operation total wall AND CPU (includes shared real forward/input conversion) against all other concluded exact methods, favorable sign each repetition, OR genuine additional full-vocabulary capacity versus all competent exact controls at equal declared resource limits. No usefulness claim from failure of only raw if global solves cheaper. Sampling superiority compared separately with rejection on same rational law/cost; retain all losses.",
+    "utility": "At least20% median prepared operation total wall AND CPU (includes shared real forward/input conversion) against all other concluded exact methods including the per-position quotient, favorable sign each repetition, OR genuine additional full-vocabulary capacity versus all competent exact controls at equal declared resource limits. No usefulness claim from failure of only raw if global solves cheaper. Sampling superiority compared separately with rejection on same rational law/cost; retain all losses.",
     "confirmation": "All external dev6 known cases/masks, then heldout12 refinement and six never-model-tested cases if development gate passes. Fresh nine rotations all methods, no selection by outcome. Count refusals/zero masses/failures.",
     "claims": "No general theoretical novelty, semantic accuracy, whole-decoder speed, training, native EPIC superiority, human review or publication acceptance from this experiment."
+  },
+  "amendment": {
+    "previous_source_commit": "f900bd7a",
+    "reason": "Before fresh evaluation, strengthen global quotient to the per-variable reachable-state quotient and raise counter guards.116/216 original v1 rows preserved; interrupt whole campaign, no case selected/excluded. No v1 confirmed utility claim. Reuse SAME frozen model probabilities; new source/protocol frozen before v2 timing."
   }
 }

@@ -1,0 +1,8 @@
+{
+  "rows": 116,
+  "planned_rows": 216,
+  "source_commit": "f900bd7a",
+  "raw_sha256": "35ef0a0dcd74241a7c99f57d1a3d35fff14f6ec46f4f4bc76a76af2bfb9265df",
+  "reason": "Before fresh evaluation, strengthen global quotient to the per-variable reachable-state quotient and raise counter guards.116/216 original v1 rows preserved; interrupt whole campaign, no case selected/excluded. No v1 confirmed utility claim. Reuse SAME frozen model probabilities; new source/protocol frozen before v2 timing.",
+  "interrupted_next_case": "0a4b768a-16"
+}

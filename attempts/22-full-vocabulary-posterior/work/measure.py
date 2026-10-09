@@ -214,7 +214,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--capture", type=Path, required=True)
     parser.add_argument("--case", required=True)
-    parser.add_argument("--method", choices=("raw", "global", "local", "rejection"), required=True)
+    parser.add_argument(
+        "--method", choices=("raw", "global", "position", "local", "rejection"), required=True
+    )
     parser.add_argument("--repeat", type=int, required=True)
     parser.add_argument("--matrices", type=Path, required=True)
     args = parser.parse_args()
