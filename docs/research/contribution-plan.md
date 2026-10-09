@@ -1397,3 +1397,18 @@ contextual-specification.md, protocolo ALL19 comparadores antes dos forwards.
 Lexer separado/eliminação condicionada/GAC são conhecidos. A contribuição
 candidata é integração útil e exata com atualização de suporte, não novo
 princípio universal; prioridade e publicação permanecem não confirmadas.
+
+## 2026-10-09 — Posterior sem cauda topK, tentativa22
+
+Tentativa21:1.026 registros MDLM/CUDA,897 comparações iguais, nenhum ganho
+predeclarado contra todos os controles. Não relaxar o critério nem expandir
+a hipótese refutada. A tentativa22 muda a operação para massa/marginais/
+amostragem exatas no vocabulário inteiro, não só seleção max/commitment.
+Classes locais sobrepostas têm somas e outside; refinamento global permite
+expandir marginais originais sem loop nSV com inteiros grandes. Antecedentes
+de semiring/quotient/inferência clássica reconhecidos, novidade teórica não
+confirmada. Quatro oráculos offline e o driver pequeno passam, antes do modelo.
+Protocolo congelado inclui custo de entrada completa, saída dos marginais,
+compilação, startup e um forward real comum, controles globais/locais/raw
+igualmente lexicais e rejeição racional para operação de amostragem.
+Só medir confirmação fresca se passar no desenvolvimento; preservar tudo.

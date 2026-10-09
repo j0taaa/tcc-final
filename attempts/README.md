@@ -118,4 +118,10 @@ inicial será congelada após o commit do código/protocolo, antes dos timings.
 21. [Grupos dependentes de estado lexical](21-contextual-token-groups/README.md):
     protótipo e prova escrita delimitada, sobreposição de membros e crescimento
     seguro. Todos os controles byte/lexer/classes globais preservados.
-    Benefício ainda não medido; não apresentar princípios clássicos como novos.
+    1.026 registros e897 comparações iguais, nenhum ganho forte contra controles
+    lexicais/globais. Resultado negativo preservado; fundamentos conhecidos.
+
+22. [Posterior no vocabulário inteiro](22-full-vocabulary-posterior/README.md):
+    representação lexical de massa, marginais e amostras exatas sobre TODOS os
+    originais; classes globais/locais e rejeição como controles. Provas escritas
+    delimitadas e quatro oráculos passam. Utilidade/novidade ainda não confirmadas.

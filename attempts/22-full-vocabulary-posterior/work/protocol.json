@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "purpose": "Full original-vocabulary exact JSON posterior, original marginals and sampling",
+  "seed": 2026100918,
+  "external": {
+    "repository": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
+    "revision": "5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8",
+    "scope": "tests/draft2020-12/*.json, all object/array data regardless of schema validity, canonical compact sorted-key ASCII JSON; distinct documents",
+    "eligible_tokens": [
+      16,
+      96
+    ],
+    "selection": "Original hash-selected six development,twelve refinement evaluation,next six fresh confirmations. First18 seen in attempt18; last6 were not timed or run through any model in attempt18. No selection by results.",
+    "masking": "For each size, sample positions uniformly without replacement by Random(seed+int(document_hash[:12],16)+size). Boundary and structure tokens are eligible too.",
+    "license": "MIT, preserve source attribution/license and selected source files"
+  },
+  "model_config": "configs/experiments/m31_probability_scaling_cpu_v1.json",
+  "mask_counts": [
+    4,
+    8,
+    16
+  ],
+  "scope": "Pinned full MDLM original vocabulary (50258 including mask/control IDs); no topK or injected reference tokens; fixed original positions delta, EOS absent; rational normalized F64 softmax of one frozen step",
+  "operation": "Return exact full valid mass, all original marginals, one exact sample; separately record mass+sample cost and exact rejection first sample, not compare rejected operation with mass/marginal API",
+  "methods": [
+    "raw",
+    "global",
+    "local",
+    "rejection"
+  ],
+  "comparison": "Same rooted CNF parser, same common full lexical table including global refinement, fixed original frames and exact normalized rational probabilities. Global quotient competent, raw uses lexical memoization; no native EPIC mass comparison since it does not compute this law. Table/grammar/model startup recorded cold/prepared, shared forward and rational input conversion costs charged to each operation. No claim of full-generation timing from frozen inference.",
+  "repetitions": 3,
+  "fresh_repetitions": 9,
+  "limits": {
+    "max_edges": 2000000,
+    "max_cells": 1000000,
+    "max_terms": 5000000,
+    "timeout_seconds": 120,
+    "rejection_seconds": 120,
+    "rejection_attempts": 2000000,
+    "address_space_gib": 8
+  },
+  "success": {
+    "correctness": "Mass and all original marginal numerator vectors EXACTLY agree among every conclusive exact method. Samples satisfy strict UTF8 JSON and fixed original IDs; independent law oracles before model.",
+    "utility": "At least20% median prepared operation total wall AND CPU (includes shared real forward/input conversion) against all other concluded exact methods, favorable sign each repetition, OR genuine additional full-vocabulary capacity versus all competent exact controls at equal declared resource limits. No usefulness claim from failure of only raw if global solves cheaper. Sampling superiority compared separately with rejection on same rational law/cost; retain all losses.",
+    "confirmation": "All external dev6 known cases/masks, then heldout12 refinement and six never-model-tested cases if development gate passes. Fresh nine rotations all methods, no selection by outcome. Count refusals/zero masses/failures.",
+    "claims": "No general theoretical novelty, semantic accuracy, whole-decoder speed, training, native EPIC superiority, human review or publication acceptance from this experiment."
+  }
+}

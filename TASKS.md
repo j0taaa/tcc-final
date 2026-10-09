@@ -16,6 +16,25 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M42 — Full original-vocabulary posterior, without discarded topK mass
+
+- [x] T4200: Define attempt22 independently, eight scientific criteria,
+  original-token law and written inside/outside/sampling proof. Explicitly
+  credit known lexical/semiring/quotient principles; no priority claim.
+  Four offline original-token enumeration/law/reuse tests pass; sparse fixed
+  deltas, aliases, partial UTF8, overlapping incoming states and remasking.
+- [ ] T4201: Execute the frozen full-vocabulary external development protocol:
+  same6 documents, masks4/8/16, three rotations of raw/global/local exact
+  posterior plus exact rational rejection. Charge preparation, original
+  marginals, sampling, conversion and shared actual frozen model forward.
+  Bound ALL per-request compilation/inference by120s and8GiB; preserve losses.
+  Require >=20% wall AND CPU against all competent exact controls or additional
+  capacity under equal resources. Sampling is a separate operation.
+- [ ] T4202: Only after development gate, confirm on all12 refinement and
+  six never-model-tested documents; no result-based selection. Nine fresh
+  repetitions. Keep scientific novelty, mathematical correctness, timings
+  and whole-generation/semantic claims separate.
+
 ## M39 — Confirm a benefit in the actual structured-generation trajectory
 
 Authorized on 2026-10-09 after the bounded PL decision: continue until relevant

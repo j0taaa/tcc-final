@@ -56,8 +56,13 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   não confirmaram ganho adicional do quociente global. A tentativa21 investiga
   grupos locais possivelmente sobrepostos conforme o estado lexical explícito.
   Viabilidade original é união dos grupos; commit retém todos os grupos com
-  o original, e crescimento com comportamento novo recompila. Oráculos passam;
-  benefício ainda depende de medição contra TODOS os controles de20.
+  o original, e crescimento com comportamento novo recompila. Os1.026 registros
+  reais também não confirmaram ganho forte contra TODOS os controles de20.
+  As três direções negativas estão preservadas, não satisfazem o objetivo.
+  A tentativa22 investiga posterior JSON exato no vocabulário original inteiro,
+  com classes globais e locais e rejeição exata como controles. Massa, marginais
+  e lei do sampler passam em oráculos pequenos independentes. O protocolo foi
+  definido antes dos novos forwards; utilidade e novidade seguem em investigação.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

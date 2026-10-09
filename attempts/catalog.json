@@ -629,7 +629,7 @@
     {
       "id": "21-contextual-token-groups",
       "title": "Grupos sobrepostos conforme o estado lexical expl\u00edcito",
-      "conclusion": "Hip\u00f3tese preregistrada; consultas/compromissos originais e 216 trajet\u00f3rias de or\u00e1culos validados. Benef\u00edcio completo pendente.",
+      "conclusion": "1026 registros reais, 897 equival\u00eancias, nenhum ganho forte prim\u00e1rio/secund\u00e1rio contra controles lexicais/globais. Resultado negativo preservado.",
       "reading": "attempts/21-contextual-token-groups/README.md",
       "versions": [
         {
@@ -640,6 +640,14 @@
             "attempts/21-contextual-token-groups/work/evidence",
             "attempts/21-contextual-token-groups/work/contextual-specification.md",
             "attempts/21-contextual-token-groups/work/protocol.json"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "647a98d9ee13afa5b8855aae22103a92758738fc",
+          "evidence_commit": "7ba6d7597fb8a37274ff8042d30b27e87ae3f8e7",
+          "evidence_roots": [
+            "attempts/21-contextual-token-groups/work/evidence"
           ]
         }
       ]
