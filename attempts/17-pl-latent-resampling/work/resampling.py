@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from bisect import bisect_left, bisect_right
 from dataclasses import dataclass
+from decimal import Decimal, localcontext
 from fractions import Fraction as Q
 from math import isqrt, lcm, prod
 from time import monotonic
@@ -302,6 +303,10 @@ class TangentMixture:
             raise AssertionError("invalid certified rejection envelope")
         return acceptance
 
+    @property
+    def rejection_normalizer(self):
+        return self.problem.f(self.problem.L) * self.mass if self.constant else 2 * self.mass
+
     def sample(self, rng, end=None):
         count = 0
         while True:
@@ -330,17 +335,69 @@ class BaseRejection:
             raise ValueError("zero evidence mass")
         self.upper = problem.f(problem.L)
 
+    @property
+    def rejection_normalizer(self):
+        return self.upper * self.base.mass
+
+    def acceptance(self, path):
+        return self.problem.likelihood(path) / self.upper
+
     def sample(self, rng, end=None):
         count = 0
         while True:
             deadline(end)
             count += 1
             path = self.base.sample(rng)
-            probability = self.problem.likelihood(path) / self.upper
+            probability = self.acceptance(path)
             if not 0 < probability <= 1:
                 raise AssertionError("base envelope violated")
             if rng.randrange(probability.denominator) < probability.numerator:
                 return path, count
+
+
+class SingleTilt(BaseRejection):
+    """Classical single exponential proposal with a global endpoint majorant."""
+
+    def __init__(self, problem, end=None):
+        p = self.problem = problem.tightened(end)
+        if not p.order or p.L == p.H:
+            super().__init__(p, end)
+            self.unaries = None
+            return
+        ratio = p.f(p.L) / p.f(p.H)
+        log_cap = (ratio.numerator // ratio.denominator).bit_length()
+        with localcontext() as context:
+            context.prec = 80
+            logarithm = Q((Decimal(ratio.numerator) / Decimal(ratio.denominator)).ln())
+        t = min(
+            len(p.order) / (p.L + p.c[-1]),
+            Q(log_cap) / (p.H - p.L),
+            logarithm / (p.H - p.L),
+        )
+        delta = p.f(p.H) / 4
+        self.upper = max(p.f(s) * exp_bounds(t * s, delta / p.f(s), end)[1] for s in (p.L, p.H))
+        error = delta / (self.upper * len(p.hidden))
+        self.unaries = tuple(
+            tuple(
+                dyadic_negative_exp_upper(t * rate, error, end) if i in p.hidden else Q(1)
+                for rate in row
+            )
+            for i, row in enumerate(p.rates)
+        )
+        modified = tuple(
+            tuple(q * u for q, u in zip(row, tilt, strict=True))
+            for row, tilt in zip(p.evidence_weights, self.unaries, strict=True)
+        )
+        self.base = WeightedForest.prepare(p.plan, modified, end)
+        if not self.base.mass:
+            raise ValueError("zero evidence mass")
+
+    def acceptance(self, path):
+        p = self.problem
+        envelope = self.upper
+        if self.unaries is not None:
+            envelope *= prod(self.unaries[i][p.indices[i][path[i]]] for i in p.hidden)
+        return p.likelihood(path) / envelope
 
 
 def select_order(free, rates, path, indices, k, rng):

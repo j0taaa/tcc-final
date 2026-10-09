@@ -12,7 +12,7 @@ from pathlib import Path
 from random import Random
 from time import perf_counter
 
-from resampling import BaseRejection, Problem, RoundedProfiles, TangentMixture
+from resampling import BaseRejection, Problem, RoundedProfiles, SingleTilt, TangentMixture
 
 from mwpc_exact.cfg_posterior import compile_cfg_sampler
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
@@ -122,7 +122,7 @@ def forest_law(base):
     }
 
 
-def check_problem(p, paths, dyadic_unaries=False, tight_bounds=False):
+def check_problem(p, paths, dyadic_unaries=False, tight_bounds=False, single_tilt=False):
     target = {
         y: w * direct_pl(y, p.order, p.free, p.rates, p.indices)
         for y, w in paths.items()
@@ -148,11 +148,23 @@ def check_problem(p, paths, dyadic_unaries=False, tight_bounds=False):
     base_law = forest_law(rejection.base)
     base_accepted = {y: prob * p.likelihood(y) / rejection.upper for y, prob in base_law.items()}
     base_success = sum(base_accepted.values(), Q())
+    assert mixture.rejection_normalizer / z == 1 / success
+    assert rejection.rejection_normalizer / z == 1 / base_success
     assert {y: w / base_success for y, w in base_accepted.items()} == {
         y: w / z for y, w in target.items()
     }
     if p.order and p.hidden:
         assert RoundedProfiles(p).law() == {y: w / z for y, w in target.items()}
+    if single_tilt:
+        single = SingleTilt(p)
+        law = forest_law(single.base)
+        accepted_single = {y: prob * single.acceptance(y) for y, prob in law.items()}
+        single_success = sum(accepted_single.values(), Q())
+        assert all(0 < single.acceptance(y) <= 1 for y in target)
+        assert {y: w / single_success for y, w in accepted_single.items()} == {
+            y: w / z for y, w in target.items()
+        }
+        assert single.rejection_normalizer / z == 1 / single_success
     for path, weight in target.items():
         assert p.likelihood(path) == weight / paths[path]
         if not mixture.constant:
@@ -164,7 +176,7 @@ def check_problem(p, paths, dyadic_unaries=False, tight_bounds=False):
     return len(target)
 
 
-def correctness(max_n=4, dyadic_unaries=False, tight_bounds=False):
+def correctness(max_n=4, dyadic_unaries=False, tight_bounds=False, single_tilt=False):
     events = paths_checked = 0
     for n in range(1, max_n + 1):
         for weighted in (False, True):
@@ -185,7 +197,9 @@ def correctness(max_n=4, dyadic_unaries=False, tight_bounds=False):
                                 order,
                                 dict(zip(order, tokens, strict=True)),
                             )
-                            paths_checked += check_problem(p, paths, dyadic_unaries, tight_bounds)
+                            paths_checked += check_problem(
+                                p, paths, dyadic_unaries, tight_bounds, single_tilt
+                            )
                             events += 1
             print(
                 f"exact-law fixture n={n}, weighted={weighted}: cumulative {events} events",
@@ -210,6 +224,7 @@ def correctness(max_n=4, dyadic_unaries=False, tight_bounds=False):
                     paths,
                     dyadic_unaries,
                     tight_bounds,
+                    single_tilt,
                 )
                 events += 1
     plan, data = fixture(2)
@@ -217,7 +232,7 @@ def correctness(max_n=4, dyadic_unaries=False, tight_bounds=False):
     rates = tuple(tuple(Q(1) for _ in row) for row in data.probabilities)
     for order in [(), (1,), (1, 3)]:
         p = Problem(plan, data.probabilities, rates, order, {i: 3 for i in order})
-        paths_checked += check_problem(p, paths, dyadic_unaries, tight_bounds)
+        paths_checked += check_problem(p, paths, dyadic_unaries, tight_bounds, single_tilt)
         events += 1
     return {"events": events, "conditional_original_paths": paths_checked, "exact_mismatches": 0}
 
@@ -397,13 +412,19 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--dyadic", action="store_true")
     parser.add_argument("--tight-bounds", action="store_true")
+    parser.add_argument("--single-tilt", action="store_true")
     args = parser.parse_args()
     start = perf_counter()
     report = {
         "scope": "exact finite correctness oracles, no performance or training claim",
         "numeric_variant": "dyadic" if args.dyadic else "reference",
         "tight_bounds": args.tight_bounds,
-        "correctness": correctness(dyadic_unaries=args.dyadic, tight_bounds=args.tight_bounds),
+        "single_tilt": args.single_tilt,
+        "correctness": correctness(
+            dyadic_unaries=args.dyadic,
+            tight_bounds=args.tight_bounds,
+            single_tilt=args.single_tilt,
+        ),
         "gradient": gradient_audit(),
         "elapsed_seconds": perf_counter() - start,
     }

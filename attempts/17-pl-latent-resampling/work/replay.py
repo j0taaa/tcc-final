@@ -19,6 +19,7 @@ from time import monotonic, perf_counter
 from resampling import (
     BaseRejection,
     Problem,
+    SingleTilt,
     TangentMixture,
     WeightedForest,
     select_order,
@@ -72,6 +73,7 @@ class EnumeratedTarget:
                 raise TimeoutError("enumeration categorical preparation budget")
             total += weight.numerator * (scale // weight.denominator)
             self.cumulative.append(total)
+        self.target_mass = Q(total, scale)
 
     def sample(self, rng, end=None):
         if end is not None and monotonic() > end:
@@ -102,7 +104,6 @@ def run(args):
         "archive_files": manifest["files"],
         "scope": "frozen-model posterior query costs; no neural training or end-to-end speed claim",
     }
-    (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     stream = (args.output / "rows.jsonl").open("w")
     methods = [
         (
@@ -119,6 +120,10 @@ def run(args):
         ),
         ("enumeration", EnumeratedTarget),
     ]
+    if args.extra_control:
+        methods.append(("single_tilt_rejection", SingleTilt))
+    metadata["methods"] = [name for name, _ in methods]
+    (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
 
     def emit(row):
         stream.write(json.dumps(row) + "\n")
@@ -196,6 +201,7 @@ def run(args):
                                 "method": name,
                                 "repetition": repetition,
                                 "stage": "query",
+                                "method_order": [method for method, _ in rotated],
                                 "batches": [],
                                 "status": "complete",
                             }
@@ -205,6 +211,16 @@ def run(args):
                                     p, end=monotonic() + config["preparation_deadline_seconds"]
                                 )
                                 record["preparation_seconds"] = perf_counter() - started
+                                normalizer = (
+                                    sampler.target_mass
+                                    if name == "enumeration"
+                                    else sampler.rejection_normalizer
+                                )
+                                record["normalizer"] = {
+                                    "numerator_hex": format(normalizer.numerator, "x"),
+                                    "denominator_hex": format(normalizer.denominator, "x"),
+                                    "scope": "target" if name == "enumeration" else "proposal",
+                                }
                                 if name == "certified_tangent_mixture":
                                     record["components"] = len(sampler.components)
                                     record["inside_integer_max_bits"] = max(
@@ -256,6 +272,7 @@ def run(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--extra-control", action="store_true")
     parser.add_argument(
         "--numeric-variant", choices=("reference", "dyadic", "tight-dyadic"), default="reference"
     )

@@ -45,8 +45,8 @@ def summarize(folder):
         assert key not in groups, "duplicate query"
         groups[key] = row
     events = {key[:3] for key in groups}
-    assert len(queries) == len(events) * 9, "missing method/repetition rows"
     methods = sorted({row["method"] for row in queries})
+    assert len(queries) == len(events) * len(methods) * 3, "missing method/repetition rows"
     metrics = {}
     for method in methods:
         selected = [r for r in queries if r["method"] == method]
@@ -72,7 +72,7 @@ def summarize(folder):
             "batches": batches,
         }
     comparisons = []
-    for alternative in ("rejection_with_f_L_envelope", "enumeration"):
+    for alternative in (m for m in methods if m != "certified_tangent_mixture"):
         for size in (1, 4, 16):
             ratios = []
             for event in sorted(events):

@@ -1,6 +1,8 @@
 """Focused exact oracles for the independently preserved PL research attempt."""
 
 import importlib.util
+import itertools
+import math
 import sys
 import unittest
 from fractions import Fraction as Q
@@ -22,9 +24,62 @@ audit = load("pl_resampling_audit", "audit.py")
 
 
 class PlLatentOracleTests(unittest.TestCase):
+    def test_product_proposal_separation_normalizer(self):
+        # Independently integrate the proof family, including nonidentical
+        # product proposals. This checks finite algebra, not asymptotic novelty.
+        for m in range(1, 4):
+            plan, data = audit.fixture(2 * m)
+            q = tuple((Q(1, 10), Q(9, 10)) if len(row) == 2 else row for row in data.probabilities)
+            data = audit.ProbabilityInput(data.state, q)
+            order = tuple(i for i, t in enumerate(data.state.canvas) if t is None)[:m]
+            p = reference.Problem(plan, q, q, order, dict.fromkeys(order, 4))
+            paths = {
+                y: w
+                for y, w in audit.enumerated_paths(data).items()
+                if all(y[i] == 4 for i in order)
+            }
+            target = {
+                y: w * audit.direct_pl(y, order, p.free, q, p.indices) for y, w in paths.items()
+            }
+            target_mass = sum(target.values(), Q())
+            binomial_mass = Q(9, 10) ** m * sum(
+                (
+                    math.comb(m, z)
+                    * Q(1, 10) ** (m - z)
+                    * Q(9, 10) ** z
+                    * p.f(Q(m, 10) + Q(4 * z, 5))
+                    for z in range(m + 1)
+                ),
+                Q(),
+            )
+            self.assertEqual(target_mass, binomial_mass)
+            # Bound the secant's exponential through its exact m-th root.
+            ratio, lower, upper = p.f(p.L) / p.f(p.H), Q(1), Q(9)
+            for _ in range(80):
+                middle = (lower + upper) / 2
+                if middle**m <= ratio:
+                    lower = middle
+                else:
+                    upper = middle
+            optimum_lower = Q(9, 10) ** m * p.f(p.H) * (Q(9, 10) + lower / 10) ** m
+            single = reference.SingleTilt(p)
+            self.assertGreaterEqual(single.rejection_normalizer, optimum_lower)
+            for probabilities in itertools.product((Q(1, 4), Q(1, 2), Q(3, 4)), repeat=m):
+                normalizer = max(
+                    w
+                    / math.prod(
+                        r if y[i] == 4 else 1 - r
+                        for i, r in zip(p.hidden, probabilities, strict=True)
+                    )
+                    for y, w in target.items()
+                )
+                self.assertGreaterEqual(normalizer, optimum_lower)
+
     def test_conditional_sampler_laws_and_token_aliases(self):
         for dyadic, tight in ((False, False), (True, False), (True, True)):
-            report = audit.correctness(max_n=2, dyadic_unaries=dyadic, tight_bounds=tight)
+            report = audit.correctness(
+                max_n=2, dyadic_unaries=dyadic, tight_bounds=tight, single_tilt=tight
+            )
             self.assertGreater(report["events"], 20)
             self.assertEqual(report["exact_mismatches"], 0)
 

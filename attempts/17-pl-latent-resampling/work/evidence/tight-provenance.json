@@ -1,0 +1,7 @@
+{
+  "source_commit": "b4c9a844bc7eb934ae8b38305578c8ccb7d7740a",
+  "correctness_command": "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/audit.py --dyadic --tight-bounds --output .cache/pl-tight-correctness.json",
+  "replay_command": "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/replay.py --numeric-variant tight-dyadic --output .cache/pl-tight-replay",
+  "source_tree_clean_at_replay_start": true,
+  "summary_command": "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/summarize.py --replay .cache/pl-tight-replay --output .cache/pl-tight-summary.json"
+}
