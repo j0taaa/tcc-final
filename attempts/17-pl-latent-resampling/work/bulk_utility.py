@@ -56,6 +56,11 @@ def run(output, batch_size=1024, strengthened=False, fast_forced=False):
                 methods=[name for name, _ in methods],
                 strengthened=strengthened,
                 fast_forced=fast_forced,
+                coarse_profile_plan_sha256=hashlib.sha256(
+                    (WORK / "coarse-profile-control-plan.md").read_bytes()
+                ).hexdigest()
+                if fast_forced and strengthened
+                else None,
                 forced_refinement_sha256=hashlib.sha256(
                     (WORK / "forced-decision-refinement.md").read_bytes()
                 ).hexdigest()

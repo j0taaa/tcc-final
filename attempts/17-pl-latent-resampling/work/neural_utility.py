@@ -313,7 +313,11 @@ def run(args):
         forced_refinement_sha256=digest((WORK / "forced-decision-refinement.md").read_bytes())
         if args.fast_forced
         else None,
-        methods=7 if strengthened else 6,
+        methods=len(neural_controls(strengthened, args.fast_forced)),
+        method_names=[name for name, _ in neural_controls(strengthened, args.fast_forced)],
+        coarse_profile_plan_sha256=digest((WORK / "coarse-profile-control-plan.md").read_bytes())
+        if args.fast_forced and strengthened
+        else None,
         refinement_sha256=digest((WORK / "envelope-profile-refinement.md").read_bytes())
         if strengthened
         else None,

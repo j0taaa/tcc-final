@@ -162,48 +162,50 @@ class PlLatentOracleTests(unittest.TestCase):
                 if y[1] == 3
             }
             z = sum(target.values(), Q())
-            sampler = reference.RoundedProfiles(p, dyadic_root=True)
-            laws = {}
-            for node in plan.order:
-                for value, total in sampler.profiles[node].items():
-                    result = {}
-                    for term, children, mass in sampler.backpointers[node, value]:
-                        probability = Q(mass, total)
-                        if term.choice is not None:
-                            i, j = term.choice
-                            branches = [(((i, p.rows[i][j]),), Q(1))]
-                        elif not children:
-                            branches = [((), Q(1))]
-                        else:
-                            left, right = term.children
-                            a, b = children
-                            branches = [
-                                (tuple(sorted(x + y)), px * py)
-                                for x, px in laws[left, a].items()
-                                for y, py in laws[right, b].items()
-                            ]
-                        for pairs, prob in branches:
-                            result[pairs] = result.get(pairs, Q()) + probability * prob
-                    laws[node, value] = result
-            accepted, previous = {}, 0
-            for value, cumulative in zip(sampler.root_profiles, sampler.root_cdf, strict=True):
-                root_probability = Q(cumulative - previous, sampler.root_cdf[-1])
-                previous = cumulative
-                for pairs, probability in laws[plan.root, value].items():
-                    y = tuple(t for _, t in pairs)
-                    accepted[y] = accepted.get(
-                        y, Q()
-                    ) + root_probability * probability * sampler.acceptance(y, value)
-            success = sum(accepted.values(), Q())
-            self.assertEqual(
-                {y: v / success for y, v in accepted.items()}, {y: w / z for y, w in target.items()}
-            )
-            self.assertEqual(sampler.rejection_normalizer / z, 1 / success)
-            self.assertLessEqual(1 / success, 2 * (1 + Q(1, 1024)))
-            for seed in range(3):
-                self.assertIn(sampler.sample(audit.Random(seed))[0], target)
-            with self.assertRaises(TimeoutError):
-                reference.RoundedProfiles(p, max_cells=0)
+            for strength, bound in ((1, 2), (2, 3), (4, 8)):
+                sampler = reference.RoundedProfiles(p, dyadic_root=True, rounding_strength=strength)
+                laws = {}
+                for node in plan.order:
+                    for value, total in sampler.profiles[node].items():
+                        result = {}
+                        for term, children, mass in sampler.backpointers[node, value]:
+                            probability = Q(mass, total)
+                            if term.choice is not None:
+                                i, j = term.choice
+                                branches = [(((i, p.rows[i][j]),), Q(1))]
+                            elif not children:
+                                branches = [((), Q(1))]
+                            else:
+                                left, right = term.children
+                                a, b = children
+                                branches = [
+                                    (tuple(sorted(x + y)), px * py)
+                                    for x, px in laws[left, a].items()
+                                    for y, py in laws[right, b].items()
+                                ]
+                            for pairs, prob in branches:
+                                result[pairs] = result.get(pairs, Q()) + probability * prob
+                        laws[node, value] = result
+                accepted, previous = {}, 0
+                for value, cumulative in zip(sampler.root_profiles, sampler.root_cdf, strict=True):
+                    root_probability = Q(cumulative - previous, sampler.root_cdf[-1])
+                    previous = cumulative
+                    for pairs, probability in laws[plan.root, value].items():
+                        y = tuple(t for _, t in pairs)
+                        accepted[y] = accepted.get(
+                            y, Q()
+                        ) + root_probability * probability * sampler.acceptance(y, value)
+                success = sum(accepted.values(), Q())
+                self.assertEqual(
+                    {y: v / success for y, v in accepted.items()},
+                    {y: w / z for y, w in target.items()},
+                )
+                self.assertEqual(sampler.rejection_normalizer / z, 1 / success)
+                self.assertLessEqual(1 / success, bound * (1 + Q(1, 1024)))
+                for seed in range(3):
+                    self.assertIn(sampler.sample(audit.Random(seed))[0], target)
+                with self.assertRaises(TimeoutError):
+                    reference.RoundedProfiles(p, max_cells=0)
 
     def test_stationary_metropolis_and_integrated_coin(self):
         plan, data = audit.fixture(3, True)

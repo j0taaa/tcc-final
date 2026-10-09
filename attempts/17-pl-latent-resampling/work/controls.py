@@ -27,6 +27,14 @@ def iid_controls(strengthened=False, fast_forced=False):
     }
     if strengthened:
         methods["profiles"] = partial(RoundedProfiles, dyadic_root=True, fast_forced=fast_forced)
+        if fast_forced:
+            for strength in (2, 4):
+                methods[f"profiles_coarse{strength}"] = partial(
+                    RoundedProfiles,
+                    dyadic_root=True,
+                    fast_forced=True,
+                    rounding_strength=strength,
+                )
     return methods
 
 
@@ -42,4 +50,6 @@ def neural_controls(strengthened=False, fast_forced=False):
     ]
     if strengthened:
         names.append(("profiles_iid", "profiles"))
+        if fast_forced:
+            names.extend((f"profiles_coarse{s}_iid", f"profiles_coarse{s}") for s in (2, 4))
     return [(label, methods[key]) for label, key in names]

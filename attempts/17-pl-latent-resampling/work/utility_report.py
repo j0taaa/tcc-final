@@ -19,6 +19,8 @@ METHOD_VARIANCE = {
     "single_iid": "two_iid",
     "mixture_iid": "two_iid",
     "profiles_iid": "two_iid",
+    "profiles_coarse2_iid": "two_iid",
+    "profiles_coarse4_iid": "two_iid",
     "base_imh_rb": "base_imh_rb",
     "single_imh_rb": "single_imh_rb",
     "conditional_mean": "conditional_mean",
@@ -32,11 +34,13 @@ def read_rows(folder):
 def neural(folder):
     rows = read_rows(folder)
     meta = json.loads((folder / "metadata.json").read_text())
-    active = {
-        name: variance
-        for name, variance in METHOD_VARIANCE.items()
-        if name != "profiles_iid" or meta.get("strengthened", False)
-    }
+    names = meta.get("method_names") or [
+        name
+        for name in METHOD_VARIANCE
+        if not name.startswith("profiles_coarse")
+        and (name != "profiles_iid" or meta.get("strengthened", False))
+    ]
+    active = {name: METHOD_VARIANCE[name] for name in names}
     assert len(meta["selected"]) == 6 and len(rows) == 156 + 432 * len(active)
     assert all(row["status"] == "complete" for row in rows)
     cases = []

@@ -508,7 +508,7 @@ def select_order(free, rates, path, indices, k, rng):
 
 
 class RoundedProfiles:
-    """Alternative in section 8, epsilon=1; fixed-tree rounding, not a semiring."""
+    """Alternative in section 8; fixed-tree rounding, not a semiring."""
 
     def __init__(
         self,
@@ -518,7 +518,11 @@ class RoundedProfiles:
         max_cells=1000000,
         max_transitions=3000000,
         fast_forced=False,
+        rounding_strength=1,
     ):
+        if type(rounding_strength) is not int or rounding_strength not in (1, 2, 4):
+            raise ValueError("rounding strength must be one of the declared controls: 1, 2, 4")
+        self.rounding_strength = rounding_strength
         self.fast_forced = fast_forced
         self.problem = p = problem.tightened(end)
         self.end = end
@@ -532,7 +536,7 @@ class RoundedProfiles:
         self.backpointers = {}
         if self.constant:
             return
-        self.gamma = 1 + Q(1, 2 * k * m)
+        self.gamma = 1 + Q(rounding_strength, 2 * k * m)
         self.grid = [min(min(p.rates[i]) for i in p.hidden)]
         self.profiles = [{} for _ in p.plan.terms]
         self.minima = [{} for _ in p.plan.terms]
