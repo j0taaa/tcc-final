@@ -2,6 +2,7 @@
 
 from functools import partial
 
+from indexed_profiles import IndexedProfiles
 from replay import EnumeratedTarget
 from resampling import BaseRejection, RoundedProfiles, SingleTilt, TangentMixture
 
@@ -53,3 +54,12 @@ def neural_controls(strengthened=False, fast_forced=False):
         if fast_forced:
             names.extend((f"profiles_coarse{s}_iid", f"profiles_coarse{s}") for s in (2, 4))
     return [(label, methods[key]) for label, key in names]
+
+
+def indexed_controls():
+    return {
+        f"profiles_indexed{s}": partial(
+            IndexedProfiles, dyadic_root=True, fast_forced=True, rounding_strength=s
+        )
+        for s in (1, 2, 4)
+    }

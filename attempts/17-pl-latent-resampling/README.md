@@ -38,7 +38,8 @@ O núcleo/contratos de produção permanecem como base de comparação.
    [bulk](work/bulk-utility-protocol.json),
    [envelope/perfis](work/envelope-profile-refinement.md),
    [decisões forçadas](work/forced-decision-refinement.md) e
-   [perfis grossos](work/coarse-profile-control-plan.md) registram cada mudança
+   [perfis grossos](work/coarse-profile-control-plan.md) e
+   [representação por índices](work/indexed-profile-control-plan.md) registram cada mudança
    antes de medir; todos os estados e recusas permanecem no relato.
 6. **Custo:** incluir compilação, enclosures, componentes, amostragem, memória
    lógica e aritmética; separar primeira saída/lote. O replay exclui forward

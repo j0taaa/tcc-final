@@ -561,7 +561,7 @@ class RoundedProfiles:
                     left, right = term.children
                     variants = (
                         (
-                            self.round(a + b),
+                            self.combine(a, b),
                             (a, b),
                             va * vb,
                             self.minima[left][a] + self.minima[right][b],
@@ -606,6 +606,11 @@ class RoundedProfiles:
             deadline(self.end)
             self.grid.append(self.grid[-1] * self.gamma)
         return self.grid[bisect_left(self.grid, value)]
+
+    def combine(self, left, right):
+        if not left or not right:
+            return left or right
+        return self.round(left + right)
 
     @property
     def rejection_normalizer(self):

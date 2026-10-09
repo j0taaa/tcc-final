@@ -13,7 +13,7 @@ from pathlib import Path
 from random import Random
 from time import monotonic, perf_counter, process_time
 
-from controls import iid_controls
+from controls import iid_controls, indexed_controls
 from replay import recognized
 from resampling import (
     Problem,
@@ -32,7 +32,7 @@ WORK = Path(__file__).resolve().parent
 ROOT = WORK.parents[2]
 
 
-def run(output, batch_size=1024, strengthened=False, fast_forced=False):
+def run(output, batch_size=1024, strengthened=False, fast_forced=False, indexed_only=False):
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source and protocol before measuring")
     protocol_path = WORK / "bulk-utility-protocol.json"
@@ -42,7 +42,11 @@ def run(output, batch_size=1024, strengthened=False, fast_forced=False):
         config.update(json.loads(addendum.read_text()))
     native = json.loads((WORK / "protocol.json").read_text())
     runs, inputs, manifest = load_inputs()
-    methods = list(iid_controls(strengthened, fast_forced).items())
+    if indexed_only:
+        strengthened = fast_forced = True
+    methods = list(
+        (indexed_controls() if indexed_only else iid_controls(strengthened, fast_forced)).items()
+    )
     output.mkdir(parents=True, exist_ok=False)
     (output / "metadata.json").write_text(
         json.dumps(
@@ -56,6 +60,12 @@ def run(output, batch_size=1024, strengthened=False, fast_forced=False):
                 methods=[name for name, _ in methods],
                 strengthened=strengthened,
                 fast_forced=fast_forced,
+                indexed_only=indexed_only,
+                indexed_profile_plan_sha256=hashlib.sha256(
+                    (WORK / "indexed-profile-control-plan.md").read_bytes()
+                ).hexdigest()
+                if indexed_only
+                else None,
                 coarse_profile_plan_sha256=hashlib.sha256(
                     (WORK / "coarse-profile-control-plan.md").read_bytes()
                 ).hexdigest()
@@ -228,5 +238,6 @@ if __name__ == "__main__":
     parser.add_argument("--batch-size", type=int, choices=(1024, 4096), default=1024)
     parser.add_argument("--strengthened", action="store_true")
     parser.add_argument("--fast-forced", action="store_true")
+    parser.add_argument("--indexed-only", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.batch_size, args.strengthened, args.fast_forced)
+    run(args.output, args.batch_size, args.strengthened, args.fast_forced, args.indexed_only)
