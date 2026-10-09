@@ -4,6 +4,12 @@ Iniciada em 2026-10-09 sobre `89078ecf589e187927c1ba3d4f54f87ba9df43cd`.
 Pesquisa isolada; a tentativa 17 e os decoders mantidos não são substituídos.
 Status inicial: **vantagem de geração ainda não medida**.
 
+Versão v1 preserva o protótipo/protocolo inicial. Antes de qualquer forward ou
+timing, a inspeção do corpus encontrou só nove documentos de 24..96 tokens,
+insuficientes para a divisão predeclarada de 18. A faixa passou a 16..96
+(24 documentos disponíveis); a divisão por hash, os tamanhos de máscara e os
+controles permanecem iguais. Nenhum resultado de modelo/solver orientou isso.
+
 ## Contrato e oito critérios
 
 1. **Uso:** completar lacunas de documentos JSON com uma dLLM, preservando

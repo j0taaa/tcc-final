@@ -487,6 +487,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "18-monotone-grammatical-decoding",
+      "title": "Preserva\u00e7\u00e3o de pol\u00edtica gulosa e propaga\u00e7\u00e3o gramatical durante gera\u00e7\u00e3o",
+      "conclusion": "Investiga\u00e7\u00e3o iniciada; t\u00e9cnicas lexicogr\u00e1ficas e incrementais cl\u00e1ssicas creditadas. Vantagem de gera\u00e7\u00e3o ainda n\u00e3o medida.",
+      "reading": "attempts/18-monotone-grammatical-decoding/README.md; attempts/18-monotone-grammatical-decoding/work/specification.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "dab1fe73d6c50efde400dd672ffd86864325691f",
+          "evidence_commit": "dab1fe73d6c50efde400dd672ffd86864325691f",
+          "evidence_roots": [
+            "attempts/18-monotone-grammatical-decoding/work",
+            "attempts/18-monotone-grammatical-decoding/README.md"
+          ]
+        }
+      ]
     }
   ]
 }

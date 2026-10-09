@@ -8,7 +8,7 @@
     "repository": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
     "revision": "5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8",
     "scope": "tests/draft2020-12/*.json, all object/array data regardless of schema validity, canonical compact sorted-key ASCII JSON; distinct documents",
-    "eligible_tokens": [24, 96],
+    "eligible_tokens": [16, 96],
     "selection": "Sort SHA256(seed/document), first six development, next twelve held-out; no model, grammar-support or method outcomes consulted",
     "masking": "For each size, sample positions uniformly without replacement by Random(seed+int(document_hash[:12],16)+size). Boundary and structure tokens are eligible too.",
     "license": "MIT, preserve source attribution/license and selected source files"
