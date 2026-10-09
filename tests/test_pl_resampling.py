@@ -21,6 +21,7 @@ def load(name, filename):
 
 reference = load("resampling", "resampling.py")
 audit = load("pl_resampling_audit", "audit.py")
+stationary = load("pl_stationary_control", "stationary_control.py")
 
 
 class PlLatentOracleTests(unittest.TestCase):
@@ -98,6 +99,58 @@ class PlLatentOracleTests(unittest.TestCase):
                 for constrained in (False, True):
                     result = audit.gradient_case(3, weighted, power, 2, constrained)
                     self.assertGreaterEqual(Q(result["latent_fraction"]), 0)
+
+    def test_stationary_metropolis_and_integrated_coin(self):
+        plan, data = audit.fixture(3, True)
+        paths = audit.enumerated_paths(data)
+        p = reference.Problem(plan, data.probabilities, data.probabilities, (1,), {1: 4})
+        weights = {
+            y: w * audit.direct_pl(y, p.order, p.free, p.rates, p.indices)
+            for y, w in paths.items()
+            if y[1] == 4
+        }
+        z = sum(weights.values(), Q())
+        target = {y: w / z for y, w in weights.items()}
+        for constructor in (reference.BaseRejection, reference.SingleTilt):
+            sampler = constructor(p)
+            proposal = audit.forest_law(sampler.base)
+            transition = stationary.audit_transition(sampler, target, proposal)
+            # Every scalar statistic in the finite-state basis is covered.
+            scores = {y: tuple(Q(y == v) for v in target) for y in target}
+            pairs, integrated = [], []
+            for x in target:
+                for y in target:
+                    pairs.append(
+                        (
+                            target[x] * transition[x][y],
+                            tuple((a + b) / 2 for a, b in zip(scores[x], scores[y], strict=True)),
+                        )
+                    )
+                    a = min(Q(1), sampler.acceptance(y) / sampler.acceptance(x))
+                    integrated.append(
+                        (
+                            target[x] * proposal[y],
+                            stationary.conditional_average(scores[x], scores[y], a),
+                        )
+                    )
+            mean, original = audit.moments([(target[y], scores[y]) for y in target], len(target))
+            pair_mean, pair_cov = audit.moments(pairs, len(target))
+            rb_mean, rb_cov = audit.moments(integrated, len(target))
+            self.assertEqual(mean, pair_mean)
+            self.assertEqual(mean, rb_mean)
+            # Test PSD ordering by all integer directions in {-1,0,1}^d;
+            # general PSD guarantee is a written covariance identity.
+            for direction in itertools.product((-1, 0, 1), repeat=len(target)):
+
+                def quadratic(matrix, direction=direction):
+                    return sum(
+                        direction[i] * matrix[i][j] * direction[j]
+                        for i in range(len(target))
+                        for j in range(len(target))
+                    )
+
+                self.assertLessEqual(quadratic(rb_cov), quadratic(pair_cov))
+                self.assertLessEqual(quadratic(pair_cov), quadratic(original))
 
     def test_invalid_and_impossible_evidence_is_not_sampled(self):
         plan, data = audit.fixture(2, values=(b"0", b"oops"))

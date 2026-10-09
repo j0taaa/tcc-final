@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "purpose": "Decide whether conditional latent resampling improves a genuine neural gradient operation after complete costs, not prove convergence or full-model quality",
+  "external_source": {
+    "repository": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
+    "revision": "5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8",
+    "scope": "top-level tests/draft2020-12/*.json, every object/array data instance regardless of schema valid flag; duplicates canonicalized",
+    "selection": "compact canonical JSON, GPT2 length 12..96, smallest SHA256(seed/document) values, first six; no neural or sampler outcomes consulted",
+    "license": "MIT; retain source attribution and license"
+  },
+  "seed": 20261009,
+  "model_config": "configs/experiments/m31_probability_scaling_cpu_v1.json",
+  "model": "Pinned official MDLM OWT checkpoint, audited zero-dropout Torch CPU port, four threads, F32 network/F64 softmax; freeze backbone and measure real output-weight/bias gradients",
+  "policy": {
+    "mask_slots": 4,
+    "location": "SHA256(document)/mod(number_tokens-4+1)",
+    "support": "original top8 at each masked position, fixed outside; no reference answer tokens injected; report zero syntax mass and missing targets",
+    "grammar": "maintained full LL1 JSON, EOS absent",
+    "unmask_count": 2,
+    "rate_powers": [1,2],
+    "return": "fraction of committed original token IDs matching the external reference at those positions",
+    "interpretation": "Auxiliary denoising-progress policy objective. Tests whether resampling helps this actual parameter-gradient operation; does not imply improved final generation or beat supervised cross-entropy",
+    "numeric_scope": "Exact conditional law for published rational support probabilities; neural gradient and covariance metrics use documented F64 arithmetic. Support membership held fixed locally. Full softmax tail retained in PL score."
+  },
+  "variance": {
+    "oracle": "enumerate every top8 token combination recognized independently by Python JSON, every ordered size-two PL selection; use all positive events, not sampled frequencies",
+    "metric": "trace covariance of output-layer weight+bias policy gradient, computed via feature/token Gram matrices; also mean gradient and reward",
+    "controls": ["original complete score", "two iid replicas", "conditional mean by enumeration", "stationary Base MH with coin integrated", "stationary SingleTilt MH with coin integrated"],
+    "correctness": "exact rational detailed balance tests plus captured-model autograd directional/norm checks and independent finite-difference objective checks; tolerances disclosed",
+    "conditional_enumeration": "competent exact Rao-Blackwell control, no iid sampling claim"
+  },
+  "cost": {
+    "native_events": 12,
+    "event_selection": "on-policy syntax proposal then native PL order, fixed seed per case/power/rollout; never select by gain",
+    "repetitions": 3,
+    "methods": ["BaseRejection", "SingleTilt", "TangentMixture full-dyadic", "Base IMH integrated coin", "SingleTilt IMH integrated coin", "exact conditional mean by enumeration"],
+    "scope": "model forward, full-softmax/support preparation, syntax forest/normalization/marginals, original proposal/order, original reward/score and one head backward; extra sampler preparation/draw/score included. Backbone gradients excluded explicitly. Cold compilation and warm structural-plan reuse both reported",
+    "compiler_limits": "same 30s/200000cells/1000000alternatives",
+    "query_deadline_seconds": 10,
+    "loading": "one-time checkpoint load excluded explicitly; no model inference during simultaneous timed replay",
+    "success": "cost times variance below original and competitive control for a stated operation; mathematical correctness alone and expected rejection counts are insufficient",
+    "uncertainty": "three timing repetitions; report distributions and censoring, no universal hardware or optimizer convergence claim"
+  },
+  "exclusions": ["trained final dJev", "publication novelty", "human review", "full Python/Rust Lean verification", "semantic superiority over EPIC", "final-document learning curves"]
+}
