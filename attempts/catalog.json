@@ -651,6 +651,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "22-full-vocabulary-posterior",
+      "title": "Posterior JSON exato no vocabulario original inteiro",
+      "conclusion": "Candidata de capacidade/custo. Oraculos de massa,marginais,lei e reutilizacao passam; beneficio e novidade ainda nao confirmados.",
+      "reading": "attempts/22-full-vocabulary-posterior/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "bc7e54b7d4db6e55d8b20049c59d8d02d7b84944",
+          "evidence_commit": "bc7e54b7d4db6e55d8b20049c59d8d02d7b84944",
+          "evidence_roots": [
+            "attempts/22-full-vocabulary-posterior/README.md",
+            "attempts/22-full-vocabulary-posterior/work"
+          ]
+        }
+      ]
     }
   ]
 }
