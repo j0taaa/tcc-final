@@ -109,7 +109,10 @@ incremental alternative; classical foundations are not recast as inventions.
   only a feasible joint prefix is accepted directly. Classical references,
   complete costs and sixteen methods are registered in rooted-addendum.json
   before timing. Seven offline oracles pass, including independent complete
-  path counts and quoted/escaped/UTF8/alias inputs. No new performance claim.
+  path counts and quoted/escaped/UTF8/alias inputs. Rooted development finished864 records,744 exact comparisons,zero wins.
+  Preserve all; no CPU/heldout expansion for that version. Frozen-support
+  propagation remains the better practical control. Investigate model-driven
+  growing support separately with strong reusable-reservoir controls.
 
 ## M38 — Align standing instructions with the current scientific objective
 

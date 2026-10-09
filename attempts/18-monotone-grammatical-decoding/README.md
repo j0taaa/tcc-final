@@ -118,7 +118,12 @@ se ele é viável, o guloso o aceita inteiro; se falha, resolve todas as decisõ
 lexicograficamente. No máximo duas consultas, também disponível no Rust.
 São dezesseis métodos predeclarados; candidata root_speculative, root_lex
 secundária. Sete oráculos offline passam, inclusive contagem independente
-de todas as conclusões e escapes/UTF8. Nenhum desempenho guiado medido ainda.
+de todas as conclusões e escapes/UTF8. [Resultado guiado](work/evidence/rooted-initial-decision.md): 864 registros
+GPU de desenvolvimento, 744 comparações exatas, nenhum ganho no critério.
+Não ampliar essa versão para CPU/avaliação. O parsing melhorou também os
+controles, e propagação persistente continua melhor no suporte congelado.
+Preservar; a próxima questão é suporte orientado por novas previsões, em
+uma tentativa independente, com reservas competentes para os controles.
 
 ## Contrato e oito critérios
 

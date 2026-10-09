@@ -1,0 +1,9 @@
+{
+  "producer_commit": "15767f363dc9ec9c1391ce2d4d4073a6d23f8570",
+  "command": "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-development-gpu-rooted-v1 --phase development --device cuda --trim --native --compressed --rooted",
+  "decision": "All864 GPU development records retained;744 exact comparisons;zero criterion wins. CPU and heldout not expanded for this version. Frozen support makes persistent classical propagation the better practical choice. Investigate adaptive model-driven support separately, including strong reservoir controls.",
+  "files": {
+    "development-gpu-rooted-v1/rows.jsonl": "d0fc4a051f9d07ce91ca4c4a5ffb4ab91275f8acf7f1f2d2eb8251d185f79320",
+    "development-gpu-rooted-v1/metadata.json": "9103125dd20461eaeff5299684482599708df00444a04e316dc31f4cf4b19830"
+  }
+}
