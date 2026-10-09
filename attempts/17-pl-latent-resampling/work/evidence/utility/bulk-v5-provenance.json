@@ -1,0 +1,10 @@
+{
+  "producer": "399470509890638e6befa4711e6d274cb06aaea5",
+  "scope": "Complete seven-control 4096-draw phase, with cumulative 1024 checkpoint; final indexed comparison is separate",
+  "command": "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/bulk_utility.py --strengthened --fast-forced --batch-size 4096 --output .cache/pl-bulk-utility-v5",
+  "records": 1009,
+  "files": {
+    "bulk-utility-v5/metadata.json": "0adfc761e98ae71a25e14ee8963ff1ce8f5de27f2302450c87ff0c1e0d16e794",
+    "bulk-utility-v5/rows.jsonl": "6985fd8985cbbef69f2cba83aefe892bb5aabd5731a973e8069a490d9a2ab1a8"
+  }
+}
