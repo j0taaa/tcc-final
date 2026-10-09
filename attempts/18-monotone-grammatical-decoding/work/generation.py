@@ -16,15 +16,17 @@ from time import perf_counter, process_time
 from enumeration import Enumeration
 from grammar_selectors import CachedPrefix, Recompute
 from monotone import Monotone
-from native_queries import NativeCountWarm, NativeLex, NativePrefix
+from native_queries import NativeCountWarm, NativeLex, NativePrefix, NativeSpeculative
 from native_sat import SatPrefix
 from relevant_forest import relevant_forest
+from rooted_selectors import RootCountWarm, RootLex, RootPrefix, RootSpeculative, compile_rooted
 from shared_fastpath import complete_point, keep_engine, stable_topk
 
 from mwpc_exact.cfg_posterior import CompilationLimit, _binarize_source, compile_cfg_sampler
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.reference.json_grammar import json_source_grammar
 from mwpc_exact.reference.limits import WorkBudget
+from mwpc_exact.reference.ll1 import check_ll1
 from mwpc_exact.reference.normalization import normalize_to_cnf
 from mwpc_exact.state import SelectionInput
 from mwpc_exact.support import SupportPolicy, build_per_position_support
@@ -86,6 +88,7 @@ def run_case(
     trim=False,
     compressed=False,
     native_grammar=None,
+    rooted=False,
 ):
     import torch
 
@@ -182,29 +185,52 @@ def run_case(
                 permitted_token_ids=tuple(sorted({t for row in rows for t in row})),
             )
             current_state = replace(state, canvas=current_canvas, support=restricted)
-            if method.startswith("rust_"):
+            if method.startswith("root_"):
+                factories = {
+                    "root_lex": RootLex,
+                    "root_cached_prefix": RootPrefix,
+                    "root_lazy_prefix": lambda s, **kw: RootPrefix(s, lazy=True, **kw),
+                    "root_count_warm": RootCountWarm,
+                    "root_speculative": RootSpeculative,
+                }
+                engine = clock(
+                    "prepare", lambda: factories[method](current_state, grammar=native_grammar)
+                )
+            elif method.startswith("rust_"):
                 native_kwargs = dict(compressed=compressed, grammar=native_grammar)
                 factories = {
                     "rust_lex": lambda s: NativeLex(s, **native_kwargs),
                     "rust_cached_prefix": lambda s: NativePrefix(s, **native_kwargs),
                     "rust_lazy_prefix": lambda s: NativePrefix(s, lazy=True, **native_kwargs),
                     "rust_count_warm": lambda s: NativeCountWarm(s, **native_kwargs),
+                    "rust_speculative": lambda s: NativeSpeculative(s, **native_kwargs),
                 }
                 engine = clock("prepare", lambda: factories[method](current_state))
             elif method == "enumeration":
                 engine = clock("prepare", lambda: Enumeration(current_state))
             else:
                 limits = protocol["measurement"]["compilation_limits"]
-                plan = clock(
-                    "compile",
-                    lambda: compile_cfg_sampler(
-                        source,
-                        current_state,
-                        timeout_seconds=limits["seconds"],
-                        max_chart_cells=limits["cells"],
-                        max_alternatives=limits["alternatives"],
-                    ),
-                )
+                if rooted:
+                    plan = clock(
+                        "compile",
+                        lambda: compile_rooted(
+                            current_state,
+                            native_grammar,
+                            max_cells=limits["cells"],
+                            max_terms=limits["alternatives"],
+                        ),
+                    )
+                else:
+                    plan = clock(
+                        "compile",
+                        lambda: compile_cfg_sampler(
+                            source,
+                            current_state,
+                            timeout_seconds=limits["seconds"],
+                            max_chart_cells=limits["cells"],
+                            max_alternatives=limits["alternatives"],
+                        ),
+                    )
                 result["raw_forest"] = dict(nodes=len(plan.terms), alternatives=plan.alternatives)
                 if trim:
                     plan = clock("root_pruning", lambda: relevant_forest(plan))
@@ -294,6 +320,8 @@ def run_case(
             )
         if hasattr(engine, "calls"):
             result["oracle_calls"] = engine.calls
+        if hasattr(engine, "speculative_successes"):
+            result["speculative_successes"] = engine.speculative_successes
         if hasattr(engine, "valid_paths"):
             result["valid_paths"] = engine.valid_paths
     except OverflowError as exc:
@@ -347,12 +375,15 @@ def main():
     parser.add_argument(
         "--compressed", action="store_true", help="Common native trie and compact CNF"
     )
+    parser.add_argument("--rooted", action="store_true", help="Rooted parser for all controls")
     args = parser.parse_args()
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source/protocol before measurement")
     protocol = json.loads((WORK / "protocol.json").read_text())
     if args.compressed and not args.native:
         raise ValueError("compression refinement requires all native controls")
+    if args.rooted and not args.compressed:
+        raise ValueError("rooted refinement requires all compressed native controls")
     binding = None
     if args.native:
         if not args.trim:
@@ -366,6 +397,15 @@ def main():
         protocol["methods"] += ["rust_lex", "rust_cached_prefix", "rust_lazy_prefix"]
         if args.compressed:
             protocol["methods"].append("rust_count_warm")
+    if args.rooted:
+        protocol["methods"] += [
+            "root_lex",
+            "root_cached_prefix",
+            "root_lazy_prefix",
+            "root_count_warm",
+            "root_speculative",
+            "rust_speculative",
+        ]
     config = json.loads((ROOT / protocol["model_config"]).read_text())
     torch.set_num_threads(config["torch_cpu_threads"])
     torch.set_flush_denormal(False)
@@ -396,6 +436,8 @@ def main():
         )
     )
     source = json_source_grammar()
+    if args.rooted:
+        check_ll1(source, budget=WorkBudget(max_work=1_000_000))
     grammar = normalize_to_cnf(source).grammar
     native_grammar = None
     if args.compressed:
@@ -411,6 +453,10 @@ def main():
         native_binding=binding,
         shared_work_addendum_sha256=digest((WORK / "shared-work-addendum.json").read_bytes()),
         native_compression=args.compressed,
+        rooted_parser=args.rooted,
+        rooted_addendum_sha256=digest((WORK / "rooted-addendum.json").read_bytes())
+        if args.rooted
+        else None,
         native_grammar_sha256=digest(json.dumps(native_grammar.to_dict(), sort_keys=True).encode())
         if native_grammar is not None
         else None,
@@ -491,6 +537,7 @@ def main():
                             trim=args.trim,
                             compressed=args.compressed,
                             native_grammar=native_grammar,
+                            rooted=args.rooted,
                         )
                         row["repetition"] = repetition
                         output.write(json.dumps(row) + "\n")

@@ -102,6 +102,14 @@ incremental alternative; classical foundations are not recast as inventions.
   rows,438 exact comparisons,zero criterion wins. Preserve everything; CPU
   and heldout of this version were not run. Rooted semiring/Earley parsing is
   the next bounded implementation investigation, not an asserted new theorem.
+  Implemented grouped root prediction/completion and exact max-plus byte-DAG
+  deduction, plus complete structural forests for ALL forest controls. Same
+  rooted kernel runs lex/eager/lazy/count-warm and speculative-prefix variants;
+  Rust gets the same speculative-prefix policy. At most two queries per step,
+  only a feasible joint prefix is accepted directly. Classical references,
+  complete costs and sixteen methods are registered in rooted-addendum.json
+  before timing. Seven offline oracles pass, including independent complete
+  path counts and quoted/escaped/UTF8/alias inputs. No new performance claim.
 
 ## M38 — Align standing instructions with the current scientific objective
 

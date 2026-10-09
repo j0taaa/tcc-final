@@ -1,0 +1,22 @@
+{
+  "kind": "correctness only, no model or performance experiment",
+  "seed": 2026100920,
+  "partial_topk_independent_fullsort_comparisons": 200,
+  "native_rust_and_sat_independent_json_trajectories": 40,
+  "dyadic_primary_priority_widths": [
+    2,
+    302,
+    1075
+  ],
+  "source_sha256": {
+    "audit_shared.py": "2aa5994935e07eb5e357f89ad4664cef27c68aa12c6eaf125e527f16073f8995",
+    "native_queries.py": "32a99d0b709f0546821843872765c7334518258bd408791631cc5ad35eee7b27",
+    "trie_lattice.py": "4e2550a9fc9555f0527fbe6ba5f15515a5fc324dee2d7621b7c7e27ea5433a9e",
+    "shared_fastpath.py": "de04bbe22a9e0203bd62117b29d697ef90a044d479a81a16de18c883520bf602",
+    "grammar_selectors.py": "569d400b30a2ef2252e002380ad57c75d211fec23725531d792e2062ef3d3dc6",
+    "native_sat.py": "1577832e9755a44d96081d42d3af233b2a44d064d760abe8f2f48246b41bf704",
+    "test_correctness.py": "e4ba848f2dcda6a2301390541b2e65e86345e6d91bb5e5480fec2276f32fda0f",
+    "rooted_parser.py": "0be53a01fb1edec2c15def7cf97d0a1f1e937626d53415e774f609c6ae2e8b72",
+    "rooted_selectors.py": "0bae0c80ed483d19c02555ce0ed59c1e78f38d32c68409c2d39094293b001f12"
+  }
+}

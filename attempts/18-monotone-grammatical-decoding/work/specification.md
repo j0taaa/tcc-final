@@ -210,3 +210,49 @@ Então 2^b C(y)+r(y_p) fornece o fallback canônico diretamente. Caso
 contrário, a propriedade de mínimo global não pode ser inferida desse
 testemunho e seu certificado é invalidado. Mesmo grafo/kernel/verificador
 do lexicográfico, custo integral; nenhuma promessa de vantagem em geral.
+
+## Referência de dedução guiada pela raiz
+
+Preveja S na fronteira inicial. Em CNF sem consumo epsilon, prever A em v
+ativa produções A->byte e expectativas A->B.C após B; agrupe previsões
+repetidas por (A,v). O escaneamento cria células (A,v,w) nas arestas de
+byte admissíveis. Completar B(s,v) cria expectativas por C em v, guardando
+score/backpointer de B; completar C(v,w) soma seu score ao prefixo B e
+completa A(s,w). Predições são condições de alcance, sem multiplicar o
+score do contexto. Agrupar prefixos de mesmo(A,s,C,v) pelo maior score é
+válido para max-plus, pois todo C(v,w) combina com qualquer desses prefixos.
+Para a floresta, conserve TODOS os prefixos/alternativas, inclusive os que
+não são os melhores; mudanças de tokens podem torná-los necessários.
+
+A CNF não consome epsilon, e cada aresta vai para um vértice maior. Processe
+finais crescentes e, dentro de cada final, inícios decrescentes. Completar
+um filho direito(v,w) gera pai(s,w) com s<v, portanto o filho foi finalizado
+antes do pai. Prefixos esquerdos acabam antes do filho direito começar;
+nenhuma melhora pode chegar após a finalização. Previsões na posição atual
+só escaneiam para vértices futuros. Por indução, cada célula guarda o máximo
+exato; a variante que retém alternativas guarda todas as derivações que
+um prefixo da raiz pode alcançar. Toda derivação completa da raiz satisfaz
+as previsões ao percorrer seus filhos, logo nenhuma conclusão completa é
+perdida. A reconstrução produz o mesmo caminho de tokens/bytes/recompensas.
+
+Isto especializa EarleyFast/semiring parsing: Opedal et al. (2023), §§5/6,
+notas7/10, https://aclanthology.org/2023.acl-long.204.pdf . Não é novo teorema
+de parsing. O limite conservador usa O(|G| V^3+|G| E) deduções em DAG com
+V vértices e E arestas, O(|G|V²+E) armazenamento de melhores prefixos/células,
+multiplicado pelo custo de operações sobre scores de(m+b)bits. A floresta
+acrescenta espaço/custo de suas alternativas, até O(|G|V³+|G|E), e não
+herda o armazenamento do max-plus. Indexação, geometria, priorização na
+agenda, validação e reconstrução são contados; não alegar aceleração
+universal. A redução de células irrelevantes é uma vantagem de execução
+condicional conhecida, a ser confrontada com os mesmos controles guiados.
+
+Prefixo especulativo: teste conjuntamente as primeiras c propostas elegíveis
+(todas com confiança>=theta, slots distintos). Se existe testemunho conjunto,
+cada uma é aceita pelo guloso, pois o mesmo testemunho satisfaz seus prefixos;
+o lote é exatamente esse prefixo. Sem propostas elegíveis, testar a primeira
+proposta livre produz o fallback guloso se ela é viável. Se o teste falha,
+não deduza impossibilidade individual: execute a consulta lexicográfica
+completa e seu fallback canônico. Assim há no máximo duas consultas por
+passo, uma delas em domínio restringido. Duplicatas conflitantes no prefixo
+recusam o atalho. É batching clássico com resolução exata, não novo lema.
+Compare também essa implementação nos dois kernels e com controles guiados.

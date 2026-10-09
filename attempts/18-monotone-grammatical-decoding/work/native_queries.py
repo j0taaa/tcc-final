@@ -68,7 +68,9 @@ class NativeQuery:
                 policy=state.eos_policy,
             )
             graph = lattice.normalized_graph
-        if self.backend is ExactBackend.RUST:
+        if hasattr(self, "root_parser"):
+            result, certificate = self.root_parser.parse(graph)
+        elif self.backend is ExactBackend.RUST:
             result = solve_rust_dag(self.query_grammar, graph, timeout_seconds=30)
             certificate = result.certificate
         else:
@@ -157,6 +159,36 @@ class NativeLex(NativeQuery, Recompute):
         for p, t in updates.items():
             self.canvas[p] = t
         return tuple(updates.items())
+
+
+class NativeSpeculative(NativeLex):
+    """Verify an observable priority prefix jointly, else use full exact lex."""
+
+    def transition(self, proposals, *, threshold=0.8, cap=None):
+        validate_order(proposals)
+        cap = len(self.canvas) if cap is None else cap
+        if type(cap) is not int or cap < 1:
+            raise ValueError("cap must be positive")
+        free = [(p, t, w) for p, t, w in proposals if self.canvas[p] is None]
+        selected = {}
+        for p, t, w in free:
+            if w < threshold or len(selected) == cap:
+                break
+            if p in selected and selected[p] != t:
+                return super().transition(proposals, threshold=threshold, cap=cap)
+            selected[p] = t
+        if not selected and free:
+            selected = {free[0][0]: free[0][1]}
+        if selected:
+            trial = list(self.canvas)
+            for p, t in selected.items():
+                trial[p] = t
+            if self.solve(trial) is not None:
+                for p, t in selected.items():
+                    self.canvas[p] = t
+                self.speculative_successes = getattr(self, "speculative_successes", 0) + 1
+                return tuple(selected.items())
+        return super().transition(proposals, threshold=threshold, cap=cap)
 
 
 class NativePrefix(NativeQuery, CachedPrefix):

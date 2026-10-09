@@ -9,6 +9,7 @@ from pathlib import Path
 import torch
 from native_queries import NativeCountWarm, NativeLex, NativePrefix
 from native_sat import SatPrefix
+from rooted_selectors import RootCountWarm, RootLex, RootPrefix, RootSpeculative
 from shared_fastpath import complete_point, keep_engine, stable_topk
 from test_correctness import oracle, setup
 
@@ -42,6 +43,10 @@ def main():
             NativePrefix(plan.state, compressed=True),
             NativeCountWarm(plan.state, compressed=True),
             SatPrefix(plan),
+            RootLex(plan.state),
+            RootPrefix(plan.state),
+            RootCountWarm(plan.state),
+            RootSpeculative(plan.state),
         ]
         canvas = [None] * 3
         while None in canvas:
@@ -71,10 +76,10 @@ def main():
             for p, t in expected:
                 canvas[p] = t
     tiny, _ = setup((b"[", b"0", b"1", b"]"), ((0,), (1, 2), (3,)))
-    native = NativeLex(tiny.state, compressed=True)
-    for common in (0, 300, 1073):
-        proposals = [(0, 0, 0.9)] * common + [(1, 2, 0.8), (1, 1, 0.8)]
-        assert native.solve([None] * 3, proposals) == (0, 2, 3)
+    for native in (NativeLex(tiny.state, compressed=True), RootLex(tiny.state)):
+        for common in (0, 300, 1073):
+            proposals = [(0, 0, 0.9)] * common + [(1, 2, 0.8), (1, 1, 0.8)]
+            assert native.solve([None] * 3, proposals) == (0, 2, 3)
     names = (
         "audit_shared.py",
         "native_queries.py",
@@ -83,6 +88,8 @@ def main():
         "grammar_selectors.py",
         "native_sat.py",
         "test_correctness.py",
+        "rooted_parser.py",
+        "rooted_selectors.py",
     )
     evidence = dict(
         kind="correctness only, no model or performance experiment",

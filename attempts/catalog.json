@@ -491,7 +491,7 @@
     {
       "id": "18-monotone-grammatical-decoding",
       "title": "Preserva\u00e7\u00e3o de pol\u00edtica gulosa e propaga\u00e7\u00e3o gramatical durante gera\u00e7\u00e3o",
-      "conclusion": "Poda e nativos originais/compactos ainda sem benef\u00edcio forte. Trajet\u00f3rias coincidem. Refinamento compartilhado predeclarado; nenhuma prioridade confirmada.",
+      "conclusion": "Controles fortes e todos os refinamentos medidos ainda sem ganho completo; dados preservados. Parsing guiado pela raiz em investiga\u00e7\u00e3o, sem novidade afirmada.",
       "reading": "attempts/18-monotone-grammatical-decoding/README.md; attempts/18-monotone-grammatical-decoding/work/specification.md",
       "versions": [
         {
@@ -547,6 +547,16 @@
           "id": "v6",
           "source_commit": "cf4ed1fff287c16138264e29dc51f76fcb7f6828",
           "evidence_commit": "7bac1f6abd2198184023cc5f6d5c67224f5ff655",
+          "evidence_roots": [
+            "attempts/18-monotone-grammatical-decoding/work/evidence",
+            "attempts/18-monotone-grammatical-decoding/work/analyze.py",
+            "attempts/18-monotone-grammatical-decoding/README.md"
+          ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "d606cf2b2b4d9ea5135b3bb4b709c5087e3fb5bc",
+          "evidence_commit": "d2ebdda45276c4c4d5af5c200f97e04da84fcd1e",
           "evidence_roots": [
             "attempts/18-monotone-grammatical-decoding/work/evidence",
             "attempts/18-monotone-grammatical-decoding/work/analyze.py",

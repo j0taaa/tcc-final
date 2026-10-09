@@ -104,6 +104,22 @@ beneficiar também os controles Booleanos/gulosos e a floresta reutilizável.
 Os oito critérios permanecem: novidade teórica NÃO confirmada, matemática
 delimitada à preservação de política, ganho completo ainda pendente.
 
+O [plano guiado pela raiz](work/rooted-addendum.json) especifica quatro
+controles de melhor derivação e a mesma compilação de TODAS as alternativas
+para os cinco métodos de floresta. Opedal et al. (2023), §§5/6, notas7/10
+explicitamente admitem semirings exatos e lattices acíclicos. A referência
+usa CNF sem consumo epsilon e ordem topológica para não iterar scores após
+finalização; prepara tabelas por decoder, com custo contado. Reavalia 3/6/7:
+comparar também com guloso e propagação que usam a busca guiada, não apenas
+com CYK antigo. Os critérios1/2/4/5/8 permanecem: infilling real, fundamentos
+conhecidos, equivalência delimitada, dados externos e revisão pendente.
+Inclui ainda um híbrido que verifica o prefixo observável conjuntamente:
+se ele é viável, o guloso o aceita inteiro; se falha, resolve todas as decisões
+lexicograficamente. No máximo duas consultas, também disponível no Rust.
+São dezesseis métodos predeclarados; candidata root_speculative, root_lex
+secundária. Sete oráculos offline passam, inclusive contagem independente
+de todas as conclusões e escapes/UTF8. Nenhum desempenho guiado medido ainda.
+
 ## Contrato e oito critérios
 
 1. **Uso:** completar lacunas de documentos JSON com uma dLLM, preservando
@@ -150,6 +166,7 @@ delimitada à preservação de política, ganho completo ainda pendente.
 
 ## Antecedentes conferidos
 
+- [Efficient Semiring-Weighted Earley Parsing, Opedal et al. (2023)](https://aclanthology.org/2023.acl-long.204.pdf), §§5/6 e notas7/10.
 - [Semiring Parsing, Goodman (1999)](https://aclanthology.org/J99-4004/).
 - [Lexicographic Semirings, Sproat et al. (2014)](https://aclanthology.org/J14-4002/).
 - [Grammar Constraints, Quimper e Walsh (2009), §GRAMMAR](https://arxiv.org/pdf/0903.0470):

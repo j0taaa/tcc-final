@@ -9,6 +9,7 @@ from grammar_selectors import CachedPrefix, Recompute, witness
 from monotone import Monotone
 from native_queries import NativeCountWarm, NativeLex, NativePrefix
 from relevant_forest import relevant_forest
+from rooted_selectors import RootCountWarm, RootLex, RootPrefix, RootSpeculative, compile_rooted
 from shared_fastpath import complete_point, keep_engine
 
 from mwpc_exact.backend import ExactBackend
@@ -73,6 +74,53 @@ def oracle(valid, canvas, proposals, threshold, cap):
 
 
 class Correctness(unittest.TestCase):
+    def test_rooted_strings_and_complete_forest(self):
+        emissions = (
+            b"[",
+            b"]",
+            b'"a"',
+            b'"',
+            b"0",
+            b"null",
+            b"true",
+            b" ",
+            b"\\",
+            b"\n",
+            b'"\\u0041"',
+            b'"a"',
+            b'"\xc3\xa9"',
+            b"00",
+        )
+        rng = random.Random(2026100921)
+        for _ in range(40):
+            rows = tuple(
+                tuple(sorted({base, *rng.sample(range(len(emissions)), 3)})) for base in (0, 2, 1)
+            )
+            plan, valid = setup(emissions, rows)
+            rooted = compile_rooted(plan.state, plan.grammar)
+            weights = tuple(tuple(1 for _ in row) for row in rows)
+            inside = [0] * len(rooted.terms)
+            for n in rooted.order:
+                inside[n] = sum(rooted.term_mass(t, weights, inside) for t in rooted.terms[n])
+            self.assertEqual(inside[rooted.root], len(valid))
+            engines = [
+                e(plan.state, grammar=plan.grammar)
+                for e in (RootLex, RootPrefix, RootCountWarm, RootSpeculative)
+            ]
+            canvas = [None] * 3
+            while None in canvas:
+                proposals = [
+                    (p, rng.choice(row), rng.choice((0.1, 0.8, 0.9)))
+                    for p, row in enumerate(rows)
+                    if canvas[p] is None
+                ]
+                proposals.sort(key=lambda x: (-x[2], x[0], x[1]))
+                expected = oracle(valid, canvas, proposals, 0.8, 2)
+                for e in engines:
+                    self.assertEqual(e.transition(proposals, threshold=0.8, cap=2), expected)
+                for p, t in expected:
+                    canvas[p] = t
+
     def test_complete_point_and_engine_reuse(self):
         plan, valid = setup(
             (b"[", b"[]", b"]", b"0", b"00", b"0]", b" ", b"0"),
@@ -140,6 +188,10 @@ class Correctness(unittest.TestCase):
             engines.append(
                 NativeCountWarm(plan.state, backend=ExactBackend.PYTHON, compressed=True)
             )
+            engines.extend(
+                e(plan.state, grammar=compact)
+                for e in (RootLex, RootPrefix, RootCountWarm, RootSpeculative)
+            )
             canvas = [None] * 3
             steps = 0
             while None in canvas:
@@ -191,12 +243,13 @@ class Correctness(unittest.TestCase):
             plan, valid = setup(emissions, rows)
             self.assertTrue(valid)
             trimmed = relevant_forest(plan)
+            rooted = compile_rooted(plan.state, plan.grammar)
             self.assertEqual(relevant_forest(trimmed), trimmed)
             self.assertLessEqual(trimmed.alternatives, plan.alternatives)
             for trial in range(50):
                 engines = [
                     engine(p)
-                    for p in (plan, trimmed)
+                    for p in (plan, trimmed, rooted)
                     for engine in (
                         Monotone,
                         Recompute,
