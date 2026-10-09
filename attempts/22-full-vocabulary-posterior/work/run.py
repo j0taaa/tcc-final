@@ -56,28 +56,44 @@ def main():
                 offset = (index + repeat) % len(methods)
                 for method in methods[offset:] + methods[:offset]:
                     begin = perf_counter()
-                    result = subprocess.run(
-                        [
-                            sys.executable,
-                            "-m",
-                            "attempts.22-full-vocabulary-posterior.work.measure",
-                            "--capture",
-                            str(args.capture.resolve()),
-                            "--case",
-                            case,
-                            "--method",
-                            method,
-                            "--repeat",
-                            str(repeat),
-                            "--matrices",
-                            str((args.output / "matrices").resolve()),
-                        ],
-                        cwd=ROOT,
-                        env=env,
-                        text=True,
-                        capture_output=True,
-                        check=False,
-                    )
+                    try:
+                        result = subprocess.run(
+                            [
+                                sys.executable,
+                                "-m",
+                                "attempts.22-full-vocabulary-posterior.work.measure",
+                                "--capture",
+                                str(args.capture.resolve()),
+                                "--case",
+                                case,
+                                "--method",
+                                method,
+                                "--repeat",
+                                str(repeat),
+                                "--matrices",
+                                str((args.output / "matrices").resolve()),
+                            ],
+                            cwd=ROOT,
+                            env=env,
+                            text=True,
+                            capture_output=True,
+                            check=False,
+                            timeout=protocol["limits"]["timeout_seconds"] + 30,
+                        )
+                    except subprocess.TimeoutExpired:
+                        row = dict(
+                            case=case.rsplit("-", 1)[0],
+                            mask_count=int(case.rsplit("-", 1)[1]),
+                            method=method,
+                            repeat=repeat,
+                            status="resource_refusal",
+                            error="hard supervisor deadline including import/startup/audit/cleanup",
+                            supervisor_wall=perf_counter() - begin,
+                        )
+                        log.write(json.dumps(row) + "\n")
+                        log.flush()
+                        print(json.dumps(row), flush=True)
+                        continue
                     if result.returncode:
                         row = dict(
                             case=case.rsplit("-", 1)[0],

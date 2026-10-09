@@ -1,0 +1,6 @@
+{
+  "rows": 11,
+  "planned_rows": 270,
+  "raw_sha256": "dc6e9391a376c50d19f1c6460334be3c9f4ab0b03daa18e682d40924773b995d",
+  "reason": "Host has15GiB RAM and approx3.3GiB available during the v2 probe;8GiB worker cap caused pressure and delayed Python exception cleanup. Interrupt whole v2 (11/270), preserve all;3GiB virtual cap equally for ALL methods,120s whole operation+hard150s including startup/diagnostic/cleanup. Not result-based case selection. No fresh inputs measured."
+}

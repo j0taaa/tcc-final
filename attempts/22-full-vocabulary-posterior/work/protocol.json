@@ -1,5 +1,5 @@
 {
-  "schema": 2,
+  "schema": 3,
   "purpose": "Full original-vocabulary exact JSON posterior, original marginals and sampling",
   "seed": 2026100918,
   "external": {
@@ -39,7 +39,8 @@
     "timeout_seconds": 120,
     "rejection_seconds": 120,
     "rejection_attempts": 2000000,
-    "address_space_gib": 8
+    "address_space_gib": 3,
+    "supervisor_seconds": 150
   },
   "success": {
     "correctness": "Mass and all original marginal numerator vectors EXACTLY agree among every conclusive exact method. Samples satisfy strict UTF8 JSON and fixed original IDs; independent law oracles before model.",
@@ -50,5 +51,8 @@
   "amendment": {
     "previous_source_commit": "f900bd7a",
     "reason": "Before fresh evaluation, strengthen global quotient to the per-variable reachable-state quotient and raise counter guards.116/216 original v1 rows preserved; interrupt whole campaign, no case selected/excluded. No v1 confirmed utility claim. Reuse SAME frozen model probabilities; new source/protocol frozen before v2 timing."
+  },
+  "memory_amendment": {
+    "reason": "Host has15GiB RAM and approx3.3GiB available during the v2 probe;8GiB worker cap caused pressure and delayed Python exception cleanup. Interrupt whole v2 (11/270), preserve all;3GiB virtual cap equally for ALL methods,120s whole operation+hard150s including startup/diagnostic/cleanup. Not result-based case selection. No fresh inputs measured."
   }
 }

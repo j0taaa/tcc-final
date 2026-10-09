@@ -71,3 +71,12 @@ sem excluir caso desfavorável. Mesmos floats de modelo capturados em f900bd7.
 A nova rodada compara CINCO métodos, com guardas10x maiores,120s/8GiB iguais.
 Métricas/limiar20% não mudam. A classificação por posição é antecedente
 conhecido; pode eliminar o benefício. Repetir TODOS os casos de desenvolvimento.
+
+
+Refinamento v3 operacional, antes da confirmação fresca:11/270 registros v2
+preservados integralmente.8GiB virtual por processo excedia a memória disponível
+neste host15GiB com aplicativos ativos; exceção por prazo liberava um heap
+muito grande lentamente. Todos os métodos passam a3GiB igualmente; supervisor
+mata após150s incluindo startup/auditoria/cleanup, além do prazo interno120s.
+Não atribuir uma recusa a inviabilidade ou chamar a rodada parcial de sucesso.
+Mudança necessária ao hardware disponível, não seleção de casos favoráveis.
