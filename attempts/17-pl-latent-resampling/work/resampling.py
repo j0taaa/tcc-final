@@ -6,7 +6,7 @@ acceptance, approximate target, neural training, or production decoder change.
 
 from __future__ import annotations
 
-from bisect import bisect_left
+from bisect import bisect_left, bisect_right
 from dataclasses import dataclass
 from fractions import Fraction as Q
 from math import isqrt, lcm, prod
@@ -69,6 +69,14 @@ def negative_exp_upper(x, tolerance, end=None):
         return min(Q(1), tolerance)
     lower, _ = exp_bounds(x, tolerance, end)
     return min(Q(1), 1 / lower)
+
+
+def dyadic_negative_exp_upper(x, tolerance, end=None):
+    """Same certified error; a common dyadic denominator avoids coprime LCMs."""
+    upper = negative_exp_upper(x, tolerance / 2, end)
+    precision = max(0, (tolerance.denominator // tolerance.numerator).bit_length() + 1)
+    scale = 1 << precision
+    return min(Q(1), Q(-(-upper.numerator * scale // upper.denominator), scale))
 
 
 @dataclass
@@ -169,9 +177,11 @@ class Problem:
 
 
 class TangentMixture:
-    def __init__(self, problem, end=None, max_components=256):
+    def __init__(self, problem, end=None, max_components=256, dyadic_unaries=False):
         self.problem = p = problem
         self.components = []
+        self.component_cdf = None
+        self.integer_envelope = None
         if not p.order or not p.hidden or p.L == p.H:
             base = WeightedForest.prepare(p.plan, p.evidence_weights, end)
             if not base.mass:
@@ -193,6 +203,7 @@ class TangentMixture:
         f_min = p.f(p.H)
         delta_a = f_min / (4 * j_count)
         delta_u = f_min / (4 * j_count * 3**k * m)
+        upper_unary = dyadic_negative_exp_upper if dyadic_unaries else negative_exp_upper
         for s in grid:
             deadline(end)
             t = sum((1 / (s + c) for c in p.c), Q())
@@ -200,8 +211,7 @@ class TangentMixture:
             alpha = p.f(s) * upper
             unary = tuple(
                 tuple(
-                    negative_exp_upper(t * rate, delta_u, end) if i in p.hidden else Q(1)
-                    for rate in row
+                    upper_unary(t * rate, delta_u, end) if i in p.hidden else Q(1) for rate in row
                 )
                 for i, row in enumerate(p.rates)
             )
@@ -214,9 +224,37 @@ class TangentMixture:
         self.mass = sum((a * component.mass for a, _, component in self.components), Q())
         if not self.mass:
             raise ValueError("zero evidence mass")
+        if dyadic_unaries:
+            masses = [a * c.mass for a, _, c in self.components]
+            scale = lcm(*(value.denominator for value in masses))
+            total, self.component_cdf = 0, []
+            for value in masses:
+                deadline(end)
+                total += value.numerator * (scale // value.denominator)
+                self.component_cdf.append(total)
+            coefficient_scale = lcm(*(a.denominator for a, _, _ in self.components))
+            unary_scale = 1 << max(0, (delta_u.denominator // delta_u.numerator).bit_length() + 1)
+            coefficients, ticks = [], []
+            for a, unaries, _ in self.components:
+                deadline(end)
+                coefficients.append(a.numerator * (coefficient_scale // a.denominator))
+                ticks.append(
+                    {
+                        i: tuple(u.numerator * (unary_scale // u.denominator) for u in unaries[i])
+                        for i in p.hidden
+                    }
+                )
+            self.integer_envelope = (coefficients, ticks, coefficient_scale * unary_scale**m)
 
     def envelope(self, path):
         p = self.problem
+        if self.integer_envelope is not None:
+            coefficients, ticks, scale = self.integer_envelope
+            value = sum(
+                a * prod(row[i][p.indices[i][path[i]]] for i in p.hidden)
+                for a, row in zip(coefficients, ticks, strict=True)
+            )
+            return Q(value, scale)
         return sum(
             (
                 alpha * prod((unary[i][p.indices[i][path[i]]] for i in p.hidden), start=Q(1))
@@ -238,7 +276,11 @@ class TangentMixture:
         while True:
             deadline(end)
             count += 1
-            index = categorical([a * c.mass for a, _, c in self.components], rng)
+            index = (
+                categorical([a * c.mass for a, _, c in self.components], rng)
+                if self.component_cdf is None
+                else bisect_right(self.component_cdf, rng.randrange(self.component_cdf[-1]))
+            )
             path = self.components[index][2].sample(rng)
             probability = self.acceptance(path)
             if rng.randrange(probability.denominator) < probability.numerator:

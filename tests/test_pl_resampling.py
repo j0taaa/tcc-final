@@ -23,9 +23,10 @@ audit = load("pl_resampling_audit", "audit.py")
 
 class PlLatentOracleTests(unittest.TestCase):
     def test_conditional_sampler_laws_and_token_aliases(self):
-        report = audit.correctness(max_n=2)
-        self.assertGreater(report["events"], 20)
-        self.assertEqual(report["exact_mismatches"], 0)
+        for dyadic in (False, True):
+            report = audit.correctness(max_n=2, dyadic_unaries=dyadic)
+            self.assertGreater(report["events"], 20)
+            self.assertEqual(report["exact_mismatches"], 0)
 
     def test_independent_gradient_and_two_replica_covariance(self):
         for power in (1, 2):
@@ -60,6 +61,13 @@ class PlLatentOracleTests(unittest.TestCase):
         self.assertLessEqual(upper - lower, tiny)
         self.assertGreater(lower, Q(27, 10))
         self.assertLess(upper, Q(28, 10))
+        tolerance = Q(17, 13000)
+        for x in (Q(1, 7), Q(12, 7), Q(11)):
+            u = reference.dyadic_negative_exp_upper(x, tolerance)
+            lo, hi = reference.exp_bounds(x, tolerance / 8)
+            self.assertGreaterEqual(u, 1 / lo)
+            self.assertLessEqual(u - 1 / hi, tolerance)
+            self.assertEqual(u.denominator & (u.denominator - 1), 0)
 
 
 if __name__ == "__main__":

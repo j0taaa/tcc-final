@@ -122,14 +122,14 @@ def forest_law(base):
     }
 
 
-def check_problem(p, paths):
+def check_problem(p, paths, dyadic_unaries=False):
     target = {
         y: w * direct_pl(y, p.order, p.free, p.rates, p.indices)
         for y, w in paths.items()
         if all(y[i] == token for i, token in p.observed.items())
     }
     z = sum(target.values(), Q())
-    mixture, rejection = TangentMixture(p), BaseRejection(p)
+    mixture, rejection = TangentMixture(p, dyadic_unaries=dyadic_unaries), BaseRejection(p)
     proposal = defaultdict(Q)
     for alpha, _, component in mixture.components:
         law = forest_law(component)
@@ -159,7 +159,7 @@ def check_problem(p, paths):
     return len(target)
 
 
-def correctness(max_n=4):
+def correctness(max_n=4, dyadic_unaries=False):
     events = paths_checked = 0
     for n in range(1, max_n + 1):
         for weighted in (False, True):
@@ -180,7 +180,7 @@ def correctness(max_n=4):
                                 order,
                                 dict(zip(order, tokens, strict=True)),
                             )
-                            paths_checked += check_problem(p, paths)
+                            paths_checked += check_problem(p, paths, dyadic_unaries)
                             events += 1
             print(
                 f"exact-law fixture n={n}, weighted={weighted}: cumulative {events} events",
@@ -194,7 +194,9 @@ def correctness(max_n=4):
         for i in free:
             for token in data.state.support.rows[i]:
                 paths_checked += check_problem(
-                    Problem(plan, data.probabilities, rates, (i,), {i: token}), paths
+                    Problem(plan, data.probabilities, rates, (i,), {i: token}),
+                    paths,
+                    dyadic_unaries,
                 )
                 events += 1
     plan, data = fixture(2)
@@ -202,7 +204,7 @@ def correctness(max_n=4):
     rates = tuple(tuple(Q(1) for _ in row) for row in data.probabilities)
     for order in [(), (1,), (1, 3)]:
         p = Problem(plan, data.probabilities, rates, order, {i: 3 for i in order})
-        paths_checked += check_problem(p, paths)
+        paths_checked += check_problem(p, paths, dyadic_unaries)
         events += 1
     return {"events": events, "conditional_original_paths": paths_checked, "exact_mismatches": 0}
 
@@ -380,11 +382,13 @@ def gradient_audit():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--dyadic", action="store_true")
     args = parser.parse_args()
     start = perf_counter()
     report = {
         "scope": "exact finite correctness oracles, no performance or training claim",
-        "correctness": correctness(),
+        "numeric_variant": "dyadic" if args.dyadic else "reference",
+        "correctness": correctness(dyadic_unaries=args.dyadic),
         "gradient": gradient_audit(),
         "elapsed_seconds": perf_counter() - start,
     }

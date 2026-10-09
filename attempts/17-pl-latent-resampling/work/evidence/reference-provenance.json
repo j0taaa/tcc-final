@@ -1,0 +1,14 @@
+{
+  "reference_correctness_source_commit": "14491c7f11d16afd247498b3ec5e307574bad46b",
+  "reference_replay_source_commit": "780431525cecc62414dd89cba0752a192673264f",
+  "scope": "Independent correctness fixtures and frozen-model query costs, not training",
+  "harness_v1": "Nine KeyError(kind) records are a fixed replay harness defect, not model or sampler evidence",
+  "reference_sha256": {
+    "harness-v1/metadata.json": "b3f84bd85e8779d42de16de8bbe0e7a6d7a44b8ab7d01930b560c3e4bd7269c5",
+    "harness-v1/rows.jsonl": "9734f701c9f435dd3f7282c6718673f2a83dcd25d5e1fa6b686650656cb0516b",
+    "reference-correctness.json": "fa24e107685aad3bc417dee9651cdb33a90f25753fa843613652fb2a50275267",
+    "reference-replay/metadata.json": "a7cc9b79f8c42f8a7cac2030540fe79fb673827c3bdc8927204a9e663c0aabec",
+    "reference-replay/rows.jsonl": "13291234f053d063b0ba58de81190c892aae92187ccc6f4e31f124f76be8841c",
+    "reference-replay/summary.json": "e89224d94637b0e1d4afcdd466ed86637510fe59a59f2a1bd240991e017c1763"
+  }
+}

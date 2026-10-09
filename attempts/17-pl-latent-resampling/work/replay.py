@@ -11,6 +11,7 @@ import platform
 import subprocess
 from bisect import bisect_right
 from fractions import Fraction as Q
+from functools import partial
 from pathlib import Path
 from random import Random
 from time import monotonic, perf_counter
@@ -88,6 +89,7 @@ def run(args):
     args.output.mkdir(parents=True, exist_ok=False)
     metadata = {
         "source_commit": source_commit,
+        "numeric_variant": args.numeric_variant,
         "protocol_sha256": hashlib.sha256((WORK / "protocol.json").read_bytes()).hexdigest(),
         "protocol_addendum_sha256": hashlib.sha256(
             (WORK / "protocol-addendum.json").read_bytes()
@@ -103,7 +105,10 @@ def run(args):
     (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     stream = (args.output / "rows.jsonl").open("w")
     methods = [
-        ("certified_tangent_mixture", TangentMixture),
+        (
+            "certified_tangent_mixture",
+            partial(TangentMixture, dyadic_unaries=args.numeric_variant == "dyadic"),
+        ),
         ("rejection_with_f_L_envelope", BaseRejection),
         ("enumeration", EnumeratedTarget),
     ]
@@ -244,4 +249,5 @@ def run(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--numeric-variant", choices=("reference", "dyadic"), default="reference")
     run(parser.parse_args())

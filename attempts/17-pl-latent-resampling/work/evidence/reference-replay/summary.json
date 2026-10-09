@@ -1,0 +1,1590 @@
+{
+  "cases": 9,
+  "observed_events": 48,
+  "query_rows": 432,
+  "compilation_refusals": [
+    {
+      "case": "json-context2-16",
+      "archived_input": "f8dc62630cc3380f5822feec59ff9cc4a5033bc8b65f41e4b590c63112086d6b",
+      "stage": "compilation",
+      "status": "unresolved",
+      "error": "CompilationLimit('compiled forest budget; feasibility remains unresolved')",
+      "elapsed_seconds": 2.486184741021134
+    }
+  ],
+  "independently_checked_stored_path_occurrences": 7269,
+  "accepted_draws_in_recorded_prefixes": 5543,
+  "methods": {
+    "certified_tangent_mixture": {
+      "statuses": {
+        "complete": 124,
+        "unresolved": 20
+      },
+      "batches": {
+        "1": {
+          "completed_prefixes": 143,
+          "median_query_seconds": 0.4140634879586287,
+          "median_standalone_cold_seconds": 0.7707435119664297
+        },
+        "4": {
+          "completed_prefixes": 133,
+          "median_query_seconds": 0.4610994190443307,
+          "median_standalone_cold_seconds": 0.7501778800506145
+        },
+        "16": {
+          "completed_prefixes": 124,
+          "median_query_seconds": 0.5501363140065223,
+          "median_standalone_cold_seconds": 0.9559367735055275
+        }
+      }
+    },
+    "enumeration": {
+      "statuses": {
+        "complete": 78,
+        "not_applicable": 60,
+        "unresolved": 6
+      },
+      "batches": {
+        "1": {
+          "completed_prefixes": 78,
+          "median_query_seconds": 0.006926177506102249,
+          "median_standalone_cold_seconds": 0.006926177506102249
+        },
+        "4": {
+          "completed_prefixes": 78,
+          "median_query_seconds": 0.006957500503631309,
+          "median_standalone_cold_seconds": 0.006957500503631309
+        },
+        "16": {
+          "completed_prefixes": 78,
+          "median_query_seconds": 0.007080074516125023,
+          "median_standalone_cold_seconds": 0.007080074516125023
+        }
+      }
+    },
+    "rejection_with_f_L_envelope": {
+      "statuses": {
+        "complete": 141,
+        "unresolved": 3
+      },
+      "batches": {
+        "1": {
+          "completed_prefixes": 144,
+          "median_query_seconds": 0.03897839548881166,
+          "median_standalone_cold_seconds": 0.42692881848779507
+        },
+        "4": {
+          "completed_prefixes": 143,
+          "median_query_seconds": 0.039695358951576054,
+          "median_standalone_cold_seconds": 0.3862138699623756
+        },
+        "16": {
+          "completed_prefixes": 141,
+          "median_query_seconds": 0.06339074502466246,
+          "median_standalone_cold_seconds": 0.4459742639446631
+        }
+      }
+    }
+  },
+  "paired_comparisons": [
+    {
+      "alternative": "rejection_with_f_L_envelope",
+      "batch": 1,
+      "paired_events": 47,
+      "mixture_faster_events": 0,
+      "median_alternative_over_mixture": 0.0945955084120469,
+      "events": [
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.029285123958549864
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 8,
+          "ratio": 0.041446410944838155
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.11908405690341754
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.028069613005836064
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 2,
+          "k": 8,
+          "ratio": 0.017106696161510525
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 2,
+          "k": 15,
+          "ratio": 0.03589357106747074
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.25320585757393516
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.1265990868061306
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.09928587322267558
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.2587535873437091
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.2192938841074621
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.07278810913063674
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.12139560415055328
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 4,
+          "ratio": 0.17841722850522182
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.08872856911445902
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.0945955084120469
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 4,
+          "ratio": 0.06346171582315699
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.053893993348105
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.02318917262378488
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 8,
+          "ratio": 0.035334552363023436
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.11712944821281882
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.011411514950418604
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 2,
+          "k": 8,
+          "ratio": 0.022525022010360406
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.3974884370675994
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.17049103785075792
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.385723262945588
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.1552678554187881
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.0895842041831071
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.29290455715609703
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.05406504742509489
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 4,
+          "ratio": 0.08677874381010386
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.05653410496728759
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.36087053697145205
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 4,
+          "ratio": 0.062436064676673335
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.08948889263410009
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.10354897671257819
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.12600193421493322
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.11685172915142872
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.12018761027206687
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.037898513619091495
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.08650665299831738
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.28395737490457057
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 4,
+          "ratio": 0.11006419161922819
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.08822222659268496
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.5770322589643206
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 2,
+          "k": 4,
+          "ratio": 0.10387870087385967
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.02802515860230983
+        }
+      ]
+    },
+    {
+      "alternative": "rejection_with_f_L_envelope",
+      "batch": 4,
+      "paired_events": 42,
+      "mixture_faster_events": 0,
+      "median_alternative_over_mixture": 0.09252842713713025,
+      "events": [
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.029539005288664592
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.08135930618457353
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.028075691355494016
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.2389685092070911
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.1199612299833774
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.0826871864953157
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.2620315073288542
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.2048738823827992
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.04014461050097451
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.12053400960416445
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 4,
+          "ratio": 0.16759320678280476
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.0802990684868804
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.09580625045046333
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 4,
+          "ratio": 0.055541064315380036
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.022741248934637113
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.023348907724390022
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 8,
+          "ratio": 0.0673731756653198
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.0633483186069833
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.011651709905440448
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.42415938238902756
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.16661874462768525
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.3245455515464542
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.28456571522068114
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.07444514942960642
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.20629111908431938
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.06355717182653353
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 4,
+          "ratio": 0.08925060382379717
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.05402310819800194
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.3485708980457208
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 4,
+          "ratio": 0.05162198864721164
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.05041749261089975
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.10690749395434311
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.11878197893977813
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.1090976896011309
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.12603057019758493
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.0388893276863961
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.07340465519532532
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.286696710560928
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 4,
+          "ratio": 0.11116040790591437
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.12238644240091859
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.5723853520076111
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 2,
+          "k": 4,
+          "ratio": 0.08879108825292065
+        }
+      ]
+    },
+    {
+      "alternative": "rejection_with_f_L_envelope",
+      "batch": 16,
+      "paired_events": 41,
+      "mixture_faster_events": 0,
+      "median_alternative_over_mixture": 0.09575453564049252,
+      "events": [
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.030500637971037362
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.037773251635101084
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.028451092286865137
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.23332732597125444
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.08640196992048405
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.09955867008398772
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.20985505087803272
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.14250410640757946
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.022541419173615976
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.11962005988923256
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 4,
+          "ratio": 0.13885956061779275
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.04253841126633858
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.09568717621607652
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 4,
+          "ratio": 0.019444345274938383
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.0130857194108452
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.024673867958147664
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.037560782441478945
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.013131410877629236
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.3565492147581783
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.17476075258018536
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.26663376485367474
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.39108818794779415
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.062492941668653094
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.14210596932012357
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.09296860908123501
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 4,
+          "ratio": 0.09575453564049252
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.021830447531822773
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.3567170467682167
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 4,
+          "ratio": 0.03055884946743644
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.023048661091309472
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.1076646135260301
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.1367922727370354
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.13481264378160368
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.1117774059544703
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.03501234573119215
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.045491454151946456
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 0.2694681841160954
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 4,
+          "ratio": 0.10116724546399616
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.1801119433682727
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 0.5625512858723073
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 2,
+          "k": 4,
+          "ratio": 0.03882546094989951
+        }
+      ]
+    },
+    {
+      "alternative": "enumeration",
+      "batch": 1,
+      "paired_events": 25,
+      "mixture_faster_events": 6,
+      "median_alternative_over_mixture": 0.11126676735749295,
+      "events": [
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.14794848715217107
+        },
+        {
+          "case": "json-context0-16",
+          "rate_power": 2,
+          "k": 15,
+          "ratio": 0.09800638624618409
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 3.938872534151873
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.05348783414012965
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.02569735109996749
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 5.082657559779029
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.11357977814443233
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.002262559179939254
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.027937046620395277
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.000604368014981311
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.11126676735749295
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 10.95367129562184
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.28206654713556295
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.11508054327074912
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 7.614485963256975
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.17007687073941002
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.1343465122148874
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.010256402676490485
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.0018264001877760577
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 6.773435524213062
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.019141746092664766
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 5.407513125494305
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.02703987888618518
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.0011369142073159699
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.013722655749345499
+        }
+      ]
+    },
+    {
+      "alternative": "enumeration",
+      "batch": 4,
+      "paired_events": 23,
+      "mixture_faster_events": 6,
+      "median_alternative_over_mixture": 0.08314142596074824,
+      "events": [
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.09536799397359541
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 3.531274816571913
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.04850066953491868
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.01570244994685001
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 4.772706300927493
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.10163798893380703
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.001227818829605282
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.02324626392450478
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.00025686402899038685
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.054791854828245716
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 9.920567724802133
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.21457658840494423
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.08481990282062599
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 6.012298488621883
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.12059421009307814
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.08314142596074824
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.00914556410753905
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.0010155831325603132
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 5.75134884606655
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.014462979904455404
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 2.7499683680972877
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.021414374854788146
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.0009183024060646657
+        }
+      ]
+    },
+    {
+      "alternative": "enumeration",
+      "batch": 16,
+      "paired_events": 23,
+      "mixture_faster_events": 5,
+      "median_alternative_over_mixture": 0.0367099811817118,
+      "events": [
+        {
+          "case": "json-context0-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.0367099811817118
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 2.737629815781321
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.030346585091271965
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.009778877025348421
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 3.257463607772105
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.06058398678143302
+        },
+        {
+          "case": "json-context0-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.0006706121395338502
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.009922558460161508
+        },
+        {
+          "case": "json-context0-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.00014246293512791254
+        },
+        {
+          "case": "json-context1-16",
+          "rate_power": 1,
+          "k": 15,
+          "ratio": 0.026950056016237768
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 1,
+          "ratio": 5.792266161779907
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 0.11943347171433731
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.04450984969688381
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 1,
+          "ratio": 4.101035072941309
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.05993538373899996
+        },
+        {
+          "case": "json-context1-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.038341612118074714
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.0030336621388755308
+        },
+        {
+          "case": "json-context1-8",
+          "rate_power": 2,
+          "k": 7,
+          "ratio": 0.00044050668470812046
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 2,
+          "ratio": 3.605176288371108
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 1,
+          "k": 3,
+          "ratio": 0.009811990040578283
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 2,
+          "ratio": 0.9442877898619351
+        },
+        {
+          "case": "json-context2-4",
+          "rate_power": 2,
+          "k": 3,
+          "ratio": 0.010580453868674074
+        },
+        {
+          "case": "json-context2-8",
+          "rate_power": 1,
+          "k": 7,
+          "ratio": 0.0006301043727371761
+        }
+      ]
+    }
+  ],
+  "unresolved_queries": [
+    {
+      "case": "json-context0-16",
+      "rate_power": 1,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 0,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 1,
+      "k": 8,
+      "method": "rejection_with_f_L_envelope",
+      "repetition": 0,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 1,
+      "k": 8,
+      "method": "rejection_with_f_L_envelope",
+      "repetition": 1,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 1,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 1,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 1,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 2,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 1,
+      "k": 8,
+      "method": "rejection_with_f_L_envelope",
+      "repetition": 2,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 2,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 0,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 2,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 1,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 2,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 2,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 2,
+      "k": 15,
+      "method": "certified_tangent_mixture",
+      "repetition": 0,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 2,
+      "k": 15,
+      "method": "certified_tangent_mixture",
+      "repetition": 1,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context0-16",
+      "rate_power": 2,
+      "k": 15,
+      "method": "certified_tangent_mixture",
+      "repetition": 2,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context1-16",
+      "rate_power": 1,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 0,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context1-16",
+      "rate_power": 1,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 1,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context1-16",
+      "rate_power": 2,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 0,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context1-16",
+      "rate_power": 2,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 1,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context1-16",
+      "rate_power": 2,
+      "k": 8,
+      "method": "certified_tangent_mixture",
+      "repetition": 2,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context1-16",
+      "rate_power": 2,
+      "k": 15,
+      "method": "certified_tangent_mixture",
+      "repetition": 0,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context1-16",
+      "rate_power": 2,
+      "k": 15,
+      "method": "certified_tangent_mixture",
+      "repetition": 1,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context1-16",
+      "rate_power": 2,
+      "k": 15,
+      "method": "certified_tangent_mixture",
+      "repetition": 2,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context2-4",
+      "rate_power": 1,
+      "k": 1,
+      "method": "enumeration",
+      "repetition": 0,
+      "error": "TimeoutError('enumeration categorical preparation budget')"
+    },
+    {
+      "case": "json-context2-4",
+      "rate_power": 1,
+      "k": 1,
+      "method": "enumeration",
+      "repetition": 1,
+      "error": "TimeoutError('enumeration categorical preparation budget')"
+    },
+    {
+      "case": "json-context2-4",
+      "rate_power": 1,
+      "k": 1,
+      "method": "enumeration",
+      "repetition": 2,
+      "error": "TimeoutError('enumeration categorical preparation budget')"
+    },
+    {
+      "case": "json-context2-4",
+      "rate_power": 2,
+      "k": 1,
+      "method": "enumeration",
+      "repetition": 0,
+      "error": "TimeoutError('enumeration categorical preparation budget')"
+    },
+    {
+      "case": "json-context2-4",
+      "rate_power": 2,
+      "k": 1,
+      "method": "enumeration",
+      "repetition": 1,
+      "error": "TimeoutError('enumeration categorical preparation budget')"
+    },
+    {
+      "case": "json-context2-4",
+      "rate_power": 2,
+      "k": 1,
+      "method": "enumeration",
+      "repetition": 2,
+      "error": "TimeoutError('enumeration categorical preparation budget')"
+    },
+    {
+      "case": "json-context2-8",
+      "rate_power": 2,
+      "k": 7,
+      "method": "certified_tangent_mixture",
+      "repetition": 0,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context2-8",
+      "rate_power": 2,
+      "k": 7,
+      "method": "certified_tangent_mixture",
+      "repetition": 1,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    },
+    {
+      "case": "json-context2-8",
+      "rate_power": 2,
+      "k": 7,
+      "method": "certified_tangent_mixture",
+      "repetition": 2,
+      "error": "TimeoutError('resource refusal; no infeasibility or conditional-output-law claim')"
+    }
+  ],
+  "files_sha256": {
+    "metadata.json": "a7cc9b79f8c42f8a7cac2030540fe79fb673827c3bdc8927204a9e663c0aabec",
+    "rows.jsonl": "13291234f053d063b0ba58de81190c892aae92187ccc6f4e31f124f76be8841c"
+  },
+  "scope": "all frozen model inputs; timed-out prefixes remain censored; no training or novelty claim"
+}

@@ -1,0 +1,40 @@
+{
+  "source_commit": "14491c7f11d16afd247498b3ec5e307574bad46b",
+  "protocol_sha256": "ca0dcb525d44f587f6a631175ada3b09c6398e518967f0d835539f016c0f85f0",
+  "note_sha256": "38bd12cec1d1bbee86cd5698215eed7cee52c1166a6ea2ac046551519111a62b",
+  "python": "3.11.16",
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+  "processor": "x86_64",
+  "model_lineage": {
+    "adapted_model_sha256": "90caa71ec43c77ff92735dba5fdc97a6a546c9f087a35b1a43e8b6e469251fd8",
+    "checkpoint_sha256": {
+      "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+      "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+      "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4",
+      "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7"
+    },
+    "claim_scope": "frozen mean-field syntax demo; exact_on_support; no semantic metric",
+    "config_sha256": "c089826a5b9c48c4163b478152faf405e7638f3b875f8d1a870f31133b64c62d",
+    "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+    "device": "cpu",
+    "eos_semantics": "ABSENT",
+    "git_commit": "03630c96080d60e1c37de24e1ecdfcbba793a70b",
+    "grammar_sha256": "538ca30fbbb85baeaa4c59a13ee9d3c25c1a36000ce1c035c6ff0b122985b209",
+    "model_id": "kuleshov-group/mdlm-owt",
+    "model_revision": "d0958fa851335ece6c15260ce0025f030673c0fb",
+    "numeric_reference": "F32 CPU network; F64 softmax excluding MASK; exact binary rationals normalized over the entire non-mask vocabulary; retained rows are never renormalized",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+    "python": "3.11.16",
+    "seed": 20261006,
+    "support_policy": "top32; no injected answer tokens",
+    "tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "torch": "2.8.0+cpu",
+    "torch_threads": 4
+  },
+  "archive_files": {
+    "components.json.gz": "4a58e656b30bb8d623b9b4bbf1759856e0ce0d93b1b0ab110145407017965149",
+    "inputs.json.gz": "427cf874c339ff2da4eb8af0dbecc685588de37c32f724fddb5f4f79fe60bd15",
+    "runs.json.gz": "351f8946ae0b5147728697a4294c74e9747a21b827aaac939926dd1abbb6c875"
+  },
+  "scope": "frozen-model posterior query costs; no neural training or end-to-end speed claim"
+}
