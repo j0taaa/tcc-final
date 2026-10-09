@@ -1,0 +1,15 @@
+{
+  "report_source_commit": "cdbd555a12291aa9a55ee3dde1353f81aedc5701",
+  "report_command": "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/report.py --evidence attempts/17-pl-latent-resampling/work/evidence --json attempts/17-pl-latent-resampling/work/evidence/assessment.json --markdown attempts/17-pl-latent-resampling/work/final-report.md",
+  "checks": {
+    "make check": "passed: upstream, lint, formatting, mypy and existing 16/18 snapshots",
+    "make test": "passed: 30 focused tests",
+    "python3 scripts/verify_artifacts.py": "passed: 3683 frozen scientific files unchanged",
+    "ruff check work/*.py tests/test_pl_resampling.py": "passed"
+  },
+  "generated_sha256": {
+    "final-report.md": "788b8bc0d1f150cb610d42873a34a04659e84aeacaaf8a31297d9fb20d2e489b",
+    "assessment.json": "c13744bc3bcd3f66cdce61515d056cf76ace0a6031e8aa34deb711ef11fffcc3"
+  },
+  "scope": "No Rust/parser/model/Lean proof changes; existing formal verification is not attributed to the PL reference."
+}

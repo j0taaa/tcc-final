@@ -146,15 +146,32 @@ existing decoders. Research calculations do not authorize a novelty claim,
 invented advisor approval, or replacing the article's established contribution.
 Use one notebook: `docs/research/contribution-plan.md`.
 
-- [ ] T3613: Independently audit the received PL-latent resampling note.
+- [x] T3613: Independently audit the received PL-latent resampling note.
   **Acceptance:** freeze the protocol before measurement; check exact posterior
   and gradient laws with independent enumeration; compare competent rejection
   and enumeration on every predeclared JSON model input, preserving losses and
   resource refusals. Separate correctness, novelty and training usefulness.
-  **In progress:** `attempts/17-pl-latent-resampling/` preserves the received
-  note and eight scientific criteria. Directions 15/16 are no longer selected
-  protagonists after the user's explicit objection to their dLLM application.
-  No new decoder or training success is claimed.
+  **Evidence:** `attempts/17-pl-latent-resampling/work/final-report.md` is
+  generated from all four preserved replay campaigns; producing commits,
+  commands, rational normalizers and failures are in `work/evidence/`.
+  Final source `5c88e6e7162267a5b6d32d1d454764f54d73a615` checks 1,151 events,
+  2,939 paths and 48 gradient/covariance fixtures without exact mismatch.
+  `make test` passes 30 focused checks; `make check` and the 3,683-file frozen
+  scientific inventory pass. The nine original model inputs give eight
+  compilations/48 native PL events; one compilation remains unresolved.
+  The final control completes 144/144 batches against 138/144 for the mixture.
+  Exact normalizer ratios favor the mixture over the single tilt in 1/48
+  events; its full query cost loses to the best recorded control in all
+  fully paired events. No unfavorable campaign or harness error was erased.
+  `work/product-proposal-separation.md` proves a written asymptotic separation
+  against any single product proposal, with counter-based alternatives and
+  circuit/bit-cost assumptions explicit. It is not a new Lean verification.
+  **Scientific decision:** technical audit complete; T3602's novelty/usefulness
+  gate remains open. `work/auxiliary-variable-objection.md` derives a classical
+  PL augmentation control that starts at the original stationary proposal and
+  reduces variance with correlated replicas; it was not implemented/measured.
+  Neither training benefit nor academic priority is confirmed. Directions
+  15/16 remain rejected protagonists; the main paper/decoders were preserved.
 
 - [x] T3600: Record the stable base, precise candidate contract and one
   recursive structured-generation application (plan 1, 2, 4).

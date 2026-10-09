@@ -36,6 +36,10 @@ o estado literal do primeiro commit.
 As direções 15/16 foram rejeitadas pelo usuário como protagonistas: a aplicação
 não justificou usar uma dLLM. Seus resultados continuam preservados. A direção
 em investigação é `17-pl-latent-resampling`, ainda sem conquista confirmada.
+Sua auditoria já concluiu: correção em oráculos exatos e uma separação matemática
+delimitada; o replay completo preserva controles mais rápidos e não confirma
+benefício de treinamento. As cinco versões da tentativa incluem o erro inicial
+do harness e todos os refinamentos, sem substituição dos resultados anteriores.
 Organização, testes e provas selecionadas não substituem avaliação humana de
 prioridade/significância.
 
