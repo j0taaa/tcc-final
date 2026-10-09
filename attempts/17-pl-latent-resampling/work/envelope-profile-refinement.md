@@ -96,3 +96,11 @@ com sinal favorável em todas as três repetições, contra cada controle conclu
 Os casos com controle recusado serão nomeados e não chamados de prova de que
 esse algoritmo é inerentemente mais lento. É critério operacional predeclarado
 para a nova fase, não teste estatístico de superioridade em todo hardware.
+
+
+O custo frio será separado da consulta com circuito disponível: charge compile
+para os métodos por floresta, sem cobrar esse trabalho da enumeração JSON
+independente. O produtor já registra CPU/wall da compilação; essa medida inclui
+a preparação da proposta original usada para fixar o evento, portanto é um
+limite conservador de custo frio. Apresentar as duas comparações de mediana,
+sem esconder compilação numa reivindicação de ganho de primeira saída.

@@ -161,6 +161,15 @@ def bulk(folder, prefix=False):
                 complete=all(r["status"] == "complete" for r in selected),
                 seconds=[r["seconds"] for r in selected],
                 cpu_seconds=[r["cpu_seconds"] for r in selected],
+                cold_seconds=[
+                    r["seconds"] + (0 if method == "enumeration" else r["compilation_seconds"])
+                    for r in selected
+                ],
+                cold_cpu_seconds=[
+                    r["cpu_seconds"]
+                    + (0 if method == "enumeration" else r["compilation_cpu_seconds"])
+                    for r in selected
+                ],
                 accepted=[r["accepted"] for r in selected],
                 preparation_seconds=[r.get("preparation_seconds") for r in selected],
                 cache_max_bits=max(r.get("cdf_integer_bits", 0) for r in selected),
@@ -173,6 +182,9 @@ def bulk(folder, prefix=False):
                 paired[method] = dict(
                     wall_ratio=median(control["seconds"]) / median(mix["seconds"]),
                     cpu_ratio=median(control["cpu_seconds"]) / median(mix["cpu_seconds"]),
+                    cold_wall_ratio=median(control["cold_seconds"]) / median(mix["cold_seconds"]),
+                    cold_cpu_ratio=median(control["cold_cpu_seconds"])
+                    / median(mix["cold_cpu_seconds"]),
                     wall_ratios=[
                         a / b for a, b in zip(control["seconds"], mix["seconds"], strict=True)
                     ],
@@ -193,6 +205,12 @@ def bulk(folder, prefix=False):
                 stable_substantial_advantage=bool(paired)
                 and all(
                     min(p["wall_ratio"], p["cpu_ratio"]) >= 1.25
+                    and min(*p["wall_ratios"], *p["cpu_ratios"]) > 1
+                    for p in paired.values()
+                ),
+                cold_substantial_advantage=bool(paired)
+                and all(
+                    min(p["cold_wall_ratio"], p["cold_cpu_ratio"]) >= 1.25
                     and min(*p["wall_ratios"], *p["cpu_ratios"]) > 1
                     for p in paired.values()
                 ),
@@ -266,6 +284,7 @@ def build(args):
     )
     wins = [c for c in b["events"] if c["mixture_faster_than_all_completed"]]
     substantial = [c for c in b["events"] if c["stable_substantial_advantage"]]
+    cold = [c for c in b["events"] if c["cold_substantial_advantage"]]
     table = [
         "| Documento / potência | Redução iid | Mistura: custo x variância / original |"
         " Enumeração: custo x variância / original |",
@@ -302,6 +321,7 @@ def build(args):
         query_count=b["query_count"],
         wins=len(wins),
         substantial=len(substantial),
+        cold_substantial=len(cold),
         statuses="\n".join(statuses),
         winner_details="\n\n".join(details) if details else "Nenhum evento.",
     )
@@ -318,6 +338,7 @@ def build(args):
                 enumeration_best=best_rb,
                 bulk_wins=len(wins),
                 stable_substantial_wins=len(substantial),
+                cold_substantial_wins=len(cold),
             )
         )
     )
