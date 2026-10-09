@@ -172,6 +172,11 @@ Use one notebook: `docs/research/contribution-plan.md`.
   reduces variance with correlated replicas; it was not implemented/measured.
   Neither training benefit nor academic priority is confirmed. Directions
   15/16 remain rejected protagonists; the main paper/decoders were preserved.
+  **Preservation:** five immutable versions in attempt 17, including the first
+  harness failure; `make attempts-check` verifies 17 attempts/23 versions and
+  16,404 files. Extracted v5 passes its five focused tests offline and losslessly
+  reconstructs all nine original JSON inputs with archive hashes checked.
+  CI for assessment commit `162d4001244900038ab1da3abede4317907609ba` passed.
 
 - [x] T3600: Record the stable base, precise candidate contract and one
   recursive structured-generation application (plan 1, 2, 4).

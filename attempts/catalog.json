@@ -281,6 +281,83 @@
           ]
         }
       ]
+    },
+    {
+      "id": "17-pl-latent-resampling",
+      "title": "Auditoria independente de reamostragem latente PL",
+      "conclusion": "Oráculos exatos e prova escrita contra proposta produto única; controles vencem no custo do replay. Benefício neural e prioridade não confirmados; alternativa auxiliar estacionária permanece controle necessário.",
+      "reading": "attempts/17-pl-latent-resampling/work/final-report.md; attempts/17-pl-latent-resampling/work/product-proposal-separation.md; attempts/17-pl-latent-resampling/work/auxiliary-variable-objection.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "14491c7f11d16afd247498b3ec5e307574bad46b",
+          "evidence_commit": "162d4001244900038ab1da3abede4317907609ba",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/received-note.md",
+            "attempts/17-pl-latent-resampling/work/protocol.json",
+            "attempts/17-pl-latent-resampling/work/protocol-addendum.json",
+            "attempts/17-pl-latent-resampling/work/evidence/initial-contract.md",
+            "docs/artifacts/raw/m34_cfg_posterior_v1",
+            "attempts/17-pl-latent-resampling/work/evidence/harness-v1",
+            "attempts/17-pl-latent-resampling/work/evidence/reference-correctness.json",
+            "attempts/17-pl-latent-resampling/work/evidence/reference-provenance.json"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "780431525cecc62414dd89cba0752a192673264f",
+          "evidence_commit": "162d4001244900038ab1da3abede4317907609ba",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/received-note.md",
+            "attempts/17-pl-latent-resampling/work/protocol.json",
+            "attempts/17-pl-latent-resampling/work/protocol-addendum.json",
+            "attempts/17-pl-latent-resampling/work/evidence/initial-contract.md",
+            "docs/artifacts/raw/m34_cfg_posterior_v1",
+            "attempts/17-pl-latent-resampling/work/evidence/reference-replay",
+            "attempts/17-pl-latent-resampling/work/evidence/reference-correctness.json",
+            "attempts/17-pl-latent-resampling/work/evidence/reference-provenance.json"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "4c6199fe86423ce8e7e4804cb48e6ca6dde3bb00",
+          "evidence_commit": "162d4001244900038ab1da3abede4317907609ba",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/received-note.md",
+            "attempts/17-pl-latent-resampling/work/protocol.json",
+            "attempts/17-pl-latent-resampling/work/protocol-addendum.json",
+            "attempts/17-pl-latent-resampling/work/evidence/initial-contract.md",
+            "docs/artifacts/raw/m34_cfg_posterior_v1",
+            "attempts/17-pl-latent-resampling/work/evidence/dyadic-replay",
+            "attempts/17-pl-latent-resampling/work/evidence/dyadic-correctness.json",
+            "attempts/17-pl-latent-resampling/work/evidence/dyadic-provenance.json"
+          ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "b4c9a844bc7eb934ae8b38305578c8ccb7d7740a",
+          "evidence_commit": "162d4001244900038ab1da3abede4317907609ba",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/received-note.md",
+            "attempts/17-pl-latent-resampling/work/protocol.json",
+            "attempts/17-pl-latent-resampling/work/protocol-addendum.json",
+            "attempts/17-pl-latent-resampling/work/evidence/initial-contract.md",
+            "docs/artifacts/raw/m34_cfg_posterior_v1",
+            "attempts/17-pl-latent-resampling/work/evidence/tight-replay",
+            "attempts/17-pl-latent-resampling/work/evidence/tight-correctness.json",
+            "attempts/17-pl-latent-resampling/work/evidence/tight-provenance.json"
+          ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "162d4001244900038ab1da3abede4317907609ba",
+          "evidence_commit": "162d4001244900038ab1da3abede4317907609ba",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work",
+            "docs/artifacts/raw/m34_cfg_posterior_v1"
+          ]
+        }
+      ]
     }
   ]
 }
