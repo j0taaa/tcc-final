@@ -578,7 +578,7 @@
     {
       "id": "19-growing-support-decoding",
       "title": "Suporte adaptativo orientado pelo modelo e selecao gramatical com politica preservada",
-      "conclusion": "Hipotese predeclarada;60 trajetorias pequenas e19 drivers artificiais identicos validam corre\u00e7\u00e3o, sem vantagem pr\u00e1tica medida. Controles com reservas32/64/128 inativas incluidos.",
+      "conclusion": "Gera\u00e7\u00e3o com suporte crescente: 1.026 registros, 888 equival\u00eancias, 0/18 ganhos predeclarados wall e CPU. Resultado negativo preservado, n\u00e3o contribui\u00e7\u00e3o final.",
       "reading": "attempts/19-growing-support-decoding/README.md; attempts/19-growing-support-decoding/work/specification.md",
       "versions": [
         {
@@ -588,6 +588,14 @@
           "evidence_roots": [
             "attempts/19-growing-support-decoding/README.md",
             "attempts/19-growing-support-decoding/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "f675fe3138f0d6925b2e190f974b781cc9ff5ebc",
+          "evidence_commit": "52001a2effe80f4cd5f0c5bc9629ac8c162ad796",
+          "evidence_roots": [
+            "attempts/19-growing-support-decoding/work/evidence"
           ]
         }
       ]

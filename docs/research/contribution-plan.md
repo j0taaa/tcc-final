@@ -1369,3 +1369,19 @@ pelo modelo muda. Os primeiros18 documentos são refinamento, não nova
 generalização; os seis restantes por hash são confirmação fresca predeclarada.
 Sessenta trajetórias pequenas independentes passam antes do modelo; nenhuma
 medição dinâmica nem prioridade/publicação/revisão humana é afirmada.
+
+## 2026-10-09 — Falha da expansão bruta e hipótese lexical
+
+Tentativa19: 1026 registros MDLM/CUDA, 888 comparações de trajetória iguais,
+0/18 ganhos conjuntos >=20% wall/CPU. Não relaxar o critério, nem ampliar
+a candidata à confirmação fresca. Fonte f675fe3, evidências em work/evidence.
+
+Tentativa20 testa representação: lexer completo deterministicamente composto
+com slots; tokens equivalentes têm mesma transição/saída em TODOS os estados.
+Classes preservam originais, compromisso e mínimo original, permitem novas
+palavras equivalentes sem reconstruir o circuito. A interpretação matemática
+está no specification.md da tentativa. Lexer separado é antecedente de DOMINO,
+SynCode e XGrammar; quociente é FactorDLM Proposição2. Esses princípios não
+são uma invenção. Gap candidato é construção automática/reutilização numa
+dLLM com lacunas bilaterais e suporte crescente, a medir contra o lexer sem
+classes igualmente competente. Mesmo um ganho não prova prioridade mundial.

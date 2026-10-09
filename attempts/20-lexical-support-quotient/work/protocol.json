@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "purpose": "Audit a token-boundary lexical transducer and its full-state token congruence for exact original-token greedy structured dLLM decoding; known lexical preprocessing and quotient results are credited.",
+  "seed": 2026100918,
+  "model_config": "configs/experiments/m31_probability_scaling_cpu_v1.json",
+  "model": "Pinned official MDLM OWT, audited F32 CPU port, no dropout, timesteps zero, four Torch threads; model load and one common warmup excluded; every compared decoder runs its own forwards",
+  "external": {
+    "repository": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
+    "revision": "5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8",
+    "scope": "tests/draft2020-12/*.json, all object/array data regardless of schema validity, canonical compact sorted-key ASCII JSON; distinct documents",
+    "eligible_tokens": [
+      16,
+      96
+    ],
+    "selection": "Original hash-selected six development,twelve refinement evaluation,next six fresh confirmations. First18 seen in attempt18; last6 were not timed or run through any model in attempt18. No selection by results.",
+    "masking": "For each size, sample positions uniformly without replacement by Random(seed+int(document_hash[:12],16)+size). Boundary and structure tokens are eligible too.",
+    "license": "MIT, preserve source attribution/license and selected source files"
+  },
+  "operation": {
+    "grammar": "maintained full JSON byte LL1 grammar, EOS absent, fixed-length infilling",
+    "mask_counts": [
+      4,
+      8,
+      16
+    ],
+    "support": "Initial full-vocabulary top16 at masked slots, then union with current full-vocabulary top16 at EVERY forward on still-masked slots; fixed rows singleton. No target injection or selection-dependent witness added. Initial infeasibility remains explicit; no arbitrary rescue.",
+    "proposals": "Full-vocabulary top1 at every masked slot, already included in current union; original full-softmax confidence and same descending order",
+    "threshold": 0.8,
+    "commit_cap": 4,
+    "fallback": "First greedy-accepted proposal; if none, least viable original token at first free position, identically specified in every method",
+    "max_forwards": 16,
+    "semantic_scope": "Syntax and preserved original unmasked bytes, not instruction following, schema semantics, reconstructed reference accuracy or learned-model quality"
+  },
+  "methods": [],
+  "controls": {
+    "greedy_witness": "One compiled forest reused, exact Boolean queries with witness reuse inside each full scan",
+    "lex_integer": "Full priorities, arbitrary-size integer max-plus on same unpruned forest; separate from original MWPC float objective",
+    "greedy_cached_prefix": "Competent classical control persists witness between forwards and scans only observable prefix/fallback; no needless queries below threshold",
+    "monotone": "Classical decremental inside/reachability propagation, only actual commitments persisted, credit antecedent",
+    "enumeration": "Independent Python JSON recognizer over all original token products, resource refusal above 1000000 combinations; no forest cost charged",
+    "sat_cached_prefix": "Native Cadical195 SAT on equivalent Tseitin AND/OR plus exactly-one original token choices, cached witness and observable prefix; optional research-only python-sat==1.9.dev15"
+  },
+  "measurement": {
+    "repetitions": 3,
+    "order": "Rotate method list by (case_index+repetition) mod number_methods; all methods on exactly same initial states",
+    "full_cost": "All original full prepared-service decoder costs plus EVERY active-domain update, geometry/forest rebuilding, reservoir construction, activation masks and cleanup. Every method runs actual forwards. Preserve point-fastpath equally.",
+    "clocks": [
+      "wall",
+      "process CPU"
+    ],
+    "compilation_limits": {
+      "seconds": 30,
+      "cells": 200000,
+      "alternatives": 1000000
+    },
+    "total_seconds": 180,
+    "environment": "Record revision, SHA256 inputs/protocol/token adapter/model/grammar, versions, CPU, load average. No simultaneous heavy task started by this agent. Shared desktop contention remains explicit.",
+    "output": "Every status/timeout/failure, entire committed trajectory, final IDs/text and component clocks; full logits stay local, supports/proposal probabilities archived",
+    "selection_only": "All nine M34 archived JSON inputs may diagnose queries; never described as full generation evidence",
+    "reservoir_limits": {
+      "cells": 1000000,
+      "alternatives": 5000000,
+      "seconds": 60
+    },
+    "cases": "Same six known development, twelve evaluation refinement and six never-model-tested fresh cases, every mask 4/8/16. Development3, fresh9 rotated repetitions. Confirm CPU and GPU after gate; original failures remain.",
+    "fresh_repetitions": 9,
+    "fresh_confirmation": "If development gate passes, all six untouched hash-selected documents with nine rotated repetitions and all nineteen methods; strengthen timing-repeat confidence without choosing favorable documents."
+  },
+  "success": {
+    "correctness": "No unexplained commitment or token-output divergence in conclusive runs; independent JSON/slot/original-fixed-token checks",
+    "useful_speed": "Class_monotone vs all completed nonclass controls: >=20% median wall AND CPU, favorable sign every repetition. Other class methods are competent implementations of the SAME quotient contribution, not independent inventions; report whether they improve it, all comparisons and losses. Full algorithm choice superiority requires beating them too, never implied by representation benefit.",
+    "claims": "No universal gain, worldwide priority, EPIC superiority, training improvement or publication acceptance from this protocol; growing-support inputs may produce different outputs than frozen-support attempts, and those regimes do not establish a speed-only comparison",
+    "fresh": "No confirmed practical contribution until at least one fresh configuration passes same nonclass control criterion on nine rotations, with no trajectory divergence; disclose result concentration and all failure cases."
+  },
+  "candidates": {
+    "primary": "class_monotone",
+    "secondary": "class_root_lex",
+    "why": "Keep competent incremental grammar propagation, but eliminate byte-level parse alternatives and recompilation for new original tokens in existing lexical classes."
+  },
+  "representation": "Lazy per-request classification, all deterministic JSON lexer states including escape/UTF8/numbers. Compare unquotiented token-level lexer against byte controls AND quotient. Every class method uses same representation, unmasked original tokens and original-ID fallback; no assumed known lexer state in masks.",
+  "declared_methods": [
+    "monotone",
+    "sat_cached_prefix",
+    "root_lex",
+    "root_speculative",
+    "rust_speculative",
+    "lex_monotone",
+    "lex_sat",
+    "lex_root",
+    "lex_speculative",
+    "class_monotone",
+    "class_sat",
+    "class_root_lex",
+    "class_speculative",
+    "class_reserve_64",
+    "class_reserve_128",
+    "enumeration"
+  ]
+}

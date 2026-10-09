@@ -109,3 +109,8 @@ A tentativa19 começa em `19-growing-support-decoding/`, com suporte expandido
 pelas previsões atuais e controles de reserva inativa. É pesquisa independente
 ainda não confirmada, não continuação de um resultado positivo de18. A versão
 inicial será congelada após o commit do código/protocolo, antes dos timings.
+
+20. [Suporte por congruência lexical completa](20-lexical-support-quotient/README.md):
+    hipótese e protótipo isolados; classificação em todos os estados, crescimento
+    por classe e controles lexicais fortes. Princípios conhecidos, benefício
+    não confirmado. Dados negativos de19 preservados em v2.

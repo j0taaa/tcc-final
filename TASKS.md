@@ -2304,3 +2304,10 @@ Fill this section only with real artifacts.
   trajectories, no unexplained divergence, 0/18 strong wins. Full archives
   and immutable raw SHA: attempt19/work/evidence/development-*. No expansion
   to heldout/fresh or CPU under failed gate; this does not fulfill utility goal.
+
+- [ ] T4000: Audit all-state lexical token quotient for model-driven growing
+  JSON supports (attempt20), compare equally optimized byte AND token-level
+  lexer controls. Preserve original token trajectories, account per-request
+  classification/preparation and all model forwards. Prove congruence and
+  stability under same-class expansion; credit classical lexer and FactorDLM.
+  Predeclared success is representation benefit, not algorithm exclusivity.

@@ -1,0 +1,7 @@
+{
+  "trajectories": 288,
+  "transitions": 920,
+  "seed": 2026100923,
+  "oracle": "strict decoded UTF8 Python JSON, enumerate original token products",
+  "timings": "not performance evidence"
+}

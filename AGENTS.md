@@ -49,6 +49,10 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   Os resultados e recusas estão preservados; não relaxar o critério depois
   da medição.
   Não apresentar essas tentativas como nova teoria de parsing ou vitória EPIC.
+  A tentativa20 investiga classes pelo efeito em todos os estados de um lexer
+  JSON, preservando tokens originais e suportes crescentes. Inclui controles
+  lexicais sem classes e métodos clássicos por classes. Princípios de lexer e
+  quociente são antecedentes, não novidade; benefício ainda não medido.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

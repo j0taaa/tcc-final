@@ -1,0 +1,310 @@
+{
+  "kind": "driver correctness only, fake logits, no performance/model experiment",
+  "checks": [
+    {
+      "method": "monotone",
+      "status": "complete",
+      "engine_preparations": 3
+    },
+    {
+      "method": "sat_cached_prefix",
+      "status": "complete",
+      "engine_preparations": 3
+    },
+    {
+      "method": "root_lex",
+      "status": "complete",
+      "engine_preparations": 3
+    },
+    {
+      "method": "root_speculative",
+      "status": "complete",
+      "engine_preparations": 3
+    },
+    {
+      "method": "rust_speculative",
+      "status": "complete",
+      "engine_preparations": 3
+    },
+    {
+      "method": "lex_monotone",
+      "status": "complete",
+      "engine_preparations": 3
+    },
+    {
+      "method": "lex_sat",
+      "status": "complete",
+      "engine_preparations": 3
+    },
+    {
+      "method": "lex_root",
+      "status": "complete",
+      "engine_preparations": 3
+    },
+    {
+      "method": "lex_speculative",
+      "status": "complete",
+      "engine_preparations": 3
+    },
+    {
+      "method": "class_monotone",
+      "status": "complete",
+      "engine_preparations": 1
+    },
+    {
+      "method": "class_sat",
+      "status": "complete",
+      "engine_preparations": 1
+    },
+    {
+      "method": "class_root_lex",
+      "status": "complete",
+      "engine_preparations": 1
+    },
+    {
+      "method": "class_speculative",
+      "status": "complete",
+      "engine_preparations": 1
+    },
+    {
+      "method": "class_reserve_64",
+      "status": "complete",
+      "engine_preparations": 1
+    },
+    {
+      "method": "class_reserve_128",
+      "status": "complete",
+      "engine_preparations": 1
+    },
+    {
+      "method": "enumeration",
+      "status": "complete",
+      "engine_preparations": 3
+    }
+  ],
+  "trajectory": {
+    "tokens": [
+      0,
+      3,
+      1
+    ],
+    "support_rows": [
+      [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    ],
+    "trace": [
+      {
+        "canvas": [
+          null,
+          null,
+          null
+        ],
+        "proposals": [
+          [
+            1,
+            3,
+            0.2942986654813493
+          ],
+          [
+            0,
+            1,
+            0.2830260238948752
+          ],
+          [
+            2,
+            0,
+            0.2830260238948752
+          ]
+        ],
+        "updates": [
+          [
+            1,
+            3
+          ]
+        ],
+        "support_additions": []
+      },
+      {
+        "canvas": [
+          null,
+          3,
+          null
+        ],
+        "proposals": [
+          [
+            0,
+            1,
+            0.2830260238948752
+          ],
+          [
+            2,
+            0,
+            0.2830260238948752
+          ]
+        ],
+        "updates": [
+          [
+            0,
+            0
+          ]
+        ],
+        "support_additions": [
+          [
+            0,
+            [
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ]
+          ],
+          [
+            2,
+            [
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33
+            ]
+          ]
+        ]
+      },
+      {
+        "canvas": [
+          0,
+          3,
+          null
+        ],
+        "proposals": [
+          [
+            2,
+            0,
+            0.2830260238948752
+          ]
+        ],
+        "updates": [
+          [
+            2,
+            1
+          ]
+        ],
+        "support_additions": [
+          [
+            2,
+            [
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50
+            ]
+          ]
+        ]
+      }
+    ],
+    "output": "[0]"
+  },
+  "source_sha256": {
+    "lex_lattice.py": "61aa69145c72abcf019ddb4eef765620fcb3fa1fcce3be40122fa2e3cb7affa3",
+    "generation.py": "3b5d69d371e811a7ada2304eeefb520c875cc01e1ea49b0c2403acf6c082f135",
+    "rooted_parser.py": "c75c68209219eff14be8267c5cea79f3bd97898b22831ce339ff9f77193b0029",
+    "grammar_selectors.py": "54e296dcfec1810006c7d4851f6b9aa261265723da73d6fcf35b71b59a0bd19a",
+    "native_queries.py": "b8cd33684f06a974b707ac003db888402f208632384ef00a619f02c378b057f3",
+    "enumeration.py": "296281dd7cbb05a0d24f6ff21778565df4f245bf396829fc28888f4cd88e4309",
+    "trie_lattice.py": "4e2550a9fc9555f0527fbe6ba5f15515a5fc324dee2d7621b7c7e27ea5433a9e",
+    "lexer.py": "7d9bb40cc36132f16d347c8ca946e63f5de7fa8f7b50b24c3398b355f6763223",
+    "analyze.py": "1dc593e0a560c94f25b31b33dc08186875f93089f3dc26422d04a80e1b3ac242",
+    "reservoir_sat.py": "eef67572493c9466386b70eb91bf72a25a732b49d7e6c1b570519309f4d1ec78",
+    "test_correctness.py": "13935f5c3bfef665f31804d6fb94ee4feadf5276a0d02ff75eea7337cd5692d1",
+    "rooted_selectors.py": "272e0bd1ccae80ed3af01d155c62680ecbea4325467f71c37ad31ebdf013c1c0",
+    "__init__.py": "98db08c02170617ae8e743738a7b72f2f9165564c3b0bcda5506b89e5476ff4b",
+    "native_sat.py": "213b670ece1032f934a3ced6336ece15199de8c03f6f4369643b3cbadc93cfdb",
+    "lexical_selectors.py": "34854a20aad1f3f0258b33bc608255f8a497363f5530249e587b6db6a621011c",
+    "relevant_forest.py": "5560491f0ccea918265ac40d8c56b07e09c96612539c06826077ea1454e7538c",
+    "adaptive_domains.py": "bfb3ce45e8cc23ec2951635b8205fbee69c07a931ba6ec6b8f282d38216d26df",
+    "shared_fastpath.py": "de04bbe22a9e0203bd62117b29d697ef90a044d479a81a16de18c883520bf602",
+    "audit_driver.py": "9a84f7e188e0111ed409583e3263c668e484f8864dbca926dc86a6407cef7ba2",
+    "monotone.py": "d56e8bb39620ac2bff24e18db25c8a2fbc2d1746807b81ac4eac387c58044937"
+  }
+}
