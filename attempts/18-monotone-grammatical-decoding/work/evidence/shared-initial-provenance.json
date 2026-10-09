@@ -1,0 +1,9 @@
+{
+  "producer_commit": "d606cf2b2b4d9ea5135b3bb4b709c5087e3fb5bc",
+  "command": "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-development-gpu-shared-v1 --phase development --device cuda --trim --native --compressed",
+  "decision": "Development gate fails: zero of18 configurations qualifies against all ten completed controls. CPU and heldout for this version not run. All540 records retained,438 exact equality comparisons. Investigate rooted parsing before another measurement; no confirmed generation advantage.",
+  "files": {
+    "development-gpu-shared-v1/rows.jsonl": "ef8cf0e4e1bdfd39c81774412e244c4a0f8d0b9b1850cd121e0b475092dfa9e6",
+    "development-gpu-shared-v1/metadata.json": "f76270032f007272f1b7bf1005dcc72dba8d7dfc64b30407bf4cc4bf2a9a2284"
+  }
+}

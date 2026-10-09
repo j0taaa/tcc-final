@@ -2,7 +2,7 @@
 
 Iniciada em 2026-10-09 sobre `89078ecf589e187927c1ba3d4f54f87ba9df43cd`.
 Pesquisa isolada; a tentativa 17 e os decoders mantidos não são substituídos.
-Status: **controle fortalecido CPU/GPU completo sem ganho; núcleo nativo validado**.
+Status: **refinamentos completos sem ganho forte; busca guiada pela raiz em estudo**.
 
 Versão v1 preserva o protótipo/protocolo inicial. Antes de qualquer forward ou
 timing, a inspeção do corpus encontrou só nove documentos de 24..96 tokens,
@@ -93,6 +93,16 @@ as decisões do guloso são conhecidas sem parsing. Inclui o controle nativo
 testemunha e depois executa o mesmo guloso. A soma não decide commits.
 Reavalia os critérios 3/6/7: atalhos e testemunhas boas devem beneficiar
 também o concorrente. Dez métodos, mesmos casos e custos; ganho não medido.
+
+[Trabalho compartilhado](work/evidence/shared-initial-decision.md): 540 registros
+GPU de desenvolvimento, 438 comparações exatas, nenhum ganho pelo critério.
+A versão foi rejeitada antes de ampliar para CPU/avaliação; todos os dados
+permanecem. O parser ponderado bottom-up ainda repete células irrelevantes.
+Investigar uma busca Earley guiada pela raiz, com referência semiring explícita,
+antes de medir: isso é uma implementação de técnica conhecida, e precisa
+beneficiar também os controles Booleanos/gulosos e a floresta reutilizável.
+Os oito critérios permanecem: novidade teórica NÃO confirmada, matemática
+delimitada à preservação de política, ganho completo ainda pendente.
 
 ## Contrato e oito critérios
 

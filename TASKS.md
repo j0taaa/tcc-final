@@ -98,7 +98,10 @@ incremental alternative; classical foundations are not recast as inventions.
   proposal matches supplies a witness, not commitments; it then runs the same
   observable policy. Zero free matches certify canonical fallback directly.
   All ten controls receive the same fastpath/partial selection; complete costs
-  and original cases remain. No practical advantage claimed yet.
+  and original cases remain. Shared refinement finished540 GPU development
+  rows,438 exact comparisons,zero criterion wins. Preserve everything; CPU
+  and heldout of this version were not run. Rooted semiring/Earley parsing is
+  the next bounded implementation investigation, not an asserted new theorem.
 
 ## M38 — Align standing instructions with the current scientific objective
 
