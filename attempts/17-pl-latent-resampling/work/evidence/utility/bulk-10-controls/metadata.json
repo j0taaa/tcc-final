@@ -1,0 +1,41 @@
+{
+  "producer": {
+    "first": "399470509890638e6befa4711e6d274cb06aaea5",
+    "second": "18fcffb4014aa59a127a5983f5ab2df9d64db946"
+  },
+  "methods": [
+    "mixture",
+    "base",
+    "single",
+    "enumeration",
+    "profiles",
+    "profiles_coarse2",
+    "profiles_coarse4",
+    "profiles_indexed1",
+    "profiles_indexed2",
+    "profiles_indexed4"
+  ],
+  "batch_size": 4096,
+  "prefix_checkpoint": 1024,
+  "source_inputs": {
+    "components.json.gz": "4a58e656b30bb8d623b9b4bbf1759856e0ce0d93b1b0ab110145407017965149",
+    "inputs.json.gz": "427cf874c339ff2da4eb8af0dbecc685588de37c32f724fddb5f4f79fe60bd15",
+    "runs.json.gz": "351f8946ae0b5147728697a4294c74e9747a21b827aaac939926dd1abbb6c875"
+  },
+  "comparison": "Same events/seeds/repetition IDs across sequential campaigns; not simultaneous paired timings",
+  "profile_streams_identical": {
+    "complete_queries": 321,
+    "prefixes_1024": 321
+  },
+  "prior_stream_check": null,
+  "sources": {
+    ".cache/pl-bulk-utility-v5": {
+      "rows.jsonl": "6985fd8985cbbef69f2cba83aefe892bb5aabd5731a973e8069a490d9a2ab1a8",
+      "metadata.json": "0adfc761e98ae71a25e14ee8963ff1ce8f5de27f2302450c87ff0c1e0d16e794"
+    },
+    ".cache/pl-bulk-utility-v6": {
+      "rows.jsonl": "128dc912d2ccdc55893e1ed342e85c6af5223065541488141e36756f6215b9c9",
+      "metadata.json": "c3c310457e47a385bc019fb94152e245329882a7aaf06d2bb9b20795450c975b"
+    }
+  }
+}

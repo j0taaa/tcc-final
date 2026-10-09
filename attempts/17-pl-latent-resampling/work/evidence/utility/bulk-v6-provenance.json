@@ -1,0 +1,9 @@
+{
+  "producer": "18fcffb4014aa59a127a5983f5ab2df9d64db946",
+  "command": "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/bulk_utility.py --indexed-only --batch-size 4096 --output .cache/pl-bulk-utility-v6",
+  "scope": "All three compact controls, 48 native events, no row omitted",
+  "files": {
+    "bulk-utility-v6/rows.jsonl": "128dc912d2ccdc55893e1ed342e85c6af5223065541488141e36756f6215b9c9",
+    "bulk-utility-v6/metadata.json": "c3c310457e47a385bc019fb94152e245329882a7aaf06d2bb9b20795450c975b"
+  }
+}
