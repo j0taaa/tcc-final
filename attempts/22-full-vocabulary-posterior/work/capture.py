@@ -30,6 +30,11 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--phase", choices=("development", "heldout", "fresh"), required=True)
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
+    parser.add_argument(
+        "--archive-logits-first",
+        action="store_true",
+        help="Archive one small full-head capture for optional offline origin audit",
+    )
     args = parser.parse_args()
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("freeze source/protocol before model capture")
@@ -110,7 +115,8 @@ def main():
                     input_ids=torch.tensor([ids], device=args.device),
                     timesteps=torch.zeros(1, device=args.device),
                 )[0]
-                scores = logits[positions].to(device="cpu", dtype=torch.float64).clone()
+                original_scores = logits[positions].to(device="cpu", dtype=torch.float64)
+                scores = original_scores.clone()
                 scores[:, config["mask_token_id"]] = float("-inf")
                 probabilities = scores.softmax(-1).numpy().copy()
             if args.device == "cuda":
@@ -128,6 +134,19 @@ def main():
                 vocabulary=len(vocabulary),
                 status="captured",
             )
+            if (
+                args.archive_logits_first
+                and example is selected[0]
+                and masks == min(protocol["mask_counts"])
+            ):
+                # Diagnostic dump occurs after the forward/softmax clock. Values
+                # are original F32 logits lifted exactly to F64, before mask policy.
+                logit_file = args.output / (name + ".logits.npy")
+                np.save(logit_file, original_scores.numpy(), allow_pickle=False)
+                result["raw_logits_sha256"] = digest(logit_file.read_bytes())
+                result["raw_logits_scope"] = (
+                    "complete original masked-position heads before mask policy"
+                )
             (args.output / (name + ".json")).write_text(json.dumps(result, indent=2) + "\n")
             print(json.dumps({k: result[k] for k in ("case", "mask_count", "status")}), flush=True)
 

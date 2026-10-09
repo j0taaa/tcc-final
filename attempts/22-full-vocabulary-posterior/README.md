@@ -103,3 +103,13 @@ startup da tabela/gramática, não todo carregamento de modelo/tokenizer nem
 construção do mapa de bytes. Não usar esse campo para alegar latência de um
 processo inteiramente frio. Empacotamento/auditoria de matrizes não é timing.
 Novidade teórica e superioridade de geração/EPIC/qualidade não foram confirmadas.
+
+
+Reprodução opcional pequena (critérios6/8, mesmas garantias): capture aceita
+--archive-logits-first para um único caso de4 lacunas. Logits originais de toda
+a cabeça são gravados APÓS o relógio, antes da política de MASK. São valores
+F32 elevados exatamente a F64; a rede/softmax e os kernels de inferência não
+mudam. verify_capture confere hashes, softmax completa byte a byte e massa/
+matriz recomputadas. Não afirma reproduzir o forward sem os pesos opcionais.
+A confirmação será executada sem escolher caso pelo resultado, seguindo o
+protocolo completo (12 documentos de refinamento e6 novos, todos os tamanhos).
