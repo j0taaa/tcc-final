@@ -475,6 +475,16 @@
             "attempts/17-pl-latent-resampling/work/evidence/utility/bulk-v6-provenance.json",
             "docs/artifacts/raw/m34_cfg_posterior_v1"
           ]
+        },
+        {
+          "id": "v16",
+          "source_commit": "f0f8322566d0c50c4ac0f7a988fd0fcf509b7aaa",
+          "evidence_commit": "dae48ff8ba8a44c1d077b1439ab3d7870907fae8",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work",
+            "attempts/17-pl-latent-resampling/README.md",
+            "docs/artifacts/raw/m34_cfg_posterior_v1"
+          ]
         }
       ]
     }

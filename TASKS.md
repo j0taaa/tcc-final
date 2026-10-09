@@ -219,6 +219,28 @@ Use one notebook: `docs/research/contribution-plan.md`.
   and independent geometry, plus `--prefix-1024`; exact commands and hashes in
   `work/evidence/utility/final-analysis-provenance.json`. The optional neural
   rerun uses the pinned public checkpoint; offline capture checks need no model.
+  **Final preservation and verification (2026-10-09):** v14–v16 retain the
+  final neural campaign, compact and larger-resource controls, complete reports
+  and written decision without overwriting earlier versions. v16 uses source
+  `f0f8322566d0c50c4ac0f7a988fd0fcf509b7aaa` and evidence
+  `dae48ff8ba8a44c1d077b1439ab3d7870907fae8`. `make check`, `make test`
+  (36 focused tests), `make article-results-check` and
+  `scripts/archive_attempts.py --check --git` pass: 17 attempts, 34 versions,
+  24,467 preserved file copies; all 3,683 frozen scientific files unchanged.
+  Ruff checks of the research work and PL test pass. An isolated extraction
+  into `.cache/pl-independent-v16` runs its own archived `src/`: 11 PL tests
+  pass with `PYTHONPATH=src:. ../../.venv/bin/python -m unittest discover
+  -s tests -p test_pl_resampling.py -q`. Its independent NumPy geometry check,
+  `OPENBLAS_NUM_THREADS=1 PYTHONPATH=src:. ../../.venv-live/bin/python
+  attempts/17-pl-latent-resampling/work/verify_neural_geometry.py --evidence
+  attempts/17-pl-latent-resampling/work/evidence/utility/neural-utility-v4
+  --output independent-geometry.json`, verifies all 12 configurations, with
+  maximum relative error 3.1986037583459516e-14. Nine archived M34 input hashes,
+  producer hashes and final report hashes also verify offline. These checks
+  establish reproduction/correctness evidence, not novelty or human review.
+  Evidence commit CI [37908892466](https://github.com/j0taaa/tcc-final/actions/runs/37908892466)
+  passes Python/tests, Rust/artifacts and the selected Lean results. New proofs
+  in attempt 17 remain written proofs, not Lean-verified implementation claims.
 
 - [x] T3600: Record the stable base, precise candidate contract and one
   recursive structured-generation application (plan 1, 2, 4).
