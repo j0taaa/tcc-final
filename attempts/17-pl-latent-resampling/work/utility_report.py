@@ -119,6 +119,34 @@ def neural(folder):
     )
 
 
+def iid_cost_floor(result):
+    """Recompute the ideal one-replica comparison, without invented timings."""
+    rows = []
+    for case in result["configurations"]:
+        lower = case["variances"]["two_iid"] / case["variances"]["original"]
+        exact = case["comparisons"]["conditional_mean"]["relative_cost_times_variance"]
+        for scope, ratios in exact.items():
+            value = median(ratios)
+            rows.append(
+                dict(
+                    case=case["case"],
+                    power=case["power"],
+                    scope=scope,
+                    iid_zero_extra_cost_lower_bound=lower,
+                    enumeration_ratio=value,
+                    margin=lower - value,
+                )
+            )
+    assert len(rows) == 48
+    return dict(
+        operation="one additional iid replica with the same neural cost",
+        assumption="sampler preparation, draw and extra score costs are nonnegative",
+        enumeration_beats_every_zero_extra_cost_floor=all(r["margin"] > 0 for r in rows),
+        minimum_margin=min(r["margin"] for r in rows),
+        rows=rows,
+    )
+
+
 def bulk(folder, prefix=False):
     rows = read_rows(folder)
     metadata = json.loads((folder / "metadata.json").read_text())
@@ -256,6 +284,10 @@ def bulk(folder, prefix=False):
 
 def build(args):
     n = neural(args.neural)
+    floor = iid_cost_floor(n)
+    assert floor["enumeration_beats_every_zero_extra_cost_floor"], (
+        "The report's neural recommendation is not supported by the zero-cost bound"
+    )
     b = bulk(args.bulk, args.prefix_1024)
     geometry = json.loads(args.geometry.read_text())
     assert len(geometry["verified"]) == 12
@@ -267,6 +299,7 @@ def build(args):
         assert hashlib.sha256((args.neural / filename).read_bytes()).hexdigest() == checksum
     result = dict(
         neural=n,
+        iid_zero_extra_cost_decision=floor,
         bulk=b,
         independent_geometry=geometry,
         files={
