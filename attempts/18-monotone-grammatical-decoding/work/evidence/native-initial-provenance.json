@@ -1,0 +1,17 @@
+{
+  "source_commit": "d0a4cad4979d1a1a3b1098c1b9ac818ea2a95f36",
+  "command": "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-development-gpu-native-v1 --phase development --device cuda --trim --native",
+  "decision": "All 486 development records completed. Zero useful wins against strongest controls. Do not expand this uncompressed implementation; CPU and held-out phases for this version not executed. Preserve data and preregister compression before further native timings.",
+  "source_sha256": {
+    "attempts/18-monotone-grammatical-decoding/work/generation.py": "adff4c6f9655f011185bf6111e9fd38febb0def42d0741cdd890c102aa68541d",
+    "attempts/18-monotone-grammatical-decoding/work/analyze.py": "f3914993f68e3cd8d1d764e50ac67473c46e5015ad5400ecc1877dc262eccf99",
+    "attempts/18-monotone-grammatical-decoding/work/native_queries.py": "a11e0eaa5517ff3bd9150bd06d7ef48ece7694dfd84e722c0e369667b249f400",
+    "attempts/18-monotone-grammatical-decoding/work/native-addendum.json": "f85356af511402273508a7ae550d5ec627ffde56875a6e2ebe192856201b7ecc"
+  },
+  "evidence_sha256": {
+    "development-gpu-native-v1/metadata.json": "d11e4892aa0cb18ed4730f17c204b879ccca69e0130e17aa9687bc1a6b3b96dc",
+    "development-gpu-native-v1/rows.jsonl": "65e051d4f08f7d866d38bc7118fb51585223787e6139505b3651df44c78d2d0c",
+    "native-initial-decision.json": "0bf0685ed96a5ad92edc68104d264fedebb56aafccc2faa23788516fbd0186bb",
+    "native-initial-decision.md": "b4746d658c4ea1c29e35dcb38d43f5350af19f93cdae3860055c9870c2271325"
+  }
+}

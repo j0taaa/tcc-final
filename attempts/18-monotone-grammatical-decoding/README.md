@@ -65,6 +65,17 @@ adoção frente a controles competentes. O refinamento nativo tem cinco testes
 offline focados; 20 trajetórias adicionais passam pelo Rust reconstruído,
 inclusive todas as 1075 prioridades. Seus tempos ainda não foram medidos.
 
+[Nativo original](work/evidence/native-initial-decision.md): 486 registros
+de desenvolvimento GPU, 375 comparações exatas, nenhum ganho contra todos os
+controles. A representação não compacta torna a versão lenta; não ampliar essa
+implementação para CPU/avaliação, nem ocultá-la. O
+[plano de compressão](work/compression-addendum.json) aplica a representação
+de prefixos/fechamento privado já existente e a GLC normalizada compacta a
+TODOS os métodos nativos. Os oito critérios seguem iguais: isso melhora a
+implementação e os controles, não cria novidade teórica. Todos os casos CPU/GPU
+serão reavaliados; os documentos já foram examinados, portanto são evidência
+de refinamento, não um novo teste independente de generalização.
+
 ## Contrato e oito critérios
 
 1. **Uso:** completar lacunas de documentos JSON com uma dLLM, preservando
