@@ -1,0 +1,1735 @@
+{
+  "scope": "Correctness after disclosed clamps; no new NN forward or timing/quality claim",
+  "capture_commit": "f900bd7e7307baa146cb51bd4837f296acb9e977",
+  "rows": [
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 0,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "3246973511133530526730086776832",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 0,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "3246973511133530526730086776832",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 0,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "3246973511133530526730086776832",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 0,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "3246973511133530526730086776832",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 0,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "3246973511133530526730086776832",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 0,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "3246973511133530526730086776832",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 0,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "3246973511133530526730086776832",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 0,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "3246973511133530526730086776832",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 5,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1794263040382948714693750452912128",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 5,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1794263040382948714693750452912128",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 5,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1794263040382948714693750452912128",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 5,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1794263040382948714693750452912128",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 5,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1794263040382948714693750452912128",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 5,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1794263040382948714693750452912128",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 5,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1794263040382948714693750452912128",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 5,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1794263040382948714693750452912128",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 8,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "1295635349826914186519591893860352",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 8,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "1295635349826914186519591893860352",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 8,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "1295635349826914186519591893860352",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 8,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "1295635349826914186519591893860352",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 8,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "1295635349826914186519591893860352",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 8,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "1295635349826914186519591893860352",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 8,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "1295635349826914186519591893860352",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 8,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "1295635349826914186519591893860352",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 13,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1527902043685207821598517792604160",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 13,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1527902043685207821598517792604160",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 13,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1527902043685207821598517792604160",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 13,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1527902043685207821598517792604160",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 13,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1527902043685207821598517792604160",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 13,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1527902043685207821598517792604160",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 13,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1527902043685207821598517792604160",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "position": 13,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "1527902043685207821598517792604160",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 7,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "14829284751560169500576606846976",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 7,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "14829284751560169500576606846976",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 7,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "14829284751560169500576606846976",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 7,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "14829284751560169500576606846976",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 7,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "14829284751560169500576606846976",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 7,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "14829284751560169500576606846976",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 7,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "14829284751560169500576606846976",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 7,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "14829284751560169500576606846976",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 12,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 1621,
+      "total": "41512232816137953528259945051194880",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 12,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 1621,
+      "total": "41512232816137953528259945051194880",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 12,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 1621,
+      "total": "41512232816137953528259945051194880",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 12,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 1621,
+      "total": "41512232816137953528259945051194880",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 12,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 1621,
+      "total": "41512232816137953528259945051194880",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 12,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 1621,
+      "total": "41512232816137953528259945051194880",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 12,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 1621,
+      "total": "41512232816137953528259945051194880",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 12,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 1621,
+      "total": "41512232816137953528259945051194880",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 13,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 1001,
+      "total": "20101929336145984519489952079282176",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 13,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 1001,
+      "total": "20101929336145984519489952079282176",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 13,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 1001,
+      "total": "20101929336145984519489952079282176",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 13,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 1001,
+      "total": "20101929336145984519489952079282176",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 13,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 1001,
+      "total": "20101929336145984519489952079282176",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 13,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 1001,
+      "total": "20101929336145984519489952079282176",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 13,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 1001,
+      "total": "20101929336145984519489952079282176",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 13,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 1001,
+      "total": "20101929336145984519489952079282176",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 16,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "337996016691956758740899725312",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 16,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "337996016691956758740899725312",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 16,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "337996016691956758740899725312",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 16,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "337996016691956758740899725312",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 16,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "337996016691956758740899725312",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 16,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "337996016691956758740899725312",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 16,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "337996016691956758740899725312",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "position": 16,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "337996016691956758740899725312",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 1,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "2594994252153498852118481525014528",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 1,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "2594994252153498852118481525014528",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 1,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "2594994252153498852118481525014528",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 1,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "2594994252153498852118481525014528",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 1,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "2594994252153498852118481525014528",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 1,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "2594994252153498852118481525014528",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 1,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "2594994252153498852118481525014528",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 1,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "2594994252153498852118481525014528",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 15,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "328247345997237757274263513989120",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 15,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "328247345997237757274263513989120",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 15,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "328247345997237757274263513989120",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 15,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "328247345997237757274263513989120",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 15,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "328247345997237757274263513989120",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 15,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "328247345997237757274263513989120",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 15,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "328247345997237757274263513989120",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 15,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "328247345997237757274263513989120",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 25,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "447652306792551402214525681795072",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 25,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "447652306792551402214525681795072",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 25,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "447652306792551402214525681795072",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 25,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "447652306792551402214525681795072",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 25,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "447652306792551402214525681795072",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 25,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "447652306792551402214525681795072",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 25,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "447652306792551402214525681795072",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 25,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "447652306792551402214525681795072",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 39,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "1246972233239237230873558728572928",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 39,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "1246972233239237230873558728572928",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 39,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "1246972233239237230873558728572928",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 39,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "1246972233239237230873558728572928",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 39,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "1246972233239237230873558728572928",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 39,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "1246972233239237230873558728572928",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 39,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "1246972233239237230873558728572928",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "position": 39,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "1246972233239237230873558728572928",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 7,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "664613153747065682317312347776907841",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 7,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "664613153747065682317312347776907841",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 7,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "664613153747065682317312347776907841",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 7,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "664613153747065682317312347776907841",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 7,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "664613153747065682317312347776907841",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 7,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "664613153747065682317312347776907841",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 7,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "664613153747065682317312347776907841",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 7,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "664613153747065682317312347776907841",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 12,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "648773266431021847577965366362119",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 12,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "648773266431021847577965366362119",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 12,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "648773266431021847577965366362119",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 12,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "648773266431021847577965366362119",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 12,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "648773266431021847577965366362119",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 12,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "648773266431021847577965366362119",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 12,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "648773266431021847577965366362119",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 12,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "648773266431021847577965366362119",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 18,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "2652235652423150163838549446321242112",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 18,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "2652235652423150163838549446321242112",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 18,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "2652235652423150163838549446321242112",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 18,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "2652235652423150163838549446321242112",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 18,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "2652235652423150163838549446321242112",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 18,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "2652235652423150163838549446321242112",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 18,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "2652235652423150163838549446321242112",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 18,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "2652235652423150163838549446321242112",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 21,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "11361062579679799256681545728",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 21,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "11361062579679799256681545728",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 21,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "11361062579679799256681545728",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 21,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "11361062579679799256681545728",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 21,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "11361062579679799256681545728",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 21,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "11361062579679799256681545728",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 21,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "11361062579679799256681545728",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "position": 21,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "11361062579679799256681545728",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 0,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "6966241392467093654490243399680",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 0,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "6966241392467093654490243399680",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 0,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "6966241392467093654490243399680",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 0,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "6966241392467093654490243399680",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 0,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "6966241392467093654490243399680",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 0,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "6966241392467093654490243399680",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 0,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "6966241392467093654490243399680",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 0,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "6966241392467093654490243399680",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 6,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "43556142735516498322330891516039151360653",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 6,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "43556142735516498322330891516039151360653",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 6,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "43556142735516498322330891516039151360653",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 6,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "43556142735516498322330891516039151360653",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 6,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "43556142735516498322330891516039151360653",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 6,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "43556142735516498322330891516039151360653",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 6,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "43556142735516498322330891516039151360653",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 6,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 49736,
+      "total": "43556142735516498322330891516039151360653",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 12,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "164827953940738686079574671917842432",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 12,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "164827953940738686079574671917842432",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 12,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "164827953940738686079574671917842432",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 12,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "164827953940738686079574671917842432",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 12,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "164827953940738686079574671917842432",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 12,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "164827953940738686079574671917842432",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 12,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "164827953940738686079574671917842432",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 12,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "164827953940738686079574671917842432",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 59,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "80056216433692342715194318555971584",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 59,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "80056216433692342715194318555971584",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 59,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "80056216433692342715194318555971584",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 59,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "80056216433692342715194318555971584",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 59,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "80056216433692342715194318555971584",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 59,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "80056216433692342715194318555971584",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 59,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "80056216433692342715194318555971584",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "position": 59,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 1,
+      "total": "80056216433692342715194318555971584",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 5,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "931708469350735438127877425463296",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 5,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "931708469350735438127877425463296",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 5,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "931708469350735438127877425463296",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 5,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "931708469350735438127877425463296",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 5,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "931708469350735438127877425463296",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 5,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "931708469350735438127877425463296",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 5,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "931708469350735438127877425463296",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 5,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 3,
+      "total": "931708469350735438127877425463296",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 8,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "323347941290292581114698272342016",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 8,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "323347941290292581114698272342016",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 8,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "323347941290292581114698272342016",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 8,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "323347941290292581114698272342016",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 8,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "323347941290292581114698272342016",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 8,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "323347941290292581114698272342016",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 8,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "323347941290292581114698272342016",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 8,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 1615,
+      "total": "323347941290292581114698272342016",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 10,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "166097044377765617753903688109536955",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 10,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "166097044377765617753903688109536955",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 10,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "166097044377765617753903688109536955",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 10,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "166097044377765617753903688109536955",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 10,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "166097044377765617753903688109536955",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 10,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "166097044377765617753903688109536955",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 10,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "166097044377765617753903688109536955",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 10,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 49737,
+      "total": "166097044377765617753903688109536955",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 15,
+      "kind": "raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "41409527088885905648028992537624576",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 15,
+      "kind": "global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "41409527088885905648028992537624576",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 15,
+      "kind": "position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "41409527088885905648028992537624576",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 15,
+      "kind": "local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "41409527088885905648028992537624576",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 15,
+      "kind": "bidir_raw",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "41409527088885905648028992537624576",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 15,
+      "kind": "bidir_global",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "41409527088885905648028992537624576",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 15,
+      "kind": "bidir_position",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "41409527088885905648028992537624576",
+      "status": "exact_agreement"
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "position": 15,
+      "kind": "bidir_local",
+      "original_candidates": 50258,
+      "valid": 2,
+      "total": "41409527088885905648028992537624576",
+      "status": "exact_agreement"
+    }
+  ],
+  "oracle": "Every original token recognized independently by strict UTF8/json.loads"
+}

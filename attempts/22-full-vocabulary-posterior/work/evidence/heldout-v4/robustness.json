@@ -1,0 +1,1505 @@
+{
+  "phase": "heldout",
+  "rows": 540,
+  "rows_sha256": "1aeddfc1bd2f9b3e5c451c7238a1c7201b6851b2f1ff8246dfff66d6b96400fb",
+  "Cartesian_rows": "complete_unique",
+  "exact_output_comparisons": 288,
+  "statuses": {
+    "complete": 387,
+    "resource_refusal": 153
+  },
+  "refusal_causes": [
+    {
+      "method": "global",
+      "cause": "operation MemoryError (empty exception string)",
+      "count": 27
+    },
+    {
+      "method": "local",
+      "cause": "operation MemoryError (empty exception string)",
+      "count": 27
+    },
+    {
+      "method": "position",
+      "cause": "operation MemoryError (empty exception string)",
+      "count": 27
+    },
+    {
+      "method": "raw",
+      "cause": "operation MemoryError (empty exception string)",
+      "count": 36
+    },
+    {
+      "method": "rejection",
+      "cause": "rejection attempt budget; valid mass unresolved",
+      "count": 36
+    }
+  ],
+  "optimistic_control_benefit": [
+    [
+      "0f5a3b55aa6b52db4ac4d7ee44e4996b239aae1642567e896d190231995f13b9",
+      16
+    ],
+    [
+      "1eaf0817e3a54f0357957fc0088cfa200a425826bf268af16c2bb085204d1c37",
+      16
+    ],
+    [
+      "47d38d20de38a10b6a4196b9387e2e94dd37b3db1250751cf85f242d85666ded",
+      8
+    ],
+    [
+      "9017269543e3a7f8966249a8d8e4982df6c60ff0a90a7122f79be9300bd7a01f",
+      8
+    ]
+  ],
+  "cases": [
+    {
+      "case": "0f5a3b55aa6b52db4ac4d7ee44e4996b239aae1642567e896d190231995f13b9",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.1647171929659472,
+            "cpu": 0.20389784585575518
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.2015589948897867,
+            "cpu": 1.1495703183017474
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.16822197685151,
+            "cpu": 1.1258232387583555
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "0f5a3b55aa6b52db4ac4d7ee44e4996b239aae1642567e896d190231995f13b9",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.14821770162846493,
+            "cpu": 0.15918311925143747
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.1245002961098627,
+            "cpu": 1.1131426135752607
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.134493572401169,
+            "cpu": 1.1222463476770412
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "0f5a3b55aa6b52db4ac4d7ee44e4996b239aae1642567e896d190231995f13b9",
+      "mask_count": 16,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.1799081853568096,
+            "cpu": 0.18214799435412507
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.6361742433845089,
+            "cpu": 0.639642824687161
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.7493131148696777,
+            "cpu": 0.7521563436215047
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        }
+      ],
+      "optimistic_control_benefit": true
+    },
+    {
+      "case": "1357c5544492744fd11e57dc156f4dd5240d6a62bd49c36f3bd2487b0ce83598",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.1047323853771166,
+            "cpu": 0.12088093205157706
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.3108699054931487,
+            "cpu": 1.2531252240137192
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.2073954260530824,
+            "cpu": 1.171929162621065
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "1357c5544492744fd11e57dc156f4dd5240d6a62bd49c36f3bd2487b0ce83598",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.08579221304101947,
+            "cpu": 0.09201889088438855
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.0457260928248198,
+            "cpu": 1.0425014246950144
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.0387783945072617,
+            "cpu": 1.0358688536470533
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "1357c5544492744fd11e57dc156f4dd5240d6a62bd49c36f3bd2487b0ce83598",
+      "mask_count": 16,
+      "local_complete": false,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "1c6ab02b22c06ced962b5b3fcafa93c13106a2b100dae107d96647d7be1bcebc",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.08533579504817354,
+            "cpu": 0.09632475530021561
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.9742712295474651,
+            "cpu": 0.9769293823921299
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.982355049059546,
+            "cpu": 0.9840516042464943
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "1c6ab02b22c06ced962b5b3fcafa93c13106a2b100dae107d96647d7be1bcebc",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.08843071740000553,
+            "cpu": 0.0936592380976783
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.0862347008154687,
+            "cpu": 1.0804909761834482
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.200888264215469,
+            "cpu": 1.1864357798674552
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "1c6ab02b22c06ced962b5b3fcafa93c13106a2b100dae107d96647d7be1bcebc",
+      "mask_count": 16,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": true,
+          "reason": "localized operation refusals only; hard-supervisor-only excluded",
+          "errors": {
+            "": 3
+          }
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.5464226548911806,
+            "cpu": 0.5490002346669693
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.8028680183471031,
+            "cpu": 0.8045392297599812
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "1eaf0817e3a54f0357957fc0088cfa200a425826bf268af16c2bb085204d1c37",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.0763095169844146,
+            "cpu": 0.08875209907056662
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.1070327394214006,
+            "cpu": 1.0893177732398585
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.1501402181987908,
+            "cpu": 1.1244801519989518
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "1eaf0817e3a54f0357957fc0088cfa200a425826bf268af16c2bb085204d1c37",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.0881662947330358,
+            "cpu": 0.09354966514223524
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.8345735024561964,
+            "cpu": 0.8433183594731711
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.9421633862829942,
+            "cpu": 0.9456415038384604
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "1eaf0817e3a54f0357957fc0088cfa200a425826bf268af16c2bb085204d1c37",
+      "mask_count": 16,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": true,
+          "reason": "localized operation refusals only; hard-supervisor-only excluded",
+          "errors": {
+            "": 3
+          }
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.5413216462714326,
+            "cpu": 0.5435713714157148
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.6233636416457339,
+            "cpu": 0.6248881234501292
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        }
+      ],
+      "optimistic_control_benefit": true
+    },
+    {
+      "case": "23ebff3f6f31f7bbe02dfaf861d11bfd8c758dd1e26ce34024f1513793d4e363",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.07989901624782231,
+            "cpu": 0.0916308205663777
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.3070102956183969,
+            "cpu": 1.2531974429755004
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.2153480006330575,
+            "cpu": 1.1801934080949343
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "23ebff3f6f31f7bbe02dfaf861d11bfd8c758dd1e26ce34024f1513793d4e363",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.08850831388864788,
+            "cpu": 0.09410087021406932
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.8317418802917783,
+            "cpu": 0.8410534232746981
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.0536266055262653,
+            "cpu": 1.0499226025864414
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "23ebff3f6f31f7bbe02dfaf861d11bfd8c758dd1e26ce34024f1513793d4e363",
+      "mask_count": 16,
+      "local_complete": false,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "2cf2d4c86630165f087b722b3dfb70f526a9442f0aa0c200423fe09d50397227",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.07535672286891866,
+            "cpu": 0.08682026147598298
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.9752062021934406,
+            "cpu": 0.9782088815913031
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.1645466761271905,
+            "cpu": 1.1378284917251693
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "2cf2d4c86630165f087b722b3dfb70f526a9442f0aa0c200423fe09d50397227",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.07601326957454277,
+            "cpu": 0.08001355109305792
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.7086116762352157,
+            "cpu": 0.7195763974367739
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.152677628088304,
+            "cpu": 1.1432493682605742
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "2cf2d4c86630165f087b722b3dfb70f526a9442f0aa0c200423fe09d50397227",
+      "mask_count": 16,
+      "local_complete": false,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "339b1b4817bf402f28ac0686967b23de1d087a291ae30514ecb1a0b33daa1230",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.08268779366572582,
+            "cpu": 0.09802495639371497
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.2623697218444614,
+            "cpu": 1.2075399981038606
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.1928761078916272,
+            "cpu": 1.1542235571239678
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "339b1b4817bf402f28ac0686967b23de1d087a291ae30514ecb1a0b33daa1230",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.09220529263667795,
+            "cpu": 0.09737778367087532
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.9180364452372418,
+            "cpu": 0.9224603976064997
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.1361687490579127,
+            "cpu": 1.1271693482702707
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "339b1b4817bf402f28ac0686967b23de1d087a291ae30514ecb1a0b33daa1230",
+      "mask_count": 16,
+      "local_complete": false,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "442469db94fdc848c20b67637f39b1dbcf8e1e8667c6d17caafe56fd57bf400d",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.08204513638067151,
+            "cpu": 0.09378204350901755
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.0814931045088565,
+            "cpu": 1.0698687826575175
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.154168667949716,
+            "cpu": 1.1305179509092496
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "442469db94fdc848c20b67637f39b1dbcf8e1e8667c6d17caafe56fd57bf400d",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.06500381692797931,
+            "cpu": 0.06850451274889474
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.6597952623895362,
+            "cpu": 0.6715723197364082
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.8272638073441362,
+            "cpu": 0.8351351771865321
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "442469db94fdc848c20b67637f39b1dbcf8e1e8667c6d17caafe56fd57bf400d",
+      "mask_count": 16,
+      "local_complete": false,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "47d38d20de38a10b6a4196b9387e2e94dd37b3db1250751cf85f242d85666ded",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.08020229893272285,
+            "cpu": 0.09169037884309965
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.1085364515883243,
+            "cpu": 1.0926086602138172
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.0857194464940538,
+            "cpu": 1.0731443445760587
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "47d38d20de38a10b6a4196b9387e2e94dd37b3db1250751cf85f242d85666ded",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": true,
+          "reason": "localized operation refusals only; hard-supervisor-only excluded",
+          "errors": {
+            "": 3
+          }
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.36917190308788445,
+            "cpu": 0.3713197117956746
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.44255406227506827,
+            "cpu": 0.4447484125083564
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        }
+      ],
+      "optimistic_control_benefit": true
+    },
+    {
+      "case": "47d38d20de38a10b6a4196b9387e2e94dd37b3db1250751cf85f242d85666ded",
+      "mask_count": 16,
+      "local_complete": false,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "6fff04fc461ac45cba74be0e70bd590eeebbad311ff85daee604e73c92c75244",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.13851055772754833,
+            "cpu": 0.1581072389470235
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.1193969239704082,
+            "cpu": 1.100253765444916
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.1764755868997423,
+            "cpu": 1.1474075075306367
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "6fff04fc461ac45cba74be0e70bd590eeebbad311ff85daee604e73c92c75244",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.07838296831445661,
+            "cpu": 0.08246712596670441
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.8057141418287183,
+            "cpu": 0.8143251285070839
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.9063242251861429,
+            "cpu": 0.911084703450145
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "6fff04fc461ac45cba74be0e70bd590eeebbad311ff85daee604e73c92c75244",
+      "mask_count": 16,
+      "local_complete": false,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "7dede5c098c5ac4aa9ec48a93669a9d868adc4f004d49949f93db6b6684b8cdd",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.10506098488294233,
+            "cpu": 0.12072341835776793
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.2847690173950694,
+            "cpu": 1.234029466434376
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 1.2059925131780462,
+            "cpu": 1.1711765522296564
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "7dede5c098c5ac4aa9ec48a93669a9d868adc4f004d49949f93db6b6684b8cdd",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.08862614639071804,
+            "cpu": 0.09336137263888356
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.7619484759112765,
+            "cpu": 0.7719814533470424
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.8826715879522757,
+            "cpu": 0.8884761803029174
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "7dede5c098c5ac4aa9ec48a93669a9d868adc4f004d49949f93db6b6684b8cdd",
+      "mask_count": 16,
+      "local_complete": false,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "9017269543e3a7f8966249a8d8e4982df6c60ff0a90a7122f79be9300bd7a01f",
+      "mask_count": 4,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.08753923276644093,
+            "cpu": 0.09998082349968301
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.9352937612367912,
+            "cpu": 0.9436645931867503
+          },
+          "favorable_every_repeat": true,
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.9935683012453357,
+            "cpu": 0.9944564319262501
+          },
+          "favorable_every_repeat": false,
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    },
+    {
+      "case": "9017269543e3a7f8966249a8d8e4982df6c60ff0a90a7122f79be9300bd7a01f",
+      "mask_count": 8,
+      "local_complete": true,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.07643276587263978,
+            "cpu": 0.07851091486138181
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.45598401168642977,
+            "cpu": 0.46327000584989925
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "complete": 3
+          },
+          "ratio_medians": {
+            "wall": 0.5837957142100337,
+            "cpu": 0.5908187055502796
+          },
+          "favorable_every_repeat": true,
+          "robust": true
+        }
+      ],
+      "optimistic_control_benefit": true
+    },
+    {
+      "case": "9017269543e3a7f8966249a8d8e4982df6c60ff0a90a7122f79be9300bd7a01f",
+      "mask_count": 16,
+      "local_complete": false,
+      "comparisons": [
+        {
+          "method": "raw",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "global",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        },
+        {
+          "method": "position",
+          "statuses": {
+            "resource_refusal": 3
+          },
+          "robust": false
+        }
+      ],
+      "optimistic_control_benefit": false
+    }
+  ],
+  "scope": "Post-hoc robustness only: all completed controls get their entire outside/output stage for free; local pays full operation plus measured model forward. No optimized native implementation is inferred. Primary protocol unchanged."
+}

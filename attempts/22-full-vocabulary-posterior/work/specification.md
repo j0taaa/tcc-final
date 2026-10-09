@@ -52,8 +52,10 @@ válidas no estado, logo não aumenta alternativas token-close com igual efeito;
 conteúdo livre em strings pode condensar dezenas de milhares de originais.
 A tabela T requer O(S sum_t |bytes(t)|), partição/refinamento O(S |V|).
 Parsing opera no grafo de efeitos, não no original V inteiro expandido em bytes.
-Ler q e escrever TODOS os marginais requer Omega(n |V|): não prometer saída
-sublinear. Contabilizar inteiros com até soma_i bitlength(D_i) e derivados.
+Para f posições atualmente livres e fixados representados por deltas esparsos,
+ler q e escrever os marginais requer Omega(f |V|+n): não prometer saída sublinear.
+O limite Omega(n |V|) da versão anterior pressupunha, incorretamente, que todos
+os fixados também tinham saída densa. Ver theory-cost.md para custo completo. Contabilizar inteiros com até soma_i bitlength(D_i) e derivados.
 Esta redução é especializada de técnicas conhecidas; não exclusiva contra um
 parser/factor compiler que faça a mesma eliminação condicionada.
 

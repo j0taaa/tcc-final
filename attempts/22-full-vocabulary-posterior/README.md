@@ -113,3 +113,58 @@ mudam. verify_capture confere hashes, softmax completa byte a byte e massa/
 matriz recomputadas. Não afirma reproduzir o forward sem os pesos opcionais.
 A confirmação será executada sem escolher caso pelo resultado, seguindo o
 protocolo completo (12 documentos de refinamento e6 novos, todos os tamanhos).
+
+
+Refinamento v5 (perguntas3/4/5/6/7/8, mesma operação): um controle competente
+também deve eliminar estados lexicais incompatíveis com o sufixo fixado.
+Implementamos forward/backward estrutural, sem pesos, gramática ou gabarito,
+para TODAS as quatro representações. O quociente por posição usa efeitos
+efetivamente admissíveis em todos os estados coacessíveis. Trimming de FSTs
+é antecedente conhecido; não é anunciado como nova contribuição.
+As provas de massa/marginais/lei/reuso permanecem, pois nenhum caminho aceito
+pode visitar um estado sem sufixo lexical completo. Os oráculos anteriores passaram
+para OITO variantes; as contagens de todos72 quadros conservam58 desigualdades
+estritas de arestas, sem afirmar velocidade. Custo adicional O(n soma_s |grupos_s|).
+
+As270 linhas de desenvolvimento e540 de refinamento anteriores estão preservadas.
+A rodada fresca foi interrompida inteira com50/810 registros para acrescentar
+esse controle; não é confirmação. Seus seis documentos já receberam forwards,
+portanto não serão apresentados como nunca vistos outra vez. O protocolo v5
+compara as seis representações de partições estáticas, as duas candidatas locais,
+inferência determinística de pilhas e rejeição. Seleciona uma candidata somente no desenvolvimento, por quantidade
+de ganhos fortes; empate prefere bidir_local. Nenhum ganho rejeita ambas.
+Antes de novos forwards, congela essa escolha. A confirmação independente usa
+TODOS os cinco documentos elegíveis do JSONTestSuite pinado (positivos, objeto/
+array, UTF8/JSON estritos,16..96 tokens), sem criar um sexto artificial.
+Mesmo limiar20%, limites3GiB/120s e todos os resultados/recusas. Novidade e
+suficiência acadêmica permanecem separadas de capacidade/custo observados.
+
+
+Controle adicional v5, antes de qualquer medição (perguntas1–8): a operação
+continua massa, todas as marginais originais e uma amostra do produto de um
+passo condicionado a JSON. Além das seis partições, `stack_control.py` aplica
+o parser preditivo LL(1) clássico diretamente às saídas lexicais. Recebe o
+mesmo trimming, somas locais e probabilidades; memoiza transições por camada,
+elimina estados gramaticais sem caminho até a aceitação,
+soma arcos com o mesmo estado de destino e usa condições necessárias de
+sufixo (terminais e fechamentos restantes). Não limita arbitrariamente a
+profundidade. Sua passagem de ida/volta e reconstrução de tokens são exatas.
+É uma alternativa competente diferente do parser de floresta; se vencer,
+não será omitida nem reinterpretada como outro problema. O critério passa a
+exigir ganho contra TODOS os sete controles, antes da confirmação independente.
+
+Também fornecemos a TODOS os métodos a equivalência sintática clássica entre
+NUMBER, TRUE, FALSE e NULL: são valores atômicos com as mesmas continuações
+na gramática JSON. STRING permanece separada, pois pode ser chave de objeto.
+Os tokens, bytes e valores originais não são fundidos no resultado; o lexer
+ainda valida cada literal. As contagens197/454 e58/72 anteriores são históricas,
+anteriores a esse refinamento. Nada disso é reivindicado como princípio novo.
+A objeção central é justamente que a inferência clássica de pilhas ou uma
+eliminação equivalente obtenha o mesmo benefício; a implementação mínima
+agora permite testá-la antes de novas capturas. A vantagem de tamanho do
+DAG não implica superar esse algoritmo diferente. Necessitamos vantagem
+observada com custo completo e confirmação independente; ainda não houve.
+
+O novo oráculo completo concorda em216 comparações,24 quadros ×9 métodos,
+sobre1.206.192 candidatos originais reconhecidos independentemente. As cinco
+verificações pequenas também passam. Isso sustenta correção, não custo ou novidade.

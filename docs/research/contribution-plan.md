@@ -1412,3 +1412,34 @@ Protocolo congelado inclui custo de entrada completa, saída dos marginais,
 compilação, startup e um forward real comum, controles globais/locais/raw
 igualmente lexicais e rejeição racional para operação de amostragem.
 Só medir confirmação fresca se passar no desenvolvimento; preservar tudo.
+
+
+### M42: strengthening the full-vocabulary posterior controls before confirmation
+
+The initial270 development and540 refinement measurements are preserved,
+with50 deliberately interrupted fresh measurements. Their6/18 and7/36 wins
+are preliminary because classical right-context lexical trimming was missing.
+No whole-generation, semantic, native EPIC or priority claim follows. The six
+original fresh documents already received model forwards and are now reused
+refinements. New confirmation includes ALL five eligible positive object/array
+documents from pinned JSONTestSuite1ef36fa, original bytes and16..96 GPT2 slots.
+
+Before v5 timings, every representation receives an optional common lexical
+forward/backward pass and effective per-position signatures. All exact methods
+coarsen NUMBER/Boolean/null syntax terminals identically while preserving
+original bytes/IDs. A separate classical predictive-stack control includes
+local sums, lexical trimming, memoized transitions, merged target arcs, safe
+suffix emission/closing bounds and final backward grammar-state trimming.
+This addresses the objection that a different competent inference algorithm
+can exploit the same local elimination more cheaply than CFG forest parsing.
+Local or bidirectional local will be selected ONLY from development, against
+all seven controls using the unchanged20% wall AND CPU/sign-every-repeat gate.
+Zero wins rejects both; no promotion based on graph-size proof alone.
+
+Five small exact independent checks pass in nine kernels; full original
+vocabulary oracle passes216 agreements over24 one-hole frames and1,206,192
+strict UTF8/Python JSON candidates. This is correctness evidence. Whole
+focused suite passes58 checks; archive integrity preserves22 attempts and52
+versions. Written proofs are in attempt22/work/theory-cost.md, including
+original fiber cancellation, full costs and explicit limits relative to the
+independent stack algorithm. Publication significance remains unconfirmed.

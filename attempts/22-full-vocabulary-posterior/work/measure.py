@@ -18,6 +18,7 @@ from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from .forest import Prepared
 from .lexer import lexical_grammar
 from .posterior import Posterior, Weights
+from .stack_control import StackPosterior, StackPrepared
 from .table import LexerTable
 
 WORK = Path(__file__).resolve().parent
@@ -129,7 +130,7 @@ def worker(args, protocol):
     # Same service-wide lexer/global refinement/normalizer for all exact controls.
     # Rejection does not need a grammar table, and is not charged one.
     table = LexerTable(adapter) if args.method != "rejection" else None
-    grammar = lexical_grammar() if table else None
+    grammar = lexical_grammar() if table and args.method != "stack" else None
     result["startup"] = elapsed(startup)
     if table:
         result["classes"] = len(table.classes)
@@ -149,11 +150,14 @@ def worker(args, protocol):
             result.update(trials=trials, sample=list(word))
             result["first_sample"] = elapsed(operation)
         else:
-            prepared = Prepared(
-                table,
-                case["canvas"],
-                grammar,
-                args.method,
+            factory = StackPrepared if args.method == "stack" else Prepared
+            factory_args = (
+                (table, case["canvas"])
+                if args.method == "stack"
+                else (table, case["canvas"], grammar, args.method)
+            )
+            prepared = factory(
+                *factory_args,
                 max_edges=limits["max_edges"],
                 max_cells=limits["max_cells"],
                 max_terms=limits["max_terms"],
@@ -163,11 +167,13 @@ def worker(args, protocol):
             result.update(
                 graph_nodes=prepared.graph_nodes,
                 graph_edges=prepared.graph_edges,
-                cells=len(prepared.plan.terms),
-                alternatives=sum(map(len, prepared.plan.terms)),
+                cells=prepared.graph_nodes if args.method == "stack" else len(prepared.plan.terms),
+                alternatives=prepared.graph_edges
+                if args.method == "stack"
+                else sum(map(len, prepared.plan.terms)),
             )
             begin = clock()
-            posterior = Posterior(prepared, weights)
+            posterior = (StackPosterior if args.method == "stack" else Posterior)(prepared, weights)
             result["inside"] = elapsed(begin)
             result.update(valid_mass=str(posterior.mass), integer_bits=posterior.total.bit_length())
             if posterior.total:
@@ -215,7 +221,20 @@ def main():
     parser.add_argument("--capture", type=Path, required=True)
     parser.add_argument("--case", required=True)
     parser.add_argument(
-        "--method", choices=("raw", "global", "position", "local", "rejection"), required=True
+        "--method",
+        choices=(
+            "raw",
+            "global",
+            "position",
+            "local",
+            "bidir_raw",
+            "bidir_global",
+            "bidir_position",
+            "bidir_local",
+            "stack",
+            "rejection",
+        ),
+        required=True,
     )
     parser.add_argument("--repeat", type=int, required=True)
     parser.add_argument("--matrices", type=Path, required=True)

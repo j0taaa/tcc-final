@@ -62,7 +62,15 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   A tentativa22 investiga posterior JSON exato no vocabulário original inteiro,
   com classes globais e locais e rejeição exata como controles. Massa, marginais
   e lei do sampler passam em oráculos pequenos independentes. O protocolo foi
-  definido antes dos novos forwards; utilidade e novidade seguem em investigação.
+  definido antes dos novos forwards. Desenvolvimento original:6/18 ganhos fortes;
+  refinamento original:7/36. Esses comparadores ainda precisavam de coacessibilidade
+  lexical pelo contexto direito. A confirmação foi interrompida com50/810 registros,
+  todos preservados; não é conquista confirmada. O refinamento v5 fornece trimming
+  clássico às quatro representações e testa ambas as variantes locais contra seis
+  controles de partições e um controle independente de pilhas preditivas. Todos
+  recebem a equivalência sintática de valores atômicos; IDs/bytes são preservados. Seleção da candidata só no desenvolvimento; nova confirmação
+  usará todos os cinco documentos elegíveis de outro corpus externo pinado.
+  Utilidade fortalecida e novidade seguem em investigação.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

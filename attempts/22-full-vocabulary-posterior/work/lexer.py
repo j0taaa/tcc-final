@@ -68,7 +68,9 @@ def step(q, b):
     if q in KREVERSE:
         prefix = KREVERSE[q] + bytes([b])
         if prefix in KEYWORDS:
-            return OUT, (TRUE + KEYWORDS.index(prefix),)
+            # Primitive values have identical syntactic continuations. Keeping
+            # their original IDs in lexical fibers preserves values and weights.
+            return OUT, (NUMBER,)
         return (KSTATES[prefix], ()) if prefix in KSTATES else None
     if q == MINUS:
         return (ZERO if b == 48 else INT, ()) if 48 <= b <= 57 else None
@@ -163,7 +165,7 @@ def lexical_grammar():
     rule("S", "V", END)
     for nonterminal in ("A", "O"):
         rule("V", nonterminal)
-    for terminal in (STRING, NUMBER, TRUE, FALSE, NULL):
+    for terminal in (STRING, NUMBER):
         rule("V", terminal)
     rule("A", PUNCT[91], "Items", PUNCT[93])
     rule("Items")

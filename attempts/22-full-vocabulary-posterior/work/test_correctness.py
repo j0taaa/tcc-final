@@ -12,7 +12,34 @@ from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from .forest import Prepared
 from .lexer import lexical_grammar
 from .posterior import Posterior, Weights
+from .stack_control import StackPosterior, StackPrepared
 from .table import LexerTable
+
+KINDS = (
+    "raw",
+    "global",
+    "position",
+    "local",
+    *("bidir_" + kind for kind in ("raw", "global", "position", "local")),
+    "stack",
+)
+
+
+def prepare(table, canvas, kind):
+    if kind == "stack":
+        return StackPrepared(
+            table,
+            canvas,
+            max_edges=10_000_000,
+            max_cells=10_000_000,
+            max_terms=50_000_000,
+            timeout_seconds=120,
+        )
+    return Prepared(table, canvas, lexical_grammar(), kind)
+
+
+def evaluate(prepared, weights):
+    return (StackPosterior if isinstance(prepared, StackPrepared) else Posterior)(prepared, weights)
 
 
 def accepted(adapter, word):
@@ -112,9 +139,9 @@ class FullVocabularyCorrectness(unittest.TestCase):
                 row[0] += 1
             weights = Weights(raw, canvas, len(emissions))
             _, total, marginal = enumerate_expected(table, canvas, weights)
-            for kind in ("raw", "global", "position", "local"):
-                prepared = Prepared(table, canvas, lexical_grammar(), kind)
-                result = Posterior(prepared, weights)
+            for kind in KINDS:
+                prepared = prepare(table, canvas, kind)
+                result = evaluate(prepared, weights)
                 self.assertEqual(result.total, total, (case, kind))
                 self.assertEqual(result.mass, Fraction(total, prod(weights.denominators)))
                 if total:
@@ -138,8 +165,8 @@ class FullVocabularyCorrectness(unittest.TestCase):
             weights = Weights(raw, canvas, 6)
             expected, total, _ = enumerate_expected(table, canvas, weights)
             law = {word: Fraction(w, total) for word, w in expected.items() if w}
-            for kind in ("raw", "global", "position", "local"):
-                posterior = Posterior(Prepared(table, canvas, lexical_grammar(), kind), weights)
+            for kind in KINDS:
+                posterior = evaluate(prepare(table, canvas, kind), weights)
                 self.assertEqual(sampler_law(posterior), law)
 
     def test_full_vocabulary_reuse_after_weights_clamps_and_remasking(self):
@@ -147,13 +174,13 @@ class FullVocabularyCorrectness(unittest.TestCase):
             CompositionalByteLevelAdapter((b'"', b"a", b"b", b"0", b" ", b"\xc3", b"\xa1"))
         )
         frames = ((0, None, None, 0), (0, 1, None, 0), (0, None, 6, 0), (0, None, None, 0))
-        for kind in ("raw", "global", "position", "local"):
-            prepared = Prepared(table, frames[0], lexical_grammar(), kind)
+        for kind in KINDS:
+            prepared = prepare(table, frames[0], kind)
             for step, canvas in enumerate(frames):
                 probabilities = [[1 + ((t + step) % 3) for t in range(7)] for _ in canvas]
                 weights = Weights(probabilities, canvas, 7)
                 _, total, marginals = enumerate_expected(table, canvas, weights)
-                posterior = Posterior(prepared, weights)
+                posterior = evaluate(prepared, weights)
                 self.assertEqual(posterior.total, total)
                 if total:
                     self.assertEqual(posterior.marginals(), (marginals, total))
@@ -161,7 +188,21 @@ class FullVocabularyCorrectness(unittest.TestCase):
                     self.assertTrue(accepted(table.adapter, sample))
                     self.assertTrue(all(t is None or sample[p] == t for p, t in enumerate(canvas)))
             with self.assertRaisesRegex(ValueError, "initial fixed"):
-                Posterior(prepared, Weights([[1] * 7] * 4, (None,) * 4, 7))
+                evaluate(prepared, Weights([[1] * 7] * 4, (None,) * 4, 7))
+            with self.assertRaisesRegex(ValueError, "physical slots"):
+                evaluate(prepared, Weights([[1] * 7], (0,), 7))
+
+    def test_primitive_coarsening_and_recursive_stack_control(self):
+        emissions = (b"true", b"false", b"null", b"0", b'"a"', b"[", b"]", b",", b" ")
+        table = LexerTable(CompositionalByteLevelAdapter(emissions))
+        for canvas in ((None, None), (5, None, None, 6), (5, None, 7, None, 6)):
+            weights = Weights([[1 + t % 3 for t in range(9)]] * len(canvas), canvas, 9)
+            _, total, marginal = enumerate_expected(table, canvas, weights)
+            for kind in KINDS:
+                result = evaluate(prepare(table, canvas, kind), weights)
+                self.assertEqual(
+                    (result.total, result.marginals()), (total, (marginal, total)), kind
+                )
 
     def test_dyadic_normalization_and_scope(self):
         weights = Weights([[0.1, 0.2, 0.7]], (None,), 3)

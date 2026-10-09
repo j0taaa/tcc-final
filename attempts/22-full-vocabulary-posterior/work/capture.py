@@ -9,7 +9,7 @@ from pathlib import Path
 from random import Random
 from time import perf_counter, process_time
 
-from .corpus import select_documents
+from .corpus import select_documents, select_independent
 
 WORK = Path(__file__).resolve().parent
 ROOT = WORK.parents[2]
@@ -28,7 +28,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--phase", choices=("development", "heldout", "fresh"), required=True)
+    parser.add_argument(
+        "--phase", choices=("development", "heldout", "fresh", "independent"), required=True
+    )
     parser.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
     parser.add_argument(
         "--archive-logits-first",
@@ -54,8 +56,11 @@ def main():
         cache_dir=str(ROOT / ".cache/mdlm"),
         local_files_only=True,
     )
-    docs = select_documents(args.source, tokenizer, protocol)
-    selected = docs[("development", "heldout", "fresh").index(args.phase)]
+    if args.phase == "independent":
+        selected = select_independent(args.source, tokenizer, protocol)
+    else:
+        docs = select_documents(args.source, tokenizer, protocol)
+        selected = docs[("development", "heldout", "fresh").index(args.phase)]
     model, hashes, adapted = load_cpu_model(config, ROOT / ".cache/mdlm")
     model.to(args.device)
     for parameter in model.parameters():

@@ -1,5 +1,5 @@
 {
-  "schema": 3,
+  "schema": 4,
   "purpose": "Full original-vocabulary exact JSON posterior, original marginals and sampling",
   "seed": 2026100918,
   "external": {
@@ -27,11 +27,16 @@
     "global",
     "position",
     "local",
+    "bidir_raw",
+    "bidir_global",
+    "bidir_position",
+    "bidir_local",
+    "stack",
     "rejection"
   ],
-  "comparison": "Same rooted CNF parser, same common full lexical table including global refinement, fixed original frames and exact normalized rational probabilities. Global quotient competent, raw uses lexical memoization; no native EPIC mass comparison since it does not compute this law. Table/grammar/model startup recorded cold/prepared, shared forward and rational input conversion costs charged to each operation. No claim of full-generation timing from frozen inference. Position quotient refines only lexical-prefix reachable states at each physical slot; mandatory competent control. Count guards raised10x to avoid a capacity claim from a small chart budget; memory8GiB and whole-operation120s identical.",
+  "comparison": "Same rooted CNF parser, same common full lexical table including global refinement, fixed original frames and exact normalized rational probabilities. Global quotient competent, raw uses lexical memoization; no native EPIC mass comparison since it does not compute this law. Table/grammar/model startup recorded cold/prepared, shared forward and rational input conversion costs charged to each operation. No claim of full-generation timing from frozen inference. Position quotient refines only lexical-prefix reachable states at each physical slot; mandatory competent control. Count guards raised10x to avoid a capacity claim from a small chart budget; memory3GiB and whole-operation120s identical. Bidirectional controls use lexical forward/backward coaccessibility from ALL original choices and the actual fixed right suffix. Effects with unreachable next states become invalid in the per-position quotient. No grammar/gold/probability pruning; local and trimmed local are development candidates, choice fixed before independent capture. The independent predictive-stack control receives the same lexical trimming/local sums and primitive terminal coarsening, memoized deterministic grammar transitions, exact merging of arcs with equal target stacks, and safe necessary suffix terminal/closing-delimiter bounds. Its complete costs and original marginals are charged; no artificial depth ceiling.",
   "repetitions": 3,
-  "fresh_repetitions": 9,
+  "fresh_repetitions": 3,
   "limits": {
     "max_edges": 10000000,
     "max_cells": 10000000,
@@ -44,8 +49,8 @@
   },
   "success": {
     "correctness": "Mass and all original marginal numerator vectors EXACTLY agree among every conclusive exact method. Samples satisfy strict UTF8 JSON and fixed original IDs; independent law oracles before model.",
-    "utility": "At least20% median prepared operation total wall AND CPU (includes shared real forward/input conversion) against all other concluded exact methods including the per-position quotient, favorable sign each repetition, OR genuine additional full-vocabulary capacity versus all competent exact controls at equal declared resource limits. No usefulness claim from failure of only raw if global solves cheaper. Sampling superiority compared separately with rejection on same rational law/cost; retain all losses.",
-    "confirmation": "All external dev6 known cases/masks, then heldout12 refinement and six never-model-tested cases if development gate passes. Fresh nine rotations all methods, no selection by outcome. Count refusals/zero masses/failures.",
+    "utility": "At least20% median prepared operation wall AND CPU against ALL seven competent controls: six raw/global/per-position variants (original and bidirectional) plus deterministic predictive-stack inference, favorable sign every repetition, or localized additional capacity at equal limits. Other local variant is a retained ablation. Choose one candidate on development only; freeze before independent capture. Sampling separately against exact rejection; every loss/refusal retained.",
+    "confirmation": "After strengthened development gate, all18 reused refinement documents (including6 original fresh captures, now explicitly seen); ALL5 new JSONTestSuite documents with nine rotations. Selected candidate fixed before new forwards. No outcome selection.",
     "claims": "No general theoretical novelty, semantic accuracy, whole-decoder speed, training, native EPIC superiority, human review or publication acceptance from this experiment."
   },
   "amendment": {
@@ -54,5 +59,55 @@
   },
   "memory_amendment": {
     "reason": "Host has15GiB RAM and approx3.3GiB available during the v2 probe;8GiB worker cap caused pressure and delayed Python exception cleanup. Interrupt whole v2 (11/270), preserve all;3GiB virtual cap equally for ALL methods,120s whole operation+hard150s including startup/diagnostic/cleanup. Not result-based case selection. No fresh inputs measured."
+  },
+  "candidates": [
+    "local",
+    "bidir_local"
+  ],
+  "exact_controls": [
+    "raw",
+    "global",
+    "position",
+    "bidir_raw",
+    "bidir_global",
+    "bidir_position",
+    "stack"
+  ],
+  "independent_repetitions": 9,
+  "independent_corpus": {
+    "repository": "https://github.com/nst/JSONTestSuite",
+    "revision": "1ef36fa01286573e846ac449e8683f8833c5b26a",
+    "path": "test_parsing",
+    "eligibility": "ALL y_ object/array documents with strict UTF8/Python json acceptance and16..96 GPT2 tokens, original bytes unchanged; no result-based selection",
+    "eligible_count": 5,
+    "selection": "All eligible, hash order by seed/original text; previously unmodeled documents. All losses remain.",
+    "license": "MIT",
+    "cases": [
+      {
+        "key": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+        "file": "y_string_uEscape.json",
+        "source_sha256": "a69c93369dd5e8e3f07db70b9110f59998fab55c1d8eac6a37ecebed3d1f8516"
+      },
+      {
+        "key": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+        "file": "y_object_extreme_numbers.json",
+        "source_sha256": "79711ae7b3f95981a7aece4db3435a10a68493d4ea66fd623464d3f681809405"
+      },
+      {
+        "key": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+        "file": "y_string_accepted_surrogate_pairs.json",
+        "source_sha256": "9df10c47273a7e385c87007e8629b34a30288eb24752c9e1c519256b46d6e287"
+      },
+      {
+        "key": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+        "file": "y_object_string_unicode.json",
+        "source_sha256": "edec7a6f5af644b0b729f4c822d60dc74575dfa11157fc6e6a855150d286aad8"
+      },
+      {
+        "key": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+        "file": "y_object_long_strings.json",
+        "source_sha256": "b7afdd9d8feae8fc6a4532b01bddea0691994e8ed7e4a93303157c83413d156d"
+      }
+    ]
   }
 }

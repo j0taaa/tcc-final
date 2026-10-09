@@ -23,17 +23,37 @@ milestone unless a regression invalidates its evidence.
   credit known lexical/semiring/quotient principles; no priority claim.
   Four offline original-token enumeration/law/reuse tests pass; sparse fixed
   deltas, aliases, partial UTF8, overlapping incoming states and remasking.
-- [ ] T4201: Execute the frozen full-vocabulary external development protocol:
-  same6 documents, masks4/8/16, three rotations of raw/global/local exact
-  posterior plus exact rational rejection. Charge preparation, original
-  marginals, sampling, conversion and shared actual frozen model forward.
-  Bound ALL per-request compilation/inference by120s and8GiB; preserve losses.
-  Require >=20% wall AND CPU against all competent exact controls or additional
-  capacity under equal resources. Sampling is a separate operation.
-- [ ] T4202: Only after development gate, confirm on all12 refinement and
-  six never-model-tested documents; no result-based selection. Nine fresh
-  repetitions. Keep scientific novelty, mathematical correctness, timings
-  and whole-generation/semantic claims separate.
+- [x] T4201-v3: Original full-vocabulary development completed270/270 records,
+  208 complete/62 refusals,6/18 strong gains (5 speed,1 capacity), no sampling
+  advantage against rejection. Original refinement completed540/540 records,
+  387 complete/153 refusals,7/36 strong gains and6 sampling benefits. All exact
+  outputs agree; new audit verifies288 additional full-matrix equalities.
+  These are preliminary controls, not final adoption/novelty confirmation.
+- [x] T4202-v4-partial: Preserve the entire fresh50/810 campaign interrupted
+  to strengthen controls with lexical coaccessibility from the right suffix.
+  Six documents have already received forwards: never call them unmodeled again.
+  Data in work/evidence/{heldout-v4,fresh-v4-partial}; producing ee84ca2.
+- [ ] T4203-v5: Verify common bidirectional trimming and effective per-position
+  quotient, then freeze code/protocol before all development timings.
+  All original raw/global/position/local variants remain; all four trimmed
+  variants receive the same structural pass. Ten methods including predictive-stack inference and rejection.
+  Select local or bidir_local ONLY on development strong-win count against all
+  seven controls (six partitions and independent predictive stacks); tie prefers bidir_local. Zero wins rejects both.
+  Same20% median total wall AND CPU/sign-every-repeat,3GiB virtual/120s internal
+  whole operation/150s hard guard. Hard-supervisor-only failures do not prove
+  inference capacity. Tiny independent product/law/reuse oracles pass for8
+  variants before timing; strengthened full-vocabulary oracle passes192 exact agreements over24
+  single-hole frames and1,206,192 independently recognized original candidates.
+  This is correctness evidence, not a performance/novelty claim.
+- [ ] T4204-v5: If strengthened development passes, freeze selected method
+  before independent forwards. Recompute all18 reused refinement documents and
+  all5 eligible positive JSONTestSuite documents at pinned1ef36fa,16..96 GPT2
+  tokens, original bytes, objects/arrays; no case excluded by outcome. Nine
+  independent rotations; retained losing candidate is an ablation. Original
+  fresh6 are now refinements. No training/semantic/native EPIC/world priority
+  claim. Optional small full-head packet chosen as first independent case
+ 149c0c8c-4 BEFORE performance/model observations.
+
 
 ## M39 — Confirm a benefit in the actual structured-generation trajectory
 
@@ -2368,3 +2388,15 @@ Fill this section only with real artifacts.
 - [x] T4204: Independently enumerate ALL50258 original tokens in24 disclosed
  one-hole/clamped frames;96 comparisons exact in4 representations,1,206,192
  candidates. No new forward or performance claim. Code and evidence in22/work.
+
+M42 v5 strengthening before timings: all methods coarsen NUMBER/Boolean/null
+syntax terminals identically, keeping original identities. Independent
+predictive stack control includes lexical coaccessibility, memoization, summed
+target arcs and safe suffix necessary bounds; no guessed depth limit. Five
+tiny independent checks pass across nine exact kernels, including primitive
+values, recursive arrays, sampler law, aliases and incompatible reuse shapes.
+Commands: `.venv/bin/python -m unittest attempts.22-full-vocabulary-posterior.work.test_correctness`;
+The full-V rerun passes216 exact comparisons (24 one-hole frames ×9 kernels,
+1,206,192 original choices recognized by strict UTF8/Python JSON). Evidence:
+`work/evidence/stack-and-coarsening-full-vocabulary-oracle.json`. Frozen-source
+timing is pending.

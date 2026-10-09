@@ -1,0 +1,9 @@
+{
+  "producer_commit": "ee84ca2eaf6d4b9bb67b5acc1d4da1097355b0ad",
+  "rows_sha256": "e680908b75e1db06dd534e12d253f524685d6a8d4908dcb898b341d3e12857fd",
+  "protocol_sha256": "2535481ea6e093b2feb9cb1b8c4e48ec6a2783e3b667b0c8e3ce93aec39eff2d",
+  "commands": [
+    ".venv-live/bin/python -m attempts.22-full-vocabulary-posterior.work.run --capture .cache/a22-fresh-cuda-v4 --output .cache/a22-fresh-measure-v4"
+  ],
+  "scope": "Frozen step only; shared real forward, all original-token mass/marginals/sample. All outcomes retained."
+}

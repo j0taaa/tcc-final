@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "key": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+      "file": "y_string_uEscape.json",
+      "source_sha256": "a69c93369dd5e8e3f07db70b9110f59998fab55c1d8eac6a37ecebed3d1f8516"
+    },
+    {
+      "key": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+      "file": "y_object_extreme_numbers.json",
+      "source_sha256": "79711ae7b3f95981a7aece4db3435a10a68493d4ea66fd623464d3f681809405"
+    },
+    {
+      "key": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+      "file": "y_string_accepted_surrogate_pairs.json",
+      "source_sha256": "9df10c47273a7e385c87007e8629b34a30288eb24752c9e1c519256b46d6e287"
+    },
+    {
+      "key": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+      "file": "y_object_string_unicode.json",
+      "source_sha256": "edec7a6f5af644b0b729f4c822d60dc74575dfa11157fc6e6a855150d286aad8"
+    },
+    {
+      "key": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+      "file": "y_object_long_strings.json",
+      "source_sha256": "b7afdd9d8feae8fc6a4532b01bddea0691994e8ed7e4a93303157c83413d156d"
+    }
+  ],
+  "eligibility": "ALL y_ object/array documents with strict UTF8/Python json acceptance and16..96 GPT2 tokens, original bytes unchanged; no result-based selection",
+  "scope": "Document eligibility before neural forwards/timing, not evidence of performance"
+}

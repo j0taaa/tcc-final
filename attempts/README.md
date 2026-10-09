@@ -124,4 +124,8 @@ inicial será congelada após o commit do código/protocolo, antes dos timings.
 22. [Posterior no vocabulário inteiro](22-full-vocabulary-posterior/README.md):
     representação lexical de massa, marginais e amostras exatas sobre TODOS os
     originais; classes globais/locais e rejeição como controles. Provas escritas
-    delimitadas e quatro oráculos passam. Utilidade/novidade ainda não confirmadas.
+    delimitadas e quatro oráculos passam. Comparadores originais davam6/18 e7/36
+    ganhos preliminares; acrescentamos trimming lexical pelo sufixo a todas
+    as variantes.192 comparações exatas com oráculo completo passam. Todos
+    os dados, inclusive50 registros frescos interrompidos, estão preservados.
+    Confirmação com controles fortalecidos/novidade ainda pendentes.

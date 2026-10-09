@@ -43,7 +43,11 @@ def main():
         + "\n"
     )
     repetitions = (
-        protocol["fresh_repetitions"] if metadata["phase"] == "fresh" else protocol["repetitions"]
+        protocol["independent_repetitions"]
+        if metadata["phase"] == "independent"
+        else protocol["fresh_repetitions"]
+        if metadata["phase"] == "fresh"
+        else protocol["repetitions"]
     )
     cases = [
         f"{doc['key']}-{masks}" for doc in metadata["selected"] for masks in protocol["mask_counts"]

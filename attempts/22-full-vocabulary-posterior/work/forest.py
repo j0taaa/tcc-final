@@ -10,6 +10,28 @@ from .relevant_forest import relevant_forest
 from .rooted_parser import RootParser
 
 
+def coaccessible_layers(table, canvas):
+    """Classical lexical forward/backward trimming, without weights or grammar."""
+    layers = [{OUT}]
+
+    def choices(q, fixed):
+        if fixed is None:
+            return table.by_state[q]
+        gid = table.by_token[q][fixed]
+        return () if gid < 0 else (gid,)
+
+    for fixed in canvas:
+        layers.append({table.groups[g][1] for q in layers[-1] for g in choices(q, fixed)})
+    layers[-1] = {q for q in layers[-1] if finish(q) is not None}
+    for p in reversed(range(len(canvas))):
+        layers[p] = {
+            q
+            for q in layers[p]
+            if any(table.groups[g][1] in layers[p + 1] for g in choices(q, canvas[p]))
+        }
+    return layers
+
+
 class Prepared:
     def __init__(
         self,
@@ -23,6 +45,9 @@ class Prepared:
         max_terms=5_000_000,
         timeout_seconds=120,
     ):
+        trimmed = kind.startswith("bidir_")
+        if trimmed:
+            kind = kind.removeprefix("bidir_")
         if kind not in ("raw", "global", "position", "local"):
             raise ValueError("unknown representation")
         self.table, self.canvas, self.kind = table, tuple(canvas), kind
@@ -30,7 +55,8 @@ class Prepared:
         self.position_groups, self.position_of = {}, {}
         self.rows = []
         edges, closes = [], {}
-        layer, vertices = {OUT: 0}, 1
+        allowed = coaccessible_layers(table, canvas) if trimmed else None
+        layer, vertices = ({OUT: 0} if allowed is None or OUT in allowed[0] else {}), 1
 
         def edge(a, b, label):
             if len(edges) >= max_edges:
@@ -50,7 +76,13 @@ class Prepared:
                 # states, but retain ALL reachable states, not a witness/gold state.
                 signatures, groups, mapping = {}, [], []
                 for cid in range(len(table.classes)):
-                    signature = tuple(table.class_to_local[q][cid] for q in sorted(layer))
+                    signature = tuple(
+                        gid
+                        if (gid := table.class_to_local[q][cid]) >= 0
+                        and (allowed is None or table.groups[gid][1] in allowed[p + 1])
+                        else -1
+                        for q in sorted(layer)
+                    )
                     code = signatures.get(signature)
                     if code is None:
                         code = len(groups)
@@ -89,6 +121,8 @@ class Prepared:
                     candidates = ((gid, gid, table.groups[gid][3]) for gid in table.by_state[q])
                 for code, gid, members in candidates:
                     _, target, output, _ = table.groups[gid]
+                    if allowed is not None and target not in allowed[p + 1]:
+                        continue
                     if fixed is not None:
                         code = (
                             fixed

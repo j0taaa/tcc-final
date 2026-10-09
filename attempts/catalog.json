@@ -655,7 +655,7 @@
     {
       "id": "22-full-vocabulary-posterior",
       "title": "Posterior JSON exato no vocabulario original inteiro",
-      "conclusion": "Desenvolvimento completo:270 registros,6/18 ganhos fortes frente a controles incluindo classes por posicao;0 ganho amostragem vs rejeicao.1.206.192 candidatos enumerados independentemente.Confirmacao fresca e novidade pendentes.",
+      "conclusion": "Original development6/18/refinement7/36 gains were preliminary: missing right-context trimming and independent stack inference. All270+540+partial50 rows preserved. v5 adds seven competent controls and two local candidates, common primitive coarsening,216 full-vocabulary oracle agreements. Confirmed utility and scientific priority pending.",
       "reading": "attempts/22-full-vocabulary-posterior/README.md",
       "versions": [
         {

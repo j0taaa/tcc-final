@@ -1,0 +1,1394 @@
+[
+  {
+    "phase": "development",
+    "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+    "holes": 4,
+    "local_edges": 375,
+    "position_edges": 375,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+    "holes": 8,
+    "local_edges": 2249,
+    "position_edges": 2865,
+    "ratio": 1.2738995108937305,
+    "free_state_counts": [
+      1,
+      2,
+      18,
+      2,
+      2,
+      1,
+      1,
+      14
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+    "holes": 16,
+    "local_edges": 12992,
+    "position_edges": 20346,
+    "ratio": 1.5660406403940887,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      28,
+      2,
+      2,
+      22,
+      29,
+      32,
+      28,
+      2,
+      22,
+      29,
+      29,
+      20
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+    "holes": 4,
+    "local_edges": 1414,
+    "position_edges": 1907,
+    "ratio": 1.3486562942008486,
+    "free_state_counts": [
+      1,
+      2,
+      18,
+      2
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+    "holes": 8,
+    "local_edges": 4437,
+    "position_edges": 6419,
+    "ratio": 1.446698219517692,
+    "free_state_counts": [
+      1,
+      2,
+      20,
+      2,
+      24,
+      28,
+      2,
+      16
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+    "holes": 16,
+    "local_edges": 17917,
+    "position_edges": 28430,
+    "ratio": 1.5867611765362506,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      28,
+      7,
+      28,
+      29,
+      20
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+    "holes": 4,
+    "local_edges": 301,
+    "position_edges": 301,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+    "holes": 8,
+    "local_edges": 2256,
+    "position_edges": 3139,
+    "ratio": 1.3914007092198581,
+    "free_state_counts": [
+      1,
+      15,
+      25,
+      2,
+      1,
+      1,
+      1,
+      2
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+    "holes": 16,
+    "local_edges": 7868,
+    "position_edges": 12021,
+    "ratio": 1.5278342653787493,
+    "free_state_counts": [
+      1,
+      11,
+      22,
+      2,
+      22,
+      29,
+      32,
+      28,
+      2,
+      1,
+      11,
+      23,
+      17,
+      1,
+      1,
+      4
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+    "holes": 4,
+    "local_edges": 471,
+    "position_edges": 471,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      2,
+      1,
+      2
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+    "holes": 8,
+    "local_edges": 2460,
+    "position_edges": 3743,
+    "ratio": 1.5215447154471544,
+    "free_state_counts": [
+      1,
+      1,
+      2,
+      1,
+      11,
+      26,
+      25,
+      2
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+    "holes": 16,
+    "local_edges": 12144,
+    "position_edges": 19297,
+    "ratio": 1.5890151515151516,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      28,
+      2,
+      22,
+      29,
+      28,
+      2,
+      22,
+      29,
+      32,
+      32,
+      28,
+      2,
+      2
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+    "holes": 4,
+    "local_edges": 280,
+    "position_edges": 280,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+    "holes": 8,
+    "local_edges": 754,
+    "position_edges": 763,
+    "ratio": 1.0119363395225465,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      4,
+      1,
+      1,
+      2,
+      1
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+    "holes": 16,
+    "local_edges": 2432,
+    "position_edges": 2887,
+    "ratio": 1.1870888157894737,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      1,
+      7,
+      1,
+      1,
+      16,
+      2,
+      2,
+      5,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+    "holes": 4,
+    "local_edges": 351,
+    "position_edges": 351,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      2,
+      1
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+    "holes": 8,
+    "local_edges": 1872,
+    "position_edges": 2495,
+    "ratio": 1.3327991452991452,
+    "free_state_counts": [
+      1,
+      8,
+      2,
+      1,
+      8,
+      2,
+      2,
+      14
+    ]
+  },
+  {
+    "phase": "development",
+    "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+    "holes": 16,
+    "local_edges": 14821,
+    "position_edges": 23634,
+    "ratio": 1.5946292422913433,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      28,
+      2,
+      22,
+      29,
+      32,
+      32,
+      32,
+      32,
+      32,
+      28,
+      2,
+      16
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "0f5a3b55aa6b52db4ac4d7ee44e4996b239aae1642567e896d190231995f13b9",
+    "holes": 4,
+    "local_edges": 600,
+    "position_edges": 600,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      2
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "0f5a3b55aa6b52db4ac4d7ee44e4996b239aae1642567e896d190231995f13b9",
+    "holes": 8,
+    "local_edges": 1589,
+    "position_edges": 1712,
+    "ratio": 1.0774071743234739,
+    "free_state_counts": [
+      1,
+      1,
+      14,
+      1,
+      2,
+      2,
+      1,
+      2
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "0f5a3b55aa6b52db4ac4d7ee44e4996b239aae1642567e896d190231995f13b9",
+    "holes": 16,
+    "local_edges": 3881,
+    "position_edges": 5163,
+    "ratio": 1.3303272352486473,
+    "free_state_counts": [
+      1,
+      5,
+      1,
+      14,
+      2,
+      1,
+      2,
+      2,
+      2,
+      9,
+      1,
+      2,
+      2,
+      18,
+      2,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "1357c5544492744fd11e57dc156f4dd5240d6a62bd49c36f3bd2487b0ce83598",
+    "holes": 4,
+    "local_edges": 313,
+    "position_edges": 313,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "1357c5544492744fd11e57dc156f4dd5240d6a62bd49c36f3bd2487b0ce83598",
+    "holes": 8,
+    "local_edges": 1331,
+    "position_edges": 1575,
+    "ratio": 1.183320811419985,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      8,
+      14
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "1357c5544492744fd11e57dc156f4dd5240d6a62bd49c36f3bd2487b0ce83598",
+    "holes": 16,
+    "local_edges": 9000,
+    "position_edges": 13719,
+    "ratio": 1.5243333333333333,
+    "free_state_counts": [
+      1,
+      15,
+      28,
+      15,
+      1,
+      11,
+      22,
+      2,
+      9,
+      1,
+      2,
+      22,
+      29,
+      32,
+      29,
+      20
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "1c6ab02b22c06ced962b5b3fcafa93c13106a2b100dae107d96647d7be1bcebc",
+    "holes": 4,
+    "local_edges": 641,
+    "position_edges": 788,
+    "ratio": 1.2293291731669267,
+    "free_state_counts": [
+      1,
+      1,
+      2,
+      9
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "1c6ab02b22c06ced962b5b3fcafa93c13106a2b100dae107d96647d7be1bcebc",
+    "holes": 8,
+    "local_edges": 633,
+    "position_edges": 633,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "1c6ab02b22c06ced962b5b3fcafa93c13106a2b100dae107d96647d7be1bcebc",
+    "holes": 16,
+    "local_edges": 2462,
+    "position_edges": 3305,
+    "ratio": 1.3424045491470349,
+    "free_state_counts": [
+      1,
+      7,
+      22,
+      7,
+      1,
+      7,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      4,
+      1,
+      1,
+      2
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "1eaf0817e3a54f0357957fc0088cfa200a425826bf268af16c2bb085204d1c37",
+    "holes": 4,
+    "local_edges": 347,
+    "position_edges": 357,
+    "ratio": 1.0288184438040346,
+    "free_state_counts": [
+      1,
+      1,
+      7,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "1eaf0817e3a54f0357957fc0088cfa200a425826bf268af16c2bb085204d1c37",
+    "holes": 8,
+    "local_edges": 908,
+    "position_edges": 1166,
+    "ratio": 1.2841409691629957,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      11,
+      13,
+      1,
+      2,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "1eaf0817e3a54f0357957fc0088cfa200a425826bf268af16c2bb085204d1c37",
+    "holes": 16,
+    "local_edges": 4683,
+    "position_edges": 7148,
+    "ratio": 1.526371983771087,
+    "free_state_counts": [
+      1,
+      1,
+      7,
+      2,
+      9,
+      1,
+      11,
+      26,
+      25,
+      2,
+      2,
+      2,
+      2,
+      23,
+      15,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "23ebff3f6f31f7bbe02dfaf861d11bfd8c758dd1e26ce34024f1513793d4e363",
+    "holes": 4,
+    "local_edges": 497,
+    "position_edges": 602,
+    "ratio": 1.2112676056338028,
+    "free_state_counts": [
+      1,
+      1,
+      2,
+      2
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "23ebff3f6f31f7bbe02dfaf861d11bfd8c758dd1e26ce34024f1513793d4e363",
+    "holes": 8,
+    "local_edges": 1208,
+    "position_edges": 1354,
+    "ratio": 1.1208609271523178,
+    "free_state_counts": [
+      1,
+      1,
+      7,
+      1,
+      1,
+      1,
+      2,
+      14
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "23ebff3f6f31f7bbe02dfaf861d11bfd8c758dd1e26ce34024f1513793d4e363",
+    "holes": 16,
+    "local_edges": 16350,
+    "position_edges": 26067,
+    "ratio": 1.5943119266055046,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      32,
+      32,
+      28,
+      2,
+      22,
+      29,
+      32,
+      32,
+      32,
+      32,
+      29,
+      20
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "2cf2d4c86630165f087b722b3dfb70f526a9442f0aa0c200423fe09d50397227",
+    "holes": 4,
+    "local_edges": 297,
+    "position_edges": 309,
+    "ratio": 1.0404040404040404,
+    "free_state_counts": [
+      1,
+      7,
+      2,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "2cf2d4c86630165f087b722b3dfb70f526a9442f0aa0c200423fe09d50397227",
+    "holes": 8,
+    "local_edges": 623,
+    "position_edges": 647,
+    "ratio": 1.0385232744783306,
+    "free_state_counts": [
+      1,
+      2,
+      2,
+      1,
+      7,
+      2,
+      3,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "2cf2d4c86630165f087b722b3dfb70f526a9442f0aa0c200423fe09d50397227",
+    "holes": 16,
+    "local_edges": 15984,
+    "position_edges": 25560,
+    "ratio": 1.5990990990990992,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      22,
+      6,
+      26,
+      30,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      29,
+      20
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "339b1b4817bf402f28ac0686967b23de1d087a291ae30514ecb1a0b33daa1230",
+    "holes": 4,
+    "local_edges": 409,
+    "position_edges": 419,
+    "ratio": 1.0244498777506112,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      4
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "339b1b4817bf402f28ac0686967b23de1d087a291ae30514ecb1a0b33daa1230",
+    "holes": 8,
+    "local_edges": 1159,
+    "position_edges": 1491,
+    "ratio": 1.2864538395168248,
+    "free_state_counts": [
+      1,
+      1,
+      2,
+      2,
+      2,
+      9,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "339b1b4817bf402f28ac0686967b23de1d087a291ae30514ecb1a0b33daa1230",
+    "holes": 16,
+    "local_edges": 8479,
+    "position_edges": 13216,
+    "ratio": 1.5586743719778275,
+    "free_state_counts": [
+      1,
+      1,
+      11,
+      22,
+      2,
+      18,
+      2,
+      22,
+      29,
+      32,
+      31,
+      15,
+      1,
+      11,
+      23,
+      17
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "442469db94fdc848c20b67637f39b1dbcf8e1e8667c6d17caafe56fd57bf400d",
+    "holes": 4,
+    "local_edges": 513,
+    "position_edges": 513,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "442469db94fdc848c20b67637f39b1dbcf8e1e8667c6d17caafe56fd57bf400d",
+    "holes": 8,
+    "local_edges": 1168,
+    "position_edges": 1468,
+    "ratio": 1.2568493150684932,
+    "free_state_counts": [
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      8,
+      2
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "442469db94fdc848c20b67637f39b1dbcf8e1e8667c6d17caafe56fd57bf400d",
+    "holes": 16,
+    "local_edges": 14398,
+    "position_edges": 22959,
+    "ratio": 1.594596471732185,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      28,
+      2,
+      2,
+      1,
+      14
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "47d38d20de38a10b6a4196b9387e2e94dd37b3db1250751cf85f242d85666ded",
+    "holes": 4,
+    "local_edges": 613,
+    "position_edges": 718,
+    "ratio": 1.1712887438825448,
+    "free_state_counts": [
+      1,
+      1,
+      2,
+      2
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "47d38d20de38a10b6a4196b9387e2e94dd37b3db1250751cf85f242d85666ded",
+    "holes": 8,
+    "local_edges": 4615,
+    "position_edges": 7275,
+    "ratio": 1.5763813651137595,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      31,
+      15,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "47d38d20de38a10b6a4196b9387e2e94dd37b3db1250751cf85f242d85666ded",
+    "holes": 16,
+    "local_edges": 16340,
+    "position_edges": 26058,
+    "ratio": 1.5947368421052632,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      28,
+      2,
+      22,
+      26,
+      20
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "6fff04fc461ac45cba74be0e70bd590eeebbad311ff85daee604e73c92c75244",
+    "holes": 4,
+    "local_edges": 430,
+    "position_edges": 446,
+    "ratio": 1.0372093023255815,
+    "free_state_counts": [
+      1,
+      1,
+      5,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "6fff04fc461ac45cba74be0e70bd590eeebbad311ff85daee604e73c92c75244",
+    "holes": 8,
+    "local_edges": 1679,
+    "position_edges": 2448,
+    "ratio": 1.4580107206670638,
+    "free_state_counts": [
+      1,
+      2,
+      1,
+      1,
+      11,
+      22,
+      2,
+      2
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "6fff04fc461ac45cba74be0e70bd590eeebbad311ff85daee604e73c92c75244",
+    "holes": 16,
+    "local_edges": 10867,
+    "position_edges": 17106,
+    "ratio": 1.5741234931443822,
+    "free_state_counts": [
+      1,
+      15,
+      25,
+      2,
+      1,
+      2,
+      2,
+      22,
+      29,
+      32,
+      32,
+      32,
+      32,
+      28,
+      2,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "7dede5c098c5ac4aa9ec48a93669a9d868adc4f004d49949f93db6b6684b8cdd",
+    "holes": 4,
+    "local_edges": 319,
+    "position_edges": 319,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "7dede5c098c5ac4aa9ec48a93669a9d868adc4f004d49949f93db6b6684b8cdd",
+    "holes": 8,
+    "local_edges": 1135,
+    "position_edges": 1428,
+    "ratio": 1.2581497797356829,
+    "free_state_counts": [
+      1,
+      2,
+      1,
+      1,
+      11,
+      13,
+      1,
+      4
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "7dede5c098c5ac4aa9ec48a93669a9d868adc4f004d49949f93db6b6684b8cdd",
+    "holes": 16,
+    "local_edges": 13217,
+    "position_edges": 21424,
+    "ratio": 1.620942725278051,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      31,
+      15,
+      1,
+      11,
+      26,
+      29,
+      32,
+      32,
+      32,
+      32,
+      28,
+      2
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "9017269543e3a7f8966249a8d8e4982df6c60ff0a90a7122f79be9300bd7a01f",
+    "holes": 4,
+    "local_edges": 513,
+    "position_edges": 548,
+    "ratio": 1.0682261208576997,
+    "free_state_counts": [
+      1,
+      5,
+      2,
+      8
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "9017269543e3a7f8966249a8d8e4982df6c60ff0a90a7122f79be9300bd7a01f",
+    "holes": 8,
+    "local_edges": 1369,
+    "position_edges": 1804,
+    "ratio": 1.3177501826150475,
+    "free_state_counts": [
+      1,
+      7,
+      5,
+      1,
+      7,
+      13,
+      1,
+      14
+    ]
+  },
+  {
+    "phase": "heldout",
+    "case": "9017269543e3a7f8966249a8d8e4982df6c60ff0a90a7122f79be9300bd7a01f",
+    "holes": 16,
+    "local_edges": 15984,
+    "position_edges": 25560,
+    "ratio": 1.5990990990990992,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      22,
+      6,
+      26,
+      30,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      29,
+      20
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "bb377be006ac3eb2f9f5be54e9cc1749d1cf0d841912b1fdd98ca833374633c4",
+    "holes": 4,
+    "local_edges": 1003,
+    "position_edges": 1251,
+    "ratio": 1.2472582253240279,
+    "free_state_counts": [
+      1,
+      2,
+      2,
+      2
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "bb377be006ac3eb2f9f5be54e9cc1749d1cf0d841912b1fdd98ca833374633c4",
+    "holes": 8,
+    "local_edges": 4243,
+    "position_edges": 5998,
+    "ratio": 1.4136224369549846,
+    "free_state_counts": [
+      1,
+      2,
+      2,
+      18,
+      2,
+      22,
+      26,
+      20
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "bb377be006ac3eb2f9f5be54e9cc1749d1cf0d841912b1fdd98ca833374633c4",
+    "holes": 16,
+    "local_edges": 14475,
+    "position_edges": 22317,
+    "ratio": 1.541761658031088,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      28,
+      2,
+      24,
+      32,
+      32,
+      28,
+      2,
+      18,
+      7,
+      28,
+      29,
+      20
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "c685109635189381cd369eaf85dea06fccf0eb80480cea0399a3f1909aa168e9",
+    "holes": 4,
+    "local_edges": 487,
+    "position_edges": 487,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      2
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "c685109635189381cd369eaf85dea06fccf0eb80480cea0399a3f1909aa168e9",
+    "holes": 8,
+    "local_edges": 3440,
+    "position_edges": 5275,
+    "ratio": 1.5334302325581395,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      15,
+      29,
+      31,
+      15,
+      1
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "c685109635189381cd369eaf85dea06fccf0eb80480cea0399a3f1909aa168e9",
+    "holes": 16,
+    "local_edges": 7438,
+    "position_edges": 11030,
+    "ratio": 1.4829255176122613,
+    "free_state_counts": [
+      1,
+      2,
+      18,
+      2,
+      2,
+      22,
+      29,
+      31,
+      15,
+      1,
+      2,
+      22,
+      25,
+      2,
+      1,
+      14
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "c8b789567434fbad2441b14a5511262f680483a2bfd50238122500fad31ec5d2",
+    "holes": 4,
+    "local_edges": 404,
+    "position_edges": 404,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "c8b789567434fbad2441b14a5511262f680483a2bfd50238122500fad31ec5d2",
+    "holes": 8,
+    "local_edges": 1802,
+    "position_edges": 1979,
+    "ratio": 1.0982241953385128,
+    "free_state_counts": [
+      1,
+      7,
+      1,
+      2,
+      16,
+      1,
+      1,
+      2
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "c8b789567434fbad2441b14a5511262f680483a2bfd50238122500fad31ec5d2",
+    "holes": 16,
+    "local_edges": 3538,
+    "position_edges": 4341,
+    "ratio": 1.2269643866591295,
+    "free_state_counts": [
+      1,
+      5,
+      1,
+      7,
+      1,
+      1,
+      7,
+      1,
+      1,
+      2,
+      1,
+      4,
+      22,
+      2,
+      2,
+      1
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "c8d4c5af015e883a7ce1fad185e7d4ef2867c1e76ddf8418ea331e388d8015cb",
+    "holes": 4,
+    "local_edges": 1340,
+    "position_edges": 1619,
+    "ratio": 1.2082089552238806,
+    "free_state_counts": [
+      1,
+      2,
+      2,
+      16
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "c8d4c5af015e883a7ce1fad185e7d4ef2867c1e76ddf8418ea331e388d8015cb",
+    "holes": 8,
+    "local_edges": 3610,
+    "position_edges": 4770,
+    "ratio": 1.3213296398891967,
+    "free_state_counts": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      18,
+      7,
+      18
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "c8d4c5af015e883a7ce1fad185e7d4ef2867c1e76ddf8418ea331e388d8015cb",
+    "holes": 16,
+    "local_edges": 14155,
+    "position_edges": 22160,
+    "ratio": 1.5655245496291064,
+    "free_state_counts": [
+      1,
+      15,
+      29,
+      32,
+      32,
+      32,
+      28,
+      7,
+      2,
+      18,
+      2,
+      22,
+      29,
+      32,
+      29,
+      20
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "ce04ce14bd509b040ca4a3117f62fd8f65f8e3092d343836218b04ac02c2fc94",
+    "holes": 4,
+    "local_edges": 316,
+    "position_edges": 316,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      1,
+      2,
+      1
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "ce04ce14bd509b040ca4a3117f62fd8f65f8e3092d343836218b04ac02c2fc94",
+    "holes": 8,
+    "local_edges": 1424,
+    "position_edges": 1831,
+    "ratio": 1.285814606741573,
+    "free_state_counts": [
+      1,
+      1,
+      1,
+      14,
+      13,
+      1,
+      7,
+      1
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "ce04ce14bd509b040ca4a3117f62fd8f65f8e3092d343836218b04ac02c2fc94",
+    "holes": 16,
+    "local_edges": 12840,
+    "position_edges": 20677,
+    "ratio": 1.6103582554517133,
+    "free_state_counts": [
+      1,
+      1,
+      7,
+      1,
+      15,
+      29,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32,
+      31,
+      15,
+      1
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "efcd1f299b5e623ab6cb663762ebc3b843b3a6eb899727cbfa76f5dc2d606836",
+    "holes": 4,
+    "local_edges": 497,
+    "position_edges": 497,
+    "ratio": 1.0,
+    "free_state_counts": [
+      1,
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "efcd1f299b5e623ab6cb663762ebc3b843b3a6eb899727cbfa76f5dc2d606836",
+    "holes": 8,
+    "local_edges": 943,
+    "position_edges": 1128,
+    "ratio": 1.1961823966065748,
+    "free_state_counts": [
+      1,
+      2,
+      1,
+      2,
+      1,
+      8,
+      2,
+      1
+    ]
+  },
+  {
+    "phase": "fresh",
+    "case": "efcd1f299b5e623ab6cb663762ebc3b843b3a6eb899727cbfa76f5dc2d606836",
+    "holes": 16,
+    "local_edges": 6760,
+    "position_edges": 9862,
+    "ratio": 1.4588757396449703,
+    "free_state_counts": [
+      1,
+      15,
+      25,
+      2,
+      18,
+      2,
+      18,
+      2,
+      18,
+      2,
+      1,
+      4,
+      1,
+      11,
+      23,
+      17
+    ]
+  }
+]

@@ -7,10 +7,9 @@ from pathlib import Path
 
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 
-from .forest import Prepared
-from .lexer import lexical_grammar
-from .posterior import Posterior, Weights
+from .posterior import Weights
 from .table import LexerTable
+from .test_correctness import KINDS, evaluate, prepare
 
 
 def main():
@@ -24,7 +23,7 @@ def main():
     adapter = CompositionalByteLevelAdapter.from_token_pieces(
         json.loads((args.capture / "vocabulary.json").read_text())
     )
-    table, grammar = LexerTable(adapter), lexical_grammar()
+    table = LexerTable(adapter)
     rows = []
     for doc in metadata["selected"]:
         name = doc["key"] + "-4"
@@ -63,9 +62,9 @@ def main():
             total = sum(expected)
             if not total:
                 raise ValueError("no positive oracle completion")
-            for kind in ("raw", "global", "position", "local"):
-                prepared = Prepared(table, canvas, grammar, kind)
-                posterior = Posterior(prepared, weights)
+            for kind in KINDS:
+                prepared = prepare(table, canvas, kind)
+                posterior = evaluate(prepared, weights)
                 numerators, actual = posterior.marginals()
                 if actual != total or numerators[position] != expected:
                     raise RuntimeError(
