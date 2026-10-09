@@ -16,6 +16,31 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
+## M39 — Confirm a benefit in the actual structured-generation trajectory
+
+Authorized on 2026-10-09 after the bounded PL decision: continue until relevant
+advantages are confirmed. Preserve attempt 17, M34/M24 and maintained decoders.
+Candidate 18 evaluates lexicographic equivalence and the competent classical
+incremental alternative; classical foundations are not recast as inventions.
+
+- [ ] T3900: Prove the observable greedy policy contract, independently check
+  original-token transitions/fallback and compare full generation including
+  preparation. Keep all negative/refused cases and stronger controls.
+  **Started:** `attempts/18-monotone-grammatical-decoding/README.md` answers the
+  eight scientific criteria before expansion; `work/specification.md` credits
+  semiring/lexicographic parsing and Quimper–Walsh's incremental AND/OR grammar
+  propagation. A minimal decremental reference preserves only actual commits,
+  not speculative below-threshold acceptances. Three independent JSON-oracle
+  tests pass, including aliases/prefixes, duplicates, thresholds/caps/fallback,
+  counter bounds and >256-bit priorities. Native SAT plus bitset enumeration
+  also agree in 40 independently enumerated small trajectories. Protocol is
+  in `work/protocol.json`: six hash-selected development documents, twelve
+  held-out, 4/8/16 masks, initial top16 without answer injection, actual MDLM
+  forwards for each decoder and three rotated timing repetitions. Compiled
+  witness greedy, integer lex, persistent-witness prefix greedy, classical
+  monotone propagation, independent bitset enumeration and pinned native SAT
+  are included. No speed/generation superiority has been measured yet.
+
 ## M38 — Align standing instructions with the current scientific objective
 
 Authorized on 2026-10-08: update `AGENTS.md` to reflect the current research

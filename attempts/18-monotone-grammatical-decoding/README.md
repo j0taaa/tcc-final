@@ -1,0 +1,67 @@
+# Tentativa 18 — Preservar a política de geração e evitar trabalho gramatical repetido
+
+Iniciada em 2026-10-09 sobre `89078ecf589e187927c1ba3d4f54f87ba9df43cd`.
+Pesquisa isolada; a tentativa 17 e os decoders mantidos não são substituídos.
+Status inicial: **vantagem de geração ainda não medida**.
+
+## Contrato e oito critérios
+
+1. **Uso:** completar lacunas de documentos JSON com uma dLLM, preservando
+   texto existente. A operação consumida pelo próximo forward é o lote de
+   tokens fixados. Procurar menos trabalho de constraints com exatamente o
+   mesmo lote da política gulosa especificada, não uma pontuação diferente.
+2. **Relevância/novidade:** programação dinâmica lexicográfica é conhecida
+   (Goodman 1999; Sproat et al. 2014). Propagação incremental AND/OR com custo
+   amortizado por uma sequência de contrações também é conhecida (Quimper e
+   Walsh, §GRAMMAR de 2009, referindo resultados de 2007). NÃO apresentar
+   essas técnicas como novas. A contribuição candidata é uma integração
+   curta que preserva as transições de uma política de dLLM, inclusive filtro,
+   orçamento e fallback, e contabiliza tokens originais e geração inteira.
+   Um ganho relevante medido pode sustentar uma contribuição de engenharia
+   científica; prioridade/suficiência para publicação continuam pendentes.
+3. **Escolha:** comparar lexicográfico, guloso com reutilização de testemunho
+   e propagação incremental competente. O alvo é menor custo total sem alterar
+   as saídas, e não ganhar contra um guloso que deliberadamente reconstrói tudo.
+   Enumeração independente entra quando o produto cartesiano cabe. Não alegar
+   ganho sobre EPIC sem executar sua operação completa em tarefa alinhada.
+4. **Matemática:** demonstrar equivalência lexicográfico–guloso e equivalência
+   de transições após filtro/cap; estudar um propagador por deleções monotônicas.
+   O custo após compilação é linear no tamanho da floresta mais propostas ao
+   longo de toda a geração, com saída e aritmética contabilizadas. Este limite
+   é uma especialização do antecedente incremental, não um novo limite geral.
+5. **Experimentos:** protocolo congelado antes de qualquer timing de nova
+   implementação. Desenvolvimento e avaliação separados por hash dos exemplos
+   externos. Incluir recusas, divergências, enumeração mais rápida e todos os
+   tamanhos predeclarados. Não selecionar documentos por conflitos ou vitória.
+6. **Custo completo:** medir preparação, primeiro forward, suporte, compilação,
+   consultas, atualizações e saída. Executar forwards de todos os decoders;
+   replay não vira geração completa. Suporte inicial permanece fixo, não usa
+   gabarito e pode excluir respostas relevantes. Nova previsão muda a ordem,
+   não expande suporte. Remasking/expansão requerem recompilação e estão fora
+   do teorema de contrações. Modelo/contexto/tokenizer iguais.
+7. **Objeção forte:** a técnica incremental clássica pode tornar lexicográfico
+   desnecessário. Se isso ocorrer, rejeitar o lexicográfico como protagonista,
+   em vez de omitir o controle. Compilação pode dominar, enumeração vencer e
+   top-K fixo limitar utilidade. Preservar essas possibilidades no relatório.
+8. **Artigo:** falta medir geração, conferir igualdade das transições, obter
+   revisão humana e delimitar a diferença publicável. Os fundamentos conhecidos
+   devem aparecer na apresentação. Não converter CI, Lean ou ganho contra um
+   próprio baseline em prioridade mundial/qualidade semântica superior.
+
+## Antecedentes conferidos
+
+- [Semiring Parsing, Goodman (1999)](https://aclanthology.org/J99-4004/).
+- [Lexicographic Semirings, Sproat et al. (2014)](https://aclanthology.org/J14-4002/).
+- [Grammar Constraints, Quimper e Walsh (2009), §GRAMMAR](https://arxiv.org/pdf/0903.0470):
+  propagação por decomposição e custo de toda uma branch igual a uma propagação.
+- [EPIC v2, 2026-10-04, §§4.2–4.3](https://arxiv.org/html/2606.00722v2):
+  cover regular, redução de batches e verificação exata em grafo. Não preserva
+  por definição cada decisão do nosso guloso em suporte finito.
+
+## Organização
+
+`work/` contém protótipos independentes, especificação/provas e protocolo.
+O compilador mantido pode ser reutilizado, com seu commit congelado no snapshot;
+nenhum import depende do código mutável de outra tentativa. Versões congeladas
+serão criadas após código e evidências serem commitados. Pesos/logits completos
+permanecem fora do repositório. Não restaurar testes históricos.

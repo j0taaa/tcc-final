@@ -1,0 +1,2 @@
+# Optional native research comparator; not needed by library or offline tests.
+python-sat==1.9.dev15

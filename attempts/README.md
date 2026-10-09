@@ -27,6 +27,7 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [15-adaptive-semantic-cores](15-adaptive-semantic-cores/README.md) | Refinamento adaptativo e núcleos semânticos — M36 |
 | [16-cars-rejection-bound](16-cars-rejection-bound/README.md) | Limite de rejeições contra a atualização publicada do CARS — M36 |
 | [17-pl-latent-resampling](17-pl-latent-resampling/README.md) | Auditoria de reamostragem latente após seleção PL |
+| [18-monotone-grammatical-decoding](18-monotone-grammatical-decoding/README.md) | Preservar a trajetória gulosa e reduzir trabalho gramatical |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
@@ -35,11 +36,11 @@ o estado literal do primeiro commit.
 
 As direções 15/16 foram rejeitadas pelo usuário como protagonistas: a aplicação
 não justificou usar uma dLLM. Seus resultados continuam preservados. A direção
-em investigação é `17-pl-latent-resampling`, ainda sem conquista confirmada.
-Sua auditoria já concluiu: correção em oráculos exatos e uma separação matemática
-delimitada; o replay completo preserva controles mais rápidos e não confirma
-benefício de treinamento. As cinco versões da tentativa incluem o erro inicial
-do harness e todos os refinamentos, sem substituição dos resultados anteriores.
+17 encerrou uma decisão delimitada: há ganho em alguns lotes grandes do
+posterior PL, mas não em treinamento completo ou geração final. Seus 16
+snapshots mantêm controles mais rápidos, erros de harness e todas as perdas.
+A investigação atual é a 18: lexicográfico e propagação incremental competente
+para conservar os commits do guloso e avaliar custo na geração inteira.
 Organização, testes e provas selecionadas não substituem avaliação humana de
 prioridade/significância.
 
