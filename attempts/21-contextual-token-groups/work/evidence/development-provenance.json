@@ -1,0 +1,10 @@
+{
+  "source_commit": "647a98d9ee13afa5b8855aae22103a92758738fc",
+  "records": 1026,
+  "complete": 948,
+  "equal": 897,
+  "strong_wins_primary": 0,
+  "strong_wins_secondary": 0,
+  "raw_rows_sha256": "2eb1cf66cc48a33081557974b4f25557aebc8c938638be4883d11d3e53a3e6a3",
+  "decision": "Both contextual candidates fail full-cost development gate. Do not weaken threshold or run heldout/fresh for this candidate. Preserve all results."
+}

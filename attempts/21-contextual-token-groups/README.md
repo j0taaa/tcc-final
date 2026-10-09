@@ -1,6 +1,10 @@
 # Tentativa 21 — Grupos de tokens dependentes do estado lexical
 
-Hipótese; vantagem/novidade próprias ainda não confirmadas. Fontes independentes
+**Resultado negativo preservado:** 1026 registros MDLM/CUDA, 948 completos,
+897 comparações exatas e nenhuma divergência; 0/18 ganhos fortes tanto
+para GAC quanto para root frente a TODOS os controles não contextuais,
+incluindo globais. Menos recompilações não bastou para o custo completo.
+Nenhuma expansão à confirmação fresca neste protocolo. Dados em work/evidence. Fontes independentes
 copiados de20 (`7b33f6d`), sem import mutável de outra tentativa. Não alterar
 núcleo ou EPIC. Todos os resultados negativos anteriores permanecem congelados.
 

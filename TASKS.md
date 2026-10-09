@@ -2325,3 +2325,8 @@ Fill this section only with real artifacts.
   members. Offline product oracle covers144 GAC/root trajectories, optional SAT
   adds72; mutation scanner oracle3000 cases; all19 fake-driver methods agree.
   Commitment ambiguity and support-contract regression included. Benefit pending.
+
+- [x] T4102: Finish all1026 contextual-development MDLM/CUDA rows. 948
+  complete, 897 equal comparisons, zero strong wins primary/secondary against
+  all noncontextual controls. Archive commands/data/statuses/provenance.
+  Do not weaken gate or expand this candidate to heldout/fresh. Utility goal open.
