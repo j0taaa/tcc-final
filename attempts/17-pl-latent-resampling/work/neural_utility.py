@@ -458,14 +458,17 @@ def run(args):
                         norm_error = None
                         for _rep in range(3):
                             start = perf_counter()
-                            out = model(input_ids=inputs, timesteps=torch.zeros(1))[0, list(free)]
+                            with torch.no_grad():
+                                model(input_ids=inputs, timesteps=torch.zeros(1))
                             forwards.append(perf_counter() - start)
+                            features = captures[-1][0, list(free)]
                             if not reward:
                                 backward_times.append(0.0)
                                 norm_error = 0.0
                                 continue
-                            adjoint = torch.from_numpy(scores.adjoint(c0)).to(out.dtype)
+                            adjoint = torch.from_numpy(scores.adjoint(c0)).to(features.dtype)
                             start = perf_counter()
+                            out = head(features)
                             grads = torch.autograd.grad(
                                 out, (head.weight, head.bias), grad_outputs=adjoint
                             )
