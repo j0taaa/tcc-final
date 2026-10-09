@@ -15,6 +15,7 @@ from time import perf_counter, process_time
 from enumeration import Enumeration
 from grammar_selectors import CachedPrefix, Recompute
 from monotone import Monotone
+from native_queries import NativeLex, NativePrefix
 from native_sat import SatPrefix
 from relevant_forest import relevant_forest
 
@@ -152,7 +153,14 @@ def run_case(model, adapter, source, grammar, example, size, method, config, pro
         state = clock("support", state_from_top)
         result["support_rows"] = state.support.rows
         result["support_sha256"] = state.support.fingerprint
-        if method == "enumeration":
+        if method.startswith("rust_"):
+            factories = {
+                "rust_lex": NativeLex,
+                "rust_cached_prefix": NativePrefix,
+                "rust_lazy_prefix": lambda s: NativePrefix(s, lazy=True),
+            }
+            engine = clock("prepare", lambda: factories[method](state))
+        elif method == "enumeration":
             engine = clock("prepare", lambda: Enumeration(state))
         else:
             limits = protocol["measurement"]["compilation_limits"]
@@ -238,6 +246,8 @@ def run_case(model, adapter, source, grammar, example, size, method, config, pro
         result.update(status="not_applicable", reason=str(exc))
     except (CompilationLimit, TimeoutError) as exc:
         result.update(status="unresolved", reason=str(exc))
+    except NotImplementedError as exc:
+        result.update(status="unsupported", reason=str(exc))
     except ValueError as exc:
         result.update(
             status="infeasible_on_support" if str(exc) == "infeasible_on_support" else "error",
@@ -277,16 +287,31 @@ def main():
     parser.add_argument(
         "--trim", action="store_true", help="Shared classical root-dependency pruning"
     )
+    parser.add_argument(
+        "--native", action="store_true", help="Include exact native lex/prefix controls"
+    )
     args = parser.parse_args()
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source/protocol before measurement")
     protocol = json.loads((WORK / "protocol.json").read_text())
+    binding = None
+    if args.native:
+        if not args.trim:
+            raise ValueError("native refinement requires strong root-pruned forest controls")
+        import mwpc_parser_py
+
+        binaries = list(Path(mwpc_parser_py.__file__).parent.glob("*.so"))
+        if len(binaries) != 1:
+            raise ValueError("expected one pinned native parser binding")
+        binding = dict(filename=binaries[0].name, sha256=digest(binaries[0].read_bytes()))
+        protocol["methods"] += ["rust_lex", "rust_cached_prefix", "rust_lazy_prefix"]
     config = json.loads((ROOT / protocol["model_config"]).read_text())
     torch.set_num_threads(config["torch_cpu_threads"])
     torch.manual_seed(protocol["seed"])
     if args.device == "cuda":
         torch.backends.cuda.matmul.allow_tf32 = False
         torch.backends.cudnn.allow_tf32 = False
+    startup_wall, startup_cpu = perf_counter(), process_time()
     tokenizer = AutoTokenizer.from_pretrained(
         config["tokenizer_id"],
         revision=config["tokenizer_revision"],
@@ -310,10 +335,23 @@ def main():
     )
     source = json_source_grammar()
     grammar = normalize_to_cnf(source).grammar
+    if args.device == "cuda":
+        torch.cuda.synchronize()
     args.output.mkdir(parents=True, exist_ok=False)
     metadata = dict(
         commit=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
         phase=args.phase,
+        methods=protocol["methods"],
+        native_binding=binding,
+        native_addendum_sha256=digest((WORK / "native-addendum.json").read_bytes())
+        if args.native
+        else None,
+        common_startup=dict(
+            wall=perf_counter() - startup_wall,
+            cpu=process_time() - startup_cpu,
+            scope="tokenizer, corpus tokenization/selection, model loading/device, byte adapter "
+            "and shared fixed grammar; excluded from prepared-service decoder times",
+        ),
         protocol_sha256=digest((WORK / "protocol.json").read_bytes()),
         model_config=config,
         model_hashes=hashes,

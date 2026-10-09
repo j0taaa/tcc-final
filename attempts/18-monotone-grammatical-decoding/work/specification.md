@@ -31,6 +31,27 @@ dos slots. Empates de testemunho não afetam o lote; fallback especificado à pa
 
 Este é um lema clássico de prioridades lexicográficas, não uma descoberta.
 
+Na consulta nativa, multiplicar L por 2^(-m+1) transporta os mesmos bits
+como díades 2^-j. Para m<=1075, cada peso é exatamente representável em
+binary64, inclusive subnormais. A comparação NÃO soma pesos arredondados:
+normalização preserva termos originais como Fraction e o parser mantido soma
+BigUint em unidades de 2^-1074. Logo todos os bits que definem a decisão
+permanecem exatos. O objetivo público arredondado é somente diagnóstico;
+recupera-se o vetor pelo casamento dos tokens originais. Uma API/backend que
+só compare somas arredondadas não satisfaz este contrato. Recusar m>1075 nesta
+referência. O caminho foi reconstruído/testado também nos bits de menor peso.
+
+O parser nativo pode guardar apenas a melhor derivação de cada célula, pois
+as prioridades são conhecidas ANTES de construir/normalizar o grafo da consulta.
+Isso dispensa materializar todas as alternativas de uma floresta reutilizável,
+mas repete construção/parsing nos forwards seguintes. Seja Q o custo completo
+de uma consulta nativa, incluindo grafo, precisão, reconstrução e validação:
+lex costuma pagar sum_t Q_t (mais fallback quando necessário), o guloso nativo
+paga sum_t sum_j Q_tj. Os domínios restringidos podem baixar Q_tj, testemunhos
+podem dispensar consultas e a floresta pode amortizar preparação. Portanto NÃO
+há teorema de superioridade universal: o benefício físico precisa ser medido
+contra esses controles com o mesmo kernel e informação.
+
 ## Lema 2 — prefixo observável
 
 As propostas acima de theta formam um prefixo da ordem. Uma decisão gulosa

@@ -491,7 +491,7 @@
     {
       "id": "18-monotone-grammatical-decoding",
       "title": "Preserva\u00e7\u00e3o de pol\u00edtica gulosa e propaga\u00e7\u00e3o gramatical durante gera\u00e7\u00e3o",
-      "conclusion": "CPU sem ganho forte; GPU original 1/36 casos externos, provis\u00f3rio at\u00e9 controles com poda de relev\u00e2ncia. Trajet\u00f3rias iguais; novidade n\u00e3o confirmada.",
+      "conclusion": "CPU/GPU com poda comum: nenhuma configura\u00e7\u00e3o passa o crit\u00e9rio. Igualdade de1.944 registros antes/depois. Refinamento nativo predeclarado e validado, tempos pendentes.",
       "reading": "attempts/18-monotone-grammatical-decoding/README.md; attempts/18-monotone-grammatical-decoding/work/specification.md",
       "versions": [
         {
@@ -517,6 +517,16 @@
           "id": "v3",
           "source_commit": "911898dabfc5d9f31cdc99f09c62fe81668ddc42",
           "evidence_commit": "b444b3f8f251c6557801f87d250559701df7a81d",
+          "evidence_roots": [
+            "attempts/18-monotone-grammatical-decoding/work/evidence",
+            "attempts/18-monotone-grammatical-decoding/work/analyze.py",
+            "attempts/18-monotone-grammatical-decoding/README.md"
+          ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "5d19789b7161203e242970bd07e84d6e1ebf6d9f",
+          "evidence_commit": "b31ceb5ae78b1d7546a9ea0d80434e43d4a79274",
           "evidence_roots": [
             "attempts/18-monotone-grammatical-decoding/work/evidence",
             "attempts/18-monotone-grammatical-decoding/work/analyze.py",

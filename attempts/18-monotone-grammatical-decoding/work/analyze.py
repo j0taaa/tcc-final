@@ -8,17 +8,22 @@ from pathlib import Path
 from statistics import median
 
 
-def analyze(folder):
+def analyze(folder, candidate="monotone"):
     metadata = json.loads((folder / "metadata.json").read_text())
     rows = [json.loads(line) for line in (folder / "rows.jsonl").read_text().splitlines()]
-    methods = [
-        "greedy_witness",
-        "lex_integer",
-        "greedy_cached_prefix",
-        "monotone",
-        "enumeration",
-        "sat_cached_prefix",
-    ]
+    methods = metadata.get(
+        "methods",
+        [
+            "greedy_witness",
+            "lex_integer",
+            "greedy_cached_prefix",
+            "monotone",
+            "enumeration",
+            "sat_cached_prefix",
+        ],
+    )
+    if candidate not in methods:
+        raise ValueError("candidate absent from declared methods")
     expected = len(metadata["selected"]) * 3 * 3 * len(methods)
     if len(rows) != expected:
         raise ValueError(f"incomplete campaign {folder}: {len(rows)}/{expected}")
@@ -44,12 +49,12 @@ def analyze(folder):
             equality_checks += 1
     comparisons = []
     for (case, count), group in sorted(configurations.items()):
-        own = group["monotone"]
+        own = group[candidate]
         controls = {}
         if all(r["status"] == "complete" for r in own):
             own = sorted(own, key=lambda r: r["repetition"])
             for name, alternatives in group.items():
-                if name == "monotone" or not all(r["status"] == "complete" for r in alternatives):
+                if name == candidate or not all(r["status"] == "complete" for r in alternatives):
                     continue
                 alternatives = sorted(alternatives, key=lambda r: r["repetition"])
                 controls[name] = {
@@ -75,6 +80,10 @@ def analyze(folder):
     return dict(
         path=str(folder),
         device=metadata["device"],
+        candidate=candidate,
+        root_pruning=metadata.get("root_pruning", False),
+        native_binding=metadata.get("native_binding"),
+        common_startup=metadata.get("common_startup"),
         phase=metadata["phase"],
         producer_commit=metadata["commit"],
         protocol_sha256=metadata["protocol_sha256"],
@@ -94,13 +103,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--campaign", type=Path, action="append", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--candidate", default="monotone")
     args = parser.parse_args()
-    summaries = [analyze(folder) for folder in args.campaign]
+    summaries = [analyze(folder, args.candidate) for folder in args.campaign]
     report = [
         "# Geração completa com política gulosa preservada",
         "",
         "Todos os métodos executam seus próprios forwards. Os custos incluem preparação e saída; "
-        "carregamento/aquecimento comum e tokenização do corpus são externos ao decoder. "
+        "carregamento/aquecimento comum, tokenização do corpus e gramática fixa preparada uma vez "
+        "são externos ao decoder em serviço já preparado. "
         "Suporte top16 inicial permanece fixo, sem tokens de referência injetados. "
         "Não há comparação nativa com EPIC, nem promessa de melhora semântica.",
         "",
@@ -126,7 +137,7 @@ def main():
         report += [
             "",
             "| Documento / máscaras | Melhor controle completo (wall) | "
-            "Monotone (s) | Controle (s) | Razão controle/monotone | Critério |",
+            f"{args.candidate} (s) | Controle (s) | Razão controle/candidata | Critério |",
             "| --- | --- | ---: | ---: | ---: | --- |",
         ]
         for comparison in result["comparisons"]:
