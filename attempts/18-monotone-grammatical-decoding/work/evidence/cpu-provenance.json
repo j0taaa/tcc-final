@@ -1,0 +1,34 @@
+{
+  "source_commit": "5da0df78e8a066ded1d0ce6c69ecbac77c966052",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-development-v1 --phase development",
+    "OPENBLAS_NUM_THREADS=1 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-heldout-cpu-v1 --phase heldout"
+  ],
+  "source_sha256": {
+    "attempts/18-monotone-grammatical-decoding/work/generation.py": "13f9c69e6825630edce31b30b7a8a011bdae37eb3d27b9ef5a80036a690943f2",
+    "attempts/18-monotone-grammatical-decoding/work/monotone.py": "d56e8bb39620ac2bff24e18db25c8a2fbc2d1746807b81ac4eac387c58044937",
+    "attempts/18-monotone-grammatical-decoding/work/grammar_selectors.py": "88beaeefdd1ad47682fe2fe580adc05169ad8114c9a752bb500970ad91b189ee",
+    "attempts/18-monotone-grammatical-decoding/work/native_sat.py": "c23a48184114fe6f5b8e58f3396ff826c697717f96b9947616be235a57be316c",
+    "attempts/18-monotone-grammatical-decoding/work/enumeration.py": "0e060abf284bdc2f9b86ebed302451b40eb277c90160e0330d90ada417120214",
+    "attempts/18-monotone-grammatical-decoding/work/protocol.json": "b12b1c3a37d58d753666cec0821bcdf3682ad40e25bc6369b553b16ffff8f9d4",
+    "src/mwpc_exact/cfg_posterior.py": "eb3f3fe889ac6c23fea5013095959d89a83b81f60e0027a902bf68f3c6d20483",
+    "scripts/exact_commit/mdlm_cpu.py": "ae010fa84e006716b33b934ff8d9bb838049f9a07bfd75604868f7dee2bed648",
+    "configs/experiments/m31_probability_scaling_cpu_v1.json": "80241ec93e4c994a12996f322096b7ff1b125e28a9061ceadd2e85b1b21919a4"
+  },
+  "evidence_sha256": {
+    "cpu-decision.md": "37dd1f844ff5aefcdd65f70b1358780e4cc0db98c333f954ed518e9d3cdd6985",
+    "cpu-decision.json": "a99d7b9f5512183a36b836c94bd86559c885f97bd13d3998993efdedb95de976",
+    "heldout-cpu-v1/rows.jsonl": "5e4ca11acd69bd3c43a1fc773ecbbe6e6d04c4cc1a2342f6db58878c3c237cfa",
+    "heldout-cpu-v1/metadata.json": "02ffc0a2546ab97beeecd2ae6880576cafe06c4b19dbb5f484fb13f3c8035c1a",
+    "external-source/ref.json": "ae53f3f57c220879729225eb416cecac909f06b5adaf15f799b4f3e7c0612998",
+    "external-source/dependentSchemas.json": "f77df8d5243c0f58e04053a14a30706f5a6d5a9e7eccbfd17f8d6445841f8752",
+    "external-source/properties.json": "58f01566cfe3e1fc4fb851d3b2eab13768d65ba5dbc4e9f9387ceaf4244a0522",
+    "external-source/items.json": "d924a8171f1f1d04ff026a4e3491d1376297145563158543005b7073b69ab913",
+    "external-source/LICENSE": "837402bd25fad9b704265801ca3f92566a98157c1f9a7acd6f446299ba1c305a",
+    "external-source/uniqueItems.json": "ed84ef6ddc827659e257ba64cbe9679f06932b6320bea5c07622bf3d2cc4daa5",
+    "external-source/additionalProperties.json": "b96bd533416386ac6421737b48c5c072870ab5dbea910585e9e8fa6305c7ca91",
+    "external-source/unevaluatedProperties.json": "cdf9b1c6253470b01da5482c6833553f56e1fb652bf466476faa19c8f0cd2c7c",
+    "development-cpu-v1/rows.jsonl": "bc997103f21ed6552496f7dcabf7d6770188f317264472e8f8e4c34d98aa76ef",
+    "development-cpu-v1/metadata.json": "854042d693c166e346eff6f81d6107c15f4e015139da628665e405fa769bae82"
+  }
+}

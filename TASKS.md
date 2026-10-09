@@ -40,6 +40,21 @@ incremental alternative; classical foundations are not recast as inventions.
   witness greedy, integer lex, persistent-witness prefix greedy, classical
   monotone propagation, independent bitset enumeration and pinned native SAT
   are included. No speed/generation superiority has been measured yet.
+  **CPU evaluation completed:** source
+  `5da0df78e8a066ded1d0ce6c69ecbac77c966052` produced 324 development and 648
+  held-out records, including every refusal/zero-support input. `work/evidence/`
+  retains raw records, external MIT sources, hashes and exact commands. Generated
+  `cpu-decision.md/json` verifies 504 exact shared trajectories (all proposals,
+  original supports, updates and final output). Monotone completes 17/18
+  development configurations and 21/36 held-out; no configuration satisfies
+  the strong >=20% total wall+CPU criterion against all completed controls.
+  These negative results stay published. `make test` passes 39 focused checks;
+  `make check` passes upstream/lint/type and 18 attempts/35 versions integrity.
+  **Next:** `gpu-addendum.json` was registered before GPU inference/timing,
+  using the same documents/cases/controls and criterion. It responds to CPU
+  forward cost dominating selection; it is a separately labelled secondary
+  extension, not a replacement of the CPU experiment. Source/protocol/costs
+  are frozen before CUDA runs. No GPU benefit or publication priority claimed.
 
 ## M38 — Align standing instructions with the current scientific objective
 

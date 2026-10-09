@@ -71,6 +71,11 @@ def deadline(signum, frame):
 def run_case(model, adapter, source, grammar, example, size, method, config, protocol):
     import torch
 
+    device = next(model.parameters()).device
+    cuda = device.type == "cuda"
+    if cuda:
+        torch.cuda.synchronize()
+        torch.cuda.reset_peak_memory_stats()
     original = example["tokens"]
     positions = sorted(
         Random(protocol["seed"] + int(example["key"][:12], 16) + size).sample(
@@ -92,8 +97,12 @@ def run_case(model, adapter, source, grammar, example, size, method, config, pro
     signal.setitimer(signal.ITIMER_REAL, protocol["measurement"]["total_seconds"])
 
     def clock(name, function):
+        if cuda:
+            torch.cuda.synchronize()
         wall, cpu = perf_counter(), process_time()
         value = function()
+        if cuda:
+            torch.cuda.synchronize()
         old = clocks.setdefault(name, dict(wall=0.0, cpu=0.0))
         old["wall"] += perf_counter() - wall
         old["cpu"] += process_time() - cpu
@@ -102,10 +111,13 @@ def run_case(model, adapter, source, grammar, example, size, method, config, pro
     def forward():
         ids = [config["mask_token_id"] if t is None else t for t in canvas]
         with torch.inference_mode():
-            return model(input_ids=torch.tensor([ids]), timesteps=torch.zeros(1))[0]
+            return model(
+                input_ids=torch.tensor([ids], device=device),
+                timesteps=torch.zeros(1, device=device),
+            )[0]
 
     def predictions(logits):
-        values = logits.to(torch.float64).clone()
+        values = logits.to(device="cpu", dtype=torch.float64).clone()
         values[:, config["mask_token_id"]] = float("-inf")
         return values.softmax(-1)
 
@@ -234,6 +246,9 @@ def run_case(model, adapter, source, grammar, example, size, method, config, pro
         # Required cleanup belongs to total cost.
         if engine is not None and hasattr(engine, "close"):
             engine.close()
+        if cuda:
+            torch.cuda.synchronize()
+            result["gpu_peak_allocated_bytes"] = torch.cuda.max_memory_allocated()
         result.update(
             wall=perf_counter() - started,
             cpu=process_time() - cpu_started,
@@ -254,6 +269,7 @@ def main():
     parser.add_argument("--source", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--phase", choices=("development", "heldout"), required=True)
+    parser.add_argument("--device", choices=("cpu", "cuda"), default="cpu")
     args = parser.parse_args()
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source/protocol before measurement")
@@ -261,6 +277,9 @@ def main():
     config = json.loads((ROOT / protocol["model_config"]).read_text())
     torch.set_num_threads(config["torch_cpu_threads"])
     torch.manual_seed(protocol["seed"])
+    if args.device == "cuda":
+        torch.backends.cuda.matmul.allow_tf32 = False
+        torch.backends.cudnn.allow_tf32 = False
     tokenizer = AutoTokenizer.from_pretrained(
         config["tokenizer_id"],
         revision=config["tokenizer_revision"],
@@ -270,6 +289,7 @@ def main():
     dev, heldout = select_documents(args.source, tokenizer, protocol)
     selected = dev if args.phase == "development" else heldout
     model, hashes, adapted = load_cpu_model(config, ROOT / ".cache/mdlm")
+    model.to(args.device)
     for parameter in model.parameters():
         parameter.requires_grad_(False)
     adapter = CompositionalByteLevelAdapter.from_token_pieces(
@@ -299,7 +319,12 @@ def main():
         selected=selected,
         development_keys=[x["key"] for x in dev],
         heldout_keys=[x["key"] for x in heldout],
-        device="cpu",
+        device=args.device,
+        gpu_addendum_sha256=digest((WORK / "gpu-addendum.json").read_bytes())
+        if args.device == "cuda"
+        else None,
+        gpu=torch.cuda.get_device_name() if args.device == "cuda" else None,
+        cuda_version=torch.version.cuda if args.device == "cuda" else None,
         python=platform.python_version(),
         platform=platform.platform(),
         versions={n: version(n) for n in ("torch", "numpy", "transformers", "python-sat")},
@@ -314,9 +339,13 @@ def main():
     (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     with torch.inference_mode():
         model(
-            input_ids=torch.full((1, 32), config["mask_token_id"], dtype=torch.long),
-            timesteps=torch.zeros(1),
+            input_ids=torch.full(
+                (1, 32), config["mask_token_id"], dtype=torch.long, device=args.device
+            ),
+            timesteps=torch.zeros(1, device=args.device),
         )
+    if args.device == "cuda":
+        torch.cuda.synchronize()
     with (args.output / "rows.jsonl").open("x") as output:
         for repetition in range(protocol["measurement"]["repetitions"]):
             for i, example in enumerate(selected):

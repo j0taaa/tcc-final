@@ -2,13 +2,29 @@
 
 Iniciada em 2026-10-09 sobre `89078ecf589e187927c1ba3d4f54f87ba9df43cd`.
 Pesquisa isolada; a tentativa 17 e os decoders mantidos não são substituídos.
-Status inicial: **vantagem de geração ainda não medida**.
+Status: **CPU completo; extensão GPU registrada antes de medir**.
 
 Versão v1 preserva o protótipo/protocolo inicial. Antes de qualquer forward ou
 timing, a inspeção do corpus encontrou só nove documentos de 24..96 tokens,
 insuficientes para a divisão predeclarada de 18. A faixa passou a 16..96
 (24 documentos disponíveis); a divisão por hash, os tamanhos de máscara e os
 controles permanecem iguais. Nenhum resultado de modelo/solver orientou isso.
+
+## Resultado CPU e próxima verificação
+
+[Relatório gerado CPU](work/evidence/cpu-decision.md): 324 registros de
+desenvolvimento e 648 de avaliação externa separada. Em 504 comparações de
+execuções completas, suportes, propostas, commits e saídas coincidem exatamente.
+O propagador completa 17/18 configurações de desenvolvimento e 21/36 de
+avaliação; as restantes não admitem JSON no top16 declarado. Não eliminá-las.
+Nenhuma configuração passa o critério forte de redução total >=20% em parede
+e CPU contra todos os controles concluídos. Algumas seleções ficam mais baratas,
+mas o modelo/compilação/preparação diluem a economia.
+
+[Extensão GPU](work/gpu-addendum.json) usa exatamente os mesmos documentos,
+casos, comparadores e critérios. Foi registrada após desenvolvimento CPU,
+antes de qualquer forward CUDA. CPU não é renomeado como resultado favorável.
+O limite matemático continua válido, mas não prova velocidade física.
 
 ## Contrato e oito critérios
 
