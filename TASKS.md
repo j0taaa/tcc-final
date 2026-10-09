@@ -62,6 +62,19 @@ incremental alternative; classical foundations are not recast as inventions.
   optimization identified in the adversarial review. Keep the same documents,
   cases and costs; freeze a separate refinement before measuring. A victory
   against avoidable dead-forest work is insufficient to confirm useful benefit.
+  **Root-pruning refinement completed:** 1,944 new CPU/GPU records over exactly
+  the same documents/cases. All 1,944 match original status/support/proposals/
+  updates/output. Zero configurations meet the speed criterion on either
+  device: reject the original GPU gains as an adoption argument. Generated
+  `trim-decision.md/json` and `trim-provenance.json` preserve all records.
+  **Native refinement predeclared:** `native-addendum.json` keeps every case
+  and adds Rust lex, eager and lazy native prefix greedy, using the same
+  parser/lattice/linear validation. Existing Fraction/BigUint preserves dyadic
+  priorities exactly, including 1075 bits; larger priority lists are unsupported
+  in this reference. Rebuilt the current release binding; 20 small independent
+  oracle trajectories and maximal priority width pass natively. Five focused
+  offline tests pass (Python reference, no binding required in CI). Native
+  speed/publication priority remains unmeasured; no promotion of production API.
 
 ## M38 — Align standing instructions with the current scientific objective
 

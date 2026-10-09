@@ -7,8 +7,10 @@ import unittest
 
 from grammar_selectors import CachedPrefix, Recompute, witness
 from monotone import Monotone
+from native_queries import NativeLex, NativePrefix
 from relevant_forest import relevant_forest
 
+from mwpc_exact.backend import ExactBackend
 from mwpc_exact.cfg_posterior import compile_cfg_sampler
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.reference.json_grammar import json_source_grammar
@@ -69,6 +71,48 @@ def oracle(valid, canvas, proposals, threshold, cap):
 
 
 class Correctness(unittest.TestCase):
+    def test_native_json_trajectories(self):
+        plan, valid = setup(
+            (b"[", b"[]", b"]", b"0", b"00", b"0]", b" ", b"0"),
+            ((0, 1), (0, 1, 2, 3, 4, 7), (1, 2, 3, 5, 6, 7)),
+        )
+        rng = random.Random(2026100919)
+        for trial in range(8):
+            engines = [
+                NativeLex(plan.state, backend=ExactBackend.PYTHON),
+                NativePrefix(plan.state, backend=ExactBackend.PYTHON),
+                NativePrefix(plan.state, lazy=True, backend=ExactBackend.PYTHON),
+            ]
+            canvas = [None] * 3
+            while None in canvas:
+                proposals = [
+                    (p, rng.choice(row), rng.choice((0.1, 0.8, 0.9)))
+                    for p, row in enumerate(plan.state.support.rows)
+                    if canvas[p] is None
+                ]
+                if trial % 3 == 0:
+                    proposals += proposals[:1]
+                if trial % 5 == 0:
+                    proposals = []
+                proposals.sort(key=lambda p: (-p[2], p[0], p[1]))
+                threshold, cap = rng.choice((0.0, 0.8, 1.0)), rng.randrange(1, 4)
+                expected = oracle(valid, canvas, proposals, threshold, cap)
+                for engine in engines:
+                    self.assertEqual(
+                        engine.transition(proposals, threshold=threshold, cap=cap), expected
+                    )
+                for p, token in expected:
+                    canvas[p] = token
+
+    def test_native_dyadic_priorities(self):
+        plan, _ = setup((b"[", b"0", b"1", b"]"), ((0,), (1, 2), (3,)))
+        engine = NativeLex(plan.state, backend=ExactBackend.PYTHON)
+        for common in (300, 1073):
+            proposals = [(0, 0, 0.9)] * common + [(1, 2, 0.8), (1, 1, 0.8)]
+            self.assertEqual(engine.solve([None] * 3, proposals), (0, 2, 3))
+        with self.assertRaises(NotImplementedError):
+            engine.solve([None] * 3, [(0, 0, 0.9)] * 1076)
+
     def test_independent_json_trajectories(self):
         fixtures = [
             ((b"[", b"0", b"1", b",", b"]", b"0"), ((0,), (1, 2, 5), (3,), (1, 2, 5), (4,))),

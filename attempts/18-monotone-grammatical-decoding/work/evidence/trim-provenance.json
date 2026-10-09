@@ -1,0 +1,34 @@
+{
+  "source_commit": "5d19789b7161203e242970bd07e84d6e1ebf6d9f",
+  "original_vs_trimmed_records_identical": 1944,
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-development-cpu-trim-v1 --phase development --device cpu --trim",
+    "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-development-gpu-trim-v1 --phase development --device cuda --trim",
+    "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-heldout-cpu-trim-v1 --phase heldout --device cpu --trim",
+    "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-heldout-gpu-trim-v1 --phase heldout --device cuda --trim"
+  ],
+  "source_sha256": {
+    "attempts/18-monotone-grammatical-decoding/work/generation.py": "77a05f3ba25db7b9d6087603c77674fe7e948655b7cc8cf6638311d9a101af43",
+    "attempts/18-monotone-grammatical-decoding/work/monotone.py": "d56e8bb39620ac2bff24e18db25c8a2fbc2d1746807b81ac4eac387c58044937",
+    "attempts/18-monotone-grammatical-decoding/work/grammar_selectors.py": "88beaeefdd1ad47682fe2fe580adc05169ad8114c9a752bb500970ad91b189ee",
+    "attempts/18-monotone-grammatical-decoding/work/native_sat.py": "c23a48184114fe6f5b8e58f3396ff826c697717f96b9947616be235a57be316c",
+    "attempts/18-monotone-grammatical-decoding/work/enumeration.py": "0e060abf284bdc2f9b86ebed302451b40eb277c90160e0330d90ada417120214",
+    "attempts/18-monotone-grammatical-decoding/work/protocol.json": "b12b1c3a37d58d753666cec0821bcdf3682ad40e25bc6369b553b16ffff8f9d4",
+    "attempts/18-monotone-grammatical-decoding/work/gpu-addendum.json": "db3c56b8ce09e9efe0daebf3d00ec2417e0eb03563f7b768a67243e6aba9164b",
+    "attempts/18-monotone-grammatical-decoding/work/relevance-addendum.json": "0d2de8fa9bb7c7b2d4addc064cae2d97106605941c190abad48859f81ddfd17c",
+    "attempts/18-monotone-grammatical-decoding/work/relevant_forest.py": "5560491f0ccea918265ac40d8c56b07e09c96612539c06826077ea1454e7538c",
+    "attempts/18-monotone-grammatical-decoding/work/analyze.py": "6ed7ef498f0127987c6a186ff79b5d5bc1adca5d47955755bde65f4c050351d3"
+  },
+  "evidence_sha256": {
+    "development-cpu-trim-v1/metadata.json": "058288fb38b59ee319ca37add238ab7011980e7952a96d2d19c0fcce2541c5f0",
+    "development-cpu-trim-v1/rows.jsonl": "70fddf0b983d3d3533e640831e363076f5e76a94aadbe9c651dbfbccc6c6e87a",
+    "development-gpu-trim-v1/metadata.json": "1558ffb0fb075ff1795e17c3895247e79abe91205da22061164ac3c074ad704e",
+    "development-gpu-trim-v1/rows.jsonl": "3f4213cc466d176846f11b44a7dbc105cc1c38c7434e5f43e9458d764700ec44",
+    "heldout-cpu-trim-v1/metadata.json": "db158ed21e0cc4e6fe6e36ccf72ba603cb2fdb207b504446deface24198d1428",
+    "heldout-cpu-trim-v1/rows.jsonl": "abf2464823f464347c753badfe5ab01c8b9944150c3ad3ca7095510653f3ab21",
+    "heldout-gpu-trim-v1/metadata.json": "1572867a6de7a634146eeace5567becfce817238dc26a295e50c1eaa170b1402",
+    "heldout-gpu-trim-v1/rows.jsonl": "f44eb997f233c2869a73549b41beee29087894929e8a718efe74632996644cda",
+    "trim-decision.json": "6c039e9e35f540254e81d7087a7ce9a0bd7e7424cb8fa1f5b1d366f85decf1a6",
+    "trim-decision.md": "be3f364bd4ae781473a651aba1e665c472acd90982e278b80796998d315f06e8"
+  }
+}

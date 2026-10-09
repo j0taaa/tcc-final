@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "registered_before_native_timings": true,
+  "reason": "Common root pruning eliminated the original GPU speed advantage. Compilation now dominates. Test the original lexicographic proposal on the maintained Rust best-derivation parser, without materializing a packed forest.",
+  "scientific_gate": "Known semiring/lexicographic parsing, not a new theorem. Candidate is policy-preserving practical integration. Reject if a competent native greedy control is as good. No publication priority or native EPIC comparison claimed.",
+  "candidate": "rust_lex",
+  "additional_controls": ["rust_cached_prefix", "rust_lazy_prefix"],
+  "controls": "Keep all six original methods, with common root pruning. Add native witness-caching observable-prefix greedy, both eager and lazy initial witness, using the SAME Rust kernel, original token lattice, EOS normalization and linear independent JSON/output validation as native lex.",
+  "arithmetic": "Transport priorities as exactly represented dyadics 2^-j for j=0..1074. Maintained normalization keeps original weight_terms as Fractions and Rust compares BigUint exact sums in units 2^-1074. Rounded public objective is diagnostic only. Do not compare rounded objective to infer greedy bits. Refuse more than 1075 ordered proposals explicitly.",
+  "operation": "Same frozen original token support and JSON CNF language; same ordering, confidence filter, cap and canonical fallback. One native best-derivation query per ordinary lex transition; native greedy queries may restrict the finite support and reuse their witnesses. No abstract Sigma* gap semantics.",
+  "validation": "Every native positive query reconstructs all original token IDs, preserves slots/fixed tokens/support and is checked by independent strict Python JSON. Core public MWPC/validator contracts remain unchanged. Source and binding binary hashes recorded; rebuild current release binding before native timings and verify priorities beyond float mantissa width.",
+  "cases": "All six original development and twelve original held-out documents, every 4/8/16 mask setting, same top16, three rotated repeats. No replacements or outcome filtering. Previously examined cases are labelled refinement, not a new independent external evaluation.",
+  "cost": "Include first and subsequent model forwards, softmax/support/order, original lattice/EOS normalization, parsing/reconstruction/validation per query, updates and final JSON output. Native methods do not pay for a forest they do not build. Initial support permission metadata can be restricted internally to the union of its unchanged declared rows, equally for native controls/candidate, avoiding redundant scans of a 50k permission list per query.",
+  "success": "Same exact trajectories/output and >=20% median total wall AND CPU reduction against EVERY completed comparator, favorable sign in all three repeats. Report CPU/GPU separately, all losses/infeasible/NA/timeouts, and query counts. No quality change promised."
+}

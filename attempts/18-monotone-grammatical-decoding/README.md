@@ -2,7 +2,7 @@
 
 Iniciada em 2026-10-09 sobre `89078ecf589e187927c1ba3d4f54f87ba9df43cd`.
 Pesquisa isolada; a tentativa 17 e os decoders mantidos não são substituídos.
-Status: **CPU/GPU completos; comparação fortalecida em preparação**.
+Status: **controle fortalecido CPU/GPU completo sem ganho; núcleo nativo validado**.
 
 Versão v1 preserva o protótipo/protocolo inicial. Antes de qualquer forward ou
 timing, a inspeção do corpus encontrou só nove documentos de 24..96 tokens,
@@ -42,6 +42,28 @@ Contabiliza sua execução e preserva todas as derivações da raiz; os oráculo
 independentes verificam trajetórias antes/depois. Reavalia os critérios 3/6/7:
 um ganho perdido frente a controles adequados não será usado para justificar
 adoção. Critérios 1/2/4/5/8 e a divisão de casos permanecem iguais.
+
+O [refinamento nativo](work/native-addendum.json) investiga a proposta
+lexicográfica original, agora sem construir uma floresta completa. Antes de
+implementar/medir, reavalia os critérios: (1) mesma operação de infilling;
+(2/4) os fundamentos continuam conhecidos, a candidata é uma integração com
+equivalência de política e eventual vantagem prática, sem prioridade teórica;
+(3/7) guloso nativo com testemunho persistente, inicialização antecipada e
+tardia compartilham o mesmo kernel e validação; (5) TODOS os casos antigos,
+agora avaliação de refinamento e não conjunto externo inédito; (6) custos
+integrais, inclusive conversão de prioridades, construção/normalização a cada
+consulta e validação linear JSON; (8) benefício ainda não medido, revisão
+humana/publicação pendentes. O backend já compara somas de floats de entrada
+exatamente por BigUint; díades representam prioridades, não arredondamentos
+usados para decidir. Mais de 1075 prioridades exige recusa nesta versão.
+
+[Resultado com poda](work/evidence/trim-decision.md): nenhuma das 18/36
+configurações de desenvolvimento/avaliação passa o critério, em CPU ou GPU.
+1.944 registros antes/depois preservam exatamente status, suporte, propostas,
+commits e output. Isso invalida os ganhos GPU originais como justificativa de
+adoção frente a controles competentes. O refinamento nativo tem cinco testes
+offline focados; 20 trajetórias adicionais passam pelo Rust reconstruído,
+inclusive todas as 1075 prioridades. Seus tempos ainda não foram medidos.
 
 ## Contrato e oito critérios
 
