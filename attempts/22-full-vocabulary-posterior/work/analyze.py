@@ -158,12 +158,15 @@ def main():
         f"Rows: {len(rows)}/{expected}. Statuses: {report['statuses']}.",
         f"Strong local benefits: {len(wins)}/{len(cases)}; sampling: {len(sampling_wins)}.",
         "",
-        "| Case / masks | Global wall / CPU | Local wall / CPU | Rejection wall / CPU | Strong |",
-        "|---|---:|---:|---:|---|",
+        "Prepared service costs include frame compilation, full marginals "
+        "and shared actual forward.",
+        "| Case / masks | Global wall / CPU | Position wall / CPU | Local wall / CPU | "
+        "Rejection wall / CPU | Strong |",
+        "|---|---:|---:|---:|---:|---|",
     ]
     for item in cases:
         columns = []
-        for method in ("global", "local", "rejection"):
+        for method in ("global", "position", "local", "rejection"):
             record = item["methods"].get(method, {})
             costs = record.get("prepared_total")
             columns.append(

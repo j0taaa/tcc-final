@@ -2357,3 +2357,14 @@ Fill this section only with real artifacts.
  count guards10x, keep120s/8GiB physics equally. Written proof/oracles cover
  all FOUR exact representations, including clamps and remasking. Freeze v2
  before timings on SAME archived full model floats; no fresh case evaluated.
+
+
+- [x] T4201-v3: Complete all270 full-V development records,208 conclusive,
+ 62 resource refusals,6/18 strong primary wins vs raw/global/PER-POSITION
+ quotients. Same actual full model floats, CPU+wall include shared forward,
+ conversion, per-frame compile and all original marginals.3GiB/120s equal,
+ count guards10x and supervisor150s. Preserve BOTH interrupted prior campaigns.
+ No sampling win vs rejection, no fresh confirmation/novelty claim yet.
+- [x] T4204: Independently enumerate ALL50258 original tokens in24 disclosed
+ one-hole/clamped frames;96 comparisons exact in4 representations,1,206,192
+ candidates. No new forward or performance claim. Code and evidence in22/work.

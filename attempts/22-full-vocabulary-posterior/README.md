@@ -80,3 +80,26 @@ muito grande lentamente. Todos os métodos passam a3GiB igualmente; supervisor
 mata após150s incluindo startup/auditoria/cleanup, além do prazo interno120s.
 Não atribuir uma recusa a inviabilidade ou chamar a rodada parcial de sucesso.
 Mudança necessária ao hardware disponível, não seleção de casos favoráveis.
+
+
+Desenvolvimento v3 executado:270/270 registros,208 completos e62 recusas.
+Sem divergência nos resultados concluídos. Critério forte passou em6/18
+configurações (5 ganhos de tempo/CPU,1 de capacidade), inclusive controle por
+posição; não é confirmação fresca ainda. Rejeição NÃO perdeu no critério de
+amostragem em nenhum caso. Dados/tempos/recusas em evidence/development-v3.
+
+Auditoria adicional (critérios4/5/8, operação inalterada):24 quadros com uma
+lacuna, demais originais fixados EXPLICITAMENTE ao documento externo para
+permitir enumeração. Todas as50258 opções foram reconhecidas por UTF8/Python
+JSON independentes;96 comparações nas4 representações concordam exatamente.
+Não houve forward novo; são verificações de correção, não benchmark/qualidade.
+Comando: módulo work.audit_full_rows, --capture .cache/a22-development-cuda-v1.
+
+Custos: prepared_total inclui conversão racional, preparação POR PEDIDO,
+inside/outside, originais, amostra/validação e o forward comum realmente medido.
+A tabela lexical/gramática/modelo/tokenizer são serviço já carregado, com seus
+startups registrados separadamente. cold_total nos dados acrescenta APENAS
+startup da tabela/gramática, não todo carregamento de modelo/tokenizer nem
+construção do mapa de bytes. Não usar esse campo para alegar latência de um
+processo inteiramente frio. Empacotamento/auditoria de matrizes não é timing.
+Novidade teórica e superioridade de geração/EPIC/qualidade não foram confirmadas.
