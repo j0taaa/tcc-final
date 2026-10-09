@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "base_protocol": "protocol.json",
+  "reason": "Audit the grammar normalizer derivative, which is constant in the original binary-array fixtures",
+  "gradient": {
+    "languages": ["all_binary_arrays", "binary_arrays_with_at_least_one_1"],
+    "other_parameters": "unchanged; all cases are correctness oracles, not application benchmarks"
+  },
+  "replay": "unchanged; no timing has been run or selected before this addendum"
+}
