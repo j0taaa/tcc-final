@@ -76,6 +76,44 @@ class PlLatentOracleTests(unittest.TestCase):
                 )
                 self.assertGreaterEqual(normalizer, optimum_lower)
 
+    def test_confidence_normalizer_prime_divisors_do_not_cancel(self):
+        # Finite algebra check of the new bit-cost corollary, not an
+        # experimental scaling benchmark or verification of Dusart's theorem.
+        for m in range(2, 7):
+            plan, data = audit.fixture(m + 1)
+            free = tuple(i for i, t in enumerate(data.state.canvas) if t is None)
+            c = 1 << m
+            q = list(data.probabilities)
+            q[free[0]] = (Q(1, 2), Q(1, 2))
+            for j, i in enumerate(free[1:]):
+                q[i] = (Q(c - (1 << j), 2 * c), Q(c + (1 << j), 2 * c))
+            q = tuple(q)
+            p = reference.Problem(plan, q, q, (free[0],), {free[0]: 3})
+            changed = audit.ProbabilityInput(data.state, q)
+            direct = sum(
+                (
+                    w * audit.direct_pl(y, p.order, p.free, q, p.indices)
+                    for y, w in audit.enumerated_paths(changed).items()
+                    if y[free[0]] == 3
+                ),
+                Q(),
+            )
+            closed = sum(
+                (
+                    Q(
+                        math.prod(c + (1 if b & (1 << i) else -1) * (1 << i) for i in range(m)),
+                        m * c + 1 + 2 * b,
+                    )
+                    for b in range(c)
+                ),
+                Q(),
+            )
+            closed /= 4 * (2 * c) ** (m - 1)
+            self.assertEqual(direct, closed)
+            for prime in range(m * c + 1, (m + 2) * c):
+                if all(prime % d for d in range(2, math.isqrt(prime) + 1)):
+                    self.assertEqual(closed.denominator % prime, 0)
+
     def test_conditional_sampler_laws_and_token_aliases(self):
         for dyadic, tight, coefficients in (
             (False, False, False),
