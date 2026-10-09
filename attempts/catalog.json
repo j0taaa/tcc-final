@@ -625,6 +625,24 @@
           ]
         }
       ]
+    },
+    {
+      "id": "21-contextual-token-groups",
+      "title": "Grupos sobrepostos conforme o estado lexical expl\u00edcito",
+      "conclusion": "Hip\u00f3tese preregistrada; consultas/compromissos originais e 216 trajet\u00f3rias de or\u00e1culos validados. Benef\u00edcio completo pendente.",
+      "reading": "attempts/21-contextual-token-groups/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "5a3f4394790babc519429559e642014f5135f233",
+          "evidence_commit": "5a3f4394790babc519429559e642014f5135f233",
+          "evidence_roots": [
+            "attempts/21-contextual-token-groups/work/evidence",
+            "attempts/21-contextual-token-groups/work/contextual-specification.md",
+            "attempts/21-contextual-token-groups/work/protocol.json"
+          ]
+        }
+      ]
     }
   ]
 }
