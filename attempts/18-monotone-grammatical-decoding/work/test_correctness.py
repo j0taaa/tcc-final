@@ -7,8 +7,9 @@ import unittest
 
 from grammar_selectors import CachedPrefix, Recompute, witness
 from monotone import Monotone
-from native_queries import NativeLex, NativePrefix
+from native_queries import NativeCountWarm, NativeLex, NativePrefix
 from relevant_forest import relevant_forest
+from shared_fastpath import complete_point, keep_engine
 
 from mwpc_exact.backend import ExactBackend
 from mwpc_exact.cfg_posterior import _binarize_source, compile_cfg_sampler
@@ -72,6 +73,47 @@ def oracle(valid, canvas, proposals, threshold, cap):
 
 
 class Correctness(unittest.TestCase):
+    def test_complete_point_and_engine_reuse(self):
+        plan, valid = setup(
+            (b"[", b"[]", b"]", b"0", b"00", b"0]", b" ", b"0"),
+            ((0, 1), (0, 1, 2, 3, 4, 7), (1, 2, 3, 5, 6, 7)),
+        )
+        for y in itertools.product(*plan.state.support.rows):
+            proposals = [(p, t, 0.9) for p, t in enumerate(y)]
+            point = complete_point(
+                [None] * 3,
+                plan.state.support.rows,
+                plan.state.tokenizer_adapter,
+                proposals,
+                threshold=0.8,
+                cap=1,
+            )
+            self.assertEqual(point is not None, y in valid)
+            if point is None:
+                continue
+            updates, witness = point
+            self.assertEqual(updates, oracle(valid, [None] * 3, proposals, 0.8, 1))
+            engines = [
+                Monotone(plan),
+                CachedPrefix(plan),
+                NativeLex(plan.state, backend=ExactBackend.PYTHON, compressed=True),
+                NativePrefix(plan.state, backend=ExactBackend.PYTHON, compressed=True),
+                NativeCountWarm(plan.state, backend=ExactBackend.PYTHON, compressed=True),
+            ]
+            for engine in engines:
+                keep_engine(engine, updates, witness)
+                canvas = [y[0], None, None]
+                while None in canvas:
+                    candidates = [
+                        (p, min(row), 0.1)
+                        for p, row in enumerate(plan.state.support.rows)
+                        if canvas[p] is None
+                    ]
+                    expected = oracle(valid, canvas, candidates, 0.8, 1)
+                    self.assertEqual(engine.transition(candidates, threshold=0.8, cap=1), expected)
+                    for p, t in expected:
+                        canvas[p] = t
+
     def test_native_json_trajectories(self):
         plan, valid = setup(
             (b"[", b"[]", b"]", b"0", b"00", b"0]", b" ", b"0"),
@@ -95,7 +137,11 @@ class Correctness(unittest.TestCase):
                     lambda s, **kw: NativePrefix(s, lazy=True, **kw),
                 )
             ]
+            engines.append(
+                NativeCountWarm(plan.state, backend=ExactBackend.PYTHON, compressed=True)
+            )
             canvas = [None] * 3
+            steps = 0
             while None in canvas:
                 proposals = [
                     (p, rng.choice(row), rng.choice((0.1, 0.8, 0.9)))
@@ -115,6 +161,8 @@ class Correctness(unittest.TestCase):
                     )
                 for p, token in expected:
                     canvas[p] = token
+                steps += 1
+                self.assertEqual(engines[3].calls, steps)
 
     def test_native_dyadic_priorities(self):
         plan, _ = setup((b"[", b"0", b"1", b"]"), ((0,), (1, 2), (3,)))

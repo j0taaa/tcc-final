@@ -86,6 +86,14 @@ parcial exatamente igual ao sort completo em TODOS os métodos. Os critérios
 1/2/3/4/5/6/7/8 permanecem válidos: preservar a política, matemática delimitada,
 controles fortes, custos completos e nenhuma prioridade/publicação inventada.
 
+O mesmo refinamento inclui em TODOS os métodos o teste barato da conclusão
+top1 completa e preparação tardia da estrutura: se ela já é JSON válido,
+as decisões do guloso são conhecidas sem parsing. Inclui o controle nativo
+`rust_count_warm`: maximiza o número de propostas casadas para obter uma
+testemunha e depois executa o mesmo guloso. A soma não decide commits.
+Reavalia os critérios 3/6/7: atalhos e testemunhas boas devem beneficiar
+também o concorrente. Dez métodos, mesmos casos e custos; ganho não medido.
+
 ## Contrato e oito critérios
 
 1. **Uso:** completar lacunas de documentos JSON com uma dLLM, preservando

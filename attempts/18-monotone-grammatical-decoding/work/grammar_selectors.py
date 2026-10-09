@@ -61,6 +61,15 @@ class Recompute:
         self.calls += 1
         return witness(self.plan, canvas, proposals)
 
+    def canonical(self):
+        p = self.canvas.index(None)
+        current = self.solve(
+            self.canvas, [(p, t, 1.0) for t in sorted(self.plan.state.support.rows[p])]
+        )
+        if current is None:
+            raise ValueError("infeasible_on_support")
+        return p, current[p]
+
     def transition(self, proposals, *, threshold=0.8, cap=None):
         validate_order(proposals)
         if cap is None:
@@ -104,13 +113,8 @@ class Recompute:
             else:
                 # Canonical fallback specified for ALL compared methods. This
                 # differs from the archived M24 arbitrary-witness fallback.
-                p = self.canvas.index(None)
-                for token in sorted(self.plan.state.support.rows[p]):
-                    trial = list(self.canvas)
-                    trial[p] = token
-                    if self.solve(trial) is not None:
-                        updates[p] = token
-                        break
+                p, token = self.canonical()
+                updates[p] = token
         if not updates:
             raise RuntimeError("no progress despite feasible forest")
         for p, token in updates.items():
@@ -159,9 +163,6 @@ class CachedPrefix(Recompute):
             if self.canvas[p] is None and self.try_token(p, token):
                 self.fix(p, token)
                 return ((p, token),)
-        p = self.canvas.index(None)
-        for token in sorted(self.plan.state.support.rows[p]):
-            if self.try_token(p, token):
-                self.fix(p, token)
-                return ((p, token),)
-        raise RuntimeError("no progress despite feasible forest")
+        p, token = self.canonical()
+        self.fix(p, token)
+        return ((p, token),)

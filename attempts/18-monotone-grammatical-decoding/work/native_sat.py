@@ -51,7 +51,7 @@ class SatPrefix(CachedPrefix):
             self.solver.delete()
             raise ValueError("infeasible_on_support")
 
-    def solve(self, canvas, proposals=()):
+    def solve(self, canvas, proposals=(), prefix=None):
         self.calls += 1
         assumptions = []
         for p, token in enumerate(canvas):
@@ -60,6 +60,11 @@ class SatPrefix(CachedPrefix):
                 if variable is None:
                     return None
                 assumptions.append(variable)
+        if prefix is not None:
+            p, limit = prefix
+            assumptions += [
+                -self.variables[p, t] for t in self.plan.state.support.rows[p] if t > limit
+            ]
         if not self.solver.solve(assumptions=assumptions):
             return None
         model = {lit for lit in self.solver.get_model() if lit > 0}
@@ -71,6 +76,20 @@ class SatPrefix(CachedPrefix):
     def fix(self, position, token):
         self.canvas[position] = token
         self.solver.add_clause([self.variables[position, token]])
+
+    def canonical(self):
+        p = self.canvas.index(None)
+        row = self.plan.state.support.rows[p]
+        lo, hi = 0, row.index(self.current[p])
+        while lo < hi:
+            mid = (lo + hi) // 2
+            current = self.solve(self.canvas, prefix=(p, row[mid]))
+            if current is None:
+                lo = mid + 1
+            else:
+                self.current = current
+                hi = row.index(current[p])
+        return p, row[lo]
 
     def close(self):
         self.solver.delete()

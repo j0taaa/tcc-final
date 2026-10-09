@@ -8,6 +8,7 @@ import os
 import platform
 import signal
 import subprocess
+from dataclasses import replace
 from pathlib import Path
 from random import Random
 from time import perf_counter, process_time
@@ -15,9 +16,10 @@ from time import perf_counter, process_time
 from enumeration import Enumeration
 from grammar_selectors import CachedPrefix, Recompute
 from monotone import Monotone
-from native_queries import NativeLex, NativePrefix
+from native_queries import NativeCountWarm, NativeLex, NativePrefix
 from native_sat import SatPrefix
 from relevant_forest import relevant_forest
+from shared_fastpath import complete_point, keep_engine, stable_topk
 
 from mwpc_exact.cfg_posterior import CompilationLimit, _binarize_source, compile_cfg_sampler
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
@@ -147,9 +149,7 @@ def run_case(
                 rows[p] = (
                     (token,)
                     if token is not None
-                    else tuple(
-                        sorted(probabilities[p].argsort(descending=True, stable=True)[:16].tolist())
-                    )
+                    else tuple(sorted(stable_topk(probabilities[p], 16)))
                 )
             support = build_per_position_support(
                 canvas=tuple(canvas),
@@ -167,40 +167,57 @@ def run_case(
         state = clock("support", state_from_top)
         result["support_rows"] = state.support.rows
         result["support_sha256"] = state.support.fingerprint
-        if method.startswith("rust_"):
-            native_kwargs = dict(compressed=compressed, grammar=native_grammar)
-            factories = {
-                "rust_lex": lambda s: NativeLex(s, **native_kwargs),
-                "rust_cached_prefix": lambda s: NativePrefix(s, **native_kwargs),
-                "rust_lazy_prefix": lambda s: NativePrefix(s, lazy=True, **native_kwargs),
-            }
-            engine = clock("prepare", lambda: factories[method](state))
-        elif method == "enumeration":
-            engine = clock("prepare", lambda: Enumeration(state))
-        else:
-            limits = protocol["measurement"]["compilation_limits"]
-            plan = clock(
-                "compile",
-                lambda: compile_cfg_sampler(
-                    source,
-                    state,
-                    timeout_seconds=limits["seconds"],
-                    max_chart_cells=limits["cells"],
-                    max_alternatives=limits["alternatives"],
-                ),
+
+        def prepare_engine():
+            nonlocal engine
+            current_canvas = tuple(canvas)
+            rows = tuple(
+                (t,) if t is not None else row
+                for t, row in zip(canvas, state.support.rows, strict=True)
             )
-            result["raw_forest"] = dict(nodes=len(plan.terms), alternatives=plan.alternatives)
-            if trim:
-                plan = clock("root_pruning", lambda: relevant_forest(plan))
-            result["forest"] = dict(nodes=len(plan.terms), alternatives=plan.alternatives)
-            factories = {
-                "monotone": Monotone,
-                "greedy_witness": Recompute,
-                "lex_integer": lambda p: Recompute(p, lex=True),
-                "greedy_cached_prefix": CachedPrefix,
-                "sat_cached_prefix": SatPrefix,
-            }
-            engine = clock("prepare", lambda: factories[method](plan))
+            restricted = replace(
+                state.support,
+                canvas=current_canvas,
+                rows=rows,
+                permitted_token_ids=tuple(sorted({t for row in rows for t in row})),
+            )
+            current_state = replace(state, canvas=current_canvas, support=restricted)
+            if method.startswith("rust_"):
+                native_kwargs = dict(compressed=compressed, grammar=native_grammar)
+                factories = {
+                    "rust_lex": lambda s: NativeLex(s, **native_kwargs),
+                    "rust_cached_prefix": lambda s: NativePrefix(s, **native_kwargs),
+                    "rust_lazy_prefix": lambda s: NativePrefix(s, lazy=True, **native_kwargs),
+                    "rust_count_warm": lambda s: NativeCountWarm(s, **native_kwargs),
+                }
+                engine = clock("prepare", lambda: factories[method](current_state))
+            elif method == "enumeration":
+                engine = clock("prepare", lambda: Enumeration(current_state))
+            else:
+                limits = protocol["measurement"]["compilation_limits"]
+                plan = clock(
+                    "compile",
+                    lambda: compile_cfg_sampler(
+                        source,
+                        current_state,
+                        timeout_seconds=limits["seconds"],
+                        max_chart_cells=limits["cells"],
+                        max_alternatives=limits["alternatives"],
+                    ),
+                )
+                result["raw_forest"] = dict(nodes=len(plan.terms), alternatives=plan.alternatives)
+                if trim:
+                    plan = clock("root_pruning", lambda: relevant_forest(plan))
+                result["forest"] = dict(nodes=len(plan.terms), alternatives=plan.alternatives)
+                factories = {
+                    "monotone": Monotone,
+                    "greedy_witness": Recompute,
+                    "lex_integer": lambda p: Recompute(p, lex=True),
+                    "greedy_cached_prefix": CachedPrefix,
+                    "sat_cached_prefix": SatPrefix,
+                }
+                engine = clock("prepare", lambda: factories[method](plan))
+
         for step in range(protocol["operation"]["max_forwards"]):
             if step:
                 logits = clock("forward", forward)
@@ -216,14 +233,36 @@ def run_case(
                 return sorted(proposals, key=lambda p: (-p[2], p[0], p[1]))
 
             proposals = clock("proposals", propose)
-            updates = clock(
-                "select",
-                lambda candidates=proposals: engine.transition(
+            point = clock(
+                "fastpath",
+                lambda candidates=proposals: complete_point(
+                    canvas,
+                    state.support.rows,
+                    adapter,
                     candidates,
                     threshold=protocol["operation"]["threshold"],
                     cap=protocol["operation"]["commit_cap"],
                 ),
             )
+            if point is not None:
+                updates, witness = point
+                result["fastpath_steps"] = result.get("fastpath_steps", 0) + 1
+                if engine is not None:
+                    clock(
+                        "select",
+                        lambda changes=updates, word=witness: keep_engine(engine, changes, word),
+                    )
+            else:
+                if engine is None:
+                    prepare_engine()
+                updates = clock(
+                    "select",
+                    lambda candidates=proposals: engine.transition(
+                        candidates,
+                        threshold=protocol["operation"]["threshold"],
+                        cap=protocol["operation"]["commit_cap"],
+                    ),
+                )
             before = list(canvas)
 
             def apply(changes=updates):
@@ -325,6 +364,8 @@ def main():
             raise ValueError("expected one pinned native parser binding")
         binding = dict(filename=binaries[0].name, sha256=digest(binaries[0].read_bytes()))
         protocol["methods"] += ["rust_lex", "rust_cached_prefix", "rust_lazy_prefix"]
+        if args.compressed:
+            protocol["methods"].append("rust_count_warm")
     config = json.loads((ROOT / protocol["model_config"]).read_text())
     torch.set_num_threads(config["torch_cpu_threads"])
     torch.set_flush_denormal(False)
@@ -368,6 +409,7 @@ def main():
         phase=args.phase,
         methods=protocol["methods"],
         native_binding=binding,
+        shared_work_addendum_sha256=digest((WORK / "shared-work-addendum.json").read_bytes()),
         native_compression=args.compressed,
         native_grammar_sha256=digest(json.dumps(native_grammar.to_dict(), sort_keys=True).encode())
         if native_grammar is not None

@@ -35,7 +35,7 @@ def analyze(folder, candidate="monotone"):
             raise ValueError("duplicate timing record")
         grouped[key][row["method"]] = row
         configurations[row["case"], row["mask_count"]].setdefault(row["method"], []).append(row)
-        if row["status"] == "complete" and row["method"] == "monotone":
+        if row["status"] == "complete" and row["method"] == "monotone" and "propagation" in row:
             if any(v > row["forest"]["alternatives"] for v in row["propagation"].values()):
                 raise ValueError("monotonic operation count exceeded forest alternatives")
     equality_checks = 0

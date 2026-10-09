@@ -86,6 +86,19 @@ incremental alternative; classical foundations are not recast as inventions.
   evidence, not timings or novelty. `make test` previously passed41 checks and
   `make check` upstream/lint/types/archive integrity; the compressed refinements
   still need full-generation measurement. No new Lean claim.
+  **Compressed initial development also rejected:** 486 GPU rows,375 exact
+  comparisons,zero wins; source/evidence frozen separately, no CPU/held-out
+  expansion of that version. `shared-work-addendum.json` preregisters neutral
+  graph reuse, dominated canonical fallback, equally improved controls, exact
+  partial top16 and a common complete-word fastpath/lazy engine preparation.
+  Six offline tests pass, including state reuse after direct commits and exactly
+  one native lex query per ordinary transition. Native/SAT/full-sort audits are
+  correctness checks before timing, not practical superiority or new theory.
+  Count-warm native greedy is also included before measurement: maximizing
+  proposal matches supplies a witness, not commitments; it then runs the same
+  observable policy. Zero free matches certify canonical fallback directly.
+  All ten controls receive the same fastpath/partial selection; complete costs
+  and original cases remain. No practical advantage claimed yet.
 
 ## M38 — Align standing instructions with the current scientific objective
 

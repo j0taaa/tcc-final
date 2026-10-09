@@ -75,6 +75,37 @@ contra esses controles com o mesmo kernel e informação.
 
 ## Lema 2 — prefixo observável
 
+Fallback conjunto: seja p o primeiro slot livre, d=|D_p|,
+b=ceil(log2(d)) e r(t)=d-1-index_ordenado(t). Maximizar
+2^b L(y)+r(y_p) preserva todo vetor primário, pois r<=2^b-1.
+Se nenhuma proposta livre é aceita, todos os bits livres são zero sobre F
+(bits de posições fixadas são constantes); então o mesmo testemunho contém
+o menor token viável no slot p. Logo uma única consulta nativa resolve também
+esse fallback, sem testar cada token. Exigir m+b<=1075 no transporte atual.
+É um desempate lexicográfico clássico, delimitado à política especificada.
+
+Controles usam a mesma informação: uma consulta gramatical ponderada obtém
+o menor token de um slot; SAT pesquisa prefixos de domínio por bisseção.
+No guloso nativo, uma consulta sem propostas também calcula esse mínimo.
+Se seu slot permanece livre e o testemunho continua válido após contrações,
+ele continua mínimo: restringir F não pode criar um valor menor antes ausente.
+Se o slot muda ou o testemunho foi substituído, invalide esse certificado e
+recalcule. Nenhuma propriedade de mínimo é inferida de uma consulta que falhou.
+
+Atalho comum: se as propostas cobrem exatamente os slots livres e seu
+completamento concreto pertence a F, o guloso aceita todas, em qualquer ordem.
+O filtro/cap/fallback é conhecido diretamente. Aplique isso igualmente a todos
+os métodos e prepare seus engines apenas no primeiro passo em que for preciso.
+Atualize estruturas já preparadas com somente os commits observáveis, e
+substitua/invalide testemunhos e certificados de mínimo conforme necessário.
+O checker linear JSON é válido apenas para a gramática JSON aqui declarada.
+
+Top-K parcial: seja c o k-ésimo maior valor, H os IDs com valor>c, E os IDs
+com valor=c. Sempre |H|<k<=|H|+|E|. H junto aos k-|H| menores IDs de E,
+ordenados por (-valor,ID), é exatamente o prefixo do sort estável completo.
+O custo é O(V+k log k) com seleção linear, em vez de ordenar V itens.
+Isso beneficia TODOS os métodos; não alterar probabilidades ou suporte.
+
 As propostas acima de theta formam um prefixo da ordem. Uma decisão gulosa
 depende apenas de anteriores aceitas, nunca de posteriores. Logo, quando há
 uma aceitação elegível, basta visitar o prefixo até atingir c slots distintos
@@ -166,3 +197,16 @@ objetivo MWPC ou mudar a distribuição. Custo completo é compilação+contador
 sum_t(forward+suporte/ordenação+seleção+update)+saída. Medir esse custo é necessário
 para estabelecer utilidade física. Top-K dinâmico, crescimento do vocabulário,
 gramática nova e remasking invalidam a hipótese e precisam de outra preparação.
+
+## Controle de testemunha por contagem
+
+Maximizar C(y), o número de propostas casadas, não reproduz em geral o
+guloso lexicográfico. Use o testemunho apenas como cache e execute depois
+a política gulosa. Reutilizar tokens desse testemunho evita consultas sem
+alterar decisões: se ele contém uma proposta, ela tem completamento válido.
+Se o máximo não casa nenhuma proposta de slot livre, nenhuma delas é
+individualmente viável; contribuições de slots fixados são constantes.
+Então 2^b C(y)+r(y_p) fornece o fallback canônico diretamente. Caso
+contrário, a propriedade de mínimo global não pode ser inferida desse
+testemunho e seu certificado é invalidado. Mesmo grafo/kernel/verificador
+do lexicográfico, custo integral; nenhuma promessa de vantagem em geral.
