@@ -21,10 +21,15 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   decoder de produção nem um modelo dJev treinado.
 - As tentativas 15/16 foram rejeitadas pelo usuário como protagonistas. A
   tentativa 17 audita reamostragem latente após seleção Plackett–Luce: há
-  referência racional, oráculos e provas escritas delimitadas, sem treinamento
-  neural ou prioridade confirmada. Réplicas correlacionadas por variáveis
+  referência racional, oráculos e provas escritas delimitadas. Um estudo externo
+  executou forwards e gradientes da cabeça real de MDLM, com backbone congelado;
+  não houve atualização de parâmetros, treinamento completo ou prioridade
+  confirmada. Réplicas correlacionadas por variáveis
   auxiliares também precisam ser consideradas na aplicação de redução de
-  variância; réplicas independentes não são automaticamente necessárias.
+  variância; réplicas independentes não são automaticamente necessárias. MH
+  estacionário foi implementado e medido; a alternativa contínua de Gibbs
+  permanece apenas derivada. Nos 12 casos neurais pequenos, enumeração com
+  média condicional venceu inclusive o piso de sobrecusto zero dos samplers iid.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

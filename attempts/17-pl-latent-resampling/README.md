@@ -102,5 +102,5 @@ make test
 
 Os caminhos de saída devem ser novos: os scripts recusam sobrescrever resultados.
 O replay exige árvore Git limpa e registra o commit produtor. Os snapshots
-conservam cinco versões independentes do código/evidência; extraia `source.zip`
+conservam 13 versões independentes do código/evidência; extraia `source.zip`
 e `evidence.zip` numa pasta isolada. Nenhum resultado antigo foi substituído.

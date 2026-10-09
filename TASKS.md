@@ -184,6 +184,21 @@ Use one notebook: `docs/research/contribution-plan.md`.
   an observed coefficient-denominator bottleneck without changing the target.
   Strengthen the control equally. Do not call a query speedup, logit-only
   variance reduction, or a task list a completed neural benefit evaluation.
+  **Completed evidence, not final decision:** immutable v6–v13 preserve the
+  full-dyadic oracle/replay, all initial and failed neural harnesses, cached
+  controls, complete 4096-draw campaigns and the forced-decision prototype.
+  The final neural campaign has 4,044 completed timing records, nine estimators,
+  six independently selected documents and 12 gradient configurations. An
+  independent offline geometry check agrees to relative error below 3.2e-14.
+  Exact conditional means win all 12 cases in all four cost scopes, even against
+  the zero-extra-cost lower bound for an estimator using one iid replica.
+  Source/evidence and this decision are preserved in
+  `work/evidence/utility/neural-utility-v4/` and
+  `work/evidence/utility/neural-iid-cost-floor-decision.json`.
+  No optimizer update or final-generation improvement is claimed. The remaining
+  all-input bulk comparison includes compact indexed profiles so that inefficient
+  rational labels cannot manufacture a win for the mixture. Older losses,
+  interrupted runs and timeouts remain in the record.
 
 - [x] T3600: Record the stable base, precise candidate contract and one
   recursive structured-generation application (plan 1, 2, 4).
