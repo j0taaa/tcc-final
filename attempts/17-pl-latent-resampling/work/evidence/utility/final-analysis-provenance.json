@@ -1,0 +1,19 @@
+{
+  "producer_code": {
+    "attempts/17-pl-latent-resampling/work/utility_report.py": "87eae05632a73a3043ad4f03cdf3a165026174960130a7058e77a9be9f679320",
+    "attempts/17-pl-latent-resampling/work/utility-report.md.in": "10c8fb245e9bed7c4b367cff37feea1eb0d8e9da01cb6f7ca9619cdf6f33014f"
+  },
+  "commands": [
+    "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/utility_report.py --neural .cache/pl-neural-utility-v4 --bulk .cache/pl-bulk-final-combined --geometry .cache/pl-neural-v4-independent-geometry.json --json .cache/pl-final-utility-decision.json --markdown .cache/pl-final-utility-decision.md",
+    "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/utility_report.py --neural .cache/pl-neural-utility-v4 --bulk .cache/pl-bulk-final-combined --geometry .cache/pl-neural-v4-independent-geometry.json --prefix-1024 --json .cache/pl-final-prefix-decision.json --markdown .cache/pl-final-prefix-decision.md"
+  ],
+  "scope": "Complete thirteen-control grid, same events/seeds across sequential campaigns; no optimizer update",
+  "files": {
+    "final-utility-decision.json": "1ab283c5bd0d30430fdf9038702fa26862c0de0df51580ad9f6940efdeb78e44",
+    "final-utility-decision.md": "60de9ddaf86b8b24106e074ce4a318671a7e362b8dc79d86b1761f6b98b70c05",
+    "final-prefix-decision.json": "0de7bb2da54a1cd26f2b90addd8ba060cb37585c401c345cd16dc5b2e22c07e1",
+    "final-prefix-decision.md": "5df9f535d30938f41b9ed5a9119ade8541f32f59e22252922ac117fc93332520"
+  },
+  "packaging_commit_at_provenance": "73f86c50588b6ce365dc355c8236c7468eff49e1",
+  "analysis_source_commit": "f0f8322566d0c50c4ac0f7a988fd0fcf509b7aaa"
+}

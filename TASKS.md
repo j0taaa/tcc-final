@@ -178,9 +178,9 @@ Use one notebook: `docs/research/contribution-plan.md`.
   reconstructs all nine original JSON inputs with archive hashes checked.
   CI for assessment commit `162d4001244900038ab1da3abede4317907609ba` passed.
 
-- [ ] T3614: Decide useful benefit of PL latent conditioning, including total
+- [x] T3614: Decide useful benefit of PL latent conditioning, including total
   training cost and the stationary auxiliary-variable alternative.
-  **In progress:** preserve v1–v5; the full-dyadic refinement protocol targets
+  **Historical refinement:** preserve v1–v5; the full-dyadic refinement protocol targets
   an observed coefficient-denominator bottleneck without changing the target.
   Strengthen the control equally. Do not call a query speedup, logit-only
   variance reduction, or a task list a completed neural benefit evaluation.
@@ -199,6 +199,26 @@ Use one notebook: `docs/research/contribution-plan.md`.
   all-input bulk comparison includes compact indexed profiles so that inefficient
   rational labels cannot manufacture a win for the mixture. Older losses,
   interrupted runs and timeouts remain in the record.
+  **Decision completed:** `work/usefulness-decision.md` separates adoption,
+  mathematics and priority. The final generated reports include all 48 events,
+  13 methods/configurations, 1,872 queries and 6,215,868 accepted draws. Mixture
+  has the predeclared >=20% CPU/wall advantage in 3/48 warm events and 2/48 cold
+  events; the 1024 prefix has none. For json-context0-16/power1/k8, cold medians
+  are 11.08s versus 23.82s for strengthened SingleTilt. Larger-resource profiles
+  also fail their preparation deadline in that event; the win is not based only
+  on the former 1M/3M representation caps. All nine inputs, failures and losses
+  are retained. Sequential timing comparisons are descriptive, not a universal
+  speed guarantee. Stream checks preserve 321 and 342 complete query laws.
+  **Training boundary:** all 4,044 final neural records completed; exact
+  conditional enumeration wins 12/12 cases, even versus zero-overhead iid
+  resampling. The head-gradient operation includes forward/backward costs;
+  optimizer updates, full-model training and final-document gains were not
+  demonstrated. Those broader claims are rejected rather than marked complete.
+  Proofs are written, not new Lean certificates. T3602/T3603 remain open.
+  **Reproduce:** `utility_report.py` with final neural captures, combined bulk
+  and independent geometry, plus `--prefix-1024`; exact commands and hashes in
+  `work/evidence/utility/final-analysis-provenance.json`. The optional neural
+  rerun uses the pinned public checkpoint; offline capture checks need no model.
 
 - [x] T3600: Record the stable base, precise candidate contract and one
   recursive structured-generation application (plan 1, 2, 4).

@@ -1309,3 +1309,43 @@ uma separação contra classe explícita não demonstram novidade, redução de
 custo vezes variância em treinamento ou melhor geração. O artigo principal
 não foi substituído por promessas dessa tentativa; tampouco houve revisão
 humana ou nova prova Lean. Todos esses limites ficam explícitos no relatório.
+
+## 19. Decisão de utilidade encerrada em 2026-10-09
+
+A [decisão](../../attempts/17-pl-latent-resampling/work/usefulness-decision.md)
+separa benefício operacional e cumprimento do requisito de novidade. Não é
+apenas um plano: foram executados os forwards, gradientes da cabeça real e
+comparações de amostragem. Os seis documentos externos foram escolhidos por
+hash antes dos forwards; os 4044 registros finais completaram, com 12
+configurações e nove estimadores. A variância iid cai 8,75–40,06%, mas a média
+condicional por enumeração vence todos os casos, inclusive o piso de custo
+adicional zero dos samplers com uma réplica iid. Não houve treinamento por
+atualização de pesos, avaliação da GPU ou melhora de documentos finais.
+
+O [relatório completo](../../attempts/17-pl-latent-resampling/work/evidence/utility/final-utility-decision.md)
+mantém todos os nove inputs M34, 48 eventos, 13 métodos/configurações e três
+repetições. A mistura tem redução predeclarada de pelo menos 20% em CPU e parede
+em três eventos com circuito disponível, dois incluindo compilação. O
+[prefixo 1024](../../attempts/17-pl-latent-resampling/work/evidence/utility/final-prefix-decision.md)
+não tem tal ganho. Esses são replays de desenvolvimento com os mesmos inputs,
+não uma confirmação independente de generalização. No exemplo de 4096 draws,
+json-context0-16/potência1/k8, medianas frias são 11,08s contra 23,82s do
+SingleTilt fortalecido. Todos os controles recusados continuam inconclusivos.
+
+Não favorecer a mistura com representação ruim: os perfis receberam índices
+inteiros, três granulações e depois mais espaço, com proteção de RSS. Foram
+verificados 321 e 342 fluxos completos idênticos entre essas representações.
+Os controles com mais recursos esgotaram preparação nos eventos principais;
+essa vantagem não repousa apenas nos limites antigos de células/transições.
+As campanhas são sequenciais sob carga de desktop, com clocks de CPU e parede;
+não são prova de latência universal nem comparação do pico de memória de todos
+os algoritmos. As perdas, erros e a campanha interrompida ficam congelados.
+
+As provas escritas de condicionamento, separação contra qualquer produto único,
+obstrução de tamanho do normalizador e corolário de precisão delimitam a
+utilidade sem fazer a matemática depender do benchmark. Contadores/perfis e
+rejeição simples compartilham benefícios em subclasses; não se reivindica
+exclusividade. MH estacionário foi medido; Gibbs contínuo permanece só derivado.
+T3614 encerra essa decisão delimitada. T3602/T3603 continuam abertos quanto a
+anterioridade, significância para publicação e revisão humana real. O artigo
+principal e as estratégias mantidas não foram substituídos por promessas novas.

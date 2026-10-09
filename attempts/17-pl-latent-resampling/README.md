@@ -1,15 +1,19 @@
 # Reamostragem latente condicionada à seleção Plackett–Luce
 
-Iniciada em 2026-10-08 a pedido do usuário. Estado: auditoria independente;
-conquista científica completa ainda não confirmada. A nota recebida é preservada
+Iniciada em 2026-10-08 a pedido do usuário. Estado: auditoria técnica e decisão
+de uso concluídas; há vantagem delimitada em lote, descrita em
+[usefulness-decision.md](work/usefulness-decision.md).
+Conquista científica completa ainda não confirmada. A nota recebida é preservada
 em `work/received-note.md`; os programas citados nela não foram fornecidos.
 A implementação desta tentativa foi criada independentemente.
 O núcleo/contratos de produção permanecem como base de comparação.
 
 ## Oito critérios científicos
 
-1. **Uso:** reduzir ruído em gradientes on-policy ao adaptar uma dLLM para
-   JSON/DSL. Tokens propostos e descartados são latentes; os commitments e a
+1. **Uso:** obter muitas amostras condicionais para auditar a seleção PL de uma
+   dLLM sob JSON/DSL; estudar também redução de ruído em gradientes on-policy.
+   O benefício validado da mistura é a operação de lote, não melhor treinamento.
+   Tokens propostos e descartados são latentes; os commitments e a
    ordem PL são observados. A saída é uma amostra condicional de IDs originais,
    usada no score da política original. Não é aceleração do decoder final.
 2. **Significância:** candidato é o amostrador gramatical condicional com
@@ -24,6 +28,10 @@ O núcleo/contratos de produção permanecem como base de comparação.
    inclui perfis com três granulações e MH estacionário com moeda integrada.
    Só há vantagem por tempo se custo vezes variância diminuir; não basta vencer
    um rejeitador que use desnecessariamente o limite 1.
+   A decisão final recomenda enumeração nos 12 casos neurais pequenos. Para
+   lotes de 4096, a mistura passa o critério de 20% em 3/48 eventos com circuito
+   disponível, 2/48 incluindo compilação; no prefixo 1024, nenhum. As medianas
+   frias de um evento são 11,08 s versus 23,82 s do SingleTilt fortalecido.
 4. **Matemática:** auditar redução PL, cobertura, moedas racionais, custos e
    identidade de covariância. A identidade isolada é antecedente. A prova escrita
    `work/product-proposal-separation.md` estabelece uma separação assintótica
@@ -59,8 +67,9 @@ O núcleo/contratos de produção permanecem como base de comparação.
    implementado, testado por balanço detalhado e medido no estudo neural.
    Os [antecedentes adicionais](work/utility-antecedents.md) incluem Dyer:
    arredondamento com correção exata por rejeição é técnica estabelecida.
-8. **Artigo:** ainda faltam revisão independente, anterioridade suficiente,
-   vantagem de custo relevante e integração de treinamento. As verificações
+8. **Artigo:** há uma vantagem medida de lote, com limites explícitos. Ainda
+   faltam revisão independente, anterioridade suficiente e avaliação de
+   treinamento completo. As verificações
    aqui não serão apresentadas como treinamento, prioridade ou prova de Lean.
    A [obstrução em bits](work/normalizer-bit-obstruction.md) e o
    [corolário de auditoria](work/conditional-audit-corollary.md) delimitam um
@@ -83,7 +92,9 @@ importações das referências mutáveis das tentativas 15/16.
 
 ## Comandos e resultado
 
-O [relatório gerado](work/final-report.md), a
+O [relatório final de utilidade](work/evidence/utility/final-utility-decision.md),
+seu [prefixo 1024](work/evidence/utility/final-prefix-decision.md), o
+[relatório histórico](work/final-report.md), a
 [auditoria matemática](work/mathematical-review.md) e as
 [fronteiras da confirmação](work/assessment-boundaries.md) separam correção,
 tentativas esperadas, tempo de consulta, novidade e benefício neural.
@@ -104,5 +115,19 @@ make test
 
 Os caminhos de saída devem ser novos: os scripts recusam sobrescrever resultados.
 O replay exige árvore Git limpa e registra o commit produtor. Os snapshots
-conservam 13 versões independentes do código/evidência; extraia `source.zip`
+conservam 16 versões independentes do código/evidência; extraia `source.zip`
 e `evidence.zip` numa pasta isolada. Nenhum resultado antigo foi substituído.
+
+As versões v1–v5 conservam a auditoria inicial; v6–v10 conservam os primeiros
+estudos dyádicos, neurais e caches, incluindo erros/execução interrompida.
+v11 é o primeiro protótipo executável de envelope/perfis; v12 conserva a rodada
+fortalecida completa; v13 conserva o protótipo de decisões forçadas **sem uma
+nova campanha de tempos atribuída a ele**. v14 conserva o estudo neural final
+e sete controles; v15 os três perfis compactos; v16 a avaliação final com mais
+recursos e todos os relatórios/provas. Os produtores de cada fase estão nos
+metadados, pois um snapshot pode conservar evidências anteriores adicionais.
+
+O relatório novo é reproduzido offline com `utility_report.py`, capturas
+`work/evidence/utility/neural-utility-v4`, `bulk-final-combined` e
+`neural-v4-independent-geometry.json`. Os comandos exatos usados e os hashes
+dos produtores estão em `work/evidence/utility/final-analysis-provenance.json`.

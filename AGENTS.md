@@ -30,6 +30,13 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   estacionário foi implementado e medido; a alternativa contínua de Gibbs
   permanece apenas derivada. Nos 12 casos neurais pequenos, enumeração com
   média condicional venceu inclusive o piso de sobrecusto zero dos samplers iid.
+  A auditoria final de lote usa 13 métodos/configurações e todos os 48 eventos
+  originais: a mistura tem ganho predeclarado de pelo menos 20% em três eventos
+  com circuito disponível, dois incluindo compilação. O prefixo 1024 não tem
+  esse ganho. A decisão delimitada está em `work/usefulness-decision.md` da
+  tentativa 17; não é superioridade de geração sobre EPIC ou treinamento
+  completo. Controles tiveram mais recursos para evitar vitória por teto de
+  tabelas, e todos os resultados desfavoráveis foram preservados.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.
