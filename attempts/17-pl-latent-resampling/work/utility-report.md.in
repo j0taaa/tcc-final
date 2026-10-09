@@ -1,0 +1,35 @@
+# Decisão de utilidade: reamostragem latente PL
+
+Há benefício na redução de variância do gradiente, mas isso não estabelece que a mistura seja a melhor solução. Novidade e melhora da geração final não foram confirmadas.
+
+Os seis documentos externos foram selecionados por hash antes dos forwards, sem injetar gabarito. Nas 12 configurações, uma réplica iid reduz a variância da cabeça real entre $min_reduction% e $max_reduction%. A razão custo x variância contra o original, usando o piso forte de custo neural, fica entre $min_ratio e $max_ratio nas medianas de três repetições; abaixo de 1 favorece reamostrar.
+
+A enumeração com média condicional exata é a melhor dessas alternativas em $rb_best/12 configurações. Ela é um controle competente: o alvo por evento tem poucas alternativas. A mistura não deve ser escolhida aí só porque a sua correção é mais geral.
+
+A geometria foi recalculada offline por outro programa nos 12 casos. O erro máximo na checagem de norma contra autograd é $norm_error; o da derivada contra diferenças finitas é $derivative_error. São testes numéricos de uma cabeça de aproximadamente 38,6 milhões de pesos/bias, não de todo o modelo nem uma curva de aprendizado.
+
+## Custo e variância por configuração
+
+$table
+
+## Posterior auditado em lote
+
+A campanha contém todos os nove inputs originais: oito compilam, gerando 48 eventos x quatro métodos x três repetições. Foram registrados $accepted draws aceitos e $complete/576 consultas completas de $batch_size draws; a compilação recusada permanece inconclusiva. A mistura vence todos os controles concluídos em tempo de parede e CPU em $wins/48 eventos pelas medianas. Pequenas diferenças na máquina compartilhada não provam superioridade robusta.
+
+$statuses
+
+Eventos que satisfazem a comparação de medianas; os valores por repetição mostram a estabilidade, não são um intervalo de confiança:
+
+$winner_details
+
+## O que se pode afirmar
+
+A operação é útil para estimar gradientes/estatísticas condicionais mantendo a política do passo. A identidade de covariância prova a redução de variância para a distribuição especificada; o experimento externo mostra essa redução em parâmetros reais e contabiliza custos. Isso não prova melhor acerto, velocidade de inferência ou convergência de um modelo treinado.
+
+A contribuição candidata específica da mistura continua a garantia de condicionamento iid com custo esperado polinomial em um circuito racional, e a separação escrita contra qualquer proposta produto única. O [corolário de auditoria](conditional-audit-corollary.md) explica um uso sem a proposta descartada original e uma garantia de precisão. Não é superioridade sobre todos os algoritmos: agregação de somas, enumeração e MCMC com hipóteses adequadas continuam alternativas.
+
+O controle MH estacionário, incluindo a moeda integrada, preserva a média e reduz variância sem exigir réplicas independentes. É clássico; não foi rebatizado como novidade. A alternativa exponencial de Caron-Doucet foi derivada, mas sua versão contínua exata não foi implementada: MH fornece o controle racional executável, sem inventar tempos para Gibbs.
+
+Os tempos foram medidos sob carga concorrente, com clocks de processo e três repetições. O JSON publica também custos frios/reutilizados, CPU, recusas e amplitudes; não há intervalo de confiança de convergência ou promessa de 100% de ganho físico. Recursos recusados e a campanha bulk v1 interrompida estão preservados. Os contadores de tentativas de consultas interrompidas cobrem somente os draws aceitos registrados; o custo de todo o trabalho perdido entra no tempo medido.
+
+EPIC é um decoder e não resolve esta operação de posterior PL/gradiente. Este relatório não anuncia superioridade sobre EPIC. A pesquisa de prioridade e a revisão humana permanecem pendentes; resultados positivos de gradiente não encerram o requisito de novidade para publicação.

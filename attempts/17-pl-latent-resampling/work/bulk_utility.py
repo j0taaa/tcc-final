@@ -35,11 +35,14 @@ WORK = Path(__file__).resolve().parent
 ROOT = WORK.parents[2]
 
 
-def run(output):
+def run(output, batch_size=1024):
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source and protocol before measuring")
     protocol_path = WORK / "bulk-utility-protocol.json"
     config = json.loads(protocol_path.read_text())
+    addendum = WORK / "bulk-precision-addendum.json"
+    if batch_size == 4096:
+        config.update(json.loads(addendum.read_text()))
     native = json.loads((WORK / "protocol.json").read_text())
     runs, inputs, manifest = load_inputs()
     methods = [
@@ -62,6 +65,10 @@ def run(output):
                 ).strip(),
                 protocol_sha256=hashlib.sha256(protocol_path.read_bytes()).hexdigest(),
                 source_inputs=manifest["files"],
+                batch_size=batch_size,
+                precision_addendum_sha256=hashlib.sha256(addendum.read_bytes()).hexdigest()
+                if batch_size == 4096
+                else None,
                 load=Path("/proc/loadavg").read_text().strip(),
             ),
             indent=2,
@@ -192,4 +199,6 @@ def run(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    run(parser.parse_args().output)
+    parser.add_argument("--batch-size", type=int, choices=(1024, 4096), default=1024)
+    args = parser.parse_args()
+    run(args.output, args.batch_size)

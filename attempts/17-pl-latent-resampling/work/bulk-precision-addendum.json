@@ -1,0 +1,10 @@
+{
+  "base": "bulk-utility-protocol.json",
+  "reason": "Cache strengthening erased the apparent 1024-draw advantage in the early paired event. Test amortization across the complete declared grid, not only that event. This is transparent development, not a fresh held-out confirmation.",
+  "accepted_batch_size": 4096,
+  "application_precision": "For one predeclared [0,1] statistic, iid Hoeffding half-width sqrt(log(80)/(2*4096)) <0.0232 at delta=0.025; with the theoretical proposal-count refusal <=0.025 the combined guarantee is >=0.95. Timed/censored experimental output is not given that confidence certificate.",
+  "cases_methods_seeds_repetitions": "All original nine inputs/48 events, all four controls and all three repetitions, unchanged. Publish 1024 losses alongside this campaign.",
+  "preparation_deadline_seconds": 30,
+  "sampling_deadline_seconds": 60,
+  "boundaries": "No universal training benefit; a useful posterior audit at this precision needs many conditional samples. If initialization is available, correlated MCMC remains an alternative. Exact iid versus exact iid is the timed operation. Novelty/EPIC-quality/publication claims remain excluded."
+}
