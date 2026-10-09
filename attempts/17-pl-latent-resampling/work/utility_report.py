@@ -115,10 +115,14 @@ def neural(folder):
     )
 
 
-def bulk(folder):
+def bulk(folder, prefix=False):
     rows = read_rows(folder)
     metadata = json.loads((folder / "metadata.json").read_text())
     batch_size = metadata.get("batch_size", 1024)
+    if prefix:
+        assert metadata["prefix_checkpoint"] == 1024
+        batch_size = 1024
+        rows = [dict(row, **row.get("prefix_1024", {})) for row in rows]
     runs, inputs, _ = load_inputs()
     assert {r["case"] for r in rows} == {r["case"] for r in runs["json-model"]["rows"]}
     queries = [r for r in rows if r["stage"] == "query"]
@@ -191,6 +195,7 @@ def bulk(folder):
     return dict(
         producer=metadata["producer"],
         batch_size=batch_size,
+        prefix_of_larger_campaign=prefix,
         methods=methods,
         query_count=len(queries),
         events=comparisons,
@@ -210,7 +215,7 @@ def bulk(folder):
 
 def build(args):
     n = neural(args.neural)
-    b = bulk(args.bulk)
+    b = bulk(args.bulk, args.prefix_1024)
     geometry = json.loads(args.geometry.read_text())
     assert len(geometry["verified"]) == 12
     result = dict(
@@ -307,4 +312,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("neural", "bulk", "geometry", "json", "markdown"):
         parser.add_argument("--" + name, type=Path, required=True)
+    parser.add_argument("--prefix-1024", action="store_true")
     build(parser.parse_args())

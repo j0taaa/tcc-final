@@ -21,13 +21,11 @@ from time import monotonic, perf_counter, process_time
 
 import numpy as np
 import torch
-from replay import EnumeratedTarget
+from controls import neural_controls
 from resampling import (
     BaseRejection,
     Problem,
-    RoundedProfiles,
     SingleTilt,
-    TangentMixture,
     decision_cache_statistics,
     select_order,
 )
@@ -433,37 +431,7 @@ def run(args):
                         )
                     )
                     rates = tuple(tuple(v**power for v in row) for row in data.probabilities)
-                    constructors = [
-                        ("base_iid", partial(BaseRejection, tight_bounds=True)),
-                        (
-                            "single_iid",
-                            partial(
-                                SingleTilt, dyadic_coefficients=True, precise_envelope=strengthened
-                            ),
-                        ),
-                        (
-                            "mixture_iid",
-                            partial(
-                                TangentMixture,
-                                dyadic_unaries=True,
-                                tight_bounds=True,
-                                dyadic_coefficients=True,
-                                certify_scale=strengthened,
-                            ),
-                        ),
-                        ("base_imh_rb", partial(BaseRejection, tight_bounds=True)),
-                        (
-                            "single_imh_rb",
-                            partial(
-                                SingleTilt, dyadic_coefficients=True, precise_envelope=strengthened
-                            ),
-                        ),
-                        ("conditional_mean", EnumeratedTarget),
-                    ]
-                    if strengthened:
-                        constructors.append(
-                            ("profiles_iid", partial(RoundedProfiles, dyadic_root=True))
-                        )
+                    constructors = neural_controls(strengthened)
                     for rollout in range(12):
                         seed = protocol["seed"] + int(key[:8], 16) + 1000 * power + rollout
                         rng = Random(seed)

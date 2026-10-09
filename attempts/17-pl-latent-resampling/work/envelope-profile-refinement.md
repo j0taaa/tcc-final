@@ -76,3 +76,16 @@ somas no perfil estão entre rho/gamma^m e rho, a esperança é no máximo
 Esse controle mais forte não é rebatizado como nossa contribuição. O estado
 antigo, incluindo o primeiro protótipo executável, fica preservado no commit
 b9a809d antes de qualquer medição dessa nova fase.
+
+## Protocolo de custo cumulativo, antes da nova rodada
+
+Para não repetir os mesmos 1024 draws na campanha de 4096, o novo harness
+registra obrigatoriamente o prefixo 1024 em cada consulta de 4096. Os cinco
+métodos recebem o mesmo limite de preparação 30s e de amostragem 60s da rodada
+4096. Capturar tempo/CPU, histogramas, hash e footprint no draw 1024, incluindo
+preparação uma vez. A comparação de 1024 dessa fase é prefixo cumulativo,
+não uma repetição independente com deadline 30s. Refusou antes de 1024: manter
+recusa e todo trabalho perdido. Completou 1024 mas recusou antes de 4096:
+preservar os dois resultados distintos. Relatar os 48 eventos nos dois tamanhos,
+sem escolher o melhor lote depois de observar resultados. As campanhas antigas
+1024 e 4096, com suas limitações, continuam completas e separadas.

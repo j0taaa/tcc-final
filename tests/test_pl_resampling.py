@@ -22,6 +22,7 @@ def load(name, filename):
 
 reference = load("resampling", "resampling.py")
 audit = load("pl_resampling_audit", "audit.py")
+controls = load("pl_controls", "controls.py")
 stationary = load("pl_stationary_control", "stationary_control.py")
 
 
@@ -271,6 +272,22 @@ class PlLatentOracleTests(unittest.TestCase):
         negative = tuple(tuple(-q for q in row) for row in rates)
         with self.assertRaises(ValueError):
             reference.Problem(plan, data.probabilities, negative, (1,), {1: 3})
+
+    def test_both_utility_harness_constructor_registries(self):
+        # Catches the actual partial-factory TypeError that invalidated neural v2,
+        # offline, before an expensive model run. Check sampling/evidence too.
+        plan, data = audit.fixture(3, True)
+        p = reference.Problem(plan, data.probabilities, data.probabilities, (1,), {1: 3})
+        for strengthened in (False, True):
+            constructors = [
+                *controls.iid_controls(strengthened).values(),
+                *(factory for _, factory in controls.neural_controls(strengthened)),
+            ]
+            for factory in constructors:
+                sampler = factory(p, end=None)
+                path, _ = sampler.sample(audit.Random(19), end=None)
+                self.assertEqual(path[1], 3)
+                self.assertIn(path, audit.enumerated_paths(data))
 
     def test_fixed_slots_and_certified_extreme_exponential(self):
         plan, data = audit.fixture(2, fixed={1: 3})

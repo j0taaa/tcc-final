@@ -9,18 +9,14 @@ import math
 import subprocess
 from collections import Counter
 from fractions import Fraction as Q
-from functools import partial
 from pathlib import Path
 from random import Random
 from time import monotonic, perf_counter, process_time
 
-from replay import EnumeratedTarget, recognized
+from controls import iid_controls
+from replay import recognized
 from resampling import (
-    BaseRejection,
     Problem,
-    RoundedProfiles,
-    SingleTilt,
-    TangentMixture,
     WeightedForest,
     decision_cache_statistics,
     select_order,
@@ -46,23 +42,7 @@ def run(output, batch_size=1024, strengthened=False):
         config.update(json.loads(addendum.read_text()))
     native = json.loads((WORK / "protocol.json").read_text())
     runs, inputs, manifest = load_inputs()
-    methods = [
-        (
-            "mixture",
-            partial(
-                TangentMixture,
-                dyadic_unaries=True,
-                tight_bounds=True,
-                dyadic_coefficients=True,
-                certify_scale=strengthened,
-            ),
-        ),
-        ("base", partial(BaseRejection, tight_bounds=True)),
-        ("single", partial(SingleTilt, dyadic_coefficients=True, precise_envelope=strengthened)),
-        ("enumeration", EnumeratedTarget),
-    ]
-    if strengthened:
-        methods.append(("profiles", partial(RoundedProfiles, dyadic_root=True)))
+    methods = list(iid_controls(strengthened).items())
     output.mkdir(parents=True, exist_ok=False)
     (output / "metadata.json").write_text(
         json.dumps(
@@ -75,6 +55,7 @@ def run(output, batch_size=1024, strengthened=False):
                 batch_size=batch_size,
                 methods=[name for name, _ in methods],
                 strengthened=strengthened,
+                prefix_checkpoint=1024 if strengthened and batch_size == 4096 else None,
                 refinement_sha256=hashlib.sha256(
                     (WORK / "envelope-profile-refinement.md").read_bytes()
                 ).hexdigest()
@@ -190,6 +171,23 @@ def run(output, batch_size=1024, strengthened=False):
                                     )
                                     for histogram, t in zip(histograms, path, strict=True):
                                         histogram[t] += 1
+                                    if (
+                                        strengthened
+                                        and batch_size == 4096
+                                        and row["accepted"] == 1024
+                                    ):
+                                        row["prefix_1024"] = dict(
+                                            status="complete",
+                                            accepted=1024,
+                                            attempts=row["attempts"],
+                                            seconds=perf_counter() - start,
+                                            cpu_seconds=process_time() - cpu_start,
+                                            sampling_seconds=perf_counter() - sample_start,
+                                            sampling_cpu_seconds=process_time() - sample_cpu,
+                                            histograms=[dict(h) for h in histograms],
+                                            paths_sha256=digest.hexdigest(),
+                                            **decision_cache_statistics(sampler),
+                                        )
                                 row.update(
                                     sampling_seconds=perf_counter() - sample_start,
                                     sampling_cpu_seconds=process_time() - sample_cpu,
