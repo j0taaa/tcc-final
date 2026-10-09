@@ -1,0 +1,10 @@
+{
+  "producer": "ba94688678264160baf8d6f1df5e180da7b7cb0e",
+  "protocol_sha256": "3ea10f48e083555a934926fb11fab613dc2789204293d1cc34240497ce1171d5",
+  "source_inputs": {
+    "components.json.gz": "4a58e656b30bb8d623b9b4bbf1759856e0ce0d93b1b0ab110145407017965149",
+    "inputs.json.gz": "427cf874c339ff2da4eb8af0dbecc685588de37c32f724fddb5f4f79fe60bd15",
+    "runs.json.gz": "351f8946ae0b5147728697a4294c74e9747a21b827aaac939926dd1abbb6c875"
+  },
+  "load": "1.74 5.33 4.38 1/1508 796726"
+}
