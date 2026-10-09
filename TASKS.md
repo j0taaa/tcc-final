@@ -2298,3 +2298,9 @@ Fill this section only with real artifacts.
 - Generated analysis: paper/generated/m17_review_v1/summary.json.
 - Revised PDF: dist/mwpc-exact-v0.2.0-paper.pdf, source tag v0.2.0.
 - Source delivery: dist/mwpc-exact-v0.2.0.bundle; checksums in dist/SHA256SUMS.
+
+- [x] T3902: Finish the preregistered growing-support development campaign
+  (`f675fe3`, MDLM/CUDA, 19 controls, 1,026 rows). 939 complete, 888 equal
+  trajectories, no unexplained divergence, 0/18 strong wins. Full archives
+  and immutable raw SHA: attempt19/work/evidence/development-*. No expansion
+  to heldout/fresh or CPU under failed gate; this does not fulfill utility goal.

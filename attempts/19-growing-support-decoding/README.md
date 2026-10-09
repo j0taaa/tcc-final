@@ -7,7 +7,17 @@ Candidata primária predeclarada: `root_lex`; híbrido `root_speculative`
 secundário. Confirmação nos seis casos frescos usa nove repetições, TODOS
 os dezenove métodos; nenhum caso será escolhido por resultado.
 
-Status: **hipótese, implementação mínima e controles; benefício não confirmado**.
+Status: **rejeitada como vantagem principal neste protocolo**.
+
+Foram executados 1.026 registros reais com MDLM/CUDA: 939 completos,
+888 comparações exatas de suporte/decisões/saída, nenhuma divergência e
+**0/18 configurações** com o ganho predeclarado de 20% em wall E CPU
+frente a todos os controles concluídos. O melhor caso reduziu wall, mas
+não cumpriu o custo de CPU. O critério não foi relaxado.
+As reservas128 recusaram nove execuções por recursos, preservadas.
+O desenvolvimento não autoriza ampliar esta candidata à confirmação fresca.
+Dados, comandos, hashes e análise estão em
+[work/evidence/development-decision.md](work/evidence/development-decision.md).
 
 ## Oito critérios e decisão anterior à implementação extensa
 

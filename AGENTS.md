@@ -44,7 +44,10 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   A propagação clássica continua uma alternativa importante. A tentativa19
   investiga união de suportes sugeridos por novos forwards, com controles que
   reservam32/64/128 tokens e bloqueiam explicitamente os ainda inativos.
-  Os oráculos pequenos passam; benefício prático ainda precisa de medição.
+  Os oráculos pequenos passam; 1.026 registros MDLM/CUDA e controles fortes
+  não confirmaram o critério conjunto wall/CPU em nenhuma das18 configurações.
+  Os resultados e recusas estão preservados; não relaxar o critério depois
+  da medição.
   Não apresentar essas tentativas como nova teoria de parsing ou vitória EPIC.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados

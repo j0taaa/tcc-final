@@ -1,0 +1,12 @@
+{
+  "source_commit": "f675fe3138f0d6925b2e190f974b781cc9ff5ebc",
+  "command": "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python -m attempts.19-growing-support-decoding.work.generation --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a19-development-gpu-v1 --phase development --device cuda --trim --native --compressed --rooted --growing",
+  "raw_rows_sha256": "d0f77b8ab2802c5183578bfd8c29b8dd2e157a9d06821c65193a527b21870a05",
+  "archive_sha256": "798f54100fb969468533aa8e09f8e25894397beadd10ae50ee889a88133ac2bf",
+  "rows": 1026,
+  "complete": 939,
+  "equal_comparisons": 888,
+  "wins": 0,
+  "decision": "Development gate fails. Do not select a favorable new threshold; no CPU/heldout/fresh expansion of this candidate. Preserve every refusal and negative result.",
+  "offline": "gzip.decompress rows.jsonl.gz to rows.jsonl in a temporary campaign copy; invoke work.analyze --candidate root_lex. The frozen source is in v2/source.zip."
+}
