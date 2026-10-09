@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "use": "Offline posterior audit of a grammar-constrained PL unmasking step when only commitments/order are retained. Independent latent completions estimate bounded functions (e.g. probability of a discarded alternative) without an unknown burn-in or storing the original discarded proposal.",
+  "scientific_questions": {
+    "real_use": "Diagnostics of confidence/order selection and conditional discarded-token uncertainty in dLLM JSON generation; not faster final decoding.",
+    "significance": "Reuse the written conditional-law and polynomial bit-cost guarantee. Bulk sampling is an application, not itself a new theorem or priority claim.",
+    "competent_controls": "All three exact iid controls already frozen: optimally bounded BaseRejection, SingleTilt and independent enumeration when its Cartesian cap admits it. FactorDLM/EPIC are not implementations of this conditional PL operation. Stationary MH needs the original discarded proposal; without it, a marginal target-law claim after one step is invalid.",
+    "math": "For 1024 iid bounded values, Hoeffding gives a <=0.043 half-width at 95% confidence. This explains the sample count without choosing it from measured throughput. The note supplies exact law and <=2J+1 expected proposals, but wall-time superiority needs measurement.",
+    "honesty": "Run all nine inputs/48 native events, same fixed native order and evidence as earlier campaigns. No event selected by a win. This is development on previous inputs, not independent evidence of generalization or training convergence.",
+    "cost": "Cold preparation, compilation, 1024 samples, integer arithmetic and process CPU time. First-output losses remain losses. Three rotated repetitions, desktop load recorded. Query limits and refusals retained.",
+    "objection": "Preparing many components can dominate even for 1024 draws; faster weighted sampling or sum-profile algorithms can erase gains. A Gibbs chain can be more appropriate for approximate audits and correlated averages. Independence only matters if the application needs its guarantees.",
+    "publication": "A measured narrow bulk benefit would confirm a use, not establish new theory, publication relevance or improvement of EPIC generation. Keep both this and the neural experiment in the final decision."
+  },
+  "cases": "All original M34 inputs and original native seeds/events from protocol.json; no replacements",
+  "accepted_batch_size": 1024,
+  "timing_repetitions": 3,
+  "preparation_deadline_seconds": 30,
+  "sampling_deadline_seconds": 30,
+  "numeric_variant": "full-dyadic, same certified approximation on mixture and single coefficient",
+  "records": "Validate every draw with independent JSON recognition/support/evidence. Store original-ID position histograms and SHA256 of ordered token paths instead of large traces; record all attempts, CPU/wall times, failures, producer and load. Exact replay from seed/code/inputs is opt-in.",
+  "success": "Smaller complete CPU resource cost and wall cost on a stated paired native event, preserved iid law; report all losses and resource refusals. Small contested time differences do not count as robust superiority."
+}
