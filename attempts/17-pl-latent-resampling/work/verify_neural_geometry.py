@@ -7,6 +7,7 @@ Grams still requires the pinned opt-in neural capture, not this verification.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import itertools
 import json
 import math
@@ -124,6 +125,9 @@ def verify(folder):
             )
     return dict(
         scope="offline independent moments, not independent checkpoint provenance",
+        inputs={
+            p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in folder.glob("*-input.json")
+        },
         verified=verified,
     )
 

@@ -89,3 +89,10 @@ recusa e todo trabalho perdido. Completou 1024 mas recusou antes de 4096:
 preservar os dois resultados distintos. Relatar os 48 eventos nos dois tamanhos,
 sem escolher o melhor lote depois de observar resultados. As campanhas antigas
 1024 e 4096, com suas limitações, continuam completas e separadas.
+
+O relato separará diferença de mediana de ganho útil estável: redução de pelo
+menos 20% no custo total mediano (razão controle/mistura >=1,25 em CPU e wall),
+com sinal favorável em todas as três repetições, contra cada controle concluído.
+Os casos com controle recusado serão nomeados e não chamados de prova de que
+esse algoritmo é inerentemente mais lento. É critério operacional predeclarado
+para a nova fase, não teste estatístico de superioridade em todo hardware.

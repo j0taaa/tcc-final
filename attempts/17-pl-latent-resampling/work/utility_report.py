@@ -190,6 +190,12 @@ def bulk(folder, prefix=False):
                 paired=paired,
                 mixture_faster_than_all_completed=bool(paired)
                 and all(p["wall_ratio"] > 1 and p["cpu_ratio"] > 1 for p in paired.values()),
+                stable_substantial_advantage=bool(paired)
+                and all(
+                    min(p["wall_ratio"], p["cpu_ratio"]) >= 1.25
+                    and min(*p["wall_ratios"], *p["cpu_ratios"]) > 1
+                    for p in paired.values()
+                ),
             )
         )
     return dict(
@@ -218,6 +224,12 @@ def build(args):
     b = bulk(args.bulk, args.prefix_1024)
     geometry = json.loads(args.geometry.read_text())
     assert len(geometry["verified"]) == 12
+    assert {(r["case"], r["power"]) for r in geometry["verified"]} == {
+        (c["case"], c["power"]) for c in n["configurations"]
+    }
+    assert max(max(r["errors"].values()) for r in geometry["verified"]) < 1e-7
+    for filename, checksum in geometry.get("inputs", {}).items():
+        assert hashlib.sha256((args.neural / filename).read_bytes()).hexdigest() == checksum
     result = dict(
         neural=n,
         bulk=b,
@@ -253,6 +265,7 @@ def build(args):
         for c in configs
     )
     wins = [c for c in b["events"] if c["mixture_faster_than_all_completed"]]
+    substantial = [c for c in b["events"] if c["stable_substantial_advantage"]]
     table = [
         "| Documento / potência | Redução iid | Mistura: custo x variância / original |"
         " Enumeração: custo x variância / original |",
@@ -288,6 +301,7 @@ def build(args):
         method_count=len(b["methods"]),
         query_count=b["query_count"],
         wins=len(wins),
+        substantial=len(substantial),
         statuses="\n".join(statuses),
         winner_details="\n\n".join(details) if details else "Nenhum evento.",
     )
@@ -303,6 +317,7 @@ def build(args):
                 mixture_efficiency_range=[min(ratios), max(ratios)],
                 enumeration_best=best_rb,
                 bulk_wins=len(wins),
+                stable_substantial_wins=len(substantial),
             )
         )
     )
