@@ -1,0 +1,50 @@
+{
+  "producer": {
+    "first": {
+      "first": "399470509890638e6befa4711e6d274cb06aaea5",
+      "second": "18fcffb4014aa59a127a5983f5ab2df9d64db946"
+    },
+    "second": "f0f8322566d0c50c4ac0f7a988fd0fcf509b7aaa"
+  },
+  "methods": [
+    "mixture",
+    "base",
+    "single",
+    "enumeration",
+    "profiles",
+    "profiles_coarse2",
+    "profiles_coarse4",
+    "profiles_indexed1",
+    "profiles_indexed2",
+    "profiles_indexed4",
+    "profiles_roomy1",
+    "profiles_roomy2",
+    "profiles_roomy4"
+  ],
+  "batch_size": 4096,
+  "prefix_checkpoint": 1024,
+  "source_inputs": {
+    "components.json.gz": "4a58e656b30bb8d623b9b4bbf1759856e0ce0d93b1b0ab110145407017965149",
+    "inputs.json.gz": "427cf874c339ff2da4eb8af0dbecc685588de37c32f724fddb5f4f79fe60bd15",
+    "runs.json.gz": "351f8946ae0b5147728697a4294c74e9747a21b827aaac939926dd1abbb6c875"
+  },
+  "comparison": "Same events/seeds/repetition IDs across sequential campaigns; not simultaneous paired timings",
+  "profile_streams_identical": {
+    "complete_queries": 342,
+    "prefixes_1024": 342
+  },
+  "prior_stream_check": {
+    "complete_queries": 321,
+    "prefixes_1024": 321
+  },
+  "sources": {
+    ".cache/pl-bulk-10-controls": {
+      "rows.jsonl": "a9d4b48fe8da298d33c132368b98ee7112e3167e1c075b78a7cdf5419b04422a",
+      "metadata.json": "acb09ae1f393dabf06d04679acb3f10e70527814dc0a640a1f7e2f1b58ee7ce8"
+    },
+    ".cache/pl-bulk-utility-v7": {
+      "rows.jsonl": "a6ba7f49a097896000885903bc6b512b86a2af99686a36284a49edfeae0598a0",
+      "metadata.json": "a146af8a7a826a2f1f3d97df131f355ffc829868f6018a36ac6a0cd7fc1e50db"
+    }
+  }
+}

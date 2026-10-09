@@ -1,0 +1,26 @@
+{
+  "producer": "f0f8322566d0c50c4ac0f7a988fd0fcf509b7aaa",
+  "protocol_sha256": "3ea10f48e083555a934926fb11fab613dc2789204293d1cc34240497ce1171d5",
+  "source_inputs": {
+    "components.json.gz": "4a58e656b30bb8d623b9b4bbf1759856e0ce0d93b1b0ab110145407017965149",
+    "inputs.json.gz": "427cf874c339ff2da4eb8af0dbecc685588de37c32f724fddb5f4f79fe60bd15",
+    "runs.json.gz": "351f8946ae0b5147728697a4294c74e9747a21b827aaac939926dd1abbb6c875"
+  },
+  "batch_size": 4096,
+  "methods": [
+    "profiles_roomy1",
+    "profiles_roomy2",
+    "profiles_roomy4"
+  ],
+  "strengthened": true,
+  "fast_forced": true,
+  "indexed_only": true,
+  "profile_resource_plan_sha256": "cfa8554b2632b48605c7cba98115dfa82ab5c593782b889ee8fa8e47063a4d0e",
+  "indexed_profile_plan_sha256": "3115d799a339ffa2628fe96a3cbb4f1c2128d9589b1cfa50465b8b956d8135e0",
+  "coarse_profile_plan_sha256": "98cecbf0c4adec7c4564223e06df0f78b4e580fe62224f5762895ba9590c5407",
+  "forced_refinement_sha256": "ed3857352a9eec6cbabc2a70d73146208c48083bd2fab51629b333f718c60e1a",
+  "prefix_checkpoint": 1024,
+  "refinement_sha256": "4afe883ea530cc666d05f8d64498cfd2a16b68c4f2faf722d19465f1ad175067",
+  "precision_addendum_sha256": "39b7d6491b6346e8b597d415a2223bee0b23a038e0ef4c399b9debd5345b2388",
+  "load": "1.01 1.03 1.00 1/1338 823414"
+}
