@@ -9,6 +9,7 @@ import json
 import math
 import platform
 import subprocess
+from bisect import bisect_right
 from fractions import Fraction as Q
 from pathlib import Path
 from random import Random
@@ -19,7 +20,6 @@ from resampling import (
     Problem,
     TangentMixture,
     WeightedForest,
-    categorical,
     select_order,
 )
 from scripts.exact_commit.build_cfg_posterior_results import load_inputs
@@ -60,11 +60,22 @@ class EnumeratedTarget:
                 self.weights.append(p.weight(path) * p.likelihood(path))
         if not self.paths:
             raise ValueError("zero target mass")
+        scale = 1
+        for weight in self.weights:
+            if end is not None and monotonic() > end:
+                raise TimeoutError("enumeration categorical preparation budget")
+            scale = math.lcm(scale, weight.denominator)
+        total, self.cumulative = 0, []
+        for weight in self.weights:
+            if end is not None and monotonic() > end:
+                raise TimeoutError("enumeration categorical preparation budget")
+            total += weight.numerator * (scale // weight.denominator)
+            self.cumulative.append(total)
 
     def sample(self, rng, end=None):
         if end is not None and monotonic() > end:
             raise TimeoutError("enumeration sampling budget")
-        return self.paths[categorical(self.weights, rng)], 1
+        return self.paths[bisect_right(self.cumulative, rng.randrange(self.cumulative[-1]))], 1
 
 
 def run(args):
@@ -78,6 +89,9 @@ def run(args):
     metadata = {
         "source_commit": source_commit,
         "protocol_sha256": hashlib.sha256((WORK / "protocol.json").read_bytes()).hexdigest(),
+        "protocol_addendum_sha256": hashlib.sha256(
+            (WORK / "protocol-addendum.json").read_bytes()
+        ).hexdigest(),
         "note_sha256": hashlib.sha256((WORK / "received-note.md").read_bytes()).hexdigest(),
         "python": platform.python_version(),
         "platform": platform.platform(),
@@ -108,7 +122,7 @@ def run(args):
             started = perf_counter()
             try:
                 plan = compile_cfg_sampler(
-                    source_grammar(row["kind"]),
+                    source_grammar("json"),
                     data.state,
                     timeout_seconds=config["compiler_deadline_seconds"],
                     max_chart_cells=config["max_cells"],
