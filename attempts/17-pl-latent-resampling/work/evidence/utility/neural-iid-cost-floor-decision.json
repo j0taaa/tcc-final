@@ -1,0 +1,392 @@
+{
+  "producer": "81ae246f05178d08ffb5523f5c31ec4910f82aa1",
+  "inputs_sha256": "7f099142449c1c7be9ccd93adc1c6489e98d88f0d1c8e232def8831941e6a043",
+  "operation": "one additional conditionally iid gradient replica, unchanged neural cost; any sampler extra cost is nonnegative",
+  "decision": "Enumeration beats even zero-overhead one-iid-replica estimator in all 12 cases and all four declared cost scopes. Faster profile representation cannot change this estimator recommendation. No neural timing is invented for it.",
+  "rows": [
+    {
+      "case": "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643",
+      "power": 1,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6890625863263855,
+      "enumeration_ratio": 0.3824005081241742,
+      "margin": 0.3066620782022113
+    },
+    {
+      "case": "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643",
+      "power": 1,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6890625863263855,
+      "enumeration_ratio": 0.37919999177330344,
+      "margin": 0.30986259455308207
+    },
+    {
+      "case": "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643",
+      "power": 1,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6890625863263855,
+      "enumeration_ratio": 0.3791505693018112,
+      "margin": 0.3099120170245743
+    },
+    {
+      "case": "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643",
+      "power": 1,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6890625863263855,
+      "enumeration_ratio": 0.37910810013438523,
+      "margin": 0.3099544861920003
+    },
+    {
+      "case": "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643",
+      "power": 2,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6835159822954848,
+      "enumeration_ratio": 0.3755145144085236,
+      "margin": 0.3080014678869612
+    },
+    {
+      "case": "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643",
+      "power": 2,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6835159822954848,
+      "enumeration_ratio": 0.3691584024230958,
+      "margin": 0.31435757987238905
+    },
+    {
+      "case": "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643",
+      "power": 2,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6835159822954848,
+      "enumeration_ratio": 0.36906438267942193,
+      "margin": 0.3144515996160629
+    },
+    {
+      "case": "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643",
+      "power": 2,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6835159822954848,
+      "enumeration_ratio": 0.3689803262847717,
+      "margin": 0.31453565601071315
+    },
+    {
+      "case": "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4",
+      "power": 1,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6325624485710661,
+      "enumeration_ratio": 0.2678404459961216,
+      "margin": 0.3647220025749445
+    },
+    {
+      "case": "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4",
+      "power": 1,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6325624485710661,
+      "enumeration_ratio": 0.2658060916412728,
+      "margin": 0.36675635692979336
+    },
+    {
+      "case": "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4",
+      "power": 1,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6325624485710661,
+      "enumeration_ratio": 0.2656042146037034,
+      "margin": 0.3669582339673627
+    },
+    {
+      "case": "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4",
+      "power": 1,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6325624485710661,
+      "enumeration_ratio": 0.26558607320895655,
+      "margin": 0.3669763753621096
+    },
+    {
+      "case": "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4",
+      "power": 2,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6788716424844123,
+      "enumeration_ratio": 0.36302433660204136,
+      "margin": 0.315847305882371
+    },
+    {
+      "case": "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4",
+      "power": 2,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6788716424844123,
+      "enumeration_ratio": 0.35906799626147745,
+      "margin": 0.3198036462229349
+    },
+    {
+      "case": "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4",
+      "power": 2,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6788716424844123,
+      "enumeration_ratio": 0.3586815541066351,
+      "margin": 0.32019008837777724
+    },
+    {
+      "case": "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4",
+      "power": 2,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6788716424844123,
+      "enumeration_ratio": 0.35864611848225025,
+      "margin": 0.3202255240021621
+    },
+    {
+      "case": "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9",
+      "power": 1,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.7021280155698856,
+      "enumeration_ratio": 0.4073019896875435,
+      "margin": 0.2948260258823421
+    },
+    {
+      "case": "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9",
+      "power": 1,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.7021280155698856,
+      "enumeration_ratio": 0.4050219262789472,
+      "margin": 0.2971060892909384
+    },
+    {
+      "case": "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9",
+      "power": 1,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.7021280155698856,
+      "enumeration_ratio": 0.4050338603460883,
+      "margin": 0.2970941552237973
+    },
+    {
+      "case": "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9",
+      "power": 1,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.7021280155698856,
+      "enumeration_ratio": 0.4049374959172841,
+      "margin": 0.29719051965260146
+    },
+    {
+      "case": "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9",
+      "power": 2,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.642209986905246,
+      "enumeration_ratio": 0.2875764032542205,
+      "margin": 0.3546335836510255
+    },
+    {
+      "case": "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9",
+      "power": 2,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.642209986905246,
+      "enumeration_ratio": 0.2852146308514561,
+      "margin": 0.3569953560537899
+    },
+    {
+      "case": "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9",
+      "power": 2,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.642209986905246,
+      "enumeration_ratio": 0.2852139602012289,
+      "margin": 0.3569960267040171
+    },
+    {
+      "case": "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9",
+      "power": 2,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.642209986905246,
+      "enumeration_ratio": 0.2851151524148533,
+      "margin": 0.3570948344903927
+    },
+    {
+      "case": "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667",
+      "power": 1,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6036439125512074,
+      "enumeration_ratio": 0.21423023141498035,
+      "margin": 0.3894136811362271
+    },
+    {
+      "case": "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667",
+      "power": 1,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6036439125512074,
+      "enumeration_ratio": 0.20904216626724645,
+      "margin": 0.39460174628396094
+    },
+    {
+      "case": "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667",
+      "power": 1,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6036439125512074,
+      "enumeration_ratio": 0.20878948345617507,
+      "margin": 0.3948544290950323
+    },
+    {
+      "case": "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667",
+      "power": 1,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6036439125512074,
+      "enumeration_ratio": 0.20872586321825926,
+      "margin": 0.39491804933294816
+    },
+    {
+      "case": "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667",
+      "power": 2,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.647440136851386,
+      "enumeration_ratio": 0.35714896079005437,
+      "margin": 0.29029117606133165
+    },
+    {
+      "case": "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667",
+      "power": 2,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.647440136851386,
+      "enumeration_ratio": 0.3105906401960152,
+      "margin": 0.33684949665537084
+    },
+    {
+      "case": "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667",
+      "power": 2,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.647440136851386,
+      "enumeration_ratio": 0.3076129243036136,
+      "margin": 0.33982721254777243
+    },
+    {
+      "case": "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667",
+      "power": 2,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.647440136851386,
+      "enumeration_ratio": 0.30706569613269974,
+      "margin": 0.3403744407186863
+    },
+    {
+      "case": "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc",
+      "power": 1,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.5993812773132158,
+      "enumeration_ratio": 0.20678676821076653,
+      "margin": 0.39259450910244925
+    },
+    {
+      "case": "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc",
+      "power": 1,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.5993812773132158,
+      "enumeration_ratio": 0.20077614063839253,
+      "margin": 0.3986051366748232
+    },
+    {
+      "case": "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc",
+      "power": 1,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.5993812773132158,
+      "enumeration_ratio": 0.20019680560018405,
+      "margin": 0.39918447171303173
+    },
+    {
+      "case": "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc",
+      "power": 1,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.5993812773132158,
+      "enumeration_ratio": 0.20014218381208176,
+      "margin": 0.399239093501134
+    },
+    {
+      "case": "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc",
+      "power": 2,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6008685305161223,
+      "enumeration_ratio": 0.2899967962615491,
+      "margin": 0.3108717342545732
+    },
+    {
+      "case": "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc",
+      "power": 2,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.6008685305161223,
+      "enumeration_ratio": 0.22389980369606485,
+      "margin": 0.37696872682005744
+    },
+    {
+      "case": "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc",
+      "power": 2,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6008685305161223,
+      "enumeration_ratio": 0.2174061889540917,
+      "margin": 0.38346234156203063
+    },
+    {
+      "case": "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc",
+      "power": 2,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.6008685305161223,
+      "enumeration_ratio": 0.21680860540209054,
+      "margin": 0.38405992511403175
+    },
+    {
+      "case": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+      "power": 1,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.883893616787104,
+      "enumeration_ratio": 0.7692256463867279,
+      "margin": 0.11466797040037613
+    },
+    {
+      "case": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+      "power": 1,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.883893616787104,
+      "enumeration_ratio": 0.7681494201822495,
+      "margin": 0.11574419660485447
+    },
+    {
+      "case": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+      "power": 1,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.883893616787104,
+      "enumeration_ratio": 0.7680605521744609,
+      "margin": 0.11583306461264309
+    },
+    {
+      "case": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+      "power": 1,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.883893616787104,
+      "enumeration_ratio": 0.7680503491191274,
+      "margin": 0.11584326766797659
+    },
+    {
+      "case": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+      "power": 2,
+      "scope": "neural_wall_floor",
+      "iid_zero_extra_cost_lower_bound": 0.9124655567518829,
+      "enumeration_ratio": 0.8287917305934145,
+      "margin": 0.08367382615846841
+    },
+    {
+      "case": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+      "power": 2,
+      "scope": "neural_cpu_floor",
+      "iid_zero_extra_cost_lower_bound": 0.9124655567518829,
+      "enumeration_ratio": 0.82590151275969,
+      "margin": 0.08656404399219286
+    },
+    {
+      "case": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+      "power": 2,
+      "scope": "warm_wall",
+      "iid_zero_extra_cost_lower_bound": 0.9124655567518829,
+      "enumeration_ratio": 0.8256818184755966,
+      "margin": 0.08678373827628627
+    },
+    {
+      "case": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+      "power": 2,
+      "scope": "cold_wall",
+      "iid_zero_extra_cost_lower_bound": 0.9124655567518829,
+      "enumeration_ratio": 0.8256539423077341,
+      "margin": 0.08681161444414875
+    }
+  ]
+}
