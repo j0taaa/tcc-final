@@ -20,7 +20,8 @@ O núcleo/contratos de produção permanecem como base de comparação.
 3. **Adoção:** menos variância por trajetória neural, estritamente quando há
    variância latente. Comparar com o score completo, rejeição condicionada aos
    tokens com envelope `f(L)`, inclinação exponencial única com majorante secante
-   ótimo, enumeração e Rao–Blackwellização exata onde cabem.
+   ótimo, enumeração e Rao–Blackwellização exata onde cabem. A rodada final
+   inclui perfis com três granulações e MH estacionário com moeda integrada.
    Só há vantagem por tempo se custo vezes variância diminuir; não basta vencer
    um rejeitador que use desnecessariamente o limite 1.
 4. **Matemática:** auditar redução PL, cobertura, moedas racionais, custos e
@@ -31,21 +32,37 @@ O núcleo/contratos de produção permanecem como base de comparação.
 5. **Experimentos:** protocolo em `work/protocol.json`, congelado em Git antes
    das medições. Famílias construídas são oráculos de correção; os nove inputs
    JSON M34 completos são replays de modelo, não novos rollouts ou benchmark
-   independente de treinamento. Todos os estados e recusas permanecem no relato.
+   independente de treinamento. Seis documentos externos selecionados por hash
+   antes dos forwards avaliam 12 configurações de gradiente da cabeça real.
+   Planos [neural](work/neural-utility-protocol.json),
+   [bulk](work/bulk-utility-protocol.json),
+   [envelope/perfis](work/envelope-profile-refinement.md),
+   [decisões forçadas](work/forced-decision-refinement.md) e
+   [perfis grossos](work/coarse-profile-control-plan.md) registram cada mudança
+   antes de medir; todos os estados e recusas permanecem no relato.
 6. **Custo:** incluir compilação, enclosures, componentes, amostragem, memória
    lógica e aritmética; separar primeira saída/lote. O replay exclui forward
-   e backward, que não foram executados. Não converter redução de variância em
-   melhor qualidade ou convergência sem uma ligação adicional.
+   e backward; o estudo neural os executou, com backbone congelado, além do
+   custo extra do sampler/score. Piso neural exclui trabalho gramatical comum
+   para não fabricar ganho com preparação ineficiente. Não converter redução
+   de variância em melhor qualidade ou convergência sem uma ligação adicional.
 7. **Objeções:** métodos gerais podem obter o mesmo envelope; enumeração pode
    vencer; taxas quase constantes favorecem rejeição simples; preparação pode
    dominar. Uma distribuição condicional exata não basta para PPO/GRPO com
    clipping. Suporte fixo e política original correta são hipóteses essenciais.
    `work/auxiliary-variable-objection.md` mostra como uma réplica correlacionada
    de Gibbs, iniciada na proposta original, também reduz variância sem viés.
-   Não foi implementada/medida e precisa ser controle no treinamento.
+   Gibbs contínuo não foi medido. O controle racional MH estacionário foi
+   implementado, testado por balanço detalhado e medido no estudo neural.
+   Os [antecedentes adicionais](work/utility-antecedents.md) incluem Dyer:
+   arredondamento com correção exata por rejeição é técnica estabelecida.
 8. **Artigo:** ainda faltam revisão independente, anterioridade suficiente,
    vantagem de custo relevante e integração de treinamento. As verificações
    aqui não serão apresentadas como treinamento, prioridade ou prova de Lean.
+   A [obstrução em bits](work/normalizer-bit-obstruction.md) e o
+   [corolário de auditoria](work/conditional-audit-corollary.md) delimitam um
+   benefício matemático de amostragem sem normalizador, compartilhado por
+   alternativas adequadas; não são prova de exclusividade da mistura.
 
 ## Contrato de referência
 
