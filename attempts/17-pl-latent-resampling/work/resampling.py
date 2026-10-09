@@ -7,7 +7,7 @@ acceptance, approximate target, neural training, or production decoder change.
 from __future__ import annotations
 
 from bisect import bisect_left, bisect_right
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from decimal import Decimal, localcontext
 from fractions import Fraction as Q
 from math import isqrt, lcm, prod
@@ -96,6 +96,7 @@ class WeightedForest:
     inside: tuple
     integers: tuple
     mass: Q
+    decision_cache: dict = field(default_factory=dict)
 
     @classmethod
     def prepare(cls, plan, probabilities, end=None):
@@ -119,8 +120,14 @@ class WeightedForest:
         while pending:
             node = pending.pop()
             terms = self.plan.terms[node]
-            values = [self.plan.term_mass(t, self.integers, self.inside) for t in terms]
-            term = terms[categorical([Q(v) for v in values], rng)]
+            if node not in self.decision_cache:
+                cumulative, total = [], 0
+                for term in terms:
+                    total += self.plan.term_mass(term, self.integers, self.inside)
+                    cumulative.append(total)
+                self.decision_cache[node] = tuple(cumulative)
+            cumulative = self.decision_cache[node]
+            term = terms[bisect_right(cumulative, rng.randrange(cumulative[-1]))]
             if term.choice is not None:
                 position, index = term.choice
                 if output[position] is not None:
@@ -378,6 +385,7 @@ class SingleTilt(BaseRejection):
 
     def __init__(self, problem, end=None, dyadic_coefficients=False):
         p = self.problem = problem.tightened(end)
+        self.integer_envelope = None
         if not p.order or p.L == p.H:
             super().__init__(p, end)
             self.unaries = None
@@ -414,9 +422,26 @@ class SingleTilt(BaseRejection):
         self.base = WeightedForest.prepare(p.plan, modified, end)
         if not self.base.mass:
             raise ValueError("zero evidence mass")
+        if dyadic_coefficients:
+            scales = {i: max(u.denominator for u in self.unaries[i]) for i in p.hidden}
+            ticks = {
+                i: tuple(u.numerator * (scales[i] // u.denominator) for u in self.unaries[i])
+                for i in p.hidden
+            }
+            self.integer_envelope = (
+                self.upper.numerator,
+                ticks,
+                self.upper.denominator * prod(scales.values()),
+            )
 
     def acceptance(self, path):
         p = self.problem
+        if self.integer_envelope is not None:
+            coefficient, ticks, scale = self.integer_envelope
+            envelope = Q(
+                coefficient * prod(ticks[i][p.indices[i][path[i]]] for i in p.hidden), scale
+            )
+            return p.likelihood(path) / envelope
         envelope = self.upper
         if self.unaries is not None:
             envelope *= prod(self.unaries[i][p.indices[i][path[i]]] for i in p.hidden)
@@ -502,3 +527,18 @@ class RoundedProfiles:
             success += probability * acceptance
         assert 1 / success <= 2
         return {path: mass / success for path, mass in accepted.items()}
+
+
+def decision_cache_statistics(sampler):
+    """Logical token-forest CDF footprint, not process peak RSS."""
+    forests = (
+        [sampler.base]
+        if hasattr(sampler, "base")
+        else [component for _, _, component in getattr(sampler, "components", ())]
+    )
+    cdfs = [cdf for forest in forests for cdf in forest.decision_cache.values()]
+    return {
+        "cdf_nodes": len(cdfs),
+        "cdf_entries": sum(map(len, cdfs)),
+        "cdf_integer_bits": sum(value.bit_length() for cdf in cdfs for value in cdf),
+    }

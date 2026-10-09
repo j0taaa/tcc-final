@@ -27,6 +27,7 @@ from resampling import (
     Problem,
     SingleTilt,
     TangentMixture,
+    decision_cache_statistics,
     select_order,
 )
 from scripts.exact_commit.mdlm_cpu import load_cpu_model
@@ -427,6 +428,7 @@ def run(args):
                             "mixture_iid",
                             partial(
                                 TangentMixture,
+                                decision_cache_statistics,
                                 dyadic_unaries=True,
                                 tight_bounds=True,
                                 dyadic_coefficients=True,
@@ -562,6 +564,7 @@ def run(args):
                                             cpu_seconds=process_time() - cpu_start,
                                             order=order,
                                             observed=p.observed,
+                                            **decision_cache_statistics(sampler),
                                         )
                                     )
                                 except Exception as error:

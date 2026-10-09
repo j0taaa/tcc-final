@@ -21,6 +21,7 @@ from resampling import (
     SingleTilt,
     TangentMixture,
     WeightedForest,
+    decision_cache_statistics,
     select_order,
 )
 from scripts.exact_commit.build_cfg_posterior_results import load_inputs
@@ -139,6 +140,7 @@ def run(output):
                             )
                             start = perf_counter()
                             cpu_start = process_time()
+                            sampler = None
                             histograms = [Counter() for _ in p.rows]
                             digest = hashlib.sha256()
                             try:
@@ -181,6 +183,8 @@ def run(output):
                                 histograms=[dict(h) for h in histograms],
                                 paths_sha256=digest.hexdigest(),
                             )
+                            if sampler is not None:
+                                row.update(decision_cache_statistics(sampler))
                             emit(row)
                     print(archived["case"], power, k, "bulk recorded", flush=True)
 
