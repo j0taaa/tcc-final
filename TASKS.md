@@ -75,6 +75,17 @@ incremental alternative; classical foundations are not recast as inventions.
   oracle trajectories and maximal priority width pass natively. Five focused
   offline tests pass (Python reference, no binding required in CI). Native
   speed/publication priority remains unmeasured; no promotion of production API.
+  **Initial native development rejected:** 486 GPU development rows, 375 exact
+  comparisons, zero criterion wins against all controls. The slower unshared
+  token graph is preserved in `native-initial-*`; CPU/held-out expansion of this
+  version was not run. `compression-addendum.json` preregisters the same
+  proper-prefix/private-last-byte representation already used by the posterior
+  and its compact equivalent CNF for ALL three native methods. All original
+  cases/controls/clocks remain. Five offline oracles and20 additional native
+  trajectories pass, including2/302/1075 exact priorities. These are correctness
+  evidence, not timings or novelty. `make test` previously passed41 checks and
+  `make check` upstream/lint/types/archive integrity; the compressed refinements
+  still need full-generation measurement. No new Lean claim.
 
 ## M38 — Align standing instructions with the current scientific objective
 

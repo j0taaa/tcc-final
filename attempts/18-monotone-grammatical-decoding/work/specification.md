@@ -41,6 +41,27 @@ recupera-se o vetor pelo casamento dos tokens originais. Uma API/backend que
 só compare somas arredondadas não satisfaz este contrato. Recusar m>1075 nesta
 referência. O caminho foi reconstruído/testado também nos bits de menor peso.
 
+O refinamento compacto transporta diretamente 2^(m-j-1-1074). Em unidades
+2^-1074, a soma BigUint é o inteiro L de m bits, removendo bits de escala
+desnecessários. Para m<=1075 todos os pesos são díades representáveis, não
+há arredondamento na comparação. Exige IEEE subnormais preservados; o runner
+desativa flush_denormal explicitamente e registra isso. Confidências originais
+continuam separadas da prioridade. Não deduzir decisões do score público float.
+
+Na representação compacta, cada slot possui uma árvore de prefixos próprios
+compartilhados. Cada token tem uma aresta terminal privada que emite seu último
+byte e carrega sua identidade/recompensa. Um token que é prefixo de outro
+fecha numa aresta para a próxima fronteira, enquanto a continuação segue para
+um nó próprio; aliases têm fechamentos distintos. Toda sequência de tokens
+originais determina um único caminho, e todo caminho completo fecha exatamente
+um token por slot. Os bytes e a soma das prioridades são os mesmos. Assim
+interseção com a gramática e maximização são preservadas, mesmo se produções
+sintáticas cruzam limites entre tokens. Tokens suportados não têm emissão vazia;
+EOS ausente. É a representação já usada em cfg_posterior.py, não uma invenção
+desta tentativa. Os três métodos nativos recebem a mesma GLC compacta obtida
+por binarização seguida de normalização, que preserva a linguagem; muda a
+representação, não o JSON ou suporte admitidos.
+
 O parser nativo pode guardar apenas a melhor derivação de cada célula, pois
 as prioridades são conhecidas ANTES de construir/normalizar o grafo da consulta.
 Isso dispensa materializar todas as alternativas de uma floresta reutilizável,
@@ -96,6 +117,13 @@ desfeitos e forwards determinísticos recebem o mesmo canvas, a trajetória
 inteira e os tokens finais coincidem por indução. Novas probabilidades/ranks
 não alteram a floresta. Uma execução recusada/timeout é inconclusiva; equivalência
 é de execuções conclusivas, não dos seus prazos físicos.
+
+Corolário de preservação de resultado: para qualquer avaliador semântico
+aplicado somente à saída, g(y_lex)=g(y_guloso), quando os decoders compartilham
+predições/propostas e concluem. Com aleatoriedade compartilhada que não é
+consumida pelos seletores, a distribuição das saídas também é a mesma. Isso
+evita justificar qualidade por uma soma substituta; não prova que o guloso seja
+bom, nem que sua política seja equivalente à do EPIC ou da M24 histórica.
 
 ## Custo e antecedente
 

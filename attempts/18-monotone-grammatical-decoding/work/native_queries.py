@@ -13,6 +13,7 @@ from math import ldexp
 from types import SimpleNamespace
 
 from grammar_selectors import CachedPrefix, Recompute
+from trie_lattice import trie_lattice
 
 from mwpc_exact.backend import ExactBackend
 from mwpc_exact.eos_lattice import build_eos_lattice
@@ -24,10 +25,12 @@ from mwpc_exact.types import Proposal, SolveStatus
 
 
 class NativeQuery:
-    def initialize(self, state, backend):
+    def initialize(self, state, backend, compressed, grammar):
         if state.eos_policy.mode is not EOSMode.ABSENT:
             raise NotImplementedError("native research decoder requires ABSENT EOS")
         self.backend = backend
+        self.compressed = compressed
+        self.query_grammar = state.grammar if grammar is None else grammar
         self.plan = SimpleNamespace(state=state)
         self.base = replace(
             state.support,
@@ -39,27 +42,32 @@ class NativeQuery:
         if len(proposals) > 1075:
             raise NotImplementedError("native dyadic priorities support at most 1075 proposals")
         state = self.plan.state
-        support = replace(
-            self.base,
-            canvas=tuple(canvas),
-            rows=tuple(
-                (t,) if t is not None else row
-                for t, row in zip(canvas, self.base.rows, strict=True)
-            ),
-        )
-        priorities = tuple(
-            Proposal(j, p, token, ldexp(1.0, -j)) for j, (p, token, _) in enumerate(proposals)
-        )
-        lattice = build_eos_lattice(
-            token_lattice=build_token_lattice(support=support, proposals=priorities),
-            adapter=state.tokenizer_adapter,
-            policy=state.eos_policy,
-        )
+        if self.compressed:
+            graph, closes = trie_lattice(state, canvas, proposals)
+            lattice = None
+        else:
+            support = replace(
+                self.base,
+                canvas=tuple(canvas),
+                rows=tuple(
+                    (t,) if t is not None else row
+                    for t, row in zip(canvas, self.base.rows, strict=True)
+                ),
+            )
+            priorities = tuple(
+                Proposal(j, p, token, ldexp(1.0, -j)) for j, (p, token, _) in enumerate(proposals)
+            )
+            lattice = build_eos_lattice(
+                token_lattice=build_token_lattice(support=support, proposals=priorities),
+                adapter=state.tokenizer_adapter,
+                policy=state.eos_policy,
+            )
+            graph = lattice.normalized_graph
         if self.backend is ExactBackend.RUST:
-            result = solve_rust_dag(state.grammar, lattice.normalized_graph, timeout_seconds=30)
+            result = solve_rust_dag(self.query_grammar, graph, timeout_seconds=30)
             certificate = result.certificate
         else:
-            result = run_dag_cky(state.grammar, lattice.normalized_graph)
+            result = run_dag_cky(self.query_grammar, graph)
             certificate = (
                 _reconstruct_dag_path(result) if result.status is SolveStatus.OPTIMAL else None
             )
@@ -71,16 +79,36 @@ class NativeQuery:
             raise NotImplementedError("native_parser_unavailable")
         if result.status is not SolveStatus.OPTIMAL or certificate is None:
             raise RuntimeError(f"native_parser_status_{result.status}")
-        path = lattice.reconstruct_normalized_path(certificate.witness_graph_edge_ids)
-        lattice.validate_path(path)
-        tokens = path.token_path.token_ids
+        if self.compressed:
+            node, choices, labels = graph.start_node_id, [], []
+            for edge_id in certificate.witness_graph_edge_ids:
+                edge = graph.edges[edge_id]
+                if edge.source_state != node:
+                    raise RuntimeError("non-contiguous native trie path")
+                node = edge.target_state
+                labels.append(edge.terminal_label)
+                if edge_id in closes:
+                    choices.append(closes[edge_id])
+            if node not in graph.final_node_ids or [p for p, _ in choices] != list(
+                range(len(canvas))
+            ):
+                raise RuntimeError("native trie path did not consume every original slot")
+            tokens = tuple(token for _, token in choices)
+            if bytes(labels) != state.tokenizer_adapter.detokenize_bytes(tokens):
+                raise RuntimeError("native trie bytes differ from original tokens")
+            matched_ids = certificate.selected_proposal_ids
+        else:
+            path = lattice.reconstruct_normalized_path(certificate.witness_graph_edge_ids)
+            lattice.validate_path(path)
+            tokens = path.token_path.token_ids
+            matched_ids = path.matched_proposal_ids
         if len(tokens) != len(canvas) or any(
             token not in row or (fixed is not None and fixed != token)
             for token, row, fixed in zip(tokens, self.base.rows, canvas, strict=True)
         ):
             raise RuntimeError("native witness violated original slots/support/canvas")
         expected = [j for j, (p, token, _) in enumerate(proposals) if tokens[p] == token]
-        if Counter(path.matched_proposal_ids) != Counter(expected):
+        if Counter(matched_ids) != Counter(expected):
             raise RuntimeError("native witness violated exact priority provenance")
         text = state.tokenizer_adapter.detokenize_bytes(tokens).decode()
         json.loads(text, parse_constant=self.reject_constant)
@@ -92,14 +120,16 @@ class NativeQuery:
 
 
 class NativeLex(NativeQuery, Recompute):
-    def __init__(self, state, *, backend=ExactBackend.RUST):
-        self.initialize(state, backend)
+    def __init__(self, state, *, backend=ExactBackend.RUST, compressed=False, grammar=None):
+        self.initialize(state, backend, compressed, grammar)
         Recompute.__init__(self, self.plan, lex=True)
 
 
 class NativePrefix(NativeQuery, CachedPrefix):
-    def __init__(self, state, *, lazy=False, backend=ExactBackend.RUST):
-        self.initialize(state, backend)
+    def __init__(
+        self, state, *, lazy=False, backend=ExactBackend.RUST, compressed=False, grammar=None
+    ):
+        self.initialize(state, backend, compressed, grammar)
         Recompute.__init__(self, self.plan)
         self.current = None if lazy else self.solve(self.canvas)
         if not lazy and self.current is None:

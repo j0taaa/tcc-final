@@ -19,9 +19,10 @@ from native_queries import NativeLex, NativePrefix
 from native_sat import SatPrefix
 from relevant_forest import relevant_forest
 
-from mwpc_exact.cfg_posterior import CompilationLimit, compile_cfg_sampler
+from mwpc_exact.cfg_posterior import CompilationLimit, _binarize_source, compile_cfg_sampler
 from mwpc_exact.eos_policy import EOSMode, EOSPolicy
 from mwpc_exact.reference.json_grammar import json_source_grammar
+from mwpc_exact.reference.limits import WorkBudget
 from mwpc_exact.reference.normalization import normalize_to_cnf
 from mwpc_exact.state import SelectionInput
 from mwpc_exact.support import SupportPolicy, build_per_position_support
@@ -70,7 +71,20 @@ def deadline(signum, frame):
     raise TimeoutError("generation_total_deadline")
 
 
-def run_case(model, adapter, source, grammar, example, size, method, config, protocol, trim=False):
+def run_case(
+    model,
+    adapter,
+    source,
+    grammar,
+    example,
+    size,
+    method,
+    config,
+    protocol,
+    trim=False,
+    compressed=False,
+    native_grammar=None,
+):
     import torch
 
     device = next(model.parameters()).device
@@ -154,10 +168,11 @@ def run_case(model, adapter, source, grammar, example, size, method, config, pro
         result["support_rows"] = state.support.rows
         result["support_sha256"] = state.support.fingerprint
         if method.startswith("rust_"):
+            native_kwargs = dict(compressed=compressed, grammar=native_grammar)
             factories = {
-                "rust_lex": NativeLex,
-                "rust_cached_prefix": NativePrefix,
-                "rust_lazy_prefix": lambda s: NativePrefix(s, lazy=True),
+                "rust_lex": lambda s: NativeLex(s, **native_kwargs),
+                "rust_cached_prefix": lambda s: NativePrefix(s, **native_kwargs),
+                "rust_lazy_prefix": lambda s: NativePrefix(s, lazy=True, **native_kwargs),
             }
             engine = clock("prepare", lambda: factories[method](state))
         elif method == "enumeration":
@@ -290,10 +305,15 @@ def main():
     parser.add_argument(
         "--native", action="store_true", help="Include exact native lex/prefix controls"
     )
+    parser.add_argument(
+        "--compressed", action="store_true", help="Common native trie and compact CNF"
+    )
     args = parser.parse_args()
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source/protocol before measurement")
     protocol = json.loads((WORK / "protocol.json").read_text())
+    if args.compressed and not args.native:
+        raise ValueError("compression refinement requires all native controls")
     binding = None
     if args.native:
         if not args.trim:
@@ -307,6 +327,7 @@ def main():
         protocol["methods"] += ["rust_lex", "rust_cached_prefix", "rust_lazy_prefix"]
     config = json.loads((ROOT / protocol["model_config"]).read_text())
     torch.set_num_threads(config["torch_cpu_threads"])
+    torch.set_flush_denormal(False)
     torch.manual_seed(protocol["seed"])
     if args.device == "cuda":
         torch.backends.cuda.matmul.allow_tf32 = False
@@ -335,6 +356,10 @@ def main():
     )
     source = json_source_grammar()
     grammar = normalize_to_cnf(source).grammar
+    native_grammar = None
+    if args.compressed:
+        budget = WorkBudget(max_work=1_000_000)
+        native_grammar = normalize_to_cnf(_binarize_source(source, budget), budget=budget).grammar
     if args.device == "cuda":
         torch.cuda.synchronize()
     args.output.mkdir(parents=True, exist_ok=False)
@@ -343,6 +368,14 @@ def main():
         phase=args.phase,
         methods=protocol["methods"],
         native_binding=binding,
+        native_compression=args.compressed,
+        native_grammar_sha256=digest(json.dumps(native_grammar.to_dict(), sort_keys=True).encode())
+        if native_grammar is not None
+        else None,
+        compression_addendum_sha256=digest((WORK / "compression-addendum.json").read_bytes())
+        if args.compressed
+        else None,
+        ieee_subnormals="CPU flush_denormal explicitly false; rank transport decoded as exact bits",
         native_addendum_sha256=digest((WORK / "native-addendum.json").read_bytes())
         if args.native
         else None,
@@ -414,6 +447,8 @@ def main():
                             config,
                             protocol,
                             trim=args.trim,
+                            compressed=args.compressed,
+                            native_grammar=native_grammar,
                         )
                         row["repetition"] = repetition
                         output.write(json.dumps(row) + "\n")
