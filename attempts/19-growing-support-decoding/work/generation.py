@@ -479,6 +479,8 @@ def main():
         raise ValueError("rooted refinement requires all compressed native controls")
     if not args.growing or not args.rooted:
         raise ValueError("attempt19 requires --growing --rooted and all native controls")
+    if args.phase == "fresh":
+        protocol["measurement"]["repetitions"] = protocol["measurement"]["fresh_repetitions"]
     binding = None
     if args.native:
         if not args.trim:
@@ -547,6 +549,7 @@ def main():
         commit=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
         phase=args.phase,
         methods=protocol["methods"],
+        repetitions=protocol["measurement"]["repetitions"],
         native_binding=binding,
         shared_work_addendum_sha256=digest((WORK / "shared-work-addendum.json").read_bytes()),
         native_compression=args.compressed,

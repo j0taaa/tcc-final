@@ -69,11 +69,18 @@
       "alternatives": 5000000,
       "seconds": 60
     },
-    "cases": "Same all original development/evaluation-refinement cases and additional hash-selected unseen six confirmations if development gate passes; CPU/GPU three rotated repeats"
+    "cases": "Same all original development/evaluation-refinement cases and additional hash-selected unseen six confirmations if development gate passes; CPU/GPU three rotated repeats",
+    "fresh_repetitions": 9,
+    "fresh_confirmation": "If development gate passes, all six untouched hash-selected documents with nine rotated repetitions and all nineteen methods; strengthen timing-repeat confidence without choosing favorable documents."
   },
   "success": {
     "correctness": "No unexplained commitment or token-output divergence in conclusive runs; independent JSON/slot/original-fixed-token checks",
     "useful_speed": "At least 20% median total cost reduction in wall AND CPU against every completed same-operation comparator for a declared configuration, favorable sign in all three repetitions; report every loss and refusal",
     "claims": "No universal gain, worldwide priority, EPIC superiority, training improvement or publication acceptance from this protocol; growing-support inputs may produce different outputs than frozen-support attempts, and those regimes do not establish a speed-only comparison"
+  },
+  "candidates": {
+    "primary": "root_lex",
+    "secondary": "root_speculative",
+    "why": "One complete lex query handles changing original-token support; speculative prefix is secondary. No selection of candidate based on future timings."
   }
 }

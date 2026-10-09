@@ -24,7 +24,7 @@ def analyze(folder, candidate="monotone"):
     )
     if candidate not in methods:
         raise ValueError("candidate absent from declared methods")
-    expected = len(metadata["selected"]) * 3 * 3 * len(methods)
+    expected = len(metadata["selected"]) * 3 * metadata.get("repetitions", 3) * len(methods)
     if len(rows) != expected:
         raise ValueError(f"incomplete campaign {folder}: {len(rows)}/{expected}")
     grouped, configurations = defaultdict(dict), defaultdict(dict)
@@ -118,7 +118,7 @@ def main():
         "Não há comparação nativa com EPIC, nem promessa de melhora semântica.",
         "",
         "O critério predeclarado exige redução de pelo menos 20% em mediana wall e CPU contra "
-        "todos os controles concluídos e sinal favorável nas três repetições. "
+        "todos os controles concluídos e sinal favorável em todas as repetições predeclaradas. "
         "CPU não mede trabalho/energia da GPU. As três repetições não são intervalo de confiança. "
         "A extensão GPU é secundária, declarada após desenvolvimento CPU, antes de seus timings.",
         "",

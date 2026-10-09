@@ -3,6 +3,10 @@
 Iniciada em 2026-10-09 após a tentativa18 não encontrar ganho completo no
 suporte congelado. Fontes independentes copiados de `15767f3`; nenhum import
 depende do work mutável de18. Não substituir código/provas/resultados antigos.
+Candidata primária predeclarada: `root_lex`; híbrido `root_speculative`
+secundário. Confirmação nos seis casos frescos usa nove repetições, TODOS
+os dezenove métodos; nenhum caso será escolhido por resultado.
+
 Status: **hipótese, implementação mínima e controles; benefício não confirmado**.
 
 ## Oito critérios e decisão anterior à implementação extensa
