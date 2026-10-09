@@ -17,7 +17,10 @@
     "support": "original top8 at each masked position, fixed outside; no reference answer tokens injected; report zero syntax mass and missing targets",
     "grammar": "maintained full LL1 JSON, EOS absent",
     "unmask_count": 2,
-    "rate_powers": [1,2],
+    "rate_powers": [
+      1,
+      2
+    ],
     "return": "fraction of committed original token IDs matching the external reference at those positions",
     "interpretation": "Auxiliary denoising-progress policy objective. Tests whether resampling helps this actual parameter-gradient operation; does not imply improved final generation or beat supervised cross-entropy",
     "numeric_scope": "Exact conditional law for published rational support probabilities; neural gradient and covariance metrics use documented F64 arithmetic. Support membership held fixed locally. Full softmax tail retained in PL score."
@@ -25,7 +28,13 @@
   "variance": {
     "oracle": "enumerate every top8 token combination recognized independently by Python JSON, every ordered size-two PL selection; use all positive events, not sampled frequencies",
     "metric": "trace covariance of output-layer weight+bias policy gradient, computed via feature/token Gram matrices; also mean gradient and reward",
-    "controls": ["original complete score", "two iid replicas", "conditional mean by enumeration", "stationary Base MH with coin integrated", "stationary SingleTilt MH with coin integrated"],
+    "controls": [
+      "original complete score",
+      "two iid replicas",
+      "conditional mean by enumeration",
+      "stationary Base MH with coin integrated",
+      "stationary SingleTilt MH with coin integrated"
+    ],
     "correctness": "exact rational detailed balance tests plus captured-model autograd directional/norm checks and independent finite-difference objective checks; tolerances disclosed",
     "conditional_enumeration": "competent exact Rao-Blackwell control, no iid sampling claim"
   },
@@ -33,13 +42,30 @@
     "native_events": 12,
     "event_selection": "on-policy syntax proposal then native PL order, fixed seed per case/power/rollout; never select by gain",
     "repetitions": 3,
-    "methods": ["BaseRejection", "SingleTilt", "TangentMixture full-dyadic", "Base IMH integrated coin", "SingleTilt IMH integrated coin", "exact conditional mean by enumeration"],
+    "methods": [
+      "BaseRejection",
+      "SingleTilt",
+      "TangentMixture full-dyadic",
+      "Base IMH integrated coin",
+      "SingleTilt IMH integrated coin",
+      "exact conditional mean by enumeration"
+    ],
     "scope": "model forward, full-softmax/support preparation, syntax forest/normalization/marginals, original proposal/order, original reward/score and one head backward; extra sampler preparation/draw/score included. Backbone gradients excluded explicitly. Cold compilation and warm structural-plan reuse both reported",
     "compiler_limits": "same 30s/200000cells/1000000alternatives",
     "query_deadline_seconds": 10,
     "loading": "one-time checkpoint load excluded explicitly; no model inference during simultaneous timed replay",
     "success": "cost times variance below original and competitive control for a stated operation; mathematical correctness alone and expected rejection counts are insufficient",
-    "uncertainty": "three timing repetitions; report distributions and censoring, no universal hardware or optimizer convergence claim"
+    "uncertainty": "three timing repetitions; report distributions and censoring, no universal hardware or optimizer convergence claim",
+    "numerical_threads": "NumPy BLAS one thread; Torch CPU four threads",
+    "strong_control": "Also show neural-only original cost floor (forward+backward+native action/score), excluding rational conversion and grammar work equally, to prevent an inefficient common preprocessing cost from manufacturing a benefit.",
+    "zero_reward": "All methods bypass extra resampling and head backward when reward is zero; no estimator with zero conditional variance needs a replica."
   },
-  "exclusions": ["trained final dJev", "publication novelty", "human review", "full Python/Rust Lean verification", "semantic superiority over EPIC", "final-document learning curves"]
+  "exclusions": [
+    "trained final dJev",
+    "publication novelty",
+    "human review",
+    "full Python/Rust Lean verification",
+    "semantic superiority over EPIC",
+    "final-document learning curves"
+  ]
 }
