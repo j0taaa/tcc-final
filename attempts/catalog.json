@@ -666,6 +666,16 @@
             "attempts/22-full-vocabulary-posterior/README.md",
             "attempts/22-full-vocabulary-posterior/work"
           ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "2b571340b50433a8daaf35d2cb30c6fafefd331b",
+          "evidence_commit": "2b571340b50433a8daaf35d2cb30c6fafefd331b",
+          "evidence_roots": [
+            "attempts/22-full-vocabulary-posterior/work/evidence",
+            "attempts/22-full-vocabulary-posterior/work/specification.md",
+            "attempts/22-full-vocabulary-posterior/work/protocol.json"
+          ]
         }
       ]
     }
