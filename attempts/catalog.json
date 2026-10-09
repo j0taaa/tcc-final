@@ -424,6 +424,32 @@
             "attempts/17-pl-latent-resampling/work/evidence/utility/envelope-profile-oracle.json",
             "docs/artifacts/raw/m34_cfg_posterior_v1"
           ]
+        },
+        {
+          "id": "v12",
+          "source_commit": "a4a67e0f7bd1c0c7d68f04b5d9786713b8e8b867",
+          "evidence_commit": "5b8b42ccafa388cf16f05620d66b00780c213485",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/evidence/utility/bulk-utility-v4",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/neural-utility-v3",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/neural-v3-independent-geometry.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/neural-v3-provenance.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/strengthened-v4-decision.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/strengthened-v4-decision.md",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/strengthened-v4-prefix-decision.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/strengthened-v4-prefix-decision.md",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/complete-intermediate-provenance.json",
+            "docs/artifacts/raw/m34_cfg_posterior_v1"
+          ]
+        },
+        {
+          "id": "v13",
+          "source_commit": "9fe76670af4e84c8eb8be76fb96f300155cfe70f",
+          "evidence_commit": "9fe76670af4e84c8eb8be76fb96f300155cfe70f",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/forced-decision-refinement.md",
+            "tests/test_pl_resampling.py"
+          ]
         }
       ]
     }
