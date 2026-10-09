@@ -1,0 +1,21 @@
+{
+  "phase": "strengthened neural v3, all controls executable",
+  "producer": "c1210a989b2a615773172c92a0fa8f90bfe93d37",
+  "commands": [
+    "HF_HUB_OFFLINE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=src:. .venv-live/bin/python attempts/17-pl-latent-resampling/work/neural_utility.py --strengthened --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/pl-neural-utility-v3",
+    "OPENBLAS_NUM_THREADS=1 PYTHONPATH=src:. .venv-live/bin/python attempts/17-pl-latent-resampling/work/verify_neural_geometry.py --evidence .cache/pl-neural-utility-v3 --output .cache/pl-neural-v3-independent-geometry.json"
+  ],
+  "scope": "real frozen-backbone output-head gradient; no optimizer training, whole-model gradient or GPU measurement",
+  "files": {
+    "evidence/utility/neural-utility-v3/086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643-input.json": "aba0d592b12456ae93c029bc139260d9460794547f116fea92b62ad77bd0e650",
+    "evidence/utility/neural-utility-v3/0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4-input.json": "e12ca773130d6df007d31abc39f0f5affc332b886b58dab21189db2896adecbf",
+    "evidence/utility/neural-utility-v3/15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9-input.json": "372eb0b208145fb9d538cba75fa1b1efa98b4a9dc51efa76589766bdd7f5b50d",
+    "evidence/utility/neural-utility-v3/21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667-input.json": "fcb4966e298a7a246f824338562bc3e5cea3533a0e14c363365aab1b345ef025",
+    "evidence/utility/neural-utility-v3/213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc-input.json": "46a86c929a3cf30bd57314fd9a00ca59653026e14516bbc62c22e78b34bcf387",
+    "evidence/utility/neural-utility-v3/2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6-input.json": "7e279e6d24be8aa52021f14554a6e64f471d52a974376494de8e6c03941e18ea",
+    "evidence/utility/neural-utility-v3/metadata.json": "56269160232a48585456aa8582ab01217666a032dfb183d591c120bd075d4894",
+    "evidence/utility/neural-utility-v3/rows.jsonl": "83931bfbaac39243183af0d99b64c28c5490242f5fe96d53f26681db19c27629",
+    "evidence/utility/neural-v3-independent-geometry.json": "b3fb39ac51b471eab870c31c97c37e839225552ddc1794649745d14ff78ce04a",
+    "evidence/utility/strengthened-neural-summary.json": "2c76cdffa21412b331d472fdf8dc87d793d256f461ee39d282032b2039df752c"
+  }
+}

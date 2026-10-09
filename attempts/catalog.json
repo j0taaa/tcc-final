@@ -402,6 +402,28 @@
             "attempts/17-pl-latent-resampling/work/evidence/utility/provenance.json",
             "docs/artifacts/raw/m34_cfg_posterior_v1"
           ]
+        },
+        {
+          "id": "v10",
+          "source_commit": "4dc13671bdbb8c1a74c8df5b6a7d05322d5fb460",
+          "evidence_commit": "a4a67e0f7bd1c0c7d68f04b5d9786713b8e8b867",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/evidence/utility/bulk-utility-v3",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/pre-envelope-4096-decision.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/pre-envelope-4096-decision.md",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/pre-envelope-provenance.json",
+            "attempts/17-pl-latent-resampling/work/evidence/utility/neural-v1-geometry-with-hashes.json",
+            "docs/artifacts/raw/m34_cfg_posterior_v1"
+          ]
+        },
+        {
+          "id": "v11",
+          "source_commit": "b9a809d2017d5b0f3d72d935b2de8244304c705a",
+          "evidence_commit": "a48d476f838f06c3c6ea816754fad496758f3c2b",
+          "evidence_roots": [
+            "attempts/17-pl-latent-resampling/work/evidence/utility/envelope-profile-oracle.json",
+            "docs/artifacts/raw/m34_cfg_posterior_v1"
+          ]
         }
       ]
     }

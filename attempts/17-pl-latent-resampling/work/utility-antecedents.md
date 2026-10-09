@@ -24,6 +24,14 @@ PL em uma predição gramatical da dLLM, sem alterar a política executada.
   não resultado do TCC. A prova própria aplica esse limite ao denominador de
   uma família PL com lambda=q e separa os contratos escrever uma fração exata
   e produzir amostras exatas. A rejeição simples vence nessa família.
+- [Dyer (STOC 2003), §2.1, p. 2](https://www.math.cmu.edu/users/af1p/Teaching/MCC17/Papers/knapsack.pdf):
+  arredonda pesos da mochila, conta a representação aproximada por programação
+  dinâmica, amostra nela por backtracking probabilístico e rejeita saídas fora
+  do conjunto original. A lei aceita é uniforme exata, apesar da preparação
+  aproximada. Logo combinar DP arredondado com rejeição corretiva é antecedente
+  estabelecido, não novidade desta tentativa. O controle por perfis aplica uma
+  ideia dessa família ao peso PL sobre um circuito; nem isso nem dispensar
+  contagem exata basta para reivindicar uma descoberta de princípio geral.
 
 O ganho de réplicas/Rao–Blackwellização, MH independente e aproximação positiva
 por exponenciais é conhecido. O candidato específico é a construção racional
