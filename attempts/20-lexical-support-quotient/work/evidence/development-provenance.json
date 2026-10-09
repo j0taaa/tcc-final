@@ -1,0 +1,10 @@
+{
+  "source_commit": "7b33f6d2da0ebb29e5fda3e53ee677982c812918",
+  "rows": 864,
+  "complete": 795,
+  "equal": 744,
+  "strong_wins_primary": 0,
+  "strong_wins_secondary": 0,
+  "raw_sha256": "32ef62c13a2622bb32b822e931cb931da06bafae11a8c1c44cd0c5c3ee61841e",
+  "decision": "No CPU/heldout/fresh expansion under failed development gate. Global grouping does not outperform equally competent lexical controls."
+}

@@ -2311,3 +2311,11 @@ Fill this section only with real artifacts.
   classification/preparation and all model forwards. Prove congruence and
   stability under same-class expansion; credit classical lexer and FactorDLM.
   Predeclared success is representation benefit, not algorithm exclusivity.
+
+- [x] T4001: Execute all864 preregistered attempt20 MDLM/CUDA rows. 795
+  complete, 744 equal comparisons, 0/18 strong wins for primary and secondary.
+  Global-class candidate fails development gate versus equally lexical controls;
+  no heldout/fresh/CPU expansion. Preserve data in attempt20/work/evidence.
+- [ ] T4100: Investigate context-specific overlapping token groups with explicit
+  incoming lexer states, original-ID queries and growth checks. Compare against
+  ALL competent byte/lexer/global-class controls; no gate relaxation.

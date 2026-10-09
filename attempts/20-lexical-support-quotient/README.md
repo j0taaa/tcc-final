@@ -1,6 +1,11 @@
 # Tentativa 20 — Suporte de tokens agrupado pelo efeito lexical completo
 
-Hipótese em investigação; benefício e novidade próprios ainda não confirmados.
+**Resultado negativo preservado:** 864 registros MDLM/CUDA, 795 completos,
+744 comparações iguais, 0/18 ganhos predeclarados da candidata primária
+e da secundária contra controles igualmente lexicais. Nenhuma divergência.
+O lexer reduziu custo comparado à representação byte, mas é antecedente conhecido;
+o quociente global não comprovou vantagem adicional. Não relaxar o critério.
+Dados e análises em work/evidence/development-decision.md.
 Fontes independentes de19 (`f675fe3`), sem importar work de outra tentativa.
 A versão19 negativa fica preservada. Nenhum decoder mantido é substituído.
 
