@@ -1,0 +1,25 @@
+{
+  "source_commit": "911898dabfc5d9f31cdc99f09c62fe81668ddc42",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-development-gpu-v1 --phase development --device cuda",
+    "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-heldout-gpu-v1 --phase heldout --device cuda"
+  ],
+  "source_sha256": {
+    "attempts/18-monotone-grammatical-decoding/work/generation.py": "47627a5c34ace27ff527b2cb6bf82e2df091b7ccef99e0e3efaf3a81a4cd6266",
+    "attempts/18-monotone-grammatical-decoding/work/monotone.py": "d56e8bb39620ac2bff24e18db25c8a2fbc2d1746807b81ac4eac387c58044937",
+    "attempts/18-monotone-grammatical-decoding/work/grammar_selectors.py": "88beaeefdd1ad47682fe2fe580adc05169ad8114c9a752bb500970ad91b189ee",
+    "attempts/18-monotone-grammatical-decoding/work/native_sat.py": "c23a48184114fe6f5b8e58f3396ff826c697717f96b9947616be235a57be316c",
+    "attempts/18-monotone-grammatical-decoding/work/enumeration.py": "0e060abf284bdc2f9b86ebed302451b40eb277c90160e0330d90ada417120214",
+    "attempts/18-monotone-grammatical-decoding/work/protocol.json": "b12b1c3a37d58d753666cec0821bcdf3682ad40e25bc6369b553b16ffff8f9d4",
+    "attempts/18-monotone-grammatical-decoding/work/gpu-addendum.json": "db3c56b8ce09e9efe0daebf3d00ec2417e0eb03563f7b768a67243e6aba9164b",
+    "attempts/18-monotone-grammatical-decoding/work/analyze.py": "6ed7ef498f0127987c6a186ff79b5d5bc1adca5d47955755bde65f4c050351d3"
+  },
+  "evidence_sha256": {
+    "development-gpu-v1/metadata.json": "ba13d2cd3c6d3e4aea9540972a8cdae7656e5d07caf01e48e4f2038406423b3c",
+    "development-gpu-v1/rows.jsonl": "d661f468870aa0c71c554ebbd834f81808146123da6789862e1959ceb83178db",
+    "gpu-decision.json": "6442a5489d92f8c49a1c199bf229927bd21af0b0ba267ec4375ce59d032a0d81",
+    "gpu-decision.md": "d01ed6d5d302f77483f27649f11fd355d5be3a4cae421a9c80c0c546470d7bf7",
+    "heldout-gpu-v1/metadata.json": "d606a36643112a688c52bc72606d174fb12850374a4aa7c2de4c543a593467a9",
+    "heldout-gpu-v1/rows.jsonl": "953af339783b68023593bbb2f86c3ebb5d8ab98dcd85cf140bbae84787c03a70"
+  }
+}

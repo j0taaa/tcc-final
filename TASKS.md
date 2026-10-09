@@ -39,7 +39,7 @@ incremental alternative; classical foundations are not recast as inventions.
   forwards for each decoder and three rotated timing repetitions. Compiled
   witness greedy, integer lex, persistent-witness prefix greedy, classical
   monotone propagation, independent bitset enumeration and pinned native SAT
-  are included. No speed/generation superiority has been measured yet.
+  are included. No publication priority is claimed.
   **CPU evaluation completed:** source
   `5da0df78e8a066ded1d0ce6c69ecbac77c966052` produced 324 development and 648
   held-out records, including every refusal/zero-support input. `work/evidence/`
@@ -54,7 +54,14 @@ incremental alternative; classical foundations are not recast as inventions.
   using the same documents/cases/controls and criterion. It responds to CPU
   forward cost dominating selection; it is a separately labelled secondary
   extension, not a replacement of the CPU experiment. Source/protocol/costs
-  are frozen before CUDA runs. No GPU benefit or publication priority claimed.
+  are frozen before CUDA runs. **GPU original completed:** 324 development and
+  648 held-out rows; 504 additional exact shared trajectories, 1/18 and 1/36
+  configurations meet the speed criterion. `work/evidence/gpu-decision.md/json`
+  and `gpu-provenance.json` preserve everything. These are provisional: all
+  forest controls must receive common root-dependency pruning, a classical
+  optimization identified in the adversarial review. Keep the same documents,
+  cases and costs; freeze a separate refinement before measuring. A victory
+  against avoidable dead-forest work is insufficient to confirm useful benefit.
 
 ## M38 — Align standing instructions with the current scientific objective
 

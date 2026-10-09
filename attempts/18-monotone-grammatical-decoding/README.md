@@ -2,7 +2,7 @@
 
 Iniciada em 2026-10-09 sobre `89078ecf589e187927c1ba3d4f54f87ba9df43cd`.
 Pesquisa isolada; a tentativa 17 e os decoders mantidos não são substituídos.
-Status: **CPU completo; extensão GPU registrada antes de medir**.
+Status: **CPU/GPU completos; comparação fortalecida em preparação**.
 
 Versão v1 preserva o protótipo/protocolo inicial. Antes de qualquer forward ou
 timing, a inspeção do corpus encontrou só nove documentos de 24..96 tokens,
@@ -25,6 +25,16 @@ mas o modelo/compilação/preparação diluem a economia.
 casos, comparadores e critérios. Foi registrada após desenvolvimento CPU,
 antes de qualquer forward CUDA. CPU não é renomeado como resultado favorável.
 O limite matemático continua válido, mas não prova velocidade física.
+
+[GPU original](work/evidence/gpu-decision.md): 1/18 configurações de
+desenvolvimento e 1/36 externas passam o critério, com mais 504 comparações
+exatas de trajetórias. Ainda NÃO confirmar a vantagem: os métodos baseados em
+floresta processam também células que não participam de nenhuma derivação da
+raiz. Eliminação dessas células é uma otimização clássica competente, deve
+beneficiar igualmente propagador e controles. O refinamento terá plano próprio,
+os mesmos documentos/máscaras e custos totais, sem substituir dados originais.
+Os oito critérios permanecem iguais: isso é um controle mais forte, não uma
+nova contribuição ou seleção de casos favoráveis.
 
 ## Contrato e oito critérios
 
