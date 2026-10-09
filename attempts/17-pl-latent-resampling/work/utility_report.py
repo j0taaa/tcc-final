@@ -196,6 +196,16 @@ def bulk(folder, prefix=False):
                         a / b
                         for a, b in zip(control["cpu_seconds"], mix["cpu_seconds"], strict=True)
                     ],
+                    cold_wall_ratios=[
+                        a / b
+                        for a, b in zip(control["cold_seconds"], mix["cold_seconds"], strict=True)
+                    ],
+                    cold_cpu_ratios=[
+                        a / b
+                        for a, b in zip(
+                            control["cold_cpu_seconds"], mix["cold_cpu_seconds"], strict=True
+                        )
+                    ],
                 )
         comparisons.append(
             dict(
@@ -215,13 +225,16 @@ def bulk(folder, prefix=False):
                 cold_substantial_advantage=bool(paired)
                 and all(
                     min(p["cold_wall_ratio"], p["cold_cpu_ratio"]) >= 1.25
-                    and min(*p["wall_ratios"], *p["cpu_ratios"]) > 1
+                    and min(*p["cold_wall_ratios"], *p["cold_cpu_ratios"]) > 1
                     for p in paired.values()
                 ),
             )
         )
     return dict(
         producer=metadata["producer"],
+        timing_design=metadata.get(
+            "comparison", "Métodos rotacionados nas três repetições de uma mesma campanha."
+        ),
         batch_size=batch_size,
         prefix_of_larger_campaign=prefix,
         methods=methods,
@@ -326,6 +339,7 @@ def build(args):
         wins=len(wins),
         substantial=len(substantial),
         cold_substantial=len(cold),
+        timing_design=b["timing_design"],
         statuses="\n".join(statuses),
         winner_details="\n\n".join(details) if details else "Nenhum evento.",
     )

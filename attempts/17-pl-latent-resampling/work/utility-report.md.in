@@ -20,6 +20,13 @@ A consulta acima presume circuito disponível e inclui toda preparação do samp
 
 $statuses
 
+Desenho temporal: $timing_design. Os controles por índices conservam a mesma lei
+e são engenharia do comparador; não são apresentados como descoberta do TCC.
+O estudo neural também foi comparado ao piso de sobrecusto zero de qualquer
+sampler com uma réplica iid; a média condicional continua melhor nas 12
+configurações e nos quatro escopos de custo, sem inventar timings neurais
+para a representação por índices.
+
 Eventos que satisfazem a comparação de medianas; os valores por repetição mostram a estabilidade, não são um intervalo de confiança:
 
 $winner_details
