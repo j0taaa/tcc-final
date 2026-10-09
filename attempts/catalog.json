@@ -603,7 +603,7 @@
     {
       "id": "20-lexical-support-quotient",
       "title": "Classes pelo efeito lexical completo e suporte crescente",
-      "conclusion": "Hip\u00f3tese preregistrada; or\u00e1culos de tokens originais passam. Lexer/quociente s\u00e3o conhecidos; vantagem completa ainda n\u00e3o medida.",
+      "conclusion": "864 registros, 744 equival\u00eancias, zero ganho prim\u00e1rio/secund\u00e1rio contra controles lexicais fortes. Quociente global negativo preservado.",
       "reading": "attempts/20-lexical-support-quotient/README.md",
       "versions": [
         {
@@ -614,6 +614,14 @@
             "attempts/20-lexical-support-quotient/work/evidence",
             "attempts/20-lexical-support-quotient/work/specification.md",
             "attempts/20-lexical-support-quotient/work/protocol.json"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "7b33f6d2da0ebb29e5fda3e53ee677982c812918",
+          "evidence_commit": "bc49b6717d15b1f984818ff3bf4c49537aff856d",
+          "evidence_roots": [
+            "attempts/20-lexical-support-quotient/work/evidence"
           ]
         }
       ]

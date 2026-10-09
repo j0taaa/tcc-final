@@ -2319,3 +2319,9 @@ Fill this section only with real artifacts.
 - [ ] T4100: Investigate context-specific overlapping token groups with explicit
   incoming lexer states, original-ID queries and growth checks. Compare against
   ALL competent byte/lexer/global-class controls; no gate relaxation.
+
+- [x] T4101: Implement isolated context-aware grouped lattice, GAC original
+  membership retention, native SAT OR selectors and exact lex argmax on group
+  members. Offline product oracle covers144 GAC/root trajectories, optional SAT
+  adds72; mutation scanner oracle3000 cases; all19 fake-driver methods agree.
+  Commitment ambiguity and support-contract regression included. Benefit pending.

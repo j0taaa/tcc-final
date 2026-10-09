@@ -52,7 +52,12 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   A tentativa20 investiga classes pelo efeito em todos os estados de um lexer
   JSON, preservando tokens originais e suportes crescentes. Inclui controles
   lexicais sem classes e métodos clássicos por classes. Princípios de lexer e
-  quociente são antecedentes, não novidade; benefício ainda não medido.
+  quociente são antecedentes, não novidade; 864 registros e controles lexicais
+  não confirmaram ganho adicional do quociente global. A tentativa21 investiga
+  grupos locais possivelmente sobrepostos conforme o estado lexical explícito.
+  Viabilidade original é união dos grupos; commit retém todos os grupos com
+  o original, e crescimento com comportamento novo recompila. Oráculos passam;
+  benefício ainda depende de medição contra TODOS os controles de20.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

@@ -114,3 +114,8 @@ inicial será congelada após o commit do código/protocolo, antes dos timings.
     hipótese e protótipo isolados; classificação em todos os estados, crescimento
     por classe e controles lexicais fortes. Princípios conhecidos, benefício
     não confirmado. Dados negativos de19 preservados em v2.
+
+21. [Grupos dependentes de estado lexical](21-contextual-token-groups/README.md):
+    protótipo e prova escrita delimitada, sobreposição de membros e crescimento
+    seguro. Todos os controles byte/lexer/classes globais preservados.
+    Benefício ainda não medido; não apresentar princípios clássicos como novos.

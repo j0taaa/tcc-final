@@ -1385,3 +1385,15 @@ SynCode e XGrammar; quociente é FactorDLM Proposição2. Esses princípios não
 são uma invenção. Gap candidato é construção automática/reutilização numa
 dLLM com lacunas bilaterais e suporte crescente, a medir contra o lexer sem
 classes igualmente competente. Mesmo um ganho não prova prioridade mundial.
+
+## 2026-10-09 — Tentativa21: grupos que dependem do estado
+
+Tentativa20: 864 registros, 744 equivalências e zero ganho forte, inclusive
+secundária. Partição global é excessivamente fina para lacunas cujo estado
+lexical só pode ser conhecido através do caminho. Tentativa21 preserva estados
+no grafo e usa grupos por estado; um original pode ocorrer em vários grupos.
+Clamps são uniões, não um representante arbitrário. Prova/custo/limites em
+contextual-specification.md, protocolo ALL19 comparadores antes dos forwards.
+Lexer separado/eliminação condicionada/GAC são conhecidos. A contribuição
+candidata é integração útil e exata com atualização de suporte, não novo
+princípio universal; prioridade e publicação permanecem não confirmadas.

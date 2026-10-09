@@ -1,0 +1,31 @@
+{
+  "trajectories": 216,
+  "transitions": 707,
+  "seed": 2026100923,
+  "oracle": "strict decoded UTF8 Python JSON, enumerate original token products",
+  "timings": "not performance evidence",
+  "source_sha256": {
+    "context_lattice.py": "555ca23f9356b9516747526f65f2c717f6beeb5da9815e2c3af923727545a749",
+    "lex_lattice.py": "61aa69145c72abcf019ddb4eef765620fcb3fa1fcce3be40122fa2e3cb7affa3",
+    "generation.py": "ca72a1daf297d9b60e00d648c2ab6973e17fafc2dd922f812e37fcb88dc4e383",
+    "rooted_parser.py": "c75c68209219eff14be8267c5cea79f3bd97898b22831ce339ff9f77193b0029",
+    "grammar_selectors.py": "54e296dcfec1810006c7d4851f6b9aa261265723da73d6fcf35b71b59a0bd19a",
+    "native_queries.py": "b8cd33684f06a974b707ac003db888402f208632384ef00a619f02c378b057f3",
+    "enumeration.py": "296281dd7cbb05a0d24f6ff21778565df4f245bf396829fc28888f4cd88e4309",
+    "trie_lattice.py": "4e2550a9fc9555f0527fbe6ba5f15515a5fc324dee2d7621b7c7e27ea5433a9e",
+    "lexer.py": "7d9bb40cc36132f16d347c8ca946e63f5de7fa8f7b50b24c3398b355f6763223",
+    "analyze.py": "29865c659aab6f40571979be10275c7ee4454d9b64d6950f998445bfe7f362b4",
+    "reservoir_sat.py": "eef67572493c9466386b70eb91bf72a25a732b49d7e6c1b570519309f4d1ec78",
+    "test_correctness.py": "229408d3be0b0c99cb203a89aceb69e78f9c5dd1d345c2e2ee531acbac8c2598",
+    "rooted_selectors.py": "272e0bd1ccae80ed3af01d155c62680ecbea4325467f71c37ad31ebdf013c1c0",
+    "__init__.py": "98db08c02170617ae8e743738a7b72f2f9165564c3b0bcda5506b89e5476ff4b",
+    "native_sat.py": "213b670ece1032f934a3ced6336ece15199de8c03f6f4369643b3cbadc93cfdb",
+    "lexical_selectors.py": "34854a20aad1f3f0258b33bc608255f8a497363f5530249e587b6db6a621011c",
+    "relevant_forest.py": "5560491f0ccea918265ac40d8c56b07e09c96612539c06826077ea1454e7538c",
+    "adaptive_domains.py": "bfb3ce45e8cc23ec2951635b8205fbee69c07a931ba6ec6b8f282d38216d26df",
+    "contextual_selectors.py": "684a63a513defcebad39db6fd4169a2a3475d5bc0f8565e4e2e3c3149cdcbd4b",
+    "shared_fastpath.py": "de04bbe22a9e0203bd62117b29d697ef90a044d479a81a16de18c883520bf602",
+    "audit_driver.py": "9a84f7e188e0111ed409583e3263c668e484f8864dbca926dc86a6407cef7ba2",
+    "monotone.py": "d56e8bb39620ac2bff24e18db25c8a2fbc2d1746807b81ac4eac387c58044937"
+  }
+}
