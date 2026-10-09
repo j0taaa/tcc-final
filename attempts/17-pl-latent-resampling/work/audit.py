@@ -122,14 +122,19 @@ def forest_law(base):
     }
 
 
-def check_problem(p, paths, dyadic_unaries=False):
+def check_problem(p, paths, dyadic_unaries=False, tight_bounds=False):
     target = {
         y: w * direct_pl(y, p.order, p.free, p.rates, p.indices)
         for y, w in paths.items()
         if all(y[i] == token for i, token in p.observed.items())
     }
     z = sum(target.values(), Q())
-    mixture, rejection = TangentMixture(p, dyadic_unaries=dyadic_unaries), BaseRejection(p)
+    if tight_bounds:
+        tightened = p.tightened()
+        assert tightened.L == min(p.total_rate(y) for y in target)
+        assert tightened.H == max(p.total_rate(y) for y in target)
+    mixture = TangentMixture(p, dyadic_unaries=dyadic_unaries, tight_bounds=tight_bounds)
+    rejection = BaseRejection(p, tight_bounds=tight_bounds)
     proposal = defaultdict(Q)
     for alpha, _, component in mixture.components:
         law = forest_law(component)
@@ -159,7 +164,7 @@ def check_problem(p, paths, dyadic_unaries=False):
     return len(target)
 
 
-def correctness(max_n=4, dyadic_unaries=False):
+def correctness(max_n=4, dyadic_unaries=False, tight_bounds=False):
     events = paths_checked = 0
     for n in range(1, max_n + 1):
         for weighted in (False, True):
@@ -180,23 +185,31 @@ def correctness(max_n=4, dyadic_unaries=False):
                                 order,
                                 dict(zip(order, tokens, strict=True)),
                             )
-                            paths_checked += check_problem(p, paths, dyadic_unaries)
+                            paths_checked += check_problem(p, paths, dyadic_unaries, tight_bounds)
                             events += 1
             print(
                 f"exact-law fixture n={n}, weighted={weighted}: cumulative {events} events",
                 flush=True,
             )
-    for values in [(b"0", b"0", b"1"), (b"1", b"10"), (b"0", b"[0]", b"[1]")]:
+    for values in [
+        (b"0", b"0", b"1"),
+        (b"1", b"10"),
+        (b"0", b"[0]", b"[1]"),
+        (b"0", b"1", b"oops"),
+    ]:
         plan, data = fixture(2, True, values)
         paths = enumerated_paths(data)
         free = tuple(i for i, t in enumerate(data.state.canvas) if t is None)
         rates = tuple(tuple(q**2 for q in row) for row in data.probabilities)
         for i in free:
             for token in data.state.support.rows[i]:
+                if not any(path[i] == token for path in paths):
+                    continue
                 paths_checked += check_problem(
                     Problem(plan, data.probabilities, rates, (i,), {i: token}),
                     paths,
                     dyadic_unaries,
+                    tight_bounds,
                 )
                 events += 1
     plan, data = fixture(2)
@@ -204,7 +217,7 @@ def correctness(max_n=4, dyadic_unaries=False):
     rates = tuple(tuple(Q(1) for _ in row) for row in data.probabilities)
     for order in [(), (1,), (1, 3)]:
         p = Problem(plan, data.probabilities, rates, order, {i: 3 for i in order})
-        paths_checked += check_problem(p, paths, dyadic_unaries)
+        paths_checked += check_problem(p, paths, dyadic_unaries, tight_bounds)
         events += 1
     return {"events": events, "conditional_original_paths": paths_checked, "exact_mismatches": 0}
 
@@ -383,12 +396,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--dyadic", action="store_true")
+    parser.add_argument("--tight-bounds", action="store_true")
     args = parser.parse_args()
     start = perf_counter()
     report = {
         "scope": "exact finite correctness oracles, no performance or training claim",
         "numeric_variant": "dyadic" if args.dyadic else "reference",
-        "correctness": correctness(dyadic_unaries=args.dyadic),
+        "tight_bounds": args.tight_bounds,
+        "correctness": correctness(dyadic_unaries=args.dyadic, tight_bounds=args.tight_bounds),
         "gradient": gradient_audit(),
         "elapsed_seconds": perf_counter() - start,
     }

@@ -107,9 +107,16 @@ def run(args):
     methods = [
         (
             "certified_tangent_mixture",
-            partial(TangentMixture, dyadic_unaries=args.numeric_variant == "dyadic"),
+            partial(
+                TangentMixture,
+                dyadic_unaries=args.numeric_variant != "reference",
+                tight_bounds=args.numeric_variant == "tight-dyadic",
+            ),
         ),
-        ("rejection_with_f_L_envelope", BaseRejection),
+        (
+            "rejection_with_f_L_envelope",
+            partial(BaseRejection, tight_bounds=args.numeric_variant == "tight-dyadic"),
+        ),
         ("enumeration", EnumeratedTarget),
     ]
 
@@ -249,5 +256,7 @@ def run(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--numeric-variant", choices=("reference", "dyadic"), default="reference")
+    parser.add_argument(
+        "--numeric-variant", choices=("reference", "dyadic", "tight-dyadic"), default="reference"
+    )
     run(parser.parse_args())

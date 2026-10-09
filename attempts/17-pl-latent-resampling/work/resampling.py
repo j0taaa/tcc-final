@@ -175,9 +175,40 @@ class Problem:
             (self.probabilities[i][self.indices[i][t]] for i, t in enumerate(path)), start=Q(1)
         )
 
+    def tightened(self, end=None):
+        """Classical min/max sum passes; optimal constant rejection envelope."""
+        p = Problem(self.plan, self.probabilities, self.rates, self.order, self.observed)
+        bounds = [None] * len(self.plan.terms)
+        for node in self.plan.order:
+            deadline(end)
+            alternatives = []
+            for term in self.plan.terms[node]:
+                if term.choice is not None:
+                    i, index = term.choice
+                    if i in self.observed and self.rows[i][index] != self.observed[i]:
+                        continue
+                    value = self.rates[i][index] if i in self.hidden else Q()
+                    alternatives.append((value, value))
+                elif not term.children:
+                    alternatives.append((Q(), Q()))
+                elif all(bounds[c] is not None for c in term.children):
+                    alternatives.append(
+                        tuple(sum((bounds[c][j] for c in term.children), Q()) for j in (0, 1))
+                    )
+            if alternatives:
+                bounds[node] = (min(b[0] for b in alternatives), max(b[1] for b in alternatives))
+        if self.plan.root is None or bounds[self.plan.root] is None:
+            raise ValueError("zero structural evidence mass")
+        p.L, p.H = bounds[self.plan.root]
+        return p
+
 
 class TangentMixture:
-    def __init__(self, problem, end=None, max_components=256, dyadic_unaries=False):
+    def __init__(
+        self, problem, end=None, max_components=256, dyadic_unaries=False, tight_bounds=False
+    ):
+        if tight_bounds:
+            problem = problem.tightened(end)
         self.problem = p = problem
         self.components = []
         self.component_cdf = None
@@ -290,7 +321,9 @@ class TangentMixture:
 class BaseRejection:
     """Competent rejection: grammar/evidence conditioned, envelope f(L), not 1."""
 
-    def __init__(self, problem, end=None):
+    def __init__(self, problem, end=None, tight_bounds=False):
+        if tight_bounds:
+            problem = problem.tightened(end)
         self.problem = problem
         self.base = WeightedForest.prepare(problem.plan, problem.evidence_weights, end)
         if not self.base.mass:

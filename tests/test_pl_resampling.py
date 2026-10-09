@@ -23,8 +23,8 @@ audit = load("pl_resampling_audit", "audit.py")
 
 class PlLatentOracleTests(unittest.TestCase):
     def test_conditional_sampler_laws_and_token_aliases(self):
-        for dyadic in (False, True):
-            report = audit.correctness(max_n=2, dyadic_unaries=dyadic)
+        for dyadic, tight in ((False, False), (True, False), (True, True)):
+            report = audit.correctness(max_n=2, dyadic_unaries=dyadic, tight_bounds=tight)
             self.assertGreater(report["events"], 20)
             self.assertEqual(report["exact_mismatches"], 0)
 
