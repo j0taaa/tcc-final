@@ -111,17 +111,25 @@ def run(args):
             partial(
                 TangentMixture,
                 dyadic_unaries=args.numeric_variant != "reference",
-                tight_bounds=args.numeric_variant == "tight-dyadic",
+                dyadic_coefficients=args.numeric_variant == "full-dyadic",
+                tight_bounds=args.numeric_variant in ("tight-dyadic", "full-dyadic"),
             ),
         ),
         (
             "rejection_with_f_L_envelope",
-            partial(BaseRejection, tight_bounds=args.numeric_variant == "tight-dyadic"),
+            partial(
+                BaseRejection, tight_bounds=args.numeric_variant in ("tight-dyadic", "full-dyadic")
+            ),
         ),
         ("enumeration", EnumeratedTarget),
     ]
     if args.extra_control:
-        methods.append(("single_tilt_rejection", SingleTilt))
+        methods.append(
+            (
+                "single_tilt_rejection",
+                partial(SingleTilt, dyadic_coefficients=args.numeric_variant == "full-dyadic"),
+            )
+        )
     metadata["methods"] = [name for name, _ in methods]
     (args.output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
 
@@ -274,6 +282,8 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--extra-control", action="store_true")
     parser.add_argument(
-        "--numeric-variant", choices=("reference", "dyadic", "tight-dyadic"), default="reference"
+        "--numeric-variant",
+        choices=("reference", "dyadic", "tight-dyadic", "full-dyadic"),
+        default="reference",
     )
     run(parser.parse_args())

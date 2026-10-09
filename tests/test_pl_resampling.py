@@ -76,9 +76,18 @@ class PlLatentOracleTests(unittest.TestCase):
                 self.assertGreaterEqual(normalizer, optimum_lower)
 
     def test_conditional_sampler_laws_and_token_aliases(self):
-        for dyadic, tight in ((False, False), (True, False), (True, True)):
+        for dyadic, tight, coefficients in (
+            (False, False, False),
+            (True, False, False),
+            (True, True, False),
+            (True, True, True),
+        ):
             report = audit.correctness(
-                max_n=2, dyadic_unaries=dyadic, tight_bounds=tight, single_tilt=tight
+                max_n=2,
+                dyadic_unaries=dyadic,
+                tight_bounds=tight,
+                single_tilt=tight,
+                dyadic_coefficients=coefficients,
             )
             self.assertGreater(report["events"], 20)
             self.assertEqual(report["exact_mismatches"], 0)

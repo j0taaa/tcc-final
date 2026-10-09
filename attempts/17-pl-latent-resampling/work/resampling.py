@@ -80,6 +80,15 @@ def dyadic_negative_exp_upper(x, tolerance, end=None):
     return min(Q(1), Q(-(-upper.numerator * scale // upper.denominator), scale))
 
 
+def dyadic_round_upper(value, tolerance):
+    """Enclose a nonnegative rational with error at most tolerance."""
+    if value < 0 or tolerance <= 0:
+        raise ValueError("nonnegative value and positive tolerance required")
+    precision = max(0, (tolerance.denominator // tolerance.numerator).bit_length())
+    scale = 1 << precision
+    return Q(-(-value.numerator * scale // value.denominator), scale)
+
+
 @dataclass
 class WeightedForest:
     plan: object
@@ -206,7 +215,13 @@ class Problem:
 
 class TangentMixture:
     def __init__(
-        self, problem, end=None, max_components=256, dyadic_unaries=False, tight_bounds=False
+        self,
+        problem,
+        end=None,
+        max_components=256,
+        dyadic_unaries=False,
+        tight_bounds=False,
+        dyadic_coefficients=False,
     ):
         if tight_bounds:
             problem = problem.tightened(end)
@@ -239,8 +254,11 @@ class TangentMixture:
         for s in grid:
             deadline(end)
             t = sum((1 / (s + c) for c in p.c), Q())
-            _, upper = exp_bounds(t * s, delta_a / p.f(s), end)
+            alpha_error = delta_a / 2 if dyadic_coefficients else delta_a
+            _, upper = exp_bounds(t * s, alpha_error / p.f(s), end)
             alpha = p.f(s) * upper
+            if dyadic_coefficients:
+                alpha = dyadic_round_upper(alpha, delta_a / 2)
             unary = tuple(
                 tuple(
                     upper_unary(t * rate, delta_u, end) if i in p.hidden else Q(1) for rate in row
@@ -358,7 +376,7 @@ class BaseRejection:
 class SingleTilt(BaseRejection):
     """Classical single exponential proposal with a global endpoint majorant."""
 
-    def __init__(self, problem, end=None):
+    def __init__(self, problem, end=None, dyadic_coefficients=False):
         p = self.problem = problem.tightened(end)
         if not p.order or p.L == p.H:
             super().__init__(p, end)
@@ -375,7 +393,12 @@ class SingleTilt(BaseRejection):
             logarithm / (p.H - p.L),
         )
         delta = p.f(p.H) / 4
-        self.upper = max(p.f(s) * exp_bounds(t * s, delta / p.f(s), end)[1] for s in (p.L, p.H))
+        alpha_error = delta / 2 if dyadic_coefficients else delta
+        self.upper = max(
+            p.f(s) * exp_bounds(t * s, alpha_error / p.f(s), end)[1] for s in (p.L, p.H)
+        )
+        if dyadic_coefficients:
+            self.upper = dyadic_round_upper(self.upper, delta / 2)
         error = delta / (self.upper * len(p.hidden))
         self.unaries = tuple(
             tuple(

@@ -178,6 +178,13 @@ Use one notebook: `docs/research/contribution-plan.md`.
   reconstructs all nine original JSON inputs with archive hashes checked.
   CI for assessment commit `162d4001244900038ab1da3abede4317907609ba` passed.
 
+- [ ] T3614: Decide useful benefit of PL latent conditioning, including total
+  training cost and the stationary auxiliary-variable alternative.
+  **In progress:** preserve v1–v5; the full-dyadic refinement protocol targets
+  an observed coefficient-denominator bottleneck without changing the target.
+  Strengthen the control equally. Do not call a query speedup, logit-only
+  variance reduction, or a task list a completed neural benefit evaluation.
+
 - [x] T3600: Record the stable base, precise candidate contract and one
   recursive structured-generation application (plan 1, 2, 4).
   **Acceptance:** original-token/fixed-slot/support/EOS/status guarantees stay
