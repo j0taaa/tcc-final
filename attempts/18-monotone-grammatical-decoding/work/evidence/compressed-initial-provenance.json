@@ -1,0 +1,18 @@
+{
+  "source_commit": "cf4ed1fff287c16138264e29dc51f76fcb7f6828",
+  "command": "OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 PYTHONPATH=src:. .venv-live/bin/python attempts/18-monotone-grammatical-decoding/work/generation.py --source .cache/pl-utility-jsuite/JSON-Schema-Test-Suite-5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8 --output .cache/a18-development-gpu-compressed-v1 --phase development --device cuda --trim --native --compressed",
+  "decision": "All486 GPU development records completed;375 exact comparisons;zero criterion wins. Do not expand to CPU/heldout for this version. Shared geometry cache and canonical fallback must be preregistered before further timings.",
+  "source_sha256": {
+    "attempts/18-monotone-grammatical-decoding/work/generation.py": "ab1a4f1fdc876a33af888f3ba9c15904c4781a10dd80d6a9176b734d9509da3c",
+    "attempts/18-monotone-grammatical-decoding/work/analyze.py": "f3914993f68e3cd8d1d764e50ac67473c46e5015ad5400ecc1877dc262eccf99",
+    "attempts/18-monotone-grammatical-decoding/work/native_queries.py": "792114fa000a442f653538e5cbf17a114b01409d158f985c235bec29d4b6a599",
+    "attempts/18-monotone-grammatical-decoding/work/trie_lattice.py": "7b2d6280c961abdda9acf690ccaaa2a15ef33d7741df02763cd7ec73a7c52a05",
+    "attempts/18-monotone-grammatical-decoding/work/compression-addendum.json": "0aa671d7bfdedd3a4c3f63869a6468f5d47351df2ef9b6af86fd231eceaec8d0"
+  },
+  "evidence_sha256": {
+    "compressed-initial-decision.json": "a3890ba73772ea176efd035be31df152e24475ed1b3fb442b8c8326a532f14ff",
+    "compressed-initial-decision.md": "3a966722cdf5c627107b9b52713d91a906dbfd66f6e002f4e78e5cada4c08ec9",
+    "development-gpu-compressed-v1/metadata.json": "971233893b3b282cacce6a6ab2fb245986c4f9589907744237d1b8d556a8026b",
+    "development-gpu-compressed-v1/rows.jsonl": "bddc7cb57614740ff16f21c85ea5680629eb31ac2fc7a13d95a6e21643d674d6"
+  }
+}

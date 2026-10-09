@@ -76,6 +76,16 @@ implementação e os controles, não cria novidade teórica. Todos os casos CPU/
 serão reavaliados; os documentos já foram examinados, portanto são evidência
 de refinamento, não um novo teste independente de generalização.
 
+[Compacto inicial](work/evidence/compressed-initial-decision.md): 486 registros
+de desenvolvimento GPU, 375 comparações exatas, nenhum ganho pelo critério.
+Não ampliar essa versão lenta para CPU/avaliação. O
+[refinamento de trabalho compartilhado](work/shared-work-addendum.json) foi
+registrado antes de medir: geometria reutilizada em todos os nativos,
+fallback canônico numa otimização, controles com fallback eficiente e top16
+parcial exatamente igual ao sort completo em TODOS os métodos. Os critérios
+1/2/3/4/5/6/7/8 permanecem válidos: preservar a política, matemática delimitada,
+controles fortes, custos completos e nenhuma prioridade/publicação inventada.
+
 ## Contrato e oito critérios
 
 1. **Uso:** completar lacunas de documentos JSON com uma dLLM, preservando
