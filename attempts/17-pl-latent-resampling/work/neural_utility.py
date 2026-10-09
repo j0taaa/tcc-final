@@ -17,7 +17,7 @@ from fractions import Fraction as Q
 from functools import partial
 from pathlib import Path
 from random import Random
-from time import monotonic, perf_counter
+from time import monotonic, perf_counter, process_time
 
 import numpy as np
 import torch
@@ -454,25 +454,32 @@ def run(args):
                         primitive_seconds = perf_counter() - primitive_start
                         # Actual output-head backward; all parameters except head frozen.
                         backward_times = []
+                        backward_cpu = []
+                        forward_cpu = []
                         forwards = []
                         norm_error = None
                         for _rep in range(3):
                             start = perf_counter()
+                            cpu_start = process_time()
                             with torch.no_grad():
                                 model(input_ids=inputs, timesteps=torch.zeros(1))
                             forwards.append(perf_counter() - start)
+                            forward_cpu.append(process_time() - cpu_start)
                             features = captures[-1][0, list(free)]
                             if not reward:
                                 backward_times.append(0.0)
+                                backward_cpu.append(0.0)
                                 norm_error = 0.0
                                 continue
                             adjoint = torch.from_numpy(scores.adjoint(c0)).to(features.dtype)
                             start = perf_counter()
+                            cpu_start = process_time()
                             out = head(features)
                             grads = torch.autograd.grad(
                                 out, (head.weight, head.bias), grad_outputs=adjoint
                             )
                             backward_times.append(perf_counter() - start)
+                            backward_cpu.append(process_time() - cpu_start)
                             measured = sum(float(g.double().square().sum()) for g in grads)
                             expected = float(c0 @ scores.metric @ c0)
                             norm_error = abs(measured - expected) / max(1, expected)
@@ -486,6 +493,9 @@ def run(args):
                                 status="complete",
                                 forward_seconds=forwards,
                                 backward_seconds=backward_times,
+                                forward_cpu_seconds=forward_cpu,
+                                backward_cpu_seconds=backward_cpu,
+                                load_average=Path("/proc/loadavg").read_text().strip(),
                                 autograd_relative_norm_error=norm_error,
                                 input_seconds=input_seconds,
                                 normalization_seconds=normalization,
@@ -497,6 +507,7 @@ def run(args):
                         for rep in range(3):
                             for name, constructor in constructors[rep:] + constructors[:rep]:
                                 start = perf_counter()
+                                cpu_start = process_time()
                                 try:
                                     if not reward:
                                         emit(
@@ -509,6 +520,7 @@ def run(args):
                                                 method=name,
                                                 status="complete",
                                                 seconds=0.0,
+                                                cpu_seconds=0.0,
                                                 zero_reward_shortcut=True,
                                             )
                                         )
@@ -547,6 +559,7 @@ def run(args):
                                             method=name,
                                             status="complete",
                                             seconds=perf_counter() - start,
+                                            cpu_seconds=process_time() - cpu_start,
                                             order=order,
                                             observed=p.observed,
                                         )
@@ -562,6 +575,7 @@ def run(args):
                                             method=name,
                                             status="unresolved",
                                             seconds=perf_counter() - start,
+                                            cpu_seconds=process_time() - cpu_start,
                                             error=repr(error),
                                         )
                                     )

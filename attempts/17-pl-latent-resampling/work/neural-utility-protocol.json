@@ -58,7 +58,8 @@
     "uncertainty": "three timing repetitions; report distributions and censoring, no universal hardware or optimizer convergence claim",
     "numerical_threads": "NumPy BLAS one thread; Torch CPU four threads",
     "strong_control": "Also show neural-only original cost floor (forward+backward+native action/score), excluding rational conversion and grammar work equally, to prevent an inefficient common preprocessing cost from manufacturing a benefit.",
-    "zero_reward": "All methods bypass extra resampling and head backward when reward is zero; no estimator with zero conditional variance needs a replica."
+    "zero_reward": "All methods bypass extra resampling and head backward when reward is zero; no estimator with zero conditional variance needs a replica.",
+    "contended_machine": "Desktop/background processes observed before neural measurement. Record process CPU times and load average as well as wall times; scheduling delays cannot establish a robust speed claim. CPU seconds measure resource cost, not interchangeable with latency; no other processes are stopped."
   },
   "exclusions": [
     "trained final dJev",
