@@ -32,7 +32,9 @@ WORK = Path(__file__).resolve().parent
 ROOT = WORK.parents[2]
 
 
-def run(output, batch_size=1024, strengthened=False, fast_forced=False, indexed_only=False):
+def run(
+    output, batch_size=1024, strengthened=False, fast_forced=False, indexed_only=False, roomy=False
+):
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source and protocol before measuring")
     protocol_path = WORK / "bulk-utility-protocol.json"
@@ -45,7 +47,9 @@ def run(output, batch_size=1024, strengthened=False, fast_forced=False, indexed_
     if indexed_only:
         strengthened = fast_forced = True
     methods = list(
-        (indexed_controls() if indexed_only else iid_controls(strengthened, fast_forced)).items()
+        (
+            indexed_controls(roomy) if indexed_only else iid_controls(strengthened, fast_forced)
+        ).items()
     )
     output.mkdir(parents=True, exist_ok=False)
     (output / "metadata.json").write_text(
@@ -61,6 +65,11 @@ def run(output, batch_size=1024, strengthened=False, fast_forced=False, indexed_
                 strengthened=strengthened,
                 fast_forced=fast_forced,
                 indexed_only=indexed_only,
+                profile_resource_plan_sha256=hashlib.sha256(
+                    (WORK / "profile-resource-budget-plan.md").read_bytes()
+                ).hexdigest()
+                if roomy
+                else None,
                 indexed_profile_plan_sha256=hashlib.sha256(
                     (WORK / "indexed-profile-control-plan.md").read_bytes()
                 ).hexdigest()
@@ -164,11 +173,17 @@ def run(output, batch_size=1024, strengthened=False, fast_forced=False, indexed_
                             start = perf_counter()
                             cpu_start = process_time()
                             sampler = None
+                            resource_statistics = {}
                             histograms = [Counter() for _ in p.rows]
                             digest = hashlib.sha256()
                             try:
+                                extra = (
+                                    {"resource_statistics": resource_statistics} if roomy else {}
+                                )
                                 sampler = constructor(
-                                    p, end=monotonic() + config["preparation_deadline_seconds"]
+                                    p,
+                                    end=monotonic() + config["preparation_deadline_seconds"],
+                                    **extra,
                                 )
                                 row.update(
                                     preparation_seconds=perf_counter() - start,
@@ -222,9 +237,15 @@ def run(output, batch_size=1024, strengthened=False, fast_forced=False, indexed_
                                 cpu_seconds=process_time() - cpu_start,
                                 histograms=[dict(h) for h in histograms],
                                 paths_sha256=digest.hexdigest(),
+                                **resource_statistics,
                             )
                             if sampler is not None:
                                 row.update(decision_cache_statistics(sampler))
+                                if roomy:
+                                    row.update(
+                                        rss_budget_bytes=sampler.rss_budget_bytes,
+                                        rss_checked_max_bytes=sampler.rss_checked_max_bytes,
+                                    )
                                 row["rejection_factor"] = str(
                                     getattr(sampler, "rejection_factor", "not_applicable")
                                 )
@@ -239,5 +260,15 @@ if __name__ == "__main__":
     parser.add_argument("--strengthened", action="store_true")
     parser.add_argument("--fast-forced", action="store_true")
     parser.add_argument("--indexed-only", action="store_true")
+    parser.add_argument("--roomy", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.batch_size, args.strengthened, args.fast_forced, args.indexed_only)
+    if args.roomy and not args.indexed_only:
+        parser.error("--roomy requires --indexed-only")
+    run(
+        args.output,
+        args.batch_size,
+        args.strengthened,
+        args.fast_forced,
+        args.indexed_only,
+        args.roomy,
+    )

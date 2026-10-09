@@ -41,6 +41,8 @@ O núcleo/contratos de produção permanecem como base de comparação.
    [perfis grossos](work/coarse-profile-control-plan.md) e
    [representação por índices](work/indexed-profile-control-plan.md) registram cada mudança
    antes de medir; todos os estados e recusas permanecem no relato.
+   A [verificação dos tetos de tabelas](work/profile-resource-budget-plan.md)
+   amplia recursos do comparador para que suas recusas não fabriquem uma vitória.
 6. **Custo:** incluir compilação, enclosures, componentes, amostragem, memória
    lógica e aritmética; separar primeira saída/lote. O replay exclui forward
    e backward; o estudo neural os executou, com backbone congelado, além do

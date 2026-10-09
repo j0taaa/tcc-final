@@ -5,6 +5,7 @@ from functools import partial
 from indexed_profiles import IndexedProfiles
 from replay import EnumeratedTarget
 from resampling import BaseRejection, RoundedProfiles, SingleTilt, TangentMixture
+from resource_profiles import ResourceProfiles
 
 
 def iid_controls(strengthened=False, fast_forced=False):
@@ -56,10 +57,13 @@ def neural_controls(strengthened=False, fast_forced=False):
     return [(label, methods[key]) for label, key in names]
 
 
-def indexed_controls():
+def indexed_controls(roomy=False):
     return {
-        f"profiles_indexed{s}": partial(
-            IndexedProfiles, dyadic_root=True, fast_forced=True, rounding_strength=s
+        f"profiles_{'roomy' if roomy else 'indexed'}{s}": partial(
+            ResourceProfiles if roomy else IndexedProfiles,
+            dyadic_root=True,
+            fast_forced=True,
+            rounding_strength=s,
         )
         for s in (1, 2, 4)
     }

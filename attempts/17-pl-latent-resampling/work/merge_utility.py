@@ -1,4 +1,4 @@
-"""Merge unchanged seven-control evidence with the compact profile campaign.
+"""Merge disjoint, complete campaigns of the same frozen posterior queries.
 
 This is a comparison between campaigns, not simultaneous paired timings.
 No row, unsuccessful method or event is removed.
@@ -39,6 +39,9 @@ def merge(first, second, output):
         "profiles_indexed1": "profiles",
         "profiles_indexed2": "profiles_coarse2",
         "profiles_indexed4": "profiles_coarse4",
+        "profiles_roomy1": "profiles_indexed1",
+        "profiles_roomy2": "profiles_indexed2",
+        "profiles_roomy4": "profiles_indexed4",
     }
     for key, new in query_b.items():
         old = query_a[(*key[:-1], labels[key[-1]])]
@@ -53,7 +56,7 @@ def merge(first, second, output):
             prefixes += 1
     output.mkdir(parents=True, exist_ok=False)
     metadata = dict(
-        producer={"seven_controls": a["producer"], "indexed_controls": b["producer"]},
+        producer={"first": a["producer"], "second": b["producer"]},
         methods=a["methods"] + b["methods"],
         batch_size=4096,
         prefix_checkpoint=1024,
@@ -63,6 +66,7 @@ def merge(first, second, output):
             "not simultaneous paired timings"
         ),
         profile_streams_identical=dict(complete_queries=preserved, prefixes_1024=prefixes),
+        prior_stream_check=a.get("profile_streams_identical"),
         sources={
             str(folder): {
                 p.name: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -76,7 +80,7 @@ def merge(first, second, output):
     with (output / "rows.jsonl").open("x") as stream:
         for source, rows in ((a["producer"], rows_a), (b["producer"], rows_b)):
             for row in rows:
-                stream.write(json.dumps(dict(row, producer=source)) + "\n")
+                stream.write(json.dumps(dict(row, producer=row.get("producer", source))) + "\n")
     print(
         json.dumps(
             {
