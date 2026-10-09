@@ -47,6 +47,9 @@ def summarize(folder):
     events = {key[:3] for key in groups}
     methods = sorted({row["method"] for row in queries})
     assert len(queries) == len(events) * len(methods) * 3, "missing method/repetition rows"
+    budget = json.loads((Path(__file__).parent / "protocol.json").read_text())["replay"][
+        "sampling_deadline_seconds"
+    ]
     metrics = {}
     for method in methods:
         selected = [r for r in queries if r["method"] == method]
@@ -110,6 +113,20 @@ def summarize(folder):
         "compilation_refusals": [r for r in rows if r["stage"] == "compilation"],
         "independently_checked_stored_path_occurrences": stored_paths,
         "accepted_draws_in_recorded_prefixes": accepted_draws,
+        "completed_prefix_deadline_overruns": [
+            {
+                "case": r["case"],
+                "method": r["method"],
+                "repetition": r["repetition"],
+                "rate_power": r["rate_power"],
+                "k": r["k"],
+                "accepted": b["accepted"],
+                "sampling_seconds": b["sampling_seconds"],
+            }
+            for r in queries
+            for b in r["batches"]
+            if b["sampling_seconds"] > budget
+        ],
         "methods": metrics,
         "paired_comparisons": comparisons,
         "unresolved_queries": [

@@ -1,0 +1,17 @@
+{
+  "observation": "supplemental environment inspected after or near replay completion; CPU frequency/background load were not controlled",
+  "cpu": {
+    "Architecture": "x86_64",
+    "CPU(s)": "16",
+    "Model name": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+    "Thread(s) per core": "2",
+    "Core(s) per socket": "8",
+    "Socket(s)": "1",
+    "L2 cache": "4 MiB (8 instances)",
+    "L3 cache": "16 MiB (1 instance)"
+  },
+  "affinity_cpu_count": 16,
+  "python": "3.11.16",
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+  "computation": "single-process CPU exact Fraction/integer arithmetic; no CUDA computation or new model calls"
+}

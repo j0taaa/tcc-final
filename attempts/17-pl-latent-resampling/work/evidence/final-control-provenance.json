@@ -1,0 +1,7 @@
+{
+  "source_commit": "5c88e6e7162267a5b6d32d1d454764f54d73a615",
+  "correctness_command": "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/audit.py --dyadic --tight-bounds --single-tilt --output .cache/pl-final-control-correctness.json",
+  "replay_command": "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/replay.py --numeric-variant tight-dyadic --extra-control --output .cache/pl-final-control-replay",
+  "source_tree_clean_at_replay_start": true,
+  "additional_training_runs": 0
+}

@@ -1,8 +1,9 @@
 # Reamostragem latente condicionada à seleção Plackett–Luce
 
-Iniciada em 2026-10-08 a pedido do usuário. Estado: investigação, não conquista
-confirmada. A nota recebida é preservada em `work/received-note.md`; os programas
-citados nela não foram fornecidos. A implementação abaixo será independente.
+Iniciada em 2026-10-08 a pedido do usuário. Estado: auditoria independente;
+conquista científica completa ainda não confirmada. A nota recebida é preservada
+em `work/received-note.md`; os programas citados nela não foram fornecidos.
+A implementação desta tentativa foi criada independentemente.
 O núcleo/contratos de produção permanecem como base de comparação.
 
 ## Oito critérios científicos
@@ -18,12 +19,15 @@ O núcleo/contratos de produção permanecem como base de comparação.
    delimitada; nem prioridade nem suficiência para publicação estão confirmadas.
 3. **Adoção:** menos variância por trajetória neural, estritamente quando há
    variância latente. Comparar com o score completo, rejeição condicionada aos
-   tokens com envelope `f(L)`, enumeração e Rao–Blackwellização exata onde cabem.
+   tokens com envelope `f(L)`, inclinação exponencial única com majorante secante
+   ótimo, enumeração e Rao–Blackwellização exata onde cabem.
    Só há vantagem por tempo se custo vezes variância diminuir; não basta vencer
    um rejeitador que use desnecessariamente o limite 1.
 4. **Matemática:** auditar redução PL, cobertura, moedas racionais, custos e
-   identidade de covariância. A identidade isolada é antecedente. Uma prova
-   comparativa contra amostradores competentes ainda está em investigação.
+   identidade de covariância. A identidade isolada é antecedente. A prova escrita
+   `work/product-proposal-separation.md` estabelece uma separação assintótica
+   contra qualquer proposta produto única. Ela não abrange todas as soluções;
+   um contador especializado também resolve sua família em tempo polinomial.
 5. **Experimentos:** protocolo em `work/protocol.json`, congelado em Git antes
    das medições. Famílias construídas são oráculos de correção; os nove inputs
    JSON M34 completos são replays de modelo, não novos rollouts ou benchmark
@@ -36,6 +40,9 @@ O núcleo/contratos de produção permanecem como base de comparação.
    vencer; taxas quase constantes favorecem rejeição simples; preparação pode
    dominar. Uma distribuição condicional exata não basta para PPO/GRPO com
    clipping. Suporte fixo e política original correta são hipóteses essenciais.
+   `work/auxiliary-variable-objection.md` mostra como uma réplica correlacionada
+   de Gibbs, iniciada na proposta original, também reduz variância sem viés.
+   Não foi implementada/medida e precisa ser controle no treinamento.
 8. **Artigo:** ainda faltam revisão independente, anterioridade suficiente,
    vantagem de custo relevante e integração de treinamento. As verificações
    aqui não serão apresentadas como treinamento, prioridade ou prova de Lean.
@@ -56,5 +63,26 @@ importações das referências mutáveis das tentativas 15/16.
 
 ## Comandos e resultado
 
-Serão registrados após execução. O protocolo, os resultados desfavoráveis e a
-nota original não serão substituídos para transformar uma perda em sucesso.
+O [relatório gerado](work/final-report.md), a
+[auditoria matemática](work/mathematical-review.md) e as
+[fronteiras da confirmação](work/assessment-boundaries.md) separam correção,
+tentativas esperadas, tempo de consulta, novidade e benefício neural.
+Todos os registros, incluindo o erro inicial do harness e as versões mais
+lentas, ficam em `work/evidence/`. O protocolo foi congelado antes de medir;
+refinamentos posteriores têm planos próprios e não são avaliação externa nova.
+
+```bash
+PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/audit.py \
+  --dyadic --tight-bounds --single-tilt --output .cache/pl-correctness-new.json
+PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/replay.py \
+  --numeric-variant tight-dyadic --extra-control --output .cache/pl-replay-new
+PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/report.py \
+  --evidence attempts/17-pl-latent-resampling/work/evidence \
+  --json .cache/pl-assessment-new.json --markdown .cache/pl-report-new.md
+make test
+```
+
+Os caminhos de saída devem ser novos: os scripts recusam sobrescrever resultados.
+O replay exige árvore Git limpa e registra o commit produtor. Os snapshots
+conservam cinco versões independentes do código/evidência; extraia `source.zip`
+e `evidence.zip` numa pasta isolada. Nenhum resultado antigo foi substituído.

@@ -123,6 +123,13 @@ exclusividade, novidade geral ou superioridade sobre todo amostrador competente.
 Ela explica quando a garantia da mistura é útil frente à rejeição simples,
 não decide sozinha qual método usar em uma aplicação.
 
+A revisão posterior fortalece o comparador para **qualquer proposta produto
+única**, inclusive assimétrica, em
+[product-proposal-separation.md](product-proposal-separation.md). A prova usa
+convexidade/simetrização, o majorante secante ótimo e concentração binomial.
+Continua excluindo propostas correlacionadas e contadores especializados;
+prioridade e revisão humana não são inferidas desse fortalecimento.
+
 ## Gradiente e benefício que realmente foi provado
 
 O score completo é `R(C) grad log p_theta(Y,C)` e inclui a normalização

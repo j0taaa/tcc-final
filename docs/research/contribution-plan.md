@@ -1272,3 +1272,40 @@ uma implementação maior. O resultado C1 continua complementar e delimitado;
 não se torna comparação contra todos os solvers. Os oito critérios, condições
 de descarte e custos de amortização estão no documento. T3602/T3603 continuam
 abertos. Não houve novo benchmark, modelo ou alegação de contribuição inédita.
+
+## 18. Auditoria da reamostragem latente PL em 2026-10-08
+
+A pedido do usuário, a nota recebida e o protocolo foram preservados em
+[attempts/17-pl-latent-resampling](../../attempts/17-pl-latent-resampling/README.md).
+O código anexo citado pela nota não foi recebido; a implementação de referência
+é independente e usa a floresta de tokens mantida, sem importar tentativas 15/16.
+Aquelas direções não são mais protagonistas depois da objeção explícita do usuário.
+
+O [relatório gerado](../../attempts/17-pl-latent-resampling/work/final-report.md)
+consolida enumeração exata, score completo com normalização/seleção PL,
+identidades de covariância e todos os replays predeclarados. A primeira versão
+incorreta do harness e as perdas de desempenho ficam acessíveis em versões
+próprias. Os refinamentos racional/dyádico e de limites estruturais são
+desenvolvimento nos mesmos inputs, não avaliação externa nova.
+
+O [resultado escrito](../../attempts/17-pl-latent-resampling/work/product-proposal-separation.md)
+fortalece o comparador: qualquer proposta produto única, mesmo assimétrica,
+pode requerer esperança exponencial de rejeições numa família JSON, enquanto
+a mistura tem garantia polinomial relativa ao circuito. Um contador especializado
+ainda resolve a família; isso não é exclusividade nem superioridade sobre todos
+os solvers. A prioridade acadêmica desse resultado não foi confirmada.
+
+A aplicação neural precisa enfrentar uma objeção adicional:
+[Caron–Doucet e o passo auxiliar estacionário](../../attempts/17-pl-latent-resampling/work/auxiliary-variable-objection.md).
+Um passo Gibbs pode iniciar na proposta original, que já segue o posterior
+condicional correto; a réplica correlacionada também mantém a média e reduz
+variância. Esta redução é inferida do antecedente de PL e covariância total,
+não um resultado medido do projeto. Não é obrigatório ter réplicas iid para
+reduzir variância. Essa alternativa precisa entrar na avaliação da aplicação;
+ela não foi implementada e não se inventa desempenho para ela.
+
+O gate da auditoria técnica é diferente do gate científico T3602. Correção e
+uma separação contra classe explícita não demonstram novidade, redução de
+custo vezes variância em treinamento ou melhor geração. O artigo principal
+não foi substituído por promessas dessa tentativa; tampouco houve revisão
+humana ou nova prova Lean. Todos esses limites ficam explícitos no relatório.

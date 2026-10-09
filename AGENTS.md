@@ -19,6 +19,12 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   referências de pesquisa sobre regras Booleanas condicionadas por execução,
   refinamento adaptativo e núcleos semânticos certificados. Não são um novo
   decoder de produção nem um modelo dJev treinado.
+- As tentativas 15/16 foram rejeitadas pelo usuário como protagonistas. A
+  tentativa 17 audita reamostragem latente após seleção Plackett–Luce: há
+  referência racional, oráculos e provas escritas delimitadas, sem treinamento
+  neural ou prioridade confirmada. Réplicas correlacionadas por variáveis
+  auxiliares também precisam ser consideradas na aplicação de redução de
+  variância; réplicas independentes não são automaticamente necessárias.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.
@@ -227,8 +233,9 @@ Lean verifica os enunciados/specs mecanizados: não o Python/Rust inteiro, o
 tokenizer, o modelo ou toda a lei escrita de amostragem. Declare essa fronteira.
 
 A suíte histórica foi retirada por pedido do usuário. A suíte atual em
-`tests/` contém oráculos independentes focados no posterior e nas extensões
-semânticas. Preserve-a; não restaure a antiga indiscriminadamente. Crie novos
+`tests/` contém oráculos independentes focados no posterior, nas extensões
+semânticas e na referência PL da tentativa 17. Preserve-a; não restaure a antiga
+indiscriminadamente. Crie novos
 testes apenas necessários, pequenos e capazes de encontrar erros reais.
 Enumeração e famílias construídas são verificações de correção ou objetos de
 prova, não observações de modelo nem superioridade prática demonstrada.
