@@ -279,15 +279,40 @@ class PlLatentOracleTests(unittest.TestCase):
         plan, data = audit.fixture(3, True)
         p = reference.Problem(plan, data.probabilities, data.probabilities, (1,), {1: 3})
         for strengthened in (False, True):
-            constructors = [
-                *controls.iid_controls(strengthened).values(),
-                *(factory for _, factory in controls.neural_controls(strengthened)),
-            ]
-            for factory in constructors:
-                sampler = factory(p, end=None)
-                path, _ = sampler.sample(audit.Random(19), end=None)
-                self.assertEqual(path[1], 3)
-                self.assertIn(path, audit.enumerated_paths(data))
+            for fast in (False, True):
+                constructors = [
+                    *controls.iid_controls(strengthened, fast_forced=fast).values(),
+                    *(
+                        factory
+                        for _, factory in controls.neural_controls(strengthened, fast_forced=fast)
+                    ),
+                ]
+                for factory in constructors:
+                    sampler = factory(p, end=None)
+                    self.assertEqual(sampler.fast_forced, fast)
+                    path, _ = sampler.sample(audit.Random(19), end=None)
+                    self.assertEqual(path[1], 3)
+                    self.assertIn(path, audit.enumerated_paths(data))
+
+    def test_forced_choices_use_all_mass_without_random_draws(self):
+        class NoDraws:
+            def randrange(self, _):
+                raise AssertionError("a deterministic decision consumed random bits")
+
+        plan, data = audit.fixture(2, fixed={1: 3, 3: 4})
+        p = reference.Problem(plan, data.probabilities, data.probabilities, (), {})
+        for factory in controls.iid_controls(strengthened=True, fast_forced=True).values():
+            sampler = factory(p)
+            path, _ = sampler.sample(NoDraws())
+            self.assertIn(path, audit.enumerated_paths(data))
+            if hasattr(sampler, "base"):
+                forest = sampler.base
+                self.assertTrue(forest.forced_decisions)
+                for node, index in forest.forced_decisions.items():
+                    self.assertEqual(
+                        plan.term_mass(plan.terms[node][index], forest.integers, forest.inside),
+                        forest.inside[node],
+                    )
 
     def test_fixed_slots_and_certified_extreme_exponential(self):
         plan, data = audit.fixture(2, fixed={1: 3})

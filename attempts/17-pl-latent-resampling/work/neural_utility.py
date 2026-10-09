@@ -309,6 +309,10 @@ def run(args):
         torch=torch.__version__,
         cpu_threads=4,
         strengthened=strengthened,
+        fast_forced=args.fast_forced,
+        forced_refinement_sha256=digest((WORK / "forced-decision-refinement.md").read_bytes())
+        if args.fast_forced
+        else None,
         methods=7 if strengthened else 6,
         refinement_sha256=digest((WORK / "envelope-profile-refinement.md").read_bytes())
         if strengthened
@@ -431,7 +435,7 @@ def run(args):
                         )
                     )
                     rates = tuple(tuple(v**power for v in row) for row in data.probabilities)
-                    constructors = neural_controls(strengthened)
+                    constructors = neural_controls(strengthened, args.fast_forced)
                     for rollout in range(12):
                         seed = protocol["seed"] + int(key[:8], 16) + 1000 * power + rollout
                         rng = Random(seed)
@@ -588,4 +592,5 @@ if __name__ == "__main__":
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--strengthened", action="store_true")
+    parser.add_argument("--fast-forced", action="store_true")
     run(parser.parse_args())

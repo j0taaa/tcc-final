@@ -32,7 +32,7 @@ WORK = Path(__file__).resolve().parent
 ROOT = WORK.parents[2]
 
 
-def run(output, batch_size=1024, strengthened=False):
+def run(output, batch_size=1024, strengthened=False, fast_forced=False):
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("commit source and protocol before measuring")
     protocol_path = WORK / "bulk-utility-protocol.json"
@@ -42,7 +42,7 @@ def run(output, batch_size=1024, strengthened=False):
         config.update(json.loads(addendum.read_text()))
     native = json.loads((WORK / "protocol.json").read_text())
     runs, inputs, manifest = load_inputs()
-    methods = list(iid_controls(strengthened).items())
+    methods = list(iid_controls(strengthened, fast_forced).items())
     output.mkdir(parents=True, exist_ok=False)
     (output / "metadata.json").write_text(
         json.dumps(
@@ -55,6 +55,12 @@ def run(output, batch_size=1024, strengthened=False):
                 batch_size=batch_size,
                 methods=[name for name, _ in methods],
                 strengthened=strengthened,
+                fast_forced=fast_forced,
+                forced_refinement_sha256=hashlib.sha256(
+                    (WORK / "forced-decision-refinement.md").read_bytes()
+                ).hexdigest()
+                if fast_forced
+                else None,
                 prefix_checkpoint=1024 if strengthened and batch_size == 4096 else None,
                 refinement_sha256=hashlib.sha256(
                     (WORK / "envelope-profile-refinement.md").read_bytes()
@@ -216,5 +222,6 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--batch-size", type=int, choices=(1024, 4096), default=1024)
     parser.add_argument("--strengthened", action="store_true")
+    parser.add_argument("--fast-forced", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.batch_size, args.strengthened)
+    run(args.output, args.batch_size, args.strengthened, args.fast_forced)

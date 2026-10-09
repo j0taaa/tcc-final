@@ -47,7 +47,8 @@ def recognized(p, path):
 
 
 class EnumeratedTarget:
-    def __init__(self, p, end=None):
+    def __init__(self, p, end=None, fast_forced=False):
+        self.fast_forced = fast_forced
         domains = [((p.observed[i],) if i in p.observed else row) for i, row in enumerate(p.rows)]
         if math.prod(map(len, domains)) > 1_000_000:
             raise NotImplementedError(
@@ -78,7 +79,12 @@ class EnumeratedTarget:
     def sample(self, rng, end=None):
         if end is not None and monotonic() > end:
             raise TimeoutError("enumeration sampling budget")
-        return self.paths[bisect_right(self.cumulative, rng.randrange(self.cumulative[-1]))], 1
+        index = (
+            0
+            if self.fast_forced and len(self.paths) == 1
+            else bisect_right(self.cumulative, rng.randrange(self.cumulative[-1]))
+        )
+        return self.paths[index], 1
 
 
 def run(args):

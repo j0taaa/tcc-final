@@ -97,9 +97,11 @@ class WeightedForest:
     integers: tuple
     mass: Q
     decision_cache: dict = field(default_factory=dict)
+    fast_forced: bool = False
+    forced_decisions: dict = field(default_factory=dict)
 
     @classmethod
-    def prepare(cls, plan, probabilities, end=None):
+    def prepare(cls, plan, probabilities, end=None, fast_forced=False):
         scales = tuple(lcm(*(p.denominator for p in row)) for row in probabilities)
         weights = tuple(
             tuple(p.numerator * (scale // p.denominator) for p in row)
@@ -110,7 +112,14 @@ class WeightedForest:
             deadline(end)
             inside[node] = sum(plan.term_mass(t, weights, inside) for t in plan.terms[node])
         total = inside[plan.root] if plan.root is not None else 0
-        return cls(plan, probabilities, tuple(inside), weights, Q(total, prod(scales)))
+        return cls(
+            plan,
+            probabilities,
+            tuple(inside),
+            weights,
+            Q(total, prod(scales)),
+            fast_forced=fast_forced,
+        )
 
     def sample(self, rng):
         if not self.mass:
@@ -126,8 +135,19 @@ class WeightedForest:
                     total += self.plan.term_mass(term, self.integers, self.inside)
                     cumulative.append(total)
                 self.decision_cache[node] = tuple(cumulative)
+                if self.fast_forced:
+                    positive = [
+                        i for i, c in enumerate(cumulative) if c > (cumulative[i - 1] if i else 0)
+                    ]
+                    if len(positive) == 1:
+                        self.forced_decisions[node] = positive[0]
             cumulative = self.decision_cache[node]
-            term = terms[bisect_right(cumulative, rng.randrange(cumulative[-1]))]
+            index = self.forced_decisions.get(node)
+            term = terms[
+                index
+                if index is not None
+                else bisect_right(cumulative, rng.randrange(cumulative[-1]))
+            ]
             if term.choice is not None:
                 position, index = term.choice
                 if output[position] is not None:
@@ -230,9 +250,11 @@ class TangentMixture:
         tight_bounds=False,
         dyadic_coefficients=False,
         certify_scale=False,
+        fast_forced=False,
     ):
         if tight_bounds:
             problem = problem.tightened(end)
+        self.fast_forced = fast_forced
         self.problem = p = problem
         self.components = []
         self.rejection_factor = Q(2)
@@ -240,7 +262,7 @@ class TangentMixture:
         self.component_cdf = None
         self.integer_envelope = None
         if not p.order or not p.hidden or p.L == p.H:
-            base = WeightedForest.prepare(p.plan, p.evidence_weights, end)
+            base = WeightedForest.prepare(p.plan, p.evidence_weights, end, fast_forced=fast_forced)
             if not base.mass:
                 raise ValueError("zero evidence mass")
             self.components = [(Q(1), None, base)]
@@ -279,7 +301,7 @@ class TangentMixture:
                 tuple(q * u for q, u in zip(row, tilt, strict=True))
                 for row, tilt in zip(p.evidence_weights, unary, strict=True)
             )
-            component = WeightedForest.prepare(p.plan, modified, end)
+            component = WeightedForest.prepare(p.plan, modified, end, fast_forced=fast_forced)
             self.components.append((alpha, unary, component))
         self.mass = sum((a * component.mass for a, _, component in self.components), Q())
         if not self.mass:
@@ -350,24 +372,31 @@ class TangentMixture:
             deadline(end)
             count += 1
             index = (
-                categorical([a * c.mass for a, _, c in self.components], rng)
+                0
+                if self.fast_forced and len(self.components) == 1
+                else categorical([a * c.mass for a, _, c in self.components], rng)
                 if self.component_cdf is None
                 else bisect_right(self.component_cdf, rng.randrange(self.component_cdf[-1]))
             )
             path = self.components[index][2].sample(rng)
             probability = self.acceptance(path)
-            if rng.randrange(probability.denominator) < probability.numerator:
+            if (self.fast_forced and probability == 1) or rng.randrange(
+                probability.denominator
+            ) < probability.numerator:
                 return path, count
 
 
 class BaseRejection:
     """Competent rejection: grammar/evidence conditioned, envelope f(L), not 1."""
 
-    def __init__(self, problem, end=None, tight_bounds=False):
+    def __init__(self, problem, end=None, tight_bounds=False, fast_forced=False):
         if tight_bounds:
             problem = problem.tightened(end)
         self.problem = problem
-        self.base = WeightedForest.prepare(problem.plan, problem.evidence_weights, end)
+        self.fast_forced = fast_forced
+        self.base = WeightedForest.prepare(
+            problem.plan, problem.evidence_weights, end, fast_forced=fast_forced
+        )
         if not self.base.mass:
             raise ValueError("zero evidence mass")
         self.upper = problem.f(problem.L)
@@ -388,18 +417,28 @@ class BaseRejection:
             probability = self.acceptance(path)
             if not 0 < probability <= 1:
                 raise AssertionError("base envelope violated")
-            if rng.randrange(probability.denominator) < probability.numerator:
+            if (self.fast_forced and probability == 1) or rng.randrange(
+                probability.denominator
+            ) < probability.numerator:
                 return path, count
 
 
 class SingleTilt(BaseRejection):
     """Classical single exponential proposal with a global endpoint majorant."""
 
-    def __init__(self, problem, end=None, dyadic_coefficients=False, precise_envelope=False):
+    def __init__(
+        self,
+        problem,
+        end=None,
+        dyadic_coefficients=False,
+        precise_envelope=False,
+        fast_forced=False,
+    ):
+        self.fast_forced = fast_forced
         p = self.problem = problem.tightened(end)
         self.integer_envelope = None
         if not p.order or p.L == p.H:
-            super().__init__(p, end)
+            super().__init__(p, end, fast_forced=fast_forced)
             self.unaries = None
             return
         ratio = p.f(p.L) / p.f(p.H)
@@ -431,7 +470,7 @@ class SingleTilt(BaseRejection):
             tuple(q * u for q, u in zip(row, tilt, strict=True))
             for row, tilt in zip(p.evidence_weights, self.unaries, strict=True)
         )
-        self.base = WeightedForest.prepare(p.plan, modified, end)
+        self.base = WeightedForest.prepare(p.plan, modified, end, fast_forced=fast_forced)
         if not self.base.mass:
             raise ValueError("zero evidence mass")
         if dyadic_coefficients:
@@ -472,11 +511,18 @@ class RoundedProfiles:
     """Alternative in section 8, epsilon=1; fixed-tree rounding, not a semiring."""
 
     def __init__(
-        self, problem, end=None, dyadic_root=False, max_cells=1000000, max_transitions=3000000
+        self,
+        problem,
+        end=None,
+        dyadic_root=False,
+        max_cells=1000000,
+        max_transitions=3000000,
+        fast_forced=False,
     ):
+        self.fast_forced = fast_forced
         self.problem = p = problem.tightened(end)
         self.end = end
-        self.base = WeightedForest.prepare(p.plan, p.evidence_weights, end)
+        self.base = WeightedForest.prepare(p.plan, p.evidence_weights, end, fast_forced=fast_forced)
         if not self.base.mass:
             raise ValueError("zero evidence mass")
         k, m = len(p.order), len(p.hidden)
@@ -567,7 +613,11 @@ class RoundedProfiles:
         if self.constant:
             return self.base.sample(rng), None
         p = self.problem
-        value = self.root_profiles[bisect_right(self.root_cdf, rng.randrange(self.root_cdf[-1]))]
+        value = self.root_profiles[
+            0
+            if self.fast_forced and len(self.root_profiles) == 1
+            else bisect_right(self.root_cdf, rng.randrange(self.root_cdf[-1]))
+        ]
         output, pending = [None] * len(p.rows), [(p.plan.root, value)]
         while pending:
             node, profile = pending.pop()
@@ -580,7 +630,12 @@ class RoundedProfiles:
                     cumulative.append(total)
                 self.profile_cache[key] = tuple(cumulative)
             cdf = self.profile_cache[key]
-            term, children, _ = alternatives[bisect_right(cdf, rng.randrange(cdf[-1]))]
+            index = (
+                0
+                if self.fast_forced and len(alternatives) == 1
+                else bisect_right(cdf, rng.randrange(cdf[-1]))
+            )
+            term, children, _ = alternatives[index]
             if term.choice is not None:
                 i, index = term.choice
                 if output[i] is not None:
@@ -603,7 +658,9 @@ class RoundedProfiles:
             probability = self.acceptance(path, value)
             if not 0 < probability <= 1:
                 raise AssertionError("rounded profile envelope violated")
-            if rng.randrange(probability.denominator) < probability.numerator:
+            if (self.fast_forced and probability == 1) or rng.randrange(
+                probability.denominator
+            ) < probability.numerator:
                 return path, count
 
     def law(self):
@@ -657,6 +714,7 @@ def decision_cache_statistics(sampler):
     cdfs = [cdf for forest in forests for cdf in forest.decision_cache.values()]
     cdfs.extend(getattr(sampler, "profile_cache", {}).values())
     return {
+        "forced_forest_nodes": sum(len(f.forced_decisions) for f in forests),
         "profile_cells": getattr(sampler, "profile_cells", 0),
         "profile_transitions": getattr(sampler, "profile_transitions", 0),
         "cdf_nodes": len(cdfs),

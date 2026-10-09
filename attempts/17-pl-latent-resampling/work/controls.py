@@ -6,7 +6,7 @@ from replay import EnumeratedTarget
 from resampling import BaseRejection, RoundedProfiles, SingleTilt, TangentMixture
 
 
-def iid_controls(strengthened=False):
+def iid_controls(strengthened=False, fast_forced=False):
     methods = {
         "mixture": partial(
             TangentMixture,
@@ -14,18 +14,24 @@ def iid_controls(strengthened=False):
             tight_bounds=True,
             dyadic_coefficients=True,
             certify_scale=strengthened,
+            fast_forced=fast_forced,
         ),
-        "base": partial(BaseRejection, tight_bounds=True),
-        "single": partial(SingleTilt, dyadic_coefficients=True, precise_envelope=strengthened),
-        "enumeration": EnumeratedTarget,
+        "base": partial(BaseRejection, tight_bounds=True, fast_forced=fast_forced),
+        "single": partial(
+            SingleTilt,
+            dyadic_coefficients=True,
+            precise_envelope=strengthened,
+            fast_forced=fast_forced,
+        ),
+        "enumeration": partial(EnumeratedTarget, fast_forced=fast_forced),
     }
     if strengthened:
-        methods["profiles"] = partial(RoundedProfiles, dyadic_root=True)
+        methods["profiles"] = partial(RoundedProfiles, dyadic_root=True, fast_forced=fast_forced)
     return methods
 
 
-def neural_controls(strengthened=False):
-    methods = iid_controls(strengthened)
+def neural_controls(strengthened=False, fast_forced=False):
+    methods = iid_controls(strengthened, fast_forced)
     names = [
         ("base_iid", "base"),
         ("single_iid", "single"),
