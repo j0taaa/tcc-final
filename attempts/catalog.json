@@ -655,7 +655,7 @@
     {
       "id": "22-full-vocabulary-posterior",
       "title": "Posterior JSON exato no vocabulario original inteiro",
-      "conclusion": "Candidata de capacidade/custo. Oraculos de massa,marginais,lei e reutilizacao passam; beneficio e novidade ainda nao confirmados.",
+      "conclusion": "Desenvolvimento completo:270 registros,6/18 ganhos fortes frente a controles incluindo classes por posicao;0 ganho amostragem vs rejeicao.1.206.192 candidatos enumerados independentemente.Confirmacao fresca e novidade pendentes.",
       "reading": "attempts/22-full-vocabulary-posterior/README.md",
       "versions": [
         {
@@ -684,6 +684,16 @@
           "evidence_roots": [
             "attempts/22-full-vocabulary-posterior/work/evidence",
             "attempts/22-full-vocabulary-posterior/work/protocol.json"
+          ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "0b3f01b8a1f96d7b97ee4d0c12c168e80222277a",
+          "evidence_commit": "0b3f01b8a1f96d7b97ee4d0c12c168e80222277a",
+          "evidence_roots": [
+            "attempts/22-full-vocabulary-posterior/work/evidence",
+            "attempts/22-full-vocabulary-posterior/work/protocol.json",
+            "attempts/22-full-vocabulary-posterior/README.md"
           ]
         }
       ]
