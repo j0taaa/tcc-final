@@ -1,0 +1,12 @@
+{
+  "producer": "4dc13671bdbb8c1a74c8df5b6a7d05322d5fb460",
+  "protocol_sha256": "3ea10f48e083555a934926fb11fab613dc2789204293d1cc34240497ce1171d5",
+  "source_inputs": {
+    "components.json.gz": "4a58e656b30bb8d623b9b4bbf1759856e0ce0d93b1b0ab110145407017965149",
+    "inputs.json.gz": "427cf874c339ff2da4eb8af0dbecc685588de37c32f724fddb5f4f79fe60bd15",
+    "runs.json.gz": "351f8946ae0b5147728697a4294c74e9747a21b827aaac939926dd1abbb6c875"
+  },
+  "batch_size": 4096,
+  "precision_addendum_sha256": "39b7d6491b6346e8b597d415a2223bee0b23a038e0ef4c399b9debd5345b2388",
+  "load": "0.27 0.84 1.31 1/1338 799690"
+}

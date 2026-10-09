@@ -1,0 +1,37 @@
+{
+  "note": "Complete older grid, four controls and 4096 draws. Stronger-controls campaign not used here. Reports generated later; 20% criterion is exploratory for these older measurements.",
+  "command": "PYTHONPATH=src:. .venv/bin/python attempts/17-pl-latent-resampling/work/bulk_utility.py --batch-size 4096 --output .cache/pl-bulk-utility-v3",
+  "rows": 577,
+  "timing_producer": "4dc13671bdbb8c1a74c8df5b6a7d05322d5fb460",
+  "report_producer": "c1210a989b2a615773172c92a0fa8f90bfe93d37",
+  "files": {
+    "bulk-utility-v3/metadata.json": {
+      "bytes": 610,
+      "sha256": "8c152ed48c1c9da791df4a3c08998eab251399f1215666bf381e4769002c0d67"
+    },
+    "bulk-utility-v3/rows.jsonl": {
+      "bytes": 1056476,
+      "sha256": "8065e304aaf85a88b5246826e7e1801847af5aa936dbb713d8d96bcd31debc0b"
+    },
+    "cached-preliminary-cost-review.json": {
+      "bytes": 483641,
+      "sha256": "81eb4901bbe4dc2d6e46cdd70ee6a30c94295c3b61091bec982aef4dee40b2a7"
+    },
+    "cached-preliminary-cost-review.md": {
+      "bytes": 6756,
+      "sha256": "2afceb9a9d37fb9bfb96ba6a12ed380baad545972d36a8f07925326d5a9d645b"
+    },
+    "pre-envelope-4096-decision.json": {
+      "bytes": 479419,
+      "sha256": "281613f59c8b792e45ec50706db7f7f23752088f02af22c37663e4376a1aeb7e"
+    },
+    "pre-envelope-4096-decision.md": {
+      "bytes": 6478,
+      "sha256": "8816d9552518ef01356847bfa6144cf554e7e87dab27d603fd875d77a0adb802"
+    },
+    "neural-v1-geometry-with-hashes.json": {
+      "bytes": 4554,
+      "sha256": "b3fb39ac51b471eab870c31c97c37e839225552ddc1794649745d14ff78ce04a"
+    }
+  }
+}
