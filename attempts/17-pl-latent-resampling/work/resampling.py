@@ -489,29 +489,37 @@ class RoundedProfiles:
         self.gamma = 1 + Q(1, 2 * k * m)
         self.grid = [min(min(p.rates[i]) for i in p.hidden)]
         self.profiles = [{} for _ in p.plan.terms]
+        self.minima = [{} for _ in p.plan.terms]
         for node in p.plan.order:
             deadline(end)
             profile = self.profiles[node]
             for term in p.plan.terms[node]:
                 if term.choice is not None:
                     i, index = term.choice
+                    actual = p.rates[i][index] if i in p.hidden else Q()
                     variants = [
                         (
-                            self.round(p.rates[i][index]) if i in p.hidden else Q(),
+                            self.round(actual),
                             (),
                             self.base.integers[i][index],
+                            actual,
                         )
                     ]
                 elif not term.children:
-                    variants = [(Q(), (), 1)]
+                    variants = [(Q(), (), 1, Q())]
                 else:
                     left, right = term.children
                     variants = (
-                        (self.round(a + b), (a, b), va * vb)
+                        (
+                            self.round(a + b),
+                            (a, b),
+                            va * vb,
+                            self.minima[left][a] + self.minima[right][b],
+                        )
                         for a, va in self.profiles[left].items()
                         for b, vb in self.profiles[right].items()
                     )
-                for value, children, mass in variants:
+                for value, children, mass, actual in variants:
                     deadline(end)
                     if not mass:
                         continue
@@ -523,11 +531,14 @@ class RoundedProfiles:
                         if self.profile_cells > max_cells:
                             raise TimeoutError("profile cell budget; unresolved")
                     profile[value] = profile.get(value, 0) + mass
+                    self.minima[node][value] = min(self.minima[node].get(value, actual), actual)
                     self.backpointers.setdefault((node, value), []).append((term, children, mass))
         self.root_profiles = tuple(self.profiles[p.plan.root])
-        error = p.f(max(self.root_profiles)) / 1024
+        error = p.f(max(self.minima[p.plan.root].values())) / 1024
         self.root_upper = {
-            value: dyadic_round_upper(p.f(value), error) if dyadic_root else p.f(value)
+            value: dyadic_round_upper(p.f(self.minima[p.plan.root][value]), error)
+            if dyadic_root
+            else p.f(self.minima[p.plan.root][value])
             for value in self.root_profiles
         }
         weights = [self.profiles[p.plan.root][v] * self.root_upper[v] for v in self.root_profiles]
@@ -550,7 +561,7 @@ class RoundedProfiles:
     def rejection_normalizer(self):
         if self.constant:
             return self.problem.f(self.problem.L) * self.base.mass
-        return 2 * self.root_mass * self.base.mass / self.base.inside[self.problem.plan.root]
+        return self.root_mass * self.base.mass / self.base.inside[self.problem.plan.root]
 
     def proposal(self, rng):
         if self.constant:
@@ -581,11 +592,7 @@ class RoundedProfiles:
         return tuple(output), value
 
     def acceptance(self, path, profile):
-        return (
-            Q(1)
-            if self.constant
-            else self.problem.likelihood(path) / (2 * self.root_upper[profile])
-        )
+        return Q(1) if self.constant else self.problem.likelihood(path) / self.root_upper[profile]
 
     def sample(self, rng, end=None):
         count = 0

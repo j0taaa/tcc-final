@@ -61,3 +61,18 @@ como campanha completa da mistura. A campanha v1 não tem esse defeito.
 Remover esse argumento é uma correção do harness, não melhoria do método nem
 nova distribuição. O gerador de relatório exige todos os status completos e
 recusa v2. Reexecutar as seis entradas selecionadas, sem substituir casos.
+
+## Fortalecimento do controle antes de medir
+
+O DP de perfis calcula também a menor soma **exata** S de cada célula, além da
+massa. Nas folhas usa a taxa original e nos merges soma os mínimos dos filhos;
+a decomponibilidade torna esses mínimos alcançáveis conjuntamente. Alternativas
+usam mínimo. Assim, na raiz, f(S_min[rho]) é um envelope competente por perfil,
+mais justo que aplicar o fator global 2 a f(rho). Seu majorante dyádico usa erro
+f(max S_min)/1024. Peso da raiz = massa[rho] * upper[rho]; aceitação = f(S)/upper.
+Isso preserva exatamente o alvo e não usa taxas do gabarito. Como todas as
+somas no perfil estão entre rho/gamma^m e rho, a esperança é no máximo
+2(1+1/1024), com os mesmos limites de recursos e custos contabilizados.
+Esse controle mais forte não é rebatizado como nossa contribuição. O estado
+antigo, incluindo o primeiro protótipo executável, fica preservado no commit
+b9a809d antes de qualquer medição dessa nova fase.
