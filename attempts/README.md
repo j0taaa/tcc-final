@@ -104,3 +104,8 @@ Arquivos originais permanecem nos seus caminhos de reprodução. Modelos, caches
 e logits completos que nunca foram publicados continuam fora do Git. Submódulos
 históricos são pinados nos manifestos; o código externo e as dependências não
 são invenções deste trabalho.
+
+A tentativa19 começa em `19-growing-support-decoding/`, com suporte expandido
+pelas previsões atuais e controles de reserva inativa. É pesquisa independente
+ainda não confirmada, não continuação de um resultado positivo de18. A versão
+inicial será congelada após o commit do código/protocolo, antes dos timings.

@@ -37,6 +37,15 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   tentativa 17; não é superioridade de geração sobre EPIC ou treinamento
   completo. Controles tiveram mais recursos para evitar vitória por teto de
   tabelas, e todos os resultados desfavoráveis foram preservados.
+- A tentativa18 investigou preservação da política gulosa no suporte top16
+  congelado. CPU/GPU e refinamentos com poda, Rust, prefixos compartilhados,
+  atalhos e busca guiada pela raiz estão preservados; nenhum demonstrou o
+  critério forte de vantagem total frente a todos os controles competentes.
+  A propagação clássica continua uma alternativa importante. A tentativa19
+  investiga união de suportes sugeridos por novos forwards, com controles que
+  reservam32/64/128 tokens e bloqueiam explicitamente os ainda inativos.
+  Os oráculos pequenos passam; benefício prático ainda precisa de medição.
+  Não apresentar essas tentativas como nova teoria de parsing ou vitória EPIC.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

@@ -114,6 +114,19 @@ incremental alternative; classical foundations are not recast as inventions.
   propagation remains the better practical control. Investigate model-driven
   growing support separately with strong reusable-reservoir controls.
 
+- [ ] T3901: Investigate model-driven growing support after rejecting repeated
+  queries on fixed support. Attempt19 is independent of mutable attempt18:
+  copied source origin15767f3, eight criteria and full-cost protocol first.
+  Union current top16 with earlier free-slot domains, no target injection;
+  all actual model argmax proposals are admitted. Exact per-step policy and
+  monotone-domain invariants yield whole-trajectory equivalence. All16 controls
+  remain, with additional SAT reserves32/64/128, explicit inactive-token masks
+  and larger compilation budgets. Native/SAT60 small adaptive trajectories
+  agree with independent JSON-product oracle before any model timing. Offline
+  CI checks union and seven same-operation selectors on those trajectories.
+  Same six development/twelve refinement documents, plus last six fresh
+  hash-selected documents if development passes. No practical/novelty claim.
+
 ## M38 — Align standing instructions with the current scientific objective
 
 Authorized on 2026-10-08: update `AGENTS.md` to reflect the current research

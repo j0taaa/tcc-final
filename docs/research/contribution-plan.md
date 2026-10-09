@@ -1349,3 +1349,23 @@ exclusividade. MH estacionário foi medido; Gibbs contínuo permanece só deriva
 T3614 encerra essa decisão delimitada. T3602/T3603 continuam abertos quanto a
 anterioridade, significância para publicação e revisão humana real. O artigo
 principal e as estratégias mantidas não foram substituídos por promessas novas.
+
+## 2026-10-09 — Controle estático rejeitado e suporte adaptativo
+
+Tentativa18 preserva todos os refinamentos; nenhum satisfaz a redução total
+>=20% contra todos os controles competentes. O mais recente guiado pela raiz
+completou864 registros GPU de desenvolvimento e744 comparações exatamente
+iguais. Propagação clássica amortiza a estrutura congelada; não insistir na
+alegação de que uma otimização por passo seja automaticamente útil.
+
+Tentativa19 admite top16 novos em união com anteriores, independentemente
+do método. Preservar canvas e conclusão viável entre expansões permite prova
+de trajetória equivalente no mesmo regime. Reservas32/64/128 com SAT e
+assumptions explícitos de inatividade recebem maior orçamento, pois circuitos
+reutilizáveis são a objeção forte. FactorDLM2026§3.1 já compila/reavalia
+potenciais; não alegar que essa reutilização seja nova. A hipótese nova de
+engenharia é economizar a preparação/manutenção quando o alfabeto sugerido
+pelo modelo muda. Os primeiros18 documentos são refinamento, não nova
+generalização; os seis restantes por hash são confirmação fresca predeclarada.
+Sessenta trajetórias pequenas independentes passam antes do modelo; nenhuma
+medição dinâmica nem prioridade/publicação/revisão humana é afirmada.

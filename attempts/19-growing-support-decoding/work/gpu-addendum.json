@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "reason": "Six development CPU documents showed model forwards dominating and a selection improvement diluted by neural CPU cost. GPU is the normal deployment device for dLLMs; evaluate separately rather than hiding CPU results.",
+  "timing_status_at_registration": "No GPU inference or timings for attempt 18 have occurred. Original CPU held-out campaign is running unchanged from its frozen source.",
+  "cases": "All six development and all twelve held-out documents already hash-selected by protocol.json; same 4/8/16 masks, top16, threshold/cap/fallback, six controls and three rotated repetitions. No case replacement.",
+  "device": "Existing RTX 3080 Ti. Pinned checkpoint remains identical; audited PyTorch rotary/SDPA kernel port moved to CUDA, F32 parameters/activations, TF32 disabled. Not a bitwise reproduction of official FlashAttention.",
+  "numeric": "Network output transferred once to CPU; same F64 non-mask full-softmax and stable proposal order. Check exact shared trajectories within GPU campaign; CPU/GPU differences remain allowed and separately reported.",
+  "cost": "CUDA synchronize before/after every measured component and whole request; include device transfers, first forward, top-K/support, compilation or enumeration, preparation, all next forwards, selection, output and required cleanup. One-time checkpoint/device loading and one common warmup excluded as declared for every method.",
+  "resources": "Report both wall and process CPU, CUDA model-inclusive peak allocation and device/software metadata. CPU seconds do not measure GPU computation/energy; no GPU-efficiency claim from that metric.",
+  "success": "Keep primary >=20% median total wall AND process-CPU reduction versus every completed same-operation comparator, favorable sign in every repetition and no unexplained transition/output difference. Publish failures and smaller/no gains as well.",
+  "scope": "Secondary GPU extension prompted by CPU development. Not a hidden change of primary CPU experiment, new independent dataset, training-quality gain, native EPIC comparison or new mathematical technique. Publication priority and human review remain unconfirmed."
+}
