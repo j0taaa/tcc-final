@@ -68,3 +68,36 @@ nova teoria, mas não a validade da vantagem operacional. Sem vantagem estrita
 em uma operação admitida, a proposta não atende ao pedido. Sem custo físico
 medido, não escrever que gerações ficaram mais rápidas. Não reduzir o conjunto
 de verificadores para ocultar contraexemplos.
+
+## Refinamento v2 — protocolo antes da execução
+
+O primeiro replay (`work/evidence/replay-v1.json`) tem massa válida zero no
+top16. Ele permanece preservado e não recebe crédito funcional. V2 usa o
+MESMO documento/canvas/head público escolhido antes dos resultados24, todos
+os50258 IDs do vocabulário original e os denominadores completos. IDs sem
+emissão ordinária não podem completar JSON, mas sua probabilidade permanece
+no denominador; EOS continua ausente. Não inserir IDs do texto de origem.
+
+`work/replay_full.py` usa cópias independentes e hashadas de cinco arquivos
+clássicos de A24/v8. A ponte `layer_bridge.py` apenas representa a mesma soma
+de caminhos como circuito de ranks. Um sexto oráculo compara todos os tickets
+em exemplos pequenos com `json.loads`, incluindo IDs aliases, tokens prefixos,
+posições fixas, pesos zero e emissões não suportadas.
+
+Regra congelada: seed2026101026;32 candidatos iid e32 estratificados; ambos
+recebem o MESMO circuito. Todos os candidatos devem preservar IDs fixos e
+passar UTF8/JSON. Depois de congelar o circuito, o auditor calcula exatamente
+a probabilidade de reconstruir os IDs da fonte para K=2,8,32, sem orientar o
+sampler. A fonte é evidência de um evento, não um gabarito semântico de geração.
+Guardar todos os resultados, inclusive igualdade, massa zero e recusa. Limites
+intrínsecos:1M arestas,200k estados,50M termos,120s de preparação de pilhas.
+Não há campanha de velocidade, seleção de casos ou novos forwards. Timings
+de uma execução são descritivos, com preparação e emissão registradas.
+
+Comando de reprodução (usar outro caminho para não sobrescrever evidências):
+
+```bash
+.venv/bin/python -m attempts.26-stratified-decoder-batches.work.replay_full \
+  --packet attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip \
+  --output /tmp/a26-full-replay.json
+```

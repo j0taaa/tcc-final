@@ -108,6 +108,18 @@ custo individual integrável c, inclusive número de forwards cobrados por
 trajetória. Não preserva necessariamente o número de histórias ÚNICAS
 visitadas. Um iid com caching pode pagar menos; não esconder essa fronteira.
 
+**Corolário de cobertura e custo compartilhado.** Para qualquer coleção finita
+de propriedades A_j e pesos c_j≥0, somar (3) fornece
+E[sum_j c_j·1[alguma saída em A_j]] no mínimo igual ao iid. Tomando A_j como
+singletons, o número esperado de saídas distintas não diminui. Tomando-os
+como os eventos que visitam cada histórico completo até T, também não diminui
+o número esperado de históricos distintos. Portanto uma implementação que
+cacheia todo forward idêntico pode ter MAIS forwards únicos: não há teorema
+de superioridade geral em tempo por resposta útil. Dois filhos equiprováveis
+e K=2 já dão2 filhos distintos estratificados contra1,5 em esperança no iid.
+O benefício provado é cobertura/pass@K e variância com K trajetórias, incluindo
+a preservação do custo esperado individual; a coordenação é custo adicional.
+
 ## 4. Corolário CFG/dLLM — representação compacta de tickets
 
 Num posterior CFG não ambíguo sobre suportes originais finitos, pesos por

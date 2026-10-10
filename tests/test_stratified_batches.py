@@ -221,6 +221,59 @@ class StratifiedBatchTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     adapter.unrank(invalid)
 
+    def test_full_vocabulary_stack_bridge_against_independent_json(self):
+        package = "attempts.26-stratified-decoder-batches.work"
+        table = importlib.import_module(package + ".frozen.table")
+        posterior = importlib.import_module(package + ".frozen.posterior")
+        stack = importlib.import_module(package + ".frozen.stack_control")
+        bridge = importlib.import_module(package + ".layer_bridge")
+        emissions = (b"[", b"0", b"1", b",", b"]", b"0", b" ", b"[]", b"[0]", b"[0", None)
+        cases = (
+            ((None, None), ({7: 0.25, 8: 0.25, 9: 0.25, 10: 0.25}, {4: 0.5, 6: 0.25, 1: 0.25})),
+            ((0, None, 4), ({}, {1: 0.5, 2: 0.25, 5: 0.25}, {})),
+        )
+        for canvas, sparse in cases:
+            full = tuple(tuple(row.get(t, 0.0) for t in range(len(emissions))) for row in sparse)
+            rows = tuple(
+                (fixed,) if fixed is not None else tuple(range(len(emissions))) for fixed in canvas
+            )
+            probabilities = tuple(
+                (F(1),) if fixed is not None else tuple(map(F, row))
+                for fixed, row in zip(canvas, full, strict=True)
+            )
+            data = inputs(json_source_grammar(), emissions, rows, probabilities, canvas)
+            expected_mass, _, law = oracle(data, self.recognizes_json)
+            prepared = stack.StackPrepared(
+                table.LexerTable(data.state.tokenizer_adapter),
+                canvas,
+                max_edges=10000,
+                max_cells=10000,
+                max_terms=100000,
+                timeout_seconds=10,
+            )
+            exact = stack.StackPosterior(prepared, posterior.Weights(full, canvas, len(emissions)))
+            self.assertEqual(exact.mass, expected_mass)
+            ranked = bridge.stack_ranks(exact)
+            words = tuple(ranked.unrank(i) for i in range(ranked.total))
+            counts = Counter(words)
+            self.assertEqual({x: F(n, ranked.total) for x, n in counts.items()}, law)
+            for word in counts:
+                prefix = [0]
+                for other in words:
+                    prefix.append(prefix[-1] + (word == other))
+                allowed = {p: {t} for p, t in enumerate(word)}
+                self.assertEqual(
+                    ranked.evidence_prefix(allowed, range(ranked.total + 1)), tuple(prefix)
+                )
+
+    @staticmethod
+    def recognizes_json(word):
+        try:
+            json.loads(word.decode("utf8"))
+            return True
+        except (ValueError, UnicodeError):
+            return False
+
     def test_strict_gain_and_negative_controls(self):
         kernel = batch.Kernel(2, lambda x: x)
         left = enumerate_law(lambda rng: batch.draw_batch(kernel, 2, rng))
