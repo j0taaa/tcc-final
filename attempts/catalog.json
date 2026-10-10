@@ -704,6 +704,15 @@
             "attempts/22-full-vocabulary-posterior/README.md",
             "attempts/22-full-vocabulary-posterior/work"
           ]
+        },
+        {
+          "id": "v6",
+          "source_commit": "88c00b2b9df7aedec619edcc6509ac908af540dc",
+          "evidence_commit": "88c00b2b9df7aedec619edcc6509ac908af540dc",
+          "evidence_roots": [
+            "attempts/22-full-vocabulary-posterior/README.md",
+            "attempts/22-full-vocabulary-posterior/work"
+          ]
         }
       ]
     }
