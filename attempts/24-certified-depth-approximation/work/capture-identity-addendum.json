@@ -1,0 +1,8 @@
+{
+  "stage": "before any independent model forward",
+  "failed_command": ".venv-live/bin/python -m attempts.24-certified-depth-approximation.work.capture --source .cache/a22-json-test-suite.zip --output .cache/a24-independent-cuda-v1 --phase independent --device cuda --archive-logits-first",
+  "failure": "Pinned IDs were built with corpus seed2026100918, whereas A24 sampling seed is2026100922. Guard raised before load_cpu_model or output directory creation. ALL five original file hashes and token eligibility match.",
+  "change": "Explicit independent_corpus.identity_seed2026100918 and corpus selector fallback for old protocols. No document, original byte, key, selection, mask seed, evaluation metric, measured solver or development result changed.",
+  "regression_command": ".venv/bin/python -m unittest attempts.24-certified-depth-approximation.work.test_corpus",
+  "corpus_sha256": "423aac224928a68a33da337952d1299bda53b4782676109858afa1b6cd59f511"
+}

@@ -61,7 +61,10 @@ def select_independent(archive, tokenizer, protocol):
             tokens = tokenizer.encode(text, add_special_tokens=False)
             low, high = protocol["external"]["eligible_tokens"]
             if low <= len(tokens) <= high:
-                key = digest(f"{protocol['seed']}/{text}".encode())
+                # IDs were pinned under the corpus identity seed before A24
+                # chose its independent sampler seed. Do not silently change
+                # documents/IDs when rotating sampler randomness.
+                key = digest(f"{corpus.get('identity_seed', protocol['seed'])}/{text}".encode())
                 found.setdefault(
                     key,
                     dict(

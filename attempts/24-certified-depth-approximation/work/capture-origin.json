@@ -4,5 +4,8 @@
   "files": {
     "capture.py": "242ba6bfc40f596f1bab22fc76c16bae3dda7e2adf449b9fd9358013a6d1ee5e",
     "corpus.py": "6f34b9c64a1df09afa3586ee95ca8af653726606e8dc0deb9829a4130ebc8e44"
+  },
+  "modifications": {
+    "corpus.py": "Explicit stable identity seed; see capture-identity-addendum.json. Original copied hash remains under files."
   }
 }

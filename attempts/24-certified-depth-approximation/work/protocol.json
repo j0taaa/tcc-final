@@ -100,7 +100,8 @@
         "file": "y_object_long_strings.json",
         "source_sha256": "b7afdd9d8feae8fc6a4532b01bddea0691994e8ed7e4a93303157c83413d156d"
       }
-    ]
+    ],
+    "identity_seed": 2026100918
   },
   "external": {
     "repository": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
