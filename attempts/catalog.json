@@ -754,7 +754,7 @@
     {
       "id": "24-certified-depth-approximation",
       "title": "Aproximacao por profundidade com certificado de erro condicionado",
-      "conclusion": "Complete486-row development:445 complete41 internal refusals,216 exact-mass certificate checks; BOTH variants3/18 strong full-cost query gains, cold preserved,2/18 first-sample benefits. Handoff selected by frozen tie rule; zero strong handoff refinement gains over closed. Independent corpus and full dLLM loop still pending; no native EPIC/FactorDLM victory or priority claim.",
+      "conclusion": "Independent frozen full-V query gate confirmed in3/15 cases; proof-scoped certificate advantage. Iterative application pending; no native decoder/semantic superiority.",
       "reading": "attempts/24-certified-depth-approximation/README.md",
       "versions": [
         {
@@ -801,6 +801,14 @@
             "attempts/24-certified-depth-approximation/README.md",
             "attempts/24-certified-depth-approximation/work"
           ]
+        },
+        {
+          "id": "v6",
+          "source_commit": "b831a2d080f17ace8b43f845ff47997c2e355e8f",
+          "evidence_commit": "b831a2d080f17ace8b43f845ff47997c2e355e8f",
+          "evidence_roots": [
+            "attempts/24-certified-depth-approximation/work/evidence"
+          ]
         }
       ]
     },
@@ -817,6 +825,14 @@
           "evidence_roots": [
             "attempts/25-exact-envelope-sampling/README.md",
             "attempts/25-exact-envelope-sampling/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "b831a2d080f17ace8b43f845ff47997c2e355e8f",
+          "evidence_commit": "b831a2d080f17ace8b43f845ff47997c2e355e8f",
+          "evidence_roots": [
+            "attempts/25-exact-envelope-sampling/work/evidence"
           ]
         }
       ]
