@@ -1468,3 +1468,25 @@ escrito é composição/proveniência e não nova teoria geral. Seis oráculos
 independentes passam em12 kernels. Medir contra TODOS os nove kernels
 anteriores; agrupamentos epsilon global/posição/local são ablações de um
 mesmo compiler. Ganho científico útil segue aberto até confirmação externa.
+
+
+## A23 negativa; A24 certificate por profundidade (2026-10-10 UTC)
+
+A23:262/702 originais, dois probes post-hoc NEGATIVOS que reordenam o par
+restante eps_global0bb39717-4 repeat1. Mesma fonte d25069d/probabilidades,
+nenhuma nova captura. Fonte/dados/prova/original+supplement estão preservados
+em23/work/evidence. Três variantes falham todas18 configurações; não resultado
+positivo de ordem preregistrada. Compiler epsilon não satisfaz o objetivo.
+
+A24 formula um certificado de distância ao posterior JSON recursivo COMPLETO,
+quando sampling limitado a depth d é mais barato. TV exata=R/(L+R), bound
+computável U/(L+U). U por counter lexical determinístico com overflow, prefixo
+não negativo e fechamento final: evita run-count de abstração nondeterminística.
+L por decoder bounded-depth exato; intratoken peak conta. Política de commits
+comum permite erro de trajetória <=soma eps_t, mesmo com novos forwards.
+Princípios clássicos: Denkinger2017 weighted-storage approximation/upper bounds,
+Mohri-Nederhof2001 regularização ponderada, elementary conditioning identity,
+perturbação de kernels. Diffinity2026 already exact DFA mass/token alignment/
+analytic latent guidance; não reivindicar isso. Novidade/suficiência são abertas.
+Primeiro protótipo pequeno/oráculo para derrubar a hipótese; depois protocolo
+contra controles fortes. Evitar construir outro benchmark ou unroll arbitrário.

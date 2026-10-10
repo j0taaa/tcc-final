@@ -55,6 +55,19 @@ milestone unless a regression invalidates its evidence.
  149c0c8c-4 BEFORE performance/model observations.
 
 
+## M44 — Certified depth approximation (mathematical candidate)
+
+- [x] T4400: Independent attempt24, eight criteria before any implementation.
+  Written exact conditioning-TV identity, deterministic lexer-counter upper
+  tail and dominance over hit-only bound, cost in physical tokens/bits, and
+  common-policy trajectory coupling. Credit classical regular approximation,
+  weighted storage/semiring and kernel perturbation principles. Denkinger2017
+  and Diffinity2026 inspected; originality/utility not confirmed.
+- [ ] T4401: Minimal independent counter and bounded-depth reference, exhaustive
+  original-event oracle including intra-token depth and normalized rare validity.
+  Seek counterexamples BEFORE further implementation/performance. No new
+  independent forward until adequate proof/protocol/development gate.
+
 ## M43 — Canonical epsilon inference with original slot provenance
 
 - [x] T4300: Create independent attempt23, answer eight scientific criteria,
@@ -68,7 +81,7 @@ milestone unless a regression invalidates its evidence.
   retained initial zero-mass state was incorrectly made accepting at n=0.
   Fix that state in22 AND23; all timed frames have n>=16, so prior results
   and their frozen producers remain unchanged. No useful gain claim.
-- [ ] T4301: Freeze23 source/protocol before all full-cost development timing.
+- [x] T4301: Freeze23 source/protocol before all full-cost development timing.
   ALL nine non-epsilon exact kernels mandatory, three epsilon ablations;
   unchanged20% wall AND CPU/favorable sign or localized equal-budget capacity.
   All six development docs ×4/8/16 masks; select one epsilon representation
@@ -2437,3 +2450,10 @@ possible strong wins for either candidate in all18 configurations, regardless
 of129 remaining timings. Missing rows are not fabricated. Commands/modules:
 work.audit_futility and work.analyze, evidence/development-v6-partial. No
 independent neural capture and no confirmed scientific benefit. Continue M43.
+
+M43 v1 negative:262/702 original records, plus TWO post-hoc negative-only
+paired repeat1 probes of sole unrefuted eps_global0bb39717-4. Full raw original,
+supplement and disjoint combined view are retained, with provenance explaining
+reordered timing; no positive claim from this probe. Necessary-condition audit
+rejects all THREE epsilon variants in all18 configurations regardless of438
+missing records. No new independent neural capture; preserve23, continue M44.

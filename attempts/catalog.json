@@ -728,7 +728,7 @@
     {
       "id": "23-canonical-epsilon-posterior",
       "title": "Scanner epsilon ponderado com proveniencia de tokens originais",
-      "conclusion": "Independent prototype; six tiny original-token mass/marginal/sampler-law/reuse checks pass across12 kernels. Classical epsilon removal, not new parsing theory. Full-cost usefulness and independent confirmation pending.",
+      "conclusion": "A23 v1 negative:262/702 original rows and TWO post-hoc negative-only paired repeat1 probes, all preserved. Necessary-condition audit rejects all three epsilon variants in all18 configurations; no benefit or new independent model capture. A24 investigates certified depth approximation, mathematical specification only.",
       "reading": "attempts/23-canonical-epsilon-posterior/README.md",
       "versions": [
         {
@@ -741,6 +741,13 @@
           ]
         }
       ]
+    },
+    {
+      "id": "24-certified-depth-approximation",
+      "title": "Aproximacao por profundidade com certificado de erro condicionado",
+      "conclusion": "Mathematical investigation only: conditioning identity, deterministic counter tail upper bound and common-policy trajectory coupling. Classical principles credited; novelty/useful cost pending. No prototype/timing yet.",
+      "reading": "attempts/24-certified-depth-approximation/README.md",
+      "versions": []
     }
   ]
 }

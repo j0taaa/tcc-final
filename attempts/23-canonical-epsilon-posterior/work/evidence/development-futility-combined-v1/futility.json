@@ -1,0 +1,2780 @@
+{
+  "scope": "Negative-only logical futility; remaining timings not run; no victory claim.",
+  "rows": 264,
+  "expected_rows": 702,
+  "producer_commit": "d25069d3499ad986986032fa31e0731bb4b39f15",
+  "rows_sha256": "2d3eb6b8d9d63a59e299638a6d34438b8f53b23df97a1024e36c8e29045c14ad",
+  "cases": [
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "mask_count": 4,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "comparator": "global",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9278885640899606
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9066500648797068
+                }
+              ]
+            },
+            {
+              "comparator": "global",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9434029686485723
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.92718607383557
+                }
+              ]
+            },
+            {
+              "comparator": "position",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9209303835691754
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9205888735990528
+                }
+              ]
+            },
+            {
+              "comparator": "position",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.937969800465469
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9382883826945762
+                }
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9497092274676805
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9391783217783937
+                }
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.960551476667604
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9529938916014963
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_raw",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8516333449492345
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.8521933272221075
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_raw",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8820808605180342
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.8831716806944099
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9680267100879868
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9589769660637458
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9749629865055504
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9685192828495263
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9883453232200824
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9623731323004531
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9907451876329453
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9716438966143339
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0051281483168628
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9949676997367956
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0033915538775202
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9961859404245705
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0445628616360272
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9644927176995434
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0330307667424132
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9726763594941202
+                }
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "comparator": "global",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9295990551899508
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9344592012596007
+                }
+              ]
+            },
+            {
+              "comparator": "global",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9453245865157442
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9488197122765384
+                }
+              ]
+            },
+            {
+              "comparator": "position",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9226280477993092
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9488255467405539
+                }
+              ]
+            },
+            {
+              "comparator": "position",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9398803515102936
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9601810665876856
+                }
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9514599432799346
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9679851779703033
+                }
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9625080243373098
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9752296928814608
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_raw",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8532032654260746
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.8783321445858933
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_raw",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8838775713597331
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9037783500142013
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9698111927686007
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9883910942566136
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9769488889851495
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9911173314824142
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9901672616990235
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9918914290735744
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9927632368840488
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9943148505316767
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0069810246412216
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.0254857502254822
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0054353625168577
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.0194295234153816
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0464884328170463
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9940760272507094
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0351349475057556
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9953714034288558
+                }
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "comparator": "global",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.926886203131494
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9021582980095816
+                }
+              ]
+            },
+            {
+              "comparator": "global",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9431944701097015
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9236072457442718
+                }
+              ]
+            },
+            {
+              "comparator": "position",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9199355392552347
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9160280504506126
+                }
+              ]
+            },
+            {
+              "comparator": "position",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9377625026941018
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9346667010100843
+                }
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9486832945180242
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9345254019427085
+                }
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9603391881906211
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9493154483997017
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_raw",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8507133594585816
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.8479713523914258
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_raw",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8818859145864485
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.8797627429315367
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9669809894934057
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9542259588866274
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9747475129858616
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9647809134819977
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9872776532392042
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9576052996825407
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9905262261383565
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9678934666088909
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0040423485202925
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9900383856346503
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0031697974490892
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9923407810457207
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0434344620935725
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9597143841355187
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0328024598442667
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9689219443046223
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "mask_count": 8,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "comparator": "global",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8416516057988832
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.8443585777185583
+                }
+              ]
+            },
+            {
+              "comparator": "global",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8460212989049576
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.8485733120123562
+                }
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.2859389015786078
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.294259363467624
+                }
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.274256593922145
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.2822139572147824
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.2297688711390011
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.2804255970982388
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.2208757042703846
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.2693053098036542
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.713875885061614
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.7403509089216362
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.6756328885079947
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.7005693591525384
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.9388366264623815
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.9523095825766814
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.8819131513262615
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.8948520989997644
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 3.310029109552604
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 3.3889384760126604
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 3.080670161307111
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 3.149377619077252
+                }
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9362203815568679
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9218814274861132
+                }
+              ]
+            },
+            {
+              "comparator": "local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9388908890020553
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9250250367046765
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8953261156895912
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9120278443109838
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_global",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.8995590690374461
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 0.9157123771613158
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.247777427904038
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.2396257083625624
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.2346308112795021
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.2268383330391572
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.4115587948811128
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.3906006753225477
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.386621124898278
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.3669993393572015
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 2.4098475534922184
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 2.4138897721077344
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 2.269882816591067
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 2.272049162537564
+                }
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 1,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0445249802197427
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.04777047664722
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_position",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.0423269557065626
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.0453918898205858
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.1816277401161561
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.1753792476063296
+                }
+              ]
+            },
+            {
+              "comparator": "bidir_local",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.1706435337830188
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.1648234198992098
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 2.017303656768537
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 2.040295243986208
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 1.9163299865941763
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.9360185476977705
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "mask_count": 16,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "mask_count": 4,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "mask_count": 8,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "mask_count": 16,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "mask_count": 4,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "mask_count": 8,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "mask_count": 16,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "mask_count": 4,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "mask_count": 8,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "mask_count": 16,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "mask_count": 4,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 1,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "wall",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9990521301507957
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.041642714709477
+                }
+              ]
+            },
+            {
+              "comparator": "stack",
+              "unit": "cpu",
+              "reason": "median_cannot_reach_frozen_threshold",
+              "pairs": [
+                {
+                  "repeat": 0,
+                  "ratio": 0.9994433061072456
+                },
+                {
+                  "repeat": 1,
+                  "ratio": 1.0312654662543612
+                }
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "mask_count": 8,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "mask_count": 16,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "mask_count": 4,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "mask_count": 8,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_global",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_position",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "comparator": "bidir_local",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            },
+            {
+              "repeat": 0,
+              "comparator": "stack",
+              "reason": "required_sign_failed",
+              "units": [
+                "wall",
+                "cpu"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "mask_count": 16,
+      "candidates": {
+        "eps_global": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_position": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        },
+        "eps_local": {
+          "irreversibly_rejected": true,
+          "reasons": [
+            {
+              "repeat": 0,
+              "reason": "candidate_not_complete",
+              "status": "resource_refusal"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "all_candidates_rejected": true,
+  "proof": "Success requires the candidate complete in every repetition. A control already complete cannot become all-refused. If all control rows complete, every paired sign must be favorable and the median in BOTH units <=0.8. Mixed control statuses satisfy neither branch. A strict majority of fixed ratios >0.8 forces median >0.8 regardless of remaining values. Each recorded violation cannot be repaired by later measurements."
+}

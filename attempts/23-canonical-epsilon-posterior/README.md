@@ -97,3 +97,26 @@ sobre modelo. Evidence: work/evidence/full-vocabulary-oracle.json. Comando:
 passam; verificação de3683 artefatos históricos passa. Scanner/compilação têm
 checks de prazo; o worker mede ainda o limite sobre a operação inteira. Nada
 disso confirma vantagem/novidade. T4301 permanece pendente até medição e gate.
+
+
+## Decisão v1: negativa
+
+262/702 registros originais, preservados integralmente. Apenas eps_global
+no quadro0bb39717-4 permanecia logicamente não rejeitada; sua primeira razão
+contra pilhas era~0,999, muito aquém da redução20%. Para fechar APENAS a decisão
+negativa, medimos esse par repeat1 antes dos demais casos já rejeitados. São
+DOIS registros suplementares com o mesmo código congelado/probabilidades/seed,
+não confirmação positiva nem execução completa da ordem preregistrada.
+Na repetição1 EPS foi0,16685s contra0,16018s pilhas (CPU0,21990 contra0,21323).
+A violação de sinal e a maioria de razões>0,8 tornam a aceitação impossível.
+Todos os18 quadros e TRÊS variantes estão rejeitados por condições necessárias.
+
+Dados separados: evidence/development-v1-partial (262),
+evidence/posthoc-negative-pair-v1 (2), evidence/development-futility-combined-v1
+(264, concatenação sem duplicatas, prova negativa). Faltam438 tempos; NÃO
+inventados, não concluídos. Não há vantagem útil confirmada ou captura nova.
+Reprodução da rejeição: módulo22/work.audit_futility sobre a visão combinada;
+seu código/prova estão arquivados, não são dependência do compiler23.
+A investigação matemática seguinte está isolada em24; não promover este
+compiler como protagonista positivo. Sharing de prefixos/scans por rótulo
+são possíveis refinamentos clássicos ainda NÃO implementados; não resultados.

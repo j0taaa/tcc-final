@@ -139,3 +139,11 @@ candidatas em todas18 configurações;129 timings restantes não foram executado
     cópias independentes, prova escrita delimitada e seis oráculos pequenos
     em12 kernels. Remoção epsilon clássica, benefício não confirmado. Comparação
     completa antes de qualquer novo forward independente. A22 permanece acessível.
+
+A23 v1 negativa:262 registros e dois probes apenas negativos reordenados,
+condições necessárias rejeitam três variantes em todos18 quadros. Sem captura nova.
+
+24. [Aproximação de profundidade certificada](24-certified-depth-approximation/README.md):
+    especificação/provas escritas iniciais, regularização e conditioning antigos
+    creditados. Counter lexical limita massa profunda e erro condicionado;
+    política comum permite bound da trajetória. Nenhum protótipo/ganho ainda.

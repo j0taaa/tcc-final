@@ -79,7 +79,12 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   forward independente novo. A23 preserva cópias independentes e investiga
   scanner epsilon ponderado com circuito de proveniência de slots, fornecido
   a três representações como ablações do mesmo compiler. Remoção epsilon é
-  clássica; vantagem prática/novidade científica seguem em investigação.
+  clássica. A23 v1 também falhou:262/702 registros e dois pares individuais
+  reordenados para uma auditoria apenas negativa, todos preservados. As três
+  variantes são rejeitadas nas18 configurações; sem captura independente nova.
+  A24 investiga certificado de aproximação por profundidade: identidade TV
+  condicionada, bound de counter lexical e acoplamento da trajetória sob
+  política comum estão escritos, mas não há protótipo/timing/novidade confirmada.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.
