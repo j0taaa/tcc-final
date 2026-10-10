@@ -739,6 +739,15 @@
             "attempts/23-canonical-epsilon-posterior/README.md",
             "attempts/23-canonical-epsilon-posterior/work"
           ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "cd8267fce4f28576f6140698b0e4e1a4e51e0e21",
+          "evidence_commit": "cd8267fce4f28576f6140698b0e4e1a4e51e0e21",
+          "evidence_roots": [
+            "attempts/23-canonical-epsilon-posterior/README.md",
+            "attempts/23-canonical-epsilon-posterior/work"
+          ]
         }
       ]
     },
@@ -747,7 +756,17 @@
       "title": "Aproximacao por profundidade com certificado de erro condicionado",
       "conclusion": "Mathematical investigation only: conditioning identity, deterministic counter tail upper bound and common-policy trajectory coupling. Classical principles credited; novelty/useful cost pending. No prototype/timing yet.",
       "reading": "attempts/24-certified-depth-approximation/README.md",
-      "versions": []
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "cd8267fce4f28576f6140698b0e4e1a4e51e0e21",
+          "evidence_commit": "cd8267fce4f28576f6140698b0e4e1a4e51e0e21",
+          "evidence_roots": [
+            "attempts/24-certified-depth-approximation/README.md",
+            "attempts/24-certified-depth-approximation/work"
+          ]
+        }
+      ]
     }
   ]
 }
