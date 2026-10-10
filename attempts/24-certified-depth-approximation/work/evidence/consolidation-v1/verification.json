@@ -1,0 +1,56 @@
+{
+  "source_commit": "d7c33bce42735d7a96dcedc8816e23f413e966a6",
+  "scope": "Consolidated article/implementation/archived evidence validation, not new competitive measurements. All preceding successful tests ran on these same code hashes before the source commit; the public demo was rerun on that committed source.",
+  "checks": {
+    "check": {
+      "command": "make check",
+      "exit_code": 0,
+      "local_log_sha256": "10bce246eff321dcf396d4ba15ffe85dad46a7586f7cf8a9bc3d83cfd922f644"
+    },
+    "test": {
+      "command": "make test",
+      "exit_code": 0,
+      "local_log_sha256": "c96380fef05831f741261194c4c9c9c322c6bb13a4743eea7720e18e7ea9c0a8"
+    },
+    "rust": {
+      "command": "make build-rust",
+      "exit_code": 0,
+      "local_log_sha256": "54cdefe23bfd092cc9be3082f491c5d5ef7755bcd38ae8fca1b969db29c66a5d"
+    },
+    "formal": {
+      "command": "make check-formal LAKE=\"$HOME/.elan/bin/lake\"",
+      "exit_code": 0,
+      "local_log_sha256": "00d888d235f52f1c4652d2c1c632fe463c87024b71fb3427669aa2aeea717684"
+    },
+    "paper": {
+      "command": "make paper",
+      "exit_code": 0,
+      "local_log_sha256": "f966e0540eac0f49a914b913a26bc03e643de7348d01d43316457f8b2ebcf71f"
+    }
+  },
+  "focused_tests": {
+    "count": 87,
+    "seconds": 36.838
+  },
+  "pdf": {
+    "path": "output/pdf/tcc-certified-closure.pdf",
+    "pages": 13,
+    "sha256": "97fa9560645335a2de42af589de4ba15b84dbe89e55625e34b9bb643c4e605fd",
+    "qa": "All13 pages rendered/visually inspected; final paragraph correction changed only page11, which was re-inspected. No overflow/unresolved references."
+  },
+  "source_sha256": {
+    "scripts/exact_commit/build_depth_certificate_results.py": "1813b927a680c08b903e4d7375caa028f59fc6dc30ab8b988137bb8ad5b6d486",
+    "attempts/24-certified-depth-approximation/work/demo.py": "8df48bc0edfdbdd8a79cef709cce1260a03a3292b00bb2c73e2a4f202d68cdb0",
+    "attempts/24-certified-depth-approximation/work/generation_service.py": "89ea8951fabfa02f847e555fe326513ed3ac938329f9da041e97173ccac716d7",
+    "attempts/24-certified-depth-approximation/work/test_generation.py": "862be5d01d7d62070ece1844571a37e00394e0b960c359e331b58e5facd46821",
+    "attempts/25-exact-envelope-sampling/work/measure.py": "39b5c31e28ea3986b7449033007f0309eb85aafbc0a8a799402464caeba21f74",
+    "attempts/25-exact-envelope-sampling/work/test_measure.py": "00e7ea4f56aab7898d1cddcb6ed77fcb9278143a234f0589293247a06a619067",
+    "paper/main.tex": "ee0c91337b0a018b6f10d30ecea261407bd409d3544ac575e5d0bd17e9f0c011"
+  },
+  "demo": {
+    "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m attempts.24-certified-depth-approximation.work.demo --packet attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip --tolerance 1/1000 --seed 42",
+    "status": "complete",
+    "data_sha256": "3f558594103441544cc138d9015a950b5cc232b367302637a4084fcdf3930bb3",
+    "scope": "Same full frozen head, no new forward/model/GPU/network; not a benchmark."
+  }
+}
