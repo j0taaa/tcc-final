@@ -1,0 +1,21 @@
+{
+  "source_commit": "cd8267fce4f28576f6140698b0e4e1a4e51e0e21",
+  "files": {
+    "table.py": "9d8eebd7dd5e1814a1be7e1ada3a0a390ef9ffbc155b1e21e6dd59a1ee632689",
+    "stack_control.py": "6379814427a0691aa76c7b2967e80753cde69cb13208527e7f5d3e256bccf527"
+  },
+  "extractions": {
+    "lexer.py": {
+      "source_sha256": "fd6806de9d311bae781a5fee4358ae766a32926ce10b0b34134157cc9ea24e33",
+      "kept": "constants, step, scan, finish; no partition/CNF compiler"
+    },
+    "forest.py": {
+      "source_sha256": "ea743027684becaeb84625c8bea035976eb94ab1aef6fdd0285e8dcf22d9d945",
+      "kept": "coaccessible_layers only, no CFG forest"
+    },
+    "posterior.py": {
+      "source_sha256": "381de33214cc78d408fd3150b25e8fc668d778b3ca5f60f6543c973d00d7d680",
+      "kept": "Weights, class_weights, integer categorical choose, lift_marginals; no CFG posterior"
+    }
+  }
+}

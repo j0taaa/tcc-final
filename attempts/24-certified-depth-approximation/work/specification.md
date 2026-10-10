@@ -52,8 +52,12 @@ Não há nondeterminismo de storage que multiplicaria derivações de um evento.
 Assim calcula a probabilidade EXATA da linguagem relaxada C_d, inclusive
 aliases e tokens que atravessam múltiplos delimitadores. Massas estão em[0,1].
 
-Se H_d é o evento de atingir altura>d com prefixo lexical válido/não negativo,
-sem exigir a conclusão lexical/estrutural, C_d⊆H_d. O bound de hit é q(H_d).
+Se H_d é o evento de atingir altura>d dentro de uma transição de token
+lexicalmente válida, com todas as alturas não negativas até o FIM daquele
+token (não apenas até o primeiro pico), sem exigir os tokens seguintes,
+C_d⊆H_d. O bound de hit é q(H_d). Esta definição por prefixos de tokens
+completos resolve a ordem entre um pico e uma queda dentro de um macrotoken;
+um bound que absorve no primeiro BYTE precisaria de informação adicional.
 Portanto o certificado fechado é sempre ao menos tão forte:
 
     U_d<=q(H_d); delta_d<=q(H_d)/(L_d+q(H_d)).
@@ -61,6 +65,12 @@ Portanto o certificado fechado é sempre ao menos tão forte:
 Pode ser estrito: tokens/prefixos que abrem fundo mas não conseguem fechar no
 orçamento restante pertencem a H_d e não a C_d. Essa é explicação/objeto de
 prova, não licença para selecionar benchmark real com esses exemplos.
+
+Um controle fortalecido H_suffix aplica coacessibilidade lexical e um limite
+seguro da quantidade de fechamentos restantes ANTES de absorver o primeiro
+token com overflow. Todo caminho de C_d passa por esses testes necessários;
+assim C_d⊆H_suffix⊆H_d. O counter fechado recebe os MESMOS testes. Não
+comparar só com um hit que ignora condições baratas já disponíveis.
 
 ## Custo
 

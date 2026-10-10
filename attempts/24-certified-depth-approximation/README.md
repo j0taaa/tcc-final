@@ -1,6 +1,6 @@
 # 24 — Aproximação por profundidade com erro probabilístico certificado
 
-**Investigação matemática inicial; não implementação nem benefício confirmado.**
+**Protótipo mínimo e prova escrita; benefício e novidade ainda não confirmados.**
 Motivação: as inferências completas22/23 ficam caras quando permitem todas as
 estruturas profundas de probabilidade pequena. Um limite de profundidade
 arbitrário é rápido, mas altera uma distribuição em quantidade desconhecida.
@@ -66,3 +66,27 @@ Fontes primárias: [Denkinger2017](https://arxiv.org/abs/1703.09910),
 
 `work/specification.md` delimita o argumento. Nenhum módulo importa tentativas
 mutáveis anteriores. Cada futuro protótipo terá cópias e snapshots próprios.
+
+## Protótipo e fronteira dos antecedentes
+
+`work/{certificate,stack_control}.py` materializa o counter e o decoder
+limitado. Cópias/extrações independentes do commit cd8267f estão identificadas
+por SHA256 em `work/reference-origin.json`. Seis testes enumeram massa,
+marginais, bounds e a lei efetiva de sorteio, inclusive aliases, UTF8,
+remasking e picos intratoken. Não são evidência de velocidade ou novidade.
+
+[Future Validity, Nie et al.2026](https://arxiv.org/html/2605.07698v1),
+seção4/teorema7 e apêndicesB/C, já relaciona erro de normalização à TV e
+propaga erro local na geração autoregressiva. Nossa desigualdade elementar
+e o acoplamento não são novidade genérica. O recorte que resta investigar
+é um certificado DETERMINÍSTICO computável, sem ground truth da massa total,
+para posterior recursivo no vocabulário completo de um passo de dLLM.
+Denkinger2017, seção4.4/teorema34, já fornece bounds ponderados por abstração
+de storage; não atribuir originalidade a esse princípio. Prioridade dessa
+especialização e tamanho da contribuição continuam questões abertas.
+
+Antes de timings competitivos, `work/diagnostic-protocol.json` fixa todos
+os18 estados de desenvolvimento existentes, profundidades e tolerâncias.
+A primeira execução verifica se o certificado consegue autorizar alguma
+aproximação útil; ela NÃO confirma rapidez, geração completa ou vantagem
+externa. Se não certificar, não iniciar outra infraestrutura grande.

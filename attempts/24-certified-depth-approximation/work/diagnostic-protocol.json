@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "stage": "predeclared development feasibility only; not competitive timing",
+  "capture": "A22 existing MDLM CUDA development v1; no new forward",
+  "cases": [
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16",
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4",
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8",
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16",
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4",
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8",
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16",
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4",
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8",
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16",
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4",
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8",
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16",
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4",
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8",
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-16",
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4",
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8"
+  ],
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "tolerances": [
+    "1/100",
+    "1/1000",
+    "1/10000"
+  ],
+  "modes": [
+    "closed",
+    "suffix_hit",
+    "hit"
+  ],
+  "whole_depth_seconds": 120,
+  "virtual_memory_gib": 3,
+  "max_states": 10000000,
+  "rule": "Record all cases/depths, failures and bounds. Next competitive timing requires a certifying depth with materially fewer exact states; no fresh corpus yet. Not a final success criterion."
+}
