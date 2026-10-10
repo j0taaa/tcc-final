@@ -101,9 +101,11 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   aproximada. O ganho20% é na mediana pareada wall E CPU frente a TODOS seis
   controles, com sinal favorável em todas repetições, não20% em cada repetição.
   Os15 estados vêm de TODOS cinco documentos externos elegíveis, sem seleção
-  por resultado. O ciclo dLLM real e auditoria de amplificação têm fonte e
-  protocolo preparados, mas ainda não foram executados. Amplificação muda
-  explicitamente o produto q; intervalos não são qualidade semântica.
+  por resultado. O ciclo dLLM real está completo:30/30 execuções válidas,
+ 184 forwards novos, IDs fixos preservados, uma seed/sem erros. É demonstração
+  funcional, não gate estatístico de latência inteira. A auditoria33/33 oferece
+  amplificação estrita certificada e confere contra marginais completos;
+  muda explicitamente q, não é qualidade semântica ou velocidade total.
   A25 investiga amostragem EXATA por envelope, sem excluir eventos profundos;
   tem prova escrita, sete oráculos pequenos e controle counter+CARS reforçado.
   OS*2012 já fornece o princípio geral de proposta superior/refinamento:
@@ -113,8 +115,9 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   pula cauda inútil com massa rasa zero foi feito DEPOIS dos heads A24 e ANTES
   de timings A25; v1 e addendum preservados. Não atribuir os timings24 a25.
   Lean verifica nove enunciados novos de contagem/amplificação, não o sampler
-  Python nem o decoder inteiro. Nenhuma prioridade acadêmica ou geração
-  completa de24/25 foi confirmada.
+  Python nem o decoder inteiro. A aplicação24 foi executada; a amostragem25
+  ainda não tem timings competitivos ou uso neural iterativo. Nenhuma prioridade
+  acadêmica ou superioridade de geração geral foi confirmada.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

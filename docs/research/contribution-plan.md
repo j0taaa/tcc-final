@@ -1578,3 +1578,11 @@ verificação em25/evidence/formal-v2. Não prova refinamento do software. A25v2
 pula cauda sem poder de certificação quando L=0; correção estática DEPOIS
 de heads A24 e ANTES de timings A25, registrada no addendum. Sete oráculos
 e teste13-worker passam. Nenhum timing25 ou revisão humana inventado.
+
+Aplicações24 executadas no produtor d0f25fd:30/30 gerações válidas com184
+novos forwards e contexto preservado; todos os33 frames da auditoria oferecem
+aumento de massa válida certificado (fator4, menor bound1.00869, maior3.99995).
+A confiança é sintática e a amplificação altera q. Traces completos/proveniência
+estão em24/work/evidence/generation-v1 e amplification-v1. Não são confirmação
+estatística de velocidade completa, treinamento ou semântica. Consolidar a
+vantagem independente de consulta como protagonista; avaliar25 separadamente.

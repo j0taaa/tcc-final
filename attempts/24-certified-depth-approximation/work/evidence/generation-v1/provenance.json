@@ -1,0 +1,7 @@
+{
+  "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv-live/bin/python -m attempts.24-certified-depth-approximation.work.generation --capture .cache/a24-independent-cuda-v1 --independent-decision .cache/a24-independent-decision-v1/decision.json --output .cache/a24-generation-v1",
+  "producer_commit": "d0f25fdc2936f01b1c361b1cb104f4e6580dfc8a",
+  "rows_sha256": "ffd409e10b1ea9e3a9d7b4b0829021d6569a5c30e784176532da1305c5f1c0e4",
+  "scope": "All30 functional executions/all184 new forwards. Full heads local, hashes published. One seed; no statistical whole-decoder latency confirmation or native EPIC/semantic superiority.",
+  "parameters_updated": false
+}

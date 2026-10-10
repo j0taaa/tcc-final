@@ -107,15 +107,21 @@ milestone unless a regression invalidates its evidence.
   decisions retained in24/work/evidence/independent-v1. Optional public
   first-full-head-v2 packet permits bit-equal CPU-softmax reproduction without
   model weights; all other large heads/matrices remain local, hashes published.
-- [ ] T4405: Real dLLM trajectory with common commit policy and declared local/
+- [x] T4405: Real dLLM trajectory with common commit policy and declared local/
   global TV budgets, full costs and all outcomes. Operation timings do not
   establish this; compare competent complete decoders for overlapping claims.
   Protocol/source and small real CPU-service boundary oracle prepared:
  30 cases, fresh MDLM forward after commitments, same conditional-confidence
   policy, per-step tolerance0.001/initial masks, <=4 commits and interval
-  refinement/exact fallback for threshold ambiguity. Real execution pending.
- 33-frame mass-amplification corollary/audit also prepared, separately changes
-  q and does not claim preservation of its original law or semantic quality.
+  refinement/exact fallback for threshold ambiguity. COMPLETE30/30 executions,
+  all syntax-valid/fixed IDs preserved,184 real new forwards, no errors/refusals
+  or unresolved confidence decisions. Each method uses92 forwards; one seed
+  is functional evidence, not statistical decoder superiority. Frozen producer
+  d0f25fd, all traces/metadata/head hashes in24/work/evidence/generation-v1.
+ 33-frame amplification audit complete: every frame has a strict mass-increase
+  certificate, independently bounded by full exact marginals. Minimum guaranteed
+  ratio ranges1.0087..4.0000 at factor4. Explicitly changes q; no semantic or
+  total-speed claim. All33 outcomes in24/work/evidence/amplification-v1.
 - [ ] T4406: Consolidate useful confirmed result, proofs, reviewed literature
   and actual application in project/article; formalize selected sensitive
   statements only with explicit implementation/Lean boundaries. Human review
@@ -137,13 +143,14 @@ milestone unless a regression invalidates its evidence.
   Seventh oracle verifies zero shallow mass skips only an uninformative
   certification tail, not all deep solutions. Static v2 refinement is AFTER
   shared A24 captures but BEFORE any A25 timing; addendum and v1 preserved.
-- [ ] T4502: Before timings, freeze full-cost exact sampling protocol including
+- [x] T4502: Before timings, freeze full-cost exact sampling protocol including
   raw rejection, counter-only, grammar-hit, CARS guarded/perfect, counter+CARS
   and compact exact CFG controls. Do NOT use A24 query timings as wins for
   this different operation. Continue A24 independent gate first.
   Prepared13-worker first-output/batch32 protocol and complete analyzer;
   selection only in702 development records, then1755 shared-head independent
-  records if the gate passes. No competitive A25 timing yet. Tiny13-worker
+  records if the gate passes. Source/protocol frozen in25/v2 atb831a2d;
+  no competitive A25 timing yet. Tiny13-worker
   oracle also prevents batch-only refusal from giving first-output credit.
   New Lean count specifications check finite-budget local law/refusal and
   amplification algebra; full make check-formal passes, verification in

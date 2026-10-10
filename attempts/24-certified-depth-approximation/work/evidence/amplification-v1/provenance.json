@@ -1,0 +1,6 @@
+{
+  "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m attempts.24-certified-depth-approximation.work.audit_amplification --development .cache/a22-development-cuda-v1 --independent .cache/a24-independent-cuda-v1 --development-measure .cache/a24-development-measure-v1 --independent-measure .cache/a24-independent-measure-v1 --output .cache/a24-amplification-audit-v1",
+  "producer_commit": "d0f25fdc2936f01b1c361b1cb104f4e6580dfc8a",
+  "audit_sha256": "40b02437a0dd3103afcdbfc24bdde26dafb223d16cfd196ed65e64b18e65f825",
+  "scope": "All33 original development+independent heads. Mathematical amplification identity checked using full exact marginals, not new neural forwards or independent recomputation of tilted products. Single functional measurement, not a competitive latency gate."
+}

@@ -278,3 +278,23 @@ ou novos suportes podem eliminar a economia; refusas permanecem inconclusivas.
 **Artigo:** faltam executar a aplicação e a auditoria de amplificação, consolidar
 os resultados e obter revisão humana. Oráculo pequeno dos dois serviços CPU
 passa, mas não é uma execução neural nem evidência de novidade.
+
+## Aplicação executada, produtor d0f25fd
+
+`work/evidence/generation-v1` conserva TODAS30 execuções funcionais:15/15
+concluem em cada método, JSON válido e IDs fixos preservados,92 novos forwards
+por método (184 total), zero ambiguidades não resolvidas/recusas/erros. Nenhum
+refinamento adicional foi necessário nesta seed; sua implementação permanece
+verificada no oráculo de fronteira. O máximo da soma de bounds no caminho
+observado é0.00014004; não é TV de trajetória empiricamente medida. A garantia
+global<=0.001 decorre da prova sob recursos conclusivos. Uma seed não estabelece
+superioridade estatística do decoder nem equivalência das amostras pela seed.
+
+`work/evidence/amplification-v1` guarda33/33 certificados de aumento estrito
+da massa válida, com fator4. O ganho mínimo garantido varia de1.00869 a3.99995;
+todos são comparados à identidade usando marginais completos originais. Não
+é recomputação independente de33 produtos alterados, nem novos forwards.
+A interpretação útil é a decisão matemática segura de mudar uma probabilidade
+quando seu posterior estrutural justifica; uma melhoria pequena continua
+publicada e custos de consulta podem impedir amortização. Não reclassificar
+esta auditoria funcional como gate de velocidade.
