@@ -63,10 +63,17 @@ milestone unless a regression invalidates its evidence.
   common-policy trajectory coupling. Credit classical regular approximation,
   weighted storage/semiring and kernel perturbation principles. Denkinger2017
   and Diffinity2026 inspected; originality/utility not confirmed.
-- [ ] T4401: Minimal independent counter and bounded-depth reference, exhaustive
+- [x] T4401: Minimal independent counter and bounded-depth reference, exhaustive
   original-event oracle including intra-token depth and normalized rare validity.
   Seek counterexamples BEFORE further implementation/performance. No new
   independent forward until adequate proof/protocol/development gate.
+  Six original-ID tests pass; make test71 passed36.154s. Frozen diagnostic7ff7be9
+  completed108/108 development queries (76 positive lower masses,32 zero),
+  closed bound certifies <=0.001 for all18 configurations at some declared d.
+  This is NOT a timing/novelty result. Preserve work/evidence/feasibility-v1.
+- [ ] T4402: Strengthen comparison with grammar-valid first-overflow mass,
+  and investigate weighted counter continuation after this first overflow.
+  Prove dominance/strictness before timing; no independent forward yet.
 
 ## M43 — Canonical epsilon inference with original slot provenance
 

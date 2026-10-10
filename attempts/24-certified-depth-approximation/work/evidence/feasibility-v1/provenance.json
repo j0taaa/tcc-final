@@ -1,0 +1,12 @@
+{
+  "producer_commit": "7ff7be9905865a7ea7b2379813071cd3f09abd0d",
+  "raw_rows_sha256": "88abaac3046d3f64809066ce48793dae10c7c437048172add6fd8e9b24823f06",
+  "records": 108,
+  "stage": "development feasibility, no competitive timings or new forwards",
+  "statuses": {
+    "complete": 76,
+    "zero_lower_mass": 32
+  },
+  "closed_certifies_at_one_permille_configs": 18,
+  "next": "strengthen with grammar-first-overflow comparator before performance"
+}

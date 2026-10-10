@@ -84,7 +84,10 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   variantes são rejeitadas nas18 configurações; sem captura independente nova.
   A24 investiga certificado de aproximação por profundidade: identidade TV
   condicionada, bound de counter lexical e acoplamento da trajetória sob
-  política comum estão escritos, mas não há protótipo/timing/novidade confirmada.
+  política comum estão escritos. Protótipo/oráculos passam;108 consultas de viabilidade nos
+  dados existentes certificam erro<=0.001 nas18 configurações. Isto não é
+  timing competitivo nem novidade confirmada. Fortalecer primeiro com controle
+  de primeira ultrapassagem de profundidade em prefixos gramaticais.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.
