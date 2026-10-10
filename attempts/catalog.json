@@ -783,6 +783,15 @@
             "attempts/24-certified-depth-approximation/README.md",
             "attempts/24-certified-depth-approximation/work"
           ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "b4fbb03b7f80b9715afb3b9b4c8393e05dcafba8",
+          "evidence_commit": "b4fbb03b7f80b9715afb3b9b4c8393e05dcafba8",
+          "evidence_roots": [
+            "attempts/24-certified-depth-approximation/README.md",
+            "attempts/24-certified-depth-approximation/work"
+          ]
         }
       ]
     },
@@ -791,7 +800,17 @@
       "title": "Amostragem exata por envelope de profundidade e fechamento",
       "conclusion": "Written exact accepted law and finite proposal budget, original-token tiny RNG oracles and CARS bulk/perfect reference; no competitive timing, model trajectory or priority confirmation. Classical envelope rejection credited; includes stronger counter+CARS objection before experiments. Independent copies from24/v3 only.",
       "reading": "attempts/25-exact-envelope-sampling/README.md",
-      "versions": []
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "b4fbb03b7f80b9715afb3b9b4c8393e05dcafba8",
+          "evidence_commit": "b4fbb03b7f80b9715afb3b9b4c8393e05dcafba8",
+          "evidence_roots": [
+            "attempts/25-exact-envelope-sampling/README.md",
+            "attempts/25-exact-envelope-sampling/work"
+          ]
+        }
+      ]
     }
   ]
 }
