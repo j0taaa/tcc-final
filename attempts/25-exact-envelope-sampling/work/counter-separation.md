@@ -5,7 +5,7 @@ um benchmark nem uma observação de dLLM. Não usar a família para escolher
 casos de avaliação prática.
 
 Acrescente m slots livres ANTES do token fixo `{"payload":`. Cada slot
-emite whitespace com probabilidade1/2 ou `:` com probabilidade1/2. Acrescente
+emite espaço ASCII0x20 com probabilidade1/2 ou `:` com probabilidade1/2. Acrescente
 apenas esse token ao tokenizer fixo; são4m+4 slots e10 tokens, sem crescimento
 de vocabulário com m. O restante da família e todos seus pesos permanecem.
 

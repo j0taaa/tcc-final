@@ -28,6 +28,13 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [16-cars-rejection-bound](16-cars-rejection-bound/README.md) | Limite de rejeições contra a atualização publicada do CARS — M36 |
 | [17-pl-latent-resampling](17-pl-latent-resampling/README.md) | Auditoria de reamostragem latente após seleção PL |
 | [18-monotone-grammatical-decoding](18-monotone-grammatical-decoding/README.md) | Preservar a trajetória gulosa e reduzir trabalho gramatical |
+| [19-growing-support-decoding](19-growing-support-decoding/README.md) | Suportes crescentes e controles de reserva |
+| [20-lexical-support-quotient](20-lexical-support-quotient/README.md) | Congruência lexical completa |
+| [21-contextual-token-groups](21-contextual-token-groups/README.md) | Grupos conforme estado lexical |
+| [22-full-vocabulary-posterior](22-full-vocabulary-posterior/README.md) | Posterior sobre todos os IDs originais |
+| [23-canonical-epsilon-posterior](23-canonical-epsilon-posterior/README.md) | Circuito epsilon com proveniência de slots |
+| [24-certified-depth-approximation](24-certified-depth-approximation/README.md) | Fechamento com certificado de erro e uso iterativo |
+| [25-exact-envelope-sampling](25-exact-envelope-sampling/README.md) | Rejeição exata sobre envelope certificado |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
@@ -149,19 +156,30 @@ condições necessárias rejeitam três variantes em todos18 quadros. Sem captur
     política comum permite bound da trajetória. Nove oráculos pequenos e168
     comparações full-V passam. Duas campanhas de viabilidade108+108 preservadas;
     handoff permite depth menor que grammar-hit em7/18 quadros. Separação
-    escrita com tokenizer fixo, custo/limites explícitos. Timings competitivos,
-    confirmação independente e novidade acadêmica ainda pendentes.
+    escrita com tokenizer fixo, custo/limites explícitos. Consulta confirma3/18
+    ganhos em desenvolvimento e3/15 independentes contra TODOS seis controles;
+    todos1.215 registros independentes preservados. Aplicação MDLM conclui30/30
+    casos com184 novos forwards. Prioridade/publicação não estão confirmadas.
 
-###25 — envelope exato (isolado)
+### 25 — envelope exato (isolado)
 
 [25-exact-envelope-sampling](25-exact-envelope-sampling/README.md) reutiliza
 apenas cópias imutáveis de24/v3 para propor no envelope e aceitar somente
-JSON completo. A lei aceita é exata; seis oráculos independentes verificam
+JSON completo. A lei aceita é exata; sete oráculos independentes verificam
 os sorteios efetivos, inclusive CARS adaptativo. Há separações escritas
 delimitadas, não prioridade/velocidade confirmada. Counter+CARS e inferência
 compacta são controles obrigatórios. Nenhum timing de24 é vitória de25.
 
-A comparação completa24 passou3/18 configurações de desenvolvimento;
-handoff foi selecionado por empate ANTES da captura dos cinco documentos
-externos. Todas as perdas e41 recusas estão preservadas. A confirmação
-independente e a integração dLLM continuam pendentes.
+A comparação completa24 selecionou handoff por empate ANTES da captura dos
+cinco documentos externos. A confirmação completa conserva1.071 resultados
+conclusivos,144 recusas e540 checks contra massa exata, com3/15 ganhos de
+consulta e2/15 de primeira amostra aproximada. A geração30/30 válida é uma
+demonstração funcional de uma seed; não superioridade estatística geral.
+V6 preserva fontes/protocolo antes da aplicação; v7 acrescenta os resultados
+reais e a auditoria33/33 de amplificação. V1 e refinamentos de25 permanecem
+independentes. V2 executou702 registros/13 controles:0/18 gates primários
+de primeira amostra para ambas variantes e1/18 secundário de lote32, sem
+confirmação independente. Um erro de timer é preservado;36 bloqueadores
+concluídos/sem erro mostram que a rejeição primária não depende dele.
+V8/24 consolida artigo e reprodução; v3/25 conserva a decisão negativa e
+a correção de fronteira, sem modificar resultados antigos.

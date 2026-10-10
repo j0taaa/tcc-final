@@ -1,7 +1,10 @@
 # 24 — Aproximação por profundidade com erro probabilístico certificado
 
-**Protótipo e vantagem de certificação demonstrada por escrito; rapidez,
-confirmação independente e novidade acadêmica ainda não estabelecidas.**
+**Vantagem de certificação demonstrada por escrito e ganho de consulta
+confirmado em3/15 estados independentes, contra seis controles.** Todos30
+ciclos MDLM são funcionais; novidade específica/publicação e superioridade
+geral de geração não estão estabelecidas. Critérios e fases iniciais abaixo
+são históricos; as decisões finais preservam também todas as perdas.
 Motivação: as inferências completas22/23 ficam caras quando permitem todas as
 estruturas profundas de probabilidade pequena. Um limite de profundidade
 arbitrário é rápido, mas altera uma distribuição em quantidade desconhecida.
@@ -298,3 +301,35 @@ A interpretação útil é a decisão matemática segura de mudar uma probabilid
 quando seu posterior estrutural justifica; uma melhoria pequena continua
 publicada e custos de consulta podem impedir amortização. Não reclassificar
 esta auditoria funcional como gate de velocidade.
+
+## Entrada offline mínima da mesma implementação
+
+`work/demo.py` empacota a operação24 sobre o head público escolhido antes de
+observar resultados. As oito respostas de posterior/confiança acima continuam
+válidas: não há outro método, ganho alegado, alteração da distribuição, redução
+de suporte ou validação neural nova. O objetivo é permitir uso e recomputação
+fora dos caches locais, preservando originais e imprimindo os intervalos do
+próprio token amostrado. Preparação do lexer, leitura/check do pacote, consulta
+e marginais são relatados separadamente; seu único exemplo não é benchmark
+nem comprovação de velocidade. A implementação em `work/` permanece isolada
+para evitar duplicar um segundo solver no núcleo de produção.
+
+A redação da família matemática agora explicita o token de whitespace como
+um único espaço ASCII0x20, permitido dentro de strings; não é tab/newline/cr.
+As versões anteriores ficam preservadas. Nenhuma probabilidade capturada,
+semente, método, caso ou gate experimental foi alterado. A consequência de
+TV para qualquer score em[0,1] também é explícita: o decoder ideal conserva
+sua esperança até o orçamento, sem provar que a referência seja boa.
+
+
+Correção de fronteira de recursos após a auditoria25: a desativação do timer
+agora também é coberta, e um alarme nessa fronteira recusa antes de qualquer
+commit. Novo oráculo injeta essa chegada; junto do worker25 passam quatro
+checks de serviço/medição (0.224s). Não altera os produtos, os certificados,
+as políticas ou os30 resultados históricos, todos já concluídos sem erros;
+não houve nova medição comparativa. Demo público offline usa a MESMA referência
+sobre `first-full-head-v2/packet.zip`, sem modelo/GPU/network: produziu JSON
+válido, delta0 neste caso e intervalos de tokens originais. É reprodução
+funcional, não novo benchmark. `scripts/exact_commit/build_depth_certificate_results.py`
+recalcula decisões dos1701 registros24 e702 registros25 e confere as30
+transições, os IDs e bytes contra tokenizer/contextos publicados.

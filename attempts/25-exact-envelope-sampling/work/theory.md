@@ -46,6 +46,8 @@ de seu grupo proporcionalmente ao peso recupera a lei original, não só bytes.
 
 São3m+4 slots, m>=2, e tokenizer fixo:
 `{"payload":`, quote, `[`, `[ `, `{"k":`, whitespace, `0`, `]`, `}`.
+Whitespace aqui é um ÚNICO espaço ASCII0x20; o espaço em `[ ` é o mesmo byte.
+Não substituir esse token por tab/newline/cr dentro da string da prova.
 O prefixo e o último `}` são fixos. Nos demais slots:
 
 - primeiro valor: quote3/4 ou `[`1/4;

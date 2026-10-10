@@ -1,0 +1,941 @@
+{
+  "scope": "Necessary first-gate condition fails in every candidate/state against a fully completed control, excluding every erroneous/refused control. Timer race resolution cannot create a primary win.",
+  "blockers": [
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "mask_count": 4,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.0350566701686992,
+            1.0365301678341892,
+            1.032756978665551
+          ],
+          "cpu": [
+            1.025298292376535,
+            1.0264914426662777,
+            1.0237623061113676
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.0350566701686992,
+          "cpu": 1.025298292376535
+        }
+      }
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "mask_count": 4,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.0038554475969275,
+            1.0132607230627737,
+            0.9994668615216599
+          ],
+          "cpu": [
+            1.0027962295846669,
+            1.00967788039744,
+            0.9995851663139608
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.0038554475969275,
+          "cpu": 1.0027962295846669
+        }
+      }
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "mask_count": 8,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.1721717859210457,
+            1.1542723069802348,
+            1.1508891649922754
+          ],
+          "cpu": [
+            1.140831183256691,
+            1.1324937934314472,
+            1.129673693140456
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.1542723069802348,
+          "cpu": 1.1324937934314472
+        }
+      }
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "mask_count": 8,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.1019014962285716,
+            1.1510970840468258,
+            1.102387886862264
+          ],
+          "cpu": [
+            1.0882155325020917,
+            1.1297798501239853,
+            1.0879828977667914
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.102387886862264,
+          "cpu": 1.0882155325020917
+        }
+      }
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "mask_count": 16,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.3361248455030161,
+            1.3674378609535272,
+            1.5001110668896656
+          ],
+          "cpu": [
+            1.307646005759405,
+            1.335731150464474,
+            1.4527118009805358
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.3674378609535272,
+          "cpu": 1.335731150464474
+        }
+      }
+    },
+    {
+      "case": "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+      "mask_count": 16,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.214543742891105,
+            1.2472944844574843,
+            1.3831394816407687
+          ],
+          "cpu": [
+            1.1963342207082486,
+            1.2260008940113367,
+            1.3466613728957484
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.2472944844574843,
+          "cpu": 1.2260008940113367
+        }
+      }
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "mask_count": 4,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.0734078573067556,
+            1.0685046039539687,
+            1.0768072090477598
+          ],
+          "cpu": [
+            1.055400227038248,
+            1.0519302761725757,
+            1.0580810628807789
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.0734078573067556,
+          "cpu": 1.055400227038248
+        }
+      }
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "mask_count": 4,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.064384895672847,
+            1.050799221849954,
+            1.044600084243369
+          ],
+          "cpu": [
+            1.0486334773635768,
+            1.0385951340458908,
+            1.0337183691094667
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.050799221849954,
+          "cpu": 1.0385951340458908
+        }
+      }
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "mask_count": 8,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.5176080218616628,
+            1.5493199216651659,
+            1.4850327629316415
+          ],
+          "cpu": [
+            1.4258788613393454,
+            1.4517465985543614,
+            1.412790037072069
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.5176080218616628,
+          "cpu": 1.4258788613393454
+        }
+      }
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "mask_count": 8,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.4398011208824146,
+            1.4720643869206829,
+            1.4227359663455896
+          ],
+          "cpu": [
+            1.3621438815494984,
+            1.3882036300846379,
+            1.3608481783343764
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.4398011208824146,
+          "cpu": 1.3621438815494984
+        }
+      }
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "mask_count": 16,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.206249568073406,
+            1.2781712908936353,
+            1.0141061240688827
+          ],
+          "cpu": [
+            1.1831153644699457,
+            1.2453077644412025,
+            1.0127380325248942
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.206249568073406,
+          "cpu": 1.1831153644699457
+        }
+      }
+    },
+    {
+      "case": "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+      "mask_count": 16,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.5292423624189369,
+            1.6277572182266824,
+            1.2806097824544564
+          ],
+          "cpu": [
+            1.4699243101088755,
+            1.5536479208172445,
+            1.2538882279160417
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.5292423624189369,
+          "cpu": 1.4699243101088755
+        }
+      }
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "mask_count": 4,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": true,
+        "paired_ratios": {
+          "wall": [
+            0.959762214118568,
+            0.961263834697813,
+            0.972837092134762
+          ],
+          "cpu": [
+            0.9700733814342937,
+            0.9711773206177788,
+            0.9797057530374512
+          ]
+        },
+        "ratio_medians": {
+          "wall": 0.961263834697813,
+          "cpu": 0.9711773206177788
+        }
+      }
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "mask_count": 4,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": true,
+        "paired_ratios": {
+          "wall": [
+            0.9780531108103124,
+            0.9790462986440766,
+            0.981914595720305
+          ],
+          "cpu": [
+            0.9837585948167784,
+            0.9844132261072223,
+            0.9865706712636876
+          ]
+        },
+        "ratio_medians": {
+          "wall": 0.9790462986440766,
+          "cpu": 0.9844132261072223
+        }
+      }
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "mask_count": 8,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            0.9248415008178505,
+            0.9888331451194144,
+            0.9715605555087261
+          ],
+          "cpu": [
+            0.9431397701955846,
+            0.9906585520696881,
+            1.004681105497717
+          ]
+        },
+        "ratio_medians": {
+          "wall": 0.9715605555087261,
+          "cpu": 0.9906585520696881
+        }
+      }
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "mask_count": 8,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            0.9694857051658322,
+            1.0295183072994085,
+            1.006867656643116
+          ],
+          "cpu": [
+            0.9808833641869548,
+            1.0241461290898175,
+            1.0351002282103483
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.006867656643116,
+          "cpu": 1.0241461290898175
+        }
+      }
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "mask_count": 16,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.0920459595008365,
+            1.094012068297762,
+            1.1174867781545474
+          ],
+          "cpu": [
+            1.0825701192893482,
+            1.0846184691435872,
+            1.105078610467002
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.094012068297762,
+          "cpu": 1.0846184691435872
+        }
+      }
+    },
+    {
+      "case": "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336",
+      "mask_count": 16,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.1957553303524022,
+            1.2314604644303535,
+            1.2239369001113438
+          ],
+          "cpu": [
+            1.1756574618385616,
+            1.2078393289315612,
+            1.2005220051061023
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.2239369001113438,
+          "cpu": 1.2005220051061023
+        }
+      }
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "mask_count": 4,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.1099276100071187,
+            1.1183121008201975,
+            1.1114034390648508
+          ],
+          "cpu": [
+            1.083497519942405,
+            1.0896143873118207,
+            1.084532002779852
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.1114034390648508,
+          "cpu": 1.084532002779852
+        }
+      }
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "mask_count": 4,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.0642558730316938,
+            1.0729136082906667,
+            1.0661782844344536
+          ],
+          "cpu": [
+            1.0487072276877731,
+            1.0553121060709025,
+            1.0502626269398583
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.0661782844344536,
+          "cpu": 1.0502626269398583
+        }
+      }
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "mask_count": 8,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.1610343369415674,
+            1.20774420720657,
+            1.2289011776290706
+          ],
+          "cpu": [
+            1.1351548698803455,
+            1.1734755298297324,
+            1.2001711262039825
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.20774420720657,
+          "cpu": 1.1734755298297324
+        }
+      }
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "mask_count": 8,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.1562758426966708,
+            1.1940173037108974,
+            1.175780890883083
+          ],
+          "cpu": [
+            1.1311080212858557,
+            1.1618957079428038,
+            1.155601330785639
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.175780890883083,
+          "cpu": 1.155601330785639
+        }
+      }
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "mask_count": 16,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            6.472002397231421,
+            5.927879872185942,
+            7.810982613165191
+          ],
+          "cpu": [
+            6.067075912667414,
+            5.57902279790683,
+            7.1857505596929325
+          ]
+        },
+        "ratio_medians": {
+          "wall": 6.472002397231421,
+          "cpu": 6.067075912667414
+        }
+      }
+    },
+    {
+      "case": "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030",
+      "mask_count": 16,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            5.293995627211653,
+            4.814636711473397,
+            6.460768821760813
+          ],
+          "cpu": [
+            4.979183828183464,
+            4.544730684437125,
+            5.959549330920376
+          ]
+        },
+        "ratio_medians": {
+          "wall": 5.293995627211653,
+          "cpu": 4.979183828183464
+        }
+      }
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "mask_count": 4,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": true,
+        "paired_ratios": {
+          "wall": [
+            0.9580735971531933,
+            0.9481045052612198,
+            0.951475044560638
+          ],
+          "cpu": [
+            0.9692516732957775,
+            0.9621125082742155,
+            0.9643601920846213
+          ]
+        },
+        "ratio_medians": {
+          "wall": 0.951475044560638,
+          "cpu": 0.9643601920846213
+        }
+      }
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "mask_count": 4,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": true,
+        "paired_ratios": {
+          "wall": [
+            0.9520144992635317,
+            0.947505141590941,
+            0.9237956126080572
+          ],
+          "cpu": [
+            0.9649132074587131,
+            0.9616266316010201,
+            0.9440387545265478
+          ]
+        },
+        "ratio_medians": {
+          "wall": 0.947505141590941,
+          "cpu": 0.9616266316010201
+        }
+      }
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "mask_count": 8,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": true,
+        "paired_ratios": {
+          "wall": [
+            0.9630623562438458,
+            0.9714618486996962,
+            0.9664471846706548
+          ],
+          "cpu": [
+            0.9689700351637026,
+            0.9760807586062621,
+            0.9719146457849873
+          ]
+        },
+        "ratio_medians": {
+          "wall": 0.9664471846706548,
+          "cpu": 0.9719146457849873
+        }
+      }
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "mask_count": 8,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": true,
+        "paired_ratios": {
+          "wall": [
+            0.9606394467780945,
+            0.9595486385898194,
+            0.9620134900801263
+          ],
+          "cpu": [
+            0.9603810723536945,
+            0.9660378254348546,
+            0.9681112028106008
+          ]
+        },
+        "ratio_medians": {
+          "wall": 0.9606394467780945,
+          "cpu": 0.9660378254348546
+        }
+      }
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "mask_count": 16,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.0581475399792446,
+            1.0924111470816427,
+            1.0428065464511294
+          ],
+          "cpu": [
+            1.0528779722794752,
+            1.0838195503285053,
+            1.0388594662788797
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.0581475399792446,
+          "cpu": 1.0528779722794752
+        }
+      }
+    },
+    {
+      "case": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56",
+      "mask_count": 16,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.182206832694053,
+            1.1844404156685229,
+            1.153631816148022
+          ],
+          "cpu": [
+            1.165375621163117,
+            1.166956057678693,
+            1.1394393559135958
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.182206832694053,
+          "cpu": 1.165375621163117
+        }
+      }
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "mask_count": 4,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.0146875836616975,
+            1.0137959355860175,
+            1.0209991684642614
+          ],
+          "cpu": [
+            1.0114555741038582,
+            1.0106988415607916,
+            1.0161402148505092
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.0146875836616975,
+          "cpu": 1.0114555741038582
+        }
+      }
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "mask_count": 4,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.0129312680981264,
+            1.0228321318859468,
+            1.0214855015885063
+          ],
+          "cpu": [
+            1.0102950913326763,
+            1.0177340771201766,
+            1.016447079518743
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.0214855015885063,
+          "cpu": 1.016447079518743
+        }
+      }
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "mask_count": 8,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.1029087337287728,
+            1.106918479366889,
+            1.1090728796617204
+          ],
+          "cpu": [
+            1.09060808223309,
+            1.0941015115445918,
+            1.0961444337168718
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.106918479366889,
+          "cpu": 1.0941015115445918
+        }
+      }
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "mask_count": 8,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.1252845423820839,
+            1.1515148336377015,
+            1.0881862582718702
+          ],
+          "cpu": [
+            1.1103581853396192,
+            1.1334138242322156,
+            1.0777026693528962
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.1252845423820839,
+          "cpu": 1.1103581853396192
+        }
+      }
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "mask_count": 16,
+      "candidate": "handoff",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.7503040639229563,
+            1.9657922567887847,
+            1.9700069343842415
+          ],
+          "cpu": [
+            1.6908756598581907,
+            1.883044736186157,
+            1.886803572419948
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.9657922567887847,
+          "cpu": 1.883044736186157
+        }
+      }
+    },
+    {
+      "case": "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+      "mask_count": 16,
+      "candidate": "closed",
+      "control": "counter_cars",
+      "comparison": {
+        "useful": false,
+        "favorable_every_repeat": false,
+        "paired_ratios": {
+          "wall": [
+            1.4643483476270056,
+            1.662465651587337,
+            1.6500330923284214
+          ],
+          "cpu": [
+            1.4273873867116993,
+            1.6056096011488352,
+            1.5942289196324533
+          ]
+        },
+        "ratio_medians": {
+          "wall": 1.6500330923284214,
+          "cpu": 1.5942289196324533
+        }
+      }
+    }
+  ]
+}

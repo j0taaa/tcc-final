@@ -8,7 +8,7 @@ pode evitar a explosão e continua um comparador necessário.
 
 ## Família com tokenizer FIXO e documentos JSON consumíveis
 
-Vocabulario fixo de bytes: `{"payload":`, `"`, `[`, `{"k":`, whitespace, `0`,
+Vocabulario fixo de bytes: `{"payload":`, `"`, `[`, `{"k":`, espaço ASCII ` `, `0`,
 `]`, `}`. Há 3n+4 slots, n>=2. Prefixo `{"payload":` e último `}` são fixos.
 Nos slots intermediários, a predição produto é:
 
@@ -20,7 +20,10 @@ Nos slots intermediários, a predição produto é:
 
 Não existem strings-resposta impostas pela gramática. `payload` pode ser
 string, array ou objeto aninhado; os valores e strings têm muitas conclusões.
-No ramo quote, `[` e whitespace são texto interno; `{"k":` é lexicalmente
+Whitespace nesta família é SOMENTE o byte ASCII0x20, que pode aparecer sem
+escape dentro da string; não é tab/newline/cr. Isso especifica o mesmo token
+fixo usado pelo argumento, sem alterar pesos, algoritmo ou benchmark.
+No ramo quote, `[` e esse espaço são texto interno; `{"k":` é lexicalmente
 inválido nessa string (seu quote seguido de k fora dela). No ramo array,
 os dois tipos de abertura são gramaticais e geram pilhas distintas.
 

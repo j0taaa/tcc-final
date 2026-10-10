@@ -162,6 +162,20 @@ def deadline(signum, frame):
     raise TimeoutError("whole sample/confidence operation deadline")
 
 
+def timed_query(request, protocol, table, frozen):
+    """Include timer cancellation in the deadline boundary, before any progress."""
+    start = clock()
+    signal.setitimer(signal.ITIMER_REAL, 120)
+    try:
+        try:
+            return query(request, protocol, table, frozen)
+        finally:
+            signal.setitimer(signal.ITIMER_REAL, 0)
+    except TimeoutError as error:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        return dict(status="resource_refusal", error=str(error), operation=elapsed(start))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--method", choices=("handoff", "exact_stack"), required=True)
@@ -185,11 +199,7 @@ def main():
     print(json.dumps(dict(status="ready", decoder_startup=elapsed(start))), flush=True)
     signal.signal(signal.SIGALRM, deadline)
     for line in sys.stdin:
-        signal.setitimer(signal.ITIMER_REAL, 120)
-        try:
-            result = query(json.loads(line), protocol, table, frozen)
-        finally:
-            signal.setitimer(signal.ITIMER_REAL, 0)
+        result = timed_query(json.loads(line), protocol, table, frozen)
         print(json.dumps(result), flush=True)
 
 

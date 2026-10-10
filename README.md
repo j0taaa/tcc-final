@@ -1,50 +1,105 @@
-# Exact finite-token inference for diffusion language models
+# Certified grammar inference for diffusion language models
 
-Historical and current research directions have independent frozen source,
-proof and evidence snapshots in [attempts/](attempts/README.md), including
-discarded directions. `make attempts-check` verifies their integrity offline;
-it does not establish scientific correctness or novelty.
+This TCC develops **closure certificates for structured dLLM predictions**.
+The input is a frozen product of original token probabilities, a finite canvas
+and fixed context. The JSON reference returns a valid bounded-depth sample,
+valid mass and original-token marginals, with a deterministic error bound
+against conditioning on the complete recursive language.
 
-This TCC implements a model-independent backend for constrained dLLM predictions:
+The certificate pays attention to the **probability of closing** a deep structure
+in the remaining slots. A refinement keeps grammatical syntax through the
+first overflowing original token and uses a lexical counter afterward. It
+preserves aliases, token boundaries and intratoken depth. It is an incremental
+specialization of established weighted abstraction and inference principles.
 
-- **Exact recursive-grammar posterior:** checked LL(1) byte grammars, original-token
-  probabilities, valid mass, marginals and exact sampling. The compiled forest
-  can be reused after reweighting, support restriction and new commitments.
-- **MWPC:** exact proposal commitment, independent Python/Rust parsers, portable
-  budget/conflict certificates, and unchanged serial/EPIC baselines.
-- **General-CFG mass envelopes:** ambiguity-safe partial probability certificates
-  with explicit admission/refusal and omitted mass.
+The useful result is now supported by both mathematics and independent evidence:
 
-The posterior's useful guarantee is mathematical: valid original-token sampling
-without rejection or enumerating parser stacks. Typed nesting can require
-exponentially many explicit automaton states while the CFG inference remains
-polynomial in arithmetic work. These are established parsing principles adapted
-and checked for finite dLLM token slots, not invented weighted parsing.
+- A fixed-tokenizer JSON family proves **constant-depth certification versus
+  linearly growing first-overflow certification depth**. The resulting
+  exponential state separation applies to explicit stacks, not every CFG solver.
+- The complete independent query campaign has **1,215/1,215 records** across
+  all five eligible external documents and 15 masked states. The selected
+  method meets the prespecified wall **and** CPU criterion against all six
+  mandatory controls in **3/15 states**, including cold preparation in two.
+  The criterion is a paired median reduction of at least 20%, with favorable
+  sign in every completed repetition, not a universal speedup.
+- **30/30 actual iterative MDLM executions** return valid JSON, preserve fixed
+  original IDs and use 184 new model forwards. Certified intervals implement
+  the same conditional-confidence decisions as the full reference policy.
+  One seed demonstrates application, not statistical whole-decoder speed.
+- A separate reweighting corollary certifies a strict valid-mass increase when
+  its integer condition holds. All 33 captured frames offer such a certificate.
+  It intentionally changes the product distribution; it is not semantic quality.
 
-Exactness is **per step and on the declared support**. It is not semantic
-correctness, full-vocabulary exactness for top-K, or globally optimal generation.
-The posterior currently requires ABSENT EOS and checked LL(1) grammars; work
-limits explicitly refuse unresolved cases. [Proofs and prior art](docs/research/m34-exact-cfg-posterior.md),
-[Lean boundary](formal/README.md), [complete results](docs/artifacts/processed/m34_cfg_posterior_v1/report.md).
+[Implementation, proof and criteria](attempts/24-certified-depth-approximation/README.md),
+[full independent evidence](attempts/24-certified-depth-approximation/work/evidence/independent-v1/decision.md),
+[main article source](paper/main.tex), [research notebook](docs/research/contribution-plan.md).
+Every loss and refusal remains available. Native EPIC/CARS/FactorDLM generation
+superiority, scientific priority, human review and publication are not claimed.
 
-## Use and verification
+## Run a complete public model-head example offline
+
+This packet includes all original logits/probabilities, tokenizer bytes, fixed
+context and licenses of one capture chosen before performance observations.
+It requires NumPy but **no model weights, Torch, GPU or network**:
 
 ```bash
 make bootstrap
-make check
-make test
-make bootstrap-rust-parser
-make build-rust
-make check-formal LAKE="$HOME/.elan/bin/lake"
-make article-results-check
-make paper
-make research-note
-
-# Recompute and sample a genuine archived MDLM prediction; no model/network needed.
-.venv/bin/python -m scripts.exact_commit.build_cfg_posterior_results --sample json-context0-16
+.venv/bin/python -m attempts.24-certified-depth-approximation.work.demo \
+  --packet attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip \
+  --tolerance 1/1000 --seed 42
 ```
 
-The model-independent API is small:
+The command prints valid JSON, original IDs, the lower mass, normalized error
+certificate and full-posterior intervals for the sampled original tokens.
+It reports packet audit, preparation and query costs; one example is not a
+benchmark. Resource refusal is inconclusive. This reference remains isolated
+in its attempt rather than duplicating another solver in the production core.
+
+The packet supports an additional opt-in bit-equal Torch CPU softmax check:
+
+```bash
+.venv-live/bin/python -m scripts.exact_commit.full_head_packet \
+  --packet attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip \
+  --torch-exact
+```
+
+The other large heads and exact matrices remain local with published hashes.
+The packet reproduces logits-to-softmax, not an independent backbone rerun.
+Actual full-V policy zeroes MASK, retains unsupported ordinary emissions in
+the denominator, and does not use top-K or answer injection.
+
+## Guarantees and alternatives
+
+For shallow valid mass `L` and a sound deep-tail upper mass `U`, sampling is
+exact on `J_d`, with TV error at most `U/(L+U)` against the complete frozen
+posterior. Confidence thresholds are decided by intervals; ambiguous decisions
+refine or fall back to full inference while retaining the same sampled word.
+A common-policy coupling bounds the whole frozen-posterior decoder's output
+TV, provided preparation and recognition conclude. It is **not** the native
+conditioned MDLM trajectory or semantic correctness.
+
+Simple exact methods and rejection remain faster on easy inputs. Handoff has
+stronger bounds at the same depth, but no additional 20% runtime gain over
+closed was demonstrated. Compact CFG inference remains an essential control.
+[Attempt25](attempts/25-exact-envelope-sampling/README.md) separately investigates
+exact envelope sampling, including finite-budget FAIL and strong counter+CARS
+controls. Its complete702-record development failed all18 primary first-sample
+gates; one secondary batch gain remains unconfirmed independently. Its timings
+cannot inherit the query wins of attempt24. The timer error is retained and
+the negative decision has error-independent blockers for all candidate states.
+
+The maintained core retains separate contracts:
+
+- `src/mwpc_exact/cfg_posterior.py`: checked LL(1) byte grammars, exact original-token
+  mass, marginals and sampling; reusable after compatible reweighting,
+  support restriction and further commitments, ABSENT EOS.
+- MWPC: maximum declared proposal-weight commitment in represented support,
+  independent Python/Rust parsers and portable certificates. Per-step utility
+  does not imply future-trajectory optimality.
+- General-CFG probability envelopes: ambiguity-safe partial certificates,
+  explicit support scope and resource refusal.
+- Serial and pinned upstream EPIC remain separate production strategies.
 
 ```python
 from random import Random
@@ -55,138 +110,42 @@ plan = compile_cfg_sampler(source_grammar, selection_input)
 posterior = plan.evaluate(ProbabilityInput(selection_input, original_probability_rows))
 if posterior.valid_mass:
     tokens = posterior.sample(Random(42))
-# Reuse plan.evaluate with changed unaries or a contracted/further committed state.
 ```
 
-The source grammar must normalize to the supplied input grammar. Probabilities
-are rational original row values (fixed singleton rows have probability one).
-Aliases are distinct choices, missing support mass remains explicit, zero valid
-mass and work limits are different outcomes. Expanding support or undoing an
-existing commitment requires a new plan. See the focused independent examples
-in [tests](tests/test_cfg_posterior.py).
+Top-K results remain `exact_on_support`. General posterior preprocessing has
+cooperative deadlines/work limits; canonical source comparison can be exponential
+and is refused at its cap. Expansion of support, releasing fixed positions or
+changing grammar/tokenizer/EOS requires new preparation. These work limits do
+not constitute hard OS preemption. The experimental JSON campaigns separately
+use equal physical solver limits.
 
-Compilation uses one cooperative deadline through LL(1) admission, both
-normalizations, token-DAG and forest construction. `max_preprocessing_work`
-(default 1,000,000 symbol/copy/alternative units) bounds preprocessing, including
-projected nullable-body expansion before allocation. Canonical comparison can
-still be exponential and is refused at its cap; it is not skipped or replaced
-by an unchecked equivalence assumption. Chart/forest caps remain separate.
-These are work/cancellation limits, not hard OS memory or preemption guarantees.
+## Verification and preservation
 
-## Evidence and honest comparison
-
-All 52 previously resolved exact masses/marginals survive the integer/grammar
-refinement unchanged. It resolves 8/9 fresh full-JSON MDLM canvases; one hits its
-work budget. All 18 earlier MDLM array inputs resolve and match the independent
-specialized counter, which generally remains cheaper. The 28 declared nesting
-probes include controls favoring explicit stack transfer; six large free cases
-exceed its representation budget while CFG inference completes.
-
-Exact represented-support rejection is cheaper on the six smaller JSON cases
-in the recorded seed. Its expected attempts are represented mass/valid mass;
-we do not unfairly charge discarded tokens. These outcomes demonstrate a useful
-capability and a scoped representation advantage, not a universal speed win or
-execution of EPIC/FactorDLM/LAVE. The full audit includes every failure, negative
-control, config, original probability input and producing commit. Full model
-logits remain local; compact scientific data are losslessly deduplicated.
-
-## Small maintained tree
-
-The user removed the historical test suite and experiment framework in M32/M33;
-they remain recoverable at `a98ae8e09f2066157ebf6df05f8873b8600e00fb` and `9deb3df`.
-M34 introduced eight focused posterior tests; M35 extends them to eleven with
-archived recomputation and preprocessing/deadline checks. M36 adds one research
-oracle for confidence-selected commitment events and four focused checks for
-the execution-conditioning research reference. The continuation adds four
-adaptive-stream/prefix-control checks and two structural-core checks.
-One additional check replays the complete adaptive archive and recomputes
-its first positive/zero cases with current adaptive/core code.
-A further syntax/execution oracle covers real identifier names, shared
-prefixes and token boundaries inside identifiers. A finite decision-tree oracle
-checks the CARS batch rejection bound against an independent aggregate-state
-recursion. CI runs these twenty-five checks;
-this is not restoration of the old suite or whole-project correctness. Pinned external
-JSON cases are packed in one small archive, with original hashes and license.
-The opt-in model capture retains only the necessary audited official MDLM CPU
-adapter. External EPIC production stays unchanged at `5b1b310`.
-
-[Current research notebook](docs/research/contribution-plan.md): primary-source
-novelty review, candidate event-reduction proof and explicit human-review gates.
-This investigation does not establish a new scientific priority or change the
-production decoders. A separate [research supplement](paper/semantic-conditioning.tex)
-specifies the execution-conditioning algorithm and a tight scoped comparison:
-all union-profile masses require `3^m` products in a non-negative bilinear plan,
-versus `2^m` using the known signed covering-product transform. It does not
-claim a general lower bound for FactorDLM, sparse inputs or single target masses.
-
-The small research API reuses an original-token forest:
-
-```python
-from scripts.exact_commit.semantic_json import boolean_rule_grammar, evaluate_semantics
-
-source = boolean_rule_grammar(("a", "b"))  # independent of records and labels
-plan = compile_cfg_sampler(source, selection_input)  # input uses this source grammar
-posterior = evaluate_semantics(plan, probability_input, boolean_records)
-tokens = posterior.sample(target_profile, Random(42))  # only if its mass is positive
+```bash
+make check
+make test
+make build-rust
+make check-formal LAKE="$HOME/.elan/bin/lake"
+make article-results-check
+make paper
 ```
 
-It fills Boolean rules matching the declared records, not arbitrary JsonLogic
-programs or unseen-record labels. Slots, probabilities and support retain their
-previous contracts. Work caps refuse unresolved instances. The frozen integration
-config and opt-in CPU capture/replay are in
-`configs/experiments/m36_semantic_reference_v1.json` and
-`scripts/exact_commit/capture_semantic_reference.py`.
-The [archived real MDLM illustration](docs/artifacts/raw/m36_semantic_reference_v1/)
-was checked against all 108 represented rules and the pinned official JsonLogic
-consumer on eight Boolean records. Both declared positive targets were sampled;
-the impossible canvas target remains zero mass. CI recomputes the archive with
-current code without a model or network. This is an application/reproduction
-check, not an external benchmark or proof of novelty/generalization.
+The focused suite has 87 independent checks, including exact original-token
+product/random-law oracles. The historical suite remains removed as requested.
+The article generator recomputes adoption decisions from every archived raw
+record and verifies all application transitions; this differs from rerunning
+all large solvers/neural forwards. Lean checks selected count/algebra specifications,
+not the complete Python/Rust software, tokenizer, backbone or trajectory.
+[Formal boundary](formal/README.md).
 
-The [adaptive research stream](scripts/exact_commit/adaptive_semantics.py)
-conditions on requirements discovered through rejected rules and verifies
-every declared record before returning tokens. With sufficient resources it
-preserves the exact conditional distribution and rejects at most `m` rules
-over the entire stream, for `m` requirements. Active profiles remain capped
-at twelve; a refusal is unresolved. The supplement proves a scoped exponential
-representation gap for non-prefix behavior against zero-rejection prefix
-exclusion, including CARS's trie; automata and other competent compact semantic
-solvers can share that advantage. The supplement also proves an expected
-rejection separation for CARS's actual visited-prefix update on the uniform
-non-prefix family: `Omega(min(N, 2**(n-1)))` rejected candidates over `N` accepted
-outputs, while execution refinement needs at most one. This is a count bound
-with polynomial preparation, not a universal latency or automata advantage.
-The frozen complete-label audit protocol is
-`configs/experiments/m36_adaptive_semantics_v1.json`. It includes eager inference,
-enumeration and a perfect-oracle prefix control, not native EPIC/CARS timing.
+All 25 research attempts, starting with the initial repository and first working
+prototype, have independent frozen source/proof/evidence snapshots. Refinements
+never overwrite earlier versions. [Index](attempts/README.md),
+[catalog](attempts/catalog.json), [current tasks](TASKS.md).
+`make attempts-check` verifies integrity, not novelty or usefulness. Models and
+large caches are excluded. Rejected directions, failed external transfer and
+faster controls remain in the archives; semantic attempts15/16 are not the
+article's protagonists. Code, sources and article are synchronized on `main`.
 
-`compile_semantic_core` certifies a smaller subset of requirements using
-positive auxiliary weights on every original supported token. Omitted records
-must have exactly zero violating paths, so the certificate survives arbitrary
-new model weights, support contraction and added commitments. Samples still use
-the actual model probabilities. Expansion/released commitments require a new
-certificate. Certification and all later queries are included in the cost
-analysis; neither minimum-core selection nor universal speed superiority is
-promised. A zero model probability alone cannot justify removing a requirement.
-The [complete audit](docs/research/generated/m36-adaptive-summary.md) preserves
-all 256 labels and three seeds, including zeros and every control. Enumeration
-wins this small case; core certification adds overhead despite cheaper batch
-sampling than eager profiles. An exhaustive correctness corollary verifies
-64 distinct records through a certified two-record core, beyond the twelve-record
-all-profile admission cap. This is a capability check, not a performance benchmark.
-Fields can use ordinary ASCII identifiers such as `active`, `active_admin` and
-`is_employee`; the trie grammar distinguishes shared prefixes and split tokens.
-Fields are Boolean and operators are binary AND/OR, unary NOT and optional
-Boolean identity. Dotted paths, general JsonLogic types and unseen-record
-correctness are outside this reference. Given a compiled plan and finite-token
-probabilities, the reusable API is:
-
-```python
-core = compile_semantic_core(plan, inputs, records, labels)
-posterior = core.evaluate(new_inputs)  # Compatible new probabilities/support.
-mass = posterior.valid_mass
-token_ids = posterior.sample(rng)     # Explicit Random; positive mass required.
-```
-
-[Reproduction](REPRODUCING.md), [baseline provenance](UPSTREAM.md),
-[previous cleanup](docs/evidence/m33-cleanup.md).
+MIT applies to project software; preserve upstream and dataset licenses in
+[THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) and the pinned [UPSTREAM.md](UPSTREAM.md).

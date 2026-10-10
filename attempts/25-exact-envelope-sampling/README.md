@@ -1,8 +1,8 @@
 # 25 — Amostragem exata por envelope de profundidade e fechamento
 
-**Investigação matemática e protótipo isolado. Rapidez prática e prioridade
-acadêmica ainda não confirmadas.** A24 permanece intacta: aproxima uma
-distribuição e está sendo medida sob seu protocolo original. Aqui a operação
+**Investigação matemática e protótipo isolado. Gate de primeira amostra REJEITADO no desenvolvimento;
+prioridade acadêmica não confirmada.** A24 permanece intacta: aproxima uma
+distribuição e tem ganho de consulta independente3/15 sob seu protocolo original. Aqui a operação
 é diferente: usar sua cauda abstrata como proposta de rejeição, preservando
 TODOS os eventos válidos, inclusive os profundos. Não descartar uma tentativa.
 
@@ -68,7 +68,7 @@ Cópias independentes vêm SOMENTE de24/v3/source.zip, commit3f0ae1b; hashes
 registrados em `work/reference-origin.json`. Nenhum import de tentativas
 mutáveis. O núcleo de produção e o experimento24 em execução não são alterados.
 
-## Primeira validação (sem timings competitivos)
+## Validação histórica v1 (antes dos timings competitivos)
 
 Seis testes independentes enumeram a lei dos sorteios efetivos. A suíte
 atual passa80 testes (`make test`,36.413s). Após acrescentar recusa explícita
@@ -135,4 +135,38 @@ algebraicas do corolário24. `make check-formal` completo passou; evidência
 em `work/evidence/formal-v2`. Não é verificação do Python, da cobertura de
 gramática, do backbone ou do acoplamento global escrito. O oráculo13-worker
 verifica a mesma operação de primeira amostra e evita atribuir a ela uma
-recusa observada apenas depois no lote. Timings competitivos continuam pendentes.
+recusa observada apenas depois no lote. Timings competitivos estavam pendentes nessa etapa; decisão completa abaixo.
+
+
+## Decisão completa v2 e correção delimitada de timeout
+
+702/702 registros foram executados com fonte/protocolo congelados em
+b54101c61acbf96c421f212956ec39738ab24a20:648 completos,53 recusas e1 erro
+preservado,162 checks contra massa exata. Ambas variantes têm **0/18 ganhos
+primários de primeira amostra** contra todos11 controles e **1/18 ganho
+secundário de lote32** (0ce7169f-16). O segundo NÃO é confirmação independente
+nem substitui o gate primário; a etapa independente condicionada não é acionada.
+Isso não transforma os ganhos de consulta24 em ganhos desta operação.
+
+Um SIGALRM chegou em `finally` durante cancelamento de timer, no controle
+counter_only/017a7a6d-16/repeat2. O registro original continua `worker_error`;
+não supomos que houve primeira saída nem damos crédito de capacidade. A
+`work/evidence/development-v2/negative-audit.json` contém um controle totalmente
+concluído/sem erro que viola uma condição necessária do gate para CADA um dos
+36 pares candidato/estado. Assim qualquer resolução desse único erro ainda
+não produziria vitória primária. Não repetimos702 medições desnecessariamente
+nem atribuímos a fonte corrigida às medições anteriores.
+
+A correção mantém todo o corpo e a desativação do timer dentro da fronteira
+de exceção; cancela antes de registrar recusa e preserva uma primeira amostra
+realmente observada quando só o lote falha. Dois novos oráculos reproduzem
+chegada do alarme durante cancelamento: worker25 preserva a primeira saída;
+serviço24 recusa antes de commit. Todos quatro checks desses módulos passam
+(0.224s). Samplers, ordem, inputs, seeds, limites e objetivos não mudam.
+
+Reavaliação dos oito critérios: uso e provas locais permanecem válidos;
+velocidade primária útil não foi demonstrada, controles counter+CARS continuam
+competentes e a observação de lote é desenvolvimento. Custo completo e perdas
+foram contabilizados. A25 permanece uma extensão preservada, não o protagonista
+da contribuição; consolidar24 evita insistir no que falhou. Os oito critérios
+originais são históricos, não alegações de progresso pendente ou adoção atual.

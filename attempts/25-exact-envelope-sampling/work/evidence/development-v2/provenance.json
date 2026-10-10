@@ -1,0 +1,7 @@
+{
+  "producer_commit": "b54101c61acbf96c421f212956ec39738ab24a20",
+  "rows_sha256": "af2ab3d4b8ee36bf86cf106d8d3636d7c6e76e0a1cbcf783e279298f580934dc",
+  "measurement_command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv-live/bin/python -m attempts.25-exact-envelope-sampling.work.run --capture .cache/a22-development-cuda-v1 --output .cache/a25-development-measure-v2",
+  "analysis_command": ".venv/bin/python -m attempts.25-exact-envelope-sampling.work.analyze --input .cache/a25-development-measure-v2 --output .cache/a25-development-decision-v2",
+  "scope": "All702 raw rows,648 complete53 resource_refusal1 worker_error retained. Zero first wins and one development batch win per variant; no independent adoption. The timer cancellation error is NOT reclassified and no control capacity credit is derived from it. All36 candidate/state pairs fail against another fully completed error-free control."
+}

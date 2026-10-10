@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import signal
 import tempfile
 import unittest
 from fractions import Fraction
@@ -13,11 +14,52 @@ import numpy as np
 
 from mwpc_exact.cfg_posterior import CompilationLimit
 
+from . import measure
 from .analyze import paired
 from .measure import WORK, Rejection, worker
 
 
 class ExactSamplingMeasurement(unittest.TestCase):
+    def test_deadline_during_cancellation_preserves_observed_first_sample(self):
+        protocol = json.loads((WORK / "protocol.json").read_text())
+        protocol["batch_size"] = 1
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            np.save(root / "fixture.npy", np.array([[1.0]]))
+            (root / "vocabulary.json").write_text(json.dumps(["[]"]))
+            (root / "fixture.json").write_text(
+                json.dumps(
+                    dict(
+                        case="fixture",
+                        mask_count=1,
+                        canvas=[None],
+                        positions=[0],
+                        probabilities_sha256=hashlib.sha256(
+                            (root / "fixture.npy").read_bytes()
+                        ).hexdigest(),
+                        forward_and_softmax=dict(wall=0, cpu=0),
+                    )
+                )
+            )
+            arguments = SimpleNamespace(capture=root, case="fixture", repeat=0, method="rejection")
+            actual_timer, arrived = signal.setitimer, []
+
+            def cancellation_race(which, seconds):
+                previous = actual_timer(which, seconds)
+                if seconds == 0 and not arrived:
+                    arrived.append(True)
+                    raise TimeoutError("alarm arrived while cancelling")
+                return previous
+
+            with patch.object(measure.signal, "setitimer", cancellation_race):
+                row = worker(arguments, protocol)
+            self.assertEqual(row["status"], "resource_refusal")
+            self.assertEqual(row["first_status"], "complete")
+            self.assertEqual(row["samples"], [[0]])
+            self.assertIn("first_total", row)
+            self.assertIn("cancelling", row["error"])
+            self.assertEqual(signal.getitimer(signal.ITIMER_REAL), (0.0, 0.0))
+
     def test_all_thirteen_workers_same_original_mass_and_batch_only_refusal(self):
         protocol = json.loads((WORK / "protocol.json").read_text())
         protocol["batch_size"] = 2

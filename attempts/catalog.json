@@ -4,8 +4,8 @@
   "attempts": [
     {
       "id": "01-mwpc-original",
-      "title": "MWPC original e valida\u00e7\u00e3o inicial",
-      "conclusion": "Base preservada: \u00f3timo de um passo no suporte declarado; n\u00e3o implica vantagem geral de gera\u00e7\u00e3o.",
+      "title": "MWPC original e validação inicial",
+      "conclusion": "Base preservada: ótimo de um passo no suporte declarado; não implica vantagem geral de geração.",
       "reading": "TASKS.md; paper/main.tex; docs/evidence/m17-review-verification.json",
       "versions": [
         {
@@ -39,8 +39,8 @@
     },
     {
       "id": "02-parallel-batch-selection",
-      "title": "Sele\u00e7\u00e3o paralela em estados reais \u2014 M18",
-      "conclusion": "Hist\u00f3rica: a auditoria seguinte limita os ganhos; n\u00e3o usar as raz\u00f5es antigas como superioridade geral.",
+      "title": "Seleção paralela em estados reais — M18",
+      "conclusion": "Histórica: a auditoria seguinte limita os ganhos; não usar as razões antigas como superioridade geral.",
       "reading": "docs/reviews/2026-09-22-practical-selection.md",
       "versions": [
         {
@@ -55,8 +55,8 @@
     },
     {
       "id": "03-witness-reuse-audit",
-      "title": "Controle com reutiliza\u00e7\u00e3o de testemunho \u2014 M19/M20",
-      "conclusion": "Resultado desfavor\u00e1vel preservado: reutiliza\u00e7\u00e3o reduz a vantagem de sele\u00e7\u00e3o; nenhum testemunho do replay passou a tarefa funcional.",
+      "title": "Controle com reutilização de testemunho — M19/M20",
+      "conclusion": "Resultado desfavorável preservado: reutilização reduz a vantagem de seleção; nenhum testemunho do replay passou a tarefa funcional.",
       "reading": "docs/reviews/2026-09-22-selection-audit.md",
       "versions": [
         {
@@ -71,8 +71,8 @@
     },
     {
       "id": "04-minimal-json-repair",
-      "title": "Reparo m\u00ednimo de JSON \u2014 M21",
-      "conclusion": "Reparo \u00fatil dentro do contrato, mas n\u00e3o \u00e9, por si s\u00f3, uma contribui\u00e7\u00e3o de dLLM; dire\u00e7\u00e3o superada como protagonista.",
+      "title": "Reparo mínimo de JSON — M21",
+      "conclusion": "Reparo útil dentro do contrato, mas não é, por si só, uma contribuição de dLLM; direção superada como protagonista.",
       "reading": "docs/research/m21-findings.md; docs/research/m21-repair-protocol.md",
       "versions": [
         {
@@ -87,8 +87,8 @@
     },
     {
       "id": "05-dllm-tool-infilling",
-      "title": "Preenchimento de chamadas com dLLM \u2014 M22",
-      "conclusion": "Hist\u00f3rica: resultados locais de gera\u00e7\u00e3o n\u00e3o estabelecem ganho externo geral ou novidade te\u00f3rica.",
+      "title": "Preenchimento de chamadas com dLLM — M22",
+      "conclusion": "Histórica: resultados locais de geração não estabelecem ganho externo geral ou novidade teórica.",
       "reading": "docs/research/m22-findings.md",
       "versions": [
         {
@@ -103,8 +103,8 @@
     },
     {
       "id": "06-epic-tool-comparison",
-      "title": "Compara\u00e7\u00e3o com o decoder EPIC \u2014 M23",
-      "conclusion": "Controles EPIC e recupera\u00e7\u00e3o preservados; consultar resultados completos, sem substituir EPIC por um controle simplificado.",
+      "title": "Comparação com o decoder EPIC — M23",
+      "conclusion": "Controles EPIC e recuperação preservados; consultar resultados completos, sem substituir EPIC por um controle simplificado.",
       "reading": "docs/research/m23-findings.md",
       "versions": [
         {
@@ -119,8 +119,8 @@
     },
     {
       "id": "07-stable-commitment-policies",
-      "title": "Pol\u00edticas de commitment e confirma\u00e7\u00e3o externa \u2014 M24",
-      "conclusion": "Hist\u00f3rica: manter perdas, resultados externos, abla\u00e7\u00f5es e an\u00e1lises posteriores separados dos protocolos prim\u00e1rios.",
+      "title": "Políticas de commitment e confirmação externa — M24",
+      "conclusion": "Histórica: manter perdas, resultados externos, ablações e análises posteriores separados dos protocolos primários.",
       "reading": "docs/research/m24-findings.md; docs/research/m24-reproduction.md",
       "versions": [
         {
@@ -135,8 +135,8 @@
     },
     {
       "id": "08-grounded-json-generation",
-      "title": "Gera\u00e7\u00e3o de consultas com dados externos \u2014 M25",
-      "conclusion": "Demonstra\u00e7\u00e3o de aplica\u00e7\u00e3o; n\u00e3o prova superioridade geral. Tentativas interrompidas e falhas continuam preservadas.",
+      "title": "Geração de consultas com dados externos — M25",
+      "conclusion": "Demonstração de aplicação; não prova superioridade geral. Tentativas interrompidas e falhas continuam preservadas.",
       "reading": "docs/research/m25-findings.md; docs/research/m25-reproduction.md",
       "versions": [
         {
@@ -151,8 +151,8 @@
     },
     {
       "id": "09-budgeted-commitment",
-      "title": "Commitment com or\u00e7amento e certificados \u2014 M26\u2013M28",
-      "conclusion": "\u00d3timo do objetivo com or\u00e7amento, com custos de prepara\u00e7\u00e3o e comparadores pr\u00f3prios; n\u00e3o \u00e9 otimalidade da trajet\u00f3ria inteira.",
+      "title": "Commitment com orçamento e certificados — M26–M28",
+      "conclusion": "Ótimo do objetivo com orçamento, com custos de preparação e comparadores próprios; não é otimalidade da trajetória inteira.",
       "reading": "docs/research/m26-mathematical-core.md; docs/research/m28-real-state-replay.md",
       "versions": [
         {
@@ -168,8 +168,8 @@
     },
     {
       "id": "10-conflict-guided-commitment",
-      "title": "Aprendizagem de conflitos certificada \u2014 M29",
-      "conclusion": "Motor exato especializado; preservar controles, perdas de JSON aninhado e proveni\u00eancia das recupera\u00e7\u00f5es.",
+      "title": "Aprendizagem de conflitos certificada — M29",
+      "conclusion": "Motor exato especializado; preservar controles, perdas de JSON aninhado e proveniência das recuperações.",
       "reading": "docs/research/m29-conflict-commitment.md",
       "versions": [
         {
@@ -185,8 +185,8 @@
     },
     {
       "id": "11-probability-certificates",
-      "title": "Certificados de massa e auditoria de relev\u00e2ncia \u2014 M30/M31",
-      "conclusion": "Resultado desfavor\u00e1vel preservado: o controle exato especializado foi mais barato em todos os 35 pares retornados da auditoria M31.",
+      "title": "Certificados de massa e auditoria de relevância — M30/M31",
+      "conclusion": "Resultado desfavorável preservado: o controle exato especializado foi mais barato em todos os 35 pares retornados da auditoria M31.",
       "reading": "docs/research/m30-probability-certificates.md; docs/research/m31-relevance-audit.md",
       "versions": [
         {
@@ -204,8 +204,8 @@
     },
     {
       "id": "12-exact-cfg-posterior",
-      "title": "Posterior gramatical exato \u2014 M34/M35",
-      "conclusion": "Componente mantido: exatid\u00e3o no suporte e gram\u00e1ticas admitidas. Parsing probabil\u00edstico \u00e9 antecedente; n\u00e3o h\u00e1 superioridade universal.",
+      "title": "Posterior gramatical exato — M34/M35",
+      "conclusion": "Componente mantido: exatidão no suporte e gramáticas admitidas. Parsing probabilístico é antecedente; não há superioridade universal.",
       "reading": "docs/research/m34-exact-cfg-posterior.md; docs/evidence/m35-consolidation.md",
       "versions": [
         {
@@ -221,8 +221,8 @@
     },
     {
       "id": "13-commitment-event-reduction",
-      "title": "Probabilidade de eventos de commitment \u2014 M36",
-      "conclusion": "Descartada como novidade central: redu\u00e7\u00e3o a contagem ponderada/ranking conhecidos. O or\u00e1culo finito testa a redu\u00e7\u00e3o, n\u00e3o prioridade.",
+      "title": "Probabilidade de eventos de commitment — M36",
+      "conclusion": "Descartada como novidade central: redução a contagem ponderada/ranking conhecidos. O oráculo finito testa a redução, não prioridade.",
       "reading": "docs/research/contribution-plan.md; tests/test_cfg_posterior.py",
       "versions": [
         {
@@ -235,8 +235,8 @@
     },
     {
       "id": "14-boolean-execution-profiles",
-      "title": "Condicionamento de regras Booleanas por execu\u00e7\u00e3o \u2014 M36",
-      "conclusion": "Refer\u00eancia de pesquisa: transforma\u00e7\u00e3o conhecida e aplica\u00e7\u00e3o delimitada; captura real n\u00e3o demonstra novidade ou generaliza\u00e7\u00e3o.",
+      "title": "Condicionamento de regras Booleanas por execução — M36",
+      "conclusion": "Referência de pesquisa: transformação conhecida e aplicação delimitada; captura real não demonstra novidade ou generalização.",
       "reading": "docs/evidence/m36-semantic-reference.md; paper/semantic-conditioning.tex",
       "versions": [
         {
@@ -251,8 +251,8 @@
     },
     {
       "id": "15-adaptive-semantic-cores",
-      "title": "Refinamento adaptativo e n\u00facleos sem\u00e2nticos \u2014 M36",
-      "conclusion": "Garantias delimitadas de rejei\u00e7\u00f5es e reutiliza\u00e7\u00e3o. Auditoria completa preserva enumera\u00e7\u00e3o mais r\u00e1pida e custo de certifica\u00e7\u00e3o.",
+      "title": "Refinamento adaptativo e núcleos semânticos — M36",
+      "conclusion": "Garantias delimitadas de rejeições e reutilização. Auditoria completa preserva enumeração mais rápida e custo de certificação.",
       "reading": "docs/evidence/m36-adaptive-semantics.md; paper/semantic-conditioning.tex",
       "versions": [
         {
@@ -267,8 +267,8 @@
     },
     {
       "id": "16-cars-rejection-bound",
-      "title": "Limite de rejei\u00e7\u00f5es contra a atualiza\u00e7\u00e3o publicada do CARS \u2014 M36",
-      "conclusion": "Dire\u00e7\u00e3o atual de pesquisa: vantagem provada na contagem sob hip\u00f3teses expl\u00edcitas; n\u00e3o \u00e9 lat\u00eancia universal, prioridade confirmada ou revis\u00e3o humana.",
+      "title": "Limite de rejeições contra a atualização publicada do CARS — M36",
+      "conclusion": "Direção atual de pesquisa: vantagem provada na contagem sob hipóteses explícitas; não é latência universal, prioridade confirmada ou revisão humana.",
       "reading": "docs/evidence/m36-adaptive-semantics.md; paper/semantic-conditioning.tex; tests/test_adaptive_semantics.py",
       "versions": [
         {
@@ -285,7 +285,7 @@
     {
       "id": "17-pl-latent-resampling",
       "title": "Auditoria independente de reamostragem latente PL",
-      "conclusion": "Utilidade delimitada em lotes de 4096: ganho >=20% em 3/48 eventos com circuito dispon\u00edvel e 2/48 incluindo compila\u00e7\u00e3o, contra controles fortalecidos. Enumera\u00e7\u00e3o vence todos os 12 casos neurais pequenos; treinamento completo e prioridade permanecem sem confirma\u00e7\u00e3o.",
+      "conclusion": "Utilidade delimitada em lotes de 4096: ganho >=20% em 3/48 eventos com circuito disponível e 2/48 incluindo compilação, contra controles fortalecidos. Enumeração vence todos os 12 casos neurais pequenos; treinamento completo e prioridade permanecem sem confirmação.",
       "reading": "attempts/17-pl-latent-resampling/work/usefulness-decision.md; attempts/17-pl-latent-resampling/work/evidence/utility/final-utility-decision.md; attempts/17-pl-latent-resampling/work/product-proposal-separation.md",
       "versions": [
         {
@@ -490,8 +490,8 @@
     },
     {
       "id": "18-monotone-grammatical-decoding",
-      "title": "Preserva\u00e7\u00e3o de pol\u00edtica gulosa e propaga\u00e7\u00e3o gramatical durante gera\u00e7\u00e3o",
-      "conclusion": "Suporte congelado: nenhuma vers\u00e3o passou o crit\u00e9rio de vantagem total contra controles competentes. Todas as trajet\u00f3rias conclusivas equivalentes; refinamentos e perdas preservados.",
+      "title": "Preservação de política gulosa e propagação gramatical durante geração",
+      "conclusion": "Suporte congelado: nenhuma versão passou o critério de vantagem total contra controles competentes. Todas as trajetórias conclusivas equivalentes; refinamentos e perdas preservados.",
       "reading": "attempts/18-monotone-grammatical-decoding/README.md; attempts/18-monotone-grammatical-decoding/work/specification.md",
       "versions": [
         {
@@ -578,7 +578,7 @@
     {
       "id": "19-growing-support-decoding",
       "title": "Suporte adaptativo orientado pelo modelo e selecao gramatical com politica preservada",
-      "conclusion": "Gera\u00e7\u00e3o com suporte crescente: 1.026 registros, 888 equival\u00eancias, 0/18 ganhos predeclarados wall e CPU. Resultado negativo preservado, n\u00e3o contribui\u00e7\u00e3o final.",
+      "conclusion": "Geração com suporte crescente: 1.026 registros, 888 equivalências, 0/18 ganhos predeclarados wall e CPU. Resultado negativo preservado, não contribuição final.",
       "reading": "attempts/19-growing-support-decoding/README.md; attempts/19-growing-support-decoding/work/specification.md",
       "versions": [
         {
@@ -603,7 +603,7 @@
     {
       "id": "20-lexical-support-quotient",
       "title": "Classes pelo efeito lexical completo e suporte crescente",
-      "conclusion": "864 registros, 744 equival\u00eancias, zero ganho prim\u00e1rio/secund\u00e1rio contra controles lexicais fortes. Quociente global negativo preservado.",
+      "conclusion": "864 registros, 744 equivalências, zero ganho primário/secundário contra controles lexicais fortes. Quociente global negativo preservado.",
       "reading": "attempts/20-lexical-support-quotient/README.md",
       "versions": [
         {
@@ -628,8 +628,8 @@
     },
     {
       "id": "21-contextual-token-groups",
-      "title": "Grupos sobrepostos conforme o estado lexical expl\u00edcito",
-      "conclusion": "1026 registros reais, 897 equival\u00eancias, nenhum ganho forte prim\u00e1rio/secund\u00e1rio contra controles lexicais/globais. Resultado negativo preservado.",
+      "title": "Grupos sobrepostos conforme o estado lexical explícito",
+      "conclusion": "1026 registros reais, 897 equivalências, nenhum ganho forte primário/secundário contra controles lexicais/globais. Resultado negativo preservado.",
       "reading": "attempts/21-contextual-token-groups/README.md",
       "versions": [
         {
@@ -823,7 +823,7 @@
     {
       "id": "25-exact-envelope-sampling",
       "title": "Amostragem exata por envelope de profundidade e fechamento",
-      "conclusion": "Written exact accepted law and finite proposal budget, original-token tiny RNG oracles and CARS bulk/perfect reference; no competitive timing, model trajectory or priority confirmation. Classical envelope rejection credited; includes stronger counter+CARS objection before experiments. Independent copies from24/v3 only.",
+      "conclusion": "Complete702-record development:0/18 primary first-sample gates,1/18 secondary batch gate per variant (not independently confirmed). All36 candidate/state pairs have completed error-free blockers; timer error retained and boundary repaired/tested. Accepted-law proofs remain; no native decoder/semantic/priority claim.",
       "reading": "attempts/25-exact-envelope-sampling/README.md",
       "versions": [
         {

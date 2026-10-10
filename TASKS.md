@@ -1,4 +1,4 @@
-# TASKS.md — Exact MWPC for CFG-Constrained dLLMs
+# TASKS.md — Certified grammar inference for dLLMs
 
 ## How to use this file
 
@@ -15,6 +15,14 @@ order, never substitute measurements with estimates, and do not redo a closed
 milestone unless a regression invalidates its evidence.
 
 ## Current starting point
+
+The consolidated protagonist is M44/T4406: confirmed3/15
+independent query advantage, written certificate separation, complete30/30
+neural application and reproducible article. A25 is a separately preregistered
+exact-sampling evaluation and cannot inherit query timings. M42/M43 and earlier
+conditional branches below are historical; failed development gates do not
+require executing their untriggered independent campaigns. Do not reopen them
+or restore removed infrastructure. Human review/publication remain external.
 
 ## M42 — Full original-vocabulary posterior, without discarded topK mass
 
@@ -122,10 +130,21 @@ milestone unless a regression invalidates its evidence.
   certificate, independently bounded by full exact marginals. Minimum guaranteed
   ratio ranges1.0087..4.0000 at factor4. Explicitly changes q; no semantic or
   total-speed claim. All33 outcomes in24/work/evidence/amplification-v1.
-- [ ] T4406: Consolidate useful confirmed result, proofs, reviewed literature
+- [x] T4406: Consolidate useful confirmed result, proofs, reviewed literature
   and actual application in project/article; formalize selected sensitive
   statements only with explicit implementation/Lean boundaries. Human review
   and publication remain external, never claimed.
+  Main article rewritten around closure certificates/query advantage, preserving
+  earlier papers/sources in snapshots. Deterministic generator reanalyzes ALL
+ 1701 query records and702 separate-sampling records; verifies30 application
+  transition sequences against original fixed IDs and tokenizer bytes. Public
+  full-head offline demo produces valid JSON and certificate without a model.
+  `make test`:87 passed36.838s; `make check`, Rust/Clippy and full selected Lean
+  proofs/axiom audit pass. `make paper`:13 pages, no overflow or unresolved refs,
+  all-page rendering reviewed. New timer regressions preserve honest resource
+  statuses without changing historical results. Evidence and portable commands
+  are retained with producer commits/source hashes; code/article are committed
+  and synchronized with upstream before reporting completion.
 
 ## M45 — Exact original-token sampling from a certified grammar/counter envelope
 
@@ -150,14 +169,26 @@ milestone unless a regression invalidates its evidence.
   Prepared13-worker first-output/batch32 protocol and complete analyzer;
   selection only in702 development records, then1755 shared-head independent
   records if the gate passes. Source/protocol frozen in25/v2 atb831a2d;
-  no competitive A25 timing yet. Tiny13-worker
+  frozen BEFORE any A25 timing. Tiny13-worker
   oracle also prevents batch-only refusal from giving first-output credit.
   New Lean count specifications check finite-budget local law/refusal and
   amplification algebra; full make check-formal passes, verification in
  25/work/evidence/formal-v2. These are not proofs of Python or native MDLM.
-- [ ] T4503: Confirm usefulness of exact sampler only under same task/full
-  original probabilities/costs; test real iterative dLLM integration and
-  actual application. No general priority, human review or publication invented.
+- [x] T4503: Complete the same-task development usefulness decision with full
+  original probabilities/costs before conditional independent/application work.
+  COMPLETE702/702 rows,648 complete53 resource_refusal1 worker_error,
+ 162 certificate checks; frozen producerb54101c. BOTH variants0/18 primary
+  first-sample wins and1/18 secondary batch32 win. The latter is not independent
+  confirmation; the primary gate rejects speed adoption and does NOT trigger
+  the1755-row conditional independent phase/iterative sampler demonstration.
+  All rows/decision/provenance in25/work/evidence/development-v2. A timeout
+  arrived during timer cancellation; unchanged raw error is not capacity credit.
+  All36 candidate/state pairs fail against another completed error-free control,
+  so the primary rejection does not depend on resolving that race. Minimal
+  timer boundaries corrected in25 worker/24 service; two new error regressions
+  plus actual service/all-worker checks pass (4 tests,0.224s). No sampler/policy,
+  seed, input or measured outcome altered. Full focused suite now87 tests.
+  A24 remains independently useful; no general priority/human review/publication.
 
 ## M43 — Canonical epsilon inference with original slot provenance
 

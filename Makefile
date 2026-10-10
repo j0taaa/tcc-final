@@ -56,11 +56,13 @@ check-project: check test build-rust check-formal article-results-check
 article-results:
 	$(VENV_PY) -m scripts.exact_commit.build_probability_audit_results
 	$(VENV_PY) -m scripts.exact_commit.build_cfg_posterior_results
+	$(VENV_PY) -m scripts.exact_commit.build_depth_certificate_results
 
 article-results-check:
 	$(VENV_PY) scripts/verify_artifacts.py
 	$(VENV_PY) -m scripts.exact_commit.build_probability_audit_results --check
 	$(VENV_PY) -m scripts.exact_commit.build_cfg_posterior_results --check
+	$(VENV_PY) -m scripts.exact_commit.build_depth_certificate_results --check
 	$(VENV_PY) -m scripts.exact_commit.audit_adaptive_semantics --output docs/artifacts/raw/m36_adaptive_semantics_v1 --latex-check paper/generated/m36-adaptive-table.tex
 
 paper: article-results-check

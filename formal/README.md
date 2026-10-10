@@ -100,8 +100,9 @@ graph optimality; original-input correspondence is a separate checked boundary.
 
 The universal implementation correctness of the Python graph compiler, Python
 DP, Rust parser, PyO3/FFI and external tokenizer has not been proved in Lean.
-Independent oracles and differential/regression tests must be rebuilt after
-the user-authorized reset; the current branch contains only the newly authorized focused M34 posterior tests, not that historical suite. The paper's DP completeness proof, infinite-language separation
+The focused suite was rebuilt after the user-authorized reset and now contains
+87 posterior, semantic and independent research checks; the historical suite
+remains archived rather than restored. The paper's DP completeness proof, infinite-language separation
 constructions, the CFG posterior/sampling law and exact update-round formula remain written proofs; the
 formalized certificate soundness does not silently mechanize all of them.
 Model probabilities, quantization, CUDA, system timing, semantic correctness
@@ -157,3 +158,26 @@ The optional `--lean-limit N` selects the N smallest serialized distinct cores
 with stable fingerprint tie-breaking and records its scope; without it all
 31 distinct replay cores are attempted. Formal subprocess deadlines now kill
 Lake's actual Lean descendants, covered by an executing process regression.
+
+## Certified closure and finite-budget envelope boundary
+
+`MWPC/ExactEnvelope.lean` adds seven universal integer-count specifications:
+factorization and summation of returned counts, complete partition identity,
+local law after finite-budget acceptance, rejected count versus upper tail,
+power-monotonic finite refusal and its normalized cross-multiplied certificate.
+`MWPC/CertifiedAmplification.lean` adds two comparisons: transport of a lower
+conditional numerator to the true count, and the strict valid-mass improvement
+after multiplying one original weight. `AuditExactEnvelope.lean` prints their
+axioms; the mandatory runner builds and audits both modules. The complete
+formal command passed, with source hashes and verification recorded in
+`attempts/25-exact-envelope-sampling/work/evidence/formal-v2`.
+
+Counts have explicit partition/coverage premises. These proofs do not establish
+that Python constructs the covered event envelope, performs its random choices
+or validates token bytes correctly. The closure-frontier coverage, factorial
+certificate separation and full confidence-policy coupling are written proofs.
+The finite interrupted sampler has FAIL; local accepted-law equality does not
+assert equality of an entire run conditioned on successful completion. The
+trajectory comparison is to a decoder of frozen-product posteriors, not the
+native conditioned MDLM law. New tests and actual neural application evidence
+complement these delimited specifications; they do not extend Lean's scope.

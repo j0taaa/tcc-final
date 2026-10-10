@@ -110,20 +110,31 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   tem prova escrita, sete oráculos pequenos e controle counter+CARS reforçado.
   OS*2012 já fornece o princípio geral de proposta superior/refinamento:
   não reivindicar esse princípio. A trajetória com orçamento finito tem FAIL
-  e bound sum(delta_t^k), não igualdade incondicional. Novo protocolo13 métodos
-  primeira amostra/lote32 não foi cronometrado. O refinamento estático v2 que
+  e bound sum(delta_t^k), não igualdade incondicional. Protocolo13 métodos primeira amostra/lote32 teve702/702 registros
+  de desenvolvimento:648 completos53 recusas1 erro de timer, todos preservados.
+  Ambas variantes0/18 gates primários e1/18 secundário de lote; este NÃO é
+  confirmação independente. Cada um dos36 pares candidato/estado falha
+  contra outro controle totalmente concluído sem erro; a conclusão primária
+  independe da falha do timer, que não recebe crédito. A fronteira de timer
+  foi corrigida e verificada em dois novos checks; não relabelar medições
+  anteriores nem atribuí-las à fonte corrigida. A fase independente
+  condicionada não é acionada. O refinamento estático v2 que
   pula cauda inútil com massa rasa zero foi feito DEPOIS dos heads A24 e ANTES
   de timings A25; v1 e addendum preservados. Não atribuir os timings24 a25.
   Lean verifica nove enunciados novos de contagem/amplificação, não o sampler
   Python nem o decoder inteiro. A aplicação24 foi executada; a amostragem25
-  ainda não tem timings competitivos ou uso neural iterativo. Nenhuma prioridade
+  foi medida, falhou no gate primário e não tem uso neural iterativo validado. Nenhuma prioridade
   acadêmica ou superioridade de geração geral foi confirmada.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.
   A auditoria pequena preserva enumeração mais rápida e custos de preparação.
-- Novidade, significância suficiente para publicação e vantagem prática ampla
-  não estão confirmadas. Não apresentar esses objetivos como já atingidos.
+- A vantagem delimitada de consulta24 está confirmada pela prova escrita e
+  pelo gate independente3/15; não confundir com superioridade geral. Novidade
+  específica na literatura, significância suficiente para publicação e
+  vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
+  O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
+  A suíte atual tem87 testes, incluindo as duas regressões reais de timer.
 
 Use [TASKS.md](TASKS.md) para tarefas/evidências atuais e
 [attempts/README.md](attempts/README.md) e `attempts/catalog.json` para versões

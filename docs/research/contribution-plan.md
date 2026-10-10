@@ -1,4 +1,31 @@
-# Caderno de contribuição — M36
+# Caderno científico — contrato atual e histórico
+
+## Contrato atual — fechamento certificado (A24)
+
+**Operação:** massa/marginais originais e amostra de um produto congelado de
+dLLM condicionado a JSON, com erro normalizado determinístico escolhido pelo
+chamador. **Uso:** preenchimento paralelo com confiança condicional certificada
+para selecionar commitments, preservando contexto. **Comparadores:** primeira
+ultrapassagem fortalecida, pilhas com cache e três representações compactas de
+CFG; mesmas probabilidades, slots e custos. **Benefício matemático:** fechamento
+certifica profundidade constante onde primeira ultrapassagem exige profundidade
+linear; consequência exponencial somente para pilhas explícitas. Princípios
+de abstração, interseção e condicionamento já são conhecidos. **Benefício medido:**
+3/15 estados externos passam o gate prospectivo conjunto wall/CPU contra TODOS
+seis controles, incluindo cold em dois. **Aplicação:**30/30 execuções MDLM
+válidas com184 novos forwards e política comum exata de confiança. Não são
+garantia semântica, comparação nativa EPIC ou confirmação estatística do decoder.
+
+A25 testa a operação diferente de primeira amostra EXATA por envelope. OS* é
+antecedente; counter+CARS/CFG compacta são controles obrigatórios. Seus timings
+não herdam os ganhos24. A24 é a contribuição a consolidar; não reabrir tentativas
+negativas para justificar trabalho acumulado. Prioridade acadêmica, suficiência
+para publicação e revisão humana não foram obtidas. Resultados, contratos e
+matriz de objeções estão nos READMEs das duas tentativas e no artigo principal.
+
+As entradas abaixo preservam a investigação desde2026-10-07. Expressões
+como “decisão atual” nelas referem-se à data de cada entrada, não substituem
+este contrato, AGENTS.md ou o estado mais recente de TASKS.md.
 
 Data da investigação: 2026-10-07. Este caderno executa as partes independentes
 do plano recebido; não registra aprovação do orientador, revisão humana,
@@ -1586,3 +1613,26 @@ A confiança é sintática e a amplificação altera q. Traces completos/proveni
 estão em24/work/evidence/generation-v1 e amplification-v1. Não são confirmação
 estatística de velocidade completa, treinamento ou semântica. Consolidar a
 vantagem independente de consulta como protagonista; avaliar25 separadamente.
+
+
+## 2026-10-10 — Fechamento dos gates de amostragem e consolidação24
+
+A25 fonte b54101c completou702/702 registros,13 métodos×18 estados×3 rotações:
+648 complete/53 resource_refusal/1 worker_error,162 checks de massa. As duas
+variantes têm0/18 ganhos primários de primeira amostra e1/18 ganho de lote32
+(0ce7169f-16), observado apenas no desenvolvimento. Sem mudar o gate, não
+acionar o estágio independente condicionado e não vender o lote como primeira
+saída. Counter+CARS deve permanecer entre os controles. Todo o erro de SIGALRM
+no cancelamento do timer continua arquivado. Um bloqueador totalmente concluído
+sem erro por par candidato/estado (36) torna a rejeição primária independente
+dessa corrida; reparo de fronteira/teste não altera retroativamente medições.
+
+A24 permanece o protagonista útil: prova de certificado,3/15 consultas externas
+confirmadas,30/30 trajetórias reais/184 novos forwards e33 certificados de
+amplificação delimitados. README/artigo passam a apresentar isto primeiro;
+posterior CFG geral/MWPC são núcleo complementar e preservado. O novo gerador
+recalcula adoção dos1701 registros24+702 registros25, confere IDs/bytes/transições
+na aplicação e publica todas15 linhas independentes. Demo públicooffline usa
+cabeça full-V completa já publicada, sem modelo/Torch/GPU. Nenhuma revisão humana,
+prioridade universal, acerto semântico ou vantagem estatística de decoder inteiro
+foi inventada. Não iniciar mais infraestrutura para salvar o gate25 rejeitado.

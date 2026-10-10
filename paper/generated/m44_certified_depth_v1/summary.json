@@ -1,0 +1,2692 @@
+{
+  "development": {
+    "producer_commit": "b2dcd2e394d11d056eef04ccb2189d5f4206935f",
+    "rows": 486,
+    "statuses": {
+      "complete": 445,
+      "resource_refusal": 41
+    },
+    "certificate_checks": 216,
+    "candidate_benefits": {
+      "handoff": [
+        [
+          "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+          16
+        ],
+        [
+          "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+          16
+        ],
+        [
+          "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+          16
+        ]
+      ],
+      "closed": [
+        [
+          "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c",
+          16
+        ],
+        [
+          "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429",
+          16
+        ],
+        [
+          "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+          16
+        ]
+      ]
+    }
+  },
+  "independent": {
+    "producer_commit": "510d807865739c0452b0207398b5b4d58c03cfe9",
+    "rows": 1215,
+    "statuses": {
+      "complete": 1071,
+      "resource_refusal": 144
+    },
+    "certificate_checks": 540,
+    "candidate_benefits": {
+      "handoff": [
+        [
+          "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+          16
+        ],
+        [
+          "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+          16
+        ],
+        [
+          "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+          16
+        ]
+      ],
+      "closed": [
+        [
+          "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+          16
+        ],
+        [
+          "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+          16
+        ],
+        [
+          "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+          16
+        ]
+      ]
+    }
+  },
+  "independent_cold_benefits": 2,
+  "independent_cases": [
+    {
+      "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+      "masks": 4,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15827270306181163,
+            "cpu": 0.211882342
+          },
+          "cold_total": {
+            "wall": 0.9265250519965775,
+            "cpu": 0.9800649489999999
+          },
+          "peak_rss_kib": 80492,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1581366920727305,
+            "cpu": 0.2117285029999999
+          },
+          "cold_total": {
+            "wall": 0.9301414050278254,
+            "cpu": 0.9809723179999998
+          },
+          "peak_rss_kib": 80288,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15767521801171824,
+            "cpu": 0.2112857279999999
+          },
+          "cold_total": {
+            "wall": 0.9271258840453811,
+            "cpu": 0.9806853029999999
+          },
+          "peak_rss_kib": 80372,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1573656250257045,
+            "cpu": 0.21097149800000004
+          },
+          "cold_total": {
+            "wall": 0.9239514390355907,
+            "cpu": 0.9774831729999999
+          },
+          "peak_rss_kib": 80276,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15468733105808496,
+            "cpu": 0.20828826699999992
+          },
+          "cold_total": {
+            "wall": 0.9169660220504738,
+            "cpu": 0.9704688129999998
+          },
+          "peak_rss_kib": 80484
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15787737601203844,
+            "cpu": 0.2113826689999999
+          },
+          "cold_total": {
+            "wall": 0.9243527740472928,
+            "cpu": 0.9779319529999999
+          },
+          "peak_rss_kib": 80608
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1660133189870976,
+            "cpu": 0.21961490100000003
+          },
+          "cold_total": {
+            "wall": 0.9357339289854281,
+            "cpu": 0.9891591309999999
+          },
+          "peak_rss_kib": 80608
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15642368601402268,
+            "cpu": 0.21002490399999985
+          },
+          "cold_total": {
+            "wall": 0.9278819870087318,
+            "cpu": 0.9814166989999998
+          },
+          "peak_rss_kib": 80736
+        },
+        "rejection": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 2.5681847070227377,
+            "cpu": 2.621172471
+          },
+          "cold_total": {
+            "wall": 2.568187928001862,
+            "cpu": 2.621174844
+          },
+          "peak_rss_kib": 68572
+        }
+      }
+    },
+    {
+      "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+      "masks": 8,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.30449316097656265,
+            "cpu": 0.33748622300000053
+          },
+          "cold_total": {
+            "wall": 1.0694396119797602,
+            "cpu": 1.1022688720000007
+          },
+          "peak_rss_kib": 124676,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3019331760588102,
+            "cpu": 0.33492384000000053
+          },
+          "cold_total": {
+            "wall": 1.0734487780136988,
+            "cpu": 1.1062631370000005
+          },
+          "peak_rss_kib": 124528,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3037086639669724,
+            "cpu": 0.33669235000000064
+          },
+          "cold_total": {
+            "wall": 1.0674175650347024,
+            "cpu": 1.1000706970000005
+          },
+          "peak_rss_kib": 124660,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.29951345204608515,
+            "cpu": 0.33249274600000045
+          },
+          "cold_total": {
+            "wall": 1.0621789100114256,
+            "cpu": 1.0950126990000006
+          },
+          "peak_rss_kib": 124904
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3268583379685879,
+            "cpu": 0.35972818700000053
+          },
+          "cold_total": {
+            "wall": 1.0879904350149445,
+            "cpu": 1.1209471870000005
+          },
+          "peak_rss_kib": 122700
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3606869539944455,
+            "cpu": 0.3936915400000006
+          },
+          "cold_total": {
+            "wall": 1.1301416830392554,
+            "cpu": 1.1630856160000005
+          },
+          "peak_rss_kib": 123316
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3265278600156307,
+            "cpu": 0.3594809290000005
+          },
+          "cold_total": {
+            "wall": 1.091657168988604,
+            "cpu": 1.1245183560000007
+          },
+          "peak_rss_kib": 123332
+        },
+        "rejection": {
+          "statuses": {
+            "complete": 7,
+            "resource_refusal": 2
+          },
+          "prepared_total": {
+            "wall": 2.2341716330265626,
+            "cpu": 2.2668319020000003
+          },
+          "cold_total": {
+            "wall": 2.234174275014084,
+            "cpu": 2.2668338950000004
+          },
+          "peak_rss_kib": 91716
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.30270660598762333,
+            "cpu": 0.3356931880000006
+          },
+          "cold_total": {
+            "wall": 1.0737205740297213,
+            "cpu": 1.1066457430000005
+          },
+          "peak_rss_kib": 124644,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+      "masks": 16,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.8544406799483113,
+            "cpu": 0.8962377779999998
+          },
+          "cold_total": {
+            "wall": 1.6214168620062992,
+            "cpu": 1.662288394
+          },
+          "peak_rss_kib": 335336,
+          "depths": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.9906479049823247,
+            "cpu": 1.032480991
+          },
+          "cold_total": {
+            "wall": 1.7537018340080976,
+            "cpu": 1.795420541
+          },
+          "peak_rss_kib": 339740,
+          "depths": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 8.431024608958978,
+            "cpu": 8.471645488
+          },
+          "cold_total": {
+            "wall": 9.198218021949288,
+            "cpu": 9.238769202
+          },
+          "peak_rss_kib": 584228
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "exact_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "rejection": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.7741851080209017,
+            "cpu": 0.8161067799999999
+          },
+          "cold_total": {
+            "wall": 1.543495682941284,
+            "cpu": 1.585277224
+          },
+          "peak_rss_kib": 331504,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.7681191089795902,
+            "cpu": 0.8100461039999999
+          },
+          "cold_total": {
+            "wall": 1.530924224993214,
+            "cpu": 1.572745747
+          },
+          "peak_rss_kib": 329648,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+      "masks": 4,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1453660000115633,
+            "cpu": 0.1753655319999996
+          },
+          "cold_total": {
+            "wall": 0.9114521990413778,
+            "cpu": 0.9413909569999996
+          },
+          "peak_rss_kib": 80296,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14257450203876942,
+            "cpu": 0.17255942199999952
+          },
+          "cold_total": {
+            "wall": 0.9048435139702633,
+            "cpu": 0.9347504709999997
+          },
+          "peak_rss_kib": 80448
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14359804498963058,
+            "cpu": 0.17359722899999952
+          },
+          "cold_total": {
+            "wall": 0.9185090030077845,
+            "cpu": 0.9465096679999996
+          },
+          "peak_rss_kib": 80328
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1662567510502413,
+            "cpu": 0.1962117369999996
+          },
+          "cold_total": {
+            "wall": 0.9312143489951268,
+            "cpu": 0.9611492619999997
+          },
+          "peak_rss_kib": 80544
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14386326697422192,
+            "cpu": 0.17385636499999957
+          },
+          "cold_total": {
+            "wall": 0.9130153570440598,
+            "cpu": 0.9429465319999997
+          },
+          "peak_rss_kib": 80636
+        },
+        "rejection": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.10832189302891493,
+            "cpu": 0.1383177619999996
+          },
+          "cold_total": {
+            "wall": 0.1083253649994731,
+            "cpu": 0.1383196419999996
+          },
+          "peak_rss_kib": 68620
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14670179598033428,
+            "cpu": 0.17667177099999953
+          },
+          "cold_total": {
+            "wall": 0.9151844329899177,
+            "cpu": 0.9449694409999997
+          },
+          "peak_rss_kib": 80312,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14591098995879292,
+            "cpu": 0.17590836699999968
+          },
+          "cold_total": {
+            "wall": 0.9138765049865469,
+            "cpu": 0.9436842889999997
+          },
+          "peak_rss_kib": 80400,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14619407895952463,
+            "cpu": 0.17617710699999956
+          },
+          "cold_total": {
+            "wall": 0.9129994349787012,
+            "cpu": 0.9421915509999997
+          },
+          "peak_rss_kib": 80276,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+      "masks": 8,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.30029043403919786,
+            "cpu": 0.33027744900000033
+          },
+          "cold_total": {
+            "wall": 1.0638035099836998,
+            "cpu": 1.0936752270000003
+          },
+          "peak_rss_kib": 114040
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.4388309420319274,
+            "cpu": 0.4687648950000003
+          },
+          "cold_total": {
+            "wall": 1.2068920119781978,
+            "cpu": 1.2366616160000001
+          },
+          "peak_rss_kib": 117836
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.6601874059997499,
+            "cpu": 0.6900247760000002
+          },
+          "cold_total": {
+            "wall": 1.4260028120479546,
+            "cpu": 1.4535309600000001
+          },
+          "peak_rss_kib": 143076
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.44295557198347524,
+            "cpu": 0.47286022900000024
+          },
+          "cold_total": {
+            "wall": 1.2053043760242872,
+            "cpu": 1.2351901940000003
+          },
+          "peak_rss_kib": 118936
+        },
+        "rejection": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3502074090647511,
+            "cpu": 0.38017269600000025
+          },
+          "cold_total": {
+            "wall": 0.35021066007902846,
+            "cpu": 0.38017473500000026
+          },
+          "peak_rss_kib": 91416
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3011030890629627,
+            "cpu": 0.33110092700000027
+          },
+          "cold_total": {
+            "wall": 1.0716695410665125,
+            "cpu": 1.1014796650000003
+          },
+          "peak_rss_kib": 114412,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.29951070505194366,
+            "cpu": 0.3295000170000002
+          },
+          "cold_total": {
+            "wall": 1.0688974799704738,
+            "cpu": 1.0987127770000003
+          },
+          "peak_rss_kib": 114276,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3062299860175699,
+            "cpu": 0.33616948400000024
+          },
+          "cold_total": {
+            "wall": 1.0756372610339895,
+            "cpu": 1.1054307780000001
+          },
+          "peak_rss_kib": 113760,
+          "depths": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.31486532802227885,
+            "cpu": 0.34480828200000024
+          },
+          "cold_total": {
+            "wall": 1.0812853300012648,
+            "cpu": 1.1110784710000003
+          },
+          "peak_rss_kib": 114272,
+          "depths": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+      "masks": 16,
+      "gate": true,
+      "cold_gate": true,
+      "methods": {
+        "exact_bidir_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "exact_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "rejection": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 3.2098474689992145,
+            "cpu": 3.245573225
+          },
+          "cold_total": {
+            "wall": 3.2098508949857205,
+            "cpu": 3.2455757629999997
+          },
+          "peak_rss_kib": 138484
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.8550135829718783,
+            "cpu": 0.8909246869999998
+          },
+          "cold_total": {
+            "wall": 1.6187038299394771,
+            "cpu": 1.6544583579999999
+          },
+          "peak_rss_kib": 321656,
+          "depths": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.8339467130135745,
+            "cpu": 0.8698531649999997
+          },
+          "cold_total": {
+            "wall": 1.5977148480014876,
+            "cpu": 1.6336004939999997
+          },
+          "peak_rss_kib": 318284,
+          "depths": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 1.3875186530058272,
+            "cpu": 1.423371306
+          },
+          "cold_total": {
+            "wall": 2.1554334629909135,
+            "cpu": 2.191168296
+          },
+          "peak_rss_kib": 341172,
+          "depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 2.381295785016846,
+            "cpu": 2.414976791
+          },
+          "cold_total": {
+            "wall": 3.146138586977031,
+            "cpu": 3.1817731029999994
+          },
+          "peak_rss_kib": 359680,
+          "depths": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 14.26161642698571,
+            "cpu": 14.292765523
+          },
+          "cold_total": {
+            "wall": 15.026915617985651,
+            "cpu": 15.058029642999998
+          },
+          "peak_rss_kib": 855372
+        }
+      }
+    },
+    {
+      "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+      "masks": 4,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14567813504254445,
+            "cpu": 0.17566967500000052
+          },
+          "cold_total": {
+            "wall": 0.912978180043865,
+            "cpu": 0.9428634290000004
+          },
+          "peak_rss_kib": 80428
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14369883405743167,
+            "cpu": 0.17369770100000048
+          },
+          "cold_total": {
+            "wall": 0.9040848800214007,
+            "cpu": 0.9340149040000004
+          },
+          "peak_rss_kib": 80628
+        },
+        "rejection": {
+          "statuses": {
+            "resource_refusal": 6,
+            "complete": 3
+          },
+          "prepared_total": {
+            "wall": 8.64580736507196,
+            "cpu": 8.671359976000002
+          },
+          "cold_total": {
+            "wall": 8.645810106070712,
+            "cpu": 8.671361979
+          },
+          "peak_rss_kib": 68516
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1472709650406614,
+            "cpu": 0.17725776600000054
+          },
+          "cold_total": {
+            "wall": 0.9144252690020949,
+            "cpu": 0.9441848460000004
+          },
+          "peak_rss_kib": 80336,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14555331406882033,
+            "cpu": 0.17551896300000036
+          },
+          "cold_total": {
+            "wall": 0.9081677770591341,
+            "cpu": 0.9380962360000004
+          },
+          "peak_rss_kib": 80348,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14526544406544417,
+            "cpu": 0.1752463790000005
+          },
+          "cold_total": {
+            "wall": 0.9136663440149277,
+            "cpu": 0.9435643490000005
+          },
+          "peak_rss_kib": 80440,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14564856106881052,
+            "cpu": 0.17564560300000043
+          },
+          "cold_total": {
+            "wall": 0.9155115229659714,
+            "cpu": 0.9453250250000005
+          },
+          "peak_rss_kib": 80288,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14303637901321054,
+            "cpu": 0.1730315610000005
+          },
+          "cold_total": {
+            "wall": 0.9095936470548622,
+            "cpu": 0.9394399670000003
+          },
+          "peak_rss_kib": 80504
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14516711106989533,
+            "cpu": 0.1751585320000003
+          },
+          "cold_total": {
+            "wall": 0.9064456010237336,
+            "cpu": 0.9362692680000002
+          },
+          "peak_rss_kib": 80624
+        }
+      }
+    },
+    {
+      "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+      "masks": 8,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.35281503602163866,
+            "cpu": 0.3797950990000002
+          },
+          "cold_total": {
+            "wall": 1.1158448560163379,
+            "cpu": 1.1427846570000004
+          },
+          "peak_rss_kib": 128840
+        },
+        "rejection": {
+          "statuses": {
+            "resource_refusal": 2,
+            "complete": 7
+          },
+          "prepared_total": {
+            "wall": 3.6921737079974264,
+            "cpu": 3.718726493
+          },
+          "cold_total": {
+            "wall": 3.6921771410270594,
+            "cpu": 3.718728546
+          },
+          "peak_rss_kib": 91664
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3166770900133997,
+            "cpu": 0.3436725140000003
+          },
+          "cold_total": {
+            "wall": 1.0830482759629376,
+            "cpu": 1.1098160920000002
+          },
+          "peak_rss_kib": 125404,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.31482793495524675,
+            "cpu": 0.3417677140000004
+          },
+          "cold_total": {
+            "wall": 1.0822905759559944,
+            "cpu": 1.1092319570000002
+          },
+          "peak_rss_kib": 125224,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.31469127704622224,
+            "cpu": 0.3416619980000004
+          },
+          "cold_total": {
+            "wall": 1.0806498150341213,
+            "cpu": 1.1075539770000005
+          },
+          "peak_rss_kib": 125056,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3272977099986747,
+            "cpu": 0.35418413100000024
+          },
+          "cold_total": {
+            "wall": 1.094394194020424,
+            "cpu": 1.1213313740000004
+          },
+          "peak_rss_kib": 125256,
+          "depths": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.31253425899194553,
+            "cpu": 0.33949143800000026
+          },
+          "cold_total": {
+            "wall": 1.07464455999434,
+            "cpu": 1.1014919710000002
+          },
+          "peak_rss_kib": 125324
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.35398314299527556,
+            "cpu": 0.38083425800000026
+          },
+          "cold_total": {
+            "wall": 1.1183069139369763,
+            "cpu": 1.145226306
+          },
+          "peak_rss_kib": 128420
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.4047626329702325,
+            "cpu": 0.4317138300000002
+          },
+          "cold_total": {
+            "wall": 1.1758215769659728,
+            "cpu": 1.2011058290000003
+          },
+          "peak_rss_kib": 129604
+        }
+      }
+    },
+    {
+      "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+      "masks": 16,
+      "gate": true,
+      "cold_gate": false,
+      "methods": {
+        "rejection": {
+          "statuses": {
+            "complete": 8,
+            "resource_refusal": 1
+          },
+          "prepared_total": {
+            "wall": 15.267911338014528,
+            "cpu": 15.306490425
+          },
+          "cold_total": {
+            "wall": 15.267914710013429,
+            "cpu": 15.306492994
+          },
+          "peak_rss_kib": 139100
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.7775903639849275,
+            "cpu": 0.8195307770000001
+          },
+          "cold_total": {
+            "wall": 1.5485230829799548,
+            "cpu": 1.588436548
+          },
+          "peak_rss_kib": 320176,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.7674071319634095,
+            "cpu": 0.809249528
+          },
+          "cold_total": {
+            "wall": 1.5327746240072884,
+            "cpu": 1.572414347
+          },
+          "peak_rss_kib": 318616,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 1.0381479219649918,
+            "cpu": 1.0800699200000001
+          },
+          "cold_total": {
+            "wall": 1.8035597290145233,
+            "cpu": 1.8452548589999997
+          },
+          "peak_rss_kib": 331636,
+          "depths": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 1.287622136005666,
+            "cpu": 1.328066152
+          },
+          "cold_total": {
+            "wall": 2.0510828450205736,
+            "cpu": 2.090843344
+          },
+          "peak_rss_kib": 336760,
+          "depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 21.470407538989093,
+            "cpu": 21.506987244
+          },
+          "cold_total": {
+            "wall": 22.23411036701873,
+            "cpu": 22.269616122
+          },
+          "peak_rss_kib": 1085708
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "exact_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        }
+      }
+    },
+    {
+      "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+      "masks": 4,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15588973002741113,
+            "cpu": 0.1859248130000002
+          },
+          "cold_total": {
+            "wall": 0.9223343830672093,
+            "cpu": 0.9522326560000002
+          },
+          "peak_rss_kib": 80552,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1526231980533339,
+            "cpu": 0.1826323190000002
+          },
+          "cold_total": {
+            "wall": 0.9198699900298379,
+            "cpu": 0.9497716020000002
+          },
+          "peak_rss_kib": 80344,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15587751101702452,
+            "cpu": 0.18592012700000016
+          },
+          "cold_total": {
+            "wall": 0.9239238980808295,
+            "cpu": 0.953940382
+          },
+          "peak_rss_kib": 80140,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15279755502706394,
+            "cpu": 0.18270238100000014
+          },
+          "cold_total": {
+            "wall": 0.9184327630791813,
+            "cpu": 0.9482603720000001
+          },
+          "peak_rss_kib": 80132,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14634174306411296,
+            "cpu": 0.17639413199999998
+          },
+          "cold_total": {
+            "wall": 0.9077100380090997,
+            "cpu": 0.9372686689999999
+          },
+          "peak_rss_kib": 80660
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15971610601991415,
+            "cpu": 0.18976937800000004
+          },
+          "cold_total": {
+            "wall": 0.9251125950249843,
+            "cpu": 0.954986408
+          },
+          "peak_rss_kib": 80540
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.161955438030418,
+            "cpu": 0.19200851800000018
+          },
+          "cold_total": {
+            "wall": 0.92502270109253,
+            "cpu": 0.9549965700000002
+          },
+          "peak_rss_kib": 80684
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.14844977803295478,
+            "cpu": 0.1784883380000002
+          },
+          "cold_total": {
+            "wall": 0.9079120230162516,
+            "cpu": 0.937890603
+          },
+          "peak_rss_kib": 80560
+        },
+        "rejection": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.10800844500772655,
+            "cpu": 0.13804236500000008
+          },
+          "cold_total": {
+            "wall": 0.10801135702058673,
+            "cpu": 0.1380443560000001
+          },
+          "peak_rss_kib": 68620
+        }
+      }
+    },
+    {
+      "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+      "masks": 8,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.28867983003146946,
+            "cpu": 0.31567631700000076
+          },
+          "cold_total": {
+            "wall": 1.0568927940330468,
+            "cpu": 1.0838036950000007
+          },
+          "peak_rss_kib": 96152,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.28874021500814706,
+            "cpu": 0.3157260680000009
+          },
+          "cold_total": {
+            "wall": 1.0531148650334217,
+            "cpu": 1.0800636460000006
+          },
+          "peak_rss_kib": 95900,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.28780198498861864,
+            "cpu": 0.31478217400000086
+          },
+          "cold_total": {
+            "wall": 1.057126377010718,
+            "cpu": 1.084048010000001
+          },
+          "peak_rss_kib": 96016,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.2791140300105326,
+            "cpu": 0.30611298400000087
+          },
+          "cold_total": {
+            "wall": 1.0467066619894467,
+            "cpu": 1.0735242110000007
+          },
+          "peak_rss_kib": 96324
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.2964077800279483,
+            "cpu": 0.3233942010000008
+          },
+          "cold_total": {
+            "wall": 1.0690383570617996,
+            "cpu": 1.095973866000001
+          },
+          "peak_rss_kib": 97920
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.2981787259923294,
+            "cpu": 0.32514493200000094
+          },
+          "cold_total": {
+            "wall": 1.0637320810346864,
+            "cpu": 1.090578572000001
+          },
+          "peak_rss_kib": 98544
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.280807452974841,
+            "cpu": 0.3077814570000008
+          },
+          "cold_total": {
+            "wall": 1.0403982640127651,
+            "cpu": 1.0672343290000008
+          },
+          "peak_rss_kib": 96344
+        },
+        "rejection": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.2013984380173497,
+            "cpu": 0.22838559100000083
+          },
+          "cold_total": {
+            "wall": 0.20140193501720205,
+            "cpu": 0.22838834300000083
+          },
+          "peak_rss_kib": 91252
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.2899230719776824,
+            "cpu": 0.31681259700000075
+          },
+          "cold_total": {
+            "wall": 1.0547191789955832,
+            "cpu": 1.0816129590000008
+          },
+          "peak_rss_kib": 96080,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+      "masks": 16,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.6648118409793824,
+            "cpu": 0.7067581949999998
+          },
+          "cold_total": {
+            "wall": 1.4362765490077436,
+            "cpu": 1.477940694
+          },
+          "peak_rss_kib": 250140,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.6599968170048669,
+            "cpu": 0.7019581829999998
+          },
+          "cold_total": {
+            "wall": 1.425258584029507,
+            "cpu": 1.467036657
+          },
+          "peak_rss_kib": 250400,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.6812512999749742,
+            "cpu": 0.7231028179999998
+          },
+          "cold_total": {
+            "wall": 1.4483546440606005,
+            "cpu": 1.4900940119999997
+          },
+          "peak_rss_kib": 252004
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.9668675300199538,
+            "cpu": 1.0087922059999999
+          },
+          "cold_total": {
+            "wall": 1.728643468057271,
+            "cpu": 1.7704346229999999
+          },
+          "peak_rss_kib": 262400
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 1.4618361500324681,
+            "cpu": 1.503630603
+          },
+          "cold_total": {
+            "wall": 2.2342478390200995,
+            "cpu": 2.274000591
+          },
+          "peak_rss_kib": 261520
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.9745798190124333,
+            "cpu": 1.016381966
+          },
+          "cold_total": {
+            "wall": 1.7344761070562527,
+            "cpu": 1.775105912
+          },
+          "peak_rss_kib": 262148
+        },
+        "rejection": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3932187900063582,
+            "cpu": 0.43519606699999985
+          },
+          "cold_total": {
+            "wall": 0.3932221590075642,
+            "cpu": 0.43519806899999985
+          },
+          "peak_rss_kib": 138712
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.669718636025209,
+            "cpu": 0.7116631239999999
+          },
+          "cold_total": {
+            "wall": 1.4375932960538194,
+            "cpu": 1.4793668049999997
+          },
+          "peak_rss_kib": 250620,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.6607929600286298,
+            "cpu": 0.7027150599999997
+          },
+          "cold_total": {
+            "wall": 1.4286127309896983,
+            "cpu": 1.4703497369999998
+          },
+          "peak_rss_kib": 250568,
+          "depths": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+      "masks": 4,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1636694100452587,
+            "cpu": 0.19067787599999986
+          },
+          "cold_total": {
+            "wall": 0.9371448330930434,
+            "cpu": 0.9640468249999998
+          },
+          "peak_rss_kib": 83980,
+          "depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.15766933403210714,
+            "cpu": 0.18467016299999972
+          },
+          "cold_total": {
+            "wall": 0.9300280509633012,
+            "cpu": 0.9569598659999998
+          },
+          "peak_rss_kib": 84096
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1708428930141963,
+            "cpu": 0.19785285899999983
+          },
+          "cold_total": {
+            "wall": 0.9390364310820587,
+            "cpu": 0.9658704779999998
+          },
+          "peak_rss_kib": 86148
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.175250472035259,
+            "cpu": 0.20222924199999992
+          },
+          "cold_total": {
+            "wall": 0.9451898690313101,
+            "cpu": 0.9721044729999997
+          },
+          "peak_rss_kib": 87420
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.16216997907031327,
+            "cpu": 0.18916553599999986
+          },
+          "cold_total": {
+            "wall": 0.9220352270640433,
+            "cpu": 0.9489692179999997
+          },
+          "peak_rss_kib": 85572
+        },
+        "rejection": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.10745824704645202,
+            "cpu": 0.13446669699999986
+          },
+          "cold_total": {
+            "wall": 0.10746089206077158,
+            "cpu": 0.13446852799999987
+          },
+          "peak_rss_kib": 68656
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.16437435004627332,
+            "cpu": 0.19136796099999998
+          },
+          "cold_total": {
+            "wall": 0.9315510099986568,
+            "cpu": 0.9584864199999998
+          },
+          "peak_rss_kib": 84292,
+          "depths": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.1612115910393186,
+            "cpu": 0.18820588699999974
+          },
+          "cold_total": {
+            "wall": 0.9320375850657001,
+            "cpu": 0.9588292389999998
+          },
+          "peak_rss_kib": 84164,
+          "depths": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.16456955700414255,
+            "cpu": 0.19156583199999988
+          },
+          "cold_total": {
+            "wall": 0.9318516820203513,
+            "cpu": 0.9587143539999998
+          },
+          "peak_rss_kib": 83984,
+          "depths": [
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+      "masks": 8,
+      "gate": false,
+      "cold_gate": false,
+      "methods": {
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.33044336998136714,
+            "cpu": 0.36041540000000116
+          },
+          "cold_total": {
+            "wall": 1.0955989420763217,
+            "cpu": 1.1242290550000011
+          },
+          "peak_rss_kib": 140624
+        },
+        "exact_bidir_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.4323773420182988,
+            "cpu": 0.4623251370000011
+          },
+          "cold_total": {
+            "wall": 1.1985160440090112,
+            "cpu": 1.2284150790000012
+          },
+          "peak_rss_kib": 145196
+        },
+        "exact_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.5229990719817579,
+            "cpu": 0.5529777840000011
+          },
+          "cold_total": {
+            "wall": 1.2862787179765292,
+            "cpu": 1.3161305120000013
+          },
+          "peak_rss_kib": 145148
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.4778977729729377,
+            "cpu": 0.5077985680000012
+          },
+          "cold_total": {
+            "wall": 1.2440393240540288,
+            "cpu": 1.2738440730000011
+          },
+          "peak_rss_kib": 145732
+        },
+        "rejection": {
+          "statuses": {
+            "resource_refusal": 7,
+            "complete": 2
+          },
+          "prepared_total": {
+            "wall": 9.564230709511321,
+            "cpu": 9.591247784
+          },
+          "cold_total": {
+            "wall": 9.564233723038342,
+            "cpu": 9.5912501755
+          },
+          "peak_rss_kib": 91352
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.33636345103150234,
+            "cpu": 0.3663299120000011
+          },
+          "cold_total": {
+            "wall": 1.1027928900439292,
+            "cpu": 1.1326970640000011
+          },
+          "peak_rss_kib": 140576,
+          "depths": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3318183019873686,
+            "cpu": 0.36178821100000125
+          },
+          "cold_total": {
+            "wall": 1.1013398930081166,
+            "cpu": 1.1311856080000011
+          },
+          "peak_rss_kib": 140488,
+          "depths": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.35211252799490467,
+            "cpu": 0.38209254000000115
+          },
+          "cold_total": {
+            "wall": 1.1197046490269713,
+            "cpu": 1.149516857000001
+          },
+          "peak_rss_kib": 140512,
+          "depths": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 0.3516296159941703,
+            "cpu": 0.3816191120000012
+          },
+          "cold_total": {
+            "wall": 1.1172206710325554,
+            "cpu": 1.1462251390000011
+          },
+          "peak_rss_kib": 140608,
+          "depths": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+      "masks": 16,
+      "gate": true,
+      "cold_gate": true,
+      "methods": {
+        "exact_bidir_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "exact_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "exact_eps_local": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "rejection": {
+          "statuses": {
+            "resource_refusal": 9
+          }
+        },
+        "handoff": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 3.3562601099838503,
+            "cpu": 3.397669072000001
+          },
+          "cold_total": {
+            "wall": 4.125945068022702,
+            "cpu": 4.167304077000002
+          },
+          "peak_rss_kib": 408932,
+          "depths": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ]
+        },
+        "closed": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 2.878319175040815,
+            "cpu": 2.9198042060000007
+          },
+          "cold_total": {
+            "wall": 3.6565840370603837,
+            "cpu": 3.6979907150000004
+          },
+          "peak_rss_kib": 374588,
+          "depths": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ]
+        },
+        "grammar_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 8.817722485982813,
+            "cpu": 8.858421533000001
+          },
+          "cold_total": {
+            "wall": 9.584182963008061,
+            "cpu": 9.624707690000001
+          },
+          "peak_rss_kib": 562628,
+          "depths": [
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12,
+            12
+          ]
+        },
+        "suffix_hit": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 12.088712677010335,
+            "cpu": 12.128469642
+          },
+          "cold_total": {
+            "wall": 12.856031553004868,
+            "cpu": 12.895757245
+          },
+          "peak_rss_kib": 446632,
+          "depths": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "exact_stack": {
+          "statuses": {
+            "complete": 9
+          },
+          "prepared_total": {
+            "wall": 5.450681072019506,
+            "cpu": 5.4918407060000005
+          },
+          "cold_total": {
+            "wall": 6.237638060003519,
+            "cpu": 6.278580474000001
+          },
+          "peak_rss_kib": 449948
+        }
+      }
+    }
+  ],
+  "generation": {
+    "handoff": {
+      "statuses": {
+        "complete": 15
+      },
+      "new_forwards": 92,
+      "actual_wall": 34.57809438602999,
+      "scope": "one-seed functional demo; not statistical decoder-speed confirmation"
+    },
+    "exact_stack": {
+      "statuses": {
+        "complete": 15
+      },
+      "new_forwards": 92,
+      "actual_wall": 94.23714669095352,
+      "scope": "one-seed functional demo; not statistical decoder-speed confirmation"
+    }
+  },
+  "amplification": {
+    "statuses": {
+      "strict_mass_increase_certified": 33
+    },
+    "guaranteed_mass_ratio_min": 1.0086876125853597,
+    "guaranteed_mass_ratio_median": 2.4910339631878227,
+    "guaranteed_mass_ratio_max": 3.9999513153744015
+  },
+  "exact_envelope_development": {
+    "producer_commit": "b54101c61acbf96c421f212956ec39738ab24a20",
+    "rows": 702,
+    "statuses": {
+      "complete": 648,
+      "resource_refusal": 53,
+      "worker_error": 1
+    },
+    "first_statuses": {
+      "complete": 655,
+      "resource_refusal": 46,
+      "worker_error": 1
+    },
+    "certificate_checks": 162,
+    "first_benefits": {
+      "handoff": [],
+      "closed": []
+    },
+    "batch_benefits": {
+      "handoff": [
+        [
+          "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+          16
+        ]
+      ],
+      "closed": [
+        [
+          "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925",
+          16
+        ]
+      ]
+    },
+    "practical_gate": false
+  }
+}

@@ -157,79 +157,83 @@ def worker(args, protocol):
     signal.setitimer(signal.ITIMER_REAL, protocol["timeout_seconds"])
     operation, end = clock(), monotonic() + protocol["timeout_seconds"]
     try:
-        begin = clock()
-        weights = Weights(raw, case["canvas"], len(vocabulary))
-        result["conversion"] = elapsed(begin)
-        result["product_denominator"] = str(prod(weights.denominators))
-        begin = clock()
-        if exact:
-            sampler = prepare_exact(
-                method, table, weights, case["canvas"], grammar, end - monotonic()
-            )
-            result["valid_mass"] = str(sampler.mass)
-            result["exact_total"] = str(sampler.total)
-        elif method in ("handoff", "closed", "grammar_hit"):
-            sampler, certificate = prepare_certified(
-                table,
-                weights,
-                protocol["tolerance"],
-                method=method,
-                depths=protocol["depths"],
-                timeout_seconds=end - monotonic(),
-            )
-            result.update(
-                certificate=certificate,
-                lower=str(sampler.lower),
-                upper_tail=str(sampler.upper_tail),
-                envelope_total=str(sampler.total),
-            )
-        elif method == "counter_only":
-            sampler = prepare_envelope(
-                table, weights, None, method=method, timeout_seconds=end - monotonic()
-            )
-            result["envelope_total"] = str(sampler.total)
-        elif "cars" in method:
-            sampler = Cars(
-                table,
-                weights,
-                perfect=method.endswith("perfect"),
-                counter=method.startswith("counter_"),
-                timeout_seconds=end - monotonic(),
-            )
-            result["initial_allowed_total"] = str(sampler.root.total)
-        else:
-            sampler = Rejection(weights, adapter)
-        result["preparation"] = elapsed(begin)
-        total = sampler.root.total if "cars" in method else getattr(sampler, "total", None)
-        if total == 0:
-            result.update(status="zero_valid_mass", first_status="zero_valid_mass")
-        else:
-            rng = Random(protocol["seed"] + args.repeat)
-            max_trials = protocol[
-                "candidate_max_proposals"
-                if method in protocol["candidates"]
-                else "control_max_proposals"
-            ]
-            for index in range(protocol["batch_size"]):
-                word, trials = (
-                    (sampler.sample(rng), 1)
-                    if exact
-                    else sampler.sample(rng, max_trials=max_trials)
+        try:
+            begin = clock()
+            weights = Weights(raw, case["canvas"], len(vocabulary))
+            result["conversion"] = elapsed(begin)
+            result["product_denominator"] = str(prod(weights.denominators))
+            begin = clock()
+            if exact:
+                sampler = prepare_exact(
+                    method, table, weights, case["canvas"], grammar, end - monotonic()
                 )
-                if not valid(adapter, word, case["canvas"]):
-                    raise RuntimeError("returned original token sequence is invalid JSON")
-                result["samples"].append(list(word))
-                result["proposal_counts"].append(trials)
-                if index == 0:
-                    result.update(first_status="complete", first_sample=elapsed(operation))
-            result.update(status="complete", batch=elapsed(operation))
-        result["operation"] = elapsed(operation)
+                result["valid_mass"] = str(sampler.mass)
+                result["exact_total"] = str(sampler.total)
+            elif method in ("handoff", "closed", "grammar_hit"):
+                sampler, certificate = prepare_certified(
+                    table,
+                    weights,
+                    protocol["tolerance"],
+                    method=method,
+                    depths=protocol["depths"],
+                    timeout_seconds=end - monotonic(),
+                )
+                result.update(
+                    certificate=certificate,
+                    lower=str(sampler.lower),
+                    upper_tail=str(sampler.upper_tail),
+                    envelope_total=str(sampler.total),
+                )
+            elif method == "counter_only":
+                sampler = prepare_envelope(
+                    table, weights, None, method=method, timeout_seconds=end - monotonic()
+                )
+                result["envelope_total"] = str(sampler.total)
+            elif "cars" in method:
+                sampler = Cars(
+                    table,
+                    weights,
+                    perfect=method.endswith("perfect"),
+                    counter=method.startswith("counter_"),
+                    timeout_seconds=end - monotonic(),
+                )
+                result["initial_allowed_total"] = str(sampler.root.total)
+            else:
+                sampler = Rejection(weights, adapter)
+            result["preparation"] = elapsed(begin)
+            total = sampler.root.total if "cars" in method else getattr(sampler, "total", None)
+            if total == 0:
+                result.update(status="zero_valid_mass", first_status="zero_valid_mass")
+            else:
+                rng = Random(protocol["seed"] + args.repeat)
+                max_trials = protocol[
+                    "candidate_max_proposals"
+                    if method in protocol["candidates"]
+                    else "control_max_proposals"
+                ]
+                for index in range(protocol["batch_size"]):
+                    word, trials = (
+                        (sampler.sample(rng), 1)
+                        if exact
+                        else sampler.sample(rng, max_trials=max_trials)
+                    )
+                    if not valid(adapter, word, case["canvas"]):
+                        raise RuntimeError("returned original token sequence is invalid JSON")
+                    result["samples"].append(list(word))
+                    result["proposal_counts"].append(trials)
+                    if index == 0:
+                        result.update(first_status="complete", first_sample=elapsed(operation))
+                result.update(status="complete", batch=elapsed(operation))
+            result["operation"] = elapsed(operation)
+        finally:
+            signal.setitimer(signal.ITIMER_REAL, 0)
     except (CompilationLimit, TimeoutError, MemoryError) as error:
+        # Cancel before recording a refusal; the one-shot alarm may arrive
+        # during cancellation itself, which is also inside this boundary.
+        signal.setitimer(signal.ITIMER_REAL, 0)
         result.update(status="resource_refusal", error=str(error), operation=elapsed(operation))
         if result["first_status"] == "started":
             result["first_status"] = "resource_refusal"
-    finally:
-        signal.setitimer(signal.ITIMER_REAL, 0)
     for target, source in (("first_total", "first_sample"), ("batch_total", "batch")):
         if source in result:
             result[target] = {u: result[source][u] + result["forward"][u] for u in ("wall", "cpu")}

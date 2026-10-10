@@ -2,18 +2,44 @@
 
 import hashlib
 import json
+import signal
 import tempfile
 import unittest
 from fractions import Fraction
 from pathlib import Path
+from unittest.mock import patch
 
 import numpy as np
 
+from . import generation_service
 from .generation import Service
-from .generation_service import classify
+from .generation_service import classify, timed_query
 
 
 class CertifiedGeneration(unittest.TestCase):
+    def test_deadline_during_cancellation_cannot_commit_progress(self):
+        actual_timer, arrived = signal.setitimer, []
+
+        def cancellation_race(which, seconds):
+            previous = actual_timer(which, seconds)
+            if seconds == 0 and not arrived:
+                arrived.append(True)
+                raise TimeoutError("alarm arrived while cancelling")
+            return previous
+
+        with (
+            patch.object(generation_service.signal, "setitimer", cancellation_race),
+            patch.object(
+                generation_service,
+                "query",
+                return_value=dict(status="complete", sample=[0], committed=[0]),
+            ),
+        ):
+            result = timed_query({}, {}, None, None)
+        self.assertEqual(result["status"], "resource_refusal")
+        self.assertNotIn("committed", result)
+        self.assertEqual(signal.getitimer(signal.ITIMER_REAL), (0.0, 0.0))
+
     def test_threshold_equality_refinement_and_both_real_services(self):
         decisions, ambiguous = classify((0,), (None,), ((4, 1),), 5, 0, Fraction(4, 5))
         self.assertTrue(decisions[0]["accepted"])
