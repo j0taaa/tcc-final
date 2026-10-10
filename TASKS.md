@@ -145,6 +145,9 @@ or restore removed infrastructure. Human review/publication remain external.
   statuses without changing historical results. Evidence and portable commands
   are retained with producer commits/source hashes; code/article are committed
   and synchronized with upstream before reporting completion.
+  Prior CI exposed missing NumPy in dev extras (not solver error). Declare
+  already-pinned numpy2.4.6, reproduce with a fresh dev-only environment and
+  verify the actual GitHub run; do not rely on preinstalled local packages.
 
 ## M45 — Exact original-token sampling from a certified grammar/counter envelope
 

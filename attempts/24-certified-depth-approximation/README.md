@@ -333,3 +333,11 @@ válido, delta0 neste caso e intervalos de tokens originais. É reprodução
 funcional, não novo benchmark. `scripts/exact_commit/build_depth_certificate_results.py`
 recalcula decisões dos1701 registros24 e702 registros25 e confere as30
 transições, os IDs e bytes contra tokenizer/contextos publicados.
+
+
+Fechamento de reprodução: o CI anterior não importava os novos checks porque
+NumPy só existia na máquina local. O extra `dev` agora declara `numpy==2.4.6`,
+mesmo pin já presente nas constraints; o núcleo continua sem dependência de
+modelo/Torch. Isso permite que `make bootstrap`, testes e demo funcionem em
+instalação limpa. Não é melhoria do algoritmo nem nova medição; validação limpa
+e resultado real de CI são registrados separadamente.
