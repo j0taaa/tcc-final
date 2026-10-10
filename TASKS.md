@@ -24,6 +24,30 @@ conditional branches below are historical; failed development gates do not
 require executing their untriggered independent campaigns. Do not reopen them
 or restore removed infrastructure. Human review/publication remain external.
 
+## M46 — General batch dominance, keeping individual decoder laws
+
+- [x] T4600: A26 has eight criteria and a written finite-horizon proof:
+  identical-history proportional stratification preserves each trajectory,
+  dominates iid pass@K for every verifier and reduces all-score mean variance.
+  `attempts/26-stratified-decoder-batches/work/theory.md` includes bit costs,
+  caching/latency boundaries and systematic/coordinate-wise counterexamples.
+  Classical stratification, arithmetic sampling, STMC/SMG and weighted CFG
+  unranking are credited in `work/antecedents.md`; no priority/publication claim.
+- [x] T4601: Five focused oracles pass:90 small ticket maps/batch configurations,
+  36 adaptive two-step kernels, every terminal verifier and PSD covariance
+  differences, independent JSON/alias/fixed/prefix/macro-token unranking.
+  `make check-formal LAKE=/home/jota/.elan/bin/lake` passes five additional
+  ticket/two-stratum specifications. Whole-trajectory/all-K proofs remain
+  written, not mechanized Python or neural implementation verification.
+- [x] T4602-v1: First public archived MDLM head on top16 ordinary tokens
+  has zero valid mass. Preserved in `work/evidence/replay-v1.json`; no hidden
+  support expansion or source-ID insertion. This is a replay, not new forwards.
+- [ ] T4602-v2: Demonstrate rank batches on the complete original ordinary
+  vocabulary using an independently frozen classical JSON stack reference.
+  The rule uses the same public head; no quality/latency gate or tuning cases.
+- [ ] T4603: Freeze source/evidence independently, run full project checks,
+  synchronize GitHub and record limits of scientific novelty and adoption.
+
 ## M42 — Full original-vocabulary posterior, without discarded topK mass
 
 - [x] T4200: Define attempt22 independently, eight scientific criteria,

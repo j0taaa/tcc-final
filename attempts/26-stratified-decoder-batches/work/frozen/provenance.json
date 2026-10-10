@@ -1,0 +1,26 @@
+{
+  "source_commit": "a8ce587261cd69bf9a464ba549cd56cc77b9a3a6",
+  "archive_sha256": "31afae7e08bb8f6bc761be191a52e95ac66900c0269be91d072550744bb2ee7f",
+  "files": {
+    "lexer.py": {
+      "source_path": "attempts/24-certified-depth-approximation/work/lexer.py",
+      "sha256": "5e19976fa1e4448e80a1baa5ad52e1f602c5e327734469067c190da453e94ca7"
+    },
+    "forest.py": {
+      "source_path": "attempts/24-certified-depth-approximation/work/forest.py",
+      "sha256": "12146672a7ce9595e4d6da7bc2f7a7291b23cd4f402a1e96ee921583fe34afbd"
+    },
+    "table.py": {
+      "source_path": "attempts/24-certified-depth-approximation/work/table.py",
+      "sha256": "9d8eebd7dd5e1814a1be7e1ada3a0a390ef9ffbc155b1e21e6dd59a1ee632689"
+    },
+    "posterior.py": {
+      "source_path": "attempts/24-certified-depth-approximation/work/posterior.py",
+      "sha256": "c6220e93afee197deb28a09f8a19247c223a7711bba77c5615382beec4c50ee6"
+    },
+    "stack_control.py": {
+      "source_path": "attempts/24-certified-depth-approximation/work/stack_control.py",
+      "sha256": "dbb638756df0495d758f92f5b5894f6bf86effc75f45fb1e0ad86acd530cadf6"
+    }
+  }
+}
