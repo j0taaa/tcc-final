@@ -754,13 +754,22 @@
     {
       "id": "24-certified-depth-approximation",
       "title": "Aproximacao por profundidade com certificado de erro condicionado",
-      "conclusion": "Mathematical investigation only: conditioning identity, deterministic counter tail upper bound and common-policy trajectory coupling. Classical principles credited; novelty/useful cost pending. No prototype/timing yet.",
+      "conclusion": "Prototype and six original-event oracles pass. All108 predeclared feasibility queries preserved; closed certificate <=0.001 on all18 existing model frames. No competitive timing/novelty/independent confirmation. Strengthen grammar-first-overflow comparator before performance.",
       "reading": "attempts/24-certified-depth-approximation/README.md",
       "versions": [
         {
           "id": "v1",
           "source_commit": "cd8267fce4f28576f6140698b0e4e1a4e51e0e21",
           "evidence_commit": "cd8267fce4f28576f6140698b0e4e1a4e51e0e21",
+          "evidence_roots": [
+            "attempts/24-certified-depth-approximation/README.md",
+            "attempts/24-certified-depth-approximation/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "54ddc46705095898c487b112eb208d5c47dc6dc9",
+          "evidence_commit": "54ddc46705095898c487b112eb208d5c47dc6dc9",
           "evidence_roots": [
             "attempts/24-certified-depth-approximation/README.md",
             "attempts/24-certified-depth-approximation/work"
