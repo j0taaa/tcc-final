@@ -90,10 +90,17 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   quadros, mas isto não é timing competitivo. Há separação escrita de força
   de certificado com tokenizer fixo: depth constante versus linear, com
   consequência exponencial SOMENTE para pilhas explícitas. Não é lower bound
-  de toda inferência CFG. A próxima comparação inclui9 métodos e fontes
+  de toda inferência CFG. A comparação completa inclui9 métodos e fontes
   imutáveis dos controles compactos, regra conjunta wall/CPU, custos completos
-  e rejeição. Não houve captura independente, confirmação de velocidade,
-  prioridade acadêmica ou geração completa de24.
+  e rejeição. Todos486 registros foram preservados:445 completos,41 recusas,
+  ambas variantes3/18 ganhos fortes de consulta, também a frio,216 checks
+  contra massa exata. Handoff é selecionado pela regra congelada de empate;
+  nenhum ganho forte adicional sobre closed. A confirmação independente e o
+  ciclo dLLM continuam pendentes. A25 investiga amostragem EXATA por envelope,
+  sem excluir eventos profundos; tem prova escrita e seis oráculos pequenos
+  da lei efetiva/CARS. Counter-only, counter+CARS e CFG compacta são controles
+  necessários. Não atribuir os timings de24 à operação25. Nenhuma prioridade
+  acadêmica ou geração completa de24/25 foi confirmada.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

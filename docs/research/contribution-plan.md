@@ -1520,3 +1520,29 @@ incluem pilhas com cache, CFG compacta, poda bidirecional, epsilon e rejeição.
 Selecionar uma variante só em desenvolvimento antes de capturar os cinco
 documentos externos sem forwards. Novo kernel segue experimental/isolado;
 não alegar treinamento, vantagem EPIC, revisão humana ou prioridade.
+
+##2026-10-10 — decisão completa24 e contrato independente25
+
+A24 produtor b2dcd2e completou486/486 registros (445 completos,41 recusas)
+e216 checks contra massa exata. Três configurações passam o gate forte nas
+duas variantes; todos três também passam a frio. Handoff selecionado pela
+regra de empate, não porque foi escolhido depois o melhor caso. Não houve
+ganho forte adicional sobre closed. Dados/decisão em24/work/evidence/development-v1.
+Confirmação independente e geração inteira ainda não executadas.
+
+A25 foi especificada ANTES do novo sampler, em pasta própria. Converter
+o bound em evento amostrável J_d união B_d conserva todos eventos válidos.
+Rejeição final tem lei EXATA q(.|J), aceitação>=1-delta e recusa após k
+propostas<=delta^k; a lei condicional ao sucesso permanece exata com k
+finito. Cinco oráculos enumeram inclusive os sorteios efetivos, não só a DP.
+O comparador CARS usa bulk-pruning de todos irmãos inválidos com controles
+de prefixo e alternativa perfeita de suporte/comprimento. Ainda não são
+medições. Counter+CARS deve entrar: a separação escrita contra update
+publicado/counter puro não é separação contra todo híbrido.
+
+Sakharov2017§3/4, Mohri/Nederhof2001§4 e Denkinger2017§4.4 já fornecem
+aproximações/abstrações ponderadas: não reivindicar o princípio como novo.
+Twister2026§3/4 (https://arxiv.org/html/2609.35609v1) distingue o decoder de
+posteriors congelados da trajetória NATIVA condicionada. Nossa igualdade/TV
+de kernel usa o primeiro como referência; não resolve automaticamente o
+viés identificado nesse antecedente. Publicação e revisão humana ausentes.

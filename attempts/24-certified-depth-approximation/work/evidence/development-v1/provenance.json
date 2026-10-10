@@ -1,0 +1,10 @@
+{
+  "producer_commit": "b2dcd2e394d11d056eef04ccb2189d5f4206935f",
+  "rows_uncompressed_sha256": "3bf86a31e68cf76d3f3cd010af80389c1b1d256e5f31c6adbe0d22fb31ad75ad",
+  "selection": "handoff; both variants3/18 strong, frozen tie rule",
+  "limits": "complete486 records,445 complete41 internal resource refusals, no missing rows",
+  "input_scope": "same original full-V MDLM captures from A22 development; NOT new forwards or independent evidence",
+  "large_matrix_scope": "all exact outputs compared byte-for-byte during run; oversized matrices retained locally, inventory archived. Input-head origin and source replay remain separate from integrity checks",
+  "command": ".venv-live/bin/python -m attempts.24-certified-depth-approximation.work.run --capture .cache/a22-development-cuda-v1 --output .cache/a24-development-measure-v1",
+  "analysis_command": ".venv/bin/python -m attempts.24-certified-depth-approximation.work.analyze --input .cache/a24-development-measure-v1 --output .cache/a24-development-decision-v1"
+}

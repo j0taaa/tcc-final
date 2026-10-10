@@ -39,7 +39,7 @@ não justificou usar uma dLLM. Seus resultados continuam preservados. A direçã
 17 encerrou uma decisão delimitada: há ganho em alguns lotes grandes do
 posterior PL, mas não em treinamento completo ou geração final. Seus 16
 snapshots mantêm controles mais rápidos, erros de harness e todas as perdas.
-A investigação atual é a 18: lexicográfico e propagação incremental competente
+A tentativa18 investigou lexicográfico e propagação incremental competente
 para conservar os commits do guloso e avaliar custo na geração inteira.
 Organização, testes e provas selecionadas não substituem avaliação humana de
 prioridade/significância.
@@ -151,3 +151,17 @@ condições necessárias rejeitam três variantes em todos18 quadros. Sem captur
     handoff permite depth menor que grammar-hit em7/18 quadros. Separação
     escrita com tokenizer fixo, custo/limites explícitos. Timings competitivos,
     confirmação independente e novidade acadêmica ainda pendentes.
+
+###25 — envelope exato (isolado)
+
+[25-exact-envelope-sampling](25-exact-envelope-sampling/README.md) reutiliza
+apenas cópias imutáveis de24/v3 para propor no envelope e aceitar somente
+JSON completo. A lei aceita é exata; seis oráculos independentes verificam
+os sorteios efetivos, inclusive CARS adaptativo. Há separações escritas
+delimitadas, não prioridade/velocidade confirmada. Counter+CARS e inferência
+compacta são controles obrigatórios. Nenhum timing de24 é vitória de25.
+
+A comparação completa24 passou3/18 configurações de desenvolvimento;
+handoff foi selecionado por empate ANTES da captura dos cinco documentos
+externos. Todas as perdas e41 recusas estão preservadas. A confirmação
+independente e a integração dLLM continuam pendentes.

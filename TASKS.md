@@ -82,13 +82,18 @@ milestone unless a regression invalidates its evidence.
   NOT a competitive timing result. No independent model capture yet.
   `make test`74 passed36.310s; `make check` passes upstream/lint/types and
   integrity24 attempts/59 versions; protected scientific files3683 unchanged.
-- [ ] T4403: Freeze adaptive source and protocol before9-method development
+- [x] T4403: Freeze adaptive source and protocol before9-method development
   campaign486 records. All six mandatory controls, including compact full
   CFG kernels and strong first-overflow, must pass the unchanged20% paired
   total wall AND CPU/sign-every-repeat gate. Preserve every refusal/error/loss;
   select handoff or closed ONLY here, tie handoff; zero wins rejects the gate.
   Audit L<=Z<=L+U and actual TV whenever exact controls finish, and full matrices
   across exact controls. Cold cost and rejection first-sample cost separate.
+  COMPLETE486/486,445 complete41 localized refusals,216 certificate checks,
+  producer b2dcd2e. Both candidates pass3/18 strong cases and all three retain
+  cold benefit. Select handoff by frozen tie rule BEFORE independent capture.
+  Sampling benefit2/18 only; NO handoff>=20% refinement gain versus closed.
+  All rows/decisions/provenance/matrix inventory in24/work/evidence/development-v1.
 - [ ] T4404: After development gate, freeze selection and capture ALL five
   unmodeled JSONTestSuite positive documents at pinned1ef36fa, original bytes,
   with4/8/16 masks and nine rotated repetitions. No result-based filtering.
@@ -99,6 +104,27 @@ milestone unless a regression invalidates its evidence.
   and actual application in project/article; formalize selected sensitive
   statements only with explicit implementation/Lean boundaries. Human review
   and publication remain external, never claimed.
+
+## M45 — Exact original-token sampling from a certified grammar/counter envelope
+
+- [x] T4500: Independent attempt25 with eight criteria before code. Written
+  disjoint event envelope, exact accepted law INCLUDING finite fixed proposal
+  budget, guaranteed acceptance and polynomial/exponential comparison against
+  specified published CARS updates. Additional counter-only separation is a
+  mathematical corollary, NOT a performance benchmark. Classical rejection,
+  weighted grammar abstraction and Twister trajectory distinction credited.
+- [x] T4501: Tiny implementation, six independent original-ID/actual RNG-law
+  oracles pass, including aliases, fixed IDs, UTF8 split, intra-token depth,
+  deep solutions despite zero shallow mass, finite refusal and CARS bulk
+  adaptive pruning. No native CARS/model-training claim. Prototype stays
+  isolated; core and original A24 measured operation are preserved.
+- [ ] T4502: Before timings, freeze full-cost exact sampling protocol including
+  raw rejection, counter-only, grammar-hit, CARS guarded/perfect, counter+CARS
+  and compact exact CFG controls. Do NOT use A24 query timings as wins for
+  this different operation. Continue A24 independent gate first.
+- [ ] T4503: Confirm usefulness of exact sampler only under same task/full
+  original probabilities/costs; test real iterative dLLM integration and
+  actual application. No general priority, human review or publication invented.
 
 ## M43 — Canonical epsilon inference with original slot provenance
 

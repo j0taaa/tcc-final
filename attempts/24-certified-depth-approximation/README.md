@@ -189,3 +189,27 @@ Reprodução offline após o freeze, com caches originais disponíveis:
 Pesos de modelo, logits/cache e grandes matrizes continuam locais; snapshots
 preservam fontes, protocolo, hashes e evidências declaradas. Capturas adicionais
 dependem da passagem pelo gate e usam modelo/tokenizer pinados.
+
+## Decisão completa do desenvolvimento —2026-10-10
+
+Produtor b2dcd2e394d11d056eef04ccb2189d5f4206935f:486/486 registros,445
+completos,41 recusas internas,216 verificações de certificado contra massa
+exata. As DUAS variantes passam o critério previamente definido em3/18
+configurações:017a7a6d-16,05dacb44-16,0ce7169f-16. Há benefício a frio nos
+mesmos três. Handoff é selecionado exclusivamente pela regra de desempate
+congelada. Nenhum caso apresenta melhoria forte de20% de handoff sobre
+closed: o ganho prático observado pertence à família, não à alegação de
+rapidez adicional do refinamento. A amostra aproximada vence os controles
+de primeira saída em2/18, não18/18; rejeição continua melhor nos casos fáceis.
+
+Todos os resultados, incluindo perdas, estão em `work/evidence/development-v1`.
+O inventário das grandes matrizes registra a igualdade integral verificada
+durante a execução; estas permanecem locais. Não confundir integridade do
+arquivo com recomputação do solver. Captura real independente será de TODOS
+os cinco documentos pinados. `capture.py` e `corpus.py` foram copiados de
+23/v2 com hashes em `capture-origin.json`; não importam tentativas mutáveis.
+
+A operação aqui continua sendo posterior aproximado J_d com certificado
+contra J, massa e marginais. A nova25 investiga usar a cauda como PROPOSTA
+e rejeitar apenas conclusões inválidas para amostragem exata em J. Não
+transferir os timings ou a decisão positiva de24 à operação25.

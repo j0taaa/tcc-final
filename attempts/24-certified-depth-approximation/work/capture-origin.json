@@ -1,0 +1,8 @@
+{
+  "source_commit": "cd8267fce4f28576f6140698b0e4e1a4e51e0e21",
+  "archive_sha256": "c6a292bb7d0d3b170b892969d55773ac8ac00d82030254a8a18b07df74014350",
+  "files": {
+    "capture.py": "242ba6bfc40f596f1bab22fc76c16bae3dda7e2adf449b9fd9358013a6d1ee5e",
+    "corpus.py": "6f34b9c64a1df09afa3586ee95ca8af653726606e8dc0deb9829a4130ebc8e44"
+  }
+}
