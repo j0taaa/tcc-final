@@ -1,0 +1,45 @@
+{
+  "source_base_commit": "6a696385a60ac2273abf1eb5e25ab7b9542220e3",
+  "checks": [
+    {
+      "command": "make check-project LAKE=\"$HOME/.elan/bin/lake\"",
+      "observed_exit_code": 0,
+      "log": "project-check.log",
+      "tests_in_this_execution": 93,
+      "sha256": "302ef38207a416b472b2b0572ef7dd52370a600cdb90be63a8906735bc96a551"
+    },
+    {
+      "command": "make test",
+      "observed_exit_code": 0,
+      "log": "tests-final.log",
+      "tests_in_this_execution": 94,
+      "sha256": "a0d46f49a18ab1f8379ef42e346f3b0afd32082a97716a3d74c491001cb6fddd"
+    },
+    {
+      "command": "make paper; final layout rebuilt with make -C paper",
+      "observed_exit_code": 0,
+      "log": "paper-final.log",
+      "tests_in_this_execution": null,
+      "sha256": "a4f762298bed0d235ff6f2af3823575fe706e4fad577bca34871148c2ec9c586"
+    }
+  ],
+  "working_source_sha256": {
+    "tests/test_stratified_batches.py": "eed435503f990ef000c5a9cdf6bb155d071ea70b9851cb36274970666109ff4a",
+    "attempts/26-stratified-decoder-batches/work/batch.py": "c035882b305dbde0989463e1764e4917c46eb6cd062b0665c9a41b7922b51370",
+    "attempts/26-stratified-decoder-batches/work/ranks.py": "96d26d15585481bff89f04900d3e81401624086c49441176d493c717212fc046",
+    "attempts/26-stratified-decoder-batches/work/layer_bridge.py": "f32e5bfa0ec71e53af95317188f1a9135293f8454a60e53f83f0af52bca102b5",
+    "attempts/26-stratified-decoder-batches/work/replay_full.py": "0d17f2f1a9b74ac4806136308a0b41c1ab22677dd12d277207330cb09be8ab09",
+    "attempts/26-stratified-decoder-batches/work/theory.md": "f32a931a30bf11b0c304e36cadf1ec92ce884ce119a4050c5adbf7a9ddcceac9",
+    "formal/MWPC/StratifiedBatches.lean": "6c32b24e9cca395c88ca1995a2f26f4b55a2459ed2040de08784a783e27bfd38",
+    "scripts/exact_commit/check_formal_project.py": "e1225adf67c7cf9d4d55ac3e389154367dee5d9d6f67e8a0475ca22d5cf468c6",
+    "paper/main.tex": "16566e4857d0f7d5039bc7e984c840fce5c6b56505c4e94b4858e8af057a0284",
+    "paper/referencias.bib": "25214571982475e33bbad566f8482caa050e19bc7c1fae009668a28f4f22e533",
+    "output/pdf/tcc-certified-closure.pdf": "20e5dcea935858a26dbb60e1c03f67224e69d698d471be615ff687ca4fe449ed"
+  },
+  "source_boundary": "Full project gate passed before the seventh A26 test was added; final entire 94-test suite passed afterward. Core/batch/rank/formal implementation did not change. Final manuscript rebuilt and visually checked.",
+  "pdf_pages": 15,
+  "visual_review": "All pages reviewed; changed appendix/references inspected at full size, no clipping/overflow/orphan reference page.",
+  "lean_boundary": "Five selected ticket/two-stratum specifications, not the all-K trajectory proof or source refinement.",
+  "model_boundary": "Replay of previously archived full head; zero new forwards; no semantic or latency benchmark.",
+  "logs_boundary": "Machine path prefixes redacted, otherwise complete observed command output."
+}

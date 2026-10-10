@@ -6,6 +6,7 @@ import json
 import unittest
 from collections import Counter
 from fractions import Fraction as F
+from pathlib import Path
 from random import Random
 
 from test_cfg_posterior import inputs, oracle
@@ -140,6 +141,10 @@ class StratifiedBatchTests(unittest.TestCase):
                         )
                     )
                     self.assert_dominance(left, right)
+                    if mapping == tuple(sorted(mapping, reverse=True)):
+                        probability = F(sum(mapping), total)
+                        hit = sum(p for out, p in left.items() if 1 in out)
+                        self.assertEqual(hit, min(1, size * probability))
 
     def test_arbitrary_future_kernels_and_every_terminal_verifier(self):
         roots = ((0,), (0, 1), (0, 0, 1), (0, 1, 1))
@@ -273,6 +278,75 @@ class StratifiedBatchTests(unittest.TestCase):
             return True
         except (ValueError, UnicodeError):
             return False
+
+    def test_public_full_head_recomputation_and_independent_source_mass(self):
+        import io
+        from math import prod
+        from zipfile import ZipFile
+
+        import numpy as np
+
+        from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
+
+        root = Path(__file__).resolve().parents[1]
+        work = root / "attempts/26-stratified-decoder-batches/work"
+        package = "attempts.26-stratified-decoder-batches.work"
+        table = importlib.import_module(package + ".frozen.table")
+        posterior = importlib.import_module(package + ".frozen.posterior")
+        stack = importlib.import_module(package + ".frozen.stack_control")
+        bridge = importlib.import_module(package + ".layer_bridge")
+        audit = importlib.import_module(package + ".replay")
+        archived = json.loads((work / "evidence/replay-full-v2.json").read_text())
+        packet = (
+            root
+            / "attempts/24-certified-depth-approximation/work/evidence"
+            / "first-full-head-v2/packet.zip"
+        )
+        with ZipFile(packet) as z:
+            name = json.loads(z.read("manifest.json"))["case"]
+            case = json.loads(z.read(name + ".json"))
+            metadata = json.loads(z.read("metadata.json"))
+            tokenizer = CompositionalByteLevelAdapter.from_token_pieces(
+                json.loads(z.read("vocabulary.json"))
+            )
+            matrix = np.load(io.BytesIO(z.read(name + ".npy")), allow_pickle=False)
+        model_rows = dict(zip(case["positions"], matrix, strict=True))
+        full = [model_rows.get(p, ()) for p in range(len(case["canvas"]))]
+        weights = posterior.Weights(full, case["canvas"], tokenizer.vocabulary_size)
+        prepared = stack.StackPrepared(
+            table.LexerTable(tokenizer),
+            case["canvas"],
+            max_edges=1000000,
+            max_cells=200000,
+            max_terms=50000000,
+            timeout_seconds=120,
+        )
+        exact = stack.StackPosterior(prepared, weights)
+        self.assertEqual(exact.mass, F(archived["valid_mass"]))
+        ranked = bridge.stack_ranks(exact)
+        source = next(x["tokens"] for x in metadata["selected"] if x["key"] == case["case"])
+        # Independent full-F64 row normalization/product, without rank counting.
+        event_product = prod(
+            F(float(row[source[p]])) / sum(map(lambda x: F(float(x)), row))
+            for p, row in model_rows.items()
+        )
+        allowed = {p: {source[p]} for p in case["positions"]}
+        for size in (2, 8, 32):
+            fresh = audit.event_audit(ranked, allowed, size)
+            self.assertEqual(fresh, archived["exact_source_id_event"][str(size)])
+            self.assertEqual(F(fresh["event_probability"]), event_product / exact.mass)
+        for method, stratified in (("iid", False), ("stratified", True)):
+            words = batch.draw_batch(
+                ranked.kernel, 32, Random(archived["seed"]), stratified=stratified
+            )
+            self.assertEqual(
+                [list(w) for w in words], [x["original_ids"] for x in archived["samples"][method]]
+            )
+            for word in words:
+                self.assertTrue(self.recognizes_json(tokenizer.detokenize_bytes(word)))
+                self.assertTrue(
+                    all(t is None or word[p] == t for p, t in enumerate(case["canvas"]))
+                )
 
     def test_strict_gain_and_negative_controls(self):
         kernel = batch.Kernel(2, lambda x: x)

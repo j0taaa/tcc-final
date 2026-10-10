@@ -13,6 +13,12 @@ arbitrariamente dessa história. O horizonte T é finito; saída antecipada e FA
 são absorventes. Políticas aleatórias adicionais precisam integrar o kernel ou
 ser representadas como passos extras, com suas leis originais.
 
+Um limite de recursos só entra na garantia se o status FAIL tiver o mesmo
+kernel individual especificado. Interrupções de wall time afetadas por carga
+ou coordenação entre candidatos podem quebrar essa hipótese; a prova não
+oferece equivalência incondicional de execuções interrompidas. A avaliação
+pressupõe que os kernels admitidos sejam preparados e executados corretamente.
+
 K execuções iid sorteiam seus tickets independentemente. O algoritmo S faz
 algo diferente somente quando m candidatos têm o MESMO histórico h:
 
@@ -198,6 +204,34 @@ lotes e sem usar o evento no sampler. A regra vale mesmo para pesos enormes
 e tickets de uma mesma sequência não contíguos. Não é uma reivindicação de
 invenção de unranking ou contagem em circuitos; o uso é uma auditoria exata
 da alteração da dependência do lote.
+
+## 5b. Ótimo entre lotes de mesmas marginais: classes de prefixo
+
+Suponha que os tickets de uma propriedade A sejam EXATAMENTE {0,...,M-1},
+0≤M≤W. Isso pode representar uma união inicial de ramos disjuntos do nó soma
+raiz, numa ordenação fixada antes de conhecer o verificador. A hipótese não vale
+automaticamente para a melhor saída MAP ou um requisito semântico arbitrário.
+Sua massa é p=M/W. Na representação replicada, os KM tickets aceitáveis são
+{0,...,KM-1}, particionados em estratos consecutivos de W elementos.
+
+Se KM<W, apenas o primeiro estrato pode passar e sua chance é KM/W=Kp.
+Se KM≥W, o primeiro estrato passa com probabilidade1. Portanto
+
+    P_S(algum candidato em A)=min(1,Kp).
+
+Qualquer distribuição CONJUNTA de K candidatos cujas marginais sejam Q tem
+probabilidade de união ≤min(1,sum_i Q(A))=min(1,Kp). Logo a construção atinge
+o máximo entre TODOS os métodos que preservam essas marginais, nessa classe.
+Para K>1 e0<p<1, o valor é estritamente maior que1-(1-p)^K, o iid.
+Não se exige que K divida W. Quando p≥1/K, há cobertura determinística dessa
+propriedade; não há cobertura determinística de todo evento ou palavra.
+
+Este é um corolário de estratificação e do union bound, não uma reivindicação
+de novo princípio. Complementa a dominância para verificadores arbitrários:
+garantia geral não inferior ao iid, ótimo global para classes prefixas. Mudar
+a ordenação depois de observar um resultado para fabricar esse caso violaria
+o protocolo de avaliação. As duas classes equiprováveis da seção5 são uma
+instância; o replay fonte não recebe essa hipótese automaticamente.
 
 ## 6. Contraexemplos que delimitam a generalidade
 

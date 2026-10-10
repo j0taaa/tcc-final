@@ -1,0 +1,122 @@
+.venv/bin/python -m unittest discover -s tests -v
+test_archived_adaptive_and_core_recomputation (test_adaptive_semantics.AdaptiveSemanticTests.test_archived_adaptive_and_core_recomputation) ... ok
+test_checker_scope_refusal_and_snapshot (test_adaptive_semantics.AdaptiveSemanticTests.test_checker_scope_refusal_and_snapshot) ... ok
+test_complete_two_sample_law_and_all_targets (test_adaptive_semantics.AdaptiveSemanticTests.test_complete_two_sample_law_and_all_targets) ... ok
+test_core_all_targets_and_independent_implications (test_adaptive_semantics.AdaptiveSemanticTests.test_core_all_targets_and_independent_implications) ... ok
+test_nonprefix_refinement_family (test_adaptive_semantics.AdaptiveSemanticTests.test_nonprefix_refinement_family) ... ok
+test_prefix_batch_expected_rejections (test_adaptive_semantics.AdaptiveSemanticTests.test_prefix_batch_expected_rejections) ... ok
+test_prefix_control_complete_weighted_law (test_adaptive_semantics.AdaptiveSemanticTests.test_prefix_control_complete_weighted_law) ... ok
+test_structural_core_reweighting_and_reuse_boundaries (test_adaptive_semantics.AdaptiveSemanticTests.test_structural_core_reweighting_and_reuse_boundaries) ... ok
+test_deadline_checks_inside_admission_and_normalization (test_cfg_posterior.CfgPosteriorOracleTests.test_deadline_checks_inside_admission_and_normalization) ... ok
+test_exact_sampling_law_including_aliases (test_cfg_posterior.CfgPosteriorOracleTests.test_exact_sampling_law_including_aliases) ... ok
+test_fail_closed_boundaries (test_cfg_posterior.CfgPosteriorOracleTests.test_fail_closed_boundaries) ... ok
+test_fixed_prefix_and_missing_support (test_cfg_posterior.CfgPosteriorOracleTests.test_fixed_prefix_and_missing_support) ... ok
+test_independent_stack_control_against_token_products (test_cfg_posterior.CfgPosteriorOracleTests.test_independent_stack_control_against_token_products) ... ok
+test_json_weighted_original_token_products (test_cfg_posterior.CfgPosteriorOracleTests.test_json_weighted_original_token_products) ... ok
+test_original_token_products_and_reweighting (test_cfg_posterior.CfgPosteriorOracleTests.test_original_token_products_and_reweighting) ... ok
+test_pinned_external_json_conformance (test_cfg_posterior.CfgPosteriorOracleTests.test_pinned_external_json_conformance) ... ok
+test_preprocessing_limits_and_duplicate_nullable_bodies (test_cfg_posterior.CfgPosteriorOracleTests.test_preprocessing_limits_and_duplicate_nullable_bodies) ... ok
+test_recompute_archived_inputs (test_cfg_posterior.CfgPosteriorOracleTests.test_recompute_archived_inputs) ... ok
+test_reuse_after_support_restriction_and_commitment (test_cfg_posterior.CfgPosteriorOracleTests.test_reuse_after_support_restriction_and_commitment) ... ok
+test_top_k_commitment_event_reduction (test_cfg_posterior.CfgPosteriorOracleTests.test_top_k_commitment_event_reduction)
+M36 research: sort/group every path, independently of threshold filters. ... ok
+test_expansion_keeps_overlapping_groups_and_rejects_new_behavior (attempts.21-contextual-token-groups.work.test_correctness.LexicalCorrectness.test_expansion_keeps_overlapping_groups_and_rejects_new_behavior) ... ok
+test_independent_original_token_trajectories (attempts.21-contextual-token-groups.work.test_correctness.LexicalCorrectness.test_independent_original_token_trajectories) ... ok
+test_original_commit_keeps_different_incoming_states (attempts.21-contextual-token-groups.work.test_correctness.LexicalCorrectness.test_original_commit_keeps_different_incoming_states) ... ok
+test_scanner_against_independent_mutated_json (attempts.21-contextual-token-groups.work.test_correctness.LexicalCorrectness.test_scanner_against_independent_mutated_json) ... ok
+test_state_signatures_and_dangerous_boundaries (attempts.21-contextual-token-groups.work.test_correctness.LexicalCorrectness.test_state_signatures_and_dangerous_boundaries) ... ok
+test_true_complete_valid_mass_increases_and_old_product_is_unchanged (attempts.24-certified-depth-approximation.work.test_amplification.CertifiedAmplification.test_true_complete_valid_mass_increases_and_old_product_is_unchanged) ... ok
+test_deadline_during_cancellation_cannot_commit_progress (attempts.24-certified-depth-approximation.work.test_generation.CertifiedGeneration.test_deadline_during_cancellation_cannot_commit_progress) ... ok
+test_threshold_equality_refinement_and_both_real_services (attempts.24-certified-depth-approximation.work.test_generation.CertifiedGeneration.test_threshold_equality_refinement_and_both_real_services) ... ok
+test_identity_is_fixed_but_source_bytes_still_must_match (attempts.24-certified-depth-approximation.work.test_corpus.CorpusIdentityTests.test_identity_is_fixed_but_source_bytes_still_must_match) ... ok
+test_adaptive_certificate_controls_and_explicit_exact_fallback (attempts.24-certified-depth-approximation.work.test_correctness.DepthCertificateCorrectness.test_adaptive_certificate_controls_and_explicit_exact_fallback) ... ok
+test_closed_bound_strictly_strengthens_completed_token_hit (attempts.24-certified-depth-approximation.work.test_correctness.DepthCertificateCorrectness.test_closed_bound_strictly_strengthens_completed_token_hit) ... ok
+test_exact_sampler_law_is_on_original_aliases (attempts.24-certified-depth-approximation.work.test_correctness.DepthCertificateCorrectness.test_exact_sampler_law_is_on_original_aliases) ... ok
+test_exhaustive_original_mass_tail_and_marginals (attempts.24-certified-depth-approximation.work.test_correctness.DepthCertificateCorrectness.test_exhaustive_original_mass_tail_and_marginals) ... ok
+test_first_overflow_bound_and_strict_tightness_family (attempts.24-certified-depth-approximation.work.test_correctness.DepthCertificateCorrectness.test_first_overflow_bound_and_strict_tightness_family) ... ok
+test_fixed_tokenizer_certificate_separation_proof_object (attempts.24-certified-depth-approximation.work.test_correctness.DepthCertificateCorrectness.test_fixed_tokenizer_certificate_separation_proof_object) ... ok
+test_intra_token_peak_and_aliases (attempts.24-certified-depth-approximation.work.test_correctness.DepthCertificateCorrectness.test_intra_token_peak_and_aliases) ... ok
+test_rare_validity_requires_normalization (attempts.24-certified-depth-approximation.work.test_correctness.DepthCertificateCorrectness.test_rare_validity_requires_normalization) ... ok
+test_utf8_and_remasking_with_original_ids (attempts.24-certified-depth-approximation.work.test_correctness.DepthCertificateCorrectness.test_utf8_and_remasking_with_original_ids) ... ok
+test_dyadic_normalization_and_scope (attempts.23-canonical-epsilon-posterior.work.test_correctness.FullVocabularyCorrectness.test_dyadic_normalization_and_scope) ... ok
+test_empty_syntax_and_whole_structures_preserve_physical_slots (attempts.23-canonical-epsilon-posterior.work.test_correctness.FullVocabularyCorrectness.test_empty_syntax_and_whole_structures_preserve_physical_slots) ... ok
+test_exact_actual_sampler_law_with_aliases_and_overlaps (attempts.23-canonical-epsilon-posterior.work.test_correctness.FullVocabularyCorrectness.test_exact_actual_sampler_law_with_aliases_and_overlaps) ... ok
+test_full_vocabulary_reuse_after_weights_clamps_and_remasking (attempts.23-canonical-epsilon-posterior.work.test_correctness.FullVocabularyCorrectness.test_full_vocabulary_reuse_after_weights_clamps_and_remasking) ... ok
+test_original_masses_and_marginals_in_all_representations (attempts.23-canonical-epsilon-posterior.work.test_correctness.FullVocabularyCorrectness.test_original_masses_and_marginals_in_all_representations) ... ok
+test_primitive_coarsening_and_recursive_stack_control (attempts.23-canonical-epsilon-posterior.work.test_correctness.FullVocabularyCorrectness.test_primitive_coarsening_and_recursive_stack_control) ... ok
+test_actual_accepted_law_including_aliases_deep_invalid_and_finite_refusal (attempts.25-exact-envelope-sampling.work.test_correctness.ExactEnvelopeCorrectness.test_actual_accepted_law_including_aliases_deep_invalid_and_finite_refusal) ... ok
+test_adaptation_certifies_acceptance_without_excluding_deep_valid_ids (attempts.25-exact-envelope-sampling.work.test_correctness.ExactEnvelopeCorrectness.test_adaptation_certifies_acceptance_without_excluding_deep_valid_ids) ... ok
+test_budget_and_product_identity_cannot_be_silently_changed (attempts.25-exact-envelope-sampling.work.test_correctness.ExactEnvelopeCorrectness.test_budget_and_product_identity_cannot_be_silently_changed) ... ok
+test_cars_actual_adaptive_random_law_and_unchanged_valid_mass (attempts.25-exact-envelope-sampling.work.test_correctness.ExactEnvelopeCorrectness.test_cars_actual_adaptive_random_law_and_unchanged_valid_mass) ... ok
+test_empty_shallow_query_does_not_need_tail_resources_to_refine (attempts.25-exact-envelope-sampling.work.test_correctness.ExactEnvelopeCorrectness.test_empty_shallow_query_does_not_need_tail_resources_to_refine) ... ok
+test_intratoken_peak_and_zero_lower_tail_survives_trimming (attempts.25-exact-envelope-sampling.work.test_correctness.ExactEnvelopeCorrectness.test_intratoken_peak_and_zero_lower_tail_survives_trimming) ... ok
+test_original_fixed_ids_utf8_split_and_exact_full_fallback (attempts.25-exact-envelope-sampling.work.test_correctness.ExactEnvelopeCorrectness.test_original_fixed_ids_utf8_split_and_exact_full_fallback) ... ok
+test_all_thirteen_workers_same_original_mass_and_batch_only_refusal (attempts.25-exact-envelope-sampling.work.test_measure.ExactSamplingMeasurement.test_all_thirteen_workers_same_original_mass_and_batch_only_refusal) ... ok
+test_deadline_during_cancellation_preserves_observed_first_sample (attempts.25-exact-envelope-sampling.work.test_measure.ExactSamplingMeasurement.test_deadline_during_cancellation_preserves_observed_first_sample) ... ok
+test_dyadic_normalization_and_scope (attempts.22-full-vocabulary-posterior.work.test_correctness.FullVocabularyCorrectness.test_dyadic_normalization_and_scope) ... ok
+test_exact_actual_sampler_law_with_aliases_and_overlaps (attempts.22-full-vocabulary-posterior.work.test_correctness.FullVocabularyCorrectness.test_exact_actual_sampler_law_with_aliases_and_overlaps) ... ok
+test_full_vocabulary_reuse_after_weights_clamps_and_remasking (attempts.22-full-vocabulary-posterior.work.test_correctness.FullVocabularyCorrectness.test_full_vocabulary_reuse_after_weights_clamps_and_remasking) ... ok
+test_no_physical_slots_has_no_json_mass (attempts.22-full-vocabulary-posterior.work.test_correctness.FullVocabularyCorrectness.test_no_physical_slots_has_no_json_mass) ... ok
+test_original_masses_and_marginals_in_all_representations (attempts.22-full-vocabulary-posterior.work.test_correctness.FullVocabularyCorrectness.test_original_masses_and_marginals_in_all_representations) ... ok
+test_primitive_coarsening_and_recursive_stack_control (attempts.22-full-vocabulary-posterior.work.test_correctness.FullVocabularyCorrectness.test_primitive_coarsening_and_recursive_stack_control) ... ok
+test_independent_adaptive_trajectories (attempts.19-growing-support-decoding.work.test_correctness.GrowingCorrectness.test_independent_adaptive_trajectories) ... ok
+test_union_preserves_committed_positions_and_old_choices (attempts.19-growing-support-decoding.work.test_correctness.GrowingCorrectness.test_union_preserves_committed_positions_and_old_choices) ... ok
+test_independent_original_token_trajectories (attempts.20-lexical-support-quotient.work.test_correctness.LexicalCorrectness.test_independent_original_token_trajectories) ... ok
+test_scanner_against_independent_mutated_json (attempts.20-lexical-support-quotient.work.test_correctness.LexicalCorrectness.test_scanner_against_independent_mutated_json) ... ok
+test_state_signatures_and_dangerous_boundaries (attempts.20-lexical-support-quotient.work.test_correctness.LexicalCorrectness.test_state_signatures_and_dangerous_boundaries) ... ok
+test_complete_point_and_engine_reuse (monotone_correctness.Correctness.test_complete_point_and_engine_reuse) ... ok
+test_independent_json_trajectories (monotone_correctness.Correctness.test_independent_json_trajectories) ... ok
+test_large_integer_priorities (monotone_correctness.Correctness.test_large_integer_priorities) ... ok
+test_native_dyadic_priorities (monotone_correctness.Correctness.test_native_dyadic_priorities) ... ok
+test_native_json_trajectories (monotone_correctness.Correctness.test_native_json_trajectories) ... ok
+test_reject_unfix_and_bad_order (monotone_correctness.Correctness.test_reject_unfix_and_bad_order) ... ok
+test_rooted_strings_and_complete_forest (monotone_correctness.Correctness.test_rooted_strings_and_complete_forest) ... ok
+test_both_utility_harness_constructor_registries (test_pl_resampling.PlLatentOracleTests.test_both_utility_harness_constructor_registries) ... ok
+test_conditional_sampler_laws_and_token_aliases (test_pl_resampling.PlLatentOracleTests.test_conditional_sampler_laws_and_token_aliases) ... M36 event oracles: 8016 events, 13 positive, 11 zero-mass inputs
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+ok
+test_confidence_normalizer_prime_divisors_do_not_cancel (test_pl_resampling.PlLatentOracleTests.test_confidence_normalizer_prime_divisors_do_not_cancel) ... ok
+test_executable_profile_categorical_law_and_resource_refusals (test_pl_resampling.PlLatentOracleTests.test_executable_profile_categorical_law_and_resource_refusals) ... ok
+test_fixed_slots_and_certified_extreme_exponential (test_pl_resampling.PlLatentOracleTests.test_fixed_slots_and_certified_extreme_exponential) ... ok
+test_forced_choices_use_all_mass_without_random_draws (test_pl_resampling.PlLatentOracleTests.test_forced_choices_use_all_mass_without_random_draws) ... ok
+test_independent_gradient_and_two_replica_covariance (test_pl_resampling.PlLatentOracleTests.test_independent_gradient_and_two_replica_covariance) ... ok
+test_indexed_profiles_preserve_cdfs_and_random_streams (test_pl_resampling.PlLatentOracleTests.test_indexed_profiles_preserve_cdfs_and_random_streams) ... ok
+test_invalid_and_impossible_evidence_is_not_sampled (test_pl_resampling.PlLatentOracleTests.test_invalid_and_impossible_evidence_is_not_sampled) ... ok
+test_product_proposal_separation_normalizer (test_pl_resampling.PlLatentOracleTests.test_product_proposal_separation_normalizer) ... ok
+test_stationary_metropolis_and_integrated_coin (test_pl_resampling.PlLatentOracleTests.test_stationary_metropolis_and_integrated_coin) ... ok
+test_archived_mdlm_recomputation (test_semantic_json.SemanticJsonTests.test_archived_mdlm_recomputation) ... ok
+test_covering_product_and_conditional_pair_law (test_semantic_json.SemanticJsonTests.test_covering_product_and_conditional_pair_law) ... ok
+test_identifier_prefixes_and_application_fields (test_semantic_json.SemanticJsonTests.test_identifier_prefixes_and_application_fields) ... ok
+test_profiles_original_tokens_restrictions_and_zero_mass (test_semantic_json.SemanticJsonTests.test_profiles_original_tokens_restrictions_and_zero_mass) ... ok
+test_recursive_multi_byte_token_profiles (test_semantic_json.SemanticJsonTests.test_recursive_multi_byte_token_profiles) ... ok
+test_all_small_ticket_maps_and_nondivisible_masses (test_stratified_batches.StratifiedBatchTests.test_all_small_ticket_maps_and_nondivisible_masses) ... ok
+test_arbitrary_future_kernels_and_every_terminal_verifier (test_stratified_batches.StratifiedBatchTests.test_arbitrary_future_kernels_and_every_terminal_verifier) ... ok
+test_boundaries_and_no_history_merging (test_stratified_batches.StratifiedBatchTests.test_boundaries_and_no_history_merging) ... ok
+test_cfg_unranking_against_independent_json_and_original_ids (test_stratified_batches.StratifiedBatchTests.test_cfg_unranking_against_independent_json_and_original_ids) ... ok
+test_full_vocabulary_stack_bridge_against_independent_json (test_stratified_batches.StratifiedBatchTests.test_full_vocabulary_stack_bridge_against_independent_json) ... ok
+test_public_full_head_recomputation_and_independent_source_mass (test_stratified_batches.StratifiedBatchTests.test_public_full_head_recomputation_and_independent_source_mass) ... ok
+test_strict_gain_and_negative_controls (test_stratified_batches.StratifiedBatchTests.test_strict_gain_and_negative_controls) ... ok
+
+----------------------------------------------------------------------
+Ran 94 tests in 39.771s
+
+OK

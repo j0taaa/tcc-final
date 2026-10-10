@@ -134,7 +134,29 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem87 testes, incluindo as duas regressões reais de timer.
+  A suíte atual tem94 testes, incluindo as duas regressões reais de timer.
+- A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
+  estratificados somente dentro de históricos completos idênticos, preservando
+  cada trajetória individual. Há prova escrita de pass@K nunca inferior a K
+  execuções iid do MESMO decoder para qualquer verificador, dominância da
+  melhor pontuação e variância da média nunca maior.
+  Eventos que ocupam um prefixo de tickets atingem min(1,Kp), ótimo entre todos
+  os lotes de mesmas marginais; a hipótese não vale para qualquer semântica.
+  Isso não exige estabilidade dos próximos logits, mas exige kernel independente das outras
+  trajetórias, horizonte finito e não reunir históricos divergentes. Sete
+  oráculos passam, inclusive recomputação independente do head público. Cinco
+  especificações Lean verificam tickets e a desigualdade de dois estratos,
+  não a prova adaptativa inteira ou o software. O primeiro replay top16 tem
+  massa zero; o full-V do mesmo head gera64 JSONs válidos, sem novos forwards.
+  A auditoria exata do evento de IDs de origem é estrita em K=2/8/32, mas
+  pequena no caso (cerca de0,0104 ponto percentual em K=2). Não é melhoria
+  semântica medida. Mais históricos distintos podem aumentar forwards únicos
+  com caching, e a coordenação tem custo. Princípios de estratificação,
+  arithmetic sampling e unranking são antecedentes conhecidos; novidade
+  suficiente para publicação permanece não confirmada. Não tratar isto como
+  superioridade sobre EPIC/ODD/sampling sem reposição, ganho de pass@1 ou
+  demonstração neural iterativa de A26. O artigo inclui a extensão no apêndice,
+  mantendo24 como protagonista confirmado de consulta.
 
 Use [TASKS.md](TASKS.md) para tarefas/evidências atuais e
 [attempts/README.md](attempts/README.md) e `attempts/catalog.json` para versões

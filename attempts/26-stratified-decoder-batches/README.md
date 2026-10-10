@@ -71,6 +71,14 @@ de verificadores para ocultar contraexemplos.
 
 ## Refinamento v2 — protocolo antes da execução
 
+Um corolário adicional localiza vantagem estrita e ótima: se os tickets de
+uma propriedade formam um prefixo da raiz (por exemplo, ramos iniciais
+disjuntos da gramática na ordem declarada), o pass@K é min(1,Kp), máximo
+entre TODOS os lotes que conservem essas marginais. Isso não vale para qualquer
+evento semântico e não é aplicado automaticamente à captura. A construção
+e os comparadores permanecem os mesmos; nenhum parâmetro é ajustado por timing.
+O corolário deriva da estratificação/union bound conhecidos, não prova novidade.
+
 O primeiro replay (`work/evidence/replay-v1.json`) tem massa válida zero no
 top16. Ele permanece preservado e não recebe crédito funcional. V2 usa o
 MESMO documento/canvas/head público escolhido antes dos resultados24, todos

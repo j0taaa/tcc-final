@@ -37,6 +37,36 @@ The useful result is now supported by both mathematics and independent evidence:
 Every loss and refusal remains available. Native EPIC/CARS/FactorDLM generation
 superiority, scientific priority, human review and publication are not claimed.
 
+## A general result for generating several candidates
+
+[Attempt26](attempts/26-stratified-decoder-batches/README.md) provides a separate
+batch operation: coordinate independent stratum draws only among identical
+complete decoder histories. For any finite horizon and any final verifier,
+the probability that at least one of K candidates passes is **never below K
+iid executions of the same decoder**, while every candidate retains its original
+trajectory law. The best score stochastically dominates iid for every score;
+the sample mean has no greater variance. Equality is allowed. This is a
+written general theorem, rather than a speed claim based on selected cases.
+For an acceptable event whose tickets form a prefix, it reaches `min(1,K*p)`,
+the optimum over every joint batch preserving the same individual marginals.
+Arbitrary semantic events do not automatically satisfy this prefix condition.
+
+It is useful when software tests several JSON configurations or calls and
+chooses one. A replay of the public full50258-ID head returns64 valid candidates,
+preserves fixed IDs and audits a strict but small source-ID event gain exactly.
+The original top16 zero-mass replay is also retained. Seven focused oracles,
+including an offline recomputation of this complete head, complement the proof.
+Five Lean specifications check only ticket/two-stratum arithmetic.
+
+Stratification, arithmetic sampling and weighted unranking are known. This
+specialization does not confirm publication novelty, improve pass@1, establish
+lower wall time, or dominate a different EPIC/ODD/without-replacement policy.
+The adaptive batch algorithm has exhaustive small-kernel tests; its real-head
+demonstration is one frozen step, not new iterative neural coordination.
+[Proof and cost](attempts/26-stratified-decoder-batches/work/theory.md),
+[antecedents](attempts/26-stratified-decoder-batches/work/antecedents.md),
+[full replay](attempts/26-stratified-decoder-batches/work/evidence/replay-full-v2.json).
+
 ## Run a complete public model-head example offline
 
 This packet includes all original logits/probabilities, tokenizer bytes, fixed

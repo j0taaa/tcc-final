@@ -101,7 +101,7 @@ graph optimality; original-input correspondence is a separate checked boundary.
 The universal implementation correctness of the Python graph compiler, Python
 DP, Rust parser, PyO3/FFI and external tokenizer has not been proved in Lean.
 The focused suite was rebuilt after the user-authorized reset and now contains
-87 posterior, semantic and independent research checks; the historical suite
+94 posterior, semantic and independent research checks; the historical suite
 remains archived rather than restored. The paper's DP completeness proof, infinite-language separation
 constructions, the CFG posterior/sampling law and exact update-round formula remain written proofs; the
 formalized certificate soundness does not silently mechanize all of them.
@@ -181,3 +181,15 @@ assert equality of an entire run conditioned on successful completion. The
 trajectory comparison is to a decoder of frozen-product posteriors, not the
 native conditioned MDLM law. New tests and actual neural application evidence
 complement these delimited specifications; they do not extend Lean's scope.
+
+## Probability-preserving stratified batches
+
+`MWPC/StratifiedBatches.lean` adds five selected specifications: quotient and
+remainder of lifted tickets, reconstruction, injectivity, and the integer
+two-stratum arithmetic/geometric comparison. `AuditStratifiedBatches.lean`
+prints dependencies; the mandatory runner builds and audits this module.
+The finite-horizon all-verifier batch dominance and all-score variance theorem
+is a written proof in attempt26 and the article appendix. The full general
+induction, Python rank circuit and neural integration are **not** mechanized.
+Seven small/replay Python oracles are separate implementation evidence.
+Classical stratification is credited; Lean does not establish novelty.

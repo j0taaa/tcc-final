@@ -33,18 +33,25 @@ or restore removed infrastructure. Human review/publication remain external.
   caching/latency boundaries and systematic/coordinate-wise counterexamples.
   Classical stratification, arithmetic sampling, STMC/SMG and weighted CFG
   unranking are credited in `work/antecedents.md`; no priority/publication claim.
-- [x] T4601: Five focused oracles pass:90 small ticket maps/batch configurations,
+  Prefix-ticket events attain min(1,Kp), optimal among all batches preserving
+  these individual marginals, strictly above iid for K>1 and0<p<1; not every
+  semantic event or the archived source-ID event satisfies the prefix premise.
+- [x] T4601: Seven focused oracles pass:90 small ticket maps/batch configurations,
   36 adaptive two-step kernels, every terminal verifier and PSD covariance
-  differences, independent JSON/alias/fixed/prefix/macro-token unranking.
+  differences, independent JSON/alias/fixed/prefix/macro-token unranking,
+  full-V stack bridge and complete public-head recomputation/source-event mass.
   `make check-formal LAKE=/home/jota/.elan/bin/lake` passes five additional
   ticket/two-stratum specifications. Whole-trajectory/all-K proofs remain
   written, not mechanized Python or neural implementation verification.
 - [x] T4602-v1: First public archived MDLM head on top16 ordinary tokens
   has zero valid mass. Preserved in `work/evidence/replay-v1.json`; no hidden
   support expansion or source-ID insertion. This is a replay, not new forwards.
-- [ ] T4602-v2: Demonstrate rank batches on the complete original ordinary
-  vocabulary using an independently frozen classical JSON stack reference.
-  The rule uses the same public head; no quality/latency gate or tuning cases.
+- [x] T4602-v2: Source6a69638 frozen before replay-full-v2.json. Same public
+  head,50258 original IDs,64/64 valid replay candidates and fixed IDs preserved.
+  Frozen classical stack reference bridged without pruning:44 retained states,
+  53 edges,441-bit root. The source-ID event has strictly better exact pass@K
+  for2/8/32; K=2 improvement is only0.010407 percentage points. No new forwards,
+  semantic/latency benchmark or independent capture. Top16 failure retained.
 - [ ] T4603: Freeze source/evidence independently, run full project checks,
   synchronize GitHub and record limits of scientific novelty and adoption.
 

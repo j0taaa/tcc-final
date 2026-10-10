@@ -494,7 +494,7 @@ random-choice law using strict UTF-8/Python JSON recognition. They cover
 aliases, fixed IDs, UTF-8 splits, intra-token peaks, empty shallow support,
 zero mass and finite-budget refusal. The full-vocabulary oracle checks
 1,206,192 original choices in 24 one-hole frames, with 168 exact comparisons.
-The focused suite currently contains 87 tests; the historical suite requested
+The focused suite currently contains 94 tests; the historical suite requested
 removed remains only in archives. Tests establish implementation evidence,
 not novelty or universal physical speed.
 
@@ -597,6 +597,124 @@ no immutable model build was recorded. The author must independently review
 all claims, code, sources and data before submission. Execution evidence
 supports reported measurements, not academic acceptance or independent human
 review. No measurement, approval or contact with reviewers was invented.
+
+\appendix
+\section{Probability-Preserving Batches: General Dominance over iid}
+\label{sec:batches}
+
+Generating several structured candidates for a software verifier is another
+operation. A configuration dry-run, a function-call executor or a scoring
+program consumes complete JSON documents and chooses among them. The goal
+here is to improve the batch's chance of containing an acceptable result while
+preserving every candidate's original law. Stratification is classical;
+arithmetic decoding and stratified model checking are close antecedents
+\cite{vilnis2023arithmetic,roohi2020stmc}. This appendix establishes the
+contract of an isolated reference, not a new statistical principle or a
+claim of priority over these works.
+
+At a complete history $h$, let the decoder's action be a deterministic
+unranking map $f_h:\{0,\ldots,W_h-1\}\to\mathcal A_h$, with $W_h>0$.
+Finite original-token rational probabilities admit such an integer map.
+The kernel may change arbitrarily after a commitment and a new dLLM forward.
+All randomness affecting future decisions belongs to the history or kernel;
+terminal outputs and FAIL are absorbing, and the horizon is finite.
+For $m$ candidates with \emph{identical complete histories}, independently draw
+\begin{equation}
+ R_j\sim\operatorname{Unif}\{0,\ldots,W_h-1\},\qquad
+ I_j=\left\lfloor\frac{jW_h+R_j}{m}\right\rfloor,
+ \quad j=0,\ldots,m-1.
+ \label{eq:batch-tickets}
+\end{equation}
+Assign these tickets to candidate labels by an independent uniform permutation.
+Distinct history groups use fresh independent randomness and never merge
+after divergence. The verifier is not supplied to the sampler.
+
+\begin{theorem}[Finite-horizon batch dominance]
+Let $Q$ be the final law of one execution of the specified decoder, whose
+kernel does not depend on the other candidates. For a batch $S$ of $K$
+executions using Equation~\ref{eq:batch-tickets}, every labeled trajectory
+has the original law. For every acceptable set $A$,
+\begin{equation}
+ \Pr_S\{\exists i:Y_i\in A\}\ \ge\ 1-(1-Q(A))^K.
+ \label{eq:batch-dominance}
+\end{equation}
+For every finite score $s$, $\max_i s(Y_i)$ stochastically dominates the iid
+maximum. For every real score $g$ of finite second moment,
+\begin{equation}
+ \mathbb E_S\left[\frac1K\sum_i g(Y_i)\right]=\mathbb E_Q[g],\qquad
+ \operatorname{Var}_S\left[\frac1K\sum_i g(Y_i)\right]
+ \le\frac{\operatorname{Var}_Q(g)}{K}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+The $mW_h$ integers $jW_h+r$ partition $\{0,\ldots,mW_h-1\}$.
+Each original ticket has exactly $m$ preimages under division by $m$, so
+random permutation gives each label a uniform ticket, even if $m$ does not
+divide $W_h$. Induction preserves its entire trajectory marginal.
+
+For any ticket function $a\in[0,1]$, let $a_j=\mathbb E[a(I_j)]$ and
+$\bar a=m^{-1}\sum_j a_j$. Independent stratum draws and the arithmetic--geometric
+mean inequality give $\mathbb E[\prod_j a(I_j)]=\prod_j a_j\le\bar a^m$.
+Use backward induction on the history tree: if action $x$ has original
+future failure probability $a(x)$, its $n_x$ descendants jointly fail with
+probability at most $a(x)^{n_x}$. Different child histories remain independent.
+Thus the parent jointly fails with probability at most
+$(\mathbb E[a(f_h(I))])^m$. The terminal base is deterministic, proving
+Equation~\ref{eq:batch-dominance}. Take $A=\{y:s(y)>z\}$ for every $z$ to
+obtain stochastic dominance of the maximum.
+
+For variance, stratification gives
+$\operatorname{Var}(\sum_j b(I_j))
+=m\operatorname{Var}(b(I))-\sum_j(\mathbb E[b(I_j)]-\mathbb E[b(I)])^2$.
+Inductively bound the conditional descendant variance by
+$\sum_x n_x\operatorname{Var}_{Q_{hx}}(g)$. The conditional mean is
+$\sum_j\mathbb E_{Q_{h f_h(I_j)}}[g]$. Apply the local variance inequality
+to this mean, then the law of total variance, obtaining
+$\operatorname{Var}(\sum_i g(Y_i))\le m\operatorname{Var}_{Q_h}(g)$.
+Divide by $K^2$ at the root. No monotonicity of logits or verifier is used.
+\end{proof}
+
+The original-token CFG circuit implements $f_h$ without enumerating $W_h$
+tickets: choose a cumulative interval at a sum node and use integer quotient
+and remainder at a product node. A token of weight $w$ owns $w$ tickets,
+preserving aliases and fixed original IDs. Each original event owns exactly
+its product weight by structural induction. LL(1)/nonambiguity and ABSENT EOS
+remain explicit hypotheses. Inside evaluation and cumulative intervals cost
+$O(H)$ arithmetic operations; each rank costs
+$O(S[\log A_{\max}\,B+D(B)])$ bit operations for $S$ visited nodes,
+$B$-bit masses, largest node arity $A_{\max}$ and division cost $D$;
+$H$ counts circuit alternatives. Coordination adds
+$O(KD(B+\log K)+K\log K)$ bit/RNG work, plus grouping/history storage.
+The iid control receives the same prepared rank circuit. Tokenizer, grammar,
+model, preparation and $\Omega(Kn)$ output costs are additional, not hidden.
+
+Preserved individual laws imply the same expected sum of per-trajectory costs.
+Distinct cached histories can increase, making repeated-forward caching
+cheaper for iid; there is no universal latency reduction. Deterministic kernels
+or equal stratum success means can give equality. Strict optimality follows
+under the additional prefix condition below.
+There is also an optimality statement. If the tickets of $A$ form exactly
+$\{0,\ldots,M-1\}$, with $p=M/W_h$, the replicated acceptable region has
+$KM$ consecutive tickets. If $KM<W_h$, only the first stratum can pass and
+does so with probability $Kp$; otherwise that stratum passes surely. Hence
+the batch attains $\min(1,Kp)$, the union-bound maximum among \emph{all}
+joint batches with these individual marginals. This is strictly better than
+iid for $K>1$ and $0<p<1$. Initial disjoint grammar branches can satisfy the
+prefix condition under a declared fixed order; arbitrary semantic properties
+and the source-ID replay do not inherit it. This corollary is also classical.
+
+A shared random phase or independent stratification of token coordinates
+does not satisfy this contract and can make an arbitrary verifier worse.
+
+Seven focused oracles check all binary verifiers and covariance differences
+on small joint-law spaces, original-ID unranking and public-head recomputation.
+Five Lean statements check ticket/two-stratum arithmetic; the adaptive proof
+is written, not fully mechanized or source-refined. The top16 replay's zero
+valid mass is retained. The same full-vocabulary head gives 64 valid candidates
+and a strict but small exact source-ID event gain, without answer insertion
+or new forwards. This is functional evidence, not semantic superiority,
+native EPIC comparison or iterative neural batch coordination.
+Publication significance remains unconfirmed.
 
 \bibliographystyle{sbc}
 \bibliography{referencias}

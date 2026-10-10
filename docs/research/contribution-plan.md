@@ -1636,3 +1636,39 @@ na aplicação e publica todas15 linhas independentes. Demo públicooffline usa
 cabeça full-V completa já publicada, sem modelo/Torch/GPU. Nenhuma revisão humana,
 prioridade universal, acerto semântico ou vantagem estatística de decoder inteiro
 foi inventada. Não iniciar mais infraestrutura para salvar o gate25 rejeitado.
+
+## 2026-10-10 — vantagem geral sobre lotes independentes (A26)
+
+O novo pedido exige vantagem geral, não converter3/15 ganhos de consulta em
+velocidade universal. A26 prova para qualquer horizonte finito/verificador:
+estratificar ações inteiras com jitter independente somente em históricos
+completos idênticos conserva cada trajetória, nunca reduz pass@K contra iid,
+domina o máximo de qualquer score e nunca aumenta a variância da média.
+Não juntar históricos divergentes nem estratificar coordenadas independentes:
+paridade e fase comum dão contraexemplos explícitos. Prova por indução reversa,
+partição dos tickets e AM--GM; não depende de próximos logits estáveis.
+
+Kondratovich/Zhigljavsky, Arithmetic Sampling2023, STMC2020, SMG2020,
+Markov-stratified2017, DAST2026, ODD2026 e Ponty2013 foram conferidos em fontes
+primárias, com diferenças em26/work/antecedents.md. O princípio é conhecido;
+não declarar nova teoria ou suficiência para publicação. O recorte operacional
+é circuito de tokens originais, auditoria de estratos em inteiros e históricos
+adaptativos. Sampling sem reposição/ODD são alternativas com outros contratos.
+
+Fontes84374cf e6a69638 preservam a prova/oráculos e congelam o replay full-V
+antes da execução. O primeiro top16 tem massa zero (evidence/replay-v1.json).
+O segundo usa o MESMO head público24, todos50258 IDs, sem respostas no suporte
+ou novos forwards.64/64 candidatos válidos e IDs fixos preservados. O evento
+de reconstrução dos IDs de origem tem ganho exato estrito em K=2/8/32, mas
+pequeno:0.010407 ponto percentual para K=2. Não é acerto semântico industrial.
+Um sétimo oráculo recompila o head completo, compara massa/amostras/estratos
+e calcula a probabilidade de origem independentemente a partir das linhas F64.
+Cinco Lean specs novos verificam aritmética selecionada, não a indução completa.
+
+O custo esperado individual é conservado; coordenação é adicional. Cobertura
+maior também pode aumentar forwards ÚNICOS com caching, então não prometer
+superioridade de tempo por resultado. O uso matematicamente justificado é
+fornecer várias estruturas a um verificador/ranqueador sem piorar sua chance
+de sucesso frente ao mesmo decoder iid. A implementação neural iterativa26,
+novidade significativa, relevância industrial medida e revisão humana continuam
+ausentes. O artigo mantém24 e acrescenta o teorema geral no apêndice.
