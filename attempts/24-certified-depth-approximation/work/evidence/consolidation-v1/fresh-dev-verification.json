@@ -1,0 +1,15 @@
+{
+  "source_commit": "e180f496cde653fdfbf03699b33acc1f6bc67091",
+  "command": "make check-project VENV_PY=<fresh-dev-venv>/bin/python LAKE=\"$HOME/.elan/bin/lake\"",
+  "install_command": "python -m pip install -c requirements/constraints-py311-linux.txt -e \".[dev]\"",
+  "installation": "Fresh Python3.11 environment, include-system-site-packages=false; only declared dev profile, no Torch or model install.",
+  "python": "3.11.16",
+  "numpy": "2.4.6",
+  "torch_available": false,
+  "exit_code": 0,
+  "focused_tests": "Ran 87 tests in 37.158s",
+  "check_project_log_sha256": "bcb26ed9c64bde86e2a511113240f9a0cb89707d83741492521ccc26eefde031",
+  "offline_demo": "Complete; all numerical/token/byte/certificate output equals earlier committed demo, excluding timings.",
+  "pyproject_sha256": "d810cc4810bb2fc765d1a694fd460da9739cde5f1426985a2167df963bb33b2e",
+  "scope": "Fresh dependency and actual CI validation. No new competitive timing or neural forward."
+}

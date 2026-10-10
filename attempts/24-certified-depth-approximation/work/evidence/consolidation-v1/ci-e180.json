@@ -1,0 +1,189 @@
+{
+  "conclusion": "success",
+  "headSha": "e180f496cde653fdfbf03699b33acc1f6bc67091",
+  "jobs": [
+    {
+      "completedAt": "2026-10-10T07:46:44Z",
+      "conclusion": "success",
+      "databaseId": 114164777260,
+      "name": "build-and-artifacts",
+      "startedAt": "2026-10-10T07:44:08Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-10T07:44:09Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-10T07:44:08Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:44:18Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-10T07:44:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:44:19Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-10-10T07:44:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:44:28Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install -c requirements/constraints-py311-linux.txt -e '.[dev]'",
+          "number": 4,
+          "startedAt": "2026-10-10T07:44:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:44:38Z",
+          "conclusion": "success",
+          "name": "Run make check VENV_PY=python",
+          "number": 5,
+          "startedAt": "2026-10-10T07:44:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:45:39Z",
+          "conclusion": "success",
+          "name": "Run make test VENV_PY=python",
+          "number": 6,
+          "startedAt": "2026-10-10T07:44:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:45:56Z",
+          "conclusion": "success",
+          "name": "Run make build-rust VENV_PY=python",
+          "number": 7,
+          "startedAt": "2026-10-10T07:45:39Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:46:43Z",
+          "conclusion": "success",
+          "name": "Run make article-results-check VENV_PY=python",
+          "number": 8,
+          "startedAt": "2026-10-10T07:45:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:46:43Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 15,
+          "startedAt": "2026-10-10T07:46:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:46:43Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "startedAt": "2026-10-10T07:46:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:46:43Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 17,
+          "startedAt": "2026-10-10T07:46:43Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/j0taaa/tcc-final/actions/runs/38035436841/job/114164777260"
+    },
+    {
+      "completedAt": "2026-10-10T07:45:20Z",
+      "conclusion": "success",
+      "databaseId": 114164777422,
+      "name": "lean",
+      "startedAt": "2026-10-10T07:44:08Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-10T07:44:09Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-10T07:44:08Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:44:18Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-10T07:44:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:44:18Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-10-10T07:44:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:44:25Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install -e .",
+          "number": 4,
+          "startedAt": "2026-10-10T07:44:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:44:36Z",
+          "conclusion": "success",
+          "name": "Install pinned Lean",
+          "number": 5,
+          "startedAt": "2026-10-10T07:44:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:45:19Z",
+          "conclusion": "success",
+          "name": "Run make check-formal VENV_PY=python LAKE=\"$HOME/.elan/bin/lake\"",
+          "number": 6,
+          "startedAt": "2026-10-10T07:44:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:45:19Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 11,
+          "startedAt": "2026-10-10T07:45:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:45:19Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 12,
+          "startedAt": "2026-10-10T07:45:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-10T07:45:19Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "startedAt": "2026-10-10T07:45:19Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/j0taaa/tcc-final/actions/runs/38035436841/job/114164777422"
+    }
+  ],
+  "url": "https://github.com/j0taaa/tcc-final/actions/runs/38035436841"
+}

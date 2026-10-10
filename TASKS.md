@@ -148,6 +148,11 @@ or restore removed infrastructure. Human review/publication remain external.
   Prior CI exposed missing NumPy in dev extras (not solver error). Declare
   already-pinned numpy2.4.6, reproduce with a fresh dev-only environment and
   verify the actual GitHub run; do not rely on preinstalled local packages.
+  Fresh dev-only `make check-project` PASS,87 tests37.158s, no Torch/model
+  installed; public demo numerical/token output identical except timings.
+  GitHub Actions38035436841 on e180f49 PASS (build/artifacts AND Lean).
+  Verification in24/work/evidence/consolidation-v1; previous failed CI retained
+  as a diagnosed undeclared dev dependency, not a retroactive success.
 
 ## M45 — Exact original-token sampling from a certified grammar/counter envelope
 
