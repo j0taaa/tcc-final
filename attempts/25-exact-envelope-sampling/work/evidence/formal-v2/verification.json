@@ -1,0 +1,264 @@
+{
+  "canonical_lean_example": "PASS",
+  "regression_suite": "historical suite removed; focused M34 tests run separately",
+  "scope": "Lean specifications/canonical proof; not Python/Rust source refinement",
+  "universal_axiom_dependencies": {
+    "MWPC.CertifiedAmplification.certified_margin": [],
+    "MWPC.CertifiedAmplification.strictly_increases_valid_mass": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.ExactEnvelope.certified_refusal_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.ExactEnvelope.complete_partition": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.ExactEnvelope.finite_budget_preserves_law": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.ExactEnvelope.finite_refusal_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.ExactEnvelope.rejected_units_le_tail": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.ExactEnvelope.returned_factor": [
+      "propext"
+    ],
+    "MWPC.ExactEnvelope.returned_sum": [
+      "propext"
+    ],
+    "MWPC.alphabet_support_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.amortized_conflict_queries": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.batch_upper": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.binary_words_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.binary_words_distinct": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.binary_words_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.bound_attainment": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.certified_gap": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.certified_infeasible": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.certified_optimal": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.closed_yield_envelope": [],
+    "MWPC.closing_emits_token": [
+      "propext"
+    ],
+    "MWPC.compact_node_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.conditional_event_lower": [],
+    "MWPC.conditional_event_upper": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.conditional_l1_numerator": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.conditional_missing_bound": [],
+    "MWPC.conflict_certified_optimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.conflict_cover_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.conflict_missing_member": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.conflict_transport": [],
+    "MWPC.empty_conflict_infeasible": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.exponential_fooling_state_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.feasible_witness_transport": [],
+    "MWPC.finite_error_budget": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.fixed_conflict_discharge": [],
+    "MWPC.fixed_reward_preserves_optimum": [],
+    "MWPC.fooling_routes_injective": [],
+    "MWPC.fooling_state_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.grammar_yield_alphabet": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.minimum_capacity": [],
+    "MWPC.multiplicative_bound": [],
+    "MWPC.opening_stacks_count": [
+      "propext"
+    ],
+    "MWPC.opening_stacks_distinct": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.optimum_monotone": [],
+    "MWPC.parity_append": [
+      "propext"
+    ],
+    "MWPC.parity_bad_injective": [
+      "propext"
+    ],
+    "MWPC.parity_bad_value": [
+      "propext"
+    ],
+    "MWPC.parity_exclusion_prefix_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.parity_prefix_exclusion_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.parity_prefix_extend": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.parity_zeros": [
+      "propext"
+    ],
+    "MWPC.partition_mass_envelope": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.representation_preserves_optima": [],
+    "MWPC.row_product_scaling": [
+      "propext"
+    ],
+    "MWPC.same_input_dominance": [],
+    "MWPC.semantic_bit_fooling": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_coordinate_union": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_core_arbitrary_reweighting": [
+      "propext"
+    ],
+    "MWPC.semantic_core_complete": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_nonnegative_bilinear_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_rectangle_cover_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_refinement_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_refinement_new": [
+      "propext"
+    ],
+    "MWPC.semantic_refinement_progress": [
+      "propext"
+    ],
+    "MWPC.semantic_witness_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_witness_union": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_witnesses_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_witnesses_distinct": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_word_fooling": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.semantic_zero_violations_imply": [
+      "propext"
+    ],
+    "MWPC.support_coverage_transport": [],
+    "MWPC.support_expansion_certificate": [],
+    "MWPC.unique_prefixes_membership": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.upper_attained": [
+      "propext",
+      "Quot.sound"
+    ],
+    "MWPC.witness_update_preserves_feasibility": []
+  },
+  "verification": "PASS",
+  "command": "make check-formal LAKE=\"$HOME/.elan/bin/lake\"",
+  "source_sha256": {
+    "formal/MWPC/ExactEnvelope.lean": "2486527f792c2869c33c1fc7b9c6fb4df9240f086caa6434021b5e604746e151",
+    "formal/MWPC/CertifiedAmplification.lean": "bc674a54d86e32fd48231103f97a6b4f936b30327ce7f1b538c39c44c8b1f11a",
+    "formal/AuditExactEnvelope.lean": "d8a0f5bd3e7eae339aebed6f6195db39746b8dc976b18cd37d194225c0614eaf",
+    "scripts/exact_commit/check_formal_project.py": "47055b721a93d4cfd87e23a48c96901581858263c815f1e7ae40fcf80fc2c414"
+  },
+  "new_results": "7 finite-budget integer counting/refusal statements and2 certified amplification inequalities; no source refinement or human review"
+}

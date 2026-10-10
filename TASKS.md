@@ -94,12 +94,28 @@ milestone unless a regression invalidates its evidence.
   cold benefit. Select handoff by frozen tie rule BEFORE independent capture.
   Sampling benefit2/18 only; NO handoff>=20% refinement gain versus closed.
   All rows/decisions/provenance/matrix inventory in24/work/evidence/development-v1.
-- [ ] T4404: After development gate, freeze selection and capture ALL five
+- [x] T4404: After development gate, freeze selection and capture ALL five
   unmodeled JSONTestSuite positive documents at pinned1ef36fa, original bytes,
   with4/8/16 masks and nine rotated repetitions. No result-based filtering.
+  COMPLETE1215/1215 records,1071 complete144 resource refusals,540 checks
+  against full exact mass; producer510d807. Handoff and closed each pass3/15
+  query cases (8d5fc991-16,c87bca6a-16,d829cdbc-16). The gate uses paired
+  median wall AND CPU reduction>=20%, favorable sign in every completed
+  repetition and all six mandatory controls; NOT20% on every repetition.
+  Approximate first-sample benefit2/15; no whole-generation speed claim.
+  All rows, original external files/license, captures, matrix inventory and
+  decisions retained in24/work/evidence/independent-v1. Optional public
+  first-full-head-v2 packet permits bit-equal CPU-softmax reproduction without
+  model weights; all other large heads/matrices remain local, hashes published.
 - [ ] T4405: Real dLLM trajectory with common commit policy and declared local/
   global TV budgets, full costs and all outcomes. Operation timings do not
   establish this; compare competent complete decoders for overlapping claims.
+  Protocol/source and small real CPU-service boundary oracle prepared:
+ 30 cases, fresh MDLM forward after commitments, same conditional-confidence
+  policy, per-step tolerance0.001/initial masks, <=4 commits and interval
+  refinement/exact fallback for threshold ambiguity. Real execution pending.
+ 33-frame mass-amplification corollary/audit also prepared, separately changes
+  q and does not claim preservation of its original law or semantic quality.
 - [ ] T4406: Consolidate useful confirmed result, proofs, reviewed literature
   and actual application in project/article; formalize selected sensitive
   statements only with explicit implementation/Lean boundaries. Human review
@@ -118,10 +134,20 @@ milestone unless a regression invalidates its evidence.
   deep solutions despite zero shallow mass, finite refusal and CARS bulk
   adaptive pruning. No native CARS/model-training claim. Prototype stays
   isolated; core and original A24 measured operation are preserved.
+  Seventh oracle verifies zero shallow mass skips only an uninformative
+  certification tail, not all deep solutions. Static v2 refinement is AFTER
+  shared A24 captures but BEFORE any A25 timing; addendum and v1 preserved.
 - [ ] T4502: Before timings, freeze full-cost exact sampling protocol including
   raw rejection, counter-only, grammar-hit, CARS guarded/perfect, counter+CARS
   and compact exact CFG controls. Do NOT use A24 query timings as wins for
   this different operation. Continue A24 independent gate first.
+  Prepared13-worker first-output/batch32 protocol and complete analyzer;
+  selection only in702 development records, then1755 shared-head independent
+  records if the gate passes. No competitive A25 timing yet. Tiny13-worker
+  oracle also prevents batch-only refusal from giving first-output credit.
+  New Lean count specifications check finite-budget local law/refusal and
+  amplification algebra; full make check-formal passes, verification in
+ 25/work/evidence/formal-v2. These are not proofs of Python or native MDLM.
 - [ ] T4503: Confirm usefulness of exact sampler only under same task/full
   original probabilities/costs; test real iterative dLLM integration and
   actual application. No general priority, human review or publication invented.

@@ -95,12 +95,26 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   e rejeição. Todos486 registros foram preservados:445 completos,41 recusas,
   ambas variantes3/18 ganhos fortes de consulta, também a frio,216 checks
   contra massa exata. Handoff é selecionado pela regra congelada de empate;
-  nenhum ganho forte adicional sobre closed. A confirmação independente e o
-  ciclo dLLM continuam pendentes. A25 investiga amostragem EXATA por envelope,
-  sem excluir eventos profundos; tem prova escrita e seis oráculos pequenos
-  da lei efetiva/CARS. Counter-only, counter+CARS e CFG compacta são controles
-  necessários. Não atribuir os timings de24 à operação25. Nenhuma prioridade
-  acadêmica ou geração completa de24/25 foi confirmada.
+  nenhum ganho forte adicional sobre closed. A confirmação independente está
+  completa:1215/1215 registros,1071 completos144 recusas,540 checks de massa,
+ 3/15 ganhos fortes de consulta para ambas variantes,2/15 de primeira amostra
+  aproximada. O ganho20% é na mediana pareada wall E CPU frente a TODOS seis
+  controles, com sinal favorável em todas repetições, não20% em cada repetição.
+  Os15 estados vêm de TODOS cinco documentos externos elegíveis, sem seleção
+  por resultado. O ciclo dLLM real e auditoria de amplificação têm fonte e
+  protocolo preparados, mas ainda não foram executados. Amplificação muda
+  explicitamente o produto q; intervalos não são qualidade semântica.
+  A25 investiga amostragem EXATA por envelope, sem excluir eventos profundos;
+  tem prova escrita, sete oráculos pequenos e controle counter+CARS reforçado.
+  OS*2012 já fornece o princípio geral de proposta superior/refinamento:
+  não reivindicar esse princípio. A trajetória com orçamento finito tem FAIL
+  e bound sum(delta_t^k), não igualdade incondicional. Novo protocolo13 métodos
+  primeira amostra/lote32 não foi cronometrado. O refinamento estático v2 que
+  pula cauda inútil com massa rasa zero foi feito DEPOIS dos heads A24 e ANTES
+  de timings A25; v1 e addendum preservados. Não atribuir os timings24 a25.
+  Lean verifica nove enunciados novos de contagem/amplificação, não o sampler
+  Python nem o decoder inteiro. Nenhuma prioridade acadêmica ou geração
+  completa de24/25 foi confirmada.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

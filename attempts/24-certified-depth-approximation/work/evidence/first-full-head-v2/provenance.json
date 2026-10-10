@@ -1,0 +1,7 @@
+{
+  "check_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv-live/bin/python -m scripts.exact_commit.full_head_packet --packet attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip --torch-exact",
+  "checker_sha256": "e04c90077c4c6c180fc1f9be71dd15dab6d093c68ecd79ab65509dd5047e7e6c",
+  "selection": "149c0c8c-4 was selected before independent model observations",
+  "scope": "All original logits/softmax of one small packet checked; no independent full neural-model rerun; other large heads/matrices local",
+  "refinement": "v1 cache packet retained. v2 adds attribution/license/effective full-V policy, identical original numerical arrays. NumPy summation differs4.218847493575595e-15; actual Torch reproduction bit-equal."
+}

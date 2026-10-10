@@ -34,8 +34,11 @@ separação com tokenizer fixo e JSON rico em conclusões; não é benchmark.
 5. **Experimentos.** Primeiro oráculos independentes da lei efetiva e
 contraexemplos. Depois congelar protocolo e código antes de novos timings.
 Usar TODOS os18 estados existentes como desenvolvimento e manter recusas/
-perdas. Não capturar os cinco documentos externos reservados antes do gate.
-Não reaproveitar timing de A24 como vitória desta operação diferente.
+perdas. A kernel25/v1 foi congelada ANTES das capturas externas de24; o gate
+de24 autorizou essas capturas.25 pode reutilizar essas cabeças explicitamente,
+sem chamar isso de novos forwards ou dados ainda não vistos por24. Sua seleção
+ocorre somente no desenvolvimento. Não reaproveitar timing de A24 como vitória
+desta operação diferente.
 6. **Custo completo.** Pagar forward, full-V softmax/conversão, lexer,
 profundidades tentadas, counter, reconstrução original e verificação JSON.
 Contabilizar cold/primeira saída/lote, memória e bits. Marginais de J_d com
@@ -80,3 +83,56 @@ ordem. Ele entra como baseline obrigatório antes do protocolo de timings.
 `adaptive.py` paga todos os d tentados, usa gramática-hit se já certificar
 aceitação e conserva fallback completo. Ainda não foi cronometrado contra
 controles com logits de modelo. Nenhuma vitória de24 é resultado de25.
+
+## Reavaliação do contrato e comparador forte, antes de timings25
+
+As oito respostas anteriores continuam sendo critérios, com estas correções
+específicas. **Uso/garantia:** respostas aceitas têm lei local exata; orçamento
+finito k inclui estado FAIL, e sua trajetória só tem TV<=sum delta_t^k contra
+o decoder de produtos congelados. Não alegar igualdade incondicional de uma
+trajetória interrompível (`work/finite-budget-trajectory.md`). **Comparador:**
+counter+CARS leve/perfeito também foi implementado, com término de propostas
+no primeiro prefixo impossível e aprendizagem de TODOS irmãos inválidos;
+não cobrar o resto de uma proposta que já pode ser rejeitada. Seis oráculos
+verificam os sorteios efetivos nas quatro configurações,0.248s.
+
+**Antecedente mais próximo do princípio geral:** OS* (Dymetman, Bouchard e
+Carter2012), [§2 e §3.2, fonte original](https://aclanthology.org/W12-6106.pdf),
+já faz amostragem exata mediante propostas superiores computáveis por DP,
+com refinamento e aplicação à interseção PCFG/LM. Portanto amostrar por um
+envelope/refinar uma abstração não é a invenção. O recorte candidato é a
+fronteira gramatical token-original/first-overflow com fechamento, certificado
+antes da primeira proposta e separações ESPECIFICADAS. Uma variante OS* pode
+usar este mesmo envelope e compartilhar a vantagem. A tese não separa o
+método de todo OS*, CFG compacto ou counter+CARS; custos desses controles
+são indispensáveis, e a significância/prioridade específicas seguem abertas.
+
+**Teste honesto/custo:** `work/protocol.json` declara13 métodos, todos18
+estados antigos, primeira amostra exata sem cobrar marginais desnecessárias
+aos controles, lote32 separado, custos completos, três/nove rotações e
+critério forte20% wall E CPU/todos adversários/sinal favorável. A kernel25/v1
+foi congelada antes dos forwards externos de24; reutilizar esses inputs será
+explicitado, sem fingir novas capturas. Nenhum timing25 foi feito.
+
+**Objeções/artigo:** o híbrido pode vencer, e o bound genérico é conhecido.
+A família de prova não será executada como benchmark de vitória. Registre
+leis, limites de recurso e falhas separadamente. Falta confirmar velocidade,
+uso iterativo e redação científica, além da revisão humana inexistente.
+
+## Refinamento v2 e fronteira formal
+
+`work/empty-lower-addendum.json` registra uma correção estática antes de
+QUALQUER timing25: com massa rasa zero, não computar um bound que só pode
+ser1 ou indefinido. Refinar e manter fallback completo; a API direta de cauda
+sem requisito de certificação continua funcionando. Sétimo oráculo independente
+verifica essa distinção. V1 permanece imutável. V2 foi preparado DEPOIS das
+capturas compartilhadas24 e ANTES das medições25; não dizer que seus inputs
+eram desconhecidos por24. Casos, seeds, controles e gate não foram alterados.
+
+`formal/MWPC/ExactEnvelope.lean` verifica sete identidades/limites de contagem
+para rejeição finita; `CertifiedAmplification.lean` verifica duas comparações
+algebraicas do corolário24. `make check-formal` completo passou; evidência
+em `work/evidence/formal-v2`. Não é verificação do Python, da cobertura de
+gramática, do backbone ou do acoplamento global escrito. O oráculo13-worker
+verifica a mesma operação de primeira amostra e evita atribuir a ela uma
+recusa observada apenas depois no lote. Timings competitivos continuam pendentes.

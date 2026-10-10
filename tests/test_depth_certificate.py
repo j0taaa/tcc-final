@@ -9,3 +9,9 @@ DepthCertificateCorrectness = import_module(
 CorpusIdentityTests = import_module(
     "attempts.24-certified-depth-approximation.work.test_corpus"
 ).CorpusIdentityTests
+CertifiedAmplification = import_module(
+    "attempts.24-certified-depth-approximation.work.test_amplification"
+).CertifiedAmplification
+CertifiedGeneration = import_module(
+    "attempts.24-certified-depth-approximation.work.test_generation"
+).CertifiedGeneration

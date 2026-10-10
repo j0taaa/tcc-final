@@ -213,3 +213,68 @@ A operação aqui continua sendo posterior aproximado J_d com certificado
 contra J, massa e marginais. A nova25 investiga usar a cauda como PROPOSTA
 e rejeitar apenas conclusões inválidas para amostragem exata em J. Não
 transferir os timings ou a decisão positiva de24 à operação25.
+
+## Aplicação adicional dos mesmos marginais: amplificação certificada
+
+As oito perguntas permanecem aplicáveis. **Uso:** uma aplicação pode usar os
+intervalos já produzidos para aumentar uma probabilidade de proposta paralela
+da dLLM, com garantia de aumentar a massa de JSON válido. **Significância:**
+a identidade de reponderação não é nova; este é um corolário útil do certificado,
+não outra alegação de prioridade ou outro protagonista. **Comparador:** produto
+original sem a alteração e marginais CFG exatos para a MESMA decisão de
+reponderação. A alteração muda o produto; não preservar sua distribuição
+original silenciosamente nem atribuir semântica à melhora sintática.
+
+**Prova/custo:** `work/amplification.md` demonstra o multiplicador mínimo de
+massa válida por comparações inteiras, sem benchmarks, incluindo a condição
+na qual não alterar nada. Consulta/marginais, seleção da coordenada e cópia da
+linha custam e devem ser contabilizadas. **Teste/objeção:** enumeração pequena
+independente verifica o ganho real e também recusa quando não há sinal
+certificado. Não é garantia de menor latência total nem melhora semântica.
+**Artigo:** falta a demonstração com os inputs reais e novos forwards; ela
+fica separada do protocolo de timings24 em execução. O kernel, os casos,
+critérios e produtores dessa campanha continuam intactos. Intervalos úteis
+não autorizam inventar superioridade de geração sobre EPIC.
+
+## Confirmação independente concluída
+
+Todos os1.215 registros previstos foram executados no produtor510d807:
+1.071 completos,144 recusas e540 verificações contra a massa exata. Handoff,
+selecionado antes da captura, confirma o gate em3/15 estados, todos com16
+lacunas (8d5fc991,c87bca6a,d829cdbc). Closed obtém os mesmos três. O gate
+usa medianas pareadas wall E CPU<=0.8 e sinal favorável em todas as nove
+repetições contra TODOS seis controles; não exige20% em cada repetição.
+As perdas e os15 estados estão em `work/evidence/independent-v1`. A amostra
+aproximada confirma benefício em2/15. Isso não é resultado do sampler25.
+
+O pacote opcional `work/evidence/first-full-head-v2/packet.zip` publica
+uma captura escolhida antes de observar timings: logits originais, full
+softmax, vocabulário, bytes originais, licença e hashes. A reprodução Torch
+CPU é bit-exata; os demais grandes heads/matrizes permanecem locais. A política
+efetiva é full-V, MASK zerado, sem top-K ou injeção de gabarito. Campos antigos
+de configuração de outros experimentos não alteram essa política.
+
+## Reavaliação para o uso iterativo, antes de novos forwards
+
+**Uso:** preencher lacunas JSON com dLLM e escolher commitments a partir da
+probabilidade condicional estrutural de cada token original, conservando o
+contexto fixo. **Significância:** a política de confiança não é nova; materializa
+o certificado confirmado, sem transformar tipagem em semântica. **Escolha:**
+calcular intervalos certificados quando calcular todo posterior é mais caro.
+O comparador de aplicação é a pilha exata imutável; controles compactos e
+first-overflow continuam na campanha independente, sem vitória nativa EPIC.
+
+**Matemática:** `work/generation-theory.md` usa a MESMA política exata para
+amostras aproximadas ou completas. Se o intervalo atravessa0.8, refinar ou
+calcular posterior completo, mantendo a mesma amostra. O mapa de commitments
+comum permite TV final<=0.001 por acoplamento, sob recursos conclusivos.
+Isso compara decoders de produtos congelados, não a lei nativa condicionada
+da MDLM. **Protocolo:** `work/generation-protocol.json`, todos cinco documentos,
+4/8/16 lacunas, dois métodos, uma semente,30 execuções funcionais, sem alegação
+estatística de velocidade total. **Custo:** cada novo forward real, construção,
+marginais, refinamentos, captura e IPC são contados; lexer pode persistir,
+floresta não é reutilizada indevidamente. **Objeção:** ambiguidades de confiança
+ou novos suportes podem eliminar a economia; refusas permanecem inconclusivas.
+**Artigo:** faltam executar a aplicação e a auditoria de amplificação, consolidar
+os resultados e obter revisão humana. Oráculo pequeno dos dois serviços CPU
+passa, mas não é uma execução neural nem evidência de novidade.

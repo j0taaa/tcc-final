@@ -137,8 +137,11 @@ deste teorema. Aplicação de uma técnica conhecida não demonstra prioridade.
 O produto é um forward de dLLM, disponível em paralelo; não é o modelo conjunto
 aprendido nem a lei nativa condicionada de todo processo. Substituir a amostra
 de posterior completo por este sampler exato preserva o kernel sob a MESMA
-política de commits e, por indução, a trajetória desse decoder com novos
-forwards. Intervalos de marginais não podem alterar a política: decisões
+política de commits e, com rejeição ilimitada/recursos suficientes, por
+indução a trajetória desse decoder com novos forwards. Com orçamento FIXO
+k, o kernel inclui FAIL: TV da trajetória<=sum_t delta_t^k, nas hipóteses de
+`finite-budget-trajectory.md`. Condicionar a trajetória inteira à conclusão
+não demonstra igualdade. Intervalos de marginais não podem alterar a política: decisões
 precisam ser robustas aos intervalos ou usar fallback exato. Twister2026
 documenta que o decoder de posteriors congelados já pode diferir da trajetória
 nativa condicionada. Não confundir equivalência com eliminar esse viés.

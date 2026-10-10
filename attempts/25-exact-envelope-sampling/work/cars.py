@@ -9,7 +9,7 @@ from time import monotonic
 
 from mwpc_exact.cfg_posterior import CompilationLimit
 
-from .envelope import ExactEnvelope, OriginalChoices
+from .envelope import CounterDistribution, ExactEnvelope, OriginalChoices
 from .forest import coaccessible_layers
 from .lexer import OUT, finish
 from .posterior import Posterior, class_weights
@@ -23,7 +23,7 @@ class Node:
 
 
 class Cars:
-    def __init__(self, table, weights, *, perfect=False, timeout_seconds=120):
+    def __init__(self, table, weights, *, perfect=False, counter=False, timeout_seconds=120):
         self.table, self.weights, self.perfect = table, weights, perfect
         self.deadline = monotonic() + timeout_seconds
         sums = class_weights(table, weights)
@@ -51,7 +51,20 @@ class Cars:
                 closes + max((sum(t in (1, 3) for t in word) for word in words), default=0),
             )
         self.requirements, self.transitions, self.viable = {}, {}, {}
-        self.root = Node(0, (OUT, ("V",)), self.den[0])
+        self.lexical_allowed = self.allowed
+        self.suffix_closes = [c[1] for c in self.caps]
+        self.counter = (
+            CounterDistribution(
+                table, weights, sums, prepared=self, timeout_seconds=self.deadline - monotonic()
+            )
+            if counter
+            else None
+        )
+        if self.counter is not None:
+            self.counter.choices = self.choices
+        self.root = Node(
+            0, (OUT, ("V",)), self.den[0] if self.counter is None else self.counter.total
+        )
         self.nodes, self.trials = 1, 0
 
     def guard(self):
@@ -100,23 +113,28 @@ class Cars:
             self.viable[key] = result
         return self.viable[key]
 
+    def base(self, node, gid):
+        """Unvisited suffix mass in q or the exactly balanced counter proposal."""
+        if self.counter is None:
+            return self.den[node.p + 1]
+        _, target, net, low, _ = self.counter.counter.effects[self.counter.counter.of_group[gid]]
+        height = sum(t in (1, 3) for t in node.state[1])
+        return 0 if height + low < 0 else self.counter.beta(node.p + 1, target, height + net)
+
     def propose(self, rng):
         node, word = self.root, []
         for p in range(len(self.weights.canvas)):
             self.guard()
-            if node is None:
-                word.append(self.choices.raw(p, rng))
-                continue
             q = node.state[0]
             gids = self.table.by_state[q]
             masses = [
                 self.rows[p][g]
-                * (node.children[g].total if g in node.children else self.den[p + 1])
+                * (node.children[g].total if g in node.children else self.base(node, g))
                 for g in gids
             ]
             invalid = (
                 0
-                if node.learned
+                if node.learned or self.counter is not None
                 else self.weights.denominators[p] - sum(self.rows[p][g] for g in gids)
             )
             masses.append(invalid * self.den[p + 1])
@@ -126,11 +144,18 @@ class Cars:
             if choice == len(gids):
                 classes = tuple(c for c, g in enumerate(self.table.class_to_local[q]) if g < 0)
                 word.append(self.choices.token(p, classes, rng))
-                node = None
+                return tuple(word)  # future draws cannot repair this lexical prefix
             else:
                 gid = gids[choice]
                 word.append(self.choices.group(p, gid, rng))
-                node = node.children.get(gid)
+                after = self.advance(p, node.state, gid)
+                if after is None or (self.perfect and not self.feasible(p + 1, after)):
+                    return tuple(word)  # safely abort at the first impossible prefix
+                child = node.children.get(gid)
+                # Unvisited prefixes keep ALL base suffix mass. Testing the
+                # sampled child only aborts; it does not mask viable siblings
+                # before drawing. This distinction preserves the accepted law.
+                node = child if child is not None else Node(p + 1, after, self.base(node, gid))
         return tuple(word)
 
     def learn(self, word):
@@ -151,7 +176,9 @@ class Cars:
             if gid < 0 or (gid in node.children and not node.children[gid].total):
                 break
             if gid not in node.children:
-                node.children[gid] = Node(p + 1, self.advance(p, node.state, gid), self.den[p + 1])
+                node.children[gid] = Node(
+                    p + 1, self.advance(p, node.state, gid), self.base(node, gid)
+                )
                 self.nodes += 1
             node = node.children[gid]
         # Lexically invalid next choices are all safely excluded at each visited
@@ -160,7 +187,7 @@ class Cars:
             node.learned = True
             node.total = sum(
                 self.rows[node.p][g]
-                * (node.children[g].total if g in node.children else self.den[node.p + 1])
+                * (node.children[g].total if g in node.children else self.base(node, g))
                 for g in self.table.by_state[node.state[0]]
             )
 
@@ -175,7 +202,7 @@ class Cars:
             if not self.root.total:
                 raise ValueError("zero allowed mass; original support infeasible")
             word = self.propose(rng)
-            valid = self.valid(word)
+            valid = len(word) == len(self.weights.canvas) and self.valid(word)
             self.learn(word)  # published update also applies to successful draws
             self.trials += 1
             if valid:

@@ -1,0 +1,21 @@
+{
+  "operation": "Real iterative full-V MDLM infilling. Return valid JSON AND conditional confidence intervals used for commitment, with NEW neural forwards after each canvas update.",
+  "scientific_scope": "Application demonstration of the already tested query, not a new decoding policy/invention or a replacement for the independent query gate. No semantic correctness/EPIC/native conditioned MDLM superiority claim.",
+  "input": "ALL five pinned external JSONTestSuite documents and the SAME original4/8/16 initial masks captured for A24; no outcome filtering, original fixed IDs/bytes preserved",
+  "methods": ["handoff", "exact_stack"],
+  "comparator_reason": "Immutable exact stack is a strong complete posterior control and supplies the SAME conditional confidence operation. Four compact kernels/grammar-hit/suffix-hit already remain controls of the independent query campaign. This demonstration does not claim a competitive whole-decoder sweep or native EPIC comparison.",
+  "seed": 2026100924,
+  "repetitions": 1,
+  "trajectory_total_tv": "1/1000",
+  "local_tolerance": "trajectory_total_tv / number_of_initial_masks, at most number_of_initial_masks progressing steps",
+  "confidence_threshold": "4/5",
+  "commit_budget": 4,
+  "commit_policy": "Draw a jointly valid completion. For EACH sampled free original ID, determine whether its FULL conditional probability>=4/5. Certify from the interval N/(l+u)..(N+u)/(l+u); if ambiguous, refine tolerance1e-6,1e-9 then full exact fallback. Commit accepted positions in INDEX order, capped4; if none, commit first free sampled ID. This matches the exact confidence policy, not an approximate threshold heuristic.",
+  "refinement": "Classify the SAME already sampled completion; do not resample during confidence refinement. Every attempted query/marginal/fallback is charged. Exact threshold equality uses full evaluation if not resolved.",
+  "distribution": "Per-step sample q(.|J_d) within declared TV budget of q(.|J), with EXACT conditional confidence decisions from interval/fallback. Common-policy coupling gives final TV<=1/1000 if preparations/recognizers conclude. All returned documents syntax-valid. Reference is frozen-product posterior decoder, NOT native conditioned MDLM path (Twister).",
+  "amplification": "The separate optional mass-amplification corollary is NOT applied in this decoder. Do not silently alter the frozen original product while making the TV comparison.",
+  "cost": "Model/tokenizer load+CUDA warmup separately. CPU sampler service persists its immutable lexer only; all per-frame grammar/counters/weights/marginals recompiled, no unsupported forest reuse. Report service startup, each NEW synced forward/full softmax, preparation/refinement/output, IPC+capture IO, total cold/warm demonstration and memory. One repetition is a functional demonstration, not a statistical latency-confirmation gate.",
+  "resources": "Separate CPU-only service3GiB address space,120s per step/hard150s; model is outside that solver budget. All count guards10M states/edges,50M terms. Whole per-case budget is initial_masks*120s. Resource refusals explicit, never infeasibility or law/quality successes.",
+  "success": "Every conclusive sample independently recognized strict UTF8/Python JSON, every commit exactly verified against conditional confidence intervals, fixed IDs preserved, progress>=1, all outcomes retained. Any unresolved error blocks the claim. No minimum favorable timing, and no omission of hard cases.",
+  "prerequisites": "Finish A24 independent campaign; freeze code/protocol and source hashes before first NEW trajectory forward. Comments/review from humans remain absent."
+}

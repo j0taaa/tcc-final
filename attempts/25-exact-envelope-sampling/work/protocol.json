@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "operation": "First exact original-token sample from the frozen full-V product conditioned on strict UTF8 JSON. Batch32 of the SAME frozen product is a separate secondary operation. No marginals required from any method.",
+  "seed": 2026100922,
+  "model_config": "configs/experiments/m31_probability_scaling_cpu_v1.json",
+  "tolerance": "1/1000",
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    12
+  ],
+  "methods": [
+    "handoff",
+    "closed",
+    "grammar_hit",
+    "counter_only",
+    "cars",
+    "cars_perfect",
+    "counter_cars",
+    "counter_cars_perfect",
+    "exact_stack",
+    "exact_bidir_local",
+    "exact_local",
+    "exact_eps_local",
+    "rejection"
+  ],
+  "candidates": [
+    "handoff",
+    "closed"
+  ],
+  "mandatory_comparators": [
+    "grammar_hit",
+    "counter_only",
+    "cars",
+    "cars_perfect",
+    "counter_cars",
+    "counter_cars_perfect",
+    "exact_stack",
+    "exact_bidir_local",
+    "exact_local",
+    "exact_eps_local",
+    "rejection"
+  ],
+  "frozen_exact_methods": [
+    "exact_stack",
+    "exact_bidir_local",
+    "exact_local",
+    "exact_eps_local"
+  ],
+  "frozen_control_archive": "attempts/23-canonical-epsilon-posterior/v2/source.zip",
+  "mask_counts": [
+    4,
+    8,
+    16
+  ],
+  "repetitions": 3,
+  "independent_repetitions": 9,
+  "batch_size": 32,
+  "candidate_max_proposals": 3,
+  "control_max_proposals": 1000000,
+  "budget_reason": "Candidates have a pre-sampling certified proposal-exhaustion probability<=1e-9. Controls get MORE proposals to avoid winning by an artificially small control ceiling. Equal120s/3GiB physics for every method; resource refusals additional to the mathematical proposal bound.",
+  "timeout_seconds": 120,
+  "hard_supervisor_seconds": 150,
+  "virtual_memory_gib": 3,
+  "primary": "Paired median total first-sample wall AND CPU <=0.8 against EVERY mandatory comparator and favorable sign in EVERY completed paired repetition, or localized FIRST-operation capacity gain under equal internal budgets. Every candidate repetition must complete. No capacity credit for only a batch refusal or external supervisor failure.",
+  "selection": "ONE candidate by strong first-sample wins on ALL18 development states only; tie handoff. Zero wins rejects speed adoption. Secondary batch-only gain is separately labeled and cannot be relabeled a first-sample victory.",
+  "secondary": "Same strict paired rule for all32 cached samples, includes initial preparation and SAME model forward once. Validate all originals/bytes. Report first and full-batch refusals separately; no censoring-based distribution claim.",
+  "cost": "Primary service query includes actual archived forward+full softmax, rational conversion, ALL attempted depths/fallback, envelope/counter/CARS preparation, original-ID reconstruction and strict JSON validation. Report decoder-table/normalizer cold preparation too. Common model loading/warmup recorded separately; decoder-cold is NOT whole model/server cold startup. Raw rejection is not charged a lexer table. Exact controls compute ONLY their sample, not outside/marginals.",
+  "correctness": "All conclusive exact full masses must agree; every envelope has L<=Z<=M and reject probability1-Z/M<=delta whenever ground truth exists. ALL words independently pass original fixed IDs and strict UTF8/Python JSON; aliases and unsupported special bytes preserved. Tiny actual RNG-law oracles run offline before timing.",
+  "development": "All18 archived A22 states, no new model forwards and no outcome filtering. A24 timings are a DIFFERENT operation and are not evidence of an A25 victory.",
+  "independent": "All five pre-pinned JSONTestSuite documents/all4,8,16 masks after development-only selection. Original sampler was frozen in25/v1 BEFORE A24 head captures. v2 statically skips uncertifiable zero-lower intermediate tails (empty-lower-addendum), AFTER those shared captures but BEFORE ANY A25 measurement; accepted laws unchanged. Their full-V heads are reused openly, NOT new A25 forwards or unseen by A24/v2. No candidate changes based on A24 external outcomes; stronger CARS controls/finite-budget interpretation are also frozen before A25 timing.",
+  "trajectory": "Separately freeze a real MDLM loop/common commitment policy. With fixedk proposal budgets, conditional accepted kernels exact but FAIL gives global TV<=sum epsilon_t^k, assuming all preparations/recognizers conclude. NOT exact native conditioned MDLM path (Twister).",
+  "claims": "Original-token/rational law and delimited mathematical comparison. NOT a new generic rejection principle or OS* framework, not native CARS/EPIC/FactorDLM or semantic/training superiority, no human review/publication or universal priority.",
+  "independent_corpus": {
+    "repository": "https://github.com/nst/JSONTestSuite",
+    "revision": "1ef36fa01286573e846ac449e8683f8833c5b26a",
+    "path": "test_parsing",
+    "eligibility": "ALL y_ object/array documents with strict UTF8/Python json acceptance and16..96 GPT2 tokens, original bytes unchanged; no result-based selection",
+    "eligible_count": 5,
+    "selection": "All eligible, hash order by seed/original text; previously unmodeled documents. All losses remain.",
+    "license": "MIT",
+    "cases": [
+      {
+        "key": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+        "file": "y_string_uEscape.json",
+        "source_sha256": "a69c93369dd5e8e3f07db70b9110f59998fab55c1d8eac6a37ecebed3d1f8516"
+      },
+      {
+        "key": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+        "file": "y_object_extreme_numbers.json",
+        "source_sha256": "79711ae7b3f95981a7aece4db3435a10a68493d4ea66fd623464d3f681809405"
+      },
+      {
+        "key": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+        "file": "y_string_accepted_surrogate_pairs.json",
+        "source_sha256": "9df10c47273a7e385c87007e8629b34a30288eb24752c9e1c519256b46d6e287"
+      },
+      {
+        "key": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+        "file": "y_object_string_unicode.json",
+        "source_sha256": "edec7a6f5af644b0b729f4c822d60dc74575dfa11157fc6e6a855150d286aad8"
+      },
+      {
+        "key": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+        "file": "y_object_long_strings.json",
+        "source_sha256": "b7afdd9d8feae8fc6a4532b01bddea0691994e8ed7e4a93303157c83413d156d"
+      }
+    ],
+    "identity_seed": 2026100918
+  },
+  "external": {
+    "repository": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
+    "revision": "5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8",
+    "scope": "tests/draft2020-12/*.json, all object/array data regardless of schema validity, canonical compact sorted-key ASCII JSON; distinct documents",
+    "eligible_tokens": [
+      16,
+      96
+    ],
+    "selection": "Original hash-selected six development,twelve refinement evaluation,next six fresh confirmations. First18 seen in attempt18; last6 were not timed or run through any model in attempt18. No selection by results.",
+    "masking": "For each size, sample positions uniformly without replacement by Random(seed+int(document_hash[:12],16)+size). Boundary and structure tokens are eligible too.",
+    "license": "MIT, preserve source attribution/license and selected source files"
+  }
+}

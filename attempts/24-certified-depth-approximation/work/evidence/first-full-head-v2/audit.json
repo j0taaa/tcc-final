@@ -1,0 +1,12 @@
+{
+  "verification": "PASS",
+  "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+  "full_rows": 4,
+  "vocabulary": 50258,
+  "numpy_softmax_rtol": "8.927614203457779e-11",
+  "numpy_max_absolute_difference": 4.218847493575595e-15,
+  "torch_bit_equal": true,
+  "original_bytes_reconstructed": true,
+  "model_independently_rerun": false,
+  "packet_sha256": "8f8d512c1f78629a93c8bb442fff81d2fc9bca60b57f044bb7470fda4473168d"
+}

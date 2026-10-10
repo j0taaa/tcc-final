@@ -5,6 +5,7 @@ import json
 import unittest
 from fractions import Fraction
 from math import prod
+from unittest.mock import patch
 
 from mwpc_exact.cfg_posterior import CompilationLimit
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
@@ -75,6 +76,24 @@ def actual_law(action):
 
 
 class ExactEnvelopeCorrectness(unittest.TestCase):
+    def test_empty_shallow_query_does_not_need_tail_resources_to_refine(self):
+        table = LexerTable(CompositionalByteLevelAdapter((b"[[]]",)))
+        weights = Weights([[1]], (None,), 1)
+        # Direct, uncertified tail-only reference still covers the valid word.
+        direct = prepare_envelope(table, weights, 1)
+        self.assertEqual(direct.lower, 0)
+        self.assertEqual(direct.upper_tail, 1)
+        from . import envelope
+
+        with patch.object(envelope, "CounterDistribution", side_effect=MemoryError):
+            sampler, certificate = prepare_certified(table, weights, depths=(1,))
+        self.assertEqual(certificate["attempts"][0]["tail"], None)
+        self.assertEqual(certificate["depth"], None)
+        self.assertEqual(sampler.lower, 1)
+        law, refused = actual_law(lambda rng: sampler.sample(rng)[0])
+        self.assertEqual(law, {(0,): Fraction(1)})
+        self.assertEqual(refused, 0)
+
     def test_adaptation_certifies_acceptance_without_excluding_deep_valid_ids(self):
         table = LexerTable(CompositionalByteLevelAdapter((b"[]", b"[]", b"[[]]", b"[[,]]")))
         weights = Weights([[1, 2, 1, 1]], (None,), 4)
@@ -179,12 +198,12 @@ class ExactEnvelopeCorrectness(unittest.TestCase):
         table = LexerTable(CompositionalByteLevelAdapter((b"[", b"]", b"}", b" ", b"[")))
         weights = Weights([[1, 0, 0, 1, 1], [0, 1, 1, 1, 0]], (None, None), 5)
         expected = oracle(table, weights)
-        for perfect in (False, True):
+        for perfect, counter in ((False, False), (True, False), (False, True), (True, True)):
             # Mutable adaptive state must be reset for EVERY RNG transcript.
             law, refused = actual_law(
-                lambda rng, perfect=perfect: Cars(table, weights, perfect=perfect).sample(
-                    rng, max_trials=2
-                )[0]
+                lambda rng, perfect=perfect, counter=counter: Cars(
+                    table, weights, perfect=perfect, counter=counter
+                ).sample(rng, max_trials=2)[0]
             )
             self.assertEqual(
                 law,
@@ -193,7 +212,7 @@ class ExactEnvelopeCorrectness(unittest.TestCase):
                     for w, v in expected.items()
                 },
             )
-            cars = Cars(table, weights, perfect=perfect)
+            cars = Cars(table, weights, perfect=perfect, counter=counter)
             before = cars.root.total
             cars.learn((0, 2))  # invalid [}, removes ALL invalid sibling closes
             self.assertLess(cars.root.total, before)

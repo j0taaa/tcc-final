@@ -20,6 +20,10 @@ from .posterior import Posterior, class_weights
 from .stack_control import StackPosterior, StackPrepared
 
 
+class EmptyShallowMass(Exception):
+    """Current depth cannot certify rejection below1; not full infeasibility."""
+
+
 class OriginalChoices:
     def __init__(self, table, weights, sums):
         self.table, self.weights, self.sums = table, weights, sums
@@ -310,6 +314,10 @@ def prepare_envelope(
     posterior = StackPosterior(prepared, weights, sums=sums)
     if depth is None:
         return ExactEnvelope(posterior, None)
+    if max_rejection is not None and not posterior.total:
+        # A normalized certificate with L=0 cannot be <1. Direct tail-only
+        # sampling remains available when no certificate threshold is requested.
+        raise EmptyShallowMass("increase depth; no tail mass needs computing yet")
     if method == "handoff" and max_rejection is not None:
         hit = ExactEnvelope(
             posterior, PrefixTail(prepared, weights, sums, timeout_seconds=remaining())

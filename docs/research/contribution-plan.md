@@ -1546,3 +1546,35 @@ Twister2026§3/4 (https://arxiv.org/html/2609.35609v1) distingue o decoder de
 posteriors congelados da trajetória NATIVA condicionada. Nossa igualdade/TV
 de kernel usa o primeiro como referência; não resolve automaticamente o
 viés identificado nesse antecedente. Publicação e revisão humana ausentes.
+
+##2026-10-10 — confirmação24, aplicação e auditoria formal
+
+A24 independente completo no produtor510d807:1215/1215,1071 completos,144
+recusas,540 verificações contra massa exata,3/15 gates de consulta e2/15
+de amostra aproximada. Todos cinco arquivos externos elegíveis permanecem.
+Gate20% nas medianas pareadas wall E CPU contra todos seis controles, sinal
+favorável em toda repetição; não20% em cada repetição. Handoff selecionado
+antes da captura; closed tem os mesmos ganhos. Não há superioridade geral
+nativa EPIC ou prova de ganho semântico. Arquivos/fontes/licença em24/evidence.
+
+Dois usos delimitados foram especificados antes da aplicação: commitments por
+confiança condicional com intervalos/refinamento e novos forwards; amplificação
+de UMA probabilidade usando limite inferior do marginal, com ganho estrito
+de massa válida quando a condição inteira é satisfeita. Este último altera
+explicitamente q; não misturá-lo com a prova TV de decoder que conserva q.
+Uma execução funcional de30 casos e auditoria de33 frames estão preparadas,
+ainda não executadas. Princípio de reponderação/coupling não é novidade.
+
+OS*2012 (https://aclanthology.org/W12-6106.pdf,§2/§3.2) é o antecedente mais
+próximo do princípio envelope+rejeição+refinamento, inclusive PCFG/LM. A25
+só pode defender a fronteira token-original/counter de fechamento e separações
+delimitadas, não inventar amostragem por envelope. Counter+CARS também entra.
+Com orçamento finito, local accepted-law é exata, kernel tem FAIL e a trajetória
+tem bound sum(delta_t^k), não igualdade incondicional; recursos acrescentam
+falhas sem esse bound. Twister limita a referência a produtos congelados.
+
+Lean completo passa nove especificações novas de contagem/amplificação;
+verificação em25/evidence/formal-v2. Não prova refinamento do software. A25v2
+pula cauda sem poder de certificação quando L=0; correção estática DEPOIS
+de heads A24 e ANTES de timings A25, registrada no addendum. Sete oráculos
+e teste13-worker passam. Nenhum timing25 ou revisão humana inventado.

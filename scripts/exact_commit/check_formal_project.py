@@ -29,6 +29,8 @@ def main():
             "MWPC.CfgSampling",
             "MWPC.SemanticProfiles",
             "MWPC.AdaptiveSemantics",
+            "MWPC.ExactEnvelope",
+            "MWPC.CertifiedAmplification",
         ],
         cwd=formal,
         timeout=180,
@@ -36,7 +38,7 @@ def main():
     if build.returncode:
         raise RuntimeError(build.stdout + build.stderr)
     axioms = {}
-    for source in ("Audit.lean", "AuditCfgSampling.lean"):
+    for source in ("Audit.lean", "AuditCfgSampling.lean", "AuditExactEnvelope.lean"):
         audited = _run_lean([args.lake, "env", "lean", source], cwd=formal, timeout=180)
         if audited.returncode:
             raise RuntimeError(audited.stdout + audited.stderr)

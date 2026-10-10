@@ -6,7 +6,7 @@ from time import monotonic, perf_counter, process_time
 
 from mwpc_exact.cfg_posterior import CompilationLimit
 
-from .envelope import prepare_envelope
+from .envelope import EmptyShallowMass, prepare_envelope
 from .posterior import class_weights
 
 
@@ -33,15 +33,29 @@ def prepare_certified(
         if seconds <= 0:
             raise CompilationLimit("whole exact envelope preparation deadline")
         wall, cpu = perf_counter(), process_time()
-        envelope = prepare_envelope(
-            table,
-            weights,
-            depth,
-            method=method,
-            sums=sums,
-            max_rejection=tolerance,
-            timeout_seconds=seconds,
-        )
+        try:
+            envelope = prepare_envelope(
+                table,
+                weights,
+                depth,
+                method=method,
+                sums=sums,
+                max_rejection=tolerance,
+                timeout_seconds=seconds,
+            )
+        except EmptyShallowMass:
+            attempts.append(
+                dict(
+                    depth=depth,
+                    lower="0",
+                    tail=None,
+                    delta=None,
+                    bound="tail_not_computed_zero_lower",
+                    wall=perf_counter() - wall,
+                    cpu=process_time() - cpu,
+                )
+            )
+            continue
         attempts.append(
             dict(
                 depth=depth,

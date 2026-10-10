@@ -1,0 +1,9 @@
+{
+  "stage": "Before ANY A25 competitive timing; after A24 independently captured the shared model heads",
+  "observation": "Static code inspection: adaptive preparation computed the counter tail even when the bounded posterior had L=0, although no normalized bound below1 can then be certified",
+  "change": "Skip an uncomputed tail for that intermediate depth and refine. Mark tail=null/delta=null explicitly, never pretend a zero upper mass or full infeasibility. Direct unthresholded tail-only exact sampling stays available.",
+  "proof": "L=0,U>0 implies U/(L+U)=1; L=U=0 has no positive normalized posterior. Neither permits the requested0<epsilon<1 positive-mass certificate. A later complete fallback still decides actual mass zero.",
+  "preservation": "A25/v1 remains immutable. Accepted-event sampler/weights/support/guarantees unchanged whenever preparation returns. Preparation runtime/source changed in v2, openly AFTER shared input capture, BEFORE A25 measurements. Do not describe v2 as frozen before those head captures or unseen by A24.",
+  "test": "Independent deep-only valid-word oracle plus an unavailable-counter-resource regression: adaptive refinement reaches the exact complete law without spending resources on an unusable intermediate tail",
+  "decisions": "No A25 timing/output inspected; no case, seed, tolerance, score, comparator or success gate tuned. All18 development and15 external frames remain."
+}

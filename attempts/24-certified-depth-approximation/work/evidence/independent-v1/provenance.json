@@ -1,0 +1,9 @@
+{
+  "measurement_command": ".venv-live/bin/python -m attempts.24-certified-depth-approximation.work.run --capture .cache/a24-independent-cuda-v1 --output .cache/a24-independent-measure-v1 --independent",
+  "analysis_command": ".venv/bin/python -m attempts.24-certified-depth-approximation.work.analyze --input .cache/a24-independent-measure-v1 --output .cache/a24-independent-decision-v1 --selected handoff",
+  "producer_commit": "510d807865739c0452b0207398b5b4d58c03cfe9",
+  "selection": "handoff frozen on complete18-case development before independent capture",
+  "rows_sha256": "ccf36ab1fa935974e9d678f78e0e44a188957d03197e873826cf0ca29abe2595",
+  "scope": "All1215 records, all5 documents, all4/8/16 masks/nine repetitions. Matrices compared byte-for-byte in the run; large matrices/full heads local. Small first full-head packet is separately public.",
+  "primary_gate": "Paired wall AND CPU ratio medians<=0.8 versus each of six mandatory controls, favorable sign in every completed pair; localized internal capacity only."
+}

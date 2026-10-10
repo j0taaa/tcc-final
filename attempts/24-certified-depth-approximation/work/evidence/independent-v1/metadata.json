@@ -1,0 +1,483 @@
+{
+  "protocol": {
+    "schema": 1,
+    "operation": "Frozen full-V posterior query: mass interval, a valid sample and all original-token marginals with deterministic TV<=epsilon versus full recursive JSON. Whole generation is a later separate experiment.",
+    "seed": 2026100922,
+    "model_config": "configs/experiments/m31_probability_scaling_cpu_v1.json",
+    "tolerance": "1/1000",
+    "depths": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      12
+    ],
+    "methods": [
+      "handoff",
+      "closed",
+      "grammar_hit",
+      "suffix_hit",
+      "exact_stack",
+      "exact_bidir_local",
+      "exact_local",
+      "exact_eps_local",
+      "rejection"
+    ],
+    "candidates": [
+      "handoff",
+      "closed"
+    ],
+    "certificate_controls": [
+      "grammar_hit",
+      "suffix_hit"
+    ],
+    "frozen_exact_methods": [
+      "exact_stack",
+      "exact_bidir_local",
+      "exact_local",
+      "exact_eps_local"
+    ],
+    "frozen_control_archive": "attempts/23-canonical-epsilon-posterior/v2/source.zip",
+    "mask_counts": [
+      4,
+      8,
+      16
+    ],
+    "repetitions": 3,
+    "independent_repetitions": 9,
+    "timeout_seconds": 120,
+    "hard_supervisor_seconds": 150,
+    "virtual_memory_gib": 3,
+    "primary": "paired median total wall AND CPU <=0.8 of EVERY mandatory comparator, favorable sign in EVERY conclusive repetition, or localized capacity gain under equal budgets. Must certify epsilon and be complete in all repetitions.",
+    "mandatory_comparators": [
+      "grammar_hit",
+      "suffix_hit",
+      "exact_stack",
+      "exact_bidir_local",
+      "exact_local",
+      "exact_eps_local"
+    ],
+    "within_family": "Report handoff versus closed on every case; the two variants belong to the same candidate family. A separate refinement speed claim requires handoff>=20% faster than closed, never inferred from bound dominance.",
+    "selection": "Choose ONE candidate only on development count of strong wins against all mandatory comparators; tie handoff. No strong wins rejects practical family gate. Other variant stays ablation.",
+    "cold": "Cold timings include service table/normalizer preparation; primary includes conversion, all attempted depths/fallbacks, all original marginals and SAME archived model forward+softmax. Report both, never hide preparation.",
+    "sampling": "Rejection is an exact first-sample comparator, not a deterministic mass/marginal query. No sampling-only victory without beating it AND all first-sample-capable controls.",
+    "correctness": "Check computed L<=Z<=L+U and actual conditional TV=(Z-L)/Z<=reported delta whenever any exact control completes. Exact control matrices must agree independently. Missing/failed control is not imaginary ground truth.",
+    "independent": "Only after development gate, evaluate ALL five previously unmodeled positive object/array JSONTestSuite documents, pinned1ef36fa01286573e846ac449e8683f8833c5b26a, original bytes, 16..96 GPT2 tokens. Same mask_counts/all methods/nine rotations; no filtering by candidate certificate/latency.",
+    "trajectory": "After operation confirmation, a separately frozen real dLLM loop uses the same common commit policy with epsilon budget along EVERY history. Query timings are not end-to-end generation nor semantic accuracy.",
+    "claims": "No training/native EPIC or FactorDLM victory, no exclusive abstraction principle, no human review/publication or mathematical priority invented.",
+    "independent_corpus": {
+      "repository": "https://github.com/nst/JSONTestSuite",
+      "revision": "1ef36fa01286573e846ac449e8683f8833c5b26a",
+      "path": "test_parsing",
+      "eligibility": "ALL y_ object/array documents with strict UTF8/Python json acceptance and16..96 GPT2 tokens, original bytes unchanged; no result-based selection",
+      "eligible_count": 5,
+      "selection": "All eligible, hash order by seed/original text; previously unmodeled documents. All losses remain.",
+      "license": "MIT",
+      "cases": [
+        {
+          "key": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+          "file": "y_string_uEscape.json",
+          "source_sha256": "a69c93369dd5e8e3f07db70b9110f59998fab55c1d8eac6a37ecebed3d1f8516"
+        },
+        {
+          "key": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+          "file": "y_object_extreme_numbers.json",
+          "source_sha256": "79711ae7b3f95981a7aece4db3435a10a68493d4ea66fd623464d3f681809405"
+        },
+        {
+          "key": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+          "file": "y_string_accepted_surrogate_pairs.json",
+          "source_sha256": "9df10c47273a7e385c87007e8629b34a30288eb24752c9e1c519256b46d6e287"
+        },
+        {
+          "key": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+          "file": "y_object_string_unicode.json",
+          "source_sha256": "edec7a6f5af644b0b729f4c822d60dc74575dfa11157fc6e6a855150d286aad8"
+        },
+        {
+          "key": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+          "file": "y_object_long_strings.json",
+          "source_sha256": "b7afdd9d8feae8fc6a4532b01bddea0691994e8ed7e4a93303157c83413d156d"
+        }
+      ],
+      "identity_seed": 2026100918
+    },
+    "external": {
+      "repository": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
+      "revision": "5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8",
+      "scope": "tests/draft2020-12/*.json, all object/array data regardless of schema validity, canonical compact sorted-key ASCII JSON; distinct documents",
+      "eligible_tokens": [
+        16,
+        96
+      ],
+      "selection": "Original hash-selected six development,twelve refinement evaluation,next six fresh confirmations. First18 seen in attempt18; last6 were not timed or run through any model in attempt18. No selection by results.",
+      "masking": "For each size, sample positions uniformly without replacement by Random(seed+int(document_hash[:12],16)+size). Boundary and structure tokens are eligible too.",
+      "license": "MIT, preserve source attribution/license and selected source files"
+    }
+  },
+  "capture": {
+    "commit": "510d807865739c0452b0207398b5b4d58c03cfe9",
+    "protocol_sha256": "1ca9986acf7973200cc7d27ff61e2bb8d4ff5ffa6363c1eba14edaa67f641c38",
+    "phase": "independent",
+    "device": "cuda",
+    "config": {
+      "schema_version": 1,
+      "model_id": "kuleshov-group/mdlm-owt",
+      "model_revision": "d0958fa851335ece6c15260ce0025f030673c0fb",
+      "checkpoint_sha256": {
+        "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+        "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+        "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7",
+        "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4"
+      },
+      "tokenizer_id": "openai-community/gpt2",
+      "tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "mask_token_id": 50257,
+      "seed": 310000,
+      "torch_cpu_threads": 4,
+      "slots": [
+        4,
+        8,
+        16
+      ],
+      "top_k": 8,
+      "support_policies": [
+        "top8_plus_alphabet"
+      ],
+      "oracle_limits": [
+        8,
+        64
+      ],
+      "tolerance": [
+        1,
+        20
+      ],
+      "soft_timeout_seconds": 60,
+      "posterior_scopes": [
+        "terminal_alphabet_coverage"
+      ],
+      "numeric_reference": "F32 CPU network; F64 softmax excluding MASK; exact binary rationals normalized over the entire non-mask vocabulary; retained rows are never renormalized",
+      "eos_semantics": "ABSENT; unsupported control tokens have no ordinary byte emission",
+      "claim_scope": "Complete controlled scaling/falsification grid, not production requests or semantic accuracy",
+      "probes": [
+        {
+          "id": "recursive_one_child_arrays_depth1",
+          "prefix": "[",
+          "suffix": "",
+          "grammar": "recursive_one_child_arrays",
+          "depth": 1,
+          "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+        },
+        {
+          "id": "recursive_one_child_arrays_depth3",
+          "prefix": "[[[",
+          "suffix": "",
+          "grammar": "recursive_one_child_arrays",
+          "depth": 3,
+          "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+        },
+        {
+          "id": "recursive_one_child_arrays_depth8",
+          "prefix": "[[[[[[[[",
+          "suffix": "",
+          "grammar": "recursive_one_child_arrays",
+          "depth": 8,
+          "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+        },
+        {
+          "id": "recursive_arrays_depth1",
+          "prefix": "[",
+          "suffix": "",
+          "grammar": "recursive_arrays",
+          "depth": 1,
+          "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+        },
+        {
+          "id": "recursive_arrays_depth3",
+          "prefix": "[[[",
+          "suffix": "",
+          "grammar": "recursive_arrays",
+          "depth": 3,
+          "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+        },
+        {
+          "id": "recursive_arrays_depth8",
+          "prefix": "[[[[[[[[",
+          "suffix": "",
+          "grammar": "recursive_arrays",
+          "depth": 8,
+          "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+        }
+      ],
+      "reference_repetitions": 3,
+      "external_timeout_seconds": 30,
+      "address_space_bytes": 2147483648
+    },
+    "model_hashes": {
+      "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+      "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+      "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7",
+      "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4"
+    },
+    "adapted_model_sha256": "90caa71ec43c77ff92735dba5fdc97a6a546c9f087a35b1a43e8b6e469251fd8",
+    "vocabulary_sha256": "0b4486e9138096810acb3183316684bf7c1dbe896dfdea7c4067e3994de9c7b6",
+    "selected": [
+      {
+        "key": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+        "text": "[\"\\u0061\\u30af\\u30EA\\u30b9\"]",
+        "tokens": [
+          14692,
+          59,
+          84,
+          405,
+          5333,
+          59,
+          84,
+          1270,
+          1878,
+          59,
+          84,
+          1270,
+          16412,
+          59,
+          84,
+          1270,
+          65,
+          24,
+          8973
+        ],
+        "file": "y_string_uEscape.json",
+        "source_sha256": "a69c93369dd5e8e3f07db70b9110f59998fab55c1d8eac6a37ecebed3d1f8516"
+      },
+      {
+        "key": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+        "text": "{ \"min\": -1.0e+28, \"max\": 1.0e+28 }",
+        "tokens": [
+          90,
+          366,
+          1084,
+          1298,
+          532,
+          16,
+          13,
+          15,
+          68,
+          10,
+          2078,
+          11,
+          366,
+          9806,
+          1298,
+          352,
+          13,
+          15,
+          68,
+          10,
+          2078,
+          1782
+        ],
+        "file": "y_object_extreme_numbers.json",
+        "source_sha256": "79711ae7b3f95981a7aece4db3435a10a68493d4ea66fd623464d3f681809405"
+      },
+      {
+        "key": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+        "text": "[\"\\ud83d\\ude39\\ud83d\\udc8d\"]",
+        "tokens": [
+          14692,
+          59,
+          463,
+          5999,
+          67,
+          59,
+          2507,
+          2670,
+          59,
+          463,
+          5999,
+          67,
+          59,
+          463,
+          66,
+          23,
+          67,
+          8973
+        ],
+        "file": "y_string_accepted_surrogate_pairs.json",
+        "source_sha256": "9df10c47273a7e385c87007e8629b34a30288eb24752c9e1c519256b46d6e287"
+      },
+      {
+        "key": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+        "text": "{\"title\":\"\\u041f\\u043e\\u043b\\u0442\\u043e\\u0440\\u0430 \\u0417\\u0435\\u043c\\u043b\\u0435\\u043a\\u043e\\u043f\\u0430\" }",
+        "tokens": [
+          4895,
+          7839,
+          2404,
+          59,
+          84,
+          50049,
+          69,
+          59,
+          84,
+          48768,
+          68,
+          59,
+          84,
+          48768,
+          65,
+          59,
+          84,
+          15,
+          39506,
+          59,
+          84,
+          48768,
+          68,
+          59,
+          84,
+          3023,
+          1821,
+          59,
+          84,
+          3023,
+          1270,
+          3467,
+          84,
+          3023,
+          1558,
+          59,
+          84,
+          3023,
+          2327,
+          59,
+          84,
+          48768,
+          66,
+          59,
+          84,
+          48768,
+          65,
+          59,
+          84,
+          3023,
+          2327,
+          59,
+          84,
+          48768,
+          64,
+          59,
+          84,
+          48768,
+          68,
+          59,
+          84,
+          48768,
+          69,
+          59,
+          84,
+          3023,
+          1270,
+          1,
+          1782
+        ],
+        "file": "y_object_string_unicode.json",
+        "source_sha256": "edec7a6f5af644b0b729f4c822d60dc74575dfa11157fc6e6a855150d286aad8"
+      },
+      {
+        "key": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+        "text": "{\"x\":[{\"id\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}], \"id\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}",
+        "tokens": [
+          4895,
+          87,
+          32509,
+          312,
+          1298,
+          366,
+          24223,
+          24223,
+          24223,
+          24223,
+          24223,
+          20662,
+          4357,
+          366,
+          312,
+          1298,
+          366,
+          24223,
+          24223,
+          24223,
+          24223,
+          24223,
+          20662
+        ],
+        "file": "y_object_long_strings.json",
+        "source_sha256": "b7afdd9d8feae8fc6a4532b01bddea0691994e8ed7e4a93303157c83413d156d"
+      }
+    ],
+    "versions": {
+      "torch": "2.8.0+cu128",
+      "python": "3.11.16",
+      "cuda": "12.8"
+    },
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "startup": {
+      "wall": 4.560921099968255,
+      "cpu": 4.778372365,
+      "scope": "common model/tokenizer load, corpus tokenization and warmup; recorded outside frozen query"
+    },
+    "source_sha256": {
+      "capture.py": "242ba6bfc40f596f1bab22fc76c16bae3dda7e2adf449b9fd9358013a6d1ee5e",
+      "forest.py": "12146672a7ce9595e4d6da7bc2f7a7291b23cd4f402a1e96ee921583fe34afbd",
+      "certificate.py": "d3a8b7352983722cce7d4ce5b3fdc0a2e04009bd7c6d91d1c507ef69b43041b1",
+      "handoff.py": "779fe351b25aa9fef7c3b017ed036e380bd49bd59e0829ebc834b0ddc6ec3bef",
+      "lexer.py": "5e19976fa1e4448e80a1baa5ad52e1f602c5e327734469067c190da453e94ca7",
+      "analyze.py": "7dd28df27e590280a69ed166012ccda361ac48cc5e6e17139b4eb9206b7d60d3",
+      "stack_control.py": "dbb638756df0495d758f92f5b5894f6bf86effc75f45fb1e0ad86acd530cadf6",
+      "measure.py": "6855a8bf317fa1a82fc3b35e6676063ddf7b447626318e43da7c0c238fec61d4",
+      "table.py": "9d8eebd7dd5e1814a1be7e1ada3a0a390ef9ffbc155b1e21e6dd59a1ee632689",
+      "sampler.py": "89956fb701bfd66ca7cf3aa0367f652fa339f2138695d416880d2f0613833543",
+      "test_correctness.py": "f700cd6603519c6cc3bb18f99a786d58242050d43d616e8e7d46dc17619f4e62",
+      "corpus.py": "423aac224928a68a33da337952d1299bda53b4782676109858afa1b6cd59f511",
+      "test_corpus.py": "f505bae6976b2486003e298371128167b2874ce55a43ecbc5de74ab75f2e7b7c",
+      "posterior.py": "c6220e93afee197deb28a09f8a19247c223a7711bba77c5615382beec4c50ee6",
+      "audit_full_rows.py": "6b95095e90fa3078d77acc08dd3489930c15ec9fce997c0b9e6f984c671523e4",
+      "run.py": "1a71c8f43bd3cf9bb28eba1b559a75287ad117a0e476385d0f97c68e61b1e936",
+      "frozen_control.py": "9690a39290742d8dc3b66fc86bd9f87d8de2960c3e0ffce5913e0e1cc6d2dac0",
+      "diagnostic.py": "e5652d4b45c0c760519cdb51cbbeff795af2efef6e7e1b24a3609145d12dabd2"
+    }
+  },
+  "producer_commit": "510d807865739c0452b0207398b5b4d58c03cfe9",
+  "control_source_commit": "cd8267fce4f28576f6140698b0e4e1a4e51e0e21",
+  "control_source_zip_sha256": "c6a292bb7d0d3b170b892969d55773ac8ac00d82030254a8a18b07df74014350",
+  "stage": "independent",
+  "measurement_host": {
+    "system": "Linux",
+    "release": "7.0.0-34-generic",
+    "machine": "x86_64",
+    "python": "3.11.16",
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "threads": {
+      "OPENBLAS": 1,
+      "OMP": 1
+    }
+  }
+}
