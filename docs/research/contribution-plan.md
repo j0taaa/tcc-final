@@ -1443,3 +1443,10 @@ focused suite passes58 checks; archive integrity preserves22 attempts and52
 versions. Written proofs are in attempt22/work/theory-cost.md, including
 original fiber cancellation, full costs and explicit limits relative to the
 independent stack algorithm. Publication significance remains unconfirmed.
+
+V5 strengthening remains preliminary:171/540 records are preserved and the
+whole campaign interrupted before new captures. The stack control repeated
+intrinsic necessary-bound scans for identical residuals across lexical effects.
+V6 caches these per layer and consumes primitive V directly. No grammar,
+probability or success criterion changes; all cases will be repeated. One
+initial speed gain cannot survive as an adoption claim without this control.

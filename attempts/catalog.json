@@ -655,7 +655,7 @@
     {
       "id": "22-full-vocabulary-posterior",
       "title": "Posterior JSON exato no vocabulario original inteiro",
-      "conclusion": "Original development6/18/refinement7/36 gains were preliminary: missing right-context trimming and independent stack inference. All270+540+partial50 rows preserved. v5 adds seven competent controls and two local candidates, common primitive coarsening,216 full-vocabulary oracle agreements. Confirmed utility and scientific priority pending.",
+      "conclusion": "Original development6/18/refinement7/36 gains were preliminary: missing right-context trimming and independent stack inference. All270+540+partial50 rows preserved. v5 adds seven competent controls and two local candidates, common primitive coarsening,216 full-vocabulary oracle agreements. Confirmed utility and scientific priority pending. V5 development171/540 preserved; v6 caches intrinsic stack suffix bounds before retiming all cases. No independent capture or confirmed gate yet.",
       "reading": "attempts/22-full-vocabulary-posterior/README.md",
       "versions": [
         {

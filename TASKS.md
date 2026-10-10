@@ -2400,3 +2400,11 @@ The full-V rerun passes216 exact comparisons (24 one-hole frames ×9 kernels,
 1,206,192 original choices recognized by strict UTF8/Python JSON). Evidence:
 `work/evidence/stack-and-coarsening-full-vocabulary-oracle.json`. Frozen-source
 timing is pending.
+
+M42 v5 measurement interrupted171/540 (144 complete,27 localized refusals),
+all preserved in `work/evidence/development-v5-partial`, producer7f25848.
+One first-rotation bidir_local16-hole case was11.93s versus15.99s stack, but
+NOT a passed gate. Before independent capture, standard per-layer residual-stack
+suffix-bound caching and direct primitive consumption strengthen the control;
+`stack-counter-cache-addendum.json` records this v6 refinement. Repeat every
+development case; do not treat initial speed against repeated scans as final.

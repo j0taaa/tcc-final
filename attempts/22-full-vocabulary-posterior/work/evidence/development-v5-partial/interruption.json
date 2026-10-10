@@ -1,0 +1,11 @@
+{
+  "rows": 171,
+  "expected_rows": 540,
+  "statuses": {
+    "complete": 144,
+    "resource_refusal": 27
+  },
+  "reason": "Whole development interrupted before independent captures: cache the repeated necessary suffix bounds by residual stack, a standard competent-control optimization. Keep all records; no confirmed gate claim.",
+  "source_commit": "7f2584819dee2cec125feac8cef3d446e910be1f",
+  "rows_sha256": "6813e1df77aee1f8385afe7ba1537a837891cc893a5999c1f633bbc3ffa5341d"
+}

@@ -168,3 +168,16 @@ observada com custo completo e confirmação independente; ainda não houve.
 O novo oráculo completo concorda em216 comparações,24 quadros ×9 métodos,
 sobre1.206.192 candidatos originais reconhecidos independentemente. As cinco
 verificações pequenas também passam. Isso sustenta correção, não custo ou novidade.
+
+
+Refinamento v6 (perguntas3/4/5/6/7/8; demais respostas inalteradas): o controle
+de pilhas deve cachear os limites necessários de terminais/fechamentos de um
+mesmo residual, em vez de varrer o residual a cada efeito lexical. Esse cache
+é local à camada, não elimina estados nem muda o algoritmo probabilístico.
+Consumo direto de valores atômicos também evita reconstruir uma produção
+trivial. Seus custos e memória entram na medição. A rodada v5 foi interrompida
+inteira com171/540 registros (144 completos,27 recusas), preservados em
+evidence/development-v5-partial. Um ganho inicial11,93s versus15,99s não é
+confirmação. Mesmos casos, critérios, limites e sete controles; repetir todo
+desenvolvimento antes da escolha/congelamento e dos novos forwards independentes.
+Essas melhorias clássicas podem eliminar o ganho; não serão omitidas.

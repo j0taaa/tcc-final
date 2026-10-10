@@ -1,0 +1,7 @@
+{
+  "before_independent_capture": true,
+  "reason": "V5 predictive stack recomputed two O(depth) necessary bounds for identical residual stacks in many lexical states/effects. Cache these per layer, with counted memory/cost. Same algorithm/admission/law, no new inference principle. Direct primitive-value consumption removes a trivial predictive-production reconstruction; same deterministic language.",
+  "preserve": "attempts/22-full-vocabulary-posterior/work/evidence/development-v5-partial",
+  "operation": "Unchanged mass/all original marginals/sample; all full-vocabulary frozen probabilities and all cases unchanged",
+  "gate": "Same20% wall AND CPU/sign-every-repeat versus all seven controls; two candidates; all development repeated; no independent neural capture yet"
+}

@@ -70,6 +70,9 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   controles de partições e um controle independente de pilhas preditivas. Todos
   recebem a equivalência sintática de valores atômicos; IDs/bytes são preservados. Seleção da candidata só no desenvolvimento; nova confirmação
   usará todos os cinco documentos elegíveis de outro corpus externo pinado.
+  A medição v5 foi interrompida com171/540 registros, todos preservados: o controle
+  de pilhas recalculava limites intrínsecos idênticos em muitos estados lexicais.
+  V6 cacheia esses limites por camada antes de repetir todo o desenvolvimento.
   Utilidade fortalecida e novidade seguem em investigação.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados

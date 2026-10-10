@@ -126,6 +126,8 @@ inicial será congelada após o commit do código/protocolo, antes dos timings.
     originais; classes globais/locais e rejeição como controles. Provas escritas
     delimitadas e quatro oráculos passam. Comparadores originais davam6/18 e7/36
     ganhos preliminares; acrescentamos trimming lexical pelo sufixo a todas
-    as variantes.192 comparações exatas com oráculo completo passam. Todos
+    as variantes e um controle independente de pilhas.216 comparações exatas
+    com oráculo completo passam. Cache dos limites do controle reforçado antes
+    de repetir desenvolvimento;171 registros v5 preservados. Todos
     os dados, inclusive50 registros frescos interrompidos, estão preservados.
     Confirmação com controles fortalecidos/novidade ainda pendentes.

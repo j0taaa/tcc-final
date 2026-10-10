@@ -13,13 +13,16 @@ from time import perf_counter
 from mwpc_exact.cfg_posterior import CompilationLimit
 
 from .forest import coaccessible_layers
-from .lexer import OUT, STRING, finish
+from .lexer import NUMBER, OUT, STRING, finish
 from .posterior import Posterior, class_weights, lift_marginals
 
 
 def consume(stack, word):
     """LL(1) JSON terminal recognition, without the forest's CNF normalizer."""
     for terminal in word:
+        if stack and stack[0] == "V" and STRING <= terminal <= NUMBER:
+            stack = stack[1:]
+            continue
         while stack and isinstance(stack[0], str):
             head, rest = stack[0], stack[1:]
             if head == "V":
@@ -53,7 +56,7 @@ class StackPrepared:
         self.members, self.layers, self.arcs = {}, [((OUT, ("V",)),)], []
         deadline = perf_counter() + timeout_seconds
         allowed = coaccessible_layers(table, canvas)
-        memo, edges, nodes = {}, 0, 1
+        memo, requirements, edges, nodes = {}, {}, 0, 1
         suffix_terms, suffix_closes = [0] * (len(canvas) + 1), [0] * (len(canvas) + 1)
         suffix_terms[-1] = 1  # possible final NUMBER flush; never a closing delimiter
         for p in reversed(range(len(canvas))):
@@ -90,9 +93,15 @@ class StackPrepared:
                     if after is None:
                         continue
                     # Safe necessary suffix conditions, not guessed depth caps.
-                    if sum(type(x) is int or x == "V" for x in after) > suffix_terms[p + 1]:
+                    if after not in requirements:
+                        requirements[after] = (
+                            sum(type(x) is int or x == "V" for x in after),
+                            sum(x in (1, 3) for x in after),
+                        )
+                    needed_terms, needed_closes = requirements[after]
+                    if needed_terms > suffix_terms[p + 1]:
                         continue
-                    if sum(x in (1, 3) for x in after) > suffix_closes[p + 1]:
+                    if needed_closes > suffix_closes[p + 1]:
                         continue
                     state = target, after
                     index = targets.get(state)
@@ -114,6 +123,7 @@ class StackPrepared:
             self.arcs.append(layer_arcs)
             self.layers.append(tuple(targets))
             memo.clear()  # past-layer parser transitions need not occupy memory
+            requirements.clear()
             if perf_counter() > deadline:
                 raise CompilationLimit("explicit stack deadline; mass unresolved")
         self.accepting = tuple(
