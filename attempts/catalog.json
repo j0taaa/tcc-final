@@ -655,7 +655,7 @@
     {
       "id": "22-full-vocabulary-posterior",
       "title": "Posterior JSON exato no vocabulario original inteiro",
-      "conclusion": "Original development6/18/refinement7/36 gains were preliminary: missing right-context trimming and independent stack inference. All270+540+partial50 rows preserved. v5 adds seven competent controls and two local candidates, common primitive coarsening,216 full-vocabulary oracle agreements. Confirmed utility and scientific priority pending. V5 development171/540 preserved; v6 caches intrinsic stack suffix bounds before retiming all cases. No independent capture or confirmed gate yet.",
+      "conclusion": "V6:411/540 measurements preserved (331 complete,80 refusals). Post-hoc negative-only necessary-condition audit proves BOTH candidates fail every18 configuration regardless of129 missing timings; whole campaign stopped. No new independent capture or confirmed gain. A23 investigates canonical weighted epsilon scanners, with independent copies.",
       "reading": "attempts/22-full-vocabulary-posterior/README.md",
       "versions": [
         {
@@ -715,6 +715,13 @@
           ]
         }
       ]
+    },
+    {
+      "id": "23-canonical-epsilon-posterior",
+      "title": "Scanner epsilon ponderado com proveniencia de tokens originais",
+      "conclusion": "Independent prototype; six tiny original-token mass/marginal/sampler-law/reuse checks pass across12 kernels. Classical epsilon removal, not new parsing theory. Full-cost usefulness and independent confirmation pending.",
+      "reading": "attempts/23-canonical-epsilon-posterior/README.md",
+      "versions": []
     }
   ]
 }

@@ -131,3 +131,11 @@ inicial será congelada após o commit do código/protocolo, antes dos timings.
     de repetir desenvolvimento;171 registros v5 preservados. Todos
     os dados, inclusive50 registros frescos interrompidos, estão preservados.
     Confirmação com controles fortalecidos/novidade ainda pendentes.
+
+V6 de22 é negativa:411 registros, condições necessárias rejeitam ambas as
+candidatas em todas18 configurações;129 timings restantes não foram executados.
+
+23. [Circuito epsilon com escolhas originais](23-canonical-epsilon-posterior/README.md):
+    cópias independentes, prova escrita delimitada e seis oráculos pequenos
+    em12 kernels. Remoção epsilon clássica, benefício não confirmado. Comparação
+    completa antes de qualquer novo forward independente. A22 permanece acessível.

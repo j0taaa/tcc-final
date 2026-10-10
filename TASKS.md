@@ -33,7 +33,7 @@ milestone unless a regression invalidates its evidence.
   to strengthen controls with lexical coaccessibility from the right suffix.
   Six documents have already received forwards: never call them unmodeled again.
   Data in work/evidence/{heldout-v4,fresh-v4-partial}; producing ee84ca2.
-- [ ] T4203-v5: Verify common bidirectional trimming and effective per-position
+- [x] T4203-v5: Verify common bidirectional trimming and effective per-position
   quotient, then freeze code/protocol before all development timings.
   All original raw/global/position/local variants remain; all four trimmed
   variants receive the same structural pass. Ten methods including predictive-stack inference and rejection.
@@ -54,6 +54,28 @@ milestone unless a regression invalidates its evidence.
   claim. Optional small full-head packet chosen as first independent case
  149c0c8c-4 BEFORE performance/model observations.
 
+
+## M43 — Canonical epsilon inference with original slot provenance
+
+- [x] T4300: Create independent attempt23, answer eight scientific criteria,
+  cite Mohri2002/Opedal2023 and write canonical epsilon-block bijection,
+  mass/derivative/sampling/reuse proof with full-cost limitations. Three
+  representations are ablations of ONE compiler, not three inventions. Six
+  tiny independent product/law/reuse checks pass across12 exact kernels.
+  Full original-V oracle also passes288 comparisons (24 clamped frames,
+  1,206,192 independently recognized choices); correctness only.
+  A new no-slot oracle found a predictive-stack backward-trimming bug: the
+  retained initial zero-mass state was incorrectly made accepting at n=0.
+  Fix that state in22 AND23; all timed frames have n>=16, so prior results
+  and their frozen producers remain unchanged. No useful gain claim.
+- [ ] T4301: Freeze23 source/protocol before all full-cost development timing.
+  ALL nine non-epsilon exact kernels mandatory, three epsilon ablations;
+  unchanged20% wall AND CPU/favorable sign or localized equal-budget capacity.
+  All six development docs ×4/8/16 masks; select one epsilon representation
+  before new independent forwards, or reject if zero strong wins. Preserve
+  every refusal/loss, no semantic/training/EPIC/world-priority claim.
+- [ ] T4302: Only after gate success, all five new external JSONTestSuite
+  documents, nine rotations and optional first-case full-head packet.
 
 ## M39 — Confirm a benefit in the actual structured-generation trajectory
 
@@ -2408,3 +2430,10 @@ NOT a passed gate. Before independent capture, standard per-layer residual-stack
 suffix-bound caching and direct primitive consumption strengthen the control;
 `stack-counter-cache-addendum.json` records this v6 refinement. Repeat every
 development case; do not treat initial speed against repeated scans as final.
+
+M42 v6: whole campaign stopped411/540 (331 complete,80 localized refusals).
+Negative-only post-hoc audit of unchanged necessary conditions proves zero
+possible strong wins for either candidate in all18 configurations, regardless
+of129 remaining timings. Missing rows are not fabricated. Commands/modules:
+work.audit_futility and work.analyze, evidence/development-v6-partial. No
+independent neural capture and no confirmed scientific benefit. Continue M43.

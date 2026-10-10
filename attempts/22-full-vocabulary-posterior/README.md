@@ -181,3 +181,18 @@ evidence/development-v5-partial. Um ganho inicial11,93s versus15,99s não é
 confirmação. Mesmos casos, critérios, limites e sete controles; repetir todo
 desenvolvimento antes da escolha/congelamento e dos novos forwards independentes.
 Essas melhorias clássicas podem eliminar o ganho; não serão omitidas.
+
+
+V6 decisão negativa:411/540 registros preservados,331 completos/80 recusas.
+Uma auditoria POST-HOC apenas negativa verifica as mesmas condições necessárias
+já congeladas: recusa da candidata, sinal desfavorável frente a um controle
+concluído, ou maioria estrita de razões >0,8 que torna a mediana impossível.
+As18 configurações e ambas as candidatas estão irreversivelmente rejeitadas;
+129 timings restantes NÃO foram inventados/executados. Interrompemos a rodada
+inteira, preservando todos os registros. Não é uma vitória nem confirmação
+fresca. Reproduzir com `work.audit_futility --input .../development-v6-partial
+--output <novo.json>`; prova/razões/SHAs em evidence/development-v6-partial.
+Nenhum novo forward independente. A nova investigação fica isolada em23.
+O teste de zero slots encontrou que o trimming de pilhas tornava o estado
+inicial retido falsamente aceitante quando n=0. Corrigido sem mudar os casos
+medidos n>=16; versão/produtor anteriores permanecem arquivados.

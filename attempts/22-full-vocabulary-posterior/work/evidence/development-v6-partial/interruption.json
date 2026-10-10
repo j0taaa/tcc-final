@@ -1,0 +1,12 @@
+{
+  "rows": 411,
+  "expected_rows": 540,
+  "statuses": {
+    "complete": 331,
+    "resource_refusal": 80
+  },
+  "rows_sha256": "98883ea3e631bd7d891cb8106a61727b4e30ec3bbc9b84b84fb12eee4def8adb",
+  "source_commit": "2004a9e6099ebfd2baef05c6ac50c9058f069e85",
+  "stopped_at_utc": "2026-10-10T01:13:45.417908+00:00",
+  "reason": "Whole campaign stopped after every18 configuration and BOTH candidates irreversibly fail the unchanged frozen20%/sign/all-complete necessary conditions. Post-hoc negative-only logical audit; missing129 rows unmeasured, not invented. No victory/new independent capture. In-flight worker deliberately terminated without creating a measurement row."
+}

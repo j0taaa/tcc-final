@@ -1450,3 +1450,21 @@ intrinsic necessary-bound scans for identical residuals across lexical effects.
 V6 caches these per layer and consumes primitive V directly. No grammar,
 probability or success criterion changes; all cases will be repeated. One
 initial speed gain cannot survive as an adoption claim without this control.
+
+
+## A22 v6 encerrada; A23 epsilon (2026-10-10 UTC)
+
+411/540 registros (331 completos,80 recusas), producer2004a9e. Auditoria
+POST-HOC negativa prova que nenhuma das duas candidatas pode passar em qualquer
+uma das18 configurações independentemente dos129 tempos ausentes. Não declarar
+540 medições ou confirmação positiva. Dados completos obtidos e prova lógica
+em22/work/evidence/development-v6-partial. Controles fortalecidos eliminam os
+ganhos fortes anteriores. Não mudar limiar/casos para obter vitória.
+
+A23 elimina MARK* artificial da gramática e conserva um circuito de epsilon
+com folhas de escolhas originais. Conferido Mohri2002: caso acíclico e remoção
+sob demanda já conhecidos. Opedal2023: parsing ponderado clássico. O resultado
+escrito é composição/proveniência e não nova teoria geral. Seis oráculos
+independentes passam em12 kernels. Medir contra TODOS os nove kernels
+anteriores; agrupamentos epsilon global/posição/local são ablações de um
+mesmo compiler. Ganho científico útil segue aberto até confirmação externa.

@@ -9,6 +9,7 @@ from math import prod
 
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 
+from .epsilon import EpsilonPrepared
 from .forest import Prepared
 from .lexer import lexical_grammar
 from .posterior import Posterior, Weights
@@ -22,10 +23,15 @@ KINDS = (
     "local",
     *("bidir_" + kind for kind in ("raw", "global", "position", "local")),
     "stack",
+    "eps_global",
+    "eps_position",
+    "eps_local",
 )
 
 
 def prepare(table, canvas, kind):
+    if kind.startswith("eps_"):
+        return EpsilonPrepared(table, canvas, lexical_grammar(marked=False), kind[4:])
     if kind == "stack":
         return StackPrepared(
             table,
@@ -111,14 +117,34 @@ def sampler_law(posterior):
 
 
 class FullVocabularyCorrectness(unittest.TestCase):
-    def test_no_physical_slots_has_no_json_mass(self):
-        table = LexerTable(CompositionalByteLevelAdapter((b" ", b"null")))
-        weights = Weights([], (), 2)
-        for kind in KINDS:
-            result = evaluate(prepare(table, (), kind), weights)
-            self.assertEqual(result.total, 0, kind)
-            with self.assertRaisesRegex(ValueError, "zero_valid_mass"):
-                result.sample(random.Random(0))
+    def test_empty_syntax_and_whole_structures_preserve_physical_slots(self):
+        emissions = (
+            b"\t",
+            b" ",
+            b"[true,false]",
+            b"null",
+            b"true false",
+            b'{"a":[0]}',
+            b'{"a":',
+            b"[0]}",
+            None,
+        )
+        table = LexerTable(CompositionalByteLevelAdapter(emissions))
+        for canvas in ((None, None, None), (6, None, None), ()):
+            weights = Weights(
+                [[1 + t % 4 for t in range(len(emissions))]] * len(canvas), canvas, len(emissions)
+            )
+            _, total, marginal = enumerate_expected(table, canvas, weights)
+            for kind in KINDS:
+                prepared = prepare(table, canvas, kind)
+                result = evaluate(prepared, weights)
+                self.assertEqual(result.total, total, (canvas, kind))
+                if total:
+                    self.assertEqual(result.marginals(), (marginal, total), (canvas, kind))
+                    for seed in range(8):
+                        word = result.sample(random.Random(seed))
+                        self.assertEqual(len(word), len(canvas))
+                        self.assertTrue(accepted(table.adapter, word))
 
     def test_original_masses_and_marginals_in_all_representations(self):
         emissions = (

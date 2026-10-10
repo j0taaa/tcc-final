@@ -1,0 +1,21 @@
+{
+  "source_commit": "2004a9e6099ebfd2baef05c6ac50c9058f069e85",
+  "copied_files_sha256": {
+    "lexer.py": "46eee6a150431037e9c6cb4a4bd5a351f0494e66a6a37b2efd100c252b5bd662",
+    "table.py": "9d8eebd7dd5e1814a1be7e1ada3a0a390ef9ffbc155b1e21e6dd59a1ee632689",
+    "posterior.py": "c1a13e7efd24d06b0a026361ad984c20d8f32f903df8330738d334b0dc1d713f",
+    "forest.py": "f4aee69b1d6ac01de639bca51205ec978414701c32807e8864d68f33191cc3ee",
+    "rooted_parser.py": "c75c68209219eff14be8267c5cea79f3bd97898b22831ce339ff9f77193b0029",
+    "relevant_forest.py": "5560491f0ccea918265ac40d8c56b07e09c96612539c06826077ea1454e7538c",
+    "stack_control.py": "a96bac5794a94ebeb8c8c150a2c175544e95b1d96d412f69da6fdb9bd71f1d50",
+    "test_correctness.py": "a0c24469947f9ae6227cebe92ba13d838778681c747a3ad84cf91dda1133ad7a",
+    "measure.py": "68046033b575d9d344710e59e5aaad18f8d32aa06052cf2ce193043024e7d600",
+    "run.py": "af82c07e02f4c4d47c8fd569fa09da654725ed26a9e58849acced8a13ccaec09",
+    "analyze.py": "dcade4cac4e5e142d3389d64c5ce051a5ff8610efb9c15287d2170f005b98f13",
+    "capture.py": "242ba6bfc40f596f1bab22fc76c16bae3dda7e2adf449b9fd9358013a6d1ee5e",
+    "audit_full_rows.py": "91a5901be0185470e079721b5e4fead8d59957ffe00c188d939371abbf14e4a9",
+    "verify_capture.py": "2bcbcf5e8deb41b5205920d27253b0c74b138e8bbf49cfa89ccbf29ca9ac4a0d",
+    "corpus.py": "6f34b9c64a1df09afa3586ee95ca8af653726606e8dc0deb9829a4130ebc8e44"
+  },
+  "scope": "Independent copies of attempt22 v6; no imports from mutable attempts. Classical algorithms retained as competent controls."
+}

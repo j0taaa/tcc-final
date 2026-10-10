@@ -73,7 +73,13 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   A medição v5 foi interrompida com171/540 registros, todos preservados: o controle
   de pilhas recalculava limites intrínsecos idênticos em muitos estados lexicais.
   V6 cacheia esses limites por camada antes de repetir todo o desenvolvimento.
-  Utilidade fortalecida e novidade seguem em investigação.
+  V6 foi encerrada inteira com411/540 registros (331 completos,80 recusas):
+  auditoria negativa das condições necessárias prova que ambas as candidatas
+  falham nas18 configurações, mesmo sem os129 timings restantes. Nenhum
+  forward independente novo. A23 preserva cópias independentes e investiga
+  scanner epsilon ponderado com circuito de proveniência de slots, fornecido
+  a três representações como ablações do mesmo compiler. Remoção epsilon é
+  clássica; vantagem prática/novidade científica seguem em investigação.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.
