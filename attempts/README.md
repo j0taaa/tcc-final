@@ -35,6 +35,7 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [23-canonical-epsilon-posterior](23-canonical-epsilon-posterior/README.md) | Circuito epsilon com proveniência de slots |
 | [24-certified-depth-approximation](24-certified-depth-approximation/README.md) | Fechamento com certificado de erro e uso iterativo |
 | [25-exact-envelope-sampling](25-exact-envelope-sampling/README.md) | Rejeição exata sobre envelope certificado |
+| [26-stratified-decoder-batches](26-stratified-decoder-batches/README.md) | Lotes com lei individual preservada e dominância sobre iid |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`

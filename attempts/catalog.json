@@ -868,6 +868,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "26-stratified-decoder-batches",
+      "title": "Lotes estratificados com preservação da lei individual e dominância sobre iid",
+      "conclusion": "Written finite-horizon all-verifier dominance and all-score variance proof; classical foundations credited. Five oracles/selected Lean specs pass. Initial public top16 replay has zero valid mass, preserved; no general speed/priority/publication claim.",
+      "reading": "attempts/26-stratified-decoder-batches/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "84374cffcd336c43ffffed306602df9f78712d21",
+          "evidence_commit": "84374cffcd336c43ffffed306602df9f78712d21",
+          "evidence_roots": [
+            "attempts/26-stratified-decoder-batches/README.md",
+            "attempts/26-stratified-decoder-batches/work"
+          ]
+        }
+      ]
     }
   ]
 }
