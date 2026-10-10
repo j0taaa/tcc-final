@@ -47,13 +47,22 @@ class CounterTable:
             result.append(row)
         return result
 
-    def tail(self, weights, depth, *, mode="closed", timeout_seconds=120, max_states=10_000_000):
+    def tail(
+        self,
+        weights,
+        depth,
+        *,
+        mode="closed",
+        timeout_seconds=120,
+        max_states=10_000_000,
+        sums=None,
+    ):
         if type(depth) is not int or depth < 0:
             raise ValueError("depth must be a nonnegative integer")
         if mode not in ("closed", "hit", "suffix_hit"):
             raise ValueError("counter mode must be closed, hit or suffix_hit")
         deadline = monotonic() + timeout_seconds
-        rows = self.rows(weights)
+        rows = self.rows(weights, sums=sums)
         if monotonic() > deadline:
             raise CompilationLimit("counter row aggregation deadline; tail unresolved")
         allowed = (

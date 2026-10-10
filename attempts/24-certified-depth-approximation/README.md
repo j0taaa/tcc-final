@@ -1,12 +1,13 @@
 # 24 — Aproximação por profundidade com erro probabilístico certificado
 
-**Protótipo mínimo e prova escrita; benefício e novidade ainda não confirmados.**
+**Protótipo e vantagem de certificação demonstrada por escrito; rapidez,
+confirmação independente e novidade acadêmica ainda não estabelecidas.**
 Motivação: as inferências completas22/23 ficam caras quando permitem todas as
 estruturas profundas de probabilidade pequena. Um limite de profundidade
 arbitrário é rápido, mas altera uma distribuição em quantidade desconhecida.
 Aqui o limite só é autorizado por um certificado do erro condicionado.
 
-## Oito critérios científicos (versão inicial)
+## Oito critérios científicos (versão inicial, refinados abaixo)
 
 1. **Uso real.** Preencher ou gerar JSON recursivo com uma dLLM, usando TODOS
 os IDs originais e uma distribuição conjunta válida. Permitir a um serviço
@@ -85,6 +86,14 @@ Denkinger2017, seção4.4/teorema34, já fornece bounds ponderados por abstraç�
 de storage; não atribuir originalidade a esse princípio. Prioridade dessa
 especialização e tamanho da contribuição continuam questões abertas.
 
+[Sakharov2017](https://arxiv.org/html/1707.07670), seções3/4,
+proposições1/4, já aproxima GLCs por linguagens one-counter que as contêm.
+Exigir contador zero ao final e obter custo quadrático não são novidade.
+Sua construção geral é não determinística, voltada ao reconhecimento e
+reconstrução de árvores; nosso certificado probabilístico conta eventos
+originais de um produto posicional, não a multiplicidade dessas derivações.
+Essa diferença delimita a implementação, sem provar prioridade acadêmica.
+
 Antes de timings competitivos, `work/diagnostic-protocol.json` fixa todos
 os18 estados de desenvolvimento existentes, profundidades e tolerâncias.
 A primeira execução verifica se o certificado consegue autorizar alguma
@@ -112,3 +121,71 @@ Medir contra grammar-hit, suffix-hit, counter-closed e posterior completo.
 Uma vitória contra hit lexical fraco não basta. Oráculos precisam encontrar
 erros na partição de primeira ultrapassagem, inclusive quando ela ocorre
 dentro de um único token que abre E fecha várias estruturas.
+
+## Reavaliação antes de medidas competitivas
+
+1. **Aplicação.** Preenchimento probabilístico de JSON, preservando trechos
+fixos, com marginais usadas por uma política de geração. A saída é uma
+distribuição conjunta válida com tolerância escolhida pelo consumidor, e não
+apenas uma string que um validador aceita. O posterior é o produto de um
+forward congelado da dLLM, sem alegação de qualidade semântica.
+2. **Diferença científica.** `work/certificate-separation.md` prova, com um
+tokenizer FIXO e documentos com campo `payload`, uma separação de poder entre
+certificados. Fechamento ponderado autoriza profundidade1 e erro
+`4/[3(n+1)!]`; primeira ultrapassagem gramatical exige profundidade pelo menos
+`n+2` para tolerância abaixo de1/9. A implicação de espaço é exponencial
+somente para compiladores de pilhas explícitas. A abstração ponderada geral
+é antecedente; suficiência para publicação e prioridade específica não estão
+confirmadas. A prova não pressupõe que um modelo real produza essa família.
+3. **Escolha e comparadores.** Uma pessoa escolheria o método se certificados
+determinísticos permitirem inferência útil mais barata frente ao posterior
+completo, com erro conhecido. Grammar-hit recebe prefixos gramaticais e todos
+os testes necessários existentes; suffix-hit recebe contexto lexical e
+capacidade de fechamento. Quatro inferências EXATAS competentes incluem CFG
+compacta, poda bidirecional, scanner epsilon e pilhas com cache. Rejeição é
+controle de primeira amostra, mas não calcula massa/marginais certificadas.
+4. **Benefício provado.** A separação acima independe do código. Handoff
+domina simultaneamente o counter fechado e grammar-hit porque conserva a
+sintaxe até a primeira ultrapassagem e relaxa só a continuação. Dominância de
+bound não implica rapidez. Corolário JSON, custo em bits e a perturbação para
+suportes positivos estão escritos. A amostra continua exata em J_d.
+5. **Protocolo.** `work/protocol.json` fixa ANTES de timings9 métodos, todos18
+estados de desenvolvimento, três rotações e erro1/1000. Regra: melhoria de
+20% na mediana pareada wall E CPU e sinal favorável em todas repetições contra
+TODOS seis controles obrigatórios, ou capacidade localizada com mesmos limites.
+Selecionar uma variante só no desenvolvimento; zero vitórias rejeita o gate.
+Somente depois, avaliar todos cinco documentos externos ainda sem forwards,
+com nove rotações. Nenhuma perda será removida. `analyze.py` impede adoção
+positiva de campanhas parciais e confere certificados contra massa exata.
+6. **Custo completo.** Pagar conversão full-V, TODOS os d tentados, fallback,
+certificado, amostra, marginais originais e o mesmo forward arquivado. Registrar
+também início a frio com tabela/normalização. Controle exato usa fonte imutável
+de23/v2, nunca imports de uma tentativa mutável. Inteiros/denominadores,
+memória, timeouts e recusas permanecem explícitos. Ainda não é uma medição de
+geração completa; essa etapa terá política comum e orçamento de trajetória.
+7. **Objeções.** Um counter pode não compensar, o certificado de primeira
+passagem pode ser suficiente, a CFG exata pode ser mais rápida e rejeição pode
+ganhar na amostra única. Fora da família do teorema não há bound universal de
+aceleração. Gramáticas ambíguas, semântica e EOS não são ampliados. O resultado
+não deve ser descrito como vitória sobre execuções nativas de EPIC/FactorDLM.
+8. **Pendências e evidências.** Nove oráculos pequenos passam; enumeração
+independente full-V confere168 comparações sobre24 frames de uma lacuna e
+1.206.192 escolhas originais (`work/evidence/full-vocabulary-oracle-v1.json`).
+São testes de correção. O diagnóstico handoff congelado em f8ad7b9 conserva108
+consultas: sete de18 quadros permitem d menor que grammar-hit e seis d menor
+que counter-closed, em erro1/1000. Dados em
+`work/evidence/handoff-feasibility-v1`. Não confirmar velocidade com esses
+diagnósticos. Faltam timings competitivos, confirmação externa, ciclo dLLM,
+revisão humana e redação final; não foram inventados.
+
+Reprodução offline após o freeze, com caches originais disponíveis:
+
+```bash
+.venv/bin/python -m unittest attempts.24-certified-depth-approximation.work.test_correctness
+.venv-live/bin/python -m attempts.24-certified-depth-approximation.work.run --capture .cache/a22-development-cuda-v1 --output .cache/a24-development-measure-v1
+.venv/bin/python -m attempts.24-certified-depth-approximation.work.analyze --input .cache/a24-development-measure-v1 --output .cache/a24-development-decision-v1
+```
+
+Pesos de modelo, logits/cache e grandes matrizes continuam locais; snapshots
+preservam fontes, protocolo, hashes e evidências declaradas. Capturas adicionais
+dependem da passagem pelo gate e usam modelo/tokenizer pinados.

@@ -104,6 +104,7 @@ class StackPrepared:
             )
             if monotonic() > deadline:
                 raise CompilationLimit("suffix preparation deadline; mass unresolved")
+        self.lexical_allowed, self.suffix_closes = allowed, suffix_closes
         for p, fixed in enumerate(canvas):
             targets, layer_arcs, layer_overflows = {}, [], []
             for q, stack in self.layers[-1]:

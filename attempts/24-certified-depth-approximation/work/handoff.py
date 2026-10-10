@@ -20,6 +20,7 @@ class OverflowFrontier:
         deadline = monotonic() + timeout_seconds
         table = prepared.table
         self.weights, self.table = weights, table
+        self.allowed, self.suffix_closes = prepared.lexical_allowed, prepared.suffix_closes
         self.sums = class_weights(table, weights) if sums is None else sums
         leaf = [
             [
@@ -71,6 +72,8 @@ class OverflowFrontier:
                 raise CompilationLimit("handoff counter deadline; tail unresolved")
             if continuation.cache_info().currsize >= max_states:
                 raise CompilationLimit("handoff counter state budget; tail unresolved")
+            if q not in self.allowed[p] or height > self.suffix_closes[p]:
+                return 0
             if p == len(self.weights.canvas):
                 return int(height == 0 and finish(q) is not None)
             total = 0

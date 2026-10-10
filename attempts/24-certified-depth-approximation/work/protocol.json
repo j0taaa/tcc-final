@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "operation": "Frozen full-V posterior query: mass interval, a valid sample and all original-token marginals with deterministic TV<=epsilon versus full recursive JSON. Whole generation is a later separate experiment.",
+  "seed": 2026100922,
+  "model_config": "configs/experiments/m31_probability_scaling_cpu_v1.json",
+  "tolerance": "1/1000",
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    12
+  ],
+  "methods": [
+    "handoff",
+    "closed",
+    "grammar_hit",
+    "suffix_hit",
+    "exact_stack",
+    "exact_bidir_local",
+    "exact_local",
+    "exact_eps_local",
+    "rejection"
+  ],
+  "candidates": [
+    "handoff",
+    "closed"
+  ],
+  "certificate_controls": [
+    "grammar_hit",
+    "suffix_hit"
+  ],
+  "frozen_exact_methods": [
+    "exact_stack",
+    "exact_bidir_local",
+    "exact_local",
+    "exact_eps_local"
+  ],
+  "frozen_control_archive": "attempts/23-canonical-epsilon-posterior/v2/source.zip",
+  "mask_counts": [
+    4,
+    8,
+    16
+  ],
+  "repetitions": 3,
+  "independent_repetitions": 9,
+  "timeout_seconds": 120,
+  "hard_supervisor_seconds": 150,
+  "virtual_memory_gib": 3,
+  "primary": "paired median total wall AND CPU <=0.8 of EVERY mandatory comparator, favorable sign in EVERY conclusive repetition, or localized capacity gain under equal budgets. Must certify epsilon and be complete in all repetitions.",
+  "mandatory_comparators": [
+    "grammar_hit",
+    "suffix_hit",
+    "exact_stack",
+    "exact_bidir_local",
+    "exact_local",
+    "exact_eps_local"
+  ],
+  "within_family": "Report handoff versus closed on every case; the two variants belong to the same candidate family. A separate refinement speed claim requires handoff>=20% faster than closed, never inferred from bound dominance.",
+  "selection": "Choose ONE candidate only on development count of strong wins against all mandatory comparators; tie handoff. No strong wins rejects practical family gate. Other variant stays ablation.",
+  "cold": "Cold timings include service table/normalizer preparation; primary includes conversion, all attempted depths/fallbacks, all original marginals and SAME archived model forward+softmax. Report both, never hide preparation.",
+  "sampling": "Rejection is an exact first-sample comparator, not a deterministic mass/marginal query. No sampling-only victory without beating it AND all first-sample-capable controls.",
+  "correctness": "Check computed L<=Z<=L+U and actual conditional TV=(Z-L)/Z<=reported delta whenever any exact control completes. Exact control matrices must agree independently. Missing/failed control is not imaginary ground truth.",
+  "independent": "Only after development gate, evaluate ALL five previously unmodeled positive object/array JSONTestSuite documents, pinned1ef36fa01286573e846ac449e8683f8833c5b26a, original bytes, 16..96 GPT2 tokens. Same mask_counts/all methods/nine rotations; no filtering by candidate certificate/latency.",
+  "trajectory": "After operation confirmation, a separately frozen real dLLM loop uses the same common commit policy with epsilon budget along EVERY history. Query timings are not end-to-end generation nor semantic accuracy.",
+  "claims": "No training/native EPIC or FactorDLM victory, no exclusive abstraction principle, no human review/publication or mathematical priority invented.",
+  "independent_corpus": {
+    "repository": "https://github.com/nst/JSONTestSuite",
+    "revision": "1ef36fa01286573e846ac449e8683f8833c5b26a",
+    "path": "test_parsing",
+    "eligibility": "ALL y_ object/array documents with strict UTF8/Python json acceptance and16..96 GPT2 tokens, original bytes unchanged; no result-based selection",
+    "eligible_count": 5,
+    "selection": "All eligible, hash order by seed/original text; previously unmodeled documents. All losses remain.",
+    "license": "MIT",
+    "cases": [
+      {
+        "key": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+        "file": "y_string_uEscape.json",
+        "source_sha256": "a69c93369dd5e8e3f07db70b9110f59998fab55c1d8eac6a37ecebed3d1f8516"
+      },
+      {
+        "key": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+        "file": "y_object_extreme_numbers.json",
+        "source_sha256": "79711ae7b3f95981a7aece4db3435a10a68493d4ea66fd623464d3f681809405"
+      },
+      {
+        "key": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+        "file": "y_string_accepted_surrogate_pairs.json",
+        "source_sha256": "9df10c47273a7e385c87007e8629b34a30288eb24752c9e1c519256b46d6e287"
+      },
+      {
+        "key": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+        "file": "y_object_string_unicode.json",
+        "source_sha256": "edec7a6f5af644b0b729f4c822d60dc74575dfa11157fc6e6a855150d286aad8"
+      },
+      {
+        "key": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+        "file": "y_object_long_strings.json",
+        "source_sha256": "b7afdd9d8feae8fc6a4532b01bddea0691994e8ed7e4a93303157c83413d156d"
+      }
+    ]
+  },
+  "external": {
+    "repository": "https://github.com/json-schema-org/JSON-Schema-Test-Suite",
+    "revision": "5b0ee1613e45fcc2bddac00e07c19cd49b00d8a8",
+    "scope": "tests/draft2020-12/*.json, all object/array data regardless of schema validity, canonical compact sorted-key ASCII JSON; distinct documents",
+    "eligible_tokens": [
+      16,
+      96
+    ],
+    "selection": "Original hash-selected six development,twelve refinement evaluation,next six fresh confirmations. First18 seen in attempt18; last6 were not timed or run through any model in attempt18. No selection by results.",
+    "masking": "For each size, sample positions uniformly without replacement by Random(seed+int(document_hash[:12],16)+size). Boundary and structure tokens are eligible too.",
+    "license": "MIT, preserve source attribution/license and selected source files"
+  }
+}

@@ -6,13 +6,14 @@ import random
 import re
 import unittest
 from fractions import Fraction
-from math import prod
+from math import factorial, prod
 
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 
 from .certificate import CounterTable, conditional_error
 from .handoff import overflow_bound
 from .posterior import Weights
+from .sampler import evaluate_certified
 from .stack_control import StackPosterior, StackPrepared
 from .table import LexerTable
 
@@ -69,7 +70,12 @@ def enumerate_events(table, weights, depth):
     numerators = [
         dict() if t is not None else [0] * weights.vocabulary_size for t in weights.canvas
     ]
-    domains = [(t,) if t is not None else range(weights.vocabulary_size) for t in weights.canvas]
+    domains = [
+        (t,)
+        if t is not None
+        else tuple(v for v in range(weights.vocabulary_size) if weights.at(p, v))
+        for p, t in enumerate(weights.canvas)
+    ]
     for tokens in itertools.product(*domains):
         mass = prod(weights.at(p, t) for p, t in enumerate(tokens))
         if not mass or any(table.adapter.emissions[t] is None for t in tokens):
@@ -235,6 +241,29 @@ class DepthCertificateCorrectness(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "initial fixed"):
             StackPosterior(prepared, Weights([[1] * 6] * 4, (None,) * 4, 6))
 
+    def test_adaptive_certificate_controls_and_explicit_exact_fallback(self):
+        table = LexerTable(CompositionalByteLevelAdapter((b"[[", b"[[,]]", b"[]", b"]]", b" ")))
+        r = 2**-12
+        weights = Weights([[1, 1, 2, 0, 0], [0, 0, 0, r, 1 - r]], (None, None), 5)
+        for method in ("handoff", "closed", "grammar_hit", "suffix_hit", "hit"):
+            posterior, certificate = evaluate_certified(
+                table,
+                weights,
+                Fraction(1, 1000),
+                method=method,
+                depths=(1, 2),
+            )
+            self.assertEqual(certificate["depth"], 1 if method == "handoff" else 2)
+            self.assertLessEqual(Fraction(certificate["delta"]), Fraction(1, 1000))
+            _, total, marginal, _ = enumerate_events(table, weights, certificate["depth"])
+            self.assertEqual((posterior.total, posterior.marginals()), (total, (marginal, total)))
+        posterior, certificate = evaluate_certified(table, weights, Fraction(1, 1000), depths=(0,))
+        self.assertIsNone(certificate["depth"])
+        self.assertEqual(certificate["scope"], "exact_on_full_language")
+        self.assertEqual(
+            posterior.mass, StackPosterior(prepare(table, weights.canvas, None), weights).mass
+        )
+
     def test_closed_bound_strictly_strengthens_completed_token_hit(self):
         table = LexerTable(CompositionalByteLevelAdapter((b"[]", b"[[", b"0")))
         weights = Weights([[1, 1, 1]], (None,), 3)
@@ -246,6 +275,40 @@ class DepthCertificateCorrectness(unittest.TestCase):
         for bad in (-1, True, 1.5):
             with self.assertRaisesRegex(ValueError, "depth"):
                 prepare(table, (None,), bad)
+
+    def test_fixed_tokenizer_certificate_separation_proof_object(self):
+        # Exhaustive n=2 instance checks the proof's interpretation of physical
+        # tokens. It is NOT an observed model prediction or a timing benchmark.
+        n = 2
+        table = LexerTable(
+            CompositionalByteLevelAdapter(
+                (b'{"payload":', b'"', b"[", b'{"k":', b" ", b"0", b"]", b"}")
+            )
+        )
+        rows = [[0] * 8 for _ in range(3 * n + 4)]
+        rows[1][1], rows[1][2] = 0.75, 0.25
+        for p in range(2, n + 2):
+            rows[p][2], rows[p][3], rows[p][4] = 0.5, 0.25, 0.25
+        rows[n + 2][1], rows[n + 2][5] = 0.5, 0.5
+        for j, p in enumerate(range(n + 3, 3 * n + 3)):
+            phi = Fraction(1 if j % 2 else 3, 4)
+            rows[p][6], rows[p][7], rows[p][4] = float(phi / 8), float((1 - phi) / 8), 0.875
+        canvas = (0, *(None for _ in rows[1:-1]), 7)
+        weights = Weights(rows, canvas, 8)
+        counter = CounterTable(table)
+        denominator = prod(weights.denominators)
+        for depth in (1, 2, 3):
+            _, total, marginal, upper = enumerate_events(table, weights, depth)
+            prepared = prepare(table, canvas, depth, track_overflow=True)
+            posterior = StackPosterior(prepared, weights)
+            self.assertEqual((posterior.total, posterior.marginals()), (total, (marginal, total)))
+            closed = counter.tail(weights, depth)[0]
+            self.assertEqual(closed, Fraction(upper, denominator))
+            self.assertGreaterEqual(overflow_bound(prepared, weights)[0], Fraction(1, 8))
+            if depth == 1:
+                self.assertGreaterEqual(posterior.mass, Fraction(3, 32))
+                self.assertLessEqual(closed, Fraction(1, 8 * factorial(n + 1)))
+                self.assertLessEqual(overflow_bound(prepared, weights, counter=counter)[0], closed)
 
 
 if __name__ == "__main__":

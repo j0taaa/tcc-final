@@ -71,9 +71,34 @@ milestone unless a regression invalidates its evidence.
   completed108/108 development queries (76 positive lower masses,32 zero),
   closed bound certifies <=0.001 for all18 configurations at some declared d.
   This is NOT a timing/novelty result. Preserve work/evidence/feasibility-v1.
-- [ ] T4402: Strengthen comparison with grammar-valid first-overflow mass,
-  and investigate weighted counter continuation after this first overflow.
-  Prove dominance/strictness before timing; no independent forward yet.
+- [x] T4402: Implement grammar-valid first-overflow and weighted counter
+  continuation; written dominance/strictness with original-token partition.
+  Fixed-tokenizer JSON theorem separates constant-depth certification from
+  first-passage depth linear in n, including bit costs and precise boundaries
+  versus compact CFG algorithms. Nine tiny independent tests pass;168 full-V
+  comparisons over24 one-hole frames and1,206,192 original choices pass.
+  Handoff feasibility producer f8ad7b9 completes108/108 queries; certifies
+  smaller depth in7/18 versus grammar-hit,6/18 versus closed counter. This is
+  NOT a competitive timing result. No independent model capture yet.
+  `make test`74 passed36.310s; `make check` passes upstream/lint/types and
+  integrity24 attempts/59 versions; protected scientific files3683 unchanged.
+- [ ] T4403: Freeze adaptive source and protocol before9-method development
+  campaign486 records. All six mandatory controls, including compact full
+  CFG kernels and strong first-overflow, must pass the unchanged20% paired
+  total wall AND CPU/sign-every-repeat gate. Preserve every refusal/error/loss;
+  select handoff or closed ONLY here, tie handoff; zero wins rejects the gate.
+  Audit L<=Z<=L+U and actual TV whenever exact controls finish, and full matrices
+  across exact controls. Cold cost and rejection first-sample cost separate.
+- [ ] T4404: After development gate, freeze selection and capture ALL five
+  unmodeled JSONTestSuite positive documents at pinned1ef36fa, original bytes,
+  with4/8/16 masks and nine rotated repetitions. No result-based filtering.
+- [ ] T4405: Real dLLM trajectory with common commit policy and declared local/
+  global TV budgets, full costs and all outcomes. Operation timings do not
+  establish this; compare competent complete decoders for overlapping claims.
+- [ ] T4406: Consolidate useful confirmed result, proofs, reviewed literature
+  and actual application in project/article; formalize selected sensitive
+  statements only with explicit implementation/Lean boundaries. Human review
+  and publication remain external, never claimed.
 
 ## M43 — Canonical epsilon inference with original slot provenance
 

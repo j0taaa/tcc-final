@@ -1490,3 +1490,33 @@ perturbação de kernels. Diffinity2026 already exact DFA mass/token alignment/
 analytic latent guidance; não reivindicar isso. Novidade/suficiência são abertas.
 Primeiro protótipo pequeno/oráculo para derrubar a hipótese; depois protocolo
 contra controles fortes. Evitar construir outro benchmark ou unroll arbitrário.
+
+
+## A24 — Handoff e separação de certificação (2026-10-10)
+
+O controle grammar-hit conserva toda sintaxe até a primeira ultrapassagem de d,
+com contexto lexical e limites necessários. Handoff continua esses prefixos
+num counter lexical ponderado, em vez de supor massa1 no futuro. R⊆B⊆G e
+B⊆C; original-token first-overflow é único, inclusive dentro de macro tokens.
+É preciso conservar prefixos sem conclusão em J_d: a tail pode ser positiva.
+Prova e nove testes independentes não estabelecem novidade do princípio.
+
+`attempts/24-certified-depth-approximation/work/certificate-separation.md`
+traz família com tokenizer FIXO, objeto payload e3n+4 slots. L_1>=3/32,
+U<=1/[8(n+1)!] e erro<=4/[3(n+1)!], enquanto grammar-hit dá erro>=1/9
+em todo d<=n+1. Isso separa poder de certificado sem código. No comparador
+de pilhas explícitas, d>=n+2 retém2^n pilhas positivas e completáveis, contra
+custo polinomial do counter mais depth1. Não é bound de qualquer CFG solver:
+parsing compacto continua controle obrigatório. A família não é captura de
+modelo nem benchmark para afirmar velocidade; o corolário de perturbação
+explica a fronteira dos zeros no suporte.
+
+168 comparações full-V sobre24 lacunas e1.206.192 escolhas originais passam.
+Novo diagnóstico produtor f8ad7b9 completa108/108 consultas:7/18 quadros
+certificam profundidade menor que grammar-hit,6/18 menor que closed counter.
+São probabilidades reais já existentes, não timing competitivo. O protocolo
+fixa9 métodos, epsilon1/1000, todos18 quadros e três rotações; controles
+incluem pilhas com cache, CFG compacta, poda bidirecional, epsilon e rejeição.
+Selecionar uma variante só em desenvolvimento antes de capturar os cinco
+documentos externos sem forwards. Novo kernel segue experimental/isolado;
+não alegar treinamento, vantagem EPIC, revisão humana ou prioridade.

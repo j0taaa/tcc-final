@@ -84,10 +84,16 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   variantes são rejeitadas nas18 configurações; sem captura independente nova.
   A24 investiga certificado de aproximação por profundidade: identidade TV
   condicionada, bound de counter lexical e acoplamento da trajetória sob
-  política comum estão escritos. Protótipo/oráculos passam;108 consultas de viabilidade nos
-  dados existentes certificam erro<=0.001 nas18 configurações. Isto não é
-  timing competitivo nem novidade confirmada. Fortalecer primeiro com controle
-  de primeira ultrapassagem de profundidade em prefixos gramaticais.
+  política comum estão escritos. Nove oráculos pequenos e168 comparações full-V
+  passam; duas campanhas108+108 de viabilidade nos dados existentes estão
+  preservadas. Handoff permite menor profundidade que grammar-hit em7/18
+  quadros, mas isto não é timing competitivo. Há separação escrita de força
+  de certificado com tokenizer fixo: depth constante versus linear, com
+  consequência exponencial SOMENTE para pilhas explícitas. Não é lower bound
+  de toda inferência CFG. A próxima comparação inclui9 métodos e fontes
+  imutáveis dos controles compactos, regra conjunta wall/CPU, custos completos
+  e rejeição. Não houve captura independente, confirmação de velocidade,
+  prioridade acadêmica ou geração completa de24.
 - Há garantias matemáticas delimitadas de amostragem, rejeições e reutilização.
   A comparação escrita com CARS trata sua atualização de prefixos visitados
   sob hipóteses explícitas; não demonstra superioridade geral de latência.

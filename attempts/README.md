@@ -146,4 +146,8 @@ condições necessárias rejeitam três variantes em todos18 quadros. Sem captur
 24. [Aproximação de profundidade certificada](24-certified-depth-approximation/README.md):
     especificação/provas escritas iniciais, regularização e conditioning antigos
     creditados. Counter lexical limita massa profunda e erro condicionado;
-    política comum permite bound da trajetória. Nenhum protótipo/ganho ainda.
+    política comum permite bound da trajetória. Nove oráculos pequenos e168
+    comparações full-V passam. Duas campanhas de viabilidade108+108 preservadas;
+    handoff permite depth menor que grammar-hit em7/18 quadros. Separação
+    escrita com tokenizer fixo, custo/limites explícitos. Timings competitivos,
+    confirmação independente e novidade acadêmica ainda pendentes.
