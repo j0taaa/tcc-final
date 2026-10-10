@@ -792,6 +792,15 @@
             "attempts/24-certified-depth-approximation/README.md",
             "attempts/24-certified-depth-approximation/work"
           ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "2d5de8972fd4303154ffb74b2f9d3b182ddcec1f",
+          "evidence_commit": "2d5de8972fd4303154ffb74b2f9d3b182ddcec1f",
+          "evidence_roots": [
+            "attempts/24-certified-depth-approximation/README.md",
+            "attempts/24-certified-depth-approximation/work"
+          ]
         }
       ]
     },
