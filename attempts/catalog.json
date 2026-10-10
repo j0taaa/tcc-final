@@ -754,7 +754,7 @@
     {
       "id": "24-certified-depth-approximation",
       "title": "Aproximacao por profundidade com certificado de erro condicionado",
-      "conclusion": "Independent frozen full-V query gate confirmed in3/15 cases; proof-scoped certificate advantage. Iterative application pending; no native decoder/semantic superiority.",
+      "conclusion": "Independent full-V query advantage3/15; all30 iterative MDLM applications return valid context-preserving JSON. Written certificate separation and amplification corollary; no broad/native decoder or semantic superiority.",
       "reading": "attempts/24-certified-depth-approximation/README.md",
       "versions": [
         {
@@ -806,6 +806,14 @@
           "id": "v6",
           "source_commit": "b831a2d080f17ace8b43f845ff47997c2e355e8f",
           "evidence_commit": "b831a2d080f17ace8b43f845ff47997c2e355e8f",
+          "evidence_roots": [
+            "attempts/24-certified-depth-approximation/work/evidence"
+          ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "d9223815dc98b24bd28b527b4f6f7b062b7767a7",
+          "evidence_commit": "d9223815dc98b24bd28b527b4f6f7b062b7767a7",
           "evidence_roots": [
             "attempts/24-certified-depth-approximation/work/evidence"
           ]
