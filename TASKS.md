@@ -52,8 +52,15 @@ or restore removed infrastructure. Human review/publication remain external.
   53 edges,441-bit root. The source-ID event has strictly better exact pass@K
   for2/8/32; K=2 improvement is only0.010407 percentage points. No new forwards,
   semantic/latency benchmark or independent capture. Top16 failure retained.
-- [ ] T4603: Freeze source/evidence independently, run full project checks,
-  synchronize GitHub and record limits of scientific novelty and adoption.
+- [x] T4603: Predeclared replay source6a69638 and consolidation49504ea
+  preserve producer hashes, all outcomes and verification-v2 logs. Full project
+  gate passed with93 tests, then the final entire94-test suite passed after
+  adding real-head recomputation. Rust, lint/types, formal gate and unchanged
+  3683-file scientific inventory pass. Article appendix compiles at15 pages,
+  all-page/changed-page visual review done. Two independent A26 snapshots;
+  original negative v1 unchanged. Regular upstream pushes; no force/history
+  rewrite. Novelty/publication significance, industrial semantic evaluation
+  and iterative neural A26 remain explicitly unconfirmed, not completed tasks.
 
 ## M42 — Full original-vocabulary posterior, without discarded topK mass
 

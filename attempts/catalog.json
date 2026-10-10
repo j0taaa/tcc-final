@@ -872,7 +872,7 @@
     {
       "id": "26-stratified-decoder-batches",
       "title": "Lotes estratificados com preservação da lei individual e dominância sobre iid",
-      "conclusion": "Written finite-horizon all-verifier dominance and all-score variance proof; classical foundations credited. Five oracles/selected Lean specs pass. Initial public top16 replay has zero valid mass, preserved; no general speed/priority/publication claim.",
+      "conclusion": "General written all-verifier finite-horizon dominance over iid of the same decoder, preserved marginals/all-score variance, and prefix-event optimality among equal-marginal batches. Classical principles credited, seven oracles plus five selected Lean specs pass. Top16 zero retained; same full-V head gives 64 valid replay candidates and a small strict exact source-ID event gain. No new forwards, universal speed, native EPIC superiority or confirmed publication novelty.",
       "reading": "attempts/26-stratified-decoder-batches/README.md",
       "versions": [
         {
@@ -882,6 +882,21 @@
           "evidence_roots": [
             "attempts/26-stratified-decoder-batches/README.md",
             "attempts/26-stratified-decoder-batches/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "49504ea2c4c866362c9d218e4af14da574a359a4",
+          "evidence_commit": "49504ea2c4c866362c9d218e4af14da574a359a4",
+          "evidence_roots": [
+            "attempts/26-stratified-decoder-batches/README.md",
+            "attempts/26-stratified-decoder-batches/work",
+            "paper/main.tex",
+            "paper/referencias.bib",
+            "output/pdf/tcc-certified-closure.pdf",
+            "formal/MWPC/StratifiedBatches.lean",
+            "formal/AuditStratifiedBatches.lean",
+            "tests/test_stratified_batches.py"
           ]
         }
       ]

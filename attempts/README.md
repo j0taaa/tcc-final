@@ -184,3 +184,11 @@ confirmação independente. Um erro de timer é preservado;36 bloqueadores
 concluídos/sem erro mostram que a rejeição primária não depende dele.
 V8/24 consolida artigo e reprodução; v3/25 conserva a decisão negativa e
 a correção de fronteira, sem modificar resultados antigos.
+
+V1/26 conserva a primeira prova/implementação e o replay top16 de massa zero.
+V2/26 acrescenta a prova de optimalidade para eventos prefixos, sete oráculos,
+cinco especificações Lean selecionadas, a recomputação full-V do MESMO head,
+os64 candidatos válidos e a melhoria exata pequena do evento de IDs da fonte.
+A garantia geral é sobre iid do mesmo decoder, com distribuição individual
+preservada. Estratificação/unranking são clássicos; não há ganho universal de
+latência, nova aplicação neural iterativa26 ou prioridade acadêmica confirmada.
