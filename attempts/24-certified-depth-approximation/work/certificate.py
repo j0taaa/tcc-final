@@ -30,11 +30,11 @@ class CounterTable:
                 self.effects.append((q, *key))
             self.of_group.append(code)
 
-    def rows(self, weights):
+    def rows(self, weights, *, sums=None):
         original = self.original
         if weights.vocabulary_size != original.adapter.vocabulary_size:
             raise ValueError("counter weights changed original vocabulary")
-        sums = class_weights(original, weights)
+        sums = class_weights(original, weights) if sums is None else sums
         result = []
         for p, fixed in enumerate(weights.canvas):
             row = [0] * len(self.effects)

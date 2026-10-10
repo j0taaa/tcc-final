@@ -60,17 +60,33 @@ def consume(stack, word):
 
 class StackPrepared:
     def __init__(
-        self, table, canvas, *, max_edges, max_cells, max_terms, timeout_seconds, max_depth=None
+        self,
+        table,
+        canvas,
+        *,
+        max_edges,
+        max_cells,
+        max_terms,
+        timeout_seconds,
+        max_depth=None,
+        track_overflow=False,
     ):
         if max_depth is not None and (type(max_depth) is not int or max_depth < 0):
             raise ValueError("depth bound must be a nonnegative integer or None")
+        if track_overflow and max_depth is None:
+            raise ValueError("overflow tracking requires a finite depth bound")
         self.max_depth = max_depth
         self.table, self.canvas, self.kind = table, tuple(canvas), "local"
         self.members, self.layers, self.arcs = {}, [((OUT, ("V",)),)], []
         deadline = monotonic() + timeout_seconds
         allowed = coaccessible_layers(table, canvas, deadline=deadline)
         memo, requirements, edges, nodes = {}, {}, 0, 1
-        peaks = tuple(depth_effect(group[2])[2] for group in table.groups)
+        peaks = (
+            tuple(depth_effect(group[2])[2] for group in table.groups)
+            if max_depth is not None
+            else ()
+        )
+        self.overflow_arcs = [] if track_overflow else None
         suffix_terms, suffix_closes = [0] * (len(canvas) + 1), [0] * (len(canvas) + 1)
         suffix_terms[-1] = 1  # possible final NUMBER flush; never a closing delimiter
         for p in reversed(range(len(canvas))):
@@ -89,12 +105,14 @@ class StackPrepared:
             if monotonic() > deadline:
                 raise CompilationLimit("suffix preparation deadline; mass unresolved")
         for p, fixed in enumerate(canvas):
-            targets, layer_arcs = {}, []
+            targets, layer_arcs, layer_overflows = {}, [], []
             for q, stack in self.layers[-1]:
-                grouped = {}
-                height = sum(x in (1, 3) for x in stack)
+                grouped, overflows = {}, []
+                height = sum(x in (1, 3) for x in stack) if max_depth is not None else 0
                 if q not in allowed[p]:
                     layer_arcs.append([])
+                    if track_overflow:
+                        layer_overflows.append([])
                     continue
                 groups = table.by_state[q] if fixed is None else (table.by_token[q][fixed],)
                 for gid in groups:
@@ -103,7 +121,8 @@ class StackPrepared:
                     _, target, word, members = table.groups[gid]
                     if target not in allowed[p + 1]:
                         continue
-                    if max_depth is not None and height + peaks[gid] > max_depth:
+                    exceeded = max_depth is not None and height + peaks[gid] > max_depth
+                    if exceeded and not track_overflow:
                         continue
                     key = stack, word
                     if key not in memo:
@@ -122,6 +141,9 @@ class StackPrepared:
                         continue
                     if needed_closes > suffix_closes[p + 1]:
                         continue
+                    if exceeded:
+                        overflows.append((target, needed_closes, gid))
+                        continue
                     state = target, after
                     index = targets.get(state)
                     if index is None:
@@ -135,11 +157,15 @@ class StackPrepared:
                     if len(memo) % 128 == 0 and monotonic() > deadline:
                         raise CompilationLimit("explicit stack deadline; mass unresolved")
                 outgoing = [(b, tuple(gids)) for b, gids in grouped.items()]
-                edges += len(outgoing)
+                edges += len(outgoing) + len(overflows)
                 if edges > min(max_edges, max_terms):
                     raise CompilationLimit("explicit stack arc budget; mass unresolved")
                 layer_arcs.append(outgoing)
+                if track_overflow:
+                    layer_overflows.append(overflows)
             self.arcs.append(layer_arcs)
+            if track_overflow:
+                self.overflow_arcs.append(layer_overflows)
             self.layers.append(tuple(targets))
             memo.clear()  # past-layer parser transitions need not occupy memory
             requirements.clear()
@@ -149,6 +175,9 @@ class StackPrepared:
             finish(q) is not None and consume(stack, finish(q)) == ()
             for q, stack in self.layers[-1]
         )
+        # These prefixes may have no bounded completion but a positive deep tail.
+        if track_overflow:
+            self.prefix_layers, self.prefix_arcs = self.layers, self.arcs
         # Classical backward trimming also applies to the grammar-stack DAG.
         # Retain all valid paths, not only a witness or nonzero model weights.
         live = [set() for _ in self.layers]
@@ -182,7 +211,7 @@ class StackPrepared:
 
 
 class StackPosterior:
-    def __init__(self, prepared, weights):
+    def __init__(self, prepared, weights, *, sums=None):
         if weights.vocabulary_size != prepared.table.adapter.vocabulary_size:
             raise ValueError("weights changed original vocabulary")
         if len(weights.canvas) != len(prepared.canvas):
@@ -190,7 +219,7 @@ class StackPosterior:
         if any(t is not None and t != weights.canvas[p] for p, t in enumerate(prepared.canvas)):
             raise ValueError("weights changed initial fixed original frame")
         self.prepared, self.weights, self.cdf = prepared, weights, {}
-        sums = class_weights(prepared.table, weights)
+        sums = class_weights(prepared.table, weights) if sums is None else sums
         self.leaf = {
             (p, g): sum(sums[p][cid] for cid in prepared.table.local_to_class[g])
             for p, g in prepared.members

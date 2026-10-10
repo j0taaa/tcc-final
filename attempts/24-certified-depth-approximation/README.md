@@ -90,3 +90,25 @@ os18 estados de desenvolvimento existentes, profundidades e tolerâncias.
 A primeira execução verifica se o certificado consegue autorizar alguma
 aproximação útil; ela NÃO confirma rapidez, geração completa ou vantagem
 externa. Se não certificar, não iniciar outra infraestrutura grande.
+
+## Refinamento: primeira ultrapassagem gramatical e continuação abstrata
+
+Os oito critérios anteriores continuam válidos. O comparador reforçado é
+agora o limite de massa descartada na primeira ultrapassagem de d por um
+PREFIXO GRAMATICAL, calculado pelo próprio decoder limitado. Esse controle
+não paga um counter separado. Antes de ampliar, a hipótese distintiva é
+continuar esses prefixos com um counter lexical ponderado: exigir fechamento
+provável, em vez de cobrar massa1 a todo futuro desconhecido. A prova em
+`work/handoff-proof.md` mostra dominância simultânea sobre esse comparador
+e sobre o counter independente, e uma família onde o aperto é ilimitado.
+Essa família é objeto da prova, não benchmark de desempenho.
+
+Essa operação NÃO adiciona uma nova política de commitment ou acerto
+semântico. Preserva a amostra de J_d e melhora o certificado frente a J.
+O custo extra é um DP de counter que ignora tipos e sintaxe somente APÓS
+a primeira ultrapassagem. Abstração de storage, primeira passagem e DP são
+conhecidos; novidade da combinação/aplicação continua sem confirmação.
+Medir contra grammar-hit, suffix-hit, counter-closed e posterior completo.
+Uma vitória contra hit lexical fraco não basta. Oráculos precisam encontrar
+erros na partição de primeira ultrapassagem, inclusive quando ela ocorre
+dentro de um único token que abre E fecha várias estruturas.

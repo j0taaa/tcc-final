@@ -16,6 +16,7 @@ from pathlib import Path
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 
 from .certificate import CounterTable, conditional_error
+from .handoff import OverflowFrontier
 from .posterior import Weights
 from .stack_control import StackPosterior, StackPrepared
 from .table import LexerTable
@@ -33,9 +34,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--capture", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--protocol", type=Path, default=WORK / "diagnostic-protocol.json")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
-    protocol = json.loads((WORK / "diagnostic-protocol.json").read_text())
+    protocol = json.loads(args.protocol.read_text())
     vocabulary = json.loads((args.capture / "vocabulary.json").read_text())
     adapter = CompositionalByteLevelAdapter.from_token_pieces(vocabulary)
     table = LexerTable(adapter)
@@ -85,8 +87,16 @@ def main():
                     max_cells=10_000_000,
                     max_terms=50_000_000,
                     timeout_seconds=protocol["whole_depth_seconds"],
+                    track_overflow=protocol.get("track_overflow", False),
                 )
                 posterior = StackPosterior(prepared, weights)
+                if protocol.get("track_overflow", False):
+                    frontier = OverflowFrontier(prepared, weights)
+                    record["bounds"]["grammar_hit"] = dict(
+                        mass=str(frontier.mass), frontier_states=len(frontier.frontier)
+                    )
+                    upper, stats = frontier.handoff(counter)
+                    record["bounds"]["handoff"] = dict(mass=str(upper), **stats)
                 record["lower_mass"] = str(posterior.mass)
                 record["nodes"] = prepared.graph_nodes
                 record["edges"] = prepared.graph_edges

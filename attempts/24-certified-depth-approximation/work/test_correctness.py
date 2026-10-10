@@ -11,6 +11,7 @@ from math import prod
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 
 from .certificate import CounterTable, conditional_error
+from .handoff import overflow_bound
 from .posterior import Weights
 from .stack_control import StackPosterior, StackPrepared
 from .table import LexerTable
@@ -96,7 +97,7 @@ def enumerate_events(table, weights, depth):
     return accepted, total, tuple(tuple(r) if isinstance(r, list) else r for r in numerators), upper
 
 
-def prepare(table, canvas, depth):
+def prepare(table, canvas, depth, *, track_overflow=False):
     return StackPrepared(
         table,
         canvas,
@@ -105,6 +106,7 @@ def prepare(table, canvas, depth):
         max_cells=100000,
         max_terms=100000,
         timeout_seconds=20,
+        track_overflow=track_overflow,
     )
 
 
@@ -121,12 +123,19 @@ class DepthCertificateCorrectness(unittest.TestCase):
             for depth in range(4):
                 _, total, marginals, upper = enumerate_events(table, weights, depth)
                 result = StackPosterior(prepare(table, canvas, depth), weights)
+                tracked = prepare(table, canvas, depth, track_overflow=True)
+                self.assertEqual(StackPosterior(tracked, weights).total, total)
                 closed, _ = counter.tail(weights, depth)
                 hit, _ = counter.tail(weights, depth, mode="hit")
                 suffix_hit, _ = counter.tail(weights, depth, mode="suffix_hit")
+                grammar_hit, _ = overflow_bound(tracked, weights)
+                handoff, _ = overflow_bound(tracked, weights, counter=counter)
                 self.assertEqual(result.total, total, (canvas, depth))
                 self.assertEqual(closed, Fraction(upper, prod(weights.denominators)))
                 self.assertLessEqual(full.mass - result.mass, closed)
+                self.assertLessEqual(full.mass - result.mass, handoff)
+                self.assertLessEqual(handoff, closed)
+                self.assertLessEqual(handoff, grammar_hit)
                 self.assertLessEqual(closed, hit)
                 self.assertLessEqual(closed, suffix_hit)
                 self.assertLessEqual(suffix_hit, hit)
@@ -185,6 +194,29 @@ class DepthCertificateCorrectness(unittest.TestCase):
         upper, _ = CounterTable(table).tail(weights, 1)
         self.assertLess(upper, Fraction(1, 10**10))
         self.assertEqual(conditional_error(result.mass, upper), Fraction(1, 2))
+
+    def test_first_overflow_bound_and_strict_tightness_family(self):
+        table = LexerTable(CompositionalByteLevelAdapter((b"[[", b"[[,]]", b"[]", b"]]", b" ")))
+        counter = CounterTable(table)
+        for power in (1, 4, 12):
+            r = Fraction(1, 2**power)
+            weights = Weights([[1, 1, 2, 0, 0], [0, 0, 0, float(r), float(1 - r)]], (None, None), 5)
+            prepared = prepare(table, weights.canvas, 1, track_overflow=True)
+            lower = StackPosterior(prepared, weights).mass
+            full = StackPosterior(prepare(table, weights.canvas, None), weights).mass
+            self.assertEqual(lower, Fraction(1, 2) * (1 - r))
+            self.assertEqual(full - lower, Fraction(1, 4) * r)
+            self.assertEqual(overflow_bound(prepared, weights)[0], Fraction(1, 4))
+            self.assertEqual(counter.tail(weights, 1)[0], Fraction(1, 4))
+            self.assertEqual(
+                overflow_bound(prepared, weights, counter=counter)[0], Fraction(1, 4) * r
+            )
+            # No bounded completion exists with this fixed first slot; a deep
+            # tail still exists and must survive post-acceptance graph trimming.
+            fixed = Weights([[1] * 5, [0, 0, 0, float(r), float(1 - r)]], (0, None), 5)
+            tracked = prepare(table, fixed.canvas, 1, track_overflow=True)
+            self.assertEqual(StackPosterior(tracked, fixed).mass, 0)
+            self.assertEqual(overflow_bound(tracked, fixed, counter=counter)[0], r)
 
     def test_utf8_and_remasking_with_original_ids(self):
         table = LexerTable(
