@@ -817,6 +817,18 @@
           "evidence_roots": [
             "attempts/24-certified-depth-approximation/work/evidence"
           ]
+        },
+        {
+          "id": "v8",
+          "source_commit": "a8ce587261cd69bf9a464ba549cd56cc77b9a3a6",
+          "evidence_commit": "a8ce587261cd69bf9a464ba549cd56cc77b9a3a6",
+          "evidence_roots": [
+            "attempts/24-certified-depth-approximation/README.md",
+            "attempts/24-certified-depth-approximation/work",
+            "paper/main.tex",
+            "paper/generated/m44_certified_depth_v1",
+            "output/pdf/tcc-certified-closure.pdf"
+          ]
         }
       ]
     },
@@ -841,6 +853,18 @@
           "evidence_commit": "b831a2d080f17ace8b43f845ff47997c2e355e8f",
           "evidence_roots": [
             "attempts/25-exact-envelope-sampling/work/evidence"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "a8ce587261cd69bf9a464ba549cd56cc77b9a3a6",
+          "evidence_commit": "a8ce587261cd69bf9a464ba549cd56cc77b9a3a6",
+          "evidence_roots": [
+            "attempts/25-exact-envelope-sampling/README.md",
+            "attempts/25-exact-envelope-sampling/work",
+            "paper/main.tex",
+            "paper/generated/m44_certified_depth_v1",
+            "output/pdf/tcc-certified-closure.pdf"
           ]
         }
       ]
