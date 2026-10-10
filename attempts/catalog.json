@@ -713,6 +713,15 @@
             "attempts/22-full-vocabulary-posterior/README.md",
             "attempts/22-full-vocabulary-posterior/work"
           ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "b4f5bb1729c63ad6e3727b9402604cab4cf8cdb5",
+          "evidence_commit": "b4f5bb1729c63ad6e3727b9402604cab4cf8cdb5",
+          "evidence_roots": [
+            "attempts/22-full-vocabulary-posterior/README.md",
+            "attempts/22-full-vocabulary-posterior/work"
+          ]
         }
       ]
     },
@@ -721,7 +730,17 @@
       "title": "Scanner epsilon ponderado com proveniencia de tokens originais",
       "conclusion": "Independent prototype; six tiny original-token mass/marginal/sampler-law/reuse checks pass across12 kernels. Classical epsilon removal, not new parsing theory. Full-cost usefulness and independent confirmation pending.",
       "reading": "attempts/23-canonical-epsilon-posterior/README.md",
-      "versions": []
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "b4f5bb1729c63ad6e3727b9402604cab4cf8cdb5",
+          "evidence_commit": "b4f5bb1729c63ad6e3727b9402604cab4cf8cdb5",
+          "evidence_roots": [
+            "attempts/23-canonical-epsilon-posterior/README.md",
+            "attempts/23-canonical-epsilon-posterior/work"
+          ]
+        }
+      ]
     }
   ]
 }
