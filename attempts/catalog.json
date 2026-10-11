@@ -1463,6 +1463,16 @@
             "attempts/39-known-source-coupling/work/primary-comparison-v2.md",
             "tests/test_known_source_coupling.py"
           ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "02b98f80d33ac64a3506c90f73fc8b0842789b3b",
+          "evidence_commit": "02b98f80d33ac64a3506c90f73fc8b0842789b3b",
+          "evidence_roots": [
+            "attempts/39-known-source-coupling/work/native-inputs-v3.json",
+            "attempts/39-known-source-coupling/work/native-protocol-v3.json",
+            "attempts/39-known-source-coupling/work/native-protocol-v3.md"
+          ]
         }
       ]
     }
