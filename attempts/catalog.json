@@ -1514,6 +1514,16 @@
             "attempts/39-known-source-coupling/work/evidence/stage-adapter-v7.json",
             "attempts/39-known-source-coupling/work/first-step-contract-v6.md"
           ]
+        },
+        {
+          "id": "v8",
+          "source_commit": "d04f8dec8bdf77d0e6912cac3837121f5a63d8e1",
+          "evidence_commit": "d04f8dec8bdf77d0e6912cac3837121f5a63d8e1",
+          "evidence_roots": [
+            "attempts/39-known-source-coupling/work/evidence/phase-info-v7.jsonl",
+            "attempts/39-known-source-coupling/work/evidence/phase-info-v7.metadata.json",
+            "attempts/39-known-source-coupling/work/first-step-erratum-v8.md"
+          ]
         }
       ]
     }
