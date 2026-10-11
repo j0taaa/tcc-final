@@ -37,10 +37,17 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Source35/work/theory-v1.md. Miklos Sections4.2.1/4.2.2 and Hazan/Jaakkola
   Sections3--5/7--8 originals read; exact union/perturbation precedents credited
   in35/work/primary-comparison-v1.md. Original Kannan/Ghosh still unread.
-- [ ] T5501: Attack confidence gaps, aliases, overlap/duplicate terms and the
+- [x] T5501: Attack confidence gaps, aliases, overlap/duplicate terms and the
   language/policy difference with a tiny independent enumeration. No timing
   or neural campaign on this proof family. The meaningful accepted-transition
   application and A34 specific priority remain separate open obligations.
+  `tests/test_commitment_law_counting.py`: one small test PASS0.083s, five
+  LL(1) grammars,528 flag-ranking transcripts,440 ALL-primary-optimum
+  comparisons and five exact CORE posterior recomputations. Source-language
+  expansion is independent of project normalization; expected unions are
+  independently expanded from clauses. No model/timing/novelty evidence.
+  Explicit Ruff check/format pass; entire suite140 tests PASS70.001s AFTER
+  A32 timings and before any A34 native campaign (`make test`).
 
 ## M54 — Expected-work/diversity frontier (written candidate)
 

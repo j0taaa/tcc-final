@@ -64,3 +64,14 @@ outside declared IDs, not silently pruned), literal feasibility/MWPC objectives,
 no EOS or full-trajectory advantage unless separately derived. The native
 upstream currently uses unbounded text gaps in check_valid; the proof isolates
 fully fixed assignment suffixes to avoid using an unwarranted finite-gap claim.
+
+## V2: minimal independent proof-object check
+
+One focused test in `tests/test_commitment_law_counting.py` passes0.083s:
+five actual LL(1) source grammars,528 flag rankings,440 comparisons against
+EVERY maximizing original-token completion, and five exact recomputations
+with the maintained CFG posterior. It includes overlapping/duplicated terms,
+tautology and original aliases. The source language is expanded directly
+without project normalization; expected clause unions are expanded separately.
+This verifies the written specialization, not its novelty or neural utility.
+There is no synthetic performance campaign or new model forward.

@@ -1135,7 +1135,7 @@
     {
       "id": "34-oracle-diversity-frontier",
       "title": "Sharp expected-work/diversity frontier: written candidate",
-      "conclusion": "Written sharp regular p-blind expected-budget minimax frontier; minimal capped reference and four independent rational/payload oracles PASS.139-test suite passes. DeGroot original Sections1--8 read; score/variance/ruin are priors. Wasan1964 full text/Ghosh, specific priority and useful native application unresolved. No neural evidence or publication confirmation.",
+      "conclusion": "Written sharp regular sample-only pair frontier; capped reference and four exact oracles pass. Wasan ORIGINAL already gives s_b/mixing; restricted-output sharpness is the narrower candidate. Written complete-cost theorem includes optimal nonadaptive iid output-count comparator and negative complete-oracle/adaptive-retry objections. Useful native accepted-transition boundary, specific priority and publication significance remain open.",
       "reading": "attempts/34-oracle-diversity-frontier/README.md; TASKS.md#M54",
       "versions": [
         {
@@ -1155,6 +1155,33 @@
             "attempts/34-oracle-diversity-frontier/README.md",
             "attempts/34-oracle-diversity-frontier/work",
             "tests/test_oracle_diversity_frontier.py"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "69e2b44439f07f9ab23f94c4526947e49a7cce44",
+          "evidence_commit": "69e2b44439f07f9ab23f94c4526947e49a7cce44",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/README.md",
+            "attempts/34-oracle-diversity-frontier/work",
+            "tests/test_oracle_diversity_frontier.py"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "35-commitment-law-counting",
+      "title": "Accepted-commit law versus a tractable LL(1) posterior",
+      "conclusion": "Written BEFORE code: explicit #DNF reduction for ideal greedy/MWPC accepted tag, distinct from polynomial witnessed-product posterior. Classical union/projection/random-MAP priors credited. Companion specialization, not novelty/finite-CUDA/native-benefit confirmation.",
+      "reading": "attempts/35-commitment-law-counting/README.md; TASKS.md#M55",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "69e2b44439f07f9ab23f94c4526947e49a7cce44",
+          "evidence_commit": "69e2b44439f07f9ab23f94c4526947e49a7cce44",
+          "evidence_roots": [
+            "attempts/35-commitment-law-counting/README.md",
+            "attempts/35-commitment-law-counting/work"
           ]
         }
       ]
