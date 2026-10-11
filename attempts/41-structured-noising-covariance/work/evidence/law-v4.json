@@ -1,0 +1,50 @@
+{
+  "source_commit": "dfaba87af799dd9e6889546b9b74633db733e79b",
+  "scope": "Eight own offline finite probability/reduction tests. ATOM frontier only; B8 arbitrary-event positive covariance preserved. NO new model heads/training/timing/publication evidence.",
+  "tests": 8,
+  "finite_triples": 5556,
+  "files": {
+    "test_budget.py": "29fd523014f10901cda9ae03dac5208c4c977f5b0422025fc2224237ae3970e8",
+    "budget-frontier-v4.md": "26a6328f4323385b5ac88e04939149b4e6397c564b8a2c4ef98b40f20d65bb2d",
+    "primary-addendum-v4.md": "4151a3c959d6b3c2fa6ed077d0fbbdbc698505d73094d699a3c871d56de8a8f6"
+  },
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "attempts/41-structured-noising-covariance/work/test_budget.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.004981836013030261,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "attempts/41-structured-noising-covariance/work/test_budget.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0044181509874761105,
+      "stdout": "1 file already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "attempts.41-structured-noising-covariance.work.test_noising",
+        "attempts.41-structured-noising-covariance.work.test_reductions",
+        "attempts.41-structured-noising-covariance.work.test_budget"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.782833154022228,
+      "stdout": "",
+      "stderr": "........\n----------------------------------------------------------------------\nRan 8 tests in 1.751s\n\nOK\n"
+    }
+  ]
+}
