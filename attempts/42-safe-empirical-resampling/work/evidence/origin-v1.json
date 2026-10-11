@@ -1,0 +1,17 @@
+{
+  "scope": "Finite floating obstruction search only: not proof, exact sampler, model evidence or utility gate",
+  "source_commit": "3914311e49e65e767a0b00cfab6221ebac95f42f",
+  "command": ".venv/bin/python -m attempts.42-safe-empirical-resampling.work.probe --maximum 20 --output attempts/42-safe-empirical-resampling/work/evidence/numerical-v1.json",
+  "result": "Completed; all population partitions up to20 with at most5 classes; all budgets2..M.16824 cases, no eigenvalue greater than1e-9",
+  "prototype_sha256": "92b487cff84edb23b7232464edcfef54800e35b7daeea30d1fce57902c65481e",
+  "exploratory_scope": "Earlier .cache outputs are preserved separately; no immutable producer commit was recorded at their start. The extended run used the same current blob; first run preceded only cache-decorator spelling cleanup.",
+  "checks": [
+    ".venv/bin/ruff check attempts/42-safe-empirical-resampling/work/probe.py: PASS",
+    ".venv/bin/ruff format --check attempts/42-safe-empirical-resampling/work/probe.py: PASS"
+  ],
+  "files": {
+    "exploratory-a42-numerical-extended-v1.json": "3caff4378032bd24c6d863f0b0afa6397ded9f1b5eb1f6a066a301d573a217d4",
+    "exploratory-a42-numerical-v1.json": "05407b7c6a693f87741eaa30235cb04c5b8948896ef9ab55966c87bf07e8a909",
+    "numerical-v1.json": "3caff4378032bd24c6d863f0b0afa6397ded9f1b5eb1f6a066a301d573a217d4"
+  }
+}

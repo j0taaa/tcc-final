@@ -1,0 +1,39 @@
+{
+  "scope": "Numerical obstruction search, not a proof or external model measurement",
+  "checked": 1638,
+  "maximum": 12,
+  "class_limit": 5,
+  "worst": {
+    "population": [
+      1,
+      5,
+      5
+    ],
+    "budget": 11,
+    "eigenvalue": 9.168013570537425e-16,
+    "vector": [
+      0.5773502691895895,
+      0.5773502691896435,
+      0.5773502691896436
+    ],
+    "joint": [
+      [
+        0.0,
+        0.045454545454545525,
+        0.045454545454545525
+      ],
+      [
+        0.045454545454545525,
+        0.0,
+        0.4090909090909103
+      ],
+      [
+        0.045454545454545525,
+        0.4090909090909103,
+        0.0
+      ]
+    ]
+  },
+  "obstruction": null,
+  "cached_pool_states": 1654
+}

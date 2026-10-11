@@ -36,6 +36,9 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 - [ ] T6201: Minimum adversarial population oracle and closest primary sources.
   Prove or refute the unconditional all-score step before implementing a
   sampler or starting another neural run. Exact/bit calibration cost charged.
+  V1 numerical search16824 M<=20/count-budget cases with<=5 classes has no
+  eigenvalue>1e-9; not proof. Primary SSP/two-phase/CP scopes in42/work/primary-v1.md.
+  Registered producer3914311; frozen rerun and exploratory outputs retained.
 - [ ] T6202: Only after theory/prior survives, select a useful operation and
   competent complete-cost controls. No publication or practical gate yet.
 

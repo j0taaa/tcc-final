@@ -49,3 +49,8 @@ This is a MATHEMATICAL investigation, not a confirmed publication result.
 Own work contains no mutable imports of other attempts. Any reuse is copied
 from the immutable `a84c1ad` tree with hashes. Constructed populations are
 mathematical objects; their positive cases cannot establish practical utility.
+
+V1 finite numerical probe completes16824 populations/budgets, M<=20, at most5
+classes; largest eigenvalue1.33e-15. No general proof, exact sampler or neural
+utility claim. The primary-source scope and original exploratory outputs are
+retained in work; no failed earlier result is overwritten.
