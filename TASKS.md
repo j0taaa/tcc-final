@@ -46,6 +46,10 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Producer61e7b11 completes40 sound bounds. Depth0 has zero shallow mass;
   depths1/2/4 already have an empty deep frontier, and ALL controls give zero.
   Preserve this non-use result; it establishes no preparation advantage.
+- [ ] T4702-v2: Frozen addendum uses ALL18 previously measured development
+  states, all six A24 diagnostic depths and all ten finite variants:1080
+  outcomes expected. Check against archived full mass when available, retain
+  every refusal and zero lower mass. No timings or independent capture.
 - [ ] T4703: Only after a distinctive benefit argument, freeze an equivalent-
   operation comparison including compact CFG, counter+CARS and finite regular
   controls. A25 losses remain intact. Do not execute another large campaign

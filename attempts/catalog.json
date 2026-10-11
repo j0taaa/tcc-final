@@ -900,6 +900,24 @@
           ]
         }
       ]
+    },
+    {
+      "id": "27-finite-closure-certificates",
+      "title": "Continuações finitas por resíduo/potencial para limites de fechamento",
+      "conclusion": "Research prototype only: four independent tiny oracles and forty sound archived-head bounds. Public head has zero shallow mass at depth0 and empty deep frontier at depth>=1; no useful preparation gain, new sampler, independent capture or confirmed publication novelty. Classical counter-residue/Chernoff/OS* principles explicitly credited.",
+      "reading": "attempts/27-finite-closure-certificates/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "61e7b118bec8ec6bf07fa97c32b2eef14d513860",
+          "evidence_commit": "0a7c0b896aafb6ee2fff820da457785d6fd08aec",
+          "evidence_roots": [
+            "attempts/27-finite-closure-certificates/README.md",
+            "attempts/27-finite-closure-certificates/work",
+            "tests/test_finite_closure.py"
+          ]
+        }
+      ]
     }
   ]
 }

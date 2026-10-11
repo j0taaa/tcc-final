@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "stage": "Development feasibility only; previously used captures; no competitive timing",
+  "source_protocol_sha256": "bfdbeb36d7867e9940063059add3801e808c31decbb0c58e595ca29f70be5ece",
+  "capture": ".cache/a22-development-cuda-v1",
+  "cases": [
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16",
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4",
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8",
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16",
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4",
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8",
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16",
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4",
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8",
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16",
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4",
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8",
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16",
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4",
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8",
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-16",
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4",
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8"
+  ],
+  "depths": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "moduli": [
+    2,
+    3,
+    4,
+    8,
+    16
+  ],
+  "potential_exponents": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      4
+    ],
+    [
+      0,
+      1,
+      2,
+      4
+    ]
+  ],
+  "tolerance": "1/1000",
+  "timeout_seconds": 120,
+  "max_cells": 200000,
+  "max_edges": 1000000,
+  "max_terms": 50000000,
+  "reference_rows": "attempts/24-certified-depth-approximation/work/evidence/development-v1/rows.jsonl.gz",
+  "reference_mass_scope": "Archived exact valid masses only when a full control completed; not fresh solver recomputation",
+  "primary": "Necessary-feasibility check only: retain all108 case/depth pairs and all1080 method/parameter outcomes, all refusals and zero lower masses. Compare certifying depths against previously archived grammar-hit/handoff bounds, never report timing, novelty or independent confirmation. A later speed experiment must include strong finite-abstraction controls."
+}
