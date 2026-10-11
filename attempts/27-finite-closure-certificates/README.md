@@ -72,3 +72,19 @@ As referências congeladas em `work/frozen/` são cópias, com hashes e origem,
 e não imports de outra tentativa mutável. A formulação está em
 [`work/theory-v1.md`](work/theory-v1.md) e a revisão em
 [`work/antecedents-v1.md`](work/antecedents-v1.md).
+
+## Diagnóstico v1 executado
+
+Produtor `61e7b118bec8ec6bf07fa97c32b2eef14d513860`, código e contrato
+commitados/enviados antes da execução. Comando:
+
+```bash
+.venv/bin/python -m attempts.27-finite-closure-certificates.work.diagnostic --packet attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip --output attempts/27-finite-closure-certificates/work/evidence/public-head-v1.json
+```
+
+Todos os40 limites respeitam a cauda exata recompilada. Na profundidade0,
+a massa rasa é zero; resíduos e potenciais continuam superestimando a cauda.
+Nas profundidades1/2/4, a cauda é zero e TODOS os métodos a certificam como
+zero. Isso não mostra uma vantagem da nova preparação: a fronteira já está
+vazia. Nenhum forward, ganho semântico, timing competitivo ou corpus novo.
+Não usar este resultado como confirmação de utilidade/publicação.

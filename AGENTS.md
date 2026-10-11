@@ -159,7 +159,9 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   mantendo24 como protagonista confirmado de consulta.
 - A27 investiga o custo de preparação do fechamento depois do primeiro
   overflow, usando resíduos ou potenciais em lugar de todas as alturas.
-  Há quatro oráculos pequenos e uma formulação escrita; não há novo sampler,
+  Há quatro oráculos pequenos, uma formulação escrita e40 limites corretos
+  no mesmo head público. Neste head a fronteira já é vazia para d>=1; todos
+  os métodos certificam zero, sem ganho demonstrado. Não há novo sampler,
   timing competitivo ou forward independente. Separabilidade one-counter2019
   já usa resíduos e Chernoff/OS* são antecedentes centrais. A hipótese deve
   ser descartada se não houver consequência própria relevante. A meta de

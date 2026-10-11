@@ -41,10 +41,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   These are consequences of classical abstractions, not confirmed priority.
   `make check` passes and the complete98-test suite passes38.918s. No Rust,
   maintained solver, historical scientific result or formal source changed.
-- [ ] T4702: Freeze the diagnostic source before running the declared public
+- [x] T4702-v1: Freeze the diagnostic source before running the declared public
   full-V replay at ALL depths/moduli/potentials. No new forwards or timing gate.
-  Preserve every bound, including loose/no-use cases, and diagnose whether the
-  approach merits a stronger algorithm rather than another small known lemma.
+  Producer61e7b11 completes40 sound bounds. Depth0 has zero shallow mass;
+  depths1/2/4 already have an empty deep frontier, and ALL controls give zero.
+  Preserve this non-use result; it establishes no preparation advantage.
 - [ ] T4703: Only after a distinctive benefit argument, freeze an equivalent-
   operation comparison including compact CFG, counter+CARS and finite regular
   controls. A25 losses remain intact. Do not execute another large campaign
