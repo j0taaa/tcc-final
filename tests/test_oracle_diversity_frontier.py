@@ -58,6 +58,28 @@ def excursion_coeff(r, h):
 
 
 class OracleDiversityFrontierTests(unittest.TestCase):
+    def test_barrier_three_closed_cap_law_and_work_polynomials(self):
+        for cap in range(2, 14):
+            groups = defaultdict(lambda: [0, 0])
+            for bits in itertools.product((False, True), repeat=cap):
+                first, second, used = pair(iter(bits).__next__, bool, barrier=3, max_draws=cap)
+                row = groups[sum(bits)]
+                row[0] += first and second
+                row[1] += used
+            level = cap // 2
+            # Both sides are polynomials of degree <=cap. Exact agreement at
+            # cap+1 distinct points determines them, beyond a random grid.
+            for k in range(cap + 1):
+                p = F(k, cap)
+                z = p * (1 - p)
+                j11 = sum(c[0] * p**j * (1 - p) ** (cap - j) for j, c in groups.items())
+                cost = sum(c[1] * p**j * (1 - p) ** (cap - j) for j, c in groups.items())
+                self.assertEqual(p**2 - j11, z**2 * sum((z**j for j in range(level - 1)), F()))
+                self.assertEqual(cost, 3 - (2 * z**level if cap % 2 else z ** (level - 1)))
+                if 0 < p < 1:
+                    eta = (p**2 - j11) / min(p**2, (1 - p) ** 2)
+                    self.assertGreaterEqual(eta, F(1, 3) * (1 - F(4) ** (1 - level)))
+
     def test_cap_identities_for_every_small_transcript_and_every_probability(self):
         # Group by total input ones. Matching Bernstein coefficients proves
         # the marginal identity for ALL p, not only the grid below.

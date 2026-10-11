@@ -4,10 +4,12 @@ import argparse
 import hashlib
 import itertools
 import json
+import os
 import pickle
 import random
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
 
 import numpy as np
 import torch
@@ -35,12 +37,24 @@ class Tokenizer:
 
 
 class Head:
-    def __init__(self, device):
+    def __init__(self, device, valid=False):
         self.device = torch.device(device)
+        self.valid = valid
 
     def __call__(self, tokens):
         logits = (
-            torch.tensor([0.2, 0.1, 2.2, -2, -1, -torch.inf, -torch.inf], device=self.device)
+            torch.tensor(
+                [
+                    2.2 if self.valid else 0.2,
+                    0.1,
+                    0.2 if self.valid else 2.2,
+                    -2,
+                    -1,
+                    -torch.inf,
+                    -torch.inf,
+                ],
+                device=self.device,
+            )
             .expand(1, tokens.shape[1], -1)
             .clone()
         )
@@ -64,7 +78,7 @@ def streams(device):
     )
 
 
-def probe(device, seed, temperature, max_resamples):
+def probe(device, seed, temperature, max_resamples, steps=2, valid=False):
     device = torch.device(device)
     grammar = CFG.from_text("S -> lexNumber", "S").to_normal_form()
     lexical = compile_lex_map({"lexNumber": "(0|1)"})
@@ -77,7 +91,7 @@ def probe(device, seed, temperature, max_resamples):
             grammar,
             lexical,
             prompt_len=1,
-            steps=2,
+            steps=steps,
             gen_length=2,
             block_length=2,
             mask_id=5,
@@ -89,9 +103,9 @@ def probe(device, seed, temperature, max_resamples):
     torch.manual_seed(seed)
     random.seed(seed)
     np.random.seed(seed)
-    expected = tuple(event(row) for row in factory(Head(device)))
+    expected = tuple(event(row) for row in factory(Head(device, valid)))
     previous = streams(device)
-    model = InitialHeadCache(Head(device))
+    model = InitialHeadCache(Head(device, valid))
     candidates = []
     rng = random.Random(seed + 340000)
 
@@ -132,6 +146,8 @@ def probe(device, seed, temperature, max_resamples):
         seed=seed,
         temperature=temperature,
         max_resamples=max_resamples,
+        steps=steps,
+        valid_proposals=valid,
         first_equal=True,
         rng_isolated=True,
         native_events=len(actual),
@@ -148,12 +164,40 @@ def main():
     args = parser.parse_args()
     if args.output.exists():
         raise SystemExit("refuse to overwrite evidence")
-    rows = [
-        probe(*x) for x in itertools.product(("cpu", "cuda:0"), range(3), (0.0, 0.5, 1.0), (1, 8))
-    ]
+    environment = {
+        "CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH": "1",
+        "CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH": "2",
+        "CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT": "1",
+        "CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER": "1",
+    }
+    covers = []
+    original_cover = native._try_regular_cover_batch_commit_llada
+
+    def observe_cover(*args, **kwargs):
+        result = original_cover(*args, **kwargs)
+        covers.append(len(result))
+        return result
+
+    # Observer delegates literally and is used on reference AND live paths.
+    # These are FAKE checks, never competitive timings of this wrapper.
+    with (
+        patch.dict(os.environ, environment),
+        patch.object(native, "_try_regular_cover_batch_commit_llada", observe_cover),
+    ):
+        rows = [
+            probe(*x)
+            for x in itertools.product(
+                ("cpu", "cuda:0"), range(3), (0.0, 0.5, 1.0), (1, 8), (1, 2), (False, True)
+            )
+        ]
+    if not covers or not any(covers):
+        raise AssertionError("regular-cover SUCCESS path was not exercised")
     result = dict(
         scope="FAKE heads, actual unmodified native generator, no neural/timing claim",
         torch=torch.__version__,
+        native_env=environment,
+        regular_cover_calls=len(covers),
+        regular_cover_successes=sum(bool(x) for x in covers),
         rows=rows,
         sources={
             p.name: hashlib.sha256(p.read_bytes()).hexdigest()
@@ -169,6 +213,7 @@ def main():
                 checks=len(rows),
                 first_equal=sum(r["first_equal"] for r in rows),
                 fake_forwards=sum(r["fake_forwards"] for r in rows),
+                regular_cover_successes=sum(bool(x) for x in covers),
             )
         )
     )

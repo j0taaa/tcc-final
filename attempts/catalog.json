@@ -1176,6 +1176,16 @@
             "attempts/34-oracle-diversity-frontier/work",
             "tests/test_oracle_diversity_frontier.py"
           ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "9f8bcad171664ebacd862e14f38884e60b3a4eac",
+          "evidence_commit": "9f8bcad171664ebacd862e14f38884e60b3a4eac",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/README.md",
+            "attempts/34-oracle-diversity-frontier/work",
+            "tests/test_oracle_diversity_frontier.py"
+          ]
         }
       ]
     },

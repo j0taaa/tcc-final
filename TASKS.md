@@ -92,6 +92,17 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   54 fake head forwards.34/work/evidence/native-fake-v5.json; source draft
   remains independent in v4. No regular-cover SUCCESS-path coverage yet
   (fixture transfers one token per step); no neural benefit claimed.
+  Stronger144-case replay also passes decisions, but COVERAGE gate refuses:
+  one-digit grammar cannot accept min-batch2. All rows/observer/source hashes
+  are preserved in34/work/evidence/native-cover-fixture-refusal-v6.json.
+  Extend ONLY the independent fake grammar to exercise a genuine positive
+  batch. Do not simulate that branch or call a flag activation coverage.
+- [x] T5405: Written exact r3 finite-cap law/cost and parity dominance BEFORE
+  its added oracle. n12 guarantees341/1024 of maximal binary improvement,
+ 1023/1024 of the expected-budget3 frontier, expected draws<=3. Odd cap has
+  identical full output law but higher call count. Not hardware/quality/novelty
+  evidence.34/work/barrier-three-cap-v6.md; added16,380 input transcripts and
+ 102 rational polynomial determinations PASS; all five A34 tests0.183s/Ruff.
 
 ## M53 — Categorical race repair: reduction gate before implementation
 
