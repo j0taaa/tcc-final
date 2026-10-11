@@ -1,0 +1,64 @@
+{
+  "source_commit": "df64be3e949d5ec713494da59a5146685260d2a1",
+  "sources": {
+    "phase_info.py": "f382d5d088a73c586578c1a3b5f0afa81c6eb2acf396106216b5d6fc8bc57021",
+    "native_stage.py": "c5065a3553465f16f67f096cf984b67214a7e0f847a41599331c15c5b56c2911",
+    "native_state.py": "dc4122629de62293c28af50e7013e1f240193b18294b120e7f40f6dd2fb368a8",
+    "native_pilot.py": "ddd5bd7d9a2d44af010ad480e35dfed2a7ad201345322532cceff54b9245d75b",
+    "native_task.py": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b",
+    "source.py": "b6bd081c6e46ddf0689b15fa067b37670dca0381bcca86a34ba069d988e160f6",
+    "first-step-contract-v6.md": "23cd25f3b481efdb2b097c810c907cc405924fa5ee51129d630749fc4a2d5a2a",
+    "native-inputs-v3.json": "609c007cc01537cb84a70b13b17193184edabd9ad530127ff30131a5f292af89",
+    "native-protocol-v3.json": "4b24b370721781de08c36cd8fb92825cb114ef171b2acf2ba69d5aecbfab8381",
+    "evidence/native-v4.jsonl": "8001d08ace1ad9311349932676a78c74401e08d77beecc48e2d5d52d5dfe60e8"
+  },
+  "config": {
+    "schema": 3,
+    "inputs_sha256": "609c007cc01537cb84a70b13b17193184edabd9ad530127ff30131a5f292af89",
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "native_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+    "cpu_threads": 4,
+    "gen_length": 128,
+    "block_length": 128,
+    "steps": 16,
+    "temperature": 1.0,
+    "max_resamples": 256,
+    "max_prompt_tokens": 1024,
+    "replicates": 2,
+    "seed": 395011,
+    "methods": [
+      "pool4",
+      "early_pool",
+      "adaptive4",
+      "mean3",
+      "iid2",
+      "derange2",
+      "seed_half",
+      "iid3",
+      "novelty3"
+    ],
+    "native_env": {
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH": "1",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH": "2",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT": "1",
+      "CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER": "1"
+    },
+    "scope": "new full-native prefix functional/development pilot; NOT independent statistical victory",
+    "source_size": 4294967296,
+    "key": "leftmost newly fixed generated position and original token ID at FIRST native yield; NO_PROGRESS otherwise; no root-delay/filter"
+  },
+  "scope": "Existing-input information/functional audit, NO performance/semantic gate",
+  "hardware": "NVIDIA GeForce RTX 3080 Ti",
+  "torch": "2.8.0+cu128",
+  "load": {
+    "wall": 68.25103273999412,
+    "cpu": 25.948380403
+  },
+  "grammar_setup": {
+    "wall": 0.023307729978114367,
+    "cpu": 0.004831195000001287
+  },
+  "native_sha256": "d99195fe7cc3080acfc608a2e6d70b7567564d533ee8fb1cb79e9d534637340c",
+  "frames": []
+}

@@ -87,6 +87,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   `39/work/evidence/stage-adapter-v7.json`. Fixed old-input/ALL-source
   functional/information audit is frozen before new native calls; its seed
   bank is development and is not an unbiased population-frequency estimate.
+  Actual v7 audit FAILS at FIRST source: one extra forward, observer crosses
+  i=0 because upstream resets loop variable j to batch-row0. Preserve error
+  and metadata, `39/work/first-step-erratum-v8.md`; toy omitted that clobber.
+  Correct proposal counts pinned successful-fallback yield sites, not j;
+  requires new regression/producer freeze before another model call. Neither
+  informative classes nor zero first-step-helper forwards are confirmed.
 
 ## M58 — Empirical categorical coupling and pointwise cost optimum
 
