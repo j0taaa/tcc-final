@@ -1008,7 +1008,7 @@
     {
       "id": "31-sufficient-state-coupling",
       "title": "Sufficient-state reunions: covariance identity and native gate",
-      "conclusion": "Four exhaustive oracles and216 fake native replays pass. Written all-K mean-variance and K=2 coverage comparison versus full history; no neural usefulness or priority confirmed.",
+      "conclusion": "Exact mathematical/replay gates pass. Real272-row one-seed pilot preserves192 first trajectories and ties all competent controls; full development incomplete, no publication/usefulness confirmed.",
       "reading": "attempts/31-sufficient-state-coupling/README.md; TASKS.md#M51",
       "versions": [
         {
@@ -1028,6 +1028,17 @@
             "attempts/31-sufficient-state-coupling/work",
             "tests/test_state_coupling.py",
             "tests/test_anchored_stratification.py"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "0a27a24830185d7f34ba1ddd57f8d73b237f429b",
+          "evidence_commit": "20643495d5c587b446b431602ec07271c12bb010",
+          "evidence_roots": [
+            "attempts/31-sufficient-state-coupling/work",
+            "tests/test_state_coupling.py",
+            "tests/test_anchored_stratification.py",
+            "tests/test_external_json_task.py"
           ]
         }
       ]
