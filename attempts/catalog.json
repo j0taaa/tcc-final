@@ -1424,6 +1424,17 @@
             "attempts/38-empirical-pool-coupling/work/native-audit-v7.md",
             "attempts/38-empirical-pool-coupling/work/semantic-coarsening-v7.md"
           ]
+        },
+        {
+          "id": "v8",
+          "source_commit": "35f4ea6a50acf821494fc095929ff08d556652e8",
+          "evidence_commit": "35f4ea6a50acf821494fc095929ff08d556652e8",
+          "evidence_roots": [
+            "attempts/38-empirical-pool-coupling/work/evidence/law-v8.json",
+            "attempts/38-empirical-pool-coupling/work/evidence/checks-v8.json",
+            "attempts/38-empirical-pool-coupling/work/primary-comparison-v8.md",
+            "tests/test_semantic_coarsening.py"
+          ]
         }
       ]
     }
