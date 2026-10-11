@@ -194,3 +194,13 @@ os64 candidatos válidos e a melhoria exata pequena do evento de IDs da fonte.
 A garantia geral é sobre iid do mesmo decoder, com distribuição individual
 preservada. Estratificação/unranking são clássicos; não há ganho universal de
 latência, nova aplicação neural iterativa26 ou prioridade acadêmica confirmada.
+
+### 29 — reparo estacionário de colisões
+
+[29-collision-stationary-coupling](29-collision-stationary-coupling/README.md)
+preserva P/Q distintos e deriva não deterioração de pass@2 para qualquer
+verificador, usando MH clássico e uma proposta adicional só em colisões.
+Cinco oráculos independentes passam. O teto matemático de todo reparo
+restrito a colisões é quadrático para eventos raros, enquanto controles
+diretos atingem ganho linear. Não promover como protagonista; nenhuma
+medição/execução neural ou novidade suficiente para publicação confirmada.

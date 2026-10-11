@@ -1725,3 +1725,24 @@ fornecer várias estruturas a um verificador/ranqueador sem piorar sua chance
 de sucesso frente ao mesmo decoder iid. A implementação neural iterativa26,
 novidade significativa, relevância industrial medida e revisão humana continuam
 ausentes. O artigo mantém24 e acrescenta o teorema geral no apêndice.
+
+
+## 2026-10-11 — A29: colisoes e uma objeção matemática antes de benchmarks
+
+A transformação de um par independente P/Q mantém o primeiro e só muda o
+segundo em colisões, por um kernel estacionário para R proporcional a P·Q.
+Prova escrita fornece marginais, forma de Dirichlet e não deterioração de
+pass@2 para todo verificador. MH com proposta P aceita pela razão Q(z)/Q(x):
+uma proposta extra no máximo, sem novo normalizador/circuito. Cinco oráculos
+passam, incluindo361 leis pareadas, todos2888 verificadores e9747 scores;
+JSON de IDs originais/aliases e contraexemplo de diferentes políticas futuras.
+Não houve forward ou benchmark. Neal2024,CARMS2021,Ren2019,Arithmetic
+Sampling2023,STMC2020 e DAST2026 são antecedentes conferidos; nenhum princípio
+clássico é declarado invenção.
+
+A revisão adversarial deriva ganho<=min(d(E),D-d(E)) para TODA reparação
+que só altera colisões. Para evento raro binário de massa epsilon, o teto é
+epsilon², contra epsilon(1-epsilon) de um acoplamento direto competente.
+Assim uma implementação correta/universal sobre iid não basta para esta
+direção atender ao objetivo. Não gastar uma campanha procurando uma vitória
+favorável; preservar29 e procurar operação distinta/diferença adicional.

@@ -27,6 +27,24 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M49 — Stationary collision coupling: theory-first adverse audit
+
+- [x] T4900: Delimit eight criteria, confer primary antithetic/Neal/CARMS,
+  arithmetic/STMC/No-Free-Lunch antecedents. Written stationary collision law
+  preserves heterogeneous P/Q, dominates iid pass@2 for every verifier;
+  normalizer-free MH reference requires at most one extra P proposal.
+  Classical Dirichlet/MH principles are not claimed as discoveries.
+- [x] T4901: Five independent all-ticket oracles pass0.553s;361 paired
+  distributions,2888 verifiers,9747 rational scores; original JSON aliases,
+  bad-weight/lazy behavior, wrong naive reroll and different-future counterexample.
+  Tiny reference is isolated; no new model forward or timing experiment.
+  Whole offline suite:109 tests pass39.529s; `make check` passes75 archives.
+- [x] T4902: Derive an upper bound for EVERY collision-only stationary repair:
+  gain<=min(d(E),D-d(E)). Rare binary outcome epsilon gives at most epsilon²,
+  versus epsilon(1-epsilon) for a competent direct coupling. Do not enlarge
+  this branch or report publication success from its iid dominance alone.
+  Novelty and a sufficiently useful main contribution remain open.
+
 ## M48 — Streamed neural/grammar boundary: a new bounded research gate
 
 - [x] T4800: A28 has eight criteria, written original-ID joint law and bit-memory

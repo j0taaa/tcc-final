@@ -134,8 +134,8 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem104 testes, incluindo as duas regressões reais de timer
-  e seis oráculos da fronteira amostrável A28.
+  A suíte atual tem109 testes, incluindo as duas regressões reais de timer,
+  seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
   cada trajetória individual. Há prova escrita de pass@K nunca inferior a K
@@ -200,6 +200,14 @@ Use [TASKS.md](TASKS.md) para tarefas/evidências atuais e
 preservadas. O [caderno científico](docs/research/contribution-plan.md) registra
 antecedentes, provas, objeções e decisões. Histórico não é instrução para
 restaurar código retirado ou insistir em uma hipótese refutada.
+
+- A29 preserva uma referência racional de reparo estacionário de colisões
+  para leis P/Q distintas. Cinco oráculos passam; há prova escrita de
+  não deterioração de pass@2/toda pontuação, via MH/Dirichlet clássicos.
+  A auditoria matemática limita TODO reparo que só altera colisões a ganho
+  quadrático no caso de alternativa rara, contra ganho linear de controles
+  diretos. Não promover como protagonista, nem iniciar uma campanha extensa
+  só por vencer iid. Nenhum forward/timing ou prioridade confirmados.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 
