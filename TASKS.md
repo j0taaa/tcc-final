@@ -27,6 +27,21 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M55 — Accepted-commit law versus a tractable LL(1) posterior
+
+- [x] T5500: Eight criteria and explicit written #DNF reduction BEFORE code.
+  Original-ID aliases enforce confidence ordering; greedy/MWPC accepted-tag
+  probability counts a union, while the witnessed product posterior sums
+  distinct words in polynomial work. This is a companion specialization,
+  not a new model-counting principle or claimed native finite-CUDA theorem.
+  Source35/work/theory-v1.md. Miklos Sections4.2.1/4.2.2 and Hazan/Jaakkola
+  Sections3--5/7--8 originals read; exact union/perturbation precedents credited
+  in35/work/primary-comparison-v1.md. Original Kannan/Ghosh still unread.
+- [ ] T5501: Attack confidence gaps, aliases, overlap/duplicate terms and the
+  language/policy difference with a tiny independent enumeration. No timing
+  or neural campaign on this proof family. The meaningful accepted-transition
+  application and A34 specific priority remain separate open obligations.
+
 ## M54 — Expected-work/diversity frontier (written candidate)
 
 - [x] T5400: Eight criteria BEFORE implementation. Independent written proof
@@ -38,11 +53,20 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   results, particularly Wasan1964/Ghosh1987; resolve specific priority and
   relevance before expanding. DeGroot ORIGINAL Sections1--8 and key printed
   formulas84/91 are now read; score/variance principles explicitly precede us.
-  Wasan original abstract includes noninteger budgets; full text unresolved.
+  Wasan ORIGINAL13 pages now read; Section2.1 already gives s_b via randomized
+  adjacent fixed sample sizes. Frontier SHARPNESS for the restricted pair
+  output, not that formula/mixing, is the candidate distinction. An apparent
+  erroneous strictness clause is separately audited, not a publication claim.
+  Wu/Wasan1991 original and Ghosh/Purkayastha2010 authored review read; original
+  Ghosh1987 remains unavailable.34/work/primary-reading-v3.md.
   Absence from search is not proof of novelty. Four independent law tests pass.
 - [ ] T5402: Establish a cheap useful native structured transition application,
   compare probability-aware coupling and more-output iid with COMPLETE costs.
   Do not promote a restricted-oracle theorem alone as fulfilled publication goal.
+  Written34/work/full-cost-v3.md proves a same-EXPECTED-budget comparison with
+  ALL nonadaptive iid output counts, and preserves contrary complete-oracle
+  and adaptive verified-retry cases. Class signal and cheap-prefix conditions
+  are NOT asserted as measured model properties.
 - [x] T5403: Written deterministic-count cap preserves the original second
   payload on truncation, with a uniform spectral loss certificate. Tiny
   sampler and four independent tests PASS0.159s AFTER A32 timings completed.

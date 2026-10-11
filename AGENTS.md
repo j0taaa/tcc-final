@@ -294,11 +294,28 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   O benefício normalizado é minimax sobre todo p, não apenas benchmark justo.
   Não prova latência total, prioridade ou utilidade neural. DeGroot ORIGINAL
   Sections1--8/formulas84/91 já foram lidos; score/variância são antecedentes.
-  Wasan1964 (abstract) também trata orçamentos não inteiros; full text/Ghosh
-  ainda pendentes. Referência mínima com cap determinístico e certificado
+  Wasan1964 ORIGINAL13 páginas foi lido: a expressão de mistura s_b já
+  aparece em2.1, NÃO reivindicar sua invenção. Sharpness para outputs de
+  par restrito é a diferença candidata. Wu/Wasan1991 e a revisão autoral
+  Ghosh/Purkayastha2010 foram lidos; o original Ghosh1987 ainda falta.
+  Aparente falha de estrita desigualdade em Wasan é auditoria separada,
+  não conquista dLLM. Referência mínima com cap determinístico e certificado
   espectral passa4 oráculos independentes;139 testes totais passam. Nenhuma
   execução neural A34. Probabilidades conhecidas, mais saídas, custo completo
   e sinal da classe são objeções obrigatórias. Novidade/publicação abertas.
+  V3 escreve custo completo e comparação com TODOS planos iid de contagem
+  não adaptativa no mesmo orçamento esperado. Se cada draw já gera/verifica
+  toda resposta, iid3 vence; retry sequencial com verificador disponível
+  também pode vencer. A fronteira de transição barata e sinal semântico
+  permanecem requisitos REAIS, não propriedades presumidas do modelo.
+- A35 é uma ponte ESCRITA antes de código: lei de tag realmente aceita por
+  greedy/MWPC pode contar #DNF, mesmo com sintaxe LL(1) e posterior produto
+  polinomial de palavras com testemunho. Miklos4.2.2 já constrói união de
+  termos em gramática regular; não reivindicar contagem/projeção como nova.
+  Hazan/Jaakkola já distingue leis de argmax e Gibbs. A família é objeto de
+  prova, não benchmark/modelo de regras Booleanas nem EPIC/CUDA exato.
+  Não prova que todo acoplador precisa calcular p. Novidade própria e
+  aplicação nativa útil continuam abertas; não ampliar este companion.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

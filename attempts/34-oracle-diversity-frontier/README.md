@@ -72,5 +72,20 @@ pequenos, equações de absorção racionais, payloads originais e validação p
 Enumeração verifica12.264 transcripts binários,66 sistemas racionais de
 absorção e5 orçamentos fracionários,5.832 transcripts de payloads/aliases
 e todos os eventos pequenos. Suíte inteira139 testes passa67.511s; Ruff
-passa. São checks de correção, não medição de novidade/utilidade. Wasan1964 é outro antecedente central identificado antes da expansão;
-o abstract foi lido, mas seu texto integral continua pendente.
+passa. São checks de correção, não medição de novidade/utilidade. Na versão
+v2 somente o abstract de Wasan1964 tinha sido lido; esse fato histórico não
+é a fronteira atual de leitura.
+
+## V3: fonte primária e custo antes da expansão nativa
+
+[primary-reading-v3.md](work/primary-reading-v3.md) credita a expressão s_b
+e mistura de orçamentos JÁ existentes em Wasan1964; apenas sharpness para
+outputs de par restrito permanece diferença candidata. O aparente
+contraexemplo de estrita desigualdade é objeção auditada, não descoberta
+publicável declarada. Original Ghosh1987 e prioridade específica continuam
+abertos.
+[full-cost-v3.md](work/full-cost-v3.md) compara TODOS planos iid de contagem
+não adaptativa no MESMO orçamento esperado. Preserva explicitamente a
+vitória iid3 quando draws já geram outputs completos e a objeção de retry
+verificado. Fronteira barata de transição realmente aceita e sinal da classe
+continuam necessários; não foram demonstrados em dados neurais A34.

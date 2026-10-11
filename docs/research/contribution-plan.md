@@ -1929,3 +1929,29 @@ inspecionados. Score, Wald, variância/trabalho e Rao--Blackwell são CLÁSSICOS
 Não foi identificado o frontier de outputs discretos nessas seções, mas
 Wasan1964 (abstract inclui orçamento não inteiro)/Ghosh e relevância prática
 ainda impedem confirmar novidade suficiente. Nada é promovido ao núcleo.
+
+## 2026-10-11 — A34 fonte próxima completa e custo; ponte A35 antes de código
+
+Wasan1964 ORIGINAL13 páginas foi recuperado no arquivo público da CMU e lido:
+a mistura m/m+1 e expressão s_b já estão em2.1. Não são novidades. A diferença
+candidata fica em SHARPNESS do par de outputs, com refinamento inteiro.
+Wu/Wasan1991 original e revisão autoral Ghosh/Purkayastha2010 foram lidos;
+não substituir o Ghosh1987 original por review. Aparente contraexemplo à
+estrita desigualdade de Wasan é objeção separada, não produto final dLLM.
+
+A34v3 contabiliza todas as transições e duas continuações. Prova condição de
+ganho frente a TODOS planos iid de contagem não adaptativa no MESMO orçamento
+esperado. Se o draw já termina/verifica toda resposta, três iid vencem o par;
+retry adaptativo com verificador disponível também pode vencer. Não ocultar
+estas objeções. A aplicação exige fronteira barata REAL e sinal da classe,
+ainda não demonstrados em heads A34.
+
+A35 antes de código explicita por que posterior LL(1) não é a lei do
+commitment. Testemunhos distintos tornam sintaxe não ambígua; a decisão da
+tag antes de selecionar testemunho conta UNIÃO #DNF. Aliases originais
+garantem gaps de confiança, greedy e ótimo MWPC mantêm o mesmo evento.
+Miklos4.2.1/4.2.2 original já dá a união regular; Hazan/Jaakkola3--5/7--8 já
+distingue probabilidade de argmax e Gibbs. É uma ponte candidata especializada,
+não nova teoria de contagem, benchmark favorável ou uso de dLLM para regras
+Booleanas rejeitado em15/16. Exatidão de massas difícil não prova que toda
+coordenação necessita calcular p, nem elimina bons controles aproximados/raw.
