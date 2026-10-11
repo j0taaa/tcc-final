@@ -80,6 +80,13 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Entire139-test suite passes67.511s (`make test`); Ruff passes. `34/work/bounded-runtime-v2.md`, `ruin.py`
   and `tests/test_oracle_diversity_frontier.py`. Wasan1964's original abstract
   adds a close noninteger sequential-budget predecessor; full text pending.
+- [ ] T5404: Minimal native FIRST-EVENT payload prototype, before any neural
+  campaign. Eight criteria34/work/native-contract-v4.md. Initial FAKE draft
+  refuses cpu/seed0/T0/rejection-budget1 because it compared wall timestamps
+  as decisions; IDs/rejected positions/status agree. Source/failure preserved
+  in34/work/evidence/native-draft-failure-v4.json and native-draft-audit-v4.md.
+  Audit actual wall limits and separate diagnostic times BEFORE refining.
+  No successful native replay or neural benefit claimed yet.
 
 ## M53 — Categorical race repair: reduction gate before implementation
 

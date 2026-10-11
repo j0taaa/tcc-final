@@ -1,0 +1,74 @@
+{
+  "scope": "FAILED FAKE replay draft, before any neural head",
+  "case": [
+    "cpu",
+    0,
+    0.0,
+    1
+  ],
+  "exception": "Traceback (most recent call last):\n  File \"<stdin>\", line 7, in <module>\n  File \"/home/jota/projects/tcc-final/attempts/34-oracle-diversity-frontier/work/probe_native_v4.py\", line 126, in probe\n    raise AssertionError(\"literal first full native trajectory changed\")\nAssertionError: literal first full native trajectory changed\n",
+  "details": {
+    "seed": 0,
+    "temperature": 0.0,
+    "max_resamples": 1,
+    "expected": [
+      [
+        [
+          [
+            6,
+            5,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            0.0014522710116580129
+          ]
+        ],
+        false
+      ]
+    ],
+    "actual": [
+      [
+        [
+          [
+            6,
+            5,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            0.00033524195896461606
+          ]
+        ],
+        false
+      ]
+    ],
+    "initial": [
+      [
+        [
+          6,
+          5,
+          5
+        ]
+      ],
+      [
+        [
+          1,
+          0.00033524195896461606
+        ]
+      ],
+      false
+    ],
+    "used": 3
+  },
+  "passed": [],
+  "sources": {
+    "probe_native_v4.py": "370f002699d88a8fdd18875fb9b11a7af736709ff76a9e9de6545d1dcc9913e6",
+    "ruin.py": "f53bff994647be5188432baa7dd280fd843c0e33e9a56558cf1f718d2a90fea0",
+    "native_transition_v4.py": "06831108b492ff4ee97b7fbee8f4c563145bfebc09181166f7e7e7022abb6b35"
+  }
+}
