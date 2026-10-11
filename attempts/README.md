@@ -257,3 +257,23 @@ V2 preserva referência independente/quatro oráculos e o corolário de1/13
 da maior redução de colisões para TODA distribuição canônica. O controle
 clássico por quantis conhecidos atinge o ótimo; geração/avaliação completa
 continua requisito de custo. Sem novos forwards ou vitória prática/publicação.
+
+
+### 38 — empirical coupling and complete native pilot
+
+[38-empirical-pool-coupling](38-empirical-pool-coupling/README.md) preserves
+all56 native pilot rows,169 actual calls/1885 forwards and35 incomplete
+outcomes. Adaptive saves calls against the same-law pools, but iid2 is
+cheaper with equal observed pass2. No general EPIC or publication win.
+Sharp candidate frontier/cost proofs and semantic-coarsening laws have
+12 focused independent checks;159 full tests pass. All versions are kept.
+
+### 39 — known finite source and opaque decoder decisions
+
+[39-known-source-coupling](39-known-source-coupling/README.md) starts with
+proofs and eight criteria BEFORE code. Known source addresses, adaptive
+queries and cloning are admitted; robust cap4 atom/query-cost optima are
+finite, with a strong cheap seed-derangement control. Native first-yield
+coordination could preserve every marginal/terminal-verifier guarantee
+with equal expected neural forwards; full physical cost remains mandatory.
+No prototype, neural output, timing or publication claim yet.

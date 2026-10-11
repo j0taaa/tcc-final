@@ -1346,7 +1346,7 @@
     {
       "id": "38-empirical-pool-coupling",
       "title": "Empirical categorical coupling and pointwise cost optimum",
-      "conclusion": "V6 native producer frozen after protocol: nine exact law/control/key checks and156 full tests pass; CPU/CUDA RNG adapter validated without model forwards. Sharp candidate cap4 budget frontier and finite-M gap written; private helpers independently copied by hash. Specific priority and meaningful native full-cost application remain open. ALL56 live pilot still pending; not statistical or broad EPIC superiority.",
+      "conclusion": "V8 preserves the complete56-row native pilot:169 actual calls/1885 forwards, no errors, all35 incomplete outcomes retained. Adaptive saves queries versus same-law pools but iid2 is cheaper with equal observed pass2; no general benefit confirmed. Three semantic-coarsening checks and159 full tests pass. Sharp oracle-budget/pointwise-cost/coarsening claims remain candidates; priority and publication open.",
       "reading": "attempts/38-empirical-pool-coupling/README.md; TASKS.md M58",
       "versions": [
         {
@@ -1437,6 +1437,13 @@
           ]
         }
       ]
+    },
+    {
+      "id": "39-known-source-coupling",
+      "title": "Known finite randomness and robust opaque-label query optimality",
+      "conclusion": "Written before implementation: known source addresses are included, robust finite cap4 atom/query-cost optima and full-source covariance derived; cap3 cannot improve seed derangement robustly. First-yield native corollary would preserve all terminal verifier coverage at equal expected neural forwards, with every auxiliary physical cost still charged. No prototype, model output, timing or publication priority confirmed.",
+      "reading": "attempts/39-known-source-coupling/README.md; TASKS.md M59",
+      "versions": []
     }
   ]
 }

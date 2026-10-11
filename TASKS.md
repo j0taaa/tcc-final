@@ -27,6 +27,24 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M59 — Known source addresses, opaque labels and complete native costs
+
+- [x] T5900: BEFORE prototype/forwards write39/README's eight criteria and
+  finite-source theory/native-work corollary. Source indices/size are known;
+  controls may choose them adaptively and clone first. Robust cap4 atom
+  optimum is hypergeometric, cap3 cannot improve uniform seed derangement,
+  and worst-placement lookup cost is sharp4-2c2+c3. NOT pointwise optimum
+  for each map or infinite-domain minimax. Full-score covariance includes
+  within-class WITHOUT-replacement correction; no incorrect iid Wald use.
+  First native yield plus a common immutable head would give equal expected
+  neural forwards and pass2 never worse than iid EPIC2, with ALL auxiliary
+  sampling/parsing/copies/memory still charged. No native adapter/result yet.
+- [ ] T5901: Independently check finite population joint laws, marginal seed
+  preservation, all verifier scores, interpolation obligations, weighted
+  prefix-omission/coarsening and strongest reductions. Include seed
+  derangement counterexamples; preserve38 native losses. Specific priority
+  and useful full-cost magnitude remain OPEN.
+
 ## M58 — Empirical categorical coupling and pointwise cost optimum
 
 - [x] T5800: Eight criteria, full-payload operation, explicit law/covariance,

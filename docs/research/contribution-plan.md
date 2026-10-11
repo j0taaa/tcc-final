@@ -2137,3 +2137,22 @@ independently; the real-score-variance counterexample is preserved. Hashes
 and commands in law-v8.json/checks-v8.json. No new model output/timing.
 Primary Luo2025 slides were read, not the unavailable2026 manuscript.
 Priority/publication and a compelling native full-cost benefit remain open.
+
+
+## A39: bring known source information into the lower-bound model
+
+2026-10-11. NEW independent folder/proofs/eight criteria BEFORE code.
+A38 cannot pretend visible uniform seeds are an anonymous unknown oracle.
+A39 admits all source-address adaptive queries/clones and derives a robust
+hypergeometric cap4 atom optimum and sharp worst-placement expected-query
+count4-2c2+c3. Cap3 cannot robustly beat two-query uniform seed derangement;
+finite-grid interpolation proof uses an explicitly triangular positive
+matrix. Full-score covariance includes distinct-within-class correction.
+Seed derangement can beat C4 for some scores; its counterexample is kept.
+Coarsening Boolean coverage and pathwise query omissions are proved;
+without-replacement costs are NOT treated by an iid Wald shortcut.
+The first native yield/head-sharing corollary gives equal EXPECTED neural
+forwards and all terminal verifier coverage no worse than iid EPIC2, under
+its exact original finite-seed/sufficient-state premises. Sampling/parsing/
+copies/memory remain charged. No prototype, forward, timing, priority or
+publication confirmation exists at this first written gate.

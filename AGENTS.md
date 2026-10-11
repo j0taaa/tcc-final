@@ -448,6 +448,17 @@ restaurar código retirado ou insistir em uma hipótese refutada.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 
+A39 começa em pasta independente, somente ESCRITA antes de protótipo/modelo:
+fonte uniforme FINITA com índices conhecidos, labels do decoder opacos.
+O bound robusto cap4 inclui escolhas adaptativas de índices/clones do primeiro;
+cap3 não melhora atomicamente derangement de seeds em pior placement. Custo
+sharp é minimax de placement por contagens, não pointwise de TODO mapa.
+Covariância de scores completos tem correção WITHOUT replacement dentro das
+classes; C4 não domina derangement para todos scores (contraexemplo mantido).
+Corolário de primeiro yield nativo/head comum exige auditar zero forwards
+auxiliares; igual esperança de forwards não é igualdade de wall/CPU/memória.
+Nenhum protótipo, novo forward, timing, prioridade ou publicação confirmado.
+
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma
 correção pode referenciar respostas existentes e explicar o que muda ou
