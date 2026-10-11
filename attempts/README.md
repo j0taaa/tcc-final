@@ -42,6 +42,7 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [30-lazy-native-stratification](30-lazy-native-stratification/README.md) | Estratificação assíncrona do ruído nativo; correção pequena validada, utilidade/novidade abertas |
 
 | [31-sufficient-state-coupling](31-sufficient-state-coupling/README.md) | Reunião de estados suficientes; prova comparativa e correção pequena, utilidade/novidade abertas |
+| [32-native-oracle-antithetics](32-native-oracle-antithetics/README.md) | Orçamento ótimo de classes e custo minimax; antecedentes próximos, uso/novidade ainda abertos |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`

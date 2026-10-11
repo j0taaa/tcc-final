@@ -1,0 +1,11 @@
+test_compact_pool_every_rng_branch_matches_full_walk_kernel (tests.test_native_oracle_walk.NativeOracleWalkTests.test_compact_pool_every_rng_branch_matches_full_walk_kernel) ... ok
+test_compact_pool_validation_and_constant_class_original_aliases (tests.test_native_oracle_walk.NativeOracleWalkTests.test_compact_pool_validation_and_constant_class_original_aliases) ... ok
+test_every_small_bitstring_conditional_frechet_and_four_draw_identity (tests.test_native_oracle_walk.NativeOracleWalkTests.test_every_small_bitstring_conditional_frechet_and_four_draw_identity) ... ok
+test_full_original_payload_law_aliases_all_events_and_scores (tests.test_native_oracle_walk.NativeOracleWalkTests.test_full_original_payload_law_aliases_all_events_and_scores) ... ok
+test_stronger_local_coupling_can_worsen_terminal_coverage (tests.test_native_oracle_walk.NativeOracleWalkTests.test_stronger_local_coupling_can_worsen_terminal_coverage) ... ok
+test_total_budget_validation_and_unreachable_tail (tests.test_native_oracle_walk.NativeOracleWalkTests.test_total_budget_validation_and_unreachable_tail) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.650s
+
+OK

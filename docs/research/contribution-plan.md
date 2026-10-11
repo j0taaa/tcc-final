@@ -1831,3 +1831,22 @@ Fábricas de Bernoulli/Barker/Dirichlet e estratificação são antecedentes.
 Investigar vantagem comparativa com chamadas ao sampler delimitadas, sem
 forwards extras. Draws de ruído do head congelado não são novas avaliações
 da dLLM. Nenhuma novidade/publicabilidade foi estabelecida pela pergunta.
+
+## 2026-10-11 — A32: antecedente exato encontrado, reforço do custo
+
+V1 prova B_n(p), n<=3 sem ganho, n4 ótimo;216 replays FALSOS. V2 generaliza
+e fornece pool compacto competente de mesma distribuição/memória. Seis
+novos oráculos passam,133 testes67.804s,432 primeiras trajetórias FALSAS
+preservadas. Existe contraexemplo de piora final ao aumentar energia local;
+não alegar monotonicidade global em n. Sem heads novos para32.
+
+A leitura primária de Nacu–Peres2005 Section6/Proposition24 encontrou a
+redução EXATA B_n=Q_n-p. Walk/Bernstein/reflexão NÃO são novidades. V3 tenta
+localizar avanço próprio no custo: prova escrita de minimax esperado
+floor(n/2)+1 entre todos factories p-blind adaptativos que preservem primeira
+bit e marginal e atinjam B_n.54 árvores finitas otimizadas:36 certificados
+duais racionais exatos,18 reconstruções inconclusivas; zero contraexemplos
+numéricos. Não prova otimalidade pontual geral nem prioridade/publicabilidade.
+Registros e fonte anteriores conservados em32/work/evidence/stopping-tree-v3.
+O contexto da comparação continua conhecido-p mais forte e integração real
+com custos inteiros, cuja utilidade ainda precisa ser medida honestamente.

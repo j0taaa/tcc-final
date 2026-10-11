@@ -78,3 +78,41 @@ Classe binary cumula CDF do head somente para escolher uma partição antes
 do ruído; essa estimativa NÃO é usada como probabilidade verdadeira na troca.
 Cada troca devolve o vetor de ruído original inteiro do row, sem cortar cauda.
 Suíte offline127 testes passa65.861s; Ruff explícito dos novos fontes passa.
+
+## Refinamentos v2/v3, preservando v1
+
+`work/theory-v2.md` e `work/walk.py` estendem o orçamento finito sem adicionar
+FAIL ou aproximar a lei original. Referência compacta de pool em `work/pool.py`
+tem a MESMA lei ótima e memória O(V), também: não usamos um pool ingênuo
+como único adversário. O walk economiza calls, mas o pool vetorizado pode
+ser fisicamente mais rápido. Seis novos oráculos passam1.650s: TODOS bits
+até n=12, marginais completas/aliases e RNGs do pool, custo e um contraexemplo
+de que mais energia local pode PIORAR cobertura final. Toda suíte133 passa
+67.804s.432/432 replays FAKE CPU/CUDA preservam primeira trajetória/RNG,
+312 encontros1024 draws auxiliares1956 calls FALSAS. Fontes/SHAs e todos
+registros em `work/evidence/native-fake-v2.json`; nada é modelo neural novo.
+
+A revisão encontrou um antecedente MAIS próximo: Nacu–Peres2005,
+Section6/Proposition24, realiza por first passage o polinômio Q_n, e
+B_n=Q_n-p. Isto é uma redução exata. A construção de caminhada/Bernstein
+NÃO é novidade nossa. `work/antecedents-v2.md` explicita o que foi lido,
+incluindo slides primários2025 e acesso ainda ausente ao manuscrito2026.
+
+As oito perguntas foram reavaliadas em `work/minimax-v3.md` ANTES da otimização
+de árvores. Candidata mais forte: para TODO método p-blind adaptativo com
+orçamento n que preserve B1, marginal p e atinja B_n para todo p, o custo
+esperado minimax é EXATAMENTE floor(n/2)+1, atingido pela referência. Não é
+comparação apenas contra pool fixo. Nem lower bound para métodos que sabem p,
+velocidade EPIC, dados balanceados com side information ou novidade conferida.
+
+O adversário `work/stopping_tree_lp.py` otimiza TODAS árvores pequenas sob
+coeficientes da lei para TODO p (não só a marginal numérica observada).
+54 casos n=2..10/p predefinidos: zero contraexemplos numéricos,36 certificados
+duais RACIONAIS verificados exatamente,18 reconstruções não certificadas.
+Isto NÃO prova otimalidade pontual para qualquer n/p, nem prioridade.
+Comando opt-in pinado SciPy1.16.3/NumPy2.4.6 e fonte preservados em
+`work/evidence/stopping-tree-v3`. Sem novos heads/ganho competitivo para32.
+
+Continua faltando benefício prático independente e novidade específica
+suficiente. A resposta não é esconder Nacu–Peres nem executar um benchmark
+favorável: primeiro fechar o resultado próprio e o comparador competente.

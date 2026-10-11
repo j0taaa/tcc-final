@@ -1,0 +1,6 @@
+Downloading scipy (34.2MiB)
+Downloading numpy (16.1MiB)
+ Downloaded numpy
+ Downloaded scipy
+Installed 2 packages in 10ms
+{"cases": 54, "numerical_counterexamples": 0, "exact_dual_certificates": 36, "errors": 0}

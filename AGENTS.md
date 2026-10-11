@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem127 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem133 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -257,6 +257,17 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   neurais, vantagem prática ou novidade/publicabilidade confirmadas para32.
   Benchmark completo/controles fortes/protocolo independente ainda pendentes;
   estratificação/Barker/Bernstein/Dirichlet são antecedentes conhecidos.
+  V2 generaliza o walk para orçamento n; seis novos oráculos e432 replays
+  FALSOS passam, com controle pool compacto de mesma lei/memória. Mais energia
+  local pode PIORAR cobertura final: contraexemplo preservado. Antecedente
+  Nacu–Peres2005 Section6/Proposition24 foi encontrado DEPOIS: B_n=Q_n-p é
+  redução exata, portanto walk/Bernstein não são invenção. Refinamento escrito
+  v3 prova custo esperado minimax floor(n/2)+1 contra TODOS os factories
+  p-blind adaptativos que atinjam B_n para todo p. Não abrange known-p/side
+  information, nem prova prioridade ou velocidade do decoder. LP de54 árvores
+  finitas tem36 certificados duais exatos/18 reconstruções inconclusivas, sem
+  contraexemplo numérico; não prova otimalidade pontual geral. Nenhum head
+  neural novo para32 até aqui. Novidade/benefício real continuam pendentes.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

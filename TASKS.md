@@ -48,6 +48,21 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 - [ ] T5203: Real complete-neural development and only passing independent
   confirmation; meaningful quality/cost advantage and defensible originality.
   Do not equate a sharp restricted-oracle theorem or fake replay to this gate.
+- [x] T5204: V2 bounded streaming generalization and competent compact pool;
+  six independent oracles1.650s,133-test suite67.804s.432/432 FAKE first-path
+  replays,312 shared nodes1024 auxiliary draws1956 fake calls. Adverse local
+  coupling/terminal-coverage example blocks global monotonicity. All evidence
+  under32/work/evidence; no neural or competitive result.
+- [x] T5205: Primary Nacu–Peres2005 Section6/Proposition24 is an EXACT
+  construction antecedent (B_n=Q_n-p); do not claim walk/Bernstein invention.
+  Written v3 strengthens to minimax expected work d=floor(n/2)+1 among ALL
+  adaptive p-blind n-bounded factories attaining B_n for all p. Priority still
+  OPEN.54 finite stopping-tree optimizations,36 exact dual certificates,
+ 18 inconclusive rational reconstructions, zero numerical counterexamples.
+  `uv run --no-project --python 3.11 --with scipy==1.16.3 --with numpy==2.4.6
+  python -m attempts.32-native-oracle-antithetics.work.stopping_tree_lp
+  --output .cache/a32-stopping-tree-v3/results.json --max-budget 10`.
+  No claim of pointwise expected optimality for arbitrary n/p or publication.
 
 ## M51 — Sufficient-state coupling: comparative theorem before neural work
 
