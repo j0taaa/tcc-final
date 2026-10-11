@@ -89,3 +89,27 @@ K=2 do EPIC real com heads FALSOS;978 chamadas falsas incluindo controles,
 hashes de produção conferem. O hook v1 e seus resultados não foram alterados;
 o refinamento fica em `native_noise_v2.py`/`anchored_ledger.py`.
 Não há ganho neural medido nem confirmação de publicação.
+
+## V3: piloto neural externo concluído, sem vitória
+
+Protocolo e inputs4038857, runner0a27a24, antes dos heads. Os16 pedidos BFCL
+foram selecionados por hash do input, não pela resposta. EPIC público mais
+recente continua no commit pinado; execução nativa completa, regular cover
+batch/exact/DFA-free e recuperação habilitados para todos os controles.
+
+Todos272 registros estão em `work/evidence/external-pilot-v3/`:528 trajetórias,
+11.615 novos forwards LLaDA8B NF4,528 JSONs válidos,192 comparações integrais
+da primeira trajetória sem divergência. As20 reuniões posteriores não
+produziram vantagem de acerto nesta seed. Iid/root/history/state têm15/16
+pass@2 em ambas configurações de temperatura0.5 e16/16 em ambas de1.
+Controle determinístico15/16.
+
+Não são os quatro seeds de desenvolvimento; o gate completo permanece
+incompleto e a confirmação não foi acionada. A decisão de investigar outra
+operação é registrada sem alegar impossibilidade nas seeds não executadas.
+Nenhum caso foi removido/trocado, nenhuma perda foi apagada. O piloto teve
+breve sobreposição de make check e pequeno screen NumPy; os timings são
+diagnósticos, não confirmação competitiva. O audit é gerado dos dados,
+inclusive status/IDs/output/rejeições/recovery/queries/forwards.
+Suíte offline completa123 passa66.444s. Novidade/publicação continuam abertas;
+este resultado não satisfaz o objetivo científico do usuário.

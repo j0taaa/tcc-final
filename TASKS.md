@@ -50,12 +50,24 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   literal matches (fake heads),978 total calls,168/432 complete candidates,
  156 shared nodes. Sources/SHAs:work/evidence/native-anchor-v2.json.
   Conditional resampling is cited as antecedent, not invented.
-- [ ] T5104: Freeze external schema-only structured-argument protocol before
+- [x] T5104: Freeze external schema-only structured-argument protocol before
   new neural forwards: competent root-only/history/native iid controls, all
   statuses, first output preservation, full cost/cache, independent holdout.
+  Input/protocol commit4038857; native runner0a27a24. All658 inputs audited
+  before gold retrieval;16 development/64 independent inputs selected by hash.
 - [ ] T5105: Execute development and only a passing candidate confirmation;
   assess genuine incremental novelty and practical magnitude, not weak
   dominance alone. No publication suitability or EPIC victory yet.
+  One-seed pilot COMPLETE272 records/528 trajectories/11,615 NEW LLaDA forwards.
+ 528 valid JSONs;192 literal first-trajectory comparisons have no mismatch
+  in IDs/output/status/rejections/recovery/query counts.20 extra meetings.
+  All four configurations TIE iid/root/history in pass@2:15/16 at0.5 and
+ 16/16 at1. Deterministic15/16. Full four-seed development and independent
+  confirmation NOT executed, NOT refuted by this one seed. Diagnostic timing
+  overlaps make check briefly; not clean latency evidence. Raw rows/producer
+  hashes/audit under31/work/evidence/external-pilot-v3. Whole offline suite123
+  passes66.444s. A distinct black-box class repair is being investigated
+  before spending further neural compute.
 
 ## M50 — Lazy native stratification: mathematical and integration gates
 

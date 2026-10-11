@@ -1,0 +1,88 @@
+{
+  "phase": "pilot-development",
+  "torch": "2.8.0+cu128",
+  "hardware": "NVIDIA GeForce RTX 3080 Ti",
+  "sources": {
+    "native_noise_v3.py": "c17d634620a54a20fa30387135cc167163f6097411c5e3dbf89f6760d6ce5eca",
+    "native_noise_v2.py": "ec01b8ecbd268f4fdd4ec5e736985cc80df13e8ec895e600acba881e3d4186f7",
+    "probe_native.py": "d40661a67f5f8ea3d5c93bae8ad7fb773519502bfcfa56a5d7a1c8d16cfeb412",
+    "native_noise.py": "5b47aaf31ff73f2891eab47d1e85bc8ab4b587a01e13652f4ebffe8b3b9d31ef",
+    "ledger.py": "cfa3e47adc87514171c4a6ed321090f5722a4beb421fe3e96bf9900beb70e969",
+    "official_checker.py": "6410ddb64ebdc4c9ea7b3149cbfec209deb9584c74b6136066950b02f46da17b",
+    "batch.py": "124cb8d6d144168973b657c1488d19aa21e1dbe1e409cd9312b100fe81f7dee1",
+    "schema_task.py": "4e850eb4d7cd0aac1da2ba5481b12ab2befe62b2d4ad522f1ca24eb587d5c6cc",
+    "native_experiment.py": "2cfaee3dbbc22c39541998c760d5877cda2ae55cd83ceb44558feabf611f6aee",
+    "anchored_ledger.py": "9b94c54ac9110d2b261ef62a1748c27d912b8d98806f872a24d9f9d7eabc1f75",
+    "probe_anchor.py": "bae8438472446bade81160dc50e2d914b68410513cb82f2c8540922f924b88f6"
+  },
+  "config": {
+    "schema": 1,
+    "phase": "development-before-confirmation",
+    "inputs_sha256": "13bd1198d9d98f1fb85ea6d3e4fc8dfc16e1e73ce2c4fca5ab99e4e04bbdf73b",
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "native_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+    "quantization": "nf4-double-bfloat16",
+    "cpu_threads": 4,
+    "gen_length": 64,
+    "block_length": 64,
+    "steps": 32,
+    "max_resamples": 256,
+    "max_prompt_tokens": 1024,
+    "methods": [
+      "iid",
+      "root",
+      "history",
+      "state"
+    ],
+    "temperatures": [
+      0.5,
+      1.0
+    ],
+    "coordinates": [
+      "first",
+      "entropy"
+    ],
+    "development_seeds": [
+      311001,
+      311002,
+      311003,
+      311004
+    ],
+    "confirmation_seeds": [
+      312001,
+      312002,
+      312003,
+      312004,
+      312005,
+      312006,
+      312007,
+      312008
+    ],
+    "K": 2,
+    "torch_seed_second_offset": 10000000,
+    "ledger_seed_offset": 20000000,
+    "cache_bytes": 2147483648,
+    "native_env": {
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH": "1",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH": "2",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT": "1",
+      "CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER": "1"
+    },
+    "recovery": "native autocomplete_valid for incomplete output, deterministic completion; count all costs/statuses",
+    "metric": "official pinned Python BFCL AST correctness; duplicate JSON keys rejected, optional values use official checker",
+    "candidate_selection": "state variant must improve macro pass@2 by>=0.02 over matching root/history/iid development and have>=one post-divergence shared sufficient-state node; maximum minimum gain, ties lower full mean wall then first then temperature0.5; no relaxation",
+    "independent_gate": "same frozen state configuration versus ALL matched iid/root/history; absolute macro pass@2 gain>=0.02, paired 95% case-cluster bootstrap lower bound>0 (10000 draws, seed319999); full wall and CPU per correct request no greater than each control; failures included",
+    "additional_controls": "native deterministic temperature0 first response with its full costs; same task, counted separately on quality/cost frontier, no theorem against a different marginal law",
+    "no_claims": [
+      "publication acceptance",
+      "global wall-time dominance",
+      "semantic truth from syntax",
+      "coverage dominance over history forK>2"
+    ],
+    "pilot": "first development seed across ALL selected16 inputs and ALL state configurations and matched history/root/iid; first-output bitwise equality, all statuses retained; if no extra reunions, may stop only as negative screening, not confirmation",
+    "refusal_policy": "input/model/grammar/resource refusals and incomplete/invalid JSON remain records; never replace selected cases or tune on heldout gold",
+    "cost_policy": "all grammar/prompt preparation, cache cold/warm, CPU/GPU transfers, model queries and actual new forwards, noise/table coordination, parsing/recovery/verification/output included; unique-cache counts cannot stop other labels"
+  },
+  "scope": "real LLaDA NF4 + native EPIC; all outputs/statuses; no heldout confirmation"
+}

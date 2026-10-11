@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "producer_commit": "0a27a24",
+  "protocol_commit": "4038857",
+  "phase": "one-seed pilot; full four-seed development NOT completed",
+  "records": 272,
+  "requests": 16,
+  "trajectories": 528,
+  "new_neural_forwards": 11615,
+  "post_divergence_meetings": 20,
+  "statuses": {
+    "valid_json": 528
+  },
+  "configs": [
+    {
+      "temperature": 0.5,
+      "coordinate": "first",
+      "pass2_counts": {
+        "iid": 15,
+        "root": 15,
+        "history": 15,
+        "state": 15
+      },
+      "denominator": 16
+    },
+    {
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "pass2_counts": {
+        "iid": 15,
+        "root": 15,
+        "history": 15,
+        "state": 15
+      },
+      "denominator": 16
+    },
+    {
+      "temperature": 1,
+      "coordinate": "first",
+      "pass2_counts": {
+        "iid": 16,
+        "root": 16,
+        "history": 16,
+        "state": 16
+      },
+      "denominator": 16
+    },
+    {
+      "temperature": 1,
+      "coordinate": "entropy",
+      "pass2_counts": {
+        "iid": 16,
+        "root": 16,
+        "history": 16,
+        "state": 16
+      },
+      "denominator": 16
+    }
+  ],
+  "literal_first_comparisons": 192,
+  "literal_first_mismatches": [],
+  "timing_limitation": "Diagnostic pilot: make check ran concurrently about 7 seconds; tiny NumPy literature screen also overlapped. Not clean speed confirmation. All rows preserved.",
+  "decision": "No observed coverage gain in any configuration. No positive development selection; independent confirmation NOT triggered. Full development remains unexecuted; this is not a four-seed refutation. Investigate a different coordination operation before further neural expense.",
+  "deterministic_correct": 15,
+  "files": {
+    "run.log": "8048b3d19d3eb1b48b7e8c221b5c45830a9630ca59ff29c0dffd920b3b55b2da",
+    "results.metadata.json": "9b0fd3f41673886e9dc305f5b1160037db318780e3df8e4cdcd2ab602e41703d",
+    "results.jsonl": "a7e45377b8a259ecbf16ac48436c61642379d7ca556db10725569823a6a6bb4e",
+    "offline-tests.log": "8f4f20175fe7f55ddd1ef6eafe0e431a30073cec01987413d1a36e01e01d4984"
+  }
+}

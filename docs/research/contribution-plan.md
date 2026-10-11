@@ -1812,3 +1812,22 @@ no resumo porque seu único ramo está explicitamente desabilitado por False
 na fonte pinada; mudar a fonte invalidaria essa auditoria. Nenhuma medição
 neural ou afirmação de ganho real. Conditional systematic/residual resampling
 de Chopin/Singh2015 é antecedente confirmado, não prioridade nossa.
+
+## 2026-10-11 — A31 piloto externo: preservação confirmada, utilidade ausente
+
+Inputs/protocolo4038857 antecedem gabaritos e novos forwards; runner0a27a24.
+Todos272 registros/528 trajetórias preservados,11.615 novos forwards LLaDA
+NF4.192 comparações integrais da primeira resposta passam,20 reuniões extras.
+Cobertura empata nos quatro recortes:15/16 a0.5,16/16 a1; determinístico15/16.
+Não há vitória. Quatro seeds planejadas e confirmação não foram executadas;
+não concluir sua falha por uma seed. Não retunar casos ou gates. Timings
+diagnósticos tiveram breve sobreposição de check/screen NumPy, explicitamente
+não usados como confirmação de velocidade.
+
+Uma hipótese mecânica é estratificar uma coordenada crua que pouco afeta o
+vencedor. A nova pergunta, antes de implementação extensa: coordenação da
+ordem COMPLETA com a lei finita nativa preservada, sem normalizador aproximado?
+Fábricas de Bernoulli/Barker/Dirichlet e estratificação são antecedentes.
+Investigar vantagem comparativa com chamadas ao sampler delimitadas, sem
+forwards extras. Draws de ruído do head congelado não são novas avaliações
+da dLLM. Nenhuma novidade/publicabilidade foi estabelecida pela pergunta.
