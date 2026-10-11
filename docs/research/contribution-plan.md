@@ -2079,3 +2079,19 @@ efetivamente lido: factories categóricos e custo/Peskun já são temas antigos.
 O mínimo pontual4-2c+s3 é a diferença candidata, ainda sem prioridade
 confirmada. Corolário escrito liga o kernel a uma transição original inteira
 e suas continuações adaptativas; não houve novo head/campanha/adapter medido.
+
+## 2026-10-11 — A38 v3: fronteira exata para todos os samplers adaptativos
+
+Antes de código da mistura, `38/work/minimax-frontier-v3.md` escreve o novo
+resultado: sob cap4 e teto médio uniforme b entre2 e4, a melhor fração
+garantida do ótimo informado de diversidade canônica é(b-2)/8. O lower bound
+inclui clones do primeiro e paradas adaptativas, não apenas maximizadores
+de v2. Simetrização finita, coeficientes multivariados e ocupação de calls
+ligam o padrão2+1+1 ao custo; leis uniformes/heavy-diffuse são objetos de
+PROVA, não benchmarks. Mistura meia-iid/meia-v2 atinge1/8 com teto médio3.
+
+Domínio tem arbitrariamente muitas chaves; para domínio fixo vale a correção
+finita registrada, não o minimax limite sem ressalva. Resultado permanece
+candidato: falta prioridade específica, auditoria adversarial, oráculo da
+mistura e demonstração de uso com custo completo. Controles informados e
+iid3 permanecem legítimos na aplicação. Nenhum novo forward ou promoção.

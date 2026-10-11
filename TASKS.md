@@ -59,6 +59,19 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   state/RNG. This is WRITTEN, not a new verified EPIC adapter or measured
   quality/latency win. `primary-comparison-v2.md` credits actual Dice
   Enterprise readings and informed all-score controls. Priority remains OPEN.
+- [x] T5803: BEFORE budgeted code/model campaign, write the NEW minimax
+  frontier `38/work/minimax-frontier-v3.md` and re-answer all eight criteria.
+  Candidate theorem: mean budget b in[2,4], hardcap4, universal unknown law,
+  literal first and full marginal preservation imply optimal uniform
+  canonical-diversity fraction(b-2)/8. Includes adaptive stops and FIRST
+  clones, not merely v2's nonfirst-index atom-maximizers. Countably unbounded
+  allowed keys; explicit finite-M bound, no exact fixed-vocabulary claim.
+  No new prototype, native adapter, model forwards, timings or priority
+  confirmation yet. Proof distributions are NOT favorable neural benchmarks.
+- [ ] T5804: Audit v3 stopping-time/symmetrization/Bernstein obligations,
+  investigate the closest original lower bounds, then validate the minimal
+  half-mixture law independently. Only after a plausible scientific/use gate
+  freeze a full-cost native protocol; do not inherit closed A32/A34 losses.
 
 ## M57 — Complete-output canonical coupling: written application gate
 

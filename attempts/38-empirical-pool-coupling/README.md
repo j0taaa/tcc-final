@@ -91,3 +91,43 @@ com covariância não positiva para TODOS scores; não enfraquecê-los.
 uma transição nativa inteira. Não implementa/revalida um adaptador EPIC,
 não mede efeito semântico e não confirma velocidade, revisão humana ou
 publicabilidade. O artigo principal não foi promovido por esses oráculos.
+
+## V3 — fronteira minimax, antes de novo código ou campanha
+
+As oito respostas acima permanecem, com estas mudanças explícitas:
+
+1. **Uso:** duas propostas originais de uma transição aceita ou geração
+   completa, com diversidade canônica garantida e avaliação sem viés. Uma
+   continuação não precisa manter os mesmos próximos logits. O adaptador e
+   o benefício depois do custo completo ainda precisam ser demonstrados.
+2. **Diferença candidata:** `work/minimax-frontier-v3.md` demonstra uma
+   fronteira exata de benefício/orçamento para TODOS os algoritmos universais
+   adaptativos de cap4, incluindo retornar/clonar o primeiro payload. Isto é
+   mais forte que o mínimo de custo entre maximizadores de v2. Ainda verificar
+   prioridade e consequência útil; uma prova genérica pequena pode ser
+   insuficiente como protagonista de um artigo sobre dLLMs/GLCs.
+3. **Escolha:** com orçamento esperado máximo `b` entre2 e4, a maior fração
+   garantida do ótimo informado de diversidade é `(b-2)/8`. Em `b=3`, mistura
+   meia-iid2/meia-v2 atinge1/8, ótimo no contrato. Controles iid3 e informados
+   NÃO são excluídos da avaliação prática por esta definição.
+4. **Matemática:** prova por coeficientes multivariados, simetrização finita,
+   ocupação de chamadas e dois limites de leis construídas, SEM benchmarks.
+   Domínio admite arbitrariamente muitas chaves; há bound explícito finito.
+   Não afirmar que um comprimento/vocabulário fixo tem o mesmo minimax exato.
+5. **Teste:** auditar esse lower bound antes de implementar a pequena mistura.
+   Depois verificar por enumeração a lei exata, custo e todas as propriedades
+   anteriores. Nenhum protocolo neural congelado ainda; não medir e depois
+   escolher métrica/classe para proclamar sucesso.
+6. **Custo:** `3-c+s3/2` chamadas inteiras para a mistura meia-iid. Teto4,
+   duas saídas, sem garantia de menor wall time. O comparador inferior admite
+   paradas precoces e clones, eliminando uma restrição artificial de índice.
+7. **Objeção:** informações de logits, ordenação de tickets, probabilidades
+   conhecidas e cap maior podem vencer. A conexão nativa deve preservar
+   estado/RNG e contabilizar rejeição/falha; vantagem de diversidade não
+   garante ganho semântico grande nem supera gerar/verificar iid3 baratos.
+8. **Artigo:** falta prioridade específica do novo lower bound, validação
+   independente da álgebra, implementação/oráculo da mistura e aplicação com
+   consumidor/custo plausíveis. Nenhuma revisão humana ou conquista EPIC.
+
+Este addendum foi escrito ANTES de código da mistura e de novos forwards.
+V1/v2 e seus registros continuam preservados, com as afirmações originais.

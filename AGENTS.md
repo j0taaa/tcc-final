@@ -407,6 +407,14 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   factories categóricos e analisa custo/Peskun sob contratos próprios.
   Corolário de continuação adaptativa é ESCRITO, não adaptação EPIC medida.
   A candidata é o bound pontual sharp, com prioridade/efeito útil abertos.
+  V3 escreve ANTES de nova implementação uma fronteira minimax mais forte:
+  fração garantida ótima(b-2)/8 sob cap4 e orçamento médio uniforme b em[2,4],
+  contra TODOS samplers desconhecendo P, inclusive clones do primeiro e
+  paradas adaptativas. Chaves possíveis arbitrariamente numerosas; bound
+  finito explícito, não minimax exato para vocabulário/comprimento fixo.
+  Mistura meia-iid atinge1/8 no teto médio3. Prioridade, auditoria do novo
+  lower bound e aplicação prática permanecem abertas. Não confundir este
+  contrato de oracle com vitória sobre decoders que usam logits/tickets.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 
