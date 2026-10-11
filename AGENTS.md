@@ -791,3 +791,8 @@ não têm obstrução, mas NÃO são prova, sampler exato ou uso neural. V1 e
 explorações preservadas. A garantia condicional não elimina a flutuação da
 média do pool. Nenhuma campanha neural é justificada; custos de calibração
 irracional continuam pendentes. Não confundir com prioridade/publicação.
+A42 v2 tem prova escrita de segurança CONDICIONAL para todos os tamanhos
+pares de pool conhecido, via operadores estáveis clássicos.38 enumerações
+independentes e2213 checks finitos passam; pesos inteiros não exigem raízes
+irracionais. Não transferir o lema ao pool sorteado: esse passo segue aberto.
+Contagem/orçamento em bits, uso, novidade/publicação ainda não confirmados.

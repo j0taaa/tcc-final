@@ -1668,7 +1668,7 @@
     {
       "id": "42-safe-empirical-resampling",
       "title": "Empirical all-budget atom coverage and arbitrary-score safety",
-      "conclusion": "Conditional max-entropy/rejective mechanism is classical. Unconditional random-pool covariance is unproved;16824 finite floating cases M<=20/classes<=5 have no obstruction, not proof or neural benefit. No new model campaign justified.",
+      "conclusion": "Written conditional matching safety for ALL even known-pool sizes via classical stable differential operators;38 independent matching enumerations/2213 finite source checks. Global random-pool safety remains unproved, source complexity/use/novelty open. No new model campaign.",
       "reading": "TASKS.md M62; README eight criteria; work/conjecture-v1.md; work/primary-v1.md",
       "versions": [
         {
@@ -1679,6 +1679,18 @@
             "attempts/42-safe-empirical-resampling/work/evidence",
             "attempts/42-safe-empirical-resampling/work/primary-v1.md",
             "attempts/42-safe-empirical-resampling/work/conjecture-v1.md"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "57fc6e26347a35dede8d042f9604982c3bc98c8e",
+          "evidence_commit": "4fb8a7cbca30baeb468379a3d853b4d865b594ce",
+          "evidence_roots": [
+            "attempts/42-safe-empirical-resampling/work/evidence/matching-v2.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/exploratory-matching-v2.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/origin-v2.json",
+            "attempts/42-safe-empirical-resampling/work/matching-contract-v2.md",
+            "attempts/42-safe-empirical-resampling/work/conditional-matching-proof-v2.md"
           ]
         }
       ]
