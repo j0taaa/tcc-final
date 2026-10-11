@@ -16,6 +16,7 @@ from rustformlang.cfg import CFG
 
 from .arithmetic_task_v6 import GRAMMAR, LEXICAL, PREFIX, evaluate, instruction, root_operator
 from .native_transition_v4 import Candidate, InitialHeadCache
+from .number_checkpoint_v8 import number_checkpoint
 
 HERE = Path(__file__).parent
 MASK = 126336
@@ -35,12 +36,12 @@ def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def frozen(commit):
+def frozen(commit, protocol):
     paths = [
         *HERE.glob("*.py"),
         HERE / "arithmetic-inputs-v7.json",
-        HERE / "arithmetic-protocol-v7.json",
-        HERE / "arithmetic-protocol-v7.md",
+        HERE / f"{protocol}.json",
+        HERE / f"{protocol}.md",
     ]
     sources = {}
     for path in paths:
@@ -79,12 +80,20 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-commit", required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument(
+        "--protocol",
+        choices=("arithmetic-protocol-v7", "arithmetic-protocol-v8"),
+        default="arithmetic-protocol-v7",
+    )
     args = parser.parse_args()
     metadata = args.output.with_suffix(".metadata.json")
     if args.output.exists() or metadata.exists():
         raise SystemExit("refuse to overwrite evidence")
-    sources = frozen(args.source_commit)
-    cfg = json.loads((HERE / "arithmetic-protocol-v7.json").read_text())
+    sources = frozen(args.source_commit, args.protocol)
+    cfg = json.loads((HERE / f"{args.protocol}.json").read_text())
+    checkpoint = cfg.get("checkpoint", "root")
+    if checkpoint not in ("root", "first_new_number"):
+        raise ValueError("unsupported checkpoint")
     manifest = json.loads((HERE / "arithmetic-inputs-v7.json").read_text())
     if digest(HERE / "arithmetic-inputs-v7.json") != cfg["inputs_sha256"]:
         raise ValueError("frozen inputs changed")
@@ -181,21 +190,47 @@ def main():
                     seed = rng.randrange(2**32)
                     begin, queries, forwards = stamp(), model.queries, model.forwards
                     current = Candidate(factory, seed, actual.device)
-                    events, first_event_root, op = 0, None, None
+                    events, first_event_root, op, number, first_event_number = (
+                        0,
+                        None,
+                        None,
+                        None,
+                        None,
+                    )
+                    previous = all_ids + [MASK] * cfg["gen_length"]
                     while (event := current.advance()) is not None:
                         events += 1
                         text, tokens = text_prefix(current, tokenizer, len(chat))
                         op = root_operator(text)
+                        accepted = event[0][0].tolist()
+                        number = number_checkpoint(
+                            previous,
+                            accepted,
+                            lambda token: tokenizer.decode([token], skip_special_tokens=True),
+                            start=len(all_ids),
+                            mask_id=MASK,
+                            special_ids=(126081, 126348),
+                        )
+                        previous = accepted
                         if events == 1:
                             first_event_root = op
-                        if op is not None or event[2]:
+                            first_event_number = number
+                        known = op is not None if checkpoint == "root" else number is not None
+                        if known or event[2]:
                             break
                     text, tokens = text_prefix(current, tokenizer, len(chat))
                     prefix = dict(
                         seed=seed,
                         root=op,
-                        class1=op in ("mul", "div"),
+                        checkpoint=checkpoint,
+                        number=number,
+                        class1=(
+                            op in ("mul", "div")
+                            if checkpoint == "root"
+                            else number is not None and number["digit"] % 2 == 1
+                        ),
                         first_event_root=first_event_root,
+                        first_event_number=first_event_number,
                         events=events,
                         native_complete=bool(current.current and current.current[2]),
                         ended=current.ended,

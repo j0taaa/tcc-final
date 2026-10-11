@@ -142,3 +142,11 @@ passou o screen. Classes variadas só ficaram disponíveis tarde; classes
 baratas eram degeneradas. Dados/metadata/decisão/hashes estão em
 `work/evidence/arithmetic-root-diagnostic-v7`. Sem gabaritos/acurácia ou
 confirmação independente; NÃO iniciar campanha de qualidade desta raiz.
+
+RefinamentoV8 em `work/arithmetic-protocol-v8.md/json` testa SOMENTE recursos
+do primeiro token numérico efetivamente aceito, inclusive fora do prefixo
+contíguo. Mesmos oito inputs,32 seeds novas, gate de custo inalterado. Classe
+par/ímpar não é semântica; pode ter sinal zero mesmo variando. Checkpoint
+independente preserva IDs/aliases, ignora tokens anteriores/propostas brutas
+e não filtra falhas. Fonte/evidência V7 estão em v9 antes desta alteração.
+Nenhuma capturaV8 executada neste freeze; não alegar utilidade/publicação.

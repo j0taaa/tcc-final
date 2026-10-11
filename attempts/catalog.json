@@ -1135,7 +1135,7 @@
     {
       "id": "34-oracle-diversity-frontier",
       "title": "Sharp expected-work/diversity frontier: written candidate",
-      "conclusion": "Written restricted regular sample-only sharp pair frontier, five exact cap/oracle checks. Wasan s_b/mixing are precedents.144 native FAKE first-path/RNG replays pass including132 real batch-helper successes; shared normal-cache workaround leaves vendor unchanged and failure drafts preserved. Eight-input root-prefix resource diagnostic frozen before heads, no labels/quality evidence. Specific priority, meaningful native advantage and publication adequacy remain open.",
+      "conclusion": "Written restricted sample-only expected-work pair frontier; Wasan and integer-convex variance bounds are precedents. Complete root-prefix resource diagnostic:256 native prefixes,1845 new forwards,0/8 screens passed; no golds/accuracy/quality confirmation.144 FAKE native replays preserve first trajectory/RNG with common upstream cache workaround. Specific priority, meaningful native benefit and publication adequacy remain open.",
       "reading": "attempts/34-oracle-diversity-frontier/README.md; TASKS.md#M54",
       "versions": [
         {
@@ -1212,6 +1212,17 @@
           "id": "v8",
           "source_commit": "fe3fa65e232e67ba4b0b6e91418f459131fba8e4",
           "evidence_commit": "fe3fa65e232e67ba4b0b6e91418f459131fba8e4",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/README.md",
+            "attempts/34-oracle-diversity-frontier/work",
+            "tests/test_oracle_diversity_frontier.py",
+            "tests/test_arithmetic_json_task.py"
+          ]
+        },
+        {
+          "id": "v9",
+          "source_commit": "fe3fa65e232e67ba4b0b6e91418f459131fba8e4",
+          "evidence_commit": "1449ca633e43a3f88fe49470a997ab17c677967a",
           "evidence_roots": [
             "attempts/34-oracle-diversity-frontier/README.md",
             "attempts/34-oracle-diversity-frontier/work",

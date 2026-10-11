@@ -111,7 +111,7 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   `34/work/evidence/native-fake-v8.json`; v7 preserves hanging draft. No
   neural/timing claim. Arithmetic interpreter exact rationals/untrusted-number
   budgets have one meaningful focused test; whole142 suite PASS68.228s.
-- [ ] T5407: Frozen eight-input/32-prefix resource diagnostic before A34 heads.
+- [x] T5407: Frozen eight-input/32-prefix resource diagnostic before A34 heads.
   `34/work/arithmetic-protocol-v7.md/json`, independent input-only question
   copies and native suspended-prefix producer. No gold/accuracy evaluation;
   grammar accepts unrestricted recursive arithmetic JSON programs. Root
@@ -123,6 +123,14 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   cheap classes degenerate; nontrivial ones late. Raw/metadata/decision/hashes
   in34/work/evidence/arithmetic-root-diagnostic-v7. Larger ROOT-operator
   quality branch is NOT triggered; no gold/EPIC win/novelty claim.
+- [ ] T5408: Freeze and execute FIRST-NEW-NUMBER resource diagnostic on ALL
+  same eight input-only questions,32 new seeds, unchanged resource gate.
+  `34/work/arithmetic-protocol-v8.md/json`, pure original-ID checkpoint helper.
+  One additional independent test covers fixed/old slots, aliases, special
+  IDs and ASCII-only digit semantics. Seven A34/application tests PASS0.178s;
+  this is correction evidence, not semantic benefit. V9 preserves complete
+  negative root source fe3fa65/evidence1449ca6 before modifying the producer.
+  No golds/new heads V8 before this freeze; parity could have zero useful signal.
 
 ## M53 — Categorical race repair: reduction gate before implementation
 
