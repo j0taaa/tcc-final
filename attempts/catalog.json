@@ -1588,7 +1588,7 @@
     {
       "id": "41-structured-noising-covariance",
       "title": "Structured dLLM noising covariance order",
-      "conclusion": "Written pre-code fixed-input score/gradient corollary of A39. Loewner lift and stochastic linearity known; MIRROR/P-POTS direct predecessors read. Novel query difference, useful proxy and full-cost real-model benefit remain OPEN; no training/no EPIC win.",
+      "conclusion": "Own minimal adapter/exact67-partition full covariance oracle and constructed CPU/CUDA gradient check PASS; stronger analytic control preserved. MIRROR/P-POTS and imperfect ranked-set sampling are direct known predecessors. Specific query difference, useful real noising proxy, full-cost external benefit and publication remain OPEN; no real training or EPIC win.",
       "reading": "TASKS.md M61; README eight criteria; work/noising-theory-v1.md; work/primary-comparison-v1.md",
       "versions": [
         {
@@ -1598,6 +1598,16 @@
           "evidence_roots": [
             "attempts/41-structured-noising-covariance/work/noising-theory-v1.md",
             "attempts/41-structured-noising-covariance/work/primary-comparison-v1.md"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "d593d5d7bf322bac8c9bda3cf0ff714bdbfbf9b3",
+          "evidence_commit": "fe38f4076ea4a658c9085858055bdfa4ba65d7e5",
+          "evidence_roots": [
+            "attempts/41-structured-noising-covariance/work/evidence/law-v2.json",
+            "attempts/41-structured-noising-covariance/work/mirror-counterexample-v2.md",
+            "attempts/41-structured-noising-covariance/work/origin-v2.json"
           ]
         }
       ]
