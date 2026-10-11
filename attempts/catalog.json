@@ -1533,6 +1533,17 @@
             "attempts/39-known-source-coupling/work/evidence/stage-adapter-v9.json",
             "attempts/39-known-source-coupling/work/first-step-erratum-v8.md"
           ]
+        },
+        {
+          "id": "v10",
+          "source_commit": "56c8d2cc74c7fa7422189c1a20b81ba50c510f34",
+          "evidence_commit": "56c8d2cc74c7fa7422189c1a20b81ba50c510f34",
+          "evidence_roots": [
+            "attempts/39-known-source-coupling/work/evidence/phase-info-v9.jsonl",
+            "attempts/39-known-source-coupling/work/evidence/phase-info-v9.metadata.json",
+            "attempts/39-known-source-coupling/work/evidence/phase-info-audit-v10.json",
+            "attempts/39-known-source-coupling/work/first-step-decision-v10.md"
+          ]
         }
       ]
     }
