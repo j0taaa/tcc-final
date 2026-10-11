@@ -1389,6 +1389,17 @@
             "attempts/38-empirical-pool-coupling/work/primary-comparison-v3.md",
             "tests/test_empirical_pool_coupling.py"
           ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "3d33f7c22c869e6dd4b9f42edadaa04a670b8e86",
+          "evidence_commit": "3d33f7c22c869e6dd4b9f42edadaa04a670b8e86",
+          "evidence_roots": [
+            "attempts/38-empirical-pool-coupling/work/native-protocol-v5.md",
+            "attempts/38-empirical-pool-coupling/work/native-protocol-v5.json",
+            "attempts/38-empirical-pool-coupling/work/native-inputs-v5.json",
+            "attempts/38-empirical-pool-coupling/work/finite-domain-v5.md"
+          ]
         }
       ]
     }
