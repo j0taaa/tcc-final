@@ -1,8 +1,9 @@
 # A37 — Acoplamento de respostas completas pelo resultado canônico
 
 2026-10-11. Nova direção, independente dos prefixos negativos de A34 e da
-campanha negativa de A32. Primeiro vêm contrato, prova e antecedentes; ainda
-não há implementação, campanha neural ou confirmação de publicação.
+campanha negativa de A32. V1 congelou contrato/prova/antecedentes antes de
+código. V2 tem referência mínima e quatro oráculos racionais independentes;
+não há campanha neural ou confirmação de publicação.
 
 ## Oito perguntas antes de implementar
 
@@ -77,3 +78,20 @@ constante é correta e se a garantia tem um concorrente conhecido equivalente;
 depois decidir se há uso suficiente para uma campanha completa. O método
 entrega literalmente dois payloads do gerador original e preserva o primeiro.
 Nada é treinado, reparado semanticamente ou consultado no gabarito.
+
+## V2: ampliação e verificação pequena
+
+`work/diversity-corollary-v2.md` estende a constante a TODA distribuição de
+resultados canônicos: obtém pelo menos1/13 da maior redução possível de
+colisões entre pares de mesmas marginais. O ótimo por quantis conhecidos é
+um controle clássico explícito, com vantagem maior; o corolário não exclui
+esse comparador. Diversidade não significa correção semântica.
+
+`work/couple.py` não importa código mutável de outra tentativa. Quatro testes
+PASS0.064s enumeram payloads originais, aliases/falhas, hashes dependentes
+pairwise, truncação e quantis do controle competente. A suíte inteira147
+PASS67.788s precedeu a última adição desse check de diversidade; os quatro
+testes atuais foram repetidos depois dela. Ruff check/format passam. Tudo
+é correção offline, não novidade, timing competitivo ou uso neural. Leituras
+adicionais reais ficam em `work/primary-comparison-v2.md`. Gates de prioridade
+e consumidor de custo útil permanecem abertos; nenhuma promoção ao artigo.

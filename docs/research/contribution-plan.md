@@ -2034,3 +2034,13 @@ GLIDE original2--4.4 e MCTS originalA.1--A.4 foram conferidos; prioridade do
 limite composto e utilidade de consumidor real continuam abertas. README37
 responde aos oito critérios ANTES de código. Não promover a ideia só por
 mais uma prova correta nem reabrir os dois screens negativos de A34.
+
+V2 deriva1/13 da maior redução de colisões para TODA distribuição de chaves
+canônicas, por soma dos eventos e tratamento explícito do único átomo maior
+que1/2. Quantis em meia-volta atingem o ótimo com lei conhecida e não são
+excluídos. Quatro oráculos independentes PASS0.064s preservam aliases/falhas,
+hashes pairwise dependentes, payload literal e o controle clássico. Suíte147
+PASS67.788s antes do último check extra; Ruff passa. Sem forwards novos.
+Geometric2018, PAWS2013 e Craiu/Meng2005 foram lidos nos trechos registrados;
+este último inclui garantia assintótica para QUALQUER L2, que não deve ser
+enfraquecida para promover A37. Benefício de custo/novidade ainda abertos.

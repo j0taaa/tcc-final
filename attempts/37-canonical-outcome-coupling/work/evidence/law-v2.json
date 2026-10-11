@@ -1,0 +1,22 @@
+{
+  "scope": "offline independent correctness only; no model or timing superiority",
+  "timestamp_utc": "2026-10-11T16:38:55.659611+00:00",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_canonical_outcome_coupling.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_cap_retains_original_second_and_refuses_invalid_budget (test_canonical_outcome_coupling.CanonicalOutcomeCouplingTests.test_cap_retains_original_second_and_refuses_invalid_budget) ... ok\ntest_cost_and_iid3_objection_at_rational_parameters (test_canonical_outcome_coupling.CanonicalOutcomeCouplingTests.test_cost_and_iid3_objection_at_rational_parameters) ... ok\ntest_full_payload_law_with_alias_and_failure (test_canonical_outcome_coupling.CanonicalOutcomeCouplingTests.test_full_payload_law_with_alias_and_failure) ... ok\ntest_hash_balance_aliases_and_lazy_coefficients (test_canonical_outcome_coupling.CanonicalOutcomeCouplingTests.test_hash_balance_aliases_and_lazy_coefficients) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.062s\n\nOK\n",
+  "source_sha256": {
+    "attempts/37-canonical-outcome-coupling/work/couple.py": "834693fcb2e18fda085c2b16ba14d85a2b8265616cc42aa2d05520cd1fb8adc7",
+    "tests/test_canonical_outcome_coupling.py": "a1fcaab7c3ca8243fd9c0eb66a8354808ac6f6f2e777fe71e30e10ea6a36ace0"
+  }
+}

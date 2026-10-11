@@ -376,7 +376,13 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   avaliação imparcial exige v>5c em a=1/2 antes da coordenação; ratio não foi
   medido, e labels canônicos reutilizáveis devem ser cobrados corretamente.
   Antecedentes de antitéticos categóricos/difusão, RSS e PPI foram lidos.
-  Só teoria antes de código; prioridade, aplicação útil e publicação abertas.
+  V1 congelou a teoria antes de código. V2 tem referência independente e
+  quatro oráculos racionais passando;147 testes67.788s antes do último check
+  de diversidade, depois quatro focados0.064s. Corolário escrito estende1/13
+  à maior redução de colisões para TODA distribuição canônica. Controle por
+  quantis conhecidos atinge o ótimo e continua explícito. Diversidade não é
+  semântica nem latência. Novas leituras primárias estão registradas emv2;
+  prioridade, aplicação útil e publicação abertas, sem novos forwards.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

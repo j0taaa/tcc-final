@@ -46,6 +46,21 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   ruin, marginal preservation and expensive-label evaluation are known;
   specific novelty and useful full-cost consumer remain OPEN. No human
   review, neural campaign, article promotion or publication confirmation.
+- [x] T5702: Minimal independent full-payload reference and four rational
+  oracles PASS0.064s: aliases/failures, literal first, hash balance/lazy bits,
+  full marginals, all verifiers, count-cap fallback and actual classical
+  quantile control. `tests/test_canonical_outcome_coupling.py` and37/work/couple.py.
+  Full147-test suite PASS67.788s before the last diversity assertion; the
+  focused current tests pass after it. Ruff passes. New written corollary
+  gives1/13 of maximum collision reduction for EVERY canonical distribution,
+  not only a singled-out correct outcome; `diversity-corollary-v2.md`.
+  Geometric2018 original1--2.3/cost passage, PAWS2013 original2--3.1,
+  Craiu/Meng2005 original1--2.2/Theorems1/5--7 ACTUALLY read; sources/hashes
+  in primary-comparison-v2.md. No model campaign or publication confirmation.
+  `make check` PASS upstream/lint/types/integrity; source-hashed current
+  oracle capture37/work/evidence/law-v2.json has four PASS0.062s, including
+  cap12 fallback. This timestamp/source record is correctness, not a speed
+  comparison or mathematical novelty certificate.
 
 ## M56 — Grammar-guided sparse output projection: prior gate
 
