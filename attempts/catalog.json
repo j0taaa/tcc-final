@@ -1332,6 +1332,31 @@
             "attempts/37-canonical-outcome-coupling/work/diversity-corollary-v2.md",
             "attempts/37-canonical-outcome-coupling/work/primary-comparison-v2.md"
           ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "7ce0ff659b3ce056695c377f4f720c7bfb6f2adc",
+          "evidence_commit": "7ce0ff659b3ce056695c377f4f720c7bfb6f2adc",
+          "evidence_roots": [
+            "attempts/37-canonical-outcome-coupling/work/pool-control-objection-v3.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "38-empirical-pool-coupling",
+      "title": "Empirical categorical coupling and pointwise cost optimum",
+      "conclusion": "Written before implementation: simultaneous cap4 atom optima and proposed pointwise expected-work minimum4-2c+s3, with known rank/pool/Bernstein priors credited. Specific novelty, law oracle and native useful effect remain open. No model campaign or publication claim.",
+      "reading": "attempts/38-empirical-pool-coupling/README.md; TASKS.md M58",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "7ce0ff659b3ce056695c377f4f720c7bfb6f2adc",
+          "evidence_commit": "7ce0ff659b3ce056695c377f4f720c7bfb6f2adc",
+          "evidence_roots": [
+            "attempts/38-empirical-pool-coupling/README.md",
+            "attempts/38-empirical-pool-coupling/work"
+          ]
         }
       ]
     }

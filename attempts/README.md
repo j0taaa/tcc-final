@@ -47,6 +47,8 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [34-oracle-diversity-frontier](34-oracle-diversity-frontier/README.md) | Fronteira esperada com refinamento inteiro; candidata escrita, prioridade/uso abertos |
 | [35-commitment-law-counting](35-commitment-law-counting/README.md) | Lei do commitment versus posterior LL(1); ponte escrita de contagem, antecedente de união explícito |
 | [36-grammar-sparse-output-head](36-grammar-sparse-output-head/README.md) | Cabeça esparsa pela gramática; mecanismo anterior encontrado, versão simples recusada antes de código |
+| [37-canonical-outcome-coupling](37-canonical-outcome-coupling/README.md) | Hash de resultados completos; garantias provadas, controle empírico mais forte encontrado depois |
+| [38-empirical-pool-coupling](38-empirical-pool-coupling/README.md) | Ótimos categóricos simultâneos e custo pontual; teoria escrita antes de código, prioridade/uso abertos |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
