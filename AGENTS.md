@@ -384,6 +384,22 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   semântica nem latência. Novas leituras primárias estão registradas emv2;
   prioridade, aplicação útil e publicação abertas, sem novos forwards.
 
+- A38 é um controle mais forte encontrado DEPOIS de37, em pasta independente.
+  Antes de código, lei escrita do pool cap4 atinge os ótimos de TODOS eventos
+  canônicos simultaneamente e covariância<=0 para qualquer score L2. A
+  adaptação v2 escrita preserva essa lei com custo pontual mínimo4-2c+s3
+  entre todos maximizadores universais p-blind cap4, com pelo menos três
+  chaves PERMITIDAS. Não excluir controles binários quando o alfabeto é
+  conhecido, nem métodos informados por logits. Mistura iid2 dá D_opt/8,
+  contra1/13 de37, no mesmo teto de custo esperado3; não é dominância
+  pontual de leis. Rank/pool exchangeability, clipping Bernstein e evitar
+  auxiliares inúteis são antecedentes conhecidos. Neal/Andrieu/bootstrap/
+  Casarin/STMC foram lidos nos trechos/hashes registrados. Prioridade,
+  relevância prática, oráculos e publicação ainda abertos; nenhum novo
+  head/timing ou promoção. Auxiliares de um head congelado não exigem por
+  si só novos forwards, mas todo parsing/rejeição/status continua custando.
+  Não transformar isto em superioridade EPIC por contar somente draws.
+
 ## Perguntas obrigatórias para cada ideia ou implementação
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas

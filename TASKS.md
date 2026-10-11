@@ -27,6 +27,31 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M58 — Empirical categorical coupling and pointwise cost optimum
+
+- [x] T5800: Eight criteria, full-payload operation, explicit law/covariance,
+  simultaneous cap4 atom optimality and stronger pointwise expected-cost
+  theorem WRITTEN BEFORE code. `38/work/theory-v1.md` and
+  `optimal-cost-v2.md`: v1 costs4-c; v2 has SAME joint law and reaches
+  minimum4-2c+s3 among ALL p-blind universal cap4 atom maximizers with at
+  least three ALLOWED keys. Known binary alphabets have cheaper controls.
+  This is oracle work, NOT full decoder speed or unrestricted known-logit
+  optimality. Half mixture guarantees D_opt/8 with mean3-c+s3/2<=3;
+  stronger worst guarantee than37, not pointwise dominance.37 is preserved
+  with a new pool-control objection, not retrospectively changed results.
+- [ ] T5801: Independently audit the law, polynomial lower-bound obligations
+  and strongest direct reductions. Neal1995 original4.1--4.2/conclusion,
+  Andrieu2020 Example4/Remark6, Craiu bootstrap1--3/conclusion, Casarinv2
+  Section1/Definitions1.1--1.3 and STMC2020 original1--3 ACTUALLY read.
+  Hashes/scopes38/work/primary-comparison-v1.md. Rank/pool coupling and
+  unnecessary-auxiliary skipping are known. Hall1989 is still ABSTRACT-only.
+  Specific priority and useful magnitude remain open; no model campaign,
+  human review, article promotion or publication confirmation.
+- [ ] T5802: Minimal isolated implementation and independent exact oracle,
+  only after freezing the above mathematical gate. Include raw aliases,
+  failures, all multiplicity patterns and stronger known-law/rank controls.
+  Tests are correctness, not novelty or practical benchmarks.
+
 ## M57 — Complete-output canonical coupling: written application gate
 
 - [x] T5700: Eight criteria, complete-oracle operation and bound BEFORE code.

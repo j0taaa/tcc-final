@@ -1,5 +1,11 @@
 # A37 — Acoplamento de respostas completas pelo resultado canônico
 
+**Objeção posterior à v2:** o controle independente da A38 tem garantia
+de colisão `D_opt/8` com teto esperado3, contra `D_opt/13` aqui. Isso bloqueia
+a alegação de melhor garantia competente, sem invalidar as provas/oráculos
+congelados de37. Não é dominância pontual; o caso binário pode favorecer37.
+Detalhes em `work/pool-control-objection-v3.md` e na pasta independente38.
+
 2026-10-11. Nova direção, independente dos prefixos negativos de A34 e da
 campanha negativa de A32. V1 congelou contrato/prova/antecedentes antes de
 código. V2 tem referência mínima e quatro oráculos racionais independentes;

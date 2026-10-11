@@ -2044,3 +2044,25 @@ PASS67.788s antes do último check extra; Ruff passa. Sem forwards novos.
 Geometric2018, PAWS2013 e Craiu/Meng2005 foram lidos nos trechos registrados;
 este último inclui garantia assintótica para QUALQUER L2, que não deve ser
 enfraquecida para promover A37. Benefício de custo/novidade ainda abertos.
+
+## 2026-10-11 — A38: controle empírico e custo pontual, antes de código
+
+Revisão adversarial encontrou controle de pool4 com diagonais p_i²-p_i²q_i²,
+covariância nunca positiva para QUALQUER L2 e ótimos binários de cap4
+atingidos por TODOS átomos ao mesmo tempo. Princípios são antecedentes:
+Neal1995 ordered overrelaxation, Andrieu2020 Example4/Remark6, Hall/Craiu
+bootstrap, rotações Casarin e Bernstein Nacu--Peres. Leituras efetivas,
+limitações de acesso e hashes estão em38/work/primary-comparison-v1.md.
+
+V1 economiza o último draw em alguns casos e custa4-c. V2 escreve uma regra
+adaptativa de mesma lei, com4-2c+s3 e argumento de mínimo PONTUAL entre TODOS
+maximizadores universais cap4 em domínio com três chaves permitidas. A
+restrição não exclui controles conhecidos binários ou informados da avaliação
+prática; o bound não se aplica a eles. Mistura meia-iid2 dá pelo menos1/8
+do ótimo de colisão, contra1/13 de37, com teto médio3; não domina todo P.
+
+Oito critérios e prova são escritos antes de implementar. Falta oráculo,
+prioridade e efeito útil. Callback pode ser uma transição aceita inteira
+com head congelado, pagando parser/rejeições: não declarar que logits são
+a lei aceita, nem confundir economia de forwards com latência total. Nada
+reabre os gates negativos das campanhas32/34 nem muda seus resultados.
