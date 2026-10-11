@@ -27,6 +27,31 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M50 — Lazy native stratification: mathematical and integration gates
+
+- [x] T5000: Eight criteria, written fixed-K partial-subset/Maclaurin and
+  full-history trajectory proofs; source audit of STMC/Array-RQMC, arithmetic,
+  DAST and dependent rounding. No classical negative-dependence novelty claim.
+- [x] T5001: Isolated sparse deferred-permutation ledger; five independent
+  exact-RNG oracles pass15.980s, including asynchronous changed kernels, all
+  small verifiers, IEEE grid transforms and parity shortcut counterexample.
+  Whole offline suite114 tests pass56.494s (`make test`).
+- [x] T5002: Native hook reads full control checkpoints; model inputs alone
+  miss cumulative resampling budget.72/72 literal native replays pass, CPU/
+  CUDA, first/entropy coordinates, temperatures0/0.5/1, max_resamples1/8,
+  EOS and original aliases0/3.20 complete,52 native incomplete; all72 exercise
+  rejection.216 FAKE-head calls total, zero neural forwards/timing claims.
+  Producer `work.probe_native --output work/evidence/native-correctness-v1.json`.
+  Source hashes/profile are explicit; native/vendor files unchanged.
+- [ ] T5003: Before neural runs, freeze external semantic structured-generation
+  protocol with literal complete EPIC iid, deterministic/native alternatives,
+  equivalent caching/budgets, all statuses and total cost. Core criterion:
+  useful semantic coverage and cost, not a toy event or merely weak dominance.
+  Include the competent ROOT-ONLY native stratum control; examine sufficient
+  Markov-state coalescence as a separate preserved contract before more runs.
+- [ ] T5004: Execute development, then only a passing preregistered candidate
+  gets fresh independent confirmation. Novelty/publication adequacy still open.
+
 ## M49 — Stationary collision coupling: theory-first adverse audit
 
 - [x] T4900: Delimit eight criteria, confer primary antithetic/Neal/CARMS,

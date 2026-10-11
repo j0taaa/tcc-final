@@ -1746,3 +1746,37 @@ epsilon², contra epsilon(1-epsilon) de um acoplamento direto competente.
 Assim uma implementação correta/universal sobre iid não basta para esta
 direção atender ao objetivo. Não gastar uma campanha procurando uma vitória
 favorável; preservar29 e procurar operação distinta/diferença adicional.
+
+
+## 2026-10-11 — A30: coordenação assíncrona sem trocar a política nativa
+
+Novo contrato e oito critérios em30/README antes do protótipo. K fixo por
+lote, tabela independente por histórico, permutação esparsa revelada por
+decisões adiadas. Maclaurin dá o lema para QUALQUER subconjunto de visitantes;
+indução preserva marginais e domina iid em cobertura de todo verificador e
+variância de todo score terminal. Não é descoberta de estratificação,
+Maclaurin, deferred decisions ou associação negativa. STMC2019/2020,
+Array-RQMC/SSS2024, dependent rounding2006, ArithmeticSampling2023,
+DAST2026 e NoFreeLunch2019 são antecedentes primários delimitados.
+
+A integração auditou o EPIC completo: só trocar o primeiro vencedor perde
+a recuperação baseada nos mesmos Gumbels. O uniforme double do CUDA
+curand é arredondado de forma diferente do CPU. Model inputs sozinhos
+também são insuficientes: rejeições acumuladas afetam max_resamples.
+O adaptador opt-in conserva todo o ruído exceto uma coordenada com a mesma
+lei, a transformação e o fluxo nativos; captura estado de controle e toda
+a história, confere hashes de fonte, não altera vendor.
+
+Cinco oráculos racionais passam15.980s; toda a suíte114 passa56.494s.
+72 replays nativos CPU/CUDA iguais com logits FALSOS, incluindo aliases,
+EOS e rejeições;20 completos52 incompletos216 chamadas falsas. Fonte e
+configuração do produtor estão em30/work/evidence/native-correctness-v1.json.
+Nenhum forward neural ou timing competitivo. Nova originalidade, magnitude
+prática e suficiência para publicação continuam abertas.
+
+Objeção antes de medir: estratificar só a raiz já tem a vantagem fraca
+clássica, sem guardar histórias. Deve entrar como controle. A próxima
+pergunta matemática é se um resumo de estado Markoviano realmente suficiente
+permite coalescer trajetórias e obter vantagem comparativa adicional. Isto
+exige um contrato separado; canvas igual não basta, e não há licença para
+relaxar a invariância de A30 silenciosamente.

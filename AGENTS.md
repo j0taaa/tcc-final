@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem109 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem114 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -208,6 +208,20 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   quadrático no caso de alternativa rara, contra ganho linear de controles
   diretos. Não promover como protagonista, nem iniciar uma campanha extensa
   só por vencer iid. Nenhum forward/timing ou prioridade confirmados.
+- A30 investiga tabelas de K estratos por histórico, reveladas preguiçosamente,
+  permitindo execuções seriais/assíncronas do MESMO decoder. Prova escrita usa
+  Maclaurin e indução: marginais, pass@K para todo verificador e variância; são
+  princípios clássicos, novidade suficiente ainda aberta. Cinco oráculos
+  racionais passam;72 replays do EPIC pinado com logits FALSOS preservam
+  trajetórias/rejeições/EOS/aliases CPU/CUDA. Nenhum forward neural novo ou
+  ganho competitivo foi medido. Inputs do modelo sozinhos eram insuficientes:
+  rejeições cumulativas influenciam max_resamples; o adaptador registra também
+  snapshots de controle completos e não reúne histórias divergentes. A lei
+  do uniforme CUDA tem arredondamento diferente da CPU e é preservada.
+  Coordenação estratifica apenas UMA coordenada, não o tensor inteiro; há
+  contraexemplo de paridade ao atalho. Custo/cache/latência e ganho semântico
+  relevante ainda precisam de protocolo independente. Não declarar vitória
+  sobre EPIC ou publicação a partir dos oráculos/replay de correção.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

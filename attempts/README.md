@@ -38,6 +38,8 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [26-stratified-decoder-batches](26-stratified-decoder-batches/README.md) | Lotes com lei individual preservada e dominância sobre iid |
 | [27-finite-closure-certificates](27-finite-closure-certificates/README.md) | Limites finitos de fechamento; protótipo, novidade não confirmada |
 | [28-streamed-grammar-head](28-streamed-grammar-head/README.md) | Resumo amostrável da cabeça para inferência conjunta; protótipo, novidade não confirmada |
+| [29-collision-stationary-coupling](29-collision-stationary-coupling/README.md) | Reparo de colisões: prova e teto de ganho desfavorável; rejeitado como protagonista |
+| [30-lazy-native-stratification](30-lazy-native-stratification/README.md) | Estratificação assíncrona do ruído nativo; correção pequena validada, utilidade/novidade abertas |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
