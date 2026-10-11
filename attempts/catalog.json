@@ -1251,6 +1251,16 @@
             "tests/test_oracle_diversity_frontier.py",
             "tests/test_arithmetic_json_task.py"
           ]
+        },
+        {
+          "id": "v12",
+          "source_commit": "f060a3cd559a8cf0b6b49b4df65698f7d48c4fc2",
+          "evidence_commit": "f060a3cd559a8cf0b6b49b4df65698f7d48c4fc2",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/work/pointwise-score-v12.md",
+            "attempts/34-oracle-diversity-frontier/work/uniform-curvature-v12.md",
+            "attempts/34-oracle-diversity-frontier/work/primary-reading-v12.md"
+          ]
         }
       ]
     },
