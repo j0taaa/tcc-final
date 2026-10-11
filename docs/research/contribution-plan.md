@@ -2105,3 +2105,24 @@ Wald finita PADRÃO: salvar chamadas inteiras reduz trabalho esperado em
 omitir overhead, reutilização desigual de helpers ou hipótese iid de custo.
 Huber2013/2015 e Dice3.3--3.5.2 são antecedentes de lower bounds/custo de
 factories efetivamente lidos. Nenhum modelo/campanha ou prioridade confirmada.
+
+
+## A38 v7: completed native development and a new comparative theorem
+
+2026-10-11. Producer76f4bc1/archive0ce0347 completed ALL56 preregistered
+SVAMP pilot rows:169 actual complete calls,1885 new forwards,134 COMPLETE,
+35 INCOMPLETE,0 ERROR. Postcapture gold audit preserves all outcomes.
+Adaptive28 calls versus pool32/early30 on eight pairs; iid2 is cheaper with
+the same observed pass2=2/8, seed_half3/8. This is NOT a statistical or
+general EPIC win. `38/work/native-audit-v7.md/json` are generated, with
+source/input/capture hashes and exact commands; no replay credit.
+
+BEFORE refinement code/timings, `38/work/semantic-coarsening-v7.md` derives
+a distribution-free Pareto result: sound consumer-observation coarsening
+strictly saves expected full calls and never reduces ANY observer-measurable
+Boolean coverage or best-score distribution. Raw marginals remain original;
+no gold needed. All-real-score variance monotonicity is FALSE (counterexample
+included). Total cost must include key/downstream differences, and exact
+factorization needs matching raw-text resource guards. Eight criteria
+re-evaluated. Specific priority, practical full-cost value and publication
+remain open; neither paper promotion nor human review was invented.

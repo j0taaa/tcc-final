@@ -1,0 +1,1574 @@
+{
+  "scope": "COMPLETE small development pilot; descriptive only, no statistical victory",
+  "source_commit": "76f4bc1cfca0b6d4a9fe69aa602d3eb5913305b8",
+  "command": ".venv-live/bin/python -m attempts.38-empirical-pool-coupling.work.native_pilot --source-commit 76f4bc1cfca0b6d4a9fe69aa602d3eb5913305b8 --output attempts/38-empirical-pool-coupling/work/evidence/native-v6.jsonl",
+  "sha256": {
+    "native-v6.jsonl": "07352e08d3e5e88fdd22bf28ef6aad3927458718974b6ee76304c059071f6974",
+    "native-v6.metadata.json": "80cf7d60c1019e669e41c25a3450701eb076af99b48a338bc8a7a54555de4a82",
+    "native-golds-v5.json": "22a0257944f71ad3e106453cbc9aec94af01ba7acb684a5a24ddfbd06530b67d"
+  },
+  "rows": 56,
+  "original_calls": 169,
+  "new_forwards": 1885,
+  "literal_first_ids_preserved": true,
+  "methods": {
+    "pool4": {
+      "rows": 8,
+      "calls": 32,
+      "new_forwards": 357,
+      "statuses": {
+        "COMPLETE": 25,
+        "INCOMPLETE": 7
+      },
+      "pass2": 2,
+      "helpers_cover": 2,
+      "different_values": 6,
+      "warm_wall_median": 12.248056128009921,
+      "warm_cpu_median": 12.163125023999987,
+      "cold_wall_median": 12.831621222547255,
+      "total_warm_wall": 99.19976665900322,
+      "cases": [
+        {
+          "id": "chal-353",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.244617041025776,
+            "cpu": 12.073053437999999
+          },
+          "cold": {
+            "wall": 13.240349770057946,
+            "cpu": 12.540906755999998
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "135",
+            "927",
+            "FAIL",
+            "135"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-353",
+          "rep": 1,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.510699487989768,
+            "cpu": 12.512118899
+          },
+          "cold": {
+            "wall": 13.506432217021938,
+            "cpu": 12.979972217
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "135",
+            "135",
+            "21",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": false
+        },
+        {
+          "id": "chal-890",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.251495214994065,
+            "cpu": 12.253196609999975
+          },
+          "cold": {
+            "wall": 12.422892675036564,
+            "cpu": 12.414228955999963
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "325",
+            "FAIL",
+            "352",
+            "217"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 1,
+          "calls": 4,
+          "forwards": 42,
+          "warm": {
+            "wall": 11.936460241966415,
+            "cpu": 11.936095211999998
+          },
+          "cold": {
+            "wall": 12.107857702008914,
+            "cpu": 12.097127557999986
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "352",
+            "FAIL",
+            "286",
+            "352"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 10.620001886039972,
+            "cpu": 10.621718731999977
+          },
+          "cold": {
+            "wall": 10.792043995053973,
+            "cpu": 10.783378687999974
+          },
+          "statuses": {
+            "COMPLETE": 4
+          },
+          "values": [
+            "295",
+            "15",
+            "295",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 1,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 10.704326956009027,
+            "cpu": 10.70591601000001
+          },
+          "cold": {
+            "wall": 10.876369065023027,
+            "cpu": 10.867575966000008
+          },
+          "statuses": {
+            "COMPLETE": 4
+          },
+          "values": [
+            "15",
+            "15",
+            "15",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": false
+        },
+        {
+          "id": "chal-839",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 48,
+          "warm": {
+            "wall": 13.532245213980787,
+            "cpu": 13.529898945000014
+          },
+          "cold": {
+            "wall": 13.703172656998504,
+            "cpu": 13.690473841000031
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "110",
+            "110",
+            "14",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-839",
+          "rep": 1,
+          "calls": 4,
+          "forwards": 47,
+          "warm": {
+            "wall": 15.399920616997406,
+            "cpu": 15.400196757000003
+          },
+          "cold": {
+            "wall": 15.570848060015123,
+            "cpu": 15.560771653000021
+          },
+          "statuses": {
+            "COMPLETE": 2,
+            "INCOMPLETE": 2
+          },
+          "values": [
+            "110",
+            "FAIL",
+            "FAIL",
+            "110"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        }
+      ]
+    },
+    "early_pool": {
+      "rows": 8,
+      "calls": 30,
+      "new_forwards": 334,
+      "statuses": {
+        "COMPLETE": 23,
+        "INCOMPLETE": 7
+      },
+      "pass2": 2,
+      "helpers_cover": 2,
+      "different_values": 6,
+      "warm_wall_median": 12.120301238493994,
+      "warm_cpu_median": 12.119835456500013,
+      "cold_wall_median": 12.540052377007669,
+      "total_warm_wall": 92.91319121595006,
+      "cases": [
+        {
+          "id": "chal-353",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.006993836024776,
+            "cpu": 12.004433427999999
+          },
+          "cold": {
+            "wall": 13.002726565056946,
+            "cpu": 12.472286745999998
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "135",
+            "927",
+            "FAIL",
+            "135"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-353",
+          "rep": 1,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.272760658001062,
+            "cpu": 12.274013022999995
+          },
+          "cold": {
+            "wall": 13.268493387033232,
+            "cpu": 12.741866340999994
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "135",
+            "135",
+            "21",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": false
+        },
+        {
+          "id": "chal-890",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.233608640963212,
+            "cpu": 12.235237485000027
+          },
+          "cold": {
+            "wall": 12.40500610100571,
+            "cpu": 12.396269831000016
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "325",
+            "FAIL",
+            "352",
+            "217"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 1,
+          "calls": 4,
+          "forwards": 42,
+          "warm": {
+            "wall": 11.932293403951917,
+            "cpu": 11.93352278499998
+          },
+          "cold": {
+            "wall": 12.103690863994416,
+            "cpu": 12.094555130999968
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "352",
+            "FAIL",
+            "286",
+            "352"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 10.639597910980228,
+            "cpu": 10.64093624000003
+          },
+          "cold": {
+            "wall": 10.811640019994229,
+            "cpu": 10.802596196000028
+          },
+          "statuses": {
+            "COMPLETE": 4
+          },
+          "values": [
+            "295",
+            "15",
+            "295",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 1,
+          "calls": 3,
+          "forwards": 33,
+          "warm": {
+            "wall": 7.997750142996665,
+            "cpu": 7.998700423999992
+          },
+          "cold": {
+            "wall": 8.169792252010666,
+            "cpu": 8.16036037999999
+          },
+          "statuses": {
+            "COMPLETE": 3
+          },
+          "values": [
+            "15",
+            "15",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": false
+        },
+        {
+          "id": "chal-839",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 48,
+          "warm": {
+            "wall": 13.326015413040295,
+            "cpu": 13.327538883000045
+          },
+          "cold": {
+            "wall": 13.496942856058013,
+            "cpu": 13.488113779000063
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "110",
+            "110",
+            "14",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-839",
+          "rep": 1,
+          "calls": 3,
+          "forwards": 35,
+          "warm": {
+            "wall": 12.50417120999191,
+            "cpu": 12.506032587999982
+          },
+          "cold": {
+            "wall": 12.675098653009627,
+            "cpu": 12.666607484
+          },
+          "statuses": {
+            "COMPLETE": 1,
+            "INCOMPLETE": 2
+          },
+          "values": [
+            "110",
+            "FAIL",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        }
+      ]
+    },
+    "adaptive4": {
+      "rows": 8,
+      "calls": 28,
+      "new_forwards": 311,
+      "statuses": {
+        "COMPLETE": 22,
+        "INCOMPLETE": 6
+      },
+      "pass2": 2,
+      "helpers_cover": 2,
+      "different_values": 7,
+      "warm_wall_median": 11.960633150010835,
+      "warm_cpu_median": 11.962286859499994,
+      "cold_wall_median": 12.248185976030072,
+      "total_warm_wall": 85.43681996595114,
+      "cases": [
+        {
+          "id": "chal-353",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.036025023029651,
+            "cpu": 12.037680619999996
+          },
+          "cold": {
+            "wall": 13.031757752061822,
+            "cpu": 12.505533937999996
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "135",
+            "927",
+            "FAIL",
+            "135"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-353",
+          "rep": 1,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.318005748966243,
+            "cpu": 12.317443987999994
+          },
+          "cold": {
+            "wall": 13.313738477998413,
+            "cpu": 12.785297305999993
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "135",
+            "135",
+            "21",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.268335754983127,
+            "cpu": 12.270010620999983
+          },
+          "cold": {
+            "wall": 12.439733215025626,
+            "cpu": 12.431042966999971
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "325",
+            "FAIL",
+            "352",
+            "217"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 1,
+          "calls": 4,
+          "forwards": 42,
+          "warm": {
+            "wall": 11.88524127699202,
+            "cpu": 11.886893098999991
+          },
+          "cold": {
+            "wall": 12.056638737034518,
+            "cpu": 12.04792544499998
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "352",
+            "FAIL",
+            "286",
+            "352"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 0,
+          "calls": 3,
+          "forwards": 33,
+          "warm": {
+            "wall": 7.980597056972329,
+            "cpu": 7.978324272000009
+          },
+          "cold": {
+            "wall": 8.15263916598633,
+            "cpu": 8.139984228000007
+          },
+          "statuses": {
+            "COMPLETE": 3
+          },
+          "values": [
+            "295",
+            "15",
+            "295"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 1,
+          "calls": 3,
+          "forwards": 33,
+          "warm": {
+            "wall": 7.999618598027155,
+            "cpu": 8.000728159000005
+          },
+          "cold": {
+            "wall": 8.171660707041156,
+            "cpu": 8.162388115000002
+          },
+          "statuses": {
+            "COMPLETE": 3
+          },
+          "values": [
+            "15",
+            "15",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": false
+        },
+        {
+          "id": "chal-839",
+          "rep": 0,
+          "calls": 3,
+          "forwards": 36,
+          "warm": {
+            "wall": 8.527513841982,
+            "cpu": 8.528652638999972
+          },
+          "cold": {
+            "wall": 8.698441284999717,
+            "cpu": 8.68922753499999
+          },
+          "statuses": {
+            "COMPLETE": 3
+          },
+          "values": [
+            "110",
+            "110",
+            "14"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-839",
+          "rep": 1,
+          "calls": 3,
+          "forwards": 35,
+          "warm": {
+            "wall": 12.42148266499862,
+            "cpu": 12.423230751000006
+          },
+          "cold": {
+            "wall": 12.592410108016338,
+            "cpu": 12.583805647000023
+          },
+          "statuses": {
+            "COMPLETE": 1,
+            "INCOMPLETE": 2
+          },
+          "values": [
+            "110",
+            "FAIL",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        }
+      ]
+    },
+    "mean3": {
+      "rows": 8,
+      "calls": 23,
+      "new_forwards": 256,
+      "statuses": {
+        "COMPLETE": 17,
+        "INCOMPLETE": 6
+      },
+      "pass2": 2,
+      "helpers_cover": 2,
+      "different_values": 5,
+      "warm_wall_median": 9.549120355513878,
+      "warm_cpu_median": 9.550626449500015,
+      "cold_wall_median": 9.810544235573616,
+      "total_warm_wall": 72.6200211821706,
+      "cases": [
+        {
+          "id": "chal-353",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.096824250009377,
+            "cpu": 12.098537889
+          },
+          "cold": {
+            "wall": 13.092556979041547,
+            "cpu": 12.566391206999999
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "135",
+            "927",
+            "FAIL",
+            "135"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": false
+        },
+        {
+          "id": "chal-353",
+          "rep": 1,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.392909520014655,
+            "cpu": 12.394223789999998
+          },
+          "cold": {
+            "wall": 13.388642249046825,
+            "cpu": 12.862077107999998
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "135",
+            "135",
+            "21",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 0,
+          "calls": 4,
+          "forwards": 44,
+          "warm": {
+            "wall": 12.276877090043854,
+            "cpu": 12.278394535000018
+          },
+          "cold": {
+            "wall": 12.448274550086353,
+            "cpu": 12.439426881000006
+          },
+          "statuses": {
+            "COMPLETE": 3,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "325",
+            "FAIL",
+            "352",
+            "217"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 21,
+          "warm": {
+            "wall": 7.00141646101838,
+            "cpu": 7.002715010000031
+          },
+          "cold": {
+            "wall": 7.172813921060879,
+            "cpu": 7.1637473560000196
+          },
+          "statuses": {
+            "COMPLETE": 1,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "352",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 22,
+          "warm": {
+            "wall": 5.318826965987682,
+            "cpu": 5.319585861999997
+          },
+          "cold": {
+            "wall": 5.490869075001683,
+            "cpu": 5.481245817999994
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "295",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 22,
+          "warm": {
+            "wall": 5.35914134705672,
+            "cpu": 5.359713271000032
+          },
+          "cold": {
+            "wall": 5.531183456070721,
+            "cpu": 5.52137322700003
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "15",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": false
+        },
+        {
+          "id": "chal-839",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 24,
+          "warm": {
+            "wall": 5.6835385269951075,
+            "cpu": 5.684478970999976
+          },
+          "cold": {
+            "wall": 5.854465970012825,
+            "cpu": 5.845053866999994
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "110",
+            "110"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": false
+        },
+        {
+          "id": "chal-839",
+          "rep": 1,
+          "calls": 3,
+          "forwards": 35,
+          "warm": {
+            "wall": 12.490487021044828,
+            "cpu": 12.492546695999977
+          },
+          "cold": {
+            "wall": 12.661414464062545,
+            "cpu": 12.653121591999994
+          },
+          "statuses": {
+            "COMPLETE": 1,
+            "INCOMPLETE": 2
+          },
+          "values": [
+            "110",
+            "FAIL",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        }
+      ]
+    },
+    "iid2": {
+      "rows": 8,
+      "calls": 16,
+      "new_forwards": 180,
+      "statuses": {
+        "COMPLETE": 13,
+        "INCOMPLETE": 3
+      },
+      "pass2": 2,
+      "helpers_cover": 2,
+      "different_values": 5,
+      "warm_wall_median": 5.5186518335249275,
+      "warm_cpu_median": 5.515038564500003,
+      "cold_wall_median": 6.102490875025978,
+      "total_warm_wall": 48.641151310061105,
+      "cases": [
+        {
+          "id": "chal-353",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 23,
+          "warm": {
+            "wall": 5.283462808991317,
+            "cpu": 5.284358906999998
+          },
+          "cold": {
+            "wall": 6.279195538023487,
+            "cpu": 5.752212224999997
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "135",
+            "927"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-353",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 21,
+          "warm": {
+            "wall": 4.9300534829963,
+            "cpu": 4.930760423999999
+          },
+          "cold": {
+            "wall": 5.92578621202847,
+            "cpu": 5.398613741999998
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "135",
+            "135"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": false
+        },
+        {
+          "id": "chal-890",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 23,
+          "warm": {
+            "wall": 7.2697019670158625,
+            "cpu": 7.270252725999995
+          },
+          "cold": {
+            "wall": 7.4410994270583615,
+            "cpu": 7.431285071999984
+          },
+          "statuses": {
+            "COMPLETE": 1,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "325",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 21,
+          "warm": {
+            "wall": 7.007651287014596,
+            "cpu": 7.003020850000041
+          },
+          "cold": {
+            "wall": 7.179048747057095,
+            "cpu": 7.1640531960000295
+          },
+          "statuses": {
+            "COMPLETE": 1,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "352",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 22,
+          "warm": {
+            "wall": 5.316826207970735,
+            "cpu": 5.31759813299999
+          },
+          "cold": {
+            "wall": 5.488868316984735,
+            "cpu": 5.479258088999988
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "295",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 22,
+          "warm": {
+            "wall": 5.37373126501916,
+            "cpu": 5.374198497000009
+          },
+          "cold": {
+            "wall": 5.5457733740331605,
+            "cpu": 5.535858453000007
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "15",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": false
+        },
+        {
+          "id": "chal-839",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 24,
+          "warm": {
+            "wall": 5.663572402030695,
+            "cpu": 5.655878631999997
+          },
+          "cold": {
+            "wall": 5.834499845048413,
+            "cpu": 5.8164535280000145
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "110",
+            "110"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": false
+        },
+        {
+          "id": "chal-839",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 24,
+          "warm": {
+            "wall": 7.79615188902244,
+            "cpu": 7.794028883999999
+          },
+          "cold": {
+            "wall": 7.967079332040157,
+            "cpu": 7.954603780000017
+          },
+          "statuses": {
+            "COMPLETE": 1,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "110",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        }
+      ]
+    },
+    "novelty3": {
+      "rows": 8,
+      "calls": 24,
+      "new_forwards": 269,
+      "statuses": {
+        "COMPLETE": 19,
+        "INCOMPLETE": 5
+      },
+      "pass2": 2,
+      "helpers_cover": 2,
+      "different_values": 7,
+      "warm_wall_median": 9.07239680751809,
+      "warm_cpu_median": 9.073815988499973,
+      "cold_wall_median": 9.314136493048863,
+      "total_warm_wall": 73.96482691104757,
+      "cases": [
+        {
+          "id": "chal-353",
+          "rep": 0,
+          "calls": 3,
+          "forwards": 34,
+          "warm": {
+            "wall": 9.803208358993288,
+            "cpu": 9.804493507999993
+          },
+          "cold": {
+            "wall": 10.798941088025458,
+            "cpu": 10.272346825999993
+          },
+          "statuses": {
+            "COMPLETE": 2,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "135",
+            "927",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-353",
+          "rep": 1,
+          "calls": 3,
+          "forwards": 33,
+          "warm": {
+            "wall": 7.891543537029065,
+            "cpu": 7.892536385
+          },
+          "cold": {
+            "wall": 8.887276266061235,
+            "cpu": 8.360389703
+          },
+          "statuses": {
+            "COMPLETE": 3
+          },
+          "values": [
+            "135",
+            "135",
+            "21"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 0,
+          "calls": 3,
+          "forwards": 33,
+          "warm": {
+            "wall": 9.621261122985743,
+            "cpu": 9.622662663
+          },
+          "cold": {
+            "wall": 9.792658583028242,
+            "cpu": 9.783695008999988
+          },
+          "statuses": {
+            "COMPLETE": 2,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "325",
+            "FAIL",
+            "352"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 1,
+          "calls": 3,
+          "forwards": 32,
+          "warm": {
+            "wall": 9.569599259993993,
+            "cpu": 9.571034295999993
+          },
+          "cold": {
+            "wall": 9.740996720036492,
+            "cpu": 9.732066641999982
+          },
+          "statuses": {
+            "COMPLETE": 2,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "352",
+            "FAIL",
+            "286"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 0,
+          "calls": 3,
+          "forwards": 33,
+          "warm": {
+            "wall": 8.002650498994626,
+            "cpu": 8.004046710000011
+          },
+          "cold": {
+            "wall": 8.174692608008627,
+            "cpu": 8.165706666000009
+          },
+          "statuses": {
+            "COMPLETE": 3
+          },
+          "values": [
+            "295",
+            "15",
+            "295"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 1,
+          "calls": 3,
+          "forwards": 33,
+          "warm": {
+            "wall": 8.030647534003947,
+            "cpu": 8.029579660000024
+          },
+          "cold": {
+            "wall": 8.202689643017948,
+            "cpu": 8.191239616000022
+          },
+          "statuses": {
+            "COMPLETE": 3
+          },
+          "values": [
+            "15",
+            "15",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": false
+        },
+        {
+          "id": "chal-839",
+          "rep": 0,
+          "calls": 3,
+          "forwards": 36,
+          "warm": {
+            "wall": 8.575194355042186,
+            "cpu": 8.576597680999953
+          },
+          "cold": {
+            "wall": 8.746121798059903,
+            "cpu": 8.73717257699997
+          },
+          "statuses": {
+            "COMPLETE": 3
+          },
+          "values": [
+            "110",
+            "110",
+            "14"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-839",
+          "rep": 1,
+          "calls": 3,
+          "forwards": 35,
+          "warm": {
+            "wall": 12.470722244004719,
+            "cpu": 12.472527802000059
+          },
+          "cold": {
+            "wall": 12.641649687022436,
+            "cpu": 12.633102698000076
+          },
+          "statuses": {
+            "COMPLETE": 1,
+            "INCOMPLETE": 2
+          },
+          "values": [
+            "110",
+            "FAIL",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        }
+      ]
+    },
+    "seed_half": {
+      "rows": 8,
+      "calls": 16,
+      "new_forwards": 178,
+      "statuses": {
+        "COMPLETE": 15,
+        "INCOMPLETE": 1
+      },
+      "pass2": 3,
+      "helpers_cover": 3,
+      "different_values": 5,
+      "warm_wall_median": 5.347673188021872,
+      "warm_cpu_median": 5.3466096829999685,
+      "cold_wall_median": 5.6276241235027555,
+      "total_warm_wall": 44.071878610993735,
+      "cases": [
+        {
+          "id": "chal-353",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 22,
+          "warm": {
+            "wall": 5.047362820012495,
+            "cpu": 5.0481839420000085
+          },
+          "cold": {
+            "wall": 6.043095549044665,
+            "cpu": 5.516037260000008
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "135",
+            "117"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": true
+        },
+        {
+          "id": "chal-353",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 22,
+          "warm": {
+            "wall": 5.15183014300419,
+            "cpu": 5.15195293299999
+          },
+          "cold": {
+            "wall": 6.14756287203636,
+            "cpu": 5.619806250999989
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "135",
+            "135"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": false
+        },
+        {
+          "id": "chal-890",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 23,
+          "warm": {
+            "wall": 5.229058694967534,
+            "cpu": 5.227783969000001
+          },
+          "cold": {
+            "wall": 5.400456155010033,
+            "cpu": 5.388816314999989
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "325",
+            "38"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-890",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 21,
+          "warm": {
+            "wall": 7.034887215995695,
+            "cpu": 7.035899366000024
+          },
+          "cold": {
+            "wall": 7.2062846760381944,
+            "cpu": 7.196931712000012
+          },
+          "statuses": {
+            "COMPLETE": 1,
+            "INCOMPLETE": 1
+          },
+          "values": [
+            "352",
+            "FAIL"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 22,
+          "warm": {
+            "wall": 5.334805422055069,
+            "cpu": 5.331961972999977
+          },
+          "cold": {
+            "wall": 5.50684753106907,
+            "cpu": 5.493621928999975
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "295",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": true
+        },
+        {
+          "id": "chal-552",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 22,
+          "warm": {
+            "wall": 5.360540953988675,
+            "cpu": 5.36125739299996
+          },
+          "cold": {
+            "wall": 5.532583063002676,
+            "cpu": 5.5229173489999575
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "15",
+            "15"
+          ],
+          "pass2": true,
+          "helpers_cover": true,
+          "different_values": false
+        },
+        {
+          "id": "chal-839",
+          "rep": 0,
+          "calls": 2,
+          "forwards": 23,
+          "warm": {
+            "wall": 5.438248961989302,
+            "cpu": 5.439159333999953
+          },
+          "cold": {
+            "wall": 5.60917640500702,
+            "cpu": 5.599734229999971
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "110",
+            "156"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": true
+        },
+        {
+          "id": "chal-839",
+          "rep": 1,
+          "calls": 2,
+          "forwards": 23,
+          "warm": {
+            "wall": 5.475144398980774,
+            "cpu": 5.4759042160000035
+          },
+          "cold": {
+            "wall": 5.646071841998491,
+            "cpu": 5.636479112000021
+          },
+          "statuses": {
+            "COMPLETE": 2
+          },
+          "values": [
+            "110",
+            "110"
+          ],
+          "pass2": false,
+          "helpers_cover": false,
+          "different_values": false
+        }
+      ]
+    }
+  },
+  "decision": "Functional/cost pilot complete, NOT useful general EPIC superiority: adaptive4 saves calls versus the same-law full/early pools, but iid2 is cheaper with equal observed pass2; seed_half has higher observed pass2. Two replications/four questions do not confirm any quality or latency advantage. Preserve every failed/incomplete outcome."
+}

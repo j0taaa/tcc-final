@@ -91,7 +91,7 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   iid2/biased novelty3/seed-half retained. Functional/cost PILOT only, no
   statistical primary gate, no model capture yet. No closed A32/A34 gate
   reopened or relative timing credited to a replay bank.
-- [ ] T5807: Minimal isolated native implementation, validate same-law
+- [x] T5807: Minimal isolated native implementation, validate same-law
   controls and original RNG/IDs, freeze producer before running ALL56 pilot
   records. Report full costs/losses and decide application honestly before
   any larger campaign/article promotion.
@@ -101,6 +101,22 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   copies verified. `native-preflight-v6.md`, `law-v6.json`, `checks-v6.json`
   and `native-rng-cuda-v6.json`. Producer is to be frozen before ALL56 real
   records; no neural results/publication or broad EPIC win yet.
+  COMPLETED after producer76f4bc1/archive0ce0347: ALL56 records,169 actual
+  complete native calls,1885 new forwards, no ERROR, literal first IDs
+  preserved.134 COMPLETE/35 INCOMPLETE calls all retained. Postcapture-only
+  audit `native-audit-v7.md/json`: adaptive28 calls versus pool32/early30;
+  all those methods and iid2 have observed pass2=2/8, seed_half3/8. Iid2
+  is cheaper. This is NOT useful general superiority or statistical gate.
+  Actual command/source/data hashes retained; golds read only after capture.
+- [x] T5808: BEFORE refinement code/timings write `semantic-coarsening-v7.md`
+  and eight criteria. For ANY original law, sound observer coarsening saves
+  complete oracle calls and never reduces coverage for any observable Boolean
+  verifier or best-score distribution. Preserves original raw marginals;
+  counterexample blocks an all-real-score variance monotonicity claim.
+  Need identical raw-text budgets for sound AST-to-observation factoring.
+- [ ] T5809: Independently audit coarsening algebra and budget soundness,
+  strongest predecessors and practical full-cost alternatives. No v6 timing
+  relabelled, no artificial verifier cost, no independent/publication claim.
 
 ## M57 — Complete-output canonical coupling: written application gate
 

@@ -428,6 +428,18 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   suíte156 PASS68.012s e streams CPU/CUDA/Python/NumPy restaurados. Sem novo
   forward até esse preflight. Cobrar head/preparação/auxiliares/overhead;
   piloto não é confirmação estatística, novidade ou vitória geral EPIC.
+  V7 preserva a captura posterior COMPLETA:56/56 registros,169 chamadas
+  nativas reais,1885 novos forwards,134 COMPLETE/35 INCOMPLETE/0 ERROR,
+  IDs originais do primeiro preservados. Adaptive usa28 chamadas contra
+  pool32/early30 nos oito pares; iid2 é mais barato e todos esses têm
+  pass2 observado2/8, seed_half3/8. Piloto pequeno NÃO confirma vantagem
+  semântica/latência geral. Golds só após captura, fontes/dados auditáveis.
+  Nova prova v7 de coarsening SEM implementação/timing: agrupar por um
+  observável suficiente reduz chamadas completas em esperança e nunca
+  piora pass2 de qualquer verificador desse observável ou o melhor score.
+  Não vale monotonicidade da variância de TODO score real (contraexemplo).
+  Deve haver fatoração exata, incluindo budgets de texto/AST/interpreter.
+  Prioridade/aplicação competitiva/publicabilidade continuam abertas.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

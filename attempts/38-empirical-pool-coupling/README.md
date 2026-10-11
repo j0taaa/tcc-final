@@ -201,3 +201,22 @@ Classificação inútil para iid2/seed-half fica só no diagnóstico posterior a
 timer; custos obrigatórios/coordenação permanecem incluídos. Nenhum output
 ou timing neural novo foi visto nesta validação. Protocolo56 registros e
 limitações do piloto permanecem os de v5, sem gate criado depois dos dados.
+
+## V7 — captura completa preservada e novo teorema antes de código
+
+`work/native-audit-v7.md` e seu JSON são gerados da captura original v6:
+56 registros,169 chamadas nativas REAIS,1885 novos forwards. Todos35 calls
+INCOMPLETE são preservados; não houve ERROR. Os primeiros IDs coincidem.
+Adaptive usa28 calls contra32 pool/30 early nos oito pares, mas iid2 é
+mais barato e todos esses acertaram2/8 pares; seed_half3/8. Isso não é
+superioridade prática confirmada ou uma avaliação estatística independente.
+Golds só foram lidos APÓS a conclusão; producer76f4bc1 e hashes preservados.
+
+`work/semantic-coarsening-v7.md` escreve uma NOVA consequência comparativa
+ANTES de implementar: classes pelo resultado observado do software melhoram
+ou preservam pass2 de TODOS seus verificadores e o melhor score, enquanto
+reduzem chamadas completas em esperança. Não precisa conhecer a resposta
+correta. As oito perguntas estão respondidas nesse arquivo; prioridade e
+utilidade de custo completo ainda precisam de auditoria. Um contraexemplo
+impede alegar monotonicidade para variância de todo score real. Nenhum timing
+v6 mede essa nova direção, e o artigo principal não foi promovido.
