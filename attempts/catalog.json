@@ -1019,6 +1019,16 @@
             "attempts/31-sufficient-state-coupling/work",
             "tests/test_state_coupling.py"
           ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "8b9cc152a114bea7a44801d56dac786d5a46c118",
+          "evidence_commit": "8b9cc152a114bea7a44801d56dac786d5a46c118",
+          "evidence_roots": [
+            "attempts/31-sufficient-state-coupling/work",
+            "tests/test_state_coupling.py",
+            "tests/test_anchored_stratification.py"
+          ]
         }
       ]
     }
