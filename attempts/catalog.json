@@ -1346,7 +1346,7 @@
     {
       "id": "38-empirical-pool-coupling",
       "title": "Empirical categorical coupling and pointwise cost optimum",
-      "conclusion": "V2 exact law validated with152 tests. V3 NEW sharp unknown-law cap4 diversity/work frontier(b-2)/8 written before budgeted code; includes adaptive stops and first clones, unbounded allowed keys with finite correction. Specific priority, proof audit and real full-cost benefit remain open; no new model campaign or publication claim.",
+      "conclusion": "V4 minimal40-line reference, seven exact oracles and154 full tests pass. V3 sharp unknown-law cap4 diversity/work frontier(b-2)/8 written, includes adaptive stops/first clones. Standard Wald charges complete variable-cost calls plus equal pair continuation; no physical speed claimed. Specific priority and meaningful native application remain open; no new model campaign.",
       "reading": "attempts/38-empirical-pool-coupling/README.md; TASKS.md M58",
       "versions": [
         {
@@ -1376,6 +1376,18 @@
           "evidence_roots": [
             "attempts/38-empirical-pool-coupling/work/minimax-frontier-v3.md",
             "attempts/38-empirical-pool-coupling/README.md"
+          ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "add274c2bdb268cd05f6650561ed81227b980310",
+          "evidence_commit": "add274c2bdb268cd05f6650561ed81227b980310",
+          "evidence_roots": [
+            "attempts/38-empirical-pool-coupling/work/evidence/law-v4.json",
+            "attempts/38-empirical-pool-coupling/work/evidence/checks-v4.json",
+            "attempts/38-empirical-pool-coupling/work/full-cost-corollary-v4.md",
+            "attempts/38-empirical-pool-coupling/work/primary-comparison-v3.md",
+            "tests/test_empirical_pool_coupling.py"
           ]
         }
       ]
