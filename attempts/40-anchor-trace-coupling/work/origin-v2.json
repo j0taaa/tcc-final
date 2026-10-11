@@ -1,0 +1,52 @@
+{
+  "native_state.py": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/native_state.py",
+    "sha256": "dc4122629de62293c28af50e7013e1f240193b18294b120e7f40f6dd2fb368a8"
+  },
+  "native_task.py": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/native_task.py",
+    "sha256": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b"
+  },
+  "source.py": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/source.py",
+    "sha256": "b6bd081c6e46ddf0689b15fa067b37670dca0381bcca86a34ba069d988e160f6"
+  },
+  "kernel.py": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/kernel.py",
+    "sha256": "70dc537f7aee3d4d790c15bbaa989bc3c1e17f96843347a8ee2cdb77829c2ad6"
+  },
+  "SVAMP-LICENSE.txt": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/SVAMP-LICENSE.txt",
+    "sha256": "07ce3a34de7a865345634f9278bc26ddcacc2d0defd348c28e3f4603448b9ba4"
+  },
+  "native-protocol-v3.json": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/native-protocol-v3.json",
+    "sha256": "4b24b370721781de08c36cd8fb92825cb114ef171b2acf2ba69d5aecbfab8381"
+  },
+  "native-inputs-v3.json": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/native-inputs-v3.json",
+    "sha256": "609c007cc01537cb84a70b13b17193184edabd9ad530127ff30131a5f292af89"
+  },
+  "evidence/native-v4.jsonl": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/evidence/native-v4.jsonl",
+    "sha256": "8001d08ace1ad9311349932676a78c74401e08d77beecc48e2d5d52d5dfe60e8"
+  },
+  "evidence/native-v4.metadata.json": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/evidence/native-v4.metadata.json",
+    "sha256": "a386f33af5841cf4ebfe57874f1ac066c1beeca2f77a9bd0a69b467187b0e868"
+  },
+  "finite-source-theory-v1.md": {
+    "commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/finite-source-theory-v1.md",
+    "sha256": "c6cda33a4714127c77bacdb7b68f5901a5537a6aa7304d33689213617a969c8d"
+  }
+}

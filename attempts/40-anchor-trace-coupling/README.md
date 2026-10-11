@@ -65,3 +65,14 @@ This is only a functional/information audit, not a competitive timing gate,
 independent semantic confirmation or source-frequency estimate. A useful class
 structure is necessary, not sufficient. Failure closes this application; no
 new giant implementation or article promotion follows from toy correctness.
+
+V2 prototype now implements exact owned CPU heads, an immutable post-anchor
+trace, guarded helper cache misses and read-only multi-step native boundaries.
+CPU/CUDA toy checks pass (original final IDs/statuses, random tapes, private
+head isolation, bounded-cache rejection, incomplete/scalar-key aliases).
+Before observations, freeze producer/input/classifier with its immutable own
+A39 copies. The32-request information audit reuses old first sources as anchors
+for functional replay, NOT an independent-anchor coupling experiment;16 full
+helper-ID regressions include eight cache-miss continuations. Details and
+eight-criterion reassessment: `work/README-information-v2.md`. No actual
+new head/quality/performance or publication evidence yet.

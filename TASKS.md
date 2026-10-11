@@ -38,6 +38,10 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   generator/private RNG/model heads and stop before every uncached helper call.
   All old inputs/four predefined sources, original-ID regressions; no quality
   or performance gate from this information audit. Freeze source before outputs.
+  V2 isolated111-line trace/37-line key plus opt-in adapter; CPU/CUDA multi-step
+  original-ID/status/RNG/head-clone and guarded-miss checks PASS (no neural model).
+  Information audit is32 requests/8 old anchors,16 full regressions; first helper
+  deliberately repeats anchor, so NOT a pass3/coupling experiment. No output yet.
 - [ ] T6002: Specific prior/reduction audit, useful complete-cost consequence
   against competent dynamic-cache/native controls, independent proof and heldout
   evaluation if the development observation is informative. Goal remains open.

@@ -492,7 +492,10 @@ cache congelado. Cache dinâmico/3 seeds sem reposição são controles obrigat�
 A39 lower bound sem labels grátis NÃO se aplica à informação da âncora.
 Condicionamento/cache são conhecidos; novidade e benefício útil NÃO confirmados.
 Classificador root/left-choice fixo, todos inputs/seeds antigos, auditoria
-funcional/informacional apenas. Nenhum novo modelo ou promoção ao artigo ainda.
+funcional/informacional apenas. V2 prototype CPU/CUDA PASS de IDs/status/RNG,
+clones próprios e cache-miss recusado antes do forward. Captura32 requests/8
+âncoras antigas tem16 regressões full-ID; primeiro helper repete a âncora,
+NÃO é experimento da lei pass3. Nenhum output/modelo novo ou artigo ainda.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

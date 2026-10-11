@@ -1,0 +1,17 @@
+{
+  "scope": "Toy CPU/CUDA correctness only; NO actual neural model",
+  "command": [
+    ".venv-live/bin/python",
+    "-m",
+    "attempts.40-anchor-trace-coupling.work.audit_trace"
+  ],
+  "exit_code": 0,
+  "output": "PASS original CPU/CUDA multi-step IDs/statuses, private RNG, immutable heads, guarded misses and fixed frontier key\n",
+  "wall_seconds": 1.3772547339904122,
+  "sources": {
+    "trace.py": "0f12ec5e01d0ddb6c0c6f3cac13e6e94c59a64a1dac579119f34b9149a0f3531",
+    "audit_trace.py": "9581c2a3a4ea658c0f7d02b119177ff445fbcf89f9a1f1bc3c13b07b592bf512",
+    "frontier_key.py": "ef4c1da4756a2b5124c44eef6a9247f657a20b6d43497c97a97befacd989d12b",
+    "native_state.py": "dc4122629de62293c28af50e7013e1f240193b18294b120e7f40f6dd2fb368a8"
+  }
+}

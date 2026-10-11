@@ -1,0 +1,32 @@
+{
+  "source": "arkilpatel/SVAMP",
+  "revision": "78e727689e1c1bebfc4be39c446898e8e10b0518",
+  "source_sha256": "5be77703a6d891ae476d7c082787ad361392aa02453b132516cdd5f4e7934e3e",
+  "selection": "input-only SHA256(Body+newline+Question), ranks5--8 of ALL1000; golds never accessed",
+  "records": [
+    {
+      "id": "chal-102",
+      "question": "Josh lost 11 marbles. If he had 19 marbles in his collection earlier\nHow many marbles does he have now?",
+      "selection_sha256": "00bad8cd97a2a368e35c9177d39f1e977a842618c340d0a1e946f86ab946f9e5",
+      "input_rank": 5
+    },
+    {
+      "id": "chal-979",
+      "question": "Rebecca wants to split a collection of eggs into groups of 20. Rebecca has 5 marbles and 12 eggs.\nHow many more eggs does Rebecca have than marbles?",
+      "selection_sha256": "0174c7e04a0a20307fba1bdaaa235a910cad767457e0ceb78d63f7cf5d8de6a9",
+      "input_rank": 6
+    },
+    {
+      "id": "chal-16",
+      "question": "Marco and his dad went strawberry picking. Together they collected strawberries that weighed 36 pounds. On the way back Marco ' dad lost 8 pounds of strawberries. Marco's strawberries now weighed 12 pounds.\nHow much did his dad's strawberries weigh now?",
+      "selection_sha256": "0180ba30c63020dd880b0ccb9b4ad44e7b1c3c187fd08520868f5e0931a4f12f",
+      "input_rank": 7
+    },
+    {
+      "id": "chal-142",
+      "question": "A book has 3 chapters. The first chapter is 66 pages long the second chapter is 35 pages long and the third chapter is 24 pages long.\nHow many pages does the book have altogether?",
+      "selection_sha256": "020944f4be03d571fa5348377980c60db45bee0cb7cfa0ff7e285b3302b9986d",
+      "input_rank": 8
+    }
+  ]
+}
