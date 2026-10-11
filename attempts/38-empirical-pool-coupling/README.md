@@ -131,3 +131,24 @@ As oito respostas acima permanecem, com estas mudanças explícitas:
 
 Este addendum foi escrito ANTES de código da mistura e de novos forwards.
 V1/v2 e seus registros continuam preservados, com as afirmações originais.
+
+## V4 — mistura validada e análise de custo completo
+
+Depois do freeze v3 `a760d16`/archive `d6a6d84`, a referência acrescenta
+somente11 linhas para a mistura de orçamento3:40 linhas no total. Sete
+oráculos racionais PASS0.091s incluem duas moedas INDEPENDENTES, todos32
+verificadores raw, aliases/falhas e marginais condicionadas a CADA multiset
+virtual. Essas verificações não provam o lower bound genérico nem prioridade.
+`work/evidence/law-v4.json` registra comandos/hashes; suíte154 PASS69.932s,
+`make check`/Ruff passam (`work/evidence/checks-v4.json`).
+
+`full-cost-corollary-v4.md` aplica a identidade Wald finita PADRÃO ao trabalho
+completo, inclusive custos correlacionados com o payload. Mesma lei conjunta
+permite cobrar também a mesma continuação do par. Economia versus pool4:
+`(2c-s3)*w`, e versus early-pool: `(c-s3)*w`, antes da diferença explícita
+de overhead. Não declarar que isto é wall time medido ou vantagem contra iid3.
+
+`primary-comparison-v3.md` registra leituras originais Huber2013/2015 dos
+lower bounds e Dice Enterprise3.3--3.5.2. A fronteira é a candidata, não o
+princípio de contagem/exchangeability/Wald. Prioridade/aplicação permanecem
+abertas, sem novo forward ou promoção do artigo.

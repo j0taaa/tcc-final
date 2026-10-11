@@ -415,6 +415,12 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   Mistura meia-iid atinge1/8 no teto médio3. Prioridade, auditoria do novo
   lower bound e aplicação prática permanecem abertas. Não confundir este
   contrato de oracle com vitória sobre decoders que usam logits/tickets.
+  V4 materializa só11 linhas adicionais (40 total); sete oráculos0.091s e
+  suíte154 PASS69.932s, make check/Ruff PASS. Duas moedas independentes e
+  coeficientes de cada multiset verificados. Análise de trabalho completo
+  usa Wald PADRÃO e lei conjunta igual para cobrar continuação; economia
+  versus pool full/early não é timing nem vitória sobre iid3. Novas leituras
+  Huber/Dice têm hashes/escopos; sem novos forwards ou promoção do artigo.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

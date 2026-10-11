@@ -11,14 +11,15 @@ reference = importlib.import_module("attempts.38-empirical-pool-coupling.work.co
 KEYS = (b"json-A", b"json-A", b"json-B", b"json-C", b"FAIL")
 
 
-def enumerated_law(weights):
+def enumerated_law(weights, *, budgeted=False):
     joint, calls = Counter(), 0
-    total = 6 * sum(weights) ** 4
+    total = (12 if budgeted else 6) * sum(weights) ** 4
     for tape in itertools.product(range(len(weights)), repeat=4):
         weight = math.prod(weights[i] for i in tape)
         if not weight:
             continue
-        for uniform in range(6):
+        choices = itertools.product(range(2), range(6)) if budgeted else ((u,) for u in range(6))
+        for uniforms in choices:
             # New object per iid occurrence: retain literal first, never its index.
             payloads = [{"id": i, "key": KEYS[i]} for i in tape]
             iterator = iter(payloads)
@@ -29,7 +30,9 @@ def enumerated_law(weights):
                 seen.append(item)
                 return item
 
-            x, y, used = reference.pair(draw, lambda v: v["key"], lambda n, u=uniform: u % n)
+            random_tape = iter(uniforms)
+            method = reference.pair_mean_three if budgeted else reference.pair
+            x, y, used = method(draw, lambda v: v["key"], lambda n, r=random_tape: next(r) % n)
             assert x is payloads[0]
             assert y is not x and any(y is v for v in seen[1:])
             assert used == len(seen)
@@ -60,6 +63,54 @@ def grouped_rank_rotation(weights):
 
 
 class EmpiricalPoolCouplingTests(unittest.TestCase):
+    def test_independent_budget_coin_preserves_full_law_and_all_verifiers(self):
+        for weights in ((3, 2, 4, 2, 1), (1, 0, 1, 1, 1), (1, 0, 1, 0, 0), (9, 1, 0, 0, 0)):
+            p = tuple(F(w, sum(weights)) for w in weights)
+            original, _ = enumerated_law(weights)
+            mixed, calls = enumerated_law(weights, budgeted=True)
+            for i, j in itertools.product(range(5), repeat=2):
+                self.assertEqual(mixed.get((i, j), 0), (original.get((i, j), 0) + p[i] * p[j]) / 2)
+            mass = {k: sum(p[i] for i in range(5) if KEYS[i] == k) for k in set(KEYS)}
+            collision = sum(a**2 for a in mass.values())
+            cubic = sum(a**3 for a in mass.values())
+            self.assertEqual(calls, 3 - collision + cubic / 2)
+            self.assertLessEqual(calls, 3)
+            improvement = collision - sum(v for (i, j), v in mixed.items() if KEYS[i] == KEYS[j])
+            optimum = collision - max(0, 2 * max(mass.values()) - 1)
+            self.assertGreaterEqual(improvement, optimum / 8)
+            for mask in range(32):
+                f = tuple((mask >> i) & 1 for i in range(5))
+                mu = sum(p[i] * f[i] for i in range(5))
+                both = sum(v * f[i] * f[j] for (i, j), v in mixed.items())
+                original_both = sum(v * f[i] * f[j] for (i, j), v in original.items())
+                self.assertEqual(both - mu**2, (original_both - mu**2) / 2)
+                self.assertLessEqual(both, mu**2)
+
+    def test_multivariate_virtual_tape_coefficients_with_independent_coins(self):
+        # Conditional empirical marginals certify the polynomial coefficients
+        # on arbitrary probabilities. Unused iid draws are virtual, never billed.
+        for method in (reference.pair, reference.pair_mean_three):
+            totals, second = Counter(), Counter()
+            for tape in itertools.product(range(4), repeat=4):
+                counts = tuple(tape.count(i) for i in range(4))
+                for coin, uniform in itertools.product(range(2), range(6)):
+                    iterator = iter(tape)
+                    random_tape = iter(
+                        (coin, uniform) if method == reference.pair_mean_three else (uniform,)
+                    )
+                    x, y, used = method(
+                        lambda r=iterator: next(r),
+                        lambda i: i,
+                        lambda n, r=random_tape: next(r) % n,
+                    )
+                    self.assertEqual(x, tape[0])
+                    self.assertIn(used, (2, 3, 4))
+                    totals[counts] += 1
+                    second[counts, y] += 1
+            for counts, total in totals.items():
+                for i in range(4):
+                    self.assertEqual(F(second[counts, i], total), F(counts[i], 4))
+
     def test_exact_reduction_to_classical_grouped_rank_rotation(self):
         # This equality credits the empirical-rank construction as a PRIOR,
         # and tests a genuinely different implementation of the same joint law.

@@ -72,6 +72,17 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   investigate the closest original lower bounds, then validate the minimal
   half-mixture law independently. Only after a plausible scientific/use gate
   freeze a full-cost native protocol; do not inherit closed A32/A34 losses.
+- [x] T5805: After v3 source/archive, implement ONLY11 lines for the
+  independent budget3 coin. Seven rational checks PASS0.091s with raw
+  aliases/failures/all32 verifiers and EVERY conditional virtual-multiset
+  marginal; `law-v4.json` hashes exact sources.154 full tests PASS69.932s;
+  make check/explicit Ruff PASS (`checks-v4.json`). Full-cost corollary uses
+  STANDARD finite Wald with payload-correlated costs; charges all original
+  calls/statuses/copies and same pair continuation. Strict complete-work
+  saving versus the known full/early pools, NOT measured physical speed.
+  Huber2013/2015 lower-bound sections and Dice3.3--3.5.2 READ with original
+  hashes/scopes in `primary-comparison-v3.md`. Specific priority and useful
+  native application still open; no new model campaign or article promotion.
 
 ## M57 — Complete-output canonical coupling: written application gate
 

@@ -27,3 +27,14 @@ def pair(
     if d == b or d == c:
         return first, fourth, 4
     return first, (second, third, fourth)[randrange(3)], 4
+
+
+def pair_mean_three(
+    draw: Callable[[], T],
+    key: Callable[[T], Hashable],
+    randrange: Callable[[int], int],
+) -> tuple[T, T, int]:
+    """Independent half-iid mixture: mean <=3 full draws, hard cap4."""
+    if randrange(2) == 0:
+        return draw(), draw(), 2
+    return pair(draw, key, randrange)

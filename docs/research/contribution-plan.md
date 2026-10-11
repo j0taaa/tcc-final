@@ -2095,3 +2095,13 @@ finita registrada, não o minimax limite sem ressalva. Resultado permanece
 candidato: falta prioridade específica, auditoria adversarial, oráculo da
 mistura e demonstração de uso com custo completo. Controles informados e
 iid3 permanecem legítimos na aplicação. Nenhum novo forward ou promoção.
+
+V4 acrescenta11 linhas para a mistura (referência40) e verifica sete oráculos
+racionais0.091s, incluindo independência das duas moedas e TODOS coeficientes
+empíricos condicionais. Suíte154 PASS69.932s e make check/Ruff PASS, com
+comandos/hashes em38/work/evidence. Custo completo variable por payload usa
+Wald finita PADRÃO: salvar chamadas inteiras reduz trabalho esperado em
+(2c-s3)*w contra pool4, preservando lei conjunta e mesma continuação. Não
+omitir overhead, reutilização desigual de helpers ou hipótese iid de custo.
+Huber2013/2015 e Dice3.3--3.5.2 são antecedentes de lower bounds/custo de
+factories efetivamente lidos. Nenhum modelo/campanha ou prioridade confirmada.

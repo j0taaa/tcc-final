@@ -1,0 +1,25 @@
+{
+  "kind": "independent rational correctness checks, not neural benchmark or novelty evidence",
+  "date_utc": "2026-10-11T18:06:56.066927+00:00",
+  "preimplementation_source_commit": "a760d163d1bb8dbf95dfc757d8a0f29269086c83",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_empirical_pool_coupling.py",
+    "-v"
+  ],
+  "source_sha256": {
+    "attempts/38-empirical-pool-coupling/work/couple.py": "ff353b84957f1cddae54937b83bdcf43f36a404950b54e9b42e68bd4af4ae242",
+    "tests/test_empirical_pool_coupling.py": "4dd0f004937f5a31054e13a11c3713ff355613831debc61098c4e670ea687b39",
+    "attempts/38-empirical-pool-coupling/work/minimax-frontier-v3.md": "a485b0d0cfd1fbe403ef96fd5d18b0d36145f3854d28260f015b0f2a1136dbca"
+  },
+  "wall_seconds": 0.12556653004139662,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_all_raw_verifiers_and_nonmonotone_scores (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_all_raw_verifiers_and_nonmonotone_scores) ... ok\ntest_exact_payload_law_and_pointwise_cost_with_aliases_failures (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_exact_payload_law_and_pointwise_cost_with_aliases_failures) ... ok\ntest_exact_reduction_to_classical_grouped_rank_rotation (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_exact_reduction_to_classical_grouped_rank_rotation) ... ok\ntest_independent_budget_coin_preserves_full_law_and_all_verifiers (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_independent_budget_coin_preserves_full_law_and_all_verifiers) ... ok\ntest_known_uniform_derangement_is_stronger_for_every_score (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_known_uniform_derangement_is_stronger_for_every_score) ... ok\ntest_multivariate_virtual_tape_coefficients_with_independent_coins (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_multivariate_virtual_tape_coefficients_with_independent_coins) ... ok\ntest_probability_aware_rotation_is_kept_as_a_stronger_diversity_control (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_probability_aware_rotation_is_kept_as_a_stronger_diversity_control) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.091s\n\nOK\n"
+}

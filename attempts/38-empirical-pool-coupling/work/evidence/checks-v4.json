@@ -1,0 +1,42 @@
+{
+  "kind": "actual offline verification results; no neural data",
+  "source_sha256": {
+    "attempts/38-empirical-pool-coupling/work/couple.py": "ff353b84957f1cddae54937b83bdcf43f36a404950b54e9b42e68bd4af4ae242",
+    "tests/test_empirical_pool_coupling.py": "4dd0f004937f5a31054e13a11c3713ff355613831debc61098c4e670ea687b39"
+  },
+  "commands": [
+    {
+      "command": "make test",
+      "observed_exit_code": 0,
+      "log_sha256": "4498ade62190f2ed988094d023ba02d17231bb329fcd9da88e564b6cd43cbec6",
+      "tail": [
+        "test_full_joint_sampler_law_by_all_random_decisions (test_streamed_grammar_head.StreamedGrammarHeadTests.test_full_joint_sampler_law_by_all_random_decisions) ... ok",
+        "test_zero_mass_bad_stream_and_incompatible_frame_are_distinct (test_streamed_grammar_head.StreamedGrammarHeadTests.test_zero_mass_bad_stream_and_incompatible_frame_are_distinct) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 154 tests in 69.932s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "command": "make check",
+      "observed_exit_code": 0,
+      "log_sha256": "5048e15b0e27e3f927f1d3a26ffa249d983ba8a8158254a98cbda3d9738e2f75",
+      "tail": [
+        "All checks passed!",
+        ".venv/bin/python -m ruff format --check src scripts",
+        "81 files already formatted",
+        ".venv/bin/python -m mypy",
+        "Success: no issues found in 58 source files",
+        ".venv/bin/python scripts/archive_attempts.py --check",
+        "Preserved 38 attempts / 108 versions / 75676 files (2,101,003,834 uncompressed bytes); integrity only, not scientific validation"
+      ]
+    }
+  ],
+  "focused_ruff": {
+    "command": ".venv/bin/ruff check attempts/38-empirical-pool-coupling/work/couple.py tests/test_empirical_pool_coupling.py",
+    "observed_exit_code": 0,
+    "result": "All checks passed!"
+  }
+}
