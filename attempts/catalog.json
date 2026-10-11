@@ -1651,6 +1651,17 @@
             "attempts/41-structured-noising-covariance/work/exact-count-source-v6.md",
             "attempts/41-structured-noising-covariance/work/information-protocol-v6.json"
           ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "76cdca4e5a1f3ffaec20d0d435578f7726446e84",
+          "evidence_commit": "5ce27c8924d4729ce4e40d9bc2d5b54e15a05f82",
+          "evidence_roots": [
+            "attempts/41-structured-noising-covariance/work/evidence/information-audit-v7.json",
+            "attempts/41-structured-noising-covariance/work/evidence/information-checks-v7.json",
+            "attempts/41-structured-noising-covariance/work/evidence/noise-v7",
+            "attempts/41-structured-noising-covariance/work/retained-rss-v7.md"
+          ]
         }
       ]
     }
