@@ -83,3 +83,24 @@ IDs/probabilidades originais foram considerados, incluindo aliases e zeros.
 Nenhum forward novo, medição neural de memória/tempo ou confirmação de
 novidade. Os101 testes passam; os controles conhecidos ainda precisam receber
 a mesma fronteira eficiente antes de qualquer conclusão competitiva.
+
+## V2 em validação: comunicação de massas binary64 exatas
+
+O addendum `work/gpu-boundary-v2.md` responde aos oito critérios novamente
+antes da implementação. Preserva o head denso na GPU e a lei de seus pesos
+representados; a hipótese é economia de comunicação/conversão, não de pico
+de memória GPU. Controles NumPy e PyTorch somam dígitos inteiros de forma
+vetorizada e recebem o mesmo parser e recuperação por blocos. Neal/ExBLAS
+são antecedentes da soma; o princípio não é reivindicado como novo.
+
+Dois oráculos CPU de soma e a lei completa de recuperação por blocos passam.
+Antes de timing, o comando GPU abaixo executará todos os40 pares positivos
+predefinidos e12 recusas de números inválidos/massa zero, comparando cada
+bloco com `Fraction` independente. O produtor será congelado antes da execução;
+falhas também terão arquivo próprio preservado.
+
+```bash
+.venv-live/bin/python -m attempts.28-streamed-grammar-head.work.check_gpu_v2 --output attempts/28-streamed-grammar-head/work/evidence/gpu-correctness-v2.json
+```
+
+Nenhuma evidência GPU/velocidade ou prioridade de publicação obtida ainda.

@@ -76,6 +76,52 @@ def exact_sampler_law(operation):
 
 
 class StreamedGrammarHeadTests(unittest.TestCase):
+    def test_block_recovery_full_original_law_and_fixed_slots(self):
+        import numpy as np
+
+        blocks = importlib.import_module(PREFIX + "block_stats")
+        sampler = importlib.import_module(PREFIX + "block_sampler")
+        cases = (
+            ((b"[", b"]", b"0", b"1", b"[]", b"[]", b" ", None), (None, None), [[1] * 8] * 2),
+            ((b"[]", b"[]", b"0", None), (None,), [[2, 3, 4, 1]]),
+            ((b"[", b"]", b"0", b"1", b"[]", b"[]", b" ", None), (0, None, 1), [[1] * 8]),
+            ((b"[[]]", b"0", None), (0,), []),
+        )
+        for emissions, canvas, rows in cases:
+            table, plan = prepare(emissions, canvas)
+            free = [p for p, t in enumerate(canvas) if t is None]
+            matrix = np.array(rows, dtype=np.float64).reshape((len(free), len(emissions)))
+            expected = {}
+            for word in itertools.product(
+                *[(t,) if t is not None else range(len(emissions)) for t in canvas]
+            ):
+                if valid(emissions, word):
+                    expected[word] = prod(int(matrix[row, word[p]]) for row, p in enumerate(free))
+            total = sum(expected.values())
+            expected = {word: Fraction(w, total) for word, w in expected.items() if w}
+            for size in (1, 3):
+                partition = blocks.Partition(table.class_of, len(table.classes), size)
+                stats = (
+                    blocks.numpy_stats(matrix, partition)
+                    if free
+                    else blocks.BlockStats(partition, (), (), 0)
+                )
+
+                def operation(rng, plan=plan, stats=stats, matrix=matrix, partition=partition):
+                    posterior = sampler.BlockPosterior(
+                        plan, stats, sampler.numpy_fetch(matrix, partition)
+                    )
+                    return posterior.sample(rng)
+
+                self.assertEqual(exact_sampler_law(operation), expected)
+                posterior = sampler.BlockPosterior(
+                    plan, stats, sampler.numpy_fetch(matrix, partition)
+                )
+                self.assertEqual(posterior.mass, Fraction(total, prod(sum(row) for row in rows)))
+                posterior.sample(Random(28))
+                with self.assertRaisesRegex(ValueError, "consumed"):
+                    posterior.sample(Random(29))
+
     def test_full_joint_sampler_law_by_all_random_decisions(self):
         emissions = (b"[", b"]", b"0", b"1", b"[]", b"[]", b" ", None)
         rows, canvas = [[1] * len(emissions)] * 2, (None, None)

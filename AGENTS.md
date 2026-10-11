@@ -180,6 +180,10 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   agrupamento e fusão; STATIC/GSP são antecedentes de projeção restrita.
   Não chamar esses princípios de novidade. Ainda não há kernel GPU, timing,
   benefício sobre streaming competente ou prioridade publicável confirmada.
+  Atualização v1:8/8 JSONs no mesmo head público e29488 checks exatos, sem
+  forwards novos. V2 implementa redução inteira binary64 opt-in em GPU e
+  controles NumPy/PyTorch vetorizados, ainda sem validação GPU/timings.
+  Mantém head denso na GPU; não reivindicar economia de memória neural.
 
 Use [TASKS.md](TASKS.md) para tarefas/evidências atuais e
 [attempts/README.md](attempts/README.md) e `attempts/catalog.json` para versões

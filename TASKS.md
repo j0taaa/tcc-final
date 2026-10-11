@@ -49,6 +49,10 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   beyond generic grouping and frozen streaming controls. Full pipeline cost,
   original finite numeric law and direct strong controls are required.
   Sufficient publication novelty remains unconfirmed.
+  V2 addendum predates kernels; NumPy/PyTorch integer controls included.
+  Two CPU sum oracles plus full block sampler law pass. GPU correctness
+  audit is frozen before execution; competitive timings still prohibited
+  until a separate all-cost protocol is defined.
 
 ## M47 — Finite-dimensional closure: research gate, not a publication claim
 
