@@ -1,0 +1,37 @@
+{
+  "schema": 5,
+  "inputs_sha256": "8f8e250e5d1769ea24cce18ae460ea350787fe2694f4ad668c16e27cc7c1c0c3",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "native_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+  "cpu_threads": 4,
+  "gen_length": 128,
+  "block_length": 128,
+  "steps": 16,
+  "temperature": 1.0,
+  "max_resamples": 256,
+  "max_prompt_tokens": 1024,
+  "replicates": 2,
+  "seed": 385011,
+  "methods": [
+    "pool4",
+    "early_pool",
+    "adaptive4",
+    "mean3",
+    "iid2",
+    "novelty3",
+    "seed_half"
+  ],
+  "native_env": {
+    "CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH": "1",
+    "CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH": "2",
+    "CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT": "1",
+    "CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER": "1"
+  },
+  "scope": "functional/full-cost pilot, not independent or statistical confirmation",
+  "immutable_helper_origin": {
+    "commit": "a760d163d1bb8dbf95dfc757d8a0f29269086c83",
+    "native_transition_v4.py": "06831108b492ff4ee97b7fbee8f4c563145bfebc09181166f7e7e7022abb6b35",
+    "arithmetic_task_v6.py": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b"
+  }
+}

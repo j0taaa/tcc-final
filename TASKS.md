@@ -83,6 +83,18 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Huber2013/2015 lower-bound sections and Dice3.3--3.5.2 READ with original
   hashes/scopes in `primary-comparison-v3.md`. Specific priority and useful
   native application still open; no new model campaign or article promotion.
+- [x] T5806: BEFORE native code/forwards freeze finite-domain corollary
+  (gap<=11/(8M)), eight revised criteria and `native-protocol-v5.md/json`.
+  Four FIRST input-only hashes of ALL1000 SVAMP at78e7276, frozen source,
+  separate postcapture-only golds/license. Two seeds x seven competent
+  methods=56 records; real COMPLETE calls, common head/preparation charged,
+  iid2/biased novelty3/seed-half retained. Functional/cost PILOT only, no
+  statistical primary gate, no model capture yet. No closed A32/A34 gate
+  reopened or relative timing credited to a replay bank.
+- [ ] T5807: Minimal isolated native implementation, validate same-law
+  controls and original RNG/IDs, freeze producer before running ALL56 pilot
+  records. Report full costs/losses and decide application honestly before
+  any larger campaign/article promotion.
 
 ## M57 — Complete-output canonical coupling: written application gate
 

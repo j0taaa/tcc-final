@@ -152,3 +152,38 @@ de overhead. Não declarar que isto é wall time medido ou vantagem contra iid3.
 lower bounds e Dice Enterprise3.3--3.5.2. A fronteira é a candidata, não o
 princípio de contagem/exchangeability/Wald. Prioridade/aplicação permanecem
 abertas, sem novo forward ou promoção do artigo.
+
+## V5 — contrato nativo pequeno, congelado antes de implementação
+
+Os oito critérios são reavaliados antes do adaptador:
+
+1. **Uso:** traduções de enunciados externos em árvores JSON recursivas
+   executáveis; pares com a lei original de EPIC. Não criar regras Booleanas
+   ou recuperar as direções15/16. A escolha por pares imparciais precisa ter
+   valor para o consumidor; busca de melhor resposta é operação diferente.
+2. **Contribuição:** fronteira e mínimo pontual continuam candidatos. O novo
+   corolário `finite-domain-v5.md` limita a distância minimax finita por
+   `11/(8M)`, sem fingir que tokenizer finito tem domínio infinito. Integração
+   nativa sozinha NÃO cria novidade nem garante publicação.
+3. **Escolha:** mesma lei dos pools clássicos, menos chamadas completas em
+   esperança; incluir também iid2, novelty3 enviesado e seed-half barato,
+   permitindo que vençam na aplicação. Nenhuma superioridade EPIC geral.
+4. **Matemática:** todos os argumentos independem do modelo/código; o piloto
+   verifica o vínculo ao native completo, não substitui prova de vantagem.
+5. **Honestidade:** `native-protocol-v5.md/json` escolhe quatro registros
+   input-only hash de TODOS1000 SVAMP, novo corpus pinado, antes de outputs.
+   Duas seeds/sete métodos =56 registros, incluindo perdas e recusas. É
+   PILOTO funcional/custo, explicitamente insuficiente para gate estatístico.
+6. **Custo:** reruns nativos completos para cada chamada pedida; cobrar
+   helpers, forwards, cache/head comum, parsing/cópias/reconstrução/overhead.
+   Nenhum replay é creditado como execução evitada. Mesma preparação comum.
+7. **Objeção:** independentes ou novelty3 podem ser melhores para busca;
+   preservar marginais não pode ser desculpa artificial. O domínio neural
+   restrito e logits acessíveis não herdam o lower bound universal desconhecido.
+8. **Artigo:** precisa completar a auditoria de prioridade e evidência de
+   uso relevante. Golds separados só após captura completa; não selecionar
+   classes/métricas a partir dos resultados. Sem revisão humana inventada.
+
+Nenhum forward ou adaptador novo foi executado ao escrever esta versão.
+Fontes/helper próprios serão copiados por commit/hash, não importados de
+trabalho mutável de outra tentativa. Licença SVAMP acompanha os inputs.
