@@ -1,0 +1,57 @@
+{
+  "source_commit": "c0a2195984b3da38539022bc073618629dcbf498",
+  "scope": "Feature/proxy/full-bias numerical regression with CPU/CUDA autodiff; independent pivotal bank-trace oracle. ZERO external model forwards. Prospective real information probe is not run yet.",
+  "files": {
+    "check_noise_info.py": "58832bfce56dd1896e8d5a02aa9cf59e2dad2eb8def5c80ed9a887d0be9569c3",
+    "documents-v5.json": "19987dd6967a3fc83e9fb453cb27cb5ff682582b7fa73611c57ab9ce132adb47",
+    "information-contract-v5.md": "d3be24e4925e750e7e3dfda729f6d0e56613b7a0d18898d921e577d7396ceccf",
+    "information-protocol-v5.json": "8fe96a20428e50a6bebbe9371dea788d60e01864bf36559ff2f7d012efd25dd8",
+    "mdlm-config-v5.json": "80241ec93e4c994a12996f322096b7ff1b125e28a9061ceadd2e85b1b21919a4",
+    "mdlm_loader.py": "ae010fa84e006716b33b934ff8d9bb838049f9a07bfd75604868f7dee2bed648",
+    "noise_features.py": "17b271aa193413685925df30e7bf03440c08487392881ca06aa5eecb9830bf29",
+    "noise_information.py": "3b4d6236a5e6cd7f8b5e31d9ba167da31270c8da799c4abca84d3b1610d70a15",
+    "origin-v5.json": "449bc94f27b66ac1bcbf88d4d69cb228df6a7c8751578858ea7c991cfcb25df0"
+  },
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "attempts/41-structured-noising-covariance/work/check_noise_info.py",
+        "attempts/41-structured-noising-covariance/work/mdlm_loader.py",
+        "attempts/41-structured-noising-covariance/work/noise_features.py",
+        "attempts/41-structured-noising-covariance/work/noise_information.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.005215507000684738,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "attempts/41-structured-noising-covariance/work/check_noise_info.py",
+        "attempts/41-structured-noising-covariance/work/mdlm_loader.py",
+        "attempts/41-structured-noising-covariance/work/noise_features.py",
+        "attempts/41-structured-noising-covariance/work/noise_information.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.004348571004811674,
+      "stdout": "4 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv-live/bin/python",
+        "-m",
+        "attempts.41-structured-noising-covariance.work.check_noise_info"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.0155979840201326,
+      "stdout": "PASS full-V bias-gradient CPU/CUDA autodiff, JSON roles/proxy dimensions and independent pivotal bank trace; ZERO external model forwards\n",
+      "stderr": ""
+    }
+  ]
+}
