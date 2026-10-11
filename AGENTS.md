@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem152 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem159 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -440,6 +440,11 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   Não vale monotonicidade da variância de TODO score real (contraexemplo).
   Deve haver fatoração exata, incluindo budgets de texto/AST/interpreter.
   Prioridade/aplicação competitiva/publicabilidade continuam abertas.
+  V8 tem observadores21 linhas e três oráculos novos (15 partições e todos
+  verificadores, budgets, aliases/falhas e contraexemplo).12 checks focados
+  PASS0.279s;159 totais PASS68.211s, check/Ruff PASS. Slides Luo2025 lidos
+  integralmente, mas NÃO o manuscrito2026: preservar essa distinção.
+  Nenhum novo forward/timing, promoção ou novidade confirmada nesta versão.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

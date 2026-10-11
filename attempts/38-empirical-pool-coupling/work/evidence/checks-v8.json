@@ -1,0 +1,14 @@
+{
+  "scope": "Routine verification, not publication/novelty or neural timing",
+  "logs": {
+    "make test": {
+      "sha256": "caaa76e1dc4aa3b4d1b847cd78883184b7315216a129bbbd2611ddc4939e17cf",
+      "tail": "test_zero_mass_bad_stream_and_incompatible_frame_are_distinct (test_streamed_grammar_head.StreamedGrammarHeadTests.test_zero_mass_bad_stream_and_incompatible_frame_are_distinct) ... ok\n\n----------------------------------------------------------------------\nRan 159 tests in 68.211s\n\nOK"
+    },
+    "make check": {
+      "sha256": "5d06d710bdffff84cab8eb3f8c39357ce236febafb351f8e4af58010dabd0d70",
+      "tail": ".venv/bin/python -m ruff format --check src scripts\n81 files already formatted\n.venv/bin/python -m mypy\nSuccess: no issues found in 58 source files\n.venv/bin/python scripts/archive_attempts.py --check\nPreserved 38 attempts / 112 versions / 78417 files (2,143,018,121 uncompressed bytes); integrity only, not scientific validation"
+    }
+  },
+  "explicit_ruff": "check and format --check attempts/38-empirical-pool-coupling/work tests/test_semantic_coarsening.py PASS"
+}

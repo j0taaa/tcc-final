@@ -117,6 +117,14 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 - [ ] T5809: Independently audit coarsening algebra and budget soundness,
   strongest predecessors and practical full-cost alternatives. No v6 timing
   relabelled, no artificial verifier cost, no independent/publication claim.
+  V8 now supplies21-line observers and THREE exhaustive finite checks:
+  all15 four-class partitions/all observable Boolean verifiers, original
+  marginals/work, best-score thresholds, real-score counterexample and
+  concrete raw-text/typed-AST/error boundaries.12 focused checks PASS0.279s;
+  full159 PASS68.211s, make check/Ruff PASS. `law-v8.json` source hashes.
+  Primary20-page Luo2025 slides READ, NOT the linked2026 manuscript;
+  `primary-comparison-v8.md` keeps unavailable sources explicit. No new
+  native timing, priority confirmation or full-use victory.
 
 ## M57 — Complete-output canonical coupling: written application gate
 

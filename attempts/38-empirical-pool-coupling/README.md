@@ -220,3 +220,20 @@ correta. As oito perguntas estão respondidas nesse arquivo; prioridade e
 utilidade de custo completo ainda precisam de auditoria. Um contraexemplo
 impede alegar monotonicidade para variância de todo score real. Nenhum timing
 v6 mede essa nova direção, e o artigo principal não foi promovido.
+
+## V8 — observador mínimo e oráculos independentes
+
+Somente21 linhas implementam a classificação por valor racional ou FAIL e
+a identidade JSON com o MESMO limite de texto. O core C4 permanece intacto.
+As oito respostas de `semantic-coarsening-v7.md` continuam válidas: a mudança
+materializa sua fatoração de budgets, sem nova hipótese/benchmark de vantagem.
+Três novos oráculos cobrem TODAS15 partições de quatro classes e TODOS seus
+verificadores Booleanos, marginais originais, custo, limiares de scores,
+contraexemplo de variância, aliases, erros e a fronteira de comprimento.
+Com os anteriores,12 oráculos PASS0.279s; suíte159 PASS68.211s, check/Ruff PASS.
+`law-v8.json` tem comandos/hashes; não é prova de prioridade ou medição neural.
+
+`primary-comparison-v8.md` diferencia os20 slides2025 realmente lidos do
+manuscrito2026 ainda indisponível. Os antecedentes de ranks/transport/factories
+continuam creditados. Nenhum forward/timing novo ocorreu nesta implementação,
+nenhuma conquista geral ou confirmação de publicação foi declarada.

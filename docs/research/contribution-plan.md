@@ -2126,3 +2126,14 @@ included). Total cost must include key/downstream differences, and exact
 factorization needs matching raw-text resource guards. Eight criteria
 re-evaluated. Specific priority, practical full-cost value and publication
 remain open; neither paper promotion nor human review was invented.
+
+
+### A38 v8 implementation checks
+
+The new observer wrapper follows v7 exactly, including its raw-text guard.
+Twelve focused exact tests PASS0.279s;159 full tests PASS68.211s and check/Ruff
+PASS. All15 four-class partitions and all their Boolean verifiers are tested
+independently; the real-score-variance counterexample is preserved. Hashes
+and commands in law-v8.json/checks-v8.json. No new model output/timing.
+Primary Luo2025 slides were read, not the unavailable2026 manuscript.
+Priority/publication and a compelling native full-cost benefit remain open.

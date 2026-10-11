@@ -1,0 +1,25 @@
+{
+  "scope": "12 independent exact finite law/key checks; NOT model/priority evidence",
+  "preimplementation_proof_commit": "3d670ce941623dfb781034914a5f109179a2026d",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "unittest",
+    "tests.test_empirical_pool_coupling",
+    "tests.test_semantic_coarsening",
+    "-v"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 0.3136087500024587,
+  "stdout": "",
+  "stderr": "test_all_raw_verifiers_and_nonmonotone_scores (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_all_raw_verifiers_and_nonmonotone_scores) ... ok\ntest_competent_full_and_early_pools_have_identical_raw_law (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_competent_full_and_early_pools_have_identical_raw_law) ... ok\ntest_exact_payload_law_and_pointwise_cost_with_aliases_failures (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_exact_payload_law_and_pointwise_cost_with_aliases_failures) ... ok\ntest_exact_reduction_to_classical_grouped_rank_rotation (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_exact_reduction_to_classical_grouped_rank_rotation) ... ok\ntest_independent_budget_coin_preserves_full_law_and_all_verifiers (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_independent_budget_coin_preserves_full_law_and_all_verifiers) ... ok\ntest_known_uniform_derangement_is_stronger_for_every_score (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_known_uniform_derangement_is_stronger_for_every_score) ... ok\ntest_multivariate_virtual_tape_coefficients_with_independent_coins (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_multivariate_virtual_tape_coefficients_with_independent_coins) ... ok\ntest_native_key_has_no_gold_and_preserves_typed_numeric_identity (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_native_key_has_no_gold_and_preserves_typed_numeric_identity) ... ok\ntest_probability_aware_rotation_is_kept_as_a_stronger_diversity_control (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_probability_aware_rotation_is_kept_as_a_stronger_diversity_control) ... ok\ntest_all_four_class_partitions_verifiers_and_complete_call_cost (tests.test_semantic_coarsening.SemanticCoarseningTests.test_all_four_class_partitions_verifiers_and_complete_call_cost) ... ok\ntest_every_threshold_of_common_semantic_scores_and_variance_counterexample (tests.test_semantic_coarsening.SemanticCoarseningTests.test_every_threshold_of_common_semantic_scores_and_variance_counterexample) ... ok\ntest_interpreter_observation_has_sound_aliases_errors_and_length_guard (tests.test_semantic_coarsening.SemanticCoarseningTests.test_interpreter_observation_has_sound_aliases_errors_and_length_guard) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.279s\n\nOK\n",
+  "sha256": {
+    "attempts/38-empirical-pool-coupling/work/couple.py": "ff353b84957f1cddae54937b83bdcf43f36a404950b54e9b42e68bd4af4ae242",
+    "attempts/38-empirical-pool-coupling/work/observers.py": "5bb9df76ae6ea84d9bc82229e3f8a14cf05052285e41638930967ffc283d4096",
+    "attempts/38-empirical-pool-coupling/work/controls.py": "d59124da119088d374448fc75e9f8c7b05c495e3fb610e28cdc6f994320bdcf7",
+    "attempts/38-empirical-pool-coupling/work/native_task.py": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b",
+    "attempts/38-empirical-pool-coupling/work/semantic-coarsening-v7.md": "78e0d098dc3390fee9cdab15d9bc4976c31110ec54d5221b3553343bab606b6e",
+    "tests/test_semantic_coarsening.py": "fe4ab73da0a02eb8df732e54c55a77c9530ca7827585c029a12e3cee59bda474",
+    "tests/test_empirical_pool_coupling.py": "f3c4d838009774df54a32a58a163b4524fc0c449dffc1668fb66fea8b0364fca"
+  }
+}
