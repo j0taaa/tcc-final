@@ -123,7 +123,7 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   cheap classes degenerate; nontrivial ones late. Raw/metadata/decision/hashes
   in34/work/evidence/arithmetic-root-diagnostic-v7. Larger ROOT-operator
   quality branch is NOT triggered; no gold/EPIC win/novelty claim.
-- [ ] T5408: Freeze and execute FIRST-NEW-NUMBER resource diagnostic on ALL
+- [x] T5408: Freeze and execute FIRST-NEW-NUMBER resource diagnostic on ALL
   same eight input-only questions,32 new seeds, unchanged resource gate.
   `34/work/arithmetic-protocol-v8.md/json`, pure original-ID checkpoint helper.
   One additional independent test covers fixed/old slots, aliases, special
@@ -131,6 +131,14 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   this is correction evidence, not semantic benefit. V9 preserves complete
   negative root source fe3fa65/evidence1449ca6 before modifying the producer.
   No golds/new heads V8 before this freeze; parity could have zero useful signal.
+  EXECUTED f7114ac:8/8 rows,256 native prefixes,2.330 new forwards; zero
+  producer errors,5/8 first tails executable.1/8 resource screens versus
+  preregistered minimum2; quality branch NOT triggered. Raw/metadata/decision/
+  hashes in34/work/evidence/arithmetic-number-diagnostic-v8. No golds/quality/
+  independent confirmation. Jafari Jozani/Perron2011 original Sections1--4
+  now read: cheap ranking/expensive measurement are already the prior use.
+  Their fixed-four-pool law is z²; competent early-stop control costs3-z,
+  less than R3's3. Specific frontier/application obligations remain open.
 
 ## M53 — Categorical race repair: reduction gate before implementation
 

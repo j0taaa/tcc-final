@@ -1,0 +1,57 @@
+{
+  "source_commit": "f7114ac0991faed5aa8658099098c78e362022a9",
+  "sources": {
+    "probe_native_v4.py": "0c8973b918f14d2feeff239fcc07a7e384b74381c1d54292c823e28ffb88a657",
+    "ruin.py": "f53bff994647be5188432baa7dd280fd843c0e33e9a56558cf1f718d2a90fea0",
+    "arithmetic_task_v6.py": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b",
+    "number_checkpoint_v8.py": "e88f808ae00fd95f6d0170a1f8ae8de10b06c6013ffe4f7e5262095a74a8af90",
+    "arithmetic_diagnostic_v7.py": "e0eef3b52824db1b4ad87d982b0662e746e7ac42bb83d43bf9cae5d9b47b1646",
+    "native_transition_v4.py": "06831108b492ff4ee97b7fbee8f4c563145bfebc09181166f7e7e7022abb6b35",
+    "arithmetic-inputs-v7.json": "9263ea01420c2910143896fc7a89f4a05a4e768244764ed89ed176f3e2fadbd8",
+    "arithmetic-protocol-v8.json": "e934b7bbc8e7e1f19280a0ca0b7c327db28097bd56e70f697376f549b213ef2b",
+    "arithmetic-protocol-v8.md": "bf59b44dfa838d78214eee75427ae8957ee9961bed4c5bafd7b325fe49ec67bb"
+  },
+  "config": {
+    "schema": 8,
+    "inputs_sha256": "9263ea01420c2910143896fc7a89f4a05a4e768244764ed89ed176f3e2fadbd8",
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "native_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+    "cpu_threads": 4,
+    "gen_length": 128,
+    "block_length": 128,
+    "steps": 16,
+    "temperature": 1.0,
+    "max_resamples": 256,
+    "max_prompt_tokens": 1024,
+    "draws_per_question": 32,
+    "seed": 347101,
+    "max_forwards_per_question": 1024,
+    "native_env": {
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH": "1",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH": "2",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT": "1",
+      "CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER": "1"
+    },
+    "screen": {
+      "min_classes_each": 3,
+      "min_tail_forwards": 2,
+      "mean_prefix_cost_at_most_tail_in_both_wall_cpu": true,
+      "min_questions_passing": 2
+    },
+    "scope": "RESOURCE diagnostic ONLY: no accuracy/gold access, no competitive timing or novelty claim",
+    "checkpoint": "first_new_number",
+    "class1": "first ASCII digit of first newly accepted number-bearing original token is odd; no event maps to false"
+  },
+  "hardware": "NVIDIA GeForce RTX 3080 Ti",
+  "torch": "2.8.0+cu128",
+  "load_wall_excluded_common": 58.42356096103322,
+  "grammar_setup": {
+    "wall": 0.018725515983533114,
+    "cpu": 0.00908062599999937
+  },
+  "grammar_sha256": "69f1e76aa8a14c10ef7405da4650e3435d57fb5ead6ceaacc7fa17bc54ededbe",
+  "lexical_sha256": "a0f64f01b7d5e23b22dc23d5477c65fb00557d686dcae51e0ded166c3ae965a7",
+  "upstream_sha256": "d99195fe7cc3080acfc608a2e6d70b7567564d533ee8fb1cb79e9d534637340c",
+  "scope": "resource screen, NO gold/accuracy/competitive timing claim"
+}

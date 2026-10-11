@@ -150,3 +150,11 @@ par/ímpar não é semântica; pode ter sinal zero mesmo variando. Checkpoint
 independente preserva IDs/aliases, ignora tokens anteriores/propostas brutas
 e não filtra falhas. Fonte/evidência V7 estão em v9 antes desta alteração.
 Nenhuma capturaV8 executada neste freeze; não alegar utilidade/publicação.
+
+V8 está COMPLETA no produtor f7114ac:8/8 registros,256 prefixos,2.330 novos
+forwards, zero erros do producer,5/8 primeiras caudas executáveis.1/8 screen
+positivo, abaixo dos2 predeclarados; não iniciar campanha de qualidade desta
+classe. Dados integrais em `work/evidence/arithmetic-number-diagnostic-v8`.
+Paridade variada não demonstrou sinal semântico ou vantagem integral.
+`work/ranked-sampling-primary-v10.md` credita o antecedente de ranking
+barato/medição cara e preserva a objeção de um controle adaptativo mais barato.

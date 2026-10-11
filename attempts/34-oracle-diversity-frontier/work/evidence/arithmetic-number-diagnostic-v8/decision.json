@@ -1,0 +1,18 @@
+{
+  "source_commit": "f7114ac0991faed5aa8658099098c78e362022a9",
+  "rows": 8,
+  "prefixes": 256,
+  "new_forwards": 2330,
+  "statuses": {
+    "complete_diagnostic": 8
+  },
+  "executable_first_tails": 5,
+  "passing": [
+    "train:2679"
+  ],
+  "min_questions_passing": 2,
+  "gate_passed": false,
+  "decision": "DO NOT trigger quality campaign for this checkpoint",
+  "scope": "resource screen ONLY, no golds/accuracy/independent confirmation/novelty",
+  "raw_sha256": "06958371d5c82774b76b4471fd0f9bb7dc21c30ea10e6387ece8ce7a7e4f82af"
+}

@@ -300,8 +300,8 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   Ghosh/Purkayastha2010 foram lidos; o original Ghosh1987 ainda falta.
   Aparente falha de estrita desigualdade em Wasan é auditoria separada,
   não conquista dLLM. Referência mínima com cap determinístico e certificado
-  espectral passa4 oráculos independentes;139 testes totais passam. Nenhuma
-  execução neural A34. Probabilidades conhecidas, mais saídas, custo completo
+  espectral passou4 oráculos independentes/139 testes no freezeV2, antes
+  dos heads posteriores. Probabilidades conhecidas, mais saídas, custo completo
   e sinal da classe são objeções obrigatórias. Novidade/publicação abertas.
   V3 escreve custo completo e comparação com TODOS planos iid de contagem
   não adaptativa no mesmo orçamento esperado. Se cada draw já gera/verifica
@@ -321,6 +321,14 @@ restaurar código retirado ou insistir em uma hipótese refutada.
  6/8 primeiras continuações executáveis,0/8 gates; sem gabaritos. Classe
   barata degenerada e classe variável tardia recusam esta aplicação, não
   o teorema. Nenhuma campanha de qualidade raiz deve ser iniciada.
+  V8 testa o primeiro token numérico realmente novo/aceito (classe por
+  paridade, sem sinal semântico presumido) nos MESMOS oito problemas:
+ 256 prefixos,2.330 forwards novos,5/8 primeiras caudas executáveis, zero
+  erros do producer.1/8 screens, abaixo de2 exigidos; campanha de qualidade
+  NÃO acionada. Fonte f7114ac, dados integrais preservados. Jafari Jozani/
+  Perron2011 original Sections1--4 confirma que ranking barato/medição cara
+  já é antecedente; seu pool4 e controles adaptativos competentes são
+  obrigatórios. Fonte/evidência raiz anteriores ficam independentes emv9.
 - A35 é uma ponte ESCRITA antes de código: lei de tag realmente aceita por
   greedy/MWPC pode contar #DNF, mesmo com sintaxe LL(1) e posterior produto
   polinomial de palavras com testemunho. Miklos4.2.2 já constrói união de
