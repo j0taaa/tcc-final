@@ -1,0 +1,17 @@
+{
+  "scope": "CPU/CUDA actual no-grad wrapper/first-step/private-RNG toy checks; no model inference",
+  "command": [
+    ".venv-live/bin/python",
+    "-m",
+    "attempts.39-known-source-coupling.work.audit_native_stage"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 1.3324871810036711,
+  "stdout": "PASS fast/fallback/terminal-failure first-step boundaries, private tapes and original IDs; no model\n",
+  "stderr": "",
+  "sha256": {
+    "native_stage.py": "c5065a3553465f16f67f096cf984b67214a7e0f847a41599331c15c5b56c2911",
+    "audit_native_stage.py": "8dc2f2d404edfe7b61d0c80623b7abb732f1e8c761f80bf284cd1712eb30e5ba",
+    "native_state.py": "dc4122629de62293c28af50e7013e1f240193b18294b120e7f40f6dd2fb368a8"
+  }
+}

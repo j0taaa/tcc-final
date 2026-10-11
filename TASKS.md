@@ -80,6 +80,13 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   nonterminal observations before any new forward; fix a source/observation
   contract and compare competent controls BEFORE another capture. Current
   first-yield results remain unaltered; no answer-conditioned selection.
+  V6 written contract3ce6789/archive98d835c BEFORE code/output. V7 minimal
+  READ-ONLY frame boundary prototype; real CPU/CUDA no-grad-wrapper fast,
+  fallback and immediate-failure toy cases pass with one simulated head,
+  unchanged first/final IDs and private RNG. No actual model output yet.
+  `39/work/evidence/stage-adapter-v7.json`. Fixed old-input/ALL-source
+  functional/information audit is frozen before new native calls; its seed
+  bank is development and is not an unbiased population-frequency estimate.
 
 ## M58 — Empirical categorical coupling and pointwise cost optimum
 
