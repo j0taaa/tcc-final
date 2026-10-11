@@ -1546,6 +1546,22 @@
           ]
         }
       ]
+    },
+    {
+      "id": "40-anchor-trace-coupling",
+      "title": "Independent retained anchor and exact cached frontier",
+      "conclusion": "Written pre-prototype conditional three-output corollary; caching/conditioning known. Specific priority and useful full-cost native advantage OPEN; no A39 query lower-bound claim with free anchor information.",
+      "reading": "TASKS.md M60; work/anchor-theory-v1.md; README eight criteria",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "d301f45111e41bacf4a6e0f8d47e7920c79de214",
+          "evidence_commit": "d301f45111e41bacf4a6e0f8d47e7920c79de214",
+          "evidence_roots": [
+            "attempts/40-anchor-trace-coupling/work/anchor-theory-v1.md"
+          ]
+        }
+      ]
     }
   ]
 }
