@@ -1,0 +1,8 @@
+{
+  "commit": "35f4ea6a50acf821494fc095929ff08d556652e8",
+  "path": "attempts/38-empirical-pool-coupling/work/couple.py",
+  "original_sha256": "ff353b84957f1cddae54937b83bdcf43f36a404950b54e9b42e68bd4af4ae242",
+  "copy_sha256": "70dc537f7aee3d4d790c15bbaa989bc3c1e17f96843347a8ee2cdb77829c2ad6",
+  "change": "TWO docstrings only; algorithm byte-for-byte unchanged",
+  "scope": "Classical C4 kernel; not itself a novelty claim"
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "Five exact finite-source proof obligations; constructed enumeration is correctness, NOT model superiority or priority",
+  "preimplementation_commit": "429e7cdd14d096001a7578294b9915ae63c741cb",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "unittest",
+    "tests.test_known_source_coupling",
+    "-v"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 2.791460931999609,
+  "stdout": "",
+  "stderr": "test_all_sixty_four_source_coarsenings_coverage_and_pathwise_query_omission (tests.test_known_source_coupling.KnownSourceCouplingTests.test_all_sixty_four_source_coarsenings_coverage_and_pathwise_query_omission) ... ok\ntest_every_partition_of_four_to_six_sources_all_raw_verifiers_and_exact_law (tests.test_known_source_coupling.KnownSourceCouplingTests.test_every_partition_of_four_to_six_sources_all_raw_verifiers_and_exact_law) ... ok\ntest_finite_grid_coefficients_are_triangular_and_cap_three_has_no_robust_gain (tests.test_known_source_coupling.KnownSourceCouplingTests.test_finite_grid_coefficients_are_triangular_and_cap_three_has_no_robust_gain) ... ok\ntest_rank_lifting_is_uniform_distinct_and_mixture_retains_source_law (tests.test_known_source_coupling.KnownSourceCouplingTests.test_rank_lifting_is_uniform_distinct_and_mixture_retains_source_law) ... ok\ntest_source_derangement_countercontrol_and_no_iid_wald_shortcut (tests.test_known_source_coupling.KnownSourceCouplingTests.test_source_derangement_countercontrol_and_no_iid_wald_shortcut) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 2.760s\n\nOK\n",
+  "sha256": {
+    "attempts/39-known-source-coupling/work/kernel.py": "70dc537f7aee3d4d790c15bbaa989bc3c1e17f96843347a8ee2cdb77829c2ad6",
+    "attempts/39-known-source-coupling/work/source.py": "b6bd081c6e46ddf0689b15fa067b37670dca0381bcca86a34ba069d988e160f6",
+    "attempts/39-known-source-coupling/work/finite-source-theory-v1.md": "c6cda33a4714127c77bacdb7b68f5901a5537a6aa7304d33689213617a969c8d",
+    "attempts/39-known-source-coupling/work/native-work-corollary-v1.md": "5eeeaaddd6fe719e6248de39c52b40de88bf07654da5cdaf610c0d5493f55f95",
+    "tests/test_known_source_coupling.py": "fff549a52fb1729983f7f45a3812d4b42dd54b2cbbf3f89a04425f2d9e7db41f"
+  }
+}

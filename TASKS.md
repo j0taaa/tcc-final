@@ -44,6 +44,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   prefix-omission/coarsening and strongest reductions. Include seed
   derangement counterexamples; preserve38 native losses. Specific priority
   and useful full-cost magnitude remain OPEN.
+- [x] T5902: V2 minimal independent kernel/source with origin hash and five
+  exact oracles:270 finite-source partitions, every Boolean raw verifier,
+  arbitrary-score covariance, hypergeometric coefficient grid and60 sound
+  coarsenings. Preserve seed-derangement, weighted-work and real-variance
+  counterexamples. `39/work/evidence/law-v2.json`;164 full tests PASS70.995s,
+  `make check` PASS. No native output/forward/timing or novelty confirmation.
 
 ## M58 — Empirical categorical coupling and pointwise cost optimum
 

@@ -1,0 +1,13 @@
+{
+  "scope": "Routine regression/integrity checks, not novelty or neural result",
+  "logs": {
+    "make test": {
+      "sha256": "50040a0e399796cef475c044240252f033f415a0cad4242d44b380dc7973c4b9",
+      "tail": "test_class_constancy_and_mass_with_macro_alias_fixed_and_partial_string (test_streamed_grammar_head.StreamedGrammarHeadTests.test_class_constancy_and_mass_with_macro_alias_fixed_and_partial_string) ... ok\ntest_full_joint_sampler_law_by_all_random_decisions (test_streamed_grammar_head.StreamedGrammarHeadTests.test_full_joint_sampler_law_by_all_random_decisions) ... ok\ntest_zero_mass_bad_stream_and_incompatible_frame_are_distinct (test_streamed_grammar_head.StreamedGrammarHeadTests.test_zero_mass_bad_stream_and_incompatible_frame_are_distinct) ... ok\n\n----------------------------------------------------------------------\nRan 164 tests in 70.995s\n\nOK"
+    },
+    "make check": {
+      "sha256": "c41c89c131ac4c7e0b6a66f5eef4c7bae54f7adb5d3ce8729b2d030006611530",
+      "tail": ".venv/bin/python -m ruff check src scripts\nAll checks passed!\n.venv/bin/python -m ruff format --check src scripts\n81 files already formatted\n.venv/bin/python -m mypy\nSuccess: no issues found in 58 source files\n.venv/bin/python scripts/archive_attempts.py --check\nPreserved 39 attempts / 114 versions / 79780 files (2,164,027,651 uncompressed bytes); integrity only, not scientific validation"
+    }
+  }
+}

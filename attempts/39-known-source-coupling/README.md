@@ -57,6 +57,18 @@ This attempt brings that competent alternative into the mathematical model.
    imaginary infinite exact-softmax decoder. No human review/publication or
    general EPIC win has occurred. A38 losses remain visible.
 
-No implementation accompanies this first written version. The known rank
-kernel will be copied by immutable commit/hash if this direction passes.
-No code or results from another attempt will be imported mutably.
+The first written version preceded all code. V2 now copies the known
+40-line kernel independently from A38's immutable source (origin manifest),
+and adds a 21-line uniform distinct-source lookup. Five exact tests enumerate
+all270 partitions of4--6 sources, all raw Boolean verifiers, nonmonotone
+scores, finite interpolation matrices and all60 four-source coarsenings.
+The inexpensive derangement counterexample, weighted-cost counterexample
+and failure of all-score variance monotonicity under coarsening remain.
+These are independent finite proof obligations, NOT a model benchmark or
+a proof by testing of the universal query lower bound. The complete active
+suite passes164 tests; no native forward or timing accompanies v2.
+
+All eight criteria above continue to apply. Mathematical plausibility now
+has a minimal tested reference; criteria2,6 and8 remain open for priority,
+useful full-cost magnitude and native implementation. No production change
+or article promotion follows from this test result.

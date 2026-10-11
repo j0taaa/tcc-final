@@ -457,7 +457,12 @@ Covariância de scores completos tem correção WITHOUT replacement dentro das
 classes; C4 não domina derangement para todos scores (contraexemplo mantido).
 Corolário de primeiro yield nativo/head comum exige auditar zero forwards
 auxiliares; igual esperança de forwards não é igualdade de wall/CPU/memória.
-Nenhum protótipo, novo forward, timing, prioridade ou publicação confirmado.
+V2 tem kernel/source61 linhas e cinco oráculos exatos independentes:270
+partições finitas, todos verificadores brutos e60 coarsenings, incluindo
+contraexemplos a derangement/custo Wald/variância real.164 testes PASS70.995s,
+check/Ruff PASS. Ren2019 Theorem1 e suplemento8.1 são antecedentes explícitos
+de no-free-lunch finito; novidade query-cost e uso competitivo seguem abertos.
+Nenhum novo forward, timing, prioridade ou publicação confirmado.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

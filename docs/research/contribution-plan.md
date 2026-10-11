@@ -2156,3 +2156,12 @@ forwards and all terminal verifier coverage no worse than iid EPIC2, under
 its exact original finite-seed/sufficient-state premises. Sampling/parsing/
 copies/memory remain charged. No prototype, forward, timing, priority or
 publication confirmation exists at this first written gate.
+
+
+A39 v2: referência isolada de61 linhas, cinco oráculos exatos (270 partições
+e60 coarsenings),164 testes totais PASS70.995s. Não são benchmarks de utilidade.
+Ren/Zhao/Ermon2019 Theorem1 e prova8.1 foram conferidos em fontes primárias: o
+minimax sobre TODO score já é conhecido e o derangement atinge esse bound.
+A diferença candidata está na operação opaca de consultas/classes e seus
+limites de custo, não em anunciar um antitético universalmente melhor.
+Ver39/work/primary-comparison-v2.md; prioridade e aplicação continuam abertas.
