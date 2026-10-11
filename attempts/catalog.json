@@ -1307,6 +1307,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "37-canonical-outcome-coupling",
+      "title": "Acoplamento de gerações completas por resultado canônico",
+      "conclusion": "Prova candidata de1/13 do ganho máximo para resposta canônica única; iid3 vence cobertura com mesmo número esperado de gerações. Novidade e consumidor de custo útil abertos.",
+      "reading": "attempts/37-canonical-outcome-coupling/README.md; TASKS.md M57",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "ee0b1323c18968bc0c26044cad8cf89be168a633",
+          "evidence_commit": "ee0b1323c18968bc0c26044cad8cf89be168a633",
+          "evidence_roots": [
+            "attempts/37-canonical-outcome-coupling/work/theory-v1.md",
+            "attempts/37-canonical-outcome-coupling/work/primary-comparison-v1.md"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -240,3 +240,13 @@ resultado negativo:8 candidatas20/32 empatam iid2 e custam mais, misto21/32
 seeds. Todos os resultados/IO/metadata estão preservados. A34 acrescenta
 referência mínima e4 oráculos, sem nova execução neural ou utilidade confirmada;
 DeGroot original foi lido, Wasan/Ghosh e novidade específica ainda pendentes.
+
+### 37 — resultado canônico de gerações completas
+
+[37-canonical-outcome-coupling](37-canonical-outcome-coupling/README.md) começa
+com prova e oito critérios ANTES de código. Hash aleatório e ruína dão1/13
+do ganho máximo de cobertura de pares de mesmas marginais para qualquer
+resultado canônico correto único. Custo integral: iid3 SEMPRE vence cobertura
+com mesmo número esperado de gerações. Avaliação cara é uma condição ainda
+não validada, não um atraso artificial de benchmark. Prioridade/publicação
+continuam abertas; v1 preserva exatamente o contrato escrito inicial.
