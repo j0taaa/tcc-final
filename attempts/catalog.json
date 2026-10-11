@@ -1505,6 +1505,15 @@
           "evidence_roots": [
             "attempts/39-known-source-coupling/work/first-step-contract-v6.md"
           ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "df64be3e949d5ec713494da59a5146685260d2a1",
+          "evidence_commit": "df64be3e949d5ec713494da59a5146685260d2a1",
+          "evidence_roots": [
+            "attempts/39-known-source-coupling/work/evidence/stage-adapter-v7.json",
+            "attempts/39-known-source-coupling/work/first-step-contract-v6.md"
+          ]
         }
       ]
     }
