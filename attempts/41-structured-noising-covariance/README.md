@@ -106,3 +106,22 @@ All eight criteria are reassessed at the end of the reduction note. Priority,
 scientific significance, useful grammar-related proxy, external neural cost
 benefit and publication remain OPEN. This is a pre-model reduction/oracle
 audit, not a trained model, an EPIC comparison or a new article protagonist.
+
+## V4 — all-budget atom frontier and a failed stronger generalization
+
+`work/budget-frontier-v4.md` writes the arbitrary source-query cap theorem,
+hypergeometric/Frechet lower bound and attaining grouped half-rotation,
+including the same conditional-completeness argument as the own A39 proof.
+Odd budgets equal the preceding even budget. The gain from2r to2r+2 has an
+exact Catalan/falling-factorial expression; two new finite oracles check5556
+population triples and the preserved counterexample.
+
+This is a comparative ATOM frontier under opaque materialized-source queries,
+not a class-query-only bound. At B=8, sizes(1,1,3,3), a union of singleton
+classes has positive covariance1/48. Thus atom-optimal balanced larger pools
+need NOT preserve the v2/v3 all-score guarantee; do not promote them as a
+universally safe training extension. The full neural operation is still absent.
+`work/primary-addendum-v4.md` records current LLaDA1.5/VRPO's already known
+score variance/budget/common-noise controls and the stronger count formulation
+for time-independent denoisers. This theorem's priority, significance and
+practical consequence are still unresolved; it is not a publication victory.

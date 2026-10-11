@@ -522,6 +522,12 @@ conhecidos. Seis oráculos próprios passam; Lean verifica a obstrução local
 finita, não custo/probabilidade inteira ou software. Preservar comparador RSS
 com boa ordem fixa, que pode vencer, e atalhos pivotal iguais. Prioridade,
 significância e benefício neural real permanecem abertos.
+V4 escreve a fronteira de átomos para qualquer orçamento SOURCE-cap e seu
+incremento Catalan;5556 triplas passam. Oito oráculos próprios no total, sem
+novos testes ativos/modelos. Pool8(1,1,3,3) tem covariance positiva para união
+de classes: não transferir a garantia de todo score/gradiente para pools maiores.
+LLaDA1.5/VRPO v2 já otimiza avaliação de ELBO; preservar seus controles e a
+forma por contagem quando o denoiser for independente do tempo.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

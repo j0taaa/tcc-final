@@ -50,6 +50,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   completions, six own tests PASS. Isolated Lean checks finite obstruction
   only, kernel decide with no sorry/project axiom; whole written theorem,
   scientific priority and real-model cost benefit remain OPEN.
+  V4: written all-source-budget atom frontier/Catalan increments,5556 exact
+  triples checked. Preserve B=8 positive-covariance union: atom balance is
+  NOT arbitrary-verifier/gradient safety. Eight own tests including v2/v3;
+  LLaDA1.5/VRPO current v2 is a direct score-operation precedent. Time-independent
+  count/Rao-Blackwell baseline must enter when admitted by the model. No real
+  heads/noising/training/publication benefit confirmed.
 - [ ] T6102: Only if difference/cost plausibility survives, freeze real JSON/DSL
   noising-score protocol with competent MIRROR/time/importance/analytic/extra-iid
   controls and all costs. No experiments or improved training claimed yet.
