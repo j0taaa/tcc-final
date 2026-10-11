@@ -1630,6 +1630,17 @@
             "attempts/41-structured-noising-covariance/work/budget-frontier-v4.md",
             "attempts/41-structured-noising-covariance/work/primary-addendum-v4.md"
           ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "c0a2195984b3da38539022bc073618629dcbf498",
+          "evidence_commit": "cef5a13a1534ccd73960fcc46337714ff2856040",
+          "evidence_roots": [
+            "attempts/41-structured-noising-covariance/work/evidence/adapter-v5.json",
+            "attempts/41-structured-noising-covariance/work/information-contract-v5.md",
+            "attempts/41-structured-noising-covariance/work/information-protocol-v5.json",
+            "attempts/41-structured-noising-covariance/work/origin-v5.json"
+          ]
         }
       ]
     }
