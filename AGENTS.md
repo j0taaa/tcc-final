@@ -514,7 +514,14 @@ três oráculos pequenos/67 partições de matriz, protocolo de apenas duas
 avaliações caras e gradiente ReLU/softmax CPU/CUDA construído. O contraexemplo
 MIRROR NÃO é benchmark favorável: registra controle analítico mais barato e
 exato. Nenhum treino/head real novo. Ranked-set sampling já fornece a garantia
-genérica com ranking imperfeito; redução/comparação específica está em auditoria.
+genérica com ranking imperfeito. V3 confirma equivalência da lei completa a
+um design pivotal clássico. Novo modelo separa preparo bruto de consultas ao
+classificador e admite saída não classificada: bound escrito4-4c2+2c3 é somente
+para o design condicional FOUR-POOL declarado, não todo sampler ou mapas/massas
+conhecidos. Seis oráculos próprios passam; Lean verifica a obstrução local
+finita, não custo/probabilidade inteira ou software. Preservar comparador RSS
+com boa ordem fixa, que pode vencer, e atalhos pivotal iguais. Prioridade,
+significância e benefício neural real permanecem abertos.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

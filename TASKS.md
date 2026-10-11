@@ -42,7 +42,14 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   exactly-two-evaluation adapter. Written ReLU/softmax MIRROR counterexample
   includes cheaper analytic zero-variance control; autodiff is a constructed
   CPU/CUDA toy, NOT an external model benchmark. Ranked-set sampling adds
-  a direct classical imperfect-ranking objection, currently under audit.
+  a direct classical imperfect-ranking objection. V3: full original-source
+  law EQUALS class-first pivotal; ranked-set also has generic matrix guarantee.
+  Separate raw/label model has written sharp FOUR-POOL lookup cost4-4c2+2c3,
+  allowing unclassified outputs; NOT every-source-sampler lower bound.
+  Three new oracles check67 partitions/joint laws/query counts/early-return
+  completions, six own tests PASS. Isolated Lean checks finite obstruction
+  only, kernel decide with no sorry/project axiom; whole written theorem,
+  scientific priority and real-model cost benefit remain OPEN.
 - [ ] T6102: Only if difference/cost plausibility survives, freeze real JSON/DSL
   noising-score protocol with competent MIRROR/time/importance/analytic/extra-iid
   controls and all costs. No experiments or improved training claimed yet.

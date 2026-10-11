@@ -74,3 +74,35 @@ cheap imperfect ranking already gives an unbiased estimator with no larger
 variance than iid, without needing exact class masses. A41 cannot claim that
 this generic property, the matrix lift or grammar metadata is a discovery.
 Its exact cost/frontier difference and real-model usefulness remain unresolved.
+
+## V3 — classical reduction and a separate label-query frontier
+
+The full original-source law equals a symmetrized class-first PIVOTAL design
+on a four-source pool. Imperfect ranked-set sampling also has the generic
+matrix/iid guarantee. Neither balancing nor the covariance lift is new.
+`work/ranked-pivotal-reduction-v3.md` records the primary sources actually
+read, exact reductions, and cases where a competent ranked-set control wins.
+The learned fixed ordering must remain an admissible control.
+
+`work/label-cost-v3.md` distinguishes raw mask preparation from opaque
+classification. Its written bound is4-4c2+2c3 CLASSIFIER calls, versus
+4-2c2+c3 raw preparations, admitting unclassified returned states. It is
+sharp for the stated conditionally balanced FOUR-POOL design under unknown
+label placement and at least three permitted labels; it is NOT a lower bound
+for every original-source sampler, analytical inverse, or known class map.
+An already-computed original first score is retained; the key must have been
+fixed BEFORE that score. Only one additional expensive score is required.
+Equally competent pivotal controls may use the identical safe shortcuts.
+
+The23-line independent label-lazy kernel has the same full source joint law.
+Three new exact oracles compare all67 small partitions, pivotal and ranked-set
+laws, query counts, and every early-return hidden-completion obstruction.
+Together with v2, six offline tests pass. The isolated Lean specification
+`work/NoisingObstructions.lean` verifies ONLY the finite local obstruction,
+with kernel `decide`, no project axioms or admitted proof. It does not verify
+the entire written probability/cost argument, Python or neural operation.
+
+All eight criteria are reassessed at the end of the reduction note. Priority,
+scientific significance, useful grammar-related proxy, external neural cost
+benefit and publication remain OPEN. This is a pre-model reduction/oracle
+audit, not a trained model, an EPIC comparison or a new article protagonist.
