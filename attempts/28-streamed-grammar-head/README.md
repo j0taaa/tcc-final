@@ -122,3 +122,30 @@ na GPU a partir do pacote antigo, sem forward novo. São286 blocos e quatro
 palavras por peso;53.040 bytes D2H de sumários/recuperação na versão GPU contra
 1.608.256 de pesos completos. Essa contagem não é medição de PCIe/latência nem
 economia adicional sobre o controle PyTorch, que envia os mesmos sumários.
+
+## V3: custo completo da fronteira, protocolo antes da medição
+
+`work/antecedents-v3.md` registra que FactorDLM Proposição2 também já enuncia
+a lei conjunta por classes. Não há nova teoria de quociente nesta tentativa.
+A hipótese de sistemas permanece aberta. Protocolo `work/protocol-v3.json`:
+todos18 estados antigos, NumPy/Torch/Triton com blocos256/512/1024, três rotações,
+486 registros. Custos de frame, saída, RNG e transferências incluídos; setup
+estático e primeiras chamadas JIT registrados. Gate primário exige ganho20%
+wall E CPU contra TODOS seis controles, incluindo preparação do frame e o
+custo de NOVOS forwards CUDA/softmax GPU compartilhados. Os mesmos números
+novos são usados por todas as interfaces; não são os bits do softmax CPU
+antigo. Setup estático completo também será reportado, sem ocultar JIT.
+
+```bash
+.venv-live/bin/python -m attempts.28-streamed-grammar-head.work.benchmark_v3 --input .cache/a22-development-cuda-v1 --output attempts/28-streamed-grammar-head/work/evidence/development-boundary-v3 --weights-cache .cache/a28-live-development-v3
+.venv/bin/python -m attempts.28-streamed-grammar-head.work.analyze_v3 --input attempts/28-streamed-grammar-head/work/evidence/development-boundary-v3
+```
+
+O contrato das perguntas2/3/5/6 fica mais restrito: possível ganho de sistemas,
+sem nova lei matemática, somente uma mesma operação/mesmo parser nesta fase,
+controles numéricos fortes e custos reais de um passo. As
+demais respostas continuam válidas. Resultados ainda não medidos; ganhos de
+componentes não substituem o gate integral. É desenvolvimento novo nos frames
+antigos, sem nova avaliação independente ou trajetória inteira. As matrizes
+novas completas ficam no cache local, com hashes publicados por repetição;
+nunca são fornecidas ao baseline CPU para evitar a transferência obrigatória.

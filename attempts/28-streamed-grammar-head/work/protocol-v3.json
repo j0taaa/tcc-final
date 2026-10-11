@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "operation": "New paired MDLM CUDA forward and binary64 CUDA softmax, then exact recursive JSON valid mass and one exact original-ID conditional sample; same classical structural plan for all numeric interfaces.",
+  "phase": "Development on ALL18 old JSON-Schema-Test-Suite frames with NEW model forwards, not independent confirmation or whole neural trajectory",
+  "input": ".cache/a22-development-cuda-v1",
+  "seed": 2026101128,
+  "blocks": [
+    256,
+    512,
+    1024
+  ],
+  "methods": [
+    "numpy",
+    "torch",
+    "triton"
+  ],
+  "repetitions": 3,
+  "max_cells": 200000,
+  "max_edges": 1000000,
+  "max_terms": 50000000,
+  "timeout_seconds": 120,
+  "threads": 4,
+  "primary": "For each Triton block variant, paired median wall AND CPU of fresh-frame preparation+query <=0.8 of EVERY six NumPy/Torch controls, with favorable sign in ALL three repetitions. Same gate for preparation+ACTUAL paired model forward/CUDA softmax+query. Candidate must complete all repetitions with identical exact mass and paired original IDs within each common block layout.",
+  "secondary": "Report boundary/inside costs separately and warm query gate, never substitute a component win for primary. Reduced byte count alone is not success. All resource refusals, zero valid mass, errors and losses preserved.",
+  "preparation": "Vocabulary byte adapter/whole-lexer classification once as persistent model/grammar/tokenizer setup, recording wall/CPU. Partition/map upload recorded per block. Build each frame plan once independently of backend, charging full cost to every first-sample comparison. Record session-cold totals including model load/warmup, all static preparation and first JIT calls. Shared plan refusal refuses ALL methods equally, no wins.",
+  "timing": "Synchronize CUDA before/after. One NEW CUDA head for warmup and one per paired repetition/case, all50258 IDs, excluding MASK from softmax, preserving unsupported controls in original denominator. All controls receive identical frozen numbers. Query includes all required transfers, exponent/digit reductions, carries, class inside, RNG, block retrieval, detokenization/JSON/fixed-ID checks. First JIT calls recorded. File output/metadata/checksum excluded. CPU MUST copy GPU weights anew, never reuse archived host input. GPU softmax changes numeric origin versus old CPU capture: assert only the NEW represented law, not bit identity with old probabilities.",
+  "strong_controls": "NumPy bincount of32-bit integer digits is exact because positive block sums are <2^42<2^53. PyTorch uses independent integer digit/scatter operations on GPU. Both share efficient chosen-block recovery and same compiled grammar; all three block sizes available to controls. This audit concerns the numerical boundary, not a fastest-parser or EPIC comparison.",
+  "next_gate": "Only after useful development wins, freeze genuinely new independent-case and whole-loop protocols before executing. No heldout/fresh read in this campaign. Native EPIC comparisons require aligned outputs and common head accelerations.",
+  "claims": "Class quotient including exact sampling is already FactorDLM Proposition2; FlashSampling grouped sampling and SIMPLE disaggregation also prior. No new principle or confirmed publication novelty. Exactness is for normalized represented binary64 weights, not ideal real softmax or model semantic accuracy. Head remains dense on GPU.",
+  "model_config": "configs/experiments/m31_probability_scaling_cpu_v1.json"
+}
