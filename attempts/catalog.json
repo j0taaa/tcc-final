@@ -1441,7 +1441,7 @@
     {
       "id": "39-known-source-coupling",
       "title": "Known finite randomness and robust opaque-label query optimality",
-      "conclusion": "Written before implementation: known source addresses are included, robust finite cap4 atom/query-cost optima and full-source covariance derived; cap3 cannot improve seed derangement robustly. First-yield native corollary would preserve all terminal verifier coverage at equal expected neural forwards, with every auxiliary physical cost still charged. No prototype, model output, timing or publication priority confirmed.",
+      "conclusion": "Finite-source theory and61-line isolated reference, five exact independent oracles and164 current tests pass. Robust opaque-class query bounds remain candidates; competent seed-derangement/weighted-cost/coarsening counterexamples and prior finite no-free-lunch are preserved. No native outputs or useful full-cost/priority confirmation.",
       "reading": "attempts/39-known-source-coupling/README.md; TASKS.md M59",
       "versions": [
         {
@@ -1451,6 +1451,17 @@
           "evidence_roots": [
             "attempts/39-known-source-coupling/work/finite-source-theory-v1.md",
             "attempts/39-known-source-coupling/work/native-work-corollary-v1.md"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "9d1d4c0a766900d3c285d6fe8f061ffcae55e571",
+          "evidence_commit": "9d1d4c0a766900d3c285d6fe8f061ffcae55e571",
+          "evidence_roots": [
+            "attempts/39-known-source-coupling/work/evidence/law-v2.json",
+            "attempts/39-known-source-coupling/work/evidence/checks-v2.json",
+            "attempts/39-known-source-coupling/work/primary-comparison-v2.md",
+            "tests/test_known_source_coupling.py"
           ]
         }
       ]
