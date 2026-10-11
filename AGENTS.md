@@ -509,7 +509,12 @@ MIRROR/P-POTS v2(2026-05-21) é antecedente DIRETO, já lido nas seções releva
 A garantia é versus iid2 da MESMA operação/fonte; dados repetidos NÃO dominam
 duas amostras de dados independentes. Massas/inversos analíticos, mask/time
 antithetics e importância são comparadores legítimos. Novidade, proxy CFG útil,
-benefício completo e publicação NÃO confirmados; nenhum código/treino/head novo.
+benefício completo e publicação NÃO confirmados. V2 tem referência própria,
+três oráculos pequenos/67 partições de matriz, protocolo de apenas duas
+avaliações caras e gradiente ReLU/softmax CPU/CUDA construído. O contraexemplo
+MIRROR NÃO é benchmark favorável: registra controle analítico mais barato e
+exato. Nenhum treino/head real novo. Ranked-set sampling já fornece a garantia
+genérica com ranking imperfeito; redução/comparação específica está em auditoria.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

@@ -1,0 +1,69 @@
+{
+  "source_commit": "d593d5d7bf322bac8c9bda3cf0ff714bdbfbf9b3",
+  "scope": "Independent finite covariance and legitimate constructed gradient/cost oracles; NO external model, measured performance, training or novelty evidence.",
+  "partitions": 67,
+  "tests": 3,
+  "files": {
+    "audit_mirror.py": "fb3217359e5b7edb25c014e326f4bdbccd9c8618d7dce8a96e9d93e85c29c652",
+    "kernel.py": "70dc537f7aee3d4d790c15bbaa989bc3c1e17f96843347a8ee2cdb77829c2ad6",
+    "noising.py": "3120455602d043173c322583f352de3c10b71a19e97a24affc16c0a7ccbddada",
+    "source.py": "b6bd081c6e46ddf0689b15fa067b37670dca0381bcca86a34ba069d988e160f6",
+    "test_noising.py": "24975288aa97625b1682ee1a81774b680fd60dad52126881e111875c67cbfdfd"
+  },
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "attempts/41-structured-noising-covariance/work/audit_mirror.py",
+        "attempts/41-structured-noising-covariance/work/kernel.py",
+        "attempts/41-structured-noising-covariance/work/noising.py",
+        "attempts/41-structured-noising-covariance/work/source.py",
+        "attempts/41-structured-noising-covariance/work/test_noising.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.004798898997250944,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "attempts/41-structured-noising-covariance/work/audit_mirror.py",
+        "attempts/41-structured-noising-covariance/work/kernel.py",
+        "attempts/41-structured-noising-covariance/work/noising.py",
+        "attempts/41-structured-noising-covariance/work/source.py",
+        "attempts/41-structured-noising-covariance/work/test_noising.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.005004434962756932,
+      "stdout": "5 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "attempts.41-structured-noising-covariance.work.test_noising"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.12974323303205892,
+      "stdout": "",
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.096s\n\nOK\n"
+    },
+    {
+      "command": [
+        ".venv-live/bin/python",
+        "-m",
+        "attempts.41-structured-noising-covariance.work.audit_mirror"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.3556274820002727,
+      "stdout": "PASS legitimate CPU/CUDA ReLU/softmax gradients: MIRROR 2x iid2 variance; analytic control exact and cheaper\n",
+      "stderr": ""
+    }
+  ]
+}
