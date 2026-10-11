@@ -1780,3 +1780,25 @@ pergunta matemática é se um resumo de estado Markoviano realmente suficiente
 permite coalescer trajetórias e obter vantagem comparativa adicional. Isto
 exige um contrato separado; canvas igual não basta, e não há licença para
 relaxar a invariância de A30 silenciosamente.
+
+
+## 2026-10-11 — A31: vantagem comparativa nas reuniões, não apenas iid
+
+Contrato novo, preservando A30. A prova por potenciais finitos oferece
+Cov(H)-Cov(M)=soma das energias de reencontro após divergência de históricos.
+Consequência: variância da média nunca maior para K fixo; pass@2 nunca inferior
+ao controle histórico. Para K>2 não há prova de cobertura>=H. O corolário de
+retries dá (2-p)/c verificações esperadas, mas latência e distribuição da
+resposta selecionada não podem ser deduzidas automaticamente.
+
+Quatro oráculos independentes,118 testes totais65.916s,216 replays FAKE nativos
+passam;60 completos156 incompletos648 chamadas falsas. Nenhum forward neural
+novo. A31v1 explicita ordinal/fase/controle em vez de juntar canvases iguais
+apenas. Pré-ordinal code/rows preservados separadamente. A diferença candidata
+contra os antecedentes ainda não equivale a prioridade ou artigo confirmado.
+
+Próxima pergunta: ancorar a primeira trajetória no ruído nativo observado,
+com posterior exato do estrato, permite retries que preservam literalmente
+a primeira resposta? Condicional stratified resampling é antecedente, não
+invenção nossa. Aplicação externa deve comparar root-only e histórico fortes
+antes de qualquer alegação de utilidade incremental.

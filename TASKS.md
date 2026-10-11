@@ -27,6 +27,32 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M51 — Sufficient-state coupling: comparative theorem before neural work
+
+- [x] T5100: Eight criteria and primary antithetic/Markov/stratification sources;
+  written finite-state covariance identity, all-K mean variance<=history,
+  K=2 coverage>=history, coverage>=iid and exact retry-verification corollary.
+  No pass@K>=history claim for K>2, no new-classical-principle claim.
+- [x] T5101: Four independent exhaustive RNG oracles pass; all binary kernels,
+  nonmonotone three-state laws, auxiliaries, all small terminal properties,
+  exact meeting energies, asynchronous pair projectivity and unsafe canvas
+  counterexample. Whole suite118 pass65.916s; explicit Ruff check/format pass.
+- [x] T5102: Audited native state includes per-label query ordinal, canvas,
+  phase, agenda, generated words/EOS, rejection COUNT and immutable policy.
+  Historical rejected positions remain diagnostics outside final-score scope.
+  Three modes:216 literal fake-head replays equal,60 complete156 incomplete,
+ 648 fake calls. No neural forwards or competitive timing. Producer:
+ 31/work/probe_native.py; JSON+SHA under work/evidence/native-correctness-v1.json.
+  Pre-ordinal code+216 rows independently preserved, not relabeled.
+- [ ] T5103: Freeze v1, then conditional anchoring refinement, independent
+  joint-law oracle and literal first-candidate native preservation.
+- [ ] T5104: Freeze external schema-only structured-argument protocol before
+  new neural forwards: competent root-only/history/native iid controls, all
+  statuses, first output preservation, full cost/cache, independent holdout.
+- [ ] T5105: Execute development and only a passing candidate confirmation;
+  assess genuine incremental novelty and practical magnitude, not weak
+  dominance alone. No publication suitability or EPIC victory yet.
+
 ## M50 — Lazy native stratification: mathematical and integration gates
 
 - [x] T5000: Eight criteria, written fixed-K partial-subset/Maclaurin and

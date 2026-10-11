@@ -1,0 +1,1 @@
+Preserved216/216 fake-head native checks before adding the per-label query ordinal to sufficient-state keys. Source hashes checked exactly against this saved JSON. Current evidence is rerun; no old row is relabelled as produced by the refined source. No neural forward/timing.

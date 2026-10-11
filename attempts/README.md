@@ -41,6 +41,8 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [29-collision-stationary-coupling](29-collision-stationary-coupling/README.md) | Reparo de colisões: prova e teto de ganho desfavorável; rejeitado como protagonista |
 | [30-lazy-native-stratification](30-lazy-native-stratification/README.md) | Estratificação assíncrona do ruído nativo; correção pequena validada, utilidade/novidade abertas |
 
+| [31-sufficient-state-coupling](31-sufficient-state-coupling/README.md) | Reunião de estados suficientes; prova comparativa e correção pequena, utilidade/novidade abertas |
+
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
 é a consolidação posterior da mesma abordagem; ela não foi apresentada como

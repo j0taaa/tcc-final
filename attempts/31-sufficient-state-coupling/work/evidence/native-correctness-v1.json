@@ -1,0 +1,3680 @@
+{
+  "scope": "native EPIC replay; fake logits; no neural forward or speed claim",
+  "torch": "2.8.0+cu128",
+  "rows": [
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 4,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 4,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 4,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 4,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 4,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 4,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cpu",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 8,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "equal": true,
+      "forwards": 1,
+      "rejections": 1,
+      "complete": false,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "state",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "history",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 2,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    },
+    {
+      "device": "cuda",
+      "mode": "root",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "equal": true,
+      "forwards": 2,
+      "rejections": 3,
+      "complete": true,
+      "max_prior_rejections_in_keys": 0,
+      "original_token_aliases": [
+        0,
+        3
+      ]
+    }
+  ],
+  "producer_sha256": "d40661a67f5f8ea3d5c93bae8ad7fb773519502bfcfa56a5d7a1c8d16cfeb412",
+  "hook_sha256": "5b47aaf31ff73f2891eab47d1e85bc8ab4b587a01e13652f4ebffe8b3b9d31ef"
+}

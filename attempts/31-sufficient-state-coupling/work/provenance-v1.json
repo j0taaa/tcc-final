@@ -1,0 +1,23 @@
+[
+  {
+    "source_commit": "75d626c0acc1611909a788cf102abb2cc48ea17b",
+    "source_path": "attempts/30-lazy-native-stratification/work/native_noise.py",
+    "copy_path": "attempts/31-sufficient-state-coupling/work/native_noise.py",
+    "original_sha256": "7f0fd1a51197bd24aedd40dc10d201de2d696225e24d2b153523eff75b765c89",
+    "scope": "frozen internal baseline, derivative changes will be explicit"
+  },
+  {
+    "source_commit": "75d626c0acc1611909a788cf102abb2cc48ea17b",
+    "source_path": "attempts/30-lazy-native-stratification/work/probe_native.py",
+    "copy_path": "attempts/31-sufficient-state-coupling/work/probe_native.py",
+    "original_sha256": "55c8dc42fd5a27df3267062549f1d3d7ad21a75a2d398b9d7cc3c3b02e660a23",
+    "scope": "frozen internal baseline, derivative changes will be explicit"
+  },
+  {
+    "source_commit": "75d626c0acc1611909a788cf102abb2cc48ea17b",
+    "source_path": "attempts/30-lazy-native-stratification/work/ledger.py",
+    "copy_path": "attempts/31-sufficient-state-coupling/work/ledger.py",
+    "original_sha256": "cfa3e47adc87514171c4a6ed321090f5722a4beb421fe3e96bf9900beb70e969",
+    "scope": "exact unchanged frozen copy"
+  }
+]

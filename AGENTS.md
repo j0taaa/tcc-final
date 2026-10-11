@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem114 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem118 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -222,6 +222,15 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   contraexemplo de paridade ao atalho. Custo/cache/latência e ganho semântico
   relevante ainda precisam de protocolo independente. Não declarar vitória
   sobre EPIC ou publicação a partir dos oráculos/replay de correção.
+
+- A31 reúne históricos divergentes SOMENTE em estados realmente suficientes,
+  incluindo ordinal de consulta por trajetória, fase, canvas, agenda, EOS e
+  budget de rejeições. Há prova escrita de dominância sobre iid e identidade
+  de variância contra o histórico A30; pass@2>=A30, não pass@K>=A30 geral.
+  Quatro oráculos racionais e216 replays FAKE-head passam; nenhuma execução
+  neural nova ou vitória prática. Canvas sozinho tem contraexemplo de perda
+  de cobertura. A diferença teórica específica, magnitude útil e suficiência
+  para publicação permanecem abertas. Não alterar A30 retroativamente.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 
