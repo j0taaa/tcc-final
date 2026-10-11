@@ -329,6 +329,14 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   Perron2011 original Sections1--4 confirma que ranking barato/medição cara
   já é antecedente; seu pool4 e controles adaptativos competentes são
   obrigatórios. Fonte/evidência raiz anteriores ficam independentes emv9.
+  V11 prova o score para outputs limitados e budget esperado localmente
+  uniforme, sem cauda exponencial. Assim o bound cobre TODOS os factories
+  p-blind com aquele budget, incluindo caudas lentas. Igualdade com primeiro
+  bit retido e budget inteiro r>=3 força a parada de ruína, com suporte não
+  limitado; cap finito não atinge exatamente a mesma fronteira. São provas
+  ESCRITAS, não Lean/software/revisão humana. Regularidade pode já ser
+  consequência conhecida; nenhuma prioridade ou aplicação prática nova.
+  Os dois screens negativos e suas recusas de campanha continuam válidos.
 - A35 é uma ponte ESCRITA antes de código: lei de tag realmente aceita por
   greedy/MWPC pode contar #DNF, mesmo com sintaxe LL(1) e posterior produto
   polinomial de palavras com testemunho. Miklos4.2.2 já constrói união de

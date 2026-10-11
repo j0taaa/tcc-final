@@ -1975,3 +1975,21 @@ aceito inclui falhas e pode custar vários forwards. Cache só do head inicial
 não é controle competitivo completo. Gate só decide se vale avaliar qualidade,
 não confirma vantagem, prioridade ou publicação. Fonte/outputs serão pinados;
 não atribuir A32 timings A34 nem abrir confirmação independente sem gate.
+
+## 2026-10-11 — A34 dois screens negativos e contrato matemático ampliado
+
+RootV7 está completo0/8 screens,256 prefixos/1845 forwards. NumberV8 está
+completo1/8 screens (mínimo2),256 prefixos/2330 forwards, sem gabaritos.
+Ambas campanhas de qualidade NÃO são acionadas. Dados/fontes permanecem
+independentes emv9/v10. Jafari Jozani/Perron2011 original Seções1--4 credita
+ranking barato/medição cara; seu pool4 e controle adaptativo3-z são antecedentes.
+
+A34V11 escreve um argumento por transcripts FINITOS: para output limitado,
+sup_p E N localmente finito dá convergência uniforme da média E[H;N<=m]
+e de sua derivada de score. A fronteira se amplia a TODOS factories p-blind
+de budget uniforme, sem exigir cauda exponencial. Igualdade com retenção do
+primeiro bit e budget inteiro r>=3 caracteriza a ruína e sua cauda não limitada.
+Não são nova inferência de modelos, prioridade confirmada ou uso validado.
+Mendo original Teorema3/Seção7.5 foi conferido; Simons original abstract foi
+lido, full text institucional bloqueado. Não inventar revisão humana nem
+transformar regularidade clássica ou screens negativos em sucesso científico.

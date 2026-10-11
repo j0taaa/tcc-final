@@ -139,6 +139,23 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   now read: cheap ranking/expensive measurement are already the prior use.
   Their fixed-four-pool law is z²; competent early-stop control costs3-z,
   less than R3's3. Specific frontier/application obligations remain open.
+- [x] T5409: Written score extension BEFORE more implementation: bounded
+  terminal outputs plus locally UNIFORM expected N suffice, without an
+  exponential moment or second moment of N. Finite-transcript approximations
+  have uniform errors C*b_I/m and C*b_I/sqrt(m*p*q). This broadens the same
+  A34 frontier to ALL p-blind uniformly budgeted factories. Written equality
+  characterization shows retained-first integer-optimal r>=3 has the unique
+  ruin stopping law and unbounded support; no finite hard cap attains that
+  frontier. Sources34/work/uniform-budget-score-v11.md and
+  optimal-stopping-uniqueness-v11.md; not Lean/software/human review. Mendo
+  original Theorem3/Section7.5 fastness restriction read; Simons original
+  abstract read, institutional full text blocked/unread. Regularity may be a
+  known consequence; specific priority/application remain OPEN. V10 preserves
+  negative number source f7114ac/evidence284610d. No new model capture here.
+  Validation AFTER the two timing campaigns: `git diff --check` PASS,
+  `make check` PASS upstream/lint/format/types58 files and35 attempts/99
+  versions; `make test` PASS143 tests68.254s. These checks do not verify
+  the new analytic proof, originality, publication or native benefit.
 
 ## M53 — Categorical race repair: reduction gate before implementation
 

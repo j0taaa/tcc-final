@@ -158,3 +158,34 @@ classe. Dados integrais em `work/evidence/arithmetic-number-diagnostic-v8`.
 Paridade variada não demonstrou sinal semântico ou vantagem integral.
 `work/ranked-sampling-primary-v10.md` credita o antecedente de ranking
 barato/medição cara e preserva a objeção de um controle adaptativo mais barato.
+
+## V11: retirar uma restrição dos comparadores, sem promover a aplicação
+
+`work/uniform-budget-score-v11.md` prova o score para outputs limitados com
+esperança LOCALMENTE UNIFORME de trabalho, usando aproximações finitas e
+bounds uniformes explícitos. A fronteira A34 portanto não precisa mais de
+cauda exponencial dos concorrentes. O contrato histórico `theory-v1.md`
+permanece preservado. Isto não admite informação dependente de p ou dispensa
+o budget total. A extensão é prova ESCRITA, sem revisão humana/Lean/prioridade
+confirmados; diferenciação e score sequencial continuam antecedentes.
+
+`work/optimal-stopping-uniqueness-v11.md` caracteriza a igualdade para budget
+inteiro r>=3 com primeiro bit retido: a parada ótima é exatamente a volta a0
+ou absorção em r com o sinal inicial. Nenhum hard cap finito atinge aquela
+mesma fronteira; aproximação certificada continua possível. Igualdade em
+bounds de informação é princípio conhecido, não outra descoberta anunciada.
+
+Os oito critérios originais são reavaliados nos dois addenda: operação e
+oráculo permanecem iguais; a diferença é o alcance matemático, não um uso
+neural novo; o benefício é admitir TODOS os factories do budget e delimitar
+o custo de hard cap; são provas sem benchmarks; custos físicos/forwards e
+sinal continuam pendentes; prioridade pode ser anterior; publicação/revisão
+não estão confirmadas. Os dois screens negativos continuam bloqueando suas
+campanhas de qualidade. Não promover estas notas ao artigo principal como
+conquista útil geral ou justificativa para uma implementação extensa.
+
+Validação depois dos dois timings: `make check` passa (upstream, Ruff,
+tipos e35 tentativas/99 versões); `make test` passa143 testes68.254s.
+São integridade/correção de software, não verificação da nova prova analítica
+ou evidência de novidade/publicação. Nenhum fonte Python/Rust foi alterado
+por estas duas notas matemáticas.
