@@ -2066,3 +2066,16 @@ prioridade e efeito útil. Callback pode ser uma transição aceita inteira
 com head congelado, pagando parser/rejeições: não declarar que logits são
 a lei aceita, nem confundir economia de forwards com latência total. Nada
 reabre os gates negativos das campanhas32/34 nem muda seus resultados.
+
+V2 materializa a regra em29 linhas. Cinco oráculos racionais PASS0.056s,
+com hashes de fontes no registro raw; suíte152 PASS68.353s/make check PASS.
+A implementação INDEPENDENTE de ranks por meia-volta confirma a MESMA lei:
+isto credita a construção básica como antecedente. Controle informado de
+derangement uniforme vence para TODOS scores sem auxiliares. Não tratar
+CDF não monótona como a única opção informada para promover38.
+
+Dice Enterprise original Introduction/3.1/3.2/Props3.4--3.5/prova3.5 foi
+efetivamente lido: factories categóricos e custo/Peskun já são temas antigos.
+O mínimo pontual4-2c+s3 é a diferença candidata, ainda sem prioridade
+confirmada. Corolário escrito liga o kernel a uma transição original inteira
+e suas continuações adaptativas; não houve novo head/campanha/adapter medido.

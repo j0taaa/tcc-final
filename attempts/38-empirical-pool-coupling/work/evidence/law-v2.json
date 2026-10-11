@@ -1,0 +1,18 @@
+{
+  "timestamp_utc": "2026-10-11T17:34:58.576903+00:00",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "unittest",
+    "tests.test_empirical_pool_coupling",
+    "-v"
+  ],
+  "source_sha256": {
+    "attempts/38-empirical-pool-coupling/work/couple.py": "deab67781dddc99fa2155240add23d955f3c0da2a03d0fa0fbef94dbb24bbf74",
+    "tests/test_empirical_pool_coupling.py": "cbec92bf25e0712e8cd70c023577b0d0e22ea2c2e0753374816574cd044dff95"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_all_raw_verifiers_and_nonmonotone_scores (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_all_raw_verifiers_and_nonmonotone_scores) ... ok\ntest_exact_payload_law_and_pointwise_cost_with_aliases_failures (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_exact_payload_law_and_pointwise_cost_with_aliases_failures) ... ok\ntest_exact_reduction_to_classical_grouped_rank_rotation (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_exact_reduction_to_classical_grouped_rank_rotation) ... ok\ntest_known_uniform_derangement_is_stronger_for_every_score (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_known_uniform_derangement_is_stronger_for_every_score) ... ok\ntest_probability_aware_rotation_is_kept_as_a_stronger_diversity_control (tests.test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_probability_aware_rotation_is_kept_as_a_stronger_diversity_control) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.056s\n\nOK\n",
+  "scope": "Exact independent correctness/reduction oracles; not timing superiority, model data or priority"
+}

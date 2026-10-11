@@ -47,10 +47,18 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   unnecessary-auxiliary skipping are known. Hall1989 is still ABSTRACT-only.
   Specific priority and useful magnitude remain open; no model campaign,
   human review, article promotion or publication confirmation.
-- [ ] T5802: Minimal isolated implementation and independent exact oracle,
-  only after freezing the above mathematical gate. Include raw aliases,
-  failures, all multiplicity patterns and stronger known-law/rank controls.
-  Tests are correctness, not novelty or practical benchmarks.
+- [x] T5802:29-line isolated reference and five independent exact oracles
+  PASS0.056s, AFTER preimplementation freeze7ce0ff6/archive37ef646. Actual
+  raw aliases/failures, complete marginals/cost, all32 raw verifiers and
+  nonmonotone scores; a classical grouped-rank control has EXACTLY SAME
+  joint law. Informed uniform derangement beats it on all verifiers without
+  auxiliaries. Source-hashed38/work/evidence/law-v2.json;152-test full suite
+  PASS68.353s, make check passes and explicit Ruff passes. No model data.
+  `decoder-corollary-v2.md` connects ONE full accepted native transition to
+  the final-answer guarantee with adaptive logits, retaining all hidden
+  state/RNG. This is WRITTEN, not a new verified EPIC adapter or measured
+  quality/latency win. `primary-comparison-v2.md` credits actual Dice
+  Enterprise readings and informed all-score controls. Priority remains OPEN.
 
 ## M57 — Complete-output canonical coupling: written application gate
 

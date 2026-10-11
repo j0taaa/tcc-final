@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem143 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem152 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -395,10 +395,18 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   pontual de leis. Rank/pool exchangeability, clipping Bernstein e evitar
   auxiliares inúteis são antecedentes conhecidos. Neal/Andrieu/bootstrap/
   Casarin/STMC foram lidos nos trechos/hashes registrados. Prioridade,
-  relevância prática, oráculos e publicação ainda abertos; nenhum novo
+  relevância prática e publicação ainda abertos; nenhum novo
   head/timing ou promoção. Auxiliares de um head congelado não exigem por
   si só novos forwards, mas todo parsing/rejeição/status continua custando.
   Não transformar isto em superioridade EPIC por contar somente draws.
+  V2 tem referência29 linhas e cinco oráculos independentes0.056s, full152
+  testes68.353s e make check PASS. O controle clássico de ranks confirma
+  a MESMA lei, logo a construção básica é conhecida. Derangement uniforme
+  informado vence em todos verificadores e sem auxiliares; é controle
+  obrigatório quando suas hipóteses valem. Dice Enterprise já desenvolve
+  factories categóricos e analisa custo/Peskun sob contratos próprios.
+  Corolário de continuação adaptativa é ESCRITO, não adaptação EPIC medida.
+  A candidata é o bound pontual sharp, com prioridade/efeito útil abertos.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

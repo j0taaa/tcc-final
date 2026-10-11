@@ -71,3 +71,23 @@ Atacar os resultados escritos e sua redução a métodos antigos ANTES de
 implementar. A38 não depende de implementação mutável de outra tentativa.
 Se os resultados relevantes forem conhecidos, registrar isso e procurar uma
 diferença útil; não iniciar outra grande campanha para justificar a ideia.
+
+## V2 — referência mínima e objeções confirmadas
+
+`work/couple.py` tem29 linhas. Cinco oráculos independentes PASS0.056s no
+registro com hashes `work/evidence/law-v2.json`: lei de payloads/aliases/falhas,
+custo4-2c+s3, todos32 verificadores de cinco payloads, scores não monótonos,
+redução EXATA ao controle clássico de ranks, e controles informados mais fortes.
+Suite inteira152 testes PASS68.353s; `make check` e Ruff explícito passam.
+São testes de correção; nenhum input é um benchmark de modelo favorável.
+
+A redução por ranks confirma que a construção básica é conhecida. O custo
+pontual ótimo entre TODOS os maximizadores universais é a afirmação candidata,
+com prioridade ainda aberta. `primary-comparison-v2.md` acrescenta Dice
+Enterprise e mostra que métodos informados também combinam diversidade máxima
+com covariância não positiva para TODOS scores; não enfraquecê-los.
+
+`decoder-corollary-v2.md` escreve a ligação com a continuação adaptativa de
+uma transição nativa inteira. Não implementa/revalida um adaptador EPIC,
+não mede efeito semântico e não confirma velocidade, revisão humana ou
+publicabilidade. O artigo principal não foi promovido por esses oráculos.
