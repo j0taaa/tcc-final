@@ -928,6 +928,24 @@
           ]
         }
       ]
+    },
+    {
+      "id": "28-streamed-grammar-head",
+      "title": "Resumo amostrável original de cabeça neural para posterior CFG conjunto",
+      "conclusion": "Written classical disintegration/reservoir law with integer exactness; three independent tiny oracles,101 current tests and eight valid same-public-head samples with29488 exact class checks. No new forwards, GPU memory/timing benefit or publication novelty confirmed. FlashSampling/STATIC antecedents explicitly credited.",
+      "reading": "attempts/28-streamed-grammar-head/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "5ebb2ec2eb07a395ac4f4a3ec61bcd2b8b55d5ae",
+          "evidence_commit": "cadbc5a7500dec125c7596d15cb08e732371b69b",
+          "evidence_roots": [
+            "attempts/28-streamed-grammar-head/README.md",
+            "attempts/28-streamed-grammar-head/work",
+            "tests/test_streamed_grammar_head.py"
+          ]
+        }
+      ]
     }
   ]
 }
