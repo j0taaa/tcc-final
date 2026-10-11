@@ -56,10 +56,13 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Producer564e68b:52/52 GPU checks pass (40 positive/12 refused),39924
   block comparisons against independent Fraction. Entire104-test suite
   passes39.501s. Evidence:28/work/evidence/gpu-correctness-v2.json.
-- [ ] T4804: Freeze then execute SAME public head through all THREE block
+- [x] T4804: Freeze then execute SAME public head through all THREE block
   interfaces (NumPy/Triton/PyTorch), eight fresh posterior samples per method,
   full class probability and mass comparison, original/fixed IDs and JSON.
   No timing, new head or independent confirmation implied.
+  Producer32b46b2:24/24 valid;2328 exact class checks/full mass; all eight
+  paired original-ID outputs identical. GPU transfer53040 versus1608256
+  bytes full weights, not a timing or additional gain over GPU Torch.
 
 ## M47 — Finite-dimensional closure: research gate, not a publication claim
 

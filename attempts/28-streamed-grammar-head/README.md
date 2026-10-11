@@ -114,3 +114,11 @@ com todas as probabilidades por classe e massa válida conferidas novamente:
 ```bash
 .venv-live/bin/python -m attempts.28-streamed-grammar-head.work.replay_blocks_v2 --packet attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip --output attempts/28-streamed-grammar-head/work/evidence/public-head-blocks-v2.json
 ```
+
+Resultado: produtor32b46b2, todos os três métodos passaram;24/24 JSONs válidos,
+2328 probabilidades por classe e massa completa conferidas. As oito sequências
+de IDs com mesma seed são idênticas entre os três métodos. Head materializado
+na GPU a partir do pacote antigo, sem forward novo. São286 blocos e quatro
+palavras por peso;53.040 bytes D2H de sumários/recuperação na versão GPU contra
+1.608.256 de pesos completos. Essa contagem não é medição de PCIe/latência nem
+economia adicional sobre o controle PyTorch, que envia os mesmos sumários.

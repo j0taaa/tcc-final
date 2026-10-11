@@ -185,6 +185,9 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   incluindo subnormais/extremos e recusas. Não há timing, benefício sobre
   streaming competente ou prioridade publicável confirmada.
   Mantém head denso na GPU; não reivindicar economia de memória neural.
+  Replay v2 dos mesmos pesos:24/24 JSONs e2328 checks de classe/massa;
+  IDs pareados iguais em NumPy/Triton/PyTorch. Contagem de comunicação não
+  substitui custo integral ou vitória sobre o controle GPU igualmente exato.
 
 Use [TASKS.md](TASKS.md) para tarefas/evidências atuais e
 [attempts/README.md](attempts/README.md) e `attempts/catalog.json` para versões
