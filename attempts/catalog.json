@@ -1346,7 +1346,7 @@
     {
       "id": "38-empirical-pool-coupling",
       "title": "Empirical categorical coupling and pointwise cost optimum",
-      "conclusion": "29-line reference, five exact oracles and152 full tests pass. Same-law rank reduction credits construction as known; informed controls stronger on all scores. Pointwise expected-work4-2c+s3 theorem written, specific priority and meaningful native usefulness still open. No new model campaign or publication claim.",
+      "conclusion": "V2 exact law validated with152 tests. V3 NEW sharp unknown-law cap4 diversity/work frontier(b-2)/8 written before budgeted code; includes adaptive stops and first clones, unbounded allowed keys with finite correction. Specific priority, proof audit and real full-cost benefit remain open; no new model campaign or publication claim.",
       "reading": "attempts/38-empirical-pool-coupling/README.md; TASKS.md M58",
       "versions": [
         {
@@ -1367,6 +1367,15 @@
             "attempts/38-empirical-pool-coupling/work/decoder-corollary-v2.md",
             "attempts/38-empirical-pool-coupling/work/primary-comparison-v2.md",
             "tests/test_empirical_pool_coupling.py"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "a760d163d1bb8dbf95dfc757d8a0f29269086c83",
+          "evidence_commit": "a760d163d1bb8dbf95dfc757d8a0f29269086c83",
+          "evidence_roots": [
+            "attempts/38-empirical-pool-coupling/work/minimax-frontier-v3.md",
+            "attempts/38-empirical-pool-coupling/README.md"
           ]
         }
       ]
