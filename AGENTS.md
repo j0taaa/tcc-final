@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem94 testes, incluindo as duas regressões reais de timer.
+  A suíte atual tem98 testes, incluindo as duas regressões reais de timer.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
   cada trajetória individual. Há prova escrita de pass@K nunca inferior a K
@@ -157,6 +157,14 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   superioridade sobre EPIC/ODD/sampling sem reposição, ganho de pass@1 ou
   demonstração neural iterativa de A26. O artigo inclui a extensão no apêndice,
   mantendo24 como protagonista confirmado de consulta.
+- A27 investiga o custo de preparação do fechamento depois do primeiro
+  overflow, usando resíduos ou potenciais em lugar de todas as alturas.
+  Há quatro oráculos pequenos e uma formulação escrita; não há novo sampler,
+  timing competitivo ou forward independente. Separabilidade one-counter2019
+  já usa resíduos e Chernoff/OS* são antecedentes centrais. A hipótese deve
+  ser descartada se não houver consequência própria relevante. A meta de
+  novidade suficiente para publicação permanece aberta; não confundir a
+  continuação da investigação com cumprimento dessa meta.
 
 Use [TASKS.md](TASKS.md) para tarefas/evidências atuais e
 [attempts/README.md](attempts/README.md) e `attempts/catalog.json` para versões

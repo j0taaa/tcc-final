@@ -23,6 +23,32 @@ exact-sampling evaluation and cannot inherit query timings. M42/M43 and earlier
 conditional branches below are historical; failed development gates do not
 require executing their untriggered independent campaigns. Do not reopen them
 or restore removed infrastructure. Human review/publication remain external.
+The renewed user goal requires a defensible original contribution, not only
+consolidating A24. M47 investigates a concrete preparation bottleneck without
+resetting earlier losses or claiming that prototype correctness proves novelty.
+
+## M47 — Finite-dimensional closure: research gate, not a publication claim
+
+- [x] T4700: Read current EPIC v2, FactorDLM and Twister formulations and
+  inspect the retained native EPIC batch code. Ordinary cache/batch splitting,
+  weighted inference and trajectory correction are prior art. Ambiguity-based
+  multiplicity rejection was reduced to a2001 antecedent before implementation.
+  Sources and decisions are in A27/work/antecedents-v1.md.
+- [x] T4701: A27 has eight questions and written original-ID residue/potential
+  closure bounds, with normalization, macro-token peak, costs and limitations.
+  Four independent tiny JSON oracles pass0.025s, including exact fixture bounds,
+  aliases, invalid prefixes, partial strings, fixed slots and zero budget.
+  These are consequences of classical abstractions, not confirmed priority.
+  `make check` passes and the complete98-test suite passes38.918s. No Rust,
+  maintained solver, historical scientific result or formal source changed.
+- [ ] T4702: Freeze the diagnostic source before running the declared public
+  full-V replay at ALL depths/moduli/potentials. No new forwards or timing gate.
+  Preserve every bound, including loose/no-use cases, and diagnose whether the
+  approach merits a stronger algorithm rather than another small known lemma.
+- [ ] T4703: Only after a distinctive benefit argument, freeze an equivalent-
+  operation comparison including compact CFG, counter+CARS and finite regular
+  controls. A25 losses remain intact. Do not execute another large campaign
+  merely to obtain favorable evidence; novelty/significance remain unresolved.
 
 ## M46 — General batch dominance, keeping individual decoder laws
 

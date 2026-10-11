@@ -1,5 +1,25 @@
 # Caderno científico — contrato atual e histórico
 
+##2026-10-11 — novo goal e filtragem adversarial de antecedentes
+
+O usuário renovou a meta de novidade útil/publicável e autorizou mudar a ideia
+na linha dLLM/GLC. Isso não é promessa de aceitação ou certeza de prioridade.
+Releitura dirigida de EPICv2§4, FactorDLM§3–5/E e Twister§3/6 elimina cache,
+parsing ponderado genérico, relações e correção de trajetória como novidades.
+O código nativo do EPIC já divide lotes recusados e memoiza lexing; a otimização
+gulosa no suporte finito já foi investigada sem gate forte em A18–23.
+Outra hipótese, corrigir multiplicidade de uma gramática ambígua por rejeição,
+reduziu-se a Bertoni/Goldwurm/Santini2001 antes de ser implementada.
+
+A27 isolada investiga preparação do fechamento, que ainda cresce com a altura
+possível em A25. Duas continuações finitas (resíduo e potencial) têm formulação
+e quatro oráculos independentes pequenos, sem restaurar testes históricos.
+É uma aplicação de princípios conhecidos, ainda não contribuição suficiente:
+resíduos acima do limiar já aparecem em Czerwiński/Lasota2019§3, e Chernoff e
+OS* devem ser controles/antecedentes. Não afirmar vitória EPIC por esses limites.
+O diagnóstico completo do mesmo head público será congelado antes de executar;
+é desenvolvimento de limites, sem nova captura ou benchmark de velocidade.
+
 ## Contrato atual — fechamento certificado (A24)
 
 **Operação:** massa/marginais originais e amostra de um produto congelado de
