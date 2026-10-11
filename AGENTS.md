@@ -337,6 +337,16 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   ESCRITAS, não Lean/software/revisão humana. Regularidade pode já ser
   consequência conhecida; nenhuma prioridade ou aplicação prática nova.
   Os dois screens negativos e suas recusas de campanha continuam válidos.
+  V12 dá uma prova escrita pontual por KL/Hellinger: basta E_p0N finita e
+  output limitado para diferenciação EM p0, desde que termine em todos os
+  parâmetros vizinhos. Lower bound A34 exige só budget no ponto justo, não
+  uniforme. Não concluir C1 por finitude pontual. Leituras originais de
+  Nacu--Peres/Holtz--Nazarov--Peres e tutorial autoral2022 estão registradas;
+  contraste com uma questão antiga não confirma descoberta/priority hoje.
+  Não houve código/head/timing novo; prioridade e uso continuam abertos.
+  Addendum de curvatura V12 demonstra C^{1,1} sob budget uniforme, por
+  bound das segundas derivadas das aproximações finitas. Não afirma C2,
+  prioridade ou uso positivo novo; uma impossibilidade não cumpre a meta.
 - A35 é uma ponte ESCRITA antes de código: lei de tag realmente aceita por
   greedy/MWPC pode contar #DNF, mesmo com sintaxe LL(1) e posterior produto
   polinomial de palavras com testemunho. Miklos4.2.2 já constrói união de

@@ -61,6 +61,20 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 
 ## M54 — Expected-work/diversity frontier (written candidate)
 
+- [x] T5410: Written pointwise extension BEFORE code: bounded output and
+  E_p0N finite suffice for differentiability AT p0; halted-leaf KL identity
+  and Hellinger control the derivative of the tail, without E_tN nearby.
+  A34 lower bound therefore needs only the fair-point budget, not uniform
+  expected work. Sources34/work/pointwise-score-v12.md and
+  primary-reading-v12.md. Nacu--Peres original Props22/23/Question3,
+  HNP original Theorems8/13/Section7, Paes Leme authored2022 Section1.3 and
+  Flegal--Herbei original Section3.1 read. This does NOT establish priority,
+  solve their full moment/sufficiency questions, or validate a native use.
+  No software/head/timing change; closed negative quality gates unchanged.
+  Addendum34/work/uniform-curvature-v12.md bounds finite-approximation
+  second derivatives by2C E_pN/[p(1-p)] and yields local C^{1,1} under the
+  uniform budget. C1 alone is insufficient; no C2/general-moment/priority
+  assertion. This obstruction is not the requested useful final product.
 - [x] T5400: Eight criteria BEFORE implementation. Independent written proof
   of the lattice-refined minimax fraction of Fréchet improvement under a
   worst expected TOTAL oracle budget. The comparator class is ALL p-blind

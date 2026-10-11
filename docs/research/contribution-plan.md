@@ -1993,3 +1993,23 @@ Não são nova inferência de modelos, prioridade confirmada ou uso validado.
 Mendo original Teorema3/Seção7.5 foi conferido; Simons original abstract foi
 lido, full text institucional bloqueado. Não inventar revisão humana nem
 transformar regularidade clássica ou screens negativos em sucesso científico.
+
+## 2026-10-11 — A34 custo pontual, curvatura e leitura de regularidade
+
+V12 escreve a lei do experimento terminado, com R independente e somente
+os bits observados. Wald fornece D(Q_p0||Q_t)=E_p0N kl(p0||t); Hellinger
+controla a DERIVADA da cauda com p0 fixo. Output limitado e E_p0N finita
+bastam para derivada EM p0, sem budget vizinho. Não concluir C1 por finitude
+pontual. A fronteira A34 agora enfrenta todos os p-blind factories com budget
+somente no ponto justo; a construção ainda tem budget em todos os p.
+
+Uma segunda diferenciação FINITA é dominada por2C E_pN/[p(1-p)], via o
+segundo momento do passeio compensado. Budget uniforme dá C^{1,1}, não C2.
+C1 sozinho não basta para esperança uniforme; exemplo de prova preservado
+em uniform-curvature-v12.md. Nenhum resultado negativo vira sucesso final.
+
+Nacu--Peres originais Props22/23/Questão3, HNP Theorems8/13/Seção7, tutorial
+autoral Paes Leme2022 Seção1.3 e Flegal--Herbei original3.1 foram lidos.
+Comparar uma prova com uma questão antiga não resolve prioridade ATUAL ou
+todos os momentos/suficiência. Sem revisão humana, nova captura/timing ou
+uso neural útil validado. Dois screens anteriores permanecem negativos.

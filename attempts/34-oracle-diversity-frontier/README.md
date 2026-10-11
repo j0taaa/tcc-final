@@ -189,3 +189,30 @@ tipos e35 tentativas/99 versões); `make test` passa143 testes68.254s.
 São integridade/correção de software, não verificação da nova prova analítica
 ou evidência de novidade/publicação. Nenhum fonte Python/Rust foi alterado
 por estas duas notas matemáticas.
+
+## V12: custo finito somente no ponto, com leitura de regularidade
+
+`work/pointwise-score-v12.md` fornece uma prova escrita por KL/Hellinger das
+leis dos transcripts terminados: output limitado e esperança finita EM p0
+bastam para diferenciação EM p0, sem bound uniforme vizinho ou cauda rápida.
+O algoritmo deve terminar em TODOS os parâmetros vizinhos e não ler p.
+Isto não dá C1 por finitude pontual. O lower bound minimax A34 portanto vale
+até contra factories com orçamento somente no ponto justo; a construção
+existente ainda respeita o orçamento em todos os p. Não é vitória de latência,
+qualidade, geração inteira ou método com acesso a probabilidades/ruídos.
+
+`work/primary-reading-v12.md` registra leituras originais de Nacu--Peres
+(Proposições22/23/Questão3), Holtz--Nazarov--Peres (Teoremas8/13/Seção7),
+tutorial autoral2022 e Flegal--Herbei (Seção3.1). Questões antigas não provam
+que uma consequência nossa seja nova hoje. Todos os oito critérios foram
+reavaliados na nota; prioridade específica e uso competitivo permanecem
+abertos, os gates negativos nativos permanecem fechados. Nenhum código,
+head, timing ou promessa de publicação foi acrescentado por esse refinamento.
+
+`work/uniform-curvature-v12.md` fortalece a necessidade local uniforme para
+C^{1,1}: as segundas derivadas das aproximações FINITAS são limitadas por
+2C E_pN/[p(1-p)], usando o passeio compensado. Não afirma C2 nem troca uma
+série infinita sem controle. C1 sozinho não basta para esperança uniforme;
+o exemplo escrito é objeto de prova, não benchmark favorável. Esta restrição
+e seu contraste com questões antigas não constituem o uso positivo final
+ou prioridade publicável confirmada. Novidade específica continua em aberto.
