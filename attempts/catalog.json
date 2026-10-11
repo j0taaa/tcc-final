@@ -986,6 +986,24 @@
           ]
         }
       ]
+    },
+    {
+      "id": "30-lazy-native-stratification",
+      "title": "Estratificação preguiçosa do ruído nativo: prova e gate de correção",
+      "conclusion": "Written fixed-K partial-strata law and full-history decoder dominance; sparse deferred permutation and native raw-noise hook. Five independent exact-RNG oracles and72 literal fake-head EPIC CPU/CUDA replays pass;114 offline tests. No neural forward, competitive timing, semantic improvement or publication priority confirmed. Root-only stratification is a required competent control; sufficient Markov-state coalescence is a separate next hypothesis.",
+      "reading": "attempts/30-lazy-native-stratification/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "75d626c0acc1611909a788cf102abb2cc48ea17b",
+          "evidence_commit": "75d626c0acc1611909a788cf102abb2cc48ea17b",
+          "evidence_roots": [
+            "attempts/30-lazy-native-stratification/README.md",
+            "attempts/30-lazy-native-stratification/work",
+            "tests/test_lazy_stratification.py"
+          ]
+        }
+      ]
     }
   ]
 }
