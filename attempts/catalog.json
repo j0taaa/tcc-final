@@ -1311,7 +1311,7 @@
     {
       "id": "37-canonical-outcome-coupling",
       "title": "Acoplamento de gerações completas por resultado canônico",
-      "conclusion": "Prova candidata de1/13 do ganho máximo para resposta canônica única; iid3 vence cobertura com mesmo número esperado de gerações. Novidade e consumidor de custo útil abertos.",
+      "conclusion": "Prova de1/13 do ganho máximo de diversidade para toda lei canônica; quatro oráculos passam. iid3 vence cobertura a mesmo orçamento médio de gerações; prioridade e consumidor útil permanecem abertos.",
       "reading": "attempts/37-canonical-outcome-coupling/README.md; TASKS.md M57",
       "versions": [
         {
@@ -1321,6 +1321,16 @@
           "evidence_roots": [
             "attempts/37-canonical-outcome-coupling/work/theory-v1.md",
             "attempts/37-canonical-outcome-coupling/work/primary-comparison-v1.md"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "14e7fefe34d3f648c030ca6eec192b8db42503f4",
+          "evidence_commit": "14e7fefe34d3f648c030ca6eec192b8db42503f4",
+          "evidence_roots": [
+            "attempts/37-canonical-outcome-coupling/work/evidence/law-v2.json",
+            "attempts/37-canonical-outcome-coupling/work/diversity-corollary-v2.md",
+            "attempts/37-canonical-outcome-coupling/work/primary-comparison-v2.md"
           ]
         }
       ]

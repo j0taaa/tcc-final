@@ -250,3 +250,8 @@ resultado canônico correto único. Custo integral: iid3 SEMPRE vence cobertura
 com mesmo número esperado de gerações. Avaliação cara é uma condição ainda
 não validada, não um atraso artificial de benchmark. Prioridade/publicação
 continuam abertas; v1 preserva exatamente o contrato escrito inicial.
+
+V2 preserva referência independente/quatro oráculos e o corolário de1/13
+da maior redução de colisões para TODA distribuição canônica. O controle
+clássico por quantis conhecidos atinge o ótimo; geração/avaliação completa
+continua requisito de custo. Sem novos forwards ou vitória prática/publicação.
