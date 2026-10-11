@@ -1346,7 +1346,7 @@
     {
       "id": "38-empirical-pool-coupling",
       "title": "Empirical categorical coupling and pointwise cost optimum",
-      "conclusion": "Written before implementation: simultaneous cap4 atom optima and proposed pointwise expected-work minimum4-2c+s3, with known rank/pool/Bernstein priors credited. Specific novelty, law oracle and native useful effect remain open. No model campaign or publication claim.",
+      "conclusion": "29-line reference, five exact oracles and152 full tests pass. Same-law rank reduction credits construction as known; informed controls stronger on all scores. Pointwise expected-work4-2c+s3 theorem written, specific priority and meaningful native usefulness still open. No new model campaign or publication claim.",
       "reading": "attempts/38-empirical-pool-coupling/README.md; TASKS.md M58",
       "versions": [
         {
@@ -1356,6 +1356,17 @@
           "evidence_roots": [
             "attempts/38-empirical-pool-coupling/README.md",
             "attempts/38-empirical-pool-coupling/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "761f44b0f2f29bd5f0abdb2c6a3546ea556623b8",
+          "evidence_commit": "761f44b0f2f29bd5f0abdb2c6a3546ea556623b8",
+          "evidence_roots": [
+            "attempts/38-empirical-pool-coupling/work/evidence/law-v2.json",
+            "attempts/38-empirical-pool-coupling/work/decoder-corollary-v2.md",
+            "attempts/38-empirical-pool-coupling/work/primary-comparison-v2.md",
+            "tests/test_empirical_pool_coupling.py"
           ]
         }
       ]
