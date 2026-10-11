@@ -1443,7 +1443,17 @@
       "title": "Known finite randomness and robust opaque-label query optimality",
       "conclusion": "Written before implementation: known source addresses are included, robust finite cap4 atom/query-cost optima and full-source covariance derived; cap3 cannot improve seed derangement robustly. First-yield native corollary would preserve all terminal verifier coverage at equal expected neural forwards, with every auxiliary physical cost still charged. No prototype, model output, timing or publication priority confirmed.",
       "reading": "attempts/39-known-source-coupling/README.md; TASKS.md M59",
-      "versions": []
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "429e7cdd14d096001a7578294b9915ae63c741cb",
+          "evidence_commit": "429e7cdd14d096001a7578294b9915ae63c741cb",
+          "evidence_roots": [
+            "attempts/39-known-source-coupling/work/finite-source-theory-v1.md",
+            "attempts/39-known-source-coupling/work/native-work-corollary-v1.md"
+          ]
+        }
+      ]
     }
   ]
 }
