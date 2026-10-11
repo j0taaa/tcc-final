@@ -1,0 +1,120 @@
+"""Symbolic identity aid for B=6, not a positivity proof or model experiment."""
+
+import argparse
+import importlib
+import json
+from collections import Counter
+from fractions import Fraction
+from functools import cache
+from math import factorial, prod
+from pathlib import Path
+
+import sympy as sp
+
+oracle = importlib.import_module("attempts.42-safe-empirical-resampling.work.matching_probe")
+x, y, z, m, s2, s3, s4 = sp.symbols("x y z M S2 S3 S4")
+sums = (None, m, s2, s3, s4)
+
+
+def binomial(value, k):
+    return prod(value - i for i in range(k)) / sp.Integer(factorial(k))
+
+
+def set_partitions(items):
+    if not items:
+        yield ()
+    else:
+        first, *rest = items
+        for groups in set_partitions(rest):
+            yield ((first,), *groups)
+            for i in range(len(groups)):
+                yield (*groups[:i], (first, *groups[i]), *groups[i + 1 :])
+
+
+@cache
+def other_counts(profile):
+    result = 0
+    for groups in set_partitions(list(range(len(profile)))):
+        term = 1
+        for group in groups:
+            mu = (-1) ** (len(group) - 1) * factorial(len(group) - 1)
+            polynomial = sp.Poly(prod(binomial(z, profile[i]) for i in group), z)
+            term *= mu * sum(c * (sums[a] - x**a - y**a) for (a,), c in polynomial.terms())
+        result += term
+    return sp.expand(result / prod(factorial(v) for v in Counter(profile).values()))
+
+
+def derive():
+    result = 0
+    for a in range(5):
+        for b in range(5 - a):
+            for profile in oracle.partitions(4 - a - b):
+                r = (a + 1, b + 1, *profile)
+                p = oracle.joint(r)[0][1]
+                result += (
+                    720
+                    * sp.Rational(p.numerator, p.denominator)
+                    * binomial(x - 1, a)
+                    * binomial(y - 1, b)
+                    * other_counts(profile)
+                    / ((a + 1) * (b + 1))
+                )
+    result = sp.expand(result)
+    assert sp.expand(result - result.xreplace({x: y, y: x})) == 0
+    return result
+
+
+def verify(polynomial):
+    checked = 0
+    populations = [n for total in range(6, 15) for n in oracle.partitions(total)]
+    populations += [(3, 3, 14), (1, 1, 2, 5, 11, 20), (1, 2, 3, 4, 5, 6, 7, 8)]
+    for n in populations:
+        matrix = oracle.source_joint(n, 6)
+        total = sum(n)
+        denominator = prod(total - i for i in range(6))
+        substitutions = {
+            m: total,
+            s2: sum(t**2 for t in n),
+            s3: sum(t**3 for t in n),
+            s4: sum(t**4 for t in n),
+        }
+        fixed = sp.Poly(polynomial.subs(substitutions), x, y)
+        for i in range(len(n)):
+            for j in range(i + 1, len(n)):
+                value = fixed.eval({x: n[i], y: n[j]}) * n[i] * n[j] / denominator
+                assert Fraction(value) == matrix[i][j], (n, i, j)
+                checked += 1
+    return checked
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    polynomial = derive()
+    print("W=", polynomial, flush=True)
+    active = {(a, b): str(c) for (a, b), c in sp.Poly(polynomial, x, y).terms() if a and b}
+    print("centered moment coefficients=", active, flush=True)
+    diagonal = (
+        x * (x - 1) * prod(m - i for i in range(2, 6))
+        - x * (x - 1) * (m - x) * (m - x - 1) * (m - 4) * (m - 5)
+        - 2 * x * (x - 1) * (x - 2) * prod(m - x - i for i in range(3))
+    )
+    diagonal = sp.factor(diagonal - x**2 * polynomial.subs(y, x))
+    print("diagonal correction=", diagonal, flush=True)
+    checked = verify(polynomial)
+    args.output.write_text(
+        json.dumps(
+            dict(
+                scope="Symbolic identity with independent rational population checks, NOT proof of positivity or neural utility",
+                sympy=sp.__version__,
+                polynomial=str(polynomial),
+                centered_moment_coefficients={str(k): v for k, v in active.items()},
+                diagonal_correction=str(diagonal),
+                rational_pair_checks=checked,
+            ),
+            indent=2,
+        )
+        + "\n"
+    )
+    print("checked", checked, flush=True)

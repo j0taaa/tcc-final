@@ -1,0 +1,14 @@
+{
+  "scope": "Rational symbolic identity aid; NOT positivity proof or neural utility",
+  "sympy": "1.14.0",
+  "polynomial": "M**4 + M**3*x + M**3*y - 15*M**3 - M**2*S2 + 2*M**2*x**2 - 15*M**2*x + 2*M**2*y**2 - 15*M**2*y + 85*M**2 - M*S2*x - M*S2*y + 15*M*S2 - 2*M*S3 - M*x**3 - 2*M*x**2*y - 2*M*x*y**2 + 15*M*x*y + 30*M*x - M*y**3 + 30*M*y - 195*M + S2**2 + S2*x*y - 30*S2 + S4 + x**3*y + x*y**3 - 30*x*y + 148",
+  "centered_moment_coefficients": {
+    "(3, 1)": "1",
+    "(2, 1)": "-2*M",
+    "(1, 3)": "1",
+    "(1, 2)": "-2*M",
+    "(1, 1)": "15*M + S2 - 30"
+  },
+  "diagonal_correction": "x*(-M**4*x - 2*M**3*x**2 + 15*M**3*x + M**2*S2*x + M**2*x**3 - 30*M**2*x - 30*M**2 + 2*M*S2*x**2 - 15*M*S2*x + 2*M*S3*x + 126*M - S2**2*x - S2*x**3 + 30*S2*x - S4*x - 120)",
+  "rational_pair_checks": 2658
+}

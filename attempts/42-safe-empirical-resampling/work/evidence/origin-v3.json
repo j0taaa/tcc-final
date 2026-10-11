@@ -1,0 +1,20 @@
+{
+  "source_commit": "8b22faf6da7b38692bc9e6121e5e979c12bc36d6",
+  "command": ".venv-live/bin/python -m attempts.42-safe-empirical-resampling.work.six_pool_algebra --output attempts/42-safe-empirical-resampling/work/evidence/six-pool-algebra-v3.json",
+  "scope": "Exact symbolic identity;2658 independent rational population pair checks. Not a positivity proof or model result.",
+  "source_sha256": "83750fb54069ac74c1370331cc5a860ba9c52fe9b27bf2d1a79d1bd1e52cd861",
+  "dependencies": {
+    "sympy": "1.14.0, preexisting live research environment; no production dependency added"
+  },
+  "initial_failure": "Empty symmetric profile divided Python integers and introduced float. The verifier stopped with TypeError converting that SymPy value to Fraction; no false PASS. Also metadata line exceeded Ruff limit.",
+  "draft_scope": "Initial draft reconstructed by reversing the three recorded corrections to current text; not asserted to be a prelaunch immutable commit. Retained as .txt, not an active module.",
+  "checks": [
+    "ruff check PASS after corrections",
+    "ruff format PASS"
+  ],
+  "files": {
+    "six-pool-algebra-v3.json": "60e6ec79569fd46d64882fe6808d3811192b601e137678d256b9e26d882b9440",
+    "exploratory-six-pool-algebra-v3.json": "60e6ec79569fd46d64882fe6808d3811192b601e137678d256b9e26d882b9440",
+    "six_pool_algebra_v3_initial.py.txt": "0cd8efc09f960e53f80025355a4ec2d740a64f2dfd4329f72171c162f98afc26"
+  }
+}
