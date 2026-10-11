@@ -1,0 +1,207 @@
+{
+  "phase": "pilot",
+  "source_commit": "8fc0999736724b7b28159653503693f95b272c4a",
+  "sources": {
+    "native_experiment_v4.py": "dc0725cfb3e3e2357c3f3573e68e344604622d23e4d32934b5d7f9aec6a4fc26",
+    "raw_noise.py": "7969b7176623aca8de76db5f5dc0f2e52032ec11cdcec0bd4d2b92b43b4c215c",
+    "stopping_tree_lp.py": "cdd82da7b55b468c9746c14d60100c653e624f6496c3b4f54c16ed34449b025e",
+    "native_noise_v4.py": "5cb6cc3b5364e47f3e8615aaf30025dd77ae491d6a78a47e6f7ce58582d518ee",
+    "probe_native_v4.py": "26eb244fee0601d5dc6aa2e354e46ed194c3515068980df1b99953df170caeea",
+    "native_state.py": "3c324ac507dafc6116eb9c2b9454fa9b109878661ef743dddbdff0bcfc9fca76",
+    "native_noise_v2.py": "aff4f2a845c2887a6b028057cf1152b75865c9106372b41b6557cb4db68d2dfa",
+    "native_decode_v4.py": "42215b9f0071081e4a8b10ad211b63a6bcdc04892791e1a42606b63db268f62c",
+    "probe_native.py": "aec51e0799df542eb23a5eae81167b3b214f8166a2767dae6d2ccd9f85ae3a13",
+    "gsm_inputs.py": "546c7d912f73da813d2e67b61f611af30edfade61054b250262c97ca20ea3937",
+    "native_noise.py": "f3d46990be531adc4e251a5dd257ae4e8b13bb97ea0db5dcd768fc8276ccba9b",
+    "native_fixture.py": "eaa53c2151f11678d5b4dbb1b1e8e9c22a52af1b83348ae895f3e37dff7816e8",
+    "probe_native_v2.py": "8ed7e9a8ef2ee91835d8b8fc0aaf4f109538a757c0ac5d9c9e775f37a4eb75b8",
+    "probe_numeric_v4.py": "6a75afad0a90d091552e130aaa39ef22c18c7cfddffccd02db0c2a664e7cb550",
+    "raw_ledger.py": "cfa3e47adc87514171c4a6ed321090f5722a4beb421fe3e96bf9900beb70e969",
+    "oracle.py": "4ab574348cc11061ee84025337b914d55815f4bac51643b1c338e30d5615d588",
+    "walk.py": "e1fd967db7347cb25b8aeb3d5554930484812a00688c89c492024107aa6a0c3a",
+    "numeric_task.py": "675c0539e939286baa36493544702cd15e3599f3b5935cf8359118a9edf582ab",
+    "raw_anchored_ledger.py": "cdac6c755b18c7c4563389af6338df1045a5cb91a1a7d7810db366e256c76f58",
+    "pool.py": "b0824f6f5bf7c557abc7c23abd1ea7070ca79aeab16b1dd0590eb5bd085822f8",
+    "numeric_partition.py": "a794f08149785b6f354001f6ea83249c9a5885424a4b76511a5e0cd4e1f9894a",
+    "protocol-v4.json": "73a50ececdc0b11af394d0128b36b35c3cf2cd71c031d432b1eb61c3675962e7",
+    "protocol-v4.md": "de06c637578bda49e4c69cfcdd470c938de10e5e565b0cb0697a14b422c1b4af",
+    "protocol-v4-inputs.md": "58d7cb7e4015e6ba9f7ff47007f49d79af5eb5c7f690ea9f2d0ac5d72eaa14f2",
+    "gsm-inputs-v4.json": "a6d1a0864e383a3cc2bb7822c88fa8bb34512896ee7f84685513cbcf744959ca"
+  },
+  "config": {
+    "schema": 4,
+    "inputs_sha256": "a6d1a0864e383a3cc2bb7822c88fa8bb34512896ee7f84685513cbcf744959ca",
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "native_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+    "cpu_threads": 4,
+    "gen_length": 64,
+    "block_length": 64,
+    "steps": 32,
+    "max_resamples": 256,
+    "max_prompt_tokens": 1024,
+    "methods": [
+      {
+        "id": "iid2",
+        "kind": "iid",
+        "K": 2
+      },
+      {
+        "id": "iid4",
+        "kind": "iid",
+        "K": 4
+      },
+      {
+        "id": "mixed",
+        "kind": "mixed",
+        "K": 2
+      },
+      {
+        "id": "walk4_root",
+        "kind": "walk",
+        "K": 2,
+        "budget": 4,
+        "mode": "root",
+        "candidate": true
+      },
+      {
+        "id": "walk4_state",
+        "kind": "walk",
+        "K": 2,
+        "budget": 4,
+        "mode": "state",
+        "candidate": true
+      },
+      {
+        "id": "walk16_root",
+        "kind": "walk",
+        "K": 2,
+        "budget": 16,
+        "mode": "root",
+        "candidate": true
+      },
+      {
+        "id": "walk16_state",
+        "kind": "walk",
+        "K": 2,
+        "budget": 16,
+        "mode": "state",
+        "candidate": true
+      },
+      {
+        "id": "pool16_root",
+        "kind": "pool",
+        "K": 2,
+        "budget": 16,
+        "mode": "root"
+      },
+      {
+        "id": "pool16_state",
+        "kind": "pool",
+        "K": 2,
+        "budget": 16,
+        "mode": "state"
+      },
+      {
+        "id": "pool_batch16_root",
+        "kind": "pool_batch",
+        "K": 2,
+        "budget": 16,
+        "mode": "root"
+      },
+      {
+        "id": "pool_batch16_state",
+        "kind": "pool_batch",
+        "K": 2,
+        "budget": 16,
+        "mode": "state"
+      },
+      {
+        "id": "known_p_root",
+        "kind": "known_p",
+        "K": 2,
+        "budget": 512,
+        "mode": "root"
+      },
+      {
+        "id": "known_p_state",
+        "kind": "known_p",
+        "K": 2,
+        "budget": 512,
+        "mode": "state"
+      },
+      {
+        "id": "raw_root",
+        "kind": "raw",
+        "K": 2,
+        "mode": "root"
+      },
+      {
+        "id": "raw_history",
+        "kind": "raw",
+        "K": 2,
+        "mode": "history"
+      },
+      {
+        "id": "raw_state",
+        "kind": "raw",
+        "K": 2,
+        "mode": "state"
+      }
+    ],
+    "temperatures": [
+      0.5,
+      1.0
+    ],
+    "coordinate": "first",
+    "development_seeds": [
+      321001,
+      321002,
+      321003,
+      321004
+    ],
+    "confirmation_seeds": [
+      322001,
+      322002,
+      322003,
+      322004,
+      322005,
+      322006,
+      322007,
+      322008
+    ],
+    "torch_seed_label_offset": 10000000,
+    "auxiliary_seed_offset": 20000000,
+    "method_shuffle_offset": 30000000,
+    "cache_bytes": 2147483648,
+    "native_env": {
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH": "1",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH": "2",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT": "1",
+      "CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER": "1"
+    },
+    "selection_and_confirmation": "protocol-v4.md, frozen before real model heads",
+    "metric": "exact Fraction numeric answer equality, strict JSON single key answer",
+    "cost": "all deployment setup, native recovery, cache/transfers, unique forwards, auxiliary rows, output and verifier; common model/tokenizer load separately excluded",
+    "no_claims": [
+      "acceptance or originality confirmed",
+      "native finite law exact for approximate known_p",
+      "arbitrary recursion empirically tested",
+      "pointwise oracle cost optimum",
+      "better expected coverage than same-law pool16"
+    ]
+  },
+  "torch": "2.8.0+cu128",
+  "hardware": "NVIDIA GeForce RTX 3080 Ti",
+  "model_load_wall_excluded_common": 72.44625703000929,
+  "grammar_setup_wall": 0.012805808044504374,
+  "grammar_setup_cpu": 0.002308236999997604,
+  "class_setup_wall": 1.3243920700042509,
+  "class_setup_cpu": 0.49204674099999934,
+  "partition_ids": 10,
+  "partition_sha256": "3bc7795176ee0e265637c1f3854a89b8a6d086c0c00b2cd6d531c10cbddd98a7",
+  "native_prelex": "pinned early return: no full lexical-token table",
+  "costs": "first-use and campaign amortization; all native recovery and new forwards",
+  "scope": "full original native ranking rows; approximate known_p law disclosed",
+  "conditions": "no heavy simultaneous checks/model work intended during timings"
+}

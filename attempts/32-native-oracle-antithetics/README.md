@@ -139,3 +139,24 @@ com126337 IDs falsos:32 configurações/68 respostas. Draft original preservado
 com seus hashes, antes da anotação ClassVar. Dois novos testes independentes
 de avaliação JSON numérica passam; toda suíte135 passa68.297s.
 Isto valida fronteiras de implementação, não novidade, acerto real ou timing.
+
+## V4 — piloto real encerrado com resultado negativo
+
+Produtor congelado `8fc0999736724b7b28159653503693f95b272c4a`:1056/1056
+registros,2208 JSONs válidos,32.716 novos forwards, nenhum erro/recusa ou
+divergência da primeira trajetória. As OITO candidatas acertam20/32, igual
+a iid2 nas duas temperaturas, com custo wall/CPU maior. Misto acerta21/32
+com menor custo; iid4 acerta23/32 a0.5 e22/32 a1, com custo maior.
+
+O screen negativo definido ANTES de medir encerra esta aplicação. Não foram
+executados os outros três seeds nem aberta a avaliação test. Uma seed NÃO
+refuta estatisticamente o método inteiro, mas tampouco fornece o benefício
+exigido. Não retunar a classe/seleção nesta evidência para fabricar ganho.
+
+Todos os dados, inclusive custos de escrita/flush, estão preservados em
+`work/evidence/external-pilot-v4`; `analysis/audit_v4.py` recalcula a igualdade
+numérica com Fraction/JSON estrito, confere1056 identidades e a primeira
+trajetória, e soma os custos I/O. Metadados registram hardware/modelo/vendor
+e hashes. O pool vetorizado state a1 acerta22/32 nesta seed, mas tem a MESMA
+lei conjunta do walk16: não interpretar essa diferença RNG como melhor
+qualidade esperada de uma dessas implementações.

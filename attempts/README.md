@@ -231,3 +231,10 @@ minimax para todos os orçamentos esperados reais, por score e aritmética
 inteira. Ruína do jogador é clássica; prioridade e aplicação útil continuam
 abertas. As notas têm pastas próprias; primeiros snapshots serão congelados
 após o piloto A32 para não competir com seus timings na compactação.
+
+A32/v4 concluiu1056 registros/2208 JSONs válidos/32.716 forwards novos com
+resultado negativo:8 candidatas20/32 empatam iid2 e custam mais, misto21/32
+é mais barato. Screen predefinido encerrou o piloto, sem labels test/outros
+seeds. Todos os resultados/IO/metadata estão preservados. A34 acrescenta
+referência mínima e4 oráculos, sem nova execução neural ou utilidade confirmada;
+DeGroot original foi lido, Wasan/Ghosh e novidade específica ainda pendentes.

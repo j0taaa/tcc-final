@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem135 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem139 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -278,10 +278,13 @@ restaurar código retirado ou insistir em uma hipótese refutada.
  32 checks do wrapper com68 respostas passam;135 testes68.297s. Protocolo
   antes de heads/gabaritos de avaliação; branch independente condicionada.
   Nenhum ganho real, prioridade ou publicabilidade A32 confirmado ainda.
-  O piloto real está EM ANDAMENTO no produtor congelado8fc0999/archiveabdf242,
-  planejado1056 registros. Não alterar fonte/configuração nem executar tarefas
-  pesadas em paralelo aos timings. V5 é uma nota de custo separada: corridas
-  clássicas são controles mais fortes no acesso com orçamento esperado.
+  O piloto real está COMPLETO1056/1056 no produtor8fc0999/archiveabdf242:
+  2208 JSONs válidos,32.716 forwards novos, nenhum erro/recusa/divergência
+  da primeira trajetória. As8 candidatas empatam20/32 com iid2 e custam mais;
+  controle misto21/32 é mais barato. Gate negativo predefinido encerra essa
+  aplicação, sem outros seeds/labels independentes. Uma seed não é refutação
+  estatística; todos os dados/custos I/O estão preservados. V5 é nota separada,
+  sem atribuir o produtor posterior aos dados congelados de v4.
 - A33, sem implementação ou novos forwards, reduz EXATAMENTE ao transformador
   de A29 com Barker e corrida clássica. Preservar a direção e não expandir
   como protagonista. R=1 truncado não é o MH implementado em29.
@@ -289,9 +292,13 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   acopladores regulares sem p conhecido, com orçamento esperado total.
   Aritmética inteira reforça o score-bound; ruína clássica fornece attainment.
   O benefício normalizado é minimax sobre todo p, não apenas benchmark justo.
-  Não prova latência total, prioridade ou utilidade neural. DeGroot/Ghosh,
-  probabilidades conhecidas e mais saídas são objeções obrigatórias. Resolver
-  as diferenças antes de implementação extensa. Novidade/publicação abertas.
+  Não prova latência total, prioridade ou utilidade neural. DeGroot ORIGINAL
+  Sections1--8/formulas84/91 já foram lidos; score/variância são antecedentes.
+  Wasan1964 (abstract) também trata orçamentos não inteiros; full text/Ghosh
+  ainda pendentes. Referência mínima com cap determinístico e certificado
+  espectral passa4 oráculos independentes;139 testes totais passam. Nenhuma
+  execução neural A34. Probabilidades conhecidas, mais saídas, custo completo
+  e sinal da classe são objeções obrigatórias. Novidade/publicação abertas.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

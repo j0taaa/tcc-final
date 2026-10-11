@@ -35,13 +35,20 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   regular factories, not selected implementations. Classical ruin/score
   arguments credited; source:34/work/theory-v1.md. No code/neural result.
 - [ ] T5401: Check nearest sequential-estimation and Bernoulli-factory primary
-  results, particularly DeGroot1959/Ghosh1987; resolve specific priority and
-  relevance before expanding. Publisher full texts currently not retrieved;
-  absence from search is not proof of novelty. Verify exact small laws with
-  independent oracles after the live timing campaign, without CPU competition.
+  results, particularly Wasan1964/Ghosh1987; resolve specific priority and
+  relevance before expanding. DeGroot ORIGINAL Sections1--8 and key printed
+  formulas84/91 are now read; score/variance principles explicitly precede us.
+  Wasan original abstract includes noninteger budgets; full text unresolved.
+  Absence from search is not proof of novelty. Four independent law tests pass.
 - [ ] T5402: Establish a cheap useful native structured transition application,
   compare probability-aware coupling and more-output iid with COMPLETE costs.
   Do not promote a restricted-oracle theorem alone as fulfilled publication goal.
+- [x] T5403: Written deterministic-count cap preserves the original second
+  payload on truncation, with a uniform spectral loss certificate. Tiny
+  sampler and four independent tests PASS0.159s AFTER A32 timings completed.
+  Entire139-test suite passes67.511s (`make test`); Ruff passes. `34/work/bounded-runtime-v2.md`, `ruin.py`
+  and `tests/test_oracle_diversity_frontier.py`. Wasan1964's original abstract
+  adds a close noninteger sequential-budget predecessor; full text pending.
 
 ## M53 — Categorical race repair: reduction gate before implementation
 
@@ -101,11 +108,15 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   configurations/68 FAKE responses pass.135-test offline suite68.297s.
   At that freeze, no real A32 forward or semantic gain yet. Source8fc0999
   and push preceded train gold evaluation; archivev3/abdf242 is independent.
-- [ ] T5207: Complete frozen pilot,32 train cases/16 methods/2 temperatures
-  plus deterministic. Live session96903/output.cache/a32-external-pilot-v4,
-  planned1056 records. No heavy tests/build/LP while timing. Add output I/O
-  sidecar costs, preserve all statuses and verify ALL first trajectories.
-  Branch with four seeds/heldout remains gated by protocol-v4.md, unchanged.
+- [x] T5207: Frozen pilot COMPLETE1056/1056 records,2208 valid JSON outputs,
+  32,716 NEW forwards, zero errors/refusals/first-trajectory mismatches.
+  Producer8fc0999736724b7b28159653503693f95b272c4a; no heavy parallel timings.
+  Independent exact verifier and output I/O costs included by post-analysis.
+  ALL8 candidate configs cover20/32, TIE iid2 and cost MORE; mixed21/32 costs
+  less, iid4 covers23/32 at0.5. Frozen negative resource screen triggers: no
+  remaining development seeds or test labels opened. This one seed is not
+  statistical refutation. ALL rows/IO/metadata/gold subset/audit/source hashes
+  preserved in32/work/evidence/external-pilot-v4. No utility/novelty confirmed.
 - [x] T5208: Separate written v5 cost objection during v4 measurements.
   Fixed-target minimax extends beyond bounded stopping, but an ordinary race
   beats n6 walk's class flow at the same worst expected4 draws. Not a new
@@ -193,7 +204,8 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Whole offline suite:109 tests pass39.529s; `make check` passes75 archives.
 - [x] T4902: Derive an upper bound for EVERY collision-only stationary repair:
   gain<=min(d(E),D-d(E)). Rare binary outcome epsilon gives at most epsilon²,
-  versus epsilon(1-epsilon) for a competent direct coupling. Do not enlarge
+  for ANY pair of the same marginals (historical claimed linear comparator
+  corrected by T5301; frozen original preserved). Do not enlarge
   this branch or report publication success from its iid dominance alone.
   Novelty and a sufficiently useful main contribution remain open.
 

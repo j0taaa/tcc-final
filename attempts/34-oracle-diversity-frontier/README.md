@@ -57,3 +57,20 @@ Somente notas matemáticas e revisão em `work/`. Não importa código de outra
 tentativa. Não chamar uma construção clássica, uma lista de buscas negativas
 ou um futuro oráculo de correção de confirmação de novidade/publicabilidade.
 
+## Refinamento delimitado, depois da prova inicial
+
+`work/bounded-runtime-v2.md` responde novamente aos oito critérios e deriva
+fallback por contagem determinística que conserva as marginais completas.
+Um bound espectral clássico certifica a perda de diversidade normalizada;
+não é exatidão da lei conjunta infinita nem fallback por timeout físico.
+`work/ruin.py` é referência mínima para procurar erros, com quatro oráculos
+independentes passando0.159s depois do encerramento dos timings A32. Não é integração neural ou implementação maior. A32/v4 não muda.
+
+Quatro verificações independentes PASSARAM em
+`tests/test_oracle_diversity_frontier.py`: coeficientes de todos os transcripts
+pequenos, equações de absorção racionais, payloads originais e validação prévia.
+Enumeração verifica12.264 transcripts binários,66 sistemas racionais de
+absorção e5 orçamentos fracionários,5.832 transcripts de payloads/aliases
+e todos os eventos pequenos. Suíte inteira139 testes passa67.511s; Ruff
+passa. São checks de correção, não medição de novidade/utilidade. Wasan1964 é outro antecedente central identificado antes da expansão;
+o abstract foi lido, mas seu texto integral continua pendente.

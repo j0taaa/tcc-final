@@ -1911,3 +1911,21 @@ comparação direta. Publishers ainda bloquearam retrieval completo; não usar
 ausência de busca como prova de novidade. Nenhum código/timing/head A34 ainda.
 Não converter o corolário local em fracção ótima da geração inteira: A32
 preserva contraexemplo contra monotonicidade de energia local.
+
+## 2026-10-11 — A32/v4 completo negativo; A34 oráculos e fonte original
+
+TODOS1056 registros e2208 respostas foram concluídos pelo produtor8fc0999:
+32.716 novos forwards,2208 JSONs válidos, sem erro/recusa/divergência primeira.
+Oito candidatas20/32 empatam iid2 e custam mais; misto21/32 custa menos.
+Audit independente inclui I/O de saída e Fraction/JSON estrito. Gate negativo
+predefinido acionado; sem outros seeds/test labels. Não é refutação estatística
+por uma seed. Preservar tudo em32/work/evidence/external-pilot-v4.
+
+A34 tem somente referência mínima e prova escrita. Cap de contagem conserva
+marginais exatas e certifica perda espectral, não timeout físico. Quatro
+oráculos independentes passam0.159s; suíte13967.511s depois do piloto.
+DeGroot1959 ORIGINAL Sections1--8 foram recuperados e lidos; printed84/91
+inspecionados. Score, Wald, variância/trabalho e Rao--Blackwell são CLÁSSICOS.
+Não foi identificado o frontier de outputs discretos nessas seções, mas
+Wasan1964 (abstract inclui orçamento não inteiro)/Ghosh e relevância prática
+ainda impedem confirmar novidade suficiente. Nada é promovido ao núcleo.

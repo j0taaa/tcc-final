@@ -1,0 +1,173 @@
+{
+  "source": {
+    "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/train.jsonl",
+    "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "bytes": 4166206,
+    "total": 7473,
+    "eligible": 7473,
+    "selected": 32,
+    "refusals": []
+  },
+  "selections": [
+    {
+      "id": "train:6003",
+      "question": "Mr. Isaac rides his bicycle at the rate of 10 miles per hour for 30 minutes. If he rides for another 15 miles, rests for 30 minutes, and then covers the remaining distance of 20 miles, what's the total time in minutes took to travel the whole journey?",
+      "answer": "If in one hour he covers 10 miles and rides for 15 miles at the rate of 10 miles per hour, then the time taken for the 15 miles will be 15/10 = <<15/10=1.5>>1.5 hours.\nThe time in minutes is 1.5 * 60 = <<1.5*60=90>>90 minutes.\nThe time taken for the remaining 20 miles at a rate of 10 miles per hour is 20/10= <<20/10=2>>2 hours.\nThe time in minutes is 2*60 = <<2*60=120>>120 minutes.\nThe total time taken for the whole journey is the first 30 minutes + 90 + 30 minutes for resting +120 minutes = <<30+90+30+120=270>>270 minutes.\n#### 270"
+    },
+    {
+      "id": "train:536",
+      "question": "In the baking contest, three times as many people voted for the unicorn cake compared to the witch cake, and the number of votes for the dragon cake was 25 more than the number of votes for the witch cake. If 7 people voted for the witch cake, how many votes were cast total?",
+      "answer": "First find the number of votes for the unicorn cake: 7 votes * 3 = <<7*3=21>>21 votes\nThen find the number of votes for the dragon cake: 25 votes + 7 votes = <<25+7=32>>32 votes\nThen add the number of votes for each cake to find the total number of votes: 21 votes + 32 votes + 7 votes = <<21+32+7=60>>60 votes\n#### 60"
+    },
+    {
+      "id": "train:4749",
+      "question": "Lassie eats half of her bones on Saturday. On Sunday she received 10 more bones. She now has a total of 35 bones. How many bones did she start with before eating them on Saturday?",
+      "answer": "35 bones at the end - 10 received = <<35-10=25>>25 on Sunday.\nLassie ate half, so multiply by two to find the number of bones at the beginning which is 25 * 2 = <<25*2=50>>50 bones.\n#### 50"
+    },
+    {
+      "id": "train:3964",
+      "question": "A conference center has six rooms. Each room can hold up to 80 people. Today, the conference center is only 2/3 full. How many people are in the conference center?",
+      "answer": "The conference center can hold up to 80 x 6 = <<80*6=480>>480 people.\nToday, there are 480 x 2/3 = <<480*2/3=320>>320 people in the conference center.\n#### 320"
+    },
+    {
+      "id": "train:7074",
+      "question": "A car traveled 360 miles in 4 hours and 30 minutes. What was its speed in miles per hour?",
+      "answer": "There are 60 minutes in one hour, so the car traveled 360 miles in 4 hours + 30 minutes/60 minutes/hour = 4.5 hours.\nIn one hour, the car travels 360 miles / 4.5 hours = <<360/4.5=80>>80 miles/hour.\n#### 80"
+    },
+    {
+      "id": "train:169",
+      "question": "Borris liquor store uses 90 kilograms of grapes every 6 months. He is thinking of increasing his production by twenty percent. How many grapes does he need in a year after increasing his production?",
+      "answer": "Borris uses 90 x 2 = <<90*2=180>>180 kilograms of grapes per year.\nThe increase of kilograms of grapes he needed per year is 180 x 0.20 = <<180*0.20=36>>36.\nTherefore, Borris needs 180 + 36 = <<180+36=216>>216 kilograms of grapes in a year.\n#### 216"
+    },
+    {
+      "id": "train:7144",
+      "question": "The price of an iPhone fell 10% in a particular month and another 20% in the second month.  If the initial price was $1000, calculate the price after the second month.",
+      "answer": "In the first month, the price of the iPhone fell by 10/100*$1000=$<<10/100*1000=100>>100\nThe new price after the first month is $1000-$100 = $<<1000-100=900>>900\nIn the second month, the price fell 20% further by 20/100*$900 = $<<20/100*900=180>>180\nThe new price after the second month is $900-$180 = $<<900-180=720>>720\n#### 720"
+    },
+    {
+      "id": "train:2679",
+      "question": "Gretchen, Mitzi, and Beth went bowling together. Gretchen bowled a 120. Mitzi bowled a 113. Beth bowled an 85. What was their average bowling score?",
+      "answer": "Gretchen bowled a 120 + Mitzi boweld a 113 + Beth bowled an 85 = <<120+113+85=318>>318 combined score.\nThe average of their combined score of 318 / 3 bowlers = <<318/3=106>>106.\n#### 106"
+    },
+    {
+      "id": "train:5448",
+      "question": "Jim ran 16 miles in 2 hours while Frank ran 20 miles in 2 hours. How many more miles did Frank run than Jim in an hour?",
+      "answer": "Jim ran 16 / 2 = <<16/2=8>>8 miles for an hour.\nFrank ran 20 / 2 = <<20/2=10>>10 miles for an hour.\nFrank ran 10 - 8 = <<10-8=2>>2 more miles than Jim in an hour.\n#### 2"
+    },
+    {
+      "id": "train:6513",
+      "question": "Julio goes fishing and can catch 7 fish every hour. By the 9th hour, how many fish does Julio have if he loses 15 fish in the process?",
+      "answer": "Julio catches a total of 7 fish/hour * 9 hours = <<7*9=63>>63 fish.\nAfter losing some of the fish, Julio has 63 fish - 15 fish = <<63-15=48>>48 fish.\n#### 48"
+    },
+    {
+      "id": "train:5542",
+      "question": "Betty is growing parsnips in her vegetable garden. When the parsnips are grown, they are harvested and bundled into boxes that can hold up to 20 parsnips each. Each harvest, three-quarters of the boxes are full, and the remaining boxes are half-full. She gets an average of 20 boxes each harvest. How many parsnips does Betty grow in an average harvest?",
+      "answer": "If three-quarters of the boxes are full, then 1 \u2013 \u00be = \u00bc of the boxes are half-full.\nOn average, each harvest therefore has 20 boxes * 0.25 = <<20*0.25=5>>5 boxes that are half-full.\nThis leaves 20 total boxes \u2013 5 half-full boxes = <<20-5=15>>15 full boxes.\nHalf-full boxes hold 20 parsnips / 2 = <<20/2=10>>10 parsnips each.\nIn total, the half-full boxes, therefore, hold 5 boxes * 10 parsnips = <<5*10=50>>50 parsnips.\nThe full boxes hold a total of 15 boxes * 20 parsnips = <<15*20=300>>300 parsnips.\nSo Betty harvests a total of 50 + 300 = <<50+300=350>>350 parsnips in an average harvest.\n#### 350"
+    },
+    {
+      "id": "train:1378",
+      "question": "Brenda weighs 10 pounds more than 3 times Mel's weight. If Brenda weighs 220 pounds, what is Mel's weight?",
+      "answer": "Let Mel's weight be m\nBrenda\u2019s weight is 3*m + 10 = 220 pounds\nThus 3m = 220 - 10 = 210 pounds\nTherefore Mel's weight is m = 210/3 = <<210/3=70>>70 pounds\n#### 70"
+    },
+    {
+      "id": "train:3581",
+      "question": "Darryl is an inventor who just designed a new machine. He had to pay $3600 for the parts to construct the machine, and $4500 for the patent he applied for once he built it. If the machine sells for $180, how many machines does Darryl need to sell to break even after the costs?",
+      "answer": "Darryl paid 3600 + 4500 = $<<3600+4500=8100>>8100 in costs for the parts and patent.\nThus, Darryl needs to sell 8100 / 180 = <<8100/180=45>>45 machines to break even.\n#### 45"
+    },
+    {
+      "id": "train:7054",
+      "question": "The bakery makes 3 batches of baguettes a day.  Each batch has 48 baguettes.  After the first batch came out, he sold 37.  After the second batch, he sold 52.  After the third batch he sold 49.  How many baguettes are left?",
+      "answer": "He makes 3 batches of baguettes a day, 48 per batch so he makes 3*48 = <<3*48=144>>144\nHe sells 37, then 52 then 49 baguettes for a total of 37+52+49 = <<37+52+49=138>>138\nHe had 144 to sell and he sold 138 so he has 144-138 = <<144-138=6>>6 left over\n#### 6"
+    },
+    {
+      "id": "train:2836",
+      "question": "During his summer break, Luke catches 2 fish every day for 30 days.  If each fish gives him 2 fillets, then how many fish fillets does he have?",
+      "answer": "He catches 2 fish every day for 30 days so he catches 2*30 = <<2*30=60>>60 fish\nEach fish yields 2 fillets so he has 2*60 = <<2*60=120>>120 fish fillets\n#### 120"
+    },
+    {
+      "id": "train:4645",
+      "question": "There are 50 marbles in a box which has a mixture of white, red and blue marbles. There were originally 20 white marbles and an equal number of red and blue marbles. Jack removes a number of marbles equal to double the difference between the number of white marbles and the number of blue marbles. How many marbles are left in the box?",
+      "answer": "20 of 50 marbles are white so there are 50-20 = 30 red and blue marbles\nThe number of red marbles and blue marbles is the same, so there are 30/2 = <<30/2=15>>15 of each color\nThe difference between the number of white marbles and blue marbles is 20-15 = <<20-15=5>>5\nDouble the difference is 5*2 = <<5*2=10>>10 marbles\n10 marbles are removed to leave 50-10 = <<50-10=40>>40 marbles\n#### 40"
+    },
+    {
+      "id": "train:6203",
+      "question": "A set of 7 spoons costs $21. If each spoon would be sold separately, how much would 5 spoons cost?",
+      "answer": "A set of 7 spoons costs $21, so one spoon from the set costs 21 / 7 = $<<21/7=3>>3.\nSo if sold separately, 5 spoons would cost 5 * 3 = $<<5*3=15>>15.\n#### 15"
+    },
+    {
+      "id": "train:5636",
+      "question": "Dakota and Ben order eggs for $3, pancakes for $2, and 2 mugs of cocoa for $2 each. The tax is $1. Later, Ben then decides to order 1 more batch of pancakes and 1 more mug of cocoa as he is still hungry. How much change should they get from $15?",
+      "answer": "The cost of the food is $3 + $2 + $2 + $2 = $<<3+2+2+2=9>>9.\nThe original total cost, including tax is $9 + $1 = $<<9+1=10>>10.\nBen increases the total cost to $10 + $2 + $2 = $<<10+2+2=14>>14.\nThey should get $15 - $14 = $<<15-14=1>>1 in change.\n#### 1"
+    },
+    {
+      "id": "train:827",
+      "question": "There are six chairs in each row in a church. If there are 20 rows of chairs in the church, and each chair holds five people, calculate the number of people who have to sit in the chairs for the church to be full.",
+      "answer": "If there are six chairs in each row in the church, the total number of chairs in the church is 6*20 = <<6*20=120>>120\nSince each chair holds 5 people, 5*120 = <<5*120=600>>600 people must sit in all of the chairs for the church to be full.\n#### 600"
+    },
+    {
+      "id": "train:2964",
+      "question": "Darcie is 4 years old. She is 1/6 as old as her mother and her mother is 4/5 as old as her father. How old is her father?",
+      "answer": "Darcie's mother is 4*6=<<4*6=24>>24 years old.\nDarcie's father is 24/4*5=<<24/4*5=30>>30 years old.\n#### 30"
+    },
+    {
+      "id": "train:7025",
+      "question": "Voldemort had his dinner and ate a piece of cake that has 110 calories. He also ate 1 pack of chips that contained 310 calories and drank a 500 ml bottle of coke that has 215 calories. His caloric intake for breakfast and lunch is 560 and 780 calories, respectively. If he has a 2500 calorie intake limit per day, how many calories can he still take?",
+      "answer": "For the night he was able to intake 110 + 310 + 215 = <<110+310+215=635>>635 calories\nFor breakfast and lunch, he was able to intake 560 + 780 = <<560+780=1340>>1340 calories\nSo, for the entire day Voldemort was able to intake 1340 + 635 = <<1340+635=1975>>1975 calories\nTherefore, he can still intake 2500 - 1975 = <<525=525>>525 calories.\n#### 525"
+    },
+    {
+      "id": "train:1872",
+      "question": "20 birds migrate on a seasonal basis from one lake to another, searching for food. If they fly from lake Jim to lake Disney in one season, which is 50 miles apart, then the next season they fly from lake Disney to lake London, 60 miles apart, calculate the combined distance all of the birds have traveled in the two seasons.",
+      "answer": "The birds' flying distance between Lake Jim through lake Disney to lake London is 50+60 = <<50+60=110>>110 miles.\nSince each bird flies the 110 miles distance while migrating, the combined distance they fly together is 110*20 = <<110*20=2200>>2200 miles.\n#### 2200"
+    },
+    {
+      "id": "train:3970",
+      "question": "Carla adds a can of chilis, two cans of beans, and 50% more tomatoes than beans to a normal batch of chili. If she makes a quadruple batch, how many cans of food does she need?",
+      "answer": "First find the number of cans of tomatoes in a normal batch of chili: 2 cans * 150% = <<2*150*.01=3>>3 cans\nThen add the number of cans of each type of food to find the total number of cans per batch: 3 cans + 2 cans + 1 can = <<3+2+1=6>>6 cans\nThen multiply the number of cans per batch by the number of batches to find the total number of cans: 6 cans/batch * 4 batches = <<6*4=24>>24 cans\n#### 24"
+    },
+    {
+      "id": "train:6859",
+      "question": "Simon, Gerry, and Micky want to have a race with handmade miniature rafts. Simon's raft needs 36 sticks, Gerry's raft needs two-thirds of the number of sticks that Simon needs, and Micky's raft needs 9 sticks more than Simon and Gerry's rafts combined. How many sticks do the three boys need to collect in total?",
+      "answer": "Gerry's raft needs (36/3) x 2 = 12 x 2 = 24 sticks\nSimon and Gerry's rafts need 36 + 24 = <<36+24=60>>60 sticks\nMicky's raft needs 60 + 9 = <<60+9=69>>69 sticks\nThe boys need to collect 60 + 69 = <<60+69=129>>129 sticks in total.\n#### 129"
+    },
+    {
+      "id": "train:7063",
+      "question": "Facebook decided to award a productivity bonus to all its female employees who are mothers. This productivity bonus will total 25% of Facebook's annual earnings, which was $5,000,000 for the year 2020. It is known that Facebook employs 3300 employees; one-third are men, and of the women, 1200 are not mothers. How much was the bonus that each female mother employee received, assuming each one received an equal amount?",
+      "answer": "25% of Facebook's annual earnings is 25/100 * $5,000,000 = $<<25/100*5000000=1250000>>1,250,000.\nThe number of male employees is 3300 * 1/3 = <<3300*1/3=1100>>1100.\nSo, the number of female employees is 3300 - 1100 = <<3300-1100=2200>>2200.\nThe number of female employees who are not moms is 2200 - 1200 = <<2200-1200=1000>>1000.\nSo the amount to be distributed to each mother would be $1,250,000 / 1000 = $<<1250=1250>>1250.\n#### 1250"
+    },
+    {
+      "id": "train:3698",
+      "question": "Kenia has three times as many rats as Hunter and Elodie has together. If Elodie has 30 rats, 10 rats more than Hunter, calculate the total number of pets the three have together?",
+      "answer": "Since Elodie has 30 rats, Hunter has 30 rats - 10 rats = <<30-10=20>>20 rats.\nTogether, Elodie and Hunter have 20 rats + 30 rats = <<20+30=50>>50 rats.\nKenia has three times as many rats as Hunter and Elodie have together, which is 3 * 50 rats = <<3*50=150>>150 rats\nTogether, the three have 150 rats + 50 rats = <<150+50=200>>200 rats.\n#### 200"
+    },
+    {
+      "id": "train:3731",
+      "question": "There are 6 times as many lab coats as uniforms in the lab. The number of lab techs is half of the number of uniforms. If there are 12 uniforms in the lab, and the lab techs share the coats and uniforms equally among them, how many coats and uniforms in total does each lab tech get?",
+      "answer": "If there are 12 uniforms, and the lab coats are 6 times as many as the number of uniforms, there are 6*12 = <<12*6=72>>72 lab coats.\nThe total number of lab coats and uniforms in the lab is 72+12 = <<72+12=84>>84\nIf the number of lab techs is half the number of uniforms, then there are 12/2 = <<12/2=6>>6 lab techs\nIf they share the lab coats and uniforms equally, each lab tech will get 84/6 = <<84/6=14>>14 lab coats and uniforms.\n#### 14"
+    },
+    {
+      "id": "train:3322",
+      "question": "Tony goes on 5 rollercoasters while he is at the park. The first went 50 miles per hour. The second went 62 miles per hour. The third when 73 miles per hour. The fourth when 70 miles per hour. His average speed during the day was 59 miles per hour. How fast was the fifth coaster?",
+      "answer": "The total speed of all five coasters is 295 because 59 x 5 = <<295=295>>295\nThe final coaster went 40 miles per hour because 295 - 50 - 62 - 73 - 70 = <<295-50-62-73-70=40>>40\n#### 40"
+    },
+    {
+      "id": "train:6355",
+      "question": "Louis is making himself a velvet suit for a formal event. The velvet fabric he chose was $24 per yard. He bought a pattern for $15, and two spools of silver thread for $3 each. If he spent $141 for the pattern, thread, and fabric, how many yards of fabric did he buy?",
+      "answer": "Let V be the number of yards of velvet fabric Louis bought.\nThe silver thread cost 2 * 3 = $<<2*3=6>>6.\nHe spent 24V + 15 + 6 = $141 on the suit.\nThe fabric cost 24V = 141 - 15 - 6 = $120.\nThus, Louis bought V = 120 / 24 = <<120/24=5>>5 yards of fabric.\n#### 5"
+    },
+    {
+      "id": "train:883",
+      "question": "For a project, a builder purchased 7 boxes of bolts with each box containing 11 bolts.  He purchased 3 boxes of nuts with each box containing 15 nuts. He ended up finishing the project 6 days early and with 3 bolts and 6 nuts left over. How many bolts and nuts did he use for the project?",
+      "answer": "The builder purchased 7 boxes * 11 bolts = <<7*11=77>>77 bolts.\nHe used 77 bolts - 3 left over = <<77-3=74>>74 bolts for the project.\nThe builder purchased 3 boxes * 15 nuts = <<3*15=45>>45 nuts.\nHe used 45 nuts - 6 left over = <<45-6=39>>39 nuts for the project.\nTotal for the project he used 74 bolts + 39 nuts = <<74+39=113>>113 nuts and bolts.\n#### 113"
+    },
+    {
+      "id": "train:1596",
+      "question": "Nina loves to travel. She tries to travel at least 400 kilometers in one month outside of her home country. Every second month she does twice that distance. If she were able to keep up with her resolution, how many kilometers would she travel during 2 years?",
+      "answer": "Every second month Nina does twice the regular distance, which means 400 * 2 = <<400*2=800>>800 kilometers.\nTwo years is 24 months, so half of this time is 24 * 0.5 = <<24*0.5=12>>12 months.\nSo in 12 months Nina does 400 * 12 = <<400*12=4800>>4800 kilometers.\nAnd in the other 12 months, she does 800 * 12 = <<800*12=9600>>9600 kilometers.\nSo in two years, Nina would be able to make 4800 + 9600 = <<4800+9600=14400>>14400 kilometers.\n#### 14400"
+    },
+    {
+      "id": "train:6848",
+      "question": "Olivia pays 4 quarters for chips and 12 quarters for soda. How many dollars does she pay in total?",
+      "answer": "4 quarters equals to 4 / 4 = $<<4/4=1>>1.\n12 quarters equals to 12 / 4= $<<12/4=3>>3.\nShe pays 1 + 3 = $<<1+3=4>>4 in total.\n#### 4"
+    }
+  ]
+}
