@@ -968,6 +968,24 @@
           ]
         }
       ]
+    },
+    {
+      "id": "29-collision-stationary-coupling",
+      "title": "Reparo estacionário de colisões: lei universal e limite desfavorável",
+      "conclusion": "Written stationary coupling preserves heterogeneous marginals and improves every-verifier pass@2 over iid. Five independent all-ticket oracles pass, whole109-test suite passes. However every collision-only repair has rare-event gain at most epsilon squared versus linear direct coupling. Rejected as main contribution before model benchmarks; no publication priority, useful magnitude or neural superiority claim.",
+      "reading": "attempts/29-collision-stationary-coupling/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "d994b8a3837a964d11f4a6847b8a4564794ca85d",
+          "evidence_commit": "d994b8a3837a964d11f4a6847b8a4564794ca85d",
+          "evidence_roots": [
+            "attempts/29-collision-stationary-coupling/README.md",
+            "attempts/29-collision-stationary-coupling/work",
+            "tests/test_collision_coupling.py"
+          ]
+        }
+      ]
     }
   ]
 }
