@@ -75,3 +75,17 @@ K=2, oferece identidade comparativa de pass@2 versus histórico e um corolário
 de número esperado de verificações em retries. Não demonstra acerto semântico,
 latência geral, priority ou suficiência para publicação. O próximo refinamento
 pretende preservar literalmente a primeira resposta nativa antes de medir.
+
+## V2: ancoragem e primeira trajetória
+
+O lema de ancoragem em `work/anchoring-v2.md` retém o ticket nativo do primeiro
+visitante e completa seu posterior de estrato. Três oráculos independentes
+passam, incluindo todos os K<=3/W<=4 e ordens de chegada, preimages CPU/CUDA
+por Fractions e refusas. A suíte121 passa64.878s.
+
+`work/probe_anchor.py` valida216/216 primeiras trajetórias literais em pares
+K=2 do EPIC real com heads FALSOS;978 chamadas falsas incluindo controles,
+168 saídas completas nos432 candidatos,156 nós compartilhados. Todos os
+hashes de produção conferem. O hook v1 e seus resultados não foram alterados;
+o refinamento fica em `native_noise_v2.py`/`anchored_ledger.py`.
+Não há ganho neural medido nem confirmação de publicação.

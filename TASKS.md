@@ -44,8 +44,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
  648 fake calls. No neural forwards or competitive timing. Producer:
  31/work/probe_native.py; JSON+SHA under work/evidence/native-correctness-v1.json.
   Pre-ordinal code+216 rows independently preserved, not relabeled.
-- [ ] T5103: Freeze v1, then conditional anchoring refinement, independent
-  joint-law oracle and literal first-candidate native preservation.
+- [x] T5103: V1 frozen at064532f/archive51c17bd. Conditional anchoring v2
+  has exact finite lifting proof; three independent oracles pass0.044s and
+  whole suite121 pass64.878s.216/216 first native trajectories at K=2 are
+  literal matches (fake heads),978 total calls,168/432 complete candidates,
+ 156 shared nodes. Sources/SHAs:work/evidence/native-anchor-v2.json.
+  Conditional resampling is cited as antecedent, not invented.
 - [ ] T5104: Freeze external schema-only structured-argument protocol before
   new neural forwards: competent root-only/history/native iid controls, all
   statuses, first output preservation, full cost/cache, independent holdout.

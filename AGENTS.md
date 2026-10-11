@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem118 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem121 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -228,7 +228,11 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   budget de rejeições. Há prova escrita de dominância sobre iid e identidade
   de variância contra o histórico A30; pass@2>=A30, não pass@K>=A30 geral.
   Quatro oráculos racionais e216 replays FAKE-head passam; nenhuma execução
-  neural nova ou vitória prática. Canvas sozinho tem contraexemplo de perda
+  neural nova ou vitória prática. V2 ancora o primeiro visitante no ruído
+  nativo observado, com posterior exato de estrato e dos aliases CUDA; três
+  oráculos e216 preservações literais da primeira trajetória K=2 passam.
+  São978 chamadas FALSAS, não evidência de ganho neural.
+  Canvas sozinho tem contraexemplo de perda
   de cobertura. A diferença teórica específica, magnitude útil e suficiência
   para publicação permanecem abertas. Não alterar A30 retroativamente.
 

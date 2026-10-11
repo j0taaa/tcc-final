@@ -1,0 +1,4981 @@
+{
+  "scope": "fake heads, first candidate literal native equality; no neural benefit/timing",
+  "torch": "2.8.0+cu128",
+  "rows": [
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 1,
+      "pair_forwards": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared_nodes": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared_nodes": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "reference_forwards": 2,
+      "pair_forwards": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared_nodes": 1
+    }
+  ],
+  "sources": {
+    "probe_anchor.py": "bae8438472446bade81160dc50e2d914b68410513cb82f2c8540922f924b88f6",
+    "native_noise_v2.py": "ec01b8ecbd268f4fdd4ec5e736985cc80df13e8ec895e600acba881e3d4186f7",
+    "anchored_ledger.py": "9b94c54ac9110d2b261ef62a1748c27d912b8d98806f872a24d9f9d7eabc1f75",
+    "probe_native.py": "d40661a67f5f8ea3d5c93bae8ad7fb773519502bfcfa56a5d7a1c8d16cfeb412",
+    "ledger.py": "cfa3e47adc87514171c4a6ed321090f5722a4beb421fe3e96bf9900beb70e969"
+  }
+}

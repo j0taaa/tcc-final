@@ -1802,3 +1802,13 @@ com posterior exato do estrato, permite retries que preservam literalmente
 a primeira resposta? Condicional stratified resampling é antecedente, não
 invenção nossa. Aplicação externa deve comparar root-only e histórico fortes
 antes de qualquer alegação de utilidade incremental.
+
+
+A31v2: lifting Z=KI+D prova ancoragem sem modificar primeira trajetória.
+CUDA exige posterior uniforme dos tickets duplicados na metade superior.
+Três oráculos e216 replays K=2 passam,121 testes totais64.878s;978 chamadas
+falsas. V1 permanece congelada e intacta. Native ruled_out_lexings não entra
+no resumo porque seu único ramo está explicitamente desabilitado por False
+na fonte pinada; mudar a fonte invalidaria essa auditoria. Nenhuma medição
+neural ou afirmação de ganho real. Conditional systematic/residual resampling
+de Chopin/Singh2015 é antecedente confirmado, não prioridade nossa.
