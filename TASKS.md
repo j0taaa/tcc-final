@@ -63,13 +63,18 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Producer32b46b2:24/24 valid;2328 exact class checks/full mass; all eight
   paired original-ID outputs identical. GPU transfer53040 versus1608256
   bytes full weights, not a timing or additional gain over GPU Torch.
-- [ ] T4805: Freeze protocol-v3 then measure ALL486 numeric-interface rows,
+- [x] T4805: Freeze protocol-v3 then measure ALL486 numeric-interface rows,
   common full JSON structural plan, strong NumPy/Torch controls/all block sizes,
   frame/setup/JIT/retrieval costs. Preserve losses. FactorDLM Proposition2
   explicitly rules out quotient law novelty; SIMPLE/SPAA/ExBLAS are priors.
   Before any timing, protocol strengthened to NEW paired CUDA forwards/GPU
   softmax, same represented weights for all methods, actual additive step
   cost. Full traces local/hash pinned; no whole-trajectory/independent claim.
+  Producer1b1773f:486/486,351 complete135 shared refusals0 errors,53 NEW
+  forwards (52 contextual/1 warmup). All candidates0/18 primary gates.
+  Triton1024 has13/18 boundary and4/18 prepared-query gains;5126/18 boundary,
+  no total victory. Source/config/results/audit preserved; independent phase
+  NOT triggered. This does not fulfill scientific publication goal.
 
 ## M47 — Finite-dimensional closure: research gate, not a publication claim
 

@@ -1,0 +1,9 @@
+{
+  "records": 486,
+  "expected": 486,
+  "status_counts": {
+    "shared_preparation_refused": 135,
+    "complete": 351
+  },
+  "complete": true
+}

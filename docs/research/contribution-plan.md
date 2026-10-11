@@ -44,6 +44,15 @@ exato. Não atribuir economia de GPU a uma versão que ainda guarda o head denso
 O princípio de soma exata e agrupamento também é anterior; a diferença precisa
 continuar sendo examinada, incluindo custos integrais do modelo e do parser.
 
+Atualização A28: a Proposição2 do FactorDLM cobre explicitamente a lei conjunta
+por classes; SIMPLE/SPAA também antecipam desagregação/soma. V2 passa52 casos
+GPU/39924 checks, replay24 JSONs/2328 checks. V3 foi congelada antes de53 novos
+forwards CUDA:486 registros,351 completos135 recusas comuns, zero erros.
+Triton1024 ganha componente13/18 e consulta preparada4/18, mas TODAS as
+variantes falham o gate integral20% wall/CPU com modelo/preparação. Preservar
+todos os dados e não promover ou acionar confirmação independente por ganhos
+parciais. A meta original útil/publicável continua aberta.
+
 ## Contrato atual — fechamento certificado (A24)
 
 **Operação:** massa/marginais originais e amostra de um produto congelado de

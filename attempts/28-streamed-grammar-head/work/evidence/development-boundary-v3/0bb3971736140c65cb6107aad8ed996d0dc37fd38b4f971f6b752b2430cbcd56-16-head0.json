@@ -1,0 +1,15 @@
+{
+  "weights_raw_sha256": "f21d8cbc5d21e00ddd40fc466b1a0fc50a66e61008a364971a8381436be15052",
+  "weights_npy_sha256": "aec1b632690072fefa2937a562e8ec934a1b9e0276b3dc4419ef3f2dc5b56b12",
+  "probability_cache_file": "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16-head0.npy",
+  "shape": [
+    16,
+    50258
+  ],
+  "forward_and_gpu_softmax": {
+    "wall": 0.008422486018389463,
+    "cpu": 0.0312964880000024
+  },
+  "dtype": "binary64",
+  "policy": "Full-V excluding MASK; exact row normalization by sampler"
+}

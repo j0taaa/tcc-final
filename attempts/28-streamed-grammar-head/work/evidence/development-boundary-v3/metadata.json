@@ -1,0 +1,262 @@
+{
+  "producer_commit": "1b1773f8511487ca56df9df7e42881ed933a3875",
+  "protocol_sha256": "33aa99a78ea7b4ca260e42101962759c1035856cb3963ef529f75003be57bbd4",
+  "protocol": {
+    "schema": 1,
+    "operation": "New paired MDLM CUDA forward and binary64 CUDA softmax, then exact recursive JSON valid mass and one exact original-ID conditional sample; same classical structural plan for all numeric interfaces.",
+    "phase": "Development on ALL18 old JSON-Schema-Test-Suite frames with NEW model forwards, not independent confirmation or whole neural trajectory",
+    "input": ".cache/a22-development-cuda-v1",
+    "seed": 2026101128,
+    "blocks": [
+      256,
+      512,
+      1024
+    ],
+    "methods": [
+      "numpy",
+      "torch",
+      "triton"
+    ],
+    "repetitions": 3,
+    "max_cells": 200000,
+    "max_edges": 1000000,
+    "max_terms": 50000000,
+    "timeout_seconds": 120,
+    "threads": 4,
+    "primary": "For each Triton block variant, paired median wall AND CPU of fresh-frame preparation+query <=0.8 of EVERY six NumPy/Torch controls, with favorable sign in ALL three repetitions. Same gate for preparation+ACTUAL paired model forward/CUDA softmax+query. Candidate must complete all repetitions with identical exact mass and paired original IDs within each common block layout.",
+    "secondary": "Report boundary/inside costs separately and warm query gate, never substitute a component win for primary. Reduced byte count alone is not success. All resource refusals, zero valid mass, errors and losses preserved.",
+    "preparation": "Vocabulary byte adapter/whole-lexer classification once as persistent model/grammar/tokenizer setup, recording wall/CPU. Partition/map upload recorded per block. Build each frame plan once independently of backend, charging full cost to every first-sample comparison. Record session-cold totals including model load/warmup, all static preparation and first JIT calls. Shared plan refusal refuses ALL methods equally, no wins.",
+    "timing": "Synchronize CUDA before/after. One NEW CUDA head for warmup and one per paired repetition/case, all50258 IDs, excluding MASK from softmax, preserving unsupported controls in original denominator. All controls receive identical frozen numbers. Query includes all required transfers, exponent/digit reductions, carries, class inside, RNG, block retrieval, detokenization/JSON/fixed-ID checks. First JIT calls recorded. File output/metadata/checksum excluded. CPU MUST copy GPU weights anew, never reuse archived host input. GPU softmax changes numeric origin versus old CPU capture: assert only the NEW represented law, not bit identity with old probabilities.",
+    "strong_controls": "NumPy bincount of32-bit integer digits is exact because positive block sums are <2^42<2^53. PyTorch uses independent integer digit/scatter operations on GPU. Both share efficient chosen-block recovery and same compiled grammar; all three block sizes available to controls. This audit concerns the numerical boundary, not a fastest-parser or EPIC comparison.",
+    "next_gate": "Only after useful development wins, freeze genuinely new independent-case and whole-loop protocols before executing. No heldout/fresh read in this campaign. Native EPIC comparisons require aligned outputs and common head accelerations.",
+    "claims": "Class quotient including exact sampling is already FactorDLM Proposition2; FlashSampling grouped sampling and SIMPLE disaggregation also prior. No new principle or confirmed publication novelty. Exactness is for normalized represented binary64 weights, not ideal real softmax or model semantic accuracy. Head remains dense on GPU.",
+    "model_config": "configs/experiments/m31_probability_scaling_cpu_v1.json"
+  },
+  "python": "3.11.16",
+  "numpy": "2.4.6",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "device": "NVIDIA GeForce RTX 3080 Ti",
+  "vocabulary_sha256": "0b4486e9138096810acb3183316684bf7c1dbe896dfdea7c4067e3994de9c7b6",
+  "grammar_table_setup": {
+    "wall": 0.7610064379987307,
+    "cpu": 0.7611826710000003
+  },
+  "vocabulary_adapter_setup": {
+    "wall": 0.03236307098995894,
+    "cpu": 0.032386955999999856
+  },
+  "partition_setup": {
+    "256": {
+      "cpu": {
+        "wall": 0.006057039019651711,
+        "cpu": 0.006069323000000182
+      },
+      "gpu_upload": {
+        "wall": 0.003362532996106893,
+        "cpu": 0.0033631420000004297
+      }
+    },
+    "512": {
+      "cpu": {
+        "wall": 0.006633614015299827,
+        "cpu": 0.006634239000000264
+      },
+      "gpu_upload": {
+        "wall": 0.0033099710126407444,
+        "cpu": 0.0033106099999997696
+      }
+    },
+    "1024": {
+      "cpu": {
+        "wall": 0.006794721004553139,
+        "cpu": 0.006795689999999688
+      },
+      "gpu_upload": {
+        "wall": 0.003292432986199856,
+        "cpu": 0.0032929700000003947
+      }
+    }
+  },
+  "frame_inventory": {
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16.json": {
+      "json_sha256": "339d77e40b62d7bfceabf1eb20c57bab1f2ef8d904c4479361b766cdd521c9ed",
+      "weights_sha256": "7c83096f9080731552926df3cdf8dff3f03f0d249608d6ba36434bd96c8f7c97"
+    },
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4.json": {
+      "json_sha256": "880967deb54176b410e9dab84c7abf48056e1a572992f6788221d19b2a1ede71",
+      "weights_sha256": "b0db2537ca1da5b6f891f2b64e589301bbd7de92123c3a9ec234d11b6651b27c"
+    },
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8.json": {
+      "json_sha256": "c16e75fa1ccba440a9a58296fb63d09e47deebd482d12a08988c6763dfde456d",
+      "weights_sha256": "6dfbff41a7eb319e68fb9c58c0a3f3117493b993f1b6f890c555d6fa6edd33b1"
+    },
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16.json": {
+      "json_sha256": "c1e99304a5c5a9c0cb76cf8861bf49b0410eb171d277fa2b36627ba23dc7cd6b",
+      "weights_sha256": "32cee41326ae677e5452daae97440fe0fd3e561db6ac4b29c3cab93ee34d9960"
+    },
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4.json": {
+      "json_sha256": "0eb071dcb9d93fc0677838dc5eeacb68979687bcb2b3c551b3a7ffb87d93c864",
+      "weights_sha256": "892ab774f680af7c441daeef30f22899b120bd060785d9af5f123ff30a26ab4d"
+    },
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8.json": {
+      "json_sha256": "e6b28f462318529648a6ccc2dbb4ec33a0ee2a21c098e9b46967e81c6c50ce52",
+      "weights_sha256": "d81e613ce1c7be94a43fc44e6260343168d8ca07e0c87a91200a1c2c158dae2f"
+    },
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16.json": {
+      "json_sha256": "23d38fd04cf9a1f97f2586c3e02d192846ac6db0408ee9b12a6160eab8b9633a",
+      "weights_sha256": "8152dc941c1cf905250bc1dd1a15544d41b2c5f7a9ee46ae3f10494fcd8f1134"
+    },
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4.json": {
+      "json_sha256": "477fffd050f115c43a96b35135076fd0d64df6b58b5a4d4b2d6f980c76a9c56b",
+      "weights_sha256": "f5b88b990860fc3f78a27be24a5a10d1b68a09cc5c8278e56d14eeda41e41e4c"
+    },
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8.json": {
+      "json_sha256": "64379a1dd1bdbddcafe65585c3563667858088b31c4a732f72ec429f3b349e5b",
+      "weights_sha256": "6781b5ec9540dd735f1e21a99c1105a18c0d231a8b586d95b191a159dcb8da39"
+    },
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16.json": {
+      "json_sha256": "a469ac5ffddf2ae388abc09abd43d48736f5270c3a4510b8663fcf165e787295",
+      "weights_sha256": "848c7ff3d3bad522ec676e71704f845625cc29c71c7f18fca58a31283800f733"
+    },
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4.json": {
+      "json_sha256": "7e8e787382b292842fa5a612d4bfc693cf8b8914e4c4980b794323c02512bfc3",
+      "weights_sha256": "2f96fbe7e1258577ce66b2cb842718b6219a2356aab579d780d4b17acb6b2f43"
+    },
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8.json": {
+      "json_sha256": "45c1b2f9e7bb09a039692e902d680bfa5a81f58660cc0d5ed51b266b3a427082",
+      "weights_sha256": "d77db7ab0a2ece8ecca61a6696634d65a39533550171282f154033e5ed36aedd"
+    },
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16.json": {
+      "json_sha256": "93ac22bdae266108eb42b73f68439148f73cba26f1d20808dc5212947be7c02a",
+      "weights_sha256": "465e73d03dddb1e4264ec003dc9c14e14fad651b681ff1d7361076d9bb524547"
+    },
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4.json": {
+      "json_sha256": "bc35fc6628952ca6510527248729ab2bdeaeefafd33d2089caa5c0babdf0f0d7",
+      "weights_sha256": "49ae5a4b8c49f33e146b7d1b8a64e9d94213ed9fa1991acd377013b9bdf664a9"
+    },
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8.json": {
+      "json_sha256": "34f6c29e3eaec7d7910d3028b932d4ae462aa12531f0a71d7cafea320629b517",
+      "weights_sha256": "ff914693bf26bef7aa32abee4e78570fb486ba6b15b15d4e62dab49250c8b603"
+    },
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-16.json": {
+      "json_sha256": "b9d99d2828e9feb6d3399ab8320fc5e03adc34d24729fe292063b69820e40897",
+      "weights_sha256": "a824697a8c1bcc7e4b1cf2c75a3a9e2d69aacb94627e6052be01023819fff233"
+    },
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4.json": {
+      "json_sha256": "bfc30ab692787c0f57e88a2f75c9150ca3651de2148d795636edb9f09e0d102a",
+      "weights_sha256": "cb94cf83d15f223fe4c53ca844c1577b0f33c1ff3730f929f452a14e407b8701"
+    },
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8.json": {
+      "json_sha256": "012381519589cf838cac2268b47408039f4c7300d7f29e58b30bd1141a1a320b",
+      "weights_sha256": "af33aef65a624cfc597eb540c1654f65c093f74686080f319088469b87bc426f"
+    }
+  },
+  "probability_cache": ".cache/a28-live-development-v3",
+  "model_config": {
+    "schema_version": 1,
+    "model_id": "kuleshov-group/mdlm-owt",
+    "model_revision": "d0958fa851335ece6c15260ce0025f030673c0fb",
+    "checkpoint_sha256": {
+      "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+      "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+      "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7",
+      "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4"
+    },
+    "tokenizer_id": "openai-community/gpt2",
+    "tokenizer_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "mask_token_id": 50257,
+    "seed": 310000,
+    "torch_cpu_threads": 4,
+    "slots": [
+      4,
+      8,
+      16
+    ],
+    "top_k": 8,
+    "support_policies": [
+      "top8_plus_alphabet"
+    ],
+    "oracle_limits": [
+      8,
+      64
+    ],
+    "tolerance": [
+      1,
+      20
+    ],
+    "soft_timeout_seconds": 60,
+    "posterior_scopes": [
+      "terminal_alphabet_coverage"
+    ],
+    "numeric_reference": "F32 CPU network; F64 softmax excluding MASK; exact binary rationals normalized over the entire non-mask vocabulary; retained rows are never renormalized",
+    "eos_semantics": "ABSENT; unsupported control tokens have no ordinary byte emission",
+    "claim_scope": "Complete controlled scaling/falsification grid, not production requests or semantic accuracy",
+    "probes": [
+      {
+        "id": "recursive_one_child_arrays_depth1",
+        "prefix": "[",
+        "suffix": "",
+        "grammar": "recursive_one_child_arrays",
+        "depth": 1,
+        "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+      },
+      {
+        "id": "recursive_one_child_arrays_depth3",
+        "prefix": "[[[",
+        "suffix": "",
+        "grammar": "recursive_one_child_arrays",
+        "depth": 3,
+        "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+      },
+      {
+        "id": "recursive_one_child_arrays_depth8",
+        "prefix": "[[[[[[[[",
+        "suffix": "",
+        "grammar": "recursive_one_child_arrays",
+        "depth": 8,
+        "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+      },
+      {
+        "id": "recursive_arrays_depth1",
+        "prefix": "[",
+        "suffix": "",
+        "grammar": "recursive_arrays",
+        "depth": 1,
+        "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+      },
+      {
+        "id": "recursive_arrays_depth3",
+        "prefix": "[[[",
+        "suffix": "",
+        "grammar": "recursive_arrays",
+        "depth": 3,
+        "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+      },
+      {
+        "id": "recursive_arrays_depth8",
+        "prefix": "[[[[[[[[",
+        "suffix": "",
+        "grammar": "recursive_arrays",
+        "depth": 8,
+        "source": "https://json-schema.org/draft/2020-12/json-schema-core.html#section-8.2.4"
+      }
+    ],
+    "reference_repetitions": 3,
+    "external_timeout_seconds": 30,
+    "address_space_bytes": 2147483648
+  },
+  "model_hashes": {
+    "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+    "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+    "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7",
+    "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4"
+  },
+  "adapted_model_sha256": "90caa71ec43c77ff92735dba5fdc97a6a546c9f087a35b1a43e8b6e469251fd8",
+  "model_setup": {
+    "wall": 3.3001419969950803,
+    "cpu": 4.168417302
+  },
+  "new_neural_forwards": 53,
+  "scope": "New CUDA head, paired step cost; not a whole trajectory"
+}

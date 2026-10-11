@@ -149,3 +149,25 @@ componentes não substituem o gate integral. É desenvolvimento novo nos frames
 antigos, sem nova avaliação independente ou trajetória inteira. As matrizes
 novas completas ficam no cache local, com hashes publicados por repetição;
 nunca são fornecidas ao baseline CPU para evitar a transferência obrigatória.
+
+### Resultado v3 completo — não passa o gate integral
+
+Produtor `1b1773f`,486/486 registros preservados:351 completos,135 recusas de
+preparação compartilhadas entre TODOS os métodos (cinco estados), zero erros.
+Foram53 forwards novos,52 de contexto e um warmup; não treinamento nem trajetória
+iterativa. Massas exatas coincidem entre interfaces e IDs com o mesmo layout/
+seed coincidem; todas as351 saídas medidas são JSON e preservam posições fixas.
+
+Triton256/512/1024 têm **0/18 gates primários**. Com blocos1024,13/18 gates
+de fronteira passam e4/18 de consulta já preparada; os outros cinco são
+recusas comuns. Blocos512 têm6/18 de fronteira e zero de consulta;256 zero.
+Custos de modelo/preparação impedem transformar ganhos de componente em ganho
+integral20% contra todos os controles. Não relaxar esse critério ou selecionar
+um caso menor depois da medição. Nenhuma confirmação independente acionada.
+
+**Decisão:** preservar esta implementação delimitada, sem promovê-la como
+conquista científica/publicável ou vitória EPIC. Pode servir como fronteira
+numérica de pesquisa; quociente/superacumuladores já eram conhecidos e os
+novos dados não sustentam o avanço integral pretendido. Fonte/evidência/métricas
+estão em `work/evidence/development-boundary-v3`; matrizes novas completas no
+cache local pinado, que limita a recomputação offline sem modelo/cache.

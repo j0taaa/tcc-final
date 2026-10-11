@@ -188,6 +188,12 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   Replay v2 dos mesmos pesos:24/24 JSONs e2328 checks de classe/massa;
   IDs pareados iguais em NumPy/Triton/PyTorch. Contagem de comunicação não
   substitui custo integral ou vitória sobre o controle GPU igualmente exato.
+  V3 completo tem486 registros,351 completos135 recusas comuns0 erros,
+  53 forwards novos (um warmup), todas as saídas medidas válidas. As três
+  variantes0/18 gates primários;1024 tem13/18 ganhos de fronteira e4/18 de
+  consulta preparada. Não há ganho20% integral contra todos os controles,
+  trajetória iterativa ou confirmação independente. FactorDLM Proposição2
+  já enuncia a lei de quociente; nova teoria/publicabilidade não confirmadas.
 
 Use [TASKS.md](TASKS.md) para tarefas/evidências atuais e
 [attempts/README.md](attempts/README.md) e `attempts/catalog.json` para versões
