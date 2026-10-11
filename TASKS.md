@@ -40,9 +40,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Single-use summary enforced; no numerical GPU exactness or speed claim.
   Full current suite:101 tests pass38.917s; explicit new-file Ruff passes.
   `make check` passes (27/72 frozen archives; A28 not archived yet).
-- [ ] T4802: Freeze source then execute declared same-public-head replay:
+- [x] T4802: Freeze source then execute declared same-public-head replay:
   all50258 IDs, eight NEW ledgers, full mass recomputation, independent JSON
   and fixed IDs. Input probabilities already materialized; no memory benchmark.
+  Producer5ebb2ec:8/8 valid JSONs/fixed IDs,29488 exact class checks, full
+  recomputed valid mass agrees. Evidence:28/work/evidence/public-head-v1.json.
 - [ ] T4803: Before a GPU implementation/campaign, delimit the added benefit
   beyond generic grouping and frozen streaming controls. Full pipeline cost,
   original finite numeric law and direct strong controls are required.

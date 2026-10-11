@@ -67,3 +67,19 @@ completa, fará oito resumos novos/oito amostras independentes, verificará JSON
 com `json.loads` e IDs fixos. Todos os resultados serão publicados. Não é
 captura independente, timing competitivo ou medida de memória do ciclo neural:
 o arquivo de entrada já contém probabilidades materializadas.
+
+## Resultado v1, fonte congelada antes do replay
+
+Fonte `5ebb2ec2eb07a395ac4f4a3ec61bcd2b8b55d5ae`; comando:
+
+```bash
+.venv/bin/python -m attempts.28-streamed-grammar-head.work.replay_v1 --packet attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip --output attempts/28-streamed-grammar-head/work/evidence/public-head-v1.json
+```
+
+Oito resumos novos produziram oito JSONs válidos, com IDs fixos preservados.
+Todas29.488 probabilidades de classes conferem exatamente com a referência
+completa; a massa válida também confere, aproximadamente3,14645e-6. Todos os
+IDs/probabilidades originais foram considerados, incluindo aliases e zeros.
+Nenhum forward novo, medição neural de memória/tempo ou confirmação de
+novidade. Os101 testes passam; os controles conhecidos ainda precisam receber
+a mesma fronteira eficiente antes de qualquer conclusão competitiva.
