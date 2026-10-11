@@ -93,3 +93,10 @@ Original EOS-to-PAD suffix rewrites are recorded, never hidden as immutable
 internal commits. All nine controls/all inputs/all outcomes are preserved.
 Criteria2/3/6/8 remain unsatisfied for the requested publication/usefulness
 goal; see `work/usefulness-decision-v5.md`. No main article promotion.
+
+V6 contract BEFORE code/output: examine the COMPLETE first neural step,
+preserving the original generator and requiring zero new helper forwards.
+The fixed body-token observation excludes special suffix tokens. Existing
+input/seed bank is a functional/information audit, not independent quality
+evidence. All eight criteria are reevaluated in `work/first-step-contract-v6.md`;
+if the boundary remains uninformative, changing its name cannot make it useful.
