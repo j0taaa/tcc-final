@@ -27,6 +27,27 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M48 — Streamed neural/grammar boundary: a new bounded research gate
+
+- [x] T4800: A28 has eight criteria, written original-ID joint law and bit-memory
+  analysis; FlashSampling/STATIC/grouped sampling explicitly credited. Simple
+  sparse-head novelty rejected before implementation; latent-gradient direction
+  meets LUBAC/conditional-diffusion priors and an unresolved Jacobian cost.
+- [x] T4801: Minimal independent class ledger retains masses/reservoir winners,
+  not original weight rows. Three oracles pass0.012s, including every random
+  decision for uniform and nonuniform original-event laws, independent JSON
+  class constancy/mass, aliases/macros/partial strings/fixed slots and refusals.
+  Single-use summary enforced; no numerical GPU exactness or speed claim.
+  Full current suite:101 tests pass38.917s; explicit new-file Ruff passes.
+  `make check` passes (27/72 frozen archives; A28 not archived yet).
+- [ ] T4802: Freeze source then execute declared same-public-head replay:
+  all50258 IDs, eight NEW ledgers, full mass recomputation, independent JSON
+  and fixed IDs. Input probabilities already materialized; no memory benchmark.
+- [ ] T4803: Before a GPU implementation/campaign, delimit the added benefit
+  beyond generic grouping and frozen streaming controls. Full pipeline cost,
+  original finite numeric law and direct strong controls are required.
+  Sufficient publication novelty remains unconfirmed.
+
 ## M47 — Finite-dimensional closure: research gate, not a publication claim
 
 - [x] T4700: Read current EPIC v2, FactorDLM and Twister formulations and

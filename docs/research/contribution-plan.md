@@ -28,6 +28,22 @@ um. Não há limite mais apertado nos73 pares comuns. Custos não foram medidos;
 não transformar dimensão menor em velocidade confirmada. A27 permanece
 preservada sem promoção científica: os princípios próximos são anteriores.
 
+### A28 — fronteira neural/gramatical, depois de eliminar falsas novidades
+
+FlashSampling2603.15854§4 já transmite massa e vencedor por grupo; STATIC e
+GSP já exploram projeção restrita. Não reivindicar fusão ou disintegração como
+invenção. A28 delimita estatísticas consumidas por um posterior CONJUNTO CFG,
+preservando IDs, aliases e posições fixas. Uma referência inteira em fluxo e
+três oráculos da lei completa passam; a suíte inteira tem101 testes. Isto é
+correção delimitada, não novidade/publicabilidade ou vantagem de velocidade.
+
+Antes de GPU/timings, será executado o replay declarado de oito resumos novos
+no mesmo head público. A próxima hipótese operacional é reduzir a comunicação
+GPU/CPU mantendo a lei binária original, com um controle vetorizado igualmente
+exato. Não atribuir economia de GPU a uma versão que ainda guarda o head denso.
+O princípio de soma exata e agrupamento também é anterior; a diferença precisa
+continuar sendo examinada, incluindo custos integrais do modelo e do parser.
+
 ## Contrato atual — fechamento certificado (A24)
 
 **Operação:** massa/marginais originais e amostra de um produto congelado de
