@@ -528,6 +528,12 @@ novos testes ativos/modelos. Pool8(1,1,3,3) tem covariance positiva para união
 de classes: não transferir a garantia de todo score/gradiente para pools maiores.
 LLaDA1.5/VRPO v2 já otimiza avaliação de ELBO; preservar seus controles e a
 forma por contagem quando o denoiser for independente do tempo.
+V5 congela uma sondagem de informação mínima: seis JSONs externos antigos,
+32 corrupções para ajustar proxy e64 novas por documento;32 forwards de
+preparação são cobrados. Conta-NELBO é conhecido, gradiente é somente BIAS
+de saída full-V. Banco64 conhecido oferece massas/inversos gratuitos; seu
+ganho de covariância não é vitória prática de oracle opaco. Nenhum novo
+head/treinamento/resultado neural nesta versão prospectiva.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

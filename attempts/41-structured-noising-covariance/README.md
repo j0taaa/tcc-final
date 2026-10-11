@@ -125,3 +125,22 @@ universally safe training extension. The full neural operation is still absent.
 score variance/budget/common-noise controls and the stronger count formulation
 for time-independent denoisers. This theorem's priority, significance and
 practical consequence are still unresolved; it is not a publication victory.
+
+## V5 — prospective real noising information audit
+
+`work/information-contract-v5.md`/JSON freeze the SAME count-NELBO operation
+as a strong known baseline, with time-independent pinned MDLM. ALL six old
+external input-ranked A17 JSONs are DEVELOPMENT only; own document, loader
+and config copies carry origin hashes. No old model outputs/code are imported.
+Per document32 fit and64 new iid corruptions cost96 real forwards; full-V
+float64 OUTPUT-BIAS gradients only, not the entire model/backbone or updates.
+A fixed ridge/four-center proxy uses past noise observations before eval.
+
+The minimum code checks lexical features, proxy dimensions, numerical bias
+gradients against CPU/CUDA autodiff and finite-bank trace against independent
+pivotal enumeration. This is NOT an external benchmark. The opt-in script
+`work/noise_information.py` will preserve all outcomes/costs. Whole64-source
+bank geometry has free known labels/masses and permits analytical inverse
+controls; its covariance improvement CANNOT be reported as a useful opaque-
+oracle performance victory. No new neural outputs exist yet. Setup fitting,
+strong count/importance/CV/RSS/pivotal controls and priority remain charged/open.

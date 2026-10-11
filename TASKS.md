@@ -56,6 +56,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   LLaDA1.5/VRPO current v2 is a direct score-operation precedent. Time-independent
   count/Rao-Blackwell baseline must enter when admitted by the model. No real
   heads/noising/training/publication benefit confirmed.
+  V5 prospective information contract/code uses strong known count-NELBO,
+  ALL six OLD external documents,32 fit+64 new iid noise observations each,
+  full OUTPUT-BIAS gradient only. Own pin/hash copies; cheap proxy fixed
+  before evaluation. Known64-source-bank geometry is NOT an opaque-source
+  competitive gate. No new external model outputs yet; preserve setup costs.
 - [ ] T6102: Only if difference/cost plausibility survives, freeze real JSON/DSL
   noising-score protocol with competent MIRROR/time/importance/analytic/extra-iid
   controls and all costs. No experiments or improved training claimed yet.

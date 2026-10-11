@@ -1,0 +1,20 @@
+{
+  "version": 5,
+  "purpose": "DEVELOPMENT information audit of cheap classes for ORIGINAL count-noising normalized NELBO and full OUTPUT-BIAS gradient only; NOT competitive latency, independent confirmation, training or EPIC win",
+  "external_documents": "documents-v5.json",
+  "source": "Uniform 128-bit source index seeds independent Python Random; k=randrange(1,n+1), uniform k-subset via sample. Software finite source declared; not exactly the ideal continuum/timestep integral.",
+  "seed": 20261011041,
+  "fit": 32,
+  "evaluate": 64,
+  "documents": 6,
+  "model_config": "mdlm-config-v5.json",
+  "model": "Official pinned MDLM OWT, time_conditioning MUST be false, owned audited CPU port, eval/zero-dropout, float32 network, full-V float64 softmax with original MASK excluded",
+  "hardware": "CPU four Torch threads; no simultaneous model experiment",
+  "score": "mean NLL on ORIGINAL masked token IDs; normalized NELBO count formulation already known, matching gradient w.r.t full output bias. No backbone/weight gradients or optimizer update.",
+  "features": "intercept, ALL original mask indicators, squared masked fraction and squared masked fractions of lexical syntax/string/number/other roles; mixed-role tokens assigned string before syntax before number before other. Derived from declared complete JSON only, no answer/classification target.",
+  "proxy": "ridge regularization1 with unpenalized intercept; output scalar score plus8 fixed seeded Rademacher projections of full bias gradient; fit32 only; standardize coordinates by fit std floor1e-8; deterministic farthest-first4 centers,20 Lloyd updates; key nearest predicted center; fixed BEFORE evaluate64.",
+  "scope": "Evaluate64 are iid original sources, ALL preserved. Exact C4 finite-bank covariance is DESCRIPTIVE geometry on a KNOWN64-source bank, NOT an opaque oracle/practical benchmark. Analytical/full-key inverse and enumeration are allowed on that bank.",
+  "costs": "Count ALL fit/eval neural calls, softmax/gradient/feature/proxy work and source preparation. Cold teacher setup32 forwards reported, not silently free/amortized. No method timing superiority or publication gate. Every error/partial record retained.",
+  "next_gate": "Only an informative conditional geometry justifies a separate frozen complete-cost method protocol; it never confirms novelty, semantic reranking accuracy or training benefit. Strong controls: count stratification, MIRROR/time/importance when matching, RSS learned order, same-law pivotal lazy/full, analytic exact-mean CV, sampling without replacement/extra iid. Independent corpus required only after development gate survives.",
+  "checkpoint_loading": "One-time tokenizer/checkpoint load reported separately, excluded from document tally. No inference warmup or model-output cache; first inference charged."
+}
