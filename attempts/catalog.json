@@ -1042,6 +1042,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "32-native-oracle-antithetics",
+      "title": "Native finite-law class coupling and sharp p-blind oracle budget",
+      "conclusion": "Four small independent oracles, sharp restricted-oracle written bound and216 fake native first-path/RNG replays pass. No neural benefit or sufficient publication novelty confirmed.",
+      "reading": "attempts/32-native-oracle-antithetics/README.md; TASKS.md#M52",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "4c02d53c6827b56c396549e276753a0a89433c8d",
+          "evidence_commit": "4c02d53c6827b56c396549e276753a0a89433c8d",
+          "evidence_roots": [
+            "attempts/32-native-oracle-antithetics/work",
+            "tests/test_native_oracle_coupling.py"
+          ]
+        }
+      ]
     }
   ]
 }
