@@ -52,6 +52,7 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [39-known-source-coupling](39-known-source-coupling/README.md) | Fronteira de fontes conhecidas; piloto nativo negativo e auditoria corrigida sem classes úteis |
 | [40-anchor-trace-coupling](40-anchor-trace-coupling/README.md) | Âncora independente/cache exato pago; corolário escrito, novidade/uso abertos |
 | [41-structured-noising-covariance](41-structured-noising-covariance/README.md) | Noising/score estruturado e ordem de covariância; matemática/redução escrita antes de código |
+| [42-safe-empirical-resampling](42-safe-empirical-resampling/README.md) | Cobertura ótima de átomos e segurança para todos os scores; passo global ainda conjectural |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`

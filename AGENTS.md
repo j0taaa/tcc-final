@@ -784,3 +784,10 @@ alternativa, sob quais hipóteses e por que importa**. Se isso ainda não estive
 sustentado, diga exatamente o que falta e continue o trabalho autorizado que
 possa resolver a lacuna. Não chame organização, compilação ou um exemplo que
 funcionou de cumprimento dos requisitos científicos do usuário.
+
+A42 separa a lei empírica rejective/max-entropy conhecida da conjectura de
+covariância global após pool uniforme.16824 casos numéricos M<=20/até5 classes
+não têm obstrução, mas NÃO são prova, sampler exato ou uso neural. V1 e
+explorações preservadas. A garantia condicional não elimina a flutuação da
+média do pool. Nenhuma campanha neural é justificada; custos de calibração
+irracional continuam pendentes. Não confundir com prioridade/publicação.
