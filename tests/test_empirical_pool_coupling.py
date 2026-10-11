@@ -8,10 +8,11 @@ from collections import Counter
 from fractions import Fraction as F
 
 reference = importlib.import_module("attempts.38-empirical-pool-coupling.work.couple")
+controls = importlib.import_module("attempts.38-empirical-pool-coupling.work.controls")
 KEYS = (b"json-A", b"json-A", b"json-B", b"json-C", b"FAIL")
 
 
-def enumerated_law(weights, *, budgeted=False):
+def enumerated_law(weights, *, budgeted=False, sampler=None):
     joint, calls = Counter(), 0
     total = (12 if budgeted else 6) * sum(weights) ** 4
     for tape in itertools.product(range(len(weights)), repeat=4):
@@ -31,7 +32,7 @@ def enumerated_law(weights, *, budgeted=False):
                 return item
 
             random_tape = iter(uniforms)
-            method = reference.pair_mean_three if budgeted else reference.pair
+            method = sampler or (reference.pair_mean_three if budgeted else reference.pair)
             x, y, used = method(draw, lambda v: v["key"], lambda n, r=random_tape: next(r) % n)
             assert x is payloads[0]
             assert y is not x and any(y is v for v in seen[1:])
@@ -63,6 +64,39 @@ def grouped_rank_rotation(weights):
 
 
 class EmpiricalPoolCouplingTests(unittest.TestCase):
+    def test_native_key_has_no_gold_and_preserves_typed_numeric_identity(self):
+        def key(text, status="COMPLETE"):
+            return controls.canonical({"status": status, "text": text})
+
+        self.assertEqual(
+            key('{"op":"add","args":[1,2]}'), key('{ "args" : [1e0,2.0], "op":"add" }')
+        )
+        self.assertNotEqual(key("1"), key('"1"'))
+        self.assertNotEqual(key("false"), key("0"))
+        self.assertNotEqual(key('{"#rational":"1"}'), key("1"))
+        self.assertEqual(key("1e999999999"), "INVALID_JSON")
+        self.assertEqual(key('{"x":1,"x":2}'), "INVALID_JSON")
+        self.assertEqual(key("NaN"), "INVALID_JSON")
+        self.assertEqual(key('{"op":"add","args":[1,2]}', "INCOMPLETE"), "INCOMPLETE")
+
+    def test_competent_full_and_early_pools_have_identical_raw_law(self):
+        weights = (3, 2, 4, 2, 1)
+        expected, minimum_calls = enumerated_law(weights)
+        full, full_calls = enumerated_law(weights, sampler=controls.pool)
+        early, early_calls = enumerated_law(
+            weights, sampler=lambda d, k, r: controls.pool(d, k, r, early=True)
+        )
+        p = tuple(F(w, sum(weights)) for w in weights)
+        mass = {k: sum(p[i] for i in range(5) if KEYS[i] == k) for k in set(KEYS)}
+        self.assertEqual(expected, full)
+        self.assertEqual(expected, early)
+        self.assertEqual(full_calls, 4)
+        self.assertEqual(early_calls, 4 - sum(a**2 for a in mass.values()))
+        self.assertLess(minimum_calls, early_calls)
+        biased, _ = enumerated_law((9, 0, 1, 0, 0), sampler=controls.novelty_three)
+        # Strong cheap search control is retained, with its real marginal bias.
+        self.assertNotEqual(sum(v for (_, j), v in biased.items() if j == 0), F(9, 10))
+
     def test_independent_budget_coin_preserves_full_law_and_all_verifiers(self):
         for weights in ((3, 2, 4, 2, 1), (1, 0, 1, 1, 1), (1, 0, 1, 0, 0), (9, 1, 0, 0, 0)):
             p = tuple(F(w, sum(weights)) for w in weights)

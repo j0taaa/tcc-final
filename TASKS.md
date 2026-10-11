@@ -95,6 +95,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   controls and original RNG/IDs, freeze producer before running ALL56 pilot
   records. Report full costs/losses and decide application honestly before
   any larger campaign/article promotion.
+  Preflight v6 NOW passes: nine rational controls/key checks0.121s,
+  full156-test suite68.012s, check/Ruff and live CLI import. CPU/CUDA/Python/
+  NumPy private-RNG oracle PASS without model forwards; immutable helper
+  copies verified. `native-preflight-v6.md`, `law-v6.json`, `checks-v6.json`
+  and `native-rng-cuda-v6.json`. Producer is to be frozen before ALL56 real
+  records; no neural results/publication or broad EPIC win yet.
 
 ## M57 — Complete-output canonical coupling: written application gate
 

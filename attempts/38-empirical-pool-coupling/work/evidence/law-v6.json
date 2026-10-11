@@ -1,0 +1,23 @@
+{
+  "kind": "actual independent same-law control/key validation, not neural data",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_empirical_pool_coupling.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 0.1534358109929599,
+  "stdout": "",
+  "stderr": "test_all_raw_verifiers_and_nonmonotone_scores (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_all_raw_verifiers_and_nonmonotone_scores) ... ok\ntest_competent_full_and_early_pools_have_identical_raw_law (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_competent_full_and_early_pools_have_identical_raw_law) ... ok\ntest_exact_payload_law_and_pointwise_cost_with_aliases_failures (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_exact_payload_law_and_pointwise_cost_with_aliases_failures) ... ok\ntest_exact_reduction_to_classical_grouped_rank_rotation (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_exact_reduction_to_classical_grouped_rank_rotation) ... ok\ntest_independent_budget_coin_preserves_full_law_and_all_verifiers (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_independent_budget_coin_preserves_full_law_and_all_verifiers) ... ok\ntest_known_uniform_derangement_is_stronger_for_every_score (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_known_uniform_derangement_is_stronger_for_every_score) ... ok\ntest_multivariate_virtual_tape_coefficients_with_independent_coins (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_multivariate_virtual_tape_coefficients_with_independent_coins) ... ok\ntest_native_key_has_no_gold_and_preserves_typed_numeric_identity (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_native_key_has_no_gold_and_preserves_typed_numeric_identity) ... ok\ntest_probability_aware_rotation_is_kept_as_a_stronger_diversity_control (test_empirical_pool_coupling.EmpiricalPoolCouplingTests.test_probability_aware_rotation_is_kept_as_a_stronger_diversity_control) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.121s\n\nOK\n",
+  "source_sha256": {
+    "attempts/38-empirical-pool-coupling/work/couple.py": "ff353b84957f1cddae54937b83bdcf43f36a404950b54e9b42e68bd4af4ae242",
+    "attempts/38-empirical-pool-coupling/work/controls.py": "d59124da119088d374448fc75e9f8c7b05c495e3fb610e28cdc6f994320bdcf7",
+    "tests/test_empirical_pool_coupling.py": "f3c4d838009774df54a32a58a163b4524fc0c449dffc1668fb66fea8b0364fca"
+  }
+}

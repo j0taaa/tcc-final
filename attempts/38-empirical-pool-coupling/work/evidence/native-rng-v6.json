@@ -1,0 +1,14 @@
+{
+  "kind": "actual CPU RNG adapter oracle, no model forward",
+  "command": ".venv-live/bin/python heredoc factory yielding three CPU/Python/NumPy random tokens per seed",
+  "seeds": [
+    0,
+    1,
+    126336,
+    4294967295
+  ],
+  "events_per_seed": 3,
+  "source_sha256": "06831108b492ff4ee97b7fbee8f4c563145bfebc09181166f7e7e7022abb6b35",
+  "torch": "2.8.0+cu128",
+  "result": "PASS: independently interleaved candidates reproduce exact tapes; all caller RNG states preserved"
+}

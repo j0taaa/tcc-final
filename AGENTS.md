@@ -421,6 +421,13 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   usa Wald PADRÃO e lei conjunta igual para cobrar continuação; economia
   versus pool full/early não é timing nem vitória sobre iid3. Novas leituras
   Huber/Dice têm hashes/escopos; sem novos forwards ou promoção do artigo.
+  V5 limita o gap minimax finito por11/(8M) e congela pequeno piloto real:
+  quatro perguntas input-only hash de TODO SVAMP pinado, duas seeds/sete
+  métodos=56 registros. Golds só após captura, controles baratos mantidos.
+  V6 prepara driver nativo completo/copias imutáveis, nove oráculos0.121s,
+  suíte156 PASS68.012s e streams CPU/CUDA/Python/NumPy restaurados. Sem novo
+  forward até esse preflight. Cobrar head/preparação/auxiliares/overhead;
+  piloto não é confirmação estatística, novidade ou vitória geral EPIC.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

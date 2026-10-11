@@ -1,0 +1,40 @@
+{
+  "kind": "actual final preflight checks, not model/timing/publication evidence",
+  "commands": [
+    {
+      "command": "make test",
+      "observed_exit_code": 0,
+      "log_sha256": "03e60bce8c0d0351220a9b40a4cd8a2a0a891e62372b461a5b357e9c2113f6c8",
+      "tail": [
+        "test_zero_mass_bad_stream_and_incompatible_frame_are_distinct (test_streamed_grammar_head.StreamedGrammarHeadTests.test_zero_mass_bad_stream_and_incompatible_frame_are_distinct) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 156 tests in 68.012s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "command": "make check",
+      "observed_exit_code": 0,
+      "log_sha256": "0fa7d44dbf565d26e63088c4b72ec0a1628723c638f78b80726562aa36969355",
+      "tail": [
+        ".venv/bin/python -m ruff format --check src scripts",
+        "81 files already formatted",
+        ".venv/bin/python -m mypy",
+        "Success: no issues found in 58 source files",
+        ".venv/bin/python scripts/archive_attempts.py --check",
+        "Preserved 38 attempts / 110 versions / 77031 files (2,121,697,942 uncompressed bytes); integrity only, not scientific validation"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "attempts/38-empirical-pool-coupling/work/controls.py": "d59124da119088d374448fc75e9f8c7b05c495e3fb610e28cdc6f994320bdcf7",
+    "attempts/38-empirical-pool-coupling/work/native_pilot.py": "bb869659b37d57e614aead2f6ff02fa0a0484d8b82e8fa62acb6e2a815941eb7",
+    "attempts/38-empirical-pool-coupling/work/native_state.py": "06831108b492ff4ee97b7fbee8f4c563145bfebc09181166f7e7e7022abb6b35",
+    "attempts/38-empirical-pool-coupling/work/native_task.py": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b",
+    "tests/test_empirical_pool_coupling.py": "f3c4d838009774df54a32a58a163b4524fc0c449dffc1668fb66fea8b0364fca"
+  },
+  "explicit_ruff": "all work/ Python plus focused test PASS",
+  "cli_import": ".venv-live/bin/python -m attempts.38-empirical-pool-coupling.work.native_pilot --help PASS, no model loaded"
+}

@@ -187,3 +187,17 @@ Os oito critérios são reavaliados antes do adaptador:
 Nenhum forward ou adaptador novo foi executado ao escrever esta versão.
 Fontes/helper próprios serão copiados por commit/hash, não importados de
 trabalho mutável de outra tentativa. Licença SVAMP acompanha os inputs.
+
+## V6 — adaptador preparado, ainda sem novos forwards
+
+`work/native-preflight-v6.md` registra referência/controles próprios e nove
+oráculos0.121s; suíte156 PASS68.012s, make check/Ruff PASS. O driver importa
+dependências live, preserva streams privados CPU/CUDA/Python/NumPy e cobra
+chamadas inteiras. Helpers são cópias por commit/hash, não imports mutáveis.
+O controle pool4 pequeno tem a MESMA lei raw e não foi implementado com
+sort caro. Novelty3 enviesado permanece concorrente barato.
+
+Classificação inútil para iid2/seed-half fica só no diagnóstico posterior ao
+timer; custos obrigatórios/coordenação permanecem incluídos. Nenhum output
+ou timing neural novo foi visto nesta validação. Protocolo56 registros e
+limitações do piloto permanecem os de v5, sem gate criado depois dos dados.

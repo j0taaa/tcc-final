@@ -1,0 +1,13 @@
+{
+  "kind": "actual CPU/CUDA RNG adapter oracle; zero model forwards",
+  "command": [
+    ".venv-live/bin/python",
+    "-c",
+    "import importlib,random\nimport numpy as np\nimport torch\nmodule=importlib.import_module(\"attempts.38-empirical-pool-coupling.work.native_state\")\nfor device in (\"cpu\",\"cuda:0\"):\n    outer_gpu=torch.cuda.get_rng_state().clone()\n    outer_cpu=torch.random.get_rng_state().clone()\n    outer_py,outer_np=random.getstate(),np.random.get_state()\n    def factory():\n        for _ in range(3):\n            values=[torch.randint(0,1000,()).item(),torch.randint(0,1000,(),device=\"cuda\").item(),random.randrange(1000),np.random.randint(1000)]\n            yield torch.tensor([values],device=device),[],False\n    for seed in (0,1,126336,2**32-1):\n        a=module.Candidate(factory,seed,device);b=module.Candidate(factory,seed,device)\n        # CPU candidates share external CUDA here, so only their private CPU/Py/NP values are compared.\n        for _ in range(3):\n            av,bv=a.advance(),b.advance()\n            if device==\"cpu\":\n                assert torch.equal(av[0][:,[0,2,3]],bv[0][:,[0,2,3]])\n            else:\n                assert torch.equal(av[0],bv[0])\n        assert a.advance() is None and b.advance() is None\n        a.close();b.close()\n    assert torch.equal(outer_cpu,torch.random.get_rng_state())\n    assert outer_py==random.getstate()\n    assert all(np.array_equal(x,y) for x,y in zip(outer_np,np.random.get_state()))\n    if device.startswith(\"cuda\"):\n        assert torch.equal(outer_gpu,torch.cuda.get_rng_state())\nprint(\"PASS private CPU/Python/NumPy and CUDA tapes; caller states preserved for owned streams; no model forward\")\n"
+  ],
+  "source_sha256": "06831108b492ff4ee97b7fbee8f4c563145bfebc09181166f7e7e7022abb6b35",
+  "exit_code": 0,
+  "wall_seconds": 1.4774147539865226,
+  "stdout": "PASS private CPU/Python/NumPy and CUDA tapes; caller states preserved for owned streams; no model forward\n",
+  "stderr": ""
+}
