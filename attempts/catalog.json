@@ -1441,7 +1441,7 @@
     {
       "id": "39-known-source-coupling",
       "title": "Known finite randomness and robust opaque-label query optimality",
-      "conclusion": "Finite-source theory and61-line isolated reference, five exact independent oracles and164 current tests pass. Robust opaque-class query bounds remain candidates; competent seed-derangement/weighted-cost/coarsening counterexamples and prior finite no-free-lunch are preserved. No native outputs or useful full-cost/priority confirmation.",
+      "conclusion": "Finite-source robust atom/query bounds remain candidates.61-line reference/five exact oracles and164 tests pass. Full72-row native first-yield pilot/1595 new forwards validates zero-helper-forward boundary and unchanged first complete results, but adaptive3/8 median5.155s vs iid4/8 5.041s with more memory; no useful full-cost/semantic superiority confirmed. All nine controls/statuses and original EOS-to-PAD suffix behavior preserved. Priority/publication open; first-neural-step refinement not yet implemented.",
       "reading": "attempts/39-known-source-coupling/README.md; TASKS.md M59",
       "versions": [
         {
@@ -1482,6 +1482,20 @@
             "attempts/39-known-source-coupling/work/evidence/native-adapter-v4.json",
             "attempts/39-known-source-coupling/work/native-origin-v4.json",
             "attempts/39-known-source-coupling/work/native-protocol-v3.json"
+          ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "88857514e6975daab2d83378e11838d44dcfccc9",
+          "evidence_commit": "88857514e6975daab2d83378e11838d44dcfccc9",
+          "evidence_roots": [
+            "attempts/39-known-source-coupling/work/evidence/native-v4.jsonl",
+            "attempts/39-known-source-coupling/work/evidence/native-v4.metadata.json",
+            "attempts/39-known-source-coupling/work/evidence/native-audit-v5.json",
+            "attempts/39-known-source-coupling/work/evidence/checks-v5.json",
+            "attempts/39-known-source-coupling/work/native-audit-v5.md",
+            "attempts/39-known-source-coupling/work/usefulness-decision-v5.md",
+            "attempts/39-known-source-coupling/work/primary-comparison-v5.md"
           ]
         }
       ]
