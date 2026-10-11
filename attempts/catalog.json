@@ -1692,6 +1692,18 @@
             "attempts/42-safe-empirical-resampling/work/matching-contract-v2.md",
             "attempts/42-safe-empirical-resampling/work/conditional-matching-proof-v2.md"
           ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "8b22faf6da7b38692bc9e6121e5e979c12bc36d6",
+          "evidence_commit": "a79bb11ab0410f99600582c0928a2204f6cbdfb7",
+          "evidence_roots": [
+            "attempts/42-safe-empirical-resampling/work/six-pool-contract-v3.md",
+            "attempts/42-safe-empirical-resampling/work/evidence/six-pool-algebra-v3.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/exploratory-six-pool-algebra-v3.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/origin-v3.json",
+            "attempts/42-safe-empirical-resampling/work/drafts/six_pool_algebra_v3_initial.py.txt"
+          ]
         }
       ]
     }
