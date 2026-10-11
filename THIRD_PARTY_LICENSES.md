@@ -14,3 +14,13 @@ M34's small external conformance corpus is from
 under MIT. Its original license is retained at
 `tests/data/json_suite/LICENSE`; the manifest records original hashes and the
 predeclared size exclusions. These are external test inputs, not original code.
+
+
+BFCL/Gorilla public function-call input excerpts in
+`attempts/31-sufficient-state-coupling/work/external-inputs-v3.json`:
+Apache License2.0, upstream commit6ea57973c7a6097fd7c5915698c54c17c5b1b6c8.
+Source:https://github.com/ShishirPatil/gorilla; original license preserved at
+`attempts/31-sufficient-state-coupling/work/third_party/BFCL-LICENSE`.
+The external checker is downloaded separately into cache, pinned by SHA;
+our adapter keeps original function bodies and uses Python-only registry.
+No model weights are distributed.

@@ -1,0 +1,12 @@
+{
+  "upstream": "https://github.com/ShishirPatil/gorilla",
+  "commit": "6ea57973c7a6097fd7c5915698c54c17c5b1b6c8",
+  "license": "Apache-2.0",
+  "scope": "selected public function-call inputs and execution of official pinned Python AST checker; models not included",
+  "input_protocol_commit": "4038857",
+  "development_answer_fetched_after_protocol": true,
+  "development_answer_sha256": "90cd5bc653690ee8e459b5b3f3fc9458606f7f3fcbf795bb51b7dc581f8c86dc",
+  "confirmation_answers_fetched": false,
+  "checker_sha256": "2aae7a68461a8f76c0be3894c8901b66b56967a1989d3ab066051e3fb97f1538",
+  "common_grammar_scope": "schema-derived required-first optional-in-input-order JSON; values not enumerated; dict/any allow recursive general JSON; no answer values"
+}
