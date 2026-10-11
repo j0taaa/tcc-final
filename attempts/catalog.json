@@ -1004,6 +1004,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "31-sufficient-state-coupling",
+      "title": "Sufficient-state reunions: covariance identity and native gate",
+      "conclusion": "Four exhaustive oracles and216 fake native replays pass. Written all-K mean-variance and K=2 coverage comparison versus full history; no neural usefulness or priority confirmed.",
+      "reading": "attempts/31-sufficient-state-coupling/README.md; TASKS.md#M51",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "064532f20257b9e2b6197274cd62514cf2a47f5b",
+          "evidence_commit": "064532f20257b9e2b6197274cd62514cf2a47f5b",
+          "evidence_roots": [
+            "attempts/31-sufficient-state-coupling/work",
+            "tests/test_state_coupling.py"
+          ]
+        }
+      ]
     }
   ]
 }
