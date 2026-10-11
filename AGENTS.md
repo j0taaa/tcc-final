@@ -349,6 +349,13 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   rankings,440 verificações de TODOS ótimos e cinco recomputações do núcleo.
   PASS0.086s; suíte inteira140 testes PASS70.001s. É correção da redução,
   não evidência de prioridade ou benefício neural.
+- A36 preserva a ideia de cabeça esparsa pela viabilidade gramatical antes
+  de implementar. GPIO-LLM fonte pinado2026-09-19 já projeta somente IDs
+  admitidos; o mecanismo simples não é uma novidade central. Normalizadores
+  cancelam na amostragem condicionada de slots fixos, mas são necessários
+  para massa válida original/confidências nativas. Não omitir esses custos
+  ou alegar preservar EPIC ao renormalizar sobre suporte diferente. Nenhum
+  teste neural/timing/resultado próprio; a versão simples foi recusada.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

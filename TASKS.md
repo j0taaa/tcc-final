@@ -27,6 +27,16 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M56 — Grammar-guided sparse output projection: prior gate
+
+- [x] T5600: Preserve eight criteria and source comparison BEFORE any code.
+  GPIO-LLM commit6b084650 (2026-09-19) already computes only grammar-allowed
+  head rows; actual forward.c276--291/decode.c130--161 and original docs read.
+  Conditional-product normalizers cancel for sampling, but remain necessary
+  for original valid mass/native confidences. Reject simple mechanism as new
+  protagonist, without a model/timing campaign. Sources36/README.md and
+  work/primary-comparison-v1.md. No novelty, speed or EPIC victory asserted.
+
 ## M55 — Accepted-commit law versus a tractable LL(1) posterior
 
 - [x] T5500: Eight criteria and explicit written #DNF reduction BEFORE code.

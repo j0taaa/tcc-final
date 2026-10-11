@@ -46,6 +46,7 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [33-categorical-oracle-repair](33-categorical-oracle-repair/README.md) | Corrida categórica; redução exata a A29/Barker, recusada antes de implementar |
 | [34-oracle-diversity-frontier](34-oracle-diversity-frontier/README.md) | Fronteira esperada com refinamento inteiro; candidata escrita, prioridade/uso abertos |
 | [35-commitment-law-counting](35-commitment-law-counting/README.md) | Lei do commitment versus posterior LL(1); ponte escrita de contagem, antecedente de união explícito |
+| [36-grammar-sparse-output-head](36-grammar-sparse-output-head/README.md) | Cabeça esparsa pela gramática; mecanismo anterior encontrado, versão simples recusada antes de código |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
