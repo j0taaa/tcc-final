@@ -27,6 +27,18 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M62 — Safe empirical resampling at every source budget
+
+- [x] T6200: BEFORE prototype/outputs write42's eight criteria and explicit
+  conditional known rejective law versus UNPROVED random-pool covariance.
+  Preserve41's576 neural observations/stronger controls and B8 counterexample.
+  No new model campaign justified; max-entropy/rejective mechanism is classical.
+- [ ] T6201: Minimum adversarial population oracle and closest primary sources.
+  Prove or refute the unconditional all-score step before implementing a
+  sampler or starting another neural run. Exact/bit calibration cost charged.
+- [ ] T6202: Only after theory/prior survives, select a useful operation and
+  competent complete-cost controls. No publication or practical gate yet.
+
 ## M61 — Cheap structured noising and whole-gradient covariance order
 
 - [x] T6100: BEFORE implementation/models specify41's eight criteria and
