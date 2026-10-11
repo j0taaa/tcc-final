@@ -27,6 +27,35 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M54 — Expected-work/diversity frontier (written candidate)
+
+- [x] T5400: Eight criteria BEFORE implementation. Independent written proof
+  of the lattice-refined minimax fraction of Fréchet improvement under a
+  worst expected TOTAL oracle budget. The comparator class is ALL p-blind
+  regular factories, not selected implementations. Classical ruin/score
+  arguments credited; source:34/work/theory-v1.md. No code/neural result.
+- [ ] T5401: Check nearest sequential-estimation and Bernoulli-factory primary
+  results, particularly DeGroot1959/Ghosh1987; resolve specific priority and
+  relevance before expanding. Publisher full texts currently not retrieved;
+  absence from search is not proof of novelty. Verify exact small laws with
+  independent oracles after the live timing campaign, without CPU competition.
+- [ ] T5402: Establish a cheap useful native structured transition application,
+  compare probability-aware coupling and more-output iid with COMPLETE costs.
+  Do not promote a restricted-oracle theorem alone as fulfilled publication goal.
+
+## M53 — Categorical race repair: reduction gate before implementation
+
+- [x] T5300: Eight criteria and independent written law/cost/path proof.
+  Exact reduction found BEFORE implementation: A29 stationary collision
+  transform plus classical Barker two-coin race. Do not expand as protagonist
+  or start neural campaign; preserve33 as a written competent comparator.
+- [x] T5301: Correct historical A29 rare-event comparison separately. Fréchet
+  bounds ANY preserved-marginal pair's rare-event gain by epsilon², not just
+  collision repair; the claimed direct epsilon(1-epsilon) advantage was
+  impossible. A29 MH obtains1-epsilon of the optimum in that binary case.
+  Original frozen proof preserved;29/work/erratum-2026-10-11.md and explicit
+  addenda prevent reusing the wrong objection. No publication claim follows.
+
 ## M52 — Native sampler oracle coupling: sharp bounded information gate
 
 - [x] T5200: Eight criteria BEFORE reference. Written sharp B_n(p) bound
@@ -70,8 +99,18 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   same-law pools and approximate-known-p maximum coupling.864 FAKE first-path
   /RNG checks pass,588 meetings4916 extra draws3900 fake calls.32 full-wrapper
   configurations/68 FAKE responses pass.135-test offline suite68.297s.
-  No real A32 forward, semantic gain or competitive timing yet. Source commit
-  and push must precede train gold evaluation; test branch remains gated.
+  At that freeze, no real A32 forward or semantic gain yet. Source8fc0999
+  and push preceded train gold evaluation; archivev3/abdf242 is independent.
+- [ ] T5207: Complete frozen pilot,32 train cases/16 methods/2 temperatures
+  plus deterministic. Live session96903/output.cache/a32-external-pilot-v4,
+  planned1056 records. No heavy tests/build/LP while timing. Add output I/O
+  sidecar costs, preserve all statuses and verify ALL first trajectories.
+  Branch with four seeds/heldout remains gated by protocol-v4.md, unchanged.
+- [x] T5208: Separate written v5 cost objection during v4 measurements.
+  Fixed-target minimax extends beyond bounded stopping, but an ordinary race
+  beats n6 walk's class flow at the same worst expected4 draws. Not a new
+  v4 method or relabeling; before ANY positive claim include the stronger
+  comparator in a dated follow-up. No useful advantage confirmed by the note.
 
 ## M51 — Sufficient-state coupling: comparative theorem before neural work
 

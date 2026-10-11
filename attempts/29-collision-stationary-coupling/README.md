@@ -85,3 +85,13 @@ contra epsilon(1-epsilon) de um acoplamento direto competente. Portanto,
 **não promover o reparo de palavras como protagonista nem iniciar uma
 campanha extensa só pela dominância sobre iid**. A transformação e sua
 prova ficam preservadas. O objetivo de publicação continua em aberto.
+
+## Correção científica posterior, 2026-10-11
+
+A comparação rara do parágrafo anterior e de `theory-v1.md`, seção7, está
+INCORRETA: o teto epsilon² vale para TODO acoplamento que conserve as duas
+marginais. Não existe o ganho epsilon(1-epsilon) ali atribuído ao comparador.
+Veja `work/erratum-2026-10-11.md`, com demonstração e consequência: o MH de
+A29 atinge1-epsilon do máximo nesse caso binário. As provas e decisões antigas
+permanecem preservadas; a objeção errada não pode ser usada novamente.
+Novidade, benefício de custo e aplicação suficiente continuam não confirmados.

@@ -204,9 +204,11 @@ restaurar código retirado ou insistir em uma hipótese refutada.
 - A29 preserva uma referência racional de reparo estacionário de colisões
   para leis P/Q distintas. Cinco oráculos passam; há prova escrita de
   não deterioração de pass@2/toda pontuação, via MH/Dirichlet clássicos.
-  A auditoria matemática limita TODO reparo que só altera colisões a ganho
-  quadrático no caso de alternativa rara, contra ganho linear de controles
-  diretos. Não promover como protagonista, nem iniciar uma campanha extensa
+  Correção posterior2026-10-11: a antiga comparação com ganho linear de um
+  controle direto era INCORRETA. Fréchet limita TODO par de mesmas marginais
+  a ganho epsilon² para um evento raro; A29 MH chega a1-epsilon do máximo
+  binário. Errata separada em29/work/erratum-2026-10-11.md, sem sobrescrever
+  a prova histórica. Não promover como protagonista, nem iniciar campanha
   só por vencer iid. Nenhum forward/timing ou prioridade confirmados.
 - A30 investiga tabelas de K estratos por histórico, reveladas preguiçosamente,
   permitindo execuções seriais/assíncronas do MESMO decoder. Prova escrita usa
@@ -276,6 +278,20 @@ restaurar código retirado ou insistir em uma hipótese refutada.
  32 checks do wrapper com68 respostas passam;135 testes68.297s. Protocolo
   antes de heads/gabaritos de avaliação; branch independente condicionada.
   Nenhum ganho real, prioridade ou publicabilidade A32 confirmado ainda.
+  O piloto real está EM ANDAMENTO no produtor congelado8fc0999/archiveabdf242,
+  planejado1056 registros. Não alterar fonte/configuração nem executar tarefas
+  pesadas em paralelo aos timings. V5 é uma nota de custo separada: corridas
+  clássicas são controles mais fortes no acesso com orçamento esperado.
+- A33, sem implementação ou novos forwards, reduz EXATAMENTE ao transformador
+  de A29 com Barker e corrida clássica. Preservar a direção e não expandir
+  como protagonista. R=1 truncado não é o MH implementado em29.
+- A34 é uma candidata ESCRITA de fronteira de diversidade/custo para TODOS
+  acopladores regulares sem p conhecido, com orçamento esperado total.
+  Aritmética inteira reforça o score-bound; ruína clássica fornece attainment.
+  O benefício normalizado é minimax sobre todo p, não apenas benchmark justo.
+  Não prova latência total, prioridade ou utilidade neural. DeGroot/Ghosh,
+  probabilidades conhecidas e mais saídas são objeções obrigatórias. Resolver
+  as diferenças antes de implementação extensa. Novidade/publicação abertas.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

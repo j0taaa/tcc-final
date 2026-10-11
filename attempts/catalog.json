@@ -972,7 +972,7 @@
     {
       "id": "29-collision-stationary-coupling",
       "title": "Reparo estacion\u00e1rio de colis\u00f5es: lei universal e limite desfavor\u00e1vel",
-      "conclusion": "Written stationary coupling preserves heterogeneous marginals and improves every-verifier pass@2 over iid. Five independent all-ticket oracles pass, whole109-test suite passes. However every collision-only repair has rare-event gain at most epsilon squared versus linear direct coupling. Rejected as main contribution before model benchmarks; no publication priority, useful magnitude or neural superiority claim.",
+      "conclusion": "Stationary collision repair preserves P/Q and pass@2.2026-10-11 erratum: rare-event epsilon-squared bound applies to EVERY equal-marginal pair; the historical linear-gain comparator was impossible. Specific novelty, full cost and useful application remain unconfirmed.",
       "reading": "attempts/29-collision-stationary-coupling/README.md",
       "versions": [
         {
@@ -1046,7 +1046,7 @@
     {
       "id": "32-native-oracle-antithetics",
       "title": "Native finite-law class coupling and sharp p-blind oracle budget",
-      "conclusion": "Sharp p-blind disagreement/minimax cost has written proof and finite oracles; exact Nacu-Peres construction credited. V4 external complete-EPIC GSM8K protocol frozen before heads/gold evaluation,864 fake replays and32 wrapper checks pass. No real neural benefit, specific originality or publication adequacy confirmed.",
+      "conclusion": "Written sharp p-blind target/minimax costs; exact Nacu-Peres prior credited. Frozen complete-EPIC external pilot currently running at8fc0999,1056 planned rows. V5 separate written cost objection adds stronger classical race, without modifying v4. No real benefit or publication adequacy confirmed.",
       "reading": "attempts/32-native-oracle-antithetics/README.md; TASKS.md#M52",
       "versions": [
         {
@@ -1080,6 +1080,20 @@
           ]
         }
       ]
+    },
+    {
+      "id": "33-categorical-oracle-repair",
+      "title": "Categorical collision race: exact reduction gate",
+      "conclusion": "Written laws/cost; EXACT reduction to A29 stationary transform plus known Barker race. Rejected before implementation or neural campaign. Initial snapshot pending until live timing ends; work preserved in committed files.",
+      "reading": "attempts/33-categorical-oracle-repair/README.md; TASKS.md#M53",
+      "versions": []
+    },
+    {
+      "id": "34-oracle-diversity-frontier",
+      "title": "Sharp expected-work/diversity frontier: written candidate",
+      "conclusion": "Candidate integer-refined minimax frontier against ALL regular p-blind factories and classical ruin attainment. Specific priority, cheap native application and publication relevance unresolved. No implementation/neural evidence. Initial snapshot pending until live timing ends.",
+      "reading": "attempts/34-oracle-diversity-frontier/README.md; TASKS.md#M54",
+      "versions": []
     }
   ]
 }

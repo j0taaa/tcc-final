@@ -38,11 +38,13 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [26-stratified-decoder-batches](26-stratified-decoder-batches/README.md) | Lotes com lei individual preservada e dominância sobre iid |
 | [27-finite-closure-certificates](27-finite-closure-certificates/README.md) | Limites finitos de fechamento; protótipo, novidade não confirmada |
 | [28-streamed-grammar-head](28-streamed-grammar-head/README.md) | Resumo amostrável da cabeça para inferência conjunta; protótipo, novidade não confirmada |
-| [29-collision-stationary-coupling](29-collision-stationary-coupling/README.md) | Reparo de colisões: prova e teto de ganho desfavorável; rejeitado como protagonista |
+| [29-collision-stationary-coupling](29-collision-stationary-coupling/README.md) | Reparo de colisões; errata do comparador raro preservada, utilidade/novidade abertas |
 | [30-lazy-native-stratification](30-lazy-native-stratification/README.md) | Estratificação assíncrona do ruído nativo; correção pequena validada, utilidade/novidade abertas |
 
 | [31-sufficient-state-coupling](31-sufficient-state-coupling/README.md) | Reunião de estados suficientes; prova comparativa e correção pequena, utilidade/novidade abertas |
 | [32-native-oracle-antithetics](32-native-oracle-antithetics/README.md) | Orçamento ótimo de classes e custo minimax; antecedentes próximos, uso/novidade ainda abertos |
+| [33-categorical-oracle-repair](33-categorical-oracle-repair/README.md) | Corrida categórica; redução exata a A29/Barker, recusada antes de implementar |
+| [34-oracle-diversity-frontier](34-oracle-diversity-frontier/README.md) | Fronteira esperada com refinamento inteiro; candidata escrita, prioridade/uso abertos |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
@@ -215,7 +217,17 @@ ou novidade/publicabilidade confirmada.32 não herda o piloto31:272 registros,
 [29-collision-stationary-coupling](29-collision-stationary-coupling/README.md)
 preserva P/Q distintos e deriva não deterioração de pass@2 para qualquer
 verificador, usando MH clássico e uma proposta adicional só em colisões.
-Cinco oráculos independentes passam. O teto matemático de todo reparo
-restrito a colisões é quadrático para eventos raros, enquanto controles
-diretos atingem ganho linear. Não promover como protagonista; nenhuma
+Cinco oráculos independentes passam. Errata2026-10-11: o teto quadrático de
+eventos raros vale para TODO par de mesmas marginais; a comparação histórica
+com ganho linear era impossível e está corrigida separadamente. Não promover
+como protagonista sem novidade/custo/aplicação; nenhuma
 medição/execução neural ou novidade suficiente para publicação confirmada.
+
+### 33/34 — gates matemáticos antes de implementação
+
+A33 reduz exatamente a A29+Barker; recusada como protagonista ANTES de
+implementar ou gerar novas medições. A34 escreve uma candidata de fronteira
+minimax para todos os orçamentos esperados reais, por score e aritmética
+inteira. Ruína do jogador é clássica; prioridade e aplicação útil continuam
+abertas. As notas têm pastas próprias; primeiros snapshots serão congelados
+após o piloto A32 para não competir com seus timings na compactação.

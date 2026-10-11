@@ -1743,6 +1743,10 @@ clássico é declarado invenção.
 A revisão adversarial deriva ganho<=min(d(E),D-d(E)) para TODA reparação
 que só altera colisões. Para evento raro binário de massa epsilon, o teto é
 epsilon², contra epsilon(1-epsilon) de um acoplamento direto competente.
+**Erratum2026-10-11:** esta comparação histórica está errada; epsilon² é o
+teto de ganho para TODO par com as mesmas marginais. A29/MH atinge1-epsilon
+do máximo no caso binário raro. Prova e delimitação em
+`attempts/29-collision-stationary-coupling/work/erratum-2026-10-11.md`.
 Assim uma implementação correta/universal sobre iid não basta para esta
 direção atender ao objetivo. Não gastar uma campanha procurando uma vitória
 favorável; preservar29 e procurar operação distinta/diferença adicional.
@@ -1870,3 +1874,40 @@ offline68.297s. Nenhum head real A32 ao preparar este contrato, nenhum
 benefício ou novidade suficiente estabelecidos por esses checks. Custos
 incluem setup/classe/forward/cache/recovery/verificador/output; a própria
 telemetria comum está incluída, não é comparação com EPIC sem instrumentação.
+
+## 2026-10-11 — Correção adversarial e custo esperado, durante A32/v4
+
+A32/v4 executa o protocolo congelado8fc0999 e archiveabdf242: todos32 train
+casos,16 métodos/2 temperaturas e determinístico,1056 registros previstos.
+Fonte e configuração não mudam durante a campanha. O ramo test permanece
+condicionado. Sem resultado final ou benefício declarado a partir do prefixo.
+
+Uma auditoria encontrou erro na rejeição histórica de A29: o alegado controle
+com ganho epsilon(1-epsilon) violaria Fréchet para um evento raro de marginal
+epsilon. TODO par preservado tem ganho máximo epsilon². O MH de29 atinge
+1-epsilon do máximo binário. Errata independente, README e índices atuais
+corrigidos; arquivo/provas históricos não sobrescritos. Isso NÃO resolve
+novidade, custo ou aplicação, mas elimina uma objeção matematicamente falsa.
+
+A32v5 é nota separada, não um produtor de v4: lower bound de custo minimax
+para B_n também permite parada a.s.-finita sem limite duro. Corrida clássica
+é mais forte que n6 walk no mesmo teto esperado4, portanto é controle
+obrigatório de qualquer futura comparação positiva. Não retunar o protocolo
+em andamento ou fabricar uma vitória ignorando esse comparador.
+
+A33 investigou corrida sobre categorias. Lei completa/custo<=3 estão escritos;
+o gate encontrou redução EXATA a A29 com Barker para alvo proporcional a p_i².
+Recusada como protagonista antes de implementação/neural. R1 truncado é a
+variante coin-thinned, não o MH implementado em29.
+
+A34 delimita outra pergunta: qual fração do ganho antitético MÁXIMO pode
+QUALQUER sampler sem p conhecido garantir para todo p com orçamento esperado
+total b? Prova candidata refinando score parado por inteiros dá a fronteira
+eta_b=1-2[(1-lambda)/m+lambda/(m+1)], m=floor(b),lambda=b-m. Ruína clássica
+misturada atinge-a para TODO p e custo b. Isto inclui todos os comparadores
+regulares no contrato, não só implementações escolhidas. As técnicas são
+conhecidas; DeGroot1959/Ghosh1987 e prioridade da fronteira precisam de
+comparação direta. Publishers ainda bloquearam retrieval completo; não usar
+ausência de busca como prova de novidade. Nenhum código/timing/head A34 ainda.
+Não converter o corolário local em fracção ótima da geração inteira: A32
+preserva contraexemplo contra monotonicidade de energia local.
