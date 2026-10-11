@@ -67,7 +67,10 @@ def main():
         blocks=len(partition.blocks),
         block_size=512,
         new_neural_forwards=0,
-        scope="Same archived weights copied to GPU; no neural timing/memory or independent utility claim",
+        scope=(
+            "Same archived weights copied to GPU; no neural timing/memory "
+            "or independent utility claim"
+        ),
         methods=[],
         complete=False,
     )
