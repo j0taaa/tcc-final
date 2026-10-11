@@ -1570,6 +1570,18 @@
             "attempts/40-anchor-trace-coupling/work/README-information-v2.md",
             "attempts/40-anchor-trace-coupling/work/origin-v2.json"
           ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "1bd032ef1c1b55879bad1ad42daf67af312322f4",
+          "evidence_commit": "1bd032ef1c1b55879bad1ad42daf67af312322f4",
+          "evidence_roots": [
+            "attempts/40-anchor-trace-coupling/work/evidence/information-v2.jsonl",
+            "attempts/40-anchor-trace-coupling/work/evidence/information-v2.metadata.json",
+            "attempts/40-anchor-trace-coupling/work/evidence/information-audit-v3.json",
+            "attempts/40-anchor-trace-coupling/work/information-decision-v3.md",
+            "attempts/40-anchor-trace-coupling/work/primary-comparison-v3.md"
+          ]
         }
       ]
     }
