@@ -27,6 +27,21 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M61 — Cheap structured noising and whole-gradient covariance order
+
+- [x] T6100: BEFORE implementation/models specify41's eight criteria and
+  score/gradient-source operation, full matrix covariance, stop-gradient
+  adaptive-key condition, fixed-preconditioner and one-quadratic-step result.
+  Scalar-to-matrix lift/conditional expectation are KNOWN; protagonist query
+  frontier remains priority-open. Read actual MIRROR/P-POTS v2 closest sources.
+  Same-example noise guarantee is NOT better than two different data examples.
+- [ ] T6101: Adversarial reductions/proof/original noising-law audit; minimum
+  independent masks/gradient counterexample oracle before a neural prototype.
+  Do not apply A39 opacity bounds when class masses/inverses are cheap.
+- [ ] T6102: Only if difference/cost plausibility survives, freeze real JSON/DSL
+  noising-score protocol with competent MIRROR/time/importance/analytic/extra-iid
+  controls and all costs. No experiments or improved training claimed yet.
+
 ## M60 — Independent retained anchor and cached native observations
 
 - [x] T6000: BEFORE prototype/outputs specify40's eight criteria and written

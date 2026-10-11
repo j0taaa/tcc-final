@@ -501,6 +501,16 @@ entradas tem key diversa; cacheCPU642--894MiB, prefixos0.103--3.128s. Nenhum
 gate competitivo/semântico ou publicação; não chamar helper sem forward de
 trabalho grátis. Novidade/benefício continuam abertos, sem artigo promovido.
 
+A41 investiga OUTRA operação, escrita ANTES de implementar/modelos: estimar
+ELBO/score de um JSON/DSL fixo ou gradientes com noising barato e duas avaliações
+neurais. Matrix-covariance/Loewner/fixed-preconditioner e um passo quadrático
+são corolários explícitos de39, não novas descobertas de álgebra linear.
+MIRROR/P-POTS v2(2026-05-21) é antecedente DIRETO, já lido nas seções relevantes.
+A garantia é versus iid2 da MESMA operação/fonte; dados repetidos NÃO dominam
+duas amostras de dados independentes. Massas/inversos analíticos, mask/time
+antithetics e importância são comparadores legítimos. Novidade, proxy CFG útil,
+benefício completo e publicação NÃO confirmados; nenhum código/treino/head novo.
+
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma
 correção pode referenciar respostas existentes e explicar o que muda ou
