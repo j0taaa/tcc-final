@@ -539,6 +539,16 @@ conhecida conta-NELBO, ANTES de qualquer head real. Aliases originais e custo
 em bits são preservados; embedding não é novidade. Oráculos enumeram todos
 os masks pequenos e casos limite64. Informação analítica de contagem/aliases
 é permitida aos controles; bound opaco não limita todos os algoritmos de masks.
+V7 completa TODOS os seis documentos,576 forwards reais de MDLM;32 ajuste+64
+corrupções novas iid por documento. Não houve atualização. Dados integrais,
+Gram do bias full-V e auditoria pivotal independente estão preservados.
+RSS clássico PODE reter o primeiro score pago, com pilot barato e mais UM
+forward: alegar descarte obrigatório enfraqueceria o adversário. Nos bancos
+conhecidos RSS vence C4 no score em6/6; CV do mesmo proxy vence5/perde1.
+Bias C4 reduz só2,00--4,33% versus iid2, com32 forwards de preparo cobrados.
+Torch4 threads não limita BLAS NumPy; custos integrais registrados. Não é
+gate populacional, treino, ganho EPIC ou confirmação de publicação. Não ampliar
+a campanha neural desta aplicação sem nova diferença/justificativa concreta.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

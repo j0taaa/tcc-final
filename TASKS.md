@@ -70,6 +70,16 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 - [ ] T6102: Only if difference/cost plausibility survives, freeze real JSON/DSL
   noising-score protocol with competent MIRROR/time/importance/analytic/extra-iid
   controls and all costs. No experiments or improved training claimed yet.
+- [x] T6103: Execute the prospective v6 MINIMUM information capture, ALL6 old
+  documents,576 actual forwards,32 fit+64 fresh corruptions each. Preserve
+  every row and full-bias Gram data, original source hashes, cost and scope.
+  Independent offline pivotal enumeration reconstructs all covariances;
+  source addresses and fixed proxy labels match. Retained-anchor RSS is a
+  legitimate same-budget control, written in retained-rss-v7.md. Known-bank
+  score RSS beats C4 in6/6; same-proxy CV beats C4 in5/6 and loses1/6.
+  C4 bias trace reduction is only2.00--4.33% vs iid2, with32 paid setup
+  forwards per document. NOT a practical or population gate; no training.
+  T6102 is not justified by these limited signals; no larger campaign now.
 
 ## M60 — Independent retained anchor and cached native observations
 

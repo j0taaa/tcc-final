@@ -162,3 +162,31 @@ mask enumeration checks exact probabilities and aliases; numerical role,
 proxy, CPU/CUDA bias-gradient and pivotal geometry checks remain. Protocol v6
 is frozen before ALL actual model observations, still an information audit
 on six old development inputs, not a competitive or publication gate.
+
+## V7 — complete real observations and a stronger classical objection
+
+Producer `b9b67e715670d3a7fa49ae275a735aee71451407` executed ALL six documents:
+576 actual MDLM forwards,32 fit+64 independent count corruptions each,
+full original vocabulary. Every row, role-offset reconstruction and gradient
+Gram matrix is retained in `work/evidence/noise-v7/`. No optimizer update.
+The offline independent pivotal law audit reproduces the covariance without
+using the producer's analytic formula; original mask addresses, proxy labels,
+gradient norms and matrix consistency are checked for all observations.
+
+`work/retained-rss-v7.md` closes an application loophole: classical RSS can
+retain the already-paid original anchor using a cheap pilot and a min/max
+pool. It needs only ONE new neural evaluation, just as C4, and its order
+may use the continuous fitted prediction. Claiming mandatory anchor loss
+would weaken the competitor. This is a direct classical-law consequence.
+
+In the KNOWN evaluation banks C4's score reduction versus iid2 is2.83--13.59%;
+full OUTPUT-BIAS trace reduction is2.00--4.33%. The retained RSS score
+control is better on ALL six; an ordinary same-proxy scalar control variate
+is better on five and WORSE on one. All outcomes are preserved, including
+that negative CV case. NumPy BLAS threads were not capped; Torch4 threads
+does not mean the entire process used only four threads. Full costs remain.
+
+This refines criteria2/3/6/7/8: these data do not justify a large competitive
+campaign, a new training method, an EPIC win, or publication sufficiency.
+They do not refute every possible proxy/corpus. Specific mathematical-query
+priority and a useful DISTINCT application remain OPEN. Main article unchanged.
