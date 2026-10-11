@@ -932,7 +932,7 @@
     {
       "id": "28-streamed-grammar-head",
       "title": "Resumo amostrável original de cabeça neural para posterior CFG conjunto",
-      "conclusion": "Written classical disintegration/reservoir law with integer exactness; three independent tiny oracles,101 current tests and eight valid same-public-head samples with29488 exact class checks. No new forwards, GPU memory/timing benefit or publication novelty confirmed. FlashSampling/STATIC antecedents explicitly credited.",
+      "conclusion": "Classical grouped sampling and exact accumulation credited. V1 eight same-public-head samples and29488 class checks; v2 GPU52/52 correctness cases,39924 independent dyadic block checks,24 valid three-method samples and2328 original class checks. All paired original IDs match,104 offline tests pass. Communication counts reduced versus full transfer, not over equally summarized GPU Torch. No new forwards, competitive timing or confirmed publication novelty.",
       "reading": "attempts/28-streamed-grammar-head/README.md",
       "versions": [
         {
@@ -943,6 +943,17 @@
             "attempts/28-streamed-grammar-head/README.md",
             "attempts/28-streamed-grammar-head/work",
             "tests/test_streamed_grammar_head.py"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "32b46b2430a03a1e74897a27c91fa0e6efee0cf6",
+          "evidence_commit": "5426add9912fef5a52d3be920d483b19758f81de",
+          "evidence_roots": [
+            "attempts/28-streamed-grammar-head/README.md",
+            "attempts/28-streamed-grammar-head/work",
+            "tests/test_streamed_grammar_head.py",
+            "tests/test_block_statistics.py"
           ]
         }
       ]
