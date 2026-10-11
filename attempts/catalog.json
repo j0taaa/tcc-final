@@ -1473,6 +1473,16 @@
             "attempts/39-known-source-coupling/work/native-protocol-v3.json",
             "attempts/39-known-source-coupling/work/native-protocol-v3.md"
           ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "52df9a110eae011084796fe00306706dec90a1ec",
+          "evidence_commit": "52df9a110eae011084796fe00306706dec90a1ec",
+          "evidence_roots": [
+            "attempts/39-known-source-coupling/work/evidence/native-adapter-v4.json",
+            "attempts/39-known-source-coupling/work/native-origin-v4.json",
+            "attempts/39-known-source-coupling/work/native-protocol-v3.json"
+          ]
         }
       ]
     }
