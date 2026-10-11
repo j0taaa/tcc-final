@@ -1,0 +1,17 @@
+{
+  "scope": "Live CPU/CUDA private-RNG, first/final snapshots, immutable head clone and first-key audit; ZERO neural model forwards",
+  "command": [
+    ".venv-live/bin/python",
+    "-m",
+    "attempts.39-known-source-coupling.work.audit_native_state"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 2.0109485480352305,
+  "stdout": "PASS original first/final IDs and private CPU/CUDA/Python/NumPy tapes; no model\n",
+  "stderr": "",
+  "sha256": {
+    "attempts/39-known-source-coupling/work/native_state.py": "dc4122629de62293c28af50e7013e1f240193b18294b120e7f40f6dd2fb368a8",
+    "attempts/39-known-source-coupling/work/native_pilot.py": "ddd5bd7d9a2d44af010ad480e35dfed2a7ad201345322532cceff54b9245d75b",
+    "attempts/39-known-source-coupling/work/audit_native_state.py": "8e9289b4d0a92e8e7c6d8950ca135eb7cea2a9be6aa65788b6e27c03c8f9ed6d"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "copied_before_adapter_changes": {
+    "native_state.py": {
+      "commit": "35f4ea6a50acf821494fc095929ff08d556652e8",
+      "path": "attempts/38-empirical-pool-coupling/work/native_state.py",
+      "sha256": "06831108b492ff4ee97b7fbee8f4c563145bfebc09181166f7e7e7022abb6b35"
+    },
+    "native_task.py": {
+      "commit": "35f4ea6a50acf821494fc095929ff08d556652e8",
+      "path": "attempts/38-empirical-pool-coupling/work/native_task.py",
+      "sha256": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b"
+    },
+    "controls.py": {
+      "commit": "35f4ea6a50acf821494fc095929ff08d556652e8",
+      "path": "attempts/38-empirical-pool-coupling/work/controls.py",
+      "sha256": "d59124da119088d374448fc75e9f8c7b05c495e3fb610e28cdc6f994320bdcf7"
+    }
+  },
+  "changes": "native_state adds one-scope finish and first-yield snapshots, task/controls remain byte-identical; each refined hash recorded at producer freeze",
+  "refined_sha256": {
+    "native_state.py": "dc4122629de62293c28af50e7013e1f240193b18294b120e7f40f6dd2fb368a8",
+    "native_task.py": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b",
+    "controls.py": "d59124da119088d374448fc75e9f8c7b05c495e3fb610e28cdc6f994320bdcf7"
+  }
+}

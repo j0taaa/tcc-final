@@ -72,3 +72,14 @@ All eight criteria above continue to apply. Mathematical plausibility now
 has a minimal tested reference; criteria2,6 and8 remain open for priority,
 useful full-cost magnitude and native implementation. No production change
 or article promotion follows from this test result.
+
+V3 freezes the new first-yield native pilot on ALL input-ranked SVAMP5--8,
+with nine competent controls and all72 planned rows. V4 adds the opt-in
+minimal adapter: original private generators, an immutable common head,
+one-scope completion for simple controls, all helper/physical/memory costs
+and runtime zero-helper-forward/unchanged-first checks. Its CPU/CUDA random
+tapes, first/final snapshots, head-clone isolation and key exclusion of
+input-prefix slots have been checked without a neural model. No new native
+model outputs/timings yet. Criteria5--6 are now a concrete frozen protocol,
+not satisfied usefulness claims. Priority, magnitude and publication remain
+open; the A38 full-call losses and stronger seed controls remain relevant.

@@ -56,10 +56,19 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   seed-derangement/half/iid3/biased novelty and all cold/physical/memory costs.
   Golds only after closed capture. Fixed leftmost original commit key, no
   root-delay/filter/replay. `39/work/native-protocol-v3.md` and JSON/inputs.
-- [ ] T5904: Implement minimal native adapter after protocol freeze; validate
+- [x] T5904: Implement minimal native adapter after protocol freeze; validate
   suspension/one-scope completion/private randomness and unchanged first.
   Freeze producer before actual new outputs. Pilot is development, not
   independent statistical confirmation or publication novelty evidence.
+  V4 live CPU/CUDA toy audit PASS with zero model forwards, first/final
+  snapshots/private tapes/common-head clone/key boundaries checked; explicit
+  Ruff PASS. Original task/controls copied by immutable35f4ea6 hash, no mutable
+  A38 imports. `39/work/evidence/native-adapter-v4.json`. Runtime will count
+  all helper queries, full selected continuations and allocated/reserved memory.
+- [ ] T5905: After complete producer/archive freeze run ALL72 fresh original
+  native records under v3. Require zero-helper-forward and literal first
+  full-ID invariants, preserve every failure/partial record. Golds only after
+  closed capture; publish strongest-controls full-cost losses as well as gains.
 
 ## M58 — Empirical categorical coupling and pointwise cost optimum
 
