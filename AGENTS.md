@@ -134,8 +134,8 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem101 testes, incluindo as duas regressões reais de timer
-  e três oráculos da fronteira amostrável A28.
+  A suíte atual tem104 testes, incluindo as duas regressões reais de timer
+  e seis oráculos da fronteira amostrável A28.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
   cada trajetória individual. Há prova escrita de pass@K nunca inferior a K
@@ -178,11 +178,12 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   único. Há prova escrita de suficiência, custo em bits e três oráculos
   pequenos de lei conjunta/JSON independente. FlashSampling já fornece
   agrupamento e fusão; STATIC/GSP são antecedentes de projeção restrita.
-  Não chamar esses princípios de novidade. Ainda não há kernel GPU, timing,
-  benefício sobre streaming competente ou prioridade publicável confirmada.
-  Atualização v1:8/8 JSONs no mesmo head público e29488 checks exatos, sem
-  forwards novos. V2 implementa redução inteira binary64 opt-in em GPU e
-  controles NumPy/PyTorch vetorizados, ainda sem validação GPU/timings.
+  Não chamar esses princípios de novidade. V1:8/8 JSONs no mesmo head
+  público e29488 checks exatos, sem forwards novos. V2 implementa redução
+  inteira binary64 opt-in em GPU e controles NumPy/PyTorch vetorizados.
+  Auditoria GPU52/52 passa, com39924 checks de blocos contra Fraction,
+  incluindo subnormais/extremos e recusas. Não há timing, benefício sobre
+  streaming competente ou prioridade publicável confirmada.
   Mantém head denso na GPU; não reivindicar economia de memória neural.
 
 Use [TASKS.md](TASKS.md) para tarefas/evidências atuais e

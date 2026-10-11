@@ -1,0 +1,349 @@
+{
+  "producer_commit": "564e68b5365deeac4b5391a64621c48208f7bf98",
+  "producer_sha256": "49c00a9699183a6904ca73d2e826cf7ee9002a750cd20b5c4b3efdb92f06f68f",
+  "torch": "2.8.0+cu128",
+  "device": "NVIDIA GeForce RTX 3080 Ti",
+  "seed": 2026101129,
+  "scope": "Correctness, not timing or novelty",
+  "rows": [
+    {
+      "v": 1,
+      "block_size": 1,
+      "method": "triton_stats",
+      "exact_checks": 3,
+      "status": "complete"
+    },
+    {
+      "v": 1,
+      "block_size": 1,
+      "method": "torch_stats",
+      "exact_checks": 3,
+      "status": "complete"
+    },
+    {
+      "v": 1,
+      "block_size": 127,
+      "method": "triton_stats",
+      "exact_checks": 3,
+      "status": "complete"
+    },
+    {
+      "v": 1,
+      "block_size": 127,
+      "method": "torch_stats",
+      "exact_checks": 3,
+      "status": "complete"
+    },
+    {
+      "v": 1,
+      "block_size": 512,
+      "method": "triton_stats",
+      "exact_checks": 3,
+      "status": "complete"
+    },
+    {
+      "v": 1,
+      "block_size": 512,
+      "method": "torch_stats",
+      "exact_checks": 3,
+      "status": "complete"
+    },
+    {
+      "v": 1,
+      "block_size": 1024,
+      "method": "triton_stats",
+      "exact_checks": 3,
+      "status": "complete"
+    },
+    {
+      "v": 1,
+      "block_size": 1024,
+      "method": "torch_stats",
+      "exact_checks": 3,
+      "status": "complete"
+    },
+    {
+      "v": 7,
+      "block_size": 1,
+      "method": "triton_stats",
+      "exact_checks": 21,
+      "status": "complete"
+    },
+    {
+      "v": 7,
+      "block_size": 1,
+      "method": "torch_stats",
+      "exact_checks": 21,
+      "status": "complete"
+    },
+    {
+      "v": 7,
+      "block_size": 127,
+      "method": "triton_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 7,
+      "block_size": 127,
+      "method": "torch_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 7,
+      "block_size": 512,
+      "method": "triton_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 7,
+      "block_size": 512,
+      "method": "torch_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 7,
+      "block_size": 1024,
+      "method": "triton_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 7,
+      "block_size": 1024,
+      "method": "torch_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 513,
+      "block_size": 1,
+      "method": "triton_stats",
+      "exact_checks": 1539,
+      "status": "complete"
+    },
+    {
+      "v": 513,
+      "block_size": 1,
+      "method": "torch_stats",
+      "exact_checks": 1539,
+      "status": "complete"
+    },
+    {
+      "v": 513,
+      "block_size": 127,
+      "method": "triton_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 513,
+      "block_size": 127,
+      "method": "torch_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 513,
+      "block_size": 512,
+      "method": "triton_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 513,
+      "block_size": 512,
+      "method": "torch_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 513,
+      "block_size": 1024,
+      "method": "triton_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 513,
+      "block_size": 1024,
+      "method": "torch_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 1025,
+      "block_size": 1,
+      "method": "triton_stats",
+      "exact_checks": 3075,
+      "status": "complete"
+    },
+    {
+      "v": 1025,
+      "block_size": 1,
+      "method": "torch_stats",
+      "exact_checks": 3075,
+      "status": "complete"
+    },
+    {
+      "v": 1025,
+      "block_size": 127,
+      "method": "triton_stats",
+      "exact_checks": 30,
+      "status": "complete"
+    },
+    {
+      "v": 1025,
+      "block_size": 127,
+      "method": "torch_stats",
+      "exact_checks": 30,
+      "status": "complete"
+    },
+    {
+      "v": 1025,
+      "block_size": 512,
+      "method": "triton_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 1025,
+      "block_size": 512,
+      "method": "torch_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 1025,
+      "block_size": 1024,
+      "method": "triton_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 1025,
+      "block_size": 1024,
+      "method": "torch_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 5000,
+      "block_size": 1,
+      "method": "triton_stats",
+      "exact_checks": 15000,
+      "status": "complete"
+    },
+    {
+      "v": 5000,
+      "block_size": 1,
+      "method": "torch_stats",
+      "exact_checks": 15000,
+      "status": "complete"
+    },
+    {
+      "v": 5000,
+      "block_size": 127,
+      "method": "triton_stats",
+      "exact_checks": 120,
+      "status": "complete"
+    },
+    {
+      "v": 5000,
+      "block_size": 127,
+      "method": "torch_stats",
+      "exact_checks": 120,
+      "status": "complete"
+    },
+    {
+      "v": 5000,
+      "block_size": 512,
+      "method": "triton_stats",
+      "exact_checks": 30,
+      "status": "complete"
+    },
+    {
+      "v": 5000,
+      "block_size": 512,
+      "method": "torch_stats",
+      "exact_checks": 30,
+      "status": "complete"
+    },
+    {
+      "v": 5000,
+      "block_size": 1024,
+      "method": "triton_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "v": 5000,
+      "block_size": 1024,
+      "method": "torch_stats",
+      "exact_checks": 15,
+      "status": "complete"
+    },
+    {
+      "method": "triton_stats",
+      "status": "invalid_refused",
+      "input": "nan"
+    },
+    {
+      "method": "torch_stats",
+      "status": "invalid_refused",
+      "input": "nan"
+    },
+    {
+      "method": "triton_stats",
+      "status": "invalid_refused",
+      "input": "inf"
+    },
+    {
+      "method": "torch_stats",
+      "status": "invalid_refused",
+      "input": "inf"
+    },
+    {
+      "method": "triton_stats",
+      "status": "invalid_refused",
+      "input": "-inf"
+    },
+    {
+      "method": "torch_stats",
+      "status": "invalid_refused",
+      "input": "-inf"
+    },
+    {
+      "method": "triton_stats",
+      "status": "invalid_refused",
+      "input": "-1.0"
+    },
+    {
+      "method": "torch_stats",
+      "status": "invalid_refused",
+      "input": "-1.0"
+    },
+    {
+      "method": "triton_stats",
+      "status": "invalid_refused",
+      "input": "np.float64(-5e-324)"
+    },
+    {
+      "method": "torch_stats",
+      "status": "invalid_refused",
+      "input": "np.float64(-5e-324)"
+    },
+    {
+      "method": "triton_stats",
+      "status": "zero_refused"
+    },
+    {
+      "method": "torch_stats",
+      "status": "zero_refused"
+    }
+  ],
+  "complete": true
+}

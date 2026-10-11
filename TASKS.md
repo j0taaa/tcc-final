@@ -53,6 +53,13 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Two CPU sum oracles plus full block sampler law pass. GPU correctness
   audit is frozen before execution; competitive timings still prohibited
   until a separate all-cost protocol is defined.
+  Producer564e68b:52/52 GPU checks pass (40 positive/12 refused),39924
+  block comparisons against independent Fraction. Entire104-test suite
+  passes39.501s. Evidence:28/work/evidence/gpu-correctness-v2.json.
+- [ ] T4804: Freeze then execute SAME public head through all THREE block
+  interfaces (NumPy/Triton/PyTorch), eight fresh posterior samples per method,
+  full class probability and mass comparison, original/fixed IDs and JSON.
+  No timing, new head or independent confirmation implied.
 
 ## M47 — Finite-dimensional closure: research gate, not a publication claim
 

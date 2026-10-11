@@ -103,4 +103,14 @@ falhas também terão arquivo próprio preservado.
 .venv-live/bin/python -m attempts.28-streamed-grammar-head.work.check_gpu_v2 --output attempts/28-streamed-grammar-head/work/evidence/gpu-correctness-v2.json
 ```
 
-Nenhuma evidência GPU/velocidade ou prioridade de publicação obtida ainda.
+Resultado: produtor564e68b,52/52 verificações concluídas (40 positivas/12
+recusas),39924 somas de blocos conferidas com Fraction. A suíte inteira tem104
+testes e passou39,501s. Não há velocidade ou prioridade de publicação obtida.
+
+Próximo replay declarado: os MESMOS pesos públicos serão copiados à GPU,
+sem mudar seus bits. NumPy/Triton/PyTorch terão oito amostras por método,
+com todas as probabilidades por classe e massa válida conferidas novamente:
+
+```bash
+.venv-live/bin/python -m attempts.28-streamed-grammar-head.work.replay_blocks_v2 --packet attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip --output attempts/28-streamed-grammar-head/work/evidence/public-head-blocks-v2.json
+```
