@@ -1588,7 +1588,7 @@
     {
       "id": "41-structured-noising-covariance",
       "title": "Structured dLLM noising covariance order",
-      "conclusion": "Six independent offline law/reduction oracles PASS; full source law equals classical pivotal, ranked-set already gives generic iid covariance guarantee. Written sharp classifier cost is only for declared four-pool design; isolated Lean verifies finite local obstruction. Original priority, significance, useful real CFG-noising proxy and complete neural benefit remain OPEN; no external heads/training/EPIC win.",
+      "conclusion": "Eight offline finite oracles PASS. Classical pivotal/RSS reductions preserved; separate sharp four-pool label cost and all-source-cap atom frontier/Catalan increments written. B8 atom-optimal pool has positive arbitrary-event covariance, so no universal gradient extension. Priority, significance, real CFG proxy and neural full-cost benefit remain OPEN; no new neural heads/training/EPIC win.",
       "reading": "TASKS.md M61; README eight criteria; work/noising-theory-v1.md; work/primary-comparison-v1.md",
       "versions": [
         {
@@ -1619,6 +1619,16 @@
             "attempts/41-structured-noising-covariance/work/label-cost-v3.md",
             "attempts/41-structured-noising-covariance/work/ranked-pivotal-reduction-v3.md",
             "attempts/41-structured-noising-covariance/work/NoisingObstructions.lean"
+          ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "dfaba87af799dd9e6889546b9b74633db733e79b",
+          "evidence_commit": "af7ff6dafc7d11f42436561d16349e09bfd5a7cc",
+          "evidence_roots": [
+            "attempts/41-structured-noising-covariance/work/evidence/law-v4.json",
+            "attempts/41-structured-noising-covariance/work/budget-frontier-v4.md",
+            "attempts/41-structured-noising-covariance/work/primary-addendum-v4.md"
           ]
         }
       ]
