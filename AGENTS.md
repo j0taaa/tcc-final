@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem140 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem142 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -308,6 +308,15 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   toda resposta, iid3 vence; retry sequencial com verificador disponível
   também pode vencer. A fronteira de transição barata e sinal semântico
   permanecem requisitos REAIS, não propriedades presumidas do modelo.
+  V6 escreve lei/custo cap12 com341/1024 do ganho binário máximo, não qualidade.
+  V7 preserva deadlock de cache normal-form no Rust externo; preparação dupla
+  pela mesma API para TODOS caminhos evita-o, sem editar vendor.144/144 replays
+  FAKE CPU/CUDA preservam primeira decisão/streams,132 batches reais do helper
+  e198 forwards FALSOS. Screen oito inputs hash-ranked/32 prefixos nativos
+  está congelado ANTES de heads, sem gabaritos; programa JSON aritmético
+  recursivo, raiz mul/div versus add/sub/falha. A fronteira pode exigir vários
+  forwards, todos custam. Só testa viabilidade de recursos, não vantagem ou
+  novidade. Suíte142 PASS68.228s; não expor como ganho EPIC/publicação.
 - A35 é uma ponte ESCRITA antes de código: lei de tag realmente aceita por
   greedy/MWPC pode contar #DNF, mesmo com sintaxe LL(1) e posterior produto
   polinomial de palavras com testemunho. Miklos4.2.2 já constrói união de

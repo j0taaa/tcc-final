@@ -105,3 +105,32 @@ política pressupõe consultas conclusivas; não se promete preservar a lei de
 timestamps, deadlines físicos ou hardware não determinístico. O fixture
 atual transfere um token por passo e ainda não verifica sucesso do batch
 regular-cover. Nenhum head neural, ganho real ou novidade confirmada.
+
+## V6--V8: cap exato, branch nativo e diagnóstico congelado
+
+`work/barrier-three-cap-v6.md` e o quinto oráculo verificam a lei/custo exatos
+com cap12:341/1024 do ganho binário máximo,1023/1024 da fronteira esperada3.
+Não é percentual de qualidade/velocidade. A tentativa de cobrir batch com
+gramática de um dígito foi recusada; o fixture de dois dígitos revelou deadlock
+OnceCell no Rust externo, também preservado com fonte e trace. Preparar a
+MESMA gramática duas vezes pela API nativa inicializa a flag antes da chamada
+recursiva; nenhum fonte do vendor foi modificado. Com esse setup comum,
+144/144 replays CPU/CUDA preservam decisões da primeira trajetória e streams
+do chamador, incluindo132 sucessos reais do helper batch em289 chamadas.
+198 forwards FALSOS; evidência `work/evidence/native-fake-v8.json`.
+
+Os oito critérios refinados e screen de recursos ANTES de heads estão em
+`work/arithmetic-protocol-v7.md/json`: oito primeiras questões públicas de
+treino escolhidas anteriormente só pelo hash do input; GLC recursiva de
+programas aritméticos JSON, sem gabaritos na gramática/classificador/producer.
+O oráculo para quando bytes aceitos determinam QUALQUER operador raiz ou o
+gerador termina/recusa. Pode gastar VÁRIOS forwards, todos contabilizados.
+32 prefixos iid e uma continuação literal por input investigam apenas custo
+e variedade de classes, não qualidade/superioridade/novidade. Falhas entram
+na classe declarada, não são reamostradas. Recuperação externa autocomplete
+não faz parte deste diagnóstico; será obrigatória numa comparação completa.
+O interpreter tem guardas numéricos explícitos para entrada não confiável.
+Suíte142 testes PASS68.228s; checks de Ruff e integridade35/96 passam.
+Nenhum head A34 executado até este freeze. Não iniciar qualidade extensa se
+o screen de recursos falhar; não chamar seu eventual sucesso de contribuição
+confirmada ou novidade suficiente para publicar.

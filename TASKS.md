@@ -103,6 +103,21 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   identical full output law but higher call count. Not hardware/quality/novelty
   evidence.34/work/barrier-three-cap-v6.md; added16,380 input transcripts and
  102 rational polynomial determinations PASS; all five A34 tests0.183s/Ruff.
+- [x] T5406: Shared native grammar preparation workaround, vendor UNCHANGED.
+  Two-digit batch fixture revealed nested OnceCell initialization deadlock;
+  source/trace preserved BEFORE fixing. Calling to_normal_form twice primes
+  the same flag in ALL methods.144/144 CPU/CUDA first-path decision and RNG
+  replays pass,132 genuine batch-helper successes/289 calls,198 FAKE forwards.
+  `34/work/evidence/native-fake-v8.json`; v7 preserves hanging draft. No
+  neural/timing claim. Arithmetic interpreter exact rationals/untrusted-number
+  budgets have one meaningful focused test; whole142 suite PASS68.228s.
+- [ ] T5407: Frozen eight-input/32-prefix resource diagnostic before A34 heads.
+  `34/work/arithmetic-protocol-v7.md/json`, independent input-only question
+  copies and native suspended-prefix producer. No gold/accuracy evaluation;
+  grammar accepts unrestricted recursive arithmetic JSON programs. Root
+  boundary may require multiple charged forwards. Common initial-head cache
+  is not a competitive full-cache baseline. Positive resource screen only
+  licenses quality development; does not fulfill utility/publication goal.
 
 ## M53 — Categorical race repair: reduction gate before implementation
 

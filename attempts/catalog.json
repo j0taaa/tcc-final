@@ -1135,7 +1135,7 @@
     {
       "id": "34-oracle-diversity-frontier",
       "title": "Sharp expected-work/diversity frontier: written candidate",
-      "conclusion": "Written sharp regular sample-only pair frontier; capped reference and four exact oracles pass. Wasan ORIGINAL already gives s_b/mixing; restricted-output sharpness is the narrower candidate. Written complete-cost theorem includes optimal nonadaptive iid output-count comparator and negative complete-oracle/adaptive-retry objections. Useful native accepted-transition boundary, specific priority and publication significance remain open.",
+      "conclusion": "Written restricted regular sample-only sharp pair frontier, five exact cap/oracle checks. Wasan s_b/mixing are precedents.144 native FAKE first-path/RNG replays pass including132 real batch-helper successes; shared normal-cache workaround leaves vendor unchanged and failure drafts preserved. Eight-input root-prefix resource diagnostic frozen before heads, no labels/quality evidence. Specific priority, meaningful native advantage and publication adequacy remain open.",
       "reading": "attempts/34-oracle-diversity-frontier/README.md; TASKS.md#M54",
       "versions": [
         {
@@ -1195,6 +1195,17 @@
             "attempts/34-oracle-diversity-frontier/README.md",
             "attempts/34-oracle-diversity-frontier/work",
             "tests/test_oracle_diversity_frontier.py"
+          ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "c46f5de322d679a9514498c3290a0e25d62de5ec",
+          "evidence_commit": "c46f5de322d679a9514498c3290a0e25d62de5ec",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/README.md",
+            "attempts/34-oracle-diversity-frontier/work",
+            "tests/test_oracle_diversity_frontier.py",
+            "tests/test_arithmetic_json_task.py"
           ]
         }
       ]

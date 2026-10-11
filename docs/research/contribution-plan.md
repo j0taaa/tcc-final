@@ -1955,3 +1955,23 @@ distingue probabilidade de argmax e Gibbs. É uma ponte candidata especializada,
 não nova teoria de contagem, benchmark favorável ou uso de dLLM para regras
 Booleanas rejeitado em15/16. Exatidão de massas difícil não prova que toda
 coordenação necessita calcular p, nem elimina bons controles aproximados/raw.
+
+## 2026-10-11 — A34 cap e fidelidade antes de aplicação neural
+
+Cap12 tem lei/custo escritos e verificados por todos16.380 transcripts e102
+avaliações racionais:341/1024 do ganho binário máximo,1023/1024 da fronteira3.
+Não é resultado semântico ou latência. Fixture batch inicialmente não cobria
+sucesso; dois dígitos revelaram deadlock OnceCell externo, preservado antes
+do workaround. Preparar gramática duplamente pela MESMA API em todos caminhos
+prime cache sem alterar vendor.144/144 replays completos CPU/CUDA,132 batches
+reais e198 forwards FALSOS passam; streams do chamador isolados. Testes142
+PASS68.228s; integridade35/96 snapshots passa. Nenhuma novidade segue disso.
+
+Antes de heads foi congelado o screen de recursos arithmetic-protocol-v7:
+oito primeiras questões públicas treino no ranking por input/hash já fixado,
+32 prefixos iid cada, uma continuação literal cada. GLC gera programas JSON
+aritméticos recursivos; sem labels/gabarito. Parada por operador realmente
+aceito inclui falhas e pode custar vários forwards. Cache só do head inicial
+não é controle competitivo completo. Gate só decide se vale avaliar qualidade,
+não confirma vantagem, prioridade ou publicação. Fonte/outputs serão pinados;
+não atribuir A32 timings A34 nem abrir confirmação independente sem gate.

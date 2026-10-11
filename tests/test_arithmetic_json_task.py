@@ -22,7 +22,7 @@ class ArithmeticJsonTests(unittest.TestCase):
             '{"op":"div","args":[1,0]}',
             '{"op":"add","args":[1e1000000000,0]}',
             '{"op":"mul","args":[1e-1000000000,0]}',
-            '{"op":"add","args":[' + "1" * 257 + ',0]}',
+            '{"op":"add","args":[' + "1" * 257 + ",0]}",
             '{"op":"add","args":[1,2,3]}',
             '{"op":"add","args":[1,2],"extra":0}',
             '"add"',

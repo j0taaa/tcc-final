@@ -82,7 +82,9 @@ def probe(device, seed, temperature, max_resamples, steps=2, valid=False):
     device = torch.device(device)
     # A two-digit language admits min-batch2; the one-digit refusal stays.
     source = "S -> lexNumber lexNumber" if valid else "S -> lexNumber"
-    grammar = CFG.from_text(source, "S").to_normal_form()
+    # Prime the native OnceCell before its recursively initializing graph API.
+    # SAME preparation for direct and suspended paths; vendor stays unchanged.
+    grammar = CFG.from_text(source, "S").to_normal_form().to_normal_form()
     lexical = compile_lex_map({"lexNumber": "(0|1)"})
 
     def factory(model):
