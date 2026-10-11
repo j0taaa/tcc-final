@@ -54,3 +54,23 @@ fixed-input Monte Carlo or conditional same-example noise, not improved training
 from repeating a datum instead of two independent examples. A large training
 implementation starts only after the distinct benefit has survived those
 comparators. The current article remains A24; this is not yet a new protagonist.
+
+## V2 — minimal matrix and original-gradient obligations
+
+The independent finite oracle checks67 partitions for M=4/5, the complete
+three-coordinate covariance matrix, every principal minor of -C and literal
+source marginals. A10-line adapter invokes the expensive evaluator exactly
+twice after3/4 cheap preparations. Dependencies/proof are OWN immutable copies
+with `work/origin-v2.json`, rather than imports from a mutable attempt.
+
+`work/mirror-counterexample-v2.md` precedes the code: a legitimate scalar
+ReLU/softmax model gives MIRROR twice the variance of matching iid2. This is
+a mathematical counterexample, NOT an external benchmark; the same document
+records a CHEAPER analytic one-bit control with zero variance. The CPU/CUDA
+autodiff check is only that constructed model, not MDLM/training evidence.
+
+Ranked-set sampling is another direct classical objection now being audited:
+cheap imperfect ranking already gives an unbiased estimator with no larger
+variance than iid, without needing exact class masses. A41 cannot claim that
+this generic property, the matrix lift or grammar metadata is a discovery.
+Its exact cost/frontier difference and real-model usefulness remain unresolved.

@@ -1,0 +1,17 @@
+{
+  "kernel.py": {
+    "source_commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/kernel.py",
+    "sha256": "70dc537f7aee3d4d790c15bbaa989bc3c1e17f96843347a8ee2cdb77829c2ad6"
+  },
+  "source.py": {
+    "source_commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/source.py",
+    "sha256": "b6bd081c6e46ddf0689b15fa067b37670dca0381bcca86a34ba069d988e160f6"
+  },
+  "finite-source-theory-v1.md": {
+    "source_commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+    "path": "attempts/39-known-source-coupling/work/finite-source-theory-v1.md",
+    "sha256": "c6cda33a4714127c77bacdb7b68f5901a5537a6aa7304d33689213617a969c8d"
+  }
+}

@@ -38,6 +38,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 - [ ] T6101: Adversarial reductions/proof/original noising-law audit; minimum
   independent masks/gradient counterexample oracle before a neural prototype.
   Do not apply A39 opacity bounds when class masses/inverses are cheap.
+  V2: own dependencies/proof,67-partition complete matrix oracle and10-line
+  exactly-two-evaluation adapter. Written ReLU/softmax MIRROR counterexample
+  includes cheaper analytic zero-variance control; autodiff is a constructed
+  CPU/CUDA toy, NOT an external model benchmark. Ranked-set sampling adds
+  a direct classical imperfect-ranking objection, currently under audit.
 - [ ] T6102: Only if difference/cost plausibility survives, freeze real JSON/DSL
   noising-score protocol with competent MIRROR/time/importance/analytic/extra-iid
   controls and all costs. No experiments or improved training claimed yet.
