@@ -1,0 +1,181 @@
+{
+  "producer": "b9b67e715670d3a7fa49ae275a735aee71451407",
+  "scope": "ALL development observations; KNOWN-bank geometry, NOT population/latency/novelty gate.",
+  "neural_calls": 576,
+  "results": [
+    {
+      "document": "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643",
+      "class_sizes": [
+        20,
+        26,
+        7,
+        11
+      ],
+      "score": {
+        "source_variance": 10.48377402915169,
+        "c4_covariance": -0.7118072610233099,
+        "rss_covariance": -1.7663427671225023,
+        "c4_fraction_below_iid2": 0.06789608961849275,
+        "retained_rss_fraction_below_iid2": 0.1684834833535065,
+        "classical_same_proxy_cv_fraction_below_iid2": 0.5119683772939891
+      },
+      "bias": {
+        "source_variance": 0.22395881928547645,
+        "c4_covariance": -0.00642261890576705,
+        "rss_covariance": -0.0028464577203018314,
+        "c4_fraction_below_iid2": 0.028677678004634628,
+        "retained_rss_fraction_below_iid2": 0.012709737126598711
+      },
+      "wall": 10.506612969911657,
+      "cpu": 128.08317847700002,
+      "fit_wall": 3.36505990778096,
+      "evaluation_wall": 6.658450253424235,
+      "costs_scope": "Torch4 threads only; NumPy BLAS threads were not capped. Whole costs retained."
+    },
+    {
+      "document": "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4",
+      "class_sizes": [
+        17,
+        27,
+        6,
+        14
+      ],
+      "score": {
+        "source_variance": 7.122323395961281,
+        "c4_covariance": -0.2015750225388615,
+        "rss_covariance": -0.41896880488884714,
+        "c4_fraction_below_iid2": 0.028301863216877342,
+        "retained_rss_fraction_below_iid2": 0.05882473760267944,
+        "classical_same_proxy_cv_fraction_below_iid2": -0.007927574339589682
+      },
+      "bias": {
+        "source_variance": 0.172644571070712,
+        "c4_covariance": -0.004860855181760236,
+        "rss_covariance": -0.001977627990057573,
+        "c4_fraction_below_iid2": 0.028155273876346337,
+        "retained_rss_fraction_below_iid2": 0.01145490980569307
+      },
+      "wall": 7.067443178966641,
+      "cpu": 104.25869535799998,
+      "fit_wall": 2.2169393468648195,
+      "evaluation_wall": 4.492595141637139,
+      "costs_scope": "Torch4 threads only; NumPy BLAS threads were not capped. Whole costs retained."
+    },
+    {
+      "document": "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9",
+      "class_sizes": [
+        38,
+        7,
+        11,
+        8
+      ],
+      "score": {
+        "source_variance": 11.486921867698456,
+        "c4_covariance": -0.760127136566684,
+        "rss_covariance": -1.705497675752117,
+        "c4_fraction_below_iid2": 0.06617326602561671,
+        "retained_rss_fraction_below_iid2": 0.14847299349602297,
+        "classical_same_proxy_cv_fraction_below_iid2": 0.4715422534784047
+      },
+      "bias": {
+        "source_variance": 0.24325913950258607,
+        "c4_covariance": -0.008559978355257992,
+        "rss_covariance": -0.0035556024552084254,
+        "c4_fraction_below_iid2": 0.03518872249881897,
+        "retained_rss_fraction_below_iid2": 0.014616521551785831
+      },
+      "wall": 10.50469076493755,
+      "cpu": 127.74308356799997,
+      "fit_wall": 3.5410267231054604,
+      "evaluation_wall": 6.483418747084215,
+      "costs_scope": "Torch4 threads only; NumPy BLAS threads were not capped. Whole costs retained."
+    },
+    {
+      "document": "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667",
+      "class_sizes": [
+        21,
+        18,
+        16,
+        9
+      ],
+      "score": {
+        "source_variance": 7.0548765708017545,
+        "c4_covariance": -0.9587745671972892,
+        "rss_covariance": -1.5481509489519696,
+        "c4_fraction_below_iid2": 0.13590238717505002,
+        "retained_rss_fraction_below_iid2": 0.21944408713815802,
+        "classical_same_proxy_cv_fraction_below_iid2": 0.6466415089238913
+      },
+      "bias": {
+        "source_variance": 0.04932988159801742,
+        "c4_covariance": -0.0009860923844093516,
+        "rss_covariance": -0.0008562637377989755,
+        "c4_fraction_below_iid2": 0.0199897577789642,
+        "retained_rss_fraction_below_iid2": 0.017357911879386893
+      },
+      "wall": 10.185286447987892,
+      "cpu": 126.782835487,
+      "fit_wall": 3.23161116335541,
+      "evaluation_wall": 6.46737698384095,
+      "costs_scope": "Torch4 threads only; NumPy BLAS threads were not capped. Whole costs retained."
+    },
+    {
+      "document": "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc",
+      "class_sizes": [
+        24,
+        16,
+        20,
+        4
+      ],
+      "score": {
+        "source_variance": 6.679222398391261,
+        "c4_covariance": -0.86092729297612,
+        "rss_covariance": -1.3813899884177996,
+        "c4_fraction_below_iid2": 0.12889633577457768,
+        "retained_rss_fraction_below_iid2": 0.20681898371141488,
+        "classical_same_proxy_cv_fraction_below_iid2": 0.7638279823335512
+      },
+      "bias": {
+        "source_variance": 0.11995163366887818,
+        "c4_covariance": -0.0051933004337072555,
+        "rss_covariance": -0.0026651718583857575,
+        "c4_fraction_below_iid2": 0.0432949537648079,
+        "retained_rss_fraction_below_iid2": 0.022218720803276935
+      },
+      "wall": 6.466698218951933,
+      "cpu": 98.15305469700002,
+      "fit_wall": 1.9563875603489578,
+      "evaluation_wall": 4.102260066661984,
+      "costs_scope": "Torch4 threads only; NumPy BLAS threads were not capped. Whole costs retained."
+    },
+    {
+      "document": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+      "class_sizes": [
+        23,
+        4,
+        7,
+        30
+      ],
+      "score": {
+        "source_variance": 12.389189694253783,
+        "c4_covariance": -1.5092515183186173,
+        "rss_covariance": -2.465025855187067,
+        "c4_fraction_below_iid2": 0.12182003468867876,
+        "retained_rss_fraction_below_iid2": 0.1989658658895479,
+        "classical_same_proxy_cv_fraction_below_iid2": 0.5875513854025112
+      },
+      "bias": {
+        "source_variance": 0.2269724756324807,
+        "c4_covariance": -0.006010808873467041,
+        "rss_covariance": -0.004522788934238319,
+        "c4_fraction_below_iid2": 0.02648254532501063,
+        "retained_rss_fraction_below_iid2": 0.019926596481071687
+      },
+      "wall": 11.15598240797408,
+      "cpu": 130.482630491,
+      "fit_wall": 3.689923874102533,
+      "evaluation_wall": 6.999552392633632,
+      "costs_scope": "Torch4 threads only; NumPy BLAS threads were not capped. Whole costs retained."
+    }
+  ]
+}
