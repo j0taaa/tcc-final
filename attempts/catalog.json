@@ -1560,6 +1560,16 @@
           "evidence_roots": [
             "attempts/40-anchor-trace-coupling/work/anchor-theory-v1.md"
           ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "a395f1b426a59dc0a0778799730b7c6117c39802",
+          "evidence_commit": "a395f1b426a59dc0a0778799730b7c6117c39802",
+          "evidence_roots": [
+            "attempts/40-anchor-trace-coupling/work/evidence/adapter-v2.json",
+            "attempts/40-anchor-trace-coupling/work/README-information-v2.md",
+            "attempts/40-anchor-trace-coupling/work/origin-v2.json"
+          ]
         }
       ]
     }
