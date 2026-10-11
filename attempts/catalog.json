@@ -1240,6 +1240,17 @@
             "tests/test_oracle_diversity_frontier.py",
             "tests/test_arithmetic_json_task.py"
           ]
+        },
+        {
+          "id": "v11",
+          "source_commit": "ef9b240c43b6edef0d44f28cc67200c011f5f9b7",
+          "evidence_commit": "ef9b240c43b6edef0d44f28cc67200c011f5f9b7",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/README.md",
+            "attempts/34-oracle-diversity-frontier/work",
+            "tests/test_oracle_diversity_frontier.py",
+            "tests/test_arithmetic_json_task.py"
+          ]
         }
       ]
     },
@@ -1266,6 +1277,23 @@
             "attempts/35-commitment-law-counting/README.md",
             "attempts/35-commitment-law-counting/work",
             "tests/test_commitment_law_counting.py"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "36-grammar-sparse-output-head",
+      "title": "Grammar-guided sparse output projection: prior gate",
+      "conclusion": "Simple sparse-head mechanism rejected before implementation: original pinned GPIO-LLM code already scores only grammar-allowed head rows. Conditional normalizers cancel only for fixed-slot posterior sampling; original valid mass and EPIC confidence still need them. No new code, neural forward, benchmark, publication novelty or victory claimed.",
+      "reading": "attempts/36-grammar-sparse-output-head/README.md; TASKS.md#M56",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "6f83ba9e6a80217dda4469c61c50eabf9c36b3da",
+          "evidence_commit": "6f83ba9e6a80217dda4469c61c50eabf9c36b3da",
+          "evidence_roots": [
+            "attempts/36-grammar-sparse-output-head/README.md",
+            "attempts/36-grammar-sparse-output-head/work"
           ]
         }
       ]
