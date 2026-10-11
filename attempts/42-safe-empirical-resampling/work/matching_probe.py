@@ -163,7 +163,7 @@ def run(output):
     output.write_text(
         json.dumps(
             dict(
-                scope="Exact rational joints; numeric eigenvalues locate only; no theorem/model run.",
+                scope="Rational joint oracle; numerical spectral check only; no model run.",
                 checked=checked,
                 independent_matching_oracles=oracle_count,
                 class_limit=6,
