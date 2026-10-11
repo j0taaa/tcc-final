@@ -93,6 +93,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Correct proposal counts pinned successful-fallback yield sites, not j;
   requires new regression/producer freeze before another model call. Neither
   informative classes nor zero first-step-helper forwards are confirmed.
+  V9 counts six pinned yield sites (AST/read-only native frame), successful
+  fallback transfers, failure/terminal stop; no j use. Actual no-grad-wrapper
+  CPU/CUDA regression includes j clobber and partial fast batch, PASS without
+  model inference (`stage-adapter-v9.json`). Refuses changed native hash/sites;
+  common-head setup/error costs preserved before frame completion. Requires
+  new immutable producer and new evidence filename before native repeat.
 
 ## M58 — Empirical categorical coupling and pointwise cost optimum
 

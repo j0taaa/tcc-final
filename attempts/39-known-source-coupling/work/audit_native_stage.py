@@ -5,13 +5,13 @@ import random
 import numpy as np
 import torch
 
-from .native_stage import StageCandidate, body_key
+from .native_stage import StageCandidate, body_key, yield_sites
 from .native_state import Candidate
 
 
 def main():
     for device in ("cpu", "cuda:0"):
-        for fast, failure in ((True, False), (False, False), (False, True)):
+        for fast, failure in ((2, False), (1, False), (0, False), (0, True)):
             calls = []
 
             @torch.no_grad()
@@ -21,12 +21,13 @@ def main():
                 _n_transfer_this_step = 2
                 for i in range(2):
                     calls.append((i, num_block))
-                    _regular_cover_committed = 2 if fast else 0
+                    _regular_cover_committed = fast
                     if fast:
                         tokens[0] = torch.randint(0, 1000, (4,), device=device)
                         yield tokens, [], False
-                    else:
+                    if _regular_cover_committed < _n_transfer_this_step:
                         for j in range(_n_transfer_this_step - _regular_cover_committed):
+                            j = 0  # Actual EPIC resets its transfer-loop local to the batch row.
                             tokens[0] = torch.tensor(
                                 [
                                     torch.randint(0, 1000, ()).item(),
@@ -36,16 +37,17 @@ def main():
                                 ],
                                 device=device,
                             )
-                            yield tokens, [(j, ["original"])], False
                             if failure:
+                                yield tokens, [(j, ["original"])], False
                                 return
+                            yield tokens, [(j, ["original"])], False
                 yield tokens, [], True
 
             cpu, gpu = torch.random.get_rng_state().clone(), torch.cuda.get_rng_state().clone()
             py, np_state = random.getstate(), np.random.get_state()
             for seed in (0, 126336, 2**32 - 1):
                 before = len(calls)
-                stage = StageCandidate(factory, seed, device)
+                stage = StageCandidate(factory, seed, device, yield_sites(factory, 4))
                 stage.pause()
                 assert len(calls) - before == 1
                 assert not stage.current[0].requires_grad

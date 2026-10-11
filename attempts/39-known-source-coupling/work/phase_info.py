@@ -15,7 +15,7 @@ from constrained_diffusion.eval.dllm.models.llada import generate_constrained as
 from rustformlang.cfg import CFG
 
 from .native_pilot import MeasuredModel, elapsed, stamp
-from .native_stage import StageCandidate, body_key
+from .native_stage import StageCandidate, body_key, yield_sites
 from .native_state import InitialHeadCache
 from .native_task import GRAMMAR, LEXICAL, PREFIX, instruction
 from .source import Source
@@ -46,9 +46,11 @@ def main():
         "native_task.py",
         "source.py",
         "first-step-contract-v6.md",
+        "first-step-erratum-v8.md",
         "native-inputs-v3.json",
         "native-protocol-v3.json",
         "evidence/native-v4.jsonl",
+        "evidence/phase-info-v7.metadata.json",
     )
     sources = {}
     for name in names:
@@ -61,6 +63,10 @@ def main():
             raise ValueError(f"producer/input not frozen: {name}")
         sources[name] = digest(path)
     cfg = json.loads((HERE / "native-protocol-v3.json").read_text())
+    sites = yield_sites(native.generate, 6)
+    original_native = json.loads((HERE / "evidence/phase-info-v7.metadata.json").read_text())
+    if digest(Path(native.__file__)) != original_native["native_sha256"]:
+        raise ValueError("pinned native source changed")
     inputs = json.loads((HERE / "native-inputs-v3.json").read_text())["records"]
     archived = [
         json.loads(line) for line in (HERE / "evidence/native-v4.jsonl").read_text().splitlines()
@@ -102,6 +108,7 @@ def main():
         load=load,
         grammar_setup=elapsed(begin),
         native_sha256=digest(Path(native.__file__)),
+        yield_sites=sites,
         frames=[],
     )
     meta_path.write_text(json.dumps(metadata, indent=2) + "\n")
@@ -141,6 +148,9 @@ def main():
             initial[:, : len(all_ids)] = prompt
             model(initial)
             setup = elapsed(begin)
+            frame_info = dict(id=record["id"], setup=setup, status="IN_PROGRESS")
+            metadata["frames"].append(frame_info)
+            meta_path.write_text(json.dumps(metadata, indent=2) + "\n")
             counts = Counter()
             chat_len = len(chat)
 
@@ -163,7 +173,7 @@ def main():
                 )
 
             for seed in sorted(seeds):
-                candidate = StageCandidate(factory, seed, actual.device)
+                candidate = StageCandidate(factory, seed, actual.device, sites)
                 begin, queries, forwards = stamp(), model.queries, model.forwards
                 row = dict(id=record["id"], seed=seed, status="PENDING")
                 try:
@@ -196,6 +206,7 @@ def main():
                     row["status"] = "OK"
                 except Exception as exc:
                     row.update(status="ERROR", error_type=type(exc).__name__, error=str(exc))
+                    row["attempt_cost"] = elapsed(begin)
                 finally:
                     candidate.close()
                 row.update(
@@ -213,10 +224,9 @@ def main():
                 )
                 if row["status"] != "OK":
                     raise RuntimeError("first-step audit failed; original evidence retained")
-            metadata["frames"].append(
+            frame_info.update(
                 dict(
-                    id=record["id"],
-                    setup=setup,
+                    status="COMPLETE",
                     queries=len(seeds),
                     classes=[dict(key=k, count=n) for k, n in counts.items()],
                     original_full_validations=len(validate),

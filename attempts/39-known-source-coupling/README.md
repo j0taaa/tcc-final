@@ -107,3 +107,11 @@ including original first/final IDs and caller random states. An opt-in
 information audit on ALL old inputs/source seeds is prepared, with two
 predefined full-original-ID regressions per input. No model output yet;
 toy boundary tests do not establish an informative class or useful benefit.
+
+V8 preserves a failed ACTUAL first-step audit: first source crossed to the
+second model step because native `j` is reset to batch-row0. One extra
+forward beyond the common head, no information/benefit claim. V9 corrects
+the observer by counting pinned successful-fallback yield sites READ-ONLY;
+the regression now includes that clobber and a partial fast batch. Toy
+CPU/CUDA checks pass; the corrected producer must be frozen before another
+native audit. V7/v8 data and the erratum remain immutable in their snapshots.

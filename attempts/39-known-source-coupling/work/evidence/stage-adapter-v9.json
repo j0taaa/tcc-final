@@ -1,0 +1,18 @@
+{
+  "scope": "Corrected actual no-grad-wrapper regression: full/partial fast, fallback with j=0 clobber and failure; zero model inference",
+  "command": [
+    ".venv-live/bin/python",
+    "-m",
+    "attempts.39-known-source-coupling.work.audit_native_stage"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 1.3737134640105069,
+  "stdout": "PASS fast/fallback/terminal-failure first-step boundaries, private tapes and original IDs; no model\n",
+  "stderr": "",
+  "sha256": {
+    "native_stage.py": "c8903a7454d92e809b7aa3c7db2e23ff192a5b1664fc53d89699bc146001af87",
+    "audit_native_stage.py": "c8606f584a5ae661e8b0c17a2cf6906058237768375d80a469149a3508dc717f",
+    "native_state.py": "dc4122629de62293c28af50e7013e1f240193b18294b120e7f40f6dd2fb368a8",
+    "phase_info.py": "6499037595d60a2a67e4489393264041fdb980f6c0b34629d75430c0842fbe4e"
+  }
+}

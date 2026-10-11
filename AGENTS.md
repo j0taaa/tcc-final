@@ -474,6 +474,12 @@ provam classes informativas em cada input. Evidência e decisão39/work/*v5
 preservadas; investigar o PRIMEIRO passo neural inteiro antes de outro forward
 é nova fronteira/key a congelar, não relabelling da captura v4. Prioridade,
 publicabilidade e utilidade ampla continuam abertas.
+Primeiro passo v6/7 FAIL real no primeiro seed: observer leu j, mas upstream
+o reassocia a batch-row0; um forward extra foi consumido e registrado.
+V8 preserva erro/metadados/erratum. V9 proposto/corrigido conta yields de
+fallback por seis sites AST pinados, sem escrever locals; toy CPU/CUDA com
+j clobbered e batch parcial PASS. Ainda NÃO há informação nativa ou benefício
+confirmado nessa fronteira. Repetição exige nova fonte/evidência congeladas.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma
