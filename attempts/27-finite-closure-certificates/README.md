@@ -88,3 +88,32 @@ Nas profundidades1/2/4, a cauda é zero e TODOS os métodos a certificam como
 zero. Isso não mostra uma vantagem da nova preparação: a fronteira já está
 vazia. Nenhum forward, ganho semântico, timing competitivo ou corpus novo.
 Não usar este resultado como confirmação de utilidade/publicação.
+
+## Diagnóstico v2 completo e decisão
+
+O produtor `6a55870` foi enviado antes da execução de todos os18 estados,
+seis profundidades e dez variantes declaradas. Comando:
+
+```bash
+.venv/bin/python -m attempts.27-finite-closure-certificates.work.diagnostic_grid_v2 --output attempts/27-finite-closure-certificates/work/evidence/development-feasibility-v2
+.venv/bin/python -m attempts.27-finite-closure-certificates.work.summarize_grid_v2
+```
+
+Todos os1.080 registros foram preservados:730 completos,320 com massa rasa
+zero e30 recusas de preparação. Os1.050 limites disponíveis respeitam a massa
+exata arquivada; isso confere limites, não recalcula a referência completa.
+Módulo16 certifica todos os18 estados na MESMA menor profundidade do handoff
+clássico. A grade de potenciais certifica17 na mesma profundidade e um em
+profundidade maior. Nenhum limite é mais apertado que handoff nos73 pares
+conclusivos comuns: resíduo16 empata26/perde47, potenciais empatam15/perdem58.
+Há certificados com fronteira profunda não vazia, portanto a verificação não
+se resume ao caso degenerado de v1.
+
+Os custos de dimensão finita podem ser menores; não foram cronometrados e
+isso não é uma superioridade confirmada. O antecedente de resíduos e a
+derivação direta dos potenciais impedem chamar esta implementação de novidade
+suficiente. **Não promover ao núcleo ou ao artigo como contribuição nova.**
+Uma expansão só se justifica por uma diferença científica adicional e um
+argumento de benefício completo, não por outra campanha procurando vitórias.
+Todos os parâmetros e falhas constam em `work/evidence/development-feasibility-v2/`;
+`audit.json` é gerado dos registros e compara os dados A24 sem alterá-los.

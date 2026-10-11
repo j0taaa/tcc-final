@@ -46,14 +46,21 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Producer61e7b11 completes40 sound bounds. Depth0 has zero shallow mass;
   depths1/2/4 already have an empty deep frontier, and ALL controls give zero.
   Preserve this non-use result; it establishes no preparation advantage.
-- [ ] T4702-v2: Frozen addendum uses ALL18 previously measured development
+- [x] T4702-v2: Frozen addendum uses ALL18 previously measured development
   states, all six A24 diagnostic depths and all ten finite variants:1080
   outcomes expected. Check against archived full mass when available, retain
-  every refusal and zero lower mass. No timings or independent capture.
+  every refusal and zero lower mass. All1080 retained:730 complete,320 zero
+  lower mass,30 preparation refusals;1050 archived exact-mass checks pass.
+  Residue16 needs the SAME minimum depth as handoff in18/18; potential grid
+  same17/18, worse1/18. No tighter bounds in73 shared conclusive pairs.
+  Reproducer/audit in A27/work; no timings or independent capture.
 - [ ] T4703: Only after a distinctive benefit argument, freeze an equivalent-
   operation comparison including compact CFG, counter+CARS and finite regular
   controls. A25 losses remain intact. Do not execute another large campaign
   merely to obtain favorable evidence; novelty/significance remain unresolved.
+  A27 is not promoted: close antecedents and direct derivation currently
+  prevent a defensible originality claim. This conditional campaign is not
+  automatically required while its distinct-benefit gate remains unsatisfied.
 
 ## M46 — General batch dominance, keeping individual decoder laws
 

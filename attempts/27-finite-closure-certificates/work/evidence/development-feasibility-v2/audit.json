@@ -1,0 +1,431 @@
+{
+  "rows_sha256": "e1edaff69d1bc9406ad90ae0e5eab3a49a5c58190dbe38ff261fd2c142ed6d06",
+  "old_rows_sha256": "b093a24d4c4a1f49e8b2d3ba1be99689e81945a39f1b8827a4b7424b73039f7f",
+  "records": 1080,
+  "original_cases": 18,
+  "statuses": {
+    "complete": 730,
+    "resource_refusal": 30,
+    "zero_lower_mass": 320
+  },
+  "exact_mass_checks": 1050,
+  "old_handoff_minimum_depth_by_case": {
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 3,
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+    "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 2,
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 4,
+    "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 3,
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+    "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+    "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+    "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-16": 4,
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+    "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+  },
+  "variants": [
+    {
+      "method": "residue",
+      "parameter": 2,
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 17,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 6,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 6,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 33,
+      "handoff_bound_comparison": {
+        "looser": 58,
+        "equal": 15
+      },
+      "handoff_depth_comparison": {
+        "worse": 3,
+        "equal": 14
+      }
+    },
+    {
+      "method": "residue",
+      "parameter": 3,
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 17,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 6,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 4,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 34,
+      "handoff_bound_comparison": {
+        "looser": 58,
+        "equal": 15
+      },
+      "handoff_depth_comparison": {
+        "worse": 2,
+        "equal": 15
+      }
+    },
+    {
+      "method": "residue",
+      "parameter": 4,
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 17,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 4,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 4,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 35,
+      "handoff_bound_comparison": {
+        "looser": 57,
+        "equal": 16
+      },
+      "handoff_depth_comparison": {
+        "worse": 2,
+        "equal": 15
+      }
+    },
+    {
+      "method": "residue",
+      "parameter": 8,
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 17,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 2,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 4,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 37,
+      "handoff_bound_comparison": {
+        "looser": 53,
+        "equal": 20
+      },
+      "handoff_depth_comparison": {
+        "equal": 17
+      }
+    },
+    {
+      "method": "residue",
+      "parameter": 16,
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 18,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 2,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 4,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-16": 4,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 39,
+      "handoff_bound_comparison": {
+        "looser": 47,
+        "equal": 26
+      },
+      "handoff_depth_comparison": {
+        "equal": 18
+      }
+    },
+    {
+      "method": "potential",
+      "parameter": [
+        0
+      ],
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 17,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 6,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 6,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 4,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 32,
+      "handoff_bound_comparison": {
+        "looser": 58,
+        "equal": 15
+      },
+      "handoff_depth_comparison": {
+        "worse": 4,
+        "equal": 13
+      }
+    },
+    {
+      "method": "potential",
+      "parameter": [
+        1
+      ],
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 18,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 4,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 6,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 4,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-16": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 34,
+      "handoff_bound_comparison": {
+        "looser": 58,
+        "equal": 15
+      },
+      "handoff_depth_comparison": {
+        "worse": 5,
+        "equal": 13
+      }
+    },
+    {
+      "method": "potential",
+      "parameter": [
+        2
+      ],
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 18,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 4,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 4,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 4,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-16": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 35,
+      "handoff_bound_comparison": {
+        "looser": 58,
+        "equal": 15
+      },
+      "handoff_depth_comparison": {
+        "worse": 4,
+        "equal": 14
+      }
+    },
+    {
+      "method": "potential",
+      "parameter": [
+        4
+      ],
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 18,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 4,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 2,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 4,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 4,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-16": 4,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 37,
+      "handoff_bound_comparison": {
+        "looser": 58,
+        "equal": 15
+      },
+      "handoff_depth_comparison": {
+        "worse": 2,
+        "equal": 16
+      }
+    },
+    {
+      "method": "potential",
+      "parameter": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "statuses": {
+        "complete": 73,
+        "resource_refusal": 3,
+        "zero_lower_mass": 32
+      },
+      "certifying_cases": 18,
+      "minimum_depth_by_case": {
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-16": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-4": 3,
+        "017a7a6ddeb18807a7ccbcd09a0f5cba4f1b3abcc41a1cb3a35a3a06e0b2094c-8": 3,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-16": 2,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-4": 4,
+        "05dacb44e44cdb106a0a1206bee53fc1f4b6085283e0f5e888a6837546b45429-8": 6,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-16": 4,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-4": 3,
+        "079f141a8f41fc69ffec127e2b61901a9901b8b52ceec13aa22350a0d4f09336-8": 3,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-16": 8,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-4": 6,
+        "0a4b768afa25d7905efd29b225ca9cede7da28eef8c83e4659faeabcf6a22030-8": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-16": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-4": 6,
+        "0bb3971736140c65cb6107aad8ed996d0dc37fd38b4f971f6b752b2430cbcd56-8": 6,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-16": 4,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-4": 2,
+        "0ce7169f4ded4c7c8a9174acba736a14ac97ed8a90e4ec62aa6ba7e27d371925-8": 3
+      },
+      "active_frontier_certificates": 38,
+      "handoff_bound_comparison": {
+        "looser": 58,
+        "equal": 15
+      },
+      "handoff_depth_comparison": {
+        "equal": 17,
+        "worse": 1
+      }
+    }
+  ],
+  "interpretation": "Reused development feasibility only; no timing, independent confirmation or priority claim"
+}

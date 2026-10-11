@@ -20,6 +20,14 @@ OS* devem ser controles/antecedentes. Não afirmar vitória EPIC por esses limit
 O diagnóstico completo do mesmo head público será congelado antes de executar;
 é desenvolvimento de limites, sem nova captura ou benchmark de velocidade.
 
+Atualização: v1 completou40 resultados sem vantagem (fronteira vazia em d>=1).
+V2 completou todos1.080 de desenvolvimento,730 completos/320 massa rasa zero/
+30 recusas,1050 checks contra massa exata arquivada. Resíduo16 exige exatamente
+as profundidades do handoff nos18 estados; grade de potenciais empata17 e perde
+um. Não há limite mais apertado nos73 pares comuns. Custos não foram medidos;
+não transformar dimensão menor em velocidade confirmada. A27 permanece
+preservada sem promoção científica: os princípios próximos são anteriores.
+
 ## Contrato atual — fechamento certificado (A24)
 
 **Operação:** massa/marginais originais e amostra de um produto congelado de

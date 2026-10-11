@@ -162,7 +162,12 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   Há quatro oráculos pequenos, uma formulação escrita e40 limites corretos
   no mesmo head público. Neste head a fronteira já é vazia para d>=1; todos
   os métodos certificam zero, sem ganho demonstrado. Não há novo sampler,
-  timing competitivo ou forward independente. Separabilidade one-counter2019
+  timing competitivo ou forward independente. V2 completou1080/1080 registros
+  nos18 estados anteriores:730 completos,320 massa rasa zero,30 recusas,
+  1050 checks de massa arquivada. Resíduo16 empata as profundidades do handoff
+  em18/18; potenciais empatam17/perdem1. Nenhum dos73 pares comuns tem limite
+  mais apertado. Não promover a novidade; dimensão menor não é timing medido.
+  Separabilidade one-counter2019
   já usa resíduos e Chernoff/OS* são antecedentes centrais. A hipótese deve
   ser descartada se não houver consequência própria relevante. A meta de
   novidade suficiente para publicação permanece aberta; não confundir a
