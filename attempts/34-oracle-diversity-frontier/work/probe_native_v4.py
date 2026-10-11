@@ -51,7 +51,8 @@ class Head:
 
 def event(row):
     tokens, rejected, complete = row
-    return tokens.cpu().tolist(), tuple(rejected), bool(complete)
+    # Upstream's second component is a WALL timestamp, not a token decision.
+    return tokens.cpu().tolist(), tuple(pos for pos, _elapsed in rejected), bool(complete)
 
 
 def streams(device):

@@ -86,7 +86,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   as decisions; IDs/rejected positions/status agree. Source/failure preserved
   in34/work/evidence/native-draft-failure-v4.json and native-draft-audit-v4.md.
   Audit actual wall limits and separate diagnostic times BEFORE refining.
-  No successful native replay or neural benefit claimed yet.
+  Correction projects only diagnostic elapsed times away from comparison,
+  retaining actual upstream timestamps in the original payload.36/36 CPU/
+  CUDA FAKE first full decision trajectories and all caller streams PASS,
+  54 fake head forwards.34/work/evidence/native-fake-v5.json; source draft
+  remains independent in v4. No regular-cover SUCCESS-path coverage yet
+  (fixture transfers one token per step); no neural benefit claimed.
 
 ## M53 — Categorical race repair: reduction gate before implementation
 

@@ -1166,13 +1166,23 @@
             "attempts/34-oracle-diversity-frontier/work",
             "tests/test_oracle_diversity_frontier.py"
           ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "ae5c69e842620b493312fb13fa5c9a3a63a5672a",
+          "evidence_commit": "ae5c69e842620b493312fb13fa5c9a3a63a5672a",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/README.md",
+            "attempts/34-oracle-diversity-frontier/work",
+            "tests/test_oracle_diversity_frontier.py"
+          ]
         }
       ]
     },
     {
       "id": "35-commitment-law-counting",
       "title": "Accepted-commit law versus a tractable LL(1) posterior",
-      "conclusion": "Written BEFORE code: explicit #DNF reduction for ideal greedy/MWPC accepted tag, distinct from polynomial witnessed-product posterior. Classical union/projection/random-MAP priors credited. Companion specialization, not novelty/finite-CUDA/native-benefit confirmation.",
+      "conclusion": "Explicit ideal greedy/MWPC accepted-tag #DNF specialization, distinct from easy witnessed-product posterior. Five tiny actual LL(1) cases,528 rankings,440 all-optimum checks and five CORE recomputations pass; entire140-test suite passes70.001s. Union/projection/random-MAP are priors, not own principles. No native finite-CUDA, neural benefit or publication novelty confirmed.",
       "reading": "attempts/35-commitment-law-counting/README.md; TASKS.md#M55",
       "versions": [
         {
@@ -1182,6 +1192,16 @@
           "evidence_roots": [
             "attempts/35-commitment-law-counting/README.md",
             "attempts/35-commitment-law-counting/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "904ac7169627dbb7dd581724a54e1b95ac2d3a1d",
+          "evidence_commit": "904ac7169627dbb7dd581724a54e1b95ac2d3a1d",
+          "evidence_roots": [
+            "attempts/35-commitment-law-counting/README.md",
+            "attempts/35-commitment-law-counting/work",
+            "tests/test_commitment_law_counting.py"
           ]
         }
       ]

@@ -89,3 +89,19 @@ não adaptativa no MESMO orçamento esperado. Preserva explicitamente a
 vitória iid3 quando draws já geram outputs completos e a objeção de retry
 verificado. Fronteira barata de transição realmente aceita e sinal da classe
 continuam necessários; não foram demonstrados em dados neurais A34.
+
+## Protótipo nativo mínimo: falha preservada e correção delimitada
+
+O draft inicial comparou indevidamente timestamps de rejeição como decisões;
+a recusa e fonte estão preservadas em v4 e `work/native-draft-audit-v4.md`.
+A correção conserva os eventos/timestamps do upstream e compara IDs,
+posições rejeitadas e status.36/36 replays completos CPU/CUDA com heads
+FALSOS preservam literalmente a primeira trajetória e RNG do chamador;
+54 forwards FALSOS. Dados em `work/evidence/native-fake-v5.json`.
+A seleção usa o primeiro EVENTO nativo, inclusive ausência de progresso ou
+falha, sem filtrar sucessos. Payload contém generator/control locals e
+tapes Python/NumPy/Torch, não um canvas reconstruído. A equivalência da
+política pressupõe consultas conclusivas; não se promete preservar a lei de
+timestamps, deadlines físicos ou hardware não determinístico. O fixture
+atual transfere um token por passo e ainda não verifica sucesso do batch
+regular-cover. Nenhum head neural, ganho real ou novidade confirmada.
