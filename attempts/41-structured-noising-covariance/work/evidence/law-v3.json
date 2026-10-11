@@ -1,0 +1,84 @@
+{
+  "source_commit": "2ef9aec943ae59efec24709f4a67bfae47ce0bd1",
+  "scope": "Six own offline law/reduction oracles; finite Lean obstruction only. NO external model, timing superiority, full theorem mechanization or publication evidence.",
+  "partitions": 67,
+  "tests": 6,
+  "files": {
+    "audit_mirror.py": "fb3217359e5b7edb25c014e326f4bdbccd9c8618d7dce8a96e9d93e85c29c652",
+    "kernel.py": "70dc537f7aee3d4d790c15bbaa989bc3c1e17f96843347a8ee2cdb77829c2ad6",
+    "label_kernel.py": "bc6d7cf0b8ea5a7d488744a4182d0f1ce68a4e4e1d8ad83428a5a63b9fce7168",
+    "noising.py": "3120455602d043173c322583f352de3c10b71a19e97a24affc16c0a7ccbddada",
+    "source.py": "b6bd081c6e46ddf0689b15fa067b37670dca0381bcca86a34ba069d988e160f6",
+    "test_noising.py": "24975288aa97625b1682ee1a81774b680fd60dad52126881e111875c67cbfdfd",
+    "test_reductions.py": "40b2fc5428a4ceb0a7d279c285a2a66438acda104de190fecbee21e6447af645",
+    "NoisingObstructions.lean": "f77ce1aa228ad5ef129c1596179ce3c81870d4d9d19cb2c27eacbab5cdb64849",
+    "label-cost-v3.md": "bf9cb383231f53ecc6f6259bf80daf8255bf4286da410d7087403e89a7200114",
+    "ranked-pivotal-reduction-v3.md": "fde6c0b00323d57e3d8c955dea20618f73f2b1830819db0c1c3db7f6561b9611"
+  },
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "attempts/41-structured-noising-covariance/work/audit_mirror.py",
+        "attempts/41-structured-noising-covariance/work/kernel.py",
+        "attempts/41-structured-noising-covariance/work/label_kernel.py",
+        "attempts/41-structured-noising-covariance/work/noising.py",
+        "attempts/41-structured-noising-covariance/work/source.py",
+        "attempts/41-structured-noising-covariance/work/test_noising.py",
+        "attempts/41-structured-noising-covariance/work/test_reductions.py"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 0.005193719000089914,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "attempts/41-structured-noising-covariance/work/audit_mirror.py",
+        "attempts/41-structured-noising-covariance/work/kernel.py",
+        "attempts/41-structured-noising-covariance/work/label_kernel.py",
+        "attempts/41-structured-noising-covariance/work/noising.py",
+        "attempts/41-structured-noising-covariance/work/source.py",
+        "attempts/41-structured-noising-covariance/work/test_noising.py",
+        "attempts/41-structured-noising-covariance/work/test_reductions.py"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 0.004707743995822966,
+      "stdout": "7 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "attempts.41-structured-noising-covariance.work.test_noising",
+        "attempts.41-structured-noising-covariance.work.test_reductions"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "elapsed_seconds": 0.914644381031394,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.880s\n\nOK\n"
+    },
+    {
+      "command": [
+        "$HOME/.elan/bin/lake",
+        "env",
+        "lean",
+        "../attempts/41-structured-noising-covariance/work/NoisingObstructions.lean"
+      ],
+      "cwd": "formal",
+      "exit_code": 0,
+      "elapsed_seconds": 0.7801844679634087,
+      "stdout": "'NoisingObstructions.no_safe_early_return' depends on axioms: [propext, Quot.sound]\n",
+      "stderr": ""
+    }
+  ]
+}
