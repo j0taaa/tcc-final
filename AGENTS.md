@@ -484,6 +484,16 @@ Key constante em TODAS quatro entradas; auditoria funcional, informação útil
 não confirmada. v7 FAIL e v9 corrigido permanecem separados. Não é gate
 independente de benefício nem motivo para promover39 ao artigo.
 
+A40 começa SOMENTE escrita antes de protótipo/outputs: âncora original
+INDEPENDENTE é retida como terceira saída, heads exatos pagos/cacheCPU são
+congelados antes de auxiliares. Corolário condicional dá pass3/best-score e
+variância nunca piores que iid3, com igual ESPERANÇA de forwards ao mesmo
+cache congelado. Cache dinâmico/3 seeds sem reposição são controles obrigatórios.
+A39 lower bound sem labels grátis NÃO se aplica à informação da âncora.
+Condicionamento/cache são conhecidos; novidade e benefício útil NÃO confirmados.
+Classificador root/left-choice fixo, todos inputs/seeds antigos, auditoria
+funcional/informacional apenas. Nenhum novo modelo ou promoção ao artigo ainda.
+
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma
 correção pode referenciar respostas existentes e explicar o que muda ou

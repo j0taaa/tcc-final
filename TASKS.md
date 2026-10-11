@@ -27,6 +27,21 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M60 — Independent retained anchor and cached native observations
+
+- [x] T6000: BEFORE prototype/outputs specify40's eight criteria and written
+  conditional three-output/terminal-verifier/variance/neural-work corollary.
+  Fixed root/left-choice frontier, immutable paid anchor trace, strong dynamic
+  cache and three-source-without-replacement controls mandatory. Conditioning
+  and cache are KNOWN; A39 no-free-label minimax does NOT cover anchor information.
+- [ ] T6001: Minimal independent implementation; verify unchanged native
+  generator/private RNG/model heads and stop before every uncached helper call.
+  All old inputs/four predefined sources, original-ID regressions; no quality
+  or performance gate from this information audit. Freeze source before outputs.
+- [ ] T6002: Specific prior/reduction audit, useful complete-cost consequence
+  against competent dynamic-cache/native controls, independent proof and heldout
+  evaluation if the development observation is informative. Goal remains open.
+
 ## M59 — Known source addresses, opaque labels and complete native costs
 
 - [x] T5900: BEFORE prototype/forwards write39/README's eight criteria and
