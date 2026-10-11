@@ -1346,7 +1346,7 @@
     {
       "id": "38-empirical-pool-coupling",
       "title": "Empirical categorical coupling and pointwise cost optimum",
-      "conclusion": "V4 minimal40-line reference, seven exact oracles and154 full tests pass. V3 sharp unknown-law cap4 diversity/work frontier(b-2)/8 written, includes adaptive stops/first clones. Standard Wald charges complete variable-cost calls plus equal pair continuation; no physical speed claimed. Specific priority and meaningful native application remain open; no new model campaign.",
+      "conclusion": "V6 native producer frozen after protocol: nine exact law/control/key checks and156 full tests pass; CPU/CUDA RNG adapter validated without model forwards. Sharp candidate cap4 budget frontier and finite-M gap written; private helpers independently copied by hash. Specific priority and meaningful native full-cost application remain open. ALL56 live pilot still pending; not statistical or broad EPIC superiority.",
       "reading": "attempts/38-empirical-pool-coupling/README.md; TASKS.md M58",
       "versions": [
         {
@@ -1399,6 +1399,18 @@
             "attempts/38-empirical-pool-coupling/work/native-protocol-v5.json",
             "attempts/38-empirical-pool-coupling/work/native-inputs-v5.json",
             "attempts/38-empirical-pool-coupling/work/finite-domain-v5.md"
+          ]
+        },
+        {
+          "id": "v6",
+          "source_commit": "76f4bc1cfca0b6d4a9fe69aa602d3eb5913305b8",
+          "evidence_commit": "76f4bc1cfca0b6d4a9fe69aa602d3eb5913305b8",
+          "evidence_roots": [
+            "attempts/38-empirical-pool-coupling/work/native-preflight-v6.md",
+            "attempts/38-empirical-pool-coupling/work/evidence/law-v6.json",
+            "attempts/38-empirical-pool-coupling/work/evidence/checks-v6.json",
+            "attempts/38-empirical-pool-coupling/work/evidence/native-rng-cuda-v6.json",
+            "tests/test_empirical_pool_coupling.py"
           ]
         }
       ]
