@@ -1046,7 +1046,7 @@
     {
       "id": "32-native-oracle-antithetics",
       "title": "Native finite-law class coupling and sharp p-blind oracle budget",
-      "conclusion": "Bounded native-law coupling has independent small oracles,432 fake native replays and written sharp disagreement/minimax expected-cost result. Nacu-Peres2005 is an exact construction antecedent. Specific priority and real neural benefit remain OPEN.",
+      "conclusion": "Sharp p-blind disagreement/minimax cost has written proof and finite oracles; exact Nacu-Peres construction credited. V4 external complete-EPIC GSM8K protocol frozen before heads/gold evaluation,864 fake replays and32 wrapper checks pass. No real neural benefit, specific originality or publication adequacy confirmed.",
       "reading": "attempts/32-native-oracle-antithetics/README.md; TASKS.md#M52",
       "versions": [
         {
@@ -1066,6 +1066,17 @@
             "attempts/32-native-oracle-antithetics/work",
             "tests/test_native_oracle_coupling.py",
             "tests/test_native_oracle_walk.py"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "8fc0999736724b7b28159653503693f95b272c4a",
+          "evidence_commit": "8fc0999736724b7b28159653503693f95b272c4a",
+          "evidence_roots": [
+            "attempts/32-native-oracle-antithetics/work",
+            "tests/test_native_oracle_coupling.py",
+            "tests/test_native_oracle_walk.py",
+            "tests/test_native_numeric_task.py"
           ]
         }
       ]
