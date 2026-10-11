@@ -27,6 +27,26 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M57 — Complete-output canonical coupling: written application gate
+
+- [x] T5700: Eight criteria, complete-oracle operation and bound BEFORE code.
+  Random balanced differences plus the barrier-three law give at least1/13
+  of maximum preserved-marginal pass@2 gain for ANY single correct canonical
+  outcome. Cap12 conservatively gives1023/13312. Sharpness is for THIS
+  construction, not all couplers. `37/work/theory-v1.md`. FULL auxiliary
+  generations are charged; iid3 ALWAYS has higher unique-event coverage at
+  the same expected generation count. No quality/generation-budget victory.
+  At success mass1/2 the ideal unbiased-evaluation cost bound requires v>5c
+  before coordination; this ratio is not measured. Canonical duplicate labels
+  must not be charged repeatedly. These objections are not waived by the proof.
+- [ ] T5701: Independent small law/hash checks and strongest direct reductions.
+  CARMS original3--3.2.2, authored RSS original1--4, diffusion-antithetic
+  original1--3.2, GLIDE original2--4.4 and MCTS originalA.1--A.4 read.
+  `37/work/primary-comparison-v1.md` records exact sources/hashes. Hashing,
+  ruin, marginal preservation and expensive-label evaluation are known;
+  specific novelty and useful full-cost consumer remain OPEN. No human
+  review, neural campaign, article promotion or publication confirmation.
+
 ## M56 — Grammar-guided sparse output projection: prior gate
 
 - [x] T5600: Preserve eight criteria and source comparison BEFORE any code.

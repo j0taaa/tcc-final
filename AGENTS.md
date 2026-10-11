@@ -366,6 +366,17 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   para massa válida original/confidências nativas. Não omitir esses custos
   ou alegar preservar EPIC ao renormalizar sobre suporte diferente. Nenhum
   teste neural/timing/resultado próprio; a versão simples foi recusada.
+- A37 investiga hash aleatório do resultado canônico de GERAÇÕES COMPLETAS,
+  sem gabarito e sem presumir sinal de uma classe fixa. Prova escrita dá1/13
+  do ganho máximo de pass@2 entre pares de mesmas marginais para qualquer
+  resultado canônico correto único; cap12 dá1023/13312. Não é ótimo entre
+  todos acopladores nem ganho de velocidade. iid3 SEMPRE vence sua cobertura
+  com mesmo orçamento esperado de gerações; avaliar somente duas respostas
+  exige consumidor real, não restrição para favorecer a proposta. Bound de
+  avaliação imparcial exige v>5c em a=1/2 antes da coordenação; ratio não foi
+  medido, e labels canônicos reutilizáveis devem ser cobrados corretamente.
+  Antecedentes de antitéticos categóricos/difusão, RSS e PPI foram lidos.
+  Só teoria antes de código; prioridade, aplicação útil e publicação abertas.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

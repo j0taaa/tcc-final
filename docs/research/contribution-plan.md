@@ -2013,3 +2013,24 @@ autoral Paes Leme2022 Seção1.3 e Flegal--Herbei original3.1 foram lidos.
 Comparar uma prova com uma questão antiga não resolve prioridade ATUAL ou
 todos os momentos/suficiência. Sem revisão humana, nova captura/timing ou
 uso neural útil validado. Dois screens anteriores permanecem negativos.
+
+## 2026-10-11 — A37: resultado canônico completo, com controle que vence
+
+O novo contrato cobra cada geração inteira e agrupa resultados canônicos sem
+gabarito. Hash com diferenças balanceadas e minorante convexo correto dão
+1/13 do ganho máximo de cobertura entre pares de mesmas marginais, para
+qualquer resultado correto único; não pressupõe sinal de uma classe fixa.
+Objeto de prova torna a constante sharp para ESTA construção, não minimax
+entre todos algoritmos. Hash/ruína/canonicalização são antecedentes conhecidos.
+
+A revisão adversarial já demonstra que iid3 SEMPRE tem cobertura maior com
+o mesmo número esperado de gerações. A proposta não é vitória de geração
+contra EPIC. Na avaliação imparcial com consumidor caro, o bound de custo
+ideal em a=1/2 só vence iid se v>5c, antes de coordenação. Não medir um
+verificador artificialmente lento nem cobrar novamente labels já reutilizáveis.
+
+CARMS original3--3.2.2, RSS autoral1--4, antitéticos de difusão1--3.2,
+GLIDE original2--4.4 e MCTS originalA.1--A.4 foram conferidos; prioridade do
+limite composto e utilidade de consumidor real continuam abertas. README37
+responde aos oito critérios ANTES de código. Não promover a ideia só por
+mais uma prova correta nem reabrir os dois screens negativos de A34.
