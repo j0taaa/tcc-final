@@ -50,6 +50,16 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   coarsenings. Preserve seed-derangement, weighted-work and real-variance
   counterexamples. `39/work/evidence/law-v2.json`;164 full tests PASS70.995s,
   `make check` PASS. No native output/forward/timing or novelty confirmation.
+- [x] T5903: BEFORE adapter/forwards freeze new first-yield native pilot:
+  all input-ranked SVAMP5--8, two tapes, nine competent controls,72 rows;
+  zero extra helper-forward assertion, private original continuations,
+  seed-derangement/half/iid3/biased novelty and all cold/physical/memory costs.
+  Golds only after closed capture. Fixed leftmost original commit key, no
+  root-delay/filter/replay. `39/work/native-protocol-v3.md` and JSON/inputs.
+- [ ] T5904: Implement minimal native adapter after protocol freeze; validate
+  suspension/one-scope completion/private randomness and unchanged first.
+  Freeze producer before actual new outputs. Pilot is development, not
+  independent statistical confirmation or publication novelty evidence.
 
 ## M58 — Empirical categorical coupling and pointwise cost optimum
 
