@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "scope": "Functional/information audit on old inputs; NO independent semantic/performance victory",
+  "producer_commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+  "raw_sha256": "4684fde7d676aafd0fd9678c7ea4cec5b4c7a162b03e0e6cf2eb68cb5ad15fb9",
+  "metadata_sha256": "5d190a8b13ea9f2282471621dc41872f8606a6bd560cc6a0dea2e2fd98472fd0",
+  "records": 51,
+  "zero_extra_helper_forwards": true,
+  "original_full_validations": 8,
+  "new_forwards_including_common_heads": 88,
+  "frames": [
+    {
+      "id": "chal-102",
+      "setup": {
+        "wall": 1.1467179589672014,
+        "cpu": 0.42411232899999973
+      },
+      "status": "COMPLETE",
+      "queries": 13,
+      "classes": [
+        {
+          "key": [
+            1,
+            8387
+          ],
+          "count": 13
+        }
+      ],
+      "original_full_validations": 2,
+      "new_forwards": 19,
+      "distinct_complete_stage_canvases": 1
+    },
+    {
+      "id": "chal-979",
+      "setup": {
+        "wall": 0.1506349219707772,
+        "cpu": 0.14191861399999794
+      },
+      "status": "COMPLETE",
+      "queries": 13,
+      "classes": [
+        {
+          "key": [
+            1,
+            8387
+          ],
+          "count": 13
+        }
+      ],
+      "original_full_validations": 2,
+      "new_forwards": 21,
+      "distinct_complete_stage_canvases": 2
+    },
+    {
+      "id": "chal-16",
+      "setup": {
+        "wall": 0.159179818991106,
+        "cpu": 0.14376269999999636
+      },
+      "status": "COMPLETE",
+      "queries": 13,
+      "classes": [
+        {
+          "key": [
+            1,
+            8387
+          ],
+          "count": 13
+        }
+      ],
+      "original_full_validations": 2,
+      "new_forwards": 23,
+      "distinct_complete_stage_canvases": 2
+    },
+    {
+      "id": "chal-142",
+      "setup": {
+        "wall": 0.1540423549595289,
+        "cpu": 0.143171633999998
+      },
+      "status": "COMPLETE",
+      "queries": 12,
+      "classes": [
+        {
+          "key": [
+            0,
+            1769
+          ],
+          "count": 12
+        }
+      ],
+      "original_full_validations": 2,
+      "new_forwards": 25,
+      "distinct_complete_stage_canvases": 2
+    }
+  ],
+  "decision": "The frozen first-body-token observation is constant within ALL four inputs. No class-information benefit or useful full-cost superiority confirmed."
+}

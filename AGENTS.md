@@ -478,8 +478,11 @@ Primeiro passo v6/7 FAIL real no primeiro seed: observer leu j, mas upstream
 o reassocia a batch-row0; um forward extra foi consumido e registrado.
 V8 preserva erro/metadados/erratum. V9 proposto/corrigido conta yields de
 fallback por seis sites AST pinados, sem escrever locals; toy CPU/CUDA com
-j clobbered e batch parcial PASS. Ainda NÃO há informação nativa ou benefício
-confirmado nessa fronteira. Repetição exige nova fonte/evidência congeladas.
+j clobbered e batch parcial PASS. V10 fecha51/51 fontes antigas, zero forwards
+auxiliares, oito regressões full-ID/status,88 forwards novos com heads iniciais.
+Key constante em TODAS quatro entradas; auditoria funcional, informação útil
+não confirmada. v7 FAIL e v9 corrigido permanecem separados. Não é gate
+independente de benefício nem motivo para promover39 ao artigo.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

@@ -1,0 +1,157 @@
+{
+  "source_commit": "749e2ebf5cd79f1591fea4a9bdd500131b0d7632",
+  "sources": {
+    "phase_info.py": "6499037595d60a2a67e4489393264041fdb980f6c0b34629d75430c0842fbe4e",
+    "native_stage.py": "c8903a7454d92e809b7aa3c7db2e23ff192a5b1664fc53d89699bc146001af87",
+    "native_state.py": "dc4122629de62293c28af50e7013e1f240193b18294b120e7f40f6dd2fb368a8",
+    "native_pilot.py": "ddd5bd7d9a2d44af010ad480e35dfed2a7ad201345322532cceff54b9245d75b",
+    "native_task.py": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b",
+    "source.py": "b6bd081c6e46ddf0689b15fa067b37670dca0381bcca86a34ba069d988e160f6",
+    "first-step-contract-v6.md": "23cd25f3b481efdb2b097c810c907cc405924fa5ee51129d630749fc4a2d5a2a",
+    "first-step-erratum-v8.md": "0c7151d2c46e16275eb4a9547972899f973315e8fff607e3a68ac19927945dd1",
+    "native-inputs-v3.json": "609c007cc01537cb84a70b13b17193184edabd9ad530127ff30131a5f292af89",
+    "native-protocol-v3.json": "4b24b370721781de08c36cd8fb92825cb114ef171b2acf2ba69d5aecbfab8381",
+    "evidence/native-v4.jsonl": "8001d08ace1ad9311349932676a78c74401e08d77beecc48e2d5d52d5dfe60e8",
+    "evidence/phase-info-v7.metadata.json": "61eeaf3fde12d948c0521d5997181b448243c0dbd5b1d50be346ffffc51b67cb"
+  },
+  "config": {
+    "schema": 3,
+    "inputs_sha256": "609c007cc01537cb84a70b13b17193184edabd9ad530127ff30131a5f292af89",
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "native_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+    "cpu_threads": 4,
+    "gen_length": 128,
+    "block_length": 128,
+    "steps": 16,
+    "temperature": 1.0,
+    "max_resamples": 256,
+    "max_prompt_tokens": 1024,
+    "replicates": 2,
+    "seed": 395011,
+    "methods": [
+      "pool4",
+      "early_pool",
+      "adaptive4",
+      "mean3",
+      "iid2",
+      "derange2",
+      "seed_half",
+      "iid3",
+      "novelty3"
+    ],
+    "native_env": {
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH": "1",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH": "2",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT": "1",
+      "CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER": "1"
+    },
+    "scope": "new full-native prefix functional/development pilot; NOT independent statistical victory",
+    "source_size": 4294967296,
+    "key": "leftmost newly fixed generated position and original token ID at FIRST native yield; NO_PROGRESS otherwise; no root-delay/filter"
+  },
+  "scope": "Existing-input information/functional audit, NO performance/semantic gate",
+  "hardware": "NVIDIA GeForce RTX 3080 Ti",
+  "torch": "2.8.0+cu128",
+  "load": {
+    "wall": 66.45935145602562,
+    "cpu": 25.766641616999998
+  },
+  "grammar_setup": {
+    "wall": 0.027900877001229674,
+    "cpu": 0.005218022000001099
+  },
+  "native_sha256": "d99195fe7cc3080acfc608a2e6d70b7567564d533ee8fb1cb79e9d534637340c",
+  "yield_sites": {
+    "fast": 374,
+    "fallback": 604,
+    "terminal": 610,
+    "failures": [
+      460,
+      471,
+      539
+    ]
+  },
+  "frames": [
+    {
+      "id": "chal-102",
+      "setup": {
+        "wall": 1.1467179589672014,
+        "cpu": 0.42411232899999973
+      },
+      "status": "COMPLETE",
+      "queries": 13,
+      "classes": [
+        {
+          "key": [
+            1,
+            8387
+          ],
+          "count": 13
+        }
+      ],
+      "original_full_validations": 2,
+      "new_forwards": 19
+    },
+    {
+      "id": "chal-979",
+      "setup": {
+        "wall": 0.1506349219707772,
+        "cpu": 0.14191861399999794
+      },
+      "status": "COMPLETE",
+      "queries": 13,
+      "classes": [
+        {
+          "key": [
+            1,
+            8387
+          ],
+          "count": 13
+        }
+      ],
+      "original_full_validations": 2,
+      "new_forwards": 21
+    },
+    {
+      "id": "chal-16",
+      "setup": {
+        "wall": 0.159179818991106,
+        "cpu": 0.14376269999999636
+      },
+      "status": "COMPLETE",
+      "queries": 13,
+      "classes": [
+        {
+          "key": [
+            1,
+            8387
+          ],
+          "count": 13
+        }
+      ],
+      "original_full_validations": 2,
+      "new_forwards": 23
+    },
+    {
+      "id": "chal-142",
+      "setup": {
+        "wall": 0.1540423549595289,
+        "cpu": 0.143171633999998
+      },
+      "status": "COMPLETE",
+      "queries": 12,
+      "classes": [
+        {
+          "key": [
+            0,
+            1769
+          ],
+          "count": 12
+        }
+      ],
+      "original_full_validations": 2,
+      "new_forwards": 25
+    }
+  ]
+}

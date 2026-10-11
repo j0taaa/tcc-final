@@ -115,3 +115,11 @@ the observer by counting pinned successful-fallback yield sites READ-ONLY;
 the regression now includes that clobber and a partial fast batch. Toy
 CPU/CUDA checks pass; the corrected producer must be frozen before another
 native audit. V7/v8 data and the erratum remain immutable in their snapshots.
+
+V10 closes the corrected information audit:51/51 OK, zero extra helper
+forwards, eight original full-ID/status regressions,88 actual new forwards
+including four shared initial heads. The frozen key is constant within ALL
+four inputs; no informative-class/useful-benefit claim. Full canvases have
+1/2/2/2 patterns, but no post-hoc winning classifier is promoted. Existing
+golds/source bank make this development, not independent confirmation.
+See `work/first-step-decision-v10.md` and the hashed generated audit.

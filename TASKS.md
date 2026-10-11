@@ -76,7 +76,7 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Adaptive25 queries vs full32, pass2=3/8 vs iid2=4/8; medians5.155 vs5.041s,
   memory8.303 vs7.542GiB. Functional pilot only, no useful/general victory.
   `39/work/native-audit-v5.md`, generated JSON and usefulness-decision-v5.md.
-- [ ] T5906: Investigate whether the complete FIRST neural step has informative
+- [x] T5906: Investigate whether the complete FIRST neural step has informative
   nonterminal observations before any new forward; fix a source/observation
   contract and compare competent controls BEFORE another capture. Current
   first-yield results remain unaltered; no answer-conditioned selection.
@@ -99,6 +99,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   model inference (`stage-adapter-v9.json`). Refuses changed native hash/sites;
   common-head setup/error costs preserved before frame completion. Requires
   new immutable producer and new evidence filename before native repeat.
+  V10: corrected51/51 OK, zero helper forwards, eight full original-ID/status
+  matches,88 new forwards including four common heads. Fixed key constant
+  in ALL four inputs; 1/2/2/2 full-stage patterns. INFORMATION GATE NEGATIVE,
+  not a latency/semantic test. Producer749e2eb; phase-info-v9 raw/metadatas
+  and phase-info-audit-v10/first-step-decision-v10 preserved. Goal remains open.
 
 ## M58 — Empirical categorical coupling and pointwise cost optimum
 
