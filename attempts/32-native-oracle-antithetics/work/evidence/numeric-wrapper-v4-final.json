@@ -1,0 +1,1136 @@
+{
+  "scope": "FAKE 126337-ID head; full wrapper, not neural/timing evidence",
+  "rows": [
+    {
+      "method": "iid2",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.12170882802456617,
+          "cpu": 0.12176674400000032,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.007316139992326498,
+          "cpu": 0.007316481999999791,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "iid4",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.007184260000940412,
+          "cpu": 0.007184571999999889,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.007160192006267607,
+          "cpu": 0.0071605780000001396,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":1}",
+          "original_ids_sha256": "7c5547607a58e1efbcbef124f23dac33b82913d44b900f9e8a29a8c39d4de08c",
+          "wall": 0.007180021959356964,
+          "cpu": 0.007180340999999757,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.007152813021093607,
+          "cpu": 0.007153211000000326,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "mixed",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.007129012024961412,
+          "cpu": 0.007129410999999752,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.006565811985637993,
+          "cpu": 0.0065661050000001,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "walk4_root",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.05445672001224011,
+          "cpu": 0.05451800399999973,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.01162566599668935,
+          "cpu": 0.011625984999999783,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "walk4_state",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.011457254004199058,
+          "cpu": 0.011457668000000254,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.011797720973845571,
+          "cpu": 0.011798132000000017,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "walk16_root",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010960243991576135,
+          "cpu": 0.01096067899999964,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.011187995958607644,
+          "cpu": 0.011188414000000257,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "walk16_state",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.011225107999052852,
+          "cpu": 0.011238274999999742,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.012462913990020752,
+          "cpu": 0.012463385999999854,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "pool16_root",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010939389991108328,
+          "cpu": 0.010966867000000047,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.012507868988905102,
+          "cpu": 0.012508347999999891,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "pool16_state",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.011185869050677866,
+          "cpu": 0.011186278000000272,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.01426254998659715,
+          "cpu": 0.014262964999999905,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "pool_batch16_root",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010850906022824347,
+          "cpu": 0.010851232999999905,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.011238521023187786,
+          "cpu": 0.01123351699999997,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "pool_batch16_state",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010540831950493157,
+          "cpu": 0.010541219999999907,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":1}",
+          "original_ids_sha256": "7c5547607a58e1efbcbef124f23dac33b82913d44b900f9e8a29a8c39d4de08c",
+          "wall": 0.012440170045010746,
+          "cpu": 0.012450387999999979,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "known_p_root",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010364176996517926,
+          "cpu": 0.010364512999999853,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010442856000736356,
+          "cpu": 0.010466597999999827,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "known_p_state",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010552724008448422,
+          "cpu": 0.01055045599999982,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":1}",
+          "original_ids_sha256": "7c5547607a58e1efbcbef124f23dac33b82913d44b900f9e8a29a8c39d4de08c",
+          "wall": 0.0109482990228571,
+          "cpu": 0.010943359999999736,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "raw_root",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010262517025694251,
+          "cpu": 0.01026278199999986,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010234271991066635,
+          "cpu": 0.010234576999999856,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "raw_history",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010441366990562528,
+          "cpu": 0.010445923999999884,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.01057560503249988,
+          "cpu": 0.010575956999999914,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "raw_state",
+      "temperature": 0.5,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010513196990359575,
+          "cpu": 0.010522688000000002,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010462792008183897,
+          "cpu": 0.010463228999999963,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "iid2",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.006395926000550389,
+          "cpu": 0.006396252999999685,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.006394525989890099,
+          "cpu": 0.006409901000000051,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "iid4",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.006416706019081175,
+          "cpu": 0.006417158999999728,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.0064013220253400505,
+          "cpu": 0.006401599000000147,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":1}",
+          "original_ids_sha256": "7c5547607a58e1efbcbef124f23dac33b82913d44b900f9e8a29a8c39d4de08c",
+          "wall": 0.0064025240135379136,
+          "cpu": 0.006402838999999716,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.006406456988770515,
+          "cpu": 0.006402914999999787,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "mixed",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.0063995689852163196,
+          "cpu": 0.006400006000000236,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.005805666034575552,
+          "cpu": 0.0058060529999997,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "walk4_root",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010248377977404743,
+          "cpu": 0.01024882699999985,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010394697019364685,
+          "cpu": 0.010395191999999831,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "walk4_state",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010482902987860143,
+          "cpu": 0.010492202000000006,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.01065738603938371,
+          "cpu": 0.010657683000000251,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "walk16_root",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.009974204993341118,
+          "cpu": 0.009974730000000154,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010151587019208819,
+          "cpu": 0.010166463000000014,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "walk16_state",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010206909035332501,
+          "cpu": 0.010199578000000376,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.011462569993454963,
+          "cpu": 0.011463057000000276,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "pool16_root",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.009997275948990136,
+          "cpu": 0.009997639999999919,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.011272435949649662,
+          "cpu": 0.011272893000000117,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "pool16_state",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010265605000313371,
+          "cpu": 0.010265972000000012,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.012735756987240165,
+          "cpu": 0.012735950999999801,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "pool_batch16_root",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.00998804101254791,
+          "cpu": 0.009997088999999626,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010911354969721287,
+          "cpu": 0.01091173699999981,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "pool_batch16_state",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010258455004077405,
+          "cpu": 0.01027311899999983,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":1}",
+          "original_ids_sha256": "7c5547607a58e1efbcbef124f23dac33b82913d44b900f9e8a29a8c39d4de08c",
+          "wall": 0.012076304003130645,
+          "cpu": 0.012076812000000103,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "known_p_root",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010014881030656397,
+          "cpu": 0.010015265000000273,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010146807006094605,
+          "cpu": 0.010147225999999954,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "known_p_state",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010230073996353894,
+          "cpu": 0.010230451000000418,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":1}",
+          "original_ids_sha256": "7c5547607a58e1efbcbef124f23dac33b82913d44b900f9e8a29a8c39d4de08c",
+          "wall": 0.01061955705517903,
+          "cpu": 0.010619939999999772,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "raw_root",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.009958212031051517,
+          "cpu": 0.009958622000000084,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.009940235002432019,
+          "cpu": 0.009953083999999723,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "raw_history",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010193910973612219,
+          "cpu": 0.010194301999999933,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010211188986431807,
+          "cpu": 0.010211749000000214,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    },
+    {
+      "method": "raw_state",
+      "temperature": 1.0,
+      "first_equal": true,
+      "pair": [
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010235601977910846,
+          "cpu": 0.01020746100000025,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        },
+        {
+          "status": "valid_json",
+          "error": null,
+          "output": "{\"answer\":0}",
+          "original_ids_sha256": "a8e658707400b8483477c3f00364f4491d0c82aeea86e575fda4d1bef8b24b49",
+          "wall": 0.010213906993158162,
+          "cpu": 0.01021424400000015,
+          "queries": 2,
+          "forwards": 2,
+          "native_complete": false,
+          "rejections": 0,
+          "recovery": "not_needed"
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "native_experiment_v4.py": "4fdba0d8644b15d4f221ac94195f0935668e37bbea530ed6d449b05e133b77a0",
+    "raw_noise.py": "7969b7176623aca8de76db5f5dc0f2e52032ec11cdcec0bd4d2b92b43b4c215c",
+    "stopping_tree_lp.py": "cdd82da7b55b468c9746c14d60100c653e624f6496c3b4f54c16ed34449b025e",
+    "native_noise_v4.py": "5cb6cc3b5364e47f3e8615aaf30025dd77ae491d6a78a47e6f7ce58582d518ee",
+    "probe_native_v4.py": "26eb244fee0601d5dc6aa2e354e46ed194c3515068980df1b99953df170caeea",
+    "native_state.py": "3c324ac507dafc6116eb9c2b9454fa9b109878661ef743dddbdff0bcfc9fca76",
+    "native_noise_v2.py": "aff4f2a845c2887a6b028057cf1152b75865c9106372b41b6557cb4db68d2dfa",
+    "native_decode_v4.py": "42215b9f0071081e4a8b10ad211b63a6bcdc04892791e1a42606b63db268f62c",
+    "probe_native.py": "aec51e0799df542eb23a5eae81167b3b214f8166a2767dae6d2ccd9f85ae3a13",
+    "gsm_inputs.py": "546c7d912f73da813d2e67b61f611af30edfade61054b250262c97ca20ea3937",
+    "native_noise.py": "f3d46990be531adc4e251a5dd257ae4e8b13bb97ea0db5dcd768fc8276ccba9b",
+    "native_fixture.py": "eaa53c2151f11678d5b4dbb1b1e8e9c22a52af1b83348ae895f3e37dff7816e8",
+    "probe_native_v2.py": "8ed7e9a8ef2ee91835d8b8fc0aaf4f109538a757c0ac5d9c9e775f37a4eb75b8",
+    "probe_numeric_v4.py": "6a75afad0a90d091552e130aaa39ef22c18c7cfddffccd02db0c2a664e7cb550",
+    "raw_ledger.py": "cfa3e47adc87514171c4a6ed321090f5722a4beb421fe3e96bf9900beb70e969",
+    "oracle.py": "4ab574348cc11061ee84025337b914d55815f4bac51643b1c338e30d5615d588",
+    "walk.py": "e1fd967db7347cb25b8aeb3d5554930484812a00688c89c492024107aa6a0c3a",
+    "numeric_task.py": "675c0539e939286baa36493544702cd15e3599f3b5935cf8359118a9edf582ab",
+    "raw_anchored_ledger.py": "cdac6c755b18c7c4563389af6338df1045a5cb91a1a7d7810db366e256c76f58",
+    "pool.py": "b0824f6f5bf7c557abc7c23abd1ea7070ca79aeab16b1dd0590eb5bd085822f8",
+    "numeric_partition.py": "a794f08149785b6f354001f6ea83249c9a5885424a4b76511a5e0cd4e1f9894a"
+  }
+}

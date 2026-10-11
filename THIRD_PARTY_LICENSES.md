@@ -24,3 +24,13 @@ Source:https://github.com/ShishirPatil/gorilla; original license preserved at
 The external checker is downloaded separately into cache, pinned by SHA;
 our adapter keeps original function bodies and uses Python-only registry.
 No model weights are distributed.
+
+GSM8K question excerpts in
+`attempts/32-native-oracle-antithetics/work/gsm-inputs-v4.json`:
+MIT, original OpenAI grade-school-math commit
+`3101c7d5072418e28b9008a6636bde82a006892c`.
+Source: https://github.com/openai/grade-school-math; unmodified license retained
+at `attempts/32-native-oracle-antithetics/work/GSM8K-LICENSE.txt`.
+The combined upstream files contain annotations; question-only selection
+ignores answers and is declared separately from evaluation. No claim of
+newly authored or previously unseen model-training questions is made.

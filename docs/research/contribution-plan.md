@@ -1850,3 +1850,23 @@ numéricos. Não prova otimalidade pontual geral nem prioridade/publicabilidade.
 Registros e fonte anteriores conservados em32/work/evidence/stopping-tree-v3.
 O contexto da comparação continua conhecido-p mais forte e integração real
 com custos inteiros, cuja utilidade ainda precisa ser medida honestamente.
+
+## 2026-10-11 — A32v4, aplicação numérica externa antes de heads
+
+O protocolo e produtor serão congelados antes dos gabaritos de avaliação e
+novos forwards:32 train/64 test GSM8K oficial pinado, seleção por hash só de
+perguntas. Os arquivos públicos combinam perguntas/respostas; seleção descarta
+answer sem inspecionar valores, mas não se alega nunca baixar esses bytes.
+GLC aceita JSON de número irrestrito, sem resposta esperada embutida. Trata
+uma subclasse regular, não demonstra recursão geral nem nova criação de regras.
+16 métodos por temperatura e determinístico incluem EPIC completo iid2/iid4,
+mistura de temperatura, raw-ticket root/history/state, pools compactos e
+vetorizados da mesma lei e known-p competitivo (aproximação PL contínua
+declarada). Gate independente64 casos/8 seeds somente após desenvolvimento.
+
+864 checks FALSOS preservam primeira trajetória/RNG; wrapper completo passa
+32 configurações/68 respostas FALSAS com IDs especiais originais.135 testes
+offline68.297s. Nenhum head real A32 ao preparar este contrato, nenhum
+benefício ou novidade suficiente estabelecidos por esses checks. Custos
+incluem setup/classe/forward/cache/recovery/verificador/output; a própria
+telemetria comum está incluída, não é comparação com EPIC sem instrumentação.

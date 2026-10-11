@@ -63,6 +63,15 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   python -m attempts.32-native-oracle-antithetics.work.stopping_tree_lp
   --output .cache/a32-stopping-tree-v3/results.json --max-budget 10`.
   No claim of pointwise expected optimality for arbitrary n/p or publication.
+- [x] T5206: V4 external numerical JSON operation and8 criteria before heads.
+  Official GSM8K questions selected by input-only hash:32 train/64 test,
+  unrestricted number grammar. Frozen16-method complete-EPIC protocol includes
+  iid4, mixed/deterministic, raw finite-ticket controls, compact AND batched
+  same-law pools and approximate-known-p maximum coupling.864 FAKE first-path
+  /RNG checks pass,588 meetings4916 extra draws3900 fake calls.32 full-wrapper
+  configurations/68 FAKE responses pass.135-test offline suite68.297s.
+  No real A32 forward, semantic gain or competitive timing yet. Source commit
+  and push must precede train gold evaluation; test branch remains gated.
 
 ## M51 — Sufficient-state coupling: comparative theorem before neural work
 

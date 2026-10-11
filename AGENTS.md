@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem133 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem135 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -268,6 +268,14 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   finitas tem36 certificados duais exatos/18 reconstruções inconclusivas, sem
   contraexemplo numérico; não prova otimalidade pontual geral. Nenhum head
   neural novo para32 até aqui. Novidade/benefício real continuam pendentes.
+  V4 congela aplicação externa de JSON numérico:32 train/64 test do GSM8K
+  pinado escolhidos somente por hash das perguntas, número irrestrito na
+  gramática.16 métodos/configurações por temperatura incluem iid4, misto,
+  raw tickets, pool compacto/vetorizado de MESMA lei e known-p aproximado
+  (PL contínuo, não lei nativa finita exata).864 replays de heads FALSOS e
+ 32 checks do wrapper com68 respostas passam;135 testes68.297s. Protocolo
+  antes de heads/gabaritos de avaliação; branch independente condicionada.
+  Nenhum ganho real, prioridade ou publicabilidade A32 confirmado ainda.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

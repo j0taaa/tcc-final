@@ -116,3 +116,26 @@ Comando opt-in pinado SciPy1.16.3/NumPy2.4.6 e fonte preservados em
 Continua faltando benefício prático independente e novidade específica
 suficiente. A resposta não é esconder Nacu–Peres nem executar um benchmark
 favorável: primeiro fechar o resultado próprio e o comparador competente.
+
+## V4 — aplicação pública numérica, protocolo antes de heads
+
+`work/protocol-v4-inputs.md` reavalia as oito perguntas; `protocol-v4.md/json`
+fixam métodos, custos, sementes e gates antes de novos forwards.32 perguntas
+train e64 test do GSM8K oficial pinado são escolhidas só por hash da pergunta;
+seleção não acessa valores de respostas, embora os arquivos públicos baixados
+contenham ambas. A gramática aceita qualquer número, sem catálogo do gabarito.
+JSON numérico é subclasse regular de GLC, não teste de recursão geral.
+
+Inclui EPIC completo iid2/iid4, temperatura mista/determinística, raw-ticket
+root/history/state pinados de31, pools compactos e vetorizados e um controle
+known-p competitivo (aproximação PL contínua declarada, não lei finita exata).
+Classe numérica só projeta ruído e não poda IDs. Nenhum novo forward A32
+foi produzido ao preparar este contrato; confirmação é condicional ao gate.
+
+864 replays de heads FALSOS passam com primeira trajetória e RNG preservados,
+588 encontros4916 draws auxiliares3900 calls falsas, registrados em
+`work/evidence/native-fake-v4.json`. Smoke separado atravessa wrapper completo
+com126337 IDs falsos:32 configurações/68 respostas. Draft original preservado
+com seus hashes, antes da anotação ClassVar. Dois novos testes independentes
+de avaliação JSON numérica passam; toda suíte135 passa68.297s.
+Isto valida fronteiras de implementação, não novidade, acerto real ou timing.

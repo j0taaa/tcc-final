@@ -1,0 +1,23 @@
+{
+  "source_commit": "0a27a24830185d7f34ba1ddd57f8d73b237f429b",
+  "controls": {
+    "raw_noise.py": {
+      "original_path": "attempts/31-sufficient-state-coupling/work/native_noise_v3.py",
+      "original_sha256": "c17d634620a54a20fa30387135cc167163f6097411c5e3dbf89f6760d6ce5eca",
+      "copied_sha256": "7969b7176623aca8de76db5f5dc0f2e52032ec11cdcec0bd4d2b92b43b4c215c",
+      "change": "only relative module names for independent A32 copy"
+    },
+    "raw_anchored_ledger.py": {
+      "original_path": "attempts/31-sufficient-state-coupling/work/anchored_ledger.py",
+      "original_sha256": "9b94c54ac9110d2b261ef62a1748c27d912b8d98806f872a24d9f9d7eabc1f75",
+      "copied_sha256": "cdac6c755b18c7c4563389af6338df1045a5cb91a1a7d7810db366e256c76f58",
+      "change": "only relative module names for independent A32 copy"
+    },
+    "raw_ledger.py": {
+      "original_path": "attempts/31-sufficient-state-coupling/work/ledger.py",
+      "original_sha256": "cfa3e47adc87514171c4a6ed321090f5722a4beb421fe3e96bf9900beb70e969",
+      "copied_sha256": "cfa3e47adc87514171c4a6ed321090f5722a4beb421fe3e96bf9900beb70e969",
+      "change": "only relative module names for independent A32 copy"
+    }
+  }
+}

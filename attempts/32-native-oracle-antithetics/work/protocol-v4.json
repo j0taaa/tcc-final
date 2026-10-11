@@ -1,0 +1,163 @@
+{
+  "schema": 4,
+  "inputs_sha256": "a6d1a0864e383a3cc2bb7822c88fa8bb34512896ee7f84685513cbcf744959ca",
+  "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+  "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+  "native_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+  "cpu_threads": 4,
+  "gen_length": 64,
+  "block_length": 64,
+  "steps": 32,
+  "max_resamples": 256,
+  "max_prompt_tokens": 1024,
+  "methods": [
+    {
+      "id": "iid2",
+      "kind": "iid",
+      "K": 2
+    },
+    {
+      "id": "iid4",
+      "kind": "iid",
+      "K": 4
+    },
+    {
+      "id": "mixed",
+      "kind": "mixed",
+      "K": 2
+    },
+    {
+      "id": "walk4_root",
+      "kind": "walk",
+      "K": 2,
+      "budget": 4,
+      "mode": "root",
+      "candidate": true
+    },
+    {
+      "id": "walk4_state",
+      "kind": "walk",
+      "K": 2,
+      "budget": 4,
+      "mode": "state",
+      "candidate": true
+    },
+    {
+      "id": "walk16_root",
+      "kind": "walk",
+      "K": 2,
+      "budget": 16,
+      "mode": "root",
+      "candidate": true
+    },
+    {
+      "id": "walk16_state",
+      "kind": "walk",
+      "K": 2,
+      "budget": 16,
+      "mode": "state",
+      "candidate": true
+    },
+    {
+      "id": "pool16_root",
+      "kind": "pool",
+      "K": 2,
+      "budget": 16,
+      "mode": "root"
+    },
+    {
+      "id": "pool16_state",
+      "kind": "pool",
+      "K": 2,
+      "budget": 16,
+      "mode": "state"
+    },
+    {
+      "id": "pool_batch16_root",
+      "kind": "pool_batch",
+      "K": 2,
+      "budget": 16,
+      "mode": "root"
+    },
+    {
+      "id": "pool_batch16_state",
+      "kind": "pool_batch",
+      "K": 2,
+      "budget": 16,
+      "mode": "state"
+    },
+    {
+      "id": "known_p_root",
+      "kind": "known_p",
+      "K": 2,
+      "budget": 512,
+      "mode": "root"
+    },
+    {
+      "id": "known_p_state",
+      "kind": "known_p",
+      "K": 2,
+      "budget": 512,
+      "mode": "state"
+    },
+    {
+      "id": "raw_root",
+      "kind": "raw",
+      "K": 2,
+      "mode": "root"
+    },
+    {
+      "id": "raw_history",
+      "kind": "raw",
+      "K": 2,
+      "mode": "history"
+    },
+    {
+      "id": "raw_state",
+      "kind": "raw",
+      "K": 2,
+      "mode": "state"
+    }
+  ],
+  "temperatures": [
+    0.5,
+    1.0
+  ],
+  "coordinate": "first",
+  "development_seeds": [
+    321001,
+    321002,
+    321003,
+    321004
+  ],
+  "confirmation_seeds": [
+    322001,
+    322002,
+    322003,
+    322004,
+    322005,
+    322006,
+    322007,
+    322008
+  ],
+  "torch_seed_label_offset": 10000000,
+  "auxiliary_seed_offset": 20000000,
+  "method_shuffle_offset": 30000000,
+  "cache_bytes": 2147483648,
+  "native_env": {
+    "CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH": "1",
+    "CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH": "2",
+    "CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT": "1",
+    "CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER": "1"
+  },
+  "selection_and_confirmation": "protocol-v4.md, frozen before real model heads",
+  "metric": "exact Fraction numeric answer equality, strict JSON single key answer",
+  "cost": "all deployment setup, native recovery, cache/transfers, unique forwards, auxiliary rows, output and verifier; common model/tokenizer load separately excluded",
+  "no_claims": [
+    "acceptance or originality confirmed",
+    "native finite law exact for approximate known_p",
+    "arbitrary recursion empirically tested",
+    "pointwise oracle cost optimum",
+    "better expected coverage than same-law pool16"
+  ]
+}
