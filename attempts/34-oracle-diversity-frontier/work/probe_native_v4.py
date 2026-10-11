@@ -80,7 +80,9 @@ def streams(device):
 
 def probe(device, seed, temperature, max_resamples, steps=2, valid=False):
     device = torch.device(device)
-    grammar = CFG.from_text("S -> lexNumber", "S").to_normal_form()
+    # A two-digit language admits min-batch2; the one-digit refusal stays.
+    source = "S -> lexNumber lexNumber" if valid else "S -> lexNumber"
+    grammar = CFG.from_text(source, "S").to_normal_form()
     lexical = compile_lex_map({"lexNumber": "(0|1)"})
 
     def factory(model):

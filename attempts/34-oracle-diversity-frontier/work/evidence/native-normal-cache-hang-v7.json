@@ -1,0 +1,20 @@
+{
+  "scope": "FAKE fixture coverage failure, NOT a timing/benefit measurement",
+  "fixture": "two lexNumber grammar, valid=True, CPU seed0 T0 budget1 steps1",
+  "result": "no returned first event; live and isolated direct-native probe hang",
+  "sources": {
+    "probe_native_v4.py": "2fff41e0e9587179caee2cea74e51197f700e5329c228f8a1b9f26a6f7221732",
+    "ruin.py": "f53bff994647be5188432baa7dd280fd843c0e33e9a56558cf1f718d2a90fea0",
+    "arithmetic_task_v6.py": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b",
+    "native_transition_v4.py": "06831108b492ff4ee97b7fbee8f4c563145bfebc09181166f7e7e7022abb6b35"
+  },
+  "trace": [
+    "probe_native_v4.py:108 direct native expected path",
+    "generate_constrained.py:348 regular cover",
+    "regular_cover.py:300 exact_shrink",
+    "constrain_utils.py:538 is_graph_intersection_empty"
+  ],
+  "static_cause": "cfg.rs:2094 _in_normal_form.get_or_init calls is_normal_form(), which calls the same OnceCell get_or_init at305; new decomposed CFG cache may be uninitialized",
+  "failure_status": "external deadlock before timeout loop; no evidence JSON rows emitted",
+  "fix_proposed": "call to_normal_form twice in shared setup: second initializes the existing normal-form flag before cloning; do not modify vendor; supply identically to controls"
+}

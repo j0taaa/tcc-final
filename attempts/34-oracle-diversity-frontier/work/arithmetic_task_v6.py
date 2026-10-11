@@ -2,6 +2,7 @@
 
 import json
 import re
+from decimal import Decimal
 from fractions import Fraction
 
 LEXICAL = {
@@ -59,6 +60,9 @@ def root_operator(text):
 
 
 def evaluate(text):
+    if len(text) > 65536:
+        raise ValueError("interpreter input budget")
+
     def fields(items):
         if len({k for k, _ in items}) != len(items):
             raise ValueError("duplicate key")
@@ -67,10 +71,18 @@ def evaluate(text):
     def invalid_constant(_):
         raise ValueError("non-JSON numeric constant")
 
+    def number(raw):
+        if len(raw) > 256:
+            raise ValueError("numeric literal length budget")
+        decimal = Decimal(raw)
+        if not decimal.is_finite() or abs(decimal.as_tuple().exponent) > 1024:
+            raise ValueError("numeric exponent budget")
+        return Fraction(decimal)
+
     value = json.loads(
         text,
-        parse_int=Fraction,
-        parse_float=Fraction,
+        parse_int=number,
+        parse_float=number,
         parse_constant=invalid_constant,
         object_pairs_hook=fields,
     )
@@ -91,14 +103,18 @@ def evaluate(text):
         a, b = (run(x, depth + 1) for x in args)
         op = node["op"]
         if op == "add":
-            return a + b
-        if op == "sub":
-            return a - b
-        if op == "mul":
-            return a * b
-        if op == "div":
-            return a / b
-        raise ValueError("unknown operation")
+            result = a + b
+        elif op == "sub":
+            result = a - b
+        elif op == "mul":
+            result = a * b
+        elif op == "div":
+            result = a / b
+        else:
+            raise ValueError("unknown operation")
+        if max(result.numerator.bit_length(), result.denominator.bit_length()) > 16384:
+            raise ValueError("intermediate arithmetic bit budget")
+        return result
 
     if not isinstance(value, dict):
         raise ValueError("root must be an operation")

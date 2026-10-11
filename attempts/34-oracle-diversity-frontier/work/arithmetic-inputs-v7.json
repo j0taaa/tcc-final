@@ -1,0 +1,57 @@
+{
+  "repository": "openai/grade-school-math",
+  "revision": "3101c7d5072418e28b9008a6636bde82a006892c",
+  "source_train": {
+    "url": "https://raw.githubusercontent.com/openai/grade-school-math/3101c7d5072418e28b9008a6636bde82a006892c/grade_school_math/data/train.jsonl",
+    "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "bytes": 4166206,
+    "total": 7473,
+    "eligible": 7473,
+    "selected": 32,
+    "refusals": []
+  },
+  "previous_input_manifest_sha256": "a6d1a0864e383a3cc2bb7822c88fa8bb34512896ee7f84685513cbcf744959ca",
+  "selection": "FIRST eight existing input-only hash-ranked TRAIN questions; no golds accessed by this producer",
+  "records": [
+    {
+      "id": "train:6003",
+      "question": "Mr. Isaac rides his bicycle at the rate of 10 miles per hour for 30 minutes. If he rides for another 15 miles, rests for 30 minutes, and then covers the remaining distance of 20 miles, what's the total time in minutes took to travel the whole journey?",
+      "selection_sha256": "000a103c464f9f9162c2504504b8f5c374a2117c94ede9b974aca531243406e3"
+    },
+    {
+      "id": "train:536",
+      "question": "In the baking contest, three times as many people voted for the unicorn cake compared to the witch cake, and the number of votes for the dragon cake was 25 more than the number of votes for the witch cake. If 7 people voted for the witch cake, how many votes were cast total?",
+      "selection_sha256": "000f61c3eaebaf410b5dbbcf08fa61b10fbfc17adb3ef13a7cdec13fc96d3a09"
+    },
+    {
+      "id": "train:4749",
+      "question": "Lassie eats half of her bones on Saturday. On Sunday she received 10 more bones. She now has a total of 35 bones. How many bones did she start with before eating them on Saturday?",
+      "selection_sha256": "001278e52b116bb83e1bfe2541f464538ba6e5a3b55b2ff8e72a2b3fa057c07d"
+    },
+    {
+      "id": "train:3964",
+      "question": "A conference center has six rooms. Each room can hold up to 80 people. Today, the conference center is only 2/3 full. How many people are in the conference center?",
+      "selection_sha256": "0016e8d17c60df3bf126dbb1959053574ba754424836ecbb5c66f09033b3f943"
+    },
+    {
+      "id": "train:7074",
+      "question": "A car traveled 360 miles in 4 hours and 30 minutes. What was its speed in miles per hour?",
+      "selection_sha256": "00231fc2a05c58add33455fdfde7a30ad2742c4d484c40dd59ece875dc556486"
+    },
+    {
+      "id": "train:169",
+      "question": "Borris liquor store uses 90 kilograms of grapes every 6 months. He is thinking of increasing his production by twenty percent. How many grapes does he need in a year after increasing his production?",
+      "selection_sha256": "002d7daff784970278d2c54a03ec76953919647c3c1325b266c88fd7183b8f6d"
+    },
+    {
+      "id": "train:7144",
+      "question": "The price of an iPhone fell 10% in a particular month and another 20% in the second month.  If the initial price was $1000, calculate the price after the second month.",
+      "selection_sha256": "002dc85ff65964ababb6bd6fd95a19e0aee61f3c4068cd9515bce82bae64f536"
+    },
+    {
+      "id": "train:2679",
+      "question": "Gretchen, Mitzi, and Beth went bowling together. Gretchen bowled a 120. Mitzi bowled a 113. Beth bowled an 85. What was their average bowling score?",
+      "selection_sha256": "0040803cf248c6628cf4f83e5f7948f7ff806ea597fa046a6a06969d7e0580f7"
+    }
+  ]
+}
