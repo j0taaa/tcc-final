@@ -1,0 +1,67 @@
+{
+  "scope": "Old-input FUNCTIONAL/INFORMATION only; NOT coupling, quality, or competitive timing evaluation",
+  "producer_commit": "a395f1b426a59dc0a0778799730b7c6117c39802",
+  "sha256": "d48c3826c0027f29e5afc8cf998f9251514c8c73971f473d0ec384f5b85c7d15",
+  "metadata_sha256": "88b05dc2038261b9b7391f83767a6bca98ea79a4cb32acf2acab3167afaed211",
+  "requests": 32,
+  "helper_original_full_regressions": 16,
+  "anchors": 8,
+  "new_forwards": 120,
+  "extra_helper_forwards": 0,
+  "nonanchor_classes": {
+    "chal-102": [
+      {
+        "key": [
+          "ROOT_UNKNOWN",
+          "LEFT_UNKNOWN"
+        ],
+        "count": 6
+      }
+    ],
+    "chal-979": [
+      {
+        "key": [
+          "ROOT_UNKNOWN",
+          "LEFT_UNKNOWN"
+        ],
+        "count": 3
+      },
+      {
+        "key": [
+          "sub",
+          "NUMBER:12"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "add",
+          "NUMBER:12"
+        ],
+        "count": 1
+      }
+    ],
+    "chal-16": [
+      {
+        "key": [
+          "ROOT_UNKNOWN",
+          "LEFT_UNKNOWN"
+        ],
+        "count": 6
+      }
+    ],
+    "chal-142": [
+      {
+        "key": [
+          "add",
+          "LEFT_UNKNOWN"
+        ],
+        "count": 6
+      }
+    ]
+  },
+  "preparation_cpu_cache_mib_range": [
+    641.7144012451172,
+    893.8163032531738
+  ]
+}

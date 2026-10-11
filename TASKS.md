@@ -34,14 +34,18 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Fixed root/left-choice frontier, immutable paid anchor trace, strong dynamic
   cache and three-source-without-replacement controls mandatory. Conditioning
   and cache are KNOWN; A39 no-free-label minimax does NOT cover anchor information.
-- [ ] T6001: Minimal independent implementation; verify unchanged native
+- [x] T6001: Minimal independent implementation; verify unchanged native
   generator/private RNG/model heads and stop before every uncached helper call.
   All old inputs/four predefined sources, original-ID regressions; no quality
   or performance gate from this information audit. Freeze source before outputs.
-  V2 isolated111-line trace/37-line key plus opt-in adapter; CPU/CUDA multi-step
+  V2 minimal isolated trace/key plus opt-in adapter; CPU/CUDA multi-step
   original-ID/status/RNG/head-clone and guarded-miss checks PASS (no neural model).
   Information audit is32 requests/8 old anchors,16 full regressions; first helper
   deliberately repeats anchor, so NOT a pass3/coupling experiment. No output yet.
+  V3 capture complete32/32 OK,16 full-ID/status helper matches, eight anchors,
+ 120 new forwards, zero helper misses/forwards. Excluding anchor replay, only
+  one of four inputs has varied key; traces642--894MiB and prefix cost0.103--3.128s.
+  NOT a coupling/quality/competitive gate; decision/information-audit-v3 preserved.
 - [ ] T6002: Specific prior/reduction audit, useful complete-cost consequence
   against competent dynamic-cache/native controls, independent proof and heldout
   evaluation if the development observation is informative. Goal remains open.

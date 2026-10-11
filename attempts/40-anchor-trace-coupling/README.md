@@ -76,3 +76,13 @@ for functional replay, NOT an independent-anchor coupling experiment;16 full
 helper-ID regressions include eight cache-miss continuations. Details and
 eight-criterion reassessment: `work/README-information-v2.md`. No actual
 new head/quality/performance or publication evidence yet.
+
+V3 information capture complete:32/32 OK,16 helper final-ID/status checks,
+eight anchors,120 actual new forwards. Every helper has zero extra forward.
+Exclude helper1 (anchor replay): only one of four old inputs has varied keys;
+others constant. CPU traces642--894MiB and cached lookups0.103--3.128s.
+No true coupling run, independent semantic gate or competitive timing claim.
+`work/information-decision-v3.md` preserves insufficiency; source hashes and
+all outcomes in the generated audit. All eight criteria still apply, priority
+and useful magnitude OPEN. A training application must first confront actual
+MIRROR/P-POTS sources; it is not an already implemented solution.

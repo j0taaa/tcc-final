@@ -495,7 +495,11 @@ Classificador root/left-choice fixo, todos inputs/seeds antigos, auditoria
 funcional/informacional apenas. V2 prototype CPU/CUDA PASS de IDs/status/RNG,
 clones próprios e cache-miss recusado antes do forward. Captura32 requests/8
 âncoras antigas tem16 regressões full-ID; primeiro helper repete a âncora,
-NÃO é experimento da lei pass3. Nenhum output/modelo novo ou artigo ainda.
+NÃO é experimento da lei pass3. V3 fecha32/32,16 full-ID/status matches,
+120 forwards novos; helpers zero. Excluindo replay da âncora, só uma de quatro
+entradas tem key diversa; cacheCPU642--894MiB, prefixos0.103--3.128s. Nenhum
+gate competitivo/semântico ou publicação; não chamar helper sem forward de
+trabalho grátis. Novidade/benefício continuam abertos, sem artigo promovido.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma
