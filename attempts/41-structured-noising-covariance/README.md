@@ -144,3 +144,21 @@ bank geometry has free known labels/masses and permits analytical inverse
 controls; its covariance improvement CANNOT be reported as a useful opaque-
 oracle performance victory. No new neural outputs exist yet. Setup fitting,
 strong count/importance/CV/RSS/pivotal controls and priority remain charged/open.
+
+## V6 — exact original count-noising source before the first neural observation
+
+V5's declared finite seed map was not identical to the ideal count law; it
+has ZERO external forwards and remains archived. The new standard integer
+ticket/unranking representation gives EXACTLY uniform mask count and uniform
+subsets within count, including latent aliases. The written corollary in
+`work/exact-count-source-v6.md` links this to the original time-independent
+normalized NELBO, not a finite seed-map approximation. This is correctness,
+not a new uniform-sampling principle. Polynomial bit cost is explicit.
+
+Criteria1/4/6/7 are refined: source preparation and known alias/count information
+are charged/available to competitors. Opaque arbitrary-map query bounds do
+NOT establish optimality over all mask-specific algorithms. Independent small
+mask enumeration checks exact probabilities and aliases; numerical role,
+proxy, CPU/CUDA bias-gradient and pivotal geometry checks remain. Protocol v6
+is frozen before ALL actual model observations, still an information audit
+on six old development inputs, not a competitive or publication gate.

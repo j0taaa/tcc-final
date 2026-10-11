@@ -61,6 +61,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   full OUTPUT-BIAS gradient only. Own pin/hash copies; cheap proxy fixed
   before evaluation. Known64-source-bank geometry is NOT an opaque-source
   competitive gate. No new external model outputs yet; preserve setup costs.
+  V6: BEFORE first neural observation replace the finite seed map by a standard
+  exact rational count/subset source with original aliases, connecting to the
+  original time-independent normalized NELBO. Independent mask enumeration
+  checks n=1..7 and n=64 boundary/alias cases. No source enumeration in use;
+  polynomial bit cost is charged. Transparent count/alias controls admitted;
+  opacity minima are not lower bounds on all mask-specific algorithms.
 - [ ] T6102: Only if difference/cost plausibility survives, freeze real JSON/DSL
   noising-score protocol with competent MIRROR/time/importance/analytic/extra-iid
   controls and all costs. No experiments or improved training claimed yet.

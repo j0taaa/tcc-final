@@ -534,6 +534,11 @@ preparação são cobrados. Conta-NELBO é conhecido, gradiente é somente BIAS
 de saída full-V. Banco64 conhecido oferece massas/inversos gratuitos; seu
 ganho de covariância não é vitória prática de oracle opaco. Nenhum novo
 head/treinamento/resultado neural nesta versão prospectiva.
+V6 substitui o mapa finito de seeds por tickets/unranking EXATOS para a lei
+conhecida conta-NELBO, ANTES de qualquer head real. Aliases originais e custo
+em bits são preservados; embedding não é novidade. Oráculos enumeram todos
+os masks pequenos e casos limite64. Informação analítica de contagem/aliases
+é permitida aos controles; bound opaco não limita todos os algoritmos de masks.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

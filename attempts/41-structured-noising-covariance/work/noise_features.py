@@ -1,7 +1,6 @@
 """Cheap original count corruptions and complete-JSON lexical role features."""
 
 import re
-from random import Random
 
 import numpy as np
 
@@ -35,14 +34,6 @@ def roles(text, offsets):
         else:
             i += 1
     return np.array([next((c for c in (1, 0, 2) if c in labels[a:b]), 3) for a, b in offsets])
-
-
-def corruption(seed, n):
-    rng = Random(seed)
-    k = rng.randrange(1, n + 1)
-    mask = np.zeros(n, dtype=bool)
-    mask[rng.sample(range(n), k)] = True
-    return mask
 
 
 def features(mask, role):

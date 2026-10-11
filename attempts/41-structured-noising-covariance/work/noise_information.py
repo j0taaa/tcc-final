@@ -13,8 +13,9 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer
 
+from .count_source import CountSource
 from .mdlm_loader import load_cpu_model
-from .noise_features import classify, corruption, features, fit_proxy, roles
+from .noise_features import classify, features, fit_proxy, roles
 
 WORK = Path(__file__).resolve().parent
 ROOT = WORK.parents[2]
@@ -62,7 +63,7 @@ def bank_geometry(values, labels):
 def run(output, cache):
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT).strip():
         raise ValueError("freeze producer/protocol before model outputs")
-    protocol = json.loads((WORK / "information-protocol-v5.json").read_text())
+    protocol = json.loads((WORK / "information-protocol-v6.json").read_text())
     config = json.loads((WORK / protocol["model_config"]).read_text())
     output.mkdir(parents=True, exist_ok=False)
     metadata = dict(
@@ -70,7 +71,7 @@ def run(output, cache):
             ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True
         ).strip(),
         protocol_sha256=hashlib.sha256(
-            (WORK / "information-protocol-v5.json").read_bytes()
+            (WORK / "information-protocol-v6.json").read_bytes()
         ).hexdigest(),
         document_sha256=hashlib.sha256(
             (WORK / protocol["external_documents"]).read_bytes()
@@ -80,6 +81,7 @@ def run(output, cache):
             for p in (
                 WORK / "noise_information.py",
                 WORK / "noise_features.py",
+                WORK / "count_source.py",
                 WORK / "mdlm_loader.py",
             )
         },
@@ -125,14 +127,15 @@ def run(output, cache):
             assert encoded["input_ids"] == document["tokens"]
             role = roles(document["text"], encoded["offset_mapping"])
             original = torch.tensor([document["tokens"]], dtype=torch.long)
+            source = CountSource(original.shape[1])
             xs, scores, gradients = [], [], []
             beta = centers = None
             for index in range(protocol["fit"] + protocol["evaluate"]):
                 if index == protocol["fit"]:
                     target = np.column_stack((scores, np.array(gradients) @ directions.T))
                     beta, centers = fit_proxy(np.array(xs), target)
-                seed = source_rng.getrandbits(128)
-                mask = corruption(seed, original.shape[1])
+                address = source_rng.randrange(source.size)
+                mask = source.decode(address)
                 x = features(mask, role)
                 label = int(classify(x, beta, centers)) if beta is not None else None
                 ids = original.clone()
@@ -159,7 +162,8 @@ def run(output, cache):
                     document=document["key"],
                     phase="fit" if label is None else "evaluate",
                     index=index,
-                    seed=str(seed),
+                    address=str(address),
+                    source_size=str(source.size),
                     mask=np.flatnonzero(mask).tolist(),
                     label=label,
                     score=score,
@@ -180,6 +184,8 @@ def run(output, cache):
                 document=document,
                 role_counts=[int(np.sum(role == c)) for c in range(4)],
                 observations=protocol["evaluate"],
+                source_size=str(source.size),
+                source_bits=source.size.bit_length(),
                 score=bank_geometry(np.array(scores[protocol["fit"] :]), labels),
                 bias=bank_geometry(values, labels),
                 evaluation_score_gram=(values @ values.T).tolist(),

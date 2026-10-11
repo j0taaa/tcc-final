@@ -2,16 +2,43 @@
 
 import itertools
 from fractions import Fraction as Q
+from math import comb
 
 import numpy as np
 import torch
 
+from .count_source import CountSource
 from .noise_features import classify, features, fit_proxy, roles
 from .noise_information import bank_geometry
 from .test_reductions import pivotal_companion
 
 
 def run():
+    for n in range(1, 8):
+        source = CountSource(n)
+        observed = {}
+        for address in range(source.size):
+            mask = tuple(source.decode(address))
+            observed[mask] = observed.get(mask, 0) + 1
+        expected = {
+            tuple(bool(bits & (1 << j)) for j in range(n)): source.block // comb(n, k)
+            for bits in range(1, 1 << n)
+            if (k := bits.bit_count())
+        }
+        assert observed == expected
+        assert sum(observed.values()) == source.size
+    source = CountSource(64)
+    assert source.size.bit_length() <= 64 * 65 + 7
+    for address in (0, source.block - 1, source.block, source.size - 1):
+        assert source.decode(address).sum() == address // source.block + 1
+    assert np.array_equal(source.decode(0), source.decode(source.block // 64 - 1))
+    for invalid in (-1, source.size):
+        try:
+            source.decode(invalid)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("out-of-range source accepted")
     text = '["a,\\"b",-2.4e-3,true]'
     role = roles(text, [(i, i + 1) for i in range(len(text))])
     assert role.tolist() == [0, *([1] * 7), 0, *([2] * 7), 0, *([3] * 4), 0]
@@ -52,7 +79,8 @@ def run():
     result = bank_geometry(f, np.array(keys))
     assert abs(result["covariance"] - covariance) < 1e-12
     print(
-        "PASS full-V bias-gradient CPU/CUDA autodiff, JSON roles/proxy dimensions "
+        "PASS exact count/subset source law including aliases, full-V "
+        "bias-gradient CPU/CUDA autodiff, JSON roles/proxy dimensions "
         "and independent pivotal bank trace; ZERO external model forwards"
     )
 
