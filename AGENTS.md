@@ -462,7 +462,18 @@ partições finitas, todos verificadores brutos e60 coarsenings, incluindo
 contraexemplos a derangement/custo Wald/variância real.164 testes PASS70.995s,
 check/Ruff PASS. Ren2019 Theorem1 e suplemento8.1 são antecedentes explícitos
 de no-free-lunch finito; novidade query-cost e uso competitivo seguem abertos.
-Nenhum novo forward, timing, prioridade ou publicação confirmado.
+V3/v4 protocolo e producer foram congelados antes de modelos: v5 fecha72/72
+registros originais,1595 forwards novos,117 completos35 incompletos selecionados,
+0 erros. Cada prefixo usa zero forwards auxiliares; primeiros IDs completos e
+reruns por seed coincidem.74 rewrites EOS-to-PAD após terminador vêm do upstream,
+não de mudança do adapter: não alegar imutabilidade de TODO commit intermediário.
+Adaptive25 queries contra32 full, mediana5.155s/3 acertos em8; iid2 tem16 queries,
+5.041s/4 em8, menos memória. Piloto descritivo NÃO confirma benefício competitivo.
+Primeira observação é frequentemente EOS ou concentrada; três keys globais não
+provam classes informativas em cada input. Evidência e decisão39/work/*v5
+preservadas; investigar o PRIMEIRO passo neural inteiro antes de outro forward
+é nova fronteira/key a congelar, não relabelling da captura v4. Prioridade,
+publicabilidade e utilidade ampla continuam abertas.
 
 Antes de propor, implementar ou ampliar uma solução, responda às perguntas
 abaixo no README da tentativa. Reavalie as respostas a cada versão. Uma

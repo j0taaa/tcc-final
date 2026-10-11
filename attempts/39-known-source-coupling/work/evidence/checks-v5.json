@@ -1,0 +1,10 @@
+{
+  "scope": "Routine offline/current experimental style/integrity; no statistical or publication confirmation",
+  "make_check": {
+    "sha256": "58a4daacec22f24f698377d9716a72cdc40d764c43d9d0f75499dfb5b5d58906",
+    "tail": ".venv/bin/python -m ruff check src scripts\nAll checks passed!\n.venv/bin/python -m ruff format --check src scripts\n81 files already formatted\n.venv/bin/python -m mypy\nSuccess: no issues found in 58 source files\n.venv/bin/python scripts/archive_attempts.py --check\nPreserved 39 attempts / 117 versions / 81807 files (2,195,089,447 uncompressed bytes); integrity only, not scientific validation"
+  },
+  "explicit_ruff": "check and format --check all39/work and test_known_source_coupling PASS",
+  "active_suite": "164 tests PASS in70.995s before unchanged experimental producer; active tests/core unchanged since",
+  "live_adapter": "native-adapter-v4.json PASS; all72 actual native boundary/first audits PASS; generated offline audit-v5"
+}

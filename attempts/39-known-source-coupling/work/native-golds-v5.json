@@ -1,0 +1,11 @@
+{
+  "scope": "Golds exported ONLY AFTER full72-record capture closed; NEVER sampler input",
+  "capture_sha256": "8001d08ace1ad9311349932676a78c74401e08d77beecc48e2d5d52d5dfe60e8",
+  "source_sha256": "5be77703a6d891ae476d7c082787ad361392aa02453b132516cdd5f4e7934e3e",
+  "answers": {
+    "chal-16": "16.0",
+    "chal-102": "8.0",
+    "chal-142": "125.0",
+    "chal-979": "7.0"
+  }
+}

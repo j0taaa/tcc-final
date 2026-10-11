@@ -65,10 +65,21 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Ruff PASS. Original task/controls copied by immutable35f4ea6 hash, no mutable
   A38 imports. `39/work/evidence/native-adapter-v4.json`. Runtime will count
   all helper queries, full selected continuations and allocated/reserved memory.
-- [ ] T5905: After complete producer/archive freeze run ALL72 fresh original
+- [x] T5905: After complete producer/archive freeze run ALL72 fresh original
   native records under v3. Require zero-helper-forward and literal first
   full-ID invariants, preserve every failure/partial record. Golds only after
   closed capture; publish strongest-controls full-cost losses as well as gains.
+  Producer52df9a1/archivec0b2fd6;1595 new forwards (incl4 initial heads),
+ 117 complete35 incomplete selected,0 errors. Literal first and every prefix's
+  zero-helper-forward verified; original EOS-to-PAD suffix74 occurrences
+  documented, not a false invariant of immutable intermediate tokens.
+  Adaptive25 queries vs full32, pass2=3/8 vs iid2=4/8; medians5.155 vs5.041s,
+  memory8.303 vs7.542GiB. Functional pilot only, no useful/general victory.
+  `39/work/native-audit-v5.md`, generated JSON and usefulness-decision-v5.md.
+- [ ] T5906: Investigate whether the complete FIRST neural step has informative
+  nonterminal observations before any new forward; fix a source/observation
+  contract and compare competent controls BEFORE another capture. Current
+  first-yield results remain unaltered; no answer-conditioned selection.
 
 ## M58 — Empirical categorical coupling and pointwise cost optimum
 

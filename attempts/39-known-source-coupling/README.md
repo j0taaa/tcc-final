@@ -83,3 +83,13 @@ input-prefix slots have been checked without a neural model. No new native
 model outputs/timings yet. Criteria5--6 are now a concrete frozen protocol,
 not satisfied usefulness claims. Priority, magnitude and publication remain
 open; the A38 full-call losses and stronger seed controls remain relevant.
+
+V5: complete72/72 original first-yield pilot,1595 new forwards,117 complete
+and35 incomplete selected outputs, no errors. Runtime first retention and
+zero helper forwards pass. Adaptive25 prefix queries vs full32, but iid2
+and derangement need16; medians5.155s vs iid5.041s, pass2=3/8 vs4/8, more
+memory. Descriptive pilot does NOT confirm useful overall superiority.
+Original EOS-to-PAD suffix rewrites are recorded, never hidden as immutable
+internal commits. All nine controls/all inputs/all outcomes are preserved.
+Criteria2/3/6/8 remain unsatisfied for the requested publication/usefulness
+goal; see `work/usefulness-decision-v5.md`. No main article promotion.

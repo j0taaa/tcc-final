@@ -2165,3 +2165,14 @@ minimax sobre TODO score já é conhecido e o derangement atinge esse bound.
 A diferença candidata está na operação opaca de consultas/classes e seus
 limites de custo, não em anunciar um antitético universalmente melhor.
 Ver39/work/primary-comparison-v2.md; prioridade e aplicação continuam abertas.
+
+
+A39 v5 fecha72/72 piloto nativo com1595 forwards novos; 117 completos e35
+incompletos selecionados,0 erros. Helper no primeiro yield exige zero forwards;
+primeiros resultados completos/replays por seed coincidem. Sufixo EOS-to-PAD
+é política original,74 ocorrências documentadas. Adaptive3/8 mediana5.155s
+vs iid2 4/8 5.041s e menos memória; duas repetições são descritivas, sem
+confirmação de utilidade.39/work/usefulness-decision-v5.md preserva perdas e
+condições do ganho; fonte principal CARMS2021 §§2--3.2 conferida. Não promover
+como artigo/EPIC victory. Primeiro passo neural inteiro é hipótese seguinte
+a definir/congelar antes de outro experimento, sem trocar a key dos dados.
