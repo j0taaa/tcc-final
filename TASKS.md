@@ -39,6 +39,9 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   V1 numerical search16824 M<=20/count-budget cases with<=5 classes has no
   eigenvalue>1e-9; not proof. Primary SSP/two-phase/CP scopes in42/work/primary-v1.md.
   Registered producer3914311; frozen rerun and exploratory outputs retained.
+  V2 conditional matching theorem for arbitrary even pool size is written via
+  classical stable operators;38 independent matching enumerations/2213 finite
+  spectral checks pass. Frozen producer57fc6e2. UNCONDITIONAL step remains OPEN.
 - [ ] T6202: Only after theory/prior survives, select a useful operation and
   competent complete-cost controls. No publication or practical gate yet.
 

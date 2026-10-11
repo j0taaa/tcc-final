@@ -1,0 +1,12 @@
+{
+  "scope": "Exact rational joint law and38 independent matching enumerations;2213 finite spectral checks are not a universal proof or model result",
+  "source_commit": "57fc6e26347a35dede8d042f9604982c3bc98c8e",
+  "command": ".venv/bin/python -m attempts.42-safe-empirical-resampling.work.matching_probe --output attempts/42-safe-empirical-resampling/work/evidence/matching-v2.json",
+  "prototype_sha256": "7cc1e93faf8e8adb10e863c293c650474d6a69d231d33fba85fc957c72a52e18",
+  "checks": [
+    "ruff check: PASS after shortening metadata text",
+    "ruff format --check: PASS"
+  ],
+  "draft_lint": "Earlier E501 errors were not successful checks; draft metadata was longer. Registered rerun uses57fc6e2.",
+  "exploration": "Original .cache numerical report preserved separately; not assigned to a frozen producer at launch."
+}

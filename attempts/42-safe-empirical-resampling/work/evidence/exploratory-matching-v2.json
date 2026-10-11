@@ -1,0 +1,7 @@
+{
+  "scope": "Exact rational joint/marginals; eigenvalues locate only. No theorem or model experiment.",
+  "checked": 2213,
+  "independent_matching_oracles": 38,
+  "class_limit": 6,
+  "obstruction": null
+}

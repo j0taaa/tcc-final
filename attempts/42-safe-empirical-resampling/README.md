@@ -54,3 +54,10 @@ V1 finite numerical probe completes16824 populations/budgets, M<=20, at most5
 classes; largest eigenvalue1.33e-15. No general proof, exact sampler or neural
 utility claim. The primary-source scope and original exploratory outputs are
 retained in work; no failed earlier result is overwritten.
+
+V2 uses uniform minimum-repeat perfect matching and integer completion counts.
+38 independently enumerated matching oracles and2213 finite count/population
+checks pass. A written CONDITIONAL theorem now covers every even pool size,
+using classical stability-preserving differential operators. The UNCONDITIONAL
+random-pool comparison is still unproved. Neither finite checks nor this
+conditional lemma establish novelty, neural usefulness or publication.

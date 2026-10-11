@@ -1,0 +1,7 @@
+{
+  "scope": "Rational joint oracle; numerical spectral check only; no model run.",
+  "checked": 2213,
+  "independent_matching_oracles": 38,
+  "class_limit": 6,
+  "obstruction": null
+}
