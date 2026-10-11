@@ -1,0 +1,54 @@
+{
+  "source_commit": "fe3fa65e232e67ba4b0b6e91418f459131fba8e4",
+  "sources": {
+    "probe_native_v4.py": "0c8973b918f14d2feeff239fcc07a7e384b74381c1d54292c823e28ffb88a657",
+    "ruin.py": "f53bff994647be5188432baa7dd280fd843c0e33e9a56558cf1f718d2a90fea0",
+    "arithmetic_task_v6.py": "e575ae4e99b009b9c5e34ff6621d825c810d8abedbce7cfaac5822aa462d221b",
+    "arithmetic_diagnostic_v7.py": "5deb5461bdbda9ac1182a3d0fa827db1e8e655574e60b4b7a20e51d02ccdec0c",
+    "native_transition_v4.py": "06831108b492ff4ee97b7fbee8f4c563145bfebc09181166f7e7e7022abb6b35",
+    "arithmetic-inputs-v7.json": "9263ea01420c2910143896fc7a89f4a05a4e768244764ed89ed176f3e2fadbd8",
+    "arithmetic-protocol-v7.json": "08e1bead52bbe2c9926137e09f683f8227fc8990ccedebf9bd0987b3ae597270",
+    "arithmetic-protocol-v7.md": "57cf97eb1e195a48b607840de4d723e1b931fe6a1d270d689eeb5c869f4faaec"
+  },
+  "config": {
+    "schema": 7,
+    "inputs_sha256": "9263ea01420c2910143896fc7a89f4a05a4e768244764ed89ed176f3e2fadbd8",
+    "model_id": "GSAI-ML/LLaDA-8B-Instruct",
+    "revision": "08b83a6feb34df1a6011b80c3c00c7563e963b07",
+    "native_epic_commit": "5b1b31098f34ed3691d2a9f4aae14fdf5839d072",
+    "cpu_threads": 4,
+    "gen_length": 128,
+    "block_length": 128,
+    "steps": 16,
+    "temperature": 1.0,
+    "max_resamples": 256,
+    "max_prompt_tokens": 1024,
+    "draws_per_question": 32,
+    "seed": 347001,
+    "max_forwards_per_question": 1024,
+    "native_env": {
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH": "1",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_MIN_BATCH": "2",
+      "CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT": "1",
+      "CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER": "1"
+    },
+    "screen": {
+      "min_classes_each": 3,
+      "min_tail_forwards": 2,
+      "mean_prefix_cost_at_most_tail_in_both_wall_cpu": true,
+      "min_questions_passing": 2
+    },
+    "scope": "RESOURCE diagnostic ONLY: no accuracy/gold access, no competitive timing or novelty claim"
+  },
+  "hardware": "NVIDIA GeForce RTX 3080 Ti",
+  "torch": "2.8.0+cu128",
+  "load_wall_excluded_common": 76.59672799299005,
+  "grammar_setup": {
+    "wall": 0.4166652029962279,
+    "cpu": 0.023281459999999754
+  },
+  "grammar_sha256": "69f1e76aa8a14c10ef7405da4650e3435d57fb5ead6ceaacc7fa17bc54ededbe",
+  "lexical_sha256": "a0f64f01b7d5e23b22dc23d5477c65fb00557d686dcae51e0ded166c3ae965a7",
+  "upstream_sha256": "d99195fe7cc3080acfc608a2e6d70b7567564d533ee8fb1cb79e9d534637340c",
+  "scope": "resource screen, NO gold/accuracy/competitive timing claim"
+}

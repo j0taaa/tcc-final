@@ -134,3 +134,11 @@ Suíte142 testes PASS68.228s; checks de Ruff e integridade35/96 passam.
 Nenhum head A34 executado até este freeze. Não iniciar qualidade extensa se
 o screen de recursos falhar; não chamar seu eventual sucesso de contribuição
 confirmada ou novidade suficiente para publicar.
+
+O diagnóstico raiz está COMPLETO no produtor fe3fa65: oito casos,256
+prefixos,1.845 forwards novos, zero erros de execução do producer; só6/8
+primeiras continuações foram programas executáveis completos. NENHUM caso
+passou o screen. Classes variadas só ficaram disponíveis tarde; classes
+baratas eram degeneradas. Dados/metadata/decisão/hashes estão em
+`work/evidence/arithmetic-root-diagnostic-v7`. Sem gabaritos/acurácia ou
+confirmação independente; NÃO iniciar campanha de qualidade desta raiz.

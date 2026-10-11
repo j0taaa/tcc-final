@@ -317,6 +317,10 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   recursivo, raiz mul/div versus add/sub/falha. A fronteira pode exigir vários
   forwards, todos custam. Só testa viabilidade de recursos, não vantagem ou
   novidade. Suíte142 PASS68.228s; não expor como ganho EPIC/publicação.
+  O screen raiz está completo:8/8 casos,256 prefixos,1.845 forwards NOVOS,
+ 6/8 primeiras continuações executáveis,0/8 gates; sem gabaritos. Classe
+  barata degenerada e classe variável tardia recusam esta aplicação, não
+  o teorema. Nenhuma campanha de qualidade raiz deve ser iniciada.
 - A35 é uma ponte ESCRITA antes de código: lei de tag realmente aceita por
   greedy/MWPC pode contar #DNF, mesmo com sintaxe LL(1) e posterior produto
   polinomial de palavras com testemunho. Miklos4.2.2 já constrói união de

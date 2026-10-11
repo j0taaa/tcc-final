@@ -118,6 +118,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   boundary may require multiple charged forwards. Common initial-head cache
   is not a competitive full-cache baseline. Positive resource screen only
   licenses quality development; does not fulfill utility/publication goal.
+  EXECUTED source fe3fa65:8/8 rows,256 native prefixes,1.845 NEW forwards,
+  zero producer errors,6/8 first tails executable.0/8 resource screens pass:
+  cheap classes degenerate; nontrivial ones late. Raw/metadata/decision/hashes
+  in34/work/evidence/arithmetic-root-diagnostic-v7. Larger ROOT-operator
+  quality branch is NOT triggered; no gold/EPIC win/novelty claim.
 
 ## M53 — Categorical race repair: reduction gate before implementation
 

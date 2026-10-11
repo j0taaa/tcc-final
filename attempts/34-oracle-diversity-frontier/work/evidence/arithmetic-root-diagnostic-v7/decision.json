@@ -1,0 +1,15 @@
+{
+  "producer_commit": "fe3fa65e232e67ba4b0b6e91418f459131fba8e4",
+  "questions": 8,
+  "prefixes": 256,
+  "new_forwards": 1845,
+  "passed_resource_screen": 0,
+  "min_required": 2,
+  "decision": "FAIL: do not run larger root-operator quality campaign",
+  "all_statuses": {
+    "complete_diagnostic": 8
+  },
+  "first_tail_executable": 6,
+  "first_tail_native_complete": 6,
+  "scope": "resource diagnostic only, no golds/accuracy, no EPIC competition or publication novelty evidence"
+}

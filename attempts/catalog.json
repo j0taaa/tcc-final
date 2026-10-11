@@ -1207,6 +1207,17 @@
             "tests/test_oracle_diversity_frontier.py",
             "tests/test_arithmetic_json_task.py"
           ]
+        },
+        {
+          "id": "v8",
+          "source_commit": "fe3fa65e232e67ba4b0b6e91418f459131fba8e4",
+          "evidence_commit": "fe3fa65e232e67ba4b0b6e91418f459131fba8e4",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/README.md",
+            "attempts/34-oracle-diversity-frontier/work",
+            "tests/test_oracle_diversity_frontier.py",
+            "tests/test_arithmetic_json_task.py"
+          ]
         }
       ]
     },
