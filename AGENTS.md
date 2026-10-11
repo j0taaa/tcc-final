@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem123 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem127 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -242,6 +242,21 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   Canvas sozinho tem contraexemplo de perda
   de cobertura. A diferença teórica específica, magnitude útil e suficiência
   para publicação permanecem abertas. Não alterar A30 retroativamente.
+
+- A32 investiga reparo de colisão de CLASSES de ruídos/ordens nativas, não
+  de palavras inteiras. Referência p-blind requer no máximo dois draws
+  auxiliares do head congelado e esperado1-p(1-p)<=1; não novos forwards para
+  coordenar. Há prova escrita de marginais e cobertura pass@2>=iid para todo
+  verificador, incluindo trajetória adaptativa sob estado suficiente. O limite
+  sharp por Bernstein vale SOMENTE sem acesso a p/densidade/side information:
+  n<=3 draws não melhora a classe, n=4 é atingido pelo algoritmo. Não é lower
+  bound de parsing/EPIC/forwards nem superioridade sobre CDF que conhece p.
+  Quatro oráculos passam, incluindo729 kernels adaptativos;216 replays com
+  heads FALSOS preservam primeira trajetória e RNG CPU/CUDA,978 calls falsas.
+  O draft que falhou por índice CUDA implícito foi preservado. Sem novos heads
+  neurais, vantagem prática ou novidade/publicabilidade confirmadas para32.
+  Benchmark completo/controles fortes/protocolo independente ainda pendentes;
+  estratificação/Barker/Bernstein/Dirichlet são antecedentes conhecidos.
 
 ## Perguntas obrigatórias para cada ideia ou implementação
 

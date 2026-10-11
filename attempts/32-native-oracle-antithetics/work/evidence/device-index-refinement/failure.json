@@ -1,0 +1,5 @@
+{
+  "command": "PYTHONPATH=vendor/EPIC-Decoding:. .venv-live/bin/python -m attempts.32-native-oracle-antithetics.work.probe_native --output attempts/32-native-oracle-antithetics/work/evidence/native-fake-v1.json",
+  "result": "AttributeError in auxiliary RNG-isolation probe: generic torch.device(cuda) has index None, fork_rng was given [None]. Tensor devices used during native sampling had explicit indices. No complete evidence JSON emitted. Fix resolves implicit CUDA current-device index.",
+  "source_zip_sha256": "b9c36dee21ac78beb2bc0d4c5e582549fbd6f1b0e851bbe26d7b17d0f1e8bfa6"
+}

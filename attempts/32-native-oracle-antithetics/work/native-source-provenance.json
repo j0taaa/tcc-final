@@ -1,0 +1,8 @@
+{
+  "copied_from_commit": "0a27a24830185d7f34ba1ddd57f8d73b237f429b",
+  "copied_source_sha256": {
+    "native_noise_v3.py": "c17d634620a54a20fa30387135cc167163f6097411c5e3dbf89f6760d6ce5eca",
+    "probe_native.py": "d40661a67f5f8ea3d5c93bae8ad7fb773519502bfcfa56a5d7a1c8d16cfeb412"
+  },
+  "scope": "Independent copies of ModelHistory and fake fixture; no mutable attempt imports; vendor untouched"
+}

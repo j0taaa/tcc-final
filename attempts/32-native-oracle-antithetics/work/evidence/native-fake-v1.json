@@ -1,0 +1,5413 @@
+{
+  "scope": "FAKE heads; literal first IDs/recovery/EOS/rejections, RNG isolation; NOT neural benefit",
+  "torch": "2.8.0+cu128",
+  "rows": [
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared": 2,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared": 2,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared": 2,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared": 2,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        false
+      ],
+      "rejections": [
+        4,
+        8
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cpu",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        1,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 0,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        0
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 1,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        false,
+        true
+      ],
+      "rejections": [
+        8,
+        2
+      ],
+      "shared": 1,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 0,
+      "extra_draws": 0
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 2,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 2,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 2,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 2,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 0.5,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 2,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 2,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "first",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 1,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 1,
+      "pair_fake_calls": [
+        1,
+        1
+      ],
+      "complete": [
+        false,
+        false
+      ],
+      "rejections": [
+        1,
+        1
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "state",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 2,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "history",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 2,
+      "extra_draws": 2
+    },
+    {
+      "device": "cuda",
+      "seed": 2,
+      "temperature": 1.0,
+      "coordinate": "entropy",
+      "max_resamples": 8,
+      "mode": "root",
+      "first_equal": true,
+      "rng_isolated": true,
+      "reference_fake_calls": 2,
+      "pair_fake_calls": [
+        2,
+        2
+      ],
+      "complete": [
+        true,
+        true
+      ],
+      "rejections": [
+        3,
+        3
+      ],
+      "shared": 1,
+      "extra_draws": 1
+    }
+  ],
+  "sources": {
+    "native_state.py": "3c324ac507dafc6116eb9c2b9454fa9b109878661ef743dddbdff0bcfc9fca76",
+    "probe_native.py": "aec51e0799df542eb23a5eae81167b3b214f8166a2767dae6d2ccd9f85ae3a13",
+    "native_noise.py": "f3d46990be531adc4e251a5dd257ae4e8b13bb97ea0db5dcd768fc8276ccba9b",
+    "native_fixture.py": "eaa53c2151f11678d5b4dbb1b1e8e9c22a52af1b83348ae895f3e37dff7816e8",
+    "oracle.py": "4ab574348cc11061ee84025337b914d55815f4bac51643b1c338e30d5615d588"
+  }
+}

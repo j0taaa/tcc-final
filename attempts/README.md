@@ -199,6 +199,16 @@ A garantia geral é sobre iid do mesmo decoder, com distribuição individual
 preservada. Estratificação/unranking são clássicos; não há ganho universal de
 latência, nova aplicação neural iterativa26 ou prioridade acadêmica confirmada.
 
+### 32 — oráculo nativo e classes (candidata, não confirmação)
+
+[32-native-oracle-antithetics](32-native-oracle-antithetics/README.md) investiga
+acoplamento de pares preservando a lei finita nativa e recuperação completa,
+sem probabilidade de classe calculada. Há prova candidata de orçamento mínimo
+quatro/limite ótimo no acesso p-blind delimitado e expected auxiliary<=1.
+Quatro oráculos e216 replays de heads FALSOS passam; nenhuma medição neural
+ou novidade/publicabilidade confirmada.32 não herda o piloto31:272 registros,
+11.615 novos forwards e cobertura EMPATADA preservados em31/v3.
+
 ### 29 — reparo estacionário de colisões
 
 [29-collision-stationary-coupling](29-collision-stationary-coupling/README.md)

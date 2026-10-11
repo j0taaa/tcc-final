@@ -27,6 +27,28 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M52 — Native sampler oracle coupling: sharp bounded information gate
+
+- [x] T5200: Eight criteria BEFORE reference. Written sharp B_n(p) bound
+  for p-blind class-bit access with first bit retained, n<=3 cannot improve,
+  n=4 adaptive operation attains it. Unknown native finite-law probabilities
+  are not replaced by ideal PL. Bernstein/Barker/Dirichlet are antecedents;
+  specific priority and publication adequacy remain OPEN.
+- [x] T5201: Four independent small-law/class/event/score and729 adaptive
+  kernel-sequence oracles pass0.766s. Native FAKE probe216/216 literal first
+  trajectories and CPU/CUDA RNG isolation,156 shared nodes128 auxiliary row
+  draws978 fake calls. Source/producer hashes:32/work/evidence/native-fake-v1.
+  Implicit CUDA device-index draft failure preserved independently, not
+  relabeled. No new neural forward or competitive timing for32.
+  Whole offline suite127 tests passes65.861s; explicit new-file Ruff passes.
+- [ ] T5202: Resolve nearest oracle/antithetic antecedents, independently
+  review proof obligations and freeze competent full-cost external protocol
+  BEFORE neural heads. Include known-probability alternatives with exactness
+  delimitations, iid4 and root/history controls, every status/case.
+- [ ] T5203: Real complete-neural development and only passing independent
+  confirmation; meaningful quality/cost advantage and defensible originality.
+  Do not equate a sharp restricted-oracle theorem or fake replay to this gate.
+
 ## M51 — Sufficient-state coupling: comparative theorem before neural work
 
 - [x] T5100: Eight criteria and primary antithetic/Markov/stratification sources;
