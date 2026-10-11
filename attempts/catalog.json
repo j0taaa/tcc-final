@@ -984,6 +984,16 @@
             "attempts/29-collision-stationary-coupling/work",
             "tests/test_collision_coupling.py"
           ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "fdc5edc7571c062ac2d6a86d63eb4ae7328d533d",
+          "evidence_commit": "fdc5edc7571c062ac2d6a86d63eb4ae7328d533d",
+          "evidence_roots": [
+            "attempts/29-collision-stationary-coupling/README.md",
+            "attempts/29-collision-stationary-coupling/work",
+            "tests/test_collision_coupling.py"
+          ]
         }
       ]
     },
@@ -1078,22 +1088,76 @@
             "tests/test_native_oracle_walk.py",
             "tests/test_native_numeric_task.py"
           ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "8fc0999736724b7b28159653503693f95b272c4a",
+          "evidence_commit": "04a7e5ea01f3dcec0078271627bd70bc640709f1",
+          "evidence_roots": [
+            "attempts/32-native-oracle-antithetics/README.md",
+            "attempts/32-native-oracle-antithetics/work",
+            "tests/test_native_oracle_coupling.py",
+            "tests/test_native_oracle_walk.py",
+            "tests/test_native_numeric_task.py"
+          ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "fdc5edc7571c062ac2d6a86d63eb4ae7328d533d",
+          "evidence_commit": "fdc5edc7571c062ac2d6a86d63eb4ae7328d533d",
+          "evidence_roots": [
+            "attempts/32-native-oracle-antithetics/README.md",
+            "attempts/32-native-oracle-antithetics/work",
+            "tests/test_native_oracle_coupling.py",
+            "tests/test_native_oracle_walk.py",
+            "tests/test_native_numeric_task.py"
+          ]
         }
       ]
     },
     {
       "id": "33-categorical-oracle-repair",
       "title": "Categorical collision race: exact reduction gate",
-      "conclusion": "Written laws/cost; EXACT reduction to A29 stationary transform plus known Barker race. Rejected before implementation or neural campaign. Initial snapshot pending until live timing ends; work preserved in committed files.",
+      "conclusion": "Written laws/cost; EXACT reduction to A29 stationary transform plus classical Barker race. Rejected BEFORE implementation/neural campaign. Initial independent snapshot preserves the mathematical reduction and source.",
       "reading": "attempts/33-categorical-oracle-repair/README.md; TASKS.md#M53",
-      "versions": []
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "fdc5edc7571c062ac2d6a86d63eb4ae7328d533d",
+          "evidence_commit": "fdc5edc7571c062ac2d6a86d63eb4ae7328d533d",
+          "evidence_roots": [
+            "attempts/33-categorical-oracle-repair/README.md",
+            "attempts/33-categorical-oracle-repair/work"
+          ]
+        }
+      ]
     },
     {
       "id": "34-oracle-diversity-frontier",
       "title": "Sharp expected-work/diversity frontier: written candidate",
       "conclusion": "Written sharp regular p-blind expected-budget minimax frontier; minimal capped reference and four independent rational/payload oracles PASS.139-test suite passes. DeGroot original Sections1--8 read; score/variance/ruin are priors. Wasan1964 full text/Ghosh, specific priority and useful native application unresolved. No neural evidence or publication confirmation.",
       "reading": "attempts/34-oracle-diversity-frontier/README.md; TASKS.md#M54",
-      "versions": []
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "fdc5edc7571c062ac2d6a86d63eb4ae7328d533d",
+          "evidence_commit": "fdc5edc7571c062ac2d6a86d63eb4ae7328d533d",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/README.md",
+            "attempts/34-oracle-diversity-frontier/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "04a7e5ea01f3dcec0078271627bd70bc640709f1",
+          "evidence_commit": "04a7e5ea01f3dcec0078271627bd70bc640709f1",
+          "evidence_roots": [
+            "attempts/34-oracle-diversity-frontier/README.md",
+            "attempts/34-oracle-diversity-frontier/work",
+            "tests/test_oracle_diversity_frontier.py"
+          ]
+        }
+      ]
     }
   ]
 }
