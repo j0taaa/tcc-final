@@ -1,0 +1,55 @@
+{
+  "source_commit": "7cbfe5a9d08d26f98aedddefa8b88c694977f10f",
+  "scope": "Exact known count/subset/alias source oracle and original full-bias CPU/CUDA autodiff/proxy/bank checks. ZERO external model forwards; prospective information capture has not started.",
+  "files": {
+    "check_noise_info.py": "a5aaed9515b4d839edddbffe582af869e94763f07656eee36b8fc74bd1b12994",
+    "count_source.py": "597acb907b8972f3de136280bbc15e5cb45ac583cb325c3dc30c198819a30d0a",
+    "noise_features.py": "b9450b91026db1dc9ca958d0a4aa2eb15a4f23caa967989d3ba5dfe48d060aa0",
+    "noise_information.py": "d628be0921df4cd50a276e60f27b40ab8225b9aa951a0ae362166f8845991786",
+    "mdlm_loader.py": "ae010fa84e006716b33b934ff8d9bb838049f9a07bfd75604868f7dee2bed648"
+  },
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "attempts/41-structured-noising-covariance/work/check_noise_info.py",
+        "attempts/41-structured-noising-covariance/work/count_source.py",
+        "attempts/41-structured-noising-covariance/work/noise_features.py",
+        "attempts/41-structured-noising-covariance/work/noise_information.py",
+        "attempts/41-structured-noising-covariance/work/mdlm_loader.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.00552526896353811,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv/bin/ruff",
+        "format",
+        "--check",
+        "attempts/41-structured-noising-covariance/work/check_noise_info.py",
+        "attempts/41-structured-noising-covariance/work/count_source.py",
+        "attempts/41-structured-noising-covariance/work/noise_features.py",
+        "attempts/41-structured-noising-covariance/work/noise_information.py",
+        "attempts/41-structured-noising-covariance/work/mdlm_loader.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0044029789278283715,
+      "stdout": "5 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        ".venv-live/bin/python",
+        "-m",
+        "attempts.41-structured-noising-covariance.work.check_noise_info"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.0788730279309675,
+      "stdout": "PASS exact count/subset source law including aliases, full-V bias-gradient CPU/CUDA autodiff, JSON roles/proxy dimensions and independent pivotal bank trace; ZERO external model forwards\n",
+      "stderr": ""
+    }
+  ]
+}
