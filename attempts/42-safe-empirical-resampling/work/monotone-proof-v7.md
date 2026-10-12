@@ -58,7 +58,8 @@ C4 for all class probabilities. This would require, for all centered f,
 
     (L-1)*(f^T(J4-J_H6)f) >= f^T(J6-J4)f.                  (3)
 
-Near p=(1-(L-1)*epsilon,epsilon,...,epsilon), minority contrasts show that
+For L>=3, near p=(1-(L-1)*epsilon,epsilon,...,epsilon), minority contrasts show that
 1/L is a NECESSARY upper bound for a universal blend coefficient: the
 matching6 excess approaches(L-1) times the H6 correction. Sufficiency is
-open. Failure of(3) will be preserved; no neural campaign depends on it.
+open. For L=2, H6 equals matching6, so this upper-bound argument does not
+apply. Failure of(3) will be preserved; no neural campaign depends on it.
