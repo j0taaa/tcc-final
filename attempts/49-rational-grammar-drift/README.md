@@ -18,6 +18,13 @@ exact propagated rational factors before code. It must strengthen ALL four
 engines, preserve V25 observations, and label any replay as development rather
 than new independent confirmation. It adds no claim of scientific novelty.
 
+V26 source8216ee0 passesALL300 original-word/engine checks before the
+ALL360-row development replay, currently running. V27's proposed two-sided
+fidelity decision and classical lower controls are separate, written AFTER
+the V25 failure. Their correctness/application is pending; they cannot rescue
+or relabel that gate. Full-arithmetic and chart error-count notes close cost
+details while keeping source-admission/actual implementation limits explicit.
+
 2026-10-12. Contract BEFORE code or observations. This is an investigation,
 not confirmed novelty, publication sufficiency, or a faster decoder.
 

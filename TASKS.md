@@ -202,9 +202,21 @@ do not reset earlier losses or call prototype correctness publication proof.
   order. Raw head/probability arrays remain local; their hashes are published.
 - [ ] T6919: BEFORE implementation, V26 writes the classical streamed known-
   root query and exact rational loss propagation, given to ALL four engines.
-  Finish/preserve V25 first. Then repeat all75 old word cases under allfour
-  before any full-data replay, which is DEVELOPMENT, not independent novelty.
-  Charge root/factor work and retain every stronger-control loss.
+  V25 is complete/preserved. Producer8216ee0 passesALL300 old word/engine
+  checks (192 certificates108 undefined), before the full360-row replay on
+  ALL15 old heads. That replay is RUNNING and explicitly DEVELOPMENT, not
+  independent novelty/confirmation. Root/factor work is charged and every
+  stronger-control loss/refusal retained. Source/evidence are separate.
+- [ ] T6920: V27 writes a two-sided fidelity-decision application AFTER V25's
+  failure; do not relabel the failed upper-precision gate. Known marginal,
+  Hellinger and moment LOWER controls are proved before minimal prototype.
+  Source000c522 adds the classical controls and105-case original-word oracle;
+  no correctness/application observation yet. Validate before any use, after
+  the active timing run. Full-arithmetic-scaling-v27 closes hidden GCD/output
+  accounting on paper; the actual measured reference still uses LCM/Fraction.
+  Chart-error-count-v27 proves d<=3B-2 for an ADMITTED unambiguous CNF and
+  charges wide-OR sorting; arbitrary-source conversion remains an explicit
+  obligation. Neither application nor publication sufficiency is confirmed.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
