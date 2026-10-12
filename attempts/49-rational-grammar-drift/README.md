@@ -122,3 +122,15 @@ FULL support also requires an explicit input source in the maintained API.
 No head-rounding/core measurements ran; metadata/failure are preserved.
 V6 supplies every original ID at every free position and the singleton at
 fixed positions. No support reduction or scientific protocol change occurs.
+
+V8 prospective refinement re-evaluates2--4/6/7 BEFORE code: exact logarithmic
+nearest-edge queries sharpen the core cost to O(H*(d/epsilon)*log(d/epsilon)),
+and the product-head corollary to O(n*q*sqrt(n/epsilon)*log(q*n/epsilon)).
+Guarantees, original IDs, real use and ALL public cases are unchanged (1/5).
+Convex approximation/query geometry is classical; Fu already removes the
+log(1/TV) dependence. The candidate advancement is the sharper deterministic
+TV bound/full integer implementation, not those principles. Source admission
+is now constructive/polynomial in a WRITTEN algorithm, not verification of the
+current compiler (`polynomial-source-admission-v7.md`). Exact exhaustive edge
+queries must agree before another public run. Specific priority, performance,
+publication and human review remain open (8). V6 outputs remain separate.
