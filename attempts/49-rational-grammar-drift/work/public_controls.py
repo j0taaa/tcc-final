@@ -14,7 +14,13 @@ from zipfile import ZipFile
 
 import numpy as np
 
-from . import angular_control, angular_streamed, calibrated_endpoint, hybrid_endpoint
+from . import (
+    adaptive_angular,
+    angular_control,
+    angular_streamed,
+    calibrated_endpoint,
+    hybrid_endpoint,
+)
 from . import public_audit as old
 from .forest import certificate
 
@@ -33,8 +39,10 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def run(output, streamed=False):
+def run(output, streamed=False, adaptive=False):
     engines = [angular_streamed, calibrated_endpoint, hybrid_endpoint] if streamed else ENGINES
+    if adaptive:
+        engines = [adaptive_angular, calibrated_endpoint, hybrid_endpoint]
     output.mkdir(parents=True, exist_ok=False)
     started = clock()
     packet = old.FROZEN / "packet.zip"
@@ -52,6 +60,7 @@ def run(output, streamed=False):
         numpy=np.__version__,
         machine=platform.machine(),
         max_rows=1_000_000,
+        exact_passthrough=adaptive,
     )
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     try:
@@ -112,7 +121,13 @@ def run(output, streamed=False):
                         began = clock()
                         try:
                             report = certificate(
-                                plan, first, second, epsilon, max_rows=1_000_000, compressor=engine
+                                plan,
+                                first,
+                                second,
+                                epsilon,
+                                max_rows=1_000_000,
+                                compressor=engine,
+                                exact_passthrough=adaptive,
                             )
                             assert report["lower"] <= min(
                                 baseline["range_upper"], baseline["hellinger_upper"]
@@ -183,5 +198,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--streamed", action="store_true")
+    parser.add_argument("--adaptive", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.streamed)
+    run(args.output, args.streamed, args.adaptive)
