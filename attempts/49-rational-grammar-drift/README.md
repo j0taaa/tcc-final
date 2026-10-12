@@ -250,3 +250,10 @@ BOTH candidates in the BF16/epsilon0.5 core timing; this loss is preserved.
 Other rows favor the candidates, but no independent speed gate was frozen.
 No universal superiority follows. Next strengthen the inexpensive scalar
 bounds to separate support loss before using Hellinger/chi-square.
+
+V16 BEFORE code: `mass-aware-controls-v16.md` re-evaluates all eight criteria
+and strengthens inexpensive scalar controls using common-support coupling,
+certified Hellinger, both chi-square directions and likelihood ranges.
+All75 oracle cases and ALL18 unchanged public rows are required. Old67.98x
+is not attributed to these stronger controls. No favorable budget or corpus
+selection; if a cheap bound suffices, the core certificate may be unnecessary.
