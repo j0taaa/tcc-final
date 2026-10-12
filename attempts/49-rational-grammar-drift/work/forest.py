@@ -7,7 +7,8 @@ from math import lcm
 _planar = importlib.import_module("attempts.49-rational-grammar-drift.work.planar")
 
 
-def certificate(plan, first, second, epsilon=Fraction(1, 2), max_rows=100_000):
+def certificate(plan, first, second, epsilon=Fraction(1, 2), max_rows=100_000, compressor=None):
+    engine = _planar if compressor is None else compressor
     if first.state != plan.state or second.state != plan.state:
         raise ValueError("both heads must use the exact same compiled state/support")
     weights = []
@@ -50,7 +51,7 @@ def certificate(plan, first, second, epsilon=Fraction(1, 2), max_rows=100_000):
     if scopes[plan.root] != frozenset(range(len(plan.state.canvas))):
         raise ValueError("root does not consume all original positions")
     size = max(1, costs[plan.root])
-    grid = _planar.grid_for(epsilon, size)
+    grid = engine.grid_for(epsilon, size)
     cores = {}
     peak_rows = peak_bits = 0
 
@@ -62,7 +63,7 @@ def certificate(plan, first, second, epsilon=Fraction(1, 2), max_rows=100_000):
         peak_bits = max(
             peak_bits, max((abs(x).bit_length() for row in rows for x in row), default=0)
         )
-        return _planar.compress(rows, grid)
+        return engine.compress(rows, grid)
 
     for node in plan.order:
         if not scopes[node]:
