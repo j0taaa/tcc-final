@@ -1,0 +1,23 @@
+{
+  "scope": "Exploratory numerical obstruction search only; not proof, model or priority",
+  "seed": 202610110427,
+  "cases": 626,
+  "worst_minimum_eigenvalue": -5.963073164268445e-10,
+  "worst_probabilities": [
+    0.0002499867880180104,
+    0.014349844455375795,
+    0.9854001687566062
+  ],
+  "obstruction": {
+    "probabilities": [
+      0.0002499867880180104,
+      0.014349844455375795,
+      0.9854001687566062
+    ],
+    "minimum_gain_eigenvalue": -5.963073164268445e-10
+  },
+  "exact_c6_c4_cross_covariances": [
+    "-17/2500",
+    "-111/25000"
+  ]
+}

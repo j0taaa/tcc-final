@@ -1,0 +1,21 @@
+{
+  "source_commit": "125d0170607c189783a1826739bacab617ace831",
+  "scope": "Pure H6 correction/local maximality proof and exact refutation of prospectively conjectured blend; no neural or publication gate.",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 .venv/bin/python -m attempts.42-safe-empirical-resampling.work.monotone_probe_v7 --output attempts/42-safe-empirical-resampling/work/evidence/blend-obstruction-v7.json"
+  ],
+  "checks": {
+    "numerical_search_cases": 626,
+    "blend_exact_refuted": true,
+    "new_model_calls": 0
+  },
+  "files": {
+    "monotone-contract-v7.md": "e44c367dc09d1cfda14ac30c168b65ca911c8f4c9069ba32082abcd2d189d293",
+    "monotone-proof-v7.md": "a8e83466224bd2c4f2fb7903841c3ac5260be3c496616dd860894e004c2bd9f7",
+    "monotone_probe_v7.py": "5238779b8c0ee1237254e819c81b247b74d360813bf759b8a209c8672af8b052",
+    "blend-erratum-v7.md": "c63d7ba99c4b6afef62490d0dad39804688b77f59265a0ee24e834d64557794b",
+    "local-maximality-v7.md": "23b7f8613e85f0ebdfcd11704013e350535fa1d1c32704dca31c6322339c6b56",
+    "evidence/blend-obstruction-v7.json": "b9fdb51f06efcb6d258b35305829a2c5210b3abf59f430d031f784fc6e91b128",
+    "evidence/blend-exact-refutation-v7.json": "3315e81f494d58c77358e7182e199c7999b9cfc6c2bd2145d0cfe9759ba5a0e5"
+  }
+}

@@ -62,6 +62,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Chauvet/Ruiz-Gazen2016 and multivariate RSS were examined; priority is still
   OPEN, and the unavailable2026 antithetic manuscript cannot be ruled out.
   This is not a practical promotion/full-gradient/generation/EPIC gate.
+  V7 exact C6/C4 obstruction preserved. A locally certified H6 correction
+  dominates C4 but has a small multiclass gain; local-maximality proof bounds
+  ALL such conditional PSD refinements. Prospective1/L blend fails:626
+  numerical search cases followed by a negative EXACT rational minor/score.
+  Frozen search125d017; no model calls, no promotion/benchmark victory.
 - [ ] T6202: Only after theory/prior survives, select a useful operation and
   competent complete-cost controls. No publication or practical gate yet.
 

@@ -107,3 +107,13 @@ Those stronger methods MUST remain practical comparators. V5's negative
 promotion decision stands; novelty and useful complete-cost CFG application
 remain unresolved. See work/iid-theorem-v6.md, primary-and-scope-v6.md and
 evidence/origin-v6.json. Main article and APIs remain unchanged.
+
+V7 preserves an exact C6-versus-C4 adverse direction, proves a conservative
+H6 refinement which never increases C4 covariance, and shows that its small
+multiclass gain is maximal under the proposed LOCAL conditional PSD
+certificate. A stronger fixed1/L blend was conjectured prospectively, found
+adverse after626 numerical cases, and REFUTED with exact rational principal
+minor/score. Its tiny failure is still a failure. Do not change tolerances or
+relabel it as a balanced victory. No neural calls or sampler promotion;
+the conservative repair alone is insufficient for the publication goal.
+See work/monotone-proof-v7.md, blend-erratum-v7.md and local-maximality-v7.md.
