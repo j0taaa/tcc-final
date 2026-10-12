@@ -20,6 +20,7 @@ from . import (
     angular_streamed,
     calibrated_endpoint,
     hybrid_endpoint,
+    ordered_planar,
 )
 from . import public_audit as old
 from .forest import certificate
@@ -40,10 +41,14 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def run(output, streamed=False, adaptive=False, massaware=False):
+def run(output, streamed=False, adaptive=False, massaware=False, ordered=False):
     engines = [angular_streamed, calibrated_endpoint, hybrid_endpoint] if streamed else ENGINES
     if adaptive:
         engines = [adaptive_angular, calibrated_endpoint, hybrid_endpoint]
+    if ordered:
+        if not adaptive or not massaware:
+            raise ValueError("ordered audit requires the strongest adaptive/scalar controls")
+        engines.append(ordered_planar)
     output.mkdir(parents=True, exist_ok=False)
     started = clock()
     packet = old.FROZEN / "packet.zip"
@@ -185,7 +190,7 @@ def run(output, streamed=False, adaptive=False, massaware=False):
                         )
         summary = dict(
             status="FUNCTIONAL_DEVELOPMENT_ONLY",
-            rows=18,
+            rows=6 * len(engines),
             completed=completed,
             refusals=refusals,
             errors=errors,
@@ -206,5 +211,6 @@ if __name__ == "__main__":
     parser.add_argument("--streamed", action="store_true")
     parser.add_argument("--adaptive", action="store_true")
     parser.add_argument("--massaware", action="store_true")
+    parser.add_argument("--ordered", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.streamed, args.adaptive, args.massaware)
+    run(args.output, args.streamed, args.adaptive, args.massaware, args.ordered)
