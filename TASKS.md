@@ -162,6 +162,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Maintained source2f406e3: `make check` passes (175 archived versions at run),
   `make test` passesALL168 in70.403s; focused four-test regressions and their
   lint/format checks pass. Evidence:49/work/evidence/checks-v22.json.
+- [ ] T6916: V23 freezes a broader audit BEFORE forwards: ALL5 pinned original-
+  byte documents x4/8/16 masks x3formats x2tolerances x4engines (360 rows).
+  FIRST doc is seen regression; remaining FOUR unseen byA49 TV development,
+  not unseen byA24/model training. Strongest controls/costs/refusals preserved.
+  Newcapture/producer/evidence and functional precision gate still PENDING.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

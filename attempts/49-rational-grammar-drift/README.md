@@ -339,3 +339,10 @@ V19 rotation failure; independent enumeration remains the product oracle.
 The own scientific claim is the sharper deterministic quantitative bound,
 not known geometry/coupling/parsing, bit computability alone or an EPIC win.
 Independent human judgement/absolute priority/editorial acceptance remain absent.
+
+V23 `independent-inputs-v23.md` / `protocol-v23.json` freeze a broader numeric
+audit BEFORE new forwards. ALL five pinned JSONTestSuite documents and4/8/16
+masks remain; FIRST document is seen regression, only the remaining FOUR are
+unseen by A49's TV development. Do not call the whole corpus independent.
+All360 format/tolerance/engine rows and strongest controls are mandatory;
+refusals/losses remain. This is certificate precision, not a speed/EPIC gate.
