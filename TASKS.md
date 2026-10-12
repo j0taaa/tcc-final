@@ -105,6 +105,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   rows, SAME all-query guarantee. Producer8cae148 passesALLfive formula cases,
   no timings/forwards. Explicitly credit the exact one-position scalar control;
   this is NOT a TV complexity lower bound or favorable generation benchmark.
+- [x] T6910: V15 proves/verifies exact all-direction a posteriori certification
+  for adaptive angular aggregation; every method gets exact unary/diagonal
+  passthrough. Producer748fc16 passesALL5,580 geometry/80,016 queries,
+  225 forests,3,501 products and300 Cartesian checks. Producer9d7aab9 finishes
+  ALL18 public rows. Adaptive wins BF16/epsilon0.5 core against BOTH candidates;
+  retain this loss. No universal/independent/statistical timing success claim.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

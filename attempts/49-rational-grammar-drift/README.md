@@ -241,3 +241,12 @@ and its tighter structural error count. All old correctness/public families
 remain, with full costs and no capped-product success credit. The control may
 erase the observed speed advantage. These classic optimizations are NOT the
 candidate novelty; the sharper theoretical TV precision bound remains so.
+
+V15 correctness producer748fc16 passesALL5,580 geometry/80,016 norm queries
+(including independent exact sorted-prefix/ratio checks),225 forests,
+3,501 products and300 Cartesian checks. Producer9d7aab9 completes ALL18
+public rows without refusals/errors. The adaptive angular control beats
+BOTH candidates in the BF16/epsilon0.5 core timing; this loss is preserved.
+Other rows favor the candidates, but no independent speed gate was frozen.
+No universal superiority follows. Next strengthen the inexpensive scalar
+bounds to separate support loss before using Hellinger/chi-square.
