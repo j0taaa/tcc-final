@@ -1,0 +1,106 @@
+"""Symbolic sign certificates for the declared majority-complement families."""
+
+import argparse
+import importlib
+import itertools
+import json
+from collections import Counter
+from pathlib import Path
+
+import sympy as sp
+
+algebra = importlib.import_module("attempts.42-safe-empirical-resampling.work.six_pool_algebra")
+m, x, y = algebra.m, algebra.x, algebra.y
+u = sp.Symbol("u", nonnegative=True)
+
+
+def diagonal(t):
+    return (
+        t * (t - 1) * sp.prod(m - j for j in range(2, 6))
+        - t * (t - 1) * (m - t) * (m - t - 1) * (m - 4) * (m - 5)
+        - 2 * t * (t - 1) * (t - 2) * sp.prod(m - t - j for j in range(3))
+    )
+
+
+def gram(polynomial, counts):
+    frequencies = sorted(Counter(counts).items())
+    sizes = [t for t, _ in frequencies]
+    mult = [c for _, c in frequencies]
+    fixed = polynomial.subs(
+        {
+            algebra.s2: sum(t**2 for t in counts),
+            algebra.s3: sum(t**3 for t in counts),
+            algebra.s4: sum(t**4 for t in counts),
+        }
+    )
+    denominator = sp.prod(m - j for j in range(6))
+    output = []
+    for i, t in enumerate(sizes):
+        row = []
+        for j, s in enumerate(sizes):
+            same = fixed.subs({x: t, y: s})
+            joint = mult[i] * mult[j] * t * s * same
+            if i == j:
+                joint = mult[i] * diagonal(t) + mult[i] * (mult[i] - 1) * t**2 * same
+            row.append(sp.expand(mult[i] * mult[j] * t * s * denominator - m**2 * joint))
+        output.append(row)
+    return sp.Matrix(output), frequencies
+
+
+def run(output):
+    polynomial = algebra.derive()
+    cases = []
+    bad = []
+    for r in range(4, 8):
+        for minority in algebra.oracle.partitions(r, limit=r):
+            population = (*minority, m - r)
+            matrix, _ = gram(polynomial, minority)
+            # Add the majority only to the original power sums, not the retained minor.
+            corrected = polynomial.subs(
+                {
+                    algebra.s2: sum(t**2 for t in population),
+                    algebra.s3: sum(t**3 for t in population),
+                    algebra.s4: sum(t**4 for t in population),
+                }
+            )
+            matrix, frequencies = gram(corrected, minority)
+            minors = []
+            for k in range(1, matrix.rows + 1):
+                for indices in itertools.combinations(range(matrix.rows), k):
+                    determinant = sp.factor(matrix.extract(indices, indices).det())
+                    shifted = sp.Poly(determinant.subs(m, u + 2 * r + 1), u)
+                    coefficients = shifted.all_coeffs()
+                    passed = all(c >= 0 for c in coefficients)
+                    record = dict(
+                        indices=indices,
+                        factor=str(determinant),
+                        shifted_coefficients=list(map(str, coefficients)),
+                        nonnegative_coefficients=passed,
+                    )
+                    minors.append(record)
+                    if not passed:
+                        bad.append(
+                            dict(minority=minority, indices=indices, factor=str(determinant))
+                        )
+            cases.append(
+                dict(minority=minority, threshold=2 * r + 1, frequencies=frequencies, minors=minors)
+            )
+        print(r, len(cases), len(bad), flush=True)
+    output.write_text(
+        json.dumps(
+            dict(
+                scope="Symbolic sign certificates only; no model outputs; any failed coefficient test remains an open obligation",
+                sympy=sp.__version__,
+                cases=cases,
+                failures=bad,
+            ),
+            indent=2,
+        )
+        + "\n"
+    )
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path, required=True)
+    run(parser.parse_args().output)

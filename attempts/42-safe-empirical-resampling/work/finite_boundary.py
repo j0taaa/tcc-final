@@ -1,0 +1,138 @@
+"""Exact arithmetic certificates for unproved-by-formula finite B=6 cases."""
+
+import argparse
+import importlib
+import json
+from collections import Counter
+from fractions import Fraction as Q
+from itertools import product
+from math import prod
+from pathlib import Path
+
+partitions = importlib.import_module(
+    "attempts.42-safe-empirical-resampling.work.matching_probe"
+).partitions
+
+
+def w(m, s2, s3, s4, x, y):
+    return (
+        m**4
+        + m**3 * (x + y - 15)
+        - m**2 * s2
+        + 2 * m**2 * (x * x + y * y)
+        - 15 * m**2 * (x + y)
+        + 85 * m**2
+        - m * s2 * (x + y)
+        + 15 * m * s2
+        - 2 * m * s3
+        - m * (x**3 + y**3)
+        - 2 * m * x * y * (x + y)
+        + 15 * m * x * y
+        + 30 * m * (x + y)
+        - 195 * m
+        + s2 * s2
+        + s2 * x * y
+        - 30 * s2
+        + s4
+        + x * y * (x * x + y * y)
+        - 30 * x * y
+        + 148
+    )
+
+
+def diagonal(m, x):
+    return (
+        x * (x - 1) * prod(m - j for j in range(2, 6))
+        - x * (x - 1) * (m - x) * (m - x - 1) * (m - 4) * (m - 5)
+        - 2 * x * (x - 1) * (x - 2) * prod(m - x - j for j in range(3))
+    )
+
+
+def gram(n):
+    m = sum(n)
+    s2, s3, s4 = (sum(t**k for t in n) for k in (2, 3, 4))
+    d6 = prod(m - i for i in range(6))
+    groups = sorted(Counter(n).items())
+    matrix = []
+    contrasts = []
+    for x, a in groups:
+        g = diagonal(m, x)
+        if a > 1:
+            contrast = x * x * w(m, s2, s3, s4, x, x) - g
+            assert contrast >= 0
+            contrasts.append(contrast)
+        row = []
+        for y, b in groups:
+            j = a * b * x * y * w(m, s2, s3, s4, x, y)
+            if x == y:
+                j = a * g + a * (a - 1) * x * x * w(m, s2, s3, s4, x, x)
+            assert j >= 0
+            row.append(d6 * a * x * b * y - m * m * j)
+        assert sum(row) == 0
+        matrix.append(row)
+    return [row[:-1] for row in matrix[:-1]], contrasts
+
+
+def ldl(matrix):
+    a = [[Q(x) for x in row] for row in matrix]
+    k = len(a)
+    lower = [[Q(i == j) for j in range(k)] for i in range(k)]
+    d = []
+    for j in range(k):
+        pivot = a[j][j]
+        assert pivot >= 0, (matrix, j, pivot)
+        d.append(pivot)
+        if not pivot:
+            assert all(a[i][j] == 0 for i in range(j + 1, k))
+            continue
+        for i in range(j + 1, k):
+            lower[i][j] = a[i][j] / pivot
+        for i, t in product(range(j + 1, k), repeat=2):
+            a[i][t] -= lower[i][j] * lower[t][j] * pivot
+    assert all(
+        sum(lower[i][j] * d[j] * lower[t][j] for j in range(k)) == matrix[i][t]
+        for i, t in product(range(k), repeat=2)
+    )
+    return [[str(x) for x in row] for row in lower], list(map(str, d))
+
+
+def run(output):
+    cases = []
+    populations = 0
+    for m in range(6, 28):
+        for n in partitions(m, limit=m):
+            populations += 1
+            a = m * m - sum(x * x for x in n)
+            b0 = a * a + sum(x * x * (m - x) ** 2 for x in n) - (15 * m - 30) * a
+            majority_small = 2 * max(n) > m and m - max(n) <= 7
+            if b0 >= 0 or len(n) <= 2 or m == 6 or majority_small:
+                continue
+            matrix, contrasts = gram(n)
+            lower, pivots = ldl(matrix)
+            cases.append(
+                dict(
+                    population=n,
+                    scaled_gram=matrix,
+                    contrasts=contrasts,
+                    lower=lower,
+                    pivots=pivots,
+                )
+            )
+        print(m, populations, len(cases), flush=True)
+    output.write_text(
+        json.dumps(
+            dict(
+                scope="Finite exact rational PSD certificate, not benchmark or neural evidence",
+                populations_considered=populations,
+                cases=cases,
+            ),
+            indent=2,
+        )
+        + "\n"
+    )
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path, required=True)
+    run(parser.parse_args().output)
