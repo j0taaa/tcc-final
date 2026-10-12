@@ -56,15 +56,12 @@ def controls(plan, first, second, precision=64):
         ("chi_QP", rq, rp, r, t),
         ("chi_PQ", rp, rq, t, r),
     ]:
+        shifts = [precision + max((y.bit_length() for y in row), default=0) for row in denominator]
         uppers = tuple(
-            tuple(
-                ((x * x << precision) + y - 1) // y if y else 0 for x, y in zip(l, rr, strict=True)
-            )
-            for l, rr in zip(numerator, denominator, strict=True)
+            tuple(((x * x << shift) + y - 1) // y if y else 0 for x, y in zip(l, rr, strict=True))
+            for l, rr, shift in zip(numerator, denominator, shifts, strict=True)
         )
-        chi_upper = (
-            F(old_mass * scalar(plan, uppers), new_mass * new_mass << (precision * len(p))) - 1
-        )
+        chi_upper = F(old_mass * scalar(plan, uppers), new_mass * new_mass << sum(shifts)) - 1
         assert chi_upper >= 0
         conditional[name] = min(F(1), sqrt_upper(chi_upper, precision) / 2)
     ranges = [None] * len(plan.terms)
