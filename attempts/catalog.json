@@ -1740,6 +1740,20 @@
             "attempts/42-safe-empirical-resampling/work/evidence/iid-v6.json",
             "attempts/42-safe-empirical-resampling/work/evidence/origin-v6.json"
           ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "125d0170607c189783a1826739bacab617ace831",
+          "evidence_commit": "f834d91f560de23ca8a2badb93f9fadefa8b2374",
+          "evidence_roots": [
+            "attempts/42-safe-empirical-resampling/work/monotone-contract-v7.md",
+            "attempts/42-safe-empirical-resampling/work/monotone-proof-v7.md",
+            "attempts/42-safe-empirical-resampling/work/blend-erratum-v7.md",
+            "attempts/42-safe-empirical-resampling/work/local-maximality-v7.md",
+            "attempts/42-safe-empirical-resampling/work/evidence/blend-obstruction-v7.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/blend-exact-refutation-v7.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/origin-v7.json"
+          ]
         }
       ]
     }
