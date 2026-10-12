@@ -835,3 +835,14 @@ Dirichlet/U-statistics e monotonicidade RSS são antecedentes, não novidade.
 O limite ideal de quatro classes melhora C4 só7/39 na variância ENTRE classes;
 não é gate20% integral, vitória contra pivotal/RSS/CV, modelo treinado ou
 vantagem EPIC. Prioridade e uso CFG/dLLM de custo completo continuam abertos.
+
+A42 v11 auditou o EPIC NATIVO sem alterar seu gerador:32 fontes/8 continuações
+em todos quatro inputs públicos antigos,343 forwards novos LLaDA/NF4. Todos
+os32 primeiros yields têm raiz pendente; obter o operador exige7--12 forwards
+adicionais.6/8 continuações são JSONs executáveis, duas incompletas preservadas.
+Preparação de oito fontes versus duas continuações custa2,73--3,84 vezes em
+wall e2,87--3,84 emCPU nesse diagnóstico serial; não é benchmark competitivo,
+pool vivo, medição semântica ou avaliação independente. A proposta de fonte
+barata pela raiz falha; não cancelar work/model forwards e chamá-los de grátis.
+Provas6/10 permanecem, mas uso/publicação continuam abertos. Não ampliar esse
+proxy por mais casos favoráveis; próxima aplicação deve ter fontes baratas.

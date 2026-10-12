@@ -84,6 +84,15 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   variance by only7/39; not a20% practical gate or dominance of pivotal/RSS.
 - [ ] T6202: Only after theory/prior survives, select a useful operation and
   competent complete-cost controls. No publication or practical gate yet.
+  V11 native source-boundary audit COMPLETE on ALL four OLD hash-ranked
+  SVAMP inputs:32 sources,8 requested full continuations,343 NEW LLaDA/NF4
+  forwards. All first-yield roots pending; reaching the root needs7--12
+  additional forwards.6/8 full outputs valid executable JSON,2 incomplete
+  retained. Diagnostic8-source/two-full ratios2.73--3.84 wall,2.87--3.84 CPU.
+  Root feature is too late for the proposed cheap-source use; no coupling,
+  semantic gold, independent confirmation or statistical speed win. Serial
+  audit does NOT account a live pool's tensor memory/replay. Native source
+  e631443, analysis5f515d7, evidence/origin-v11.json. Do NOT expand root proxy.
 
 ## M61 — Cheap structured noising and whole-gradient covariance order
 

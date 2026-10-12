@@ -1,0 +1,13 @@
+{
+  "neural_source_commit": "e631443586ddc823cd36850cfe027cb7dbb3f85c",
+  "analysis_source_commit": "5f515d7811e5d06d39437080b309f499eef82b96",
+  "neural_command": "PYTHONPATH=vendor/EPIC-Decoding:. .venv-live/bin/python -m attempts.42-safe-empirical-resampling.work.native_boundary_v11 --source-commit e631443586ddc823cd36850cfe027cb7dbb3f85c --output attempts/42-safe-empirical-resampling/work/evidence/native-boundary-v11.json",
+  "analysis_command": ".venv/bin/python -m attempts.42-safe-empirical-resampling.work.analyze_native_v11",
+  "files": {
+    "native-boundary-v11.json": "c5d013c3e109db7d5f134fbe221946bfacd4ce68ae17e7f27df09e7422745e80",
+    "native-boundary-summary-v11.json": "07da41e822ccc32ce840e79c299e696e69b0d63d1017c74f64937e13dab0da03",
+    "analyze_native_v11.py": "684bd2ff89fef06b8ee6594e856e6c422c9bcc2799ccd1e3e09b9c08c5a2e927"
+  },
+  "scope": "Four OLD development inputs,32 new native sources/8 completions. No coupling, golds, independent confirmation or statistical latency gate.",
+  "new_model_forwards": 343
+}

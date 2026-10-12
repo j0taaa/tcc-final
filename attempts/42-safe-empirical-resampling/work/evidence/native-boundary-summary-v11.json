@@ -1,0 +1,205 @@
+{
+  "scope": "Four OLD development inputs,32 new native sources/8 completions. No coupling, golds, independent confirmation or statistical latency gate.",
+  "source_records": 32,
+  "completed_original_sources": 8,
+  "new_model_forwards": 343,
+  "decision": "Root-known source boundary is too late in these diagnostics. All first-yield roots are pending; no useful cheap-root coupling established.",
+  "results": [
+    {
+      "id": "chal-353",
+      "first_roots": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "root_labels": [
+        "add",
+        "sub",
+        "add",
+        "add",
+        "add",
+        "add",
+        "add",
+        "add"
+      ],
+      "full_completion_status": [
+        {
+          "native_complete": true,
+          "syntactic_json": true,
+          "executable_json": true
+        },
+        {
+          "native_complete": false,
+          "syntactic_json": false,
+          "executable_json": false
+        }
+      ],
+      "wall": {
+        "observed_prefix_mean": 2.326764127239585,
+        "observed_full_mean": 3.616770950553473,
+        "diagnostic_two_cost": 8.027592034079134,
+        "diagnostic_eight_cost": 21.877653295872733,
+        "diagnostic_cost_ratio": 2.7253070663028995
+      },
+      "cpu": {
+        "observed_prefix_mean": 2.3088837389999983,
+        "observed_full_mean": 3.517715408999999,
+        "diagnostic_two_cost": 7.415752026,
+        "diagnostic_eight_cost": 21.267068051000003,
+        "diagnostic_cost_ratio": 2.8678235162713897
+      }
+    },
+    {
+      "id": "chal-890",
+      "first_roots": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "root_labels": [
+        "mul",
+        "mul",
+        "mul",
+        "mul",
+        "add",
+        "add",
+        "mul",
+        "mul"
+      ],
+      "full_completion_status": [
+        {
+          "native_complete": true,
+          "syntactic_json": true,
+          "executable_json": true
+        },
+        {
+          "native_complete": true,
+          "syntactic_json": true,
+          "executable_json": true
+        }
+      ],
+      "wall": {
+        "observed_prefix_mean": 2.1700616562739015,
+        "observed_full_mean": 2.518162523570936,
+        "diagnostic_two_cost": 5.19197832827922,
+        "diagnostic_eight_cost": 17.68667117122095,
+        "diagnostic_cost_ratio": 3.40653794236519
+      },
+      "cpu": {
+        "observed_prefix_mean": 2.1699621701250003,
+        "observed_full_mean": 2.5165172355000003,
+        "diagnostic_two_cost": 5.177869594000008,
+        "diagnostic_eight_cost": 17.673519474000024,
+        "diagnostic_cost_ratio": 3.413280144111717
+      }
+    },
+    {
+      "id": "chal-552",
+      "first_roots": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "root_labels": [
+        "sub",
+        "sub",
+        "sub",
+        "sub",
+        "sub",
+        "sub",
+        "sub",
+        "sub"
+      ],
+      "full_completion_status": [
+        {
+          "native_complete": true,
+          "syntactic_json": true,
+          "executable_json": true
+        },
+        {
+          "native_complete": true,
+          "syntactic_json": true,
+          "executable_json": true
+        }
+      ],
+      "wall": {
+        "observed_prefix_mean": 2.4594782724016113,
+        "observed_full_mean": 2.5078132965718396,
+        "diagnostic_two_cost": 5.167794122244231,
+        "diagnostic_eight_cost": 19.847318070475012,
+        "diagnostic_cost_ratio": 3.8405783204567494
+      },
+      "cpu": {
+        "observed_prefix_mean": 2.4591908925000023,
+        "observed_full_mean": 2.5082503905000095,
+        "diagnostic_two_cost": 5.160525788000015,
+        "diagnostic_eight_cost": 19.836876325000006,
+        "diagnostic_cost_ratio": 3.8439641889063934
+      }
+    },
+    {
+      "id": "chal-839",
+      "first_roots": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "root_labels": [
+        "add",
+        "add",
+        "add",
+        "sub",
+        "add",
+        "add",
+        "sub",
+        "add"
+      ],
+      "full_completion_status": [
+        {
+          "native_complete": true,
+          "syntactic_json": true,
+          "executable_json": true
+        },
+        {
+          "native_complete": false,
+          "syntactic_json": false,
+          "executable_json": false
+        }
+      ],
+      "wall": {
+        "observed_prefix_mean": 2.490831878152676,
+        "observed_full_mean": 3.57540771656204,
+        "diagnostic_two_cost": 7.31082528620027,
+        "diagnostic_eight_cost": 22.91000884620007,
+        "diagnostic_cost_ratio": 3.133710347235958
+      },
+      "cpu": {
+        "observed_prefix_mean": 2.490350659500008,
+        "observed_full_mean": 3.551030572000009,
+        "diagnostic_two_cost": 7.248682918000014,
+        "diagnostic_eight_cost": 22.847386657000072,
+        "diagnostic_cost_ratio": 3.1519362780050946
+      }
+    }
+  ]
+}

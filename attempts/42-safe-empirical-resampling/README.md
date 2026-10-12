@@ -143,3 +143,14 @@ U-statistics and monotone ranked-set sampling are serious antecedents.
 The ideal four-class improvement over C4 is only7/39 of between-class pair
 variance, before overhead; stronger pivotal/RSS/CV controls remain relevant.
 The publication/complete-cost dLLM/CFG goal is NOT fulfilled by this lemma.
+
+V11 executes a source-boundary diagnostic in the unmodified native EPIC:
+ALL four old public hash-ranked cases,32 sources,8 requested full continuations,
+343 new LLaDA/NF4 forwards. All32 first yields have pending root operators;
+reaching them takes7--12 further forwards. Six complete continuations are
+valid executable JSON, two are incomplete and retained. Source preparation
+is therefore not cheap at that boundary (diagnostic cost ratios2.73--3.84
+wall versus two original completions). This is serial, no live coupling or
+semantic quality comparison; live tensor memory/selected-source replay would
+also be charged. See work/native-boundary-decision-v11.md and its raw evidence.
+The root-proxy application is rejected; V6/V10 mathematics remains intact.
