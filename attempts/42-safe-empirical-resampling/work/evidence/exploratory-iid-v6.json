@@ -1,0 +1,155 @@
+{
+  "scope": "Exact rational/symbolic correctness only; no neural or priority claim",
+  "iid_polynomial": "S2**2 + S2*x*y - S2*x - S2*y - S2 - 2*S3 + S4 + x**3*y - x**3 - 2*x**2*y + 2*x**2 + x*y**3 - 2*x*y**2 + x - y**3 + 2*y**2 + y + 1",
+  "balanced_deltas": [
+    {
+      "classes": 2,
+      "delta6": "3/8"
+    },
+    {
+      "classes": 3,
+      "delta6": "26/81"
+    },
+    {
+      "classes": 4,
+      "delta6": "33/128"
+    },
+    {
+      "classes": 5,
+      "delta6": "132/625"
+    },
+    {
+      "classes": 6,
+      "delta6": "115/648"
+    },
+    {
+      "classes": 7,
+      "delta6": "366/2401"
+    },
+    {
+      "classes": 8,
+      "delta6": "273/2048"
+    },
+    {
+      "classes": 9,
+      "delta6": "776/6561"
+    },
+    {
+      "classes": 10,
+      "delta6": "531/5000"
+    },
+    {
+      "classes": 11,
+      "delta6": "1410/14641"
+    },
+    {
+      "classes": 12,
+      "delta6": "913/10368"
+    },
+    {
+      "classes": 13,
+      "delta6": "2316/28561"
+    },
+    {
+      "classes": 14,
+      "delta6": "1443/19208"
+    },
+    {
+      "classes": 15,
+      "delta6": "3542/50625"
+    },
+    {
+      "classes": 16,
+      "delta6": "2145/32768"
+    },
+    {
+      "classes": 17,
+      "delta6": "5136/83521"
+    },
+    {
+      "classes": 18,
+      "delta6": "3043/52488"
+    },
+    {
+      "classes": 19,
+      "delta6": "7146/130321"
+    },
+    {
+      "classes": 20,
+      "delta6": "4161/80000"
+    },
+    {
+      "classes": 21,
+      "delta6": "9620/194481"
+    },
+    {
+      "classes": 22,
+      "delta6": "5523/117128"
+    },
+    {
+      "classes": 23,
+      "delta6": "12606/279841"
+    },
+    {
+      "classes": 24,
+      "delta6": "7153/165888"
+    },
+    {
+      "classes": 25,
+      "delta6": "16152/390625"
+    },
+    {
+      "classes": 26,
+      "delta6": "9075/228488"
+    },
+    {
+      "classes": 27,
+      "delta6": "20306/531441"
+    },
+    {
+      "classes": 28,
+      "delta6": "11313/307328"
+    },
+    {
+      "classes": 29,
+      "delta6": "25116/707281"
+    },
+    {
+      "classes": 30,
+      "delta6": "13891/405000"
+    },
+    {
+      "classes": 31,
+      "delta6": "30630/923521"
+    },
+    {
+      "classes": 32,
+      "delta6": "16833/524288"
+    }
+  ],
+  "raw_tapes": 4096,
+  "raw_marginals": [
+    "1/7",
+    "2/7",
+    "1/7",
+    "3/7"
+  ],
+  "class_joint": [
+    [
+      "11097/117649",
+      "8301/117649",
+      "31023/117649"
+    ],
+    [
+      "8301/117649",
+      "205/117649",
+      "8301/117649"
+    ],
+    [
+      "31023/117649",
+      "8301/117649",
+      "11097/117649"
+    ]
+  ],
+  "repeated_originals_retained": true
+}
