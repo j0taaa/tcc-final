@@ -69,7 +69,7 @@ def geometry(rows):
 
 
 def compress(rows, grid):
-    """SAME64k-row/1-1/(16k²) guarantee; O((m+k)*log(m+2)) exact operations."""
+    """SAME64k-row/1-1/(16k²) guarantee; O(m*log(m+2)) exact operations."""
     if not isinstance(grid, int) or grid < 1:
         raise ValueError("grid must be a positive integer")
     rows = [tuple(a) for a in rows]
@@ -78,6 +78,8 @@ def compress(rows, grid):
     rows = [a for a in rows if a != (0, 0)]
     if not rows:
         return []
+    if len(rows) <= grid:
+        return rows
     if all(det(rows[0], a) == 0 for a in rows):
         positive = [a if a[0] > 0 or (a[0] == 0 and a[1] > 0) else (-a[0], -a[1]) for a in rows]
         return [tuple(sum(a[i] for a in positive) for i in [0, 1])]

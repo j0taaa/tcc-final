@@ -13,14 +13,14 @@ from .product import certificate
 
 
 def expected(first, second):
-    norms = [prod(sum(row) for row in head) for head in [first, second]]
+    norms = [prod((sum(row) for row in head), start=F(1)) for head in [first, second]]
     if 0 in norms:
         return None
     return (
         sum(
             abs(
-                prod(first[i][v] for i, v in enumerate(word)) / norms[0]
-                - prod(second[i][v] for i, v in enumerate(word)) / norms[1]
+                prod((first[i][v] for i, v in enumerate(word)), start=F(1)) / norms[0]
+                - prod((second[i][v] for i, v in enumerate(word)), start=F(1)) / norms[1]
             )
             for word in itertools.product(*(range(len(row)) for row in first))
         )
@@ -65,6 +65,7 @@ def run(output):
                         assert result["status"] == "ZERO_VALID_MASS_UNDEFINED_TV"
                         zeros += 1
                     else:
+                        assert isinstance(truth, F)
                         assert result["lower"] <= truth <= result["upper"]
                         assert result["upper"] <= (1 + epsilon) * result["lower"]
                     stream.write(
