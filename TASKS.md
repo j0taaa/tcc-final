@@ -27,7 +27,8 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. Current M69 investigates a quantitative deterministic TV
 precision-cost bound and an original-token dLLM/CFG audit. Stronger V24 coupling
 erases the old development gap; ALL15 new heads are captured/verified, and the
-unchanged360-row V25 audit is running. Novelty/significance/utility remain open;
+unchanged360-row V25 audit fails its precision gate (0/36 primary pairs).
+Novelty/significance/utility remain open;
 do not reset earlier losses or call prototype correctness publication proof.
 
 ## M69 — Rational drift certificate, proof before application
@@ -182,7 +183,7 @@ do not reset earlier losses or call prototype correctness publication proof.
   be presented as current comparison against this stronger control. All evidence
   is preserved in49/work/evidence/{overlap,public}-v24. Independent audit must
   add BOTH overlap controls without changing the still-unobserved2x gate.
-- [ ] T6918: V25 incorporates BOTH classical overlap bounds in the unchanged
+- [x] T6918: V25 incorporates BOTH classical overlap bounds in the unchanged
   ALL360-row external protocol BEFORE new forwards/independent observations.
   Validate process/deadline/memory orchestration on ALL24 old packet cases;
   only then capture ALL15 actual heads and run the full unseen-document gate.
@@ -191,7 +192,12 @@ do not reset earlier losses or call prototype correctness publication proof.
   masses/counts/scalar controls exactly. Capture producerc2029ca executesALL15
   actual heads plusONE warmup; verifierde95c29 confirms bit-exact full Torch
   softmax and original bytes for all5 docs, no added forwards. ALL360-row audit
-  is running, no incomplete positive claim. Sourcee6cef06's maintained suite
+  completes256 certificates/104 refusals, no missing rows,3750.830s wall and
+  3749.986s CPU. The frozen2x gate FAILS in ALL36 primary pairs; no refusal
+  receives credit. Additional ideal-control checks pass75 original-word
+  oracle cases but confirm zero robust wins. All45 pairs/360 raw records and
+  origin hashes are in49/work/evidence/external-v25 and decision-v25.md.
+  Sourcee6cef06's maintained suite
   passesALL169 in71.697s; the new macro/alias oracle covers non-ID-topological
   order. Raw head/probability arrays remain local; their hashes are published.
 - [ ] T6919: BEFORE implementation, V26 writes the classical streamed known-

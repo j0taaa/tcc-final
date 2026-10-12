@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETE_FUNCTIONAL_AUDIT",
+  "rows": 360,
+  "expected_rows": 360,
+  "counts": {
+    "CERTIFIED_ON_ADMITTED_FOREST": 256,
+    "RESOURCE_REFUSAL": 104
+  },
+  "wall_cpu": [
+    3750.830199080985,
+    3749.986245253
+  ],
+  "development_only": false,
+  "new_forwards_in_audit": 0,
+  "missing_due_to_worker_failure": 0
+}

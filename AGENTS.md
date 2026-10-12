@@ -986,7 +986,12 @@ todos casos/tolerâncias/budgets e o mesmo critério2x, incorporando AMBOS
 acoplamentos ANTES de novas observações. TODOS15 heads dos cinco documentos
 pinados foram capturados (mais UM warmup); replay confirma softmax completo
 bit-exato e bytes originais. Quatro documentos são não vistos pela pesquisa
-TV deA49, não porA24 ou pelo treinamento. Auditoria360 ainda em execução;
+TV deA49, não porA24 ou pelo treinamento. Auditoria360 está completa:256
+certificados e104 recusas, nenhum registro ausente. O gate independente2x
+falha em TODOS36 pares primários; não reduzir o limiar ou contar1,9885x como
+sucesso. A análise adicional de precisão ideal também tem zero ganhos robustos.
+Os75 oráculos dessa análise passam; isto é correção, não vantagem prática.
+Todos45 pares e360 registros ficam em49/work/evidence/external-v25;
 recusas compartilhadas não recebem crédito. Fontee6cef06 passa169 testes em
 71,697s. Arrays novos completos ficam locais; hashes não são reprodução
 offline integral. Novidade/suficiência editorial/ganho independente continuam

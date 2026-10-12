@@ -4,10 +4,14 @@
 checks and all24 public rows. The old FP16 comparison18.57x drops to1.05476x;
 FP32 overlap is tighter than the candidate upper. `work/overlap-decision-v24.md`
 and immutable evidence preserve the loss. V22 is a historical draft with its
-listed controls, not a current practical victory. V25 now captures ALL15 actual
+listed controls, not a current practical victory. V25 captures ALL15 actual
 heads from ALL5 predeclared documents and4/8/16 masks; their full softmax and
-original bytes replay exactly. The360-row audit is running with BOTH overlap
-controls; no independent benefit/publication conclusion is yet asserted.
+original bytes replay exactly. The360-row audit is COMPLETE:256 certificates,
+104 resource refusals, no missing rows. Its unchanged independent2x precision
+gate FAILS in all36 primary pairs, including the additional ideal-control
+robustness check. See `work/decision-v25.md`; all45 pairs/360 records remain.
+The quantitative theorem is a candidate, but practical advantage/publication
+sufficiency are NOT confirmed. No near-threshold result is relabeled a win.
 
 V26's `work/targeted-root-v26.md` writes a CLASSICAL final-query shortcut and
 exact propagated rational factors before code. It must strengthen ALL four
