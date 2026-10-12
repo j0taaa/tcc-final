@@ -90,14 +90,14 @@
     "timeout_seconds": 120
   },
   "core": {
-    "max_candidate_rows": 1000000,
     "hard_wall_seconds": 150,
-    "child_virtual_memory_gib": 3
+    "child_virtual_memory_gib": 3,
+    "max_materialized_rows": 1000000
   },
   "correctness": "Validate both exact normalizers independently against frozen stack control, original assignment count and rational L<=U<=(1+epsilon)L, L<=every cheap upper. Failure/refusal yields NO certificate. All24 expected records per state; shared preparation failure reported for all methods, never competitor loss credit",
   "rows": 360,
   "repetitions": 1,
-  "usefulness_gate": "Ordered epsilon1/10 upper at least2x tighter than strongest cheap upper in at least ONE of the12 predeclared unseen-document states; report ALL formats/tolerances/methods, ratios, losses and refusals. This is certificate-precision usefulness, not independent speed/semantic superiority",
+  "usefulness_gate": "Ordered epsilon1/10 upper at least2x tighter than strongest cheap upper in at least ONE of the36 predeclared unseen(format,state) pairs (12states x3formats); report ALL360 rows, ratios, losses and refusals. This is limited certificate-precision usefulness, not independent speed/semantic superiority",
   "timing": "Charge source/token input, lexer/stack/bridge preparation, first count/normalizer, rounded conversion/normalizer, scalar controls, core and process management. Capture model/softmax separately; load/warmup recorded. No statistical latency gate",
   "origin": "Fresh forwards on same pinned MDLM/tokenizer; archive full rational source tables and hashes, small raw-head verification where published; raw model caches remain local. No parameter update/training",
   "claim": "Mathematical improved deterministic bound is primary; geometry/coupling/parsing/bit computability known. No exclusive novelty/human review/publication acceptance or EPIC victory claimed"
