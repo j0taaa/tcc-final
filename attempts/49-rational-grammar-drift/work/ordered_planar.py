@@ -2,8 +2,9 @@
 
 import heapq
 from functools import cmp_to_key
+from itertools import pairwise
 
-from .calibrated_endpoint import grid_for
+from .calibrated_endpoint import grid_for, lower_factor
 from .optimal_planar import det, segment_distance
 from .optimal_planar_fast import right_chain, rotate
 
@@ -100,7 +101,7 @@ def compress_ordered(rows, grid):
         if det(result[i], result[pivot]) > 0:
             pivot = i
     result = result[pivot:] + result[:pivot]
-    assert all(det(a, b) > 0 for a, b in zip(result, result[1:]))
+    assert all(det(a, b) > 0 for a, b in pairwise(result))
     assert len(result) <= 64 * grid
     return result if len(result) < len(rows) else rows
 
@@ -130,7 +131,7 @@ class Item:
 
 def compress_images(core, diagonals, grid):
     core, diagonals = validate(core), validate(diagonals)
-    if any(a != canonical(a) for a in core) or any(det(a, b) < 0 for a, b in zip(core, core[1:])):
+    if any(a != canonical(a) for a in core) or any(det(a, b) < 0 for a, b in pairwise(core)):
         raise ValueError("core must have canonical angular order")
     if any(a < 0 or b < 0 for a, b in diagonals):
         raise ValueError("original diagonal weights must be nonnegative")
@@ -151,4 +152,4 @@ def compress_images(core, diagonals, grid):
     return compress_ordered(rows, grid)
 
 
-__all__ = ["compress", "compress_images", "grid_for"]
+__all__ = ["compress", "compress_images", "grid_for", "lower_factor"]

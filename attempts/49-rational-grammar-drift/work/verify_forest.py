@@ -6,6 +6,7 @@ import itertools
 import json
 import math
 import random
+import subprocess
 import traceback
 from fractions import Fraction as F
 from pathlib import Path
@@ -137,10 +138,23 @@ def expected(first, second, emissions, kind):
     )
 
 
-def run(output):
+def run(output, known_root=False):
     output.mkdir(parents=True, exist_ok=False)
     rng = random.Random(202610120492)
     count = certified = zero = 0
+    engines = (
+        [
+            importlib.import_module("attempts.49-rational-grammar-drift.work." + name)
+            for name in [
+                "adaptive_angular",
+                "calibrated_endpoint",
+                "hybrid_endpoint",
+                "ordered_planar",
+            ]
+        ]
+        if known_root
+        else [None]
+    )
     try:
         with (output / "rows.jsonl").open("w") as stream:
             for name, kind, emissions, rows in fixtures():
@@ -150,28 +164,52 @@ def run(output):
                     plan = compile_cfg_sampler(source, first.state)
                     truth = expected(first, second, emissions, kind)
                     for epsilon in [F(1), F(1, 2), F(1, 10)]:
-                        report = certificate(plan, first, second, epsilon)
-                        if truth is None:
-                            assert report["status"] == "ZERO_VALID_MASS_UNDEFINED_TV"
-                            zero += 1
-                        else:
-                            assert (
-                                report["lower"]
-                                <= truth
-                                <= report["upper"]
-                                <= (1 + epsilon) * report["lower"]
+                        for engine in engines:
+                            report = certificate(
+                                plan,
+                                first,
+                                second,
+                                epsilon,
+                                compressor=engine,
+                                exact_passthrough=known_root,
+                                known_root_query=known_root,
                             )
-                            certified += 1
-                        count += 1
-                        row = dict(
-                            case=name,
-                            mode=mode,
-                            epsilon=str(epsilon),
-                            expected=str(truth),
-                            **report,
-                        )
-                        stream.write(json.dumps(row, default=str) + "\n")
-        summary = dict(status="CORRECTNESS_ONLY", cases=count, certified=certified, zero_mass=zero)
+                            if truth is None:
+                                assert report["status"] == "ZERO_VALID_MASS_UNDEFINED_TV"
+                                zero += 1
+                            else:
+                                assert (
+                                    report["lower"]
+                                    <= truth
+                                    <= report["upper"]
+                                    <= (1 + epsilon) * report["lower"]
+                                )
+                                if known_root:
+                                    assert (
+                                        report["root_rows"] == 0
+                                        and report["root_streamed_candidates"] >= 0
+                                    )
+                                certified += 1
+                            count += 1
+                            row = dict(
+                                case=name,
+                                mode=mode,
+                                epsilon=str(epsilon),
+                                engine=None
+                                if engine is None
+                                else engine.__name__.rsplit(".", 1)[-1],
+                                expected=str(truth),
+                                **report,
+                            )
+                            stream.write(json.dumps(row, default=str) + "\n")
+        summary = dict(
+            status="CORRECTNESS_ONLY",
+            cases=count,
+            certified=certified,
+            zero_mass=zero,
+            known_root_query=known_root,
+            producer=subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+        )
         (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
         print(json.dumps(summary), flush=True)
     except Exception:
@@ -182,4 +220,6 @@ def run(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    run(parser.parse_args().output)
+    parser.add_argument("--known-root", action="store_true")
+    args = parser.parse_args()
+    run(args.output, args.known_root)

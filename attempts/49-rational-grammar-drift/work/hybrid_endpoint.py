@@ -1,7 +1,7 @@
 """Routine angular shortcut, preserving endpoint size/error bounds."""
 
 from . import angular_control, optimal_planar_fast
-from .calibrated_endpoint import grid_for
+from .calibrated_endpoint import grid_for, lower_factor
 
 
 def compress(rows, grid):
@@ -13,4 +13,4 @@ def compress(rows, grid):
     return optimal_planar_fast.compress(rows, grid)
 
 
-__all__ = ["grid_for", "compress"]
+__all__ = ["compress", "grid_for", "lower_factor"]

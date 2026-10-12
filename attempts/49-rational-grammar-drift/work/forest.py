@@ -15,6 +15,7 @@ def certificate(
     max_rows=100_000,
     compressor=None,
     exact_passthrough=False,
+    known_root_query=False,
 ):
     engine = _planar if compressor is None else compressor
     if first.state != plan.state or second.state != plan.state:
@@ -27,9 +28,10 @@ def certificate(
             head.append(tuple(p.numerator * (scale // p.denominator) for p in row))
         weights.append(head)
     masses, scopes, costs, event_counts = {}, {}, {}, {}
+    root_depth = 0
     for node in plan.order:
         total = [0, 0]
-        local_scopes, local_costs, local_counts = [], [], []
+        local_scopes, local_costs, local_counts, child_costs = [], [], [], []
         for term in plan.terms[node]:
             if term.choice is not None:
                 position, index = term.choice
@@ -53,6 +55,7 @@ def certificate(
             local_scopes.append(scope)
             local_costs.append(cost)
             local_counts.append(count)
+            child_costs.append(sum(costs[c] for c in term.children))
             total = [total[j] + value[j] for j in [0, 1]]
         if not local_scopes or any(s != local_scopes[0] for s in local_scopes):
             raise ValueError("alternatives do not share a physical slot scope")
@@ -63,14 +66,20 @@ def certificate(
         extra = 0 if exact_passthrough and len(plan.terms[node]) == 1 else 1
         costs[node] = max(local_costs) + extra if scope else 0
         event_counts[node] = min(2, sum(local_counts))
+        if node == plan.root:
+            root_depth = max(child_costs)
     if plan.root is None or 0 in masses[plan.root]:
         return dict(status="ZERO_VALID_MASS_UNDEFINED_TV")
     if scopes[plan.root] != frozenset(range(len(plan.state.canvas))):
         raise ValueError("root does not consume all original positions")
     size = max(1, costs[plan.root])
     grid = engine.grid_for(epsilon, size)
+    root_factor = engine.lower_factor(grid) ** root_depth if known_root_query else None
+    if root_factor is not None and not Fraction(1, 1 + epsilon) <= root_factor <= 1:
+        raise ValueError("known-root error factor is not certified by this grid")
     cores = {}
     peak_rows = peak_bits = 0
+    root_candidates = 0
 
     def reduce(rows):
         nonlocal peak_rows, peak_bits
@@ -83,6 +92,27 @@ def certificate(
         return engine.compress(rows, grid)
 
     for node in plan.order:
+        if node == plan.root and known_root_query:
+            a, b = masses[node]
+            numerator = 0
+            for term in plan.terms[node]:
+                if term.choice is not None:
+                    position, index = term.choice
+                    pairs = (tuple(w[position][index] for w in weights),)
+                    count = 1
+                elif term.children:
+                    left, right = term.children
+                    pairs = ((x * u, y * v) for x, y in cores[left] for u, v in cores[right])
+                    count = len(cores[left]) * len(cores[right])
+                else:
+                    pairs, count = ((1, 1),), 1
+                root_candidates += count
+                for x, y in pairs:
+                    numerator += abs(b * x - a * y)
+                    peak_bits = max(peak_bits, abs(x).bit_length(), abs(y).bit_length())
+            peak_rows = max(peak_rows, root_candidates)
+            lower = Fraction(numerator, 2 * a * b)
+            continue
         if not scopes[node]:
             cores[node] = [(1, 1)]
             continue
@@ -131,17 +161,27 @@ def certificate(
             if exact_passthrough and len(plan.terms[node]) == 1
             else reduce(rows)
         )
-    a, b = masses[plan.root]
-    lower = Fraction(sum(abs(b * x - a * y) for x, y in cores[plan.root]), 2 * a * b)
+    if not known_root_query:
+        a, b = masses[plan.root]
+        lower = Fraction(sum(abs(b * x - a * y) for x, y in cores[plan.root]), 2 * a * b)
     return dict(
         status="CERTIFIED_ON_ADMITTED_FOREST",
         lower=lower,
-        upper=min(Fraction(1), (1 + epsilon) * lower),
+        upper=min(Fraction(1), lower / root_factor if known_root_query else (1 + epsilon) * lower),
         grid=grid,
         expanded_size=size,
         peak_candidate_rows=peak_rows,
         peak_integer_bits=peak_bits,
         nodes=len(plan.terms),
         alternatives=plan.alternatives,
-        root_rows=len(cores[plan.root]),
+        root_rows=0 if known_root_query else len(cores[plan.root]),
+        known_root_query=known_root_query,
+        root_streamed_candidates=root_candidates,
+        root_error_count=root_depth if known_root_query else None,
+        root_lower_factor=root_factor,
+        root_factor_bits=max(
+            root_factor.numerator.bit_length(), root_factor.denominator.bit_length()
+        )
+        if root_factor is not None
+        else 0,
     )

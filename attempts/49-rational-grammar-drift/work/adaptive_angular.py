@@ -3,7 +3,7 @@
 from fractions import Fraction
 
 from . import angular_streamed
-from .angular_control import grid_for
+from .angular_control import grid_for, lower_factor
 from .norm_index import minimum_ratio
 
 
@@ -30,4 +30,4 @@ def compress_product(left, right, grid):
     return compress([(a * x, b * y) for a, b in left for x, y in right], grid)
 
 
-__all__ = ["grid_for", "compress", "compress_product"]
+__all__ = ["compress", "compress_product", "grid_for", "lower_factor"]

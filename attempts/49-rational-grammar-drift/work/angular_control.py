@@ -14,6 +14,10 @@ def grid_for(epsilon, size):
     return (value.numerator + value.denominator - 1) // value.denominator
 
 
+def lower_factor(grid):
+    return 1 - Fraction(20, grid)
+
+
 def compress(rows, grid):
     """All real w: (1-20/grid)*F_rows(w)<=F_core(w)<=F_rows(w)."""
     if not isinstance(grid, int) or grid < 1:

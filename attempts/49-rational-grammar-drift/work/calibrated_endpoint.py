@@ -14,4 +14,8 @@ def grid_for(epsilon, size):
     return grid + (grid * grid * value.denominator < value.numerator)
 
 
-__all__ = ["grid_for", "compress"]
+def lower_factor(grid):
+    return 1 - Fraction(1, 16 * grid * grid)
+
+
+__all__ = ["compress", "grid_for", "lower_factor"]

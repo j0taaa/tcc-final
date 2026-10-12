@@ -61,10 +61,17 @@ def failure(exc):
     )
 
 
-def core(send, plan, first, second, epsilon, engine, limit):
+def core(send, plan, first, second, epsilon, engine, limit, known_root):
     try:
         result = certificate(
-            plan, first, second, epsilon, max_rows=limit, compressor=engine, exact_passthrough=True
+            plan,
+            first,
+            second,
+            epsilon,
+            max_rows=limit,
+            compressor=engine,
+            exact_passthrough=True,
+            known_root_query=known_root,
         )
     except Exception as exc:
         result = failure(exc)
@@ -84,6 +91,7 @@ def guarded_core(plan, first, second, epsilon, engine, protocol):
             epsilon,
             engine,
             protocol["core"]["max_materialized_rows"],
+            protocol.get("known_root_query", False),
         ),
     )
     start = clock()
@@ -113,7 +121,9 @@ def state_worker(source, frame_path, folder, protocol):
     base = dict(
         source_case=frame["case"],
         mask_count=frame["mask_count"],
-        audit_split=frame["audit_split"],
+        audit_split="DEVELOPMENT_REPLAY"
+        if protocol.get("known_root_query")
+        else frame["audit_split"],
         free_positions=frame["positions"],
     )
     costs = {}
@@ -250,11 +260,12 @@ def state_worker(source, frame_path, folder, protocol):
                     )
 
 
-def run(source, output, development=False):
+def run(source, output, development=False, known_root=False):
     if subprocess.check_output(["git", "status", "--porcelain"]).strip():
         raise ValueError("freeze source before audit")
     output.mkdir(parents=True, exist_ok=False)
-    protocol = json.loads((WORK / "protocol-v25.json").read_text())
+    protocol_path = WORK / ("protocol-v26.json" if known_root else "protocol-v25.json")
+    protocol = json.loads(protocol_path.read_text())
     origin = json.loads((source / "metadata.json").read_text())
     assert origin["vocabulary_sha256"] == digest(source / "vocabulary.json")
     frames = [p for p in sorted(source.glob("*.json")) if p.stem not in ["metadata", "vocabulary"]]
@@ -273,9 +284,10 @@ def run(source, output, development=False):
         producer=subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
         source_metadata_sha256=digest(source / "metadata.json"),
         vocabulary_sha256=digest(source / "vocabulary.json"),
-        protocol_sha256=digest(WORK / "protocol-v25.json"),
+        protocol_sha256=digest(protocol_path),
         source_origin=origin,
-        development_only=development,
+        development_only=development or known_root,
+        known_root_query=known_root,
         expected_rows=24 * len(frames),
         engines={e.__name__: digest(e.__file__) for e in ENGINES},
         scalar_source_hashes={
@@ -318,7 +330,9 @@ def run(source, output, development=False):
                             dict(
                                 source_case=frame["case"],
                                 mask_count=frame["mask_count"],
-                                audit_split=frame["audit_split"],
+                                audit_split="DEVELOPMENT_REPLAY"
+                                if known_root
+                                else frame["audit_split"],
                                 format=kind,
                                 epsilon=epsilon,
                                 engine=engine,
@@ -338,7 +352,8 @@ def run(source, output, development=False):
         expected_rows=24 * len(frames),
         counts=statuses,
         wall_cpu=elapsed(start),
-        development_only=development,
+        development_only=development or known_root,
+        known_root_query=known_root,
         new_forwards_in_audit=0,
         missing_due_to_worker_failure=missing,
     )
@@ -351,5 +366,6 @@ if __name__ == "__main__":
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--development", action="store_true")
+    parser.add_argument("--known-root", action="store_true")
     args = parser.parse_args()
-    run(args.source, args.output, args.development)
+    run(args.source, args.output, args.development, args.known_root)
