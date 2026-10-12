@@ -233,3 +233,11 @@ control are descriptive, not independent/statistical/general superiority.
 V14 producer8cae148 passes ALLfive positive-family formula checks, with no
 performance measurement or forward. Exact scalar TV remains the better
 one-position operation; the theorem concerns retained intermediate cores.
+
+V15 re-evaluates all eight criteria BEFORE code in `adaptive-control-v15.md`:
+strong angular aggregation chooses a coarser grid only after EXACT all-query
+norm certification. ALL methods receive exact unary/singleton passthrough
+and its tighter structural error count. All old correctness/public families
+remain, with full costs and no capped-product success credit. The control may
+erase the observed speed advantage. These classic optimizations are NOT the
+candidate novelty; the sharper theoretical TV precision bound remains so.
