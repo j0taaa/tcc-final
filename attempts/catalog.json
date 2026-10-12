@@ -2263,6 +2263,29 @@
             "attempts/49-rational-grammar-drift/work/evidence/external-v26",
             "attempts/49-rational-grammar-drift/work/evidence/origin-external-v26.json"
           ]
+        },
+        {
+          "id": "v27",
+          "source_commit": "22a0aeb3f4295216b245e219e9c2fcffaa66a848",
+          "evidence_commit": "cc99b698db8a5dff89707a59ff043c1ec5e10219",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/manuscript-v27.tex",
+            "attempts/49-rational-grammar-drift/work/build_report_v27.py",
+            "attempts/49-rational-grammar-drift/work/generated-v27",
+            "attempts/49-rational-grammar-drift/work/primary-proof-audit-v27.md",
+            "attempts/49-rational-grammar-drift/work/decision-operation-v27.md",
+            "attempts/49-rational-grammar-drift/work/full-arithmetic-scaling-v27.md",
+            "attempts/49-rational-grammar-drift/work/chart-error-count-v27.md",
+            "attempts/49-rational-grammar-drift/work/source-error-count-v27.md",
+            "attempts/49-rational-grammar-drift/work/markov-corollary-v27.md",
+            "attempts/49-rational-grammar-drift/work/scalar-gap-v27.md",
+            "attempts/49-rational-grammar-drift/work/evidence/two-sided-v27",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-two-sided-v27.json",
+            "attempts/49-rational-grammar-drift/work/evidence/scalar-gap-v27",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-scalar-gap-v27.json",
+            "attempts/49-rational-grammar-drift/work/evidence/checks-v27.json"
+          ]
         }
       ]
     }
