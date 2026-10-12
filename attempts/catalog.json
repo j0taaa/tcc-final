@@ -1668,7 +1668,7 @@
     {
       "id": "42-safe-empirical-resampling",
       "title": "Empirical all-budget atom coverage and arbitrary-score safety",
-      "conclusion": "Written all-even-size conditional theorem and unconditional B=6 covariance theorem, with explicitly computer-assisted symbolic/rational boundary checked separately. All-budget extension, priority and useful complete-cost CFG/dLLM benefit remain open; no new model campaign.",
+      "conclusion": "Pure written six-IID-proposal unconditional all-vector covariance theorem and balanced score-oblivious query frontier, shared by classical pivotal6. Finite-source v4 proof and all-bank v5 negative controls preserved. Priority and useful complete-cost CFG/dLLM application remain open; no new model campaign.",
       "reading": "TASKS.md M62; README eight criteria; work/conjecture-v1.md; work/primary-v1.md",
       "versions": [
         {
@@ -1727,6 +1727,18 @@
             "attempts/42-safe-empirical-resampling/work/evidence/pivotal-comparison-v5.json",
             "attempts/42-safe-empirical-resampling/work/evidence/bank-audit-v5.json",
             "attempts/42-safe-empirical-resampling/work/evidence/origin-v5.json"
+          ]
+        },
+        {
+          "id": "v6",
+          "source_commit": "a300a2e7cfff60aed87eaaf77c3010fa9408ce9d",
+          "evidence_commit": "2980efd4917647017f90b3117fb1c9e179564d4e",
+          "evidence_roots": [
+            "attempts/42-safe-empirical-resampling/work/iid-contract-v6.md",
+            "attempts/42-safe-empirical-resampling/work/iid-theorem-v6.md",
+            "attempts/42-safe-empirical-resampling/work/primary-and-scope-v6.md",
+            "attempts/42-safe-empirical-resampling/work/evidence/iid-v6.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/origin-v6.json"
           ]
         }
       ]
