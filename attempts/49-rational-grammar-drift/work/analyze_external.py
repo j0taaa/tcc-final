@@ -6,6 +6,7 @@ from collections import Counter
 from fractions import Fraction as F
 from pathlib import Path
 
+from .ideal_controls import controls as ideal_control_bounds
 from .public_controls import digest
 
 WORK = Path(__file__).resolve().parent
@@ -30,6 +31,7 @@ def run(source, output):
     assert {
         (r["source_case"], r["mask_count"], r["format"], r["epsilon"], r["engine"]) for r in rows
     } == expected
+    slots_by_case = {x["key"]: len(x["tokens"]) for x in metadata["source_origin"]["selected"]}
     pairs = []
     for row in rows:
         if row["epsilon"] != "1/10" or row["engine"] != "ordered_planar":
@@ -66,10 +68,22 @@ def run(source, output):
                 passes_2x=bool(cheap > 0 and cheap >= 2 * upper),
                 full_first_audit_wall_cpu=row["full_first_audit_wall_cpu"],
             )
+            # Every successful core reports the same admitted forest node count.
+            assert row["nodes"] > 0
+            slots = slots_by_case[row["source_case"]]
+            ideal = ideal_control_bounds(c, slots, row["nodes"])
+            ideal_lower = ideal["ideal_upper_lower_bound"]
+            result.update(
+                ideal_controls=ideal,
+                robust_against_ideal_control_rounding=bool(
+                    ideal_lower > 0 and ideal_lower >= 2 * upper
+                ),
+            )
         pairs.append(result)
     primary = [r for r in pairs if r["primary_unseen"]]
     assert len(pairs) == 45 and len(primary) == 36
     wins = [r for r in primary if r["passes_2x"]]
+    robust = [r for r in wins if r.get("robust_against_ideal_control_rounding")]
     result = dict(
         status="INCOMPLETE_NOT_A_CONFIRMED_GATE"
         if summary["status"] != "COMPLETE_FUNCTIONAL_AUDIT"
@@ -79,6 +93,7 @@ def run(source, output):
         predicate=protocol["usefulness_gate"],
         primary_pairs=36,
         passed_primary_pairs=len(wins),
+        robust_primary_pairs=len(robust),
         all45pairs=pairs,
         all360statuses=dict(Counter(r["status"] for r in rows)),
         rows_sha256=digest(source / "rows.jsonl"),
@@ -89,7 +104,7 @@ def run(source, output):
         ),
     )
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(result, indent=2) + "\n")
+    output.write_text(json.dumps(result, indent=2, default=str) + "\n")
     print(
         json.dumps(
             {
