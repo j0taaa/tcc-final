@@ -1,5 +1,23 @@
 # Caderno científico — contrato atual e histórico
 
+
+##2026-10-12 — A45–A48: distinguish open mathematics from established methods
+
+A45 completed the prospective6,230-case negative-only screen without a finite
+obstruction. The full matrix theorem is still OPEN; no neural benefit follows.
+A46's primary2001/SODA2026/weighted-counting readings close generic ambiguity
+correction and weighted lifting. A47's original WSC2011/remote-sampling2019
+readings close generic exact interval/precision novelty before numerical code.
+A48's CFD UAI2004 reading closes generic grammar versus wide natural-factor
+separation; a constant selector has a strong ordinary conditioning control.
+
+Independent folders, primary-reading scopes, decisions and complete A45 rows
+are preserved. No core, baseline, article, model parameters or active tests were
+changed. None of these screens/audits meets the useful-publication objective.
+The next step needs a distinct mathematical/cost result, not another label on
+an established sampler, circuit or correction. Main A24 evidence remains valid
+and explicitly limited; no human review/priority/acceptance has been invented.
+
 ##2026-10-12 — evitar duplicação interna e delimitar A44
 
 A43 foi encerrada como candidata independente: a auditoria em

@@ -27,6 +27,33 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M65–M68 — Eliminate false novelty before another implementation
+
+- [x] T6500: Freeze A45's eight criteria and adverse-only population screen
+  before observations (producer1d68d3a). All6,230 cases/238 ticket profiles
+  complete, no eigenvalue>1e-9. This is NOT the missing universal proof.
+  ALL outputs/hashes preserved in45/work/evidence/screen-v1; decision-v1
+  connects B6 to the already OPEN A42 anonymous family (lambda2).
+- [ ] T6501: Prove/refute arbitrary-class, arbitrary-budget covariance safety;
+  find an actual useful cheap dLLM/CFG source before a model application.
+  Known HST/systematic/ranked resampling and stronger RSS/CV stay controls.
+- [x] T6600: A46 reads original bounded-ambiguity correction2001 and #CFG
+  FPRAS SODA2026, plus weighted-counting reductions2015/2024. Generic1/d and
+  rational-to-unweighted lifting are OLD; closed before code. Arbitrary
+  ambiguity remains a capability investigation, not a new contribution.
+- [x] T6700: A47 audits exact interval/random-bit sampling BEFORE code.
+  Duchon2011 section6 and Brassard/Devroye/Gravel2019 sections2/4 already
+  give adaptive certified comparison and expected precision. Generic forest
+  specialization is closed as novelty; huge-logit complete bit-cost oracle
+  remains unwritten. No ideal-softmax solver or numerical win is claimed.
+- [x] T6800: A48 reads CFD UAI2004 original and re-reads FactorDLM3.1--3.3.
+  Generic PCFG versus wide natural-MRF separation/context-specific circuits
+  are OLD. Constant gated branches require a conditioning control. No graph
+  compiler, constructed performance benchmark or new forward was run.
+- [ ] T6801: Continue the original useful-publication goal. These audits,
+  preserved screens and mathematical outlines do not fulfill it. Main article
+  remains A24 with qualified evidence; no new protagonist has passed the gate.
+
 ## M64 — Three-class finite-budget arbitrary-vector safety
 
 - [x] T6400: BEFORE code or model measurements write44's independent eight

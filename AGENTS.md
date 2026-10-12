@@ -134,7 +134,7 @@ O projeto não está limitado a encontrar uma aplicação para MWPC. Atualmente:
   específica na literatura, significância suficiente para publicação e
   vantagem prática ampla não estão confirmadas. Não inventar revisão humana.
   O artigo principal apresenta24;25 é extensão separada/resultado delimitado.
-  A suíte atual tem159 testes, incluindo as duas regressões reais de timer,
+  A suíte atual tem164 testes, incluindo as duas regressões reais de timer,
   seis oráculos da fronteira amostrável A28 e cinco do reparo de colisões A29.
 - A26 responde ao pedido de vantagem geral por uma operação distinta: lotes
   estratificados somente dentro de históricos completos idênticos, preservando
@@ -880,3 +880,17 @@ passam; a tela prospectiva falha0/6 mesmo com sobrecusto zero contra RSS
 contínuo e CV-oráculo. A aplicação deste classificador está encerrada, não
 acionar treino/heldout/timings. As provas3classes/RSS balanceado permanecem,
 mas não há uso neural competitivo ou novidade/publicação confirmados.
+
+
+A45's6.230-case random-label-order tower screen found no finite obstruction;
+unconditional arbitrary-class safety remains a CONJECTURE. Its B6 law is the
+lambda2 member of A42's OPEN family, not the proved minimum matching. ALL rows
+are retained; A44's failed full-gradient classifier is not reopened. No neural
+execution. A46 closes generic reciprocal-ambiguity correction and weighted
+FPRAS lifting after primary2001/2015/2024/SODA2026 readings. A47 closes generic
+exact-interval forest sampling/logarithmic refinement as novelty after original
+Duchon2011 and Brassard/Devroye/Gravel2019 readings; complete arbitrary-logit
+bit costs are still unwritten. No numerical solver was implemented. A48 closes
+generic grammar versus wide-factor claims: CFD UAI2004 already covers context-
+specific parsing, and constant gated alternatives require a conditioning
+control. These are audits, not new publication/EPIC wins. The goal stays OPEN.

@@ -1,0 +1,16 @@
+{
+  "producer": "1d68d3a1d36442f2ff07bb58e31f1da021aada91",
+  "command": "OPENBLAS_NUM_THREADS=1 .venv/bin/python -m attempts.45-random-order-empirical-towers.work.screen --output .cache/a45-screen-v1",
+  "scope": "negative-only finite screen, not proof or neural utility",
+  "python": "3.11.16",
+  "files": {
+    "rows.jsonl": {
+      "sha256": "e892a10d3d9732bce51e925f276474f822a58f2bc6f6e17d7f26283140c65189",
+      "bytes": 1906354
+    },
+    "summary.json": {
+      "sha256": "79f17e6210537228c7645f80de68c888b32e917f3aae0b3a9f995dd419cb5f07",
+      "bytes": 93
+    }
+  }
+}

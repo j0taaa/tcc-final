@@ -283,3 +283,22 @@ finite, with a strong cheap seed-derangement control. Native first-yield
 coordination could preserve every marginal/terminal-verifier guarantee
 with equal expected neural forwards; full physical cost remains mandatory.
 No prototype, neural output, timing or publication claim yet.
+
+
+### 44–48 — theory and primary reductions before expensive applications
+
+[44-three-class-empirical-coupling](44-three-class-empirical-coupling/README.md)
+has written three-class safety/atom/minimax proofs, exact oracles and ALL192
+new full-gradient observations. Its prospective classifier application fails
+0/6 against continuous RSS and oracle-CV, including zero-overhead bounds.
+
+[45-random-order-empirical-towers](45-random-order-empirical-towers/README.md)
+preserves the entire6,230-case negative-only screen. No obstruction was found;
+this does not prove the arbitrary-class covariance conjecture or useful gain.
+[46-ambiguity-aware-conditioning](46-ambiguity-aware-conditioning/README.md)
+closes generic1/d and weighted-FPRAS lifting after primary readings, before code.
+[47-exact-logit-forest-sampling](47-exact-logit-forest-sampling/README.md)
+closes generic exact interval/precision novelty; no numerical solver was built.
+[48-grammar-factor-representation](48-grammar-factor-representation/README.md)
+closes generic grammar-versus-wide-factor claims against CFD/conditioning.
+No new protagonist, useful publication result or EPIC win is claimed.
