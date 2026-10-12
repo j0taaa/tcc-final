@@ -1,0 +1,30 @@
+{
+  "repository": "arkilpatel/SVAMP",
+  "revision": "78e727689e1c1bebfc4be39c446898e8e10b0518",
+  "source_url": "https://raw.githubusercontent.com/arkilpatel/SVAMP/78e727689e1c1bebfc4be39c446898e8e10b0518/SVAMP.json",
+  "source_sha256": "5be77703a6d891ae476d7c082787ad361392aa02453b132516cdd5f4e7934e3e",
+  "source_total": 1000,
+  "selection": "first FOUR input-only SHA256-ranked Body+newline+Question; no label eligibility",
+  "records": [
+    {
+      "selection_sha256": "002fcbbdefe4833cfdc4bad88cc5de69bbb79e87eec262e786a5c1d1293676c3",
+      "id": "chal-353",
+      "question": "They decided to hold the party in their backyard. They have 14 chairs for each set of table. If they have 9 sets of tables\nHow many more chairs than tables do they have?"
+    },
+    {
+      "selection_sha256": "003056eb8738405267137e7d4082bf3cfa873bcfd713417db2ee55c7827fe044",
+      "id": "chal-890",
+      "question": "After resting they decided to go for a swim. The depth of the water is 16 times Ron's height. Dean is 9 feet taller than Ron. If Ron stands at 13 feet\nHow deep was the water?"
+    },
+    {
+      "selection_sha256": "00860728dab5b5ef1e1486e08554e5b2b87c4ad7de7ba26c5926ed05b17b25d5",
+      "id": "chal-552",
+      "question": "Baker made 155 cakes. If his friend bought 140 cakes from him\nHow many cakes would baker still have?"
+    },
+    {
+      "selection_sha256": "00b3d763bfc478440fe9e8bdaf9c824991cc7b5f7ebbad76de8b2cc44659620c",
+      "id": "chal-839",
+      "question": "Winter is almost here and most animals are migrating to warmer countries. There are 85 bird families living near the mountain. If 23 bird families flew away to africa and 37 bird families flew away to asia\nHow many bird families were left near the mountain?"
+    }
+  ]
+}
