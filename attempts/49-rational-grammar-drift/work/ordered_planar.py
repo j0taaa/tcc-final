@@ -97,7 +97,7 @@ def compress_ordered(rows, grid):
         result.append(canonical((delta[0] // 2, delta[1] // 2)))
     pivot = 0
     for i in range(1, len(result)):
-        if det(result[i], result[pivot]) < 0:
+        if det(result[i], result[pivot]) > 0:
             pivot = i
     result = result[pivot:] + result[:pivot]
     assert all(det(a, b) > 0 for a, b in zip(result, result[1:]))
