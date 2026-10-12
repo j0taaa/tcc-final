@@ -208,3 +208,10 @@ materialization refusals, no errors. These refusals are NOT a scientific
 win. V13 will stream the classical control's products rather than cap its
 Cartesian tables. Endpoint/hybrid timings are developmental single runs,
 and their faster calibrated constants are not attributed to older sources.
+
+V13 is a correction of the comparison under the SAME eight answers. Before
+code, `streamed-control-v13.md` removes the control's product materialization
+cap via three replayable scans, with unchanged all-query/error proof. This
+classical optimization is not novelty. All old oracle families and ALL18
+public rows will be repeated; controls get more permissive resources, and
+their losses/longer costs remain recorded. No table-cap win is accepted.
