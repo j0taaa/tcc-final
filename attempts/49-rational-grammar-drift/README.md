@@ -93,3 +93,17 @@ queries and ALL75 original-ID forest cases under BOTH cores (150 checks,
 96 certificates/54 zero-mass refusals). No original family was excluded;
 1,896 geometry cases shorten. Classical projection geometry is not new.
 No model data, physical timing or publication gate has been validated.
+
+V4, BEFORE application code: criteria1/3 now specify a software consumer
+auditing numerical storage of a REAL frozen full-head probability table,
+with guaranteed bounded-verifier drift. Criteria2/4 retain the quantitative
+integer-core theorem, explicitly crediting classical geometry/parsing.
+`word-admission-v4.md` separates the admitted-CNF word lemma from the source
+normalizer obligation and an independent classical JSON-stack bridge.
+Criteria5/6 freeze ALL3 rounding formats x BOTH tolerances on the one already
+public packet, full original IDs, strong Hellinger/range controls and charged
+preparation. This is a functional numerical audit, NOT a competitive benchmark
+or quantized-neural-model execution. Explicit stacks can explode; controls
+can be faster or sufficient, and all outcomes remain (7). Specific TV priority,
+useful certificate improvement on this input, article and human review remain
+open (8). Validate the bridge independently before the public-head audit.
