@@ -172,6 +172,13 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   ALL75 oracle cases and ALL24 old functional rows must repeat before the
   independent-document capture. V23 source/protocol archived with ZERO new
   forwards/TV observations; no metric-driven threshold or case change.
+  Producer56ba17a passesALL105 independent word checks (33 undefined) and
+  ALL24 public rows, no errors/refusals/forwards. Classical full/common overlap
+  removes the prior18.57x FP16 gap: only1.05476x remains; FP32 control is tighter
+  than the candidate upper. HistoricalV22 PDF remains unchanged; it must NOT
+  be presented as current comparison against this stronger control. All evidence
+  is preserved in49/work/evidence/{overlap,public}-v24. Independent audit must
+  add BOTH overlap controls without changing the still-unobserved2x gate.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

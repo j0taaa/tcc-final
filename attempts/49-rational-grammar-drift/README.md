@@ -1,5 +1,11 @@
 # A49 — Rational certificates for drift of a grammatical posterior
 
+**Current V24 correction:** classical sampler-overlap controls pass105 word
+checks and all24 public rows. The old FP16 comparison18.57x drops to1.05476x;
+FP32 overlap is tighter than the candidate upper. `work/overlap-decision-v24.md`
+and immutable evidence preserve the loss. V22 is a historical draft with its
+listed controls, not a current practical victory. No new external head yet.
+
 2026-10-12. Contract BEFORE code or observations. This is an investigation,
 not confirmed novelty, publication sufficiency, or a faster decoder.
 

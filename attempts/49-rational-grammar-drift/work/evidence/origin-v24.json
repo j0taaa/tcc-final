@@ -1,0 +1,25 @@
+{
+  "producer": "56ba17a3eafbf6dd13103c6db43cfcb1e09acae6",
+  "commands": [
+    ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_overlap --output .cache/a49-overlap-v24",
+    ".venv/bin/python -m attempts.49-rational-grammar-drift.work.public_controls --adaptive --massaware --ordered --overlap --output .cache/a49-public-v24"
+  ],
+  "records": [
+    {
+      "directory": "attempts/49-rational-grammar-drift/work/evidence/overlap-v24",
+      "files": {
+        "metadata.json": "b0ab04df067b6a61a4ab9f05363f171b83dce659f2ba682d3523660fcca7792e",
+        "rows.jsonl": "fe06374979bf0721e438115576dbb1865be70192dbf036ca4d63eb72b06690e2",
+        "summary.json": "997a49344ff7e372ba925c4ff3dd085f9c550c4349d81af9f1a464485cf9f070"
+      }
+    },
+    {
+      "directory": "attempts/49-rational-grammar-drift/work/evidence/public-v24",
+      "files": {
+        "metadata.json": "0e1e0c05440aa0888a4f85202ff7a3f70268e2188c072fe6d721d9bc80307386",
+        "rows.jsonl": "ce574645c7825ec950d0e00497385a7b1959c8b5321e797d1e22c9a8883863a4",
+        "summary.json": "06a61743f1d9b76e67d8c25d3127276f1a5575d9b96b16307a741089eaf6f3e1"
+      }
+    }
+  ]
+}
