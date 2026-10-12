@@ -1716,6 +1716,18 @@
             "attempts/42-safe-empirical-resampling/work/evidence/finite-boundary-v4.json",
             "attempts/42-safe-empirical-resampling/work/evidence/origin-v4.json"
           ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "9af03e07d5affe7063ee9c06df88c2b3af41879a",
+          "evidence_commit": "cb4ced60024e1784989fed5661336c16a75bb502",
+          "evidence_roots": [
+            "attempts/42-safe-empirical-resampling/work/comparator-contract-v5.md",
+            "attempts/42-safe-empirical-resampling/work/decision-v5.md",
+            "attempts/42-safe-empirical-resampling/work/evidence/pivotal-comparison-v5.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/bank-audit-v5.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/origin-v5.json"
+          ]
         }
       ]
     }
