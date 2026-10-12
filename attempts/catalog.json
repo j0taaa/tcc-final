@@ -1957,7 +1957,7 @@
     {
       "id": "49-rational-grammar-drift",
       "title": "Rational posterior drift and smaller integer norm cores",
-      "conclusion": "Sharper written deterministic precision-cost bounds and complete integer bit proof; all six real probability-table audits and direct product oracles pass. Mathematical draft is preserved; exhaustive priority, human review and acceptance remain open, no EPIC speed claim.",
+      "conclusion": "Sharper written deterministic TV precision-cost bounds, validated original-ID cores and complete strong-control functional audits. V22 preserves a ten-page mathematical draft and all24 rows, including speed losses. Independent human review, exhaustive priority and venue acceptance remain open; no EPIC/semantic/generation superiority claim.",
       "reading": "attempts/49-rational-grammar-drift/README.md; TASKS.md",
       "versions": [
         {
@@ -2186,6 +2186,20 @@
             "attempts/49-rational-grammar-drift/work/consolidation-v21.md",
             "attempts/49-rational-grammar-drift/work/evidence/public-v21",
             "attempts/49-rational-grammar-drift/work/evidence/origin-v21.json"
+          ]
+        },
+        {
+          "id": "v22",
+          "source_commit": "2f406e37216b1631ac3eb994996811f8c60f1701",
+          "evidence_commit": "1c27872adb61825387f31ed0047b8e569c2cb9d6",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/consolidation-v21.md",
+            "attempts/49-rational-grammar-drift/work/budgeted-use-v22.md",
+            "attempts/49-rational-grammar-drift/work/manuscript-v22.tex",
+            "attempts/49-rational-grammar-drift/work/generated-v22",
+            "attempts/49-rational-grammar-drift/work/evidence/checks-v22.json",
+            "output/pdf/grammatical-drift-v22.pdf"
           ]
         }
       ]
