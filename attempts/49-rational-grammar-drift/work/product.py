@@ -3,13 +3,14 @@
 from fractions import Fraction
 from math import lcm, prod
 
-from .optimal_planar_fast import compress, grid_for
+from . import optimal_planar_fast
 
 
-def certificate(first, second, epsilon=Fraction(1, 10), max_rows=1_000_000):
+def certificate(first, second, epsilon=Fraction(1, 10), max_rows=1_000_000, compressor=None):
+    engine = optimal_planar_fast if compressor is None else compressor
     if len(first) != len(second):
         raise ValueError("heads must share all original position domains")
-    grid = grid_for(epsilon, max(1, len(first)))
+    grid = engine.grid_for(epsilon, max(1, len(first)))
     paired, normalizers = [], [1, 1]
     for p, q in zip(first, second, strict=True):
         if not p or len(p) != len(q):
@@ -35,7 +36,7 @@ def certificate(first, second, epsilon=Fraction(1, 10), max_rows=1_000_000):
         candidates = [(a * x, b * y) for a, b in row for x, y in core]
         peak = max(peak, len(candidates))
         bits = max(bits, max((abs(x).bit_length() for a in candidates for x in a), default=0))
-        core = compress(candidates, grid)
+        core = engine.compress(candidates, grid)
     a, b = normalizers
     lower = Fraction(sum(abs(b * x - a * y) for x, y in core), 2 * prod(normalizers))
     return dict(
