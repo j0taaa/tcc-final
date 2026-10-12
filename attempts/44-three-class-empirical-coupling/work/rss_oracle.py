@@ -61,7 +61,7 @@ def run(output):
     p, f = (Q(4, 5), Q(1, 10), Q(1, 10)), (0, 1, -1)
     adverse = {b: quadratic(joint(p, b), f) for b in (4, 6)}
     best_rss = min(quadratic(rss_law(p, order), f) for order in permutations(range(3)))
-    assert best_rss == Q(-83, 7500) < adverse[4] < adverse[6]
+    assert best_rss == Q(-81, 2500) < adverse[4] < adverse[6]
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
         json.dumps(

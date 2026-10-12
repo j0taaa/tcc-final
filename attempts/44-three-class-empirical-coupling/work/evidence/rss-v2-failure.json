@@ -1,0 +1,9 @@
+{
+  "source_commit": "3f4015278d925c084ed0b74afbfa5b8fcca29310",
+  "command": ".venv/bin/python -m attempts.44-three-class-empirical-coupling.work.rss_oracle --output attempts/44-three-class-empirical-coupling/work/evidence/rss-v2.json",
+  "status": "AssertionError",
+  "location": "rss_oracle.py:64, asserted best nonuniform RSS covariance -83/7500",
+  "diagnosis": "-83/7500 is RANDOM-ORDER RSS average, not its strongest fixed order. Independent four-draw enumeration gives -81/2500 for two optimal orders and -1/2500 for four others. The best control is stronger than the mistaken expected constant.",
+  "changes_required": "Correct the assertion to -81/2500, preserve this failure and rerun under a new frozen producer. The balanced PSD corollary and its full-cost conditions are unchanged.",
+  "scope": "Exact theory-check failure; no neural or timing experiment. Do not label this producer's execution a pass."
+}
