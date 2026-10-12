@@ -74,3 +74,36 @@ The decision application is only a candidate. Do not start another extensive
 model campaign or call it a confirmed conquest on this note. First specify
 and validate minimal classical two-sided controls, or reject this application
 if those show the expensive near-relative computation is unnecessary.
+
+## Minimal classical lower-control proof before code
+
+Use the already computed original-ID posterior marginals: by data processing,
+each marginal TV is at most joint TV. Retain their maximum, not a selected
+position. Retain the exact support-loss lower bound too.
+
+For integer atoms x,y, S=2^64 and delta=1/S, a nonzero floor(S sqrt(xy))
+is at least (1-delta)S sqrt(xy). Positive inside evaluation therefore gives
+an affinity squared upper from its downward approximation divided by
+(1-delta)^(2n). A rational ceiling square root yields an affinity upper;
+max(0,1-affinity_upper) is a sound Hellinger-based lower bound on TV.
+
+For each common-support chi direction use the already proved ideal-control
+lower enclosure v<=sqrt(chi)/2. Bound the normalized likelihood ratio R
+using the product of ALL per-position minima/maxima, including choices that
+the grammar might disallow. These looser extrema still enclose every valid
+R and avoid pretending a new parser call is free. If D>=max|R-1|, then
+chi=E(R-1)^2<=D*E|R-1|=2D*TV, so 2v^2/D is a conditional TV lower bound.
+The reverse direction uses the reciprocal extrema. Handle D=0 as identical
+conditional laws, rather than division by zero.
+
+Let a,b be the two common-support masses and Lc a conditional lower bound.
+On the common set, the triangle inequality gives
+TV(P,Q)>=min(a,b)*Lc+min(1-a,1-b). Take this with the exact support-loss lower
+and the other lower controls. The existing mass-aware/overlap upper controls
+remain. Undefined mass refuses; no approximation changes the model's support.
+
+These are known inequalities and can strengthen the comparison, not new
+scientific claims. Before any application, repeat ALL105 original word cases
+including zeros/aliases, using independent enumeration to check each interval.
+Do not run a timing comparison until every lower bound is sound. Existing
+full heads remain development and V25's0/36 result remains frozen.
