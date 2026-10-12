@@ -318,3 +318,10 @@ audit. Retain ALL formats/tolerances/strong controls and add ordered endpoints.
 No new corpus/forward, synthetic timing family or independent speed gate.
 A separate stronger draft must preserveV10 and distinguish the quantitative
 TV theorem from known geometry/inference and from EPIC's different operation.
+
+V21 producer3702503 finishes ALL24 functional rows without errors/refusals.
+The ordered generic forest implementation is NOT uniformly faster: BF16/0.5
+adaptive angular still wins and ordered endpoints lose to calibrated ones
+in both FP32 cases. These are complete descriptive timings on one reused
+packet. Product-only arithmetic improvement is not a generic-forest timing
+claim. All scalar controls, source-origin qualifications and losses remain.

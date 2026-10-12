@@ -1,0 +1,44 @@
+{
+  "producer": "37025038b4ab0cf3b4fd2a71aee6e162dd4f87f2",
+  "packet_sha256": "8f8d512c1f78629a93c8bb442fff81d2fc9bca60b57f044bb7470fda4473168d",
+  "scope": "Functional development, same public packet; NOT independent/native timing gate",
+  "new_forwards": 0,
+  "engines": {
+    "attempts.49-rational-grammar-drift.work.adaptive_angular": "f156e1753088582e657432ada80aeb4d7802db4ffb9f471781b73aea83221922",
+    "attempts.49-rational-grammar-drift.work.calibrated_endpoint": "04c30d96bd623ef0a507c23f2bd0eb376a360f871619263fa189d380a259c9f3",
+    "attempts.49-rational-grammar-drift.work.hybrid_endpoint": "a1b15fbb429c3339b10f851596003384d6190f289b69bdbd99be66851f2f0ce2",
+    "attempts.49-rational-grammar-drift.work.ordered_planar": "8dda17ca4d7e03a613ded4deef63865db8e4980c1775815575cbd1e812b1707a"
+  },
+  "reference_files": {
+    "lexer.py": {
+      "sha256": "5e19976fa1e4448e80a1baa5ad52e1f602c5e327734469067c190da453e94ca7",
+      "source": "attempts/26-stratified-decoder-batches/work/frozen/lexer.py"
+    },
+    "forest.py": {
+      "sha256": "12146672a7ce9595e4d6da7bc2f7a7291b23cd4f402a1e96ee921583fe34afbd",
+      "source": "attempts/26-stratified-decoder-batches/work/frozen/forest.py"
+    },
+    "table.py": {
+      "sha256": "9d8eebd7dd5e1814a1be7e1ada3a0a390ef9ffbc155b1e21e6dd59a1ee632689",
+      "source": "attempts/26-stratified-decoder-batches/work/frozen/table.py"
+    },
+    "posterior.py": {
+      "sha256": "c6220e93afee197deb28a09f8a19247c223a7711bba77c5615382beec4c50ee6",
+      "source": "attempts/26-stratified-decoder-batches/work/frozen/posterior.py"
+    },
+    "stack_control.py": {
+      "sha256": "dbb638756df0495d758f92f5b5894f6bf86effc75f45fb1e0ad86acd530cadf6",
+      "source": "attempts/26-stratified-decoder-batches/work/frozen/stack_control.py"
+    },
+    "packet.zip": {
+      "sha256": "8f8d512c1f78629a93c8bb442fff81d2fc9bca60b57f044bb7470fda4473168d",
+      "source": "attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip"
+    }
+  },
+  "python": "3.11.16",
+  "numpy": "2.4.6",
+  "machine": "x86_64",
+  "max_rows": 1000000,
+  "exact_passthrough": true,
+  "mass_aware_scalar_controls": true
+}

@@ -1,0 +1,14 @@
+{
+  "producer": "37025038b4ab0cf3b4fd2a71aee6e162dd4f87f2",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.public_controls --adaptive --massaware --ordered --output .cache/a49-public-v21",
+  "records": [
+    {
+      "directory": "attempts/49-rational-grammar-drift/work/evidence/public-v21",
+      "files": {
+        "metadata.json": "66bf0588f7f65ee06951002d524e9a1a88272534733a4ae2ff5e1da30d38d8b0",
+        "rows.jsonl": "7e8acdd8fa6c18897997970a9b0ace596c4e60458b7750d473347df868787d62",
+        "summary.json": "32dc2b9fc6b789c9c7d77d5d8e4d5b40a8cddbde159512227e08909cc85df590"
+      }
+    }
+  ]
+}

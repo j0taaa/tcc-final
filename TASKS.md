@@ -148,6 +148,9 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   COLT2025 sections2/3 checked; polynomial-bit computability and generic
   geometry/inference are antecedents. Consolidate a NEW mathematical draft;
   preserveV10, no independent/publication/EPIC superiority assertion.
+  Producer3702503 completesALL24 rows, no errors/refusals. Ordered forest
+  timing is not uniformly better; retain FP32 losses/BF16 adaptive win.
+  No new capture. Evidence:49/work/evidence/public-v21 and origin-v21.json.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
