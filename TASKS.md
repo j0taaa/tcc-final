@@ -139,6 +139,10 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   minimum-angle comparison rotates the largest angle first. Only three empty
   cases complete; zero product/forest/public claims. PreserveV19 unchanged,
   correct inV20 and repeat the entire frozen gate; no weakened checks.
+  V20 producera4bf58d passesALL1,860 geometry/33,747 queries,117,376 exhaustive
+  projections/1,860 image checks,1,167 products/389 extremes and75 original-ID
+  forests. No public run. Next consolidate the corrected ordered proof with
+  strongerV18 controls and inspect additional primary product-TV frameworks.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

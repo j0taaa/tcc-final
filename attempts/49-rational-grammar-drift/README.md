@@ -304,3 +304,10 @@ vertical direction before horizontal. Only three empty cases completed;
 no product/forest certificates or public run followed. Failure metadata and
 the source are preserved independently. V20 corrects only that comparison,
 retaining the written guarantee and ALL original adversarial families.
+
+V20 producera4bf58d passes ALL1,860 geometry cases/33,747 norm queries,
+117,376 independently exhaustive projections and1,860 ordered-image checks.
+ALL1,167 products,389 extreme-precision products and75 original-ID forests
+also pass. No public timing/neural run was triggered. The arithmetic-bound
+proof remains written and adversarially reviewed, not Lean-certified or
+independently peer-reviewed; finite checks are not priority evidence.

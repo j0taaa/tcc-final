@@ -1,0 +1,10 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "geometry_cases": 1860,
+  "exact_norm_queries": 33747,
+  "independent_exhaustive_projections": 117376,
+  "ordered_image_checks": 1860,
+  "product_cases": 1167,
+  "extreme_precision_cases": 389,
+  "original_id_forests": 75
+}

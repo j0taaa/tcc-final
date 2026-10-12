@@ -1,0 +1,14 @@
+{
+  "producer": "a4bf58da6249436f2c49176ded657dc193ae4f42",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_ordered --output .cache/a49-ordered-v20",
+  "records": [
+    {
+      "directory": "attempts/49-rational-grammar-drift/work/evidence/ordered-v20",
+      "files": {
+        "metadata.json": "45b02c1231ce72b9a9483fc4c5a9f8d59e40684a256fd52ddc73964e2979acff",
+        "rows.jsonl": "4ed2a5948a0ce415ae38a40f7636e6703648ec44089271331f318fa8a37f2062",
+        "summary.json": "e49a99d09fa4b62797ef3da3f41744ecbbb3a93a7353368022de018beba38605"
+      }
+    }
+  ]
+}
