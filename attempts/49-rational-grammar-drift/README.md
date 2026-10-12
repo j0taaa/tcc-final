@@ -134,3 +134,10 @@ is now constructive/polynomial in a WRITTEN algorithm, not verification of the
 current compiler (`polynomial-source-admission-v7.md`). Exact exhaustive edge
 queries must agree before another public run. Specific priority, performance,
 publication and human review remain open (8). V6 outputs remain separate.
+Producer45903f3 passes all1,860 geometry cases/30,846 norm breakpoints,
+117,376 nearest queries against independently computed exhaustive segment
+projections, and all75 original-ID forest cases. V6 was interrupted after
+one completed row (371.95s core), with all partial metadata/output retained;
+it is NOT a six-case campaign. V9 repeats ALL six original public cases with
+the proved/validated exact query implementation, preserving both controls.
+No favorable-case selection, neural quantization or generation-speed claim.

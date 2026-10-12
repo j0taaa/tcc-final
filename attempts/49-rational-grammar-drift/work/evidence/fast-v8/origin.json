@@ -1,0 +1,9 @@
+{
+  "producer": "45903f3b278658df7c0071c619a6c299bfe460b7",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_fast --output .cache/a49-fast-v8",
+  "scope": "CORRECTNESS_ONLY; all original families, every used outside query versus exhaustive independent Fraction projections, every norm breakpoint and original-ID forest cases",
+  "sha256": {
+    "rows.jsonl": "621d33f3f52f1a471cc9149d7c28938622a9acebed87fe6f531ae8a68f4bca6d",
+    "summary.json": "536cd5916fc5ce5c49be20a08040abb6c43a293c0da24b84aca092a2aab42938"
+  }
+}

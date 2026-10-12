@@ -14,7 +14,8 @@ from mwpc_exact.mass_certificate import ProbabilityInput
 from mwpc_exact.support import SupportPolicy, build_per_position_support
 from mwpc_exact.types import SupportKind
 
-from . import optimal_planar, verify_forest
+from . import optimal_planar_fast as optimal_planar
+from . import verify_forest
 from .forest import certificate
 from .public_audit import bridge, controls, prepare, rounded, scalar
 

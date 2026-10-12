@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import io
 import json
+import platform
 import subprocess
 import traceback
 from fractions import Fraction as F
@@ -25,7 +26,7 @@ from mwpc_exact.support import SupportPolicy, build_per_position_support
 from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 from mwpc_exact.types import SupportKind
 
-from . import optimal_planar
+from . import optimal_planar_fast as optimal_planar
 from .forest import certificate
 from .frozen.posterior import Weights
 from .frozen.stack_control import StackPosterior, StackPrepared
@@ -187,6 +188,12 @@ def run(output):
         scope="Numerical probability-table audit; no quantized neural execution or speed benchmark",
         new_forwards=0,
         reference_files=origin["files"],
+        core_module=optimal_planar.__name__,
+        core_sha256=hashlib.sha256(Path(optimal_planar.__file__).read_bytes()).hexdigest(),
+        python=platform.python_version(),
+        numpy=np.__version__,
+        machine=platform.machine(),
+        processor=platform.processor(),
     )
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     try:

@@ -1,0 +1,10 @@
+{
+  "producer": "51498e4e85a251d56b1bf7520c534128e4e2afb0",
+  "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m attempts.49-rational-grammar-drift.work.public_audit --output .cache/a49-public-v6",
+  "scope": "All partial outputs preserved; exact linear edge-scan prototype interrupted during second tolerance, not complete or competitive timing evidence",
+  "sha256": {
+    "interrupted.json": "e5bc52f8480bf600cee4000174a5b99c9e932fb4b406b6649203787d461e11e9",
+    "rows.jsonl": "b7cb100cb1ab2afce3aec2fdca256e906fa8cafa3777824951ef3a454ab8cce2",
+    "metadata.json": "d2a80343b0b7ff0681abc6b19e889aa46e5685f1d830cf699eede7f84143c8d3"
+  }
+}

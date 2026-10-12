@@ -1,0 +1,8 @@
+{
+  "status": "INTERRUPTED_NOT_COMPLETE",
+  "reason": "Replace linear edge scans by prospectively proved exact logarithmic queries; repeat ALL6 unchanged formats/tolerances, no case selection",
+  "signal": "SIGINT",
+  "observed_rows": 1,
+  "quantization_protocol_unchanged": true,
+  "competitive_timing_claim": false
+}
