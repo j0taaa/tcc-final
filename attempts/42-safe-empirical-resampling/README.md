@@ -83,3 +83,11 @@ useful CFG-specific operation, full-cost benefit and publication sufficiency
 are still unresolved. A41's negative strong-control observations stand.
 See work/six-pool-theorem-v4.md and work/evidence/origin-v4.json for proof,
 reproduction commands and the precisely declared computer-assisted boundary.
+
+V5 reduces the candidate against classical class-first pivotal allocation:
+40 exact partitions, six distinct laws (one at B6); same atom frontier.
+On ALL six OLD banks, matching6/pivotal6 bias reductions differ by less than
+0.000025; pivotal wins five. Retained RSS still wins every scalar score.
+Do not promote this proxy/application or start a large neural campaign from
+these numbers. Written theoretical originality/CFG-specific use remain open;
+see work/decision-v5.md. No new forward or full-gradient training occurred.

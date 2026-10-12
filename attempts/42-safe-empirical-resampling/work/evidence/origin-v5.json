@@ -1,0 +1,24 @@
+{
+  "source_commit": "9af03e07d5affe7063ee9c06df88c2b3af41879a",
+  "scope": "Conditional law and all OLD known-bank geometry; no new neural outputs, training, original-population or latency gate.",
+  "commands": [
+    ".venv/bin/python -m attempts.42-safe-empirical-resampling.work.pivotal_comparison_v5 --output attempts/42-safe-empirical-resampling/work/evidence/pivotal-comparison-v5.json",
+    ".venv/bin/python -m attempts.42-safe-empirical-resampling.work.bank_audit_v5 --output attempts/42-safe-empirical-resampling/work/evidence/bank-audit-v5.json"
+  ],
+  "initial_failure": "First uncommitted pivotal prototype introduced int/2 floats after integer boundary update; exact marginal assertion stopped execution. Original draft retained. Corrected rational states and Ruff scope before frozen producer. Bank metadata Ruff error fixed before first bank computation.",
+  "checks": {
+    "conditional_partitions": 40,
+    "law_differences": 6,
+    "exact_positive_covariance_obstructions": 0,
+    "bank_documents": 6,
+    "new_model_calls": 0,
+    "ruff": "PASS after corrections"
+  },
+  "files": {
+    "pivotal_comparison_v5.py": "e3d056c3ad085ddab2275b120a780d6955e679097472fe92c859595db899f7fe",
+    "bank_audit_v5.py": "4351cbf1ac3148247c195be4821ae070fc5c1252b4ee8e891e5436d986676d2e",
+    "evidence/pivotal-comparison-v5.json": "3cdf42d5bb9e0b1cade631e245d4303766a3dab203b9fa407250c1da1a423a3c",
+    "evidence/bank-audit-v5.json": "9e765cd44a2edb5a0249b56b9ecab2bae655ee6d65b599f14dbdf9771d79814a",
+    "drafts/pivotal-v5-before-rational-correction.py.txt": "e547a489cd5b0c99b8484cadb776251c5be97aab3f5d7ef32b04d7f92c80be80"
+  }
+}

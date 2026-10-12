@@ -805,3 +805,8 @@ novidade/publicação confirmados. As15 matchings eliminam calibração irracion
 nessa versão; custos de fonte, classificação e proxy continuam cobrados.
 Prioridade frente a pivotal/rejective/RSS e utilidade CFG seguem abertas;
 preservar as perdas de41 e não iniciar grande campanha apenas pela prova.
+A42 v5 compara40 partições exatas com pivotal clássico: mesma fronteira de
+átomos, uma diferença de lei em pool6. Nos TODOS seis bancos antigos, pivotal6
+é quase igual e vence5/6 gradientes do bias; RSS vence todos os scores. Não
+usar esses dados como ganho populacional/treino, nem promover esse proxy.
+Nenhum novo forward. Prioridade e uso CFG específico permanecem abertos.

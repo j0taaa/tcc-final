@@ -48,6 +48,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   checks two identities and all14,723 boundary population partitions. Producer
   5925eec; commands/hashes in42/work/evidence/origin-v4.json. All-B extension and
   scientific priority remain OPEN; not a model-use/publication gate.
+  V5 ALL40 exact pool partitions: six laws differ from classic pivotal (one
+  at B6), same atom frontier. ALL6 OLD banks: pivotal6 almost identical and
+  lower bias variance in5/6; retained RSS wins all scalar scores. Registered
+  producer9af03e0, zero new forwards. decision-v5 rejects campaign/promotion
+  of this proxy; theory/priority/CFG application still OPEN.
 - [ ] T6202: Only after theory/prior survives, select a useful operation and
   competent complete-cost controls. No publication or practical gate yet.
 
