@@ -5,6 +5,8 @@ from .calibrated_endpoint import grid_for
 
 
 def compress(rows, grid):
+    if not isinstance(grid, int) or grid < 1:
+        raise ValueError("grid must be a positive integer")
     candidate = angular_control.compress(rows, 320 * grid * grid)
     if len(candidate) <= 64 * grid:
         return candidate
