@@ -311,3 +311,10 @@ ALL1,167 products,389 extreme-precision products and75 original-ID forests
 also pass. No public timing/neural run was triggered. The arithmetic-bound
 proof remains written and adversarially reviewed, not Lean-certified or
 independently peer-reviewed; finite checks are not priority evidence.
+
+V21 `consolidation-v21.md` reviews the additional COLT2025 primary product-TV
+framework and re-evaluates all eight questions BEFORE a24-row functional
+audit. Retain ALL formats/tolerances/strong controls and add ordered endpoints.
+No new corpus/forward, synthetic timing family or independent speed gate.
+A separate stronger draft must preserveV10 and distinguish the quantitative
+TV theorem from known geometry/inference and from EPIC's different operation.

@@ -143,6 +143,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   projections/1,860 image checks,1,167 products/389 extremes and75 original-ID
   forests. No public run. Next consolidate the corrected ordered proof with
   strongerV18 controls and inspect additional primary product-TV frameworks.
+- [ ] T6914: V21 freezes all24 functional rows including ordered endpoints,
+  strongest adaptive/scalar controls, complete costs and ALL original formats.
+  COLT2025 sections2/3 checked; polynomial-bit computability and generic
+  geometry/inference are antecedents. Consolidate a NEW mathematical draft;
+  preserveV10, no independent/publication/EPIC superiority assertion.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
