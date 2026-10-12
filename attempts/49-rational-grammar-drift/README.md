@@ -64,3 +64,11 @@ The ICML2024 inference reduction has only been downloaded/abstract read so far;
 its full reduction remains a mandatory elimination check.
 
 The next deliverable is a proof/obstruction, not a performance campaign.
+
+V1 producer8f19b2f:3,100 planar cases,57,769 exact norm-breakpoint queries,
+1,004 independent exhaustive sign-domain queries, all pass;2,799 cases actually
+shorten. These are correctness checks only. V2's bit proof admits a scoped,
+disjoint-sum forest and keeps source preparation/word-faithfulness as separate
+obligations. A small compiled-forest adapter/oracle is frozen BEFORE observations;
+it checks original aliases and macro tokens against separate stack/JSON parsing.
+No neural capture, performance protocol, main API or article has changed.

@@ -1,0 +1,9 @@
+{
+  "producer_commit": "8f19b2f00365d1c4739b9a279f3e30561b73410a",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_planar --output .cache/a49-planar-v1",
+  "scope": "correctness only; no neural/performance/publication evidence",
+  "files": {
+    "rows.jsonl": "d3fe3f3dc7f04ecf93ee75ef55ef3f36cc6de7685a23cb98b1e9893f02835f00",
+    "summary.json": "31f3251c239cc3e0b0338338f792bb2e0c494e1c8037222930a49f4e9a4d0705"
+  }
+}

@@ -27,8 +27,6 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
-## M65–M68 — Eliminate false novelty before another implementation
-
 ## M69 — Rational drift certificate, proof before application
 
 - [x] T6900: Write49's eight criteria and planar rational normalization/
@@ -39,10 +37,17 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 - [ ] T6901: Independently attack all-query norm containment with integer
   breakpoints, exhaustive sign domains, zero rank and near-collinearity.
   Then prove the packed-word reduction and complete integer bit costs.
+  V1 producer8f19b2f passes3,100 cases/57,769 exact norm queries and1,004
+  exhaustive sign-domain queries;2,799 cases actually shorten. V2 writes
+  the polynomial bit theorem for an ADMITTED scoped event forest, explicitly
+  separating original-source preparation and compiler verification. The
+  new compiled-forest oracle is frozen before observations.
   Finite checks do not establish novelty, speed, model utility or publication.
 - [ ] T6902: Only if the specific distinction/use survives the closest priors,
   implement/validate the smallest real operation with a predeclared fair
   protocol. No main API/article change or neural timing is justified yet.
+
+## M65–M68 — Eliminate false novelty before another implementation
 
 - [x] T6500: Freeze A45's eight criteria and adverse-only population screen
   before observations (producer1d68d3a). All6,230 cases/238 ticket profiles

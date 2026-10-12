@@ -1,0 +1,7 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "cases": 3100,
+  "exact_norm_queries": 57769,
+  "shortened_cases": 2799,
+  "exhaustive_sign_queries": 1004
+}
