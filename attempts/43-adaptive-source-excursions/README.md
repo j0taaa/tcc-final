@@ -63,3 +63,9 @@ balanced moment/frontier checks. The21-line reference was frozen at6dcd88e.
 These checks support the written proof; no new forwards or practical gate.
 A safe deterministic draw-count cap is specified prospectively in
 work/bounded-contract-v2.md; ordinary iid deadline fallback remains unjustified.
+
+V2 implements that prospective cap with a saved subsequent same-class payload.
+Under immutable producer d0b6936, 1,540 rational finite-chain laws and 10,220
+original-payload tapes pass, as do twelve balanced cost/repetition examples.
+This closes the bounded reference's correctness check, not priority or practical
+utility. A draw-count cap is not an arbitrary wall-clock timeout guarantee.

@@ -42,6 +42,10 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   checked. Pure KL proof avoids unstated stopped differentiation. Specific
   frontier priority and useful complete-cost application remain OPEN; no new
   forwards. A candidate theorem/finite oracle is not real-model utility.
+  V2 prospective contract implements saved last-same-source cutoff: producer
+  d0b6936,1,540 rational original-payload laws,10,220 tapes and12 balanced
+  query/repetition examples PASS. Finite draw cap preserves both marginals
+  and all-vector variance safety; no arbitrary wall-clock fallback claim.
 - [ ] T6302: Only if distinction/use survives, freeze a competent full-cost
   dLLM/CFG application. A42 root boundary is too late and may not be reused
   as a cheap informative source; A41 negative stronger controls stand.

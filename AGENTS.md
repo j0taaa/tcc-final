@@ -853,6 +853,7 @@ Prova escrita preserva P e toda covariância vetorial, dá E[N]=M para TODO p
 e fronteira sharp de repetição/custo em p=1/2 por KL do experimento parado.
 423 leis racionais,3952 tapes e15 momentos balanceados PASS, producer6dcd88e.
 Ruin/factories/inequações sequenciais são clássicos; prioridade/uso/publicação
-continuam abertos. Teto finito com último token da MESMA classe é proposta
-escrita v2 ainda sem implementação; não confundir com fallback iid arbitrário,
-latência garantida, nova geração EPIC ou treinamento. Nenhum novo forward.
+continuam abertos. Teto finito v2 retém a última fonte subsequente da MESMA
+classe:1.540 leis racionais e10.220 tapes passam sob producer d0b6936.
+Não confundir teto de draws com fallback iid arbitrário, latência garantida,
+nova geração EPIC ou treinamento. Nenhum novo forward.

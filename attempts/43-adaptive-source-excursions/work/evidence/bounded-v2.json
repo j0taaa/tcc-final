@@ -1,0 +1,79 @@
+{
+  "scope": "Exact capped payload law; no neural run, timing or priority certificate.",
+  "rational_laws": 1540,
+  "original_payload_tapes": 10220,
+  "balanced_examples": [
+    {
+      "barrier": 3,
+      "cap": 16,
+      "queries": "49151/16384",
+      "repeat": "10923/32768"
+    },
+    {
+      "barrier": 3,
+      "cap": 32,
+      "queries": "3221225471/1073741824",
+      "repeat": "715827883/2147483648"
+    },
+    {
+      "barrier": 3,
+      "cap": 64,
+      "queries": "13835058055282163711/4611686018427387904",
+      "repeat": "3074457345618258603/9223372036854775808"
+    },
+    {
+      "barrier": 4,
+      "cap": 16,
+      "queries": "255/64",
+      "repeat": "129/512"
+    },
+    {
+      "barrier": 4,
+      "cap": 32,
+      "queries": "65535/16384",
+      "repeat": "32769/131072"
+    },
+    {
+      "barrier": 4,
+      "cap": 64,
+      "queries": "4294967295/1073741824",
+      "repeat": "2147483649/8589934592"
+    },
+    {
+      "barrier": 6,
+      "cap": 16,
+      "queries": "22389/4096",
+      "repeat": "6555/32768"
+    },
+    {
+      "barrier": 6,
+      "cap": 32,
+      "queries": "1596263829/268435456",
+      "repeat": "365088395/2147483648"
+    },
+    {
+      "barrier": 6,
+      "cap": 64,
+      "queries": "6916911354244797909/1152921504606846976",
+      "repeat": "1537537509507271275/9223372036854775808"
+    },
+    {
+      "barrier": 8,
+      "cap": 16,
+      "queries": "3111/512",
+      "repeat": "1609/8192"
+    },
+    {
+      "barrier": 8,
+      "cap": 32,
+      "queries": "15640527/2097152",
+      "repeat": "4860289/33554432"
+    },
+    {
+      "barrier": 8,
+      "cap": 64,
+      "queries": "279961232055711/35184372088832",
+      "repeat": "71255475299329/562949953421312"
+    }
+  ]
+}

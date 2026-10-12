@@ -1,0 +1,11 @@
+{
+  "source_commit": "d0b69360fd55ed81342064fd8f4423771cffd1b9",
+  "source_sha256": {
+    "bounded.py": "befcdd7ccf8dc720182553270f69d88fe85c107da9066d2121354b090fbe29f6",
+    "bounded_oracle.py": "148df081b339a653fb23a46472c0aad26bfde44a45807192da8805036c013330",
+    "bounded-contract-v2.md": "c9fcc914cc6fda508513afcc906c33f8658d13e1aa3f2612fa41953070e4445a"
+  },
+  "command": ".venv/bin/python -m attempts.43-adaptive-source-excursions.work.bounded_oracle --output attempts/43-adaptive-source-excursions/work/evidence/bounded-v2.json",
+  "result_sha256": "2418868ecfe36710a4e32cf3abbfecda31e19376cde2fd88ebdac1f4322d0244",
+  "scope": "1540 exact finite payload laws,10220 original tapes and12 balanced cost/repetition examples; no neural run or priority certificate."
+}
