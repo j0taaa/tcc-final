@@ -1,0 +1,8 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "cases": 300,
+  "certified": 192,
+  "zero_mass": 108,
+  "known_root_query": true,
+  "producer": "8216ee0e4add006aed763814ff8d1e99ba9c439c"
+}

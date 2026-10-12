@@ -1,0 +1,13 @@
+{
+  "producer": "8216ee0e4add006aed763814ff8d1e99ba9c439c",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_forest --known-root --output .cache/a49-root-oracle-v26",
+  "cases": 300,
+  "certified": 192,
+  "zero_mass": 108,
+  "new_forwards": 0,
+  "status": "CORRECTNESS_ONLY",
+  "files": {
+    "rows.jsonl": "c74736d4c471d81a35af2bc6f3ed688b3fc92c9bab6d3f016e0084d7fb77ccda",
+    "summary.json": "cb1877bd31fea17e81529cfbdb719e16f85abac6e56d89e46651bf3fe8ad28b5"
+  }
+}
