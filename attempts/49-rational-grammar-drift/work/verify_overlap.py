@@ -12,9 +12,10 @@ from mwpc_exact.mass_certificate import ProbabilityInput
 
 from . import verify_forest as words
 from .sampler_overlap import controls
+from .two_sided_controls import controls as two_sided_controls
 
 
-def run(output):
+def run(output, two_sided=False):
     output.mkdir(parents=True, exist_ok=False)
     (output / "metadata.json").write_text(
         json.dumps(
@@ -64,13 +65,19 @@ def run(output):
                     plan = words.compile_cfg_sampler(source, first.state)
                     truth = words.expected(first, second, emissions, kind)
                     for epsilon in [F(1), F(1, 2), F(1, 10)]:
-                        result = controls(plan, first, second)
+                        result = (two_sided_controls if two_sided else controls)(
+                            plan, first, second
+                        )
                         if truth is None:
                             assert result["status"] == "ZERO_VALID_MASS_UNDEFINED_TV"
                             zeros += 1
                         else:
                             assert 0 <= truth <= result["upper"] <= 1
                             assert all(truth <= bound <= 1 for bound in result["bounds"].values())
+                            if two_sided:
+                                assert all(
+                                    0 <= bound <= truth for bound in result["lower_bounds"].values()
+                                )
                             if mode in ["equal", "tiny-scale"]:
                                 assert result["upper"] == 0
                         stream.write(
@@ -92,6 +99,7 @@ def run(output):
             original_id_forest_cases=checks,
             undefined_zero_mass=zeros,
             new_forwards=0,
+            two_sided_controls=two_sided,
         )
         (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
         print(json.dumps(summary), flush=True)
@@ -103,4 +111,6 @@ def run(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    run(parser.parse_args().output)
+    parser.add_argument("--two-sided", action="store_true")
+    args = parser.parse_args()
+    run(args.output, args.two_sided)
