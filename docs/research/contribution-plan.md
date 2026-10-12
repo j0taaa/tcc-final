@@ -1,5 +1,41 @@
 # Caderno científico — contrato atual e histórico
 
+##2026-10-12 — A49: stronger controls and strict stored-core comparison
+
+V12's uniform angular control has O(m) integer work; its six materialization
+refusals receive NO credit. V13 streams all products without that cap and
+finishesALL18 unchanged public rows. V14 proves an explicit positive original-
+probability family with Omega(1/epsilon) uniform-angular rows versus
+O(1/sqrt(epsilon)) endpoint rows at the SAME all-query tolerance. This is
+stored intermediate representation, not a lower bound for root-only TV:
+the one-position family is solved better by an exact scalar sum.
+
+V15 adds exact all-direction a posteriori certification to the angular
+control and gives EVERY method structural unary/diagonal passthrough. All
+geometry/forest/product gates pass and ALL18 public rows conclude. The
+adaptive control beats BOTH candidates on BF16/epsilon0.5 core timing.
+That loss remains; one-run developmental times are not a general or
+independent speed claim. No novel geometric principle is inferred.
+
+V16 fails on the first general forest because the new scalar control imported
+a bridge helper assuming node-ID topological order. Public run stays blocked;
+failure is preserved. V17 uses declared plan.order and passesALL75 scalar
+oracles/18 public rows. V18 strengthens BOTH chi-square directions with
+relative64-bit integer atom precision, avoiding huge prime LCMs; all gates
+pass again. Common-support Hellinger, both chi-square directions and sharp
+range remain cheaper scalar controls, with full CPU/wall costs charged.
+Best cheap FP16 upper is0.0007602747856462345 versus the calibrated0.1
+endpoint4.0946010443571345e-5, approximately18.57x. The old67.98x figure
+compares only V9's original Hellinger and is NOT the strongest current ranking.
+
+All formats/tolerances and failures are preserved independently in A49
+v12--v18. Same sole public full-V packet, zero new forwards: this is
+functional development, not independent corpus confirmation. V10's frozen
+PDF/main A24 article are unchanged; the next mathematical draft must include
+the stronger controls and explicit storage theorem. Quantitative deterministic
+TV precision/bit bound remains candidate novelty; exhaustive priority,
+independent human judgement and editorial acceptance remain unconfirmed.
+
 ##2026-10-12 — A49: quantitative integer theorem and complete numerical audit
 
 The closest generic framework is Fu2609.24235, NOT an invented naive parser.

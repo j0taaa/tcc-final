@@ -2129,6 +2129,30 @@
             "attempts/49-rational-grammar-drift/work/evidence/mass-aware-v16-failure",
             "attempts/49-rational-grammar-drift/work/evidence/origin-v16.json"
           ]
+        },
+        {
+          "id": "v17",
+          "source_commit": "87a3b52e4ed2c558b1e816cee267ac4c2da12bc1",
+          "evidence_commit": "b21089f06f37cbd81fd58e45d6ac78b32035b3ef",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/mass-aware-controls-v16.md",
+            "attempts/49-rational-grammar-drift/work/evidence/mass-aware-v17",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v17",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-v17.json"
+          ]
+        },
+        {
+          "id": "v18",
+          "source_commit": "d8b87c408b508e58f40a8f6acf078e161ab3843d",
+          "evidence_commit": "44fba770c231a78ebc02ad32a52f96711005ba26",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/scale-aware-controls-v18.md",
+            "attempts/49-rational-grammar-drift/work/evidence/mass-aware-v18",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v18",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-v18.json"
+          ]
         }
       ]
     }

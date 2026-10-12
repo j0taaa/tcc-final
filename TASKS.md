@@ -127,6 +127,9 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   FP16 bound remains0.0007602747856462345 vs endpoint4.0946010443571345e-5
   at0.1; report approximately18.57x, not67.98x against this strengthened set.
   Adaptive BF16/0.5 core loss and full costs remain; no independent speed gate.
+  Maintained checks after V18: `make check` passes upstream/lint/format/types
+  and49 attempts/172 immutable versions; `make test` passesALL167 in71.665s.
+  No Rust/Lean/main-posterior implementation changed; no new neural execution.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
