@@ -1,0 +1,741 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Deterministic Relative Certificates for Grammar-Conditioned Distribution Drift},
+ pdfauthor={Gabriel Jota Lizardo and Gabriel Barbosa da Fonseca},pdfsubject={Research draft}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newcommand{\TV}{\operatorname{TV}}
+\newcommand{\normG}[2]{F_{#1}(#2)}
+\input{generated-v27/audit-values.tex}
+\title{Deterministic Relative Certificates for\newline
+Grammar-Conditioned Distribution Drift}
+\author{Gabriel Jota Lizardo\and Gabriel Barbosa da Fonseca}
+\date{Research draft, 12 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Structured diffusion decoders often condition a frozen product prediction on
+a recursive grammar. Comparing two such predictions requires measuring their
+conditioned distributions, rather than comparing independent token marginals.
+We give an integer implementation of planar support compression with
+$O(\eta^{-1/2})$ generators and near-linear construction cost. Combined with
+known admissible-gate propagation, this yields deterministic rational relative
+total-variation certificates on unambiguous event forests, with polynomial
+bit complexity and no positive-mass or positive-distance floor. For ordinary
+products the arithmetic bound is
+$O(nq\sqrt{n/\varepsilon}\log(q+2))$, improving the precision
+exponent of the stated deterministic bounds examined here. A classical chart construction gives a full-input polynomial corollary for
+trimmed LL(1) grammars and original token identities, with precision depending
+on emitted length and same-span chain height. For full-state Markov laws the
+bound is $O(nq^2\sqrt{n/\varepsilon}\log(q+2))$. We separate these quantitative
+claims from the known geometric, parsing and admissible-gate principles.
+A positive rational JSON family shows that all named inexpensive upper bounds
+can have an unbounded relative gap; an exact specialized counter still wins
+on that family. A complete independent 360-row diffusion-head audit fails its
+predeclared precision gate. A common final-query optimization yields only one
+2x developmental pair in a second complete replay. These negative and limited
+observations are retained: the contribution is a proposed mathematical audit
+bound, without a faster-generation, semantic, EPIC or publication-acceptance
+claim.
+\end{abstract}
+
+\section{Problem and quantitative contribution}
+Let $S_1,\ldots,S_n$ be finite domains of original token identities. Each token
+has a fixed byte emission. A canvas and an unambiguous grammar specify a
+common valid set $\mathcal F\subseteq\prod_i S_i$. For two nonnegative rational
+tables $p_i,q_i$ with row sums at most one, let
+\[
+ Z_p=\sum_{y\in\mathcal F}\prod_i p_i(y_i),\qquad
+ P(y)=\frac{\prod_i p_i(y_i)}{Z_p},
+\]
+and define $Z_q,Q$ analogously. We require $Z_p,Z_q>0$; otherwise this comparison
+is undefined. Zeros, token aliases, fixed positions and rare valid events are
+allowed. The target is a rational interval
+\begin{equation}\label{eq:target}
+ L\leq\TV(P,Q)\leq U\leq(1+\varepsilon)L,
+ \qquad 0<\varepsilon\leq1.
+\end{equation}
+This is the frozen, grammar-conditioned product law of a step, not the
+learned joint law of a complete neural trajectory. No EOS is admitted here.
+
+Masked diffusion models motivate parallel structured sampling~\cite{mdlm}.
+Grammar conditioning and semiring parsing are antecedents~\cite{rivaud,goodman};
+this paper audits the distributional effect of numerical tables used in that
+operation. EPIC~\cite{epic} instead accelerates grammar-constrained commitment.
+These tasks are distinct; computing a tighter drift certificate does not
+establish a faster or more accurate EPIC replacement.
+
+TV as a support query, admissible-gate composition and deterministic relative
+approximation are established principles~\cite{fu}. Classical convex
+approximation gives the planar exponent~\cite{dudley,matousek}; constructive
+bit-model zonotope approximation is also an antecedent, not a first capability. Our construction
+retains original integer polygon endpoints; its generators have no new
+denominators, and its nearest-edge queries use exact integer comparisons.
+These properties provide the explicit arithmetic and bit bounds below.
+We do not claim a new geometric approximation rate or a TV lower bound.
+
+Feng, Liu and Liu's product FPTAS has stated arithmetic cost~\cite[Theorem 1]{feng}
+\[
+ O(qn^2\varepsilon^{-1}\log q\log(n/(\varepsilon\TV))).
+\]
+Its $(1-\varepsilon)$ convention converts to~\eqref{eq:target} by using
+error $\varepsilon/(1+\varepsilon)$. Fu's paired product corollary gives
+$\widetilde O(nq(n/\varepsilon)^4)$ and already removes numerical TV dependence
+in an extended real-arithmetic model~\cite[Corollary 1.4]{fu}.
+Our sharper product bound uses precision exponent $1/2$ and polynomial-bit
+integers. Comparisons are of published upper bounds, not lower bounds on
+competent alternative implementations or guarantees of physical speed.
+Bhattacharyya, Feng and Srivastava~\cite[Sections 2--3]{gaussian} restate the
+Feng bound and simplify its extension-distance proof; they already credit
+its polynomial bit complexity. Integer computability alone is therefore
+not our claimed improvement. Fu already removes the positive-TV dependence.
+
+Randomized inference-based relative approximation is also an antecedent
+~\cite{inference}; a derivation encoding supplies a relevant alternative,
+as discussed in Section~\ref{sec:related}. Randomization may be preferable
+when a probabilistic failure bound is acceptable. The finite numerical audit
+does not compare those algorithms' runtimes; its independent precision gate failed.
+
+\section{An exact integer planar core}
+For a finite multiset $G$ of integer pairs, put
+\[
+ F_G(w)=\sum_{g\in G}|g\cdot w|,
+ \qquad Z(G)=\sum_{g\in G}[-g,g].
+\]
+Thus $F_G$ is the support function of the centrally symmetric polygon $Z(G)$.
+
+\begin{theorem}[Integer endpoint compression]\label{thm:planar}
+Given $m$ integer pairs and integer $k\geq1$, one can construct a multiset
+$C$ of at most $64k$ integer pairs such that, for every $w\in\mathbb R^2$,
+\begin{equation}\label{eq:core}
+ (1-(16k^2)^{-1})F_G(w)\leq F_C(w)\leq F_G(w).
+\end{equation}
+The construction uses $O(m\log(m+2))$ exact arithmetic operations, or
+$O(m)$ if the nonzero, noncollinear generators are already in canonical
+angular order. The returned core preserves that order.
+Each output coordinate is a signed sum of input coordinates. Rank zero or
+one is compressed exactly. Intermediate integers have polynomial input bits.
+\end{theorem}
+
+\begin{proof}
+Orient nonzero generators into a half-plane and sort by determinant. Starting
+at minus their sum and walking by twice each generator, then its opposite,
+enumerates $Z(G)$. Every polygon vertex has the same coordinate parities.
+Redundant collinear vertices may be removed. For rank two choose a vertex $u$
+of maximum squared Euclidean norm and a vertex $v$ of maximum
+$|\det(u,v)|$, reversing $v$ to make $D=\det(u,v)>0$. If
+$T=[u\ v]^{-1}$ and $K=TZ(G)$, then
+\begin{equation}\label{eq:normalization}
+ \operatorname{conv}(\pm e_1,\pm e_2)\subseteq K
+ \subseteq[-2,2]\times[-1,1].
+\end{equation}
+Indeed the coefficient $\beta=\det(u,x)/D$ is at most one in absolute
+value. Writing $x=\alpha u+\beta v$, maximality of $\|u\|$ gives
+$|\alpha|\|u\|\leq\|x\|+\|v\|\leq2\|u\|$. The inner inclusion follows
+from the four chosen vertices. Hence $h_K(w)\geq\|w\|_\infty$.
+
+Take the $32k$ points of spacing $1/k$ on the boundary of $[-4,4]^2$.
+For each, find a closest polygon edge and retain both of its endpoints and
+their opposites. Let $R$ be their convex hull. Clearly $R\subseteq K$.
+For a unit supporting normal $w$, let $x$ maximize $w\cdot x$ on $K$.
+The ray $x+tw$ reaches the outer square at $p$, with $t\geq2$.
+A grid point $q$ on that side has $\|q-p\|\leq1/(2k)$.
+Let $y$ be the projection of $q$ onto $K$. Projection optimality gives
+\[
+ (q-y)\cdot(x-y)\leq0,\qquad
+ t\,w\cdot(x-y)\leq-\|x-y\|^2-(q-p)\cdot(x-y)
+ \leq\frac{\|q-p\|^2}{4}.
+\]
+Because $y$ belongs to a retained edge, it is in $R$. Thus
+$h_K(w)-h_R(w)\leq1/(32k^2)$. Since $h_K(w)\geq1/2$ for unit $w$,
+homogeneity gives~\eqref{eq:core} for these two polygons.
+
+Map the retained vertices back by $T^{-1}$. Their centered hull has
+$2r\leq128k$ vertices $z_0,\ldots,z_{2r-1}$ in boundary order, with
+$z_{i+r}=-z_i$. Its generators are
+$b_i=(z_{i+1}-z_i)/2$, $0\leq i<r$. They are integers by the common parity,
+and each is the sum of a consecutive run of oriented original generators.
+Their starting vertex is $-\sum_i b_i=z_0$, so they represent the hull
+exactly. One may return the original list if it is shorter.
+
+If $m\leq k$ return the original ordered generators exactly, avoiding a large
+grid. Otherwise $k<m$. Polygon construction after sorting costs $O(m)$;
+constant-factor normalization uses two linear scans. Lemma~\ref{lem:query}
+handles all outside queries together in $O(m+k)=O(m)$ time. Mark retained
+vertices and opposites in a Boolean array, then scan in original boundary
+order instead of sorting a new hull. Consecutive first-half edge differences
+are already cyclically ordered; canonical orientation introduces at most
+one wrap. Locate the minimum angle by positive determinant comparison and
+rotate the list. This costs $O(m)$ and yields ordered output. The only
+$O(m\log(m+2))$ work is the initial sort when the input is unordered.
+After scaling by $kD$, all geometry uses integer cofactors, determinants,
+squared segment distances and cross multiplication. No projection coordinate
+is output and no new rational denominator is introduced.
+\end{proof}
+
+\begin{lemma}[Monotone outside sweeps]\label{lem:query}
+For a convex polygon strictly to the left of the outside query line, all
+queries on that line in increasing vertical order have exact nearest edges
+in linear total arithmetic time in the polygon and query counts.
+Quarter-turns handle the other three sides.
+\end{lemma}
+\begin{proof}
+The projection lies on the right boundary chain, from the rightmost
+lowest vertex to the rightmost highest vertex. Along this chain the second
+coordinate increases strictly after collinear removal. Write the boundary
+as $x=f(t)$, where $f$ is concave and $4-f(t)>0$. Then
+\[
+D_Y(t)=(4-f(t))^2+(Y-t)^2
+\]
+is strictly convex. If $Y_1<Y_2$ and $t_1,t_2$ are its respective minimizers,
+adding their two minimizing inequalities gives
+$(Y_2-Y_1)(t_2-t_1)\geq0$. Hence the projection's vertical coordinate never
+decreases. Distances minimized over consecutive segment intervals decrease
+then increase, with a possible tie at the shared minimizing vertex.
+Start a pointer at the first segment. For each successive query advance
+while the next segment distance is no larger; choose the last edge in a tie.
+The pointer cannot move backwards and advances at most the chain length.
+Each query and each advance costs constant exact squared-distance comparisons
+by integer cross multiplication. Four rotated chains and their preparation
+cost $O(m+k)$ arithmetic operations and linear space.
+\end{proof}
+
+The $O(\eta^{-1/2})$ order is classical worst-case optimal for approximating
+\emph{all} planar support directions: an inscribed $2r$-vertex polygon has
+an angular gap at least $\pi/r$, and a circle loses order $r^{-2}$ support
+at that gap's midpoint. Fine rational polygons approximate the circle.
+This is not a lower bound for computing one TV query.
+
+\section{Event forests, relative error and bit cost}
+\begin{definition}
+An admitted event forest is an acyclic sum/product circuit with a fixed set
+of original positions, or scope, at each node. A leaf lists distinct choices
+at one position, or is an empty-scope unit/zero. Product scopes are disjoint
+and their events form a Cartesian product. Sum alternatives have equal scopes
+and disjoint assignment events. The root represents each member of
+$\mathcal F$ once. Productions have neutral weights. Empty-scope nodes reduce
+to unit/zero. There is no common-v-tree requirement.
+\end{definition}
+
+For each head independently let $D_i$ clear all denominators at position $i$,
+and let $a_i(v)=D_i p_i(v)$; use separate denominators and $b_i$ for $q$.
+A position denominator may be the product of its atom denominators:
+$D_i=\prod_v\operatorname{den}(p_i(v))$. Then $a_i(v)$ uses one exact integer
+quotient/multiplication per atom, and $\log D_i$ is bounded by the position's
+input bits. This clears denominators in linear arithmetic work, without
+counting a bit-length-dependent GCD as one primitive. A largest-denominator
+divisibility shortcut applies to dyadic rows. The measured reference retains
+LCMs/Fraction and charges their actual time; this alternative is for the
+complete arithmetic theorem. Return an unreduced integer fraction pair when
+counting constant output arithmetic; reducing it also has polynomial bit cost.
+Compute the exact positive integer root masses $A,B$ by ordinary inside
+addition/multiplication. They are not inferred from compressed generators.
+At a leaf keep pairs $(a_i(v),b_i(v))$; at a sum concatenate child lists;
+at a product take all componentwise products of child pairs. Compress each
+internal gate by Theorem~\ref{thm:planar}.
+Core pairs may be signed: they represent norms, never probabilities or a
+token sampler. The rounded head $Q$ remains the actual alternative law.
+Exact unary unions and singleton diagonal maps may pass through without
+compression. If omitted from the error count, they contribute zero error;
+all experimental methods receive these same shortcuts.
+
+Let $d$ be the maximum number of compression gates in an expanded root
+derivation: a sum takes the maximum child count plus one; a binary product
+adds both child counts plus one. Use $d\geq1$. Set
+$k=\lceil\sqrt{d(1+\varepsilon)/(16\varepsilon)}\rceil$, computed by integer square root and
+comparisons. At the root return
+\begin{equation}\label{eq:certificate}
+ L=\frac{\sum_{(x,y)\in C}|Bx-Ay|}{2AB},
+ \qquad U=\min\{1,(1+\varepsilon)L\}.
+\end{equation}
+
+\begin{theorem}[Deterministic rational forest certificate]\label{thm:forest}
+The algorithm satisfies~\eqref{eq:target}, including TV zero exactly.
+Let $H$ count explicit nodes and wires. Then $d\leq H$. With bounded fan-in
+and bounded exact leaf lists, its core arithmetic cost and storage are
+\[
+ O\bigl(H(d/\varepsilon)\log(d/\varepsilon+2)\bigr),\qquad
+ O\bigl(H\sqrt{d/\varepsilon}+d/\varepsilon\bigr).
+\]
+For general leaf lists of maximum size $V$, set
+$M=64k$, $K_0=\max(V,M)$ and $J=HK_0+K_0^2$.
+A conservative full bit bound is
+\[
+ \operatorname{poly}(\ell)+
+ O\bigl(HJ\log(J+2)(\ell+\log(J+k+2))^2\bigr),
+\]
+where $\ell$ is total input bit length. No conditioning-mass or TV floor is
+needed. Preparation of an input representation is charged separately.
+\end{theorem}
+
+\begin{proof}
+If two child cores preserve all query norms from below by factors $\alpha$
+and $\beta$, disjoint sum preserves their smaller factor. For a product,
+fix each right generator and query the left norm with its componentwise
+product with $w$. Sum the inequalities, then do the same for the right
+norm using the retained left generators. This gives lower factor
+$\alpha\beta$ and upper factor one, even with signed retained pairs.
+Induction gives $(1-1/(16k^2))^d F_{\rm exact}\leq F_C\leq F_{\rm exact}$.
+Bernoulli's inequality and $16k^2\geq d(1+\varepsilon)/\varepsilon$ imply a
+lower factor at least $1-\varepsilon/(1+\varepsilon)=1/(1+\varepsilon)$.
+At query $w=(1/A,-1/B)$ the exact norm is $2\TV(P,Q)$, proving the interval.
+
+A nonempty scoped node cannot repeat in a derivation: its lowest common
+ancestor would be a product whose two disjoint scopes contain that same
+nonempty scope. Acyclicity prevents repetition along a chain. This proves
+$d\leq H$; repeated-squaring arithmetic DAGs are excluded by the scope contract.
+
+Distinct-event mass at scope $I$ is at most $\prod_{i\in I}D_i$, since each
+input row sums to at most one. Evaluate core containment on either coordinate
+axis: the sum of absolute coordinates is at most that exact head mass.
+This invariant also bounds product/union intermediates before compression.
+Each coordinate therefore has $O(\ell)$ bits. Polygon vertices, cofactors,
+scaled grid points and squared-distance comparisons have
+$O(\ell+\log(J+k+2))$ bits, up to constant factors. Standard integer
+multiplication gives the displayed conservative bit bound. Initial LCMs,
+normalizers and final rational operations contribute polynomial input work.
+At most $J$ candidates occur at a gate; Theorem~\ref{thm:planar} then bounds
+every compression. Under bounded arities and leaf sizes products have $O(M^2)$
+rows and sums $O(M)$, giving the sharper expressions.
+\end{proof}
+
+\begin{corollary}[Products]\label{cor:products}
+For two rational product measures on $n$ domains of size at most $q$, the
+arithmetic cost is
+\[
+ O\bigl(nq\sqrt{n/\varepsilon}\log(q+2)\bigr)
+\]
+plus input/scaling/normalizer work, with polynomial-bit arithmetic.
+\end{corollary}
+\begin{proof}
+Start with $(1,1)$. At position $i$, merge the diagonal images
+$(a_i(v)x,b_i(v)y)$ for every original $v$ and every previous core pair
+$(x,y)$. Compress once. Here $d\leq n$ and the intermediate list has $qM$
+pairs; it does not form a wasteful general $M^2$ Cartesian product.
+Each nonnegative diagonal map preserves canonical angular order, including
+singular maps which collapse to one direction after omitting zero images.
+An exact $q$-way heap merge costs $O(qM\log(q+2))$, aggregates collinear
+images and supplies an ordered list to the linear compressor. No original
+probability event is discarded: the list represents a support norm, not a
+sampling law. The generic forest product may use signed diagonal maps and
+still has the preceding, different complexity bound.
+Normalizer masses are products of integer row sums. Apply the preceding
+norm induction and sweep bound. For an empty product TV is zero.
+\end{proof}
+
+\begin{corollary}[Full-state Markov trajectories]\label{cor:markov}
+For two rational laws on entire $n$-step trajectories of $q$-state
+inhomogeneous Markov chains, the arithmetic bound is
+\[
+ O\bigl(nq^2\sqrt{n/\varepsilon}\log(q+2)\bigr),
+\]
+including input/scaling/forward-normalizer work, with polynomial-bit integers.
+\end{corollary}
+\begin{proof}
+Clear denominators with one multiplier for the WHOLE transition matrix at
+each position, separately for each law. A different multiplier per previous
+state would change path weights and is invalid. Maintain an ordered paired
+prefix core for each endpoint. To reach endpoint $k$, merge the $q$ diagonal
+images of preceding endpoint cores, scaled by the two transition weights
+$(j,k)$, and compress once. Preceding states define disjoint trajectory events.
+There are $q$ endpoints and $q$ streams per endpoint. The final endpoint union
+adds at most one compression, so $d\leq n$. Exact forward masses and the
+preceding norm/bit induction prove the interval and cost. This concerns full
+trajectories, not observed-word marginals of a nondeterministic hidden model.
+\end{proof}
+The stated deterministic Markov upper bounds examined here are
+\[
+ O(n^2q^2\varepsilon^{-1}\log q\log(n/(\varepsilon\TV)))
+ \quad\text{and}\quad
+ \widetilde O(nq^2(n/\varepsilon)^4),
+\]
+respectively~\cite[Theorem 2]{feng}\cite[Corollary 1.5]{fu}.
+The recurrence and heap merge are classical; the precision exponent is the
+comparative claim, not a lower bound on every implementation.
+The same proof applies to original-labeled deterministic layered graphs,
+but materializing a predictive stack graph can be exponential and expanding
+original edges can be worse than a compact token-group forest.
+
+\section{A polynomial original-word grammar corollary}
+The forest-input theorem is not a proof of a software normalizer.
+Here is a separate mathematical full-input construction. Trim unreachable
+and unproductive symbols of an LL(1) byte grammar. Keep unit/epsilon rules,
+replace terminals in longer bodies by preterminals, and right-binarize with
+fresh fixed-chain auxiliaries. This is linear in grammar symbol occurrences
+$g$ and preserves derivations bijectively, without nullable-subset expansion.
+
+Construct an acyclic byte-prefix trie per original token position with a
+separate final-byte closure edge for each original ID. Prefix tokens close
+to the next boundary while longer tokens continue within the current trie.
+Aliases have distinct closure edges; their probabilities occur once on those
+edges. Empty/unsupported emissions are invalid and keep their mass in the
+input table. Complete lattice paths and original assignments are bijective.
+Let $V_b,E_b$ be lattice vertices/edges; these are bounded by total declared
+token-byte occurrences before sharing.
+
+\begin{theorem}[LL(1) source-input certificate]\label{thm:grammar}
+For the trimmed LL(1) source, original token domains and positive valid
+masses above, a deterministic rational certificate~\eqref{eq:target} is
+computed with total cost polynomial in $g,V_b,E_b,\ell,1/\varepsilon$.
+No common parse tree or fixed maximum nesting depth is assumed.
+\end{theorem}
+\begin{proof}
+For a binary rule $A\to BC$ add same-span dependency $A\to B$ if $C$ is
+nullable and $A\to C$ if $B$ is nullable; add unit dependencies as well.
+Every dependency is a nullable-prefix left corner. A cycle collapses to
+source left recursion, excluded by LL(1); auxiliary chains alone cannot cycle.
+
+Process chart cells $(A,u,v)$ by increasing topological difference $v-u$
+and then in dependency order. At $u=v$ use the unique empty derivation or
+zero. At positive spans include matching byte edges, unit children and
+binary splits at every $u\leq w\leq v$. Interior children have shorter
+spans; endpoint children use a nullable unit and an already computed
+same-span child. Hence the circuit is acyclic and has $O(gV_b^2)$ cells
+and $O(gV_b^3+gE_b)$ alternatives.
+
+Standard chart induction gives every path parse exactly once. LL(1)
+unambiguity makes alternatives disjoint as original assignment events, not
+just tree tags. Trimming ensures relevant nonterminal ambiguity cannot be
+hidden outside the start language. Vertex layers determine consumed closure
+slots, so sum scopes agree and product scopes partition. An empty scope stays
+inside one trie, with a unique path and unambiguous parse, and reduces to
+unit/zero. Theorem~\ref{thm:forest} applies. All source/lattice work is charged.
+This is classical parsing used for admission, not a new parsing algorithm.
+\end{proof}
+
+Let $B=\sum_i\max_{v\in S_i}|\operatorname{emission}(v)|$ over supported
+nonempty emissions, and let $h$ be the acyclic same-span dependency height.
+For a root derivation with $b\leq B$ terminal byte edges, contract maximal
+same-span positive-cell chains. They have at most $h+1$ cells; the contracted
+full binary tree has $2b-1$ nodes. At most an OR and a selected AND compression
+occur per positive cell; implicit empty subtrees are exact. Consequently
+\[
+ d\leq2(h+1)(2B-1)=O(gB).
+\]
+For an already admitted unambiguous epsilon/unit-free CNF, direct binary-tree
+counting gives the sharper $d\leq3B-2$. No ambiguity-preserving CNF conversion
+is silently assumed for arbitrary source input. Keep chart unions flat:
+an $f$-alternative union sorts $O(fM)$ rows. Including wires in $H$, the full
+core arithmetic upper is
+\[
+ O\bigl(H[(d/\varepsilon)\log(d/\varepsilon+2)
+       +\sqrt{d/\varepsilon}\log(H+2)]\bigr).
+\]
+The second term pays wide-OR sorting; binary conversion could introduce
+extra compression error. Grammar/lattice construction and normalizers are
+additional charged work. This is a written algorithm, not verification of
+the maintained normalizer or the measured materialized-stack compiler.
+
+
+\section{A software use: auditing numerical probability tables}
+If a certified upper bound $U$ is below an application's error budget $\tau$,
+replacing $P$ by $Q$ changes the expectation of \emph{every} verifier with
+values in $[0,1]$ by at most $\tau$. This is the standard operational meaning
+of TV; it requires no chosen semantic labels or favorable benchmark.
+For numerical table storage, nominal FP64-to-FP32 storage halves and
+FP64-to-16-bit storage quarters before metadata and transfers. We certify
+the distributional effect, not model throughput or parameter quantization.
+
+Multiplying each row by a positive constant does not change its conditioned
+law: every valid assignment consumes each declared position exactly once,
+so the common product of row constants cancels in its normalizer. A sampler
+can therefore use integer-scaled rounded atom weights without carrying row
+normalization constants through sampling. This is elementary and not our
+algorithmic novelty; the certificate audits the resulting changed law.
+
+A common continuation kernel cannot increase TV. For a finite iterative
+decoder with uniform per-reachable-history certificates $\tau_t$, a coupling
+gives final trajectory distance at most $\sum_t\tau_t$. This consequence
+requires the same sampling/commitment policy. A confidence threshold that
+changes under rounding needs a separate policy-preservation argument; local
+head closeness alone does not prove trajectory closeness. One observed
+history also does not certify every possible future history.
+
+\begin{corollary}[Budgeted table substitution]\label{cor:budget}
+Consider a finite-horizon decoder which samples a grammar-conditioned head
+and applies a common update rule. Keep its original policy inputs and change
+only the table used by the sampler. Start with budget $\tau\in[0,1]$. At each
+processed history, admit a substitute only with a valid certificate $U$ no
+larger than the remaining budget, then deduct $U$; otherwise keep the original
+table and deduct zero. The resulting trajectory law differs from the original
+by TV at most $\tau$, hence every final $[0,1]$-valued verifier changes in
+expectation by at most $\tau$.
+\end{corollary}
+\begin{proof}
+While histories match, maximally couple the two sampler laws. Their
+disagreement probability at that step is at most the admitted $U$, also
+after contraction under the common update. The probability of any first
+disagreement is bounded by the expected sum of these certificates over the
+matching prefix. Each substituted trajectory has nonnegative remaining
+budget, so its full sum, and thus that prefix sum, is at most $\tau$.
+The coupling inequality proves the conclusion.
+\end{proof}
+
+This standard coupling application does not require precomputing all future
+heads: admission enforces the invariant whenever a history is reached.
+Budget affects table admission only, not the common policy. Resource refusal
+or unsupported input retains the original table; a zero reference valid mass
+uses the same declared failure behavior. It does not automatically apply to
+native EPIC or to changed confidence thresholds. No iterative neural run of
+this wrapper, model quantization or generation-speed gain is measured here.
+
+\subsection{Tight decisions and a gap of the named cheap bounds}
+Given an externally chosen budget $\tau$, accept table substitution when
+$U\leq\tau$, reject it when $L>\tau$, and otherwise remain unresolved.
+The relative guarantee ensures acceptance whenever
+$\TV\leq\tau/(1+\varepsilon)$ and rejection whenever
+$\TV>(1+\varepsilon)\tau$. These are elementary consequences, not an
+additional algorithmic discovery. Competent lower controls include exact
+original-token marginal TV, support losses, Hellinger and moment inequalities;
+105 independent tiny word cases validate our reference intervals.
+No budget was selected from observed outcomes, and this decision operation
+has not been measured on the external heads.
+
+\begin{lemma}[Non-relative gap of the declared cheap controls]\label{lem:gap}
+There are positive rational product laws on $n+1$ original Boolean tokens
+which render valid JSON arrays, for which the best of ideal Hellinger,
+both chi-square, sharp likelihood-range and sequential categorical-sampler
+coupling uppers is $\Omega(\sqrt n)$ times the actual TV. Full/common-support
+variants coincide. This does not concern every TV algorithm or scalar formula.
+\end{lemma}
+\begin{proof}
+Let integer $m\geq4$, $n=m^2$, $\delta=m^{-4}$ and $a=m^{-3}$.
+At the first position $P(1)=a$, $Q(1)=2a$; at each other position
+$P(1)=1/2$, $Q(1)=1/2+\delta$. Projection gives $\TV\geq a$.
+On the balanced block,
+$\chi^2(Q_{\rm dense}\Vert P_{\rm dense})=(1+4\delta^2)^n-1
+\leq8/m^6$, using the binomial expansion and its geometric upper.
+Product triangle inequality and Cauchy--Schwarz therefore give
+$\TV\leq a+\sqrt2/m^3<3a$.
+
+Sequential coupling has upper
+$1-(1-a)(1-\delta)^n\geq1-(1-\delta)^n\geq1/(2m^2)$
+by the two-term Bonferroni bound. Chi-square tensorization gives forward
+value at least $a/(1-a)$ and reverse at least $a/[2(1-2a)]$;
+both capped half-square-root uppers exceed $1/(2m^2)$.
+Hellinger tensorization bounds its upper below by the first-coordinate value
+\[
+ \frac{\sqrt a}{\sqrt{2(1-a)}+\sqrt{1-2a}}
+ >\frac{\sqrt a}{3}\geq\frac{1}{2m^2}.
+\]
+The likelihood extrema are
+$l=[(1-2a)/(1-a)](1-2\delta)^n$ and $h=2(1+2\delta)^n$.
+Since $h\geq2$ and $1-l\geq1-(1-2\delta)^n\geq1/m^2$, the sharp
+range upper $(1-l)(h-1)/(h-l)\geq(1-l)/2\geq1/(2m^2)$.
+Thus every named ideal upper divided by TV is at least $m/6$.
+Fixed JSON array punctuation and original `true'/`false' token choices
+make every assignment valid, with valid mass one and the same TV.
+\end{proof}
+This is an abstract proof object, not a model benchmark. Exchangeability
+allows an EXACT $O(n)$ binomial counter on this family: it is a better
+specialized algorithm and must not be replaced by exponential enumeration
+as a performance opponent. Six rational checks use that counter. The lemma
+shows that the listed cheap controls lack a near-relative guarantee; Feng
+and Fu already provide general near-relative algorithms, against which our
+comparison remains quantitative. No typical neural-head benefit follows.
+
+\subsection{Complete independent audit and an explicitly developmental replay}
+We froze ALL five eligible original-byte documents in the pinned public
+JSONTestSuite, 4/8/16 masked positions, FP32/FP16/BF16 probability-table rounding,
+both tolerances $1/2,1/10$, and all four engines before new forwards.
+There are 15 actual full-vocabulary MDLM heads (50,258 original IDs), plus one
+warmup. Four documents are unseen by this TV development, not necessarily by
+model training or earlier project work. Whole-row rational normalization keeps
+zeroed and unsupported original IDs. The model/tokenizer are pinned and no
+parameters are updated; these are frozen-head audits, not iterative generation.
+
+Exact normalizers are checked independently against preserved stack sources.
+The measured bridge retains original IDs, aliases and closure choices.
+Explicit stack preparation can grow exponentially; it is charged and does
+not implement the polynomial chart theorem above. All \ExternalRows{} rows conclude:
+\ExternalCertificates{} certificates and \ExternalRefusals{} resource refusals, no missing rows or computation
+errors. Shared refusals count for every affected method and receive no victory
+credit. All cases, tolerances and failures remain publicly recorded.
+
+Controls include exact likelihood-range extrema, certified global/common
+Hellinger, both common-support chi-square directions with relative atom
+rounding, and full/common-support sampler overlap. For that last classical
+control, compute exact inside masses $A_v,B_v$ and alternative masses
+$a_t,b_t$. Its lower bound on sampler agreement obeys
+\[
+ c_v=\sum_t\min(a_t/A_v,b_t/B_v)\prod_{u\in t}c_u,
+ \qquad \TV\leq1-c_{\rm root}.
+\]
+Downward dyadic evaluation certifies this upper; support corrections are
+charged. This stronger baseline eliminates most of the earlier developmental
+gap. The unchanged independent predicate requires a candidate upper at least
+2x tighter than the best cheap upper, at $\varepsilon=0.1$ with ordered cores.
+It FAILS in all \IndependentPairs{} unseen pairs. Ideal-control-rounding robustness adds no
+wins. The best near-threshold ratio, \ClosestIndependentRatio{}, is not rounded into success.
+The entire audit takes \ExternalWall{} seconds wall/CPU, including input,
+preparation, both normalizers, controls, core work and process management;
+model capture/load/warmup are recorded separately.
+
+A classical final-query shortcut, supplied to ALL four engines, streams
+$|Bx-Ay|$ directly at the root instead of materializing/compressing its final
+union. Exact propagation of each compressor's rational lower factor gives
+$U=\min(1,L/\beta)$ with $\beta\geq1/(1+\varepsilon)$; factor arithmetic and
+root work are charged. All \RootOracleCases{} tiny original-word/engine cases pass before
+replaying ALL old 15 heads/360 configurations under the same guards. This
+second campaign also has \ExternalCertificates{} certificates and \ExternalRefusals{} refusals. \DevelopmentPassed{} of \DevelopmentPairs{}
+DEVELOPMENT pairs exceeds the old 2x diagnostic (\BestDevelopmentRatio{}x), also against ideal
+control-rounding enclosures. It is not independent confirmation or a successful
+latency gate; the failed original gate is preserved. Table~\ref{tab:external}
+reports every ordered $0.1$ pair from both campaigns.
+
+\begin{table}[htbp]
+\centering\scriptsize
+\input{generated-v27/audit-table.tex}
+\caption{All \DevelopmentPairs{} ordered $\varepsilon=0.1$ pairs per campaign: best cheap upper
+ divided by candidate upper. `ref.' is an explicit resource refusal. V25
+ is independent only for the four documents after the first; V26 reuses ALL
+ old heads and is DEVELOPMENT. Values rounded for display; predicates use
+ exact rational values. All360 records per campaign, including other methods
+ and tolerances, remain in the immutable artifact. No semantic/speed gate.}
+\label{tab:external}
+\end{table}
+
+Inputs are reproducible from stored rational probability tables; raw new
+logits/probability arrays are optional local inputs, not published in Git.
+Their hashes and exact-softmax/original-byte replay are recorded, but hashes
+alone are not complete offline reproduction of neural origin. Small tests
+and all-query oracles validate implementations; they do not establish novelty,
+human proof review, editorial acceptance or native EPIC superiority.
+
+\section{Related alternatives and exact claim boundaries}\label{sec:related}
+Fu's general admissible-gate theorem already permits the disjoint union and
+componentwise product operations of our forest~\cite{fu}. Therefore the
+generic existence of deterministic approximation on an admitted forest is
+a specialization, rather than our main discovery. The smaller integer core
+and resulting quantitative bound are the claim of this draft. Specific
+priority is based on the primary results inspected as of this draft's date,
+not an exhaustive-literature guarantee.
+
+Domain reduction for smooth decomposable probabilistic circuits requires a
+common v-tree in its current theorem; determinism is not required~\cite{domain}.
+A parse forest can have differing product splits. The ACTUAL explicit-stack
+prototype is a fixed-slot chain compatible with a common tree, so its examples
+do not establish a capability unavailable to that randomized theorem. This is not
+an encoding-independent separation, and the more general admissible-gate
+framework remains a competitor. Ordinary exact enumeration is preferable
+for small valid sets. Certified sampler-overlap, Hellinger/KL or range bounds are preferable
+when their cheaper upper guarantees suffice.
+
+The ICML inference reduction~\cite{inference} also deserves a competent grammar
+encoding. Normalize each reachable alternative by exact inside masses; activate
+the children selected by their parents, and give unused nodes a canonical
+inactive value. Decomposability precludes repeated nonempty nodes in a
+derivation. Complete choice vectors and valid assignments are bijective.
+Boolean activation gadgets avoid exponential CPT descriptions for shared nodes.
+For the reduction's diagonal and topological-prefix queries, minimum local
+conditional probabilities and clamped already active choices are ordinary
+weighted inside operations. A visited node's activation is determined by
+the prefix, so arbitrary future activation evidence is unnecessary.
+This is a classical randomized alternative, not a newly claimed reduction
+or a measured implementation. Its failure parameter and $\varepsilon^{-2}$
+sample dependence differ from the deterministic bound here. Recent linear-time
+randomized product algorithms are also stronger choices in their setting~\cite{linear}.
+
+EPIC and commitment selectors perform different operations. This manuscript
+neither evaluates EPIC's complete law nor claims generation superiority over
+it. Exact token lifting, geometric queries and selected Lean specifications
+elsewhere in the project do not establish academic novelty by themselves.
+No formal proof of this complete geometric theorem or Python implementation,
+independent human review, training improvement or editorial acceptance is
+claimed.
+
+\section{Reproducibility and unresolved obligations}
+All source/evidence versions are independently snapshotted, including setup,
+timer and ordered-angle failures, interrupted trials, the failed V25 gate and
+the complete V26 development. The latter cannot inherit independent status.
+Raw records, protocols, source hashes and generated tables are preserved in
+\path{attempts/49-rational-grammar-drift/work}; model weights/caches are excluded.
+No result is inferred from a table cap or changed control implementation.
+
+The geometry checks include 1,860 cases, 33,747 exact norm directions,
+117,376 projections by independently scanning every segment, 1,860 ordered
+image comparisons, 1,167 products and 389 at $\varepsilon=2^{-1024}$.
+Original-ID forest cases use independent JSON/stack recognizers and direct
+assignment enumeration. Known-root verification covers all \RootOracleCases{} old
+word/engine cases; classical two-sided controls cover \LowerOracleCases{} cases including
+\LowerUndefined{} undefined-zero-mass refusals. The \FamilyCases{} proof-family checks use an exact
+binomial counter. These are correctness checks, not publication evidence.
+The maintained offline suite passes all \MaintainedTests{} tests, including the original-ID
+known-root regression. Selected Lean statements elsewhere do not verify this
+complete geometric theorem, grammar compiler or Python implementation.
+
+Run the ordered oracle with a fresh \texttt{--output} directory:
+\begin{quote}\small\ttfamily
+python -m\\
+attempts.49-rational-grammar-drift.work.verify\_ordered
+\end{quote}
+The external campaign module is:
+\begin{quote}\small\ttfamily
+attempts.49-rational-grammar-drift.work.audit\_external
+\end{quote}
+V26 explicitly
+uses \texttt{--known-root} and the same stored V25 capture. Table~\ref{tab:external}
+is generated by \texttt{build\_report\_v27}, verifying both immutable record
+inventories and decision hashes before deriving all45 pairs. The old public
+packet is available offline; the new15 raw heads require the optional local
+capture inputs, not just their hashes. Exact-softmax replay runs no forward
+and does not independently reproduce neural logits from weights.
+
+Independent human checking of the theorem and novelty/significance remains
+absent. The improved quantitative upper bound is mathematically separate from
+physical timing: the independent practical precision gate failed, and one
+new developmental diagnostic does not establish a broad useful gain.
+The proposed use is deterministic numerical-fidelity auditing with explicit
+costs and limitations. Native EPIC, learned semantic correctness, faster
+complete generation and publication acceptance remain outside the proved
+claim. The mathematical argument should be assessed on its actual quantitative
+advance, rather than on code size, number of trials or successful examples.
+
+\begin{thebibliography}{99}
+\bibitem{fu} Y. Fu. On Deterministically Computing Total Variation Distance
+via Zonotope Compression. arXiv:2609.24235v1, 2026.
+\url{https://arxiv.org/abs/2609.24235v1}.
+\bibitem{feng} W. Feng, L. Liu and T. Liu. On Deterministically Approximating
+Total Variation Distance. SODA, 1766--1791, 2024; arXiv:2309.14696v1.
+\url{https://arxiv.org/abs/2309.14696v1}.
+\bibitem{dudley} S. Har-Peled and M. Jones. A Proof of Dudley's Convex
+Approximation. Manuscript, 2017, revision May 2024.
+\url{https://sarielhp.org/p/17/dudley_approx/dudley_approx.pdf}.
+\bibitem{matousek} J. Matou\v{s}ek. Improved Upper Bounds for Approximation
+by Zonotopes. Acta Mathematica 177:55--73, 1996.
+\url{https://doi.org/10.1007/BF02392598}.
+\bibitem{inference} A. Bhattacharyya, S. Gayen, K. S. Meel, D. Myrisiotis,
+A. Pavan and N. V. Vinodchandran. Total Variation Distance Meets Probabilistic
+Inference. ICML, PMLR 235:3776--3794, 2024.
+\url{https://proceedings.mlr.press/v235/bhattacharyya24a.html}.
+\bibitem{domain} A. Bhattacharyya, G. Cormode, Y. Fu and K. S. Meel.
+Total Variation Distance Estimation through Domain Reduction.
+arXiv:2609.18707v2, 2026. \url{https://arxiv.org/abs/2609.18707v2}.
+\bibitem{linear} K. Anand, A. Benford and H. Guo. Linear Time Approximation
+of the Total Variation Distance between Product Distributions.
+arXiv:2607.27088, 2026. \url{https://arxiv.org/abs/2607.27088}.
+\bibitem{gaussian} A. Bhattacharyya, W. Feng and P. Srivastava.
+Approximating the Total Variation Distance between Gaussians.
+COLT, PMLR 258, 2025.
+\url{https://proceedings.mlr.press/v258/bhattacharyya25a.html}.
+\bibitem{mdlm} S. S. Sahoo, M. Arriola, Y. Schiff, A. Gokaslan, E. Marroquin,
+J. T. Chiu, A. Rush and V. Kuleshov. Simple and Effective Masked Diffusion
+Language Models. NeurIPS 37, 2024. \url{https://arxiv.org/abs/2406.07524}.
+\bibitem{goodman} J. Goodman. Semiring Parsing.
+Computational Linguistics 25(4):573--605, 1999.
+\url{https://aclanthology.org/J99-4004/}.
+\bibitem{rivaud} S. Rivaud and F. Pachet. Sampling Markov Models under
+Constraints: Complexity Results for Binary Equalities and Grammar Membership.
+arXiv:1711.10436, 2017. \url{https://arxiv.org/abs/1711.10436}.
+\bibitem{epic} H. Jin and Y.-S. Han. EPIC: Efficient and Parallel Inference
+under CFG Constraints for Diffusion Language Models.
+arXiv:2606.00722v2, 2026. \url{https://arxiv.org/abs/2606.00722v2}.
+\end{thebibliography}
+\end{document}

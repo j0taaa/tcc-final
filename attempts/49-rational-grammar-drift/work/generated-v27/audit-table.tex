@@ -1,0 +1,27 @@
+\begin{tabular}{lrrrrrrr}
+\toprule
+Document / masks & & \multicolumn{2}{c}{FP32} & \multicolumn{2}{c}{FP16} & \multicolumn{2}{c}{BF16} \\
+ & & V25 & V26 & V25 & V26 & V25 & V26 \\
+\midrule
+string\_uEscape & 4 & 0.95384 & 0.99233 & 1.05476 & 1.09733 & 1.00695 & 1.04758 \\
+string\_uEscape & 8 & 1.13596 & 1.15096 & 1.42437 & 1.44318 & 1.12943 & 1.14434 \\
+string\_uEscape & 16 & ref. & ref. & ref. & ref. & ref. & ref. \\
+\addlinespace
+object\_extreme\_numbers & 4 & 0.91536 & 0.96566 & 0.93152 & 0.98271 & 0.92940 & 0.98048 \\
+object\_extreme\_numbers & 8 & 1.17544 & 1.20032 & 1.44486 & 1.47544 & 1.21684 & 1.24259 \\
+object\_extreme\_numbers & 16 & ref. & ref. & ref. & ref. & ref. & ref. \\
+\addlinespace
+string\_accepted\_surrogate\_pairs & 4 & 1.12696 & 1.17244 & 1.06165 & 1.10449 & 1.12526 & 1.17066 \\
+string\_accepted\_surrogate\_pairs & 8 & 1.13506 & 1.15005 & 1.16217 & 1.17752 & 1.13521 & 1.15020 \\
+string\_accepted\_surrogate\_pairs & 16 & ref. & ref. & ref. & ref. & ref. & ref. \\
+\addlinespace
+object\_string\_unicode & 4 & 1.06731 & 1.10267 & 1.00336 & 1.03660 & 1.10535 & 1.14197 \\
+object\_string\_unicode & 8 & 1.12948 & 1.14889 & 1.57133 & 1.59833 & 1.13212 & 1.15157 \\
+object\_string\_unicode & 16 & ref. & ref. & 1.98850 & 2.02283 & ref. & ref. \\
+\addlinespace
+object\_long\_strings & 4 & 0.90984 & 0.95984 & 0.91013 & 0.96014 & 0.90950 & 0.95948 \\
+object\_long\_strings & 8 & 1.05108 & 1.06080 & 0.99036 & 0.99952 & 0.95436 & 0.96318 \\
+object\_long\_strings & 16 & ref. & ref. & ref. & ref. & ref. & ref. \\
+\addlinespace
+\bottomrule
+\end{tabular}
