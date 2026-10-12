@@ -130,6 +130,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Maintained checks after V18: `make check` passes upstream/lint/format/types
   and49 attempts/172 immutable versions; `make test` passesALL167 in71.665s.
   No Rust/Lean/main-posterior implementation changed; no new neural execution.
+- [ ] T6913: V19 writes BEFORE code an ordered integer-core/sweep recurrence
+  with product bound O(n*q*sqrt(n/epsilon)*log(q+2)), same guarantees and full
+  bit/input costs. Classical geometry/merge are credited. Repeat all geometry,
+  exhaustive outside projections,1,167 products and389 extreme-precision
+  cases before a real application; nearest-prior/publication judgement open.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

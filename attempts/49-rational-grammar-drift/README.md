@@ -288,3 +288,12 @@ the calibrated endpoint upper is4.0946010443571345e-5, approximately18.57x
 tighter. All other formats and the adaptive BF16/0.5 speed loss remain.
 This is a complete functional curve on one reused packet, not a prospective
 semantic-budget success, publication guarantee or independent speed gate.
+
+V19 BEFORE code: `ordered-product-proof-v19.md` answers the eight criteria
+and writes an ordered-core recurrence with linear sweeps and exact q-way
+merging. Candidate product bound becomes
+O(n*q*sqrt(n/epsilon)*log(q+2)), plus complete input/scaling/normalizers and
+bit costs. The sharper bound uses classical ordering/geometry; no new convex
+principle, generic TV lower bound or general-forest speed guarantee is claimed.
+ALL prior geometry/product/extreme-precision correctness families are frozen
+for checking first; no synthetic timing or favorable new neural case.
