@@ -56,7 +56,7 @@ def select(archive, tokenizer, protocol):
     return [found[key] for key in sorted(found)]
 
 
-def run(archive, output, device):
+def run(archive, output, device, protocol_path=WORK / "protocol-v23.json"):
     import numpy as np
     import torch
     from scripts.exact_commit.mdlm_cpu import load_cpu_model
@@ -66,7 +66,7 @@ def run(archive, output, device):
         raise ValueError("freeze source/protocol with a clean tree before actual forwards")
     if output.exists():
         raise FileExistsError(output)
-    protocol = json.loads((WORK / "protocol-v23.json").read_text())
+    protocol = json.loads(protocol_path.read_text())
     config = json.loads((WORK / "model-v23.json").read_text())
     torch.set_num_threads(config["torch_cpu_threads"])
     torch.set_flush_denormal(False)
@@ -100,7 +100,7 @@ def run(archive, output, device):
         torch.cuda.synchronize()
     metadata = dict(
         producer=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-        protocol_sha256=digest(WORK / "protocol-v23.json"),
+        protocol_sha256=digest(protocol_path),
         archive_sha256=digest(archive),
         config=config,
         model_hashes=hashes,
@@ -109,7 +109,9 @@ def run(archive, output, device):
         selected=selected,
         vocabulary_sha256=digest(output / "vocabulary.json"),
         device=device,
-        versions=dict(torch=torch.__version__, python=platform.python_version(), cuda=torch.version.cuda),
+        versions=dict(
+            torch=torch.__version__, python=platform.python_version(), cuda=torch.version.cuda
+        ),
         gpu=torch.cuda.get_device_name() if device == "cuda" else None,
         startup_wall_cpu=[perf_counter() - started[0], process_time() - started[1]],
         scope="15 actual frozen heads plus ONE warmup; no training/updates or iterative decoder",
@@ -156,7 +158,10 @@ def run(archive, output, device):
                 status="CAPTURED_ACTUAL_MODEL_HEAD",
             )
             (output / (name + ".json")).write_text(json.dumps(result, indent=2) + "\n")
-            print(json.dumps({k: result[k] for k in ["case", "mask_count", "audit_split", "status"]}), flush=True)
+            print(
+                json.dumps({k: result[k] for k in ["case", "mask_count", "audit_split", "status"]}),
+                flush=True,
+            )
 
 
 if __name__ == "__main__":
@@ -164,5 +169,6 @@ if __name__ == "__main__":
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--device", choices=["cpu", "cuda"], default="cuda")
+    parser.add_argument("--protocol", type=Path, default=WORK / "protocol-v23.json")
     args = parser.parse_args()
-    run(args.source, args.output, args.device)
+    run(args.source, args.output, args.device, args.protocol)
