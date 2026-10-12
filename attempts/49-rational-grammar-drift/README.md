@@ -187,3 +187,16 @@ source67b5f92 passes them. The previous164-test suite passed70.471s.
 Geometric-priors-v11 reinforces that planar compression/bit models are OLD;
 only the explicit quantitative TV bound is the candidate scientific advance.
 No reattribution of V9 timings, new neural capture or semantic benchmark.
+
+V12 re-evaluates BEFORE code all eight questions: (1) the operation remains a
+numerical probability-table audit; (2--4) the candidate is ONLY a sharper
+deterministic TV precision bound, because a strengthened classical angular
+control already has integer polynomial bit costs without minimum mass/TV.
+(5) `strong-angular-control-v12.md` freezes all old correctness families and
+ALL18 public functional rows, not a new performance benchmark. (6) matched
+error budgets, CPU/wall and complete preparation are charged. (7) the linear-
+work angular control may beat endpoint projection; no control is omitted.
+A calibrated endpoint and routine hybrid are separately named and do not
+inherit V9 timings. (8) geometric novelty, human review, complete priority,
+editorial sufficiency and generation superiority remain unconfirmed. The
+specific quantitative TV bound must survive this stronger comparison.

@@ -2057,6 +2057,20 @@
             "attempts/49-rational-grammar-drift/work/usefulness-decision-v10.md",
             "output/pdf/grammatical-drift-v10.pdf"
           ]
+        },
+        {
+          "id": "v11",
+          "source_commit": "67b5f92000ec500cef0d6d8ce60ea2e526601126",
+          "evidence_commit": "39455610d50495c2ebfc6d9688a621fdc6b1d7c2",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/fast-v11",
+            "attempts/49-rational-grammar-drift/work/evidence/product-v11",
+            "attempts/49-rational-grammar-drift/work/evidence/precision-v11",
+            "attempts/49-rational-grammar-drift/work/geometric-priors-v11.md",
+            "attempts/49-rational-grammar-drift/work/small-exact-refinement-v11.md",
+            "tests/test_integer_tv.py"
+          ]
         }
       ]
     }
