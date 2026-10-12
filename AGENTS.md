@@ -948,3 +948,14 @@ TV escalar de uma posição continua melhor por soma exata O(M)/memória O(1).
 Não converter a separação de representação em lower bound de toda inferência
 ou em velocidade geral. Novidade específica/suficiência editorial permanecem
 sob auditoria; não fingir revisão humana ou garantia de aceitação.
+
+A49 V15 dá ao controle angular auto-certificação exata em todas direções e
+passthrough estrutural comum:18/18 concluem; o controle vence AMBAS candidatas
+no core BF16/0.5. Preservar a perda. V16 falha no primeiro oráculo por presumir
+IDs topológicos; V17 corrige somente o helper novo, passa75 oráculos e18/18
+casos. V18 fortalece a precisão relativa de ambas direções chi-square:75
+oráculos/18 casos passam. O melhor bound barato FP16 é0,0007602748 contra
+endpoint0,0000409460 emepsilon0,1 (cerca18,57x, não67,98x contra esses novos
+controles). Não houve forward novo, corpus independente, modelo quantizado,
+gate de latência geral ou vitória EPIC. V10/PDF e todos erros/custos ficam
+preservados; próximo rascunho deve incorporar estes controles mais fortes.

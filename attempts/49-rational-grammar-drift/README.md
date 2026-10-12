@@ -280,3 +280,11 @@ precision: `scale-aware-controls-v18.md` gives EVERY nonzero chi-square atom
 64 bits of certified relative rounding precision, with polynomial bit costs.
 Both directions get it, all75 oracles/18 public cases repeat, and prior
 outputs remain true historical records. No new contribution is claimed here.
+
+V18 producerd8b87c4 passesALL75 scalar cases/27 undefined and ALL18 public
+rows, no errors/refusals. Both chi-square directions now have relative atom
+precision. The best cheap FP16 upper remains0.0007602747856462345; at0.1
+the calibrated endpoint upper is4.0946010443571345e-5, approximately18.57x
+tighter. All other formats and the adaptive BF16/0.5 speed loss remain.
+This is a complete functional curve on one reused packet, not a prospective
+semantic-budget success, publication guarantee or independent speed gate.

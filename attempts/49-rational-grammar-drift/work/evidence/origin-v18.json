@@ -1,0 +1,25 @@
+{
+  "producer": "d8b87c408b508e58f40a8f6acf078e161ab3843d",
+  "commands": [
+    ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_mass_aware --output .cache/a49-mass-aware-v18",
+    ".venv/bin/python -m attempts.49-rational-grammar-drift.work.public_controls --adaptive --massaware --output .cache/a49-public-v18"
+  ],
+  "records": [
+    {
+      "directory": "attempts/49-rational-grammar-drift/work/evidence/mass-aware-v18",
+      "files": {
+        "rows.jsonl": "9fdd4001b8bd87b264ccbce1d6425ffa250a972f0377f0019729b398053c90df",
+        "summary.json": "6504a41a29072cefaa39d0dd55ffd04262b06f2ca40b590507b7e9214df44527",
+        "metadata.json": "0c9734324d82d682026c81c39efc3e8a273b99bd51fb210e46da789f54580fa1"
+      }
+    },
+    {
+      "directory": "attempts/49-rational-grammar-drift/work/evidence/public-v18",
+      "files": {
+        "rows.jsonl": "9be7824ceebc1e6c0e0f0c761903af51bdd086733f45bc8f31ef39bef98f7caa",
+        "summary.json": "b3e2e8e1bd3aea16dc00c68471ba58f5cb3bb83c91c4950bd3d8e10dd7749301",
+        "metadata.json": "099081b778ba441b381cd5b91a3049551563171e28b5d43ef47abca44a3bdf91"
+      }
+    }
+  ]
+}

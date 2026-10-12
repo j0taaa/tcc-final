@@ -121,6 +121,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   no refusals/errors. Strengthened FP16 upper0.0007602747856462345, not the
   old Hellinger0.0027838. Chi-square absolute precision can still be loose
   under denominator imbalance; V18 must use scale-aware atom precision.
+- [x] T6912: V18 proves relative64-bit atom precision for BOTH chi-square
+  directions without large rational LCMs. Producerd8b87c4 passesALL75 cases/
+  27 undefined and ALL18 public rows, no errors/refusals. Strongest cheap
+  FP16 bound remains0.0007602747856462345 vs endpoint4.0946010443571345e-5
+  at0.1; report approximately18.57x, not67.98x against this strengthened set.
+  Adaptive BF16/0.5 core loss and full costs remain; no independent speed gate.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
