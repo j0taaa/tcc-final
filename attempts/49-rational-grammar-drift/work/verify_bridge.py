@@ -44,7 +44,7 @@ def cases():
             support = build_per_position_support(
                 canvas=canvas,
                 policy=SupportPolicy(SupportKind.EXPLICIT, len(emissions)),
-                explicit_support=dict(enumerate(first.state.support.rows)),
+                explicit_support=dict(enumerate((*first.state.support.rows[:-1], (fixed,)))),
             )
             state = replace(first.state, canvas=canvas, support=support)
             yield (

@@ -107,3 +107,9 @@ or quantized-neural-model execution. Explicit stacks can explode; controls
 can be faster or sufficient, and all outcomes remain (7). Specific TV priority,
 useful certificate improvement on this input, article and human review remain
 open (8). Validate the bridge independently before the public-head audit.
+
+V4 source038a404 failed while constructing the first fixed-slot oracle:
+the fixture supplied extra IDs at a newly fixed position; the maintained API
+correctly refused it. Partial checks/failure are preserved, and the public
+audit was NOT run. V5 corrects only that fixture to the required singleton
+support, preserving the exact scientific gate/controls/rounding protocol.

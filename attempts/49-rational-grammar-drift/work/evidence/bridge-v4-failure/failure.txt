@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/49-rational-grammar-drift/work/verify_bridge.py", line 63, in run
+    for name, mode, emissions, first, second in cases():
+  File "/home/jota/projects/tcc-final/attempts/49-rational-grammar-drift/work/verify_bridge.py", line 44, in cases
+    support = build_per_position_support(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/src/mwpc_exact/support.py", line 616, in build_per_position_support
+    raise ValueError(
+ValueError: fixed position 2 explicit support must contain exactly token 1

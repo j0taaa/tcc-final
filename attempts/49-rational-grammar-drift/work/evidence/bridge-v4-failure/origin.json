@@ -1,0 +1,9 @@
+{
+  "producer": "038a404303465c1bfaf19116c8efd9688e38298d",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_bridge --output .cache/a49-bridge-v4",
+  "scope": "Failed test-fixture construction: fixed-slot explicit support included extra IDs; public audit NOT run",
+  "sha256": {
+    "failure.txt": "d64a022c3712bde484f5c7985cf24800d63dd7bf570d76e4c5f73259a383e2d9",
+    "partial.jsonl": "a92fdcf700a941d2f5c79d724ad4ea9d33e28e42a0ecd32a1a93c98ae3117a33"
+  }
+}
