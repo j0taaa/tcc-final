@@ -67,6 +67,9 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Adverse primary reduction in43/work/primary-reduction-v3.md identifies the
   scalar statistic as a classical conditional-first-indicator estimator.
   Retained original-payload frontier question remains open; not article-ready.
+  Internal V4 audit finds the SAME full retained/capped law and stronger
+  noninteger/pointwise bound already in34. A43 is closed as an independent
+  novelty candidate; oracles are revalidation. No new native campaign.
 
 ## M62 — Safe empirical resampling at every source budget
 

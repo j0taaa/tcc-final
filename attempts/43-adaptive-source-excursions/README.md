@@ -69,3 +69,9 @@ Under immutable producer d0b6936, 1,540 rational finite-chain laws and 10,220
 original-payload tapes pass, as do twelve balanced cost/repetition examples.
 This closes the bounded reference's correctness check, not priority or practical
 utility. A draw-count cap is not an arbitrary wall-clock timeout guarantee.
+
+Adverse history audit V4 closes this as an independent novelty candidate:
+`work/internal-reduction-v4.md` identifies the same retained-source, capped
+rule and stronger frontier already preserved in A34. These new oracles are
+revalidation, not a new contribution. The first write-up missed that internal
+antecedent; no extra model campaign is justified. All versions are preserved.
