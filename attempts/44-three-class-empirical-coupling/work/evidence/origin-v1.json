@@ -1,0 +1,11 @@
+{
+  "source_commit": "090c357fdb45567bfae7e086fe886f87cf9d828b",
+  "source_sha256": {
+    "coupling.py": "1b85a2c46bb8a6a4b737298aa9b231bd6a109042db90585f548c0cea001b299d",
+    "oracle.py": "bc6d5f6ecd08c07d885c4be00b8b0714bc181c455971e5f9d3faa8672bbfac43",
+    "three-class-proof-v1.md": "d7f76698b08d81197532c4c9487f5d899273c3308a69eb5c91aeacdae95fc9d5"
+  },
+  "command": ".venv/bin/python -m attempts.44-three-class-empirical-coupling.work.oracle --output attempts/44-three-class-empirical-coupling/work/evidence/oracle-v1.json",
+  "result_sha256": "f27a2355edc17733b2deb78cdf79014a5e24cada5da4bc763c75d27e0d634c98",
+  "scope": "Exact rational/source/RNG/polynomial checks and unfavorable control preserved. No neural run, priority or publication certificate."
+}

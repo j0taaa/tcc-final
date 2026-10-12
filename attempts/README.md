@@ -53,8 +53,8 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [40-anchor-trace-coupling](40-anchor-trace-coupling/README.md) | Âncora independente/cache exato pago; corolário escrito, novidade/uso abertos |
 | [41-structured-noising-covariance](41-structured-noising-covariance/README.md) | Noising/score estruturado e ordem de covariância; matemática/redução escrita antes de código |
 | [42-safe-empirical-resampling](42-safe-empirical-resampling/README.md) | Prova de segurança global em pool6; uso/novidade abertos, controle pivotal quase idêntico |
-| [43-adaptive-source-excursions](43-adaptive-source-excursions/README.md) | Fronteira de custo médio por parada adaptativa; candidata matemática, prioridade/uso abertos |
-| [44-three-class-empirical-coupling](44-three-class-empirical-coupling/README.md) | Segurança vetorial para três classes em todo orçamento finito; candidata matemática ainda sem oráculos/novidade confirmados |
+| [43-adaptive-source-excursions](43-adaptive-source-excursions/README.md) | Revalidação de A34; duplicação interna identificada, sem nova contribuição |
+| [44-three-class-empirical-coupling](44-three-class-empirical-coupling/README.md) | Segurança vetorial para três classes em todo orçamento finito; prova/oráculos, novidade e uso abertos |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`

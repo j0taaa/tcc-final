@@ -1,0 +1,48 @@
+{
+  "scope": "Exact correction/proof aids; no neural utility or publication priority.",
+  "rational_matrix_laws": 12844,
+  "original_source_products": 8,
+  "exhaustive_sampler_tapes": 360,
+  "polynomial_identities": 14,
+  "adverse_C4": {
+    "4": "-17/2500",
+    "6": "-111/25000"
+  },
+  "balanced": [
+    {
+      "budget": 2,
+      "diagonal": "1/9",
+      "between_factor": "1"
+    },
+    {
+      "budget": 4,
+      "diagonal": "5/81",
+      "between_factor": "7/9"
+    },
+    {
+      "budget": 6,
+      "diagonal": "29/729",
+      "between_factor": "55/81"
+    },
+    {
+      "budget": 8,
+      "diagonal": "181/6561",
+      "between_factor": "455/729"
+    },
+    {
+      "budget": 16,
+      "diagonal": "127111/14348907",
+      "between_factor": "860717/1594323"
+    },
+    {
+      "budget": 32,
+      "diagonal": "333793231469/205891132094649",
+      "between_factor": "11605292843215/22876792454961"
+    },
+    {
+      "budget": 64,
+      "diagonal": "365246143613700513314051669/3433683820292512484657849089281",
+      "between_factor": "190942835310279766070981975239/381520424476945831628649898809"
+    }
+  ]
+}

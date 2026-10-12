@@ -1,5 +1,20 @@
 # Caderno científico — contrato atual e histórico
 
+##2026-10-12 — evitar duplicação interna e delimitar A44
+
+A43 foi encerrada como candidata independente: a auditoria em
+`43/work/internal-reduction-v4.md` encontrou sua lei retida/capada e uma
+fronteira mais forte já na A34. Os oráculos novos são revalidação; não houve
+campanha neural nova. Essa duplicação é erro de investigação, não novidade.
+
+A44 preserva uma prova analítica para três classes e TODO orçamento finito:
+déficit diagonal binomial, concavidade da raiz, segurança de qualquer vetor
+e fronteira minimax balanceada sob fontes opacas. Oráculos racionais/RNG
+passam sob090c357, sem observações de modelo. Empirical/RSS/Bernstein são
+antecedentes; novidade e utilidade neural de custo completo continuam abertas.
+O resultado negativo contra C4 não uniforme permanece explícito. Não promover
+o teorema para o artigo principal só porque a referência funciona.
+
 ##2026-10-11 — novo goal e filtragem adversarial de antecedentes
 
 O usuário renovou a meta de novidade útil/publicável e autorizou mudar a ideia

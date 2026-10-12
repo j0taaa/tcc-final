@@ -38,6 +38,10 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   sampler choices; verify rational minors, all-budget polynomials and preserve
   adverse C4/nonuniform comparisons. Audit primary ranked/systematic sampling
   before calling the specific all-vector theorem a contribution.
+  Producer090c357 passes12,844 rational matrix laws,eight independent source
+  product families,360 exhaustive RNG tapes and14 polynomial identities.
+  The adverse C4 comparison is preserved exactly. Primary scopes/reductions
+  in44/work/primary-reading-v1.md; specific priority/use still OPEN.
 - [ ] T6402: Only if proof and priority/use survive, preregister full-cost
   dLLM/CFG application with RSS/CV/count/inverse and seed controls. No revived
   root-known source or favorable case selection; old negative evidence stands.

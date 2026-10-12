@@ -847,7 +847,7 @@ barata pela raiz falha; não cancelar work/model forwards e chamá-los de gráti
 Provas6/10 permanecem, mas uso/publicação continuam abertos. Não ampliar esse
 proxy por mais casos favoráveis; próxima aplicação deve ter fontes baratas.
 
-A43 muda o contrato de custo para paradas adaptativas IID de fontes originais:
+A43 inicialmente investigou paradas adaptativas IID de fontes originais:
 primeira/última fonte de uma excursão com duas classes, duas avaliações caras.
 Prova escrita preserva P e toda covariância vetorial, dá E[N]=M para TODO p
 e fronteira sharp de repetição/custo em p=1/2 por KL do experimento parado.
@@ -857,3 +857,20 @@ continuam abertos. Teto finito v2 retém a última fonte subsequente da MESMA
 classe:1.540 leis racionais e10.220 tapes passam sob producer d0b6936.
 Não confundir teto de draws com fallback iid arbitrário, latência garantida,
 nova geração EPIC ou treinamento. Nenhum novo forward.
+A auditoria interna V4 encontrou a mesma lei completa e uma fronteira MAIS
+forte já preservadas na A34. A43 está encerrada como candidata de novidade;
+seus oráculos são revalidação, não avanço. Consultar as provas existentes
+antes de apresentar uma formulação novamente; o erro de duplicação está
+registrado em43/work/internal-reduction-v4.md.
+
+A44 investiga uma lei empírica de três classes com orçamento finito arbitrário.
+Há prova escrita analítica de segurança vetorial incondicional via concavidade
+da raiz do déficit binomial, fronteira de átomos e minimax balanceado no
+contrato de fontes opacas. Producer090c357 passa12.844 leis racionais, oito
+famílias de produtos originais,360 árvores RNG e14 identidades polinomiais.
+Transporte empírico, RSS, Bernstein e Fréchet são antecedentes. O contraexemplo
+não uniforme contra C4 foi preservado; não existe dominação geral de C4/RSS/CV.
+Não houve forwards, treinamento, ganho neural ou prioridade/publicação
+confirmados. A associação a alvos JSON/GLC é uma aplicação candidata, não
+prova de que o benefício prático depende de GLCs. Auditoria primária e custo
+completo devem anteceder implementação neural extensa.

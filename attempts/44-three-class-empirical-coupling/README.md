@@ -52,3 +52,10 @@ All A41/A42/A43 sources, negative controls and unresolved claims stay preserved.
 Work is isolated in `work/`. The main article and maintained API stay unchanged.
 Before a model implementation, verify the analytic step independently and
 try to reduce the whole result to a known sampling theorem.
+
+V1 reference is37 lines and uses only integer tickets and one reservoir per
+class. Under producer090c357, the independent oracle passes12,844 rational
+matrix laws, eight exhaustive original-source product families,360 exact
+sampler RNG trees with aliases, and14 polynomial derivative/odd-budget
+identities. It preserves the exact unfavorable C6-versus-C4 comparison.
+These are correction/proof checks; no new model observations or practical gate.
