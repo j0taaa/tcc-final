@@ -111,12 +111,16 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   225 forests,3,501 products and300 Cartesian checks. Producer9d7aab9 finishes
   ALL18 public rows. Adaptive wins BF16/epsilon0.5 core against BOTH candidates;
   retain this loss. No universal/independent/statistical timing success claim.
-- [ ] T6911: V16 strengthens inexpensive bounds via common-support coupling,
+- [x] T6911: V16 strengthens inexpensive bounds via common-support coupling,
   Hellinger/both chi-square directions/range. Producerb969c64 fails on the first
   general forest: imported bridge scalar helper assumed node-ID topological
   ordering. Zero new bound cases certified; public run NOT triggered. Preserve
   failure, then V17 must evaluate explicitly in CfgSampler.order and repeat
   ALL75 oracles before ALL18 unchanged functional comparisons.
+  V17 producer87a3b52 passes75 cases/27 undefined and ALL18 public rows,
+  no refusals/errors. Strengthened FP16 upper0.0007602747856462345, not the
+  old Hellinger0.0027838. Chi-square absolute precision can still be loose
+  under denominator imbalance; V18 must use scale-aware atom precision.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

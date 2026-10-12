@@ -265,3 +265,12 @@ Zero new scalar bounds were certified and the public run was NOT triggered.
 All failure/metadata are preserved. V17 corrects the new control's scalar
 evaluation to the declared plan.order; theory, cases/budgets and all eight
 criteria stay unchanged. Do not reattribute the failure to corrected code.
+
+V17 producer87a3b52 passesALL75 original-ID scalar-bound cases (27 undefined
+mass cases) and ALL18 public rows, no errors/refusals. The stronger mass-aware
+FP16 upper is0.0007602747856462345, against the endpoint0.1 upper
+4.0946010443571345e-5. Thus the old67.98x comparison overstates the advantage
+against the NOW strongest cheap control; report the strengthened curve.
+The adaptive BF16/0.5 core win persists. Scalar chi-square's absolute64-bit
+atom rounding can be unnecessarily loose under denominator imbalance; V18
+will give it scale-aware relative precision before any consolidated claim.
