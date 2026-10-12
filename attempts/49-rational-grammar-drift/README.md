@@ -9,6 +9,11 @@ heads from ALL5 predeclared documents and4/8/16 masks; their full softmax and
 original bytes replay exactly. The360-row audit is running with BOTH overlap
 controls; no independent benefit/publication conclusion is yet asserted.
 
+V26's `work/targeted-root-v26.md` writes a CLASSICAL final-query shortcut and
+exact propagated rational factors before code. It must strengthen ALL four
+engines, preserve V25 observations, and label any replay as development rather
+than new independent confirmation. It adds no claim of scientific novelty.
+
 2026-10-12. Contract BEFORE code or observations. This is an investigation,
 not confirmed novelty, publication sufficiency, or a faster decoder.
 

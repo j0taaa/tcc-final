@@ -194,6 +194,11 @@ do not reset earlier losses or call prototype correctness publication proof.
   is running, no incomplete positive claim. Sourcee6cef06's maintained suite
   passesALL169 in71.697s; the new macro/alias oracle covers non-ID-topological
   order. Raw head/probability arrays remain local; their hashes are published.
+- [ ] T6919: BEFORE implementation, V26 writes the classical streamed known-
+  root query and exact rational loss propagation, given to ALL four engines.
+  Finish/preserve V25 first. Then repeat all75 old word cases under allfour
+  before any full-data replay, which is DEVELOPMENT, not independent novelty.
+  Charge root/factor work and retain every stronger-control loss.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
