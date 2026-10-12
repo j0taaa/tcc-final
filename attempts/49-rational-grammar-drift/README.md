@@ -87,3 +87,9 @@ planar control can share the benefit, so no exclusivity or physical speed is
 claimed (7). `work/optimal-planar-proof-v3.md` states the algorithm, proof,
 complete costs, comparison boundaries and falsification gate. Specific TV
 priority, real application and publication relevance remain OPEN (8).
+
+V3 producer2e3b4a7 passes2,480 integer cases/40,035 exact norm-breakpoint
+queries and ALL75 original-ID forest cases under BOTH cores (150 checks,
+96 certificates/54 zero-mass refusals). No original family was excluded;
+1,896 geometry cases shorten. Classical projection geometry is not new.
+No model data, physical timing or publication gate has been validated.

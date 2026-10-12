@@ -1,0 +1,9 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "geometry_cases": 2480,
+  "exact_norm_queries": 40035,
+  "shortened_cases": 1896,
+  "forest_cases": 150,
+  "certified": 96,
+  "zero_mass": 54
+}

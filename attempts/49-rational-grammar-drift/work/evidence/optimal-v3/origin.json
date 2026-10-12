@@ -1,0 +1,9 @@
+{
+  "producer": "2e3b4a7e45162c4e845897241f0a2cd4f2dd004b",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_optimal_planar --output .cache/a49-optimal-v3",
+  "scope": "CORRECTNESS_ONLY; all V1 families with new grids and all75 original-token forest cases under both cores; no model or timing",
+  "sha256": {
+    "rows.jsonl": "30a7fce52ce72e04f48c00f0e30fa5372eafe4261718c10b9d3b7b0729ac47e7",
+    "summary.json": "faec5986e4a2f88fec7fe6ea255f9d61d277d72b1a85258f3f76e8f55a31147a"
+  }
+}

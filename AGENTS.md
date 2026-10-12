@@ -894,3 +894,16 @@ bit costs are still unwritten. No numerical solver was implemented. A48 closes
 generic grammar versus wide-factor claims: CFD UAI2004 already covers context-
 specific parsing, and constant gated alternatives require a conditioning
 control. These are audits, not new publication/EPIC wins. The goal stays OPEN.
+
+A49 investiga certificados racionais de TV entre DOIS posteriores do mesmo
+suporte/GLC, não aceleração do decoder EPIC. Fu2609.24235 já dá o princípio
+geral de composição de zonótopos; não reivindicar isso. V1 passa3.100 casos/
+57.769 consultas exatas e V2 passa75 casos de IDs originais. V3 usa geometria
+clássica de projeção e endpoints inteiros para escrever uma melhoria do bound
+de núcleo: O(sqrt(d/epsilon)) contra O((d/epsilon)^2) no Lemma3.5 de Fu
+para dimensão2, com custo completo em bits na floresta ADMITIDA. Não é lower
+bound do algoritmo concorrente, invenção de aproximação convexa ou prova do
+normalizador Python. Producer2e3b4a7 passa2.480 casos/40.035 consultas e os75
+casos originais sob AMBOS núcleos (150 checks). Especificidade/prioridade do
+resultado de TV, aplicação real e suficiência para publicação permanecem
+abertas; não converter oráculos de correção em vitória de desempenho.

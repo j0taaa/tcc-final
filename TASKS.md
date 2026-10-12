@@ -46,6 +46,8 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   independently enumerated. V3 writes BEFORE code a classical-projection,
   integer-endpoint refinement with O(sqrt(d/epsilon)) stored core rows and
   explicit comparative/bit bounds. Priority and full source admission open.
+  V3 producer2e3b4a7 passes2,480 cases/40,035 exact norm-breakpoint queries
+  and all75 original-token cases under BOTH compressors (150 checks).
   Finite checks do not establish novelty, speed, model utility or publication.
 - [ ] T6902: Only if the specific distinction/use survives the closest priors,
   implement/validate the smallest real operation with a predeclared fair
