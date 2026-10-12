@@ -179,6 +179,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   be presented as current comparison against this stronger control. All evidence
   is preserved in49/work/evidence/{overlap,public}-v24. Independent audit must
   add BOTH overlap controls without changing the still-unobserved2x gate.
+- [ ] T6918: V25 incorporates BOTH classical overlap bounds in the unchanged
+  ALL360-row external protocol BEFORE new forwards/independent observations.
+  Validate process/deadline/memory orchestration on ALL24 old packet cases;
+  only then capture ALL15 actual heads and run the full unseen-document gate.
+  Preserve every shared refusal/loss and account child CPU/process management.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
