@@ -113,3 +113,7 @@ the fixture supplied extra IDs at a newly fixed position; the maintained API
 correctly refused it. Partial checks/failure are preserved, and the public
 audit was NOT run. V5 corrects only that fixture to the required singleton
 support, preserving the exact scientific gate/controls/rounding protocol.
+Producer7ae7641 passes all60 bridge cases: independent original-ID counts,
+both exact masses, TV, both competent controls and fixed-slot behavior.
+IEEE rounding ties/subnormal behavior are checked. This triggers only the
+already frozen functional public-packet audit, not a competitive campaign.
