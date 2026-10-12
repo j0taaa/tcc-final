@@ -1,0 +1,102 @@
+{
+  "scope": "Exact theoretical comparison at true balance; not model observations.",
+  "balanced_budget_order_checks": 354,
+  "best_nonuniform_rss_cross_covariance": "-81/2500",
+  "nonuniform_C4_C6": {
+    "4": "-17/2500",
+    "6": "-111/25000"
+  },
+  "cost_conditions": [
+    {
+      "budget": 6,
+      "full_cost_ratio": "1",
+      "strict_advantage_beta": "0",
+      "twenty_percent_beta": "81/34"
+    },
+    {
+      "budget": 6,
+      "full_cost_ratio": "21/20",
+      "strict_advantage_beta": "27/22",
+      "twenty_percent_beta": "5/2"
+    },
+    {
+      "budget": 6,
+      "full_cost_ratio": "11/10",
+      "strict_advantage_beta": "81/46",
+      "twenty_percent_beta": "243/94"
+    },
+    {
+      "budget": 8,
+      "full_cost_ratio": "1",
+      "strict_advantage_beta": "0",
+      "twenty_percent_beta": "729/506"
+    },
+    {
+      "budget": 8,
+      "full_cost_ratio": "21/20",
+      "strict_advantage_beta": "243/478",
+      "twenty_percent_beta": "1215/766"
+    },
+    {
+      "budget": 8,
+      "full_cost_ratio": "11/10",
+      "strict_advantage_beta": "729/854",
+      "twenty_percent_beta": "2187/1286"
+    },
+    {
+      "budget": 16,
+      "full_cost_ratio": "1",
+      "strict_advantage_beta": "0",
+      "twenty_percent_beta": "1594323/1778462"
+    },
+    {
+      "budget": 16,
+      "full_cost_ratio": "21/20",
+      "strict_advantage_beta": "531441/1985962",
+      "twenty_percent_beta": "2657205/2615818"
+    },
+    {
+      "budget": 16,
+      "full_cost_ratio": "11/10",
+      "strict_advantage_beta": "1594323/3345746",
+      "twenty_percent_beta": "4782969/4290530"
+    },
+    {
+      "budget": 32,
+      "full_cost_ratio": "1",
+      "strict_advantage_beta": "0",
+      "twenty_percent_beta": "22876792454961/29244262556554"
+    },
+    {
+      "budget": 32,
+      "full_cost_ratio": "21/20",
+      "strict_advantage_beta": "7625597484987/33711771445262",
+      "twenty_percent_beta": "38127987424935/42749516612654"
+    },
+    {
+      "budget": 32,
+      "full_cost_ratio": "11/10",
+      "strict_advantage_beta": "22876792454961/56203406973766",
+      "twenty_percent_beta": "68630377364883/69760024724854"
+    },
+    {
+      "budget": 64,
+      "full_cost_ratio": "1",
+      "strict_advantage_beta": "0",
+      "twenty_percent_beta": "381520424476945831628649898809/500715590897690823635865663706"
+    },
+    {
+      "budget": 64,
+      "full_cost_ratio": "21/20",
+      "strict_advantage_beta": "127173474825648610542883299603/580422532607263285316218874750",
+      "twenty_percent_beta": "635867374128243052714416498015/731146650919143120033710192798"
+    },
+    {
+      "budget": 64,
+      "full_cost_ratio": "11/10",
+      "strict_advantage_beta": "381520424476945831628649898809/965922593494227960753162273910",
+      "twenty_percent_beta": "1144561273430837494885949696427/1192008770962047712829399250982"
+    }
+  ],
+  "limitations": "Continuous RSS, CV and mass-aware inverses are not bounded here."
+}

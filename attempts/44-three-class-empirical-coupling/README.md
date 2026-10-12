@@ -59,3 +59,20 @@ matrix laws, eight exhaustive original-source product families,360 exact
 sampler RNG trees with aliases, and14 polynomial derivative/odd-budget
 identities. It preserves the exact unfavorable C6-versus-C4 comparison.
 These are correction/proof checks; no new model observations or practical gate.
+
+V2 comparison proves true-balanced covariance domination of ALL six fixed
+three-class RSS orders for B>=6; continuous RSS/CV/inverses remain allowed.
+Independent enumeration passes354 budget/order checks under3ca3914. The first
+oracle assertion confused random-order with BEST fixed-order RSS; its failure
+under3f40152 is preserved, and the best adverse control is stronger. Complete
+cost/variance thresholds expose demanding explained-gradient requirements.
+
+V3 is a minimal falsification prototype, authorized by the counterexample
+criterion, BEFORE an extensive application or novelty claim. It refines the
+eight answers: use is ORIGINAL full-parameter training-objective gradients;
+past teacher fits are charged/frozen; all six old public targets and32 fresh
+corruptions each are used; strong continuous RSS and oracle-CV bank controls
+are allowed. The diagnostic20% screen is declared before new gradients, even
+with zero sampler overhead. Failure closes this classifier/application branch.
+No optimizer update, full training, native EPIC or publication gate is implied.
+See `work/feasibility-protocol-v3.json`; primary novelty remains unconfirmed.

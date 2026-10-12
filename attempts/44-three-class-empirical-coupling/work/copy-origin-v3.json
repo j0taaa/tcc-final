@@ -1,0 +1,34 @@
+{
+  "mdlm_loader.py": {
+    "from": "attempts/41-structured-noising-covariance/work/mdlm_loader.py",
+    "sha256": "ae010fa84e006716b33b934ff8d9bb838049f9a07bfd75604868f7dee2bed648",
+    "commit": "3ca3914508e773b2f8d5cb844a87f3a45a50c0b0"
+  },
+  "count_source.py": {
+    "from": "attempts/41-structured-noising-covariance/work/count_source.py",
+    "sha256": "597acb907b8972f3de136280bbc15e5cb45ac583cb325c3dc30c198819a30d0a",
+    "commit": "3ca3914508e773b2f8d5cb844a87f3a45a50c0b0"
+  },
+  "noise_features.py": {
+    "from": "attempts/41-structured-noising-covariance/work/noise_features.py",
+    "sha256": "b9450b91026db1dc9ca958d0a4aa2eb15a4f23caa967989d3ba5dfe48d060aa0",
+    "commit": "3ca3914508e773b2f8d5cb844a87f3a45a50c0b0"
+  },
+  "documents-v3.json": {
+    "from": "attempts/41-structured-noising-covariance/work/documents-v5.json",
+    "sha256": "19987dd6967a3fc83e9fb453cb27cb5ff682582b7fa73611c57ab9ce132adb47",
+    "commit": "3ca3914508e773b2f8d5cb844a87f3a45a50c0b0"
+  },
+  "mdlm-config-v3.json": {
+    "from": "attempts/41-structured-noising-covariance/work/mdlm-config-v5.json",
+    "sha256": "80241ec93e4c994a12996f322096b7ff1b125e28a9061ceadd2e85b1b21919a4",
+    "commit": "3ca3914508e773b2f8d5cb844a87f3a45a50c0b0"
+  },
+  "teacher-fit-v3.json": {
+    "from": "attempts/41-structured-noising-covariance/work/evidence/noise-v7/rows.jsonl",
+    "original_sha256": "a5b51ccb3d0dff475a90abe2a0cb1fcd6bd60eb68e757935eb3f291b6b8dfaf1",
+    "sha256": "2c4638d14a52430f0eb01b3fac6e8dad7d9cdb7d8df14be718f72545a562cd90",
+    "producer": "b9b67e715670d3a7fa49ae275a735aee71451407",
+    "scope": "All192 fit rows ONLY, no evaluation rows, immutable subset"
+  }
+}

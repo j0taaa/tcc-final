@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "operation": "Minimal DEVELOPMENT falsification of full-parameter MDLM gradient covariance on CFG-valid JSON targets; no optimizer, generation, training-quality or competitive timing gate",
+  "documents": "documents-v3.json",
+  "coverage": "ALL six immutable old public JSON-Schema-suite documents selected before A41 outputs; no selection by A44 class balance or performance",
+  "past_teacher": "teacher-fit-v3.json, all32 fit rows per document from frozen A41 producer b9b67e715670d3a7fa49ae275a735aee71451407; previously charged192 model forwards remain teacher setup, not new/free training data",
+  "past_teacher_columns": "Original scalar NLL and eight output-bias projections; NOT full-parameter gradients. Ridge1 with unpenalized intercept, coordinate standard deviations floored1e-8; predicted9-dimensional vector; deterministic farthest-first THREE centers and20 Lloyd iterations. Fixed BEFORE fresh gradients.",
+  "source": "Known exact count-uniform corruption: K uniform1..n, uniform K-subset, original aliases. Time-independent checkpoint required; normalized NELBO target is mean NLL on masked original token IDs. No topK truncation or grammar filtering of corruptions.",
+  "seed": 20261012044,
+  "evaluations_per_document": 32,
+  "new_forward_backward_limit": 192,
+  "model_config": "mdlm-config-v3.json",
+  "model_arithmetic": "Official pinned CPU MDLM port, float32 parameters/activations, full non-MASK vocabulary float64 log-softmax loss, autograd through ALL parameters. A parameter unused by this time-independent objective has zero gradient, identified explicitly.",
+  "gradient_validation": "Compare autograd final-output-bias gradient with the independent full-softmax target-histogram formula at every state; nonfinite loss/gradient or mismatch fails execution and is preserved.",
+  "candidate": "A44 fixed B32 three-class coupling; full covariance computed DESCRIPTIVELY on the complete fresh32-source empirical law, WITH replacement. This is not an estimate with a population confidence guarantee, nor timing of an active sampler.",
+  "controls": "iid2; same-class C4; best of all six fixed THREE-class RSS orders; continuous RSS ranked by the SAME old fitted scalar NLL proxy; zero-repeat mass-aware empirical law; oracle linear vector CV for the same scalar proxy on the known bank. The oracle CV fits to the bank and is explicitly not an unbiased native estimator trained on current evaluations.",
+  "statistics": "Full-gradient total trace, conditional class-mean Gram matrix, between-class trace fraction, exact rational class joint coefficients with numerical real-gradient inner products, RSS contrast norm, CV correlation norm; all source masks/labels/scores/proxy values/timings and refusals preserved",
+  "costs": "Report model load separately, previous teacher setup separately, proxy preparation/source/RNG, every forward/backward and gradient-statistics overhead. None called free. No runtime advantage inferred from covariance. Constant reservoir source storage theorem is separate from audit mean accumulators.",
+  "decision": "Before larger implementation, require evidence of a nontrivial full-gradient mechanism versus strong controls. Preregistered diagnostic screen: at least one document has20% descriptive trace reduction versus BOTH continuous RSS and oracle scalar CV, even at zero candidate overhead. Failure closes this classifier/application development branch, not all conceivable proxies or the mathematical theorem. Passing triggers a DIFFERENT full-cost prospectively frozen protocol, not publication confirmation.",
+  "known_limitations": "Old development corpus/checkpoint and past-bias-fitted classifier; six documents32 fresh masks each, no independent corpus, no parameter update, no semantic/generation outcome. Priority remains open. Minimal counterexample search is permitted before an extensive implementation.",
+  "threads": 4
+}
