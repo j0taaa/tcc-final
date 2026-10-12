@@ -1957,7 +1957,7 @@
     {
       "id": "49-rational-grammar-drift",
       "title": "Rational posterior drift and smaller integer norm cores",
-      "conclusion": "Written quantitative admitted-forest theorem and independent exact oracles; geometry/gate principles credited, specific TV priority and real utility remain open.",
+      "conclusion": "Sharper written deterministic precision-cost bounds and complete integer bit proof; all six real probability-table audits and direct product oracles pass. Mathematical draft is preserved; exhaustive priority, human review and acceptance remain open, no EPIC speed claim.",
       "reading": "attempts/49-rational-grammar-drift/README.md; TASKS.md",
       "versions": [
         {
@@ -1985,6 +1985,77 @@
           "evidence_roots": [
             "attempts/49-rational-grammar-drift/README.md",
             "attempts/49-rational-grammar-drift/work/evidence/optimal-v3"
+          ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "038a404303465c1bfaf19116c8efd9688e38298d",
+          "evidence_commit": "7ae76416853eacd961caeaa7fc7a0b062d01f582",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/bridge-v4-failure"
+          ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "5d91beb3d3a41adda848df195efc7f7bbf7312dc",
+          "evidence_commit": "51498e4e85a251d56b1bf7520c534128e4e2afb0",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/bridge-v5",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v5-input-failure"
+          ]
+        },
+        {
+          "id": "v6",
+          "source_commit": "51498e4e85a251d56b1bf7520c534128e4e2afb0",
+          "evidence_commit": "bb1be02eec775f0f78be648c27fdd382595b17dd",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v6-interrupted"
+          ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "d22b1a3a2eb04af6620e7dc5d95d1857ab0b2ce6",
+          "evidence_commit": "9ad779b5fae27211bf1edb014ef6e15bad99527f",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/work/polynomial-source-admission-v7.md",
+            "attempts/49-rational-grammar-drift/work/primary-comparison-v10.md"
+          ]
+        },
+        {
+          "id": "v8",
+          "source_commit": "45903f3b278658df7c0071c619a6c299bfe460b7",
+          "evidence_commit": "bb1be02eec775f0f78be648c27fdd382595b17dd",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/fast-v8",
+            "attempts/49-rational-grammar-drift/work/logarithmic-projection-proof-v8.md"
+          ]
+        },
+        {
+          "id": "v9",
+          "source_commit": "bb1be02eec775f0f78be648c27fdd382595b17dd",
+          "evidence_commit": "476ace7bdfd9ee150e76e97427ed188966433d2d",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/bridge-v9",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v9"
+          ]
+        },
+        {
+          "id": "v10",
+          "source_commit": "9ad779b5fae27211bf1edb014ef6e15bad99527f",
+          "evidence_commit": "9ad779b5fae27211bf1edb014ef6e15bad99527f",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/product-v10",
+            "attempts/49-rational-grammar-drift/work/generated-v10",
+            "attempts/49-rational-grammar-drift/work/manuscript-v10.tex",
+            "attempts/49-rational-grammar-drift/work/primary-comparison-v10.md",
+            "attempts/49-rational-grammar-drift/work/usefulness-decision-v10.md",
+            "output/pdf/grammatical-drift-v10.pdf"
           ]
         }
       ]
