@@ -3,7 +3,14 @@
 from fractions import Fraction as F
 from math import isqrt
 
-from .public_audit import integers, scalar
+from .public_audit import integers
+
+
+def scalar(plan, values):
+    inside = [0] * len(plan.terms)
+    for node in plan.order:
+        inside[node] = sum(plan.term_mass(term, values, inside) for term in plan.terms[node])
+    return 0 if plan.root is None else inside[plan.root]
 
 
 def sqrt_upper(value, precision=64):
@@ -60,8 +67,9 @@ def controls(plan, first, second, precision=64):
         )
         assert chi_upper >= 0
         conditional[name] = min(F(1), sqrt_upper(chi_upper, precision) / 2)
-    ranges = []
-    for terms in plan.terms:
+    ranges = [None] * len(plan.terms)
+    for node in plan.order:
+        terms = plan.terms[node]
         choices = []
         for term in terms:
             if term.choice is not None:
@@ -76,7 +84,7 @@ def controls(plan, first, second, precision=64):
                     choices.append((x[0] * y[0], x[1] * y[1]))
             else:
                 choices.append((F(1), F(1)))
-        ranges.append(
+        ranges[node] = (
             None if not choices else (min(v[0] for v in choices), max(v[1] for v in choices))
         )
     lo, hi = (F(r, t) * v for v in ranges[plan.root])
