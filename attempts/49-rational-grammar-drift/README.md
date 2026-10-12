@@ -257,3 +257,11 @@ certified Hellinger, both chi-square directions and likelihood ranges.
 All75 oracle cases and ALL18 unchanged public rows are required. Old67.98x
 is not attributed to these stronger controls. No favorable budget or corpus
 selection; if a cheap bound suffices, the core certificate may be unnecessary.
+
+V16 producerb969c64 is BLOCKED at the first independent forest: the imported
+public-bridge scalar helper assumed node IDs were topologically ordered.
+That bridge has this property; general CfgSampler.order need not match IDs.
+Zero new scalar bounds were certified and the public run was NOT triggered.
+All failure/metadata are preserved. V17 corrects the new control's scalar
+evaluation to the declared plan.order; theory, cases/budgets and all eight
+criteria stay unchanged. Do not reattribute the failure to corrected code.

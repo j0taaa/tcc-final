@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/49-rational-grammar-drift/work/verify_mass_aware.py", line 34, in run
+    result = controls(plan, first, second)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/49-rational-grammar-drift/work/mass_aware_controls.py", line 23, in controls
+    a, b = scalar(plan, p), scalar(plan, q)
+           ^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/49-rational-grammar-drift/work/public_audit.py", line 105, in scalar
+    inside.append(sum(plan.term_mass(term, values, inside) for term in alternatives))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/49-rational-grammar-drift/work/public_audit.py", line 105, in <genexpr>
+    inside.append(sum(plan.term_mass(term, values, inside) for term in alternatives))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/src/mwpc_exact/cfg_posterior.py", line 137, in term_mass
+    return inside[left] * inside[right]
+           ~~~~~~^^^^^^
+IndexError: list index out of range

@@ -1,0 +1,10 @@
+{
+  "producer": "b969c640f6d8b6054f9ae1feefaa9bf0017fe3fd",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_mass_aware --output .cache/a49-mass-aware-v16",
+  "public_run_triggered": false,
+  "files": {
+    "failure.txt": "8e911e46160870aa0147ae4af2438ed21044f6229bedd43ed09605ea4e2dbe79",
+    "rows.jsonl": "5cae5a23230fdf822f88cca82453c9431da3625a6c444a0922ba26192ed09aa2",
+    "metadata.json": "c9b74ca397a5634d2b8f855131cf8935667f11a080c9773b2eccdf66faa259a5"
+  }
+}
