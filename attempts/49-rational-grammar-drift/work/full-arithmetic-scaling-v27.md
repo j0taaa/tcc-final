@@ -41,8 +41,15 @@ core costs O(nq sqrt(n/epsilon) log(q+2)) arithmetic operations. Thus the SAME
 complete bound, allowing the elementary grid-computation term, can be stated
 for an explicit arithmetic algorithm whose operation count is independent of
 numeric probability bit lengths and whose intermediates have polynomial
-input length. The BIT running time still depends on those lengths, as it
-must. For a general admitted forest retain the H/leaf-list/d bounds and all
+input length. Compute the endpoint grid directly from epsilon=u/v: first
+divide d*(u+v) by16u, then integer-square-root that quotient and perform the
+one exact ceiling comparison. The integer square root acts on a number of
+magnitude O(d/epsilon), not on the potentially huge unreduced numerator.
+Return rational outputs as integer numerator/positive-denominator pairs;
+canonical reduction is optional. If canonical Fraction/GCD operations are
+required, charge their polynomial-bit cost rather than silently treating them
+as constant primitive operations. The BIT running time still depends on input
+lengths, as it must. For a general admitted forest retain the H/leaf-list/d bounds and all
 source-grammar preparation costs; this is not a bound on every source API.
 
 The programmed LCM reference has polynomial-bit preprocessing but has NOT
