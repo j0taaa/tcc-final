@@ -229,6 +229,16 @@ do not reset earlier losses or call prototype correctness publication proof.
   Evidence: work/evidence/scalar-gap-v27. Maintained source28aa611 passesALL170
   tests in70.627s, including the new shared known-root original-ID regression.
 
+- [x] T6922: Write a NEW mathematical manuscriptV27, preservingV22. Eleven
+  pages include ordered product/Markov bounds, complete scaling/bit/source
+  chain costs, the scalar-gap proof and BOTH external inventories. All45
+  ordered pairs per campaign and macros derive from verified records; clean
+  source22a0aeb reproduces all report products byte-identically. The PDF has
+  zero LaTeX warnings; all11 final rendered pages are pixel-identical to the
+  visually reviewed images. Artifact QA is not human mathematical review.
+  Source22a0aeb passes `make check`, including180 immutable snapshots. The
+  novelty/utility/publication goalT6905 stays OPEN; no new model experiment.
+
 ## M65–M68 — Eliminate false novelty before another implementation
 
 - [x] T6500: Freeze A45's eight criteria and adverse-only population screen

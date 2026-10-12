@@ -1,5 +1,41 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-12 — A49 V25--V27: negative practical gate, sharper complete mathematics
+
+The complete independent V25 campaign FAILED its unchanged2x precision gate
+in ALL36 primary pairs (256 certificates/104 refusals among360 rows). Classical
+sampler overlap erases the old18.57x weak-control gap. No rounding of1.98850
+or resource refusal counts as success. All data and code remain independently
+snapshotted. V26 gives a known-root optimization to ALL four engines, then
+replays ALL15 old heads/360 records. It has one2x diagnostic among45 DEVELOPMENT
+pairs, not independent confirmation, an EPIC win or a speed gate.
+
+The remaining mathematical candidate is a quantitative deterministic TV
+algorithm: O(nq sqrt(n/epsilon) log(q+2)) for products and the q-factor Markov
+corollary, versus the particular published epsilon^-1/epsilon^-4 bounds read.
+Fu already has the general composition/no-TV-floor theorem; convex approximation
+and bit computability are OLD. Full Matoušek1996 body/proof passages were read,
+not just its statements. This is not exhaustive priority or human review.
+
+V27 accounts global Markov-layer scaling, linear arithmetic preprocessing,
+wide chart unions and same-span source chains, without presuming verified CNF
+conversion. Its positive rational JSON family proves that ALL named ideal cheap
+upper controls can have Omega(sqrt(n)) relative gap; a competent EXACT O(n)
+binomial counter is explicitly credited, so it is no performance benchmark.
+Six checks pass. Classical lower controls pass105 original-word cases (33
+undefined masses); the two-sided decision application remains unmeasured.
+
+A NEW eleven-page draft, `49/work/manuscript-v27.tex` and
+`49/work/generated-v27/manuscript.pdf`, combines these proofs with both complete
+negative/developmental inventories. All45 paired table rows per campaign and
+numeric macros derive from hash-verified records; clean-source output is
+byte-identical. All final pages are rendered/visually inspected, no warnings.
+The source28aa611's maintained suite passes170 tests in70.627s; source22a0aeb's
+`make check` passes and verifies180 snapshots. These are correctness/integrity,
+not publication worthiness. Main A24 article remains unchanged. Originality,
+scientific significance and human proof review still need adversarial judgement;
+do not substitute the artifact for achieving the user's scientific goal.
+
 ## 2026-10-12 — A49 V19--V22: ordered product theorem and complete controls
 
 V19's first nonempty ordered-image oracle fails because the minimum-angle

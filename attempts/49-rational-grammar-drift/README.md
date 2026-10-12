@@ -33,6 +33,27 @@ Its exact O(n) binomial counter is explicitly credited; six arithmetic checks
 pass, not a practical benchmark. Full maintained suite passes170 tests in
 70.627s. Publication significance and independent proof review remain OPEN.
 
+V27 now has a NEW eleven-page mathematical draft, separate from the historical
+V22: [PDF](work/generated-v27/manuscript.pdf) and
+[source](work/manuscript-v27.tex). It includes the Markov/source precision
+proofs, the scalar guarantee separation, BOTH complete external inventories,
+the failed independent gate and the sole development diagnostic. All displayed
+pairs/macros are generated from hashed records; clean-source regeneration is
+byte-identical. Every final rendered page matches the visually reviewed image,
+with zero LaTeX warnings. This is internal artifact QA, not human peer review.
+
+V27 re-evaluation of the eight criteria: use/contract stay the same frozen
+original-token audit (1,6); rational computability, geometry and generic
+admissible inference remain OLD (2,7). The proposed own advantage is precisely
+the sharper deterministic precision-cost bound against the published results
+actually read (3,4), not exclusive grammar support. The unbounded gap proof is
+only against the named cheap controls and explicitly credits a faster exact
+counter for its special family; it is not a model benchmark (5,7). Minimal
+controls pass independent original-word enumeration and all170 maintained tests.
+The V25 practical gate remains FAILED; human review, specific priority and
+publication significance remain OPEN (8). No extensive new model experiment
+or promotion into the main A24 decoder is justified by this draft alone.
+
 2026-10-12. Contract BEFORE code or observations. This is an investigation,
 not confirmed novelty, publication sufficiency, or a faster decoder.
 

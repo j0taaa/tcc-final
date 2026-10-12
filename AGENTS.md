@@ -1011,3 +1011,11 @@ creditado, e seis checks aritméticos, não benchmark de desempenho. Não inferi
 exclusividade contra todos algoritmos TV ou salvar o gate negativo. A suíte
 mantida passa170 testes em70,627s. Prioridade suficiente, revisão humana e
 suficiência editorial permanecem abertas.
+
+A49 V27 tem um NOVO rascunho matemático de11 páginas e PDF congelado em
+work/generated-v27. Inclui bound Markov, custo completo/bit/source chains,
+prova da separação dos upper baratos e AMBAS campanhas360. Todos45 pares por
+campanha/macros são derivados de hashes; regeneração byte-idêntica, sem warnings,
+11 páginas finais visualmente conferidas. V25 continua FAILED0/36 e V26 é só
+DESENVOLVIMENTO1/45. Rascunho, correção e QA não fecham a meta científica ou
+inventam revisão humana; originalidade/suficiência editorial permanecem abertas.

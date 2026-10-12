@@ -1,0 +1,36 @@
+{
+  "source_commit": "22a0aeb3f4295216b245e219e9c2fcffaa66a848",
+  "source_date_epoch": 1791814530,
+  "pdf_sha256": "49693fc1b2d56fb54c7817790800a0a3a1072f1fb62935e57167d32bf13402f7",
+  "pages": 11,
+  "latex_warnings": 0,
+  "visual_review": "All original pages1..8 plus rerendered final pages9..11; no clipping/overlap/missing glyphs",
+  "report_byte_reproduction": true,
+  "commands": [
+    "python -m attempts.49-rational-grammar-drift.work.build_report_v27 --output tmp/pdfs/a49-v27/reproducer-report",
+    "SOURCE_DATE_EPOCH=1791814530 pdflatex -halt-on-error -interaction=nonstopmode -output-directory=tmp/pdfs/a49-v27 manuscript-v27.tex",
+    "pdftoppm -r 90 -png tmp/pdfs/a49-v27/manuscript-v27.pdf tmp/pdfs/a49-v27/page"
+  ],
+  "files": {
+    "manuscript-v27.tex": "03a3bd61985d0f69df05b39017ad9a93b405b0609a3f582853f2520ab65cfb8a",
+    "build_report_v27.py": "60682d0f2a5df759e114a68308076bdfe01a2a29ccb308055e934b6f3383384f",
+    "generated-v27/audit-table.tex": "b0d7625a5d8a16968ea829d56ed66a4924bdc35d93546945d7308c4e4c4f69e4",
+    "generated-v27/audit-values.tex": "d72031c8c78329db8d412856a7b98853f99cd3b4a30adc41d1cb519c14aa5258",
+    "generated-v27/provenance.json": "06bc31918c61abdaab20c16e6a5c935964f341793a83b97db9a7f97cb49380f2"
+  },
+  "interpretation": "Artifact/internal layout QA; not peer review, whole-software proof or publication confirmation",
+  "final_rerender_pixel_identical_to_reviewed_pages": true,
+  "rendered_page_sha256": {
+    "1": "b56e4581296bba20274ecb7ce892da5cc6cc79ab1d00dc27670f2947f3b82955",
+    "2": "7670b81fe98b4208286ee53c06483420f1af1f8f1270103cbbf4a4c544e7121a",
+    "3": "a460ac8e6a6439cdab912d48ae067079c86afac996ef8d03177ad610f7422e64",
+    "4": "3eb44a48f137336f101dd5f00b9b1676ef85b7a5895c4044ff828ee13bf73067",
+    "5": "d78fb2beaba17d6573f6a0c7c6757293fdcdb4c0479273ea1f6a1976ebf1eb25",
+    "6": "c4fcd39f14a50167457acc4f36067833338336590bb0129ddb2ab9e5974d9bf5",
+    "7": "0942a4f41b39e2847f1e3bb2c28badb9ea83b477fe7fc2babf2d9702a7819c8e",
+    "8": "48a8f20be133923598a8f79708e89d1c62b70a6656f97a22664379d942515cbb",
+    "9": "74bd768f52cb059fcdd4a5c3e28cf56706448c6814d39ab47c302025dec8dd21",
+    "10": "1506f36f200a9b8a25640b28230161fb05309ca74c7ca355476b7025b992954a",
+    "11": "e5f3d1cb4002fc005784e2a5d859de64ae5cff6b9d4f8e904673e83a8b95266c"
+  }
+}
