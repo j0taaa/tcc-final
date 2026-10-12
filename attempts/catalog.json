@@ -2071,6 +2071,64 @@
             "attempts/49-rational-grammar-drift/work/small-exact-refinement-v11.md",
             "tests/test_integer_tv.py"
           ]
+        },
+        {
+          "id": "v12",
+          "source_commit": "81c6c5b556e323dd888492b407613def6f9eee2d",
+          "evidence_commit": "8e7d545edb3338748c9ee0101b2c6274085c30d8",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/strong-angular-control-v12.md",
+            "attempts/49-rational-grammar-drift/work/evidence/controls-v12",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v12",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-v12.json"
+          ]
+        },
+        {
+          "id": "v13",
+          "source_commit": "9111102896eb42943482e2a940dfe399fcff5900",
+          "evidence_commit": "9efcadc5c8fd90c808bb3246a467766873f8fc05",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/streamed-control-v13.md",
+            "attempts/49-rational-grammar-drift/work/evidence/controls-v13",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v13",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-v13.json"
+          ]
+        },
+        {
+          "id": "v14",
+          "source_commit": "8cae14836291a8fa957b96d10fd914b11a9ee6c1",
+          "evidence_commit": "9efcadc5c8fd90c808bb3246a467766873f8fc05",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/positive-core-separation-v14.md",
+            "attempts/49-rational-grammar-drift/work/evidence/separation-v14",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-v14.json"
+          ]
+        },
+        {
+          "id": "v15",
+          "source_commit": "9d7aab92078180ec7441730d5b6ac1fdd8dc26e5",
+          "evidence_commit": "6dd97f49b7efc30375148ca4f4c031eda31b1d6c",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/adaptive-control-v15.md",
+            "attempts/49-rational-grammar-drift/work/evidence/controls-v15",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v15",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-v15.json"
+          ]
+        },
+        {
+          "id": "v16",
+          "source_commit": "b969c640f6d8b6054f9ae1feefaa9bf0017fe3fd",
+          "evidence_commit": "8a8cf15bf714102075cace35ab139f5aa87851d3",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/mass-aware-controls-v16.md",
+            "attempts/49-rational-grammar-drift/work/evidence/mass-aware-v16-failure",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-v16.json"
+          ]
         }
       ]
     }
