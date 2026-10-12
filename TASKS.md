@@ -95,6 +95,16 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   3,501 products. Producer81c6c5b preservesALL18 public rows:12 certificates,
   six angular materialization refusals, no errors. Refusal by a table cap
   is NOT a victory; V13 must stream the competent control's products.
+- [x] T6908: Producer9111102 removes that cap with classical three-scan
+  streaming. ALL18 public rows conclude, no refusals/errors; every original
+  case/control remains. ALL5,580 geometry/83,054 queries,225 forests,
+  3,501 products and300 Cartesian checks pass before observations. Single
+  developmental timings are NOT independent/statistical/general superiority.
+- [x] T6909: Write a strict positive-probability stored-core separation before
+  code: Omega(1/epsilon) streamed uniform buckets vs O(1/sqrt(epsilon)) endpoint
+  rows, SAME all-query guarantee. Producer8cae148 passesALLfive formula cases,
+  no timings/forwards. Explicitly credit the exact one-position scalar control;
+  this is NOT a TV complexity lower bound or favorable generation benchmark.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

@@ -223,3 +223,13 @@ rows while endpoints need O(1/sqrt(epsilon)), at matched all-query tolerance.
 exact O(M)-time/O(1)-space scalar control for this one-position example. This
 is a mathematical intermediate-representation result, NOT a favorable
 generation benchmark or a lower bound against all TV solvers.
+
+V13 producer9111102 passesALL5,580 geometry/83,054 norm checks,225 forests,
+3,501 products and300 streamed/materialized Cartesian checks. Its ALL18
+public rows finish without refusals/errors, including44,867,550 streamed
+candidates in the largest control product. Shared preparation/full costs and
+CPU/wall are preserved. Single-run speed differences against this specified
+control are descriptive, not independent/statistical/general superiority.
+V14 producer8cae148 passes ALLfive positive-family formula checks, with no
+performance measurement or forward. Exact scalar TV remains the better
+one-position operation; the theorem concerns retained intermediate cores.

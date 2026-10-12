@@ -1,0 +1,9 @@
+{
+  "producer": "8cae14836291a8fa957b96d10fd914b11a9ee6c1",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_separation --output .cache/a49-separation-v14",
+  "files": {
+    "rows.jsonl": "d04bb50667c286f41cb4146dbaf2f47f189c9443e314d755a4d55480844d37e4",
+    "summary.json": "47f2b1c3dbb88c6afdcfb8ff0e3850fa894e09e23fda7c4f42e98fedd52acd95",
+    "metadata.json": "71fdaa2290766cd473f2296e09d1bd2bacbd4da29552bc2ce1bbb2549f7a885d"
+  }
+}

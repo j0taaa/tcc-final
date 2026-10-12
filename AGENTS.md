@@ -934,7 +934,17 @@ A49 V11 conserva todos snapshots e o PDF V10. O atalho exato m<=k é rotina,
 com prova antes de código: custo de compressão O(m log(m+2)), garantia igual.
 Todos1.860 casos/30.741 queries/117.376 projeções e75 florestas passam,
 assim como1.167 produtos e389 casos epsilon2^-1024, exatos. Três regressões
-independentes pequenas entram no CI; suíte mantida passa164 testes antigos
-e os três novos passam separadamente (não fingir execução167 completa).
+independentes pequenas entram no CI; suíte completa passa167 testes em70,530s.
 Matoušek1996/Reis-Rothvoss2026 reforçam que geometria/bit computability
 são antecedentes. A distinção é o bound quantitativo de TV, não nova geometria.
+
+A49 V12 reforça o controle angular clássico, iguala budgets e conserva18
+resultados, inclusive seis recusas por materialização. Essas recusas não
+recebem crédito. V13 faz streaming de produtos no controle, sem esse teto:
+ALL18/18 concluem, com custos completos wall/CPU, sem novas capturas. São
+medições de desenvolvimento no MESMO pacote, não confirmação independente.
+V14 prova separação de armazenamento de núcleos numa família positiva;
+TV escalar de uma posição continua melhor por soma exata O(M)/memória O(1).
+Não converter a separação de representação em lower bound de toda inferência
+ou em velocidade geral. Novidade específica/suficiência editorial permanecem
+sob auditoria; não fingir revisão humana ou garantia de aceitação.

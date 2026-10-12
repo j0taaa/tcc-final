@@ -1,0 +1,25 @@
+{
+  "producer": "9111102896eb42943482e2a940dfe399fcff5900",
+  "commands": [
+    ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_controls --streamed --output .cache/a49-controls-v13",
+    ".venv/bin/python -m attempts.49-rational-grammar-drift.work.public_controls --streamed --output .cache/a49-public-v13"
+  ],
+  "records": [
+    {
+      "directory": "attempts/49-rational-grammar-drift/work/evidence/controls-v13",
+      "files": {
+        "rows.jsonl": "ae910d389d4145bafdba8b132252f47fd72ea68d0f0f2667b8adac83912e7928",
+        "summary.json": "48c3138cca92642f12dd8d1c6767ded654cd4b5fdbe306fe01db7bfd36802677",
+        "metadata.json": "0ba8043991006c911cf9237f0947735c5a443ab9b00282799e58ed87349ea05f"
+      }
+    },
+    {
+      "directory": "attempts/49-rational-grammar-drift/work/evidence/public-v13",
+      "files": {
+        "rows.jsonl": "8f6ea9e8a4067b2c624d7b80e519aa3d1319ce6a5f218dee81e58b129d76a360",
+        "summary.json": "49caddc757cd4b5e6a123ef295a762971eb7c1fd8141611140beded3ae0f8e6b",
+        "metadata.json": "239e14ab932ed180bff75e08940f1da7cc2fdab4ca63c19675b3de43359691b8"
+      }
+    }
+  ]
+}
