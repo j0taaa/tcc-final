@@ -1,0 +1,8 @@
+{
+  "producer": "28aa6111ef52a61c9d9590c075e94c1ab55296aa",
+  "command": "make test",
+  "tests": 170,
+  "wall_seconds": 70.627,
+  "status": "PASS",
+  "includes": "Six integer-TV regressions; full maintained independent suite. No novelty/publication guarantee."
+}

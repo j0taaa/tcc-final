@@ -1,0 +1,16 @@
+{
+  "producer": "c9f839fdfd08a9e62ee32e2469770e8d3f08bd5f",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_overlap --two-sided --output .cache/a49-two-sided-v27",
+  "summary": {
+    "status": "CORRECTNESS_ONLY",
+    "original_id_forest_cases": 105,
+    "undefined_zero_mass": 33,
+    "new_forwards": 0,
+    "two_sided_controls": true
+  },
+  "files": {
+    "rows.jsonl": "804990123c43bbf2e8ab3915fbaf149461aa1375806d7204c842e918c697e521",
+    "summary.json": "8ea338e74a7a9dc86f66d25040571ce3bbd6d0710bf01ca367f1c8b54839880c",
+    "metadata.json": "989233c00e380852edadfc4a631c756831da65625a8a51246e9fd84d1c75b7b6"
+  }
+}

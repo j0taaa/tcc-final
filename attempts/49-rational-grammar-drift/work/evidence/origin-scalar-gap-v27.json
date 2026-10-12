@@ -1,0 +1,8 @@
+{
+  "producer": "f039265a4000e91e4447eed92c870719debca7d2",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_scalar_gap --output .cache/a49-scalar-gap-v27",
+  "files": {
+    "rows.json": "42768af36fbaa4d7a3313486d857e1acd49294454153b75df4f65affb10c6a16",
+    "summary.json": "de3bff8423d0f48f92d4b973fc8114fce6f5d8678c80b42e98d36705e1fbae89"
+  }
+}

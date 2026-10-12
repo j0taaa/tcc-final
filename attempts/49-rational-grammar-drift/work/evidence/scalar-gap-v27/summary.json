@@ -1,0 +1,8 @@
+{
+  "status": "CORRECTNESS_OF_PROOF_OBJECT_ONLY",
+  "producer": "f039265a4000e91e4447eed92c870719debca7d2",
+  "cases": 6,
+  "independent_truth": "Exact O(n) binomial counter; not enumeration or a slow competitor",
+  "new_forwards": 0,
+  "practical_or_publication_gate": false
+}

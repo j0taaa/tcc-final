@@ -996,3 +996,18 @@ recusas compartilhadas não recebem crédito. Fontee6cef06 passa169 testes em
 71,697s. Arrays novos completos ficam locais; hashes não são reprodução
 offline integral. Novidade/suficiência editorial/ganho independente continuam
 abertos; não inferir vitória EPIC ou da geração inteira.
+
+A49 V26 passa300 oráculos antes de completarALL360 registros de replay:
+256 certificados104 recusas, nenhum ausente/forward novo. Um de45 pares de
+DESENVOLVIMENTO excede2x (2,02282896x), inclusive precisão ideal do controle;
+não é confirmação independente, gate de latência ou vitória EPIC. V25 continua
+FAILED0/36. Os controles inferiores clássicosV27 passam105 oráculos de tokens
+originais (33 massas zero indefinidas), sem aplicação medida. Provas escritas
+fecham custos de scaling/grid/saída, Markov com denominador GLOBAL por camada,
+chart CNF d<=3B-2 e fonte LL(1) d<=2(h+1)(2B-1) sem pressupor normalizador CNF
+verificado. A família matemática positiva de JSON separa TODOS os upper baratos
+nomeados por Omega(sqrt(n)); possui contador binomial EXATO O(n), explicitamente
+creditado, e seis checks aritméticos, não benchmark de desempenho. Não inferir
+exclusividade contra todos algoritmos TV ou salvar o gate negativo. A suíte
+mantida passa170 testes em70,627s. Prioridade suficiente, revisão humana e
+suficiência editorial permanecem abertas.

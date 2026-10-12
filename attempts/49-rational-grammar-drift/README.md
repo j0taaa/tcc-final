@@ -19,11 +19,19 @@ engines, preserve V25 observations, and label any replay as development rather
 than new independent confirmation. It adds no claim of scientific novelty.
 
 V26 source8216ee0 passesALL300 original-word/engine checks before the
-ALL360-row development replay, currently running. V27's proposed two-sided
-fidelity decision and classical lower controls are separate, written AFTER
-the V25 failure. Their correctness/application is pending; they cannot rescue
-or relabel that gate. Full-arithmetic and chart error-count notes close cost
-details while keeping source-admission/actual implementation limits explicit.
+ALL360-row development replay. It is COMPLETE:256 certificates104 refusals,
+no missing rows. One of45 development pairs exceeds2x (2.02282896x), including
+ideal-control robustness; this is NOT independent confirmation or a latency
+gate. All360 records and45 pairs are in work/evidence/external-v26 and
+work/decision-v26.md. V25 remains FAILED0/36. V27 classical two-sided controls
+pass105 original-word cases, with33 undefined-zero-mass refusals. The proposed
+decision application has not been measured. Written full arithmetic, Markov,
+chart and source-chain bounds keep preparation/bit costs explicit; the actual
+reference still uses LCM. A positive rational JSON proof family shows an
+Omega(sqrt(n)) gap for ALL named cheap upper controls, not every TV algorithm.
+Its exact O(n) binomial counter is explicitly credited; six arithmetic checks
+pass, not a practical benchmark. Full maintained suite passes170 tests in
+70.627s. Publication significance and independent proof review remain OPEN.
 
 2026-10-12. Contract BEFORE code or observations. This is an investigation,
 not confirmed novelty, publication sufficiency, or a faster decoder.

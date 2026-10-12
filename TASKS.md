@@ -200,23 +200,34 @@ do not reset earlier losses or call prototype correctness publication proof.
   Sourcee6cef06's maintained suite
   passesALL169 in71.697s; the new macro/alias oracle covers non-ID-topological
   order. Raw head/probability arrays remain local; their hashes are published.
-- [ ] T6919: BEFORE implementation, V26 writes the classical streamed known-
+- [x] T6919: BEFORE implementation, V26 writes the classical streamed known-
   root query and exact rational loss propagation, given to ALL four engines.
-  V25 is complete/preserved. Producer8216ee0 passesALL300 old word/engine
-  checks (192 certificates108 undefined), before the full360-row replay on
-  ALL15 old heads. That replay is RUNNING and explicitly DEVELOPMENT, not
-  independent novelty/confirmation. Root/factor work is charged and every
-  stronger-control loss/refusal retained. Source/evidence are separate.
-- [ ] T6920: V27 writes a two-sided fidelity-decision application AFTER V25's
-  failure; do not relabel the failed upper-precision gate. Known marginal,
-  Hellinger and moment LOWER controls are proved before minimal prototype.
-  Source000c522 adds the classical controls and105-case original-word oracle;
-  no correctness/application observation yet. Validate before any use, after
-  the active timing run. Full-arithmetic-scaling-v27 closes hidden GCD/output
-  accounting on paper; the actual measured reference still uses LCM/Fraction.
-  Chart-error-count-v27 proves d<=3B-2 for an ADMITTED unambiguous CNF and
-  charges wide-OR sorting; arbitrary-source conversion remains an explicit
-  obligation. Neither application nor publication sufficiency is confirmed.
+  Producer8216ee0 passesALL300 old word/engine checks, then completesALL360
+  development rows:256 certificates104 refusals, no missing rows/new forward.
+  One of45 development pairs passes the old2x diagnostic (2.02282896x), also
+  robust to ideal control rounding. It is NOT independent confirmation or a
+  speed claim; V25 remains FAILED0/36. All360 records/45 pairs preserved in
+  work/evidence/external-v26 and decision-v26.md; complete costs charged.
+- [ ] T6920: V27 writes two-sided fidelity decisions AFTER V25's failure;
+  do not relabel that upper-precision gate. Classical marginal, Hellinger and
+  moment lower controls are proved before prototype. Sourcec9f839f's unchanged
+  105-case oracle passes (33 undefined-zero-mass); application remains unmeasured.
+  Full-arithmetic-scaling-v27 closes GCD/output accounting on paper; measured
+  reference still uses LCM/Fraction. Chart-error-count-v27 gives d<=3B-2 only
+  for admitted CNF, with wide unions charged. Source-error-count-v27 avoids
+  any unverified CNF conversion: generalized LL(1) chart d<=2(h+1)(2B-1),
+  h acyclic same-span height, empty subtrees exact. This is written source
+  admission, not verification/implementation of the actual stack compiler.
+  Markov-corollary-v27 states O(nq^2 sqrt(n/epsilon) log(q+2)), using ONE
+  multiplier per whole transition layer, not per previous state. Publication
+  novelty/significance, independent proof review and the application stay OPEN.
+- [x] T6921: Scalar-gap-v27 is proved BEFORE finite arithmetic verification:
+  a positive rational JSON proof family gives Omega(sqrt(n)) upper/TV for
+  ALL named ideal cheap controls. Sourcef039265 passes all six cases using
+  a competent EXACT O(n) binomial counter. This is a guarantee separation,
+  not a benchmark/model observation, exclusive capability or repaired gate.
+  Evidence: work/evidence/scalar-gap-v27. Maintained source28aa611 passesALL170
+  tests in70.627s, including the new shared known-root original-ID regression.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
