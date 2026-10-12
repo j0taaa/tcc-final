@@ -61,3 +61,25 @@ checks pass. A written CONDITIONAL theorem now covers every even pool size,
 using classical stability-preserving differential operators. The UNCONDITIONAL
 random-pool comparison is still unproved. Neither finite checks nor this
 conditional lemma establish novelty, neural usefulness or publication.
+
+V3 derives the exact B=6 joint polynomial;2,658 independent rational pair
+checks pass. V4 closes the UNCONDITIONAL B=6 covariance theorem for all finite
+population sizes/class maps, using an analytic large-population argument,
+104 polynomial principal-minor certificates for38 infinite families, and289
+exact rational boundary certificates covering all remaining cases among14,723
+small population partitions. A separate verifier rebuilds the specified
+matrices and checks identities, determinants, coverage and LDL factorizations.
+This is a written **partly computer-assisted** proof, not full Lean/software
+verification. The all-even-budget theorem remains open.
+
+Criteria re-evaluation: the operation/application of1 and competent controls
+of3 remain unchanged. For2/4 the candidate difference is simultaneous atom
+frontier and arbitrary-score safety after a RANDOM pool, now proved only for
+six sources; it is not a new perfect-matching/stable-polynomial principle.
+For5 no neural benchmark was added. For6 fifteen matchings avoid irrational
+calibration, but original sampling/materialization, six classifications and
+proxy preparation are still charged. For7/8 the closest classical reduction,
+useful CFG-specific operation, full-cost benefit and publication sufficiency
+are still unresolved. A41's negative strong-control observations stand.
+See work/six-pool-theorem-v4.md and work/evidence/origin-v4.json for proof,
+reproduction commands and the precisely declared computer-assisted boundary.

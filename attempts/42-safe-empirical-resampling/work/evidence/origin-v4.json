@@ -1,0 +1,34 @@
+{
+  "source_commit": "5925eec7178e6c3c0693c3ba5b742b211ea6f7bc",
+  "scope": "Written B=6 unconditional covariance proof with an explicitly computer-assisted boundary; no all-budget result, priority, neural benefit, or publication claim.",
+  "commands": [
+    ".venv-live/bin/python -m attempts.42-safe-empirical-resampling.work.six_pool_minors --output attempts/42-safe-empirical-resampling/work/evidence/six-pool-minors-v4.json",
+    ".venv/bin/python -m attempts.42-safe-empirical-resampling.work.finite_boundary --output attempts/42-safe-empirical-resampling/work/evidence/finite-boundary-v4.json",
+    ".venv-live/bin/python -m attempts.42-safe-empirical-resampling.work.verify_certificates_v4 --majority attempts/42-safe-empirical-resampling/work/evidence/six-pool-minors-v4.json --finite attempts/42-safe-empirical-resampling/work/evidence/finite-boundary-v4.json"
+  ],
+  "checks": {
+    "exact_symbolic_identities": 2,
+    "majority_families": 38,
+    "principal_minors": 104,
+    "finite_populations_covered": 14723,
+    "finite_residual_certificates": 289,
+    "negative_pivots": 0,
+    "ruff": "PASS after corrections; original E741/E501 drafts retained"
+  },
+  "dependencies": {
+    "sympy": "1.14.0 preexisting research environment, no production dependency"
+  },
+  "initial_scope": "Uncommitted exploratory certificate outputs retained; both producers were executed after Ruff failures. These are not relabeled as frozen-source runs. Frozen reruns and separate verifier completed subsequently.",
+  "files": {
+    "six_pool_minors.py": "97b541697a8e934a2fdc12032d2a2c77af92b3b49b8d7023613f709d57afc6a4",
+    "finite_boundary.py": "cb52d05b65de5c82dcb2835b80c3aef66486ec0c0345f4da31bfc0bdfdfaee01",
+    "verify_certificates_v4.py": "ee947e5ddedf2240817a10f9d0ea0ea08b5580eb8154bc0f75830f94f85c7853",
+    "six-pool-theorem-v4.md": "445c70e3c04f2c199022e1ec8670c7816549517410b60620b6d0a9fdb8b998a3",
+    "evidence/six-pool-minors-v4.json": "beb1039898f1894b3328c8629da9851856214684161fc048ca41738218f50e2d",
+    "evidence/finite-boundary-v4.json": "45a0e7a4353a91512ce852beefc5dd5ed1d0860b2d0452ffdb194a5e54a26260",
+    "evidence/exploratory-six-pool-minors-v4.json": "4a570daf6e02b402a9ee0a2a886033ab2dbe8206989e0bde19c042d823dfc39f",
+    "evidence/exploratory-finite-boundary-v4.json": "45a0e7a4353a91512ce852beefc5dd5ed1d0860b2d0452ffdb194a5e54a26260",
+    "drafts/six_pool_minors-v4-before-lint.py.txt": "a4f6da31196f1a62e4dd3eb03b32a9cf7c8565ab7e48b637c5cf8e9f3fe338d8",
+    "drafts/finite_boundary-v4-before-lint.py.txt": "10a51dab14c0a4ce7169ce4ec43e38be08ead61e050fb12e053589d103bce178"
+  }
+}

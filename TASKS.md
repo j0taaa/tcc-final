@@ -42,6 +42,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   V2 conditional matching theorem for arbitrary even pool size is written via
   classical stable operators;38 independent matching enumerations/2213 finite
   spectral checks pass. Frozen producer57fc6e2. UNCONDITIONAL step remains OPEN.
+  V3 exact B=6 joint formula has2658 rational checks. V4 closes the B=6
+  unconditional theorem with analytic reduction plus explicitly computer-assisted
+  38-family/104-minor and289 finite rational certificates; independent verifier
+  checks two identities and all14,723 boundary population partitions. Producer
+  5925eec; commands/hashes in42/work/evidence/origin-v4.json. All-B extension and
+  scientific priority remain OPEN; not a model-use/publication gate.
 - [ ] T6202: Only after theory/prior survives, select a useful operation and
   competent complete-cost controls. No publication or practical gate yet.
 

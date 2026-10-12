@@ -796,3 +796,12 @@ pares de pool conhecido, via operadores estáveis clássicos.38 enumerações
 independentes e2213 checks finitos passam; pesos inteiros não exigem raízes
 irracionais. Não transferir o lema ao pool sorteado: esse passo segue aberto.
 Contagem/orçamento em bits, uso, novidade/publicação ainda não confirmados.
+A42 v4 fecha a segurança de covariância INCONDICIONAL somente para pool6,
+com prova analítica e fronteira explicitamente assistida por computador:
+104 menores polinomiais/38 famílias infinitas e289 certificados racionais,
+com cobertura de14.723 partições pequenas e verificador separado. Não é
+formalização Lean integral, teorema para todo orçamento, ganho neural ou
+novidade/publicação confirmados. As15 matchings eliminam calibração irracional
+nessa versão; custos de fonte, classificação e proxy continuam cobrados.
+Prioridade frente a pivotal/rejective/RSS e utilidade CFG seguem abertas;
+preservar as perdas de41 e não iniciar grande campanha apenas pela prova.
