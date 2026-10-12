@@ -2226,6 +2226,26 @@
             "attempts/49-rational-grammar-drift/work/evidence/overlap-v24",
             "attempts/49-rational-grammar-drift/work/evidence/public-v24"
           ]
+        },
+        {
+          "id": "v25",
+          "source_commit": "29345c9f722b9857e54429ed35119214c3c8ff31",
+          "evidence_commit": "3e2730af262776ba66737978404be262948081d7",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/decision-v25.md",
+            "attempts/49-rational-grammar-drift/work/external-decision-v25.json",
+            "attempts/49-rational-grammar-drift/work/protocol-v25.json",
+            "attempts/49-rational-grammar-drift/work/independent-audit-v25.md",
+            "attempts/49-rational-grammar-drift/work/control-precision-v25.md",
+            "attempts/49-rational-grammar-drift/work/nearest-proof-audit-v25.md",
+            "attempts/49-rational-grammar-drift/work/evidence/capture-v25",
+            "attempts/49-rational-grammar-drift/work/evidence/ideal-control-v25",
+            "attempts/49-rational-grammar-drift/work/evidence/external-v25",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-external-v25.json",
+            "attempts/49-rational-grammar-drift/work/origin-ideal-control-v25.json",
+            "attempts/49-rational-grammar-drift/work/evidence/checks-v25.json"
+          ]
         }
       ]
     }
