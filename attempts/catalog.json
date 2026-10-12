@@ -1957,7 +1957,7 @@
     {
       "id": "49-rational-grammar-drift",
       "title": "Rational posterior drift and smaller integer norm cores",
-      "conclusion": "Sharper written deterministic TV precision-cost bounds, validated original-ID cores and complete strong-control functional audits. V22 preserves a ten-page mathematical draft and all24 rows, including speed losses. Independent human review, exhaustive priority and venue acceptance remain open; no EPIC/semantic/generation superiority claim.",
+      "conclusion": "Sharper written deterministic TV precision-cost candidate with complete original-ID core checks. Independent V25 precision gate FAILED0/36; shared V26 replay has one2x diagnostic in45 DEVELOPMENT pairs, not independent confirmation. Publication significance, priority and human review remain open; no EPIC/generation superiority.",
       "reading": "attempts/49-rational-grammar-drift/README.md; TASKS.md",
       "versions": [
         {
@@ -2245,6 +2245,23 @@
             "attempts/49-rational-grammar-drift/work/evidence/origin-external-v25.json",
             "attempts/49-rational-grammar-drift/work/origin-ideal-control-v25.json",
             "attempts/49-rational-grammar-drift/work/evidence/checks-v25.json"
+          ]
+        },
+        {
+          "id": "v26",
+          "source_commit": "28aa6111ef52a61c9d9590c075e94c1ab55296aa",
+          "evidence_commit": "7e10d847044215157bc0e2bb0565a38253088225",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/protocol-v26.json",
+            "attempts/49-rational-grammar-drift/work/targeted-root-v26.md",
+            "attempts/49-rational-grammar-drift/work/analyze_external.py",
+            "attempts/49-rational-grammar-drift/work/decision-v26.md",
+            "attempts/49-rational-grammar-drift/work/external-decision-v26.json",
+            "attempts/49-rational-grammar-drift/work/evidence/root-oracle-v26",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-root-v26.json",
+            "attempts/49-rational-grammar-drift/work/evidence/external-v26",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-external-v26.json"
           ]
         }
       ]
