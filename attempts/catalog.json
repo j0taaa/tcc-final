@@ -1668,7 +1668,7 @@
     {
       "id": "42-safe-empirical-resampling",
       "title": "Empirical all-budget atom coverage and arbitrary-score safety",
-      "conclusion": "Written conditional matching safety for ALL even known-pool sizes via classical stable differential operators;38 independent matching enumerations/2213 finite source checks. Global random-pool safety remains unproved, source complexity/use/novelty open. No new model campaign.",
+      "conclusion": "Written all-even-size conditional theorem and unconditional B=6 covariance theorem, with explicitly computer-assisted symbolic/rational boundary checked separately. All-budget extension, priority and useful complete-cost CFG/dLLM benefit remain open; no new model campaign.",
       "reading": "TASKS.md M62; README eight criteria; work/conjecture-v1.md; work/primary-v1.md",
       "versions": [
         {
@@ -1703,6 +1703,18 @@
             "attempts/42-safe-empirical-resampling/work/evidence/exploratory-six-pool-algebra-v3.json",
             "attempts/42-safe-empirical-resampling/work/evidence/origin-v3.json",
             "attempts/42-safe-empirical-resampling/work/drafts/six_pool_algebra_v3_initial.py.txt"
+          ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "5925eec7178e6c3c0693c3ba5b742b211ea6f7bc",
+          "evidence_commit": "c930fdf181cd6c31b0753b1aa0413ee0cf627d5e",
+          "evidence_roots": [
+            "attempts/42-safe-empirical-resampling/work/six-pool-proof-plan-v4.md",
+            "attempts/42-safe-empirical-resampling/work/six-pool-theorem-v4.md",
+            "attempts/42-safe-empirical-resampling/work/evidence/six-pool-minors-v4.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/finite-boundary-v4.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/origin-v4.json"
           ]
         }
       ]
