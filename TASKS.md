@@ -27,6 +27,21 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M63 — Adaptive original-source excursions
+
+- [x] T6300: BEFORE code/model outputs write43's independent README/eight
+  criteria and pure candidate proof. Operation: two expensive original loss/
+  gradient evaluations, fixed binary proxy, retained first source; adaptive
+  first-return/barrier walk, no path-dependent deadline fallback. Classical
+  ruin/factory/information principles credited; Huber2016 section3.1/4 read.
+- [ ] T6301: Independently verify full original-source law, aliases, vector
+  covariance, exact E[N]=M for all class masses, tail and balanced sharp
+  expected-query bound. Inspect sequential-estimation primary predecessors.
+  A candidate theorem/finite oracle is not priority or real-model utility.
+- [ ] T6302: Only if distinction/use survives, freeze a competent full-cost
+  dLLM/CFG application. A42 root boundary is too late and may not be reused
+  as a cheap informative source; A41 negative stronger controls stand.
+
 ## M62 — Safe empirical resampling at every source budget
 
 - [x] T6200: BEFORE prototype/outputs write42's eight criteria and explicit
