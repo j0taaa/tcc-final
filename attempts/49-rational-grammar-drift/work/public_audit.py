@@ -201,6 +201,10 @@ def run(output):
         support = build_per_position_support(
             canvas=case["canvas"],
             policy=SupportPolicy(SupportKind.FULL, adapter.vocabulary_size),
+            explicit_support={
+                p: tuple(range(adapter.vocabulary_size)) if fixed is None else (fixed,)
+                for p, fixed in enumerate(case["canvas"])
+            },
         )
         state = SelectionInput(
             normalize_to_cnf(json_source_grammar()).grammar,

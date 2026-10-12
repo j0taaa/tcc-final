@@ -117,3 +117,8 @@ Producer7ae7641 passes all60 bridge cases: independent original-ID counts,
 both exact masses, TV, both competent controls and fixed-slot behavior.
 IEEE rounding ties/subnormal behavior are checked. This triggers only the
 already frozen functional public-packet audit, not a competitive campaign.
+The first public command (producer5d91beb) was refused during input setup:
+FULL support also requires an explicit input source in the maintained API.
+No head-rounding/core measurements ran; metadata/failure are preserved.
+V6 supplies every original ID at every free position and the singleton at
+fixed positions. No support reduction or scientific protocol change occurs.

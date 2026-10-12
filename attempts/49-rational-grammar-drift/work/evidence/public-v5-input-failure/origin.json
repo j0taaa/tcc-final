@@ -1,0 +1,9 @@
+{
+  "producer": "5d91beb3d3a41adda848df195efc7f7bbf7312dc",
+  "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m attempts.49-rational-grammar-drift.work.public_audit --output .cache/a49-public-v5",
+  "scope": "Input setup refusal before preparation/rounding/core measurements: missing explicit source for FULL support",
+  "sha256": {
+    "failure.txt": "ff5c91fb635fc74f6eff2fad25dccad17a6cc17800cb8dbd788073dd643a92db",
+    "metadata.json": "99ecfe0f27c1b24fbaf3edc71ce483c6066323663db0fd5175d577ff90af7d46"
+  }
+}
