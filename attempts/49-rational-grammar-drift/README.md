@@ -274,3 +274,9 @@ against the NOW strongest cheap control; report the strengthened curve.
 The adaptive BF16/0.5 core win persists. Scalar chi-square's absolute64-bit
 atom rounding can be unnecessarily loose under denominator imbalance; V18
 will give it scale-aware relative precision before any consolidated claim.
+
+V18 BEFORE code references the same eight answers and fixes only control
+precision: `scale-aware-controls-v18.md` gives EVERY nonzero chi-square atom
+64 bits of certified relative rounding precision, with polynomial bit costs.
+Both directions get it, all75 oracles/18 public cases repeat, and prior
+outputs remain true historical records. No new contribution is claimed here.
