@@ -4,7 +4,10 @@
 checks and all24 public rows. The old FP16 comparison18.57x drops to1.05476x;
 FP32 overlap is tighter than the candidate upper. `work/overlap-decision-v24.md`
 and immutable evidence preserve the loss. V22 is a historical draft with its
-listed controls, not a current practical victory. No new external head yet.
+listed controls, not a current practical victory. V25 now captures ALL15 actual
+heads from ALL5 predeclared documents and4/8/16 masks; their full softmax and
+original bytes replay exactly. The360-row audit is running with BOTH overlap
+controls; no independent benefit/publication conclusion is yet asserted.
 
 2026-10-12. Contract BEFORE code or observations. This is an investigation,
 not confirmed novelty, publication sufficiency, or a faster decoder.

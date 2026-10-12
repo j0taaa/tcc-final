@@ -974,3 +974,20 @@ são antecedentes; a diferença candidata é quantitativa. Não declarar
 prioridade absoluta, revisão humana, aceitação ou superioridade EPIC.
 Na fonte2f406e3 a suíte mantida passa168 testes em70,403s; check de upstream,
 lint/tipos/formatação e preservação também passa. Isto não prova novidade.
+
+A49 V24 acrescenta um controle clássico mais forte por acoplamento dos samplers
+na floresta, com limites dyadicos certificados em suporte total e comum. Passa
+105 oráculos originais e TODOS24 casos públicos, sem erros/recusas/forwards.
+O ganho FP16 antigo18,57x cai para1,05476x; o controle FP32 é mais preciso que
+o upper da candidata. Preservar essa perda: V22/PDF é rascunho histórico com
+seus comparadores declarados, não vitória contra V24. A teoria quantitativa
+não foi refutada, mas a aplicação precisa de evidência melhor. V25 conserva
+todos casos/tolerâncias/budgets e o mesmo critério2x, incorporando AMBOS
+acoplamentos ANTES de novas observações. TODOS15 heads dos cinco documentos
+pinados foram capturados (mais UM warmup); replay confirma softmax completo
+bit-exato e bytes originais. Quatro documentos são não vistos pela pesquisa
+TV deA49, não porA24 ou pelo treinamento. Auditoria360 ainda em execução;
+recusas compartilhadas não recebem crédito. Fontee6cef06 passa169 testes em
+71,697s. Arrays novos completos ficam locais; hashes não são reprodução
+offline integral. Novidade/suficiência editorial/ganho independente continuam
+abertos; não inferir vitória EPIC ou da geração inteira.

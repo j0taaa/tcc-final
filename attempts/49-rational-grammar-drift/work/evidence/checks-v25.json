@@ -1,0 +1,25 @@
+{
+  "maintained_suite": {
+    "producer": "e6cef06",
+    "command": "make test",
+    "tests": 169,
+    "seconds": 71.697,
+    "status": "PASS"
+  },
+  "focused_regression": {
+    "command": ".venv/bin/python -m unittest tests/test_integer_tv.py",
+    "tests": 5,
+    "seconds": 0.026,
+    "status": "PASS"
+  },
+  "preliminary_regression_correction": "Before commit, an assertion mistakenly assumed dyck-alias node IDs were not topological. That fixture has36 nodes in natural order. Replaced only fixture selection with the existing dyck-macro fixture (66 nodes, nontrivial order); scalar algorithm/protocol unaffected. No failure of the coupling algorithm inferred.",
+  "make_check": {
+    "producer": "c2029ca",
+    "command": "make check",
+    "attempts": 49,
+    "versions": 178,
+    "status": "PASS"
+  },
+  "capture_replay_sha256": "fef427ee7158fe6e496293967eb65fa0048632724810d156195b58b3651ded25",
+  "independent_gate": "RUNNING; no positive conclusion from partial rows"
+}

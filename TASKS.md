@@ -24,8 +24,11 @@ conditional branches below are historical; failed development gates do not
 require executing their untriggered independent campaigns. Do not reopen them
 or restore removed infrastructure. Human review/publication remain external.
 The renewed user goal requires a defensible original contribution, not only
-consolidating A24. M47 investigates a concrete preparation bottleneck without
-resetting earlier losses or claiming that prototype correctness proves novelty.
+consolidating A24. Current M69 investigates a quantitative deterministic TV
+precision-cost bound and an original-token dLLM/CFG audit. Stronger V24 coupling
+erases the old development gap; ALL15 new heads are captured/verified, and the
+unchanged360-row V25 audit is running. Novelty/significance/utility remain open;
+do not reset earlier losses or call prototype correctness publication proof.
 
 ## M69 — Rational drift certificate, proof before application
 
@@ -167,7 +170,7 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   FIRST doc is seen regression; remaining FOUR unseen byA49 TV development,
   not unseen byA24/model training. Strongest controls/costs/refusals preserved.
   Newcapture/producer/evidence and functional precision gate still PENDING.
-- [ ] T6917: V24 writes BEFORE code a stronger classical sampler-overlap scalar
+- [x] T6917: V24 writes BEFORE code a stronger classical sampler-overlap scalar
   control on full/common support, with certified dyadic lower recurrence.
   ALL75 oracle cases and ALL24 old functional rows must repeat before the
   independent-document capture. V23 source/protocol archived with ZERO new
@@ -184,6 +187,13 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Validate process/deadline/memory orchestration on ALL24 old packet cases;
   only then capture ALL15 actual heads and run the full unseen-document gate.
   Preserve every shared refusal/loss and account child CPU/process management.
+  Producer8192f2f passesALL24 guarded development rows, matching V24 intervals/
+  masses/counts/scalar controls exactly. Capture producerc2029ca executesALL15
+  actual heads plusONE warmup; verifierde95c29 confirms bit-exact full Torch
+  softmax and original bytes for all5 docs, no added forwards. ALL360-row audit
+  is running, no incomplete positive claim. Sourcee6cef06's maintained suite
+  passesALL169 in71.697s; the new macro/alias oracle covers non-ID-topological
+  order. Raw head/probability arrays remain local; their hashes are published.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
