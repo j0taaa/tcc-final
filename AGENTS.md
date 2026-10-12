@@ -972,3 +972,5 @@ iterativo implementado/medido. Quatro regressões focadas cobrem ambos núcleos
 e o erro realV19. Geometria, parsing, acoplamento e computabilidade em bits
 são antecedentes; a diferença candidata é quantitativa. Não declarar
 prioridade absoluta, revisão humana, aceitação ou superioridade EPIC.
+Na fonte2f406e3 a suíte mantida passa168 testes em70,403s; check de upstream,
+lint/tipos/formatação e preservação também passa. Isto não prova novidade.

@@ -1,0 +1,30 @@
+{
+  "producer": "2f406e37216b1631ac3eb994996811f8c60f1701",
+  "checks": [
+    {
+      "command": "make check",
+      "exit_code": 0,
+      "scope": "upstream/lint/format/types/archive integrity; 49 attempts/175 versions before V22 freeze"
+    },
+    {
+      "command": "make test",
+      "exit_code": 0,
+      "tests": 168,
+      "seconds": 70.403
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -p test_integer_tv.py -v",
+      "exit_code": 0,
+      "tests": 4
+    },
+    {
+      "command": ".venv/bin/ruff check tests/test_integer_tv.py",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/ruff format --check tests/test_integer_tv.py",
+      "exit_code": 0
+    }
+  ],
+  "scope": "Maintained correctness checks, not novelty/peer review; no Rust/Lean/main-article implementation changes or new forwards"
+}

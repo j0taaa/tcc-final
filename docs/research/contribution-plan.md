@@ -1,5 +1,34 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-12 — A49 V19--V22: ordered product theorem and complete controls
+
+V19's first nonempty ordered-image oracle fails because the minimum-angle
+scan has reversed determinant comparison. Sourceb0c678a and failure remain
+independent. CorrectedV20 passes all1,860 geometry/33,747 norm directions,
+117,376 exhaustive projections,1,860 images,1,167 products/389 extreme and
+75 original-ID forests. The written product arithmetic bound is now
+O(n*q*sqrt(n/epsilon)*log(q+2)), plus complete input/scaling/normalizers and
+integer bit costs; the general-forest bound is unchanged. Sorting/sweeps and
+geometry are classical. This sharpens a quantitative deterministic TV bound,
+not a new feasibility or geometric rate claim.
+
+V21 producer3702503 completes all24 functional rows against the strongest
+adaptive/scalar controls. Preserve both FP32 ordered-core losses and BF16/0.5
+adaptive win. Same public packet, no new forward or independent latency gate.
+COLT2025 sections2/3 are read in full: they already credit polynomial bit
+complexity and restate Feng2024's bound. Fu already removes positive-TV
+dependence; neither fact is claimed first here.
+
+V22 creates a separate ten-page manuscript/PDF and generated complete table,
+preservingV10/mainA24. The online-budget corollary in budgeted-use-v22 is
+standard coupling: admit a table only within the remaining error budget and
+keep policy unchanged. It supplies a precise use, not a measured iterative
+decoder or new coupling principle. All ten final pages receive visual QA,
+not peer review. Source2f406e3 passes168 maintained tests in70.403s and checks.
+The quantitative theorem is the candidate contribution; publication-specific
+significance/absolute priority/human review remain unconfirmed. The next
+practical question is broader inputs, with no result-based case selection.
+
 ##2026-10-12 — A49: stronger controls and strict stored-core comparison
 
 V12's uniform angular control has O(m) integer work; its six materialization

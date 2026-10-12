@@ -159,6 +159,9 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   failure. Final10 PDF pages rendered/visually reviewed; no LaTeX warnings.
   MainA24 paper, Rust, Lean and neural model remain unchanged. Publication
   priority/significance/human-review goalT6905 remains OPEN; no absolute claim.
+  Maintained source2f406e3: `make check` passes (175 archived versions at run),
+  `make test` passesALL168 in70.403s; focused four-test regressions and their
+  lint/format checks pass. Evidence:49/work/evidence/checks-v22.json.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
