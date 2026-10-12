@@ -2,6 +2,7 @@
 
 import importlib
 import itertools
+import random
 import unittest
 from fractions import Fraction as F
 from math import prod
@@ -9,9 +10,31 @@ from math import prod
 core = importlib.import_module("attempts.49-rational-grammar-drift.work.optimal_planar_fast")
 ordered_core = importlib.import_module("attempts.49-rational-grammar-drift.work.ordered_planar")
 product = importlib.import_module("attempts.49-rational-grammar-drift.work.product")
+overlap = importlib.import_module("attempts.49-rational-grammar-drift.work.sampler_overlap")
+word_oracle = importlib.import_module("attempts.49-rational-grammar-drift.work.verify_forest")
 
 
 class IntegerTvTests(unittest.TestCase):
+    def test_scalar_coupling_on_original_ids_and_nontrivial_node_order(self):
+        _, kind, emissions, rows = list(word_oracle.fixtures())[1]
+        source = word_oracle.dyck_source()
+        rng = random.Random(202610120492)
+        for mode in ["equal", "tiny-scale", "zero", "near-equal", "different"]:
+            with self.subTest(mode=mode):
+                first, second = word_oracle.make_inputs(source, emissions, rows, mode, rng)
+                plan = word_oracle.compile_cfg_sampler(source, first.state)
+                self.assertNotEqual(plan.order, tuple(range(len(plan.terms))))
+                truth = word_oracle.expected(first, second, emissions, kind)
+                result = overlap.controls(plan, first, second)
+                if truth is None:
+                    self.assertEqual(result["status"], "ZERO_VALID_MASS_UNDEFINED_TV")
+                else:
+                    for bound in result["bounds"].values():
+                        self.assertLessEqual(truth, bound)
+                        self.assertLessEqual(bound, 1)
+                    if mode in ["equal", "tiny-scale"]:
+                        self.assertEqual(result["upper"], 0)
+
     def test_signed_core_at_all_piecewise_linear_breakpoints(self):
         rows = [(i, (i * i) % 17 - 8) for i in range(-25, 26)]
         for engine in [core, ordered_core]:
