@@ -2176,6 +2176,17 @@
             "attempts/49-rational-grammar-drift/work/evidence/ordered-v20",
             "attempts/49-rational-grammar-drift/work/evidence/origin-v20.json"
           ]
+        },
+        {
+          "id": "v21",
+          "source_commit": "37025038b4ab0cf3b4fd2a71aee6e162dd4f87f2",
+          "evidence_commit": "536d7a546d5707267875c21015c1e36e7f1d5ced",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/consolidation-v21.md",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v21",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-v21.json"
+          ]
         }
       ]
     }
