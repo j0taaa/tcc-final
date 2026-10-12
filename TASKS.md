@@ -86,11 +86,15 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   and pass at67b5f92. The complete167-test suite passes70.530s. Matoušek1996
   and Reis/Rothvoss2026 scopes are recorded in geometric-priors-v11, not
   full-paper review or a new geometric/bit-computability claim.
-- [ ] T6907: V12 freezes a strengthened O(m)-work rational angular control,
+- [x] T6907: V12 freezes a strengthened O(m)-work rational angular control,
   matched budgets and all18 public functional rows BEFORE new code/timings.
   Same operation, all original IDs and complete costs; no independent timing
   gate or synthetic performance family. The sharper precision exponent must
   remain distinct from geometric antecedents; faster controls stay reported.
+  Producer5a72f1b passes5,580 geometry/80,898 norm checks,225 forests and
+  3,501 products. Producer81c6c5b preservesALL18 public rows:12 certificates,
+  six angular materialization refusals, no errors. Refusal by a table cap
+  is NOT a victory; V13 must stream the competent control's products.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

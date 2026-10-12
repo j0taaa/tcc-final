@@ -200,3 +200,11 @@ A calibrated endpoint and routine hybrid are separately named and do not
 inherit V9 timings. (8) geometric novelty, human review, complete priority,
 editorial sufficiency and generation superiority remain unconfirmed. The
 specific quantitative TV bound must survive this stronger comparison.
+
+V12's independent gate passes5,580 geometry cases/80,898 norm queries,
+225 original-ID forests and3,501 products (18 zero-mass refusals). Public
+producer81c6c5b completes ALL18 rows:12 certificates, six angular product
+materialization refusals, no errors. These refusals are NOT a scientific
+win. V13 will stream the classical control's products rather than cap its
+Cartesian tables. Endpoint/hybrid timings are developmental single runs,
+and their faster calibrated constants are not attributed to older sources.

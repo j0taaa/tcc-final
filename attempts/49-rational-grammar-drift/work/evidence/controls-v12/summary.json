@@ -1,0 +1,8 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "geometry_cases": 5580,
+  "exact_norm_queries": 80898,
+  "original_id_forest_cases": 225,
+  "product_cases": 3501,
+  "zero_mass_refusals": 18
+}
