@@ -1,0 +1,6 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "cases": 1167,
+  "undefined_zero_mass": 6,
+  "invalid_refusals": 8
+}

@@ -1,0 +1,9 @@
+{
+  "producer": "3a9416b523c23ba1c9b855299155aa2b2398f697",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_product --output .cache/a49-product-v11",
+  "scope": "All prospective correctness cases, no speed/semantic benchmark or new model execution",
+  "sha256": {
+    "rows.jsonl": "59f94cdf49162b4ced864310c4e99e6d2d861ad038ac47d3be2716c066cf0123",
+    "summary.json": "252e5d58e2b7f41cca0dff6e42316553c1e7d8457c7dc7d3773a3e08a325ccd4"
+  }
+}

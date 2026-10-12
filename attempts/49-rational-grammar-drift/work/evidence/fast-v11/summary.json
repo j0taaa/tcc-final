@@ -1,0 +1,7 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "geometry_cases": 1860,
+  "exact_norm_queries": 30741,
+  "independent_exhaustive_projection_queries": 117376,
+  "original_id_forest_cases": 75
+}

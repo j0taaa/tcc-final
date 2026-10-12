@@ -1,0 +1,7 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "product_cases": 389,
+  "zero_mass_refusals": 2,
+  "exact_signed_checks": 6,
+  "epsilon": "2^-1024"
+}
