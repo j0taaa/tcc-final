@@ -810,3 +810,12 @@ A42 v5 compara40 partições exatas com pivotal clássico: mesma fronteira de
 é quase igual e vence5/6 gradientes do bias; RSS vence todos os scores. Não
 usar esses dados como ganho populacional/treino, nem promover esse proxy.
 Nenhum novo forward. Prioridade e uso CFG específico permanecem abertos.
+A42 v6 usa seis propostas originais IID COM reposição, preservando estados
+repetidos e aliases. A prova escrita puramente analítica fecha a segurança
+incondicional para toda massa de classes, sem certificados finitos. Dois
+checks simbólicos e8.256 tapes racionais passam. A fronteira balanceada de
+pior direção é ótima no contrato de coupling independente do score e fonte
+IID opaca universal; pivotal6 a compartilha. Não aplicá-la a métodos com
+massas/inversas gratuitos, CV ou políticas adaptadas a cada score. Os controles
+fortes negativos de v5 continuam válidos; nenhuma novidade/publicação,
+superioridade neural/EPIC ou utilidade CFG de custo completo foi confirmada.

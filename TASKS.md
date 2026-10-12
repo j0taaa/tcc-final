@@ -53,6 +53,15 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   lower bias variance in5/6; retained RSS wins all scalar scores. Registered
   producer9af03e0, zero new forwards. decision-v5 rejects campaign/promotion
   of this proxy; theory/priority/CFG application still OPEN.
+  V6 explicitly switches to six IID original proposals WITH replacement.
+  A PURE written square proof closes all-vector unconditional covariance for
+  arbitrary class masses. Two symbolic identities/8256 weighted raw tapes
+  pass; frozen producer a300a2e, origin-v6.json. Balanced six-query worst-
+  direction frontier is sharp and shared by pivotal6; lower bound is for
+  score-oblivious universal opaque-IID couplings, not mass-aware/CV policies.
+  Chauvet/Ruiz-Gazen2016 and multivariate RSS were examined; priority is still
+  OPEN, and the unavailable2026 antithetic manuscript cannot be ruled out.
+  This is not a practical promotion/full-gradient/generation/EPIC gate.
 - [ ] T6202: Only after theory/prior survives, select a useful operation and
   competent complete-cost controls. No publication or practical gate yet.
 

@@ -91,3 +91,19 @@ On ALL six OLD banks, matching6/pivotal6 bias reductions differ by less than
 Do not promote this proxy/application or start a large neural campaign from
 these numbers. Written theoretical originality/CFG-specific use remain open;
 see work/decision-v5.md. No new forward or full-gradient training occurred.
+
+V6 changes the SOURCE contract explicitly: six IID original proposals WITH
+replacement, retaining repeated states/aliases and the literally first state.
+Its unconditional covariance theorem now has a PURE written square proof,
+without V4's finite certificates. Two symbolic identities and8,256 weighted
+raw-tape enumerations pass under frozen producer a300a2e. With unknown class
+masses, the score-oblivious six-query coupling is balanced worst-direction
+minimax; pivotal6 shares that frontier. At four balanced classes its analytic
+variance reduction is33/128 versus iid2, and9/104 versus the optimal worst
+direction for universal cap4/cap5 couplings. Those are information-model
+statements, not neural or hardware gains. The lower bound admits neither
+free masses/inverses nor score-aware policy changes for each direction.
+Those stronger methods MUST remain practical comparators. V5's negative
+promotion decision stands; novelty and useful complete-cost CFG application
+remain unresolved. See work/iid-theorem-v6.md, primary-and-scope-v6.md and
+evidence/origin-v6.json. Main article and APIs remain unchanged.

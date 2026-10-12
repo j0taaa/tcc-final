@@ -1,0 +1,21 @@
+{
+  "source_commit": "a300a2e7cfff60aed87eaaf77c3010fa9408ce9d",
+  "scope": "Pure written IID covariance theorem and exact small correctness oracle; no priority, full-gradient training or physical performance gate. Lower bound is score-oblivious and opaque-IID only.",
+  "commands": [
+    ".venv-live/bin/python -m attempts.42-safe-empirical-resampling.work.iid_oracle_v6 --output attempts/42-safe-empirical-resampling/work/evidence/iid-v6.json"
+  ],
+  "checks": {
+    "symbolic_identities": 2,
+    "exact_raw_tapes": 8256,
+    "balanced_classes": 31,
+    "new_model_calls": 0
+  },
+  "files": {
+    "iid-contract-v6.md": "47feca1cecfd255c1f13f60b2d12a6f9211790ed1befc12501b8856786e8cf9a",
+    "iid-theorem-v6.md": "870847b66315d847ed8ee16b79e1adec0164666c08308c3afbd4824fbdb67af7",
+    "iid_pair_v6.py": "0f0803b6c7a2bba43d284c620ca3d65d19354215c959f284a14ee09ba94a1a94",
+    "iid_oracle_v6.py": "4932a86d5097867574db68e8097ba340331ec0ab0ca4bc2387033ff3a980f041",
+    "evidence/iid-v6.json": "c8d3b6e9471b184baf52d7bb395b4b4c95470b29d336e8f3671dcd167aa6d869",
+    "primary-and-scope-v6.md": "8f95e90696ff0f9657a3a97b0158915d0211b3dc9fa6a63ff26d1e9cb870ff01"
+  }
+}
