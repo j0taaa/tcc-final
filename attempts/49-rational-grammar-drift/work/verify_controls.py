@@ -8,7 +8,13 @@ import traceback
 from fractions import Fraction as F
 from pathlib import Path
 
-from . import angular_control, angular_streamed, calibrated_endpoint, hybrid_endpoint
+from . import (
+    adaptive_angular,
+    angular_control,
+    angular_streamed,
+    calibrated_endpoint,
+    hybrid_endpoint,
+)
 from . import verify_forest as words
 from .forest import certificate
 from .product import certificate as product_certificate
@@ -18,8 +24,10 @@ from .verify_product import cases as products, expected as product_truth
 ENGINES = [angular_control, calibrated_endpoint, hybrid_endpoint]
 
 
-def run(output, streamed=False):
+def run(output, streamed=False, adaptive=False):
     engines = [angular_streamed, calibrated_endpoint, hybrid_endpoint] if streamed else ENGINES
+    if adaptive:
+        engines = [adaptive_angular, calibrated_endpoint, hybrid_endpoint]
     output.mkdir(parents=True, exist_ok=False)
     (output / "metadata.json").write_text(
         json.dumps(
@@ -33,26 +41,43 @@ def run(output, streamed=False):
             for name, rows in cases():
                 for engine in engines:
                     for grid in (
-                        [21, 40, 80] if engine in [angular_control, angular_streamed] else [1, 2, 4]
+                        [21, 40, 80]
+                        if engine in [angular_control, angular_streamed, adaptive_angular]
+                        else [1, 2, 4]
                     ):
                         result = engine.compress(rows, grid)
                         factor = (
                             grid
-                            if engine in [angular_control, angular_streamed]
+                            if engine in [angular_control, angular_streamed, adaptive_angular]
                             else 16 * grid * grid
                         )
-                        loss = 20 if engine in [angular_control, angular_streamed] else 1
+                        loss = (
+                            20
+                            if engine in [angular_control, angular_streamed, adaptive_angular]
+                            else 1
+                        )
                         directions = {
                             (1, 0),
                             (0, 1),
                             *((-b, a) for a, b in [*rows, *result] if a or b),
                         }
+                        if adaptive and engine is adaptive_angular:
+                            from .norm_index import NormIndex, minimum_ratio
+
+                            left_index, right_index = NormIndex(rows), NormIndex(result)
+                            ratios = []
                         for w in directions:
                             before, after = norm(rows, w), norm(result, w)
                             assert after <= before and factor * after >= (factor - loss) * before
+                            if adaptive and engine is adaptive_angular:
+                                assert left_index.at(w) == before and right_index.at(w) == after
+                                if before:
+                                    ratios.append(F(after, before))
+                        if adaptive and engine is adaptive_angular:
+                            assert minimum_ratio(rows, result) == min(ratios, default=F(1))
                         bound = (
                             8 * grid + 4
-                            if engine in [angular_control, angular_streamed]
+                            if engine in [angular_control, angular_streamed, adaptive_angular]
                             else 64 * grid
                         )
                         assert len(result) <= bound
@@ -80,7 +105,14 @@ def run(output, streamed=False):
                     truth = words.expected(first, second, emissions, kind)
                     for engine in engines:
                         for epsilon in [F(1), F(1, 2), F(1, 10)]:
-                            result = certificate(plan, first, second, epsilon, compressor=engine)
+                            result = certificate(
+                                plan,
+                                first,
+                                second,
+                                epsilon,
+                                compressor=engine,
+                                exact_passthrough=adaptive,
+                            )
                             if truth is None:
                                 assert result["status"] == "ZERO_VALID_MASS_UNDEFINED_TV"
                             else:
@@ -138,7 +170,7 @@ def run(output, streamed=False):
                             + "\n"
                         )
         streamed_products = 0
-        if streamed:
+        if streamed or adaptive:
             rng = random.Random(2026101204913)
             for _ in range(100):
                 left = [(rng.randrange(-10, 11), rng.randrange(-10, 11)) for _ in range(7)]
@@ -150,6 +182,10 @@ def run(output, streamed=False):
                     for w in {(1, 0), (0, 1), *((-b, a) for a, b in [*rows, *result] if a or b)}:
                         before, after = norm(rows, w), norm(result, w)
                         assert after <= before and grid * after >= (grid - 20) * before
+                    if adaptive:
+                        assert adaptive_angular.compress_product(
+                            left, right, grid
+                        ) == adaptive_angular.compress(rows, grid)
                     streamed_products += 1
         summary = dict(
             status="CORRECTNESS_ONLY",
@@ -171,5 +207,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--streamed", action="store_true")
+    parser.add_argument("--adaptive", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.streamed)
+    run(args.output, args.streamed, args.adaptive)
