@@ -15,6 +15,40 @@ word_oracle = importlib.import_module("attempts.49-rational-grammar-drift.work.v
 
 
 class IntegerTvTests(unittest.TestCase):
+    def test_known_root_query_on_original_json_macros(self):
+        _, kind, emissions, rows = list(word_oracle.fixtures())[2]
+        source = word_oracle.json_source_grammar()
+        rng = random.Random(202610120492)
+        for mode in ["equal", "zero", "different"]:
+            first, second = word_oracle.make_inputs(source, emissions, rows, mode, rng)
+            plan = word_oracle.compile_cfg_sampler(source, first.state)
+            truth = word_oracle.expected(first, second, emissions, kind)
+            for name in [
+                "adaptive_angular",
+                "calibrated_endpoint",
+                "hybrid_endpoint",
+                "ordered_planar",
+            ]:
+                engine = importlib.import_module("attempts.49-rational-grammar-drift.work." + name)
+                with self.subTest(mode=mode, engine=name):
+                    result = word_oracle.certificate(
+                        plan,
+                        first,
+                        second,
+                        F(1, 10),
+                        compressor=engine,
+                        exact_passthrough=True,
+                        known_root_query=True,
+                    )
+                    if truth is None:
+                        self.assertEqual(result["status"], "ZERO_VALID_MASS_UNDEFINED_TV")
+                    else:
+                        self.assertLessEqual(result["lower"], truth)
+                        self.assertGreaterEqual(result["upper"], truth)
+                        self.assertLessEqual(result["upper"], F(11, 10) * result["lower"])
+                        self.assertEqual(result["root_rows"], 0)
+                        self.assertGreaterEqual(result["root_lower_factor"], F(10, 11))
+
     def test_scalar_coupling_on_original_ids_and_nontrivial_node_order(self):
         _, kind, emissions, rows = list(word_oracle.fixtures())[1]
         source = word_oracle.dyck_source()
