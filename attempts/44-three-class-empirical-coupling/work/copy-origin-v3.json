@@ -11,8 +11,10 @@
   },
   "noise_features.py": {
     "from": "attempts/41-structured-noising-covariance/work/noise_features.py",
-    "sha256": "b9450b91026db1dc9ca958d0a4aa2eb15a4f23caa967989d3ba5dfe48d060aa0",
-    "commit": "3ca3914508e773b2f8d5cb844a87f3a45a50c0b0"
+    "sha256": "a9be32caa776c992200a51d12b3b0fa32daa13ad3c4825ab0621613f4a00460d",
+    "commit": "3ca3914508e773b2f8d5cb844a87f3a45a50c0b0",
+    "original_sha256": "b9450b91026db1dc9ca958d0a4aa2eb15a4f23caa967989d3ba5dfe48d060aa0",
+    "declared_changes": "Exactly three farthest-first/Lloyd centers instead of four; same ridge/features. No current-gradient fitting."
   },
   "documents-v3.json": {
     "from": "attempts/41-structured-noising-covariance/work/documents-v5.json",

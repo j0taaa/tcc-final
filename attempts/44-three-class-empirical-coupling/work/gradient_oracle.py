@@ -51,7 +51,7 @@ def run(output):
             {
                 "source_product_families": checks,
                 "RSS_tapes_each": 625,
-                "scope": "Independent bookkeeping oracle; no neural or favourable benchmark evidence.",
+                "scope": "Independent bookkeeping oracle; no neural/benchmark evidence.",
             },
             indent=2,
         )
