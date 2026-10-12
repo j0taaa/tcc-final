@@ -60,8 +60,9 @@ The maintained LL(1)/EOS-free contract is not enlarged by this investigation.
 Current primary sources actually inspected: Fu2609.24235v1 sections1,3.3--3.4
 and4.1 (general framework, real-arithmetic boundary); Bhattacharyya et al.
 2609.18707v2 sections1,4 (common-v-tree condition and product propagation).
-The ICML2024 inference reduction has only been downloaded/abstract read so far;
-its full reduction remains a mandatory elimination check.
+The ICML2024 inference reduction's definitions2.7--2.11 and technical
+overview3.1 have been read; its full reduction remains a mandatory elimination
+check. Do not claim to have audited its full proof.
 
 The next deliverable is a proof/obstruction, not a performance campaign.
 
@@ -72,3 +73,17 @@ disjoint-sum forest and keeps source preparation/word-faithfulness as separate
 obligations. A small compiled-forest adapter/oracle is frozen BEFORE observations;
 it checks original aliases and macro tokens against separate stack/JSON parsing.
 No neural capture, performance protocol, main API or article has changed.
+
+V2 producer51245fc passes all75 predeclared compiled-forest cases:48
+certificates and27 zero-mass refusals, compared to independent original-ID
+enumeration. All outputs are preserved. These are correctness observations.
+
+V3 re-evaluates the eight criteria BEFORE implementation: operation/application
+and hypotheses are unchanged (1,5,6); the candidate difference and reason to
+choose are now a quantitative integer core improvement, O(sqrt(d/epsilon))
+stored generators versus Fu's stated O((d/epsilon)^2), with a full bit bound
+(2--4). Classical convex approximation is explicitly credited; a strengthened
+planar control can share the benefit, so no exclusivity or physical speed is
+claimed (7). `work/optimal-planar-proof-v3.md` states the algorithm, proof,
+complete costs, comparison boundaries and falsification gate. Specific TV
+priority, real application and publication relevance remain OPEN (8).

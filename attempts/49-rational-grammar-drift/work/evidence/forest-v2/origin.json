@@ -1,0 +1,9 @@
+{
+  "producer": "51245fc40c09397d2d9f2020b68bc388592c74f3",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_forest --output .cache/a49-forest-v2",
+  "scope": "CORRECTNESS_ONLY; original-ID enumeration with independent stack/JSON recognizers; no model or timing",
+  "sha256": {
+    "rows.jsonl": "a47cbdef02427848de88cc77d5414228f83123469c6c6c4ba01bf2d2b1b592fa",
+    "summary.json": "fd6bfaad0426d215d5039429228b4d6b126292d06bcf6880aec8eca1f2fa9b75"
+  }
+}

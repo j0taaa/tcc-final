@@ -41,7 +41,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   exhaustive sign-domain queries;2,799 cases actually shorten. V2 writes
   the polynomial bit theorem for an ADMITTED scoped event forest, explicitly
   separating original-source preparation and compiler verification. The
-  new compiled-forest oracle is frozen before observations.
+  producer51245fc's compiled-forest oracle passes all75 cases (48 certificates,
+  27 undefined-zero-mass refusals). All original-ID expected answers are
+  independently enumerated. V3 writes BEFORE code a classical-projection,
+  integer-endpoint refinement with O(sqrt(d/epsilon)) stored core rows and
+  explicit comparative/bit bounds. Priority and full source admission open.
   Finite checks do not establish novelty, speed, model utility or publication.
 - [ ] T6902: Only if the specific distinction/use survives the closest priors,
   implement/validate the smallest real operation with a predeclared fair
