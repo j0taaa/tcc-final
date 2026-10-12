@@ -1,0 +1,9 @@
+{
+  "producer": "bb1be02eec775f0f78be648c27fdd382595b17dd",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_bridge --output .cache/a49-bridge-v9",
+  "scope": "CORRECTNESS_ONLY",
+  "sha256": {
+    "rows.jsonl": "ee66f070394ab096a0d6826cdce689582b500388c075f64c67b836e4a8dbcae0",
+    "summary.json": "821d40708f0f0fa33a7e0b3009a124d7568f620152a9519885745cc710b0708c"
+  }
+}

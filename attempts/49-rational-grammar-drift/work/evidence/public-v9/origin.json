@@ -1,0 +1,10 @@
+{
+  "producer": "bb1be02eec775f0f78be648c27fdd382595b17dd",
+  "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m attempts.49-rational-grammar-drift.work.public_audit --output .cache/a49-public-v9",
+  "scope": "ALL6 predefined numerical probability-table cases on sole public full-head packet; functional audit, no model execution or competitive timing gate",
+  "sha256": {
+    "rows.jsonl": "6ed1e64f3ae415c8ca1f7a27285528eb210d27f52dbeb3600476d8cc0530ea3d",
+    "summary.json": "391afd2b867cb29f6cec921cabb6f1c92ef0e5a29e896ed5f912e9bc9a3451f0",
+    "metadata.json": "8935e2318a18da7877ea0b635d24b7c1def4fa9b6a67c2e7603d0a09cc5ae44c"
+  }
+}
