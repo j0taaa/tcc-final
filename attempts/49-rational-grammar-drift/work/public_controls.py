@@ -25,6 +25,7 @@ from . import (
 from . import public_audit as old
 from .forest import certificate
 from .mass_aware_controls import controls as strengthened_controls
+from .sampler_overlap import controls as overlap_controls
 
 ENGINES = [angular_control, calibrated_endpoint, hybrid_endpoint]
 
@@ -41,7 +42,7 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def run(output, streamed=False, adaptive=False, massaware=False, ordered=False):
+def run(output, streamed=False, adaptive=False, massaware=False, ordered=False, overlap=False):
     engines = [angular_streamed, calibrated_endpoint, hybrid_endpoint] if streamed else ENGINES
     if adaptive:
         engines = [adaptive_angular, calibrated_endpoint, hybrid_endpoint]
@@ -49,6 +50,8 @@ def run(output, streamed=False, adaptive=False, massaware=False, ordered=False):
         if not adaptive or not massaware:
             raise ValueError("ordered audit requires the strongest adaptive/scalar controls")
         engines.append(ordered_planar)
+    if overlap and not ordered:
+        raise ValueError("overlap audit requires all four engines/strong controls")
     output.mkdir(parents=True, exist_ok=False)
     started = clock()
     packet = old.FROZEN / "packet.zip"
@@ -68,6 +71,7 @@ def run(output, streamed=False, adaptive=False, massaware=False, ordered=False):
         max_rows=1_000_000,
         exact_passthrough=adaptive,
         mass_aware_scalar_controls=massaware,
+        sampler_overlap_controls=overlap,
     )
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     try:
@@ -124,6 +128,8 @@ def run(output, streamed=False, adaptive=False, massaware=False, ordered=False):
                 baseline = old.controls(plan, first, second)
                 if massaware:
                     baseline["mass_aware"] = strengthened_controls(plan, first, second)
+                if overlap:
+                    baseline["sampler_overlap"] = overlap_controls(plan, first, second)
                 control_cost = elapsed(began)
                 for epsilon in [F(1, 2), F(1, 10)]:
                     for engine in engines:
@@ -143,6 +149,8 @@ def run(output, streamed=False, adaptive=False, massaware=False, ordered=False):
                             )
                             if massaware:
                                 assert report["lower"] <= baseline["mass_aware"]["upper"]
+                            if overlap:
+                                assert report["lower"] <= baseline["sampler_overlap"]["upper"]
                             completed += 1
                         except RuntimeError as exc:
                             report = dict(status="RESOURCE_REFUSAL", reason=str(exc))
@@ -212,5 +220,6 @@ if __name__ == "__main__":
     parser.add_argument("--adaptive", action="store_true")
     parser.add_argument("--massaware", action="store_true")
     parser.add_argument("--ordered", action="store_true")
+    parser.add_argument("--overlap", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.streamed, args.adaptive, args.massaware, args.ordered)
+    run(args.output, args.streamed, args.adaptive, args.massaware, args.ordered, args.overlap)
