@@ -1885,6 +1885,74 @@
           ]
         }
       ]
+    },
+    {
+      "id": "45-random-order-empirical-towers",
+      "title": "Random-order empirical towers \u2014 falsification before proof",
+      "conclusion": "6,230 finite cases without obstruction are NOT proof; arbitrary-class safety and neural utility remain open.",
+      "reading": "attempts/45-random-order-empirical-towers/README.md; TASKS.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "1d68d3a1d36442f2ff07bb58e31f1da021aada91",
+          "evidence_commit": "be388fb2e0e2de4528a0328dea2735acd15c1e10",
+          "evidence_roots": [
+            "attempts/45-random-order-empirical-towers/README.md",
+            "attempts/45-random-order-empirical-towers/work"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "46-ambiguity-aware-conditioning",
+      "title": "Ambiguity-aware conditioning \u2014 primary reduction before code",
+      "conclusion": "Generic reciprocal correction and weighted FPRAS lifting are established; no new implementation or publication result.",
+      "reading": "attempts/46-ambiguity-aware-conditioning/README.md; TASKS.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "be388fb2e0e2de4528a0328dea2735acd15c1e10",
+          "evidence_commit": "be388fb2e0e2de4528a0328dea2735acd15c1e10",
+          "evidence_roots": [
+            "attempts/46-ambiguity-aware-conditioning/README.md",
+            "attempts/46-ambiguity-aware-conditioning/work"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "47-exact-logit-forest-sampling",
+      "title": "Exact logit/interval forest sampling \u2014 primary reduction before code",
+      "conclusion": "Generic interval decisions and expected precision are established; complete specialized bit costs are unwritten, no solver or novelty win.",
+      "reading": "attempts/47-exact-logit-forest-sampling/README.md; TASKS.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "be388fb2e0e2de4528a0328dea2735acd15c1e10",
+          "evidence_commit": "be388fb2e0e2de4528a0328dea2735acd15c1e10",
+          "evidence_roots": [
+            "attempts/47-exact-logit-forest-sampling/README.md",
+            "attempts/47-exact-logit-forest-sampling/work"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "48-grammar-factor-representation",
+      "title": "Grammar/factor representation \u2014 primary reduction before code",
+      "conclusion": "Generic PCFG versus wide natural factors and context-specific diagrams are established; constant gated branches require a strong conditioning control.",
+      "reading": "attempts/48-grammar-factor-representation/README.md; TASKS.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "be388fb2e0e2de4528a0328dea2735acd15c1e10",
+          "evidence_commit": "be388fb2e0e2de4528a0328dea2735acd15c1e10",
+          "evidence_roots": [
+            "attempts/48-grammar-factor-representation/README.md",
+            "attempts/48-grammar-factor-representation/work"
+          ]
+        }
+      ]
     }
   ]
 }
