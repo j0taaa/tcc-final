@@ -27,6 +27,21 @@ The renewed user goal requires a defensible original contribution, not only
 consolidating A24. M47 investigates a concrete preparation bottleneck without
 resetting earlier losses or claiming that prototype correctness proves novelty.
 
+## M64 — Three-class finite-budget arbitrary-vector safety
+
+- [x] T6400: BEFORE code or model measurements write44's independent eight
+  criteria and candidate analytic proof: empirical atom-optimal three-label
+  coupling, binomial diagonal deficit, square-root concavity, Heron/minor PSD,
+  all-target covariance, balanced cap-B minimax and exponential repeat bound.
+  Classic transports/RSS/Bernstein bounds credited. No novelty/model win.
+- [ ] T6401: Independently enumerate original payloads/aliases and random
+  sampler choices; verify rational minors, all-budget polynomials and preserve
+  adverse C4/nonuniform comparisons. Audit primary ranked/systematic sampling
+  before calling the specific all-vector theorem a contribution.
+- [ ] T6402: Only if proof and priority/use survive, preregister full-cost
+  dLLM/CFG application with RSS/CV/count/inverse and seed controls. No revived
+  root-known source or favorable case selection; old negative evidence stands.
+
 ## M63 — Adaptive original-source excursions
 
 - [x] T6300: BEFORE code/model outputs write43's independent README/eight
@@ -49,6 +64,9 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 - [ ] T6302: Only if distinction/use survives, freeze a competent full-cost
   dLLM/CFG application. A42 root boundary is too late and may not be reused
   as a cheap informative source; A41 negative stronger controls stand.
+  Adverse primary reduction in43/work/primary-reduction-v3.md identifies the
+  scalar statistic as a classical conditional-first-indicator estimator.
+  Retained original-payload frontier question remains open; not article-ready.
 
 ## M62 — Safe empirical resampling at every source budget
 
