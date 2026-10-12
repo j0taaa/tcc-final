@@ -2201,6 +2201,18 @@
             "attempts/49-rational-grammar-drift/work/evidence/checks-v22.json",
             "output/pdf/grammatical-drift-v22.pdf"
           ]
+        },
+        {
+          "id": "v23",
+          "source_commit": "310f7fb183f88f3009f4facc5a33488009241656",
+          "evidence_commit": "310f7fb183f88f3009f4facc5a33488009241656",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/independent-inputs-v23.md",
+            "attempts/49-rational-grammar-drift/work/protocol-v23.json",
+            "attempts/49-rational-grammar-drift/work/model-v23.json",
+            "attempts/49-rational-grammar-drift/work/capture_external.py"
+          ]
         }
       ]
     }
