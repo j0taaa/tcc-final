@@ -1805,6 +1805,22 @@
           ]
         }
       ]
+    },
+    {
+      "id": "43-adaptive-source-excursions",
+      "title": "Fronteira adaptativa de queries de fontes originais",
+      "conclusion": "Prova escrita de custo m\u00e9dio sharp para duas classes; prioridade e benef\u00edcio dLLM/CFG completo ainda abertos.",
+      "reading": "TASKS.md; attempts/43-adaptive-source-excursions/work/excursion-proof-v1.md; attempts/43-adaptive-source-excursions/work/primary-v1.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "6dcd88e16ccf20297aceb82a65a26b9c3f2ae38e",
+          "evidence_commit": "bdcc5aa97c045818be1d2c9c743773d0cf06b56f",
+          "evidence_roots": [
+            "attempts/43-adaptive-source-excursions/work/evidence"
+          ]
+        }
+      ]
     }
   ]
 }
