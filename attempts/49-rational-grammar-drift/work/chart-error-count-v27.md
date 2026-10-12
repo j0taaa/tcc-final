@@ -45,6 +45,20 @@ bounded singleton leaf lists, with the stated leaf-domain work added when
 needed. Integer bit costs and both normalizers remain explicit. No root grid
 in the active code is changed: it already computes its actual expanded count.
 
+A normal chart cell can have a WIDE OR. Do not force binary OR conversion and
+still reuse the3B bound: additional compressed OR nodes would add error.
+Retaining the actual flat OR, an f-alternative union contains O(fM) rows and
+costs O(fM log(fM+2)) with the existing unordered sort. Since the total number
+of wires/alternatives is included in H, the appropriate full chart bound is
+
+    O(H*((B/epsilon)*log(B/epsilon+2)
+          +sqrt(B/epsilon)*log(H+2)))
+
+arithmetic operations, plus input/normalizers. The second term pays wide-union
+sorting; it cannot be dropped by calling the chart bounded-fan-in. Storage
+is O(H*sqrt(B/epsilon)+B/epsilon), including one live Cartesian table and
+wide-union storage. This is an upper bound, not an optimality claim.
+
 This is a grammar-specific precision parameter, not a claim to improve the
 classical cubic chart-construction cost, or a lower bound on every TV method.
 Compared with a generic higher-dimensional compression bound instantiated at
