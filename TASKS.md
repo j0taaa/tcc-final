@@ -167,6 +167,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   FIRST doc is seen regression; remaining FOUR unseen byA49 TV development,
   not unseen byA24/model training. Strongest controls/costs/refusals preserved.
   Newcapture/producer/evidence and functional precision gate still PENDING.
+- [ ] T6917: V24 writes BEFORE code a stronger classical sampler-overlap scalar
+  control on full/common support, with certified dyadic lower recurrence.
+  ALL75 oracle cases and ALL24 old functional rows must repeat before the
+  independent-document capture. V23 source/protocol archived with ZERO new
+  forwards/TV observations; no metric-driven threshold or case change.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

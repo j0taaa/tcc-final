@@ -346,3 +346,10 @@ masks remain; FIRST document is seen regression, only the remaining FOUR are
 unseen by A49's TV development. Do not call the whole corpus independent.
 All360 format/tolerance/engine rows and strongest controls are mandatory;
 refusals/losses remain. This is certificate precision, not a speed/EPIC gate.
+
+V24 BEFORE new forwards strengthens the scalar baseline again:
+`sampler-overlap-control-v24.md` writes a classical common-alternative/child
+coupling upper on the full law AND common support, with dyadic DOWN rounding
+for polynomial bits. Repeat ALL75 independent cases and ALL24 development
+rows before untouched-document evaluation. This control may erase the old
+gap. V23 has ZERO forwards/new TV observations; its protocol/source are frozen.
