@@ -23,6 +23,14 @@ These readings narrow novelty claims; they do not certify priority.
   <https://zhankunluo.com/publication/antithetic/>. No full manuscript obtained;
   the author page supplies no PDF link for it. Priority cannot be ruled out
   using the different2025 slides/manuscript.
+- Patil/Sinha/Taillie1997, *Ranked set sampling, coherent rankings and
+  size-biased permutations*, DOI10.1016/S0378-3758(97)00030-X:
+  <https://www.sciencedirect.com/science/article/abs/pii/S037837589700030X>.
+  Actually read the publisher abstract only; full proof not obtained. It
+  already establishes monotone performance with set size under coherent
+  rankings. Thus monotonicity of a cheap-pool sampling scheme is not itself
+  new. The retained-two-output/fixed-label C4 construction needs comparison
+  against that stronger prior, not an invented ineffective RSS control.
 
 V10 extends V7's local correction through C4's conditional U-statistic
 diagonal. Dirichlet-form refinements and U-statistic reverse conditioning are

@@ -128,3 +128,18 @@ V9's new endpoint screen0/4/45 has37200 checks with no >1e-10 obstruction;
 sufficiency remains OPEN. Exact two-moment algebra is in family-algebra-v9.md;
 a coarse Jensen proof tactic fails. These are proof aids and counterexamples,
 not model measurements, novelty certification or a practical promotion.
+
+V10 changes construction instead of assuming V9: it refines the classical
+C4 law with a nonnegative min-capacity graph correction computed from its
+conditional four-subpool diagonals. A pure written argument proves universal
+covariance domination of C4, budget monotonicity for every B>=4, and an
+optimal balanced limiting class-contrast bound. The43-line integer reference
+keeps the first original position;145 independent pool laws,1053 weighted
+raw tapes, five exact sampler laws and28 balanced sums pass under producer
+a5d2445. See work/monotone-budget-proof-v10.md and evidence/origin-v10.json.
+For the eight criteria, use work/monotone-budget-contract-v10.md: no new
+forwards, model training or practical promotion. Classical Dirichlet forms,
+U-statistics and monotone ranked-set sampling are serious antecedents.
+The ideal four-class improvement over C4 is only7/39 of between-class pair
+variance, before overhead; stronger pivotal/RSS/CV controls remain relevant.
+The publication/complete-cost dLLM/CFG goal is NOT fulfilled by this lemma.

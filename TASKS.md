@@ -73,6 +73,15 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   obstruction but is NOT proof. family-algebra-v9 reduces sufficiency to an
   explicit two-moment quadratic form with a centering constraint; OPEN.
   Frozen producers b7ee9e0/847cea3. Zero new neural calls/publication gate.
+  V10 uses a DIFFERENT construction: explicit C4 conditional diagonals plus
+  a min-capacity Laplacian correction. Pure proof gives all-vector domination
+  of C4 for every B>=4, monotonicity in B, and a balanced optimal asymptotic
+  contrast limit.145 independent pool laws,1053 weighted original tapes,
+  five exact sampler laws and28 balanced sums pass; producer a5d2445.
+  Fixed declared label count is required. Generic Dirichlet/U-statistic tools
+  are classical; priority and meaningful complete-cost CFG use remain OPEN.
+  At four balanced classes even its ideal limit improves C4's class-mean
+  variance by only7/39; not a20% practical gate or dominance of pivotal/RSS.
 - [ ] T6202: Only after theory/prior survives, select a useful operation and
   competent complete-cost controls. No publication or practical gate yet.
 

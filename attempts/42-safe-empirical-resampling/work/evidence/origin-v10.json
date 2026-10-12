@@ -1,0 +1,13 @@
+{
+  "source_commit": "a5d24457c66450aa521c92eaabad5faf26487337",
+  "source_sha256": {
+    "monotone-budget-contract-v10.md": "26682ac66abe32441ffa810b065b15d968c5656fcfca1c8e6a3ac21b5d1c066b",
+    "monotone-budget-proof-v10.md": "749db044be85ca63738ef1f481bca49e0f6f769711414d21053bd07126d8dfd0",
+    "monotone_budget_v10.py": "9e2020c7b24164c4a6f46db2178c0dee0a23cba21737ebd60092455be61a1d8f",
+    "monotone_budget_oracle_v10.py": "3cd9d794d0ad638d2c2bdde9ea0bd2433db3273e0f2b4e8db4c0da2559e7ee91",
+    "primary-addendum-v10.md": "16747808cd6f1368e51138b17139fcaa70a6f204b60b33d6dd36dc7c99561cee"
+  },
+  "command": ".venv/bin/python -m attempts.42-safe-empirical-resampling.work.monotone_budget_oracle_v10 --output attempts/42-safe-empirical-resampling/work/evidence/monotone-budget-v10.json",
+  "scope": "Pure written all-budget comparison plus finite rational implementation checks. No new forwards, runtime, training, independent confirmation, EPIC superiority or priority certificate.",
+  "result_sha256": "55015d2f0b268f0f5a5e67174db10736b858680ba330a89e398e671730f705ad"
+}

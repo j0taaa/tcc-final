@@ -825,3 +825,13 @@ O reparo local H6 tem ganho pequeno e isso não justifica promoção. V9 tem
 37.200 checks numéricos sem obstrução no intervalo necessário0/4/45, mas a
 suficiência continua conjectural; há redução algébrica escrita, não prova.
 Nenhum novo forward ou campanha neural. Não apagar/refavorecer esses casos.
+
+A42 v10 muda a construção: refino de C4 por capacidades diagonais e
+Laplaciano não negativo. Prova escrita pura cobre dominação de covariância
+de C4 para todoB>=4 e monotonicidade emB, com limite balanceado ótimo entre
+couplings de duas saídas.145 leis de pools,1053 tapes racionais, cinco leis
+do sampler e28 somas balanceadas passam. L declarado fixo é obrigatório.
+Dirichlet/U-statistics e monotonicidade RSS são antecedentes, não novidade.
+O limite ideal de quatro classes melhora C4 só7/39 na variância ENTRE classes;
+não é gate20% integral, vitória contra pivotal/RSS/CV, modelo treinado ou
+vantagem EPIC. Prioridade e uso CFG/dLLM de custo completo continuam abertos.
