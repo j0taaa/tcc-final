@@ -12,12 +12,15 @@ from .public_controls import digest
 WORK = Path(__file__).resolve().parent
 
 
-def run(source, output):
-    protocol = json.loads((WORK / "protocol-v25.json").read_text())
+def run(source, output, development_known_root=False):
+    protocol_path = WORK / ("protocol-v26.json" if development_known_root else "protocol-v25.json")
+    protocol = json.loads(protocol_path.read_text())
     metadata = json.loads((source / "metadata.json").read_text())
     summary = json.loads((source / "summary.json").read_text())
-    assert not metadata["development_only"]
-    assert metadata["protocol_sha256"] == digest(WORK / "protocol-v25.json")
+    assert metadata["development_only"] == development_known_root
+    assert metadata["protocol_sha256"] == digest(protocol_path)
+    if development_known_root:
+        assert metadata["known_root_query"] and summary["known_root_query"]
     rows = [json.loads(line) for line in (source / "rows.jsonl").read_text().splitlines()]
     expected = {
         (r["key"], n, kind, eps, engine)
@@ -41,10 +44,12 @@ def run(source, output):
             case=row["source_case"],
             mask_count=row["mask_count"],
             format=row["format"],
-            primary_unseen=independent,
+            primary_unseen=independent and not development_known_root,
             status=row["status"],
             passes_2x=False,
         )
+        if development_known_root:
+            result["was_unseen_in_v25"] = independent
         if row["status"] == "CERTIFIED_ON_ADMITTED_FOREST":
             c = row["controls"]
             cheap = min(
@@ -81,37 +86,42 @@ def run(source, output):
             )
         pairs.append(result)
     primary = [r for r in pairs if r["primary_unseen"]]
-    assert len(pairs) == 45 and len(primary) == 36
-    wins = [r for r in primary if r["passes_2x"]]
+    assert len(pairs) == 45 and len(primary) == (0 if development_known_root else 36)
+    wins = [r for r in (pairs if development_known_root else primary) if r["passes_2x"]]
     robust = [r for r in wins if r.get("robust_against_ideal_control_rounding")]
     result = dict(
         status="INCOMPLETE_NOT_A_CONFIRMED_GATE"
         if summary["status"] != "COMPLETE_FUNCTIONAL_AUDIT"
+        else "DEVELOPMENT_ONLY_PRECISION_REPLAY"
+        if development_known_root
         else "PASS_LIMITED_PRECISION_GATE"
         if wins
         else "FAIL_LIMITED_PRECISION_GATE",
         predicate=protocol["usefulness_gate"],
-        primary_pairs=36,
-        passed_primary_pairs=len(wins),
-        robust_primary_pairs=len(robust),
+        primary_pairs=len(primary),
+        passed_primary_pairs=0 if development_known_root else len(wins),
+        robust_primary_pairs=0 if development_known_root else len(robust),
         all45pairs=pairs,
         all360statuses=dict(Counter(r["status"] for r in rows)),
         rows_sha256=digest(source / "rows.jsonl"),
         metadata_sha256=digest(source / "metadata.json"),
-        protocol_sha256=digest(WORK / "protocol-v25.json"),
+        protocol_sha256=digest(protocol_path),
         claim_scope=(
             "Certificate precision only; no speed/semantic/iterative/priority/acceptance claim"
         ),
     )
+    if development_known_root:
+        result.update(
+            development_pairs=45,
+            passed_development_pairs=len(wins),
+            robust_development_pairs=len(robust),
+            new_forwards=0,
+            independent_confirmation=False,
+        )
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2, default=str) + "\n")
     print(
-        json.dumps(
-            {
-                k: result[k]
-                for k in ["status", "primary_pairs", "passed_primary_pairs", "all360statuses"]
-            }
-        ),
+        json.dumps({k: v for k, v in result.items() if k != "all45pairs"}),
         flush=True,
     )
 
@@ -120,5 +130,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--development-known-root", action="store_true")
     args = parser.parse_args()
-    run(args.source, args.output)
+    run(args.source, args.output, args.development_known_root)
