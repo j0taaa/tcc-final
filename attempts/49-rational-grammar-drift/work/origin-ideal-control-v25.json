@@ -1,0 +1,15 @@
+{
+  "producer": "29345c9f722b9857e54429ed35119214c3c8ff31",
+  "status": "CORRECTNESS_ONLY",
+  "cases": 75,
+  "counts": {
+    "PASS": 48,
+    "UNDEFINED_ZERO_MASS": 27
+  },
+  "new_forwards": 0,
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_ideal --output .cache/a49-ideal-control-v25",
+  "files": {
+    "rows.jsonl": "bf4c68937d896c645650769075c1abbaf3a020e9b66acbd0cf9bdf4399db9b93",
+    "summary.json": "c00b397e2866717b54fb901fa3daea860651d3ea1efe1fd93f9871d49ff6401a"
+  }
+}
