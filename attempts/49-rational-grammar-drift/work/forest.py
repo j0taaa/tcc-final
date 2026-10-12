@@ -76,11 +76,28 @@ def certificate(plan, first, second, epsilon=Fraction(1, 2), max_rows=100_000, c
                 part = [tuple(w[position][index] for w in weights)]
             elif term.children:
                 left, right = term.children
-                if len(cores[left]) * len(cores[right]) > max_rows:
+                stream_product = getattr(engine, "compress_product", None)
+                if stream_product is not None:
+                    count = len(cores[left]) * len(cores[right])
+                    peak_rows = max(peak_rows, count)
+                    product_bits = max(
+                        (
+                            (
+                                max((abs(a[j]) for a in cores[left]), default=0)
+                                * max((abs(a[j]) for a in cores[right]), default=0)
+                            ).bit_length()
+                            for j in [0, 1]
+                        ),
+                        default=0,
+                    )
+                    peak_bits = max(peak_bits, product_bits)
+                    part = stream_product(cores[left], cores[right], grid)
+                elif len(cores[left]) * len(cores[right]) > max_rows:
                     raise RuntimeError("research product budget: no certificate issued")
-                part = reduce(
-                    [(a[0] * b[0], a[1] * b[1]) for a in cores[left] for b in cores[right]]
-                )
+                else:
+                    part = reduce(
+                        [(a[0] * b[0], a[1] * b[1]) for a in cores[left] for b in cores[right]]
+                    )
             else:
                 part = [(1, 1)]
             if len(rows) + len(part) > max_rows:

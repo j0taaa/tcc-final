@@ -14,7 +14,7 @@ from zipfile import ZipFile
 
 import numpy as np
 
-from . import angular_control, calibrated_endpoint, hybrid_endpoint
+from . import angular_control, angular_streamed, calibrated_endpoint, hybrid_endpoint
 from . import public_audit as old
 from .forest import certificate
 
@@ -33,7 +33,8 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def run(output):
+def run(output, streamed=False):
+    engines = [angular_streamed, calibrated_endpoint, hybrid_endpoint] if streamed else ENGINES
     output.mkdir(parents=True, exist_ok=False)
     started = clock()
     packet = old.FROZEN / "packet.zip"
@@ -45,7 +46,7 @@ def run(output):
         packet_sha256=digest(packet),
         scope="Functional development, same public packet; NOT independent/native timing gate",
         new_forwards=0,
-        engines={e.__name__: digest(e.__file__) for e in ENGINES},
+        engines={e.__name__: digest(e.__file__) for e in engines},
         reference_files=origin["files"],
         python=platform.python_version(),
         numpy=np.__version__,
@@ -107,7 +108,7 @@ def run(output):
                 baseline = old.controls(plan, first, second)
                 control_cost = elapsed(began)
                 for epsilon in [F(1, 2), F(1, 10)]:
-                    for engine in ENGINES:
+                    for engine in engines:
                         began = clock()
                         try:
                             report = certificate(
@@ -181,4 +182,6 @@ def run(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    run(parser.parse_args().output)
+    parser.add_argument("--streamed", action="store_true")
+    args = parser.parse_args()
+    run(args.output, args.streamed)

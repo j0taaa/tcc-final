@@ -8,7 +8,7 @@ import traceback
 from fractions import Fraction as F
 from pathlib import Path
 
-from . import angular_control, calibrated_endpoint, hybrid_endpoint
+from . import angular_control, angular_streamed, calibrated_endpoint, hybrid_endpoint
 from . import verify_forest as words
 from .forest import certificate
 from .product import certificate as product_certificate
@@ -18,7 +18,8 @@ from .verify_product import cases as products, expected as product_truth
 ENGINES = [angular_control, calibrated_endpoint, hybrid_endpoint]
 
 
-def run(output):
+def run(output, streamed=False):
+    engines = [angular_streamed, calibrated_endpoint, hybrid_endpoint] if streamed else ENGINES
     output.mkdir(parents=True, exist_ok=False)
     (output / "metadata.json").write_text(
         json.dumps(
@@ -30,11 +31,17 @@ def run(output):
     try:
         with (output / "rows.jsonl").open("w") as stream:
             for name, rows in cases():
-                for engine in ENGINES:
-                    for grid in [21, 40, 80] if engine is angular_control else [1, 2, 4]:
+                for engine in engines:
+                    for grid in (
+                        [21, 40, 80] if engine in [angular_control, angular_streamed] else [1, 2, 4]
+                    ):
                         result = engine.compress(rows, grid)
-                        factor = grid if engine is angular_control else 16 * grid * grid
-                        loss = 20 if engine is angular_control else 1
+                        factor = (
+                            grid
+                            if engine in [angular_control, angular_streamed]
+                            else 16 * grid * grid
+                        )
+                        loss = 20 if engine in [angular_control, angular_streamed] else 1
                         directions = {
                             (1, 0),
                             (0, 1),
@@ -43,7 +50,11 @@ def run(output):
                         for w in directions:
                             before, after = norm(rows, w), norm(result, w)
                             assert after <= before and factor * after >= (factor - loss) * before
-                        bound = 8 * grid + 4 if engine is angular_control else 64 * grid
+                        bound = (
+                            8 * grid + 4
+                            if engine in [angular_control, angular_streamed]
+                            else 64 * grid
+                        )
                         assert len(result) <= bound
                         queries += len(directions)
                         geometry += 1
@@ -67,7 +78,7 @@ def run(output):
                     first, second = words.make_inputs(source, emissions, rows, mode, rng)
                     plan = words.compile_cfg_sampler(source, first.state)
                     truth = words.expected(first, second, emissions, kind)
-                    for engine in ENGINES:
+                    for engine in engines:
                         for epsilon in [F(1), F(1, 2), F(1, 10)]:
                             result = certificate(plan, first, second, epsilon, compressor=engine)
                             if truth is None:
@@ -97,7 +108,7 @@ def run(output):
                             )
             for name, p, q in products():
                 truth = product_truth(p, q)
-                for engine in ENGINES:
+                for engine in engines:
                     for epsilon in [F(1), F(1, 2), F(1, 10)]:
                         result = product_certificate(p, q, epsilon, compressor=engine)
                         if truth is None:
@@ -126,6 +137,20 @@ def run(output):
                             )
                             + "\n"
                         )
+        streamed_products = 0
+        if streamed:
+            rng = random.Random(2026101204913)
+            for _ in range(100):
+                left = [(rng.randrange(-10, 11), rng.randrange(-10, 11)) for _ in range(7)]
+                right = [(rng.randrange(-10, 11), rng.randrange(-10, 11)) for _ in range(9)]
+                rows = [(a * x, b * y) for a, b in left for x, y in right]
+                for grid in [21, 40, 80]:
+                    result = angular_streamed.compress_product(left, right, grid)
+                    assert result == angular_streamed.compress(rows, grid)
+                    for w in {(1, 0), (0, 1), *((-b, a) for a, b in [*rows, *result] if a or b)}:
+                        before, after = norm(rows, w), norm(result, w)
+                        assert after <= before and grid * after >= (grid - 20) * before
+                    streamed_products += 1
         summary = dict(
             status="CORRECTNESS_ONLY",
             geometry_cases=geometry,
@@ -133,6 +158,7 @@ def run(output):
             original_id_forest_cases=forests,
             product_cases=products_checked,
             zero_mass_refusals=zeros,
+            streamed_cartesian_checks=streamed_products,
         )
         (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
         print(json.dumps(summary), flush=True)
@@ -144,4 +170,6 @@ def run(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    run(parser.parse_args().output)
+    parser.add_argument("--streamed", action="store_true")
+    args = parser.parse_args()
+    run(args.output, args.streamed)
