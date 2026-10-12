@@ -2216,3 +2216,20 @@ confirmação de utilidade.39/work/usefulness-decision-v5.md preserva perdas e
 condições do ganho; fonte principal CARMS2021 §§2--3.2 conferida. Não promover
 como artigo/EPIC victory. Primeiro passo neural inteiro é hipótese seguinte
 a definir/congelar antes de outro experimento, sem trocar a key dos dados.
+
+
+## A45–A49: eliminate established principles; quantitative drift candidate
+
+2026-10-12. A45 preserves all6,230 finite screens and leaves universal
+covariance safety open. A46--48 close generic ambiguity, interval sampling
+and grammar/factor novelty claims after primary readings, BEFORE another
+model implementation. A49 writes a deterministic rational TV certificate on
+an ADMITTED original-event forest. Fu2609.24235 already supplies generic
+gate composition; convex approximation is classical. V3 writes a smaller
+integer-endpoint core bound O(sqrt(d/epsilon)), full input-bit accounting and
+a comparison to the published Lemma3.5 bounds, not a control lower bound or
+physical timing win. Producers8f19b2f/51245fc/2e3b4a7 precede their respective
+oracles; ALL3,100/75/2,480 geometry+150 forest rows are preserved separately.
+See49/work/*proof*.md and evidence. No model/head application, native EPIC
+comparison, human review or sufficient publication priority is confirmed.
+The original user goal remains active; A24 remains the main article.

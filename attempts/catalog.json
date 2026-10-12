@@ -1953,6 +1953,41 @@
           ]
         }
       ]
+    },
+    {
+      "id": "49-rational-grammar-drift",
+      "title": "Rational posterior drift and smaller integer norm cores",
+      "conclusion": "Written quantitative admitted-forest theorem and independent exact oracles; geometry/gate principles credited, specific TV priority and real utility remain open.",
+      "reading": "attempts/49-rational-grammar-drift/README.md; TASKS.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "8f19b2f00365d1c4739b9a279f3e30561b73410a",
+          "evidence_commit": "51245fc40c09397d2d9f2020b68bc388592c74f3",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/planar-v1"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "51245fc40c09397d2d9f2020b68bc388592c74f3",
+          "evidence_commit": "dc1bc5e5e066a423441c9e4db9280cab9ccadf9c",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/forest-v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "2e3b4a7e45162c4e845897241f0a2cd4f2dd004b",
+          "evidence_commit": "024257df7c2bc2dcb77ea51a03b528daa2c74c63",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/evidence/optimal-v3"
+          ]
+        }
+      ]
     }
   ]
 }

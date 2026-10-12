@@ -55,7 +55,7 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [42-safe-empirical-resampling](42-safe-empirical-resampling/README.md) | Prova de segurança global em pool6; uso/novidade abertos, controle pivotal quase idêntico |
 | [43-adaptive-source-excursions](43-adaptive-source-excursions/README.md) | Revalidação de A34; duplicação interna identificada, sem nova contribuição |
 | [44-three-class-empirical-coupling](44-three-class-empirical-coupling/README.md) | Segurança vetorial para três classes em todo orçamento finito; prova/oráculos, novidade e uso abertos |
-| [45-random-label-order-resampling](45-random-label-order-resampling/README.md) | Auditoria de segurança empírica; conjectura universal ainda aberta |
+| [45-random-order-empirical-towers](45-random-order-empirical-towers/README.md) | Auditoria de segurança empírica; conjectura universal ainda aberta |
 | [46-ambiguity-aware-conditioning](46-ambiguity-aware-conditioning/README.md) | Correção de ambiguidade limitada; redução a antecedentes, sem nova contribuição |
 | [47-exact-logit-forest-sampling](47-exact-logit-forest-sampling/README.md) | Sampling por intervalos; princípio anterior, custos especializados abertos |
 | [48-grammar-factor-representation](48-grammar-factor-representation/README.md) | Representação por fatores; antecedentes e controles compactos reconhecidos |
