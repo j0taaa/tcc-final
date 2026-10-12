@@ -37,7 +37,11 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 - [ ] T6301: Independently verify full original-source law, aliases, vector
   covariance, exact E[N]=M for all class masses, tail and balanced sharp
   expected-query bound. Inspect sequential-estimation primary predecessors.
-  A candidate theorem/finite oracle is not priority or real-model utility.
+  V1:423 rational chain laws/3952 terminating tapes and15 balanced moment
+  checks PASS under producer6dcd88e; all aliases/residuals and vector entries
+  checked. Pure KL proof avoids unstated stopped differentiation. Specific
+  frontier priority and useful complete-cost application remain OPEN; no new
+  forwards. A candidate theorem/finite oracle is not real-model utility.
 - [ ] T6302: Only if distinction/use survives, freeze a competent full-cost
   dLLM/CFG application. A42 root boundary is too late and may not be reused
   as a cheap informative source; A41 negative stronger controls stand.

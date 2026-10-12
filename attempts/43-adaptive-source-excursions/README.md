@@ -56,3 +56,10 @@ Independent work is under `work/`; no mutable imports from another attempt.
 The first deliverable is proof and adversarial prior-art reduction, not a
 large neural implementation. Reject/preserve the direction if it reduces
 directly to a known frontier or cannot justify a meaningful application.
+
+V1 validates423 independent rational original-source chain laws and3952
+finite terminating tapes, including aliases/within-class residuals, plus15
+balanced moment/frontier checks. The21-line reference was frozen at6dcd88e.
+These checks support the written proof; no new forwards or practical gate.
+A safe deterministic draw-count cap is specified prospectively in
+work/bounded-contract-v2.md; ordinary iid deadline fallback remains unjustified.

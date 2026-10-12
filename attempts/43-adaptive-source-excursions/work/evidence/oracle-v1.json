@@ -1,0 +1,97 @@
+{
+  "scope": "Independent exact chain law and finite implementation checks; no neural measurements or priority certificate.",
+  "rational_chain_laws": 423,
+  "finite_terminating_tapes": 3952,
+  "balanced_frontiers": [
+    {
+      "barrier": 2,
+      "queries": "2",
+      "repeat": "1/2",
+      "variance_of_queries": "0"
+    },
+    {
+      "barrier": 3,
+      "queries": "3",
+      "repeat": "1/3",
+      "variance_of_queries": "2"
+    },
+    {
+      "barrier": 4,
+      "queries": "4",
+      "repeat": "1/4",
+      "variance_of_queries": "8"
+    },
+    {
+      "barrier": 5,
+      "queries": "5",
+      "repeat": "1/5",
+      "variance_of_queries": "20"
+    },
+    {
+      "barrier": 6,
+      "queries": "6",
+      "repeat": "1/6",
+      "variance_of_queries": "40"
+    },
+    {
+      "barrier": 7,
+      "queries": "7",
+      "repeat": "1/7",
+      "variance_of_queries": "70"
+    },
+    {
+      "barrier": 8,
+      "queries": "8",
+      "repeat": "1/8",
+      "variance_of_queries": "112"
+    },
+    {
+      "barrier": 9,
+      "queries": "9",
+      "repeat": "1/9",
+      "variance_of_queries": "168"
+    },
+    {
+      "barrier": 10,
+      "queries": "10",
+      "repeat": "1/10",
+      "variance_of_queries": "240"
+    },
+    {
+      "barrier": 11,
+      "queries": "11",
+      "repeat": "1/11",
+      "variance_of_queries": "330"
+    },
+    {
+      "barrier": 12,
+      "queries": "12",
+      "repeat": "1/12",
+      "variance_of_queries": "440"
+    },
+    {
+      "barrier": 13,
+      "queries": "13",
+      "repeat": "1/13",
+      "variance_of_queries": "572"
+    },
+    {
+      "barrier": 14,
+      "queries": "14",
+      "repeat": "1/14",
+      "variance_of_queries": "728"
+    },
+    {
+      "barrier": 15,
+      "queries": "15",
+      "repeat": "1/15",
+      "variance_of_queries": "910"
+    },
+    {
+      "barrier": 16,
+      "queries": "16",
+      "repeat": "1/16",
+      "variance_of_queries": "1120"
+    }
+  ]
+}

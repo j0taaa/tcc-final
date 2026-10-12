@@ -846,3 +846,13 @@ pool vivo, medição semântica ou avaliação independente. A proposta de fonte
 barata pela raiz falha; não cancelar work/model forwards e chamá-los de grátis.
 Provas6/10 permanecem, mas uso/publicação continuam abertos. Não ampliar esse
 proxy por mais casos favoráveis; próxima aplicação deve ter fontes baratas.
+
+A43 muda o contrato de custo para paradas adaptativas IID de fontes originais:
+primeira/última fonte de uma excursão com duas classes, duas avaliações caras.
+Prova escrita preserva P e toda covariância vetorial, dá E[N]=M para TODO p
+e fronteira sharp de repetição/custo em p=1/2 por KL do experimento parado.
+423 leis racionais,3952 tapes e15 momentos balanceados PASS, producer6dcd88e.
+Ruin/factories/inequações sequenciais são clássicos; prioridade/uso/publicação
+continuam abertos. Teto finito com último token da MESMA classe é proposta
+escrita v2 ainda sem implementação; não confundir com fallback iid arbitrário,
+latência garantida, nova geração EPIC ou treinamento. Nenhum novo forward.

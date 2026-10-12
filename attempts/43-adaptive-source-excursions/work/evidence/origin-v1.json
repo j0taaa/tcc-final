@@ -1,0 +1,12 @@
+{
+  "source_commit": "6dcd88e16ccf20297aceb82a65a26b9c3f2ae38e",
+  "source_sha256": {
+    "excursion.py": "49d3f60319106477a351c1a6f052b32f41046a383ac40011bf47980ec1d728e8",
+    "oracle.py": "1c88de2b52f2a920203e46303548b48e9e7ea3bd948c5366603e6da933ca141d",
+    "excursion-proof-v1.md": "01aab211a634a9b5914c31424f830bb095f3a45260aee5121adb4d43319b682f",
+    "primary-v1.md": "447c1743d14527e485ed2a3bae559e0a4f19978616e7e741fbdb0d1f1e8dd6f5"
+  },
+  "command": ".venv/bin/python -m attempts.43-adaptive-source-excursions.work.oracle --output attempts/43-adaptive-source-excursions/work/evidence/oracle-v1.json",
+  "result_sha256": "dabc715accc29e4a3509c45e4f7db03ec840bf781bb5d3d7df9697778d7632fe",
+  "scope": "423 independent rational chain laws and3952 finite terminating tapes; pure written theorem, no new neural calls, practical gate or priority certificate."
+}
