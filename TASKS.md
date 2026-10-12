@@ -135,6 +135,10 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   bit/input costs. Classical geometry/merge are credited. Repeat all geometry,
   exhaustive outside projections,1,167 products and389 extreme-precision
   cases before a real application; nearest-prior/publication judgement open.
+  Producerb0c678a FAILS at the first nonempty ordered-image case: reversed
+  minimum-angle comparison rotates the largest angle first. Only three empty
+  cases complete; zero product/forest/public claims. PreserveV19 unchanged,
+  correct inV20 and repeat the entire frozen gate; no weakened checks.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

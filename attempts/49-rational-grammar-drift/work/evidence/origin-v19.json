@@ -1,0 +1,17 @@
+{
+  "producer": "b0c678ac4701e16e1ff7837a7b644f27079bad9e",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.verify_ordered --output .cache/a49-ordered-v19",
+  "status": "FAILED_CORRECTNESS_GATE",
+  "scope": "Three empty geometry cases only; no product/forest/public run",
+  "path_redaction": "Absolute repository prefix in traceback replaced with <REPOSITORY>; original retained locally",
+  "records": [
+    {
+      "directory": "attempts/49-rational-grammar-drift/work/evidence/ordered-v19-failure",
+      "files": {
+        "failure.txt": "9cf7e9afc690863de18d6834e00b5e1bef2f4df87321f57ec9302558a540a213",
+        "metadata.json": "2c722aa8f3ac27a1393c8ad6410e8bae1ea9af8ed0e1e1187a39b3405d6b9196",
+        "rows.jsonl": "ab7f3f9b2b6abce34579fd55edc73e9ac9bb233d59a2ccef2db1b0fb0f0847c6"
+      }
+    }
+  ]
+}

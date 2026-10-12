@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<REPOSITORY>/attempts/49-rational-grammar-drift/work/verify_ordered.py", line 68, in run
+    via_images = engine.compress_images(result, weights, grid)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<REPOSITORY>/attempts/49-rational-grammar-drift/work/ordered_planar.py", line 151, in compress_images
+    return compress_ordered(rows, grid)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<REPOSITORY>/attempts/49-rational-grammar-drift/work/ordered_planar.py", line 103, in compress_ordered
+    assert all(det(a, b) > 0 for a, b in zip(result, result[1:]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

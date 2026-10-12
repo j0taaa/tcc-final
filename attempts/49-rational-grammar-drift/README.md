@@ -297,3 +297,10 @@ bit costs. The sharper bound uses classical ordering/geometry; no new convex
 principle, generic TV lower bound or general-forest speed guarantee is claimed.
 ALL prior geometry/product/extreme-precision correctness families are frozen
 for checking first; no synthetic timing or favorable new neural case.
+
+V19 producerb0c678a FAILS the first nonempty diagonal-image oracle. The
+minimum-angle rotation used the reversed determinant sign and moved the
+vertical direction before horizontal. Only three empty cases completed;
+no product/forest certificates or public run followed. Failure metadata and
+the source are preserved independently. V20 corrects only that comparison,
+retaining the written guarantee and ALL original adversarial families.
