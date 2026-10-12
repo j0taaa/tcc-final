@@ -1,5 +1,35 @@
 # Caderno científico — contrato atual e histórico
 
+##2026-10-12 — A49: quantitative integer theorem and complete numerical audit
+
+The closest generic framework is Fu2609.24235, NOT an invented naive parser.
+Classical planar endpoint geometry and exact logarithmic queries give a
+written product bound O(nq sqrt(n/epsilon) log(qn/epsilon+2)) and bounded-leaf
+forest bound O(H(d/epsilon) log(d/epsilon+2)), with polynomial integer bit
+cost. These improve INSPECTED published deterministic upper bounds; no
+lower bound on every competent implementation or optimal TV algorithm follows.
+LL(1) source admission is a classical mathematical chart algorithm with
+trimming, not verification of the main normalizer. Complete ICML2024§4 was
+read and a derivation encoding supplies a relevant randomized alternative.
+
+V8's independent117,376 exhaustive segment projections/all norm queries pass.
+V9 completes ALL six originally frozen numerical cases on the sole public
+full-head packet, original50,258 IDs and109,026,321,152 valid assignments.
+FP16 epsilon0.1 yields upper4.095231914338327e-5, about67.98 times tighter
+than certified Hellinger; Hellinger/range are cheaper and stay in the report.
+All failures and the slow interrupted1/6 V6 are retained, not relabelled.
+No fresh neural execution, model quantization, semantic-quality gate or
+competitive timing campaign. The use is certifying a probability-table
+storage change under an application's bounded-verifier drift budget.
+
+Source476ace7's product implementation/protocol preceded ALL1,167 direct
+enumeration checks. The mathematical draft has three written theorems,
+full cost, product corollary and generated ALL6 table:49/work/manuscript-v10.tex,
+output/pdf/grammatical-drift-v10.pdf. It is separate from the stable A24 article.
+This is a substantive quantitative candidate, rather than a failed decoder
+benchmark. Specific exhaustive priority, human review and acceptance remain
+open; continuation should attack its proof/comparison, not claim those away.
+
 
 ##2026-10-12 — A45–A48: distinguish open mathematics from established methods
 

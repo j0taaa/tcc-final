@@ -907,3 +907,25 @@ normalizador Python. Producer2e3b4a7 passa2.480 casos/40.035 consultas e os75
 casos originais sob AMBOS núcleos (150 checks). Especificidade/prioridade do
 resultado de TV, aplicação real e suficiência para publicação permanecem
 abertas; não converter oráculos de correção em vitória de desempenho.
+
+A49 V8 acrescenta consultas geométricas exatas logarítmicas, provadas ANTES
+do código: limite produto O(nq sqrt(n/epsilon) log(qn/epsilon+2)), núcleo
+floresta O(H(d/epsilon) log(d/epsilon+2)), com custo inteiro em bits completo.
+Melhora os UPPER BOUNDS determinísticos publicados inspecionados, não é
+lower bound contra todas implementações. Geometria/projeção são clássicas;
+Fu já remove a dependência numérica de TV. Oráculos:1.860 casos/30.846 queries,
+117.376 projeções por scan racional independente,75 florestas originais.
+A admissão LL(1) polinomial é um algoritmo matemático escrito; exige trimming
+e não verifica o normalizador mantido. A auditoria pública V9 encerra6/6 casos
+predefinidos, todos50.258 IDs: FP16 tem bound4,095e-5 contra Hellinger2,784e-3.
+Isto é um uso real de PRECISÃO DE CERTIFICADO para tabelas de probabilidades;
+os controles são mais baratos. Não houve modelo quantizado, nova captura,
+vitória neural/EPIC ou benchmark independente. Ambas falhas de setup e o
+V6 lento interrompido1/6 estão preservados. A redução ICML2024 inteira§4
+foi lida e admite um controle gramatical competente; possibilidade genérica
+de aproximar TV não é descoberta. V10 passa1.167 casos do algoritmo produto
+direto e tem rascunho matemático separado de sete páginas, com tabelas geradas.
+Antecedentes e distinção quantitativa estão em primary-comparison-v10.md;
+prioridade exaustiva/revisão humana/aceitação permanecem não confirmadas.
+Consolidar esta diferença antes de nova implementação ampla; não reiniciar
+decoders negativos ou prometer certeza absoluta de publicação.

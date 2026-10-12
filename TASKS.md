@@ -34,7 +34,7 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Definition3.6/Theorem3.8 already supplies the general admissible-gate
   FPTAS; generic unambiguous-derivation specialization is a corollary.
   Candidate bit-cost/planar/word-faithful distinction remains OPEN. No heads.
-- [ ] T6901: Independently attack all-query norm containment with integer
+- [x] T6901: Independently attack all-query norm containment with integer
   breakpoints, exhaustive sign domains, zero rank and near-collinearity.
   Then prove the packed-word reduction and complete integer bit costs.
   V1 producer8f19b2f passes3,100 cases/57,769 exact norm queries and1,004
@@ -48,10 +48,35 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   explicit comparative/bit bounds. Priority and full source admission open.
   V3 producer2e3b4a7 passes2,480 cases/40,035 exact norm-breakpoint queries
   and all75 original-token cases under BOTH compressors (150 checks).
-  Finite checks do not establish novelty, speed, model utility or publication.
-- [ ] T6902: Only if the specific distinction/use survives the closest priors,
-  implement/validate the smallest real operation with a predeclared fair
-  protocol. No main API/article change or neural timing is justified yet.
+  V8 producer45903f3 passes1,860 geometry cases/30,846 norm breakpoints,
+  117,376 independent exhaustive projection queries and75 original-ID forests.
+  V7 writes classical polynomial source admission; V10 explicitly trims
+  unreachable/unproductive symbols. Theorem is written, not Lean/compiler
+  verification. V8 query proof sharpens product precision exponent to1/2.
+  Finite checks do not establish novelty, speed or publication acceptance.
+- [x] T6902: Materialize the smallest real operation under the frozen V4
+  all-format/all-tolerance numerical-audit protocol. V4 fixed-slot fixture
+  failure, V5 FULL-input refusal and interrupted V6 (1/6 rows) are preserved.
+  V9 producerbb1be02 completes ALL6 unchanged cases on50,258 original IDs,
+  independently checks both masses, counts109,026,321,152 valid assignments.
+  FP16 epsilon0.1 upper4.095231914338327e-5 versus certified Hellinger
+  upper0.0027838314673018887. Controls are cheaper. This is certificate
+  precision, not neural quantization, a competitive timing gate or EPIC win.
+- [x] T6903: Read the ENTIRE ICML2024 section4 reduction/proof; credit a
+  competent derivation encoding rather than claim first CFG approximability.
+  Primary-comparison-v10 isolates the sharper deterministic upper bound and
+  polynomial integer arithmetic. Producer476ace7's direct product recurrence
+  passes ALL1,167 prospective cases/six zero-mass and eight invalid refusals.
+- [x] T6904: Write complete mathematical draft with3 theorems, product
+  corollary, complete costs, original-word application and ALL6 generated
+  audit rows. Source:49/work/manuscript-v10.tex; seven-page PDF:
+  output/pdf/grammatical-drift-v10.pdf. Layout/source QA is not peer review.
+  This is a candidate article; the preserved main A24 article is unchanged.
+- [ ] T6905: Continue adversarial full-proof/nearest-prior checking and
+  consolidate the quantitative contribution only on that basis. Exhaustive
+  priority, independent human judgement and editorial acceptance are NOT
+  confirmed. Do not manufacture a generation benchmark or call deterministic
+  upper-bound improvement universal physical/semantic superiority.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

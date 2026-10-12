@@ -57,12 +57,12 @@ only. Two weightings share the unambiguous event forest; neither normalization
 constant may be zero. Zeros are allowed using the union of both declared supports.
 The maintained LL(1)/EOS-free contract is not enlarged by this investigation.
 
-Current primary sources actually inspected: Fu2609.24235v1 sections1,3.3--3.4
+At V1, primary sources inspected were Fu2609.24235v1 sections1,3.3--3.4
 and4.1 (general framework, real-arithmetic boundary); Bhattacharyya et al.
 2609.18707v2 sections1,4 (common-v-tree condition and product propagation).
 The ICML2024 inference reduction's definitions2.7--2.11 and technical
-overview3.1 have been read; its full reduction remains a mandatory elimination
-check. Do not claim to have audited its full proof.
+overview3.1 had been read; its full reduction remained a mandatory elimination
+check. V10 below records the subsequent complete section4 reading.
 
 The next deliverable is a proof/obstruction, not a performance campaign.
 
@@ -141,3 +141,36 @@ one completed row (371.95s core), with all partial metadata/output retained;
 it is NOT a six-case campaign. V9 repeats ALL six original public cases with
 the proved/validated exact query implementation, preserving both controls.
 No favorable-case selection, neural quantization or generation-speed claim.
+
+V9 producerbb1be02 completes ALL6 public cases, full50,258 original IDs;
+source/evidence are preserved in `work/evidence/public-v9`. Independently
+checked masses and original assignment count109,026,321,152. For probability
+table FP16 at epsilon0.1, U=4.095231914338327e-5 against the certified
+Hellinger upper0.0027838314673018887 (about67.98 times larger). The inexpensive
+controls are FASTER, and the complete six-case table/costs are generated from
+immutable rationals by `work/build_report.py`. This confirms a concrete
+certificate-strength use, not a new quantized model or latency improvement.
+
+V10 re-evaluates all eight questions: (1) a numerical table audit with a
+bounded-verifier budget is now materialized on a real head; (2--4) the
+distinction is a quantitative deterministic product/forest bound and full
+integer bit analysis, rather than merely combining a parser and diffusion;
+(5) all prospective cases and prior failures remain; (6) full audit costs
+and cheaper controls are explicit; (7) the ICML2024 inference reduction is
+now read IN FULL section4 and admits a competent derivation encoding.
+Generic approximation feasibility, geometry, parsing and TV consequences
+are OLD. `work/primary-comparison-v10.md` locates the specific improved upper
+bounds and a trimmed-source qualification. Novelty beyond those inspected
+primaries and human/venue judgement remain open (8); absolute acceptance or
+priority is not implied. The mathematical draft `work/manuscript-v10.tex`
+contains three complete written theorems, the faster product corollary,
+application and ALL6 generated numerical rows. It does not replace the main
+article or silently claim verification of its compiler.
+
+The direct product recurrence/protocol were frozen at476ace7 BEFORE checks:
+all1,167 cases pass (six undefined-zero-mass refusals and eight invalid-input
+refusals). Its independent enumerator is in `work/verify_product.py` and
+evidence in `work/evidence/product-v10`. The proof, not this finite gate,
+establishes the precision exponent. No new model forward or competitive
+timing campaign was run. The next useful step is adversarial full-proof/
+priority checking, not another decoder benchmark chosen to favor this audit.

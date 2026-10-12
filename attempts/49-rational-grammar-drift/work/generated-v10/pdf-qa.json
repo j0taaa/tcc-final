@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "pages": 7,
+  "latex_warnings": 0,
+  "initial_font_build_failure": "Resolved with installed Latin Modern scalable fonts before QA",
+  "commands": [
+    "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=tmp/pdfs/a49-v10 manuscript-v10.tex (cwd attempt49/work, repeated for references)",
+    "pdftoppm -scale-to 1100 -png tmp/pdfs/a49-v10/manuscript-v10.pdf tmp/pdfs/a49-v10/page"
+  ],
+  "scope": "Layout/source integrity, not human scientific review",
+  "sha256": {
+    "attempts/49-rational-grammar-drift/work/manuscript-v10.tex": "6914e57d104f41ea408f785ed06feaf29eaa0d9a83b50cc1498815c0ed66f51e",
+    "attempts/49-rational-grammar-drift/work/generated-v10/audit-table.tex": "95f7603fd96dbbac3d6da14a2b940c436072105afed5658558bd80813b1ecc8f",
+    "attempts/49-rational-grammar-drift/work/generated-v10/audit-values.tex": "8295dac4e84929794f4a686ddbd16ca201fdc0b583a6832bbcde6fc879143063",
+    "output/pdf/grammatical-drift-v10.pdf": "24fe3af99bf7e05d2bfe55ddf5876c94733474d92e0b8ad420ce8eef1bde5976"
+  }
+}
