@@ -2213,6 +2213,19 @@
             "attempts/49-rational-grammar-drift/work/model-v23.json",
             "attempts/49-rational-grammar-drift/work/capture_external.py"
           ]
+        },
+        {
+          "id": "v24",
+          "source_commit": "56ba17a3eafbf6dd13103c6db43cfcb1e09acae6",
+          "evidence_commit": "b073faaca1ede5c24a155cc5169b6c51a7ac86a3",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/sampler-overlap-control-v24.md",
+            "attempts/49-rational-grammar-drift/work/overlap-decision-v24.md",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-v24.json",
+            "attempts/49-rational-grammar-drift/work/evidence/overlap-v24",
+            "attempts/49-rational-grammar-drift/work/evidence/public-v24"
+          ]
         }
       ]
     }
