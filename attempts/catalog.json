@@ -1842,11 +1842,14 @@
     {
       "id": "44-three-class-empirical-coupling",
       "title": "Three-class all-budget arbitrary-vector source coupling",
-      "conclusion": "Pure written all-budget three-class safety/atom/minimax candidate; exact oracles pass. Empirical transport/RSS known, unfavorable C4 case preserved. Priority and useful full-cost dLLM/CFG application remain open; no neural observations.",
+      "conclusion": "Written all-budget three-class safety and balanced RSS frontier; exact checks pass, initial RSS assertion failure preserved. Full-gradient classifier application FAILED all six frozen screens with192 real forward/backwards and zero updates. Priority/use/publication remain open; no competitive training/EPIC claim.",
       "reading": [
         "attempts/44-three-class-empirical-coupling/README.md",
         "attempts/44-three-class-empirical-coupling/work/three-class-proof-v1.md",
-        "attempts/44-three-class-empirical-coupling/work/primary-reading-v1.md"
+        "attempts/44-three-class-empirical-coupling/work/primary-reading-v1.md",
+        "attempts/44-three-class-empirical-coupling/work/rss-comparison-v2.md",
+        "attempts/44-three-class-empirical-coupling/work/primary-reading-v2.md",
+        "attempts/44-three-class-empirical-coupling/work/decision-v3.md"
       ],
       "versions": [
         {
@@ -1857,6 +1860,28 @@
             "attempts/44-three-class-empirical-coupling/work/three-class-proof-v1.md",
             "attempts/44-three-class-empirical-coupling/work/primary-reading-v1.md",
             "attempts/44-three-class-empirical-coupling/work/evidence"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "3ca3914508e773b2f8d5cb844a87f3a45a50c0b0",
+          "evidence_commit": "e78e73a532260e2145627a46bc6ec3ab4f38ee08",
+          "evidence_roots": [
+            "attempts/44-three-class-empirical-coupling/work/rss-comparison-v2.md",
+            "attempts/44-three-class-empirical-coupling/work/primary-reading-v2.md",
+            "attempts/44-three-class-empirical-coupling/work/evidence/rss-v2-failure.json",
+            "attempts/44-three-class-empirical-coupling/work/evidence/rss-v2b.json"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "e0d918d23d48f6d6efcd252ebb392eb81dd02147",
+          "evidence_commit": "e78e73a532260e2145627a46bc6ec3ab4f38ee08",
+          "evidence_roots": [
+            "attempts/44-three-class-empirical-coupling/work/decision-v3.md",
+            "attempts/44-three-class-empirical-coupling/work/evidence/full-gradient-v3",
+            "attempts/44-three-class-empirical-coupling/work/evidence/gradient-oracle-v3.json",
+            "attempts/44-three-class-empirical-coupling/work/evidence/origin-v3.json"
           ]
         }
       ]
