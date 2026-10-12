@@ -1,0 +1,18 @@
+{
+  "source_commit": "e0d918d23d48f6d6efcd252ebb392eb81dd02147",
+  "commands": [
+    ".venv-live/bin/python -m attempts.44-three-class-empirical-coupling.work.gradient_oracle --output .cache/a44-gradient-oracle-v3.json",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=4 .venv-live/bin/python -m attempts.44-three-class-empirical-coupling.work.full_gradient --output .cache/a44-full-gradient-v3 --cache .cache/mdlm"
+  ],
+  "scope": "192 NEW forward/backward evaluations, ALL169627218 parameters, ALL six old development docs, zero optimizer updates; full-gradient bookkeeping descriptive known-bank geometry, not population/latency/publication confirmation.",
+  "sha256": {
+    "086196462a225cc79ed8219489320f7abb8171ad0fac20190f5bec6642069643.json": "2361c39c4f1aefb74e8418cee753af07c6d55142e2e932ff9359375a8d776644",
+    "213665d847fff88109593632d4239174638cc0a7d329c67e38a575ad9146aafc.json": "f51a25cc646c46c65b3336390c60a3c3fc89d7b9fee50abd7eb5435e4c95b69f",
+    "15368b2d733f82b3283817005d5441ba80165a61fbe10dece742a2b1ccf359d9.json": "6896d689e08d0f90b7f16e4d1fccd331229a1f7da25818115229258a09cfa3b5",
+    "21258df219a6dc36a918a6e339f30751c5f2fbca49a8ef9807ca564889d28667.json": "b773eae293892ff85d2df4407c1a8bf469443183af11ec7425acf0d2fdc31720",
+    "rows.jsonl": "f1435188c1d2222cd07609b043b2a18c97679b1073569651edd180b7c6f49092",
+    "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6.json": "15796ef035dbcf9b2f1fe0d7b0a9e125cf5b9aef88bad738a009ac4887bc3d99",
+    "0cfb81c3dd57025e25a90b6c964e219ab1ae93f581a3ccbae7a04848052d95a4.json": "e08c1a2d776c93299a15ab9bd9232e5e745208dde5b7c1c16e5fc9e701efe1cd",
+    "metadata.json": "ec564dc89fca2e0399cb8a7162c67c8be88b98732d06149bd02e138f8d44b1b2"
+  }
+}

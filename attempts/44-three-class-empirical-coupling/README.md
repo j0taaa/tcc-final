@@ -76,3 +76,10 @@ are allowed. The diagnostic20% screen is declared before new gradients, even
 with zero sampler overhead. Failure closes this classifier/application branch.
 No optimizer update, full training, native EPIC or publication gate is implied.
 See `work/feasibility-protocol-v3.json`; primary novelty remains unconfirmed.
+
+V3 completed all192 fresh FULL-parameter forward/backward evaluations under
+e0d918d, with independent bias checks at every state. No parameter update.
+All six descriptive screens fail, even with zero overhead, versus continuous
+RSS AND oracle scalar CV. Close this classifier/application branch; no timing,
+heldout or training campaign. The theorem survives but its publication novelty
+and useful neural application remain open. See `work/decision-v3.md`.

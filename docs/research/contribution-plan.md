@@ -15,6 +15,13 @@ antecedentes; novidade e utilidade neural de custo completo continuam abertas.
 O resultado negativo contra C4 não uniforme permanece explícito. Não promover
 o teorema para o artigo principal só porque a referência funciona.
 
+A44V3 completou192 forwards/backwards novos, de todos169.627.218 parâmetros,
+em todos seis documentos de desenvolvimento antigos. Derivadas/oráculos passam,
+mas a tela prospectiva0/6 encerra o uso desse classificador, mesmo ao ignorar
+seu sobrecusto. Não confundir ganho de1,44--4,34% de trace contra iid2 com
+vitória frente a RSS contínuo/CV, velocidade física, treino ou semântica.
+Prova3classes e corolário RSS balanceado sobrevivem; publicação/meta abertas.
+
 ##2026-10-11 — novo goal e filtragem adversarial de antecedentes
 
 O usuário renovou a meta de novidade útil/publicável e autorizou mudar a ideia

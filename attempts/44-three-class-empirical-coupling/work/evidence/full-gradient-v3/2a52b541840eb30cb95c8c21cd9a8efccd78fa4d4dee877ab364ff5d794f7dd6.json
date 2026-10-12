@@ -1,0 +1,72 @@
+{
+  "source_observations": 32,
+  "class_counts": [
+    12,
+    7,
+    13
+  ],
+  "class_mean_gram": [
+    [
+      155.29321017085664,
+      201.37048366895277,
+      9.606732670990553
+    ],
+    [
+      201.37048366895277,
+      1416.6291959584787,
+      153.4477249933264
+    ],
+    [
+      9.606732670990553,
+      153.4477249933264,
+      767.5802700902789
+    ]
+  ],
+  "full_gradient_trace": 4314.269542925515,
+  "between_fraction": 0.09281014618501351,
+  "pair_trace": {
+    "iid2": 2157.1347714627577,
+    "continuous_rss": 2128.526242293876,
+    "oracle_scalar_cv": 2066.8079681315044,
+    "class_c4": 2115.3589321307845,
+    "class_c32": 2063.419487689878,
+    "best_three_class_rss": 2117.8024283990053,
+    "known_bank_mass_inverse": 2058.124069397756
+  },
+  "class_c32_fraction_below": {
+    "iid2": 0.043444334129077555,
+    "continuous_rss": 0.03058771525120274,
+    "oracle_scalar_cv": 0.0016394752167950832,
+    "class_c4": 0.024553490025727265,
+    "class_c32": 0.0,
+    "best_three_class_rss": 0.0256789490746967,
+    "known_bank_mass_inverse": -0.0025729344361984374
+  },
+  "screen_pass": false,
+  "scope": "DESCRIPTIVE complete known empirical law WITH replacement; no population/training/runtime guarantee.",
+  "document": {
+    "key": "2a52b541840eb30cb95c8c21cd9a8efccd78fa4d4dee877ab364ff5d794f7dd6",
+    "text": "{\"bar\":\"bar\",\"baz\":\"baz\",\"foo\":\"foo\"}",
+    "tokens": [
+      4895,
+      5657,
+      2404,
+      5657,
+      2430,
+      65,
+      1031,
+      2404,
+      65,
+      1031,
+      2430,
+      21943,
+      2404,
+      21943,
+      20662
+    ],
+    "file": "unevaluatedProperties.json",
+    "description": "with additional properties"
+  },
+  "unused_gradient_parameters": [],
+  "max_bias_error": 4.5843464024919456e-08
+}

@@ -45,6 +45,14 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 - [ ] T6402: Only if proof and priority/use survive, preregister full-cost
   dLLM/CFG application with RSS/CV/count/inverse and seed controls. No revived
   root-known source or favorable case selection; old negative evidence stands.
+  Minimal V3 falsification, protocol/source e0d918d frozen before observations:
+  ALL six old public docs,192 new FULL-parameter forward/backward evaluations,
+  zero updates. All169,627,218 parameters and independent bias checks; three
+  bookkeeping source-product families pass. Candidate screen0/6 even at zero
+  overhead against continuous RSS AND oracle-CV. Close this classifier/use,
+  do not trigger competitive timing/heldout/training. Decision/evidence in44.
+  V2 balanced RSS corollary has354 exact checks; failed expected best-order
+  constant preserved, corrected producer3ca3914. Priority/theory use open.
 
 ## M63 — Adaptive original-source excursions
 

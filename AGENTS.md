@@ -870,7 +870,13 @@ contrato de fontes opacas. Producer090c357 passa12.844 leis racionais, oito
 famílias de produtos originais,360 árvores RNG e14 identidades polinomiais.
 Transporte empírico, RSS, Bernstein e Fréchet são antecedentes. O contraexemplo
 não uniforme contra C4 foi preservado; não existe dominação geral de C4/RSS/CV.
-Não houve forwards, treinamento, ganho neural ou prioridade/publicação
-confirmados. A associação a alvos JSON/GLC é uma aplicação candidata, não
+Nas V1/V2 não houve forwards ou treinamento; ganho neural e prioridade/
+publicação não foram confirmados. A associação a alvos JSON/GLC é candidata, não
 prova de que o benefício prático depende de GLCs. Auditoria primária e custo
 completo devem anteceder implementação neural extensa.
+A44 V3 agora tem192 novos forwards/backwards de TODOS169.627.218 parâmetros,
+nos seis documentos públicos antigos, zero updates. Oráculos/derivada do bias
+passam; a tela prospectiva falha0/6 mesmo com sobrecusto zero contra RSS
+contínuo e CV-oráculo. A aplicação deste classificador está encerrada, não
+acionar treino/heldout/timings. As provas3classes/RSS balanceado permanecem,
+mas não há uso neural competitivo ou novidade/publicação confirmados.
