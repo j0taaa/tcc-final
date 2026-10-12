@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "operation": "Deterministic near-relative TV certificates between original and rounded frozen dLLM tables conditioned on recursive JSON; functional independent-input audit, NOT a generation speed/semantic benchmark",
+  "source_corpus": {
+    "repository": "https://github.com/nst/JSONTestSuite",
+    "revision": "1ef36fa01286573e846ac449e8683f8833c5b26a",
+    "path": "test_parsing",
+    "eligibility": "ALL y_ object/array documents with strict UTF8/Python json acceptance and16..96 GPT2 tokens, original bytes unchanged; no result-based selection",
+    "eligible_count": 5,
+    "selection": "ALL five originally eligible external documents, original bytes and all three mask counts; first document is seen regression, remaining FOUR documents are unseen by A49 TV development (not unseen by A24/model training)",
+    "license": "MIT",
+    "cases": [
+      {
+        "key": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+        "file": "y_string_uEscape.json",
+        "source_sha256": "a69c93369dd5e8e3f07db70b9110f59998fab55c1d8eac6a37ecebed3d1f8516"
+      },
+      {
+        "key": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+        "file": "y_object_extreme_numbers.json",
+        "source_sha256": "79711ae7b3f95981a7aece4db3435a10a68493d4ea66fd623464d3f681809405"
+      },
+      {
+        "key": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+        "file": "y_string_accepted_surrogate_pairs.json",
+        "source_sha256": "9df10c47273a7e385c87007e8629b34a30288eb24752c9e1c519256b46d6e287"
+      },
+      {
+        "key": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+        "file": "y_object_string_unicode.json",
+        "source_sha256": "edec7a6f5af644b0b729f4c822d60dc74575dfa11157fc6e6a855150d286aad8"
+      },
+      {
+        "key": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+        "file": "y_object_long_strings.json",
+        "source_sha256": "b7afdd9d8feae8fc6a4532b01bddea0691994e8ed7e4a93303157c83413d156d"
+      }
+    ],
+    "identity_seed": 2026100918
+  },
+  "external": {
+    "eligible_tokens": [
+      16,
+      96
+    ]
+  },
+  "seed": 2026100922,
+  "mask_counts": [
+    4,
+    8,
+    16
+  ],
+  "seen_development_document": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+  "primary_unseen_documents": [
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72"
+  ],
+  "selection": "ALL five originally eligible external documents, original bytes and all three mask counts; first document is seen regression, remaining FOUR documents are unseen by A49 TV development (not unseen by A24/model training)",
+  "support": "All50258 original IDs, no support pruning/answer injection; ABSENT EOS, MASK probability zero before F64 softmax; unsupported IDs keep their input mass",
+  "formats": [
+    "binary32",
+    "binary16",
+    "bfloat16"
+  ],
+  "tolerances": [
+    "1/2",
+    "1/10"
+  ],
+  "engines": [
+    "adaptive_angular",
+    "calibrated_endpoint",
+    "hybrid_endpoint",
+    "ordered_planar"
+  ],
+  "scalar_controls": [
+    "original_Hellinger",
+    "original_likelihood_range",
+    "common_support_Hellinger",
+    "common_support_chi_QP",
+    "common_support_chi_PQ",
+    "common_support_likelihood_range",
+    "full_sampler_overlap",
+    "common_support_sampler_overlap"
+  ],
+  "passthrough": "Identical exact unary/singleton passes and structural error budget for all engines",
+  "preparation": {
+    "max_edges": 1000000,
+    "max_cells": 200000,
+    "max_terms": 50000000,
+    "timeout_seconds": 120
+  },
+  "core": {
+    "hard_wall_seconds": 150,
+    "child_virtual_memory_gib": 3,
+    "max_materialized_rows": 1000000
+  },
+  "correctness": "Validate both exact normalizers independently against frozen stack control, original assignment count and rational L<=U<=(1+epsilon)L, L<=every cheap upper. Failure/refusal yields NO certificate. All24 expected records per state; shared preparation failure reported for all methods, never competitor loss credit",
+  "rows": 360,
+  "repetitions": 1,
+  "usefulness_gate": "DEVELOPMENT replay of ALL old15 heads/360 rows, no independent confirmation. Retain the previous2x comparison and every loss/refusal; no new forward or case selection.",
+  "timing": "Charge source/token input, lexer/stack/bridge preparation, first count/normalizer, rounded conversion/normalizer, scalar controls, core and process management. Capture model/softmax separately; load/warmup recorded. No statistical latency gate",
+  "origin": "Fresh forwards on same pinned MDLM/tokenizer; archive full rational source tables and hashes, small raw-head verification where published; raw model caches remain local. No parameter update/training",
+  "claim": "Known-root query and rational factor accounting are classical and supplied to ALL four engines. Quantitative theorem remains the novelty candidate, not this optimization.",
+  "revision": "v26",
+  "predecessor": "Complete V25 failure0/36; known-root proof written before its outcome, common optimization only",
+  "supervision": "One state worker under3GiB virtual memory;150s signal deadline for shared input/preparation/normalizers or each format conversion/controls; each core independently forked under150s wall and same memory. Shared refusal applies to all affected methods, never competitor win. Record all360 rows. Processor time includes children; charge process management.",
+  "known_root_query": true,
+  "development_only": true
+}
