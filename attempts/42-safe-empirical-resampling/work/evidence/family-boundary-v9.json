@@ -1,0 +1,19 @@
+{
+  "scope": "Numerical obstruction screen only; interval remains unproved",
+  "seed": 202610110428,
+  "cases": 37200,
+  "worst_maximum_eigenvalue": 8.892074477268882e-16,
+  "worst_endpoint": 0,
+  "worst_probabilities": [
+    1.3434856620843512e-09,
+    3.954023823643348e-16,
+    2.135336799683392e-22,
+    0.9999999938521452,
+    1.7017901992853232e-26,
+    1.1238579508550214e-20,
+    3.2062098224093568e-37,
+    4.794327639501725e-42,
+    4.804368674200629e-09
+  ],
+  "obstruction": null
+}

@@ -1,0 +1,19 @@
+{
+  "source_commit": "b7ee9e01828ff35ea9cc2f8a01dc55a36c8f642f",
+  "scope": "Exact five-class verifier obstruction refutes all-family safety; necessary boundary is not sufficient; no model/publication gate",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 .venv/bin/python -m attempts.42-safe-empirical-resampling.work.family_probe_v8 --output attempts/42-safe-empirical-resampling/work/evidence/family-endpoints-v8.json"
+  ],
+  "checks": {
+    "numerical_cases_before_obstruction": 3842,
+    "exact_verifier_obstruction": true,
+    "new_model_calls": 0
+  },
+  "files": {
+    "family-contract-v8.md": "513acadf5e1760c75ae7163b410ca9bdee297ca8c82869d511581d97571f34e2",
+    "family_probe_v8.py": "500002308513162a6512c4ad813aa2df656cf5a5695633fb183436fd7b921ace",
+    "family-obstruction-v8.md": "5c2992112b064f6a744ff9134c0630ee08c7a5d5bdd087b0cc9d258535c975eb",
+    "evidence/family-endpoints-v8.json": "626da22b7af5c86033f66623c5954dc46a4057163b5fe7e43c5de7fe22d5e11a",
+    "evidence/family-exact-obstruction-v8.json": "8695099ed17aca9f58311854deeaf557b6cdf6418fa243ae6c56a04b6e403937"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "source_commit": "847cea3bc58b3923541173f725dc8fcbcfbadc05",
+  "scope": "Numerical obstruction screen and exact written algebra toward an OPEN sufficiency theorem; no neural, priority or publication gate.",
+  "commands": [
+    "OPENBLAS_NUM_THREADS=1 .venv/bin/python -m attempts.42-safe-empirical-resampling.work.family_boundary_v9 --output attempts/42-safe-empirical-resampling/work/evidence/family-boundary-v9.json"
+  ],
+  "checks": {
+    "numerical_endpoint_cases": 37200,
+    "maximum_eigenvalue": 8.892074477268882e-16,
+    "obstruction": null,
+    "new_model_calls": 0
+  },
+  "files": {
+    "family-boundary-contract-v9.md": "2c4705ee973ab859f56f75a4bb509b723438c32a41c83f53329b189c2c049b93",
+    "family_boundary_v9.py": "bdf4aa557ace131487224bfc308a1830bbba4eb1660c7fee74cf1722ff9c3aa3",
+    "family-algebra-v9.md": "24154ba969bda8520c8b2f95da1d2e52d1373592b724dfff7ea9272728a1e38c",
+    "evidence/family-boundary-v9.json": "8cc53d29ee3f383bea48305396d233ff7b4fe1c9b744e38d6bae6b0085632719"
+  }
+}

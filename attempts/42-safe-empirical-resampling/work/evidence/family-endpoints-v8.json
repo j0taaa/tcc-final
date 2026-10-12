@@ -1,0 +1,25 @@
+{
+  "scope": "Exploratory eigenvalue screen; no universal, model or priority claim",
+  "seed": 202610110428,
+  "cases": 3842,
+  "worst_maximum_eigenvalue": 4.765767540282944e-08,
+  "worst_endpoint": 0.16666666666666666,
+  "worst_probabilities": [
+    0.5940408291270504,
+    0.0009725313784462301,
+    6.504238224741107e-05,
+    0.002855294117524556,
+    0.40206630299473145
+  ],
+  "obstruction": {
+    "probabilities": [
+      0.5940408291270504,
+      0.0009725313784462301,
+      6.504238224741107e-05,
+      0.002855294117524556,
+      0.40206630299473145
+    ],
+    "endpoint": 0.16666666666666666,
+    "eigenvalue": 4.765767540282944e-08
+  }
+}

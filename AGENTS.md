@@ -819,3 +819,9 @@ IID opaca universal; pivotal6 a compartilha. Não aplicá-la a métodos com
 massas/inversas gratuitos, CV ou políticas adaptadas a cada score. Os controles
 fortes negativos de v5 continuam válidos; nenhuma novidade/publicação,
 superioridade neural/EPIC ou utilidade CFG de custo completo foi confirmada.
+A42 v7/v8 preservam duas refutações EXATAS: blend1/L não domina C4, e
+ótimo por classe individual não garante pass@2 de uma união de classes.
+O reparo local H6 tem ganho pequeno e isso não justifica promoção. V9 tem
+37.200 checks numéricos sem obstrução no intervalo necessário0/4/45, mas a
+suficiência continua conjectural; há redução algébrica escrita, não prova.
+Nenhum novo forward ou campanha neural. Não apagar/refavorecer esses casos.

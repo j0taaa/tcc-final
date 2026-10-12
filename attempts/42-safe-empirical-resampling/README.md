@@ -117,3 +117,14 @@ minor/score. Its tiny failure is still a failure. Do not change tolerances or
 relabel it as a balanced victory. No neural calls or sampler promotion;
 the conservative repair alone is insufficient for the publication goal.
 See work/monotone-proof-v7.md, blend-erratum-v7.md and local-maximality-v7.md.
+
+V8 tests the anonymous, conditionally atom-optimal six-pool family, which
+differs only at profile(2,2,1,1). The aggressive endpoint t=1/6 fails after
+3842 spectral checks; a simpler EXACT five-class union event has positive
+covariance111816971/1687500000000 despite optimal atom diagonals. All-family
+safety is refuted, not a result to rescue with favourable cases. A rare-class
+limit proves t<=4/45 NECESSARY for a universally safe family parameter.
+V9's new endpoint screen0/4/45 has37200 checks with no >1e-10 obstruction;
+sufficiency remains OPEN. Exact two-moment algebra is in family-algebra-v9.md;
+a coarse Jensen proof tactic fails. These are proof aids and counterexamples,
+not model measurements, novelty certification or a practical promotion.

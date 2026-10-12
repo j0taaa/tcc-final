@@ -67,6 +67,12 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   ALL such conditional PSD refinements. Prospective1/L blend fails:626
   numerical search cases followed by a negative EXACT rational minor/score.
   Frozen search125d017; no model calls, no promotion/benchmark victory.
+  V8 anonymous six-pool family is REFUTED as uniformly safe:3842 numerical
+  checks lead to an exact five-class verifier obstruction at t=1/6. The
+  rare-class limit gives necessary t<=4/45. V9 screen37200 endpoints has no
+  obstruction but is NOT proof. family-algebra-v9 reduces sufficiency to an
+  explicit two-moment quadratic form with a centering constraint; OPEN.
+  Frozen producers b7ee9e0/847cea3. Zero new neural calls/publication gate.
 - [ ] T6202: Only after theory/prior survives, select a useful operation and
   competent complete-cost controls. No publication or practical gate yet.
 
