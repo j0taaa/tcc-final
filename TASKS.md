@@ -29,6 +29,21 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
+## M69 — Rational drift certificate, proof before application
+
+- [x] T6900: Write49's eight criteria and planar rational normalization/
+  aggregation proof BEFORE the finite oracle. Original Fu2609.24235v1
+  Definition3.6/Theorem3.8 already supplies the general admissible-gate
+  FPTAS; generic unambiguous-derivation specialization is a corollary.
+  Candidate bit-cost/planar/word-faithful distinction remains OPEN. No heads.
+- [ ] T6901: Independently attack all-query norm containment with integer
+  breakpoints, exhaustive sign domains, zero rank and near-collinearity.
+  Then prove the packed-word reduction and complete integer bit costs.
+  Finite checks do not establish novelty, speed, model utility or publication.
+- [ ] T6902: Only if the specific distinction/use survives the closest priors,
+  implement/validate the smallest real operation with a predeclared fair
+  protocol. No main API/article change or neural timing is justified yet.
+
 - [x] T6500: Freeze A45's eight criteria and adverse-only population screen
   before observations (producer1d68d3a). All6,230 cases/238 ticket profiles
   complete, no eigenvalue>1e-9. This is NOT the missing universal proof.
