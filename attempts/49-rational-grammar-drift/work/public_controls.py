@@ -23,6 +23,7 @@ from . import (
 )
 from . import public_audit as old
 from .forest import certificate
+from .mass_aware_controls import controls as strengthened_controls
 
 ENGINES = [angular_control, calibrated_endpoint, hybrid_endpoint]
 
@@ -39,7 +40,7 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def run(output, streamed=False, adaptive=False):
+def run(output, streamed=False, adaptive=False, massaware=False):
     engines = [angular_streamed, calibrated_endpoint, hybrid_endpoint] if streamed else ENGINES
     if adaptive:
         engines = [adaptive_angular, calibrated_endpoint, hybrid_endpoint]
@@ -61,6 +62,7 @@ def run(output, streamed=False, adaptive=False):
         machine=platform.machine(),
         max_rows=1_000_000,
         exact_passthrough=adaptive,
+        mass_aware_scalar_controls=massaware,
     )
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     try:
@@ -115,6 +117,8 @@ def run(output, streamed=False, adaptive=False):
                 conversion_cost = elapsed(began)
                 began = clock()
                 baseline = old.controls(plan, first, second)
+                if massaware:
+                    baseline["mass_aware"] = strengthened_controls(plan, first, second)
                 control_cost = elapsed(began)
                 for epsilon in [F(1, 2), F(1, 10)]:
                     for engine in engines:
@@ -132,6 +136,8 @@ def run(output, streamed=False, adaptive=False):
                             assert report["lower"] <= min(
                                 baseline["range_upper"], baseline["hellinger_upper"]
                             )
+                            if massaware:
+                                assert report["lower"] <= baseline["mass_aware"]["upper"]
                             completed += 1
                         except RuntimeError as exc:
                             report = dict(status="RESOURCE_REFUSAL", reason=str(exc))
@@ -199,5 +205,6 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--streamed", action="store_true")
     parser.add_argument("--adaptive", action="store_true")
+    parser.add_argument("--massaware", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.streamed, args.adaptive)
+    run(args.output, args.streamed, args.adaptive, args.massaware)
