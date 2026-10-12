@@ -215,3 +215,11 @@ cap via three replayable scans, with unchanged all-query/error proof. This
 classical optimization is not novelty. All old oracle families and ALL18
 public rows will be repeated; controls get more permissive resources, and
 their losses/longer costs remain recorded. No table-cap win is accepted.
+
+V14 writes BEFORE finite checks a positive original-probability family with
+strict stored-core separation: the streamed angular control needs Omega(1/epsilon)
+rows while endpoints need O(1/sqrt(epsilon)), at matched all-query tolerance.
+`positive-core-separation-v14.md` answers all eight criteria and credits the
+exact O(M)-time/O(1)-space scalar control for this one-position example. This
+is a mathematical intermediate-representation result, NOT a favorable
+generation benchmark or a lower bound against all TV solvers.
