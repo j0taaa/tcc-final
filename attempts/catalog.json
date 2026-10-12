@@ -1789,6 +1789,20 @@
             "attempts/42-safe-empirical-resampling/work/evidence/monotone-budget-v10.json",
             "attempts/42-safe-empirical-resampling/work/evidence/origin-v10.json"
           ]
+        },
+        {
+          "id": "v11",
+          "source_commit": "e631443586ddc823cd36850cfe027cb7dbb3f85c",
+          "evidence_commit": "9034926746b71eef126cc47c50dde182d5e59376",
+          "evidence_roots": [
+            "attempts/42-safe-empirical-resampling/work/native-boundary-contract-v11.md",
+            "attempts/42-safe-empirical-resampling/work/native-boundary-decision-v11.md",
+            "attempts/42-safe-empirical-resampling/work/analyze_native_v11.py",
+            "attempts/42-safe-empirical-resampling/work/native-copy-origin-v11.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/native-boundary-v11.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/native-boundary-summary-v11.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/origin-v11.json"
+          ]
         }
       ]
     }
