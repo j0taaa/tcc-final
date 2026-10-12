@@ -151,6 +151,14 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   Producer3702503 completesALL24 rows, no errors/refusals. Ordered forest
   timing is not uniformly better; retain FP32 losses/BF16 adaptive win.
   No new capture. Evidence:49/work/evidence/public-v21 and origin-v21.json.
+- [x] T6915: Consolidate a NEW ten-page mathematical manuscriptV22 and generated
+  ALL24-row table, with complete ordered/product/bit/word proofs and stronger
+  controls. V10 PDF remains immutable. Budgeted-use-v22 gives the standard
+  coupling application, not a deployed/measured new iterative decoder.
+  Four focused regressions pass; they exercise both engines and the realV19
+  failure. Final10 PDF pages rendered/visually reviewed; no LaTeX warnings.
+  MainA24 paper, Rust, Lean and neural model remain unchanged. Publication
+  priority/significance/human-review goalT6905 remains OPEN; no absolute claim.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

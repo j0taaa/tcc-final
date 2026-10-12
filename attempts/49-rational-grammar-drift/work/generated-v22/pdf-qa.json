@@ -1,0 +1,25 @@
+{
+  "artifact": "output/pdf/grammatical-drift-v22.pdf",
+  "artifact_sha256": "a0a65a568dc1719e30cd3547130e2d42c5118c30a0f60b8c2b45c164becf16c5",
+  "source": "attempts/49-rational-grammar-drift/work/manuscript-v22.tex",
+  "source_sha256": "602f55e6ce6c79afbb1ec20eac8cfb72ca29ad7a30184bcad6d0fdc6b44c5125",
+  "generator": "attempts/49-rational-grammar-drift/work/build_report_v22.py",
+  "generator_sha256": "892831ec715eb358820c39b41ae06ff9e180573dca426dc1db914eafaf75aebb",
+  "render": "pdftoppm -png -scale-to 1300",
+  "pages_visually_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "scope": "Visual/layout review of final ten pages; NOT independent scientific peer review",
+  "latex_warnings": [],
+  "generated_files_regenerate_byte_for_byte": true,
+  "public_evidence_producer": "3702503"
+}

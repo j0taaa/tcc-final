@@ -959,3 +959,16 @@ endpoint0,0000409460 emepsilon0,1 (cerca18,57x, não67,98x contra esses novos
 controles). Não houve forward novo, corpus independente, modelo quantizado,
 gate de latência geral ou vitória EPIC. V10/PDF e todos erros/custos ficam
 preservados; próximo rascunho deve incorporar estes controles mais fortes.
+
+A49 V19 falha no primeiro oráculo não vazio por inverter a comparação do
+menor ângulo; fonte/erro foram preservados. V20 passa1.860 geometrias/33.747
+queries,117.376 projeções exaustivas,1.860 imagens,1.167 produtos/389 extremos
+e75 florestas. V21 conclui TODOS24 casos funcionais com os controles mais
+fortes; mantém perdas FP32 da versão ordenada e vitória angular BF16/0,5.
+V22 conserva um NOVO rascunho matemático separado de dez páginas, com bound
+produto O(nq sqrt(n/epsilon) log(q+2)) e tabela integral gerada. O corolário
+de orçamento da trajetória é acoplamento clássico escrito, não decoder
+iterativo implementado/medido. Quatro regressões focadas cobrem ambos núcleos
+e o erro realV19. Geometria, parsing, acoplamento e computabilidade em bits
+são antecedentes; a diferença candidata é quantitativa. Não declarar
+prioridade absoluta, revisão humana, aceitação ou superioridade EPIC.

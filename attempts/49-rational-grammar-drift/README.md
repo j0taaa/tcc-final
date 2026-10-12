@@ -325,3 +325,17 @@ adaptive angular still wins and ordered endpoints lose to calibrated ones
 in both FP32 cases. These are complete descriptive timings on one reused
 packet. Product-only arithmetic improvement is not a generic-forest timing
 claim. All scalar controls, source-origin qualifications and losses remain.
+
+V22 consolidates a NEW ten-page manuscript at `work/manuscript-v22.tex` /
+`output/pdf/grammatical-drift-v22.pdf`, preservingV10. It includes the ordered
+O(n*q*sqrt(n/epsilon)*log(q+2)) product proof, matched exact budgets, original
+word/LL(1) source corollary, stronger controls and ALL24 generated V21 rows.
+Every final PDF page was rendered and visually inspected; that is layout QA,
+not peer review. `work/budgeted-use-v22.md` makes the standard online-coupling
+application precise: a runtime table-admission budget bounds whole-trajectory
+drift under an unchanged policy. No iterative wrapper was implemented/measured.
+Four small CI regressions now exercise BOTH core engines, including the actual
+V19 rotation failure; independent enumeration remains the product oracle.
+The own scientific claim is the sharper deterministic quantitative bound,
+not known geometry/coupling/parsing, bit computability alone or an EPIC win.
+Independent human judgement/absolute priority/editorial acceptance remain absent.
