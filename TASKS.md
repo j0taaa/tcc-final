@@ -77,6 +77,15 @@ resetting earlier losses or claiming that prototype correctness proves novelty.
   priority, independent human judgement and editorial acceptance are NOT
   confirmed. Do not manufacture a generation benchmark or call deterministic
   upper-bound improvement universal physical/semantic superiority.
+- [x] T6906: Prove the small exact-input shortcut BEFORE code, preserve V10
+  unchanged. Source3a9416b passes ALL1,860 geometry cases/30,741 norm queries,
+  117,376 independent projections and75 original-ID forests; ALL1,167
+  original products plus389 extreme-precision products and six signed checks.
+  V11 has O(m log(m+2)) core compression work, same guarantee. Three small
+  independent regressions are included in existing offline CI (`tests/test_integer_tv.py`)
+  and pass at67b5f92. The previous164-test suite passes70.471s. Matoušek1996
+  and Reis/Rothvoss2026 scopes are recorded in geometric-priors-v11, not
+  full-paper review or a new geometric/bit-computability claim.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

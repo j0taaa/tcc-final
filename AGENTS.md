@@ -929,3 +929,12 @@ Antecedentes e distinção quantitativa estão em primary-comparison-v10.md;
 prioridade exaustiva/revisão humana/aceitação permanecem não confirmadas.
 Consolidar esta diferença antes de nova implementação ampla; não reiniciar
 decoders negativos ou prometer certeza absoluta de publicação.
+
+A49 V11 conserva todos snapshots e o PDF V10. O atalho exato m<=k é rotina,
+com prova antes de código: custo de compressão O(m log(m+2)), garantia igual.
+Todos1.860 casos/30.741 queries/117.376 projeções e75 florestas passam,
+assim como1.167 produtos e389 casos epsilon2^-1024, exatos. Três regressões
+independentes pequenas entram no CI; suíte mantida passa164 testes antigos
+e os três novos passam separadamente (não fingir execução167 completa).
+Matoušek1996/Reis-Rothvoss2026 reforçam que geometria/bit computability
+são antecedentes. A distinção é o bound quantitativo de TV, não nova geometria.

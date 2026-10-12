@@ -174,3 +174,16 @@ evidence in `work/evidence/product-v10`. The proof, not this finite gate,
 establishes the precision exponent. No new model forward or competitive
 timing campaign was run. The next useful step is adversarial full-proof/
 priority checking, not another decoder benchmark chosen to favor this audit.
+
+V11 preserves the V10 draft/data and adds a ROUTINE exact shortcut: m<=k
+returns the input core, otherwise the V8 query algorithm runs. This gives
+O(m log(m+2)) compression arithmetic work, without changing the64k guarantee.
+The proof/prospective gate preceded code (782e9a2,3a9416b). ALL1,860 geometry
+cases/30,741 norm queries/117,376 independent projections and75 original-ID
+forests pass; ALL1,167 original product checks pass again. The added389
+cases at epsilon2^-1024 are exact, with two zero-mass refusals and six signed
+checks. Three independent small regressions are in CI through `make test`;
+source67b5f92 passes them. The previous164-test suite passed70.471s.
+Geometric-priors-v11 reinforces that planar compression/bit models are OLD;
+only the explicit quantitative TV bound is the candidate scientific advance.
+No reattribution of V9 timings, new neural capture or semantic benchmark.
