@@ -93,6 +93,8 @@ Check ordered output after compression and diagonal maps, including zeros,
 aliases of integer directions and singular maps. Repeat ALL1,167 existing
 product cases and389 extreme-precision cases against independent original-ID
 enumeration. No synthetic timing benchmark. A failure blocks real use.
+Before any grammar application, also repeat ALL75 original-ID forest cases
+with the generic unordered compressor and the common exact passthrough.
 
 Criteria1/6 retain the real numerical dLLM/GLC audit and complete costs.
 Criteria2--4 sharpen the candidate deterministic TV theorem, explicitly

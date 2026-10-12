@@ -33,10 +33,28 @@ def certificate(first, second, epsilon=Fraction(1, 10), max_rows=1_000_000, comp
     for row in paired:
         if len(row) * len(core) > max_rows:
             raise RuntimeError("research core budget: no certificate issued")
-        candidates = [(a * x, b * y) for a, b in row for x, y in core]
-        peak = max(peak, len(candidates))
-        bits = max(bits, max((abs(x).bit_length() for a in candidates for x in a), default=0))
-        core = engine.compress(candidates, grid)
+        images = getattr(engine, "compress_images", None)
+        if images is not None:
+            peak = max(peak, len(row) * len(core))
+            bits = max(
+                bits,
+                max(
+                    (
+                        (
+                            max((abs(a[j]) for a in row), default=0)
+                            * max((abs(a[j]) for a in core), default=0)
+                        ).bit_length()
+                        for j in [0, 1]
+                    ),
+                    default=0,
+                ),
+            )
+            core = images(core, row, grid)
+        else:
+            candidates = [(a * x, b * y) for a, b in row for x, y in core]
+            peak = max(peak, len(candidates))
+            bits = max(bits, max((abs(x).bit_length() for a in candidates for x in a), default=0))
+            core = engine.compress(candidates, grid)
     a, b = normalizers
     lower = Fraction(sum(abs(b * x - a * y) for x, y in core), 2 * prod(normalizers))
     return dict(
