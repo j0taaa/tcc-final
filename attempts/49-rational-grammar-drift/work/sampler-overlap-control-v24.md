@@ -57,3 +57,10 @@ can proceed with these controls added. All original cases, tolerance, budgets
 and the2x precision predicate remain; there have been NO independent metric
 observations on which to change that predicate. Preserve an old failed gate
 if the strengthened comparator removes it. No speed/semantic/EPIC victory.
+
+Prospective oracle addendum (still before code): retain all75 original cases
+unchanged and add both one-sided and two-sided atom zeros to each of the SAME
+five word fixtures at the SAME three nominal tolerances (30 additional checks).
+These only attack support-coupling correctness; no performance family is added.
+Require upper zero for equal/tiny-scale normalized laws, and retain all zero-
+mass refusals. No new head has been captured or independently evaluated.
