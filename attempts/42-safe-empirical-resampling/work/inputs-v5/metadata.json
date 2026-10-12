@@ -1,0 +1,27 @@
+{
+  "source_commit": "b9b67e715670d3a7fa49ae275a735aee71451407",
+  "protocol_sha256": "3bfcbb42dc2a203a096a2088f7179d0d6aa2942fef850461b42988a1f9c104c8",
+  "document_sha256": "19987dd6967a3fc83e9fb453cb27cb5ff682582b7fa73611c57ab9ce132adb47",
+  "files": {
+    "noise_information.py": "d628be0921df4cd50a276e60f27b40ab8225b9aa951a0ae362166f8845991786",
+    "noise_features.py": "b9450b91026db1dc9ca958d0a4aa2eb15a4f23caa967989d3ba5dfe48d060aa0",
+    "count_source.py": "597acb907b8972f3de136280bbc15e5cb45ac583cb325c3dc30c198819a30d0a",
+    "mdlm_loader.py": "ae010fa84e006716b33b934ff8d9bb838049f9a07bfd75604868f7dee2bed648"
+  },
+  "scope": "DEVELOPMENT information audit of cheap classes for ORIGINAL count-noising normalized NELBO and full OUTPUT-BIAS gradient only; NOT competitive latency, independent confirmation, training or EPIC win",
+  "python": "3.11.16",
+  "torch": "2.8.0+cu128",
+  "threads": 4,
+  "calls": 576,
+  "completed": 6,
+  "checkpoint_hashes": {
+    "config.json": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+    "configuration_mdlm.py": "0b1fe1d01c0ca375e1b24e06926a78e436b465b12448749cfbaa76318499cec2",
+    "modeling_mdlm.py": "d952a4de135a662abd25a2ce0f43fb67844e4cb38e034d5957e500957aa422a7",
+    "model.safetensors": "47149e73f7552f39ea9776dbe74d925d25237bcf2ed2e2ec03cdff9d51c82aa4"
+  },
+  "adapter_sha256": "90caa71ec43c77ff92735dba5fdc97a6a546c9f087a35b1a43e8b6e469251fd8",
+  "load_wall": 4.699104326078668,
+  "load_cpu": 4.372823415999999,
+  "load_scope": "Reported separately; excluded from per-document tally. No model-output cache."
+}
