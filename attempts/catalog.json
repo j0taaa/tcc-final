@@ -1754,6 +1754,29 @@
             "attempts/42-safe-empirical-resampling/work/evidence/blend-exact-refutation-v7.json",
             "attempts/42-safe-empirical-resampling/work/evidence/origin-v7.json"
           ]
+        },
+        {
+          "id": "v8",
+          "source_commit": "b7ee9e01828ff35ea9cc2f8a01dc55a36c8f642f",
+          "evidence_commit": "e054752b49b927ff38793786dfa7fb7ec6c72fb8",
+          "evidence_roots": [
+            "attempts/42-safe-empirical-resampling/work/family-contract-v8.md",
+            "attempts/42-safe-empirical-resampling/work/family-obstruction-v8.md",
+            "attempts/42-safe-empirical-resampling/work/evidence/family-endpoints-v8.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/family-exact-obstruction-v8.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/origin-v8.json"
+          ]
+        },
+        {
+          "id": "v9",
+          "source_commit": "847cea3bc58b3923541173f725dc8fcbcfbadc05",
+          "evidence_commit": "e054752b49b927ff38793786dfa7fb7ec6c72fb8",
+          "evidence_roots": [
+            "attempts/42-safe-empirical-resampling/work/family-boundary-contract-v9.md",
+            "attempts/42-safe-empirical-resampling/work/family-algebra-v9.md",
+            "attempts/42-safe-empirical-resampling/work/evidence/family-boundary-v9.json",
+            "attempts/42-safe-empirical-resampling/work/evidence/origin-v9.json"
+          ]
         }
       ]
     }
