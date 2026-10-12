@@ -1,0 +1,25 @@
+import importlib, math
+import numpy as np
+m=importlib.import_module('attempts.42-safe-empirical-resampling.work.matching_probe')
+def comps(n,k):
+ if k==1: yield(n,)
+ else:
+  for r in range(n+1):
+   for tail in comps(n-r,k-1): yield(r,*tail)
+rng=np.random.default_rng(202610110430)
+for B in (8,10,12,16):
+ for L in (3,4,5):
+  rs=np.array(list(comps(B,L)))
+  laws=np.array([m.joint(tuple(r)) for r in rs],float)
+  coef=np.array([math.factorial(B)/math.prod(math.factorial(int(x)) for x in r) for r in rs])
+  worst=0
+  for concentration in (.02,.1,.5,1,5):
+   for _ in range(100):
+    p=rng.dirichlet(np.full(L,concentration))
+    w=coef*np.prod(p[None,:]**rs,axis=1)
+    J=np.einsum('r,rij->ij',w,laws)
+    eig=np.linalg.eigvalsh(J-np.outer(p,p))[-1]
+    worst=max(worst,eig)
+    if eig>1e-10:
+     print('FAIL',B,L,p.tolist(),eig,flush=True);raise SystemExit
+  print('screen',B,L,len(rs),worst,flush=True)
