@@ -1,0 +1,11 @@
+{
+  "producer": "8192f2fcfbd59b9ea667b3abc9c767fef4eee795",
+  "command": ".venv/bin/python -m attempts.49-rational-grammar-drift.work.audit_external --source .cache/a49-supervisor-input-v25 --output .cache/a49-supervisor-v25 --development",
+  "rows24_bit_exact_matches_v24": true,
+  "new_forwards": 0,
+  "files": {
+    "rows.jsonl": "3646b568437217a6d531174facd41a83668031f404ac103bf7a42b9688f73051",
+    "summary.json": "9e9f600b20ce9e16359c4a0893cd36b03ef900652945612bda4e93c162c5ccb4",
+    "metadata.json": "a435cae74f7c101b3c51355d4f0e3b2245db76d5d8d3fc03e523eede0db7152d"
+  }
+}
