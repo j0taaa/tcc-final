@@ -1,5 +1,16 @@
 # A50 — Exact residual sampling for a grammatical posterior
 
+V11's [stronger prior reduction](work/known-reduction-v11.md) now explicitly
+credits the2024 dependent partial-coupling construction, including its2n
+bound. The scalar operation is a compact classical specialization, not a
+confirmed substantial own theorem. V12 writes before code a small
+[marginal-free precision refinement](work/lazy-precision-v12.md), retaining
+the same consumer and full costs (criteria1/5/6). Its bound4D trades a larger
+attempt bound for potentially cheaper preparation (criteria3/4), against
+V8/V9 and direct target controls. Ratio extrema, precision doubling and
+coupling are known; significance, priority and actual generation benefit
+remain open (criteria2/7/8). No performance campaign is substituted for them.
+
 Current V10 preserves the [bounded-bit integer-CDF reference](work/rounded-scalar-v9.md)
 and all complete channel/output laws, including coarse-grid cost failures.
 V5 materializes the [single-preparation upper-profile proof](work/upper-v5.md)
