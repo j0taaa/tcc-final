@@ -8,6 +8,17 @@ useful full-generation cost remain OPEN. No new neural measurement or article
 promotion. V1's unvalidated draft-density bug, V2's fixed-slot setup refusal,
 V3's corrected run and V4's shared marginals stay separately preserved.
 
+New V8 investigates a STRONGER scalar control before performance testing:
+[shared local kernels and subtraction-free residual proposal](work/scalar-control-v8.md).
+The same residual operation/consumer applies (criteria1/4). Its possible
+benefit is cheaper preparation, while V5 may only retain a better worst
+conditional ATTEMPT bound (criteria2/3). Classical coupling/mixture identities
+are explicitly credited; no own novelty is assumed. All scalar preparations,
+trace/density/RNG bits and failures count (criteria5/6). The main objection is
+that this competent control can already remove1/TV and beat the profile method;
+publication/real dLLM benefit must be rejudged, not advertised from V5 alone
+(criteria7/8). No neural or favorable performance campaign is triggered here.
+
 2026-10-13. Mathematical contract BEFORE implementation or observations.
 This is a candidate, not confirmed priority, publication sufficiency, an EPIC
 win or a measured faster dJev. A49 V29's downgrade and A24's separate evidence
