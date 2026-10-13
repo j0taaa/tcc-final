@@ -2335,7 +2335,7 @@
     {
       "id": "50-grammar-residual-coupling",
       "title": "Exact residual sampling for a grammatical posterior",
-      "conclusion": "Exact original-ID residual references with compact scalar and bounded-bit CDF realizations. Stronger2023/2024 primary constructions account for the scalar proposal/acceptance/bound: classical specialization, not confirmed own substantial theorem. Marginal-free refinement passes complete laws/ranges; all failures and costs preserved. Real-head consumer screen pending. Novelty, useful full-generation economics, human review and publication remain OPEN.",
+      "conclusion": "Exact unlimited residual references with classical2023/2024 principles and bounded-bit original-ID realizations. All law/range oracles preserved. Actual30-row consumer screen has15 full-support preprocessing refusals/nine top16 zero masses/six admissions;seven fresh forwards including warmup,23 valid corrections/one profile timeout. Full numerical/logit packet independently preserved in four supplements. V14 distinguishes exact unlimited kernels from wall-censored successful laws. No competitive speed, substantive original theorem, human review or publication confirmed.",
       "reading": "attempts/50-grammar-residual-coupling/README.md; TASKS.md",
       "versions": [
         {
@@ -2458,6 +2458,40 @@
             "attempts/50-grammar-residual-coupling/work/lazy-precision-v12.md",
             "attempts/50-grammar-residual-coupling/work/evidence/oracle-v12-lazy",
             "attempts/50-grammar-residual-coupling/work/evidence/oracle-v12-marginal-control"
+          ]
+        },
+        {
+          "id": "v13",
+          "source_commit": "8cb69bf085cf7ead06ee50e25bd11caa4be94712",
+          "evidence_commit": "69e2194f4099f8b02548c0a0f8b269f5bbc7cfe3",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/work/native-consumer-v13.md",
+            "attempts/50-grammar-residual-coupling/work/native-decision-v13.md",
+            "attempts/50-grammar-residual-coupling/work/native-resource-law-v14.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/native-v13"
+          ],
+          "supplements": {
+            "packet-00.zip": [
+              "docs/artifacts/raw/m70_native_v13/reproduction.zip.part00"
+            ],
+            "packet-01.zip": [
+              "docs/artifacts/raw/m70_native_v13/reproduction.zip.part01"
+            ],
+            "packet-02.zip": [
+              "docs/artifacts/raw/m70_native_v13/reproduction.zip.part02"
+            ],
+            "packet-03.zip": [
+              "docs/artifacts/raw/m70_native_v13/reproduction.zip.part03"
+            ]
+          }
+        },
+        {
+          "id": "v14",
+          "source_commit": "69e2194f4099f8b02548c0a0f8b269f5bbc7cfe3",
+          "evidence_commit": "69e2194f4099f8b02548c0a0f8b269f5bbc7cfe3",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/work/native-resource-law-v14.md",
+            "attempts/50-grammar-residual-coupling/work/native-decision-v13.md"
           ]
         }
       ]
