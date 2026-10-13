@@ -5,6 +5,7 @@ from fractions import Fraction
 from math import lcm
 
 _planar = importlib.import_module("attempts.49-rational-grammar-drift.work.planar")
+_implicit = importlib.import_module("attempts.49-rational-grammar-drift.work.implicit_product_v30")
 
 
 def certificate(
@@ -16,7 +17,10 @@ def certificate(
     compressor=None,
     exact_passthrough=False,
     known_root_query=False,
+    implicit_root_query=False,
 ):
+    if implicit_root_query and not known_root_query:
+        raise ValueError("implicit root query requires the known-root contract")
     engine = _planar if compressor is None else compressor
     if first.state != plan.state or second.state != plan.state:
         raise ValueError("both heads must use the exact same compiled state/support")
@@ -102,6 +106,24 @@ def certificate(
                     count = 1
                 elif term.children:
                     left, right = term.children
+                    if implicit_root_query:
+                        numerator += _implicit.product_norm(cores[left], cores[right], (b, -a))
+                        count = len(cores[left]) * len(cores[right])
+                        root_candidates += count
+                        peak_bits = max(
+                            peak_bits,
+                            max(
+                                (
+                                    (
+                                        max((abs(x[j]) for x in cores[left]), default=0)
+                                        * max((abs(x[j]) for x in cores[right]), default=0)
+                                    ).bit_length()
+                                    for j in [0, 1]
+                                ),
+                                default=0,
+                            ),
+                        )
+                        continue
                     pairs = ((x * u, y * v) for x, y in cores[left] for u, v in cores[right])
                     count = len(cores[left]) * len(cores[right])
                 else:
