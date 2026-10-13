@@ -1,5 +1,12 @@
 # A49 — Rational certificates for drift of a grammatical posterior
 
+**V30 resumed investigation (2026-10-13):** a minimal classical optimization
+of the exact root query is specified and proved [before code](work/implicit-root-v30.md).
+It avoids Cartesian enumeration by rational ordering and integer prefix sums,
+preserving the same certificate. Its eight criteria explicitly leave the
+scientific goal unfulfilled: no new geometry, decoder speed or publication
+novelty is asserted. V29's downgrade and every old campaign remain unchanged.
+
 **V29 theoretical disposition (2026-10-13):** the stronger primary comparator
 is Chan2006 Theorem2.6, not only a generic geometric existence theorem.
 [The full direct-composition audit](work/direct-composition-v29.md) recovers
