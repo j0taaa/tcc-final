@@ -1,0 +1,17 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "word_checks": 1780,
+  "channel_laws": 90,
+  "residual_laws": 18,
+  "sampled_valid": 432,
+  "undefined": 12,
+  "bounded_failures": 0,
+  "precision_gate_losses": 0,
+  "marginal_lower_checks": 30,
+  "equality_range_checks": 0,
+  "precision_passes": 0,
+  "producer": "291cde5b8f737c9646610b8a5b2817cca354ba18",
+  "rounded": true,
+  "lazy": false,
+  "fixed_grid": null
+}
