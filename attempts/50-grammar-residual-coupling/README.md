@@ -19,6 +19,16 @@ that this competent control can already remove1/TV and beat the profile method;
 publication/real dLLM benefit must be rejudged, not advertised from V5 alone
 (criteria7/8). No neural or favorable performance campaign is triggered here.
 
+V9 writes [a bounded-precision scalar proposal](work/rounded-scalar-v9.md)
+before further code. Same use/consumer, but all stored channel CDFs use integer
+weights and a dyadic common mass. It still corrects EXACTLY; approximation is
+only in the proposal. Its written conditional bound is2D+1/2 (criteria1/3/4).
+Marginals/normalizers/preparation/random bits are fully paid (criteria5/6).
+The main significance objection remains the2023 product-coupling estimator,
+now actually read through all Section3 proofs, and classical rounding of
+positive circuits (criteria2/7/8). V8's complete channel oracle passes; this
+does not resolve priority, a useful dJev workload or publication sufficiency.
+
 2026-10-13. Mathematical contract BEFORE implementation or observations.
 This is a candidate, not confirmed priority, publication sufficiency, an EPIC
 win or a measured faster dJev. A49 V29's downgrade and A24's separate evidence
