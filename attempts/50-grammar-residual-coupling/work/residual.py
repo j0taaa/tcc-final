@@ -90,14 +90,14 @@ class Residual:
         self.depth = max(1, self.costs[plan.root])
         self.profile_queries = 0
 
-    def bound(self, evidence=None, xi=F(1, 4), multiplier=F(1)):
-        if not 0 < xi <= 1 or multiplier < 0:
-            raise ValueError("invalid accuracy or threshold")
+    def _inside(self, evidence, xi, depth):
+        if not 0 < xi <= 1:
+            raise ValueError("invalid accuracy")
         evidence = {} if evidence is None else evidence
         if any(i not in range(len(self.ids)) or v not in self.ids[i] for i, v in evidence.items()):
             raise ValueError("evidence outside declared original support")
-        eta = xi / (2 * self.depth)
-        factor = (1 + eta) ** self.depth
+        eta = xi / (2 * depth)
+        factor = (1 + eta) ** depth
         assert factor <= 1 + xi
         profiles, totals = {}, {}
         self.profile_queries += 1
@@ -127,6 +127,12 @@ class Residual:
                     raise RuntimeError("profile sum budget, not zero residual")
             profiles[node] = coarsen(atoms, eta)
             totals[node] = tuple(sum(t[j] for t in term_totals) for j in range(3))
+        return profiles, totals, factor
+
+    def bound(self, evidence=None, xi=F(1, 4), multiplier=F(1)):
+        if multiplier < 0:
+            raise ValueError("invalid threshold")
+        profiles, totals, factor = self._inside(evidence, xi, self.depth)
         a, _, common_a = totals[self.plan.root]
         singular = F(a - common_a, self.za)
         threshold = multiplier * F(self.za, self.zb)

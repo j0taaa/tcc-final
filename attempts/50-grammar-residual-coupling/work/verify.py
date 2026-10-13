@@ -124,6 +124,7 @@ def fixtures():
         ((0, 4), (1, 2, 3), (0, 5)),
         None,
     )
+    yield "impossible", "dyck", (b"(", b"["), ((0, 1),), None
 
 
 def inputs(source, emissions, rows, canvas, mode, rng):
@@ -162,10 +163,13 @@ def inputs(source, emissions, rows, canvas, mode, rng):
             tuple(p / (1 << (64 * (i + 1))) for p in row) if canvas[i] is None else row
             for i, row in enumerate(target)
         ]
+    elif mode == "zero-target":
+        i = next(i for i, value in enumerate(canvas) if value is None)
+        target[i] = tuple(F(0) for _ in target[i])
     return ProbabilityInput(state, tuple(target)), ProbabilityInput(state, tuple(draft))
 
 
-def run(output):
+def run(output, outside=False):
     output.mkdir(parents=True, exist_ok=False)
     try:
         tail_checks, merges = tail_oracle()
@@ -178,12 +182,20 @@ def run(output):
             coupling_laws=0,
             sampled_valid=0,
             undefined=0,
+            marginal_bounds=0,
         )
         rng = random.Random(20261013051)
+        factory = (
+            importlib.import_module(
+                "attempts.50-grammar-residual-coupling.work.outside"
+            ).OutsideResidual
+            if outside
+            else ref.Residual
+        )
         with (output / "rows.jsonl").open("w") as stream:
             for name, kind, emissions, rows, canvas in fixtures():
                 source = source_dyck() if kind == "dyck" else json_source_grammar()
-                for mode in ["equal", "different", "singular", "tiny", "low-mass"]:
+                for mode in ["equal", "different", "singular", "tiny", "low-mass", "zero-target"]:
                     target, draft = inputs(source, emissions, rows, canvas, mode, rng)
                     paths = list(itertools.product(*target.state.support.rows))
                     raw = [
@@ -202,7 +214,7 @@ def run(output):
                     plan = compile_cfg_sampler(source, target.state)
                     if not all(masses):
                         try:
-                            ref.Residual(plan, target, draft)
+                            factory(plan, target, draft)
                         except ValueError:
                             counts["undefined"] += 1
                             stream.write(
@@ -216,13 +228,14 @@ def run(output):
                     ]
                     residual = {ids: max(F(0), p[ids] - q[ids]) for ids in paths}
                     delta = sum(residual.values(), F(0))
-                    solver = ref.Residual(plan, target, draft)
+                    solver = factory(plan, target, draft)
                     for ids in paths:
                         assert solver.point(ids, 0) == p[ids] and solver.point(ids, 1) == q[ids]
                         counts["word_points"] += 1
                     xi = F(1, 4 * len(rows))
                     prefixes = sorted({ids[:i] for ids in paths for i in range(len(rows) + 1)})
                     lower_cache = {}
+                    marginal_cache = {}
                     for prefix in prefixes:
                         evidence = dict(enumerate(prefix))
                         for multiplier in [F(0), F(1, 2), F(1), F(2)]:
@@ -240,13 +253,35 @@ def run(output):
                             counts["prefix_bounds"] += 1
                             if multiplier == 1:
                                 lower_cache[prefix] = lower
+                            if outside:
+                                marginals = solver.marginals(evidence, xi=xi, multiplier=multiplier)
+                                for i, row in enumerate(rows):
+                                    for j, value in enumerate(row):
+                                        exact_marginal = sum(
+                                            (
+                                                max(F(0), p[ids] - multiplier * q[ids])
+                                                for ids in paths
+                                                if ids[: len(prefix)] == prefix and ids[i] == value
+                                            ),
+                                            F(0),
+                                        )
+                                        lo, hi = marginals[i][j]
+                                        assert lo <= exact_marginal <= hi <= (1 + xi) * lo
+                                        assert (lo == 0) == (exact_marginal == 0)
+                                        counts["marginal_bounds"] += 1
+                                if multiplier == 1:
+                                    marginal_cache[prefix] = marginals
                     if delta:
                         proposals = {}
                         for ids in paths:
                             density = F(1)
                             for i, v in enumerate(ids):
                                 prefix = ids[:i]
-                                weights = [lower_cache[(*prefix, value)] for value in rows[i]]
+                                weights = (
+                                    [pair[0] for pair in marginal_cache[prefix][i]]
+                                    if outside
+                                    else [lower_cache[(*prefix, value)] for value in rows[i]]
+                                )
                                 total = sum(weights, F(0))
                                 if not total:
                                     density = F(0)
@@ -323,6 +358,7 @@ def run(output):
             status="CORRECTNESS_ONLY",
             **counts,
             producer=subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+            shared_outside=outside,
         )
         (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
         print(json.dumps(summary), flush=True)
@@ -334,4 +370,6 @@ def run(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    run(parser.parse_args().output)
+    parser.add_argument("--outside", action="store_true")
+    arguments = parser.parse_args()
+    run(arguments.output, arguments.outside)
