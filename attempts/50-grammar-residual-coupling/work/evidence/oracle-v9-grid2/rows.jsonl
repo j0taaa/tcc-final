@@ -1,0 +1,1 @@
+{"case": "dyck", "mode": "equal", "delta": "0", "envelope": "0", "attempt_ratio": null, "trace_bound": 7, "grid_bits": 2, "word_checks": 96, "channel_laws": 3, "residual_laws": 0, "sampled_valid": 0, "undefined": 0, "bounded_failures": 0, "precision_gate_losses": 0, "marginal_lower_checks": 1}

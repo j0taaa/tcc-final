@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/50-grammar-residual-coupling/work/verify_scalar.py", line 178, in run
+    assert sum(law.values(), F(0)) == (1 if mass else 0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -44,7 +44,7 @@ class RoundedResidual(Residual):
             u = sum(common_weights)
             count = integers[node] = u // (a_total * b_total * s) if a_total and b_total else 0
             self.common[node] = F(count, s)
-            masses = [[a for a, _ in raw], common_weights, []]
+            masses = [[a for a, _ in raw], common_weights if count else [0] * len(raw), []]
             actions = [
                 [(t, (0,) * len(term.children)) for t, term in enumerate(plan.terms[node])],
                 [(t, (1,) * len(term.children)) for t, term in enumerate(plan.terms[node])],
