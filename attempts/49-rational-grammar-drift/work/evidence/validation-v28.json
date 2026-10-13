@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "producer": "98e7dcec380ebfa5a9c3787815b49b6ec5b0c7e3",
+  "maintained_suite": {
+    "command": "make test",
+    "tests": 170,
+    "seconds": 71.121,
+    "exit_code": 0,
+    "log_sha256": "2dc16b0858a33e5f3497b04e16a86d6aa25da0142421e8df4049f8f7a7118eb1"
+  },
+  "standard_checks": {
+    "command": "make check",
+    "exit_code": 0,
+    "preserved_versions": 181,
+    "log_sha256": "4d2ee7cdeb5a2b7a24e9617fd84cc88caff2cf097b2bdba7bfa74e154ee15018"
+  },
+  "tight_word_oracle": {
+    "producer": "caf5721c29294fe1f96f305bfbb4db23d994b57f",
+    "cases": 105,
+    "undefined": 33,
+    "status": "CORRECTNESS_ONLY"
+  },
+  "decision_reconstruction": {
+    "pairs": 45,
+    "decisions": 528
+  },
+  "small_exact_interval_checks": 1295,
+  "interpretation": "Correction/preservation only; no novelty, publication or real-world benefit conclusion"
+}

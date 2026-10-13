@@ -1,6 +1,26 @@
 # Certified grammar inference for diffusion language models
 
-This TCC develops **closure certificates for structured dLLM predictions**.
+Current research consolidates **A49 as the mathematical candidate**, with
+A24 retained as a separate implemented application. A49 audits total variation
+between two frozen predictions conditioned on the same grammar. Its proposed
+ordered product bound is `O(nq sqrt(n/epsilon) log(q+2))`, with stated full
+preprocessing and polynomial bit costs. The sharper quantitative bound is
+the candidate contribution; geometry, admissible inference and coupling are
+antecedents. Priority and independent proof review remain open.
+
+The complete independent precision gate failed0/36. A new developmental audit
+of all45 old pairs adds one ACCEPT/eight REJECT decisions on an illustrative
+budget grid, but permits no narrower table precision in all120 policies.
+There is no demonstrated storage saving or faster dJev. The polynomial
+source-chart and Markov algorithms are written corollaries; the measured
+stack compiler is not their implementation.
+[A49 claim and proof audit](attempts/49-rational-grammar-drift/work/claim-audit-v28.md),
+[complete decision evidence](attempts/49-rational-grammar-drift/work/decision-v28.md),
+[mathematical draft](attempts/49-rational-grammar-drift/work/generated-v27/manuscript.pdf).
+
+## Separate implemented application: A24
+
+A24 develops **closure certificates for structured dLLM predictions**.
 The input is a frozen product of original token probabilities, a finite canvas
 and fixed context. The JSON reference returns a valid bounded-depth sample,
 valid mass and original-token marginals, with a deterministic error bound

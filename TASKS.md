@@ -255,6 +255,9 @@ do not reset earlier losses or call prototype correctness publication proof.
   decision-v28.md and claim-audit-v28.md retain the unsolved novelty/actual-use
   gaps and the unimplemented generalized chart/Markov corollary. This does
   not close T6905 or imply a more efficient dJev.
+  Maintained source98e7dce passesALL170 tests in71.121s and `make check`
+  (upstream, Ruff, types and181 snapshot-integrity checks). No extra tests
+  or new model measurement is credited as proof of novelty.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 
