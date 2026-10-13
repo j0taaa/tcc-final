@@ -2305,6 +2305,21 @@
             "attempts/49-rational-grammar-drift/work/evidence/origin-decisions-v28.json",
             "attempts/49-rational-grammar-drift/work/evidence/validation-v28.json"
           ]
+        },
+        {
+          "id": "v29",
+          "source_commit": "6ca910e36437f97d5e7715e42626c5dd7b87070e",
+          "evidence_commit": "6ca910e36437f97d5e7715e42626c5dd7b87070e",
+          "evidence_roots": [
+            "README.md",
+            "AGENTS.md",
+            "TASKS.md",
+            "docs/research/contribution-plan.md",
+            "attempts/README.md",
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/direct-composition-v29.md",
+            "attempts/49-rational-grammar-drift/work/evidence/primary-v29.json"
+          ]
         }
       ]
     }
