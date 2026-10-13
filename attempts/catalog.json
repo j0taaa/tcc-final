@@ -2286,6 +2286,25 @@
             "attempts/49-rational-grammar-drift/work/evidence/origin-scalar-gap-v27.json",
             "attempts/49-rational-grammar-drift/work/evidence/checks-v27.json"
           ]
+        },
+        {
+          "id": "v28",
+          "source_commit": "98e7dcec380ebfa5a9c3787815b49b6ec5b0c7e3",
+          "evidence_commit": "a3aeeb0bd4130b2b85aa2fe3ce14975f51d69888",
+          "evidence_roots": [
+            "README.md",
+            "AGENTS.md",
+            "TASKS.md",
+            "docs/research/contribution-plan.md",
+            "attempts/49-rational-grammar-drift/README.md",
+            "attempts/49-rational-grammar-drift/work/consolidation-v28.md",
+            "attempts/49-rational-grammar-drift/work/claim-audit-v28.md",
+            "attempts/49-rational-grammar-drift/work/decision-v28.md",
+            "attempts/49-rational-grammar-drift/work/evidence/decisions-v28",
+            "attempts/49-rational-grammar-drift/work/evidence/tight-oracle-v28",
+            "attempts/49-rational-grammar-drift/work/evidence/origin-decisions-v28.json",
+            "attempts/49-rational-grammar-drift/work/evidence/validation-v28.json"
+          ]
         }
       ]
     }
