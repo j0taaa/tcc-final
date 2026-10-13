@@ -1,0 +1,3874 @@
+{
+  "records": 540,
+  "planned": 540,
+  "campaign_complete": true,
+  "statuses": {
+    "complete": 540
+  },
+  "practical_development_gate": true,
+  "selected": "handoff/cursor",
+  "outcomes": {
+    "handoff/cursor": {
+      "strong_states": 4,
+      "states": [
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.37811492821026976,
+                "cpu": 0.4358789875110629
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3683036590240823,
+                "cpu": 0.425720061871087
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.23541147421378938,
+                "cpu": 0.28131257852485625
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.2291195061750329,
+                "cpu": 0.27427332445850644
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.019686899784445915,
+                "cpu": 0.02491252070834845
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.019466122173785134,
+                "cpu": 0.024626317674186216
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.2008122493256097,
+            "cpu": 0.2421135448256453
+          }
+        },
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0037638882185873,
+                "cpu": 1.0013570567402106
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9991592802617382,
+                "cpu": 1.000591268817953
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.025289433503798,
+                "cpu": 1.009987157794168
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0265531817383247,
+                "cpu": 1.0106867929895569
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0894724797207715,
+                "cpu": 1.0347523929494475
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.089788070890334,
+                "cpu": 1.0347082302891653
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.2487444107871197,
+            "cpu": 0.44801823913998473
+          }
+        },
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0032711948183333,
+                "cpu": 1.0018824246689841
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9958189671193434,
+                "cpu": 0.9974052434447136
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.019465558831532,
+                "cpu": 1.0117493802763684
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0040550122330145,
+                "cpu": 1.0023629797476303
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0402295625931826,
+                "cpu": 1.02415136734515
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0388554890809656,
+                "cpu": 1.0233373740806466
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.18674233680945748,
+            "cpu": 0.27204996591249514
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3092643389964237,
+                "cpu": 0.338707670362154
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.30434512977223055,
+                "cpu": 0.33356463527986724
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.1386062041277214,
+                "cpu": 0.15544246819412622
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.1384839250338939,
+                "cpu": 0.15531818396289143
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.0183189914422331,
+                "cpu": 0.02089955986072506
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.018208562547773588,
+                "cpu": 0.020774054667450696
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.29882888562208787,
+            "cpu": 0.3277293335944052
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8985183279821077,
+                "cpu": 0.9912210792929064
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9964335362695211,
+                "cpu": 0.998301601201936
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0170479990980328,
+                "cpu": 1.008049866416738
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.030431847520754,
+                "cpu": 1.0142490219849625
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.12342218205965,
+                "cpu": 1.0552133217992057
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1209815316183145,
+                "cpu": 1.0541135449155101
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19957558368479048,
+            "cpu": 0.3435813220209921
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7455565643784132,
+                "cpu": 0.8188676214122875
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.7083731502429618,
+                "cpu": 0.7977764560983921
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7886307770352645,
+                "cpu": 0.8517980715346607
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7739897868872216,
+                "cpu": 0.8406284704920787
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9727481558152018,
+                "cpu": 0.9824170296629557
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9722211419805766,
+                "cpu": 0.9817871057532263
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19536975967981451,
+            "cpu": 0.27221345493310534
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.37705499043143087,
+                "cpu": 0.4341133889993912
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3717481111688215,
+                "cpu": 0.42858273644562345
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.09448442034015334,
+                "cpu": 0.11703187848459735
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.09338555836533016,
+                "cpu": 0.11510781493384896
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.007313514855876526,
+                "cpu": 0.009256621081152964
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.007253692040480659,
+                "cpu": 0.009177791086540111
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.2090127045692331,
+            "cpu": 0.25100218433491334
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0199249654173015,
+                "cpu": 1.0093812082566225
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0132085125135815,
+                "cpu": 1.0062406399981767
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.044204284278504,
+                "cpu": 1.020649017894703
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0313776851477674,
+                "cpu": 1.0145661004823678
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.116142187548111,
+                "cpu": 1.0530282399455113
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1027191068417244,
+                "cpu": 1.0459777938178614
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19524798655983383,
+            "cpu": 0.33955121610786576
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0051080420982574,
+                "cpu": 1.0033265141000813
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0116384407693928,
+                "cpu": 1.0088150092647525
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8505812510076345,
+                "cpu": 0.8971931276155555
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8538058573509424,
+                "cpu": 0.8995305582417166
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0210253424951066,
+                "cpu": 1.013759499141217
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.026490264196913,
+                "cpu": 1.0170677810685222
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.17093351223047637,
+            "cpu": 0.24076372634784654
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0093746729858928,
+                "cpu": 1.0070314507180094
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9977504058143808,
+                "cpu": 0.9983171248134648
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0338328991734815,
+                "cpu": 1.0251196435718422
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0381173796223686,
+                "cpu": 1.028315062724559
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9303845070549648,
+                "cpu": 0.9469743049494248
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8974644102732965,
+                "cpu": 0.9345665503058175
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19462801962314577,
+            "cpu": 0.2440120369282645
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0154962886729162,
+                "cpu": 1.0076599837650628
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0083352536621526,
+                "cpu": 1.004441230851918
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1525475373571221,
+                "cpu": 1.0761924858698924
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1515287460028238,
+                "cpu": 1.0759972980679122
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.3403809727443672,
+                "cpu": 1.156333025731103
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.3454997522739167,
+                "cpu": 1.1592240257591544
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.23691102465888259,
+            "cpu": 0.3666364316869395
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.028934323442385,
+                "cpu": 1.0202628482694243
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0371380845459972,
+                "cpu": 1.0258958291456324
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1076515509620708,
+                "cpu": 1.0734755142892465
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1027034225116101,
+                "cpu": 1.070427898132344
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.2135278510962428,
+                "cpu": 1.1417374968411602
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.2173439785996016,
+                "cpu": 1.1449252251187811
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.23342918682566477,
+            "cpu": 0.30132051319280956
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.34889871043225557,
+                "cpu": 0.35245509160889155
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.347657632020078,
+                "cpu": 0.3510531061232294
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.24060856528537786,
+                "cpu": 0.24249613243784857
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.2392207371483128,
+                "cpu": 0.241713301762515
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.5538646820640957,
+                "cpu": 0.5557828898713228
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.5463560585104892,
+                "cpu": 0.5502701686601206
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.8111106178870338,
+            "cpu": 0.8134699133069551
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9602490447816403,
+                "cpu": 0.977718942161323
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9530332795839824,
+                "cpu": 0.973681142302344
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0090635964218255,
+                "cpu": 1.0044876540332508
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0116588625171827,
+                "cpu": 1.0062371192611939
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.2264052785649917,
+                "cpu": 1.1101287331434138
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.2251002192856189,
+                "cpu": 1.1095534735227286
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.20545780320165596,
+            "cpu": 0.3248743579874649
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7808789560875792,
+                "cpu": 0.8415254914359956
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7843080192610998,
+                "cpu": 0.8453194930741342
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.7122792045431285,
+                "cpu": 0.7893207025985063
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.7000157961715248,
+                "cpu": 0.7785474991285624
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0633499033240685,
+                "cpu": 1.0412703911953094
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.058043843793511,
+                "cpu": 1.0377964579632242
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.18872403334407764,
+            "cpu": 0.25961843477804936
+          }
+        }
+      ]
+    },
+    "handoff/full_sparse": {
+      "strong_states": 4,
+      "states": [
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.38735320530695266,
+                "cpu": 0.44440516043952316
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3709481810925471,
+                "cpu": 0.4272397116693136
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.23637460429474888,
+                "cpu": 0.28188917779134576
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.234122743646256,
+                "cpu": 0.2789546380357731
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.02027454687851324,
+                "cpu": 0.025518540479217703
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.020023084064255316,
+                "cpu": 0.02520464436186939
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.20694359987318098,
+            "cpu": 0.24829265296794523
+          }
+        },
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.008638441608499,
+                "cpu": 1.0036097018223322
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0049896852756788,
+                "cpu": 1.00203694944842
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0308432136124657,
+                "cpu": 1.0124007442039566
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0326526726942777,
+                "cpu": 1.013217046915153
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0959458194902356,
+                "cpu": 1.03726122752511
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.089758490490752,
+                "cpu": 1.0347572968642658
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.25022238027855,
+            "cpu": 0.4491044928723177
+          }
+        },
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.002044099045418,
+                "cpu": 1.001342678434521
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.002447570664275,
+                "cpu": 1.0014970807668817
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.024869369209866,
+                "cpu": 1.0151211652667709
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0112180609566745,
+                "cpu": 1.0067927581517984
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0441528640418756,
+                "cpu": 1.0267685399810722
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.037482457262345,
+                "cpu": 1.02268156729508
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.1854427058356885,
+            "cpu": 0.2710771357942366
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3083829230074131,
+                "cpu": 0.3381747434823487
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.30386148058231965,
+                "cpu": 0.3334613391876384
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.13920425566158773,
+                "cpu": 0.15632340049744306
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.13688482783439374,
+                "cpu": 0.15375135840516355
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.01802658392875398,
+                "cpu": 0.020596563857743323
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.01801808171047135,
+                "cpu": 0.020587305641222936
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.3027171114671911,
+            "cpu": 0.33146418208107437
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9017092471021196,
+                "cpu": 0.997977864458075
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.003448844681909,
+                "cpu": 1.001644333778123
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0206598540877692,
+                "cpu": 1.0097551978049277
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0411712680587148,
+                "cpu": 1.019236293016446
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1316935648539301,
+                "cpu": 1.058807093693446
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1288737099550001,
+                "cpu": 1.057643159293917
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.20028433889437813,
+            "cpu": 0.34416256312062227
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7633477290835756,
+                "cpu": 0.831280335244233
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7255289534930589,
+                "cpu": 0.801911042945474
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7949781321490275,
+                "cpu": 0.8562126328770208
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7886969874530084,
+                "cpu": 0.8507465604454617
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9805773937311105,
+                "cpu": 0.9875085418254715
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9957669731878757,
+                "cpu": 0.9972247199731537
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.2000888901733998,
+            "cpu": 0.27649373757086404
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3818113908366354,
+                "cpu": 0.4390262597032545
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3726580407369435,
+                "cpu": 0.4294308217130563
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.09459112448248364,
+                "cpu": 0.1168880319295918
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.09229555218057875,
+                "cpu": 0.11412107682929362
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.007337039092598304,
+                "cpu": 0.009277259879629756
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.007270506719863978,
+                "cpu": 0.00919831838526013
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.20928434535691023,
+            "cpu": 0.25163193106425447
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0227330527602208,
+                "cpu": 1.010992260078162
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.018897800890284,
+                "cpu": 1.0090558979815378
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.043767581866517,
+                "cpu": 1.0207105370151686
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0413192856558005,
+                "cpu": 1.0191824424360718
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1156753995902742,
+                "cpu": 1.0528158261869094
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1133483777583477,
+                "cpu": 1.0507370610257332
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19713001048795242,
+            "cpu": 0.3410961962955585
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0044531712421194,
+                "cpu": 1.0026904369355618
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.010979315079357,
+                "cpu": 1.0081754525685027
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8500270609616575,
+                "cpu": 0.8966243356494109
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8532495663360861,
+                "cpu": 0.8989602844187446
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.015221665429122,
+                "cpu": 1.0102075688471448
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0167340406250085,
+                "cpu": 1.0104150017554385
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.16898288761188818,
+            "cpu": 0.23767418934695003
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9948545999099423,
+                "cpu": 0.9962590146575017
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.996841230915624,
+                "cpu": 0.9974304782039625
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0231989377252018,
+                "cpu": 1.0172207079152835
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.026220654381315,
+                "cpu": 1.0196584036881104
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9227131661057985,
+                "cpu": 0.9412470317115935
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8966466184592385,
+                "cpu": 0.926629576102562
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19320379363107196,
+            "cpu": 0.24298520486240416
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.013808911528098,
+                "cpu": 1.0073191981281502
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.002721992121563,
+                "cpu": 1.0014498786682546
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.14613146617281,
+                "cpu": 1.0729874494339444
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1485808053191175,
+                "cpu": 1.0743887139403163
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.3408105960074979,
+                "cpu": 1.1571734787298056
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.3414896924813529,
+                "cpu": 1.1574428792297855
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.23522953057873836,
+            "cpu": 0.3652397702253002
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0016500905248795,
+                "cpu": 1.001149874595212
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9995227282443976,
+                "cpu": 0.999666532501436
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.068992668120349,
+                "cpu": 1.0471248963327835
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0719151337945338,
+                "cpu": 1.0490790476588245
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1621035940054294,
+                "cpu": 1.1077761483524016
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1680298015472417,
+                "cpu": 1.111418794288091
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.223537429908031,
+            "cpu": 0.29537575102610686
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3540798793774335,
+                "cpu": 0.3575980688686967
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3519539289878019,
+                "cpu": 0.3553739150476032
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.24360878279002784,
+                "cpu": 0.24634365259774754
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.24302307464288006,
+                "cpu": 0.2457417475784473
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.5610417745494607,
+                "cpu": 0.5646537693834873
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.5554292955064362,
+                "cpu": 0.5592790877376653
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.8224617328106283,
+            "cpu": 0.8247641279587523
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9586242901485247,
+                "cpu": 0.9771698767292788
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9508233139862164,
+                "cpu": 0.9729682513345441
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0070181709409485,
+                "cpu": 1.003625739861902
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0144366627218193,
+                "cpu": 1.0075834056902153
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.22977272678295,
+                "cpu": 1.1116140204770744
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.228464084088191,
+                "cpu": 1.1091242427285053
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.20602194665843118,
+            "cpu": 0.32530902088244606
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7864887222670567,
+                "cpu": 0.8455833532293754
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7909868519392415,
+                "cpu": 0.8501087581120415
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.718344670546836,
+                "cpu": 0.793792699370879
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.7069346725264976,
+                "cpu": 0.7837385327559387
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0724049377087865,
+                "cpu": 1.0471698409541503
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0670536940376687,
+                "cpu": 1.0436762257117613
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19058936018250155,
+            "cpu": 0.26134946342656235
+          }
+        }
+      ]
+    },
+    "closed/cursor": {
+      "strong_states": 4,
+      "states": [
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.43137569197987585,
+                "cpu": 0.4831336312859499
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.42474898976956926,
+                "cpu": 0.47639385992908845
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.25974344582261166,
+                "cpu": 0.30186252493160215
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.26924640053856397,
+                "cpu": 0.3122398775863296
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.023092655724455655,
+                "cpu": 0.02830848234170425
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.022923545371019833,
+                "cpu": 0.028102150915131602
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.23702812640212073,
+            "cpu": 0.27684570796251823
+          }
+        },
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9809466513788954,
+                "cpu": 0.9922731810058248
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9835332777155849,
+                "cpu": 0.9933322104689554
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.000034672177983,
+                "cpu": 1.0000140235539263
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9987124864247848,
+                "cpu": 0.9994822295690776
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0674705617784148,
+                "cpu": 1.0260623773924815
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0632471660055984,
+                "cpu": 1.024490987425707
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.247173668427279,
+            "cpu": 0.4502561590713068
+          }
+        },
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9946891511439826,
+                "cpu": 0.9967486303535782
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.995089661303619,
+                "cpu": 0.9958511383100472
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0116433622267387,
+                "cpu": 1.0066950176254552
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0117173109126192,
+                "cpu": 1.001571006565833
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0394677318842513,
+                "cpu": 1.0178122507249874
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0380946646993257,
+                "cpu": 1.014266042749482
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.18437855611925233,
+            "cpu": 0.2639394102482199
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.479938941103425,
+                "cpu": 0.5024302643736923
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.4652793093465629,
+                "cpu": 0.48779488803897414
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.21637789716301328,
+                "cpu": 0.2319451351169703
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.2125115876603653,
+                "cpu": 0.22787391541631966
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.028054924436494263,
+                "cpu": 0.030600561466163283
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.028041692362552554,
+                "cpu": 0.030586806423057267
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.3941917707304666,
+            "cpu": 0.4157985810075639
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8758805983395904,
+                "cpu": 0.9786311915346604
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9678461323273239,
+                "cpu": 0.9846771637015908
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9914239723864675,
+                "cpu": 0.9959504910487997
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0008690413849188,
+                "cpu": 1.000406940200076
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0934627975919602,
+                "cpu": 1.0418106434664014
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.088820879964527,
+                "cpu": 1.0397274074058864
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19439944105494494,
+            "cpu": 0.3392457658349233
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.7018779367604149,
+                "cpu": 0.7874558587767062
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.6671045783407282,
+                "cpu": 0.76954705131826
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7394806016369599,
+                "cpu": 0.8175762505178323
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7288985053207278,
+                "cpu": 0.8088323590794504
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9173686824213607,
+                "cpu": 0.9459368356243602
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9155812508597235,
+                "cpu": 0.9446517798705115
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.18790029437917039,
+            "cpu": 0.2669591221005303
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3623879213063201,
+                "cpu": 0.4197654399038465
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.354709828443787,
+                "cpu": 0.4127309683789514
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.09016379997035306,
+                "cpu": 0.11247726695603609
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.08797567161286891,
+                "cpu": 0.10981472279018796
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.006993629991598178,
+                "cpu": 0.00892718286787638
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.006928650423109402,
+                "cpu": 0.008844616645233795
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.20113459255163949,
+            "cpu": 0.24313010515650874
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.977204154224049,
+                "cpu": 0.9892148982209055
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9735396358537051,
+                "cpu": 0.9873202464911458
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9973022914352637,
+                "cpu": 0.9987238378149438
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9990906031854256,
+                "cpu": 0.9993006040326528
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0660089964852233,
+                "cpu": 1.0301375603670047
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0653756989266199,
+                "cpu": 1.029860645288188
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.1875799207273166,
+            "cpu": 0.33216725997106183
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9828958728037666,
+                "cpu": 0.9890370412430011
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9876426368487191,
+                "cpu": 0.9930423597990437
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8381634177520868,
+                "cpu": 0.8889793374553666
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.839261269385411,
+                "cpu": 0.889653170599761
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9968068836770353,
+                "cpu": 0.9979095434252125
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0114869348801943,
+                "cpu": 1.0073047254251275
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.16558895210951374,
+            "cpu": 0.2347779125803711
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9795873254583645,
+                "cpu": 0.9854362566310869
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.983548253487321,
+                "cpu": 0.9878004391772295
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0017397089670879,
+                "cpu": 1.0011067472462791
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.004698052112367,
+                "cpu": 1.0035058270791228
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9033613937577846,
+                "cpu": 0.926336582552628
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8846897462004588,
+                "cpu": 0.911950684463938
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19089701638436038,
+            "cpu": 0.2408928139752067
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8795373635915325,
+                "cpu": 0.9361421827460039
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8716367389433339,
+                "cpu": 0.9313415329459238
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9982537737626338,
+                "cpu": 0.9989943017464544
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9996039031646697,
+                "cpu": 0.999802821834427
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.169107487090599,
+                "cpu": 1.0776191417494558
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1608000014376105,
+                "cpu": 1.0741050644817647
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.2095734174835961,
+            "cpu": 0.3474787618674958
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9397059070102153,
+                "cpu": 0.9579772245736691
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9377101053622845,
+                "cpu": 0.9565578487357971
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0028838756026162,
+                "cpu": 1.0019696625107763
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9976476367753009,
+                "cpu": 0.998497213153973
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0958802119568236,
+                "cpu": 1.0636917026149146
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0921450811147635,
+                "cpu": 1.0614155596924584
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.2145630727731759,
+            "cpu": 0.2854237277393846
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.28857453676335443,
+                "cpu": 0.2924234040266993
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.28684189058772736,
+                "cpu": 0.2906046172712205
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.19940709731796027,
+                "cpu": 0.2023563593866195
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.19825691889409533,
+                "cpu": 0.2011869949479144
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.45902168289953277,
+                "cpu": 0.4637855501986627
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.45279882534705096,
+                "cpu": 0.45734669416586315
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.7937289336620386,
+            "cpu": 0.7968256307070168
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8752424782327454,
+                "cpu": 0.9316857965059874
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8686654925556809,
+                "cpu": 0.9278381050933321
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9232427845845336,
+                "cpu": 0.959180361674103
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9189898007917597,
+                "cpu": 0.9566210993623572
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.126415363003024,
+                "cpu": 1.0614116547594188
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.123533490811909,
+                "cpu": 1.0601302379229647
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19252486561723803,
+            "cpu": 0.3146467779282455
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7379424204322673,
+                "cpu": 0.8118769819757753
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.741687652764137,
+                "cpu": 0.8148271690207078
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.6720990911204235,
+                "cpu": 0.758469021984497
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.6674930545403953,
+                "cpu": 0.7477730438421273
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9885932994344596,
+                "cpu": 0.9924094520323117
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9968198811484272,
+                "cpu": 0.9980091380370886
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.182337944963282,
+            "cpu": 0.25469404541158874
+          }
+        }
+      ]
+    },
+    "closed/full_sparse": {
+      "strong_states": 4,
+      "states": [
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.36862756849309736,
+                "cpu": 0.4276232146946268
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3590624758873796,
+                "cpu": 0.4176567043454673
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.22818593289523437,
+                "cpu": 0.2743733837018585
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.22337062134895,
+                "cpu": 0.2690784462441015
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.01925872513002781,
+                "cpu": 0.02450347019886625
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.019019861433135575,
+                "cpu": 0.02420206016472859
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19724683002424093,
+            "cpu": 0.2392168635386484
+          }
+        },
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9812425313022898,
+                "cpu": 0.9923940407581887
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.983829937835131,
+                "cpu": 0.9934531992120459
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9991125751306305,
+                "cpu": 0.9996437084381018
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0008663368074304,
+                "cpu": 1.0004497251010684
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0622112416856653,
+                "cpu": 1.024190930358866
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.060364607282817,
+                "cpu": 1.0233596673922825
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.2451486298098606,
+            "cpu": 0.4470095279694721
+          }
+        },
+        {
+          "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.992719504842802,
+                "cpu": 0.995429546425146
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.989841730739388,
+                "cpu": 0.9934166314280298
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0087435480999574,
+                "cpu": 1.0052329513986396
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0077613246591473,
+                "cpu": 1.004351212600577
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0258526541516433,
+                "cpu": 1.015666803922247
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0200892975980171,
+                "cpu": 1.0117865178824819
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.17898695268372228,
+            "cpu": 0.26329417092884194
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.48617165716485805,
+                "cpu": 0.5036305743181414
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.47999918509925293,
+                "cpu": 0.49247138943917346
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.21989601693462563,
+                "cpu": 0.23467013389366853
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.21623209920205855,
+                "cpu": 0.23055108362007506
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.02846968170429562,
+                "cpu": 0.030960071022246544
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.02844501101091651,
+                "cpu": 0.030946154378529166
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.4053408944670507,
+            "cpu": 0.4206835751421771
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9799408333728221,
+                "cpu": 0.9904791838754983
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9763310423535128,
+                "cpu": 0.9905381852329269
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0032945317142221,
+                "cpu": 1.001545863892827
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0056987674297844,
+                "cpu": 1.0026691547814597
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.095613927310503,
+                "cpu": 1.0427731442480697
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0940750204611511,
+                "cpu": 1.0420785371383805
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19515273419977033,
+            "cpu": 0.3404195116583955
+          }
+        },
+        {
+          "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.6993153909311859,
+                "cpu": 0.7858130174105391
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.6646689895219988,
+                "cpu": 0.7680681936821606
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7403158822737559,
+                "cpu": 0.8181608876180047
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7262373078005976,
+                "cpu": 0.8069547244040612
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9140193831089269,
+                "cpu": 0.9437409247123417
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.912238477433136,
+                "cpu": 0.9424588521047732
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.18721427322014286,
+            "cpu": 0.2663393994856514
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.37029029997979346,
+                "cpu": 0.4282549829968097
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.3624447754957231,
+                "cpu": 0.4201152578202584
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.09081227262227867,
+                "cpu": 0.11328413057576818
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.08989410495532675,
+                "cpu": 0.11177944984031594
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.007120295390666715,
+                "cpu": 0.009064703961213628
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.007078071448571274,
+                "cpu": 0.009002858246445174
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.20434997304903174,
+            "cpu": 0.24675314900700765
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9823620508636332,
+                "cpu": 0.9916944752619085
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9749335464231403,
+                "cpu": 0.9879879381529156
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0048995739426154,
+                "cpu": 1.0022778884022925
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0054834023779389,
+                "cpu": 1.0025512120748725
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0675353043545592,
+                "cpu": 1.0308342079461235
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.066901100042776,
+                "cpu": 1.0305571055989002
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.189154409305389,
+            "cpu": 0.3335534145963348
+          }
+        },
+        {
+          "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0045341590287413,
+                "cpu": 1.0028466591312266
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9957754773822499,
+                "cpu": 0.9984960469208941
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8586678596562674,
+                "cpu": 0.903123182938179
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8627393558230689,
+                "cpu": 0.9056897105453178
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0050151881033589,
+                "cpu": 1.0033899606219685
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0196097266116184,
+                "cpu": 1.0125782131144636
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.16695251063906255,
+            "cpu": 0.2360672888750476
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9805113507539704,
+                "cpu": 0.9860633311789492
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9800563973036059,
+                "cpu": 0.985059574194029
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0019695118364387,
+                "cpu": 1.0012520340085014
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0049285336367986,
+                "cpu": 1.0036514620105512
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.903568628270391,
+                "cpu": 0.9264710182091425
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8855242564916878,
+                "cpu": 0.9122900712053991
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19002666902521248,
+            "cpu": 0.23981528194589055
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8898789410132535,
+                "cpu": 0.9415867194720589
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8848687016702493,
+                "cpu": 0.9386531845022109
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0069533311776206,
+                "cpu": 1.0035965577647536
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0074282640925598,
+                "cpu": 1.003699667036539
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.174575243538144,
+                "cpu": 1.0805111226578203
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.175170144793056,
+                "cpu": 1.080762675464749
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.21039940710630015,
+            "cpu": 0.3488330998593958
+          }
+        },
+        {
+          "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9349008299920801,
+                "cpu": 0.9546260529320142
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9427630473151509,
+                "cpu": 0.9599865439007108
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0024626223909778,
+                "cpu": 1.0016855677571428
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9979843965282796,
+                "cpu": 0.9988417645405843
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0973308898195426,
+                "cpu": 1.0647184147311097
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0912553845247897,
+                "cpu": 1.0610007142698477
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.21503377132355123,
+            "cpu": 0.2858774111144783
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-16",
+          "strong": true,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.293313111537416,
+                "cpu": 0.29711627932045365
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.2918415574573364,
+                "cpu": 0.29557629635459687
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.20178713781670846,
+                "cpu": 0.20469791004448515
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.20120478727296556,
+                "cpu": 0.20411296147904187
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.4643647112193608,
+                "cpu": 0.46900282328702786
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.4614495291392532,
+                "cpu": 0.46591247762212984
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.8102912694596857,
+            "cpu": 0.8130302594615288
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8755094088476676,
+                "cpu": 0.9314394069322235
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.8677691185870808,
+                "cpu": 0.9272403858009752
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9314175803241096,
+                "cpu": 0.9635589069984208
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.9255763999529666,
+                "cpu": 0.9602286863290639
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1320219417926558,
+                "cpu": 1.064410385849411
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.1208559451815345,
+                "cpu": 1.0588210809345246
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.19092540913458092,
+            "cpu": 0.3126186618507903
+          }
+        },
+        {
+          "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8",
+          "strong": false,
+          "comparisons": [
+            {
+              "method": "grammar_hit",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7462912758420339,
+                "cpu": 0.8183752423565953
+              }
+            },
+            {
+              "method": "grammar_hit",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 0.7435776351134765,
+                "cpu": 0.8162429201877307
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "cursor",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.6752893932586067,
+                "cpu": 0.762170327943843
+              }
+            },
+            {
+              "method": "suffix_hit",
+              "outside": "full_sparse",
+              "strong": true,
+              "median_ratios": {
+                "wall": 0.6590153013066514,
+                "cpu": 0.7475230114490515
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "cursor",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0081284227550815,
+                "cpu": 1.0054536678473847
+              }
+            },
+            {
+              "method": "exact_stack",
+              "outside": "full_sparse",
+              "strong": false,
+              "median_ratios": {
+                "wall": 1.0030979154791002,
+                "cpu": 1.0020992279827807
+              }
+            }
+          ],
+          "dense_ablation_median_ratios": {
+            "wall": 0.1844364305157334,
+            "cpu": 0.2573138332000948
+          }
+        }
+      ]
+    }
+  },
+  "new_neural_forwards": 0,
+  "scope": "Known old heads; matched sparse CPU controls, not independent confirmation/native EPIC/publication"
+}

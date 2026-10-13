@@ -49,10 +49,22 @@ cost remain open. No new neural campaign is credited to M70.
   assertion; adding whitespace BEFORE timings exercises the full RNG law.
   Maintained suite176 PASS71.746s; make check/Ruff PASS. This is correctness,
   not a useful-performance, originality or academic-acceptance gate.
-- [ ] T7102: Freeze producer, run ALL15 states/three rotated repeats with complete
+- [x] T7102: Freeze producera5219c5, run ALL15 states/three rotated repeats with complete
   costs and all outcomes. Old dense API is only an ablation. Require surviving
   advantage against best sparse controls before triggering new neural work;
   compact controls remain required for a broad complete-decoder claim.
+  ALL540/540 COMPLETE, zero errors/refusals; every completed same-kernel sparse
+  pair preserves sample/commits/queried intervals literally. Closed/handoff
+  variants all pass4/15 against six matched stack/overflow/suffix interfaces.
+  Selected handoff/cursor by frozen tie order; three states have factor2 paid
+  wall AND CPU against best completed control. Dense API ablation medians:
+  wall ratio0.201/CPU0.301, not novelty or a strong-control victory by itself.
+  These are OLD known heads, no new neural-independent confirmation.
+- [ ] T7102-CFG: Frozen supplementary ALL15x4x3=180 fresh operations give all
+  three immutable compact CFG controls the same vectorized boundary, block
+  recovery and sparse confidence. Eight small original-word/finite-law tests
+  PASS0.038s after adaptation; compiler source is unchanged. Resource refusals
+  are capacity only at3GiB/120s, never general latency impossibility.
 - [ ] T7103: Only after positive development, define and execute a NEW iterative
   application/confirmation with complete controls and paid resources. Assess
   usefulness/originality of A24 itself; no acceptance claim follows from code.

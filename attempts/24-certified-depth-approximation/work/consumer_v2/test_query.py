@@ -13,6 +13,7 @@ from mwpc_exact.tokenizer_bytes import CompositionalByteLevelAdapter
 
 from ..table import LexerTable
 from .block_stats import Partition
+from .compact import CompactOutside, evaluate_compact, load, sample_compact
 from .query import (
     BoundaryWeights,
     ConfidenceCursor,
@@ -91,6 +92,53 @@ class Tickets:
 
 
 class QueryConsumerTests(unittest.TestCase):
+    def test_three_immutable_compact_controls_match_original_word_queries(self):
+        table, weights, _ = fixture(
+            [b"0", b"0", b" ", b"[", b"]", b"[]"],
+            [[1, 2, 1, 1, 1, 1], [2, 1, 1, 1, 1, 1]],
+            block=2,
+        )
+        expected = enumerate_words(table, weights)
+        mass = sum(expected.values(), F())
+        modules, origin = load()
+        self.assertTrue(origin["source_archive_sha256"])
+        for method in ("exact_local", "exact_bidir_local", "exact_eps_local"):
+            with self.subTest(method=method):
+                post, _ = evaluate_compact(table, weights, method, modules=modules)
+                self.assertEqual(post.mass, mass)
+                query = CompactOutside(post)
+                for p in range(len(weights.canvas)):
+                    for t in range(weights.vocabulary_size):
+                        value = sum((v for w, v in expected.items() if w[p] == t), F()) / mass
+                        self.assertEqual(F(query.at(p, t), post.total), value)
+                for seed in range(8):
+                    weights.consumed = False
+                    self.assertIn(sample_compact(post, weights, Random(seed)), expected)
+
+    def test_epsilon_compact_entire_sample_law_after_summary_adaptation(self):
+        table, weights, _ = fixture(
+            [b"0", b"0", b" ", b"[", b"]", b"[]"],
+            [[1, 2, 1, 1, 1, 1], [2, 1, 1, 1, 1, 1]],
+            block=2,
+        )
+        post, _ = evaluate_compact(table, weights, "exact_eps_local")
+        expected = enumerate_words(table, weights)
+        total = sum(expected.values(), F())
+        law, pending = defaultdict(F), [((), F(1))]
+        while pending:
+            tickets, probability = pending.pop()
+            weights.consumed = False
+            try:
+                word = sample_compact(post, weights, Tickets(tickets))
+            except Branch as branch:
+                self.assertLessEqual(branch.size, 128)
+                pending.extend(
+                    ((*tickets, i), probability / branch.size) for i in range(branch.size)
+                )
+            else:
+                law[word] += probability
+        self.assertEqual(dict(law), {w: v / total for w, v in expected.items()})
+
     def test_all_original_marginals_across_aliases_lexical_states_and_depths(self):
         cases = [
             (

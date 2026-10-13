@@ -47,7 +47,9 @@ def alarm(signum, frame):
     raise TimeoutError("complete consumer deadline; no committed progress")
 
 
-def operation(table, partition, case_path, method, outside, boundary, seed, protocol):
+def operation(
+    table, partition, case_path, method, outside, boundary, seed, protocol, compact_modules=None
+):
     started = now()
     deadline = monotonic() + protocol["resources"]["seconds"]
     case = json.loads(case_path.read_text())
@@ -79,6 +81,13 @@ def operation(table, partition, case_path, method, outside, boundary, seed, prot
             max_terms=protocol["resources"]["max_terms"],
         )
         if boundary == "numpy":
+            if selected_method in ("exact_local", "exact_bidir_local", "exact_eps_local"):
+                from .compact import evaluate_compact
+
+                options.pop("depths")
+                return evaluate_compact(
+                    table, weights, selected_method, modules=compact_modules, **options
+                )
             return evaluate(table, weights, tol, method=selected_method, **options)
         return evaluate_certified(table, weights, tol, method=selected_method, **options)
 
@@ -92,7 +101,16 @@ def operation(table, partition, case_path, method, outside, boundary, seed, prot
         )
     sample_start = now()
     sample_valid_mass = str(post.mass)
-    word = sample(post, weights, Random(seed)) if boundary == "numpy" else post.sample(Random(seed))
+    if method in ("exact_local", "exact_bidir_local", "exact_eps_local"):
+        from .compact import sample_compact
+
+        word = sample_compact(post, weights, Random(seed))
+    else:
+        word = (
+            sample(post, weights, Random(seed))
+            if boundary == "numpy"
+            else post.sample(Random(seed))
+        )
     text = table.adapter.detokenize_bytes(word).decode("utf8")
     json.loads(text, parse_constant=lambda _: (_ for _ in ()).throw(ValueError("non-JSON number")))
     if any(t is not None and word[p] != t for p, t in enumerate(canvas)):
@@ -103,14 +121,24 @@ def operation(table, partition, case_path, method, outside, boundary, seed, prot
     tolerances = iter((Fraction(1, 10**6), Fraction(1, 10**9), None))
     while True:
         if boundary == "numpy":
-            result = confidence(
-                post,
-                certificate,
-                word,
-                threshold=protocol["confidence_threshold"],
-                budget=protocol["commit_budget"],
-                outside=outside,
-            )
+            if method in ("exact_local", "exact_bidir_local", "exact_eps_local"):
+                from .compact import confidence_compact
+
+                result = confidence_compact(
+                    post,
+                    word,
+                    threshold=protocol["confidence_threshold"],
+                    budget=protocol["commit_budget"],
+                )
+            else:
+                result = confidence(
+                    post,
+                    certificate,
+                    word,
+                    threshold=protocol["confidence_threshold"],
+                    budget=protocol["commit_budget"],
+                    outside=outside,
+                )
         else:
             numerators, lower = post.marginals()
             upper = Fraction(certificate["upper_tail"]) * prod(weights.denominators)

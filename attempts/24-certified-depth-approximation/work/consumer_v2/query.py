@@ -50,6 +50,19 @@ class BoundaryWeights:
             self.denominators.append(sum(row))
         self.sums, self.denominators = tuple(self.sums), tuple(self.denominators)
         self.consumed = False
+        self.representatives = tuple(members[0] for members in table.classes)
+
+    @property
+    def rows(self):
+        """Class-mass carriers for an unchanged legacy class aggregation API.
+
+        These dictionaries are ONLY an aggregation adapter. ``at`` always
+        retrieves the original token's own weight, including zero aliases.
+        """
+        return tuple(
+            {self.representatives[c]: mass for c, mass in enumerate(row) if mass}
+            for row in self.sums
+        )
 
     def at(self, p, t):
         if type(p) is not int or not 0 <= p < len(self.canvas):
