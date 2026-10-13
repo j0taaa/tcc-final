@@ -1,0 +1,7 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "exact_signed_queries": 74593,
+  "original_word_checks": 300,
+  "undefined_zero_mass": 108,
+  "producer": "ba76910443a942ca46e17ef277d89830d5e9b7f6"
+}

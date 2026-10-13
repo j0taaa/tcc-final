@@ -1,0 +1,14 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "tail_checks": 482657,
+  "nontrivial_tail_merges": 6480,
+  "word_points": 700,
+  "prefix_bounds": 4560,
+  "proposal_laws": 15,
+  "coupling_laws": 15,
+  "sampled_valid": 240,
+  "undefined": 11,
+  "marginal_bounds": 51340,
+  "producer": "a6d2378d54e90ac956e07f8a24fee221e60c8f2d",
+  "shared_outside": true
+}
