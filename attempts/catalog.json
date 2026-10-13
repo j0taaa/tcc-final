@@ -2335,7 +2335,7 @@
     {
       "id": "50-grammar-residual-coupling",
       "title": "Exact residual sampling for a grammatical posterior",
-      "conclusion": "Exact grammatical residual references: upper-profile provenance and stronger scalar common-submeasure controls, including bounded-bit integer CDFs. Complete channel/output-law oracles pass; coarse-grid losses and failed zero-channel contract are preserved separately. Product proposal/acceptance already follows Feng/Guo/Jerrum/Wang2023. Significance of recursive extension, real full-generation benefit, human review and publication remain OPEN; no new neural forward or EPIC victory.",
+      "conclusion": "Exact original-ID residual references with compact scalar and bounded-bit CDF realizations. Stronger2023/2024 primary constructions account for the scalar proposal/acceptance/bound: classical specialization, not confirmed own substantial theorem. Marginal-free refinement passes complete laws/ranges; all failures and costs preserved. Real-head consumer screen pending. Novelty, useful full-generation economics, human review and publication remain OPEN.",
       "reading": "attempts/50-grammar-residual-coupling/README.md; TASKS.md",
       "versions": [
         {
@@ -2439,6 +2439,25 @@
             "attempts/50-grammar-residual-coupling/work/evidence/oracle-v10-grid2",
             "attempts/50-grammar-residual-coupling/work/evidence/oracle-v10-grid4",
             "attempts/50-grammar-residual-coupling/work/evidence/oracle-v10-grid256"
+          ]
+        },
+        {
+          "id": "v11",
+          "source_commit": "ac3adf1fec596593cd35ba4bac8f84ebd6375d2c",
+          "evidence_commit": "ac3adf1fec596593cd35ba4bac8f84ebd6375d2c",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/work/known-reduction-v11.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/primary-v11.json"
+          ]
+        },
+        {
+          "id": "v12",
+          "source_commit": "291cde5b8f737c9646610b8a5b2817cca354ba18",
+          "evidence_commit": "1f9e68884fe9409c5be207e738071e0d645fae0b",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/work/lazy-precision-v12.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v12-lazy",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v12-marginal-control"
           ]
         }
       ]

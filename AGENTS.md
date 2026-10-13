@@ -481,6 +481,18 @@ seis fixtures, com292/237/185 FAILs no orçamento de uma tentativa. Nada disso
 é timing, confirmação prática ou prioridade. A extensão recursiva e o custo
 real do consumidor ainda precisam de avaliação contra controles competentes.
 
+A50 V11 lê também Bhattacharyya et al. ICML2024 Section4 e provas completas:
+proposta/aceitação e bound2n já explicam o princípio escalar. É especialização
+compacta clássica; não promover sua exatidão como teorema próprio substancial.
+O estimador produto aleatório linear de Anand/Benford/Guo2026 também foi lido,
+sem confundir estimativa TV com amostra residual exata. V12 remove marginais
+da precisão; oráculo completo passa30 queries de igualdade/range/90 leis de
+canais/18 residuais/432 saídas, com131 passes de precisão cobrados. V13
+congela screen de consumidor REAL com todos15 heads antigos, full/top16,
+posições fixadas antes do sample, novos heads do canvas e quatro variantes.
+É desenvolvimento funcional/de recursos, não confirmação de velocidade,
+qualidade, originalidade ou publicação. Todas recusas permanecem no screen.
+
 ## Perguntas obrigatórias para cada ideia ou implementação
 
 A39 começa em pasta independente, somente ESCRITA antes de protótipo/modelo:

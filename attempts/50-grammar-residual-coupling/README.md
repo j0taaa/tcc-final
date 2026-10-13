@@ -1,5 +1,16 @@
 # A50 — Exact residual sampling for a grammatical posterior
 
+V12's source291cde5 passes all1,780 original word cases,90 channel laws,
+18 accepted residual laws,30 independent equality/range queries and432 valid
+samples, with12 undefined cases and no attempt-bound loss. Its131 precision
+trial passes are recorded; no marginal pass is performed by that variant.
+The refactored marginal-grid control was rerun completely and also passes.
+V13 freezes [a real-head insertion screen](work/native-consumer-v13.md):
+all15 prior external frames, both full and old-head top16 supports, preserved
+admission/resource failures, actual next-canvas predictions and exact-law
+correction. This is development/functional evidence, not an independent
+performance campaign or substitute for V11's unresolved original contribution.
+
 V11's [stronger prior reduction](work/known-reduction-v11.md) now explicitly
 credits the2024 dependent partial-coupling construction, including its2n
 bound. The scalar operation is a compact classical specialization, not a

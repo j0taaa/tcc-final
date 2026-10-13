@@ -1,5 +1,27 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-13 — A50 V11–V13: close the stronger reduction and test a real consumer
+
+Full2024 Section4/deferred proofs already give the dependent partial-coupling
+proposal, bounded acceptance estimator and2n inequality. The compact scalar
+forest realization is a classical specialization; its exact laws cannot be
+advertised as a substantial own theorem. The new2026 randomized product
+estimator has a linear input bound and its proofs are now read. V11 records
+all actual original hashes/scopes, not invented human review or priority.
+
+V12's marginal-free grid preparation is a small engineering refinement with
+a written4D attempt bound. Complete independent laws/ranges pass, with131
+trial passes retained; the old marginal variant is rerun as a control. Neither
+code simplicity nor those finite checks resolves novelty or useful speed.
+
+V13 freezes all30 initial rows from15 old real heads: full vocabulary and
+old-head top16, without response labels or selection by result. For every
+admitted initial posterior it fixes the preselected leftmost position, obtains
+an actual new MDLM head and corrects the cached completion. This tests the
+previously written consumer on genuinely changed contexts. Resource refusals
+and support-zero cases remain; it is known development/functional evidence,
+not independent confirmation, competitive timing or a faster native EPIC.
+
 ## 2026-10-13 — A50 V6–V10: stronger known controls and integer CDFs
 
 The actual2019 journal sampling original is now accessible and read through

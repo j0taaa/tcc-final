@@ -16,6 +16,15 @@ All90 channel laws and18 residual laws pass; constant coarse precision loses
 the cost guarantee in six fixtures, and its failures are preserved. The
 product proposal and acceptance rule already occur in Feng/Guo/Jerrum/Wang2023.
 The recursive extension's significance and paid iterative benefit remain open.
+The V11 audit now also reads the2024 dependent partial-coupling construction:
+its bound and rejection interpretation account for the scalar theorem.
+A50 is a compact classical specialization; it is not promoted as a
+substantial original mathematical advance. V12 removes the marginal tables
+from grid preparation; its30 equality/range checks and90 full channel laws
+pass, with all131 trial precision passes charged. A prospective all-frame
+real-head consumer screen is separately frozen; no speed claim follows.
+[Stronger prior reduction](attempts/50-grammar-residual-coupling/work/known-reduction-v11.md),
+[consumer-screen protocol](attempts/50-grammar-residual-coupling/work/native-consumer-v13.md).
 [Integer-CDF construction](attempts/50-grammar-residual-coupling/work/rounded-scalar-v9.md),
 [actual iterative consumer and its restrictions](attempts/50-grammar-residual-coupling/work/runtime-consumer-v7.md).
 [A50 contract](attempts/50-grammar-residual-coupling/README.md),

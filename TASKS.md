@@ -87,6 +87,21 @@ cost remain open. No new neural campaign is credited to M70.
   laws each, adaptive432 valid outputs with no bound loss; fixed2/4/256 have
   six cost-bound losses and292/237/185 bounded FAILs. Correct law is separate
   from efficient termination. No neural or performance claim follows.
+- [x] T7010: Read2024 original Section4 and full deferred coupling proofs;
+  its proposal, rejection interpretation and2n bound account for V8's principle.
+  known-reduction-v11.md explicitly downgrades the scalar novelty argument.
+  Read the2026 linear randomized product estimator's actual proofs; no weak
+  prior estimator is used as the strongest current control. Sourceac3adf1.
+- [x] T7011: Write marginal-free grid precision BEFORE code (120cffb).
+  Source291cde5 passes1,780 words/90 channel/18 residual laws/30 equality
+  and range queries/432 valid outputs/12 undefined cases;131 trial passes
+  count. Refactored marginal-grid control also passes fully. This is compact
+  engineering of a classical construction, not original theorem or speed.
+- [ ] T7012: Complete ALL30 prospective initial admission rows (15 actual
+  old heads, full/top16 frozen supports), then all admitted next-canvas
+  actual neural captures and four exact correction variants. Source8cb69bf
+  is frozen first; retain all zero masses/refusals/errors and actual paid
+  resources. Functional development only; no latency/semantic/EPIC victory.
 
 ## M69 — Rational drift certificate, proof before application
 
