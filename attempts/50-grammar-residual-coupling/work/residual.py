@@ -5,6 +5,8 @@ from math import lcm, prod
 
 
 def coarsen(atoms, eta):
+    if not 0 < eta <= 1:
+        raise ValueError("tail tolerance must be in (0,1]")
     combined = {}
     for ratio, weight in atoms:
         if ratio < 0 or weight < 0 or not isinstance(weight, int):
@@ -50,6 +52,8 @@ class Residual:
                 scaled.append(tuple(p.numerator * (scale // p.denominator) for p in row))
             self.weights.append(tuple(scaled))
         self.ids = plan.state.support.rows
+        if not self.ids:
+            raise ValueError("at least one original position required")
         self.scopes, self.costs = {}, {}
         totals = {}
         for node in plan.order:
@@ -134,6 +138,16 @@ class Residual:
     def point(self, ids, which):
         if len(ids) != len(self.ids):
             raise ValueError("wrong number of original positions")
+        present = {}
+        for node in self.plan.order:
+            present[node] = any(
+                ids[term.choice[0]] == self.ids[term.choice[0]][term.choice[1]]
+                if term.choice is not None
+                else all(present[child] for child in term.children)
+                for term in self.plan.terms[node]
+            )
+        if not present[self.plan.root]:
+            return F(0)
         raw = prod(self.weights[which][i][self.ids[i].index(v)] for i, v in enumerate(ids))
         return F(raw, self.za if which == 0 else self.zb)
 
