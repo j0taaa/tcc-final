@@ -12,10 +12,11 @@ from mwpc_exact.mass_certificate import ProbabilityInput
 
 from . import verify_forest as words
 from .sampler_overlap import controls
+from .tight_control_v28 import controls as tight_controls
 from .two_sided_controls import controls as two_sided_controls
 
 
-def run(output, two_sided=False):
+def run(output, two_sided=False, tight=False):
     output.mkdir(parents=True, exist_ok=False)
     (output / "metadata.json").write_text(
         json.dumps(
@@ -65,9 +66,13 @@ def run(output, two_sided=False):
                     plan = words.compile_cfg_sampler(source, first.state)
                     truth = words.expected(first, second, emissions, kind)
                     for epsilon in [F(1), F(1, 2), F(1, 10)]:
-                        result = (two_sided_controls if two_sided else controls)(
-                            plan, first, second
-                        )
+                        result = (
+                            tight_controls
+                            if tight
+                            else two_sided_controls
+                            if two_sided
+                            else controls
+                        )(plan, first, second)
                         if truth is None:
                             assert result["status"] == "ZERO_VALID_MASS_UNDEFINED_TV"
                             zeros += 1
@@ -100,6 +105,7 @@ def run(output, two_sided=False):
             undefined_zero_mass=zeros,
             new_forwards=0,
             two_sided_controls=two_sided,
+            grammar_restricted_moment_lower=tight,
         )
         (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
         print(json.dumps(summary), flush=True)
@@ -112,5 +118,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--two-sided", action="store_true")
+    parser.add_argument("--tight", action="store_true")
     args = parser.parse_args()
-    run(args.output, args.two_sided)
+    if args.tight and not args.two_sided:
+        parser.error("--tight requires --two-sided")
+    run(args.output, args.two_sided, args.tight)
