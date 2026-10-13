@@ -71,6 +71,22 @@ cost remain open. No new neural campaign is credited to M70.
   admission/bit/runtime proof, and operational utility after ALL preparation,
   provenance/head/output costs. No large implementation or favorable model
   campaign substitutes for this. Novelty/human review/publication remain OPEN.
+- [x] T7007: Obtain the actual2019 journal PDF through its public repository
+  API and read the full sampling Section4, proof and costs; V6 preserves its
+  hash and removes the earlier missing-original objection. V7 closes random-
+  bit costs and specifies a law-preserving iterative consumer, subject to
+  value-independent commit positions. No decoder/head reduction is measured.
+- [x] T7008: Strengthen the control BEFORE timing: exact scalar common measure
+  and subtraction-free difference channels. Source2dba8da passes1,780 word
+  cases,90 complete channel laws,18 residual laws,432 valid outputs and12
+  undefined cases. Feng/Guo/Jerrum/Wang2023 §3 already supplies the product
+  proposal and identical acceptance estimator; its rejection use is immediate.
+- [x] T7009: Write bounded-bit integer CDFs BEFORE code (a53a4fd). Preserve
+  V9 grid2's unavailable zero-mass channel assertion failure. V10 source8f3f72f
+  fixes that contract and repeats ALL grids:1,780 words/90 channel/18 residual
+  laws each, adaptive432 valid outputs with no bound loss; fixed2/4/256 have
+  six cost-bound losses and292/237/185 bounded FAILs. Correct law is separate
+  from efficient termination. No neural or performance claim follows.
 
 ## M69 — Rational drift certificate, proof before application
 

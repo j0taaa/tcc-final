@@ -2335,7 +2335,7 @@
     {
       "id": "50-grammar-residual-coupling",
       "title": "Exact residual sampling for a grammatical posterior",
-      "conclusion": "Written polynomial-bit conditional residual theorem and one-preparation upper-profile provenance reference. Independent complete original-word law oracles pass, including actual grouping and singular supports. Dyer2003/sum approximations2018 are central antecedents; substantial novelty, useful full-generation cost, independent human review and publication remain OPEN. No new neural timing or EPIC victory.",
+      "conclusion": "Exact grammatical residual references: upper-profile provenance and stronger scalar common-submeasure controls, including bounded-bit integer CDFs. Complete channel/output-law oracles pass; coarse-grid losses and failed zero-channel contract are preserved separately. Product proposal/acceptance already follows Feng/Guo/Jerrum/Wang2023. Significance of recursive extension, real full-generation benefit, human review and publication remain OPEN; no new neural forward or EPIC victory.",
       "reading": "attempts/50-grammar-residual-coupling/README.md; TASKS.md",
       "versions": [
         {
@@ -2389,6 +2389,56 @@
             "attempts/50-grammar-residual-coupling/work/primary-comparison-v5.md",
             "attempts/50-grammar-residual-coupling/work/evidence/primary-v5.json",
             "attempts/50-grammar-residual-coupling/work/evidence/oracle-v5"
+          ]
+        },
+        {
+          "id": "v6",
+          "source_commit": "2e5aa0ce3b38c28e6a43109d084ef336c640920c",
+          "evidence_commit": "2e5aa0ce3b38c28e6a43109d084ef336c640920c",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/work/journal-prior-v6.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/primary-v6.json"
+          ]
+        },
+        {
+          "id": "v7",
+          "source_commit": "fb0c122d4d01c5217622e35c8f78ef47cd0829c3",
+          "evidence_commit": "fb0c122d4d01c5217622e35c8f78ef47cd0829c3",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/work/runtime-consumer-v7.md"
+          ]
+        },
+        {
+          "id": "v8",
+          "source_commit": "2dba8da6f642148303b52466afd64691688b7801",
+          "evidence_commit": "8f3f72fd1a2f6177a8c3d050812bb70c18638e28",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/work/scalar-control-v8.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v8"
+          ]
+        },
+        {
+          "id": "v9",
+          "source_commit": "68e1d044cbc6d1fe7983b9a434cf73cb6410f1c9",
+          "evidence_commit": "8f3f72fd1a2f6177a8c3d050812bb70c18638e28",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/work/rounded-scalar-v9.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v9-adaptive",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v9-grid2",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v9-grid4",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v9-grid256"
+          ]
+        },
+        {
+          "id": "v10",
+          "source_commit": "8f3f72fd1a2f6177a8c3d050812bb70c18638e28",
+          "evidence_commit": "d0abc19a3c142c43202a6a25a955028e06d6a76c",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/work/zero-channel-v10.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v10-adaptive",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v10-grid2",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v10-grid4",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v10-grid256"
           ]
         }
       ]

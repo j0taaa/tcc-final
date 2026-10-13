@@ -10,6 +10,14 @@ oracles pass, including actual compression; no useful neural latency or
 sufficient novelty/publication claim is confirmed. Approximate counting,
 profile algebra, provenance and rejection are known antecedents that must
 be compared as a competent combined alternative.
+The stronger scalar alternative now has a121-line integer-CDF reference,
+with the written conditional bound `2D+1/2` and exact successful output law.
+All90 channel laws and18 residual laws pass; constant coarse precision loses
+the cost guarantee in six fixtures, and its failures are preserved. The
+product proposal and acceptance rule already occur in Feng/Guo/Jerrum/Wang2023.
+The recursive extension's significance and paid iterative benefit remain open.
+[Integer-CDF construction](attempts/50-grammar-residual-coupling/work/rounded-scalar-v9.md),
+[actual iterative consumer and its restrictions](attempts/50-grammar-residual-coupling/work/runtime-consumer-v7.md).
 [A50 contract](attempts/50-grammar-residual-coupling/README.md),
 [single-preparation theorem](attempts/50-grammar-residual-coupling/work/upper-v5.md),
 [primary comparison and open objections](attempts/50-grammar-residual-coupling/work/primary-comparison-v5.md).

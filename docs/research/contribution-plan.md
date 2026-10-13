@@ -1,5 +1,30 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-13 — A50 V6–V10: stronger known controls and integer CDFs
+
+The actual2019 journal sampling original is now accessible and read through
+Section4; V6 preserves its exact hash/read scope. Earlier access failures
+below describe their historical date. V7 specifies a legal iterative consumer:
+choose commit positions without inspecting the free draft values, then couple
+the conditioned old head into a fresh target head. Neither target forward nor
+all preparations disappear, and native EPIC's policy is not preserved here.
+
+The strongest new objection is concrete: Feng/Guo/Jerrum/Wang2023 §3 already
+constructs the product common-submeasure residual proposal and precisely its
+acceptance estimator. Bernoulli rejection gives exact product residuals
+immediately. V8 therefore adds a competent scalar control, not a claim of
+inventing that operation. Its recursive extension bounds conditional attempts
+by2D and retains90 full channel laws/18 residual laws. Novelty remains open.
+
+V9 writes a bounded-bit dyadic construction before code. Exact rejection
+preserves the output; an exact marginal lower bound chooses the grid and
+proves2D+1/2 conditional attempts. V9's coarse grid2 exposed an unavailable
+zero-mass common channel; its failed run remains. V10 clears that channel
+and repeats all four grids completely. Adaptive succeeds without cost-bound
+loss; fixed grids2/4/256 each have six bound losses and292/237/185 bounded
+FAILs. These are law/counterexample checks, not favorable performance data.
+No neural forward, publication sufficiency or faster dJev is established.
+
 ## 2026-10-13 — A50: residual operation rather than another rounding audit
 
 A49 V30 implements a classical sorted ratio/range-sum root query opt-in;

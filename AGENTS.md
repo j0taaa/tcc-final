@@ -468,6 +468,19 @@ ABERTOS. Não inventar revisão humana/Lean ou vitória sobre EPIC. O artigo
 mantido continua A24, sem transferir suas vitórias para A50. As menções
 históricas a 'sem tentativa50' descrevem somente aquelas versões anteriores.
 
+A50 V6 leu o original2019 completo na seção de amostragem; back-pointers e
+preparação única são antecedentes. V7 delimita consumidor iterativo com
+posições de commit escolhidas antes dos valores amostrados, não política
+nativa EPIC. V8 implementa controle escalar mais forte; Feng/Guo/Jerrum/Wang
+2023 Section3 já contém proposta/aceitação no caso produto. O simples ganho
+contra rejeição1/TV não fecha a novidade. V9 escreve CDFs inteiras de precisão
+controlada; V10 corrige contrato de canal comum com massa zero e preserva
+falha V9. Os quatro oráculos completos passam90 leis de canais/18 residuais
+cada: adaptativo432 saídas válidas; grids2/4/256 perdem o bound de custo em
+seis fixtures, com292/237/185 FAILs no orçamento de uma tentativa. Nada disso
+é timing, confirmação prática ou prioridade. A extensão recursiva e o custo
+real do consumidor ainda precisam de avaliação contra controles competentes.
+
 ## Perguntas obrigatórias para cada ideia ou implementação
 
 A39 começa em pasta independente, somente ESCRITA antes de protótipo/modelo:

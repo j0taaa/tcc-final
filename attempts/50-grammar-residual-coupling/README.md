@@ -1,12 +1,25 @@
 # A50 — Exact residual sampling for a grammatical posterior
 
-Current V5 materializes the [single-preparation upper-profile proof](work/upper-v5.md)
-with a175-line rational sampler and preserved exact output-law evidence.
+Current V10 preserves the [bounded-bit integer-CDF reference](work/rounded-scalar-v9.md)
+and all complete channel/output laws, including coarse-grid cost failures.
+V5 materializes the [single-preparation upper-profile proof](work/upper-v5.md)
+with a175-line rational sampler and separately preserved evidence.
 The [primary audit](work/primary-comparison-v5.md) credits Dyer2003 and the
 entire2018 sum-approximation/convolution calculus; sufficient difference and
 useful full-generation cost remain OPEN. No new neural measurement or article
 promotion. V1's unvalidated draft-density bug, V2's fixed-slot setup refusal,
 V3's corrected run and V4's shared marginals stay separately preserved.
+
+V6 closes the actual2019 journal original: preparation, retained back-pointers
+and pointwise generation guarantees are known. V7 specifies a legitimate
+iterative consumer, with commit positions selected before inspecting the
+draft's free values; it is not native EPIC. V8's stronger scalar control passes
+90 full channel laws/18 residual laws. V9/V10's adaptive grid also passes,
+with432 valid sampled outputs and12 undefined refusals. Grid2/4/256 each
+retain six failures of the polynomial-attempt criterion, despite correct
+accepted laws; bounded FAIL counts are292/237/185. V9 grid2's unavailable
+common-channel assertion failure is preserved, with its V10 correction.
+These are correctness checks, not performance observations or publication.
 
 New V8 investigates a STRONGER scalar control before performance testing:
 [shared local kernels and subtraction-free residual proposal](work/scalar-control-v8.md).
