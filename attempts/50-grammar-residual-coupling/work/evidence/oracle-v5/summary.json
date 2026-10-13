@@ -1,0 +1,12 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "tail_checks": 475041,
+  "nontrivial_merges": 6480,
+  "word_checks": 1780,
+  "proposal_laws": 18,
+  "singular_laws": 6,
+  "sampled_valid": 432,
+  "undefined": 12,
+  "compressed_words": 12,
+  "producer": "41841830746b58a94e918617c473dbc20c937857"
+}
