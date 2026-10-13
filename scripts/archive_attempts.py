@@ -84,15 +84,28 @@ def freeze_zip(path: Path, entries: dict[str, tuple[str, str, str]]) -> dict[str
     return {"sha256": digest(path), "files": inventory}
 
 
+def archives(version: dict[str, Any]) -> dict[str, tuple[str, list[str]]]:
+    """Optional separate evidence ZIPs keep large numerical packets independently preserved."""
+    result = {"source.zip": ("source", []), "evidence.zip": ("evidence", version["evidence_roots"])}
+    for name, roots in version.get("supplements", {}).items():
+        if not re.fullmatch(r"[a-z0-9-]+\.zip", name) or name in result or not roots:
+            raise ValueError("Invalid or duplicate supplemental archive name/roots")
+        result[name] = "evidence", roots
+    return result
+
+
 def freeze(attempt: dict[str, Any], version: dict[str, Any]) -> None:
     folder = ARCHIVES / attempt["id"] / version["id"]
     if folder.exists():
         raise FileExistsError(f"Frozen version already exists; choose a new version: {folder}")
     folder.parent.mkdir(parents=True, exist_ok=True)
     entries = {kind: tree(version[f"{kind}_commit"]) for kind in ("source", "evidence")}
-    for root in version["evidence_roots"]:
-        if not any(path == root or path.startswith(root + "/") for path in entries["evidence"]):
-            raise ValueError(f"Missing evidence root: {root}")
+    requests = archives(version)
+    for kind, roots in requests.values():
+        if kind == "evidence":
+            for root in roots:
+                if not any(path == root or path.startswith(root + "/") for path in entries[kind]):
+                    raise ValueError(f"Missing evidence root: {root}")
     with tempfile.TemporaryDirectory(prefix=".snapshot-", dir=folder.parent) as temp:
         stage = Path(temp)
         manifest: dict[str, Any] = {
@@ -105,11 +118,10 @@ def freeze(attempt: dict[str, Any], version: dict[str, Any]) -> None:
             },
             "archives": {},
         }
-        for kind in ("source", "evidence"):
-            name = f"{kind}.zip"
+        for name, (kind, roots) in requests.items():
             manifest["archives"][name] = freeze_zip(
                 stage / name,
-                selected(entries[kind], kind, version["evidence_roots"], attempt["id"]),
+                selected(entries[kind], kind, roots, attempt["id"]),
             )
         (stage / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
         stage.rename(folder)
@@ -123,7 +135,7 @@ def check(attempt: dict[str, Any], version: dict[str, Any], check_git: bool) -> 
         manifest["schema"] != 1
         or manifest["attempt_id"] != attempt["id"]
         or manifest["version"] != version
-        or set(manifest["archives"]) != {"source.zip", "evidence.zip"}
+        or set(manifest["archives"]) != set(archives(version))
         or manifest["source_omissions"] != list(OMITTED)
     ):
         raise ValueError(f"Snapshot/catalog mismatch: {folder}")
@@ -148,9 +160,9 @@ def check(attempt: dict[str, Any], version: dict[str, Any], check_git: bool) -> 
                 count += 1
                 total += len(data)
         if check_git:
-            kind = name.removesuffix(".zip")
+            kind, roots = archives(version)[name]
             entries = tree(version[f"{kind}_commit"])
-            origin = selected(entries, kind, version["evidence_roots"], attempt["id"])
+            origin = selected(entries, kind, roots, attempt["id"])
             recorded = {
                 path: (file["mode"], "blob", file["git_blob"])
                 for path, file in archived["files"].items()
