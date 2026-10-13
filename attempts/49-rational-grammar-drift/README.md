@@ -1,5 +1,18 @@
 # A49 — Rational certificates for drift of a grammatical posterior
 
+V28 follows the user's consolidation feedback: retain A49 as the only current
+theoretical candidate and A24 as a separate application. Before code,
+[the decision-audit contract](work/consolidation-v28.md) freezes all45 old
+pairs, all budget regions and a full illustrative grid, with stronger classical
+lower controls and charged costs. No new attempt or neural campaign. This
+re-evaluates the eight questions: (1,3) the software operation is a supplied
+fidelity-budget decision; (2,4) the only novelty candidate remains the sharper
+quantitative bound, not the elementary decision rule; (5) old heads are
+development and no observed threshold becomes a success gate; (6) exact
+marginals/normalizers/controls and the historical core are charged; (7) cheap
+controls may already select every usable format; (8) proof/priority review and
+an actual deployment requirement remain open. V25's failure is not relabeled.
+
 **Current V24 correction:** classical sampler-overlap controls pass105 word
 checks and all24 public rows. The old FP16 comparison18.57x drops to1.05476x;
 FP32 overlap is tighter than the candidate upper. `work/overlap-decision-v24.md`
