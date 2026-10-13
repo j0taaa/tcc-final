@@ -1,0 +1,17 @@
+{
+  "focused_oracles": {
+    "count": 6,
+    "status": "PASS",
+    "seconds": 0.011
+  },
+  "maintained_suite": {
+    "count": 176,
+    "status": "PASS",
+    "seconds": 71.746,
+    "note": "make check ran concurrently; this is verification time, not a performance result"
+  },
+  "make_check": "PASS: upstream/Ruff/mypy/archive integrity",
+  "initial_fixture_failure": "The first finite-ticket fixture contained only one grammatical word; its branch-count assertion failed. Whitespace was added before any new timing so the complete law oracle genuinely exercises branching. No sampling-law failure was relabeled.",
+  "numeric_source_sha256": "5290c2f93f4d23433878494801e5b10dd789e7ded293d2d7692bbf5d8765bae2",
+  "scientific_scope": "Correctness only. No new neural forward, timing gate, novelty or academic acceptance established."
+}

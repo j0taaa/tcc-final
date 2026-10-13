@@ -40,10 +40,15 @@ cost remain open. No new neural campaign is credited to M70.
   FactorDLM/class disintegration, A28 exact numerical summaries and sparse
   outside are antecedents. Dense outside alone is capped by historical costs;
   no large benefit/publication/mestrado acceptance is promised.
-- [ ] T7101: Implement minimal exact NumPy boundary plus sampled-token confidence
+- [x] T7101: Implement minimal exact NumPy boundary plus sampled-token confidence
   cursor; give equivalent summaries/queries to closed, handoff, grammar-hit,
   suffix-hit and exact stack. Validate against independent original-word laws,
   full sparse outside, aliases, fixed IDs and threshold equality/refinement.
+  Six independent oracles PASS0.011s; new CI wrapper preserves original suite.
+  Initial law fixture had only one valid word and failed its branch-count
+  assertion; adding whitespace BEFORE timings exercises the full RNG law.
+  Maintained suite176 PASS71.746s; make check/Ruff PASS. This is correctness,
+  not a useful-performance, originality or academic-acceptance gate.
 - [ ] T7102: Freeze producer, run ALL15 states/three rotated repeats with complete
   costs and all outcomes. Old dense API is only an ablation. Require surviving
   advantage against best sparse controls before triggering new neural work;
