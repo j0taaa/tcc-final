@@ -1,0 +1,12 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "tail_checks": 482657,
+  "nontrivial_tail_merges": 6480,
+  "word_points": 700,
+  "prefix_bounds": 4560,
+  "proposal_laws": 15,
+  "coupling_laws": 15,
+  "sampled_valid": 240,
+  "undefined": 0,
+  "producer": "9ca1f5464483043c960d64a0690a05431743030d"
+}
