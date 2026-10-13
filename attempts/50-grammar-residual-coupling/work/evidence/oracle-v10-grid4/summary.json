@@ -1,0 +1,14 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "word_checks": 1780,
+  "channel_laws": 90,
+  "residual_laws": 18,
+  "sampled_valid": 195,
+  "undefined": 12,
+  "bounded_failures": 237,
+  "precision_gate_losses": 6,
+  "marginal_lower_checks": 30,
+  "producer": "8f3f72fd1a2f6177a8c3d050812bb70c18638e28",
+  "rounded": true,
+  "fixed_grid": 4
+}
