@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "phase": "Development on ALL 15 previously inspected A24 external states, not independent confirmation",
+  "operation": "Full original-head conversion, valid original-ID sample and certified full-posterior confidence commitment",
+  "input": ".cache/a24-independent-cuda-v1",
+  "methods": ["handoff", "closed", "grammar_hit", "suffix_hit", "exact_stack"],
+  "outside": ["cursor", "full_sparse"],
+  "numeric_boundary": "A28 competent vectorized exact NumPy digit sums for EVERY method",
+  "block_size": 1024,
+  "repetitions": 3,
+  "seed": 2026101324,
+  "confidence_threshold": "4/5",
+  "commit_budget": 4,
+  "trajectory_total_tv": "1/1000",
+  "depths": [1, 2, 3, 4, 6, 8, 12],
+  "resources": {"seconds": 120, "max_cells": 10000000, "max_edges": 10000000, "max_terms": 50000000},
+  "primary": "Selected certificate/cursor must reduce paired median complete warm wall AND CPU by at least20% against EVERY other certificate/full exact method with best sparse query interface, with favorable sign in all repeats. Closed/handoff are family variants; winner chosen only in this development. Require at least3 of15 states. Also record paired median factor2 benefits against the old dense A24 operation as an ablation, not proof versus strong controls.",
+  "correctness": "Every query agrees with independent enumeration on small original-token grammars; cursor and full sparse queries, intervals and commits agree literally for each same posterior/seed. Every output independently recognized JSON; fixed original IDs preserved. Retain zero masses/refusals/errors.",
+  "cost": "Read/head hash and numeric conversion, class summaries, all structural/depth/refinement work, sample/block retrieval, required confidence queries, recognition and output. Add original archived forward+softmax to paid warm totals. Static lexer/block setup and first operation reported separately; no claim of fresh model timing or neural-head memory savings.",
+  "next_gate": "Only a positive matched-operation development gate can trigger frozen NEW iterative forwards and additional compact-control comparison. Do not infer publication, semantic quality or native EPIC superiority from this screen. No criterion relaxation after observation."
+}

@@ -32,6 +32,26 @@ single preparation and conditional attempts independent of1/TV. Correctness
 oracles pass, but publication significance, novelty and useful full-generation
 cost remain open. No new neural campaign is credited to M70.
 
+## M71 — A24 consumer refinement, useful full-operation benefit required
+
+- [x] T7100: Write query-consumer V2's eight criteria, operation-equivalence
+  argument and ALL15-state development protocol BEFORE implementation/timings.
+  Existing external states are now known development, not new confirmation.
+  FactorDLM/class disintegration, A28 exact numerical summaries and sparse
+  outside are antecedents. Dense outside alone is capped by historical costs;
+  no large benefit/publication/mestrado acceptance is promised.
+- [ ] T7101: Implement minimal exact NumPy boundary plus sampled-token confidence
+  cursor; give equivalent summaries/queries to closed, handoff, grammar-hit,
+  suffix-hit and exact stack. Validate against independent original-word laws,
+  full sparse outside, aliases, fixed IDs and threshold equality/refinement.
+- [ ] T7102: Freeze producer, run ALL15 states/three rotated repeats with complete
+  costs and all outcomes. Old dense API is only an ablation. Require surviving
+  advantage against best sparse controls before triggering new neural work;
+  compact controls remain required for a broad complete-decoder claim.
+- [ ] T7103: Only after positive development, define and execute a NEW iterative
+  application/confirmation with complete controls and paid resources. Assess
+  usefulness/originality of A24 itself; no acceptance claim follows from code.
+
 ## M70 — Exact grammar residual operation, mathematical and prior gates first
 
 - [x] T7000: Before another direction, implement A49 V30's CLASSICAL exact
