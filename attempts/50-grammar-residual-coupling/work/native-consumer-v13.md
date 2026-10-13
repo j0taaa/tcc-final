@@ -62,7 +62,9 @@ from it. Existing negative applications and all admitted/refused cases remain.
 ## Frozen sources and randomness
 
 Source capture producer c2029ca7a426344d984f25a0370752755618a38f has metadata
-SHA2565b205e1f9533123411e794f1f052cf50df8e723a855f629a07f777f472af53d8.
+SHA2561c25a740ba5d5fa8b5d855055c69ca110f41fb95210895abbf3f6922eee20e97.
+Its source CORPUS archive SHA256 is
+5b205e1f9533123411e794f1f052cf50df8e723a855f629a07f777f472af53d8.
 Each frame/array/vocabulary digest is checked before use. Model revision
 d0958fa851335ece6c15260ce0025f030673c0fb and tokenizer revision
 607a30d783dfa663caf39e06633721c8d4cfcd7e stay identical. The model loader is
