@@ -1032,3 +1032,18 @@ producer. Não promover isto como economia de memória neural, dJev mais rápido
 confirmação independente ou publicação. V25 continua0/36. Mapa das obrigações
 de prova e antecedentes preserva lacunas: chart polinomial e Markov escritos
 ainda não implementados; prioridade/revisão humana/utilidade suficiente abertas.
+
+A49 V29 encerra auditorias de arredondamento e fecha a objeção de composição
+direta: Chan2006 Theorem2.6 já fornece kernel planar por SUBSET de pontos
+originais, tamanho/construção O(eta^-1/2); os envelopes de2.1/2.2 fornecem
+consultas batched. A reconstrução escrita simetriza os vértices, usa paridade
+para inteiros, ordem das cadeias para envelopes racionais exatos e indução
+de Fu: recupera o MESMO bound produto/Markov/forest e estabilidade em bits.
+Não usar uma geometria clássica mais fraca como adversário. Isto NÃO refuta
+o bound nem prova que um artigo TV anterior imprimiu aquela fórmula; reduz
+a justificativa técnica atual a especialização de técnicas conhecidas.
+Não anunciar prioridade/publicação ou contribuição própria substancial por
+aquele expoente ou pelos inteiros. Nenhum código/teste/forward/timing novo,
+tentativa50 ou vitória operacional. A24 e todas evidências antigas preservadas;
+a meta de novidade/utilidade suficiente permanece aberta. Fonte, derivação
+completa e escopos lidos estão em49/work/direct-composition-v29.md.

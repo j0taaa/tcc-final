@@ -1,12 +1,17 @@
 # Certified grammar inference for diffusion language models
 
-Current research consolidates **A49 as the mathematical candidate**, with
+Current research audits **A49 as a mathematical specialization**, with
 A24 retained as a separate implemented application. A49 audits total variation
 between two frozen predictions conditioned on the same grammar. Its proposed
 ordered product bound is `O(nq sqrt(n/epsilon) log(q+2))`, with stated full
 preprocessing and polynomial bit costs. The sharper quantitative bound is
-the candidate contribution; geometry, admissible inference and coupling are
-antecedents. Priority and independent proof review remain open.
+a candidate quantitative result. The V29 theoretical audit reconstructs the
+SAME leading bound from Chan2006's original-point kernels and Fu's framework,
+including exact integer output and polynomial bit stability. The improvement
+over stated TV-paper expressions alone therefore does not establish a
+substantial own advance. Chronological priority and publication significance
+remain separate/open questions; no independent proof review is invented.
+[Direct classical composition](attempts/49-rational-grammar-drift/work/direct-composition-v29.md).
 
 The complete independent precision gate failed0/36. A new developmental audit
 of all45 old pairs adds one ACCEPT/eight REJECT decisions on an illustrative
@@ -16,7 +21,7 @@ source-chart and Markov algorithms are written corollaries; the measured
 stack compiler is not their implementation.
 [A49 claim and proof audit](attempts/49-rational-grammar-drift/work/claim-audit-v28.md),
 [complete decision evidence](attempts/49-rational-grammar-drift/work/decision-v28.md),
-[mathematical draft](attempts/49-rational-grammar-drift/work/generated-v27/manuscript.pdf).
+[historical mathematical draft; read V29 first](attempts/49-rational-grammar-drift/work/generated-v27/manuscript.pdf).
 
 ## Separate implemented application: A24
 

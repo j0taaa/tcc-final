@@ -259,6 +259,20 @@ do not reset earlier losses or call prototype correctness publication proof.
   (upstream, Ruff, types and181 snapshot-integrity checks). No extra tests
   or new model measurement is credited as proof of novelty.
 
+- [x] T6924: Close the direct-composition objection BEFORE more rounding
+  audits or another implementation. Read Chan2006 author-original Sections
+  2.1/2.3/2.4, complete Theorem2.1/Corollary2.2/Theorem2.6 proofs, and AHV2004
+  Lemma3.6/3.7. Work/direct-composition-v29.md derives a symmetric width
+  kernel, original-vertex parity, exact nearest-vertex envelope scans, Fu's
+  induction and the SAME O(nq sqrt(n/epsilon) log(q+2)) full leading bound.
+  Generic forest/Markov and polynomial-bit consequences are available to
+  this competent composition too. No new code/test/forward/timing; no claim
+  that an older TV paper printed the combined formula. Downgrade the alleged
+  separating precision/integer advantage to a specialization, retaining
+  chronological-priority/publication questions and T6905 OPEN. V25/V28 stay
+  negative for their declared applications; A24 stays separate. Primary
+  source versions/hashes/scopes recorded in work/evidence/primary-v29.json.
+
 ## M65–M68 — Eliminate false novelty before another implementation
 
 - [x] T6500: Freeze A45's eight criteria and adverse-only population screen

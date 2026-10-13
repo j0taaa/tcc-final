@@ -1,5 +1,24 @@
 # A49 — Rational certificates for drift of a grammatical posterior
 
+**V29 theoretical disposition (2026-10-13):** the stronger primary comparator
+is Chan2006 Theorem2.6, not only a generic geometric existence theorem.
+[The full direct-composition audit](work/direct-composition-v29.md) recovers
+the SAME ordered product/Markov bound from classical original-point kernels,
+planar envelopes, integer vertex parity and Fu's induction. It also accounts
+for polynomial bit stability. This does not refute the bound or establish
+that a previous TV paper printed the combined formula; it does weaken the
+claim of a substantial own algorithmic advance. Do not promote the precision
+exponent or integer output as unavailable to competent alternatives. No new
+implementation/test/rounding campaign, attempt50 or independent confirmation.
+
+The eight criteria are re-evaluated by this comparator: (1,6) frozen-head
+certification and fully charged costs are unchanged; (2,3,4,7) the advertised
+quantitative benefit is recovered by known techniques, so a separate own
+advantage has NOT been established; (5) V25/V28 data/negative dispositions
+stay frozen, and no new favorable benchmark is authorized; (8) chronological
+priority and publication significance remain distinct/open, with no human
+proof review or completed scientific goal. A24 stays separate.
+
 V28 follows the user's consolidation feedback: retain A49 as the only current
 theoretical candidate and A24 as a separate application. Before code,
 [the decision-audit contract](work/consolidation-v28.md) freezes all45 old

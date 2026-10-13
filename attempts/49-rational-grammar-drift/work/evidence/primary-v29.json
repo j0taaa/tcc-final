@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "base_commit": "0cf07bcb36e1dec16d62277c77e6b0b7c8797b80",
+  "date": "2026-10-13",
+  "status": "WRITTEN_THEORETICAL_COMPOSITION_AUDIT",
+  "new_tests": 0,
+  "new_model_forwards": 0,
+  "new_implementation": false,
+  "human_review": false,
+  "note_sha256": "f0211a59b52e7d2ac0d8e1a4e2d47b2ae3199f389e5964e36a32423fe8bbb922",
+  "sources": [
+    {
+      "title": "Faster Core-Set Constructions and Data-Stream Algorithms in Fixed Dimensions",
+      "author": "Timothy M. Chan",
+      "url": "https://tmc.web.engr.illinois.edu/core.pdf",
+      "author_pdf_date": "2005-07-15",
+      "journal_year": 2006,
+      "pdf_sha256": "a3a790f3855aa06f724694da5f27103d0bcb53c3607b16e8c9186ed6626ed70c",
+      "text_sha256": "f800ce2ac46c991465b16a32671d6663ddf7a837a9eb06a506a33499d4ab1425",
+      "scope_read": "Sections1.2/1.3, entire Sections2.1/2.3/2.4 including Theorem2.1, Corollary2.2, Theorem2.6 proofs. No claim to have audited all streaming proofs.",
+      "model": "Real RAM with floor/square roots; exact planar specialization in the new note explicitly closes that boundary."
+    },
+    {
+      "title": "Approximating Extent Measures of Points",
+      "url": "https://www.sarielhp.org/p/01/fitting/",
+      "pdf_url": "https://graphics.stanford.edu/courses/cs468-06-winter/Papers/har-peled-JACM2004%20fitting.pdf",
+      "author_draft_date": "2003-02-09",
+      "journal_year": 2004,
+      "pdf_sha256": "729cf1e8e866d0f440bb8242f0a2a2d0a0438759bab12df94669d711e78de1c1",
+      "text_sha256": "438a7bed7062a38d70a077fd0c5c8c26740d2cfa36ede973c616d31afdd856da",
+      "scope_read": "Entire Lemma3.6 proof and Theorem3.7 statement/proof context; not entire30-page paper."
+    },
+    {
+      "title": "On Deterministically Computing Total Variation Distance via Zonotope Compression",
+      "url": "https://arxiv.org/html/2609.24235v1",
+      "version": "v1",
+      "pdf_sha256": "d2fd7eead9b2b0fd4835242e3b6b46c1eab4ed54964701d94c6a85c348cb290e",
+      "text_sha256": "db2575c0ebc64e506adec23cb5dc87b3cd0893adb443fc7bfb6c8dfb131194b8",
+      "scope_read": "Definition3.1, complete Definition3.6/Assumption3.7/Theorem3.8 proof and algorithm, Section4.1 recurrence, Definition4.3/Lemma4.4 complete proof; earlier compression/AppendixA reading remains as documented."
+    },
+    {
+      "title": "A Proof of Dudleys Convex Approximation",
+      "url": "https://sarielhp.org/p/17/dudley_approx/dudley_approx.pdf",
+      "author_pdf_date": "2024-05-22",
+      "pdf_sha256": "e76efdef1e11f4965c8fbab09e5c7993719d5b17ef96f724fe9e042303692ea2",
+      "scope_read": "Theorem1.1 and proof; already read previously. Filename is a local label, not the document date."
+    }
+  ],
+  "conclusion": "Known original-point kernels, integer parity, classical planar envelopes and Fu recover the same stated leading bound and bit stability. This does not prove that the combined TV formula was previously published; the substantial-own-advance claim is downgraded.",
+  "benchmarks": "V25 and V28 unchanged; no new thresholds, examples or measurements introduced."
+}

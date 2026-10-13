@@ -1,5 +1,33 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-13 — A49 V29: direct classical composition matches the advertised bound
+
+The new feedback asks whether the quantitative result is substantially own
+or already available by combining known tools. Primary Chan2006 Theorem2.6
+answers a missing comparison: a planar ORIGINAL-POINT width kernel has size
+O(eta^-1/2) and construction O(m+eta^-1/2), not just a geometric existence
+rate. Theorem2.1/Corollary2.2 supply batched nearest-neighbor envelope scans.
+Complete relevant proofs and AHV2004's projection-subset antecedent were read;
+no human review, neural capture or new implementation was performed.
+
+Work/direct-composition-v29.md gives the full reduction, not a complexity
+table: symmetrize the vertex subset; convert half-edge differences to integer
+generators using common parity; use a rational fatness map and exact planar
+envelopes (two monotone polygon chains) to avoid hidden real-RAM primitives;
+apply Fu's error induction and the classical q-way merge. The SAME product
+bound O(nq sqrt(n/epsilon) log(q+2)) follows, with the same Markov/forest and
+polynomial-bit guarantees after full costs. Integer output and no-TV-floor
+are not exclusive advantages over this stronger competent comparator.
+
+This does not refute the mathematical bound or prove that a previous TV
+paper printed the combined formula. It DOES remove the intended separation
+from direct classical composition: the current core is a specialization, not
+yet a demonstrated substantial own algorithmic advance. Publication value
+of that observation and chronological priority remain distinct/open. Do not
+replace this conclusion with another rounding audit or benchmark. A24 stays
+separate, all historical drafts/evidence remain immutable, and the user's
+novelty/usefulness goal remains unachieved. No attempt50 is started here.
+
 ## 2026-10-12 — A49 V28: consolidate the claim and test all budget decisions
 
 User feedback recommends one theoretical protagonist, A49, with A24 retained
