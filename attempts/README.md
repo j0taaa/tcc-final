@@ -59,7 +59,7 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [46-ambiguity-aware-conditioning](46-ambiguity-aware-conditioning/README.md) | Correção de ambiguidade limitada; redução a antecedentes, sem nova contribuição |
 | [47-exact-logit-forest-sampling](47-exact-logit-forest-sampling/README.md) | Sampling por intervalos; princípio anterior, custos especializados abertos |
 | [48-grammar-factor-representation](48-grammar-factor-representation/README.md) | Representação por fatores; antecedentes e controles compactos reconhecidos |
-| [49-rational-grammar-drift](49-rational-grammar-drift/README.md) | Bound quantitativo candidato; gate independente0/36; replay360 tem1/45 diagnóstico de desenvolvimento; nova prova de gap dos controles e artigo11 páginas, prioridade/revisão/suficiência abertas |
+| [49-rational-grammar-drift](49-rational-grammar-drift/README.md) | Candidata teórica consolidada; gate independente0/36; replay360 tem1/45 diagnóstico; auditoria de decisões45 pares acrescenta1 ACCEPT/8 REJECT na grade, mas0/120 escolhas de menor precisão; artigo11 páginas, prioridade/revisão/uso suficiente abertos |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`

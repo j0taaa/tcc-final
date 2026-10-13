@@ -1019,3 +1019,16 @@ campanha/macros são derivados de hashes; regeneração byte-idêntica, sem warn
 11 páginas finais visualmente conferidas. V25 continua FAILED0/36 e V26 é só
 DESENVOLVIMENTO1/45. Rascunho, correção e QA não fecham a meta científica ou
 inventam revisão humana; originalidade/suficiência editorial permanecem abertas.
+
+A49 V28 consolida esta candidata após o feedback, sem tentativa50 ou novos
+forwards. Protocolo escrito antes de código; controles inferiores clássicos
+com range gramatical passam105 oráculos (33 massas zero indefinidas).
+Auditoria completa de decisões conserva45 pares antigos,33 intervalos/12
+recusas compartilhadas históricas. Há22 regiões adicionais ACCEPT e31 REJECT;
+grade ilustrativa completa tem1 ACCEPT/8 REJECT adicionais, mas ZERO escolhas
+de menor word-width nas120 políticas. Somente lowers/range custam108,784s wall,
+além de preparação/posteriors e controles/cores históricos, distinguidos por
+producer. Não promover isto como economia de memória neural, dJev mais rápido,
+confirmação independente ou publicação. V25 continua0/36. Mapa das obrigações
+de prova e antecedentes preserva lacunas: chart polinomial e Markov escritos
+ainda não implementados; prioridade/revisão humana/utilidade suficiente abertas.

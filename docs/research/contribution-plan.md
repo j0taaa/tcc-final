@@ -1,5 +1,32 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-12 — A49 V28: consolidate the claim and test all budget decisions
+
+User feedback recommends one theoretical protagonist, A49, with A24 retained
+as a separate application. Work/consolidation-v28.md freezes the complete
+all-budget developmental operation BEFORE code. Claim-audit-v28.md maps every
+central proof/cost obligation to its written argument and finite checks,
+without inventing independent human review. It distinguishes Fu's general
+principle/classical planar geometry from the proposed quantitative bound.
+Fresh primary reading also corrects a version distinction: statistical
+similarity2502.10527v3 uses likelihood-ratio sparsification; the earlier
+v1/anonymous search result used masked knapsack. Relative approximation of
+1-TV does not automatically supply relative approximation near TV=0.
+
+Grammar-tight moment lower controls pass105 independent word checks (33
+undefined masses). The full replay retains all45 old pairs:33 classical
+intervals/12 historical shared refusals;22 additional ACCEPT and31 REJECT
+budget regions. The entire illustrative decimal grid adds ONE ACCEPT and
+EIGHT REJECT decisions. ALL120 precision policies choose the SAME minimal
+table word width: ZERO additional storage choices. New lower/range passes
+alone cost108.784s wall/108.761s CPU, before archived baseline/core work and
+replayed preparation/posteriors. No new forward/core, independent gate or
+measured deployment saving. Every interval/cost is preserved and528 decisions
+were independently recomputed. This clarifies the application but does not
+confirm an efficient dJev or close originality/publication significance.
+The generalized polynomial word chart and Markov implementation still do
+not exist; their mathematical statements are not the measured stack code.
+
 ## 2026-10-12 — A49 V25--V27: negative practical gate, sharper complete mathematics
 
 The complete independent V25 campaign FAILED its unchanged2x precision gate

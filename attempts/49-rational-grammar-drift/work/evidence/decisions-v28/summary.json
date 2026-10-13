@@ -1,0 +1,14 @@
+{
+  "status": "DEVELOPMENT_DECISIONS_ONLY",
+  "pairs": 45,
+  "policy_comparisons": 120,
+  "certified_classical": 33,
+  "extra_accept_regions": 22,
+  "extra_reject_regions": 31,
+  "grid_extra_accepts": 1,
+  "grid_extra_rejects": 8,
+  "narrower_word_policies": 0,
+  "new_forwards": 0,
+  "independent_confirmation": false,
+  "actual_memory_saving_measured": false
+}

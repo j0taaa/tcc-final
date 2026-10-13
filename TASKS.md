@@ -211,7 +211,8 @@ do not reset earlier losses or call prototype correctness publication proof.
 - [ ] T6920: V27 writes two-sided fidelity decisions AFTER V25's failure;
   do not relabel that upper-precision gate. Classical marginal, Hellinger and
   moment lower controls are proved before prototype. Sourcec9f839f's unchanged
-  105-case oracle passes (33 undefined-zero-mass); application remains unmeasured.
+  105-case oracle passes (33 undefined-zero-mass). V28 materializes all-budget
+  decisions (T6923); an actual deployment benefit remains unconfirmed.
   Full-arithmetic-scaling-v27 closes GCD/output accounting on paper; measured
   reference still uses LCM/Fraction. Chart-error-count-v27 gives d<=3B-2 only
   for admitted CNF, with wide unions charged. Source-error-count-v27 avoids
@@ -238,6 +239,22 @@ do not reset earlier losses or call prototype correctness publication proof.
   visually reviewed images. Artifact QA is not human mathematical review.
   Source22a0aeb passes `make check`, including180 immutable snapshots. The
   novelty/utility/publication goalT6905 stays OPEN; no new model experiment.
+
+- [x] T6923: Consolidate A49 following the user's feedback; no attempt50 or
+  new neural campaign. Freeze work/consolidation-v28.md BEFORE implementation.
+  Sourcecaf5721's grammar-tight classical moment controls pass105 independent
+  word checks (33 zero-mass undefined). Its complete decision replay covers
+  ALL45 old pairs/ALL120 illustrative precision policies:33 classical
+  intervals,12 historical shared refusals,22 extra accept/31 extra reject
+  budget regions, ONE extra accept/EIGHT extra reject grid decisions, ZERO
+  narrower word-width choices. All costs preserved; lower/range passes alone
+  total108.784s wall/108.761s CPU. No new forward/core, gate or independent
+  confirmation. Reports independently reconstruct528 decisions; exhaustive
+  small interval/equality audit checks1295 outcomes. Evidence/provenance:
+  work/evidence/{decisions-v28,tight-oracle-v28,origin-decisions-v28.json};
+  decision-v28.md and claim-audit-v28.md retain the unsolved novelty/actual-use
+  gaps and the unimplemented generalized chart/Markov corollary. This does
+  not close T6905 or imply a more efficient dJev.
 
 ## M65–M68 — Eliminate false novelty before another implementation
 

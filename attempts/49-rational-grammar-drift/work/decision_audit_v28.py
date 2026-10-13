@@ -189,7 +189,10 @@ def run(source, output):
             p.name: digest(p)
             for p in [Path(__file__), WORK / "tight_control_v28.py", WORK / "two_sided_controls.py"]
         },
-        interpretation="All budgets/old heads; mixed-source accounting is not a new timing measurement or independent confirmation",
+        interpretation=(
+            "All budgets/old heads; mixed-source accounting is not a new timing "
+            "measurement or independent confirmation"
+        ),
     )
     (output / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n")
     rows = []

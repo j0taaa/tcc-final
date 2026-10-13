@@ -1,0 +1,8 @@
+{
+  "status": "CORRECTNESS_ONLY",
+  "original_id_forest_cases": 105,
+  "undefined_zero_mass": 33,
+  "new_forwards": 0,
+  "two_sided_controls": true,
+  "grammar_restricted_moment_lower": true
+}

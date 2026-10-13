@@ -13,6 +13,17 @@ marginals/normalizers/controls and the historical core are charged; (7) cheap
 controls may already select every usable format; (8) proof/priority review and
 an actual deployment requirement remain open. V25's failure is not relabeled.
 
+V28 is now COMPLETE: all45 old pairs,33 classical intervals and12 preserved
+shared refusals. Grammar-restricted moment controls pass105 independent word
+checks. There are22 extra ACCEPT and31 extra REJECT budget regions, reported
+with exact endpoints. The entire illustrative decimal grid adds ONE ACCEPT
+and EIGHT REJECT decisions, but ZERO narrower word-width choices in ALL120
+state/budget policies. Thus no storage/decoder savings is demonstrated.
+New lower/range passes alone cost108.784s wall; all preparation/posteriors and
+historical cores remain charged separately. See [decision](work/decision-v28.md)
+and [claim/proof audit](work/claim-audit-v28.md). This is development, not
+independent confirmation, customer validation or a replacement for V25.
+
 **Current V24 correction:** classical sampler-overlap controls pass105 word
 checks and all24 public rows. The old FP16 comparison18.57x drops to1.05476x;
 FP32 overlap is tighter than the candidate upper. `work/overlap-decision-v24.md`
