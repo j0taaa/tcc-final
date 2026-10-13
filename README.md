@@ -1,5 +1,19 @@
 # Certified grammar inference for diffusion language models
 
+Current investigation: **A50, exact residual sampling for a grammatical
+posterior**. It corrects a rejected whole-completion draft between two frozen
+heads while retaining the exact target law. The written upper-profile
+construction uses ONE preparation and fewer than two conditional correction
+attempts in expectation, including arbitrarily small positive TV. Original
+IDs, aliases and singular supports are preserved. Independent finite law
+oracles pass, including actual compression; no useful neural latency or
+sufficient novelty/publication claim is confirmed. Approximate counting,
+profile algebra, provenance and rejection are known antecedents that must
+be compared as a competent combined alternative.
+[A50 contract](attempts/50-grammar-residual-coupling/README.md),
+[single-preparation theorem](attempts/50-grammar-residual-coupling/work/upper-v5.md),
+[primary comparison and open objections](attempts/50-grammar-residual-coupling/work/primary-comparison-v5.md).
+
 Current research audits **A49 as a mathematical specialization**, with
 A24 retained as a separate implemented application. A49 audits total variation
 between two frozen predictions conditioned on the same grammar. Its proposed

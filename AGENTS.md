@@ -446,6 +446,28 @@ restaurar código retirado ou insistir em uma hipótese refutada.
   integralmente, mas NÃO o manuscrito2026: preservar essa distinção.
   Nenhum novo forward/timing, promoção ou novidade confirmada nesta versão.
 
+## Atualização de trabalho em 2026-10-13 — A50
+
+A49 V29 foi rebaixada a especialização após reconstruir a mesma cota com
+Chan+Fu. V30 acrescenta apenas uma otimização clássica opt-in de range sums:
+74.593 consultas exatas e300 casos/108 recusas passam; sem timing ou novidade.
+A nova pasta independente50 investiga amostragem residual EXATA (P-Q)_+/TV
+entre dois posteriores gramaticais congelados. Prova/critério antecedem código.
+V1 mantém normalizadores originais; bug inicial de densidade de draft inválido
+foi corrigido antes de oráculos. Falha de fixture fixa V2 foi preservada;
+V3 passa482.657 checks de caudas/700 palavras/15 leis completas.
+V4 tem51.340 intervalos de marginais originais e11 recusas reais de massa zero.
+V5 escreve primeiro a preparação única por perfil superior e proveniência,
+com singularidades exatas; referência176 linhas passa475.041 caudas/1.780
+palavras/18 leis completas/6 leis singulares/432 samples e12 recusas.
+A prova ESCRITA dá menos de duas tentativas condicionais esperadas sem1/TV,
+mas cobra preparação e O(H*M^2) proveniência; não é deadline ou timing.
+Dyer2003 e Gawrychowski/Markin/Weimann2018 já dão os princípios centrais;
+prioridade/suficiência científica e benefício integral com dLLMs continuam
+ABERTOS. Não inventar revisão humana/Lean ou vitória sobre EPIC. O artigo
+mantido continua A24, sem transferir suas vitórias para A50. As menções
+históricas a 'sem tentativa50' descrevem somente aquelas versões anteriores.
+
 ## Perguntas obrigatórias para cada ideia ou implementação
 
 A39 começa em pasta independente, somente ESCRITA antes de protótipo/modelo:

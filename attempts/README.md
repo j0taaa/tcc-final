@@ -60,6 +60,7 @@ uma comparação. As fases e repetições de cada campanha mantêm suas subpasta
 | [47-exact-logit-forest-sampling](47-exact-logit-forest-sampling/README.md) | Sampling por intervalos; princípio anterior, custos especializados abertos |
 | [48-grammar-factor-representation](48-grammar-factor-representation/README.md) | Representação por fatores; antecedentes e controles compactos reconhecidos |
 | [49-rational-grammar-drift](49-rational-grammar-drift/README.md) | V29 reconstrói o MESMO bound por kernels clássicos de Chan+Fu, reduzindo a alegação a especialização; gate independente0/36, decisões0/120 menor precisão; prioridade cronológica/suficiência de publicação/uso próprio continuam abertos |
+| [50-grammar-residual-coupling](50-grammar-residual-coupling/README.md) | Amostragem residual exata com preparação única e proveniência; prova escrita/oráculos completos, contagem e rejeição são antecedentes; novidade substancial e benefício de geração ainda abertos |
 
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`

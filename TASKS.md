@@ -24,12 +24,53 @@ conditional branches below are historical; failed development gates do not
 require executing their untriggered independent campaigns. Do not reopen them
 or restore removed infrastructure. Human review/publication remain external.
 The renewed user goal requires a defensible original contribution, not only
-consolidating A24. Current M69 investigates a quantitative deterministic TV
-precision-cost bound and an original-token dLLM/CFG audit. Stronger V24 coupling
-erases the old development gap; ALL15 new heads are captured/verified, and the
-unchanged360-row V25 audit fails its precision gate (0/36 primary pairs).
-Novelty/significance/utility remain open;
-do not reset earlier losses or call prototype correctness publication proof.
+consolidating A24. M69/V29 reconstructs A49's advertised bound by a competent
+classical composition and downgrades its claimed separating advantage. Its
+precision/storage application stays negative. M70/A50 investigates exact
+grammatical residual sampling: written upper-profile/provenance theorem,
+single preparation and conditional attempts independent of1/TV. Correctness
+oracles pass, but publication significance, novelty and useful full-generation
+cost remain open. No new neural campaign is credited to M70.
+
+## M70 — Exact grammar residual operation, mathematical and prior gates first
+
+- [x] T7000: Before another direction, implement A49 V30's CLASSICAL exact
+  range-sum root optimization opt-in. Producerba76910 passes74,593 signed
+  product queries plus300 original-word checks/108 undefined cases; old/new
+  fields agree literally. It is not scientific novelty or measured speed.
+- [x] T7001: Start independent A50 with eight criteria and a written
+  relative one-sided mass/bit/zero-support proof BEFORE code (c1c1668).
+  Keep ORIGINAL root normalizers under evidence. Unvalidated producer7f0fbdd
+  did not check invalid draft membership; correction5f07ea7 is explicit.
+  Oracle source8661645 refuses a fixed-slot low-mass fixture after19 rows;
+  preserve failure, do not turn it into a successful sampler test.
+- [x] T7002: Correct only the fixture and freeze source9ca1f54 BEFORE its
+  successful V3 run:482,657 tail checks/6,480 merges,700 word densities,
+  4,560 prefix bounds,15 complete proposal/coupling laws,240 valid samples.
+  Undefined count0 in V3 is NOT zero-mass coverage. No latency or priority.
+- [x] T7003: Write V4 marked-edge outside proof BEFORE code. Sourcea6d2378
+  passes the above checks plus51,340 ALL original-ID marginal enclosures and
+  11 actual undefined-posterior refusals. Shared profiles avoid q full analyses
+  per position; they do not prove superiority against all shared algorithms.
+- [x] T7004: Write V5 upper-tail/pathwise-envelope/provenance/singular-channel
+  proof BEFORE code (afca26a). Source4184183's176-line reference pays ONE
+  preparation, O(H*M^2) provenance and exact correction. Its complete oracle
+  passes475,041 upper-tail checks/6,480 merges,1,780 word cases,18 full accepted
+  laws,6 singular laws,432 valid samples and12 undefined refusals. Twelve
+  original grammatical words actually increase their representative ratio.
+  Evidence:50/work/evidence/oracle-v5; written bound is <2 conditional attempts,
+  not wall-time, a deterministic deadline, native EPIC or semantic improvement.
+- [x] T7005: Read relevant primary originals, including Dyer2003 §2.1 FULL
+  preparation/rejection argument and Gawrychowski/Markin/Weimann2018 ENTIRE§2.
+  Credit their exact-sampling principle and sum/convolution calculus; do not
+  claim those as inventions. primary-comparison-v5.md/primary-v5.json retain
+  actual readings/hashes and unavailable2019 full sampling section. Maintained
+  170-test suite passes72.873s during this development; research law oracles
+  are separate and do not establish publication or a faster generator.
+- [ ] T7006: Close the strongest known-construction objection, actual grammar
+  admission/bit/runtime proof, and operational utility after ALL preparation,
+  provenance/head/output costs. No large implementation or favorable model
+  campaign substitutes for this. Novelty/human review/publication remain OPEN.
 
 ## M69 — Rational drift certificate, proof before application
 

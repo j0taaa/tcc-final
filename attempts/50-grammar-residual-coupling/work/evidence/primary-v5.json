@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-13",
+  "review": "internal agent primary reading only; no human review or exhaustive priority guarantee",
+  "cached": [
+    {
+      "url": "https://arxiv.org/pdf/1708.03625",
+      "local_cache": ".cache/a50-priors/coupling2020.pdf",
+      "sha256": "67c787151fdbb6f69934a85123aad32449d01c6372a271a8029b5a99b76a70bb",
+      "bytes": 1516784,
+      "reading_scope": "Current arXiv PDF downloaded without explicit version; section4.1/cost argument also read at journal primary URL."
+    },
+    {
+      "url": "https://arxiv.org/pdf/1307.2347v2",
+      "local_cache": ".cache/a50-priors/knapsack2013.pdf",
+      "sha256": "5379fc6161780ee7e24f5e52178cdeba47aa9c0af124118d97791cca7d3d2189",
+      "bytes": 267137,
+      "reading_scope": "Sections2/3.2/4 and pointwise counting/sampling proof; not all appendices."
+    },
+    {
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol107-icalp2018/LIPIcs.ICALP.2018.64/LIPIcs.ICALP.2018.64.pdf",
+      "local_cache": ".cache/a50-priors/knapsack2018-published.pdf",
+      "sha256": "2e97169ec3005e8a782d3b2d48635cafe904bdde8dddbe59dcc2e0139fa73ce3",
+      "bytes": 496584,
+      "reading_scope": "Entire Section2, Lemmas6/8 complete proofs and computational primitives; Section3 and relevant Section4 recurrence/error analysis."
+    }
+  ],
+  "other_primary_scopes": "See primary-comparison-v5.md for exact URLs and limited reading scopes.",
+  "access_failures": [
+    {
+      "url": "https://helda.helsinki.fi/bitstreams/d5427007-9d78-4b2d-800e-5f846456d1f7/download",
+      "result": "805-byte HTML challenge, NOT a PDF or paper reading"
+    },
+    {
+      "url": "https://researchportal.helsinki.fi/files/125043109/1_s2.0_S0890540119300276_main.pdf",
+      "result": "web403; journal2019 sampling section not read fully"
+    },
+    {
+      "url": "https://arxiv.org/pdf/1802.05791v2",
+      "result": "404; published2018 original obtained instead"
+    }
+  ]
+}

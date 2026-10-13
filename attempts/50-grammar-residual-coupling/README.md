@@ -1,5 +1,13 @@
 # A50 — Exact residual sampling for a grammatical posterior
 
+Current V5 materializes the [single-preparation upper-profile proof](work/upper-v5.md)
+with a176-line rational sampler and preserved exact output-law evidence.
+The [primary audit](work/primary-comparison-v5.md) credits Dyer2003 and the
+entire2018 sum-approximation/convolution calculus; sufficient difference and
+useful full-generation cost remain OPEN. No new neural measurement or article
+promotion. V1's unvalidated draft-density bug, V2's fixed-slot setup refusal,
+V3's corrected run and V4's shared marginals stay separately preserved.
+
 2026-10-13. Mathematical contract BEFORE implementation or observations.
 This is a candidate, not confirmed priority, publication sufficiency, an EPIC
 win or a measured faster dJev. A49 V29's downgrade and A24's separate evidence
@@ -37,7 +45,8 @@ remain unchanged. There is no new neural campaign.
    performance benchmarks. No model measurement before proof/prior audit.
 6. **Cost.** Grammar preparation, both exact normalizers, input/scaling bits,
    each profile construction, every proposed token and exact correction count.
-   Up to n*q profile queries are paid PER attempt. The algorithm does not save
+   V1 pays n*q profile queries PER attempt; V4 reduces this to n; V5 uses ONE
+   preparation and pays O(H*M^2) provenance storage. The algorithm does not save
    the forward needed to obtain a target head. Its worst polynomial may be
    impractical, and expensive preprocessing is not hidden behind rare events.
 7. **Objection.** The theorem may follow directly from #Knapsack approximation

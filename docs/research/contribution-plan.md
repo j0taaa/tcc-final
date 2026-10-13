@@ -1,5 +1,41 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-13 — A50: residual operation rather than another rounding audit
+
+A49 V30 implements a classical sorted ratio/range-sum root query opt-in;
+74,593 signed exact queries and300 original-word records pass, with108
+undefined cases. This is useful engineering, not a replacement novelty claim.
+
+New independent A50 writes its operation/eight criteria before code: sample
+(P-Q)_+/TV between frozen original-ID grammatical laws. Original normalizers
+stay fixed under prefix evidence; relative norm certificates alone may lose
+tiny one-sided masses by cancellation. The first unvalidated reference lacked
+an invalid-draft membership check; it was corrected before the finite oracle.
+V2's fixed-slot fixture error remains recorded. Corrected V3 passes full finite
+tail/word/proposal/coupling checks. V4 writes and verifies marked distribution-
+valued outside messages:51,340 independent marginal enclosures and11 zero-mass
+refusals. None of these records is a performance experiment.
+
+V5 writes BEFORE code a better consumer: upper-tail grouping with provenance
+gives a pointwise envelope. Prepare ONCE, sample the retained original events,
+and reject exactly. Singular B-zero words use an exact disjoint flag channel.
+The written conditional attempt expectation is <2 regardless of positive TV,
+with polynomial preparation/bit/storage work; O(H*M^2) provenance is charged.
+Source4184183 passes475,041 tail checks/6,480 merges,1,780 word cases,18 complete
+accepted laws,6 singular laws,432 valid outputs and12 zero-mass refusals. Twelve
+grammar words have a changed representative, exercising the compression.
+
+The closest construction objection is strong: Dyer2003 already prepares a
+rounded DP and backtracks/rejects EXACTLY; Gawrychowski/Markin/Weimann2018§2
+already proves the needed sum/convolution approximation calculus. Relevant
+proofs were read, not only abstracts. The2019 journal sampling section remains
+unavailable at two primary endpoints and must not be described as checked.
+Maximal-coupling and nonmaximal bounded-variance controls stay competent.
+The complete weighted grammar residual theorem is a candidate, not declared
+substantially new or publication-worthy by counting tests. No neural forward,
+latency or preserved native EPIC trajectory is demonstrated by this work.
+A24 stays the maintained article; A49's negative evidence is unchanged.
+
 ## 2026-10-13 — A49 V29: direct classical composition matches the advertised bound
 
 The new feedback asks whether the quantitative result is substantially own
