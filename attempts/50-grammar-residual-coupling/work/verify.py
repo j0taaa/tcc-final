@@ -58,7 +58,7 @@ def tail_oracle():
             eta,
         )
         points = sorted({F(0), *(r for r, _ in original)})
-        points += [(a + b) / 2 for a, b in zip(points, points[1:])]
+        points += [(a + b) / 2 for a, b in itertools.pairwise(points)]
         for threshold in points:
             assert (
                 tails(compact, threshold)
@@ -149,7 +149,7 @@ def inputs(source, emissions, rows, canvas, mode, rng):
             target[i] = tuple(F(v, sum(raw)) for v in raw)
     elif mode == "singular":
         i = next(i for i, row in enumerate(target) if len(row) > 1)
-        draft[i] = (F(0),) + tuple(F(1, len(draft[i]) - 1) for _ in draft[i][1:])
+        draft[i] = (F(0), *(F(1, len(draft[i]) - 1) for _ in draft[i][1:]))
         target[i] = tuple(F(1, len(draft[i])) for _ in draft[i])
     elif mode == "tiny":
         i = next(i for i, row in enumerate(target) if len(row) > 1)
@@ -158,7 +158,10 @@ def inputs(source, emissions, rows, canvas, mode, rng):
             for j, p in enumerate(target[i])
         )
     elif mode == "low-mass":
-        target = [tuple(p / (1 << (64 * (i + 1))) for p in row) for i, row in enumerate(target)]
+        target = [
+            tuple(p / (1 << (64 * (i + 1))) for p in row) if canvas[i] is None else row
+            for i, row in enumerate(target)
+        ]
     return ProbabilityInput(state, tuple(target)), ProbabilityInput(state, tuple(draft))
 
 
@@ -209,7 +212,7 @@ def run(output):
                         raise AssertionError("zero-mass posterior was admitted")
                     p, q = [
                         {ids: value / z for ids, value in row.items()}
-                        for row, z in zip(raw, masses)
+                        for row, z in zip(raw, masses, strict=True)
                     ]
                     residual = {ids: max(F(0), p[ids] - q[ids]) for ids in paths}
                     delta = sum(residual.values(), F(0))
@@ -243,7 +246,7 @@ def run(output):
                             density = F(1)
                             for i, v in enumerate(ids):
                                 prefix = ids[:i]
-                                weights = [lower_cache[prefix + (value,)] for value in rows[i]]
+                                weights = [lower_cache[(*prefix, value)] for value in rows[i]]
                                 total = sum(weights, F(0))
                                 if not total:
                                     density = F(0)

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/50-grammar-residual-coupling/work/verify.py", line 184, in run
+    target, draft = inputs(source, emissions, rows, canvas, mode, rng)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/50-grammar-residual-coupling/work/verify.py", line 162, in inputs
+    return ProbabilityInput(state, tuple(target)), ProbabilityInput(state, tuple(draft))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 5, in __init__
+  File "/home/jota/projects/tcc-final/src/mwpc_exact/mass_certificate.py", line 72, in __post_init__
+    raise ValueError("fixed slots must have their fixed token with probability one")
+ValueError: fixed slots must have their fixed token with probability one
