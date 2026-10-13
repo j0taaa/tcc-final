@@ -1957,7 +1957,7 @@
     {
       "id": "49-rational-grammar-drift",
       "title": "Rational posterior drift and smaller integer norm cores",
-      "conclusion": "Sharper written deterministic TV precision-cost candidate with complete original-ID core checks. Independent V25 precision gate FAILED0/36; shared V26 replay has one2x diagnostic in45 DEVELOPMENT pairs, not independent confirmation. Publication significance, priority and human review remain open; no EPIC/generation superiority.",
+      "conclusion": "V29 reconstructs the same advertised bound by a competent Chan+Fu classical composition: separating novelty downgraded. V30 is an exact classical opt-in root range-sum optimization, with74593 signed queries and300 forest checks. Precision gate0/36 and storage0/120 remain negative; no useful generation/publication advantage confirmed.",
       "reading": "attempts/49-rational-grammar-drift/README.md; TASKS.md",
       "versions": [
         {
@@ -2319,6 +2319,76 @@
             "attempts/49-rational-grammar-drift/README.md",
             "attempts/49-rational-grammar-drift/work/direct-composition-v29.md",
             "attempts/49-rational-grammar-drift/work/evidence/primary-v29.json"
+          ]
+        },
+        {
+          "id": "v30",
+          "source_commit": "ba76910443a942ca46e17ef277d89830d5e9b7f6",
+          "evidence_commit": "5537ed12b518fc9cebcbe42321edbf083188ac71",
+          "evidence_roots": [
+            "attempts/49-rational-grammar-drift/work/implicit-root-v30.md",
+            "attempts/49-rational-grammar-drift/work/evidence/implicit-v30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "50-grammar-residual-coupling",
+      "title": "Exact residual sampling for a grammatical posterior",
+      "conclusion": "Written polynomial-bit conditional residual theorem and one-preparation upper-profile provenance reference. Independent complete original-word law oracles pass, including actual grouping and singular supports. Dyer2003/sum approximations2018 are central antecedents; substantial novelty, useful full-generation cost, independent human review and publication remain OPEN. No new neural timing or EPIC victory.",
+      "reading": "attempts/50-grammar-residual-coupling/README.md; TASKS.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "7f0fbdda41c81821ae9a62903d88ea6164205c8e",
+          "evidence_commit": "7f0fbdda41c81821ae9a62903d88ea6164205c8e",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/README.md",
+            "attempts/50-grammar-residual-coupling/work/theory-v1.md"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "86616453ad07b205ea2efdab8409f520d0ef6945",
+          "evidence_commit": "9ca1f5464483043c960d64a0690a05431743030d",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/README.md",
+            "attempts/50-grammar-residual-coupling/work/adversarial-v2.md",
+            "attempts/50-grammar-residual-coupling/work/oracle-correction-v3.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v2"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "9ca1f5464483043c960d64a0690a05431743030d",
+          "evidence_commit": "9b71fe8b4a503ebf5f82fba4bf13fa496848cb3e",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/README.md",
+            "attempts/50-grammar-residual-coupling/work/theory-v1.md",
+            "attempts/50-grammar-residual-coupling/work/oracle-correction-v3.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v3"
+          ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "a6d2378d54e90ac956e07f8a24fee221e60c8f2d",
+          "evidence_commit": "5537ed12b518fc9cebcbe42321edbf083188ac71",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/README.md",
+            "attempts/50-grammar-residual-coupling/work/outside-v4.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v4"
+          ]
+        },
+        {
+          "id": "v5",
+          "source_commit": "41841830746b58a94e918617c473dbc20c937857",
+          "evidence_commit": "98d0c7a282e106db23199af17efae1f4abb58b9f",
+          "evidence_roots": [
+            "attempts/50-grammar-residual-coupling/README.md",
+            "attempts/50-grammar-residual-coupling/work/upper-v5.md",
+            "attempts/50-grammar-residual-coupling/work/primary-comparison-v5.md",
+            "attempts/50-grammar-residual-coupling/work/evidence/primary-v5.json",
+            "attempts/50-grammar-residual-coupling/work/evidence/oracle-v5"
           ]
         }
       ]

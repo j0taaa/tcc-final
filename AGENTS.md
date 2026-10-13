@@ -458,7 +458,7 @@ foi corrigido antes de oráculos. Falha de fixture fixa V2 foi preservada;
 V3 passa482.657 checks de caudas/700 palavras/15 leis completas.
 V4 tem51.340 intervalos de marginais originais e11 recusas reais de massa zero.
 V5 escreve primeiro a preparação única por perfil superior e proveniência,
-com singularidades exatas; referência176 linhas passa475.041 caudas/1.780
+com singularidades exatas; referência175 linhas passa475.041 caudas/1.780
 palavras/18 leis completas/6 leis singulares/432 samples e12 recusas.
 A prova ESCRITA dá menos de duas tentativas condicionais esperadas sem1/TV,
 mas cobra preparação e O(H*M^2) proveniência; não é deadline ou timing.

@@ -1,7 +1,7 @@
 # A50 — Exact residual sampling for a grammatical posterior
 
 Current V5 materializes the [single-preparation upper-profile proof](work/upper-v5.md)
-with a176-line rational sampler and preserved exact output-law evidence.
+with a175-line rational sampler and preserved exact output-law evidence.
 The [primary audit](work/primary-comparison-v5.md) credits Dyer2003 and the
 entire2018 sum-approximation/convolution calculus; sufficient difference and
 useful full-generation cost remain OPEN. No new neural measurement or article

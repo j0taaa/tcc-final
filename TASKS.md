@@ -53,7 +53,7 @@ cost remain open. No new neural campaign is credited to M70.
   11 actual undefined-posterior refusals. Shared profiles avoid q full analyses
   per position; they do not prove superiority against all shared algorithms.
 - [x] T7004: Write V5 upper-tail/pathwise-envelope/provenance/singular-channel
-  proof BEFORE code (afca26a). Source4184183's176-line reference pays ONE
+  proof BEFORE code (afca26a). Source4184183's175-line reference pays ONE
   preparation, O(H*M^2) provenance and exact correction. Its complete oracle
   passes475,041 upper-tail checks/6,480 merges,1,780 word cases,18 full accepted
   laws,6 singular laws,432 valid samples and12 undefined refusals. Twelve
