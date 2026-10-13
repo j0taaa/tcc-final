@@ -77,16 +77,34 @@ def enumerators(solver):
     return traces, channel
 
 
-def run(output):
+def run(output, rounded=False, grid=None):
     output.mkdir(parents=True, exist_ok=False)
-    counts = dict(word_checks=0, channel_laws=0, residual_laws=0, sampled_valid=0, undefined=0)
+    counts = dict(
+        word_checks=0,
+        channel_laws=0,
+        residual_laws=0,
+        sampled_valid=0,
+        undefined=0,
+        bounded_failures=0,
+        precision_gate_losses=0,
+        marginal_lower_checks=0,
+    )
     try:
         rng = random.Random(20261013058)
+        head_rng = random.Random(202610130581)
+        factory = (
+            importlib.import_module(
+                "attempts.50-grammar-residual-coupling.work.rounded"
+            ).RoundedResidual
+            if rounded
+            else ref.ScalarResidual
+        )
+        options = dict(grid=grid) if rounded else {}
         with (output / "rows.jsonl").open("w") as stream:
             for name, kind, emissions, rows, canvas in upper_oracle.fixtures():
                 source = base.source_dyck() if kind == "dyck" else json_source_grammar()
                 for mode in ["equal", "different", "singular", "tiny", "low-mass", "zero-target"]:
-                    target, draft = base.inputs(source, emissions, rows, canvas, mode, rng)
+                    target, draft = base.inputs(source, emissions, rows, canvas, mode, head_rng)
                     paths = list(itertools.product(*target.state.support.rows))
                     raw = [
                         {
@@ -103,7 +121,7 @@ def run(output):
                     plan = compile_cfg_sampler(source, target.state)
                     if not all(masses):
                         try:
-                            ref.ScalarResidual(plan, target, draft)
+                            factory(plan, target, draft, **options)
                         except ValueError:
                             counts["undefined"] += 1
                             stream.write(
@@ -115,7 +133,7 @@ def run(output):
                         {ids: v / z for ids, v in rawrow.items()}
                         for rawrow, z in zip(raw, masses, strict=True)
                     ]
-                    solver = ref.ScalarResidual(plan, target, draft)
+                    solver = factory(plan, target, draft, **options)
                     traces, channels = enumerators(solver)
                     trace_law = traces(plan.root)
                     truth_common = {}
@@ -127,7 +145,27 @@ def run(output):
                     residual = {ids: max(F(0), p[ids] - q[ids]) for ids in paths}
                     delta = sum(residual.values(), F(0))
                     d = max(size for _, size in trace_law.values())
-                    assert delta <= solver.envelope <= 2 * d * delta
+                    assert delta <= solver.envelope
+                    if rounded:
+                        true_lower = max(
+                            abs(
+                                sum(p[ids] for ids in paths if ids[i] == v)
+                                - sum(q[ids] for ids in paths if ids[i] == v)
+                            )
+                            for i, row in enumerate(rows)
+                            for v in row
+                        )
+                        assert solver.lower == true_lower and (true_lower == 0) == (delta == 0)
+                        assert solver.trace_bound == d
+                        counts["marginal_lower_checks"] += 1
+                        if grid is None:
+                            assert solver.envelope <= (2 * d + F(1, 2)) * delta
+                        else:
+                            counts["precision_gate_losses"] += (
+                                solver.envelope > (2 * d + F(1, 2)) * delta
+                            )
+                    else:
+                        assert solver.envelope <= 2 * d * delta
                     for channel in [0, 1, 2]:
                         mass = (
                             F(1)
@@ -165,9 +203,15 @@ def run(output):
                         assert all(accepted[ids] / rate == residual[ids] / delta for ids in paths)
                         counts["residual_laws"] += 1
                         for _ in range(24):
-                            ids, attempts = solver.sample(rng)
-                            assert residual[ids] > 0 and attempts >= 1
-                            counts["sampled_valid"] += 1
+                            ids, attempts = solver.sample(
+                                rng, max_attempts=1 if grid is not None else None
+                            )
+                            if ids is None:
+                                assert grid is not None and attempts == 1
+                                counts["bounded_failures"] += 1
+                            else:
+                                assert residual[ids] > 0 and attempts >= 1
+                                counts["sampled_valid"] += 1
                         assert solver.sample(rng, max_attempts=0) == (None, 0)
                     else:
                         assert not solver.envelope
@@ -181,6 +225,7 @@ def run(output):
                                 envelope=str(solver.envelope),
                                 attempt_ratio=str(solver.envelope / delta) if delta else None,
                                 trace_bound=d,
+                                grid_bits=solver.grid.bit_length() if rounded else None,
                                 **counts,
                             )
                         )
@@ -190,6 +235,8 @@ def run(output):
             status="CORRECTNESS_ONLY",
             **counts,
             producer=subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
+            rounded=rounded,
+            fixed_grid=grid,
         )
         (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
         print(json.dumps(summary), flush=True)
@@ -201,4 +248,7 @@ def run(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    run(parser.parse_args().output)
+    parser.add_argument("--rounded", action="store_true")
+    parser.add_argument("--grid", type=int)
+    arguments = parser.parse_args()
+    run(arguments.output, arguments.rounded, arguments.grid)
