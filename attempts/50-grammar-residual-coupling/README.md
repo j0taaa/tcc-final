@@ -5,11 +5,18 @@ V12's source291cde5 passes all1,780 original word cases,90 channel laws,
 samples, with12 undefined cases and no attempt-bound loss. Its131 precision
 trial passes are recorded; no marginal pass is performed by that variant.
 The refactored marginal-grid control was rerun completely and also passes.
-V13 freezes [a real-head insertion screen](work/native-consumer-v13.md):
+V13 completes [the frozen real-head insertion screen](work/native-consumer-v13.md):
 all15 prior external frames, both full and old-head top16 supports, preserved
 admission/resource failures, actual next-canvas predictions and exact-law
 correction. This is development/functional evidence, not an independent
 performance campaign or substitute for V11's unresolved original contribution.
+All30 initial rows remain:15 full-support preprocessing refusals/nine top16
+zero masses/six admitted states. Seven new forwards (one warmup) give24
+correction rows:23 valid JSONs/one profile timeout. The optional complete
+numerical replay packet includes all15 old/six new heads and full logits.
+[The decision](work/native-decision-v13.md) does not claim useful speed;
+[V14's resource-law audit](work/native-resource-law-v14.md) distinguishes
+unlimited exact primitives from biased possible deadline-censored successes.
 
 V11's [stronger prior reduction](work/known-reduction-v11.md) now explicitly
 credits the2024 dependent partial-coupling construction, including its2n
@@ -22,7 +29,7 @@ V8/V9 and direct target controls. Ratio extrema, precision doubling and
 coupling are known; significance, priority and actual generation benefit
 remain open (criteria2/7/8). No performance campaign is substituted for them.
 
-Current V10 preserves the [bounded-bit integer-CDF reference](work/rounded-scalar-v9.md)
+V10 preserves the [bounded-bit integer-CDF reference](work/rounded-scalar-v9.md)
 and all complete channel/output laws, including coarse-grid cost failures.
 V5 materializes the [single-preparation upper-profile proof](work/upper-v5.md)
 with a175-line rational sampler and separately preserved evidence.

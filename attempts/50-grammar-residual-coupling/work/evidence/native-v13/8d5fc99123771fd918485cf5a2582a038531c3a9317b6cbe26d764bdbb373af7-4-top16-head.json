@@ -1,0 +1,34 @@
+{
+  "probabilities_file": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4-top16-target.npy",
+  "probabilities_sha256": "e56615459e014b0a50b4212144c269bf8fdbc843e4d88851fa8589220d3e7403",
+  "logits_sha256": "4c1f201fe14798c28a9fe492f528b0e9a12ec87226d7123eeab2bf87299deaa4",
+  "source_frame": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+  "canvas": [
+    90,
+    366,
+    1084,
+    1298,
+    532,
+    16,
+    13,
+    null,
+    null,
+    10,
+    2078,
+    11,
+    366,
+    9806,
+    1298,
+    352,
+    13,
+    15,
+    68,
+    null,
+    2078,
+    1782
+  ],
+  "diagnostic_forward_softmax_wall_cpu": [
+    0.0167804699158296,
+    0.06409125600000021
+  ]
+}

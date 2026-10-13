@@ -1,0 +1,29 @@
+{
+  "scope": "Optional complete numerical replay packet:15 old heads,6 actual new heads,original token pieces and full logits; model weights not included",
+  "files": 125,
+  "bytes": 115619971,
+  "sha256": "c0ee151120f6a9bd8d0efeda589ee8c1a5bc39cce2cf906ecccd7f75f8e8b7a4",
+  "logical_archive": "reproduction.zip",
+  "parts": [
+    {
+      "path": "docs/artifacts/raw/m70_native_v13/reproduction.zip.part00",
+      "bytes": 33554432,
+      "sha256": "3a16f1c0f1b5603dc2157af9ab4962b91acdb802cd98779ad9225fc53cb20e91"
+    },
+    {
+      "path": "docs/artifacts/raw/m70_native_v13/reproduction.zip.part01",
+      "bytes": 33554432,
+      "sha256": "0c8494efd1b6e45602f7d21f59af5a7dd1bd756a70ff69b8aaf2346c2df38f6f"
+    },
+    {
+      "path": "docs/artifacts/raw/m70_native_v13/reproduction.zip.part02",
+      "bytes": 33554432,
+      "sha256": "522879284c94e7221005477a7f4871eeedd44cacd7e10b57cedb7c3ee515ddf4"
+    },
+    {
+      "path": "docs/artifacts/raw/m70_native_v13/reproduction.zip.part03",
+      "bytes": 14956675,
+      "sha256": "9782060182d5159ee1aaf42dfce253c0d332c7a96ed1325feeb1997492acad7e"
+    }
+  ]
+}

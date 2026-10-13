@@ -1,0 +1,41 @@
+{
+  "stage": "correct",
+  "frame": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+  "support": "top16",
+  "method": "profile",
+  "accept_probability": "1",
+  "retained": true,
+  "attempts": 0,
+  "source_head_sha256": "7c85e2c9072793551f55c663b40c0750315e2fa6cf30e843dc3c42d6552d38f1",
+  "target_head_sha256": "e56615459e014b0a50b4212144c269bf8fdbc843e4d88851fa8589220d3e7403",
+  "status": "VALID_CORRECTED",
+  "output": [
+    90,
+    366,
+    1084,
+    1298,
+    532,
+    16,
+    13,
+    15,
+    68,
+    10,
+    2078,
+    11,
+    366,
+    9806,
+    1298,
+    352,
+    13,
+    15,
+    68,
+    10,
+    2078,
+    1782
+  ],
+  "text": "{ \"min\": -1.0e+28, \"max\": 1.0e+28 }",
+  "diagnostic_wall_cpu": [
+    0.4270919329719618,
+    0.42705890399999996
+  ]
+}

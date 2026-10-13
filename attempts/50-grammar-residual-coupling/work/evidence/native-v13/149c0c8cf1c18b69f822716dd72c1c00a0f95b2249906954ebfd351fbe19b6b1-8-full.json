@@ -1,0 +1,12 @@
+{
+  "stage": "initial",
+  "frame": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+  "support": "full",
+  "method": "scalar",
+  "status": "RESOURCE_REFUSAL",
+  "reason": "preprocessing work budget; feasibility remains unresolved",
+  "diagnostic_wall_cpu": [
+    4.186183645972051,
+    4.185603432
+  ]
+}

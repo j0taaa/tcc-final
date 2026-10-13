@@ -1,0 +1,8 @@
+{
+  "scope": "FUNCTIONAL_RESOURCE_ONLY",
+  "records": 24,
+  "counts": {
+    "RESOURCE_REFUSAL": 1,
+    "VALID_CORRECTED": 23
+  }
+}

@@ -21,10 +21,15 @@ its bound and rejection interpretation account for the scalar theorem.
 A50 is a compact classical specialization; it is not promoted as a
 substantial original mathematical advance. V12 removes the marginal tables
 from grid preparation; its30 equality/range checks and90 full channel laws
-pass, with all131 trial precision passes charged. A prospective all-frame
-real-head consumer screen is separately frozen; no speed claim follows.
+pass, with all131 trial precision passes charged. The real-head consumer
+screen completes all30 initial rows:15 full-support preprocessing refusals,
+nine top16 zero masses and six admitted states. Seven actual forwards (one
+warmup) feed all24 corrections:23 valid JSONs and one profile timeout. No
+speed claim or exact deadline-censored output law follows.
 [Stronger prior reduction](attempts/50-grammar-residual-coupling/work/known-reduction-v11.md),
 [consumer-screen protocol](attempts/50-grammar-residual-coupling/work/native-consumer-v13.md).
+[Complete functional decision](attempts/50-grammar-residual-coupling/work/native-decision-v13.md),
+[resource censoring and exact-law scope](attempts/50-grammar-residual-coupling/work/native-resource-law-v14.md).
 [Integer-CDF construction](attempts/50-grammar-residual-coupling/work/rounded-scalar-v9.md),
 [actual iterative consumer and its restrictions](attempts/50-grammar-residual-coupling/work/runtime-consumer-v7.md).
 [A50 contract](attempts/50-grammar-residual-coupling/README.md),

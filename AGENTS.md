@@ -493,6 +493,16 @@ posições fixadas antes do sample, novos heads do canvas e quatro variantes.
 É desenvolvimento funcional/de recursos, não confirmação de velocidade,
 qualidade, originalidade ou publicação. Todas recusas permanecem no screen.
 
+A50 V13 screen está COMPLETO:30 iniciais,15 full recusas de preprocessing,
+nove top16 massa zero/seis admitidos. Sete forwards NOVOS (um warmup), seis
+replays literais de softmax;24 correções,23 JSONs válidos/um timeout do perfil,
+quatro estados retidos/dois ramos residuais. Packet opcional completo inclui
+todos15 heads antigos/seis novos/logits/bytes, com hashes e quatro partes.
+V14 audita que censura por tempo pode enviesar os sucessos: não apresentar
+essas23 execuções como prova de distribuição P exata com recursos limitados.
+Kernel ilimitado/FAIL e subprobabilidade são contratos diferentes. Não há
+ganho competitivo, cobertura full-V, nova teoria ou publicação confirmados.
+
 ## Perguntas obrigatórias para cada ideia ou implementação
 
 A39 começa em pasta independente, somente ESCRITA antes de protótipo/modelo:

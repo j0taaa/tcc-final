@@ -97,11 +97,20 @@ cost remain open. No new neural campaign is credited to M70.
   and range queries/432 valid outputs/12 undefined cases;131 trial passes
   count. Refactored marginal-grid control also passes fully. This is compact
   engineering of a classical construction, not original theorem or speed.
-- [ ] T7012: Complete ALL30 prospective initial admission rows (15 actual
+- [x] T7012: Complete ALL30 prospective initial admission rows (15 actual
   old heads, full/top16 frozen supports), then all admitted next-canvas
   actual neural captures and four exact correction variants. Source8cb69bf
   is frozen first; retain all zero masses/refusals/errors and actual paid
   resources. Functional development only; no latency/semantic/EPIC victory.
+  Initial:15 full-support preprocessing refusals/nine top16 zero masses/six
+  admissions. Capture4680ff2:seven actual forwards including warmup, six
+  complete literal softmax replays. All24 corrections:23 valid JSONs/one
+  profile wall refusal; four cached states retained/two residual branches.
+- [x] T7013: Preserve ALL numerical sources in optional joined115,619,971-byte
+  replay packet, split four Git-safe parts; whole/member/part hashes included.
+  V14 explicitly audits wall-time censoring: successful timed outputs are
+  not proven to have P; unlimited kernel law and bounded FAIL/subprobability
+  contract are distinct. No proof, costs or priority claim is silently upgraded.
 
 ## M69 — Rational drift certificate, proof before application
 

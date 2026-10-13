@@ -1,0 +1,9 @@
+{
+  "scope": "FUNCTIONAL_RESOURCE_ONLY",
+  "records": 30,
+  "counts": {
+    "ADMITTED": 6,
+    "RESOURCE_REFUSAL": 15,
+    "ZERO_VALID_MASS": 9
+  }
+}

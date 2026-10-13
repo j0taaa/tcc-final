@@ -1,5 +1,30 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
+
+All30 initial states remain, including15 FULL preprocessing refusals and nine
+TOP16 zero masses. Six admit a previous completion and enter ALL actual
+next-canvas captures, giving seven new forwards including one warmup. All24
+correction records remain:23 valid JSONs/one profile timeout. Four contexts
+retain the cached completion and two require residual correction. These are
+functional observations, not competitive latency or semantic superiority.
+
+The full optional numerical packet now includes ALL15 old and all six new
+heads, full logits, original byte vocabulary and every row; four Git-safe
+parts preserve the joined115,619,971 bytes. All six new softmaxes replay
+literally. This closes the prior optional-logit reproduction limitation for
+this small screen without inventing a new neural-independent confirmation.
+
+V14 audits a material scope issue: wall-time censoring may bias successful
+outputs. Underlying unlimited primitive law does not prove resource-managed
+outputs have P. Exact attempt caps retain conditional residual law but yield
+a subprobability full-update kernel with FAIL. A lawful future fallback must
+choose an exact same-residual sampler before sampling randomness or use an
+output-independent attempt cap; substituting ordinary P is wrong. No closed
+form proof, testing count or JSON validity upgrades software verification.
+The full-vocabulary bottleneck, practical economics and substantial original
+contribution remain unresolved, so A50 is not promoted to the maintained paper.
+
 ## 2026-10-13 — A50 V11–V13: close the stronger reduction and test a real consumer
 
 Full2024 Section4/deferred proofs already give the dependent partial-coupling
