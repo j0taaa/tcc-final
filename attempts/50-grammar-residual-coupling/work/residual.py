@@ -87,6 +87,7 @@ class Residual:
         if self.scopes[plan.root] != frozenset(range(len(self.ids))):
             raise ValueError("root does not consume every original position")
         self.za, self.zb = totals[plan.root]
+        self.totals = totals
         self.depth = max(1, self.costs[plan.root])
         self.profile_queries = 0
 

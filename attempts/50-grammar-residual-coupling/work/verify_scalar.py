@@ -77,7 +77,7 @@ def enumerators(solver):
     return traces, channel
 
 
-def run(output, rounded=False, grid=None):
+def run(output, rounded=False, grid=None, lazy=False):
     output.mkdir(parents=True, exist_ok=False)
     counts = dict(
         word_checks=0,
@@ -88,17 +88,24 @@ def run(output, rounded=False, grid=None):
         bounded_failures=0,
         precision_gate_losses=0,
         marginal_lower_checks=0,
+        equality_range_checks=0,
+        precision_passes=0,
     )
     try:
         rng = random.Random(20261013058)
         head_rng = random.Random(202610130581)
         factory = (
             importlib.import_module(
+                "attempts.50-grammar-residual-coupling.work.precision"
+            ).PrecisionResidual
+            if lazy
+            else importlib.import_module(
                 "attempts.50-grammar-residual-coupling.work.rounded"
             ).RoundedResidual
             if rounded
             else ref.ScalarResidual
         )
+        rounded = rounded or lazy
         options = dict(grid=grid) if rounded else {}
         with (output / "rows.jsonl").open("w") as stream:
             for name, kind, emissions, rows, canvas in upper_oracle.fixtures():
@@ -146,7 +153,28 @@ def run(output, rounded=False, grid=None):
                     delta = sum(residual.values(), F(0))
                     d = max(size for _, size in trace_law.values())
                     assert delta <= solver.envelope
-                    if rounded:
+                    if lazy:
+                        positive_ratios = [
+                            F(solver.za, solver.zb) * p[ids] / q[ids]
+                            for ids in paths
+                            if p[ids] and q[ids]
+                        ]
+                        expected_range = (
+                            (min(positive_ratios), max(positive_ratios))
+                            if positive_ratios
+                            else None
+                        )
+                        assert solver.ratio_range == expected_range
+                        assert solver.equal == (delta == 0) and solver.trace_bound == d
+                        counts["equality_range_checks"] += 1
+                        counts["precision_passes"] += solver.precision_passes
+                        if grid is None:
+                            assert solver.envelope <= 4 * d * delta
+                            if delta:
+                                assert 2 * d <= solver.grid * solver.envelope
+                        else:
+                            counts["precision_gate_losses"] += solver.envelope > 4 * d * delta
+                    elif rounded:
                         true_lower = max(
                             abs(
                                 sum(p[ids] for ids in paths if ids[i] == v)
@@ -236,6 +264,7 @@ def run(output, rounded=False, grid=None):
             **counts,
             producer=subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
             rounded=rounded,
+            lazy=lazy,
             fixed_grid=grid,
         )
         (output / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
@@ -250,5 +279,6 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--rounded", action="store_true")
     parser.add_argument("--grid", type=int)
+    parser.add_argument("--lazy", action="store_true")
     arguments = parser.parse_args()
-    run(arguments.output, arguments.rounded, arguments.grid)
+    run(arguments.output, arguments.rounded, arguments.grid, arguments.lazy)

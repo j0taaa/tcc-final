@@ -14,15 +14,7 @@ class RoundedResidual(Residual):
         for node in plan.order:
             sizes[node] = 1 + max(sum(sizes[c] for c in t.children) for t in plan.terms[node])
         self.trace_bound = sizes[plan.root]
-        first, second = plan.evaluate(target).marginals, plan.evaluate(draft).marginals
-        self.lower = max(
-            abs(a - b)
-            for x, y in zip(first, second, strict=True)
-            for a, b in zip(x, y, strict=True)
-        )
-        need = F(2 * self.trace_bound) / self.lower if self.lower else F(2)
-        ceiling = (need.numerator + need.denominator - 1) // need.denominator
-        self.grid = (1 << (ceiling - 1).bit_length()) if grid is None else grid
+        self.grid = self.select_grid(plan, target, draft, grid)
         if self.grid < 2 or self.grid & (self.grid - 1):
             raise ValueError("grid must be a power of two >=2")
         s = self.grid
@@ -77,8 +69,20 @@ class RoundedResidual(Residual):
                 (cdf(row), tuple(a)) for row, a in zip(masses, actions, strict=True)
             )
         self.envelope = 1 - self.common[plan.root]
-        if not self.lower:
+        if self.equal:
             assert self.envelope == 0, "equal-marginal product posteriors must agree"
+
+    def select_grid(self, plan, target, draft, grid):
+        first, second = plan.evaluate(target).marginals, plan.evaluate(draft).marginals
+        self.lower = max(
+            abs(a - b)
+            for x, y in zip(first, second, strict=True)
+            for a, b in zip(x, y, strict=True)
+        )
+        self.equal = not self.lower
+        need = F(2 * self.trace_bound) / self.lower if self.lower else F(2)
+        ceiling = (need.numerator + need.denominator - 1) // need.denominator
+        return (1 << (ceiling - 1).bit_length()) if grid is None else grid
 
     def correction(self, p, q, common):
         accept = max(F(0), p - q) / (p - common)
