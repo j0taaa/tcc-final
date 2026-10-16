@@ -1,0 +1,12 @@
+test_correlated_strata_and_exact_enumeration_controls (attempts.52-collapsed-commit-likelihood.work.test_conditional_prefix.ConditionalPrefixTests.test_correlated_strata_and_exact_enumeration_controls) ... ok
+test_full_semantic_baseline_is_kept_and_exact_projection_is_stronger (attempts.52-collapsed-commit-likelihood.work.test_conditional_prefix.ConditionalPrefixTests.test_full_semantic_baseline_is_kept_and_exact_projection_is_stronger) ... ok
+test_original_word_and_anchor_posterior_from_independent_joint (attempts.52-collapsed-commit-likelihood.work.test_conditional_prefix.ConditionalPrefixTests.test_original_word_and_anchor_posterior_from_independent_joint) ... ok
+test_replicated_variance_identity_by_complete_independent_enumeration (attempts.52-collapsed-commit-likelihood.work.test_conditional_prefix.ConditionalPrefixTests.test_replicated_variance_identity_by_complete_independent_enumeration) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.211s
+
+OK
+{"conditional_correlated_strata_checks": 192, "exact_enumeration_control_preserved": true}
+{"conditional_original_laws": 4, "actions": 193, "joint_triples": 821}
+{"iid_replicas_exact_counts": [1, 2, 4], "visible_variance": "1856/455625", "hidden_variance": "64/10125"}

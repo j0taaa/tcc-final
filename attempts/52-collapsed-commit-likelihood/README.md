@@ -386,3 +386,11 @@ individual gradients/questions/blocks and RLOO null variance retained. AFTER-dat
 update/label; no large campaign justified by collapse/proxy alone. See
 work/old-path-result-v15.md. A semantic-baseline-preserving refinement must
 start with proof/oracles and classical controls; scientific goal remains open.
+
+V16 proof b7f9ad8 precedes its small conditional-word reference:4 rational
+oracles pass4 laws821 joint triples193 actions, full semantic baseline,
+1/2/4-replica variance identities and192 correlated-CDF-strata checks. Exact
+enumeration remains a stronger small-support control. Full266 PASS90.701s/
+make check/Ruff. Zero new neural heads/real auxiliary draws/updates. See
+work/conditional-prefix-result-v16.md. No useful variance/cost or priority;
+any actual full-V functionality replay needs its own written contract/freeze.

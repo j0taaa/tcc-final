@@ -204,6 +204,13 @@ da grade fixa. É exploratório de duas trajetórias por questão, não superior
 populacional/refutação ou gate. RLOO tem variância null. Auditoria posterior
 159706 coordenadas/1512 grupos passa2.132e-14. Dados completos preservados;
 sem nova geração/treino. Não iniciar campanha grande baseada só nesse colapso.
+V16 escreve reuso condicional COM baseline semântico completo antes de código:
+posteriorq_B/(H_TQ_B), âncora condicional independente dos descartes e identidade
+clássica V_visible+V_hidden/M. Quatro oráculos passam4 leis821 triplas193 ações,
+momentos1/2/4 réplicas e192 checks de estratos correlacionados. Enumeração exata
+permanece controle superior nos brinquedos. Full266 PASS90.701s/check/Ruff;
+zero head/amostra auxiliar real/update. Novidade/benefício/meta abertos; replay
+full-V exige contrato escrito separado e não recebe crédito de V15.
 
 ## Objetivo e estado atual
 

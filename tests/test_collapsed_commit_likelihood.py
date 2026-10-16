@@ -77,3 +77,7 @@ NumericProxyTests = import_module(
 ActorCoordinateTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_actor_coordinates"
 ).ActorCoordinateTests
+
+ConditionalPrefixTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_conditional_prefix"
+).ConditionalPrefixTests

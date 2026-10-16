@@ -1,0 +1,18 @@
+{
+  "written_commit": "b7f9ad8",
+  "joint_laws": 4,
+  "original_joint_triples": 821,
+  "visible_actions": 193,
+  "correlated_strata_checks": 192,
+  "iid_replica_moments": [
+    1,
+    2,
+    4
+  ],
+  "full_tests": 266,
+  "full_test_seconds": 90.701,
+  "new_pretrained_forwards": 0,
+  "real_conditional_auxiliary_draws": 0,
+  "updates": 0,
+  "scope": "small rational correctness only; exact enumeration remains a stronger control"
+}
