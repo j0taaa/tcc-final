@@ -130,6 +130,12 @@ novos forwards: isolamento da captura inteira NÃO cumprido. Relatório original
 de recurso8/8 fica intacto, mas não é pass integral/tempo competitivo. Draft de
 assertion do auditor e desvio estão preservados; não repetir para resgatar a
 aplicação. TODOS heads/contextos/scores/gates/statuses/golds e checks arquivados.
+V9 escreve ANTES de código um objetivo supervisionado por likelihood visível
+e caminho de referência independente. PAPL já fornece ELBO/marginalização;
+Jensen e amostragem de tempo são clássicos. Gradiente é do BOUND, não da
+likelihood final ou recompensa. Só oráculo racional mínimo é justificado,
+sem head/update/Tiny rescue; política CE supervisionada/grammatical e SFT
+são controles obrigatórios. Diferença própria útil/publicação ainda abertas.
 
 ## Objetivo e estado atual
 

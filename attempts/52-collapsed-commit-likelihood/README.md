@@ -286,3 +286,16 @@ isolation failed. The original runner resource8/8 report is preserved but is
 not credited as a full-protocol pass or competitive time. All raw heads,
 contexts/outputs/scores/gates/statuses, overlap evidence and draft/final audit
 are preserved. See work/stopped-result-v8.md. The scientific goal remains OPEN.
+
+## V9 — Supervised visible-transition objective written before prototype
+
+work/visible-elbo-v9.md writes a finite supervised path bound using the actual
+stopped grammar/batch-release likelihood. PAPL already provides the general
+planner-aware ELBO/marginalization antecedent; Jensen/random-time reference
+paths are classical. The possible application is exact policy learning from
+correct serialized targets without requiring initial semantic rollout successes.
+It is a bound gradient, NOT an unbiased final-likelihood/reward gradient.
+Only a minimal rational oracle is next. Cheap supervised policy adaptation,
+grammar-conditioned CE, practical PAPL, native confidence/PL and SFT remain
+mandatory controls. No Tiny-A2D rescue/new head/update or adequate originality
+is established; a real consumer would need another written foundation.

@@ -191,6 +191,12 @@ cost remain open. No new neural campaign is credited to M70.
   protocol pass or competitive latency. All outputs/heads/costs/draft assertion
   and audited decision in a52_stopped_resource_v8_{initial,analysis_initial}.
   See stopped-result-v8.md. Scientific usefulness/originality/goal remain OPEN.
+- [ ] T7508: V9 WRITTEN supervised visible-transition bound/eight criteria
+  BEFORE its prototype. PAPL/Jensen/random-time teacher forcing are prior.
+  Only a minimal independent rational path/bound/gradient oracle is next;
+  no new pretrained forward or parameter update. Explicitly retain variational
+  gap, fixed-reference requirement, absorbing zeros, target serialization and
+  supervised/grammar-CE/native/SFT controls. Not a rescue of V5/V8 Tiny-A2D.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
