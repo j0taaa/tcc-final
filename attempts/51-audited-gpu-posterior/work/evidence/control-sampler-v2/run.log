@@ -1,0 +1,1 @@
+{"status": "PASS", "original_json_replays": 768, "gpu_certified": 621, "exact_retained_fallbacks": 147, "complete_word_prefixes": 4096, "full_word_events": 16, "new_model_forwards": 0, "speed_claim": false, "goal_met": false, "torch": "2.13.0+cu130", "gpu": "NVIDIA GeForce RTX 3080 Ti", "commit": "8af52f9def1a109262a9011c0be32402f3935e2d"}

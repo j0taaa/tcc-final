@@ -1,0 +1,222 @@
+{
+  "commit": "8af52f9def1a109262a9011c0be32402f3935e2d",
+  "complete_word_prefixes": 4096,
+  "exact_retained_fallbacks": 147,
+  "full_word_events": 16,
+  "goal_met": false,
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "gpu_certified": 621,
+  "new_model_forwards": 0,
+  "original_json_replays": 768,
+  "records": [
+    {
+      "bits": 2,
+      "case": 0,
+      "fallback": 22,
+      "gpu_certified": 10,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 8,
+      "case": 0,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 32,
+      "case": 0,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 2,
+      "case": 0,
+      "fallback": 26,
+      "gpu_certified": 6,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 8,
+      "case": 0,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 32,
+      "case": 0,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 2,
+      "case": 1,
+      "fallback": 14,
+      "gpu_certified": 18,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 8,
+      "case": 1,
+      "fallback": 1,
+      "gpu_certified": 31,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 32,
+      "case": 1,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 2,
+      "case": 1,
+      "fallback": 19,
+      "gpu_certified": 13,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 8,
+      "case": 1,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 32,
+      "case": 1,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 2,
+      "case": 2,
+      "fallback": 12,
+      "gpu_certified": 20,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 8,
+      "case": 2,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 32,
+      "case": 2,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 2,
+      "case": 2,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 8,
+      "case": 2,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 32,
+      "case": 2,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 2,
+      "case": 3,
+      "fallback": 26,
+      "gpu_certified": 6,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 8,
+      "case": 3,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 32,
+      "case": 3,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 1,
+      "samples": 32
+    },
+    {
+      "bits": 2,
+      "case": 3,
+      "fallback": 25,
+      "gpu_certified": 7,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 8,
+      "case": 3,
+      "fallback": 2,
+      "gpu_certified": 30,
+      "salt": 3,
+      "samples": 32
+    },
+    {
+      "bits": 32,
+      "case": 3,
+      "fallback": 0,
+      "gpu_certified": 32,
+      "salt": 3,
+      "samples": 32
+    }
+  ],
+  "sources": {
+    "cdf_control.py": "43adce1cfcab6e2a5a64c44d48672ee98213714d147e9d63f98b9f23463d4e04",
+    "exact_control.py": "7912debb783ac0c522d79f0f1ebc4b39555b32b30aacc06a4ea8ff123d870edb",
+    "gpu_cdf.py": "208ef5320856e02f4d262fe67f61166b86e5315ffc834d3ab1897dbea96f2b78",
+    "gpu_primitives.py": "6652f1509f8d3b6f75de8b4c725ca8c9f423baafcdff17201fc7b8bd56828c58",
+    "interval_frontend.py": "cf4df90f4407288e46b31c0dfcd1364332ca8cf82473c90b37c6a7d06f51fccb",
+    "interval_sampler.py": "2dd692ae8dba8b77a9de127d1c8a60e18624f69883cdb67de2962add959543bd",
+    "preflight_cdf.py": "b84a14a3e6b2c207b08fddc4f481c7ede1edde2c87f3011e92fbc6ac8e9d7168",
+    "preflight_interval.py": "5c4250008047b344905d8ffd8be72f133098a65a7ba47d6150bfb0169ea8adda",
+    "preflight_primitives.py": "223adfbc498826a749c6192b39b83cb1530ddf00aaa91db5ed906e62771d8193",
+    "preflight_sampler.py": "3c91bb5b96fafc507e466252465e5f01bf1ed1e2b385e8d29213837b5d378c2c",
+    "reference.py": "b91cf598f386d05782849e1fdd2ea92d678fd26d6bfef29b9b3dfcc0805d9487",
+    "test_reference.py": "a2134297ca147e1f157d272f87ad7a3facc7218b99211697be761d4d0437b6ec"
+  },
+  "speed_claim": false,
+  "status": "PASS",
+  "torch": "2.13.0+cu130"
+}

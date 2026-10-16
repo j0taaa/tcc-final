@@ -67,6 +67,13 @@ cost remain open. No new neural campaign is credited to M70.
   six focused tests PASS0.292s. Initial missing-import draft/log preserved.
   V4 writes full three-phase control/fallback before implementation. No timing,
   new head, sampler-level practical advantage or sufficient novelty yet.
+- [x] T7402d: Complete classical interval GPU control replays768 original JSON
+  words literally against exact retained-prefix CPU, including147 exact fallbacks
+  across deliberately coarse2/8/32-bit screens. ALL4096 fair-bit prefixes of a
+  small dyadic merged/alias graph recover all16 target-word masses exactly.
+  First compile-failure draft/vector-scalar reuse and log preserved; corrected
+  control passes, no new neural forward or speed/novelty claim. Sources and
+  data:51/work/interval_sampler.py and evidence/control-sampler-v2.
 - [ ] T7402: Only if a concrete useful systems distinction survives, freeze
   complete-cost protocol/strong controls before implementation/campaign.
   Exactness alone, a tiny FP64 discrepancy or a reference implementation

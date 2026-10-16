@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/preflight_sampler.py", line 129, in <module>
+    main()
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/preflight_sampler.py", line 54, in main
+    result = control.sample(weights, torch.from_numpy(source).cuda(), seeds, bits=bits)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/.venv-mosaic-native/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/interval_sampler.py", line 199, in sample
+    _walk[(count,)](
+  File "/home/jota/projects/tcc-final/.venv-mosaic-native/lib/python3.11/site-packages/triton/runtime/jit.py", line 370, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/.venv-mosaic-native/lib/python3.11/site-packages/triton/runtime/jit.py", line 739, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/.venv-mosaic-native/lib/python3.11/site-packages/triton/runtime/jit.py", line 884, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/.venv-mosaic-native/lib/python3.11/site-packages/triton/compiler/compiler.py", line 307, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/.venv-mosaic-native/lib/python3.11/site-packages/triton/compiler/compiler.py", line 80, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+triton.compiler.errors.CompilationError: at 75:20:
+                    hi = tl.inline_asm_elementwise(
+                        "cvt.rp.f32.f64 $0, $1;",
+                        constraints="=f,d",
+                        args=[weight],
+                        dtype=tl.float32,
+                        is_pure=True,
+                        pack=1,
+                    )
+                    raw = tl.load(source + trial * length * 3 + p * 3 + 2)
+                    chosen = interval_index(lo, hi, raw, bits, valid, B)
+                    active = chosen >= 0
+                    if active:
+                    ^
+AssertionError('initial value for `token` is of type int64[constexpr[8]], but the then block redefines it as int64[]')
