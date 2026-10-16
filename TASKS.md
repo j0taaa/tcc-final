@@ -32,6 +32,46 @@ single preparation and conditional attempts independent of1/TV. Correctness
 oracles pass, but publication significance, novelty and useful full-generation
 cost remain open. No new neural campaign is credited to M70.
 
+## M72 — Existing Mosaic consumer, stronger GPU controls and termination
+
+- [x] T7200: Read the published Mosaic consumer/compiler/tokenizer/samplers,
+  pin36945e4b3c64913e23962e0924a8b40a84c58807 (MIT), write V3's eight criteria
+  and full-descriptor adapter proof BEFORE code/heads/timings. Fixed depth3
+  for arbitrary JSON sub-schemas is a real operational boundary, not proof
+  that our certificate is novel. Equal compile/cache/minimization is required.
+  Expected numerical confidence is also a known readout (SECL/digit expectation);
+  do not start a new implementation merely by naming Rao–Blackwell/Jensen.
+- [x] T7201: Minimal opt-in adapter leaves native kernels unchanged, verifies
+  all imported files against pinned Git objects and restores import precision.
+  Give the control classical Hopcroft minimization over original-token classes.
+  EOS-ABSENT small preflight passes5576 byte-language checks,21220 marginal
+  checks and8640 valid samples across CPU/CUDA/native fp32/product64/fp64.
+  Max observed absolute marginal/confidence error4.76837158203125e-7; not a
+  global rounded-law guarantee. Actual environment Torch2.8/CUDA12.8 differs
+  from upstream's full Torch2.13 serving environment. Two failed all-fixed
+  fixture drafts are preserved independently. Two offline regressions PASS0.016s.
+  Sources/data:24/work/consumer_v3 and evidence/consumer-v3-preflight-v1.
+- [ ] T7202: Implement the separately WRITTEN variable EOT/PAD proof, validate
+  true bounded mass versus independent word enumeration; never use surrogate
+  shallow mass in the conditioning denominator. All original special IDs and
+  real termination probabilities count. First resource screen uses known old
+  data, with no positive timing or independent-confirmation claim.
+  The implementation/oracles are now complete:8284 minimized-language checks,
+  28 exact mass/tail checks,3720 native marginal checks and1200 valid samples
+  in CPU/CUDA. Three new rational offline tests cover variable boundary joint
+  law, original aliases, true mass versus surrogate and fixed-canvas reuse.
+  Five focused tests PASS0.045s; data:consumer-v3-termination-v1. The full-V
+  resource screen is still pending, with no real new head or speed claim.
+  Before measuring, symbolic classes now precede minimization so the native
+  control avoids raw-V expansion. The same8284/28/3720/1200 checks pass in
+  consumer-v3-symbolic-termination-v1. Full suite185 PASS73.863s, check/Ruff
+  PASS; full-V45-row resource protocol and driver are written but unexecuted.
+- [ ] T7203: Only if the resource/cost screen is plausible, freeze a new actual
+  consumer protocol and independently selected external inputs before heads.
+  Pay compilation, cache/reweighting, ALL forwards, exact certificate, native
+  GPU controls, confidence policy and output. Require substantial operational
+  benefit and identifiable originality; an adapter/oracle is not the goal.
+
 ## M71 — A24 consumer refinement, useful full-operation benefit required
 
 - [x] T7100: Write query-consumer V2's eight criteria, operation-equivalence

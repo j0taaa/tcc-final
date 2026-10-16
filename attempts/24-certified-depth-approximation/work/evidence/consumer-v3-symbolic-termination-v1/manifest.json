@@ -1,0 +1,8 @@
+{
+  "scope": "symbolic class graph before minimization; no new heads or timing gate",
+  "sha256": {
+    "oracles.json": "c1a8a42b1338d5282f0afb74d3926f9fbe65fda855b76eadf298517a17196fce",
+    "run.log": "92f607fdbc2c1b33aa526a3ab2d0682d5f27336d61759675af312e5500041395",
+    "source.zip": "a279df9f233528620c301e0bed57276b8b22c73666c90bb73f0613254f3073c1"
+  }
+}

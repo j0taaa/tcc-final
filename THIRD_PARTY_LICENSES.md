@@ -8,6 +8,14 @@ hash-pinned upstream Apache-2.0 source/weights in an ignored local cache;
 that license continues to apply. The parent MIT license covers original project
 code, not the upstream model or baseline.
 
+The optional A24 V3 kernel comparator loads unchanged MIT-licensed
+[Mosaic](https://github.com/MhDang/mosaic) commit
+`36945e4b3c64913e23962e0924a8b40a84c58807` from an ignored local checkout.
+The license is preserved in
+`attempts/24-certified-depth-approximation/work/evidence/consumer-v3-preflight-v1/Mosaic-LICENSE`.
+Its imported sources are checked against that Git object; no model is bundled.
+The local Torch2.8 preflight is not the project's full native serving stack.
+
 M34's small external conformance corpus is from
 [JSONTestSuite](https://github.com/nst/JSONTestSuite), commit
 `1ef36fa01286573e846ac449e8683f8833c5b26a`, by Nicolas Seriot and contributors,

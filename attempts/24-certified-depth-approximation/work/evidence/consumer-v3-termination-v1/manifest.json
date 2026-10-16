@@ -1,0 +1,10 @@
+{
+  "command": ".venv-live/bin/python -m attempts.24-certified-depth-approximation.work.consumer_v3.preflight_termination --source .cache/mosaic-36945e4b3c64 --devices cpu cuda --output .cache/a24-mosaic-preflight/termination-v1.json",
+  "scope": "variable EOT/PAD small correctness; no heads or timings",
+  "sha256": {
+    "offline.log": "b1041454c8482d1c88ba7a305a289586858ae837d1364c913ca9a5f7fd5b2a00",
+    "oracles.json": "b5fee810ddf6a5f0e29ab55524becccd1a7754fa8d808681bc6ced770e14abdd",
+    "run.log": "92f607fdbc2c1b33aa526a3ab2d0682d5f27336d61759675af312e5500041395",
+    "source.zip": "5470437935ee10e2e039e2b41bb5b591e911bd1a7f3c955b650b99afc0ac5787"
+  }
+}

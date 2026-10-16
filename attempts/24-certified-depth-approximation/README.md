@@ -1,5 +1,27 @@
 # 24 — Aproximação por profundidade com erro probabilístico certificado
 
+## Continuação atual: consumidor Mosaic (2026-10-16)
+
+Os oito critérios de `work/consumer-v3-contract.md` antecedem a nova ponte.
+O Mosaic publicado, pin36945e4b3c64913e23962e0924a8b40a84c58807, oferece um
+consumidor existente de amostras e confianças conjuntas e usa profundidade3
+em subesquemas arbitrários. Seus DOIS kernels GPU e minimização clássica são
+controles obrigatórios; os resultados antigos não os venceram implicitamente.
+A diferença candidata continua o certificado específico de24, não a ponte,
+minimização, limite de pilha, tratamento de EOS ou nova teoria de parsing.
+
+A primeira etapa SEM EOS passa5576 checks de linguagem em bytes,21220
+marginais e8640 amostras CPU/CUDA, kernels externos intactos. Dados e dois
+drafts de fixture que falharam ficam em `work/evidence/consumer-v3-*`.
+É compatibilidade no ambiente Torch2.8 declarado, não reprodução do serving
+completo Torch2.13, novos forwards, desempenho ou confirmação de publicação.
+`work/consumer-v3-termination-proof.md` escreve ANTES de código o contrato
+variável EOT/PAD: massa rasa da linguagem VERDADEIRA e cauda conservadora
+no lexer surrogate. A implementação posterior passa8284 checks de linguagem,
+28 de massa/cauda,3720 marginais nativos e1200 amostras CPU/CUDA, preservados
+em `work/evidence/consumer-v3-termination-v1`. O benefício operacional continua
+pendente. Não atribuir a nova evidência ao piloto V2 nem ampliar aquele gate.
+
 **Vantagem de certificação demonstrada por escrito e ganho de consulta
 confirmado em3/15 estados independentes, contra seis controles.** Todos30
 ciclos MDLM são funcionais; novidade específica/publicação e superioridade

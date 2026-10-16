@@ -1,0 +1,4 @@
+# Kernel compatibility/oracles only; does not reproduce Mosaic's full serving env.
+# Install into .venv-live; Torch2.8/CUDA12.8 remains explicitly recorded.
+einops==0.8.2
+automata-lib==9.2.0

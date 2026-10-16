@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "phase": "Known-data resource/compatibility screen, not a latency or independent efficacy gate",
+  "input": ".cache/a24-independent-cuda-v1",
+  "case_selection": "ALL 15 old states from ALL five documents; sorted filenames, no selection by prior outcome",
+  "termination": "Append one fixed GPT2 EOS ID 50256; EOT=PAD=50256. Earlier termination is allowed only if every remaining original fixed position permits padding. This is a new terminated target over OLD weights, not a fresh model output.",
+  "depths": [1, 3, null],
+  "candidate": "True terminated shallow mass plus A24 closed surrogate lexical-counter tail; no new first-overflow refinement",
+  "native_controls": ["sequential/fp32", "sequential/fp64", "parallel/fp32", "parallel/fp32_product64", "parallel/fp64"],
+  "device": "cuda",
+  "torch_float32_matmul_precision": "high",
+  "initial_canvas": "Compile once per initial old frame/depth. Original IDs/bytes and fixed canvas preserved. Construct the symbolic global-class graph before classical Hopcroft minimization, then restore original IDs; no unnecessary original-V expansion before minimization. All native kernels get this optimization.",
+  "native_weight_boundary": "Native logits are logs of the identical old binary64 probabilities, then cast to the configured dtype; fixed rows explicitly singleton. This floating law is not asserted bit-exactly equal to the integer reference.",
+  "checks": "Native sample lies in the true JSON EOT PAD* language and preserves all fixed IDs. Compare all sampled free-slot confidences with exact integer DAG marginals; finite absolute error <=0.005 for fp32 and <=1e-8 for fp64. Log all warnings/NaN fallbacks, zero masses/refusals/errors.",
+  "resources": {
+    "seconds_per_depth": 120,
+    "max_cells": 10000000,
+    "max_edges": 10000000,
+    "max_terms": 50000000,
+    "constructor_guard_bytes": 6442450944,
+    "estimated_query_guard_bytes": 6442450944
+  },
+  "plausibility_rule": "Only consider a full consumer protocol if >=3/15 initial states have a nonzero terminated shallow mass, certificate <=0.001 and at least one unchanged native GPU kernel/configuration completes correctly at that depth. This resource rule does not confirm speed, originality, useful semantic effect or publication. Never count a conservative allocation guard as a measured out-of-memory failure.",
+  "cost_recording": "Record all preparation/summary/certificate/minimization/native materialization/copy/sample/confidence/validation diagnostic wall+CPU and peak CUDA allocation. A single known-data replay is explicitly not a positive timing comparison; no new model forward is run and old forward timing is not added as though newly executed.",
+  "fresh_branch": "Requires a separate frozen consumer/controls/cost/selection protocol, independent external inputs, and a credible substantial benefit argument before any fresh model campaign. This screen alone cannot satisfy the user goal.",
+  "seed": 2026101624
+}

@@ -1,0 +1,6 @@
+{
+  "scope": "uncommitted correctness draft, before new model forwards/timings",
+  "failure": "shared consumer weight fixture requires at least one free slot; all-fixed stricter-canvas check violates its contract",
+  "source_zip_sha256": "901858d07d697bae1da2fb991301737bd3867400df3340b1608087c02f70c10e",
+  "log_sha256": "49a0df949422177c9ff8e30b6cc0b93b8a69df1bedadda0e1ecb1215dde0c1db"
+}

@@ -2555,3 +2555,35 @@ new parsing/sampling theory, native EPIC/GPU superiority, sufficient publication
 priority or fulfillment of the user's positive real-application goal. Close
 the external-consumer and A24-specific originality obligations before a larger
 campaign; do not turn an API optimization or this pilot into those claims.
+
+
+## 2026-10-16 — A24 V3: consumidor Mosaic existente e controles GPU
+
+O código oficial Mosaic, pin36945e4b3c64913e23962e0924a8b40a84c58807,
+expõe amostras conjuntas e marginais para loops de difusão; limita a3 a
+profundidade de subesquemas JSON arbitrários. Esse consumidor torna concreta
+a fronteira de certificação de24. Não confirma originalidade: pilhas limitadas,
+abstrações ponderadas, DFA, disintegration, minimização e EOS são clássicos.
+Também foram recusados novos protótipos de esperança numérica como suposta
+novidade: SECL e a expectativa de dígitos já dão esse readout. As leituras
+primárias e escopos estão em24/work/consumer-v3-primary-audit.md.
+
+Contrato/provas antecedem código. A ponte verifica fontes externas contra
+Git, não as altera, restaura precisão global após import e fornece Hopcroft
+por classes antes de expandir todos os IDs. Primeiro estágio sem EOS confere
+5576 linguagens em bytes,21220 marginais,8640 amostras CPU/CUDA. Extensão
+variável JSON EOT PAD* confere8284 linguagens,28 massas/caudas exatas,3720
+marginais e1200 amostras, inclusive após minimização simbólica. O certificado
+usa massa rasa da linguagem verdadeira e SOMENTE upper de cauda do surrogate
+de whitespace; não renormaliza ou exclui as probabilidades de EOT/PAD. Lei
+inteira e marginalização racional usam os kernels clássicos já validados.
+
+Dois drafts de fixture que falharam e todos os dados ficam preservados.
+185 testes passam em73.863s; o ambiente kernel Torch2.8/CUDA12.8 difere do
+serving completo Torch2.13 do upstream. Nenhum novo forward ou ganho de tempo
+foi medido nesta fase. O protocolo45 de recursos usa TODOS15 estados velhos,
+três profundidades e os dois samplers/fp32/fp64; não é confirmação independente
+ou vitória operacional. Só uma campanha posterior com custo integral,
+controles competentes e benefício substancial poderá fechar utilidade.
+O objetivo contínuo do usuário permanece aberto, sem promessa editorial ou
+de ingresso no mestrado.

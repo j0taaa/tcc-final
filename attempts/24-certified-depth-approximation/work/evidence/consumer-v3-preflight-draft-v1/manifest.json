@@ -1,0 +1,6 @@
+{
+  "scope": "uncommitted correctness draft, before new model forwards/timings",
+  "failure": "all-fixed stricter canvas represented empty head with shape (0,) instead of (0,V)",
+  "source_zip_sha256": "8230c49541ed706ba085e78bf477c6b97e536207fbf5c22bb5bfcb74f127e956",
+  "log_sha256": "424e1fbfc3f7f62beef616f558ed8950868662a2146b01c28f282e5b30e9a69f"
+}

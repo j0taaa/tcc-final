@@ -1,0 +1,23 @@
+{
+  "command": ".venv-live/bin/python -m attempts.24-certified-depth-approximation.work.consumer_v3.preflight --source .cache/mosaic-36945e4b3c64 --devices cpu cuda --output .cache/a24-mosaic-preflight/oracles-min-v2.json",
+  "diagnostic_wall_is_not_performance_measurement": true,
+  "prior_failed_drafts": [
+    "../consumer-v3-preflight-draft-v1",
+    "../consumer-v3-preflight-draft-v2"
+  ],
+  "scope": "no model forwards, no timing gate; Python3.11/Torch2.8 kernel compatibility rather than full native Mosaic Torch2.13 serving",
+  "sha256": {
+    "Mosaic-LICENSE": "4e9952258b1c2564ae4fee4f45abf408f40dc4aa43ac682389a6deecbe4b49db",
+    "descriptor-oracles.json": "9b0d287667540133b63b1533447a3c0d25fd6d79bad5f6e9dc105d50aab0adb6",
+    "oracles.json": "61c44194f6d354faa5dc218edd01920a8571d26370d140e3324cb6a28690a3ba",
+    "run.log": "085b36afeb5cb65dc20e6c1cef7cf8298f9818ec36ad44e71a09176cd649f6cb",
+    "source.zip": "5c8254efda016fdcfd34fb6900043c054045782df2f07c917ca2abfe16838621"
+  },
+  "source_file_sha256": {
+    "attempts/24-certified-depth-approximation/work/consumer_v3/__init__.py": "098b8023c62cc651bc899dc87de0491c0f9694631c22d971d5867cc061aae9f8",
+    "attempts/24-certified-depth-approximation/work/consumer_v3/mosaic_control.py": "15c59e1e34b2b4eb50a4f17628a067bcf0d5cf30c73d9866c77b7ba4eced2383",
+    "attempts/24-certified-depth-approximation/work/consumer_v3/preflight.py": "6e5855b8483b179d7c81bdfd7eec47fe509b407b8d8deb7db1c9f1c7d0d4c9b3",
+    "attempts/24-certified-depth-approximation/work/consumer_v3/test_graph.py": "6abc855411ec459d5b8b7ecaeb5dbfff33421ad9735f1cb603b2fcfa8495fc0d",
+    "requirements/a24-mosaic-preflight.txt": "d7642f8c84f0ed6855f80e4032a5a982a66fb5037d15ce72681dec48aa7efd01"
+  }
+}

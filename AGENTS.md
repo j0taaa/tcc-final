@@ -1124,3 +1124,20 @@ integral. A suíte180 testes passou no preflight, sem checks concorrentes aos
 timings. Originalidade específica de24, consumidor externo justificado e
 publicação seguem abertos. Não promover reparo de API, piloto ou capacidade
 a vitória geral sobre EPIC/controles GPU, nem garantia de mestrado.
+
+M72/A24 V3 identifica o consumidor publicado Mosaic, commit36945e4b3c64.
+Seus kernels sequencial/paralelo GPU e minimização são controles obrigatórios,
+com igual compilação/cache. A ponte inicial SEM EOS mantém fonte externa
+intacta e passa5576 checks de linguagem,21220 marginais e8640 amostras,
+CPU/CUDA; máximo erro observado4.76837158203125e-7. Não é garantia global da
+lei arredondada, novo head, vantagem temporal ou novidade. Ambiente Torch2.8
+difere do serving completo Torch2.13. Dois drafts de fixture falharam e foram
+preservados. Prova EOT/PAD variável antecede implementação: massa rasa deve
+vir da linguagem terminada VERDADEIRA, nunca do surrogate de whitespace.
+Consumidor real é identificado; efeito útil/originalidade/publicação seguem
+abertos. Não promover adaptação de API ou profundidade3 como descoberta.
+O contrato EOT/PAD posterior passa8284 checks de linguagem minimizada,28
+checks exatos de massa/cauda,3720 marginais e1200 amostras CPU/CUDA. Massa
+verdadeira e surrogate são explicitamente separados. Três oráculos racionais
+novos incluem a lei conjunta com boundary variável e não usam Torch no CI.
+Ainda sem novo head ou timing/benefício integral desta versão.
