@@ -1,5 +1,22 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A52 V18 conditional necessity closed negative
+
+After written b3358a3/320e397 and producer c28da4a, all8960 fresh auxiliaries
+from all70 OLD states/16 known paths complete without error/refusal or new
+neural forward/path/update/label. All2268 fixed estimates retained. FamilyA
+ratio.9864 and familyB.9121 fail the frozen.8 gate even with zero extra cost.
+The independent AFTER-data8960-answer/all7-score/1258878-coordinate audit
+passes1.522e-14. Full RLOO variance stays null; this known-data resource
+screen is not a population refutation. No large fresh neural/training campaign
+is triggered for this application. See A52 work/conditional-result-v18.md.
+
+The goal remains OPEN. The small confirmed A24 query result remains the main
+article's bounded evidence, not proof of sufficient own novelty or broad utility.
+New work must start with a real consumer, strong antecedents/comparators and
+an explicit benefit argument before another prototype. No publication or
+admission promise is supportable from current evidence.
+
 ## 2026-10-16 — A52 written observed-action audit, before prototype
 
 A51 remains operationally negative. The new limited question is the actual

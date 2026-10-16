@@ -4406,6 +4406,17 @@
             "attempts/52-collapsed-commit-likelihood/work",
             "docs/artifacts/raw/a52_conditional_auxiliary_functionality_v17_initial"
           ]
+        },
+        {
+          "id": "v18",
+          "source_commit": "c28da4adc1a4afb44a548283a0015fc97d136c95",
+          "evidence_commit": "5757b84a13ebd0fbbc04dee0756ab7c17cd5c591",
+          "evidence_roots": [
+            "attempts/52-collapsed-commit-likelihood/README.md",
+            "attempts/52-collapsed-commit-likelihood/work",
+            "docs/artifacts/raw/a52_conditional_variance_v18_initial",
+            "docs/artifacts/raw/a52_conditional_variance_v18_analysis_initial"
+          ]
         }
       ]
     }
