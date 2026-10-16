@@ -158,6 +158,13 @@ cost remain open. No new neural campaign is credited to M70.
   trace beyond combined cheap controls and35 FAKE-head states/path means.
   Full236 PASS84.581s, make check/Ruff PASS. No new head/update/production
   sampler/practical advantage/novelty. Written stopped resource design next.
+- [ ] T7507: V8 written root-budget/stopped-resource contract/eight criteria
+  BEFORE implementation/heads. ALL8 known old roots, two trajectories each,
+  fixed root-only count feature, explicit active bits, proper prefix stopping,
+  at most497 new forwards including warmup. First rational expectation and
+  compact/manual/autodiff checks, then freeze actual runner/runtime before
+  heads. Known-data resource/signal conditions do NOT trigger training/quality
+  or novelty claims; V5 remains closed and the scientific goal OPEN.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

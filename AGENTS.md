@@ -108,6 +108,13 @@ ao V3 com T fixo e35 estados FAKE. O objeto de prova tem traço alpha/âncora
 estritamente menor inclusive contra controle combinado, não benchmark neural.
 Full236 PASS84.581s/make check/Ruff PASS. Nenhum head/update/sampler nativo
 ou ganho útil/novidade confirmados. Só novo consumidor escrito antes de código.
+V8 escreve antes de implementação/heads a calibração SIGMOID clássica da
+contagem só no ROOT, fixando o feature depois (sem implicit gradient omitido
+em parâmetros novos). Contrato usa TODOS8 roots conhecidos/duas trajetórias,
+parada correta/IDs fixos/bits explícitos, máximo497 forwards novos, baseline
+one-shot pareado. Sem updates/timing/qualidade comparativa; gate de recurso/
+sinal só permite considerar protocolo de custo/variância com controles fortes.
+Oráculos e congelamento real de runner/runtime antecedem novos heads.
 
 ## Objetivo e estado atual
 

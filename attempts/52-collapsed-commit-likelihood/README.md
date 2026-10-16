@@ -254,3 +254,15 @@ combined control, with no real-head/gate-table/application claim. Thirty-five
 FAKE-head states preserve IDs/path means. Full236 PASS84.581s, make check/Ruff
 PASS. See work/prefix-result-v7.md. No new head, native sampler/update or useful
 novelty is established; a written stopped-consumer resource design is next.
+
+## V8 — Written stopped resource design before implementation/heads
+
+work/root-release-budget-v8.md gives a classical root-only sigmoid count
+calibration feature, held fixed on future states/parameter updates. The eight
+criteria in work/stopped-resource-v8.md freeze a KNOWN-development iterative
+stopped consumer: ALL8 old roots, two trajectories/question, max497 new heads,
+explicit active/fixed IDs, full canvas attention, one fixed root budget and
+paired one-shot baseline. No update/timing/independent or semantic-win claim.
+Resource/signal conditions only permit CONSIDERING a separate strong-control
+cost/variance protocol. Runtime/runner still need checks and source freeze
+before any new head. Stopping/calibration/inference are not novelty claims.
