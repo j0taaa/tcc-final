@@ -1204,3 +1204,13 @@ exatas,zero fallback/recusa/erro. Não é timing, corpus/head novo, ganho própr
 novidade ou meta cumprida. V6 escreve envelope por telescopagem de potenciais/
 fatores de totais inteiros, evitando segundo max-DP; princípio CLÁSSICO, não
 promover como teorema próprio antes da auditoria e vantagem prática.
+
+A51 candidata GPU tickets/correção V8 passa980 condições de contagem,181 razões
+completas W/Q,832 propostas/packets literais CPU-GPU e192 JSONs aceitos. Guards
+142 casos/1088 condições/seis recusas passam. Suíte203 PASS75.441s. Primeira
+recusa por clipping de potencial zero e draft do checker0/0 ficam preservados;
+V8 mantém somente zeros CERTIFICADOS. Potenciais aproximados arbitrários zero
+não recebem essa licença. Caso positivo subnormal recusa candidata, mas controle
+intervalar exato conclui; não ocultar. Sem tempo/head novo ou vitória própria.
+Próximo gate precisa comparar custo completo com o controle intervalar competente,
+sem herdar resultados de viabilidade ou promover princípios clássicos a novidade.

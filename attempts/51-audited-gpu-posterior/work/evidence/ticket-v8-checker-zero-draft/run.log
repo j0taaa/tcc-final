@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/preflight_tickets.py", line 269, in <module>
+    main()
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/preflight_tickets.py", line 180, in main
+    counts += check_premises(data, rows)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/preflight_tickets.py", line 146, in check_premises
+    [F(data["emass"][e]) * F(data["h"][targets[e]]) / parent for e in range(start, end)],
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/preflight_tickets.py", line 146, in <listcomp>
+    [F(data["emass"][e]) * F(data["h"][targets[e]]) / parent for e in range(start, end)],
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/fractions.py", line 359, in forward
+    return monomorphic_operator(a, b)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/fractions.py", line 516, in _div
+    return Fraction(n, d, _normalize=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/lib/python3.11/fractions.py", line 157, in __new__
+    raise ZeroDivisionError('Fraction(%s, 0)' % numerator)
+ZeroDivisionError: Fraction(0, 0)

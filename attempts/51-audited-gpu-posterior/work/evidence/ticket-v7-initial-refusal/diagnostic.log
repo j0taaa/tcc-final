@@ -1,0 +1,7 @@
+salt 1 count budget/numeric guard; REFUSE without altering support
+token bad []
+block bad []
+edge bad [[5]]
+node 5 hclipped 1.401298464324817e-45 originalUpper 0.0
+2 complete 0.9999987878197423
+3 complete 0.9999986237734255

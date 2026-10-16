@@ -94,3 +94,9 @@ ALL15 OLD real heads:240 GPU words,240 literal exact-CPU matches and30 independe
 exact-mass checks, no fallback/refusal/error. No timing/new head/own novelty is
 claimed. V6 writes before code a classical telescoping count-factor bound to
 avoid V1's second max-product audit. Strong interval control remains mandatory.
+
+V8's GPU candidate passes980 count premises181 full-word ratios832 actual finite
+proposal replays and192 accepted JSONs; guard audit1088 inequalities/six refusals.
+It explicitly rejects nonaccepting leaves and REFUSES tiny positive masses where
+the stronger interval control succeeds. Earlier refusal/checker drafts remain.
+Full203 tests PASS75.441s. No timing, real new head or achieved scientific goal.

@@ -87,6 +87,18 @@ cost remain open. No new neural campaign is credited to M70.
   accepted laws equal the original target, and V1 max-product is never looser.
   Two tests PASS0.098s; not GPU performance or own mathematical novelty. No
   proposed corrected GPU sampler has been measured yet; strong control remains.
+- [x] T7402g: Materialize the opt-in integer-ticket candidate underV7/V8 proof.
+  Initial count-cap refusal from artificial nonzero potential at certified-zero
+  suffix is preserved with source/log. V8 retains PROVEN zero uppers, never
+  arbitrary approximate zeros; the first zero-aware checker draft/log also
+  remains. Extended checks PASS980 count premises181 full-word max-ratios832
+  literal CPU/GPU finite-proposal packets192 accepted JSONs, plus nonaccepting
+  terminal rejection and tiny-positive refusal where interval control succeeds.
+  Count guard audit142 rows/1088 exact inequalities/six refusals passes. Two
+  scalar extreme/packet regressions pass; full203 tests PASS75.441s. None is
+  timing, new head, novel mathematical principle or sufficient publication.
+  make check/Ruff PASS; source/guard/refusal artifacts and extended evidence
+  are frozen before any performance run.
 - [ ] T7402: Only if a concrete useful systems distinction survives, freeze
   complete-cost protocol/strong controls before implementation/campaign.
   Exactness alone, a tiny FP64 discrepancy or a reference implementation

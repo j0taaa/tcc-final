@@ -1,0 +1,14 @@
+{
+  "categorical_rows": 142,
+  "goal_met": false,
+  "guard_refusals": 6,
+  "new_model_forwards": 0,
+  "sources": {
+    "gpu_tickets.py": "2bef861c74dd90c51e3e0a6f7deb854311ce26c972ef2234fba33cfd61399da6",
+    "preflight_counts.py": "fb250fb71bd316e0c57a2e5679134af0831a3dcf02e57b5ab72c9bacf0277d07"
+  },
+  "speed_claim": false,
+  "status": "PASS",
+  "torch": "2.13.0+cu130",
+  "upward_count_checks": 1088
+}

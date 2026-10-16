@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/preflight_tickets.py", line 269, in <module>
+    main()
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/preflight_tickets.py", line 178, in main
+    prepared = sampler.prepare(torch.from_numpy(rows).cuda())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/.venv-mosaic-native/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/51-audited-gpu-posterior/work/ticket_sampler.py", line 102, in prepare
+    raise ValueError("count budget/numeric guard; REFUSE without altering support")
+ValueError: count budget/numeric guard; REFUSE without altering support
