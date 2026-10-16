@@ -106,12 +106,8 @@ class TicketSampler:
         )
         values = maxima.cpu().tolist()
         factor = prod((F(int(a), 1 << 40) for row in values for a in row), start=F(1))
-        envelope = (
-            F(h[0].item())
-            * prod((F(s) for s in result["scales"]), start=F(1))
-            * factor
-            * F(1 << 23, (1 << 23) - 1) ** (3 * n)
-        )
+        # The saved upper already includes root potential and exact common scales.
+        envelope = result["upper"] * factor * F(1 << 23, (1 << 23) - 1) ** (3 * n)
         if envelope < result["lower"]:
             raise RuntimeError("count envelope below certified lower mass; never clamp")
         rate = result["lower"] / envelope
@@ -132,6 +128,7 @@ class TicketSampler:
             maxima=values,
             envelope=envelope,
             acceptance_lower=rate,
+            admission_minimum=minimum_acceptance,
         )
 
     @torch.no_grad()
@@ -217,5 +214,5 @@ class TicketSampler:
             statuses=statuses,
             trials=trials,
             proposals=proposals,
-            fail_bound=(1 - prepared["acceptance_lower"]) ** max_trials,
+            fail_bound=(1 - prepared["admission_minimum"]) ** max_trials,
         )

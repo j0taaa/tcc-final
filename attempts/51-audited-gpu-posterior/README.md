@@ -100,3 +100,10 @@ proposal replays and192 accepted JSONs; guard audit1088 inequalities/six refusal
 It explicitly rejects nonaccepting leaves and REFUSES tiny positive masses where
 the stronger interval control succeeds. Earlier refusal/checker drafts remain.
 Full203 tests PASS75.441s. No timing, real new head or achieved scientific goal.
+
+V9 preregisters a first90 NEGATIVE-only cost stage against the exact interval
+control:ALL15 known heads,three rotations, identical full CUDA I/O/model-confidence
+commit and OLD model clocks in paired wallANDCPU totals. No partial positive
+claim is possible; all other controls/independent full neural cost remain required.
+Full205 tests pass71.777s before measurements. Protocol/runner/auditor and all
+refusals/code precede the first timing; no new model forward is credited.

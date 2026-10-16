@@ -1,0 +1,1 @@
+{"status": "PASS", "complete_api_checks": 8, "full_original_vocabulary": 50258, "new_model_forwards": 0, "speed_claim": false, "goal_met": false, "sources": {"preflight_development.py": "8498bf6fd89b3370f47abd4311c9b7ada47405813f0718d233fa8a4e43378899", "development.py": "f7f94d862163d8f7fa86286f831df17c2f2eb0f97fb1821c596a5908a9615111"}}

@@ -99,7 +99,24 @@ cost remain open. No new neural campaign is credited to M70.
   timing, new head, novel mathematical principle or sufficient publication.
   make check/Ruff PASS; source/guard/refusal artifacts and extended evidence
   are frozen before any performance run.
-- [ ] T7402: Only if a concrete useful systems distinction survives, freeze
+- [x] T7402: Freeze bounded first90 NEGATIVE-only full-query protocol before
+  timing, with identical CUDA I/O/model-confidence commit, ALL15 known heads,
+  three rotations, complete fresh numeric work, compile/JIT setup separated,
+  projected old model cost and a mandatory exact interval control. No positive
+  result can follow from only this subset; complete controls and independent
+  real neural full cost remain obligations. Eight full-V complete-API checks
+  pass, as do two negative-decision oracles. Formatting logs stays outside
+  timers; numeric certificate/correction remains charged. Before measurement,
+  ticket code reuses the ALREADY computed upper factor and the admitted fixed
+  failure bound; identical980/181/832/192 full oracle audit passes unchanged.
+  Full205 tests PASS71.777s before timings; full-V8 API checks and frozen timer
+  import/cancellation-boundary smoke pass. Runner/protocol/auditor are committed
+  together before the first measured record.
+- [ ] T7403: Execute frozen first90, preserve ALL records/errors/refusals and
+  apply the unchanged necessary gate. Only consider remaining exact/native/
+  approximate controls if enough states survive; never claim goal fulfilled
+  or new theorem priority from a development query comparison.
+- [ ] T7404: Only if a concrete useful systems distinction survives, freeze
   complete-cost protocol/strong controls before implementation/campaign.
   Exactness alone, a tiny FP64 discrepancy or a reference implementation
   cannot satisfy the user's real-benefit/publication goal.

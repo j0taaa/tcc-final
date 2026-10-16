@@ -17,3 +17,7 @@ TelescopingTests = import_module(
 ScalarAcceptanceTests = import_module(
     "attempts.51-audited-gpu-posterior.work.test_scalar"
 ).ScalarAcceptanceTests
+
+CostAuditTests = import_module(
+    "attempts.51-audited-gpu-posterior.work.test_cost_audit"
+).CostAuditTests

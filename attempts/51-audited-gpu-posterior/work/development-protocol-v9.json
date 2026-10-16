@@ -1,0 +1,38 @@
+{
+  "phase": "known-development first90 necessary-condition negative-only cost audit",
+  "cases": "ALL15 frozen original JSON/npy pairs in .cache/a24-independent-cuda-v1, sorted filename",
+  "candidate": "ticket_scalar",
+  "first_control": "interval_exact",
+  "repetitions": 3,
+  "candidate_grid": 1099511627776,
+  "candidate_minimum_acceptance": "99/100",
+  "candidate_fixed_trial_cap": 8,
+  "sample_count": 1,
+  "commit_policy": "given original model confidence>=0.95 on free positions; if empty, one physical-first argmax",
+  "interface": "resident original binary64 CUDA weights -> joint original IDs, model confidence, commit mask on CUDA",
+  "initial_fixed_ids": "unit original rows and compiled fixed canvas; true JSON EOT PAD*",
+  "primary_gate": {
+    "minimum_states": 3,
+    "wall_ratio": 0.8,
+    "cpu_ratio": 0.8,
+    "definition": "paired medians over all3 repetitions of warm query+OLD recorded model/softmax, both wall AND CPU versus EVERY mandatory control, all repetitions favorable in both clocks",
+    "other_controls_for_positive": ["exact_symbolic_cpu", "exact_compact_global", "exact_compact_local", "exact_compact_epsilon", "exact_original_product_rejection", "applicable_exact_envelope_control"],
+    "practical_secondary": ["native Mosaic sequential/parallel original model-confidence operation", "competent fused sparse/layered approximate GPU fp32/fp64 sampling without unused marginals"],
+    "complete_operation_obligation": "positive query gate still requires useful complete real neural trajectory, including compilation/all forwards, on independently frozen inputs; no publication/goal completion follows from this stage"
+  },
+  "first90_decision": "only NEGATIVE if fewer than3 states can meet the necessary comparison with interval_exact; unknown/control errors receive no rejection credit; cannot declare positive",
+  "timing": {
+    "cold": "constraint-graph compilation measured once per case and charged equally in decomposed first-query totals, plus fresh method compilation/query; globally prepared CUDA JIT cache, explicit setup recorded",
+    "warm": "reuse structural graph/method buffers only; rebuild every numeric summary/message/CDF/certificate and sample from the same frozen head with fresh randomness",
+    "common_setup": "pinned compiler import, byte lexer/class partition and resident CUDA head outside individual query; setup measured separately",
+    "jit": "one untimed complete operation for BOTH methods per case before measurements, recorded as setup; no latency credit from compilation-order effects",
+    "timers": "CUDA synchronize immediately before/after operations; perf_counter and process_time; model/softmax clocks only separately labeled projected totals",
+    "logging": "formatting fractions and JSON journal serialization outside ALL method timers; numeric certificate construction remains charged",
+    "validation": "independent exact mass/strict JSON/fixed original IDs/model confidence/common commit mask outside ALL timers",
+    "concurrency": "no other local tests, installs or model work during measured records"
+  },
+  "resources": {"seconds_per_operation": 180, "max_cells": 10000000, "max_edges": 10000000, "max_terms": 50000000, "gpu_bytes": 6442450944, "cpu_rss_bytes": 8589934592},
+  "seed": 2026101659,
+  "new_model_forwards": 0,
+  "source_freeze": "runner, protocol and auditor committed together before first measurement"
+}

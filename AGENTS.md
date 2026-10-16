@@ -1214,3 +1214,14 @@ não recebem essa licença. Caso positivo subnormal recusa candidata, mas contro
 intervalar exato conclui; não ocultar. Sem tempo/head novo ou vitória própria.
 Próximo gate precisa comparar custo completo com o controle intervalar competente,
 sem herdar resultados de viabilidade ou promover princípios clássicos a novidade.
+
+A51 V9 congela ANTES de timings protocolo/runner/auditor first90 somente
+NEGATIVO:15 heads antigos3 repetições2 métodos, operação CUDA completa e
+política comum por confiança do MODELO. Gate necessário20% mediana pareada
+wallECPU incluindo clock antigo do modelo, sinal favorável em todas repetições.
+Não permite positivo antes de TODOS controles e nova aplicação neural completa.
+Compilação compartilhada cobrada em primeiro-query decomposto, JIT/setup
+registrados, logs fora dos timers e todo trabalho numérico dentro. Oito checks
+full-V e205 testes PASS71.777s. Otimização anterior aos timings reutiliza upper
+já pronto e bound de FAIL admitido; oráculos completos iguais. Nenhum tempo
+competitivo/head novo foi creditado a esse preflight.
