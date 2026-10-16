@@ -256,6 +256,15 @@ NEGATIVO, sem campanha neural deste certificado simples. Auditoria posterior
 reconta86 estados/testemunhos/cache; dados preservados. 13/63 contra original
 não é vitória sobre controle forte; meta/novidade útil seguem abertas.
 
+A54 começa escritaf61bbcc/07c255e: comparação de políticas predefinidas com
+backbone igual e cache de inputs idênticos. Coupling/MEXIT/contração/avaliação
+acoplada são clássicos. Seis oráculos racionais e dois de K(T,a)/K(A,a) passam;
+full294 PASS87.118s. Maximal agreement não garante variância menor (contraexemplo
+.9984 versus.5392 preservado). Controle próprio por T empata se EOS fixo.
+Synthetic full-V/FAKE70 passam; V3 ainda sem query/estatística de head real.
+Screen local usa25 direções fixas e custos restantes VELHOS; não é velocidade
+finita, sampler nativo exato ou autorização de campanha neural/meta cumprida.
+
 ## Objetivo e estado atual
 
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma

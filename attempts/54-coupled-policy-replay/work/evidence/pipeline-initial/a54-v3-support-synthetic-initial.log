@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "SYNTHETIC_states": 2,
+  "pretrained_heads": 0,
+  "old_real_head_queries": 0,
+  "new_model_forwards": 0,
+  "new_auxiliary_words": 0,
+  "CUDA_used": false,
+  "global_Python_NumPy_RNG_unchanged": true,
+  "classes": 33,
+  "peak_CPU_process_RSS_bytes": 460103680
+}

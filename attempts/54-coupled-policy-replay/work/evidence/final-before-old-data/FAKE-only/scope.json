@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "FAKE_states": 70,
+  "FAKE_preexisting_auxiliary_vectors": 8960,
+  "real_old_head_queries": 0,
+  "new_model_forwards": 0,
+  "note": "repeated fake states, not a decoder/posterior study"
+}

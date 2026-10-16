@@ -1,0 +1,12 @@
+E501 Line too long (104 > 100)
+   --> attempts/54-coupled-policy-replay/work/preflight_driver.py:160:101
+    |
+158 |             "real_old_head_queries": 0,
+159 |             "new_model_forwards": 0,
+160 |             "note": "repeated fake states are not a monotone decoder path or a sampled posterior study",
+    |                                                                                                     ^^^^
+161 |         },
+162 |     )
+    |
+
+Found 1 error.

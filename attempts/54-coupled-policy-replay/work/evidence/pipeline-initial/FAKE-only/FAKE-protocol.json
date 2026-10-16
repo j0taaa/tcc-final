@@ -1,0 +1,15 @@
+{
+  "runtime": {
+    "python": "3.11.16",
+    "numpy": "2.4.6",
+    "tokenizers": "0.21.4"
+  },
+  "source_sha256": {},
+  "input_sha256": {
+    "rows": "9998386da645b0f7d8d96f590b35a9a6fc30a0eeb3ef0394533dd5dd9f995d5e",
+    "manifest": "a5c735672af71412f4856462eddd940be77ddea13bcc67fab19286e6bd3aa0b7",
+    "features": "b268bb30a9e3d064074e73137106b0722b1aa3e001afc328210349ca8b7ba2c3",
+    "auxiliary": "b90e18ac28f3899f90ef4486af8ed4c63e9b3b091caffb96df69d299e8983372",
+    "auxiliary_summary": "041dff8cee4c14767a03435eb9f84a05152b2dc00e322d74a702b6f6944a4bdf"
+  }
+}

@@ -43,6 +43,19 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M77 — Coupled policy comparison/replay, limited classical investigation
+
+- [x] T7700: Write eight criteria/coupling scope before code f61bbcc/07c255e.
+  Six rational oracles pass including128 co-adapted binary transport vertices,
+  unrestricted-MEXIT and semantic-variance counterexamples. Proper T and A
+  density controls pass independent enumeration. Full294 PASS87.118s; final
+  synthetic full-V/FAKE70 IO and focused Ruff pass. No actual native coupler,
+  new head or useful sufficient novelty confirmed.
+- [ ] T7701: Freeze V3 source/runtime/ALL70 old inputs before real readouts/
+  local L1 cache-loss coefficients. Include proper length/anchor mixtures,
+  class/word/full controls; local20% is NOT total latency and cannot trigger
+  new neural work. Goal remains OPEN.
+
 ## M76 — Observable terminal stopping, before real-path screen
 
 - [x] T7600: Write A53 eight criteria/theorem before code53d9e72. Seven

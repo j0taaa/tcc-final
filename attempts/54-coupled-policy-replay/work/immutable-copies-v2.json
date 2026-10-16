@@ -1,0 +1,22 @@
+{
+  "floating.py": {
+    "from": "attempts/52-collapsed-commit-likelihood/work/floating.py",
+    "sha256": "a11ea8d57a2e4d62c93f40bf282bb6756194365894dff3d29faaa935568fd2a8"
+  },
+  "numeric_json.py": {
+    "from": "attempts/52-collapsed-commit-likelihood/work/numeric_json.py",
+    "sha256": "a5388609307aa54afff0746009c83991ac18e66d76f7c690e7a3a91e90c9b7ff"
+  },
+  "prefix_floating.py": {
+    "from": "attempts/52-collapsed-commit-likelihood/work/prefix_floating.py",
+    "sha256": "69586142123ae61f5592c521400ae90f3c3edcf2a4454f58056ecf2bc709ff71"
+  },
+  "actor_coordinates.py": {
+    "from": "attempts/52-collapsed-commit-likelihood/work/actor_coordinates.py",
+    "sha256": "5f2f30ca8a3ffb543af937d69bddfaffc7296d727b4ad110ca5605c4ace56b1d"
+  },
+  "llada_tokenizer_v10.py": {
+    "from": "attempts/52-collapsed-commit-likelihood/work/llada_tokenizer_v10.py",
+    "sha256": "fa339972d974f1b67359c6f5340b77be356743114cd2a1b2ab25726d88907203"
+  }
+}

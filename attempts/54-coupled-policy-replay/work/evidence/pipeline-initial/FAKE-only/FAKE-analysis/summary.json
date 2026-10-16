@@ -1,0 +1,182 @@
+{
+  "status": "NO_LOCAL_20PCT_OPPORTUNITY_IN_FIXED_DIRECTIONS",
+  "promising_direction_indices": [],
+  "best_valid": {
+    "direction_index": 1,
+    "direction": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 3.2914074865223317,
+        "anchor_integrated": 3.2914074865223317,
+        "class_integrated": 3.2914074865223317,
+        "proper_length": 3.2914074865223317,
+        "known_anchor": 3.2914074865223317,
+        "observed": 3.2914074865223317
+      },
+      "prefix_stratified": {
+        "full_triple": 3.2914074865223317,
+        "anchor_integrated": 3.2914074865223317,
+        "class_integrated": 3.2914074865223317,
+        "proper_length": 3.2914074865223317,
+        "known_anchor": 3.2914074865223317,
+        "observed": 3.2914074865223317
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  "all_directions": 25,
+  "states": 70,
+  "old_paths": 16,
+  "old_auxiliary_words": 8960,
+  "new_model_forwards": 0,
+  "new_auxiliary_words": 0,
+  "updates": 0,
+  "exact_native_coupler_implemented": false,
+  "finite_parameter_or_latency_or_variance_claim": false,
+  "neural_campaign_triggered": false
+}

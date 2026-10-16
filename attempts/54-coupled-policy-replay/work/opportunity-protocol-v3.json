@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "scope": "KNOWN_OLD_DATA_LOCAL_FIRST_ORDER_CACHE_LOSS_ONLY",
+  "runtime": {
+    "python": "3.11.16",
+    "numpy": "2.4.6",
+    "tokenizers": "0.21.4"
+  },
+  "source_sha256": {
+    "actor_coordinates.py": "5f2f30ca8a3ffb543af937d69bddfaffc7296d727b4ad110ca5605c4ace56b1d",
+    "analyze_opportunity.py": "d0c775530b4956bc61310093d0df525424644a238264f6e1f4a4762fb2236aca",
+    "capture_support.py": "4bd84367e0ed2e924aaafbb1ecf815f7f3a2c9d361bf3ae1f402dac829dcafda",
+    "coupling.py": "44d776face87cc3a32e4c71409ecec7f4c90052cb4ed65a7244973a1c0447184",
+    "floating.py": "a11ea8d57a2e4d62c93f40bf282bb6756194365894dff3d29faaa935568fd2a8",
+    "length_readout.py": "db19ad3ea267cd4e3b856472e5c676a641e8a323740a1359469fc19109214207",
+    "llada_tokenizer_v10.py": "fa339972d974f1b67359c6f5340b77be356743114cd2a1b2ab25726d88907203",
+    "numeric_json.py": "a5388609307aa54afff0746009c83991ac18e66d76f7c690e7a3a91e90c9b7ff",
+    "prefix_floating.py": "69586142123ae61f5592c521400ae90f3c3edcf2a4454f58056ecf2bc709ff71",
+    "preflight_driver.py": "5b9877fb1af38fe87116f985b2998f2ed7e03f2b0e9ddd2a4a8b94c90a7a98e1",
+    "preflight_support.py": "bc722e214fd005fefb35357cb5462f326b5c90f43a81f58e9e48693d21200cec",
+    "query_support.py": "6847c86a69ae1191ec4d0366425b5611632f5bf9095c615d8463b402cd80a8cd",
+    "test_coupling.py": "999990b18f20d058570ddf5873d3f4fe215eeea396b710118bd4ac4d6e698125",
+    "test_length_readout.py": "3a1a1e727f3e7af87d2b9659d2c03735313d4cefd9eb5a1eb12b0c1cff8269f8"
+  },
+  "input_sha256": {
+    "rows": "e40955cf7cce3868cc1ac939fc44855397b781b34db93934efc641c005997782",
+    "manifest": "9969f6de7d720af63ae718015942cf7093f03837359ed29ae57dd362fe8be19a",
+    "features": "59b76d508a32a93e7dff0cc030e2667dd7bd45e5d7d0d5ddf5bddb3312d68f56",
+    "auxiliary": "f083efd46aec705cebd3e312a184a5ab766057153f2080c6f6f7b0a4f0894a0a",
+    "auxiliary_summary": "87c635730dbc4af029d4329db2b65e07830823034c5dee7251514b867e5ee2cc"
+  },
+  "input_paths": {
+    "rows": "docs/artifacts/raw/a52_llada_stopped_resource_v10_initial/rows.jsonl",
+    "manifest": "docs/artifacts/raw/a52_llada_stopped_resource_v10_initial/manifest.json",
+    "features": "docs/artifacts/raw/a52_old_path_diagnostic_v15_initial/state-features.jsonl",
+    "auxiliary": "docs/artifacts/raw/a52_conditional_variance_v18_initial/records.jsonl",
+    "auxiliary_summary": "docs/artifacts/raw/a52_conditional_variance_v18_initial/summary.json"
+  },
+  "written_protocol_sha256": "9e5adcdb45ef56578ef04a9eaea6dead25cacfb935163a9f3036346faa5d0b54",
+  "states": 70,
+  "old_paths": 16,
+  "old_auxiliary_words": 8960,
+  "directions": 25,
+  "direction_seed": 54001,
+  "local_loss_ratio_max": 0.8,
+  "finite_latency_or_native_exactness_claim": false,
+  "new_model_forwards": 0,
+  "new_auxiliary_words": 0,
+  "new_decoder_paths": 0,
+  "updates": 0,
+  "CUDA_used": false,
+  "whole_seconds": 600,
+  "operation_seconds": 60,
+  "CPU_RSS_cap_bytes": 2147483648,
+  "threads": 4,
+  "neural_campaign_triggered_by_pass": false
+}

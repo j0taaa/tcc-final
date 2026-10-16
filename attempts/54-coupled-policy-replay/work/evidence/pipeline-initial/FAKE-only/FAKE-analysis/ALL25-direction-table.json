@@ -1,0 +1,4202 @@
+[
+  {
+    "direction_index": 0,
+    "direction": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 3.4532799858594925,
+        "anchor_integrated": 3.4532799858594925,
+        "class_integrated": 3.453279985859492,
+        "proper_length": 3.4532799858594925,
+        "known_anchor": 3.4532799858594925,
+        "observed": 3.4532799858594925
+      },
+      "prefix_stratified": {
+        "full_triple": 3.4532799858594925,
+        "anchor_integrated": 3.4532799858594925,
+        "class_integrated": 3.453279985859492,
+        "proper_length": 3.4532799858594925,
+        "known_anchor": 3.4532799858594925,
+        "observed": 3.4532799858594925
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.5755466643099155,
+          "anchor_integrated": 0.5755466643099155,
+          "class_integrated": 0.5755466643099154,
+          "proper_length": 0.5755466643099155,
+          "known_anchor": 0.5755466643099155,
+          "observed": 0.5755466643099155
+        },
+        {
+          "full_triple": 0.5755466643099155,
+          "anchor_integrated": 0.5755466643099155,
+          "class_integrated": 0.5755466643099154,
+          "proper_length": 0.5755466643099155,
+          "known_anchor": 0.5755466643099155,
+          "observed": 0.5755466643099155
+        },
+        {
+          "full_triple": 0.5755466643099155,
+          "anchor_integrated": 0.5755466643099155,
+          "class_integrated": 0.5755466643099154,
+          "proper_length": 0.5755466643099155,
+          "known_anchor": 0.5755466643099155,
+          "observed": 0.5755466643099155
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.5755466643099155,
+          "anchor_integrated": 0.5755466643099155,
+          "class_integrated": 0.5755466643099154,
+          "proper_length": 0.5755466643099155,
+          "known_anchor": 0.5755466643099155,
+          "observed": 0.5755466643099155
+        },
+        {
+          "full_triple": 0.5755466643099155,
+          "anchor_integrated": 0.5755466643099155,
+          "class_integrated": 0.5755466643099154,
+          "proper_length": 0.5755466643099155,
+          "known_anchor": 0.5755466643099155,
+          "observed": 0.5755466643099155
+        },
+        {
+          "full_triple": 0.5755466643099155,
+          "anchor_integrated": 0.5755466643099155,
+          "class_integrated": 0.5755466643099154,
+          "proper_length": 0.5755466643099155,
+          "known_anchor": 0.5755466643099155,
+          "observed": 0.5755466643099155
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        },
+        {
+          "full_triple": 0.3453279985859493,
+          "anchor_integrated": 0.3453279985859493,
+          "class_integrated": 0.34532799858594926,
+          "proper_length": 0.3453279985859493,
+          "known_anchor": 0.3453279985859493,
+          "observed": 0.3453279985859493
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000002,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 1,
+    "direction": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 3.2914074865223317,
+        "anchor_integrated": 3.2914074865223317,
+        "class_integrated": 3.2914074865223317,
+        "proper_length": 3.2914074865223317,
+        "known_anchor": 3.2914074865223317,
+        "observed": 3.2914074865223317
+      },
+      "prefix_stratified": {
+        "full_triple": 3.2914074865223317,
+        "anchor_integrated": 3.2914074865223317,
+        "class_integrated": 3.2914074865223317,
+        "proper_length": 3.2914074865223317,
+        "known_anchor": 3.2914074865223317,
+        "observed": 3.2914074865223317
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.5485679144203882,
+          "anchor_integrated": 0.5485679144203882,
+          "class_integrated": 0.5485679144203882,
+          "proper_length": 0.5485679144203882,
+          "known_anchor": 0.5485679144203882,
+          "observed": 0.5485679144203882
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        },
+        {
+          "full_triple": 0.3291407486522329,
+          "anchor_integrated": 0.3291407486522329,
+          "class_integrated": 0.3291407486522329,
+          "proper_length": 0.3291407486522329,
+          "known_anchor": 0.329140748652233,
+          "observed": 0.3291407486522329
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 2,
+    "direction": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.5557839731492161,
+        "anchor_integrated": 0.5557839731492162,
+        "class_integrated": 0.5557839731492161,
+        "proper_length": 0.5557839731492162,
+        "known_anchor": 0.5557839731492162,
+        "observed": 0.5557839731492162
+      },
+      "prefix_stratified": {
+        "full_triple": 0.5557839731492161,
+        "anchor_integrated": 0.5557839731492162,
+        "class_integrated": 0.5557839731492161,
+        "proper_length": 0.5557839731492162,
+        "known_anchor": 0.5557839731492162,
+        "observed": 0.5557839731492162
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.092630662191536,
+          "anchor_integrated": 0.09263066219153603,
+          "class_integrated": 0.092630662191536,
+          "proper_length": 0.09263066219153603,
+          "known_anchor": 0.09263066219153601,
+          "observed": 0.09263066219153603
+        },
+        {
+          "full_triple": 0.092630662191536,
+          "anchor_integrated": 0.09263066219153603,
+          "class_integrated": 0.092630662191536,
+          "proper_length": 0.09263066219153603,
+          "known_anchor": 0.09263066219153601,
+          "observed": 0.09263066219153603
+        },
+        {
+          "full_triple": 0.092630662191536,
+          "anchor_integrated": 0.09263066219153603,
+          "class_integrated": 0.092630662191536,
+          "proper_length": 0.09263066219153603,
+          "known_anchor": 0.09263066219153601,
+          "observed": 0.09263066219153603
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.092630662191536,
+          "anchor_integrated": 0.09263066219153603,
+          "class_integrated": 0.092630662191536,
+          "proper_length": 0.09263066219153603,
+          "known_anchor": 0.09263066219153601,
+          "observed": 0.09263066219153603
+        },
+        {
+          "full_triple": 0.092630662191536,
+          "anchor_integrated": 0.09263066219153603,
+          "class_integrated": 0.092630662191536,
+          "proper_length": 0.09263066219153603,
+          "known_anchor": 0.09263066219153601,
+          "observed": 0.09263066219153603
+        },
+        {
+          "full_triple": 0.092630662191536,
+          "anchor_integrated": 0.09263066219153603,
+          "class_integrated": 0.092630662191536,
+          "proper_length": 0.09263066219153603,
+          "known_anchor": 0.09263066219153601,
+          "observed": 0.09263066219153603
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        },
+        {
+          "full_triple": 0.055578397314921604,
+          "anchor_integrated": 0.055578397314921625,
+          "class_integrated": 0.055578397314921604,
+          "proper_length": 0.055578397314921625,
+          "known_anchor": 0.055578397314921604,
+          "observed": 0.055578397314921625
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000002,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 3,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.21582999911621828,
+        "anchor_integrated": 0.21582999911621828,
+        "class_integrated": 0.21582999911621825,
+        "proper_length": 0.21582999911621828,
+        "known_anchor": 0.21582999911621828,
+        "observed": 0.21582999911621828
+      },
+      "prefix_stratified": {
+        "full_triple": 0.21582999911621828,
+        "anchor_integrated": 0.21582999911621828,
+        "class_integrated": 0.21582999911621825,
+        "proper_length": 0.21582999911621828,
+        "known_anchor": 0.21582999911621828,
+        "observed": 0.21582999911621828
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.03597166651936972,
+          "anchor_integrated": 0.03597166651936972,
+          "class_integrated": 0.03597166651936971,
+          "proper_length": 0.03597166651936972,
+          "known_anchor": 0.03597166651936972,
+          "observed": 0.03597166651936972
+        },
+        {
+          "full_triple": 0.03597166651936972,
+          "anchor_integrated": 0.03597166651936972,
+          "class_integrated": 0.03597166651936971,
+          "proper_length": 0.03597166651936972,
+          "known_anchor": 0.03597166651936972,
+          "observed": 0.03597166651936972
+        },
+        {
+          "full_triple": 0.03597166651936972,
+          "anchor_integrated": 0.03597166651936972,
+          "class_integrated": 0.03597166651936971,
+          "proper_length": 0.03597166651936972,
+          "known_anchor": 0.03597166651936972,
+          "observed": 0.03597166651936972
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.03597166651936972,
+          "anchor_integrated": 0.03597166651936972,
+          "class_integrated": 0.03597166651936971,
+          "proper_length": 0.03597166651936972,
+          "known_anchor": 0.03597166651936972,
+          "observed": 0.03597166651936972
+        },
+        {
+          "full_triple": 0.03597166651936972,
+          "anchor_integrated": 0.03597166651936972,
+          "class_integrated": 0.03597166651936971,
+          "proper_length": 0.03597166651936972,
+          "known_anchor": 0.03597166651936972,
+          "observed": 0.03597166651936972
+        },
+        {
+          "full_triple": 0.03597166651936972,
+          "anchor_integrated": 0.03597166651936972,
+          "class_integrated": 0.03597166651936971,
+          "proper_length": 0.03597166651936972,
+          "known_anchor": 0.03597166651936972,
+          "observed": 0.03597166651936972
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        },
+        {
+          "full_triple": 0.021582999911621832,
+          "anchor_integrated": 0.021582999911621832,
+          "class_integrated": 0.02158299991162183,
+          "proper_length": 0.021582999911621832,
+          "known_anchor": 0.021582999911621832,
+          "observed": 0.021582999911621832
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000002,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 4,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.0,
+        "anchor_integrated": 0.0,
+        "class_integrated": 0.0,
+        "proper_length": 0.0,
+        "known_anchor": 0.0,
+        "observed": 0.0
+      },
+      "prefix_stratified": {
+        "full_triple": 0.0,
+        "anchor_integrated": 0.0,
+        "class_integrated": 0.0,
+        "proper_length": 0.0,
+        "known_anchor": 0.0,
+        "observed": 0.0
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": null,
+    "status": "INCONCLUSIVE_NONPOSITIVE"
+  },
+  {
+    "direction_index": 5,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.23437500000000022,
+        "anchor_integrated": 4.748805515486509e-16,
+        "class_integrated": 4.748805515486509e-16,
+        "proper_length": 4.748805515486509e-16,
+        "known_anchor": 0.23437500000000022,
+        "observed": 4.748805515486509e-16
+      },
+      "prefix_stratified": {
+        "full_triple": 0.23437500000000022,
+        "anchor_integrated": 4.748805515486509e-16,
+        "class_integrated": 4.748805515486509e-16,
+        "proper_length": 4.748805515486509e-16,
+        "known_anchor": 0.23437500000000022,
+        "observed": 4.748805515486509e-16
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.03906250000000007,
+          "anchor_integrated": 7.914675859144182e-17,
+          "class_integrated": 7.914675859144182e-17,
+          "proper_length": 7.914675859144182e-17,
+          "known_anchor": 0.03906250000000007,
+          "observed": 7.914675859144182e-17
+        },
+        {
+          "full_triple": 0.03906250000000007,
+          "anchor_integrated": 7.914675859144182e-17,
+          "class_integrated": 7.914675859144182e-17,
+          "proper_length": 7.914675859144182e-17,
+          "known_anchor": 0.03906250000000007,
+          "observed": 7.914675859144182e-17
+        },
+        {
+          "full_triple": 0.03906250000000007,
+          "anchor_integrated": 7.914675859144182e-17,
+          "class_integrated": 7.914675859144182e-17,
+          "proper_length": 7.914675859144182e-17,
+          "known_anchor": 0.03906250000000007,
+          "observed": 7.914675859144182e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.03906250000000007,
+          "anchor_integrated": 7.914675859144182e-17,
+          "class_integrated": 7.914675859144182e-17,
+          "proper_length": 7.914675859144182e-17,
+          "known_anchor": 0.03906250000000007,
+          "observed": 7.914675859144182e-17
+        },
+        {
+          "full_triple": 0.03906250000000007,
+          "anchor_integrated": 7.914675859144182e-17,
+          "class_integrated": 7.914675859144182e-17,
+          "proper_length": 7.914675859144182e-17,
+          "known_anchor": 0.03906250000000007,
+          "observed": 7.914675859144182e-17
+        },
+        {
+          "full_triple": 0.03906250000000007,
+          "anchor_integrated": 7.914675859144182e-17,
+          "class_integrated": 7.914675859144182e-17,
+          "proper_length": 7.914675859144182e-17,
+          "known_anchor": 0.03906250000000007,
+          "observed": 7.914675859144182e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        },
+        {
+          "full_triple": 0.02343750000000004,
+          "anchor_integrated": 4.7488055154865094e-17,
+          "class_integrated": 4.7488055154865094e-17,
+          "proper_length": 4.7488055154865094e-17,
+          "known_anchor": 0.02343750000000004,
+          "observed": 4.7488055154865094e-17
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 6,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.1655391625571907e-16,
+        "anchor_integrated": 5.702990735814844e-17,
+        "class_integrated": 5.702990735814844e-17,
+        "proper_length": 5.702990735814844e-17,
+        "known_anchor": 1.1655391625571907e-16,
+        "observed": 5.702990735814844e-17
+      },
+      "prefix_stratified": {
+        "full_triple": 1.1655391625571907e-16,
+        "anchor_integrated": 5.702990735814844e-17,
+        "class_integrated": 5.702990735814844e-17,
+        "proper_length": 5.702990735814844e-17,
+        "known_anchor": 1.1655391625571907e-16,
+        "observed": 5.702990735814844e-17
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 1.9425652709286507e-17,
+          "anchor_integrated": 9.504984559691409e-18,
+          "class_integrated": 9.504984559691409e-18,
+          "proper_length": 9.504984559691407e-18,
+          "known_anchor": 1.9425652709286507e-17,
+          "observed": 9.504984559691407e-18
+        },
+        {
+          "full_triple": 1.9425652709286507e-17,
+          "anchor_integrated": 9.504984559691409e-18,
+          "class_integrated": 9.504984559691409e-18,
+          "proper_length": 9.504984559691407e-18,
+          "known_anchor": 1.9425652709286507e-17,
+          "observed": 9.504984559691407e-18
+        },
+        {
+          "full_triple": 1.9425652709286507e-17,
+          "anchor_integrated": 9.504984559691409e-18,
+          "class_integrated": 9.504984559691409e-18,
+          "proper_length": 9.504984559691407e-18,
+          "known_anchor": 1.9425652709286507e-17,
+          "observed": 9.504984559691407e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 1.9425652709286507e-17,
+          "anchor_integrated": 9.504984559691409e-18,
+          "class_integrated": 9.504984559691409e-18,
+          "proper_length": 9.504984559691407e-18,
+          "known_anchor": 1.9425652709286507e-17,
+          "observed": 9.504984559691407e-18
+        },
+        {
+          "full_triple": 1.9425652709286507e-17,
+          "anchor_integrated": 9.504984559691409e-18,
+          "class_integrated": 9.504984559691409e-18,
+          "proper_length": 9.504984559691407e-18,
+          "known_anchor": 1.9425652709286507e-17,
+          "observed": 9.504984559691407e-18
+        },
+        {
+          "full_triple": 1.9425652709286507e-17,
+          "anchor_integrated": 9.504984559691409e-18,
+          "class_integrated": 9.504984559691409e-18,
+          "proper_length": 9.504984559691407e-18,
+          "known_anchor": 1.9425652709286507e-17,
+          "observed": 9.504984559691407e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        },
+        {
+          "full_triple": 1.1655391625571903e-17,
+          "anchor_integrated": 5.7029907358148464e-18,
+          "class_integrated": 5.7029907358148464e-18,
+          "proper_length": 5.702990735814845e-18,
+          "known_anchor": 1.1655391625571903e-17,
+          "observed": 5.702990735814845e-18
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 7,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.014648437500000014,
+        "anchor_integrated": 2.9680034471790684e-17,
+        "class_integrated": 2.9680034471790684e-17,
+        "proper_length": 2.9680034471790684e-17,
+        "known_anchor": 0.014648437500000014,
+        "observed": 2.9680034471790684e-17
+      },
+      "prefix_stratified": {
+        "full_triple": 0.014648437500000014,
+        "anchor_integrated": 2.9680034471790684e-17,
+        "class_integrated": 2.9680034471790684e-17,
+        "proper_length": 2.9680034471790684e-17,
+        "known_anchor": 0.014648437500000014,
+        "observed": 2.9680034471790684e-17
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.0024414062500000043,
+          "anchor_integrated": 4.946672411965114e-18,
+          "class_integrated": 4.946672411965114e-18,
+          "proper_length": 4.946672411965114e-18,
+          "known_anchor": 0.0024414062500000043,
+          "observed": 4.946672411965114e-18
+        },
+        {
+          "full_triple": 0.0024414062500000043,
+          "anchor_integrated": 4.946672411965114e-18,
+          "class_integrated": 4.946672411965114e-18,
+          "proper_length": 4.946672411965114e-18,
+          "known_anchor": 0.0024414062500000043,
+          "observed": 4.946672411965114e-18
+        },
+        {
+          "full_triple": 0.0024414062500000043,
+          "anchor_integrated": 4.946672411965114e-18,
+          "class_integrated": 4.946672411965114e-18,
+          "proper_length": 4.946672411965114e-18,
+          "known_anchor": 0.0024414062500000043,
+          "observed": 4.946672411965114e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.0024414062500000043,
+          "anchor_integrated": 4.946672411965114e-18,
+          "class_integrated": 4.946672411965114e-18,
+          "proper_length": 4.946672411965114e-18,
+          "known_anchor": 0.0024414062500000043,
+          "observed": 4.946672411965114e-18
+        },
+        {
+          "full_triple": 0.0024414062500000043,
+          "anchor_integrated": 4.946672411965114e-18,
+          "class_integrated": 4.946672411965114e-18,
+          "proper_length": 4.946672411965114e-18,
+          "known_anchor": 0.0024414062500000043,
+          "observed": 4.946672411965114e-18
+        },
+        {
+          "full_triple": 0.0024414062500000043,
+          "anchor_integrated": 4.946672411965114e-18,
+          "class_integrated": 4.946672411965114e-18,
+          "proper_length": 4.946672411965114e-18,
+          "known_anchor": 0.0024414062500000043,
+          "observed": 4.946672411965114e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        },
+        {
+          "full_triple": 0.0014648437500000026,
+          "anchor_integrated": 2.9680034471790684e-18,
+          "class_integrated": 2.9680034471790684e-18,
+          "proper_length": 2.9680034471790684e-18,
+          "known_anchor": 0.0014648437500000026,
+          "observed": 2.9680034471790684e-18
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 8,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 5.557839731492157,
+        "anchor_integrated": 5.557839731492157,
+        "class_integrated": 5.557839731492157,
+        "proper_length": 5.557839731492157,
+        "known_anchor": 5.557839731492157,
+        "observed": 5.557839731492157
+      },
+      "prefix_stratified": {
+        "full_triple": 5.557839731492157,
+        "anchor_integrated": 5.557839731492157,
+        "class_integrated": 5.557839731492157,
+        "proper_length": 5.557839731492157,
+        "known_anchor": 5.557839731492157,
+        "observed": 5.557839731492157
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.9263066219153603,
+          "anchor_integrated": 0.9263066219153603,
+          "class_integrated": 0.9263066219153603,
+          "proper_length": 0.9263066219153602,
+          "known_anchor": 0.9263066219153602,
+          "observed": 0.9263066219153602
+        },
+        {
+          "full_triple": 0.9263066219153603,
+          "anchor_integrated": 0.9263066219153603,
+          "class_integrated": 0.9263066219153603,
+          "proper_length": 0.9263066219153602,
+          "known_anchor": 0.9263066219153602,
+          "observed": 0.9263066219153602
+        },
+        {
+          "full_triple": 0.9263066219153603,
+          "anchor_integrated": 0.9263066219153603,
+          "class_integrated": 0.9263066219153603,
+          "proper_length": 0.9263066219153602,
+          "known_anchor": 0.9263066219153602,
+          "observed": 0.9263066219153602
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.9263066219153603,
+          "anchor_integrated": 0.9263066219153603,
+          "class_integrated": 0.9263066219153603,
+          "proper_length": 0.9263066219153602,
+          "known_anchor": 0.9263066219153602,
+          "observed": 0.9263066219153602
+        },
+        {
+          "full_triple": 0.9263066219153603,
+          "anchor_integrated": 0.9263066219153603,
+          "class_integrated": 0.9263066219153603,
+          "proper_length": 0.9263066219153602,
+          "known_anchor": 0.9263066219153602,
+          "observed": 0.9263066219153602
+        },
+        {
+          "full_triple": 0.9263066219153603,
+          "anchor_integrated": 0.9263066219153603,
+          "class_integrated": 0.9263066219153603,
+          "proper_length": 0.9263066219153602,
+          "known_anchor": 0.9263066219153602,
+          "observed": 0.9263066219153602
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        },
+        {
+          "full_triple": 0.5557839731492161,
+          "anchor_integrated": 0.5557839731492161,
+          "class_integrated": 0.5557839731492161,
+          "proper_length": 0.555783973149216,
+          "known_anchor": 0.555783973149216,
+          "observed": 0.555783973149216
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 9,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.13841125620807582,
+        "anchor_integrated": 0.13841125620807573,
+        "class_integrated": 0.13841125620807523,
+        "proper_length": 0.13841125620807573,
+        "known_anchor": 0.1384112562080761,
+        "observed": 0.13841125620807573
+      },
+      "prefix_stratified": {
+        "full_triple": 0.13841125620807582,
+        "anchor_integrated": 0.13841125620807573,
+        "class_integrated": 0.13841125620807523,
+        "proper_length": 0.13841125620807573,
+        "known_anchor": 0.1384112562080761,
+        "observed": 0.13841125620807573
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000036,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 10,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 4.214160392635658,
+        "anchor_integrated": 4.214160392635658,
+        "class_integrated": 4.214160392635658,
+        "proper_length": 4.214160392635658,
+        "known_anchor": 4.214160392635658,
+        "observed": 4.214160392635658
+      },
+      "prefix_stratified": {
+        "full_triple": 4.214160392635658,
+        "anchor_integrated": 4.214160392635658,
+        "class_integrated": 4.214160392635658,
+        "proper_length": 4.214160392635658,
+        "known_anchor": 4.214160392635658,
+        "observed": 4.214160392635658
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 11,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.6528205710516979,
+        "anchor_integrated": 0.6528205710516994,
+        "class_integrated": 0.6528205710516981,
+        "proper_length": 0.6528205710516994,
+        "known_anchor": 0.6528205710516981,
+        "observed": 0.6528205710516994
+      },
+      "prefix_stratified": {
+        "full_triple": 0.6528205710516979,
+        "anchor_integrated": 0.6528205710516994,
+        "class_integrated": 0.6528205710516981,
+        "proper_length": 0.6528205710516994,
+        "known_anchor": 0.6528205710516981,
+        "observed": 0.6528205710516994
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000024,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 12,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.5089339049742186,
+        "anchor_integrated": 0.5089339049742201,
+        "class_integrated": 0.5089339049742193,
+        "proper_length": 0.5089339049742201,
+        "known_anchor": 0.5089339049742193,
+        "observed": 0.5089339049742201
+      },
+      "prefix_stratified": {
+        "full_triple": 0.5089339049742186,
+        "anchor_integrated": 0.5089339049742201,
+        "class_integrated": 0.5089339049742193,
+        "proper_length": 0.5089339049742201,
+        "known_anchor": 0.5089339049742193,
+        "observed": 0.5089339049742201
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000029,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 13,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 4.35804705871314,
+        "anchor_integrated": 4.35804705871314,
+        "class_integrated": 4.358047058713136,
+        "proper_length": 4.35804705871314,
+        "known_anchor": 4.35804705871314,
+        "observed": 4.35804705871314
+      },
+      "prefix_stratified": {
+        "full_triple": 4.35804705871314,
+        "anchor_integrated": 4.35804705871314,
+        "class_integrated": 4.358047058713136,
+        "proper_length": 4.35804705871314,
+        "known_anchor": 4.35804705871314,
+        "observed": 4.35804705871314
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.000000000000001,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 14,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 3.9875244099469898,
+        "anchor_integrated": 3.9875244099469986,
+        "class_integrated": 3.9875244099469898,
+        "proper_length": 3.9875244099469986,
+        "known_anchor": 3.9875244099469898,
+        "observed": 3.9875244099469986
+      },
+      "prefix_stratified": {
+        "full_triple": 3.9875244099469898,
+        "anchor_integrated": 3.9875244099469986,
+        "class_integrated": 3.9875244099469898,
+        "proper_length": 3.9875244099469986,
+        "known_anchor": 3.9875244099469898,
+        "observed": 3.9875244099469986
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.6645874016578324,
+          "anchor_integrated": 0.6645874016578325,
+          "class_integrated": 0.6645874016578324,
+          "proper_length": 0.6645874016578325,
+          "known_anchor": 0.6645874016578324,
+          "observed": 0.6645874016578325
+        },
+        {
+          "full_triple": 0.6645874016578324,
+          "anchor_integrated": 0.6645874016578325,
+          "class_integrated": 0.6645874016578324,
+          "proper_length": 0.6645874016578325,
+          "known_anchor": 0.6645874016578324,
+          "observed": 0.6645874016578325
+        },
+        {
+          "full_triple": 0.6645874016578324,
+          "anchor_integrated": 0.6645874016578325,
+          "class_integrated": 0.6645874016578324,
+          "proper_length": 0.6645874016578325,
+          "known_anchor": 0.6645874016578324,
+          "observed": 0.6645874016578325
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.6645874016578324,
+          "anchor_integrated": 0.6645874016578325,
+          "class_integrated": 0.6645874016578324,
+          "proper_length": 0.6645874016578325,
+          "known_anchor": 0.6645874016578324,
+          "observed": 0.6645874016578325
+        },
+        {
+          "full_triple": 0.6645874016578324,
+          "anchor_integrated": 0.6645874016578325,
+          "class_integrated": 0.6645874016578324,
+          "proper_length": 0.6645874016578325,
+          "known_anchor": 0.6645874016578324,
+          "observed": 0.6645874016578325
+        },
+        {
+          "full_triple": 0.6645874016578324,
+          "anchor_integrated": 0.6645874016578325,
+          "class_integrated": 0.6645874016578324,
+          "proper_length": 0.6645874016578325,
+          "known_anchor": 0.6645874016578324,
+          "observed": 0.6645874016578325
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        },
+        {
+          "full_triple": 0.3987524409946994,
+          "anchor_integrated": 0.39875244099469953,
+          "class_integrated": 0.3987524409946994,
+          "proper_length": 0.39875244099469953,
+          "known_anchor": 0.3987524409946994,
+          "observed": 0.39875244099469953
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000022,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 15,
+    "direction": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.9119737353959991,
+        "anchor_integrated": 1.9119737353959991,
+        "class_integrated": 1.9119737353959991,
+        "proper_length": 1.9119737353959991,
+        "known_anchor": 1.9119737353959991,
+        "observed": 1.9119737353959991
+      },
+      "prefix_stratified": {
+        "full_triple": 1.9119737353959991,
+        "anchor_integrated": 1.9119737353959991,
+        "class_integrated": 1.9119737353959991,
+        "proper_length": 1.9119737353959991,
+        "known_anchor": 1.9119737353959991,
+        "observed": 1.9119737353959991
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.3186622892326664,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326663,
+          "known_anchor": 0.3186622892326663,
+          "observed": 0.3186622892326663
+        },
+        {
+          "full_triple": 0.3186622892326664,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326663,
+          "known_anchor": 0.3186622892326663,
+          "observed": 0.3186622892326663
+        },
+        {
+          "full_triple": 0.3186622892326664,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326663,
+          "known_anchor": 0.3186622892326663,
+          "observed": 0.3186622892326663
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.3186622892326664,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326663,
+          "known_anchor": 0.3186622892326663,
+          "observed": 0.3186622892326663
+        },
+        {
+          "full_triple": 0.3186622892326664,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326663,
+          "known_anchor": 0.3186622892326663,
+          "observed": 0.3186622892326663
+        },
+        {
+          "full_triple": 0.3186622892326664,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326663,
+          "known_anchor": 0.3186622892326663,
+          "observed": 0.3186622892326663
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395998,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 16,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.6528205710516979,
+        "anchor_integrated": 0.6528205710516994,
+        "class_integrated": 0.6528205710516981,
+        "proper_length": 0.6528205710516994,
+        "known_anchor": 0.6528205710516981,
+        "observed": 0.6528205710516994
+      },
+      "prefix_stratified": {
+        "full_triple": 0.6528205710516979,
+        "anchor_integrated": 0.6528205710516994,
+        "class_integrated": 0.6528205710516981,
+        "proper_length": 0.6528205710516994,
+        "known_anchor": 0.6528205710516981,
+        "observed": 0.6528205710516994
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.10880342850861638,
+          "anchor_integrated": 0.10880342850861648,
+          "class_integrated": 0.10880342850861643,
+          "proper_length": 0.10880342850861648,
+          "known_anchor": 0.10880342850861643,
+          "observed": 0.10880342850861648
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        },
+        {
+          "full_triple": 0.06528205710516982,
+          "anchor_integrated": 0.06528205710516989,
+          "class_integrated": 0.06528205710516985,
+          "proper_length": 0.06528205710516989,
+          "known_anchor": 0.06528205710516985,
+          "observed": 0.06528205710516989
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000024,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 17,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.5089339049742186,
+        "anchor_integrated": 0.5089339049742201,
+        "class_integrated": 0.5089339049742193,
+        "proper_length": 0.5089339049742201,
+        "known_anchor": 0.5089339049742193,
+        "observed": 0.5089339049742201
+      },
+      "prefix_stratified": {
+        "full_triple": 0.5089339049742186,
+        "anchor_integrated": 0.5089339049742201,
+        "class_integrated": 0.5089339049742193,
+        "proper_length": 0.5089339049742201,
+        "known_anchor": 0.5089339049742193,
+        "observed": 0.5089339049742201
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.0848223174957032,
+          "anchor_integrated": 0.0848223174957033,
+          "class_integrated": 0.08482231749570325,
+          "proper_length": 0.0848223174957033,
+          "known_anchor": 0.08482231749570325,
+          "observed": 0.0848223174957033
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        },
+        {
+          "full_triple": 0.05089339049742192,
+          "anchor_integrated": 0.05089339049742199,
+          "class_integrated": 0.05089339049742194,
+          "proper_length": 0.05089339049742199,
+          "known_anchor": 0.05089339049742194,
+          "observed": 0.05089339049742199
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000029,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 18,
+    "direction": [
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 2.1637754010315864,
+        "anchor_integrated": 2.1637754010315864,
+        "class_integrated": 2.163775401031586,
+        "proper_length": 2.1637754010315864,
+        "known_anchor": 2.1637754010315864,
+        "observed": 2.1637754010315864
+      },
+      "prefix_stratified": {
+        "full_triple": 2.1637754010315864,
+        "anchor_integrated": 2.1637754010315864,
+        "class_integrated": 2.163775401031586,
+        "proper_length": 2.1637754010315864,
+        "known_anchor": 2.1637754010315864,
+        "observed": 2.1637754010315864
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.3606292335052644,
+          "anchor_integrated": 0.3606292335052644,
+          "class_integrated": 0.36062923350526427,
+          "proper_length": 0.3606292335052644,
+          "known_anchor": 0.3606292335052644,
+          "observed": 0.3606292335052644
+        },
+        {
+          "full_triple": 0.3606292335052644,
+          "anchor_integrated": 0.3606292335052644,
+          "class_integrated": 0.36062923350526427,
+          "proper_length": 0.3606292335052644,
+          "known_anchor": 0.3606292335052644,
+          "observed": 0.3606292335052644
+        },
+        {
+          "full_triple": 0.3606292335052644,
+          "anchor_integrated": 0.3606292335052644,
+          "class_integrated": 0.36062923350526427,
+          "proper_length": 0.3606292335052644,
+          "known_anchor": 0.3606292335052644,
+          "observed": 0.3606292335052644
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.3606292335052644,
+          "anchor_integrated": 0.3606292335052644,
+          "class_integrated": 0.36062923350526427,
+          "proper_length": 0.3606292335052644,
+          "known_anchor": 0.3606292335052644,
+          "observed": 0.3606292335052644
+        },
+        {
+          "full_triple": 0.3606292335052644,
+          "anchor_integrated": 0.3606292335052644,
+          "class_integrated": 0.36062923350526427,
+          "proper_length": 0.3606292335052644,
+          "known_anchor": 0.3606292335052644,
+          "observed": 0.3606292335052644
+        },
+        {
+          "full_triple": 0.3606292335052644,
+          "anchor_integrated": 0.3606292335052644,
+          "class_integrated": 0.36062923350526427,
+          "proper_length": 0.3606292335052644,
+          "known_anchor": 0.3606292335052644,
+          "observed": 0.3606292335052644
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        },
+        {
+          "full_triple": 0.21637754010315863,
+          "anchor_integrated": 0.21637754010315863,
+          "class_integrated": 0.2163775401031586,
+          "proper_length": 0.21637754010315863,
+          "known_anchor": 0.21637754010315863,
+          "observed": 0.21637754010315863
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000002,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 19,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.13841125620807582,
+        "anchor_integrated": 0.13841125620807573,
+        "class_integrated": 0.13841125620807523,
+        "proper_length": 0.13841125620807573,
+        "known_anchor": 0.1384112562080761,
+        "observed": 0.13841125620807573
+      },
+      "prefix_stratified": {
+        "full_triple": 0.13841125620807582,
+        "anchor_integrated": 0.13841125620807573,
+        "class_integrated": 0.13841125620807523,
+        "proper_length": 0.13841125620807573,
+        "known_anchor": 0.1384112562080761,
+        "observed": 0.13841125620807573
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.02306854270134597,
+          "anchor_integrated": 0.023068542701345944,
+          "class_integrated": 0.02306854270134587,
+          "proper_length": 0.023068542701345944,
+          "known_anchor": 0.02306854270134601,
+          "observed": 0.023068542701345944
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        },
+        {
+          "full_triple": 0.01384112562080758,
+          "anchor_integrated": 0.013841125620807564,
+          "class_integrated": 0.013841125620807523,
+          "proper_length": 0.013841125620807564,
+          "known_anchor": 0.013841125620807606,
+          "observed": 0.013841125620807564
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000036,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 20,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 4.35804705871314,
+        "anchor_integrated": 4.35804705871314,
+        "class_integrated": 4.358047058713136,
+        "proper_length": 4.35804705871314,
+        "known_anchor": 4.35804705871314,
+        "observed": 4.35804705871314
+      },
+      "prefix_stratified": {
+        "full_triple": 4.35804705871314,
+        "anchor_integrated": 4.35804705871314,
+        "class_integrated": 4.358047058713136,
+        "proper_length": 4.35804705871314,
+        "known_anchor": 4.35804705871314,
+        "observed": 4.35804705871314
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.7263411764521899,
+          "anchor_integrated": 0.7263411764521899,
+          "class_integrated": 0.7263411764521898,
+          "proper_length": 0.7263411764521899,
+          "known_anchor": 0.7263411764521899,
+          "observed": 0.7263411764521899
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        },
+        {
+          "full_triple": 0.4358047058713139,
+          "anchor_integrated": 0.4358047058713139,
+          "class_integrated": 0.4358047058713138,
+          "proper_length": 0.4358047058713139,
+          "known_anchor": 0.4358047058713139,
+          "observed": 0.4358047058713139
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.000000000000001,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 21,
+    "direction": [
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 2.019888734954109,
+        "anchor_integrated": 2.019888734954109,
+        "class_integrated": 2.0198887349541046,
+        "proper_length": 2.019888734954109,
+        "known_anchor": 2.019888734954109,
+        "observed": 2.019888734954109
+      },
+      "prefix_stratified": {
+        "full_triple": 2.019888734954109,
+        "anchor_integrated": 2.019888734954109,
+        "class_integrated": 2.0198887349541046,
+        "proper_length": 2.019888734954109,
+        "known_anchor": 2.019888734954109,
+        "observed": 2.019888734954109
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.3366481224923512,
+          "anchor_integrated": 0.3366481224923512,
+          "class_integrated": 0.33664812249235115,
+          "proper_length": 0.3366481224923512,
+          "known_anchor": 0.3366481224923512,
+          "observed": 0.3366481224923512
+        },
+        {
+          "full_triple": 0.3366481224923512,
+          "anchor_integrated": 0.3366481224923512,
+          "class_integrated": 0.33664812249235115,
+          "proper_length": 0.3366481224923512,
+          "known_anchor": 0.3366481224923512,
+          "observed": 0.3366481224923512
+        },
+        {
+          "full_triple": 0.3366481224923512,
+          "anchor_integrated": 0.3366481224923512,
+          "class_integrated": 0.33664812249235115,
+          "proper_length": 0.3366481224923512,
+          "known_anchor": 0.3366481224923512,
+          "observed": 0.3366481224923512
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.3366481224923512,
+          "anchor_integrated": 0.3366481224923512,
+          "class_integrated": 0.33664812249235115,
+          "proper_length": 0.3366481224923512,
+          "known_anchor": 0.3366481224923512,
+          "observed": 0.3366481224923512
+        },
+        {
+          "full_triple": 0.3366481224923512,
+          "anchor_integrated": 0.3366481224923512,
+          "class_integrated": 0.33664812249235115,
+          "proper_length": 0.3366481224923512,
+          "known_anchor": 0.3366481224923512,
+          "observed": 0.3366481224923512
+        },
+        {
+          "full_triple": 0.3366481224923512,
+          "anchor_integrated": 0.3366481224923512,
+          "class_integrated": 0.33664812249235115,
+          "proper_length": 0.3366481224923512,
+          "known_anchor": 0.3366481224923512,
+          "observed": 0.3366481224923512
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        },
+        {
+          "full_triple": 0.20198887349541073,
+          "anchor_integrated": 0.20198887349541073,
+          "class_integrated": 0.20198887349541067,
+          "proper_length": 0.20198887349541073,
+          "known_anchor": 0.20198887349541073,
+          "observed": 0.20198887349541073
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0000000000000022,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 22,
+    "direction": [
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.9119737353959994,
+        "anchor_integrated": 1.9119737353959991,
+        "class_integrated": 1.9119737353959991,
+        "proper_length": 1.9119737353959991,
+        "known_anchor": 1.9119737353959991,
+        "observed": 1.9119737353959991
+      },
+      "prefix_stratified": {
+        "full_triple": 1.9119737353959994,
+        "anchor_integrated": 1.9119737353959991,
+        "class_integrated": 1.9119737353959991,
+        "proper_length": 1.9119737353959991,
+        "known_anchor": 1.9119737353959991,
+        "observed": 1.9119737353959991
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.31866228923266643,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326664,
+          "known_anchor": 0.3186622892326664,
+          "observed": 0.3186622892326664
+        },
+        {
+          "full_triple": 0.31866228923266643,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326664,
+          "known_anchor": 0.3186622892326664,
+          "observed": 0.3186622892326664
+        },
+        {
+          "full_triple": 0.31866228923266643,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326664,
+          "known_anchor": 0.3186622892326664,
+          "observed": 0.3186622892326664
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.31866228923266643,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326664,
+          "known_anchor": 0.3186622892326664,
+          "observed": 0.3186622892326664
+        },
+        {
+          "full_triple": 0.31866228923266643,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326664,
+          "known_anchor": 0.3186622892326664,
+          "observed": 0.3186622892326664
+        },
+        {
+          "full_triple": 0.31866228923266643,
+          "anchor_integrated": 0.3186622892326663,
+          "class_integrated": 0.3186622892326663,
+          "proper_length": 0.3186622892326664,
+          "known_anchor": 0.3186622892326664,
+          "observed": 0.3186622892326664
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        },
+        {
+          "full_triple": 0.1911973735395999,
+          "anchor_integrated": 0.1911973735395998,
+          "class_integrated": 0.1911973735395998,
+          "proper_length": 0.1911973735395998,
+          "known_anchor": 0.1911973735395998,
+          "observed": 0.1911973735395998
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 23,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 4.214160392635658,
+        "anchor_integrated": 4.214160392635658,
+        "class_integrated": 4.214160392635658,
+        "proper_length": 4.214160392635658,
+        "known_anchor": 4.214160392635658,
+        "observed": 4.214160392635658
+      },
+      "prefix_stratified": {
+        "full_triple": 4.214160392635658,
+        "anchor_integrated": 4.214160392635658,
+        "class_integrated": 4.214160392635658,
+        "proper_length": 4.214160392635658,
+        "known_anchor": 4.214160392635658,
+        "observed": 4.214160392635658
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.7023600654392766,
+          "anchor_integrated": 0.7023600654392768,
+          "class_integrated": 0.7023600654392766,
+          "proper_length": 0.7023600654392766,
+          "known_anchor": 0.7023600654392766,
+          "observed": 0.7023600654392766
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        },
+        {
+          "full_triple": 0.421416039263566,
+          "anchor_integrated": 0.42141603926356613,
+          "class_integrated": 0.42141603926356597,
+          "proper_length": 0.421416039263566,
+          "known_anchor": 0.421416039263566,
+          "observed": 0.421416039263566
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 24,
+    "direction": [
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.6853377527073314,
+        "anchor_integrated": 1.6853377527073314,
+        "class_integrated": 1.6853377527073314,
+        "proper_length": 1.6853377527073314,
+        "known_anchor": 1.6853377527073314,
+        "observed": 1.6853377527073314
+      },
+      "prefix_stratified": {
+        "full_triple": 1.6853377527073314,
+        "anchor_integrated": 1.6853377527073314,
+        "class_integrated": 1.6853377527073314,
+        "proper_length": 1.6853377527073314,
+        "known_anchor": 1.6853377527073314,
+        "observed": 1.6853377527073314
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.2808896254512221,
+          "anchor_integrated": 0.28088962545122215,
+          "class_integrated": 0.28088962545122215,
+          "proper_length": 0.2808896254512221,
+          "known_anchor": 0.2808896254512221,
+          "observed": 0.2808896254512221
+        },
+        {
+          "full_triple": 0.2808896254512221,
+          "anchor_integrated": 0.28088962545122215,
+          "class_integrated": 0.28088962545122215,
+          "proper_length": 0.2808896254512221,
+          "known_anchor": 0.2808896254512221,
+          "observed": 0.2808896254512221
+        },
+        {
+          "full_triple": 0.2808896254512221,
+          "anchor_integrated": 0.28088962545122215,
+          "class_integrated": 0.28088962545122215,
+          "proper_length": 0.2808896254512221,
+          "known_anchor": 0.2808896254512221,
+          "observed": 0.2808896254512221
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.2808896254512221,
+          "anchor_integrated": 0.28088962545122215,
+          "class_integrated": 0.28088962545122215,
+          "proper_length": 0.2808896254512221,
+          "known_anchor": 0.2808896254512221,
+          "observed": 0.2808896254512221
+        },
+        {
+          "full_triple": 0.2808896254512221,
+          "anchor_integrated": 0.28088962545122215,
+          "class_integrated": 0.28088962545122215,
+          "proper_length": 0.2808896254512221,
+          "known_anchor": 0.2808896254512221,
+          "observed": 0.2808896254512221
+        },
+        {
+          "full_triple": 0.2808896254512221,
+          "anchor_integrated": 0.28088962545122215,
+          "class_integrated": 0.28088962545122215,
+          "proper_length": 0.2808896254512221,
+          "known_anchor": 0.2808896254512221,
+          "observed": 0.2808896254512221
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        },
+        {
+          "full_triple": 0.1685337752707333,
+          "anchor_integrated": 0.1685337752707333,
+          "class_integrated": 0.1685337752707333,
+          "proper_length": 0.1685337752707333,
+          "known_anchor": 0.1685337752707333,
+          "observed": 0.1685337752707333
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  }
+]

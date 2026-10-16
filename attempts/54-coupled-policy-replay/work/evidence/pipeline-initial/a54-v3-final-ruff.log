@@ -1,0 +1,29 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> attempts/54-coupled-policy-replay/work/test_length_readout.py:3:1
+   |
+ 1 |   """Independent original-word/anchor/gate enumeration, no old neural heads."""
+ 2 |
+ 3 | / import itertools
+ 4 | | import math
+ 5 | | import unittest
+ 6 | | from collections import defaultdict
+ 7 | | from fractions import Fraction as F
+ 8 | |
+ 9 | | import numpy as np
+10 | |
+11 | | from .actor_coordinates import actor_vector, state_features
+12 | | from .length_readout import NumericSuffix, readout
+13 | | from .query_support import support
+14 | | from .prefix_floating import PrefixFloatPlan, PrefixPlanner
+   | |___________________________________________________________^
+help: Organize imports
+   |
+12 | from .length_readout import NumericSuffix, readout
+13 + from .prefix_floating import PrefixFloatPlan, PrefixPlanner
+14 | from .query_support import support
+   - from .prefix_floating import PrefixFloatPlan, PrefixPlanner
+15 |
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

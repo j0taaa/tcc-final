@@ -1,0 +1,11 @@
+test_actual_forced_grammar_joint_and_strict_class_projection (attempts.54-coupled-policy-replay.work.test_coupling.CoupledPolicyTests.test_actual_forced_grammar_joint_and_strict_class_projection) ... ok
+test_all_small_maximal_tables_marginals_and_rejection_law (attempts.54-coupled-policy-replay.work.test_coupling.CoupledPolicyTests.test_all_small_maximal_tables_marginals_and_rejection_law) ... ok
+test_local_total_variation_identity_by_exact_linear_laws (attempts.54-coupled-policy-replay.work.test_coupling.CoupledPolicyTests.test_local_total_variation_identity_by_exact_linear_laws) ... ok
+test_nonfaithful_lookahead_and_semantic_variance_limits (attempts.54-coupled-policy-replay.work.test_coupling.CoupledPolicyTests.test_nonfaithful_lookahead_and_semantic_variance_limits) ... ok
+test_remaining_work_weight_matches_shared_prefix_derivative (attempts.54-coupled-policy-replay.work.test_coupling.CoupledPolicyTests.test_remaining_work_weight_matches_shared_prefix_derivative) ... ok
+test_shared_prefix_work_against_every_binary_transport_vertex (attempts.54-coupled-policy-replay.work.test_coupling.CoupledPolicyTests.test_shared_prefix_work_against_every_binary_transport_vertex) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.089s
+
+OK

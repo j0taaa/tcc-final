@@ -4446,6 +4446,13 @@
           ]
         }
       ]
+    },
+    {
+      "id": "54-coupled-policy-replay",
+      "title": "Acoplamento de políticas de reveal e reutilização de prefixos neurais",
+      "conclusion": "Written f61bbcc/07c255e before prototype: CLASSICAL maximal coupling/projection/MEXIT/LLM evaluation antecedents explicit. Six rational coupling/work/L1 oracles and two proper joint-length/anchor oracles pass. No actual native coupler, new neural work, full-cost or sufficiently original contribution confirmed. All old-data statistics require frozen V3 protocol first.",
+      "reading": "attempts/54-coupled-policy-replay/README.md",
+      "versions": []
     }
   ]
 }

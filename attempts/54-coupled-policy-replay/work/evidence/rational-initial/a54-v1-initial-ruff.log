@@ -1,0 +1,62 @@
+B007 Loop control variable `step` not used within loop body
+  --> attempts/54-coupled-policy-replay/work/coupling.py:79:9
+   |
+77 |     joint = {((), ()): F(1)}
+78 |     shared = F(0)
+79 |     for step in range(horizon):
+   |         ^^^^
+80 |         following = defaultdict(F)
+81 |         for (a, b), mass in joint.items():
+   |
+help: Rename unused `step` to `_step`
+
+RUF005 Consider `(*a, x)` instead of concatenation
+  --> attempts/54-coupled-policy-replay/work/coupling.py:91:27
+   |
+89 |                 }
+90 |             for (x, y), chance in coupled.items():
+91 |                 following[a + (x,), b + (y,)] += mass * chance
+   |                           ^^^^^^^^
+92 |         joint = dict(following)
+93 |     return joint, shared
+   |
+help: Replace with `(*a, x)`
+
+RUF005 Consider `(*b, y)` instead of concatenation
+  --> attempts/54-coupled-policy-replay/work/coupling.py:91:37
+   |
+89 |                 }
+90 |             for (x, y), chance in coupled.items():
+91 |                 following[a + (x,), b + (y,)] += mass * chance
+   |                                     ^^^^^^^^
+92 |         joint = dict(following)
+93 |     return joint, shared
+   |
+help: Replace with `(*b, y)`
+
+RUF005 Consider `(*h, b)` instead of concatenation
+  --> attempts/54-coupled-policy-replay/work/test_coupling.py:71:17
+   |
+69 |         for _ in range(3):
+70 |             expected_p = {
+71 |                 h + (b,): v * (p[h] if b else 1 - p[h])
+   |                 ^^^^^^^^
+72 |                 for h, v in expected_p.items()
+73 |                 for b in (0, 1)
+   |
+help: Replace with `(*h, b)`
+
+RUF005 Consider `(*h, b)` instead of concatenation
+  --> attempts/54-coupled-policy-replay/work/test_coupling.py:76:17
+   |
+74 |             }
+75 |             expected_q = {
+76 |                 h + (b,): v * (q[h] if b else 1 - q[h])
+   |                 ^^^^^^^^
+77 |                 for h, v in expected_q.items()
+78 |                 for b in (0, 1)
+   |
+help: Replace with `(*h, b)`
+
+Found 5 errors.
+No fixes available (5 hidden fixes can be enabled with the `--unsafe-fixes` option).

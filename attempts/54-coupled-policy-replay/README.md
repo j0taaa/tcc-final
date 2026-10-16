@@ -55,3 +55,12 @@ policies on the same frozen neural backbone, sharing identical model inputs.
    controls, external inputs and independent confirmation. No native decoder
    speed/quality, human review or publication/admission claim. First only a
    small mathematical oracle; do not build a broad replay system from algebra.
+
+V1 six rational oracles PASS0.090s; full292 PASS85.581s. V2 proper T/A
+readouts pass independent original-word/anchor enumeration; all eight focused
+oracles PASS0.338s, full294 PASS87.118s before final import-order-only cleanup.
+Synthetic full126464-V support passes (33 classes,RSS460103680B), no old-head
+query; FAKE70-state/8960-vector pipeline passes separately. Proper T/A absolute
+score mixtures are integrated rather than unnecessarily sampled. V3 source/
+runtime/input freeze must precede any real OLD-head readout/statistic. Still
+no actual native coupler, useful own novelty, finite speed or achieved goal.
