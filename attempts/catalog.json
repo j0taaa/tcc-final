@@ -2526,7 +2526,7 @@
     {
       "id": "51-audited-gpu-posterior",
       "title": "Auditoria da lei GPU executada e correcao escalar exata",
-      "conclusion": "Written systems hypothesis before implementation; classical rejection/max-product/interval/ticket/EBUS mechanisms acknowledged. Five rational oracles pass2910 categorical tables279068 finite source words9986 probability checks. Explicit directed GPU primitives pass18734 exact Fraction/integer checks including subnormals/overflow. No new model forward, latency win, sufficiently original theorem, publication or achieved goal. Mandatory stronger retained-uniform interval control remains to be implemented. V2 freezes the complete classical interval control and actual finite-ticket scalar-corrected candidate. All15 OLD-head control records/240 words/30 exact mass checks pass, no new head/timing. Candidate extended980 count premises181 full-word ratios832 finite proposal packets192 JSONs; count guards1088 inequalities/six refusals and205 tests pass. Refusals/drafts preserved. First90 complete-query negative-only protocol frozen before any performance; systems benefit, specific originality/publication and user goal remain open.",
+      "conclusion": "Written systems hypothesis before implementation; classical rejection/max-product/interval/ticket/EBUS mechanisms acknowledged. Five rational oracles pass2910 categorical tables279068 finite source words9986 probability checks. Explicit directed GPU primitives pass18734 exact Fraction/integer checks including subnormals/overflow. No new model forward, latency win, sufficiently original theorem, publication or achieved goal. Mandatory stronger retained-uniform interval control remains to be implemented. V2 freezes the complete classical interval control and actual finite-ticket scalar-corrected candidate. All15 OLD-head control records/240 words/30 exact mass checks pass, no new head/timing. Candidate extended980 count premises181 full-word ratios832 finite proposal packets192 JSONs; count guards1088 inequalities/six refusals and205 tests pass. Refusals/drafts preserved. First90 complete-query negative-only protocol frozen before any performance; systems benefit, specific originality/publication and user goal remain open. V3 preserves COMPLETE90/90 first-stage records/180 correct operations: ticket candidate0/15 against exact interval control under frozen joint full-cost gate. No remaining controls or new independent heads triggered. All setup, costs and earlier refusals preserved; zero-decoder-CPU floor misses20% total CPU in14/15 underOLD model clocks, not a criterion relaxation or positive contribution. User goal remains open.",
       "reading": "attempts/51-audited-gpu-posterior/README.md",
       "versions": [
         {
@@ -2542,6 +2542,15 @@
           "id": "v2",
           "source_commit": "77177ed924b452df17c0af3f0217f842a651aec8",
           "evidence_commit": "77177ed924b452df17c0af3f0217f842a651aec8",
+          "evidence_roots": [
+            "attempts/51-audited-gpu-posterior/README.md",
+            "attempts/51-audited-gpu-posterior/work"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "b18c5b456aaa2e29f726701814a7ab0fa977f3ea",
+          "evidence_commit": "aecb07f40eccfe4444cdafd1b7bf8a2787f8dc7e",
           "evidence_roots": [
             "attempts/51-audited-gpu-posterior/README.md",
             "attempts/51-audited-gpu-posterior/work"
