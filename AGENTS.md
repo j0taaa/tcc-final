@@ -190,6 +190,13 @@ Zero novo head/sample/update/label; não atribuir isolamento/tempo GPU ao CPU.
 V14 escreve controles semânticos brutos de média zero para TODOS métodos,
 nove parâmetros comuns e ajuste independente. Ainda sem vantagem útil,
 novidade suficiente, treino ou confirmação; meta permanece aberta.
+V15 escreve diagnóstico exploratório de TODAS16 trajetórias VELHAS antes
+de calcular variâncias: ator9 fixo, sete scores/quatro baselines/27 controles,
+756 configurações preservadas. Três oráculos passam243 derivadas racionais
+e contraexemplo RLOO(1/6 real versus1/9 atalho). Full262 PASS88.756s/check/Ruff.
+Fonte/runtime/inputs congelam antes do diagnóstico. Duas trajetórias por
+questão NÃO confirmam ranking; RLOO tem variância não estimável/null. Zero
+novo head/sample/update/label; custo completo/novidade/benefício abertos.
 
 ## Objetivo e estado atual
 

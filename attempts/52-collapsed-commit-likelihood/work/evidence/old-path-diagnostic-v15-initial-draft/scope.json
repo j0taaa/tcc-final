@@ -1,0 +1,6 @@
+{
+  "failure": "RLOO fixture accidentally gave equality between the invalid iid shortcut and the actual group variance",
+  "joint_gradient_checks_passed": 243,
+  "real_path_variances_computed": 0,
+  "new_model_forwards": 0
+}

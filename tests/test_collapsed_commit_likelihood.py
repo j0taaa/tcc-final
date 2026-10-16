@@ -73,3 +73,7 @@ ProposalControlTests = import_module(
 NumericProxyTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_numeric_proxy"
 ).NumericProxyTests
+
+ActorCoordinateTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_actor_coordinates"
+).ActorCoordinateTests

@@ -285,6 +285,11 @@ cost remain open. No new neural campaign is credited to M70.
   combinations, all756 configurations retained. Two-path uncertainty explicit;
   RLOO group variance is null, no false iid estimate or favorable gate. No
   new forward/sample/update/label. Actual source freeze follows small checks.
+  Three new oracles PASS0.294s:243 original joint-law/9-coordinate dual checks,
+  paired trace identity and RLOO group-variance counterexample(1/6 versus
+  invalid1/9). Initial accidental-equality fixture retained. Full262
+  PASS88.756s/make check/Ruff. ALL756 real-path configurations not computed
+  yet; exact runtime/source/input protocol freezes before that diagnostic.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

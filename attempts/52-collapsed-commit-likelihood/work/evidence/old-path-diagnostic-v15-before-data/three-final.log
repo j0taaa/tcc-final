@@ -1,0 +1,10 @@
+test_explicit_original_extent_and_padding_refusals (attempts.52-collapsed-commit-likelihood.work.test_actor_coordinates.ActorCoordinateTests.test_explicit_original_extent_and_padding_refusals) ... ok
+test_nine_coordinate_chain_against_independent_joint_duals (attempts.52-collapsed-commit-likelihood.work.test_actor_coordinates.ActorCoordinateTests.test_nine_coordinate_chain_against_independent_joint_duals) ... ok
+test_paired_trace_law_and_RLOO_dependence_counterexample (attempts.52-collapsed-commit-likelihood.work.test_actor_coordinates.ActorCoordinateTests.test_paired_trace_law_and_RLOO_dependence_counterexample) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.294s
+
+OK
+{"actor_original_joint_direction_checks": 243, "coordinates": 9}
+{"true_RLOO_group_variance": "1/6", "invalid_iid_shortcut": "1/9"}

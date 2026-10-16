@@ -1,0 +1,17 @@
+test_explicit_original_extent_and_padding_refusals (attempts.52-collapsed-commit-likelihood.work.test_actor_coordinates.ActorCoordinateTests.test_explicit_original_extent_and_padding_refusals) ... ok
+test_nine_coordinate_chain_against_independent_joint_duals (attempts.52-collapsed-commit-likelihood.work.test_actor_coordinates.ActorCoordinateTests.test_nine_coordinate_chain_against_independent_joint_duals) ... ok
+test_paired_trace_law_and_RLOO_dependence_counterexample (attempts.52-collapsed-commit-likelihood.work.test_actor_coordinates.ActorCoordinateTests.test_paired_trace_law_and_RLOO_dependence_counterexample) ... FAIL
+
+======================================================================
+FAIL: test_paired_trace_law_and_RLOO_dependence_counterexample (attempts.52-collapsed-commit-likelihood.work.test_actor_coordinates.ActorCoordinateTests.test_paired_trace_law_and_RLOO_dependence_counterexample)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_actor_coordinates.py", line 96, in test_paired_trace_law_and_RLOO_dependence_counterexample
+    self.assertNotEqual(wrong, rvar)
+AssertionError: Fraction(1, 8) == Fraction(1, 8)
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.292s
+
+FAILED (failures=1)
+{"actor_original_joint_direction_checks": 243, "coordinates": 9}

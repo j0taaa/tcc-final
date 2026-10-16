@@ -1,0 +1,12 @@
+{
+  "written_contracts": [
+    "6129967",
+    "58da36c"
+  ],
+  "rational_joint_directions": 243,
+  "rational_RLOO_group_variance": "1/6",
+  "invalid_iid_shortcut": "1/9",
+  "new_model_forwards": 0,
+  "real_path_variances_computed": 0,
+  "initial_accidental_equality_fixture_preserved": true
+}
