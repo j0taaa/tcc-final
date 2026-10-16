@@ -2526,13 +2526,22 @@
     {
       "id": "51-audited-gpu-posterior",
       "title": "Auditoria da lei GPU executada e correcao escalar exata",
-      "conclusion": "Written systems hypothesis before implementation; classical rejection/max-product/interval/ticket/EBUS mechanisms acknowledged. Five rational oracles pass2910 categorical tables279068 finite source words9986 probability checks. Explicit directed GPU primitives pass18734 exact Fraction/integer checks including subnormals/overflow. No new model forward, latency win, sufficiently original theorem, publication or achieved goal. Mandatory stronger retained-uniform interval control remains to be implemented.",
+      "conclusion": "Written systems hypothesis before implementation; classical rejection/max-product/interval/ticket/EBUS mechanisms acknowledged. Five rational oracles pass2910 categorical tables279068 finite source words9986 probability checks. Explicit directed GPU primitives pass18734 exact Fraction/integer checks including subnormals/overflow. No new model forward, latency win, sufficiently original theorem, publication or achieved goal. Mandatory stronger retained-uniform interval control remains to be implemented. V2 freezes the complete classical interval control and actual finite-ticket scalar-corrected candidate. All15 OLD-head control records/240 words/30 exact mass checks pass, no new head/timing. Candidate extended980 count premises181 full-word ratios832 finite proposal packets192 JSONs; count guards1088 inequalities/six refusals and205 tests pass. Refusals/drafts preserved. First90 complete-query negative-only protocol frozen before any performance; systems benefit, specific originality/publication and user goal remain open.",
       "reading": "attempts/51-audited-gpu-posterior/README.md",
       "versions": [
         {
           "id": "v1",
           "source_commit": "afab9d8552e51181ab9dd567af2135452048839f",
           "evidence_commit": "afab9d8552e51181ab9dd567af2135452048839f",
+          "evidence_roots": [
+            "attempts/51-audited-gpu-posterior/README.md",
+            "attempts/51-audited-gpu-posterior/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "77177ed924b452df17c0af3f0217f842a651aec8",
+          "evidence_commit": "77177ed924b452df17c0af3f0217f842a651aec8",
           "evidence_roots": [
             "attempts/51-audited-gpu-posterior/README.md",
             "attempts/51-audited-gpu-posterior/work"
