@@ -402,3 +402,15 @@ score/actor coordinates pass8.882e-16. RSS797462528B/global RNG unchanged.
 Full273 tests/check/Ruff and synthetic/FAKE preflight preserved. Diagnostic
 44.049s is not competitive time or a variance/learning/novelty result; see
 work/conditional-full-v-result-v17.md. Scientific goal remains OPEN.
+
+V18 pre-data foundation: six rational oracles verify the tail certificate,
+all-pair/cross-half moment identities and zero/negative/nonfinite-control refusal.
+Full279 tests PASS86.714s; make check/focused Ruff PASS. Synthetic48 full-V
+words fit771895296B, globals unchanged; FAKE8960-word capture/analyzer retains
+4096 legal beyond-Decimal values and all2268 entries, credits no zero-variance
+control win. All80 root Python sources/runtime/five old inputs are pinned in
+work/conditional-protocol-v18.json BEFORE any real V18 auxiliary or variance.
+Primary all-pair U estimator is fixed by written320e397; cross-half diagnostic
+retained. This is only a known16-path conditional-noise necessity screen,
+zero optimistic extra cost, no population/full-cost/RLOO variance claim. No
+new neural forward, decoder trajectory, label or update. Goal remains OPEN.

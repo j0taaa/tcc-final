@@ -1,0 +1,16 @@
+{
+  "runtime": {
+    "python": "3.11.16",
+    "numpy": "2.4.6",
+    "tokenizers": "0.21.4"
+  },
+  "source_sha256": {},
+  "old_features_path": ".cache/a52-conditional-v18-FAKE-initial/FAKE-features.jsonl",
+  "input_sha256": {
+    "rows": "8437ae08a017c56f258c4d7eff7e19bdb47c36db343916b489b7fc95ae1ab6ae",
+    "manifest": "08e45946e7a77a3ddabb2fa63041d730f47c71ab3d35c4ace641ae3a57039d54",
+    "features": "1ffea708ce18676f620488c85a1ad64f21365f792ad3c359afd2ed89a9ff69aa",
+    "rewards": "3f88ef01e097959c33a248d2c1144539fca59bcdf9ca5d740baa17b38304f499",
+    "labels": "4f77f3c847f11364993ea14d4fe959ceebaef82a148d301d7c2d32853c07ed2e"
+  }
+}

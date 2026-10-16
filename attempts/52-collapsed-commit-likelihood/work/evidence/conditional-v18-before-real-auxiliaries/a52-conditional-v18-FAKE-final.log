@@ -1,0 +1,166 @@
+{"state": 0, "records": 128, "status": "READY"}
+{"state": 1, "records": 256, "status": "READY"}
+{"state": 2, "records": 384, "status": "READY"}
+{"state": 3, "records": 512, "status": "READY"}
+{"state": 4, "records": 640, "status": "READY"}
+{"state": 5, "records": 768, "status": "READY"}
+{"state": 6, "records": 896, "status": "READY"}
+{"state": 7, "records": 1024, "status": "READY"}
+{"state": 8, "records": 1152, "status": "READY"}
+{"state": 9, "records": 1280, "status": "READY"}
+{"state": 10, "records": 1408, "status": "READY"}
+{"state": 11, "records": 1536, "status": "READY"}
+{"state": 12, "records": 1664, "status": "READY"}
+{"state": 13, "records": 1792, "status": "READY"}
+{"state": 14, "records": 1920, "status": "READY"}
+{"state": 15, "records": 2048, "status": "READY"}
+{"state": 16, "records": 2176, "status": "READY"}
+{"state": 17, "records": 2304, "status": "READY"}
+{"state": 18, "records": 2432, "status": "READY"}
+{"state": 19, "records": 2560, "status": "READY"}
+{"state": 20, "records": 2688, "status": "READY"}
+{"state": 21, "records": 2816, "status": "READY"}
+{"state": 22, "records": 2944, "status": "READY"}
+{"state": 23, "records": 3072, "status": "READY"}
+{"state": 24, "records": 3200, "status": "READY"}
+{"state": 25, "records": 3328, "status": "READY"}
+{"state": 26, "records": 3456, "status": "READY"}
+{"state": 27, "records": 3584, "status": "READY"}
+{"state": 28, "records": 3712, "status": "READY"}
+{"state": 29, "records": 3840, "status": "READY"}
+{"state": 30, "records": 3968, "status": "READY"}
+{"state": 31, "records": 4096, "status": "READY"}
+{"state": 32, "records": 4224, "status": "READY"}
+{"state": 33, "records": 4352, "status": "READY"}
+{"state": 34, "records": 4480, "status": "READY"}
+{"state": 35, "records": 4608, "status": "READY"}
+{"state": 36, "records": 4736, "status": "READY"}
+{"state": 37, "records": 4864, "status": "READY"}
+{"state": 38, "records": 4992, "status": "READY"}
+{"state": 39, "records": 5120, "status": "READY"}
+{"state": 40, "records": 5248, "status": "READY"}
+{"state": 41, "records": 5376, "status": "READY"}
+{"state": 42, "records": 5504, "status": "READY"}
+{"state": 43, "records": 5632, "status": "READY"}
+{"state": 44, "records": 5760, "status": "READY"}
+{"state": 45, "records": 5888, "status": "READY"}
+{"state": 46, "records": 6016, "status": "READY"}
+{"state": 47, "records": 6144, "status": "READY"}
+{"state": 48, "records": 6272, "status": "READY"}
+{"state": 49, "records": 6400, "status": "READY"}
+{"state": 50, "records": 6528, "status": "READY"}
+{"state": 51, "records": 6656, "status": "READY"}
+{"state": 52, "records": 6784, "status": "READY"}
+{"state": 53, "records": 6912, "status": "READY"}
+{"state": 54, "records": 7040, "status": "READY"}
+{"state": 55, "records": 7168, "status": "READY"}
+{"state": 56, "records": 7296, "status": "READY"}
+{"state": 57, "records": 7424, "status": "READY"}
+{"state": 58, "records": 7552, "status": "READY"}
+{"state": 59, "records": 7680, "status": "READY"}
+{"state": 60, "records": 7808, "status": "READY"}
+{"state": 61, "records": 7936, "status": "READY"}
+{"state": 62, "records": 8064, "status": "READY"}
+{"state": 63, "records": 8192, "status": "READY"}
+{"state": 64, "records": 8320, "status": "READY"}
+{"state": 65, "records": 8448, "status": "READY"}
+{"state": 66, "records": 8576, "status": "READY"}
+{"state": 67, "records": 8704, "status": "READY"}
+{"state": 68, "records": 8832, "status": "READY"}
+{"state": 69, "records": 8960, "status": "READY"}
+{
+  "status": "PASS",
+  "scope": "OLD16_PATH_CONDITIONAL_VARIANCE_DEVELOPMENT_ONLY",
+  "new_model_forwards": 0,
+  "new_decoder_trajectories": 0,
+  "updates": 0,
+  "execution_device": "cpu",
+  "CUDA_used": false,
+  "labels_previously_known": true,
+  "setup_diagnostic_seconds": 0.006875810999190435,
+  "declared_auxiliary_slots": 8960,
+  "records": 8960,
+  "status_counts": {
+    "PASS": 8960,
+    "ERROR": 0,
+    "RESOURCE_REFUSAL": 0,
+    "NOT_RUN": 0
+  },
+  "auxiliary_word_attempts": 8960,
+  "raw_completed_auxiliary_words": 8960,
+  "global_Python_NumPy_RNG_unchanged": true,
+  "peak_CPU_process_RSS_bytes": 76476416,
+  "diagnostic_seconds": 2.6017686540144496
+}
+{
+  "status": "DEVELOPMENT_ANALYSIS_COMPLETE",
+  "scope": "conditional audit of SAME16 known paths; not independent evaluation",
+  "table_entries": 2268,
+  "states": 70,
+  "auxiliary_words": 8960,
+  "tail_certified_pre_states": 0,
+  "family_A": {
+    "selected": {
+      "method": "collapsed",
+      "baseline": "proxy_root",
+      "coefficients": [
+        0.0,
+        0.0,
+        0.5
+      ],
+      "variant": "iid1",
+      "estimate": 4.0086730392260727e-33,
+      "actor_blocks": {
+        "total": 4.0086730392260727e-33,
+        "gate": 2.1670025299057784e-33,
+        "anchor": 0.0,
+        "confidence": 1.8416705093202943e-33
+      },
+      "aggregate_mean_gap_u": -6.362973078136624e-35,
+      "aggregate_mean_gap_cross": 0.0,
+      "query_types": [
+        "base_action",
+        "proxy_root_prior"
+      ],
+      "draw_count": 1
+    },
+    "candidate_count": 108,
+    "control_count": 648,
+    "status": "INCONCLUSIVE_NONPOSITIVE_CONTROL"
+  },
+  "family_B": {
+    "selected": {
+      "method": "full_triple",
+      "baseline": "proxy_root",
+      "coefficients": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "variant": "prefix_stratified8",
+      "estimate": 4.164973467488608e-08,
+      "actor_blocks": {
+        "total": 4.164973467488608e-08,
+        "gate": 2.2706315040845267e-10,
+        "anchor": 4.1422671524477624e-08,
+        "confidence": -9.171094973272554e-36
+      },
+      "aggregate_mean_gap_u": 4.164973467488608e-08,
+      "aggregate_mean_gap_cross": -3.457751252123169e-08,
+      "query_types": [
+        "base_action",
+        "proxy_action",
+        "proxy_root_prior"
+      ],
+      "draw_count": 8
+    },
+    "candidate_count": 756,
+    "control_count": 756,
+    "status": "INCONCLUSIVE_NONPOSITIVE_CONTROL"
+  },
+  "new_model_forwards": 0,
+  "updates": 0,
+  "full_RLOO_variance": null,
+  "negative_estimates_retained": 181,
+  "full_cost_or_population_superiority_claim": false
+}

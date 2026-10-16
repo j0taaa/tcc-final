@@ -226,6 +226,12 @@ oficiais e154560 coordenadas passa8.882e-16. Dados/recusas/custos completos
 preservados, tempo44.049s só diagnóstico. Não confundir com ganho total de
 variância/latência/treino/novidade; a meta continua aberta e V15 intacta.
 
+V18 preflight: seis oráculos de momentos/certificado/controles passam; full279
+PASS86.714s/check/Ruff. Synthetic48 full-V e FAKE8960/tabela2268 passam,
+sem amostra real V18/head/update. Protocolo fixa80 fontes/runtime/cinco inputs,
+estimador U primário antes dos dados; screen de necessidade nas16 trajetórias
+conhecidas não é custo completo, variância populacional/RLOO ou meta cumprida.
+
 ## Objetivo e estado atual
 
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma

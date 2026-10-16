@@ -1,0 +1,10 @@
+test_cross_half_and_stratified_batch_expectations_by_complete_enumeration (attempts.52-collapsed-commit-likelihood.work.test_conditional_probe_v18.ConditionalProbeV18Tests.test_cross_half_and_stratified_batch_expectations_by_complete_enumeration) ... ok
+test_negative_cross_estimates_are_not_clipped (attempts.52-collapsed-commit-likelihood.work.test_conditional_probe_v18.ConditionalProbeV18Tests.test_negative_cross_estimates_are_not_clipped) ... ok
+test_pre_state_certificate_against_ALL_small_grammar_completions (attempts.52-collapsed-commit-likelihood.work.test_conditional_probe_v18.ConditionalProbeV18Tests.test_pre_state_certificate_against_ALL_small_grammar_completions) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.010s
+
+OK
+{"independent_cross_half_joint_cases": 64, "true_expected_paired_iid1": "1/4"}
+{"independent_semantic_tail_completions": 32}

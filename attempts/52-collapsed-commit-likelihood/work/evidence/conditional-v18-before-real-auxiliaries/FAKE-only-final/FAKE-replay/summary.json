@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "OLD16_PATH_CONDITIONAL_VARIANCE_DEVELOPMENT_ONLY",
+  "new_model_forwards": 0,
+  "new_decoder_trajectories": 0,
+  "updates": 0,
+  "execution_device": "cpu",
+  "CUDA_used": false,
+  "labels_previously_known": true,
+  "setup_diagnostic_seconds": 0.006875810999190435,
+  "declared_auxiliary_slots": 8960,
+  "records": 8960,
+  "status_counts": {
+    "PASS": 8960,
+    "ERROR": 0,
+    "RESOURCE_REFUSAL": 0,
+    "NOT_RUN": 0
+  },
+  "auxiliary_word_attempts": 8960,
+  "raw_completed_auxiliary_words": 8960,
+  "global_Python_NumPy_RNG_unchanged": true,
+  "peak_CPU_process_RSS_bytes": 76476416,
+  "diagnostic_seconds": 2.6017686540144496
+}

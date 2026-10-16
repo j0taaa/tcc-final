@@ -32,6 +32,13 @@ single preparation and conditional attempts independent of1/TV. Correctness
 oracles pass, but publication significance, novelty and useful full-generation
 cost remain open. No new neural campaign is credited to M70.
 
+- [x] T7520-preflight: V18 six moment/certificate/selection oracles, full279
+  PASS86.714s, make check/Ruff; synthetic48 full-V and FAKE8960 pipeline pass.
+  Freeze80 sources/runtime/five inputs BEFORE real V18 auxiliaries.
+- [ ] T7520: Execute ALL8960 old-head conditional auxiliaries and frozen2268
+  necessity tables; retain negative/inconclusive estimates. No new forwards,
+  decoder paths, labels or updates; not full-cost/population/RLOO validation.
+
 ## M75 — Observed confidence-selected action likelihood, before prototype
 
 - [x] T7500: Read native Mosaic LLaDA2 threshold/fallback and primary DUEL,

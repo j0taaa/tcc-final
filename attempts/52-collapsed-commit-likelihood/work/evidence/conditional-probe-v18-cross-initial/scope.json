@@ -1,0 +1,7 @@
+{
+  "full_tests": 277,
+  "full_test_seconds": 90.433,
+  "real_V18_auxiliary_words": 0,
+  "new_pretrained_forwards": 0,
+  "scope": "cross-half prototype before all-pair estimator addendum; no real variance data"
+}

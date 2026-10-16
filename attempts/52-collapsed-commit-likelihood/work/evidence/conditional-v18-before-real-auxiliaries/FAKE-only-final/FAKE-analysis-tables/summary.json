@@ -1,0 +1,72 @@
+{
+  "status": "DEVELOPMENT_ANALYSIS_COMPLETE",
+  "scope": "conditional audit of SAME16 known paths; not independent evaluation",
+  "table_entries": 2268,
+  "states": 70,
+  "auxiliary_words": 8960,
+  "tail_certified_pre_states": 0,
+  "family_A": {
+    "selected": {
+      "method": "collapsed",
+      "baseline": "proxy_root",
+      "coefficients": [
+        0.0,
+        0.0,
+        0.5
+      ],
+      "variant": "iid1",
+      "estimate": 4.0086730392260727e-33,
+      "actor_blocks": {
+        "total": 4.0086730392260727e-33,
+        "gate": 2.1670025299057784e-33,
+        "anchor": 0.0,
+        "confidence": 1.8416705093202943e-33
+      },
+      "aggregate_mean_gap_u": -6.362973078136624e-35,
+      "aggregate_mean_gap_cross": 0.0,
+      "query_types": [
+        "base_action",
+        "proxy_root_prior"
+      ],
+      "draw_count": 1
+    },
+    "candidate_count": 108,
+    "control_count": 648,
+    "status": "INCONCLUSIVE_NONPOSITIVE_CONTROL"
+  },
+  "family_B": {
+    "selected": {
+      "method": "full_triple",
+      "baseline": "proxy_root",
+      "coefficients": [
+        0.5,
+        0.5,
+        1.0
+      ],
+      "variant": "prefix_stratified8",
+      "estimate": 4.164973467488608e-08,
+      "actor_blocks": {
+        "total": 4.164973467488608e-08,
+        "gate": 2.2706315040845267e-10,
+        "anchor": 4.1422671524477624e-08,
+        "confidence": -9.171094973272554e-36
+      },
+      "aggregate_mean_gap_u": 4.164973467488608e-08,
+      "aggregate_mean_gap_cross": -3.457751252123169e-08,
+      "query_types": [
+        "base_action",
+        "proxy_action",
+        "proxy_root_prior"
+      ],
+      "draw_count": 8
+    },
+    "candidate_count": 756,
+    "control_count": 756,
+    "status": "INCONCLUSIVE_NONPOSITIVE_CONTROL"
+  },
+  "new_model_forwards": 0,
+  "updates": 0,
+  "full_RLOO_variance": null,
+  "negative_estimates_retained": 181,
+  "full_cost_or_population_superiority_claim": false
+}

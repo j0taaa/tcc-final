@@ -137,7 +137,7 @@ class ConditionalFloatingTests(unittest.TestCase):
                 self.assertEqual(categorical.ticket(start), index)
                 self.assertEqual(categorical.ticket(start + mass - 1), index)
                 start += mass
-            for count in (1, 2, 3, 4, 5, 7):
+            for count in (1, 2, 3, 4, 5, 6, 7, 8):
                 strata = [stratum_law(categorical, count, j) for j in range(count)]
                 self.assertTrue(all(sum(s.values(), F()) == 1 for s in strata))
                 for index, p in categorical.probabilities().items():

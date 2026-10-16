@@ -89,3 +89,7 @@ ConditionalFloatingTests = import_module(
 NumericVerifierV17Tests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_numeric_verifier_v17"
 ).NumericVerifierV17Tests
+
+ConditionalProbeV18Tests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_conditional_probe_v18"
+).ConditionalProbeV18Tests
