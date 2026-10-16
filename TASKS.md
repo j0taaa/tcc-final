@@ -34,6 +34,9 @@ cost remain open. No new neural campaign is credited to M70.
 
 ## M72 — Existing Mosaic consumer, stronger GPU controls and termination
 
+Current next work is M73 below: direct cached CPU/CFG controls and native
+Torch2.13 kernels are ready; complete-cost protocol/evaluation still pending.
+
 - [x] T7200: Read the published Mosaic consumer/compiler/tokenizer/samplers,
   pin36945e4b3c64913e23962e0924a8b40a84c58807 (MIT), write V3's eight criteria
   and full-descriptor adapter proof BEFORE code/heads/timings. Fixed depth3
@@ -80,6 +83,34 @@ cost remain open. No new neural campaign is credited to M70.
   Pay compilation, cache/reweighting, ALL forwards, exact certificate, native
   GPU controls, confidence policy and output. Require substantial operational
   benefit and identifiable originality; an adapter/oracle is not the goal.
+
+## M73 — Strong cached controls before an operational benefit claim
+
+- [x] T7300: Write compatible-canvas, symbolic CPU, common-ranking and direct
+  compact CFG proofs BEFORE adapters. Preserve the original A24/CFG sources
+  and a separate module namespace for the lexical DONE/EOT/PAD hook. Both
+  block and legacy samplers retain ORIGINAL IDs. Fresh heads rebuild numeric
+  caches; changed/released initial fixed IDs are rejected. First ranking
+  draft confused selection-set equality with tuple order; source/failure
+  preserved, canonical physical order fixes the common map.
+- [x] T7301: Independent rational mass/ALL-marginal/finite-ticket law checks
+  for direct symbolic CPU, new heads/fixed aliases, cached first overflow and
+  handoff, ranking ambiguity/refinement, and ALL THREE direct compact CFG
+  controls. Eleven focused tests PASS0.184s; suite191 PASS73.521s, Ruff PASS.
+  Sources/data:24/work/consumer_v3, consumer-v4-*-proof.md and
+  evidence/consumer-v4-strong-controls-oracles-v1.
+- [x] T7302: Isolated optional Torch2.13.0+cu130 native-kernel environment is
+  installed without changing .venv-live. Both CPU/CUDA stages pass the same
+  5576/21220/8640 original and8284/28/3720/1200 terminated oracle checks.
+  This matches upstream sampler Torch, not the full HF/serving stack. Pins
+  and pip-freeze/source evidence are preserved. No new neural head or timing
+  win follows from compatibility.
+- [ ] T7303: Freeze complete-cost known-development protocol with compiled
+  caches and direct full CPU/CFG controls; include native GPU and competent
+  quotient/sparse FA alternatives when applicable. Do not attribute dense
+  E×V or N×E storage to all FA inference. Require credible substantial benefit
+  before selecting an independent application/corpus and running new heads.
+  The user goal, A24-specific originality and publication remain open.
 
 ## M71 — A24 consumer refinement, useful full-operation benefit required
 

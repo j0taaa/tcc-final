@@ -1,0 +1,14 @@
+{
+  "files": {
+    "cache-native.log": "68ed390d20911ea0d419170d91b1adbf760260146a95671bc5f8ce59a6d4c004",
+    "cache-offline.log": "fa406a6400c4473af7d99c727f9a8b2a5a07ba7182ddd53fcbbf333da8738658",
+    "native-original.json": "454ef2669eb1b1224ccd06c71cd3f9c62a5a5c8188a40b6e88e2d82196c6721c",
+    "native-original.log": "f50bf0139753bb9718860b628496091055061b5e2a83fa97ffc010e4a7952925",
+    "native-termination.json": "91bdc8d4333da4159792263be3d4da0a0edc76ee54b3596898dd4b0d4331c96a",
+    "native-termination.log": "1d91e98433b519159d11f7a2a6e9a76a5ae7402fdcc3113c6065dbe2a90572a6",
+    "pip-freeze.txt": "e3fb70c0dc5183bf845b40dac65bb9e4f39eb47a151ee0c4a28e93d59443d0f1",
+    "source.zip": "638a5132325f55bb3b576ede2feccd237b7137fefa4421f9fe7d3bffd37d4cad"
+  },
+  "own_files_after_oracle": "source.zip includes current equivalent source; per-file executed digests in native-termination.json are authoritative",
+  "scope": "Torch2.13/CUDA13 unchanged native kernels and symbolic cached CPU law; no model or speed gate"
+}

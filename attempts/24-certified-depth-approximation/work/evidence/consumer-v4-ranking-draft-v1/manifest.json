@@ -1,0 +1,8 @@
+{
+  "scope": "uncommitted correctness draft; no new heads or timings",
+  "failure": "the proof certifies the selected SET, but the returned tuple retained approximate confidence order; canonical physical order is required for literal common-map comparison",
+  "files": {
+    "source.zip": "6b70d417f74bea6b96b9ec7d7c3296e679627735c37e63a748adc04c0fdccc54",
+    "failure.log": "e0bc11bfb6a03663f6c789e66f8e0114f5ed1f3493c28516afd9aa69b435cdf7"
+  }
+}

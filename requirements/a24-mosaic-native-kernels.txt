@@ -1,0 +1,6 @@
+# Optional Python3.11 environment matching Mosaic's declared kernel Torch.
+# This reproduces sampler dependencies, not the full HF/serving integrations.
+torch==2.13.0
+numpy==2.4.6
+einops==0.8.2
+automata-lib==9.2.0

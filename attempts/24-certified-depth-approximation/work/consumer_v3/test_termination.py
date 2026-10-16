@@ -14,7 +14,9 @@ from ..consumer_v2.block_stats import Partition
 from ..consumer_v2.query import BoundaryWeights, ConfidenceCursor, FullSparseOutside, sample
 from ..consumer_v2.test_query import Branch, Tickets
 from .mosaic_control import accepts
-from .termination import posterior, surrogate_table, terminated_graph
+from .prefix_cache import PrefixCache
+from .ranking import ranked_commits
+from .termination import CPUCache, posterior, surrogate_table, terminated_graph
 
 LIMITS = dict(timeout_seconds=5, max_cells=10000, max_edges=10000, max_terms=10000)
 
@@ -80,6 +82,128 @@ def examples():
 
 
 class TerminationTests(unittest.TestCase):
+    def test_certified_ranking_matches_full_map_or_refuses_and_keeps_sample(self):
+        words, canvas = [b"0", b" ", b"[]", b"[[]]", None, None], (None,) * 3
+        rows = [[5, 1, 3, 1, 1, 1], [1, 4, 2, 1, 3, 1], [1, 2, 1, 1, 5, 2]]
+        table, weights = fixture(words, rows, canvas, 4, 5)
+        full_law = enumerate_terminated(words, weights, 4, 5)
+        total = sum(full_law.values(), F())
+        seen = set()
+        for depth in (0, 1, 2):
+            graph = terminated_graph(table, canvas, depth, 4, 5, symbolic=True, **LIMITS)
+            post = posterior(graph, table, weights, **LIMITS)
+            upper, _ = CounterTable(table).tail(weights, depth, sums=weights.sums)
+            for word in enumerate_terminated(words, weights, 4, 5, depth):
+                for count in (1, 2, 3):
+                    result = ranked_commits(post, word, upper, count)
+                    exact = {
+                        p: sum((v for w, v in full_law.items() if w[p] == word[p]), F()) / total
+                        for p in weights.free
+                    }
+                    selected = tuple(sorted(sorted(exact, key=lambda p: (-exact[p], p))[:count]))
+                    if result["selected"] is None:
+                        seen.add("ambiguous")
+                    else:
+                        seen.add("certified")
+                        self.assertEqual(result["selected"], selected)
+                    # Exact refinement evaluates the SAME shallow original word.
+                    full_graph = terminated_graph(
+                        table, canvas, None, 4, 5, symbolic=True, **LIMITS
+                    )
+                    full_post = posterior(full_graph, table, weights, **LIMITS)
+                    resolved = ranked_commits(full_post, word, 0, count)
+                    self.assertEqual(resolved["selected"], selected)
+        self.assertEqual(seen, {"ambiguous", "certified"})
+
+    def test_cached_first_overflow_and_handoff_bound_true_terminated_tail(self):
+        words, canvas = [b"0", b"0", b"[]", b"[[]]", b" ", None, None], (None,) * 3
+        rows = [[1, 2, 1, 1, 1, 1, 1]] * 3
+        table, _ = fixture(words, rows, canvas, 5, 6)
+        for depth in (0, 1, 2):
+            prefix = PrefixCache(table, canvas, depth, **LIMITS)
+            graph = prefix.terminated_graph(5, 6)
+            compiled = CPUCache(graph, table, **LIMITS)
+            for current in (canvas, (1, None, None), (None, None, 5)):
+                _, weights = fixture(words, rows, current, 5, 6)
+                shallow = compiled.reweight(weights).mass
+                full = sum(enumerate_terminated(words, weights, 5, 6).values(), F())
+                frontier = prefix.frontier(weights)
+                handoff, _ = frontier.handoff(CounterTable(table))
+                closed, _ = CounterTable(table).tail(weights, depth, sums=weights.sums)
+                self.assertGreaterEqual(frontier.mass, full - shallow)
+                self.assertGreaterEqual(handoff, full - shallow)
+                self.assertLessEqual(handoff, min(frontier.mass, closed))
+            fixed_prefix = PrefixCache(table, (1, None, None), depth, **LIMITS)
+            _, released = fixture(words, rows, canvas, 5, 6)
+            with self.assertRaisesRegex(ValueError, "initial fixed"):
+                fixed_prefix.frontier(released)
+
+    def test_symbolic_cache_reweights_new_heads_and_fixed_original_aliases(self):
+        words, canvas = [b"0", b"0", b"[]", b" ", None, None], (None,) * 3
+        base = [[1, 2, 1, 1, 2, 1]] * 3
+        table, _ = fixture(words, base, canvas, 4, 5)
+        for depth in (0, 1, None):
+            graph = terminated_graph(table, canvas, depth, 4, 5, symbolic=True, **LIMITS)
+            cache = CPUCache(graph, table, **LIMITS)
+            for rows, current in (
+                (base, canvas),
+                ([[3, 0, 2, 1, 1, 4], [0, 4, 2, 1, 3, 1], [1, 2, 1, 3, 2, 1]], canvas),
+                ([[0, 9, 1, 2, 4, 1]] * 3, (1, None, None)),
+                ([[0, 1, 3, 2, 4, 1]] * 3, (1, None, 4)),
+            ):
+                _, weights = fixture(words, rows, current, 4, 5)
+                post = cache.reweight(weights)
+                truth = enumerate_terminated(words, weights, 4, 5, depth)
+                mass = sum(truth.values(), F())
+                self.assertEqual(post.mass, mass)
+                if not mass:
+                    continue
+                outside = FullSparseOutside(post)
+                for p in range(len(canvas)):
+                    cursor = ConfidenceCursor(post)
+                    for t in range(len(words)):
+                        exact = sum((v for w, v in truth.items() if w[p] == t), F()) / mass
+                        self.assertEqual(F(outside.at(p, t), post.total), exact)
+                        self.assertEqual(F(cursor.at(p, t), post.total), exact)
+                # Both the lazy-member legacy sampler and the class/block
+                # sampler must produce ORIGINAL IDs, not symbolic labels.
+                for seed in range(8):
+                    self.assertIn(post.sample(Random(seed)), truth)
+                    weights.consumed = False
+                    self.assertIn(sample(post, weights, Random(seed)), truth)
+            fixed_graph = terminated_graph(
+                table, (1, None, 4), depth, 4, 5, symbolic=True, **LIMITS
+            )
+            fixed_cache = CPUCache(fixed_graph, table, **LIMITS)
+            _, original = fixture(words, base, canvas, 4, 5)
+            with self.assertRaisesRegex(ValueError, "initial fixed"):
+                fixed_cache.reweight(original)
+
+    def test_symbolic_cached_entire_law_changes_with_the_head(self):
+        words, canvas = [b"0", b"0", b" ", None, None], (None,) * 3
+        table, _ = fixture(words, [[1] * 5] * 3, canvas, 3, 4)
+        graph = terminated_graph(table, canvas, 0, 3, 4, symbolic=True, **LIMITS)
+        cache = CPUCache(graph, table, **LIMITS)
+        for rows in ([[1] * 5] * 3, [[3, 1, 1, 2, 1], [1, 2, 3, 1, 2], [1, 2, 1, 3, 1]]):
+            _, weights = fixture(words, rows, canvas, 3, 4)
+            post = cache.reweight(weights)
+            expected = enumerate_terminated(words, weights, 3, 4, 0)
+            mass = sum(expected.values(), F())
+            observed, pending = defaultdict(F), [((), F(1))]
+            while pending:
+                tickets, probability = pending.pop()
+                weights.consumed = False
+                try:
+                    word = sample(post, weights, Tickets(tickets))
+                except Branch as branch:
+                    self.assertLessEqual(branch.size, 64)
+                    pending.extend(
+                        ((*tickets, i), probability / branch.size) for i in range(branch.size)
+                    )
+                else:
+                    observed[word] += probability
+            self.assertEqual(dict(observed), {w: v / mass for w, v in expected.items()})
+
     def test_original_language_true_mass_confidences_and_closed_tail(self):
         for case, (words, canvas, eot, pad) in enumerate(examples()):
             rows = [

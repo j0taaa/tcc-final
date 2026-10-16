@@ -1148,3 +1148,12 @@ Gate apenas de recursos14/15; zero forwards novos. Não tratar guards como
 OOM medido, prefixos antigos como corpus novo ou diagnóstico como velocidade.
 V4 escreve antes de código a obrigação de CPU simbólico competente e cache
 compatível; não atribuir o custo de minimizar DFA a toda inferência CPU.
+V4 materializa esses controles e uma CFG EOT/PAD DIRETA, com scanner DONE e
+gramática próprios, fontes do compiler/posterior de23 intactas em namespace
+separado; hook de finalização é explícito. Três controles CFG, CPU simbólico,
+novos heads sintéticos/aliases fixos, cache de prefixo e ranking passam11
+oráculos focados e191 testes totais73.521s. O draft de ranking que comparava
+ordem de tuplas em vez do conjunto foi preservado. Torch2.13/CUDA13 isolado
+também passa ambos preflights nativos; não é serving HF completo. Sem novo
+head neural ou gate temporal. Controles por quociente/sparse FA continuam
+obrigatórios quando aplicáveis; não atribuir buffers densos a toda inferência.

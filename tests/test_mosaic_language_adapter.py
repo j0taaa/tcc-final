@@ -9,3 +9,7 @@ GraphLanguageTests = import_module(
 TerminationTests = import_module(
     "attempts.24-certified-depth-approximation.work.consumer_v3.test_termination"
 ).TerminationTests
+
+CompactTerminationTests = import_module(
+    "attempts.24-certified-depth-approximation.work.consumer_v3.test_compact_termination"
+).CompactTerminationTests

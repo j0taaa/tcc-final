@@ -1,0 +1,14 @@
+{
+  "correctness": "11 independent focused tests pass; direct CFG source hash and isolated lexical end-predicate hook recorded by compact_termination.load",
+  "files": {
+    "offline.log": "15897ccc0b6359cf3f64103bfe0c82cb9248473c0c2c26f85808e32fa934d87e",
+    "prefix.log": "b7e0c314cbca2f34600a3c6fe80915a9491c2aeaf663b83e66aa1f106f4d5d60",
+    "ranking.log": "b0824f13a79b51f05dec39cca69915faf0e5b0bbf692345acbca76490af25658",
+    "source.zip": "2dceb71d0f382d9e3b18c88f457ff25ccf2aaf2c7f1d44185ccc29c54767307c"
+  },
+  "proofs": [
+    "consumer-v4-cache-proof.md",
+    "consumer-v4-compact-proof.md"
+  ],
+  "scope": "symbolic CPU/cache, direct compact CFG and common ranking law; no new heads or timing gate"
+}

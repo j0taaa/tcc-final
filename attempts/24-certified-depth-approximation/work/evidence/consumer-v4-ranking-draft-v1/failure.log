@@ -1,0 +1,20 @@
+...F.....
+======================================================================
+FAIL: test_certified_ranking_matches_full_map_or_refuses_and_keeps_sample (attempts.24-certified-depth-approximation.work.consumer_v3.test_termination.TerminationTests.test_certified_ranking_matches_full_map_or_refuses_and_keeps_sample)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/24-certified-depth-approximation/work/consumer_v3/test_termination.py", line 108, in test_certified_ranking_matches_full_map_or_refuses_and_keeps_sample
+    self.assertEqual(result["selected"], selected)
+AssertionError: Tuples differ: (0, 2, 1) != (2, 1, 0)
+
+First differing element 0:
+0
+2
+
+- (0, 2, 1)
++ (2, 1, 0)
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.118s
+
+FAILED (failures=1)

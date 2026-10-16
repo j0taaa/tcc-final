@@ -1,0 +1,1 @@
+{"scope": "variable JSON EOT PAD*; small correctness only; no forward or speed gate", "torch": "2.13.0+cu130", "python": "3.11.16", "cuda": "13.0", "gpu": "NVIDIA GeForce RTX 3080 Ti", "native_kernel_matmul_precision": "high", "language_checks": 8284, "exact_mass_tail_checks": 28, "original_id_marginal_checks": 3720, "valid_sample_checks": 1200}

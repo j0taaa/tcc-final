@@ -46,6 +46,12 @@ def terminated_graph(table, canvas, depth, eot, pad, *, symbolic=False, **limits
         raise ValueError("termination compilation needs its declared surrogate table")
     prepared = StackPrepared(table, canvas, max_depth=depth, **limits)
     raw = sparse_graph(prepared, symbolic=symbolic)
+    return terminate_graph(raw, table, eot, pad)
+
+
+def terminate_graph(raw, table, eot, pad):
+    """Add the proven EOT/PAD product to an already compiled bounded graph."""
+    symbolic = raw.get("alphabet") == "global_class"
     eot_label = table.class_of[eot] if symbolic else eot
     pad_label = table.class_of[pad] if symbolic else pad
     edges = []
@@ -79,10 +85,36 @@ class ClassLookup:
         return self.edge_of[self.class_of[token]]
 
 
-def posterior(
+class OriginalMembers:
+    """Lazy original IDs, never class IDs, for the legacy exact sampler."""
+
+    def __init__(self, classes, cids):
+        self.parts = tuple(classes[c] for c in cids)
+        self.size = sum(map(len, self.parts))
+
+    def __len__(self):
+        return self.size
+
+    def __iter__(self):
+        for part in self.parts:
+            yield from part
+
+    def __getitem__(self, index):
+        if index < 0:
+            index += self.size
+        if not 0 <= index < self.size:
+            raise IndexError(index)
+        for part in self.parts:
+            if index < len(part):
+                return part[index]
+            index -= len(part)
+        raise RuntimeError("original member indexing lost an ID")
+
+
+def prepare_graph(
     graph,
     table,
-    weights,
+    canvas,
     *,
     timeout_seconds=120,
     max_cells=10_000_000,
@@ -94,8 +126,8 @@ def posterior(
     Compiled graph can be reused for further fixed positions, with unchanged
     original rows/IDs. A released or changed initial fixed ID is rejected.
     """
-    if len(weights.canvas) != len(graph["canvas"]) or any(
-        t is not None and weights.canvas[p] != t for p, t in enumerate(graph["canvas"])
+    if len(canvas) != len(graph["canvas"]) or any(
+        t is not None and canvas[p] != t for p, t in enumerate(graph["canvas"])
     ):
         raise ValueError("graph reuse changed the initial fixed original canvas")
     end = monotonic() + timeout_seconds
@@ -106,8 +138,9 @@ def posterior(
     for u, v, ids in graph["edges"]:
         if not ids:
             continue
-        cids = tuple(sorted({table.class_of[t] for t in ids}))
-        if sum(len(table.classes[c]) for c in cids) != len(ids):
+        symbolic = graph.get("alphabet") == "global_class"
+        cids = tuple(ids) if symbolic else tuple(sorted({table.class_of[t] for t in ids}))
+        if not symbolic and sum(len(table.classes[c]) for c in cids) != len(ids):
             raise ValueError("finite graph edge splits an original class")
         gid = len(members)
         for cid in cids:
@@ -115,7 +148,7 @@ def posterior(
                 raise ValueError("finite graph has multiple paths for an original token")
             class_to_local[u][cid] = gid
         by_state[u].append(gid)
-        members.append(ids)
+        members.append(OriginalMembers(table.classes, cids) if symbolic else ids)
         local_to_class.append(cids)
         targets.append(v)
     finite_table = SimpleNamespace(
@@ -129,7 +162,7 @@ def posterior(
     )
     layers, arcs, used = [((graph["initial_state"], ()),)], [], {}
     cell_count, edge_count = 1, 0
-    for p, fixed in enumerate(weights.canvas):
+    for p, fixed in enumerate(canvas):
         following, layer_arcs = {}, []
         for u, _ in layers[-1]:
             choices = by_state[u] if fixed is None else (finite_table.by_token[u][fixed],)
@@ -175,7 +208,7 @@ def posterior(
     }
     prepared = SimpleNamespace(
         table=finite_table,
-        canvas=weights.canvas,
+        canvas=tuple(canvas),
         kind="local",
         max_depth=graph["depth"],
         layers=[tuple(layer[a] for a in sorted(live[p])) for p, layer in enumerate(layers)],
@@ -187,7 +220,28 @@ def posterior(
     )
     if monotonic() >= end:
         raise CompilationLimit("finite original-token DAG trim deadline")
+    return prepared
+
+
+def posterior(graph, table, weights, **limits):
+    start = monotonic()
+    prepared = prepare_graph(graph, table, weights.canvas, **limits)
     result = StackPosterior(prepared, weights, sums=weights.sums)
-    if monotonic() >= end:
+    if monotonic() - start >= limits.get("timeout_seconds", 120):
         raise CompilationLimit("finite original-token inside deadline")
     return result
+
+
+class CPUCache:
+    """Weight-independent compilation shared with every exact/bounded control."""
+
+    def __init__(self, graph, table, **limits):
+        self.prepared = prepare_graph(graph, table, graph["canvas"], **limits)
+        self.class_of = tuple(table.class_of)
+
+    def reweight(self, weights):
+        if weights.stats.partition.class_of != self.class_of:
+            raise ValueError("cached graph weights changed original class partition")
+        # StackPosterior checks initial fixed IDs and makes NEW beta, leaves,
+        # edge weights and token-CDF caches. It never reuses the old posterior.
+        return StackPosterior(self.prepared, weights, sums=weights.sums)

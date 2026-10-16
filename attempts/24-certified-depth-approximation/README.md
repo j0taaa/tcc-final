@@ -31,6 +31,16 @@ o controle CPU simbólico competente e cache de compilação por canvas compatí
 `work/consumer-v4-cache-proof.md`. Devem entrar em todos os métodos antes de
 uma alegação de custo. Objetivo científico contínuo ainda aberto.
 
+V4 agora inclui CPU simbólico/caches, prefixos reutilizáveis, ranking comum
+certificado e três controles CFG que representam EOT/PAD diretamente, sem
+somar parses separados por comprimento. Compiler/posterior imutáveis de23,
+namespace/hook lexical explícitos;11 oráculos focados e191 testes passam.
+Ambos preflights nativos também passam em Torch2.13/CUDA13 isolado. Fonte e
+draft de ranking com ordem incorreta ficam preservados em
+`work/evidence/consumer-v4-*`. Isto prepara comparadores fortes; ainda não
+há ganho temporal, novo head neural, corpus independente ou novidade fechada
+nesta versão. Quociente/sparse FA não podem ser excluídos artificialmente.
+
 **Vantagem de certificação demonstrada por escrito e ganho de consulta
 confirmado em3/15 estados independentes, contra seis controles.** Todos30
 ciclos MDLM são funcionais; novidade específica/publicação e superioridade
