@@ -1,5 +1,16 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A53 terminal observable screen, negative vs strong prefix
+
+Written before prototype, a classical flat string-domain/terminal coupling
+certificate preserves parsed numeric result, not raw IDs/bytes. Full-V
+synthetic/FAKE and seven oracles pass. Frozen d807143 completes all86 old
+states/16 known paths, no new neural work/labels. Hypothetical unique queries
+including warmup: candidate50, strong sealed-prefix52, original63. Only one
+question adds savings: frozen20%/two-question gate NEGATIVE. No neural campaign
+for the simple certificate. Independent AFTER-data count audit passes; all
+fixtures/failures remain. Own sufficient novelty/application goal OPEN.
+
 ## 2026-10-16 — A52 V18 conditional necessity closed negative
 
 After written b3358a3/320e397 and producer c28da4a, all8960 fresh auxiliaries

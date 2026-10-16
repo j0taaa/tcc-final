@@ -249,6 +249,13 @@ expectativa do primeiro fixture foi preservado; controle prefixo fortalecido
 ANTES de dados reais inclui número selado por whitespace, sem esperar chave.
 Nenhum certificado A53 de caminho real/head novo/ganho medido até o freeze.
 
+A53 V2 produtord807143 completa86/86 estados de16 caminhos VELHOS sem
+novo head/amostra/label/update. Candidata50 consultas únicas+warmup versus
+prefixo barato52, original63; só1 pergunta adicional. Gate20%/duas perguntas
+NEGATIVO, sem campanha neural deste certificado simples. Auditoria posterior
+reconta86 estados/testemunhos/cache; dados preservados. 13/63 contra original
+não é vitória sobre controle forte; meta/novidade útil seguem abertas.
+
 ## Objetivo e estado atual
 
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma

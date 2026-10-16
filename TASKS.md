@@ -50,10 +50,13 @@ cost remain open. No new neural campaign is credited to M70.
   FAKE16-path86-state pipeline pass. Preserve mistaken synthetic expectation.
   Strong prefix control now includes whitespace-sealed number; generic flat
   DAG yields SAME classical certificate. No useful own novelty/neural claim.
-- [ ] T7601: Freeze sources/runtime/ALL16 OLD paths before any A53 actual
+- [x] T7601: Freeze sources/runtime/ALL16 OLD paths before any A53 actual
   state certificate/count; compare unique heads including sharing/warmup.
   20% beyond strongest cheap/raw controls and two questions is necessity only;
-  no new neural/head/labels/auxiliaries/updates yet. Goal remains OPEN.
+  no new neural/head/labels/auxiliaries/updates. Producer d807143 completes
+  86 states;50 candidate vs52 strong-prefix vs63 original unique heads+warmup,
+  only one extra question: NEGATIVE, no new neural campaign. Count audit passes.
+  See work/result-v2.md; sufficient novelty/usefulness goal remains OPEN.
 
 ## M75 — Observed confidence-selected action likelihood, before prototype
 

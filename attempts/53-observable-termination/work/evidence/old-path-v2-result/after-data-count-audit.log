@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "scope": "AFTER-data state/witness/count audit, not independent evaluation",
+  "paths": 16,
+  "states": 86,
+  "unique_heads_plus_common_warmup": {
+    "original": 63,
+    "cheap_prefix": 52,
+    "raw_singleton": 63,
+    "projected_singleton": 50
+  },
+  "ratio_to_strongest_control": 0.9615384615384616,
+  "new_model_forwards": 0,
+  "new_certificates": 0
+}

@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "scope": "KNOWN_OLD16_PATH_OBSERVABLE_TERMINATION_NECESSITY_ONLY",
+  "runtime": {
+    "python": "3.11.16",
+    "tokenizers": "0.21.4"
+  },
+  "source_sha256": {
+    "flat_language.py": "a9f81ddbf6e4cdebf0c05b63f1816a879c48a91739ca7a5b70aafbf5eea74b9a",
+    "llada_tokenizer_v10.py": "fa339972d974f1b67359c6f5340b77be356743114cd2a1b2ab25726d88907203",
+    "numeric_json.py": "a5388609307aa54afff0746009c83991ac18e66d76f7c690e7a3a91e90c9b7ff",
+    "old_path_screen.py": "48929e8efd569fdb2634317de3db2f1c03d4f3fbfae1ffd2b01c4155d6a06826",
+    "preflight_fake_driver.py": "972e653f1fd3ab9141698aba8f1a5d349e4a2192df606d9bee88a5e2ad419f1d",
+    "preflight_full_v.py": "0f69ec1bbbd1241a3595178ea0d0861ebde278ab990f49dc81c09ac45fdfe7f8",
+    "terminal_compiler.py": "93f74c01ff4e6bd8856e233459616030d140ce995869e564959dad88868e09c4",
+    "test_flat_language.py": "69277b8b0d9b12db02723e5604b39b774558aed54c8b9346142d2566eb557439",
+    "test_terminal_compiler.py": "eb11a7f8b5c495a1640095e4ab08ca6db00c47ef9b90b8310ebc7f3f075b134b"
+  },
+  "input_sha256": {
+    "rows": "e40955cf7cce3868cc1ac939fc44855397b781b34db93934efc641c005997782"
+  },
+  "proof_sha256": {
+    "theory-v1.md": "343d0a730b9a11fd1b892f8e6c48f3d6ab857d220f24ba615d227d4757698a2e",
+    "old-path-screen-v2.md": "3dab78557bfc7f684502ceb65a8f6d3fd0bd91f2f6941535718dbaca2b360bc6",
+    "strong-prefix-addendum-v2.md": "c55544616c8a6394a04d7e5fc60d4c902517934cd4b48bab352cde94ff75e5be"
+  },
+  "width": 64,
+  "vocabulary": 126464,
+  "EOS_PAD": 126081,
+  "known_old_paths": 16,
+  "old_pre_states": 70,
+  "terminal_states": 16,
+  "unique_head_ratio_max": 0.8,
+  "strict_questions_vs_strong_cheap_prefix_min": 2,
+  "prefix_control": "lexer state19 number sealed OR state20 object complete; no uncomputed current-head witness",
+  "cache_cost": "unique old head IDs with root sharing plus common warmup; same frozen prefixes",
+  "whole_seconds": 600,
+  "whole_process_RSS_cap_bytes": 1073741824,
+  "new_model_forwards": 0,
+  "new_auxiliary_words": 0,
+  "labels": false,
+  "updates": 0,
+  "measured_latency_claim": false,
+  "classical_flat_DAG_control": "SAME certificate, no claimed algorithmic victory",
+  "refusal_or_error": "all retained, disqualifies a pass"
+}

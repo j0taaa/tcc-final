@@ -1,0 +1,209 @@
+{
+  "status": "NECESSITY_NEGATIVE",
+  "new_model_forwards": 0,
+  "new_auxiliary_words": 0,
+  "new_decoder_paths": 0,
+  "labels_loaded": false,
+  "updates": 0,
+  "known_development_paths": true,
+  "paths": 16,
+  "pre_states": 70,
+  "terminal_states": 16,
+  "logical_forward_requests": {
+    "original": 70,
+    "cheap_prefix": 59,
+    "raw_singleton": 70,
+    "projected_singleton": 57
+  },
+  "unique_heads_plus_common_warmup": {
+    "original": 63,
+    "cheap_prefix": 52,
+    "raw_singleton": 63,
+    "projected_singleton": 50
+  },
+  "ratio_to_strongest_control": 0.9615384615384616,
+  "strict_questions_vs_cheap_prefix": [
+    7
+  ],
+  "path_results": [
+    {
+      "case": 0,
+      "replica": 0,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 4,
+        "raw_singleton": 4,
+        "projected_singleton": 4
+      },
+      "original_steps": 4
+    },
+    {
+      "case": 0,
+      "replica": 1,
+      "first_stop": {
+        "original": 6,
+        "cheap_prefix": 5,
+        "raw_singleton": 6,
+        "projected_singleton": 5
+      },
+      "original_steps": 6
+    },
+    {
+      "case": 1,
+      "replica": 0,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 4,
+        "raw_singleton": 4,
+        "projected_singleton": 4
+      },
+      "original_steps": 4
+    },
+    {
+      "case": 1,
+      "replica": 1,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 4,
+        "raw_singleton": 4,
+        "projected_singleton": 4
+      },
+      "original_steps": 4
+    },
+    {
+      "case": 2,
+      "replica": 0,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 4,
+        "raw_singleton": 4,
+        "projected_singleton": 4
+      },
+      "original_steps": 4
+    },
+    {
+      "case": 2,
+      "replica": 1,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 3,
+        "raw_singleton": 4,
+        "projected_singleton": 3
+      },
+      "original_steps": 4
+    },
+    {
+      "case": 3,
+      "replica": 0,
+      "first_stop": {
+        "original": 6,
+        "cheap_prefix": 6,
+        "raw_singleton": 6,
+        "projected_singleton": 6
+      },
+      "original_steps": 6
+    },
+    {
+      "case": 3,
+      "replica": 1,
+      "first_stop": {
+        "original": 6,
+        "cheap_prefix": 6,
+        "raw_singleton": 6,
+        "projected_singleton": 6
+      },
+      "original_steps": 6
+    },
+    {
+      "case": 4,
+      "replica": 0,
+      "first_stop": {
+        "original": 5,
+        "cheap_prefix": 3,
+        "raw_singleton": 5,
+        "projected_singleton": 3
+      },
+      "original_steps": 5
+    },
+    {
+      "case": 4,
+      "replica": 1,
+      "first_stop": {
+        "original": 5,
+        "cheap_prefix": 2,
+        "raw_singleton": 5,
+        "projected_singleton": 2
+      },
+      "original_steps": 5
+    },
+    {
+      "case": 5,
+      "replica": 0,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 2,
+        "raw_singleton": 4,
+        "projected_singleton": 2
+      },
+      "original_steps": 4
+    },
+    {
+      "case": 5,
+      "replica": 1,
+      "first_stop": {
+        "original": 2,
+        "cheap_prefix": 2,
+        "raw_singleton": 2,
+        "projected_singleton": 2
+      },
+      "original_steps": 2
+    },
+    {
+      "case": 6,
+      "replica": 0,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 4,
+        "raw_singleton": 4,
+        "projected_singleton": 4
+      },
+      "original_steps": 4
+    },
+    {
+      "case": 6,
+      "replica": 1,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 2,
+        "raw_singleton": 4,
+        "projected_singleton": 2
+      },
+      "original_steps": 4
+    },
+    {
+      "case": 7,
+      "replica": 0,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 4,
+        "raw_singleton": 4,
+        "projected_singleton": 3
+      },
+      "original_steps": 4
+    },
+    {
+      "case": 7,
+      "replica": 1,
+      "first_stop": {
+        "original": 4,
+        "cheap_prefix": 4,
+        "raw_singleton": 4,
+        "projected_singleton": 3
+      },
+      "original_steps": 4
+    }
+  ],
+  "hypothetical_old_trace_removals_only": true,
+  "measured_new_speedup": false,
+  "peak_CPU_process_RSS_bytes": 79896576
+}

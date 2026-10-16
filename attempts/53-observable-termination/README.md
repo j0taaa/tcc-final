@@ -63,3 +63,10 @@ expected value was wrong and is preserved. V2 strengthens prefix control
 BEFORE old data to include a number sealed by whitespace. Generic DAG and
 grouped compiler supply the SAME classical rule. Necessity20% unique-head/
 two-question screen is written before computation; no useful benefit/priority.
+
+V2 producer d807143 completes all86 old states without new head/sample/label/
+update. Projected50 vs strong-prefix52 vs original63 unique queries including
+warmup, only one question extra: frozen20%/two-question gate NEGATIVE. AFTER-
+data independent state/witness/count audit passes. No new neural campaign for
+this simple certificate; no own sufficient novelty or achieved goal. See
+work/result-v2.md. Classical flat DAG supplies the same certificate exactly.
