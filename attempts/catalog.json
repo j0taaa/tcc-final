@@ -4387,6 +4387,15 @@
             "attempts/52-collapsed-commit-likelihood/work",
             "docs/artifacts/raw/a52_old_path_diagnostic_v15_initial"
           ]
+        },
+        {
+          "id": "v16",
+          "source_commit": "6ecb6c07156c5cd5f18d6f4567a0429ca26a083d",
+          "evidence_commit": "6ecb6c07156c5cd5f18d6f4567a0429ca26a083d",
+          "evidence_roots": [
+            "attempts/52-collapsed-commit-likelihood/README.md",
+            "attempts/52-collapsed-commit-likelihood/work"
+          ]
         }
       ]
     }
