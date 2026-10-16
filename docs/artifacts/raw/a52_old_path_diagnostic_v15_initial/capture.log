@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "scope": "EXPLORATORY_KNOWN16_PATHS_ONLY",
+  "new_model_forwards": 0,
+  "new_samples": 0,
+  "updates": 0,
+  "independent_confirmation": false,
+  "competitive_cost_claim": false,
+  "paths": 16,
+  "transitions": 70,
+  "fixed_configurations": 756,
+  "RLOO_variance": null,
+  "diagnostic_seconds": 16.107221775018843
+}

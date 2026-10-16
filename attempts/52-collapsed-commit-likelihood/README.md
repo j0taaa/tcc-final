@@ -376,3 +376,13 @@ update/label, no competitive timing or variance/priority. See work/proxy-result-
 V14's written strong-controls contract supplies semantic-proposal zero-mean
 controls to EVERY method and fixes a nine-parameter actor before variance code.
 Actual benefit/novelty and the user goal remain OPEN.
+
+V15 f106532 completes ALL756 fixed diagnostic configurations on ALL16 OLD
+paths/70 states. Same-data optimistic minima favor class0.00369058 versus
+visible0.00485158; no population ranking/refutation or significance claim.
+All seven minima have regular-proxy coefficient0 in the fixed grid. Complete
+individual gradients/questions/blocks and RLOO null variance retained. AFTER-data
+159706-coordinate/1512-group audit passes, max2.132e-14. Zero new model/sample/
+update/label; no large campaign justified by collapse/proxy alone. See
+work/old-path-result-v15.md. A semantic-baseline-preserving refinement must
+start with proof/oracles and classical controls; scientific goal remains open.

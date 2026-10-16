@@ -290,6 +290,13 @@ cost remain open. No new neural campaign is credited to M70.
   invalid1/9). Initial accidental-equality fixture retained. Full262
   PASS88.756s/make check/Ruff. ALL756 real-path configurations not computed
   yet; exact runtime/source/input protocol freezes before that diagnostic.
+  Producer f106532 completes ALL756 configurations/16 OLD paths/70 states.
+  Exploratory same-data minima favor class control0.00369058 over visible
+  0.00485158; all seven minima select no regular proxy in the fixed grid.
+  Not independent/population/refutation evidence; RLOO variance null, all data
+  retained. Posthoc scalar audit recomputes all configurations. See
+  old-path-result-v15.md. No large campaign justified by collapse/proxy alone;
+  a distinct semantic-baseline-preserving refinement needs proof first.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

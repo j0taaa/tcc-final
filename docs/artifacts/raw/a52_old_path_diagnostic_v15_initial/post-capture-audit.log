@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "AFTER-data arithmetic consistency, not independent evaluation",
+  "old_transitions": 70,
+  "fixed_configurations": 756,
+  "scalar_coordinate_checks": 159706,
+  "RLOO_group_checks": 1512,
+  "maximum_absolute_difference": 2.1316282072803006e-14,
+  "new_model_forwards": 0,
+  "updates": 0
+}

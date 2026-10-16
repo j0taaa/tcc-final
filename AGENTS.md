@@ -197,6 +197,13 @@ e contraexemplo RLOO(1/6 real versus1/9 atalho). Full262 PASS88.756s/check/Ruff.
 Fonte/runtime/inputs congelam antes do diagnóstico. Duas trajetórias por
 questão NÃO confirmam ranking; RLOO tem variância não estimável/null. Zero
 novo head/sample/update/label; custo completo/novidade/benefício abertos.
+V15 apósf106532 completa756 configurações/TODAS16 trajetórias70 estados:
+mínimos escolhidos NESTAS amostras favorecem class0.00369058 versus visible
+0.00485158, cerca31.46% maior; todos mínimos têm coeficiente0 no proxy regular
+da grade fixa. É exploratório de duas trajetórias por questão, não superioridade
+populacional/refutação ou gate. RLOO tem variância null. Auditoria posterior
+159706 coordenadas/1512 grupos passa2.132e-14. Dados completos preservados;
+sem nova geração/treino. Não iniciar campanha grande baseada só nesse colapso.
 
 ## Objetivo e estado atual
 

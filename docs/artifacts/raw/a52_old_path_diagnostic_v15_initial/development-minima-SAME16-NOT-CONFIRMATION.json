@@ -1,0 +1,159 @@
+{
+  "scope": "selected on the SAME16 known paths; optimistic exploratory minima, NOT independent variance estimates of selected methods",
+  "methods": [
+    {
+      "method": "full_triple",
+      "same_data_minimum": {
+        "total": 0.00453232838021862,
+        "gate": 0.003825064546293214,
+        "anchor": 0.0002149301068875116,
+        "confidence": 0.0004923337270378945
+      },
+      "baseline": "zero",
+      "coefficients": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "without_regular_query_minimum": 0.00453232838021862,
+      "without_regular_query_baseline": "zero",
+      "without_regular_query_coefficients": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "method": "anchor_integrated",
+      "same_data_minimum": {
+        "total": 0.004247357608797275,
+        "gate": 0.003644717806717528,
+        "anchor": 0.00012235244193685484,
+        "confidence": 0.0004802873601428932
+      },
+      "baseline": "zero",
+      "coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "without_regular_query_minimum": 0.004247357608797275,
+      "without_regular_query_baseline": "zero",
+      "without_regular_query_coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "method": "class_integrated",
+      "same_data_minimum": {
+        "total": 0.00369057709418653,
+        "gate": 0.0033289406369447975,
+        "anchor": 0.00012235244193685484,
+        "confidence": 0.00023928401530487763
+      },
+      "baseline": "zero",
+      "coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "without_regular_query_minimum": 0.00369057709418653,
+      "without_regular_query_baseline": "zero",
+      "without_regular_query_coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "method": "length_integrated",
+      "same_data_minimum": {
+        "total": 0.004269811345370042,
+        "gate": 0.003644717806717528,
+        "anchor": 0.00014480617850962173,
+        "confidence": 0.0004802873601428932
+      },
+      "baseline": "zero",
+      "coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "without_regular_query_minimum": 0.004269811345370042,
+      "without_regular_query_baseline": "zero",
+      "without_regular_query_coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "method": "combined_partial",
+      "same_data_minimum": {
+        "total": 0.0037130308307592964,
+        "gate": 0.0033289406369447975,
+        "anchor": 0.00014480617850962173,
+        "confidence": 0.00023928401530487763
+      },
+      "baseline": "zero",
+      "coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "without_regular_query_minimum": 0.0037130308307592964,
+      "without_regular_query_baseline": "zero",
+      "without_regular_query_coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "method": "known_anchor",
+      "same_data_minimum": {
+        "total": 0.004665142508286403,
+        "gate": 0.003990026035064201,
+        "anchor": 0.0002989753443825336,
+        "confidence": 0.000376141128839669
+      },
+      "baseline": "zero",
+      "coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "without_regular_query_minimum": 0.004665142508286403,
+      "without_regular_query_baseline": "zero",
+      "without_regular_query_coefficients": [
+        0.0,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "method": "collapsed",
+      "same_data_minimum": {
+        "total": 0.004851577361456287,
+        "gate": 0.004336594714527514,
+        "anchor": 0.00016766933120874615,
+        "confidence": 0.00034731331572002697
+      },
+      "baseline": "zero",
+      "coefficients": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "without_regular_query_minimum": 0.004851577361456287,
+      "without_regular_query_baseline": "zero",
+      "without_regular_query_coefficients": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  ]
+}
