@@ -1,0 +1,22 @@
+{
+  "cold_statuses": {
+    "complete": 90
+  },
+  "correct_cold": 90,
+  "correct_warm": 90,
+  "goal_met": false,
+  "new_model_forwards": 0,
+  "possible_states": 0,
+  "records": 90,
+  "sha256": {
+    "decision.json": "59ac1589dd8a44b96c5b59b570be9af3e9beb910f27cd8aa521dc75976df8697",
+    "metadata.json": "906390f3e87c702cae9880608be0a5e74adac47a3209f4d6882c6c3a5f58d7d5",
+    "rows.jsonl": "327e45f991bffc8a5e51081651fd2877acd7803f7d727fb9b536ba2fb523676b",
+    "setup.json": "6fe17abba5b6f7fdd21b3085331e78e9d538600031bcef63b9a9a701322da361"
+  },
+  "states_rejected": 15,
+  "states_where_zero_decoder_cpu_cannot_meet_primary_cpu_ratio": 14,
+  "warm_statuses": {
+    "complete": 90
+  }
+}

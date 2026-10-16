@@ -1,0 +1,325 @@
+{
+  "goal_met": false,
+  "negative_gate_proved": true,
+  "new_model_forwards": 0,
+  "positive_result_permitted": false,
+  "possible_states": [],
+  "rejected_states": {
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.2447945692661782,
+          "wall": 1.8124966702091136
+        },
+        {
+          "cpu": 1.2441415337826054,
+          "wall": 1.8094855252047208
+        },
+        {
+          "cpu": 1.243852669742441,
+          "wall": 1.8060025475501649
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.2441415337826054,
+        "wall": 1.8094855252047208
+      }
+    },
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.0030540111221322,
+          "wall": 1.0105692103434005
+        },
+        {
+          "cpu": 1.003222027806836,
+          "wall": 1.0111677810234747
+        },
+        {
+          "cpu": 1.0037739854719134,
+          "wall": 1.013067479138591
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.003222027806836,
+        "wall": 1.0111677810234747
+      }
+    },
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.006799275180155,
+          "wall": 1.023127546412056
+        },
+        {
+          "cpu": 1.0056997098986353,
+          "wall": 1.019359111117384
+        },
+        {
+          "cpu": 1.0052322847828934,
+          "wall": 1.0152541338109342
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.0056997098986353,
+        "wall": 1.019359111117384
+      }
+    },
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.1573658776062077,
+          "wall": 1.5048699561405685
+        },
+        {
+          "cpu": 1.1600366087110414,
+          "wall": 1.5140945072808152
+        },
+        {
+          "cpu": 1.1583404138693776,
+          "wall": 1.5084377337255113
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.1583404138693776,
+        "wall": 1.5084377337255113
+      }
+    },
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.0061651748981464,
+          "wall": 1.0203603890294748
+        },
+        {
+          "cpu": 1.0062305453031675,
+          "wall": 1.0205800563527878
+        },
+        {
+          "cpu": 1.0047568527792552,
+          "wall": 1.0156373775872802
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.0061651748981464,
+        "wall": 1.0203603890294748
+      }
+    },
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8": {
+      "all_paired_ratios": [
+        {
+          "cpu": 0.9971740362105552,
+          "wall": 0.9902988385561297
+        },
+        {
+          "cpu": 1.0054225355423252,
+          "wall": 1.0177511790092948
+        },
+        {
+          "cpu": 1.0073807077357597,
+          "wall": 1.02425426556823
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.0054225355423252,
+        "wall": 1.0177511790092948
+      }
+    },
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.381104114166991,
+          "wall": 2.272207920444126
+        },
+        {
+          "cpu": 1.3721520866605599,
+          "wall": 2.2520900917520796
+        },
+        {
+          "cpu": 1.2947304375154702,
+          "wall": 1.8773415103884072
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.3721520866605599,
+        "wall": 2.2520900917520796
+      }
+    },
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.0099743932693936,
+          "wall": 1.0328630275928266
+        },
+        {
+          "cpu": 1.013114927426158,
+          "wall": 1.043955471041703
+        },
+        {
+          "cpu": 1.021723211109864,
+          "wall": 1.07230962835511
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.013114927426158,
+        "wall": 1.043955471041703
+      }
+    },
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.0088988527775293,
+          "wall": 1.0271761963824968
+        },
+        {
+          "cpu": 1.0127664310041984,
+          "wall": 1.040414042740811
+        },
+        {
+          "cpu": 1.0068696816066294,
+          "wall": 1.0211676121025888
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.0088988527775293,
+        "wall": 1.0271761963824968
+      }
+    },
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.0133118489663706,
+          "wall": 1.0376378045194483
+        },
+        {
+          "cpu": 1.0073601705151565,
+          "wall": 1.0208812339539184
+        },
+        {
+          "cpu": 1.0070947541008233,
+          "wall": 1.0190115666610455
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.0073601705151565,
+        "wall": 1.0208812339539184
+      }
+    },
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.0001669677061593,
+          "wall": 1.0004651402425915
+        },
+        {
+          "cpu": 1.0093266921894721,
+          "wall": 1.0239840153443533
+        },
+        {
+          "cpu": 1.0097024932747918,
+          "wall": 1.0257824790323185
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.0093266921894721,
+        "wall": 1.0239840153443533
+      }
+    },
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.0833367788880164,
+          "wall": 1.1959611115421351
+        },
+        {
+          "cpu": 1.0226495810720788,
+          "wall": 1.0566485220721484
+        },
+        {
+          "cpu": 1.004615699627326,
+          "wall": 1.0107517259182144
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.0226495810720788,
+        "wall": 1.0566485220721484
+      }
+    },
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-16": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.1302550232171067,
+          "wall": 1.4190053893480785
+        },
+        {
+          "cpu": 1.1469271158976115,
+          "wall": 1.4908877499581255
+        },
+        {
+          "cpu": 1.1443842145179577,
+          "wall": 1.4860681288965085
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.1443842145179577,
+        "wall": 1.4860681288965085
+      }
+    },
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.0056738981616518,
+          "wall": 1.01795746031526
+        },
+        {
+          "cpu": 1.007422189680439,
+          "wall": 1.023518663173966
+        },
+        {
+          "cpu": 1.0070129619226125,
+          "wall": 1.0222205741959158
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.0070129619226125,
+        "wall": 1.0222205741959158
+      }
+    },
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8": {
+      "all_paired_ratios": [
+        {
+          "cpu": 1.0069868167921625,
+          "wall": 1.0224447726654007
+        },
+        {
+          "cpu": 1.033472186114644,
+          "wall": 1.1075875681346916
+        },
+        {
+          "cpu": 1.0062328102374103,
+          "wall": 1.0199152569364105
+        }
+      ],
+      "completed_control": "interval_exact",
+      "median_ratios": {
+        "cpu": 1.0069868167921625,
+        "wall": 1.0224447726654007
+      }
+    }
+  },
+  "remaining_methods_required": false
+}

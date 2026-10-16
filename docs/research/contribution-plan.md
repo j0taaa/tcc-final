@@ -2619,3 +2619,16 @@ interval recursive sampling are known. A stronger interval GPU control may beat
 it. Only a small independent rational reference is justified before deciding
 whether a substantial systems contribution/application is plausible. No theorem
 priority, useful latency, new model forward or achieved user goal is claimed.
+
+## 2026-10-16 — A51 numerical GPU audit and complete negative gate
+
+A51 V9 aplicação está NEGATIVA: produtorb18c5b4 completa90/90 registros,180
+operações corretas sem erro/recusa, candidata tickets/correção0/15 frente ao
+controle intervalar exato. Custos de tabelas+correção vencem especialmente nos
+grafos grandes. Nenhum controle restante ou head independente acionado. Piso
+aritmético de CPU do decoderZERO já impede o gate total20% em14/15 sob os
+clocks antigos comuns; não alterar o critério nem usar isso como vitória.
+Dados/protocolo/fontes completos preservados. Controle intervalar é clássico,
+não promover sua mera implementação a nova teoria/conquista editorial. A meta
+científica do usuário permanece aberta; não insistir nesta aplicação só por
+correção numérica ou derrotar um baseline CPU mais fraco.

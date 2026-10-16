@@ -107,3 +107,14 @@ commit and OLD model clocks in paired wallANDCPU totals. No partial positive
 claim is possible; all other controls/independent full neural cost remain required.
 Full205 tests pass71.777s before measurements. Protocol/runner/auditor and all
 refusals/code precede the first timing; no new model forward is credited.
+
+V9 application está NEGATIVA: produtorb18c5b4 completa90/90 registros,180
+operações corretas sem erro/recusa, candidata tickets/correção0/15 frente ao
+controle intervalar exato. Custos de tabelas+correção vencem especialmente nos
+grafos grandes. Nenhum controle restante ou head independente acionado. Piso
+aritmético de CPU do decoderZERO já impede o gate total20% em14/15 sob os
+clocks antigos comuns; não alterar o critério nem usar isso como vitória.
+Dados/protocolo/fontes completos preservados. Controle intervalar é clássico,
+não promover sua mera implementação a nova teoria/conquista editorial. A meta
+científica do usuário permanece aberta; não insistir nesta aplicação só por
+correção numérica ou derrotar um baseline CPU mais fraco.

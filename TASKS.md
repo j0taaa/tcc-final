@@ -112,10 +112,17 @@ cost remain open. No new neural campaign is credited to M70.
   Full205 tests PASS71.777s before timings; full-V8 API checks and frozen timer
   import/cancellation-boundary smoke pass. Runner/protocol/auditor are committed
   together before the first measured record.
-- [ ] T7403: Execute frozen first90, preserve ALL records/errors/refusals and
+- [x] T7403: Execute frozen first90, preserve ALL records/errors/refusals and
   apply the unchanged necessary gate. Only consider remaining exact/native/
   approximate controls if enough states survive; never claim goal fulfilled
   or new theorem priority from a development query comparison.
+  Producerb18c5b4 finishes90/90 records/180 correct operations,zero errors/refusals.
+  Ticket candidate0/15 against the exact interval control; no remaining controls
+  or independent heads triggered. All cases, costs, first-query/JIT setup and
+  refusals-before-this-campaign are retained in51/work/evidence/development-v9-first90.
+  A zero-decoder-CPU arithmetic floor cannot attain the unchanged20% total CPU
+  gate in14/15 states; this diagnostic does not relax the gate or rescue V9.
+  No other tests/installations/model work overlapped timings.
 - [ ] T7404: Only if a concrete useful systems distinction survives, freeze
   complete-cost protocol/strong controls before implementation/campaign.
   Exactness alone, a tiny FP64 discrepancy or a reference implementation

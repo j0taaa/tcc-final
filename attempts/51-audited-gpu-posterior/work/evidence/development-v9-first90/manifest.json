@@ -1,0 +1,9 @@
+{
+  "producer": "b18c5b456aaa2e29f726701814a7ab0fa977f3ea",
+  "scope": "complete negative first90, no new head or positive contribution",
+  "source_freeze": "77177ed924b452df17c0af3f0217f842a651aec8",
+  "records": 90,
+  "cold_warm_correct": 180,
+  "gate_states": 0,
+  "remaining_controls_and_neural_campaign_triggered": false
+}

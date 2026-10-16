@@ -1,0 +1,257 @@
+[
+  {
+    "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+    "common_constraint_compilation": {
+      "cpu": 8.95136393,
+      "wall": 8.947570313990582
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.5493438899999994,
+        "wall": 0.5491881960188039
+      },
+      "ticket_scalar": {
+        "cpu": 1.507045079000001,
+        "wall": 1.6772111379832495
+      }
+    }
+  },
+  {
+    "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+    "common_constraint_compilation": {
+      "cpu": 0.0012941319999981715,
+      "wall": 0.0012949210067745298
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.008774861000002687,
+        "wall": 0.008773937006480992
+      },
+      "ticket_scalar": {
+        "cpu": 0.012247840000000565,
+        "wall": 0.012247828010004014
+      }
+    }
+  },
+  {
+    "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+    "common_constraint_compilation": {
+      "cpu": 0.004229043000002264,
+      "wall": 0.004229782993206754
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.009398846999999932,
+        "wall": 0.009397910995176062
+      },
+      "ticket_scalar": {
+        "cpu": 0.012187436999997914,
+        "wall": 0.012187611981062219
+      }
+    }
+  },
+  {
+    "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+    "common_constraint_compilation": {
+      "cpu": 13.845743713000001,
+      "wall": 13.840691727993544
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.2837395459999996,
+        "wall": 0.2836209440138191
+      },
+      "ticket_scalar": {
+        "cpu": 0.39454513900000165,
+        "wall": 0.4086697959864978
+      }
+    }
+  },
+  {
+    "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+    "common_constraint_compilation": {
+      "cpu": 0.0008948939999982031,
+      "wall": 0.0008954980003181845
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.00900789500000343,
+        "wall": 0.009006992011563852
+      },
+      "ticket_scalar": {
+        "cpu": 0.010452654999994593,
+        "wall": 0.010452710994286463
+      }
+    }
+  },
+  {
+    "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8",
+    "common_constraint_compilation": {
+      "cpu": 0.012600525999999945,
+      "wall": 0.012601455993717536
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.01089816700000057,
+        "wall": 0.010897126019699499
+      },
+      "ticket_scalar": {
+        "cpu": 0.014829282000000887,
+        "wall": 0.014819067000644282
+      }
+    }
+  },
+  {
+    "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+    "common_constraint_compilation": {
+      "cpu": 25.168083917999994,
+      "wall": 25.158203954983037
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 1.1544495849999947,
+        "wall": 1.1540760689822491
+      },
+      "ticket_scalar": {
+        "cpu": 1.9667923989999991,
+        "wall": 1.9834061629953794
+      }
+    }
+  },
+  {
+    "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4",
+    "common_constraint_compilation": {
+      "cpu": 0.0008743270000053371,
+      "wall": 0.000876704987604171
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.008320855999997434,
+        "wall": 0.008317997999256477
+      },
+      "ticket_scalar": {
+        "cpu": 0.0103034010000016,
+        "wall": 0.010302381997462362
+      }
+    }
+  },
+  {
+    "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8",
+    "common_constraint_compilation": {
+      "cpu": 0.005734904000007646,
+      "wall": 0.0057572929945308715
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.009797470999998836,
+        "wall": 0.00980894998065196
+      },
+      "ticket_scalar": {
+        "cpu": 0.013560742000009895,
+        "wall": 0.013559921004343778
+      }
+    }
+  },
+  {
+    "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16",
+    "common_constraint_compilation": {
+      "cpu": 0.030383911000001262,
+      "wall": 0.03038516899687238
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.035059746000001724,
+        "wall": 0.0350388860097155
+      },
+      "ticket_scalar": {
+        "cpu": 0.12265758700000617,
+        "wall": 0.1378757689963095
+      }
+    }
+  },
+  {
+    "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4",
+    "common_constraint_compilation": {
+      "cpu": 0.0016064639999910924,
+      "wall": 0.0016079269989859313
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.02067979999998215,
+        "wall": 0.02067878600792028
+      },
+      "ticket_scalar": {
+        "cpu": 0.022387022000003753,
+        "wall": 0.022348105994751677
+      }
+    }
+  },
+  {
+    "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8",
+    "common_constraint_compilation": {
+      "cpu": 0.0019498579999890353,
+      "wall": 0.0019510200072545558
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.021599587999986625,
+        "wall": 0.021599560015602037
+      },
+      "ticket_scalar": {
+        "cpu": 0.027215194999996584,
+        "wall": 0.027200115990126505
+      }
+    }
+  },
+  {
+    "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-16",
+    "common_constraint_compilation": {
+      "cpu": 6.2693752590000145,
+      "wall": 6.266761550010415
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.31207301599999937,
+        "wall": 0.3120671139913611
+      },
+      "ticket_scalar": {
+        "cpu": 0.3722485280000001,
+        "wall": 0.38671507901744917
+      }
+    }
+  },
+  {
+    "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4",
+    "common_constraint_compilation": {
+      "cpu": 0.0016810689999999795,
+      "wall": 0.0016825280035845935
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.00895143799999687,
+        "wall": 0.008950671006459743
+      },
+      "ticket_scalar": {
+        "cpu": 0.010520009999993363,
+        "wall": 0.010509718005778268
+      }
+    }
+  },
+  {
+    "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8",
+    "common_constraint_compilation": {
+      "cpu": 0.010342177000012498,
+      "wall": 0.01032052599475719
+    },
+    "jit": {
+      "interval_exact": {
+        "cpu": 0.011955426000014313,
+        "wall": 0.011949442006880417
+      },
+      "ticket_scalar": {
+        "cpu": 0.01633619200001135,
+        "wall": 0.01633618099731393
+      }
+    }
+  }
+]

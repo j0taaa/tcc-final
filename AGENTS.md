@@ -1225,3 +1225,14 @@ registrados, logs fora dos timers e todo trabalho numérico dentro. Oito checks
 full-V e205 testes PASS71.777s. Otimização anterior aos timings reutiliza upper
 já pronto e bound de FAIL admitido; oráculos completos iguais. Nenhum tempo
 competitivo/head novo foi creditado a esse preflight.
+
+A51 V9 aplicação está NEGATIVA: produtorb18c5b4 completa90/90 registros,180
+operações corretas sem erro/recusa, candidata tickets/correção0/15 frente ao
+controle intervalar exato. Custos de tabelas+correção vencem especialmente nos
+grafos grandes. Nenhum controle restante ou head independente acionado. Piso
+aritmético de CPU do decoderZERO já impede o gate total20% em14/15 sob os
+clocks antigos comuns; não alterar o critério nem usar isso como vitória.
+Dados/protocolo/fontes completos preservados. Controle intervalar é clássico,
+não promover sua mera implementação a nova teoria/conquista editorial. A meta
+científica do usuário permanece aberta; não insistir nesta aplicação só por
+correção numérica ou derrotar um baseline CPU mais fraco.
