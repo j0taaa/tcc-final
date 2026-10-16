@@ -25,6 +25,11 @@ componentes de score e31 estados FALSOS/52 trajetórias observadas/88 auxiliares
 Full216 testes PASS73.155s e make check/Ruff PASS. MD4§6 já fornece schedules
 dependentes do valor do token; não reivindicar isso. Nenhum peso/modelo/head
 novo foi carregado: apenas metadados públicos de Tiny-A2D foram lidos.
+V3 escreve antes de código a âncora auxiliar independente de X, forçada a
+liberar: preserva P da proposta ATUAL e permite integrar âncora/descartes por
+um escalar só dos retidos e partição unária. Forçar âncora, mistura/WMC/RB são
+clássicos; novidade/uso não confirmados. Âncora fixa e gates por posição são
+controles mais baratos e obrigatórios. Não atribuir oráculos V1/V2 a V3.
 
 ## Objetivo e estado atual
 

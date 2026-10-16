@@ -109,3 +109,17 @@ tests PASS73.155s; make check/Ruff PASS. No neural head/update/timing. The new
 primary addendum recognizes MD4's existing token-dependent schedules as well
 as Bernoulli planners; token dependence cannot itself be claimed as novel.
 Only a written cost/consumer refinement precedes further implementation.
+
+## V3 — written auxiliary-anchor refinement before code
+
+[work/anchor-policy-v3.md](work/anchor-policy-v3.md) selects an anchor from the
+current state independently of the complete grammatical proposal, forces that
+position and uses token-dependent Bernoulli gates elsewhere. It explicitly
+preserves the CURRENT proposal marginal and guarantees progress, while changing
+the exposed policy. Summing the hidden anchor is a retained-only scalar times
+one ordinary filtered partition. The note gives all three score adjoints,
+confidence chain rule and expected release count; standard mixture/evidence/
+conditional-mean principles are credited. Fixed-anchor and position-only
+reductions must receive cheaper correct implementations. All eight criteria
+are reassessed. No V3 code, new head, update, timing, specific novelty or useful
+neural consequence is established by this written foundation.

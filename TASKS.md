@@ -66,6 +66,12 @@ cost remain open. No new neural campaign is credited to M70.
   oracles PASS1.224s; full216 PASS73.155s and make check/Ruff PASS. MD4§6
   already gives token-value-dependent schedules; no novelty credit for that.
   Runtime/model metadata only read, no weights or new neural forward/update.
+  V3 writes an auxiliary anchor chosen independently of X: it forces progress
+  while preserving CURRENT proposal P. Integrating it yields a retained-only
+  scalar times one unary-filtered grammar partition; score/chain/count proofs
+  and all eight criteria precede V3 code. Standard forcing/mixture/WMC/RB are
+  credited. Only a minimal independent oracle is next; fixed-anchor and
+  position-only analytic controls must remain equally competent/cheap.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
