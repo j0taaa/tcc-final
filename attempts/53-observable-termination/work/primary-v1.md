@@ -24,7 +24,7 @@
   of semantic reasoning, not the invention of semantic constrained decoding.
 - Tempest, CMWQ author-uploaded preprint2026-05-12:
   https://www.researchgate.net/publication/404780660_Certified_Minimal-Work_Quotient_Execution_for_Distribution-Preserving_Large_Language_Model_Serving
-  Read author-uploaded abstract and displayed5.2/7.2--7.4. Generic quotient
+  Read author-uploaded abstract and displayed7.2--7.4. Generic quotient
   distribution preservation, singleton grammar bypass and relative minimality
   are explicit antecedents. Do not claim those principles or review status.
 - Leroy2003, original author-hosted formalization:

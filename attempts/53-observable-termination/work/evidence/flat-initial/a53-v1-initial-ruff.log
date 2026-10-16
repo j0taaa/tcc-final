@@ -1,0 +1,52 @@
+B023 Function definition does not bind loop variable `terminals`
+  --> attempts/53-observable-termination/work/test_flat_language.py:41:43
+   |
+40 |                 def enumerate_at(i):
+41 |                     words = {b""} if i in terminals else set()
+   |                                           ^^^^^^^^^
+42 |                     for s, j in edges[i]:
+43 |                         words.update(s + t for t in enumerate_at(j))
+   |
+
+B023 Function definition does not bind loop variable `edges`
+  --> attempts/53-observable-termination/work/test_flat_language.py:42:33
+   |
+40 |                 def enumerate_at(i):
+41 |                     words = {b""} if i in terminals else set()
+42 |                     for s, j in edges[i]:
+   |                                 ^^^^^
+43 |                         words.update(s + t for t in enumerate_at(j))
+44 |                     return words
+   |
+
+E501 Line too long (107 > 100)
+   --> attempts/53-observable-termination/work/test_flat_language.py:104:101
+    |
+102 |                         if set(parsed) != {"answer"} or parsed["answer"] not in (0, 1):
+103 |                             continue
+104 |                         # Independent byte check rejects multi-digit numbers, unlike json numeric equality.
+    |                                                                                                     ^^^^^^^
+105 |                         number = text.split(b":", 1)[1].split(b"}", 1)[0].strip()
+106 |                         if number not in (b"0", b"1"):
+    |
+
+RUF021 [*] Parenthesize `a and b` expressions when chaining `and` and `or` together, to make the precedence clear
+   --> attempts/53-observable-termination/work/test_flat_language.py:121:36
+    |
+119 |     def test_terminal_coupling_all_binary_leaf_labels(self):
+120 |         def evaluate(labels, stop):
+121 |             if len(labels) == 1 or stop and len(set(labels)) == 1:
+    |                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+122 |                 return {labels[0]: Fraction(1)}, Fraction(0)
+123 |             midpoint = len(labels) // 2
+    |
+help: Parenthesize the `and` subexpression
+    |
+120 |         def evaluate(labels, stop):
+    -             if len(labels) == 1 or stop and len(set(labels)) == 1:
+121 +             if len(labels) == 1 or (stop and len(set(labels)) == 1):
+122 |                 return {labels[0]: Fraction(1)}, Fraction(0)
+    |
+
+Found 4 errors.
+[*] 1 fixable with the `--fix` option.

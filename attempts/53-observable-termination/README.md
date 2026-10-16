@@ -54,3 +54,12 @@ closed. No new neural campaign, timing win, priority or achieved goal yet.
 
 Primary sources/scopes: work/primary-v1.md. No A52 mutable implementation is
 imported by this attempt. First only a standalone small certificate oracle.
+
+Minimal reference after53d9e72 has four oracles PASS0.044s, full283
+PASS84.666s; copied numeric/tokenizer sources support three additional small
+compiler/strong-prefix oracles (seven PASS0.073s). Full-V synthetic/FAKE86
+preflight passes without any real old-path certificate/head. Initial synthetic
+expected value was wrong and is preserved. V2 strengthens prefix control
+BEFORE old data to include a number sealed by whitespace. Generic DAG and
+grouped compiler supply the SAME classical rule. Necessity20% unique-head/
+two-question screen is written before computation; no useful benefit/priority.

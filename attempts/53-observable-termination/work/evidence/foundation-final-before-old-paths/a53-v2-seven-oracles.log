@@ -1,0 +1,12 @@
+test_all_paths_random_dags_aliases_and_epsilon (attempts.53-observable-termination.work.test_flat_language.FlatLanguageTests.test_all_paths_random_dags_aliases_and_epsilon) ... ok
+test_finite_language_quotient_and_cancellation (attempts.53-observable-termination.work.test_flat_language.FlatLanguageTests.test_finite_language_quotient_and_cancellation) ... ok
+test_original_ids_first_eos_clamps_and_whitespace (attempts.53-observable-termination.work.test_flat_language.FlatLanguageTests.test_original_ids_first_eos_clamps_and_whitespace) ... ok
+test_terminal_coupling_all_binary_leaf_labels (attempts.53-observable-termination.work.test_flat_language.FlatLanguageTests.test_terminal_coupling_all_binary_leaf_labels) ... ok
+test_all_small_original_completions_and_independent_graph (attempts.53-observable-termination.work.test_terminal_compiler.TerminalCompilerTests.test_all_small_original_completions_and_independent_graph) ... ok
+test_eos_cannot_truncate_fixed_ids_and_empty_is_not_certificate (attempts.53-observable-termination.work.test_terminal_compiler.TerminalCompilerTests.test_eos_cannot_truncate_fixed_ids_and_empty_is_not_certificate) ... ok
+test_strong_prefix_includes_numeric_sealing_without_brace (attempts.53-observable-termination.work.test_terminal_compiler.TerminalCompilerTests.test_strong_prefix_includes_numeric_sealing_without_brace) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.073s
+
+OK

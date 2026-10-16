@@ -43,6 +43,18 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M76 — Observable terminal stopping, before real-path screen
+
+- [x] T7600: Write A53 eight criteria/theorem before code53d9e72. Seven
+  finite-language/coupling/compiler/prefix oracles PASS; synthetic full-V and
+  FAKE16-path86-state pipeline pass. Preserve mistaken synthetic expectation.
+  Strong prefix control now includes whitespace-sealed number; generic flat
+  DAG yields SAME classical certificate. No useful own novelty/neural claim.
+- [ ] T7601: Freeze sources/runtime/ALL16 OLD paths before any A53 actual
+  state certificate/count; compare unique heads including sharing/warmup.
+  20% beyond strongest cheap/raw controls and two questions is necessity only;
+  no new neural/head/labels/auxiliaries/updates yet. Goal remains OPEN.
+
 ## M75 — Observed confidence-selected action likelihood, before prototype
 
 - [x] T7500: Read native Mosaic LLaDA2 threshold/fallback and primary DUEL,

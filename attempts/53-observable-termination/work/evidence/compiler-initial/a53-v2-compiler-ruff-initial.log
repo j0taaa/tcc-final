@@ -1,0 +1,19 @@
+RUF021 [*] Parenthesize `a and b` expressions when chaining `and` and `or` together, to make the precedence clear
+  --> attempts/53-observable-termination/work/terminal_compiler.py:58:30
+   |
+56 |             raise ValueError("original fixed ID/position outside canvas")
+57 |         stops = [i for i, v in fixed.items() if v == self.grammar.eos]
+58 |         if len(stops) > 1 or stops and max(fixed) != stops[0]:
+   |                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+59 |             raise ValueError("EOS would truncate an original fixed ID")
+   |
+help: Parenthesize the `and` subexpression
+   |
+57 |         stops = [i for i, v in fixed.items() if v == self.grammar.eos]
+   -         if len(stops) > 1 or stops and max(fixed) != stops[0]:
+58 +         if len(stops) > 1 or (stops and max(fixed) != stops[0]):
+59 |             raise ValueError("EOS would truncate an original fixed ID")
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

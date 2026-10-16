@@ -1,0 +1,7 @@
+test_all_small_original_completions_and_independent_graph (attempts.53-observable-termination.work.test_terminal_compiler.TerminalCompilerTests.test_all_small_original_completions_and_independent_graph) ... ok
+test_eos_cannot_truncate_fixed_ids_and_empty_is_not_certificate (attempts.53-observable-termination.work.test_terminal_compiler.TerminalCompilerTests.test_eos_cannot_truncate_fixed_ids_and_empty_is_not_certificate) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.013s
+
+OK

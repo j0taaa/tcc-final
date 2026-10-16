@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/jota/projects/tcc-final/attempts/53-observable-termination/work/preflight_full_v.py", line 52, in <module>
+    run(a.model_dir, a.output)
+  File "/home/jota/projects/tcc-final/attempts/53-observable-termination/work/preflight_full_v.py", line 31, in run
+    assert values[1] == (MANY if not fixed else b"1}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

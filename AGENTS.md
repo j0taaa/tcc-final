@@ -240,6 +240,15 @@ nesta aplicação nem relaxar/reseed. Auditoria posterior8960 respostas e
 fontes/drafts preservados; é decisão de recurso conhecida, não refutação
 populacional/publicação. Meta científica e novidade útil continuam abertas.
 
+A53 começa escrita53d9e72 antes de protótipo: parada quando todo completion
+viável tem mesmo observável consumido. Preserva valor, não IDs/texto bruto;
+decoder deve completar monotonicamente, falhas/remasking ficam fora. Domínio
+flat/propagação/quotient/jump-forward são clássicos, não teoria nova. Sete
+oráculos pequenos passam; full-V sintético/FAKE86 estados passam. O erro de
+expectativa do primeiro fixture foi preservado; controle prefixo fortalecido
+ANTES de dados reais inclui número selado por whitespace, sem esperar chave.
+Nenhum certificado A53 de caminho real/head novo/ganho medido até o freeze.
+
 ## Objetivo e estado atual
 
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma

@@ -1,0 +1,9 @@
+test_all_paths_random_dags_aliases_and_epsilon (attempts.53-observable-termination.work.test_flat_language.FlatLanguageTests.test_all_paths_random_dags_aliases_and_epsilon) ... ok
+test_finite_language_quotient_and_cancellation (attempts.53-observable-termination.work.test_flat_language.FlatLanguageTests.test_finite_language_quotient_and_cancellation) ... ok
+test_original_ids_first_eos_clamps_and_whitespace (attempts.53-observable-termination.work.test_flat_language.FlatLanguageTests.test_original_ids_first_eos_clamps_and_whitespace) ... ok
+test_terminal_coupling_all_binary_leaf_labels (attempts.53-observable-termination.work.test_flat_language.FlatLanguageTests.test_terminal_coupling_all_binary_leaf_labels) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.044s
+
+OK
