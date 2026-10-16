@@ -1,5 +1,18 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A55 transient-cycle permutation candidate, written first
+
+Separate from the closed A52/A53/A54 applications. A55 writes a rational
+NB/Ewens closed-walk implementation of a CLASSICAL loop-soup rejection law,
+with a return-occupation acceptance certificate and complete-cost conditions.
+The connected diffuse family separates only independent-row rejection;
+cycle-gas perfect simulation and modern nesting samplers remain mandatory.
+Li–Zheng's occupation law and Armendáriz–Ferrari–Frevenza's explicit Poisson
+cycle conditioning are direct antecedents. Useful own distinction, real
+consumer, full cost and priority remain OPEN; no code/head/timing/goal claim.
+See55/work/theory-v1.md and primary-reading-v1.md. Next only independent
+small rational oracles and original-source audit, not a broad neural campaign.
+
 ## 2026-10-16 — A54 coupled policy local opportunity, negative
 
 Classical maximal coupling/projection/MEXIT can maximize faithful prefix

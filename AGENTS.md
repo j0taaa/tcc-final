@@ -274,6 +274,18 @@ latência total, refutação finita geral ou meta cumprida. Dados intactos.
 
 ## Objetivo e estado atual
 
+A55 começa ESCRITA antes de protótipo: amostragem de permutações ponderadas
+por sopa de ciclos transitórios, realização racional NB/Ewens e certificado
+de rejeição por retornos. MacMahon/Le Jan/Li--Zheng, exclusão Poisson de ciclos
+Armendáriz--Ferrari--Frevenza, Boltzmann e perfect simulation são antecedentes
+CLÁSSICOS obrigatórios; não promover identidade ou mero sampler correto como
+descoberta. O alvo produto condicionado difere do greedy/Hungarian DiffuRank.
+Rejeição independente tem separação escrita em família difusa, NÃO contra
+todos controles; SCCs, AdaPart/DeepAR/nesting e samplers de ciclos competentes
+continuam obrigatórios. r>=1 recusa; ambiguidades locais podem causar custo
+exponencial. Sem protótipo/head/timing/consumidor útil/prioridade confirmados.
+Próximo passo só auditoria primária e oráculos mínimos, antes de campanha.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

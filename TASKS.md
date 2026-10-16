@@ -43,6 +43,20 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M78 — Transient-cycle assignment proposals, written before prototype
+
+- [x] T7800: Write A55's eight criteria/target/algorithm/cost/counterexamples
+  BEFORE code or new matrix samples. Loop-soup/permanental/Poisson-exclusion,
+  Ewens and Boltzmann are classical; own operational distinction remains OPEN.
+  See55/work/theory-v1.md and primary-reading-v1.md. New law explicitly differs
+  from native DiffuRank greedy decoding. No new head/timing/benefit or achieved
+  goal. Mandatory strong controls include cycle perfect simulation and current
+  nesting rejection, not only independent rows.
+- [ ] T7801: Audit the derivation against primary sources and independent
+  finite rational oracles. Passing correctness alone does not trigger a neural
+  campaign. A real consumer needing this law and meaningful comparative benefit
+  must be justified before extensive implementation or promotion.
+
 ## M77 — Coupled policy comparison/replay, limited classical investigation
 
 - [x] T7700: Write eight criteria/coupling scope before code f61bbcc/07c255e.
