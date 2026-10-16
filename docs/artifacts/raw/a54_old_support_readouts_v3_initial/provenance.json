@@ -1,0 +1,8 @@
+{
+  "producer_commit": "fe5dd29c9d740e7f34964e9f543e03efaaa8fd61",
+  "runtime": {
+    "python": "3.11.16",
+    "numpy": "2.4.6",
+    "tokenizers": "0.21.4"
+  }
+}

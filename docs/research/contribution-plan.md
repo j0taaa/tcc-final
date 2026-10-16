@@ -1,5 +1,16 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A54 coupled policy local opportunity, negative
+
+Classical maximal coupling/projection/MEXIT can maximize faithful prefix
+agreement, not general evaluation-score variance or total latency. Proper
+first-EOS-length control is mandatory and ties when EOS is fixed. Written
+proof/controls and frozen fe5dd29 precede all70 OLD-head readouts/25 fixed
+local directions. No new neural work/auxiliary/label/update. Best local loss
+ratio.98416 fails.8 against proper length; no large neural expansion. AFTER-
+data4125-scalar audit passes2.665e-15; all negative MC gaps remain. Useful
+own novelty/full-cost application and the scientific goal remain OPEN.
+
 ## 2026-10-16 — A53 terminal observable screen, negative vs strong prefix
 
 Written before prototype, a classical flat string-domain/terminal coupling

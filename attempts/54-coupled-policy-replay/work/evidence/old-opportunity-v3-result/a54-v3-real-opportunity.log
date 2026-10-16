@@ -1,0 +1,182 @@
+{
+  "status": "NO_LOCAL_20PCT_OPPORTUNITY_IN_FIXED_DIRECTIONS",
+  "promising_direction_indices": [],
+  "best_valid": {
+    "direction_index": 14,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 4.280527496629374,
+        "anchor_integrated": 4.223403463261001,
+        "class_integrated": 4.1804535447146955,
+        "proper_length": 4.173618605050515,
+        "known_anchor": 4.219095110347202,
+        "observed": 4.107513954285199
+      },
+      "prefix_stratified": {
+        "full_triple": 4.317409026439449,
+        "anchor_integrated": 4.222439108332859,
+        "class_integrated": 4.19393659534148,
+        "proper_length": 4.173618605050515,
+        "known_anchor": 4.219095110347202,
+        "observed": 4.107513954285199
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.5565155656347941,
+          "anchor_integrated": 0.5261460636442001,
+          "class_integrated": 0.5105664040791809,
+          "proper_length": 0.5052467661600922,
+          "known_anchor": 0.5472873509443498,
+          "observed": 0.5052467661600923
+        },
+        {
+          "full_triple": 0.32370624019513106,
+          "anchor_integrated": 0.29665584734684186,
+          "class_integrated": 0.29028919550673626,
+          "proper_length": 0.29518537776944104,
+          "known_anchor": 0.31476143031152237,
+          "observed": 0.27991551923740354
+        },
+        {
+          "full_triple": 0.2008668981244156,
+          "anchor_integrated": 0.19791079854052346,
+          "class_integrated": 0.1977165938486205,
+          "proper_length": 0.19671582600231124,
+          "known_anchor": 0.19609747077434428,
+          "observed": 0.18962355995204977
+        },
+        {
+          "full_triple": 1.3568620660731878,
+          "anchor_integrated": 1.3547104680664332,
+          "class_integrated": 1.3518387171197561,
+          "proper_length": 1.3503336043903236,
+          "known_anchor": 1.3503336043903227,
+          "observed": 1.3503336043903227
+        },
+        {
+          "full_triple": 0.4232123690786185,
+          "anchor_integrated": 0.42415546366694,
+          "class_integrated": 0.425972177774745,
+          "proper_length": 0.4253816630330591,
+          "known_anchor": 0.3932560015448668,
+          "observed": 0.3932560015448668
+        },
+        {
+          "full_triple": 0.2621158412311216,
+          "anchor_integrated": 0.2604164483708319,
+          "class_integrated": 0.25808018851957293,
+          "proper_length": 0.25904445315042235,
+          "known_anchor": 0.26561700122197063,
+          "observed": 0.25904445315042235
+        },
+        {
+          "full_triple": 0.46123991929847585,
+          "anchor_integrated": 0.46602365411441926,
+          "class_integrated": 0.45683717679172237,
+          "proper_length": 0.45539130618114837,
+          "known_anchor": 0.4500544329900407,
+          "observed": 0.4500544329900407
+        },
+        {
+          "full_triple": 0.6960085969936305,
+          "anchor_integrated": 0.697384719510811,
+          "class_integrated": 0.689153091074361,
+          "proper_length": 0.6863196083637171,
+          "known_anchor": 0.7016878181697855,
+          "observed": 0.6800396168600013
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.5434943495088121,
+          "anchor_integrated": 0.5152909213985197,
+          "class_integrated": 0.5061933236149975,
+          "proper_length": 0.5052467661600922,
+          "known_anchor": 0.5472873509443498,
+          "observed": 0.5052467661600923
+        },
+        {
+          "full_triple": 0.32118551060026357,
+          "anchor_integrated": 0.29736165826314126,
+          "class_integrated": 0.2973764257371066,
+          "proper_length": 0.29518537776944104,
+          "known_anchor": 0.31476143031152237,
+          "observed": 0.27991551923740354
+        },
+        {
+          "full_triple": 0.20083257500522503,
+          "anchor_integrated": 0.19760528401532892,
+          "class_integrated": 0.20114502564320633,
+          "proper_length": 0.19671582600231124,
+          "known_anchor": 0.19609747077434428,
+          "observed": 0.18962355995204977
+        },
+        {
+          "full_triple": 1.3656398569054593,
+          "anchor_integrated": 1.3653738811125766,
+          "class_integrated": 1.3579479747482959,
+          "proper_length": 1.3503336043903236,
+          "known_anchor": 1.3503336043903227,
+          "observed": 1.3503336043903227
+        },
+        {
+          "full_triple": 0.42722834159982764,
+          "anchor_integrated": 0.41992566621566885,
+          "class_integrated": 0.42253595455422926,
+          "proper_length": 0.4253816630330591,
+          "known_anchor": 0.3932560015448668,
+          "observed": 0.3932560015448668
+        },
+        {
+          "full_triple": 0.2671699581835359,
+          "anchor_integrated": 0.2661086723951955,
+          "class_integrated": 0.2631477736711328,
+          "proper_length": 0.25904445315042235,
+          "known_anchor": 0.26561700122197063,
+          "observed": 0.25904445315042235
+        },
+        {
+          "full_triple": 0.4609392608232688,
+          "anchor_integrated": 0.4610823301871705,
+          "class_integrated": 0.45603206335880764,
+          "proper_length": 0.45539130618114837,
+          "known_anchor": 0.4500544329900407,
+          "observed": 0.4500544329900407
+        },
+        {
+          "full_triple": 0.7309191738130578,
+          "anchor_integrated": 0.6996906947452584,
+          "class_integrated": 0.689558054013704,
+          "proper_length": 0.6863196083637171,
+          "known_anchor": 0.7016878181697855,
+          "observed": 0.6800396168600013
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9841613101193957,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  "all_directions": 25,
+  "states": 70,
+  "old_paths": 16,
+  "old_auxiliary_words": 8960,
+  "new_model_forwards": 0,
+  "new_auxiliary_words": 0,
+  "updates": 0,
+  "exact_native_coupler_implemented": false,
+  "finite_parameter_or_latency_or_variance_claim": false,
+  "neural_campaign_triggered": false
+}

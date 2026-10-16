@@ -265,6 +265,13 @@ Synthetic full-V/FAKE70 passam; V3 ainda sem query/estatística de head real.
 Screen local usa25 direções fixas e custos restantes VELHOS; não é velocidade
 finita, sampler nativo exato ou autorização de campanha neural/meta cumprida.
 
+A54 V3 fe5dd29 conclui70/70 readouts VELHOS, zero head/amostra/update novo.
+Nenhuma das25 direções passa20% local; melhor razão.98416 contra controle
+próprio de T. Auditoria posterior4125 checks passa2.665e-15, gaps MC negativos
+2644 preservados. Não expandir esta projeção local em campanha neural aqui.
+São scores FP64 e coeficientes infinitesimais, não sampler nativo exato,
+latência total, refutação finita geral ou meta cumprida. Dados intactos.
+
 ## Objetivo e estado atual
 
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma

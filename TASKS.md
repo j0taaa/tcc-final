@@ -51,10 +51,13 @@ cost remain open. No new neural campaign is credited to M70.
   density controls pass independent enumeration. Full294 PASS87.118s; final
   synthetic full-V/FAKE70 IO and focused Ruff pass. No actual native coupler,
   new head or useful sufficient novelty confirmed.
-- [ ] T7701: Freeze V3 source/runtime/ALL70 old inputs before real readouts/
+- [x] T7701: Freeze V3 source/runtime/ALL70 old inputs before real readouts/
   local L1 cache-loss coefficients. Include proper length/anchor mixtures,
   class/word/full controls; local20% is NOT total latency and cannot trigger
-  new neural work. Goal remains OPEN.
+  new neural work. Producer fe5dd29 completes70/70 readouts. None of25
+  directions passes; best local ratio.98416 vs proper T. AFTER-data4125 scalar
+  audit passes2.665e-15; no large neural expansion. See work/result-v3.md.
+  Goal remains OPEN.
 
 ## M76 — Observable terminal stopping, before real-path screen
 

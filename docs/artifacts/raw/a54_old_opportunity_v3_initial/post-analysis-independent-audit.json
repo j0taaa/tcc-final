@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "AFTER-data arithmetic/source-state audit, not independent evaluation",
+  "states": 70,
+  "directions": 25,
+  "old_auxiliary_vectors": 8960,
+  "scalar_checks": 4125,
+  "maximum_absolute_difference": 2.6645352591003757e-15,
+  "negative_MC_conditional_Jensen_gaps_retained": 2644,
+  "new_model_forwards": 0,
+  "new_auxiliary_words": 0
+}

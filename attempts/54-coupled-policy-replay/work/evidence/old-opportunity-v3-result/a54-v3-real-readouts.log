@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "new_model_forwards": 0,
+  "new_auxiliary_words": 0,
+  "new_decoder_paths": 0,
+  "updates": 0,
+  "CUDA_used": false,
+  "scope": "OLD-known70-state numerical ideal-kernel readouts, NOT exact native coupling",
+  "status_counts": {
+    "PASS": 70
+  },
+  "records": 70,
+  "global_Python_NumPy_RNG_unchanged": true,
+  "peak_CPU_process_RSS_bytes": 732700672,
+  "diagnostic_seconds": 36.08913016898441
+}

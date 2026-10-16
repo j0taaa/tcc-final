@@ -1,0 +1,4202 @@
+[
+  {
+    "direction_index": 0,
+    "direction": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 3.87882565955997,
+        "anchor_integrated": 3.8678487873236853,
+        "class_integrated": 3.825704818032047,
+        "proper_length": 3.8169700878164736,
+        "known_anchor": 3.7813109440218753,
+        "observed": 3.7563360632992837
+      },
+      "prefix_stratified": {
+        "full_triple": 3.8925724490321727,
+        "anchor_integrated": 3.872500624074552,
+        "class_integrated": 3.8381535434937404,
+        "proper_length": 3.8169700878164736,
+        "known_anchor": 3.7813109440218753,
+        "observed": 3.7563360632992837
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.4575316474388797,
+          "anchor_integrated": 0.453406694514897,
+          "class_integrated": 0.4365219134209447,
+          "proper_length": 0.4308681646466867,
+          "known_anchor": 0.43746339318986904,
+          "observed": 0.4308681646466868
+        },
+        {
+          "full_triple": 0.29710637215529684,
+          "anchor_integrated": 0.28945582765806166,
+          "class_integrated": 0.2744064954079091,
+          "proper_length": 0.28038361789595845,
+          "known_anchor": 0.2830254373287462,
+          "observed": 0.2672299966211547
+        },
+        {
+          "full_triple": 0.20306729107686616,
+          "anchor_integrated": 0.2022470362647963,
+          "class_integrated": 0.20181398114918128,
+          "proper_length": 0.1976611357901735,
+          "known_anchor": 0.1920228872219527,
+          "observed": 0.1913947635366839
+        },
+        {
+          "full_triple": 1.305454759493945,
+          "anchor_integrated": 1.3048316383108656,
+          "class_integrated": 1.3016931514379002,
+          "proper_length": 1.299704138662412,
+          "known_anchor": 1.2997041386624113,
+          "observed": 1.2997041386624113
+        },
+        {
+          "full_triple": 0.43149336469096167,
+          "anchor_integrated": 0.43158883948594456,
+          "class_integrated": 0.4336374396197396,
+          "proper_length": 0.4328802931287736,
+          "known_anchor": 0.40037619769900323,
+          "observed": 0.4003761976990032
+        },
+        {
+          "full_triple": 0.2618119534835925,
+          "anchor_integrated": 0.26204330545626486,
+          "class_integrated": 0.259765105571462,
+          "proper_length": 0.2609280316375148,
+          "known_anchor": 0.2613350824450652,
+          "observed": 0.2593789946585163
+        },
+        {
+          "full_triple": 0.31667844551930563,
+          "anchor_integrated": 0.3166463419013965,
+          "class_integrated": 0.3099614487343891,
+          "proper_length": 0.30844463113829557,
+          "known_anchor": 0.30427185930757383,
+          "observed": 0.3042718593075738
+        },
+        {
+          "full_triple": 0.6056818257011242,
+          "anchor_integrated": 0.6076291037314592,
+          "class_integrated": 0.6079052826905212,
+          "proper_length": 0.6061000749166591,
+          "known_anchor": 0.6031119481672541,
+          "observed": 0.6031119481672541
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.4538793658042875,
+          "anchor_integrated": 0.44816721444534874,
+          "class_integrated": 0.43223385037874246,
+          "proper_length": 0.4308681646466867,
+          "known_anchor": 0.43746339318986904,
+          "observed": 0.4308681646466868
+        },
+        {
+          "full_triple": 0.29866133809712153,
+          "anchor_integrated": 0.29110307022755183,
+          "class_integrated": 0.282170358564291,
+          "proper_length": 0.28038361789595845,
+          "known_anchor": 0.2830254373287462,
+          "observed": 0.2672299966211547
+        },
+        {
+          "full_triple": 0.20064656000267703,
+          "anchor_integrated": 0.20011810694812948,
+          "class_integrated": 0.20338542118364628,
+          "proper_length": 0.1976611357901735,
+          "known_anchor": 0.1920228872219527,
+          "observed": 0.1913947635366839
+        },
+        {
+          "full_triple": 1.3150361875477603,
+          "anchor_integrated": 1.3149318708565958,
+          "class_integrated": 1.3080472808172714,
+          "proper_length": 1.299704138662412,
+          "known_anchor": 1.2997041386624113,
+          "observed": 1.2997041386624113
+        },
+        {
+          "full_triple": 0.4282987048853023,
+          "anchor_integrated": 0.4275041047827401,
+          "class_integrated": 0.4300218065942887,
+          "proper_length": 0.4328802931287736,
+          "known_anchor": 0.40037619769900323,
+          "observed": 0.4003761976990032
+        },
+        {
+          "full_triple": 0.2668477720314737,
+          "anchor_integrated": 0.26718028247610914,
+          "class_integrated": 0.26439497885422464,
+          "proper_length": 0.2609280316375148,
+          "known_anchor": 0.2613350824450652,
+          "observed": 0.2593789946585163
+        },
+        {
+          "full_triple": 0.31235503667920633,
+          "anchor_integrated": 0.31233777138764923,
+          "class_integrated": 0.30946747732746105,
+          "proper_length": 0.30844463113829557,
+          "known_anchor": 0.30427185930757383,
+          "observed": 0.3042718593075738
+        },
+        {
+          "full_triple": 0.6168474839843447,
+          "anchor_integrated": 0.6111582029504278,
+          "class_integrated": 0.6084323697738155,
+          "proper_length": 0.6061000749166591,
+          "known_anchor": 0.6031119481672541,
+          "observed": 0.6031119481672541
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9933951793194696,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 1,
+    "direction": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 3.5681308999785717,
+        "anchor_integrated": 3.5566319393410897,
+        "class_integrated": 3.534691790390936,
+        "proper_length": 3.5289785738113255,
+        "known_anchor": 3.491258576993459,
+        "observed": 3.478265552438494
+      },
+      "prefix_stratified": {
+        "full_triple": 3.5734807735233205,
+        "anchor_integrated": 3.5553957179835094,
+        "class_integrated": 3.544750589136702,
+        "proper_length": 3.5289785738113255,
+        "known_anchor": 3.491258576993459,
+        "observed": 3.478265552438494
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.448503499390339,
+          "anchor_integrated": 0.4474778225607782,
+          "class_integrated": 0.44134429597095576,
+          "proper_length": 0.43679081661956676,
+          "known_anchor": 0.4372109306062669,
+          "observed": 0.436790816619567
+        },
+        {
+          "full_triple": 0.25701679450750947,
+          "anchor_integrated": 0.24924974537500275,
+          "class_integrated": 0.2410217997356736,
+          "proper_length": 0.24518236316991993,
+          "known_anchor": 0.23900532908099842,
+          "observed": 0.23207034126734155
+        },
+        {
+          "full_triple": 0.19720186010439142,
+          "anchor_integrated": 0.1982394076403392,
+          "class_integrated": 0.1978226554084823,
+          "proper_length": 0.1944339944312571,
+          "known_anchor": 0.1912141773669887,
+          "observed": 0.19096026347717904
+        },
+        {
+          "full_triple": 1.1875933887552663,
+          "anchor_integrated": 1.1849121624054708,
+          "class_integrated": 1.1819593307692615,
+          "proper_length": 1.1803688320969252,
+          "known_anchor": 1.1803688320969246,
+          "observed": 1.1803688320969246
+        },
+        {
+          "full_triple": 0.3956475469131576,
+          "anchor_integrated": 0.39487531923268226,
+          "class_integrated": 0.396822749396423,
+          "proper_length": 0.3964376985592415,
+          "known_anchor": 0.36621268385970235,
+          "observed": 0.36621268385970235
+        },
+        {
+          "full_triple": 0.25162539138174317,
+          "anchor_integrated": 0.25207656162215075,
+          "class_integrated": 0.24975835595960666,
+          "proper_length": 0.25201378848665673,
+          "known_anchor": 0.2511255703097223,
+          "observed": 0.2511255703097223
+        },
+        {
+          "full_triple": 0.29428089859423984,
+          "anchor_integrated": 0.29097662094975435,
+          "class_integrated": 0.2823156994224479,
+          "proper_length": 0.2810487002729595,
+          "known_anchor": 0.2843761782379443,
+          "observed": 0.27899216937314547
+        },
+        {
+          "full_triple": 0.5362615203319254,
+          "anchor_integrated": 0.5388242995549121,
+          "class_integrated": 0.5436469037280844,
+          "proper_length": 0.5427023801747982,
+          "known_anchor": 0.5417448754349122,
+          "observed": 0.5417448754349123
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.4423498356459997,
+          "anchor_integrated": 0.43943435584552104,
+          "class_integrated": 0.43681182679895364,
+          "proper_length": 0.43679081661956676,
+          "known_anchor": 0.4372109306062669,
+          "observed": 0.436790816619567
+        },
+        {
+          "full_triple": 0.2561213612005593,
+          "anchor_integrated": 0.24923005423889452,
+          "class_integrated": 0.2472485327030973,
+          "proper_length": 0.24518236316991993,
+          "known_anchor": 0.23900532908099842,
+          "observed": 0.23207034126734155
+        },
+        {
+          "full_triple": 0.19532083659851185,
+          "anchor_integrated": 0.19460275499138044,
+          "class_integrated": 0.19750481600497533,
+          "proper_length": 0.1944339944312571,
+          "known_anchor": 0.1912141773669887,
+          "observed": 0.19096026347717904
+        },
+        {
+          "full_triple": 1.1944703309239462,
+          "anchor_integrated": 1.194295853274408,
+          "class_integrated": 1.1877595860572407,
+          "proper_length": 1.1803688320969252,
+          "known_anchor": 1.1803688320969246,
+          "observed": 1.1803688320969246
+        },
+        {
+          "full_triple": 0.39365674921101257,
+          "anchor_integrated": 0.39181447941462827,
+          "class_integrated": 0.39429433919592327,
+          "proper_length": 0.3964376985592415,
+          "known_anchor": 0.36621268385970235,
+          "observed": 0.36621268385970235
+        },
+        {
+          "full_triple": 0.256420048142731,
+          "anchor_integrated": 0.2565898286735433,
+          "class_integrated": 0.2538394282354188,
+          "proper_length": 0.25201378848665673,
+          "known_anchor": 0.2511255703097223,
+          "observed": 0.2511255703097223
+        },
+        {
+          "full_triple": 0.2899046811363473,
+          "anchor_integrated": 0.2874126386694095,
+          "class_integrated": 0.2824613949865717,
+          "proper_length": 0.2810487002729595,
+          "known_anchor": 0.2843761782379443,
+          "observed": 0.27899216937314547
+        },
+        {
+          "full_triple": 0.5452369306642124,
+          "anchor_integrated": 0.5420157528757239,
+          "class_integrated": 0.5448306651545209,
+          "proper_length": 0.5427023801747982,
+          "known_anchor": 0.5417448754349122,
+          "observed": 0.5417448754349123
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.996278412421072,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 2,
+    "direction": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.11270209231577293,
+        "anchor_integrated": 0.10486477904452095,
+        "class_integrated": 0.10451529690738945,
+        "proper_length": 0.1045151872611049,
+        "known_anchor": 0.11116918237179509,
+        "observed": 0.1044951265967703
+      },
+      "prefix_stratified": {
+        "full_triple": 0.11230096637000317,
+        "anchor_integrated": 0.10536059876005385,
+        "class_integrated": 0.10457256496818443,
+        "proper_length": 0.1045151872611049,
+        "known_anchor": 0.11116918237179509,
+        "observed": 0.1044951265967703
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.026724217731855765,
+          "anchor_integrated": 0.026696793481256385,
+          "class_integrated": 0.02634443612008101,
+          "proper_length": 0.026102711582150214,
+          "known_anchor": 0.02610271158215022,
+          "observed": 0.02610271158215022
+        },
+        {
+          "full_triple": 0.018035061497591678,
+          "anchor_integrated": 0.013449898247661627,
+          "class_integrated": 0.013245974746323674,
+          "proper_length": 0.013243519993845376,
+          "known_anchor": 0.016203457367389127,
+          "observed": 0.013243519993845373
+        },
+        {
+          "full_triple": 0.00496702827383428,
+          "anchor_integrated": 0.005081415868763508,
+          "class_integrated": 0.005207233124191761,
+          "proper_length": 0.005267861900227374,
+          "known_anchor": 0.005267861900227373,
+          "observed": 0.005267861900227374
+        },
+        {
+          "full_triple": 0.02229494161354523,
+          "anchor_integrated": 0.02147174002558484,
+          "class_integrated": 0.02163377020704825,
+          "proper_length": 0.021764955648239628,
+          "known_anchor": 0.022306244095764566,
+          "observed": 0.021764955648239628
+        },
+        {
+          "full_triple": 0.005207333171497919,
+          "anchor_integrated": 0.005128514944693849,
+          "class_integrated": 0.005215840479281608,
+          "proper_length": 0.005089865512170008,
+          "known_anchor": 0.0050898655121700016,
+          "observed": 0.005089865512170002
+        },
+        {
+          "full_triple": 0.006641894318548495,
+          "anchor_integrated": 0.003744113793906784,
+          "class_integrated": 0.003681105106226602,
+          "proper_length": 0.00390762825845743,
+          "known_anchor": 0.006456682258437245,
+          "observed": 0.003887567594122832
+        },
+        {
+          "full_triple": 0.005239137024895127,
+          "anchor_integrated": 0.00468020023050228,
+          "class_integrated": 0.0043930568686130255,
+          "proper_length": 0.0042521628487208534,
+          "known_anchor": 0.004855878138362521,
+          "observed": 0.004252162848720854
+        },
+        {
+          "full_triple": 0.023592478684004443,
+          "anchor_integrated": 0.02461210245215171,
+          "class_integrated": 0.024793880255623516,
+          "proper_length": 0.024886481517294036,
+          "known_anchor": 0.024886481517294036,
+          "observed": 0.024886481517294032
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.02627432271487978,
+          "anchor_integrated": 0.026265554439542135,
+          "class_integrated": 0.026121073496154213,
+          "proper_length": 0.026102711582150214,
+          "known_anchor": 0.02610271158215022,
+          "observed": 0.02610271158215022
+        },
+        {
+          "full_triple": 0.016168304793871432,
+          "anchor_integrated": 0.01314553028986842,
+          "class_integrated": 0.013257668551014252,
+          "proper_length": 0.013243519993845376,
+          "known_anchor": 0.016203457367389127,
+          "observed": 0.013243519993845373
+        },
+        {
+          "full_triple": 0.005292707403434591,
+          "anchor_integrated": 0.005260292895818278,
+          "class_integrated": 0.005287113394717397,
+          "proper_length": 0.005267861900227374,
+          "known_anchor": 0.005267861900227373,
+          "observed": 0.005267861900227374
+        },
+        {
+          "full_triple": 0.022722066688859,
+          "anchor_integrated": 0.022086313425445227,
+          "class_integrated": 0.021693159838544335,
+          "proper_length": 0.021764955648239628,
+          "known_anchor": 0.022306244095764566,
+          "observed": 0.021764955648239628
+        },
+        {
+          "full_triple": 0.00499850213877352,
+          "anchor_integrated": 0.005064818731652137,
+          "class_integrated": 0.0051034505119986395,
+          "proper_length": 0.005089865512170008,
+          "known_anchor": 0.0050898655121700016,
+          "observed": 0.005089865512170002
+        },
+        {
+          "full_triple": 0.0065549541663145385,
+          "anchor_integrated": 0.003927987492916653,
+          "class_integrated": 0.003903111553614655,
+          "proper_length": 0.00390762825845743,
+          "known_anchor": 0.006456682258437245,
+          "observed": 0.003887567594122832
+        },
+        {
+          "full_triple": 0.005021477902996838,
+          "anchor_integrated": 0.004598779482946372,
+          "class_integrated": 0.004346222952400994,
+          "proper_length": 0.0042521628487208534,
+          "known_anchor": 0.004855878138362521,
+          "observed": 0.004252162848720854
+        },
+        {
+          "full_triple": 0.02526863056087346,
+          "anchor_integrated": 0.02501132200186463,
+          "class_integrated": 0.02486076466973995,
+          "proper_length": 0.024886481517294036,
+          "known_anchor": 0.024886481517294036,
+          "observed": 0.024886481517294032
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9998080598154172,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 3,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 3.3204051333549147,
+        "anchor_integrated": 3.30989717131155,
+        "class_integrated": 3.2703302755437424,
+        "proper_length": 3.261933504123018,
+        "known_anchor": 3.2262657146757565,
+        "observed": 3.201299479605828
+      },
+      "prefix_stratified": {
+        "full_triple": 3.336141372440154,
+        "anchor_integrated": 3.3161032781223416,
+        "class_integrated": 3.2822699235832364,
+        "proper_length": 3.261933504123018,
+        "known_anchor": 3.2262657146757565,
+        "observed": 3.201299479605828
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.34375736405699475,
+          "anchor_integrated": 0.3396274075394584,
+          "class_integrated": 0.32342818084350167,
+          "proper_length": 0.3178785043925918,
+          "known_anchor": 0.32446508728311113,
+          "observed": 0.3178785043925919
+        },
+        {
+          "full_triple": 0.22361763243047636,
+          "anchor_integrated": 0.21596658534757623,
+          "class_integrated": 0.20089648649876643,
+          "proper_length": 0.20677725001653796,
+          "known_anchor": 0.20941906944932567,
+          "observed": 0.19362362874173422
+        },
+        {
+          "full_triple": 0.10292060739287509,
+          "anchor_integrated": 0.1020990486148774,
+          "class_integrated": 0.10364056477221054,
+          "proper_length": 0.09977243643306818,
+          "known_anchor": 0.09413418786484744,
+          "observed": 0.09350606417957857
+        },
+        {
+          "full_triple": 1.1618412608604223,
+          "anchor_integrated": 1.1617956247498515,
+          "class_integrated": 1.160147911999862,
+          "proper_length": 1.1578297767147339,
+          "known_anchor": 1.157829776714733,
+          "observed": 1.157829776714733
+        },
+        {
+          "full_triple": 0.41836978197621444,
+          "anchor_integrated": 0.41846154628198706,
+          "class_integrated": 0.4205102378590912,
+          "proper_length": 0.4197949793709116,
+          "known_anchor": 0.38729088394114114,
+          "observed": 0.3872908839411411
+        },
+        {
+          "full_triple": 0.25850290672520854,
+          "anchor_integrated": 0.25876433643327484,
+          "class_integrated": 0.2564862686016032,
+          "proper_length": 0.257590909961172,
+          "known_anchor": 0.2579979607687224,
+          "observed": 0.2560418729821735
+        },
+        {
+          "full_triple": 0.22565563435290178,
+          "anchor_integrated": 0.22557903658629966,
+          "class_integrated": 0.21922333869901062,
+          "proper_length": 0.21817265133221955,
+          "known_anchor": 0.21399987950149782,
+          "observed": 0.2139998795014978
+        },
+        {
+          "full_triple": 0.5857399455598218,
+          "anchor_integrated": 0.5876035857582244,
+          "class_integrated": 0.5859972862696974,
+          "proper_length": 0.5841169959017829,
+          "known_anchor": 0.5811288691523782,
+          "observed": 0.581128869152378
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.33977417500547535,
+          "anchor_integrated": 0.3340228753543682,
+          "class_integrated": 0.3190521985244944,
+          "proper_length": 0.3178785043925918,
+          "known_anchor": 0.32446508728311113,
+          "observed": 0.3178785043925919
+        },
+        {
+          "full_triple": 0.22493781991006545,
+          "anchor_integrated": 0.21737904945483086,
+          "class_integrated": 0.2084457819079324,
+          "proper_length": 0.20677725001653796,
+          "known_anchor": 0.20941906944932567,
+          "observed": 0.19362362874173422
+        },
+        {
+          "full_triple": 0.1018928715555527,
+          "anchor_integrated": 0.10136520915113442,
+          "class_integrated": 0.10489378609759459,
+          "proper_length": 0.09977243643306818,
+          "known_anchor": 0.09413418786484744,
+          "observed": 0.09350606417957857
+        },
+        {
+          "full_triple": 1.1736263985988213,
+          "anchor_integrated": 1.173618214289114,
+          "class_integrated": 1.166059783932239,
+          "proper_length": 1.1578297767147339,
+          "known_anchor": 1.157829776714733,
+          "observed": 1.157829776714733
+        },
+        {
+          "full_triple": 0.415269188479975,
+          "anchor_integrated": 0.41450147356786016,
+          "class_integrated": 0.4170216730387102,
+          "proper_length": 0.4197949793709116,
+          "known_anchor": 0.38729088394114114,
+          "observed": 0.3872908839411411
+        },
+        {
+          "full_triple": 0.2635141247814732,
+          "anchor_integrated": 0.2638459569160048,
+          "class_integrated": 0.261060274932226,
+          "proper_length": 0.257590909961172,
+          "known_anchor": 0.2579979607687224,
+          "observed": 0.2560418729821735
+        },
+        {
+          "full_triple": 0.22245523904125125,
+          "anchor_integrated": 0.22240037961958412,
+          "class_integrated": 0.2192857377963935,
+          "proper_length": 0.21817265133221955,
+          "known_anchor": 0.21399987950149782,
+          "observed": 0.2139998795014978
+        },
+        {
+          "full_triple": 0.5946715550675401,
+          "anchor_integrated": 0.5889701197694449,
+          "class_integrated": 0.5864506873536472,
+          "proper_length": 0.5841169959017829,
+          "known_anchor": 0.5811288691523782,
+          "observed": 0.581128869152378
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.992261568860754,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 4,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.5440064147458653,
+        "anchor_integrated": 0.5434372338938295,
+        "class_integrated": 0.5409651460023148,
+        "proper_length": 0.5404959909379476,
+        "known_anchor": 0.5404959909379476,
+        "observed": 0.5404959909379476
+      },
+      "prefix_stratified": {
+        "full_triple": 0.5416957989361348,
+        "anchor_integrated": 0.5416736448882611,
+        "class_integrated": 0.5414072654618644,
+        "proper_length": 0.5404959909379476,
+        "known_anchor": 0.5404959909379476,
+        "observed": 0.5404959909379476
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.12057877289254003,
+          "anchor_integrated": 0.1205858459475958,
+          "class_integrated": 0.12008711868018068,
+          "proper_length": 0.11998383436025739,
+          "known_anchor": 0.11998383436025739,
+          "observed": 0.11998383436025739
+        },
+        {
+          "full_triple": 0.07437544060440471,
+          "anchor_integrated": 0.07437544060440471,
+          "class_integrated": 0.07437531272774145,
+          "proper_length": 0.07436864369329824,
+          "known_anchor": 0.07436864369329824,
+          "observed": 0.07436864369329824
+        },
+        {
+          "full_triple": 0.10347716481879,
+          "anchor_integrated": 0.10347716481879,
+          "class_integrated": 0.10140498543751125,
+          "proper_length": 0.10110903322217446,
+          "known_anchor": 0.10110903322217446,
+          "observed": 0.10110903322217446
+        },
+        {
+          "full_triple": 0.14364251104408365,
+          "anchor_integrated": 0.14301594700431955,
+          "class_integrated": 0.14148103255259256,
+          "proper_length": 0.1417375097602599,
+          "known_anchor": 0.1417375097602599,
+          "observed": 0.1417375097602599
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.08942527167956885,
+          "anchor_integrated": 0.08947558181224136,
+          "class_integrated": 0.08913415125276151,
+          "proper_length": 0.0887323876095227,
+          "known_anchor": 0.0887323876095227,
+          "observed": 0.0887323876095227
+        },
+        {
+          "full_triple": 0.01250725370647821,
+          "anchor_integrated": 0.01250725370647821,
+          "class_integrated": 0.014482545351527416,
+          "proper_length": 0.014564582292435006,
+          "known_anchor": 0.014564582292435006,
+          "observed": 0.014564582292435006
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.12088684159432282,
+          "anchor_integrated": 0.12092946771693495,
+          "class_integrated": 0.12017121360528855,
+          "proper_length": 0.11998383436025739,
+          "known_anchor": 0.11998383436025739,
+          "observed": 0.11998383436025739
+        },
+        {
+          "full_triple": 0.07437544016260676,
+          "anchor_integrated": 0.07437544016260676,
+          "class_integrated": 0.07437531272774145,
+          "proper_length": 0.07436864369329824,
+          "known_anchor": 0.07436864369329824,
+          "observed": 0.07436864369329824
+        },
+        {
+          "full_triple": 0.1020187594931293,
+          "anchor_integrated": 0.1020187594931293,
+          "class_integrated": 0.10174442867037373,
+          "proper_length": 0.10110903322217446,
+          "known_anchor": 0.10110903322217446,
+          "observed": 0.10110903322217446
+        },
+        {
+          "full_triple": 0.14129523160699908,
+          "anchor_integrated": 0.1411909300802783,
+          "class_integrated": 0.14192824377149266,
+          "proper_length": 0.1417375097602599,
+          "known_anchor": 0.1417375097602599,
+          "observed": 0.1417375097602599
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.0,
+          "anchor_integrated": 0.0,
+          "class_integrated": 0.0,
+          "proper_length": 0.0,
+          "known_anchor": 0.0,
+          "observed": 0.0
+        },
+        {
+          "full_triple": 0.08834330032716137,
+          "anchor_integrated": 0.08838282168339623,
+          "class_integrated": 0.0886275093052852,
+          "proper_length": 0.0887323876095227,
+          "known_anchor": 0.0887323876095227,
+          "observed": 0.0887323876095227
+        },
+        {
+          "full_triple": 0.014776225751915437,
+          "anchor_integrated": 0.014776225751915437,
+          "class_integrated": 0.01456055738168285,
+          "proper_length": 0.014564582292435006,
+          "known_anchor": 0.014564582292435006,
+          "observed": 0.014564582292435006
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 5,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.3170526413690476,
+        "anchor_integrated": 0.25108686946543646,
+        "class_integrated": 0.25108686946543646,
+        "proper_length": 0.2507087512181977,
+        "known_anchor": 0.3132705499608882,
+        "observed": 0.24864693138210164
+      },
+      "prefix_stratified": {
+        "full_triple": 0.3172690255301339,
+        "anchor_integrated": 0.25118129581917903,
+        "class_integrated": 0.25118129581917903,
+        "proper_length": 0.2507087512181977,
+        "known_anchor": 0.3132705499608882,
+        "observed": 0.24864693138210164
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.05435180664062497,
+          "anchor_integrated": 0.04823906345604689,
+          "class_integrated": 0.04823906345604689,
+          "proper_length": 0.04817521770735823,
+          "known_anchor": 0.054840031096595236,
+          "observed": 0.04817521770665319
+        },
+        {
+          "full_triple": 0.01946004231770833,
+          "anchor_integrated": 0.015758317162741085,
+          "class_integrated": 0.015758317162741085,
+          "proper_length": 0.015849158523444522,
+          "known_anchor": 0.018479383409121083,
+          "observed": 0.015442610227111988
+        },
+        {
+          "full_triple": 0.033294677734375035,
+          "anchor_integrated": 0.024400157240942643,
+          "class_integrated": 0.024400157240942643,
+          "proper_length": 0.024621717647631474,
+          "known_anchor": 0.031401086303403165,
+          "observed": 0.024621717647631467
+        },
+        {
+          "full_triple": 0.09874514625186014,
+          "anchor_integrated": 0.07687986251151663,
+          "class_integrated": 0.07687986251151663,
+          "proper_length": 0.07658865630543862,
+          "known_anchor": 0.09688463737772669,
+          "observed": 0.07497542381867711
+        },
+        {
+          "full_triple": 0.03985595703125005,
+          "anchor_integrated": 0.03251116129329076,
+          "class_integrated": 0.03251116129329076,
+          "proper_length": 0.03227705745767583,
+          "known_anchor": 0.04001953193730139,
+          "observed": 0.032235018405379026
+        },
+        {
+          "full_triple": 0.013900756835937523,
+          "anchor_integrated": 0.01282584510817734,
+          "class_integrated": 0.01282584510817734,
+          "proper_length": 0.012651440643557249,
+          "known_anchor": 0.013757365140897487,
+          "observed": 0.012651440643557206
+        },
+        {
+          "full_triple": 0.03393554687499998,
+          "anchor_integrated": 0.021117596673558343,
+          "class_integrated": 0.021117596673558343,
+          "proper_length": 0.021287456311560322,
+          "known_anchor": 0.03351002868733461,
+          "observed": 0.021287456311560295
+        },
+        {
+          "full_triple": 0.023508707682291675,
+          "anchor_integrated": 0.019354866019162798,
+          "class_integrated": 0.019354866019162798,
+          "proper_length": 0.01925804662153136,
+          "known_anchor": 0.0243784860085086,
+          "observed": 0.01925804662153136
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.05603027343749997,
+          "anchor_integrated": 0.04823906345604689,
+          "class_integrated": 0.04823906345604689,
+          "proper_length": 0.04817521770735823,
+          "known_anchor": 0.054840031096595236,
+          "observed": 0.04817521770665319
+        },
+        {
+          "full_triple": 0.018910725911458336,
+          "anchor_integrated": 0.015758317162741085,
+          "class_integrated": 0.015758317162741085,
+          "proper_length": 0.015849158523444522,
+          "known_anchor": 0.018479383409121083,
+          "observed": 0.015442610227111988
+        },
+        {
+          "full_triple": 0.031829833984375035,
+          "anchor_integrated": 0.024766368178442646,
+          "class_integrated": 0.024766368178442646,
+          "proper_length": 0.024621717647631474,
+          "known_anchor": 0.031401086303403165,
+          "observed": 0.024621717647631467
+        },
+        {
+          "full_triple": 0.09908563523065478,
+          "anchor_integrated": 0.07718373039656126,
+          "class_integrated": 0.07718373039656126,
+          "proper_length": 0.07658865630543862,
+          "known_anchor": 0.09688463737772669,
+          "observed": 0.07497542381867711
+        },
+        {
+          "full_triple": 0.03950500488281255,
+          "anchor_integrated": 0.0321704941760512,
+          "class_integrated": 0.0321704941760512,
+          "proper_length": 0.03227705745767583,
+          "known_anchor": 0.04001953193730139,
+          "observed": 0.032235018405379026
+        },
+        {
+          "full_triple": 0.013610839843750023,
+          "anchor_integrated": 0.012627480850364838,
+          "class_integrated": 0.012627480850364838,
+          "proper_length": 0.012651440643557249,
+          "known_anchor": 0.013757365140897487,
+          "observed": 0.012651440643557206
+        },
+        {
+          "full_triple": 0.03354187011718748,
+          "anchor_integrated": 0.021218304681370842,
+          "class_integrated": 0.021218304681370842,
+          "proper_length": 0.021287456311560322,
+          "known_anchor": 0.03351002868733461,
+          "observed": 0.021287456311560295
+        },
+        {
+          "full_triple": 0.024754842122395843,
+          "anchor_integrated": 0.019217536917600298,
+          "class_integrated": 0.019217536917600298,
+          "proper_length": 0.01925804662153136,
+          "known_anchor": 0.0243784860085086,
+          "observed": 0.01925804662153136
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9917760356346652,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 6,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.14552270257516198,
+        "anchor_integrated": 0.12810469534394275,
+        "class_integrated": 0.12810469534394275,
+        "proper_length": 0.1281523613585578,
+        "known_anchor": 0.14639445808288698,
+        "observed": 0.12808388170130003
+      },
+      "prefix_stratified": {
+        "full_triple": 0.14695564415638762,
+        "anchor_integrated": 0.1281528866365516,
+        "class_integrated": 0.1281528866365516,
+        "proper_length": 0.1281523613585578,
+        "known_anchor": 0.14639445808288698,
+        "observed": 0.12808388170130003
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.0486616729201463,
+          "anchor_integrated": 0.04874184946636403,
+          "class_integrated": 0.04874184946636403,
+          "proper_length": 0.0487123612103013,
+          "known_anchor": 0.04871229082276958,
+          "observed": 0.04871229082276958
+        },
+        {
+          "full_triple": 0.03149662337464406,
+          "anchor_integrated": 0.025489786983850196,
+          "class_integrated": 0.025489786983850196,
+          "proper_length": 0.025476326751932073,
+          "known_anchor": 0.03262161104877759,
+          "observed": 0.025476326751932066
+        },
+        {
+          "full_triple": 0.007007689988511805,
+          "anchor_integrated": 0.006802353890347919,
+          "class_integrated": 0.006802353890347919,
+          "proper_length": 0.006768761075502173,
+          "known_anchor": 0.006768761075502173,
+          "observed": 0.006768761075502173
+        },
+        {
+          "full_triple": 0.01721642261918597,
+          "anchor_integrated": 0.015126982406361728,
+          "class_integrated": 0.015126982406361728,
+          "proper_length": 0.0151257294969644,
+          "known_anchor": 0.017017989691075444,
+          "observed": 0.015125729496964387
+        },
+        {
+          "full_triple": 0.009738114660559002,
+          "anchor_integrated": 0.009815474379320724,
+          "class_integrated": 0.009815474379320724,
+          "proper_length": 0.009863311847671443,
+          "known_anchor": 0.009863521195450172,
+          "observed": 0.009863311847671438
+        },
+        {
+          "full_triple": 0.0078060650067015725,
+          "anchor_integrated": 0.0013779141256035862,
+          "class_integrated": 0.0013779141256035862,
+          "proper_length": 0.001418492510919283,
+          "known_anchor": 0.007860470608423337,
+          "observed": 0.001350083241194771
+        },
+        {
+          "full_triple": 0.00585258143006481,
+          "anchor_integrated": 0.005205026108424162,
+          "class_integrated": 0.005205026108424162,
+          "proper_length": 0.005207122956418876,
+          "known_anchor": 0.00578838473031708,
+          "observed": 0.005207122956418877
+        },
+        {
+          "full_triple": 0.017743532575348452,
+          "anchor_integrated": 0.015545307983670428,
+          "class_integrated": 0.015545307983670428,
+          "proper_length": 0.015580255508848262,
+          "known_anchor": 0.01776142891057161,
+          "observed": 0.015580255508846744
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.04886822941431003,
+          "anchor_integrated": 0.04874184946636403,
+          "class_integrated": 0.04874184946636403,
+          "proper_length": 0.0487123612103013,
+          "known_anchor": 0.04871229082276958,
+          "observed": 0.04871229082276958
+        },
+        {
+          "full_triple": 0.03274434632745886,
+          "anchor_integrated": 0.025408074537312284,
+          "class_integrated": 0.025408074537312284,
+          "proper_length": 0.025476326751932073,
+          "known_anchor": 0.03262161104877759,
+          "observed": 0.025476326751932066
+        },
+        {
+          "full_triple": 0.006766888457606492,
+          "anchor_integrated": 0.006746824481188516,
+          "class_integrated": 0.006746824481188516,
+          "proper_length": 0.006768761075502173,
+          "known_anchor": 0.006768761075502173,
+          "observed": 0.006768761075502173
+        },
+        {
+          "full_triple": 0.01706956831633951,
+          "anchor_integrated": 0.015144086983289446,
+          "class_integrated": 0.015144086983289446,
+          "proper_length": 0.0151257294969644,
+          "known_anchor": 0.017017989691075444,
+          "observed": 0.015125729496964387
+        },
+        {
+          "full_triple": 0.010078608187271337,
+          "anchor_integrated": 0.009891953428035595,
+          "class_integrated": 0.009891953428035595,
+          "proper_length": 0.009863311847671443,
+          "known_anchor": 0.009863521195450172,
+          "observed": 0.009863311847671438
+        },
+        {
+          "full_triple": 0.007799253940833962,
+          "anchor_integrated": 0.001425509552997781,
+          "class_integrated": 0.001425509552997781,
+          "proper_length": 0.001418492510919283,
+          "known_anchor": 0.007860470608423337,
+          "observed": 0.001350083241194771
+        },
+        {
+          "full_triple": 0.005781024288095575,
+          "anchor_integrated": 0.005208897753689435,
+          "class_integrated": 0.005208897753689435,
+          "proper_length": 0.005207122956418876,
+          "known_anchor": 0.00578838473031708,
+          "observed": 0.005207122956418877
+        },
+        {
+          "full_triple": 0.017847725224471818,
+          "anchor_integrated": 0.015585690433674578,
+          "class_integrated": 0.015585690433674578,
+          "proper_length": 0.015580255508848262,
+          "known_anchor": 0.01776142891057161,
+          "observed": 0.015580255508846744
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9998375263093453,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 7,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 0.23958164850870764,
+        "anchor_integrated": 0.18581902359782246,
+        "class_integrated": 0.18581902359782246,
+        "proper_length": 0.18544593779062946,
+        "known_anchor": 0.235948581779406,
+        "observed": 0.18342202934639948
+      },
+      "prefix_stratified": {
+        "full_triple": 0.23979082107543945,
+        "anchor_integrated": 0.18592582046984069,
+        "class_integrated": 0.18592582046984069,
+        "proper_length": 0.18544593779062946,
+        "known_anchor": 0.235948581779406,
+        "observed": 0.18342202934639948
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.028779983520507767,
+          "anchor_integrated": 0.0289201016594381,
+          "class_integrated": 0.0289201016594381,
+          "proper_length": 0.02885625591074944,
+          "known_anchor": 0.02927280674691575,
+          "observed": 0.0288562559100444
+        },
+        {
+          "full_triple": 0.013093471527099595,
+          "anchor_integrated": 0.009391706716793763,
+          "class_integrated": 0.009391706716793763,
+          "proper_length": 0.009483229332891582,
+          "known_anchor": 0.012126158852828535,
+          "observed": 0.00908938567081944
+        },
+        {
+          "full_triple": 0.027431488037109392,
+          "anchor_integrated": 0.018752384971952328,
+          "class_integrated": 0.018752384971952328,
+          "proper_length": 0.01897394537864116,
+          "known_anchor": 0.025541458763919986,
+          "observed": 0.018973945378641152
+        },
+        {
+          "full_triple": 0.07636585235595704,
+          "anchor_integrated": 0.05901070591619384,
+          "class_integrated": 0.05901070591619384,
+          "proper_length": 0.05872043526851352,
+          "known_anchor": 0.07449098962645775,
+          "observed": 0.05713240953935764
+        },
+        {
+          "full_triple": 0.038591384887695354,
+          "anchor_integrated": 0.031247799638958386,
+          "class_integrated": 0.031247799638958386,
+          "proper_length": 0.031019521607702487,
+          "known_anchor": 0.0387606130616809,
+          "observed": 0.03097748255540569
+        },
+        {
+          "full_triple": 0.013681411743164085,
+          "anchor_integrated": 0.012631681335318999,
+          "class_integrated": 0.012631681335318999,
+          "proper_length": 0.012460219933112046,
+          "known_anchor": 0.013566144430452284,
+          "observed": 0.012460219933112002
+        },
+        {
+          "full_triple": 0.02793121337890623,
+          "anchor_integrated": 0.016220804132572545,
+          "class_integrated": 0.016220804132572545,
+          "proper_length": 0.01638531053005611,
+          "known_anchor": 0.027638391709868402,
+          "observed": 0.01638531053005608
+        },
+        {
+          "full_triple": 0.01370684305826823,
+          "anchor_integrated": 0.009643839226594479,
+          "class_integrated": 0.009643839226594479,
+          "proper_length": 0.009547019828963044,
+          "known_anchor": 0.014552018587282384,
+          "observed": 0.009547019828963043
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.03042984008789058,
+          "anchor_integrated": 0.0289201016594381,
+          "class_integrated": 0.0289201016594381,
+          "proper_length": 0.02885625591074944,
+          "known_anchor": 0.02927280674691575,
+          "observed": 0.0288562559100444
+        },
+        {
+          "full_triple": 0.012545585632324208,
+          "anchor_integrated": 0.009393137228268376,
+          "class_integrated": 0.009393137228268376,
+          "proper_length": 0.009483229332891582,
+          "known_anchor": 0.012126158852828535,
+          "observed": 0.00908938567081944
+        },
+        {
+          "full_triple": 0.025972366333007826,
+          "anchor_integrated": 0.01911859590945233,
+          "class_integrated": 0.01911859590945233,
+          "proper_length": 0.01897394537864116,
+          "known_anchor": 0.025541458763919986,
+          "observed": 0.018973945378641152
+        },
+        {
+          "full_triple": 0.07667140960693361,
+          "anchor_integrated": 0.05931340214422119,
+          "class_integrated": 0.05931340214422119,
+          "proper_length": 0.05872043526851352,
+          "known_anchor": 0.07449098962645775,
+          "observed": 0.05713240953935764
+        },
+        {
+          "full_triple": 0.038254261016845745,
+          "anchor_integrated": 0.030920960799306715,
+          "class_integrated": 0.030920960799306715,
+          "proper_length": 0.031019521607702487,
+          "known_anchor": 0.0387606130616809,
+          "observed": 0.03097748255540569
+        },
+        {
+          "full_triple": 0.013420104980468773,
+          "anchor_integrated": 0.012436178100455714,
+          "class_integrated": 0.012436178100455714,
+          "proper_length": 0.012460219933112046,
+          "known_anchor": 0.013566144430452284,
+          "observed": 0.012460219933112002
+        },
+        {
+          "full_triple": 0.027564620971679665,
+          "anchor_integrated": 0.016316934503666294,
+          "class_integrated": 0.016316934503666294,
+          "proper_length": 0.01638531053005611,
+          "known_anchor": 0.027638391709868402,
+          "observed": 0.01638531053005608
+        },
+        {
+          "full_triple": 0.014932632446289066,
+          "anchor_integrated": 0.00950651012503198,
+          "class_integrated": 0.00950651012503198,
+          "proper_length": 0.009547019828963044,
+          "known_anchor": 0.014552018587282384,
+          "observed": 0.009547019828963043
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.989086261644,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 8,
+    "direction": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 2.0721083779227456,
+        "anchor_integrated": 1.8904046564961756,
+        "class_integrated": 1.8935063163185744,
+        "proper_length": 1.8972400090894967,
+        "known_anchor": 2.1226843883408963,
+        "observed": 1.894986027322389
+      },
+      "prefix_stratified": {
+        "full_triple": 2.148238749316784,
+        "anchor_integrated": 1.901698226244842,
+        "class_integrated": 1.8951117891310476,
+        "proper_length": 1.8972400090894967,
+        "known_anchor": 2.1226843883408963,
+        "observed": 1.894986027322389
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.4330016983756388,
+          "anchor_integrated": 0.36744527055285475,
+          "class_integrated": 0.3675528752002466,
+          "proper_length": 0.36512810006782176,
+          "known_anchor": 0.43144666162971973,
+          "observed": 0.36512810006782187
+        },
+        {
+          "full_triple": 0.18774808182313796,
+          "anchor_integrated": 0.1210740533966598,
+          "class_integrated": 0.12144441186276918,
+          "proper_length": 0.12148058660772403,
+          "known_anchor": 0.1743165971320771,
+          "observed": 0.12148058660772401
+        },
+        {
+          "full_triple": 0.06169913823961022,
+          "anchor_integrated": 0.053860711230465604,
+          "class_integrated": 0.05457917525210713,
+          "proper_length": 0.05479568408826453,
+          "known_anchor": 0.07260434526170201,
+          "observed": 0.05479568408826454
+        },
+        {
+          "full_triple": 0.3081330085779171,
+          "anchor_integrated": 0.2972939509230504,
+          "class_integrated": 0.29823347744390016,
+          "proper_length": 0.29953548631912286,
+          "known_anchor": 0.3079534642881093,
+          "observed": 0.29953548631912286
+        },
+        {
+          "full_triple": 0.043162199587379387,
+          "anchor_integrated": 0.044342421968900404,
+          "class_integrated": 0.042923520853034344,
+          "proper_length": 0.042390622997821766,
+          "known_anchor": 0.04150701714874357,
+          "observed": 0.041507017148743525
+        },
+        {
+          "full_triple": 0.06670884904162376,
+          "anchor_integrated": 0.02465537911747628,
+          "class_integrated": 0.024828135301985473,
+          "proper_length": 0.027412681548285814,
+          "known_anchor": 0.06363989707612314,
+          "observed": 0.026042305630256044
+        },
+        {
+          "full_triple": 0.5304845718569777,
+          "anchor_integrated": 0.5458335601966973,
+          "class_integrated": 0.5452749529118878,
+          "proper_length": 0.5456640647067608,
+          "known_anchor": 0.5456640647067609,
+          "observed": 0.5456640647067608
+        },
+        {
+          "full_triple": 0.4411708304204606,
+          "anchor_integrated": 0.43589930911007146,
+          "class_integrated": 0.438669767492644,
+          "proper_length": 0.44083278275369503,
+          "known_anchor": 0.4855523410976607,
+          "observed": 0.44083278275369503
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.4097684206444401,
+          "anchor_integrated": 0.36662201139817424,
+          "class_integrated": 0.36495614922067016,
+          "proper_length": 0.36512810006782176,
+          "known_anchor": 0.43144666162971973,
+          "observed": 0.36512810006782187
+        },
+        {
+          "full_triple": 0.1702879244328584,
+          "anchor_integrated": 0.12089695741509202,
+          "class_integrated": 0.12150191751252495,
+          "proper_length": 0.12148058660772403,
+          "known_anchor": 0.1743165971320771,
+          "observed": 0.12148058660772401
+        },
+        {
+          "full_triple": 0.0631826072853582,
+          "anchor_integrated": 0.05443169462598934,
+          "class_integrated": 0.05469646335754128,
+          "proper_length": 0.05479568408826453,
+          "known_anchor": 0.07260434526170201,
+          "observed": 0.05479568408826454
+        },
+        {
+          "full_triple": 0.30983117348496686,
+          "anchor_integrated": 0.3005556682947852,
+          "class_integrated": 0.2980934366835001,
+          "proper_length": 0.29953548631912286,
+          "known_anchor": 0.3079534642881093,
+          "observed": 0.29953548631912286
+        },
+        {
+          "full_triple": 0.06351068125261483,
+          "anchor_integrated": 0.04373629460672626,
+          "class_integrated": 0.04219265392244348,
+          "proper_length": 0.042390622997821766,
+          "known_anchor": 0.04150701714874357,
+          "observed": 0.041507017148743525
+        },
+        {
+          "full_triple": 0.06308071292147432,
+          "anchor_integrated": 0.027157438543300084,
+          "class_integrated": 0.027470119086051646,
+          "proper_length": 0.027412681548285814,
+          "known_anchor": 0.06363989707612314,
+          "observed": 0.026042305630256044
+        },
+        {
+          "full_triple": 0.5464608179517926,
+          "anchor_integrated": 0.5462292747612891,
+          "class_integrated": 0.5456451717390768,
+          "proper_length": 0.5456640647067608,
+          "known_anchor": 0.5456640647067609,
+          "observed": 0.5456640647067608
+        },
+        {
+          "full_triple": 0.522116411343278,
+          "anchor_integrated": 0.44206888659948557,
+          "class_integrated": 0.44055587760923925,
+          "proper_length": 0.44083278275369503,
+          "known_anchor": 0.4855523410976607,
+          "observed": 0.44083278275369503
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 1.0024234868500086,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 9,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.5419229801833505,
+        "anchor_integrated": 1.452968679778993,
+        "class_integrated": 1.4410451913775304,
+        "proper_length": 1.4377387320229622,
+        "known_anchor": 1.533021182755647,
+        "observed": 1.426523907720532
+      },
+      "prefix_stratified": {
+        "full_triple": 1.5556172059821414,
+        "anchor_integrated": 1.450983658586774,
+        "class_integrated": 1.4417394150910807,
+        "proper_length": 1.4377387320229622,
+        "known_anchor": 1.533021182755647,
+        "observed": 1.426523907720532
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.1721227704123602,
+          "anchor_integrated": 0.1519343757302747,
+          "class_integrated": 0.1504665441871544,
+          "proper_length": 0.14928902361379062,
+          "known_anchor": 0.16872170911956666,
+          "observed": 0.14928902361379062
+        },
+        {
+          "full_triple": 0.13698477788953284,
+          "anchor_integrated": 0.11032318321929865,
+          "class_integrated": 0.10439803111719623,
+          "proper_length": 0.10644965003383093,
+          "known_anchor": 0.1330165292099305,
+          "observed": 0.10644965003383092
+        },
+        {
+          "full_triple": 0.12833304143006866,
+          "anchor_integrated": 0.129374243525538,
+          "class_integrated": 0.12632124019402535,
+          "proper_length": 0.12340772104093674,
+          "known_anchor": 0.12889643460000116,
+          "observed": 0.12311877816747521
+        },
+        {
+          "full_triple": 0.4047754938880686,
+          "anchor_integrated": 0.3982763225195308,
+          "class_integrated": 0.39549662570208816,
+          "proper_length": 0.39396617529753836,
+          "known_anchor": 0.39954929571523146,
+          "observed": 0.3939661752975381
+        },
+        {
+          "full_triple": 0.14899212049550906,
+          "anchor_integrated": 0.14503729281144703,
+          "class_integrated": 0.14536032426162315,
+          "proper_length": 0.14557394942839913,
+          "known_anchor": 0.13972334900974043,
+          "observed": 0.1346480679995116
+        },
+        {
+          "full_triple": 0.08149189585228488,
+          "anchor_integrated": 0.07637988995385066,
+          "class_integrated": 0.07655644117498869,
+          "proper_length": 0.07690878102899107,
+          "known_anchor": 0.0806301638850012,
+          "observed": 0.07690878102890995
+        },
+        {
+          "full_triple": 0.3029935009952808,
+          "anchor_integrated": 0.31211209029160963,
+          "class_integrated": 0.3115819382327061,
+          "proper_length": 0.3106225932656775,
+          "known_anchor": 0.3106225932656776,
+          "observed": 0.3106225932656775
+        },
+        {
+          "full_triple": 0.1662293792202452,
+          "anchor_integrated": 0.12953128172744363,
+          "class_integrated": 0.13086404650774802,
+          "proper_length": 0.13152083831379824,
+          "known_anchor": 0.17186110795049828,
+          "observed": 0.1315208383137982
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.1642790280632909,
+          "anchor_integrated": 0.1518699820469719,
+          "class_integrated": 0.14985956143824047,
+          "proper_length": 0.14928902361379062,
+          "known_anchor": 0.16872170911956666,
+          "observed": 0.14928902361379062
+        },
+        {
+          "full_triple": 0.13674092437515606,
+          "anchor_integrated": 0.11154981460718352,
+          "class_integrated": 0.10686308876046563,
+          "proper_length": 0.10644965003383093,
+          "known_anchor": 0.1330165292099305,
+          "observed": 0.10644965003383092
+        },
+        {
+          "full_triple": 0.12734608540866918,
+          "anchor_integrated": 0.12495632929680593,
+          "class_integrated": 0.12434495691907756,
+          "proper_length": 0.12340772104093674,
+          "known_anchor": 0.12889643460000116,
+          "observed": 0.12311877816747521
+        },
+        {
+          "full_triple": 0.404003604948346,
+          "anchor_integrated": 0.39837141545788035,
+          "class_integrated": 0.39654678178120767,
+          "proper_length": 0.39396617529753836,
+          "known_anchor": 0.39954929571523146,
+          "observed": 0.3939661752975381
+        },
+        {
+          "full_triple": 0.15424102069685544,
+          "anchor_integrated": 0.1445027861465227,
+          "class_integrated": 0.14459887292463358,
+          "proper_length": 0.14557394942839913,
+          "known_anchor": 0.13972334900974043,
+          "observed": 0.1346480679995116
+        },
+        {
+          "full_triple": 0.08122938859582134,
+          "anchor_integrated": 0.07702971309337449,
+          "class_integrated": 0.07706404695539049,
+          "proper_length": 0.07690878102899107,
+          "known_anchor": 0.0806301638850012,
+          "observed": 0.07690878102890995
+        },
+        {
+          "full_triple": 0.3109891877895526,
+          "anchor_integrated": 0.3108234717761783,
+          "class_integrated": 0.31078688026216017,
+          "proper_length": 0.3106225932656775,
+          "known_anchor": 0.3106225932656776,
+          "observed": 0.3106225932656775
+        },
+        {
+          "full_triple": 0.17678796610445,
+          "anchor_integrated": 0.13188014616185645,
+          "class_integrated": 0.1316752260499052,
+          "proper_length": 0.13152083831379824,
+          "known_anchor": 0.17186110795049828,
+          "observed": 0.1315208383137982
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9921996785280658,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 10,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 2.160747565071756,
+        "anchor_integrated": 2.106779635385719,
+        "class_integrated": 2.0888430824766555,
+        "proper_length": 2.087868018933572,
+        "known_anchor": 2.1577926969206938,
+        "observed": 2.0723959847739755
+      },
+      "prefix_stratified": {
+        "full_triple": 2.1903468845377634,
+        "anchor_integrated": 2.1065722351728597,
+        "class_integrated": 2.0945632013840987,
+        "proper_length": 2.087868018933572,
+        "known_anchor": 2.1577926969206938,
+        "observed": 2.0723959847739755
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.34716904134177495,
+          "anchor_integrated": 0.3201407171457441,
+          "class_integrated": 0.31256436338614585,
+          "proper_length": 0.30887724841613684,
+          "known_anchor": 0.34454342706026264,
+          "observed": 0.30887724841613695
+        },
+        {
+          "full_triple": 0.18969199555733876,
+          "anchor_integrated": 0.16551777723629538,
+          "class_integrated": 0.16393505466380784,
+          "proper_length": 0.16466170902710486,
+          "known_anchor": 0.1847020575069619,
+          "observed": 0.1622117404439831
+        },
+        {
+          "full_triple": 0.13743848896923186,
+          "anchor_integrated": 0.13477592007945802,
+          "class_integrated": 0.12998872398915243,
+          "proper_length": 0.131087560476981,
+          "known_anchor": 0.13588355179073877,
+          "observed": 0.12986071653181686
+        },
+        {
+          "full_triple": 0.596611173787441,
+          "anchor_integrated": 0.5942819702843722,
+          "class_integrated": 0.5925913790455817,
+          "proper_length": 0.5927194050984728,
+          "known_anchor": 0.5927194050984728,
+          "observed": 0.5927194050984728
+        },
+        {
+          "full_triple": 0.1476636327000058,
+          "anchor_integrated": 0.14850823134401067,
+          "class_integrated": 0.14897835189548184,
+          "proper_length": 0.1486690930477763,
+          "known_anchor": 0.13846598097278753,
+          "observed": 0.1384553225922194
+        },
+        {
+          "full_triple": 0.09404323241230429,
+          "anchor_integrated": 0.09181608535052274,
+          "class_integrated": 0.0909037191962061,
+          "proper_length": 0.09304646017032837,
+          "known_anchor": 0.09697985273734501,
+          "observed": 0.09304646017032836
+        },
+        {
+          "full_triple": 0.3183690968314019,
+          "anchor_integrated": 0.32293225083895855,
+          "class_integrated": 0.31907135781049084,
+          "proper_length": 0.3179115435015071,
+          "known_anchor": 0.3179115435015072,
+          "observed": 0.3179115435015071
+        },
+        {
+          "full_triple": 0.32976090347225684,
+          "anchor_integrated": 0.3288066831063576,
+          "class_integrated": 0.33081013248978897,
+          "proper_length": 0.3308949991952653,
+          "known_anchor": 0.3465868782526187,
+          "observed": 0.3293135480195113
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.33775759877867834,
+          "anchor_integrated": 0.315066494858925,
+          "class_integrated": 0.31080544063846083,
+          "proper_length": 0.30887724841613684,
+          "known_anchor": 0.34454342706026264,
+          "observed": 0.30887724841613695
+        },
+        {
+          "full_triple": 0.18426583945921945,
+          "anchor_integrated": 0.1654667229790963,
+          "class_integrated": 0.16592647608464792,
+          "proper_length": 0.16466170902710486,
+          "known_anchor": 0.1847020575069619,
+          "observed": 0.1622117404439831
+        },
+        {
+          "full_triple": 0.13810071774222132,
+          "anchor_integrated": 0.13481354487450828,
+          "class_integrated": 0.1327909427422431,
+          "proper_length": 0.131087560476981,
+          "known_anchor": 0.13588355179073877,
+          "observed": 0.12986071653181686
+        },
+        {
+          "full_triple": 0.5977280018350676,
+          "anchor_integrated": 0.5974325197658994,
+          "class_integrated": 0.594795488636942,
+          "proper_length": 0.5927194050984728,
+          "known_anchor": 0.5927194050984728,
+          "observed": 0.5927194050984728
+        },
+        {
+          "full_triple": 0.15365133740102302,
+          "anchor_integrated": 0.14691617091968537,
+          "class_integrated": 0.1477602615473107,
+          "proper_length": 0.1486690930477763,
+          "known_anchor": 0.13846598097278753,
+          "observed": 0.1384553225922194
+        },
+        {
+          "full_triple": 0.09667049902549227,
+          "anchor_integrated": 0.09377547236640478,
+          "class_integrated": 0.09313113001314997,
+          "proper_length": 0.09304646017032837,
+          "known_anchor": 0.09697985273734501,
+          "observed": 0.09304646017032836
+        },
+        {
+          "full_triple": 0.31994153598975045,
+          "anchor_integrated": 0.32022072164641907,
+          "class_integrated": 0.31791631146330485,
+          "proper_length": 0.3179115435015071,
+          "known_anchor": 0.3179115435015072,
+          "observed": 0.3179115435015071
+        },
+        {
+          "full_triple": 0.3622313543063107,
+          "anchor_integrated": 0.3328805877619223,
+          "class_integrated": 0.331437150258039,
+          "proper_length": 0.3308949991952653,
+          "known_anchor": 0.3465868782526187,
+          "observed": 0.3293135480195113
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9925895535449127,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 11,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 3.6478027580488956,
+        "anchor_integrated": 3.6294261274704254,
+        "class_integrated": 3.6006029072215635,
+        "proper_length": 3.5924990569520827,
+        "known_anchor": 3.5610487379639997,
+        "observed": 3.5464640402660685
+      },
+      "prefix_stratified": {
+        "full_triple": 3.6292798158735446,
+        "anchor_integrated": 3.631518555673486,
+        "class_integrated": 3.607680728938325,
+        "proper_length": 3.5924990569520827,
+        "known_anchor": 3.5610487379639997,
+        "observed": 3.5464640402660685
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.3904373058802261,
+          "anchor_integrated": 0.3883174621531776,
+          "class_integrated": 0.38082435552253735,
+          "proper_length": 0.37637750840203854,
+          "known_anchor": 0.3788715756781278,
+          "observed": 0.3763775084020386
+        },
+        {
+          "full_triple": 0.25799629768469323,
+          "anchor_integrated": 0.25686004795077466,
+          "class_integrated": 0.2376919907703835,
+          "proper_length": 0.24346712689755662,
+          "known_anchor": 0.23731886585147643,
+          "observed": 0.23480883837846617
+        },
+        {
+          "full_triple": 0.20114926066139704,
+          "anchor_integrated": 0.20367054052755562,
+          "class_integrated": 0.2029444317493442,
+          "proper_length": 0.1961414750621253,
+          "known_anchor": 0.1925627574716819,
+          "observed": 0.19256275747168192
+        },
+        {
+          "full_triple": 1.1687383352102336,
+          "anchor_integrated": 1.1686902343284276,
+          "class_integrated": 1.1653793548011768,
+          "proper_length": 1.1631200652074736,
+          "known_anchor": 1.16313360243757,
+          "observed": 1.1631200652074727
+        },
+        {
+          "full_triple": 0.4060848797667867,
+          "anchor_integrated": 0.40534429580702575,
+          "class_integrated": 0.40741894199491596,
+          "proper_length": 0.4067933161142388,
+          "known_anchor": 0.37622396551739273,
+          "observed": 0.3753892941434664
+        },
+        {
+          "full_triple": 0.25591068122013366,
+          "anchor_integrated": 0.25560912618037296,
+          "class_integrated": 0.2547132013014014,
+          "proper_length": 0.2574777100854166,
+          "known_anchor": 0.25669928417458315,
+          "observed": 0.2566992841745832
+        },
+        {
+          "full_triple": 0.4504813629667609,
+          "anchor_integrated": 0.4570416659517764,
+          "class_integrated": 0.45674303470859773,
+          "proper_length": 0.4541934522542463,
+          "known_anchor": 0.4525888807026799,
+          "observed": 0.4525888807026799
+        },
+        {
+          "full_triple": 0.5170046346586661,
+          "anchor_integrated": 0.49389275457131576,
+          "class_integrated": 0.49488759637320695,
+          "proper_length": 0.4949284029289862,
+          "known_anchor": 0.5036498061304875,
+          "observed": 0.4949174117856795
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.38060603476381927,
+          "anchor_integrated": 0.3849627195638798,
+          "class_integrated": 0.37643580995161147,
+          "proper_length": 0.37637750840203854,
+          "known_anchor": 0.3788715756781278,
+          "observed": 0.3763775084020386
+        },
+        {
+          "full_triple": 0.25783728083672275,
+          "anchor_integrated": 0.25820453210295924,
+          "class_integrated": 0.24495801250844607,
+          "proper_length": 0.24346712689755662,
+          "known_anchor": 0.23731886585147643,
+          "observed": 0.23480883837846617
+        },
+        {
+          "full_triple": 0.19659474111156966,
+          "anchor_integrated": 0.19854840188255268,
+          "class_integrated": 0.2014299228047333,
+          "proper_length": 0.1961414750621253,
+          "known_anchor": 0.1925627574716819,
+          "observed": 0.19256275747168192
+        },
+        {
+          "full_triple": 1.1776095815160443,
+          "anchor_integrated": 1.1776826596825567,
+          "class_integrated": 1.1716139167654038,
+          "proper_length": 1.1631200652074736,
+          "known_anchor": 1.16313360243757,
+          "observed": 1.1631200652074727
+        },
+        {
+          "full_triple": 0.40376298970972946,
+          "anchor_integrated": 0.4023575793313587,
+          "class_integrated": 0.4044652454929902,
+          "proper_length": 0.4067933161142388,
+          "known_anchor": 0.37622396551739273,
+          "observed": 0.3753892941434664
+        },
+        {
+          "full_triple": 0.2599158742467882,
+          "anchor_integrated": 0.2596802946279971,
+          "class_integrated": 0.25842661028719405,
+          "proper_length": 0.2574777100854166,
+          "known_anchor": 0.25669928417458315,
+          "observed": 0.2566992841745832
+        },
+        {
+          "full_triple": 0.45359434985914504,
+          "anchor_integrated": 0.45360293438191845,
+          "class_integrated": 0.45412324419172384,
+          "proper_length": 0.4541934522542463,
+          "known_anchor": 0.4525888807026799,
+          "observed": 0.4525888807026799
+        },
+        {
+          "full_triple": 0.4993589638297267,
+          "anchor_integrated": 0.49647943410026385,
+          "class_integrated": 0.49622796693622295,
+          "proper_length": 0.4949284029289862,
+          "known_anchor": 0.5036498061304875,
+          "observed": 0.4949174117856795
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9959043813294536,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 12,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.1907198649192616,
+        "anchor_integrated": 1.1393228222219225,
+        "class_integrated": 1.1313987214248435,
+        "proper_length": 1.1268647325072154,
+        "known_anchor": 1.173923045071036,
+        "observed": 1.1189504598347224
+      },
+      "prefix_stratified": {
+        "full_triple": 1.1993911336350611,
+        "anchor_integrated": 1.1404847886729494,
+        "class_integrated": 1.1311699589823896,
+        "proper_length": 1.1268647325072154,
+        "known_anchor": 1.173923045071036,
+        "observed": 1.1189504598347224
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.11457994790106416,
+          "anchor_integrated": 0.10460995737208081,
+          "class_integrated": 0.10612827467758716,
+          "proper_length": 0.10520734271666926,
+          "known_anchor": 0.11375353844714206,
+          "observed": 0.10520734271666926
+        },
+        {
+          "full_triple": 0.07447081819228704,
+          "anchor_integrated": 0.06500463845390392,
+          "class_integrated": 0.05928552973623581,
+          "proper_length": 0.061226654711424126,
+          "known_anchor": 0.06566801314751086,
+          "observed": 0.06122665471142411
+        },
+        {
+          "full_triple": 0.06362469502545337,
+          "anchor_integrated": 0.06657061210758684,
+          "class_integrated": 0.06625097686390585,
+          "proper_length": 0.062330040517204255,
+          "known_anchor": 0.06233004051720424,
+          "observed": 0.06233004051720426
+        },
+        {
+          "full_triple": 0.30558190342585684,
+          "anchor_integrated": 0.30573328105332204,
+          "class_integrated": 0.30420222041255546,
+          "proper_length": 0.3017075478113727,
+          "known_anchor": 0.3017149035795004,
+          "observed": 0.30169861141701965
+        },
+        {
+          "full_triple": 0.13291068681037463,
+          "anchor_integrated": 0.13210810074048318,
+          "class_integrated": 0.12885048317588405,
+          "proper_length": 0.12904677127159614,
+          "known_anchor": 0.12258401684521922,
+          "observed": 0.12114143499345645
+        },
+        {
+          "full_triple": 0.0871486719357906,
+          "anchor_integrated": 0.08558677682974333,
+          "class_integrated": 0.08582837280068673,
+          "proper_length": 0.08628949264089963,
+          "known_anchor": 0.0862894926408996,
+          "observed": 0.0862894926408996
+        },
+        {
+          "full_triple": 0.2569583840272944,
+          "anchor_integrated": 0.263557673950931,
+          "class_integrated": 0.26411499446376924,
+          "proper_length": 0.2636537416486637,
+          "known_anchor": 0.2636537416486637,
+          "observed": 0.2636537416486637
+        },
+        {
+          "full_triple": 0.15544475760114096,
+          "anchor_integrated": 0.11615178171387167,
+          "class_integrated": 0.11673786929421906,
+          "proper_length": 0.11740314118938563,
+          "known_anchor": 0.1579292982448956,
+          "observed": 0.11740314118938561
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.10629987596922269,
+          "anchor_integrated": 0.10513987127821317,
+          "class_integrated": 0.10485224173016744,
+          "proper_length": 0.10520734271666926,
+          "known_anchor": 0.11375353844714206,
+          "observed": 0.10520734271666926
+        },
+        {
+          "full_triple": 0.07409693631059089,
+          "anchor_integrated": 0.06617601992082167,
+          "class_integrated": 0.06158987435778046,
+          "proper_length": 0.061226654711424126,
+          "known_anchor": 0.06566801314751086,
+          "observed": 0.06122665471142411
+        },
+        {
+          "full_triple": 0.06101559272719351,
+          "anchor_integrated": 0.06337504294688596,
+          "class_integrated": 0.06362625375419324,
+          "proper_length": 0.062330040517204255,
+          "known_anchor": 0.06233004051720424,
+          "observed": 0.06233004051720426
+        },
+        {
+          "full_triple": 0.30709880291071684,
+          "anchor_integrated": 0.30720505609068,
+          "class_integrated": 0.30489460169825433,
+          "proper_length": 0.3017075478113727,
+          "known_anchor": 0.3017149035795004,
+          "observed": 0.30169861141701965
+        },
+        {
+          "full_triple": 0.13770880762897805,
+          "anchor_integrated": 0.13184538269766916,
+          "class_integrated": 0.12855423446708766,
+          "proper_length": 0.12904677127159614,
+          "known_anchor": 0.12258401684521922,
+          "observed": 0.12114143499345645
+        },
+        {
+          "full_triple": 0.08719312504803488,
+          "anchor_integrated": 0.08635061072629811,
+          "class_integrated": 0.08638852921195579,
+          "proper_length": 0.08628949264089963,
+          "known_anchor": 0.0862894926408996,
+          "observed": 0.0862894926408996
+        },
+        {
+          "full_triple": 0.2632614053349006,
+          "anchor_integrated": 0.2631434588713672,
+          "class_integrated": 0.2636664717278664,
+          "proper_length": 0.2636537416486637,
+          "known_anchor": 0.2636537416486637,
+          "observed": 0.2636537416486637
+        },
+        {
+          "full_triple": 0.16271658770542397,
+          "anchor_integrated": 0.11724934614101443,
+          "class_integrated": 0.11759775203508407,
+          "proper_length": 0.11740314118938563,
+          "known_anchor": 0.1579292982448956,
+          "observed": 0.11740314118938561
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9929767323049643,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 13,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 4.030652537634083,
+        "anchor_integrated": 3.9716457398775304,
+        "class_integrated": 3.9364164075725174,
+        "proper_length": 3.930039298982538,
+        "known_anchor": 3.9688851068253133,
+        "observed": 3.8701624138358937
+      },
+      "prefix_stratified": {
+        "full_triple": 4.068788602345232,
+        "anchor_integrated": 3.9721985744393815,
+        "class_integrated": 3.949129271796612,
+        "proper_length": 3.930039298982538,
+        "known_anchor": 3.9688851068253133,
+        "observed": 3.8701624138358937
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.517409246436329,
+          "anchor_integrated": 0.4831882654325095,
+          "class_integrated": 0.47217834098121747,
+          "proper_length": 0.4665005480004734,
+          "known_anchor": 0.5061837763602876,
+          "observed": 0.46650054800047364
+        },
+        {
+          "full_triple": 0.28298673500340493,
+          "anchor_integrated": 0.2591542075721215,
+          "class_integrated": 0.2535527672668747,
+          "proper_length": 0.25701424722230404,
+          "known_anchor": 0.2676942588966275,
+          "observed": 0.24558198683957025
+        },
+        {
+          "full_triple": 0.14610223361524471,
+          "anchor_integrated": 0.14071094892560795,
+          "class_integrated": 0.1408327644713289,
+          "proper_length": 0.14214903196478137,
+          "known_anchor": 0.14193955893263846,
+          "observed": 0.13561015769893248
+        },
+        {
+          "full_triple": 1.297977132348334,
+          "anchor_integrated": 1.2977310890084472,
+          "class_integrated": 1.2959652989041484,
+          "proper_length": 1.2943204314506305,
+          "known_anchor": 1.2943204314506298,
+          "observed": 1.29432043145063
+        },
+        {
+          "full_triple": 0.4148995579538796,
+          "anchor_integrated": 0.4158119353214476,
+          "class_integrated": 0.4177912744959261,
+          "proper_length": 0.41708747252966616,
+          "known_anchor": 0.3858348416661476,
+          "observed": 0.38583484166614757
+        },
+        {
+          "full_triple": 0.27237926419739916,
+          "anchor_integrated": 0.2693951770036823,
+          "class_integrated": 0.26738968658899026,
+          "proper_length": 0.26749902748604965,
+          "known_anchor": 0.2762345635415582,
+          "observed": 0.2674990274860496
+        },
+        {
+          "full_triple": 0.3984067997902646,
+          "anchor_integrated": 0.4039754296061031,
+          "class_integrated": 0.395477216873557,
+          "proper_length": 0.394418107211591,
+          "known_anchor": 0.3895741148523891,
+          "observed": 0.389574114852389
+        },
+        {
+          "full_triple": 0.7004915682892278,
+          "anchor_integrated": 0.701678687007612,
+          "class_integrated": 0.6932290579904746,
+          "proper_length": 0.6910504331170416,
+          "known_anchor": 0.7071035611250351,
+          "observed": 0.6852413058417015
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.5055786651520062,
+          "anchor_integrated": 0.4726636144488535,
+          "class_integrated": 0.46675618842759853,
+          "proper_length": 0.4665005480004734,
+          "known_anchor": 0.5061837763602876,
+          "observed": 0.46650054800047364
+        },
+        {
+          "full_triple": 0.2772833950417203,
+          "anchor_integrated": 0.25898191510445095,
+          "class_integrated": 0.2600113641861026,
+          "proper_length": 0.25701424722230404,
+          "known_anchor": 0.2676942588966275,
+          "observed": 0.24558198683957025
+        },
+        {
+          "full_triple": 0.14450528179357133,
+          "anchor_integrated": 0.1411715863278078,
+          "class_integrated": 0.1442555250742804,
+          "proper_length": 0.14214903196478137,
+          "known_anchor": 0.14193955893263846,
+          "observed": 0.13561015769893248
+        },
+        {
+          "full_triple": 1.310094968548028,
+          "anchor_integrated": 1.3099049225081665,
+          "class_integrated": 1.3017373953471498,
+          "proper_length": 1.2943204314506305,
+          "known_anchor": 1.2943204314506298,
+          "observed": 1.29432043145063
+        },
+        {
+          "full_triple": 0.41931271427282546,
+          "anchor_integrated": 0.41220574939512916,
+          "class_integrated": 0.41492719861745847,
+          "proper_length": 0.41708747252966616,
+          "known_anchor": 0.3858348416661476,
+          "observed": 0.38583484166614757
+        },
+        {
+          "full_triple": 0.27729155217288337,
+          "anchor_integrated": 0.27525310714444307,
+          "class_integrated": 0.2725432307504703,
+          "proper_length": 0.26749902748604965,
+          "known_anchor": 0.2762345635415582,
+          "observed": 0.2674990274860496
+        },
+        {
+          "full_triple": 0.400083749676005,
+          "anchor_integrated": 0.3998860768479033,
+          "class_integrated": 0.3951782219472715,
+          "proper_length": 0.394418107211591,
+          "known_anchor": 0.3895741148523891,
+          "observed": 0.389574114852389
+        },
+        {
+          "full_triple": 0.7346382756881911,
+          "anchor_integrated": 0.7021316026626272,
+          "class_integrated": 0.6937201474462812,
+          "proper_length": 0.6910504331170416,
+          "known_anchor": 0.7071035611250351,
+          "observed": 0.6852413058417015
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9847643037151954,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 14,
+    "direction": [
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 4.280527496629374,
+        "anchor_integrated": 4.223403463261001,
+        "class_integrated": 4.1804535447146955,
+        "proper_length": 4.173618605050515,
+        "known_anchor": 4.219095110347202,
+        "observed": 4.107513954285199
+      },
+      "prefix_stratified": {
+        "full_triple": 4.317409026439449,
+        "anchor_integrated": 4.222439108332859,
+        "class_integrated": 4.19393659534148,
+        "proper_length": 4.173618605050515,
+        "known_anchor": 4.219095110347202,
+        "observed": 4.107513954285199
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.5565155656347941,
+          "anchor_integrated": 0.5261460636442001,
+          "class_integrated": 0.5105664040791809,
+          "proper_length": 0.5052467661600922,
+          "known_anchor": 0.5472873509443498,
+          "observed": 0.5052467661600923
+        },
+        {
+          "full_triple": 0.32370624019513106,
+          "anchor_integrated": 0.29665584734684186,
+          "class_integrated": 0.29028919550673626,
+          "proper_length": 0.29518537776944104,
+          "known_anchor": 0.31476143031152237,
+          "observed": 0.27991551923740354
+        },
+        {
+          "full_triple": 0.2008668981244156,
+          "anchor_integrated": 0.19791079854052346,
+          "class_integrated": 0.1977165938486205,
+          "proper_length": 0.19671582600231124,
+          "known_anchor": 0.19609747077434428,
+          "observed": 0.18962355995204977
+        },
+        {
+          "full_triple": 1.3568620660731878,
+          "anchor_integrated": 1.3547104680664332,
+          "class_integrated": 1.3518387171197561,
+          "proper_length": 1.3503336043903236,
+          "known_anchor": 1.3503336043903227,
+          "observed": 1.3503336043903227
+        },
+        {
+          "full_triple": 0.4232123690786185,
+          "anchor_integrated": 0.42415546366694,
+          "class_integrated": 0.425972177774745,
+          "proper_length": 0.4253816630330591,
+          "known_anchor": 0.3932560015448668,
+          "observed": 0.3932560015448668
+        },
+        {
+          "full_triple": 0.2621158412311216,
+          "anchor_integrated": 0.2604164483708319,
+          "class_integrated": 0.25808018851957293,
+          "proper_length": 0.25904445315042235,
+          "known_anchor": 0.26561700122197063,
+          "observed": 0.25904445315042235
+        },
+        {
+          "full_triple": 0.46123991929847585,
+          "anchor_integrated": 0.46602365411441926,
+          "class_integrated": 0.45683717679172237,
+          "proper_length": 0.45539130618114837,
+          "known_anchor": 0.4500544329900407,
+          "observed": 0.4500544329900407
+        },
+        {
+          "full_triple": 0.6960085969936305,
+          "anchor_integrated": 0.697384719510811,
+          "class_integrated": 0.689153091074361,
+          "proper_length": 0.6863196083637171,
+          "known_anchor": 0.7016878181697855,
+          "observed": 0.6800396168600013
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.5434943495088121,
+          "anchor_integrated": 0.5152909213985197,
+          "class_integrated": 0.5061933236149975,
+          "proper_length": 0.5052467661600922,
+          "known_anchor": 0.5472873509443498,
+          "observed": 0.5052467661600923
+        },
+        {
+          "full_triple": 0.32118551060026357,
+          "anchor_integrated": 0.29736165826314126,
+          "class_integrated": 0.2973764257371066,
+          "proper_length": 0.29518537776944104,
+          "known_anchor": 0.31476143031152237,
+          "observed": 0.27991551923740354
+        },
+        {
+          "full_triple": 0.20083257500522503,
+          "anchor_integrated": 0.19760528401532892,
+          "class_integrated": 0.20114502564320633,
+          "proper_length": 0.19671582600231124,
+          "known_anchor": 0.19609747077434428,
+          "observed": 0.18962355995204977
+        },
+        {
+          "full_triple": 1.3656398569054593,
+          "anchor_integrated": 1.3653738811125766,
+          "class_integrated": 1.3579479747482959,
+          "proper_length": 1.3503336043903236,
+          "known_anchor": 1.3503336043903227,
+          "observed": 1.3503336043903227
+        },
+        {
+          "full_triple": 0.42722834159982764,
+          "anchor_integrated": 0.41992566621566885,
+          "class_integrated": 0.42253595455422926,
+          "proper_length": 0.4253816630330591,
+          "known_anchor": 0.3932560015448668,
+          "observed": 0.3932560015448668
+        },
+        {
+          "full_triple": 0.2671699581835359,
+          "anchor_integrated": 0.2661086723951955,
+          "class_integrated": 0.2631477736711328,
+          "proper_length": 0.25904445315042235,
+          "known_anchor": 0.26561700122197063,
+          "observed": 0.25904445315042235
+        },
+        {
+          "full_triple": 0.4609392608232688,
+          "anchor_integrated": 0.4610823301871705,
+          "class_integrated": 0.45603206335880764,
+          "proper_length": 0.45539130618114837,
+          "known_anchor": 0.4500544329900407,
+          "observed": 0.4500544329900407
+        },
+        {
+          "full_triple": 0.7309191738130578,
+          "anchor_integrated": 0.6996906947452584,
+          "class_integrated": 0.689558054013704,
+          "proper_length": 0.6863196083637171,
+          "known_anchor": 0.7016878181697855,
+          "observed": 0.6800396168600013
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9841613101193957,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 15,
+    "direction": [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.363976547221221,
+        "anchor_integrated": 1.2915772508920456,
+        "class_integrated": 1.285739142921009,
+        "proper_length": 1.279841698376708,
+        "known_anchor": 1.335580829463785,
+        "observed": 1.2673078920940968
+      },
+      "prefix_stratified": {
+        "full_triple": 1.3644552112609254,
+        "anchor_integrated": 1.2924763387273257,
+        "class_integrated": 1.2868117847851654,
+        "proper_length": 1.279841698376708,
+        "known_anchor": 1.335580829463785,
+        "observed": 1.2673078920940968
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.1469551061664112,
+          "anchor_integrated": 0.13678723516763175,
+          "class_integrated": 0.13578092429270533,
+          "proper_length": 0.13458190360646838,
+          "known_anchor": 0.143177203413683,
+          "observed": 0.13458190360646838
+        },
+        {
+          "full_triple": 0.10065338737022324,
+          "anchor_integrated": 0.08726120743137676,
+          "class_integrated": 0.08178023719942837,
+          "proper_length": 0.08433673031963539,
+          "known_anchor": 0.093089226224965,
+          "observed": 0.08433673031963537
+        },
+        {
+          "full_triple": 0.06656704618855223,
+          "anchor_integrated": 0.06738858631132062,
+          "class_integrated": 0.06701900061299927,
+          "proper_length": 0.06194069683935691,
+          "known_anchor": 0.062453295535030734,
+          "observed": 0.0610256761714429
+        },
+        {
+          "full_triple": 0.3713474685243001,
+          "anchor_integrated": 0.37044590334173444,
+          "class_integrated": 0.36917295734498257,
+          "proper_length": 0.36673726969474674,
+          "known_anchor": 0.3667370047246316,
+          "observed": 0.3667370047246316
+        },
+        {
+          "full_triple": 0.14071071217388056,
+          "anchor_integrated": 0.13989802132768028,
+          "class_integrated": 0.1405716839403152,
+          "proper_length": 0.1403850252482989,
+          "known_anchor": 0.13032383054441307,
+          "observed": 0.12890958234552752
+        },
+        {
+          "full_triple": 0.08908870319083638,
+          "anchor_integrated": 0.08677745246011326,
+          "class_integrated": 0.08688146179371903,
+          "proper_length": 0.08743425397967085,
+          "known_anchor": 0.08781563300190469,
+          "observed": 0.08729117623786034
+        },
+        {
+          "full_triple": 0.2622072784889097,
+          "anchor_integrated": 0.26599015338541027,
+          "class_integrated": 0.2657174391697267,
+          "proper_length": 0.2647587079693325,
+          "known_anchor": 0.2647587079693325,
+          "observed": 0.2647587079693325
+        },
+        {
+          "full_triple": 0.18644684511810738,
+          "anchor_integrated": 0.13702869146677826,
+          "class_integrated": 0.1388154385671325,
+          "proper_length": 0.13966711071919863,
+          "known_anchor": 0.18722592804982452,
+          "observed": 0.1396671107191986
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.1382911426496968,
+          "anchor_integrated": 0.135240096212462,
+          "class_integrated": 0.13437105514612258,
+          "proper_length": 0.13458190360646838,
+          "known_anchor": 0.143177203413683,
+          "observed": 0.13458190360646838
+        },
+        {
+          "full_triple": 0.1004966984292255,
+          "anchor_integrated": 0.08898187482640137,
+          "class_integrated": 0.08478240472545628,
+          "proper_length": 0.08433673031963539,
+          "known_anchor": 0.093089226224965,
+          "observed": 0.08433673031963537
+        },
+        {
+          "full_triple": 0.06294452359923257,
+          "anchor_integrated": 0.06459651727589968,
+          "class_integrated": 0.06515486593837821,
+          "proper_length": 0.06194069683935691,
+          "known_anchor": 0.062453295535030734,
+          "observed": 0.0610256761714429
+        },
+        {
+          "full_triple": 0.3723979735895653,
+          "anchor_integrated": 0.3721675775275879,
+          "class_integrated": 0.3704420345141666,
+          "proper_length": 0.36673726969474674,
+          "known_anchor": 0.3667370047246316,
+          "observed": 0.3667370047246316
+        },
+        {
+          "full_triple": 0.14476658782706778,
+          "anchor_integrated": 0.13898686101969768,
+          "class_integrated": 0.139390307645661,
+          "proper_length": 0.1403850252482989,
+          "known_anchor": 0.13032383054441307,
+          "observed": 0.12890958234552752
+        },
+        {
+          "full_triple": 0.08914161575392271,
+          "anchor_integrated": 0.0876724894199299,
+          "class_integrated": 0.08769104653740543,
+          "proper_length": 0.08743425397967085,
+          "known_anchor": 0.08781563300190469,
+          "observed": 0.08729117623786034
+        },
+        {
+          "full_triple": 0.26521386834913485,
+          "anchor_integrated": 0.26511232652700095,
+          "class_integrated": 0.26504073881996354,
+          "proper_length": 0.2647587079693325,
+          "known_anchor": 0.2647587079693325,
+          "observed": 0.2647587079693325
+        },
+        {
+          "full_triple": 0.19120280106307944,
+          "anchor_integrated": 0.13971859591834612,
+          "class_integrated": 0.1399393314580119,
+          "proper_length": 0.13966711071919863,
+          "known_anchor": 0.18722592804982452,
+          "observed": 0.1396671107191986
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9902067526800318,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 16,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 3.693172390237786,
+        "anchor_integrated": 3.6747866935022073,
+        "class_integrated": 3.6488391740993196,
+        "proper_length": 3.6415661114746007,
+        "known_anchor": 3.6147439357680375,
+        "observed": 3.6038789121282506
+      },
+      "prefix_stratified": {
+        "full_triple": 3.6757265343539105,
+        "anchor_integrated": 3.6785430171960374,
+        "class_integrated": 3.6555727678611376,
+        "proper_length": 3.6415661114746007,
+        "known_anchor": 3.6147439357680375,
+        "observed": 3.6038789121282506
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.40183596830499646,
+          "anchor_integrated": 0.3997608225232215,
+          "class_integrated": 0.3957380380204882,
+          "proper_length": 0.39155579053708056,
+          "known_anchor": 0.39410823400775397,
+          "observed": 0.3915557905370807
+        },
+        {
+          "full_triple": 0.254685953958192,
+          "anchor_integrated": 0.25487764566585147,
+          "class_integrated": 0.23210447605175472,
+          "proper_length": 0.2380708471243403,
+          "known_anchor": 0.23516777558273555,
+          "observed": 0.23506078602977387
+        },
+        {
+          "full_triple": 0.21331273419810032,
+          "anchor_integrated": 0.21394703635791104,
+          "class_integrated": 0.2132209275796996,
+          "proper_length": 0.2064465147876095,
+          "known_anchor": 0.20443789507074336,
+          "observed": 0.20443789507074336
+        },
+        {
+          "full_triple": 1.2011100502736445,
+          "anchor_integrated": 1.2022605144203211,
+          "class_integrated": 1.1989496348930704,
+          "proper_length": 1.19657750667743,
+          "known_anchor": 1.1965910163772757,
+          "observed": 1.1965775066774293
+        },
+        {
+          "full_triple": 0.3831713607700511,
+          "anchor_integrated": 0.38239057499346474,
+          "class_integrated": 0.3844715221507532,
+          "proper_length": 0.38415607327052026,
+          "known_anchor": 0.35318387722555983,
+          "observed": 0.35237770998675766
+        },
+        {
+          "full_triple": 0.26388523147738546,
+          "anchor_integrated": 0.2635522900576791,
+          "class_integrated": 0.2631676043624454,
+          "proper_length": 0.2658915279722992,
+          "known_anchor": 0.2652834098256426,
+          "observed": 0.26528340982564264
+        },
+        {
+          "full_triple": 0.4636789033281165,
+          "anchor_integrated": 0.46707646694507543,
+          "class_integrated": 0.46677783570189674,
+          "proper_length": 0.46413441085925655,
+          "known_anchor": 0.4638523737547588,
+          "observed": 0.46385237375475874
+        },
+        {
+          "full_triple": 0.5114921879273001,
+          "anchor_integrated": 0.49092134253868286,
+          "class_integrated": 0.4944091353392116,
+          "proper_length": 0.4947334402460646,
+          "known_anchor": 0.5021193539235681,
+          "observed": 0.4947334402460646
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.39379523170175224,
+          "anchor_integrated": 0.397269673936316,
+          "class_integrated": 0.3913633372665342,
+          "proper_length": 0.39155579053708056,
+          "known_anchor": 0.39410823400775397,
+          "observed": 0.3915557905370807
+        },
+        {
+          "full_triple": 0.2566806685576342,
+          "anchor_integrated": 0.2565293841460348,
+          "class_integrated": 0.23930838125411674,
+          "proper_length": 0.2380708471243403,
+          "known_anchor": 0.23516777558273555,
+          "observed": 0.23506078602977387
+        },
+        {
+          "full_triple": 0.20571836298129506,
+          "anchor_integrated": 0.2078771650833845,
+          "class_integrated": 0.21019669388042872,
+          "proper_length": 0.2064465147876095,
+          "known_anchor": 0.20443789507074336,
+          "observed": 0.20443789507074336
+        },
+        {
+          "full_triple": 1.2111820512448979,
+          "anchor_integrated": 1.2112128562077056,
+          "class_integrated": 1.2051441132905523,
+          "proper_length": 1.19657750667743,
+          "known_anchor": 1.1965910163772757,
+          "observed": 1.1965775066774293
+        },
+        {
+          "full_triple": 0.3812189518593482,
+          "anchor_integrated": 0.3800506345221301,
+          "class_integrated": 0.38220914605579165,
+          "proper_length": 0.38415607327052026,
+          "known_anchor": 0.35318387722555983,
+          "observed": 0.35237770998675766
+        },
+        {
+          "full_triple": 0.26749914755668197,
+          "anchor_integrated": 0.2675704718056925,
+          "class_integrated": 0.26680672501597136,
+          "proper_length": 0.2658915279722992,
+          "known_anchor": 0.2652834098256426,
+          "observed": 0.26528340982564264
+        },
+        {
+          "full_triple": 0.4644041043772931,
+          "anchor_integrated": 0.46415023102903363,
+          "class_integrated": 0.46467054083883896,
+          "proper_length": 0.46413441085925655,
+          "known_anchor": 0.4638523737547588,
+          "observed": 0.46385237375475874
+        },
+        {
+          "full_triple": 0.49522801607500877,
+          "anchor_integrated": 0.4938826004657418,
+          "class_integrated": 0.49587383025890375,
+          "proper_length": 0.4947334402460646,
+          "known_anchor": 0.5021193539235681,
+          "observed": 0.4947334402460646
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.996994248048312,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 17,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.1907198649192616,
+        "anchor_integrated": 1.1393228222219225,
+        "class_integrated": 1.1313987214248435,
+        "proper_length": 1.1268647325072154,
+        "known_anchor": 1.173923045071036,
+        "observed": 1.1189504598347224
+      },
+      "prefix_stratified": {
+        "full_triple": 1.1993911336350611,
+        "anchor_integrated": 1.1404847886729494,
+        "class_integrated": 1.1311699589823896,
+        "proper_length": 1.1268647325072154,
+        "known_anchor": 1.173923045071036,
+        "observed": 1.1189504598347224
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.11457994790106416,
+          "anchor_integrated": 0.10460995737208081,
+          "class_integrated": 0.10612827467758716,
+          "proper_length": 0.10520734271666926,
+          "known_anchor": 0.11375353844714206,
+          "observed": 0.10520734271666926
+        },
+        {
+          "full_triple": 0.07447081819228704,
+          "anchor_integrated": 0.06500463845390392,
+          "class_integrated": 0.05928552973623581,
+          "proper_length": 0.061226654711424126,
+          "known_anchor": 0.06566801314751086,
+          "observed": 0.06122665471142411
+        },
+        {
+          "full_triple": 0.06362469502545337,
+          "anchor_integrated": 0.06657061210758684,
+          "class_integrated": 0.06625097686390585,
+          "proper_length": 0.062330040517204255,
+          "known_anchor": 0.06233004051720424,
+          "observed": 0.06233004051720426
+        },
+        {
+          "full_triple": 0.30558190342585684,
+          "anchor_integrated": 0.30573328105332204,
+          "class_integrated": 0.30420222041255546,
+          "proper_length": 0.3017075478113727,
+          "known_anchor": 0.3017149035795004,
+          "observed": 0.30169861141701965
+        },
+        {
+          "full_triple": 0.13291068681037463,
+          "anchor_integrated": 0.13210810074048318,
+          "class_integrated": 0.12885048317588405,
+          "proper_length": 0.12904677127159614,
+          "known_anchor": 0.12258401684521922,
+          "observed": 0.12114143499345645
+        },
+        {
+          "full_triple": 0.0871486719357906,
+          "anchor_integrated": 0.08558677682974333,
+          "class_integrated": 0.08582837280068673,
+          "proper_length": 0.08628949264089963,
+          "known_anchor": 0.0862894926408996,
+          "observed": 0.0862894926408996
+        },
+        {
+          "full_triple": 0.2569583840272944,
+          "anchor_integrated": 0.263557673950931,
+          "class_integrated": 0.26411499446376924,
+          "proper_length": 0.2636537416486637,
+          "known_anchor": 0.2636537416486637,
+          "observed": 0.2636537416486637
+        },
+        {
+          "full_triple": 0.15544475760114096,
+          "anchor_integrated": 0.11615178171387167,
+          "class_integrated": 0.11673786929421906,
+          "proper_length": 0.11740314118938563,
+          "known_anchor": 0.1579292982448956,
+          "observed": 0.11740314118938561
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.10629987596922269,
+          "anchor_integrated": 0.10513987127821317,
+          "class_integrated": 0.10485224173016744,
+          "proper_length": 0.10520734271666926,
+          "known_anchor": 0.11375353844714206,
+          "observed": 0.10520734271666926
+        },
+        {
+          "full_triple": 0.07409693631059089,
+          "anchor_integrated": 0.06617601992082167,
+          "class_integrated": 0.06158987435778046,
+          "proper_length": 0.061226654711424126,
+          "known_anchor": 0.06566801314751086,
+          "observed": 0.06122665471142411
+        },
+        {
+          "full_triple": 0.06101559272719351,
+          "anchor_integrated": 0.06337504294688596,
+          "class_integrated": 0.06362625375419324,
+          "proper_length": 0.062330040517204255,
+          "known_anchor": 0.06233004051720424,
+          "observed": 0.06233004051720426
+        },
+        {
+          "full_triple": 0.30709880291071684,
+          "anchor_integrated": 0.30720505609068,
+          "class_integrated": 0.30489460169825433,
+          "proper_length": 0.3017075478113727,
+          "known_anchor": 0.3017149035795004,
+          "observed": 0.30169861141701965
+        },
+        {
+          "full_triple": 0.13770880762897805,
+          "anchor_integrated": 0.13184538269766916,
+          "class_integrated": 0.12855423446708766,
+          "proper_length": 0.12904677127159614,
+          "known_anchor": 0.12258401684521922,
+          "observed": 0.12114143499345645
+        },
+        {
+          "full_triple": 0.08719312504803488,
+          "anchor_integrated": 0.08635061072629811,
+          "class_integrated": 0.08638852921195579,
+          "proper_length": 0.08628949264089963,
+          "known_anchor": 0.0862894926408996,
+          "observed": 0.0862894926408996
+        },
+        {
+          "full_triple": 0.2632614053349006,
+          "anchor_integrated": 0.2631434588713672,
+          "class_integrated": 0.2636664717278664,
+          "proper_length": 0.2636537416486637,
+          "known_anchor": 0.2636537416486637,
+          "observed": 0.2636537416486637
+        },
+        {
+          "full_triple": 0.16271658770542397,
+          "anchor_integrated": 0.11724934614101443,
+          "class_integrated": 0.11759775203508407,
+          "proper_length": 0.11740314118938563,
+          "known_anchor": 0.1579292982448956,
+          "observed": 0.11740314118938561
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9929767323049643,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 18,
+    "direction": [
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 2.0004101260697387,
+        "anchor_integrated": 1.938512532209173,
+        "class_integrated": 1.9217662142168086,
+        "proper_length": 1.9207362465905298,
+        "known_anchor": 2.0026874652980675,
+        "observed": 1.9043815920529854
+      },
+      "prefix_stratified": {
+        "full_triple": 2.039400290567828,
+        "anchor_integrated": 1.941257417294832,
+        "class_integrated": 1.9282143332557384,
+        "proper_length": 1.9207362465905298,
+        "known_anchor": 2.0026874652980675,
+        "observed": 1.9043815920529854
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.2841169902673995,
+          "anchor_integrated": 0.24831222432730132,
+          "class_integrated": 0.24275999861067418,
+          "proper_length": 0.24039710866053318,
+          "known_anchor": 0.28063023236549917,
+          "observed": 0.24039710866053324
+        },
+        {
+          "full_triple": 0.1641067610842866,
+          "anchor_integrated": 0.14497170607634186,
+          "class_integrated": 0.14318868144206318,
+          "proper_length": 0.1438722578315564,
+          "known_anchor": 0.1586702922318275,
+          "observed": 0.1411813453838749
+        },
+        {
+          "full_triple": 0.08070065959125156,
+          "anchor_integrated": 0.0736781060435622,
+          "class_integrated": 0.07009958596115991,
+          "proper_length": 0.07186615146858076,
+          "known_anchor": 0.08205034053542665,
+          "observed": 0.07052600318274854
+        },
+        {
+          "full_triple": 0.5862468940474205,
+          "anchor_integrated": 0.5865080784062251,
+          "class_integrated": 0.585979825963418,
+          "proper_length": 0.5854859153529195,
+          "known_anchor": 0.58729892315088,
+          "observed": 0.5854859153529193
+        },
+        {
+          "full_triple": 0.15186635020949454,
+          "anchor_integrated": 0.1525618105180557,
+          "class_integrated": 0.15324286291670708,
+          "proper_length": 0.15279583270037747,
+          "known_anchor": 0.14169305242634606,
+          "observed": 0.14169305242634603
+        },
+        {
+          "full_triple": 0.10719601170238607,
+          "anchor_integrated": 0.10311394691782971,
+          "class_integrated": 0.10199803248387519,
+          "proper_length": 0.10434735135685895,
+          "known_anchor": 0.11032541115804081,
+          "observed": 0.10434735135685895
+        },
+        {
+          "full_triple": 0.266476899623929,
+          "anchor_integrated": 0.2711596252520569,
+          "class_integrated": 0.26655987929762087,
+          "proper_length": 0.26467827165762814,
+          "known_anchor": 0.2682558525732099,
+          "observed": 0.26467827165762803
+        },
+        {
+          "full_triple": 0.3596995595435705,
+          "anchor_integrated": 0.35820703466780024,
+          "class_integrated": 0.35793734754129036,
+          "proper_length": 0.3572933575620756,
+          "known_anchor": 0.3737633608568372,
+          "observed": 0.3560725440320764
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.27636726335212153,
+          "anchor_integrated": 0.24451935163645858,
+          "class_integrated": 0.24072944563421333,
+          "proper_length": 0.24039710866053318,
+          "known_anchor": 0.28063023236549917,
+          "observed": 0.24039710866053324
+        },
+        {
+          "full_triple": 0.15880081867519724,
+          "anchor_integrated": 0.14500863969541888,
+          "class_integrated": 0.1454961230496753,
+          "proper_length": 0.1438722578315564,
+          "known_anchor": 0.1586702922318275,
+          "observed": 0.1411813453838749
+        },
+        {
+          "full_triple": 0.08161060422643274,
+          "anchor_integrated": 0.07528191353812806,
+          "class_integrated": 0.07346771273275571,
+          "proper_length": 0.07186615146858076,
+          "known_anchor": 0.08205034053542665,
+          "observed": 0.07052600318274854
+        },
+        {
+          "full_triple": 0.5932530804328522,
+          "anchor_integrated": 0.5914010817827204,
+          "class_integrated": 0.5879786364400823,
+          "proper_length": 0.5854859153529195,
+          "known_anchor": 0.58729892315088,
+          "observed": 0.5854859153529193
+        },
+        {
+          "full_triple": 0.15775370167957975,
+          "anchor_integrated": 0.15101560269729078,
+          "class_integrated": 0.15206448185696889,
+          "proper_length": 0.15279583270037747,
+          "known_anchor": 0.14169305242634606,
+          "observed": 0.14169305242634603
+        },
+        {
+          "full_triple": 0.10979348935419944,
+          "anchor_integrated": 0.10539646270004917,
+          "class_integrated": 0.10448384303352215,
+          "proper_length": 0.10434735135685895,
+          "known_anchor": 0.11032541115804081,
+          "observed": 0.10434735135685895
+        },
+        {
+          "full_triple": 0.27252673656694504,
+          "anchor_integrated": 0.2692311850713155,
+          "class_integrated": 0.2658401310074793,
+          "proper_length": 0.26467827165762814,
+          "known_anchor": 0.2682558525732099,
+          "observed": 0.26467827165762803
+        },
+        {
+          "full_triple": 0.38929459628050056,
+          "anchor_integrated": 0.35940318017344997,
+          "class_integrated": 0.3581539595010415,
+          "proper_length": 0.3572933575620756,
+          "known_anchor": 0.3737633608568372,
+          "observed": 0.3560725440320764
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9914852158558598,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 19,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.5419229801833505,
+        "anchor_integrated": 1.452968679778993,
+        "class_integrated": 1.4410451913775304,
+        "proper_length": 1.4377387320229622,
+        "known_anchor": 1.533021182755647,
+        "observed": 1.426523907720532
+      },
+      "prefix_stratified": {
+        "full_triple": 1.5556172059821414,
+        "anchor_integrated": 1.450983658586774,
+        "class_integrated": 1.4417394150910807,
+        "proper_length": 1.4377387320229622,
+        "known_anchor": 1.533021182755647,
+        "observed": 1.426523907720532
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.1721227704123602,
+          "anchor_integrated": 0.1519343757302747,
+          "class_integrated": 0.1504665441871544,
+          "proper_length": 0.14928902361379062,
+          "known_anchor": 0.16872170911956666,
+          "observed": 0.14928902361379062
+        },
+        {
+          "full_triple": 0.13698477788953284,
+          "anchor_integrated": 0.11032318321929865,
+          "class_integrated": 0.10439803111719623,
+          "proper_length": 0.10644965003383093,
+          "known_anchor": 0.1330165292099305,
+          "observed": 0.10644965003383092
+        },
+        {
+          "full_triple": 0.12833304143006866,
+          "anchor_integrated": 0.129374243525538,
+          "class_integrated": 0.12632124019402535,
+          "proper_length": 0.12340772104093674,
+          "known_anchor": 0.12889643460000116,
+          "observed": 0.12311877816747521
+        },
+        {
+          "full_triple": 0.4047754938880686,
+          "anchor_integrated": 0.3982763225195308,
+          "class_integrated": 0.39549662570208816,
+          "proper_length": 0.39396617529753836,
+          "known_anchor": 0.39954929571523146,
+          "observed": 0.3939661752975381
+        },
+        {
+          "full_triple": 0.14899212049550906,
+          "anchor_integrated": 0.14503729281144703,
+          "class_integrated": 0.14536032426162315,
+          "proper_length": 0.14557394942839913,
+          "known_anchor": 0.13972334900974043,
+          "observed": 0.1346480679995116
+        },
+        {
+          "full_triple": 0.08149189585228488,
+          "anchor_integrated": 0.07637988995385066,
+          "class_integrated": 0.07655644117498869,
+          "proper_length": 0.07690878102899107,
+          "known_anchor": 0.0806301638850012,
+          "observed": 0.07690878102890995
+        },
+        {
+          "full_triple": 0.3029935009952808,
+          "anchor_integrated": 0.31211209029160963,
+          "class_integrated": 0.3115819382327061,
+          "proper_length": 0.3106225932656775,
+          "known_anchor": 0.3106225932656776,
+          "observed": 0.3106225932656775
+        },
+        {
+          "full_triple": 0.1662293792202452,
+          "anchor_integrated": 0.12953128172744363,
+          "class_integrated": 0.13086404650774802,
+          "proper_length": 0.13152083831379824,
+          "known_anchor": 0.17186110795049828,
+          "observed": 0.1315208383137982
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.1642790280632909,
+          "anchor_integrated": 0.1518699820469719,
+          "class_integrated": 0.14985956143824047,
+          "proper_length": 0.14928902361379062,
+          "known_anchor": 0.16872170911956666,
+          "observed": 0.14928902361379062
+        },
+        {
+          "full_triple": 0.13674092437515606,
+          "anchor_integrated": 0.11154981460718352,
+          "class_integrated": 0.10686308876046563,
+          "proper_length": 0.10644965003383093,
+          "known_anchor": 0.1330165292099305,
+          "observed": 0.10644965003383092
+        },
+        {
+          "full_triple": 0.12734608540866918,
+          "anchor_integrated": 0.12495632929680593,
+          "class_integrated": 0.12434495691907756,
+          "proper_length": 0.12340772104093674,
+          "known_anchor": 0.12889643460000116,
+          "observed": 0.12311877816747521
+        },
+        {
+          "full_triple": 0.404003604948346,
+          "anchor_integrated": 0.39837141545788035,
+          "class_integrated": 0.39654678178120767,
+          "proper_length": 0.39396617529753836,
+          "known_anchor": 0.39954929571523146,
+          "observed": 0.3939661752975381
+        },
+        {
+          "full_triple": 0.15424102069685544,
+          "anchor_integrated": 0.1445027861465227,
+          "class_integrated": 0.14459887292463358,
+          "proper_length": 0.14557394942839913,
+          "known_anchor": 0.13972334900974043,
+          "observed": 0.1346480679995116
+        },
+        {
+          "full_triple": 0.08122938859582134,
+          "anchor_integrated": 0.07702971309337449,
+          "class_integrated": 0.07706404695539049,
+          "proper_length": 0.07690878102899107,
+          "known_anchor": 0.0806301638850012,
+          "observed": 0.07690878102890995
+        },
+        {
+          "full_triple": 0.3109891877895526,
+          "anchor_integrated": 0.3108234717761783,
+          "class_integrated": 0.31078688026216017,
+          "proper_length": 0.3106225932656775,
+          "known_anchor": 0.3106225932656776,
+          "observed": 0.3106225932656775
+        },
+        {
+          "full_triple": 0.17678796610445,
+          "anchor_integrated": 0.13188014616185645,
+          "class_integrated": 0.1316752260499052,
+          "proper_length": 0.13152083831379824,
+          "known_anchor": 0.17186110795049828,
+          "observed": 0.1315208383137982
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9921996785280658,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 20,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 4.381828190576158,
+        "anchor_integrated": 4.313445762190698,
+        "class_integrated": 4.280003550987195,
+        "proper_length": 4.273252023809847,
+        "known_anchor": 4.326055581442272,
+        "observed": 4.211255071451493
+      },
+      "prefix_stratified": {
+        "full_triple": 4.419801347497917,
+        "anchor_integrated": 4.313675516974888,
+        "class_integrated": 4.292984765282833,
+        "proper_length": 4.273252023809847,
+        "known_anchor": 4.326055581442272,
+        "observed": 4.211255071451493
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.5861665502960967,
+          "anchor_integrated": 0.5523771205800688,
+          "class_integrated": 0.5432040068002547,
+          "proper_length": 0.5376634347410277,
+          "known_anchor": 0.577780476010158,
+          "observed": 0.537663434741028
+        },
+        {
+          "full_triple": 0.334749721224901,
+          "anchor_integrated": 0.30330894557121846,
+          "class_integrated": 0.2977074200148628,
+          "proper_length": 0.30185513614137505,
+          "known_anchor": 0.324560169229833,
+          "observed": 0.2885573021226265
+        },
+        {
+          "full_triple": 0.21473266940254873,
+          "anchor_integrated": 0.2092451375465518,
+          "class_integrated": 0.20837724507772276,
+          "proper_length": 0.20873130091700404,
+          "known_anchor": 0.20889252313466547,
+          "observed": 0.20252684165208712
+        },
+        {
+          "full_triple": 1.398641267901095,
+          "anchor_integrated": 1.3977288602770805,
+          "class_integrated": 1.39493979387163,
+          "proper_length": 1.3934377345011943,
+          "known_anchor": 1.3934377345011937,
+          "observed": 1.3934377345011937
+        },
+        {
+          "full_triple": 0.4089380340938453,
+          "anchor_integrated": 0.409842880325902,
+          "class_integrated": 0.41179535520360144,
+          "proper_length": 0.4112054548807437,
+          "known_anchor": 0.3794504733774167,
+          "observed": 0.37945047337741666
+        },
+        {
+          "full_triple": 0.2736617236104643,
+          "anchor_integrated": 0.2699236958746803,
+          "class_integrated": 0.2678488655536291,
+          "proper_length": 0.2681347946234044,
+          "known_anchor": 0.2780225895367947,
+          "observed": 0.26813479462340434
+        },
+        {
+          "full_triple": 0.4594855502639727,
+          "anchor_integrated": 0.4642462583411555,
+          "class_integrated": 0.4570147824574931,
+          "proper_length": 0.45568961845626627,
+          "known_anchor": 0.451096884926336,
+          "observed": 0.45109688492633593
+        },
+        {
+          "full_triple": 0.7054526737832346,
+          "anchor_integrated": 0.7067728636740407,
+          "class_integrated": 0.6991160820079994,
+          "proper_length": 0.696534549548832,
+          "known_anchor": 0.7128147307258755,
+          "observed": 0.6903876055074019
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.5746893882064984,
+          "anchor_integrated": 0.5427283151523522,
+          "class_integrated": 0.5381181041226487,
+          "proper_length": 0.5376634347410277,
+          "known_anchor": 0.577780476010158,
+          "observed": 0.537663434741028
+        },
+        {
+          "full_triple": 0.33024858383584976,
+          "anchor_integrated": 0.3033884385950271,
+          "class_integrated": 0.3044178027201018,
+          "proper_length": 0.30185513614137505,
+          "known_anchor": 0.324560169229833,
+          "observed": 0.2885573021226265
+        },
+        {
+          "full_triple": 0.2116432187965127,
+          "anchor_integrated": 0.20825011937653615,
+          "class_integrated": 0.2114155575952176,
+          "proper_length": 0.20873130091700404,
+          "known_anchor": 0.20889252313466547,
+          "observed": 0.20252684165208712
+        },
+        {
+          "full_triple": 1.4090049301245813,
+          "anchor_integrated": 1.4087035341894047,
+          "class_integrated": 1.4010275494891975,
+          "proper_length": 1.3934377345011943,
+          "known_anchor": 1.3934377345011937,
+          "observed": 1.3934377345011937
+        },
+        {
+          "full_triple": 0.41334537836092916,
+          "anchor_integrated": 0.4062256803043425,
+          "class_integrated": 0.40893702854343555,
+          "proper_length": 0.4112054548807437,
+          "known_anchor": 0.3794504733774167,
+          "observed": 0.37945047337741666
+        },
+        {
+          "full_triple": 0.2786960276790358,
+          "anchor_integrated": 0.2757673493883349,
+          "class_integrated": 0.273006142510111,
+          "proper_length": 0.2681347946234044,
+          "known_anchor": 0.2780225895367947,
+          "observed": 0.26813479462340434
+        },
+        {
+          "full_triple": 0.4603779316746815,
+          "anchor_integrated": 0.4595162154134391,
+          "class_integrated": 0.4564206439759917,
+          "proper_length": 0.45568961845626627,
+          "known_anchor": 0.451096884926336,
+          "observed": 0.45109688492633593
+        },
+        {
+          "full_triple": 0.7417958888198293,
+          "anchor_integrated": 0.709095864555451,
+          "class_integrated": 0.6996419363261288,
+          "proper_length": 0.696534549548832,
+          "known_anchor": 0.7128147307258755,
+          "observed": 0.6903876055074019
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9854918567842671,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 21,
+    "direction": [
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.2096269698539626,
+        "anchor_integrated": 1.1274151288378895,
+        "class_integrated": 1.1196275163856675,
+        "proper_length": 1.1173613012835917,
+        "known_anchor": 1.197511310534222,
+        "observed": 1.1033464879455364
+      },
+      "prefix_stratified": {
+        "full_triple": 1.2269929571449876,
+        "anchor_integrated": 1.128535808898868,
+        "class_integrated": 1.1200935566273167,
+        "proper_length": 1.1173613012835917,
+        "known_anchor": 1.197511310534222,
+        "observed": 1.1033464879455364
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.11540472021999446,
+          "anchor_integrated": 0.08902906055573871,
+          "class_integrated": 0.08503756069587255,
+          "proper_length": 0.08424222792204285,
+          "known_anchor": 0.11014408755131572,
+          "observed": 0.08424222792204286
+        },
+        {
+          "full_triple": 0.08189579287230535,
+          "anchor_integrated": 0.06465514155052639,
+          "class_integrated": 0.06377716538681688,
+          "proper_length": 0.0655528511788393,
+          "known_anchor": 0.07257904840283358,
+          "observed": 0.06245806940386348
+        },
+        {
+          "full_triple": 0.06533299043380866,
+          "anchor_integrated": 0.0649549202447789,
+          "class_integrated": 0.06376512414034825,
+          "proper_length": 0.06155011206465747,
+          "known_anchor": 0.06729142791679367,
+          "observed": 0.06155005173314009
+        },
+        {
+          "full_triple": 0.31501977369085765,
+          "anchor_integrated": 0.30803390734197267,
+          "class_integrated": 0.30715391583755836,
+          "proper_length": 0.30567353579580536,
+          "known_anchor": 0.31200405864306113,
+          "observed": 0.30567353579580503
+        },
+        {
+          "full_triple": 0.14542750536092108,
+          "anchor_integrated": 0.14116673589825818,
+          "class_integrated": 0.1400562024876456,
+          "proper_length": 0.1407155567681834,
+          "known_anchor": 0.1368617246467045,
+          "observed": 0.129795585609376
+        },
+        {
+          "full_triple": 0.07837469142880074,
+          "anchor_integrated": 0.07450851322205757,
+          "class_integrated": 0.07465915073378118,
+          "proper_length": 0.07496076054769797,
+          "known_anchor": 0.07752988447315286,
+          "observed": 0.07496076047494335
+        },
+        {
+          "full_triple": 0.2442354614360482,
+          "anchor_integrated": 0.25328282812283687,
+          "class_integrated": 0.25300926887522435,
+          "proper_length": 0.25206476907695774,
+          "known_anchor": 0.25206476907695785,
+          "observed": 0.2520647690769578
+        },
+        {
+          "full_triple": 0.1639360344112264,
+          "anchor_integrated": 0.13178402190172034,
+          "class_integrated": 0.13216912822841997,
+          "proper_length": 0.13260148792940746,
+          "known_anchor": 0.16903630982340292,
+          "observed": 0.13260148792940743
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.10932051170232422,
+          "anchor_integrated": 0.08978347169519596,
+          "class_integrated": 0.08466410497417948,
+          "proper_length": 0.08424222792204285,
+          "known_anchor": 0.11014408755131572,
+          "observed": 0.08424222792204286
+        },
+        {
+          "full_triple": 0.0802266469449813,
+          "anchor_integrated": 0.06611381116773563,
+          "class_integrated": 0.06562147613968783,
+          "proper_length": 0.0655528511788393,
+          "known_anchor": 0.07257904840283358,
+          "observed": 0.06245806940386348
+        },
+        {
+          "full_triple": 0.0648502470615028,
+          "anchor_integrated": 0.0608534142191563,
+          "class_integrated": 0.06107220075025699,
+          "proper_length": 0.06155011206465747,
+          "known_anchor": 0.06729142791679367,
+          "observed": 0.06155005173314009
+        },
+        {
+          "full_triple": 0.31607964458958604,
+          "anchor_integrated": 0.3097313217595967,
+          "class_integrated": 0.3080028244798704,
+          "proper_length": 0.30567353579580536,
+          "known_anchor": 0.31200405864306113,
+          "observed": 0.30567353579580503
+        },
+        {
+          "full_triple": 0.1513667406620445,
+          "anchor_integrated": 0.14102053703075237,
+          "class_integrated": 0.13982773272212673,
+          "proper_length": 0.1407155567681834,
+          "known_anchor": 0.1368617246467045,
+          "observed": 0.129795585609376
+        },
+        {
+          "full_triple": 0.07827943652291097,
+          "anchor_integrated": 0.07512181808588356,
+          "class_integrated": 0.07514723828602118,
+          "proper_length": 0.07496076054769797,
+          "known_anchor": 0.07752988447315286,
+          "observed": 0.07496076047494335
+        },
+        {
+          "full_triple": 0.253306674373567,
+          "anchor_integrated": 0.2530507753189527,
+          "class_integrated": 0.25276206011225777,
+          "proper_length": 0.25206476907695774,
+          "known_anchor": 0.25206476907695785,
+          "observed": 0.2520647690769578
+        },
+        {
+          "full_triple": 0.17356305528807012,
+          "anchor_integrated": 0.13286065962159418,
+          "class_integrated": 0.13299591916291603,
+          "proper_length": 0.13260148792940746,
+          "known_anchor": 0.16903630982340292,
+          "observed": 0.13260148792940743
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9874572232616652,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 22,
+    "direction": [
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.3645677628585173,
+        "anchor_integrated": 1.2957458665175354,
+        "class_integrated": 1.2828361192942823,
+        "proper_length": 1.276775036232229,
+        "known_anchor": 1.3325053137893308,
+        "observed": 1.2642198154062485
+      },
+      "prefix_stratified": {
+        "full_triple": 1.3659286286117918,
+        "anchor_integrated": 1.2953896465470167,
+        "class_integrated": 1.283675633142667,
+        "proper_length": 1.276775036232229,
+        "known_anchor": 1.3325053137893308,
+        "observed": 1.2642198154062485
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.13788247913107457,
+          "anchor_integrated": 0.12849561052429864,
+          "class_integrated": 0.12174425606790992,
+          "proper_length": 0.12056723054605926,
+          "known_anchor": 0.12916406872199174,
+          "observed": 0.12056723054605926
+        },
+        {
+          "full_triple": 0.0990184672359517,
+          "anchor_integrated": 0.08562626086021281,
+          "class_integrated": 0.08014952476840728,
+          "proper_length": 0.0827025635465726,
+          "known_anchor": 0.09145514757487685,
+          "observed": 0.08270256354657259
+        },
+        {
+          "full_triple": 0.07054363319433626,
+          "anchor_integrated": 0.07134617514226485,
+          "class_integrated": 0.070737347743381,
+          "proper_length": 0.06563212856488644,
+          "known_anchor": 0.06614472726056027,
+          "observed": 0.06471710789697244
+        },
+        {
+          "full_triple": 0.37215739162255534,
+          "anchor_integrated": 0.37410480454397455,
+          "class_integrated": 0.3728644076736848,
+          "proper_length": 0.3703796592653946,
+          "known_anchor": 0.37039492913081384,
+          "observed": 0.37037937890519307
+        },
+        {
+          "full_triple": 0.1398909385580195,
+          "anchor_integrated": 0.13907905470463414,
+          "class_integrated": 0.13974127322547214,
+          "proper_length": 0.1395680671682661,
+          "known_anchor": 0.1294845512939994,
+          "observed": 0.12807122511221197
+        },
+        {
+          "full_triple": 0.08913320799226868,
+          "anchor_integrated": 0.08680516971493552,
+          "class_integrated": 0.08690917904854126,
+          "proper_length": 0.08746000919288431,
+          "known_anchor": 0.08784138821511815,
+          "observed": 0.08731693145107379
+        },
+        {
+          "full_triple": 0.27293252612742275,
+          "anchor_integrated": 0.27668897746806415,
+          "class_integrated": 0.27660784384641623,
+          "proper_length": 0.27558611016956763,
+          "known_anchor": 0.27558611016956763,
+          "observed": 0.27558611016956763
+        },
+        {
+          "full_triple": 0.18300911899688882,
+          "anchor_integrated": 0.13359981355915138,
+          "class_integrated": 0.13408228692046992,
+          "proper_length": 0.13487926777859766,
+          "known_anchor": 0.18243439142240264,
+          "observed": 0.13487926777859763
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.1296787728622202,
+          "anchor_integrated": 0.12761527799841055,
+          "class_integrated": 0.12030162047346747,
+          "proper_length": 0.12056723054605926,
+          "known_anchor": 0.12916406872199174,
+          "observed": 0.12056723054605926
+        },
+        {
+          "full_triple": 0.09885425937706534,
+          "anchor_integrated": 0.08733940933734882,
+          "class_integrated": 0.08314501657422034,
+          "proper_length": 0.0827025635465726,
+          "known_anchor": 0.09145514757487685,
+          "observed": 0.08270256354657259
+        },
+        {
+          "full_triple": 0.06670408982510173,
+          "anchor_integrated": 0.06836760290505403,
+          "class_integrated": 0.06893141817378487,
+          "proper_length": 0.06563212856488644,
+          "known_anchor": 0.06614472726056027,
+          "observed": 0.06471710789697244
+        },
+        {
+          "full_triple": 0.37547254689715087,
+          "anchor_integrated": 0.3756969059794463,
+          "class_integrated": 0.3739885515517386,
+          "proper_length": 0.3703796592653946,
+          "known_anchor": 0.37039492913081384,
+          "observed": 0.37037937890519307
+        },
+        {
+          "full_triple": 0.14396404875371155,
+          "anchor_integrated": 0.1381851289391563,
+          "class_integrated": 0.13858094617058841,
+          "proper_length": 0.1395680671682661,
+          "known_anchor": 0.1294845512939994,
+          "observed": 0.12807122511221197
+        },
+        {
+          "full_triple": 0.08916780300718981,
+          "anchor_integrated": 0.08769905526428226,
+          "class_integrated": 0.08771685644359487,
+          "proper_length": 0.08746000919288431,
+          "known_anchor": 0.08784138821511815,
+          "observed": 0.08731693145107379
+        },
+        {
+          "full_triple": 0.27581455201425226,
+          "anchor_integrated": 0.27569754428439486,
+          "class_integrated": 0.27585705196402716,
+          "proper_length": 0.27558611016956763,
+          "known_anchor": 0.27558611016956763,
+          "observed": 0.27558611016956763
+        },
+        {
+          "full_triple": 0.1862725558751002,
+          "anchor_integrated": 0.1347887218389238,
+          "class_integrated": 0.13515417179124573,
+          "proper_length": 0.13487926777859766,
+          "known_anchor": 0.18243439142240264,
+          "observed": 0.13487926777859763
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9901664580919196,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 23,
+    "direction": [
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 2.1699900323949084,
+        "anchor_integrated": 2.1151517520997136,
+        "class_integrated": 2.1033196591115146,
+        "proper_length": 2.1038107550529914,
+        "known_anchor": 2.1647472699542942,
+        "observed": 2.087347810371314
+      },
+      "prefix_stratified": {
+        "full_triple": 2.1969590612609227,
+        "anchor_integrated": 2.117711711991423,
+        "class_integrated": 2.1086121816076733,
+        "proper_length": 2.1038107550529914,
+        "known_anchor": 2.1647472699542942,
+        "observed": 2.087347810371314
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.3446250659658737,
+          "anchor_integrated": 0.32529030041509743,
+          "class_integrated": 0.32218836158067377,
+          "proper_length": 0.31962427974149105,
+          "known_anchor": 0.34053718439809927,
+          "observed": 0.31962427974149116
+        },
+        {
+          "full_triple": 0.18784737750178324,
+          "anchor_integrated": 0.16482861285402528,
+          "class_integrated": 0.1632458902815377,
+          "proper_length": 0.16447519377400532,
+          "known_anchor": 0.18361207060045326,
+          "observed": 0.16072510644432342
+        },
+        {
+          "full_triple": 0.1355801809065369,
+          "anchor_integrated": 0.13263416221278304,
+          "class_integrated": 0.1278826240500211,
+          "proper_length": 0.12870776672572398,
+          "known_anchor": 0.13480650488450197,
+          "observed": 0.12870776672572398
+        },
+        {
+          "full_triple": 0.5807849255267211,
+          "anchor_integrated": 0.5716683760437097,
+          "class_integrated": 0.569977784804919,
+          "proper_length": 0.5701940953973303,
+          "known_anchor": 0.5758772958672184,
+          "observed": 0.5701940953973301
+        },
+        {
+          "full_triple": 0.16982116865895877,
+          "anchor_integrated": 0.16848543919351214,
+          "class_integrated": 0.16879923386743026,
+          "proper_length": 0.16859113321226735,
+          "known_anchor": 0.16136536008457777,
+          "observed": 0.1574273534675602
+        },
+        {
+          "full_triple": 0.08654307373431011,
+          "anchor_integrated": 0.08614668933140368,
+          "class_integrated": 0.08535544110176696,
+          "proper_length": 0.08759589527779746,
+          "known_anchor": 0.08898382130141273,
+          "observed": 0.08759589527779749
+        },
+        {
+          "full_triple": 0.3242089504466361,
+          "anchor_integrated": 0.3260686760150424,
+          "class_integrated": 0.32360993474742905,
+          "proper_length": 0.32233520369248386,
+          "known_anchor": 0.32233520369248386,
+          "observed": 0.3223352036924838
+        },
+        {
+          "full_triple": 0.3405792896540886,
+          "anchor_integrated": 0.34002949603414073,
+          "class_integrated": 0.34226038867773656,
+          "proper_length": 0.34228718723189266,
+          "known_anchor": 0.357229829125547,
+          "observed": 0.34073810962460405
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.3333859060105122,
+          "anchor_integrated": 0.32142653140100735,
+          "class_integrated": 0.3195890737490526,
+          "proper_length": 0.31962427974149105,
+          "known_anchor": 0.34053718439809927,
+          "observed": 0.31962427974149116
+        },
+        {
+          "full_triple": 0.18335583811881923,
+          "anchor_integrated": 0.1651172260101579,
+          "class_integrated": 0.16555788974430424,
+          "proper_length": 0.16447519377400532,
+          "known_anchor": 0.18361207060045326,
+          "observed": 0.16072510644432342
+        },
+        {
+          "full_triple": 0.13694579338874432,
+          "anchor_integrated": 0.13375969307378524,
+          "class_integrated": 0.13105848821144767,
+          "proper_length": 0.12870776672572398,
+          "known_anchor": 0.13480650488450197,
+          "observed": 0.12870776672572398
+        },
+        {
+          "full_triple": 0.5810321251624201,
+          "anchor_integrated": 0.5748750197402666,
+          "class_integrated": 0.5722379886113091,
+          "proper_length": 0.5701940953973303,
+          "known_anchor": 0.5758772958672184,
+          "observed": 0.5701940953973301
+        },
+        {
+          "full_triple": 0.17606059812577216,
+          "anchor_integrated": 0.16671010471247472,
+          "class_integrated": 0.16734079117113573,
+          "proper_length": 0.16859113321226735,
+          "known_anchor": 0.16136536008457777,
+          "observed": 0.1574273534675602
+        },
+        {
+          "full_triple": 0.08933399618166755,
+          "anchor_integrated": 0.08812618735064086,
+          "class_integrated": 0.08771509475725252,
+          "proper_length": 0.08759589527779746,
+          "known_anchor": 0.08898382130141273,
+          "observed": 0.08759589527779749
+        },
+        {
+          "full_triple": 0.3240342107850574,
+          "anchor_integrated": 0.3234674042870653,
+          "class_integrated": 0.3223267145721182,
+          "proper_length": 0.32233520369248386,
+          "known_anchor": 0.32233520369248386,
+          "observed": 0.3223352036924838
+        },
+        {
+          "full_triple": 0.37281059348792994,
+          "anchor_integrated": 0.3442295454160258,
+          "class_integrated": 0.3427861407910535,
+          "proper_length": 0.34228718723189266,
+          "known_anchor": 0.357229829125547,
+          "observed": 0.34073810962460405
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9924063616906678,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  },
+  {
+    "direction_index": 24,
+    "direction": [
+      0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333,
+      -0.3333333333333333,
+      -0.3333333333333333,
+      0.3333333333333333
+    ],
+    "totals": {
+      "iid": {
+        "full_triple": 1.7236429981549333,
+        "anchor_integrated": 1.6723912015877613,
+        "class_integrated": 1.659961044315741,
+        "proper_length": 1.65993156239428,
+        "known_anchor": 1.722824349049314,
+        "observed": 1.641691681492192
+      },
+      "prefix_stratified": {
+        "full_triple": 1.753703453776611,
+        "anchor_integrated": 1.6731949641928117,
+        "class_integrated": 1.6647560331950901,
+        "proper_length": 1.65993156239428,
+        "known_anchor": 1.722824349049314,
+        "observed": 1.641691681492192
+      }
+    },
+    "by_question": {
+      "iid": [
+        {
+          "full_triple": 0.2581084890409135,
+          "anchor_integrated": 0.23052631718052916,
+          "class_integrated": 0.2252682279554797,
+          "proper_length": 0.22258133539000194,
+          "known_anchor": 0.2556451241228453,
+          "observed": 0.222581335390002
+        },
+        {
+          "full_triple": 0.13012693719057367,
+          "anchor_integrated": 0.10882008528562438,
+          "class_integrated": 0.10735153190146354,
+          "proper_length": 0.10826296583880209,
+          "known_anchor": 0.1260778054256916,
+          "observed": 0.1051410914889515
+        },
+        {
+          "full_triple": 0.06768784092403422,
+          "anchor_integrated": 0.06472583704450759,
+          "class_integrated": 0.06391757402931074,
+          "proper_length": 0.06494174507962462,
+          "known_anchor": 0.06808222223047147,
+          "observed": 0.06202706053168953
+        },
+        {
+          "full_triple": 0.4865588930772242,
+          "anchor_integrated": 0.48482270919252257,
+          "class_integrated": 0.48404328282782305,
+          "proper_length": 0.48386417861538183,
+          "known_anchor": 0.4838641786153816,
+          "observed": 0.4838641786153816
+        },
+        {
+          "full_triple": 0.1356194692206528,
+          "anchor_integrated": 0.13646224729675785,
+          "class_integrated": 0.13688065378299194,
+          "proper_length": 0.13679498620999478,
+          "known_anchor": 0.12697591027579577,
+          "observed": 0.12633853641219803
+        },
+        {
+          "full_triple": 0.08885522915098311,
+          "anchor_integrated": 0.087148709921059,
+          "class_integrated": 0.08627844807408294,
+          "proper_length": 0.0882300006566846,
+          "known_anchor": 0.09139361292526046,
+          "observed": 0.08823000065668457
+        },
+        {
+          "full_triple": 0.25557474636889244,
+          "anchor_integrated": 0.26031675806886745,
+          "class_integrated": 0.2562344393705556,
+          "proper_length": 0.25532967798002304,
+          "known_anchor": 0.25532967798002315,
+          "observed": 0.2553296779800231
+        },
+        {
+          "full_triple": 0.30111139318165925,
+          "anchor_integrated": 0.2995685375978936,
+          "class_integrated": 0.2999868863740335,
+          "proper_length": 0.299926672623767,
+          "known_anchor": 0.3154558174738444,
+          "observed": 0.2981798004172617
+        }
+      ],
+      "prefix_stratified": [
+        {
+          "full_triple": 0.2481141626100135,
+          "anchor_integrated": 0.22588462458830305,
+          "class_integrated": 0.22322791947218287,
+          "proper_length": 0.22258133539000194,
+          "known_anchor": 0.2556451241228453,
+          "observed": 0.222581335390002
+        },
+        {
+          "full_triple": 0.12572947639836207,
+          "anchor_integrated": 0.10882508639609702,
+          "class_integrated": 0.1092628533609126,
+          "proper_length": 0.10826296583880209,
+          "known_anchor": 0.1260778054256916,
+          "observed": 0.1051410914889515
+        },
+        {
+          "full_triple": 0.06890394664413793,
+          "anchor_integrated": 0.06550311310227491,
+          "class_integrated": 0.06608591494705458,
+          "proper_length": 0.06494174507962462,
+          "known_anchor": 0.06808222223047147,
+          "observed": 0.06202706053168953
+        },
+        {
+          "full_triple": 0.4889490652069527,
+          "anchor_integrated": 0.48875263387484646,
+          "class_integrated": 0.48591645420344814,
+          "proper_length": 0.48386417861538183,
+          "known_anchor": 0.4838641786153816,
+          "observed": 0.4838641786153816
+        },
+        {
+          "full_triple": 0.14177597786207752,
+          "anchor_integrated": 0.1350896200272888,
+          "class_integrated": 0.13585495500085012,
+          "proper_length": 0.13679498620999478,
+          "known_anchor": 0.12697591027579577,
+          "observed": 0.12633853641219803
+        },
+        {
+          "full_triple": 0.09112517853724504,
+          "anchor_integrated": 0.08895718362815189,
+          "class_integrated": 0.08832588570818206,
+          "proper_length": 0.0882300006566846,
+          "known_anchor": 0.09139361292526046,
+          "observed": 0.08823000065668457
+        },
+        {
+          "full_triple": 0.25815069525668116,
+          "anchor_integrated": 0.25840509555087166,
+          "class_integrated": 0.25551218190681363,
+          "proper_length": 0.25532967798002304,
+          "known_anchor": 0.25532967798002315,
+          "observed": 0.2553296779800231
+        },
+        {
+          "full_triple": 0.33095495126114105,
+          "anchor_integrated": 0.30177760702497786,
+          "class_integrated": 0.3005698685956461,
+          "proper_length": 0.299926672623767,
+          "known_anchor": 0.3154558174738444,
+          "observed": 0.2981798004172617
+        }
+      ]
+    },
+    "primary_ratio_to_strongest_control": 0.9890116669172921,
+    "status": "NO_LOCAL_20PCT_OPPORTUNITY"
+  }
+]

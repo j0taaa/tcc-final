@@ -64,3 +64,10 @@ query; FAKE70-state/8960-vector pipeline passes separately. Proper T/A absolute
 score mixtures are integrated rather than unnecessarily sampled. V3 source/
 runtime/input freeze must precede any real OLD-head readout/statistic. Still
 no actual native coupler, useful own novelty, finite speed or achieved goal.
+
+V3 fe5dd29 completes70/70 OLD-state readouts; zero new heads/auxiliaries/
+decoder paths/updates. All25 local directions fail20% vs all strong controls;
+best ratio.98416 against proper T. AFTER-data4125 scalar checks pass2.665e-15;
+negative MC gaps preserved. No large neural expansion for this local idea.
+This is not a native sampler, finite-latency result or population refutation.
+See work/result-v3.md. Useful sufficient originality/goal remain OPEN.
