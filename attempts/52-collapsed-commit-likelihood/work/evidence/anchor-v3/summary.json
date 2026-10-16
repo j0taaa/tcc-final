@@ -1,0 +1,30 @@
+{
+  "proof_contract_commit": "da3bd39cc9579c3fe2a62603d8fe0b55db1f84aa",
+  "anchor_tests": 4,
+  "combined_oracles": {
+    "tests": 15,
+    "seconds": 1.374
+  },
+  "joint_laws": 8,
+  "observed_actions": 256,
+  "score_coordinates": 4864,
+  "fake_head_states": 5,
+  "observed_paths": 12,
+  "auxiliary_paths": 24,
+  "full_suite": {
+    "tests": 220,
+    "seconds": 73.333,
+    "status": "PASS"
+  },
+  "make_check": "PASS",
+  "new_model_forwards": 0,
+  "parameter_updates": 0,
+  "competitive_timing": false,
+  "goal_achieved": false,
+  "source_sha256": {
+    "anchor.py": "8de3c86401e90807d7ee2489532cd4ef7bcf21e4b5afe96d8c85eac6b848e29a",
+    "test_anchor.py": "d08866e0158df157afa91ef26b2d8a2bc7112a02e7b4883d2456f7659ee19a2d",
+    "reference.py": "0c49d3028f98a4511c9d057d6c50e9de4b228f0c73ced4cd040c367a8a9e658b",
+    "anchor-policy-v3.md": "715ac57ef68cc2a4ba807902866d872a04687f671fc195db6a5d3c3de723cda9"
+  }
+}

@@ -9,3 +9,7 @@ CollapsedActionTests = import_module(
 SmoothActionTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_smooth"
 ).SmoothActionTests
+
+AnchorActionTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_anchor"
+).AnchorActionTests

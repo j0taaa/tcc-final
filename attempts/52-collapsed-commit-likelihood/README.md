@@ -123,3 +123,13 @@ conditional-mean principles are credited. Fixed-anchor and position-only
 reductions must receive cheaper correct implementations. All eight criteria
 are reassessed. No V3 code, new head, update, timing, specific novelty or useful
 neural consequence is established by this written foundation.
+
+After freeze da3bd39, four V3 oracles PASS:8 complete triple laws,256 actions,
+4864 score coordinates, both levels of collapse, fixed-anchor/position-only
+analytic controls, original proposal marginals and confidence chain rule.
+Five changed FAKE-head states yield12 observed paths from24 full paths, with
+the exact return-gradient covariance identity. Combined15 oracles PASS1.374s;
+full220 tests PASS73.333s; make check/focused Ruff PASS. No real new neural
+head, parameter update, GPU timing or confirmed novelty/use. Evidence:
+work/evidence/anchor-v3. The next consumer must explicitly handle model output
+IDs beyond the tokenizer-defined domain; no hidden vocabulary truncation.

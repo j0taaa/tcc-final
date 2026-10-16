@@ -34,6 +34,17 @@ paths. Full216 tests PASS73.155s; no neural forward/update/timing. The primary
 addendum recognizes dUltra/Learning Unmasking Policies and MD4§6's existing
 token-value-dependent schedules. No discovery credit for those principles.
 
+V3 explicitly changes the policy again: an auxiliary anchor chosen before the
+complete proposal guarantees progress while retaining its CURRENT word marginal.
+Integrating the anchor costs a retained-only scalar times ordinary evidence
+inference. Four rational oracles after da3bd39 verify8 complete laws256 actions
+4864 score components and5 changed FAKE-head states12 observed paths24 full
+paths. Full220 PASS73.333s; no new real head/update/timing. Classical forcing,
+mixtures, weighted counting and conditional expectation remain acknowledged;
+practical benefit and sufficient originality are not established. Metadata
+inspection also finds151936 output logits versus tokenizer IDs through151669;
+a future consumer must state that semantic boundary explicitly before capture.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

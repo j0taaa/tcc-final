@@ -72,6 +72,12 @@ cost remain open. No new neural campaign is credited to M70.
   and all eight criteria precede V3 code. Standard forcing/mixture/WMC/RB are
   credited. Only a minimal independent oracle is next; fixed-anchor and
   position-only analytic controls must remain equally competent/cheap.
+  After da3bd39, four V3 oracles PASS:8 triple laws256 actions4864 score
+  coordinates and5 FAKE-head states12 observed paths24 full paths, including
+  confidence chain rule and both collapses/analytic controls. Combined15
+  PASS1.374s; full220 PASS73.333s; make check/Ruff PASS. No real head/update/
+  timing. Tiny-A2D head has151936 logits but token IDs only0..151669; a future
+  consumer must declare the remaining IDs' semantics before data capture.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

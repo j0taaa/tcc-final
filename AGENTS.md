@@ -30,6 +30,11 @@ liberar: preserva P da proposta ATUAL e permite integrar âncora/descartes por
 um escalar só dos retidos e partição unária. Forçar âncora, mistura/WMC/RB são
 clássicos; novidade/uso não confirmados. Âncora fixa e gates por posição são
 controles mais baratos e obrigatórios. Não atribuir oráculos V1/V2 a V3.
+Após da3bd39, quatro oráculos V3 passam8 leis256 ações4864 componentes e
+5 estados FALSOS/12 trajetórias observadas/24 completas, com chain rule e
+controles analíticos. Full220 PASS73.333s; make check/Ruff PASS. Ainda sem
+head real/update/timing novo. Cabeça Tiny-A2D V151936 excede tokenizer0..151669;
+qualquer consumidor futuro deve declarar os IDs extras, não truncá-los calado.
 
 ## Objetivo e estado atual
 
