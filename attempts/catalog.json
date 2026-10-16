@@ -2561,7 +2561,7 @@
     {
       "id": "52-collapsed-commit-likelihood",
       "title": "Lei observada do commitment escolhido por confianca",
-      "conclusion": "Written before prototype238a356; unary evidence reduction for native sampled-confidence threshold/fallback and stable top-k. Classical counting/conditional scores/Rao-Blackwell principles explicit. Six rational oracles108 complete laws1372 actions15092 coordinates; connected-family best-baseline comparison and actual moving-boundary discontinuity retained. Full211 tests PASS72.391s, make check/focused Ruff PASS. Retained-only counterexample true gradient-21/100 versus0 and naive mass17/10. No new head/update/timing, confirmed priority, practical benefit or achieved user goal. Only small prior/consumer audit justified; dUltra/Bernoulli policies are antecedents for smooth variants. V2 explicit DIFFERENT smooth joint word/token-aware Bernoulli law conditioned nonempty: positive two-state OR, changed word marginal, no rank-cell condition. Five new oracles8 joint laws256 actions4096 coordinates31 FAKE states52 observed paths88 auxiliary paths; combined11 PASS1.224s, full216 PASS73.155s. dUltra/Learning Unmasking Policies and MD4 token-dependent schedules explicitly credited; no new head/update/timing or practical/novelty claim. Only written next consumer/refinement justified. V3 auxiliary anchor chosen before X preserves CURRENT proposal P, guarantees nonempty release, and integrates anchor by retained-only scalar times one filtered partition. Four oracles8 triple laws256 actions4864 coordinates5 FAKE states12 observed paths24 full paths; combined15 PASS1.374s, full220 PASS73.333s. Fixed-anchor/position-only analytic controls kept. No new real head/update/timing, confirmed priority/use or achieved goal. Model metadata boundary V151936 versus tokenizer0..151669 must be declared before any future capture.",
+      "conclusion": "Written before prototype238a356; unary evidence reduction for native sampled-confidence threshold/fallback and stable top-k. Classical counting/conditional scores/Rao-Blackwell principles explicit. Six rational oracles108 complete laws1372 actions15092 coordinates; connected-family best-baseline comparison and actual moving-boundary discontinuity retained. Full211 tests PASS72.391s, make check/focused Ruff PASS. Retained-only counterexample true gradient-21/100 versus0 and naive mass17/10. No new head/update/timing, confirmed priority, practical benefit or achieved user goal. Only small prior/consumer audit justified; dUltra/Bernoulli policies are antecedents for smooth variants. V2 explicit DIFFERENT smooth joint word/token-aware Bernoulli law conditioned nonempty: positive two-state OR, changed word marginal, no rank-cell condition. Five new oracles8 joint laws256 actions4096 coordinates31 FAKE states52 observed paths88 auxiliary paths; combined11 PASS1.224s, full216 PASS73.155s. dUltra/Learning Unmasking Policies and MD4 token-dependent schedules explicitly credited; no new head/update/timing or practical/novelty claim. Only written next consumer/refinement justified. V3 auxiliary anchor chosen before X preserves CURRENT proposal P, guarantees nonempty release, and integrates anchor by retained-only scalar times one filtered partition. Four oracles8 triple laws256 actions4864 coordinates5 FAKE states12 observed paths24 full paths; combined15 PASS1.374s, full220 PASS73.333s. Fixed-anchor/position-only analytic controls kept. No new real head/update/timing, confirmed priority/use or achieved goal. Model metadata boundary V151936 versus tokenizer0..151669 must be declared before any future capture. V4 resource ONLY: frozen854a733 runner completes8/8 known-development initial heads, nine real forwards including warmup,32 valid original-ID JSON proposals/actions, zero error/refusal; all151936 IDs retained, max log check3.553e-14 and sampler<=422932672B. Full224 tests PASS74.209s; no labels/update/competitive variance or semantic gain. Feasibility allows only a separately justified cost/variance protocol; novelty and user goal remain open.",
       "reading": "attempts/52-collapsed-commit-likelihood/README.md",
       "versions": [
         {
@@ -2590,6 +2590,20 @@
             "attempts/52-collapsed-commit-likelihood/README.md",
             "attempts/52-collapsed-commit-likelihood/work"
           ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "37d4f034e069f2bfa3c2f9ca324ad8985f5d2978",
+          "evidence_commit": "37d4f034e069f2bfa3c2f9ca324ad8985f5d2978",
+          "evidence_roots": [
+            "attempts/52-collapsed-commit-likelihood/README.md",
+            "attempts/52-collapsed-commit-likelihood/work"
+          ],
+          "supplements": {
+            "heads-v4.zip": [
+              "docs/artifacts/raw/a52_consumer_resource_v4_initial"
+            ]
+          }
         }
       ]
     }
