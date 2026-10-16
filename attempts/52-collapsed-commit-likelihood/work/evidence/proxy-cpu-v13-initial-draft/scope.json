@@ -1,0 +1,6 @@
+{
+  "status": "PARSE_ERROR_BEFORE_ANY_QUERY",
+  "reason": "line-removal string replacement left indentation fragments",
+  "new_heads": 0,
+  "replay_queries": 0
+}

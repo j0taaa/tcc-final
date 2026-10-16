@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "FAKE_HEAD_records": 70,
+  "actual_neural_heads": 0,
+  "model_forwards": 0,
+  "CUDA_initialized": false,
+  "CPU_driver_serialization_caps_and_compares": true
+}

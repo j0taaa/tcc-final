@@ -1,0 +1,9 @@
+{
+  "written_commit": "d3c69b7",
+  "fake_driver_records": 70,
+  "CPU_peak_rss_bytes": 516272128,
+  "CUDA_initialized": false,
+  "new_neural_heads": 0,
+  "new_parameter_updates": 0,
+  "real_old_head_queries": 0
+}

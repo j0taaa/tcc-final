@@ -1,0 +1,8 @@
+{
+  "producer_commit": "d3c69b760e00cf73351d8b912542ae9c8bfa680f",
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.4.6"
+  },
+  "source_sha256": {}
+}

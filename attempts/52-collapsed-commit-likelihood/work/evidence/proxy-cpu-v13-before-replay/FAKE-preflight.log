@@ -1,0 +1,93 @@
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{"case": 0, "replica": 0, "step": 0, "status": "PASS"}
+{
+  "status": "PASS",
+  "new_model_forwards": 0,
+  "updates": 0,
+  "new_samples": 0,
+  "labels_previously_known": true,
+  "setup_diagnostic_seconds": 0.006872043013572693,
+  "proxy_classes": {
+    "1": 6
+  },
+  "execution_device": "cpu",
+  "gpu_used": false,
+  "peak_process_rss_bytes": 516272128,
+  "records": 70,
+  "declared_transitions": 70,
+  "status_counts": {
+    "PASS": 70,
+    "ERROR": 0,
+    "RESOURCE_REFUSAL": 0,
+    "NOT_RUN": 0
+  },
+  "diagnostic_seconds": 0.4927513690199703
+}

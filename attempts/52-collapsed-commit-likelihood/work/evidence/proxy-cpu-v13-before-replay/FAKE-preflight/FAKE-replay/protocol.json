@@ -1,0 +1,12 @@
+{
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.4.6"
+  },
+  "source_sha256": {},
+  "input_sha256": {
+    "capture_manifest": "08e45946e7a77a3ddabb2fa63041d730f47c71ab3d35c4ace641ae3a57039d54",
+    "rows": "1db636436859648e0a777eb779505835214489b0c4986960a66fd07d6e106a25",
+    "labels": "9c1c4441a5004368bc98f6116f287f5cdcfb3c9b3ff16d659eab7a36ce57f15d"
+  }
+}

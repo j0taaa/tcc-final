@@ -1,0 +1,228 @@
+invalid-syntax: unindent does not match any outer indentation level
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:108:1
+    |
+106 |                 try:
+107 |                                 with bounded(budget()):
+108 |                         name = f"heads/{transition['head']}.npz"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+109 |                         if sha(capture / name) != manifest[name]["sha256"]:
+110 |                             raise ValueError("original BF16 head changed")
+    |
+
+invalid-syntax: Unexpected indentation
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:109:1
+    |
+107 |                                 with bounded(budget()):
+108 |                         name = f"heads/{transition['head']}.npz"
+109 |                         if sha(capture / name) != manifest[name]["sha256"]:
+    | ^^^^^^^^^^^^^^^^^^^^^^^^
+110 |                             raise ValueError("original BF16 head changed")
+111 |                         with np.load(capture / name) as packet:
+    |
+
+invalid-syntax: Unexpected indentation
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:185:1
+    |
+183 |                         )
+184 |                         del device_weights, logbase
+185 |                             except ResourceRefusal as error:
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+186 |                     record.update({"status": "RESOURCE_REFUSAL", "exception": repr(error)})
+187 |                 except Exception as error:
+    |
+
+invalid-syntax: Expected a statement
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:185:29
+    |
+183 |                         )
+184 |                         del device_weights, logbase
+185 |                             except ResourceRefusal as error:
+    |                             ^^^^^^
+186 |                     record.update({"status": "RESOURCE_REFUSAL", "exception": repr(error)})
+187 |                 except Exception as error:
+    |
+
+invalid-syntax: Expected a statement
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:185:52
+    |
+183 |                         )
+184 |                         del device_weights, logbase
+185 |                             except ResourceRefusal as error:
+    |                                                    ^^
+186 |                     record.update({"status": "RESOURCE_REFUSAL", "exception": repr(error)})
+187 |                 except Exception as error:
+    |
+
+invalid-syntax: Expected an expression
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:185:61
+    |
+183 |                         )
+184 |                         del device_weights, logbase
+185 |                             except ResourceRefusal as error:
+    |                                                             ^
+186 |                     record.update({"status": "RESOURCE_REFUSAL", "exception": repr(error)})
+187 |                 except Exception as error:
+    |
+
+invalid-syntax: unindent does not match any outer indentation level
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:186:21
+    |
+184 |                         del device_weights, logbase
+185 |                             except ResourceRefusal as error:
+186 |                     record.update({"status": "RESOURCE_REFUSAL", "exception": repr(error)})
+    |                     ^
+187 |                 except Exception as error:
+188 |                     record.update({"status": "ERROR", "exception": repr(error)})
+    |
+
+invalid-syntax: Expected a statement
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:187:17
+    |
+185 |                             except ResourceRefusal as error:
+186 |                     record.update({"status": "RESOURCE_REFUSAL", "exception": repr(error)})
+187 |                 except Exception as error:
+    |                 ^^^^^^
+188 |                     record.update({"status": "ERROR", "exception": repr(error)})
+189 |                 record["diagnostic_seconds"] = time.monotonic() - tick
+    |
+
+invalid-syntax: Expected a statement
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:187:34
+    |
+185 |                             except ResourceRefusal as error:
+186 |                     record.update({"status": "RESOURCE_REFUSAL", "exception": repr(error)})
+187 |                 except Exception as error:
+    |                                  ^^
+188 |                     record.update({"status": "ERROR", "exception": repr(error)})
+189 |                 record["diagnostic_seconds"] = time.monotonic() - tick
+    |
+
+invalid-syntax: Expected an expression
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:187:43
+    |
+185 |                             except ResourceRefusal as error:
+186 |                     record.update({"status": "RESOURCE_REFUSAL", "exception": repr(error)})
+187 |                 except Exception as error:
+    |                                           ^
+188 |                     record.update({"status": "ERROR", "exception": repr(error)})
+189 |                 record["diagnostic_seconds"] = time.monotonic() - tick
+    |
+
+invalid-syntax: Unexpected indentation
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:188:1
+    |
+186 |                     record.update({"status": "RESOURCE_REFUSAL", "exception": repr(error)})
+187 |                 except Exception as error:
+188 |                     record.update({"status": "ERROR", "exception": repr(error)})
+    | ^^^^^^^^^^^^^^^^^^^^
+189 |                 record["diagnostic_seconds"] = time.monotonic() - tick
+190 |                 records.append(record)
+    |
+
+invalid-syntax: Expected `except` or `finally` after `try` block
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:196:5
+    |
+194 |                     flush=True,
+195 |                 )
+196 |     except Exception as error:
+    |     ^
+197 |         report["setup_exception"] = repr(error)
+198 |     finally:
+    |
+
+invalid-syntax: Expected a statement
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:196:22
+    |
+194 |                     flush=True,
+195 |                 )
+196 |     except Exception as error:
+    |                      ^^
+197 |         report["setup_exception"] = repr(error)
+198 |     finally:
+    |
+
+invalid-syntax: Expected an expression
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:196:31
+    |
+194 |                     flush=True,
+195 |                 )
+196 |     except Exception as error:
+    |                               ^
+197 |         report["setup_exception"] = repr(error)
+198 |     finally:
+    |
+
+invalid-syntax: Unexpected indentation
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:197:1
+    |
+195 |                 )
+196 |     except Exception as error:
+197 |         report["setup_exception"] = repr(error)
+    | ^^^^^^^^
+198 |     finally:
+199 |         if len(records) < len(inputs):
+    |
+
+invalid-syntax: Expected a statement
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:198:5
+    |
+196 |     except Exception as error:
+197 |         report["setup_exception"] = repr(error)
+198 |     finally:
+    |     ^^^^^^^
+199 |         if len(records) < len(inputs):
+200 |             with (output / "records.jsonl").open("a", buffering=1) as stream:
+    |
+
+invalid-syntax: Expected a statement
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:198:12
+    |
+196 |     except Exception as error:
+197 |         report["setup_exception"] = repr(error)
+198 |     finally:
+    |            ^
+199 |         if len(records) < len(inputs):
+200 |             with (output / "records.jsonl").open("a", buffering=1) as stream:
+    |
+
+invalid-syntax: Expected a statement
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:198:13
+    |
+196 |     except Exception as error:
+197 |         report["setup_exception"] = repr(error)
+198 |     finally:
+    |             ^
+199 |         if len(records) < len(inputs):
+200 |             with (output / "records.jsonl").open("a", buffering=1) as stream:
+    |
+
+invalid-syntax: Unexpected indentation
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:199:1
+    |
+197 |         report["setup_exception"] = repr(error)
+198 |     finally:
+199 |         if len(records) < len(inputs):
+    | ^^^^^^^^
+200 |             with (output / "records.jsonl").open("a", buffering=1) as stream:
+201 |                 for row, transition in inputs[len(records) :]:
+    |
+
+E501 Line too long (108 > 100)
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:213:101
+    |
+211 |                     stream.write(json.dumps(record) + "\n")
+212 |         report.update({"execution_device": "cpu", "gpu_used": False,
+213 |                        "peak_process_rss_bytes": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024})
+    |                                                                                                     ^^^^^^^^
+214 |         report.update(
+215 |             {
+    |
+
+invalid-syntax: Expected dedent, found end of file
+   --> attempts/52-collapsed-commit-likelihood/work/proxy_replay_v13.py:251:82
+    |
+250 |     args = ap.parse_args()
+251 |     run(args.model_dir, args.capture, args.analysis, args.protocol, args.output)
+    |                                                                                 ^
+
+Found 21 errors.
