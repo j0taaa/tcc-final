@@ -61,6 +61,12 @@ cost remain open. No new neural campaign is credited to M70.
   aliases/EOT/PAD/fixed IDs, subnormals, nonaccepting leaves and multi-block
   reductions; no speed claim. V3 proof precedes code. Evidence:51/work/evidence/
   interval-v1; executed preflight source retained before style-only list change.
+- [x] T7402c: Directed GPU inverse-CDF decisions pass4848 exact prefix checks,
+  4247 certified601 ambiguous and36 complete category laws with retained-prefix
+  fallback. Rational regression gives an explicit redraw-bias counterexample;
+  six focused tests PASS0.292s. Initial missing-import draft/log preserved.
+  V4 writes full three-phase control/fallback before implementation. No timing,
+  new head, sampler-level practical advantage or sufficient novelty yet.
 - [ ] T7402: Only if a concrete useful systems distinction survives, freeze
   complete-cost protocol/strong controls before implementation/campaign.
   Exactness alone, a tiny FP64 discrepancy or a reference implementation

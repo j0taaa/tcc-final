@@ -1,0 +1,11 @@
+test_all_small_finite_preimages_and_inverse_bounds (attempts.51-audited-gpu-posterior.work.test_reference.ExecutedProposalTests.test_all_small_finite_preimages_and_inverse_bounds) ... ok
+test_invalid_counts_and_nondeterministic_graph_refused (attempts.51-audited-gpu-posterior.work.test_reference.ExecutedProposalTests.test_invalid_counts_and_nondeterministic_graph_refused) ... ok
+test_merged_suffixes_aliases_and_reweighting (attempts.51-audited-gpu-posterior.work.test_reference.ExecutedProposalTests.test_merged_suffixes_aliases_and_reweighting) ... ok
+test_singletons_and_finite_law_are_not_ideal_count_ratios (attempts.51-audited-gpu-posterior.work.test_reference.ExecutedProposalTests.test_singletons_and_finite_law_are_not_ideal_count_ratios) ... ok
+test_small_json_full_accepted_laws_and_budget_fail (attempts.51-audited-gpu-posterior.work.test_reference.ExecutedProposalTests.test_small_json_full_accepted_laws_and_budget_fail) ... ok
+test_retained_prefix_full_law_and_redraw_counterexample (attempts.51-audited-gpu-posterior.work.test_reference.RetainedIntervalTests.test_retained_prefix_full_law_and_redraw_counterexample) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.292s
+
+OK

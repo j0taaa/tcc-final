@@ -3,7 +3,7 @@
 import itertools
 import json
 import unittest
-from collections import Counter
+from collections import Counter, defaultdict
 from fractions import Fraction as F
 from random import Random
 
@@ -181,6 +181,45 @@ class ExecutedProposalTests(unittest.TestCase):
             self.assertEqual(sampler.mass, weight_sum)
             self.assertEqual(sampler.envelope, max(ratios))
             self.assertGreaterEqual(sampler.cheap_envelope, max(ratios))
+
+
+class RetainedIntervalTests(unittest.TestCase):
+    def test_retained_prefix_full_law_and_redraw_counterexample(self):
+        from .cdf_control import certified_index, exact_with_retained_prefix
+
+        for weights, lower, upper in (
+            (
+                (F(1), F(2), F(7)),
+                (F(9, 10), F(18, 10), F(63, 10)),
+                (F(11, 10), F(22, 10), F(77, 10)),
+            ),
+            ((F(1), F(1)), (F(3, 4), F(1)), (F(1), F(5, 4))),
+            ((F(0), F(3), F(1)), (F(0), F(2), F(1, 2)), (F(0), F(4), F(3, 2))),
+        ):
+            total = sum(weights, F())
+            for bits in (2, 3, 5):
+                law, wrong = defaultdict(F), defaultdict(F)
+                for r in range(1 << bits):
+                    choice = certified_index(lower, upper, r, bits)
+                    u0, u1, left = F(r, 1 << bits), F(r + 1, 1 << bits), F()
+                    for j, weight in enumerate(weights):
+                        right = left + weight / total
+                        intersection = max(F(), min(u1, right) - max(u0, left))
+                        if choice is not None:
+                            self.assertEqual(intersection, F(int(j == choice), 1 << bits))
+                            law[j] += F(int(j == choice), 1 << bits)
+                            wrong[j] += F(int(j == choice), 1 << bits)
+                        else:
+                            law[j] += intersection
+                            wrong[j] += weight / total / (1 << bits)
+                        left = right
+                    sampled = exact_with_retained_prefix(weights, r, bits, Random(r))
+                    self.assertGreater(weights[sampled], 0)
+                self.assertEqual(
+                    tuple(law[j] for j in range(len(weights))), tuple(w / total for w in weights)
+                )
+                if weights == (F(1), F(1)) and bits == 2:
+                    self.assertNotEqual(wrong[0], F(1, 2))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,307 @@
+{
+  "ambiguous": 601,
+  "certified": 4247,
+  "commit": "843c2d3ec0753f559eb6da4563a0004ca7fea4a8",
+  "exact_prefix_checks": 4848,
+  "full_category_laws": 36,
+  "goal_met": false,
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "new_model_forwards": 0,
+  "records": [
+    {
+      "bits": 2,
+      "case": 0,
+      "certified": 4,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 0,
+      "certified": 16,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 0,
+      "certified": 256,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 0,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 1,
+      "certified": 2,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 1,
+      "certified": 14,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 1,
+      "certified": 254,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 1,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 2,
+      "certified": 4,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 2,
+      "certified": 16,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 2,
+      "certified": 256,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 2,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 3,
+      "certified": 4,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 3,
+      "certified": 16,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 3,
+      "certified": 256,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 3,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 4,
+      "certified": 3,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 4,
+      "certified": 15,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 4,
+      "certified": 255,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 4,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 5,
+      "certified": 4,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 5,
+      "certified": 16,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 5,
+      "certified": 256,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 5,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 6,
+      "certified": 2,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 6,
+      "certified": 14,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 6,
+      "certified": 254,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 6,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 7,
+      "certified": 0,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 7,
+      "certified": 10,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 7,
+      "certified": 250,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 7,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 8,
+      "certified": 0,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 8,
+      "certified": 6,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 8,
+      "certified": 241,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 8,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 9,
+      "certified": 0,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 9,
+      "certified": 0,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 9,
+      "certified": 224,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 9,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 10,
+      "certified": 0,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 10,
+      "certified": 0,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 10,
+      "certified": 63,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 10,
+      "certified": 128,
+      "prefixes": 128
+    },
+    {
+      "bits": 2,
+      "case": 11,
+      "certified": 0,
+      "prefixes": 4
+    },
+    {
+      "bits": 4,
+      "case": 11,
+      "certified": 0,
+      "prefixes": 16
+    },
+    {
+      "bits": 8,
+      "case": 11,
+      "certified": 0,
+      "prefixes": 256
+    },
+    {
+      "bits": 32,
+      "case": 11,
+      "certified": 128,
+      "prefixes": 128
+    }
+  ],
+  "sources": {
+    "gpu_cdf.py": "208ef5320856e02f4d262fe67f61166b86e5315ffc834d3ab1897dbea96f2b78",
+    "preflight_cdf.py": "b84a14a3e6b2c207b08fddc4f481c7ede1edde2c87f3011e92fbc6ac8e9d7168"
+  },
+  "speed_claim": false,
+  "status": "PASS",
+  "torch": "2.13.0+cu130"
+}
