@@ -59,6 +59,14 @@ Captura V4 após854a733 concluída8/8:9 forwards NOVOS incluindo warmup,
 Erro máximo log CPU/GPU3.553e-14; sampler<=422932672B. É só recurso/correção,
 sem gabaritos/update/variância/ganho competitivo. O gate6/8 só permite
 reavaliar protocolo separado de custo/variância; meta científica ainda aberta.
+V5 escreve antes de código/heads o controle que integra APENAS a âncora:
+O(n+|B|), sem consulta, mesmo score de âncora da candidata. Não ganhar só
+contra o full triple. Derivadas compactas por classes são clássicas. Protocolo
+de necessidade usa duas etapas reais,8 estados conhecidos,16pilot+64eval,
+máximo641 forwards novos, gabaritos após captura, controles fitted/zero/RLOO;
+passar20% de variância ainda não é custo completo/treino/publicação. Só
+oráculos mínimos antes de congelar runner. PUMBA/x-Prediction já são
+alternativas de treino/planejamento; novidade/benefício A52 seguem abertos.
 
 ## Objetivo e estado atual
 

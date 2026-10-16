@@ -108,6 +108,13 @@ cost remain open. No new neural campaign is credited to M70.
   docs/artifacts/raw/a52_consumer_resource_v4_initial. No labels/update/variance
   or competitive timing. Passing only permits a separate scientific/cost
   reassessment before any next campaign; the user's goal remains open.
+- [ ] T7504: V5 WRITTEN two-stage real-return screen/eight criteria and
+  cheap reverse-anchor control BEFORE code/heads. Integrating A needs no
+  filtered query and already matches candidate anchor score. Compact class
+  derivatives are classical. First minimal independent reverse/compact oracles;
+  only after runner/source/runtime freeze, at most641 pretrained calls on ALL8
+  known states,16pilot+64eval each, golds after capture. Strong fitted/zero/RLOO
+  controls/negative decision are fixed. No training/timing/novelty triggered.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

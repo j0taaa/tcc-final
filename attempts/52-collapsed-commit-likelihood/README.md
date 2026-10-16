@@ -173,3 +173,21 @@ zero refusal/error and<=422932672 bytes sampler peak. All logits, original
 outputs, three scores, provenance and checks are archived; maximum CPU/GPU log
 discrepancy3.553e-14. See work/resource-result-v4.md. These are resources and
 correctness only; no semantic labels/update or complete-cost variance advantage.
+
+## V5 — Stronger cheap control and actual-return foundation before code
+
+work/two-stage-variance-v5.md reassesses ALL eight criteria. A classical reverse
+collapse integrates the anchor in O(n+|B|), without grammar inference; its
+anchor score ALREADY equals the fully collapsed method's. It is mandatory,
+so anchor-noise wins against the full triple are insufficient. The note also
+derives compact class derivatives for repeated planner scores, acknowledging
+ordinary expectation-semiring/evidence inference gives the SAME construction.
+
+A bounded two-stage consumer is frozen in writing before its code/heads:
+all8 known initial states,16pilot+64eval draws each, at most641 new forwards,
+fresh next-canvas model/grammar completion, ALL raw heads/IDs, no update.
+Labels only after capture; strong scalar/zero/RLOO controls and a necessary
+20% variance gate precede any complete-cost or training campaign. PUMBA and
+x-Prediction Flow are additional primary alternatives within recorded scopes.
+No V5 implementation, new head, variance win, sufficient originality or
+fulfilled goal is claimed. Minimal reverse/compact oracles are next.
