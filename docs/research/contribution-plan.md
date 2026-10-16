@@ -2607,3 +2607,15 @@ The original scoped CPU query result remains historical under its original
 comparators; it does not establish an advantage against these stronger ones.
 No further A24 neural confirmation follows from the rejected gate. Originality,
 a new useful operation and the user's scientific goal remain open.
+
+## 2026-10-16 — A51 written systems hypothesis
+
+A24 V4's negative decision is preserved, not relabeled. A51 asks whether a
+fast layered GPU proposal can retain an exact original-binary64 joint law by
+recording actual integer-ticket density, a directed max-ratio audit and exact
+selected-word acceptance. The written proof explicitly accounts for multiply-high
+bias and fixed-budget FAIL. Rejection, max-product, directed envelopes, EBUS and
+interval recursive sampling are known. A stronger interval GPU control may beat
+it. Only a small independent rational reference is justified before deciding
+whether a substantial systems contribution/application is plausible. No theorem
+priority, useful latency, new model forward or achieved user goal is claimed.

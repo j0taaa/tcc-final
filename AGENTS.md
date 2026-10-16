@@ -1178,3 +1178,13 @@ GPU são controles clássicos e vencem esta aplicação; não promovê-los como
 nova teoria. A vantagem antiga3/15 vale sob os comparadores originais, não
 sob estes controles mais fortes. Dados/decisão completos em24/work/evidence/
 consumer-v4-development-first-v1. A meta científica permanece aberta.
+
+A51 começa apenas com contrato/prova escrita antes de protótipo. Candidata de
+sistemas audita a lei FINITA realmente executada por tickets inteiros GPU e
+corrige palavra original por rejeição escalar exata. Max-product, rejeição,
+intervalos, multiply-high e EBUS são antecedentes; não reivindicar princípios
+ou teoria própria substancial. Consumidor LLaDA2 usa confiança do MODELO; não
+prometer marginais condicionadas desta operação. Controles intervalares lazy
+podem evitar correções CPU e são obrigatórios. Exatidão de pesos binary64 não
+é ideal-softmax, lei RNG nativa, qualidade ou benefício prático/publicação.
+Antes de código extenso, precisa de diferença útil concreta e controles fortes.

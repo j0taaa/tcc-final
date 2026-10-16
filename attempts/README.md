@@ -74,6 +74,8 @@ científica de novidade/uso relevante permanece aberta.
 | [49-rational-grammar-drift](49-rational-grammar-drift/README.md) | V29 reconstrói o MESMO bound por kernels clássicos de Chan+Fu, reduzindo a alegação a especialização; gate independente0/36, decisões0/120 menor precisão; prioridade cronológica/suficiência de publicação/uso próprio continuam abertos |
 | [50-grammar-residual-coupling](50-grammar-residual-coupling/README.md) | Amostragem residual exata com preparação única e proveniência; prova escrita/oráculos completos, contagem e rejeição são antecedentes; novidade substancial e benefício de geração ainda abertos |
 
+| [51-audited-gpu-posterior](51-audited-gpu-posterior/README.md) | Auditoria da lei GPU executada e correção escalar exata; hipótese escrita, princípios clássicos, benefício/originalidade abertos |
+
 A primeira pasta inclui também o commit inicial do repositório (README apenas)
 e o primeiro protótipo completo, da etapa M2, em versões próprias. A cópia `v1`
 é a consolidação posterior da mesma abordagem; ela não foi apresentada como

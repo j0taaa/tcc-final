@@ -32,6 +32,22 @@ single preparation and conditional attempts independent of1/TV. Correctness
 oracles pass, but publication significance, novelty and useful full-generation
 cost remain open. No new neural campaign is credited to M70.
 
+## M74 — Audited executed GPU proposal, hypothesis before implementation
+
+- [x] T7400: Write independent A51 README/eight criteria and executed finite-ticket
+  density/max-ratio/scalar-correction proof BEFORE prototype. Recognize OS*,
+  Lemire, EBUS, validated rejection and recursive interval samplers. Real
+  Mosaic LLaDA2 default model-confidence consumer does not require marginals.
+  No sufficiently original theorem or practical benefit is established.
+- [ ] T7401: Minimal independent rational oracles for finite ticket preimages,
+  full accepted original-word law, max-ratio audit, aliases/fixed IDs/EOT/PAD,
+  malformed support and finite-budget FAIL. Re-evaluate against the stronger
+  classical interval control BEFORE substantial GPU implementation/timings.
+- [ ] T7402: Only if a concrete useful systems distinction survives, freeze
+  complete-cost protocol/strong controls before implementation/campaign.
+  Exactness alone, a tiny FP64 discrepancy or a reference implementation
+  cannot satisfy the user's real-benefit/publication goal.
+
 ## M72 — Existing Mosaic consumer, stronger GPU controls and termination
 
 M73 below is complete with a NEGATIVE operational gate. Strong cached CPU/CFG
