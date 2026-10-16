@@ -60,3 +60,4 @@ docs/environment-local.md
 
 # Local PDF review intermediates
 /tmp/pdfs/
+.venv-mosaic-native/

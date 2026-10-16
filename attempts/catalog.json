@@ -754,7 +754,7 @@
     {
       "id": "24-certified-depth-approximation",
       "title": "Aproximacao por profundidade com certificado de erro condicionado",
-      "conclusion": "Independent original full-V query advantage3/15 remains separate. Consumer V2: complete270-record real MDLM pilot,246 complete24 resource refusals,1346 forwards including warmup; selected30/30 valid,30 literal sparse-interface matches735 exact-mass checks. Scoped warm full-trajectory benefit2/15 versus completed controls, with compact capacity refusals;0/15 strict all-controls-complete timing wins. No new independent corpus, semantic, native EPIC/GPU or sufficient-novelty/publication claim.",
+      "conclusion": "Independent original full-V query advantage3/15 remains separate. Consumer V2: complete270-record real MDLM pilot,246 complete24 resource refusals,1346 forwards including warmup; selected30/30 valid,30 literal sparse-interface matches735 exact-mass checks. Scoped warm full-trajectory benefit2/15 versus completed controls, with compact capacity refusals;0/15 strict all-controls-complete timing wins. No new independent corpus, semantic, native EPIC/GPU or sufficient-novelty/publication claim. V3 identifies the real Mosaic API and adds pinned unchanged GPU controls, correct variable EOT/PAD and symbolic minimization. ALL45 known-data resource rows complete:42 positive/3 zero shallow masses,190 native complete/correct20 conservative guards0 errors,30 exact full-mass checks,14/15 resource gate. No new model heads, latency victory or novelty/goal completion. V4 requires stronger direct-symbolic CPU/cache controls before performance.",
       "reading": "attempts/24-certified-depth-approximation/README.md",
       "versions": [
         {
@@ -834,6 +834,15 @@
           "id": "v9",
           "source_commit": "451de4199be5f9884d4c84e886862f314880b571",
           "evidence_commit": "5819f250367de40c95098ed6262278e1fecc2196",
+          "evidence_roots": [
+            "attempts/24-certified-depth-approximation/README.md",
+            "attempts/24-certified-depth-approximation/work"
+          ]
+        },
+        {
+          "id": "v10",
+          "source_commit": "4c80a59ac3c054cd220cb41fd85fd21958c95914",
+          "evidence_commit": "0fe52e58d09a9bcb52b68d75f2683e6072b587d0",
           "evidence_roots": [
             "attempts/24-certified-depth-approximation/README.md",
             "attempts/24-certified-depth-approximation/work"
