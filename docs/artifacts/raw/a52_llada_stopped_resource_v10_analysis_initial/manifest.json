@@ -1,0 +1,26 @@
+{
+  "known-labels-provenance.json": {
+    "sha256": "3c9a92bdb193da32d56601832913b06f42c180a6e540fee3a06aba7ea945cc11",
+    "bytes": 726
+  },
+  "post-capture-audit-provenance.json": {
+    "sha256": "aaa0ab602dad987aede841efc3dd4bec1af834eea2e5db765562947e1c9f0a19",
+    "bytes": 230
+  },
+  "post-capture-audit.log": {
+    "sha256": "8a4cf15a92e8595d499630680221b3373a9678d4d1c469e573a6b14d7a94fcc3",
+    "bytes": 1110
+  },
+  "post-capture-independent-audit.json": {
+    "sha256": "8a4cf15a92e8595d499630680221b3373a9678d4d1c469e573a6b14d7a94fcc3",
+    "bytes": 1110
+  },
+  "reward-rows.json": {
+    "sha256": "5bd5b0fc8a36640cfb2cafe5a467c846179093dde81ad1115671e1e7cdf4b01d",
+    "bytes": 2187
+  },
+  "summary.json": {
+    "sha256": "2618bbdba7f808594e2b72b92ea62328837ef3a30bb3cd6d0313ca205210dac1",
+    "bytes": 2369
+  }
+}

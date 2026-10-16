@@ -126,6 +126,16 @@ different decoder/protocol. Small original-ID/alias/manual/autodiff/full-V
 checks and source/runtime freeze precede heads; resource/signal does not
 establish useful variance, learning, originality or the user's fulfilled goal.
 
+Actual V10 producer e6ef83b completes16/16 valid trajectories/70 transitions,
+63 NEW forwards, no score/ID error and536 isolation observations without
+foreign PIDs. Known-data resource8/8/signal4/8 pass:6/16 candidate outputs
+correct, paired one-shot2/16. Separate AFTER-capture tokenizer/Decimal/head
+audit agrees. No semantic superiority, useful variance/cost or independent
+confirmation follows; zero model updates. Full raw data/source/cost scopes
+are preserved. This only permits considering a new strong-control full-cost
+reward-gradient design, including valid proposal-dependent baselines. The
+publication/positive scientific goal remains open.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

@@ -156,6 +156,14 @@ racionais NumPy/CPU/CUDA e três full-V/64slots passam, pico546382336B,
 log máximo1.706e-13. Full251 PASS80.108s/make check/Ruff PASS. Prompts89--127
 tokens/prefixo3 IDs conferem; runner/runtime/protocolo congelam antes de
 instância/head pré-treinado. Ainda zero head/update V10/benefício confirmado.
+V10 após e6ef83b completa16/16 trajetórias válidas/70 transições,63 forwards
+NOVOS (um warmup/oito roots/54 seguintes), zero erro de score/ID. Recurso8/8,
+sinal4/8 (6/16 acertos, one-shot2/16) passam o gate de VIABILIDADE conhecido;
+não é superioridade semântica/variância/velocidade. Auditoria posterior confere
+63 heads/32 respostas Decimal/536 polls sem processo externo. Modelo todo
+congelado, zero updates. Só considerar NOVO protocolo de custo-variância
+com controles fortes, inclusive baselines condicionadas à proposta quando
+legítimas. Nenhum treino/confirmação independente/publicação acionados.
 
 ## Objetivo e estado atual
 

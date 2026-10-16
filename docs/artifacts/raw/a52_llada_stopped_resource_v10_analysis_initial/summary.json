@@ -1,0 +1,118 @@
+{
+  "status": "RESOURCE_SIGNAL_PASS",
+  "scope": "known-development feasibility only, no semantic superiority or independent confirmation",
+  "resource_condition": true,
+  "signal_questions": 4,
+  "candidate_complete_outputs": 16,
+  "candidate_correct_outputs": 6,
+  "paired_one_shot_correct_outputs": 2,
+  "per_case": [
+    {
+      "case": 0,
+      "input_id": "train:6003",
+      "candidate_correct": [
+        false,
+        false
+      ],
+      "paired_one_shot_correct": [
+        false,
+        false
+      ],
+      "candidate_has_correct": false
+    },
+    {
+      "case": 1,
+      "input_id": "train:536",
+      "candidate_correct": [
+        false,
+        false
+      ],
+      "paired_one_shot_correct": [
+        false,
+        false
+      ],
+      "candidate_has_correct": false
+    },
+    {
+      "case": 2,
+      "input_id": "train:4749",
+      "candidate_correct": [
+        true,
+        true
+      ],
+      "paired_one_shot_correct": [
+        false,
+        false
+      ],
+      "candidate_has_correct": true
+    },
+    {
+      "case": 3,
+      "input_id": "train:3964",
+      "candidate_correct": [
+        false,
+        true
+      ],
+      "paired_one_shot_correct": [
+        false,
+        true
+      ],
+      "candidate_has_correct": true
+    },
+    {
+      "case": 4,
+      "input_id": "train:7074",
+      "candidate_correct": [
+        true,
+        true
+      ],
+      "paired_one_shot_correct": [
+        true,
+        false
+      ],
+      "candidate_has_correct": true
+    },
+    {
+      "case": 5,
+      "input_id": "train:169",
+      "candidate_correct": [
+        false,
+        false
+      ],
+      "paired_one_shot_correct": [
+        false,
+        false
+      ],
+      "candidate_has_correct": false
+    },
+    {
+      "case": 6,
+      "input_id": "train:7144",
+      "candidate_correct": [
+        false,
+        true
+      ],
+      "paired_one_shot_correct": [
+        false,
+        false
+      ],
+      "candidate_has_correct": true
+    },
+    {
+      "case": 7,
+      "input_id": "train:2679",
+      "candidate_correct": [
+        false,
+        false
+      ],
+      "paired_one_shot_correct": [
+        false,
+        false
+      ],
+      "candidate_has_correct": false
+    }
+  ],
+  "updates": 0,
+  "competitive_cost_variance_gate": false,
+  "next": "may consider a NEW frozen strong-control complete-cost variance protocol"
+}

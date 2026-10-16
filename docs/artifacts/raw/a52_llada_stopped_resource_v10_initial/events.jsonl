@@ -1,0 +1,126 @@
+{"event": "forward_attempt", "utc_seconds": 1792180468.793897, "name": "warmup", "ordinal": 1}
+{"event": "forward_complete", "utc_seconds": 1792180469.8832102, "name": "warmup", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180470.748341, "name": "root-00", "ordinal": 2}
+{"event": "forward_complete", "utc_seconds": 1792180470.8378475, "name": "root-00", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180480.6591067, "name": "root-01", "ordinal": 3}
+{"event": "forward_complete", "utc_seconds": 1792180480.756668, "name": "root-01", "full_native_output_shape": [1, 188, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180490.7795866, "name": "root-02", "ordinal": 4}
+{"event": "forward_complete", "utc_seconds": 1792180490.882941, "name": "root-02", "full_native_output_shape": [1, 170, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180500.796595, "name": "root-03", "ordinal": 5}
+{"event": "forward_complete", "utc_seconds": 1792180500.8870468, "name": "root-03", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180510.5229094, "name": "root-04", "ordinal": 6}
+{"event": "forward_complete", "utc_seconds": 1792180510.6083767, "name": "root-04", "full_native_output_shape": [1, 153, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180520.2447062, "name": "root-05", "ordinal": 7}
+{"event": "forward_complete", "utc_seconds": 1792180520.333659, "name": "root-05", "full_native_output_shape": [1, 167, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180530.132526, "name": "root-06", "ordinal": 8}
+{"event": "forward_complete", "utc_seconds": 1792180530.2187388, "name": "root-06", "full_native_output_shape": [1, 171, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180539.8789139, "name": "root-07", "ordinal": 9}
+{"event": "forward_complete", "utc_seconds": 1792180539.968804, "name": "root-07", "full_native_output_shape": [1, 176, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180551.7035427, "name": "c00-r0-s01", "ordinal": 10}
+{"event": "forward_complete", "utc_seconds": 1792180551.806742, "name": "c00-r0-s01", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180552.0075362, "name": "c00-r0-s02", "ordinal": 11}
+{"event": "forward_complete", "utc_seconds": 1792180552.0998325, "name": "c00-r0-s02", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180552.2614307, "name": "c00-r0-s03", "ordinal": 12}
+{"event": "forward_complete", "utc_seconds": 1792180552.3536842, "name": "c00-r0-s03", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180553.1980276, "name": "c00-r1-s01", "ordinal": 13}
+{"event": "forward_complete", "utc_seconds": 1792180553.2877588, "name": "c00-r1-s01", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180554.976769, "name": "c00-r1-s02", "ordinal": 14}
+{"event": "forward_complete", "utc_seconds": 1792180555.0664775, "name": "c00-r1-s02", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180555.2434354, "name": "c00-r1-s03", "ordinal": 15}
+{"event": "forward_complete", "utc_seconds": 1792180555.3406897, "name": "c00-r1-s03", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180555.501842, "name": "c00-r1-s04", "ordinal": 16}
+{"event": "forward_complete", "utc_seconds": 1792180555.5918448, "name": "c00-r1-s04", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180555.7330582, "name": "c00-r1-s05", "ordinal": 17}
+{"event": "forward_complete", "utc_seconds": 1792180555.8325374, "name": "c00-r1-s05", "full_native_output_shape": [1, 191, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180556.8821876, "name": "c01-r0-s01", "ordinal": 18}
+{"event": "forward_complete", "utc_seconds": 1792180556.9716692, "name": "c01-r0-s01", "full_native_output_shape": [1, 188, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180558.622608, "name": "c01-r0-s02", "ordinal": 19}
+{"event": "forward_complete", "utc_seconds": 1792180558.712113, "name": "c01-r0-s02", "full_native_output_shape": [1, 188, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180560.408305, "name": "c01-r0-s03", "ordinal": 20}
+{"event": "forward_complete", "utc_seconds": 1792180560.4977574, "name": "c01-r0-s03", "full_native_output_shape": [1, 188, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180561.3565037, "name": "c01-r1-s01", "ordinal": 21}
+{"event": "forward_complete", "utc_seconds": 1792180561.4463239, "name": "c01-r1-s01", "full_native_output_shape": [1, 188, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180561.6139061, "name": "c01-r1-s02", "ordinal": 22}
+{"event": "forward_complete", "utc_seconds": 1792180561.7054224, "name": "c01-r1-s02", "full_native_output_shape": [1, 188, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180561.8474145, "name": "c01-r1-s03", "ordinal": 23}
+{"event": "forward_complete", "utc_seconds": 1792180561.943062, "name": "c01-r1-s03", "full_native_output_shape": [1, 188, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180563.0107713, "name": "c02-r0-s01", "ordinal": 24}
+{"event": "forward_complete", "utc_seconds": 1792180563.0901155, "name": "c02-r0-s01", "full_native_output_shape": [1, 170, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180563.2397118, "name": "c02-r0-s02", "ordinal": 25}
+{"event": "forward_complete", "utc_seconds": 1792180563.3205364, "name": "c02-r0-s02", "full_native_output_shape": [1, 170, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180563.447742, "name": "c02-r0-s03", "ordinal": 26}
+{"event": "forward_complete", "utc_seconds": 1792180563.5288796, "name": "c02-r0-s03", "full_native_output_shape": [1, 170, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180564.378332, "name": "c02-r1-s01", "ordinal": 27}
+{"event": "forward_complete", "utc_seconds": 1792180564.4579034, "name": "c02-r1-s01", "full_native_output_shape": [1, 170, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180566.4034302, "name": "c02-r1-s02", "ordinal": 28}
+{"event": "forward_complete", "utc_seconds": 1792180566.4954863, "name": "c02-r1-s02", "full_native_output_shape": [1, 170, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180566.6347046, "name": "c02-r1-s03", "ordinal": 29}
+{"event": "forward_complete", "utc_seconds": 1792180566.7162733, "name": "c02-r1-s03", "full_native_output_shape": [1, 170, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180567.7654696, "name": "c03-r0-s01", "ordinal": 30}
+{"event": "forward_complete", "utc_seconds": 1792180567.8444011, "name": "c03-r0-s01", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180569.6150548, "name": "c03-r0-s02", "ordinal": 31}
+{"event": "forward_complete", "utc_seconds": 1792180569.6942973, "name": "c03-r0-s02", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180571.2472398, "name": "c03-r0-s03", "ordinal": 32}
+{"event": "forward_complete", "utc_seconds": 1792180571.3261702, "name": "c03-r0-s03", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180571.5331924, "name": "c03-r0-s04", "ordinal": 33}
+{"event": "forward_complete", "utc_seconds": 1792180571.6269214, "name": "c03-r0-s04", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180571.799146, "name": "c03-r0-s05", "ordinal": 34}
+{"event": "forward_complete", "utc_seconds": 1792180571.8847406, "name": "c03-r0-s05", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180572.8095944, "name": "c03-r1-s01", "ordinal": 35}
+{"event": "forward_complete", "utc_seconds": 1792180572.8899417, "name": "c03-r1-s01", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180574.5407734, "name": "c03-r1-s02", "ordinal": 36}
+{"event": "forward_complete", "utc_seconds": 1792180574.6196141, "name": "c03-r1-s02", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180576.2323856, "name": "c03-r1-s03", "ordinal": 37}
+{"event": "forward_complete", "utc_seconds": 1792180576.3118465, "name": "c03-r1-s03", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180576.4698045, "name": "c03-r1-s04", "ordinal": 38}
+{"event": "forward_complete", "utc_seconds": 1792180576.5535254, "name": "c03-r1-s04", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180576.6994824, "name": "c03-r1-s05", "ordinal": 39}
+{"event": "forward_complete", "utc_seconds": 1792180576.7905853, "name": "c03-r1-s05", "full_native_output_shape": [1, 166, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180577.904393, "name": "c04-r0-s01", "ordinal": 40}
+{"event": "forward_complete", "utc_seconds": 1792180577.9861584, "name": "c04-r0-s01", "full_native_output_shape": [1, 153, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180579.5998206, "name": "c04-r0-s02", "ordinal": 41}
+{"event": "forward_complete", "utc_seconds": 1792180579.6788092, "name": "c04-r0-s02", "full_native_output_shape": [1, 153, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180581.2335122, "name": "c04-r0-s03", "ordinal": 42}
+{"event": "forward_complete", "utc_seconds": 1792180581.3118985, "name": "c04-r0-s03", "full_native_output_shape": [1, 153, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180582.9166427, "name": "c04-r0-s04", "ordinal": 43}
+{"event": "forward_complete", "utc_seconds": 1792180583.001162, "name": "c04-r0-s04", "full_native_output_shape": [1, 153, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180583.8451283, "name": "c04-r1-s01", "ordinal": 44}
+{"event": "forward_complete", "utc_seconds": 1792180583.9236343, "name": "c04-r1-s01", "full_native_output_shape": [1, 153, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180585.540355, "name": "c04-r1-s02", "ordinal": 45}
+{"event": "forward_complete", "utc_seconds": 1792180585.6248033, "name": "c04-r1-s02", "full_native_output_shape": [1, 153, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180587.178402, "name": "c04-r1-s03", "ordinal": 46}
+{"event": "forward_complete", "utc_seconds": 1792180587.2571838, "name": "c04-r1-s03", "full_native_output_shape": [1, 153, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180588.8160741, "name": "c04-r1-s04", "ordinal": 47}
+{"event": "forward_complete", "utc_seconds": 1792180588.8942983, "name": "c04-r1-s04", "full_native_output_shape": [1, 153, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180589.9411643, "name": "c05-r0-s01", "ordinal": 48}
+{"event": "forward_complete", "utc_seconds": 1792180590.020152, "name": "c05-r0-s01", "full_native_output_shape": [1, 167, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180591.5888247, "name": "c05-r0-s02", "ordinal": 49}
+{"event": "forward_complete", "utc_seconds": 1792180591.668111, "name": "c05-r0-s02", "full_native_output_shape": [1, 167, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180593.1852415, "name": "c05-r0-s03", "ordinal": 50}
+{"event": "forward_complete", "utc_seconds": 1792180593.2647781, "name": "c05-r0-s03", "full_native_output_shape": [1, 167, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180594.1218338, "name": "c05-r1-s01", "ordinal": 51}
+{"event": "forward_complete", "utc_seconds": 1792180594.2010934, "name": "c05-r1-s01", "full_native_output_shape": [1, 167, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180596.7082863, "name": "c06-r0-s01", "ordinal": 52}
+{"event": "forward_complete", "utc_seconds": 1792180596.7937546, "name": "c06-r0-s01", "full_native_output_shape": [1, 171, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180596.9614143, "name": "c06-r0-s02", "ordinal": 53}
+{"event": "forward_complete", "utc_seconds": 1792180597.0587227, "name": "c06-r0-s02", "full_native_output_shape": [1, 171, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180597.1953223, "name": "c06-r0-s03", "ordinal": 54}
+{"event": "forward_complete", "utc_seconds": 1792180597.2753403, "name": "c06-r0-s03", "full_native_output_shape": [1, 171, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180598.1274297, "name": "c06-r1-s01", "ordinal": 55}
+{"event": "forward_complete", "utc_seconds": 1792180598.2074776, "name": "c06-r1-s01", "full_native_output_shape": [1, 171, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180599.842495, "name": "c06-r1-s02", "ordinal": 56}
+{"event": "forward_complete", "utc_seconds": 1792180599.922007, "name": "c06-r1-s02", "full_native_output_shape": [1, 171, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180601.459769, "name": "c06-r1-s03", "ordinal": 57}
+{"event": "forward_complete", "utc_seconds": 1792180601.5452614, "name": "c06-r1-s03", "full_native_output_shape": [1, 171, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180604.0263782, "name": "c07-r0-s01", "ordinal": 58}
+{"event": "forward_complete", "utc_seconds": 1792180604.1120908, "name": "c07-r0-s01", "full_native_output_shape": [1, 176, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180604.2752128, "name": "c07-r0-s02", "ordinal": 59}
+{"event": "forward_complete", "utc_seconds": 1792180604.3632941, "name": "c07-r0-s02", "full_native_output_shape": [1, 176, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180604.5072317, "name": "c07-r0-s03", "ordinal": 60}
+{"event": "forward_complete", "utc_seconds": 1792180604.5923016, "name": "c07-r0-s03", "full_native_output_shape": [1, 176, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180605.4416456, "name": "c07-r1-s01", "ordinal": 61}
+{"event": "forward_complete", "utc_seconds": 1792180605.5222845, "name": "c07-r1-s01", "full_native_output_shape": [1, 176, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180607.1046474, "name": "c07-r1-s02", "ordinal": 62}
+{"event": "forward_complete", "utc_seconds": 1792180607.1904414, "name": "c07-r1-s02", "full_native_output_shape": [1, 176, 126464]}
+{"event": "forward_attempt", "utc_seconds": 1792180607.339456, "name": "c07-r1-s03", "ordinal": 63}
+{"event": "forward_complete", "utc_seconds": 1792180607.4208097, "name": "c07-r1-s03", "full_native_output_shape": [1, 176, 126464]}

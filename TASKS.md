@@ -205,7 +205,7 @@ cost remain open. No new neural campaign is credited to M70.
   PASS81.280s/make check/Ruff PASS. ZERO new pretrained forward/update.
   V9 is only a supervised CONTROL, not a training campaign or protagonist;
   real reward-gradient consumer still needs a separate written foundation.
-- [ ] T7509: V10 LLaDA stopped numeric-continuation RESOURCE/SIGNAL design
+- [x] T7509: V10 LLaDA stopped numeric-continuation RESOURCE/SIGNAL design
   WRITTEN before code/heads, all eight criteria. Pinned original V126464,
  115 tokenizer-undefined IDs pending official audit, EOS=PAD126081, MASK126336,
  64 response slots and externally supplied literal JSON prefix. Full native
@@ -222,6 +222,15 @@ cost remain open. No new neural campaign is credited to M70.
   make check/Ruff PASS. Frozen prompt lengths89--127, prefix IDs[12657,31113,2275].
   Actual runner/runtime/protocol/evidence freeze before model instance/heads;
   zero V10 pretrained calls/updates and no useful-effect claim yet.
+  Producer e6ef83b completes16/16 valid trajectories/70 transitions and63
+  NEW forwards (warmup1/roots8/following54), zero score/ID error. Resource8/8
+  and known signal4/8 pass;6/16 candidate and2/16 one-shot correct. This is
+  NOT semantic superiority/variance/latency/independent confirmation. All536
+  flushed occupancy observations exclude foreign PIDs; post-capture official
+  tokenizer/Decimal verifies32 answers and all63 original BF16 heads. See
+  llada-result-v10.md and a52_llada_stopped_resource_v10_{initial,analysis_initial}.
+  All data/costs/statuses preserved; zero updates. Only consider a NEW frozen
+  strong-control full-cost variance protocol, not automatic training.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

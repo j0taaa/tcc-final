@@ -1,0 +1,6 @@
+{
+  "source_sha256": "6ef5b2700c041f07f5721614b02deccaf31bd4c96c0a0e20c2293d49f19c5528",
+  "auditor_written_after_capture": true,
+  "scope": "consistency audit, not a new predeclared performance gate",
+  "new_model_forwards": 0
+}

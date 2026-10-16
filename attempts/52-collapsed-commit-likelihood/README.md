@@ -329,3 +329,12 @@ pinned. work/evidence/llada-foundation-v10-before-heads preserves sources/
 runtime and exact reading scopes; consumer-protocol-v10.json pins the actual
 runner before any pretrained model instance/call. No useful neural effect,
 new update or adequate originality is established by this foundation.
+
+V10 actual producer e6ef83b completes16/16 valid trajectories/70 transitions,
+63 NEW forwards and no score/ID errors. Resource8/8 and known signal4/8 pass:
+candidate6/16 correct, paired one-shot2/16. This is functional feasibility,
+NOT semantic superiority or a useful cost/variance result. Independent
+post-capture tokenizer/Decimal checks all32 answers/all63 BF16 heads;536
+flushed occupancy observations have no foreign process. All raw data and
+source scopes preserved; see work/llada-result-v10.md. Zero updates; only a
+NEW strong-control full-cost variance design may be considered. Goal OPEN.

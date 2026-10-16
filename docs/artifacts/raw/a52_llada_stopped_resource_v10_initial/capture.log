@@ -1,0 +1,25 @@
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:07<00:35,  7.00s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [00:15<00:32,  8.03s/it]Loading checkpoint shards:  50%|█████     | 3/6 [00:41<00:48, 16.22s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:52<00:28, 14.07s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [01:02<00:12, 12.67s/it]Loading checkpoint shards: 100%|██████████| 6/6 [01:09<00:00, 10.84s/it]Loading checkpoint shards: 100%|██████████| 6/6 [01:09<00:00, 11.66s/it]
+{"phase": "new-root-feature", "case": 0, "status": "READY"}
+{"phase": "new-root-feature", "case": 1, "status": "READY"}
+{"phase": "new-root-feature", "case": 2, "status": "READY"}
+{"phase": "new-root-feature", "case": 3, "status": "READY"}
+{"phase": "new-root-feature", "case": 4, "status": "READY"}
+{"phase": "new-root-feature", "case": 5, "status": "READY"}
+{"phase": "new-root-feature", "case": 6, "status": "READY"}
+{"phase": "new-root-feature", "case": 7, "status": "READY"}
+{"case": 0, "replica": 0, "input_id": "train:6003", "status": "COMPLETE", "diagnostic_seconds": 2.249071662023198}
+{"case": 0, "replica": 1, "input_id": "train:6003", "status": "COMPLETE", "diagnostic_seconds": 3.474252067011548}
+{"case": 1, "replica": 0, "input_id": "train:536", "status": "COMPLETE", "diagnostic_seconds": 4.482913701998768}
+{"case": 1, "replica": 1, "input_id": "train:536", "status": "COMPLETE", "diagnostic_seconds": 1.4265819689899217}
+{"case": 2, "replica": 0, "input_id": "train:4749", "status": "COMPLETE", "diagnostic_seconds": 1.3582771380024496}
+{"case": 2, "replica": 1, "input_id": "train:4749", "status": "COMPLETE", "diagnostic_seconds": 3.1854047029919457}
+{"case": 3, "replica": 0, "input_id": "train:3964", "status": "COMPLETE", "diagnostic_seconds": 4.992251543997554}
+{"case": 3, "replica": 1, "input_id": "train:3964", "status": "COMPLETE", "diagnostic_seconds": 4.905123592005111}
+{"case": 4, "replica": 0, "input_id": "train:7074", "status": "COMPLETE", "diagnostic_seconds": 5.989283275994239}
+{"case": 4, "replica": 1, "input_id": "train:7074", "status": "COMPLETE", "diagnostic_seconds": 5.8972878720087465}
+{"case": 5, "replica": 0, "input_id": "train:169", "status": "COMPLETE", "diagnostic_seconds": 4.166333207016578}
+{"case": 5, "replica": 1, "input_id": "train:169", "status": "COMPLETE", "diagnostic_seconds": 2.4038692800095305}
+{"case": 6, "replica": 0, "input_id": "train:7144", "status": "COMPLETE", "diagnostic_seconds": 1.4184308540134225}
+{"case": 6, "replica": 1, "input_id": "train:7144", "status": "COMPLETE", "diagnostic_seconds": 5.701625393005088}
+{"case": 7, "replica": 0, "input_id": "train:2679", "status": "COMPLETE", "diagnostic_seconds": 1.419526637007948}
+{"case": 7, "replica": 1, "input_id": "train:2679", "status": "COMPLETE", "diagnostic_seconds": 2.8367831770156045}
