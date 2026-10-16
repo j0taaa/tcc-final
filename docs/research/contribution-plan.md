@@ -26,6 +26,14 @@ counterexamples. Full211 tests PASS72.391s and make check/focused Ruff PASS.
 No new head, update or timing; ordinary conditional evidence supplies the same
 arithmetic, so originality and real useful training benefit remain open.
 
+V2 is an explicitly DIFFERENT smooth joint word/token-aware Bernoulli policy,
+conditioned on nonempty release with a positive two-state OR calculation. It
+changes the accepted word marginal. Five additional oracles check8 full joint
+laws256 actions4096 scores and31 FAKE-head states52 observed paths88 auxiliary
+paths. Full216 tests PASS73.155s; no neural forward/update/timing. The primary
+addendum recognizes dUltra/Learning Unmasking Policies and MD4§6's existing
+token-value-dependent schedules. No discovery credit for those principles.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

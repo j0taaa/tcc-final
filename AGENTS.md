@@ -20,6 +20,11 @@ clássicas, não novidade assumida. Muda a marginal da proposta; reamostrar só 
 bits de uma palavra fixa dá outra lei. dUltra/Learning Unmasking Policies já
 usam Bernoulli e a versão por posição é controle competente mais barato.
 Somente oráculo pequeno é justificado; nenhum novo head/treino/timing ou ganho.
+Após freeze651b8dd, cinco oráculos V2 passam8 leis conjuntas256 ações4096
+componentes de score e31 estados FALSOS/52 trajetórias observadas/88 auxiliares.
+Full216 testes PASS73.155s e make check/Ruff PASS. MD4§6 já fornece schedules
+dependentes do valor do token; não reivindicar isso. Nenhum peso/modelo/head
+novo foi carregado: apenas metadados públicos de Tiny-A2D foram lidos.
 
 ## Objetivo e estado atual
 

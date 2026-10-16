@@ -60,6 +60,12 @@ cost remain open. No new neural campaign is credited to M70.
   Learning Unmasking Policies already use Bernoulli planners. All eight criteria
   are reassessed BEFORE code; only an independent small joint/action-law oracle
   is next. No new head/update/timing, useful effect or sufficient originality.
+  After651b8dd, five V2 oracles PASS:8 joint laws256 actions4096 score
+  coordinates,31 FAKE-head states52 observed paths88 auxiliary paths; original
+  confidence chain rule and wrong bit-only-retry counterexample. Combined11
+  oracles PASS1.224s; full216 PASS73.155s and make check/Ruff PASS. MD4§6
+  already gives token-value-dependent schedules; no novelty credit for that.
+  Runtime/model metadata only read, no weights or new neural forward/update.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

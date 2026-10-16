@@ -100,3 +100,12 @@ inference may subsume the entire construction. Only the minimal rational joint/
 action-law oracle is justified; no new model, update, timing or sufficient
 originality is asserted. V1's result and its moving-boundary counterexample
 remain unchanged in their archive.
+
+V2 now has five independent rational oracles after freeze651b8dd:8 joint laws,
+256 actions4096 score coordinates,31 changed FAKE-head states52 observed paths88
+auxiliary paths, full covariance identity, true confidence chain rule, tiny
+exit mass and wrong bit-only retry. Combined11 oracles PASS1.224s; full216
+tests PASS73.155s; make check/Ruff PASS. No neural head/update/timing. The new
+primary addendum recognizes MD4's existing token-dependent schedules as well
+as Bernoulli planners; token dependence cannot itself be claimed as novel.
+Only a written cost/consumer refinement precedes further implementation.

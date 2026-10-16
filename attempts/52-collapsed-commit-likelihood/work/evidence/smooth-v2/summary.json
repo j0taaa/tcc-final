@@ -1,0 +1,31 @@
+{
+  "proof_contract_commit": "651b8dd",
+  "smooth_tests": 5,
+  "combined_oracles": {
+    "tests": 11,
+    "seconds": 1.224
+  },
+  "joint_laws": 8,
+  "observed_actions": 256,
+  "score_coordinates": 4096,
+  "fake_head_states": 31,
+  "observed_paths": 52,
+  "auxiliary_paths": 88,
+  "full_suite": {
+    "tests": 216,
+    "seconds": 73.155,
+    "status": "PASS"
+  },
+  "make_check": "PASS",
+  "new_model_forwards": 0,
+  "parameter_updates": 0,
+  "competitive_timing": false,
+  "goal_achieved": false,
+  "source_sha256": {
+    "smooth.py": "65252d7866459d81b5ccd8e2b1de5dc8b1c04ba98c70b01807446124cdc423eb",
+    "test_smooth.py": "5f1fe9abb44f41e162e4202fd22a4773d8307a56f665ed3034df4a2db3f5bfb5",
+    "reference.py": "0c49d3028f98a4511c9d057d6c50e9de4b228f0c73ced4cd040c367a8a9e658b",
+    "smooth-policy-v2.md": "09e77a24524534f22c3e7fcb4f2363c6c1634bf99f6856bc9f90bfb9bb1504a8",
+    "primary-addendum-v2.md": "66c9dd0c9e5c303fff633bcf3076588ce09278461221f462461bd752b1f1da2e"
+  }
+}
