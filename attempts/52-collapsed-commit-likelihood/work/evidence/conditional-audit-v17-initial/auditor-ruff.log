@@ -1,0 +1,50 @@
+B023 Function definition does not bind loop variable `logits`
+  --> attempts/52-collapsed-commit-likelihood/work/conditional_audit_v17.py:75:30
+   |
+74 |             def token_log(i, v):
+75 |                 return float(logits[lookup[i], v] - logden[lookup[i]])
+   |                              ^^^^^^
+76 |
+77 |             def gate(i, v):
+   |
+
+B023 Function definition does not bind loop variable `lookup`
+  --> attempts/52-collapsed-commit-likelihood/work/conditional_audit_v17.py:75:37
+   |
+74 |             def token_log(i, v):
+75 |                 return float(logits[lookup[i], v] - logden[lookup[i]])
+   |                                     ^^^^^^
+76 |
+77 |             def gate(i, v):
+   |
+
+B023 Function definition does not bind loop variable `logden`
+  --> attempts/52-collapsed-commit-likelihood/work/conditional_audit_v17.py:75:53
+   |
+74 |             def token_log(i, v):
+75 |                 return float(logits[lookup[i], v] - logden[lookup[i]])
+   |                                                     ^^^^^^
+76 |
+77 |             def gate(i, v):
+   |
+
+B023 Function definition does not bind loop variable `lookup`
+  --> attempts/52-collapsed-commit-likelihood/work/conditional_audit_v17.py:75:60
+   |
+74 |             def token_log(i, v):
+75 |                 return float(logits[lookup[i], v] - logden[lookup[i]])
+   |                                                            ^^^^^^
+76 |
+77 |             def gate(i, v):
+   |
+
+B023 Function definition does not bind loop variable `row`
+  --> attempts/52-collapsed-commit-likelihood/work/conditional_audit_v17.py:78:21
+   |
+77 |             def gate(i, v):
+78 |                 z = row["root_feature"] + token_log(i, v) - math.log(0.01)
+   |                     ^^^
+79 |                 return 1 / (1 + math.exp(-z)) if z >= 0 else math.exp(z) / (1 + math.exp(z))
+   |
+
+Found 5 errors.

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "AFTER-data consistency, not a variance/cost evaluation",
+  "states": 70,
+  "official_tokenizer_Decimal_answers": 560,
+  "independent_full_and_anchor_score_coordinates": 154560,
+  "maximum_absolute_difference": 8.881784197001252e-16,
+  "new_model_forwards": 0,
+  "updates": 0,
+  "new_auxiliary_words": 0
+}

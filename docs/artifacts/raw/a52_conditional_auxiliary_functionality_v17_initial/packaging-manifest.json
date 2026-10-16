@@ -1,0 +1,38 @@
+{
+  "capture.log": {
+    "sha256": "283ed0deb0e9877b8557023acae399aa5978f0f76322ea6940854d5e627692b5",
+    "bytes": 4171
+  },
+  "post-capture-audit.log": {
+    "sha256": "559f90b007a8b2e2a13e04b4da2dad3a2c461d1e1de3108b9e058937eb1e97d5",
+    "bytes": 339
+  },
+  "post-capture-independent-audit.json": {
+    "sha256": "559f90b007a8b2e2a13e04b4da2dad3a2c461d1e1de3108b9e058937eb1e97d5",
+    "bytes": 339
+  },
+  "preparations.json": {
+    "sha256": "1cd781c1a5e4aac63d1f75a96845fa6f8b027be09f892d36a0ac5de9c608037a",
+    "bytes": 34313
+  },
+  "protocol.json": {
+    "sha256": "68dae3cc867302a25da376fe096711156cf640a8bf5c077cca9b21cc9a851b15",
+    "bytes": 8305
+  },
+  "provenance.json": {
+    "sha256": "4af568884c837fc2005ec89d1687271341d903a7a377e02acec8063075c1891a",
+    "bytes": 7315
+  },
+  "raw-batches.jsonl": {
+    "sha256": "6cd035ef931a7ada26434b4f106fa3b735d03d5dd77cb193bc3a01de77cc2d6f",
+    "bytes": 40989
+  },
+  "records.jsonl": {
+    "sha256": "f4c12917cc819b2ec2aa43cedef7508456e280b4553b6c0969e26e3f65d24949",
+    "bytes": 5150540
+  },
+  "summary.json": {
+    "sha256": "4dcc3dd6d7c71b8d217b8c4159936d52c61a60ed6fc21bbaa9d625401b09d300",
+    "bytes": 764
+  }
+}

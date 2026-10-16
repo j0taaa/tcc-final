@@ -1,0 +1,96 @@
+{"state": 0, "records": 8, "status": "READY"}
+{"state": 1, "records": 16, "status": "READY"}
+{"state": 2, "records": 24, "status": "READY"}
+{"state": 3, "records": 32, "status": "READY"}
+{"state": 4, "records": 40, "status": "READY"}
+{"state": 5, "records": 48, "status": "READY"}
+{"state": 6, "records": 56, "status": "READY"}
+{"state": 7, "records": 64, "status": "READY"}
+{"state": 8, "records": 72, "status": "READY"}
+{"state": 9, "records": 80, "status": "READY"}
+{"state": 10, "records": 88, "status": "READY"}
+{"state": 11, "records": 96, "status": "READY"}
+{"state": 12, "records": 104, "status": "READY"}
+{"state": 13, "records": 112, "status": "READY"}
+{"state": 14, "records": 120, "status": "READY"}
+{"state": 15, "records": 128, "status": "READY"}
+{"state": 16, "records": 136, "status": "READY"}
+{"state": 17, "records": 144, "status": "READY"}
+{"state": 18, "records": 152, "status": "READY"}
+{"state": 19, "records": 160, "status": "READY"}
+{"state": 20, "records": 168, "status": "READY"}
+{"state": 21, "records": 176, "status": "READY"}
+{"state": 22, "records": 184, "status": "READY"}
+{"state": 23, "records": 192, "status": "READY"}
+{"state": 24, "records": 200, "status": "READY"}
+{"state": 25, "records": 208, "status": "READY"}
+{"state": 26, "records": 216, "status": "READY"}
+{"state": 27, "records": 224, "status": "READY"}
+{"state": 28, "records": 232, "status": "READY"}
+{"state": 29, "records": 240, "status": "READY"}
+{"state": 30, "records": 248, "status": "READY"}
+{"state": 31, "records": 256, "status": "READY"}
+{"state": 32, "records": 264, "status": "READY"}
+{"state": 33, "records": 272, "status": "READY"}
+{"state": 34, "records": 280, "status": "READY"}
+{"state": 35, "records": 288, "status": "READY"}
+{"state": 36, "records": 296, "status": "READY"}
+{"state": 37, "records": 304, "status": "READY"}
+{"state": 38, "records": 312, "status": "READY"}
+{"state": 39, "records": 320, "status": "READY"}
+{"state": 40, "records": 328, "status": "READY"}
+{"state": 41, "records": 336, "status": "READY"}
+{"state": 42, "records": 344, "status": "READY"}
+{"state": 43, "records": 352, "status": "READY"}
+{"state": 44, "records": 360, "status": "READY"}
+{"state": 45, "records": 368, "status": "READY"}
+{"state": 46, "records": 376, "status": "READY"}
+{"state": 47, "records": 384, "status": "READY"}
+{"state": 48, "records": 392, "status": "READY"}
+{"state": 49, "records": 400, "status": "READY"}
+{"state": 50, "records": 408, "status": "READY"}
+{"state": 51, "records": 416, "status": "READY"}
+{"state": 52, "records": 424, "status": "READY"}
+{"state": 53, "records": 432, "status": "READY"}
+{"state": 54, "records": 440, "status": "READY"}
+{"state": 55, "records": 448, "status": "READY"}
+{"state": 56, "records": 456, "status": "READY"}
+{"state": 57, "records": 464, "status": "READY"}
+{"state": 58, "records": 472, "status": "READY"}
+{"state": 59, "records": 480, "status": "READY"}
+{"state": 60, "records": 488, "status": "READY"}
+{"state": 61, "records": 496, "status": "READY"}
+{"state": 62, "records": 504, "status": "READY"}
+{"state": 63, "records": 512, "status": "READY"}
+{"state": 64, "records": 520, "status": "READY"}
+{"state": 65, "records": 528, "status": "READY"}
+{"state": 66, "records": 536, "status": "READY"}
+{"state": 67, "records": 544, "status": "READY"}
+{"state": 68, "records": 552, "status": "READY"}
+{"state": 69, "records": 560, "status": "READY"}
+{
+  "status": "PASS",
+  "new_model_forwards": 0,
+  "new_decoder_trajectories": 0,
+  "updates": 0,
+  "scope": "KNOWN_OLD_HEAD_CONDITIONAL_AUXILIARY_FUNCTIONALITY_ONLY",
+  "execution_device": "cpu",
+  "CUDA_used": false,
+  "labels_previously_known": true,
+  "setup_diagnostic_seconds": 1.8015970019914676,
+  "declared_auxiliary_slots": 560,
+  "auxiliary_records": 560,
+  "status_counts": {
+    "PASS": 560,
+    "ERROR": 0,
+    "RESOURCE_REFUSAL": 0,
+    "NOT_RUN": 0
+  },
+  "new_completed_auxiliary_words": 560,
+  "global_Python_NumPy_RNG_unchanged": true,
+  "peak_CPU_process_RSS_bytes": 797462528,
+  "diagnostic_seconds": 44.04926357700606,
+  "auxiliary_word_attempts": 560,
+  "raw_completed_auxiliary_words": 560,
+  "secondary_Decimal_unrepresentable_words": 0
+}

@@ -219,6 +219,12 @@ expoentes5000 dígitos passa. Full273 PASS109.220s/check/Ruff; synthetic24
 full-V/FAKE560 (256 além de Decimal) passam sem mudar RNG, zero amostra auxiliar
 real/head/update até freeze. Replay ALL70*8=560 exige produtor/inputs pinados;
 é funcionalidade, não variância/custo útil, treino, prioridade ou meta cumprida.
+V17 após577a3e5 completa560/560 amostras AUXILIARES reais condicionadas aos70
+heads/estados VELHOS,4iid+4estratos cada, sem novos forwards/trajetórias dLLM/
+labels/updates. RSS797462528B, RNG global intacto; audit posterior560 valores
+oficiais e154560 coordenadas passa8.882e-16. Dados/recusas/custos completos
+preservados, tempo44.049s só diagnóstico. Não confundir com ganho total de
+variância/latência/treino/novidade; a meta continua aberta e V15 intacta.
 
 ## Objetivo e estado atual
 

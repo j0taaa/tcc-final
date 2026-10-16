@@ -394,3 +394,11 @@ enumeration remains a stronger small-support control. Full266 PASS90.701s/
 make check/Ruff. Zero new neural heads/real auxiliary draws/updates. See
 work/conditional-prefix-result-v16.md. No useful variance/cost or priority;
 any actual full-V functionality replay needs its own written contract/freeze.
+
+V17 producer577a3e5 completes560/560 NEW AUXILIARY words from ALL70 OLD states
+(4iid+4prefix-stratified), zero new pretrained forwards/decoder paths/updates.
+All original IDs preserved; independent560 tokenizer/Decimal checks and154560
+score/actor coordinates pass8.882e-16. RSS797462528B/global RNG unchanged.
+Full273 tests/check/Ruff and synthetic/FAKE preflight preserved. Diagnostic
+44.049s is not competitive time or a variance/learning/novelty result; see
+work/conditional-full-v-result-v17.md. Scientific goal remains OPEN.

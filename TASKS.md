@@ -310,7 +310,7 @@ cost remain open. No new neural campaign is credited to M70.
   Full266 PASS90.701s/make check/Ruff; zero real auxiliary draws/heads/updates.
   See conditional-prefix-result-v16.md. Only separately written full-V
   functionality/numerical/cost contract may follow, no useful benefit yet.
-- [ ] T7515: V17 full-V conditional sampler/functionality WRITTEN before code:
+- [x] T7515: V17 full-V conditional sampler/functionality WRITTEN before code:
   CPU old70 states, four iid+four prefix-history-correlated words each=560
   AUXILIARIES, zero new neural/decoder trajectories/updates/labels. Exact
   categorical tickets preserve tiny IDs but floating outer backwards is NOT
@@ -324,6 +324,13 @@ cost remain open. No new neural campaign is credited to M70.
   Synthetic full-V24 words peak769,871,872B; FAKE driver560 words including256
   legal Decimal-unrepresentable words pass, globals unchanged. Final four-
   thread producer/runtime/input pins freeze BEFORE any real old-head word.
+  Producer577a3e5 completes560/560 real-head-derived AUXILIARIES on ALL70 old
+  states, four iid/four prefix-stratified each; zero new neural/decoder paths/
+  labels/updates. Peak RSS797462528B/globals unchanged. AFTER-data audit560
+  tokenizer/Decimal answers and154560 independent score/actor coordinates
+  passes8.882e-16. All raw words/statuses/costs preserved. Diagnostic44.049s
+  is not competitive speed or total variance. See conditional-full-v-result-v17.md;
+  useful benefit/novelty and the scientific goal remain open.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
