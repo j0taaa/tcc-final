@@ -4357,6 +4357,26 @@
             "attempts/52-collapsed-commit-likelihood/work",
             "docs/artifacts/raw/a52_proxy_functionality_v12_initial"
           ]
+        },
+        {
+          "id": "v13",
+          "source_commit": "03816204b4f8d821153cf34e279c08e7171d157b",
+          "evidence_commit": "c123bdce93db3f078d012e22b60a1bac96aa4abc",
+          "evidence_roots": [
+            "attempts/52-collapsed-commit-likelihood/README.md",
+            "attempts/52-collapsed-commit-likelihood/work",
+            "docs/artifacts/raw/a52_proxy_cpu_functionality_v13_initial",
+            "docs/artifacts/raw/a52_proxy_functionality_v12_initial"
+          ]
+        },
+        {
+          "id": "v14",
+          "source_commit": "61299679ad4311a7104ddb70dc1e263bd1cee115",
+          "evidence_commit": "61299679ad4311a7104ddb70dc1e263bd1cee115",
+          "evidence_roots": [
+            "attempts/52-collapsed-commit-likelihood/README.md",
+            "attempts/52-collapsed-commit-likelihood/work"
+          ]
         }
       ]
     }
