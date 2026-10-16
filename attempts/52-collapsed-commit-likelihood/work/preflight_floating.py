@@ -44,7 +44,10 @@ def cases():
             action = tuple(
                 (i, v)
                 for i, v in enumerate(word)
-                if i == anchor or (draw == 0) or rng.random() < float(gates[i][v])
+                if i == anchor
+                or draw == 0
+                or (draw == 2 and i % 2 == 0)
+                or (draw == 3 and rng.random() < float(gates[i][v]))
             )
             probability, _, hh, rr = rational.action_statistics(action)
             expected = {
@@ -78,7 +81,8 @@ def run(output):
 
     output.mkdir(parents=True, exist_ok=False)
     rows = []
-    for case, (plan, weights, word, action, expected) in enumerate(cases()):
+    items = cases()
+    for case, (plan, weights, word, action, expected) in enumerate(items):
         for device in ("numpy", "cpu", "cuda"):
             if device == "numpy":
                 actual = plan.action_statistics(weights, action)
@@ -100,7 +104,7 @@ def run(output):
             )
     report = {
         "records": len(rows),
-        "cases": len(cases()),
+        "cases": len(items),
         "status": "PASS",
         "torch": torch.__version__,
         "cuda": torch.version.cuda,

@@ -3,6 +3,7 @@
 import itertools
 import json
 import random
+import re
 import unittest
 from fractions import Fraction as F
 from math import prod
@@ -21,8 +22,11 @@ def independent_accepts(language, word):
     if any(v != language.pad for v in word[boundary + 1 :]):
         return False
     try:
+        text = b"".join(language.emissions[v] for v in word[:boundary]).decode("utf8")
+        if not re.match(r'\A[ \t\r\n]*\{[ \t\r\n]*"answer"[ \t\r\n]*:', text):
+            return False
         value = json.loads(
-            b"".join(language.emissions[v] for v in word[:boundary]).decode("utf8"),
+            text,
             parse_int=Number,
             parse_float=Number,
             object_pairs_hook=lambda pairs: pairs,
@@ -58,13 +62,15 @@ class NumericConsumerTests(unittest.TestCase):
             b'{"answer":"0"}',
             b'{"answer":[]}',
             b'\v{"answer":0}',
+            b'{"\\u0061nswer":0}',
         ]
-        language = NumericJSON((*corpus, b"", b"", b"<EOT>", b"<PAD>"), 19, 20)
+        ea, eb, eos, pad = range(len(corpus), len(corpus) + 4)
+        language = NumericJSON((*corpus, b"", b"", b"<EOT>", b"<PAD>"), eos, pad)
         for i in range(len(corpus)):
-            for word in ((i, 19), (17, i, 18, 19, 20), (i,), (i, 19, 18), (i, 20, 19)):
+            for word in ((i, eos), (ea, i, eb, eos, pad), (i,), (i, eos, eb), (i, pad, eos)):
                 self.assertEqual(language.accepts(word), independent_accepts(language, word), word)
-        self.assertEqual(language.step(TAIL, 17), -1)
-        self.assertEqual(language.step(TAIL, 20), TAIL)
+        self.assertEqual(language.step(TAIL, ea), -1)
+        self.assertEqual(language.step(TAIL, pad), TAIL)
 
     def test_all_small_original_words_and_global_class_reduction(self):
         emissions = (

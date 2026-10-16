@@ -156,6 +156,19 @@ class TorchPlan:
     def action_statistics(self, weights, action, threshold=0.01):
         """Autodiff wrt planner alpha, beta and anchor logits; model is frozen."""
         t, n = self.torch, len(weights)
+        if weights.ndim != 2 or weights.shape[1] != len(self.mapping) or n < 1:
+            raise ValueError("nonempty original-V weight matrix required")
+        if (
+            weights.dtype != t.float64
+            or not bool(t.isfinite(weights).all())
+            or not bool((weights > 0).all())
+        ):
+            raise ValueError("finite positive float64 original weights required")
+        positions_list = [i for i, _ in action]
+        if not action or positions_list != sorted(set(positions_list)):
+            raise ValueError("sorted distinct nonempty observed action required")
+        if any(not 0 <= i < n or not 0 <= v < weights.shape[1] for i, v in action):
+            raise ValueError("observed action outside the original-ID canvas")
         confidence = weights / weights.sum(dim=1, keepdim=True)
         if not bool((confidence > 0).all()):
             raise ValueError("positive original model probabilities required in V4")
@@ -173,12 +186,16 @@ class TorchPlan:
         keep[positions, tokens] = True
         selected_rows[positions] = True
         filtered = weights * t.where(selected_rows[:, None], gates * keep, 1 - gates)
-        if not bool((filtered[~selected_rows] > 0).all()):
-            raise ValueError("positive unretained target factor underflow")
+        if not bool((filtered[~selected_rows] > 0).all()) or not bool(
+            (filtered[positions, tokens] > 0).all()
+        ):
+            raise ValueError("positive original target factor underflow")
         log_scalar = t.logsumexp(
             t.log_softmax(r, dim=0)[positions] - gates[positions, tokens].log(), dim=0
         )
         logp = self.log_partition(filtered) - self.log_partition(weights) + log_scalar
+        if not bool(t.isfinite(logp)) or float(logp.detach()) > 1e-7:
+            raise ValueError("nonfinite/out-of-range floating action log probability")
         gradients = t.autograd.grad(logp, (alpha, beta, r))
         result = {"log_probability": float(logp.detach().cpu())}
         for name, value in zip(("alpha", "beta", "anchor"), gradients, strict=True):

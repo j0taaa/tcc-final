@@ -48,6 +48,12 @@ Compiler clássico tem38 classes/22 estados/92 arcos;48 checks NumPy/Torch
 CPU/CUDA contra Fraction têm erro máximo de log~1.78e-15 nos brinquedos.
 Não é bound global, lei GPU exata ou benefício neural. Runtime isolado importa
 fonte pinada, sem instância de modelo; runner/captura ainda pendentes.
+Preflight final V4:19 oráculos focados/full224 PASS74.209s, make check/Ruff
+PASS. Três ações sintéticas full-V/32 slots usam421728768 bytes;48 checks
+refinados incluem descartes. Cinco forwards de arquitetura ALEATÓRIA verificam
+recorte/bidirecionalidade/padding e loading BF16 explícito. Pesos pré-treinados
+baixados/hash conferido, mas ZERO forwards deles. Runner/protocolo congelam
+antes da captura limitada; não há ganho/treino ou novidade confirmada.
 
 ## Objetivo e estado atual
 

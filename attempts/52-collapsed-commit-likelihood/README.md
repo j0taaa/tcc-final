@@ -156,3 +156,13 @@ CPU/CUDA score records match rational oracles, max log error1.78e-15. These are
 correctness/resource prerequisites, not neural heads, timings or benefits.
 See work/resource-foundation-v4.md and work/evidence/consumer-foundation-v4-initial.
 The pretrained resource runner is still pending; no weight evaluation/update.
+
+The final pre-head implementation is now frozen with19 focused oracles and
+224 maintained tests PASS74.209s; make check/focused Ruff pass. Three synthetic
+full-V32-slot actions fit421728768 bytes; refined48 toy CPU/GPU records include
+discarded proposals. Five RANDOM-model calls verify bidirectionality, padding,
+head cropping and explicit BF16 local loading. All are prerequisites, with ZERO
+pretrained calls. See work/consumer-preflight-v4.md and the independently
+versioned original/final evidence. consumer-protocol-v4.json freezes the actual
+resource runner/runtime before its first pretrained call. No complete-cost
+variance, quality, training, independent confirmation or novelty is credited.

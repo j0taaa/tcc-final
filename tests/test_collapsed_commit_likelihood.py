@@ -21,3 +21,7 @@ NumericConsumerTests = import_module(
 FloatingCPUConsumerTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_floating_cpu"
 ).FloatingCPUConsumerTests
+
+ConsumerControlTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_consumer_controls"
+).ConsumerControlTests

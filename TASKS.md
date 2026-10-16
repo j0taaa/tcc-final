@@ -94,6 +94,13 @@ cost remain open. No new neural campaign is credited to M70.
   records match rational action/score oracles, max log error1.78e-15. New isolated
   Transformers4.57.1/tokenizers0.22.1 shares unchanged Torch2.8 runtime; custom
   module import passes without a model instance. Runner/head capture pending.
+  Final runner/protocol prepared BEFORE pretrained heads:19 focused oracles,
+  full224 PASS74.209s, make check/Ruff PASS. Three synthetic full-V32-slot
+  actions fit421728768 bytes, refined48 toy score records pass, five RANDOM
+  architecture forwards verify cropping/bidirectionality/padding plus explicit
+  local BF16 loading. Final/original sources and raw checks are separate in
+  work/evidence/consumer-preflight-v4-before-heads. ZERO pretrained calls yet;
+  the bounded first capture is next, not a variance/quality/publication claim.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

@@ -1,0 +1,1 @@
+{"pretrained_model_forwards": 0, "weights": "random-tiny-architecture-only", "explicit_local_bf16_no_cache_loading": "PASS", "status": "PASS", "crop_error": 0.0, "future_token_effect": 0.10195539891719818, "padding_error": 0.0, "toy_model_forward_calls": 5}

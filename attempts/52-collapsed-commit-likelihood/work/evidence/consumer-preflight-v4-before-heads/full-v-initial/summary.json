@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "records": 3,
+  "original_ids": 151936,
+  "positions": 32,
+  "classes": 38,
+  "max_workspace_allocated_bytes": 421728768,
+  "max_error": {
+    "log_probability": 5.684341886080802e-14,
+    "alpha": 1.3988810110276972e-14,
+    "beta": 1.2505552149377763e-12,
+    "anchor": 1.8041124150158794e-16
+  },
+  "pretrained_model_forwards": 0,
+  "competitive_timing": false,
+  "native_rng_exactness_claimed": false
+}

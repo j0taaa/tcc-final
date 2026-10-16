@@ -45,6 +45,16 @@ practical benefit and sufficient originality are not established. Metadata
 inspection also finds151936 output logits versus tokenizer IDs through151669;
 a future consumer must state that semantic boundary explicitly before capture.
 
+V4's bounded consumer prerequisite now passes224 maintained tests74.209s,
+19 focused oracles and make check/Ruff. Synthetic original-V32-position
+actions fit421728768 bytes;48 refined toy CPU/GPU checks and five RANDOM tiny
+architecture calls pass. The official tokenizer's151936 IDs/4096 triples,
+including266 empty emissions, are preserved. No pretrained call/update yet.
+Frozen resource inputs/runtime/runner precede at most nine pretrained calls;
+passing only enables considering a separately frozen cost/variance protocol.
+Classical inference and conditional means, own originality, useful training
+and the open scientific goal are not conflated.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine
