@@ -348,3 +348,11 @@ a collapsed score is generally biased. All partial-score controls receive the
 same exact proxy when available; strong state/horizon/proposal/RLOO baselines
 and independent fitting/costs are required. First only a small rational audit,
 not a new neural campaign or training/novelty/useful-effect claim.
+
+After17a689a five rational oracles pass4 laws821 triples193 actions, including
+122 zero-proxy actions,39 FAKE-head states168 visible paths. The two naive
+collapses are biased; projected control, matched covariance and exact adaptive
+derivatives pass. Initial DFA error/source/log retained independently. Full256
+PASS83.064s/make check/Ruff. Zero new head/update or measured useful benefit;
+see work/proposal-control-result-v11.md. A separate ALL-old-head replay freeze
+must precede functionality computations. Goal remains open.

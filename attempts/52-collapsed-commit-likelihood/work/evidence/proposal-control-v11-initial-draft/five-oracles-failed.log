@@ -1,0 +1,115 @@
+test_adaptive_visible_paths_and_exact_reward_derivative (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_adaptive_visible_paths_and_exact_reward_derivative) ... ERROR
+test_exact_projection_aliases_variable_stop_and_zero_events (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_exact_projection_aliases_variable_stop_and_zero_events) ... ERROR
+test_full_and_projected_zero_mean_but_naive_collapses_are_biased (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_full_and_projected_zero_mean_but_naive_collapses_are_biased) ... ERROR
+test_matched_conditional_covariance_identity (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_matched_conditional_covariance_identity) ... ERROR
+test_original_id_and_subset_contract_failures_remain_explicit (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_original_id_and_subset_contract_failures_remain_explicit) ... ERROR
+
+======================================================================
+ERROR: test_adaptive_visible_paths_and_exact_reward_derivative (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_adaptive_visible_paths_and_exact_reward_derivative)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 186, in test_adaptive_visible_paths_and_exact_reward_derivative
+    control = ProposalControl(base, proxy(base))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/proposal_control.py", line 28, in __init__
+    self.proxy = PrefixAnchor(
+                 ^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 44, in __init__
+    self.mass, self.prior, self.prior_lengths = self._infer(None)
+                                                ^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 81, in _infer
+    target = self.language.step(state, token)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 31, in step
+    if state == 20 or byte != self.literal[state]:
+                              ~~~~~~~~~~~~^^^^^^^
+IndexError: index out of range
+
+======================================================================
+ERROR: test_exact_projection_aliases_variable_stop_and_zero_events (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_exact_projection_aliases_variable_stop_and_zero_events)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 80, in test_exact_projection_aliases_variable_stop_and_zero_events
+    control = ProposalControl(base, proxy(base))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/proposal_control.py", line 28, in __init__
+    self.proxy = PrefixAnchor(
+                 ^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 44, in __init__
+    self.mass, self.prior, self.prior_lengths = self._infer(None)
+                                                ^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 81, in _infer
+    target = self.language.step(state, token)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 31, in step
+    if state == 20 or byte != self.literal[state]:
+                              ~~~~~~~~~~~~^^^^^^^
+IndexError: index out of range
+
+======================================================================
+ERROR: test_full_and_projected_zero_mean_but_naive_collapses_are_biased (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_full_and_projected_zero_mean_but_naive_collapses_are_biased)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 110, in test_full_and_projected_zero_mean_but_naive_collapses_are_biased
+    control = ProposalControl(base, proxy(base))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/proposal_control.py", line 28, in __init__
+    self.proxy = PrefixAnchor(
+                 ^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 44, in __init__
+    self.mass, self.prior, self.prior_lengths = self._infer(None)
+                                                ^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 81, in _infer
+    target = self.language.step(state, token)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 31, in step
+    if state == 20 or byte != self.literal[state]:
+                              ~~~~~~~~~~~~^^^^^^^
+IndexError: index out of range
+
+======================================================================
+ERROR: test_matched_conditional_covariance_identity (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_matched_conditional_covariance_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 141, in test_matched_conditional_covariance_identity
+    control = ProposalControl(base, proxy(base))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/proposal_control.py", line 28, in __init__
+    self.proxy = PrefixAnchor(
+                 ^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 44, in __init__
+    self.mass, self.prior, self.prior_lengths = self._infer(None)
+                                                ^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 81, in _infer
+    target = self.language.step(state, token)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 31, in step
+    if state == 20 or byte != self.literal[state]:
+                              ~~~~~~~~~~~~^^^^^^^
+IndexError: index out of range
+
+======================================================================
+ERROR: test_original_id_and_subset_contract_failures_remain_explicit (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_original_id_and_subset_contract_failures_remain_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 227, in test_original_id_and_subset_contract_failures_remain_explicit
+    control = ProposalControl(base, proxy(base))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/proposal_control.py", line 28, in __init__
+    self.proxy = PrefixAnchor(
+                 ^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 44, in __init__
+    self.mass, self.prior, self.prior_lengths = self._infer(None)
+                                                ^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/prefix_anchor.py", line 81, in _infer
+    target = self.language.step(state, token)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/test_proposal_control.py", line 31, in step
+    if state == 20 or byte != self.literal[state]:
+                              ~~~~~~~~~~~~^^^^^^^
+IndexError: index out of range
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.021s
+
+FAILED (errors=5)

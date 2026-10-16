@@ -1,0 +1,17 @@
+{
+  "url": "https://proceedings.mlr.press/v80/tucker18a/tucker18a.pdf",
+  "sha256": "7510cfcfa5be47a245520fbd38d448109111670cfa39df5246937cddf86be1ad",
+  "bytes": 1513060,
+  "read_scopes": [
+    "Section 2.3 action-dependent control correction",
+    "Section 3 variance decomposition",
+    "Section 4.3 same-batch baseline-fit bias",
+    "Section 5 horizon-aware baselines"
+  ],
+  "not_claimed": [
+    "whole-paper review",
+    "human review",
+    "new baseline principle"
+  ],
+  "code_before_read": false
+}

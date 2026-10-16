@@ -1,0 +1,13 @@
+test_adaptive_visible_paths_and_exact_reward_derivative (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_adaptive_visible_paths_and_exact_reward_derivative) ... ok
+test_exact_projection_aliases_variable_stop_and_zero_events (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_exact_projection_aliases_variable_stop_and_zero_events) ... ok
+test_full_and_projected_zero_mean_but_naive_collapses_are_biased (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_full_and_projected_zero_mean_but_naive_collapses_are_biased) ... ok
+test_matched_conditional_covariance_identity (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_matched_conditional_covariance_identity) ... ok
+test_original_id_and_subset_contract_failures_remain_explicit (attempts.52-collapsed-commit-likelihood.work.test_proposal_control.ProposalControlTests.test_original_id_and_subset_contract_failures_remain_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.379s
+
+OK
+{"adaptive_proxy_states": 39, "visible_paths": 168}
+{"proposal_control_laws": 4, "triples": 821, "actions": 193, "zero_proxy_actions": 122}
+{"naive_visible_bias_max": "359/18080", "naive_class_bias_max": "1/50", "frozen_head_restriction_witness": true}

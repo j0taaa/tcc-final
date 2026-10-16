@@ -170,6 +170,11 @@ sem backbone congelado/proposta independente a identidade não vale assim.
 Todos controles parciais recebem o mesmo proxy exato, com baselines fortes
 de estado/horizonte/greedy/proposta/RLOO e ajuste independente. Só oráculo
 racional pequeno é próximo; nenhum novo head/treino/ganho confirmado.
+Após17a689a cinco oráculos V11 passam4 leis821 triplas193 ações/122 eventos
+proxy zero,39 estados FAKE/168 caminhos. Projeção/zero mean/PSD/derivada real
+conferem; atalhos têm viés359/18080 e1/50. Draft falho do DFA preservado.
+Full256 PASS83.064s/make check/Ruff; zero head/update novo. É correção, não
+benefício útil/novidade. Replay funcional ALL70 heads velhos exige novo freeze.
 
 ## Objetivo e estado atual
 

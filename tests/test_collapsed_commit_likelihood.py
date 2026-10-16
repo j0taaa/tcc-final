@@ -65,3 +65,7 @@ LLaDASuffixTests = import_module(
 CaptureOccupancyTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_capture_occupancy_v10"
 ).CaptureOccupancyTests
+
+ProposalControlTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_proposal_control"
+).ProposalControlTests
