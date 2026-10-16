@@ -205,6 +205,16 @@ cost remain open. No new neural campaign is credited to M70.
   PASS81.280s/make check/Ruff PASS. ZERO new pretrained forward/update.
   V9 is only a supervised CONTROL, not a training campaign or protagonist;
   real reward-gradient consumer still needs a separate written foundation.
+- [ ] T7509: V10 LLaDA stopped numeric-continuation RESOURCE/SIGNAL design
+  WRITTEN before code/heads, all eight criteria. Pinned original V126464,
+ 115 tokenizer-undefined IDs pending official audit, EOS=PAD126081, MASK126336,
+ 64 response slots and externally supplied literal JSON prefix. Full native
+  projection including prompt rows is charged; actual NF4/BF16 law declared.
+  Eight KNOWN questions/two trajectories, max1017 new forwards, no updates;
+  resource/signal only. Small suffix/alias/manual/autodiff and full-V checks
+  plus actual runtime/source freeze precede any new neural head. Native20/32
+  is a different decoder/protocol, not evidence for this candidate or novelty.
+  Flushed occupancy monitor/call guards must preserve any foreign GPU work.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

@@ -143,6 +143,12 @@ EOS fixo têm gradiente do bound0 e likelihood final não zero (9/112 num caso).
 Não refuta o caso dependente do token, mas impede promover o bound como
 aprendizado útil automático. Full246 PASS81.280s/make check/Ruff PASS; zero
 head/update novo. V9 é controle supervisionado, não protagonista/campanha.
+V10 escreve antes de código novo consumidor LLaDA NF4/BF16 pinado, V126464,
+115 IDs indefinidos a auditar, EOS=PAD126081 e prefixo JSON dado/64 posições.
+Todos8 casos conhecidos/duas trajetórias, máximo1017 novos forwards; só
+recurso/sinal, nenhum update. Projeção nativa inclui prompt/IDs fixos e custa;
+não inventar API indexada. Oráculos/auditoria lexical/preflight/congelamento
+antecedem heads. Native20/32 é outro decoder, não ganho desta política.
 
 ## Objetivo e estado atual
 

@@ -111,6 +111,21 @@ it to an integral protocol pass or competitive latency. Full data and audit
 deviation in a52_stopped_resource_v8_{initial,analysis_initial}; this closes
 only THIS initialization, not the general theorem or the user's open goal.
 
+V9's separately written supervised objective has five passing rational
+oracles:30 exact target laws/330 paths with STRICT variational gaps and
+correct gradient/occupancy identities. Twelve fixed-EOS position-only cases
+have bound gradient0 despite nonzero final-likelihood derivative (9/112 in
+one). This classical limitation makes V9 a CONTROL, not a sufficient reason
+to begin neural training. Full246 PASS81.280s, no new head/update.
+
+V10 writes a new competent-backbone resource foundation BEFORE code: pinned
+LLaDA NF4/BF16, ALL126464 original IDs (115 undefined to audit), EOS=PAD126081,
+externally supplied literal JSON prefix/64 slots. Eight KNOWN questions/two
+trajectories, max1017 new forwards and no updates. Native20/32 came from a
+different decoder/protocol. Small original-ID/alias/manual/autodiff/full-V
+checks and source/runtime freeze precede heads; resource/signal does not
+establish useful variance, learning, originality or the user's fulfilled goal.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

@@ -307,3 +307,15 @@ counterexamples: bound gradient0 despite nonzero true target gradient.
 Full246 PASS81.280s/make check/Ruff PASS; no pretrained call/update.
 See work/visible-elbo-result-v9.md. V9 remains a supervised CONTROL, with
 no automatic useful-learning or campaign claim. V5/V8 remain closed.
+
+## V10 — Written competent-backbone resource design before code
+
+work/llada-stopped-resource-v10.md specifies a separate known-data consumer
+for pinned LLaDA-8B NF4/BF16, external literal JSON prefix and64 response
+slots. ALL126464 original IDs, including115 undefined IDs pending official
+decoding audit, and EOS=PAD126081 are explicit. No indexed-head API is
+invented; full native model projection is charged. ALL8 known questions/two
+trajectories, max1017 new forwards, no updates. Small original-ID suffix/
+EOS-alias/manual/autodiff/full-V prerequisites and actual source/runtime freeze
+come first. The prior native20/32 belongs to a DIFFERENT decoder/protocol.
+This design is not a confirmed contribution or a rescue of the Tiny-A2D run.
