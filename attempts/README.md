@@ -29,6 +29,13 @@ Its V4 archive later preserves all9 real resource heads/32 valid JSON draws,
 8/8 complete cases and zero refusals/errors, WITHOUT a useful-effect claim.
 V5 writes stronger cheap-anchor controls and a two-stage real-return necessity
 screen before code/heads; originality and the user's goal remain open.
+V5 later closes with640 zero-reward outputs. V6 diagnoses the distinct stopping
+law on eight OLD heads; V7 verifies its prefix-aware scores. V8 captures16 valid
+stopped trajectories/98 NEW forwards, but both candidate and paired one-shot
+score0/16. Its known-data signal gate is negative; six foreign GPU polls during
+CPU preparation also violate whole-capture isolation. All raw data, original
+reports and the explicit audited deviation are preserved in v8. No training,
+new seeds, cost/variance or independent campaign follows for this initialization.
 
 | Pasta | Direção |
 | --- | --- |
