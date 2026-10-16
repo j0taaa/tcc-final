@@ -4450,9 +4450,30 @@
     {
       "id": "54-coupled-policy-replay",
       "title": "Acoplamento de políticas de reveal e reutilização de prefixos neurais",
-      "conclusion": "Written f61bbcc/07c255e before prototype: CLASSICAL maximal coupling/projection/MEXIT/LLM evaluation antecedents explicit. Six rational coupling/work/L1 oracles and two proper joint-length/anchor oracles pass. No actual native coupler, new neural work, full-cost or sufficiently original contribution confirmed. All old-data statistics require frozen V3 protocol first.",
+      "conclusion": "Written f61bbcc/07c255e before prototype: CLASSICAL maximal coupling/projection/MEXIT/LLM evaluation antecedents explicit. Six rational coupling/work/L1 oracles and two proper joint-length/anchor oracles pass. No actual native coupler, new neural work, full-cost or sufficiently original contribution confirmed. All old-data statistics require frozen V3 protocol first. V3 fe5dd29: all70 old-state readouts pass; all25 local directions fail20%, best ratio.98416 vs proper T. Independent scalar4125 checks pass2.665e-15; no neural expansion or native-coupler/latency claim.",
       "reading": "attempts/54-coupled-policy-replay/README.md",
-      "versions": []
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "fe5dd29c9d740e7f34964e9f543e03efaaa8fd61",
+          "evidence_commit": "fe5dd29c9d740e7f34964e9f543e03efaaa8fd61",
+          "evidence_roots": [
+            "attempts/54-coupled-policy-replay/README.md",
+            "attempts/54-coupled-policy-replay/work"
+          ]
+        },
+        {
+          "id": "v3",
+          "source_commit": "fe5dd29c9d740e7f34964e9f543e03efaaa8fd61",
+          "evidence_commit": "6ebeb67f5db7af91237a8f87275e1e975b60367a",
+          "evidence_roots": [
+            "attempts/54-coupled-policy-replay/README.md",
+            "attempts/54-coupled-policy-replay/work",
+            "docs/artifacts/raw/a54_old_support_readouts_v3_initial",
+            "docs/artifacts/raw/a54_old_opportunity_v3_initial"
+          ]
+        }
+      ]
     }
   ]
 }
