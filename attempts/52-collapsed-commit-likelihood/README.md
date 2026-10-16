@@ -224,3 +224,10 @@ V6's two rational stopping oracles pass, including fixed original suffix IDs,
 zero PAD mass, full prefix-TV identity and stochastic ordering. Full231 tests
 PASS74.457s and make check/Ruff PASS. The OLD-head audit source/protocol now
 freeze before its mass/length computations; no new model call/sample/label.
+
+The source-frozen V6 audit completes8/8 old heads: length-TV0.869119--0.999971
+and extra PAD mean length6.475331--18.191402 original tokens, with all8 interest
+conditions passing. Independent/archive partition checks agree within1.422e-13
+in log space. ZERO new forward/sample/label/update. See work/stopping-result-v6.md.
+This motivates a new stopped-consumer design only; it does not establish
+semantic cause/gain, a new compiler/theory, training or fulfilled goal.

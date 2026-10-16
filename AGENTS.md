@@ -89,6 +89,12 @@ Dois oráculos V6 após6335f52 passam leis originais/TV/ordem de comprimento,
 IDs fixos/EOT/MASK no sufixo e massa PAD zero; full231 PASS74.457s, make
 check/Ruff PASS. Auditoria TODOS8 heads velhos congela fonte/protocolo antes
 de cálculos, sem novos forwards/amostras/labels/updates.
+V6 produtor d38b843 conclui8/8 heads VELHOS: TV de comprimento0.869119--
+0.999971, E_padT-E_stopT6.475331--18.191402 slots;8/8 condição diagnóstica.
+Checks independentes/arquivo max1.422e-13 log. ZERO forward/amostra/label/
+update novo. É diferença de contrato/lei, não causa ou ganho semântico,
+novidade ou treino. V5 continua encerrada negativa; só novo contrato escrito
+de consumidor parado antes de qualquer campanha. Meta científica aberta.
 
 ## Objetivo e estado atual
 

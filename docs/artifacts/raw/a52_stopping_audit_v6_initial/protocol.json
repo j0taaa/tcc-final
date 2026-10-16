@@ -1,0 +1,65 @@
+{
+  "version": "A52-V6-stopping-law-OLD-head-only",
+  "written_freeze": "6335f52",
+  "contract_sha256": "08fcf6fb0c2abb1ac12ed32b9113ebd9ce909379558f5d0b535f07dbd34c43b7",
+  "initial_manifest_sha256": "444c304ce3b3a8da16c30bba8ec0fcf12aa7238892f63dc54a1d909f1bf995cc",
+  "source_sha256": {
+    "anchor.py": "8de3c86401e90807d7ee2489532cd4ef7bcf21e4b5afe96d8c85eac6b848e29a",
+    "compact_planner.py": "4dd7565d815237da58e747d14a90829e484d1d30deb8874f6f1773dd8ab7f894",
+    "consumer_resource.py": "0bc0abc2c06672a8eccff6fca771f6be24dbb906d0f199e2b5c1d90c587ceed1",
+    "floating.py": "a11ea8d57a2e4d62c93f40bf282bb6756194365894dff3d29faaa935568fd2a8",
+    "numeric_json.py": "a5388609307aa54afff0746009c83991ac18e66d76f7c690e7a3a91e90c9b7ff",
+    "preflight_floating.py": "daa6e7eec2d28185856e8b6c9342f2df25def3dcc12fbb055919767a3d54910a",
+    "preflight_full_v.py": "9d9c5c74562d47ce76c1a8a21cf678358d8da67ff98fed6cd050c91ea640cb4e",
+    "preflight_indexed_head.py": "f155bbdbd28b5ba94d578e1ce29a93f19a1c898280a73c294ba695fdfa3a1590",
+    "preflight_model_api.py": "9017098d991704734ad7d5a8959e6f1da13bbb3312378a4a5ec89d1d01e33ff6",
+    "reference.py": "0c49d3028f98a4511c9d057d6c50e9de4b228f0c73ced4cd040c367a8a9e658b",
+    "smooth.py": "65252d7866459d81b5ccd8e2b1de5dc8b1c04ba98c70b01807446124cdc423eb",
+    "stopping.py": "749a64ac4de60ecd128cb33ff38a0dd0ebf86935cad9402aeb651a47b8a09636",
+    "stopping_audit.py": "0f8e9283ce9bf5ee26a97304d4618f30a4cbd1e67db2fc26a1ed2469cf7df871",
+    "test_anchor.py": "d08866e0158df157afa91ef26b2d8a2bc7112a02e7b4883d2456f7659ee19a2d",
+    "test_compact_planner.py": "ae7a397bdb9849227c150b86ccd11670e90ff77ac2893e9b09f47a3adb7ea505",
+    "test_consumer_controls.py": "c15e785677e5153aa4a97b06bad949b6e4623991744f50ad4d8c33643869a2d6",
+    "test_floating_cpu.py": "8935cd9348e4f923800aec1ad14568d15872a004af3dc99369d75203435b9eb6",
+    "test_numeric_json.py": "7caefb95737904c8c2fd6e775f413160796c5be7188a06ef36565dc2217237ae",
+    "test_reference.py": "0bf0eeb67c37f3bc8c394ece65ea99cf44239da1a6c58fe330bf4cdae6e5d0cd",
+    "test_smooth.py": "5f1fe9abb44f41e162e4202fd22a4773d8307a56f665ed3034df4a2db3f5bfb5",
+    "test_stopping.py": "30ea82c6834dda4f07f109898135aba4b3f00a4742ab1a7af732e4a188ae9c4f",
+    "test_two_stage.py": "f40182ac91a7a8363d6251ff1f650ab8684947e879662484795f2534b760abee",
+    "test_variance_groups.py": "5325f79b7198449fec8540f9e4db3b03cf1f857ce0b51fecda057921ae68a08c",
+    "tokenizer_audit.py": "aa4bb6cbb988804cf791b0b2219305c4f7c26dc127e1081fe5bb6cd77154cdd7",
+    "two_stage.py": "2163d5d7b2cf18d38cbf6f474266cef8de7ce49ddb40e3a7fbd5908cba8a2215",
+    "two_stage_analyze.py": "e8a06402964ee5876ed903aff63d794d95c723a892ab637ad4ab10b200b8a2ec",
+    "two_stage_capture.py": "2f336e3e4b4ff4ac6b23dc8451adc1841cdcec4fa8e53ec23edcae3af2560199"
+  },
+  "runtime": {
+    "numpy": "2.4.6",
+    "python": "3.11.16"
+  },
+  "cases": 8,
+  "source_head_commit": "854a733c53ff978349021d6d75a050fd231fed4e",
+  "new_forwards": 0,
+  "new_samples": 0,
+  "labels": false,
+  "updates": 0,
+  "methods": [
+    "first-EOT forward flow with stopped flow removed",
+    "independent accepting absorbing DFA",
+    "original PAD DFA",
+    "prefix times original PAD suffix mixture"
+  ],
+  "partition_log_tolerance": 1e-07,
+  "survival_order_tolerance": 1e-10,
+  "diagnostic_interest": {
+    "minimum_cases": 6,
+    "tv_min": 0.2,
+    "mean_length_gap_min": 4
+  },
+  "caps": {
+    "process_no_model_bytes": 2147483648,
+    "operation_seconds": 60,
+    "whole_seconds": 1200,
+    "symbolic_arcs": 2000000
+  },
+  "scope": "Classical probability/automaton contract diagnostic, no semantic or speed/novelty claim; V5 remains closed negative. No stopped neural consumer authorized."
+}

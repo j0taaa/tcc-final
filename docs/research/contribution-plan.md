@@ -73,6 +73,14 @@ numbers suggest investigating the difference between PAD-tail conditioning
 and a stopped-prefix law, but this is a distinct diagnostic to write first;
 absorbing stopping is classical and cannot relabel V5 or close the user goal.
 
+V6 diagnostic after written6335f52/frozen d38b843 completes ALL8 OLD initial
+heads, no new forward/sample/label/update. Length-TV0.869119--0.999971 and
+extra PAD mean length6.475331--18.191402 slots pass8/8 predeclared interest
+conditions. Independent/archive partitions match within1.422e-13 log. These
+are law/length effects, not evidence of semantic cause or useful learning.
+A new stopped-prefix consumer requires its own written eligibility, original-ID
+preservation and score contract; classical stopping itself is not novelty.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

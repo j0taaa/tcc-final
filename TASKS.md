@@ -128,7 +128,7 @@ cost remain open. No new neural campaign is credited to M70.
   application is closed negative; general theory not refuted. Inspecting
   padding/stopping semantics is a separate written-first diagnostic, never
   relabeling this gate. Scientific novelty/use/goal remain OPEN.
-- [ ] T7505: V6 stopping-law diagnostic WRITTEN before code: separate old
+- [x] T7505: V6 stopping-law diagnostic WRITTEN before code: separate old
   JSON EOT PAD* full-word target and stopped-prefix law integrating ALL suffix
   IDs. Classical length mixture/TV identity/stochastic ordering, not novelty.
   Minimal rational JSON/original-ID oracles, then freeze an ALL8 OLD-head
@@ -139,6 +139,13 @@ cost remain open. No new neural campaign is credited to M70.
   original suffix MASK/EOT/fixed IDs/zero PAD mass; full231 PASS74.457s,
   make check/Ruff PASS. Freeze consumer-protocol-v6.json/runner before ALL8
   archived-head computations; no new forward/sample/label/update.
+  Producerd38b843 completes ALL8/8 old heads. Length-TV0.869119--0.999971;
+  E_padT-E_stopT6.475331--18.191402 original slots,8/8 interest gates. Three
+  partition/archive checks max1.422e-13 log error. ALL mass vectors/effects/
+  statuses/source preserved in docs/artifacts/raw/a52_stopping_audit_v6_initial.
+  ZERO new forwards/samples/labels/updates. This is contract diagnosis, not
+  semantic cause/gain or scientific novelty. New stopped consumer must be
+  written separately; V5 remains closed negative and the goal OPEN.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

@@ -1,0 +1,30 @@
+{
+  "audit-summary.json": {
+    "sha256": "753b54d97b818fb2ebb5b98eac3fcf671800f01672602574631d05d260c6da89",
+    "bytes": 414
+  },
+  "class-effects.npz": {
+    "sha256": "09dcefd29976ecb84426e8ada1d24dea8749150188d83ef606d3cf383ebbd3e6",
+    "bytes": 7100
+  },
+  "protocol.json": {
+    "sha256": "d52807d44722ddf51d0571dfcae83d5237be573a529f0f31026486069e5ea39d",
+    "bytes": 3720
+  },
+  "provenance.json": {
+    "sha256": "09ee5cd4a37da49557509ad35b6b6b73b25ba2f5552d1deb60b8863aab923aa6",
+    "bytes": 2700
+  },
+  "rows.jsonl": {
+    "sha256": "53bc49d277532ed3fba2a298eefcb0842ceab6715431dfc538009109c0469584",
+    "bytes": 30153
+  },
+  "run.log": {
+    "sha256": "c4df917d41b8dc0c22632ddf73a174064a2c47dae860e2ed50be38b55575e7de",
+    "bytes": 363
+  },
+  "summary.json": {
+    "sha256": "a69c97d433f8ccff140634ac76e1bbefefa67512516b2147c6dc05d0232b40a8",
+    "bytes": 44655
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "complete_cases": 8,
+  "interest_cases": 8,
+  "tv_range": [
+    0.8691194891668441,
+    0.999970881896922
+  ],
+  "mean_length_gap_range": [
+    6.475330865340557,
+    18.191401895264974
+  ],
+  "maximum_partition_log_error": 1.4210854715202004e-13,
+  "new_forwards": 0,
+  "new_samples": 0,
+  "new_labels": 0,
+  "updates": 0,
+  "scope": "known-old-head contract diagnostic only, no semantic or novelty result"
+}

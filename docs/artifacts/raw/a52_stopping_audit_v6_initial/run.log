@@ -1,0 +1,16 @@
+{
+  "status": "DIAGNOSTIC_INTEREST",
+  "scope": "KNOWN_OLD_HEAD_STOPPING_DIAGNOSTIC_ONLY",
+  "new_model_forwards": 0,
+  "new_samples": 0,
+  "labels_read": false,
+  "updates": 0,
+  "complete_cases": 8,
+  "interest_cases": 8,
+  "class_counts": {
+    "stopped": 37,
+    "padded": 38
+  },
+  "diagnostic_seconds": 3.534463885007426,
+  "process_peak_rss_kib": 225344
+}
