@@ -55,6 +55,12 @@ cost remain open. No new neural campaign is credited to M70.
   silently saturated probability. No timing/model work. Full198 tests PASS
   77.017s; make check/Ruff PASS. Hardware tests do not verify all inputs/compiler
   or the complete sampler. Evidence:51/work/evidence/gpu-primitives-v1.
+- [x] T7402b: Shared directed interval DAG/class frontend with exact common
+  rescaling passes21 tiny queries/593 Fraction suffix+class enclosures and two
+  malformed-support refusals. Independent complete original-word enumeration,
+  aliases/EOT/PAD/fixed IDs, subnormals, nonaccepting leaves and multi-block
+  reductions; no speed claim. V3 proof precedes code. Evidence:51/work/evidence/
+  interval-v1; executed preflight source retained before style-only list change.
 - [ ] T7402: Only if a concrete useful systems distinction survives, freeze
   complete-cost protocol/strong controls before implementation/campaign.
   Exactness alone, a tiny FP64 discrepancy or a reference implementation
