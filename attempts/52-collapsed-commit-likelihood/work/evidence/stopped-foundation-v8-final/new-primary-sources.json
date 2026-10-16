@@ -13,5 +13,10 @@
     "url": "https://proceedings.mlr.press/v97/liu19c/liu19c.pdf",
     "sha256": "473830d25be73d424866e1bb05e720777f55964b9caef569b440af3b9516e9e5",
     "bytes": 468944
+  },
+  "unmasking-v4": {
+    "url": "https://arxiv.org/pdf/2512.09106v4",
+    "sha256": "c273e89fcc6c0f8b7a593b4f2491195442420dbbcd88ef981ca238e38a3d2fa2",
+    "bytes": 3208324
   }
 }

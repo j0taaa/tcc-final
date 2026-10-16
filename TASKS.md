@@ -177,6 +177,10 @@ cost remain open. No new neural campaign is credited to M70.
   Order Policies2.2--2.3/AppendixC adds supervised frozen-policy adaptation as
   an obligatory future control. Exact scopes/hashes in primary-addendum-v8.md;
   no change to the frozen resource protocol or claim of adequate originality.
+  path-control-clarification-v8.md verifies the classical conditional-vector
+  property needed for full collapse versus the combined control with a COMMON
+  baseline, including finite visible paths. It does not order arbitrary fitted
+  baselines or hidden-cost rewards, prove a runtime gain or implement training.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
