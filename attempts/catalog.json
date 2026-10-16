@@ -4347,6 +4347,16 @@
             "attempts/52-collapsed-commit-likelihood/README.md",
             "attempts/52-collapsed-commit-likelihood/work"
           ]
+        },
+        {
+          "id": "v12",
+          "source_commit": "dc906e17e096b77050f52c4a1553472c8f24d97e",
+          "evidence_commit": "de7a41a9da4cd4ade7c12f005da9f27deff25e00",
+          "evidence_roots": [
+            "attempts/52-collapsed-commit-likelihood/README.md",
+            "attempts/52-collapsed-commit-likelihood/work",
+            "docs/artifacts/raw/a52_proxy_functionality_v12_initial"
+          ]
         }
       ]
     }
