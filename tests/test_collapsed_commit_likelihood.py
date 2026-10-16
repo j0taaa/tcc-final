@@ -37,3 +37,7 @@ TwoStageTests = import_module(
 VarianceGroupTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_variance_groups"
 ).VarianceGroupTests
+
+StoppingTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_stopping"
+).StoppingTests

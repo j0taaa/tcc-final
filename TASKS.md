@@ -135,6 +135,10 @@ cost remain open. No new neural campaign is credited to M70.
   mass/length audit, ZERO new forwards/labels/updates. A future iterative
   consumer needs explicit active bits (MASK may be a latent suffix ID) and
   its own written protocol. Do not reinterpret/reopen V5's negative gate.
+  After6335f52, two rational oracles pass full prefix laws/TV/length ordering,
+  original suffix MASK/EOT/fixed IDs/zero PAD mass; full231 PASS74.457s,
+  make check/Ruff PASS. Freeze consumer-protocol-v6.json/runner before ALL8
+  archived-head computations; no new forward/sample/label/update.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

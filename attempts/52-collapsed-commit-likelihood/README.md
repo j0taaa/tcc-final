@@ -219,3 +219,8 @@ absorbing-state marginalization is classical and no novelty is claimed.
 Only small independent oracles and then a source-frozen ALL8 OLD-head audit
 are justified, without new forwards/labels/samples/updates. V5 remains closed
 negative. No stopped iterative decoder or semantic gain is established.
+
+V6's two rational stopping oracles pass, including fixed original suffix IDs,
+zero PAD mass, full prefix-TV identity and stochastic ordering. Full231 tests
+PASS74.457s and make check/Ruff PASS. The OLD-head audit source/protocol now
+freeze before its mass/length computations; no new model call/sample/label.

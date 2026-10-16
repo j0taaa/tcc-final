@@ -85,6 +85,10 @@ Mistura/TV por comprimento/tilt monotônico são clássicos. Só oráculos peque
 e depois TODOS8 heads VELHOS sem forward/gabarito/update novo. MASK pode ser
 ID latente após EOT, exigindo bits ativos explícitos em consumidor futuro.
 Não chamar a correção de semântica de nova teoria ou conquista científica.
+Dois oráculos V6 após6335f52 passam leis originais/TV/ordem de comprimento,
+IDs fixos/EOT/MASK no sufixo e massa PAD zero; full231 PASS74.457s, make
+check/Ruff PASS. Auditoria TODOS8 heads velhos congela fonte/protocolo antes
+de cálculos, sem novos forwards/amostras/labels/updates.
 
 ## Objetivo e estado atual
 
