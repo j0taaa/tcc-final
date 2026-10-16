@@ -57,3 +57,11 @@ PrefixRuntimeTests = import_module(
 VisibleELBOTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_visible_elbo"
 ).VisibleELBOTests
+
+LLaDASuffixTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_llada_suffix_v10"
+).LLaDASuffixTests
+
+CaptureOccupancyTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_capture_occupancy_v10"
+).CaptureOccupancyTests

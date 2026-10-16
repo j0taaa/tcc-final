@@ -215,6 +215,13 @@ cost remain open. No new neural campaign is credited to M70.
   plus actual runtime/source freeze precede any new neural head. Native20/32
   is a different decoder/protocol, not evidence for this candidate or novelty.
   Flushed occupancy monitor/call guards must preserve any foreign GPU work.
+  Preflight:126464 official singles/4096 triples,115 empty IDs, all six
+  original weight hashes PASS. Five CPU suffix/alias/occupancy-monitor oracles,
+  60 rational NumPy/CPU/CUDA comparisons and three full-V64-slot checks PASS;
+  GPU peak546382336B, max log discrepancy1.706e-13. Full251 PASS80.108s,
+  make check/Ruff PASS. Frozen prompt lengths89--127, prefix IDs[12657,31113,2275].
+  Actual runner/runtime/protocol/evidence freeze before model instance/heads;
+  zero V10 pretrained calls/updates and no useful-effect claim yet.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

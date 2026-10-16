@@ -1,0 +1,10 @@
+test_bruteforce_mass_occupancy_and_all_scores (attempts.52-collapsed-commit-likelihood.work.test_llada_suffix_v10.LLaDASuffixTests.test_bruteforce_mass_occupancy_and_all_scores) ... ok
+test_entire_small_suffix_language_and_eos_pad_alias (attempts.52-collapsed-commit-likelihood.work.test_llada_suffix_v10.LLaDASuffixTests.test_entire_small_suffix_language_and_eos_pad_alias) ... ok
+test_terminal_original_ids_undefined_aliases_and_invalid_shapes (attempts.52-collapsed-commit-likelihood.work.test_llada_suffix_v10.LLaDASuffixTests.test_terminal_original_ids_undefined_aliases_and_invalid_shapes) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.222s
+
+OK
+{"suffix_exact_score_queries": 20, "new_model_forwards": 0}
+{"original_suffix_words": 1111, "eos_pad_same_original_id": true}

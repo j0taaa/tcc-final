@@ -1,0 +1,18 @@
+{
+  "new_pretrained_forwards": 0,
+  "model_instantiated": false,
+  "model_parameter_updates": 0,
+  "full_suite": "251 PASS80.108s",
+  "cpu_tests": 5,
+  "rational_cpu_gpu_records": 60,
+  "synthetic_original_full_v_records": 3,
+  "synthetic_peak_gpu_bytes": 546382336,
+  "official_original_ids_audited": 126464,
+  "official_triples_audited": 4096,
+  "undefined_empty_original_ids": 115,
+  "native_model_source_read_scope": "imports1-112, attention624-663, forward1174-1292 and final projection/wrapper1350-1458; not whole-file/human audit",
+  "model_card_read_scope": "entire pinned short README; MIT metadata",
+  "initial_cpu_log_scope": "initial three tests before adding the literal occupancy assertion; current full251/final five test that assertion",
+  "protocol_sha256": "1616dc9e957fcb1d1f4ff648d2dbe743fae9575c6839072f795fd873826cd2bf",
+  "no_priority_use_or_publication_claim": true
+}

@@ -319,3 +319,13 @@ trajectories, max1017 new forwards, no updates. Small original-ID suffix/
 EOS-alias/manual/autodiff/full-V prerequisites and actual source/runtime freeze
 come first. The prior native20/32 belongs to a DIFFERENT decoder/protocol.
 This design is not a confirmed contribution or a rescue of the Tiny-A2D run.
+
+V10 preflight passes all126464 official singles/4096 triples,115 empty IDs
+and all six original weight hashes. Five CPU suffix/alias/monitor regressions,
+60 rational NumPy/CPU/CUDA comparisons and three full-V64-slot checks pass,
+peak546382336B/max log discrepancy1.706e-13. Full251 PASS80.108s, make check/
+Ruff PASS. Official prompts89--127 tokens and three supplied-prefix IDs are
+pinned. work/evidence/llada-foundation-v10-before-heads preserves sources/
+runtime and exact reading scopes; consumer-protocol-v10.json pins the actual
+runner before any pretrained model instance/call. No useful neural effect,
+new update or adequate originality is established by this foundation.

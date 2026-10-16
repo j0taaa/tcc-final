@@ -1,0 +1,12 @@
+test_foreign_cpu_preparation_observation_stays_invalid_after_clear (attempts.52-collapsed-commit-likelihood.work.test_capture_occupancy_v10.CaptureOccupancyTests.test_foreign_cpu_preparation_observation_stays_invalid_after_clear) ... ok
+test_own_pid_allowed_query_error_refuses_and_is_preserved (attempts.52-collapsed-commit-likelihood.work.test_capture_occupancy_v10.CaptureOccupancyTests.test_own_pid_allowed_query_error_refuses_and_is_preserved) ... ok
+test_bruteforce_mass_occupancy_and_all_scores (attempts.52-collapsed-commit-likelihood.work.test_llada_suffix_v10.LLaDASuffixTests.test_bruteforce_mass_occupancy_and_all_scores) ... ok
+test_entire_small_suffix_language_and_eos_pad_alias (attempts.52-collapsed-commit-likelihood.work.test_llada_suffix_v10.LLaDASuffixTests.test_entire_small_suffix_language_and_eos_pad_alias) ... ok
+test_terminal_original_ids_undefined_aliases_and_invalid_shapes (attempts.52-collapsed-commit-likelihood.work.test_llada_suffix_v10.LLaDASuffixTests.test_terminal_original_ids_undefined_aliases_and_invalid_shapes) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.208s
+
+OK
+{"suffix_exact_score_queries": 20, "new_model_forwards": 0}
+{"original_suffix_words": 1111, "eos_pad_same_original_id": true}

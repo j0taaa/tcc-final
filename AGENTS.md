@@ -149,6 +149,13 @@ Todos8 casos conhecidos/duas trajetórias, máximo1017 novos forwards; só
 recurso/sinal, nenhum update. Projeção nativa inclui prompt/IDs fixos e custa;
 não inventar API indexada. Oráculos/auditoria lexical/preflight/congelamento
 antecedem heads. Native20/32 é outro decoder, não ganho desta política.
+Preflight V10 passa126464 IDs oficiais/4096 triplas,115 vazios, seis shards
+originais com hashes conferidos. Cinco oráculos CPU incluem EOS=PAD, prefixo,
+IDs fixos e latch de processo externo durante preparação. Sessenta checks
+racionais NumPy/CPU/CUDA e três full-V/64slots passam, pico546382336B,
+log máximo1.706e-13. Full251 PASS80.108s/make check/Ruff PASS. Prompts89--127
+tokens/prefixo3 IDs conferem; runner/runtime/protocolo congelam antes de
+instância/head pré-treinado. Ainda zero head/update V10/benefício confirmado.
 
 ## Objetivo e estado atual
 
