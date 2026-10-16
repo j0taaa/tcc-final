@@ -164,6 +164,12 @@ não é superioridade semântica/variância/velocidade. Auditoria posterior conf
 congelado, zero updates. Só considerar NOVO protocolo de custo-variância
 com controles fortes, inclusive baselines condicionadas à proposta quando
 legítimas. Nenhum treino/confirmação independente/publicação acionados.
+V11 escreve ANTES de código baseline condicionada à proposta e correção
+grad J_proxy(a)/K(a) após marginalizar. Princípios de baseline/RB são clássicos;
+sem backbone congelado/proposta independente a identidade não vale assim.
+Todos controles parciais recebem o mesmo proxy exato, com baselines fortes
+de estado/horizonte/greedy/proposta/RLOO e ajuste independente. Só oráculo
+racional pequeno é próximo; nenhum novo head/treino/ganho confirmado.
 
 ## Objetivo e estado atual
 

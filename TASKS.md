@@ -231,6 +231,15 @@ cost remain open. No new neural campaign is credited to M70.
   llada-result-v10.md and a52_llada_stopped_resource_v10_{initial,analysis_initial}.
   All data/costs/statuses preserved; zero updates. Only consider a NEW frozen
   strong-control full-cost variance protocol, not automatic training.
+- [ ] T7510: V11 proposal-dependent control/eight criteria WRITTEN before
+  code. Frozen denoiser/proposal independent of policy is essential. Full
+  b(X)*score has zero mean; after collapse use grad J_proxy(a)/K(a), not
+  posterior-proxy probability times score alone. Weighted grammar queries
+  and control variates are classical. All partial methods get the same exact
+  projected proxy; include strong state/horizon/greedy/proposal/RLOO controls
+  with independent fitting/costs. First only small rational joint/action/path
+  oracle, bias counterexamples/aliases/zero events; no new head/update or
+  competitive benefit claim. New full-cost protocol remains to be defined.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

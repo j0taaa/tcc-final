@@ -338,3 +338,13 @@ post-capture tokenizer/Decimal checks all32 answers/all63 BF16 heads;536
 flushed occupancy observations have no foreign process. All raw data and
 source scopes preserved; see work/llada-result-v10.md. Zero updates; only a
 NEW strong-control full-cost variance design may be considered. Goal OPEN.
+
+## V11 — Correct proposal control written before prototype
+
+work/proposal-control-v11.md credits classical input-dependent baselines/RB
+and writes the projected correction grad J_proxy(a)/K(a) for policy-only
+learning with a frozen proposal. Naively multiplying a proposal reward into
+a collapsed score is generally biased. All partial-score controls receive the
+same exact proxy when available; strong state/horizon/proposal/RLOO baselines
+and independent fitting/costs are required. First only a small rational audit,
+not a new neural campaign or training/novelty/useful-effect claim.
