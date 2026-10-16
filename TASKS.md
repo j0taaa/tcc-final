@@ -54,6 +54,12 @@ cost remain open. No new neural campaign is credited to M70.
   baselines. Only after a plausible real benefit, freeze external-state
   complete-cost protocol BEFORE neural heads/updates/timings. No large training
   implementation is authorized by this checklist alone without that foundation.
+  V2 writes a SEPARATE smooth joint word/token-dependent Bernoulli policy,
+  conditioned nonempty by a positive two-state OR compiler. Word marginals
+  change explicitly; bit-only retries are wrong for that target. dUltra and
+  Learning Unmasking Policies already use Bernoulli planners. All eight criteria
+  are reassessed BEFORE code; only an independent small joint/action-law oracle
+  is next. No new head/update/timing, useful effect or sufficient originality.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

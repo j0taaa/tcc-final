@@ -82,3 +82,21 @@ work/evidence/rational-v1. No new neural head, parameter update or competitive
 timing. This is a minimal law oracle, not an implemented training decoder or a
 new protagonist. Classical evidence inference supplies the same reduction;
 specific novelty and a useful complete-cost consequence remain unresolved.
+
+## V2 — a separate smooth policy contract, still before code
+
+[work/smooth-policy-v2.md](work/smooth-policy-v2.md) writes a DIFFERENT policy:
+joint grammatical proposal and token-dependent Bernoulli release, conditioned
+on a nonempty mask. A two-state positive OR calculation avoids subtracting
+near-equal partitions. The observed-action partition has fixed support and
+smooth scores; this does not preserve V1/Mosaic's law or the original word
+posterior after conditioning. Restarting only bits for a fixed word is an
+explicitly different, inadmissible shortcut for this target.
+
+All eight criteria are reassessed in that note. dUltra and Learning Unmasking
+Policies already use Bernoulli planners and are mandatory primary antecedents;
+the position-only variant is a cheaper competent control. Classical CRF/evidence
+inference may subsume the entire construction. Only the minimal rational joint/
+action-law oracle is justified; no new model, update, timing or sufficient
+originality is asserted. V1's result and its moving-boundary counterexample
+remain unchanged in their archive.

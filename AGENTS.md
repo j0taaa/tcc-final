@@ -13,6 +13,13 @@ racionais passam108 leis1372 ações15092 componentes de score;211 testes
 PASS72.391s e make check/Ruff PASS. Há contraexemplo ao score só dos retidos
 (-21/100 real versus0), mas o score COMPLETO continua correto. Nenhum novo
 head/treino/timing, novidade suficiente ou benefício real A52 foi confirmado.
+V2 escreve antes de código uma política DIFERENTE: proposta gramatical e gates
+Bernoulli dependentes do token, condicionados conjuntamente a máscara não vazia.
+Compiler OR positivo de dois estados e likelihood marginal suave são aplicações
+clássicas, não novidade assumida. Muda a marginal da proposta; reamostrar só os
+bits de uma palavra fixa dá outra lei. dUltra/Learning Unmasking Policies já
+usam Bernoulli e a versão por posição é controle competente mais barato.
+Somente oráculo pequeno é justificado; nenhum novo head/treino/timing ou ganho.
 
 ## Objetivo e estado atual
 
