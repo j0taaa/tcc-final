@@ -280,6 +280,11 @@ cost remain open. No new neural campaign is credited to M70.
   Same9-parameter actor chain rule for all, no chosen score units after data.
   Independently fitted coefficients and complete costs remain required.
   Define a separate necessity/complete-cost protocol before further sampling.
+  V15 writes BEFORE code a diagnostic on ALL16 OLD paths/70 states only:
+  fixed V14 actor, seven scores/four state baselines/27 zero-mean control
+  combinations, all756 configurations retained. Two-path uncertainty explicit;
+  RLOO group variance is null, no false iid estimate or favorable gate. No
+  new forward/sample/update/label. Actual source freeze follows small checks.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
