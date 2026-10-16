@@ -1,0 +1,22 @@
+{
+  "phase": "known-head feasibility and exact-law replay, not performance confirmation",
+  "frozen_input": ".cache/a24-independent-cuda-v1",
+  "cases": "ALL15 JSON/npy pairs, sorted by filename, no selection by outcome",
+  "original_weights": "binary64 bits, entire original V, fixed IDs unit rows, append native50256 EOT/PAD",
+  "language": "true JSON EOT PAD*, strict compositional original-byte semantics",
+  "sampler": "classical retained-uniform interval control; no proposed max-ratio word-corrector timing",
+  "samples_per_case": 16,
+  "uniform_prefix_bits": 32,
+  "block_size": 1024,
+  "seed": 2026101651,
+  "max_arity": 1024,
+  "seconds_per_case": 180,
+  "max_cells": 10000000,
+  "max_edges": 10000000,
+  "max_terms": 50000000,
+  "correctness": ["all mass bounds versus frozen independent exact posterior", "all original-word IDs versus retained-uniform exact CPU", "all outputs strict JSON/EOT/PAD/fixed IDs"],
+  "outcomes": ["COMPLETE", "RESOURCE_REFUSAL", "ZERO_MASS", "ERROR"],
+  "positive_claim_permitted": false,
+  "new_model_forwards": 0,
+  "next_gate": "a useful systems distinction and complete-cost comparison against this competent control, then independently frozen new heads only if development succeeds"
+}
