@@ -82,6 +82,11 @@ cost remain open. No new neural campaign is credited to M70.
   initial fixed IDs, true EOT/PAD and immutable A24 V11 compiler verified by SHA.
   V6 writes a CLASSICAL telescoping count-factor envelope before implementation
   to avoid an additional max-product audit; no benefit/priority assumed.
+- [x] T7402f: V6 rational oracle passes36 JSON/grid combinations and arbitrary
+  positive potential/refusal checks: global count envelope dominates EVERY W/Q,
+  accepted laws equal the original target, and V1 max-product is never looser.
+  Two tests PASS0.098s; not GPU performance or own mathematical novelty. No
+  proposed corrected GPU sampler has been measured yet; strong control remains.
 - [ ] T7402: Only if a concrete useful systems distinction survives, freeze
   complete-cost protocol/strong controls before implementation/campaign.
   Exactness alone, a tiny FP64 discrepancy or a reference implementation

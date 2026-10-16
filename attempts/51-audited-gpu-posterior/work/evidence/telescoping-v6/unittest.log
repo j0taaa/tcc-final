@@ -1,0 +1,7 @@
+test_arbitrary_potential_and_bad_budget_are_not_silent_pruning (attempts.51-audited-gpu-posterior.work.test_telescoping.TelescopingTests.test_arbitrary_potential_and_bad_budget_are_not_silent_pruning) ... ok
+test_full_original_json_laws_and_tighter_max_product (attempts.51-audited-gpu-posterior.work.test_telescoping.TelescopingTests.test_full_original_json_laws_and_tighter_max_product) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.098s
+
+OK

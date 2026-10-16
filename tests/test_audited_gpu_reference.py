@@ -9,3 +9,7 @@ ExecutedProposalTests = import_module(
 RetainedIntervalTests = import_module(
     "attempts.51-audited-gpu-posterior.work.test_reference"
 ).RetainedIntervalTests
+
+TelescopingTests = import_module(
+    "attempts.51-audited-gpu-posterior.work.test_telescoping"
+).TelescopingTests
