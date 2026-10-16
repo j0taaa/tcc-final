@@ -310,6 +310,13 @@ cost remain open. No new neural campaign is credited to M70.
   Full266 PASS90.701s/make check/Ruff; zero real auxiliary draws/heads/updates.
   See conditional-prefix-result-v16.md. Only separately written full-V
   functionality/numerical/cost contract may follow, no useful benefit yet.
+- [ ] T7515: V17 full-V conditional sampler/functionality WRITTEN before code:
+  CPU old70 states, four iid+four prefix-history-correlated words each=560
+  AUXILIARIES, zero new neural/decoder trajectories/updates/labels. Exact
+  categorical tickets preserve tiny IDs but floating outer backwards is NOT
+  a native exact-posterior certificate. Only minimal independent laws/rare-ID/
+  correlated-prefix oracles before source/runtime/input freeze and real draws.
+  Full costs/refusals preserved; no competitive timing/variance/novelty claim.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
