@@ -1,0 +1,13 @@
+test_bound_gradient_three_time_estimators_and_not_exact_mle (attempts.52-collapsed-commit-likelihood.work.test_visible_elbo.VisibleELBOTests.test_bound_gradient_three_time_estimators_and_not_exact_mle) ... ok
+test_full_target_path_support_exact_bound_and_strict_variational_gap (attempts.52-collapsed-commit-likelihood.work.test_visible_elbo.VisibleELBOTests.test_full_target_path_support_exact_bound_and_strict_variational_gap) ... ok
+test_occupancy_against_full_reference_paths_aliases_eos_and_refusals (attempts.52-collapsed-commit-likelihood.work.test_visible_elbo.VisibleELBOTests.test_occupancy_against_full_reference_paths_aliases_eos_and_refusals) ... ok
+test_reference_actions_against_independent_anchor_coins (attempts.52-collapsed-commit-likelihood.work.test_visible_elbo.VisibleELBOTests.test_reference_actions_against_independent_anchor_coins) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.645s
+
+OK
+{"exact_gradient_time_checks": 30, "new_model_forwards": 0}
+{"full_target_laws": 30, "reference_paths": 330, "strict": 30}
+{"exact_reference_occupancy_states": 32, "parameter_updates": 0}
+{"reference_count_laws": 7, "original_actions": 247}

@@ -1,0 +1,19 @@
+{
+  "rational_oracles": 5,
+  "reference_count_laws": 7,
+  "reference_actions": 247,
+  "exact_target_laws": 30,
+  "reference_paths": 330,
+  "strict_variational_gaps": 30,
+  "occupancy_states": 32,
+  "position_only_counterexamples": 12,
+  "new_pretrained_forwards": 0,
+  "model_parameter_updates": 0,
+  "full_suite": "246 PASS81.280s",
+  "adequate_originality": false,
+  "useful_learning_demonstrated": false,
+  "source_sha256": {
+    "visible_elbo.py": "971404a0b5629cab9c1d75a8dff553be213d3c3e8d44bc28dee027ce36ea88d5",
+    "test_visible_elbo.py": "38433a274465caf2f3f62f11e8b3d6c76a4be3fe001f4f2caa2c705cc4ec244b"
+  }
+}

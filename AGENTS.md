@@ -136,6 +136,13 @@ Jensen e amostragem de tempo são clássicos. Gradiente é do BOUND, não da
 likelihood final ou recompensa. Só oráculo racional mínimo é justificado,
 sem head/update/Tiny rescue; política CE supervisionada/grammatical e SFT
 são controles obrigatórios. Diferença própria útil/publicação ainda abertas.
+V9 após43f99f4/2112613/42f5972 passa cinco oráculos0.668s:7 leis247 ações,
+30 alvos330 caminhos,30 gaps variacionais estritos/identidades de gradiente,
+32 estados de ocupância. Doze contraexemplos de política só por posição com
+EOS fixo têm gradiente do bound0 e likelihood final não zero (9/112 num caso).
+Não refuta o caso dependente do token, mas impede promover o bound como
+aprendizado útil automático. Full246 PASS81.280s/make check/Ruff PASS; zero
+head/update novo. V9 é controle supervisionado, não protagonista/campanha.
 
 ## Objetivo e estado atual
 

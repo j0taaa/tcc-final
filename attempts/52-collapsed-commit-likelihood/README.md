@@ -299,3 +299,11 @@ Only a minimal rational oracle is next. Cheap supervised policy adaptation,
 grammar-conditioned CE, practical PAPL, native confidence/PL and SFT remain
 mandatory controls. No Tiny-A2D rescue/new head/update or adequate originality
 is established; a real consumer would need another written foundation.
+
+V9's five rational oracles PASS0.668s:7 laws247 actions,30 target laws330
+paths,30 strict variational gaps/gradient identities and32 occupancy states.
+The fixed-reference limitation has12 concrete fixed-EOS/position-only
+counterexamples: bound gradient0 despite nonzero true target gradient.
+Full246 PASS81.280s/make check/Ruff PASS; no pretrained call/update.
+See work/visible-elbo-result-v9.md. V9 remains a supervised CONTROL, with
+no automatic useful-learning or campaign claim. V5/V8 remain closed.

@@ -191,12 +191,20 @@ cost remain open. No new neural campaign is credited to M70.
   protocol pass or competitive latency. All outputs/heads/costs/draft assertion
   and audited decision in a52_stopped_resource_v8_{initial,analysis_initial}.
   See stopped-result-v8.md. Scientific usefulness/originality/goal remain OPEN.
-- [ ] T7508: V9 WRITTEN supervised visible-transition bound/eight criteria
+- [x] T7508: V9 WRITTEN supervised visible-transition bound/eight criteria
   BEFORE its prototype. PAPL/Jensen/random-time teacher forcing are prior.
   Only a minimal independent rational path/bound/gradient oracle is next;
   no new pretrained forward or parameter update. Explicitly retain variational
   gap, fixed-reference requirement, absorbing zeros, target serialization and
   supervised/grammar-CE/native/SFT controls. Not a rescue of V5/V8 Tiny-A2D.
+  Five rational oracles PASS0.668s:7 count laws247 actions,30 full target
+  laws330 reference paths,30 strict variational gaps/gradient-time identities,
+  32 occupancy states. Twelve fixed-EOS position-only counterexamples have
+  bound gradient0 but true target gradient nonzero (e.g.9/112). This limits
+  useful-order claims; token-dependent general case not refuted. Full246
+  PASS81.280s/make check/Ruff PASS. ZERO new pretrained forward/update.
+  V9 is only a supervised CONTROL, not a training campaign or protagonist;
+  real reward-gradient consumer still needs a separate written foundation.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

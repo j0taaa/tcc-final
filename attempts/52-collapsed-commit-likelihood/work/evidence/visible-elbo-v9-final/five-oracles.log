@@ -1,0 +1,15 @@
+test_bound_gradient_three_time_estimators_and_not_exact_mle (attempts.52-collapsed-commit-likelihood.work.test_visible_elbo.VisibleELBOTests.test_bound_gradient_three_time_estimators_and_not_exact_mle) ... ok
+test_full_target_path_support_exact_bound_and_strict_variational_gap (attempts.52-collapsed-commit-likelihood.work.test_visible_elbo.VisibleELBOTests.test_full_target_path_support_exact_bound_and_strict_variational_gap) ... ok
+test_occupancy_against_full_reference_paths_aliases_eos_and_refusals (attempts.52-collapsed-commit-likelihood.work.test_visible_elbo.VisibleELBOTests.test_occupancy_against_full_reference_paths_aliases_eos_and_refusals) ... ok
+test_position_only_reference_optimum_can_be_blind_to_useful_order (attempts.52-collapsed-commit-likelihood.work.test_visible_elbo.VisibleELBOTests.test_position_only_reference_optimum_can_be_blind_to_useful_order) ... ok
+test_reference_actions_against_independent_anchor_coins (attempts.52-collapsed-commit-likelihood.work.test_visible_elbo.VisibleELBOTests.test_reference_actions_against_independent_anchor_coins) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.668s
+
+OK
+{"exact_gradient_time_checks": 30, "new_model_forwards": 0}
+{"full_target_laws": 30, "reference_paths": 330, "strict": 30}
+{"exact_reference_occupancy_states": 32, "parameter_updates": 0}
+{"reference_ordering_counterexamples": [{"target_ids": [0, 2, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "9/112"}, {"target_ids": [0, 3, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "129/1702"}, {"target_ids": [0, 4, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "15/206"}, {"target_ids": [1, 2, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-19/3262"}, {"target_ids": [1, 3, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-43/3222"}, {"target_ids": [1, 4, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-123/6854"}, {"target_ids": [2, 0, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "61/1110"}, {"target_ids": [2, 1, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "359/3734"}, {"target_ids": [3, 0, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-191/892"}, {"target_ids": [4, 0, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-935/6862"}, {"target_ids": [3, 1, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-2705/14974"}, {"target_ids": [4, 1, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-229/2374"}]}
+{"reference_count_laws": 7, "original_actions": 247}

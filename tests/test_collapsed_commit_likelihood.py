@@ -53,3 +53,7 @@ PrefixFloatingTests = import_module(
 PrefixRuntimeTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_prefix_runtime"
 ).PrefixRuntimeTests
+
+VisibleELBOTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_visible_elbo"
+).VisibleELBOTests
