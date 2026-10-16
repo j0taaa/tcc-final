@@ -1,0 +1,11 @@
+Collecting transformers==4.57.1
+  Downloading transformers-4.57.1-py3-none-any.whl.metadata (43 kB)
+Collecting tokenizers==0.22.1
+  Downloading tokenizers-0.22.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Downloading transformers-4.57.1-py3-none-any.whl (12.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 24.2 MB/s  0:00:00
+Downloading tokenizers-0.22.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 10.8 MB/s  0:00:00
+Installing collected packages: transformers, tokenizers
+
+Successfully installed tokenizers-0.22.1 transformers-4.57.1

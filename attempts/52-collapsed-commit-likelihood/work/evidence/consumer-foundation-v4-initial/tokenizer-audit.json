@@ -1,0 +1,39 @@
+{
+  "model_revision": "c8d24a3f4adaeef46881b450e1bf7d1005203bd7",
+  "file_sha256": {
+    "config.json": "02494589af3c9284b381929c576e5865c8f026b5bfed4b9a08d1b38bd4b8623e",
+    "tokenizer_config.json": "ffe505983791f3fd517c246cc8fb173bbefc2ef657ce9cf2182ac9d97951f77b",
+    "modeling_qwen3.py": "624175f036b6552db473e911e5ec57a09d518c7241b11bc375a7b4bf558675ce",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "added_tokens.json": "6ad14248a97d96b55f4439a9c441348f7ab308509b6c39d3cbdbfd59d928dce0",
+    "special_tokens_map.json": "676a177c1945a87fc5297d228bd9a57c325cb69514644fcdda3b22e113671336",
+    "tokenizer.json": "6d55810de1daf81d1d1259355b4b85810385022ab745be68029295935a4eacf0",
+    "chat_template.jinja": "87a2728cb8dc9fe424d624542f6060ec05a1d285ebbec578bb078900e33396b5",
+    "generation_config.json": "48667a223c617e2e6c2f7f3f7b89a3c8b9e86fc1788055c10583620e10a3552e"
+  },
+  "runtime": {
+    "transformers": "4.57.1",
+    "tokenizers": "0.22.1",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.4.6"
+  },
+  "single_ids": 151936,
+  "single_errors": [],
+  "multi_token_words": 4096,
+  "multi_errors": [],
+  "empty_undefined_ids": 266,
+  "emission_table_sha256": "f987e41a8fd02f7b1762f862b5898b5446856ceb5c70f4db4f1b8ce3effe2fe5",
+  "tokenizer_length": 151670,
+  "mask": 151669,
+  "eos": 151645,
+  "pad": 151643,
+  "decoder": {
+    "type": "ByteLevel",
+    "add_prefix_space": false,
+    "trim_offsets": false,
+    "use_regex": false
+  },
+  "audit_performs_no_model_forward": true,
+  "status": "PASS"
+}

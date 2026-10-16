@@ -146,3 +146,13 @@ verified, must be retained; explicit numeric JSON EOT PAD semantics, independent
 checks, raw data and resource refusals are fixed. The regular schema is not
 evidence of recursive parsing novelty. Runner/source still need freezing before
 any real head. Specific originality and useful complete-cost benefit remain OPEN.
+
+V4's initial foundation now passes18 focused tests1.532s, including22608
+independently parsed small words/class sums. The official tokenizer audit checks
+ALL151936 IDs and4096 triples with zero errors; all266 undefined IDs remain
+empty original emissions. Whole-V compilation has38 classes/22 states/92 valid
+state-class arcs (2944 for32 slots), preserving every ID. Initial48 NumPy/Torch
+CPU/CUDA score records match rational oracles, max log error1.78e-15. These are
+correctness/resource prerequisites, not neural heads, timings or benefits.
+See work/resource-foundation-v4.md and work/evidence/consumer-foundation-v4-initial.
+The pretrained resource runner is still pending; no weight evaluation/update.

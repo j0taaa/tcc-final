@@ -87,6 +87,13 @@ cost remain open. No new neural campaign is credited to M70.
   exact runtime/source BEFORE heads. Preserve all failures, original BF16 logit
   bits, configurations and statuses. Six correct cases permits only considering
   a separate cost/variance protocol; it cannot establish useful gain/novelty.
+  Initial prerequisites:18 focused tests PASS1.532s;22608 small original words
+  versus independent JSON parser/class sums; official tokenizer151936 singles+
+  4096 triples zero errors; all266 empty IDs retained. Whole-V38 classes/22
+  states/92 state-class arcs preserve all IDs. Initial48 NumPy/Torch CPU/CUDA
+  records match rational action/score oracles, max log error1.78e-15. New isolated
+  Transformers4.57.1/tokenizers0.22.1 shares unchanged Torch2.8 runtime; custom
+  module import passes without a model instance. Runner/head capture pending.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

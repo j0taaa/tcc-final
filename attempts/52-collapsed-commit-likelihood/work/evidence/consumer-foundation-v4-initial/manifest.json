@@ -1,0 +1,12 @@
+{
+  "float-summary.json": "14f6fc5e20c8fcb4b87a2effc89bf00483cd3cb6593a644b6add07aa0aa26a47",
+  "tokenizer-audit.json": "9f00e235eee27b6b0be1ac7fb3f97183f77fcbf766991332963ddef5e13da6ff",
+  "focused-tests.log": "b17de47a19367edab4dc2a473cb51fd9da41c3e58fd772106c970a766c557e39",
+  "classes.npz": "f988fc21bc19d755e2880092b091b2f54e19246f2453186f6f35ca6f62076ce5",
+  "float-rows.json": "4c4f0e8812c7e53c767632d000130e78feb456e202494597f7481d347cc9dc42",
+  "classes-original-summary.json": "63825e436c54e122369d1f686f1909a722e4df6af8956c18da0b974dae9f4b3d",
+  "initial-py312-venv.cfg": "d9b8534ab8705551e6e1b1f3a4370a39b8c8e4bcfa2614bf364f6e14c0e43da0",
+  "summary.json": "d15674a1551affbb93fb01966b19b62a2fb60a5e0fb277a818da1f6ba852bfe1",
+  "classes-corrected-summary.json": "862fbcaee7e4b2402587878828cfe5ff10d2e7d9cb27d32ddb7331286e155293",
+  "runtime-install.log": "6aed8840e45bb1042211381222bc11bfdb5b8a38400362bb444466465442ceb2"
+}

@@ -1,0 +1,16 @@
+{
+  "records": 48,
+  "cases": 16,
+  "status": "PASS",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "new_model_forwards": 0,
+  "native_rng_exactness_claimed": false,
+  "max_error": {
+    "log_probability": 1.7763568394002505e-15,
+    "alpha": 1.3877787807814457e-16,
+    "beta": 8.881784197001252e-16,
+    "anchor": 1.1102230246251565e-16
+  }
+}

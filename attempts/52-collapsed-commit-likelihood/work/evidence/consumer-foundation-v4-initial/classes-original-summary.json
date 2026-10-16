@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "original_ids": 151936,
+  "classes": 38,
+  "states": 22,
+  "valid_state_class_arcs": 92,
+  "arcs_for_32_slots": 2944,
+  "epsilon_extra_ids": 1,
+  "all_ids_preserved": true,
+  "packet_sha256": "f988fc21bc19d755e2880092b091b2f54e19246f2453186f6f35ca6f62076ce5",
+  "compile_seconds_diagnostic_only": 0.9762201569974422,
+  "competitive_timing": false,
+  "model_forwards": 0
+}

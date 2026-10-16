@@ -42,6 +42,12 @@ Declara todos151936 IDs, inclusive os266 sem token caso TODOS decodifiquem vazio
 JSON numérico irrestrito/EOT/PAD, controles, tolerâncias e recusas. Seis casos
 corretos só permitem considerar protocolo de custo/variância separado; não são
 vantagem útil/novidade. Runner/runtime precisam congelar antes do primeiro head.
+Fundação V4 inicial:18 oráculos focados PASS1.532s,22608 palavras pequenas,
+tokenizer oficial151936 IDs/4096 triplas sem erro,266 vazios preservados.
+Compiler clássico tem38 classes/22 estados/92 arcos;48 checks NumPy/Torch
+CPU/CUDA contra Fraction têm erro máximo de log~1.78e-15 nos brinquedos.
+Não é bound global, lei GPU exata ou benefício neural. Runtime isolado importa
+fonte pinada, sem instância de modelo; runner/captura ainda pendentes.
 
 ## Objetivo e estado atual
 

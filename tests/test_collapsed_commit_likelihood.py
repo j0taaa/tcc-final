@@ -13,3 +13,11 @@ SmoothActionTests = import_module(
 AnchorActionTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_anchor"
 ).AnchorActionTests
+
+NumericConsumerTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_numeric_json"
+).NumericConsumerTests
+
+FloatingCPUConsumerTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_floating_cpu"
+).FloatingCPUConsumerTests

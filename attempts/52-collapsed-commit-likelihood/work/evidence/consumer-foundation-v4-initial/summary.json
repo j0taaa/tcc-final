@@ -1,0 +1,30 @@
+{
+  "resource_contract_commit": "47b7f6c",
+  "focused_tests": {
+    "tests": 18,
+    "seconds": 1.532
+  },
+  "numeric_original_words": 22608,
+  "tokenizer_singles": 151936,
+  "tokenizer_triples": 4096,
+  "empty_extra_ids": 266,
+  "classes": 38,
+  "dfa_states": 22,
+  "state_class_arcs": 92,
+  "floating_records": 48,
+  "pretrained_model_instances": 0,
+  "pretrained_model_forwards": 0,
+  "training_updates": 0,
+  "competitive_timing": false,
+  "resource_runner_complete": false,
+  "goal_achieved": false,
+  "source_sha256": {
+    "numeric_json.py": "a5388609307aa54afff0746009c83991ac18e66d76f7c690e7a3a91e90c9b7ff",
+    "test_numeric_json.py": "77d2d1cc72c354518e9c304d91aaa072dc0e725e7a3e337b5d62c0fb930de65c",
+    "tokenizer_audit.py": "aa4bb6cbb988804cf791b0b2219305c4f7c26dc127e1081fe5bb6cd77154cdd7",
+    "floating.py": "7392e03595bd1dc599dd7ee27b5434ff2bff8512380e1228ef9fb2b438995493",
+    "preflight_floating.py": "17230d4346513ee2d421e58ce1203552ce9544975500273c52e89e81aa0df1a3",
+    "test_floating_cpu.py": "8935cd9348e4f923800aec1ad14568d15872a004af3dc99369d75203435b9eb6",
+    "resource-foundation-v4.md": "6549baadcb4105efc737cefcbf0fca3e00aa5b62b61cb213b29272fb203d9750"
+  }
+}
