@@ -754,7 +754,7 @@
     {
       "id": "24-certified-depth-approximation",
       "title": "Aproximacao por profundidade com certificado de erro condicionado",
-      "conclusion": "Independent full-V query advantage3/15; all30 iterative MDLM applications return valid context-preserving JSON. Written certificate separation and amplification corollary; no broad/native decoder or semantic superiority.",
+      "conclusion": "Independent original full-V query advantage3/15 remains separate. Consumer V2: complete270-record real MDLM pilot,246 complete24 resource refusals,1346 forwards including warmup; selected30/30 valid,30 literal sparse-interface matches735 exact-mass checks. Scoped warm full-trajectory benefit2/15 versus completed controls, with compact capacity refusals;0/15 strict all-controls-complete timing wins. No new independent corpus, semantic, native EPIC/GPU or sufficient-novelty/publication claim.",
       "reading": "attempts/24-certified-depth-approximation/README.md",
       "versions": [
         {
@@ -828,6 +828,15 @@
             "paper/main.tex",
             "paper/generated/m44_certified_depth_v1",
             "output/pdf/tcc-certified-closure.pdf"
+          ]
+        },
+        {
+          "id": "v9",
+          "source_commit": "451de4199be5f9884d4c84e886862f314880b571",
+          "evidence_commit": "5819f250367de40c95098ed6262278e1fecc2196",
+          "evidence_roots": [
+            "attempts/24-certified-depth-approximation/README.md",
+            "attempts/24-certified-depth-approximation/work"
           ]
         }
       ]

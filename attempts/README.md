@@ -6,6 +6,12 @@ arquivos estão compactados para preservar versões sem ampliar o código mantid
 Não são links para arquivos atuais; nenhuma tentativa foi apagada por ter perdido
 uma comparação. As fases e repetições de cada campanha mantêm suas subpastas.
 
+A24/v9 preserva o consumidor V2 e o piloto neural completo:270 registros,
+2/15 ganhos integrais quentes delimitados contra controles concluídos,
+com recusas dos compactos nesses dois estados. Isso não altera o resultado
+independente anterior de consulta3/15 nem confirma semântica, novidade ou
+superioridade geral. Fonte de captura451de419; evidência/relatório5819f250.
+
 ## Índice
 
 | Pasta | Direção |
