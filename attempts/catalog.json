@@ -2557,6 +2557,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "52-collapsed-commit-likelihood",
+      "title": "Lei observada do commitment escolhido por confianca",
+      "conclusion": "Written before prototype238a356; unary evidence reduction for native sampled-confidence threshold/fallback and stable top-k. Classical counting/conditional scores/Rao-Blackwell principles explicit. Six rational oracles108 complete laws1372 actions15092 coordinates; connected-family best-baseline comparison and actual moving-boundary discontinuity retained. Full211 tests PASS72.391s, make check/focused Ruff PASS. Retained-only counterexample true gradient-21/100 versus0 and naive mass17/10. No new head/update/timing, confirmed priority, practical benefit or achieved user goal. Only small prior/consumer audit justified; dUltra/Bernoulli policies are antecedents for smooth variants.",
+      "reading": "attempts/52-collapsed-commit-likelihood/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "cecd53f4b6051fc4da04133deea8b19f2b26a3b1",
+          "evidence_commit": "cecd53f4b6051fc4da04133deea8b19f2b26a3b1",
+          "evidence_roots": [
+            "attempts/52-collapsed-commit-likelihood/README.md",
+            "attempts/52-collapsed-commit-likelihood/work"
+          ]
+        }
+      ]
     }
   ]
 }
