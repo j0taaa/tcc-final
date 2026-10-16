@@ -242,3 +242,6 @@ identities. Classical weighted inference/conditional means are credited.
 Cheap anchor-only, length-only, class-conditional and combined controls are
 mandatory. Only minimal rational oracles are justified next, not new heads,
 training or a revival of V5. Own originality/use and the goal remain OPEN.
+work/prefix-head-chain-v7.md writes the additional original-softmax row-sum
+term needed when prior/posterior prefix occupancies differ, before code.
+Independent rational dual-number checks must include it; no detached shortcut.
