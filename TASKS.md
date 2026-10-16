@@ -60,14 +60,23 @@ cost remain open. No new neural campaign is credited to M70.
   wall AND CPU against best completed control. Dense API ablation medians:
   wall ratio0.201/CPU0.301, not novelty or a strong-control victory by itself.
   These are OLD known heads, no new neural-independent confirmation.
-- [ ] T7102-CFG: Frozen supplementary ALL15x4x3=180 fresh operations give all
+- [x] T7102-CFG: Frozen supplementary ALL15x4x3=180 fresh operations give all
   three immutable compact CFG controls the same vectorized boundary, block
   recovery and sparse confidence. Eight small original-word/finite-law tests
   PASS0.038s after adaptation; compiler source is unchanged. Resource refusals
   are capacity only at3GiB/120s, never general latency impossibility.
+  Producer8541f4f completes180/180:144 complete/36 resource refusals,
+  99 full exact-mass checks with zero divergence; all four prior states
+  survive the scoped comparison. Data/decision:24/work/evidence/consumer-v2-compact.
 - [ ] T7103: Only after positive development, define and execute a NEW iterative
   application/confirmation with complete controls and paid resources. Assess
   usefulness/originality of A24 itself; no acceptance claim follows from code.
+  Preflight freezes270 trajectories (ALL15 known states x9 methods x2 seeds),
+  full parent+child process CPU and actual new forward/IPC/I/O cost, sparse
+  controls and dense ablation; capacity separated from latency. Ten focused
+  oracles PASS0.271s including actual service CPU clock/refinement and alarm
+  cancellation. No new model heads in this preflight. Protocol/source:
+ 24/work/consumer-v2-neural-protocol.json and consumer_v2/{neural,service,analyze_neural}.py.
 
 ## M70 — Exact grammar residual operation, mathematical and prior gates first
 

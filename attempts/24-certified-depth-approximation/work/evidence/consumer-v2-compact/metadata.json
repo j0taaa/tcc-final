@@ -1,0 +1,58 @@
+{
+  "protocol": {
+    "schema": 1,
+    "phase": "Supplementary development on ALL15 known original states; not independent confirmation",
+    "reason": "The complete540-record initial development passed4/15 against matched stack/first-overflow/suffix controls. Compact full CFG controls remain obligatory and receive identical numerical summaries/block recovery/sparse confidence queries.",
+    "methods": [
+      "handoff",
+      "exact_local",
+      "exact_bidir_local",
+      "exact_eps_local"
+    ],
+    "selected_outside": "cursor",
+    "repetitions": 3,
+    "resources": {
+      "seconds": 120,
+      "max_cells": 10000000,
+      "max_edges": 10000000,
+      "max_terms": 50000000,
+      "address_space_bytes": 3221225472
+    },
+    "workers": "Fresh process per operation. Shared physical limits; no capped control failure is universal impossibility. Original source archive hash checked before importing frozen compiler. Only numerical/query boundary adapted.",
+    "input": ".cache/a24-independent-cuda-v1",
+    "correctness": "Three small compact original-word law/query oracles BEFORE timings. All completed exact masses checked against the existing full exact stack. Candidate/controls get same represented heads, full denominators and immutable original-ID recovery.",
+    "decision": "Require matched20% wall AND CPU against all completed compact controls, favorable sign every repeat. Consistent intrinsic resource refusal is reported separately as capacity at this explicit budget; never a general latency win. No missing/errored comparison earns credit.",
+    "neural_next": "Only a surviving scoped benefit permits frozen real iterative application. Priorities/mestrado/publication/semantic improvements remain unconfirmed. All old negative outcomes and current positive initial records remain unchanged."
+  },
+  "protocol_sha256": "c83f9933f62b173d089ece565202b0bcbdad3d99bde2d1be3686bf56d8815775",
+  "base_protocol_sha256": "30f6c500b10e58b9ee1c2915b5e937b7b138f94cc3c6e8e156c264fbc1a17c12",
+  "producer_commit": "8541f4fd08bc398ebc615e20785bf2a7da38f595",
+  "sources": {
+    "attempts/24-certified-depth-approximation/work/consumer_v2/analyze.py": "5748ee2ce83ab6e215e859900040727a9a2f7edff1d22c3366a83eed2998a59d",
+    "attempts/24-certified-depth-approximation/work/consumer_v2/block_stats.py": "5290c2f93f4d23433878494801e5b10dd789e7ded293d2d7692bbf5d8765bae2",
+    "attempts/24-certified-depth-approximation/work/consumer_v2/query.py": "bbb43bdfd8cc146abd351148ece48665c9536c001c29951705a9f3c11f198792",
+    "attempts/24-certified-depth-approximation/work/consumer_v2/__init__.py": "fc451b8a1fdfc7ca973dc13824c90f49b656c08faf7806c16473276ebe46b56b",
+    "attempts/24-certified-depth-approximation/work/consumer_v2/compact_benchmark.py": "d6c03fba697b9542af3fe71fc690ea15c405e224f6bcab08a2a1e93e41603bf1",
+    "attempts/24-certified-depth-approximation/work/consumer_v2/benchmark.py": "40763fe68168eb43a1ba399f16546e39c968e6c25284608453d55abc791ca0ce",
+    "attempts/24-certified-depth-approximation/work/consumer_v2/test_query.py": "e08c0a13e2dc14d3f3fcf09440604e4524e559515393afc21f8c5384a74ef9eb",
+    "attempts/24-certified-depth-approximation/work/consumer_v2/compact.py": "a152d6774dd7e71b6e1d4c1b0907894c737ec44674be86b9e2161432f9fae4c5"
+  },
+  "cases": [
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8",
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-16",
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4",
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8"
+  ],
+  "new_neural_forwards": 0
+}

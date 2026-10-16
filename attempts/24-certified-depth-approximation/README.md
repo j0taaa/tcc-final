@@ -341,3 +341,33 @@ mesmo pin já presente nas constraints; o núcleo continua sem dependência de
 modelo/Torch. Isso permite que `make bootstrap`, testes e demo funcionem em
 instalação limpa. Não é melhoria do algoritmo nem nova medição; validação limpa
 e resultado real de CI são registrados separadamente.
+
+## Consumidor V2: nova avaliação integral, sem nova alegação de teoria
+
+O contrato e as oito respostas estão em `work/consumer-v2-contract.md`, com
+prova de equivalência em `work/consumer-v2-proof.md`. A operação consome uma
+conclusão conjunta e as decisões de confiança necessárias para até quatro
+commits. Agregação numérica e consultas esparsas são clássicas e são oferecidas
+aos controles; não constituem nova teoria. Os quinze estados externos antigos
+agora são DESENVOLVIMENTO conhecido, não confirmação independente.
+
+O produtor a5219c5 encerrou540/540 operações: zero erros/recusas,4/15 estados
+passam contra todas as interfaces de pilha/first-overflow/sufixo igualmente
+otimizadas. O suplemento imutável8541f4f encerrou180/180:144 conclusões,
+36 recusas de recursos e99 comparações de massa exata sem divergências.
+Os quatro estados anteriores sobrevivem; parte envolve capacidade sob3GiB,
+que não equivale a vitória de latência contra os controles recusados.
+Fontes, protocolos e registros integrais estão em `work/consumer_v2/` e
+`work/evidence/consumer-v2-{development,compact}`.
+
+Antes de novos heads, `work/consumer-v2-neural-protocol.json` define270
+trajetórias: todos15 estados, nove métodos e duas seeds novas. Cada canvas
+novo paga um forward real, captura, hash, IPC, consulta e saída. CPU inclui
+pai e serviço filho. Custos a frio são reconstruídos das preparações medidas,
+não novas execuções a frio; recusas e erros permanecem no denominador.
+O auditor compara literalmente cursor/full-sparse e confere os certificados
+contra massas completas disponíveis para o mesmo canvas/head. As sementes
+servem a um piloto; não demonstram qualidade semântica, independência do
+corpus, ganho sobre EPIC nativo ou originalidade suficiente para publicação.
+O resultado pode consolidar utilidade deste consumidor específico; permanece
+necessário justificar um consumidor externo e conferir a novidade da A24.

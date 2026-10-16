@@ -1,11 +1,17 @@
 """Independent original-word/finite-ticket oracles for the consumer refinement."""
 
+import hashlib
 import itertools
 import json
+import signal
+import tempfile
+import time
 import unittest
 from collections import defaultdict
 from fractions import Fraction as F
+from pathlib import Path
 from random import Random
+from unittest.mock import patch
 
 import numpy as np
 
@@ -92,6 +98,60 @@ class Tickets:
 
 
 class QueryConsumerTests(unittest.TestCase):
+    def test_neural_service_real_cpu_clock_and_same_word_refinement(self):
+        from .neural import Service
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            vocabulary = root / "vocabulary.json"
+            vocabulary.write_text(json.dumps(["[]", "{}", "[[]]"]))
+            head = root / "case.npy"
+            np.save(head, np.array([[0.79995, 0.19995, 0.0001]], dtype=np.float64))
+            case = head.with_suffix(".json")
+            case.write_text(
+                json.dumps(
+                    dict(
+                        canvas=[None],
+                        positions=[0],
+                        mask_count=1,
+                        probabilities_sha256=hashlib.sha256(head.read_bytes()).hexdigest(),
+                        forward_and_softmax=dict(wall=0.0, cpu=0.0),
+                    )
+                )
+            )
+            signatures = []
+            for method in ("handoff_numpy", "handoff_full_sparse"):
+                service = Service(method, vocabulary, root / (method + ".stderr"))
+                try:
+                    before = time.clock_gettime(service.child_clock)
+                    result = service.query(dict(case_path=str(case), seed=42))
+                    self.assertGreater(time.clock_gettime(service.child_clock), before)
+                    self.assertEqual(result["status"], "complete")
+                    self.assertEqual(len(result["refinements"]), 1)
+                    self.assertFalse(result["decisions"]["0"]["accepted"])
+                    signatures.append((result["sample"], result["committed"], result["decisions"]))
+                finally:
+                    service.close()
+            self.assertEqual(signatures[0], signatures[1])
+
+    def test_new_service_cancellation_race_does_not_return_commits(self):
+        from . import service
+
+        actual, arrived = signal.setitimer, []
+
+        def late_cancellation(which, seconds):
+            value = actual(which, seconds)
+            if seconds == 0 and not arrived:
+                arrived.append(True)
+                raise TimeoutError("late alarm in cancellation")
+            return value
+
+        with patch.object(service.signal, "setitimer", late_cancellation):
+            result = service.run_timed(lambda: dict(status="complete", committed=[0]), 120)
+        self.assertEqual(result["status"], "resource_refusal")
+        self.assertNotIn("committed", result)
+        self.assertEqual(signal.getitimer(signal.ITIMER_REAL), (0.0, 0.0))
+
     def test_three_immutable_compact_controls_match_original_word_queries(self):
         table, weights, _ = fixture(
             [b"0", b"0", b" ", b"[", b"]", b"[]"],

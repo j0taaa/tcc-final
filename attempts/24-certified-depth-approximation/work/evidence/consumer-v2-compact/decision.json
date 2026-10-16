@@ -1,0 +1,543 @@
+{
+  "records": 180,
+  "planned": 180,
+  "campaign_complete": true,
+  "statuses": {
+    "complete": 144,
+    "resource_refusal": 36
+  },
+  "exact_mass_law_checks": 99,
+  "exact_mass_errors": [],
+  "states": [
+    {
+      "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+      "survives": true,
+      "capacity_involved": true,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        }
+      ]
+    },
+    {
+      "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+      "survives": false,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 0.9673788450922637,
+            "cpu": 0.9852668578956056
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.0341281979356989,
+            "cpu": 1.01488233187291
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.076514093020124,
+            "cpu": 1.0325438374370255
+          }
+        }
+      ]
+    },
+    {
+      "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+      "survives": true,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.49136648636012703,
+            "cpu": 0.5989200869036488
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.7000022413418321,
+            "cpu": 0.7832074562636072
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.7054068385463157,
+            "cpu": 0.7867377527292763
+          }
+        }
+      ]
+    },
+    {
+      "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+      "survives": true,
+      "capacity_involved": true,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        }
+      ]
+    },
+    {
+      "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+      "survives": false,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.6169186553865087,
+            "cpu": 0.7537398736578854
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.1027731531764366,
+            "cpu": 1.0508637156437592
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.1193308586563837,
+            "cpu": 1.0594680072955913
+          }
+        }
+      ]
+    },
+    {
+      "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8",
+      "survives": true,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.14347181643055654,
+            "cpu": 0.19736379001662271
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.34342878786796177,
+            "cpu": 0.4343809517691613
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.299708568364019,
+            "cpu": 0.38605114968631254
+          }
+        }
+      ]
+    },
+    {
+      "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+      "survives": true,
+      "capacity_involved": true,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        }
+      ]
+    },
+    {
+      "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4",
+      "survives": false,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.0135475849376845,
+            "cpu": 1.0070272292762137
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.1087718866103684,
+            "cpu": 1.054225751165478
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.1160418163068624,
+            "cpu": 1.0573978416603784
+          }
+        }
+      ]
+    },
+    {
+      "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8",
+      "survives": true,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.37997890634184867,
+            "cpu": 0.4734160909023365
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.627198780891431,
+            "cpu": 0.7116988493294102
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.5840311281809314,
+            "cpu": 0.6730844319787725
+          }
+        }
+      ]
+    },
+    {
+      "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16",
+      "survives": true,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.14699107629790897,
+            "cpu": 0.18610380062380844
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.2870459057665744,
+            "cpu": 0.3480000074316532
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.2832618110305574,
+            "cpu": 0.34400979687049366
+          }
+        }
+      ]
+    },
+    {
+      "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4",
+      "survives": false,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.032195434535885,
+            "cpu": 1.0185071211324306
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.0998232021618193,
+            "cpu": 1.055270982160349
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.3094024410016343,
+            "cpu": 1.158023549665545
+          }
+        }
+      ]
+    },
+    {
+      "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8",
+      "survives": false,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 0.8913588198523396,
+            "cpu": 0.9185967443853046
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 0.9132706864056892,
+            "cpu": 0.9364412934680946
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.1319263576185599,
+            "cpu": 1.0926087342115915
+          }
+        }
+      ]
+    },
+    {
+      "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-16",
+      "survives": true,
+      "capacity_involved": true,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "explicit-budget capacity",
+          "reasons": [
+            "MemoryError: ",
+            "MemoryError: ",
+            "MemoryError: "
+          ],
+          "strong": true
+        }
+      ]
+    },
+    {
+      "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4",
+      "survives": false,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 0.8081012162004702,
+            "cpu": 0.8777763782556783
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.0337456833889256,
+            "cpu": 1.0189160050965416
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": false,
+          "median_ratios": {
+            "wall": 1.0685297734058048,
+            "cpu": 1.0384636549148276
+          }
+        }
+      ]
+    },
+    {
+      "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8",
+      "survives": true,
+      "capacity_involved": false,
+      "comparisons": [
+        {
+          "method": "exact_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.27699011176321797,
+            "cpu": 0.3545621031497321
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.403590225592258,
+            "cpu": 0.49241468589348736
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "timing",
+          "strong": true,
+          "median_ratios": {
+            "wall": 0.3248844586367803,
+            "cpu": 0.4082678888277983
+          }
+        }
+      ]
+    }
+  ],
+  "surviving_prior_states": [
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-16"
+  ],
+  "surviving_scoped_benefit": true,
+  "scope": "Known-head development; capacity at3GiB/120s is NOT general latency superiority"
+}
