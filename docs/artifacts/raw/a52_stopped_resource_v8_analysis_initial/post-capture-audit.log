@@ -1,0 +1,96 @@
+{
+  "status": "CONSISTENCY_PASS_WHOLE_CAPTURE_ISOLATION_DEVIATION",
+  "scope": "post-capture consistency, not a new preregistered performance gate",
+  "original_id_trace_transitions": 113,
+  "complete_trajectories": 16,
+  "independent_tokenizer_json_decimal_answers": 32,
+  "correct_answers_across_candidate_and_one_shot": 0,
+  "original_bf16_full_v_head_checks": 98,
+  "score_maximum_absolute_errors": {
+    "log_probability": 1.4210854715202004e-14,
+    "alpha": 4.452314969676793e-15,
+    "beta": 6.59472476627343e-14,
+    "anchor": 7.216449660063518e-16
+  },
+  "prefix_lengths": [
+    10,
+    10,
+    8,
+    7,
+    22,
+    11,
+    25,
+    16,
+    20,
+    18,
+    6,
+    6,
+    18,
+    20,
+    28,
+    6
+  ],
+  "transition_counts": [
+    6,
+    6,
+    5,
+    4,
+    10,
+    5,
+    8,
+    9,
+    7,
+    8,
+    3,
+    6,
+    8,
+    10,
+    14,
+    4
+  ],
+  "gpu_poll_observations_during_capture": 18,
+  "capture_pid": 1362035,
+  "foreign_gpu_polls_during_whole_capture": [
+    {
+      "timestamp": "2026/10/16 16:07:50.282",
+      "pid": "1362083",
+      "process_name": ".venv/bin/python",
+      "used_gpu_memory [MiB]": "1132 MiB"
+    },
+    {
+      "timestamp": "2026/10/16 16:07:55.283",
+      "pid": "1362083",
+      "process_name": ".venv/bin/python",
+      "used_gpu_memory [MiB]": "1392 MiB"
+    },
+    {
+      "timestamp": "2026/10/16 16:08:00.284",
+      "pid": "1362083",
+      "process_name": ".venv/bin/python",
+      "used_gpu_memory [MiB]": "1524 MiB"
+    },
+    {
+      "timestamp": "2026/10/16 16:08:05.285",
+      "pid": "1362083",
+      "process_name": ".venv/bin/python",
+      "used_gpu_memory [MiB]": "1600 MiB"
+    },
+    {
+      "timestamp": "2026/10/16 16:08:10.286",
+      "pid": "1362083",
+      "process_name": ".venv/bin/python",
+      "used_gpu_memory [MiB]": "2300 MiB"
+    },
+    {
+      "timestamp": "2026/10/16 16:08:15.287",
+      "pid": "1362083",
+      "process_name": ".venv/bin/python",
+      "used_gpu_memory [MiB]": "2300 MiB"
+    }
+  ],
+  "foreign_gpu_polls_during_new_forward_interval": [],
+  "whole_capture_isolation_condition_satisfied": false,
+  "gpu_poll_scope": "5s NVML polling; not continuous exclusion of hypothetical brief jobs",
+  "new_model_forwards": 0,
+  "updates": 0
+}

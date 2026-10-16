@@ -1,0 +1,114 @@
+[
+  {
+    "case": 0,
+    "replica": 0,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 0,
+    "replica": 1,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 1,
+    "replica": 0,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 1,
+    "replica": 1,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 2,
+    "replica": 0,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 2,
+    "replica": 1,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 3,
+    "replica": 0,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 3,
+    "replica": 1,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 4,
+    "replica": 0,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 4,
+    "replica": 1,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 5,
+    "replica": 0,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 5,
+    "replica": 1,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 6,
+    "replica": 0,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 6,
+    "replica": 1,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 7,
+    "replica": 0,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  },
+  {
+    "case": 7,
+    "replica": 1,
+    "status": "COMPLETE",
+    "candidate_correct": false,
+    "paired_one_shot_correct": false
+  }
+]

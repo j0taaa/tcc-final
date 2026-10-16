@@ -121,6 +121,15 @@ ocupância variável, calibração e TODOS controles parciais conferem. Full241
 PASS79.352s/make check/Ruff PASS. Fontes iniciais e finais separadas; protocolo/
 runner/runtime congelam ANTES do primeiro novo head. ZERO update/head real V8
 até esse freeze; não é benefício neural, novidade ou meta cumprida.
+V8 captura b6c7bb8 termina16/16 trajetórias válidas/113 transições,98 forwards
+NOVOS (um warmup), zero erro de score/ID. Mas sinal0/8: candidato0/16 acertos
+e one-shot0/16, confirmado por tokenizer/json/Decimal. Inicialização encerrada
+NEGATIVA; sem treino/novos seeds/custo-variância/independente. Monitor NVML
+registra seis polls de outro processo DURANTE preparação CPU, nenhum durante
+novos forwards: isolamento da captura inteira NÃO cumprido. Relatório original
+de recurso8/8 fica intacto, mas não é pass integral/tempo competitivo. Draft de
+assertion do auditor e desvio estão preservados; não repetir para resgatar a
+aplicação. TODOS heads/contextos/scores/gates/statuses/golds e checks arquivados.
 
 ## Objetivo e estado atual
 

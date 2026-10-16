@@ -1,0 +1,30 @@
+{
+  "audited-decision.json": {
+    "sha256": "2a72cb9967c3abf2cae1b25fa970a708dda7a98a9404204a268e4c0f892faa88",
+    "bytes": 964
+  },
+  "known-labels-provenance.json": {
+    "sha256": "67075cebd0a2e3af1a296e22b9d6c74e0d6bc2b8bfc690d78d39fe04e4bd5509",
+    "bytes": 726
+  },
+  "post-capture-audit-provenance.json": {
+    "sha256": "8c96dd0385d956df9ca8f2e8e2e0e6adf95b14d71c94b22ae4f731b484f2f7be",
+    "bytes": 298
+  },
+  "post-capture-audit.log": {
+    "sha256": "c7b9b0126f091beaf7942fbcb7ccd9f67ff9a84bf520a1c3cac7e257d03ed926",
+    "bytes": 2227
+  },
+  "post-capture-independent-audit.json": {
+    "sha256": "c7b9b0126f091beaf7942fbcb7ccd9f67ff9a84bf520a1c3cac7e257d03ed926",
+    "bytes": 2227
+  },
+  "reward-rows.json": {
+    "sha256": "24270254dec5a0ffb638073812c5a0d92283efdf2e5ee3e5a061ad6d340eaa9b",
+    "bytes": 2195
+  },
+  "summary.json": {
+    "sha256": "0d1ddfd3d46d5e6e8e62e73f9b192891c3ce0a4a479fe062372f3a4b3d3bf10a",
+    "bytes": 2385
+  }
+}

@@ -100,6 +100,17 @@ The resource/signal screen cannot establish semantic superiority or novelty;
 only a later strong-control complete-cost variance protocol may be considered
 if it passes. No automatic training or independent quality branch is opened.
 
+The V8 capture b6c7bb8 is CLOSED NEGATIVE:16/16 valid stopped trajectories,
+113 transitions,98 NEW forwards and no score/ID error, but candidate0/16 and
+paired one-shot0/16 correct. Known-data signal0/8 fails required2/8, confirmed
+independently by official tokenizer/json/Decimal. No training/new seeds/cost
+variance/independent branch follows. Six foreign GPU polls during CPU root
+preparation additionally violate the whole-capture isolation rule (none appear
+during new forwards). Preserve the raw resource8/8 report without promoting
+it to an integral protocol pass or competitive latency. Full data and audit
+deviation in a52_stopped_resource_v8_{initial,analysis_initial}; this closes
+only THIS initialization, not the general theorem or the user's open goal.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

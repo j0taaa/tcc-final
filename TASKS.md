@@ -158,7 +158,7 @@ cost remain open. No new neural campaign is credited to M70.
   trace beyond combined cheap controls and35 FAKE-head states/path means.
   Full236 PASS84.581s, make check/Ruff PASS. No new head/update/production
   sampler/practical advantage/novelty. Written stopped resource design next.
-- [ ] T7507: V8 written root-budget/stopped-resource contract/eight criteria
+- [x] T7507: V8 written root-budget/stopped-resource contract/eight criteria
   BEFORE implementation/heads. ALL8 known old roots, two trajectories each,
   fixed root-only count feature, explicit active bits, proper prefix stopping,
   at most497 new forwards including warmup. First rational expectation and
@@ -181,6 +181,16 @@ cost remain open. No new neural campaign is credited to M70.
   property needed for full collapse versus the combined control with a COMMON
   baseline, including finite visible paths. It does not order arbitrary fitted
   baselines or hidden-cost rewards, prove a runtime gain or implement training.
+  Capture b6c7bb8 closes16/16 valid trajectories/113 transitions,98 NEW
+  forwards including warmup, zero score/ID error. Candidate0/16 and paired
+  one-shot0/16 correct; signal0/8 fails required2/8, independently confirmed by
+  tokenizer/json/Decimal. Close THIS initialization; no training/new seeds/
+  cost-variance/independent branch. NVML finds six foreign GPU polls during
+  CPU preparation, none during new forwards: whole-capture isolation violated.
+  Preserve the original runner resource8/8 report without crediting a full
+  protocol pass or competitive latency. All outputs/heads/costs/draft assertion
+  and audited decision in a52_stopped_resource_v8_{initial,analysis_initial}.
+  See stopped-result-v8.md. Scientific usefulness/originality/goal remain OPEN.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

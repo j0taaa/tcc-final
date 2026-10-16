@@ -1,0 +1,39 @@
+{
+  "labels_source_sha256": "572b4c5c6d1d23174b049c3f55f982ceba523ce915d8e3c01f0019a71e2728ce",
+  "labels_previously_known": true,
+  "capture_rows_sha256": "467b92c29c18b47a4af02ed5c13ca30f9e0c52f1fca2d0a7e0088e2b3da8e704",
+  "labels": [
+    {
+      "id": "train:6003",
+      "answer": "270"
+    },
+    {
+      "id": "train:536",
+      "answer": "60"
+    },
+    {
+      "id": "train:4749",
+      "answer": "50"
+    },
+    {
+      "id": "train:3964",
+      "answer": "320"
+    },
+    {
+      "id": "train:7074",
+      "answer": "80"
+    },
+    {
+      "id": "train:169",
+      "answer": "216"
+    },
+    {
+      "id": "train:7144",
+      "answer": "720"
+    },
+    {
+      "id": "train:2679",
+      "answer": "106"
+    }
+  ]
+}

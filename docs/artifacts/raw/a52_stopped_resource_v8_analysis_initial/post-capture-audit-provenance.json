@@ -1,0 +1,6 @@
+{
+  "auditor_written_after_capture": true,
+  "auditor_source_sha256": "261dfa1826eea16a1c94148402f828c1c92c5340f4d2d8339bba1d83a86e5e06",
+  "initial_assertion_and_source_preserved": "attempts/52-collapsed-commit-likelihood/work/evidence/stopped-audit-v8-initial-draft",
+  "new_model_forwards": 0
+}

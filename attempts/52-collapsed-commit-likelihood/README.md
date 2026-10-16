@@ -275,3 +275,14 @@ Full241 PASS79.352s/make check/Ruff PASS. Initial and final evidence producers
 are separate in work/evidence/stopped-foundation-v8-{initial,final}; final
 consumer-protocol-v8.json pins runtime/actual sources before real capture.
 No V8 pretrained head/update or useful effect is credited to these checks.
+
+V8 actual capture b6c7bb8 completes16/16 valid trajectories,113 transitions,
+98 NEW forwards including warmup and no score/ID errors. Candidate0/16 correct
+and paired one-shot0/16 give signal0/8 versus required2/8; independent official
+tokenizer/json/Decimal agrees. Close THIS initialization with no training,
+new seeds or cost/variance/independent campaign. NVML also finds six foreign
+GPU polls during CPU preparation, none during new forwards: whole-capture
+isolation failed. The original runner resource8/8 report is preserved but is
+not credited as a full-protocol pass or competitive time. All raw heads,
+contexts/outputs/scores/gates/statuses, overlap evidence and draft/final audit
+are preserved. See work/stopped-result-v8.md. The scientific goal remains OPEN.

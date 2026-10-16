@@ -1,0 +1,26 @@
+{
+  "status": "CLOSED_NEGATIVE_SIGNAL_WITH_PREPARATION_ISOLATION_DEVIATION",
+  "scope": "one initialization, known development; not a statistical refutation or useful scientific contribution",
+  "source_runner_resource_checks": {
+    "cases": 8,
+    "complete_trajectories": 16,
+    "score_errors": 0,
+    "status_preserved": "RESOURCE_PASS_AWAIT_KNOWN_LABEL_SIGNAL"
+  },
+  "whole_capture_isolation_satisfied": false,
+  "foreign_polls_during_preparation": 6,
+  "foreign_polls_during_new_forward_interval": 0,
+  "signal_questions": 0,
+  "signal_required": 2,
+  "correct_candidate_outputs": 0,
+  "correct_paired_one_shot_outputs": 0,
+  "branches_not_triggered": [
+    "complete-cost variance campaign",
+    "training",
+    "new seeds",
+    "independent confirmation"
+  ],
+  "timings_competitive": false,
+  "updates": 0,
+  "decision": "close THIS model/initialization application; do not tune on these outputs; a different operation/model needs its own foundation"
+}

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/stopped_audit_v8.py", line 146, in <module>
+    run(args.capture, args.analysis, args.tokenizer_dir, args.capture_pid)
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/stopped_audit_v8.py", line 115, in run
+    assert int(observation["pid"]) == capture_pid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
