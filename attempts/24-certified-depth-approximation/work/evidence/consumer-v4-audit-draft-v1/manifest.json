@@ -1,0 +1,9 @@
+{
+  "scope": "uncommitted premeasurement parser error, no timing/neural results",
+  "failure": "cold-candidate guard patch matched the control guard and broke indentation; tests caught the syntax error before any campaign",
+  "files": {
+    "source.zip": "3a706676654b209bef6b568bca0e01df9864bebc3c619d065f8604d54036bb70",
+    "failure.log": "756287d4e4f0f813cdbcdd4751d563156ea195add65dcc920c3254099a59e3e6",
+    "failed-full-suite.log": "7121689d9e0535729f1f67f84dab3bc7af286e1ef60ad92b396a57955e271596"
+  }
+}

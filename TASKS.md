@@ -111,6 +111,21 @@ Torch2.13 kernels are ready; complete-cost protocol/evaluation still pending.
   E×V or N×E storage to all FA inference. Require credible substantial benefit
   before selecting an independent application/corpus and running new heads.
   The user goal, A24-specific originality and publication remain open.
+  Before timings, the independent sparse-FA quotient/HMM control is now
+  implemented:2184 numerical marginal checks88 valid samples CPU/CUDA pass
+  in Torch2.13, including changed weights/fixations; no dense E*V/N*E/N*N
+  buffers. Sparse CSR beta warning is retained. Proof precedes code; this is
+  a CLASSICAL control, not a new contribution. Development protocol now fixes
+  ALL15 known states,17 methods/configs,three rotations and a negative-only
+  first315-row futility audit; complete positive gate needs all765 rows.
+  The stronger fixed-canvas layered GPU control was added BEFORE timings;
+  it also passes2184/88 checks and avoids repeating merged states at every
+  position. Earlier675-row protocol is preserved UNEXECUTED. The complete
+  CUDA-output API passes14 cold/warm checks against60 independently enumerated
+  original words; sampling TV remains charged at the ORIGINAL draw depth.
+  Two offline decision oracles pass; syntax-error draft/full-suite failure
+  are preserved. Corrected maintained suite193 PASS75.536s, Ruff PASS.
+  Protocol/runner/source still must be frozen together BEFORE measuring.
 
 ## M71 — A24 consumer refinement, useful full-operation benefit required
 

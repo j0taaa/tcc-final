@@ -1,0 +1,3 @@
+/home/jota/projects/tcc-final/attempts/24-certified-depth-approximation/work/consumer_v3/sparse_fa_control.py:55: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:49.)
+  incidence = torch.sparse_csr_tensor(
+{"scope": "synthetic tiny-support 50258-ID API correctness only; no neural or timing gate", "torch": "2.13.0+cu130", "gpu": "NVIDIA GeForce RTX 3080 Ti", "valid_original_words": 60, "exact_full_mass": "507060360983873722061598752768000/27827483984373757451730355141738497"}

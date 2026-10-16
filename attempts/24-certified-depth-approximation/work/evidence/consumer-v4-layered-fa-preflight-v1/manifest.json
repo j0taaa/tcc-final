@@ -1,0 +1,12 @@
+{
+  "executed_source_hashes_in": "oracles.json",
+  "files": {
+    "oracles.json": "05363cbc4d2521e4e4dfe761f996a21bf349ff859c5c92a0e78ca8ba59410d00",
+    "run.log": "511b6e0cf64e99f517c0339fdee8ea618d536c977ac4699c053b223a6982240b",
+    "source.zip": "370f4b482af7f676a7c2f68b62a929dbf650f770251b20ffdb53f5c0cdef58e7"
+  },
+  "post_oracle_change": "remove unused CounterTable creation from exact_stack_cpu, with source reconstructed only when matching its executed SHA",
+  "scope": "small correctness only, before timings; no new neural heads",
+  "unloaded_evolving_files_not_reconstructed": [],
+  "verified_sources_in_zip": true
+}

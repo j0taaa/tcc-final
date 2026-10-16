@@ -1157,3 +1157,14 @@ ordem de tuplas em vez do conjunto foi preservado. Torch2.13/CUDA13 isolado
 também passa ambos preflights nativos; não é serving HF completo. Sem novo
 head neural ou gate temporal. Controles por quociente/sparse FA continuam
 obrigatórios quando aplicáveis; não atribuir buffers densos a toda inferência.
+M73 acrescenta controles clássicos GPU por classes: FA esparso e DAG por
+camada, cada um com2184 marginais/88 amostras CPU/CUDA. O DAG não repete
+estados inacessíveis em todas posições. Não são nova teoria ou Mosaic nativo.
+Operação completa CUDA passa14 checks/60 palavras enumeradas;2 oráculos de
+decisão e193 testes totais75.536s. Draft de sintaxe incorreta no auditor foi
+preservado antes de qualquer timing. Protocolo ainda pré-medição:17 métodos,
+765 registros;315 iniciais só podem provar decisão NEGATIVA, nunca vitória.
+Não usar o limite refinado de confiança para reduzir a cobrança da amostra
+anterior. No Mosaic lido, LLaDA1 usa ranking por marginal, mas LLaDA2/SGLang
+default usa confiança do MODELO; não atribuir o custo de marginais a esse
+default nem inventar superioridade semântica ou serving completo.

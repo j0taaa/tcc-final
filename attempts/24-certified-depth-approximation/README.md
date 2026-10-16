@@ -41,6 +41,15 @@ draft de ranking com ordem incorreta ficam preservados em
 há ganho temporal, novo head neural, corpus independente ou novidade fechada
 nesta versão. Quociente/sparse FA não podem ser excluídos artificialmente.
 
+Antes de timings, ambos controles GPU clássicos (FA por classes e DAG por
+camada) passam2184 marginais/88 amostras cada, em CPU/CUDA. O DAG elimina a
+repetição de estados em posições inacessíveis. A operação CUDA completa passa
+14 casos frio/quente contra60 palavras enumeradas;193 testes mantidos passam.
+O protocolo V4 fixa17 métodos/765 registros nos15 heads VELHOS e uma auditoria
+inicial315 capaz de provar somente decisão NEGATIVA; vitória exige todos os
+controles. Nenhum timing ou forward novo foi executado neste preflight.
+`consumer-v4-development-protocol-v1-unexecuted.json` conserva o draft anterior.
+
 **Vantagem de certificação demonstrada por escrito e ganho de consulta
 confirmado em3/15 estados independentes, contra seis controles.** Todos30
 ciclos MDLM são funcionais; novidade específica/publicação e superioridade

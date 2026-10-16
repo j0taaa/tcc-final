@@ -80,6 +80,9 @@ only the comparisons it implies. Otherwise refine the confidence calculation
 WITHOUT resampling the already drawn original word; exact fallback resolves
 ties. The sample's support is nested, so it remains a valid word at deeper
 levels. The resulting commit map equals the full decoder's map on that word.
+The sampling error charged is ALWAYS the bound at the ORIGINAL draw depth.
+A later confidence refinement does not change that draw's law or retrospectively
+reduce its TV charge, even if its new confidence interval is much tighter.
 
 The existing common-policy coupling then applies with the per-step structural
 TV budgets. Ranking by an unverified approximate point estimate alone does

@@ -1,0 +1,9 @@
+{
+  "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=src .venv-mosaic-native/bin/python -m attempts.24-certified-depth-approximation.work.consumer_v3.preflight_sparse --output .cache/a24-sparse-fa-preflight/oracles-v1.json",
+  "files": {
+    "oracles.json": "04d0b09bba09c4582c19cd076f5c56326e28f2f268c80c9e2ef1b46ccd9dcda4",
+    "run.log": "e40744a0e37fc9ff991fd4871c83fed21a1461bb562cce9f03d97ec70d88843c",
+    "source.zip": "61ca9303243117b1ead9afbaccb370bb9a146c1d222cbd0bda66e1e7c8318a52"
+  },
+  "scope": "known classical independent sparse HMM GPU/CPU control; no neural or timing victory"
+}
