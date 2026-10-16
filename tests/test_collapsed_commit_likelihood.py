@@ -81,3 +81,11 @@ ActorCoordinateTests = import_module(
 ConditionalPrefixTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_conditional_prefix"
 ).ConditionalPrefixTests
+
+ConditionalFloatingTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_conditional_floating"
+).ConditionalFloatingTests
+
+NumericVerifierV17Tests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_numeric_verifier_v17"
+).NumericVerifierV17Tests

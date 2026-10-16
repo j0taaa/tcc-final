@@ -211,6 +211,14 @@ momentos1/2/4 réplicas e192 checks de estratos correlacionados. Enumeração ex
 permanece controle superior nos brinquedos. Full266 PASS90.701s/check/Ruff;
 zero head/amostra auxiliar real/update. Novidade/benefício/meta abertos; replay
 full-V exige contrato escrito separado e não recebe crédito de V15.
+V17 escreve sampler full-V antes de código: integerCDF exato por categoria
+com mensagens externas FP64, portanto NÃO certificado do posterior nativo.
+83 leis pequenas têm L1<=6.317e-16;18 estratos retêm subnormal mínimo e três
+kernels de par/20 folhas passam PSD para todo score. Verificador396 Decimal/
+expoentes5000 dígitos passa. Full273 PASS109.220s/check/Ruff; synthetic24
+full-V/FAKE560 (256 além de Decimal) passam sem mudar RNG, zero amostra auxiliar
+real/head/update até freeze. Replay ALL70*8=560 exige produtor/inputs pinados;
+é funcionalidade, não variância/custo útil, treino, prioridade ou meta cumprida.
 
 ## Objetivo e estado atual
 

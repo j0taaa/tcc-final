@@ -1,0 +1,10 @@
+./scripts/verify_upstream.sh
+EPIC production snapshot verified: 5b1b31098f34ed3691d2a9f4aae14fdf5839d072; tests removed
+.venv/bin/python -m ruff check src scripts
+All checks passed!
+.venv/bin/python -m ruff format --check src scripts
+81 files already formatted
+.venv/bin/python -m mypy
+Success: no issues found in 58 source files
+.venv/bin/python scripts/archive_attempts.py --check
+Preserved 52 attempts / 220 versions / 164215 files (5,269,158,720 uncompressed bytes); integrity only, not scientific validation

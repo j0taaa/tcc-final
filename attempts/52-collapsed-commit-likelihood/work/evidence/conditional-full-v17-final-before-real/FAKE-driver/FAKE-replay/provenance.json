@@ -1,0 +1,14 @@
+{
+  "producer_commit": "70bf6316b77e71fc7765ef77913ce24ffa241087",
+  "runtime": {
+    "python": "3.11.16",
+    "numpy": "2.4.6",
+    "tokenizers": "0.21.4"
+  },
+  "source_sha256": {},
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  }
+}

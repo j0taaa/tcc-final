@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "FAKE_states": 70,
+  "FAKE_auxiliary_words": 560,
+  "FAKE_Decimal_unrepresentable_legal_words": 256,
+  "pretrained_heads": 0,
+  "real_old_head_auxiliary_words": 0,
+  "model_forwards": 0,
+  "note": "IO/status regression; repeated fake states do not form a decoder path"
+}

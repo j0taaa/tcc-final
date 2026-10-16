@@ -1,0 +1,24 @@
+{
+  "written_before_code": "1103326",
+  "verifier_addendum_before_code": "70bf631",
+  "complete_numerical_word_laws": 83,
+  "maximum_L1_vs_Fraction": 6.316215190520223e-16,
+  "dyadic_strata_laws": 18,
+  "exact_prefix_pair_kernels": 3,
+  "all_score_PSD_leaf_coordinates": 20,
+  "numeric_verifier_Decimal_cases": 396,
+  "SYNTHETIC_full_V_words": 24,
+  "FAKE_driver_words": 560,
+  "FAKE_legal_Decimal_unrepresentable_words": 256,
+  "full_tests": 273,
+  "full_test_seconds": 109.22,
+  "real_old_head_auxiliary_words": 0,
+  "pretrained_forwards": 0,
+  "updates": 0,
+  "final_thread_environment": {
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "initial_synthetic_BLAS_threads_not_pinned": true
+}

@@ -317,6 +317,13 @@ cost remain open. No new neural campaign is credited to M70.
   a native exact-posterior certificate. Only minimal independent laws/rare-ID/
   correlated-prefix oracles before source/runtime/input freeze and real draws.
   Full costs/refusals preserved; no competitive timing/variance/novelty claim.
+  Before real draws:83 complete numerical laws match Fraction at L1<=6.317e-16,
+  18 dyadic-strata laws retain the smallest binary64 ID, three exact pair
+  kernels/20-leaf PSD checks cover ALL scores. Numeric verifier396 Decimal
+  checks plus5000-digit exponents pass. Full273 PASS109.220s/check/Ruff.
+  Synthetic full-V24 words peak769,871,872B; FAKE driver560 words including256
+  legal Decimal-unrepresentable words pass, globals unchanged. Final four-
+  thread producer/runtime/input pins freeze BEFORE any real old-head word.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

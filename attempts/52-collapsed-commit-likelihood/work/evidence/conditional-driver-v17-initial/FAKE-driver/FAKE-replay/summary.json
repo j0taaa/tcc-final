@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "new_model_forwards": 0,
+  "new_decoder_trajectories": 0,
+  "updates": 0,
+  "scope": "KNOWN_OLD_HEAD_CONDITIONAL_AUXILIARY_FUNCTIONALITY_ONLY",
+  "execution_device": "cpu",
+  "CUDA_used": false,
+  "labels_previously_known": true,
+  "setup_diagnostic_seconds": 0.011861646984471008,
+  "declared_auxiliary_slots": 560,
+  "auxiliary_records": 560,
+  "status_counts": {
+    "PASS": 560,
+    "ERROR": 0,
+    "RESOURCE_REFUSAL": 0,
+    "NOT_RUN": 0
+  },
+  "new_completed_auxiliary_words": 560,
+  "global_Python_NumPy_RNG_unchanged": true,
+  "peak_CPU_process_RSS_bytes": 70172672,
+  "diagnostic_seconds": 0.6158071749960072,
+  "auxiliary_word_attempts": 560,
+  "raw_completed_auxiliary_words": 560,
+  "secondary_Decimal_unrepresentable_words": 256
+}

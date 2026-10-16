@@ -1,0 +1,12 @@
+test_complete_numerical_word_law_versus_independent_rational_posterior (attempts.52-collapsed-commit-likelihood.work.test_conditional_floating.ConditionalFloatingTests.test_complete_numerical_word_law_versus_independent_rational_posterior) ... ok
+test_exact_dyadic_tickets_subnormals_and_arbitrary_group_sizes (attempts.52-collapsed-commit-likelihood.work.test_conditional_floating.ConditionalFloatingTests.test_exact_dyadic_tickets_subnormals_and_arbitrary_group_sizes) ... ok
+test_iid_correlated_batches_original_ids_and_global_streams (attempts.52-collapsed-commit-likelihood.work.test_conditional_floating.ConditionalFloatingTests.test_iid_correlated_batches_original_ids_and_global_streams) ... ok
+test_prefix_history_pair_law_negative_covariance_for_ALL_scores (attempts.52-collapsed-commit-likelihood.work.test_conditional_floating.ConditionalFloatingTests.test_prefix_history_pair_law_negative_covariance_for_ALL_scores) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.393s
+
+OK
+{"complete_numeric_conditional_laws": 83, "maximum_L1_vs_Fraction": 6.316215190520223e-16}
+{"dyadic_categorical_stratum_laws": 18, "smallest_positive_binary64_ID_kept": true}
+{"exact_prefix_pair_kernels": 3, "all_score_PSD_leaf_coordinates": 20}

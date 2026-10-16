@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "SYNTHETIC_full_V_words": 24,
+  "pretrained_heads": 0,
+  "model_forwards": 0,
+  "real_old_head_auxiliary_draws": 0,
+  "vocabulary": 126464,
+  "classes": 33,
+  "peak_CPU_process_RSS_bytes": 770936832,
+  "global_Python_NumPy_RNG_unchanged": true,
+  "CUDA_used": false,
+  "updates": 0
+}

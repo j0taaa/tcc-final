@@ -1,0 +1,9 @@
+test_huge_exponents_remain_legal_and_do_not_expand (attempts.52-collapsed-commit-likelihood.work.test_numeric_verifier_v17.NumericVerifierV17Tests.test_huge_exponents_remain_legal_and_do_not_expand) ... ok
+test_invalid_object_number_type_and_label_remain_explicit (attempts.52-collapsed-commit-likelihood.work.test_numeric_verifier_v17.NumericVerifierV17Tests.test_invalid_object_number_type_and_label_remain_explicit) ... ok
+test_moderate_spellings_against_independent_decimal (attempts.52-collapsed-commit-likelihood.work.test_numeric_verifier_v17.NumericVerifierV17Tests.test_moderate_spellings_against_independent_decimal) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
+
+OK
+{"independent_numeric_verifier_decimal_cases": 396}
