@@ -87,3 +87,10 @@ integer checks, including subnormals and infinite upper bounds. This verifies
 those tested cases only; no sampler timing, neural head or practical advantage.
 Full maintained198 tests PASS77.017s and make check PASS. Numerical implementation
 is opt-in; no Torch dependency was added to offline CI.
+
+The competent classical interval sampler now passes768 tiny JSON replays and
+ALL4096 prefixes of a finite dyadic word law. Frozen3e6b84c subsequently finishes
+ALL15 OLD real heads:240 GPU words,240 literal exact-CPU matches and30 independent
+exact-mass checks, no fallback/refusal/error. No timing/new head/own novelty is
+claimed. V6 writes before code a classical telescoping count-factor bound to
+avoid V1's second max-product audit. Strong interval control remains mandatory.

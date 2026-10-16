@@ -1,0 +1,13 @@
+{
+  "commit": "3e6b84c6f2fafb8c7c47bfdad169a6a82c62e21c",
+  "compiler_archive_sha256": "9cc7d0406350d8f3c4f98eb116af7dc754cd185cf1082570ba51fba6693b89f1",
+  "compiler_producer": "0c75b91ca578488011b8572b1271ac0d16c2e879",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "input_metadata_sha256": "07fffd2e41b2d1ad91dd8aa7cd8cd9814b5ae7de7347bf52cc9941d90e423c3a",
+  "new_model_forwards": 0,
+  "protocol_sha256": "74c8d80affcbbcbf9599fd2c716e6afc808745d48c0a44c605a2a32694bb6677",
+  "speed_claim": false,
+  "torch": "2.13.0+cu130",
+  "vocabulary_sha256": "0b4486e9138096810acb3183316684bf7c1dbe896dfdea7c4067e3994de9c7b6"
+}

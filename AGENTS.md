@@ -1196,3 +1196,11 @@ inclusive subnormais/overflow. Suíte198 PASS77.017s e make check PASS. Nenhum
 forward ou timing/benefício/originalidade novo. V2 exige controle intervalar
 com MESMO uniforme após ambiguidade e corrige escopo de leitura primária;
 não chamar estas construções clássicas de descoberta ou a meta de cumprida.
+
+A51 controle intervalar completo passa768 replays JSON e4096 prefixos de uma
+lei conjunta dyádica; draft com erro de compilação preservado. ScreenV5 fonte
+3e6b84c usaTODOS15 heads antigos:240 palavras GPU/240 replays literais,30 massas
+exatas,zero fallback/recusa/erro. Não é timing, corpus/head novo, ganho próprio,
+novidade ou meta cumprida. V6 escreve envelope por telescopagem de potenciais/
+fatores de totais inteiros, evitando segundo max-DP; princípio CLÁSSICO, não
+promover como teorema próprio antes da auditoria e vantagem prática.

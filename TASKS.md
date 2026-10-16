@@ -74,6 +74,14 @@ cost remain open. No new neural campaign is credited to M70.
   First compile-failure draft/vector-scalar reuse and log preserved; corrected
   control passes, no new neural forward or speed/novelty claim. Sources and
   data:51/work/interval_sampler.py and evidence/control-sampler-v2.
+- [x] T7402e: Frozen source3e6b84c finishesALL15 old-head resource records,
+  240 GPU-certified original words/240 literal exact CPU replays,30 independent
+  exact terminated-mass checks,zero fallback/refusal/error. This is feasibility,
+  NOT timings, new heads or confirmed own contribution. All data preserved in
+  51/work/evidence/known-resource-v5. Strong control uses the same full support,
+  initial fixed IDs, true EOT/PAD and immutable A24 V11 compiler verified by SHA.
+  V6 writes a CLASSICAL telescoping count-factor envelope before implementation
+  to avoid an additional max-product audit; no benefit/priority assumed.
 - [ ] T7402: Only if a concrete useful systems distinction survives, freeze
   complete-cost protocol/strong controls before implementation/campaign.
   Exactness alone, a tiny FP64 discrepancy or a reference implementation

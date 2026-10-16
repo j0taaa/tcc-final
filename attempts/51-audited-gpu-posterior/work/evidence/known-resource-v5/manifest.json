@@ -1,0 +1,17 @@
+{
+  "producer": "3e6b84c6f2fafb8c7c47bfdad169a6a82c62e21c",
+  "scope": "ALL15 old heads, complete law/resource replay; no timing or new model head",
+  "sha256": {
+    "run.log": "995698a52977ec45882029a96d815aa3bf60ec0ad58429a702965f74dc43032a",
+    "rows.jsonl": "99a4390c50d6b3bcf6feea1a8cf3ad0902c99f94640ac74607a5b4822d9ed43a",
+    "summary.json": "ee8c9d5b869f13f0884ac1d0c94a5157c94d218f029b23017785a5ac0770b774",
+    "metadata.json": "f53b1b29581d9d482eefb9d4cb37bc73ba763afb07604ac6bdd76413fe1c6cd2"
+  },
+  "records": 15,
+  "original_word_matches": 240,
+  "exact_mass_checks": 30,
+  "gpu_certified": 240,
+  "exact_fallbacks": 0,
+  "max_relative_enclosure_gap": 2.4378299713134766e-05,
+  "goal_met": false
+}
