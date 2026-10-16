@@ -1,0 +1,54 @@
+{
+  "records": 270,
+  "planned": 270,
+  "campaign_complete": true,
+  "statuses": {
+    "complete": 246,
+    "resource_refusal": 24
+  },
+  "by_method": {
+    "handoff_numpy": {
+      "complete": 30
+    },
+    "handoff_full_sparse": {
+      "complete": 30
+    },
+    "handoff_dense": {
+      "complete": 30
+    },
+    "grammar_hit": {
+      "complete": 30
+    },
+    "suffix_hit": {
+      "complete": 30
+    },
+    "exact_stack": {
+      "complete": 30
+    },
+    "exact_local": {
+      "complete": 22,
+      "resource_refusal": 8
+    },
+    "exact_bidir_local": {
+      "complete": 22,
+      "resource_refusal": 8
+    },
+    "exact_eps_local": {
+      "complete": 22,
+      "resource_refusal": 8
+    }
+  },
+  "new_case_forwards": 1345,
+  "warmup_forwards": 1,
+  "head_integrity_checks": 1345,
+  "distinct_heads": 314,
+  "original_sample_and_fixed_id_checks": 1321,
+  "exact_mass_certificate_checks": 735,
+  "literal_cursor_full_sparse_trajectory_matches": 30,
+  "errors": [],
+  "scoped_pilot_states": 2,
+  "strict_timing_states": 0,
+  "rows_sha256": "9e68be277b1b61ff358ac534007d8cff5feb673c54746a03d18d592f7e33e2c4",
+  "metadata_sha256": "55f1191eff59341b7b25cfe4c6ea293a760393dbc4175664bd6041c5aff68e6f",
+  "scope": "Two-seed pilot on all known documents; no independent corpus, semantics, native EPIC or publication confirmation. Capacity is not a timing win; wall-censored successes are not unconditional target-law draws."
+}

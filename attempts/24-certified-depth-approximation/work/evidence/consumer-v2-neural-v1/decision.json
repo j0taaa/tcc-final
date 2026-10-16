@@ -1,0 +1,1769 @@
+{
+  "records": 270,
+  "planned": 270,
+  "campaign_complete": true,
+  "statuses": {
+    "complete": 246,
+    "resource_refusal": 24
+  },
+  "by_method": {
+    "handoff_numpy": {
+      "complete": 30
+    },
+    "handoff_full_sparse": {
+      "complete": 30
+    },
+    "handoff_dense": {
+      "complete": 30
+    },
+    "grammar_hit": {
+      "complete": 30
+    },
+    "suffix_hit": {
+      "complete": 30
+    },
+    "exact_stack": {
+      "complete": 30
+    },
+    "exact_local": {
+      "complete": 22,
+      "resource_refusal": 8
+    },
+    "exact_bidir_local": {
+      "complete": 22,
+      "resource_refusal": 8
+    },
+    "exact_eps_local": {
+      "complete": 22,
+      "resource_refusal": 8
+    }
+  },
+  "new_case_forwards": 1345,
+  "warmup_forwards": 1,
+  "head_integrity_checks": 1345,
+  "distinct_heads": 314,
+  "original_sample_and_fixed_id_checks": 1321,
+  "exact_mass_certificate_checks": 735,
+  "literal_cursor_full_sparse_trajectory_matches": 30,
+  "errors": [],
+  "scoped_pilot_states": 2,
+  "strict_timing_states": 0,
+  "states": [
+    {
+      "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+      "masks": 4,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9707480170613458,
+              0.861449287724165
+            ],
+            "cpu": [
+              0.9844734641073877,
+              0.8325793031085842
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.9160986523927555,
+            "cpu": 0.908526383607986
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.19538043406582697,
+              1.179278358456637
+            ],
+            "cpu": [
+              0.4340148203818173,
+              0.9874911817675391
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.687329396261232,
+            "cpu": 0.7107530010746782
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.2583222084873932,
+              1.3185008082252925
+            ],
+            "cpu": [
+              0.4940059362961617,
+              1.0134675332113663
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7884115083563428,
+            "cpu": 0.753736734753764
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.6415724799270627,
+              0.9464662839537239
+            ],
+            "cpu": [
+              0.8552889190838312,
+              0.9963288308557622
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7940193819403933,
+            "cpu": 0.9258088749697967
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.0447450961096525,
+              0.9641276854189432
+            ],
+            "cpu": [
+              1.0275121164279661,
+              0.9626152172002956
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.004436390764298,
+            "cpu": 0.9950636668141308
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.6900281643234489,
+              1.0799323455191232
+            ],
+            "cpu": [
+              0.6660848580710031,
+              0.9816709688541116
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8849802549212861,
+            "cpu": 0.8238779134625573
+          }
+        }
+      ]
+    },
+    {
+      "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+      "masks": 8,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.7092321153735635,
+              0.28929339291650974
+            ],
+            "cpu": [
+              0.879726753416477,
+              0.8853636887706366
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.4992627541450366,
+            "cpu": 0.8825452210935568
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.7532758507190247,
+              0.8740975509827738
+            ],
+            "cpu": [
+              0.8848081458003166,
+              0.8965372260918412
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8136867008508992,
+            "cpu": 0.890672685946079
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.720539409106941,
+              0.8607949965251136
+            ],
+            "cpu": [
+              0.8766192339970018,
+              1.0776628287510488
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7906672028160273,
+            "cpu": 0.9771410313740253
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.5024805280291392,
+              0.5495732737749693
+            ],
+            "cpu": [
+              0.8330574233064851,
+              0.7798222823516995
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.5260269009020543,
+            "cpu": 0.8064398528290924
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9621593816636123,
+              0.5943589789191792
+            ],
+            "cpu": [
+              1.1429336374922767,
+              0.7500257099964358
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7782591802913957,
+            "cpu": 0.9464796737443563
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9711453250122059,
+              0.6103684828113695
+            ],
+            "cpu": [
+              1.1589025467644822,
+              0.7787446051992108
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7907569039117877,
+            "cpu": 0.9688235759818465
+          }
+        }
+      ]
+    },
+    {
+      "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+      "masks": 16,
+      "scoped_pilot_pass": true,
+      "all_controls_complete": false,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.22767269234809537,
+              0.5235207184731974
+            ],
+            "cpu": [
+              0.34869343401827074,
+              0.602639332896902
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.3755967054106464,
+            "cpu": 0.4756663834575864
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.4234362762389872,
+              0.39700426495050944
+            ],
+            "cpu": [
+              0.57499908459816,
+              0.5116898663458849
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.4102202705947483,
+            "cpu": 0.5433444754720225
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.04857090758069228,
+              0.05320943914963203
+            ],
+            "cpu": [
+              0.0907673610081416,
+              0.11742014520796153
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.05089017336516216,
+            "cpu": 0.10409375310805156
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+      "masks": 4,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.6313458687575689,
+              1.1090711710756367
+            ],
+            "cpu": [
+              1.0276858141559628,
+              1.0274722108087968
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8702085199166028,
+            "cpu": 1.0275790124823798
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.0668369411462046,
+              0.7988506777301653
+            ],
+            "cpu": [
+              1.015205985817784,
+              0.9974273289821817
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.932843809438185,
+            "cpu": 1.0063166573999829
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.118952505116058,
+              0.8629996256608988
+            ],
+            "cpu": [
+              1.0637374832229416,
+              0.873233628299253
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.9909760653884785,
+            "cpu": 0.9684855557610973
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9737556733221366,
+              0.5554221028026614
+            ],
+            "cpu": [
+              1.0289484292265245,
+              0.8103621151093714
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.764588888062399,
+            "cpu": 0.919655272167948
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.7078287568339132,
+              0.6675833427638169
+            ],
+            "cpu": [
+              1.2286381320278699,
+              0.8541449606226622
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.187706049798865,
+            "cpu": 1.041391546325266
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.5354998796130601,
+              0.9999508038834451
+            ],
+            "cpu": [
+              0.9445037880319981,
+              0.98274063303574
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7677253417482526,
+            "cpu": 0.963622210533869
+          }
+        }
+      ]
+    },
+    {
+      "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+      "masks": 8,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.0483958021558795,
+              1.5062461489425973
+            ],
+            "cpu": [
+              1.033632458581767,
+              1.4824047848529405
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.2773209755492383,
+            "cpu": 1.258018621717354
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.0035029170700622,
+              0.9812585085323994
+            ],
+            "cpu": [
+              0.9846304178114044,
+              1.3979327748905555
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.9923807128012307,
+            "cpu": 1.19128159635098
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.175114714563727,
+              1.7759702010999192
+            ],
+            "cpu": [
+              1.0719586668935004,
+              1.6169945956334917
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.475542457831823,
+            "cpu": 1.344476631263496
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.35548662452644175,
+              0.4841414942802118
+            ],
+            "cpu": [
+              0.7365836212956092,
+              0.8258170895052674
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.4198140594033268,
+            "cpu": 0.7812003554004383
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.7745944006616343,
+              0.7876760445375629
+            ],
+            "cpu": [
+              1.2132185079241251,
+              1.254420209729305
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7811352225995987,
+            "cpu": 1.233819358826715
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.5136436026772482,
+              0.6713459974197427
+            ],
+            "cpu": [
+              0.7724871774045957,
+              0.890808923485625
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.5924948000484954,
+            "cpu": 0.8316480504451104
+          }
+        }
+      ]
+    },
+    {
+      "case": "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7",
+      "masks": 16,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": false,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.2969873860251209,
+              0.37962788224979055
+            ],
+            "cpu": [
+              0.7891061172346161,
+              0.7250650315513855
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8383076341374557,
+            "cpu": 0.7570855743930007
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.5093733677378232,
+              0.2922737837879133
+            ],
+            "cpu": [
+              0.34019522660568174,
+              0.4444707754785067
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.4008235757628682,
+            "cpu": 0.39233300104209423
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.1266826567097031,
+              0.06417693284980011
+            ],
+            "cpu": [
+              0.09265304473490651,
+              0.10365025545375582
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.09542979477975161,
+            "cpu": 0.09815165009433116
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+      "masks": 4,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.2972004088058938,
+              1.015666596111134
+            ],
+            "cpu": [
+              0.6161725893314624,
+              1.0071549247962395
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.656433502458514,
+            "cpu": 0.811663757063851
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.20644418339452908,
+              1.0458834522153415
+            ],
+            "cpu": [
+              0.668170234386411,
+              1.0194301504472008
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.6261638178049354,
+            "cpu": 0.8438001924168059
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.3688752806436526,
+              1.1179154228890325
+            ],
+            "cpu": [
+              0.6552900554062837,
+              1.1027366372949008
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7433953517663425,
+            "cpu": 0.8790133463505923
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.6828459833748116,
+              0.9316878017723143
+            ],
+            "cpu": [
+              0.8350163423767972,
+              0.9856262456963635
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8072668925735629,
+            "cpu": 0.9103212940365804
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9505482934617583,
+              0.7199499087291724
+            ],
+            "cpu": [
+              0.9816690905971212,
+              0.8366410622509962
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8352491010954654,
+            "cpu": 0.9091550764240587
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.264655013923552,
+              1.00792901432274
+            ],
+            "cpu": [
+              1.1365813359237142,
+              1.010753038457212
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.1362920141231458,
+            "cpu": 1.073667187190463
+          }
+        }
+      ]
+    },
+    {
+      "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+      "masks": 8,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.8921987275673346,
+              1.219698844793749
+            ],
+            "cpu": [
+              1.2562712567177932,
+              1.0955281095436042
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.0559487861805419,
+            "cpu": 1.1758996831306987
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.8777175031277309,
+              0.9723144748209206
+            ],
+            "cpu": [
+              1.1373038574364345,
+              0.9850684320186901
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.9250159889743257,
+            "cpu": 1.0611861447275623
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.8154541922861964,
+              1.1061363727846953
+            ],
+            "cpu": [
+              1.3724214181838756,
+              1.084624616521516
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.4607952825354458,
+            "cpu": 1.2285230173526958
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9508488486436091,
+              0.5429231199914313
+            ],
+            "cpu": [
+              0.9829326761943867,
+              0.7988421393654579
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7468859843175202,
+            "cpu": 0.8908874077799223
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.6518578328501523,
+              0.8692199434608103
+            ],
+            "cpu": [
+              0.8094225672401163,
+              0.9795782951563694
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7605388881554813,
+            "cpu": 0.8945004311982429
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.8415265297041851,
+              0.8353933509046203
+            ],
+            "cpu": [
+              0.9160261586634655,
+              0.950073479332432
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8384599403044026,
+            "cpu": 0.9330498189979488
+          }
+        }
+      ]
+    },
+    {
+      "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+      "masks": 16,
+      "scoped_pilot_pass": true,
+      "all_controls_complete": false,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.48258830154562277,
+              0.6185238391360123
+            ],
+            "cpu": [
+              0.5288220937900735,
+              0.7566249326145659
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.5505560703408175,
+            "cpu": 0.6427235132023197
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.6126318546491475,
+              0.1790312837093564
+            ],
+            "cpu": [
+              0.6439940738756548,
+              0.5009575643207931
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.39583156917925194,
+            "cpu": 0.572475819098224
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.056362964645062415,
+              0.043138616645374016
+            ],
+            "cpu": [
+              0.07963466039157549,
+              0.07922594123827176
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.049750790645218215,
+            "cpu": 0.07943030081492362
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+      "masks": 4,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9875206361835969,
+              1.0929243465741372
+            ],
+            "cpu": [
+              1.0732273166695194,
+              1.0488339976250887
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.040222491378867,
+            "cpu": 1.061030657147304
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.1887745286098599,
+              1.1867119502352352
+            ],
+            "cpu": [
+              1.1806471736391055,
+              1.1544051191597975
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.1877432394225476,
+            "cpu": 1.1675261463994515
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.026673618924012,
+              1.3543610524934524
+            ],
+            "cpu": [
+              1.0322131975212803,
+              1.2316112282476737
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.1905173357087322,
+            "cpu": 1.131912212884477
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.039272168440411,
+              0.5174343259291381
+            ],
+            "cpu": [
+              1.0409032538529546,
+              0.7864853815881874
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7783532471847745,
+            "cpu": 0.913694317720571
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.19082203785262902,
+              0.9586200094870304
+            ],
+            "cpu": [
+              0.9287057696063112,
+              0.9731046407836995
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.5747210236698297,
+            "cpu": 0.9509052051950053
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.3335190890815878,
+              0.3832647256427538
+            ],
+            "cpu": [
+              1.092915264736923,
+              0.6492711837118926
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8583919073621709,
+            "cpu": 0.8710932242244078
+          }
+        }
+      ]
+    },
+    {
+      "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+      "masks": 8,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.11381958295963125,
+              1.2237517063913719
+            ],
+            "cpu": [
+              0.7219407871812478,
+              1.0255789181578685
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.6687856446755016,
+            "cpu": 0.8737598526695581
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.248050935713854,
+              1.2579275750636423
+            ],
+            "cpu": [
+              0.8859131060609231,
+              1.068842031681195
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7529892553887482,
+            "cpu": 0.9773775688710591
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.08420150383724716,
+              1.4566604751372332
+            ],
+            "cpu": [
+              0.9519215272631132,
+              1.1674835008808822
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7704309894872402,
+            "cpu": 1.0597025140719976
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.5486117566613413,
+              1.5083432966162207
+            ],
+            "cpu": [
+              0.8906022297471929,
+              1.2499836147324948
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.0284775266387811,
+            "cpu": 1.0702929222398438
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9703176416542177,
+              1.3557508997392427
+            ],
+            "cpu": [
+              0.9707329427315846,
+              1.15435865556308
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.1630342706967303,
+            "cpu": 1.0625457991473324
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.7779257660648266,
+              1.493676028785732
+            ],
+            "cpu": [
+              0.9577526904544739,
+              1.333386593637961
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.1358008974252793,
+            "cpu": 1.1455696420462174
+          }
+        }
+      ]
+    },
+    {
+      "case": "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26",
+      "masks": 16,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9432311737288871,
+              1.2433582995282397
+            ],
+            "cpu": [
+              0.9430614421802548,
+              1.2700645775389439
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.0932947366285635,
+            "cpu": 1.1065630098595993
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.9930186097358351,
+              1.506839593706697
+            ],
+            "cpu": [
+              0.9755757333874125,
+              1.3897827614140055
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.249929101721266,
+            "cpu": 1.182679247400709
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.1865570191041723,
+              0.7001158395973854
+            ],
+            "cpu": [
+              1.0980729995710063,
+              1.008421515104386
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.9433364293507789,
+            "cpu": 1.0532472573376963
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.3999472632224357,
+              0.2984745698717602
+            ],
+            "cpu": [
+              0.5593380452656014,
+              0.6122834272682279
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.3492109165470979,
+            "cpu": 0.5858107362669147
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.3711646985076303,
+              0.509457437109094
+            ],
+            "cpu": [
+              0.6272175316970047,
+              0.805660718333223
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.44031106780836216,
+            "cpu": 0.7164391250151139
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.6038645303350734,
+              0.6052985922497247
+            ],
+            "cpu": [
+              0.8218338057920028,
+              0.7829944766395046
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.604581561292399,
+            "cpu": 0.8024141412157537
+          }
+        }
+      ]
+    },
+    {
+      "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+      "masks": 4,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.0655026732008341,
+              0.8933207861260187
+            ],
+            "cpu": [
+              1.049686970714604,
+              1.0217086311324268
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.9794117296634264,
+            "cpu": 1.0356978009235154
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.135431057160609,
+              0.9940832732073877
+            ],
+            "cpu": [
+              1.0918119402253268,
+              1.0518814496769464
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.0647571651839982,
+            "cpu": 1.0718466949511365
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.1300480969164999,
+              1.1780167632786165
+            ],
+            "cpu": [
+              0.812785113490229,
+              1.188015952026488
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.6540324300975582,
+            "cpu": 1.0004005327583585
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.6285783644842619,
+              0.8578144377817472
+            ],
+            "cpu": [
+              0.8224693788609743,
+              1.0074085550128635
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.7431964011330046,
+            "cpu": 0.9149389669369189
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.369000965413955,
+              0.996760537072697
+            ],
+            "cpu": [
+              0.8584934285868366,
+              1.0609137160554405
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.6828807512433259,
+            "cpu": 0.9597035723211386
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              1.1599596737838898,
+              1.0830341056663924
+            ],
+            "cpu": [
+              1.0864061559812213,
+              1.1153042460633913
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.1214968897251412,
+            "cpu": 1.1008552010223063
+          }
+        }
+      ]
+    },
+    {
+      "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+      "masks": 8,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": true,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.17926133502875607,
+              1.5972040190834433
+            ],
+            "cpu": [
+              0.7528878807336459,
+              0.9633793292160547
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8882326770560998,
+            "cpu": 0.8581336049748503
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.24854044269808975,
+              1.956426375057139
+            ],
+            "cpu": [
+              0.9387576118758127,
+              1.0370989665320676
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.1024834088776143,
+            "cpu": 0.9879282892039402
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.34302196489995285,
+              2.331383767227001
+            ],
+            "cpu": [
+              1.0870201949049252,
+              1.1420817034709858
+            ]
+          },
+          "median_ratios": {
+            "wall": 1.337202866063477,
+            "cpu": 1.1145509491879555
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.5194688487654643,
+              0.6771050554186451
+            ],
+            "cpu": [
+              0.6356012123924305,
+              0.5861106678639083
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.5982869520920546,
+            "cpu": 0.6108559401281695
+          }
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.886517458950594,
+              1.0539142698457236
+            ],
+            "cpu": [
+              0.853124159659172,
+              0.7752392789219744
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.9702158643981588,
+            "cpu": 0.8141817192905731
+          }
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.4358456308629361,
+              0.9450803839661114
+            ],
+            "cpu": [
+              0.6330444522440746,
+              0.7285920432232702
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.6904630074145237,
+            "cpu": 0.6808182477336724
+          }
+        }
+      ]
+    },
+    {
+      "case": "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72",
+      "masks": 16,
+      "scoped_pilot_pass": false,
+      "all_controls_complete": false,
+      "strict_timing_pass": false,
+      "comparisons": [
+        {
+          "method": "grammar_hit",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.42203182332212974,
+              0.515114207220949
+            ],
+            "cpu": [
+              0.4781654203290882,
+              0.4596342407594974
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.4685730152715394,
+            "cpu": 0.4688998305442928
+          }
+        },
+        {
+          "method": "suffix_hit",
+          "kind": "paired warm full cost",
+          "strong": true,
+          "ratios": {
+            "wall": [
+              0.3774631453661184,
+              0.3932485329139872
+            ],
+            "cpu": [
+              0.39941195264924595,
+              0.3612245114427201
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.3853558391400528,
+            "cpu": 0.38031823204598303
+          }
+        },
+        {
+          "method": "exact_stack",
+          "kind": "paired warm full cost",
+          "strong": false,
+          "ratios": {
+            "wall": [
+              0.7925029763042738,
+              0.9523526051466458
+            ],
+            "cpu": [
+              0.8889095873779818,
+              0.8144433468439689
+            ]
+          },
+          "median_ratios": {
+            "wall": 0.8724277907254598,
+            "cpu": 0.8516764671109753
+          }
+        },
+        {
+          "method": "exact_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        },
+        {
+          "method": "exact_bidir_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        },
+        {
+          "method": "exact_eps_local",
+          "kind": "explicit-budget capacity",
+          "statuses": [
+            "resource_refusal",
+            "resource_refusal"
+          ]
+        }
+      ]
+    }
+  ],
+  "rows_sha256": "9e68be277b1b61ff358ac534007d8cff5feb673c54746a03d18d592f7e33e2c4",
+  "metadata_sha256": "55f1191eff59341b7b25cfe4c6ea293a760393dbc4175664bd6041c5aff68e6f",
+  "scope": "Two-seed pilot on all known documents; no independent corpus, semantics, native EPIC or publication confirmation. Capacity is not a timing win; wall-censored successes are not unconditional target-law draws."
+}

@@ -1,0 +1,41 @@
+{
+  "case": "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b",
+  "mask_count": 8,
+  "canvas": [
+    14692,
+    59,
+    null,
+    null,
+    67,
+    59,
+    null,
+    2670,
+    59,
+    463,
+    5999,
+    null,
+    null,
+    null,
+    66,
+    23,
+    null,
+    null
+  ],
+  "positions": [
+    2,
+    3,
+    6,
+    11,
+    12,
+    13,
+    16,
+    17
+  ],
+  "forward_and_softmax": {
+    "wall": 0.009582814993336797,
+    "cpu": 0.03659069700000028
+  },
+  "probabilities_sha256": "352801f78654e3941212af349a1e28f424141eb1bcf72f290b6a93260eb8c17b",
+  "vocabulary": 50258,
+  "status": "captured"
+}

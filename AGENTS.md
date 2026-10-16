@@ -1104,3 +1104,23 @@ aquele expoente ou pelos inteiros. Nenhum código/teste/forward/timing novo,
 tentativa50 ou vitória operacional. A24 e todas evidências antigas preservadas;
 a meta de novidade/utilidade suficiente permanece aberta. Fonte, derivação
 completa e escopos lidos estão em49/work/direct-composition-v29.md.
+
+M71/A24 consumer V2 é refinamento de sistemas, sem nova teoria de quociente,
+sumário numérico, marginais ou pilha limitada. Desenvolvimento540/540 completo
+tem4/15 ganhos contra interfaces igualmente esparsas; suplemento compacto180/180
+preserva144 conclusões/36 recusas,99 checks de massa e os mesmos quatro estados
+com vantagem delimitada de tempo/capacidade. O piloto neural posterior451de419
+concluiu270/270:246 completos24 recusas0 erros,1345 forwards novos mais um
+warmup. Candidata30/30,30 trajetórias cursor/full-sparse literalmente iguais,
+1321 checks de amostras/IDs e735 checks contra massas exatas. Só2/15 passam
+o critério integral quente contra TODOS controles concluídos; nesses dois,
+três controles compactos recusam sob3GiB. Zero estados têm vitória temporal
+com todos seis controles concluídos. Duas seeds e os mesmos cinco documentos
+antigos não são confirmação independente ou ganho semântico. Modelo/carregamento
+ficam fora do custo quente; frio é reconstruído, não executado separadamente.
+Dados/custos/recusas publicados em24/work/evidence/consumer-v2-neural-v1;
+3,43GB de heads permanecem locais, explicitamente sem reprodução offline
+integral. A suíte180 testes passou no preflight, sem checks concorrentes aos
+timings. Originalidade específica de24, consumidor externo justificado e
+publicação seguem abertos. Não promover reparo de API, piloto ou capacidade
+a vitória geral sobre EPIC/controles GPU, nem garantia de mestrado.

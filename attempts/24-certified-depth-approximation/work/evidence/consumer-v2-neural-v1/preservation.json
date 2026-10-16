@@ -1,0 +1,11 @@
+{
+  "phase": "Post-capture integrity supplement, no timing or gate changes",
+  "producer_commit": "451de4199be5f9884d4c84e886862f314880b571",
+  "frozen_source_hashes_checked": 38,
+  "new_first_heads_equal_pinned_original_heads": 270,
+  "all_new_dense_heads_retained_locally": ".cache/a24-consumer-v2-neural-v1/heads",
+  "new_dense_heads_committed": false,
+  "local_head_files": 1345,
+  "local_head_bytes": 3430582208,
+  "reproduction": "Committed initial metadata/vocabulary/canvases and complete numeric journals permit output/gate/mass-interval audits. Raw full head bytes remain local; full independent hash/numeric-head audit requires that cache or fresh pinned model forwards. No complete offline raw-head packet is claimed."
+}

@@ -2527,3 +2527,31 @@ oracles; ALL3,100/75/2,480 geometry+150 forest rows are preserved separately.
 See49/work/*proof*.md and evidence. No model/head application, native EPIC
 comparison, human review or sufficient publication priority is confirmed.
 The original user goal remains active; A24 remains the main article.
+
+## M71 — full-cost A24 consumer pilot, 2026-10-15
+
+The consumer contract/proof preceded implementation. Numeric class summaries,
+original-ID block recovery, sparse outside and early query stopping are
+classical and shared with competent controls. ALL15 previously inspected
+external states are development now. The540-operation screen passed4/15;
+all180 supplementary compact operations finished with99 exact-mass checks,
+preserving scoped benefit while explicitly separating capped capacity.
+
+Producer451de419 then completed270 neural records:246 complete/24 refusals,
+1345 new MDLM forwards plus one warmup. Selected candidate30/30 valid,30 literal
+cursor/full-sparse trajectory matches,735 exact-mass certificate checks,
+no implementation errors. The warm full-trajectory gate survives only2/15
+states. Three compact controls refuse at3GiB in those states, so no strict
+timing victory with all six controls completed is established. The13 failing
+states and request costs remain published. No independent new corpus or
+semantic quality campaign has been executed.
+
+See24/work/evidence/consumer-v2-neural-v1/decision.md for the table generated
+from the entire journal and24/work/consumer-v2-reproduction.md for actual
+commands and the local3.43GB raw-head boundary. A primary refresh rereads
+Denkinger2017 bounded/weighted storage, Sakharov2017 counters, and Dang/Ermon2026
+constrained-marginal remasking. This is useful scoped systems evidence, not
+new parsing/sampling theory, native EPIC/GPU superiority, sufficient publication
+priority or fulfillment of the user's positive real-application goal. Close
+the external-consumer and A24-specific originality obligations before a larger
+campaign; do not turn an API optimization or this pilot into those claims.

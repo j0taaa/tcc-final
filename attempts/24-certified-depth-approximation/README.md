@@ -371,3 +371,26 @@ servem a um piloto; não demonstram qualidade semântica, independência do
 corpus, ganho sobre EPIC nativo ou originalidade suficiente para publicação.
 O resultado pode consolidar utilidade deste consumidor específico; permanece
 necessário justificar um consumidor externo e conferir a novidade da A24.
+
+O piloto foi concluído no produtor `451de4199be5f9884d4c84e886862f314880b571`.
+Os resultados derivados, incluindo TODOS os quinze estados, estão em
+[`work/evidence/consumer-v2-neural-v1/decision.md`](work/evidence/consumer-v2-neural-v1/decision.md).
+São270 registros,246 conclusões/24 recusas,1345 forwards novos mais um warmup.
+A candidata conclui30/30; as interfaces esparsas preservam literalmente30
+trajetórias e735 checks conferem o certificado contra a massa exata disponível.
+O ganho integral quente sobrevive em2/15 estados contra todos os controles
+que concluem. Nesses dois, três controles compactos recusam por recursos;
+nenhum estado oferece vitória de tempo com TODOS seis controles concluídos.
+O resultado de consulta4/15 no desenvolvimento não se transforma em4/15
+ganhos de geração. As perdas, os custos e as recusas permanecem publicados.
+
+Não há corpus novo independente, tarefa semântica ou execução nativa de EPIC.
+O benefício medido é para este consumidor de posterior/commit com modelo e
+serviço preparados. A fronteira de custo e os limites da lei gerenciada estão
+explicitados no relatório. O comando e o alcance da reprodução estão em
+[`work/consumer-v2-reproduction.md`](work/consumer-v2-reproduction.md); os3,43GB
+de heads completos permanecem locais, sem alegação de pacote offline completo.
+A rechecagem primária delimitada em `work/consumer-v2-primary-refresh.md`
+reforça que truncamento, abstrações, marginais e consultas esparsas são
+antecedentes. Originalidade suficiente e aplicação externa útil continuam
+obrigações reais; o piloto não encerra a meta científica do usuário.

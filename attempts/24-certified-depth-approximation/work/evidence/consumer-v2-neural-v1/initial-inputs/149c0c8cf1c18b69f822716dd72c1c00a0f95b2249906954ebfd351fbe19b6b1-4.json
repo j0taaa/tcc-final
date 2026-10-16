@@ -1,0 +1,40 @@
+{
+  "case": "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1",
+  "mask_count": 4,
+  "canvas": [
+    14692,
+    59,
+    null,
+    405,
+    5333,
+    59,
+    84,
+    1270,
+    1878,
+    null,
+    84,
+    1270,
+    16412,
+    59,
+    84,
+    null,
+    65,
+    24,
+    null
+  ],
+  "positions": [
+    2,
+    9,
+    15,
+    18
+  ],
+  "forward_and_softmax": {
+    "wall": 0.018935665022581816,
+    "cpu": 0.07254995999999991
+  },
+  "probabilities_sha256": "6de3fd2367747d4b9b5946c0d2b45dd48038e6c3eb46c12643da28cc4f4c4cce",
+  "vocabulary": 50258,
+  "status": "captured",
+  "raw_logits_sha256": "179337831f061a78eb9c53a1265f1e6eb54133b2a87182a7d05f794fd07c263c",
+  "raw_logits_scope": "complete original masked-position heads before mask policy"
+}

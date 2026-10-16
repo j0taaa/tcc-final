@@ -68,8 +68,8 @@ cost remain open. No new neural campaign is credited to M70.
   Producer8541f4f completes180/180:144 complete/36 resource refusals,
   99 full exact-mass checks with zero divergence; all four prior states
   survive the scoped comparison. Data/decision:24/work/evidence/consumer-v2-compact.
-- [ ] T7103: Only after positive development, define and execute a NEW iterative
-  application/confirmation with complete controls and paid resources. Assess
+- [x] T7103: Only after positive development, define and execute a NEW iterative
+  full-cost application pilot with complete controls and paid resources. Assess
   usefulness/originality of A24 itself; no acceptance claim follows from code.
   Preflight freezes270 trajectories (ALL15 known states x9 methods x2 seeds),
   full parent+child process CPU and actual new forward/IPC/I/O cost, sparse
@@ -77,6 +77,24 @@ cost remain open. No new neural campaign is credited to M70.
   oracles PASS0.271s including actual service CPU clock/refinement and alarm
   cancellation. No new model heads in this preflight. Protocol/source:
  24/work/consumer-v2-neural-protocol.json and consumer_v2/{neural,service,analyze_neural}.py.
+  Producer451de419 completes270/270:246 complete/24 explicit resource refusals,
+  zero errors;1345 new forwards plus one warmup. Selected candidate30/30 valid;
+  30 literal cursor/full-sparse trajectory matches,1321 valid original samples,
+  735 exact-mass certificate checks. Frozen scoped warm gate2/15 (149c0c8c-16,
+  c87bca6a-16), with all three compact controls refusing at3GiB in both states;
+  strict timing gate with all six controls complete0/15. No independent corpus
+  or semantic confirmation. Report:24/work/evidence/consumer-v2-neural-v1/decision.md.
+  Full3,430,582,208-byte head cache remains local, explicitly not a complete
+  offline published packet; all raw trajectory/cost journals and initial
+  contexts/vocabulary are committed. Before reporting, all38 measured source
+  hashes and270 first-head identities checked; demo is offline functional only.
+- [ ] T7104: Close the real external-consumer and A24-specific originality
+  objections before a larger application/confirmation campaign. The completed
+  two-seed pilot gives scoped warm-cost benefit, not broad practical utility,
+  independent latency confirmation or publication. Primary refresh credits
+  Denkinger bounded/weighted abstractions, Sakharov counters and Dang/Ermon
+  constrained-marginal commits. No threshold relaxation or new scientific
+  novelty is assigned to the classical numeric/query interface.
 
 ## M70 — Exact grammar residual operation, mathematical and prior gates first
 
