@@ -35,6 +35,13 @@ Após da3bd39, quatro oráculos V3 passam8 leis256 ações4864 componentes e
 controles analíticos. Full220 PASS73.333s; make check/Ruff PASS. Ainda sem
 head real/update/timing novo. Cabeça Tiny-A2D V151936 excede tokenizer0..151669;
 qualquer consumidor futuro deve declarar os IDs extras, não truncá-los calado.
+V4 é SOMENTE contrato de recursos, antes de código/heads:8 perguntas GSM8K
+de desenvolvimento JÁ conhecidas,32 slots, Tiny-A2D pinado, no máximo9 forwards
+incluindo warmup/quatro amostras por head. Sem gabaritos/update/timing competitivo.
+Declara todos151936 IDs, inclusive os266 sem token caso TODOS decodifiquem vazio,
+JSON numérico irrestrito/EOT/PAD, controles, tolerâncias e recusas. Seis casos
+corretos só permitem considerar protocolo de custo/variância separado; não são
+vantagem útil/novidade. Runner/runtime precisam congelar antes do primeiro head.
 
 ## Objetivo e estado atual
 

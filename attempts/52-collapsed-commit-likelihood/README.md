@@ -133,3 +133,16 @@ full220 tests PASS73.333s; make check/focused Ruff PASS. No real new neural
 head, parameter update, GPU timing or confirmed novelty/use. Evidence:
 work/evidence/anchor-v3. The next consumer must explicitly handle model output
 IDs beyond the tokenizer-defined domain; no hidden vocabulary truncation.
+
+## V4 — bounded consumer/resource contract, before implementation and heads
+
+[work/consumer-resource-v4.md](work/consumer-resource-v4.md) and its independent
+question-only input copy fix8 KNOWN development GSM8K questions, the pinned
+Tiny-A2D checkpoint,32 response slots, one gate config and at most9 real forwards
+including warmup. No labels/updates/timing comparison; six correct completed
+cases only permit consideration of a separate cost/variance protocol. ALL
+original151936 IDs, including tokenizer-empty padded IDs if their decoding is
+verified, must be retained; explicit numeric JSON EOT PAD semantics, independent
+checks, raw data and resource refusals are fixed. The regular schema is not
+evidence of recursive parsing novelty. Runner/source still need freezing before
+any real head. Specific originality and useful complete-cost benefit remain OPEN.

@@ -78,6 +78,15 @@ cost remain open. No new neural campaign is credited to M70.
   PASS1.374s; full220 PASS73.333s; make check/Ruff PASS. No real head/update/
   timing. Tiny-A2D head has151936 logits but token IDs only0..151669; a future
   consumer must declare the remaining IDs' semantics before data capture.
+- [ ] T7503: Implement ONLY the bounded V4 consumer/resource preflight after its
+  written eight criteria and independent question-only copy:8 KNOWN development
+  inputs, pinned Tiny-A2D,32 slots, max9 real forwards, four samples/head, no
+  labels/updates or timing claim. Check ALL151936 IDs including266 tokenizer-empty
+  outputs, true numeric JSON EOT PAD*, original identity/class reductions,
+  gate/confidence chain and CPU/GPU small rational references. Freeze runner and
+  exact runtime/source BEFORE heads. Preserve all failures, original BF16 logit
+  bits, configurations and statuses. Six correct cases permits only considering
+  a separate cost/variance protocol; it cannot establish useful gain/novelty.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
