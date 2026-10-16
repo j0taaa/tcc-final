@@ -146,6 +146,12 @@ cost remain open. No new neural campaign is credited to M70.
   ZERO new forwards/samples/labels/updates. This is contract diagnosis, not
   semantic cause/gain or scientific novelty. New stopped consumer must be
   written separately; V5 remains closed negative and the goal OPEN.
+- [ ] T7506: V7 prefix-aware anchor WRITTEN before code: eligible active
+  positions depend on proposed first EOT, all fixed IDs remain in output,
+  terminal potential accounts for anchor normalizer. Classical action/score/
+  progress identities; mandatory cheap anchor/length/class/combined controls.
+  Only minimal independent rational oracle next, no head/label/update/timing.
+  Own meaningful distinction/use and real-consumer protocol remain open.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

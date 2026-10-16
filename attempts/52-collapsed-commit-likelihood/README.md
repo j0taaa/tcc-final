@@ -231,3 +231,14 @@ conditions passing. Independent/archive partition checks agree within1.422e-13
 in log space. ZERO new forward/sample/label/update. See work/stopping-result-v6.md.
 This motivates a new stopped-consumer design only; it does not establish
 semantic cause/gain, a new compiler/theory, training or fulfilled goal.
+
+## V7 — Prefix-aware anchor contract before code
+
+work/prefix-anchor-v7.md reassesses all eight criteria. Only active positions
+within a proposed stopped prefix can be released; every fixed original ID
+must stay in the returned prefix. The anchor's latent-length normalizer is
+a terminal potential, with written action/occupancy/anchor-score/progress
+identities. Classical weighted inference/conditional means are credited.
+Cheap anchor-only, length-only, class-conditional and combined controls are
+mandatory. Only minimal rational oracles are justified next, not new heads,
+training or a revival of V5. Own originality/use and the goal remain OPEN.

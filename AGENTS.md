@@ -95,6 +95,13 @@ Checks independentes/arquivo max1.422e-13 log. ZERO forward/amostra/label/
 update novo. É diferença de contrato/lei, não causa ou ganho semântico,
 novidade ou treino. V5 continua encerrada negativa; só novo contrato escrito
 de consumidor parado antes de qualquer campanha. Meta científica aberta.
+V7 escreve ANTES de código a âncora elegível só dentro do prefixo parado,
+mantendo TODOS IDs fixos no retorno. Normalizador dependente de T vira
+potencial terminal; scores usam ocupância e posterior de comprimento.
+Inferência/médias condicionais são clássicas. Controles baratos integram A,
+T, IDs dentro de classes e combinações; não vencer só full triple. Somente
+oráculo racional mínimo, sem novos heads/labels/updates/timings. Benefício
+próprio/novidade e meta seguem abertos; V5 não é reaberta.
 
 ## Objetivo e estado atual
 
