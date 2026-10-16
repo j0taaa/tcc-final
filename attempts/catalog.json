@@ -4423,9 +4423,29 @@
     {
       "id": "53-observable-termination",
       "title": "Parada terminal por resultado observável certificado",
-      "conclusion": "Written53d9e72 before minimal prototype; classical terminal coupling and flat string-domain analysis. No confirmed priority, neural benefit or achieved goal. Minimal oracles and full-V synthetic/FAKE pipeline only; old-path screen separately frozen.",
+      "conclusion": "Written53d9e72 before minimal prototype; classical terminal coupling and flat string-domain analysis. No confirmed priority, neural benefit or achieved goal. Minimal oracles and full-V synthetic/FAKE pipeline only; old-path screen separately frozen. V2 d807143: all86 known old states pass;50 vs52 strong-prefix vs63 original unique heads+warmup, only one extra question, frozen gate NEGATIVE. No new neural campaign; all evidence preserved.",
       "reading": "attempts/53-observable-termination/README.md",
-      "versions": []
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "d8071430db446f6c3a696649d5242fbf83ca37a7",
+          "evidence_commit": "d8071430db446f6c3a696649d5242fbf83ca37a7",
+          "evidence_roots": [
+            "attempts/53-observable-termination/README.md",
+            "attempts/53-observable-termination/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "d8071430db446f6c3a696649d5242fbf83ca37a7",
+          "evidence_commit": "c69b0a5e7bb7f5628a83b8317e10ab252ff53031",
+          "evidence_roots": [
+            "attempts/53-observable-termination/README.md",
+            "attempts/53-observable-termination/work",
+            "docs/artifacts/raw/a53_observable_old_path_screen_v2_initial"
+          ]
+        }
+      ]
     }
   ]
 }
