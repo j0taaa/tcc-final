@@ -248,6 +248,13 @@ cost remain open. No new neural campaign is credited to M70.
   proposal-control-result-v11.md. Only separately frozen functionality replay
   of ALL70 old transitions is next; no useful effect/novelty established.
 
+- [ ] T7511: V12 written ALL70-old-transition proxy functionality contract
+  and regular-subset proof BEFORE prototype. Zero new head/trajectory/update/
+  labels; original IDs, fixed EOS, zero-support versus underflow retained.
+  Only small independent regex/Decimal/rational/Torch checks first, then
+  freeze exact replay source/runtime/input hashes. No useful variance/cost or
+  training/priority follows from passing; all strong controls remain required.
+
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
 - [x] T7400: Write independent A51 README/eight criteria and executed finite-ticket
