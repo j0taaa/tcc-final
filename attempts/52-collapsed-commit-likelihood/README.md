@@ -266,3 +266,12 @@ paired one-shot baseline. No update/timing/independent or semantic-win claim.
 Resource/signal conditions only permit CONSIDERING a separate strong-control
 cost/variance protocol. Runtime/runner still need checks and source freeze
 before any new head. Stopping/calibration/inference are not novelty claims.
+
+V8 foundation passes five new CPU oracles,111 rational NumPy/Torch CPU/CUDA
+comparisons and three synthetic original-V151936 actions, peak340684288B.
+Every stronger partial control and the root expected count are checked against
+the rational reference; adaptive FAKE episodes preserve all committed IDs.
+Full241 PASS79.352s/make check/Ruff PASS. Initial and final evidence producers
+are separate in work/evidence/stopped-foundation-v8-{initial,final}; final
+consumer-protocol-v8.json pins runtime/actual sources before real capture.
+No V8 pretrained head/update or useful effect is credited to these checks.

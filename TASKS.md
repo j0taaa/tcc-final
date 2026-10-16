@@ -165,6 +165,12 @@ cost remain open. No new neural campaign is credited to M70.
   compact/manual/autodiff checks, then freeze actual runner/runtime before
   heads. Known-data resource/signal conditions do NOT trigger training/quality
   or novelty claims; V5 remains closed and the scientific goal OPEN.
+  Five new CPU oracles,111 rational NumPy/Torch CPU/CUDA records and three
+  synthetic full-V actions PASS, including every stronger partial control,
+  root expectation, variable occupancy and explicit original fixed IDs.
+  Full241 PASS79.352s/make check/Ruff PASS. Initial/final producer bytes are
+  separately preserved; actual runner/protocol/runtime freeze before heads.
+  ZERO new V8 pretrained calls/updates so far; real resource capture next.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

@@ -115,6 +115,12 @@ parada correta/IDs fixos/bits explícitos, máximo497 forwards novos, baseline
 one-shot pareado. Sem updates/timing/qualidade comparativa; gate de recurso/
 sinal só permite considerar protocolo de custo/variância com controles fortes.
 Oráculos e congelamento real de runner/runtime antecedem novos heads.
+V8 preflight passa cinco novos oráculos CPU,111 comparações racionais NumPy/
+Torch CPU/CUDA e três ações sintéticas full-V, pico340684288B. IDs fixos,
+ocupância variável, calibração e TODOS controles parciais conferem. Full241
+PASS79.352s/make check/Ruff PASS. Fontes iniciais e finais separadas; protocolo/
+runner/runtime congelam ANTES do primeiro novo head. ZERO update/head real V8
+até esse freeze; não é benefício neural, novidade ou meta cumprida.
 
 ## Objetivo e estado atual
 

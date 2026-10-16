@@ -1,0 +1,10 @@
+test_compact_original_scores_variable_occupancy_and_prefix_sampler (attempts.52-collapsed-commit-likelihood.work.test_prefix_floating.PrefixFloatingTests.test_compact_original_scores_variable_occupancy_and_prefix_sampler) ... ok
+test_partial_controls_against_rational_conditional_scores (attempts.52-collapsed-commit-likelihood.work.test_prefix_floating.PrefixFloatingTests.test_partial_controls_against_rational_conditional_scores) ... ok
+test_root_feature_expected_release_against_full_rational_law (attempts.52-collapsed-commit-likelihood.work.test_prefix_floating.PrefixFloatingTests.test_root_feature_expected_release_against_full_rational_law) ... ok
+test_adaptive_float_episodes_keep_every_original_commit (attempts.52-collapsed-commit-likelihood.work.test_prefix_runtime.PrefixRuntimeTests.test_adaptive_float_episodes_keep_every_original_commit) ... ok
+test_fixed_mask_is_an_id_and_eot_cannot_hide_an_existing_id (attempts.52-collapsed-commit-likelihood.work.test_prefix_runtime.PrefixRuntimeTests.test_fixed_mask_is_an_id_and_eot_cannot_hide_an_existing_id) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.468s
+
+OK

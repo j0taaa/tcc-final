@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "records": 111,
+  "new_model_forwards": 0,
+  "new_samples_real_heads": 0,
+  "native_rng_exactness_claimed": false,
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "maximum_absolute_error": {
+    "log_probability": 2.1316282072803006e-14,
+    "alpha": 7.771561172376096e-16,
+    "beta": 1.2434497875801753e-14,
+    "anchor": 1.700029006457271e-16
+  }
+}

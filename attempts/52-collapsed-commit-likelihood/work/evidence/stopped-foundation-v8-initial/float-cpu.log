@@ -1,0 +1,7 @@
+test_compact_original_scores_variable_occupancy_and_prefix_sampler (attempts.52-collapsed-commit-likelihood.work.test_prefix_floating.PrefixFloatingTests.test_compact_original_scores_variable_occupancy_and_prefix_sampler) ... ok
+test_root_feature_expected_release_against_full_rational_law (attempts.52-collapsed-commit-likelihood.work.test_prefix_floating.PrefixFloatingTests.test_root_feature_expected_release_against_full_rational_law) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.279s
+
+OK

@@ -90,6 +90,16 @@ combined control occurs ONLY in the generic proof object, not a neural test.
 Full236 PASS84.581s/make check/Ruff PASS. Real stopped consumer, useful
 complete-cost effect, sufficient originality and the scientific goal remain open.
 
+V8 fixes a classical root-only sigmoid expected-release feature, held constant
+for both replicas and all later states. The written eight criteria freeze ALL8
+known roots/two stopped trajectories and at most497 new forwards. Five new CPU
+oracles,111 rational NumPy/Torch CPU/CUDA records and three synthetic full-V
+actions pass; full241 PASS79.352s/make check/Ruff PASS. Initial/final evidence
+bytes remain separate. Actual runner/runtime/protocol freeze before new heads.
+The resource/signal screen cannot establish semantic superiority or novelty;
+only a later strong-control complete-cost variance protocol may be considered
+if it passes. No automatic training or independent quality branch is opened.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

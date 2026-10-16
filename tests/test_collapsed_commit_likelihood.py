@@ -45,3 +45,11 @@ StoppingTests = import_module(
 PrefixAnchorTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_prefix_anchor"
 ).PrefixAnchorTests
+
+PrefixFloatingTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_prefix_floating"
+).PrefixFloatingTests
+
+PrefixRuntimeTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_prefix_runtime"
+).PrefixRuntimeTests
