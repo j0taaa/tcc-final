@@ -20,8 +20,15 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A52 begins with a WRITTEN observed-action likelihood/variance audit: sampled
+confidence threshold/fallback becomes unary evidence after the retained IDs
+are known. Classical counting/conditional-score/Rao–Blackwell principles remain
+explicit; local comparison stability is necessary. No model or performance
+campaign, confirmed originality or achieved user goal follows from this note.
+
 | Pasta | Direção |
 | --- | --- |
+| [52-collapsed-commit-likelihood](52-collapsed-commit-likelihood/README.md) | Lei da ação selecionada por confiança; prova antes de protótipo, prioridade/uso abertos |
 | [01-mwpc-original](01-mwpc-original/README.md) | MWPC original e validação inicial |
 | [02-parallel-batch-selection](02-parallel-batch-selection/README.md) | Seleção paralela em estados reais — M18 |
 | [03-witness-reuse-audit](03-witness-reuse-audit/README.md) | Controle com reutilização de testemunho — M19/M20 |

@@ -1,5 +1,16 @@
 # AGENTS.md
 
+A52 começa ESCRITA antes de protótipo: probabilidade da ação realmente
+selecionada por confiança (limiar/fallback ou top-k) como partição gramatical
+com evidência unária dos descartes. Contagem, score condicional e redução de
+variância são clássicos; DUEL seleciona posições antes dos tokens, MAPG usa
+PL, e os contratos não são confundidos. Gradiente exige comparação localmente
+estável em TODO suporte; não declarar política globalmente suave nem suporte
+PPO automaticamente compatível. Família checksum conectada separa apenas o
+score completo, inclusive seu melhor baseline escalar; enumeração/média
+condicional clássica continuam controles. Nenhum código/head/treino/timing,
+novidade suficiente ou benefício real A52 foi confirmado nesta fundação.
+
 ## Objetivo e estado atual
 
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma

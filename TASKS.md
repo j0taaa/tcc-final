@@ -32,6 +32,25 @@ single preparation and conditional attempts independent of1/TV. Correctness
 oracles pass, but publication significance, novelty and useful full-generation
 cost remain open. No new neural campaign is credited to M70.
 
+## M75 — Observed confidence-selected action likelihood, before prototype
+
+- [x] T7500: Read native Mosaic LLaDA2 threshold/fallback and primary DUEL,
+  MAPG, d2, EGSPO, CoDD and Di4C within explicitly recorded scopes. Reject
+  generic mixtures/PC priors/distillation as new central mechanisms. Write
+  A52's eight criteria, unary-preimage proof, local regularity condition,
+  covariance identity and connected checksum comparison BEFORE code.
+  No new head/update/timing or sufficiently original contribution is claimed.
+- [ ] T7501: Minimal independent rational oracles: complete observed action
+  law against enumeration, threshold equality/fallback/ties, original aliases,
+  fixed IDs/EOT/PAD, conditional token-count score, impossible/zero mass and
+  connected-family covariance INCLUDING best scalar-baseline full control.
+  Passing is correctness, not priority or practical usefulness.
+- [ ] T7502: Reassess originality and an actual training/audit consumer versus
+  classical compiled evidence inference, enumeration and optimized full-score
+  baselines. Only after a plausible real benefit, freeze external-state
+  complete-cost protocol BEFORE neural heads/updates/timings. No large training
+  implementation is authorized by this checklist alone without that foundation.
+
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
 - [x] T7400: Write independent A51 README/eight criteria and executed finite-ticket

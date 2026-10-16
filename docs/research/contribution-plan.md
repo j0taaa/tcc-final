@@ -1,5 +1,24 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A52 written observed-action audit, before prototype
+
+A51 remains operationally negative. The new limited question is the actual
+action mass when a joint grammatical proposal is pruned by sampled-token
+confidence. Once retained IDs are observed, threshold/fallback and stable top-k
+preimages reduce to unary evidence; ordinary weighted counting supplies mass
+and conditional token marginals. Conditional-score/variance identities are
+classical. A connected checksum family provides an unbounded comparison only
+against full-proposal score estimators, including optimized scalar baselines,
+not against every analytic control or real neural cost.
+
+The proof explicitly requires locally stable comparison maps for gradients;
+it does not imply smoothness across confidence boundaries or final-text
+likelihood. Primary scopes/hashes distinguish DUEL's position-before-token
+policy, MAPG's PL policy and Mosaic's actual strict sampled-confidence rule.
+CoDD/Di4C reject generic correlated-head/distillation novelty. No implementation,
+new head, update, timing, sufficient originality or achieved goal is asserted.
+Only the independent rational oracle is justified before further work.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine
