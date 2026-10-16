@@ -1,0 +1,38 @@
+{
+  "commit": "0c75b91ca578488011b8572b1271ac0d16c2e879",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "input_metadata_sha256": "07fffd2e41b2d1ad91dd8aa7cd8cd9814b5ae7de7347bf52cc9941d90e423c3a",
+  "protocol_sha256": "1af126ab9efff9f316877ff19c1098370da71de195532c1052997ae34aa4afe9",
+  "scope": "Complete-cost known-development query comparison; no new neural heads",
+  "source_sha256": {
+    "__init__.py": "098b8023c62cc651bc899dc87de0491c0f9694631c22d971d5867cc061aae9f8",
+    "compact_termination.py": "477eef9a3234dc286f7372a86f24d64f7bac14e61f12db07070037d3a7601079",
+    "development.py": "d50206f7528f64e24143d1ad698179df967ae8dc3d964d039476d95d074ec452",
+    "development_audit.py": "27354f1a8a6265d77f0d6bca8be1314b45e9b4a0bc7bebade6857d084e061252",
+    "development_methods.py": "a23b99654e62f825bc75ad16e505d34bda0c3c8524f9838230eadb0e6bf491dc",
+    "layered_fa_control.py": "5b977391a90ce0e0f8fe6093d82f47e5b740f1b8580e4ad3e18520da6b28cdc3",
+    "mosaic_control.py": "1df246c47789a0237319a297bd5955dd5ab5fa30ae3924d933013cc2ce1032b8",
+    "prefix_cache.py": "b3af7880098bb5f9ae8bd8ec3a93f23a0f4c33fffb6071004387677f68c977ae",
+    "preflight.py": "6e5855b8483b179d7c81bdfd7eec47fe509b407b8d8deb7db1c9f1c7d0d4c9b3",
+    "preflight_development.py": "14eb3329d7ab0abde26a1b33ba43abc3e73376c9371746cbe8a89f7bad697cb2",
+    "preflight_sparse.py": "606b81ff6e906827ccdd62baf77b9b9711b7e13909bf5a21839f112cbbf73b3a",
+    "preflight_termination.py": "5375dbcdeed62a0b644e70be5769e20a62e685e0bfa97c981f79da1ff4d0a66e",
+    "ranking.py": "30fd92c5e1c3e9c4aea6fae2ae47c851796818c2ec6895270e5b861fc060475e",
+    "report_resources.py": "653462fc351ba0784a16dccc9cd16671210fe73d0901e8c569184272525616b0",
+    "resource_screen.py": "cb013daa74bcb0459f2edb3ff5593cdbbf9e639b04b4e99d2ef670d9e9297f87",
+    "sparse_fa_control.py": "0f89b43159fdc45c7d882895e8202839e095d9daa37d2afa29932e7f39dadc63",
+    "termination.py": "fc937049c100c0753965c8615b0c2d73eea9d3e22edaf66493114d1822224523",
+    "test_compact_termination.py": "9e6519b1779ad93f5507b9c8d4e4b8a621b56359a2b6521e87f72b4ec66c73b8",
+    "test_development_audit.py": "cb4b7abf1f136f9ab326b577f815025dd641e549f07b1c198c0554aa0a4b7c62",
+    "test_graph.py": "6abc855411ec459d5b8b7ecaeb5dbfff33421ad9735f1cb603b2fcfa8495fc0d",
+    "test_termination.py": "cd41e69c1819c4540317bf17e7eaba09289eeddc6b0548c922b5a0e127d128e3"
+  },
+  "stage": "FIRST315 necessary-condition negative-only audit; all765 needed for positive",
+  "static_setup": {
+    "cpu": 0.939898493,
+    "wall": 0.9416886469989549
+  },
+  "torch": "2.13.0+cu130",
+  "vocabulary_sha256": "0b4486e9138096810acb3183316684bf7c1dbe896dfdea7c4067e3994de9c7b6"
+}

@@ -1168,3 +1168,13 @@ Não usar o limite refinado de confiança para reduzir a cobrança da amostra
 anterior. No Mosaic lido, LLaDA1 usa ranking por marginal, mas LLaDA2/SGLang
 default usa confiança do MODELO; não atribuir o custo de marginais a esse
 default nem inventar superioridade semântica ou serving completo.
+
+M73/A24 V4 gate operacional está NEGATIVO no produtor0c75b91:315/315 registros,
+630 operações frio/quente corretas,135 rankings exatos135 matches de cache.
+Ambas candidatas0/15 contra controles obrigatórios concluídos;450 registros
+restantes não executados não podem reverter as falhas necessárias. Nenhum
+forward novo ou confirmação independente acionada. Sparse FA/DAG por camadas
+GPU são controles clássicos e vencem esta aplicação; não promovê-los como
+nova teoria. A vantagem antiga3/15 vale sob os comparadores originais, não
+sob estes controles mais fortes. Dados/decisão completos em24/work/evidence/
+consumer-v4-development-first-v1. A meta científica permanece aberta.

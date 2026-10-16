@@ -12,6 +12,12 @@ com recusas dos compactos nesses dois estados. Isso não altera o resultado
 independente anterior de consulta3/15 nem confirma semântica, novidade ou
 superioridade geral. Fonte de captura451de419; evidência/relatório5819f250.
 
+A24/V4 encerra o novo gate operacional0/15 para ambas candidatas contra
+controles GPU esparsos fortes:315 registros,630 operações corretas, sem novo
+forward. Os450 registros restantes não são necessários para esta decisão
+negativa e não foram executados. Dados e comparadores preservados; a meta
+científica de novidade/uso relevante permanece aberta.
+
 ## Índice
 
 | Pasta | Direção |

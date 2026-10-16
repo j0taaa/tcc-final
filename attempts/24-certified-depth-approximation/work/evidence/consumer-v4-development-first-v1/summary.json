@@ -1,0 +1,22 @@
+{
+  "all_candidate_states_rejected": true,
+  "cold_statuses": {
+    "complete": 315
+  },
+  "correct_cold": 315,
+  "correct_warm": 315,
+  "exact_common_ranking_checks": 135,
+  "literal_cpu_cache_matches": 135,
+  "new_model_forwards": 0,
+  "positive_timing_claim": false,
+  "record_count": 315,
+  "source_files": {
+    "decision.json": "5eca1149f19371882dfa424e57bc8e6e3ef909c9a16c8d507558669e2313b34b",
+    "metadata.json": "24a8426d84f19bedfc9091b9a16fd6bbc9b39cb60fa3406e839a439c292e6546",
+    "rows.jsonl": "f78a0369f1f05875503965fc95eca46a46fb519fe05a6d8fff69462a201ec7ca"
+  },
+  "user_scientific_goal_met": false,
+  "warm_statuses": {
+    "complete": 315
+  }
+}

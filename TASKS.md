@@ -34,8 +34,9 @@ cost remain open. No new neural campaign is credited to M70.
 
 ## M72 — Existing Mosaic consumer, stronger GPU controls and termination
 
-Current next work is M73 below: direct cached CPU/CFG controls and native
-Torch2.13 kernels are ready; complete-cost protocol/evaluation still pending.
+M73 below is complete with a NEGATIVE operational gate. Strong cached CPU/CFG
+and sparse/layered GPU controls invalidate this extension; no independent
+neural campaign is triggered.
 
 - [x] T7200: Read the published Mosaic consumer/compiler/tokenizer/samplers,
   pin36945e4b3c64913e23962e0924a8b40a84c58807 (MIT), write V3's eight criteria
@@ -105,7 +106,7 @@ Torch2.13 kernels are ready; complete-cost protocol/evaluation still pending.
   This matches upstream sampler Torch, not the full HF/serving stack. Pins
   and pip-freeze/source evidence are preserved. No new neural head or timing
   win follows from compatibility.
-- [ ] T7303: Freeze complete-cost known-development protocol with compiled
+- [x] T7303: Freeze complete-cost known-development protocol with compiled
   caches and direct full CPU/CFG controls; include native GPU and competent
   quotient/sparse FA alternatives when applicable. Do not attribute dense
   E×V or N×E storage to all FA inference. Require credible substantial benefit
@@ -125,7 +126,15 @@ Torch2.13 kernels are ready; complete-cost protocol/evaluation still pending.
   original words; sampling TV remains charged at the ORIGINAL draw depth.
   Two offline decision oracles pass; syntax-error draft/full-suite failure
   are preserved. Corrected maintained suite193 PASS75.536s, Ruff PASS.
-  Protocol/runner/source still must be frozen together BEFORE measuring.
+  Protocol/runner/source frozen0c75b91 BEFORE measuring. ALL315 first-stage
+  records complete/correct cold AND warm;135 exact ranking checks135 literal
+  CPU cache matches. Both candidates fail the mandatory paired projected
+  wall/CPU comparison inALL15 states. The450 remaining rows are NOT executed;
+  they cannot reverse the necessary failures. No new forward or independent
+  campaign. Decision/rows/report:consumer-v4-development-first-v1. Sparse and
+  layered GPU methods are CLASSICAL controls, not a new positive contribution.
+  Preserve the old scoped query result with its original comparators; the
+  user's novelty/usefulness/publication goal remains open.
 
 ## M71 — A24 consumer refinement, useful full-operation benefit required
 

@@ -2587,3 +2587,23 @@ ou vitória operacional. Só uma campanha posterior com custo integral,
 controles competentes e benefício substancial poderá fechar utilidade.
 O objetivo contínuo do usuário permanece aberto, sem promessa editorial ou
 de ingresso no mestrado.
+
+## 2026-10-16 — V4 complete negative operational decision
+
+Frozen producer `0c75b91` completed all315/315 first-stage records:315 cold
+and315 warm operations correct,135 exact common-ranking checks and135 literal
+CPU cold/warm matches. Both candidates fail the mandatory complete-cost
+comparison in ALL15 known states. The remaining450 configurations are NOT
+executed: they cannot reverse a failed necessary comparison. No independent
+neural campaign is triggered and no new forward was performed. All rows,
+refusal-free completed controls, hashes and generated report are preserved in
+`attempts/24-certified-depth-approximation/work/evidence/consumer-v4-development-first-v1/`.
+
+Classical sparse/layered GPU controls overturn this operational advantage;
+they are not claimed as new algorithms. Across-state warm median wall times
+are0.0500s handoff,0.0481s closed,0.0447s exact CPU and0.0162s layered GPU fp32
+(0.0164s fp64). These medians are descriptive, not the paired gate itself.
+The original scoped CPU query result remains historical under its original
+comparators; it does not establish an advantage against these stronger ones.
+No further A24 neural confirmation follows from the rejected gate. Originality,
+a new useful operation and the user's scientific goal remain open.
