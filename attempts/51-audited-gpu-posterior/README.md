@@ -74,3 +74,16 @@ originality, practical significance and publication sufficiency OPEN.
 Current decision: allow only a small independent rational reference to test the
 executed-density/audit obligations, then re-evaluate before substantial GPU code.
 No useful speed, new theorem priority or achieved user goal is asserted.
+
+The five independent rational oracles now pass:2910 integer tables,279068
+finite source words,9986 category probabilities, complete small JSON accepted
+laws, budget FAIL and merged aliases. No new head or speed result. V2 writes
+the mandatory interval control with retained random prefixes BEFORE GPU work;
+it also corrects a primary-reading scope in V1. Test evidence is in
+work/evidence/rational-v1, and mechanisms remain explicitly classical.
+
+Explicit directed GPU basic primitives also pass18734 independent Fraction/
+integer checks, including subnormals and infinite upper bounds. This verifies
+those tested cases only; no sampler timing, neural head or practical advantage.
+Full maintained198 tests PASS77.017s and make check PASS. Numerical implementation
+is opt-in; no Torch dependency was added to offline CI.

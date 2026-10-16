@@ -1,0 +1,13 @@
+{
+  "scope": "exhaustive rational correctness, not timing or novel mathematical principle",
+  "new_model_forwards": 0,
+  "categorical_tables": 2910,
+  "source_words_enumerated": 279068,
+  "exact_category_probabilities_checked": 9986,
+  "tests": 5,
+  "source_sha256": {
+    "reference.py": "b91cf598f386d05782849e1fdd2ea92d678fd26d6bfef29b9b3dfcc0805d9487",
+    "test_reference.py": "2f1ecfb429cf296c790e450a6e00424d78e0ecb7dc8e9a22244971ac2e93987a"
+  },
+  "goal_met": false
+}

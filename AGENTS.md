@@ -1188,3 +1188,11 @@ prometer marginais condicionadas desta operação. Controles intervalares lazy
 podem evitar correções CPU e são obrigatórios. Exatidão de pesos binary64 não
 é ideal-softmax, lei RNG nativa, qualidade ou benefício prático/publicação.
 Antes de código extenso, precisa de diferença útil concreta e controles fortes.
+
+A51 V1 referencia racional passa cinco oráculos:2910 categorias279068 palavras
+finitas9986 probabilidades; lei conjunta JSON/EOT/PAD/aliases/budget corretos.
+Primitivas opt-in PTX .rm/.rp e mul.hi passam18734 checks Fraction/inteiros,
+inclusive subnormais/overflow. Suíte198 PASS77.017s e make check PASS. Nenhum
+forward ou timing/benefício/originalidade novo. V2 exige controle intervalar
+com MESMO uniforme após ambiguidade e corrige escopo de leitura primária;
+não chamar estas construções clássicas de descoberta ou a meta de cumprida.

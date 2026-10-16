@@ -39,10 +39,22 @@ cost remain open. No new neural campaign is credited to M70.
   Lemire, EBUS, validated rejection and recursive interval samplers. Real
   Mosaic LLaDA2 default model-confidence consumer does not require marginals.
   No sufficiently original theorem or practical benefit is established.
-- [ ] T7401: Minimal independent rational oracles for finite ticket preimages,
+- [x] T7401: Minimal independent rational oracles for finite ticket preimages,
   full accepted original-word law, max-ratio audit, aliases/fixed IDs/EOT/PAD,
   malformed support and finite-budget FAIL. Re-evaluate against the stronger
   classical interval control BEFORE substantial GPU implementation/timings.
+  Five tests PASS0.277s;2910 categorical tables/279068 finite source words and
+  9986 exact category probabilities, complete small JSON laws and merged suffixes.
+  No neural forward/timing. V2 writes the strong retained-uniform interval control
+  and corrects the too-broad primary-reading scope. These are classical mechanisms;
+  own systems distinction/benefit and the user's goal remain open.
+- [x] T7402a: Opt-in explicit PTX .rm/.rp float32/64 add/mul/div/conversion and
+  uint64 multiply-high pass18734 independent Fraction/integer checks on3080Ti,
+  Torch2.13/CUDA13/Triton3.7.1. Includes1888 positive subnormal uppers2030
+  infinite uppers; infinite upper means REFUSE in a finite certificate, not
+  silently saturated probability. No timing/model work. Full198 tests PASS
+  77.017s; make check/Ruff PASS. Hardware tests do not verify all inputs/compiler
+  or the complete sampler. Evidence:51/work/evidence/gpu-primitives-v1.
 - [ ] T7402: Only if a concrete useful systems distinction survives, freeze
   complete-cost protocol/strong controls before implementation/campaign.
   Exactness alone, a tiny FP64 discrepancy or a reference implementation

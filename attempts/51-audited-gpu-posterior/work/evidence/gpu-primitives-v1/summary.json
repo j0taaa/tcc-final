@@ -1,0 +1,55 @@
+{
+  "commit": "96365ee637026969e85419e8e65ec4dfa2411a4f",
+  "cuda": "13.0",
+  "goal_met": false,
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "infinite_uppers": 2030,
+  "multiply_high_checks": 4096,
+  "new_model_forwards": 0,
+  "operations": [
+    {
+      "checks": 2088,
+      "dtype": "<class 'numpy.float32'>",
+      "op": "add"
+    },
+    {
+      "checks": 2088,
+      "dtype": "<class 'numpy.float32'>",
+      "op": "mul"
+    },
+    {
+      "checks": 2081,
+      "dtype": "<class 'numpy.float32'>",
+      "op": "div"
+    },
+    {
+      "checks": 2097,
+      "dtype": "<class 'numpy.float64'>",
+      "op": "add"
+    },
+    {
+      "checks": 2097,
+      "dtype": "<class 'numpy.float64'>",
+      "op": "mul"
+    },
+    {
+      "checks": 2090,
+      "dtype": "<class 'numpy.float64'>",
+      "op": "div"
+    },
+    {
+      "checks": 2097,
+      "dtype": "binary64_to_binary32"
+    }
+  ],
+  "positive_subnormal_upper_results": 1888,
+  "scope": "primitive enclosures/finite ticket arithmetic only, no timing",
+  "sources": {
+    "gpu_primitives.py": "6652f1509f8d3b6f75de8b4c725ca8c9f423baafcdff17201fc7b8bd56828c58",
+    "preflight_primitives.py": "223adfbc498826a749c6192b39b83cb1530ddf00aaa91db5ed906e62771d8193"
+  },
+  "status": "PASS",
+  "torch": "2.13.0+cu130",
+  "total_exact_checks": 18734,
+  "triton": "3.7.1"
+}
