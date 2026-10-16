@@ -331,6 +331,13 @@ cost remain open. No new neural campaign is credited to M70.
   passes8.882e-16. All raw words/statuses/costs preserved. Diagnostic44.049s
   is not competitive speed or total variance. See conditional-full-v-result-v17.md;
   useful benefit/novelty and the scientific goal remain open.
+- [ ] T7516: V18 conditional-variance necessity probe WRITTEN before code/data:
+  ALL16 known old paths/70 states,64iid+64prefix-stratified auxiliaries each
+  (8960), no new head/decoder path/update/labels. Same actor7x4x27 controls,
+  common pre-state semantic tail certificate, unbiased cross-half paired-mean
+  estimator with negatives preserved; stratified variance uses independent
+  batches. Zero-extra-cost20% development screen only, not population/full-cost/
+  RLOO confirmation. Small moment/certificate oracles first, then source freeze.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
