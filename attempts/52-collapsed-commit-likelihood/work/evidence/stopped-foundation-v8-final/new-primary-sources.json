@@ -1,0 +1,17 @@
+{
+  "adaptive-order": {
+    "url": "https://arxiv.org/pdf/2606.00295v1",
+    "sha256": "d45841cdf4f17742b5ed056eb34b7079549f981277a8ddcf35d5ad5c466235e7",
+    "bytes": 2666820
+  },
+  "planner-aware": {
+    "url": "https://arxiv.org/pdf/2509.23405v1",
+    "sha256": "349aac9bccf1ca4af1bb2568dc288a89b32d3eccf4a9828f3ebb9e981756d4a2",
+    "bytes": 1531277
+  },
+  "liu-2019": {
+    "url": "https://proceedings.mlr.press/v97/liu19c/liu19c.pdf",
+    "sha256": "473830d25be73d424866e1bb05e720777f55964b9caef569b440af3b9516e9e5",
+    "bytes": 468944
+  }
+}

@@ -171,6 +171,12 @@ cost remain open. No new neural campaign is credited to M70.
   Full241 PASS79.352s/make check/Ruff PASS. Initial/final producer bytes are
   separately preserved; actual runner/protocol/runtime freeze before heads.
   ZERO new V8 pretrained calls/updates so far; real resource capture next.
+  During the wait for an unrelated GPU study, additional ORIGINAL PAPL
+  Sections3.1--3.4/A.4.1 explicitly establish discarded-proposal and subset
+  transition marginalization as prior; do NOT claim that principle. Adaptive
+  Order Policies2.2--2.3/AppendixC adds supervised frozen-policy adaptation as
+  an obligatory future control. Exact scopes/hashes in primary-addendum-v8.md;
+  no change to the frozen resource protocol or claim of adequate originality.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
