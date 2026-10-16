@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "AFTER-data independent consistency only",
+  "transitions": 70,
+  "official_tokenizer_json_decimal_checks": 70,
+  "support_status_counts": {
+    "POSITIVE": 33,
+    "STRUCTURAL_ZERO_ACTION": 10,
+    "STRUCTURAL_ZERO_PRIOR": 27
+  },
+  "positive_posterior_range": [
+    2.7391292010592244e-08,
+    1.0
+  ],
+  "semantic_correct_proposals": 24,
+  "semantic_correct_proxy_missed": 0,
+  "maximum_numeric_error": 1.042568809062061e-14,
+  "new_model_forwards": 0,
+  "updates": 0,
+  "new_proxy_gradient_queries": 0,
+  "peak_process_rss_bytes": 1692696576
+}

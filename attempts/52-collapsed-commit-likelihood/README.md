@@ -366,3 +366,13 @@ cases; full259 PASS83.760s/make check/Ruff. Later underflow guards have final
 focused reruns. No new heads/samples/updates/labels. Frozen replay of ALL70 old
 V10 transitions is next, including zeros/refusals. It cannot demonstrate useful
 variance/cost, training or priority. See work/proxy-functionality-v12.md.
+
+V12 GPU startup refused before queries (70NOT_RUN), preserved separately.
+V13 CPU contract precedes adaptation: producer0381620 completes ALL70 original
+transitions PASS,33 positive/37 zero-proxy cases; independent error<=1.043e-14,
+whole-process RSS1,692,696,576B. Official tokenizer/Decimal checks all70 words,
+24 correct proposals/no misses in these observations. No new forward/sample/
+update/label, no competitive timing or variance/priority. See work/proxy-result-v13.md.
+V14's written strong-controls contract supplies semantic-proposal zero-mean
+controls to EVERY method and fixes a nine-parameter actor before variance code.
+Actual benefit/novelty and the user goal remain OPEN.

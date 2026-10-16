@@ -181,6 +181,15 @@ CPU passam. Full259 PASS83.760s/make check/Ruff; guards novos de underflow
 têm rerun focado posterior. Replay ALL70 transições VELHAS deve congelar
 runner/runtime/inputs antes de cálculos, sem novo head/sample/update/label.
 É funcionalidade, não variância/custo competitivo, novidade ou treino.
+V12 GPU foi recusada no startup por processo externo, antes de queries:70
+NOT_RUN preservados. V13 escreve variante CPU separada antes de adaptar;
+após0381620 TODOS70 estados reais VELHOS passam (33 positivos/37 zeros), erro
+máximo1.043e-14, RSS1,692,696,576B. Auditoria posterior70 tokenizer/Decimal
+confere24 propostas corretas/nenhuma perdida pelo proxy NESTAS amostras.
+Zero novo head/sample/update/label; não atribuir isolamento/tempo GPU ao CPU.
+V14 escreve controles semânticos brutos de média zero para TODOS métodos,
+nove parâmetros comuns e ajuste independente. Ainda sem vantagem útil,
+novidade suficiente, treino ou confirmação; meta permanece aberta.
 
 ## Objetivo e estado atual
 

@@ -248,7 +248,7 @@ cost remain open. No new neural campaign is credited to M70.
   proposal-control-result-v11.md. Only separately frozen functionality replay
   of ALL70 old transitions is next; no useful effect/novelty established.
 
-- [ ] T7511: V12 written ALL70-old-transition proxy functionality contract
+- [x] T7511: V12 written ALL70-old-transition proxy functionality contract
   and regular-subset proof BEFORE prototype. Zero new head/trajectory/update/
   labels; original IDs, fixed EOS, zero-support versus underflow retained.
   Only small independent regex/Decimal/rational/Torch checks first, then
@@ -263,11 +263,23 @@ cost remain open. No new neural campaign is credited to M70.
 
   GPU startup dc906e1 refused BEFORE ANY query:70 NOT_RUN, foreign PID monitor
   retained in a52_proxy_functionality_v12_initial. Do not relabel as a pass.
-- [ ] T7512: Separate V13 CPU correctness replay written BEFORE adaptation:
+- [x] T7512: Separate V13 CPU correctness replay written BEFORE adaptation:
   same ALL70 inputs/tolerances/proof, four CPU threads/no CUDA/no model, peak
   process RSS<=2GiB and original1200s/60s caps. V12 GPU refusal stays intact;
   CPU functionality cannot claim GPU isolation/competitive timing or useful
   variance. Freeze adapter/source/runtime/input hashes before old-head queries.
+  After0381620 CPU replay70/70 PASS:33 positive,10 zero action/27 zero prior,
+  all preserved. Max independent error1.043e-14, peak whole-process RSS
+  1,692,696,576B;70 official tokenizer/json/Decimal audit checks24 correct
+  proposals/no proxy miss on these. Zero new forward/sample/update/label.
+  See proxy-result-v13.md and a52_proxy_cpu_functionality_v13_initial. This
+  is computability only; shared-host diagnostic115.480s is not competitive time.
+- [ ] T7513: V14 strengthens the written comparison before variance code:
+  raw semantic-proposal full/anchor controls have zero mean and are available
+  to EVERY estimator, along with exact regular proxy/state/horizon/RLOO.
+  Same9-parameter actor chain rule for all, no chosen score units after data.
+  Independently fitted coefficients and complete costs remain required.
+  Define a separate necessity/complete-cost protocol before further sampling.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
