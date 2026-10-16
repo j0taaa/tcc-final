@@ -254,6 +254,12 @@ cost remain open. No new neural campaign is credited to M70.
   Only small independent regex/Decimal/rational/Torch checks first, then
   freeze exact replay source/runtime/input hashes. No useful variance/cost or
   training/priority follows from passing; all strong controls remain required.
+  Preflight after724118b passes1260 byte regex/Decimal cases,137 rational/
+  floating original-ID queries with35 structural zeros and12 independent
+  Torch CPU checks. Full259 PASS83.760s/make check/Ruff; later positive-factor
+  underflow guards pass final focused/CPU rerun. Producer copies/logs in
+  evidence/proxy-foundation-v12-before-replay. Freeze57 source hashes/runtime/
+  old-input manifests before ALL70 queries; no actual-head proxy replay yet.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

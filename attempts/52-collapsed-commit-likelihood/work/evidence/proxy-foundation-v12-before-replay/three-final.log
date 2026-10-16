@@ -1,0 +1,10 @@
+test_boolean_support_rejects_nonfinite_and_distinguishes_tiny_positive (attempts.52-collapsed-commit-likelihood.work.test_numeric_proxy.NumericProxyTests.test_boolean_support_rejects_nonfinite_and_distinguishes_tiny_positive) ... ok
+test_byte_language_subset_regex_decimal_aliases_and_rejected_spellings (attempts.52-collapsed-commit-likelihood.work.test_numeric_proxy.NumericProxyTests.test_byte_language_subset_regex_decimal_aliases_and_rejected_spellings) ... ok
+test_rational_projection_and_cpu_floating_with_fixed_eos_and_zero_support (attempts.52-collapsed-commit-likelihood.work.test_numeric_proxy.NumericProxyTests.test_rational_projection_and_cpu_floating_with_fixed_eos_and_zero_support) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.576s
+
+OK
+{"independent_proxy_byte_cases": 1260}
+{"proxy_rational_float_queries": 137, "structural_zeros": 35}

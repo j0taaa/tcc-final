@@ -356,3 +356,13 @@ derivatives pass. Initial DFA error/source/log retained independently. Full256
 PASS83.064s/make check/Ruff. Zero new head/update or measured useful benefit;
 see work/proposal-control-result-v11.md. A separate ALL-old-head replay freeze
 must precede functionality computations. Goal remains open.
+
+## V12 — Numeric proxy functionality, no new neural work
+
+Written724118b gives the positive-integer spelling SUBSET and exact same-head
+projected control before code. Preflight passes1260 regex/Decimal cases,137
+rational/float queries (35 structural zeros),12 independent CPU autodiff
+cases; full259 PASS83.760s/make check/Ruff. Later underflow guards have final
+focused reruns. No new heads/samples/updates/labels. Frozen replay of ALL70 old
+V10 transitions is next, including zeros/refusals. It cannot demonstrate useful
+variance/cost, training or priority. See work/proxy-functionality-v12.md.

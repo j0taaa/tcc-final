@@ -84,6 +84,13 @@ If a recorded proposal lies in D, J_D cannot be structurally zero. Check the
 proposal proxy with an independent byte regex AND Decimal; never condition
 subsequent model calls on it. Preserve all semantic-correct proxy-missed words.
 
+Before replay, the relative-error convention is fixed as
+abs(actual-reference)/max(1,abs(reference)); this avoids declaring roundoff in
+structurally-zero score coordinates a large relative error. Both this scaled
+relative error and the absolute error must be<=1e-7. Existing stricter base
+score comparisons remain unchanged. Positive native filtered factors must be
+checked BEFORE aggregating classes; factor underflow is a refusal, not zero.
+
 Caps: no pretrained loading/forward; one replay of70 states;1200s whole,
 60s per numeric operation;2GiB explicitly tracked sampler payload. Observer
 latches foreign GPU PID/query errors during the WHOLE replay, as in V10.

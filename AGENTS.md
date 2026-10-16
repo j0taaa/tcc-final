@@ -175,6 +175,12 @@ proxy zero,39 estados FAKE/168 caminhos. Projeção/zero mean/PSD/derivada real
 conferem; atalhos têm viés359/18080 e1/50. Draft falho do DFA preservado.
 Full256 PASS83.064s/make check/Ruff; zero head/update novo. É correção, não
 benefício útil/novidade. Replay funcional ALL70 heads velhos exige novo freeze.
+V12 escreve subconjunto regular de grafias de inteiro correto antes de código.
+1260 casos regex/Decimal,137 queries racionais/35 zeros e12 checks autodiff
+CPU passam. Full259 PASS83.760s/make check/Ruff; guards novos de underflow
+têm rerun focado posterior. Replay ALL70 transições VELHAS deve congelar
+runner/runtime/inputs antes de cálculos, sem novo head/sample/update/label.
+É funcionalidade, não variância/custo competitivo, novidade ou treino.
 
 ## Objetivo e estado atual
 

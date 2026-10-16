@@ -69,3 +69,7 @@ CaptureOccupancyTests = import_module(
 ProposalControlTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_proposal_control"
 ).ProposalControlTests
+
+NumericProxyTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_numeric_proxy"
+).NumericProxyTests
