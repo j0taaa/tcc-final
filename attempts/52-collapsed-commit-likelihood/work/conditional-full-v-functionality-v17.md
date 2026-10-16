@@ -93,3 +93,11 @@ for functionality. A resource failure does not trigger more questions/seeds or
 relaxed criteria. All560 attempts including NOT_RUN/refusals stay. Diagnostic
 time under shared host load is not competitive performance. Next after a pass
 would require a separate complete-cost/variance design, not automatic training.
+
+Before real auxiliary data, clarify unrestricted numeric verification: Decimal
+can refuse a legal lexeme with an enormous exponent. Such a word is NOT an
+invalid JSON. Preserve the existing exact string-number equality and add an
+independent significant-digit/exponent-string comparison for the known positive
+integer labels; use Decimal as a secondary check when representable. Record its
+unrepresentable count. Never clip numeric exponents or use this to change the
+sampler/grammar. This preserves, rather than restricts, the declared domain.
