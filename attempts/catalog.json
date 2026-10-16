@@ -4396,6 +4396,16 @@
             "attempts/52-collapsed-commit-likelihood/README.md",
             "attempts/52-collapsed-commit-likelihood/work"
           ]
+        },
+        {
+          "id": "v17",
+          "source_commit": "577a3e532cf4981731654468676d9d0d3480f13b",
+          "evidence_commit": "242c9c5cb452da07dff6507d49c11ca654892399",
+          "evidence_roots": [
+            "attempts/52-collapsed-commit-likelihood/README.md",
+            "attempts/52-collapsed-commit-likelihood/work",
+            "docs/artifacts/raw/a52_conditional_auxiliary_functionality_v17_initial"
+          ]
         }
       ]
     }
