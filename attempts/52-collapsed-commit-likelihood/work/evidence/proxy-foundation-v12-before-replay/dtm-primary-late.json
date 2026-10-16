@@ -1,0 +1,16 @@
+{
+  "url": "https://arxiv.org/html/2604.18739v1",
+  "sha256": "02f960c65b028628cd5276500994a609c1a21eb04774079717fb268d45d39639",
+  "bytes": 587303,
+  "read_scopes": [
+    "Section3.1 conditional tilting identities",
+    "Section3.2 equations15--17 and derivation",
+    "AppendixA.3/A.4 statements and proofs"
+  ],
+  "timing": "after V12 implementation freeze, before any old-head proxy query; not an initial-priority audit",
+  "not_claimed": [
+    "whole-paper or human review",
+    "their reported empirical results independently reproduced",
+    "generic control variates as novelty"
+  ]
+}

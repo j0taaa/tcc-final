@@ -261,6 +261,14 @@ cost remain open. No new neural campaign is credited to M70.
   evidence/proxy-foundation-v12-before-replay. Freeze57 source hashes/runtime/
   old-input manifests before ALL70 queries; no actual-head proxy replay yet.
 
+  GPU startup dc906e1 refused BEFORE ANY query:70 NOT_RUN, foreign PID monitor
+  retained in a52_proxy_functionality_v12_initial. Do not relabel as a pass.
+- [ ] T7512: Separate V13 CPU correctness replay written BEFORE adaptation:
+  same ALL70 inputs/tolerances/proof, four CPU threads/no CUDA/no model, peak
+  process RSS<=2GiB and original1200s/60s caps. V12 GPU refusal stays intact;
+  CPU functionality cannot claim GPU isolation/competitive timing or useful
+  variance. Freeze adapter/source/runtime/input hashes before old-head queries.
+
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
 - [x] T7400: Write independent A51 README/eight criteria and executed finite-ticket
