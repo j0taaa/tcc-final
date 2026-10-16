@@ -25,6 +25,10 @@ confidence threshold/fallback becomes unary evidence after the retained IDs
 are known. Classical counting/conditional-score/Rao–Blackwell principles remain
 explicit; local comparison stability is necessary. No model or performance
 campaign, confirmed originality or achieved user goal follows from this note.
+Its V4 archive later preserves all9 real resource heads/32 valid JSON draws,
+8/8 complete cases and zero refusals/errors, WITHOUT a useful-effect claim.
+V5 writes stronger cheap-anchor controls and a two-stage real-return necessity
+screen before code/heads; originality and the user's goal remain open.
 
 | Pasta | Direção |
 | --- | --- |

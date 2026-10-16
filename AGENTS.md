@@ -67,6 +67,10 @@ máximo641 forwards novos, gabaritos após captura, controles fitted/zero/RLOO;
 passar20% de variância ainda não é custo completo/treino/publicação. Só
 oráculos mínimos antes de congelar runner. PUMBA/x-Prediction já são
 alternativas de treino/planejamento; novidade/benefício A52 seguem abertos.
+Preflight V5 depois de4b2fb1f passa full229 testes74.834s/make check/Ruff,
+incluindo controle reverso/compacto, IDs fixos/números enormes e lei RLOO de
+grupo. Dois forwards ALEATÓRIOS BF16 validam head por índices. Runner/analyzer
+congelam antes de novo head; ainda sem medições de variância/treino V5.
 
 ## Objetivo e estado atual
 

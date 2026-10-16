@@ -1,0 +1,1 @@
+{"status": "PASS", "max_error": 0.0, "toy_model_forwards": 2, "pretrained_forwards": 0, "dtype": "torch.bfloat16"}

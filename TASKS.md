@@ -115,6 +115,10 @@ cost remain open. No new neural campaign is credited to M70.
   only after runner/source/runtime freeze, at most641 pretrained calls on ALL8
   known states,16pilot+64eval each, golds after capture. Strong fitted/zero/RLOO
   controls/negative decision are fixed. No training/timing/novelty triggered.
+  After4b2fb1f, compact/reverse, clamped-ID/numeric and RLOO group oracles
+  pass; full229 PASS74.834s, make check/Ruff PASS. Two RANDOM BF16 head calls
+  verify indexed cropping literally. V5 actual runner/analyzer/runtime/protocol
+  freeze before its first pretrained head; V4's nine stay separately counted.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

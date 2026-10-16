@@ -191,3 +191,10 @@ Labels only after capture; strong scalar/zero/RLOO controls and a necessary
 x-Prediction Flow are additional primary alternatives within recorded scopes.
 No V5 implementation, new head, variance win, sufficient originality or
 fulfilled goal is claimed. Minimal reverse/compact oracles are next.
+
+V5 implementation prerequisites now pass229 maintained tests74.834s, make
+check/Ruff, including compact/reverse rational means, clamped-ID continuation,
+unbounded numeric lexemes and exact RLOO group laws. Two RANDOM BF16 forwards
+verify indexed cropping literally; V5 pretrained counter is stillZERO.
+See work/two-stage-preflight-v5.md and consumer-protocol-v5.json. The actual
+known-development capture is next; no variance/timing/learning benefit yet.

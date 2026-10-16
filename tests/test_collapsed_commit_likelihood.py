@@ -25,3 +25,15 @@ FloatingCPUConsumerTests = import_module(
 ConsumerControlTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_consumer_controls"
 ).ConsumerControlTests
+
+CompactPlannerTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_compact_planner"
+).CompactPlannerTests
+
+TwoStageTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_two_stage"
+).TwoStageTests
+
+VarianceGroupTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_variance_groups"
+).VarianceGroupTests

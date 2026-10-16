@@ -1,0 +1,35 @@
+test_complete_laws_three_adjoints_and_both_collapses (attempts.52-collapsed-commit-likelihood.work.test_anchor.AnchorActionTests.test_complete_laws_three_adjoints_and_both_collapses) ... ok
+test_confidence_chain_and_two_step_observed_paths (attempts.52-collapsed-commit-likelihood.work.test_anchor.AnchorActionTests.test_confidence_chain_and_two_step_observed_paths) ... ok
+test_fixed_anchor_and_position_only_analytic_controls (attempts.52-collapsed-commit-likelihood.work.test_anchor.AnchorActionTests.test_fixed_anchor_and_position_only_analytic_controls) ... ok
+test_one_active_alias_and_replay_sampler (attempts.52-collapsed-commit-likelihood.work.test_anchor.AnchorActionTests.test_one_active_alias_and_replay_sampler) ... ok
+test_complete_laws_scores_and_covariance (attempts.52-collapsed-commit-likelihood.work.test_reference.CollapsedActionTests.test_complete_laws_scores_and_covariance) ... ok
+test_connected_family_even_best_full_baseline (attempts.52-collapsed-commit-likelihood.work.test_reference.CollapsedActionTests.test_connected_family_even_best_full_baseline) ... ok
+test_impossible_actions_zero_target_and_bad_traces (attempts.52-collapsed-commit-likelihood.work.test_reference.CollapsedActionTests.test_impossible_actions_zero_target_and_bad_traces) ... ok
+test_moving_confidence_boundary_is_a_real_jump (attempts.52-collapsed-commit-likelihood.work.test_reference.CollapsedActionTests.test_moving_confidence_boundary_is_a_real_jump) ... ok
+test_original_aliases_fixed_ids_and_json_termination (attempts.52-collapsed-commit-likelihood.work.test_reference.CollapsedActionTests.test_original_aliases_fixed_ids_and_json_termination) ... ok
+test_retained_token_only_score_misses_a_real_gradient (attempts.52-collapsed-commit-likelihood.work.test_reference.CollapsedActionTests.test_retained_token_only_score_misses_a_real_gradient) ... ok
+test_compact_original_id_scores_against_fraction (attempts.52-collapsed-commit-likelihood.work.test_compact_planner.CompactPlannerTests.test_compact_original_id_scores_against_fraction) ... ok
+test_reverse_and_known_anchor_against_complete_independent_law (attempts.52-collapsed-commit-likelihood.work.test_compact_planner.CompactPlannerTests.test_reverse_and_known_anchor_against_complete_independent_law) ... ok
+test_full_and_known_anchor_scores_against_complete_law (attempts.52-collapsed-commit-likelihood.work.test_consumer_controls.ConsumerControlTests.test_full_and_known_anchor_scores_against_complete_law) ... ok
+test_original_id_float_scores_against_rational_law (attempts.52-collapsed-commit-likelihood.work.test_floating_cpu.FloatingCPUConsumerTests.test_original_id_float_scores_against_rational_law) ... ok
+test_all_small_original_words_and_global_class_reduction (attempts.52-collapsed-commit-likelihood.work.test_numeric_json.NumericConsumerTests.test_all_small_original_words_and_global_class_reduction) ... ok
+test_json_number_syntax_independent_parser_and_specials (attempts.52-collapsed-commit-likelihood.work.test_numeric_json.NumericConsumerTests.test_json_number_syntax_independent_parser_and_specials) ... ok
+test_adaptive_markov_path_collapse_with_fresh_fake_heads (attempts.52-collapsed-commit-likelihood.work.test_smooth.SmoothActionTests.test_adaptive_markov_path_collapse_with_fresh_fake_heads) ... ok
+test_complete_joint_action_and_both_scores (attempts.52-collapsed-commit-likelihood.work.test_smooth.SmoothActionTests.test_complete_joint_action_and_both_scores) ... ok
+test_confidence_chain_rule_without_detaching_head (attempts.52-collapsed-commit-likelihood.work.test_smooth.SmoothActionTests.test_confidence_chain_rule_without_detaching_head) ... ok
+test_position_only_reduction_and_wrong_bit_retry (attempts.52-collapsed-commit-likelihood.work.test_smooth.SmoothActionTests.test_position_only_reduction_and_wrong_bit_retry) ... ok
+test_tiny_positive_exit_mass_and_fixed_aliases (attempts.52-collapsed-commit-likelihood.work.test_smooth.SmoothActionTests.test_tiny_positive_exit_mass_and_fixed_aliases) ... ok
+test_fixed_ids_tail_and_aliases_against_original_word_enumeration (attempts.52-collapsed-commit-likelihood.work.test_two_stage.TwoStageTests.test_fixed_ids_tail_and_aliases_against_original_word_enumeration) ... ok
+test_numeric_lexemes_without_float_or_expansion_limits (attempts.52-collapsed-commit-likelihood.work.test_two_stage.TwoStageTests.test_numeric_lexemes_without_float_or_expansion_limits) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 1.625s
+
+OK
+{"anchor_joint_laws": 8, "observed_actions": 256, "score_coordinates": 4864}
+{"anchor_fake_states": 5, "anchor_observed_paths": 12, "anchor_full_paths": 24}
+{"complete_laws": 108, "actions": 1372, "coordinate_scores": 15092}
+{"connected_sizes": [3, 4, 5, 6], "optimized_full_baseline": true}
+{"numeric_original_words": 22608, "classes": 10, "original_ids": 12}
+{"fake_head_states": 31, "observed_paths": 52, "full_auxiliary_paths": 88}
+{"smooth_joint_laws": 8, "observed_actions": 256, "score_coordinates": 4096}
