@@ -297,6 +297,13 @@ cost remain open. No new neural campaign is credited to M70.
   retained. Posthoc scalar audit recomputes all configurations. See
   old-path-result-v15.md. No large campaign justified by collapse/proxy alone;
   a distinct semantic-baseline-preserving refinement needs proof first.
+- [ ] T7514: V16 semantic-baseline-preserving conditional auxiliary reuse
+  WRITTEN before code. Unary posterior q_B/(H_T Q_B), retained-only anchor
+  posterior, original draw reusable as replica1; standard conditional Monte
+  Carlo covariance identity. Classical correlated strata/partial enumeration,
+  exact semantic projection and strong cheap controls are mandatory. Only
+  minimal rational law/moment oracle next; no new real auxiliary draws/head/
+  update/timing or usefulness/priority claim. V15 remains unfavorable/exploratory.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
