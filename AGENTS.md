@@ -78,6 +78,13 @@ razão/ganho de variância é creditada. Aplicação encerrada NEGATIVA; não
 acionar custo/treino/novos seeds nem relaxar gate. Todos heads/scores/labels
 preservados. PAD no sufixo versus parada/marginalização é hipótese diagnóstica
 separada a escrever ANTES de código; sem novidade assumida ou relabeling.
+V6 escreve essa auditoria antes de código: parada no primeiro EOT integra
+todo sufixo, lei distinta do alvo FULL-WORD anterior JSON EOT PAD*. Fonte
+nativa sample_trim foi lida pinada; não se afirma histórico exato de treino.
+Mistura/TV por comprimento/tilt monotônico são clássicos. Só oráculos pequenos
+e depois TODOS8 heads VELHOS sem forward/gabarito/update novo. MASK pode ser
+ID latente após EOT, exigindo bits ativos explícitos em consumidor futuro.
+Não chamar a correção de semântica de nova teoria ou conquista científica.
 
 ## Objetivo e estado atual
 

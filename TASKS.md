@@ -128,6 +128,13 @@ cost remain open. No new neural campaign is credited to M70.
   application is closed negative; general theory not refuted. Inspecting
   padding/stopping semantics is a separate written-first diagnostic, never
   relabeling this gate. Scientific novelty/use/goal remain OPEN.
+- [ ] T7505: V6 stopping-law diagnostic WRITTEN before code: separate old
+  JSON EOT PAD* full-word target and stopped-prefix law integrating ALL suffix
+  IDs. Classical length mixture/TV identity/stochastic ordering, not novelty.
+  Minimal rational JSON/original-ID oracles, then freeze an ALL8 OLD-head
+  mass/length audit, ZERO new forwards/labels/updates. A future iterative
+  consumer needs explicit active bits (MASK may be a latent suffix ID) and
+  its own written protocol. Do not reinterpret/reopen V5's negative gate.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

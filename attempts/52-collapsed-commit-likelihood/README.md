@@ -208,3 +208,14 @@ All heads, scores, labels and costs remain preserved. See work/two-stage-result-
 Padding/termination is only a new diagnostic hypothesis, not a changed gate
 or a fulfilled scientific goal. No new implementation follows without its
 separate written foundation and eight criteria.
+
+## V6 — Separate stopping-law diagnostic written before code
+
+work/stopping-contract-v6.md reassesses all eight criteria and distinguishes
+the legitimate old full-word JSON EOT PAD* law from observing a response only
+through first EOT, as the native upstream trimming helper does. Elementary
+mixture/tilting arguments give a length-TV identity and stochastic length bias;
+absorbing-state marginalization is classical and no novelty is claimed.
+Only small independent oracles and then a source-frozen ALL8 OLD-head audit
+are justified, without new forwards/labels/samples/updates. V5 remains closed
+negative. No stopped iterative decoder or semantic gain is established.
