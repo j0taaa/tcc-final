@@ -40,11 +40,15 @@ cost remain open. No new neural campaign is credited to M70.
   A52's eight criteria, unary-preimage proof, local regularity condition,
   covariance identity and connected checksum comparison BEFORE code.
   No new head/update/timing or sufficiently original contribution is claimed.
-- [ ] T7501: Minimal independent rational oracles: complete observed action
+- [x] T7501: Minimal independent rational oracles: complete observed action
   law against enumeration, threshold equality/fallback/ties, original aliases,
   fixed IDs/EOT/PAD, conditional token-count score, impossible/zero mass and
   connected-family covariance INCLUDING best scalar-baseline full control.
   Passing is correctness, not priority or practical usefulness.
+  Six oracles PASS0.980s;108 complete laws1372 actions15092 coordinate scores,
+  2x2 covariance identities, four connected sizes, and a retained-only gradient
+  counterexample(-21/100 versus0; naive masses sum17/10). Full211 tests
+  PASS72.391s; make check/focused Ruff PASS. No new head/update/timing.
 - [ ] T7502: Reassess originality and an actual training/audit consumer versus
   classical compiled evidence inference, enumeration and optimized full-score
   baselines. Only after a plausible real benefit, freeze external-state

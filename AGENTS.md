@@ -8,8 +8,11 @@ PL, e os contratos não são confundidos. Gradiente exige comparação localment
 estável em TODO suporte; não declarar política globalmente suave nem suporte
 PPO automaticamente compatível. Família checksum conectada separa apenas o
 score completo, inclusive seu melhor baseline escalar; enumeração/média
-condicional clássica continuam controles. Nenhum código/head/treino/timing,
-novidade suficiente ou benefício real A52 foi confirmado nesta fundação.
+condicional clássica continuam controles. Após freeze238a356, seis oráculos
+racionais passam108 leis1372 ações15092 componentes de score;211 testes
+PASS72.391s e make check/Ruff PASS. Há contraexemplo ao score só dos retidos
+(-21/100 real versus0), mas o score COMPLETO continua correto. Nenhum novo
+head/treino/timing, novidade suficiente ou benefício real A52 foi confirmado.
 
 ## Objetivo e estado atual
 

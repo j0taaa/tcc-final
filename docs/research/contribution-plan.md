@@ -19,6 +19,13 @@ CoDD/Di4C reject generic correlated-head/distillation novelty. No implementation
 new head, update, timing, sufficient originality or achieved goal is asserted.
 Only the independent rational oracle is justified before further work.
 
+The reference written after238a356 now passes six rational tests:108 complete
+laws/1372 actions/15092 coordinate scores, covariance identities, four connected
+sizes with optimized full-score baselines and explicit selection/regularity
+counterexamples. Full211 tests PASS72.391s and make check/focused Ruff PASS.
+No new head, update or timing; ordinary conditional evidence supplies the same
+arithmetic, so originality and real useful training benefit remain open.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

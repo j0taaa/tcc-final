@@ -64,3 +64,21 @@ are new. No practical advantage or sufficient originality is established.
 Primary reading scope/hashes and previously rejected naive training directions:
 [work/primary-audit-v1.md](work/primary-audit-v1.md). The frozen maintained
 decoder, old attempts and article are unchanged.
+
+## First independent reference, after the written freeze
+
+Proof/contract producer238a356 precedes reference code. Six rational oracles
+PASS0.980s:108 complete laws,1372 observed actions,15092 coordinate scores,
+full2x2 covariance identities, original aliases/fixed IDs/JSON EOT PAD*,
+impossible actions and four connected checksum sizes including the optimized
+full-score baseline. A separate exact counterexample has true gradient-21/100
+where retained-token-only scoring gives zero; its purported action masses sum
+to17/10. The full-proposal estimator remains CORRECT, just potentially noisier.
+
+The moving-boundary counterexample passes too: no global differentiability
+claim is rescued by correct finite probabilities. Full maintained suite211
+tests PASS72.391s; make check and focused Ruff PASS. Evidence is in
+work/evidence/rational-v1. No new neural head, parameter update or competitive
+timing. This is a minimal law oracle, not an implemented training decoder or a
+new protagonist. Classical evidence inference supplies the same reduction;
+specific novelty and a useful complete-cost consequence remain unresolved.

@@ -1,0 +1,30 @@
+{
+  "proof_contract_commit": "238a356",
+  "tests": 6,
+  "focused_seconds": 0.98,
+  "complete_laws": 108,
+  "actions": 1372,
+  "coordinate_scores": 15092,
+  "connected_sizes": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "full_suite": {
+    "tests": 211,
+    "seconds": 72.391,
+    "status": "PASS"
+  },
+  "make_check": "PASS",
+  "new_model_forwards": 0,
+  "parameter_updates": 0,
+  "competitive_timing": false,
+  "goal_achieved": false,
+  "source_sha256": {
+    "reference.py": "0c49d3028f98a4511c9d057d6c50e9de4b228f0c73ced4cd040c367a8a9e658b",
+    "test_reference.py": "0bf0eeb67c37f3bc8c394ece65ea99cf44239da1a6c58fe330bf4cdae6e5d0cd",
+    "theory-v1.md": "5cbaba11c449eedb9e4f039f79968fb1da1127b55d18a8e8419c0578c62d0085",
+    "primary-audit-v1.md": "09e86800898600e6c0e253cba11856e95aa2bf301b2b942de462ce6449998b91"
+  }
+}
