@@ -1,0 +1,12 @@
+test_adaptive_fake_heads_preserve_fixed_ids_and_path_score_mean (attempts.52-collapsed-commit-likelihood.work.test_prefix_anchor.PrefixAnchorTests.test_adaptive_fake_heads_preserve_fixed_ids_and_path_score_mean) ... ok
+test_cheap_class_length_combination_means_and_reward_trace (attempts.52-collapsed-commit-likelihood.work.test_prefix_anchor.PrefixAnchorTests.test_cheap_class_length_combination_means_and_reward_trace) ... ok
+test_complete_laws_occupancy_and_all_score_coordinates (attempts.52-collapsed-commit-likelihood.work.test_prefix_anchor.PrefixAnchorTests.test_complete_laws_occupancy_and_all_score_coordinates) ... ok
+test_exact_dual_original_head_chain_and_latent_length_normalizer (attempts.52-collapsed-commit-likelihood.work.test_prefix_anchor.PrefixAnchorTests.test_exact_dual_original_head_chain_and_latent_length_normalizer) ... ok
+test_fixed_stop_reduces_to_prior_policy_and_domain_refusals (attempts.52-collapsed-commit-likelihood.work.test_prefix_anchor.PrefixAnchorTests.test_fixed_stop_reduces_to_prior_policy_and_domain_refusals) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 5.089s
+
+OK
+{"prefix_fake_states": 35, "neural_forwards": 0, "full_path_second": "306677314897280072797/38485648917015300000", "collapsed_path_second": "117978926098492389432115871/18870052463097439804200000"}
+{"prefix_joint_laws": 5, "prefix_triples": 2701, "prefix_actions": 484, "prefix_coordinate_scores": 31790}

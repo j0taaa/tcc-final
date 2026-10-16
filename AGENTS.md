@@ -102,6 +102,12 @@ Inferência/médias condicionais são clássicas. Controles baratos integram A,
 T, IDs dentro de classes e combinações; não vencer só full triple. Somente
 oráculo racional mínimo, sem novos heads/labels/updates/timings. Benefício
 próprio/novidade e meta seguem abertos; V5 não é reaberta.
+V7 após1ecf413/e686287 tem cinco oráculos PASS5.089s:5 leis2701 triplas484
+ações31790 coordenadas, duals exatos de cabeça/gates/normalizador, redução
+ao V3 com T fixo e35 estados FAKE. O objeto de prova tem traço alpha/âncora
+estritamente menor inclusive contra controle combinado, não benchmark neural.
+Full236 PASS84.581s/make check/Ruff PASS. Nenhum head/update/sampler nativo
+ou ganho útil/novidade confirmados. Só novo consumidor escrito antes de código.
 
 ## Objetivo e estado atual
 

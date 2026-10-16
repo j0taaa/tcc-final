@@ -1,0 +1,15 @@
+{
+  "written_policy": "1ecf4131956b1e48b98269fb2a6f918d2e3c4bf3",
+  "head_chain_addendum": "prefix-head-chain-v7.md",
+  "new_model_forwards": 0,
+  "source_sha256": {
+    "prefix_anchor.py": "d6b4ad7672381d07a99b7151ff616153f06196d827ad2cd8ccc9ed88a0320ab9",
+    "test_prefix_anchor.py": "3d563d7bcea9a352131b8b01fae9f7a7e45004d6f57a0672b22ace2edb6d6f6a"
+  },
+  "scope": "small independent correctness/proof-object oracles, no neural/training/practical/novelty win",
+  "files": {
+    "check.log": "5ff5c125af5bd2513567196f1518b2327b7b0835c3a9b8b0a6ea7b31ae87a5a7",
+    "focused-tests.log": "2ec65c7a749c013584096025fd4ffe7e78dbf8d74f38280031a28bb24f82013e",
+    "full-tests.log": "4fb062a4fbb9691dd91d1a3cee3edca25ae862570901cf4c38b69b0998566b7c"
+  }
+}

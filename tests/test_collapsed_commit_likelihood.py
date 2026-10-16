@@ -41,3 +41,7 @@ VarianceGroupTests = import_module(
 StoppingTests = import_module(
     "attempts.52-collapsed-commit-likelihood.work.test_stopping"
 ).StoppingTests
+
+PrefixAnchorTests = import_module(
+    "attempts.52-collapsed-commit-likelihood.work.test_prefix_anchor"
+).PrefixAnchorTests

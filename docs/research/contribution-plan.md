@@ -81,6 +81,15 @@ are law/length effects, not evidence of semantic cause or useful learning.
 A new stopped-prefix consumer requires its own written eligibility, original-ID
 preservation and score contract; classical stopping itself is not novelty.
 
+V7 writes prefix-aware eligibility and its terminal normalizer before code,
+with cheap anchor/length/class/combined controls. Five rational oracles after
+1ecf413/e686287 verify5 laws2701 triples484 actions31790 coordinates and
+exact dual original-softmax occupancy chains. Thirty-five FAKE states preserve
+IDs/adaptive path means. Strict alpha/anchor trace reduction versus the
+combined control occurs ONLY in the generic proof object, not a neural test.
+Full236 PASS84.581s/make check/Ruff PASS. Real stopped consumer, useful
+complete-cost effect, sufficient originality and the scientific goal remain open.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

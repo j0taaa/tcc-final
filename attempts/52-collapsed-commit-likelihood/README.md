@@ -245,3 +245,12 @@ training or a revival of V5. Own originality/use and the goal remain OPEN.
 work/prefix-head-chain-v7.md writes the additional original-softmax row-sum
 term needed when prior/posterior prefix occupancies differ, before code.
 Independent rational dual-number checks must include it; no detached shortcut.
+
+After1ecf413/e686287, five V7 oracles PASS5.089s: five joint laws2701 triples,
+484 actions31790 score coordinates; variable occupancy, exact dual head/gate/
+anchor chain, old-policy fixed-stop equality and stronger partial controls.
+The proof object has strict alpha/anchor trace reduction even versus the
+combined control, with no real-head/gate-table/application claim. Thirty-five
+FAKE-head states preserve IDs/path means. Full236 PASS84.581s, make check/Ruff
+PASS. See work/prefix-result-v7.md. No new head, native sampler/update or useful
+novelty is established; a written stopped-consumer resource design is next.
