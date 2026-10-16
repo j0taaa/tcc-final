@@ -22,6 +22,15 @@ no lexer surrogate. A implementação posterior passa8284 checks de linguagem,
 em `work/evidence/consumer-v3-termination-v1`. O benefício operacional continua
 pendente. Não atribuir a nova evidência ao piloto V2 nem ampliar aquele gate.
 
+Screen de recursos congelado em4c80a59 concluiu45/45:42 massas positivas e3
+rasas zero,190 configurações nativas completas/corretas,20 guards estimados,
+0 erros/warnings e30 checks contra massas completas exatas. Gate de
+viabilidade14/15; não é vantagem temporal nem novo corpus/forward. Relatório:
+`work/evidence/consumer-v3-resource-v1/report.md`. V4 escreve ANTES de código
+o controle CPU simbólico competente e cache de compilação por canvas compatível:
+`work/consumer-v4-cache-proof.md`. Devem entrar em todos os métodos antes de
+uma alegação de custo. Objetivo científico contínuo ainda aberto.
+
 **Vantagem de certificação demonstrada por escrito e ganho de consulta
 confirmado em3/15 estados independentes, contra seis controles.** Todos30
 ciclos MDLM são funcionais; novidade específica/publicação e superioridade

@@ -1,0 +1,44 @@
+{
+  "all_rows_present": true,
+  "diagnostic_overlap": "Isolated Torch2.13 venv creation/pip resolution/download overlapped the final part; no positive timing conclusion. Resource/correctness gate is independent of timing.",
+  "exact_full_mass_tail_checks": 30,
+  "expected_rows": 45,
+  "max_observed_absolute_confidence_error": 0.0003341018139043639,
+  "max_observed_fp64_error": 1.0436096431476471e-14,
+  "native_completed_correct": 190,
+  "native_statuses": {
+    "allocation_guard": 20,
+    "complete": 190
+  },
+  "new_model_forwards": 0,
+  "plausible_states": [
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8",
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4",
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8"
+  ],
+  "record_statuses": {
+    "complete": 42,
+    "zero_true_mass": 3
+  },
+  "resource_plausibility_gate": true,
+  "rows": 45,
+  "scope": "Known-data resource/compatibility screen, not a latency or independent efficacy gate",
+  "source_data_sha256": {
+    "decision.json": "27900b935c753ecc6d711ee2b10ed9572a25dd05aa6055ff9b99efd567dbb0e6",
+    "metadata.json": "1eef053f6efed6804ec93ebbb9d3262a2e4268657fe047e16370d2b90b39cc00",
+    "rows.jsonl": "cf8d4a27c280f673e408b2ff8bb45d30ba8812ebd806c52ce74f652da182ea38"
+  },
+  "timing_victory_claim": false,
+  "user_scientific_goal_met": false
+}

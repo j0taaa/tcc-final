@@ -51,7 +51,7 @@ cost remain open. No new neural campaign is credited to M70.
   from upstream's full Torch2.13 serving environment. Two failed all-fixed
   fixture drafts are preserved independently. Two offline regressions PASS0.016s.
   Sources/data:24/work/consumer_v3 and evidence/consumer-v3-preflight-v1.
-- [ ] T7202: Implement the separately WRITTEN variable EOT/PAD proof, validate
+- [x] T7202: Implement the separately WRITTEN variable EOT/PAD proof, validate
   true bounded mass versus independent word enumeration; never use surrogate
   shallow mass in the conditioning denominator. All original special IDs and
   real termination probabilities count. First resource screen uses known old
@@ -65,7 +65,16 @@ cost remain open. No new neural campaign is credited to M70.
   Before measuring, symbolic classes now precede minimization so the native
   control avoids raw-V expansion. The same8284/28/3720/1200 checks pass in
   consumer-v3-symbolic-termination-v1. Full suite185 PASS73.863s, check/Ruff
-  PASS; full-V45-row resource protocol and driver are written but unexecuted.
+  PASS. Frozen source4c80a59 completesALL45 full-V resource rows:42 nonzero
+  and3 zero shallow masses;190 native configurations complete/correct,20
+  conservative allocation guards,0 errors/warnings. Thirty bounds checked
+  against exact FULL terminated masses. Resource gate14/15, not speed or new
+  heads. The tail of this diagnostic screen overlapped isolated Torch2.13
+  dependency setup; no timing finding is made. Data/report:consumer-v3-resource-v1.
+  Before performance work, V4's written cache proof requires a symbolic CPU
+  control without Hopcroft/V expansion, fresh numeric caches per changed head,
+  and compatible-canvas reweighting. Those optimizations are classical and
+  not evidence of new novelty. Implementation/full-cost protocol still pending.
 - [ ] T7203: Only if the resource/cost screen is plausible, freeze a new actual
   consumer protocol and independently selected external inputs before heads.
   Pay compilation, cache/reweighting, ALL forwards, exact certificate, native

@@ -1,0 +1,35 @@
+{
+  "commit": "4c80a59ac3c054cd220cb41fd85fd21958c95914",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "input_metadata_sha256": "07fffd2e41b2d1ad91dd8aa7cd8cd9814b5ae7de7347bf52cc9941d90e423c3a",
+  "mosaic": {
+    "commit": "36945e4b3c64913e23962e0924a8b40a84c58807",
+    "sha256": {
+      "mosaic/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mosaic/sampling/__init__.py": "6dcc9b73c83a9ba5fefcac46902732373050f9d2226def330ef447cf06d7c304",
+      "mosaic/sampling/automaton.py": "27439f67c5e2df475ead22c7405645e4f576237f7b98a6170c4cd4023e594e8a",
+      "mosaic/sampling/layers.py": "bc805f379c4f701a279066d0f3cb7bf2499ad59dbe77671e0e0af46927a394db",
+      "mosaic/sampling/parallel.py": "4793b6ea344822d9c37279d9e8b73d65edfc8d49e936d6625f040391ef5f344f",
+      "mosaic/sampling/sequential.py": "fc0940b87b7f5a56dc524fa1225be901c77a561982c9c0347dd8e7c254822633"
+    }
+  },
+  "protocol_sha256": "5a8307807217825e200569ebd47c605bc3cbdb8c4159d81d538c172ed51e8394",
+  "scope": "Known-data resource/compatibility screen, not a latency or independent efficacy gate",
+  "source_sha256": {
+    "__init__.py": "098b8023c62cc651bc899dc87de0491c0f9694631c22d971d5867cc061aae9f8",
+    "mosaic_control.py": "1df246c47789a0237319a297bd5955dd5ab5fa30ae3924d933013cc2ce1032b8",
+    "preflight.py": "6e5855b8483b179d7c81bdfd7eec47fe509b407b8d8deb7db1c9f1c7d0d4c9b3",
+    "preflight_termination.py": "5375dbcdeed62a0b644e70be5769e20a62e685e0bfa97c981f79da1ff4d0a66e",
+    "resource_screen.py": "cb013daa74bcb0459f2edb3ff5593cdbbf9e639b04b4e99d2ef670d9e9297f87",
+    "termination.py": "5b9a96c05664264179c92dd12683f3d0b93302b81c193bf34b61f425f77ce89c",
+    "test_graph.py": "6abc855411ec459d5b8b7ecaeb5dbfff33421ad9735f1cb603b2fcfa8495fc0d",
+    "test_termination.py": "52a74fceb087cb3867c55ec4f57264eee3d2f0f5eecc5f48371feecaa2f4c7a1"
+  },
+  "static_setup_diagnostic": {
+    "cpu": 0.818068712,
+    "wall": 0.8183663340169005
+  },
+  "torch": "2.8.0+cu128",
+  "vocabulary_sha256": "0b4486e9138096810acb3183316684bf7c1dbe896dfdea7c4067e3994de9c7b6"
+}

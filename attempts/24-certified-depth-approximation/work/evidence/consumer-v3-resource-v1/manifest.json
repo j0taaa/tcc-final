@@ -1,0 +1,15 @@
+{
+  "arrays_scope": "same old capture hashes, no new arrays or neural capture",
+  "command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv-live/bin/python -m attempts.24-certified-depth-approximation.work.consumer_v3.resource_screen --input .cache/a24-independent-cuda-v1 --source .cache/mosaic-36945e4b3c64 --output .cache/a24-consumer-v3-resource-v1",
+  "files": {
+    "audit.json": "1e6a453540083b84cd74df967f31a0b452b7ca222204c393fef11218959c6eb3",
+    "decision.json": "27900b935c753ecc6d711ee2b10ed9572a25dd05aa6055ff9b99efd567dbb0e6",
+    "metadata.json": "1eef053f6efed6804ec93ebbb9d3262a2e4268657fe047e16370d2b90b39cc00",
+    "report.md": "0370d022dd915e30cbec283c239ac7a089a93d755611897bccef365ff239a4ab",
+    "rows.jsonl": "cf8d4a27c280f673e408b2ff8bb45d30ba8812ebd806c52ce74f652da182ea38",
+    "run.log": "74abba61d8b7ce9a589b15b1d393a7047cb402406faaf77d5fd4821a1416232d"
+  },
+  "producer_commit": "4c80a59ac3c054cd220cb41fd85fd21958c95914",
+  "raw_arrays_remain_local": true,
+  "scope": "ALL45 known-data terminated resource rows; no fresh forwards or timing victory"
+}

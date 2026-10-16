@@ -1,0 +1,26 @@
+{
+  "all_rows_present": true,
+  "expected_rows": 45,
+  "new_model_forwards": 0,
+  "plausible_states": [
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-16",
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-4",
+    "149c0c8cf1c18b69f822716dd72c1c00a0f95b2249906954ebfd351fbe19b6b1-8",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-16",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-4",
+    "8d5fc99123771fd918485cf5a2582a038531c3a9317b6cbe26d764bdbb373af7-8",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-16",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-4",
+    "c87bca6a4b19462ade969fff348d02fa663fbc2a89bef479dcc87adc9ca25d3b-8",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-16",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-4",
+    "d62b9d627d65ac0df2b622cd07e5492b0e17880ae6a0544ff59be510b95fde26-8",
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-4",
+    "d829cdbcda4922104fb8a6fedccf355279a90490740a3176234e37366d56ad72-8"
+  ],
+  "resource_plausibility_gate": true,
+  "rows": 45,
+  "scope": "Known-data resource/compatibility screen, not a latency or independent efficacy gate",
+  "timing_victory_claim": false,
+  "user_scientific_goal_met": false
+}

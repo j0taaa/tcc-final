@@ -1141,3 +1141,10 @@ checks exatos de massa/cauda,3720 marginais e1200 amostras CPU/CUDA. Massa
 verdadeira e surrogate são explicitamente separados. Três oráculos racionais
 novos incluem a lei conjunta com boundary variável e não usam Torch no CI.
 Ainda sem novo head ou timing/benefício integral desta versão.
+O screen full-V45/45 de4c80a59 termina42 massas positivas/3 rasas zero;
+190 configurações nativas completas/corretas,20 guards CONSERVADORES de
+alocação,0 erros/warnings. Trinta bounds conferem com massa terminada exata.
+Gate apenas de recursos14/15; zero forwards novos. Não tratar guards como
+OOM medido, prefixos antigos como corpus novo ou diagnóstico como velocidade.
+V4 escreve antes de código a obrigação de CPU simbólico competente e cache
+compatível; não atribuir o custo de minimizar DFA a toda inferência CPU.
