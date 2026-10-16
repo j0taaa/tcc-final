@@ -1,0 +1,13 @@
+{
+  "status": "RUNNING",
+  "scope": "KNOWN_DEVELOPMENT_VARIANCE_NECESSITY_ONLY",
+  "new_forward_attempts": 629,
+  "new_forward_completions": 629,
+  "cache_hits": 0,
+  "complete_first_actions": 12,
+  "parameter_updates": 0,
+  "records": 640,
+  "complete": 640,
+  "errors": 0,
+  "sampler_peak_gpu_allocated_bytes": 18591232
+}

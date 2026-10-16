@@ -1,0 +1,13 @@
+{
+  "records": 640,
+  "independent_decimal_matches": 0,
+  "max_compact_reference_errors": {
+    "log_probability": 0.0,
+    "alpha": 2.1094237467877974e-15,
+    "beta": 9.103828801926284e-15,
+    "anchor": 0.0
+  },
+  "raw_head_npz_files": 629,
+  "score_scope": "65 first-transition planner parameters only; no model gradient/update",
+  "variance_gate": "NEGATIVE due zero correct terminal rewards; not refutation of generic variance theorem"
+}

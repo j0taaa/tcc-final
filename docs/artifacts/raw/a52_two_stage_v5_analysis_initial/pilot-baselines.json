@@ -1,0 +1,162 @@
+[
+  {
+    "case": 0,
+    "method": "full_triple",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 0,
+    "method": "anchor_integrated",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 0,
+    "method": "known_anchor",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 0,
+    "method": "collapsed",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 1,
+    "method": "full_triple",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 1,
+    "method": "anchor_integrated",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 1,
+    "method": "known_anchor",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 1,
+    "method": "collapsed",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 2,
+    "method": "full_triple",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 2,
+    "method": "anchor_integrated",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 2,
+    "method": "known_anchor",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 2,
+    "method": "collapsed",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 3,
+    "method": "full_triple",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 3,
+    "method": "anchor_integrated",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 3,
+    "method": "known_anchor",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 3,
+    "method": "collapsed",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 4,
+    "method": "full_triple",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 4,
+    "method": "anchor_integrated",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 4,
+    "method": "known_anchor",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 4,
+    "method": "collapsed",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 5,
+    "method": "full_triple",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 5,
+    "method": "anchor_integrated",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 5,
+    "method": "known_anchor",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 5,
+    "method": "collapsed",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 6,
+    "method": "full_triple",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 6,
+    "method": "anchor_integrated",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 6,
+    "method": "known_anchor",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 6,
+    "method": "collapsed",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 7,
+    "method": "full_triple",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 7,
+    "method": "anchor_integrated",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 7,
+    "method": "known_anchor",
+    "pilot_baseline": 0.0
+  },
+  {
+    "case": 7,
+    "method": "collapsed",
+    "pilot_baseline": 0.0
+  }
+]

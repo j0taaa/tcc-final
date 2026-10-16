@@ -198,3 +198,13 @@ unbounded numeric lexemes and exact RLOO group laws. Two RANDOM BF16 forwards
 verify indexed cropping literally; V5 pretrained counter is stillZERO.
 See work/two-stage-preflight-v5.md and consumer-protocol-v5.json. The actual
 known-development capture is next; no variance/timing/learning benefit yet.
+
+V5 is now COMPLETE and NEGATIVE after e01739d:640/640 valid original-ID
+trajectories,629 new forwards including warmup, zero error/refusal; ALL640
+terminal rewards are zero after the closed capture, independently confirmed
+by Decimal. No ratios or variance wins are credited. Variation0/8 fails the
+predeclared gate, so timing/training/independent branches are NOT triggered.
+All heads, scores, labels and costs remain preserved. See work/two-stage-result-v5.md.
+Padding/termination is only a new diagnostic hypothesis, not a changed gate
+or a fulfilled scientific goal. No new implementation follows without its
+separate written foundation and eight criteria.

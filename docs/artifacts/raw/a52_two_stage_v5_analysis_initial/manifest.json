@@ -1,0 +1,30 @@
+{
+  "group-gradients.npz": {
+    "sha256": "c8320754ce9f26a8461284c030b77026648e225def68f8e6e3204cbb44b19c19",
+    "bytes": 972
+  },
+  "independent-audit.json": {
+    "sha256": "23b83e82c34ae76222fabd778103741977e749a4417cea6d0eaa0dacfe8b79c6",
+    "bytes": 444
+  },
+  "labels-after-capture.json": {
+    "sha256": "572b4c5c6d1d23174b049c3f55f982ceba523ce915d8e3c01f0019a71e2728ce",
+    "bytes": 781
+  },
+  "pilot-baselines.json": {
+    "sha256": "eb0542446bbb00d38f7b34133946052830a79f9be01f27cf0f963a1fc3b4def5",
+    "bytes": 2571
+  },
+  "reward-rows.json": {
+    "sha256": "a639ca1e543677cddcf8b0b9ab270ddde9f33851577b9bc4733d0ffe0ad2b920",
+    "bytes": 49251
+  },
+  "run.log": {
+    "sha256": "e5a6feca45b66a7d4cb1ceaa4e946bda1768d1fe3e83f1d35507e8713737363e",
+    "bytes": 1139
+  },
+  "summary.json": {
+    "sha256": "2917e080f197aba43fd2bfabe4ca1e4dc20837667d1b46d777e77ebf96f2f20b",
+    "bytes": 17737
+  }
+}

@@ -71,6 +71,13 @@ Preflight V5 depois de4b2fb1f passa full229 testes74.834s/make check/Ruff,
 incluindo controle reverso/compacto, IDs fixos/números enormes e lei RLOO de
 grupo. Dois forwards ALEATÓRIOS BF16 validam head por índices. Runner/analyzer
 congelam antes de novo head; ainda sem medições de variância/treino V5.
+V5 após e01739d completa640/640 trajetórias/629 forwards NOVOS incluindo
+warmup, todos IDs/JSONs válidos, zero recusa/erro. Gabaritos após captura dão
+ZERO acertos, confirmados independentemente por Decimal; variação0/8, nenhuma
+razão/ganho de variância é creditada. Aplicação encerrada NEGATIVA; não
+acionar custo/treino/novos seeds nem relaxar gate. Todos heads/scores/labels
+preservados. PAD no sufixo versus parada/marginalização é hipótese diagnóstica
+separada a escrever ANTES de código; sem novidade assumida ou relabeling.
 
 ## Objetivo e estado atual
 

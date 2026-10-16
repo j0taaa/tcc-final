@@ -1,0 +1,3842 @@
+[
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "pilot",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 16,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 17,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 18,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 19,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 20,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 21,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 22,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 23,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 24,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 25,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 26,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 27,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 28,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 29,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 30,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 31,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 32,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 33,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 34,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 35,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 36,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 37,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 38,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 39,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 40,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 41,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 42,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 43,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 44,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 45,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 46,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 47,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 48,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 49,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 50,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 51,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 52,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 53,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 54,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 55,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 56,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 57,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 58,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 59,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 60,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 61,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 62,
+    "reward": 0
+  },
+  {
+    "case": 0,
+    "phase": "eval",
+    "draw": 63,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "pilot",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 16,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 17,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 18,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 19,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 20,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 21,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 22,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 23,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 24,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 25,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 26,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 27,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 28,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 29,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 30,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 31,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 32,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 33,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 34,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 35,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 36,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 37,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 38,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 39,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 40,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 41,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 42,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 43,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 44,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 45,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 46,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 47,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 48,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 49,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 50,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 51,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 52,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 53,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 54,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 55,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 56,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 57,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 58,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 59,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 60,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 61,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 62,
+    "reward": 0
+  },
+  {
+    "case": 1,
+    "phase": "eval",
+    "draw": 63,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "pilot",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 16,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 17,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 18,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 19,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 20,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 21,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 22,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 23,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 24,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 25,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 26,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 27,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 28,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 29,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 30,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 31,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 32,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 33,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 34,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 35,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 36,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 37,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 38,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 39,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 40,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 41,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 42,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 43,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 44,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 45,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 46,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 47,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 48,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 49,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 50,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 51,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 52,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 53,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 54,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 55,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 56,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 57,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 58,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 59,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 60,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 61,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 62,
+    "reward": 0
+  },
+  {
+    "case": 2,
+    "phase": "eval",
+    "draw": 63,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "pilot",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 16,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 17,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 18,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 19,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 20,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 21,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 22,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 23,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 24,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 25,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 26,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 27,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 28,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 29,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 30,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 31,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 32,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 33,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 34,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 35,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 36,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 37,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 38,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 39,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 40,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 41,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 42,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 43,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 44,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 45,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 46,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 47,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 48,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 49,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 50,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 51,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 52,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 53,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 54,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 55,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 56,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 57,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 58,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 59,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 60,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 61,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 62,
+    "reward": 0
+  },
+  {
+    "case": 3,
+    "phase": "eval",
+    "draw": 63,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "pilot",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 16,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 17,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 18,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 19,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 20,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 21,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 22,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 23,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 24,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 25,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 26,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 27,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 28,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 29,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 30,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 31,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 32,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 33,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 34,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 35,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 36,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 37,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 38,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 39,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 40,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 41,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 42,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 43,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 44,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 45,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 46,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 47,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 48,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 49,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 50,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 51,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 52,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 53,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 54,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 55,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 56,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 57,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 58,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 59,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 60,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 61,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 62,
+    "reward": 0
+  },
+  {
+    "case": 4,
+    "phase": "eval",
+    "draw": 63,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "pilot",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 16,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 17,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 18,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 19,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 20,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 21,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 22,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 23,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 24,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 25,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 26,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 27,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 28,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 29,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 30,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 31,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 32,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 33,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 34,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 35,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 36,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 37,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 38,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 39,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 40,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 41,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 42,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 43,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 44,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 45,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 46,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 47,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 48,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 49,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 50,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 51,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 52,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 53,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 54,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 55,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 56,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 57,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 58,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 59,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 60,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 61,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 62,
+    "reward": 0
+  },
+  {
+    "case": 5,
+    "phase": "eval",
+    "draw": 63,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "pilot",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 16,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 17,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 18,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 19,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 20,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 21,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 22,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 23,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 24,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 25,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 26,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 27,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 28,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 29,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 30,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 31,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 32,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 33,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 34,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 35,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 36,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 37,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 38,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 39,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 40,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 41,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 42,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 43,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 44,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 45,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 46,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 47,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 48,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 49,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 50,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 51,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 52,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 53,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 54,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 55,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 56,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 57,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 58,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 59,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 60,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 61,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 62,
+    "reward": 0
+  },
+  {
+    "case": 6,
+    "phase": "eval",
+    "draw": 63,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "pilot",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 0,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 1,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 2,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 3,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 4,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 5,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 6,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 7,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 8,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 9,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 10,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 11,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 12,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 13,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 14,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 15,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 16,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 17,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 18,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 19,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 20,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 21,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 22,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 23,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 24,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 25,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 26,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 27,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 28,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 29,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 30,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 31,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 32,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 33,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 34,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 35,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 36,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 37,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 38,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 39,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 40,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 41,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 42,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 43,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 44,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 45,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 46,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 47,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 48,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 49,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 50,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 51,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 52,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 53,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 54,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 55,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 56,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 57,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 58,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 59,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 60,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 61,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 62,
+    "reward": 0
+  },
+  {
+    "case": 7,
+    "phase": "eval",
+    "draw": 63,
+    "reward": 0
+  }
+]

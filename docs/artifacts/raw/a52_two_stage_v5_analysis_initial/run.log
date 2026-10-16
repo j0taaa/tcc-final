@@ -1,0 +1,37 @@
+{
+  "status": "NEGATIVE_NECESSARY_VARIANCE",
+  "producer_capture": "e01739d9c9bf99bb1dd209b5dab52c7e7951d9b0",
+  "records": 640,
+  "reward_variation_cases": 0,
+  "favorable_vs_cheap_pilot_cases": 0,
+  "aggregate_trace_covariance": {
+    "full_triple:zero": 0.0,
+    "full_triple:pilot": 0.0,
+    "full_triple:rloo": 0.0,
+    "anchor_integrated:zero": 0.0,
+    "anchor_integrated:pilot": 0.0,
+    "anchor_integrated:rloo": 0.0,
+    "known_anchor:zero": 0.0,
+    "known_anchor:pilot": 0.0,
+    "known_anchor:rloo": 0.0,
+    "collapsed:zero": 0.0,
+    "collapsed:pilot": 0.0,
+    "collapsed:rloo": 0.0
+  },
+  "candidate": "collapsed:pilot",
+  "candidate_to_control_ratio": {
+    "full_triple:zero": null,
+    "full_triple:pilot": null,
+    "full_triple:rloo": null,
+    "anchor_integrated:zero": null,
+    "anchor_integrated:pilot": null,
+    "anchor_integrated:rloo": null,
+    "known_anchor:zero": null,
+    "known_anchor:pilot": null,
+    "known_anchor:rloo": null
+  },
+  "complete_cost_gate_executed": false,
+  "updates": 0,
+  "independent_confirmation": false,
+  "next_phase": "this application is closed; no timing/training campaign"
+}

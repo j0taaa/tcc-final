@@ -62,6 +62,17 @@ CPU/GPU max log discrepancy3.553e-14, sampler peak<=422932672 bytes. This
 establishes feasibility only. No label, update or complete-cost variance gate
 was executed; the next scientific/consumer reassessment remains necessary.
 
+V5's written-first stronger reverse-anchor comparator is classical and already
+matches the full collapse's anchor block cheaply. Its actual-return screen,
+frozen e01739d, completes640/640 valid two-stage trajectories/629 new forwards
+with zero error/refusal. ALL640 semantic rewards are zero, independently
+verified with Decimal after capture. Thus no variance gain is credited and
+the declared gate fails0/8 variable-reward cases; no timing/training/independent
+campaign is triggered. All raw heads/scores/labels remain preserved. Long
+numbers suggest investigating the difference between PAD-tail conditioning
+and a stopped-prefix law, but this is a distinct diagnostic to write first;
+absorbing stopping is classical and cannot relabel V5 or close the user goal.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine

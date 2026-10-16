@@ -108,7 +108,7 @@ cost remain open. No new neural campaign is credited to M70.
   docs/artifacts/raw/a52_consumer_resource_v4_initial. No labels/update/variance
   or competitive timing. Passing only permits a separate scientific/cost
   reassessment before any next campaign; the user's goal remains open.
-- [ ] T7504: V5 WRITTEN two-stage real-return screen/eight criteria and
+- [x] T7504: V5 WRITTEN two-stage real-return screen/eight criteria and
   cheap reverse-anchor control BEFORE code/heads. Integrating A needs no
   filtered query and already matches candidate anchor score. Compact class
   derivatives are classical. First minimal independent reverse/compact oracles;
@@ -119,6 +119,15 @@ cost remain open. No new neural campaign is credited to M70.
   pass; full229 PASS74.834s, make check/Ruff PASS. Two RANDOM BF16 head calls
   verify indexed cropping literally. V5 actual runner/analyzer/runtime/protocol
   freeze before its first pretrained head; V4's nine stay separately counted.
+  Frozen e01739d completes640/640 trajectories/629 new forwards (one warmup),
+  zero error/refusal; ALL fixed IDs/JSONs correct. Golds after capture yield
+  ZERO correct rewards, independently confirmed by Decimal; variation0/8,
+  no variance ratios/gains credited. Complete-cost/training/independent
+  branches NOT triggered. All raw heads/scores/labels/checks preserved in
+  docs/artifacts/raw/a52_two_stage_v5_{initial,analysis_initial}. This
+  application is closed negative; general theory not refuted. Inspecting
+  padding/stopping semantics is a separate written-first diagnostic, never
+  relabeling this gate. Scientific novelty/use/goal remain OPEN.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 
