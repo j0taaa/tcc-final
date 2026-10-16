@@ -4161,6 +4161,15 @@
               "docs/artifacts/raw/a52_stopped_resource_v8_initial/heads/warmup.npz"
             ]
           }
+        },
+        {
+          "id": "v9",
+          "source_commit": "c3f4c9bbc2969a66d9bafc38d7c4c9758df1e83e",
+          "evidence_commit": "c3f4c9bbc2969a66d9bafc38d7c4c9758df1e83e",
+          "evidence_roots": [
+            "attempts/52-collapsed-commit-likelihood/README.md",
+            "attempts/52-collapsed-commit-likelihood/work"
+          ]
         }
       ]
     }
