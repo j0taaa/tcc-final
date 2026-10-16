@@ -414,3 +414,11 @@ Primary all-pair U estimator is fixed by written320e397; cross-half diagnostic
 retained. This is only a known16-path conditional-noise necessity screen,
 zero optimistic extra cost, no population/full-cost/RLOO variance claim. No
 new neural forward, decoder trajectory, label or update. Goal remains OPEN.
+
+V18 producer c28da4a completes8960/8960 real OLD-head auxiliaries, no errors/
+refusals/new forwards/paths/updates. Both frozen necessity gates NEGATIVE:
+A ratio.9864, B.9121, required<=.8 even with zero extra cost. AFTER-data all7
+score/8960 official-answer/1258878-coordinate audit passes1.522e-14. Full
+RLOO variance remains null; known-data development is not population refutation.
+No large neural campaign/training for this application follows. See
+work/conditional-result-v18.md; useful novelty/application goal remains OPEN.

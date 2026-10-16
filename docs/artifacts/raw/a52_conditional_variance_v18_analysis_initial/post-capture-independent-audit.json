@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "AFTER-data consistency; not independent population evaluation",
+  "states": 70,
+  "words_official_tokenizer_Decimal": 8960,
+  "all_seven_actor_coordinate_and_moment_checks": 1258878,
+  "all_table_entries": 2268,
+  "maximum_absolute_difference": 1.5210055437364645e-14,
+  "new_model_forwards": 0,
+  "new_auxiliary_words": 0,
+  "updates": 0
+}

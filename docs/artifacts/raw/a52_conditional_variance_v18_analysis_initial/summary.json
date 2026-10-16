@@ -1,0 +1,74 @@
+{
+  "status": "DEVELOPMENT_ANALYSIS_COMPLETE",
+  "scope": "conditional audit of SAME16 known paths; not independent evaluation",
+  "table_entries": 2268,
+  "states": 70,
+  "auxiliary_words": 8960,
+  "tail_certified_pre_states": 11,
+  "family_A": {
+    "selected": {
+      "method": "collapsed",
+      "baseline": "zero",
+      "coefficients": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "variant": "iid1",
+      "estimate": 0.022357904804462297,
+      "actor_blocks": {
+        "total": 0.022357904804462297,
+        "gate": 0.022072817839818817,
+        "anchor": 5.464031377555458e-05,
+        "confidence": 0.00023044665086791236
+      },
+      "aggregate_mean_gap_u": 0.022357904804462297,
+      "aggregate_mean_gap_cross": 0.022357904804462307,
+      "query_types": [
+        "base_action",
+        "proxy_action"
+      ],
+      "draw_count": 1
+    },
+    "candidate_count": 108,
+    "control_count": 648,
+    "best_control_estimate": 0.022665986485456247,
+    "ratio_to_best_control": 0.9864077532565533,
+    "status": "NECESSITY_NEGATIVE"
+  },
+  "family_B": {
+    "selected": {
+      "method": "collapsed",
+      "baseline": "zero",
+      "coefficients": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "variant": "prefix_stratified8",
+      "estimate": 0.020393535222819448,
+      "actor_blocks": {
+        "total": 0.020393535222819448,
+        "gate": 0.020110288444858404,
+        "anchor": 6.961147944365921e-05,
+        "confidence": 0.00021363529851738027
+      },
+      "aggregate_mean_gap_u": 0.019364203387359613,
+      "aggregate_mean_gap_cross": 0.019649184821079226,
+      "query_types": [
+        "base_action"
+      ],
+      "draw_count": 8
+    },
+    "candidate_count": 756,
+    "control_count": 756,
+    "best_control_estimate": 0.022357904804462297,
+    "ratio_to_best_control": 0.9121398181617273,
+    "status": "NECESSITY_NEGATIVE"
+  },
+  "new_model_forwards": 0,
+  "updates": 0,
+  "full_RLOO_variance": null,
+  "negative_estimates_retained": 0,
+  "full_cost_or_population_superiority_claim": false
+}

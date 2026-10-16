@@ -232,6 +232,14 @@ sem amostra real V18/head/update. Protocolo fixa80 fontes/runtime/cinco inputs,
 estimador U primário antes dos dados; screen de necessidade nas16 trajetórias
 conhecidas não é custo completo, variância populacional/RLOO ou meta cumprida.
 
+V18 produtorc28da4a completa8960/8960 auxiliares reais em70 estados VELHOS,
+zero erros/recusas/forwards novos/updates. FamíliaA razão0.9864 e famíliaB
+0.9121 falham gate0.8 mesmo com sobrecusto zero. NÃO iniciar campanha grande
+nesta aplicação nem relaxar/reseed. Auditoria posterior8960 respostas e
+1258878 coordenadas/momentos passa1.522e-14; RLOO total null. Todos dados/
+fontes/drafts preservados; é decisão de recurso conhecida, não refutação
+populacional/publicação. Meta científica e novidade útil continuam abertas.
+
 ## Objetivo e estado atual
 
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma

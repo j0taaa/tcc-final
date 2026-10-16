@@ -1,0 +1,26 @@
+{
+  "ALL2268-estimates.json": {
+    "bytes": 1294909,
+    "sha256": "d2123feb01655dfef25042f16e1fd742c0f696cf719e3f2d8f07886b76b66771"
+  },
+  "ALL756-moment-details.jsonl": {
+    "bytes": 10500223,
+    "sha256": "378147215d03e66bcc12f351b9e93a7e456afa551a567282049378bd164b240f"
+  },
+  "RLOO-conditional-noise-NOT-total-variance.json": {
+    "bytes": 1136550,
+    "sha256": "a2a66a01198d0a4ec5c9cc63fdbfca845098a0dcb2a8180fafa732bd0184e657"
+  },
+  "path-sufficient-statistics.npz": {
+    "bytes": 586509,
+    "sha256": "dcc583f872de5dee7115d5fe6e3b6f5b1d15f5059a1e03d6e4a35bc4aec21c56"
+  },
+  "post-capture-independent-audit.json": {
+    "bytes": 375,
+    "sha256": "cbf7b88bf185077ab29a1ad5da7d41f5565e684d999baa6e9e3fca4dd71691d3"
+  },
+  "summary.json": {
+    "bytes": 2046,
+    "sha256": "966aecb47207ade6b3a4e80e1f156642e6f6ab073346d962c3feccf314a2059f"
+  }
+}

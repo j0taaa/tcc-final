@@ -1,0 +1,26 @@
+{
+  "preparations.json": {
+    "bytes": 54941,
+    "sha256": "f97da47ebd96f7eeb1fc2f6a76ee29f011ac30b1d5d41f30abe04277803a6835"
+  },
+  "protocol.json": {
+    "bytes": 10011,
+    "sha256": "0a158cb9afb1603cd5466b62ccbefac534857432d81ae7c9aa13a5d8f05c8140"
+  },
+  "provenance.json": {
+    "bytes": 7920,
+    "sha256": "77448fdedb9f305126e1c68b39fce69d7afa2339c2ab6e9e4c191ca0950e4381"
+  },
+  "raw-batches.jsonl": {
+    "bytes": 513662,
+    "sha256": "c58d8c6a87df286393857303c70c56d5ddc4f1115dfd2e643786c4ebf0a43929"
+  },
+  "records.jsonl": {
+    "bytes": 13952885,
+    "sha256": "f083efd46aec705cebd3e312a184a5ab766057153f2080c6f6f7b0a4f0894a0a"
+  },
+  "summary.json": {
+    "bytes": 663,
+    "sha256": "87c635730dbc4af029d4329db2b65e07830823034c5dee7251514b867e5ee2cc"
+  }
+}

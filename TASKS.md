@@ -35,9 +35,13 @@ cost remain open. No new neural campaign is credited to M70.
 - [x] T7520-preflight: V18 six moment/certificate/selection oracles, full279
   PASS86.714s, make check/Ruff; synthetic48 full-V and FAKE8960 pipeline pass.
   Freeze80 sources/runtime/five inputs BEFORE real V18 auxiliaries.
-- [ ] T7520: Execute ALL8960 old-head conditional auxiliaries and frozen2268
+- [x] T7520: Execute ALL8960 old-head conditional auxiliaries and frozen2268
   necessity tables; retain negative/inconclusive estimates. No new forwards,
   decoder paths, labels or updates; not full-cost/population/RLOO validation.
+  Producer c28da4a completes8960/8960; both frozen families NEGATIVE, ratios
+  .9864/.9121 fail .8 with optimistic zero extra cost. Independent AFTER-data
+  8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
+  campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
 ## M75 — Observed confidence-selected action likelihood, before prototype
 

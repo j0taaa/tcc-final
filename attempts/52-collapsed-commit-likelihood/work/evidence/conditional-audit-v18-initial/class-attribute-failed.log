@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/conditional_audit_v18.py", line 300, in <module>
+    run(a.capture, a.analysis, a.auxiliary, a.tables, a.features_path, a.model_dir)
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/conditional_audit_v18.py", line 97, in run
+    [np.bincount(plan.mapping, weights=v, minlength=len(plan.classes)) for v in unret]
+  File "/home/jota/projects/tcc-final/attempts/52-collapsed-commit-likelihood/work/conditional_audit_v18.py", line 97, in <listcomp>
+    [np.bincount(plan.mapping, weights=v, minlength=len(plan.classes)) for v in unret]
+                                                        ^^^^^^^^^^^^
+AttributeError: 'PrefixFloatPlan' object has no attribute 'classes'
