@@ -54,6 +54,11 @@ refinados incluem descartes. Cinco forwards de arquitetura ALEATÓRIA verificam
 recorte/bidirecionalidade/padding e loading BF16 explícito. Pesos pré-treinados
 baixados/hash conferido, mas ZERO forwards deles. Runner/protocolo congelam
 antes da captura limitada; não há ganho/treino ou novidade confirmada.
+Captura V4 após854a733 concluída8/8:9 forwards NOVOS incluindo warmup,
+32 JSONs válidos, zero recusa/erro; logits/IDs/scores/dados completos preservados.
+Erro máximo log CPU/GPU3.553e-14; sampler<=422932672B. É só recurso/correção,
+sem gabaritos/update/variância/ganho competitivo. O gate6/8 só permite
+reavaliar protocolo separado de custo/variância; meta científica ainda aberta.
 
 ## Objetivo e estado atual
 

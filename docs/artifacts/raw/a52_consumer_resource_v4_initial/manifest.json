@@ -1,0 +1,78 @@
+{
+  "audit-summary.json": {
+    "sha256": "face61a4f475aab4b67e1a3ffb41399d5e61744f06261565d16fe4d4b2c8e56b",
+    "bytes": 804
+  },
+  "events.jsonl": {
+    "sha256": "6e2b38e6a5e2eef9c43034e1e6e1905197921798deceb285a15e6b22318f2ae5",
+    "bytes": 1537
+  },
+  "head-00.npz": {
+    "sha256": "4f4b39e7b475f9e082db0fbf469f06ae19f0cb9b0849b3723e0fe372cd8c2d04",
+    "bytes": 7480020
+  },
+  "head-01.npz": {
+    "sha256": "39a890156e1eec2c2e30f92e6784be7e6a0d100a838532542b03eedcea10c0c1",
+    "bytes": 7485634
+  },
+  "head-02.npz": {
+    "sha256": "443580d655a6f29b03cf153efe1c1966a9abe26cbc7cf3eb27a4b7399daa71fb",
+    "bytes": 7479253
+  },
+  "head-03.npz": {
+    "sha256": "db2cc6697d2958926f53dc60a88fbaf1ef416288b0263f845cc551d069343f9e",
+    "bytes": 7487948
+  },
+  "head-04.npz": {
+    "sha256": "d1b0c069221b425d2831ba658c8a7c20b575eaafbb86ac7ab8c276e1cffd40cd",
+    "bytes": 7484061
+  },
+  "head-05.npz": {
+    "sha256": "f7e999a448dd8e61f97ea9626a0760f435b5704e827ee364f23d7083ee3d06b2",
+    "bytes": 7484452
+  },
+  "head-06.npz": {
+    "sha256": "138ee9da2484cf9a8d53ae5a8c5ce0e85fc979b02c62bed3926557337e530a3b",
+    "bytes": 7483542
+  },
+  "head-07.npz": {
+    "sha256": "dda19b2aac3fc2cd877ec9652936a56167088e1576a37b0bed9634a9a39ca8c0",
+    "bytes": 7479335
+  },
+  "head-warmup.npz": {
+    "sha256": "4f4b39e7b475f9e082db0fbf469f06ae19f0cb9b0849b3723e0fe372cd8c2d04",
+    "bytes": 7480020
+  },
+  "progress.json": {
+    "sha256": "1d29c94bac998b90d06082036d63675139b443a02fd13347ae6ae4b39eecba56",
+    "bytes": 1488
+  },
+  "prompt-ids.json": {
+    "sha256": "775e489213c530692dc228ba9bb9ea869cd56f500cedcbda981e0c0ab629d42c",
+    "bytes": 6592
+  },
+  "protocol.json": {
+    "sha256": "c0065503f167ffb2572a1783bf9b606f676602b05bb383ffc4b648148ce3beee",
+    "bytes": 3399
+  },
+  "provenance.json": {
+    "sha256": "d89d3b70a956fcdd9af55d87ee60606d0b78b344934bd6f672426757a8b91775",
+    "bytes": 7314
+  },
+  "rows.jsonl": {
+    "sha256": "f8db23a832789e57c1cc7253601d56c00288480f21f1312868b98d45a985e1cc",
+    "bytes": 196879
+  },
+  "run.log": {
+    "sha256": "d9198280d0fd9ab973dbfb02a1e5efa077fc52985aa1eff3ca9d5e032715e3f5",
+    "bytes": 813
+  },
+  "summary.json": {
+    "sha256": "b7c0a5f9b21867fe4d97435da0c139f5cdd627bf2519aea936ebf1ab78b32f24",
+    "bytes": 1633
+  },
+  "token-effects.npz": {
+    "sha256": "f4b0de291054809b22d70e41b6a33c6bbe8ad81faefc063995192bad319461c7",
+    "bytes": 670805
+  }
+}

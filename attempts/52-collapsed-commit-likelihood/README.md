@@ -166,3 +166,10 @@ pretrained calls. See work/consumer-preflight-v4.md and the independently
 versioned original/final evidence. consumer-protocol-v4.json freezes the actual
 resource runner/runtime before its first pretrained call. No complete-cost
 variance, quality, training, independent confirmation or novelty is credited.
+
+The bounded real capture AFTER freeze854a733 now completes8/8 cases with9/9
+pretrained forwards including warmup,32 independently valid original-ID JSONs,
+zero refusal/error and<=422932672 bytes sampler peak. All logits, original
+outputs, three scores, provenance and checks are archived; maximum CPU/GPU log
+discrepancy3.553e-14. See work/resource-result-v4.md. These are resources and
+correctness only; no semantic labels/update or complete-cost variance advantage.

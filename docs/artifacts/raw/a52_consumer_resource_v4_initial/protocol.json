@@ -1,0 +1,63 @@
+{
+  "version": "A52-resource-v4-first-pretrained-screen",
+  "contract": "consumer-resource-v4.md",
+  "contract_sha256": "ee4a9a42b2bbf518a185f1fcab985b3961f1cfec01afe244fa484cae25ad6872",
+  "input_sha256": "bfdfabc9fb0fad256ad8f44f9a43acd8c171ebc265235d56c861a962b03d5b49",
+  "source_sha256": {
+    "anchor.py": "8de3c86401e90807d7ee2489532cd4ef7bcf21e4b5afe96d8c85eac6b848e29a",
+    "consumer_resource.py": "0bc0abc2c06672a8eccff6fca771f6be24dbb906d0f199e2b5c1d90c587ceed1",
+    "floating.py": "a11ea8d57a2e4d62c93f40bf282bb6756194365894dff3d29faaa935568fd2a8",
+    "numeric_json.py": "a5388609307aa54afff0746009c83991ac18e66d76f7c690e7a3a91e90c9b7ff",
+    "preflight_floating.py": "daa6e7eec2d28185856e8b6c9342f2df25def3dcc12fbb055919767a3d54910a",
+    "preflight_full_v.py": "9d9c5c74562d47ce76c1a8a21cf678358d8da67ff98fed6cd050c91ea640cb4e",
+    "preflight_model_api.py": "9017098d991704734ad7d5a8959e6f1da13bbb3312378a4a5ec89d1d01e33ff6",
+    "reference.py": "0c49d3028f98a4511c9d057d6c50e9de4b228f0c73ced4cd040c367a8a9e658b",
+    "smooth.py": "65252d7866459d81b5ccd8e2b1de5dc8b1c04ba98c70b01807446124cdc423eb",
+    "test_anchor.py": "d08866e0158df157afa91ef26b2d8a2bc7112a02e7b4883d2456f7659ee19a2d",
+    "test_consumer_controls.py": "c15e785677e5153aa4a97b06bad949b6e4623991744f50ad4d8c33643869a2d6",
+    "test_floating_cpu.py": "8935cd9348e4f923800aec1ad14568d15872a004af3dc99369d75203435b9eb6",
+    "test_numeric_json.py": "7caefb95737904c8c2fd6e775f413160796c5be7188a06ef36565dc2217237ae",
+    "test_reference.py": "0bf0eeb67c37f3bc8c394ece65ea99cf44239da1a6c58fe330bf4cdae6e5d0cd",
+    "test_smooth.py": "5f1fe9abb44f41e162e4202fd22a4773d8307a56f665ed3034df4a2db3f5bfb5",
+    "tokenizer_audit.py": "aa4bb6cbb988804cf791b0b2219305c4f7c26dc127e1081fe5bb6cd77154cdd7"
+  },
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.1",
+    "tokenizers": "0.22.1",
+    "numpy": "2.4.6",
+    "safetensors": "0.8.0"
+  },
+  "model_revision": "c8d24a3f4adaeef46881b450e1bf7d1005203bd7",
+  "weights_sha256": "3485d18016ce6c302e8973809b47aa6369d6612ef9978d0690b4575d1193e932",
+  "forward_cap": 9,
+  "warmup_forwards": 1,
+  "recorded_states": 8,
+  "joint_draws_each": 4,
+  "question_labels_read": false,
+  "updates": 0,
+  "root_seed": 52040,
+  "per_draw_seed": "little-endian uint64 of first8 SHA256 bytes of ASCII 52040:{zero-based-case}:{zero-based-draw}",
+  "sampler_rng": "NumPy default_rng(PCG64); floating approximation, not native finite-RNG certificate",
+  "draw_order": [
+    "complete grammar word",
+    "uniform anchor",
+    "32 Bernoulli uniforms with anchor forced true"
+  ],
+  "gates": "c/(c+0.01); alpha=0 beta=1; original FULL-V c, no truncation",
+  "planner_derivatives": [
+    "32 position alpha",
+    "scalar beta",
+    "32 anchor-softmax logits"
+  ],
+  "caps": {
+    "sampler_workspace_bytes": 2147483648,
+    "operation_seconds": 60,
+    "screen_seconds_including_load": 1200,
+    "arcs": 2000000,
+    "prompt_tokens": 1024
+  },
+  "workspace_accounting": "torch peak allocated minus pre-softmax baseline, plus persistent sampler tables and original head input bytes; CPU maximum RSS separately",
+  "prerequisites": "consumer-foundation-v4-initial and consumer-preflight-v4-before-heads; all synthetic/random model only",
+  "decision": ">=6/8 COMPLETE merely permits considering a separately frozen cost/variance protocol; never a practical, quality or novelty gate"
+}

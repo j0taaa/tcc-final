@@ -1,0 +1,18 @@
+{"event": "forward_attempt", "utc_seconds": 1792171089.223476, "name": "warmup", "ordinal": 1}
+{"event": "forward_complete", "utc_seconds": 1792171089.5504413, "name": "warmup"}
+{"event": "forward_attempt", "utc_seconds": 1792171089.987839, "name": "00", "ordinal": 2}
+{"event": "forward_complete", "utc_seconds": 1792171090.008944, "name": "00"}
+{"event": "forward_attempt", "utc_seconds": 1792171092.0389576, "name": "01", "ordinal": 3}
+{"event": "forward_complete", "utc_seconds": 1792171092.061203, "name": "01"}
+{"event": "forward_attempt", "utc_seconds": 1792171093.9807215, "name": "02", "ordinal": 4}
+{"event": "forward_complete", "utc_seconds": 1792171094.00237, "name": "02"}
+{"event": "forward_attempt", "utc_seconds": 1792171095.9189916, "name": "03", "ordinal": 5}
+{"event": "forward_complete", "utc_seconds": 1792171095.940608, "name": "03"}
+{"event": "forward_attempt", "utc_seconds": 1792171097.8663378, "name": "04", "ordinal": 6}
+{"event": "forward_complete", "utc_seconds": 1792171097.8879814, "name": "04"}
+{"event": "forward_attempt", "utc_seconds": 1792171099.828533, "name": "05", "ordinal": 7}
+{"event": "forward_complete", "utc_seconds": 1792171099.84964, "name": "05"}
+{"event": "forward_attempt", "utc_seconds": 1792171101.7744114, "name": "06", "ordinal": 8}
+{"event": "forward_complete", "utc_seconds": 1792171101.7957516, "name": "06"}
+{"event": "forward_attempt", "utc_seconds": 1792171103.7058628, "name": "07", "ordinal": 9}
+{"event": "forward_complete", "utc_seconds": 1792171103.7274082, "name": "07"}

@@ -78,7 +78,7 @@ cost remain open. No new neural campaign is credited to M70.
   PASS1.374s; full220 PASS73.333s; make check/Ruff PASS. No real head/update/
   timing. Tiny-A2D head has151936 logits but token IDs only0..151669; a future
   consumer must declare the remaining IDs' semantics before data capture.
-- [ ] T7503: Implement ONLY the bounded V4 consumer/resource preflight after its
+- [x] T7503: Implement ONLY the bounded V4 consumer/resource preflight after its
   written eight criteria and independent question-only copy:8 KNOWN development
   inputs, pinned Tiny-A2D,32 slots, max9 real forwards, four samples/head, no
   labels/updates or timing claim. Check ALL151936 IDs including266 tokenizer-empty
@@ -101,6 +101,13 @@ cost remain open. No new neural campaign is credited to M70.
   local BF16 loading. Final/original sources and raw checks are separate in
   work/evidence/consumer-preflight-v4-before-heads. ZERO pretrained calls yet;
   the bounded first capture is next, not a variance/quality/publication claim.
+  Frozen854a733 then completes8/8 real resource cases,9/9 pretrained calls
+  including warmup,32 valid original-ID JSON proposals/actions, zero refusal/
+  error. Maximum CPU/GPU log discrepancy3.553e-14; sampler peak<=422932672B.
+  ALL BF16 heads/IDs/seeds/statuses/checks/scores are preserved in
+  docs/artifacts/raw/a52_consumer_resource_v4_initial. No labels/update/variance
+  or competitive timing. Passing only permits a separate scientific/cost
+  reassessment before any next campaign; the user's goal remains open.
 
 ## M74 — Audited executed GPU proposal, hypothesis before implementation
 

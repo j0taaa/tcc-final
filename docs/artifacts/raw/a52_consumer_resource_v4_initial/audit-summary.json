@@ -1,0 +1,34 @@
+{
+  "producer_commit": "854a733c53ff978349021d6d75a050fd231fed4e",
+  "all_cases": 8,
+  "complete_cases": 8,
+  "joint_draws": 32,
+  "retained_count_range": [
+    23,
+    31
+  ],
+  "maximum_absolute_discrepancy": {
+    "log_probability": 3.552713678800501e-14,
+    "alpha": 6.5503158452884236e-15,
+    "beta": 4.440892098500626e-14,
+    "anchor": 6.938893903907228e-17
+  },
+  "workspace_allocated_bytes_range": [
+    414412992,
+    422932672
+  ],
+  "all_original_head_files": [
+    "head-00.npz",
+    "head-01.npz",
+    "head-02.npz",
+    "head-03.npz",
+    "head-04.npz",
+    "head-05.npz",
+    "head-06.npz",
+    "head-07.npz",
+    "head-warmup.npz"
+  ],
+  "new_pretrained_forwards": 9,
+  "parameter_updates": 0,
+  "scope": "known development resource only, no timing/quality/variance or novelty gate"
+}

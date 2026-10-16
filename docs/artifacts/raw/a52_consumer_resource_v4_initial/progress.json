@@ -1,0 +1,65 @@
+{
+  "scope": "KNOWN_DEVELOPMENT_RESOURCE_ONLY",
+  "model_forward_attempts": 9,
+  "model_forward_completions": 9,
+  "updates": 0,
+  "competitive_timing": false,
+  "native_rng_exactness_claimed": false,
+  "cases": [
+    {
+      "case": 0,
+      "input_id": "train:6003",
+      "status": "COMPLETE",
+      "diagnostic_seconds": 2.050292972009629
+    },
+    {
+      "case": 1,
+      "input_id": "train:536",
+      "status": "COMPLETE",
+      "diagnostic_seconds": 1.9394462129857857
+    },
+    {
+      "case": 2,
+      "input_id": "train:4749",
+      "status": "COMPLETE",
+      "diagnostic_seconds": 1.9354794489918277
+    },
+    {
+      "case": 3,
+      "input_id": "train:3964",
+      "status": "COMPLETE",
+      "diagnostic_seconds": 1.9450834140006918
+    },
+    {
+      "case": 4,
+      "input_id": "train:7074",
+      "status": "COMPLETE",
+      "diagnostic_seconds": 1.9596110109996516
+    },
+    {
+      "case": 5,
+      "input_id": "train:169",
+      "status": "COMPLETE",
+      "diagnostic_seconds": 1.9423243219789583
+    },
+    {
+      "case": 6,
+      "input_id": "train:7144",
+      "status": "COMPLETE",
+      "diagnostic_seconds": 1.9288543990114704
+    },
+    {
+      "case": 7,
+      "input_id": "train:2679",
+      "status": "COMPLETE",
+      "diagnostic_seconds": 1.9453233539825305
+    }
+  ],
+  "compiler": {
+    "classes": 38,
+    "states": 22,
+    "arcs": 2944,
+    "diagnostic_seconds": 1.052904498996213
+  },
+  "diagnostic_model_load_seconds": 0.44713270300417207
+}

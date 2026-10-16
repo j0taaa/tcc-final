@@ -1,0 +1,46 @@
+{
+  "producer_commit": "854a733c53ff978349021d6d75a050fd231fed4e",
+  "source_sha256": {
+    "anchor.py": "8de3c86401e90807d7ee2489532cd4ef7bcf21e4b5afe96d8c85eac6b848e29a",
+    "consumer_resource.py": "0bc0abc2c06672a8eccff6fca771f6be24dbb906d0f199e2b5c1d90c587ceed1",
+    "floating.py": "a11ea8d57a2e4d62c93f40bf282bb6756194365894dff3d29faaa935568fd2a8",
+    "numeric_json.py": "a5388609307aa54afff0746009c83991ac18e66d76f7c690e7a3a91e90c9b7ff",
+    "preflight_floating.py": "daa6e7eec2d28185856e8b6c9342f2df25def3dcc12fbb055919767a3d54910a",
+    "preflight_full_v.py": "9d9c5c74562d47ce76c1a8a21cf678358d8da67ff98fed6cd050c91ea640cb4e",
+    "preflight_model_api.py": "9017098d991704734ad7d5a8959e6f1da13bbb3312378a4a5ec89d1d01e33ff6",
+    "reference.py": "0c49d3028f98a4511c9d057d6c50e9de4b228f0c73ced4cd040c367a8a9e658b",
+    "smooth.py": "65252d7866459d81b5ccd8e2b1de5dc8b1c04ba98c70b01807446124cdc423eb",
+    "test_anchor.py": "d08866e0158df157afa91ef26b2d8a2bc7112a02e7b4883d2456f7659ee19a2d",
+    "test_consumer_controls.py": "c15e785677e5153aa4a97b06bad949b6e4623991744f50ad4d8c33643869a2d6",
+    "test_floating_cpu.py": "8935cd9348e4f923800aec1ad14568d15872a004af3dc99369d75203435b9eb6",
+    "test_numeric_json.py": "7caefb95737904c8c2fd6e775f413160796c5be7188a06ef36565dc2217237ae",
+    "test_reference.py": "0bf0eeb67c37f3bc8c394ece65ea99cf44239da1a6c58fe330bf4cdae6e5d0cd",
+    "test_smooth.py": "5f1fe9abb44f41e162e4202fd22a4773d8307a56f665ed3034df4a2db3f5bfb5",
+    "tokenizer_audit.py": "aa4bb6cbb988804cf791b0b2219305c4f7c26dc127e1081fe5bb6cd77154cdd7"
+  },
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.1",
+    "tokenizers": "0.22.1",
+    "numpy": "2.4.6",
+    "safetensors": "0.8.0"
+  },
+  "python": "3.11.16",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "checkpoint_sha256": "3485d18016ce6c302e8973809b47aa6369d6612ef9978d0690b4575d1193e932",
+  "tokenizer_file_sha256": {
+    "config.json": "02494589af3c9284b381929c576e5865c8f026b5bfed4b9a08d1b38bd4b8623e",
+    "tokenizer_config.json": "ffe505983791f3fd517c246cc8fb173bbefc2ef657ce9cf2182ac9d97951f77b",
+    "modeling_qwen3.py": "624175f036b6552db473e911e5ec57a09d518c7241b11bc375a7b4bf558675ce",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "added_tokens.json": "6ad14248a97d96b55f4439a9c441348f7ab308509b6c39d3cbdbfd59d928dce0",
+    "special_tokens_map.json": "676a177c1945a87fc5297d228bd9a57c325cb69514644fcdda3b22e113671336",
+    "tokenizer.json": "6d55810de1daf81d1d1259355b4b85810385022ab745be68029295935a4eacf0",
+    "chat_template.jinja": "87a2728cb8dc9fe424d624542f6060ec05a1d285ebbec578bb078900e33396b5",
+    "generation_config.json": "48667a223c617e2e6c2f7f3f7b89a3c8b9e86fc1788055c10583620e10a3552e"
+  },
+  "prompt": "Solve the following problem. Return only a JSON object with one field named \"answer\", whose value is a JSON number.\nProblem: {question}",
+  "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set content = message.content %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is defined and message.reasoning_content is not none %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in message.content %}\n                {%- set content = message.content.split('</think>')[-1].lstrip('\\n') %}\n                {%- set reasoning_content = message.content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- endif %}\n{%- endif %}"
+}

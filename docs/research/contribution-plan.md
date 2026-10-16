@@ -55,6 +55,13 @@ passing only enables considering a separately frozen cost/variance protocol.
 Classical inference and conditional means, own originality, useful training
 and the open scientific goal are not conflated.
 
+The frozen854a733 V4 capture then completes8/8 resource cases,9 pretrained
+forwards including warmup and32 valid original-ID JSON proposals. All heads,
+IDs, three scores/checks and sources are retained. No refusal/error;
+CPU/GPU max log discrepancy3.553e-14, sampler peak<=422932672 bytes. This
+establishes feasibility only. No label, update or complete-cost variance gate
+was executed; the next scientific/consumer reassessment remains necessary.
+
 ## 2026-10-13 — A50 V13/V14: actual consumer and resource-law boundary
 
 All30 initial states remain, including15 FULL preprocessing refusals and nine
