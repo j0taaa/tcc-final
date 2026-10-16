@@ -1,0 +1,34 @@
+{
+  "status": "FUNCTIONALITY_NOT_CONFIRMED",
+  "new_model_forwards": 0,
+  "updates": 0,
+  "new_samples": 0,
+  "labels_previously_known": true,
+  "setup_exception": "ResourceRefusal(\"whole-capture GPU isolation invalid: {'utc_seconds': 1792183209.4174862, 'own_pid': 1400155, 'raw': '2026/10/16 17:40:09.431, 1400116, .venv/bin/python, 1736 MiB\\\\n', 'pids': [1400116], 'foreign_pids': [1400116]}\")",
+  "whole_capture_isolation_satisfied": false,
+  "occupancy_observations": 1,
+  "occupancy_failures": [
+    {
+      "utc_seconds": 1792183209.4174862,
+      "own_pid": 1400155,
+      "raw": "2026/10/16 17:40:09.431, 1400116, .venv/bin/python, 1736 MiB\n",
+      "pids": [
+        1400116
+      ],
+      "foreign_pids": [
+        1400116
+      ]
+    }
+  ],
+  "capture_pid": 1400155,
+  "polling_scope": "one-second sampled observations, not continuous exclusion",
+  "records": 70,
+  "declared_transitions": 70,
+  "status_counts": {
+    "PASS": 0,
+    "ERROR": 0,
+    "RESOURCE_REFUSAL": 0,
+    "NOT_RUN": 70
+  },
+  "diagnostic_seconds": 0.025998734985478222
+}
