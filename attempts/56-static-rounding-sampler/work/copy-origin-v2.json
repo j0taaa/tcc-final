@@ -1,0 +1,31 @@
+{
+  "producer": "d61565e4ac544334d93a81834255f29fd15c9073",
+  "files": {
+    "interval_frontend.py": {
+      "source": "attempts/51-audited-gpu-posterior/work/interval_frontend.py",
+      "sha256": "cf4df90f4407288e46b31c0dfcd1364332ca8cf82473c90b37c6a7d06f51fccb",
+      "bytes": 9653
+    },
+    "interval_sampler.py": {
+      "source": "attempts/51-audited-gpu-posterior/work/interval_sampler.py",
+      "sha256": "2dd692ae8dba8b77a9de127d1c8a60e18624f69883cdb67de2962add959543bd",
+      "bytes": 8945
+    },
+    "gpu_cdf.py": {
+      "source": "attempts/51-audited-gpu-posterior/work/gpu_cdf.py",
+      "sha256": "208ef5320856e02f4d262fe67f61166b86e5315ffc834d3ab1897dbea96f2b78",
+      "bytes": 3319
+    },
+    "exact_control.py": {
+      "source": "attempts/51-audited-gpu-posterior/work/exact_control.py",
+      "sha256": "7912debb783ac0c522d79f0f1ebc4b39555b32b30aacc06a4ea8ff123d870edb",
+      "bytes": 2201
+    },
+    "cdf_control.py": {
+      "source": "attempts/51-audited-gpu-posterior/work/cdf_control.py",
+      "sha256": "43adce1cfcab6e2a5a64c44d48672ee98213714d147e9d63f98b9f23463d4e04",
+      "bytes": 1761
+    }
+  },
+  "scope": "unaltered classical controls, not new implementation"
+}

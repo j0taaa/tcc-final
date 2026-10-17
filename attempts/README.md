@@ -39,6 +39,7 @@ new seeds, cost/variance or independent campaign follows for this initialization
 
 | Pasta | Direção |
 | --- | --- |
+| [56-static-rounding-sampler](56-static-rounding-sampler/README.md) | Preflight GPU com certificados estáticos passa; ADZ original confirma antecedente direto, sem benefício próprio medido ou promoção |
 | [55-cycle-permutation-sampling](55-cycle-permutation-sampling/README.md) | Referência racional de ciclos; oito oráculos passam, controle clássico ordenado recupera lei/custo, sem diferença própria suficiente ou campanha neural |
 | [54-coupled-policy-replay](54-coupled-policy-replay/README.md) | Comparação de políticas; todos25 coeficientes locais falham contra controle forte, sem expansão neural |
 | [53-observable-termination](53-observable-termination/README.md) | Certificado de parada; screen antigo negativo contra prefixo competente |
@@ -88,7 +89,7 @@ new seeds, cost/variance or independent campaign follows for this initialization
 | [42-safe-empirical-resampling](42-safe-empirical-resampling/README.md) | Prova de segurança global em pool6; uso/novidade abertos, controle pivotal quase idêntico |
 | [43-adaptive-source-excursions](43-adaptive-source-excursions/README.md) | Revalidação de A34; duplicação interna identificada, sem nova contribuição |
 | [44-three-class-empirical-coupling](44-three-class-empirical-coupling/README.md) | Segurança vetorial para três classes em todo orçamento finito; prova/oráculos, novidade e uso abertos |
-| [45-random-order-empirical-towers](45-random-order-empirical-towers/README.md) | Auditoria de segurança empírica; conjectura universal ainda aberta |
+| [45-random-order-empirical-towers](45-random-order-empirical-towers/README.md) | Segurança provada para seis/sete propostas e classes arbitrárias; fronteira superior corrigida, utilidade própria ainda aberta |
 | [46-ambiguity-aware-conditioning](46-ambiguity-aware-conditioning/README.md) | Correção de ambiguidade limitada; redução a antecedentes, sem nova contribuição |
 | [47-exact-logit-forest-sampling](47-exact-logit-forest-sampling/README.md) | Sampling por intervalos; princípio anterior, custos especializados abertos |
 | [48-grammar-factor-representation](48-grammar-factor-representation/README.md) | Representação por fatores; antecedentes e controles compactos reconhecidos |

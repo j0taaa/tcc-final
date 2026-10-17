@@ -53,3 +53,18 @@ unchanged. This is a separate systems hypothesis, not new rounding-error theory.
 The written theorem and prospective refusal rules are in work/theory-v1.md.
 Only a small independent mathematical reference is justified at this stage.
 Do not restore/promote experimental code into the maintained core.
+
+Initial consolidation: four rational oracles and full311 tests PASS88.119s.
+The bounded V2 GPU preflight also passes185 exact masses,336 literal replays
+and4096 finite prefixes/16 original-word events;14 PTX modules are preserved.
+Subnormal/underflow guards trigger the unchanged directed control correctly.
+ZERO neural heads/forwards or competitive timings. A wrong initial environment
+import failure is retained separately; successful runtime is Torch2.13/CUDA13.
+
+Reading the complete ORIGINAL ADZ1997 report after its successful retrieval
+confirms that one approximate recurrence plus static error certificates and
+retained-value refinement is an OLD mechanism. Reject that mechanism as the
+own novelty claim; no new sampling theory or achieved goal. A substantive new
+GPU architecture and measured complete-cost advantage remain unestablished.
+Keep this artifact as a strong control, and do not start a broad model campaign
+solely from these toy checks. See work/primary-decision-v2.md and evidence/.

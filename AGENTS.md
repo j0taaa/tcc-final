@@ -322,6 +322,20 @@ positiva, inclusive para verificador Booleano com residual explícito. Não
 refuta a garantia de torres1/18 ou os controles matching/pivotal. São matemática
 e oráculos, sem head/timing/aplicação/prioridade/benefício real confirmado.
 
+A56 começa ESCRITA7fb3daf/b1f88d6 antes dos protótipos: substituir frontend
+intervalar dual por um stream GPU arredondado e budgets estáticos de erro,
+mantendo CDF/prefixos/fallback exatos e IDs originais. Quatro oráculos racionais
+e suíte311 PASS88.119s; preflight GPU185 massas/336 replays literais/4096
+prefixos completos16 eventos e14 PTX passam. Subnormais/underflow acionam
+fallback dirigido; primeiro import falhou no ambiente CPU e foi preservado.
+ZERO heads/forwards/timings competitivos. O ORIGINAL ADZ1997 foi obtido e
+lido nas16 páginas do relatório, incluindo conferência visual do Lema3.1;
+já fornece aproximação única+bound estático+refinamento do mesmo uniforme.
+Não reivindicar esse mecanismo como novo. A implementação fica como controle
+competente; diferença própria substancial de arquitetura/benefício integral
+não estabelecidos, sem promoção ou campanha neural ampla. A versão de revista
+1999 não foi lida integralmente; escopos anteriores de51 não são reescritos.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

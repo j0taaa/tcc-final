@@ -43,6 +43,28 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M79 — Static-rounding GPU numerical preflight, no new theory claim
+
+- [x] T7900: Write A56 eight criteria/theorem7fb3daf BEFORE arithmetic code,
+  GPU protocolb1f88d6 BEFORE kernels. Four independent rational oracles PASS:
+  1793 grid roundings,3024 enclosures,1024 prefix cells and wrong DAG-height
+  counterexample. Full311 PASS88.119s. GPU opt-in passes185 exact masses,
+  336 literal replays,4096 prefixes/16 events and14 PTX modules, no FTZ.
+  Keep exact-zero/subnormal guards, original IDs and unchanged prefix fallback.
+  First wrong-environment import failure and exact source are preserved.
+  ZERO new neural/model heads/forwards, external inputs or competitive timings.
+- [x] T7901: Read full ORIGINAL ADZ1997 report16 pages after successful HAL
+  retrieval, SHA9eb5910791f1; Lemma3.1 visually checked, §§3--5 supply direct
+  static-error/retained-refinement antecedent. Reject a NEW generic mechanism
+  claim. Keep guarded GPU source as control/correctness artifact. No sufficient
+  own systems advantage, publication promotion or achieved goal. See56/work/
+  primary-decision-v2.md; Higham/PepTune/SparseMAP reading scopes explicit.
+- [ ] T7902: Before expanding a numerical systems direction, establish a
+  substantive own architecture/operation beyond the classical ADZ template
+  and a plausible real complete-cost benefit. Any measurement needs a separate
+  frozen protocol with equally optimized ADZ/directed/approximate controls.
+  Correct toy kernels alone do not trigger a broad neural campaign.
+
 ## M78 — Transient-cycle assignment proposals, written before prototype
 
 - [x] T7803: A45 V3 writtene970ffe/1a39f02 BEFORE checks resolves arbitrary

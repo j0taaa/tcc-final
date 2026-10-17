@@ -1,0 +1,13 @@
+test_certified_choices_and_same_prefix_exact_refinement (attempts.56-static-rounding-sampler.work.test_reference.StaticRoundingTests.test_certified_choices_and_same_prefix_exact_refinement) ... ok
+test_exact_rounding_against_brute_representable_numbers (attempts.56-static-rounding-sampler.work.test_reference.StaticRoundingTests.test_exact_rounding_against_brute_representable_numbers) ... ok
+test_positive_circuits_true_scaled_values_and_outward_materialization (attempts.56-static-rounding-sampler.work.test_reference.StaticRoundingTests.test_positive_circuits_true_scaled_values_and_outward_materialization) ... ok
+test_refuse_underflow_subnormal_and_overflow_without_pruning (attempts.56-static-rounding-sampler.work.test_reference.StaticRoundingTests.test_refuse_underflow_subnormal_and_overflow_without_pruning) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.362s
+
+OK
+uniform-prefix consistency: 1021 certified, 3 refinements
+independent representable-grid roundings: 1793
+positive-circuit enclosure checks: 3024
+wrong-height-budget counterexample: 926336713898529563388567880069503262826159877325124512315660672063305037119488/302053206613778885282545886204311976195413446228001225289808855939157129998507

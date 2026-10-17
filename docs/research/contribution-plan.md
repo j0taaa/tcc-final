@@ -1,5 +1,31 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A56 numerical GPU feasibility and direct ADZ antecedent
+
+Written7fb3daf/b1f88d6 precede this direction's arithmetic reference and bounded
+GPU prototype. Four rational audits and311 maintained tests PASS88.119s.
+The GPU frontend passes185 exact mass comparisons,336 literal retained-prefix
+replays and a full4096-prefix/16-word law. Fourteen emitted PTX modules are
+preserved; zero FTZ qualifiers. Original IDs/aliases/fixed values and true
+EOT/PAD survive. Two subnormal/underflow fixtures correctly use the unchanged
+directed frontend. The initial CPU-environment Triton import failure is kept.
+No neural heads, pretrained forwards, real-input readouts or competitive timing.
+
+The complete ORIGINAL Denise--Zimmermann1997 report was finally retrieved
+from HAL, SHA9eb5910791f17c0869989c9753d310c2e6eda874ecc2d66b669170e70ffddb6a.
+All16 report pages were read by OCR after a broken text-layer extraction;
+Lemma3.1 was also viewed as an image. Its static-error/retained-uniform ADZ
+construction directly predates the proposed generic mechanism. The report is
+not falsely labeled as a full reading of the1999 journal version. Earlier A51
+reading failures remain historical. Primary-decision-v2.md records exact scopes.
+
+Decision: preserve the guarded GPU prototype as a strong control; do NOT
+promote its known mechanism as a new sampling contribution. A substantive own
+architecture and complete-cost advantage are still required before a broad
+campaign. PepTune inspection establishes a generator, not the needed unbiased
+consumer/cost ratio. Generic SparseMAP projection is also not a new mechanism.
+The user's actual original/useful-contribution goal remains OPEN.
+
 ## 2026-10-16 — A45 rare-class obstruction narrows the family frontier
 
 Written01f84be BEFORE new checks. A strict violation of the unconstrained
