@@ -51,3 +51,11 @@ motivate the question, but their native pilots are not evidence for A63.
    neuron/head/weight/update/label/timing or publication claim. Do not promote
    a solver result, a small sampler or a resource screen as goal completion.
    If the exact LP reveals no own benefit, preserve it and change direction.
+
+V1 source31c3961 was committed BEFORE solving/verifying. Exact rational primal
+and dual both give386/81 calls at U3; independent named-tape verification
+passes729 tapes/28 multisets/five laws and rejects corrupted primal/dual data.
+This is50/243 fewer source calls versus six, not wall time/neural quality or
+priority confirmation. [V2 extraction contract](work/extraction-contract-v2.md)
+is written before deriving an operational reference. Main environment remains
+unchanged; optional NumPy2.2.6/SciPy1.15.3 live in an isolated solver environment.

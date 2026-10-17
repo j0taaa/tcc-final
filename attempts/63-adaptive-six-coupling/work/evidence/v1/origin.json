@@ -1,0 +1,35 @@
+{
+  "source_commit": "31c396100e1ca70aa5f76424f3e60c6c6c42e4e9",
+  "criteria_theory_commit": "ee6f4230d8f2b2c780b44c90cea3ee0acff8247e",
+  "solver_command_template": "<isolated-python> attempts/63-adaptive-six-coupling/work/solve.py --output <certificate.json>",
+  "verifier_command_template": ".venv/bin/python attempts/63-adaptive-six-coupling/work/verify.py <certificate.json> --output <verification.json>",
+  "solve_exit_code": 0,
+  "verify_exit_code": 0,
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "status": "exact primal and independent dual verification pass",
+  "scope": "uniform three-representative expected-call bound, no neural/full-cost/priority result",
+  "neural_forwards": 0,
+  "files": [
+    {
+      "file": "certificate.json",
+      "sha256": "6403d9eb2f9e7de53b263d1c0ec2f48b9479aa88371901fefa30b612e45eb672",
+      "bytes": 24065
+    },
+    {
+      "file": "solve.log",
+      "sha256": "bcd7d9eb973929fe8288f62e4871932a3e1a6969d04d0fbccc5d0a7874343253",
+      "bytes": 431
+    },
+    {
+      "file": "verification.json",
+      "sha256": "56a371e6ce3bd02935c35287dd357f1eed39ef901d16e7d6dec2e0a1af5a0c7b",
+      "bytes": 276
+    },
+    {
+      "file": "verify.log",
+      "sha256": "75e1b59db7643eb29b9482e94c2778b5d0a360c279c6beeec0f4039b5198830f",
+      "bytes": 244
+    }
+  ]
+}

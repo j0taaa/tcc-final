@@ -1,0 +1,1 @@
+{"status": "VERIFIED", "named_full_tapes": 729, "named_multisets": 28, "variables": 454, "uniform_expected_calls": "386/81", "exact_dual_bound": "386/81", "weighted_laws": 5, "neural_forwards": 0, "corruptions_rejected": ["primal", "dual_eq"]}
