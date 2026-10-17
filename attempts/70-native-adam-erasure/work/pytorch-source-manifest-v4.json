@@ -1,0 +1,36 @@
+{
+  "repo": "https://github.com/pytorch/pytorch",
+  "commit": "a1cb3cc05d46d198467bebbb6e8fba50a325d4e7",
+  "files": [
+    {
+      "path": "aten/src/ATen/native/cpu/PointwiseOpsKernel.cpp",
+      "bytes": 10416,
+      "sha256": "8e11084cc5ffcd1334020365b71381a4f23ca8afba047994e410ee398e76a341"
+    },
+    {
+      "path": "aten/src/ATen/native/cpu/LerpKernel.cpp",
+      "bytes": 6697,
+      "sha256": "0e15ce439b6300abe478b0090699f22830102f7e942ce47ca5ab79499bda7fba"
+    },
+    {
+      "path": "aten/src/ATen/native/Lerp.h",
+      "bytes": 1461,
+      "sha256": "98294279dae51d2e2c6fc5724ea2455c4b18acfb4afa2226c093589ac28ed20f"
+    },
+    {
+      "path": "aten/src/ATen/native/cpu/BinaryOpsKernel.cpp",
+      "bytes": 55117,
+      "sha256": "109c20080579844f23895c221256d8e9b1fcbde37ed6e2cf70eaafe464c2bb92"
+    },
+    {
+      "path": "aten/src/ATen/cpu/vec/functional_base.h",
+      "bytes": 15479,
+      "sha256": "79325a9a85535644273d063d09f66b18ce98bf9f1ddb2c78f3cd2051e4b35a4a"
+    },
+    {
+      "path": "aten/src/ATen/native/cpu/Loops.h",
+      "bytes": 14905,
+      "sha256": "d19e6ffa38db8588628a489b070e62039eeb11e822d18f1f58e077ed0859054d"
+    }
+  ]
+}

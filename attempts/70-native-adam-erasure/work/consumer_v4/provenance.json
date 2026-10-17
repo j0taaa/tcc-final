@@ -1,0 +1,49 @@
+{
+  "kind": "Unmodified original source; only model/coder components will execute after freeze",
+  "archive_url": "https://bellard.org/nncp/nncp_v2-2021-02-06-1.tar.gz",
+  "archive_bytes": 25411,
+  "archive_sha256": "ced40f3cee1cb2948a5465ead64dffa2614c54abe0ed12fdce084f5c63c29fb1",
+  "files": [
+    {
+      "path": "mem_transformer.py",
+      "archive_member": "nncp_v2-2021-02-06-1/mem_transformer.py",
+      "bytes": 27699,
+      "sha256": "20285daaffb77e888bcc7a15bb046525a485eae863966da42cde462e5c4a6fc4"
+    },
+    {
+      "path": "arithmetic_coder.py",
+      "archive_member": "nncp_v2-2021-02-06-1/arithmetic_coder.py",
+      "bytes": 12056,
+      "sha256": "bf502cfca2b3924c1b35a3523bb69e25010e19e69c9a3a9db977a766f6436571"
+    },
+    {
+      "path": "nncp.py",
+      "archive_member": "nncp_v2-2021-02-06-1/nncp.py",
+      "bytes": 24540,
+      "sha256": "744115045ace2a3c9990d0d01470c9aafb5d63128d7e2225c6bbe64f518e015f"
+    },
+    {
+      "path": "nncp_enwik_base.sh",
+      "archive_member": "nncp_v2-2021-02-06-1/nncp_enwik_base.sh",
+      "bytes": 1913,
+      "sha256": "180b0aa23a01270b415211305b51b1d3bba3b597abe76fc7d6255fc96977f3ee"
+    },
+    {
+      "path": "nncp_enwik_large.sh",
+      "archive_member": "nncp_v2-2021-02-06-1/nncp_enwik_large.sh",
+      "bytes": 2138,
+      "sha256": "26ea54e553354dd375581d7d7731cb942b5617d1345118bf9c20176e5ad11a00"
+    },
+    {
+      "path": "readme.txt",
+      "archive_member": "nncp_v2-2021-02-06-1/readme.txt",
+      "bytes": 2113,
+      "sha256": "84813edc47c4d2550c896813af328fa6a9d646c5afd6abda09b1bcf59b63b981"
+    }
+  ],
+  "licenses": {
+    "mem_transformer.py": "Apache-2.0, Fabrice Bellard/Transformer-XL",
+    "arithmetic_coder.py": "MIT Project Nayuki plus credited public-domain simplifications; NNCP readme declaration"
+  },
+  "original_runtime": "Readme tested PyTorch1.7.0/Python3.6; screen uses declared modern CPU/FP32 component variation"
+}

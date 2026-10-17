@@ -90,3 +90,15 @@ or latency/quality gains. The written adaptive trace theorem is conditional
 on the declared operation/interface, not an implementation proof for every
 PyTorch/CUDA/GS-Scale kernel. Criteria1--8 still require actual consumer/FP
 instantiation, priority and complete benefit before a substantive build.
+
+V4 rechecks ALL eight criteria in[the consumer audit](work/consumer-audit-v4.md)
+BEFORE a resource screen. NNCP motivates exact adaptive probabilities, but
+the open CPU/FP32 route uses beta1=0, different native operations, memory/
+clipping/coder work and optional retraining state. Published GPU/Apex and
+closed LibNC modes are distinct. Classical beta1=0 weight skipping and
+finite-format exact jump tables are mandatory controls, not new inventions.
+Only[the fixed optimistic resource gate](work/protocol-v4-resource.md) is
+selected: eliminate ALL input-embedding optimizer cost in a common full
+component cycle. No actual A70/codec adapter is built from scalar success;
+priority/use/full-cost/positive goal stay OPEN. Negative screen has an
+explicit stopping rule; no favorable-case/cap/thread/vocabulary rescue.

@@ -42,3 +42,13 @@ at `attempts/32-native-oracle-antithetics/work/GSM8K-LICENSE.txt`.
 The combined upstream files contain annotations; question-only selection
 ignores answers and is declared separately from evaluation. No claim of
 newly authored or previously unseen model-training questions is made.
+
+A70 V4 preserves unmodified NNCPv2 model/coder source components from
+Fabrice Bellard's original2021-02-06-1 archive (SHA256
+ced40f3cee1cb2948a5465ead64dffa2614c54abe0ed12fdce084f5c63c29fb1),
+https://bellard.org/nncp/nncp_v2-2021-02-06-1.tar.gz . Original attribution,
+Apache-2.0 and arithmetic-coder MIT/public-domain provenance are retained in
+`attempts/70-native-adam-erasure/work/consumer_v4/{NOTICE.md,provenance.json,
+Apache-2.0.txt,MIT-Nayuki.txt,readme.txt}`. They are third-party sources, not
+original project code. Only a declared CPU/FP32 component resource screen
+is authorized here; no published GPU/Apex result or LibNC binary is bundled.

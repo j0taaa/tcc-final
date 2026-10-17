@@ -77,6 +77,13 @@ cost remain open. No new neural campaign is credited to M70.
   and closest exact sparse optimizer/generic interval-erasure controls.
   Specific priority and useful complete benefit remain OPEN; passing scalar
   fixtures alone do not trigger a training or performance campaign.
+- [x] T9603-V4-spec: Original NNCPv2/2024 and installed Torch2.8 Python/
+  pinned C++ portions read. Exact codec motivates reproducibility; open CPU/
+  FP32 branch has beta1=0, native order differs from C fixtures. Published
+  GPU/Apex and closed LibNC distinct; classical weight skip/exact finite-
+  state jumps are mandatory controls. Eight criteria and zero-cost full
+  component resource protocol frozen BEFORE new source/forwards; no adapter
+  or timing result yet. See70/work/consumer-audit-v4.md/protocol-v4-resource.md.
 - [x] T9604: Independent V1 failure/V2/V3 snapshots match original Git,
   direct0:2335 files37,213,696 bytes. Own Ruff/format5 PASS; make check/direct0
   27.086s preserves70 attempts277 versions212156 files8,144,625,198 bytes.
