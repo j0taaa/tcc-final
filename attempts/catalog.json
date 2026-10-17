@@ -5106,8 +5106,8 @@
     {
       "id": "69-adaptive-factory-separation",
       "title": "Separação candidata de capacidade adaptativa frente a lotes preselecionados",
-      "conclusion": "V3 prova escrita quantifica custo adaptativo de input<2 vs ótimo de TODO lote preselecionado/full em[(R-3)/2048,R/4], com argumento de trabalho total pontual que cobra R binário e oracle iid de custo aditivo. Fonte2d15a05 após prova/protocolo3b53b76 e antes de UM PASS0:924 normas105 diferenças349 somas21840 transcrições30 casos forçados10 recusas. Objetos finitos não mecanizam prova geral. Controle aproximado f_2 tem erro uniforme<1e-8 e batch mean1/2, podendo eliminar vantagem sob tolerância. Prioridade e uso natural que exija exatidão continuam abertos; sem NN/campanha prática/meta cumprida. V1/V2 e desvio original preservados.",
-      "reading": "attempts/69-adaptive-factory-separation/work/result-v3.md; attempts/69-adaptive-factory-separation/work/quantitative-gap-v3.md; attempts/69-adaptive-factory-separation/work/proof-and-use-audit-v3.md; attempts/69-adaptive-factory-separation/work/result-v1.md",
+      "conclusion": "V4 lê Mendo original: parada antecipada, finitude pontual e gaps crescentes genéricos já têm controles clássicos. Apenas a combinação uniforme/interior/all-kernel de V1/V3 permanece candidata de prioridade específica NÃO confirmada. Quatro rotas não identificam consumidor natural da função construída; expansão da aplicação presente recusada. Provas e auditorias finitas preservadas, incluindo controle aproximado uniforme barato e desvio de freeze V1. Sem novos códigos/execuções/modelos/timings/revisão humana/meta cumprida.",
+      "reading": "attempts/69-adaptive-factory-separation/work/priority-and-use-audit-v4.md; attempts/69-adaptive-factory-separation/work/result-v3.md; attempts/69-adaptive-factory-separation/work/quantitative-gap-v3.md; attempts/69-adaptive-factory-separation/work/proof-and-use-audit-v3.md; attempts/69-adaptive-factory-separation/work/result-v1.md",
       "versions": [
         {
           "id": "v1-adaptive-capability-audit",
@@ -5140,6 +5140,16 @@
             "attempts/69-adaptive-factory-separation/work/result-v3.md",
             "attempts/69-adaptive-factory-separation/work/proof-and-use-audit-v3.md",
             "attempts/69-adaptive-factory-separation/README.md"
+          ]
+        },
+        {
+          "id": "v4-classical-priority-use-audit",
+          "source_commit": "96a8126216b3422ef7e4600db2d3981c0e216e79",
+          "evidence_commit": "96a8126216b3422ef7e4600db2d3981c0e216e79",
+          "evidence_roots": [
+            "attempts/69-adaptive-factory-separation/work/priority-and-use-audit-v4.md",
+            "attempts/69-adaptive-factory-separation/README.md",
+            "docs/evidence/a69-v4-primary-reading.json"
           ]
         }
       ]

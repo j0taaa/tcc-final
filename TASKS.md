@@ -49,6 +49,12 @@ cost remain open. No new neural campaign is credited to M70.
 
 ## M92 — Adaptive finite work beyond every preselected batch
 
+- [x] T9211: V4 written source/evidence96a8126 independently archived762
+  files11,535,051 bytes, create/original-Git/direct0. Three evidence roots
+  match worktree/original Git/ZIP hashes. make check/direct0:69 attempts274
+  versions209821 files8,107,411,502 bytes; final receipt a69-v4-final-
+  verification.json. No scientific/345-test rerun. Normal commit/push and
+  HEAD/upstream/remote sync follow; positive goal remains OPEN.
 - [x] T9209: V4 ORIGINAL Mendo Algorithm1/Theorems1/2/proofs7.2/7.3
   audit confirms classical early stopping and finite pointwise work p^(a-1).
   Elementary global Lipschitz bound excludes ALL finite-mean full batches

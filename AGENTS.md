@@ -1,5 +1,12 @@
 # AGENTS.md
 
+A69 V4 written source/evidence96a8126 archive762 files11.535.051 bytes
+matches original Git/direct0; three roots match Git/worktree/ZIP hashes.
+make check/direct0:69 attempts274 versions209821 files8.107.411.502 bytes.
+Receipt docs/evidence/a69-v4-final-verification.json; no scientific/345-test
+rerun. Present application not expanded; positive goal and own useful result
+remain OPEN. Do not reclassify a proof object as the requested real benefit.
+
 A69 V4 original Mendo Algorithm1/Theorems1/2/proofs read: early termination
 and pointwise finite work are classical. A Lipschitz batch bound plus p^a
 already gives generic pointwise finite/infinite separation; p^K already

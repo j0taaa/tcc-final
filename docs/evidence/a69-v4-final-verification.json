@@ -1,0 +1,31 @@
+{
+  "kind": "Final preservation check of written reading/use audit, no scientific producer",
+  "source_commit": "96a8126216b3422ef7e4600db2d3981c0e216e79",
+  "evidence_commit": "96a8126216b3422ef7e4600db2d3981c0e216e79",
+  "archive_original_git_direct_exit_code": 0,
+  "archive_files": 762,
+  "archive_uncompressed_bytes": 11535051,
+  "evidence_worktree_git_zip_hashes": {
+    "attempts/69-adaptive-factory-separation/work/priority-and-use-audit-v4.md": "c7b3cca483f16a7b6f64cd20596cd4ff1d7b75aea1c210d1e1d4c47b9f9b44bc",
+    "attempts/69-adaptive-factory-separation/README.md": "290f9247c21301f11544999f5b874e33d4781c2eb728c556ed1d7f64ad28cd45",
+    "docs/evidence/a69-v4-primary-reading.json": "6714ec5eb98407b42f1b785c141ca0ddfa7ee75ede6cdab52997e99cca82f495"
+  },
+  "make_check": {
+    "kind": "Preservation and maintained static checks; not scientific validation",
+    "command": [
+      "make",
+      "check"
+    ],
+    "direct_exit_code": 0,
+    "elapsed_seconds": 26.920954197994433,
+    "log": "docs/evidence/a69-v4-final-make-check.log",
+    "sha256": "700ae6f5580fcae02eb3ed0f0f951493a84d556fd09a12a65d38889cc93aa332",
+    "new_scientific_execution": false,
+    "maintained_345_tests_rerun": false
+  },
+  "maintained_345_tests_rerun": false,
+  "new_scientific_execution": false,
+  "new_model_forward": false,
+  "limits": "Written classical objections and original-source read scopes only; no new universal priority certificate or natural consumer. Present application expansion declined, theorem retained.",
+  "goal": "OPEN"
+}
