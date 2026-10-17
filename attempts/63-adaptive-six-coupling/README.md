@@ -132,3 +132,18 @@ Read [rank result](work/rank-result-v6.md),
 [sharp all-law comparison](work/common-result-v7.md),
 [full-cost objections](work/full-cost-objections-v8.md) and
 [cost accounting clarification](work/full-cost-addendum-v8.md).
+
+## V10 prospective family question, before code/new solves
+
+The eight criteria are re-evaluated in
+[the written count-flow contract](work/count-flow-contract-v10.md). Use1 and
+article8 remain OPEN: no real consumer is inferred from a larger proof.
+For2/3/4 the candidate is a family of sharp stopped-work constants/attaining
+policies, not generic count compression or Bernstein/MDP machinery. The known
+reverse-martingale construction already uses counts. For5 predeclare ALL
+caps4..11, first regress4..7, exact independent primal/dual and operational
+checks; preserve inconclusive/refusal statuses. For6/7 all source/bit/preparation/
+score costs and informed/larger/regression controls remain obligations.
+The initial finite count LP is only a small proof prototype, with no new model
+campaign, priority or article promotion. A general3B/4 lower bound is written;
+attainment at that asymptotic rate is a CONJECTURE, not an achieved result.
