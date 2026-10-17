@@ -1,0 +1,15 @@
+test_all_profiles_production_original_index_law (attempts.45-random-order-empirical-towers.work.test_six_safety.SixSafetyTests.test_all_profiles_production_original_index_law) ... ok
+test_elementary_positive_remainder_counting_identity (attempts.45-random-order-empirical-towers.work.test_six_safety.SixSafetyTests.test_elementary_positive_remainder_counting_identity) ... ok
+test_population_joint_and_full_square_certificate (attempts.45-random-order-empirical-towers.work.test_six_safety.SixSafetyTests.test_population_joint_and_full_square_certificate) ... ok
+test_proven_family_endpoints_and_preserved_unsafe_control (attempts.45-random-order-empirical-towers.work.test_six_safety.SixSafetyTests.test_proven_family_endpoints_and_preserved_unsafe_control) ... ok
+test_raw_alias_and_failure_lift_by_all_original_payload_tapes (attempts.45-random-order-empirical-towers.work.test_six_safety.SixSafetyTests.test_raw_alias_and_failure_lift_by_all_original_payload_tapes) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.470s
+
+OK
+six-pool production conditional rows: 35 integer-tape leaves: 12412
+positive remainder independent expansions: 8
+six-pool exact population entries: 192 square directions: 115 Boolean verifiers: 334
+proved-family endpoint exact verifier/square checks: 508 unsafe control retained
+original raw-alias/failure source tapes: 4096

@@ -45,6 +45,16 @@ cost remain open. No new neural campaign is credited to M70.
 
 ## M78 — Transient-cycle assignment proposals, written before prototype
 
+- [x] T7803: A45 V3 writtene970ffe/1a39f02 BEFORE checks resolves arbitrary
+  finite-class covariance safety for B6/7 by an exact square certificate.
+  Endpoint addendum9a1aae9 proves0<=t<=1/15; upper remainder and even B>=8
+  remain OPEN. Five exact oracles PASS1.452s:35 conditional rows/12412 RNG
+  leaves,192 population entries/115 matrix directions/334 verifiers,
+  508 endpoint checks and4096 raw alias/failure tapes. Optional SymPy1.14
+  verifies ten identities. No new head/timing/use/priority or goal claim;
+  original negative A44 consumer stays closed. Full307 tests PASS88.256s;
+  completed exit0 logs in work/evidence/six-safety-v3. Focused Ruff passes.
+
 - [x] T7802: Separate A45 mathematical audit, f50008a written before its
   oracle: whole-matrix odd/even degree-elevation identity for all label counts;
   B2/3 iid and B4/5 existing A38 control, conditional-SRS shortcut false.

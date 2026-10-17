@@ -62,3 +62,29 @@ PASS, zero new neural calls. New primary PPS2026 Theorem4.1 and Neal's
 original HST/non-domination statements are read within explicit scopes in
 the addendum. No new population screen, benchmark, target evaluator, source
 fitting, timing or broad neural implementation is authorized by this result.
+
+V3 resolves SIX/SEVEN proposals for every finite class count. Written
+e970ffe/1a39f02 precedes the new checks: two different nonnegative weight
+systems give an exact sum-of-squares certificate for the unconditional
+population covariance, including the random pool's fluctuating mean.
+The literal first payload and both original marginals remain preserved;
+aliases/failures are ordinary source payloads. Nonconstant class means give
+strict variance/pass@2 improvement versus iid2, before auxiliary costs.
+
+The separate written endpoint addendum9a1aae9 proves the entire subinterval
+0<=t<=1/15 of A42's anonymous six-pool family, including matching1/30,
+pivotal1/27 and towers1/18. It does NOT resolve(1/15,4/45], nor the even
+budgets>=8. The existing unsafe1/6 counterexample is retained exactly.
+No distinct parameters can dominate one another for every score: their
+individual-class diagonals agree, and a nonzero difference with zero
+diagonal cannot be positive/negative semidefinite.
+
+Five exact oracles check production RNG branches, the full population law,
+the square certificate, both endpoints and raw aliases/failures. The optional
+standalone SymPy audit checks ten polynomial identities; it adds no dependency
+to maintained CI. These are mathematical correctness checks. No new pretrained
+forward, timing, target fitting, application or publication priority is claimed.
+The eight criteria above still apply: a useful cheap-source/expensive-target
+boundary and a meaningful own difference from classical controls remain OPEN.
+See work/six-class-proof-v3.md, six-square-certificate-v3.md,
+safe-interval-v3.md and evidence/six-safety-v3/ for the precise scope.

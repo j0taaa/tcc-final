@@ -302,6 +302,16 @@ B4/5=A38; atalho condicional de dominância SRS é falso. Oráculo racional
 permanece ABERTA para B par>=6/L>=4. Nenhuma população/execução neural nova,
 consumidor útil, prioridade ou promoção. Não reabrir o consumidor negativo44.
 
+A45 V3 resolve SEIS/SETE propostas com qualquer número finito de classes:
+provas escritase970ffe/1a39f02 dão identidade de quadrados para a covariância
+populacional inteira, antes dos novos oráculos. O addendum9a1aae9 prova
+0<=t<=1/15 da família anônima de seis; (1/15,4/45] e B par>=8 continuam
+ABERTOS. Matching/pivotal/torres ficam no intervalo provado; nenhum domina
+todos os scores dos demais. Cinco oráculos exatos e dez identidades simbólicas
+passam, incluindo payloads originais, aliases, falhas e primeira amostra literal.
+Não há head/timing/consumidor útil novo, originalidade suficiente confirmada ou
+meta cumprida. Não transformar garantia contra iid2 sem custo em vitória real.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

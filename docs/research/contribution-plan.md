@@ -1,5 +1,30 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A45 six/seven proposals, arbitrary finite classes
+
+Written e970ffe/1a39f02 BEFORE the new rational/symbolic checks. Two different
+nonnegative weight systems turn the whole population covariance into an
+explicit negative sum of squares. Unlike a conditional-pool statement, this
+includes the fluctuation of the empirical mean. With nonconstant class means
+the projected covariance is strictly negative; original within-class residuals,
+aliases/failures, marginals and literal first payload are preserved. V2 gives
+the same joint law at seven proposals. Even budgets>=8 remain OPEN.
+
+The separate written addendum9a1aae9 also proves every0<=t<=1/15 in the
+anonymous six-pool family; matching1/30, pivotal1/27 and towers1/18 are included.
+This is a SUBINTERVAL, not the full necessary interval[0,4/45]. The unsafe1/6
+counterexample is retained. Equal atom diagonals preclude universal covariance
+dominance of different family members. Five exact oracles and ten standalone
+symbolic identities pass. No new pretrained head, timing or useful consumer.
+
+This is positive bounded mathematical progress, not sufficient publication
+priority or fulfillment of the user's goal. HST, random ordering, weighted
+Cauchy, symmetric polynomials, RSS, matching and pivotal are classical. A44's
+negative full-gradient application stays closed. The concrete useful advantage
+over competent controls, with full source/evaluation costs, remains required.
+Details and outputs:45/work/{six-class-proof-v3,six-square-certificate-v3,
+safe-interval-v3}.md and work/evidence/six-safety-v3/.
+
 ## 2026-10-16 — A45 exact parity reduction, universal safety still open
 
 Writtenf50008a before its oracle. Ordinary degree elevation extends to the
