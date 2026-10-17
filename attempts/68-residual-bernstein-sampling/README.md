@@ -135,3 +135,13 @@ calls. Cache12/18 and8 invalid guards pass. This executes the full numerical
 factory, not a genealogy/NN/performance campaign or novelty confirmation.
 See[the result](work/result-v4.md). Strong formula-aware/derivative/direct/
 cached controls and full-cost usefulness remain open before timings.
+
+V5 re-evaluates3/5/6/7/8 BEFORE control code: provide the SAME known formulas
+to compact piecewise-polynomial/truncated-HG-moment integration and analytic
+derivatives, with their own valid initial degree and persistent scalar/piece/
+moment caches. Include cheap direct and non-adaptive padded polynomial
+factories. Zero callback counts do not make their arithmetic free. Criteria
+1/2/4 retain the operation/own-candidate/written-proof scope; these are
+CLASSICAL CONTROLS, not promoted contributions. Prospective checks in
+[the control contract](work/formula-control-theory-v5.md); no competitive
+measurement or sufficient priority/user-goal claim yet.
