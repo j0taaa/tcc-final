@@ -1,0 +1,26 @@
+{
+  "kind": "Final preservation/lint/type verification; no scientific rerun",
+  "command": [
+    "make",
+    "check"
+  ],
+  "direct_exit_code": 0,
+  "elapsed_seconds": 27.085837199003436,
+  "log": "docs/evidence/a70-v3-final-make-check.log",
+  "log_sha256": "cf3c5e020ab3ecb2ae5ef811a6a159acd40046fc4b6156c7bbbd47d75afb5197",
+  "archive_creation_and_original_git_exit_code": 0,
+  "new_attempt_versions": [
+    "v1-linkage-failure",
+    "v2-native-grid",
+    "v3-bound-admission"
+  ],
+  "own_ruff_and_format_files": 5,
+  "maintained_345_tests_rerun": false,
+  "numerical_producer_v3": "37b5b984c791c9d635913c2c0501275bed440dfe",
+  "numerical_evidence_v3": "d7222c2904271c5f6b9271b3dcff3bc862f55aa8",
+  "source_hashes_verified_by_post_data_receipts": [
+    "docs/evidence/a70-v2-post-data-verification.json",
+    "docs/evidence/a70-v3-post-data-verification.json"
+  ],
+  "goal": "OPEN"
+}

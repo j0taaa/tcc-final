@@ -19,6 +19,11 @@ refusals,6 unavailable-bound exact fallbacks. Static checks confirm hashes/
 unchanged old grid. No native library-wide identity, real workload/latency,
 NN/training/priority/goal fulfillment. Result70/work/result-v3.md; next is
 actual consumer FP/read instantiation and useful gap/cost/priority evidence.
+A70's three independent archives match original Git/direct0,2335 files;
+own Ruff/format5 PASS. make check/direct0,27.086s preserves70 attempts277
+versions212156 files8,144,625,198 bytes. Final receipt a70-v3-final-verification
+.json in docs/evidence; no numerical/345-test rerun. Normal commit/push and
+HEAD/upstream/remote verification follow. Positive goal/T9603 still OPEN.
 
 Structural-operation audit v5 reads FINAL TreeDiff ICLR2025/aircraft ICML2026
 and pins actual MaskeDiT source. Absent fields differ from observed context;

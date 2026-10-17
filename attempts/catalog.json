@@ -5157,9 +5157,51 @@
     {
       "id": "70-native-adam-erasure",
       "title": "Reconstrução observável do Adam nativo com apagamento certificado de estado",
-      "conclusion": "Candidata ESCRITA antes de código: guard de absorção para toda cauda, enclosure do momento arredondado com piso subnormal e recuperação exata no próximo gradiente por endpoints/fallback. Apenas protótipo mínimo de correção autorizado; ferramentas clássicas explícitas, prioridade/uso/custo completo/meta abertos.",
-      "reading": "attempts/70-native-adam-erasure/README.md; attempts/70-native-adam-erasure/work/theory-v1.md; attempts/70-native-adam-erasure/work/protocol-v1.md",
-      "versions": []
+      "conclusion": "V1 crash de linkage preservado; V2 passa768 fixtures/128 erasures não triviais. V3 corrige admissão de bound/ranges, preserva os768 bits/contagens e passa oito regressões adversas/quatro recusas de contexto; seis fallbacks exatos. Prova escrita de identidade observável no contrato binary32 declarado, princípios clássicos explícitos. Consumidor/kernel nativo, prioridade e benefício de custo completo reais continuam abertos; nenhum modelo/treino/timing competitivo/meta cumprida.",
+      "reading": "attempts/70-native-adam-erasure/work/result-v3.md; attempts/70-native-adam-erasure/work/result-v2.md; attempts/70-native-adam-erasure/work/result-v1-failed.md; attempts/70-native-adam-erasure/work/theory-v1.md; attempts/70-native-adam-erasure/README.md",
+      "versions": [
+        {
+          "id": "v1-linkage-failure",
+          "source_commit": "803fce7937d5f9548d622c2701f5f7c5131c64ad",
+          "evidence_commit": "3f3de0eee2932fda11ac58fc3739682c947609d0",
+          "evidence_roots": [
+            "docs/artifacts/raw/a70_native_erasure_v1_initial",
+            "docs/evidence/a70-v1-initial-audit.log",
+            "docs/evidence/a70-v1-initial-exit.json",
+            "docs/evidence/a70-v1-linker-diagnosis.json",
+            "attempts/70-native-adam-erasure/work/result-v1-failed.md",
+            "attempts/70-native-adam-erasure/README.md"
+          ]
+        },
+        {
+          "id": "v2-native-grid",
+          "source_commit": "39ac2f4da1a7cb3ecfd15d335c683b35f01db037",
+          "evidence_commit": "078441d9c6b309dc852946aae13fde7e0482689b",
+          "evidence_roots": [
+            "docs/artifacts/raw/a70_native_erasure_v2_frozen",
+            "docs/evidence/a70-v2-frozen-audit.log",
+            "docs/evidence/a70-v2-frozen-exit.json",
+            "docs/evidence/a70-v2-post-data-verification.json",
+            "attempts/70-native-adam-erasure/work/verify_packet_v2.py",
+            "attempts/70-native-adam-erasure/work/result-v2.md",
+            "attempts/70-native-adam-erasure/README.md"
+          ]
+        },
+        {
+          "id": "v3-bound-admission",
+          "source_commit": "37b5b984c791c9d635913c2c0501275bed440dfe",
+          "evidence_commit": "d7222c2904271c5f6b9271b3dcff3bc862f55aa8",
+          "evidence_roots": [
+            "docs/artifacts/raw/a70_native_erasure_v3_bounds",
+            "docs/evidence/a70-v3-bounds-audit.log",
+            "docs/evidence/a70-v3-bounds-exit.json",
+            "docs/evidence/a70-v3-post-data-verification.json",
+            "attempts/70-native-adam-erasure/work/verify_packet_v3.py",
+            "attempts/70-native-adam-erasure/work/result-v3.md",
+            "attempts/70-native-adam-erasure/README.md"
+          ]
+        }
+      ]
     }
   ]
 }

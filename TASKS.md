@@ -77,9 +77,12 @@ cost remain open. No new neural campaign is credited to M70.
   and closest exact sparse optimizer/generic interval-erasure controls.
   Specific priority and useful complete benefit remain OPEN; passing scalar
   fixtures alone do not trigger a training or performance campaign.
-- [ ] T9604: Archive V1 failure/V2/V3 independently, verify hashes/required
-  repository checks, normal commit/push and HEAD/upstream/remote. No need to
-  rerun345 maintained tests for isolated experiment sources. Goal OPEN.
+- [x] T9604: Independent V1 failure/V2/V3 snapshots match original Git,
+  direct0:2335 files37,213,696 bytes. Own Ruff/format5 PASS; make check/direct0
+  27.086s preserves70 attempts277 versions212156 files8,144,625,198 bytes.
+  Receipt docs/evidence/a70-v3-final-verification.json. No numerical/345-test
+  rerun; normal commit/push and HEAD/upstream/remote verification follow.
+  Positive goal and T9603 remain OPEN; unrelated PDF untouched.
 
 ## M95 — Structural consumers and the epsilon-preserving Adam operation
 

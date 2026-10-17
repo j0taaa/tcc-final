@@ -30,6 +30,10 @@ V1 linkage crash preserved; V2/V3 pass all768 constructed cases with128
 nontrivial erasures. V3 also passes8 adverse bound/range regressions and4
 context refusals, retaining6 exact fallbacks. Actual consumer/kernel/read
 contract, priority and full cost still required; no performance/NN claim.
+All three independent archives match original Git/direct0,2335 files;
+make check/direct0 preserves70 attempts277 versions212156 files. Five own
+Python files pass Ruff/format; no numerical/345-test rerun. Final receipt
+docs/evidence/a70-v3-final-verification.json; positive goal remains OPEN.
 
 A69 V4[original-source/use audit](69-adaptive-factory-separation/work/priority-and-use-audit-v4.md)
 finds Mendo's classical early termination and elementary power controls already
