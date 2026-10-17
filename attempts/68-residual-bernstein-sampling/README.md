@@ -106,3 +106,11 @@ V3 re-evaluates ALL eight criteria BEFORE new implementation:
    Real genealogies can amortize cached grids; do not fabricate a slow callback.
 8. Specific novelty and real full-cost advantage remain article gaps. A
    passing finite certificate is not publication or completed user goal.
+
+V3 contractbdedd14/source5e97323 precede ONE PASS0:1347 four-moment proposals,
+6735 raw moments including zeroth,211011 envelope/rejection points,208323
+strict log-concavity inequalities,1347 mode/cutoff/rejection laws; all966
+function laws40134 residual branches21 zero-H points8 refusals pass. Max6
+callbacks; source count unchanged. No full RNG/sampler/genealogy/timing/NN.
+See[the result](work/result-v3.md). Real whole-operation gain/priority and the
+user goal remain OPEN; six queries alone do not settle the article.

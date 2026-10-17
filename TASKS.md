@@ -71,7 +71,16 @@ cost remain open. No new neural campaign is credited to M70.
   integration controls, with input/bit/preparation costs and real consumer.
   No production implementation/campaign/article promotion from correctness
   alone. T9005/T8809/T8903 and positive goal stay OPEN until enough evidence.
-- [ ] T9105: Written V3 contractbdedd14 BEFORE code: classical component
+- [x] T9105: Written V3 contractbdedd14 BEFORE source5e97323/ONE PASS0:
+  1347 moment proposals,6735 raw moments211011 envelope/rejection points,
+  208323 log-concavity inequalities1347 mode/cutoff/rejection laws;966 exact
+  function laws40134 residual branches21 zero-H points8 guards PASS. Classical
+  splitting cap6, four-moment normalizer and rational rejection route keep
+  SAME H-gap count/kernel. Original2024 genealogy model is a real consumer
+  identified analytically, NOT an executed genealogy/new duality/exclusive
+  non-explosion result. No full RNG/sampler/fast-bit engine or competitive
+  timings/NN. Result68/work/result-v3.md. T9102 remains open. Original contract:
+  classical component
   splitting cap6, quartic residual envelope with four-moment normalizer and
   log-concavity; rational classic rejection plan needs O(log m) known-weight
   preparation and<=8 expected attempts. SAME H-gap count/kernel. Original2024
@@ -80,6 +89,14 @@ cost remain open. No new neural campaign is credited to M70.
   execute all m16/64/256 proposal cases and six original m16/64 function laws.
   No full sampler/genealogy/RNG/timing campaign yet; T9102 still open for real
   whole-operation cost and equally informed controls/priority. ProtocolV3.
+- [ ] T9106: Before a complete runtime/performance campaign, specify charged
+  exact arithmetic and RNG, direct/analytic/derivative/global-cache and
+  coefficient-free controls; distinguish a first node from repeated genealogy
+  votes. Runtime GMP lookup is not a fast-bit implementation. No fabricated
+  expensive callback or query-count substitution for total speed; preserve
+  all unfavorable polynomial controls and the bounded-range application scope.
+- [ ] T9107: Preserve V3 source/proof/evidence independently, verify original
+  hashes/checks and normal upstream sync, without new scientific executions.
 - [x] T9104: V2 proofb7acbb0 AFTER V1 and BEFORE source13e5aa1/ONE PASS0.
   Classical Peano slope H/(3m) lowers envelope mass19H/(24m^1.5), margin1/28,
   permits SAME tighter H-gap count law with<=9 callbacks. All966 exact laws,

@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "source_commit": "5e973233cde5d9d80869671d2c3f19e4e0af35ef",
+  "counts": {
+    "moment_proposals": 1347,
+    "factorial_moment_values": 6735,
+    "envelope_points": 211011,
+    "log_concavity_points": 208323,
+    "mode_cutoff_checks": 1347,
+    "rejection_height_points": 211011,
+    "rejection_laws": 1347,
+    "conditional_laws": 966,
+    "term_branch_calls": 966,
+    "residual_branch_points": 40134,
+    "zero_h_points": 21,
+    "guards": 8
+  },
+  "maximum_callback_calls_per_enumerated_branch": 6,
+  "maximum_mode_ratio_queries": 8,
+  "maximum_cutoff_weight_queries": 11,
+  "largest_written_rejection_mean_in_finite_cases": "140546883303514196681838508375327839748686166196408390694908835532688209013348396092449458255379033003863585944329802519852433871547970609049813744416194560/37249791091571204117817018028359399971010363293578390426030638267155020432740366162508864767897722896921611780501870274621965672362880059863281150394217231",
+  "largest_rejection_state": [
+    256,
+    180
+  ],
+  "input_count_formula_comparison": [
+    {
+      "function": "constant",
+      "classical_mean": "16",
+      "sparse_mean": "16"
+    },
+    {
+      "function": "affine",
+      "classical_mean": "16",
+      "sparse_mean": "16"
+    },
+    {
+      "function": "quadratic",
+      "classical_mean": "16",
+      "sparse_mean": "16"
+    },
+    {
+      "function": "cubic",
+      "classical_mean": "41/2",
+      "sparse_mean": "41/2"
+    },
+    {
+      "function": "spline",
+      "classical_mean": "41/2",
+      "sparse_mean": "41/2"
+    },
+    {
+      "function": "reflected_spline",
+      "classical_mean": "41/2",
+      "sparse_mean": "41/2"
+    }
+  ],
+  "hashes": {
+    "sparse_v3.py": "732f7944bb64bfad3356db5c1a6a4b42a491be3e7e3e3f1b19c7455ca5b09f26",
+    "audit_sparse_v3.py": "a1e77ddb6a6f0809309d9b7100ccc8d7a3068d7481a24fe0099f27ba7a219d94",
+    "sparse-proposal-theory-v3.md": "e41fb9cd5595459a630d4e1e73e5cb600ff89da594781625c51feb575e12aea8",
+    "protocol-v3.json": "a4848e230ba3602f45acc797d156b0d7415ac7f73335b103794ce7cfda9016b0",
+    "consumer-primary-v3.md": "3d2b52d19c4d5aad46d20316cbbfb42fe775e2541c8293cb993a08514143f31a",
+    "residual.py": "4defb522ace3c8a50eb032cc9e6973260e11aba4b762110484f44c54cc5850b3",
+    "residual_v2.py": "a4743a23d70c28d995d702dd4d01c46b2d067558a885913ac0f9bcdaeb6c83e9",
+    "audit.py": "467818be145a831b2c213bd08492626e0fa7e64de02d7bb9e3780a06af6a684d"
+  },
+  "scope": "Finite exact certificates and laws; no full sampler/genealogy/RNG/timing/model run.",
+  "limits": "Bit engine, complete-cost benefit and specific novelty remain OPEN."
+}

@@ -1,5 +1,40 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A68 sparse proposal, with a published genealogy consumer
+
+The previous goal turn was PROGRESS: V1/V2 exact laws/query consequence and
+immutable snapshots changed authoritative state and synced44ad444. Goal was
+not completed. Current T9102 requires equally informed controls/full cost.
+
+Original Koskela/Latuszynski/Spano2024 Section2/Remark2, model construction/
+generator and Discussion identify a real consumer: ancestry before alleles,
+node colours later. Any non-adaptive factory can be substituted; this is
+THEIR application, not our new duality. The classical H-gap control shares
+our offspring law and all finite-graph colour kernels, including its finite-
+mean/non-explosion consequence. Bounded-away-from0/1 here excludes fixation.
+No complete graph or model simulation was run. Devroye1987 Theorem1 and
+Section3 supply classical universal log-concave rejection controls.
+
+V3 written contractbdedd14 BEFORE source5e97323/ONE PASS0 uses a quartic
+residual envelope with constant-size four-factorial-moment normalizer and
+explicit log-concavity. Classical component splitting lowers cap9 to6;
+rational level-set/geometric rejection needs O(log m) known-weight prep and
+<=8 expected attempts, with no f-values on rejected proposals. This is a
+candidate quantitative specialization, not a new general sampling principle.
+
+Exact oracle retains all six functions/old16,64, plus prospective proposal
+checks at256:1347 proposals6735 raw moments211011 envelope/rejection points,
+208323 shape inequalities1347 mode/cutoff/rejection laws966 functional laws
+40134 residual branches21 zero-H points8 refusals. Max6 callbacks; same input
+count. No whole RNG/sampler/genealogy/fast-bit execution or competitive timing.
+Source scopes, full proof, protocol and result in68/work/*v3*.
+
+Read-only metadata finds GMP/MPFR runtimes, no headers/gmpy2/flint; this is
+not a completed arithmetic engine. Next requires charged exact runtime/RNG
+and direct/analytic/derivative/coefficient-free/global-cache controls for first
+and repeated votes. No slow callback manufactured to win. Full useful benefit,
+specific priority/publication and the positive scientific objective stay OPEN.
+
 ## 2026-10-17 — A68 targets function queries, retaining classical n-1 control
 
 Previous goal turn made verified progress: original-source classical control

@@ -20,6 +20,13 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A68 V3 replaces dense known-proposal preparation with a four-moment quartic
+normalizer and log-concave rejection route, using classical splitting for
+cap6 callbacks at the SAME source-count law. Exact finite audit1347 proposals/
+211011 points/208323 shape inequalities and966 conditional laws passes;
+no full sampler/genealogy/timing/NN. Original2024 genealogy consumer identified,
+but whole-cost/priority/user goal remain OPEN. See[the result](68-residual-bernstein-sampling/work/result-v3.md).
+
 A68[constant-query residual sampling](68-residual-bernstein-sampling/README.md)
 writes an f-independent hypergeometric envelope BEFORE code. Candidate cap9
 value calls per output adopts the classical n-1 operator and pays enlarged2H

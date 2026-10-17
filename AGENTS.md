@@ -1,5 +1,22 @@
 # AGENTS.md
 
+A68 V3 prova/protocolobdedd14 ANTES de source5e97323/ÚNICO PASS0:1347
+propostas por4 momentos,6735 raw moments211011 pontos de envelope/rejeição,
+208323 desigualdades logcôncavas1347 leis de modo/cutoff/rejeição,966 leis
+funcionais40134 ramos21 pontosH0 8 recusas. Cap6 queries vem de splitting
+CLÁSSICO, normalizador quartic por momentos e prova de logconcavidade removem
+tabela densa da proposta; preparação O(log m) known-weight queries e<=8
+tentativas ESPERADAS na rota escrita, não timing ou bit-work constante.
+MESMA lei de moedas e kernel gapH. Original Koskela etal2024 fornece consumidor
+de genealogia antes de cores; não é nova dualidade/modelo/não-explosão própria.
+Essa aplicação NÃO foi executada; subclasse bounded-range exclui fixation.
+Zero novo full sampler/RNG/genealogy/NN/timing; Fraction não é motor rápido.
+Controles analytic/derivative/global-cache/coefficient-free e custo completo
+permanecem. Não fabricar callback lento nem declarar meta cumprida; T9102/
+T9106 seguem abertos. Há só lookup de runtimes GMP/MPFR, sem install/executar
+aritmética nativa/headers; não inferir capacidade implementada. Resultado
+68/work/result-v3.md; preservarV1/V2 intactas e congelar runtime antes de testes.
+
 A68 inicia direção DIFERENTE antes de código: amostrar o incremento do
 controle CLÁSSICO n-1 sem calcular a soma dependente de todos valores de f.
 Prova escrita dá envelope residual HG independente de f, massa<=9H/(8m^1.5),
