@@ -1,5 +1,32 @@
 # AGENTS.md
 
+A65 começa de consumidor REAL: Mosaic36945e4b/benchmarks/jevbench devolve
+probabilidades numéricas. Auditoria/prova2277130 e protocolo de oráculosb470a72
+precedem referência70ad390: três oráculos racionais PASS,414 folhas de kernel,
+414 folhas de cadeia absorvente/sete caminhos originais,78 checks de render.
+São objetos CONSTRUÍDOS, não resultados neurais. A prova clássica mantém média
+e reduz covariância por E[1/(1+M)] para M~Bin(N,alpha), incluindo auxiliares
+não terminais cobrados; risco quadrático diminui para TODO gold se houver
+variância terminal. Jensen/MBR/RAIL/mean forecasts são antecedentes, não teoria
+própria nova. Atalho média-antes-de-normalizar tem contraexemplo exato.
+Fonte real reprojeta LOG-MARGINAIS no commit convergido, temperatura0 ainda
+sorteia CAMINHOS e escolhe tokens por argmax nas arestas. Adaptador deve
+capturar esse kernel/estado/pins/offsets/budget antes de avançar matcher e
+condicionar à resposta INTEIRA concluída. Não substituir pelo produto original
+ou chamar modelo de novo para auxiliares. Ainda NÃO há adaptador/replay nativo,
+head/forward/update/label/timing novo ou suíte completa rerodada. A chave JSON
+native_model_step_law refere-se só à cadeia SINTÉTICA. Fonte/antecedentes MIT
+copiados/hashados; módulo externo não executado. Um exemplo público concreto
+hard-sol-b-judge_hard-18 e agregados README FORAM vistos; nenhum arquivo de
+dataset/gold/resultados foi carregado. Addendumexposure-v2 distingue isso.
+Próximo: protocolo/replay nativo SEM forward; depois protocolo independente
+de recursos/variância necessária e controles normalização/MAP/DP exato/ensembles
+ANTES de heads. Campo nativo tem só DUAS casas decimais: DP clássico por soma
+é controle forte, não inventar vantagem por precisão arbitrária. Setup26B/48GB
+não foi reproduzido na GPU local12GB. Variância final pode ser irrelevante;
+não inferir acurácia/ECE/Capability, novidade suficiente ou meta cumprida.
+Escopo/resultados em65-terminal-forecast-readout/work/result-v2.md.
+
 A64 testa uma consequência DIFERENTE, com qualquer número de chaves: mesmo
 par ordenado do matching clássico de seis e parada após quatro distintas.
 Critérios/contratoc22fa4d precedem sourced6de16f e ÚNICO solve:278 prefixos,

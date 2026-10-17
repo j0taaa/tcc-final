@@ -1,5 +1,44 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A65 starts from actual typed forecasts, not another coupling cap
+
+Read-only Mosaic36945e4b source already consumes JSON probabilities in JevBench.
+Its native final converged commit reprojects constrained LOG-MARGINALS, with
+sampled automaton paths even at token temperature0. The numbers have only two
+decimals, so exact integer-sum moment DP is a mandatory classical control.
+Consumer/proof2277130 and prospective oracleb470a72 precede source70ad390.
+RAIL2024 and forecast-logprob means2025 explicitly predate generic mean/MBR
+ideas. Own candidate is specific terminal-state integration and useful cost,
+not invention of conditional averaging, Jensen or numerical forecasting.
+
+The written finite-budget theorem replays the SAME terminal kernel N times,
+keeps the original normalized point, averages only completing typed helpers,
+and pays every incomplete helper. M~Bin(N,alpha) gives covariance factor
+[1-(1-alpha)^(N+1)]/[(N+1)alpha]. Every gold vector has squared-risk decrease
+V(1-factor); convex TV distance is no worse. The original complete decoder
+trace/model calls/failures are unchanged in the theorem. Between-history
+variance, reasoning errors, argmax accuracy and ECE are not improved by fiat.
+Rendering is a new numerical point, with explicit rounding error, not original
+token/word preservation. Native adapter and exact finite-RNG independence
+remain implementation obligations; an ideal head posterior is not its law.
+
+Three rational oracles PASS/direct0:414 kernel leaves1176 abstract helper
+calls,414 absorbing leaves/seven toy paths, four invalid guards and78 render
+checks. Exact moments and unchanged failure/step laws verify the proof; the
+wrong mean-before-normalization shortcut is worse in a constructed native-
+grid-compatible example. These are not neural observations. Evidence8009d75,
+65/work/result-v2.md. No vendor module/model/tokenizer/data row/forward/update/
+competitive timing or maintained full-suite rerun. Eight MIT source copies
+are hashed. Aggregate published results and ONE README task example were seen;
+separate exposure addendum discloses that despite no dataset/gold file reads.
+
+Next only a separately frozen native correctness replay, then a prospective
+resource/variance-necessity protocol before heads/labels. Actual residual
+variance may be negligible and helpers expensive. Published26B/48GB setup is
+not reproduced on local12GB; different backbones must be named. Strong native
+normalization/MAP/grid DP/whole ensembles remain. Useful magnitude, sufficiently
+own contribution/priority and the user's full positive goal remain OPEN.
+
 ## 2026-10-17 — A64 arbitrary-alphabet four-distinct conjecture rejected exactly
 
 The remaining A63 consumer/cost objections motivated a DIFFERENT theoretical

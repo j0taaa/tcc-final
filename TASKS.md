@@ -47,6 +47,38 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M88 — Terminal numerical forecast readout for the real Mosaic/JevBench consumer
+
+- [x] T8800: Inspect actual external consumer BEFORE a new prototype. Read-only
+  Mosaic36945e4b runner/data/scoring/grammar/native sampler sources: final valid
+  commit reprojects log-marginals, temperature0 still samples paths, native
+  numbers have<=2 decimals. Eight MIT files copied/hashed, no vendor execution.
+  RAIL2024 original Sections1--3.2/Algorithm1/Table1 and forecasting2025 III-B
+  establish mean/MBR precedents. Consumer/theory2277130 before all code. No
+  task/gold data files, model/tokenizer instance, weights or forward. Published
+  aggregates and ONE concrete documentation task example HAVE been read;
+  work/exposure-addendum-v2.md discloses hard-sol-b-judge_hard-18. No pristine
+  independent-corpus claim. Actual26B/48GB setup not reproduced on local12GB.
+- [x] T8801: Prospective oraclesb470a72/source70ad390 BEFORE execution. Three
+  rational oracles PASS/direct exit0:414 kernel leaves1176 abstract helper
+  calls/four invalid guards;414 whole-absorbing leaves/seven original paths,
+  unchanged model-step/failure probabilities;78 rounding comparisons and wrong
+  normalization counterexample. Positive all-gold squared-risk identity is
+  CLASSICAL and assumes exact same conditional terminal kernel. No new native
+  or neural execution; JSON native_model_step_law is a SYNTHETIC control.
+  No maintained full-suite rerun. Results/evidence8009d75 in65/work/result-v2.md.
+- [ ] T8802: Freeze and audit a minimal NATIVE resampling adapter without new
+  backbone forwards first. Complete capture of last actual log-marginal
+  reprojection, prefix/pins/node/budget/offset/control and literal RNG/tensor
+  restoration required. Synthetic heads are correctness evidence only. Do not
+  promote the rational proof wrapper to a validated serving integration.
+- [ ] T8803: Before real heads/labels/timings, freeze a resource/variance-
+  necessity protocol with input-only selection, zero/failure cases and all
+  strong normalization/MAP/exact101-value-grid/whole-ensemble controls. Need
+  meaningful removable terminal variance AND full-cost utility; mean/RB alone
+  do not prove own novelty or article sufficiency. Do not force a smaller or
+  quantized model to count as the original26B consumer. Goal remains OPEN.
+
 ## M87 — Arbitrary-key distinct-four stopping, exactly rejected
 
 - [x] T8700: A64 eight criteria/contractc22fa4d BEFORE sourced6de16f and one
@@ -66,12 +98,15 @@ cost remain open. No new neural campaign is credited to M70.
   record not relabeled. Primary distinct-four/25% hypothesis CLOSED;5-query
   lower/6.25% upper are not an achieved smaller goal. Source/evidence9e04c49,
   work/infeasibility-v2.md/result-v2.md. A63 remains intact; goal OPEN.
-- [ ] T8703: Start the next substantive direction from an independently
+- [x] T8703: Start the next substantive direction from an independently
   identified real software/research operation and its strongest existing
   alternatives, before another abstract coupling prototype. Need a plausible
   own positive comparative consequence and complete-cost use. No relaxed
   A64 five-query/law/cap search, closed old consumer reopening or promotion
-  of another correct small sampler. A different grounded TCC is authorized.
+  of another correct small sampler. M88 now starts from the real pinned
+  Mosaic/JevBench numerical consumer and its native terminal semantics, before
+  code; useful native magnitude/own priority remain OPEN in T8802/T8803.
+  A different grounded TCC is authorized.
 - [x] T8704: Preserve separate v1-prospective-no-primal and v2-exact-obstruction
   snapshots, both checked against original Git trees. Six origin-file hashes
   and unchanged originald6de16f producer independently checked. Experimental

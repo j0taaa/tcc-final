@@ -20,6 +20,16 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A65 starts from Mosaic's actual JevBench numerical forecasts. The native final
+kernel reprojects log-marginals and still samples state paths at temperature0.
+A pre-code conditional-averaging/risk proof and three rational oracles pass
+(414 kernel leaves,414 whole absorbing leaves,78 rendering checks). These are
+classical-principle correctness results, not measured native calibration.
+No native adapter/head/forward/labels/timing yet. Exact two-decimal-grid DP,
+normalization/MAP and full ensembles are strong controls; useful terminal
+variance/own significance remain OPEN. See65-terminal-forecast-readout/work/
+result-v2.md and the documentation-task exposure addendum.
+
 A64's prospective arbitrary-key distinct-four stop is rejected EXACTLY.
 One original solve returns INCONCLUSIVE; a later prewritten seven-row Farkas
 audit independently checks20 tapes300 matchings and original source rows,

@@ -4806,6 +4806,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "65-terminal-forecast-readout",
+      "title": "Leitura numérica terminal para o consumidor real Mosaic/JevBench; preflight racional",
+      "conclusion": "Starts from actual pinned Mosaic36945e4b JevBench numerical forecasting consumer BEFORE new prototype. Consumer/proof2277130 and prospective oracleb470a72 precede source70ad390 and direct exit0. Actual final commit reprojects constrained LOG-MARGINALS, token temperature0 still samples automaton paths; do not substitute original mean-field law. Native probabilities have only2 decimals: ordinary integer-sum DP mandatory, no exotic-precision gap presumed. Eight MIT files copied/hashed, no external module/model/tokenizer/weights/data row executed/read. Aggregate source results and ONE concrete README task example hard-sol-b-judge_hard-18 HAVE been seen; exposure addendum distinguishes no data-file reads from no task exposure. RAIL2024 and forecast means2025 are primary precedents, not own mean/MBR theory. Written same-terminal-kernel finite-budget averaging keeps normalized original, charges N helpers including nonterminal ones and preserves prior trace/backbone calls. M~Bin(N,alpha), covariance factor E1/(1+M) and all-gold squared-risk improvement V(1-factor); convex TV risk no worse. No argmax/ECE/Capability or between-history/model improvement guaranteed. Three exact proof oracles PASS:414 kernel leaves1176 abstract helper calls/four invalid guards,414 absorbing leaves/seven original toy paths with unchanged step/failure probabilities,78 rendering checks and adverse normalize-after-mean shortcut. JSON native_model_step_law denotes SYNTHETIC control, not real neural calls. No native adapter/replay/head/forward/update/label/competitive timing or maintained-suite rerun. Next frozen native correctness replay before real resource/variance necessity protocol; no large neural campaign triggered. Native26B/48GB setup not reproduced on12GB device. Useful magnitude/full-cost superiority and sufficient own originality/publication/user goal remain OPEN.",
+      "reading": "attempts/65-terminal-forecast-readout/README.md",
+      "versions": [
+        {
+          "id": "v1-terminal-proof-reference",
+          "source_commit": "70ad3907409d240d6083fd7686d4e63a4c2e3fc4",
+          "evidence_commit": "8009d753567fc64f9a410ae02900f6de0622cbad",
+          "evidence_roots": [
+            "attempts/65-terminal-forecast-readout/README.md",
+            "attempts/65-terminal-forecast-readout/work"
+          ]
+        }
+      ]
     }
   ]
 }
