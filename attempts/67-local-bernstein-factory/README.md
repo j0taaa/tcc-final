@@ -75,4 +75,17 @@ comparison, not an automatic broad implementation. See[the result](work/result-v
 The eight criteria remain in force. In particular2/3/4/7 require checking
 classical quadratic-reproducing local coefficients (n-1 correction) with
 the same finite-difference access before claiming an own constant/locality
-benefit. This comparison lead is unimplemented, not new performance evidence.
+benefit. This comparison lead was unimplemented in V1, not performance evidence.
+
+V3 reassesses criteria2/3/4/7 BEFORE comparison code: the classical right
+quadratic-reproducing quasi-interpolant with denominator n-1 can use the SAME
+three-value stencil. The written adaptation gives delta=H/n^(3/2), explicit
+coefficient consistency and the SAME positive-mixture/full-bit route. On the
+prescribed spline, its written input-count bound is41/2 versus V1's91/4.
+These are analytical bounds, not timing. This removes V1's proposed generic
+locality/effective finite-mean distinction. Criteria1/5/6/8 retain their
+operation/cost/limited-audit/open-goal scope; polynomial, derivative and cached
+controls remain. No full sampler or performance/neural campaign follows.
+The proof and bounded audit protocol are in[the comparison](work/quasi-comparison-v3.md)
+and[protocol](work/protocol-v3.json). The positive goal remains OPEN; classical
+control construction/correctness is not promoted to an own paper contribution.

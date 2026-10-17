@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "scope": "Bounded classical-control coefficient audit only; proof and this protocol frozen before new implementation/execution. No full sampler, random p-coins, model, data/golds, forwards, training, performance or novelty claim.",
+  "source": "Classical right order-two Bernstein quasi-interpolant with n-1 correction, using exactly the V1 three-point finite difference. See quasi-comparison-v3.md and primary-v3.md.",
+  "fixtures": "ALL six V1 functions with original rational metadata, no new favorable case selection.",
+  "degrees": [16, 64, 256],
+  "elevations": [[16, 64], [64, 256]],
+  "rational_p": ["0", "1/8", "1/3", "1/2", "3/4", "7/8", "1"],
+  "obligations": [
+    "Every k: original stencil, exactly three value calls, coefficient box, delta=H/n^(3/2), analytic derivative error and safe common denominator.",
+    "Every old/new k: independently reconvert power coefficients for degree elevation; compare the reference hypergeometric sum, lower/upper consistency and normalized positive-mixture coefficient when H>0.",
+    "Check binomial and hypergeometric first/second/q moments using independent combinatorial weights, without Monte Carlo.",
+    "At all rational p: ideal analytic-control error <=7H/(30n^(3/2)), value-only error <=11H/(30n^(3/2)) and valid envelope; H=0 inputs reproduce f exactly.",
+    "Every elevation: ideal-control error <=7H/(30m^(3/2)) and value-only error <=241H/(630m^(3/2)).",
+    "Retain V1 equal-access query counts and its analytical expected-count bound side by side; include direct cheap polynomial factories, no timing inference.",
+    "Refuse invalid metadata/degrees/indices and H=0 mixture normalization; do not clip coefficients or hide a failed assertion."
+  ],
+  "decision": "No generic locality/effective finite-mean separation of V1 survives the written control. A passing finite audit closes this comparison, not the user's positive goal, priority, full software verification or a performance gate. No full sampler/campaign triggered."
+}
