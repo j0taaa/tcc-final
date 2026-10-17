@@ -1,0 +1,31 @@
+{
+  "scope": "Prospective numerical whole-factory development necessity screen, not independent application confirmation",
+  "date": "2026-10-17",
+  "functions": ["constant", "affine", "quadratic", "cubic", "spline", "reflected_spline"],
+  "probabilities": ["1/4", "1/2", "3/4"],
+  "methods": ["sparse", "dense", "formula", "derivative", "retrospective", "direct_padded", "direct_short"],
+  "direct_eligible": ["constant", "affine", "quadratic", "cubic"],
+  "operations": {
+    "cold": {"draws": 64, "seed_start": 64, "independent_factory_and_streams_per_draw": true},
+    "cached": {"draws": 128, "seed_start": 256, "persistent_factory_and_streams": true}
+  },
+  "repetitions": 5,
+  "rows": 1140,
+  "source_seed_xor": 292,
+  "auxiliary_seed_xor": 581,
+  "level_seed_xor": 1937,
+  "max_input_coins_per_draw": 65536,
+  "worker_wall_limit_seconds": 30,
+  "worker_address_space_bytes": 1073741824,
+  "timed": "Factory and three RNG constructions, original supplied piecewise-GMP callback execution, level selection, actual source calls, all vote/proposal/arithmetic/refinement/cache work and returned-output allocation",
+  "outside_api_timer": "Common module imports and immutable case metadata, process startup, laboratory JSON serialization/logging; separately report worker wall/CPU including imports/startup/I/O and peak RSS",
+  "no_fake_callback_delay": true,
+  "same_known_formula_information": true,
+  "order": "Protocol order of functions,p,operations; each repetition rotates method order by (case ordinal + repetition) modulo eligible count",
+  "cpu": "Pin parent and child to first CPU already allowed by sched_getaffinity; record actual affinity and hardware/runtime",
+  "correctness": "No clipping/restarts; assert integer output/source counts and preserve all records including failures. Same-law core methods must match source/level n,k,level and input tape hash; direct source counts legitimately differ.",
+  "win": "All five paired repetitions COMPLETE for sparse and EVERY eligible control. For each control both medians of paired sparse/control API wall and CPU ratios <=0.8, and every ratio <1 for both clocks. Failures never provide favorable evidence.",
+  "followup_necessity_gate": "At least three of six nonpolynomial function/p cases win within at least one operation. Polynomial controls and both operations are always reported. This gate only permits separately justified real-application/independent protocol; it never completes novelty/usefulness/publication goal.",
+  "if_negative": "Close this fixed numerical application at this criterion; no more seeds/degrees/functions, manufactured costly f or changed threshold to rescue it. Preserve mathematical cap and all controls. Any different direction requires its own useful consequence and criteria before expansion.",
+  "goal": "OPEN"
+}

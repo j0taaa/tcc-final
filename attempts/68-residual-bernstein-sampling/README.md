@@ -171,3 +171,14 @@ cache replays;288 complete calls/8928 SIMULATED source calls and288 literal
 source matches. Four guards/one explicit pre-source failure pass. This is
 a stronger classical CONTROL, not a new own result; no timings/genealogy/NN.
 See[the result](work/result-v6.md). Whole-cost/priority/goal remain OPEN.
+
+V7 eight-criterion reassessment BEFORE timings:1 retains the published node-
+vote consumer but measures ONLY a numerical whole-factory necessity screen;
+2/4 retain the quantitative specialization without priority claim;3 now asks
+for20% complete API wall AND CPU against ALL strong controls;5 freezes all6
+old functions,3 p,2 operations,5 rotations and1140 rows;6 charges initialization,
+RNG/source, fast GMP callbacks, algebra and persistent caches, with full child
+cost/RSS also recorded;7 includes cheap polynomial/direct/derivative/lazy
+alternatives and every negative case;8 still requires independent real-use
+benefit and adequate own novelty. No manufactured callback or rescuing a
+negative gate. See[the prospective cost contract](work/cost-contract-v7.md).

@@ -105,12 +105,18 @@ cost remain open. No new neural campaign is credited to M70.
   charged; do not infer speed from callback counts. No competitive timings or
   full genealogy/NN; result68/work/result-v5.md, raw a68_formula_controls_
   v5_initial. V4 unchanged. Whole-cost protocol/priority/positive goal OPEN.
-- [ ] T9110: Freeze prospective first-output/repeated-node full-cost protocol
-  after reviewing equally informed coefficient-free/lazy controls. Compare
-  sparse, balanced dense, formula FD, analytic derivatives, direct eligible
-  factories and persistent caches; charge RNG/preparation/source/function/
-  algebra/memory, preserve all negative cases. No manufactured slow callback,
-  warm-cache handicap or post-data gate change. Correctness is not success.
+- [x] T9110: V7 freezes prospective whole-factory cost NECESSITY screen
+  AFTER equally informed lazy control. All6 original functions/3 p/2 cold-
+  cached operations/5 rotations/1140 rows; sparse versus ALL dense/formula/
+  derivative/lazy/eligible direct controls, fast GMP callbacks and full
+  initialization/RNG/source/arithmetic/cache, full worker cost/RSS visible.
+  Gate20% paired median wall AND CPU/every repetition favorable; at least3/6
+  nonpolynomial cases in one operation only permits separately justified
+  application. Negative stops this application; no manufactured slow f or
+  post-data rescue. work/cost-{contract-v7.md,protocol-v7.json}; runner pending.
+- [ ] T9113: Freeze V7 runner/analyzer before ONE complete1140-row necessity
+  screen; preserve all statuses and gate result without claiming independent
+  validation/priority or completed scientific goal.
 - [x] T9112: V6 classical retrospective control contract7792fe9 BEFORE
   source7439b49/ONE PASS/direct0:966 complete chains42066 nested intervals
   40134 independent remaining masses2448 prefixes96 cache replays. All288
