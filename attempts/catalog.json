@@ -5024,8 +5024,8 @@
     {
       "id": "68-residual-bernstein-sampling",
       "title": "Amostragem de incremento Bernstein com consultas constantes",
-      "conclusion": "V3 tem cap6 via splitting clássico, proposta quartic com normalizador por quatro momentos e rejeição logcôncava sem tabela densa, mantendo lei de moedas/kernel gapH. Auditoria1347 propostas/211011 pontos/966 leis PASS; consumidor genealógico original identificado, sem execução integral. Princípios clássicos creditados; novidade específica/custo total/meta permanecem abertos. Sem sampler/RNG/NN/timing completo.",
-      "reading": "attempts/68-residual-bernstein-sampling/work/result-v3.md; attempts/68-residual-bernstein-sampling/work/sparse-proposal-theory-v3.md; attempts/68-residual-bernstein-sampling/work/consumer-primary-v3.md",
+      "conclusion": "V4 executa fábrica numérica completa GMP/bits:1152 calls/576 pares/24480 p-coins simulados; V5 valida controles clássicos fortes formula-aware/derivada/diretos/cache,2136 kernels288 calls8928 p-coins simulados. Fórmulas conhecidas podem usar zero queries black-box. Provas/cap6 preservadas, sem vitória integral/novidade suficiente confirmadas; sem genealogia/NN/timing competitivo e meta aberta.",
+      "reading": "attempts/68-residual-bernstein-sampling/work/result-v4.md; attempts/68-residual-bernstein-sampling/work/result-v5.md; attempts/68-residual-bernstein-sampling/work/runtime-contract-v4.md; attempts/68-residual-bernstein-sampling/work/formula-control-theory-v5.md",
       "versions": [
         {
           "id": "v1-residual-query-law",
@@ -5056,6 +5056,27 @@
             "docs/artifacts/raw/a68_sparse_proposal_v3_initial",
             "attempts/68-residual-bernstein-sampling/work/result-v3.md",
             "attempts/68-residual-bernstein-sampling/work/consumer-primary-v3.md",
+            "attempts/68-residual-bernstein-sampling/README.md"
+          ]
+        },
+        {
+          "id": "v4-exact-bit-runtime",
+          "source_commit": "5775a89efa21def9e6ca891ec6ba50620e8561b6",
+          "evidence_commit": "1bb97493ade6f3e8793977d9f684d1b8cb6a02fc",
+          "evidence_roots": [
+            "docs/artifacts/raw/a68_exact_runtime_v4_initial",
+            "attempts/68-residual-bernstein-sampling/work/result-v4.md",
+            "attempts/68-residual-bernstein-sampling/README.md"
+          ]
+        },
+        {
+          "id": "v5-formula-aware-controls",
+          "source_commit": "22278c0faa0d6f90eb54b7f97e497cf824c43cc1",
+          "evidence_commit": "bc696b1070ac0f3c74e750affd0b2225d063ecd3",
+          "evidence_roots": [
+            "docs/artifacts/raw/a68_formula_controls_v5_initial",
+            "attempts/68-residual-bernstein-sampling/work/result-v5.md",
+            "attempts/68-residual-bernstein-sampling/work/formula-control-theory-v5.md",
             "attempts/68-residual-bernstein-sampling/README.md"
           ]
         }

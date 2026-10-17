@@ -111,8 +111,14 @@ cost remain open. No new neural campaign is credited to M70.
   factories and persistent caches; charge RNG/preparation/source/function/
   algebra/memory, preserve all negative cases. No manufactured slow callback,
   warm-cache handicap or post-data gate change. Correctness is not success.
-- [ ] T9111: Preserve V4/V5 source/evidence independently, verify hashes,
-  required checks and normal upstream sync without new scientific cases.
+- [x] T9111: V4 source5775a89/evidence1bb9749 and V5 source22278c0/
+  evidencebc696b1 independently preserved:750 files12,273,997 bytes and754
+  files11,773,409 bytes. Original-Git checks/direct0,14 frozen hash comparisons
+  across11 unique paths and own Ruff/format4 PASS. make check terminal log
+  PASS68 attempts268 versions202998 files8,026,961,940 bytes; direct wrapper
+  exit was lost in a truncated tool response and is NOT invented. After-data
+  literal source tapes288/288 PASS. Receipt/log a68-v5-final-* in docs/evidence.
+  No scientific or maintained345-test rerun; normal commit/push follows.
 - [x] T9107: Independent V3 source5e97323/evidence0e54736,742 files
   11,452,755 bytes; create+original-Git/direct0. Eight frozen hashes and
   eight unchanged V1/V2 files match Git; own Ruff/format2 PASS. make check/

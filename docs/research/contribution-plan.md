@@ -35,6 +35,13 @@ adequate own priority/publication and the positive objective remain OPEN.
 All source/receipts/results in68/work/{runtime-contract-v4,result-v4,
 formula-control-theory-v5,result-v5}.md and respective raw directories.
 
+Independent V4/V5 archives contain750/754 files and match original Git;
+14 frozen hash comparisons across11 unique paths and own Ruff/format4 PASS.
+Full make check terminal log PASS68 attempts268 versions202998 files;
+the wrapper exit was lost to tool-output truncation and is not invented.
+After-data288 source tapes match literally. Receipt/log docs/evidence/
+a68-v5-final-*; no scientific/maintained345-test rerun or changed speed gate.
+
 ## 2026-10-17 — A68 sparse proposal, with a published genealogy consumer
 
 The previous goal turn was PROGRESS: V1/V2 exact laws/query consequence and

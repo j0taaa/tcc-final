@@ -27,6 +27,10 @@ controls:2136 compact kernels and288 full calls, ZERO black-box f queries
 while doing real algebra. Query savings alone no longer decide those cases.
 No competitive timing, full genealogy or NN result; goal/full-cost/priority
 OPEN. Results68/work/result-v4.md and result-v5.md; all earlier sources intact.
+Independent V4/V5 archives750/754 files match original Git;14 frozen hashes/
+11 unique paths and own Ruff/format4 PASS. Full make check terminal log PASS
+68 attempts268 versions; wrapper exit lost to truncation, not recorded as0.
+After-data288 source tapes match; receipt docs/evidence/a68-v5-final-verification.json.
 
 A68 V3 replaces dense known-proposal preparation with a four-moment quartic
 normalizer and log-concave rejection route, using classical splitting for

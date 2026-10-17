@@ -1,0 +1,12 @@
+{
+  "kind": "After-data literal source-tape cross-check, not timing or a new producer",
+  "matched_records": 288,
+  "fields": [
+    "status",
+    "n",
+    "k",
+    "level",
+    "source_tape"
+  ],
+  "status": "PASS"
+}

@@ -1,10 +1,18 @@
 # AGENTS.md
 
+A68 V4/V5 independent archives750/754 files match original Git;14 frozen hash
+comparisons across11 unique files and Ruff/format4 PASS. make check final log
+PASS68 attempts268 versions202998 files8.026.961.940 bytes; wrapper exit lost
+to tool truncation, not fabricated as direct0. After-data288 literal source
+tapes match. Receipt docs/evidence/a68-v5-final-verification.json. No scientific
+rerun or maintained345 tests; full-cost/priority/goal remain OPEN.
+
 A68 V4 contrato67bafcf ANTES de source5775a89/ÚNICO PASS0 implementa fábrica
 numérica COMPLETA por bits/GMP em ambiente /tmp/a68-runtime-v4 isolado,
 gmpy2 2.2.1/GMP6.3.0 pinado porhash; .venv mantida intacta. Todos1152 draws
-completos/576 pares J,N,k/tapes iguais usam24480 p-coins REAIS externos;
-não são heads neurais. Falha de recurso deliberada antes de source é separada,
+completos/576 pares J,N,k/tapes iguais usam24480 chamadas EXECUTADAS ao
+callable p-coin SIMULADO por p racional/PRNG; não são dados biológicos/heads
+neurais. Falha de recurso deliberada antes de source é separada,
 sem contar sucesso condicionado como exato. Prefixos30576/13104/26208,
 1076 shared-U8400 binomiais103 somas1347 propostas4041 pesos966 pares de
 kernel/cache12/18 e8 recusas passam. Sparse cap6; dense também usa produtos/
@@ -18,7 +26,7 @@ Meta/T9102/T9106 abertas; resultado68/work/result-v4.md, preservarfontes antigos
 A68 V5 prova63e1ecb ANTES de source22278c0/ÚNICO PASS0 valida controles
 CLÁSSICOS fortes formula-aware por polinômios/momentos HG truncados e derivadas:
 2034 valores/derivadas7520 intervalos2136 kernels12 caches;288 calls completas
-usam8928 p-coins reais. Diretos/padded/short-circuit616 transcripts84 leis6
+usam8928 chamadas a p-coins SIMULADOS. Diretos/padded/short-circuit616 transcripts84 leis6
 recusas passam. Para estas fórmulas conhecidas fazem ZERO queries f black-box,
 mas álgebra/cache são cobrados. Portanto cap6/lower oracle não comprovam
 vitória prática nesses inputs. Controles recebem seu próprio n0 válido e

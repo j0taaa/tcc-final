@@ -1,0 +1,112 @@
+{
+  "kind": "After-run preservation verification, not scientific producer",
+  "versions": [
+    {
+      "id": "v4-exact-bit-runtime",
+      "files": 750,
+      "uncompressed_bytes": 12273997,
+      "source_commit": "5775a89efa21def9e6ca891ec6ba50620e8561b6",
+      "evidence_commit": "1bb97493ade6f3e8793977d9f684d1b8cb6a02fc",
+      "observed_original_git_check": "PASS"
+    },
+    {
+      "id": "v5-formula-aware-controls",
+      "files": 754,
+      "uncompressed_bytes": 11773409,
+      "source_commit": "22278c0faa0d6f90eb54b7f97e497cf824c43cc1",
+      "evidence_commit": "bc696b1070ac0f3c74e750affd0b2225d063ecd3",
+      "observed_original_git_check": "PASS"
+    }
+  ],
+  "frozen_hash_comparisons": [
+    {
+      "run": "a68_exact_runtime_v4_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/runtime_v4.py",
+      "sha256": "41dccb126a0f62882aa58efa6ae52cb153408e7645ebe548d0cf6b40c73ee46a"
+    },
+    {
+      "run": "a68_exact_runtime_v4_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/audit_runtime_v4.py",
+      "sha256": "1b96863ad8f518b75a44b9b7741a037dc29fc10f92a7e210e8d81370eafea468"
+    },
+    {
+      "run": "a68_exact_runtime_v4_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/runtime-contract-v4.md",
+      "sha256": "3fa10685c9e532e29a86a9e42ee711d1b0bcc144170230cac16e7b45f0cfbb1c"
+    },
+    {
+      "run": "a68_exact_runtime_v4_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/requirements-v4.txt",
+      "sha256": "834d18c23959ce4bfd0c8f8512439660e33854a0663fd190cb8c9888943029ad"
+    },
+    {
+      "run": "a68_exact_runtime_v4_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/audit.py",
+      "sha256": "467818be145a831b2c213bd08492626e0fa7e64de02d7bb9e3780a06af6a684d"
+    },
+    {
+      "run": "a68_exact_runtime_v4_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/sparse_v3.py",
+      "sha256": "732f7944bb64bfad3356db5c1a6a4b42a491be3e7e3e3f1b19c7455ca5b09f26"
+    },
+    {
+      "run": "a68_exact_runtime_v4_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/residual.py",
+      "sha256": "4defb522ace3c8a50eb032cc9e6973260e11aba4b762110484f44c54cc5850b3"
+    },
+    {
+      "run": "a68_exact_runtime_v4_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/sparse-proposal-theory-v3.md",
+      "sha256": "e41fb9cd5595459a630d4e1e73e5cb600ff89da594781625c51feb575e12aea8"
+    },
+    {
+      "run": "a68_formula_controls_v5_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/formula_control_v5.py",
+      "sha256": "7a2f0b2d9256613ca93e2cb1fd34428c766ef8427fd0cc6a5b254e9e811736be"
+    },
+    {
+      "run": "a68_formula_controls_v5_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/audit_formula_v5.py",
+      "sha256": "0a40652a40477fbd612cff3e9bc48d696aea2f0dc8b92e99060b8b9790e31ce4"
+    },
+    {
+      "run": "a68_formula_controls_v5_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/formula-control-theory-v5.md",
+      "sha256": "55eacea19fa1978b1ebc49247638897bc89fa83da2636d4932d82f053ea9e4ba"
+    },
+    {
+      "run": "a68_formula_controls_v5_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/runtime_v4.py",
+      "sha256": "41dccb126a0f62882aa58efa6ae52cb153408e7645ebe548d0cf6b40c73ee46a"
+    },
+    {
+      "run": "a68_formula_controls_v5_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/audit_runtime_v4.py",
+      "sha256": "1b96863ad8f518b75a44b9b7741a037dc29fc10f92a7e210e8d81370eafea468"
+    },
+    {
+      "run": "a68_formula_controls_v5_initial",
+      "path": "attempts/68-residual-bernstein-sampling/work/audit.py",
+      "sha256": "467818be145a831b2c213bd08492626e0fa7e64de02d7bb9e3780a06af6a684d"
+    }
+  ],
+  "focused_ruff_format": {
+    "direct_exit_code": 0,
+    "files": 4
+  },
+  "make_check": {
+    "terminal_log_success": true,
+    "direct_exit_code": null,
+    "reason": "Wrapper output was truncated at context compaction. Complete success log and absence of a live wrapper verified; no scientific or integrity rerun.",
+    "log": "docs/evidence/a68-v5-final-make-check.log",
+    "sha256": "15acd4c46f8ee39407c79fbd9f85fce380107447616bc57d0118aaf29635d3b5",
+    "attempts": 68,
+    "versions": 268,
+    "files": 202998,
+    "uncompressed_bytes": 8026961940
+  },
+  "post_data_source_tape_crosscheck": "docs/evidence/a68-v5-post-source-tape-crosscheck.json",
+  "maintained_345_tests_rerun": false,
+  "goal": "OPEN",
+  "limits": "Complete numerical factories with simulated PRNG p-coin inputs; not genealogy, biological data, NN, competitive latency or sufficient priority/usefulness."
+}
