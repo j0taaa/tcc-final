@@ -66,13 +66,28 @@ cost remain open. No new neural campaign is credited to M70.
   distinct failed/passed evidence. Final make check exit0 verifies59 attempts/
   237 versions/178730 files. Complete later integrity log:
   docs/evidence/a59-v1-final-make-check.log; not a new scientific measurement.
-- [ ] T8202: Inspect/compare complete numeric register/digit-DP and bounded
-  regex constructions; establish a substantive own useful difference before
-  extensive generalization. Missing support in a restricted frontend alone
-  does not establish novelty or a sufficient article contribution.
-- [ ] T8203: After that distinction survives, general intervals/zero/signs,
-  original EOT/PAD/token lifting and real external numeric-infilling consumer
-  need separate correctness/input/resource protocols. No model campaign yet.
+- [x] T8202-control: V3 note5cbadc5 BEFORE independent register/digit-DP
+  control1599588. Three oracles PASS0.575s:48,880 exact numbers,1147 reached
+  finite-product configurations/293632 ALL-byte transitions at L8/16/32/64,
+  five rational-token cases/13 original-ID coefficients. Complete language
+  matches at these L; control also has O(L) states/edges. No own asymptotic/
+  capacity separation from this complete classic construction is established.
+- [x] T8203-fit: Pinned bulk conformance audit e940c71 reads ALL11306 files/
+  143978678 bytes,37011 instances;5165 bounded schema nodes/16081 direct
+  aligned numeric fields. No errors. Four supplied-valid scientific fields
+  repeat two parameters in one schema with only minimum0; regular constraint.
+  Two valid long-fraction fields in[0,1] occur in other schemas. No invented
+  prefix, native capture/timing or model campaign; generated conformance data
+  are NOT production infilling logs. All hashes/observations preserved. See
+  59/work/decision-v4.md. Later333 tests PASS94.695s/Ruff11 files PASS.
+- [ ] T8202-distinction: Specific numeral-theorem priority and a substantial
+  own useful difference remain OPEN. Generic suffix/register mechanism is
+  classical; restricted frontend support alone does not meet the goal.
+  V4 declines main-paper promotion and extensive simple-core generalization.
+- [ ] T8204: General intervals/EOT/PAD/native integration/model campaign are
+  NOT TRIGGERED. Before expansion, establish a concrete additional own useful
+  operation/difference and real consumer against complete controls; do not
+  manufacture scientific prefixes or replace that evidence with more tests.
 
 ## M81 — Streamed grammar-loss training head, resource gate CLOSED negative
 

@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-17",
+  "schema_bench_commit": "9a94995b9279ae3af3aed4b2629172790b968d14",
+  "json_schema_test_suite_commit": "55719286c33ae0d1823bfb65fea10338a19bc37c",
+  "source_cache": "/home/jota/.cache/tcc-final/a59-maskbench",
+  "source_cache_observed_du": "179MiB rounded by du",
+  "files": [
+    {
+      "cache_file": "/home/jota/.cache/tcc-final/a59-consumer-reading/maskbench-README.md",
+      "bytes": 12926,
+      "sha256": "a6f9299af5d4bd3f96b6f52048d226099d6408c4c9f4eb7d2d9e0fb4815f966c"
+    },
+    {
+      "cache_file": "/home/jota/.cache/tcc-final/a59-consumer-reading/jsonschemabench-README.md",
+      "bytes": 6632,
+      "sha256": "f41c15cfece6b974f870cc4624a2055cce16e96ab20f10e42ca6b39a99ba4c8d"
+    },
+    {
+      "cache_file": "/home/jota/.cache/tcc-final/a59-consumer-reading/minimum.json",
+      "bytes": 2116,
+      "sha256": "f6a29cb574b76621da23636a636cf12cb31b01646b89543e6ce1a813376439a3"
+    },
+    {
+      "cache_file": "/home/jota/.cache/tcc-final/a59-consumer-reading/maximum.json",
+      "bytes": 1660,
+      "sha256": "dfbc88ef4ede2966250fb2ad44076856d51481ea01ce679cca70efe47606ee90"
+    },
+    {
+      "cache_file": "/home/jota/.cache/tcc-final/a59-consumer-reading/exclusiveMinimum.json",
+      "bytes": 846,
+      "sha256": "0395a2423606d07943d3d355d1c9c4a474cc7cb544d3c8f266ceab801c5f0a6d"
+    },
+    {
+      "cache_file": "/home/jota/.cache/tcc-final/a59-consumer-reading/exclusiveMaximum.json",
+      "bytes": 846,
+      "sha256": "e37fc110c48e2a9de564579ceba3e8ab098a36f904dcc1ef02f8cf7b59dc0473"
+    }
+  ],
+  "scope": "reading/fit only, not a performance or native-generation dataset"
+}

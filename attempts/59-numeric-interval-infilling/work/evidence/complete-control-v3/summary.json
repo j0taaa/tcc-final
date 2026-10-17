@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "producer": "159958873489eba1b3437bd2afd70ffcf3f7b266",
+  "scope": "complete finite-product arithmetic audit, no statistical/model validation",
+  "tests": 3,
+  "seconds": 0.575,
+  "independent_numerals": 48880,
+  "complete_language_product_states": 1147,
+  "all_byte_transitions": 293632,
+  "compiled_budgets": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "mass_cases": 5,
+  "original_id_coefficients": 13,
+  "new_forwards": 0,
+  "competitive_timing": false,
+  "source_sha256": {
+    "register_control_v3.py": "fed1e60eea2b2d091b125430211ae0887bdb21efedfe3408282067d1932ac227",
+    "test_control_v3.py": "d3f06f5ceafc4eef847ad16e166551153ac8a5cc2c2bea424a8dfd7f999a6809",
+    "test_interval.py": "046b6b5eb0ee4dd3f0a54c46713bae0d3c964d6a41e3e7fb937161a0fea7516c",
+    "interval_one_two.py": "19d9f36459a29db5f767ebd1688ff4658b1d860cd00d48d83d6a617a7e509e92"
+  }
+}

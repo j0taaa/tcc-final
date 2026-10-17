@@ -400,6 +400,21 @@ identificam lacuna de suporte, não superioridade/novidade. Intervalos gerais,
 EOT/PAD, consumidor externo e benefício real continuam pendentes. Não iniciar
 campanha neural extensa/promover ao artigo só pelos oráculos. Ver59/work/result-v2.md.
 
+A59 V3/V4 acrescenta controle COMPLETO clássico independente1599588:
+3 oráculos PASS0.575s,48.880 números,1147 estados de produto/293.632 transições
+em TODOS256 bytes para L8/16/32/64. Linguagem idêntica; controle também O(L).
+Não reivindicar separação de capacidade/complexidade contra ele. Auditoria
+e940c71 lê TODOS11306 arquivos/143.978.678 bytes MaskBench pinado,37011
+instâncias/16081 campos numéricos diretos,0 erros. Quatro grafias científicas
+marcadas válidas repetem dois parâmetros de um esquema só com minimum0;
+restrição regular. Duas frações válidas >6 dígitos têm intervalo[0,1]. Isto
+é corpus de conformidade gerado, NÃO logs de infilling de produção; não
+reformatar números para fabricar prefixos favoráveis. Sem novo head/forward/
+timing/campanha. Suíte333 PASS94.695s. V4 recusa promoção e generalização
+extensa do núcleo simples. Teorema específico/novidade/consumidor útil
+seguem abertos; próxima expansão precisa diferença própria concreta, não
+somente mais oráculos. Ver59/work/decision-v4.md.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

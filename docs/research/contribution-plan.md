@@ -3016,3 +3016,34 @@ model capture/forward/update/timing. Complete register/digit-DP compilers may
 match the same bound and MUST be audited before extensive implementation.
 Real external numeric infilling usefulness is not presumed. See59/work/
 result-v2.md and primary-reading-v1.md; the positive user goal remains OPEN.
+
+
+## 2026-10-17 — A59 complete-control equality and descriptive corpus fit
+
+V3 note5cbadc5 precedes complete independent register control1599588 and ALL
+bulk corpus inspection. Three exact oracles PASS0.575s:48,880 numbers,1147
+reached finite-product configurations/293632 ALL-byte transitions at L8/16/
+32/64, five rational-token cases/13 coefficients. The complete control matches
+all byte languages for those compiled instances and has the SAME O(L) state
+order. Do not claim an own asymptotic/capacity separation from it. This does
+not prove prior publication of the specific non-CFL/optimal-size theorem;
+its generic suffix/register tools are classical (Daciuk et al.2000 Sections2/3).
+Yin et al.2512.19701v1 already uses scientific numeric outputs/prefix filling
+for EDA prediction; its industrial data have not been obtained here.
+
+Auditor e940c71 reads ALL11306 pinned MaskBench files/143978678 bytes and37011
+instances,0 errors. All hashes and16081 direct aligned numeric observations
+retained. Four supplied-valid scientific lexemes are repeated BLAST parameters
+with minimum0/no maximum; ordinary regular restriction. Two supplied-valid
+long-fraction fields lie in[0,1]. All12 exceptional-form observations, false
+labels and zero/negative/open ranges remain in the AFTER-data cross-tab.
+Most source tests are model-generated conformance examples, not production
+infilling logs or original raw LLM spellings. No favorable reformatting,
+selected native cases, new heads/forwards/timings or campaign triggered.
+
+V4 declines main-paper promotion/extensive simple-core expansion. A59 remains
+a bounded mathematical/reference artifact; novelty, own useful benefit and
+the positive user goal remain OPEN. Complete compiler support alone is not
+sufficient evidence. Need a concrete additional own distinction/consumer
+before expansion. Later333 tests PASS94.695s and focused Ruff11 files PASS;
+these are not scientific performance confirmation. See59/work/decision-v4.md.

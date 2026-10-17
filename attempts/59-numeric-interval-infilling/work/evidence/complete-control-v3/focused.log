@@ -1,0 +1,11 @@
+test_control_against_independent_exact_numerals (attempts.59-numeric-interval-infilling.work.test_control_v3.CompleteControlTests.test_control_against_independent_exact_numerals) ... ok
+test_every_byte_transition_in_complete_finite_product (attempts.59-numeric-interval-infilling.work.test_control_v3.CompleteControlTests.test_every_byte_transition_in_complete_finite_product) ... ok
+test_weighted_original_ids_fixed_holes_and_zero_mass (attempts.59-numeric-interval-infilling.work.test_control_v3.CompleteControlTests.test_weighted_original_ids_fixed_holes_and_zero_mass) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.575s
+
+OK
+{"control_independent_numerals": 48880}
+{"all_byte_language_equivalence": [{"L": 8, "product_states": 82, "byte_edges": 20992}, {"L": 16, "product_states": 161, "byte_edges": 41216}, {"L": 32, "product_states": 308, "byte_edges": 78848}, {"L": 64, "product_states": 596, "byte_edges": 152576}]}
+{"complete_control_mass_cases": 5, "coefficients": 13}

@@ -1,0 +1,213 @@
+{
+  "scope": "AFTER-data exhaustive cross-tab of ALL recorded exceptional numeral forms; descriptive only",
+  "source_producer": "e940c713c4e857d9934a1bc20981bbecfba5b69a",
+  "observations": 16081,
+  "exceptional_forms": [
+    {
+      "file": "maskbench/data/Github_hard---o57716.json",
+      "test": 0,
+      "pointer": "/pick/chimera_split/blast_params/evalue",
+      "label": true,
+      "raw": "1e-6",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": null,
+      "scientific": true,
+      "fraction_gt6": false,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_hard---o57716.json",
+      "test": 0,
+      "pointer": "/pick/chimera_split/blast_params/hsp_evalue",
+      "label": true,
+      "raw": "1e-6",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": null,
+      "scientific": true,
+      "fraction_gt6": false,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_hard---o57716.json",
+      "test": 1,
+      "pointer": "/pick/chimera_split/blast_params/evalue",
+      "label": true,
+      "raw": "1e-6",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": null,
+      "scientific": true,
+      "fraction_gt6": false,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_hard---o57716.json",
+      "test": 1,
+      "pointer": "/pick/chimera_split/blast_params/hsp_evalue",
+      "label": true,
+      "raw": "1e-6",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": null,
+      "scientific": true,
+      "fraction_gt6": false,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_hard---o57716.json",
+      "test": 2,
+      "pointer": "/pick/chimera_split/blast_params/evalue",
+      "label": false,
+      "raw": "1e-6",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": null,
+      "scientific": true,
+      "fraction_gt6": false,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_hard---o57716.json",
+      "test": 2,
+      "pointer": "/pick/chimera_split/blast_params/hsp_evalue",
+      "label": false,
+      "raw": "1e-6",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": null,
+      "scientific": true,
+      "fraction_gt6": false,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_hard---o57716.json",
+      "test": 3,
+      "pointer": "/pick/chimera_split/blast_params/evalue",
+      "label": false,
+      "raw": "1e-6",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": null,
+      "scientific": true,
+      "fraction_gt6": false,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_hard---o57716.json",
+      "test": 3,
+      "pointer": "/pick/chimera_split/blast_params/hsp_evalue",
+      "label": false,
+      "raw": "1e-6",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": null,
+      "scientific": true,
+      "fraction_gt6": false,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_medium---o3914.json",
+      "test": 0,
+      "pointer": "/1/molemass",
+      "label": true,
+      "raw": "0.0160425",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": [
+        "1",
+        false
+      ],
+      "scientific": false,
+      "fraction_gt6": true,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_medium---o45806.json",
+      "test": 0,
+      "pointer": "/1/molemass",
+      "label": true,
+      "raw": "0.0280134",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": [
+        "1",
+        false
+      ],
+      "scientific": false,
+      "fraction_gt6": true,
+      "valid_local_interval": true
+    },
+    {
+      "file": "maskbench/data/Github_medium---o90702.json",
+      "test": 3,
+      "pointer": "/grafana/cpus",
+      "label": false,
+      "raw": "0.2999999999999999",
+      "type": "number",
+      "low": [
+        "0.3",
+        false
+      ],
+      "high": null,
+      "scientific": false,
+      "fraction_gt6": true,
+      "valid_local_interval": false
+    },
+    {
+      "file": "maskbench/data/Github_ultra---o46393.json",
+      "test": 3,
+      "pointer": "/eoyEstimate/savings/0/taxableIncome",
+      "label": false,
+      "raw": "1e21",
+      "type": "number",
+      "low": [
+        "0",
+        false
+      ],
+      "high": [
+        "99999999999.99",
+        false
+      ],
+      "scientific": true,
+      "fraction_gt6": false,
+      "valid_local_interval": false
+    }
+  ],
+  "labeled_valid_exceptional_fields": 6,
+  "distinct_valid_tests": 4,
+  "distinct_valid_files": 3,
+  "labeled_valid_scientific_with_positive_finite_interval": 0,
+  "model_campaign_triggered": false
+}

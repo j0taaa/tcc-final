@@ -70,3 +70,11 @@ V2: the111-line [1,2) compiler passes four independent exact oracles after a
 separately preserved exponent-sign failure. General interval implementation,
 EOT/PAD/native integration, complete semantic controls and real usefulness
 remain pending. See [result and exact scope](work/result-v2.md).
+
+V4: an independent COMPLETE register control matches all byte languages at
+four L and has the SAME linear state order. The full11306-file external
+conformance audit does not demonstrate the proposed fixed-scientific-prefix
+consumer at useful scale. No main-paper promotion or extensive simple-core
+native/generalization campaign is triggered. Specific theorem priority and
+an additional own useful distinction remain OPEN. See
+[complete control, corpus and decision](work/decision-v4.md).
