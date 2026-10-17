@@ -47,6 +47,23 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M89 — Adaptive typed-read interface audit, classical correction only
+
+- [x] T8900: Identify distinct actual operation in vLLM source pinb05ede56;
+  copy Apache2 source/README/LICENSE independently with hashes. Read auto
+  controller and aggregation; write eight criteria, bias/conditional-order
+  proof and prospective small-packet protocol BEFORE reference/replay.
+  Originality sufficient for a protagonist is unsupported; no model/head/
+  tokenizer/gold/forward. A53 duplicates the abandoned stopping lead; no
+  new A53/A65 old-path replay or asynchronous-tool prototype is selected.
+- [ ] T8901: Freeze reference/auditor, execute unchanged decide_group with
+  stub packet acquisition, independently check all rational laws/caps and
+  same request/seed accounting, retain unfavorable MSE comparisons and the
+  identical classical control. No corrected stderr or neural iid certificate.
+- [ ] T8902: Preserve complete bounded audit and source pins; no large neural
+  campaign/article promotion without a substantive own useful distinction.
+  Overall goal and T8809 remain OPEN.
+
 ## M88 — Terminal numerical forecast readout for the real Mosaic/JevBench consumer
 
 - [x] T8800: Inspect actual external consumer BEFORE a new prototype. Read-only

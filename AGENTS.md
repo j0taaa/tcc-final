@@ -1,5 +1,21 @@
 # AGENTS.md
 
+A66 inicia auditoria PEQUENA da média de leituras tipadas do vLLM pinado
+b05ede56168b5718c425c1493914e5e79f6b8181. A política auto escolhe1/m pela
+entropia do PRIMEIRO packet e depois faz média de todos. Prova escrita
+deriva viés de optional sampling e correção por média dos packets que
+também acionariam a MESMA regra global; sem novos reads sob hipótese iid.
+Rao--Blackwell/condicionamento sequencial são CLÁSSICOS; controle por ordens
+condicionadas dá EXATAMENTE a mesma regra. Não é novidade teórica própria,
+calibração, dominância MSE sobre auto, execução neural ou meta cumprida.
+README/protocolo/prova antecedem código/replay. Próximo só oráculo de packets
+racionais e corpo decide_group ORIGINAL com aquisição FALSA, sem servidor/
+modelo/tokenizer/heads/golds/treino/campanha. A65 continua FECHADA negativa.
+Lead de parada encontrado após65 DUPLICA53, cujo gate já falhou; não repetir
+ou rebatizar. Sobreposição de ferramentas tem P-ReAct/CID/AsyncIO anteriores;
+nenhum protótipo selecionado. Escopos em docs/research/next-operation-audit-2026-10-17.md.
+T8809 e a contribuição própria útil/meta científica permanecem ABERTOS.
+
 A65 V8 encerra a aplicação PEQUENA Tiny-A2D/Mosaic MASKED com gate NEGATIVO.
 V6 protocolo7c79ad5/seleção input-only8; V7 contrato7c7ce15/source1986ecc
 antecede16/16 replays CPU/CUDA BF16 com290 heads FALSOS/128 helpers. Modelo

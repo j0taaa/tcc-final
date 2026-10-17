@@ -1,0 +1,28 @@
+{
+  "scope": "External source metadata/text only; no model/tokenizer/dataset/gold/forward/benchmark execution.",
+  "repository": "https://github.com/vllm-project/vllm",
+  "revision": "b05ede56168b5718c425c1493914e5e79f6b8181",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/b05ede56168b5718c425c1493914e5e79f6b8181/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "status": "READ_ONLY_CAPTURE"
+    },
+    {
+      "path": "examples/features/structured_diffusion/structured_server.py",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/b05ede56168b5718c425c1493914e5e79f6b8181/examples/features/structured_diffusion/structured_server.py",
+      "bytes": 56556,
+      "sha256": "9d085496ccaeec833ddf4ffe4b89212512121a6790f5844891b389cbeb02d36e",
+      "status": "READ_ONLY_CAPTURE"
+    },
+    {
+      "path": "examples/features/structured_diffusion/README.md",
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/b05ede56168b5718c425c1493914e5e79f6b8181/examples/features/structured_diffusion/README.md",
+      "bytes": 4343,
+      "sha256": "c98fdf17446d0555b8c5e4d5265c0f19e0e3202a13ba93334758bf55c806ef59",
+      "status": "READ_ONLY_CAPTURE"
+    }
+  ]
+}

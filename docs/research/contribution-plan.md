@@ -1,5 +1,25 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — Reject duplicate stopping lead; audit actual adaptive reader
+
+The post-A65 stopping lead DUPLICATES A53's monotone observable theorem and
+negative strong-prefix screen. No new old-path replay was run. Primary
+P-ReAct/CID/AsyncIO readings also establish earlier tool-overlap proposals;
+query readiness by itself is not a new algorithm or a preserved-value claim
+for changing sources. Full scopes and source fetch limitations are in
+next-operation-audit-2026-10-17.md; the older lead below remains historical.
+
+Pinned vLLM b05ede56168b5718c425c1493914e5e79f6b8181 already supplies finite-label
+typed reads/subset unembedding. A66 starts a bounded audit of its auto count:
+expand1->m from the FIRST packet entropy, then average ALL packets. Written
+classical iid bias/conditional-order correction and eight criteria/protocol
+precede code/replay. Same source packets suffice for an unbiased noise-mean
+reference, but native auto can have lower MSE; known stopped-sample conditioning
+gives the identical rule. No sufficient own theory, neural benefit or goal
+completion. Independent rational/native-body stub audit only; no fresh model,
+server, dataset/golds or campaign. A65's failed application remains CLOSED;
+T8809 and the positive scientific objective remain OPEN.
+
 ## 2026-10-17 — A65 real masked application completes and fails necessity
 
 Prospective V6 protocol7c79ad5 and input-only selectordabfd45 precede all8

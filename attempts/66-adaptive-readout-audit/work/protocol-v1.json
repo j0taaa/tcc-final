@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "scope": "Finite rational packet/interface audit only, before code and execution; no model/tokenizer/server/dataset/gold/head/forward/update/timing benchmark.",
+  "native_revision": "b05ede56168b5718c425c1493914e5e79f6b8181",
+  "native_file": "examples/features/structured_diffusion/structured_server.py",
+  "native_function": "decide_group",
+  "native_sha256": "9d085496ccaeec833ddf4ffe4b89212512121a6790f5844891b389cbeb02d36e",
+  "execution": "Compile the unchanged original function AST with stub packet acquisition/template; record all request counts/seeds. Compare returned means to independent Fraction enumeration. No server or model import.",
+  "caps": [1, 2, 4],
+  "yes_values": ["1/1024", "1/4", "3/4", "1023/1024"],
+  "entropy_threshold": 0.1,
+  "laws": {
+    "uniform": ["1/4", "1/4", "1/4", "1/4"],
+    "skew": ["1/2", "1/4", "1/8", "1/8"],
+    "mirror_skew": ["1/8", "1/8", "1/4", "1/2"],
+    "rare_high": ["7/16", "1/16", "1/16", "7/16"],
+    "high_only": ["0", "1/2", "1/2", "0"],
+    "low_only": ["1/2", "0", "0", "1/2"],
+    "point_high": ["0", "1", "0", "0"],
+    "point_low": ["1", "0", "0", "0"]
+  },
+  "requirements": [
+    "All exact first/native/corrected expectations and covariance identities; preserve every law/cap.",
+    "Classical conditional-order permutation control equals corrected estimator on all reachable tapes, including aliases/repeated packets.",
+    "Same actual native packet count/seed arguments and successful output shape; distinguish stub reads from model forwards.",
+    "A two-question case uses one global trigger and one common eligibility set, including a question whose entropy never crosses the threshold.",
+    "Strict threshold equality does not expand; cap1 always returns the first packet; invalid aggregator input is refused.",
+    "Positive-probability two-packet law independently reproduces analytical bias -1533/16384 for cap4, plus mirrored sign.",
+    "Retain fixed-cap and oracle matched-expected-count controls; explicitly retain at least one lower native MSE counterexample. Do not declare universal MSE dominance.",
+    "No copied native stderr is reported for the corrected point. Correctness alone does not trigger neural campaign or article promotion."
+  ]
+}

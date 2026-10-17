@@ -20,6 +20,12 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A66 writes a bounded audit of vLLM's actual adaptive typed-read mean before
+code/replay. Classical optional-sampling bias and a same-packet conditioning
+correction are explicit; no sufficient own theory/neural gain/paper claim.
+The abandoned early-stop lead duplicates A53 and is not reimplemented.
+See[the audit contract](66-adaptive-readout-audit/README.md).
+
 A65 V8 completes a REAL Tiny-A2D/Mosaic MASKED application:8/8 valid originals,
 129 forwards,0 errors/refusals. Only1/8 meets the frozen ideal N7>=0.005
 magnitude requirement4/8: application NEGATIVE/CLOSED, no quality campaign.
