@@ -5153,6 +5153,13 @@
           ]
         }
       ]
+    },
+    {
+      "id": "70-native-adam-erasure",
+      "title": "Reconstrução observável do Adam nativo com apagamento certificado de estado",
+      "conclusion": "Candidata ESCRITA antes de código: guard de absorção para toda cauda, enclosure do momento arredondado com piso subnormal e recuperação exata no próximo gradiente por endpoints/fallback. Apenas protótipo mínimo de correção autorizado; ferramentas clássicas explícitas, prioridade/uso/custo completo/meta abertos.",
+      "reading": "attempts/70-native-adam-erasure/README.md; attempts/70-native-adam-erasure/work/theory-v1.md; attempts/70-native-adam-erasure/work/protocol-v1.md",
+      "versions": []
     }
   ]
 }

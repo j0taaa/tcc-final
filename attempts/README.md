@@ -20,6 +20,13 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A70[native-Adam state erasure](70-native-adam-erasure/README.md) writes a
+DIFFERENT numerical contract before code: certified absorption of every
+remaining zero-gradient parameter write, rounded-moment enclosure and
+fresh-gradient endpoint erasure with exact fallback. Only a minimal scalar
+correctness audit is selected. Classical rounding/interval tools explicit;
+specific priority, real workload and complete-cost benefit remain OPEN.
+
 A69 V4[original-source/use audit](69-adaptive-factory-separation/work/priority-and-use-audit-v4.md)
 finds Mendo's classical early termination and elementary power controls already
 supply generic pointwise/growing-gap claims. Only the uniform-input/interior

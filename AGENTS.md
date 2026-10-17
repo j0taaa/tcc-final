@@ -1,5 +1,15 @@
 # AGENTS.md
 
+A70 starts only a MINIMAL numerical correctness candidate, written before
+code: native binary32 observable reconstruction via ALL-tail absorption,
+rounded-moment enclosure with a subnormal floor, fresh-gradient endpoint
+erasure, exact fallback and adaptive read identity. This is a DIFFERENT
+contract from M95's real-Adam sums. Absorption/interval/Ziv are classical;
+PULSE already uses BF16-visible absorption for communication, not a proof
+of zero-gradient FP32-master gaps. README/theory/protocol in70-native-adam-
+erasure. No priority, real workload/latency/whole library identity or fulfilled
+goal; do not expand from a passing scalar oracle alone.
+
 Structural-operation audit v5 reads FINAL TreeDiff ICLR2025/aircraft ICML2026
 and pins actual MaskeDiT source. Absent fields differ from observed context;
 packing is classical and finite -1e30 masks do not imply bitwise pruning.

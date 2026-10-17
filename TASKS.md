@@ -47,6 +47,25 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M96 — Exact observable native-Adam reconstruction by state erasure
+
+- [x] T9600: Previous turn PROGRESS revalidated fromd3b49ae4/M95 and its
+  written consumer/kernel audit. Only unrelated PDF untracked; no process
+  to restart. Generic deferred real-Adam/packing mechanisms remain declined.
+- [x] T9601: A70 README eight criteria/theory/protocol written BEFORE source:
+  declared binary32 recurrence, ALL-tail weight guard, rounded-moment bound
+  with subnormal floor and bounded exponent, endpoint erasure/fallback and
+  adaptive read/gradient identity. Classical absorption/interval/Ziv tools
+  explicit. Native other-kernel equality/priority/use/full latency OPEN.
+- [ ] T9602: Freeze source BEFORE isolated build/ONE768-case numerical audit;
+  exact-rational primitive/short-trajectory oracle and full native control,
+  all fallbacks/boundaries/refusals and nontrivial skipped work preserved.
+  No competitive campaign/model/training triggered by correctness alone.
+- [ ] T9603: Assess result against natural gap/precision demand and closest
+  exact sparse optimizer/compiler controls before substantive expansion.
+  Archive independent source/evidence and verify required repository checks,
+  normal commit/push, HEAD/upstream/remote; positive goal remains OPEN.
+
 ## M95 — Structural consumers and the epsilon-preserving Adam operation
 
 - [x] T9500: Previous turn PROGRESS revalidated fromba01b797 and M94's actual
