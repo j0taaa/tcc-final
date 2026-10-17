@@ -1,0 +1,168 @@
+{
+  "source_commit": "ad7e82f37505038249fee985bccbc83d4e09a560",
+  "contract_commit": "c2d42edb897671feae82d8e43d2907625ceac73a",
+  "reference_lower_bound_source_commit": "610c0a1f4a275aedf956a98b15d508a14af7c9ea",
+  "reference_lower_bound_evidence_commit": "6e31dc7ca23b2d6e8a74d530c553c009cd57f93c",
+  "regression_gate": "All4..7 exact new primal/original unrestricted dual and independent global Schur audits passed before8..11 launched",
+  "caps": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "solver_command_template": "<isolated-python> attempts/63-adaptive-six-coupling/work/solve_schur.py --cap <B> --output <certificate.json>",
+  "verifier_command_template": ".venv/bin/python attempts/63-adaptive-six-coupling/work/verify_schur.py <certificate.json> --output <verification.json>",
+  "directly_observed_solve_exit_codes": {
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 2,
+    "9": 2,
+    "10": 2,
+    "11": 2
+  },
+  "directly_observed_verify_exit_codes": {
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0
+  },
+  "verifier_not_run": {
+    "8": "No new certified primal: numerical sufficient-cone infeasibility, not a certificate of true minimax impossibility",
+    "9": "No new certified primal: numerical sufficient-cone infeasibility, not a certificate of true minimax impossibility",
+    "10": "No new certified primal: numerical sufficient-cone infeasibility, not a certificate of true minimax impossibility",
+    "11": "No new certified primal: numerical sufficient-cone infeasibility, not a certificate of true minimax impossibility"
+  },
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "neural_forwards": 0,
+  "timing_compared": false,
+  "scope": "Four regression all-law minimax upper certificates; four larger-cap Schur cone searches INCONCLUSIVE. U3 lower bounds explicitly reused, never newly computed.",
+  "files": [
+    {
+      "file": "cap10/certificate.json",
+      "sha256": "6a92bea9bf41321306f6374f381ee0fb736924a98adfef60ce6b5fa338b9dabd",
+      "bytes": 564
+    },
+    {
+      "file": "cap10/solve.log",
+      "sha256": "13219e0cb9704665aef61f93538b95de57c584b451e1fa47ec592054718b6b8a",
+      "bytes": 532
+    },
+    {
+      "file": "cap11/certificate.json",
+      "sha256": "870fdb5f4931b8e88e4a3e931debc7eaca915fa1df579e5d52d07889966e3e08",
+      "bytes": 570
+    },
+    {
+      "file": "cap11/solve.log",
+      "sha256": "c3b66226f6a9d7e1767ff799e28157864aba219c6e45ef5ff6039197e084835a",
+      "bytes": 538
+    },
+    {
+      "file": "cap4/certificate.json",
+      "sha256": "1802f5eeb9a62cdcaf606286de68bcb03f74537c9fe5fa67bba49249f9e7293e",
+      "bytes": 4328
+    },
+    {
+      "file": "cap4/solve.log",
+      "sha256": "3165fb4733518fa7941fd67f44e94436c8e21459b33a9087d51f2e01a4059f6b",
+      "bytes": 670
+    },
+    {
+      "file": "cap4/verification.json",
+      "sha256": "c2d1a737a901f27f92829d08dec9f9e648c533852e337fb88226db2306108fc5",
+      "bytes": 1514
+    },
+    {
+      "file": "cap4/verify.log",
+      "sha256": "de8e13a557587361a86d5d472c597d4715c3d54f2a1f842b900d69e2b863b6a2",
+      "bytes": 902
+    },
+    {
+      "file": "cap5/certificate.json",
+      "sha256": "13a5cf0d9266ebc8e2bc23bd3e463f1ee3ec1c567cfe2f8867bb626630cb7c6f",
+      "bytes": 7566
+    },
+    {
+      "file": "cap5/solve.log",
+      "sha256": "88710d0e9f9fc0612cc7bb14c47d1e53e404344a4845fb019ed84e9cae4ed0bc",
+      "bytes": 671
+    },
+    {
+      "file": "cap5/verification.json",
+      "sha256": "55651f4ed4f2f557c58c2fd6e5717a85233b071c56ba202f4245937a01c4086a",
+      "bytes": 1666
+    },
+    {
+      "file": "cap5/verify.log",
+      "sha256": "69b434b332b05c298c50f77b164820664a275e86f48d6ec1c8a2b0e25fe972c7",
+      "bytes": 905
+    },
+    {
+      "file": "cap6/certificate.json",
+      "sha256": "ab20dd59b11b41634e3b3d6cd7dd8dfcd6c128629a65515657b1cc7a9e3c65dd",
+      "bytes": 12373
+    },
+    {
+      "file": "cap6/solve.log",
+      "sha256": "9117d8e06df358d824dfda2c5be05ab200b5749dc8baa920164cc384dc3ad72b",
+      "bytes": 678
+    },
+    {
+      "file": "cap6/verification.json",
+      "sha256": "b23c74cdfd99ce545e95c2af1e2fceb503d8c2e9a6be1f2ffebeb6be404824f4",
+      "bytes": 1879
+    },
+    {
+      "file": "cap6/verify.log",
+      "sha256": "55c64b9320cf82ad43c4182f2dca7da806657900d690f7e43f21f380145f2a3f",
+      "bytes": 920
+    },
+    {
+      "file": "cap7/certificate.json",
+      "sha256": "c330626f0c1c40f60d5d974a6b0ed7ddfc8b202319b459ef6fd2eaff3daef6cd",
+      "bytes": 19121
+    },
+    {
+      "file": "cap7/solve.log",
+      "sha256": "a2dcb49f271a9b9f79545dee4ec30fc7f994b34abb48c99c240269d18d387a91",
+      "bytes": 678
+    },
+    {
+      "file": "cap7/verification.json",
+      "sha256": "6718545e8101ab151b978940e30c0cefd898efd5a84712d6610baf5254e8e6b7",
+      "bytes": 2111
+    },
+    {
+      "file": "cap7/verify.log",
+      "sha256": "d511f0810aebad7e94d001c4b62604d52b35bc3725534f1b53ddf459ca2bd03d",
+      "bytes": 921
+    },
+    {
+      "file": "cap8/certificate.json",
+      "sha256": "32ddd40bd37aba519faf289c81bcf5d168c99ef957e6d3978892be1fabb89e98",
+      "bytes": 564
+    },
+    {
+      "file": "cap8/solve.log",
+      "sha256": "47ed19ac2ae9a9575e779a65dae6f2114f5a44a22566691a6773a6cc973054fc",
+      "bytes": 532
+    },
+    {
+      "file": "cap9/certificate.json",
+      "sha256": "4ec7374e786e870ecacdf956ab6ef511b6873b78e74880713ad68a25303f7ce6",
+      "bytes": 566
+    },
+    {
+      "file": "cap9/solve.log",
+      "sha256": "832745a3d19275616475b22dbf643f681b05f69b2239199eec235b069e3849ad",
+      "bytes": 534
+    }
+  ]
+}

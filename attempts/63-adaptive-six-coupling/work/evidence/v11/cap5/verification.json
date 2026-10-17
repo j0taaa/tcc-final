@@ -1,0 +1,86 @@
+{
+  "status": "MINIMAX_VERIFIED",
+  "cap": 5,
+  "scope": "all-P minimax source work for fixed full ordered target law, three allowed keys",
+  "count_states": 35,
+  "variables": 140,
+  "rows": 125,
+  "named_tail_words_first0": 81,
+  "terminal_count_groups": 15,
+  "operational_prefix_steps": 216,
+  "exact_primal_cost": "31/9",
+  "exact_dual_bound": "31/9",
+  "weighted_laws": [
+    {
+      "p": [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "symmetric_policy_expected_calls": "31/9"
+    },
+    {
+      "p": [
+        "1/2",
+        "1/3",
+        "1/6"
+      ],
+      "symmetric_policy_expected_calls": "61/18"
+    },
+    {
+      "p": [
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      "symmetric_policy_expected_calls": "13/4"
+    },
+    {
+      "p": [
+        "9/10",
+        "1/20",
+        "1/20"
+      ],
+      "symmetric_policy_expected_calls": "12397/4000"
+    },
+    {
+      "p": [
+        "1",
+        "0",
+        "0"
+      ],
+      "symmetric_policy_expected_calls": "3"
+    }
+  ],
+  "neural_forwards": 0,
+  "reference_lower_bound_reused": true,
+  "global_expected_work_upper": "31/9",
+  "homogeneous_cost_degree": 4,
+  "cost_coefficients": {
+    "4,0,0": "3",
+    "3,1,0": "13",
+    "3,0,1": "13",
+    "2,2,0": "20",
+    "2,1,1": "44",
+    "2,0,2": "20",
+    "1,3,0": "13",
+    "1,2,1": "44",
+    "1,1,2": "44",
+    "1,0,3": "13",
+    "0,4,0": "3",
+    "0,3,1": "13",
+    "0,2,2": "20",
+    "0,1,3": "13",
+    "0,0,4": "3"
+  },
+  "schur_coefficients": {
+    "2,0,0": "1",
+    "1,1,0": "2",
+    "1,0,1": "5",
+    "0,2,0": "1",
+    "0,1,1": "5",
+    "0,0,2": "4"
+  },
+  "negative_schur_coefficients": 0,
+  "new_neural_forwards": 0
+}

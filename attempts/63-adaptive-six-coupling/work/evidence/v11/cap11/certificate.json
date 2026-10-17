@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "cap": 11,
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "reference_certificate_sha256": "c717ae15c5a38afc1ddab3eaa40eb2c23d0b05bcce7ad020a26be6e7a5ea41dd",
+  "reference_optimum": "450262/59049",
+  "reference_lower_bound_reused": true,
+  "states": 286,
+  "variables": 1540,
+  "schur_inequalities": 45,
+  "solver_status": 2,
+  "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+  "status": "INCONCLUSIVE",
+  "round_to_zero_threshold": 1e-10,
+  "reconstruction_max_denominator": 100000000
+}
