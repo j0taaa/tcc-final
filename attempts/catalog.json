@@ -4809,8 +4809,8 @@
     },
     {
       "id": "65-terminal-forecast-readout",
-      "title": "Leitura numérica terminal em consumidor real: provas, replay nativo e controle DP clássico; aplicação neural pendente",
-      "conclusion": "Native synthetic replay48/48 and classical grid-control12/12 pass; first failed draft preserved. Distinct masked-loop Tiny-A2D protocol and8 input-only selections frozen, raw discarded gold-byte exposure disclosed. No neural head/quality/cost or sufficient own novelty yet; goal OPEN.",
+      "title": "Leitura terminal: provas/controles e aplicação masked real com gate negativo",
+      "conclusion": "Real Tiny-A2D/Mosaic MASKED completes8 valid originals/129 forwards, only1/8 meets frozen magnitude gate4/8; application NEGATIVE/CLOSED, no quality campaign. All heads/IDs/RNG losslessly preserved and independently audited/restored. Original26B scope unmeasured, sufficiently own useful contribution/goal OPEN.",
       "reading": "attempts/65-terminal-forecast-readout/README.md",
       "versions": [
         {
@@ -4848,6 +4848,127 @@
             "attempts/65-terminal-forecast-readout/README.md",
             "attempts/65-terminal-forecast-readout/work"
           ]
+        },
+        {
+          "id": "v5-masked-loop-preflight",
+          "source_commit": "1986eccce79d478c2be1095a98c981a382d926e5",
+          "evidence_commit": "62b7b79d437baaa048cc0decc165c0b18aab156b",
+          "evidence_roots": [
+            "attempts/65-terminal-forecast-readout/README.md",
+            "attempts/65-terminal-forecast-readout/work"
+          ]
+        },
+        {
+          "id": "v6-real-masked-necessity",
+          "source_commit": "04c8cf9813e900b20be23a081388b8928237cd3d",
+          "evidence_commit": "25a356e619ff20b6a85751f5406de2cf0ede1246",
+          "evidence_roots": [
+            "attempts/65-terminal-forecast-readout/README.md",
+            "attempts/65-terminal-forecast-readout/work",
+            "docs/artifacts/raw/a65-masked-resource-v8/manifest.json",
+            "docs/artifacts/raw/a65-masked-resource-v8/metadata"
+          ],
+          "supplements": {
+            "heads-00.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-00"
+            ],
+            "heads-01.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-01"
+            ],
+            "heads-02.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-02"
+            ],
+            "heads-03.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-03"
+            ],
+            "heads-04.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-04"
+            ],
+            "heads-05.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-05"
+            ],
+            "heads-06.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-06"
+            ],
+            "heads-07.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-07"
+            ],
+            "heads-08.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-08"
+            ],
+            "heads-09.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-09"
+            ],
+            "heads-10.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-10"
+            ],
+            "heads-11.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-11"
+            ],
+            "heads-12.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-12"
+            ],
+            "heads-13.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-13"
+            ],
+            "heads-14.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-14"
+            ],
+            "heads-15.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-15"
+            ],
+            "heads-16.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-16"
+            ],
+            "heads-17.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-17"
+            ],
+            "heads-18.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-18"
+            ],
+            "heads-19.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-19"
+            ],
+            "heads-20.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-20"
+            ],
+            "heads-21.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-21"
+            ],
+            "heads-22.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-22"
+            ],
+            "heads-23.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-23"
+            ],
+            "heads-24.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-24"
+            ],
+            "heads-25.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-25"
+            ],
+            "heads-26.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-26"
+            ],
+            "heads-27.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-27"
+            ],
+            "heads-28.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-28"
+            ],
+            "heads-29.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-29"
+            ],
+            "heads-30.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-30"
+            ],
+            "heads-31.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-31"
+            ],
+            "heads-32.zip": [
+              "docs/artifacts/raw/a65-masked-resource-v8/part-32"
+            ]
+          }
         }
       ]
     }
