@@ -335,6 +335,9 @@ Não reivindicar esse mecanismo como novo. A implementação fica como controle
 competente; diferença própria substancial de arquitetura/benefício integral
 não estabelecidos, sem promoção ou campanha neural ampla. A versão de revista
 1999 não foi lida integralmente; escopos anteriores de51 não são reescritos.
+Complemento separado cumpre oito checks explícitos de suporte/input/massa zero,
+sem devolver palavra de massa zero. Contagens iniciais ficam intactas; união
+tem17 PTX únicos. Não atribuir esse complemento à primeira captura.
 
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs

@@ -86,3 +86,10 @@ not justify a broad neural campaign. Any expansion needs a concrete additional
 systems distinction and a new frozen complete-cost protocol, including real
 consumer value. A51's failed gate, A24's earlier query-only result and all
 negative applications remain untouched. The user's actual goal stays OPEN.
+
+Boundary supplement: the original protocol's explicit invalid-support and
+zero-mass cases are now exercised separately. Eight checks pass and zero target
+mass returns no word. The initial record counts remain unchanged. Capturing
+the remaining finite-law arithmetic specializations gives17 unique preserved
+new-frontend PTX modules across both packets. This fills a validation-scope
+obligation; it does not resolve the missing own advantage/novelty.

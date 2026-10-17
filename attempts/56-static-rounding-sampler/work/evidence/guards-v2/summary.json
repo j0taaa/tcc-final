@@ -1,0 +1,19 @@
+{
+  "additional_ptx_modules": 5,
+  "new_model_forwards": 0,
+  "refusals": [
+    "duplicate_original_id",
+    "overlapping_arcs",
+    "invalid_target",
+    "negative",
+    "nan",
+    "above_one",
+    "wrong_dtype",
+    "zero_mass_no_word"
+  ],
+  "scope": "original protocol boundary supplement; previous records unchanged",
+  "source_sha256": "867a960be1d921e5d59c37677f77b3042974eb8fda5d654d235ae4dddcaf11bb",
+  "status": "PASS",
+  "timing_claim": false,
+  "zero_mass_exact_checks": 1
+}

@@ -68,3 +68,9 @@ own novelty claim; no new sampling theory or achieved goal. A substantive new
 GPU architecture and measured complete-cost advantage remain unestablished.
 Keep this artifact as a strong control, and do not start a broad model campaign
 solely from these toy checks. See work/primary-decision-v2.md and evidence/.
+
+The separate boundary supplement executes the remaining explicit V2 protocol
+cases: eight invalid-support/input/zero-mass checks pass, and the finite-law
+arithmetic specializations are also captured. Initial counts stay unchanged;
+the two packets preserve17 UNIQUE new-frontend PTX modules in total. No timing
+or stronger scientific claim follows from this completeness check.

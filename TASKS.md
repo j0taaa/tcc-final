@@ -53,6 +53,10 @@ cost remain open. No new neural campaign is credited to M70.
   Keep exact-zero/subnormal guards, original IDs and unchanged prefix fallback.
   First wrong-environment import failure and exact source are preserved.
   ZERO new neural/model heads/forwards, external inputs or competitive timings.
+  Separate guard supplement fulfills all eight explicit invalid-support/input/
+  zero-mass cases; no zero-mass word returned. Initial counts unchanged,
+  17 UNIQUE new-frontend PTX modules across both packets. V1 archive stays
+  literal; boundary supplement is a separate later version.
 - [x] T7901: Read full ORIGINAL ADZ1997 report16 pages after successful HAL
   retrieval, SHA9eb5910791f1; Lemma3.1 visually checked, §§3--5 supply direct
   static-error/retained-refinement antecedent. Reject a NEW generic mechanism

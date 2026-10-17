@@ -26,6 +26,12 @@ campaign. PepTune inspection establishes a generator, not the needed unbiased
 consumer/cost ratio. Generic SparseMAP projection is also not a new mechanism.
 The user's actual original/useful-contribution goal remains OPEN.
 
+The separate A56 boundary supplement completes the initial protocol's eight
+explicit invalid-support/input/zero-mass checks. Zero mass returns no word;
+the initial7-fixture counts are unchanged. The17-module PTX union includes the
+finite-law arithmetic specializations. This is validation completeness, not a
+new cost/novelty result or promotion of the classical mechanism.
+
 ## 2026-10-16 — A45 rare-class obstruction narrows the family frontier
 
 Written01f84be BEFORE new checks. A strict violation of the unconstrained
