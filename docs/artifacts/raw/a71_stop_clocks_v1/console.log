@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "producer": "697908b3df52ad9acedbf779514586e695451dfe",
+  "counts": {
+    "k_q_cells": 31,
+    "coarse_marginal_events": 2234,
+    "feasible_count_vertices": 244,
+    "all_vertex_avoidance_optima": 210,
+    "cdf_vectors": 992,
+    "cdf_strict_vectors": 418,
+    "uniform_clock_pair_projections": 648,
+    "adaptive_joint_scenarios": 524288,
+    "complete_word_single_pair_probabilities": 672,
+    "adaptive_max_cdf_checks": 12,
+    "constructed_two_point_cases": 33,
+    "heterogeneous_rare_tail_sharp_checks": 6,
+    "affine_control_grid_points": 5832
+  },
+  "model_forwards": 0,
+  "scope": "Finite exact correctness/benefit/counterexample instances; no real latency, new count law, priority or fulfilled goal"
+}

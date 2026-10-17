@@ -65,3 +65,10 @@ Decision: admit only the frozen bounded proof/oracle audit. The aim is a useful
 positive inference contribution, not a catalogue of samplers or a new name for
 classical moment bounds. Consolidate only if scientific difference and actual
 use survive the controls; do not promote constructed examples as a neural win.
+
+V1[result](work/result-v1.md): source697908b3 BEFORE ONE direct0.31 K/q cells,
+244 independent moment vertices/210 avoidance optima,992 CDF vectors and
+524288 adaptive joint scenarios pass;672 complete individual/pair word
+probabilities match recursive native enumeration. All required adverse
+compaction/common-clock/affine-control cases are retained. No neural/model/
+training/competitive latency or adequate priority has been established.
