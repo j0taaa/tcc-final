@@ -1,4 +1,4 @@
-"""Numerical proposal plus exact rational primal/dual reconstruction, cap6/K3."""
+"""Rational primal/dual reconstruction for adjacent caps4..7, three allowed keys."""
 
 from __future__ import annotations
 
@@ -15,7 +15,15 @@ import numpy as np
 import scipy
 from scipy.optimize import linprog
 
-PROFILES = ((6,), (5, 1), (4, 2), (4, 1, 1), (3, 3), (3, 2, 1), (2, 2, 2))
+
+def profiles(cap: int) -> list[tuple[int, ...]]:
+    result = []
+    for a in range(cap, 0, -1):
+        for b in range(min(a, cap - a), -1, -1):
+            c = cap - a - b
+            if 0 <= c <= b:
+                result.append(tuple(v for v in (a, b, c) if v))
+    return result
 
 
 def canonical(tape: tuple[int, ...]) -> tuple[int, ...]:
@@ -32,9 +40,9 @@ def actions(s: tuple[int, ...]) -> list[int]:
     return sorted(set(s[1:]))
 
 
-def build() -> dict:
+def build(cap: int) -> dict:
     states = [(0,)]
-    for h in range(1, 6):
+    for h in range(1, cap):
         states += [
             (*s, a) for s in states.copy() if len(s) == h for a in range(min(max(s) + 1, 2) + 1)
         ]
@@ -44,12 +52,12 @@ def build() -> dict:
     ub, eq = [], []
     for s in states:
         coeff = Counter(index[(s[:h], a)] for h in range(1, len(s) + 1) for a in actions(s[:h]))
-        tag = ("end:" if len(s) == 6 else "flow:") + "".join(map(str, s))
-        (eq if len(s) == 6 else ub).append((tag, dict(coeff), F(1)))
+        tag = ("end:" if len(s) == cap else "flow:") + "".join(map(str, s))
+        (eq if len(s) == cap else ub).append((tag, dict(coeff), F(1)))
 
     def output(t: tuple[int, ...], j: int) -> Counter:
         row: Counter = Counter()
-        for h in range(1, 7):
+        for h in range(1, cap + 1):
             pref = t[:h]
             if j not in pref[1:]:
                 continue
@@ -57,7 +65,7 @@ def build() -> dict:
             row[index[(canonical(pref), seen.index(j))]] += 1
         return row
 
-    for n in PROFILES:
+    for n in profiles(cap):
         words = tuple(i for i, count in enumerate(n) for _ in range(count))
         tapes = sorted(set(permutations(words)))
         for j, count in enumerate(n):
@@ -69,13 +77,13 @@ def build() -> dict:
                 if t[0] == j:
                     diag.update(row)
             suffix = ",".join(map(str, n)) + ":" + str(j)
-            eq.append(("marg:" + suffix, dict(marg), F(len(tapes) * count, 6)))
-            eq.append(("diag:" + suffix, dict(diag), len(tapes) * max(F(count, 3) - 1, F(0))))
+            eq.append(("marg:" + suffix, dict(marg), F(len(tapes) * count, cap)))
+            eq.append(("diag:" + suffix, dict(diag), len(tapes) * max(F(2 * count, cap) - 1, F(0))))
     cost = [
-        -(6 - len(s)) * F(factorial(3) // factorial(3 - len(set(s))), 3 ** len(s))
+        -(cap - len(s)) * F(factorial(3) // factorial(3 - len(set(s))), 3 ** len(s))
         for s, _ in variables
     ]
-    return {"states": len(states), "names": names, "ub": ub, "eq": eq, "cost": cost}
+    return {"cap": cap, "states": len(states), "names": names, "ub": ub, "eq": eq, "cost": cost}
 
 
 def exact_check(problem: dict, x: list[F], y: list[F], z: list[F]) -> dict:
@@ -90,8 +98,8 @@ def exact_check(problem: dict, x: list[F], y: list[F], z: list[F]) -> dict:
         for i, a in row.items():
             at[i] += a * multiplier
     dual = all(a <= 0 for a in y) and all(a <= c for a, c in zip(at, problem["cost"], strict=True))
-    pcost = 6 + sum((c * a for c, a in zip(problem["cost"], x, strict=True)), F(0))
-    dcost = 6 + sum(
+    pcost = problem["cap"] + sum((c * a for c, a in zip(problem["cost"], x, strict=True)), F(0))
+    dcost = problem["cap"] + sum(
         (b * a for (_, _, b), a in zip(problem["ub"] + problem["eq"], y + z, strict=True)), F(0)
     )
     return {
@@ -107,8 +115,9 @@ def exact_check(problem: dict, x: list[F], y: list[F], z: list[F]) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--cap", type=int, choices=(4, 5, 6, 7), default=6)
     args = parser.parse_args()
-    p = build()
+    p = build(args.cap)
 
     def dense(rows: list) -> np.ndarray:
         return np.array(
@@ -132,6 +141,7 @@ def main() -> None:
     )
     record = {
         "schema": 1,
+        "cap": args.cap,
         "numpy": np.__version__,
         "scipy": scipy.__version__,
         "solver_status": int(result.status),
