@@ -26,6 +26,10 @@ remaining zero-gradient parameter write, rounded-moment enclosure and
 fresh-gradient endpoint erasure with exact fallback. Only a minimal scalar
 correctness audit is selected. Classical rounding/interval tools explicit;
 specific priority, real workload and complete-cost benefit remain OPEN.
+V1 linkage crash preserved; V2/V3 pass all768 constructed cases with128
+nontrivial erasures. V3 also passes8 adverse bound/range regressions and4
+context refusals, retaining6 exact fallbacks. Actual consumer/kernel/read
+contract, priority and full cost still required; no performance/NN claim.
 
 A69 V4[original-source/use audit](69-adaptive-factory-separation/work/priority-and-use-audit-v4.md)
 finds Mendo's classical early termination and elementary power controls already

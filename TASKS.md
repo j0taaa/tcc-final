@@ -57,19 +57,29 @@ cost remain open. No new neural campaign is credited to M70.
   with subnormal floor and bounded exponent, endpoint erasure/fallback and
   adaptive read/gradient identity. Classical absorption/interval/Ziv tools
   explicit. Native other-kernel equality/priority/use/full latency OPEN.
-- [ ] T9602: Freeze source BEFORE isolated build/ONE768-case numerical audit;
-  exact-rational primitive/short-trajectory oracle and full native control,
-  all fallbacks/boundaries/refusals and nontrivial skipped work preserved.
-  No competitive campaign/model/training triggered by correctness alone.
+- [x] T9602: Corrected source39ac2f4d BEFORE ONE V2 direct0: ALL768 original
+  cases match read/next-state bits,384 freezes128 nontrivial erasures,288
+  independent short trajectories474 finite primitive checks144 enclosure
+  cells plus negative companions.17 primitive nonfinite outputs outside
+  contract, eight refusals. Static post-auditf11dc087 passes; no timing/NN.
 - [x] T9602-V1-failure: Source803fce79 BEFORE initial build/audit; C build0,
   child signal11/direct-11 (outer245), no persisted primary rows/false PASS.
   Source/raw/exit preserved. Loader-only diagnosis binds generic step to
   libc legacy step; V2 linkage-only repair protocol written before new files.
   No arithmetic/grid/cap changes, no original-source overwrite or NN/timing.
-- [ ] T9603: Assess result against natural gap/precision demand and closest
-  exact sparse optimizer/compiler controls before substantive expansion.
-  Archive independent source/evidence and verify required repository checks,
-  normal commit/push, HEAD/upstream/remote; positive goal remains OPEN.
+- [x] T9602-V3: After-data admission corner preserved in V2; NEW protocol
+  078441d9 BEFORE source37b5b984/ONE direct0 repairs bounds/ranges. Original
+  768 outputs/work unchanged; EIGHT adverse cases/four context refusals pass,
+  six unavailable-bound fallbacks. Static verifier4dd926dc passes; no new
+  workload/head/model/training/competitive timing. Result70/work/result-v3.md.
+- [ ] T9603: Before substantive expansion instantiate an actual consumer's
+  native FP/order/read contract; audit relevant long-gap/certificate demand
+  and closest exact sparse optimizer/generic interval-erasure controls.
+  Specific priority and useful complete benefit remain OPEN; passing scalar
+  fixtures alone do not trigger a training or performance campaign.
+- [ ] T9604: Archive V1 failure/V2/V3 independently, verify hashes/required
+  repository checks, normal commit/push and HEAD/upstream/remote. No need to
+  rerun345 maintained tests for isolated experiment sources. Goal OPEN.
 
 ## M95 — Structural consumers and the epsilon-preserving Adam operation
 

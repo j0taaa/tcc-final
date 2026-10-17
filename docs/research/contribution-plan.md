@@ -3898,3 +3898,29 @@ or experimental reproduction claim. General Holder/refinement principles and
 ordinary PC closure are not new. All eight criteria decline opening A70 for
 the basic wrapper; retain this as a strong analytical control. The positive
 user goal needs an additional own useful difference and remains OPEN.
+
+### A70 — Native rounded-state erasure, written before the numerical audit
+
+M95's real-Adam operation led to a DIFFERENT finite-precision candidate.
+Theory/protocol802a8634 defines native binary32 op order, a guard proving
+all remaining zero-gradient parameter writes absorbed, a rounded-moment
+enclosure with its essential subnormal floor, and exact endpoint recovery
+after the next actual gradient, or literal fallback. It gives a WRITTEN
+adaptive read/gradient trace identity under hidden-moment/model/RNG conditions.
+Absorption, interval/Ziv tests and sound loop summaries are classical.
+GS-Scale already defers real Adam; PULSE already uses BF16 absorption for
+lossless communication. Neither alone establishes useful FP32 inactive gaps.
+
+Initial source803fce79 crashed through libc's colliding step symbol; raw source,
+build/exit and loader diagnosis remain. V2 source39ac2f4d passes all768
+constructed cases,384 freezes/128 nontrivial two-moment erasures,288 exact
+short trajectories,474 finite primitive outputs and144 enclosure cells.
+V3 protocol078441d9/source37b5b984 repairs a later found bound/range corner:
+same768 outputs/work plus8 adverse cases/four context refusals,6 exact
+unavailable-bound fallbacks.17 nonfinite primitive outputs are outside the
+contract, not successes. These are scalar proof fixtures, not a trained
+model, observed application frequency, competitive timing or whole-library
+implementation proof. All scopes:attempts/70-native-adam-erasure/README.md.
+Actual consumer-native instantiation, useful gap/precision demand, strong
+whole-cost comparison and sufficient specific priority remain OPEN. No
+article promotion or substantive campaign follows from correctness alone.

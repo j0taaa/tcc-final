@@ -74,3 +74,19 @@ audit is claimed. V2's[linkage-only protocol](work/protocol-v2-linkage.md)
 keeps all numerical criteria/grid/cap and requires NEW independent source
 files/commit before a corrected run. Criteria1--8 stay in force; this repair
 does not establish novelty, practical use, whole latency or the user goal.
+
+V2 source39ac2f4d passes ALL768 predeclared scalar cases:384 weight freezes,
+128 nontrivial fresh-moment erasures,288 exact-rational short trajectories,
+474 finite primitive checks and144 enclosure cells.17 primitive nonfinite
+outputs are outside contract, not successes. A later source inspection found
+an overflow-bound admission corner; see[the scoped V2 result](work/result-v2.md).
+
+V3 protocol078441d9 BEFORE source37b5b984/ONE direct0 repairs only the bound/
+native-range admission. All original768 output/work rows stay identical;
+EIGHT adverse regressions and four context refusals pass, six with exact
+fallback for an unavailable bound. See[the current result](work/result-v3.md).
+These are constructed correctness fixtures, NOT measured workload frequencies
+or latency/quality gains. The written adaptive trace theorem is conditional
+on the declared operation/interface, not an implementation proof for every
+PyTorch/CUDA/GS-Scale kernel. Criteria1--8 still require actual consumer/FP
+instantiation, priority and complete benefit before a substantive build.

@@ -1,0 +1,16 @@
+{
+  "kind": "ONE admission repair audit; same constructed grid plus eight adverse regressions; elapsed diagnostic only",
+  "producer_commit": "37b5b984c791c9d635913c2c0501275bed440dfe",
+  "command": [
+    ".venv/bin/python",
+    "-X",
+    "faulthandler",
+    "attempts/70-native-adam-erasure/work/audit_v3.py",
+    "--output",
+    "docs/artifacts/raw/a70_native_erasure_v3_bounds"
+  ],
+  "direct_exit_code": 0,
+  "elapsed_seconds": 2.194347338983789,
+  "log": "docs/evidence/a70-v3-bounds-audit.log",
+  "log_sha256": "7be39d0933d4ad2b280049a760310ce21d830d3ad4340931028a5aad2d66898b"
+}

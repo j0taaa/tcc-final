@@ -9,6 +9,16 @@ PULSE already uses BF16-visible absorption for communication, not a proof
 of zero-gradient FP32-master gaps. README/theory/protocol in70-native-adam-
 erasure. No priority, real workload/latency/whole library identity or fulfilled
 goal; do not expand from a passing scalar oracle alone.
+A70 V1 source803fce79 failed signal11 from libc step symbol interposition,
+confirmed by loader-only probe; source/raw intact. V2 source39ac2f4d passes
+ALL768 fixtures384 freezes128 nontrivial erasures/288 independent short
+oracles474 finite primitive checks144 enclosure cells,17 outside-finite
+primitives not credited. V3 protocol078441d9/source37b5b984 repairs an AFTER-
+data bound/range corner: same768 bits/work plus8 adverse cases/4 context
+refusals,6 unavailable-bound exact fallbacks. Static checks confirm hashes/
+unchanged old grid. No native library-wide identity, real workload/latency,
+NN/training/priority/goal fulfillment. Result70/work/result-v3.md; next is
+actual consumer FP/read instantiation and useful gap/cost/priority evidence.
 
 Structural-operation audit v5 reads FINAL TreeDiff ICLR2025/aircraft ICML2026
 and pins actual MaskeDiT source. Absent fields differ from observed context;

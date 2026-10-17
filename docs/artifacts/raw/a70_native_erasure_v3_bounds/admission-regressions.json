@@ -1,0 +1,205 @@
+{
+  "cases": [
+    {
+      "h": 0,
+      "g": 3184315597,
+      "initial": [
+        1065353216,
+        1,
+        2139095039
+      ],
+      "read": 1065353216,
+      "final": [
+        1065353216,
+        3156465421,
+        2139078262
+      ],
+      "work": {
+        "head": 0,
+        "frozen": true,
+        "erased": false,
+        "bound_unavailable": false,
+        "zero_moment_steps": 0,
+        "zero_weight_steps": 0,
+        "control_absorption_moment_steps": 0,
+        "native_zero_steps": 0
+      }
+    },
+    {
+      "h": 0,
+      "g": 1036831949,
+      "initial": [
+        1065353216,
+        1,
+        2139095039
+      ],
+      "read": 1065353216,
+      "final": [
+        1065353216,
+        1008981773,
+        2139078262
+      ],
+      "work": {
+        "head": 0,
+        "frozen": true,
+        "erased": false,
+        "bound_unavailable": false,
+        "zero_moment_steps": 0,
+        "zero_weight_steps": 0,
+        "control_absorption_moment_steps": 0,
+        "native_zero_steps": 0
+      }
+    },
+    {
+      "h": 1,
+      "g": 3184315597,
+      "initial": [
+        1065353216,
+        1,
+        2139095039
+      ],
+      "read": 1065353216,
+      "final": [
+        1065353216,
+        3156465421,
+        2139061502
+      ],
+      "work": {
+        "head": 0,
+        "frozen": true,
+        "erased": false,
+        "bound_unavailable": true,
+        "zero_moment_steps": 1,
+        "zero_weight_steps": 0,
+        "control_absorption_moment_steps": 1,
+        "native_zero_steps": 1
+      }
+    },
+    {
+      "h": 1,
+      "g": 1036831949,
+      "initial": [
+        1065353216,
+        1,
+        2139095039
+      ],
+      "read": 1065353216,
+      "final": [
+        1065353216,
+        1008981773,
+        2139061502
+      ],
+      "work": {
+        "head": 0,
+        "frozen": true,
+        "erased": false,
+        "bound_unavailable": true,
+        "zero_moment_steps": 1,
+        "zero_weight_steps": 0,
+        "control_absorption_moment_steps": 1,
+        "native_zero_steps": 1
+      }
+    },
+    {
+      "h": 15,
+      "g": 3184315597,
+      "initial": [
+        1065353216,
+        1,
+        2139095039
+      ],
+      "read": 1065353216,
+      "final": [
+        1065353216,
+        3156465421,
+        2138828611
+      ],
+      "work": {
+        "head": 0,
+        "frozen": true,
+        "erased": false,
+        "bound_unavailable": true,
+        "zero_moment_steps": 15,
+        "zero_weight_steps": 0,
+        "control_absorption_moment_steps": 15,
+        "native_zero_steps": 15
+      }
+    },
+    {
+      "h": 15,
+      "g": 1036831949,
+      "initial": [
+        1065353216,
+        1,
+        2139095039
+      ],
+      "read": 1065353216,
+      "final": [
+        1065353216,
+        1008981773,
+        2138828611
+      ],
+      "work": {
+        "head": 0,
+        "frozen": true,
+        "erased": false,
+        "bound_unavailable": true,
+        "zero_moment_steps": 15,
+        "zero_weight_steps": 0,
+        "control_absorption_moment_steps": 15,
+        "native_zero_steps": 15
+      }
+    },
+    {
+      "h": 512,
+      "g": 3184315597,
+      "initial": [
+        1065353216,
+        1,
+        2139095039
+      ],
+      "read": 1065353216,
+      "final": [
+        1065353216,
+        3156465421,
+        2132359780
+      ],
+      "work": {
+        "head": 0,
+        "frozen": true,
+        "erased": false,
+        "bound_unavailable": true,
+        "zero_moment_steps": 512,
+        "zero_weight_steps": 0,
+        "control_absorption_moment_steps": 512,
+        "native_zero_steps": 512
+      }
+    },
+    {
+      "h": 512,
+      "g": 1036831949,
+      "initial": [
+        1065353216,
+        1,
+        2139095039
+      ],
+      "read": 1065353216,
+      "final": [
+        1065353216,
+        1008981773,
+        2132359780
+      ],
+      "work": {
+        "head": 0,
+        "frozen": true,
+        "erased": false,
+        "bound_unavailable": true,
+        "zero_moment_steps": 512,
+        "zero_weight_steps": 0,
+        "control_absorption_moment_steps": 512,
+        "native_zero_steps": 512
+      }
+    }
+  ],
+  "context_refusals": 4
+}

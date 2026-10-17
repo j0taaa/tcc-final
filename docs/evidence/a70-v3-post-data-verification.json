@@ -1,0 +1,90 @@
+{
+  "kind": "AFTER-data static provenance/complete-grid/iteration-count audit ONLY",
+  "verifier_commit": "4dd926dcb54c6abcf86a96919b5677f4a8abdee9",
+  "numerical_producer_commit": "37b5b984c791c9d635913c2c0501275bed440dfe",
+  "all_768_predeclared_rows": true,
+  "original_768_rows_unchanged": true,
+  "adverse_admission_cases": 8,
+  "unavailable_bound_fallbacks": 6,
+  "frozen_source_hashes_match": true,
+  "c_namespace_reversal_byte_identical": true,
+  "previous_schedule_and_primitive_packet_identical": true,
+  "per_gap": {
+    "0": {
+      "rows": 96,
+      "frozen": 0,
+      "erased": 0,
+      "head_steps": 0,
+      "moment_steps": 0,
+      "weight_steps": 0,
+      "control_moment_steps": 0
+    },
+    "1": {
+      "rows": 96,
+      "frozen": 0,
+      "erased": 0,
+      "head_steps": 96,
+      "moment_steps": 96,
+      "weight_steps": 96,
+      "control_moment_steps": 96
+    },
+    "15": {
+      "rows": 96,
+      "frozen": 0,
+      "erased": 0,
+      "head_steps": 1440,
+      "moment_steps": 1440,
+      "weight_steps": 1440,
+      "control_moment_steps": 1440
+    },
+    "128": {
+      "rows": 96,
+      "frozen": 0,
+      "erased": 0,
+      "head_steps": 12288,
+      "moment_steps": 12288,
+      "weight_steps": 12288,
+      "control_moment_steps": 12288
+    },
+    "512": {
+      "rows": 96,
+      "frozen": 96,
+      "erased": 0,
+      "head_steps": 24408,
+      "moment_steps": 49152,
+      "weight_steps": 24408,
+      "control_moment_steps": 49152
+    },
+    "4096": {
+      "rows": 96,
+      "frozen": 96,
+      "erased": 0,
+      "head_steps": 24408,
+      "moment_steps": 393216,
+      "weight_steps": 24408,
+      "control_moment_steps": 393216
+    },
+    "32768": {
+      "rows": 96,
+      "frozen": 96,
+      "erased": 56,
+      "head_steps": 24408,
+      "moment_steps": 1324726,
+      "weight_steps": 24408,
+      "control_moment_steps": 3145728
+    },
+    "65536": {
+      "rows": 96,
+      "frozen": 96,
+      "erased": 72,
+      "head_steps": 24408,
+      "moment_steps": 1591170,
+      "weight_steps": 24408,
+      "control_moment_steps": 6291456
+    }
+  },
+  "counts_are_full_latency": false,
+  "numerical_kernel_rerun": false,
+  "independent_dataset_or_model": false,
+  "goal": "OPEN"
+}
