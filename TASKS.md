@@ -57,6 +57,12 @@ cost remain open. No new neural campaign is credited to M70.
   Powers/products/integration already give the generic moment mechanism.
   Keep as diagnostic/control; no substantive own separation or new head
   campaign triggered. See57/work/primary-decision-v2.md. Goal remains OPEN.
+  Archivev1 preserves source/evidence97f5bab; completed make check exit0
+  verifies57 attempts/233 versions/175674 files. Final post-archive log is
+  docs/evidence/a57-v1-final-make-check.log, not attributed to earlier snapshot.
+  Reading-only PepTune§§2.2/2.5/4.4/4.5 adds actual peptide-filter/MCTS/Pareto
+  contract; no inferred cost ratio or molecular campaign. Exact scope:
+  docs/research/consumer-reading-2026-10-16.md.
 - [ ] T8002: Establish an own useful operation/difference and real consumer
   before expanding this diagnostic or starting another extensive prototype.
   Conditional hidden variance alone is not visible overlap/ESS/quality gain.
