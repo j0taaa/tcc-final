@@ -1,0 +1,1851 @@
+{
+  "status": "PASS",
+  "scope": "AFTER-data arithmetic audit, not independent statistical confirmation",
+  "measured_producer": "bb6ced4209a2f27ad2518308cdb4955417ed4fca",
+  "records": 680,
+  "counts": {
+    "common_input_validation": 8,
+    "validation": 96,
+    "preparation": 288,
+    "warm": 288
+  },
+  "scalar_gradient_output_checks": 3757395168,
+  "max_scaled_error": 0.058184653467853224,
+  "all_candidate_state_pairs_rejected": 64,
+  "unexecuted_controls": [
+    "CCE0",
+    "CCE8",
+    "CCE32",
+    "checkpoint0p2048",
+    "checkpoint0p8192",
+    "checkpoint8p2048",
+    "checkpoint8p8192",
+    "checkpoint32p2048",
+    "checkpoint32p8192",
+    "checkpoint128p2048"
+  ],
+  "metrics": {
+    "16": {
+      "tile16x32": {
+        "wall_ns": [
+          2860485.4,
+          2506995.0,
+          2867318.6
+        ],
+        "median_wall_ns": 2860485.4,
+        "median_CPU_ns": 2839623.8,
+        "peak_workspace_bytes": 156497272
+      },
+      "tile32x64": {
+        "wall_ns": [
+          3883032.6,
+          3378598.6,
+          3363021.0
+        ],
+        "median_wall_ns": 3378598.6,
+        "median_CPU_ns": 3356231.6,
+        "peak_workspace_bytes": 156517752
+      },
+      "tile64x64": {
+        "wall_ns": [
+          17590535.6,
+          17745786.8,
+          17865100.8
+        ],
+        "median_wall_ns": 17745786.8,
+        "median_CPU_ns": 17747431.2,
+        "peak_workspace_bytes": 156517752
+      },
+      "tile64x128": {
+        "wall_ns": [
+          5811906.4,
+          5831131.2,
+          6635597.4
+        ],
+        "median_wall_ns": 5831131.2,
+        "median_CPU_ns": 5743941.8,
+        "peak_workspace_bytes": 156563320
+      },
+      "bucket16x32": {
+        "wall_ns": [
+          2897742.2,
+          2527500.8,
+          2515634.4
+        ],
+        "median_wall_ns": 2527500.8,
+        "median_CPU_ns": 2514234.8,
+        "peak_workspace_bytes": 156502392
+      },
+      "bucket32x64": {
+        "wall_ns": [
+          3898688.2,
+          3497821.6,
+          3890554.4
+        ],
+        "median_wall_ns": 3890554.4,
+        "median_CPU_ns": 3888977.4,
+        "peak_workspace_bytes": 156522360
+      },
+      "bucket64x64": {
+        "wall_ns": [
+          17291535.6,
+          15907153.2,
+          17410732.2
+        ],
+        "median_wall_ns": 17291535.6,
+        "median_CPU_ns": 17292537.6,
+        "peak_workspace_bytes": 156522360
+      },
+      "bucket64x128": {
+        "wall_ns": [
+          5858108.6,
+          6665116.8,
+          5812576.0
+        ],
+        "median_wall_ns": 5858108.6,
+        "median_CPU_ns": 5860777.4,
+        "peak_workspace_bytes": 156567416
+      },
+      "dense": {
+        "wall_ns": [
+          2798367.8,
+          3168010.0,
+          3161142.2
+        ],
+        "median_wall_ns": 3161142.2,
+        "median_CPU_ns": 6455641.6,
+        "peak_workspace_bytes": 177493880
+      },
+      "CCE128": {
+        "wall_ns": [
+          8071516.8,
+          7436291.4,
+          7260191.4
+        ],
+        "median_wall_ns": 7436291.4,
+        "median_CPU_ns": 7438100.8,
+        "peak_workspace_bytes": 289845112
+      },
+      "checkpoint128p8192": {
+        "wall_ns": [
+          4898674.6,
+          4891692.4,
+          4894335.6
+        ],
+        "median_wall_ns": 4894335.6,
+        "median_CPU_ns": 4895711.6,
+        "peak_workspace_bytes": 169220472
+      },
+      "CCE_out128": {
+        "wall_ns": [
+          5504271.8,
+          4915227.2,
+          4776716.4
+        ],
+        "median_wall_ns": 4915227.2,
+        "median_CPU_ns": 4918285.8,
+        "peak_workspace_bytes": 157976440
+      }
+    },
+    "32": {
+      "tile16x32": {
+        "wall_ns": [
+          5231397.0,
+          5236679.8,
+          5242303.2
+        ],
+        "median_wall_ns": 5236679.8,
+        "median_CPU_ns": 5181678.0,
+        "peak_workspace_bytes": 156570680
+      },
+      "tile32x64": {
+        "wall_ns": [
+          4216920.4,
+          3797822.2,
+          4196147.2
+        ],
+        "median_wall_ns": 4196147.2,
+        "median_CPU_ns": 4137631.0,
+        "peak_workspace_bytes": 156591160
+      },
+      "tile64x64": {
+        "wall_ns": [
+          7210695.6,
+          7219982.0,
+          7208294.4
+        ],
+        "median_wall_ns": 7210695.6,
+        "median_CPU_ns": 7159892.4,
+        "peak_workspace_bytes": 156591160
+      },
+      "tile64x128": {
+        "wall_ns": [
+          7077063.2,
+          7052236.2,
+          7082406.0
+        ],
+        "median_wall_ns": 7077063.2,
+        "median_CPU_ns": 7011847.0,
+        "peak_workspace_bytes": 156636728
+      },
+      "bucket16x32": {
+        "wall_ns": [
+          4896381.8,
+          4657646.2,
+          5253386.0
+        ],
+        "median_wall_ns": 4896381.8,
+        "median_CPU_ns": 4778698.8,
+        "peak_workspace_bytes": 156575800
+      },
+      "bucket32x64": {
+        "wall_ns": [
+          4220911.8,
+          3789896.8,
+          3909966.0
+        ],
+        "median_wall_ns": 3909966.0,
+        "median_CPU_ns": 3856944.0,
+        "peak_workspace_bytes": 156595768
+      },
+      "bucket64x64": {
+        "wall_ns": [
+          7213056.6,
+          6698235.0,
+          6340445.0
+        ],
+        "median_wall_ns": 6698235.0,
+        "median_CPU_ns": 6646570.0,
+        "peak_workspace_bytes": 156595768
+      },
+      "bucket64x128": {
+        "wall_ns": [
+          7082428.2,
+          6929861.6,
+          7052127.0
+        ],
+        "median_wall_ns": 7052127.0,
+        "median_CPU_ns": 6998222.6,
+        "peak_workspace_bytes": 156640824
+      },
+      "dense": {
+        "wall_ns": [
+          4511587.2,
+          4421335.6,
+          4146811.2
+        ],
+        "median_wall_ns": 4421335.6,
+        "median_CPU_ns": 4443682.2,
+        "peak_workspace_bytes": 196150328
+      },
+      "CCE128": {
+        "wall_ns": [
+          8189465.8,
+          8207178.2,
+          7535182.0
+        ],
+        "median_wall_ns": 8189465.8,
+        "median_CPU_ns": 8133654.0,
+        "peak_workspace_bytes": 290029112
+      },
+      "checkpoint128p8192": {
+        "wall_ns": [
+          4900543.8,
+          5073945.2,
+          4902550.2
+        ],
+        "median_wall_ns": 4902550.2,
+        "median_CPU_ns": 4900988.4,
+        "peak_workspace_bytes": 163919928
+      },
+      "CCE_out128": {
+        "wall_ns": [
+          5599294.2,
+          5495140.4,
+          5615733.4
+        ],
+        "median_wall_ns": 5599294.2,
+        "median_CPU_ns": 5563670.4,
+        "peak_workspace_bytes": 158501432
+      }
+    },
+    "64": {
+      "tile16x32": {
+        "wall_ns": [
+          9943762.6,
+          8638770.0,
+          8631625.8
+        ],
+        "median_wall_ns": 8638770.0,
+        "median_CPU_ns": 8622634.8,
+        "peak_workspace_bytes": 156717496
+      },
+      "tile32x64": {
+        "wall_ns": [
+          7830491.2,
+          6752419.8,
+          6749313.8
+        ],
+        "median_wall_ns": 6752419.8,
+        "median_CPU_ns": 6702743.2,
+        "peak_workspace_bytes": 156737976
+      },
+      "tile64x64": {
+        "wall_ns": [
+          8447027.4,
+          7359163.8,
+          7362051.2
+        ],
+        "median_wall_ns": 7362051.2,
+        "median_CPU_ns": 7297264.6,
+        "peak_workspace_bytes": 156737976
+      },
+      "tile64x128": {
+        "wall_ns": [
+          7333542.0,
+          6870491.4,
+          6885765.2
+        ],
+        "median_wall_ns": 6885765.2,
+        "median_CPU_ns": 6821402.4,
+        "peak_workspace_bytes": 156783544
+      },
+      "bucket16x32": {
+        "wall_ns": [
+          9936138.4,
+          8607901.8,
+          8588623.4
+        ],
+        "median_wall_ns": 8607901.8,
+        "median_CPU_ns": 8554418.0,
+        "peak_workspace_bytes": 156722616
+      },
+      "bucket32x64": {
+        "wall_ns": [
+          7839460.0,
+          7823263.4,
+          6788644.8
+        ],
+        "median_wall_ns": 7823263.4,
+        "median_CPU_ns": 7756294.2,
+        "peak_workspace_bytes": 156742584
+      },
+      "bucket64x64": {
+        "wall_ns": [
+          8441343.0,
+          8455281.4,
+          7369936.6
+        ],
+        "median_wall_ns": 8441343.0,
+        "median_CPU_ns": 8379965.0,
+        "peak_workspace_bytes": 156742584
+      },
+      "bucket64x128": {
+        "wall_ns": [
+          7823494.4,
+          7827485.4,
+          6861880.4
+        ],
+        "median_wall_ns": 7823494.4,
+        "median_CPU_ns": 7773473.0,
+        "peak_workspace_bytes": 156787640
+      },
+      "dense": {
+        "wall_ns": [
+          5336109.8,
+          5190738.0,
+          4915949.8
+        ],
+        "median_wall_ns": 5190738.0,
+        "median_CPU_ns": 5122777.0,
+        "peak_workspace_bytes": 234893752
+      },
+      "CCE128": {
+        "wall_ns": [
+          10529533.2,
+          9460010.2,
+          9469676.2
+        ],
+        "median_wall_ns": 9469676.2,
+        "median_CPU_ns": 9406844.8,
+        "peak_workspace_bytes": 290397112
+      },
+      "checkpoint128p8192": {
+        "wall_ns": [
+          5098114.4,
+          5097562.2,
+          5138690.4
+        ],
+        "median_wall_ns": 5098114.4,
+        "median_CPU_ns": 5036633.2,
+        "peak_workspace_bytes": 170358200
+      },
+      "CCE_out128": {
+        "wall_ns": [
+          7689191.0,
+          6627460.8,
+          6621006.8
+        ],
+        "median_wall_ns": 6627460.8,
+        "median_CPU_ns": 6562473.4,
+        "peak_workspace_bytes": 159548344
+      }
+    },
+    "128": {
+      "tile16x32": {
+        "wall_ns": [
+          16573313.2,
+          16766265.2,
+          16825752.4
+        ],
+        "median_wall_ns": 16766265.2,
+        "median_CPU_ns": 16707442.8,
+        "peak_workspace_bytes": 157013176
+      },
+      "tile32x64": {
+        "wall_ns": [
+          14853193.6,
+          12738113.8,
+          12833055.4
+        ],
+        "median_wall_ns": 12833055.4,
+        "median_CPU_ns": 12773430.2,
+        "peak_workspace_bytes": 157033656
+      },
+      "tile64x64": {
+        "wall_ns": [
+          13703892.6,
+          13670821.0,
+          13759331.0
+        ],
+        "median_wall_ns": 13703892.6,
+        "median_CPU_ns": 13616445.8,
+        "peak_workspace_bytes": 157033656
+      },
+      "tile64x128": {
+        "wall_ns": [
+          12791596.2,
+          12788688.0,
+          12865407.6
+        ],
+        "median_wall_ns": 12791596.2,
+        "median_CPU_ns": 12762677.6,
+        "peak_workspace_bytes": 157079224
+      },
+      "bucket16x32": {
+        "wall_ns": [
+          19293952.4,
+          16703600.6,
+          16854362.6
+        ],
+        "median_wall_ns": 16854362.6,
+        "median_CPU_ns": 16824108.8,
+        "peak_workspace_bytes": 157018296
+      },
+      "bucket32x64": {
+        "wall_ns": [
+          14812865.8,
+          12707268.8,
+          12792502.4
+        ],
+        "median_wall_ns": 12792502.4,
+        "median_CPU_ns": 12754661.4,
+        "peak_workspace_bytes": 157038264
+      },
+      "bucket64x64": {
+        "wall_ns": [
+          15765060.4,
+          13649269.4,
+          13725121.6
+        ],
+        "median_wall_ns": 13725121.6,
+        "median_CPU_ns": 13669354.6,
+        "peak_workspace_bytes": 157038264
+      },
+      "bucket64x128": {
+        "wall_ns": [
+          14641433.8,
+          12779684.6,
+          12861139.8
+        ],
+        "median_wall_ns": 12861139.8,
+        "median_CPU_ns": 12769833.8,
+        "peak_workspace_bytes": 157083320
+      },
+      "dense": {
+        "wall_ns": [
+          6183662.8,
+          6633491.6,
+          6209038.6
+        ],
+        "median_wall_ns": 6209038.6,
+        "median_CPU_ns": 6112741.4,
+        "peak_workspace_bytes": 312386232
+      },
+      "CCE128": {
+        "wall_ns": [
+          15129272.0,
+          13375048.6,
+          13483494.6
+        ],
+        "median_wall_ns": 13483494.6,
+        "median_CPU_ns": 13430450.4,
+        "peak_workspace_bytes": 291140792
+      },
+      "checkpoint128p8192": {
+        "wall_ns": [
+          5379400.0,
+          5376104.6,
+          5751885.8
+        ],
+        "median_wall_ns": 5379400.0,
+        "median_CPU_ns": 5320645.2,
+        "peak_workspace_bytes": 183237304
+      },
+      "CCE_out128": {
+        "wall_ns": [
+          10216965.4,
+          10275252.6,
+          10276304.0
+        ],
+        "median_wall_ns": 10275252.6,
+        "median_CPU_ns": 10213731.8,
+        "peak_workspace_bytes": 161645240
+      }
+    },
+    "256": {
+      "tile16x32": {
+        "wall_ns": [
+          34512395.4,
+          33387919.2,
+          33318442.0
+        ],
+        "median_wall_ns": 33387919.2,
+        "median_CPU_ns": 33391191.6,
+        "peak_workspace_bytes": 157606072
+      },
+      "tile32x64": {
+        "wall_ns": [
+          24505669.6,
+          24755498.8,
+          24772786.4
+        ],
+        "median_wall_ns": 24755498.8,
+        "median_CPU_ns": 24701481.6,
+        "peak_workspace_bytes": 157626552
+      },
+      "tile64x64": {
+        "wall_ns": [
+          27504768.8,
+          26498254.4,
+          26487380.8
+        ],
+        "median_wall_ns": 26498254.4,
+        "median_CPU_ns": 26486042.0,
+        "peak_workspace_bytes": 157626552
+      },
+      "tile64x128": {
+        "wall_ns": [
+          26549853.8,
+          25287445.4,
+          25197343.8
+        ],
+        "median_wall_ns": 25287445.4,
+        "median_CPU_ns": 25234394.6,
+        "peak_workspace_bytes": 157672120
+      },
+      "bucket16x32": {
+        "wall_ns": [
+          36913815.0,
+          33197944.4,
+          33193119.0
+        ],
+        "median_wall_ns": 33197944.4,
+        "median_CPU_ns": 33146469.4,
+        "peak_workspace_bytes": 157611192
+      },
+      "bucket32x64": {
+        "wall_ns": [
+          28482848.4,
+          24649431.0,
+          24674948.2
+        ],
+        "median_wall_ns": 24674948.2,
+        "median_CPU_ns": 24681084.2,
+        "peak_workspace_bytes": 157631160
+      },
+      "bucket64x64": {
+        "wall_ns": [
+          26227571.8,
+          26452271.4,
+          26423834.8
+        ],
+        "median_wall_ns": 26423834.8,
+        "median_CPU_ns": 26426757.8,
+        "peak_workspace_bytes": 157631160
+      },
+      "bucket64x128": {
+        "wall_ns": [
+          28451835.2,
+          25032968.8,
+          25131376.6
+        ],
+        "median_wall_ns": 25131376.6,
+        "median_CPU_ns": 25081644.8,
+        "peak_workspace_bytes": 157676216
+      },
+      "dense": {
+        "wall_ns": [
+          8940127.2,
+          8983745.4,
+          9001228.0
+        ],
+        "median_wall_ns": 8983745.4,
+        "median_CPU_ns": 8984791.4,
+        "peak_workspace_bytes": 473160376
+      },
+      "CCE128": {
+        "wall_ns": [
+          17345868.4,
+          15349218.0,
+          16025932.8
+        ],
+        "median_wall_ns": 16025932.8,
+        "median_CPU_ns": 15975030.2,
+        "peak_workspace_bytes": 292634808
+      },
+      "checkpoint128p8192": {
+        "wall_ns": [
+          7678256.0,
+          8092310.8,
+          7894889.6
+        ],
+        "median_wall_ns": 7894889.6,
+        "median_CPU_ns": 7896994.2,
+        "peak_workspace_bytes": 208997048
+      },
+      "CCE_out128": {
+        "wall_ns": [
+          15160785.4,
+          13163812.8,
+          13152827.6
+        ],
+        "median_wall_ns": 13163812.8,
+        "median_CPU_ns": 13152865.2,
+        "peak_workspace_bytes": 166279864
+      }
+    },
+    "512": {
+      "tile16x32": {
+        "wall_ns": [
+          67833168.2,
+          66835912.6,
+          67205107.8
+        ],
+        "median_wall_ns": 67205107.8,
+        "median_CPU_ns": 67208531.4,
+        "peak_workspace_bytes": 159578296
+      },
+      "tile32x64": {
+        "wall_ns": [
+          50508451.6,
+          48626896.6,
+          48751273.8
+        ],
+        "median_wall_ns": 48751273.8,
+        "median_CPU_ns": 48698391.6,
+        "peak_workspace_bytes": 159598776
+      },
+      "tile64x64": {
+        "wall_ns": [
+          54865865.4,
+          54650400.8,
+          54550394.0
+        ],
+        "median_wall_ns": 54650400.8,
+        "median_CPU_ns": 54659925.6,
+        "peak_workspace_bytes": 159598776
+      },
+      "tile64x128": {
+        "wall_ns": [
+          51157524.0,
+          51281173.4,
+          51449254.2
+        ],
+        "median_wall_ns": 51281173.4,
+        "median_CPU_ns": 51292049.6,
+        "peak_workspace_bytes": 159644344
+      },
+      "bucket16x32": {
+        "wall_ns": [
+          67296975.6,
+          66469262.0,
+          66988524.4
+        ],
+        "median_wall_ns": 66988524.4,
+        "median_CPU_ns": 66995174.6,
+        "peak_workspace_bytes": 159583416
+      },
+      "bucket32x64": {
+        "wall_ns": [
+          48255498.6,
+          48406746.8,
+          48534911.6
+        ],
+        "median_wall_ns": 48406746.8,
+        "median_CPU_ns": 48414704.2,
+        "peak_workspace_bytes": 159603384
+      },
+      "bucket64x64": {
+        "wall_ns": [
+          54039938.8,
+          54353762.6,
+          54457535.0
+        ],
+        "median_wall_ns": 54353762.6,
+        "median_CPU_ns": 54362476.8,
+        "peak_workspace_bytes": 159603384
+      },
+      "bucket64x128": {
+        "wall_ns": [
+          52507563.2,
+          51059964.8,
+          51312658.8
+        ],
+        "median_wall_ns": 51312658.8,
+        "median_CPU_ns": 51321630.2,
+        "peak_workspace_bytes": 159648440
+      },
+      "dense": {
+        "wall_ns": [
+          14662386.6,
+          14782081.6,
+          14785807.6
+        ],
+        "median_wall_ns": 14782081.6,
+        "median_CPU_ns": 14785541.4,
+        "peak_workspace_bytes": 778132152
+      },
+      "CCE128": {
+        "wall_ns": [
+          26141036.6,
+          26088654.2,
+          26052580.6
+        ],
+        "median_wall_ns": 26088654.2,
+        "median_CPU_ns": 26025251.6,
+        "peak_workspace_bytes": 296278200
+      },
+      "checkpoint128p8192": {
+        "wall_ns": [
+          14101837.4,
+          14356395.2,
+          14363501.8
+        ],
+        "median_wall_ns": 14356395.2,
+        "median_CPU_ns": 14309223.8,
+        "peak_workspace_bytes": 261302968
+      },
+      "CCE_out128": {
+        "wall_ns": [
+          25081222.8,
+          23978375.4,
+          23886818.2
+        ],
+        "median_wall_ns": 23978375.4,
+        "median_CPU_ns": 23944131.4,
+        "peak_workspace_bytes": 175054520
+      }
+    },
+    "1024": {
+      "tile16x32": {
+        "wall_ns": [
+          138195862.6,
+          139952509.2,
+          139966857.2
+        ],
+        "median_wall_ns": 139952509.2,
+        "median_CPU_ns": 139912092.6,
+        "peak_workspace_bytes": 161949880
+      },
+      "tile32x64": {
+        "wall_ns": [
+          102721921.8,
+          103679572.6,
+          104143542.2
+        ],
+        "median_wall_ns": 103679572.6,
+        "median_CPU_ns": 103639558.8,
+        "peak_workspace_bytes": 161970360
+      },
+      "tile64x64": {
+        "wall_ns": [
+          114059405.0,
+          114731123.0,
+          115065440.0
+        ],
+        "median_wall_ns": 114731123.0,
+        "median_CPU_ns": 114654013.8,
+        "peak_workspace_bytes": 161970360
+      },
+      "tile64x128": {
+        "wall_ns": [
+          104056060.2,
+          104936027.4,
+          105071602.6
+        ],
+        "median_wall_ns": 104936027.4,
+        "median_CPU_ns": 104904309.8,
+        "peak_workspace_bytes": 162015928
+      },
+      "bucket16x32": {
+        "wall_ns": [
+          137751102.6,
+          138796853.2,
+          139338527.6
+        ],
+        "median_wall_ns": 138796853.2,
+        "median_CPU_ns": 138745353.0,
+        "peak_workspace_bytes": 161955000
+      },
+      "bucket32x64": {
+        "wall_ns": [
+          101981084.2,
+          103526828.0,
+          103578131.2
+        ],
+        "median_wall_ns": 103526828.0,
+        "median_CPU_ns": 103461064.0,
+        "peak_workspace_bytes": 161974968
+      },
+      "bucket64x64": {
+        "wall_ns": [
+          113229370.8,
+          113623904.0,
+          114742324.6
+        ],
+        "median_wall_ns": 113623904.0,
+        "median_CPU_ns": 113525206.4,
+        "peak_workspace_bytes": 161974968
+      },
+      "bucket64x128": {
+        "wall_ns": [
+          103715429.6,
+          104280681.8,
+          104637868.6
+        ],
+        "median_wall_ns": 104280681.8,
+        "median_CPU_ns": 104233206.4,
+        "peak_workspace_bytes": 162020024
+      },
+      "dense": {
+        "wall_ns": [
+          28460354.4,
+          28705524.6,
+          29008094.8
+        ],
+        "median_wall_ns": 28705524.6,
+        "median_CPU_ns": 28633291.2,
+        "peak_workspace_bytes": 1397281464
+      },
+      "CCE128": {
+        "wall_ns": [
+          47374362.8,
+          48075605.6,
+          48194714.8
+        ],
+        "median_wall_ns": 48075605.6,
+        "median_CPU_ns": 47960842.8,
+        "peak_workspace_bytes": 301933752
+      },
+      "checkpoint128p8192": {
+        "wall_ns": [
+          25267026.8,
+          25706098.6,
+          25617512.4
+        ],
+        "median_wall_ns": 25617512.4,
+        "median_CPU_ns": 25622606.4,
+        "peak_workspace_bytes": 364341944
+      },
+      "CCE_out128": {
+        "wall_ns": [
+          45326578.4,
+          45813452.8,
+          46040148.2
+        ],
+        "median_wall_ns": 45813452.8,
+        "median_CPU_ns": 45723995.6,
+        "peak_workspace_bytes": 191884984
+      }
+    },
+    "2048": {
+      "tile16x32": {
+        "wall_ns": [
+          282077857.0,
+          287152675.6,
+          293626239.4
+        ],
+        "median_wall_ns": 287152675.6,
+        "median_CPU_ns": 287130461.4,
+        "peak_workspace_bytes": 166660280
+      },
+      "tile32x64": {
+        "wall_ns": [
+          212524948.4,
+          216697469.8,
+          217853434.8
+        ],
+        "median_wall_ns": 216697469.8,
+        "median_CPU_ns": 212487000.2,
+        "peak_workspace_bytes": 166680760
+      },
+      "tile64x64": {
+        "wall_ns": [
+          231453130.0,
+          232883950.8,
+          238995055.8
+        ],
+        "median_wall_ns": 232883950.8,
+        "median_CPU_ns": 232843234.8,
+        "peak_workspace_bytes": 166680760
+      },
+      "tile64x128": {
+        "wall_ns": [
+          208588063.8,
+          210406906.0,
+          214899910.6
+        ],
+        "median_wall_ns": 210406906.0,
+        "median_CPU_ns": 210363229.4,
+        "peak_workspace_bytes": 166726328
+      },
+      "bucket16x32": {
+        "wall_ns": [
+          280419324.0,
+          285400294.4,
+          290184267.0
+        ],
+        "median_wall_ns": 285400294.4,
+        "median_CPU_ns": 285372679.4,
+        "peak_workspace_bytes": 166665400
+      },
+      "bucket32x64": {
+        "wall_ns": [
+          209935437.4,
+          215960409.2,
+          217013571.6
+        ],
+        "median_wall_ns": 215960409.2,
+        "median_CPU_ns": 215903541.4,
+        "peak_workspace_bytes": 166685368
+      },
+      "bucket64x64": {
+        "wall_ns": [
+          231070423.8,
+          232420947.6,
+          236593129.8
+        ],
+        "median_wall_ns": 232420947.6,
+        "median_CPU_ns": 232387612.0,
+        "peak_workspace_bytes": 166685368
+      },
+      "bucket64x128": {
+        "wall_ns": [
+          209079614.8,
+          209509130.2,
+          212235151.0
+        ],
+        "median_wall_ns": 209509130.2,
+        "median_CPU_ns": 209427810.4,
+        "peak_workspace_bytes": 166730424
+      },
+      "dense": {
+        "wall_ns": [
+          53942434.4,
+          54708495.4,
+          54787321.4
+        ],
+        "median_wall_ns": 54708495.4,
+        "median_CPU_ns": 54641453.8,
+        "peak_workspace_bytes": 2637140664
+      },
+      "CCE128": {
+        "wall_ns": [
+          91024718.6,
+          93208812.4,
+          94574446.4
+        ],
+        "median_wall_ns": 93208812.4,
+        "median_CPU_ns": 93124514.8,
+        "peak_workspace_bytes": 313853624
+      },
+      "checkpoint128p8192": {
+        "wall_ns": [
+          48637306.0,
+          49041733.2,
+          49670269.0
+        ],
+        "median_wall_ns": 49041733.2,
+        "median_CPU_ns": 48989123.6,
+        "peak_workspace_bytes": 570387128
+      },
+      "CCE_out128": {
+        "wall_ns": [
+          88560418.0,
+          89870677.8,
+          91618515.6
+        ],
+        "median_wall_ns": 89870677.8,
+        "median_CPU_ns": 89829545.6,
+        "peak_workspace_bytes": 225517752
+      }
+    }
+  },
+  "negative_witnesses": {
+    "16/tile16x32": {
+      "speed_failed_against": [
+        "dense"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "16/tile32x64": {
+      "speed_failed_against": [
+        "dense"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "16/tile64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "16/tile64x128": {
+      "speed_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "16/bucket16x32": {
+      "speed_failed_against": [
+        "dense"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "16/bucket32x64": {
+      "speed_failed_against": [
+        "dense"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "16/bucket64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "16/bucket64x128": {
+      "speed_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "32/tile16x32": {
+      "speed_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "32/tile32x64": {
+      "speed_failed_against": [
+        "dense",
+        "checkpoint128p8192"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "32/tile64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "32/tile64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "32/bucket16x32": {
+      "speed_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "32/bucket32x64": {
+      "speed_failed_against": [
+        "dense"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "32/bucket64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "32/bucket64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "64/tile16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "64/tile32x64": {
+      "speed_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "64/tile64x64": {
+      "speed_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "64/tile64x128": {
+      "speed_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "64/bucket16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "64/bucket32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "64/bucket64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "64/bucket64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "128/tile16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "128/tile32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "128/tile64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "128/tile64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "128/bucket16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "128/bucket32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "128/bucket64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "128/bucket64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "256/tile16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "256/tile32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "256/tile64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "256/tile64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "256/bucket16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "256/bucket32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "256/bucket64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "256/bucket64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "512/tile16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "512/tile32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "512/tile64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "512/tile64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "512/bucket16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "512/bucket32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "512/bucket64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "512/bucket64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "1024/tile16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "1024/tile32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "1024/tile64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "1024/tile64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "1024/bucket16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "1024/bucket32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "1024/bucket64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "1024/bucket64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "2048/tile16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "2048/tile32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "2048/tile64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "2048/tile64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "2048/bucket16x32": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "2048/bucket32x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "2048/bucket64x64": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    },
+    "2048/bucket64x128": {
+      "speed_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ],
+      "memory_failed_against": [
+        "dense",
+        "CCE128",
+        "checkpoint128p8192",
+        "CCE_out128"
+      ]
+    }
+  }
+}

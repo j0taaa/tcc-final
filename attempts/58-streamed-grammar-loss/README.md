@@ -69,3 +69,11 @@ Strong controls can match asymptotic workspace; physical class sorting,
 batched small classes and direct gradient assembly are mandatory BEFORE a
 performance claim. Own useful systems difference and the goal remain OPEN;
 see work/result-v4.md. No broad model campaign is triggered by this preflight.
+
+V10 resource decision: **NEGATIVE**, measured producerbb6ced4. Equally
+optimized physical/direct-output controls and all8 candidates complete680
+first-stage records, no errors; each candidate has0/8 gates. The frozen
+negative-only shortcut leaves10 additional controls explicitly unmeasured.
+No native training/independent campaign is triggered. All numerical inputs
+remain synthetic; no model forward/update occurred. Own useful systems
+contribution and the user goal remain OPEN. See[full decision](work/result-v10.md).

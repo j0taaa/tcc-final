@@ -16,10 +16,14 @@ milestone unless a regression invalidates its evidence.
 
 ## Current starting point
 
-The consolidated protagonist is M44/T4406: confirmed3/15
-independent query advantage, written certificate separation, complete30/30
-neural application and reproducible article. A25 is a separately preregistered
-exact-sampling evaluation and cannot inherit query timings. M42/M43 and earlier
+The historical article centers on M44/T4406: confirmed3/15 independent query
+advantage under its original comparators, written certificate separation and
+complete30/30 neural application. Later M73's full consumer comparison fails
+0/15 against stronger GPU symbolic controls; do not present the historical
+result as current general superiority. A58's synthetic head resource gate
+also fails for all eight candidates. The positive scientific goal remains OPEN.
+A25 is a separately preregistered exact-sampling evaluation and cannot inherit
+query timings. M42/M43 and earlier
 conditional branches below are historical; failed development gates do not
 require executing their untriggered independent campaigns. Do not reopen them
 or restore removed infrastructure. Human review/publication remain external.
@@ -43,7 +47,7 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
-## M81 — Streamed grammar-loss training head, full-gradient arithmetic only
+## M81 — Streamed grammar-loss training head, resource gate CLOSED negative
 
 - [x] T8100: Write A58 eight criteria/theoryc271080 BEFORE prototype; primary
   controlsdfcb112 explicitly give CCE its direct LSE adjoint/filter_eps=None.
@@ -64,12 +68,30 @@ cost remain open. No new neural campaign is credited to M70.
   docs/evidence/a58-v1-final-make-check.log. It is a later preservation check,
   not attributed to the original replay. API2's original-note endpoint also
   returns HTTP403; full MonoidReduce retrieval remains unfulfilled.
-- [ ] T8102: Before a cost/model campaign, provide equally optimized cached/
-  physically class-sorted CCE, batched small classes and direct gradient
-  assembly, plus checkpointed/dense controls. Recover/check complete
-  MonoidReduce original/source and establish a substantive own useful systems
-  distinction. Then freeze real-input/full-cost resource/decision protocol.
-  Correct generic algebra/GPU kernels alone do not meet the positive goal.
+- [x] T8102-controls: Prospective notes70157a7/76275ee/2618e03/321a56d precede
+  sorted/tied/optimizer controls, four tiles, bucketed merge and native CCE
+  output-buffer adaptation. Strong replayd5131bd128/128 PASS1,523,008 checks;
+  tiles/buckets each32/32 PASS380752. All old sources/packets retained.
+  Initial V9 incorrect CLI input path fails before fixture evaluation and is
+  preserved. Guarded measured sourcebb6ced4 pins native heuristic mode.
+- [x] T8103: Frozen synthetic full-HEAD resource screenf177be0+V8/V9 addenda,
+  producerbb6ced4209a2f27ad2518308cdb4955417ed4fca, completes680/680 records:
+  96 correctness PASS,288 preparation,288 warm,8 common validations; no errors.
+  ALL8 candidates0/8 gates against ALL4 completed first-stage controls.
+  Predeclared negative-only shortcut rejects the full gate; other10 controls
+  NOT measured, no native/model/independent campaign triggered. Full50258 IDs/
+  194 classes,D768,N16--2048; H/W/b synthetic. Zero model read/forward/update.
+  AFTER-data audit supplies both rejection witnesses for ALL64 pairs. Later
+  full326 tests PASS93.764s and focused Ruff32 files PASS, after timings. See
+  58/work/result-v10.md and evidence/resource-v7-initial. Simple family CLOSED.
+- [ ] T8102-priority: Complete MonoidReduce original/source is NOT retrieved;
+  indexed excerpts already subsume generic arbitrary-adjoint streaming. No
+  sufficient own systems distinction/real full-training benefit is established.
+  The bounded synthetic screen above only rejected a necessary condition;
+  it is not a model campaign, priority check or achieved positive goal.
+- [ ] T8104: Establish a substantive new useful operation/difference before
+  another extensive implementation. Do not expand the failed simple A58 family
+  by relaxing its frozen gate, selecting favorable N or renaming its timings.
 
 ## M80 — Conditional policy-ratio moments, classical diagnostic retained
 

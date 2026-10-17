@@ -39,7 +39,7 @@ new seeds, cost/variance or independent campaign follows for this initialization
 
 | Pasta | Direção |
 | --- | --- |
-| [58-streamed-grammar-loss](58-streamed-grammar-loss/README.md) | Gradientes completos CPU/GPU conferem com controles; benefício próprio de treinamento/memória ainda não medido |
+| [58-streamed-grammar-loss](58-streamed-grammar-loss/README.md) | Cabeça sintética completa: 680 registros sem erros, oito candidatas 0/8 gates contra controles fortes; família encerrada negativa |
 | [57-policy-ratio-moments](57-policy-ratio-moments/README.md) | Quatro oráculos exatos passam; Atlas/MIPS/PAPL já dão o mecanismo genérico, fica como diagnóstico sem campanha neural |
 | [56-static-rounding-sampler](56-static-rounding-sampler/README.md) | Preflight GPU com certificados estáticos passa; ADZ original confirma antecedente direto, sem benefício próprio medido ou promoção |
 | [55-cycle-permutation-sampling](55-cycle-permutation-sampling/README.md) | Referência racional de ciclos; oito oráculos passam, controle clássico ordenado recupera lei/custo, sem diferença própria suficiente ou campanha neural |

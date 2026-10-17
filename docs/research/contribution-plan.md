@@ -2967,3 +2967,30 @@ gradient assembly must be included before timing. Generic algebra alone is not
 our contribution. Recover the full MonoidReduce source before any promotion.
 Actual scopes, producers, raw records and next comparator obligations are in
 attempts/58-streamed-grammar-loss/work/result-v4.md. The user goal is not achieved.
+
+
+## 2026-10-16 — A58 stronger controls and negative full-head resource decision
+
+Prospective physical/layout/bucket/output-buffer notes precede every timing.
+V9 replayd5131bd passes128/128 cases with1,523,008 checks; the earlier wrong
+CLI path exits before fixtures and is preserved. Measured sourcebb6ced4 adds
+a refusal for native autotuning (which would reset accumulated outputs).
+The synthetic full-head gate, frozenf177be0 with V8/V9 addenda, completes680
+records over ALL8 candidates/8 N/4 first controls, no errors or refusals.
+All96 new-geometry checks pass3,757,395,168 scalar comparisons against FP64.
+ALL candidates have0/8 gains. Both speed and memory alternatives fail for
+all64 candidate/N pairs; AFTER-data independent arithmetic audit agrees.
+The predeclared negative-only shortcut leaves10 controls explicitly unmeasured;
+adding them cannot reverse already failed necessary comparisons. No favorable
+N/configuration is promoted, no threshold changed, no model campaign triggered.
+
+Physical sorting, native preallocated gradients and classic checkpointed GEMMs
+remove the apparent dense-only advantage. Every CPU/cold/peak observation is
+retained, including unfavorable ones. Full50258/194 tokenizer metadata is real,
+but H/W/b are synthetic. ZERO model reads/heads/forwards/updates; no grammar,
+backbone or optimizer timing. Full MonoidReduce source still not retrieved;
+indexed excerpts already establish generic recomputation as antecedent.
+This simple family is CLOSED negative; useful own distinction and the user's
+positive scientific goal remain OPEN. Details and exact raw/source provenance:
+attempts/58-streamed-grammar-loss/work/result-v10.md. A new large prototype
+needs a substantive different operation/architecture and justification first.

@@ -1,0 +1,490 @@
+{
+  "cells": {
+    "tile16x32": {
+      "16": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "32": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "64": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "128": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "256": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "512": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "1024": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "2048": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      }
+    },
+    "tile32x64": {
+      "16": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "32": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "64": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "128": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "256": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "512": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "1024": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "2048": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      }
+    },
+    "tile64x64": {
+      "16": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "32": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "64": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "128": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "256": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "512": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "1024": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "2048": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      }
+    },
+    "tile64x128": {
+      "16": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "32": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "64": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "128": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "256": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "512": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "1024": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "2048": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      }
+    },
+    "bucket16x32": {
+      "16": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "32": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "64": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "128": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "256": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "512": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "1024": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "2048": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      }
+    },
+    "bucket32x64": {
+      "16": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "32": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "64": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "128": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "256": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "512": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "1024": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "2048": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      }
+    },
+    "bucket64x64": {
+      "16": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "32": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "64": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "128": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "256": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "512": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "1024": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "2048": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      }
+    },
+    "bucket64x128": {
+      "16": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "32": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "64": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "128": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "256": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "512": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "1024": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      },
+      "2048": {
+        "win": false,
+        "possible": false,
+        "complete": true,
+        "speed": false,
+        "memory": false
+      }
+    }
+  },
+  "wins": {
+    "tile16x32": 0,
+    "tile32x64": 0,
+    "tile64x64": 0,
+    "tile64x128": 0,
+    "bucket16x32": 0,
+    "bucket32x64": 0,
+    "bucket64x64": 0,
+    "bucket64x128": 0
+  },
+  "possible": {
+    "tile16x32": 0,
+    "tile32x64": 0,
+    "tile64x64": 0,
+    "tile64x128": 0,
+    "bucket16x32": 0,
+    "bucket32x64": 0,
+    "bucket64x64": 0,
+    "bucket64x128": 0
+  },
+  "gate": false,
+  "negative_shortcut": true
+}

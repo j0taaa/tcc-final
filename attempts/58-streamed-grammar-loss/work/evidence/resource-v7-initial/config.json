@@ -1,0 +1,90 @@
+{
+  "producer": "bb6ced4209a2f27ad2518308cdb4955417ed4fca",
+  "source_sha256": {
+    "prepare_metadata_v6.py": "57df3f02d584fb8eeb15110ab2a789c885609f5cf2ea3652292438b109279af2",
+    "preflight_tiles_v6.py": "159a2f1c03cb449e01306230844c0dfb7d2f3eb2114a09ef0d8abddc57af4411",
+    "test_resource_analysis.py": "81d98a5579eabf952eac4d1732ae84d39dc753a76faf9df6e5fc0c1256b76c84",
+    "reference.py": "9b54679f8166896fc41dcbd6b30fd31ed0589c4c8ad5af84cfd92e9fe2ab3dbc",
+    "preflight_gpu.py": "b225b10ee6185f9160be2c07817bb377ffd65f5fcf4f4577fe03069a53ff1cb0",
+    "bucket_head_v8.py": "fae49e24f85a27ef17dd7c3804638ae5ca3ceaa1a9de0c810b3e5fc31f0db33c",
+    "strong_head.py": "aaeefbc47ee1656338ce233e9d007294d0f6c4b31e76b2f95cdec721c53f7a9e",
+    "tiled_head_v6.py": "a9ec23f047c337a8b4485f4df76069cfb7769f74484b1976080e8148bc52cb72",
+    "benchmark_resource_v7.py": "43682a56280d75074e91b4e19386acaa8f27222446eb3034d1595fab626c3e6d",
+    "test_strong_head.py": "7ce11a6ee4e85b3d066ba801211765c0443a27a6195732f5ff45e9fb580fe8b9",
+    "preflight_strong_v5.py": "b9841747e4e68e63815658b4fbcc48c560d8f17518056790187576f3fa9fa876",
+    "gpu_head.py": "6b17ad0564d3e48311299ec021c620b9fcb90aa30be5ad416e69813d7c402046",
+    "torch_head.py": "d86672472c1da1c6ca055856242d72c742964dd4808e400bb12c788147bded6d",
+    "cce_out_v9.py": "afe7f8c78b63ac836c788e49723523068f591d887e24b0ce935badee07b676f9",
+    "test_reference.py": "19623a4b63cb9586c34ca537e55fbcf0e3e0bc99f2d0c1abdbdbd35ed2ada107",
+    "resource_analysis_v7.py": "8af8714cf16d300099d22f65b0189a9b1d7de56629a661b48d1aa3329ec62819"
+  },
+  "mapping_sha256": "e7b5575b519dadb1b0f2402ba708c13549bbe75f6f27f50d47b047dca4ee8a1f",
+  "torch": "2.13.0+cu130",
+  "numpy": "2.4.6",
+  "CUDA": "13.0",
+  "device": "NVIDIA GeForce RTX 3080 Ti",
+  "CCE_commit": "3de376c106a1916bc5e1b619f9c77c87a461ee1c",
+  "CCE_AUTOTUNE": false,
+  "dtype": "FP32",
+  "dot_precision": "ieee",
+  "filtering": false,
+  "prospective_addenda": [
+    "bucket-addendum-v8.md",
+    "out-control-addendum-v9.md"
+  ],
+  "Ns": [
+    16,
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024,
+    2048
+  ],
+  "candidates": [
+    "tile16x32",
+    "tile32x64",
+    "tile64x64",
+    "tile64x128",
+    "bucket16x32",
+    "bucket32x64",
+    "bucket64x64",
+    "bucket64x128"
+  ],
+  "controls": [
+    "dense",
+    "CCE0",
+    "CCE8",
+    "CCE32",
+    "CCE128",
+    "checkpoint0p2048",
+    "checkpoint0p8192",
+    "checkpoint8p2048",
+    "checkpoint8p8192",
+    "checkpoint32p2048",
+    "checkpoint32p8192",
+    "checkpoint128p2048",
+    "checkpoint128p8192",
+    "CCE_out128"
+  ],
+  "first_controls": [
+    "dense",
+    "CCE128",
+    "checkpoint128p8192",
+    "CCE_out128"
+  ],
+  "common_seed": 585700,
+  "common_metadata_load_wall_ns": 1975358,
+  "common_metadata_load_CPU_ns": 1978416,
+  "cpu_threads": 4,
+  "BLAS_env": {
+    "OPENBLAS_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4"
+  },
+  "new_model_forwards": 0,
+  "model_parameter_reads": 0,
+  "optimizer_model_updates": 0,
+  "scope": "synthetic full HEAD PRIMITIVE, not grammar/backbone/optimizer or whole training"
+}

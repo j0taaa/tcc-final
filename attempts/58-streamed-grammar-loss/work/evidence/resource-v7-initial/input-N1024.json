@@ -1,0 +1,12 @@
+{
+  "N": 1024,
+  "seed": 586724,
+  "sha256": {
+    "H": "d19201ec69faa094e0cb5979f27abf4eef239577229875a23a5e5e375dbe82fb",
+    "W": "6f6555c8da53502cdb57dbb71f4e14d2f66b15fc2424b74082ff4378395a5a32",
+    "bias": "9aa66ee114b1c5d5256ed4b95297c3447b1b84f6b43177c578d2ec6624e30ae7",
+    "targets": "0a46a827c617d007a380a5ab610b0840ec4b196bfe007e5967b3b13ac8a6797c",
+    "dz": "4705ec78774afbd90ec77d0f2c1c10f9bf269e1ba189bb0988f7c3aecaca556a",
+    "dt": "eccdfbcce91abccbdf90df1ea2cd5f26e5978d07fc89db8d5bd6d4f0f56c2e1c"
+  }
+}

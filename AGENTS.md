@@ -371,6 +371,20 @@ ainda não obtido; não excluir capacidade por essa lacuna. Diferença própria
 de sistemas, benefício integral e meta permanecem abertos; sem campanha
 neural ampla ou promoção a partir dos oráculos. Ver58/work/result-v4.md.
 
+A58 V5--V10 acrescenta controles físicos/tied/optimizer, classes pequenas em
+lote, saída direta nativa CCE e merge por buckets ANTES dos timings. Replay
+forte128/128 passa1.523.008 checks; tiles/buckets32/32 cada. Erro inicial de
+caminho CLI antes de fixtures fica preservado. Protocolo f177be0+addendaV8/V9,
+produtorbb6ced4:680/680 registros,96 validações FP64,288 preparações,288 warm,
+8 checks comuns;0 erros/recusas. TODAS8 candidatas0/8 gates contra4 controles
+concluídos. Atalho NEGATIVO predefinido dispensa outros10 sem inventar timings.
+Auditoria AFTER-data dá testemunhos de ambas falhas em64/64 pares. Vocabulário
+50258/194 classes real, mas H/W/b SINTÉTICOS; zero modelo/head/forward/update.
+Não inclui gramática/backbone/optimizer. Família simples ENCERRADA negativa,
+sem campanha nativa/independente acionada. MonoidReduce completo ainda não
+obtido; genericidade já reconhecida. Meta positiva/novidade útil abertas;
+próxima expansão exige diferença substancial própria. Ver58/work/result-v10.md.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.
