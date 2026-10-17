@@ -59,6 +59,11 @@ cost remain open. No new neural campaign is credited to M70.
   3de376c/filtering OFF included. Full H/W/bias gradients, SYNTHETIC FP32
   matrices ONLY: zero model reads/forwards/updates/labels or competitive
   timing/memory evidence. See58/work/result-v4.md; no main-paper promotion.
+  Archivev1 preserves exact replay sourcefc224fa/evidencee2ef6e7; completed
+  make check exit0 verifies58 attempts/234 versions/176429 files. Final log:
+  docs/evidence/a58-v1-final-make-check.log. It is a later preservation check,
+  not attributed to the original replay. API2's original-note endpoint also
+  returns HTTP403; full MonoidReduce retrieval remains unfulfilled.
 - [ ] T8102: Before a cost/model campaign, provide equally optimized cached/
   physically class-sorted CCE, batched small classes and direct gradient
   assembly, plus checkpointed/dense controls. Recover/check complete
