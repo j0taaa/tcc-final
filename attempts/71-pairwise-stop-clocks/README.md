@@ -72,3 +72,17 @@ V1[result](work/result-v1.md): source697908b3 BEFORE ONE direct0.31 K/q cells,
 probabilities match recursive native enumeration. All required adverse
 compaction/common-clock/affine-control cases are retained. No neural/model/
 training/competitive latency or adequate priority has been established.
+
+V2[local proof](work/theory-v2-local.md)/[protocol](work/protocol-v2.md), BEFORE
+new code, reassess all eight criteria: (1) same finite-batch use with pairwise
+complete trajectories; (2) count/copula/Bellman tools classical, own adaptive
+interface/characterization priority OPEN; (3) a universal iid-round comparison
+under conditional orthant domination, no full latency yet; (4) new WRITTEN
+backward induction and necessity witness, allowing changing heads/active rows/
+history-selected cuts; (5) only the fixed local exact oracle is selected;
+(6) per-step finite ticket kernels avoid trajectory-sized rational products,
+all real overhead remains charged; (7) nonlinear compaction, refill, caps and
+classic controls may defeat practical gain; (8) actual native implementation,
+useful variability/full benefit/priority still required. No large neural build
+or article promotion. V1's stronger inverse-hazard clock is kept independently;
+the local implementation resamples fresh valid stop copulas at every step.
