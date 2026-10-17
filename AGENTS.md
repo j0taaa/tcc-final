@@ -18,13 +18,17 @@ head/forward/update/label/timing novo ou suíte completa rerodada. A chave JSON
 native_model_step_law refere-se só à cadeia SINTÉTICA. Fonte/antecedentes MIT
 copiados/hashados; módulo externo não executado. Um exemplo público concreto
 hard-sol-b-judge_hard-18 e agregados README FORAM vistos; nenhum arquivo de
-dataset/gold/resultados foi carregado. Addendumexposure-v2 distingue isso.
+dataset/gold/resultados foi carregado. exposure-addendum-v2.md distingue isso.
 Próximo: protocolo/replay nativo SEM forward; depois protocolo independente
 de recursos/variância necessária e controles normalização/MAP/DP exato/ensembles
 ANTES de heads. Campo nativo tem só DUAS casas decimais: DP clássico por soma
 é controle forte, não inventar vantagem por precisão arbitrária. Setup26B/48GB
 não foi reproduzido na GPU local12GB. Variância final pode ser irrelevante;
 não inferir acurácia/ECE/Capability, novidade suficiente ou meta cumprida.
+Snapshots RNG servem a replay/restauração; H da prova não condiciona bits
+aleatórios ainda não usados. Auxiliares exigem draws frescos independentes:
+resetar o RNG ao mesmo estado antes de CADA helper só repete a amostra, não
+prova independência. Replay literal não mecaniza essa hipótese probabilística.
 Escopo/resultados em65-terminal-forecast-readout/work/result-v2.md.
 
 A64 testa uma consequência DIFERENTE, com qualquer número de chaves: mesmo

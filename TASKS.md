@@ -72,12 +72,22 @@ cost remain open. No new neural campaign is credited to M70.
   reprojection, prefix/pins/node/budget/offset/control and literal RNG/tensor
   restoration required. Synthetic heads are correctness evidence only. Do not
   promote the rational proof wrapper to a validated serving integration.
+  Distinguish unused fresh randomness from saved RNG provenance: restoring
+  the same state before every helper is duplication, not independent draws.
+  Literal replay does not by itself verify the theorem's iid hypothesis.
 - [ ] T8803: Before real heads/labels/timings, freeze a resource/variance-
   necessity protocol with input-only selection, zero/failure cases and all
   strong normalization/MAP/exact101-value-grid/whole-ensemble controls. Need
   meaningful removable terminal variance AND full-cost utility; mean/RB alone
   do not prove own novelty or article sufficiency. Do not force a smaller or
   quantized model to count as the original26B consumer. Goal remains OPEN.
+- [x] T8804: Preserve v1-terminal-proof-reference/source70ad390/evidence8009d75,
+  checked against original Git trees. Eight copied consumer-source and two
+  oracle-file hashes verified. Focused Ruff/format2 PASS, no maintained-suite
+  rerun. Final make check directly exits0:65 attempts255 versions192487 files;
+  full receipt docs/evidence/a65-v1-final-make-check.log and exact scope/index
+  docs/evidence/a65-v1-final-verification.json. Integrity does not establish
+  new native calibration, useful magnitude, sufficient own priority or goal.
 
 ## M87 — Arbitrary-key distinct-four stopping, exactly rejected
 

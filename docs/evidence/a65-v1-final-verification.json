@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-17",
+  "make_check_exit_code_directly_observed": 0,
+  "complete_log": "docs/evidence/a65-v1-final-make-check.log",
+  "log_sha256": "be8f2de01938ef07860a4006e74ef51d32822b465761e38cc94c55f197a005ce",
+  "archive_integrity": {
+    "attempts": 65,
+    "versions": 255,
+    "files": 192487,
+    "uncompressed_bytes": 6015010661,
+    "scope": "Integrity only, not native benefit or priority validation"
+  },
+  "new_archive_creation_compared_with_git": true,
+  "copied_consumer_source_hashes_verified": 8,
+  "oracle_file_hashes_verified": 2,
+  "experimental_ruff_format": {
+    "commands": [
+      ".venv/bin/ruff check attempts/65-terminal-forecast-readout/work/reference.py attempts/65-terminal-forecast-readout/work/rational_oracles.py",
+      ".venv/bin/ruff format --check attempts/65-terminal-forecast-readout/work/reference.py attempts/65-terminal-forecast-readout/work/rational_oracles.py"
+    ],
+    "directly_observed_exit_code": 0,
+    "stdout": "All checks passed!\n2 files already formatted\n",
+    "copied_third_party_files_unmodified_not_reformatted": true
+  },
+  "scientific_checks": {
+    "three_exact_oracles": "PASS",
+    "directly_observed_exit_code": 0,
+    "kernel_leaves": 414,
+    "kernel_reference_helper_calls": 1176,
+    "invalid_inputs_rejected": 4,
+    "absorbing_original_paths": 7,
+    "absorbing_retained_output_leaves": 414,
+    "finite_rendering_checks": 78,
+    "scope": "Constructed proof kernels/toy absorbing traces, not model observations"
+  },
+  "native_resampling_adapter_implemented": false,
+  "native_kernel_iid_hypothesis_verified": false,
+  "new_neural_forwards": 0,
+  "new_model_or_tokenizer_instances": 0,
+  "new_semantic_label_evaluations": 0,
+  "competitive_timing_compared": false,
+  "maintained_full_test_suite_rerun": false,
+  "data_file_task_gold_or_result_rows_read": false,
+  "documentation_example_and_aggregate_exposure": {
+    "aggregate_readme_results": true,
+    "concrete_task_example": "hard-sol-b-judge_hard-18",
+    "addendum": "attempts/65-terminal-forecast-readout/work/exposure-addendum-v2.md"
+  },
+  "commits": {
+    "2277130": "22771301582b2559c5998c9ab04aedef0bddb578",
+    "b470a72": "b470a72a2bfb17268ada9cc43201801c6a68db4a",
+    "70ad390": "70ad3907409d240d6083fd7686d4e63a4c2e3fc4",
+    "8009d75": "8009d753567fc64f9a410ae02900f6de0622cbad",
+    "de205eb": "de205ebc07344b434ff94f3ef59b247d1758a872"
+  },
+  "goal": "OPEN: actual terminal variance/cost, native correctness and sufficient own contribution not established",
+  "scientific_scope": "Real pinned Mosaic/JevBench numerical consumer identified. Classical finite terminal-averaging proof and exact oracles; no new generic MBR/mean/Jensen claim. No guarantee for argmax accuracy, ECE or overall Capability, no reported26B reproduction on12GB. Native replay then prospective resource/variance-necessity gates remain required."
+}
