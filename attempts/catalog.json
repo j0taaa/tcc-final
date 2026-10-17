@@ -4622,6 +4622,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "60-semantic-numeric-index",
+      "title": "CDF e quantis exatos por valor numérico no posterior de uma fonte congelada",
+      "conclusion": "Written e107296 BEFORE code: fixed positive-band unambiguous numerical normalization relation and classical weighted projection/prefix quantile algorithm. Bit-bound numerator correction220c1e1 precedes code. Minimal229-line [1,100) rational-original-token reference only, no EOT/PAD/native decoder. Initialf8f9f57 committed AFTER first passing run because Ruff E501 blocked intended freeze; source, failure,0.707s log and ordering deviation preserved literally. Final source4cf274f frozen BEFORE four-oracle PASS0.701s:48,880 exact numerals/2647 admitted/28 separate regressions,260 original tapes/five sources/34 original-ID coefficients/310 exact CDFs/71 quantiles. Full337 PASS95.193s/Ruff3 files PASS. Analytical complete-WFST control reproduces index/prefix caching, not an independent implementation/timing or prior publication of specific relation. LLM Processes, NTL, SMMD and NTIL primary method scopes read and retained; numerical readout/supervision are antecedents. No A60 model/head/new forward/update/semantic label/competitive timing. No full-V/native/training/cost campaign or article promotion triggered. Specific normalizer priority, substantial own useful effect/publication and positive user goal remain OPEN.",
+      "reading": "attempts/60-semantic-numeric-index/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "4cf274f45d758831b07e520c74c04f3301e8b5f6",
+          "evidence_commit": "4134b2060cdba7c7ece335ad4834d2aa03e651ae",
+          "evidence_roots": [
+            "attempts/60-semantic-numeric-index/README.md",
+            "attempts/60-semantic-numeric-index/work"
+          ]
+        }
+      ]
     }
   ]
 }
