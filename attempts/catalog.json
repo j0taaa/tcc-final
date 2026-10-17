@@ -4544,6 +4544,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "57-policy-ratio-moments",
+      "title": "Momentos condicionais de razões de políticas estruturadas",
+      "conclusion": "Writtenf5833c2 BEFORE independent reference. Four rational oracles PASS173 actions/1038 moments and ALL87 visible/459 augmented adaptive paths; full315 PASS88.281s. Common support and hard-preimage failure explicit; class sums BEFORE squaring. Original final Atlas2021 Theorems3.5/4.1 plus MIPS/PAPL give direct generic mechanism. Keep as diagnostic/control, no new head readout/forward/draw/label/update/campaign or substantive own separation. A52 V18 remains CLOSED NEGATIVE; user goal OPEN.",
+      "reading": "attempts/57-policy-ratio-moments/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "97f5bab93f7a993236b2c76122a2f83764665670",
+          "evidence_commit": "97f5bab93f7a993236b2c76122a2f83764665670",
+          "evidence_roots": [
+            "attempts/57-policy-ratio-moments/README.md",
+            "attempts/57-policy-ratio-moments/work"
+          ]
+        }
+      ]
     }
   ]
 }
