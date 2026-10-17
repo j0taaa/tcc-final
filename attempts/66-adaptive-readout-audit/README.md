@@ -65,3 +65,16 @@ The rejected early-stop lead duplicates A53; see
 `docs/research/next-operation-audit-2026-10-17.md`. Sources and exact reading
 scopes are in `work/primary-v1.md`. This folder preserves only the bounded
 audit, independently of A53/A65. No mutable code from another attempt is used.
+
+## Preserved V1 audit
+
+Contract/proofb68f8b9 before producer38cd351; one execution PASS/direct0.
+All48 cases/2,308 weighted tapes and conditional-order controls/480 covariance
+entries pass.587 original-body runs include586 successes and1 expected packet
+failure;1,422 calls are SYNTHETIC PACKETS, zero model forwards. Five invalid
+inputs refused, threshold equality/cap1/joint triggers verified. Analytical
+bias±1533/16384 is not observed model calibration. Native auto has LOWER MSE
+in an explicit retained case; the classical control is identical to the
+reference. Bounded audit complete, no neural/quality campaign or article
+promotion. Overall goal/own useful contribution remain OPEN.
+See[the full result](work/result-v1.md).

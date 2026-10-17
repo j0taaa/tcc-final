@@ -20,6 +20,16 @@ completion. Independent rational/native-body stub audit only; no fresh model,
 server, dataset/golds or campaign. A65's failed application remains CLOSED;
 T8809 and the positive scientific objective remain OPEN.
 
+A66 audit then completes ONCE under frozen source38cd351:48 cases2,308 exact
+tapes/order-control checks480 covariance entries, native bodies587 executions
+(586 successes1 expected failure),1,422 SYNTHETIC packets,5 refusals. Direct
+exit0. Same packet/seed requests, cap1/equality/joint triggers verified. Bias
+±1533/16384 is an analytical positive-probability packet example, not a neural
+calibration observation. Native auto has smaller MSE in the preserved example;
+classical stopped-order control is EXACTLY equivalent. Useful local reference,
+insufficient own algorithmic difference; no campaign/article promotion. All
+records/scopes in66/work/result-v1.md; no real forward or maintained-suite rerun.
+
 ## 2026-10-17 — A65 real masked application completes and fails necessity
 
 Prospective V6 protocol7c79ad5 and input-only selectordabfd45 precede all8

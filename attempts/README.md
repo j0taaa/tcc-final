@@ -20,9 +20,12 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
-A66 writes a bounded audit of vLLM's actual adaptive typed-read mean before
-code/replay. Classical optional-sampling bias and a same-packet conditioning
-correction are explicit; no sufficient own theory/neural gain/paper claim.
+A66 completes a bounded audit of vLLM's actual adaptive typed-read mean:
+48 cases2,308 exact tapes/order controls480 covariance entries PASS. Original
+bodies execute587 times (586 successes1 expected error),1,422 FAKE packets,
+zero real forwards. Classical optional-sampling bias and a same-packet
+conditioning correction hold; native auto can have LOWER MSE. Equivalent
+classical control, no sufficient own theory/neural gain/paper claim.
 The abandoned early-stop lead duplicates A53 and is not reimplemented.
 See[the audit contract](66-adaptive-readout-audit/README.md).
 

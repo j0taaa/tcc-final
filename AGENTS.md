@@ -1,6 +1,6 @@
 # AGENTS.md
 
-A66 inicia auditoria PEQUENA da média de leituras tipadas do vLLM pinado
+A66 conclui auditoria PEQUENA da média de leituras tipadas do vLLM pinado
 b05ede56168b5718c425c1493914e5e79f6b8181. A política auto escolhe1/m pela
 entropia do PRIMEIRO packet e depois faz média de todos. Prova escrita
 deriva viés de optional sampling e correção por média dos packets que
@@ -8,9 +8,14 @@ também acionariam a MESMA regra global; sem novos reads sob hipótese iid.
 Rao--Blackwell/condicionamento sequencial são CLÁSSICOS; controle por ordens
 condicionadas dá EXATAMENTE a mesma regra. Não é novidade teórica própria,
 calibração, dominância MSE sobre auto, execução neural ou meta cumprida.
-README/protocolo/prova antecedem código/replay. Próximo só oráculo de packets
-racionais e corpo decide_group ORIGINAL com aquisição FALSA, sem servidor/
-modelo/tokenizer/heads/golds/treino/campanha. A65 continua FECHADA negativa.
+README/protocolo/provab68f8b9 antecedem source38cd351 e ÚNICO replay PASS:
+48 casos2.308 tapes/controles clássicos480 entradas de covariância.587 execuções
+de decide_group/read_many ORIGINAIS=586 sucessos1 erro esperado;1.422 calls
+são PACKETS FALSOS, zero forwards. Cinco recusas, igualdade do threshold,
+cap1 e trigger global multiquetões passam. Viés sintético±1533/16384 não é
+calibração neural medida. Auto nativo tem MENOR MSE no contraexemplo preservado;
+não declarar dominância sobre ele/controle clássico. Sem servidor/modelo/
+tokenizer/heads/golds/treino ou campanha seguinte. A65 continua FECHADA negativa.
 Lead de parada encontrado após65 DUPLICA53, cujo gate já falhou; não repetir
 ou rebatizar. Sobreposição de ferramentas tem P-ReAct/CID/AsyncIO anteriores;
 nenhum protótipo selecionado. Escopos em docs/research/next-operation-audit-2026-10-17.md.

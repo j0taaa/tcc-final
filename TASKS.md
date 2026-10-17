@@ -56,10 +56,17 @@ cost remain open. No new neural campaign is credited to M70.
   Originality sufficient for a protagonist is unsupported; no model/head/
   tokenizer/gold/forward. A53 duplicates the abandoned stopping lead; no
   new A53/A65 old-path replay or asynchronous-tool prototype is selected.
-- [ ] T8901: Freeze reference/auditor, execute unchanged decide_group with
+- [x] T8901: Freeze reference/auditor38cd351 AFTER contractb68f8b9, execute
+  unchanged decide_group/read_many with
   stub packet acquisition, independently check all rational laws/caps and
   same request/seed accounting, retain unfavorable MSE comparisons and the
-  identical classical control. No corrected stderr or neural iid certificate.
+  identical classical control. One audit PASS/direct0:48 cases,2308 tapes/
+  conditional-order controls,480 exact covariance entries;587 body executions
+  (586 successful,1 expected failure),1422 SYNTHETIC packet calls,5 refusals.
+  Zero real forwards. Analytical bias±1533/16384 verified; native MSE can be
+  LOWER, not universal superiority. No corrected stderr/neural iid certificate.
+  All raw records/log/after-run receipt in a66_adaptive_readout_v1_initial;
+  see66/work/result-v1.md. Maintained345 tests not rerun.
 - [ ] T8902: Preserve complete bounded audit and source pins; no large neural
   campaign/article promotion without a substantive own useful distinction.
   Overall goal and T8809 remain OPEN.

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "Rational laws and original-body stub packets only; no server/model/tokenizer/head/forward/update/gold/latency benchmark.",
+  "producer_commit": "38cd3517b4b248ad7071c216e61fe571f0327bf2",
+  "native_revision": "b05ede56168b5718c425c1493914e5e79f6b8181",
+  "native_sha256": "9d085496ccaeec833ddf4ffe4b89212512121a6790f5844891b389cbeb02d36e",
+  "law_cap_question_cases": 48,
+  "weighted_tape_checks": 2308,
+  "conditional_order_checks": 2308,
+  "exact_covariance_entries": 480,
+  "unique_original_body_replays": 587,
+  "stub_packet_calls_including_failure": 1422,
+  "invalid_input_refusals": 5,
+  "real_forwards": 0,
+  "counterexamples": [
+    {
+      "mirrored": false,
+      "native_yes_bias": "-1533/16384",
+      "native_mse": "1305605/16777216",
+      "corrected_mse": "261121/2097152"
+    },
+    {
+      "mirrored": true,
+      "native_yes_bias": "1533/16384",
+      "native_mse": "1305605/16777216",
+      "corrected_mse": "261121/2097152"
+    }
+  ],
+  "decision": "Classical correction validated for declared iid packet target. Same-law classical control; sufficient own originality and real neural benefit remain open. No campaign triggered."
+}
