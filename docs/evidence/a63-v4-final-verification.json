@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-17",
+  "check_command": "git diff --check && make check > <external-temporary-log> 2>&1",
+  "directly_observed_exit_code": 0,
+  "complete_log": "docs/evidence/a63-v4-final-make-check.log",
+  "complete_log_sha256": "75bcc5eed31ee60f777aec890de5ec391d9a8c1f0590293337b27c8719447cc0",
+  "experimental_lint": {
+    "commands": [
+      ".venv/bin/ruff check attempts/63-adaptive-six-coupling/work/*.py",
+      ".venv/bin/ruff format --check attempts/63-adaptive-six-coupling/work/*.py"
+    ],
+    "directly_observed_exit_code": 0,
+    "stdout": "All checks passed!\n6 files already formatted\n"
+  },
+  "full_maintained_test_suite_rerun": false,
+  "new_neural_forwards": 0,
+  "active_goal": "OPEN: specific own priority and useful real full-cost consequence not established",
+  "commits": {
+    "ee6f423": "ee6f4230d8f2b2c780b44c90cea3ee0acff8247e",
+    "31c3961": "31c396100e1ca70aa5f76424f3e60c6c6c42e4e9",
+    "b0dd7fa": "b0dd7fa2b99a811eeeebea56e032dd08721561f1",
+    "cbe7c40": "cbe7c40ecb137a96980e250bb72a462af62fc3b2",
+    "5e2da7c": "5e2da7c9cd318ddd0ae92d93bbb63140de9c70d7",
+    "4cc8864": "4cc886407d92b8e6d093b0c6b3f97f464d6523c3",
+    "14562a9": "14562a9b87ca1875109fc1e00d02791debfb3c87",
+    "e5f7331": "e5f733121c9cfa9eada3d6aff959d1eb150a518f",
+    "d59e7ad": "d59e7adf1c96589933fa51756e1e0eaf9179d653",
+    "2b7544c": "2b7544ce9f017589fa842bef27bca89c7d64a379",
+    "f8b590e": "f8b590e75e446aa85d682b90b3c818eed4124bf1",
+    "922c50a": "922c50a33506f43755847672ec5d66ca553e4ca7",
+    "37ae39e": "37ae39e077cc6031317c747eaa1ec1263333b612",
+    "7c7b811": "7c7b81171792442b5dea41934ef9460e0d42f4e7"
+  },
+  "snapshots": [
+    {
+      "version": "v2-adjacent-caps",
+      "source_commit": "5e2da7c9cd318ddd0ae92d93bbb63140de9c70d7",
+      "evidence_commit": "4cc886407d92b8e6d093b0c6b3f97f464d6523c3"
+    },
+    {
+      "version": "v3-operational-minimax",
+      "source_commit": "d59e7adf1c96589933fa51756e1e0eaf9179d653",
+      "evidence_commit": "2b7544ce9f017589fa842bef27bca89c7d64a379"
+    },
+    {
+      "version": "v4-classical-control",
+      "source_commit": "922c50a33506f43755847672ec5d66ca553e4ca7",
+      "evidence_commit": "37ae39e077cc6031317c747eaa1ec1263333b612"
+    }
+  ],
+  "bound_scope": "Three ALLOWED keys, unknown-law universal atom-optimal pair with literal first and hardcap6/7: sharp minimax expected calls386/81. Extracted rule matches full ordered full-six matching pair law, saving at least50/243 source calls versus always-six for every key law. Complete classical lazy-CDF control at U3 costs2134/405: candidate source-call saving102/1067, not20%. No physical/full-decoder latency or semantic advantage."
+}

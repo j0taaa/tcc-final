@@ -97,3 +97,8 @@ Read [minimax proof](work/minimax-cost-v4.md),
 [operational result](work/operational-result-v4.md),
 [classical comparison](work/classical-result-v5.md) and
 [primary scopes/complete control](work/primary-and-control-contract-v5.md).
+
+Frozen versions v1, v2-adjacent-caps, v3-operational-minimax and
+v4-classical-control preserve each source/evidence pair independently. Final
+integrity receipt is in docs/evidence/a63-v4-final-make-check.log (whole repo:
+63 attempts/247 versions); it does not validate novelty or a real application.

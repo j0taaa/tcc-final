@@ -83,6 +83,13 @@ cost remain open. No new neural campaign is credited to M70.
   informed/larger/score-aware methods remain legitimate practical controls.
   No A63 head/weight/forward/update/row-label/timing. No core modification;
   old345-test suite not rerun or credited to A63. Exact CLI audits are separate.
+- [x] T8606: Preserve three further immutable source/evidence ZIP versions:
+  v2-adjacent-caps, v3-operational-minimax, v4-classical-control. Exact source/
+  evidence commits in catalog and docs/evidence/a63-v4-final-verification.json.
+  Experimental Ruff+format6 PASS. Final make check directly observed exit0:
+  upstream/lint/types and63 attempts247 versions186075 files preserved;
+  full actual receipt docs/evidence/a63-v4-final-make-check.log. This is archive/
+  software integrity, not new scientific validation, neural gain or priority.
 
 ## M85 — Native RLM numerical quantile audit; complete control matches bound
 
