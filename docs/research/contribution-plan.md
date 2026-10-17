@@ -1,5 +1,38 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A63 complete stronger controls and all-law comparative source work
+
+V6 prospective1d98530/source1aa4fec precede8748 direct empirical-rank replays:
+both orders preserve every ordered multiset pair law. At U3 both2561/486,
+slightly above V5 CDF2134/405; elsewhere ranks can be stronger. Retain all.
+V7 proof3a196ac/source076799a precede9477 exact common-part-control replays,
+60-ticket/13-cell law and three degree-six cost/stop identities. All PASS.
+This classic construction is pointwise optimal among samplers preserving the
+matching kernel q_t on EACH full tape, not among all distributionally valid
+factories. It has mean47/10+3e2/5-2e2²/5+27e3/5+8e2e3.
+
+A written inequality using e2²>=3e3 proves its source-work gap from the frozen
+candidate is>=7/18 and relative saving>=63/835=7.5449% for EVERY law, both
+sharp at U3. This is a stronger scoped mathematical comparison, not an inference
+from five constructed laws, not a7.54% latency claim against all methods.
+It narrows the previous9.56% strongest-control headline;20.576% remains only
+versus always drawing six. Source/count/bit/preparation/pair costs remain explicit.
+
+V8 writes necessary cost/signal conditions and an oracle-regression objection
+for mean estimation. It does not identify an actual measured useful consumer.
+Its separate addendum corrects broad wording: common per-pair work affects
+thresholds differently from one-time/amortized setup. The original note is
+preserved. A44 SOURCE/schema inspection did not read its stored scalar values;
+neither its failed full-gradient application nor A42 late root is reopened.
+
+Original0907.4018v1 Section2 through Theorem2.5/proof and Section3 Proposition3.1
+were read. Count-based coefficient processes already avoid exponential strings;
+no new generic Markovization/factory compression or common-part principle is
+claimed. Primary maximal-coupling PDF fetch timed out, not falsely read. Specific
+priority and a substantive real useful full-cost consequence remain OPEN.
+No new head/forward/update/row-label or timing. Main maintained suite not rerun;
+exact CLI audits and new control code lint are separate evidence.
+
 ## 2026-10-17 — A63 positive sharp minimax source work, practical goal still open
 
 Written criteria/theoryee6f423 precede solver31c3961 and its exact386/81

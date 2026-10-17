@@ -90,6 +90,25 @@ cost remain open. No new neural campaign is credited to M70.
   upstream/lint/types and63 attempts247 versions186075 files preserved;
   full actual receipt docs/evidence/a63-v4-final-make-check.log. This is archive/
   software integrity, not new scientific validation, neural gain or priority.
+- [x] T8607: V6 contract1d98530 BEFORE source1aa4fec/execution. BOTH complete
+  random-anchor rank controls pass8748 replays/all28 full ordered laws against
+  independent matching and frozen candidate. At U3 both2561/486, above V5 CDF;
+  some other laws favor ranks. All five laws/evidence2f2e86b preserved; no model
+  or timing. See63/work/rank-result-v6.md. Closed A44/A42 uses stay closed.
+- [x] T8608: V7 written control/proof3a196ac BEFORE source076799a/execution.
+  Greatest common-part construction is CLASSICAL, pointwise work-optimal only
+  among methods preserving q_t on EVERY full tape.9477 exact replays/60 tickets/
+  13 cells and three degree-six identities PASS. Cost polynomial plus q²>=3r
+  proves gap>=7/18 and saving>=63/835=7.5449% for EVERY law, sharp at U3.
+  Strongest U3 control835/162 replaces the9.56% headline, not the always-six
+  source bound20.576%. Does not dominate ranks at all P or all other classical
+  designs. Evidencec9730b8; result63/work/common-result-v7.md. No neural/timing.
+- [x] T8609: V8 writes full-cost/score-regression objections without a new
+  application run. Separate0b64ca1 addendum corrects broad setup wording in
+  22863e2: shared per-pair work changes thresholds. No actual cost ratio or
+  stored scalar readout. Original0907.4018v1 Sections2/3 count-coefficient
+  construction read; no generic count compression/interval novelty claimed.
+  Real competitive use/priority remain T8605 OPEN; no new neural phase.
 
 ## M85 — Native RLM numerical quantile audit; complete control matches bound
 

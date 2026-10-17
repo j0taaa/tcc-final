@@ -1,5 +1,21 @@
 # AGENTS.md
 
+A63 V6 acrescenta DOIS controles clássicos de ranks/rotação:8748 replays e
+28 leis conjuntas ordenadas passam. V7 source076799a após prova3a196ac usa
+parte comum ótima entre métodos que preservam q_t em CADA tape, não entre
+todos factories.9477 replays/60 tickets/13 células, três identidades completas
+de coeficientes passam. C_common=47/10+3e2/5-2e2²/5+27e3/5+8e2e3; prova escrita
+dá gap>=7/18 e ganho>=63/835=7,5449% para TODA lei, sharp em U3. É o controle
+mais forte em U3; ranks ainda podem vencer o common em outras leis. NÃO
+7,54% contra todos clássicos/latência integral. Fonte/evidência/controles antigos
+preservados. V8 escreve objeções de custo/regressão, com addendum separando
+custos comuns por par de setup amortizado; limiarv/c não é medida ou universal
+com overhead arbitrário. Sem novo head/forward/update/label/timing ou leitura
+de valores escalares antigos. Original0907.4018v1 já fornece processos de
+coeficientes/contagem; não reivindicar essa compressão/princípio. Uso real,
+prioridade suficiente e meta continuam abertos; ramos full-gradient/root negativos
+não são reabertos. Tudo em63/work/{rank-result-v6,common-result-v7,full-cost-*v8}.md.
+
 A63 investiga custo parado de acoplamento EXATO com três chaves PERMITIDAS.
 Critérios/provaee6f423 precedem solver31c3961; primal/dual racionais386/81 e
 verificador independente729 tapes/28 multisets passam. Contratocbe7c40/source

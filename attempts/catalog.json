@@ -4695,7 +4695,7 @@
     {
       "id": "63-adaptive-six-coupling",
       "title": "Custo adaptativo ótimo de acoplamento universal com três classes e cap seis",
-      "conclusion": "Written criteria/theoryee6f423 precede solver31c3961: exact rational primal/dual386/81, independent729 named tapes28 multisets/five laws/corruptions. Prospective adjacent-cap source5e2da7c yields four exact certificates:4/5=31/9,6/7=386/81. Parallel producer tool output lost; recovery did not repeat solves and V4 origin clarifies inferred versus observed exit statuses. Operational contract14562a9 and written minimaxe5f7331 precede sourced59e7ad/execution:44 deterministic key actions retain literal first and nonfirst original raw payload. Independent729 tapes28 multisets/15 matchings pass; FULL ORDERED pair law equals classical full-six matching for every P via exact multiset coefficients/raw lift. All homogeneous work/stop coefficients verify E N=4+2e2-2e2²+10e3-4e2e3, maximized at uniform keys. Hence386/81 is sharp MINIMAX expected source calls among universal unknown-law cap6/7 atom maximizers on THREE ALLOWED keys, also exact ordered-law simulators. Not pointwise optimal every P. At least50/243=20.576% source-call saving versus always-six for every law. Stronger classical count-polynomial lazy-CDF control frozen922c50a afterf8b590e passes5832 replays:U3 cost2134/405, candidate saving only102/1067=9.559%, NOT20% against competent controls. All five rational laws/statuses preserved; generic factories/Bernstein/matching not claimed new. Original-source scopes/gaps and finite Wald/full costs written. No new model/head/forward/weight/row-label/update/timing/native adapter; maintained345 tests not rerun/credited. Specific priority, substantive real full-cost usefulness/publication and original user goal remain OPEN.",
+      "conclusion": "Written criteria/theoryee6f423 precede solver31c3961: exact rational primal/dual386/81, independent729 named tapes28 multisets/five laws/corruptions. Prospective adjacent-cap source5e2da7c yields four exact certificates:4/5=31/9,6/7=386/81. Parallel producer tool output lost; recovery did not repeat solves and V4 origin clarifies inferred versus observed exit statuses. Operational contract14562a9 and written minimaxe5f7331 precede sourced59e7ad/execution:44 deterministic key actions retain literal first and nonfirst original raw payload. Independent729 tapes28 multisets/15 matchings pass; FULL ORDERED pair law equals classical full-six matching for every P via exact multiset coefficients/raw lift. All homogeneous work/stop coefficients verify E N=4+2e2-2e2²+10e3-4e2e3, maximized at uniform keys. Hence386/81 is sharp MINIMAX expected source calls among universal unknown-law cap6/7 atom maximizers on THREE ALLOWED keys, also exact ordered-law simulators. Not pointwise optimal every P. At least50/243=20.576% source-call saving versus always-six for every law. Stronger classical count-polynomial lazy-CDF control frozen922c50a afterf8b590e passes5832 replays:U3 cost2134/405, candidate saving only102/1067=9.559%, NOT20% against competent controls. All five rational laws/statuses preserved; generic factories/Bernstein/matching not claimed new. Original-source scopes/gaps and finite Wald/full costs written. No new model/head/forward/weight/row-label/update/timing/native adapter; maintained345 tests not rerun/credited. Specific priority, substantive real full-cost usefulness/publication and original user goal remain OPEN. V6 direct random-anchor empirical-rank controls pass8748 replays/all28 full ordered laws, both U3 cost2561/486; some nonuniform laws favor ranks over V5 CDF. V7 prospective proof3a196ac/source076799a yields CLASSICAL common-part allocation, pointwise optimal ONLY among methods preserving q_t on EACH full tape. All9477 exact60-ticket/13-cell replays and three homogeneous degree-six cost identities PASS. Its cost47/10+3e2/5-2e2²/5+27e3/5+8e2e3 and e2²>=3e3 prove candidate gap>=7/18 and saving>=63/835=7.5449% for EVERY key law, both sharp at U3. This narrows9.559% strongest-control headline; not a guarantee against ALL classical designs or physical full costs. Earlier rank/CDF controls remain mandatory. V8 written cost/regression objections plus separate accounting addendum distinguish genuine shared per-pair work from one-time setup; no measured ratios, readout or new campaign. Original0907.4018v1 Sections2/3 already provides coefficient/count processes; no generic count compression/factory/interval novelty. No model/head/forward/update/row-label/timing and no reopening failed full-gradient/root uses. Real useful full-cost consumer/specific priority/goal remain OPEN.",
       "reading": "attempts/63-adaptive-six-coupling/README.md",
       "versions": [
         {
@@ -4729,6 +4729,33 @@
           "id": "v4-classical-control",
           "source_commit": "922c50a33506f43755847672ec5d66ca553e4ca7",
           "evidence_commit": "37ae39e077cc6031317c747eaa1ec1263333b612",
+          "evidence_roots": [
+            "attempts/63-adaptive-six-coupling/README.md",
+            "attempts/63-adaptive-six-coupling/work"
+          ]
+        },
+        {
+          "id": "v5-rank-controls",
+          "source_commit": "1aa4fecc3fcafce8379a21f9773e0737ce6525a3",
+          "evidence_commit": "2f2e86b85d688a5ef8131c79ab1795e7eeeaa071",
+          "evidence_roots": [
+            "attempts/63-adaptive-six-coupling/README.md",
+            "attempts/63-adaptive-six-coupling/work"
+          ]
+        },
+        {
+          "id": "v6-common-part",
+          "source_commit": "076799a83514f783515c6daeb139f0b340e14ec8",
+          "evidence_commit": "c9730b871f6cfc4e3efd46397bbadaef7cfc00f8",
+          "evidence_roots": [
+            "attempts/63-adaptive-six-coupling/README.md",
+            "attempts/63-adaptive-six-coupling/work"
+          ]
+        },
+        {
+          "id": "v7-full-cost-audit",
+          "source_commit": "22863e21bd3634e9f628e249f5aba4401d152b52",
+          "evidence_commit": "0b64ca17c278a87cbb462f0b7e7a83b38a92aebb",
           "evidence_roots": [
             "attempts/63-adaptive-six-coupling/README.md",
             "attempts/63-adaptive-six-coupling/work"

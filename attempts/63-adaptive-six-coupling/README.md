@@ -66,7 +66,7 @@ different minimum expected work. All four controls are required, including
 losses/inconclusive certificates. V2 operational extraction is deferred pending
 this stronger comparison; no operational/native sampler has been claimed.
 
-## Current V3--V5 result (after the prospective paragraphs above)
+## V3--V5 results (after the prospective paragraphs above)
 
 All four adjacent-cap exact certificates pass independent named-tape/dual
 checks: caps4/5 give31/9 calls and6/7 give386/81 at U3. The later deterministic
@@ -102,3 +102,33 @@ Frozen versions v1, v2-adjacent-caps, v3-operational-minimax and
 v4-classical-control preserve each source/evidence pair independently. Final
 integrity receipt is in docs/evidence/a63-v4-final-make-check.log (whole repo:
 63 attempts/247 versions); it does not validate novelty or a real application.
+
+## Later V6--V8 status: stronger controls and application costs
+
+V6 adds BOTH direct classical rank/half-rotation lazy controls:8748 replays
+and all28 ordered multiset laws pass. V7 strengthens the CDF comparison by
+allocating the greatest common component over all possible completions.
+It attains the pointwise smallest expected work among methods preserving
+the matching output kernel on EACH full tape, a stricter contract than the
+candidate's final iid-averaged pair law. All9477 integer-ticket replays and
+three complete work-polynomial coefficient identities pass.
+
+The common-part cost is47/10+3e2/5-2e2²/5+27e3/5+8e2e3. A pure written
+inequality proves C_common-C_A>=7/18 and relative saving>=63/835=7.5449...%
+for EVERY key law, both sharp at U3. This is now the strongest U3 comparison,
+not the earlier9.559% CDF headline. It is not a guarantee against EVERY
+classical design: ranks can be stronger at other laws and remain mandatory.
+Generic common-part/interval/count methods are known; reverse-martingale
+original0907.4018v1 Sections2/3 were read with explicit scope.
+
+V8 writes full-cost thresholds and a strong regression objection before any
+new application campaign. Its separate addendum corrects a broad statement
+about shared costs: per-pair shared work differs from one-time setup. No
+measured native cost ratio or scalar/model observation follows. A44 source
+schema was inspected, not its stored scalar values; its full-gradient branch
+stays closed. Specific priority/useful real consequence still OPEN.
+
+Read [rank result](work/rank-result-v6.md),
+[sharp all-law comparison](work/common-result-v7.md),
+[full-cost objections](work/full-cost-objections-v8.md) and
+[cost accounting clarification](work/full-cost-addendum-v8.md).

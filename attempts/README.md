@@ -20,6 +20,14 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A63 V6/V7 strengthens that comparison: both rank controls pass8748 replays;
+the classical optimal completion-preserving common-part control passes9477.
+Its cost polynomial and a written inequality give candidate saving>=63/835
+(7.5449%) for EVERY three-key law, sharp at U3. This is narrower than all
+classical designs; earlier ranks/CDF remain mandatory. V8's full-cost objections
+and accounting addendum do not establish a real application. No new model/
+score/timing. Latest scopes:63-adaptive-six-coupling/work/common-result-v7.md.
+
 A63 has a positive exact stopped-work result:386/81 is the minimax expected
 source calls for universal cap6/7 atom-optimal coupling on three ALLOWED keys.
 The deterministic raw reference matches the full ordered six-pool matching law;
@@ -67,7 +75,7 @@ new seeds, cost/variance or independent campaign follows for this initialization
 
 | Pasta | Direção |
 | --- | --- |
-| [63-adaptive-six-coupling](63-adaptive-six-coupling/README.md) | Minimax sharp386/81, par ordenado preservado e redução de chamadas; custo integral/novidade/uso real abertos |
+| [63-adaptive-six-coupling](63-adaptive-six-coupling/README.md) | Minimax386/81; >=7,5449% chamadas contra controle ótimo condicional por tape, com par ordenado igual; custo integral/novidade/uso real abertos |
 | [60-semantic-numeric-index](60-semantic-numeric-index/README.md) | Quantis compactos para ordens científicas irrestritas passam; controle clássico de localização também polinomial, benefício próprio/uso real abertos |
 | [58-streamed-grammar-loss](58-streamed-grammar-loss/README.md) | Cabeça sintética completa: 680 registros sem erros, oito candidatas 0/8 gates contra controles fortes; família encerrada negativa |
 | [59-numeric-interval-infilling](59-numeric-interval-infilling/README.md) | Controle completo clássico empata linguagem e complexidade; corpus externo não demonstra uso próprio; sem campanha nativa |
