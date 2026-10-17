@@ -102,3 +102,12 @@ selected: eliminate ALL input-embedding optimizer cost in a common full
 component cycle. No actual A70/codec adapter is built from scalar success;
 priority/use/full-cost/positive goal stay OPEN. Negative screen has an
 explicit stopping rule; no favorable-case/cap/thread/vocabulary rescue.
+
+V4[resource result](work/result-v4-resource.md): ALL56 measured records,
+8 warmups+1 setup,65 real forwards/backwards/updates, no accumulated training.
+Both frames fail the frozen gate0/2 even with the embedding update FREE;
+ideal_single/native_single paired medians are .979/.979 and .994/.994
+wall/CPU. This NNCP CPU/FP32 component application is CLOSED, without a
+full-codec/A70 adapter campaign. Static checkerV4b passes; a separate receipt
+addendum distinguishes actual start producercc36fab5 from end HEADda74d38b.
+Criterion reassessment in the result keeps priority/use/full benefit/goal OPEN.

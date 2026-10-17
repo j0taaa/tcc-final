@@ -1,0 +1,83 @@
+{
+  "producer_commit": "cc36fab56ea1a53e3ba3952948ef67e7f8bc2636",
+  "protocol_commit": "30480f37",
+  "sources": {
+    "attempts/70-native-adam-erasure/work/resource_v4.py": "62ab8d05ac0839899ff3f9914ce7281d1624eb22ebb918e0d16bbb01a2c65979",
+    "attempts/70-native-adam-erasure/work/protocol-v4-resource.md": "2e5adf42017f9f847fb94a9133bf70a9155f3f312fbe1be2caf43500e3a09ec4",
+    "attempts/70-native-adam-erasure/work/consumer_v4/provenance.json": "e08e2bed572db389b3de46bccd9e05159cf5a5bfd40693f7d7e486bf4741e8f7",
+    "attempts/70-native-adam-erasure/work/consumer_v4/mem_transformer.py": "20285daaffb77e888bcc7a15bb046525a485eae863966da42cde462e5c4a6fc4",
+    "attempts/70-native-adam-erasure/work/consumer_v4/arithmetic_coder.py": "bf502cfca2b3924c1b35a3523bb69e25010e19e69c9a3a9db977a766f6436571",
+    "attempts/70-native-adam-erasure/work/consumer_v4/nncp.py": "744115045ace2a3c9990d0d01470c9aafb5d63128d7e2225c6bbe64f518e015f",
+    "attempts/70-native-adam-erasure/work/consumer_v4/nncp_enwik_base.sh": "180b0aa23a01270b415211305b51b1d3bba3b597abe76fc7d6255fc96977f3ee",
+    "attempts/70-native-adam-erasure/work/consumer_v4/nncp_enwik_large.sh": "26ea54e553354dd375581d7d7731cb942b5617d1345118bf9c20176e5ad11a00",
+    "attempts/70-native-adam-erasure/work/consumer_v4/readme.txt": "84813edc47c4d2550c896813af328fa6a9d646c5afd6abda09b1bcf59b63b981"
+  },
+  "python": "3.11.16 (main, Aug 14 2026, 15:35:36) [Clang 22.1.3 ]",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "cpu_model": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+  "memory_before_import": {
+    "MemTotal": "16219996 kB",
+    "MemAvailable": "12571952 kB",
+    "SwapTotal": "4194300 kB",
+    "SwapFree": "1001108 kB"
+  },
+  "original_cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "screen_cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "scope": "Modern CPU/FP32 NNCPv2 component RESOURCE screen; constructed frames; no A70",
+  "torch": "2.8.0+cpu",
+  "torch_git": "a1cb3cc05d46d198467bebbb6e8fba50a325d4e7",
+  "numpy": "2.4.6",
+  "threads": 8,
+  "interop": 1,
+  "deterministic": true,
+  "import_wall_ns": 1573297051,
+  "torch_config": "PyTorch built with:\n  - GCC 13.3\n  - C++ Version: 201703\n  - Intel(R) oneAPI Math Kernel Library Version 2024.2-Product Build 20240605 for Intel(R) 64 architecture applications\n  - Intel(R) MKL-DNN v3.7.1 (Git Hash 8d263e693366ef8db40acc569cc7d8edf644556d)\n  - OpenMP 201511 (a.k.a. OpenMP 4.5)\n  - LAPACK is enabled (usually provided by MKL)\n  - NNPACK is enabled\n  - CPU capability usage: AVX512\n  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, COMMIT_SHA=a1cb3cc05d46d198467bebbb6e8fba50a325d4e7, CXX_COMPILER=/opt/rh/gcc-toolset-13/root/usr/bin/c++, CXX_FLAGS= -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOCUPTI -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_FBGEMM -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -DC10_NODEPRECATED -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=range-loop-construct -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wno-stringop-overflow -Wsuggest-override -Wno-psabi -Wno-error=old-style-cast -faligned-new -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-dangling-reference -Wno-error=dangling-reference -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, TORCH_VERSION=2.8.0, USE_CUDA=0, USE_CUDNN=OFF, USE_CUSPARSELT=OFF, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=OFF, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, USE_XCCL=OFF, USE_XPU=OFF, \n",
+  "adam_python_sha256": "46296644b82ae5f2ecae17ee30ce4691f4cc2078a0e478ec2beef10ffbe8018e",
+  "initialization_wall_ns": 1713009012,
+  "parameter_count": 55612516,
+  "embedding_parameter_count": 8390656,
+  "initial_weights_digest": "a31dba7b17308448cd22f5de0b090fc7465ed5c06d223ca33ec88c83ca1a8608",
+  "fixture_hashes": {
+    "input_ids": "7ad81a8bac2c305ecb01e6a6775f78b42006befd0619f7abbe97dd701ed7eccd",
+    "target_ids": "3029bc8f821c55a16a42364174071efe6e5b170e1096d2cacedf9ee8ded5bf73",
+    "full_memory": "e83bc4168eb3ef9c424d23942df07ebea62376e79ccdb68ad448943a4fee6262"
+  },
+  "memory_after_initialization": {
+    "MemTotal": "16219996 kB",
+    "MemAvailable": "11605436 kB",
+    "SwapTotal": "4194300 kB",
+    "SwapFree": "1001108 kB"
+  },
+  "snapshot_wall_ns": 206979736,
+  "snapshot_native_digest": "780219645732f9056af81978d00240fd6ec89d7db49938f9cf5d8b5894ff77ff",
+  "snapshot_clock_values": [
+    1.0
+  ],
+  "snapshot_memory_bytes": 667350744
+}

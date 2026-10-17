@@ -1,5 +1,20 @@
 # AGENTS.md
 
+A70 V4 selects ONLY NNCPv2 CPU/FP32 component resource feasibility, after
+original-source/native-order/eight-criterion audit. Protocol30480f37 BEFORE
+sourcecc36fab5/ONE direct0:56 measured+8 warmups+1 setup,65 actual forwards/
+backwards/Adam updates with common snapshot restoration, constructed IDs/
+memories, no accumulated training/text/trained checkpoint. Both embedding-
+FREE controls fail0/2 frames against native single/foreach; best paired
+wall/CPU ratios vs native_single .979/.979 and .994/.994, not20%. This
+CPU/FP32 component application is CLOSED: no full-codec/A70 adapter, seed/
+geometry/thread/dtype rescue. Published GPU/Apex/LibNC remain distinct.
+Beta1=0 weight skipping and classical exact finite-format jumps are required
+controls. StaticV4b c48c72b4 passes9 hashes65 ordered cycles16 comparisons;
+outer receipt's misnamed END HEADda74d38b is preserved/corrected by separate
+addendum, actual start producercc36fab5 unchanged. Result70/work/result-v4-
+resource.md. Other consumers/specific priority/full benefit/positive goal OPEN.
+
 A70 starts only a MINIMAL numerical correctness candidate, written before
 code: native binary32 observable reconstruction via ALL-tail absorption,
 rounded-moment enclosure with a subnormal floor, fresh-gradient endpoint

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "producer_commit": "cc36fab56ea1a53e3ba3952948ef67e7f8bc2636",
+  "outer_receipt_end_head_misnamed_producer": "da74d38b6ae1e2c7de9bd5d7e5cde237f0c88f7f",
+  "receipt_addendum": "attempts/70-native-adam-erasure/work/receipt-addendum-v4.md",
+  "source_hash_checks": 9,
+  "ordered_real_cycles": 65,
+  "measured_records": 56,
+  "paired_metric_comparisons": 16,
+  "passing_ideal_methods": {
+    "empty": [],
+    "full160": []
+  },
+  "scope": "Static integrity/paired digests/gate arithmetic; no independent tensor recomputation, proof or timing rerun",
+  "packet_files": {
+    "console.log": "af601159ec536ae20b6ec8ff698c493e38ce7186c7aec7a1ff54f0b5d99e4fe9",
+    "exit.json": "389b2fcc7b2db2ea10070931eccbcc813611cb06445ae7b554286dfe880059fb",
+    "run/calls.json": "eeb335f892809e550d32b73213595e6382fea6da2efe2c869886e2cc8ee0f447",
+    "run/manifest.json": "d779cf21946e3449c4eaf764dfb652a066dde0c4c64680271d4311af1cd272be",
+    "run/records.jsonl": "6e87d21497db824860214b814579245e727f02e71266445b6aa49749c1425bae",
+    "run/summary.json": "8d584e6a9d5b6ce6d775a9e752403406c4947021f7e08ae6bdaee5831ded2122"
+  }
+}

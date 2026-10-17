@@ -3924,3 +3924,23 @@ implementation proof. All scopes:attempts/70-native-adam-erasure/README.md.
 Actual consumer-native instantiation, useful gap/precision demand, strong
 whole-cost comparison and sufficient specific priority remain OPEN. No
 article promotion or substantive campaign follows from correctness alone.
+
+### A70 V4 — Exact lossless-compression consumer, negative component screen
+
+Original NNCPv2 supplies a real reproducible online-probability consumer,
+but its CPU/FP32 Adam branch has beta1=0 and different native operations.
+Current LibNC binaries/published GPU+Apex are separate unexecuted modes.
+Classical beta1=0 skipping and exact finite-format binary-lifting controls
+must be admitted. The eight-criterion audit and resource gate were frozen
+BEFORE sourcecc36fab5/import/model execution, not chosen after timings.
+
+ALL56 measured records+8 warmups+1 setup complete/direct0:65 actual model
+forwards/backwards/updates, restored common snapshot, constructed IDs/memory.
+No accumulated training/corpus/trained-state evidence. Even deleting ALL
+input-embedding optimizer work FREE fails the20% full-cycle wall+CPU gate
+in BOTH frames0/2 against native single/foreach. Best paired ratios against
+native_single .979/.979 and .994/.994; no A70 implementation or positive
+performance claim. This CPU/FP32 component application is CLOSED without
+codec port or seed/geometry/thread/dtype rescue. Source/raw/receipt semantics/
+post-checks are preserved in70/work/result-v4-resource.md. A different useful
+consumer and sufficient own priority remain required; user goal stays OPEN.

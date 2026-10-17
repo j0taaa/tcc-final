@@ -1,0 +1,309 @@
+{
+  "status": "COMPLETE",
+  "measured_records": 56,
+  "warmups": 8,
+  "setup_records": 1,
+  "calls": {
+    "forwards": 65,
+    "backwards": 65,
+    "optimizer_steps": 65
+  },
+  "gates": {
+    "empty": {
+      "passing_ideal_methods": [],
+      "comparisons": [
+        {
+          "ideal": "ideal_single",
+          "native": "native_single",
+          "metrics": {
+            "wall_ns": {
+              "paired_ratios": [
+                0.9875126914448029,
+                0.9723792486689278,
+                0.9766128666038238,
+                1.0044197277014815,
+                0.9789842685086582,
+                0.9753683506471498,
+                0.9919946672038177
+              ],
+              "median_ratio": 0.9789842685086582,
+              "every_repetition_favorable": false
+            },
+            "cpu_ns": {
+              "paired_ratios": [
+                0.987962349714396,
+                0.9722402658289027,
+                0.9765072968779429,
+                1.0043506961487196,
+                0.9792187508389351,
+                0.975148403094536,
+                0.991874852639435
+              ],
+              "median_ratio": 0.9792187508389351,
+              "every_repetition_favorable": false
+            }
+          }
+        },
+        {
+          "ideal": "ideal_single",
+          "native": "native_foreach",
+          "metrics": {
+            "wall_ns": {
+              "paired_ratios": [
+                0.9501716773365864,
+                0.9456939061242271,
+                0.952202119548048,
+                0.9601993711869583,
+                0.9613836418620653,
+                0.9410240865082578,
+                0.9501066735511016
+              ],
+              "median_ratio": 0.9501716773365864,
+              "every_repetition_favorable": true
+            },
+            "cpu_ns": {
+              "paired_ratios": [
+                0.9500253651525131,
+                0.9458654571763391,
+                0.9520970360228571,
+                0.959968107450877,
+                0.961865830629471,
+                0.9409907113345611,
+                0.9498004969138937
+              ],
+              "median_ratio": 0.9500253651525131,
+              "every_repetition_favorable": true
+            }
+          }
+        },
+        {
+          "ideal": "ideal_foreach",
+          "native": "native_single",
+          "metrics": {
+            "wall_ns": {
+              "paired_ratios": [
+                1.005345787505815,
+                1.006921722624749,
+                1.0010597036058448,
+                1.0254720613808366,
+                0.9986956169287742,
+                1.019327369688232,
+                1.064030392559601
+              ],
+              "median_ratio": 1.006921722624749,
+              "every_repetition_favorable": false
+            },
+            "cpu_ns": {
+              "paired_ratios": [
+                1.006122001799702,
+                1.0073356955004602,
+                1.0008499600908294,
+                1.0254115567782573,
+                0.9989562159965808,
+                1.0187875189397515,
+                1.0260778305801754
+              ],
+              "median_ratio": 1.0073356955004602,
+              "every_repetition_favorable": false
+            }
+          }
+        },
+        {
+          "ideal": "ideal_foreach",
+          "native": "native_foreach",
+          "metrics": {
+            "wall_ns": {
+              "paired_ratios": [
+                0.9673304469839974,
+                0.9792884189310271,
+                0.9760379001378743,
+                0.9803248595693835,
+                0.9807406106507578,
+                0.9834352388790385,
+                1.0191006164193064
+              ],
+              "median_ratio": 0.9803248595693835,
+              "every_repetition_favorable": false
+            },
+            "cpu_ns": {
+              "paired_ratios": [
+                0.9674877007449297,
+                0.9800088225540179,
+                0.9758311930209577,
+                0.980098281699126,
+                0.9812535244436613,
+                0.9831012275707445,
+                0.982552618169517
+              ],
+              "median_ratio": 0.980098281699126,
+              "every_repetition_favorable": true
+            }
+          }
+        }
+      ]
+    },
+    "full160": {
+      "passing_ideal_methods": [],
+      "comparisons": [
+        {
+          "ideal": "ideal_single",
+          "native": "native_single",
+          "metrics": {
+            "wall_ns": {
+              "paired_ratios": [
+                0.9777612405238199,
+                1.0031569733016659,
+                1.0009885677073984,
+                0.991997713377428,
+                0.9742079944720019,
+                0.9935522800258175,
+                1.0764082208151746
+              ],
+              "median_ratio": 0.9935522800258175,
+              "every_repetition_favorable": false
+            },
+            "cpu_ns": {
+              "paired_ratios": [
+                0.9798103726275503,
+                1.0007848781938842,
+                1.0007015356913445,
+                0.9920969199215935,
+                0.974161781640703,
+                0.993578405545987,
+                1.0363813204684946
+              ],
+              "median_ratio": 0.993578405545987,
+              "every_repetition_favorable": false
+            }
+          }
+        },
+        {
+          "ideal": "ideal_single",
+          "native": "native_foreach",
+          "metrics": {
+            "wall_ns": {
+              "paired_ratios": [
+                0.9441591917242861,
+                0.9799736743041629,
+                0.9679955859570117,
+                0.9975934476385747,
+                0.950611350019958,
+                0.9781285398230699,
+                1.0461328099579459
+              ],
+              "median_ratio": 0.9781285398230699,
+              "every_repetition_favorable": false
+            },
+            "cpu_ns": {
+              "paired_ratios": [
+                0.9586246720663728,
+                0.9794413223966106,
+                0.9676571419965451,
+                0.9975969956445717,
+                0.9506252890669601,
+                0.9783282406867518,
+                1.0072026772888674
+              ],
+              "median_ratio": 0.9783282406867518,
+              "every_repetition_favorable": false
+            }
+          }
+        },
+        {
+          "ideal": "ideal_foreach",
+          "native": "native_single",
+          "metrics": {
+            "wall_ns": {
+              "paired_ratios": [
+                0.9958925082766457,
+                1.0201758203143156,
+                1.0351797280729826,
+                1.0049443696539293,
+                1.0110620103398953,
+                1.0011465733935052,
+                1.006834105511011
+              ],
+              "median_ratio": 1.006834105511011,
+              "every_repetition_favorable": false
+            },
+            "cpu_ns": {
+              "paired_ratios": [
+                0.9926440338193707,
+                1.0198366145587594,
+                1.019049405573244,
+                1.004381411602083,
+                1.0109938002953818,
+                1.0011494814355142,
+                1.0064511274399122
+              ],
+              "median_ratio": 1.0064511274399122,
+              "every_repetition_favorable": false
+            }
+          }
+        },
+        {
+          "ideal": "ideal_foreach",
+          "native": "native_foreach",
+          "metrics": {
+            "wall_ns": {
+              "paired_ratios": [
+                0.9616673546550168,
+                0.9965992099713425,
+                1.0010597920632185,
+                1.010613134373833,
+                0.9865727114300773,
+                0.9856049406447069,
+                0.9785155590525572
+              ],
+              "median_ratio": 0.9865727114300773,
+              "every_repetition_favorable": false
+            },
+            "cpu_ns": {
+              "paired_ratios": [
+                0.9711808406833959,
+                0.998086745869476,
+                0.9853991426814721,
+                1.009949591189819,
+                0.9865674180237679,
+                0.9857831101905197,
+                0.97811514941203
+              ],
+              "median_ratio": 0.9857831101905197,
+              "every_repetition_favorable": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  "observations": {
+    "empty": {
+      "loss_bits": "9b19ced718cfaf62497ea448c386b5f17222ab8ca213dccccdd4793f7866ae68",
+      "logits": "11a4120ab0cb84ce8623aee6a3a71c855bbe2706e8c67756a331fd1540fc5576",
+      "cdf": "d20e09dbc0de1d5ebb5d4fc18af014e8f196ffd808ef34e6285fd37b21f0eaee",
+      "gradients": "a3686729fd6747fe9c4cc4f162453de0c079c41025176753da50147048eb8289",
+      "output_memories": "20973e4ddc4ae6ef990dfccf730cd447dfe4161fe0026dca96815fbfe0f9de6c",
+      "encoded_sha256": "1df9d18b31ef62fce68c7c2ff28519b963bd20614a91c6bfa0eed566fdad4e9a"
+    },
+    "full160": {
+      "loss_bits": "a13b33fb1a5d675946bffa0e745f7eeeccb06dd506370fe8996e59825054f022",
+      "logits": "fa4353751138c18a2c4fba1bec6750d74bc22c8e3d454decf1ebbc4d9fc4f973",
+      "cdf": "777975eb06c407be661d4c2c44d10df8f3b86c7fbda9bc47e5691adf5bc122da",
+      "gradients": "f5ac79e72120aed467a7dbddc582621b51bf80492c371dfa32d36df719315356",
+      "output_memories": "ba3535f9fca5a6813e3a8bbcbbc52a6228a7e23a9251d268b424461a5a46e34d",
+      "encoded_sha256": "4c1aad87822209a0649f8aa6804659aad73228f00fa1c0198aa16cc757c13371"
+    }
+  },
+  "native_single_foreach_state_equal_on_frames": {
+    "empty": true,
+    "full160": true
+  },
+  "memory_end": {
+    "MemTotal": "16219996 kB",
+    "MemAvailable": "8209732 kB",
+    "SwapTotal": "4194300 kB",
+    "SwapFree": "717036 kB"
+  },
+  "max_rss_kib": 4573900,
+  "claim": "Only optimistic resource feasibility; no candidate, real-text or whole-codec advantage"
+}

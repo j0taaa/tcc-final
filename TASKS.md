@@ -90,6 +90,18 @@ cost remain open. No new neural campaign is credited to M70.
   Receipt docs/evidence/a70-v3-final-verification.json. No numerical/345-test
   rerun; normal commit/push and HEAD/upstream/remote verification follow.
   Positive goal and T9603 remain OPEN; unrelated PDF untouched.
+- [x] T9603-V4: Producercc36fab5 BEFORE ONE complete native NNCPv2 CPU/FP32
+  component screen:56 measured+8 warmup+1 setup,65 real forwards/backwards/
+  updates with common snapshot restoration; constructed IDs/memory, no text/
+  trained-state/accumulated training. Both optimistic embedding-FREE modes
+  fail BOTH frames0/2 against native single/foreach. Best paired ratios vs
+  native_single .979/.979 and .994/.994 wall/CPU. No full-codec/A70 adapter,
+  extra seed/geometry/dtype rescue. Native state equality observed on both
+  frames only. V4b static auditc48c72b4 passes9 source hashes65 ordered cycles/
+  16 metric comparisons; original outer receipt misnames end HEADda74d38b,
+  corrected interpretation separately without overwrite or timing rerun.
+  See70/work/result-v4-resource.md and docs/evidence/a70-v4-post-data-verification.json.
+  This application CLOSED; other consumers/priority/full benefit/goal OPEN.
 
 ## M95 — Structural consumers and the epsilon-preserving Adam operation
 

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/home/jota/projects/tcc-final/.venv/bin/python",
+    "attempts/70-native-adam-erasure/work/resource_v4.py",
+    "--output",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a70_nncp_resource_v4/run"
+  ],
+  "producer_commit": "da74d38b6ae1e2c7de9bd5d7e5cde237f0c88f7f",
+  "started_unix_ns": 1792243305802639088,
+  "ended_unix_ns": 1792243603598901307,
+  "child_returncode": 0,
+  "console_sha256": "af601159ec536ae20b6ec8ff698c493e38ce7186c7aec7a1ff54f0b5d99e4fe9"
+}
