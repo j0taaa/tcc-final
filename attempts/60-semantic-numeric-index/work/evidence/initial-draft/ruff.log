@@ -1,0 +1,12 @@
+E501 Line too long (101 > 100)
+   --> attempts/60-semantic-numeric-index/work/test_semantic_index.py:127:101
+    |
+125 |                 for inclusive in (True, False):
+126 |                     expected = sum((w for v, w in law.items()
+127 |                                     if v < threshold or (inclusive and v == threshold)), Fraction(0))
+    |                                                                                                     ^
+128 |                     self.assertEqual(index.cdf(threshold, inclusive), expected / total,
+129 |                                      (rows, threshold, inclusive))
+    |
+
+Found 1 error.
