@@ -125,3 +125,13 @@ formula-aware spline moment integration, analytic derivatives, cheap direct
 factories and scalar/global-grid cache reuse BEFORE competitive measurements.
 Only a fixed correctness preflight follows; no performance/NN campaign yet.
 See[the frozen contract](work/runtime-contract-v4.md). The goal stays OPEN.
+
+V4 contract67bafcf/source5775a89 precede ONE PASS0 under isolated gmpy2 2.2.1/
+GMP6.3.0:8400 balanced binomials103 varied-denominator sums,30576/13104/26208
+bit-prefix cases1076 shared-uniform comparisons1347 proposals4041 weights966
+conditional kernel pairs. ALL1152 complete factory calls/576 matched pairs
+use24480 actual input p-coins; deliberate RESOURCE_FAIL occurs before source
+calls. Cache12/18 and8 invalid guards pass. This executes the full numerical
+factory, not a genealogy/NN/performance campaign or novelty confirmation.
+See[the result](work/result-v4.md). Strong formula-aware/derivative/direct/
+cached controls and full-cost usefulness remain open before timings.

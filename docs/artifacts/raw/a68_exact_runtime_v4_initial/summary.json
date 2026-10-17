@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "source_commit": "5775a89efa21def9e6ca891ec6ba50620e8561b6",
+  "python": "3.11.16 (main, Aug 14 2026, 15:35:36) [Clang 22.1.3 ]",
+  "gmpy2": "2.2.1",
+  "gmp": "GMP 6.3.0",
+  "counts": {
+    "balanced_binomials": 8385,
+    "larger_binomials": 15,
+    "variable_denominator_weighted_sums": 103,
+    "exhaustive_bernoulli_prefixes": 30576,
+    "exhaustive_geometric_prefixes": 13104,
+    "exhaustive_integer_prefixes": 26208,
+    "shared_uniform_comparisons": 1076,
+    "gmp_proposal_point_weights": 4041,
+    "gmp_proposals": 1347,
+    "native_conditional_kernel_pairs": 966,
+    "whole_factory_complete": 1152,
+    "actual_source_coin_calls": 24480,
+    "matched_whole_factory_pairs": 576,
+    "base_cache_replays": 12,
+    "higher_cache_replays": 18,
+    "explicit_resource_failure_before_source": 1,
+    "invalid_input_guards": 8
+  },
+  "conditional_components": {
+    "endpoint": 12,
+    "fair": 270,
+    "residual": 624,
+    "term": 60
+  },
+  "hashes": {
+    "runtime_v4.py": "41dccb126a0f62882aa58efa6ae52cb153408e7645ebe548d0cf6b40c73ee46a",
+    "audit_runtime_v4.py": "1b96863ad8f518b75a44b9b7741a037dc29fc10f92a7e210e8d81370eafea468",
+    "runtime-contract-v4.md": "3fa10685c9e532e29a86a9e42ee711d1b0bcc144170230cac16e7b45f0cfbb1c",
+    "requirements-v4.txt": "834d18c23959ce4bfd0c8f8512439660e33854a0663fd190cb8c9888943029ad",
+    "audit.py": "467818be145a831b2c213bd08492626e0fa7e64de02d7bb9e3780a06af6a684d",
+    "sparse_v3.py": "732f7944bb64bfad3356db5c1a6a4b42a491be3e7e3e3f1b19c7455ca5b09f26",
+    "residual.py": "4defb522ace3c8a50eb032cc9e6973260e11aba4b762110484f44c54cc5850b3",
+    "sparse-proposal-theory-v3.md": "e41fb9cd5595459a630d4e1e73e5cb600ff89da594781625c51feb575e12aea8"
+  },
+  "scope": "Exact runtime preflight, no competitive timing or genealogy/NN run.",
+  "limits": "Formula-aware/derivative/direct/cached controls and full-cost gate OPEN."
+}

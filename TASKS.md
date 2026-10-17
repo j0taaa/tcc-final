@@ -89,13 +89,14 @@ cost remain open. No new neural campaign is credited to M70.
   votes. Runtime GMP lookup is not a fast-bit implementation. No fabricated
   expensive callback or query-count substitution for total speed; preserve
   all unfavorable polynomial controls and the bounded-range application scope.
-- [ ] T9108: V4 contract BEFORE code: isolated pinned GMP runtime, exact
-  bit Bernoulli/shared-uniform geometric, uncapped outer sampler with explicit
-  optional RESOURCE_FAIL and matched balanced dense kernel. Freeze source
-  before fixed correctness preflight, all six original functions/three p/
-  seeds0..31/both methods, no timing/quality inference. Formula-aware spline,
-  derivative/direct/cached controls and full-cost gate still precede competitive
-  measurements; T9102/T9106 and positive goal remain OPEN.
+- [x] T9108: V4 contract67bafcf BEFORE source5775a89/ONE PASS0 in isolated
+  pinned gmpy2 2.2.1/GMP6.3.0. Exact primitives30576/13104/26208 prefixes,
+  1076 shared-U checks8400 binomials103 balanced sums1347 proposals4041
+  weights966 kernel pairs PASS. ALL1152 complete factory calls/576 matched
+  pairs use24480 actual p-coins; deliberate RESOURCE_FAIL before input. Cache
+  12/18 and8 guards pass. No genealogy/NN/competitive timing. Raw a68_exact_
+  runtime_v4_initial, result68/work/result-v4.md. Formula-aware/derivative/
+  direct/cached/coefficient-free controls/full-cost gate remain; goal OPEN.
 - [x] T9107: Independent V3 source5e97323/evidence0e54736,742 files
   11,452,755 bytes; create+original-Git/direct0. Eight frozen hashes and
   eight unchanged V1/V2 files match Git; own Ruff/format2 PASS. make check/

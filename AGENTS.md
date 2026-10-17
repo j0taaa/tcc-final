@@ -1,5 +1,20 @@
 # AGENTS.md
 
+A68 V4 contrato67bafcf ANTES de source5775a89/ÚNICO PASS0 implementa fábrica
+numérica COMPLETA por bits/GMP em ambiente /tmp/a68-runtime-v4 isolado,
+gmpy2 2.2.1/GMP6.3.0 pinado porhash; .venv mantida intacta. Todos1152 draws
+completos/576 pares J,N,k/tapes iguais usam24480 p-coins REAIS externos;
+não são heads neurais. Falha de recurso deliberada antes de source é separada,
+sem contar sucesso condicionado como exato. Prefixos30576/13104/26208,
+1076 shared-U8400 binomiais103 somas1347 propostas4041 pesos966 pares de
+kernel/cache12/18 e8 recusas passam. Sparse cap6; dense também usa produtos/
+soma balanceados/GMP/cache. Só replay completo numérico, SEM genealogia,
+clock competitivo/NN/treino ou novidade suficiente. Não atribuir FFT empírico
+ou prova de PRNG iid aos testes; bits iid e bounds corretos são contratos.
+Controles formula-aware spline/momentos truncados, derivadas, polinomiais
+diretos, cache global e alternativas coefficient-free precedem timings.
+Meta/T9102/T9106 abertas; resultado68/work/result-v4.md, preservarfontes antigos.
+
 A68 V3 prova/protocolobdedd14 ANTES de source5e97323/ÚNICO PASS0:1347
 propostas por4 momentos,6735 raw moments211011 pontos de envelope/rejeição,
 208323 desigualdades logcôncavas1347 leis de modo/cutoff/rejeição,966 leis

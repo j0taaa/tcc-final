@@ -1,0 +1,12 @@
+{
+  "source_commit": "5775a89efa21def9e6ca891ec6ba50620e8561b6",
+  "command": [
+    "/tmp/a68-runtime-v4/bin/python",
+    "attempts/68-residual-bernstein-sampling/work/audit_runtime_v4.py",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a68_exact_runtime_v4_initial"
+  ],
+  "started_utc": "2026-10-17T10:26:33.313222+00:00",
+  "elapsed_diagnostic_seconds": 2.633965965011157,
+  "direct_exit_code": 0,
+  "scope": "Exact GMP/bit preflight and matched complete factory executions, no competitive timing/genealogy/NN"
+}
