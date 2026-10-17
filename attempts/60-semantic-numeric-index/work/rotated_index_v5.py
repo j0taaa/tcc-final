@@ -253,6 +253,19 @@ class RotatedIndex(DAG):
                                     here, successor, str(digit if sign == 1 else 9 - digit), weight
                                 )
         self.finish()
+        self.raw_size = len(self.edges), sum(map(len, self.edges))
+        if not self.mass:
+            self.edges, self.final, self.topology, self.beta = [[]], set(), [0], [Fraction(0)]
+        else:
+            live = [q for q in self.topology if self.beta[q]]
+            renumber = {q: i for i, q in enumerate(live)}
+            self.edges = [
+                [(c, renumber[t], w) for c, t, w in self.edges[q] if self.beta[t]] for q in live
+            ]
+            self.final = {renumber[q] for q in self.final if q in renumber}
+            self.beta = [self.beta[q] for q in live]
+            self.start = renumber[self.start]
+            self.topology = list(range(len(live)))
 
     def order_code(self, order):
         magnitude, reversed_digits = abs(order), []
