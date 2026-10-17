@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-17",
+  "scope": "all nonnegative exact JSON numerical magnitudes from rational fixed token rows; compact values, no native decoder",
+  "theory_before_code": "f4c373dba6343e074b5f7692ee9329d5f81e5393",
+  "initial_source": "321582c2a46ab08618eb12701b41c2fd573c2041",
+  "interrupted_source_evidence": "7a8992d598acbc98ce8a3b0e18c0c2bd72fd0fa6",
+  "initial_exit_code": 130,
+  "initial_status": "INTERRUPTED by explicit SIGINT in first test, no four-test completion",
+  "trimmed_source_before_final_checks": "ee02f430d5b5766f6d6a101170d3f7609a1ac8a8",
+  "capacity_collector_before_run": "d7ade98c2fcca5b0c98f95d464feb3a89a092000",
+  "complete_control_written": "ae454bd89a69ea9b0054f4d5e43b62c4a66cc9fa",
+  "python": "3.11.16",
+  "source_sha256": {
+    "attempts/60-semantic-numeric-index/work/rotated_index_v5.py": "fecab1d101c8db9fb213adf8e2e68c2ce579c4520295df409c60017dd7c9283d",
+    "attempts/60-semantic-numeric-index/work/semantic_index.py": "0416e686f859fdd940c60b56bcf8a0fa1593ecd3cbe5afdcf37d602e834b9caa",
+    "attempts/60-semantic-numeric-index/work/test_rotated_index_v5.py": "3e0f5784d38f1426cff5672a1fbe49a201c2cc980737aaa4b2a1ee1571334460",
+    "attempts/60-semantic-numeric-index/work/record_sizes_v6.py": "936fccc5702a95c3adaaf405944a0edf92ed5c9a75d51977c6eb722d8e6378a9",
+    "tests/test_unrestricted_numeric_index.py": "d663a46262e1f1ba2bab4131118743caa15e9f60d3ce582dfd7f70e2f7880710"
+  },
+  "checks": {
+    "focused": {
+      "command": ".venv/bin/python -m unittest attempts.60-semantic-numeric-index.work.test_rotated_index_v5 -v",
+      "exit_code": 0,
+      "tests": 4,
+      "seconds": 2.224
+    },
+    "full_suite": {
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests": 341,
+      "seconds": 98.678
+    },
+    "capacity": {
+      "command": ".venv/bin/python -m attempts.60-semantic-numeric-index.work.record_sizes_v6",
+      "exit_code": 0,
+      "cases": 5,
+      "statuses": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ],
+      "timing_or_quality_gate": false
+    },
+    "ruff_and_format": {
+      "files": 4,
+      "exit_code": 0
+    }
+  },
+  "new_neural_forwards": 0,
+  "updates": 0,
+  "semantic_labels": 0,
+  "competitive_timing_records": 0,
+  "own_useful_advantage_confirmed": false,
+  "publication_priority_confirmed": false,
+  "native_resource_training_campaign_triggered": false,
+  "goal_achieved": false,
+  "process_deviation": "Eight-criterion V5 reassessment written in work before code; README link added only after oracles, not prospectively in README."
+}

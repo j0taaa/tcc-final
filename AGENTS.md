@@ -431,6 +431,26 @@ da trajetória/calibração. Zero novo modelo/head/forward/update/timing A60.
 Sem expansão full-V/nativa/treino/custo ou promoção só pelos oráculos.
 Ver60/work/result-v4.md; meta científica positiva continua aberta.
 
+A60 V5 f4c373d escreve antes de código ordens científicas IRRESTRITAS para
+valores não negativos, retornando par científico compacto. Corte da fonte no
+e/E, adder de diferença limitada e residual da mantissa dão índice polinomial;
+rotação/counters/unranking são clássicos. Bound exponencial vale para TODO NFT
+UNIVERSAL de uma passagem com aquela ordem de saída, não toda inferência.
+Primeiro321582c interrompido SIGINT130 no primeiro teste; traceback/fonte
+preservados7a8992d. V6 ee02f43 aplica trimming clássico antes do rerun: quatro
+oráculos PASS2.224s, valores de ordem+/-10^20,111 tapes principais/84 da família,
+seis coeficientes originais, quantis/CDFs/zeros/aliases. Suíte341 PASS98.678s.
+Coletor prospectivod7ade98 passa TODOS cinco tamanhos: caso construído2^32
+valores tem fonte37 estados, grafo bruto49017 e pós-trimming60; não é ganho
+neural/tempo. Oito critérios estavam escritos emwork antes do código, índice
+README só posterior: preservar desvio de localização. V7 ae454bd dá controle
+clássico COMPLETO escrito por CDF+busca da ordem+compilação só dessa faixa,
+O((S+E)L^3), também polinomial e sem fator bruto B. Não usar lower NFT para
+alegar separação exponencial de toda inferência numérica. Controle não foi
+implementado/medido. Novidade específica/uso/benefício/publicação abertos;
+zero novo head/forward/update/timing A60; sem campanha nativa acionada.
+Ver60/work/result-v8.md; não promover rotação ou localização como invenção.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

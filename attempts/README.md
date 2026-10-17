@@ -39,7 +39,7 @@ new seeds, cost/variance or independent campaign follows for this initialization
 
 | Pasta | Direção |
 | --- | --- |
-| [60-semantic-numeric-index](60-semantic-numeric-index/README.md) | CDF/quantis exatos por valor: quatro oráculos passam; inferência reproduzível por WFST clássico, novidade específica/uso útil abertos |
+| [60-semantic-numeric-index](60-semantic-numeric-index/README.md) | Quantis compactos para ordens científicas irrestritas passam; controle clássico de localização também polinomial, benefício próprio/uso real abertos |
 | [58-streamed-grammar-loss](58-streamed-grammar-loss/README.md) | Cabeça sintética completa: 680 registros sem erros, oito candidatas 0/8 gates contra controles fortes; família encerrada negativa |
 | [59-numeric-interval-infilling](59-numeric-interval-infilling/README.md) | Controle completo clássico empata linguagem e complexidade; corpus externo não demonstra uso próprio; sem campanha nativa |
 | [57-policy-ratio-moments](57-policy-ratio-moments/README.md) | Quatro oráculos exatos passam; Atlas/MIPS/PAPL já dão o mecanismo genérico, fica como diagnóstico sem campanha neural |

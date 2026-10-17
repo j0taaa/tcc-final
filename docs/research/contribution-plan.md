@@ -3082,3 +3082,41 @@ usefulness for a real consumer, and the original positive goal remain OPEN.
 Need that distinction BEFORE expanding, rather than multiplying oracle counts.
 All result/source/evidence links:60/work/result-v4.md. A59 and earlier failed
 campaigns remain unchanged; no methodological shortcut is credited as a win.
+
+
+## 2026-10-17 — A60 unrestricted orders and the stronger localization control
+
+BEFORE-code V5 f4c373d writes source-conditioned numerical quantiles for ALL
+nonnegative JSON magnitudes, compact scientific outputs, scalar path-weight
+bijection and polynomial complete costs. A block-swap argument gives exponential
+expanded size for ANY universal one-way NFT of the relation, even ambiguous.
+This is a restricted architecture result, not a lower bound on all inference.
+Classical marked cyclic shift supplies the source cut; Jiraskova/Okhotin2008
+Section2/Lemma1/Theorem1 were read directly. Gorman/Sproat4.1 and Machida/
+Shibakov's Introduction/Clinger scope are also recorded; no new generic rotation,
+number normalization or radix-conversion principle is claimed.
+
+Initial321582c is frozen before execution, then interrupted SIGINT130 in the
+first test's quantile traversal; source/full traceback preserved7a8992d. V6
+removes exact zero-suffix states by CLASSICAL trimming, written beforeee02f43.
+Same four oracles PASS2.224s, including orders+/-10^20, aliases, original-ID
+cuts inside tokens, empty emissions, zeros and quantile/CDF ties. Full341
+PASS98.678s; focused Ruff/format4 files PASS. Prospective capacity runnerd7ade98
+retains ALL five1/2/4/8/16 sizes, each with analytical mass/median/CDF PASS.
+Largest CONSTRUCTED family has2^32 values, original source37 states/68 edges,
+raw output49017/88728 and trimmed60/91. This is functionality and complete size
+accounting, not a neural/time/semantic gate or exclusive ability over controls.
+The eight-criterion V5 reassessment was written inwork before code; README
+index was only consolidated later, a location deviation retained explicitly.
+
+V7 ae454bd finds the stronger complete classical comparator: strict CDF below
+10^t via mantissa order and signed exponent comparison costs O((S+E)L^2).
+Binary search uses O(L)order bits, then compile ONLY the selected order with
+V1's unambiguous trailing-zero relation. Total one-quantile upper bound is
+O((S+E)L^3), without V5's coarse marker-cut factor. V7a uses the actual DAG
+longest byte path (L<=max(1,E)) for a uniform source-size statement. This is
+a written construction, not implemented/timed superiority or published priority.
+It demonstrates why the universal-NFT lower bound cannot justify an exponential
+capacity gap against complete numerical inference. No full-V/native/training/
+cost campaign is triggered. A60's specific useful difference and the positive
+user goal remain OPEN. Full chronology/claims:60/work/result-v8.md.

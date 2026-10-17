@@ -1,0 +1,12 @@
+test_all_magnitudes_aliases_and_zero_without_real_expansion (attempts.60-semantic-numeric-index.work.test_rotated_index_v5.RotatedIndexTests.test_all_magnitudes_aliases_and_zero_without_real_expansion) ... ok
+test_compact_source_of_independent_mantissa_and_exponent_blocks (attempts.60-semantic-numeric-index.work.test_rotated_index_v5.RotatedIndexTests.test_compact_source_of_independent_mantissa_and_exponent_blocks) ... ok
+test_original_ids_mid_token_marker_cuts_and_empty_tokens (attempts.60-semantic-numeric-index.work.test_rotated_index_v5.RotatedIndexTests.test_original_ids_mid_token_marker_cuts_and_empty_tokens) ... ok
+test_zero_only_law_refusals_and_threshold_endpoints (attempts.60-semantic-numeric-index.work.test_rotated_index_v5.RotatedIndexTests.test_zero_only_law_refusals_and_threshold_endpoints) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.224s
+
+OK
+{"unrestricted_word_tapes": 35, "semantic_atoms": 11, "compact_quantiles": 23, "compact_cdfs": 42, "extreme_order": "100000000000000000000"}
+{"capacity_oracle_not_timing": [{"block_digits": 1, "original_tapes": 4, "source_states": 7, "index_states": 15, "index_edges": 16}, {"block_digits": 2, "original_tapes": 16, "source_states": 9, "index_states": 18, "index_edges": 21}, {"block_digits": 3, "original_tapes": 64, "source_states": 11, "index_states": 21, "index_edges": 26}]}
+{"row_source_tapes": 76, "sources": 3, "original_id_coefficients": 6, "compact_quantiles": 40, "compact_cdfs": 80}

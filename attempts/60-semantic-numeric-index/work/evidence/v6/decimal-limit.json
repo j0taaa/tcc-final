@@ -1,0 +1,15 @@
+{
+  "MAX_EMAX": 999999999999999999,
+  "tests": [
+    {
+      "word": "1e100000000000000000000",
+      "status": "InvalidOperation",
+      "error": "[<class 'decimal.InvalidOperation'>]"
+    },
+    {
+      "word": "1e-100000000000000000000",
+      "status": "InvalidOperation",
+      "error": "[<class 'decimal.InvalidOperation'>]"
+    }
+  ]
+}

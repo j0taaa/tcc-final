@@ -76,6 +76,26 @@ cost remain open. No new neural campaign is credited to M70.
 - [ ] T8303: Full-V/EOT/PAD/native/model/training/cost campaign NOT TRIGGERED.
   More correctness checks alone do not justify it. Do not promote A60 as the
   article result or reopen A59's simple-core application from this prototype.
+- [x] T8304: V5 f4c373d BEFORE code extends the written operation to ALL
+  nonnegative scientific magnitudes/compact values, with polynomial source-cut
+  construction and exponential bound for any universal ONE-WAY NFT of that
+  relation (not all numerical algorithms). Classical rotation acknowledged.
+  Eight criteria written first inwork; README link only after oracles, an
+  explicitly retained location/indexing deviation. No priority/useful-win claim.
+- [x] T8305: Initial321582c interrupted SIGINT130 during first compact-quantile
+  test; full traceback/source preserved7a8992d, no four-test outcome claimed.
+  V6 trimming note BEFOREee02f43; SAME four oracles PASS2.224s,35+76 main tapes,
+  six original-ID coefficients,63 main quantiles/122 CDFs, plus84 tiny block
+  tapes/nine quantile-CDF pairs. Extreme orders+/-10^20 and signed zeros pass
+  without expanding enormous reals. Full341 PASS98.678s/Ruff+format4 files PASS.
+  Prospectived7ade98 collector passes all1/2/4/8/16 block sizes;2^32-value
+  constructed source37 states/raw index49017/trimmed60. No performance/model gate.
+- [x] T8306: Written COMPLETE localization controlae454bd gives strict-CDF
+  comparison O((S+E)L^2), O(L)order search then selected-order compilation;
+  quantile O((S+E)L^3), no global cut factor B. Not implemented/timed or a
+  published-priority finding. This removes the generic all-method capacity
+  justification while leaving V5's restricted NFT theorem intact. T8302's
+  own useful difference remains OPEN; no native/full-V/cost expansion triggered.
 
 ## M82 — Complete scientific-notation interval infilling, bounded compiler
 

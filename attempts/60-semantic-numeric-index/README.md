@@ -83,3 +83,46 @@ main-paper promotion is triggered. This does not fulfill the user's goal.
 See[the result](work/result-v4.md),[complete-control/reading audit](work/control-and-reading-v3.md)
 and[exact evidence](work/evidence/v1/summary.json). All eight criteria above
 remain active; correctness alone does not resolve criteria2/3/6/8.
+
+## V5--V8: unrestricted scientific orders, reassessment
+
+1. **Use:** exact compact CDF/quantiles over ALL nonnegative numerical values
+   of the same frozen source, including signed zero; no invented lower positive
+   cutoff. A real dLLM consumer of that head-local law remains to be validated.
+2. **Difference:** V5 writes a polynomial source-conditioned construction and
+   an exponential bound for ALL universal one-way NFTs of its normalization
+   relation, even nondeterministic. Block swaps/cyclic shift are classical;
+   specific numerical priority and sufficient own contribution remain OPEN.
+3. **Comparator:** V7's complete direct-CDF/order-localization control also
+   solves the operation polynomially, O((S+E)L^3) for one quantile, without
+   the coarse cut factor B. It is written, not implemented/timed. No useful
+   own speed/capacity advantage against all complete controls is established.
+4. **Proof:** V5 gives weighted path bijection, compact keys, arithmetic/bit
+   costs and the restricted lower bound BEFORE code. V7/V7a give the stronger
+   classical control and uniform-size clarification. Neither is Lean/human
+   review or proof of general decoder superiority.
+5. **Evidence:** final four rational oracles PASS2.224s; full341 PASS98.678s.
+   All five predeclared analytical capacity sizes pass, including2^32 distinct
+   CONSTRUCTED values. This is correctness/capacity, not useful model evidence.
+6. **Costs:** retain full source expansion, marker cuts, raw output graph,
+   beta/trimming, queries and rational bits. At the largest constructed case,
+   raw49017 states/88728 edges precede60 states/91 edges. Do not count only
+   the small final graph or confuse compact scientific output with a huge
+   expanded Fraction. No native/EOT/PAD/negative-nonzero/binary64 contract.
+7. **Objections:** source-aware cyclic shift and direct localization are
+   competent classical alternatives; neither is limited by the NFT bound.
+   A consumer may accept cheap approximate statistics or need another law.
+   No full-V/head/training/cost campaign is triggered by these tiny oracles.
+8. **Article:** specific priority, substantial own useful consequence, real
+   consumer and complete-cost comparison remain OPEN. Preserve the positive
+   mathematical/reference result without claiming the user's goal achieved.
+
+The BEFORE-code eight-criterion reassessment is in[V5](work/unrestricted-order-v5.md),
+commitf4c373d; its README index was added only AFTER the oracles, a location/
+indexing deviation from AGENTS.md's requested README-first workflow. Initial
+source321582c was source-frozen, then interrupted exit130 during its first
+quantile test; no four-test result is claimed for it. V6's classical trimming
+correction was written before sourceee02f43 and the final checks. Both sources
+and the interrupted log are preserved. See[the full result](work/result-v8.md),
+[complete localized control](work/localization-control-v7.md), and
+[raw evidence](work/evidence/v6/summary.json). V1 and its evidence remain literal.
