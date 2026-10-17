@@ -62,6 +62,9 @@ cost remain open. No new neural campaign is credited to M70.
   no environment installed. Ruff+format1 PASS, no new active tests/full-suite
   rerun. Metadata collector's initial system-Python mismatch is recorded.
   Full receipts62/work/evidence/v1, result62/work/result-v3.md.
+  Archivev1 preserves source885c614/evidence9df5399. Final make check exit0:
+  62 attempts/243 versions/183071 files; complete later integrity receipt
+  docs/evidence/a62-v1-final-make-check.log, not scientific validation.
 - [x] T8502: Original BEAVER Def2.2/4.1--4.3 and Yiu/Mamoulis/Tao2006 Section3/
   4.3 scopes read. Two shared-cache BEAVER upper bounds for complementary
   events reproduce EXACTLY the candidate's CDF bounds. Weighted endpoint
