@@ -119,7 +119,7 @@ def fixtures():
             "budget": 8,
             "offset": 0,
             "prefix": (),
-            "pins": {1: 10, 3: 7},
+            "pins": {1: 10, 3: 10},
         },
         {
             "name": "prefix_inside_number",
