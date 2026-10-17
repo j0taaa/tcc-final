@@ -1,0 +1,7 @@
+test_optimizer_state_commutes_with_permutation (attempts.58-streamed-grammar-loss.work.test_strong_head.StrongHeadTests.test_optimizer_state_commutes_with_permutation) ... ok
+test_original_ids_and_tied_full_gradient (attempts.58-streamed-grammar-loss.work.test_strong_head.StrongHeadTests.test_original_ids_and_tied_full_gradient) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.017s
+
+OK
