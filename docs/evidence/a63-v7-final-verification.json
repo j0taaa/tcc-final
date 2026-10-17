@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-17",
+  "make_check_exit_code_directly_observed": 0,
+  "complete_log": "docs/evidence/a63-v7-final-make-check.log",
+  "log_sha256": "6e9f7becda95c7f7dbd534be9a3e2769096adbd9c33dda3cb7a570155c8ba868",
+  "experimental_ruff_format": {
+    "commands": [
+      ".venv/bin/ruff check attempts/63-adaptive-six-coupling/work/*.py",
+      ".venv/bin/ruff format --check attempts/63-adaptive-six-coupling/work/*.py"
+    ],
+    "directly_observed_exit_code": 0,
+    "stdout": "All checks passed!\n8 files already formatted\n"
+  },
+  "maintained_full_test_suite_rerun": false,
+  "new_neural_forwards": 0,
+  "new_model_scalar_observation_readout": false,
+  "commits": {
+    "1d98530": "1d98530f395856b8ac073ddf380585e0d100bace",
+    "1aa4fec": "1aa4fecc3fcafce8379a21f9773e0737ce6525a3",
+    "2f2e86b": "2f2e86b85d688a5ef8131c79ab1795e7eeeaa071",
+    "3a196ac": "3a196acc94d1b712095c10d8546b561923cca58b",
+    "076799a": "076799a83514f783515c6daeb139f0b340e14ec8",
+    "c9730b8": "c9730b871f6cfc4e3efd46397bbadaef7cfc00f8",
+    "22863e2": "22863e21bd3634e9f628e249f5aba4401d152b52",
+    "0b64ca1": "0b64ca17c278a87cbb462f0b7e7a83b38a92aebb",
+    "e548752": "e548752d47ea3df7bfcef51dbe082e3ebf16845d"
+  },
+  "goal": "OPEN: no sufficient own priority or real useful full-cost operation established",
+  "scientific_scope": "Two full classical rank controls, optimal completion-preserving common part and exact polynomial audit. Written all-law gap7/18 and relative63/835 only against that conditional-tape class. Full-cost note corrected by separate accounting addendum. No generic factory/count/common-part novelty or native speed claim."
+}

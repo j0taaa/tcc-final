@@ -109,6 +109,16 @@ cost remain open. No new neural campaign is credited to M70.
   stored scalar readout. Original0907.4018v1 Sections2/3 count-coefficient
   construction read; no generic count compression/interval novelty claimed.
   Real competitive use/priority remain T8605 OPEN; no new neural phase.
+- [x] T8610: Archive v5-rank-controls/v6-common-part/v7-full-cost-audit,
+  preserving each source/evidence and separate cost correction. Experimental
+  Ruff+format8 PASS; final make check directly observed exit0:63 attempts250
+  versions188503 files. Actual full receipt docs/evidence/a63-v7-final-make-check.log
+  and commit/scope index a63-v7-final-verification.json. No full345-test rerun
+  or new scientific/model validation is credited to archive integrity.
+- [x] T8611: V9 read-only real-operation lead audit: NRCSE original Sections3.3/
+  3.4 identifies real two-phase ecological measurements; EPA intro/contents
+  only. No raw data or exact three-key/retained-first consumer established;
+  no field/model benefit or campaign. See63/work/application-leads-v9.md.
 
 ## M85 — Native RLM numerical quantile audit; complete control matches bound
 
