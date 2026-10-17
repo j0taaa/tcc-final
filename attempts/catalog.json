@@ -4522,13 +4522,22 @@
     {
       "id": "56-static-rounding-sampler",
       "title": "Certificados estáticos de arredondamento para posterior estruturado GPU",
-      "conclusion": "Written7fb3daf/b1f88d6 before arithmetic/GPU prototypes. Four rational audits pass; full311 PASS88.119s. Toy GPU185 exact masses/336 literal replays/4096 prefix outcomes16 events/14 PTX pass; underflow correctly uses unchanged directed fallback. Zero neural heads/forwards/competitive timings. Original ADZ1997 report16 pages now read, SHA9eb5910791f1, supplies direct static-error/retained-refinement antecedent. Reject new generic-mechanism claim; keep numerical artifact as competent control. Substantive own architecture/useful complete-cost advantage and goal remain OPEN. Initial wrong-environment import failure preserved; post-run runtime addendum does not relabel raw producer. v1 consolidates written V1 and bounded V2 preflight, not literal earliest code state.",
+      "conclusion": "Written7fb3daf/b1f88d6 before arithmetic/GPU prototypes. Four rational audits pass; full311 PASS88.119s. Toy GPU185 exact masses/336 literal replays/4096 prefix outcomes16 events/14 PTX pass; underflow correctly uses unchanged directed fallback. Zero neural heads/forwards/competitive timings. Original ADZ1997 report16 pages now read, SHA9eb5910791f1, supplies direct static-error/retained-refinement antecedent. Reject new generic-mechanism claim; keep numerical artifact as competent control. Substantive own architecture/useful complete-cost advantage and goal remain OPEN. Initial wrong-environment import failure preserved; post-run runtime addendum does not relabel raw producer. v1 consolidates written V1 and bounded V2 preflight, not literal earliest code state. Separate v2 boundary supplement executes8 original-protocol invalid-support/input/zero-mass checks; no word at zero mass. Initial185/336/4096 records unchanged. Both packets preserve17 UNIQUE frontend PTX modules. No stronger cost/novelty/use claim.",
       "reading": "attempts/56-static-rounding-sampler/README.md",
       "versions": [
         {
           "id": "v1",
           "source_commit": "0e9fff3e25c0b79864fa249fdd79b41c917e9a87",
           "evidence_commit": "1208eba2335393cff5190a0e6a3cf746be8ee0ba",
+          "evidence_roots": [
+            "attempts/56-static-rounding-sampler/README.md",
+            "attempts/56-static-rounding-sampler/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "6fc1adeb710786358323a7f38ddc3d920dcb9581",
+          "evidence_commit": "6fc1adeb710786358323a7f38ddc3d920dcb9581",
           "evidence_roots": [
             "attempts/56-static-rounding-sampler/README.md",
             "attempts/56-static-rounding-sampler/work"

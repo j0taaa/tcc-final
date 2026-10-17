@@ -57,6 +57,8 @@ cost remain open. No new neural campaign is credited to M70.
   zero-mass cases; no zero-mass word returned. Initial counts unchanged,
   17 UNIQUE new-frontend PTX modules across both packets. V1 archive stays
   literal; boundary supplement is a separate later version.
+  Final make check exit0 verifies56 attempts/232 versions/174981 files;
+  complete log docs/evidence/a56-v2-final-make-check.log. No partial log credited.
 - [x] T7901: Read full ORIGINAL ADZ1997 report16 pages after successful HAL
   retrieval, SHA9eb5910791f1; Lemma3.1 visually checked, §§3--5 supply direct
   static-error/retained-refinement antecedent. Reject a NEW generic mechanism
