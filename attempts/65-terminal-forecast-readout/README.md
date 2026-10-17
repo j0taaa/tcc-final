@@ -56,3 +56,9 @@ Read [actual source and primary scopes](work/source-audit-v1.md) and
 immutably for inspection; no third-party module, model, dataset row or result
 file was executed/read. Aggregate README results HAVE been seen and must be
 disclosed in any future protocol. All earlier failed branches remain closed.
+
+V2's [prospective three-oracle contract](work/oracle-contract-v2.md) refines
+criterion5 BEFORE reference code: exact native-kernel abstraction and complete
+absorbing toy traces, plus rendering and a wrong-normalization counterexample.
+The actual native adapter, sufficient own distinction and useful variance/cost
+remain OPEN; passing these oracles cannot trigger a large model campaign.
