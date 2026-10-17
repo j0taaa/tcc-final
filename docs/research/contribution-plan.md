@@ -26,6 +26,24 @@ precede code. Only a finite rational residual/law/query audit is justified
 next; no complete sampler/model/quality/performance campaign or article claim.
 Specific useful originality, full-cost benefit and the user's goal stay OPEN.
 
+V1 contractad5a55b/sourceb5064b2 precede ONE PASS0:966 conditional laws,
+40134 residual/callback checks,966 mass/term/setup checks,21 zero-H points,
+1032 collected coefficients9 guards; cap9 paths. Its enlarged2H input penalty
+25 vs41/2 on the spline remains explicitly preserved. AFTER V1, a sharper
+CLASSICAL Peano slope bound H/(3m) was derived in b7acbb0 BEFORE V2 source
+13e5aa1/ONE PASS0. V2 repeats all cases and adds41100 sharp slope checks/
+966 strict margins. Envelope mass19/24 and margin1/28 permit the SAME tighter
+H-gap source-count law with cap9 callbacks. This is a written comparative
+query consequence and finite law validation, not performance/practical use,
+specific priority or completion. Both raw directories/source commits remain
+independent; no full sampler, fast bit engine, p-coin draws or NN/timing.
+
+Further original Morina2.4.3, LKPR2009 Algorithms1--4 and NIST3.4 readings
+expand equally informed controls; scopes in68/work/primary-addendum-v2.md.
+The next requirement is T9102: complete-cost/closest coefficient-free control
+and real callback consumer. No artificial expensive callback benchmark or
+automatic full sampler/neural campaign; the user's objective remains OPEN.
+
 ## 2026-10-17 — A67 classical equal-access control removes proposed separation
 
 Actual original Sablonniere2004 Section2.2 gives the right partial-inverse

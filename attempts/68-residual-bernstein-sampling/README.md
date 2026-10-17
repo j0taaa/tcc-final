@@ -72,3 +72,11 @@ control, retaining <=9 calls. V1's input penalty is therefore removed in the
 WRITTEN V2 construction, not relabeled in V1 data. Remaining criteria and
 priority/full-cost/real-consumer obligations unchanged. Prospective audit and
 proof in[the addendum](work/same-count-theory-v2.md), before V2 execution.
+
+V2 proofb7acbb0/source13e5aa1 precede ONE PASS/direct0:966 exact laws,
+40134 residual/callback checks,41100 sharp slope checks,966 strict margins,
+21 zero-H points1032 collected weights9 guards. The written <=9-call theorem
+now has the SAME tighter source-count law; the finite reference audits
+conditional paths, not a complete sampler or timing. See[the V2 result](work/result-v2.md).
+Closest coefficient-free/signed/retrospective controls and real complete cost
+remain open; the positive scientific goal is NOT yet achieved.

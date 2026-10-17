@@ -21,6 +21,14 @@ V1 contratoad5a55b/sourceb5064b2 antes de ÚNICO PASS/direct0:966 leis,
 Não é sampler completo ou timing. Mantida penalidade25 vs41/2 moedas no
 spline. Próximo lead Peano reduz erro de slope, identificado DEPOIS; não
 atribuir aV1 e exigir outro freeze antes de código/check. Suíte345 não rerodada.
+V2 conclui esse passo com provab7acbb0 ANTES de source13e5aa1/ÚNICO PASS0:
+966 leis40134 resíduos/callbacks41100 slopes966 margens21 pontosH0
+1032 pesos9 recusas. Peano CLÁSSICO H/(3m) dá massa19H/(24m^1.5), margem
+1/28; mantém MESMA lei de moedas do controle gapH e cap9 queries. É vantagem
+ESCRITA de consultas, não timing/software completo/novidade suficiente.
+Nenhum sampler integral ou novo forward. Controles signed/importance/lazy/
+derivadas/cache/formulas e custo integral permanecem; não fabricar callback
+lento para vencer. PróximoT9102 antes de expansão; result68/work/result-v2.md.
 
 A67 V3 encerra a comparação próxima com controle CLÁSSICO n-1. Original
 Sablonniere2004 Section2.2 lido; fórmula de ordem2 DERIVADA da reprodução,

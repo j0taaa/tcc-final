@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "source_commit": "13e5aa14072473fe60db0c9232f6f1f7b17e39de",
+  "counts": {
+    "conditional_laws": 966,
+    "residual_points": 40134,
+    "envelope_mass_bounds": 966,
+    "term_bounds": 966,
+    "setup_call_checks": 966,
+    "optional_call_checks": 40134,
+    "zero_h_polynomial_points": 21,
+    "lower_bound_coefficients": 1032,
+    "sharp_slope_checks": 41100,
+    "safe_margin_checks": 966,
+    "guards": 9
+  },
+  "maximum_function_calls_per_enumerated_path": 9,
+  "input_cost_comparisons": [
+    {
+      "function": "constant",
+      "initial_degree": 16,
+      "matched_written_input_mean": "16",
+      "tighter_classical_written_input_mean": "16",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "affine",
+      "initial_degree": 16,
+      "matched_written_input_mean": "16",
+      "tighter_classical_written_input_mean": "16",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "quadratic",
+      "initial_degree": 16,
+      "matched_written_input_mean": "16",
+      "tighter_classical_written_input_mean": "16",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "cubic",
+      "initial_degree": 16,
+      "matched_written_input_mean": "41/2",
+      "tighter_classical_written_input_mean": "41/2",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "spline",
+      "initial_degree": 16,
+      "matched_written_input_mean": "41/2",
+      "tighter_classical_written_input_mean": "41/2",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "reflected_spline",
+      "initial_degree": 16,
+      "matched_written_input_mean": "41/2",
+      "tighter_classical_written_input_mean": "41/2",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    }
+  ],
+  "hashes": {
+    "residual_v2.py": "a4743a23d70c28d995d702dd4d01c46b2d067558a885913ac0f9bcdaeb6c83e9",
+    "audit_v2.py": "a15686a46331d85b19a0b8a77193a2ea8a5be0cb5d74b675dab71aa703cd31db",
+    "theory-v1.md": "78fcbb4490f59cf22703829b0897cad91ddd1e57554c1c656c505b0c8ccf9cc2",
+    "same-count-theory-v2.md": "539d0410756454f37e84f364a4e183ef32fd8bacf49796ac2a167af5b499b778",
+    "protocol-v1.json": "7c14984f63c9505dc9fd1fcba1e5f9ad410c7d80baba27dba733c6f5a2c1a231",
+    "primary-v1.md": "b1e90bbf068921136b54c85ee975f093f0b60fda03de93405d231d8df9f92033"
+  },
+  "scope": "Exhaustive small conditional laws, no full sampler/p-coins/NN/forwards/timing.",
+  "decision": "Correctness only; priority, complete cost and useful own contribution stay OPEN."
+}

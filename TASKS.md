@@ -71,12 +71,14 @@ cost remain open. No new neural campaign is credited to M70.
   integration controls, with input/bit/preparation costs and real consumer.
   No production implementation/campaign/article promotion from correctness
   alone. T9005/T8809/T8903 and positive goal stay OPEN until enough evidence.
-- [ ] T9104: V2 proof written AFTER V1 but BEFORE new code: classical Peano
-  slope bound H/(3m) lowers envelope mass to19H/(24m^1.5), safe margin1/28,
-  permits SAME tighter H-gap count law with<=9 callbacks. Freeze separate
-  source; repeat whole prescribed finite law audit plus independent first-
-  derivative checks. Do not attribute V2 law/bounds to V1 producer or infer
-  full-cost/priority from correctness. See68/work/same-count-theory-v2.md.
+- [x] T9104: V2 proofb7acbb0 AFTER V1 and BEFORE source13e5aa1/ONE PASS0.
+  Classical Peano slope H/(3m) lowers envelope mass19H/(24m^1.5), margin1/28,
+  permits SAME tighter H-gap count law with<=9 callbacks. All966 exact laws,
+  40134 residual/callback checks,41100 sharp slope checks966 margins,21 zero-H
+  points1032 collected weights9 guards PASS. No full sampler/fast bit engine/
+  p-coins/model/forward/timing. Tighter/direct controls remain; actual full
+  usefulness/priority/goal still open. Raw a68_residual_bernstein_v2_initial,
+  result68/work/result-v2.md. V1 source/data unchanged, not relabeled asV2.
 - [ ] T9103: Preserve source/proof/evidence independently, run appropriate
   checks, normal commit/push and verify upstream. No maintained345-test rerun
   solely for isolated mathematical audit or change to earlier frozen attempts.

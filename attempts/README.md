@@ -26,6 +26,11 @@ value calls per output adopts the classical n-1 operator and pays enlarged2H
 input-count costs. Importance/sign/mixture principles known; specific useful
 specialization/priority/full cost remain OPEN. Only a bounded exact law audit
 is next, no full sampler/neural campaign. A67 withdrawal remains in force.
+V1 enlarged2H and separate V2 same-count audits both pass966 conditional laws/
+40134 residual points. V2 adds41100 sharp derivative checks and966 strict
+margins, retaining cap9 with the SAME H-gap source-count law as the classical
+control. Written query benefit, not full cost/priority/goal completion. Both
+raw/source versions preserved; result68/work/result-v2.md.
 
 A67 V3 completes the closest-control comparison: classical quadratic
 reproduction with the SAME three-value stencil gives explicit envelopes and
