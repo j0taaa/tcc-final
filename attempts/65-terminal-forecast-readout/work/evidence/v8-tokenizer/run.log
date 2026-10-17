@@ -1,0 +1,1 @@
+{"status": "PREFLIGHT_PASS", "new_neural_forwards": 0, "model_instance_loaded": false, "runtime": {"torch": "2.8.0+cu128", "transformers": "4.57.1", "numpy": "2.4.6", "automata-lib": "9.2.0", "safetensors": "0.8.0"}, "ready": 8}

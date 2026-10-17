@@ -1,0 +1,32 @@
+{
+  "source_commit": "04c8cf9813e900b20be23a081388b8928237cd3d",
+  "command": ".venv-a52/bin/python -u attempts/65-terminal-forecast-readout/work/masked_resource.py --model-dir .cache/a52-model-metadata --output /tmp/a65-tokenizer-v8 --preflight-only",
+  "directly_observed_exit_code": 0,
+  "pretrained_tokenizer_loaded": true,
+  "model_instance_loaded": false,
+  "new_neural_forwards": 0,
+  "prompt_lengths": [
+    197,
+    351,
+    164,
+    191,
+    138,
+    139,
+    181,
+    169
+  ],
+  "weights_sha256_verified": true,
+  "all_eight_prompts_within_guard": true,
+  "files": [
+    {
+      "file": "run.log",
+      "bytes": 229,
+      "sha256": "b15c3e8d069b98a8c69eb5ea21920c9de649a71a758f63af7c3cbf28d9ce028a"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 32288,
+      "sha256": "40350fcac2f069042a719343818578e4c046cd68af191ab20436f9c18ac16bfd"
+    }
+  ]
+}
