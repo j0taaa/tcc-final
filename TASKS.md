@@ -64,8 +64,12 @@ cost remain open. No new neural campaign is credited to M70.
   at preselected mean1/2; fixed tolerance erases the growing gap. No literal
   float-rounding equality claimed. Natural exactness-essential consumer and
   specific priority required before a large campaign; goal stays OPEN.
-- [ ] T9208: Independently preserve V3 source/proof/raw/after-data deductions,
-  verify hashes/checks and normal upstream sync without scientific reruns.
+- [x] T9208: Independent V3 source2d15a05/evidencee88b9d0:760 files
+  11,507,769 bytes, create+original-Git/direct0; six frozen hashes match
+  worktree and source Git, own Ruff/format2 PASS. make check/direct0:
+  69 attempts273 versions209059 files8,095,876,451 bytes. Final receipt/log
+  docs/evidence/a69-v3-final-*. No scientific or345-test rerun; normal
+  commit/push follows. Priority/natural exactness-essential use still OPEN.
 - [x] T9200: Previous goal turn PROGRESS revalidated from c85e00b/upstream/
   remote and complete A68 negative raw/check receipts. No live scientific
   process required waiting/restart; unrelated PDF untouched. A68 stays closed.

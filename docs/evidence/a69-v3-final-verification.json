@@ -1,0 +1,53 @@
+{
+  "kind": "After-run preservation verification, not mathematical/scientific producer",
+  "proof_protocol_commit": "3b53b76f2755df67e265084f1cb3ca3069554408",
+  "source_commit": "2d15a0577ace8370a03424e2225ad510d0ed435e",
+  "evidence_commit": "e88b9d076ea7a3a3d49c33691d1e4d0071344b0d",
+  "scientific_direct_exit_code": 0,
+  "scientific_counts": {
+    "exact_score_norm_identities": 924,
+    "exact_bounded_polynomial_differences": 105,
+    "multiscale_majorant_sums": 349,
+    "global_rational_constant_certificates": 5,
+    "offcentre_induction_checks": 62,
+    "localisation_interference_budget_scales": 61,
+    "finite_auxiliary_word_transcripts": 21840,
+    "forced_finite_controllers": 30,
+    "invalid_input_guards": 10
+  },
+  "archive_original_git_direct_exit_code": 0,
+  "archive_files": 760,
+  "archive_uncompressed_bytes": 11507769,
+  "frozen_source_hashes_match_worktree_and_original_git": {
+    "finite_v3.py": "07b9dc00fd9eaa2ac71b928e04bf2d36fb987dbf31db477d0d752e25ae116d47",
+    "audit_v3.py": "99264225befc1b1cfdc75c9b38e31e3a1c6fd6259f3e9830e0bbd3afd9f54c45",
+    "separation.py": "109b26e8f8f0f2d7dbaa8ac0c78c7522a9f326641224fc2a4277f2eff0d9a302",
+    "quantitative-gap-v3.md": "83e5d77e403c293d6b722d7e2d0c1cd9eafd51bfdcbf1ed375667c5a8c613c26",
+    "protocol-v3.md": "a7b586286c69d63b6de9bdd48bdade75523114d7746ee71b6075da6972722cb3",
+    "primary-v3.md": "a6a8530672460237386d8a760bc75c731b2b4a0204abf13c99782e3383c17f8d"
+  },
+  "focused_ruff_format": {
+    "direct_exit_code": 0,
+    "files": 2
+  },
+  "make_check": {
+    "kind": "Preservation check, not scientific validation",
+    "command": [
+      "make",
+      "check"
+    ],
+    "direct_exit_code": 0,
+    "elapsed_seconds": 26.889682660985272,
+    "log": "docs/evidence/a69-v3-final-make-check.log",
+    "attempts": 69,
+    "versions": 273,
+    "preserved_files": 209059,
+    "uncompressed_bytes": 8095876451,
+    "sha256": "4ce1e418f61e0a76f127d6e302f3870af9ccd42b625cf3b4a3757b096dd3b09d"
+  },
+  "after_data_proof_use_note": "attempts/69-adaptive-factory-separation/work/proof-and-use-audit-v3.md",
+  "after_data_exact_tolerance_calculation": "docs/evidence/a69-v3-tolerance-audit.json",
+  "maintained_345_tests_rerun": false,
+  "limits": "General theorem written, finite certificate checks only. No priority or natural exactness-essential application; approximate f_2 is a mandatory strong control. No model/head/forward/timing/human review or achieved user goal.",
+  "goal": "OPEN"
+}

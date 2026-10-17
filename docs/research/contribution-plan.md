@@ -22,6 +22,12 @@ No rounded-float equality inferred. The construction is still artificial;
 natural exactness-essential usefulness and specific priority are OPEN.
 Original HNP2011 positive approximation/moment/Besov/lacunary scope read;
 general principles not claimed new. No large application campaign selected.
+
+V3 independent snapshot source2d15a05/evidencee88b9d0:760 files11,507,769
+bytes, create+original-Git/direct0. Six frozen hashes/Ruff+format2 PASS.
+make check/direct0:69 attempts273 versions209059 files8,095,876,451 bytes;
+final receipt/log docs/evidence/a69-v3-final-*. No new scientific/345-test
+rerun. Specific priority and natural exactness-essential relevance remain.
 ## 2026-10-17 — A69 candidate positive adaptivity capability, before a natural application
 
 Previous turn PROGRESS verified in c85e00b and A68's complete negative gate.

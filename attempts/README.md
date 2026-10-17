@@ -38,6 +38,9 @@ pointwise full-bit argument. Finite certificate audit passes924 norms/
 21840 tapes. After-data relevance audit keeps the cheap approximate control:
 f_2 error<1e-8 to all f_R at batch mean1/2. Exactness-essential use/priority
 still required; no practical/NN campaign. See[the V3 result](69-adaptive-factory-separation/work/result-v3.md).
+Independent V3 source2d15a05/evidencee88b9d0 preserves760 files, original-Git
+PASS; six hashes/Ruff+format2 PASS. make check/direct0:69 attempts273 versions,
+209059 files. No scientific/345-test rerun; final receipt docs/evidence/a69-v3-final-verification.json.
 
 A68 V6 supplies a validated classical retrospective/cached control. V7's
 complete prospective whole-cost screen is NEGATIVE:1140/1140 COMPLETE,

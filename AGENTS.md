@@ -1,5 +1,12 @@
 # AGENTS.md
 
+A69 V3 independent source2d15a05/evidencee88b9d0 archive760 files11.507.769
+bytes matches original Git/direct0; six hashes/Ruff+format2 PASS. make check
+direct0:69 attempts273 versions209059 files8.095.876.451 bytes. Final receipt
+docs/evidence/a69-v3-final-verification.json; no scientific/345-test rerun.
+Natural exactness-essential use and specific priority remain OPEN. Approximate
+f_2 control is mandatory; no new campaign from the constructed theorem alone.
+
 A69 V3 proof/protocol3b53b76 BEFORE source2d15a05/ONE PASS0: written adaptive
 input mean<2 vs optimum over ALL fully preselected kernels >=(R-3)/2048
 and<=R/4. Pointwise full bit-work separation charges binary R and an iid

@@ -5106,8 +5106,8 @@
     {
       "id": "69-adaptive-factory-separation",
       "title": "Separação candidata de capacidade adaptativa frente a lotes preselecionados",
-      "conclusion": "Prova escrita antes de código: factory adaptativo exato com esperança uniforme finita de INPUT calls e bit work pontualmente finito; resposta construída C1,1/não-C2 exclui média finita para TODO lote genuinamente preselecionado e consumido. Não é lower bound de todos samplers nem uso natural/novidade suficiente confirmados. Primeira auditoria executada antes do freeze por erro de fluxo, draft/HEAD protocolo/desvio preservados. Source2b2f22d antes do repeat PASS0:393312 transcrições60 leis231 normas41 escalas64 localizações e6 recusas. Objetos de prova finitos, sem benchmark/NN/forwards. Prova infinita, prioridade e consumidor útil permanecem abertos; meta não cumprida.",
-      "reading": "attempts/69-adaptive-factory-separation/work/finite-polynomial-gap-v2.md; attempts/69-adaptive-factory-separation/work/result-v1.md; attempts/69-adaptive-factory-separation/work/theory-v1.md; attempts/69-adaptive-factory-separation/work/freeze-deviation-v1.md",
+      "conclusion": "V3 prova escrita quantifica custo adaptativo de input<2 vs ótimo de TODO lote preselecionado/full em[(R-3)/2048,R/4], com argumento de trabalho total pontual que cobra R binário e oracle iid de custo aditivo. Fonte2d15a05 após prova/protocolo3b53b76 e antes de UM PASS0:924 normas105 diferenças349 somas21840 transcrições30 casos forçados10 recusas. Objetos finitos não mecanizam prova geral. Controle aproximado f_2 tem erro uniforme<1e-8 e batch mean1/2, podendo eliminar vantagem sob tolerância. Prioridade e uso natural que exija exatidão continuam abertos; sem NN/campanha prática/meta cumprida. V1/V2 e desvio original preservados.",
+      "reading": "attempts/69-adaptive-factory-separation/work/result-v3.md; attempts/69-adaptive-factory-separation/work/quantitative-gap-v3.md; attempts/69-adaptive-factory-separation/work/proof-and-use-audit-v3.md; attempts/69-adaptive-factory-separation/work/result-v1.md",
       "versions": [
         {
           "id": "v1-adaptive-capability-audit",
@@ -5127,6 +5127,18 @@
           "evidence_commit": "b280f53507ac5e02edfe7ab1437aa20340c9dd88",
           "evidence_roots": [
             "attempts/69-adaptive-factory-separation/work/finite-polynomial-gap-v2.md",
+            "attempts/69-adaptive-factory-separation/README.md"
+          ]
+        },
+        {
+          "id": "v3-quantitative-gap-certificates",
+          "source_commit": "2d15a0577ace8370a03424e2225ad510d0ed435e",
+          "evidence_commit": "e88b9d076ea7a3a3d49c33691d1e4d0071344b0d",
+          "evidence_roots": [
+            "docs/artifacts/raw/a69_quantitative_gap_v3_initial",
+            "docs/evidence/a69-v3-tolerance-audit.json",
+            "attempts/69-adaptive-factory-separation/work/result-v3.md",
+            "attempts/69-adaptive-factory-separation/work/proof-and-use-audit-v3.md",
             "attempts/69-adaptive-factory-separation/README.md"
           ]
         }
