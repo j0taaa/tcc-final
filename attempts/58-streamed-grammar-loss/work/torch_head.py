@@ -39,7 +39,9 @@ def grouped_head(hidden, classifier, bias, targets, mapping, panel=32):
                 for begin in range(0, len(ids), panel):
                     subset = ids[begin : begin + panel]
                     logits = h @ w[subset].T + b[subset]
-                    g = dz[:, cls, None] * torch.exp(logits - z[:, cls, None])
+                    norm = z[:, cls, None]
+                    norm = torch.where(torch.isfinite(norm), norm, torch.zeros_like(norm))
+                    g = dz[:, cls, None] * torch.exp(logits - norm)
                     g += dt[:, None] * (targets[:, None] == subset[None, :])
                     dh += g @ w[subset]
                     dw.index_add_(0, subset, g.T @ h)

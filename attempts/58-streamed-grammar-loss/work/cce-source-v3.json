@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/apple-aiml-research/ml-cross-entropy",
+  "commit": "3de376c106a1916bc5e1b619f9c77c87a461ee1c",
+  "cache": "/home/jota/.cache/tcc-final/a58/ml-cross-entropy",
+  "read_only": true,
+  "executed": false,
+  "sha256": {
+    "cut_cross_entropy/cce.py": "6ddd5a31b9a653a2f0b5ee0560b8de0bfe42d48523d12172c3adeb3c0da75c00",
+    "cut_cross_entropy/cce_lse_forward.py": "09d53533fa5ac65bc60277a7a6b6a3927cbbe7b0f02e64897cb355fded41eaf2",
+    "cut_cross_entropy/cce_backward.py": "530f4086c0f8b595708055d3e0575253e7328aaa3fa1fa96427f392468027e52",
+    "cut_cross_entropy/utils.py": "160cc9d2a6f4e015eb9ddae8dd920cc42354d97a59ea5fc8ae131bd34d2aaea9",
+    "pyproject.toml": "27279150367c52c784074e178bdf9f3a1b65d4b5ad589930d801a372062541b0"
+  }
+}

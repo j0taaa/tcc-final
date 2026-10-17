@@ -1,0 +1,12 @@
+{
+  "producer": "6ef8f37ab151e1d600bfcaa8bbbe87455079f2ec",
+  "status": "NEGATIVE_structural_zero_boundary",
+  "loss_finite": true,
+  "nonfinite_gradients": {
+    "H": 4,
+    "W": 4,
+    "bias": 2
+  },
+  "new_model_forwards": 0,
+  "new_model_parameters_read": 0
+}

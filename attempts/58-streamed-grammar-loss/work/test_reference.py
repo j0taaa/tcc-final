@@ -257,6 +257,34 @@ class GrammarLossTests(unittest.TestCase):
                     checks += actual.numel()
         print(json.dumps({"combined_loss_mass_full_gradient_checks": checks}))
 
+    def test_structurally_zero_class_has_zero_finite_head_gradient(self):
+        import torch
+
+        from .torch_head import grouped_head
+
+        h0 = torch.tensor([[0.1, 0.2], [0.3, -0.1]], dtype=torch.float64)
+        w0 = torch.tensor([[0.2, 0.3], [0.4, 0.2], [-0.5, 0.7], [0.1, -0.2]], dtype=torch.float64)
+        b0 = torch.tensor([0.0, -torch.inf, -torch.inf, 0.1], dtype=torch.float64)
+        outputs = []
+        for dense in (True, False):
+            h, w, b = [v.clone().requires_grad_() for v in (h0, w0, b0)]
+            if dense:
+                logits = h @ w.T + b
+                # Independent structural-zero baseline never differentiates
+                # an undefined all-minus-infinity class LSE.
+                loss = logits[:, [0, 3]].sum() + logits[[0, 1], [0, 3]].sum()
+            else:
+                z, t = grouped_head(h, w, b, torch.tensor([0, 3]), (0, 1, 1, 2), 1)
+                self.assertTrue(torch.isneginf(z[:, 1]).all())
+                loss = z[:, [0, 2]].sum() + t.sum()
+            loss.backward()
+            outputs.append((loss.detach(), *(v.grad for v in (h, w, b))))
+            self.assertTrue(all(torch.isfinite(v).all() for v in outputs[-1]))
+            self.assertTrue((w.grad[1:3] == 0).all())
+            self.assertTrue((b.grad[1:3] == 0).all())
+        for actual, expected in zip(*outputs, strict=True):
+            torch.testing.assert_close(actual, expected, atol=1e-15, rtol=1e-15)
+
 
 if __name__ == "__main__":
     unittest.main()

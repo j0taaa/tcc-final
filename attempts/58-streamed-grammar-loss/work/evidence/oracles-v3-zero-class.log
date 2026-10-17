@@ -1,0 +1,14 @@
+test_combined_consumer_against_original_id_dense_enumeration (attempts.58-streamed-grammar-loss.work.test_reference.GrammarLossTests.test_combined_consumer_against_original_id_dense_enumeration) ... ok
+test_exact_all_logits_against_independent_dual_enumeration (attempts.58-streamed-grammar-loss.work.test_reference.GrammarLossTests.test_exact_all_logits_against_independent_dual_enumeration) ... ok
+test_grouped_head_full_neural_chain_against_dense_autodiff (attempts.58-streamed-grammar-loss.work.test_reference.GrammarLossTests.test_grouped_head_full_neural_chain_against_dense_autodiff) ... ok
+test_prefix_occupancy_counterexample_and_refusals (attempts.58-streamed-grammar-loss.work.test_reference.GrammarLossTests.test_prefix_occupancy_counterexample_and_refusals) ... ok
+test_structurally_zero_class_has_zero_finite_head_gradient (attempts.58-streamed-grammar-loss.work.test_reference.GrammarLossTests.test_structurally_zero_class_has_zero_finite_head_gradient) ... ok
+test_tiny_global_probability_can_have_large_grammar_gradient (attempts.58-streamed-grammar-loss.work.test_reference.GrammarLossTests.test_tiny_global_probability_can_have_large_grammar_gradient) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.873s
+
+OK
+{"combined_loss_mass_full_gradient_checks": 252}
+{"exact_logit_derivatives": 252}
+{"CPU_full_head_max_abs_error": 1.7763568394002505e-15, "panel_widths": [1, 2, 4, 16], "neural_model_forwards": 0}
