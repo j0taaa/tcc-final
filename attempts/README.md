@@ -25,10 +25,12 @@ kernel reprojects log-marginals and still samples state paths at temperature0.
 A pre-code conditional-averaging/risk proof and three rational oracles pass
 (414 kernel leaves,414 whole absorbing leaves,78 rendering checks). These are
 classical-principle correctness results, not measured native calibration.
-No native adapter/head/forward/labels/timing yet. Exact two-decimal-grid DP,
-normalization/MAP and full ensembles are strong controls; useful terminal
-variance/own significance remain OPEN. See65-terminal-forecast-readout/work/
-result-v2.md and the documentation-task exposure addendum.
+Native correctness now PASS48/48 CPU/CUDA synthetic-logit records,96 steps
+and320 helpers; original IDs/control/RNG preserved. First16-row failed zero
+fixture draft and prospective correction preserved. No pretrained model/data/
+forward/label or competitive timing. Exact two-decimal-grid DP, normalization/
+MAP/full ensembles remain; useful native magnitude/own novelty OPEN. Current
+scope65-terminal-forecast-readout/work/native-result-v4.md.
 
 A64's prospective arbitrary-key distinct-four stop is rejected EXACTLY.
 One original solve returns INCONCLUSIVE; a later prewritten seven-row Farkas

@@ -1,5 +1,29 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A65 native correctness passes, synthetic scope remains explicit
+
+Prospective contract3a2b57e and adapter/oracle/runner3e62727 precede first native
+execution. Failed zero fixture draft16 CPU rows is preserved independently;
+written correctionc5a571b precedes runner2f55fc4 and full repeat48/48 CPU/CUDA.
+Native constrained-step functions execute96 times,560 proposals/320 helpers,
+with literal original IDs/controls/tensor/RNG preservation and cloned frozen
+kernel after live matcher advances. Eight ineligible originals skip helpers;
+all320 actual helpers complete. Independent path enumeration covers incomplete
+native support, with no claim those incomplete helpers were randomly exercised.
+Maximum marginal error1.9073504518019035e-6,120 exact independent mean checks,
+14 pinned native-source hashes intact. Evidencee8ddb26; result65/work/native-
+result-v4.md. This uses SYNTHETIC logits, no pretrained tokenizer/model/dataset/
+label/forward/update/competitive timing or maintained full-suite rerun. AST
+function extraction does not reproduce the whole vLLM service/model. Advancing
+fresh helper streams/restoring caller RNG does not prove finite-RNG iid law.
+
+Minimal native adaptation T8802 closes; useful variance/full-cost necessity and
+own significance remain OPEN. Before heads/golds, freeze input-only resource
+protocol with failure/zero cases and normalization/MAP/exact101-grid/whole
+ensemble controls. Local12GB GPU/16GB RAM does not reproduce reported26B/48GB;
+a smaller backbone must be named separately. Do not promote known conditional
+averaging or correct integration to goal completion.
+
 ## 2026-10-17 — A65 starts from actual typed forecasts, not another coupling cap
 
 Read-only Mosaic36945e4b source already consumes JSON probabilities in JevBench.

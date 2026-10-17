@@ -67,14 +67,18 @@ cost remain open. No new neural campaign is credited to M70.
   CLASSICAL and assumes exact same conditional terminal kernel. No new native
   or neural execution; JSON native_model_step_law is a SYNTHETIC control.
   No maintained full-suite rerun. Results/evidence8009d75 in65/work/result-v2.md.
-- [ ] T8802: Freeze and audit a minimal NATIVE resampling adapter without new
-  backbone forwards first. Complete capture of last actual log-marginal
-  reprojection, prefix/pins/node/budget/offset/control and literal RNG/tensor
-  restoration required. Synthetic heads are correctness evidence only. Do not
-  promote the rational proof wrapper to a validated serving integration.
-  Distinguish unused fresh randomness from saved RNG provenance: restoring
-  the same state before every helper is duplication, not independent draws.
-  Literal replay does not by itself verify the theorem's iid hypothesis.
+- [x] T8802: Native correctness only: contract/source copies3a2b57e before
+  adapter/oracle/runner3e62727. First actual run ERROR after16 CPU rows; exact
+  failed draft preserved. Written correctionc5a571b before runner2f55fc4 and
+  whole repeat PASS48/48 CPU/CUDA,96 full native steps/560 proposals including
+  320 helpers. Literal original IDs/tensors/control/RNG and post-advance cloned
+  kernel survive. Eight original partial outputs skip helpers; all320 actual
+  helpers complete. Incomplete native paths are independently enumerated, not
+  claimed as observed incomplete-helper draws. Max marginal error1.9074e-6,
+  120 exact post-run mean recomputations,14 native-source hashes unchanged.
+  Evidencee8ddb26,65/work/native-result-v4.md. SYNTHETIC logits only, no model/
+  pretrained tokenizer/data row/forward/update/competitive timing. AST original
+  functions, NOT full vLLM serving. Literal replay does not prove finite-RNG iid.
 - [ ] T8803: Before real heads/labels/timings, freeze a resource/variance-
   necessity protocol with input-only selection, zero/failure cases and all
   strong normalization/MAP/exact101-value-grid/whole-ensemble controls. Need

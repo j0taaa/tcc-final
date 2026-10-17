@@ -1,35 +1,35 @@
 # AGENTS.md
 
-A65 começa de consumidor REAL: Mosaic36945e4b/benchmarks/jevbench devolve
-probabilidades numéricas. Auditoria/prova2277130 e protocolo de oráculosb470a72
-precedem referência70ad390: três oráculos racionais PASS,414 folhas de kernel,
-414 folhas de cadeia absorvente/sete caminhos originais,78 checks de render.
-São objetos CONSTRUÍDOS, não resultados neurais. A prova clássica mantém média
-e reduz covariância por E[1/(1+M)] para M~Bin(N,alpha), incluindo auxiliares
-não terminais cobrados; risco quadrático diminui para TODO gold se houver
-variância terminal. Jensen/MBR/RAIL/mean forecasts são antecedentes, não teoria
-própria nova. Atalho média-antes-de-normalizar tem contraexemplo exato.
-Fonte real reprojeta LOG-MARGINAIS no commit convergido, temperatura0 ainda
-sorteia CAMINHOS e escolhe tokens por argmax nas arestas. Adaptador deve
-capturar esse kernel/estado/pins/offsets/budget antes de avançar matcher e
-condicionar à resposta INTEIRA concluída. Não substituir pelo produto original
-ou chamar modelo de novo para auxiliares. Ainda NÃO há adaptador/replay nativo,
-head/forward/update/label/timing novo ou suíte completa rerodada. A chave JSON
-native_model_step_law refere-se só à cadeia SINTÉTICA. Fonte/antecedentes MIT
-copiados/hashados; módulo externo não executado. Um exemplo público concreto
-hard-sol-b-judge_hard-18 e agregados README FORAM vistos; nenhum arquivo de
-dataset/gold/resultados foi carregado. exposure-addendum-v2.md distingue isso.
-Próximo: protocolo/replay nativo SEM forward; depois protocolo independente
-de recursos/variância necessária e controles normalização/MAP/DP exato/ensembles
-ANTES de heads. Campo nativo tem só DUAS casas decimais: DP clássico por soma
-é controle forte, não inventar vantagem por precisão arbitrária. Setup26B/48GB
-não foi reproduzido na GPU local12GB. Variância final pode ser irrelevante;
-não inferir acurácia/ECE/Capability, novidade suficiente ou meta cumprida.
-Snapshots RNG servem a replay/restauração; H da prova não condiciona bits
-aleatórios ainda não usados. Auxiliares exigem draws frescos independentes:
-resetar o RNG ao mesmo estado antes de CADA helper só repete a amostra, não
-prova independência. Replay literal não mecaniza essa hipótese probabilística.
-Escopo/resultados em65-terminal-forecast-readout/work/result-v2.md.
+A65 parte do consumidor real Mosaic36945e4b/JevBench. Prova clássica de média
+condicional/oráculos racionais2277130/b470a72/source70ad390 já preservados.
+Replay nativo agora PASS48/48 CPU/CUDA,96 passos com logits SINTÉTICOS,
+560 propostas nativas incluindo320 helpers. Contrato3a2b57e e source3e62727
+precedem execução. Primeiro draft falhou após16 registros por fixture zero
+extensível; cópia/evidência intactas em65/work/evidence/v3-draft. Correção
+escrita c5a571b e runner2f55fc4 precedem repetição inteira/evidênciae8ddb26.
+Captura LOG-MARGINAIS reais da função nativa, pins/offset/prefixo/nó/budget;
+IDs originais/tensores/RNG mantidos literalmente. Avançar matcher e sobrescrever
+buffer depois da captura não muda helper. Todos320 helpers sorteados completam;
+oito primeiros resultados parciais são ineligíveis e pulam helpers. Fronteira
+não terminal é enumerada independentemente; branch helper incompleto após
+primeiro elegível foi exercitado no racional, não por draws nativos aqui.
+Erro marginal máximo1.9073504518019035e-6<5e-5,120 médias recomputadas com
+Fractions/14 hashes nativos intactos. Funções originais extraídas sem mudar
+corpos; NÃO é serviço vLLM/modelo/consumer completo reproduzido. Nenhum novo
+head/forward/update/label/timing competitivo ou suíte mantida rerodada.
+Snapshots RNG são proveniência: H da prova exclui bits futuros não usados.
+Stream helper é semeado uma vez e avança; replay NÃO prova lei iid finita.
+Jensen/MBR/RAIL/mean forecasts são antecedentes, não teoria própria nova.
+Campo original tem só duas casas: DP clássico exato101 valores/soma e
+normalização/MAP/ensembles são controles fortes. Ganho all-gold depende de
+variância terminal real, que pode ser irrelevante. Próximo: protocolo de
+recursos/necessidade ANTES de heads/golds, com seleção input-only/custos
+completos/casos negativos preservados. Setup original26B/48GB não foi
+reproduzido na máquina local12GB GPU/16GB RAM. Outro modelo é OUTRO escopo.
+Um exemplo público hard-sol-b-judge_hard-18 e agregados README foram vistos;
+nenhum arquivo de dataset/gold/resultados carregado. Não declarar calibração,
+acurácia/ECE/Capability, novidade suficiente ou meta cumprida. Escopo atual
+em65-terminal-forecast-readout/work/native-result-v4.md.
 
 A64 testa uma consequência DIFERENTE, com qualquer número de chaves: mesmo
 par ordenado do matching clássico de seis e parada após quatro distintas.
