@@ -147,3 +147,12 @@ score costs and informed/larger/regression controls remain obligations.
 The initial finite count LP is only a small proof prototype, with no new model
 campaign, priority or article promotion. A general3B/4 lower bound is written;
 attainment at that asymptotic rate is a CONJECTURE, not an achieved result.
+
+V10 subsequently verifies all eight U3 optima, including SMALL strict odd-cap
+work savings, but selected cap11 costs23/3 at a point mass, above its U3 value.
+This is explicitly NOT a family minimax theorem. V11's
+[prospective Schur certificate](work/schur-contract-v11.md) seeks a different
+primal on the SAME optimal face with a classical sufficient all-law bound.
+All8 criteria remain: own candidate is the work consequence, not Schur/LP,
+and real-use/priority are open. Numerical cone failure is inconclusive about
+the true minimax value. No new neural campaign or asymptotic claim follows.
