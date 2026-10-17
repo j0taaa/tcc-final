@@ -4993,8 +4993,8 @@
     {
       "id": "67-local-bernstein-factory",
       "title": "Envelopes efetivos locais para fábrica de Bernoulli",
-      "conclusion": "Construção escrita com três valores/constantes explícitas e auditoria racional de coeficientes PASS; HNP já fornece capacidade smooth e controles polinomiais são mais baratos. Prioridade/ganho integral ainda abertos; sem sampler completo ou evidência neural.",
-      "reading": "attempts/67-local-bernstein-factory/work/result-v1.md; attempts/67-local-bernstein-factory/work/theory-v1.md",
+      "conclusion": "V1 permanece correta nos oráculos, mas V3 deriva controle clássico n-1 com mesmo stencil local/rota de bits e constantes melhores no caso fixado. Auditoria exata passa; separação genérica proposta retirada. Sem sampler completo, campanha ou contribuição própria útil confirmada; meta aberta.",
+      "reading": "attempts/67-local-bernstein-factory/work/result-v3.md; attempts/67-local-bernstein-factory/work/quasi-comparison-v3.md; attempts/67-local-bernstein-factory/work/result-v1.md",
       "versions": [
         {
           "id": "v1-local-coefficient-audit",
@@ -5004,6 +5004,18 @@
             "docs/artifacts/raw/a67_local_bernstein_v1_initial",
             "attempts/67-local-bernstein-factory/work/result-v1.md",
             "attempts/67-local-bernstein-factory/work/cold-value-cost-v2.md",
+            "attempts/67-local-bernstein-factory/README.md"
+          ]
+        },
+        {
+          "id": "v3-classical-local-control",
+          "source_commit": "2b3c338e8093fb6ef248cfba2060477b3649b63d",
+          "evidence_commit": "734d652e1709025d5e52083c5397de5c07916be5",
+          "evidence_roots": [
+            "docs/artifacts/raw/a67_classical_quasi_v3_initial",
+            "attempts/67-local-bernstein-factory/work/result-v3.md",
+            "attempts/67-local-bernstein-factory/work/quasi-comparison-v3.md",
+            "attempts/67-local-bernstein-factory/work/primary-v3.md",
             "attempts/67-local-bernstein-factory/README.md"
           ]
         }

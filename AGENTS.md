@@ -15,6 +15,10 @@ zero sampler/p-coins/head/forwards/treino/timing novos. Suíte345 não rerodada.
 V1/provas/dados antigos intactos. Decisão67/work/result-v3.md; T9002 fechado,
 T9005 exige consequência útil própria ou nova operação antes de expansão.
 Prioridade/publicação/meta positiva permanecem ABERTAS.
+V3 independente source2b3c338/evidence734d652 preserva735 arquivos; create+Git
+PASS, sete hashes e quatro arquivosV1 intactos. make check PASS67 tentativas/
+263 versões199291 arquivos7.968.659.972 bytes; Ruff/format2 próprios PASS.
+Recibo docs/evidence/a67-v3-final-verification.json. Não é vitória científica.
 
 A67 abre recorte construtivo de fábrica de Bernoulli, ANTES de código/testes:
 valor-only f C2 com f'' Lipschitz, range/curvatura fornecidos; stencil de três

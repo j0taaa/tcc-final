@@ -27,6 +27,9 @@ elevations PASS; V1's proposed generic separation is withdrawn. No full
 sampler/campaign is triggered. See[the decision](67-local-bernstein-factory/work/result-v3.md).
 Earlier V1 and its restricted Boolean-sum comparison remain preserved; the
 positive scientific goal and a useful own distinction remain OPEN.
+Independent V3 source2b3c338/evidence734d652,735 files matches original Git;
+make check67 attempts263 versions PASS. Seven source hashes/four intact V1
+files and own Ruff/format2 PASS; no maintained345-test rerun.
 
 A67 writes a constructive value-only Bernoulli factory BEFORE code/tests:
 explicit three-value coefficients, power-of4 consistency/positive mixture,

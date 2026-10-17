@@ -27,6 +27,13 @@ positive scientific goal, priority/publication and T8809/T8903 stay OPEN.
 Full source-reading limits, written proof and decision in
 attempts/67-local-bernstein-factory/work/{primary-v3,quasi-comparison-v3,result-v3}.md.
 
+Independent V3 source2b3c338/evidence734d652 has735 files11,420,922 bytes;
+creation plus original-Git comparison PASS. Seven frozen hashes/four unchanged
+V1 files and focused Ruff/format2 pass. make check directly exits0:67 attempts,
+263 versions199291 files7,968,659,972 bytes. Receipts in
+docs/evidence/a67-v3-final-{make-check.log,verification.json}; no maintained
+345-test rerun or further science execution for preservation.
+
 ## 2026-10-17 — A67 constructive effective factory candidate, proof first
 
 Previous turn is verified progress (A66 exact source/interface audit), not

@@ -83,9 +83,13 @@ cost remain open. No new neural campaign is credited to M70.
   262 versions,198556 files7,957,239,050 bytes. Full receipts in
   docs/evidence/a67-v1-final-{make-check.log,verification.json}. Integrity is
   not proof of own novelty, full-cost benefit or achieved user goal.
-- [ ] T9004: Preserve V3 classical-control proof/source/evidence independently,
-  verify hashes/checks, normal commit/push and upstream identity. No new
-  scientific cases or rerun of maintained345 tests solely for isolated audit.
+- [x] T9004: V3 independent archive source2b3c338/evidence734d652,735 files
+  11,420,922 bytes; create+original-Git comparison/direct0. Seven frozen hashes
+  and four unchanged V1 files agree with original Git; focused Ruff/format2
+  PASS. Final make check/direct0:67 attempts263 versions199291 files
+  7,968,659,972 bytes. Receipts docs/evidence/a67-v3-final-{make-check.log,
+  verification.json}. Normal commit/push followed; no new science case or
+  maintained345-test rerun. Integrity is not the positive scientific objective.
 - [ ] T9005: Before further substantial implementation, identify a useful
   own consequence beyond the equally informed local classical control, or
   justify another operation from primary sources. Do not tune degree/stencil/
