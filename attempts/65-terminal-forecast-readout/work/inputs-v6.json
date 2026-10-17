@@ -1,0 +1,1419 @@
+{
+  "source": "https://github.com/fstandhartinger/jevbench",
+  "revision": "1bcc55eb6c8cffde2306b3db03ede39b61c6152a",
+  "contract": "masked-resource-contract-v6.md",
+  "counts": {
+    "easy": {
+      "all": 48,
+      "eligible": 48
+    },
+    "original": {
+      "all": 72,
+      "eligible": 72
+    },
+    "hard": {
+      "all": 111,
+      "eligible": 74
+    }
+  },
+  "source_files": [
+    {
+      "tier": "easy",
+      "url": "https://raw.githubusercontent.com/fstandhartinger/jevbench/1bcc55eb6c8cffde2306b3db03ede39b61c6152a/datasets/public/easy.jsonl",
+      "bytes": 37220,
+      "sha256": "231df3c2c8e88a1a8c137ebe85de96ba70fabd330849098ac7b3c52c70b7172b"
+    },
+    {
+      "tier": "original",
+      "url": "https://raw.githubusercontent.com/fstandhartinger/jevbench/1bcc55eb6c8cffde2306b3db03ede39b61c6152a/datasets/public/original.jsonl",
+      "bytes": 57237,
+      "sha256": "5c2414edb3006b8bfcb70fda433f0f9ca015759433849f8d3104328a1f7c4180"
+    },
+    {
+      "tier": "hard",
+      "url": "https://raw.githubusercontent.com/fstandhartinger/jevbench/1bcc55eb6c8cffde2306b3db03ede39b61c6152a/datasets/public/hard.jsonl",
+      "bytes": 651848,
+      "sha256": "89e9e6becb33ed88c1de7d42dcc87531b2fb64cfaef4e1986faf7c37b3f80ebb"
+    }
+  ],
+  "gold_bytes_decoded_to_discard": true,
+  "gold_values_used_for_selection_or_generation": false,
+  "no_pristine_independent_corpus_claim": true,
+  "selected": [
+    {
+      "rank": 0,
+      "input": {
+        "id": "original-routing-02-0",
+        "state": "Write a Python function that reverses a list; no files need editing.",
+        "question": {
+          "criteria": {
+            "coding": "Self-contained code writing or explanation without repository operations",
+            "coding_agent": "Inspect/edit repository files or run tests",
+            "document": "Answer from a supplied document",
+            "general": "None of the specialist categories",
+            "math": "Self-contained calculation or proof",
+            "tools": "Carry out an external service action"
+          },
+          "instructions": "Choose the specialist needed for the request. File edits with test execution use coding_agent, even if code-related.",
+          "type": "choice"
+        },
+        "labels": [
+          "math",
+          "coding",
+          "coding_agent",
+          "document",
+          "tools",
+          "general"
+        ]
+      },
+      "input_sha256": "002d5027c7a419a26f2b43f4994f4173b907ee3bb29a3c0dd12e05302ccd6a6d",
+      "tier": "original"
+    },
+    {
+      "rank": 1,
+      "input": {
+        "id": "hard-sol-b-temporal_numeric-01",
+        "state": {
+          "event": "The reply arrived Wednesday March 11, 2026 at 13:30 New York local time.",
+          "rules": "A support window is measured in New York local time. It opens at 09:00 on the first business day after a notice is received and lasts exactly 52 hours of elapsed time. Business days only determine opening; after opening, weekends do not pause it. Notice was received Friday March 6, 2026 at 18:10 New York time. Saturday and Sunday are nonbusiness days. In 2026 New York daylight saving time begins Sunday March 8 at 02:00, when clocks jump to 03:00. There are no holidays."
+        },
+        "question": {
+          "criteria": {
+            "before_open": "The event occurred before the window opened.",
+            "late_by_2h_or_more": "The event was at least two hours late.",
+            "late_by_under_2h": "The event occurred after closing but less than two hours late.",
+            "within_window": "The event occurred from opening through the exact closing instant."
+          },
+          "instructions": "Apply all stated timing, unit, inclusion, correction, and threshold rules; select the exact band.",
+          "type": "choice"
+        },
+        "labels": [
+          "before_open",
+          "within_window",
+          "late_by_under_2h",
+          "late_by_2h_or_more"
+        ]
+      },
+      "input_sha256": "007a4cd9376d2010b6d8eee1cd55f727da6e10acfa34cd7cb4c5e77d4e4eecb9",
+      "tier": "hard"
+    },
+    {
+      "rank": 2,
+      "input": {
+        "id": "original-intent-01-0",
+        "state": "Do not cancel my membership. Please return the duplicate charge.",
+        "question": {
+          "criteria": {
+            "cancel": "End an existing subscription",
+            "change_address": "Modify a delivery address",
+            "other": "None of these actions is requested",
+            "refund": "Return money already charged",
+            "status": "Learn delivery progress"
+          },
+          "instructions": "Select the primary requested action. A mention without a request does not establish intent.",
+          "type": "choice"
+        },
+        "labels": [
+          "cancel",
+          "refund",
+          "status",
+          "change_address",
+          "other"
+        ]
+      },
+      "input_sha256": "00d99f190b214924974c329da78c98abc78a33131825f50c91a21d0160cd1250",
+      "tier": "original"
+    },
+    {
+      "rank": 3,
+      "input": {
+        "id": "original-routing-06-1",
+        "state": "Give me three creative pet-dragon names.",
+        "question": {
+          "criteria": {
+            "coding": "Self-contained code writing or explanation without repository operations",
+            "coding_agent": "Inspect/edit repository files or run tests",
+            "document": "Answer from a supplied document",
+            "general": "None of the specialist categories",
+            "math": "Self-contained calculation or proof",
+            "tools": "Carry out an external service action"
+          },
+          "instructions": "Choose the specialist needed for the request. File edits with test execution use coding_agent, even if code-related.",
+          "type": "choice"
+        },
+        "labels": [
+          "math",
+          "coding",
+          "coding_agent",
+          "document",
+          "tools",
+          "general"
+        ]
+      },
+      "input_sha256": "00fda5467beec364997f0d41b5ad9f869385342ef473824c4863771677f12f37",
+      "tier": "original"
+    },
+    {
+      "rank": 4,
+      "input": {
+        "id": "original-adequacy-05-1",
+        "state": "Task requires exactly two words; the response is All done now.",
+        "question": {
+          "criteria": {
+            "false": "Wrong, incomplete, unsupported or violates a constraint",
+            "true": "Correct, complete, and follows all explicit constraints"
+          },
+          "instructions": "Does the response fully satisfy the request, using the supplied reference when present?",
+          "type": "noul"
+        },
+        "labels": [
+          "no",
+          "yes"
+        ]
+      },
+      "input_sha256": "0373b19bbb6a75585a868ee315d8bc0841de97fd849756586dff967587860d52",
+      "tier": "original"
+    },
+    {
+      "rank": 5,
+      "input": {
+        "id": "easy-extraction-05",
+        "state": "Ticket #90 - Priority: URGENT - Production database is down.",
+        "question": {
+          "criteria": {
+            "high": "High priority",
+            "low": "Low priority",
+            "medium": "Medium priority",
+            "urgent": "Urgent / critical"
+          },
+          "instructions": "Which priority does the ticket state?",
+          "type": "choice"
+        },
+        "labels": [
+          "low",
+          "medium",
+          "high",
+          "urgent"
+        ]
+      },
+      "input_sha256": "04acad080f8aaf313c4de5fa30a4a619bdfc28cfebe13059afab106ba785af64",
+      "tier": "easy"
+    },
+    {
+      "rank": 6,
+      "input": {
+        "id": "original-ordinal-06-1",
+        "state": "Order editing, a core function, is blocked for many users. Viewing orders is possible; nothing has been lost.",
+        "question": {
+          "criteria": [
+            "No function impaired; cosmetic only",
+            "One user or a nonessential function impaired, with a workaround",
+            "Many users blocked from a core function, no data loss",
+            "Confirmed irreversible data loss or physical harm"
+          ],
+          "instructions": "Rate incident impact using only reported facts. Use the highest fully supported level.",
+          "type": "score"
+        },
+        "labels": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "input_sha256": "05896282ce231d8d045d8cbbe01466f48130a70b482f78af3c952095fede792e",
+      "tier": "original"
+    },
+    {
+      "rank": 7,
+      "input": {
+        "id": "original-ordinal-03-0",
+        "state": "All customers cannot sign in. No records are lost.",
+        "question": {
+          "criteria": [
+            "No function impaired; cosmetic only",
+            "One user or a nonessential function impaired, with a workaround",
+            "Many users blocked from a core function, no data loss",
+            "Confirmed irreversible data loss or physical harm"
+          ],
+          "instructions": "Rate incident impact using only reported facts. Use the highest fully supported level.",
+          "type": "score"
+        },
+        "labels": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "input_sha256": "06a17413376c8899ce42e4fc1ad72049c4a69902a44b7df974def352761cc3c3",
+      "tier": "original"
+    }
+  ],
+  "all_candidate_ranks": [
+    {
+      "rank": 0,
+      "id": "original-routing-02-0",
+      "tier": "original",
+      "input_sha256": "002d5027c7a419a26f2b43f4994f4173b907ee3bb29a3c0dd12e05302ccd6a6d"
+    },
+    {
+      "rank": 1,
+      "id": "hard-sol-b-temporal_numeric-01",
+      "tier": "hard",
+      "input_sha256": "007a4cd9376d2010b6d8eee1cd55f727da6e10acfa34cd7cb4c5e77d4e4eecb9"
+    },
+    {
+      "rank": 2,
+      "id": "original-intent-01-0",
+      "tier": "original",
+      "input_sha256": "00d99f190b214924974c329da78c98abc78a33131825f50c91a21d0160cd1250"
+    },
+    {
+      "rank": 3,
+      "id": "original-routing-06-1",
+      "tier": "original",
+      "input_sha256": "00fda5467beec364997f0d41b5ad9f869385342ef473824c4863771677f12f37"
+    },
+    {
+      "rank": 4,
+      "id": "original-adequacy-05-1",
+      "tier": "original",
+      "input_sha256": "0373b19bbb6a75585a868ee315d8bc0841de97fd849756586dff967587860d52"
+    },
+    {
+      "rank": 5,
+      "id": "easy-extraction-05",
+      "tier": "easy",
+      "input_sha256": "04acad080f8aaf313c4de5fa30a4a619bdfc28cfebe13059afab106ba785af64"
+    },
+    {
+      "rank": 6,
+      "id": "original-ordinal-06-1",
+      "tier": "original",
+      "input_sha256": "05896282ce231d8d045d8cbbe01466f48130a70b482f78af3c952095fede792e"
+    },
+    {
+      "rank": 7,
+      "id": "original-ordinal-03-0",
+      "tier": "original",
+      "input_sha256": "06a17413376c8899ce42e4fc1ad72049c4a69902a44b7df974def352761cc3c3"
+    },
+    {
+      "rank": 8,
+      "id": "hard-opus-b-tradeoff-03",
+      "tier": "hard",
+      "input_sha256": "0730144e8d7e46a4e9cd4cd7fd9a85641fbbf9f0118518b8c0e8a26a8f5040de"
+    },
+    {
+      "rank": 9,
+      "id": "original-policy-01-0",
+      "tier": "original",
+      "input_sha256": "08e845c10db9e6cf2b7e8a6e18decd5f580cde02f06f023a29d489686a09b2c5"
+    },
+    {
+      "rank": 10,
+      "id": "hard-opus-c-temporal_numeric-02",
+      "tier": "hard",
+      "input_sha256": "0a090d724d5488dc16960c973a0c929bbe05e8334c9d3b2975f616760de387f2"
+    },
+    {
+      "rank": 11,
+      "id": "easy-extraction-08",
+      "tier": "easy",
+      "input_sha256": "0ab2674511e3fd03b5a34557411a5dc6177ed86a529a28e1707cf18782863f4c"
+    },
+    {
+      "rank": 12,
+      "id": "original-policy-05-0",
+      "tier": "original",
+      "input_sha256": "0ad7cfbd0c5e835254a18454e0e70c203186017b1d5812261d2f9d4c7b46a144"
+    },
+    {
+      "rank": 13,
+      "id": "easy-tool_selection-09",
+      "tier": "easy",
+      "input_sha256": "0c6e688046a02e8e97a63cb2510c3114b9675037d8a934a051a8687ea55db151"
+    },
+    {
+      "rank": 14,
+      "id": "original-routing-01-0",
+      "tier": "original",
+      "input_sha256": "0cb62424f7de93d9f557620ba87ec66121b3ec2827e1e62f557442bd84639571"
+    },
+    {
+      "rank": 15,
+      "id": "hard-opus-b-probability-01",
+      "tier": "hard",
+      "input_sha256": "0fc34387e94c03dd8a4e73ef600f25ef79ab64cb66988c66cb94efef58f9087b"
+    },
+    {
+      "rank": 16,
+      "id": "hard-sol-c-judge_hard-10",
+      "tier": "hard",
+      "input_sha256": "10c0ad15172d8201cd5a783d1606503e49626324440ed45fd2cf406280984d2c"
+    },
+    {
+      "rank": 17,
+      "id": "original-extraction-02-0",
+      "tier": "original",
+      "input_sha256": "154ecb5b51fe9c2603e376528dad7131f51ac35779e6545f9cb9d7ad0c3b54d1"
+    },
+    {
+      "rank": 18,
+      "id": "hard-opus-b-ambiguous-03",
+      "tier": "hard",
+      "input_sha256": "15b49d724d86b30da560c9ee42fd2ac0c47b02e7283eeac0229ff949a4dd924d"
+    },
+    {
+      "rank": 19,
+      "id": "hard-opus-c-probability-03",
+      "tier": "hard",
+      "input_sha256": "18854a8f9c3c4e07c53515bf0cd08fd1f3b33c72818b8d0bb4f84419bcbe4857"
+    },
+    {
+      "rank": 20,
+      "id": "hard-sol-c-judge_hard-11",
+      "tier": "hard",
+      "input_sha256": "1988d9d22b9f54adb6488e1dee794eb553e18a5c6bd33a1be6cc27bb7b913450"
+    },
+    {
+      "rank": 21,
+      "id": "easy-intent-09",
+      "tier": "easy",
+      "input_sha256": "19ac25883360eefa1a9159625ad2a0a3ea9412497317444d9163ff646b8b266c"
+    },
+    {
+      "rank": 22,
+      "id": "hard-opus-a-temporal_numeric-07",
+      "tier": "hard",
+      "input_sha256": "1a30a9bc98a3e89cee62eccd6868425cdcfe1b49bc46b2836354587b5cb34373"
+    },
+    {
+      "rank": 23,
+      "id": "original-ordinal-04-1",
+      "tier": "original",
+      "input_sha256": "1a35c01cf3c0f54150277da25d35a99baba8e3e710da75d48a7147fc92661ff9"
+    },
+    {
+      "rank": 24,
+      "id": "original-adequacy-06-1",
+      "tier": "original",
+      "input_sha256": "1c3114997f23ed5a05a3dc4a1fe573beffe88175deca43819c63a714239420f2"
+    },
+    {
+      "rank": 25,
+      "id": "easy-intent-11",
+      "tier": "easy",
+      "input_sha256": "1cf0e2c117e5fc8fdb32aac5ac73c74b3ee3bb5d3a3e143a14a4f5df60456409"
+    },
+    {
+      "rank": 26,
+      "id": "original-extraction-06-0",
+      "tier": "original",
+      "input_sha256": "1e2d9c325bc0889c16aeb6d892191b929db0e81665419290935121244666a11e"
+    },
+    {
+      "rank": 27,
+      "id": "easy-intent-08",
+      "tier": "easy",
+      "input_sha256": "23b573d643c42bb93b156496c0e16000cb1edb1a7a7602c148d291b15483b21e"
+    },
+    {
+      "rank": 28,
+      "id": "original-ordinal-02-1",
+      "tier": "original",
+      "input_sha256": "23d3b7af9918140ef656365fb8cb78e609f8184b525ba63806df2d9fe2ba61ad"
+    },
+    {
+      "rank": 29,
+      "id": "original-routing-04-1",
+      "tier": "original",
+      "input_sha256": "25643008cf8cba43aeb9ae0f3ed4caed42e9b37fec73fa569a9c82cc562c3911"
+    },
+    {
+      "rank": 30,
+      "id": "hard-opus-a-probability-03",
+      "tier": "hard",
+      "input_sha256": "26888e83dcf08b32e32b182d2b680e4808ac91386db53b1e835a8806f9d6da04"
+    },
+    {
+      "rank": 31,
+      "id": "easy-fact-07",
+      "tier": "easy",
+      "input_sha256": "295781f17740bc764a96dbf2df39a9db5ea82d4cccbb92f459852c373510adad"
+    },
+    {
+      "rank": 32,
+      "id": "hard-opus-b-probability-03",
+      "tier": "hard",
+      "input_sha256": "2a66b66ab25349c0dd7d0f1f71b53ad0ca50b02f1adba71cdf18d3573d29dd51"
+    },
+    {
+      "rank": 33,
+      "id": "hard-sol-c-judge_hard-08",
+      "tier": "hard",
+      "input_sha256": "30ed04fbb5081407be79dd5a9166f7b57b26a93cb27f578cb4aaee99b8832ee7"
+    },
+    {
+      "rank": 34,
+      "id": "hard-opus-b-ambiguous-09",
+      "tier": "hard",
+      "input_sha256": "31240bad17341ade4999ad40736a6c9e3727c04dba6549de9ea3117c03499e28"
+    },
+    {
+      "rank": 35,
+      "id": "original-extraction-01-1",
+      "tier": "original",
+      "input_sha256": "31b01a2d6a8f7cba427a536d79b8c4db0d95276803c3fa1d7cf824e8e564c4ff"
+    },
+    {
+      "rank": 36,
+      "id": "easy-tool_selection-03",
+      "tier": "easy",
+      "input_sha256": "32b8536999c351c642ad0847a331dbbb8a5577d9362b10bc7c6b81fce735a603"
+    },
+    {
+      "rank": 37,
+      "id": "easy-tool_selection-07",
+      "tier": "easy",
+      "input_sha256": "33c0e81e76bd80a1e8077be858c0ec52eb4c79a7af1373730b3255ec5a4308c9"
+    },
+    {
+      "rank": 38,
+      "id": "original-routing-05-1",
+      "tier": "original",
+      "input_sha256": "3468fe03a0bde4cdb1b0c1094791663005cd9413d880a2bb08f3681e9d08aba0"
+    },
+    {
+      "rank": 39,
+      "id": "easy-extraction-00",
+      "tier": "easy",
+      "input_sha256": "34a9cdba2cf8d81da332cc94193cac868073413b7af02848c4cce359333b05d5"
+    },
+    {
+      "rank": 40,
+      "id": "hard-sol-b-judge_hard-01",
+      "tier": "hard",
+      "input_sha256": "34e4aa639e1f040c23dc923916839edd57fa8971c1a0fc76620fcf2aff3e6013"
+    },
+    {
+      "rank": 41,
+      "id": "original-ordinal-03-1",
+      "tier": "original",
+      "input_sha256": "394b58b00b5f941532b727d0fb2ef6bb928d52209daa681bacdc62dfea5c59f8"
+    },
+    {
+      "rank": 42,
+      "id": "hard-sol-b-routing_hard-02",
+      "tier": "hard",
+      "input_sha256": "3bc0ccfa994aba0adbae7b80fb59854e1570eb22d7c37b87bd3bfa8d83182ca0"
+    },
+    {
+      "rank": 43,
+      "id": "original-policy-04-1",
+      "tier": "original",
+      "input_sha256": "3bcdf813367dc0d09ed0bd8dc13bb75a110f7403ec981a99d8fbac85b8a111e6"
+    },
+    {
+      "rank": 44,
+      "id": "hard-sol-a-adversarial-11",
+      "tier": "hard",
+      "input_sha256": "3d6a18ff2cc782b921229f6d72c3b3c5ab1e1c66d7b4de705a1be2531dee6a2e"
+    },
+    {
+      "rank": 45,
+      "id": "hard-sol-b-judge_hard-14",
+      "tier": "hard",
+      "input_sha256": "415647d47c34b9b62d8005095da87f1c861f7f8fa78e705f68f2521bba810e94"
+    },
+    {
+      "rank": 46,
+      "id": "hard-sol-c-judge_hard-05",
+      "tier": "hard",
+      "input_sha256": "446cbad5bcfadbb37f18fb9e893a79fb2fa339196fab163976add2fcfe0d900d"
+    },
+    {
+      "rank": 47,
+      "id": "hard-sol-b-judge_hard-08",
+      "tier": "hard",
+      "input_sha256": "4489e6716f520324acff363f06710507da43c56d1bbff1414192894ac75e3254"
+    },
+    {
+      "rank": 48,
+      "id": "hard-sol-a-trap-05",
+      "tier": "hard",
+      "input_sha256": "4604a3b615fd39f7c721d377d2609c9d2e389d5ace10f6a9a8d8015a8d748c69"
+    },
+    {
+      "rank": 49,
+      "id": "easy-tool_selection-08",
+      "tier": "easy",
+      "input_sha256": "49e0235112b2e81d9f8d95c6811a5f8f59b2b5cc6c0a9590ed2559055781aee5"
+    },
+    {
+      "rank": 50,
+      "id": "easy-fact-05",
+      "tier": "easy",
+      "input_sha256": "4a3fe9ab523c118b56abdb5c0b85663a66e1df2b579ef8a8540193bfacc3b8d0"
+    },
+    {
+      "rank": 51,
+      "id": "hard-sol-a-adversarial-09",
+      "tier": "hard",
+      "input_sha256": "4c6251550927acfe05a0c8f3f5de975561caac5dd76d46e5290ce278327d138b"
+    },
+    {
+      "rank": 52,
+      "id": "original-intent-02-0",
+      "tier": "original",
+      "input_sha256": "4d2d5dacf219067f89fd26f2f7ae7ba3459fea9f86ce72797c244b4371e1ac2c"
+    },
+    {
+      "rank": 53,
+      "id": "original-extraction-01-0",
+      "tier": "original",
+      "input_sha256": "4d8ff8a470a305c53a94a9c8feb8aec86e1c935ced4c71436c0245d7d364249b"
+    },
+    {
+      "rank": 54,
+      "id": "hard-opus-b-probability-06",
+      "tier": "hard",
+      "input_sha256": "4ddd517720d8744f2f844dd1adf7dd61967606fc5c74207e8eceabc8c444a665"
+    },
+    {
+      "rank": 55,
+      "id": "original-routing-06-0",
+      "tier": "original",
+      "input_sha256": "4ef9726cbf8c632c5519e587b291a2d072292f54e5642e694d64d66fbf10884b"
+    },
+    {
+      "rank": 56,
+      "id": "original-extraction-03-0",
+      "tier": "original",
+      "input_sha256": "50a84b3aa40996c31c3c70c6b5c96c70c9451b67eba6e14c1c142779973fdaf9"
+    },
+    {
+      "rank": 57,
+      "id": "easy-intent-10",
+      "tier": "easy",
+      "input_sha256": "50fc57875e7eeb5bfd5ae2a28d5865169141fa91a5b62f37c25271cfdd8e009f"
+    },
+    {
+      "rank": 58,
+      "id": "hard-sol-a-adversarial-01",
+      "tier": "hard",
+      "input_sha256": "5211e66a622ca98460d7a3575618fea43e5dfa1f13df65c7aa2eb0ce2fcb51b8"
+    },
+    {
+      "rank": 59,
+      "id": "hard-sol-b-routing_hard-01",
+      "tier": "hard",
+      "input_sha256": "52f8c0af1694c387943e1536c3ce13fb6e6290349024d9aa0157c415300e429c"
+    },
+    {
+      "rank": 60,
+      "id": "hard-sol-c-judge_hard-09",
+      "tier": "hard",
+      "input_sha256": "540ca5e562cafe3d7c8ba5596afff9c3d4ffbe9a004559860e7b1c8da6472a89"
+    },
+    {
+      "rank": 61,
+      "id": "original-adequacy-03-1",
+      "tier": "original",
+      "input_sha256": "542510b81c5bc9c4ab21631d8e03ef58ee9524062db8835a9c1dad78566748e7"
+    },
+    {
+      "rank": 62,
+      "id": "hard-opus-a-temporal_numeric-06",
+      "tier": "hard",
+      "input_sha256": "5549a6fa6cc093d0f9c73cd499cc29ca370b399ca7573f01044c7613ff715a67"
+    },
+    {
+      "rank": 63,
+      "id": "easy-intent-06",
+      "tier": "easy",
+      "input_sha256": "567b6e1d95528b4f1a83c966cfa455cb3c73f4c8384111e1d7454b4a752447f5"
+    },
+    {
+      "rank": 64,
+      "id": "easy-extraction-03",
+      "tier": "easy",
+      "input_sha256": "589771ffd6414c97cc7469e0b2ed228fbce4d9e9836aadaf8adb2472d870f2d2"
+    },
+    {
+      "rank": 65,
+      "id": "original-policy-03-0",
+      "tier": "original",
+      "input_sha256": "5b4e2dd3700854c6632dee4347d09126b2483c2c30cd6574be5d4ac155e36f17"
+    },
+    {
+      "rank": 66,
+      "id": "original-adequacy-02-1",
+      "tier": "original",
+      "input_sha256": "5d5b57ede966d2873fe3e735fbc4a992807a826d4b78f2afbaccef87ec2225ba"
+    },
+    {
+      "rank": 67,
+      "id": "easy-intent-02",
+      "tier": "easy",
+      "input_sha256": "5de91a4628c1e950fbccd76c8207d667310f926411d6dc22249c3abcce3c3ef5"
+    },
+    {
+      "rank": 68,
+      "id": "hard-opus-b-probability-04",
+      "tier": "hard",
+      "input_sha256": "60ecfb4170950cef5170d08a1bda13daf7cbb7314f684c73192aa3b791b835c3"
+    },
+    {
+      "rank": 69,
+      "id": "hard-opus-a-probability-07",
+      "tier": "hard",
+      "input_sha256": "6432ff0ee55597bd44d49a71a6e096dfd6ee2121222745f46c95f7a47dd3eaab"
+    },
+    {
+      "rank": 70,
+      "id": "original-routing-04-0",
+      "tier": "original",
+      "input_sha256": "643922dcd45a507cfe3738bd113ede851a28fe4ef3fc1a74c253d6eb3667ad20"
+    },
+    {
+      "rank": 71,
+      "id": "original-adequacy-01-1",
+      "tier": "original",
+      "input_sha256": "65f8315d5375ab0700c1f8e9f6425233ff5844722d8a08624b65df8a7954415b"
+    },
+    {
+      "rank": 72,
+      "id": "easy-fact-06",
+      "tier": "easy",
+      "input_sha256": "669acf862d5dfbe5aaa4b23aee688a6b8b877803c0fd242f3d1b5e6ce54b0a9a"
+    },
+    {
+      "rank": 73,
+      "id": "hard-opus-b-tradeoff-06",
+      "tier": "hard",
+      "input_sha256": "66fa2f7e7ba559f0501d063dcb72e894bfe9c8b9dfd8abee6e164d4eafacf673"
+    },
+    {
+      "rank": 74,
+      "id": "hard-sol-b-judge_hard-10",
+      "tier": "hard",
+      "input_sha256": "67ceb8d96fdaeb13b91898ad3137628a6a192f7e1569501dca85c8a4e5ed40ad"
+    },
+    {
+      "rank": 75,
+      "id": "hard-opus-b-ambiguous-07",
+      "tier": "hard",
+      "input_sha256": "6834cfd79c78d412b776df466f8838d265d5da548f1207a6d6cc1b96c204ec4f"
+    },
+    {
+      "rank": 76,
+      "id": "original-intent-06-1",
+      "tier": "original",
+      "input_sha256": "68f2b370641a683b661dbca9d517179faad6c902a3163483c6faeaa505f441f2"
+    },
+    {
+      "rank": 77,
+      "id": "easy-extraction-07",
+      "tier": "easy",
+      "input_sha256": "6eaac82b9b7744b676ffc1037947e880e42c1cbf3ade25a7eb76b5abe16b38b7"
+    },
+    {
+      "rank": 78,
+      "id": "hard-sol-c-judge_hard-07",
+      "tier": "hard",
+      "input_sha256": "6f35a5e525606fa01409aa84806b63f4601a0382e341902a7a61fa77b1f40430"
+    },
+    {
+      "rank": 79,
+      "id": "original-intent-04-1",
+      "tier": "original",
+      "input_sha256": "6f90880b2acb8810e23177f3804ec0790a050356cd09d76e7b2ea4fb6e982c1a"
+    },
+    {
+      "rank": 80,
+      "id": "hard-sol-b-judge_hard-05",
+      "tier": "hard",
+      "input_sha256": "722d348521d45c488bbdbb9b2bcc622286bb9ac119ac74615464bff736e46551"
+    },
+    {
+      "rank": 81,
+      "id": "original-adequacy-04-1",
+      "tier": "original",
+      "input_sha256": "746cba15f7aabf30a0bf6e1ce0db062277b465a1e9baa347483ee43e5e7826d0"
+    },
+    {
+      "rank": 82,
+      "id": "easy-fact-11",
+      "tier": "easy",
+      "input_sha256": "74a80165840c08b05654c0e5ffef5392dde4500b20d9c3f1cf0efafcc2b5db6a"
+    },
+    {
+      "rank": 83,
+      "id": "original-intent-03-0",
+      "tier": "original",
+      "input_sha256": "752e6e53ffaf6e3ff5968e0f1f5cd3beae8e6ddba0c32ddc1953cde4016abf42"
+    },
+    {
+      "rank": 84,
+      "id": "hard-opus-b-ambiguous-11",
+      "tier": "hard",
+      "input_sha256": "7be6c70eca80426467427dda2649db7c1dec03ef03996be1465e0da535997e21"
+    },
+    {
+      "rank": 85,
+      "id": "hard-opus-b-probability-02",
+      "tier": "hard",
+      "input_sha256": "7c0b392591718038b4a8dc13663ccda2aee2a27dd7cd5a316c70a5f977ec5e26"
+    },
+    {
+      "rank": 86,
+      "id": "easy-extraction-02",
+      "tier": "easy",
+      "input_sha256": "7c30f3bded43956f3facc2f9a1ecb293ec74617c7aa865895725f68e69b2796e"
+    },
+    {
+      "rank": 87,
+      "id": "hard-opus-a-temporal_numeric-12",
+      "tier": "hard",
+      "input_sha256": "7f250314952b2f729f336cb31068524a28eb6c20b5fa9474feeeb3cd2f6f8acd"
+    },
+    {
+      "rank": 88,
+      "id": "hard-opus-c-temporal_numeric-03",
+      "tier": "hard",
+      "input_sha256": "8143a4eb0178538ed03c451f9a6d6a9c6ed893324c8f9fc19b09192506ab2bb0"
+    },
+    {
+      "rank": 89,
+      "id": "hard-sol-a-adversarial-08",
+      "tier": "hard",
+      "input_sha256": "820a0dcc0345e40d68f47e106836228cbcb11f9384ffa2ccc64bed5199df37e4"
+    },
+    {
+      "rank": 90,
+      "id": "hard-opus-b-tradeoff-08",
+      "tier": "hard",
+      "input_sha256": "85dc49b6a37ead5bcd6da60e43ae0b7d4643071cce619b6e4f839740b171d310"
+    },
+    {
+      "rank": 91,
+      "id": "original-extraction-05-1",
+      "tier": "original",
+      "input_sha256": "8636962290b5031f046f2622541f0cbbe54f8782bec40de62f37b5ec84059478"
+    },
+    {
+      "rank": 92,
+      "id": "original-extraction-05-0",
+      "tier": "original",
+      "input_sha256": "86b98596215f19d775273a284f5234ba9681ffcf876b6fb805f116247c5d7529"
+    },
+    {
+      "rank": 93,
+      "id": "original-intent-06-0",
+      "tier": "original",
+      "input_sha256": "8970f9c0a8dc8a1a702ac4b11ca455fa0c487f2e6e6244dc13cc1967315f82de"
+    },
+    {
+      "rank": 94,
+      "id": "hard-opus-b-ambiguous-13",
+      "tier": "hard",
+      "input_sha256": "89d03b86a9b2f89074a6cb563e8aa8028c5dad05c120f6757d06c4e38d44a0ad"
+    },
+    {
+      "rank": 95,
+      "id": "original-ordinal-04-0",
+      "tier": "original",
+      "input_sha256": "8b1b8aabe59cdf539726f847d353509d8df24318393e073e0230071517a55538"
+    },
+    {
+      "rank": 96,
+      "id": "original-ordinal-01-0",
+      "tier": "original",
+      "input_sha256": "8c9bb9714b7c1c9a3cc88d4f8bee87161b59a7dc9a3bccb70d3de5505ee8e4ec"
+    },
+    {
+      "rank": 97,
+      "id": "hard-sol-b-judge_hard-02",
+      "tier": "hard",
+      "input_sha256": "8d5e1cbf8b2362a19d2ec736e452c129f3a72dbdbc33bd9b30dab4d81c48d080"
+    },
+    {
+      "rank": 98,
+      "id": "original-routing-03-0",
+      "tier": "original",
+      "input_sha256": "8fbe919acd823fbfbd662190b3ef949f72301d2ef62649b326b7b303383d16b0"
+    },
+    {
+      "rank": 99,
+      "id": "original-policy-03-1",
+      "tier": "original",
+      "input_sha256": "91e34a9a43eff4c41c7bd450b836fdddbe0a734391e4e84461814c0e2f52f06d"
+    },
+    {
+      "rank": 100,
+      "id": "hard-sol-b-routing_hard-09",
+      "tier": "hard",
+      "input_sha256": "928cc4844df14f129fa9f7ccdf4d5bbda2d5a89b3ce1c46b8a1e49d2d0a5701c"
+    },
+    {
+      "rank": 101,
+      "id": "hard-opus-c-temporal_numeric-06",
+      "tier": "hard",
+      "input_sha256": "9346424bf0b849a3e721f843b8168b469303f1a146ee0bedf1b3d99c4c81be5c"
+    },
+    {
+      "rank": 102,
+      "id": "original-extraction-04-0",
+      "tier": "original",
+      "input_sha256": "941ea05ad708be13d3dc178d7d3bdb2711b15d9699725675fc0862299580fba0"
+    },
+    {
+      "rank": 103,
+      "id": "original-ordinal-06-0",
+      "tier": "original",
+      "input_sha256": "95e9cf0a7342bf6d3dd086aedb4c6841a517b3968394dcce600c05c89b6e7f61"
+    },
+    {
+      "rank": 104,
+      "id": "easy-tool_selection-00",
+      "tier": "easy",
+      "input_sha256": "9734ccfb8f6b9ddb7bcf134c7903a094fca9c7e35ebe3c20c5c26b0d07ecdf57"
+    },
+    {
+      "rank": 105,
+      "id": "hard-opus-b-ambiguous-02",
+      "tier": "hard",
+      "input_sha256": "97d7adada85f384f7522eb6fea15bf0591a822cba49af4e19332cb6ca6896df7"
+    },
+    {
+      "rank": 106,
+      "id": "original-ordinal-01-1",
+      "tier": "original",
+      "input_sha256": "98ed7e59b0e2c98113d6def3b0ba3af8c3cca13b94fa9943aa7dec4c72625451"
+    },
+    {
+      "rank": 107,
+      "id": "original-policy-02-0",
+      "tier": "original",
+      "input_sha256": "99c30fc30d1ffcf839bef371227cd6ada46f6a8f578669b23272b0b918a9a1d5"
+    },
+    {
+      "rank": 108,
+      "id": "easy-fact-04",
+      "tier": "easy",
+      "input_sha256": "9b5432668720c8e136554dd4be6d1d15d3f8eb178298236976051a587a8838d0"
+    },
+    {
+      "rank": 109,
+      "id": "easy-fact-08",
+      "tier": "easy",
+      "input_sha256": "9b91b06a4c376e370e09caa3297752def8f6bfe0bc4f584261981db647919ec3"
+    },
+    {
+      "rank": 110,
+      "id": "hard-sol-b-temporal_numeric-03",
+      "tier": "hard",
+      "input_sha256": "9e8ff0de2ff1e022479491732aa24d723ae2e7fcdd27286dcf52ebc73fb8b42b"
+    },
+    {
+      "rank": 111,
+      "id": "hard-sol-a-trap-15",
+      "tier": "hard",
+      "input_sha256": "a17bc00b98728b85fb9dfb4f149039ec787541d576fe45b0d4ec9ce923fde4ba"
+    },
+    {
+      "rank": 112,
+      "id": "original-extraction-03-1",
+      "tier": "original",
+      "input_sha256": "a2a9758bef84d77baf6d7c87feda028c01fafb61e89f87b136038e270b571d2e"
+    },
+    {
+      "rank": 113,
+      "id": "hard-sol-a-trap-04",
+      "tier": "hard",
+      "input_sha256": "a2f2a9329e62333cba00914d3c670378ec8dcc812671d19299ece485fd6d5bbd"
+    },
+    {
+      "rank": 114,
+      "id": "hard-opus-b-tradeoff-01",
+      "tier": "hard",
+      "input_sha256": "a433fdb0a80d3bcc3e6e45591e726ef644740cb0e076597a3178e268488eab6c"
+    },
+    {
+      "rank": 115,
+      "id": "easy-intent-07",
+      "tier": "easy",
+      "input_sha256": "a47b42c963b304d1228665c50eada53740a11cbfb6dcb78181b6a8fc12609a5f"
+    },
+    {
+      "rank": 116,
+      "id": "hard-opus-b-tradeoff-07",
+      "tier": "hard",
+      "input_sha256": "a4ca7e762b343aacb37bf74578446492feeeb8342d6de4293c0c4ae542e849f8"
+    },
+    {
+      "rank": 117,
+      "id": "hard-sol-a-trap-10",
+      "tier": "hard",
+      "input_sha256": "a54b27850be81a6e8d4f56651b70653f6d8582654ed0ba9a00cfd11d25536d7a"
+    },
+    {
+      "rank": 118,
+      "id": "easy-fact-02",
+      "tier": "easy",
+      "input_sha256": "a588428c4ae9cdde0b8d4b22a3550b81c48da3effcaae1372ed7fdbac788c36b"
+    },
+    {
+      "rank": 119,
+      "id": "original-policy-02-1",
+      "tier": "original",
+      "input_sha256": "a5904ef8cd9b9f42622f6bfe472b7201aebb8afb82f4997dbc2f0d234e322985"
+    },
+    {
+      "rank": 120,
+      "id": "original-policy-06-0",
+      "tier": "original",
+      "input_sha256": "a72c822988ba60a5a79aa29a713b660787c36cbfd0e1cbfdf592fbfa76080b42"
+    },
+    {
+      "rank": 121,
+      "id": "original-intent-04-0",
+      "tier": "original",
+      "input_sha256": "a8f9f48de3ca01f3a3205d6aaedf71862e3c9a0b9470fd7884d9be122b504faf"
+    },
+    {
+      "rank": 122,
+      "id": "hard-sol-b-routing_hard-03",
+      "tier": "hard",
+      "input_sha256": "aa79457898e82d5422e97ddf8a5351143fad92b4515e4b8e4c5b52f13274b51b"
+    },
+    {
+      "rank": 123,
+      "id": "easy-extraction-09",
+      "tier": "easy",
+      "input_sha256": "ab32697f0a593d9afb05434a8444f7f3aa4ee2de6fa6e20e3edb1cc2758dd715"
+    },
+    {
+      "rank": 124,
+      "id": "easy-tool_selection-06",
+      "tier": "easy",
+      "input_sha256": "ac7ae305aa3866ca8f5d4f88de6d40a79dc12016b0ec8c689fd3582956449eaa"
+    },
+    {
+      "rank": 125,
+      "id": "hard-sol-b-routing_hard-07",
+      "tier": "hard",
+      "input_sha256": "aeba78e131e200d4eb73df32621d293a0d295e3801511a7479c5fef00434b077"
+    },
+    {
+      "rank": 126,
+      "id": "hard-sol-a-trap-02",
+      "tier": "hard",
+      "input_sha256": "aeebb7308cf3cf8c0afc7f329fcff6832a54d0d39e8a677b47339c7f89d84cf5"
+    },
+    {
+      "rank": 127,
+      "id": "easy-extraction-04",
+      "tier": "easy",
+      "input_sha256": "b0ece1fd925bb8e0235728c98bf88b2b909f1106daca2cd946e5609e396b96c9"
+    },
+    {
+      "rank": 128,
+      "id": "hard-sol-a-adversarial-06",
+      "tier": "hard",
+      "input_sha256": "b0fec48adc1350e2166596b1b04877c62d82b1ef04cfc9193e7b660280f36119"
+    },
+    {
+      "rank": 129,
+      "id": "original-policy-01-1",
+      "tier": "original",
+      "input_sha256": "b16b95546a1f0b8c4dbc1c1c3a7dc27699fb8fd5a95478ce0068150f0de8cb83"
+    },
+    {
+      "rank": 130,
+      "id": "easy-tool_selection-01",
+      "tier": "easy",
+      "input_sha256": "b22d07b9ae9e98da48095cf6c61714c4e08d72f6a8499a826e1d5267f1f9b94d"
+    },
+    {
+      "rank": 131,
+      "id": "original-intent-01-1",
+      "tier": "original",
+      "input_sha256": "b4efafb75818df695500ade7545738b460fcf177b41bb2f21eb5b5d7c2434772"
+    },
+    {
+      "rank": 132,
+      "id": "hard-opus-a-probability-08",
+      "tier": "hard",
+      "input_sha256": "b5459d5b83494e8d4cebc3df7850b5df6890c5b3b949b01ca15a1d330cd6bd17"
+    },
+    {
+      "rank": 133,
+      "id": "original-intent-03-1",
+      "tier": "original",
+      "input_sha256": "b76f137ca13361152629ef3c02d1576269a6ee7ebdcbd912d0b15e53b0a4ba5b"
+    },
+    {
+      "rank": 134,
+      "id": "hard-opus-c-temporal_numeric-04",
+      "tier": "hard",
+      "input_sha256": "bc17524c83e5b5612065c43a36d3eaa62b636a13406c0393d7b25660cf26af10"
+    },
+    {
+      "rank": 135,
+      "id": "hard-sol-c-judge_hard-03",
+      "tier": "hard",
+      "input_sha256": "be9ce7b0575465360ac4b332f0b173c46ea4648b07608e3e3bacc988ce98964c"
+    },
+    {
+      "rank": 136,
+      "id": "easy-intent-03",
+      "tier": "easy",
+      "input_sha256": "bfe85ffa1324abcae6c3699cdc0ba95dcf14308dfd9467f6841ba6b2258e7603"
+    },
+    {
+      "rank": 137,
+      "id": "original-routing-05-0",
+      "tier": "original",
+      "input_sha256": "c05fee85a2ede0a4b2c3cd03e4f471df2daba779649f1f0d17f5a0b33a31438a"
+    },
+    {
+      "rank": 138,
+      "id": "hard-opus-a-temporal_numeric-09",
+      "tier": "hard",
+      "input_sha256": "c115520a56c98971a07145eb515c88ea14aac7c6e9ae22f05c307acd9764d0b3"
+    },
+    {
+      "rank": 139,
+      "id": "easy-tool_selection-10",
+      "tier": "easy",
+      "input_sha256": "c30d7eb1d0bca8a1973a4e048e46050f27a525bc36f6248f09f88ad5779ff608"
+    },
+    {
+      "rank": 140,
+      "id": "original-ordinal-05-0",
+      "tier": "original",
+      "input_sha256": "c58eaa562a5a9fd3a7af48c8ab9b11efa7a6bf8f1839760c941fedf9a958814e"
+    },
+    {
+      "rank": 141,
+      "id": "original-extraction-06-1",
+      "tier": "original",
+      "input_sha256": "c6c357ec4be9ac6d36625d7dcc1a8b78bc3b8e11fd10599de30e2755c8875b18"
+    },
+    {
+      "rank": 142,
+      "id": "easy-extraction-11",
+      "tier": "easy",
+      "input_sha256": "c74de7ac555d560909288a95af731a64497f4caf1c523a2f60c4d34026b27205"
+    },
+    {
+      "rank": 143,
+      "id": "original-adequacy-06-0",
+      "tier": "original",
+      "input_sha256": "c8f888a0a15e840def67c18bcb77c2c621173ce324852f19c87b08c1c64035ca"
+    },
+    {
+      "rank": 144,
+      "id": "hard-sol-c-multi_hop-12",
+      "tier": "hard",
+      "input_sha256": "c95e7c26b82e4ea8151d60de9aaea5efa22559ad348ce5a9097b10ea166e5bb7"
+    },
+    {
+      "rank": 145,
+      "id": "easy-fact-03",
+      "tier": "easy",
+      "input_sha256": "cb378849492fd217128c76e7e85e17e0984808076999a00e0f83a2c1380eca50"
+    },
+    {
+      "rank": 146,
+      "id": "hard-sol-a-trap-08",
+      "tier": "hard",
+      "input_sha256": "cb4a00db0095fd1f8da92aa6784987fa57a88c0043b091facdfc9cc6b2552c8a"
+    },
+    {
+      "rank": 147,
+      "id": "hard-opus-c-temporal_numeric-12",
+      "tier": "hard",
+      "input_sha256": "cbb6dcc04a07ca83ddad3807b939841d912eb62cb5bb4c038ddbb389a8e86218"
+    },
+    {
+      "rank": 148,
+      "id": "easy-extraction-01",
+      "tier": "easy",
+      "input_sha256": "cdab6fc7978ef643d22ca7f13004aebe7c7374eea40865afccc79ae1393dd9cb"
+    },
+    {
+      "rank": 149,
+      "id": "easy-extraction-06",
+      "tier": "easy",
+      "input_sha256": "d0462f9a2f857c8c1e35e3941af2d34affacbbfb85bba937c5650a65b814bfd8"
+    },
+    {
+      "rank": 150,
+      "id": "hard-sol-c-judge_hard-13",
+      "tier": "hard",
+      "input_sha256": "d2267baa3651c210543c39fb6560ca233fc823e5ab1357382e43f4cc5cada484"
+    },
+    {
+      "rank": 151,
+      "id": "easy-tool_selection-05",
+      "tier": "easy",
+      "input_sha256": "d4d6b0277f436518d6c33a1d668a67549773da5ea59bfb63ceaa9304ad101971"
+    },
+    {
+      "rank": 152,
+      "id": "original-extraction-04-1",
+      "tier": "original",
+      "input_sha256": "d592bf1a229af3791b2b7e2b9744e0627a252e370da5f379d5e3923a2cc59dda"
+    },
+    {
+      "rank": 153,
+      "id": "easy-fact-09",
+      "tier": "easy",
+      "input_sha256": "d642d9d458097a10da6f258b75cccda0341cbc016a3426ac01139fd35a802660"
+    },
+    {
+      "rank": 154,
+      "id": "original-adequacy-04-0",
+      "tier": "original",
+      "input_sha256": "d6cf837168a5d5bd634a1149104a72f6b1f071c8abc163255b746831f59a44c6"
+    },
+    {
+      "rank": 155,
+      "id": "hard-sol-b-temporal_numeric-02",
+      "tier": "hard",
+      "input_sha256": "d88cededef99c873a63bea5f199865677fb3f7ff8d5d83695fa222c888b7fb40"
+    },
+    {
+      "rank": 156,
+      "id": "hard-opus-a-probability-04",
+      "tier": "hard",
+      "input_sha256": "d8b5ee883224a3ebdbdf8a650794868680eb8257043ac943d1831869f130c578"
+    },
+    {
+      "rank": 157,
+      "id": "original-adequacy-03-0",
+      "tier": "original",
+      "input_sha256": "d9caa19b00fc41b155cf97436cfc7eb4e8fd1f6a98c36b816593d25933d98a90"
+    },
+    {
+      "rank": 158,
+      "id": "original-intent-05-0",
+      "tier": "original",
+      "input_sha256": "db53f11183015d8401f8d686756f54db7cb17b549fa8edc7022214637b61f3eb"
+    },
+    {
+      "rank": 159,
+      "id": "original-intent-05-1",
+      "tier": "original",
+      "input_sha256": "e08da994b5c4b8dcf62c0fef11820420e017a4eb969d832ecbb74209bfada32b"
+    },
+    {
+      "rank": 160,
+      "id": "easy-intent-04",
+      "tier": "easy",
+      "input_sha256": "e42ac29047ff6afeff4818515191bc50a85ea57433970e4f8c1361aad336238a"
+    },
+    {
+      "rank": 161,
+      "id": "hard-opus-c-temporal_numeric-08",
+      "tier": "hard",
+      "input_sha256": "e4cc7613e8f57593dd7c7440fdcb82625333ed6ba7b98a11a6d0ad34c10bdb11"
+    },
+    {
+      "rank": 162,
+      "id": "hard-sol-a-adversarial-07",
+      "tier": "hard",
+      "input_sha256": "e7ebcdf8ce2dfc1d79ad275a9e0f4b25f7341f91c023598f0d26d602fc324fac"
+    },
+    {
+      "rank": 163,
+      "id": "hard-opus-b-tradeoff-12",
+      "tier": "hard",
+      "input_sha256": "e9752404d7f4c48fe82303280cb8be7e590135e06b5b4fa58e2e23b429d8b418"
+    },
+    {
+      "rank": 164,
+      "id": "easy-fact-00",
+      "tier": "easy",
+      "input_sha256": "ea15616d7fbfec115799dc983718528dd2bbe8574519c8d0875f708dd14f288f"
+    },
+    {
+      "rank": 165,
+      "id": "original-adequacy-02-0",
+      "tier": "original",
+      "input_sha256": "ea35a361b4743b1c9426e5ecfe51a8548d9d9b9f31cbdb8e13cc85e0ac479f27"
+    },
+    {
+      "rank": 166,
+      "id": "original-routing-01-1",
+      "tier": "original",
+      "input_sha256": "ea6bc78e1f6aa471c3a520f2f4d2e623b77abdab278562de3b85c9a3b5f31262"
+    },
+    {
+      "rank": 167,
+      "id": "hard-opus-a-temporal_numeric-03",
+      "tier": "hard",
+      "input_sha256": "eb1dcba12ce78645dd213eb935f1c638a663f1c61616030192bf74b40ee9629d"
+    },
+    {
+      "rank": 168,
+      "id": "original-adequacy-05-0",
+      "tier": "original",
+      "input_sha256": "eb26697b373ce4a09dded5b2178bd031b1ae7194951c7728c1b0cbb16df73055"
+    },
+    {
+      "rank": 169,
+      "id": "original-routing-03-1",
+      "tier": "original",
+      "input_sha256": "eb3d7baa37c1739221ad7310ffb1e8923c6e2b8b688d112fada64d758f890992"
+    },
+    {
+      "rank": 170,
+      "id": "original-adequacy-01-0",
+      "tier": "original",
+      "input_sha256": "eb6cd2689ed82ab603ce1ca5261ffd746a3b050f7e34e26738fee55f2320eeca"
+    },
+    {
+      "rank": 171,
+      "id": "original-extraction-02-1",
+      "tier": "original",
+      "input_sha256": "ed065ec7002265234e1714bfaaa93970e66facc416109cdf4fc5781dfa34af17"
+    },
+    {
+      "rank": 172,
+      "id": "original-policy-06-1",
+      "tier": "original",
+      "input_sha256": "ed4b2d9e956ae966259d25cc58801c6cdaa038627274f14fdd3b141703372173"
+    },
+    {
+      "rank": 173,
+      "id": "hard-sol-b-judge_hard-15",
+      "tier": "hard",
+      "input_sha256": "ee72e872974797e6b330f78e4abe831966ad7dbdf04572ced16f2d9aa6d3f745"
+    },
+    {
+      "rank": 174,
+      "id": "hard-sol-a-trap-06",
+      "tier": "hard",
+      "input_sha256": "ee8235f7ff485a45532a8b0e3e54f964dfc334824f9d1480ba6c488f4747a4ab"
+    },
+    {
+      "rank": 175,
+      "id": "original-routing-02-1",
+      "tier": "original",
+      "input_sha256": "ef0efc8d25cf97369ecc750b79c609c58cc69e6d75ff2bf44066e5d326ea2402"
+    },
+    {
+      "rank": 176,
+      "id": "hard-opus-b-ambiguous-10",
+      "tier": "hard",
+      "input_sha256": "ef502473c8d3ddb0d5e36510d756b5d93221c203b81eab84aaf9cd99e6a25551"
+    },
+    {
+      "rank": 177,
+      "id": "hard-sol-a-trap-13",
+      "tier": "hard",
+      "input_sha256": "efd0dcf0bf22cb5433a577dcfc9a99f12f0cd49eeb14e3babc254e0710e88d49"
+    },
+    {
+      "rank": 178,
+      "id": "easy-intent-05",
+      "tier": "easy",
+      "input_sha256": "efd2abacb07195b4919193c2fcf64cbc13c29a1a01d6cd5e45c252b0fdd45afe"
+    },
+    {
+      "rank": 179,
+      "id": "original-policy-04-0",
+      "tier": "original",
+      "input_sha256": "efdfe43663514ee7d87b9e9968de0b1b6c49537d646f692ee3a8e8f0e9ae23ee"
+    },
+    {
+      "rank": 180,
+      "id": "easy-tool_selection-11",
+      "tier": "easy",
+      "input_sha256": "f0c373567d55ae5e979c0ef5d0754666eb69cf5a7bb78c49399e64f6a6c6a0cb"
+    },
+    {
+      "rank": 181,
+      "id": "easy-fact-10",
+      "tier": "easy",
+      "input_sha256": "f16d8408da57729ea1fc0d7643ce83e6319e3001a569e95bbbc26925a8f5bb62"
+    },
+    {
+      "rank": 182,
+      "id": "easy-tool_selection-02",
+      "tier": "easy",
+      "input_sha256": "f22044cc62680e8be0538eff0795bfde667dd8d205bb77204b80c7b71a95c50a"
+    },
+    {
+      "rank": 183,
+      "id": "original-ordinal-02-0",
+      "tier": "original",
+      "input_sha256": "f441eae38a6fd6b4284ec2550edee2867557f3d1f732f3d8467dcd7ece38b5f5"
+    },
+    {
+      "rank": 184,
+      "id": "hard-sol-b-temporal_numeric-04",
+      "tier": "hard",
+      "input_sha256": "f478c697d68e98f71cbd9fcdcb075beebfeff1d9e91bba381cc27fe7fdd06ce5"
+    },
+    {
+      "rank": 185,
+      "id": "original-policy-05-1",
+      "tier": "original",
+      "input_sha256": "f4d4c1686f42978df228b68653b4988b44b6ab776dd9c52e1ebee6a9e67a4b9b"
+    },
+    {
+      "rank": 186,
+      "id": "easy-extraction-10",
+      "tier": "easy",
+      "input_sha256": "f5c11b4d349307a218804480712f0bdbd8bb620aa21be4b84ec34a5005181391"
+    },
+    {
+      "rank": 187,
+      "id": "original-intent-02-1",
+      "tier": "original",
+      "input_sha256": "f7ef04149945096fda70d018580218e71e70b310e5163285d103480e5663f4a8"
+    },
+    {
+      "rank": 188,
+      "id": "original-ordinal-05-1",
+      "tier": "original",
+      "input_sha256": "fa5ac6ae115dd50365024fbc0d3626fc18a9fbe824fae2701ab26ad43d4e3166"
+    },
+    {
+      "rank": 189,
+      "id": "easy-fact-01",
+      "tier": "easy",
+      "input_sha256": "fc52f58d09660b37a898e0f6a0541ffe54b02f11af349343771a44319a0665a2"
+    },
+    {
+      "rank": 190,
+      "id": "hard-sol-c-judge_hard-15",
+      "tier": "hard",
+      "input_sha256": "fcbf911f4a6e488fb9de301b01cd94c88116e0c8c98426df4dbe534141386c4a"
+    },
+    {
+      "rank": 191,
+      "id": "easy-tool_selection-04",
+      "tier": "easy",
+      "input_sha256": "fd01db687575722b21a4c3b0e6ad10e6656f4b0d6943df50a0e1f61da22149bf"
+    },
+    {
+      "rank": 192,
+      "id": "easy-intent-01",
+      "tier": "easy",
+      "input_sha256": "fdcb8d6dbc9765728264d7dc8d376d707707d2a8711a970e65d09f573be78567"
+    },
+    {
+      "rank": 193,
+      "id": "easy-intent-00",
+      "tier": "easy",
+      "input_sha256": "ffb58ae8e0c4fdefcbc6a06b1abe17f65443356b6b494b6f4f3e5014b1fa7ba9"
+    }
+  ]
+}

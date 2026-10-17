@@ -1,0 +1,14 @@
+{
+  "contract_commit": "7c79ad570cbd62f9f09a066c881eb0dbafd38b01",
+  "selector_commit": "dabfd4598fe809cfbc0a85734cab1ffc8ce49a45",
+  "command": ".venv/bin/python -u attempts/65-terminal-forecast-readout/work/select_inputs_v6.py --raw-cache /home/jota/.cache/tcc-final/a65-consumer-audit/jevbench-inputs-v6 --output attempts/65-terminal-forecast-readout/work/inputs-v6.json",
+  "directly_observed_exit_code": 0,
+  "selection_status": "SELECTED_INPUT_ONLY",
+  "input_manifest_sha256": "35d42f9ae32bd6106b9ff870625123448b4a2f2f3b003e21ddf9aead37e6dd78",
+  "new_neural_forwards": 0,
+  "pretrained_model_tokenizer_loaded": false,
+  "raw_gold_bytes_decoded_to_discard": true,
+  "gold_values_inspected_or_used": false,
+  "original_unquantized_26B_consumer_reproduced": false,
+  "next_prerequisite": "Native masked-loop Torch2.8 fake-head replay and frozen adapter/runner/runtime before any real weights or heads"
+}

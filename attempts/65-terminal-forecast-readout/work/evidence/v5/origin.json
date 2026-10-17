@@ -1,5 +1,5 @@
 {
-  "contract_commit": "d24974e",
+  "contract_commit": "d24974e48e043f23f08963876e58ac179ae65e3d",
   "source_commit": "217b752df7c4ab29a129c0a7398c27d3e01c94d6",
   "command": ".venv-mosaic-native/bin/python -u attempts/65-terminal-forecast-readout/work/grid_preflight.py --output /tmp/a65-grid-v5",
   "directly_observed_exit_code": 0,

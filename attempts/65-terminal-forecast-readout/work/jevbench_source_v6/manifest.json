@@ -1,0 +1,22 @@
+{
+  "origin": "https://github.com/fstandhartinger/jevbench",
+  "commit": "1bcc55eb6c8cffde2306b3db03ede39b61c6152a",
+  "files": [
+    {
+      "file": "LICENSE",
+      "bytes": 1096,
+      "sha256": "3e5beed774bb0bcbfb2fcf24ba9554212c6ae112937d308040989465ab0c5784"
+    },
+    {
+      "file": "jevbench/tasks.py",
+      "bytes": 4339,
+      "sha256": "b9c2f8ba9a7301519656d79d47c31b8ab0542a5545498ce3b339d5e93b976812"
+    },
+    {
+      "file": "jevbench/adapters/openai_compat.py",
+      "bytes": 7643,
+      "sha256": "5f0450ef2db2743db05bdf756cd50db951654533e33cdfd23002709ca485c95e"
+    }
+  ],
+  "read_scope": "Task source and build_request method; NO upstream task loader or adapter executed; raw dataset JSON was parsed by own frozen input-only selector"
+}
