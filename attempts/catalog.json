@@ -4626,13 +4626,31 @@
     {
       "id": "60-semantic-numeric-index",
       "title": "CDF e quantis exatos por valor numérico no posterior de uma fonte congelada",
-      "conclusion": "Written e107296 BEFORE code: fixed positive-band unambiguous numerical normalization relation and classical weighted projection/prefix quantile algorithm. Bit-bound numerator correction220c1e1 precedes code. Minimal229-line [1,100) rational-original-token reference only, no EOT/PAD/native decoder. Initialf8f9f57 committed AFTER first passing run because Ruff E501 blocked intended freeze; source, failure,0.707s log and ordering deviation preserved literally. Final source4cf274f frozen BEFORE four-oracle PASS0.701s:48,880 exact numerals/2647 admitted/28 separate regressions,260 original tapes/five sources/34 original-ID coefficients/310 exact CDFs/71 quantiles. Full337 PASS95.193s/Ruff3 files PASS. Analytical complete-WFST control reproduces index/prefix caching, not an independent implementation/timing or prior publication of specific relation. LLM Processes, NTL, SMMD and NTIL primary method scopes read and retained; numerical readout/supervision are antecedents. No A60 model/head/new forward/update/semantic label/competitive timing. No full-V/native/training/cost campaign or article promotion triggered. Specific normalizer priority, substantial own useful effect/publication and positive user goal remain OPEN.",
+      "conclusion": "Written e107296 BEFORE code: fixed positive-band unambiguous numerical normalization relation and classical weighted projection/prefix quantile algorithm. Bit-bound numerator correction220c1e1 precedes code. Minimal229-line [1,100) rational-original-token reference only, no EOT/PAD/native decoder. Initialf8f9f57 committed AFTER first passing run because Ruff E501 blocked intended freeze; source, failure,0.707s log and ordering deviation preserved literally. Final source4cf274f frozen BEFORE four-oracle PASS0.701s:48,880 exact numerals/2647 admitted/28 separate regressions,260 original tapes/five sources/34 original-ID coefficients/310 exact CDFs/71 quantiles. Full337 PASS95.193s/Ruff3 files PASS. Analytical complete-WFST control reproduces index/prefix caching, not an independent implementation/timing or prior publication of specific relation. LLM Processes, NTL, SMMD and NTIL primary method scopes read and retained; numerical readout/supervision are antecedents. No A60 model/head/new forward/update/semantic label/competitive timing. No full-V/native/training/cost campaign or article promotion triggered. Specific normalizer priority, substantial own useful effect/publication and positive user goal remain OPEN. V5 f4c373d BEFORE code writes polynomial source-conditioned ALL-nonnegative-magnitude compact statistics and exponential size for ANY universal one-way NFT of that relation, even ambiguous. Classical marked cyclic shift/block swap/digit arithmetic credited. Initial321582c source-frozen, interrupted SIGINT130 during first quantile test; source/full traceback preserved7a8992d, no four-test result claimed. V6 ee02f43 applies previously written CLASSICAL zero-suffix trimming; SAME4 oracles PASS2.224s:35 complete-word tapes/11 atoms/23 quantiles/42 CDFs,76 row tapes/6 original-ID coefficients/40 quantiles/80 CDFs,84 tiny block tapes/9 quantile-CDF pairs, signed zero/extreme orders+/-10^20/aliases/mid-token cuts/empty emissions. Eight V5 criteria written inwork before code; README link only after checks, location deviation retained. Full341 PASS98.678s/Ruff+format4 files PASS. Prospectived7ade98 collector retains ALL5 block sizes1/2/4/8/16, analytical mass/median/CDF allPASS:largest CONSTRUCTED2^32-value source37 states/68 edges, raw index49017/88728, trimmed60/91. No neural/performance gate or exclusive ability follows. Written V7 ae454bd complete direct-CDF/order-localization control solves SAME global operation in O((S+E)L^3), without global cut factorB; not implemented/timed or published-priority finding. V7a sets L by source longest byte path for uniform polynomial size. Restricted NFT theorem stays intact but provides no exponential gap against all complete numerical inference. No A60 new head/forward/update/label/timing or native/full-V/training/cost campaign. Specific numerical priority, substantial own useful consequence/publication and positive goal OPEN.",
       "reading": "attempts/60-semantic-numeric-index/README.md",
       "versions": [
         {
           "id": "v1",
           "source_commit": "4cf274f45d758831b07e520c74c04f3301e8b5f6",
           "evidence_commit": "4134b2060cdba7c7ece335ad4834d2aa03e651ae",
+          "evidence_roots": [
+            "attempts/60-semantic-numeric-index/README.md",
+            "attempts/60-semantic-numeric-index/work"
+          ]
+        },
+        {
+          "id": "v2-rotated-interrupted",
+          "source_commit": "321582c2a46ab08618eb12701b41c2fd573c2041",
+          "evidence_commit": "7a8992d598acbc98ce8a3b0e18c0c2bd72fd0fa6",
+          "evidence_roots": [
+            "attempts/60-semantic-numeric-index/README.md",
+            "attempts/60-semantic-numeric-index/work"
+          ]
+        },
+        {
+          "id": "v3-unrestricted-order",
+          "source_commit": "d7ade98c2fcca5b0c98f95d464feb3a89a092000",
+          "evidence_commit": "1e6139ccb7cb3bcae2f3c73f491798d39d32b83f",
           "evidence_roots": [
             "attempts/60-semantic-numeric-index/README.md",
             "attempts/60-semantic-numeric-index/work"
