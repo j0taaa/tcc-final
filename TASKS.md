@@ -80,6 +80,9 @@ cost remain open. No new neural campaign is credited to M70.
   prefix, native capture/timing or model campaign; generated conformance data
   are NOT production infilling logs. All hashes/observations preserved. See
   59/work/decision-v4.md. Later333 tests PASS94.695s/Ruff11 files PASS.
+  Archivev2-control-fit preserves sourcee940c71/evidence0e32a78; final make
+  check exit0 verifies59 attempts/238 versions/179461 files. Complete later
+  integrity log docs/evidence/a59-v2-final-make-check.log; not a scientific win.
 - [ ] T8202-distinction: Specific numeral-theorem priority and a substantial
   own useful difference remain OPEN. Generic suffix/register mechanism is
   classical; restricted frontend support alone does not meet the goal.
