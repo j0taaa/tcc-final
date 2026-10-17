@@ -70,3 +70,9 @@ wrong-normalization shortcut is rejected exactly. These are proof/correctness
 objects, with no native/model/forward/label/timing or maintained-suite rerun.
 The risk identity is classical; actual removable variance, complete costs and
 sufficient own novelty remain OPEN. See [result and next gate](work/result-v2.md).
+
+V3's [native preflight contract](work/native-contract-v3.md) is written BEFORE
+adapter/runner code or native calls. It reuses the actual pinned constrained-
+step functions with synthetic logits, six fixture families and48 CPU/CUDA
+replays, not a pretrained model or full vLLM service. All eight criteria remain:
+this advances correctness only; a separate real variance/cost gate is required.
