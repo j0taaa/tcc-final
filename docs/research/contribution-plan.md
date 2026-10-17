@@ -3869,3 +3869,32 @@ A new real operation with an own useful difference is still required; do not
 open a training/temperature stack just because the classical composition is
 correct. A69's declined application, A58's negative gate and other preserved
 evidence remain unchanged. Positive user goal remains OPEN.
+
+
+## 2026-10-17 — Exact joint temperature and the compact norm-envelope control
+
+CoDD5.1 supplies a real frozen-state joint-temperature consumer. The new
+WRITTEN operation audit derives weighted Holder rejection: A=sum pi*u,
+F=sum pi*g^beta/u^(beta-1), M=A^(beta-1)intF. Choosing u=(int g^beta)^(1/beta)
+minimizes THIS envelope family, giving the classical Minkowski mass bound.
+For product routes, these weights factor over leaves; the SAME PC graph
+supports all required reweighting/evaluation/sampling. A competent compact
+classical control therefore matches the mechanism without enumerating routes.
+No own generic inference/optimal-sampling principle is established.
+
+A constructed rare-point/uniform family yields a k-factor versus Jensen,
+but its squared target has a two-component exact direct sampler with no
+rejection. A global norm-envelope schedule can also be exponentially slow
+on compact independent products, for which classical product/disjoint-power
+handling is exact and cheap. These are written adverse comparisons, not
+measurements or claims that useful exact temperature is impossible. Native
+RNG, full decoder temperature, bit work and neural/quality benefits are absent.
+
+Original FINAL LHTS ICML2023 Sections4/4.1/4.2 plus displayed proofs and
+Liu-Ihler ICML2011 Section3/Algorithm1 were read; exact scopes/hashes in
+next-operation-audit-2026-10-17-v4.md. Sun etal2601.22367v2 AppendixE already
+has exact Gaussian-mixture envelope rejection. No complete paper/code/model
+or experimental reproduction claim. General Holder/refinement principles and
+ordinary PC closure are not new. All eight criteria decline opening A70 for
+the basic wrapper; retain this as a strong analytical control. The positive
+user goal needs an additional own useful difference and remains OPEN.

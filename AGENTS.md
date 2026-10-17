@@ -1,5 +1,15 @@
 # AGENTS.md
 
+Joint-temperature audit v4 derives a classical Holder/Minkowski rejection
+envelope for CoDD's real frozen-state joint-power operation. Optimal weights
+in that envelope family factor over leaves; ordinary PC reweighting supplies
+the SAME compact control, no exponential route list. Jensen-only k-factor
+example also has a simpler exact two-component sampler; naive global rejection
+can be exponential on compact products. No A70/basic-wrapper campaign chosen.
+Original LHTS ICML2023 and Liu-Ihler2011 scopes/hashes and all eight criteria:
+docs/research/next-operation-audit-2026-10-17-v4.md. No new model/head/code/
+scientific execution/timing, sufficient own difference and positive goal OPEN.
+
 Training-operation audit v3 rejects zero-gradient skipping for the ACTUAL
 A58 CE+nonnegative semantic loss: one-slot singleton grammar still gives
 nonzero gradient. A normalized conditional likelihood is a DIFFERENT loss;

@@ -47,6 +47,30 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M94 — Joint-temperature operation and the compact classical control
+
+- [x] T9403: Documentation-only make check/direct0,32.121s:69 attempts/
+  274 versions209821 files8,107,411,502 bytes preserved. Note/log hashes in
+  docs/evidence/joint-temperature-audit-v4-checks.json. No new attempt,
+  scientific producer or345-test rerun; unrelated PDF untouched. Normal
+  commit/push and HEAD/upstream/remote verification follow. Goal OPEN.
+- [x] T9400: Previous turn PROGRESS revalidated fromcba4dfa and its actual
+  one-slot counterexample/original-source/check receipt. No live scientific
+  process to restart; unrelated PDF untouched. No change to A58/A69 decisions.
+- [x] T9401: WRITTEN Holder/Minkowski exact tempering envelope for a real CoDD
+  frozen-state consumer; optimizing its envelope family factors over PC leaves.
+  Ordinary leaf reweighting/evaluation/sampling yields the SAME compact
+  classical control, without route enumeration. No exclusive generic
+  tractability claim. A constructed k-factor improvement over Jensen also
+  admits a simpler two-component exact control; global rejection can be
+  exponentially bad for compact independent products. No prototype selected.
+- [x] T9402: Original LHTS FINAL ICML2023 method/proofs and Liu-Ihler2011
+  Section3/Algorithm1 read with explicit scopes/hashes; CoDD5.1 reread and
+  Sun etal2601.22367v2 AppendixE mixture paragraph read. No whole-paper/code/
+  prior/head/quality/timing audit. Eight criteria and decision preserve this
+  as a classical control, DO NOT open A70 for the basic wrapper. Note:
+  docs/research/next-operation-audit-2026-10-17-v4.md. Positive goal OPEN.
+
 ## M93 — Actual training-objective audit before a new implementation
 
 - [x] T9303: Documentation-only make check/direct0,67.843s:69 attempts/
