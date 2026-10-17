@@ -4561,6 +4561,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "58-streamed-grammar-loss",
+      "title": "Cabeça de treinamento em fluxo para perdas gramaticais",
+      "conclusion": "Writtenc271080 before CPU prototype, GPU protocolde762b0 before kernels. Six CPU oracles,252 exact derivatives/252 combined coefficients and full321 PASS88.353s. CPU zero-class NaNs at6ef8f37 preserved then corrected; initial8fea71f GPU packet overall ERROR due8 missing-packaging CCE imports. Separate pinned-runtime replayfc224fa completes32/32 PASS,380752 checks/4 refusals, eight input packets literally identical. CURRENT CCE3de376c/filtering OFF and full H/W/bias gradients included. Synthetic FP32 arithmetic ONLY; ZERO model read/forward/update/label or competitive timing/memory evidence. Strong cached/physically sorted CCE/small-class batching/direct-gradient controls and full MonoidReduce source required before promotion/performance/model campaign. Systems novelty, complete-cost benefit and user goal OPEN.",
+      "reading": "attempts/58-streamed-grammar-loss/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "fc224faf7bfb7115181eb0685bfce4e69f2ceeee",
+          "evidence_commit": "e2ef6e7d5a784e683dfcb378e95f3b3fdb5d181d",
+          "evidence_roots": [
+            "attempts/58-streamed-grammar-loss/README.md",
+            "attempts/58-streamed-grammar-loss/work"
+          ]
+        }
+      ]
     }
   ]
 }
