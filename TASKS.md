@@ -111,6 +111,10 @@ cost remain open. No new neural campaign is credited to M70.
   factories and persistent caches; charge RNG/preparation/source/function/
   algebra/memory, preserve all negative cases. No manufactured slow callback,
   warm-cache handicap or post-data gate change. Correctness is not success.
+- [ ] T9112: V6 classical retrospective control: shared uniform, nested HG
+  residual bounds, descending-weight evaluation and persistent partial cache.
+  Freeze proof before source and one independent exact/full-call preflight;
+  no query lower bound against this sampler or competitive timing claim.
 - [x] T9111: V4 source5775a89/evidence1bb9749 and V5 source22278c0/
   evidencebc696b1 independently preserved:750 files12,273,997 bytes and754
   files11,773,409 bytes. Original-Git checks/direct0,14 frozen hash comparisons

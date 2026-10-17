@@ -153,3 +153,14 @@ have616 exhaustive transcripts84 complete laws6 refusals. These CLASSICAL
 known-formula controls need ZERO black-box f queries and expose real algebraic
 work, so oracle-query savings alone cannot justify a practical win. See
 [the result](work/result-v5.md). Timings/full consumer/priority and goal OPEN.
+
+V6 rechecks the eight criteria BEFORE control code. Criteria1/2/3/4 retain
+the node-colour consumer and candidate-specific quantitative claims; the new
+retrospective algorithm is a CLASSICAL CONTROL, not an own contribution.
+Criteria5/6 require an exact nested-bound audit and complete numerical calls,
+with full source/RNG/preparation/cache costs left for a later frozen timing
+protocol. Criteria7/8 now explicitly permit the control to use our residual
+envelope, descending-weight lazy integration and persistent partial bounds.
+The scalar-coefficient lower bound does not constrain this sampler. Source,
+proof and prospective checks in[the V6 contract](work/retrospective-control-theory-v6.md).
+No large implementation/consumer campaign or completed scientific goal follows.
