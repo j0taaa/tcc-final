@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "scope": "Minimal independent exact rational law/envelope/callback audit only; no complete production sampler, p-coin simulation, neural head, labels, timing or performance claim.",
+  "freeze": "README/proof/protocol before code; reference and auditor committed before the single execution; preserve any failure without relabeling.",
+  "functions": ["constant", "affine", "quadratic", "cubic", "C2 cubic spline", "reflected spline"],
+  "metadata": "Original A67 six rational functions and exact range/M/H metadata, copied independently, no mutable cross-attempt imports. Zero-H cases exercise finite polynomial guard.",
+  "old_degrees": [16, 64],
+  "all_new_k": true,
+  "obligations": [
+    "For every old-degree/new-k and every hypergeometric point, verify the residual identity, |g|<=H W, B<=9H/(8m^1.5), |T|<=H/(21m^1.5), and all branch probabilities without clipping.",
+    "Independently evaluate every old classical coefficient by rational values, and prove equality of the fully enumerated output law to its normalized positive increment. No Monte Carlo substitute.",
+    "Check callback traces: exactly six setup values, zero f-values to compute W/B/proposal law; optional branch at most three additional calls; all within[0,1]. Preserve duplication without a fictitious cache discount.",
+    "Collect exact linear f-weights independently for old m=64 and every64<=k<=192; check each of the firstsqrt(m) weights is nonzero and no newer stencil overlaps those points. This checks a finite lower-bound instance, not all samplers.",
+    "Retain tighter H-gap control input counts versus enlarged2H and known cheap polynomial factories; diagnostic counts only, not speed.",
+    "Reject H=0 residual normalization, invalid bounds/degrees/indices. Do not run new full sampler/model/quality/resource campaign from a passing finite law audit."
+  ],
+  "open_requirements": "Specific useful originality, equally informed coefficient-free/signed-estimation controls, actual full-bit engine and real complete-cost consumer evidence. User goal stays open."
+}

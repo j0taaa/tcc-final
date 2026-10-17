@@ -1,5 +1,21 @@
 # AGENTS.md
 
+A68 inicia direção DIFERENTE antes de código: amostrar o incremento do
+controle CLÁSSICO n-1 sem calcular a soma dependente de todos valores de f.
+Prova escrita dá envelope residual HG independente de f, massa<=9H/(8m^1.5),
+e mistura segura com no máximo9 consultas f por saída. Usa gap2H: paga mais
+moedas, EN=n0+24H/sqrt(n0), que o controle clássico gapH. Importance/sign/
+control-variate/Bernstein/mixture são CLÁSSICOS; Morina2021/Lee AppendixC e
+Koskela etal2510.01941v2 lidos nos escopos68/work/primary-v1.md. Não atribuir
+invenção desses princípios, nem refutar comentário daquele estimador com
+outro algoritmo. Diferença candidata é especialização efetiva/cap de queries,
+não novo operador nem vitória integral. README8 critérios/prova/protocolo
+antecedem código; só auditoria racional mínima autorizada até comparação
+completa. Zero novo sampler/head/forward/treino/timing nesta fase escrita.
+Bound inferior é só para CALCULAR coeficiente exato na classe oracle, NÃO
+todo sampler/fórmula conhecida/cache/derivada. Prioridade/utilidade real/meta
+continuam ABERTAS. A67 e suas recusas permanecem intactas.
+
 A67 V3 encerra a comparação próxima com controle CLÁSSICO n-1. Original
 Sablonniere2004 Section2.2 lido; fórmula de ordem2 DERIVADA da reprodução,
 não atribuída a original1992 não lido. Contrato/prova1f86722 antes de

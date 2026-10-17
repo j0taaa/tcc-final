@@ -20,6 +20,13 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A68[constant-query residual sampling](68-residual-bernstein-sampling/README.md)
+writes an f-independent hypergeometric envelope BEFORE code. Candidate cap9
+value calls per output adopts the classical n-1 operator and pays enlarged2H
+input-count costs. Importance/sign/mixture principles known; specific useful
+specialization/priority/full cost remain OPEN. Only a bounded exact law audit
+is next, no full sampler/neural campaign. A67 withdrawal remains in force.
+
 A67 V3 completes the closest-control comparison: classical quadratic
 reproduction with the SAME three-value stencil gives explicit envelopes and
 the SAME full-bit route. Bounded audit2034 coefficients/1932 independent

@@ -1,5 +1,31 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A68 targets function queries, retaining classical n-1 control
+
+Previous goal turn made verified progress: original-source classical control
+and exact audit changed the A67 decision, all synced25b6eb4. It is not goal
+completion or a reason to reopen its old generic separating claim.
+
+New primary Morina2021 Section2.4/Proposition2.5, Lee/Doucet/Latuszynski
+AppendixC and Koskela etal2510.01941v2 identify positive-series, importance,
+sign-problem and non-adaptive factories as known. Source scopes/hashes in
+68/work/primary-v1.md. Those sources are not a novelty certificate. The
+candidate adopts the classical quadratic-reproducing operator and targets
+a different resource: sample its normalized increment without evaluating
+all old function values. A known residual envelope bounds the signed term
+by H*W, whose known HG mass is <=9H/(8m^1.5). Gap2H leaves a safe mixture
+margin and gives <=9 total f-value queries per output. This is an explicit
+specialization of classical mechanisms, not their invention.
+
+The enlarged gap costs input mean n0+24H/sqrt(n0), worse than tighter gapH;
+all setup/arithmetic/auxiliary bits and direct/analytic/cached/coefficient-free
+controls remain mandatory. Written lower bound only concerns exact scalar
+coefficient evaluation in an unrestricted smooth oracle class, not all factory
+sampling or a known spline formula. Eight README criteria/proof/protocol
+precede code. Only a finite rational residual/law/query audit is justified
+next; no complete sampler/model/quality/performance campaign or article claim.
+Specific useful originality, full-cost benefit and the user's goal stay OPEN.
+
 ## 2026-10-17 — A67 classical equal-access control removes proposed separation
 
 Actual original Sablonniere2004 Section2.2 gives the right partial-inverse

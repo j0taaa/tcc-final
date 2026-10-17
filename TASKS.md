@@ -47,6 +47,31 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M91 — Constant-query residual sampling, before a complete sampler
+
+- [x] T9100: Revalidated previous goal turn as PROGRESS: T9002 is closed and
+  synced25b6eb4; no live scientific process, only unrelated PDF untracked.
+  New A68 eight criteria/proof/protocol BEFORE code adopts the CLASSICAL n-1
+  operator. Candidate f-independent HG residual envelope has mass<=9H/(8m^1.5),
+  allowing <=9 callback calls per full output under enlarged2H gap. Input
+  mean n0+24H/sqrt(n0) explicitly exceeds tighter classical control. Original
+  Morina2.4/2.5, Lee AppendixC and2510.01941v2 scopes read: importance/sign/
+  nonadaptive principles known. Own quantitative specialization/priority/use
+  still open. No new implementation/execution at this written stage.
+- [ ] T9101: Freeze minimal independent coefficient/law auditor, then execute
+  ALL specified six functions/old16,64/new k. Check every residual/envelope/
+  probability/law/callback count and finite exact-evaluation lower-bound
+  instance, retaining tighter/direct controls. No full sampler or frequency
+  proof of exactness; failures preserved. Protocol68/work/protocol-v1.json.
+- [ ] T9102: Determine whether the quantitative query advantage survives
+  equally informed coefficient-free, signed-estimation, importance and lazy
+  integration controls, with input/bit/preparation costs and real consumer.
+  No production implementation/campaign/article promotion from correctness
+  alone. T9005/T8809/T8903 and positive goal stay OPEN until enough evidence.
+- [ ] T9103: Preserve source/proof/evidence independently, run appropriate
+  checks, normal commit/push and verify upstream. No maintained345-test rerun
+  solely for isolated mathematical audit or change to earlier frozen attempts.
+
 ## M90 — Effective value-only smooth Bernoulli factory, before implementation
 
 - [x] T9000: Reassess closed applications and primary antecedents BEFORE a
