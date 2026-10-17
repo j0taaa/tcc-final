@@ -264,7 +264,7 @@ def run(destination):
                                     payload, peak = stdout.splitlines()
                                     row = json.loads(payload)
                                     row.update(json.loads(peak))
-                                except json.JSONDecodeError:
+                                except ValueError:
                                     row = dict(case, status="WORKER_ERROR", outputs=[])
                                 row["direct_exit_code"] = result.returncode
                             after = resource.getrusage(resource.RUSAGE_CHILDREN)
