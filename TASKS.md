@@ -66,9 +66,19 @@ cost remain open. No new neural campaign is credited to M70.
   timing. Polynomial closed-form controls are MUCH cheaper; retained explicitly.
   Raw a67_local_bernstein_v1_initial; full scope67/work/result-v1.md. No naive
   unit-cost Fraction or empirical-frequency proof of exactness is claimed.
-- [ ] T9002: Preserve results and re-evaluate the own effective construction
-  against closest quasi-interpolants BEFORE full sampler/performance work.
-  Correctness alone does not fulfill the publication/usefulness objective.
+- [ ] T9002: Re-evaluate the own effective construction against closest
+  quasi-interpolants BEFORE full sampler/performance work. Include classical
+  quadratic-reproducing coefficients (n-1 correction) with the same local
+  finite-difference oracle; they may remove an advertised constant/locality
+  distinction. This is an unimplemented comparison lead, not a measured/proved
+  new improvement. Correctness alone does not fulfill the scientific objective.
+- [x] T9003: Preserve independent v1-local-coefficient-audit, source14b2b7a/
+  evidence5bb6dc7,724 files11,395,054 bytes; create+original-Git comparison PASS.
+  Four frozen source/proof/protocol hashes agree; focused own Ruff/format2 PASS.
+  Maintained345 tests NOT rerun. Final make check directly exits0:67 attempts,
+  262 versions,198556 files7,957,239,050 bytes. Full receipts in
+  docs/evidence/a67-v1-final-{make-check.log,verification.json}. Integrity is
+  not proof of own novelty, full-cost benefit or achieved user goal.
 
 ## M89 — Adaptive typed-read interface audit, classical correction only
 

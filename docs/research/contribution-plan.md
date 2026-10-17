@@ -41,6 +41,14 @@ restricted oracle-query corollary, not a full-cost win. Next closest-source
 implicit-reduction audit must survive before broad implementation. No article
 promotion or sufficient own useful contribution/goal is claimed.
 
+Independent V1 snapshot14b2b7a/5bb6dc7 matches original Git,724 files.
+Final make check PASS67 attempts262 versions198556 files7,957,239,050 bytes;
+Ruff/format2 own files and4 frozen hashes pass. Maintained345 tests not rerun.
+Receipt docs/evidence/a67-v1-final-verification.json. Next T9002 specifically
+checks classical quadratic-reproducing local coefficients (n-1 correction)
+and whether their same-oracle version removes the proposed distinction.
+That is an unimplemented comparison lead, not a new theorem or measured win.
+
 ## 2026-10-17 — Reject duplicate stopping lead; audit actual adaptive reader
 
 The post-A65 stopping lead DUPLICATES A53's monotone observable theorem and

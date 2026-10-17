@@ -71,3 +71,8 @@ Known polynomial/affine factories and analytic derivatives are stronger
 controls, retained explicitly. The post-audit value-cost corollary is separate;
 no full-cost victory or sufficient priority follows. Next is closest-source
 comparison, not an automatic broad implementation. See[the result](work/result-v1.md).
+
+The eight criteria remain in force. In particular2/3/4/7 require checking
+classical quadratic-reproducing local coefficients (n-1 correction) with
+the same finite-difference access before claiming an own constant/locality
+benefit. This comparison lead is unimplemented, not new performance evidence.

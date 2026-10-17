@@ -1,0 +1,45 @@
+{
+  "kind": "After-run verification receipt",
+  "contract_commit": "9a22308bc6c261830140c746d2d046c32575d77b",
+  "source_commit": "14b2b7a3f58684b300ef60e0418660aa573b6cb7",
+  "evidence_commit": "5bb6dc74924f8941af64b2ae4c4704b094098ec7",
+  "coefficient_audit": {
+    "observed_exit_code": 0,
+    "scope": "Small exact coefficient obligations only; no complete sampler, fast-bit engine, p-coin sampling or neural/quality/latency evidence.",
+    "counts": {
+      "coefficients": 2034,
+      "derivative_bounds": 2034,
+      "common_denominators": 2034,
+      "elevations": 1932,
+      "mixture_bounds": 1356,
+      "approximation_points": 126,
+      "guards": 9,
+      "controls": 36
+    }
+  },
+  "archive_creation_git_comparison": {
+    "observed_exit_code": 0,
+    "files": 724,
+    "uncompressed_bytes": 11395054
+  },
+  "make_check": {
+    "observed_exit_code": 0,
+    "log": "docs/evidence/a67-v1-final-make-check.log",
+    "sha256": "8732c39833563e8d20c1380568bce41f005b99889746dc8e2bce45f273494132",
+    "attempts": 67,
+    "versions": 262,
+    "preserved_files": 198556,
+    "uncompressed_bytes": 7957239050
+  },
+  "focused_ruff_and_format": {
+    "observed_exit_code": 0,
+    "own_files": 2
+  },
+  "frozen_source_hash_comparison": {
+    "observed_exit_code": 0,
+    "files": 4
+  },
+  "maintained_345_tests_rerun": false,
+  "scientific_limits": "HNP already gives smooth finite-mean capability. Known polynomial/affine factories can be much cheaper. Cold value-query corollary is not full-cost superiority. Specific own effectiveness/priority/useful full cost remain open; next closest-source audit required.",
+  "goal": "OPEN"
+}

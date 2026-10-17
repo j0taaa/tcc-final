@@ -30,6 +30,9 @@ Its predeclared small audit now passes2034 coefficients/derivative/denominator
 checks,1932 independent elevations,1356 mixture bounds126 points9 guards36
 controls. No full sampler, fast-bit implementation or neural/timing evidence.
 Polynomial/derivative/cached controls remain. Full scope67/work/result-v1.md.
+Independent V1 source14b2b7a/evidence5bb6dc7 matches Git; make check67 attempts/
+262 versions PASS. No maintained345-test rerun. Next: closest quasi-interpolant
+comparison, including quadratic reproduction; own useful goal remains OPEN.
 
 A66 completes a bounded audit of vLLM's actual adaptive typed-read mean:
 48 cases2,308 exact tapes/order controls480 covariance entries PASS. Original

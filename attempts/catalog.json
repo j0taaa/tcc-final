@@ -4989,6 +4989,25 @@
           ]
         }
       ]
+    },
+    {
+      "id": "67-local-bernstein-factory",
+      "title": "Envelopes efetivos locais para fábrica de Bernoulli",
+      "conclusion": "Construção escrita com três valores/constantes explícitas e auditoria racional de coeficientes PASS; HNP já fornece capacidade smooth e controles polinomiais são mais baratos. Prioridade/ganho integral ainda abertos; sem sampler completo ou evidência neural.",
+      "reading": "attempts/67-local-bernstein-factory/work/result-v1.md; attempts/67-local-bernstein-factory/work/theory-v1.md",
+      "versions": [
+        {
+          "id": "v1-local-coefficient-audit",
+          "source_commit": "14b2b7a3f58684b300ef60e0418660aa573b6cb7",
+          "evidence_commit": "5bb6dc74924f8941af64b2ae4c4704b094098ec7",
+          "evidence_roots": [
+            "docs/artifacts/raw/a67_local_bernstein_v1_initial",
+            "attempts/67-local-bernstein-factory/work/result-v1.md",
+            "attempts/67-local-bernstein-factory/work/cold-value-cost-v2.md",
+            "attempts/67-local-bernstein-factory/README.md"
+          ]
+        }
+      ]
     }
   ]
 }

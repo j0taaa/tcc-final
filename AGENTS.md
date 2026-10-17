@@ -20,6 +20,12 @@ não ganho de custo integral. Próximo: conferir quasi-interpolants/reduções
 antes de sampler amplo. Sem heads, treino/campanha ou promoção
 ao artigo. É outro recorte de TCC autorizado, não uso dLLM validado nem meta
 cumprida. A34/A53/A65 e A66 permanecem com seus limites/recusas intactos.
+V1 independente preserva source14b2b7a/evidence5bb6dc7 (724 arquivos); hashes4
+próprios e Ruff/format2 passam. make check PASS67 tentativas262 versões198556
+arquivos7.957.239.050 bytes. Suíte345 NÃO rerodada. T9002 exige comparar
+quasi-interpolants, inclusive correção clássica n-1 que reproduz quadráticas,
+antes de sampler/performance. Esse lead não tem implementação/medição/prova
+comparativa aqui. A meta continua ABERTA.
 
 A66 conclui auditoria PEQUENA da média de leituras tipadas do vLLM pinado
 b05ede56168b5718c425c1493914e5e79f6b8181. A política auto escolhe1/m pela
