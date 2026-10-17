@@ -71,6 +71,15 @@ cost remain open. No new neural campaign is credited to M70.
   integration controls, with input/bit/preparation costs and real consumer.
   No production implementation/campaign/article promotion from correctness
   alone. T9005/T8809/T8903 and positive goal stay OPEN until enough evidence.
+- [ ] T9105: Written V3 contractbdedd14 BEFORE code: classical component
+  splitting cap6, quartic residual envelope with four-moment normalizer and
+  log-concavity; rational classic rejection plan needs O(log m) known-weight
+  preparation and<=8 expected attempts. SAME H-gap count/kernel. Original2024
+  genealogy model independently identifies a consumer, not a new duality or
+  exclusive non-explosion result. Freeze finite certificate/law auditor then
+  execute all m16/64/256 proposal cases and six original m16/64 function laws.
+  No full sampler/genealogy/RNG/timing campaign yet; T9102 still open for real
+  whole-operation cost and equally informed controls/priority. ProtocolV3.
 - [x] T9104: V2 proofb7acbb0 AFTER V1 and BEFORE source13e5aa1/ONE PASS0.
   Classical Peano slope H/(3m) lowers envelope mass19H/(24m^1.5), margin1/28,
   permits SAME tighter H-gap count law with<=9 callbacks. All966 exact laws,
