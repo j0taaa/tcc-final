@@ -352,6 +352,25 @@ MIPS e PAPL fornecem composição clássica direta. Não promover mecanismo
 genérico/novidade/prática; preservar diagnóstico/controle sem acionar campanha
 neural. A52 V18 permanece fechado negativo, e a meta positiva continua aberta.
 
+A58 escrevec271080 ANTES de código uma operação DIFERENTE: CE+perda de massa
+gramatical e gradientes completos da cabeça, com estatísticas por classe e
+recomputação sem ativação N*V. Semantic loss/CRF/CCE/monoid folds são
+antecedentes, não novidade. EOS variável exige ocupação a_i, não marginal
+normalizada em toda linha. Seis oráculos CPU passam; suíte321 PASS88.353s.
+Primeiro fixture de classe zero tinha4/4/2 gradientes H/W/bias não finitos;
+falha preservada, correção separada. ProtocoloGPUde762b0 antes dos kernels:
+initial8fea71f tem24 PASS/8 CCE ERROR por packaging ausente, overall ERROR.
+Addendumd883e12 ANTES de replay instala packaging25.0; produtorfc224fa passa
+32/32 métodos/fixtures,380752 comparações/4 recusas; inputs8/8 literalmente
+iguais. CCE3de376c atual tem return_lse e grad_lse_out, filtering OFF. São
+SOMENTE matrizes sintéticas FP32, sem modelo/head lido, forward/update/label
+ou timing/memória competitivos. Controles têm mesma memória assintótica;
+classificação física permanente, classes pequenas em lote e montagem direta
+de gradientes são obrigatórios antes de medir. MonoidReduce original completo
+ainda não obtido; não excluir capacidade por essa lacuna. Diferença própria
+de sistemas, benefício integral e meta permanecem abertos; sem campanha
+neural ampla ou promoção a partir dos oráculos. Ver58/work/result-v4.md.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

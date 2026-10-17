@@ -1,0 +1,37 @@
+{"fixture": 0, "method": "candidate", "status": "PASS", "max_abs_error": 8.408559870609622e-08, "max_scaled_error": 0.0009697088055085284, "checked": 38}
+{"fixture": 0, "method": "dense32", "status": "PASS", "max_abs_error": 9.472833562007565e-08, "max_scaled_error": 0.001051473415835199, "checked": 38}
+{"fixture": 0, "method": "checkpoint", "status": "PASS", "max_abs_error": 9.472833562007565e-08, "max_scaled_error": 0.001051473415835199, "checked": 38}
+{"fixture": 0, "method": "CCE", "status": "PASS", "max_abs_error": 8.408559870609622e-08, "max_scaled_error": 0.0009333402842486907, "checked": 38}
+{"fixture": 1, "method": "candidate", "status": "PASS", "max_abs_error": 1.1362135410308838e-07, "max_scaled_error": 0.0008091622367513041, "checked": 68}
+{"fixture": 1, "method": "dense32", "status": "PASS", "max_abs_error": 2.682209014892578e-07, "max_scaled_error": 0.0016043542958728524, "checked": 68}
+{"fixture": 1, "method": "checkpoint", "status": "PASS", "max_abs_error": 1.500136845855593e-07, "max_scaled_error": 0.0016043542958728524, "checked": 68}
+{"fixture": 1, "method": "CCE", "status": "PASS", "max_abs_error": 2.0761418451087366e-07, "max_scaled_error": 0.0013390771698165863, "checked": 68}
+{"fixture": 2, "method": "candidate", "status": "PASS", "max_abs_error": 1.380153400454276e-07, "max_scaled_error": 0.001740056644703765, "checked": 143}
+{"fixture": 2, "method": "dense32", "status": "PASS", "max_abs_error": 2.8645480698585857e-07, "max_scaled_error": 0.0025899949949694735, "checked": 143}
+{"fixture": 2, "method": "checkpoint", "status": "PASS", "max_abs_error": 2.8645480698585857e-07, "max_scaled_error": 0.0025899949949694735, "checked": 143}
+{"fixture": 2, "method": "CCE", "status": "PASS", "max_abs_error": 1.380153400454276e-07, "max_scaled_error": 0.0011624643960034462, "checked": 143}
+{"fixture": 3, "method": "candidate", "status": "PASS", "max_abs_error": 4.861503839492798e-07, "max_scaled_error": 0.0034765968829899917, "checked": 2975}
+{"fixture": 3, "method": "dense32", "status": "PASS", "max_abs_error": 4.861503839492798e-07, "max_scaled_error": 0.002516372774190028, "checked": 2975}
+{"fixture": 3, "method": "checkpoint", "status": "PASS", "max_abs_error": 4.675239324569702e-07, "max_scaled_error": 0.003898883417147418, "checked": 2975}
+{"fixture": 3, "method": "CCE", "status": "PASS", "max_abs_error": 4.675239324569702e-07, "max_scaled_error": 0.002516372774190028, "checked": 2975}
+{"fixture": 4, "method": "candidate", "status": "PASS", "max_abs_error": 3.090435356511989e-07, "max_scaled_error": 0.002823892181981681, "checked": 19569}
+{"fixture": 4, "method": "dense32", "status": "PASS", "max_abs_error": 2.934689931066714e-07, "max_scaled_error": 0.0030554213484109195, "checked": 19569}
+{"fixture": 4, "method": "checkpoint", "status": "PASS", "max_abs_error": 2.934689931066714e-07, "max_scaled_error": 0.002953545015821528, "checked": 19569}
+{"fixture": 4, "method": "CCE", "status": "PASS", "max_abs_error": 3.054843120686712e-07, "max_scaled_error": 0.003330554313270846, "checked": 19569}
+{"fixture": 5, "method": "candidate", "status": "PASS", "max_abs_error": 1.1837109923362732e-06, "max_scaled_error": 0.007938301717704554, "checked": 71890}
+{"fixture": 5, "method": "dense32", "status": "PASS", "max_abs_error": 7.236376404762268e-07, "max_scaled_error": 0.00908036537578066, "checked": 71890}
+{"fixture": 5, "method": "checkpoint", "status": "PASS", "max_abs_error": 1.0471575784265497e-06, "max_scaled_error": 0.00776122633969532, "checked": 71890}
+{"fixture": 5, "method": "CCE", "status": "PASS", "max_abs_error": 1.4491345208256234e-06, "max_scaled_error": 0.008017897795579293, "checked": 71890}
+{"fixture": 6, "method": "candidate", "status": "PASS", "max_abs_error": 3.427267074584961e-07, "max_scaled_error": 0.002931120813845372, "checked": 481}
+{"fixture": 6, "method": "dense32", "status": "PASS", "max_abs_error": 3.427267074584961e-07, "max_scaled_error": 0.0016332570139551662, "checked": 481}
+{"fixture": 6, "method": "checkpoint", "status": "PASS", "max_abs_error": 3.427267074584961e-07, "max_scaled_error": 0.002468485199499147, "checked": 481}
+{"fixture": 6, "method": "CCE", "status": "PASS", "max_abs_error": 3.427267074584961e-07, "max_scaled_error": 0.0023595219312352355, "checked": 481}
+{"fixture": 7, "method": "candidate", "status": "PASS", "max_abs_error": 2.2351741790771484e-08, "max_scaled_error": 0.0002629616642082892, "checked": 24}
+{"fixture": 7, "method": "dense32", "status": "PASS", "max_abs_error": 2.2351741790771484e-08, "max_scaled_error": 0.0002629616642082892, "checked": 24}
+{"fixture": 7, "method": "checkpoint", "status": "PASS", "max_abs_error": 2.2351741790771484e-08, "max_scaled_error": 0.0002629616642082892, "checked": 24}
+{"fixture": 7, "method": "CCE", "status": "PASS", "max_abs_error": 2.2351741790771484e-08, "max_scaled_error": 0.0002629616642082892, "checked": 24}
+{"refusal": 0, "status": "PASS"}
+{"refusal": 1, "status": "PASS"}
+{"refusal": 2, "status": "PASS"}
+{"refusal": 3, "status": "PASS"}
+{"status": "PASS", "records": 32, "checked": 380752, "refusals": 4, "new_model_forwards": 0, "new_model_parameter_reads": 0, "optimizer_updates": 0, "competitive_timing": false, "RNG_restored": true, "Python_RNG_restored": true, "NumPy_RNG_restored": true, "matmul_precision_restored": true, "threads_unchanged": true}

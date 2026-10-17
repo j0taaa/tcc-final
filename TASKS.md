@@ -43,6 +43,29 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M81 — Streamed grammar-loss training head, full-gradient arithmetic only
+
+- [x] T8100: Write A58 eight criteria/theoryc271080 BEFORE prototype; primary
+  controlsdfcb112 explicitly give CCE its direct LSE adjoint/filter_eps=None.
+  Six CPU oracles PASS0.873s:252 exact dual derivatives,252 combined loss/
+  mass/full-gradient coefficients, four panel widths, variable EOS, fixed
+  future IDs/aliases/zeros, occupancy/filtering counterexamples. Full321
+  PASS88.353s. CPU zero-class NaN at6ef8f37 is preserved and fixed separately.
+- [x] T8101: Freeze GPU protocolde762b0 BEFORE kernels; initial8fea71f has24
+  candidate/dense/checkpoint PASS and8 CCE import ERROR, overall ERROR.
+  Separate before-replay addendumd883e12 pins packaging25.0; producerfc224fa
+  replays ALL32/32 PASS,380752 comparisons/4 refusals. All8 input NPZs are
+  literally identical; RNG/precision/threads restored. Current pinned CCE
+  3de376c/filtering OFF included. Full H/W/bias gradients, SYNTHETIC FP32
+  matrices ONLY: zero model reads/forwards/updates/labels or competitive
+  timing/memory evidence. See58/work/result-v4.md; no main-paper promotion.
+- [ ] T8102: Before a cost/model campaign, provide equally optimized cached/
+  physically class-sorted CCE, batched small classes and direct gradient
+  assembly, plus checkpointed/dense controls. Recover/check complete
+  MonoidReduce original/source and establish a substantive own useful systems
+  distinction. Then freeze real-input/full-cost resource/decision protocol.
+  Correct generic algebra/GPU kernels alone do not meet the positive goal.
+
 ## M80 — Conditional policy-ratio moments, classical diagnostic retained
 
 - [x] T8000: Write A57 eight criteria/theoryf5833c2 BEFORE independent reference.

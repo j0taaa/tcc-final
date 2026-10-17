@@ -2944,3 +2944,26 @@ not a new generic mechanism. No old-head readout, neural forward, sample, label
 or update was triggered. A52 V18 remains CLOSED NEGATIVE; this is a distinct
 operation, not a relaxation. Own useful separation and the user's goal remain
 OPEN. Exact scopes/decision: attempts/57-policy-ratio-moments/work/primary-decision-v2.md.
+
+## 2026-10-16 — A58 full-gradient training operation, not an inference retry
+
+Writtenc271080 before prototype: class log-sum-exp plus indexed target logits
+can feed an existing CE+grammatical semantic loss; class adjoints are recomputed
+in tiles into FULL H/W/bias gradients. CRF/semantic loss, CCE and monoidal
+backward are direct antecedents. Variable EOS needs prefix occupancy a_i;
+using1 is wrong. A28/A36/A44/A52 negative applications remain CLOSED.
+
+Six CPU oracles pass252 exact derivatives/252 combined coefficients; full321
+PASS88.353s. Separate GPU protocolde762b0 precedes kernels. Initial packet has
+24 PASS/8 CCE import ERROR, overall ERROR; packaging repair is written before
+new replay. Producerfc224fa passes32/32 with current CCE/filtering OFF,380752
+checks/4 refusals; all8 input packets literally identical. The original zero-
+class NaN boundary and import failure remain preserved. No model read/head/
+forward/update/semantic label or competitive memory/latency measurement.
+
+The systems candidate remains OPEN. Checkpointed and grouped CCE controls can
+match memory; permanent physical class sorting, small-class batching and direct
+gradient assembly must be included before timing. Generic algebra alone is not
+our contribution. Recover the full MonoidReduce source before any promotion.
+Actual scopes, producers, raw records and next comparator obligations are in
+attempts/58-streamed-grammar-loss/work/result-v4.md. The user goal is not achieved.

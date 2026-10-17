@@ -57,3 +57,15 @@ This direction does not retain A28's already-materialized GPU logits and call
 that model-memory savings. It also does not project only grammar-valid IDs:
 mass regularization and variable EOS require the original row normalizers.
 Do not transfer timings, neural updates or claims between these attempts.
+
+V4 consolidation: six CPU oracles PASS;321 maintained tests PASS88.353s.
+A separately frozen GPU arithmetic packet completes32/32 method-fixtures,
+380752 comparisons and4 refusals, including CURRENT CCE with filtering OFF.
+Original-ID full H/W/bias gradients are checked, not only a bias coordinate.
+The CPU zero-class NaN fixture and initial missing-packaging CCE failure are
+preserved separately. All eight replay inputs are literally byte-identical.
+No real model readout/forward/update or memory/latency benefit is credited.
+Strong controls can match asymptotic workspace; physical class sorting,
+batched small classes and direct gradient assembly are mandatory BEFORE a
+performance claim. Own useful systems difference and the goal remain OPEN;
+see work/result-v4.md. No broad model campaign is triggered by this preflight.
