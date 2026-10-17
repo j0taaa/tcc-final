@@ -20,7 +20,7 @@ class SortedHeadPlan:
     def __init__(self, mapping, device="cpu", threshold=32, panel=2048, backend="checkpoint"):
         if not mapping or sorted(set(mapping)) != list(range(max(mapping) + 1)) or panel < 1:
             raise ValueError("nonempty contiguous classes and positive panel required")
-        if backend not in ("checkpoint", "CCE", "dense"):
+        if backend not in ("checkpoint", "CCE", "CCE_out", "dense"):
             raise ValueError("unknown control backend")
         self.backend, self.panel = backend, panel
         members = [
@@ -52,6 +52,7 @@ class SortedHeadPlan:
         # None preserves dynamic checks; a declared immutable bias support
         # can instead be prepared once alongside the other metadata.
         self.blocked_classes = None
+        self.out_work = {}
 
     def blocked(self, cls, bias, lo, hi):
         if self.blocked_classes is not None:
@@ -79,6 +80,15 @@ class _SortedHead(torch.autograd.Function):
                 if plan.blocked(cls, b, lo, hi):
                     z[:, cls] = -torch.inf
                     children.append(None)
+                elif plan.backend == "CCE_out":
+                    from .cce_out_v9 import buffers, forward_lse
+
+                    value = forward_lse(h, w[lo:hi], b[lo:hi])
+                    key = (len(h), h.shape[1], cls)
+                    if key not in plan.out_work:
+                        plan.out_work[key] = buffers(h, w[lo:hi])
+                    children.append(value)
+                    z[:, cls] = value
                 elif plan.backend == "CCE":
                     from cut_cross_entropy import linear_cross_entropy
 
@@ -119,7 +129,10 @@ class _SortedHead(torch.autograd.Function):
     def backward(ctx, dz, dt):
         h, w, b, targets, z = ctx.saved_tensors
         plan = ctx.plan
-        dh, dw, db = torch.zeros_like(h), torch.empty_like(w), torch.empty_like(b)
+        dh = torch.zeros_like(h)
+        dw = torch.zeros_like(w) if plan.backend == "CCE_out" else torch.empty_like(w)
+        db = torch.zeros_like(b) if plan.backend == "CCE_out" else torch.empty_like(b)
+        transposed_dz = dz.T.contiguous() if plan.backend.startswith("CCE") else None
 
         def block(lo, hi, classes):
             logits = h @ w[lo:hi].T + b[lo:hi]
@@ -127,7 +140,7 @@ class _SortedHead(torch.autograd.Function):
             safe = torch.where(torch.isfinite(norm), norm, torch.zeros_like(norm))
             g = dz[:, classes] * torch.exp(logits - safe)
             dh.add_(g @ w[lo:hi])
-            dw[lo:hi].copy_(g.T @ h)
+            torch.mm(g.T, h, out=dw[lo:hi])
             db[lo:hi].copy_(g.sum(0))
 
         if plan.backend == "dense":
@@ -139,9 +152,23 @@ class _SortedHead(torch.autograd.Function):
                 if plan.blocked(cls, b, lo, hi):
                     dw[lo:hi].zero_()
                     db[lo:hi].zero_()
+                elif plan.backend == "CCE_out":
+                    from .cce_out_v9 import backward_into
+
+                    backward_into(
+                        h,
+                        w[lo:hi],
+                        b[lo:hi],
+                        ctx.children[ordinal],
+                        transposed_dz[cls],
+                        dh,
+                        dw[lo:hi],
+                        db[lo:hi],
+                        plan.out_work[(len(h), h.shape[1], cls)],
+                    )
                 elif plan.backend == "CCE":
                     zz, hh, ww, bb = ctx.children[ordinal]
-                    gh, gw, gb = torch.autograd.grad(zz, (hh, ww, bb), dz[:, cls])
+                    gh, gw, gb = torch.autograd.grad(zz, (hh, ww, bb), transposed_dz[cls])
                     dh.add_(gh)
                     dw[lo:hi].copy_(gw)
                     db[lo:hi].copy_(gb)

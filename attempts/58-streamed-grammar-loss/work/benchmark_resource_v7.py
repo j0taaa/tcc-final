@@ -29,8 +29,9 @@ CONTROLS = (
     ["dense"]
     + [f"CCE{t}" for t in (0, 8, 32, 128)]
     + [f"checkpoint{t}p{p}" for t in (0, 8, 32, 128) for p in (2048, 8192)]
+    + ["CCE_out128"]
 )
-FIRST_CONTROLS = ["dense", "CCE128", "checkpoint128p8192"]
+FIRST_CONTROLS = ["dense", "CCE128", "checkpoint128p8192", "CCE_out128"]
 
 
 def sha(tensor):
@@ -71,6 +72,8 @@ def make_state(name, data, mapping):
     else:
         if name == "dense":
             backend, threshold, panel = "dense", 0, 8192
+        elif name.startswith("CCE_out"):
+            backend, threshold, panel = "CCE_out", int(name[len("CCE_out") :]), 8192
         elif name.startswith("CCE"):
             backend, threshold, panel = "CCE", int(name[3:]), 8192
         else:
@@ -337,7 +340,7 @@ def main(output, source):
         == "PASS"
     )
     assert (
-        json.loads((base / "evidence" / "strong-v7-hoisted" / "summary.json").read_text())["status"]
+        json.loads((base / "evidence" / "strong-v9-out" / "summary.json").read_text())["status"]
         == "PASS"
     )
     sys.path.insert(0, str(source))
@@ -355,6 +358,7 @@ def main(output, source):
         "dtype": "FP32",
         "dot_precision": "ieee",
         "filtering": False,
+        "prospective_addenda": ["bucket-addendum-v8.md", "out-control-addendum-v9.md"],
         "Ns": NS,
         "candidates": CANDIDATES,
         "controls": CONTROLS,

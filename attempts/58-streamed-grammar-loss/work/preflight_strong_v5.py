@@ -38,7 +38,7 @@ def main(output, source, inputs):
             for p in Path(__file__).parent.glob("*.py")
         },
         "thresholds": [0, 8, 32, 128],
-        "backends": ["dense", "checkpoint", "CCE"],
+        "backends": ["dense", "checkpoint", "CCE", "CCE_out"],
         "competitive_timing": False,
         "new_model_forwards": 0,
         "model_parameter_reads": 0,
@@ -65,7 +65,7 @@ def main(output, source, inputs):
                 dz, dt = [torch.from_numpy(packet[key].copy()) for key in ("dz", "dt")]
             full_data = (*data, mapping, dz, dt)
             reference = evaluate("dense64", full_data)
-            for backend in ("dense", "checkpoint", "CCE"):
+            for backend in ("dense", "checkpoint", "CCE", "CCE_out"):
                 for threshold in (0, 8, 32, 128):
                     row = {
                         "fixture": index,
@@ -131,7 +131,7 @@ def main(output, source, inputs):
         torch.cuda.set_rng_state_all(cuda_rng)
     report = {
         "status": "PASS"
-        if len(records) == 96 and all(r["status"] == "PASS" for r in records)
+        if len(records) == 128 and all(r["status"] == "PASS" for r in records)
         else "ERROR",
         "records": len(records),
         "checked": sum(r.get("checked", 0) for r in records),
