@@ -10,8 +10,14 @@ smooth de média finita; finite differences/Bernstein/mixtures são clássicos.
 Candidata própria é a construção EFETIVA/localidade/custo completo, ainda
 sem prioridade ou relevância suficiente confirmada. Controles raw Nacu--Peres,
 Lorentz/HNP, Boolean sums/Sevy, derivadas analíticas e caching são obrigatórios.
-Próximo APENAS oráculo racional de coeficientes/protocolo67/work/protocol-v1.json,
-após freeze da fonte. Sem sampler completo, heads, treino/campanha ou promoção
+Contrato9a22308/source14b2b7a antecedem ÚNICO oráculo PASS:2.034 coeficientes/
+derivadas/denominadores,1.932 elevações independentes,1.356 bounds de mistura,
+126 pontos9 recusas36 controles. Sem sampler completo, p-coins amostrados,
+motor rápido em bits ou evidência neural/timing. Polinômios conhecidos têm
+factories clássicos MUITO mais baratos; derivadas/caching permanecem controles.
+Corolário cold-value-cost-v2 é POST-auditoria e só de queries/oráculo frio,
+não ganho de custo integral. Próximo: conferir quasi-interpolants/reduções
+antes de sampler amplo. Sem heads, treino/campanha ou promoção
 ao artigo. É outro recorte de TCC autorizado, não uso dLLM validado nem meta
 cumprida. A34/A53/A65 e A66 permanecem com seus limites/recusas intactos.
 

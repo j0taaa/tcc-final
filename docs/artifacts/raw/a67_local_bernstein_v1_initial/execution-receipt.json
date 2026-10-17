@@ -1,0 +1,19 @@
+{
+  "kind": "After-run direct execution receipt, not preregistration",
+  "command": ".venv/bin/python attempts/67-local-bernstein-factory/work/audit.py docs/artifacts/raw/a67_local_bernstein_v1_initial",
+  "observed_exit_code": 0,
+  "contract_commit": "9a22308bc6c261830140c746d2d046c32575d77b",
+  "producer_commit": "14b2b7a3f58684b300ef60e0418660aa573b6cb7",
+  "python_version": "3.11.16 (main, Aug 14 2026, 15:35:36) [Clang 22.1.3 ]",
+  "source_sha256": {
+    "coefficients.py": "58f1508d049d726236b163918372b7f380292fd61faa606444505ce075dad89b",
+    "audit.py": "46cb73eb78b2e10f543d74988a18ed6f3a4411ec255be11dc7cc075e9d9b14ea",
+    "protocol-v1.json": "76c38528988260336eb797d27ff0247cc6d1e97bcb74990450231bc04daad967",
+    "theory-v1.md": "92ddbcc6c00508d01c17d96a7bbe986b5d1e9d40a0cebd83b8f345d3a68dd76a"
+  },
+  "files": {
+    "summary.json": "57c4a59b39930b9437ce1aa9e091c1befa4d4d6de678cb4444e313382b0c32e7",
+    "stdout.log": "6e82435aa255d3d7a84b23afe07b2140416c5b4b990595e5d742c9edde3be74d"
+  },
+  "scope": "Small exact coefficient checks only; no complete sampler/fast-bit implementation, no source p-coin generation, no model/tokenizer/dataset/gold/head/forward/update/latency benchmark."
+}

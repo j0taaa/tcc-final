@@ -26,6 +26,11 @@ finite expected flips and a separate full-bit cost contract. Smooth factory
 capability and component ideas are classical; own effective specialization,
 priority and useful complete benefit remain hypotheses. See[the contract](67-local-bernstein-factory/README.md).
 
+Its predeclared small audit now passes2034 coefficients/derivative/denominator
+checks,1932 independent elevations,1356 mixture bounds126 points9 guards36
+controls. No full sampler, fast-bit implementation or neural/timing evidence.
+Polynomial/derivative/cached controls remain. Full scope67/work/result-v1.md.
+
 A66 completes a bounded audit of vLLM's actual adaptive typed-read mean:
 48 cases2,308 exact tapes/order controls480 covariance entries PASS. Original
 bodies execute587 times (586 successes1 expected error),1,422 FAKE packets,

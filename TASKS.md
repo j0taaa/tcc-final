@@ -56,12 +56,16 @@ cost remain open. No new neural campaign is credited to M70.
   Candidate EN=n0+12(M+H)/sqrt(n0), with separate full-bit arithmetic contract.
   HNP already supplies smooth finite-mean capability; no invention of that
   fact, finite differences, Bernstein or mixture/binary-splitting principles.
-  Specific priority/useful consequence remains unconfirmed. No code, sampling,
-  model/head/gold/forward/update/timing yet. See67/work/theory-v1.md.
-- [ ] T9001: Freeze coefficient reference and independent rational auditor;
-  execute ONLY the predefined finite coefficient/stencil/elevation/mixture
-  obligations. Preserve failures and same-information classical controls.
-  No naive unit-cost Fraction claim or empirical-frequency proof of exactness.
+  Specific priority/useful consequence remains unconfirmed. At that written
+  stage, no code/sampling/model/head/gold/forward/update/timing. See theory-v1.
+- [x] T9001: Freeze coefficient reference/independent auditor14b2b7a after
+  written contract9a22308; one execution PASS/direct0. All2034 coefficient/
+  derivative/denominator checks,1932 independent power-basis elevations,
+  1356 mixture bounds,126 rational bracket points,9 refusals36 controls pass.
+  No full sampler, p-coin sampling, fast-bit engine, model/head/gold/forward or
+  timing. Polynomial closed-form controls are MUCH cheaper; retained explicitly.
+  Raw a67_local_bernstein_v1_initial; full scope67/work/result-v1.md. No naive
+  unit-cost Fraction or empirical-frequency proof of exactness is claimed.
 - [ ] T9002: Preserve results and re-evaluate the own effective construction
   against closest quasi-interpolants BEFORE full sampler/performance work.
   Correctness alone does not fulfill the publication/usefulness objective.

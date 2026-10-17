@@ -31,6 +31,16 @@ dJev/dLLM or proof of generation quality/speed. README/proof/protocol precede
 all new code/tests. Only small rational coefficient obligations come next;
 no full sampler or broad campaign yet. Full scopes in67/work/primary-v1.md.
 
+Contract9a22308/source14b2b7a then precede ONE coefficient audit PASS/direct0:
+2034 boxes/derivative/denominator checks,1932 independent power-basis
+elevations,1356 mixture bounds,126 rational bracket points,9 refusals36
+controls. Zero complete sampler, p-coin sampling, fast-bit implementation or
+neural/timing evidence. Known polynomial/affine factories are MUCH cheaper;
+derivative/caching controls remain. POST-audit cold-value-cost-v2 derives a
+restricted oracle-query corollary, not a full-cost win. Next closest-source
+implicit-reduction audit must survive before broad implementation. No article
+promotion or sufficient own useful contribution/goal is claimed.
+
 ## 2026-10-17 — Reject duplicate stopping lead; audit actual adaptive reader
 
 The post-A65 stopping lead DUPLICATES A53's monotone observable theorem and

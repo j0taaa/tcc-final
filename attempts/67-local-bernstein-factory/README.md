@@ -62,3 +62,12 @@ coupler or a reopening of A34's failed neural screens. No model campaign.
 The first stage is a bounded coefficient/proof audit. Main paper, A34/A53/A65
 closed applications and maintained decoder APIs remain separate. Source
 reading scopes are in `work/primary-v1.md`; no mutable attempt is imported.
+
+V1: contract/proof9a22308 precede producer14b2b7a and ONE execution PASS/direct0.
+All2,034 coefficients/derivative/common-denominator checks,1,932 independent
+elevations,1,356 mixture bounds,126 bracket points,9 refusals and36 controls
+pass. No full sampler, fast-bit engine, p-coin draws or neural/timing evidence.
+Known polynomial/affine factories and analytic derivatives are stronger
+controls, retained explicitly. The post-audit value-cost corollary is separate;
+no full-cost victory or sufficient priority follows. Next is closest-source
+comparison, not an automatic broad implementation. See[the result](work/result-v1.md).

@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "producer_commit": "14b2b7a3f58684b300ef60e0418660aa573b6cb7",
+  "scope": "Exact small coefficient proof obligations only. No full sampler, timing benchmark, model, dataset, gold, head/forward/update or publication priority claim.",
+  "counts": {
+    "coefficients": 2034,
+    "derivative_bounds": 2034,
+    "common_denominators": 2034,
+    "elevations": 1932,
+    "mixture_bounds": 1356,
+    "approximation_points": 126,
+    "guards": 9
+  },
+  "functions": [
+    {
+      "name": "constant",
+      "n0": 16,
+      "c": "0",
+      "mixture_tail_at_n0": "0",
+      "expected_input_count_of_mixture": "16",
+      "affine_direct_factory_preferred": true
+    },
+    {
+      "name": "affine",
+      "n0": 16,
+      "c": "0",
+      "mixture_tail_at_n0": "0",
+      "expected_input_count_of_mixture": "16",
+      "affine_direct_factory_preferred": true
+    },
+    {
+      "name": "quadratic",
+      "n0": 16,
+      "c": "1/2",
+      "mixture_tail_at_n0": "1/64",
+      "expected_input_count_of_mixture": "35/2",
+      "affine_direct_factory_preferred": false
+    },
+    {
+      "name": "cubic",
+      "n0": 16,
+      "c": "3",
+      "mixture_tail_at_n0": "3/32",
+      "expected_input_count_of_mixture": "25",
+      "affine_direct_factory_preferred": false
+    },
+    {
+      "name": "spline",
+      "n0": 16,
+      "c": "9/4",
+      "mixture_tail_at_n0": "9/128",
+      "expected_input_count_of_mixture": "91/4",
+      "affine_direct_factory_preferred": false
+    },
+    {
+      "name": "reflected_spline",
+      "n0": 16,
+      "c": "9/4",
+      "mixture_tail_at_n0": "9/128",
+      "expected_input_count_of_mixture": "91/4",
+      "affine_direct_factory_preferred": false
+    }
+  ],
+  "limits": [
+    "Naive Fraction elevation is NOT the fast bit-work implementation.",
+    "Cold coefficient locality is scoped to specified operators; derivatives/caching/local quasi-interpolants remain controls.",
+    "HNP already gives smooth finite-mean existence. Specific own effectiveness/priority/useful full cost remain unconfirmed."
+  ]
+}
