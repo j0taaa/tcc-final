@@ -1,0 +1,8 @@
+test_missing_control_never_awards_positive_and_cannot_hide_known_loss (attempts.58-streamed-grammar-loss.work.test_resource_analysis.ResourceGateTests.test_missing_control_never_awards_positive_and_cannot_hide_known_loss) ... ok
+test_negative_shortcut_counts_unknown_states_optimistically (attempts.58-streamed-grammar-loss.work.test_resource_analysis.ResourceGateTests.test_negative_shortcut_counts_unknown_states_optimistically) ... ok
+test_paired_sign_and_memory_alternative (attempts.58-streamed-grammar-loss.work.test_resource_analysis.ResourceGateTests.test_paired_sign_and_memory_alternative) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
