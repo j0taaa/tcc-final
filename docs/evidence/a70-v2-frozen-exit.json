@@ -1,0 +1,16 @@
+{
+  "kind": "ONE corrected minimal constructed numerical audit; elapsed diagnostic only",
+  "producer_commit": "39ac2f4da1a7cb3ecfd15d335c683b35f01db037",
+  "command": [
+    ".venv/bin/python",
+    "-X",
+    "faulthandler",
+    "attempts/70-native-adam-erasure/work/audit_v2.py",
+    "--output",
+    "docs/artifacts/raw/a70_native_erasure_v2_frozen"
+  ],
+  "direct_exit_code": 0,
+  "elapsed_seconds": 2.2015251549892128,
+  "log": "docs/evidence/a70-v2-frozen-audit.log",
+  "log_sha256": "c118dc4eaaea42b7cb7717e6b047a85e79bddc5ff27b00f92ff4479a482386e6"
+}
