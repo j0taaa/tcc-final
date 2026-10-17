@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "operational_replays": 8748,
+  "transcript_read_nodes": 46098,
+  "prepared_prefix_states": 13104,
+  "named_multisets": 28,
+  "full_ordered_multiset_laws": "exact equality for both controls, candidate, matching",
+  "methods": [
+    {
+      "query_order": "ascending",
+      "weighted_laws": [
+        {
+          "p": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "control_expected_calls": "2561/486",
+          "candidate_expected_calls": "386/81",
+          "candidate_saving_fraction": "245/2561",
+          "stop_mass": {
+            "4": "29/162",
+            "5": "181/486",
+            "6": "109/243"
+          }
+        },
+        {
+          "p": [
+            "1/2",
+            "1/3",
+            "1/6"
+          ],
+          "control_expected_calls": "241897/46656",
+          "candidate_expected_calls": "3025/648",
+          "candidate_saving_fraction": "24097/241897",
+          "stop_mass": {
+            "4": "1753/7776",
+            "5": "17003/46656",
+            "6": "19135/46656"
+          }
+        },
+        {
+          "p": [
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          "control_expected_calls": "953/192",
+          "candidate_expected_calls": "35/8",
+          "candidate_saving_fraction": "113/953",
+          "stop_mass": {
+            "4": "11/32",
+            "5": "67/192",
+            "6": "59/192"
+          }
+        },
+        {
+          "p": [
+            "9/10",
+            "1/20",
+            "1/20"
+          ],
+          "control_expected_calls": "89712773/19200000",
+          "candidate_expected_calls": "837911/200000",
+          "candidate_saving_fraction": "9273317/89712773",
+          "stop_mass": {
+            "4": "173123/320000",
+            "5": "4712467/19200000",
+            "6": "4100153/19200000"
+          }
+        },
+        {
+          "p": [
+            "1",
+            "0",
+            "0"
+          ],
+          "control_expected_calls": "9/2",
+          "candidate_expected_calls": "4",
+          "candidate_saving_fraction": "1/9",
+          "stop_mass": {
+            "4": "2/3",
+            "5": "1/6",
+            "6": "1/6"
+          }
+        }
+      ]
+    },
+    {
+      "query_order": "cyclic",
+      "weighted_laws": [
+        {
+          "p": [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          "control_expected_calls": "2561/486",
+          "candidate_expected_calls": "386/81",
+          "candidate_saving_fraction": "245/2561",
+          "stop_mass": {
+            "4": "29/162",
+            "5": "181/486",
+            "6": "109/243"
+          }
+        },
+        {
+          "p": [
+            "1/2",
+            "1/3",
+            "1/6"
+          ],
+          "control_expected_calls": "241139/46656",
+          "candidate_expected_calls": "3025/648",
+          "candidate_saving_fraction": "23339/241139",
+          "stop_mass": {
+            "4": "1801/7776",
+            "5": "17185/46656",
+            "6": "18665/46656"
+          }
+        },
+        {
+          "p": [
+            "1/2",
+            "1/2",
+            "0"
+          ],
+          "control_expected_calls": "953/192",
+          "candidate_expected_calls": "35/8",
+          "candidate_saving_fraction": "113/953",
+          "stop_mass": {
+            "4": "11/32",
+            "5": "67/192",
+            "6": "59/192"
+          }
+        },
+        {
+          "p": [
+            "9/10",
+            "1/20",
+            "1/20"
+          ],
+          "control_expected_calls": "89712773/19200000",
+          "candidate_expected_calls": "837911/200000",
+          "candidate_saving_fraction": "9273317/89712773",
+          "stop_mass": {
+            "4": "173123/320000",
+            "5": "4712467/19200000",
+            "6": "4100153/19200000"
+          }
+        },
+        {
+          "p": [
+            "1",
+            "0",
+            "0"
+          ],
+          "control_expected_calls": "9/2",
+          "candidate_expected_calls": "4",
+          "candidate_saving_fraction": "1/9",
+          "stop_mass": {
+            "4": "2/3",
+            "5": "1/6",
+            "6": "1/6"
+          }
+        }
+      ]
+    }
+  ],
+  "neural_forwards": 0,
+  "timing_measured": false,
+  "published_package_executed": false
+}

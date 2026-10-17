@@ -1,0 +1,21 @@
+{
+  "source_commit": "1aa4fecc3fcafce8379a21f9773e0737ce6525a3",
+  "contract_commit": "1d98530f395856b8ac073ddf380585e0d100bace",
+  "command_template": ".venv/bin/python attempts/63-adaptive-six-coupling/work/rank_control.py --output <audit.json>",
+  "directly_observed_exit_code": 0,
+  "pre_freeze_ruff_format": "1 file PASS",
+  "scope": "Constructed exact rank controls; no model/head/update/label/timing or released package",
+  "neural_forwards": 0,
+  "files": [
+    {
+      "file": "audit.json",
+      "sha256": "6bca5abb676663e25197e26d93973be724de6d908ff80656eae5385388f4cf98",
+      "bytes": 4296
+    },
+    {
+      "file": "audit.log",
+      "sha256": "d9e5b175fc2d3d1f1d8e92ff7366d38efadb1ee531327d49a46f1afbe0427cad",
+      "bytes": 2570
+    }
+  ]
+}
