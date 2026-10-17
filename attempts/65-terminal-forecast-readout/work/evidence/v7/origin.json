@@ -1,0 +1,31 @@
+{
+  "contract_commit": "7c7ce15b040febbbd6b58e3e81044b7eaeceee78",
+  "source_commit": "1986eccce79d478c2be1095a98c981a382d926e5",
+  "command": ".venv-a52/bin/python -u attempts/65-terminal-forecast-readout/work/masked_preflight.py --output /tmp/a65-masked-v7",
+  "directly_observed_exit_code": 0,
+  "status": "PASS",
+  "scope": "Original masked-loop CPU/CUDA literal replay with FAKE heads, not model accuracy or neural execution",
+  "fake_forward_calls": 290,
+  "fake_forward_scope": "288 paired loop calls plus2 independent partial diagnostic heads",
+  "additional_helpers": 128,
+  "new_neural_forwards": 0,
+  "model_tokenizer_loaded": false,
+  "gold_quality_evaluated": false,
+  "files": [
+    {
+      "file": "records.jsonl",
+      "bytes": 124225,
+      "sha256": "67ce14f96c3c6455de8d73afc1c62bcbaa3d2ea09c6fa53d4a1816a04ee301a1"
+    },
+    {
+      "file": "run.log",
+      "bytes": 2325,
+      "sha256": "dfbbc9f1c546d02c9363e1496337bee5854d9502883a315cda4c0cb53482bea7"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 367590,
+      "sha256": "5ee992eb9979aef20dbb84da5ef12f43dcceb37ed02d0cbc13cb4ed9dbd46cac"
+    }
+  ]
+}

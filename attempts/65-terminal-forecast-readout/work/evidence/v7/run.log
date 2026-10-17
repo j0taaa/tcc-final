@@ -1,0 +1,17 @@
+{"device": "cpu", "seed": 17, "dtype": "torch.float32", "length": 8, "status": "PASS"}
+{"device": "cpu", "seed": 17, "dtype": "torch.float32", "length": 64, "status": "PASS"}
+{"device": "cpu", "seed": 17, "dtype": "torch.bfloat16", "length": 8, "status": "PASS"}
+{"device": "cpu", "seed": 17, "dtype": "torch.bfloat16", "length": 64, "status": "PASS"}
+{"device": "cpu", "seed": 29, "dtype": "torch.float32", "length": 8, "status": "PASS"}
+{"device": "cpu", "seed": 29, "dtype": "torch.float32", "length": 64, "status": "PASS"}
+{"device": "cpu", "seed": 29, "dtype": "torch.bfloat16", "length": 8, "status": "PASS"}
+{"device": "cpu", "seed": 29, "dtype": "torch.bfloat16", "length": 64, "status": "PASS"}
+{"device": "cuda:0", "seed": 17, "dtype": "torch.float32", "length": 8, "status": "PASS"}
+{"device": "cuda:0", "seed": 17, "dtype": "torch.float32", "length": 64, "status": "PASS"}
+{"device": "cuda:0", "seed": 17, "dtype": "torch.bfloat16", "length": 8, "status": "PASS"}
+{"device": "cuda:0", "seed": 17, "dtype": "torch.bfloat16", "length": 64, "status": "PASS"}
+{"device": "cuda:0", "seed": 29, "dtype": "torch.float32", "length": 8, "status": "PASS"}
+{"device": "cuda:0", "seed": 29, "dtype": "torch.float32", "length": 64, "status": "PASS"}
+{"device": "cuda:0", "seed": 29, "dtype": "torch.bfloat16", "length": 8, "status": "PASS"}
+{"device": "cuda:0", "seed": 29, "dtype": "torch.bfloat16", "length": 64, "status": "PASS"}
+{"status": "PASS", "new_neural_forwards": 0, "pretrained_model_tokenizer_loaded": false, "partial_support_checks": [{"device": "cpu", "alpha": 0.0019357431264460303, "variance": 0.2150316459680336, "mean": [0.5706094876860093, 0.4293905123139905], "peak_states": 57, "max_semantic_error": 1.1102230246251565e-16, "map_probability": 0.2662487565718368, "map_is_original_id_word_map": true, "semantic_vector_map_claimed": false}, {"device": "cuda:0", "alpha": 0.0019357425386700043, "variance": 0.21503164562842225, "mean": [0.5706094772681334, 0.4293905227318665], "peak_states": 57, "max_semantic_error": 1.1102230246251565e-16, "map_probability": 0.2662487781939478, "map_is_original_id_word_map": true, "semantic_vector_map_claimed": false}], "fake_forward_calls": 288, "additional_diagnostic_fake_heads": 2, "helpers": 128, "max_cuda_allocated_bytes": 9457664, "caller_rng_restored": true}
