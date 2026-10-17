@@ -123,8 +123,10 @@ class SemanticIndexTests(unittest.TestCase):
             thresholds.update(a + sign * tiny for a in atoms for sign in (-1, 1))
             for threshold in thresholds:
                 for inclusive in (True, False):
-                    expected = sum((w for v, w in law.items()
-                                    if v < threshold or (inclusive and v == threshold)), Fraction(0))
+                    expected = sum(
+                        (w for v, w in law.items()
+                         if v < threshold or (inclusive and v == threshold)), Fraction(0)
+                    )
                     self.assertEqual(index.cdf(threshold, inclusive), expected / total,
                                      (rows, threshold, inclusive))
                     cdfs += 1
