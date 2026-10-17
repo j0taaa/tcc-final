@@ -30,8 +30,8 @@ class NumberNFA:
         self.accept.add(zero_exp)
         for exponent in range(-budget, budget + 1):
             sign, lead = ("sign", exponent), ("lead", exponent)
-            self.eps[sign] = lead  # No sign: epsilon belongs before next BYTE.
             if exponent >= 0:
+                self.eps[sign] = lead  # No sign: only NONNEGATIVE exponents.
                 edge(sign, "+", lead)
             if exponent <= 0:
                 edge(sign, "-", lead)

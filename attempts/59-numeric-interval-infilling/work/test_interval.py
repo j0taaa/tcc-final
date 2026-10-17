@@ -54,6 +54,12 @@ class NumericIntervalTests(unittest.TestCase):
             "1.99999999999999999999999999999999999",
             "2e-000",
             "0.19e1",
+            "10e1",
+            "10e+1",
+            "10e-1",
+            "0.1e1",
+            "0.1e-1",
+            "0.1e+1",
         ]
         for text in words:
             self.assertEqual(machine.paths(text.encode()), int(admitted(text)), text)
