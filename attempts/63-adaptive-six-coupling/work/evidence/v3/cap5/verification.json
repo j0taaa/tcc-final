@@ -1,0 +1,15 @@
+{
+  "status": "VERIFIED",
+  "cap": 5,
+  "named_full_tapes": 243,
+  "named_multisets": 21,
+  "variables": 137,
+  "uniform_expected_calls": "31/9",
+  "exact_dual_bound": "31/9",
+  "weighted_laws": 5,
+  "neural_forwards": 0,
+  "corruptions_rejected": [
+    "primal",
+    "dual_eq"
+  ]
+}

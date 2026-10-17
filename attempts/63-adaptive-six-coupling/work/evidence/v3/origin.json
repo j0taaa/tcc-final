@@ -1,0 +1,113 @@
+{
+  "source_commit": "5e2da7c9cd318ddd0ae92d93bbb63140de9c70d7",
+  "prospective_contract_commit": "cbe7c40ecb137a96980e250bb72a462af62fc3b2",
+  "caps": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "solver_command_template": "<isolated-python> attempts/63-adaptive-six-coupling/work/solve.py --cap <B> --output <certificate.json>",
+  "verifier_command_template": ".venv/bin/python attempts/63-adaptive-six-coupling/work/verify.py <certificate.json> --output <verification.json>",
+  "solve_exit_codes": {
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0
+  },
+  "verify_exit_codes": {
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0
+  },
+  "solve_exit_evidence": "Each complete log and certificate records CERTIFIED; producer sys.exit(2) is reserved for other statuses. Original parallel tool output was lost during context truncation; terminal states recovered from authoritative process list/files, no solves repeated.",
+  "caps4and6": "Repeated regression solves, not independent scientific confirmations",
+  "recovery_note": "First read-only recovery command used absent python alias (exit127); corrected to existing .venv/bin/python. No solve or verifier rerun resulted from that observation error.",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "neural_forwards": 0,
+  "scope": "Exact finite stopping-cost proof at U3; no wall/CPU timing or established priority/use",
+  "files": [
+    {
+      "file": "cap4/certificate.json",
+      "sha256": "6a2488416e2e3f8d587a9da83c5d0ac260ffeb50f42b1f6f398226962e9d56a9",
+      "bytes": 3232
+    },
+    {
+      "file": "cap4/solve.log",
+      "sha256": "4f9877e2da45a82629d02e20e9caa5ea62c0ff924d55436627027bf0aae0d4b4",
+      "bytes": 433
+    },
+    {
+      "file": "cap4/verification.json",
+      "sha256": "bf2b858ff07659d3bb318ed5437c5af0eae4c25086dd3bffbe781ffda76db6c3",
+      "bytes": 282
+    },
+    {
+      "file": "cap4/verify.log",
+      "sha256": "845661fa7683a1a3d2e8e62841eb16079f1e7eee10ded613a46bb70cd6d2a141",
+      "bytes": 248
+    },
+    {
+      "file": "cap5/certificate.json",
+      "sha256": "0f2dab877a9155f93619ac96bfb6a870c6561d9d893837c856bef0f98dd2d896",
+      "bytes": 8266
+    },
+    {
+      "file": "cap5/solve.log",
+      "sha256": "cdca036765081f45921102b7aace4a387b2fc46d2a57a711524263d0d71a3353",
+      "bytes": 435
+    },
+    {
+      "file": "cap5/verification.json",
+      "sha256": "894383ed4cb7325dfa4f389545588860de464417ddd81ad078149fc0f2dc4817",
+      "bytes": 284
+    },
+    {
+      "file": "cap5/verify.log",
+      "sha256": "3c8e4c682cb88187a9889520007443e5df31eb0d425069c600e6c1f1164b3869",
+      "bytes": 250
+    },
+    {
+      "file": "cap6/certificate.json",
+      "sha256": "0e78ec9ae2e122f20ee5e9d15806149f94548d770186f628e2e1658848e7944e",
+      "bytes": 24077
+    },
+    {
+      "file": "cap6/solve.log",
+      "sha256": "c4abc6e0aab8587fc701d1e2e432fd034cbaf88c76d275327867cc5c015daffd",
+      "bytes": 441
+    },
+    {
+      "file": "cap6/verification.json",
+      "sha256": "61afc35233754d7372b3832fbcdf086df3fe960162a6c2bd6f51c31060b2aac5",
+      "bytes": 288
+    },
+    {
+      "file": "cap6/verify.log",
+      "sha256": "0f05ff2c0dbd3ab7c2152de6493594a18061cd05e5a08e1b74ec43c0b8fd353e",
+      "bytes": 254
+    },
+    {
+      "file": "cap7/certificate.json",
+      "sha256": "404b911e87f4d0a05e3a8a6b129e886bdad9ed371b9abc7fe83c11c498594499",
+      "bytes": 72896
+    },
+    {
+      "file": "cap7/solve.log",
+      "sha256": "9f2a9fc2e518d554e20ddc9ab69b9aa24295d92772f332f64dce1089d8105e16",
+      "bytes": 443
+    },
+    {
+      "file": "cap7/verification.json",
+      "sha256": "e25fcd91db898e8a3e90e9615b83e4bca827cc87622bda62814edad6aeb95451",
+      "bytes": 290
+    },
+    {
+      "file": "cap7/verify.log",
+      "sha256": "ecf13346fd69a52e3b0eb149cb4a9926974699ef4f1939d2707e73b1e770e780",
+      "bytes": 256
+    }
+  ]
+}
