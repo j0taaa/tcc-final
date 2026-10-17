@@ -1,0 +1,27 @@
+{
+  "source_commit": "70ad3907409d240d6083fd7686d4e63a4c2e3fc4",
+  "theory_and_consumer_commit": "22771301582b2559c5998c9ab04aedef0bddb578",
+  "oracle_contract_commit": "b470a72a2bfb17268ada9cc43201801c6a68db4a",
+  "command": ".venv/bin/python attempts/65-terminal-forecast-readout/work/rational_oracles.py --output <oracles.json>",
+  "directly_observed_exit_code": 0,
+  "three_oracles_status": "PASS",
+  "scientific_scope": "Exact rational proof-kernel/absorbing toy/rendering checks; no native adapter, neural observation or competitive timing",
+  "synthetic_chain_key_clarification": "native_model_step_law in the JSON names the synthetic original chain control, not a measured model/native execution",
+  "third_party_module_executed": false,
+  "new_neural_forwards": 0,
+  "model_tokenizer_instances_loaded": false,
+  "dataset_or_gold_rows_read": false,
+  "maintained_full_test_suite_rerun": false,
+  "files": [
+    {
+      "file": "oracles.json",
+      "bytes": 2819,
+      "sha256": "baf681b6d361142585b3ff333e0ba022a27f93495eb4fdcbe7d198739b9c0a5b"
+    },
+    {
+      "file": "oracles.log",
+      "bytes": 1881,
+      "sha256": "f0d2d21a90b5f5a8eae9901ae13212e6a7156677021ecc53562a76d0afaed4c4"
+    }
+  ]
+}

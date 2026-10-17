@@ -62,3 +62,11 @@ criterion5 BEFORE reference code: exact native-kernel abstraction and complete
 absorbing toy traces, plus rendering and a wrong-normalization counterexample.
 The actual native adapter, sufficient own distinction and useful variance/cost
 remain OPEN; passing these oracles cannot trigger a large model campaign.
+
+All three V2 rational oracles subsequently PASS after the frozen source:
+414 kernel leaves and414 absorbing output leaves, original seven toy paths,
+unchanged failure/step probabilities and78 finite-rendering checks. The
+wrong-normalization shortcut is rejected exactly. These are proof/correctness
+objects, with no native/model/forward/label/timing or maintained-suite rerun.
+The risk identity is classical; actual removable variance, complete costs and
+sufficient own novelty remain OPEN. See [result and next gate](work/result-v2.md).
