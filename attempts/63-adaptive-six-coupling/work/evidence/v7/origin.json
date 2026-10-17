@@ -1,0 +1,21 @@
+{
+  "source_commit": "076799a83514f783515c6daeb139f0b340e14ec8",
+  "contract_proof_commit": "3a196acc94d1b712095c10d8546b561923cca58b",
+  "command_template": ".venv/bin/python attempts/63-adaptive-six-coupling/work/common_control.py --output <audit.json>",
+  "directly_observed_exit_code": 0,
+  "pre_freeze_ruff_format": "1 file PASS",
+  "scope": "Constructed exact classical common-part control and all-law cost proof, not neural/package/timing evidence",
+  "neural_forwards": 0,
+  "files": [
+    {
+      "file": "audit.json",
+      "sha256": "66f6f16f24a47089833649a36a9aecba71bb81e26a1be55f8d49cc6c27e2e4e2",
+      "bytes": 2054
+    },
+    {
+      "file": "audit.log",
+      "sha256": "20aca53d6b4ca8664a7c882930a84a659a22a52f2737e7905d0782071a1ce8ac",
+      "bytes": 1500
+    }
+  ]
+}
