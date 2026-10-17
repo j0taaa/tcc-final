@@ -1,5 +1,29 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A45 rare-class obstruction narrows the family frontier
+
+Written01f84be BEFORE new checks. A strict violation of the unconstrained
+completed covariance form can be turned into a FINITE legitimate class-score
+counterexample by adding many rare classes and completing the b constraint.
+The binary form then gives necessary lambda<=9/2, t<=1/12, stronger than
+the earlier4/45 bound. This does NOT show sufficiency at the new upper bound.
+The remaining open family part is(1/15,1/12], not all of the old upper range.
+
+A fixed exact fixture with1026 classes and total rare mass1/4096 refutes the
+old t=4/45(lambda=5) endpoint. Complete occupancy enumeration groups all IID
+source tapes into75 profiles, then enumerates each occupied profile's tickets
+or explicit family row. It agrees exactly with the separately derived
+completed covariance. Shifting/scaling the finite score into a residual Boolean
+success probability gives a literal verifier with pass@2 BELOW iid2. Ninety
+binary algebra checks pass. This is constructed mathematical falsification,
+not a favorable benchmark, real-model failure or neural/latency campaign.
+
+V3's positive six/seven tower theorem and safe interval remain intact. It is
+not enough to meet the user's useful-contribution goal. The continuity,
+completion and determinant tools are classical; sufficient own priority and
+a real competitive consumer remain OPEN. See45/work/dust-obstruction-v4.md
+and evidence/dust-obstruction-v4/ for the exact joint law and fractions.
+
 ## 2026-10-16 — A45 six/seven proposals, arbitrary finite classes
 
 Written e970ffe/1a39f02 BEFORE the new rational/symbolic checks. Two different

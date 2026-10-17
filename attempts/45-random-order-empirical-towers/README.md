@@ -88,3 +88,21 @@ The eight criteria above still apply: a useful cheap-source/expensive-target
 boundary and a meaningful own difference from classical controls remain OPEN.
 See work/six-class-proof-v3.md, six-square-certificate-v3.md,
 safe-interval-v3.md and evidence/six-safety-v3/ for the precise scope.
+
+V4's separate written01f84be audit shows why arbitrarily many rare classes
+matter. Universal constrained covariance safety is equivalent to the stronger
+unconstrained completed-form inequality when the class count is unrestricted:
+any strict violation can be embedded into a finite positive-mass source by
+adding sufficiently many rare classes. The binary completed form therefore
+strengthens the necessary upper bound from4/45 to1/12. This is a classical
+continuity/quadratic-form argument, not sufficient own priority or usefulness.
+
+The exact constructed fixture has1026 original classes, total rare mass1/4096,
+75 aggregated six-draw occupancy profiles and parameter t=4/45(lambda=5).
+Independent ticket/profile enumeration gives POSITIVE covariance and a literal
+Boolean-verifier pass@2 below iid2. This refutes safety of that upper endpoint,
+not towers1/18, matching, pivotal or V3's proved interval. The remaining
+possible interval is0<=t<=1/12; sufficiency in(1/15,1/12] remains OPEN.
+Finite fixtures are mathematical counterexamples, not real-model failure data.
+No native/NN/timing campaign, new application or achieved goal follows.
+See work/dust-obstruction-v4.md and evidence/dust-obstruction-v4/.

@@ -55,6 +55,15 @@ cost remain open. No new neural campaign is credited to M70.
   original negative A44 consumer stays closed. Full307 tests PASS88.256s;
   completed exit0 logs in work/evidence/six-safety-v3. Focused Ruff passes.
 
+- [x] T7804: Written01f84be BEFORE the rare-class obstruction oracle proves
+  constrained/unconstrained equivalence for arbitrary finite class counts and
+  necessary t<=1/12. Exact fixture1026 classes/75 occupancy profiles at4/45
+  has positive covariance and Boolean-verifier pass@2 BELOW iid2. Ninety exact
+  binary identity checks pass; no Monte Carlo, new head/timing or model claim.
+  V3's positive interval remains valid;(1/15,1/12] remains OPEN. Independent
+  raw outputs in45/work/evidence/dust-obstruction-v4; useful own contribution
+  and user goal still OPEN. This does not reopen the closed A44 consumer.
+
 - [x] T7802: Separate A45 mathematical audit, f50008a written before its
   oracle: whole-matrix odd/even degree-elevation identity for all label counts;
   B2/3 iid and B4/5 existing A38 control, conditional-SRS shortcut false.

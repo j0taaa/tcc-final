@@ -312,6 +312,16 @@ passam, incluindo payloads originais, aliases, falhas e primeira amostra literal
 Não há head/timing/consumidor útil novo, originalidade suficiente confirmada ou
 meta cumprida. Não transformar garantia contra iid2 sem custo em vitória real.
 
+A45 V4, prova escrita01f84be antes do novo oráculo, mostra equivalência entre
+a desigualdade com/sem restrição em b quando se permitem classes arbitrariamente
+numerosas: violações estritas admitem complemento finito com classes raras.
+O bound necessário da família cai de4/45 para1/12; a suficiência de
+(1/15,1/12] permanece ABERTA. Contraexemplo racional finito tem1026 classes,
+massa rara1/4096 e75 perfis de ocupação agrupados; t=4/45 gera covariância
+positiva, inclusive para verificador Booleano com residual explícito. Não
+refuta a garantia de torres1/18 ou os controles matching/pivotal. São matemática
+e oráculos, sem head/timing/aplicação/prioridade/benefício real confirmado.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

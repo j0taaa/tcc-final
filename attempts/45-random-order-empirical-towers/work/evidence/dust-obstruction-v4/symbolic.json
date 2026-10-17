@@ -1,0 +1,1 @@
+{"identities": ["binary_unconstrained_form", "binary_determinant"], "scope": "algebra only; not publication priority or useful application", "status": "PASS_EXACT_SYMBOLIC_IDENTITIES", "sympy": "1.14.0"}
