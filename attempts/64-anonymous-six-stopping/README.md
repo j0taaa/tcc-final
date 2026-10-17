@@ -51,3 +51,21 @@ not another cap in the A63 family or a new matching/covariance principle.
 
 Only independent files in work/ may be imported. Copied mathematical references
 retain their originating commits/hashes; no mutable dependency on A42/A63.
+
+## Result after the prospective contract: rejected exactly
+
+The SINGLE V1 solve returns INCONCLUSIVE/numerical infeasibility. V2 then
+writes a seven-row obstruction BEFORE its separate checker:20 named tapes,
+300 independent matching checks and exact original-source row comparisons
+give a Farkas certificate with nonnegative coefficients and RHS-1. Two corrupt
+certificates rejected. There is no primal/full7776-tail PASS or second solve.
+
+The four-distinct stop is impossible for ANY universal target-law rule, not
+just the anonymous prototype: the tripled-class zero coefficients force
+incompatible outputs on three continuations of the same prefix. Minimum
+distinct-input work is at least5, and V1's proposed25% saving is NOT attained.
+The smaller6.25% ceiling is an upper limit, not a new success target/achiever.
+All sources/numeric records remain frozen; criteria2--5 reject this proposed
+benefit and1/6/8 remain unfulfilled. No model/timing/parameter update, no
+maintained-suite rerun. See [exact rejection](work/infeasibility-v2.md) and
+[decision and actual execution scope](work/result-v2.md).

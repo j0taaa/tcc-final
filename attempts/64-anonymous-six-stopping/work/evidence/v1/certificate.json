@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "status": "INCONCLUSIVE",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "anonymous_prefixes": 278,
+  "variables": 875,
+  "rows": 340,
+  "solver_status": 2,
+  "solver_message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+  "reconstruction_zero_threshold": 1e-10,
+  "reconstruction_max_denominator": 100000000,
+  "primary_constraint": "Stop on first four distinct keys; hard cap6, fixed matching law",
+  "secondary_objective": "U3 expected source calls, not all-P minimax"
+}

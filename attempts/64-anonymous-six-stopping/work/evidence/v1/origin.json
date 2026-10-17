@@ -1,0 +1,27 @@
+{
+  "source_commit": "d6de16f2cef5eae548d00e8f1617a07d2b95af50",
+  "contract_commit": "c22fa4d5c49a91569f4c5637edb86354a8291b6a",
+  "new_solves": 1,
+  "directly_observed_exit_codes": {
+    "solver": 2
+  },
+  "verifier_full_named_tail_audit_executed": false,
+  "status_scope": "Numerical infeasibility only, original INCONCLUSIVE record unchanged",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "maintained_environment_changed": false,
+  "new_neural_forwards": 0,
+  "competitive_timing_compared": false,
+  "files": [
+    {
+      "file": "certificate.json",
+      "bytes": 543,
+      "sha256": "8b586bf01d3dd04f41c72fc36501e4954025614b3dc10c51a5662c2f7f773b0f"
+    },
+    {
+      "file": "solve.log",
+      "bytes": 515,
+      "sha256": "56429ae9ae2a2fb71a2e2bf54e97a0cc7e8acea10513905d273fbabc6ee1499b"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "source_commit": "52bdeffe48ebc1cd2bca75dd6485d93566c0aabf",
+  "contract_commit": "d270de769dbc83b8b16acd8038ecbce40068cdf1",
+  "new_solves": 0,
+  "directly_observed_exit_codes": {
+    "export": 0,
+    "independent_farkas_checker": 0
+  },
+  "verifier_full_named_tail_audit_executed": false,
+  "status_scope": "Exact Farkas certificate for original source LP; independent20 named tails/300 matchings, not a full primal audit",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "maintained_environment_changed": false,
+  "new_neural_forwards": 0,
+  "competitive_timing_compared": false,
+  "original_producer_source_commit": "d6de16f2cef5eae548d00e8f1617a07d2b95af50",
+  "old_result_not_relabelled": true,
+  "files": [
+    {
+      "file": "check.log",
+      "bytes": 524,
+      "sha256": "b58e4e76f40fd81202398131474d40eff1566f077f54399eb58aee70b72c5a69"
+    },
+    {
+      "file": "export.log",
+      "bytes": 65,
+      "sha256": "731d92ae4bb06fa653799908c451c04d624d17b0147c12213ddbc9e3d64d8b49"
+    },
+    {
+      "file": "farkas.json",
+      "bytes": 1621,
+      "sha256": "a3102769e4fb88ec89f94ef54ae9f0f44bb84e9eddef9eecd204055414e39db3"
+    },
+    {
+      "file": "original-core.json",
+      "bytes": 18868,
+      "sha256": "8a90373a0d7e418e6d4163c6362cdabbaa7c472cc582cf65e2f864f9f7073b68"
+    }
+  ]
+}
