@@ -47,6 +47,32 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M87 — Arbitrary-key distinct-four stopping, exactly rejected
+
+- [x] T8700: A64 eight criteria/contractc22fa4d BEFORE sourced6de16f and one
+  solve. Different arbitrary-alphabet question, fixed classical matching6 law,
+  distinct-four stop. Existing matching/covariance source copied immutably,
+  no mutable A42/A63 imports. Conditional25% diffuse consequence was explicitly
+  contingent on an achiever, never an established gain or real-use claim.
+- [x] T8701: One solve only:278 anonymous prefixes875 variables340 rows,
+  HiGHS status2/observed exit2, original INCONCLUSIVE record preserved.
+  No feasible primal, secondary U3 optimum or full7776-tail audit. No retries,
+  changed law, relaxed distinct condition, model/forward/label/update/timing.
+- [x] T8702: Written obstructiond270de7 BEFORE independent checker52bdeff.
+  New exporter/checker observed0/0, no second solve. Twenty named tapes/300
+  matching checks reconstruct seven original rows; exact Farkas yA>=0,yb=-1
+  proves original LP infeasible and zeros prove impossibility for ALL universal
+  rules, beyond the anonymous model. Two corruptions rejected. Old numeric
+  record not relabeled. Primary distinct-four/25% hypothesis CLOSED;5-query
+  lower/6.25% upper are not an achieved smaller goal. Source/evidence9e04c49,
+  work/infeasibility-v2.md/result-v2.md. A63 remains intact; goal OPEN.
+- [ ] T8703: Start the next substantive direction from an independently
+  identified real software/research operation and its strongest existing
+  alternatives, before another abstract coupling prototype. Need a plausible
+  own positive comparative consequence and complete-cost use. No relaxed
+  A64 five-query/law/cap search, closed old consumer reopening or promotion
+  of another correct small sampler. A different grounded TCC is authorized.
+
 ## M86 — Exact three-class coupling, positive minimax stopped-work theorem
 
 - [x] T8600: A63 criteria/theoryee6f423 BEFORE solver. Unknown-P original

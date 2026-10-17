@@ -20,6 +20,15 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A64's prospective arbitrary-key distinct-four stop is rejected EXACTLY.
+One original solve returns INCONCLUSIVE; a later prewritten seven-row Farkas
+audit independently checks20 tapes300 matchings and original source rows,
+yb=-1 with nonnegative coefficients. Two corruptions rejected, no new solve
+or full-primal audit. No four-distinct/25% gain;6.25% is an upper ceiling,
+not a relaxed success. See64-anonymous-six-stopping/work/result-v2.md.
+No neural/use/priority claim. Next direction must start from an actual
+independently identified operation, not another abstract coupling expansion.
+
 A63 V10 verifies eight count-flow U3 optima4..11 with exact zero gaps and
 88560 named tails. Higher odd caps9/11 give SMALL strict work savings versus
 8/10 for the same pair laws; old cap11 primal loses its U3 bound at a point

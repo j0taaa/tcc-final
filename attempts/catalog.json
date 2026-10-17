@@ -4780,6 +4780,32 @@
           ]
         }
       ]
+    },
+    {
+      "id": "64-anonymous-six-stopping",
+      "title": "Parada anônima em quatro classes distintas para matching6: hipótese refutada exatamente",
+      "conclusion": "Criteria/contractc22fa4d BEFORE sourced6de16f and SINGLE solve. Different arbitrary-alphabet fixed matching6 population-law question, not another A63 cap. Conjectured distinct-four stop and contingent25% diffuse work saving versus all per-tape controls were prospective, not achieved claims. Source has278 anonymous prefixes875 variables340 rows; observed solver exit2/status2 yields original INCONCLUSIVE numeric record, no primal/secondary U3 optimum or full7776-tail verifier run. Written obstructiond270de7 BEFORE checker/export52bdeff. Independent20 named tails300 matching checks reproduce seven original rows; exact Farkas yA>=0,yb=-1 certifies infeasibility. Two corruptions rejected, observed exits0/0, no second solve. Zero Bernstein coefficients also prove the obstruction for ALL universal rules, not just anonymous LPs: four distinct keys require at least five calls. Primary four-distinct/25% hypothesis CLOSED; smaller6.25% ceiling is not an achieved saving or relaxed target. V1 numeric record remains unchanged, later INFEASIBLE_EXACT separate. Original matching law/classical machinery credited; true A63 three-key theorem unchanged. No actual useful consumer, sufficient own novelty, neural/model/head/labels/update/timing or maintained-suite rerun. No five-query/new-law/cap search triggered. Next substantive direction must start from an independently identified real software/research operation and strongest controls, before another abstract coupling prototype. Goal remains OPEN.",
+      "reading": "attempts/64-anonymous-six-stopping/README.md",
+      "versions": [
+        {
+          "id": "v1-prospective-no-primal",
+          "source_commit": "d6de16f2cef5eae548d00e8f1617a07d2b95af50",
+          "evidence_commit": "9e04c491a4d84c3db4860b6d1125a60ddd01f2c8",
+          "evidence_roots": [
+            "attempts/64-anonymous-six-stopping/README.md",
+            "attempts/64-anonymous-six-stopping/work"
+          ]
+        },
+        {
+          "id": "v2-exact-obstruction",
+          "source_commit": "52bdeffe48ebc1cd2bca75dd6485d93566c0aabf",
+          "evidence_commit": "9e04c491a4d84c3db4860b6d1125a60ddd01f2c8",
+          "evidence_roots": [
+            "attempts/64-anonymous-six-stopping/README.md",
+            "attempts/64-anonymous-six-stopping/work"
+          ]
+        }
+      ]
     }
   ]
 }

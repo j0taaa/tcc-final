@@ -1,5 +1,24 @@
 # AGENTS.md
 
+A64 testa uma consequência DIFERENTE, com qualquer número de chaves: mesmo
+par ordenado do matching clássico de seis e parada após quatro distintas.
+Critérios/contratoc22fa4d precedem sourced6de16f e ÚNICO solve:278 prefixos,
+875 variáveis340 linhas, INCONCLUSIVE por inviabilidade numérica. Não houve
+primal, auditoria7776-tail ou segundo solve. O próprio contrato não percebeu
+que zeros de Bernstein também proíbem parada na lei média. V2 prova escritad270de7
+precede checker52bdeff:20 tapes300 matchings conferem sete linhas do produtor
+original e certificado Farkas yA>=0,yb=-1; duas corrupções rejeitadas. Status
+novo INFEASIBLE_EXACT fica SEPARADO do dado numérico V1 intacto. A hipótese
+quatro-distintas/25% está refutada; pelo menos cinco chamadas são necessárias
+nesse caso, e6,25% é só teto menor, não conquista nem nova meta. Não acionar
+busca de cinco chamadas/kernel/cap relaxado. A63 três classes não é refutada.
+Resultados/provas/evidências em64-anonymous-six-stopping/work/result-v2.md.
+Não promover a auditoria negativa, matching, LP ou Farkas a produto positivo.
+Não houve head/modelo/forward/label/update/timing/suíte completa nova.
+A próxima direção substantiva deve começar por operação real identificada
+independentemente e seus controles fortes, antes de outro protótipo abstrato
+de acoplamento. O recorte de TCC pode mudar; a meta continua aberta.
+
 A63 V10 congela contrato4f13271/source610c0a1 antes de oito LPs por contagens.
 Todos4..11 têm primal/dual racionais e gap zero,88560 tails first0/642210
 passos verificados. U3:4/5=31/9,6/7=386/81,8=4529/729,9=40663/6561,

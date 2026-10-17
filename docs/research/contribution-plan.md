@@ -1,5 +1,35 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A64 arbitrary-alphabet four-distinct conjecture rejected exactly
+
+The remaining A63 consumer/cost objections motivated a DIFFERENT theoretical
+question, not more caps: same classical minimum-repeat six-pool ordered law,
+arbitrarily many canonical keys, stop on first four distinct. Contractc22fa4d
+precedes solver/verifierd6de16f and the SINGLE solve. A prospective25% diffuse-
+limit work gain against the complete conditional-tape class was contingent
+on a valid achiever; no application or existing result was asserted. The solve
+returns status2/exit2,278 prefixes875 variables340 rows, no primal. Original
+INCONCLUSIVE record unchanged, no7776-tail primal verification or retry.
+
+The hypothesis overlooked its own zero-coefficient obstruction: in A+3B+C+D
+the first singleton must return B on EVERY order, so three continuations of
+ABCD prohibit all outputs at length four, even for a population-law method.
+Written auditd270de7 precedes checker/export52bdeff. Independent20 tapes300
+matchings reconstruct seven exact original producer rows and give yA>=0,
+yb=-1; two corrupt certificates rejected, both direct exits0, no new solve.
+This is exact rejection beyond the anonymous LP. Status INFEASIBLE_EXACT is
+new evidence, not a relabeling of V1 or attribution to the later producer.
+
+Primary four-distinct/25% conjecture is CLOSED. The implied five-query lower
+bound and6.25% ceiling do not establish an achiever or fulfill a relaxed goal.
+Classical matching/coefficient/Farkas machinery is credited; no positive own
+useful result or priority follows. A63's true three-key theorem is unaffected.
+All proof/source/results preserved independently in64/work; no new neural/
+label/update/timing or maintained-suite rerun. Next substantive direction
+must identify real software/research consumption and competent alternatives
+before another abstract coupling prototype. User goal remains active/open;
+changing TCC scope is authorized, inventing utility or relaxing gates is not.
+
 ## 2026-10-17 — A63 finite count family and limited global extension
 
 Prospective V10 contract4f13271/source610c0a1 precede ALL eight solves; four
