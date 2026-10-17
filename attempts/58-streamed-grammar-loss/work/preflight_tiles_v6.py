@@ -13,7 +13,13 @@ from .preflight_gpu import evaluate
 from .tiled_head_v6 import finite_domain_head, prepare
 
 
-def main(output, inputs):
+def main(output, inputs, implementation="plain"):
+    if implementation == "bucketed":
+        from .bucket_head_v8 import bucket_head, prepare_bucket
+
+        head_fn, prepare_fn = bucket_head, prepare_bucket
+    else:
+        head_fn, prepare_fn = finite_domain_head, prepare
     output.mkdir(parents=True, exist_ok=False)
     config = {
         "producer": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
@@ -24,6 +30,7 @@ def main(output, inputs):
         "inputs": str(inputs),
         "tiles": [(16, 32), (32, 64), (64, 64), (64, 128)],
         "torch": torch.__version__,
+        "merge_implementation": implementation,
         "competitive_timing": False,
         "new_model_forwards": 0,
     }
@@ -50,7 +57,7 @@ def main(output, inputs):
                 try:
                     h, w, b = [v.cuda().detach().requires_grad_() for v in (h0, w0, b0)]
                     t, dz, dt = [v.cuda() for v in (t0, dz0, dt0)]
-                    z, tt = finite_domain_head(h, w, b, t, prepare(mapping, "cuda", tile))
+                    z, tt = head_fn(h, w, b, t, prepare_fn(mapping, "cuda", tile))
                     loss = (dz * torch.where(torch.isfinite(z), z, torch.zeros_like(z))).sum() + (
                         dt * tt
                     ).sum()
@@ -103,5 +110,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--inputs", type=Path, required=True)
+    parser.add_argument("--implementation", choices=("plain", "bucketed"), default="plain")
     args = parser.parse_args()
-    raise SystemExit(0 if main(args.output, args.inputs) else 1)
+    raise SystemExit(0 if main(args.output, args.inputs, args.implementation) else 1)

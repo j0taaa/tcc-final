@@ -17,13 +17,14 @@ from pathlib import Path
 import numpy as np
 import torch
 
+from .bucket_head_v8 import bucket_head, prepare_bucket
 from .resource_analysis_v7 import analyze
 from .strong_head import SortedHeadPlan
 from .tiled_head_v6 import finite_domain_head, prepare
 
 NS = (16, 32, 64, 128, 256, 512, 1024, 2048)
 TILES = ((16, 32), (32, 64), (64, 64), (64, 128))
-CANDIDATES = [f"tile{a}x{b}" for a, b in TILES]
+CANDIDATES = [f"{kind}{a}x{b}" for kind in ("tile", "bucket") for a, b in TILES]
 CONTROLS = (
     ["dense"]
     + [f"CCE{t}" for t in (0, 8, 32, 128)]
@@ -57,14 +58,16 @@ def reference64(h0, w0, b0, t, mapping, dz0, dt0):
 
 def make_state(name, data, mapping):
     h0, w0, b0, t0, dz0, dt0 = data
-    if name.startswith("tile"):
-        tile = tuple(map(int, name[4:].split("x")))
-        meta = prepare(mapping, "cuda", tile)
+    if name.startswith(("tile", "bucket")):
+        bucketed = name.startswith("bucket")
+        tile = tuple(map(int, name[6 if bucketed else 4 :].split("x")))
+        meta = (prepare_bucket if bucketed else prepare)(mapping, "cuda", tile)
+        head_fn = bucket_head if bucketed else finite_domain_head
         h, w, b = [x.cuda().detach().requires_grad_() for x in (h0, w0, b0)]
         inv = None
 
         def call(hh, ww, bb, tt):
-            return finite_domain_head(hh, ww, bb, tt, meta)
+            return head_fn(hh, ww, bb, tt, meta)
     else:
         if name == "dense":
             backend, threshold, panel = "dense", 0, 8192
@@ -325,6 +328,12 @@ def main(output, source):
         assert hashlib.sha256((source / path).read_bytes()).hexdigest() == digest
     assert (
         json.loads((base / "evidence" / "tiles-v6-initial" / "summary.json").read_text())["status"]
+        == "PASS"
+    )
+    assert (
+        json.loads((base / "evidence" / "buckets-v8-initial" / "summary.json").read_text())[
+            "status"
+        ]
         == "PASS"
     )
     assert (
