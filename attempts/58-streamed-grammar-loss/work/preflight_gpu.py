@@ -8,6 +8,7 @@ import signal
 import subprocess
 import sys
 import time
+from importlib.metadata import version
 from pathlib import Path
 
 import numpy as np
@@ -133,6 +134,7 @@ def main(output, source):
         "CCE_commit": pin["commit"],
         "torch": torch.__version__,
         "triton": triton.__version__,
+        "packaging": version("packaging"),
         "CUDA": torch.version.cuda,
         "device": torch.cuda.get_device_name(0),
         "dtype": "float32",
