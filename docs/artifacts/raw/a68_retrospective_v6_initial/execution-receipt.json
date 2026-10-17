@@ -1,0 +1,12 @@
+{
+  "source_commit": "7439b49253245eadc8926dd6eb1ab2c3814b046e",
+  "command": [
+    "/tmp/a68-runtime-v4/bin/python",
+    "attempts/68-residual-bernstein-sampling/work/audit_retrospective_v6.py",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a68_retrospective_v6_initial/results"
+  ],
+  "started_utc": "2026-10-17T10:45:53.435622+00:00",
+  "elapsed_diagnostic_seconds": 19.990372302010655,
+  "direct_exit_code": 0,
+  "scope": "Classical retrospective control correctness, no competitive timing"
+}

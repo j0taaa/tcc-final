@@ -164,3 +164,10 @@ envelope, descending-weight lazy integration and persistent partial bounds.
 The scalar-coefficient lower bound does not constrain this sampler. Source,
 proof and prospective checks in[the V6 contract](work/retrospective-control-theory-v6.md).
 No large implementation/consumer campaign or completed scientific goal follows.
+
+V6 contract7792fe9/source7439b49 precede ONE PASS0:966 full refinement
+chains42066 nested intervals40134 remaining masses2448 dyadic prefixes96
+cache replays;288 complete calls/8928 SIMULATED source calls and288 literal
+source matches. Four guards/one explicit pre-source failure pass. This is
+a stronger classical CONTROL, not a new own result; no timings/genealogy/NN.
+See[the result](work/result-v6.md). Whole-cost/priority/goal remain OPEN.

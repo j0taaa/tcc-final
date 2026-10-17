@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "source_commit": "7439b49253245eadc8926dd6eb1ab2c3814b046e",
+  "counts": {
+    "complete_factory_calls": 288,
+    "source_calls": 8928,
+    "nested_intervals": 42066,
+    "independent_remaining_masses": 40134,
+    "complete_chains": 966,
+    "persistent_fresh_uniform_calls": 96,
+    "dyadic_prefixes": 2448,
+    "literal_source_matches": 288,
+    "guards": 4,
+    "resource_fail_before_source": 1
+  },
+  "hashes": {
+    "retrospective_v6.py": "a208c1f61331a29474da81ce064e638e7f814007f196b7c7313a55a3bca3557b",
+    "audit_retrospective_v6.py": "cd67140822f093c0772f18d059645636259c7cb1ece94a89bfd297d7fb69947f",
+    "retrospective-control-theory-v6.md": "9e2ed269d0dcc4a23ecbbdbbc0bf44ecf009022a283ee4f82ba6f1b94291e6f5",
+    "runtime_v4.py": "41dccb126a0f62882aa58efa6ae52cb153408e7645ebe548d0cf6b40c73ee46a",
+    "audit.py": "467818be145a831b2c213bd08492626e0fa7e64de02d7bb9e3780a06af6a684d",
+    "audit_runtime_v4.py": "1b96863ad8f518b75a44b9b7741a037dc29fc10f92a7e210e8d81370eafea468"
+  },
+  "scope": "Classical lazy-control correctness; simulated inputs, no timing/genealogy/NN",
+  "goal": "OPEN"
+}

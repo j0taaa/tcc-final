@@ -1,5 +1,14 @@
 # AGENTS.md
 
+A68 V6 classic retrospective control, proof7792fe9/source7439b49 before
+ONE PASS0:966 chains42066 nested intervals40134 exact remaining masses2448
+prefixes96 fresh-uniform cache calls. All288 numerical full calls/8928
+SIMULATED p-coin calls and288 literal source matches; four guards and one
+pre-input failure pass. Same residual envelope given to control, partial
+bounds may persist. Coefficient-evaluation lower bound DOES NOT constrain
+this sampler. No competitive time/NN/genealogy/priority/goal completion.
+V4/V5 intact; result68/work/result-v6.md; freeze cost protocol next.
+
 A68 V4/V5 independent archives750/754 files match original Git;14 frozen hash
 comparisons across11 unique files and Ruff/format4 PASS. make check final log
 PASS68 attempts268 versions202998 files8.026.961.940 bytes; wrapper exit lost
