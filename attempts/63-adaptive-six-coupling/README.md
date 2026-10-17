@@ -156,3 +156,28 @@ primal on the SAME optimal face with a classical sufficient all-law bound.
 All8 criteria remain: own candidate is the work consequence, not Schur/LP,
 and real-use/priority are open. Numerical cone failure is inconclusive about
 the true minimax value. No new neural campaign or asymptotic claim follows.
+
+## V10--V12 measured proof scope and next decision
+
+All eight V10 rational optima pass the independently rebuilt dual/word audit:
+88560 fixed-first tails642210 steps. New caps8/9 and10/11 share each full
+ordered pair law but have small strict U3 work improvements0.24%/0.38%.
+The old selected cap11 point-mass cost23/3 remains preserved, so those U3
+results alone do not establish a global minimax family.
+
+V11's separate optimal-face Schur search certifies global maxima for4..7
+with1080 named tails4140 steps and independent polynomial long division.
+ALL8..11 new searches return INCONCLUSIVE: numerical infeasibility of the
+SUFFICIENT cone is not proof of a true minimax gap or mathematical infeasibility.
+Original unrestricted duals are explicitly reused; no new lower-bound audit
+is mislabeled independent. Schur/count/factory principles remain classical.
+
+Criteria1/6/8 are still open, and the finite family is insufficient to close
+criterion2. More caps or code do not supply an actual useful consumer or
+adequate own priority. Before an extensive new implementation/campaign, the
+next direction must establish a substantive consequence or independent real
+operation; the old negative branches remain closed. No new neural/timing/
+scalar-label evidence, no maintained-suite rerun. See
+[V10 result](work/count-flow-result-v10.md),
+[V11 results and decision](work/schur-result-v11.md) and
+[actual primary reading scope](work/primary-and-decision-v12.md).

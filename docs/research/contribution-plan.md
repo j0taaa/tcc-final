@@ -1,5 +1,39 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A63 finite count family and limited global extension
+
+Prospective V10 contract4f13271/source610c0a1 precede ALL eight solves; four
+regressions pass before four new caps. All rational primal/dual gaps zero,
+88560 first0 tails642210 operational steps and corruption checks pass. U3
+costs4/5=31/9,6/7=386/81,8=4529/729,9=40663/6561,10=620/81,
+11=450262/59049. Odd9/11 share the preceding even full ordered pair laws yet
+have small strict optimal mean savings98/6561 and1718/59049 calls. These
+roughly0.24%/0.38% effects are not a large practical advantage. A selected
+cap11 policy costs23/3 at a point mass, exceeding its U3 value: preserved.
+
+V11 contractc2d42ed/sourcead7e82f seek different policies on the same optimal
+faces. Classical Schur sufficient certificates with original unrestricted
+duals REUSED give global maxima at U3 only for4..7;1080 first0 tails4140 steps
+plus independent long division pass. All four8..11 searches return numerical
+cone infeasibility, status INCONCLUSIVE. No exact cone-infeasibility or true
+minimax-impossibility theorem follows. All files/statuses are retained.
+
+The count-state reduction is standard, not the own contribution. Written
+liminf3B/4 is a lower bound; matching asymptotic attainment remains conjectural.
+Original Aw/Rosenberg2018 Sections2.2/2.3 through Theorem2.3 confirm the
+classical Schur criterion; full retrieval is distinguished from full reading.
+Hashemi2025 direct PDF still404,2026 author listings lack original links,
+Hall1989 is still abstract-only. No sufficient priority established.
+
+This finite family does not resolve actual useful full-cost consumption.
+V8's regression/iid/rank objections remain, A44/A42 closed uses stay closed,
+and new caps or certificate cones alone do not justify extensive work or
+neural campaigns. Need a substantive own consequence or an independently
+justified consumer/different scope. No new model/head/forward/semantic-label/
+update/timing; old maintained345 suite not rerun or credited. Results and
+source boundaries:63/work/{count-flow-result-v10,schur-result-v11,
+primary-and-decision-v12}.md and evidence/v10,v11. Goal remains OPEN.
+
 ## 2026-10-17 — A63 complete stronger controls and all-law comparative source work
 
 V6 prospective1d98530/source1aa4fec precede8748 direct empirical-rank replays:

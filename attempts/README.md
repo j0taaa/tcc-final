@@ -20,6 +20,14 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A63 V10 verifies eight count-flow U3 optima4..11 with exact zero gaps and
+88560 named tails. Higher odd caps9/11 give SMALL strict work savings versus
+8/10 for the same pair laws; old cap11 primal loses its U3 bound at a point
+mass. V11 certifies global bounds only for4..7;8..11 sufficient Schur-cone
+searches remain INCONCLUSIVE. Classical count/Schur machinery is credited;
+no family asymptotic upper, real use, timing or sufficient priority follows.
+See63/work/{count-flow-result-v10,schur-result-v11,primary-and-decision-v12}.md.
+
 A63 V6/V7 strengthens that comparison: both rank controls pass8748 replays;
 the classical optimal completion-preserving common-part control passes9477.
 Its cost polynomial and a written inequality give candidate saving>=63/835

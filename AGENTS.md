@@ -1,5 +1,23 @@
 # AGENTS.md
 
+A63 V10 congela contrato4f13271/source610c0a1 antes de oito LPs por contagens.
+Todos4..11 têm primal/dual racionais e gap zero,88560 tails first0/642210
+passos verificados. U3:4/5=31/9,6/7=386/81,8=4529/729,9=40663/6561,
+10=620/81,11=450262/59049. Mesmo par ordenado em8/9 e10/11 permite pequenas
+economias estritas de custo U3, cerca0,24%/0,38%; não vantagem grande geral.
+Primal antigo de11 custa23/3 na massa pontual, acima de seu valor U3.
+V11 contratoc2d42ed/sourcead7e82f busca OUTROS primais na mesma face ótima,
+reutilizando explicitamente os duais V10:4..7 têm upper Schur global exato,
+1080 tails/4140 passos e cinco leis passam. Os casos8..11 retornam INCONCLUSIVE
+por inviabilidade NUMÉRICA do cone suficiente; não prova de inviabilidade
+matemática/minimax. Todos preservados em63/work/evidence/v10,v11; resultados
+count-flow-result-v10.md/schur-result-v11.md. Contagens/Schur são clássicos;
+liminf3B/4 é lower ESCRITO, upper correspondente permanece conjectura. Sem
+novos heads/forwards/labels/timings. Mais caps sozinhos não resolvem uso real
+ou prioridade; antes de nova implementação extensa, exigir consequência
+própria relevante ou consumidor independente. Meta continua aberta. Nota
+primary-and-decision-v12.md registra leitura original Schur e lacunas atuais.
+
 A63 V6 acrescenta DOIS controles clássicos de ranks/rotação:8748 replays e
 28 leis conjuntas ordenadas passam. V7 source076799a após prova3a196ac usa
 parte comum ótima entre métodos que preservam q_t em CADA tape, não entre

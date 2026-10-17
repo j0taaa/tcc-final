@@ -119,6 +119,30 @@ cost remain open. No new neural campaign is credited to M70.
   3.4 identifies real two-phase ecological measurements; EPA intro/contents
   only. No raw data or exact three-key/retained-first consumer established;
   no field/model benefit or campaign. See63/work/application-leads-v9.md.
+- [x] T8612: V10 prospective4f13271/source610c0a1 before ALL eight count LPs.
+  All4..7 regressions pass BEFORE8..11. Independent rational primal/dual with
+  exact gap0;88560 first0 named tails642210 steps/corruptions PASS. Costs at
+  U3:4/5=31/9,6/7=386/81,8=4529/729,9=40663/6561,10=620/81,
+  11=450262/59049. Same full ordered laws at8/9,10/11 but small strict odd
+  mean-work gains0.24%/0.38%. Cap11 chosen policy costs23/3 at a point mass;
+  no family minimax assertion. Original four full-history bounds unchanged.
+  All direct terminal exits0; evidence6e31dc7, work/count-flow-result-v10.md.
+  Count reduction is classical;3B/4 liminf is WRITTEN lower, upper conjecture.
+- [x] T8613: V11 prospectivec2d42ed/sourcead7e82f before ALL Schur searches.
+  Reuse old unrestricted V10 dual explicitly with new optimal-face primals.
+  Four4..7 global certificates pass independent polynomial long division,
+  1080 named tails4140 steps/five original laws. Caps8..11 numerical cone
+  failures retained as INCONCLUSIVE, no independent audit of nonexistent
+  primals or proof of true minimax impossibility. All statuses/raw data in
+  evidence25f61f0; work/schur-result-v11.md. No new neural/timing evidence.
+- [x] T8614: V12 scoped primary audit: original Aw/Rosenberg2018 Sections2.2/
+  2.3 through Schur--Ostrowski Theorem2.3 read, full file hashed; not whole
+  article/book. Hashemi2025 direct PDF still404 despite cached search text;
+  2026 original has no link on author listings, Hall1989 remains abstract-only.
+  Own priority/use not established. See work/primary-and-decision-v12.md.
+- [ ] T8615: Resolve a substantive scientific/use consequence before further
+  cap expansion, certificate engineering or neural campaign. V10/V11 are
+  finite proof progress, not a useful real full-cost win or the user's goal.
 
 ## M85 — Native RLM numerical quantile audit; complete control matches bound
 

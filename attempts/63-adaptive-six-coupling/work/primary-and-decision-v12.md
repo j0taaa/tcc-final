@@ -44,7 +44,8 @@ code volume would not resolve either missing obligation.
 
 The next permissible substantive expansion needs either a useful mathematical
 consequence with a defensible nearest-source difference, or an independently
-justified real consumer with complete-cost comparisons against informed,+continuous rank/stratification, larger-pool, regression and iid alternatives.
+justified real consumer with complete-cost comparisons against informed,
+continuous rank/stratification, larger-pool, regression and iid alternatives.
 The published field leads in V9 remain leads, not measured applications.
 The failed A44 full-gradient/A42 native boundaries remain closed. No arbitrary
 two-output restriction, invented hidden logits or selected three bins may be
