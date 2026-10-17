@@ -12,7 +12,7 @@ README/protocolo/provab68f8b9 antecedem source38cd351 e ÚNICO replay PASS:
 48 casos2.308 tapes/controles clássicos480 entradas de covariância.587 execuções
 de decide_group/read_many ORIGINAIS=586 sucessos1 erro esperado;1.422 calls
 são PACKETS FALSOS, zero forwards. Cinco recusas, igualdade do threshold,
-cap1 e trigger global multiquetões passam. Viés sintético±1533/16384 não é
+cap1 e trigger global de múltiplas questões passam. Viés sintético±1533/16384 não é
 calibração neural medida. Auto nativo tem MENOR MSE no contraexemplo preservado;
 não declarar dominância sobre ele/controle clássico. Sem servidor/modelo/
 tokenizer/heads/golds/treino ou campanha seguinte. A65 continua FECHADA negativa.
@@ -20,6 +20,10 @@ Lead de parada encontrado após65 DUPLICA53, cujo gate já falhou; não repetir
 ou rebatizar. Sobreposição de ferramentas tem P-ReAct/CID/AsyncIO anteriores;
 nenhum protótipo selecionado. Escopos em docs/research/next-operation-audit-2026-10-17.md.
 T8809 e a contribuição própria útil/meta científica permanecem ABERTOS.
+V1 independente preserva source38cd351/evidenced0a60ac (727 arquivos);
+make check PASS66 tentativas261 versões197832 arquivos7.945.843.996 bytes,
+Ruff/format3 próprios e hashes5 próprios/3 externos passam. Suíte mantida345
+NÃO rerodada. Integridade não é comprovação de ganho neural/novidade.
 
 A65 V8 encerra a aplicação PEQUENA Tiny-A2D/Mosaic MASKED com gate NEGATIVO.
 V6 protocolo7c79ad5/seleção input-only8; V7 contrato7c7ce15/source1986ecc

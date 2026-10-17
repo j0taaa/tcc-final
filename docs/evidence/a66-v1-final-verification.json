@@ -1,0 +1,35 @@
+{
+  "kind": "After-run final verification receipt",
+  "audit_producer": "38cd3517b4b248ad7071c216e61fe571f0327bf2",
+  "audit_evidence": "d0a60acde70f0601116afa053936047e269f5a79",
+  "make_check": {
+    "observed_exit_code": 0,
+    "log": "docs/evidence/a66-v1-final-make-check.log",
+    "sha256": "0b1b494b692b1432586675e7c52239a34233563c1ad3b62d74fa342ab9ac23a0",
+    "scope": [
+      "pinned upstream snapshot",
+      "maintained source Ruff/format",
+      "mypy58 source files",
+      "66 attempts261 versions197832 preserved files7945843996 uncompressed bytes"
+    ]
+  },
+  "new_attempt_archive": {
+    "source_git": "38cd3517b4b248ad7071c216e61fe571f0327bf2",
+    "evidence_git": "d0a60acde70f0601116afa053936047e269f5a79",
+    "creation_with_git_comparison_exit_code": 0,
+    "preserved_files": 727,
+    "uncompressed_bytes": 11470764
+  },
+  "focused_ruff_and_format": {
+    "observed_exit_code": 0,
+    "own_files": 3
+  },
+  "source_hash_checks": {
+    "observed_exit_code": 0,
+    "own_source_files_compared_to_producer_git": 5,
+    "external_files": 3
+  },
+  "maintained_345_tests_rerun": false,
+  "scientific_scope": "48 rational law/cap/question cases,2308 weighted tapes and equivalent classical order controls,480 covariance entries.586 successful unchanged-original-body replays and1 expected packet failure;1422 STUB packets;0 model forwards. No calibration, finite-RNG iid, latency, semantic improvement or sufficient own novelty certified.",
+  "goal": "OPEN; bounded classical interface audit does not complete the positive scientific objective."
+}

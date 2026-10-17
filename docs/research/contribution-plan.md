@@ -29,6 +29,11 @@ calibration observation. Native auto has smaller MSE in the preserved example;
 classical stopped-order control is EXACTLY equivalent. Useful local reference,
 insufficient own algorithmic difference; no campaign/article promotion. All
 records/scopes in66/work/result-v1.md; no real forward or maintained-suite rerun.
+Independent source/evidence snapshot38cd351/d0a60ac matches original Git trees;
+final make check PASS66 attempts261 versions197832 files7,945,843,996 bytes.
+Focused three own Ruff/format files and five own/three external source hashes
+pass. Receipt docs/evidence/a66-v1-final-verification.json. These checks only
+preserve the bounded audit; T8903/T8809 and the positive goal remain OPEN.
 
 ## 2026-10-17 — A65 real masked application completes and fails necessity
 

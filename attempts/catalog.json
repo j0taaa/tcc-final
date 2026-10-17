@@ -4971,6 +4971,24 @@
           }
         }
       ]
+    },
+    {
+      "id": "66-adaptive-readout-audit",
+      "title": "Auditoria de média adaptativa em leitor tipado real",
+      "conclusion": "Viés de optional sampling e correção clássica sem novo read passam em auditoria exata de packets/funções originais; controle clássico idêntico e menor MSE nativo preservados. Sem evidência neural ou novidade própria suficiente.",
+      "reading": "attempts/66-adaptive-readout-audit/work/result-v1.md; docs/research/next-operation-audit-2026-10-17.md",
+      "versions": [
+        {
+          "id": "v1-adaptive-packet-audit",
+          "source_commit": "38cd3517b4b248ad7071c216e61fe571f0327bf2",
+          "evidence_commit": "d0a60acde70f0601116afa053936047e269f5a79",
+          "evidence_roots": [
+            "docs/artifacts/raw/a66_adaptive_readout_v1_initial",
+            "attempts/66-adaptive-readout-audit/work/result-v1.md",
+            "attempts/66-adaptive-readout-audit/README.md"
+          ]
+        }
+      ]
     }
   ]
 }

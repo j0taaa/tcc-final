@@ -67,9 +67,18 @@ cost remain open. No new neural campaign is credited to M70.
   LOWER, not universal superiority. No corrected stderr/neural iid certificate.
   All raw records/log/after-run receipt in a66_adaptive_readout_v1_initial;
   see66/work/result-v1.md. Maintained345 tests not rerun.
-- [ ] T8902: Preserve complete bounded audit and source pins; no large neural
-  campaign/article promotion without a substantive own useful distinction.
-  Overall goal and T8809 remain OPEN.
+- [x] T8902: Preserve complete bounded audit and source pins in independent
+  v1-adaptive-packet-audit, source38cd351/evidenced0a60ac; create+Git comparison
+  PASS727 files11,470,764 bytes. Five own hashes match original producer Git,
+  three external hashes intact. Focused Ruff/format3 files PASS; full maintained
+  345 tests NOT rerun. Final make check directly exits0:66 attempts261 versions
+  197832 files7,945,843,996 uncompressed bytes. Receipts in
+  docs/evidence/a66-v1-final-{make-check.log,verification.json}. Preservation
+  does not certify a neural result or sufficient scientific originality.
+- [ ] T8903: Establish a substantive OWN useful contribution before another
+  large prototype/campaign. A66's conditioning control is identical to a
+  classical method; native auto can have lower MSE. No neural/quality followup
+  or article promotion follows from this audit. Overall goal/T8809 stay OPEN.
 
 ## M88 — Terminal numerical forecast readout for the real Mosaic/JevBench consumer
 

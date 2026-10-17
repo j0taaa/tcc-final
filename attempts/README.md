@@ -28,6 +28,9 @@ conditioning correction hold; native auto can have LOWER MSE. Equivalent
 classical control, no sufficient own theory/neural gain/paper claim.
 The abandoned early-stop lead duplicates A53 and is not reimplemented.
 See[the audit contract](66-adaptive-readout-audit/README.md).
+V1 freezes source38cd351/evidenced0a60ac independently; make check66 attempts/
+261 versions PASS. Full receipt docs/evidence/a66-v1-final-verification.json;
+maintained345 tests not rerun. Integrity is not a scientific success claim.
 
 A65 V8 completes a REAL Tiny-A2D/Mosaic MASKED application:8/8 valid originals,
 129 forwards,0 errors/refusals. Only1/8 meets the frozen ideal N7>=0.005
