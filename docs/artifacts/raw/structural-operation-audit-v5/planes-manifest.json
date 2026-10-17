@@ -1,0 +1,68 @@
+{
+  "repo": "https://github.com/SRI-CSL/mixed-masked-diffusion.git",
+  "commit": "490ad6acdb46d94a4f240e686ed392ab1e9367fb",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 10012,
+      "sha256": "4106b3bbdd2ffd479907dfab72a4419ce340a1cb7c8d3880309531b971aa9a60",
+      "status": "READABLE"
+    },
+    {
+      "path": "maskedit/architectures/simformer/simformer_mask.py",
+      "bytes": 3625,
+      "sha256": "3be2102654309b823a76fe4cb8c88809c770fcae2fb257cdd4bb12c3c1cc2c57",
+      "status": "READABLE"
+    },
+    {
+      "path": "maskedit/architectures/transformer/transformer.py",
+      "bytes": 5261,
+      "sha256": "5978ba9eaa89d1b02db8f5a7e794bad1aacadd7647291825830d43c9054dc887",
+      "status": "READABLE"
+    },
+    {
+      "path": "maskedit/training/diffusion/diffusion_mask.py",
+      "bytes": 10681,
+      "sha256": "58152bcea3459a82cf0bfb3418e226afdc44a0f34339dee7c1838c818f0fe878",
+      "status": "READABLE"
+    },
+    {
+      "path": "maskedit/training/diffusion/losses.py",
+      "bytes": 3256,
+      "sha256": "ecf0a9bca8dfb7f621398dc23fcebb9e75423bc0f8a9e15d8cd1c82f1c2e4b50",
+      "status": "READABLE"
+    },
+    {
+      "path": "maskedit/datasets/dataset.py",
+      "bytes": 8699,
+      "sha256": "252836e1ea27d680a0a26b7cc767ebacb94fb335b0ac7254b1f970ff8f699ac6",
+      "status": "READABLE"
+    },
+    {
+      "path": "maskedit/utils/indices.py",
+      "bytes": 1709,
+      "sha256": "dfe18c03f360485751213149b7cbddcca1f31744a0473d051cc9d3d60a92011b",
+      "status": "READABLE"
+    },
+    {
+      "path": "mixedit/tokenizing/discrete_encoding.py",
+      "bytes": 8479,
+      "sha256": "86420ba2c5e141f6076b022be1b9c5fd76ac115c4158ec375d56e8b4efadb6b5",
+      "status": "READABLE"
+    },
+    {
+      "path": "maskedit/architectures/transformer/attention.py",
+      "bytes": 7242,
+      "sha256": "ef4c2f9d2dc5be93a87b158452b3e6e88eeab09e6ef1a1826f053547e04f817a",
+      "status": "READABLE"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 21137,
+      "sha256": "aed6225f6f4e1d009ebb35dad73739f9ca1cd11e6ce43c12f2c2733593dc50e8",
+      "status": "READABLE"
+    }
+  ],
+  "kind": "Source retrieval only; no third-party execution or models/data",
+  "scope": "Retrieval metadata only; limited read scopes are in next-operation-audit-2026-10-17-v5.md. No third-party execution."
+}

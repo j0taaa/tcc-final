@@ -1,5 +1,19 @@
 # AGENTS.md
 
+Structural-operation audit v5 reads FINAL TreeDiff ICLR2025/aircraft ICML2026
+and pins actual MaskeDiT source. Absent fields differ from observed context;
+packing is classical and finite -1e30 masks do not imply bitwise pruning.
+Written zero-row probability r^S-r^T includes the all-conditioned reset and
+shared batch selector; bounds require fixed-mode/nonempty premises, no rows
+were inspected. SparseAdam differs from dense Adam; ORIGINAL GS-Scale ASPLOS26
+already defers updates with a disclosed epsilon approximation and cap15.
+Source pin6471e95/positive-kernel reduction/cheap classical certificates in
+docs/research/next-operation-audit-2026-10-17-v5.md. No A70/code/model/head/
+training/timing/new scientific run. Own useful consequence and goal OPEN.
+V5 make check/direct0,26.897s:69 attempts274 versions209821 preserved files;
+receipt docs/evidence/structural-operation-audit-v5-checks.json. No345-test
+rerun; normal commit/push and HEAD/upstream/remote verification follow.
+
 Joint-temperature audit v4 derives a classical Holder/Minkowski rejection
 envelope for CoDD's real frozen-state joint-power operation. Optimal weights
 in that envelope family factor over leaves; ordinary PC reweighting supplies

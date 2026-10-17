@@ -1,0 +1,32 @@
+{
+  "commit": "6471e958f7e318f4870234d8107e0aa91c2d6932",
+  "repo": "https://github.com/SNU-ARC/GS-Scale",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 7804,
+      "sha256": "70fe4832abb6582443a72d8ae80bc08fe14dc56ae1c32e97a82bf4c4f7caeea1"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1064,
+      "sha256": "7a0ef6c4ee98264daa0e0aa349deaab0c96e61d3c15633f3749cfc67bed114ab"
+    },
+    {
+      "path": "cpu_adam/src/cpu_adam.cpp",
+      "bytes": 20824,
+      "sha256": "f3f32bc04f61749baf57d1bd877b24379597e50cf4a94d04fdde80a11c19ce9f"
+    },
+    {
+      "path": "cpu_adam/src/cpu_adam.h",
+      "bytes": 1534,
+      "sha256": "1cd0d10d8e0d0212a75306535f1d2c42ff53a759a8fb87a2fc2604d02508393e"
+    },
+    {
+      "path": "gsplat/optimizers/selective_adam.py",
+      "bytes": 2940,
+      "sha256": "ff2f8c05ba2b008c116d3df4f94f634e07f66e52e43741baac9ec15bd77316bf"
+    }
+  ],
+  "scope": "Retrieval metadata only; limited read scopes are in next-operation-audit-2026-10-17-v5.md. No third-party execution."
+}

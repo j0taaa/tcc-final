@@ -1,0 +1,22 @@
+{
+  "kind": "Written consumer/antecedent audit; preservation checks only",
+  "command": [
+    "make",
+    "check"
+  ],
+  "direct_exit_code": 0,
+  "elapsed_seconds": 26.896645480999723,
+  "log": "docs/evidence/structural-operation-audit-v5-make-check.log",
+  "log_sha256": "700ae6f5580fcae02eb3ed0f0f951493a84d556fd09a12a65d38889cc93aa332",
+  "audit": "docs/research/next-operation-audit-2026-10-17-v5.md",
+  "audit_sha256": "4e2af447b6a815a8819e3133e10417ad308e564bb15d5b02e864902ff65f48a6",
+  "metadata_manifests": {
+    "gs-scale-manifest.json": "84384917486eda3fca9d2103818df48231b4cf2e56931e380049f0ce8b201268",
+    "planes-manifest.json": "b99a3a7f942e1aaa66dadefe8ca81d2ca671d50aa66dfc9f943944b5d9de0d42"
+  },
+  "new_scientific_execution": false,
+  "maintained_345_tests_rerun": false,
+  "new_attempt_created": false,
+  "model_or_dataset_rows_retrieved": false,
+  "goal": "OPEN"
+}

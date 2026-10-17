@@ -47,6 +47,38 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M95 — Structural consumers and the epsilon-preserving Adam operation
+
+- [x] T9500: Previous turn PROGRESS revalidated fromba01b797 and M94's actual
+  audit/check receipt; no live scientific process to restart. Unrelated PDF
+  untouched. No reopening of prior gates or promotion of A69's proof object.
+- [x] T9501: ORIGINAL final TreeDiff/aircraft papers and pinned MaskeDiT source
+  distinguish grammar-valid tree mutation, absent topology fields and observed
+  context. Generic packing is classical; source finite -1e30 masking requires
+  a numerical contract. Actual eps-loss zero event differs from A58's loss.
+  Written r^S-r^T handles the reset; batch bound handles the COMMON selector.
+  The conditional S_min>=10 bound is NOT an observed dataset statistic.
+- [x] T9502: ORIGINAL GS-Scale ASPLOS2026 Section4.3/5.5 and host optimizer
+  source6471e958 read/pinned: deferred Adam, epsilon approximation and cap15
+  ALREADY exist. Written epsilon-preserving bias-corrected drift is a positive
+  kernel sum; min/max/geometric-tail/block-series controls remain mandatory.
+  No original code compiled/executed, dataset row/model/forward or timing.
+- [x] T9503: Preserve eight-criterion decision and source scopes/hashes in
+  docs/research/next-operation-audit-2026-10-17-v5.md plus TWO metadata-only
+  manifests in docs/artifacts/raw/structural-operation-audit-v5. No A70 for
+  generic typed trees/packing/zero rows/deferred Adam; own useful consequence
+  is still missing. No training/large campaign justified from these identities.
+- [x] T9504: Documentation-only make check/direct0,26.897s:69 attempts/
+  274 versions209821 files8,107,411,502 bytes preserved. Audit/log/metadata
+  manifest hashes in docs/evidence/structural-operation-audit-v5-checks.json.
+  No345-test/scientific rerun; normal commit/push and HEAD/upstream/remote
+  verification follow. Positive goal remains OPEN; unrelated PDF untouched.
+- [ ] T9505: Before a substantive prototype, establish an own useful result
+  beyond the SAME classical positive-kernel/certified-tail control for the
+  identified real epsilon-preserving reconstruction operation, or identify
+  another operation. Audit original closest method, complete bit/native-state
+  contract and useful precision demand; correctness alone is insufficient.
+
 ## M94 — Joint-temperature operation and the compact classical control
 
 - [x] T9403: Documentation-only make check/direct0,32.121s:69 attempts/
