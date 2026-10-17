@@ -72,6 +72,14 @@ cost remain open. No new neural campaign is credited to M70.
   own positive comparative consequence and complete-cost use. No relaxed
   A64 five-query/law/cap search, closed old consumer reopening or promotion
   of another correct small sampler. A different grounded TCC is authorized.
+- [x] T8704: Preserve separate v1-prospective-no-primal and v2-exact-obstruction
+  snapshots, both checked against original Git trees. Six origin-file hashes
+  and unchanged originald6de16f producer independently checked. Experimental
+  Ruff/format4 PASS, no maintained-suite rerun. Full make check directly exits0:
+  64 attempts254 versions191749 files, complete receipt in
+  docs/evidence/a64-v2-final-make-check.log; scope/index in
+  docs/evidence/a64-v2-final-verification.json. Archive integrity is not a
+  positive scientific result, useful application, novelty or goal completion.
 
 ## M86 — Exact three-class coupling, positive minimax stopped-work theorem
 

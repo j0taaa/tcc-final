@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-17",
+  "make_check_exit_code_directly_observed": 0,
+  "complete_log": "docs/evidence/a64-v2-final-make-check.log",
+  "log_sha256": "89efca17eb87f426a471ca41e9d15d39d2db4834dc319f93fce042a7dca9da77",
+  "archive_integrity": {
+    "attempts": 64,
+    "versions": 254,
+    "files": 191749,
+    "uncompressed_bytes": 6003394487,
+    "scope": "Integrity only; not scientific usefulness or originality validation"
+  },
+  "new_archive_creation_compared_with_git": true,
+  "origin_file_hashes_separately_verified": {
+    "v1": 2,
+    "v2": 4
+  },
+  "original_producer_unchanged_from_source_commit": "d6de16f2cef5eae548d00e8f1617a07d2b95af50",
+  "original_producer_sha256": "a84695875b2d4b8987668e16bebcd3ab75581f7ea2d7ece6e727017454778620",
+  "experimental_ruff_format": {
+    "commands": [
+      ".venv/bin/ruff check attempts/64-anonymous-six-stopping/work/*.py",
+      ".venv/bin/ruff format --check attempts/64-anonymous-six-stopping/work/*.py"
+    ],
+    "directly_observed_exit_code": 0,
+    "stdout": "All checks passed!\n4 files already formatted\n"
+  },
+  "scientific_execution": {
+    "v1": {
+      "solves": 1,
+      "observed_exit_code": 2,
+      "status": "INCONCLUSIVE",
+      "numeric_status": 2,
+      "primal_found": false,
+      "full_7776_tail_primal_verifier_run": false
+    },
+    "v2": {
+      "new_solves": 0,
+      "observed_export_exit_code": 0,
+      "observed_independent_check_exit_code": 0,
+      "status": "INFEASIBLE_EXACT",
+      "independent_named_tails": 20,
+      "independent_matching_checks": 300,
+      "original_producer_rows_matched": 7,
+      "original_variables": 875,
+      "farkas_minimum_variable_coefficient": "0",
+      "farkas_rhs": "-1",
+      "positive_variable_coefficients": 42,
+      "corrupted_certificates_rejected": 2,
+      "old_numeric_record_relabelled": false
+    }
+  },
+  "maintained_full_test_suite_rerun": false,
+  "new_neural_forwards": 0,
+  "new_semantic_labels_or_updates": false,
+  "competitive_timing_compared": false,
+  "commits": {
+    "c22fa4d": "c22fa4d5c49a91569f4c5637edb86354a8291b6a",
+    "d6de16f": "d6de16f2cef5eae548d00e8f1617a07d2b95af50",
+    "d270de7": "d270de769dbc83b8b16acd8038ecbce40068cdf1",
+    "52bdeff": "52bdeffe48ebc1cd2bca75dd6485d93566c0aabf",
+    "9e04c49": "9e04c491a4d84c3db4860b6d1125a60ddd01f2c8",
+    "5660b09": "5660b091023e46b496a4f03fe89ca117db0d21e0"
+  },
+  "goal": "OPEN: exact rejection of this hypothesis does not meet the positive scientific goal",
+  "scientific_scope": "Primary distinct-four/25% candidate disproved for all universal matching-law rules, not only the anonymous LP. At least five distinct-input draws; smaller6.25% ceiling is an upper bound, not an achiever or relaxed success. No new actual consumer, sufficient priority, neural gain, full-cost latency or publication claim."
+}
