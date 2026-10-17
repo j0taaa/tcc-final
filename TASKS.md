@@ -102,6 +102,11 @@ cost remain open. No new neural campaign is credited to M70.
   corrected interpretation separately without overwrite or timing rerun.
   See70/work/result-v4-resource.md and docs/evidence/a70-v4-post-data-verification.json.
   This application CLOSED; other consumers/priority/full benefit/goal OPEN.
+- [x] T9604-V4: Independent V4 snapshot809 files11,880,633 bytes matches
+  original Git; own Ruff/format3 PASS. make check/direct0,27.186s preserves
+  70 attempts278 versions212965 files8,156,505,831 bytes. No scientific/
+  maintained345-test rerun; receipt docs/evidence/a70-v4-final-verification.json.
+  Normal commit/push and HEAD/upstream/remote verification follow; goal OPEN.
 
 ## M95 — Structural consumers and the epsilon-preserving Adam operation
 

@@ -35,6 +35,19 @@ make check/direct0 preserves70 attempts277 versions212156 files. Five own
 Python files pass Ruff/format; no numerical/345-test rerun. Final receipt
 docs/evidence/a70-v3-final-verification.json; positive goal remains OPEN.
 
+A70 V4[NNCP resource result](70-native-adam-erasure/work/result-v4-resource.md)
+closes THIS CPU/FP32 component application:56 measured+8 warmup+1 setup,
+65 actual forwards/backwards/updates, no accumulated training. Both embedding-
+FREE controls fail0/2 frames; best paired medians vs native single .979/.979
+and .994/.994 wall/CPU. No actual A70/full-codec adapter or extra-seed/geometry
+rescue. Native single/foreach state equality observed on both frames only.
+StaticV4b passes9 source hashes65 ordered cycles16 metric comparisons; actual
+start producercc36fab5 is distinguished from the outer receipt's misnamed
+end HEADda74d38b. Independent archive809 files matches original Git; make
+check/direct0,27.186s:70 attempts278 versions212965 files. Three own Python
+files pass Ruff/format; receipt docs/evidence/a70-v4-final-verification.json.
+Different useful consumer/sufficient priority/positive scientific goal OPEN.
+
 A69 V4[original-source/use audit](69-adaptive-factory-separation/work/priority-and-use-audit-v4.md)
 finds Mendo's classical early termination and elementary power controls already
 supply generic pointwise/growing-gap claims. Only the uniform-input/interior

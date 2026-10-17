@@ -1,0 +1,22 @@
+{
+  "kind": "Final preservation/lint/type checks; no neural/scientific rerun",
+  "head_at_check_start": "d308030995d774170c104c7cc4520f8fac8d3c71",
+  "command": [
+    "make",
+    "check"
+  ],
+  "direct_exit_code": 0,
+  "elapsed_seconds": 27.186401327024214,
+  "log": "docs/evidence/a70-v4-final-make-check.log",
+  "log_sha256": "ad30703479ee3370b91ee4c5ccb021b9329b489e188fa366a53de4d08034bfff",
+  "new_version": "v4-nncp-resource-screen",
+  "archive_original_git_exit_code": 0,
+  "new_archive_files": 809,
+  "new_archive_uncompressed_bytes": 11880633,
+  "own_ruff_and_format_files": 3,
+  "maintained_345_tests_rerun": false,
+  "actual_resource_producer": "cc36fab56ea1a53e3ba3952948ef67e7f8bc2636",
+  "resource_evidence": "d3080309",
+  "optimistic_resource_gate_passed_frames": 0,
+  "goal": "OPEN"
+}

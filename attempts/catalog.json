@@ -5157,8 +5157,8 @@
     {
       "id": "70-native-adam-erasure",
       "title": "Reconstrução observável do Adam nativo com apagamento certificado de estado",
-      "conclusion": "V1 crash de linkage preservado; V2 passa768 fixtures/128 erasures não triviais. V3 corrige admissão de bound/ranges, preserva os768 bits/contagens e passa oito regressões adversas/quatro recusas de contexto; seis fallbacks exatos. Prova escrita de identidade observável no contrato binary32 declarado, princípios clássicos explícitos. Consumidor/kernel nativo, prioridade e benefício de custo completo reais continuam abertos; nenhum modelo/treino/timing competitivo/meta cumprida.",
-      "reading": "attempts/70-native-adam-erasure/work/result-v3.md; attempts/70-native-adam-erasure/work/result-v2.md; attempts/70-native-adam-erasure/work/result-v1-failed.md; attempts/70-native-adam-erasure/work/theory-v1.md; attempts/70-native-adam-erasure/README.md",
+      "conclusion": "V1 crash de linkage preservado; V2/V3 passam768 fixtures/128 erasures e oito regressões, com prova escrita no contrato binary32 declarado. V4 audita consumidor NNCPv2/ordem nativa e conclui65 ciclos reais:56 medidos+8 warmups+1 setup, sem treino acumulado; embedding FREE falha0/2 frames no gate integral20% contra Adam single/foreach. Esta aplicação CPU/FP32 está encerrada sem resgate, não é decoder/A70 completo. Fontecc36fab5, metadado start/end HEAD corrigido separadamente. Prioridade específica, outro uso útil e meta positiva continuam abertos.",
+      "reading": "attempts/70-native-adam-erasure/work/result-v4-resource.md; attempts/70-native-adam-erasure/work/consumer-audit-v4.md; attempts/70-native-adam-erasure/work/result-v3.md; attempts/70-native-adam-erasure/work/result-v2.md; attempts/70-native-adam-erasure/work/result-v1-failed.md; attempts/70-native-adam-erasure/work/theory-v1.md; attempts/70-native-adam-erasure/README.md",
       "versions": [
         {
           "id": "v1-linkage-failure",
@@ -5198,6 +5198,22 @@
             "docs/evidence/a70-v3-post-data-verification.json",
             "attempts/70-native-adam-erasure/work/verify_packet_v3.py",
             "attempts/70-native-adam-erasure/work/result-v3.md",
+            "attempts/70-native-adam-erasure/README.md"
+          ]
+        },
+        {
+          "id": "v4-nncp-resource-screen",
+          "source_commit": "cc36fab56ea1a53e3ba3952948ef67e7f8bc2636",
+          "evidence_commit": "d308030995d774170c104c7cc4520f8fac8d3c71",
+          "evidence_roots": [
+            "docs/artifacts/raw/a70_nncp_resource_v4",
+            "docs/evidence/a70-v4-post-data-verification.json",
+            "attempts/70-native-adam-erasure/work/result-v4-resource.md",
+            "attempts/70-native-adam-erasure/work/consumer-audit-v4.md",
+            "attempts/70-native-adam-erasure/work/protocol-v4-resource.md",
+            "attempts/70-native-adam-erasure/work/receipt-addendum-v4.md",
+            "attempts/70-native-adam-erasure/work/verify_resource_v4.py",
+            "attempts/70-native-adam-erasure/work/verify_resource_v4b.py",
             "attempts/70-native-adam-erasure/README.md"
           ]
         }

@@ -14,6 +14,11 @@ controls. StaticV4b c48c72b4 passes9 hashes65 ordered cycles16 comparisons;
 outer receipt's misnamed END HEADda74d38b is preserved/corrected by separate
 addendum, actual start producercc36fab5 unchanged. Result70/work/result-v4-
 resource.md. Other consumers/specific priority/full benefit/positive goal OPEN.
+A70 V4 independent snapshot809 files matches original Git/direct0. Own Ruff/
+format3 PASS; make check/direct0,27.186s preserves70 attempts278 versions
+212965 files8,156,505,831 bytes. Receipt a70-v4-final-verification.json in
+docs/evidence; no scientific/345-test rerun. Normal commit/push and HEAD/
+upstream/remote verification follow, unrelated PDF untouched. Goal OPEN.
 
 A70 starts only a MINIMAL numerical correctness candidate, written before
 code: native binary32 observable reconstruction via ALL-tail absorption,
