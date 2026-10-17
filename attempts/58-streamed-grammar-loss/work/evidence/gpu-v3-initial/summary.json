@@ -1,0 +1,15 @@
+{
+  "status": "ERROR",
+  "records": 32,
+  "checked": 285564,
+  "refusals": 4,
+  "new_model_forwards": 0,
+  "new_model_parameter_reads": 0,
+  "optimizer_updates": 0,
+  "competitive_timing": false,
+  "RNG_restored": true,
+  "Python_RNG_restored": true,
+  "NumPy_RNG_restored": true,
+  "matmul_precision_restored": true,
+  "threads_unchanged": true
+}

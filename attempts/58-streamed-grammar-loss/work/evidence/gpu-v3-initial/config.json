@@ -1,0 +1,72 @@
+{
+  "producer": "8fea71fe2a5844ad92dcee8f4ffe7ce035b7fe07",
+  "source_sha256": {
+    "reference.py": "9b54679f8166896fc41dcbd6b30fd31ed0589c4c8ad5af84cfd92e9fe2ab3dbc",
+    "preflight_gpu.py": "5c531f57ad0a0c5bf199916e5130f227aeeab211c5aaa84405570a546b74fb6f",
+    "gpu_head.py": "6b17ad0564d3e48311299ec021c620b9fcb90aa30be5ad416e69813d7c402046",
+    "torch_head.py": "d86672472c1da1c6ca055856242d72c742964dd4808e400bb12c788147bded6d",
+    "test_reference.py": "19623a4b63cb9586c34ca537e55fbcf0e3e0bc99f2d0c1abdbdbd35ed2ada107"
+  },
+  "CCE_commit": "3de376c106a1916bc5e1b619f9c77c87a461ee1c",
+  "torch": "2.13.0+cu130",
+  "triton": "3.7.1",
+  "CUDA": "13.0",
+  "device": "NVIDIA GeForce RTX 3080 Ti",
+  "dtype": "float32",
+  "dot_precision": "ieee",
+  "gradient_filtering": false,
+  "shapes": [
+    [
+      1,
+      3,
+      7,
+      6
+    ],
+    [
+      4,
+      3,
+      7,
+      6
+    ],
+    [
+      7,
+      5,
+      11,
+      5
+    ],
+    [
+      17,
+      33,
+      67,
+      7
+    ],
+    [
+      33,
+      65,
+      257,
+      13
+    ],
+    [
+      65,
+      64,
+      1024,
+      17
+    ],
+    [
+      5,
+      17,
+      17,
+      17
+    ],
+    [
+      2,
+      2,
+      4,
+      3
+    ]
+  ],
+  "new_model_forwards": 0,
+  "new_model_parameter_reads": 0,
+  "optimizer_updates": 0,
+  "competitive_timing": false
+}
