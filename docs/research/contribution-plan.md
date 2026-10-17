@@ -23,6 +23,14 @@ operation and plausible own useful consequence must precede the next large
 prototype. All sources/raw/results remain in68/work and docs/artifacts/raw/
 a68_{retrospective_v6,whole_cost_v7}_initial. No new NN/training/biological data.
 
+Independent V6/V7 archives760/3047 files match original Git/direct0;13 hash
+comparisons11 unique paths and own Ruff/format3 PASS. make check/direct0:
+68 attempts270 versions206805 files8,061,428,175 bytes; final verification/
+log in docs/evidence/a68-v7-final-*. No scientific/345-test rerun.
+The next-operation audit v2 reads original SIRS2610.22238v1 methods but rejects
+mere CFG-conditioning/Poisson-thinning/cache composition as an adequate own
+consequence. No prototype/model/quality run is selected from that observation.
+
 ## 2026-10-17 — A68 full runtime and equally informed formula controls
 
 Previous goal turn made verified PROGRESS: V3 sparse-proposal theorem and

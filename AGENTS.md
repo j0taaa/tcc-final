@@ -1,5 +1,14 @@
 # AGENTS.md
 
+A68 V6/V7 independent snapshots760/3047 files match original Git/direct0;
+13 frozen hash comparisons11 unique paths and Ruff/format3 PASS. make check
+direct0:68 attempts270 versions206805 files8.061.428.175 bytes. Final receipt
+docs/evidence/a68-v7-final-verification.json; no scientific/345-test rerun.
+Next-operation-audit-2026-10-17-v2 reads original SIRS2610.22238v1 method;
+simple CFG conditioning/Poisson thinning/cache composition is NOT selected
+as sufficient novelty. No new prototype/head; different own useful consequence
+and eight criteria still required. Positive goal OPEN, not blocked or achieved.
+
 A68 V7 closes the numerical application NEGATIVE: protocol7e459f1 BEFORE
 final runner009fdfe/ONE direct0, ALL1140 rows COMPLETE,109440 outputs and
 1463955 SIMULATED PRNG p-coin calls720 matched source checks,0 failures/errors.

@@ -83,12 +83,12 @@ cost remain open. No new neural campaign is credited to M70.
   operation cost and equally informed controls/priority. Sparse preparation
   is O(log m) known-weight queries with<=8 expected rejection attempts, not
   constant bit work. No full sampler/genealogy/RNG/timing campaign yet.
-- [ ] T9106: Before a complete runtime/performance campaign, specify charged
-  exact arithmetic and RNG, direct/analytic/derivative/global-cache and
-  coefficient-free controls; distinguish a first node from repeated genealogy
-  votes. Runtime GMP lookup is not a fast-bit implementation. No fabricated
-  expensive callback or query-count substitution for total speed; preserve
-  all unfavorable polynomial controls and the bounded-range application scope.
+- [x] T9106: V4 exact GMP/RNG runtime plus V5 formula/derivative/direct and
+  V6 lazy/partial-cache controls, followed by prospectively frozen V7 full-
+  cost comparison, resolve the NUMERICAL scope with a NEGATIVE gate. All
+  startup/source/RNG/callback/arithmetic/cache work and total child costs/RSS
+  recorded, no fake expensive f. This does not execute a genealogy or confirm
+  a useful own contribution; the failed application is closed, not expanded.
 - [x] T9108: V4 contract67bafcf BEFORE source5775a89/ONE PASS0 in isolated
   pinned gmpy2 2.2.1/GMP6.3.0. Exact primitives30576/13104/26208 prefixes,
   1076 shared-U checks8400 binomials103 balanced sums1347 proposals4041
@@ -123,11 +123,18 @@ cost remain open. No new neural campaign is credited to M70.
   manufactured costly callback/full genealogy campaign to rescue it. Source/
   data/theorem preserved; result-v7.md/raw a68_whole_cost_v7_initial. No
   independent validation/priority or completed scientific goal.
-- [ ] T9114: Preserve independent V6/V7 snapshots with original-Git/hash
-  checks and normal upstream sync; no scientific rerun.
+- [x] T9114: Independent V6 source7439b49/evidence23be672:760 files11,744,053
+  bytes, V7 source009fdfe/evidence30f29ed:3047 files22,722,182 bytes; create+
+  original-Git/direct0. Thirteen frozen hash comparisons11 unique paths and own
+  Ruff/format3 PASS. make check/direct0:68 attempts270 versions206805 files
+  8,061,428,175 bytes. Final receipts/logs docs/evidence/a68-v7-final-*;
+  no scientific or345 maintained-test rerun. Normal commit/push follows.
 - [ ] T9115: Identify a DIFFERENT real operation/useful own consequence and
   closest original-source controls before any next substantive prototype.
   A68's failed numerical application and all previous stopping rules remain.
+  New original SIRS2610.22238v1 method read; simple CFG-conditioning/thinning/
+  caching composition is not selected as sufficient novelty. Scope and
+  classical conditioning identity in next-operation-audit-2026-10-17-v2.md.
 - [x] T9112: V6 classical retrospective control contract7792fe9 BEFORE
   source7439b49/ONE PASS/direct0:966 complete chains42066 nested intervals
   40134 independent remaining masses2448 prefixes96 cache replays. All288

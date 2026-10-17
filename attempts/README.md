@@ -27,6 +27,9 @@ nonpolynomial cases (also0/18 all cases). Every control finished. No more
 seeds/functions/threshold changes or full genealogy campaign to rescue it.
 Written scoped cap6 theorem/raw/controls remain, not a fulfilled positive goal.
 See[the decision](68-residual-bernstein-sampling/work/result-v7.md).
+Independent V6/V7 snapshots760/3047 files match original Git;13 frozen hash
+comparisons11 unique paths/Ruff+format3 PASS. make check/direct0 preserves
+68 attempts270 versions206805 files. Final receipt docs/evidence/a68-v7-final-verification.json.
 
 A68 V4 now executes the full exact-bit/GMP numerical factory:1152 complete
 calls/24480 actual p-coins, balanced dense control and exact primitive audits.

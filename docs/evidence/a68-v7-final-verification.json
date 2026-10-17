@@ -1,0 +1,132 @@
+{
+  "kind": "After-data preservation verification, not scientific producer",
+  "versions": [
+    {
+      "id": "v6-retrospective-control",
+      "source_commit": "7439b49253245eadc8926dd6eb1ab2c3814b046e",
+      "evidence_commit": "23be672a3d76857c7d2887c29c485ec53169ed16",
+      "files": 760,
+      "uncompressed_bytes": 11744053,
+      "original_git_check_direct_exit_code": 0
+    },
+    {
+      "id": "v7-whole-cost-negative",
+      "source_commit": "009fdfef2a8fc5bd6c46cb6ec5b9c1bb0caed423",
+      "evidence_commit": "30f29ed475213535ee557c30137af7bf714ce515",
+      "files": 3047,
+      "uncompressed_bytes": 22722182,
+      "original_git_check_direct_exit_code": 0
+    }
+  ],
+  "source_hash_comparisons": [
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/retrospective_v6.py",
+      "sha256": "a208c1f61331a29474da81ce064e638e7f814007f196b7c7313a55a3bca3557b",
+      "run": "a68_retrospective_v6_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/audit_retrospective_v6.py",
+      "sha256": "cd67140822f093c0772f18d059645636259c7cb1ece94a89bfd297d7fb69947f",
+      "run": "a68_retrospective_v6_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/retrospective-control-theory-v6.md",
+      "sha256": "9e2ed269d0dcc4a23ecbbdbbc0bf44ecf009022a283ee4f82ba6f1b94291e6f5",
+      "run": "a68_retrospective_v6_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/runtime_v4.py",
+      "sha256": "41dccb126a0f62882aa58efa6ae52cb153408e7645ebe548d0cf6b40c73ee46a",
+      "run": "a68_retrospective_v6_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/audit.py",
+      "sha256": "467818be145a831b2c213bd08492626e0fa7e64de02d7bb9e3780a06af6a684d",
+      "run": "a68_retrospective_v6_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/audit_runtime_v4.py",
+      "sha256": "1b96863ad8f518b75a44b9b7741a037dc29fc10f92a7e210e8d81370eafea468",
+      "run": "a68_retrospective_v6_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/cost_v7.py",
+      "sha256": "58d8e66c48bb1233739407433d985a85e61ccd32c3fa6c90b9dc43a470792f33",
+      "run": "a68_whole_cost_v7_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/cost-protocol-v7.json",
+      "sha256": "bb7e80383ae8b95079133b9dd31f2088b0b970a54ea082077e0ad4d18ee22ad2",
+      "run": "a68_whole_cost_v7_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/cost-contract-v7.md",
+      "sha256": "bf548300a86587984d4633f4bd5e4e4e4814fce3a18f0acf8fa2d2c778974755",
+      "run": "a68_whole_cost_v7_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/cost-runner-addendum-v7.md",
+      "sha256": "d4ee3e11ece0903cde2adf4cdd387aaf5722e36aa9fc7f970463fa21eb0616f9",
+      "run": "a68_whole_cost_v7_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/runtime_v4.py",
+      "sha256": "41dccb126a0f62882aa58efa6ae52cb153408e7645ebe548d0cf6b40c73ee46a",
+      "run": "a68_whole_cost_v7_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/formula_control_v5.py",
+      "sha256": "7a2f0b2d9256613ca93e2cb1fd34428c766ef8427fd0cc6a5b254e9e811736be",
+      "run": "a68_whole_cost_v7_initial"
+    },
+    {
+      "path": "attempts/68-residual-bernstein-sampling/work/retrospective_v6.py",
+      "sha256": "a208c1f61331a29474da81ce064e638e7f814007f196b7c7313a55a3bca3557b",
+      "run": "a68_whole_cost_v7_initial"
+    }
+  ],
+  "maintained_345_tests_rerun": false,
+  "goal": "OPEN",
+  "focused_ruff_format": {
+    "direct_exit_code": 0,
+    "own_files": 3
+  },
+  "make_check": {
+    "kind": "Preservation check, not scientific validation",
+    "command": [
+      "make",
+      "check"
+    ],
+    "direct_exit_code": 0,
+    "elapsed_seconds": 26.695609788002912,
+    "log": "docs/evidence/a68-v7-final-make-check.log",
+    "sha256": "27ef556de33f9fb33e64b1451ebbef5c4bf4d748a6d9b3f1fd5ef52f74406aa8",
+    "attempts": 68,
+    "versions": 270,
+    "preserved_files": 206805,
+    "uncompressed_bytes": 8061428175
+  },
+  "original_scientific_runs": [
+    {
+      "contract_commit": "7792fe9",
+      "source_commit": "7439b49253245eadc8926dd6eb1ab2c3814b046e",
+      "evidence_commit": "23be672a3d76857c7d2887c29c485ec53169ed16",
+      "direct_exit_code": 0,
+      "kind": "V6 exact control preflight"
+    },
+    {
+      "contract_commit": "7e459f1",
+      "source_commit": "009fdfef2a8fc5bd6c46cb6ec5b9c1bb0caed423",
+      "evidence_commit": "30f29ed475213535ee557c30137af7bf714ce515",
+      "direct_exit_code": 0,
+      "kind": "V7 complete frozen numerical cost screen",
+      "rows": 1140,
+      "all_complete": true,
+      "outputs": 109440,
+      "simulated_coin_calls": 1463955,
+      "followup_gate": "NEGATIVE"
+    }
+  ],
+  "post_data_audit": "docs/evidence/a68-v7-post-data-verification.json",
+  "limits": "Numerical application CLOSED negative, not theorem refutation or positive article goal; no extra seeds/functions/genealogy rescue, no NN or biological data."
+}
