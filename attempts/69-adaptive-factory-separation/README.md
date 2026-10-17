@@ -62,3 +62,13 @@ cost scales64 localisation checks, tickets/forced predicates and6 refusals.
 All inputs are constructed finite proof objects, not a practical benchmark.
 The infinite capacity result remains WRITTEN, with specific priority/natural
 use/positive goal open. See[the result and exact limits](work/result-v1.md).
+
+V2 is a NEW WRITTEN corollary after those checks: finite polynomial truncations
+retain a uniform adaptive input-call bound, while the optimum over ALL
+preselected/full batches tends to infinity. The explicit simple batch costs
+R/4, but the lower bound admits better kernels. Classical compactness proves
+the qualitative divergence, with no useful rate/R0, physical timing or uniform
+finite-family bit-cost ratio claimed. Criteria1/2/4 keep the operation/candidate
+scope;3 now includes this finite-family resource gap;5 has NO new experiment;
+6/7/8 retain full-cost, priority and natural-use gaps. The earlier oracles do
+NOT validate this new argument. See[the finite corollary](work/finite-polynomial-gap-v2.md).
