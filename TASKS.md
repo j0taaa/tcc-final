@@ -63,6 +63,9 @@ cost remain open. No new neural campaign is credited to M70.
   V3's positive interval remains valid;(1/15,1/12] remains OPEN. Independent
   raw outputs in45/work/evidence/dust-obstruction-v4; useful own contribution
   and user goal still OPEN. This does not reopen the closed A44 consumer.
+  V3/V4 archived independently; final make check exit0 verifies55 attempts/
+  230 versions/173467 preserved files. Complete check log:
+  docs/evidence/a45-v4-final-make-check.log. No partial-running log credited.
 
 - [x] T7802: Separate A45 mathematical audit, f50008a written before its
   oracle: whole-matrix odd/even degree-elevation identity for all label counts;

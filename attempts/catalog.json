@@ -1916,7 +1916,7 @@
     {
       "id": "45-random-order-empirical-towers",
       "title": "Random-order empirical towers — falsification before proof",
-      "conclusion": "6,230 finite cases without obstruction are NOT proof; arbitrary-class safety and neural utility remain open. V2 writtenf50008a: whole-joint odd/even identity for every label count; B2/3 iid, B4/5 A38. Rational2872 profiles/77616 entries and125 control profiles pass; conditional SRS shortcut false. Even B>=6/L>=4 universal safety still OPEN, no new model/population screen or useful application. V3: written e970ffe/1a39f02 resolves six/seven proposals for arbitrary finite classes by an exact covariance square certificate; addendum9a1aae9 proves0<=t<=1/15. Five rational oracles and ten symbolic identities pass; full307 PASS88.256s. Even B>=8 and upper remainder open. No new head/timing/useful consumer/sufficient priority or achieved goal.",
+      "conclusion": "6,230 finite cases without obstruction are NOT proof; arbitrary-class safety and neural utility remain open. V2 writtenf50008a: whole-joint odd/even identity for every label count; B2/3 iid, B4/5 A38. Rational2872 profiles/77616 entries and125 control profiles pass; conditional SRS shortcut false. Even B>=6/L>=4 universal safety still OPEN, no new model/population screen or useful application. V3: written e970ffe/1a39f02 resolves six/seven proposals for arbitrary finite classes by an exact covariance square certificate; addendum9a1aae9 proves0<=t<=1/15. Five rational oracles and ten symbolic identities pass; full307 PASS88.256s. Even B>=8 and upper remainder open. No new head/timing/useful consumer/sufficient priority or achieved goal. V4: written01f84be before checks proves rare-class completion and necessary t<=1/12. Exact1026-class/75-profile counterexample refutes old4/45 endpoint, including a literal Boolean verifier. Ninety rational/two symbolic checks pass. V3 positive theorem intact; remaining(1/15,1/12] open. Scientific-decision-v4 declines protagonist promotion without useful own competitive benefit; no neural/timing campaign.",
       "reading": "attempts/45-random-order-empirical-towers/README.md; TASKS.md",
       "versions": [
         {
@@ -1941,6 +1941,15 @@
           "id": "v3",
           "source_commit": "b3cd46c69410c6b95b4c39ef4185a612f033e770",
           "evidence_commit": "b3cd46c69410c6b95b4c39ef4185a612f033e770",
+          "evidence_roots": [
+            "attempts/45-random-order-empirical-towers/README.md",
+            "attempts/45-random-order-empirical-towers/work"
+          ]
+        },
+        {
+          "id": "v4",
+          "source_commit": "324ab5cc83e176669442de037a951c406a754da9",
+          "evidence_commit": "324ab5cc83e176669442de037a951c406a754da9",
           "evidence_roots": [
             "attempts/45-random-order-empirical-towers/README.md",
             "attempts/45-random-order-empirical-towers/work"
