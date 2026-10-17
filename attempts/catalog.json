@@ -1916,13 +1916,22 @@
     {
       "id": "45-random-order-empirical-towers",
       "title": "Random-order empirical towers — falsification before proof",
-      "conclusion": "6,230 finite cases without obstruction are NOT proof; arbitrary-class safety and neural utility remain open.",
+      "conclusion": "6,230 finite cases without obstruction are NOT proof; arbitrary-class safety and neural utility remain open. V2 writtenf50008a: whole-joint odd/even identity for every label count; B2/3 iid, B4/5 A38. Rational2872 profiles/77616 entries and125 control profiles pass; conditional SRS shortcut false. Even B>=6/L>=4 universal safety still OPEN, no new model/population screen or useful application.",
       "reading": "attempts/45-random-order-empirical-towers/README.md; TASKS.md",
       "versions": [
         {
           "id": "v1",
           "source_commit": "1d68d3a1d36442f2ff07bb58e31f1da021aada91",
           "evidence_commit": "be388fb2e0e2de4528a0328dea2735acd15c1e10",
+          "evidence_roots": [
+            "attempts/45-random-order-empirical-towers/README.md",
+            "attempts/45-random-order-empirical-towers/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "bc2be20f1d66f74f88d908bc4ab1297b1c324c1f",
+          "evidence_commit": "bc2be20f1d66f74f88d908bc4ab1297b1c324c1f",
           "evidence_roots": [
             "attempts/45-random-order-empirical-towers/README.md",
             "attempts/45-random-order-empirical-towers/work"
