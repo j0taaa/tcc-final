@@ -79,24 +79,22 @@ cost remain open. No new neural campaign is credited to M70.
   SAME H-gap count/kernel. Original2024 genealogy model is a real consumer
   identified analytically, NOT an executed genealogy/new duality/exclusive
   non-explosion result. No full RNG/sampler/fast-bit engine or competitive
-  timings/NN. Result68/work/result-v3.md. T9102 remains open. Original contract:
-  classical component
-  splitting cap6, quartic residual envelope with four-moment normalizer and
-  log-concavity; rational classic rejection plan needs O(log m) known-weight
-  preparation and<=8 expected attempts. SAME H-gap count/kernel. Original2024
-  genealogy model independently identifies a consumer, not a new duality or
-  exclusive non-explosion result. Freeze finite certificate/law auditor then
-  execute all m16/64/256 proposal cases and six original m16/64 function laws.
-  No full sampler/genealogy/RNG/timing campaign yet; T9102 still open for real
-  whole-operation cost and equally informed controls/priority. ProtocolV3.
+  timings/NN. Result68/work/result-v3.md. T9102 remains open for real whole-
+  operation cost and equally informed controls/priority. Sparse preparation
+  is O(log m) known-weight queries with<=8 expected rejection attempts, not
+  constant bit work. No full sampler/genealogy/RNG/timing campaign yet.
 - [ ] T9106: Before a complete runtime/performance campaign, specify charged
   exact arithmetic and RNG, direct/analytic/derivative/global-cache and
   coefficient-free controls; distinguish a first node from repeated genealogy
   votes. Runtime GMP lookup is not a fast-bit implementation. No fabricated
   expensive callback or query-count substitution for total speed; preserve
   all unfavorable polynomial controls and the bounded-range application scope.
-- [ ] T9107: Preserve V3 source/proof/evidence independently, verify original
-  hashes/checks and normal upstream sync, without new scientific executions.
+- [x] T9107: Independent V3 source5e97323/evidence0e54736,742 files
+  11,452,755 bytes; create+original-Git/direct0. Eight frozen hashes and
+  eight unchanged V1/V2 files match Git; own Ruff/format2 PASS. make check/
+  direct0:68 attempts266 versions201494 files8,002,914,534 bytes. Receipt/log
+  docs/evidence/a68-v3-final-{verification.json,make-check.log}. Normal commit/
+  push followed; no scientific rerun or maintained345-test rerun. Goal OPEN.
 - [x] T9104: V2 proofb7acbb0 AFTER V1 and BEFORE source13e5aa1/ONE PASS0.
   Classical Peano slope H/(3m) lowers envelope mass19H/(24m^1.5), margin1/28,
   permits SAME tighter H-gap count law with<=9 callbacks. All966 exact laws,

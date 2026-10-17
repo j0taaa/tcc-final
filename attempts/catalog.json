@@ -5024,8 +5024,8 @@
     {
       "id": "68-residual-bernstein-sampling",
       "title": "Amostragem de incremento Bernstein com consultas constantes",
-      "conclusion": "V1/V2 têm prova escrita e auditorias racionais de966 leis/40134 resíduos; V2 usa envelope Peano clássico para manter a mesma lei de moedas do controle gapH com no máximo9 consultas f. Princípios clássicos creditados; novidade específica/custo integral/uso positivo suficiente permanecem abertos. Sem sampler completo ou evidência neural/timing.",
-      "reading": "attempts/68-residual-bernstein-sampling/work/result-v2.md; attempts/68-residual-bernstein-sampling/work/same-count-theory-v2.md; attempts/68-residual-bernstein-sampling/work/primary-addendum-v2.md",
+      "conclusion": "V3 tem cap6 via splitting clássico, proposta quartic com normalizador por quatro momentos e rejeição logcôncava sem tabela densa, mantendo lei de moedas/kernel gapH. Auditoria1347 propostas/211011 pontos/966 leis PASS; consumidor genealógico original identificado, sem execução integral. Princípios clássicos creditados; novidade específica/custo total/meta permanecem abertos. Sem sampler/RNG/NN/timing completo.",
+      "reading": "attempts/68-residual-bernstein-sampling/work/result-v3.md; attempts/68-residual-bernstein-sampling/work/sparse-proposal-theory-v3.md; attempts/68-residual-bernstein-sampling/work/consumer-primary-v3.md",
       "versions": [
         {
           "id": "v1-residual-query-law",
@@ -5045,6 +5045,17 @@
             "docs/artifacts/raw/a68_residual_bernstein_v2_initial",
             "attempts/68-residual-bernstein-sampling/work/result-v2.md",
             "attempts/68-residual-bernstein-sampling/work/primary-addendum-v2.md",
+            "attempts/68-residual-bernstein-sampling/README.md"
+          ]
+        },
+        {
+          "id": "v3-sparse-quartic-proposal",
+          "source_commit": "5e973233cde5d9d80869671d2c3f19e4e0af35ef",
+          "evidence_commit": "0e5473667f61de9810ba5618374ada9db0ef90b7",
+          "evidence_roots": [
+            "docs/artifacts/raw/a68_sparse_proposal_v3_initial",
+            "attempts/68-residual-bernstein-sampling/work/result-v3.md",
+            "attempts/68-residual-bernstein-sampling/work/consumer-primary-v3.md",
             "attempts/68-residual-bernstein-sampling/README.md"
           ]
         }

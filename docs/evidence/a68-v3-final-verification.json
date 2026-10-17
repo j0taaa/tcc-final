@@ -1,0 +1,45 @@
+{
+  "kind": "After-run preservation receipt, not scientific producer",
+  "contract_commit": "bdedd147b6be35bee155a0f5b61d54f677089871",
+  "source_commit": "5e973233cde5d9d80869671d2c3f19e4e0af35ef",
+  "evidence_commit": "0e5473667f61de9810ba5618374ada9db0ef90b7",
+  "observed_scientific_exit_code": 0,
+  "counts": {
+    "moment_proposals": 1347,
+    "factorial_moment_values": 6735,
+    "envelope_points": 211011,
+    "log_concavity_points": 208323,
+    "mode_cutoff_checks": 1347,
+    "rejection_height_points": 211011,
+    "rejection_laws": 1347,
+    "conditional_laws": 966,
+    "term_branch_calls": 966,
+    "residual_branch_points": 40134,
+    "zero_h_points": 21,
+    "guards": 8
+  },
+  "maximum_callback_calls_per_enumerated_branch": 6,
+  "archive_creation_original_git_comparison": {
+    "observed_exit_code": 0,
+    "files": 742,
+    "uncompressed_bytes": 11452755
+  },
+  "frozen_source_hash_comparisons": 8,
+  "older_v1_v2_unchanged_files": 8,
+  "focused_ruff_and_format": {
+    "observed_exit_code": 0,
+    "own_files": 2
+  },
+  "make_check": {
+    "observed_exit_code": 0,
+    "log": "docs/evidence/a68-v3-final-make-check.log",
+    "sha256": "8ba242be783cb0cd7360328892466036d30de1d98a4dc72d215b29229197c41a",
+    "attempts": 68,
+    "versions": 266,
+    "preserved_files": 201494,
+    "uncompressed_bytes": 8002914534
+  },
+  "maintained_345_tests_rerun": false,
+  "scientific_limits": "Written query/preparation theorem and exact finite laws only. Classical mechanisms and genealogy application credited. No full sampler/RNG/genealogy/fast-bit engine/NN/timing, no confirmed priority or useful complete-cost advantage.",
+  "goal": "OPEN"
+}

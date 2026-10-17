@@ -16,6 +16,10 @@ permanecem. Não fabricar callback lento nem declarar meta cumprida; T9102/
 T9106 seguem abertos. Há só lookup de runtimes GMP/MPFR, sem install/executar
 aritmética nativa/headers; não inferir capacidade implementada. Resultado
 68/work/result-v3.md; preservarV1/V2 intactas e congelar runtime antes de testes.
+V3 independente5e97323/0e54736 preserva742 arquivos11.452.755 bytes; create+
+Git PASS. Oito hashes/oito arquivosV1/V2 intactos e Ruff/format2 próprios PASS.
+make check PASS68 tentativas266 versões201494 arquivos8.002.914.534 bytes;
+recibo docs/evidence/a68-v3-final-verification.json. Suíte345 não rerodada.
 
 A68 inicia direção DIFERENTE antes de código: amostrar o incremento do
 controle CLÁSSICO n-1 sem calcular a soma dependente de todos valores de f.

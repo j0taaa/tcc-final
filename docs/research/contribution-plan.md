@@ -35,6 +35,13 @@ and direct/analytic/derivative/coefficient-free/global-cache controls for first
 and repeated votes. No slow callback manufactured to win. Full useful benefit,
 specific priority/publication and the positive scientific objective stay OPEN.
 
+Independent V3 source5e97323/evidence0e54736 has742 files11,452,755 bytes;
+create+original-Git/direct0. Eight frozen hashes/eight unchanged V1/V2 files
+and own Ruff/format2 pass. make check/direct0:68 attempts266 versions201494
+files8,002,914,534 bytes. Receipt/log docs/evidence/a68-v3-final-{verification.
+json,make-check.log}; maintained345 tests not rerun. No further science case
+was executed for preservation.
+
 ## 2026-10-17 — A68 targets function queries, retaining classical n-1 control
 
 Previous goal turn made verified progress: original-source classical control

@@ -26,6 +26,9 @@ cap6 callbacks at the SAME source-count law. Exact finite audit1347 proposals/
 211011 points/208323 shape inequalities and966 conditional laws passes;
 no full sampler/genealogy/timing/NN. Original2024 genealogy consumer identified,
 but whole-cost/priority/user goal remain OPEN. See[the result](68-residual-bernstein-sampling/work/result-v3.md).
+Independent V3 source5e97323/evidence0e54736 matches original Git,742 files;
+eight source hashes/eight intact V1/V2 files and own Ruff/format2 PASS.
+make check68 attempts266 versions PASS, no maintained345-test rerun.
 
 A68[constant-query residual sampling](68-residual-bernstein-sampling/README.md)
 writes an f-independent hypergeometric envelope BEFORE code. Candidate cap9
