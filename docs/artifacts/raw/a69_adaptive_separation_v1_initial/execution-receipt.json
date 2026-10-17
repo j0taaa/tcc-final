@@ -1,0 +1,12 @@
+{
+  "source_commit": "9ca78d4047bb7bb18aa2c5cf9747bb8b60278bac",
+  "command": [
+    "/home/jota/projects/tcc-final/.venv/bin/python",
+    "attempts/69-adaptive-factory-separation/work/audit.py",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a69_adaptive_separation_v1_initial/results"
+  ],
+  "started_utc": "2026-10-17T11:10:08.932465+00:00",
+  "elapsed_diagnostic_seconds": 7.1215670490055345,
+  "direct_exit_code": 0,
+  "scope": "Finite constructed-word/score audit, not comparative timing or natural application"
+}

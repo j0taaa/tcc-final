@@ -1,0 +1,72 @@
+[
+  {
+    "bit": 1,
+    "source_calls": 0,
+    "auxiliary_bits": 2,
+    "selected_level": null,
+    "stage": "base"
+  },
+  {
+    "bit": 0,
+    "source_calls": 0,
+    "auxiliary_bits": 2,
+    "selected_level": null,
+    "stage": "base"
+  },
+  {
+    "bit": 0,
+    "source_calls": 0,
+    "auxiliary_bits": 2,
+    "selected_level": null,
+    "stage": "base"
+  },
+  {
+    "bit": 0,
+    "source_calls": 0,
+    "auxiliary_bits": 4,
+    "selected_level": 1,
+    "stage": "rare_gate_rejected"
+  },
+  {
+    "bit": 0,
+    "source_calls": 0,
+    "auxiliary_bits": 5,
+    "selected_level": 2,
+    "stage": "rare_gate_rejected"
+  },
+  {
+    "bit": 0,
+    "source_calls": 1024,
+    "auxiliary_bits": 12,
+    "selected_level": 1,
+    "stage": "predicate"
+  },
+  {
+    "bit": 0,
+    "source_calls": 1024,
+    "auxiliary_bits": 18,
+    "selected_level": 2,
+    "stage": "predicate"
+  },
+  {
+    "bit": 0,
+    "source_calls": 1024,
+    "auxiliary_bits": 28,
+    "selected_level": 3,
+    "stage": "predicate"
+  },
+  {
+    "bit": 0,
+    "source_calls": 1024,
+    "auxiliary_bits": 1810,
+    "selected_level": 30,
+    "stage": "predicate"
+  },
+  {
+    "bit": 1,
+    "source_calls": 1024,
+    "auxiliary_bits": 12,
+    "selected_level": 1,
+    "stage": "predicate"
+  }
+]
