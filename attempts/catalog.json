@@ -4565,13 +4565,22 @@
     {
       "id": "58-streamed-grammar-loss",
       "title": "Cabeça de treinamento em fluxo para perdas gramaticais",
-      "conclusion": "Writtenc271080 before CPU prototype, GPU protocolde762b0 before kernels. Six CPU oracles,252 exact derivatives/252 combined coefficients and full321 PASS88.353s. CPU zero-class NaNs at6ef8f37 preserved then corrected; initial8fea71f GPU packet overall ERROR due8 missing-packaging CCE imports. Separate pinned-runtime replayfc224fa completes32/32 PASS,380752 checks/4 refusals, eight input packets literally identical. CURRENT CCE3de376c/filtering OFF and full H/W/bias gradients included. Synthetic FP32 arithmetic ONLY; ZERO model read/forward/update/label or competitive timing/memory evidence. Strong cached/physically sorted CCE/small-class batching/direct-gradient controls and full MonoidReduce source required before promotion/performance/model campaign. Systems novelty, complete-cost benefit and user goal OPEN.",
+      "conclusion": "V1 exact arithmetic preserved. V5/V6/V8/V9 prospective notes precede strong physical/tied/output-buffer controls and all resource timings. Strong replayd5131bd128/128 PASS1,523,008 checks; tiles/buckets each32/32 PASS380752; initial wrong CLI path fails before fixtures and stays preserved. Frozen V7 protocol plus V8/V9 addenda, producerbb6ced4209a2f27ad2518308cdb4955417ed4fca:680/680 first-stage records,96 FP64 validations PASS,288 prep/288 warm/8 common validations,0 errors. ALL8 candidates0/8 gates against4 completed controls; negative-only shortcut leaves10 additional controls explicitly UNMEASURED. AFTER-data audit gives both rejection witnesses for64/64 pairs. Full50258/194 tokenizer map,D768, but numerical H/W/b synthetic; ZERO A58 model read/forward/update/label. No native/independent campaign triggered, simple kernel/layout family CLOSED negative. Later full326 tests PASS93.764s/Ruff32 files PASS. Complete MonoidReduce not retrieved; own useful systems distinction/publication/user goal OPEN.",
       "reading": "attempts/58-streamed-grammar-loss/README.md",
       "versions": [
         {
           "id": "v1",
           "source_commit": "fc224faf7bfb7115181eb0685bfce4e69f2ceeee",
           "evidence_commit": "e2ef6e7d5a784e683dfcb378e95f3b3fdb5d181d",
+          "evidence_roots": [
+            "attempts/58-streamed-grammar-loss/README.md",
+            "attempts/58-streamed-grammar-loss/work"
+          ]
+        },
+        {
+          "id": "v2",
+          "source_commit": "bb6ced4209a2f27ad2518308cdb4955417ed4fca",
+          "evidence_commit": "c241fde60023110489a317f4958c788e10c87fe9",
           "evidence_roots": [
             "attempts/58-streamed-grammar-loss/README.md",
             "attempts/58-streamed-grammar-loss/work"
