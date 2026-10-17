@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/65-terminal-forecast-readout/work/native_preflight.py", line 427, in main
+    row = record_case(
+          ^^^^^^^^^^^^
+  File "/home/jota/projects/tcc-final/attempts/65-terminal-forecast-readout/work/native_preflight.py", line 357, in record_case
+    assert complete and zero == complete
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

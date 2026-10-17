@@ -1,0 +1,37 @@
+{
+  "source_commit": "3e62727105068826281b93b4ff6252bcad047e3c",
+  "contract_commit": "3a2b57ef5b5cfcef1b63c8190d862dec53b4c7f8",
+  "command": ".venv-mosaic-native/bin/python -u attempts/65-terminal-forecast-readout/work/native_preflight.py --output /tmp/a65-native-v3",
+  "directly_observed_exit_code": 1,
+  "status": "ERROR_PRESERVED_FIXTURE_DRAFT",
+  "complete_records": 16,
+  "no_cuda_cases_reached": true,
+  "new_neural_forwards": 0,
+  "files": [
+    {
+      "file": "native_preflight.py",
+      "bytes": 17315,
+      "sha256": "e2d040be28848982ead3e6ebfb9e78d27caf6f4eec6bca0a7d21437ff1fdec7c"
+    },
+    {
+      "file": "records.jsonl",
+      "bytes": 78442,
+      "sha256": "ea4fb319f8ee2a972ca4e1eab87b8204c60a199c26c153ba6783ba8d4bc78728"
+    },
+    {
+      "file": "run.log",
+      "bytes": 2103,
+      "sha256": "6ceb73dac4d68b7b51b61d6fb68d1408f22edc4fa0f1cff1e5f64cff987687c2"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 3097,
+      "sha256": "5c2093ccd96db2aa56ac7ef1e6a5ef9b62137e17cfd68afd6c36b59e8e062cfc"
+    },
+    {
+      "file": "traceback.txt",
+      "bytes": 427,
+      "sha256": "37b69119c7dc5b1797f7755698b82a783f88d1a1429b58f4c01d3db8f0bd769b"
+    }
+  ]
+}
