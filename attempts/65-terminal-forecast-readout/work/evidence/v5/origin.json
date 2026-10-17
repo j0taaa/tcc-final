@@ -1,0 +1,39 @@
+{
+  "contract_commit": "d24974e",
+  "source_commit": "217b752df7c4ab29a129c0a7398c27d3e01c94d6",
+  "command": ".venv-mosaic-native/bin/python -u attempts/65-terminal-forecast-readout/work/grid_preflight.py --output /tmp/a65-grid-v5",
+  "directly_observed_exit_code": 0,
+  "status": "PASS",
+  "scope": "Classical grid DP exact semantic values; float64 ideal native-path weights, not exact finite-RNG law or real-head evidence",
+  "rational_laws": 3,
+  "syntax_valid_spellings": 114,
+  "syntax_bad_spellings": 8,
+  "syntax_control_guards": 4,
+  "native_cases": 12,
+  "synthetic_native_steps": 12,
+  "native_propose_calls": 24,
+  "additional_helpers": 0,
+  "max_semantic_error": 6.661338147750939e-16,
+  "max_marginal_error": 1.9073504518019035e-06,
+  "new_neural_forwards": 0,
+  "pretrained_model_tokenizer_loaded": false,
+  "dataset_gold_rows_read": false,
+  "maintained_full_suite_rerun": false,
+  "files": [
+    {
+      "file": "records.jsonl",
+      "bytes": 3632,
+      "sha256": "a9bbb39fc2bd50911d78cbc96356bde17037cf5aacfe8fd2a09724191ee95181"
+    },
+    {
+      "file": "run.log",
+      "bytes": 4419,
+      "sha256": "ee9e9c006a4c4a21457aa91b289d13b9f6eaff0006ac084d0caea925afc35493"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 5847,
+      "sha256": "130551e2bbe6b1383820dc28edc6f3335f85a1cf54293411e6ead842f3aa2e7c"
+    }
+  ]
+}

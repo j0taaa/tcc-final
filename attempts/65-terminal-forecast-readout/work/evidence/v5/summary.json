@@ -1,0 +1,235 @@
+{
+  "status": "PASS",
+  "new_neural_forwards": 0,
+  "real_model_tokenizer_loaded": false,
+  "rows": [
+    {
+      "device": "cpu",
+      "fixture": "full",
+      "status": "PASS",
+      "alpha": 0.9999999999999996,
+      "mean": [
+        0.15282324040719286,
+        0.8471767595928075
+      ],
+      "variance": 0.018634429729063484,
+      "peak_states": 53,
+      "semantic_transitions": 261,
+      "max_semantic_error": 4.440892098500626e-16,
+      "max_marginal_error": 3.6031696981631e-07
+    },
+    {
+      "device": "cpu",
+      "fixture": "thinking_offset",
+      "status": "PASS",
+      "alpha": 1.0000000000000002,
+      "mean": [
+        0.21239911954950588,
+        0.7876008804504939
+      ],
+      "variance": 0.09817245937259278,
+      "peak_states": 55,
+      "semantic_transitions": 240,
+      "max_semantic_error": 5.551115123125783e-16,
+      "max_marginal_error": 5.34990822032011e-07
+    },
+    {
+      "device": "cpu",
+      "fixture": "original_alias_pin",
+      "status": "PASS",
+      "alpha": 0.9999999999999998,
+      "mean": [
+        0.2225059720386377,
+        0.7774940279613621
+      ],
+      "variance": 0.08029123261176663,
+      "peak_states": 15,
+      "semantic_transitions": 69,
+      "max_semantic_error": 3.3306690738754696e-16,
+      "max_marginal_error": 1.2740133173982926e-06
+    },
+    {
+      "device": "cpu",
+      "fixture": "nonterminal_canvas",
+      "status": "PASS",
+      "alpha": 0.0041035684894205945,
+      "mean": [
+        0.6534895847157064,
+        0.3465104152842937
+      ],
+      "variance": 0.3250831400459746,
+      "peak_states": 62,
+      "semantic_transitions": 171,
+      "max_semantic_error": 1.1102230246251565e-16,
+      "max_marginal_error": 9.536747711536009e-07
+    },
+    {
+      "device": "cpu",
+      "fixture": "zero_sum",
+      "status": "PASS",
+      "alpha": 1.0,
+      "mean": [
+        0.5,
+        0.5
+      ],
+      "variance": 0.0,
+      "peak_states": 1,
+      "semantic_transitions": 8,
+      "max_semantic_error": 0.0,
+      "max_marginal_error": 1.9073504518019035e-06
+    },
+    {
+      "device": "cpu",
+      "fixture": "prefix_inside_number",
+      "status": "PASS",
+      "alpha": 1.0,
+      "mean": [
+        0.815347457545685,
+        0.184652542454315
+      ],
+      "variance": 0.056338120763153476,
+      "peak_states": 11,
+      "semantic_transitions": 41,
+      "max_semantic_error": 1.1102230246251565e-16,
+      "max_marginal_error": 4.964229148862742e-07
+    },
+    {
+      "device": "cuda:0",
+      "fixture": "full",
+      "status": "PASS",
+      "alpha": 1.0000000000000007,
+      "mean": [
+        0.1528232444899255,
+        0.8471767555100742
+      ],
+      "variance": 0.018634431743849156,
+      "peak_states": 53,
+      "semantic_transitions": 261,
+      "max_semantic_error": 6.661338147750939e-16,
+      "max_marginal_error": 3.796318419624356e-07
+    },
+    {
+      "device": "cuda:0",
+      "fixture": "thinking_offset",
+      "status": "PASS",
+      "alpha": 0.9999999999999999,
+      "mean": [
+        0.21239912075521158,
+        0.7876008792447884
+      ],
+      "variance": 0.09817245666060936,
+      "peak_states": 55,
+      "semantic_transitions": 240,
+      "max_semantic_error": 1.1102230246251565e-16,
+      "max_marginal_error": 5.289549564468921e-07
+    },
+    {
+      "device": "cuda:0",
+      "fixture": "original_alias_pin",
+      "status": "PASS",
+      "alpha": 0.9999999999999999,
+      "mean": [
+        0.22250598601596858,
+        0.7774940139840315
+      ],
+      "variance": 0.08029125588430552,
+      "peak_states": 15,
+      "semantic_transitions": 69,
+      "max_semantic_error": 1.1102230246251565e-16,
+      "max_marginal_error": 1.2757884432224031e-06
+    },
+    {
+      "device": "cuda:0",
+      "fixture": "nonterminal_canvas",
+      "status": "PASS",
+      "alpha": 0.004103560244931508,
+      "mean": [
+        0.6534894613565918,
+        0.34651053864340825
+      ],
+      "variance": 0.3250832030894567,
+      "peak_states": 62,
+      "semantic_transitions": 171,
+      "max_semantic_error": 1.1102230246251565e-16,
+      "max_marginal_error": 9.536747711536009e-07
+    },
+    {
+      "device": "cuda:0",
+      "fixture": "zero_sum",
+      "status": "PASS",
+      "alpha": 1.0,
+      "mean": [
+        0.5,
+        0.5
+      ],
+      "variance": 0.0,
+      "peak_states": 1,
+      "semantic_transitions": 8,
+      "max_semantic_error": 0.0,
+      "max_marginal_error": 1.9073468138230965e-06
+    },
+    {
+      "device": "cuda:0",
+      "fixture": "prefix_inside_number",
+      "status": "PASS",
+      "alpha": 1.0000000000000002,
+      "mean": [
+        0.8153474636029768,
+        0.18465253639702314
+      ],
+      "variance": 0.056338118642979995,
+      "peak_states": 11,
+      "semantic_transitions": 41,
+      "max_semantic_error": 3.3306690738754696e-16,
+      "max_marginal_error": 5.001150057415416e-07
+    }
+  ],
+  "syntax": {
+    "status": "PASS",
+    "valid_spellings": 114,
+    "invalid_spellings": 8,
+    "control_guards": 4
+  },
+  "rational": [
+    {
+      "status": "PASS",
+      "law": 0,
+      "alpha": "3/4",
+      "mean": [
+        "7/15",
+        "8/15"
+      ],
+      "variance": "1/225",
+      "completed_sum_states": 3,
+      "naive_field_shortcut_equal": false
+    },
+    {
+      "status": "PASS",
+      "law": 1,
+      "alpha": "3/4",
+      "mean": [
+        "17/35",
+        "18/35"
+      ],
+      "variance": "3/1225",
+      "completed_sum_states": 3,
+      "naive_field_shortcut_equal": false
+    },
+    {
+      "status": "PASS",
+      "law": 2,
+      "alpha": "3/4",
+      "mean": [
+        "22/45",
+        "23/45"
+      ],
+      "variance": "388/2025",
+      "completed_sum_states": 3,
+      "naive_field_shortcut_equal": false
+    }
+  ],
+  "native_propose_calls": 24,
+  "synthetic_native_steps": 12,
+  "additional_helpers": 0,
+  "caller_rng_restored": true
+}

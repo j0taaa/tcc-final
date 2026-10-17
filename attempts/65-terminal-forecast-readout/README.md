@@ -83,3 +83,9 @@ literal first-output/control/RNG preservation. The first16-record failed draft
 and prospective zero-fixture correction remain separately preserved. ALL logits
 are synthetic, with no pretrained model/tokenizer, dataset/gold or new forward.
 Useful native variance/cost and sufficient own significance remain OPEN.
+
+V5's [classical finite-grid control](work/grid-result-v5.md) now computes
+normalized semantic moments with a bounded sum state, retaining exact101-value
+semantics. Its three rational laws, syntax controls and12 native CPU/CUDA
+fixture checks pass. Native weights are ordinary float64 ideal-path arithmetic,
+not a certificate of the finite RNG law. No real head/variance/cost is measured.
