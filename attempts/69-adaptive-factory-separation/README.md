@@ -53,3 +53,12 @@ remains CLOSED negative; this is a different capability question.
    confirm specific novelty and a useful own consequence beyond this proof
    object. If these remain absent, do not build an extensive implementation
    or promote it to an article. The positive goal remains OPEN.
+
+V1 proof358eb48/protocol9ca78d4 precede code; initial source freeze failed
+Ruff but the auditor was accidentally invoked. Exact draft/run/deviation
+remain preserved. Final source2b2f22d precedes the corrected PASS/direct0:
+393312 exhaustive transcripts60 independent laws231 derivative norms41
+cost scales64 localisation checks, tickets/forced predicates and6 refusals.
+All inputs are constructed finite proof objects, not a practical benchmark.
+The infinite capacity result remains WRITTEN, with specific priority/natural
+use/positive goal open. See[the result and exact limits](work/result-v1.md).

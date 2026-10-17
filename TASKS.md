@@ -47,6 +47,36 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M92 — Adaptive finite work beyond every preselected batch
+
+- [x] T9200: Previous goal turn PROGRESS revalidated from c85e00b/upstream/
+  remote and complete A68 negative raw/check receipts. No live scientific
+  process required waiting/restart; unrelated PDF untouched. A68 stays closed.
+- [x] T9201: A69 eight criteria/written proof358eb48 BEFORE code: explicit
+  exact adaptive factory with sup_p E input calls finite and E full bit work
+  finite at EACH p, response locally C1,1/non-C2 at interior accumulation.
+  Classical Bernstein derivative bound rules out finite mean for EVERY
+  genuinely preselected/fully consumed batch, allowing arbitrary kernels.
+  Not all samplers/known-p/pilot methods. Construction is a proof object;
+  specific priority, natural useful consumer and goal OPEN. Original NP2005
+  22/23/questions and2510.01941v2 nonadaptive scope read; no open-problem claim.
+- [x] T9202: Protocol9ca78d4 preceded code. Initial intended freeze failed
+  Ruff E501; outer orchestration wrongly ran audit BEFORE a source commit.
+  Exact draft/run PASS0 and explicit deviation preserved; raw HEAD9ca78d4
+  is protocol-only, NOT its producer source. Final source2b2f22d BEFORE one
+  corrected PASS/direct0:393312 transcripts60 independent laws231 norms41
+  scales64 localisations,5 tickets4 forced zero/1 accepting predicates and6
+  guards. The two result files are byte-identical across draft/final; ten
+  source hash checks pass. These are finite constructed oracles, not infinite
+  proof/priority/natural use. Own Ruff/format2 PASS;345 maintained not rerun.
+- [ ] T9203: Critically audit A69's infinite separation/closest original
+  antecedents and identify a natural external operation needing the positive
+  capability BEFORE any extended implementation/application campaign. Do
+  not replace actual useful benefit with an engineered response or declare
+  article/user goal complete from finite correctness.
+- [ ] T9204: Independently preserve A69 source/evidence/draft/deviation,
+  required checks and normal upstream sync without new scientific cases.
+
 ## M91 — Constant-query residual sampling, before a complete sampler
 
 - [x] T9100: Revalidated previous goal turn as PROGRESS: T9002 is closed and

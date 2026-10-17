@@ -20,6 +20,14 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A69[adaptive factory separation](69-adaptive-factory-separation/README.md)
+writes a positive capacity candidate: uniformly finite expected input work/
+pointwise finite expected bit work versus EVERY preselected full batch of
+finite mean for the same constructed response. Finite audit393312 transcripts/
+60 laws passes after a preserved source-freeze ordering deviation. Infinite
+proof, specific priority and natural useful consumer require critical audit;
+no broad sampler superiority, empirical application or fulfilled goal.
+
 A68 V6 supplies a validated classical retrospective/cached control. V7's
 complete prospective whole-cost screen is NEGATIVE:1140/1140 COMPLETE,
 109440 outputs1463955 SIMULATED source calls, strong wins0/6 cold AND0/6 cached

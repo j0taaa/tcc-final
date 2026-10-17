@@ -1,0 +1,12 @@
+{
+  "source_commit": "2b2f22db68796b84b2291c6e21025704f2fe9306",
+  "command": [
+    "/home/jota/projects/tcc-final/.venv/bin/python",
+    "attempts/69-adaptive-factory-separation/work/audit.py",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a69_adaptive_separation_v1_frozen/results"
+  ],
+  "started_utc": "2026-10-17T11:11:02.880234+00:00",
+  "elapsed_diagnostic_seconds": 7.096059953968506,
+  "direct_exit_code": 0,
+  "scope": "Frozen repeat of finite proof-object correctness audit, original unfrozen draft preserved"
+}

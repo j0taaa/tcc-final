@@ -1,5 +1,29 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A69 candidate positive adaptivity capability, before a natural application
+
+Previous turn PROGRESS verified in c85e00b and A68's complete negative gate.
+A69 eight criteria/proof358eb48 separate adaptive consumed source work from
+a genuinely preselected/full batch. Candidate response has uniform finite
+expected input calls and pointwise finite expected bit work; locally C1,1
+but non-C2 near an interior accumulation, whereas finite-mean preselected
+Bernstein mixtures are C2. It admits ALL output kernels within that interface,
+not all adaptive/known-p samplers. Mixtures/tests/scores are classical.
+
+Proof/protocol9ca78d4 before code; initial Ruff failure prevented the intended
+freeze but outer orchestration still ran audit. Exact draft/source hashes/
+run are preserved without crediting its protocol HEAD as producer. Final
+source2b2f22d before corrected PASS0:393312 finite transcripts60 stopped
+laws231 derivative norms41 scales64 localisation checks and tickets/guards.
+The finite result files match byte-for-byte. No infinite proof verification,
+empirical speed, neural/biological data, training or human review.
+
+Original NP2005 and2510.01941v2 method scopes read. No claim to solve a still-
+open historical question or confirm priority. The response is an engineered
+proof object; a natural useful consumer remains an explicit gap. T9203
+requires critical proof/priority/use assessment before expanding or promoting
+this. A68 remains CLOSED negative; the user's positive goal stays OPEN.
+
 ## 2026-10-17 — A68 stronger lazy control and negative whole-cost decision
 
 V6 proof7792fe9 BEFORE source7439b49/ONE PASS0 validates the CLASSICAL

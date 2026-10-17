@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "source_commit": "2b2f22db68796b84b2291c6e21025704f2fe9306",
+  "counts": {
+    "enumerated_full_word_transcripts": 393312,
+    "independent_stopped_leaf_laws": 60,
+    "auxiliary_tickets": 5,
+    "forced_rare_zero_sources": 4,
+    "forced_accepting_predicate": 1,
+    "exact_first_member_curvature_certificate": 1,
+    "bernstein_second_derivative_norms": 231,
+    "dyadic_cost_scales": 41,
+    "disjointness_and_localisation": 64,
+    "invalid_input_guards": 6
+  },
+  "hashes": {
+    "separation.py": "109b26e8f8f0f2d7dbaa8ac0c78c7522a9f326641224fc2a4277f2eff0d9a302",
+    "audit.py": "6553899a204390ae71869256469a449d3f113a858e321c5cbe1647f0d4b984ff",
+    "theory-v1.md": "801750846f58b65f8bf45ecacda06d637e2f7542c6d8936631b20fcf79494128",
+    "preflight-contract-v1.md": "cd5e79d5c366f3b39e1ee91f45d58588d2c169b3ca4f904d8cd3b8bee3b8319c",
+    "primary-v1.md": "17b1683308406ff7da861c375141f00bb9c8995d70b137a9e35cafa6a8ef5d17"
+  },
+  "scope": "Finite proof-object audit; infinite proof/use/timing/NN/priority unverified",
+  "goal": "OPEN"
+}

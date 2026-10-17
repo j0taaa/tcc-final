@@ -1,5 +1,19 @@
 # AGENTS.md
 
+A69 opens a DIFFERENT written capacity question: exact adaptive factory with
+uniformly finite expected input calls and pointwise finite expected full bit
+work; constructed response locally C1,1/non-C2 excludes finite-mean fully
+preselected batches by a classical Bernstein bound. NOT all samplers/pilots/
+known-p methods or uniform bit work. Proof358eb48/protocol9ca78d4 before code;
+initial source freeze failed Ruff but audit accidentally ran anyway. Original
+draft/run/deviation intact; raw HEAD9ca78d4 is protocol, NOT producer source.
+Final source2b2f22d before corrected PASS0:393312 transcripts60 laws231 norms41
+scales64 localisation checks, tickets/forced paths/6 guards. DETERMINISTIC
+finite proof objects, not neural/biological data or infinite proof validation.
+Specific priority, independent critical audit and NATURAL useful consumer
+are still OPEN. No large campaign/article promotion from this alone; A68
+negative application remains closed. Result69/work/result-v1.md; goal OPEN.
+
 A68 V6/V7 independent snapshots760/3047 files match original Git/direct0;
 13 frozen hash comparisons11 unique paths and Ruff/format3 PASS. make check
 direct0:68 attempts270 versions206805 files8.061.428.175 bytes. Final receipt

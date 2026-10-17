@@ -1,0 +1,23 @@
+{
+  "kind": "After-data literal source/repeat cross-check, not a new scientific run",
+  "unfrozen_draft_head_commit": "9ca78d4047bb7bb18aa2c5cf9747bb8b60278bac",
+  "unfrozen_draft_head_contains_producer": false,
+  "frozen_source_commit": "2b2f22db68796b84b2291c6e21025704f2fe9306",
+  "equal_case_counts": {
+    "enumerated_full_word_transcripts": 393312,
+    "independent_stopped_leaf_laws": 60,
+    "auxiliary_tickets": 5,
+    "forced_rare_zero_sources": 4,
+    "forced_accepting_predicate": 1,
+    "exact_first_member_curvature_certificate": 1,
+    "bernstein_second_derivative_norms": 231,
+    "dyadic_cost_scales": 41,
+    "disjointness_and_localisation": 64,
+    "invalid_input_guards": 6
+  },
+  "two_raw_result_files_byte_identical": true,
+  "original_draft_hashes_match": 5,
+  "final_hashes_match_worktree_and_source_git": 5,
+  "status": "PASS",
+  "goal": "OPEN"
+}
