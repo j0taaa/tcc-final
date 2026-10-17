@@ -57,3 +57,10 @@ n-1 control as the starting operator, not as an own approximation invention.
 No mutable imports from other attempts. Source reading scopes/hashes are in
 work/primary-v1.md. Historical A67 proof/data remain unchanged. Progress on
 this candidate does not promote the old operator or reopen closed neural uses.
+
+V1 contractad5a55b/sourceb5064b2 precede ONE PASS/direct0:966 exact laws,
+40134 residual/callback checks,966 mass/term/setup checks,21 zero-H points,
+1032 collected oracle weights9 refusals. Enumerated paths need at most9
+f-values; no complete sampler or timing/NN evidence. Enlarged2H still pays
+more input coins; next sharper slope bound is a separate POST-audit lead.
+See[the V1 result](work/result-v1.md). Own useful priority/full cost/goal OPEN.

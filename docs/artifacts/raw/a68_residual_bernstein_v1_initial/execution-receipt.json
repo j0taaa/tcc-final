@@ -1,0 +1,13 @@
+{
+  "source_commit": "b5064b267008330860d2ee9a5768ba723b3a6fb7",
+  "command": [
+    "/home/jota/projects/tcc-final/.venv/bin/python",
+    "attempts/68-residual-bernstein-sampling/work/audit.py",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a68_residual_bernstein_v1_initial"
+  ],
+  "started_utc": "2026-10-17T09:51:19.149455+00:00",
+  "elapsed_diagnostic_seconds": 4.211257827002555,
+  "direct_exit_code": 0,
+  "python": "3.11.16 (main, Aug 14 2026, 15:35:36) [Clang 22.1.3 ]",
+  "scope": "One exact conditional-law and callback audit, no full sampler or performance benchmark"
+}

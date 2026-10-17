@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "source_commit": "b5064b267008330860d2ee9a5768ba723b3a6fb7",
+  "counts": {
+    "conditional_laws": 966,
+    "residual_points": 40134,
+    "envelope_mass_bounds": 966,
+    "term_bounds": 966,
+    "setup_call_checks": 966,
+    "optional_call_checks": 40134,
+    "zero_h_polynomial_points": 21,
+    "lower_bound_coefficients": 1032,
+    "guards": 9
+  },
+  "maximum_function_calls_per_enumerated_path": 9,
+  "input_cost_comparisons": [
+    {
+      "function": "constant",
+      "initial_degree": 16,
+      "enlarged_written_input_mean": "16",
+      "tighter_classical_written_input_mean": "16",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "affine",
+      "initial_degree": 16,
+      "enlarged_written_input_mean": "16",
+      "tighter_classical_written_input_mean": "16",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "quadratic",
+      "initial_degree": 16,
+      "enlarged_written_input_mean": "16",
+      "tighter_classical_written_input_mean": "16",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "cubic",
+      "initial_degree": 16,
+      "enlarged_written_input_mean": "25",
+      "tighter_classical_written_input_mean": "41/2",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "spline",
+      "initial_degree": 16,
+      "enlarged_written_input_mean": "25",
+      "tighter_classical_written_input_mean": "41/2",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    },
+    {
+      "function": "reflected_spline",
+      "initial_degree": 16,
+      "enlarged_written_input_mean": "25",
+      "tighter_classical_written_input_mean": "41/2",
+      "note": "Analytical counts; direct known polynomial factories may be much cheaper."
+    }
+  ],
+  "hashes": {
+    "residual.py": "4defb522ace3c8a50eb032cc9e6973260e11aba4b762110484f44c54cc5850b3",
+    "audit.py": "467818be145a831b2c213bd08492626e0fa7e64de02d7bb9e3780a06af6a684d",
+    "theory-v1.md": "78fcbb4490f59cf22703829b0897cad91ddd1e57554c1c656c505b0c8ccf9cc2",
+    "protocol-v1.json": "7c14984f63c9505dc9fd1fcba1e5f9ad410c7d80baba27dba733c6f5a2c1a231",
+    "primary-v1.md": "b1e90bbf068921136b54c85ee975f093f0b60fda03de93405d231d8df9f92033"
+  },
+  "scope": "Exhaustive small conditional laws, no full sampler/p-coins/NN/forwards/timing.",
+  "decision": "Correctness only; priority, complete cost and useful own contribution stay OPEN."
+}

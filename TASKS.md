@@ -58,11 +58,14 @@ cost remain open. No new neural campaign is credited to M70.
   Morina2.4/2.5, Lee AppendixC and2510.01941v2 scopes read: importance/sign/
   nonadaptive principles known. Own quantitative specialization/priority/use
   still open. No new implementation/execution at this written stage.
-- [ ] T9101: Freeze minimal independent coefficient/law auditor, then execute
-  ALL specified six functions/old16,64/new k. Check every residual/envelope/
-  probability/law/callback count and finite exact-evaluation lower-bound
-  instance, retaining tighter/direct controls. No full sampler or frequency
-  proof of exactness; failures preserved. Protocol68/work/protocol-v1.json.
+- [x] T9101: Contractad5a55b before final sourceb5064b2 and ONE PASS/direct0:
+  966 exact conditional laws,40134 residual/optional-callback checks,966
+  mass/term/setup checks,21 zero-H polynomial points,1032 collected oracle
+  weights9 guards. Enumerated path max9 callbacks; no full sampler/p-coins/
+  model/head/gold/forward/timing. Enlarged2H pays25 vs tighter41/2 input mean
+  on fixed spline; direct polynomial controls retained. Raw a68_residual_
+  bernstein_v1_initial; result68/work/result-v1.md. Ruff/format2 PASS before
+  final source;345 maintained tests not rerun. Priority/use/full goal OPEN.
 - [ ] T9102: Determine whether the quantitative query advantage survives
   equally informed coefficient-free, signed-estimation, importance and lazy
   integration controls, with input/bit/preparation costs and real consumer.

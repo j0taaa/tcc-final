@@ -15,6 +15,12 @@ completa. Zero novo sampler/head/forward/treino/timing nesta fase escrita.
 Bound inferior é só para CALCULAR coeficiente exato na classe oracle, NÃO
 todo sampler/fórmula conhecida/cache/derivada. Prioridade/utilidade real/meta
 continuam ABERTAS. A67 e suas recusas permanecem intactas.
+V1 contratoad5a55b/sourceb5064b2 antes de ÚNICO PASS/direct0:966 leis,
+40134 pontos residuais/callbacks,966 massas/termos/setup,21 pontos H0,
+1032 pesos coletados9 recusas; máximo9 queries por caminho ENUMERADO.
+Não é sampler completo ou timing. Mantida penalidade25 vs41/2 moedas no
+spline. Próximo lead Peano reduz erro de slope, identificado DEPOIS; não
+atribuir aV1 e exigir outro freeze antes de código/check. Suíte345 não rerodada.
 
 A67 V3 encerra a comparação próxima com controle CLÁSSICO n-1. Original
 Sablonniere2004 Section2.2 lido; fórmula de ordem2 DERIVADA da reprodução,
