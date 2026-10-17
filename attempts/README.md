@@ -20,6 +20,12 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A67 writes a constructive value-only Bernoulli factory BEFORE code/tests:
+explicit three-value coefficients, power-of4 consistency/positive mixture,
+finite expected flips and a separate full-bit cost contract. Smooth factory
+capability and component ideas are classical; own effective specialization,
+priority and useful complete benefit remain hypotheses. See[the contract](67-local-bernstein-factory/README.md).
+
 A66 completes a bounded audit of vLLM's actual adaptive typed-read mean:
 48 cases2,308 exact tapes/order controls480 covariance entries PASS. Original
 bodies execute587 times (586 successes1 expected error),1,422 FAKE packets,

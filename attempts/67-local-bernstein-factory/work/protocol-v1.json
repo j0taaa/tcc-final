@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "scope": "Independent exact coefficient/proof-obligation audit only, before code/execution. No full sampler, model, dataset, gold, neural head/forward, update or timing campaign.",
+  "stages": [
+    "Freeze README, proof and this protocol before implementing a coefficient reference.",
+    "Freeze reference and independent auditor before executing any scientific case. Preserve failures.",
+    "Check finite differences, boxes, all exact elevation coefficients and normalized mixture bounds at every listed degree/function.",
+    "Keep full-work/priority gap open; small correctness does not trigger a neural or broad sampler campaign."
+  ],
+  "functions": [
+    "constant 1/2, M=H=0; use affine guard/control",
+    "affine 1/4+p/2, M=H=0; exact affine control",
+    "quadratic 1/4+p^2/4, epsilon=1/4, M=1/2,H=0",
+    "cubic 1/4+p^3/4, epsilon=1/4,M=3/2,H=3/2",
+    "C2 spline 1/4+p/8+max(p-1/2,0)^3/4, epsilon=1/4,M=3/4,H=3/2",
+    "same C2 spline with reflected argument1-p; retain both stencil directions"
+  ],
+  "old_degrees": [16, 64],
+  "new_degree_ratio": 4,
+  "requirements": [
+    "Every k at n and4n: stencil in[0,1], three rational value arguments, derivative-free error bound against independent analytic f'', and coefficient box.",
+    "Independently form hypergeometric weights with combinatorial integers; verify their normalization and every old->new l/u coefficient inequality and normalized difference in[0,1].",
+    "Polynomial cases independently integrate Bernstein coefficients to exact power-basis functions and check representative rational-p approximation inequalities; piecewise cases retain all knots and adjacent stencil arguments.",
+    "Independent geometric mixture weights/tails/expected input-count identity; no Monte Carlo frequency replaces the law proof.",
+    "Verify known common denominator for the cubic-spline specialization, preserving exact Fraction arithmetic. Do not claim naive implementation has the fast bit-work theorem.",
+    "Include a raw-value coefficient control, an analytic-derivative correction control and ordinary Boolean-sum coefficient control at representative interior points; record exact values and f-call counts, without declaring a timing or general-algorithm win.",
+    "Reject invalid degrees, range metadata, negative bounds and out-of-range k. No clipping of an invalid coefficient."
+  ]
+}

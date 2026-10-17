@@ -47,6 +47,25 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M90 — Effective value-only smooth Bernoulli factory, before implementation
+
+- [x] T9000: Reassess closed applications and primary antecedents BEFORE a
+  new prototype. A67 eight criteria/proof/protocol define another justified
+  theoretical/library scope: three-value corrected coefficients, explicit
+  power-of4 consistency and positive-mixture count independent of p-coins.
+  Candidate EN=n0+12(M+H)/sqrt(n0), with separate full-bit arithmetic contract.
+  HNP already supplies smooth finite-mean capability; no invention of that
+  fact, finite differences, Bernstein or mixture/binary-splitting principles.
+  Specific priority/useful consequence remains unconfirmed. No code, sampling,
+  model/head/gold/forward/update/timing yet. See67/work/theory-v1.md.
+- [ ] T9001: Freeze coefficient reference and independent rational auditor;
+  execute ONLY the predefined finite coefficient/stencil/elevation/mixture
+  obligations. Preserve failures and same-information classical controls.
+  No naive unit-cost Fraction claim or empirical-frequency proof of exactness.
+- [ ] T9002: Preserve results and re-evaluate the own effective construction
+  against closest quasi-interpolants BEFORE full sampler/performance work.
+  Correctness alone does not fulfill the publication/usefulness objective.
+
 ## M89 — Adaptive typed-read interface audit, classical correction only
 
 - [x] T8900: Identify distinct actual operation in vLLM source pinb05ede56;

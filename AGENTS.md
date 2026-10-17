@@ -1,5 +1,20 @@
 # AGENTS.md
 
+A67 abre recorte construtivo de fábrica de Bernoulli, ANTES de código/testes:
+valor-only f C2 com f'' Lipschitz, range/curvatura fornecidos; stencil de três
+valores, envelope em graus4^j, mistura positiva com N escolhido antes dos
+p-coins. Prova candidata explícita dá EN=n0+12(M+H)/sqrt(n0) e rota de custo
+em bits quase linear com binary splitting/multiplicação rápida. Não atribuir
+esse custo a Fraction ingênuo/Python sem análise. HNP já fornece capacidade
+smooth de média finita; finite differences/Bernstein/mixtures são clássicos.
+Candidata própria é a construção EFETIVA/localidade/custo completo, ainda
+sem prioridade ou relevância suficiente confirmada. Controles raw Nacu--Peres,
+Lorentz/HNP, Boolean sums/Sevy, derivadas analíticas e caching são obrigatórios.
+Próximo APENAS oráculo racional de coeficientes/protocolo67/work/protocol-v1.json,
+após freeze da fonte. Sem sampler completo, heads, treino/campanha ou promoção
+ao artigo. É outro recorte de TCC autorizado, não uso dLLM validado nem meta
+cumprida. A34/A53/A65 e A66 permanecem com seus limites/recusas intactos.
+
 A66 conclui auditoria PEQUENA da média de leituras tipadas do vLLM pinado
 b05ede56168b5718c425c1493914e5e79f6b8181. A política auto escolhe1/m pela
 entropia do PRIMEIRO packet e depois faz média de todos. Prova escrita

@@ -1,5 +1,36 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A67 constructive effective factory candidate, proof first
+
+Previous turn is verified progress (A66 exact source/interface audit), not
+goal completion. Rechecking the current worktree leaves T8809/T8903 open.
+Generic coherence projection remains SparseMAP/Predd, and old noising,
+coupling and stopping applications are not reopened. No new code or model
+execution accompanies this source/math phase.
+
+Primary Nacu--Peres Proposition10/22/Questions1--3, HNP Lorentz recurrence/
+consistency lemmas, and the author's current Occil problem/approximation
+notes motivate a DIFFERENT positive construction: effective value-only
+Bernstein coefficient envelopes for f C2 with Lipschitz f''. The proposed
+three-value stencil has explicit degree-elevation error; constant envelope
+gaps yield an exact positive polynomial mixture with preselected input count,
+EN=n0+12(M+H)/sqrt(n0). A separate common-denominator/fast-arithmetic contract
+accounts for finite expected bit work; naive Fraction code cannot inherit it.
+
+Smooth finite-mean factories, Bernstein corrections, finite differences,
+mixtures and binary splitting are prior ideas. The candidate is the EFFECTIVE
+local coefficient/cost specialization, not the existence theorem. Cold
+three-value versus full-grid Boolean coefficients is scoped to those
+operators; caching, derivative access and other local quasi-interpolants
+can remove an advantage and remain controls. Specific priority and enough
+real significance remain OPEN. No claim of solving a contemporary open
+question solely from a dated author page or keyword search.
+
+This is a justified alternative TCC/library operation, not an implemented
+dJev/dLLM or proof of generation quality/speed. README/proof/protocol precede
+all new code/tests. Only small rational coefficient obligations come next;
+no full sampler or broad campaign yet. Full scopes in67/work/primary-v1.md.
+
 ## 2026-10-17 — Reject duplicate stopping lead; audit actual adaptive reader
 
 The post-A65 stopping lead DUPLICATES A53's monotone observable theorem and
