@@ -114,3 +114,14 @@ function laws40134 residual branches21 zero-H points8 refusals pass. Max6
 callbacks; source count unchanged. No full RNG/sampler/genealogy/timing/NN.
 See[the result](work/result-v3.md). Real whole-operation gain/priority and the
 user goal remain OPEN; six queries alone do not settle the article.
+
+V4 reassesses the eight criteria BEFORE runtime code. Criteria1/2/3/4 retain
+the published node-vote consumer, quantitative specialization and written
+guarantees, without claiming a new duality/rejection principle or priority.
+Criteria5/6 now require an executable GMP/bit runtime and matched balanced
+dense control, with separate source/level/auxiliary streams, explicit resource
+failures and charged preparation/cache/RNG. Criteria7/8 additionally require
+formula-aware spline moment integration, analytic derivatives, cheap direct
+factories and scalar/global-grid cache reuse BEFORE competitive measurements.
+Only a fixed correctness preflight follows; no performance/NN campaign yet.
+See[the frozen contract](work/runtime-contract-v4.md). The goal stays OPEN.

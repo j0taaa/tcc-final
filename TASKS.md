@@ -89,6 +89,13 @@ cost remain open. No new neural campaign is credited to M70.
   votes. Runtime GMP lookup is not a fast-bit implementation. No fabricated
   expensive callback or query-count substitution for total speed; preserve
   all unfavorable polynomial controls and the bounded-range application scope.
+- [ ] T9108: V4 contract BEFORE code: isolated pinned GMP runtime, exact
+  bit Bernoulli/shared-uniform geometric, uncapped outer sampler with explicit
+  optional RESOURCE_FAIL and matched balanced dense kernel. Freeze source
+  before fixed correctness preflight, all six original functions/three p/
+  seeds0..31/both methods, no timing/quality inference. Formula-aware spline,
+  derivative/direct/cached controls and full-cost gate still precede competitive
+  measurements; T9102/T9106 and positive goal remain OPEN.
 - [x] T9107: Independent V3 source5e97323/evidence0e54736,742 files
   11,452,755 bytes; create+original-Git/direct0. Eight frozen hashes and
   eight unchanged V1/V2 files match Git; own Ruff/format2 PASS. make check/
