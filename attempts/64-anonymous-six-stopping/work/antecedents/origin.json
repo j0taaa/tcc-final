@@ -1,0 +1,7 @@
+{
+  "copied_from": "attempts/42-safe-empirical-resampling/work/iid-theorem-v6.md",
+  "copy_from_commit": "63c5bfaa80726e6723f69eb34047c82630758fc8",
+  "original_last_change_commit": "a300a2e7cfff60aed87eaaf77c3010fa9408ce9d",
+  "sha256": "870847b66315d847ed8ee16b79e1adec0164666c08308c3afbd4824fbdb67af7",
+  "scope": "Known matching law/covariance antecedent, not own A64 result; no mutable imports"
+}
