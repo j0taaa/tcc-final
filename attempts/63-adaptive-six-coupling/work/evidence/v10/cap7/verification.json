@@ -1,0 +1,60 @@
+{
+  "status": "VERIFIED",
+  "cap": 7,
+  "scope": "exact full ordered target law at U3, not unproved all-P minimax",
+  "count_states": 84,
+  "variables": 392,
+  "rows": 315,
+  "named_tail_words_first0": 729,
+  "terminal_count_groups": 28,
+  "operational_prefix_steps": 2889,
+  "exact_primal_cost": "386/81",
+  "exact_dual_bound": "386/81",
+  "weighted_laws": [
+    {
+      "p": [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "symmetric_policy_expected_calls": "386/81"
+    },
+    {
+      "p": [
+        "1/2",
+        "1/3",
+        "1/6"
+      ],
+      "symmetric_policy_expected_calls": "3025/648"
+    },
+    {
+      "p": [
+        "1/2",
+        "1/2",
+        "0"
+      ],
+      "symmetric_policy_expected_calls": "35/8"
+    },
+    {
+      "p": [
+        "9/10",
+        "1/20",
+        "1/20"
+      ],
+      "symmetric_policy_expected_calls": "837911/200000"
+    },
+    {
+      "p": [
+        "1",
+        "0",
+        "0"
+      ],
+      "symmetric_policy_expected_calls": "4"
+    }
+  ],
+  "neural_forwards": 0,
+  "corruptions_rejected": [
+    "primal",
+    "dual"
+  ]
+}

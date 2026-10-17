@@ -1,0 +1,204 @@
+{
+  "source_commit": "610c0a1f4a275aedf956a98b15d508a14af7c9ea",
+  "contract_commit": "4f132719d140234fb8c837a6542b4457bb885ff0",
+  "caps": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "regression_gate": "All4..7 exact primal/dual and independent audits passed before8..11 launched",
+  "solver_command_template": "<isolated-python> attempts/63-adaptive-six-coupling/work/solve_counts.py --cap <B> --output <certificate.json>",
+  "verifier_command_template": ".venv/bin/python attempts/63-adaptive-six-coupling/work/verify_counts.py <certificate.json> --output <verification.json>",
+  "directly_observed_solve_exit_codes": {
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 0
+  },
+  "directly_observed_verify_exit_codes": {
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+    "10": 0,
+    "11": 0
+  },
+  "scope": "Exact full ordered-law expected work optimum at U3 only; no new all-P minimax inferred",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "neural_forwards": 0,
+  "timing_compared": false,
+  "files": [
+    {
+      "file": "cap4/certificate.json",
+      "sha256": "610f6b1a37cd8429581f33c91599d39ff78b82fd198062ed4c4e2699467b7684",
+      "bytes": 6065
+    },
+    {
+      "file": "cap4/solve.log",
+      "sha256": "7979b49a55faa38fe28a2892216966b34ca8de68ead24767c971e379db780a4f",
+      "bytes": 533
+    },
+    {
+      "file": "cap4/verification.json",
+      "sha256": "80483b15ccfd46a9de3e9bd20b9fae7fffe6b87481984a9cb30f482fa199b08f",
+      "bytes": 1072
+    },
+    {
+      "file": "cap4/verify.log",
+      "sha256": "505dd871d6717ec3f8d85aae0e45f669187014a9becec31ae93c9c364ae83043",
+      "bytes": 756
+    },
+    {
+      "file": "cap5/certificate.json",
+      "sha256": "b68658b93e0b2dc79f5fab5092d33ce67e8ecfff45fc0406a3eeb3ff037c256d",
+      "bytes": 11192
+    },
+    {
+      "file": "cap5/solve.log",
+      "sha256": "784a8bcc0b029663c31ca36744ee7f0412663f91d6283444ed2817a32d9072a4",
+      "bytes": 535
+    },
+    {
+      "file": "cap5/verification.json",
+      "sha256": "0cdb9d16b9f590a97244a227bf744280f5481df831ee4471f08e8a6167d1857a",
+      "bytes": 1075
+    },
+    {
+      "file": "cap5/verify.log",
+      "sha256": "8de11abb4af8826b5849f1c5406e8e2581505fd7ff3fcc4901f75ea58f2d79ea",
+      "bytes": 759
+    },
+    {
+      "file": "cap6/certificate.json",
+      "sha256": "95d0c2e7bcc0e893c47b1af26960b20ebb273b2346d4317fe5398b2e13f21ed9",
+      "bytes": 18375
+    },
+    {
+      "file": "cap6/solve.log",
+      "sha256": "dcc5ff79df0288de51b67a1f4e5643e7f09d848e8cd65d620803e0af49b7b405",
+      "bytes": 539
+    },
+    {
+      "file": "cap6/verification.json",
+      "sha256": "66debb025e86a5ea8e22f5a8dddc116f533d5858c3608f1d914b135c51331ea0",
+      "bytes": 1088
+    },
+    {
+      "file": "cap6/verify.log",
+      "sha256": "c948cfd13908a00aa8746cde4ba944096472c08a8c8e3da5c5899889ad0526cf",
+      "bytes": 772
+    },
+    {
+      "file": "cap7/certificate.json",
+      "sha256": "f663605af5f71cd9afc49a8267436c8fc4ca8a826eecacd536613c63ed801d18",
+      "bytes": 29762
+    },
+    {
+      "file": "cap7/solve.log",
+      "sha256": "cca9a3693dead0f9a01dfefa496f7100bfacb719f391f0145e4db828d44b792f",
+      "bytes": 540
+    },
+    {
+      "file": "cap7/verification.json",
+      "sha256": "c31c603f1cc92501ce573175c7041968f2cfddfcab3e787be800036cb98238b0",
+      "bytes": 1089
+    },
+    {
+      "file": "cap7/verify.log",
+      "sha256": "da09fc0e6f63602ab36a86cd342474d28ff2dee22543a0709b1da0e112f8285b",
+      "bytes": 773
+    },
+    {
+      "file": "cap8/certificate.json",
+      "sha256": "a818a3ad5e6e32718d57d1d382caa55ae3f83bcd87dba3ec1e4769e80cc15d40",
+      "bytes": 45459
+    },
+    {
+      "file": "cap8/solve.log",
+      "sha256": "65dabaec491a5b7cce07d3906c96ccf1ca7e2d7fc3b56de219ab90116beec171",
+      "bytes": 545
+    },
+    {
+      "file": "cap8/verification.json",
+      "sha256": "86b0bdf647dadb70adcfcbb81312bd1e15b2e13baa1f835b3811978b299f0251",
+      "bytes": 1113
+    },
+    {
+      "file": "cap8/verify.log",
+      "sha256": "4385693297ffb4a9db9d55683a1667495a9534843fa5e8e03f21eec027642087",
+      "bytes": 797
+    },
+    {
+      "file": "cap9/certificate.json",
+      "sha256": "12028473a00c2083b42bba0a7ee17a07d49d693423f6d92b432c69f93cdcf350",
+      "bytes": 65011
+    },
+    {
+      "file": "cap9/solve.log",
+      "sha256": "5d240297fb308b79cc8498e1fe687bcb421c594c00660521943101a8a933e4ba",
+      "bytes": 549
+    },
+    {
+      "file": "cap9/verification.json",
+      "sha256": "bb834382c7a05a197a0111f855b2f6ee6908205aa52e7a0abe1966960248f66e",
+      "bytes": 1119
+    },
+    {
+      "file": "cap9/verify.log",
+      "sha256": "2a8dcce8336ed93adeca91685e231aee7cab109c3cd3d3ad2ef0d2ac625231c2",
+      "bytes": 803
+    },
+    {
+      "file": "cap10/certificate.json",
+      "sha256": "cd60cfa77145aec6bde7d6bee1be1b545c8df2556f9a635386a17cf1cae1d5d3",
+      "bytes": 88267
+    },
+    {
+      "file": "cap10/solve.log",
+      "sha256": "e374285a03e33030bce6ac0572fef986261734aa9743fb986df64fb2709713d2",
+      "bytes": 543
+    },
+    {
+      "file": "cap10/verification.json",
+      "sha256": "7c899430102f3b9be3ec25201c83de620fce8cda4187ec0c1569ea7442efdb20",
+      "bytes": 1119
+    },
+    {
+      "file": "cap10/verify.log",
+      "sha256": "dcd2e40507e1bc5cae8349b1e6f5c9e6566e82081a0876e8bdf3055eaedfdcd2",
+      "bytes": 803
+    },
+    {
+      "file": "cap11/certificate.json",
+      "sha256": "c717ae15c5a38afc1ddab3eaa40eb2c23d0b05bcce7ad020a26be6e7a5ea41dd",
+      "bytes": 119251
+    },
+    {
+      "file": "cap11/solve.log",
+      "sha256": "3aeb34bf4dd8774cb19aa320cee62bdb58311201dd269a8ca2d2bd2988e6bd87",
+      "bytes": 556
+    },
+    {
+      "file": "cap11/verification.json",
+      "sha256": "15b66ce7c98d0163afeb77b5556bcc2fae1fb13b3f039e72230b6f6bd78f7e50",
+      "bytes": 1151
+    },
+    {
+      "file": "cap11/verify.log",
+      "sha256": "66e2e1b35fd63bac0742a951cd5e564b5a79b8074a2cd12d17d0a00fad3d881e",
+      "bytes": 835
+    }
+  ]
+}
