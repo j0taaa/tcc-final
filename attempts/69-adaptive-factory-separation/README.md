@@ -72,3 +72,16 @@ finite-family bit-cost ratio claimed. Criteria1/2/4 keep the operation/candidate
 scope;3 now includes this finite-family resource gap;5 has NO new experiment;
 6/7/8 retain full-cost, priority and natural-use gaps. The earlier oracles do
 NOT validate this new argument. See[the finite corollary](work/finite-polynomial-gap-v2.md).
+
+V3 reassesses all eight criteria BEFORE code.1 keeps exact simulation and
+the missing natural external consumer;2 now asks whether an explicit all-
+kernel quantitative separation is sufficiently own;3 strengthens the candidate
+to adaptive expected calls<2 versus optimum batch in[(R-3)/2048,R/4];4 gives
+a self-contained classical fourth-score/difference proof;5 freezes a small
+exact certificate/wrapper audit, no performance campaign;6 charges binary R,
+counter/aux/source work and derives a POINTWISE full-bit separation under an
+ordinary sampling-only additive-cost oracle;7 admits known-p/aggregate/shared-
+batch alternatives where available and warns about tiny features/tolerance;
+8 still requires critical proof/priority and natural-use evidence. No previous
+tests validate this later result. See[the new proof](work/quantitative-gap-v3.md)
+and[prospective checks](work/protocol-v3.md). The user goal remains OPEN.
