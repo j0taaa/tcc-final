@@ -385,6 +385,20 @@ sem campanha nativa/independente acionada. MonoidReduce completo ainda não
 obtido; genericidade já reconhecida. Meta positiva/novidade útil abertas;
 próxima expansão exige diferença substancial própria. Ver58/work/result-v10.md.
 
+A59 escreve1aac564 ANTES de código uma nova operação: infilling numérico com
+intervalos DECIMAIS exatos e todas grafias científicas dentro do budget de
+bytes. Não é semântica binary64 nem reabertura de A58. Prova ESCRITA dá
+linguagem [1,2) não-CFL, construção positiva NFA não ambígua O_I(L) e lower
+bound Omega(L); ferramentas são clássicas e prioridade própria NÃO confirmada.
+Protótipo só [1,2):3a94c76 aceita10e1 incorretamente; falha preservada97f01f8
+antes do reparo439f4b1. Quatro oráculos0.737s passam48.880 números,10 inválidos,
+900 pares,3 cenários racionais/15 coeficientes de marginais com IDs/aliases.
+Zero head/forward/update/timing A59. Compiladores completos register/digit-DP
+são controles obrigatórios; formas restritas de llguidance/XGrammar só
+identificam lacuna de suporte, não superioridade/novidade. Intervalos gerais,
+EOT/PAD, consumidor externo e benefício real continuam pendentes. Não iniciar
+campanha neural extensa/promover ao artigo só pelos oráculos. Ver59/work/result-v2.md.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

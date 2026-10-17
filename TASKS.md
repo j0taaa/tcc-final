@@ -47,6 +47,29 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M82 — Complete scientific-notation interval infilling, bounded compiler
+
+- [x] T8200: Write A59 eight criteria/theory1aac564 BEFORE prototype. Exact
+  decimal semantics, not binary64 rounding. Written non-CFL [1,2) language,
+  positive O_I(L)-state/edge unambiguous bounded-complete construction and
+  Omega(L) NFA lower bound; classical tools acknowledged. Pinned primary
+  llguidance/XGrammar range functions restrict numeral forms. Priority and
+  substantive own distinction are OPEN; no performance claim against them.
+- [x] T8201: Minimal [1,2) compiler ONLY. Initial3a94c76 fails on10e1
+  (value100 accepted); full3-pass/1-fail log preserved97f01f8 BEFORE repair.
+  Corrected439f4b1 passes4 oracles0.737s:48,880 exact numerals/10 malformed,
+  900 fooling pairs,3 rational-token scenarios/15 original-ID marginal checks,
+  aliases/fixed holes/zero mass and literal sign regressions. No model read,
+  new head/forward/update or competitive timing. Later full330 tests
+  PASS94.438s and focused Ruff/format5 files PASS. See59/work/result-v2.md.
+- [ ] T8202: Inspect/compare complete numeric register/digit-DP and bounded
+  regex constructions; establish a substantive own useful difference before
+  extensive generalization. Missing support in a restricted frontend alone
+  does not establish novelty or a sufficient article contribution.
+- [ ] T8203: After that distinction survives, general intervals/zero/signs,
+  original EOT/PAD/token lifting and real external numeric-infilling consumer
+  need separate correctness/input/resource protocols. No model campaign yet.
+
 ## M81 — Streamed grammar-loss training head, resource gate CLOSED negative
 
 - [x] T8100: Write A58 eight criteria/theoryc271080 BEFORE prototype; primary

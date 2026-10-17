@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "producer": "439f4b11e5fc2ae6af05141050c78fc5f421783d",
+  "tests": 4,
+  "seconds": 0.737,
+  "independent_numerals": 48880,
+  "malformed": 10,
+  "fooling_pairs": 900,
+  "original_id_marginal_checks": 15,
+  "token_mass_cases": 3,
+  "interval_implemented": "[1,2)",
+  "scope": "small exact arithmetic/compiler oracle only",
+  "general_interval_implementation": false,
+  "native_decoder_integration": false,
+  "model_reads": 0,
+  "new_forwards": 0,
+  "competitive_timing": false,
+  "source_sha256": {
+    "test_interval.py": "046b6b5eb0ee4dd3f0a54c46713bae0d3c964d6a41e3e7fb937161a0fea7516c",
+    "interval_one_two.py": "19d9f36459a29db5f767ebd1688ff4658b1d860cd00d48d83d6a617a7e509e92"
+  }
+}

@@ -36,3 +36,12 @@ regular-expression constructions before claiming a scientific separation.
 ODD/Mosaic and FactorDLM already supply weighted finite-automata/factor
 conditioning. A59 does not claim the projection law, token quotient or generic
 sum-product as new. The candidate concerns the number-language compiler.
+
+Later same-turn standards check, after the small prototype (not attributed to
+the pre-code reading): [RFC8259 Section6](https://www.rfc-editor.org/rfc/rfc8259#section-6)
+gives fraction/exponent syntax and permits implementations to set numeric
+range/precision limits. [JSON Schema2020-12 validation Sections4.2/6.2](https://json-schema.org/draft/2020-12/draft-bhutton-json-schema-validation-01)
+uses numeric comparisons without adding a precision bound. A59 chooses exact
+decimal semantics as its explicit contract. This does not establish that a
+restricted production frontend is violating RFC8259, nor does it preserve a
+consumer's binary64-rounding semantics automatically.

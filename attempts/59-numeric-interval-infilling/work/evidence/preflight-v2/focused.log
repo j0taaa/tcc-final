@@ -1,0 +1,12 @@
+test_budget_completeness_and_long_sound_inputs (attempts.59-numeric-interval-infilling.work.test_interval.NumericIntervalTests.test_budget_completeness_and_long_sound_inputs) ... ok
+test_independent_numeral_values_and_unambiguous_paths (attempts.59-numeric-interval-infilling.work.test_interval.NumericIntervalTests.test_independent_numeral_values_and_unambiguous_paths) ... ok
+test_linear_graph_and_nondeterministic_fooling_set (attempts.59-numeric-interval-infilling.work.test_interval.NumericIntervalTests.test_linear_graph_and_nondeterministic_fooling_set) ... ok
+test_original_id_joint_mass_marginals_aliases_fixed_and_zero (attempts.59-numeric-interval-infilling.work.test_interval.NumericIntervalTests.test_original_id_joint_mass_marginals_aliases_fixed_and_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.737s
+
+OK
+{"independent_numerals": 48880, "malformed": 10}
+{"graph_sizes": [[16, 160, 935], [32, 307, 1834], [64, 595, 3626], [128, 1200, 7239], [256, 2423, 14478]], "fooling_pairs": 900}
+{"token_mass_cases": 3, "original_id_marginal_checks": 15}

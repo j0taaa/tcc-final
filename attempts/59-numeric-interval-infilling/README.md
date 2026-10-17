@@ -65,3 +65,8 @@ operation to semantic numeric constraints, not another head implementation.
 Primary source pins and actual reading scope are in work/primary-reading-v1.md.
 The first implementation, if justified by this audit, is deliberately a small
 compiler/oracle for [1,2), not an extensive new decoder or GPU optimization.
+
+V2: the111-line [1,2) compiler passes four independent exact oracles after a
+separately preserved exponent-sign failure. General interval implementation,
+EOT/PAD/native integration, complete semantic controls and real usefulness
+remain pending. See [result and exact scope](work/result-v2.md).

@@ -2994,3 +2994,25 @@ This simple family is CLOSED negative; useful own distinction and the user's
 positive scientific goal remain OPEN. Details and exact raw/source provenance:
 attempts/58-streamed-grammar-loss/work/result-v10.md. A new large prototype
 needs a substantive different operation/architecture and justification first.
+
+
+## 2026-10-16 — A59 bounded complete numeric-interval compiler candidate
+
+The new operation preserves fixed numeral bytes and every original token ID
+while enforcing an exact decimal interval. Pinned primary llguidance numeric.rs
+6cef6ed and XGrammar converter7e269d5 have restricted bounded numeral forms;
+this is source inspection, not an executed full-library comparison or bug claim.
+The BEFORE-code note1aac564 proves a non-CFL unbounded [1,2) language and a
+POSITIVE O_I(L)-state/edge unambiguous compiler with a matching Omega(L) NFA
+bound for that interval. Counters, suffix DAGs, Parikh/fooling sets and weighted
+projection are classical. Own priority and useful scientific distinction OPEN.
+
+Minimal implementation3a94c76 fails on10e1 (100); the full failed run is
+preserved97f01f8 before439f4b1's sign repair. Four exact oracles then PASS0.737s:
+48,880 numeral values/10 malformed,900 fooling pairs,3 rational-token cases/
+15 original-ID marginal coefficients, fixed holes/aliases/zero mass. Only
+[1,2) is implemented, no general interval/EOT/PAD/native dLLM yet. No A59
+model capture/forward/update/timing. Complete register/digit-DP compilers may
+match the same bound and MUST be audited before extensive implementation.
+Real external numeric infilling usefulness is not presumed. See59/work/
+result-v2.md and primary-reading-v1.md; the positive user goal remains OPEN.
