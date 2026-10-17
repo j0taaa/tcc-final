@@ -286,6 +286,14 @@ continuam obrigatórios. r>=1 recusa; ambiguidades locais podem causar custo
 exponencial. Sem protótipo/head/timing/consumidor útil/prioridade confirmados.
 Próximo passo só auditoria primária e oráculos mínimos, antes de campanha.
 
+A55 V2: oito oráculos racionais PASS0.248s, inclusive153 massas aceitas de
+controle clássico ordenado. Lawler2017 Proposições5.3/5.5/5.8 já fornecem a
+MESMA lei/certificado/custo favorável sem NB/Ewens; auditoria negativa de
+distinção própria, não benchmark de latência ou refutação do sampler. Nenhum
+head/matriz de aplicação/timing competitivo novo. Não ampliar a candidata
+simples só por vencer rejeição independente. Meta científica continua aberta.
+Suíte final302 PASS85.791s inclui esse oráculo; checks não são vitória prática.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

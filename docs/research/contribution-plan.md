@@ -1,5 +1,18 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A55 small laws pass, classical control closes simple novelty
+
+Written537af90 precedes the NB/Ewens reference. Eight rational oracles pass,
+including every accepted mass of the ordered classical construction for five
+small matrices. Lawler2017 Propositions5.3/5.5/5.8 match the law/certificate/
+favorable complexity without the proposed auxiliary machinery. See the separate
+ordered-control-v2.md written6515cfc. This is a negative originality audit,
+not a latency benchmark or model result. No real-input matrix or new neural
+work was evaluated; no broad campaign follows from defeating independent rows.
+Full301 tests pass before the final eighth control oracle, focused8 pass
+after it. Goal remains OPEN. Newer nesting author source97e704255b3d was cloned
+read-only for inspection; its input matrices have NOT been evaluated.
+
 ## 2026-10-16 — A55 transient-cycle permutation candidate, written first
 
 Separate from the closed A52/A53/A54 applications. A55 writes a rational

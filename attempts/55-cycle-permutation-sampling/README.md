@@ -64,3 +64,20 @@ candidate, not a new CFG parser or a change to the native EPIC law.
    applicable strong controls including preparation. Independent evidence is
    needed before promotion. No new neural work, useful measured benefit,
    priority, publication/admission or achieved goal is claimed at this freeze.
+
+V2 audit: Lawler2017 Propositions5.3/5.5/5.8 supply a classical ordered-loop
+control with the SAME accepted assignment law, acceptance certificate and
+favorable asymptotic work, without NB/Ewens construction. See
+work/ordered-control-v2.md, written6515cfc before its small control oracle.
+Eight rational oracles PASS0.248s:153 cycle-set laws,153 classical-control
+accepted masses,623 Ewens integer tapes,201 NB coefficients,8875 marked-soup
+tapes/40 output coefficients and42 return/minor checks. Full301 PASS85.439s
+before the final additional classical-control oracle; no neural/matrix-input
+campaign or timing claim. This simple candidate has insufficient own
+distinction and must NOT be expanded merely for defeating independent rows.
+The mathematical laws remain valid; scientific usefulness/novelty goal OPEN.
+
+Final full suite INCLUDING that oracle:302 PASS85.791s; focused8/Ruff PASS.
+Logs and raw reference sources are in work/evidence/reference-v1. No assertion
+of first-output/total-model speed, independent empirical confirmation or
+priority follows from these correctness checks.

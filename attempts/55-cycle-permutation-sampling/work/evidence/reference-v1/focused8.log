@@ -1,0 +1,19 @@
+test_classical_accepted_cycle_law (attempts.55-cycle-permutation-sampling.work.oracles.CycleOracles.test_classical_accepted_cycle_law) ... ok
+test_classical_ordered_loop_control_has_same_full_accepted_law (attempts.55-cycle-permutation-sampling.work.oracles.CycleOracles.test_classical_ordered_loop_control_has_same_full_accepted_law) ... ok
+test_ewens_full_adaptive_integer_law (attempts.55-cycle-permutation-sampling.work.oracles.CycleOracles.test_ewens_full_adaptive_integer_law) ... ok
+test_geometric_mixture_cycle_coefficients (attempts.55-cycle-permutation-sampling.work.oracles.CycleOracles.test_geometric_mixture_cycle_coefficients) ... ok
+test_input_and_identifier_invariance (attempts.55-cycle-permutation-sampling.work.oracles.CycleOracles.test_input_and_identifier_invariance) ... ok
+test_marked_soup_joint_coefficients (attempts.55-cycle-permutation-sampling.work.oracles.CycleOracles.test_marked_soup_joint_coefficients) ... ok
+test_return_occupation_certificate (attempts.55-cycle-permutation-sampling.work.oracles.CycleOracles.test_return_occupation_certificate) ... ok
+test_unfavorable_local_cycles_and_cap_bias (attempts.55-cycle-permutation-sampling.work.oracles.CycleOracles.test_unfavorable_local_cycles_and_cap_bias) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.249s
+
+OK
+cycle-set/permutation exact assignments: 153
+classical ordered-loop accepted assignment masses: 153
+Ewens integer-tape leaves: 623
+NB/Ewens cycle-count coefficients: 201
+marked-soup finite integer tapes: 8875 output coefficients: 40
+exact return/minor/certificate checks: 42

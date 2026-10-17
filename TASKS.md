@@ -52,10 +52,17 @@ cost remain open. No new neural campaign is credited to M70.
   from native DiffuRank greedy decoding. No new head/timing/benefit or achieved
   goal. Mandatory strong controls include cycle perfect simulation and current
   nesting rejection, not only independent rows.
-- [ ] T7801: Audit the derivation against primary sources and independent
+- [x] T7801: Audit the derivation against primary sources and independent
   finite rational oracles. Passing correctness alone does not trigger a neural
   campaign. A real consumer needing this law and meaningful comparative benefit
   must be justified before extensive implementation or promotion.
+  Eight rational oracles PASS0.248s; full301 PASS85.439s BEFORE the eighth
+  classical-control oracle. Lawler2017 ordered loops match law/certificate/
+  favorable complexity without NB/Ewens. Negative originality audit in
+  ordered-control-v2.md; no real-matrix/head/timing campaign, no simple-candidate
+  expansion. Raw/code/logs preserved, goal OPEN. External nesting source
+  cloned read-only97e704255b3d; NO instance weights/statistics evaluated.
+  Final full302 PASS85.791s includes the eighth oracle; focused8/Ruff pass.
 
 ## M77 — Coupled policy comparison/replay, limited classical investigation
 
