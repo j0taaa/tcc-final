@@ -1,5 +1,17 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-16 — A45 exact parity reduction, universal safety still open
+
+Writtenf50008a before its oracle. Ordinary degree elevation extends to the
+whole fixed-order tower joint matrix for arbitrary label count: J_(2m+1)=J_2m
+after IID population averaging. B2/3 are iid, B4/5 reduce to A38. A tempting
+conditional SRS-strength inequality fails on the already known(2,2,1,1)
+profile. Rational checks pass2872 profiles/77616 entries and125 A38-control
+profiles. These are finite checks of a written classical calculation, not
+proof of general safety, own novelty or new model/consumer evidence. The
+remaining question is even B>=6/L>=4. A44's rejected consumer stays closed.
+See45/work/proof-audit-v2.md for primary PPS2026/Neal readings and limits.
+
 ## 2026-10-16 — A55 small laws pass, classical control closes simple novelty
 
 Written537af90 precedes the NB/Ewens reference. Eight rational oracles pass,

@@ -45,6 +45,14 @@ cost remain open. No new neural campaign is credited to M70.
 
 ## M78 — Transient-cycle assignment proposals, written before prototype
 
+- [x] T7802: Separate A45 mathematical audit, f50008a written before its
+  oracle: whole-matrix odd/even degree-elevation identity for all label counts;
+  B2/3 iid and B4/5 existing A38 control, conditional-SRS shortcut false.
+  Finite2872 profiles/77616 entries and125 control profiles PASS. General
+  safety remains OPEN for even B>=6, L>=4; no new population/neural campaign,
+  priority or useful application. Original A44 negative consumer stays closed.
+  See45/work/proof-audit-v2.md; primary PPS2026/Neal scopes explicit.
+
 - [x] T7800: Write A55's eight criteria/target/algorithm/cost/counterexamples
   BEFORE code or new matrix samples. Loop-soup/permanental/Poisson-exclusion,
   Ewens and Boltzmann are classical; own operational distinction remains OPEN.

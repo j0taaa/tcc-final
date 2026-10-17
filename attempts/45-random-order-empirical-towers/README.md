@@ -46,3 +46,19 @@ SSP alternative. These results are classical and cannot be discarded.
 
 All work is independent in work/. The maintained core, tests and paper stay
 unchanged. Passing a finite search would leave the conjecture OPEN.
+
+V2 is a WRITTEN proof audit, not a model/application campaign. The eight
+criteria and the rejection of A44's gradient consumer remain unchanged.
+`work/proof-audit-v2.md` (f50008a, before its oracle) extends ordinary
+degree elevation to the entire fixed-order joint matrix: odd pools have
+the same unconditional law as the preceding even pool, for ANY label count.
+B2/3 reduce to iid; B4/5 reduce to the existing A38 law. A profilewise
+SRS-dominance shortcut is disproved exactly. The universal theorem remains
+OPEN for even B>=6 and at least four labels; no novelty/use/goal claim.
+
+`work/parity_oracle_v2.py` checks2872 profiles/77616 rational matrix entries,
+125 complete A38-control profiles and the conditional shortcut counterexample.
+PASS, zero new neural calls. New primary PPS2026 Theorem4.1 and Neal's
+original HST/non-domination statements are read within explicit scopes in
+the addendum. No new population screen, benchmark, target evaluator, source
+fitting, timing or broad neural implementation is authorized by this result.

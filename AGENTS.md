@@ -294,6 +294,14 @@ head/matriz de aplicação/timing competitivo novo. Não ampliar a candidata
 simples só por vencer rejeição independente. Meta científica continua aberta.
 Suíte final302 PASS85.791s inclui esse oráculo; checks não são vitória prática.
 
+A45 V2 é auditoria matemática separada, escritaf50008a antes de oráculo:
+elevação de grau vale para TODA matriz conjunta de torres em ordem fixa;
+lote ímpar tem mesma lei populacional que o par anterior. B2/3=iid,
+B4/5=A38; atalho condicional de dominância SRS é falso. Oráculo racional
+2872 perfis/77616 entradas e125 perfis-controle passa. Segurança universal
+permanece ABERTA para B par>=6/L>=4. Nenhuma população/execução neural nova,
+consumidor útil, prioridade ou promoção. Não reabrir o consumidor negativo44.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

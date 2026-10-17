@@ -1,0 +1,1 @@
+{'status': 'PASS_FINITE_PARITY_AND_CONTROL_ONLY', 'fixed_order_profiles': 2872, 'exact_matrix_entries': 77616, 'four_pool_control_profiles': 125, 'conditional_shortcut_counterexample': True, 'universal_safety_proved': False, 'new_neural_calls': 0}
