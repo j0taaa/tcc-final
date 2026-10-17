@@ -4674,6 +4674,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "62-native-numeric-quantile",
+      "title": "Auditoria do quantil numérico nativo de RLM autoregressivo e controle completo",
+      "conclusion": "Criteria/theory/source scope3f0912d BEFORE producer885c614 and execution. Different AR code-metric consumer, not A60 product source or a dLLM. Written original-token frontier quantile/risk bounds and elementary oracle exact-median obstruction use CLASSICAL principles. Opt-in text/AST/literal-arithmetic producer validates six source hashes/six pairs/twelve finite corners; two mathematical3/10 sign-alias pairs differ by one binary64 ULP, equal/zero controls pass. No native tokenizer/model/vendor execution, weight/row download, neural forward/update/prediction or competitive timing. Actual public configE2/M5/nine tokens/13 decoder IDs; official Transformers4.53.2 source confirms top-p BEFORE appended numeric mask. Maintained4.52.2 has no t5gemma mapping; no environment installed. Initial metadata collector system-Python mismatch recorded, corrected .venv metadata only. Ruff/format1 PASS, no new active tests or maintained-suite rerun. Original BEAVER Def2.2/4.1--4.3 and Yiu/Mamoulis/Tao2006 ranges/branch-and-bound scopes read. Complete ANALYTICAL control uses complementary upper bounds on one full-history cache to reproduce EXACTLY the same native CDF enclosure, not executed/timed released software. Basic endpoint-solver/neural campaign NOT TRIGGERED solely by this derivation. Specific own useful distinction/priority/publication and positive scientific goal remain OPEN.",
+      "reading": "attempts/62-native-numeric-quantile/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "885c61471428969aebf933d164c99c8c827eee1d",
+          "evidence_commit": "9df5399e9dcb0bb7b6b2465325067c88f8993760",
+          "evidence_roots": [
+            "attempts/62-native-numeric-quantile/README.md",
+            "attempts/62-native-numeric-quantile/work"
+          ]
+        }
+      ]
     }
   ]
 }
