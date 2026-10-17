@@ -1,0 +1,12 @@
+{
+  "source_commit": "2d15a0577ace8370a03424e2225ad510d0ed435e",
+  "command": [
+    "/home/jota/projects/tcc-final/.venv/bin/python",
+    "attempts/69-adaptive-factory-separation/work/audit_v3.py",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a69_quantitative_gap_v3_initial/results"
+  ],
+  "started_utc": "2026-10-17T11:27:31.811957+00:00",
+  "elapsed_diagnostic_seconds": 1.420965728990268,
+  "direct_exit_code": 0,
+  "scope": "Prospective finite proof-certificate audit, not performance or real application"
+}

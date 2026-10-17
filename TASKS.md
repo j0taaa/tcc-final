@@ -49,6 +49,23 @@ cost remain open. No new neural campaign is credited to M70.
 
 ## M92 — Adaptive finite work beyond every preselected batch
 
+- [x] T9206: Previous turn PROGRESS revalidated from af04e93/upstream/remote,
+  A69 frozen reference/archive receipts; unrelated PDF untouched. V3 proof/
+  protocol3b53b76 BEFORE source2d15a05/ONE PASS0. Written sharp-order source
+  gap adaptive<2 versus ALL preselected kernels at least(R-3)/2048, feasible
+  upperR/4; pointwise full bit-work gap charges compact binary R and iid
+  additive-cost source. Finite checks924 norms105 differences349 sums5
+  constants62 inductions61 scales21840 tapes30 forced cases10 guards PASS.
+  Not general proof mechanization, known-p/aggregate/shared-head speed or
+  natural use. Old V1/V2 untouched; raw a69_quantitative_gap_v3_initial.
+- [x] T9207: AFTER V3 audit, a direct analytical multiscale argument also
+  excludes finite mean for the infinite preselected response, independently
+  of the C2 route. Exact tolerance audit gives f_2 error<1e-8 for ALL f_R
+  at preselected mean1/2; fixed tolerance erases the growing gap. No literal
+  float-rounding equality claimed. Natural exactness-essential consumer and
+  specific priority required before a large campaign; goal stays OPEN.
+- [ ] T9208: Independently preserve V3 source/proof/raw/after-data deductions,
+  verify hashes/checks and normal upstream sync without scientific reruns.
 - [x] T9200: Previous goal turn PROGRESS revalidated from c85e00b/upstream/
   remote and complete A68 negative raw/check receipts. No live scientific
   process required waiting/restart; unrelated PDF untouched. A68 stays closed.

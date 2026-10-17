@@ -1,5 +1,27 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A69 quantitative all-kernel resource gap and tolerance objection
+
+Previous turn PROGRESS verified in af04e93 and preserved A69 V1/V2 evidence.
+V3 proof/protocol3b53b76 BEFORE source2d15a05/ONE PASS0 writes sharp linear
+preselected source cost: (R-3)/2048<=A_R<=R/4, adaptive input mean<2. Binary R
+is compact and charged; pointwise internal bit work O_p(1)+O(logR) and iid
+additive source costs give the scoped full-work ratio. No stronger known-p,
+aggregate-count/shared-head oracle or arbitrary adaptive method is bounded.
+
+Independent FINITE audit924 score norms105 differences349 sums5 constants62
+inductions61 scales21840 tapes30 forced cases10 guards passes. No infinite
+proof mechanization, physical speed, model/forward/labels/updates. Old V1/V2
+sources and the original ordering deviation are unchanged.
+
+After the run a direct multiscale proof also checks the infinite lower
+conclusion without the C2 route. Relevance audit preserves the decisive
+approximation control: f_2 has uniform error<1e-8 to ALL f_R and preselected
+mean1/2. Fixed tolerances can remove the entire claimed asymptotic benefit.
+No rounded-float equality inferred. The construction is still artificial;
+natural exactness-essential usefulness and specific priority are OPEN.
+Original HNP2011 positive approximation/moment/Besov/lacunary scope read;
+general principles not claimed new. No large application campaign selected.
 ## 2026-10-17 — A69 candidate positive adaptivity capability, before a natural application
 
 Previous turn PROGRESS verified in c85e00b and A68's complete negative gate.

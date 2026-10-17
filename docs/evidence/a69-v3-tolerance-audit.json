@@ -1,0 +1,45 @@
+{
+  "kind": "After-run exact tolerance/relevance arithmetic, not a sampler run or speed measurement",
+  "formula": "4^(-((s+1)^2+5))/(1-4^(-(2s+3)))",
+  "rows": [
+    {
+      "retained_levels": 0,
+      "uniform_error_bound": "1/4032",
+      "diagnostic_decimal": 0.000248015873015873,
+      "preselected_input_mean": "0"
+    },
+    {
+      "retained_levels": 1,
+      "uniform_error_bound": "1/261888",
+      "diagnostic_decimal": 3.8184261974584555e-06,
+      "preselected_input_mean": "1/4"
+    },
+    {
+      "retained_levels": 2,
+      "uniform_error_bound": "1/268419072",
+      "diagnostic_decimal": 3.725517686015992e-09,
+      "preselected_input_mean": "1/2"
+    },
+    {
+      "retained_levels": 3,
+      "uniform_error_bound": "1/4398029733888",
+      "diagnostic_decimal": 2.2737454280827877e-13,
+      "preselected_input_mean": "3/4"
+    },
+    {
+      "retained_levels": 4,
+      "uniform_error_bound": "1/1152921229728940032",
+      "diagnostic_decimal": 8.67361944783606e-19,
+      "preselected_input_mean": "1"
+    },
+    {
+      "retained_levels": 5,
+      "uniform_error_bound": "1/4835703206400922660896768",
+      "diagnostic_decimal": 2.0679515621974488e-25,
+      "preselected_input_mean": "5/4"
+    }
+  ],
+  "R_scope": "R>=s; for R<s use the exact smaller finite response",
+  "binary64_literal_equal_outputs_claimed": false,
+  "goal": "OPEN"
+}

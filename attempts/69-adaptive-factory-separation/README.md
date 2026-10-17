@@ -85,3 +85,12 @@ batch alternatives where available and warns about tiny features/tolerance;
 8 still requires critical proof/priority and natural-use evidence. No previous
 tests validate this later result. See[the new proof](work/quantitative-gap-v3.md)
 and[prospective checks](work/protocol-v3.md). The user goal remains OPEN.
+
+V3 proof3b53b76/source2d15a05 BEFORE ONE PASS/direct0:924 exact score norms,
+105 differences349 scale sums5 constant certificates62 induction/61 scale
+checks21840 controller tapes30 forced cases10 guards. Written universal
+gap is not mechanically proved by these finite checks. AFTER the run, a
+separate audit notes that f_2 approximates all f_R to error<10^-8 with
+preselected mean1/2; exactness must be independently essential in a real
+consumer. No large application/NN/timing campaign is selected. See[the result](work/result-v3.md)
+and[the proof/relevance audit](work/proof-and-use-audit-v3.md).

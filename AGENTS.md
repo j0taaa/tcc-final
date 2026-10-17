@@ -1,5 +1,17 @@
 # AGENTS.md
 
+A69 V3 proof/protocol3b53b76 BEFORE source2d15a05/ONE PASS0: written adaptive
+input mean<2 vs optimum over ALL fully preselected kernels >=(R-3)/2048
+and<=R/4. Pointwise full bit-work separation charges binary R and an iid
+additive-cost sampling-only oracle; NOT known-p/aggregate/shared-head APIs
+or uniform-in-p latency. Finite audit924 norms105 differences349 sums5
+constants62 induction/61 scales21840 tapes30 forced10 guards passes, not
+mechanized infinite proof. AFTER-data relevance audit: f_2 approximates ALL
+f_R to error<1e-8 with classical batch mean1/2. Fixed tolerance can erase
+advantage; no rounded equality. Natural exactness-essential use and priority
+remain OPEN, no large campaign/article promotion. No new model/forward/data.
+Result69/work/result-v3.md; V1/V2 and A68 negative decision intact.
+
 A69 V1/V2 independent archives752/742 files match original Git/direct0;
 five V1 hashes plus V2 written proof match. Draft/final ordering deviation
 and result identity preserved. make check/direct0:69 attempts272 versions

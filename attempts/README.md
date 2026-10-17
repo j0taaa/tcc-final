@@ -32,6 +32,12 @@ preselected/full kernels, with no useful rate/R0 or finite-family full-bit
 ratio. V1's tests do not validate that corollary. Independent archives752/742
 files match Git; make check/direct0:69 attempts272 versions208299 files.
 Priority, proof audit and a natural useful application remain open.
+V3 adds a written quantitative gap against ALL preselected/full kernels:
+adaptive mean<2 versus at least(R-3)/2048 and at mostR/4, with a scoped
+pointwise full-bit argument. Finite certificate audit passes924 norms/
+21840 tapes. After-data relevance audit keeps the cheap approximate control:
+f_2 error<1e-8 to all f_R at batch mean1/2. Exactness-essential use/priority
+still required; no practical/NN campaign. See[the V3 result](69-adaptive-factory-separation/work/result-v3.md).
 
 A68 V6 supplies a validated classical retrospective/cached control. V7's
 complete prospective whole-cost screen is NEGATIVE:1140/1140 COMPLETE,

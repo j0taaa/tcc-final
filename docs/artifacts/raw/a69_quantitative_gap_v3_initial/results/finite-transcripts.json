@@ -1,0 +1,452 @@
+[
+  {
+    "limit": 0,
+    "width": 4,
+    "ones": 4,
+    "unresolved": 1
+  },
+  {
+    "limit": 0,
+    "width": 8,
+    "ones": 64,
+    "unresolved": 1
+  },
+  {
+    "limit": 0,
+    "width": 12,
+    "ones": 1024,
+    "unresolved": 1
+  },
+  {
+    "limit": 1,
+    "width": 4,
+    "ones": 4,
+    "unresolved": 2
+  },
+  {
+    "limit": 1,
+    "width": 8,
+    "ones": 64,
+    "unresolved": 2
+  },
+  {
+    "limit": 1,
+    "width": 12,
+    "ones": 1024,
+    "unresolved": 1
+  },
+  {
+    "limit": 2,
+    "width": 4,
+    "ones": 4,
+    "unresolved": 3
+  },
+  {
+    "limit": 2,
+    "width": 8,
+    "ones": 64,
+    "unresolved": 3
+  },
+  {
+    "limit": 2,
+    "width": 12,
+    "ones": 1024,
+    "unresolved": 2
+  },
+  {
+    "limit": 3,
+    "width": 4,
+    "ones": 4,
+    "unresolved": 3
+  },
+  {
+    "limit": 3,
+    "width": 8,
+    "ones": 64,
+    "unresolved": 4
+  },
+  {
+    "limit": 3,
+    "width": 12,
+    "ones": 1024,
+    "unresolved": 3
+  },
+  {
+    "limit": 30,
+    "width": 4,
+    "ones": 4,
+    "unresolved": 3
+  },
+  {
+    "limit": 30,
+    "width": 8,
+    "ones": 64,
+    "unresolved": 7
+  },
+  {
+    "limit": 30,
+    "width": 12,
+    "ones": 1024,
+    "unresolved": 10
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 1,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 3,
+      "selected_level": 1,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 1,
+    "mode": "periodic",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 3,
+      "selected_level": 1,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 2,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 4,
+      "selected_level": 2,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 3,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 5,
+      "selected_level": 3,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 30,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 32,
+      "selected_level": 30,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 1,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 1,
+    "mode": "periodic",
+    "result": {
+      "bit": 1,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 2,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 4,
+      "selected_level": 2,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 3,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 5,
+      "selected_level": 3,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 1,
+    "selected_n": 30,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 32,
+      "selected_level": 30,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 1,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 1,
+    "mode": "periodic",
+    "result": {
+      "bit": 1,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 2,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 18,
+      "selected_level": 2,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 3,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 5,
+      "selected_level": 3,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 30,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 32,
+      "selected_level": 30,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 1,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 1,
+    "mode": "periodic",
+    "result": {
+      "bit": 1,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 2,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 18,
+      "selected_level": 2,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 3,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 28,
+      "selected_level": 3,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 2,
+    "selected_n": 30,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 0,
+      "auxiliary_bits": 32,
+      "selected_level": 30,
+      "stage": "cap_rejected"
+    }
+  },
+  {
+    "binary_length": 5,
+    "selected_n": 1,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 5,
+    "selected_n": 1,
+    "mode": "periodic",
+    "result": {
+      "bit": 1,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 5,
+    "selected_n": 2,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 18,
+      "selected_level": 2,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 5,
+    "selected_n": 3,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 28,
+      "selected_level": 3,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 5,
+    "selected_n": 30,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 1810,
+      "selected_level": 30,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 4097,
+    "selected_n": 1,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 4097,
+    "selected_n": 1,
+    "mode": "periodic",
+    "result": {
+      "bit": 1,
+      "source_calls": 1024,
+      "auxiliary_bits": 12,
+      "selected_level": 1,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 4097,
+    "selected_n": 2,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 18,
+      "selected_level": 2,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 4097,
+    "selected_n": 3,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 28,
+      "selected_level": 3,
+      "stage": "predicate"
+    }
+  },
+  {
+    "binary_length": 4097,
+    "selected_n": 30,
+    "mode": "zero",
+    "result": {
+      "bit": 0,
+      "source_calls": 1024,
+      "auxiliary_bits": 1810,
+      "selected_level": 30,
+      "stage": "predicate"
+    }
+  }
+]
