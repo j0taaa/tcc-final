@@ -47,6 +47,31 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M85 — Native RLM numerical quantile audit; complete control matches bound
+
+- [x] T8500: A62 criteria/theory/source scope3f0912d BEFORE producer. Different
+  AR consumer: public code-metric RLM uses sample-median readout. Written
+  frontier endpoints/quantile enclosure/model-risk bound and elementary
+  black-box obstruction; not new generic branch-and-bound or dLLM inference.
+- [x] T8501: Producer885c614 BEFORE execution validates six original hashes,
+  six literal-arithmetic pairs/twelve finite corners. Two exact-decimal alias
+  pairs differ by one native-arithmetic ULP; equal/zero controls pass. No vendor
+  module executed, model prediction, weight/data row/forward/update/timing.
+  Actual checkpointE2/M5/nine tokens/13 decoder IDs; top-p before numeric mask
+  confirmed from official4.53.2 source. Maintained4.52.2 lacks t5gemma mapping;
+  no environment installed. Ruff+format1 PASS, no new active tests/full-suite
+  rerun. Metadata collector's initial system-Python mismatch is recorded.
+  Full receipts62/work/evidence/v1, result62/work/result-v3.md.
+- [x] T8502: Original BEAVER Def2.2/4.1--4.3 and Yiu/Mamoulis/Tao2006 Section3/
+  4.3 scopes read. Two shared-cache BEAVER upper bounds for complementary
+  events reproduce EXACTLY the candidate's CDF bounds. Weighted endpoint
+  inversion is classic; this is a complete written control, not code/timing.
+  See62/work/control-and-decision-v2.md. No priority or own benefit established.
+- [ ] T8503: A substantial own difference/practical consequence and specific
+  novelty remain OPEN. Simple endpoint-solver/neural campaign NOT TRIGGERED
+  solely by this derivation. A real consumer and source audit are insufficient
+  to fulfill the positive goal; require a benefit surviving complete controls.
+
 ## M84 — Whole scientific-value score, correctness only; expansion declined
 
 - [x] T8400: A61 eight criteria8d6b560 and theory9f08d0f BEFORE prototype.

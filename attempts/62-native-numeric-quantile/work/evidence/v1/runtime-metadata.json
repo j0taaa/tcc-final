@@ -1,0 +1,26 @@
+{
+  "transformers_version": "4.52.2",
+  "python_version": "3.11.16",
+  "source_inspection": [
+    {
+      "installed_file": "transformers/models/auto/configuration_auto.py",
+      "sha256": "c74473cd64367419d16f02483606cda58cfcf69fd2145028d34481639b09eb9f",
+      "t5gemma_text_found": false
+    },
+    {
+      "installed_file": "transformers/models/auto/modeling_auto.py",
+      "sha256": "ae6c3f7d5f689792d9bb8e38d8bc44e0343c3b1867e023fb94280c45b9a40848",
+      "t5gemma_text_found": false
+    },
+    {
+      "installed_file": "transformers/generation/utils.py",
+      "sha256": "9456d3984643f9347b6772aead6392c239702eccbb5872ad0e3f52b492594ba5",
+      "t5gemma_text_found": false
+    }
+  ],
+  "weight_loads": 0,
+  "neural_forwards": 0,
+  "new_environment_installed": false,
+  "scope": "Read package metadata and source text only; no model/tokenizer/vendor module execution.",
+  "collector_note": "Initial system python3 (3.12) found no transformers package metadata. This receipt uses the maintained .venv Python explicitly; no scientific run was repeated."
+}

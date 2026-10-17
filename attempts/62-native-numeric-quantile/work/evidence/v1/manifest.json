@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "producer_commit": "885c61471428969aebf933d164c99c8c827eee1d",
+  "criteria_theory_commit": "3f0912d2e1fcd5f0329bbec558120146c3b9c405",
+  "command_template": ".venv/bin/python attempts/62-native-numeric-quantile/work/audit_codec.py --source-dir <pinned-checkpoint-text-dir> --output <output-json>",
+  "exit_code": 0,
+  "paired_cases": 6,
+  "float_pairs_differing_one_ulp": 2,
+  "finite_corner_checks": 12,
+  "files": [
+    {
+      "file": "codec.json",
+      "bytes": 4417,
+      "sha256": "f7058be1f7a8e786dbada17c45eb376e61e3210dcc473a026d77aa27555bf6af"
+    },
+    {
+      "file": "codec.log",
+      "bytes": 91,
+      "sha256": "acb38a9ca8c239b1e0e053e2f6b08eeba74f7b0f0d4f20b88a8d7cdf57a5dc2b"
+    },
+    {
+      "file": "ruff.log",
+      "bytes": 44,
+      "sha256": "ce04ce92b16073000b77c97a42c00b98b96305692d9d5ed4dcfa5a9ca9ea62d6"
+    },
+    {
+      "file": "runtime-metadata.json",
+      "bytes": 1063,
+      "sha256": "10cf787cd94b637bb3d33d88c102dc9c296a6b9081dabfd27f50aa6c98b71029"
+    }
+  ],
+  "new_unit_tests": 0,
+  "maintained_suite_rerun": false,
+  "maintained_suite_last_receipt": "A61:345 tests PASS97.976s; not an A62 execution",
+  "quantile_solver_implemented": false,
+  "competitive_timing": false,
+  "scope": "Pinned-source AST/config and independent literal arithmetic. Source cannot substitute for native runtime correctness."
+}

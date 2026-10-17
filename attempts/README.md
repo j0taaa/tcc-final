@@ -20,6 +20,15 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A62 audits a different real consumer, the public autoregressive code-metric
+RLM's numerical quantiles. BEFORE-producer criteria/proof3f0912d and audit885c614
+retain six hash-checked files/six literal-arithmetic pairs/twelve finite corners,
+including two one-ULP decimal-alias differences. No vendor module/head/weights/
+data row or timing. Written complementary BEAVER bounds/shared cache reproduce
+its basic CDF enclosure; Yiu/Mamoulis/Tao2006 supplies a direct generic quantile
+antecedent. No simple solver/neural expansion follows from this correctness.
+Actual E2/M5/processor/environment scopes:62-native-numeric-quantile/work/result-v3.md.
+
 A61 preserves a BEFORE-code category-log/conditional-mantissa CRPS formulation,
 four exact rational oracles and the345-test PASS. The reference enumerates tiny
 paths; its polynomial compiler remains written. A later analytical decimal

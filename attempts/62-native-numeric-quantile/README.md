@@ -59,3 +59,12 @@ consumer from A60's frozen PRODUCT source and A61's declined training loss.
    positive scientific goal is asserted. If the operator merely reproduces a
    known complete method without useful consequence, preserve it and decline
    expansion instead of adding features to manufacture novelty.
+
+V1 criteria/theory/source audit3f0912d precede producer885c614 and its execution.
+Six literal-arithmetic pairs/twelve corners PASS; no vendor module or neural
+head executed. [V2 control/decision](work/control-and-decision-v2.md) reads
+BEAVER and Yiu/Mamoulis/Tao2006 and gives a complete analytical control with
+IDENTICAL CDF bounds. Basic endpoint-solver expansion/neural campaign is not
+triggered from these facts. Native float atoms/processor ordering differ from
+shortcuts; the maintained environment also lacks the declared T5Gemma mapping.
+No new dependency environment, weights or data rows. The goal remains OPEN.

@@ -3162,3 +3162,38 @@ V2 declines expansion of this simple loss on the present rationale, rather than
 claiming a measured training failure. Preserve the proof/reference; do not
 promote them to an article result. Substantial own usefulness, specific priority
 and the user's positive goal remain OPEN. Full evidence61/work/result-v3.md.
+
+## 2026-10-17 — A62 native numerical readout and the complete BEAVER control
+
+New eight-criterion/theory/source note3f0912d precedes source-audit producer
+885c614 and execution. Actual public RLM checkpoint provides an autoregressive
+code-metric consumer for sample-median readout, not a diffusion/product head.
+Written endpoint-frontier bounds certify numerical quantiles and model absolute
+risk under a declared rational conditional law; no native finite-RNG equivalence
+or true-label/calibration benefit follows. Generic inversion, branch-and-bound
+and elementary oracle indistinguishability are classical principles.
+
+Text/AST plus independent literal arithmetic passes six pinned source/config
+hashes, six pairs and twelve finite corners. Two exact-decimal3/10 sign variants
+differ by one binary64 ULP under the observed arithmetic; equal and signed-zero
+controls pass. This is NOT an executed tokenizer/model. Actual configE2/M5/nine
+tokens/13 decoder IDs differs from the paper's separateE3 description. Official
+Transformers4.53.2 source places top-p before the model's appended numeric mask;
+reordering would change the law. Maintained4.52.2 has no t5gemma mapping, with no
+environment upgrade. Initial system-Python metadata mismatch and correct.venv
+receipt recorded. Zero A62 weights/rows/heads/updates/predictions/timings, no
+new active tests or rerun/credit of A61's maintained345-test receipt.
+
+Original BEAVER Def2.2/Sections4.1--4.3 explicitly supplies completion-based
+prefix closure and deterministic probability frontiers. For f<=t and f>t use
+two upper bounds on a shared original-history cache. Complementing the latter
+gives EXACTLY A62's CDF lower bound, with the same queried conditional rows.
+Do not handicap this control by accepting only completed-leaf lower bounds or
+duplicating neural queries. Yiu/Mamoulis/Tao2006 Section3/4.3 already supplies
+hierarchical interval/count quantile pruning; weighted inversion is classical.
+This is a complete ANALYTICAL adaptation, not executed BEAVER/database timing or
+a claim of their original native-codec implementation. Read scopes/hashes and
+decision62/work/control-and-decision-v2.md. A simple endpoint solver/neural
+campaign is not triggered from these facts; specific own useful consequence,
+priority and the positive scientific goal remain OPEN. Contract correction or
+availability of a real consumer cannot substitute for that consequence.

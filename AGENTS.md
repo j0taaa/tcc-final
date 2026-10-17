@@ -1,5 +1,20 @@
 # AGENTS.md
 
+A62 investiga leitura numérica do RLM AR público, outra operação além de60/61.
+Critérios/prova3f0912d precedem auditor885c614: seis hashes/seis pares aritméticos/
+12 cantos PASS; dois pares decimalmente iguais diferem um ULP na expressão
+float nativa. É auditoria AST/aritmética independente, NÃO chamada do tokenizer
+ou forward. Checkpoint realE2/M5/nove tokens/13 IDs; fonte oficial4.53.2 confirma
+top-p ANTES da máscara numérica. Ambiente mantido4.52.2 sem mappingt5gemma;
+nenhuma atualização/peso/head/linha de dados/treino/timing. Metadados registram
+primeiro coletor no Python de sistema e correção para.venv, sem repetir ciência.
+BEAVER e Yiu/Mamoulis/Tao2006 foram lidos: controle escrito com duas cotas
+superiores complementares/cache compartilhado reproduz EXATAMENTE a CDF da
+candidata; não é implementação/timing dos originais. Prova de quantil/risco e
+obstrução de oracle são escritas e usam princípios clássicos. Decisão62/work/
+control-and-decision-v2.md não aciona solver simples/campanha só por isso.
+Não chamar AR de dLLM ou auditoria de ganho; novidade própria/uso/meta abertos.
+
 A61 escreve ANTES de código uma perda de categoria semântica(sinal/ordem) e
 CRPS de mantissa condicionada. Propriedade, kernels e diferenciação são
 clássicos; há identidade escrita de risco e bound4/2 dos logits, não do
