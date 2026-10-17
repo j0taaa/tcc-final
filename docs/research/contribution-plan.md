@@ -24,6 +24,20 @@ proof object; a natural useful consumer remains an explicit gap. T9203
 requires critical proof/priority/use assessment before expanding or promoting
 this. A68 remains CLOSED negative; the user's positive goal stays OPEN.
 
+AFTER V1's audits, V2 b280f53 adds a written finite-polynomial consequence:
+uniform adaptive source-call budget versus diverging optimum among ALL
+preselected/full kernels, by classical tightness/diagonal compactness. A
+simple feasible batch has meanR/4; the lower bound is qualitative, with no
+useful R0/rate/physical finite-family bit-cost ratio. It is not tested by
+the old finite oracles. No new code/campaign or user-goal promotion follows.
+
+Both independent A69 snapshots match original Git/direct0: V1 source2b2f22d/
+evidence2ac060d752 files11,479,959 bytes; written V2 b280f53 both source and
+evidence742 files11,460,548 bytes. Five V1 source hashes and V2 proof match;
+own Ruff/format2 PASS. Final make check/direct0:69 attempts272 versions208299
+files8,084,368,682 bytes. Final receipts/logs docs/evidence/a69-v{1,2}-final-*.
+No additional scientific or345-test rerun; no priority/usefulness claim.
+
 ## 2026-10-17 — A68 stronger lazy control and negative whole-cost decision
 
 V6 proof7792fe9 BEFORE source7439b49/ONE PASS0 validates the CLASSICAL

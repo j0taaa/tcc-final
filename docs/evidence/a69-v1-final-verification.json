@@ -1,0 +1,57 @@
+{
+  "kind": "After-run preservation verification, not scientific producer",
+  "proof_commit": "358eb4879aa74f43b1acad9a2e69cdc3db6b6405",
+  "protocol_commit": "9ca78d4047bb7bb18aa2c5cf9747bb8b60278bac",
+  "source_commit": "2b2f22db68796b84b2291c6e21025704f2fe9306",
+  "evidence_commit": "2ac060d310bfc6bd49c749d13f9379ee1f8a5538",
+  "original_source_freeze_deviation_preserved": true,
+  "frozen_correctness_direct_exit_code": 0,
+  "archive_original_git_direct_exit_code": 0,
+  "archive_files": 752,
+  "archive_uncompressed_bytes": 11479959,
+  "frozen_hash_comparisons": [
+    {
+      "path": "attempts/69-adaptive-factory-separation/work/separation.py",
+      "sha256": "109b26e8f8f0f2d7dbaa8ac0c78c7522a9f326641224fc2a4277f2eff0d9a302"
+    },
+    {
+      "path": "attempts/69-adaptive-factory-separation/work/audit.py",
+      "sha256": "6553899a204390ae71869256469a449d3f113a858e321c5cbe1647f0d4b984ff"
+    },
+    {
+      "path": "attempts/69-adaptive-factory-separation/work/theory-v1.md",
+      "sha256": "801750846f58b65f8bf45ecacda06d637e2f7542c6d8936631b20fcf79494128"
+    },
+    {
+      "path": "attempts/69-adaptive-factory-separation/work/preflight-contract-v1.md",
+      "sha256": "cd5e79d5c366f3b39e1ee91f45d58588d2c169b3ca4f904d8cd3b8bee3b8319c"
+    },
+    {
+      "path": "attempts/69-adaptive-factory-separation/work/primary-v1.md",
+      "sha256": "17b1683308406ff7da861c375141f00bb9c8995d70b137a9e35cafa6a8ef5d17"
+    }
+  ],
+  "draft_and_final_post_data_verification": "docs/evidence/a69-v1-post-data-source-verification.json",
+  "focused_ruff_format": {
+    "direct_exit_code": 0,
+    "files": 2
+  },
+  "make_check": {
+    "kind": "Preservation check, not scientific validation",
+    "command": [
+      "make",
+      "check"
+    ],
+    "direct_exit_code": 0,
+    "elapsed_seconds": 26.734063700016122,
+    "log": "docs/evidence/a69-v1-final-make-check.log",
+    "sha256": "7e8d2fc637010c3220e2ff13cb975714b1e23a1cc75f019700a3e505b99712cf",
+    "attempts": 69,
+    "versions": 271,
+    "preserved_files": 207557,
+    "uncompressed_bytes": 8072908134
+  },
+  "maintained_345_tests_rerun": false,
+  "limits": "Finite proof-object correctness only. Infinite theorem written; specific priority and natural useful application OPEN. No model/forward/biological data/timing/human review; goal not achieved.",
+  "goal": "OPEN"
+}

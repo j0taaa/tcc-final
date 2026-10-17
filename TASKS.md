@@ -74,8 +74,19 @@ cost remain open. No new neural campaign is credited to M70.
   capability BEFORE any extended implementation/application campaign. Do
   not replace actual useful benefit with an engineered response or declare
   article/user goal complete from finite correctness.
-- [ ] T9204: Independently preserve A69 source/evidence/draft/deviation,
-  required checks and normal upstream sync without new scientific cases.
+- [x] T9205: NEW written V2 b280f53 AFTER V1 oracles: finite polynomial
+  truncations keep the uniform adaptive INPUT-call bound, whereas the optimum
+  over ALL preselected full-batch kernels diverges. Explicit batch upper
+  R/4; qualitative compactness lower has no useful rate/R0 or uniform finite-
+  family bit-cost ratio. Not validated by V1 tests, no new code/data/timing.
+  Natural application and sufficient priority/goal remain OPEN.
+- [x] T9204: Independent V1 source2b2f22d/evidence2ac060d:752 files
+  11,479,959 bytes; written V2 source/evidenceb280f53:742 files11,460,548
+  bytes. Both create+original-Git/direct0; five V1 frozen hashes and V2 proof
+  match original Git; draft/final hashes/result identity separately checked.
+  Own Ruff/format2 PASS; final make check/direct0:69 attempts272 versions
+  208299 files8,084,368,682 bytes. Receipts a69-v{1,2}-final-* in docs/evidence.
+  No new cases or345-test rerun; normal commit/push follows. Meta OPEN.
 
 ## M91 — Constant-query residual sampling, before a complete sampler
 

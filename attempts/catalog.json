@@ -5102,6 +5102,35 @@
           ]
         }
       ]
+    },
+    {
+      "id": "69-adaptive-factory-separation",
+      "title": "Separação candidata de capacidade adaptativa frente a lotes preselecionados",
+      "conclusion": "Prova escrita antes de código: factory adaptativo exato com esperança uniforme finita de INPUT calls e bit work pontualmente finito; resposta construída C1,1/não-C2 exclui média finita para TODO lote genuinamente preselecionado e consumido. Não é lower bound de todos samplers nem uso natural/novidade suficiente confirmados. Primeira auditoria executada antes do freeze por erro de fluxo, draft/HEAD protocolo/desvio preservados. Source2b2f22d antes do repeat PASS0:393312 transcrições60 leis231 normas41 escalas64 localizações e6 recusas. Objetos de prova finitos, sem benchmark/NN/forwards. Prova infinita, prioridade e consumidor útil permanecem abertos; meta não cumprida.",
+      "reading": "attempts/69-adaptive-factory-separation/work/finite-polynomial-gap-v2.md; attempts/69-adaptive-factory-separation/work/result-v1.md; attempts/69-adaptive-factory-separation/work/theory-v1.md; attempts/69-adaptive-factory-separation/work/freeze-deviation-v1.md",
+      "versions": [
+        {
+          "id": "v1-adaptive-capability-audit",
+          "source_commit": "2b2f22db68796b84b2291c6e21025704f2fe9306",
+          "evidence_commit": "2ac060d310bfc6bd49c749d13f9379ee1f8a5538",
+          "evidence_roots": [
+            "docs/artifacts/raw/a69_adaptive_separation_v1_initial",
+            "docs/artifacts/raw/a69_adaptive_separation_v1_frozen",
+            "docs/evidence/a69-v1-post-data-source-verification.json",
+            "attempts/69-adaptive-factory-separation/work/result-v1.md",
+            "attempts/69-adaptive-factory-separation/README.md"
+          ]
+        },
+        {
+          "id": "v2-finite-polynomial-corollary",
+          "source_commit": "b280f53507ac5e02edfe7ab1437aa20340c9dd88",
+          "evidence_commit": "b280f53507ac5e02edfe7ab1437aa20340c9dd88",
+          "evidence_roots": [
+            "attempts/69-adaptive-factory-separation/work/finite-polynomial-gap-v2.md",
+            "attempts/69-adaptive-factory-separation/README.md"
+          ]
+        }
+      ]
     }
   ]
 }

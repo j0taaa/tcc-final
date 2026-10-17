@@ -27,6 +27,11 @@ finite mean for the same constructed response. Finite audit393312 transcripts/
 60 laws passes after a preserved source-freeze ordering deviation. Infinite
 proof, specific priority and natural useful consumer require critical audit;
 no broad sampler superiority, empirical application or fulfilled goal.
+V2 adds a LATER WRITTEN qualitative finite-polynomial gap against all
+preselected/full kernels, with no useful rate/R0 or finite-family full-bit
+ratio. V1's tests do not validate that corollary. Independent archives752/742
+files match Git; make check/direct0:69 attempts272 versions208299 files.
+Priority, proof audit and a natural useful application remain open.
 
 A68 V6 supplies a validated classical retrospective/cached control. V7's
 complete prospective whole-cost screen is NEGATIVE:1140/1140 COMPLETE,

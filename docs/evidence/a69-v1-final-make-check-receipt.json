@@ -1,0 +1,10 @@
+{
+  "kind": "Preservation check, not scientific validation",
+  "command": [
+    "make",
+    "check"
+  ],
+  "direct_exit_code": 0,
+  "elapsed_seconds": 26.734063700016122,
+  "log": "docs/evidence/a69-v1-final-make-check.log"
+}

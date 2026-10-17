@@ -1,0 +1,29 @@
+{
+  "kind": "Preservation verification, not mathematical/scientific validation",
+  "written_corollary_source_and_evidence_commit": "b280f53507ac5e02edfe7ab1437aa20340c9dd88",
+  "corollary_path": "attempts/69-adaptive-factory-separation/work/finite-polynomial-gap-v2.md",
+  "corollary_sha256": "44c8e07130c2d3c68cb72cb18fca9dd6532965f6e19d0241675ec5c73d4b1aa5",
+  "corollary_matches_original_git": true,
+  "archive_original_git_direct_exit_code": 0,
+  "archive_files": 742,
+  "archive_uncompressed_bytes": 11460548,
+  "make_check": {
+    "kind": "Preservation check, not scientific validation",
+    "command": [
+      "make",
+      "check"
+    ],
+    "direct_exit_code": 0,
+    "elapsed_seconds": 26.806093185965437,
+    "log": "docs/evidence/a69-v2-final-make-check.log",
+    "attempts": 69,
+    "versions": 272,
+    "preserved_files": 208299,
+    "uncompressed_bytes": 8084368682,
+    "sha256": "55e9cd3486308cd729731a578756069964eaee99f64cca4df92944b3f22ac015"
+  },
+  "earlier_v1_verification": "docs/evidence/a69-v1-final-verification.json",
+  "new_code_or_scientific_execution": false,
+  "limits": "V2 is a written qualitative INPUT-cost corollary conditional on V1; no useful rate, finite-family full-bit ratio, natural application, priority/human review or achieved goal. Earlier finite audits do not validate it.",
+  "goal": "OPEN"
+}

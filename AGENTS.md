@@ -1,5 +1,21 @@
 # AGENTS.md
 
+A69 V1/V2 independent archives752/742 files match original Git/direct0;
+five V1 hashes plus V2 written proof match. Draft/final ordering deviation
+and result identity preserved. make check/direct0:69 attempts272 versions
+208299 files8.084.368.682 bytes. Final receipts docs/evidence/a69-v{1,2}-final-
+verification.json. No extra scientific/345-test rerun; priority/natural useful
+application and independent infinite-proof audit remain OPEN, not achieved.
+
+A69 V2 b280f53 is a NEW WRITTEN finite-family corollary after V1 audits:
+finite polynomial responses keep uniform adaptive INPUT-call budget, while
+optimal expected input work over ALL fully preselected kernels diverges.
+Classical compactness, not a new general principle. Simple batch upperR/4;
+no useful rate/R0, finite-family uniform bit ratio, latency or natural-use
+claim. V1 tests do NOT validate this later proof; no new code/head/data.
+Critical infinite/finite proof audit, priority and external useful consumer
+still needed. Meta OPEN, A68 negative stopping decision intact.
+
 A69 opens a DIFFERENT written capacity question: exact adaptive factory with
 uniformly finite expected input calls and pointwise finite expected full bit
 work; constructed response locally C1,1/non-C2 excludes finite-mean fully
