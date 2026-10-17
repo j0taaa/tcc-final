@@ -1,0 +1,12 @@
+{
+  "cuda": "13.0",
+  "driver": "595.99.02",
+  "gpu": "NVIDIA GeForce RTX 3080 Ti",
+  "new_model_forwards": 0,
+  "numpy": "2.4.6",
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+  "python": "3.11.16",
+  "scope": "post-run environment metadata; does not relabel the raw producer or record timings",
+  "torch": "2.13.0+cu130",
+  "triton": "3.7.1"
+}

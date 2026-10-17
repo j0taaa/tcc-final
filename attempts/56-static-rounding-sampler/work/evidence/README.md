@@ -28,6 +28,9 @@ files were not yet committed at that invocation. Their exact executed SHA256
 values are recorded in the summary and match the preserved files. Do not call
 that protocol commit the producer of uncommitted source or a timing campaign.
 The code+evidence consolidation commit is separately recorded in the catalog.
+runtime-addendum.json records the unchanged environment AFTER the correctness
+run (Torch2.13.0+cu130, Triton3.7.1, Python3.11.16 and driver595.99.02); it
+does not replace raw metadata or pretend to be a premeasurement freeze.
 
 The FIRST invocation in .venv failed before GPU work because Triton was absent;
 gpu-v2-import-failure/ preserves its original log and executed sources. This
