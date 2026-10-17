@@ -20,6 +20,14 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A68 V4 now executes the full exact-bit/GMP numerical factory:1152 complete
+calls/24480 actual p-coins, balanced dense control and exact primitive audits.
+Separate V5 validates strong CLASSICAL known-formula/derivative/direct/cached
+controls:2136 compact kernels and288 full calls, ZERO black-box f queries
+while doing real algebra. Query savings alone no longer decide those cases.
+No competitive timing, full genealogy or NN result; goal/full-cost/priority
+OPEN. Results68/work/result-v4.md and result-v5.md; all earlier sources intact.
+
 A68 V3 replaces dense known-proposal preparation with a four-moment quartic
 normalizer and log-concave rejection route, using classical splitting for
 cap6 callbacks at the SAME source-count law. Exact finite audit1347 proposals/

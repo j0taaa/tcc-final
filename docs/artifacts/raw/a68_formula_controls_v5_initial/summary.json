@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "source_commit": "22278c0faa0d6f90eb54b7f97e497cf824c43cc1",
+  "counts": {
+    "piece_values_and_derivatives": 2034,
+    "hypergeometric_interval_masses": 7520,
+    "compiled_conditional_kernels": 2136,
+    "compiled_cache_replays": 12,
+    "formula_factory_complete": 288,
+    "formula_actual_source_calls": 8928,
+    "direct_ticket_parent_cases": 616,
+    "direct_complete_laws": 84,
+    "invalid_input_guards": 6
+  },
+  "observed_formula_work": {
+    "formula_evaluations": 5280,
+    "interval_terms": 187434,
+    "compiled_segments": 5916
+  },
+  "hashes": {
+    "formula_control_v5.py": "7a2f0b2d9256613ca93e2cb1fd34428c766ef8427fd0cc6a5b254e9e811736be",
+    "audit_formula_v5.py": "0a40652a40477fbd612cff3e9bc48d696aea2f0dc8b92e99060b8b9790e31ce4",
+    "formula-control-theory-v5.md": "55eacea19fa1978b1ebc49247638897bc89fa83da2636d4932d82f053ea9e4ba",
+    "runtime_v4.py": "41dccb126a0f62882aa58efa6ae52cb153408e7645ebe548d0cf6b40c73ee46a",
+    "audit_runtime_v4.py": "1b96863ad8f518b75a44b9b7741a037dc29fc10f92a7e210e8d81370eafea468",
+    "audit.py": "467818be145a831b2c213bd08492626e0fa7e64de02d7bb9e3780a06af6a684d"
+  },
+  "scope": "Classical control correctness; no competitive timing or genealogy/NN run.",
+  "goal": "OPEN"
+}

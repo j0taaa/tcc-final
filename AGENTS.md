@@ -15,6 +15,19 @@ Controles formula-aware spline/momentos truncados, derivadas, polinomiais
 diretos, cache global e alternativas coefficient-free precedem timings.
 Meta/T9102/T9106 abertas; resultado68/work/result-v4.md, preservarfontes antigos.
 
+A68 V5 prova63e1ecb ANTES de source22278c0/ÚNICO PASS0 valida controles
+CLÁSSICOS fortes formula-aware por polinômios/momentos HG truncados e derivadas:
+2034 valores/derivadas7520 intervalos2136 kernels12 caches;288 calls completas
+usam8928 p-coins reais. Diretos/padded/short-circuit616 transcripts84 leis6
+recusas passam. Para estas fórmulas conhecidas fazem ZERO queries f black-box,
+mas álgebra/cache são cobrados. Portanto cap6/lower oracle não comprovam
+vitória prática nesses inputs. Controles recebem seu próprio n0 válido e
+cache persistente; padded polígonos têm médias de pais1/1/1.25/1.5. Não excluir
+os controles baratos; spline não polinomial não recebe falso controle finito.
+Nenhum timing competitivo/genealogia/NN novo. V4/anteriores intactos.
+T9110 exige protocolo de custo completo ANTES de medições, sem callbacks
+artificialmente lentos/handicap de cache/mudar gate pós-dados. Meta aberta.
+
 A68 V3 prova/protocolobdedd14 ANTES de source5e97323/ÚNICO PASS0:1347
 propostas por4 momentos,6735 raw moments211011 pontos de envelope/rejeição,
 208323 desigualdades logcôncavas1347 leis de modo/cutoff/rejeição,966 leis

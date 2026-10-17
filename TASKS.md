@@ -97,6 +97,22 @@ cost remain open. No new neural campaign is credited to M70.
   12/18 and8 guards pass. No genealogy/NN/competitive timing. Raw a68_exact_
   runtime_v4_initial, result68/work/result-v4.md. Formula-aware/derivative/
   direct/cached/coefficient-free controls/full-cost gate remain; goal OPEN.
+- [x] T9109: Classical-control proof63e1ecb BEFORE source22278c0/ONE PASS0:
+  2034 known-formula/second-derivative checks7520 HG intervals2136 compact
+  FD/analytic kernels12 caches; ALL288 complete calls8928 real input p-coins.
+  Direct/padded/short-circuit616 transcript cases84 exact laws6 guards PASS.
+  Known formulas have ZERO black-box f queries, with formula/interval algebra
+  charged; do not infer speed from callback counts. No competitive timings or
+  full genealogy/NN; result68/work/result-v5.md, raw a68_formula_controls_
+  v5_initial. V4 unchanged. Whole-cost protocol/priority/positive goal OPEN.
+- [ ] T9110: Freeze prospective first-output/repeated-node full-cost protocol
+  after reviewing equally informed coefficient-free/lazy controls. Compare
+  sparse, balanced dense, formula FD, analytic derivatives, direct eligible
+  factories and persistent caches; charge RNG/preparation/source/function/
+  algebra/memory, preserve all negative cases. No manufactured slow callback,
+  warm-cache handicap or post-data gate change. Correctness is not success.
+- [ ] T9111: Preserve V4/V5 source/evidence independently, verify hashes,
+  required checks and normal upstream sync without new scientific cases.
 - [x] T9107: Independent V3 source5e97323/evidence0e54736,742 files
   11,452,755 bytes; create+original-Git/direct0. Eight frozen hashes and
   eight unchanged V1/V2 files match Git; own Ruff/format2 PASS. make check/

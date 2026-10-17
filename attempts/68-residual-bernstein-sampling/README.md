@@ -145,3 +145,11 @@ factories. Zero callback counts do not make their arithmetic free. Criteria
 CLASSICAL CONTROLS, not promoted contributions. Prospective checks in
 [the control contract](work/formula-control-theory-v5.md); no competitive
 measurement or sufficient priority/user-goal claim yet.
+
+V5 contract63e1ecb/source22278c0 precede ONE PASS0:2034 piece/derivative
+checks7520 exact HG intervals2136 compiled kernels12 cache replays; ALL288
+complete formula/derivative calls use8928 actual p-coins. Direct controls
+have616 exhaustive transcripts84 complete laws6 refusals. These CLASSICAL
+known-formula controls need ZERO black-box f queries and expose real algebraic
+work, so oracle-query savings alone cannot justify a practical win. See
+[the result](work/result-v5.md). Timings/full consumer/priority and goal OPEN.

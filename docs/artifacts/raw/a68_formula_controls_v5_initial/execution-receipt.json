@@ -1,0 +1,12 @@
+{
+  "source_commit": "22278c0faa0d6f90eb54b7f97e497cf824c43cc1",
+  "command": [
+    "/tmp/a68-runtime-v4/bin/python",
+    "attempts/68-residual-bernstein-sampling/work/audit_formula_v5.py",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a68_formula_controls_v5_initial"
+  ],
+  "started_utc": "2026-10-17T10:35:13.851979+00:00",
+  "elapsed_diagnostic_seconds": 1.0178303830325603,
+  "direct_exit_code": 0,
+  "scope": "Exact classical formula/derivative/direct control preflight only, no competitive timing"
+}

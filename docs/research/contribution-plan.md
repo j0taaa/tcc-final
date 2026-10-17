@@ -1,5 +1,40 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A68 full runtime and equally informed formula controls
+
+Previous goal turn made verified PROGRESS: V3 sparse-proposal theorem and
+finite certificates/consumer scope synced7509d33. No live job remained.
+T9102/T9106 still required an executable runtime and complete strong controls.
+
+V4 contract67bafcf BEFORE source5775a89/ONE PASS0 installs pinned gmpy2 2.2.1
+in an ISOLATED /tmp/a68-runtime-v4 environment; actual GMP6.3.0, maintained
+.venv unchanged. Exact-bit scalar decisions, shared-uniform geometric tails,
+balanced integer/binomial/weighted-sum arithmetic and complete outer factory
+execute ALL1152 calls/576 matched source tapes,24480 real external input coins.
+No random failure; one deliberate RESOURCE_FAIL precedes input. Primitive
+prefix counts30576/13104/26208 and966 native kernel pairs pass. This is a
+numerical factory, not a genealogy/NN/timing result. PRNG samples are not a
+proof of iid entropy; mathematical fair bits/bounds remain the contract.
+
+V5 classical-control proof63e1ecb BEFORE source22278c0/ONE PASS0 provides
+known-piecewise-polynomial and analytic-derivative integration via truncated
+HG factorial moments, with balanced sums and shared caches. All2034 piece/
+derivative checks7520 interval masses2136 kernels12 caches and288 complete
+calls/8928 p-coins pass. Direct polynomial/padded/short-circuit alternatives
+have616 exact transcripts84 laws6 refusals. They are NOT own inventions.
+The known-formula controls do ZERO black-box f queries while performing
+5280 formula evaluations187434 interval terms5916 compiled segments here.
+
+Thus the scoped value-oracle lower bound does not establish a practical win
+for these known inputs. No competitive times/gates were measured or changed.
+Next T9110 freezes a full first-output/repeated-vote cost protocol, includes
+formula/direct/derivative/global-cache and coefficient-free alternatives,
+all preparation/RNG/source/arithmetic/memory and negative cases. No artificial
+slow function or weak Fraction opponent. Full genealogy/use validation,
+adequate own priority/publication and the positive objective remain OPEN.
+All source/receipts/results in68/work/{runtime-contract-v4,result-v4,
+formula-control-theory-v5,result-v5}.md and respective raw directories.
+
 ## 2026-10-17 — A68 sparse proposal, with a published genealogy consumer
 
 The previous goal turn was PROGRESS: V1/V2 exact laws/query consequence and
