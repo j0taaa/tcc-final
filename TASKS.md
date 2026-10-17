@@ -71,6 +71,12 @@ cost remain open. No new neural campaign is credited to M70.
   integration controls, with input/bit/preparation costs and real consumer.
   No production implementation/campaign/article promotion from correctness
   alone. T9005/T8809/T8903 and positive goal stay OPEN until enough evidence.
+- [ ] T9104: V2 proof written AFTER V1 but BEFORE new code: classical Peano
+  slope bound H/(3m) lowers envelope mass to19H/(24m^1.5), safe margin1/28,
+  permits SAME tighter H-gap count law with<=9 callbacks. Freeze separate
+  source; repeat whole prescribed finite law audit plus independent first-
+  derivative checks. Do not attribute V2 law/bounds to V1 producer or infer
+  full-cost/priority from correctness. See68/work/same-count-theory-v2.md.
 - [ ] T9103: Preserve source/proof/evidence independently, run appropriate
   checks, normal commit/push and verify upstream. No maintained345-test rerun
   solely for isolated mathematical audit or change to earlier frozen attempts.

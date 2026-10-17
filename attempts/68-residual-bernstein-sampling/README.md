@@ -64,3 +64,11 @@ V1 contractad5a55b/sourceb5064b2 precede ONE PASS/direct0:966 exact laws,
 f-values; no complete sampler or timing/NN evidence. Enlarged2H still pays
 more input coins; next sharper slope bound is a separate POST-audit lead.
 See[the V1 result](work/result-v1.md). Own useful priority/full cost/goal OPEN.
+
+V2 re-evaluates2/3/4/6 BEFORE new code: the sharper CLASSICAL Peano slope
+bound H/(3m) gives a smaller f-independent envelope and safe margin H/(28m^1.5).
+It permits the SAME tighter H-gap source-count law as the competent classical
+control, retaining <=9 calls. V1's input penalty is therefore removed in the
+WRITTEN V2 construction, not relabeled in V1 data. Remaining criteria and
+priority/full-cost/real-consumer obligations unchanged. Prospective audit and
+proof in[the addendum](work/same-count-theory-v2.md), before V2 execution.
