@@ -4587,6 +4587,32 @@
           ]
         }
       ]
+    },
+    {
+      "id": "59-numeric-interval-infilling",
+      "title": "Infilling numérico completo com intervalos decimais e notação científica",
+      "conclusion": "Written1aac564 BEFORE prototype: non-CFL unbounded [1,2) numeral language; POSITIVE O_I(L)-state/edge unambiguous bounded-complete automaton, Omega(L) NFA lower bound for that interval. Classical counters/suffix DAGs/fooling sets/weighted inference acknowledged. Pinned llguidance/XGrammar restricted range forms inspected, not executed full-library comparison or verified novelty. Initial3a94c76 fails10e1 (100 accepted); failure preserved97f01f8 before sign repair439f4b1. Corrected minimal111-line [1,2) reference passes4 oracles0.737s:48,880 constructed exact numerals/10 malformed,900 fooling pairs,3 rational-token cases/15 marginal coefficients with original IDs/aliases/fixed holes/zero mass. Later full330 tests PASS94.438s/Ruff5 files PASS. No general interval/EOT/PAD/native decoder integration, A59 model read/forward/update or competitive timing. Complete register/digit-DP controls, own substantial difference, real external usefulness/publication and positive user goal remain OPEN. A58 stays closed negative.",
+      "reading": "attempts/59-numeric-interval-infilling/README.md",
+      "versions": [
+        {
+          "id": "initial-sign-bug",
+          "source_commit": "3a94c76480f039d50acf28589bd5eb890a4e1f78",
+          "evidence_commit": "97f01f84abb086bda28091b86152fc36afad9795",
+          "evidence_roots": [
+            "attempts/59-numeric-interval-infilling/README.md",
+            "attempts/59-numeric-interval-infilling/work"
+          ]
+        },
+        {
+          "id": "v1",
+          "source_commit": "439f4b11e5fc2ae6af05141050c78fc5f421783d",
+          "evidence_commit": "c4319af0f0249d06e6564ce7d3ba6e3b94a65892",
+          "evidence_roots": [
+            "attempts/59-numeric-interval-infilling/README.md",
+            "attempts/59-numeric-interval-infilling/work"
+          ]
+        }
+      ]
     }
   ]
 }
