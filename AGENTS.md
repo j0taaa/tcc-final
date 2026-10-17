@@ -1,5 +1,15 @@
 # AGENTS.md
 
+A69 V4 original Mendo Algorithm1/Theorems1/2/proofs read: early termination
+and pointwise finite work are classical. A Lipschitz batch bound plus p^a
+already gives generic pointwise finite/infinite separation; p^K already
+has growing finite/full-bit gaps at each fixed p<1. Only A69's uniform-input/
+interior/all-kernel COMBINATION remains a possible own priority, UNCONFIRMED.
+No natural consumer identified in four checked routes; decline PRESENT
+application expansion, do not add a campaign from the proof object alone.
+Scope/hashes and eight criteria:69/work/priority-and-use-audit-v4.md. KO1994
+original NOT read; no new code/tests/model/timings/review. Positive goal OPEN.
+
 A69 V3 independent source2d15a05/evidencee88b9d0 archive760 files11.507.769
 bytes matches original Git/direct0; six hashes/Ruff+format2 PASS. make check
 direct0:69 attempts273 versions209059 files8.095.876.451 bytes. Final receipt

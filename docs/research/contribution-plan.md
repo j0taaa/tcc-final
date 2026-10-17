@@ -3807,3 +3807,34 @@ decision62/work/control-and-decision-v2.md. A simple endpoint solver/neural
 campaign is not triggered from these facts; specific own useful consequence,
 priority and the positive scientific goal remain OPEN. Contract correction or
 availability of a real consumer cannot substitute for that consequence.
+
+## 2026-10-17 — A69 original-source priority and natural-use audit
+
+V4 reads Mendo1612.08923v5 Sections1/2, Algorithm1, Theorems1/2 and their
+complete proofs7.2/7.3. Actual consumed input is outcome-dependent: p^a
+costs p^(a-1) at each p>0, diverging at0. Independent potential cap does not
+mean independent consumed work. Koskela2510.01941v2's nonadaptive power-series
+reference is not a license to classify this stopped version as a full batch.
+Nacu--Peres's old square-root question was already answered there.
+
+Elementary Bernstein first-derivative bound gives a Lipschitz constant EN
+for EVERY preselected/full response. Thus p^a already separates pointwise
+finite adaptive work from all finite-mean batches. Rational a=1/2 plus
+geometric survival also has pointwise finite bit cost. Powers p^K already
+have adaptive(1-p^K)/(1-p) versus optimal full-batch K; a bounded-range mixture
+and binary K retain a pointwise Omega_p(K/logK) full-work separation. These
+are CLASSICAL/elementary controls, not new contributions or physical timings.
+
+Only A69's uniform-input bound over[0,1], interior accumulation and all-kernel
+combination remains a possible specific new result; priority is unconfirmed.
+Wastlund original2.6/2.7 composition/mixture proofs read; KO1994 original was
+NOT obtained/read. Exact scopes/hashes and deductions are in69/work/priority-
+and-use-audit-v4.md. Old frozen sources and audit attribution remain intact.
+
+Ancestry-before-colours requires a colour-independent graph; A69's stopped
+predicate does not supply it. Arbitrary MCMC gating lacks an independent
+target, PPL lazy control already stops, and f_2 cheaply handles fixed tolerance.
+No natural consumer for the constructed response was identified. Decline
+PRESENT application expansion; don't turn this into a practical article or
+rerun oracle counts. The positive goal requires a different justified real
+operation or a substantive useful consequence, and remains OPEN.

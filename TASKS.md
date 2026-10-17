@@ -49,6 +49,22 @@ cost remain open. No new neural campaign is credited to M70.
 
 ## M92 — Adaptive finite work beyond every preselected batch
 
+- [x] T9209: V4 ORIGINAL Mendo Algorithm1/Theorems1/2/proofs7.2/7.3
+  audit confirms classical early stopping and finite pointwise work p^(a-1).
+  Elementary global Lipschitz bound excludes ALL finite-mean full batches
+  for p^a; p^K already has pointwise growing finite/full-bit gaps. Generic
+  adaptivity/pointwise-finiteness/growing-gap priority rejected, not a proof
+  against A69's stronger uniform-input/interior combination. Wastlund2.6/2.7
+  originals read; KO1994 original NOT obtained/read. Scope/hashes in69/work/
+  priority-and-use-audit-v4.md; no new code/test/model/timing/human review.
+- [x] T9210: V4 natural-use decision declines PRESENT application expansion:
+  ancestry-before-colours cannot use colour-dependent stopping; arbitrary
+  MCMC gate lacks an independent target; lazy PPL control already stops;
+  fixed-tolerance batch control remains cheap. No natural exactness-essential
+  consumer identified, no new campaign selected. T9203/use/precise priority
+  and positive goal OPEN; preserve theorem without promoting it as practical
+  success. Need a different justified operation or substantive useful own
+  consequence before further implementation.
 - [x] T9206: Previous turn PROGRESS revalidated from af04e93/upstream/remote,
   A69 frozen reference/archive receipts; unrelated PDF untouched. V3 proof/
   protocol3b53b76 BEFORE source2d15a05/ONE PASS0. Written sharp-order source

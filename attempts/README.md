@@ -20,6 +20,14 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A69 V4[original-source/use audit](69-adaptive-factory-separation/work/priority-and-use-audit-v4.md)
+finds Mendo's classical early termination and elementary power controls already
+supply generic pointwise/growing-gap claims. Only the uniform-input/interior
+combination remains a possible specific priority. Four proposed use routes do
+not identify a natural consumer; PRESENT application expansion is declined.
+No new implementation/campaign; the theorem and all old evidence remain.
+Positive goal and sufficient priority/use remain OPEN.
+
 A69[adaptive factory separation](69-adaptive-factory-separation/README.md)
 writes a positive capacity candidate: uniformly finite expected input work/
 pointwise finite expected bit work versus EVERY preselected full batch of

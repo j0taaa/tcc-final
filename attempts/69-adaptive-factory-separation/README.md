@@ -94,3 +94,15 @@ separate audit notes that f_2 approximates all f_R to error<10^-8 with
 preselected mean1/2; exactness must be independently essential in a real
 consumer. No large application/NN/timing campaign is selected. See[the result](work/result-v3.md)
 and[the proof/relevance audit](work/proof-and-use-audit-v3.md).
+
+V4 reads Mendo's ORIGINAL Algorithm1/Theorems1/2/proofs: early termination
+already gives pointwise finite consumed work for p^a. A classical Lipschitz
+bound excludes every finite-mean full batch for that response; powers p^K
+already give a growing finite/full-bit gap at each fixed p<1. Neither generic
+claim is credited as A69 novelty. The possible own distinction is the
+UNIFORM-input/interior/all-kernel combination, still unconfirmed in priority.
+The eight criteria and four prospective uses are reassessed in[the V4 audit](work/priority-and-use-audit-v4.md).
+No natural consumer is selected; exactness alone does not justify the
+constructed response. Preserve the theory, decline further application
+expansion on this rationale, and keep the positive goal OPEN. No new code,
+scientific rerun, timing, model or human review. Old sources remain unchanged.

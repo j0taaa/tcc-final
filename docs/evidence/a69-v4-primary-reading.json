@@ -1,0 +1,25 @@
+{
+  "kind": "Original-source reading record; no scientific execution or priority certificate",
+  "date": "2026-10-17",
+  "sources": [
+    {
+      "original_url": "https://arxiv.org/pdf/1612.08923",
+      "local_filename": "mendo-v5.pdf",
+      "bytes": 264352,
+      "sha256": "33051c8dfb4c4d40f351c3c8f59856a9c34e48318a4491a39e8c7c1fcf304605",
+      "scope": "Sections1/2, Algorithm1, Theorems1/2 and complete proofs7.2/7.3 read; Section3 statements/reference list inspected, not its full proof or all other sections."
+    },
+    {
+      "original_url": "https://www.math.chalmers.se/~wastlund/coinFlip.pdf",
+      "local_filename": "wastlund-1999.pdf",
+      "bytes": 179232,
+      "sha256": "df27b6b358c3faf680a392fc3c827cca1151eb2016f8af0cf8b91dfcd70b13cb",
+      "scope": "Introduction/definitions and Section2 Theorems2.6/2.7 with proofs read; general existence proof and Section4 not audited."
+    }
+  ],
+  "not_read": "Keane-OBrien1994 original DOI10.1145/175007.175019 unavailable in bounded publisher retrieval; no original expected-cost claim used.",
+  "audit": "attempts/69-adaptive-factory-separation/work/priority-and-use-audit-v4.md",
+  "new_code": false,
+  "new_scientific_execution": false,
+  "goal": "OPEN"
+}
