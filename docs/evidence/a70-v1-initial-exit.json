@@ -1,0 +1,14 @@
+{
+  "kind": "ONE minimal constructed numerical correctness audit; elapsed is diagnostic only",
+  "producer_commit": "803fce7937d5f9548d622c2701f5f7c5131c64ad",
+  "command": [
+    ".venv/bin/python",
+    "attempts/70-native-adam-erasure/work/audit_v1.py",
+    "--output",
+    "docs/artifacts/raw/a70_native_erasure_v1_initial"
+  ],
+  "direct_exit_code": -11,
+  "elapsed_seconds": 1.5497978330240585,
+  "log": "docs/evidence/a70-v1-initial-audit.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

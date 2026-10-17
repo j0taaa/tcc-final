@@ -65,3 +65,12 @@ correctness/counterexample prototype is selected at this stage.
 Decision: admit only the bounded numerical correctness prototype of this
 specific observable-state contract. Do not promote generic absorption,
 deferred Adam, or a passing scalar audit as the scientific result requested.
+
+V1 source803fce79 was frozen before ONE build/audit; build succeeded but the
+child died with signal11. Loader-only diagnosis confirms generic `step`
+resolved to libc's legacy symbol. Failed source/raw artifacts/exit are
+preserved; see[the failed result](work/result-v1-failed.md). No passing primary
+audit is claimed. V2's[linkage-only protocol](work/protocol-v2-linkage.md)
+keeps all numerical criteria/grid/cap and requires NEW independent source
+files/commit before a corrected run. Criteria1--8 stay in force; this repair
+does not establish novelty, practical use, whole latency or the user goal.

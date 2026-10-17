@@ -1,0 +1,11 @@
+{
+  "kind": "Loader-binding diagnosis ONLY; no numeric audit replay",
+  "original_producer_commit": "803fce7937d5f9548d622c2701f5f7c5131c64ad",
+  "loader_exit_code": 0,
+  "library_sha256": "360b6209453430c8205cef9dc490a193f505a30fa7aa73738975e3181ebaa739",
+  "bindings": [
+    "1690041:\tbinding file /tmp/a70-native-v1-i9vjbuwa/native.so [0] to /tmp/a70-native-v1-i9vjbuwa/native.so [0]: normal symbol `weight'",
+    "1690041:\tbinding file /tmp/a70-native-v1-i9vjbuwa/native.so [0] to /tmp/a70-native-v1-i9vjbuwa/native.so [0]: normal symbol `moments'",
+    "1690041:\tbinding file /tmp/a70-native-v1-i9vjbuwa/native.so [0] to /lib/x86_64-linux-gnu/libc.so.6 [0]: normal symbol `step'"
+  ]
+}

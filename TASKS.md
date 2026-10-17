@@ -61,6 +61,11 @@ cost remain open. No new neural campaign is credited to M70.
   exact-rational primitive/short-trajectory oracle and full native control,
   all fallbacks/boundaries/refusals and nontrivial skipped work preserved.
   No competitive campaign/model/training triggered by correctness alone.
+- [x] T9602-V1-failure: Source803fce79 BEFORE initial build/audit; C build0,
+  child signal11/direct-11 (outer245), no persisted primary rows/false PASS.
+  Source/raw/exit preserved. Loader-only diagnosis binds generic step to
+  libc legacy step; V2 linkage-only repair protocol written before new files.
+  No arithmetic/grid/cap changes, no original-source overwrite or NN/timing.
 - [ ] T9603: Assess result against natural gap/precision demand and closest
   exact sparse optimizer/compiler controls before substantive expansion.
   Archive independent source/evidence and verify required repository checks,

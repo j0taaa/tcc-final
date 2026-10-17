@@ -1,0 +1,19 @@
+{
+  "command": [
+    "cc",
+    "-std=c11",
+    "-O2",
+    "-fPIC",
+    "-shared",
+    "-ffp-contract=off",
+    "-fno-fast-math",
+    "-fexcess-precision=standard",
+    "native_v1.c",
+    "-lm",
+    "-o",
+    "native.so"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}
