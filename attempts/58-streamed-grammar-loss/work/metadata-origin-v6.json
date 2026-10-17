@@ -1,0 +1,13 @@
+{
+  "source_commit": "303cff72d6e49e8b1dab29ea3ea84c79f4780646",
+  "files": {
+    "lexer.py": {
+      "source": "attempts/27-finite-closure-certificates/work/frozen/lexer.py",
+      "sha256": "5e19976fa1e4448e80a1baa5ad52e1f602c5e327734469067c190da453e94ca7"
+    },
+    "table.py": {
+      "source": "attempts/27-finite-closure-certificates/work/frozen/table.py",
+      "sha256": "9d8eebd7dd5e1814a1be7e1ada3a0a390ef9ffbc155b1e21e6dd59a1ee632689"
+    }
+  }
+}
