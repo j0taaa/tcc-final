@@ -1,0 +1,159 @@
+{
+  "kind": "Independent after-data literal/arithmetic audit; no new timing or scientific producer",
+  "producer_commit": "009fdfef2a8fc5bd6c46cb6ec5b9c1bb0caed423",
+  "counts": {
+    "records": 1140,
+    "outputs": 109440,
+    "simulated_source_calls": 1463955
+  },
+  "all_case_strong_wins": {},
+  "nonpolynomial_blockers": [
+    {
+      "case": [
+        "spline",
+        "1/4",
+        "cold"
+      ],
+      "wall_fastest_comparator": "dense",
+      "sparse_vs_that_control": {
+        "wall": 0.9889464949587774,
+        "cpu": 0.9888447459051056
+      }
+    },
+    {
+      "case": [
+        "spline",
+        "1/4",
+        "cached"
+      ],
+      "wall_fastest_comparator": "formula",
+      "sparse_vs_that_control": {
+        "wall": 0.8548950473427962,
+        "cpu": 0.8354551489977096
+      }
+    },
+    {
+      "case": [
+        "spline",
+        "1/2",
+        "cold"
+      ],
+      "wall_fastest_comparator": "dense",
+      "sparse_vs_that_control": {
+        "wall": 0.9712863060186295,
+        "cpu": 0.9713518684059192
+      }
+    },
+    {
+      "case": [
+        "spline",
+        "1/2",
+        "cached"
+      ],
+      "wall_fastest_comparator": "formula",
+      "sparse_vs_that_control": {
+        "wall": 0.9468334021448339,
+        "cpu": 0.9469761471544625
+      }
+    },
+    {
+      "case": [
+        "spline",
+        "3/4",
+        "cold"
+      ],
+      "wall_fastest_comparator": "dense",
+      "sparse_vs_that_control": {
+        "wall": 0.9970323176751048,
+        "cpu": 0.9970466036584786
+      }
+    },
+    {
+      "case": [
+        "spline",
+        "3/4",
+        "cached"
+      ],
+      "wall_fastest_comparator": "formula",
+      "sparse_vs_that_control": {
+        "wall": 0.9084610538399107,
+        "cpu": 0.9083799694174596
+      }
+    },
+    {
+      "case": [
+        "reflected_spline",
+        "1/4",
+        "cold"
+      ],
+      "wall_fastest_comparator": "formula",
+      "sparse_vs_that_control": {
+        "wall": 0.9905267028498999,
+        "cpu": 0.9905220662777279
+      }
+    },
+    {
+      "case": [
+        "reflected_spline",
+        "1/4",
+        "cached"
+      ],
+      "wall_fastest_comparator": "formula",
+      "sparse_vs_that_control": {
+        "wall": 0.8516113185481727,
+        "cpu": 0.8514525084924628
+      }
+    },
+    {
+      "case": [
+        "reflected_spline",
+        "1/2",
+        "cold"
+      ],
+      "wall_fastest_comparator": "formula",
+      "sparse_vs_that_control": {
+        "wall": 0.9786958705491435,
+        "cpu": 0.9785275263561235
+      }
+    },
+    {
+      "case": [
+        "reflected_spline",
+        "1/2",
+        "cached"
+      ],
+      "wall_fastest_comparator": "formula",
+      "sparse_vs_that_control": {
+        "wall": 0.9207043322185543,
+        "cpu": 0.9206641360511107
+      }
+    },
+    {
+      "case": [
+        "reflected_spline",
+        "3/4",
+        "cold"
+      ],
+      "wall_fastest_comparator": "retrospective",
+      "sparse_vs_that_control": {
+        "wall": 1.0037497316960418,
+        "cpu": 1.0037318962717128
+      }
+    },
+    {
+      "case": [
+        "reflected_spline",
+        "3/4",
+        "cached"
+      ],
+      "wall_fastest_comparator": "formula",
+      "sparse_vs_that_control": {
+        "wall": 0.9062750616351769,
+        "cpu": 0.9061650421534007
+      }
+    }
+  ],
+  "raw_rows_sha256": "3bf39d3ff9fcf5725a06fd428db101e9108fe54ff6c3ffb9bf25e491bd4a308b",
+  "status": "PASS",
+  "goal": "OPEN"
+}

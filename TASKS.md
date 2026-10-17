@@ -114,9 +114,20 @@ cost remain open. No new neural campaign is credited to M70.
   nonpolynomial cases in one operation only permits separately justified
   application. Negative stops this application; no manufactured slow f or
   post-data rescue. work/cost-{contract-v7.md,protocol-v7.json}; runner pending.
-- [ ] T9113: Freeze V7 runner/analyzer before ONE complete1140-row necessity
-  screen; preserve all statuses and gate result without claiming independent
-  validation/priority or completed scientific goal.
+- [x] T9113: V7 protocol7e459f1 BEFORE final runner009fdfe/ONE direct0:
+  ALL1140 rows COMPLETE,109440 outputs1463955 SIMULATED p-coin calls720
+  matched core-source checks; no errors/refusals/timeouts. Gate NEGATIVE0/6
+  cold AND0/6 cached nonpolynomial cases, also0/18 all cases in each operation.
+  Independent AFTER-data audit of all raw worker/tape/clocks/RSS/gates PASS.
+  Current numerical application CLOSED, no more seeds/degrees/functions or
+  manufactured costly callback/full genealogy campaign to rescue it. Source/
+  data/theorem preserved; result-v7.md/raw a68_whole_cost_v7_initial. No
+  independent validation/priority or completed scientific goal.
+- [ ] T9114: Preserve independent V6/V7 snapshots with original-Git/hash
+  checks and normal upstream sync; no scientific rerun.
+- [ ] T9115: Identify a DIFFERENT real operation/useful own consequence and
+  closest original-source controls before any next substantive prototype.
+  A68's failed numerical application and all previous stopping rules remain.
 - [x] T9112: V6 classical retrospective control contract7792fe9 BEFORE
   source7439b49/ONE PASS/direct0:966 complete chains42066 nested intervals
   40134 independent remaining masses2448 prefixes96 cache replays. All288

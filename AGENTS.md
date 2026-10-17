@@ -1,5 +1,18 @@
 # AGENTS.md
 
+A68 V7 closes the numerical application NEGATIVE: protocol7e459f1 BEFORE
+final runner009fdfe/ONE direct0, ALL1140 rows COMPLETE,109440 outputs and
+1463955 SIMULATED PRNG p-coin calls720 matched source checks,0 failures/errors.
+Strong whole-API wall AND CPU wins0/6 cold and0/6 cached nonpolynomial cases,
+also0/18 all cases per operation. Full preparation/RNG/source/fast GMP callback/
+cache work and child costs/RSS recorded; every strong control completed.
+After-data independent literal/source/clocks/RSS/gate audit PASS. Result
+68/work/result-v7.md. DO NOT add seeds/degrees/functions, slow callbacks,
+weaken gates or run full genealogy to rescue this application. The cap6
+written theorem is not refuted, but no adequate priority/useful whole-cost
+advantage/positive goal follows. Identify a different real operation and own
+useful consequence before another substantive prototype. All versions intact.
+
 A68 V6 classic retrospective control, proof7792fe9/source7439b49 before
 ONE PASS0:966 chains42066 nested intervals40134 exact remaining masses2448
 prefixes96 fresh-uniform cache calls. All288 numerical full calls/8928

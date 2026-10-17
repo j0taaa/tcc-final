@@ -182,3 +182,12 @@ cost/RSS also recorded;7 includes cheap polynomial/direct/derivative/lazy
 alternatives and every negative case;8 still requires independent real-use
 benefit and adequate own novelty. No manufactured callback or rescuing a
 negative gate. See[the prospective cost contract](work/cost-contract-v7.md).
+
+V7 protocol7e459f1/final runner009fdfe precede ONE complete1140-row run:
+109440 outputs1463955 SIMULATED input-coin calls, zero failures/errors,
+720 matched source pairs. Strong whole-API wins are0/6 cold AND0/6 cached
+nonpolynomial cases;0/18 across all cases in each operation. Gate NEGATIVE
+closes this numerical application, with no rescue by more seeds/functions/
+threshold changes or fabricated costly callbacks. Raw/source and scoped
+cap6 theorem stay preserved. Independent after-data literal/gate audit PASS.
+See[the decision](work/result-v7.md). Positive user goal still OPEN.

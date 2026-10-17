@@ -1,0 +1,12 @@
+{
+  "source_commit": "009fdfef2a8fc5bd6c46cb6ec5b9c1bb0caed423",
+  "command": [
+    "/tmp/a68-runtime-v4/bin/python",
+    "attempts/68-residual-bernstein-sampling/work/cost_v7.py",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a68_whole_cost_v7_initial/results"
+  ],
+  "started_utc": "2026-10-17T10:50:00.056149+00:00",
+  "elapsed_wall_seconds": 43.51473409996834,
+  "direct_exit_code": 0,
+  "scope": "Frozen whole-cost numerical development necessity screen, not independent biological/neural validation"
+}

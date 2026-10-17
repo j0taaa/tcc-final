@@ -20,6 +20,14 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A68 V6 supplies a validated classical retrospective/cached control. V7's
+complete prospective whole-cost screen is NEGATIVE:1140/1140 COMPLETE,
+109440 outputs1463955 SIMULATED source calls, strong wins0/6 cold AND0/6 cached
+nonpolynomial cases (also0/18 all cases). Every control finished. No more
+seeds/functions/threshold changes or full genealogy campaign to rescue it.
+Written scoped cap6 theorem/raw/controls remain, not a fulfilled positive goal.
+See[the decision](68-residual-bernstein-sampling/work/result-v7.md).
+
 A68 V4 now executes the full exact-bit/GMP numerical factory:1152 complete
 calls/24480 actual p-coins, balanced dense control and exact primitive audits.
 Separate V5 validates strong CLASSICAL known-formula/derivative/direct/cached

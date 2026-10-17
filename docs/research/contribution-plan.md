@@ -1,5 +1,28 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A68 stronger lazy control and negative whole-cost decision
+
+V6 proof7792fe9 BEFORE source7439b49/ONE PASS0 validates the CLASSICAL
+retrospective control with our same supplied envelope:966 full chains,
+42066 nested intervals40134 remaining masses2448 prefixes96 persistent
+fresh-uniform calls; all288 complete calls8928 simulated source calls match
+V5 inputs. No coefficient-evaluation lower bound against this lazy sampler.
+
+V7 protocol7e459f1 BEFORE final runner009fdfe and ONE1140-row execution/direct0.
+All1140 COMPLETE109440 outputs1463955 simulated p-coin calls720 literal
+core matches. Strong wins0/6 cold AND0/6 cached nonpolynomial cases, also0/18
+all cases per operation. The predeclared3/6 gate FAILS. All controls complete;
+full initialization/RNG/source/GMP callbacks/cache costs and total child/RSS
+retained. Independent AFTER-data1140-payload/source/clock/gate audit PASS.
+
+The numerical application is CLOSED without further seeds/functions/degrees,
+fake costly callbacks, changed thresholds or a rescue genealogy campaign.
+This does not disprove the written scoped cap6 theorem, establish sufficient
+priority/usefulness or meet the user's positive goal. A different real
+operation and plausible own useful consequence must precede the next large
+prototype. All sources/raw/results remain in68/work and docs/artifacts/raw/
+a68_{retrospective_v6,whole_cost_v7}_initial. No new NN/training/biological data.
+
 ## 2026-10-17 — A68 full runtime and equally informed formula controls
 
 Previous goal turn made verified PROGRESS: V3 sparse-proposal theorem and
