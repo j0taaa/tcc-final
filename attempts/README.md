@@ -20,6 +20,15 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A61 preserves a BEFORE-code category-log/conditional-mantissa CRPS formulation,
+four exact rational oracles and the345-test PASS. The reference enumerates tiny
+paths; its polynomial compiler remains written. A later analytical decimal
+boundary example and complete semantic/codec controls decline neural expansion
+of this simple score on the present rationale. Final GenRe2/TabDLM/ICF-DLM and
+pinned public consumer sources are recorded with exact read scopes. No A61
+head/update, row-label read, timing or useful own advantage is claimed; public
+card aggregate targets were read. Full result:61-scientific-semantic-score/work/result-v3.md.
+
 A52 begins with a WRITTEN observed-action likelihood/variance audit: sampled
 confidence threshold/fallback becomes unary evidence after the retained IDs
 are known. Classical counting/conditional-score/Rao–Blackwell principles remain

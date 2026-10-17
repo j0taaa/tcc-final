@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "source_commit": "f07a5d716ba44e642eff470925f028b00339a1b8",
+  "theory_commit": "9f08d0f324a1276ee91840a195ce1a85dc1f916e",
+  "criteria_commit": "8d6b560d0caf7e0f5a269fee523d9075b447eb3d",
+  "commands": [
+    {
+      "command": ".venv/bin/python -m unittest attempts.61-scientific-semantic-score.work.test_reference -v",
+      "exit_code": 0,
+      "log": "oracles.log",
+      "tests": 4,
+      "elapsed_s": 0.049
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "log": "full-suite.log",
+      "tests": 345,
+      "elapsed_s": 97.976
+    },
+    {
+      "command": ".venv/bin/ruff check attempts/61-scientific-semantic-score/work/reference.py attempts/61-scientific-semantic-score/work/test_reference.py tests/test_scientific_semantic_score.py && .venv/bin/ruff format --check attempts/61-scientific-semantic-score/work/reference.py attempts/61-scientific-semantic-score/work/test_reference.py tests/test_scientific_semantic_score.py",
+      "exit_code": 0,
+      "log": "ruff.log"
+    }
+  ],
+  "logs": [
+    {
+      "file": "oracles.log",
+      "bytes": 1054,
+      "sha256": "d1744b3610b241b93a1b692d6c7a59d59bcfc2f57477925ae9f15a2fd548ea35"
+    },
+    {
+      "file": "full-suite.log",
+      "bytes": 72355,
+      "sha256": "39ede5483b88f4ce7ab18fc82eb1f8a85bb460053e8f8fff36358c27fc22ef66"
+    },
+    {
+      "file": "ruff.log",
+      "bytes": 45,
+      "sha256": "c6486b51f483249343d4a4bdb91c41be31f0bdc28887b2f4cd4800e174f8bd6b"
+    }
+  ],
+  "neural_forwards": 0,
+  "parameter_updates": 0,
+  "dataset_rows_read": 0,
+  "competitive_timings": false,
+  "scope": "Correctness reference enumerates small original-token paths, not the written polynomial compiler. Later scientific decision does not alter code or rerun tests."
+}

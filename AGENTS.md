@@ -1,5 +1,22 @@
 # AGENTS.md
 
+A61 escreve ANTES de código uma perda de categoria semântica(sinal/ordem) e
+CRPS de mantissa condicionada. Propriedade, kernels e diferenciação são
+clássicos; há identidade escrita de risco e bound4/2 dos logits, não do
+backbone. Fontef07a5d7 precede quatro oráculos PASS0.049s,181 componentes
+exatos; full345 PASS97.976s/Ruff+format3. Referência ENUMERA caminhos pequenos,
+compiler polinomial só escrito; zero novo head/forward/update/row-label/timing.
+V2 dá contraexemplo analítico na fronteira decimal: previsão arbitrariamente
+perto recebe log4, distante<1. Não refuta propriedade nem mede treino, mas
+impede justificar vantagem geral por proximidade. NLL semântica completa e
+codec/canonicalização são controles fortes; FINAL GenRe2 inclui OPD ausente
+no preprintV1. TabDLM/ICF-DLM também são antecedentes. Fonte RegressLM e cards
+de dados/modelo pinados foram lidos, incluindo estatísticas agregadas dos
+gabaritos; nenhum Parquet/peso/linha baixado/executado. Expoente IEEE nominal
+não é sempre ordem semântica(leading0 permitido). Decisão61/work/decision-v2.md
+recusa expandir a perda simples com a justificativa atual. Prioridade própria,
+benefício útil e meta científica seguem abertos; não promover correção a ganho.
+
 A52 começa ESCRITA antes de protótipo: probabilidade da ação realmente
 selecionada por confiança (limiar/fallback ou top-k) como partição gramatical
 com evidência unária dos descartes. Contagem, score condicional e redução de

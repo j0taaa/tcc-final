@@ -65,3 +65,13 @@ justification, A58's closed kernel gate, or a trained dJev model.
    success. No trained model, new head/forward/update, human review or positive
    goal completion is asserted. If no own useful consequence survives controls,
    retain this audit and change direction instead of growing the implementation.
+
+V1 reference sourcef07a5d716ba44e642eff470925f028b00339a1b8 was committed
+BEFORE execution: four rational oracles PASS0.049s; full345 tests PASS97.976s.
+No A61 head/forward/update, per-row dataset label or competitive timing.
+[V2 reassessment](work/decision-v2.md) gives an analytical numerical-boundary
+counterexample and stronger objective controls, then DECLINES expansion of this
+simple score on its present rationale. This does not refute strict propriety
+or establish an empirical training failure. [Updated primary scope](work/primary-reading-v2.md)
+distinguishes final GenRe2 from its earlier preprint and pins public consumer
+metadata/cards. Passing tests and source availability do not fulfill the goal.

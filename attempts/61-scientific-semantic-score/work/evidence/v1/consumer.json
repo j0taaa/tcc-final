@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "date": "2026-10-17",
+  "author_repository": {
+    "url": "https://github.com/google-deepmind/regress-lm",
+    "revision": "bf3c947309cb11c4b1d1b2667237cd73c7d0667d",
+    "files": [
+      {
+        "file": "regress_lm/tokenizers.py",
+        "bytes": 14680,
+        "sha256": "011aa862fb38f86fc0dc05fff1182eaa49f5ec12a98c537ed1a8977fb7b6fa34",
+        "read_scope": "Complete P10Tokenizer and IEEEFloatTokenizer classes"
+      },
+      {
+        "file": "regress_lm/vocabs.py",
+        "bytes": 12117,
+        "sha256": "cbc0678988e730d033972a4f331733a9131ae7ddeea05d5bd210c940a994f27d",
+        "read_scope": "Fetched and hashed; full implementation not read"
+      },
+      {
+        "file": "colabs/triton_demo.ipynb",
+        "bytes": 13413,
+        "sha256": "d4cc9d8b42666574ca8a2316585c9305333ca3a0640b80f4cc201d705fca9f62",
+        "read_scope": "Code cells only, notebook outputs not read"
+      }
+    ],
+    "third_party_execution": false
+  },
+  "resources": [
+    {
+      "repository": "makora-ai/triton-gpu-latency",
+      "kind": "datasets",
+      "revision": "3b30911350fa433e1cb97ec2a41bd8908dd35d5d",
+      "public": true,
+      "gated": false,
+      "api_metadata_sha256": "7faba720966a261ab4029bde158ab15100d956ab826263452902079b3e676aea",
+      "readme_bytes": 6280,
+      "readme_sha256": "45f00b3cd71092ef9b63d4cfe4e396ad2d0618baaa764c64fdff13751288e7c9",
+      "read_scope": "API metadata and complete README, including aggregate label statistics. No dataset row, Parquet or weights."
+    },
+    {
+      "repository": "akhauriyash/Code-Regression",
+      "kind": "datasets",
+      "revision": "c761060000167f2f3ef64a428c224928316dca14",
+      "public": true,
+      "gated": false,
+      "api_metadata_sha256": "0450bc3c73b37e0fba5c5dd8eb0923e3e2f0521238272e786bb6a1bde5793413",
+      "readme_bytes": 7409,
+      "readme_sha256": "b1cdb66302dfd18ec83ea2a7b6e8ba5310b593d6d9e241b5a97707834d8405f1",
+      "read_scope": "API metadata and complete README, including aggregate label statistics. No dataset row, Parquet or weights."
+    },
+    {
+      "repository": "akhauriyash/RLM-GemmaS-Code-v0",
+      "kind": "models",
+      "revision": "0c927733af21f156d61743c4a40d03d13e65c16b",
+      "public": true,
+      "gated": false,
+      "api_metadata_sha256": "1fa14733b913302c28c0f069e9d585ef7ae9ced066f6cb89a24df82a3b389216",
+      "readme_bytes": 5321,
+      "readme_sha256": "24a8eba3b8fe1533e1804fe5a61ec6264cbe7f6c4222ae22782255d209abcf4c",
+      "read_scope": "API metadata and complete README, including aggregate label statistics. No dataset row, Parquet or weights."
+    }
+  ],
+  "downloads_excluded": [
+    "Parquet",
+    "weights"
+  ],
+  "aggregate_label_statistics_read": true,
+  "per_row_labels_read": false,
+  "new_predictions": 0,
+  "preregistered_performance_experiment": false,
+  "availability_scope": "Public metadata/card file listings; actual weight/data download and execution untested."
+}

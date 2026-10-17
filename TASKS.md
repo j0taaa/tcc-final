@@ -47,6 +47,32 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M84 — Whole scientific-value score, correctness only; expansion declined
+
+- [x] T8400: A61 eight criteria8d6b560 and theory9f08d0f BEFORE prototype.
+  Category log/conditional-mantissa CRPS is a known scoring specialization;
+  written strict propriety, decimal rescaling and source-logit bounds4/2,
+  not new general kernel theory or native iterative likelihood. Full original
+  IDs/aliases/zeros retained; exact score stores symbolic log ratio+rational
+  offset. Polynomial compiler is WRITTEN, not the enumerating prototype.
+- [x] T8401: Sourcef07a5d7 committed BEFORE execution. Four rational oracles
+  PASS0.049s:44 source/label cases181 exact logit components, rare mass1e-30,
+  five population identities; full345 PASS97.976s, Ruff/format3 files PASS.
+  Logs/freezes61/work/evidence/v1. No new A61 head/forward/update/row-label or
+  competitive timing. Passing tests does not confirm a useful own advantage.
+- [x] T8402: V2 written boundary counterexample: near-correct forecast losslog4
+  versus distant forecast<1, despite numerical error tending0. Propriety stays
+  true. Complete semantic NLL/canonicalization/codec scores are strong controls;
+  FINAL ICML GenRe2 has OPD absent from earlierV1. TabDLM/ICF-DLM scopes read.
+  Pinned RegressLM source and public model/data cards audited read-only; no
+  Parquet/weight/row downloaded. Aggregate label stats HAVE been read. Native
+  IEEE raw exponent is not always semantic order; autoregressive law not a
+  product-head law. Full decisions61/work/decision-v2.md and result-v3.md.
+- [ ] T8403: Own substantial usefulness/specific priority remain OPEN. Simple
+  score's neural expansion and article promotion NOT TRIGGERED by this rationale;
+  no claim of empirical training failure. Need a surviving comparative benefit
+  before a new implementation/campaign. Original positive user goal stays OPEN.
+
 ## M83 — Exact semantic numerical CDF/quantiles, minimal candidate only
 
 - [x] T8300: Write A60 eight criteria/theorye107296 BEFORE code. Fixed positive

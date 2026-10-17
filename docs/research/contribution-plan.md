@@ -3120,3 +3120,45 @@ It demonstrates why the universal-NFT lower bound cannot justify an exponential
 capacity gap against complete numerical inference. No full-V/native/training/
 cost campaign is triggered. A60's specific useful difference and the positive
 user goal remain OPEN. Full chronology/claims:60/work/result-v8.md.
+
+## 2026-10-17 — A61 exact scientific score and the numerical-boundary objection
+
+Eight criteria8d6b560 and written theory9f08d0f precede referencef07a5d7 and
+all execution. One frozen product head is conditioned on JSON numeral documents;
+semantic sign/order log loss plus observed-category mantissa CRPS retains raw
+token aliases and compact huge exponents. Conditional propriety and weighted
+kernel expectation are antecedents, not new theory. Written gradient bounds
+are rowL1<=4/component<=2 for source logits, not the full backbone. Population
+risk, decimal-integer scaling and polynomial rational/symbolic-log statements
+have explicit hypotheses; native iterative-decoder likelihood is not supplied.
+
+Four independent oracles PASS0.049s,44 source/label cases181 exact logit
+components, rarecategory1e-30 and five population identities. Full345 tests
+PASS97.976s/Ruff+format3. Reference ENUMERATES small tapes and is not the
+written polynomial compiler. No A61 model/head/forward/update/row-label or
+competitive timing. Semantic NLL/canonicalization repair the constructed alias
+example already; passing it is not a comparative quality result.
+
+After correctness, V2 writes y=10-epsilon, P=(delta_y+3delta_10)/4 and Q=delta_1.
+Scientific loss(P)=log4>1>loss(Q), while ordinary numerical CRPS(P)=9epsilon/16
+tends0 and CRPS(Q)=9-epsilon. This preserves propriety but defeats the simple
+general-proximity justification. Semantic NLL already has stronger supported-
+target bounds2/1; continuous heads/quantization likelihoods and codec scores
+remain controls when exact targets are unreachable. The candidate's basic
+properties do not by themselves justify a large training implementation.
+
+Final ICML GenRe2 original PDF/selected methods read, including OPD missing in
+earlier arXivV1; it is a direct whole-number training control. TabDLM's continuous
+numeric/masked-text diffusion and ICF-DLM's numeric-token PPO are also relevant
+antecedents, with scopes/hashes in61/work/primary-reading-v2.md. Pinned RegressLM
+source and public dataset/model cards identify a code-metric route without
+executing third-party code or downloading rows/weights. Cards' aggregate target
+summaries HAVE been read, so future evidence cannot claim untouched blindness.
+Makora units/hardware/harness are unspecified; Code-Regression/checkpoint source
+overlap needs audit. IEEE leading0 digits mean exponent tokens need semantic
+normalization. No autoregressive/product-law equivalence was established.
+
+V2 declines expansion of this simple loss on the present rationale, rather than
+claiming a measured training failure. Preserve the proof/reference; do not
+promote them to an article result. Substantial own usefulness, specific priority
+and the user's positive goal remain OPEN. Full evidence61/work/result-v3.md.
