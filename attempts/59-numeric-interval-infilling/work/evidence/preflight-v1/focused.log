@@ -1,0 +1,19 @@
+test_budget_completeness_and_long_sound_inputs (attempts.59-numeric-interval-infilling.work.test_interval.NumericIntervalTests.test_budget_completeness_and_long_sound_inputs) ... ok
+test_independent_numeral_values_and_unambiguous_paths (attempts.59-numeric-interval-infilling.work.test_interval.NumericIntervalTests.test_independent_numeral_values_and_unambiguous_paths) ... FAIL
+test_linear_graph_and_nondeterministic_fooling_set (attempts.59-numeric-interval-infilling.work.test_interval.NumericIntervalTests.test_linear_graph_and_nondeterministic_fooling_set) ... ok
+test_original_id_joint_mass_marginals_aliases_fixed_and_zero (attempts.59-numeric-interval-infilling.work.test_interval.NumericIntervalTests.test_original_id_joint_mass_marginals_aliases_fixed_and_zero) ... ok
+
+======================================================================
+FAIL: test_independent_numeral_values_and_unambiguous_paths (attempts.59-numeric-interval-infilling.work.test_interval.NumericIntervalTests.test_independent_numeral_values_and_unambiguous_paths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jota/projects/tcc-final/attempts/59-numeric-interval-infilling/work/test_interval.py", line 40, in test_independent_numeral_values_and_unambiguous_paths
+    self.assertEqual(machine.paths(text.encode()), int(admitted(text)), text)
+AssertionError: Fraction(1, 1) != 0 : 10e1
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.304s
+
+FAILED (failures=1)
+{"graph_sizes": [[16, 160, 951], [32, 307, 1866], [64, 595, 3690], [128, 1200, 7367], [256, 2423, 14734]], "fooling_pairs": 900}
+{"token_mass_cases": 3, "original_id_marginal_checks": 15}

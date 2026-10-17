@@ -1,0 +1,16 @@
+{
+  "status": "FAIL",
+  "producer": "3a94c76480f039d50acf28589bd5eb890a4e1f78",
+  "tests": 4,
+  "failures": 1,
+  "seconds": 0.304,
+  "witness": "10e1",
+  "reference_value": "100",
+  "interval": "[1,2)",
+  "actual_paths": 1,
+  "expected_paths": 0,
+  "scope": "small exact arithmetic only",
+  "model_reads": 0,
+  "new_forwards": 0,
+  "competitive_timing": false
+}
