@@ -12,6 +12,11 @@ No V5 model forward/backward/optimizer update/training/corpus/timing benefit.
 Native decay/partition/fallback/state/read/full cost/priority still required;
 present application expansion declined without different justified use and
 advantage. Result70/work/result-v5-native.md; positive user goal remains OPEN.
+V5 independent archive816 files matches original Git/direct0; own Ruff/format1
+PASS. make check/direct0,27.216s preserves70 attempts279 versions213781 files
+8,168,423,494 bytes. Receipt docs/evidence/a70-v5-final-verification.json;
+no scientific/primitive/345-test rerun in final checks. Normal commit/push
+and HEAD/upstream/remote verification follow; unrelated PDF untouched.
 
 A70 V4 selects ONLY NNCPv2 CPU/FP32 component resource feasibility, after
 original-source/native-order/eight-criterion audit. Protocol30480f37 BEFORE

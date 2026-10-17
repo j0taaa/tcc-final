@@ -1,0 +1,25 @@
+{
+  "kind": "Final preservation/lint/type checks; no scientific/model/primitive rerun",
+  "head_at_check_start": "ad58029c2f631555e49b9a9cae8f8beb8b246b3a",
+  "command": [
+    "make",
+    "check"
+  ],
+  "direct_exit_code": 0,
+  "elapsed_seconds": 27.21616518800147,
+  "log": "docs/evidence/a70-v5-final-make-check.log",
+  "log_sha256": "8c3edeaadbd04bc8ade05818755867ba0db9c7def4ffc97cd54861ce3c637d95",
+  "new_version": "v5-native-expression-box",
+  "archive_original_git_exit_code": 0,
+  "new_archive_files": 816,
+  "new_archive_uncompressed_bytes": 11917663,
+  "own_ruff_and_format_files": 1,
+  "maintained_345_tests_rerun": false,
+  "actual_primitive_producer": "242028fdcc7c76144159e0f28e5d9e36a7e5c35d",
+  "primitive_evidence": "ad58029c2f631555e49b9a9cae8f8beb8b246b3a",
+  "primitive_kernel_calls": 108,
+  "primitive_coordinates": 1800,
+  "v5_neural_forwards": 0,
+  "v5_optimizer_steps": 0,
+  "goal": "OPEN"
+}

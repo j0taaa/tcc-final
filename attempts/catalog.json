@@ -5157,8 +5157,8 @@
     {
       "id": "70-native-adam-erasure",
       "title": "Reconstrução observável do Adam nativo com apagamento certificado de estado",
-      "conclusion": "V1 crash de linkage preservado; V2/V3 passam768 fixtures/128 erasures e oito regressões, com prova escrita no contrato binary32 declarado. V4 audita consumidor NNCPv2/ordem nativa e conclui65 ciclos reais:56 medidos+8 warmups+1 setup, sem treino acumulado; embedding FREE falha0/2 frames no gate integral20% contra Adam single/foreach. Esta aplicação CPU/FP32 está encerrada sem resgate, não é decoder/A70 completo. Fontecc36fab5, metadado start/end HEAD corrigido separadamente. Prioridade específica, outro uso útil e meta positiva continuam abertos.",
-      "reading": "attempts/70-native-adam-erasure/work/result-v4-resource.md; attempts/70-native-adam-erasure/work/consumer-audit-v4.md; attempts/70-native-adam-erasure/work/result-v3.md; attempts/70-native-adam-erasure/work/result-v2.md; attempts/70-native-adam-erasure/work/result-v1-failed.md; attempts/70-native-adam-erasure/work/theory-v1.md; attempts/70-native-adam-erasure/README.md",
+      "conclusion": "V1 crash de linkage preservado; V2/V3 passam768 fixtures/128 erasures e oito regressões, com prova escrita no contrato binary32 declarado. V4 audita consumidor NNCPv2/ordem nativa e conclui65 ciclos reais:56 medidos+8 warmups+1 setup, sem treino acumulado; embedding FREE falha0/2 frames no gate integral20% contra Adam single/foreach. Esta aplicação CPU/FP32 está encerrada sem resgate, não é decoder/A70 completo. Fontecc36fab5, metadado start/end HEAD corrigido separadamente. Prioridade específica, outro uso útil e meta positiva continuam abertos. V5 lê dois consumidores CTR reais: um default com decay incompatível, outro CPU sem decay mas450 updates literais e frequência/benefício não medidos. Prova escrita/native108 calls1800 coordenadas24 boxes PASS delimita lerp/intervalos clássicos; não é counterexample zero-anchored, novo princípio ou prova do software inteiro. Expansão atual de aplicação declinada sem uso/advantagem distintos, meta aberta.",
+      "reading": "attempts/70-native-adam-erasure/work/result-v5-native.md; attempts/70-native-adam-erasure/work/native-contract-v5.md; attempts/70-native-adam-erasure/work/result-v4-resource.md; attempts/70-native-adam-erasure/work/consumer-audit-v4.md; attempts/70-native-adam-erasure/work/result-v3.md; attempts/70-native-adam-erasure/work/result-v2.md; attempts/70-native-adam-erasure/work/result-v1-failed.md; attempts/70-native-adam-erasure/work/theory-v1.md; attempts/70-native-adam-erasure/README.md",
       "versions": [
         {
           "id": "v1-linkage-failure",
@@ -5214,6 +5214,19 @@
             "attempts/70-native-adam-erasure/work/receipt-addendum-v4.md",
             "attempts/70-native-adam-erasure/work/verify_resource_v4.py",
             "attempts/70-native-adam-erasure/work/verify_resource_v4b.py",
+            "attempts/70-native-adam-erasure/README.md"
+          ]
+        },
+        {
+          "id": "v5-native-expression-box",
+          "source_commit": "242028fdcc7c76144159e0f28e5d9e36a7e5c35d",
+          "evidence_commit": "ad58029c2f631555e49b9a9cae8f8beb8b246b3a",
+          "evidence_roots": [
+            "docs/artifacts/raw/a70_native_lerp_v5",
+            "docs/evidence/a70-v5-post-data-verification.json",
+            "attempts/70-native-adam-erasure/work/native-contract-v5.md",
+            "attempts/70-native-adam-erasure/work/primary-source-manifest-v5.json",
+            "attempts/70-native-adam-erasure/work/result-v5-native.md",
             "attempts/70-native-adam-erasure/README.md"
           ]
         }

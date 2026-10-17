@@ -61,6 +61,12 @@ cost remain open. No new neural campaign is credited to M70.
   docs/evidence/a70-v5-post-data-verification.json preserve all source/counts.
   Present A70 application expansion declined without a different justified
   consumer/advantage; see70/work/result-v5-native.md. Positive goal OPEN.
+- [x] T9604-V5: Independent archive816 files11,917,663 bytes matches
+  original Git; own Ruff/format1 PASS. make check/direct0,27.216s preserves
+  70 attempts279 versions213781 files8,168,423,494 bytes. No scientific/
+  primitive/maintained345-test rerun in final checks; receipt docs/evidence/
+  a70-v5-final-verification.json. Normal commit/push and triple Git equality
+  follow; unrelated PDF untouched, positive scientific goal remains OPEN.
 
 - [x] T9600: Previous turn PROGRESS revalidated fromd3b49ae4/M95 and its
   written consumer/kernel audit. Only unrelated PDF untracked; no process

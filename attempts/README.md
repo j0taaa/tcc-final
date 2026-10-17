@@ -48,6 +48,17 @@ check/direct0,27.186s:70 attempts278 versions212965 files. Three own Python
 files pass Ruff/format; receipt docs/evidence/a70-v4-final-verification.json.
 Different useful consumer/sufficient priority/positive scientific goal OPEN.
 
+A70 V5[native expression result](70-native-adam-erasure/work/result-v5-native.md)
+reads actual CTR sources: one default coupled-decay premise fails; another
+no-decay CPU script has450 updates and no measured erasure/full-cost evidence.
+Written classical expression-box proof/native108 primitive calls1800 checks
+24 tiny boxes pass. Adverse arbitrary-interval endpoint assumption is refused;
+not a zero-anchored counterexample or every-kernel proof. No new V5 neural
+forward/update/timing gain. Present application expansion declined without a
+different justified use/advantage; positive goal OPEN. Independent archive816
+files matches Git; own Ruff/format1 PASS, make check/direct0,27.216s preserves
+70 attempts279 versions213781 files. Receipt docs/evidence/a70-v5-final-verification.json.
+
 A69 V4[original-source/use audit](69-adaptive-factory-separation/work/priority-and-use-audit-v4.md)
 finds Mendo's classical early termination and elementary power controls already
 supply generic pointwise/growing-gap claims. Only the uniform-input/interior
