@@ -143,6 +143,14 @@ cost remain open. No new neural campaign is credited to M70.
 - [ ] T8615: Resolve a substantive scientific/use consequence before further
   cap expansion, certificate engineering or neural campaign. V10/V11 are
   finite proof progress, not a useful real full-cost win or the user's goal.
+- [x] T8616: Archive v8-count-flow-family/source610c0a1/evidence6e31dc7 and
+  v9-global-certificates/sourcead7e82f/evidence25f61f0. Both creation checks
+  compare original Git trees; all56 origin-file hashes independently checked.
+  Experimental Ruff/format12 PASS, no maintained345-suite rerun. Full make
+  check directly observed exit0:63 attempts252 versions190296 files; complete
+  receipt docs/evidence/a63-v9-final-make-check.log and scope/producer index
+  docs/evidence/a63-v9-final-verification.json. Integrity is not scientific
+  utility/priority validation or goal completion.
 
 ## M85 — Native RLM numerical quantile audit; complete control matches bound
 

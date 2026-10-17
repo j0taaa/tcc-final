@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-17",
+  "make_check_exit_code_directly_observed": 0,
+  "complete_log": "docs/evidence/a63-v9-final-make-check.log",
+  "log_sha256": "950f59c973b556acd55a5173b2c65bc272efcf035770a044688e781ce8c93303",
+  "archive_integrity": {
+    "attempts": 63,
+    "versions": 252,
+    "files": 190296,
+    "uncompressed_bytes": 5980615979,
+    "scope": "Integrity only; no scientific usefulness or priority validation"
+  },
+  "new_archive_creation_compared_with_git": true,
+  "origin_file_hashes_separately_verified": {
+    "v10": 32,
+    "v11": 24
+  },
+  "experimental_ruff_format": {
+    "commands": [
+      ".venv/bin/ruff check attempts/63-adaptive-six-coupling/work/*.py",
+      ".venv/bin/ruff format --check attempts/63-adaptive-six-coupling/work/*.py"
+    ],
+    "directly_observed_exit_code": 0,
+    "stdout": "All checks passed!\n12 files already formatted\n"
+  },
+  "new_scientific_audits": {
+    "v10": {
+      "exact_U3_optima": 8,
+      "independent_named_tails_first0": 88560,
+      "operational_prefix_steps": 642210,
+      "all_primal_dual_gaps": "0",
+      "regressions_passed_before_new_caps": true
+    },
+    "v11": {
+      "new_optimal_face_searches": 8,
+      "independent_global_certificates_caps": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "independent_named_tails_first0": 1080,
+      "operational_prefix_steps": 4140,
+      "sufficient_cone_numeric_failures_caps": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "failure_status": "INCONCLUSIVE",
+      "old_unrestricted_lower_bounds_explicitly_reused": true
+    }
+  },
+  "maintained_full_test_suite_rerun": false,
+  "new_neural_forwards": 0,
+  "new_model_scalar_observation_readout": false,
+  "new_semantic_labels_or_parameter_updates": false,
+  "competitive_timing_compared": false,
+  "commits": {
+    "4f13271": "4f132719d140234fb8c837a6542b4457bb885ff0",
+    "610c0a1": "610c0a1f4a275aedf956a98b15d508a14af7c9ea",
+    "6e31dc7": "6e31dc7ca23b2d6e8a74d530c553c009cd57f93c",
+    "c2d42ed": "c2d42edb897671feae82d8e43d2907625ceac73a",
+    "ad7e82f": "ad7e82f37505038249fee985bccbc83d4e09a560",
+    "25f61f0": "25f61f057ba3d854365345bb45e0a9021faa83a2",
+    "7d86ec6": "7d86ec6bcb0bb2a7cf556e815f0cca87aab0015c"
+  },
+  "goal": "OPEN: own sufficient priority/substantive real full-cost usefulness not established",
+  "scientific_scope": "Eight exact U3 optima with small odd-cap work effects; only four regression global Schur certificates, four larger-cap cone failures retained. Classical count/Schur/factory mechanisms credited. No all-budget upper/asymptotic/practical speed/EPIC or publication claim."
+}
