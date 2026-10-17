@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "records": 128,
+  "checked": 1523008,
+  "new_model_forwards": 0,
+  "model_parameter_reads": 0,
+  "optimizer_model_updates": 0,
+  "competitive_timing": false,
+  "RNG_restored": true,
+  "matmul_precision_restored": true
+}

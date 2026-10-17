@@ -9,6 +9,10 @@ import triton
 
 def forward_lse(h, w, b):
     from cut_cross_entropy.cce_lse_forward import cce_lse_forward_kernel
+    from cut_cross_entropy.tl_autotune import _AUTOTUNE
+
+    if _AUTOTUNE:
+        raise ValueError("output-buffer accumulation requires native heuristic mode")
 
     return cce_lse_forward_kernel(
         e=h, c=w, bias=b, valids=None, softcap=None, targets=None, shift=0, return_logit_avg=False

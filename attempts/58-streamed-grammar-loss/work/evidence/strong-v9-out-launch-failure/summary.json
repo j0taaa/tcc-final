@@ -1,0 +1,9 @@
+{
+  "status": "ERROR",
+  "exception": "FileNotFoundError",
+  "scope": "incorrect CLI input directory before fixture evaluation",
+  "records": 0,
+  "competitive_timing": false,
+  "producer": "d5131bd",
+  "replay_directory": "strong-v9-out"
+}

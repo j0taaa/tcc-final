@@ -1,0 +1,32 @@
+{
+  "producer": "88ce301ee92c001ee3244d3b6d7b50d6364eee8e",
+  "inputs": "attempts/58-streamed-grammar-loss/work/evidence/gpu-v4-runtime-replay",
+  "CCE_commit": "3de376c106a1916bc5e1b619f9c77c87a461ee1c",
+  "torch": "2.13.0+cu130",
+  "dot_precision": "ieee",
+  "filtering": false,
+  "source_sha256": {
+    "reference.py": "9b54679f8166896fc41dcbd6b30fd31ed0589c4c8ad5af84cfd92e9fe2ab3dbc",
+    "preflight_gpu.py": "b225b10ee6185f9160be2c07817bb377ffd65f5fcf4f4577fe03069a53ff1cb0",
+    "strong_head.py": "51b0c7b9dfcc76495305e53d217cecddac41f52d8e801549a043ad934090f985",
+    "test_strong_head.py": "536a8355a8fd99d97aceccba2c07bab7f1580690fb21edc58f2edf07b38b9549",
+    "preflight_strong_v5.py": "5691ee493de3492b3ba5fffb86b1e2eb4f2fb92609c0dd4ff22cec7e991f1fc8",
+    "gpu_head.py": "6b17ad0564d3e48311299ec021c620b9fcb90aa30be5ad416e69813d7c402046",
+    "torch_head.py": "d86672472c1da1c6ca055856242d72c742964dd4808e400bb12c788147bded6d",
+    "test_reference.py": "19623a4b63cb9586c34ca537e55fbcf0e3e0bc99f2d0c1abdbdbd35ed2ada107"
+  },
+  "thresholds": [
+    0,
+    8,
+    32,
+    128
+  ],
+  "backends": [
+    "dense",
+    "checkpoint",
+    "CCE"
+  ],
+  "competitive_timing": false,
+  "new_model_forwards": 0,
+  "model_parameter_reads": 0
+}

@@ -1,0 +1,20 @@
+{
+  "producer": "f52b751be1506795d57658f820a6feda32f7fb0c",
+  "packet": "attempts/24-certified-depth-approximation/work/evidence/first-full-head-v2/packet.zip",
+  "packet_sha256": "8f8d512c1f78629a93c8bb442fff81d2fc9bca60b57f044bb7470fda4473168d",
+  "opened_archive_members": [
+    "vocabulary.json"
+  ],
+  "vocabulary_sha256": "0b4486e9138096810acb3183316684bf7c1dbe896dfdea7c4067e3994de9c7b6",
+  "model_config_URL": "https://huggingface.co/kuleshov-group/mdlm-owt/resolve/d0958fa851335ece6c15260ce0025f030673c0fb/config.json",
+  "model_config_sha256": "605429edee54b28322b94c3a018982ddb74bf94e3bf15f4ae7d5fbc73613138c",
+  "adapter_source": "/home/jota/projects/tcc-final/src/mwpc_exact/tokenizer_bytes.py",
+  "adapter_sha256": "681973506b5e59df4978dec201ffab406ec0e782dab38572528b78162fe65355",
+  "mapping_sha256": "e7b5575b519dadb1b0f2402ba708c13549bbe75f6f27f50d47b047dca4ee8a1f",
+  "vocabulary": 50258,
+  "classes": 194,
+  "model_parameter_reads": 0,
+  "model_forwards": 0,
+  "numeric_head_archive_members_opened": [],
+  "competitive_timing": false
+}

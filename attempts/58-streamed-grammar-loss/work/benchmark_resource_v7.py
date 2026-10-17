@@ -329,6 +329,9 @@ def main(output, source):
     )
     for path, digest in pin["sha256"].items():
         assert hashlib.sha256((source / path).read_bytes()).hexdigest() == digest
+    out_pin = json.loads((base / "cce-out-origin-v9.json").read_text())
+    for path, digest in out_pin["source_files"].items():
+        assert hashlib.sha256((source / path).read_bytes()).hexdigest() == digest
     assert (
         json.loads((base / "evidence" / "tiles-v6-initial" / "summary.json").read_text())["status"]
         == "PASS"
@@ -344,6 +347,9 @@ def main(output, source):
         == "PASS"
     )
     sys.path.insert(0, str(source))
+    from cut_cross_entropy.tl_autotune import _AUTOTUNE
+
+    assert not _AUTOTUNE, "native autotuning resets accumulated output buffers"
     config = {
         "producer": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
         "source_sha256": {
@@ -355,6 +361,7 @@ def main(output, source):
         "CUDA": torch.version.cuda,
         "device": torch.cuda.get_device_name(0),
         "CCE_commit": pin["commit"],
+        "CCE_AUTOTUNE": _AUTOTUNE,
         "dtype": "FP32",
         "dot_precision": "ieee",
         "filtering": False,

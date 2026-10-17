@@ -5,6 +5,7 @@
     "cut_cross_entropy/cce_backward.py": "530f4086c0f8b595708055d3e0575253e7328aaa3fa1fa96427f392468027e52",
     "cut_cross_entropy/cce_lse_forward.py": "09d53533fa5ac65bc60277a7a6b6a3927cbbe7b0f02e64897cb355fded41eaf2",
     "cut_cross_entropy/tl_utils.py": "8923e02f3240dfb96ca9204e81e1d21f73f5ee1d5649e4b84dda1b1e36dd0d60",
-    "LICENSE": "4862c77f9bf843ff8fca191ae1d124a94849105dba5891bc33aa934440732600"
+    "LICENSE": "4862c77f9bf843ff8fca191ae1d124a94849105dba5891bc33aa934440732600",
+    "cut_cross_entropy/tl_autotune.py": "445745f6c20efcd5bcfb2fbc784361c3b4a3a0e8f2089242fde6d4362a977a20"
   }
 }
