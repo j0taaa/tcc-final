@@ -4474,6 +4474,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "55-cycle-permutation-sampling",
+      "title": "Propostas transitórias de ciclos para permutações ponderadas",
+      "conclusion": "Written537af90 before reference. Eight rational oracles pass including153 complete classical-control masses; full302 PASS85.791s. Lawler2017 ordered loops recover the SAME law/certificate/favorable cost without NB/Ewens. Negative originality audit, no real-matrix/head/timing campaign or sufficient own benefit. No simple-candidate expansion or achieved goal. Initial partial check log and separate completed exit0 output preserved.",
+      "reading": "attempts/55-cycle-permutation-sampling/README.md; work/ordered-control-v2.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "2f2e7849916512b298498caac18d05eb3c23f808",
+          "evidence_commit": "3a61201100c866ccd837b2a961ec7706aa3d8871",
+          "evidence_roots": [
+            "attempts/55-cycle-permutation-sampling/README.md",
+            "attempts/55-cycle-permutation-sampling/work"
+          ]
+        }
+      ]
     }
   ]
 }
