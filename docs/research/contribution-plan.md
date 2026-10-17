@@ -3944,3 +3944,22 @@ performance claim. This CPU/FP32 component application is CLOSED without
 codec port or seed/geometry/thread/dtype rescue. Source/raw/receipt semantics/
 post-checks are preserved in70/work/result-v4-resource.md. A different useful
 consumer and sufficient own priority remain required; user goal stays OPEN.
+
+### A70 V5 — Actual regularization and native expression boxes
+
+Original CTR sources were read at immutable revisions without execution:
+pytorch-fm's default COUPLED decay invalidates zero data-gradient skipping;
+another actual no-decay CPU DeepFM script has450 literal updates, not the
+comment's larger dataset/run. Neither supplies observed useful native
+erasure frequency/full benefit. Avoid changing their regularization, epochs
+or vocabulary and then calling it confirmation of the original consumer.
+
+A WRITTEN adverse lerp triple shows that a blanket monotone-endpoint proof
+does not transfer to actual scalar/FMA native forms; it is NOT a counterexample
+to zero-anchored admission or the declared V1 recurrence. Classical expression
+boxes give a sound nonzero erasure rule without that assumption. Frozen
+source242028fd completes108 prescribed primitive calls1800 coordinate checks,
+24 admitted tiny boxes/direct0. No model/backward/optimizer/timing campaign.
+See70/work/native-contract-v5.md/result-v5-native.md. Native whole-software
+identity/use/full benefit/sufficient priority remain OPEN; passing this
+bounded check does not trigger a large application build or fulfill the goal.

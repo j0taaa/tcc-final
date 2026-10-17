@@ -125,3 +125,12 @@ state/export/native partition/full costs remain obligations; (7) short gaps,
 decay and equally good classical controls may eliminate benefit; (8) useful
 frequency, actual full native adapter, strong total benefit and adequate own
 priority remain required. No large build/article promotion or fulfilled goal.
+
+V5[finite native result](work/result-v5-native.md): source242028fd BEFORE
+ONE direct0,108 prescribed primitive calls/1800 coordinate checks; all24
+tiny boxes pass. Adverse arbitrary-interval endpoint transfer is correctly
+refused. No counterexample to zero-anchored admission, no new generic interval
+theory, no neural forward/update/timing benefit. Both source consumer scopes
+and outstanding native/software/full-cost obligations are explicit. Present
+application expansion is declined without a different justified use/advantage;
+priority and positive goal remain OPEN.

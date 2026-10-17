@@ -1,0 +1,13 @@
+{
+  "producer_commit_at_start": "242028fdcc7c76144159e0f28e5d9e36a7e5c35d",
+  "head_at_exit": "242028fdcc7c76144159e0f28e5d9e36a7e5c35d",
+  "command": [
+    "/home/jota/projects/tcc-final/.venv/bin/python",
+    "attempts/70-native-adam-erasure/work/native_lerp_v5.py",
+    "--output",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a70_native_lerp_v5/run"
+  ],
+  "child_returncode": 0,
+  "elapsed_seconds_diagnostic_only": 1.2463071470265277,
+  "console_sha256": "021cebddd58d819230be397a80080fe76f2c8069ccda8d4079b7936f1e03f68a"
+}

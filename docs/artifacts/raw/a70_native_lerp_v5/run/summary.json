@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "primitive_lerp_calls": 108,
+  "coordinate_checks": 1800,
+  "tiny_boxes_admitted": 24,
+  "adverse_triple": {
+    "points": [
+      851443712,
+      855638016,
+      855638017
+    ],
+    "values_both_forms": [
+      1036831952,
+      1036831953,
+      1036831952
+    ],
+    "sound_box": {
+      "corners": [
+        1036831951,
+        1036831953,
+        1036831951,
+        1036831953
+      ],
+      "lower_bits": 1036831951,
+      "upper_bits": 1036831953,
+      "admitted_nonzero": false
+    }
+  },
+  "neural_forwards": 0,
+  "backwards": 0,
+  "optimizer_steps": 0,
+  "claim": "Finite native-expression/rational audit; no every-kernel proof, zero-anchored counterexample, practical gain or sufficient priority"
+}

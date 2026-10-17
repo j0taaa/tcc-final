@@ -49,6 +49,19 @@ cost remain open. No new neural campaign is credited to M70.
 
 ## M96 — Exact observable native-Adam reconstruction by state erasure
 
+- [x] T9603-V5: Original CTR sources pinf74ad197/f12a2ccc READ, not executed:
+  first default coupled decay1e-6 violates zero-gradient premise; second
+  genuine no-decay CPU script has450 literal updates, no useful frequency/
+  full-cost evidence. Written native-lerp arbitrary-interval counterexample
+  and CLASSICAL safe expression-box proof84a70a02 BEFORE source242028fd/
+  ONE direct0:108 primitive calls1800 coordinates24 tiny boxes,1/8 threads,
+  adverse box correctly refused. This is NOT a zero-anchored counterexample,
+  new generic interval theory, every-kernel proof or neural benefit. No V5
+  model forward/backward/update/corpus/timing. Raw a70_native_lerp_v5 and
+  docs/evidence/a70-v5-post-data-verification.json preserve all source/counts.
+  Present A70 application expansion declined without a different justified
+  consumer/advantage; see70/work/result-v5-native.md. Positive goal OPEN.
+
 - [x] T9600: Previous turn PROGRESS revalidated fromd3b49ae4/M95 and its
   written consumer/kernel audit. Only unrelated PDF untracked; no process
   to restart. Generic deferred real-Adam/packing mechanisms remain declined.

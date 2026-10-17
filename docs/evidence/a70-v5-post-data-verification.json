@@ -1,0 +1,24 @@
+{
+  "kind": "Post-data static counts/source/exit/hash consistency, no primitive/model rerun",
+  "status": "PASS",
+  "actual_source_producer": "242028fdcc7c76144159e0f28e5d9e36a7e5c35d",
+  "sources_checked": 3,
+  "primitive_calls": 108,
+  "coordinate_checks": 1800,
+  "adverse_calls": 60,
+  "tiny_box_calls": 48,
+  "thread_settings": [
+    1,
+    8
+  ],
+  "neural_forwards": 0,
+  "optimizer_steps": 0,
+  "packet_sha256": {
+    "console.log": "021cebddd58d819230be397a80080fe76f2c8069ccda8d4079b7936f1e03f68a",
+    "exit.json": "f64f932c4b17f2b865aacd71eb19774991ae6e00d7296cfeeb58fed277595e03",
+    "run/calls.json": "8f61921fd0047a4a4897e873f462b7aa3eb1c02949e0c6286cfc9c34f55cd7cf",
+    "run/manifest.json": "1ba41e7bf686cfd3331fc826b610343e4345871cc191dfd806c1131cfa0f1a10",
+    "run/records.jsonl": "47cc500b3422816239e232a0949af873c8dcdd5cae1a513eb8733930e7ca06bf",
+    "run/summary.json": "021cebddd58d819230be397a80080fe76f2c8069ccda8d4079b7936f1e03f68a"
+  }
+}

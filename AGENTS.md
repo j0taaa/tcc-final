@@ -1,5 +1,18 @@
 # AGENTS.md
 
+A70 V5 audits original CTR sources without execution: pytorch-fm default
+coupled decay1e-6 violates zero-gradient premise; another actual no-decay CPU
+DeepFM script has only450 literal updates, no useful frequency/latency data.
+Written native-lerp arbitrary-interval counterexample and CLASSICAL safe
+expression-box proof84a70a02 BEFORE source242028fd/ONE direct0:108 primitive
+calls1800 coordinates24 tiny boxes pass, threads1/8, adverse box refuses.
+NOT a zero-anchored counterexample, new generic interval principle, every-
+kernel proof or native-Adam bug. V1 recurrence/V4 negative gate unchanged.
+No V5 model forward/backward/optimizer update/training/corpus/timing benefit.
+Native decay/partition/fallback/state/read/full cost/priority still required;
+present application expansion declined without different justified use and
+advantage. Result70/work/result-v5-native.md; positive user goal remains OPEN.
+
 A70 V4 selects ONLY NNCPv2 CPU/FP32 component resource feasibility, after
 original-source/native-order/eight-criterion audit. Protocol30480f37 BEFORE
 sourcecc36fab5/ONE direct0:56 measured+8 warmups+1 setup,65 actual forwards/
