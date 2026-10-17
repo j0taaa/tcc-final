@@ -1,5 +1,16 @@
 # AGENTS.md
 
+Training-operation audit v3 rejects zero-gradient skipping for the ACTUAL
+A58 CE+nonnegative semantic loss: one-slot singleton grammar still gives
+nonzero gradient. A normalized conditional likelihood is a DIFFERENT loss;
+its generic zero-event conditioning has a same-law cheap rejection control.
+Original CoDDv2 already has normalized structured training; Diffusion-MFv3
+uses replacement noise, not monotone clean pins. MF initial HTMLv1 and later
+PDFv3 reading scopes/hashes are distinct. Canvas-modulated priors are also
+CoDD AppendixE antecedents. No A70/prototype/training/head/timing selected.
+See docs/research/next-operation-audit-2026-10-17-v3.md. Goal OPEN; A69 present
+application not expanded and all negative gates remain preserved.
+
 A69 V4 written source/evidence96a8126 archive762 files11.535.051 bytes
 matches original Git/direct0; three roots match Git/worktree/ZIP hashes.
 make check/direct0:69 attempts274 versions209821 files8.107.411.502 bytes.

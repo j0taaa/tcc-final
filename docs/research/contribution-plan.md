@@ -3838,3 +3838,34 @@ No natural consumer for the constructed response was identified. Decline
 PRESENT application expansion; don't turn this into a practical article or
 rerun oracle counts. The positive goal requires a different justified real
 operation or a substantive useful consequence, and remains OPEN.
+
+
+## 2026-10-17 — Actual-loss training shortcut and structured-denoiser antecedents
+
+A new operation audit checks before-forward singleton skipping against the
+ACTUAL A58 loss. With target a, G={a} and p(a)=logistic(z), CE plus lambda
+semantic loss is-(1+lambda)log p(a), derivative-(1+lambda)/2 at z=0. Skipping
+would change its gradient. A normalized conditional likelihood has zero
+singleton loss but is a DIFFERENT objective, not an old-cost acceleration.
+Original-ID aliases also prevent using rendered uniqueness as the certificate.
+
+For an independently justified zero-gradient event A, the usual conditional
+estimator a G|A has covariance a Cov(G)-(1-a)mu mu^T. This is CLASSICAL,
+requires known a/theta-independent A/square integrability, and a cheap rejection
+controller obtains the same conditional law. No own variance primitive or
+optimizer-path equivalence follows. No new oracle/training/forward was run.
+
+Original CoDDv2 already trains a normalized structured prior times unary
+potentials. Its5.1 temperature obstacle and AppendixE noisy-canvas modulation
+are explicit antecedents; basic hidden-chain channel inference is classical.
+Diffusion-MFv3 Sections1/2 describe a structured denoiser with replacement
+noise and a hybrid objective, not clean fixed pins. Initial HTMLv1 and later
+unversioned PDF actuallyv3 are distinguished, with exact read scopes/hashes
+in next-operation-audit-2026-10-17-v3.md. Their reported results were not
+reproduced here. Neither complete paper/code nor all appendices were audited.
+
+The eight-criterion audit declines this shortcut as A70 before implementation.
+A new real operation with an own useful difference is still required; do not
+open a training/temperature stack just because the classical composition is
+correct. A69's declined application, A58's negative gate and other preserved
+evidence remain unchanged. Positive user goal remains OPEN.

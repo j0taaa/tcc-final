@@ -47,6 +47,32 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M93 — Actual training-objective audit before a new implementation
+
+- [x] T9303: Documentation-only make check/direct0,67.843s:69 attempts/
+  274 versions209821 preserved files8,107,411,502 bytes. Audit/log hashes in
+  docs/evidence/training-operation-audit-v3-checks.json. No new attempt,
+  scientific run or345-test rerun. Normal commit/push and HEAD/upstream/
+  remote verification follow; unrelated PDF untouched. Goal OPEN.
+- [x] T9300: Previous goal turn PROGRESS revalidated from174d4c4 and actual
+  A69 V4 source/use decision plus final check receipt. No live scientific
+  process to wait/restart; only unrelated PDF untracked. A69 present
+  application expansion remains declined; its theorem/old sources intact.
+- [x] T9301: New WRITTEN one-slot counterexample: grammar G={a}, target a,
+  CE+lambda semantic loss has derivative-(1+lambda)/2 at equal logits, not
+  zero. Singleton zero-gradient skipping would change the maintained A58
+  objective. Conditional likelihood is different. Classical conditional-MC
+  covariance identity and same-law cheap rejection controller recorded;
+  no new scientific execution, code, training or forward.
+- [x] T9302: ORIGINAL CoDDv2 normalized-product training and Diffusion-MFv3
+  structured-denoiser/training sections read. The initial MF HTML wasv1;
+  unversioned PDF actuallyv3, explicitly retained with scope/hash distinction.
+  Replacement-noise labels are not monotone clean pins. Basic chain-channel
+  inference, generic tempering closure and canvas-conditioned priors have
+  classical/explicit antecedents; no such shortcut selected as A70.
+  Eight criteria, sources and decision: docs/research/next-operation-audit-
+  2026-10-17-v3.md. Positive goal remains OPEN, no old campaign reopened.
+
 ## M92 — Adaptive finite work beyond every preselected batch
 
 - [x] T9211: V4 written source/evidence96a8126 independently archived762

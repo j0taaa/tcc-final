@@ -1,0 +1,16 @@
+{
+  "kind": "Documentation/concept audit preservation checks, not a scientific execution",
+  "command": [
+    "make",
+    "check"
+  ],
+  "direct_exit_code": 0,
+  "elapsed_seconds": 67.842500853003,
+  "log": "docs/evidence/training-operation-audit-v3-make-check.log",
+  "log_sha256": "700ae6f5580fcae02eb3ed0f0f951493a84d556fd09a12a65d38889cc93aa332",
+  "audit_sha256": "0d8d65331e9713b4e3a594fa5a8414fc371acc85dd3828c333efbba4f87e368b",
+  "new_scientific_execution": false,
+  "maintained_345_tests_rerun": false,
+  "new_attempt_created": false,
+  "goal": "OPEN"
+}
