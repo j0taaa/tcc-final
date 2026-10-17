@@ -43,6 +43,24 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M80 — Conditional policy-ratio moments, classical diagnostic retained
+
+- [x] T8000: Write A57 eight criteria/theoryf5833c2 BEFORE independent reference.
+  Four rational oracles PASS: ALL173 actions/1038 second moments for six
+  controls, variable EOS/future fixed IDs/aliases/zeros, ALL87 visible/459
+  augmented adaptive paths, unchanged policies and hard-preimage failure.
+  Full315 PASS88.281s; focused Ruff passes. No head readout, forward, decoder/
+  auxiliary draw, label, fitting or update. A52 V18's failed gradient gate
+  stays CLOSED; this is a different finite-update operation, not its revival.
+- [x] T8001: Read ORIGINAL final Atlas2021 main-text Theorems3.5/4.1/proof
+  and matched-support explanation, alongside MIPS§3.1/B.4 and DiFFPO§§2--3.2.
+  Powers/products/integration already give the generic moment mechanism.
+  Keep as diagnostic/control; no substantive own separation or new head
+  campaign triggered. See57/work/primary-decision-v2.md. Goal remains OPEN.
+- [ ] T8002: Establish an own useful operation/difference and real consumer
+  before expanding this diagnostic or starting another extensive prototype.
+  Conditional hidden variance alone is not visible overlap/ESS/quality gain.
+
 ## M79 — Static-rounding GPU numerical preflight, no new theory claim
 
 - [x] T7900: Write A56 eight criteria/theorem7fb3daf BEFORE arithmetic code,

@@ -339,6 +339,19 @@ Complemento separado cumpre oito checks explícitos de suporte/input/massa zero,
 sem devolver palavra de massa zero. Contagens iniciais ficam intactas; união
 tem17 PTX únicos. Não atribuir esse complemento à primeira captura.
 
+A57 escrevef5833c2 ANTES do protótipo momentos condicionais de razões de
+importância para mudança FINITA da política A52 V7, não o gradiente local de
+V18. Três consultas positivas dão momentos full/âncora; classes recebem a
+soma ANTES do quadrado/divisão, com consulta adicional. Comprimento usa os
+mesmos dois insides da razão observável. Quatro oráculos racionais passam173
+ações/1038 momentos e87 trajetórias visíveis/459 aumentadas adaptativas;
+suíte315 PASS88.281s. Suporte da ação hard pode mudar e invalidar IS aumentado
+mesmo com suporte observado comum. ZERO heads/forwards/draws/labels/updates.
+Atlas2021 ORIGINAL final Teoremas3.5/4.1 e explicação de suportes iguais,
+MIPS e PAPL fornecem composição clássica direta. Não promover mecanismo
+genérico/novidade/prática; preservar diagnóstico/controle sem acionar campanha
+neural. A52 V18 permanece fechado negativo, e a meta positiva continua aberta.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

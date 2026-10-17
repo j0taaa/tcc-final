@@ -39,6 +39,7 @@ new seeds, cost/variance or independent campaign follows for this initialization
 
 | Pasta | Direção |
 | --- | --- |
+| [57-policy-ratio-moments](57-policy-ratio-moments/README.md) | Quatro oráculos exatos passam; Atlas/MIPS/PAPL já dão o mecanismo genérico, fica como diagnóstico sem campanha neural |
 | [56-static-rounding-sampler](56-static-rounding-sampler/README.md) | Preflight GPU com certificados estáticos passa; ADZ original confirma antecedente direto, sem benefício próprio medido ou promoção |
 | [55-cycle-permutation-sampling](55-cycle-permutation-sampling/README.md) | Referência racional de ciclos; oito oráculos passam, controle clássico ordenado recupera lei/custo, sem diferença própria suficiente ou campanha neural |
 | [54-coupled-policy-replay](54-coupled-policy-replay/README.md) | Comparação de políticas; todos25 coeficientes locais falham contra controle forte, sem expansão neural |

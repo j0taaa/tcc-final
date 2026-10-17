@@ -58,3 +58,10 @@ The smooth policy here is the declared A52 V7 forced-anchor policy, not the
 native Mosaic/EPIC planner. This independent attempt does not restore or alter
 the old negative gradient application. No final-text likelihood, semantic
 gain, native GPU RNG exactness, publication or achieved user goal is claimed.
+
+Consolidation: four rational oracles PASS,173 actions/1038 exact moments and
+87 visible/459 augmented adaptive paths. Full315 tests PASS88.281s. The final
+NeurIPS2021 Atlas paper's Theorems3.5/4.1 supply direct power/product/integration
+antecedents, including matched-support simplification. Keep this as a correct
+diagnostic/control, not a new generic inference mechanism or protagonist.
+No real-head statistics or neural campaign triggered. See work/primary-decision-v2.md.

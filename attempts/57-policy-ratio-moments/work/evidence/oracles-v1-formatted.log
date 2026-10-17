@@ -1,0 +1,11 @@
+test_adaptive_complete_path_product_and_reward (attempts.57-policy-ratio-moments.work.test_reference.PolicyRatioTests.test_adaptive_complete_path_product_and_reward) ... ok
+test_changed_hard_preimage_can_break_augmented_is (attempts.57-policy-ratio-moments.work.test_reference.PolicyRatioTests.test_changed_hard_preimage_can_break_augmented_is) ... ok
+test_every_action_against_independent_full_joint (attempts.57-policy-ratio-moments.work.test_reference.PolicyRatioTests.test_every_action_against_independent_full_joint) ... ok
+test_unchanged_policy_and_rejected_zero_mass_or_support (attempts.57-policy-ratio-moments.work.test_reference.PolicyRatioTests.test_unchanged_policy_and_rejected_zero_mass_or_support) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.276s
+
+OK
+{"visible_paths": 87, "full_latent_paths": 459}
+{"local_actions": 173, "exact_second_moment_checks": 1038}

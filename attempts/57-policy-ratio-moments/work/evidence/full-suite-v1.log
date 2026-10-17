@@ -1,0 +1,75 @@
+...................................................................................................................................................................................................................................................................M36 event oracles: 8016 events, 13 positive, 11 zero-mass inputs
+{"actor_original_joint_direction_checks": 243, "coordinates": 9}
+{"true_RLOO_group_variance": "1/6", "invalid_iid_shortcut": "1/9"}
+{"anchor_joint_laws": 8, "observed_actions": 256, "score_coordinates": 4864}
+{"anchor_fake_states": 5, "anchor_observed_paths": 12, "anchor_full_paths": 24}
+{"complete_laws": 108, "actions": 1372, "coordinate_scores": 15092}
+{"connected_sizes": [3, 4, 5, 6], "optimized_full_baseline": true}
+{"complete_numeric_conditional_laws": 83, "maximum_L1_vs_Fraction": 6.316215190520223e-16}
+{"dyadic_categorical_stratum_laws": 24, "smallest_positive_binary64_ID_kept": true}
+{"exact_prefix_pair_kernels": 3, "all_score_PSD_leaf_coordinates": 20}
+{"conditional_correlated_strata_checks": 192, "exact_enumeration_control_preserved": true}
+{"conditional_original_laws": 4, "actions": 193, "joint_triples": 821}
+{"iid_replicas_exact_counts": [1, 2, 4], "visible_variance": "1856/455625", "hidden_variance": "64/10125"}
+{"independent_cross_half_joint_cases": 64, "true_expected_paired_iid1": "1/4"}
+{"independent_semantic_tail_completions": 32}
+{"suffix_exact_score_queries": 20, "new_model_forwards": 0}
+{"original_suffix_words": 1111, "eos_pad_same_original_id": true}
+{"numeric_original_words": 22608, "classes": 10, "original_ids": 12}
+{"independent_proxy_byte_cases": 1260}
+{"proxy_rational_float_queries": 137, "structural_zeros": 35}
+{"independent_numeric_verifier_decimal_cases": 396}
+{"prefix_fake_states": 35, "neural_forwards": 0, "full_path_second": "306677314897280072797/38485648917015300000", "collapsed_path_second": "117978926098492389432115871/18870052463097439804200000"}
+{"prefix_joint_laws": 5, "prefix_triples": 2701, "prefix_actions": 484, "prefix_coordinate_scores": 31790}
+{"adaptive_proxy_states": 39, "visible_paths": 168}
+{"proposal_control_laws": 4, "triples": 821, "actions": 193, "zero_proxy_actions": 122}
+{"naive_visible_bias_max": "359/18080", "naive_class_bias_max": "1/50", "frozen_head_restriction_witness": true}
+{"fake_head_states": 31, "observed_paths": 52, "full_auxiliary_paths": 88}
+{"smooth_joint_laws": 8, "observed_actions": 256, "score_coordinates": 4096}
+{"exact_gradient_time_checks": 30, "new_model_forwards": 0}
+{"full_target_laws": 30, "reference_paths": 330, "strict": 30}
+{"exact_reference_occupancy_states": 32, "parameter_updates": 0}
+{"reference_ordering_counterexamples": [{"target_ids": [0, 2, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "9/112"}, {"target_ids": [0, 3, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "129/1702"}, {"target_ids": [0, 4, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "15/206"}, {"target_ids": [1, 2, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-19/3262"}, {"target_ids": [1, 3, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-43/3222"}, {"target_ids": [1, 4, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-123/6854"}, {"target_ids": [2, 0, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "61/1110"}, {"target_ids": [2, 1, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "359/3734"}, {"target_ids": [3, 0, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-191/892"}, {"target_ids": [4, 0, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-935/6862"}, {"target_ids": [3, 1, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-2705/14974"}, {"target_ids": [4, 1, 5], "bound_gradient": "0", "final_log_likelihood_gradient": "-229/2374"}]}
+{"reference_count_laws": 7, "original_actions": 247}
+cycle-set/permutation exact assignments: 153
+classical ordered-loop accepted assignment masses: 153
+Ewens integer-tape leaves: 623
+NB/Ewens cycle-count coefficients: 201
+marked-soup finite integer tapes: 8875 output coefficients: 40
+exact return/minor/certificate checks: 42
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+exact-law fixture n=1, weighted=False: cumulative 0 events
+exact-law fixture n=1, weighted=True: cumulative 0 events
+exact-law fixture n=2, weighted=False: cumulative 8 events
+exact-law fixture n=2, weighted=True: cumulative 16 events
+........................................................
+----------------------------------------------------------------------
+Ran 315 tests in 88.281s
+
+OK
+{"visible_paths": 87, "full_latent_paths": 459}
+{"local_actions": 173, "exact_second_moment_checks": 1038}
+six-pool production conditional rows: 35 integer-tape leaves: 12412
+positive remainder independent expansions: 8
+six-pool exact population entries: 192 square directions: 115 Boolean verifiers: 334
+proved-family endpoint exact verifier/square checks: 508 unsafe control retained
+original raw-alias/failure source tapes: 4096
+uniform-prefix consistency: 1021 certified, 3 refinements
+independent representable-grid roundings: 1793
+positive-circuit enclosure checks: 3024
+wrong-height-budget counterexample: 926336713898529563388567880069503262826159877325124512315660672063305037119488/302053206613778885282545886204311976195413446228001225289808855939157129998507

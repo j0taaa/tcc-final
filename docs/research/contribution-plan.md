@@ -2926,3 +2926,21 @@ Dados/protocolo/fontes completos preservados. Controle intervalar é clássico,
 não promover sua mera implementação a nova teoria/conquista editorial. A meta
 científica do usuário permanece aberta; não insistir nesta aplicação só por
 correção numérica ou derrotar um baseline CPU mais fraco.
+
+## 2026-10-16 — A57 conditional policy-ratio moments
+
+Writtenf5833c2 before independent reference: three ordinary positive weighted
+prefix queries compute conditional first/second moments of finite-change IS
+ratios for the smooth variable-EOS forced-anchor policy. Class control SUMS
+before squaring/dividing; length control uses the same two insides as ordinary
+visible evidence. Four rational oracles pass173 actions/1038 moments and all87
+visible/459 augmented adaptive paths; full315 tests PASS88.281s. Hard preimages
+can change and invalidate augmented IS despite common visible support.
+
+The final ORIGINAL Atlas2021 Theorems3.5/4.1 and matched-support explanation
+already supply power/product/integration; MIPS supplies marginal-IS variance
+and PAPL supplies discarded-planner marginalization. Keep as diagnostic/control,
+not a new generic mechanism. No old-head readout, neural forward, sample, label
+or update was triggered. A52 V18 remains CLOSED NEGATIVE; this is a distinct
+operation, not a relaxation. Own useful separation and the user's goal remain
+OPEN. Exact scopes/decision: attempts/57-policy-ratio-moments/work/primary-decision-v2.md.
