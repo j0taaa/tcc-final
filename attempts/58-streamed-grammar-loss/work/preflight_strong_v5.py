@@ -78,6 +78,12 @@ def main(output, source, inputs):
                         plan = SortedHeadPlan(
                             mapping, device="cuda", threshold=threshold, panel=32, backend=backend
                         )
+                        physical_bias_cpu = data[2][plan.perm.cpu()]
+                        plan.blocked_classes = frozenset(
+                            cls
+                            for cls, lo, hi in plan.ranges
+                            if torch.isneginf(physical_bias_cpu[lo:hi]).all()
+                        )
                         h = h0.detach().requires_grad_()
                         w, b = [x[plan.perm].detach().requires_grad_() for x in (w0, b0)]
                         z, t = plan(h, w, b, t0)

@@ -47,6 +47,8 @@ class StrongHeadTests(unittest.TestCase):
         for backend in ("dense", "checkpoint"):
             for threshold in (0, 1, 8, 32, 128):
                 plan = SortedHeadPlan(mapping, threshold=threshold, panel=2, backend=backend)
+                if threshold in (0, 32):
+                    plan.blocked_classes = frozenset()  # All fixture biases are finite.
                 for actual, wanted in zip(run(plan), reference, strict=True):
                     torch.testing.assert_close(actual, wanted, rtol=5e-12, atol=5e-12)
 

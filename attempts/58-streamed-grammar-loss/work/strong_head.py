@@ -49,6 +49,14 @@ class SortedHeadPlan:
         self.all_classes = torch.tensor([c for c, _, _ in self.ranges], device=device)
         self.all_member_class = torch.repeat_interleave(self.all_classes, self.all_lengths)
         self.class_count = len(members)
+        # None preserves dynamic checks; a declared immutable bias support
+        # can instead be prepared once alongside the other metadata.
+        self.blocked_classes = None
+
+    def blocked(self, cls, bias, lo, hi):
+        if self.blocked_classes is not None:
+            return cls in self.blocked_classes
+        return bool(torch.isneginf(bias[lo:hi]).all())
 
     def __call__(self, hidden, physical_weight, physical_bias, original_targets):
         return _SortedHead.apply(hidden, physical_weight, physical_bias, original_targets, self)
@@ -68,7 +76,7 @@ class _SortedHead(torch.autograd.Function):
                 logits = h @ w[: plan.small_count].T + b[: plan.small_count]
                 z[:, plan.small_classes] = segmented_lse(logits, plan.small_lengths)
             for cls, lo, hi in plan.large:
-                if torch.isneginf(b[lo:hi]).all():
+                if plan.blocked(cls, b, lo, hi):
                     z[:, cls] = -torch.inf
                     children.append(None)
                 elif plan.backend == "CCE":
@@ -128,7 +136,7 @@ class _SortedHead(torch.autograd.Function):
             if plan.small_count:
                 block(0, plan.small_count, plan.small_member_class)
             for ordinal, (cls, lo, hi) in enumerate(plan.large):
-                if torch.isneginf(b[lo:hi]).all():
+                if plan.blocked(cls, b, lo, hi):
                     dw[lo:hi].zero_()
                     db[lo:hi].zero_()
                 elif plan.backend == "CCE":
