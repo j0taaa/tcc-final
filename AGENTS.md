@@ -415,6 +415,22 @@ extensa do núcleo simples. Teorema específico/novidade/consumidor útil
 seguem abertos; próxima expansão precisa diferença própria concreta, não
 somente mais oráculos. Ver59/work/decision-v4.md.
 
+A60 escrevee107296 antes de código uma operação distinta: CDF/quantis da
+imagem numérica exata de UMA fonte ponderada/cabeça congelada, somando aliases
+e grafias científicas. Relação não ambígua O_I(L) é candidata; WFST/prefixos/
+unranking e separação de output atrasado são clássicos. Addendum220c1e1 corrige
+bound de bits ANTES de código. Referência229 linhas só[1,100), sem decoder
+nativo. Quatro oráculos finais4cf274f passam0.701s:48.880 numerais/28 regressões,
+260 tapes/34 coeficientes originais/310 CDFs/71 quantis. Suíte337 PASS95.193s.
+Primeiro draft teve freeze impedido por Ruff e executou oráculo antes de commit;
+desvio/log/fonte f8f9f57 preservados, não relabelar como freeze prospectivo.
+Auditoria escrita V3 mostra WFST completo reproduzindo índice e reuso, não
+controle independente medido. Novidade específica/benefício real seguem abertos.
+LLM Processes/NTL/SMMD são antecedentes; lei de uma cabeça não é distribuição
+da trajetória/calibração. Zero novo modelo/head/forward/update/timing A60.
+Sem expansão full-V/nativa/treino/custo ou promoção só pelos oráculos.
+Ver60/work/result-v4.md; meta científica positiva continua aberta.
+
 Estas instruções valem para o repositório inteiro. O objetivo é desenvolver uma
 contribuição científica útil para **geração de textos estruturados por GLCs
 com modelos de linguagem por difusão (dLLMs)**, especialmente JSON e DSLs.

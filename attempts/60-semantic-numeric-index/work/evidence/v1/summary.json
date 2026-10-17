@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-17",
+  "scope": "minimal exact [1,100) frozen rational token-row source; no native decoder binding",
+  "theory_commit": "e107296873af8a92375b7d3c50ba3f7a2a24771b",
+  "before_code_correction_commit": "220c1e19bf02be2ba031ae2f133d28421687df97",
+  "initial_draft_commit_after_execution": "f8f9f57399267a9de65bfaed2af555af1a92937a",
+  "final_source_commit_before_final_checks": "4cf274f45d758831b07e520c74c04f3301e8b5f6",
+  "python": "3.11.16",
+  "source_sha256": {
+    "attempts/60-semantic-numeric-index/work/semantic_index.py": "0416e686f859fdd940c60b56bcf8a0fa1593ecd3cbe5afdcf37d602e834b9caa",
+    "attempts/60-semantic-numeric-index/work/test_semantic_index.py": "5be0850e5844e78e47bf3b4780acf98719cecb95f186ecc2ed8d9072c8789560",
+    "tests/test_semantic_numeric_index.py": "82485825dba2b47a613bcf750a7a5a987172d3dc6fe8024fd35c6c564150f189",
+    "attempts/60-semantic-numeric-index/work/theory-v1.md": "8c3b0b3d55da44ce09c5e36fa7ea60469ade2b70147d48fe2c75f8f0fd28b1c6",
+    "attempts/60-semantic-numeric-index/work/preflight-addendum-v2.md": "c4c7d58049d7caff46ca9a54eb77dbb8c39fff59c95ec570f97ae4d675556958"
+  },
+  "checks": {
+    "focused": {
+      "command": ".venv/bin/python -m unittest attempts.60-semantic-numeric-index.work.test_semantic_index -v",
+      "exit_code": 0,
+      "tests": 4,
+      "seconds": 0.701,
+      "numerals": 48880,
+      "admitted_numerals": 2647,
+      "separate_regressions": 28,
+      "original_tapes": 260,
+      "source_cases": 5,
+      "original_id_coefficients": 34,
+      "cdf_queries": 310,
+      "quantiles": 71
+    },
+    "full_suite": {
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "tests": 337,
+      "seconds": 95.193
+    },
+    "ruff": {
+      "files": 3,
+      "exit_code": 0
+    }
+  },
+  "initial_ordering_deviation": "Initial oracle ran after lint rejected freeze command; NOT prospectively source-frozen. Literal draft, failure and passed log retained.",
+  "new_model_reads": 0,
+  "new_neural_forwards": 0,
+  "updates": 0,
+  "semantic_labels": 0,
+  "competitive_timing_records": 0,
+  "own_useful_comparative_advantage_confirmed": false,
+  "priority_confirmed": false,
+  "goal_achieved": false,
+  "resource_or_neural_campaign_triggered": false
+}

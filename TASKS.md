@@ -47,6 +47,33 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M83 — Exact semantic numerical CDF/quantiles, minimal candidate only
+
+- [x] T8300: Write A60 eight criteria/theorye107296 BEFORE code. Fixed positive
+  band, original-token source, unambiguous bounded numerical relation and
+  exact value-key/prefix statistics. Generic WFST and unranking are classical;
+  restricted delayed-output bound does not exclude register/multipass controls.
+  Addendum220c1e1 corrects numerator assumptions for the bit bound BEFORE code.
+- [x] T8301: Minimal229-line[1,100) reference ONLY. Initial draftf8f9f57 passed
+  four oracles0.707s but was committed AFTER execution: failed Ruff E501
+  prevented intended freeze; logs/deviation retained. Final source4cf274f
+  committed BEFORE final4-oracle PASS0.701s:48,880 numerals/28 regressions,
+  260 tapes/five sources/34 original-ID coefficients/310 CDFs/71 quantiles.
+  Later full337 PASS95.193s; Ruff3 files PASS. No A60 model/head/forward/update/
+  semantic label or competitive timing. Full facts60/work/result-v4.md.
+- [x] T8302-audit: Written complete generic-WFST construction reproduces
+  projected source/prefix masses and caching. No generic own inference-speed
+  advantage follows. This is NOT an independently implemented/timed control.
+  LLM Processes Section2/A.1/A.2/H.1, NTL Section2 and SMMD3.0--3.3 read;
+  direct numerical readout/supervision are established antecedents.
+- [ ] T8302-distinction: Specific bounded-normalizer priority and substantial
+  own useful consequence remain OPEN. Need a real consumer of THIS head-local
+  numerical law and fair complete cached/register/WFST controls. No claim of
+  calibrated uncertainty, improved model accuracy or whole-decoder statistics.
+- [ ] T8303: Full-V/EOT/PAD/native/model/training/cost campaign NOT TRIGGERED.
+  More correctness checks alone do not justify it. Do not promote A60 as the
+  article result or reopen A59's simple-core application from this prototype.
+
 ## M82 — Complete scientific-notation interval infilling, bounded compiler
 
 - [x] T8200: Write A59 eight criteria/theory1aac564 BEFORE prototype. Exact

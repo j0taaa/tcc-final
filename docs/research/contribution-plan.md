@@ -3047,3 +3047,38 @@ the positive user goal remain OPEN. Complete compiler support alone is not
 sufficient evidence. Need a concrete additional own distinction/consumer
 before expansion. Later333 tests PASS94.695s and focused Ruff11 files PASS;
 these are not scientific performance confirmation. See59/work/decision-v4.md.
+
+
+## 2026-10-17 — A60 exact numerical image statistics, minimal reference
+
+A60's BEFORE-code notee107296 changes the operation to semantic-value CDFs/
+quantiles of ONE frozen weighted source, aggregating scientific spellings and
+original token aliases. It writes an O_I(L) unambiguous normalization relation,
+classical weighted composition/prefix unranking, and a restricted delayed-output
+state separation. Explicit numerator-bound correction220c1e1 precedes code;
+no native-RNG, calibrated uncertainty or whole-trajectory law is asserted.
+
+Initial draftf8f9f57 passed4 tests0.707s but its intended pre-execution commit
+was blocked by Ruff E501; a separately issued test command still ran. Preserve
+that deviation/source/log literally. Final4cf274f changes only test line wrapping
+and is frozen BEFORE final4-oracle PASS0.701s:48,880 numerals/28 regressions,
+260 original tapes/five sources/34 original-ID coefficients/310 exact CDFs/
+71 quantiles. The minimal229-line reference only covers[1,100) rational token
+rows. Full337 tests PASS95.193s and Ruff3 files PASS; no A60 model read, head,
+new forward, update, semantic label or competing-method timing.
+
+The analytical generic control composes/project the SAME numerical relation
+with a proper epsilon filter and obtains identical prefix masses/caching.
+That defeats a generic own quantile-inference claim; it is not a separate
+control implementation or prior publication of the specific relation. Mohri
+2009 Section5.1 and LMCS CWidth5.3 proof were read. LLM Processes2/A.1/A.2/H.1
+already elicits numerical likelihoods directly. NTL2, SMMD3.0--3.3 and NTIL3.1/
+3.2 already establish numeric/sequence-aware losses; no training novelty follows
+from adding them. Contracts and exact read scopes are in60/work/control-and-reading-v3.md.
+
+Retain the checked artifact without promoting it to the article or triggering
+full-V/native/training/cost work. Specific normalizer priority, own substantive
+usefulness for a real consumer, and the original positive goal remain OPEN.
+Need that distinction BEFORE expanding, rather than multiplying oracle counts.
+All result/source/evidence links:60/work/result-v4.md. A59 and earlier failed
+campaigns remain unchanged; no methodological shortcut is credited as a win.

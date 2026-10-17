@@ -1,0 +1,11 @@
+test_alias_sensitive_subjective_bayes_example (attempts.60-semantic-numeric-index.work.test_semantic_index.SemanticIndexTests.test_alias_sensitive_subjective_bayes_example) ... ok
+test_empty_emissions_epsilon_ownership_and_refusals (attempts.60-semantic-numeric-index.work.test_semantic_index.SemanticIndexTests.test_empty_emissions_epsilon_ownership_and_refusals) ... ok
+test_source_mass_cdf_and_exact_quantile_boundaries (attempts.60-semantic-numeric-index.work.test_semantic_index.SemanticIndexTests.test_source_mass_cdf_and_exact_quantile_boundaries) ... ok
+test_unique_normalization_against_independent_decimal (attempts.60-semantic-numeric-index.work.test_semantic_index.SemanticIndexTests.test_unique_normalization_against_independent_decimal) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.701s
+
+OK
+{"original_tapes": 260, "source_cases": 5, "original_id_coefficients": 34, "exact_cdfs": 310, "exact_quantiles": 71}
+{"normalization_numerals": 48880, "accepted": 2647, "separate_regressions": 28}

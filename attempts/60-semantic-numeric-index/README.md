@@ -63,3 +63,23 @@ including zero permit unbounded negative decimal orders even with bounded
 text length; they do not inherit the simple finite-order construction. Signs,
 general recursive JSON extraction and whole-trajectory distributions require
 separate arguments. Do not silently substitute canonical-only spellings.
+
+## V1 retained result, 2026-10-17
+
+The minimal229-line reference implements ONLY[1,100) for finite rational
+original-token rows, not a native decoder. Its four final oracles PASS0.701s:
+48,880 exact numerals/28 separate regressions,260 original tapes,34 original-ID
+coefficients,310 exact CDF queries and71 quantiles. Later full337 tests
+PASS95.193s; focused Ruff3 files PASS. No new model/head/forward/update or
+competitive timing. The first draft's failed lint/freeze ordering and its
+passing run are preserved explicitly; the final source4cf274f was committed
+before the final checks. The bit-bound correction220c1e1 preceded all code.
+
+The analytical control audit shows classical filtered WFST composition can
+reproduce the same index and prefix sharing. That removes a generic own
+inference-speed justification; specific normalizer priority and a substantive
+useful application remain OPEN. No full-V/native/training/cost campaign or
+main-paper promotion is triggered. This does not fulfill the user's goal.
+See[the result](work/result-v4.md),[complete-control/reading audit](work/control-and-reading-v3.md)
+and[exact evidence](work/evidence/v1/summary.json). All eight criteria above
+remain active; correctness alone does not resolve criteria2/3/6/8.
