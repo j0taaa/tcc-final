@@ -20,6 +20,16 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A63 has a positive exact stopped-work result:386/81 is the minimax expected
+source calls for universal cap6/7 atom-optimal coupling on three ALLOWED keys.
+The deterministic raw reference matches the full ordered six-pool matching law;
+all work-polynomial coefficients and729 named tapes/28 multisets pass. At least
+20.576% source-call saving applies versus always-six for every key law. The
+complete classical lazy-CDF control also stops early, so the U3 saving against
+that stronger control is9.559%, not20%. No neural/full-cost/priority claim or
+goal completion. Details:63-adaptive-six-coupling/work/operational-result-v4.md
+andwork/classical-result-v5.md; all prospective freezes/evidence preserved.
+
 A62 audits a different real consumer, the public autoregressive code-metric
 RLM's numerical quantiles. BEFORE-producer criteria/proof3f0912d and audit885c614
 retain six hash-checked files/six literal-arithmetic pairs/twelve finite corners,
@@ -57,6 +67,7 @@ new seeds, cost/variance or independent campaign follows for this initialization
 
 | Pasta | Direção |
 | --- | --- |
+| [63-adaptive-six-coupling](63-adaptive-six-coupling/README.md) | Minimax sharp386/81, par ordenado preservado e redução de chamadas; custo integral/novidade/uso real abertos |
 | [60-semantic-numeric-index](60-semantic-numeric-index/README.md) | Quantis compactos para ordens científicas irrestritas passam; controle clássico de localização também polinomial, benefício próprio/uso real abertos |
 | [58-streamed-grammar-loss](58-streamed-grammar-loss/README.md) | Cabeça sintética completa: 680 registros sem erros, oito candidatas 0/8 gates contra controles fortes; família encerrada negativa |
 | [59-numeric-interval-infilling](59-numeric-interval-infilling/README.md) | Controle completo clássico empata linguagem e complexidade; corpus externo não demonstra uso próprio; sem campanha nativa |

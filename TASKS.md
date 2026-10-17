@@ -47,6 +47,43 @@ cost remain open. No new neural campaign is credited to M70.
   8960-answer/1258878-coordinate check passes1.522e-14. No large fresh neural
   campaign/training triggered; see work/conditional-result-v18.md. Goal OPEN.
 
+## M86 — Exact three-class coupling, positive minimax stopped-work theorem
+
+- [x] T8600: A63 criteria/theoryee6f423 BEFORE solver. Unknown-P original
+  payloads, three ALLOWED keys, literal first, universal marginals and known
+  simultaneous cap-six atom optima. Bernstein/matching/LP are antecedents.
+- [x] T8601: Initial source31c3961 BEFORE solve; rational primal/dual both
+  386/81, exact gap0. Independent verifier checks729 tapes28 multisets/five
+  laws and corruptions. Source/evidence already preserved in A63/v1.
+- [x] T8602: Adjacent-cap contractcbe7c40/source5e2da7c BEFORE ALL four new
+  solves. Caps4/5 cost31/9;6/7 cost386/81. Four independent exact verifiers
+  pass81/243/729/2187 named tapes. Raw evidence4cc8864 in63/work/evidence/v3.
+  Original parallel solve tool output was lost in context truncation, recovered
+  from CERTIFIED files/no live process without re-solving. Its terminal exit
+  codes were inferred, not observed; V4 metadata clarifies the V3 origin fields.
+- [x] T8603: Operational contract14562a9/written minimaxe5f7331 precede
+  sourced59e7ad AND execution. Deterministic44-row raw callback reference:
+  all729 tapes28 multisets/15 independent matchings PASS, full ORDERED law
+  matches, all degree-six work/stop coefficients exact. Formula maximized at
+  U3 gives sharp MINIMAX386/81 for cap6/7;>=20.576% source-call saving versus
+  always-six for EVERY key law. No all-P pointwise optimality. Evidence2b7544c
+  and63/work/{minimax-cost-v4,operational-result-v4}.md.
+- [x] T8604: Primary/control contractf8b590e BEFORE source922c50a/execution.
+  Complete own classical lazy count-CDF adaptation passes5832 replays/729
+  tapes28 multisets;1092 prepared states. U3 control2134/405 versus386/81:
+  only9.559...% source-call saving, NOT20% over competent controls. All five
+  original rational laws/statuses preserved, no released package timed.
+  Evidence37ae39e,63/work/classical-result-v5.md. Original Goyal/Sigman draft
+  all5 pages and exact Combinatorial/DiceEnterprise scopes read; no priority
+  inferred from absent search terms. Missing antithetic originals remain gaps.
+- [ ] T8605: Establish a sufficient OWN contribution/priority and useful real
+  full-cost operation before article/native campaign. The source-call theorem
+  is positive progress, not goal completion, general EPIC/iid superiority or
+  total20% speed. Charge coordinator/shared preparation/pair consumption;
+  informed/larger/score-aware methods remain legitimate practical controls.
+  No A63 head/weight/forward/update/row-label/timing. No core modification;
+  old345-test suite not rerun or credited to A63. Exact CLI audits are separate.
+
 ## M85 — Native RLM numerical quantile audit; complete control matches bound
 
 - [x] T8500: A62 criteria/theory/source scope3f0912d BEFORE producer. Different

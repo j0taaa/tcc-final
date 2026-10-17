@@ -1,5 +1,39 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A63 positive sharp minimax source work, practical goal still open
+
+Written criteria/theoryee6f423 precede solver31c3961 and its exact386/81
+primal/dual certificate. Stronger adjacent-cap audit froze5e2da7c before all
+four solves:4/5=31/9,6/7=386/81, all independently checked with named tapes
+and zero rational dual gap. Lost parallel tool output was recovered without
+re-solving; V4 metadata distinguishes inferred producer exits from observed
+verifier exits. These are constructed proof problems, not model observations.
+
+Written extraction14562a9 and minimaxe5f7331 precede operational sourced59e7ad
+and execution. Its44 deterministic actions retain literal first and a nonfirst
+raw payload. All729 tapes/28 multisets and15 independent matchings per tape
+pass. The full ORDERED pair law matches, stronger than the LP required. All
+degree-six coefficients verify E N=4+2e2-2e2²+10e3-4e2e3. The written monotonicity
+bound makes U3 the worst law, so386/81 is the sharp MINIMAX value for hardcap6
+and7 among universal unknown-law atom maximizers, also for the exact ordered
+matching law. No pointwise optimality at all P or finite native RNG coupling.
+
+Expected source-call saving versus always-six is at least50/243=20.576% for
+EVERY three-key law. Finite Wald charges iid source work/failures, but shared
+setup, coordinator and downstream work remain explicit. A stronger complete
+classical count-CDF adaptation, frozen922c50a after contractf8b590e, passes5832
+replays. Its U3 mean2134/405 yields only9.559% source saving, not20%. All five
+predeclared rational laws are retained. No package/model/timing was executed.
+
+General factories, Bernstein and matching are antecedents. All five pages of
+the Goyal/Sigman author draft and specific original Combinatorial/DiceEnterprise
+scopes were read; missing antithetic originals and priority remain gaps. A
+substantial own significance/real useful full-cost consumer are still required.
+No manuscript promotion or new neural campaign; old maintained345 tests were
+not rerun/attributed. Positive exact theorem and CLI checks do not alone fulfill
+the original goal. Full scope/evidence:63/work/{minimax-cost-v4,operational-result-v4,
+primary-and-control-contract-v5,classical-result-v5}.md andwork/evidence/.
+
 ## 2026-10-16 — A56 numerical GPU feasibility and direct ADZ antecedent
 
 Written7fb3daf/b1f88d6 precede this direction's arithmetic reference and bounded

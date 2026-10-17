@@ -4695,13 +4695,40 @@
     {
       "id": "63-adaptive-six-coupling",
       "title": "Custo adaptativo ótimo de acoplamento universal com três classes e cap seis",
-      "conclusion": "Written criteria/theoryee6f423 before source31c3961 and first solve. Known Bernstein cap6 atom optimum, new candidate stopped-work FAIR-POINT bound under unknown-law universal marginals with three ALLOWED classes and literal first. Exact LP:185 states454 variables63 inequalities154 equalities, reconstructed primal AND dual both386/81 with zero gap. Independent stdlib verifier enumerates729 named tapes28 multisets/five weighted laws and rejects corrupted primal/dual. Saving50/243=20.576...% of source calls versus full-six achiever at U3; not wall/CPU or all-P pointwise optimum. No operational sampler, new head/forward/weight/row/update/label or competitive timing. Raw-payload lift, symmetry scope and strong informed/larger/iid/binary controls explicit. Priority and substantive real full-cost usefulness remain OPEN. V2 extraction prospective only; later stronger adjacent-cap comparison must be separate, not relabeled initial evidence.",
+      "conclusion": "Written criteria/theoryee6f423 precede solver31c3961: exact rational primal/dual386/81, independent729 named tapes28 multisets/five laws/corruptions. Prospective adjacent-cap source5e2da7c yields four exact certificates:4/5=31/9,6/7=386/81. Parallel producer tool output lost; recovery did not repeat solves and V4 origin clarifies inferred versus observed exit statuses. Operational contract14562a9 and written minimaxe5f7331 precede sourced59e7ad/execution:44 deterministic key actions retain literal first and nonfirst original raw payload. Independent729 tapes28 multisets/15 matchings pass; FULL ORDERED pair law equals classical full-six matching for every P via exact multiset coefficients/raw lift. All homogeneous work/stop coefficients verify E N=4+2e2-2e2²+10e3-4e2e3, maximized at uniform keys. Hence386/81 is sharp MINIMAX expected source calls among universal unknown-law cap6/7 atom maximizers on THREE ALLOWED keys, also exact ordered-law simulators. Not pointwise optimal every P. At least50/243=20.576% source-call saving versus always-six for every law. Stronger classical count-polynomial lazy-CDF control frozen922c50a afterf8b590e passes5832 replays:U3 cost2134/405, candidate saving only102/1067=9.559%, NOT20% against competent controls. All five rational laws/statuses preserved; generic factories/Bernstein/matching not claimed new. Original-source scopes/gaps and finite Wald/full costs written. No new model/head/forward/weight/row-label/update/timing/native adapter; maintained345 tests not rerun/credited. Specific priority, substantive real full-cost usefulness/publication and original user goal remain OPEN.",
       "reading": "attempts/63-adaptive-six-coupling/README.md",
       "versions": [
         {
           "id": "v1",
           "source_commit": "31c396100e1ca70aa5f76424f3e60c6c6c42e4e9",
           "evidence_commit": "b0dd7fa2b99a811eeeebea56e032dd08721561f1",
+          "evidence_roots": [
+            "attempts/63-adaptive-six-coupling/README.md",
+            "attempts/63-adaptive-six-coupling/work"
+          ]
+        },
+        {
+          "id": "v2-adjacent-caps",
+          "source_commit": "5e2da7c9cd318ddd0ae92d93bbb63140de9c70d7",
+          "evidence_commit": "4cc886407d92b8e6d093b0c6b3f97f464d6523c3",
+          "evidence_roots": [
+            "attempts/63-adaptive-six-coupling/README.md",
+            "attempts/63-adaptive-six-coupling/work"
+          ]
+        },
+        {
+          "id": "v3-operational-minimax",
+          "source_commit": "d59e7adf1c96589933fa51756e1e0eaf9179d653",
+          "evidence_commit": "2b7544ce9f017589fa842bef27bca89c7d64a379",
+          "evidence_roots": [
+            "attempts/63-adaptive-six-coupling/README.md",
+            "attempts/63-adaptive-six-coupling/work"
+          ]
+        },
+        {
+          "id": "v4-classical-control",
+          "source_commit": "922c50a33506f43755847672ec5d66ca553e4ca7",
+          "evidence_commit": "37ae39e077cc6031317c747eaa1ec1263333b612",
           "evidence_roots": [
             "attempts/63-adaptive-six-coupling/README.md",
             "attempts/63-adaptive-six-coupling/work"

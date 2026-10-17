@@ -65,3 +65,35 @@ new solves: caps4/5 and6/7 have equal classical atom optima but may have
 different minimum expected work. All four controls are required, including
 losses/inconclusive certificates. V2 operational extraction is deferred pending
 this stronger comparison; no operational/native sampler has been claimed.
+
+## Current V3--V5 result (after the prospective paragraphs above)
+
+All four adjacent-cap exact certificates pass independent named-tape/dual
+checks: caps4/5 give31/9 calls and6/7 give386/81 at U3. The later deterministic
+44-row original-payload reference passes all729 tapes/28 multisets and15
+independent matchings per tape. The complete ORDERED pair law agrees with
+the full-six reference, a stronger result than the LP originally constrained.
+This is distributional equality, not identical pairs under shared native RNG.
+
+For criteria2--5, the separately written and exactly coefficient-checked cost
+law is4+2e2-2e2^2+10e3-4e2e3. It is maximized at uniform key masses, so the
+sharp MINIMAX expected work is386/81 for three allowed classes and hardcap6
+or7. Saving at least50/243=20.576...% of source calls versus always-six holds
+for EVERY key law. Pointwise optimality at every P is not claimed. A complete
+classical lazy-CDF/count-polynomial control also stops early:5832 exact replays
+pass and its U3 cost2134/405 gives only9.559...% candidate saving against it.
+Do not claim20% over all competent controls. Five laws are proof objects,
+not neural benchmarks. Goyal/Sigman/general factories remain antecedents.
+
+For1/6/7/8, the raw callback rule is implemented but a useful real full-cost
+consumer, sufficient priority and article adequacy remain OPEN. Full source
+work obeys finite Wald, while coordinator/preparation/downstream costs must
+also be charged. No A63 model/head/weights/forward/row/label/update/timing or
+native adapter. The maintained345-test count is old, not rerun for this CLI
+work. All six experimental Python files have focused exact audits and lint;
+historical source/evidence stay separate. The original goal is not completed.
+
+Read [minimax proof](work/minimax-cost-v4.md),
+[operational result](work/operational-result-v4.md),
+[classical comparison](work/classical-result-v5.md) and
+[primary scopes/complete control](work/primary-and-control-contract-v5.md).

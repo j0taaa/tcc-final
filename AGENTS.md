@@ -1,5 +1,27 @@
 # AGENTS.md
 
+A63 investiga custo parado de acoplamento EXATO com três chaves PERMITIDAS.
+Critérios/provaee6f423 precedem solver31c3961; primal/dual racionais386/81 e
+verificador independente729 tapes/28 multisets passam. Contratocbe7c40/source
+5e2da7c precedem quatro solves: cap4/5=31/9,6/7=386/81, todos certificados.
+Saída do tool paralelo perdida por truncamento foi recuperada dos arquivos,
+sem repetir solves; códigos terminais do produtor V3 eram inferidos, não
+observados, esclarecimento emv4/origin. Contrato14562a9/provae5f7331 precedem
+referênciad59e7ad:44 decisões determinísticas,729 tapes/28 multisets/15 matchings
+independentes e coeficientes completos passam. Custo4+2e2-2e2²+10e3-4e2e3 tem
+máximo uniforme:386/81 é MINIMAX sharp para cap6/7, não ótimo pontual todo P.
+Reduz>=20,576% chamadas frente a full6 para TODA lei das três classes. O par
+ORIGINAL ORDENADO tem mesma lei do matching full6, inclusive aliases/FAIL;
+não preserva pares/RNG nativos literalmente. Controle clássico lazy-CDF completo
+source922c50a passa5832 replays: U3 custa2134/405; ganho candidato é9,559%,
+NÃO20% contra todos controles. Goyal/Sigman/factories são antecedentes, escopos
+originais e lacunas estão registrados; novidade suficiente/publicabilidade
+e consumidor real competitivo permanecem abertos. Custos completos/Wald estão
+escritos, sem head/forward/update/row-label/timing novo, adaptação nativa ou
+vitória iid/EPIC. Suíte mantida345 é anterior e NÃO rerodada para estes CLIs.
+Preservar fontes/evidências63/work/evidence/v1,v3,v4,v5; não promover só pelo
+bound positivo. A meta científica do usuário continua aberta.
+
 A62 investiga leitura numérica do RLM AR público, outra operação além de60/61.
 Critérios/prova3f0912d precedem auditor885c614: seis hashes/seis pares aritméticos/
 12 cantos PASS; dois pares decimalmente iguais diferem um ULP na expressão
