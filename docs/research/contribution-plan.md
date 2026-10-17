@@ -1,5 +1,28 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A65 competent grid control and prospective distinct small application
+
+Contractd24974e precedes classical moment-DP source217b752/one execution:
+114 spellings/eight invalid/four guards, three exact Fraction laws and12 native
+CPU/CUDA fixture comparisons PASS. Per-sum moments/zero/incomplete/prefixes are
+preserved, max semantic discrepancy6.6614e-16. No101^K vector enumeration.
+Float64 ideal path weights are not exact native RNG certificates; raw alpha
+rounding overshoots remain. Evidence59fb467/grid-result-v5.md. This is a
+competent classical control, not own new theory or neural effect.
+
+Actual26B setup exceeds unquantized local resources; no OOM or quantized
+reproduction measured. Resource contract7c79ad5 defines a DISTINCT small
+JevBench/Tiny-A2D application using original Mosaic MASKED loop, final MODEL
+logits rather than Gemma's final log-marginals. Selector sourcedabfd45 before
+ONE selection:8 hash-ranked inputs from194 eligible/231 public rows. The
+program JSON-decoded gold-containing rows only to discard gold fields; do not
+claim no gold bytes loaded. Values never inspected/printed/used for ranking.
+Input manifest/copies0a75959, exposuree469e09. No real tokenizer/model/head or
+masked-loop call yet. First native FAKE CPU/CUDA Torch2.8 replay/frozen runner,
+then bounded<=129 forwards only. Necessary6/8 validity and4/8 ideal N7 removal
+>=0.005 are no quality/novelty/latency gate, and do not trigger labels or a large
+campaign. Own useful distinction/full goal remain OPEN.
+
 ## 2026-10-17 — A65 native correctness passes, synthetic scope remains explicit
 
 Prospective contract3a2b57e and adapter/oracle/runner3e62727 precede first native

@@ -4809,14 +4809,41 @@
     },
     {
       "id": "65-terminal-forecast-readout",
-      "title": "Leitura numérica terminal para o consumidor real Mosaic/JevBench; preflight racional",
-      "conclusion": "Native synthetic correctness PASS48/48 CPU/CUDA,320 helpers, literal IDs/control/RNG; first failed16-row draft preserved. No neural quality/cost measured; useful own contribution remains OPEN. See work/native-result-v4.md.",
+      "title": "Leitura numérica terminal em consumidor real: provas, replay nativo e controle DP clássico; aplicação neural pendente",
+      "conclusion": "Native synthetic replay48/48 and classical grid-control12/12 pass; first failed draft preserved. Distinct masked-loop Tiny-A2D protocol and8 input-only selections frozen, raw discarded gold-byte exposure disclosed. No neural head/quality/cost or sufficient own novelty yet; goal OPEN.",
       "reading": "attempts/65-terminal-forecast-readout/README.md",
       "versions": [
         {
           "id": "v1-terminal-proof-reference",
           "source_commit": "70ad3907409d240d6083fd7686d4e63a4c2e3fc4",
           "evidence_commit": "8009d753567fc64f9a410ae02900f6de0622cbad",
+          "evidence_roots": [
+            "attempts/65-terminal-forecast-readout/README.md",
+            "attempts/65-terminal-forecast-readout/work"
+          ]
+        },
+        {
+          "id": "v2-native-terminal-replay",
+          "source_commit": "2f55fc4a8b46a43114e447010f6361418a35851a",
+          "evidence_commit": "e8ddb26fd7270a7f53c5ae59d0a4eed7359b3679",
+          "evidence_roots": [
+            "attempts/65-terminal-forecast-readout/README.md",
+            "attempts/65-terminal-forecast-readout/work"
+          ]
+        },
+        {
+          "id": "v3-classical-grid-control",
+          "source_commit": "217b752df7c4ab29a129c0a7398c27d3e01c94d6",
+          "evidence_commit": "59fb46799804c4512e038421317b51a56e391ad3",
+          "evidence_roots": [
+            "attempts/65-terminal-forecast-readout/README.md",
+            "attempts/65-terminal-forecast-readout/work"
+          ]
+        },
+        {
+          "id": "v4-prospective-masked-application",
+          "source_commit": "e469e09babceac3a28957af3a946c954dfa89e79",
+          "evidence_commit": "e469e09babceac3a28957af3a946c954dfa89e79",
           "evidence_roots": [
             "attempts/65-terminal-forecast-readout/README.md",
             "attempts/65-terminal-forecast-readout/work"

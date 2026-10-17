@@ -85,6 +85,23 @@ cost remain open. No new neural campaign is credited to M70.
   meaningful removable terminal variance AND full-cost utility; mean/RB alone
   do not prove own novelty or article sufficiency. Do not force a smaller or
   quantized model to count as the original26B consumer. Goal remains OPEN.
+  V6 protocol7c79ad5 and selectordabfd45 now freeze a DISTINCT small masked-
+  diffusion application; NOT original26B consumer. One selector exit0 chooses8
+  of194 eligible inputs among231 public rows by input hash, no gold-based
+  selection. Raw JSONL gold bytes WERE decoded to discard, never values
+  inspected/printed/used; no pristine exposure claim. Sources/manifests0a75959,
+  exposuree469e09. No model/pretrained tokenizer/head executed. Before bounded
+  <=129 forwards need native MASKED-loop FAKE CPU/CUDA replay in Torch2.8 and
+  frozen own runner/model hashes. Necessary6/8 valid and4/8 ideal N7 removal
+  >=0.005 do not authorize quality labels/seeds/training. See65/work/masked-
+  resource-contract-v6.md and exposure-and-next-v6.md. Execution still OPEN.
+- [x] T8805: Competent classical finite-grid sum/moment DP, contractd24974e
+  before source217b752/one execution.114 spellings/eight invalid/four EOT-PAD
+  guards, three Fraction laws, per-sum moments and ALL12 native fixture/device
+  comparisons PASS. Max semantic discrepancy6.6614e-16, marginal1.9074e-6.
+  Native12 steps24 proposals added; synthetic only. Ordinary float64 ideal
+  path weights, exact semantic grid, NOT finite-RNG certificate/new theory.
+  Tiny alpha overshoots retained. Evidence59fb467;65/work/grid-result-v5.md.
 - [x] T8804: Preserve v1-terminal-proof-reference/source70ad390/evidence8009d75,
   checked against original Git trees. Eight copied consumer-source and two
   oracle-file hashes verified. Focused Ruff/format2 PASS, no maintained-suite

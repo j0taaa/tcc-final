@@ -1,5 +1,29 @@
 # AGENTS.md
 
+A65 V5 fornece controle clássico obrigatório de DP por soma/momentos, sem
+enumerar101^K vetores completos. Contratod24974e/source217b752 antes de execução:
+114 spellings/oito inválidos/quatro controles, três leis Fraction e12 pares
+fixture/dispositivo nativos PASS, erro semântico máximo6.6614e-16. É aritmética
+float64 da lei IDEAL de caminhos, não certificado de torch RNG; pequenos
+overshoots de alpha ficaram crus nos dados. Nenhum novo head/qualidade/timing.
+
+V6 congela aplicação PEQUENA/DIFERENTE: consumidor JevBench com Tiny-A2D e
+loop MASKED original Mosaic, não reprodução26B/DiffusionGemma/vLLM. Contrato
+7c79ad5 antes do selectordabfd45; uma seleção exit0 escolhe8 dos194 inputs
+públicos elegíveis entre231 linhas, apenas hash de id/state/question/labels.
+Dados/golds foram AUTOMATICAMENTE JSON-decodificados para descartar campos;
+valores gold NÃO foram impressos/inspecionados/usados. Não repetir antiga
+alegação de nenhuma linha/gold byte carregado. Manifesto só input/proveniência
+separada; exemplo README conhecido excluído prospectivamente. Fonte/cópias
+0a75959 e esclarecimentoe469e09 preservados. AINDA nenhum tokenizer/modelo/head/
+forward real; loop masked também NÃO executado. Próximo: hook e replay FAKE
+CPU/CUDA desse loop em Torch2.8, antes de runner e129 forwards máximos do
+screen8-inputs. Casos6/8 válidos e4/8 ganho IDEAL N7>=0.005 são só gates de
+NECESSIDADE; não acurácia/novidade nem campanha de qualidade autorizada. Último
+kernel masked usa logits do MODELO, diferente do log-marginal de Gemma. Usar
+IDs EOT/PAD reais e hashes BF16 corretos; não importar A52 mutável. Controles
+DP/MAP/normalização/ensembles continuam. Meta científica permanece aberta.
+
 A65 parte do consumidor real Mosaic36945e4b/JevBench. Prova clássica de média
 condicional/oráculos racionais2277130/b470a72/source70ad390 já preservados.
 Replay nativo agora PASS48/48 CPU/CUDA,96 passos com logits SINTÉTICOS,
@@ -27,7 +51,7 @@ recursos/necessidade ANTES de heads/golds, com seleção input-only/custos
 completos/casos negativos preservados. Setup original26B/48GB não foi
 reproduzido na máquina local12GB GPU/16GB RAM. Outro modelo é OUTRO escopo.
 Um exemplo público hard-sol-b-judge_hard-18 e agregados README foram vistos;
-nenhum arquivo de dataset/gold/resultados carregado. Não declarar calibração,
+emV4 nenhum dataset/gold carregado; V6 decodificou bytes para descartar. Não declarar calibração,
 acurácia/ECE/Capability, novidade suficiente ou meta cumprida. Escopo atual
 em65-terminal-forecast-readout/work/native-result-v4.md.
 

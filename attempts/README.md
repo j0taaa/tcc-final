@@ -31,6 +31,13 @@ fixture draft and prospective correction preserved. No pretrained model/data/
 forward/label or competitive timing. Exact two-decimal-grid DP, normalization/
 MAP/full ensembles remain; useful native magnitude/own novelty OPEN. Current
 scope65-terminal-forecast-readout/work/native-result-v4.md.
+V5 strengthens controls with classical grid DP: three rational laws and12
+native fixture/device checks pass, no new neural head. V6 separately freezes
+Tiny-A2D/Mosaic MASKED-loop application, selecting8 public JevBench inputs by
+input hash. Raw gold bytes were decoded to discard, never values used; own
+fake-loop/real resource execution still pending. This is NOT26B reproduction.
+See65/work/{grid-result-v5,masked-resource-contract-v6,exposure-and-next-v6}.md.
+
 
 A64's prospective arbitrary-key distinct-four stop is rejected EXACTLY.
 One original solve returns INCONCLUSIVE; a later prewritten seven-row Farkas
