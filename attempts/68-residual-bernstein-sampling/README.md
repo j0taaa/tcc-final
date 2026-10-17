@@ -80,3 +80,29 @@ now has the SAME tighter source-count law; the finite reference audits
 conditional paths, not a complete sampler or timing. See[the V2 result](work/result-v2.md).
 Closest coefficient-free/signed/retrospective controls and real complete cost
 remain open; the positive scientific goal is NOT yet achieved.
+
+V3 re-evaluates ALL eight criteria BEFORE new implementation:
+
+1. Original2024 genetics model identifies an actual consumer: ancestry first,
+   node colours later. This is a numerical simulation scope, not a dLLM claim
+   or a new duality. Our bounded-range subclass excludes absorbing fixation.
+2. Candidate difference is a certified quartic residual envelope with four-
+   moment mass and log-concavity. General moment/rejection/mixture ideas known;
+   priority and sufficient significance remain open, as in earlier versions.
+3. Classical component splitting lowers cap9 to6; the quartic envelope removes
+   dense proposal normalization, using O(log m) known-weight preparation and
+   <=8 expected rejection attempts. SAME H-gap count/kernel; not a timing win.
+4. sparse-proposal-theory-v3.md proves the explicit constants, law, log-concavity
+   and shared finite-mean genealogy consequence before code. No new general
+   rejection, non-explosion or duality theorem is claimed.
+5. protocol-v3.json freezes bounded exact certificate/law checks, ALL old cases
+   plus an explicitly prospective m256 certificate check. No full genealogy,
+   production sampler/model or performance gate is activated.
+6. Exact big integers, geometric RNG, source coins, preparation, memory, output
+   and callback/metadata costs remain. O(log m) density queries are NOT bit
+   complexity. Fast-bit route remains theoretical until implemented/audited.
+7. Equally informed classic rejection, analytic/derivative methods, global
+   grid caching and retrospective/signed estimators may match or beat it.
+   Real genealogies can amortize cached grids; do not fabricate a slow callback.
+8. Specific novelty and real full-cost advantage remain article gaps. A
+   passing finite certificate is not publication or completed user goal.

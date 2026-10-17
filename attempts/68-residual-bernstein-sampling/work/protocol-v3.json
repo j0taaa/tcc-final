@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "stage": "Bounded exact certificate and conditional-law audit; proof before new code, source frozen before a single run; no full genealogy/sampler/timing/neural campaign.",
+  "probability_obligations": [
+    "Same six original functions; zero-H finite polynomial guards retained; for all new k and old m16,64, sum ALL residual/component probabilities and compare independently with the classical H-gap normalized coefficient.",
+    "All component probabilities nonnegative and sum1 without clipping, at most6 callbacks for each enumerated nontrivial branch, zero for proposal/mass/envelope preparation; same source-count formula as V2.",
+    "For every HG point verify the quartic envelope dominates the V2 pointwise envelope and the actual residual."
+  ],
+  "known_proposal_obligations": [
+    "For m16,64,256 and every k0..4m, compute the normalizer from FOUR factorial moments, independently compare with an enumerated rational hypergeometric sum and check mass191/240 and strict safe margin53/1680.",
+    "Verify every internal tilted-weight log-concavity inequality; independently scan all weights to confirm ratio-binary-search mode and cutoff powers.",
+    "Verify all finite-support envelope inequalities and exact central/geometric mass D; bound expected rejection count by8 and document outside-support tails rather than truncating them.",
+    "Reject invalid degree/index/bounds; keep endpoints and singleton HG supports; do not relabel mode/weight-query counts as bit or wall-clock performance."
+  ],
+  "limits": "The additional degree256 is a prospective finite proof obligation, not an independently selected consumer or performance confirmation. Genealogy is identified from original2024 model but NOT executed here. Specific novelty/full-cost practical advantage remain open; no large campaign follows from a passing oracle."
+}
