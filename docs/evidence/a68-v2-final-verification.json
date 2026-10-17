@@ -1,0 +1,73 @@
+{
+  "kind": "After-run preservation receipt, not a science producer",
+  "versions": [
+    {
+      "version": "v1",
+      "contract_commit": "ad5a55b464d1d8a0038cb2f67fa77170773578b1",
+      "source_commit": "b5064b267008330860d2ee9a5768ba723b3a6fb7",
+      "evidence_commit": "8b0f6c7567a1450916afc0752878c387024abcec",
+      "observed_exit_code": 0,
+      "counts": {
+        "conditional_laws": 966,
+        "residual_points": 40134,
+        "envelope_mass_bounds": 966,
+        "term_bounds": 966,
+        "setup_call_checks": 966,
+        "optional_call_checks": 40134,
+        "zero_h_polynomial_points": 21,
+        "lower_bound_coefficients": 1032,
+        "guards": 9
+      },
+      "maximum_function_calls_per_enumerated_path": 9,
+      "archive_creation_git_comparison": {
+        "observed_exit_code": 0,
+        "files": 728,
+        "uncompressed_bytes": 11389690
+      }
+    },
+    {
+      "version": "v2",
+      "contract_commit": "b7acbb03aa6459580edfee0781854efca218fd7d",
+      "source_commit": "13e5aa14072473fe60db0c9232f6f1f7b17e39de",
+      "evidence_commit": "d18b7eb27dc490d5cd8215c1f982804e90b0a2b5",
+      "observed_exit_code": 0,
+      "counts": {
+        "conditional_laws": 966,
+        "residual_points": 40134,
+        "envelope_mass_bounds": 966,
+        "term_bounds": 966,
+        "setup_call_checks": 966,
+        "optional_call_checks": 40134,
+        "zero_h_polynomial_points": 21,
+        "lower_bound_coefficients": 1032,
+        "sharp_slope_checks": 41100,
+        "safe_margin_checks": 966,
+        "guards": 9
+      },
+      "maximum_function_calls_per_enumerated_path": 9,
+      "archive_creation_git_comparison": {
+        "observed_exit_code": 0,
+        "files": 733,
+        "uncompressed_bytes": 11412117
+      }
+    }
+  ],
+  "frozen_source_hash_comparisons": 11,
+  "unique_compared_files": 8,
+  "focused_ruff_and_format": {
+    "observed_exit_code": 0,
+    "own_files": 4
+  },
+  "make_check": {
+    "observed_exit_code": 0,
+    "log": "docs/evidence/a68-v2-final-make-check.log",
+    "sha256": "ce6ce9268dd6701c1ddc7c2622529501ad1b2b4842826270429f048cdb92c507",
+    "attempts": 68,
+    "versions": 265,
+    "preserved_files": 200752,
+    "uncompressed_bytes": 7991461779
+  },
+  "maintained_345_tests_rerun": false,
+  "scientific_limits": "Written/finite-law constant-query result only. V2 matches the tighter source-count law. No full sampler/fast bit engine/input-coin simulation/NN/forwards/timing; equally informed coefficient-free controls, priority and real complete-cost benefit remain OPEN.",
+  "goal": "OPEN"
+}

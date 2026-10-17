@@ -79,9 +79,13 @@ cost remain open. No new neural campaign is credited to M70.
   p-coins/model/forward/timing. Tighter/direct controls remain; actual full
   usefulness/priority/goal still open. Raw a68_residual_bernstein_v2_initial,
   result68/work/result-v2.md. V1 source/data unchanged, not relabeled asV2.
-- [ ] T9103: Preserve source/proof/evidence independently, run appropriate
-  checks, normal commit/push and verify upstream. No maintained345-test rerun
-  solely for isolated mathematical audit or change to earlier frozen attempts.
+- [x] T9103: Independent V1 sourceb5064b2/evidence8b0f6c7,728 files11,389,690
+  bytes, and V2 source13e5aa1/evidenced18b7eb,733 files11,412,117 bytes;
+  both create+original-Git/direct0. Eleven hash comparisons/eight unique
+  frozen files match; own Ruff/format4 PASS. make check/direct0:68 attempts,
+  265 versions200752 files7,991,461,779 bytes. Receipt/log in docs/evidence/
+  a68-v2-final-{verification.json,make-check.log}. Normal commit/push followed;
+ 345 maintained tests not rerun. Integrity is not the positive scientific goal.
 
 ## M90 — Effective value-only smooth Bernoulli factory, before implementation
 

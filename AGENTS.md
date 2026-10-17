@@ -29,6 +29,11 @@ ESCRITA de consultas, não timing/software completo/novidade suficiente.
 Nenhum sampler integral ou novo forward. Controles signed/importance/lazy/
 derivadas/cache/formulas e custo integral permanecem; não fabricar callback
 lento para vencer. PróximoT9102 antes de expansão; result68/work/result-v2.md.
+Ambas versões independentes preservadas: V1 b5064b2/8b0f6c7 (728 arquivos),
+V2 13e5aa1/d18b7eb (733 arquivos), create+Git PASS. Onze comparações de hash/
+oito arquivos únicos e Ruff/format4 próprios PASS. make check PASS68 tentativas/
+265 versões200752 arquivos7.991.461.779 bytes. Recibo a68-v2-final-verification.
+json em docs/evidence; suíte345 não rerodada. Meta aberta, sem promoção do artigo.
 
 A67 V3 encerra a comparação próxima com controle CLÁSSICO n-1. Original
 Sablonniere2004 Section2.2 lido; fórmula de ordem2 DERIVADA da reprodução,

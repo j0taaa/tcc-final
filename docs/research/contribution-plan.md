@@ -44,6 +44,13 @@ The next requirement is T9102: complete-cost/closest coefficient-free control
 and real callback consumer. No artificial expensive callback benchmark or
 automatic full sampler/neural campaign; the user's objective remains OPEN.
 
+Independent V1 b5064b2/8b0f6c7 (728 files11,389,690 bytes) and V2
+13e5aa1/d18b7eb (733 files11,412,117 bytes) create+Git comparisons PASS.
+Eleven hash comparisons/eight unique files and own Ruff/format4 pass;
+make check/direct0:68 attempts265 versions200752 files7,991,461,779 bytes.
+Receipt/log docs/evidence/a68-v2-final-{verification.json,make-check.log};
+maintained345 tests not rerun. No further scientific case for preservation.
+
 ## 2026-10-17 — A67 classical equal-access control removes proposed separation
 
 Actual original Sablonniere2004 Section2.2 gives the right partial-inverse

@@ -31,6 +31,9 @@ V1 enlarged2H and separate V2 same-count audits both pass966 conditional laws/
 margins, retaining cap9 with the SAME H-gap source-count law as the classical
 control. Written query benefit, not full cost/priority/goal completion. Both
 raw/source versions preserved; result68/work/result-v2.md.
+Independent archives V1 b5064b2/8b0f6c7 and V2 13e5aa1/d18b7eb match Git;
+make check68 attempts265 versions PASS. Eleven hash comparisons/eight unique
+files and own Ruff/format4 pass; no maintained345-test rerun.
 
 A67 V3 completes the closest-control comparison: classical quadratic
 reproduction with the SAME three-value stencil gives explicit envelopes and

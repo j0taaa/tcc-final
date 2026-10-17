@@ -5020,6 +5020,35 @@
           ]
         }
       ]
+    },
+    {
+      "id": "68-residual-bernstein-sampling",
+      "title": "Amostragem de incremento Bernstein com consultas constantes",
+      "conclusion": "V1/V2 têm prova escrita e auditorias racionais de966 leis/40134 resíduos; V2 usa envelope Peano clássico para manter a mesma lei de moedas do controle gapH com no máximo9 consultas f. Princípios clássicos creditados; novidade específica/custo integral/uso positivo suficiente permanecem abertos. Sem sampler completo ou evidência neural/timing.",
+      "reading": "attempts/68-residual-bernstein-sampling/work/result-v2.md; attempts/68-residual-bernstein-sampling/work/same-count-theory-v2.md; attempts/68-residual-bernstein-sampling/work/primary-addendum-v2.md",
+      "versions": [
+        {
+          "id": "v1-residual-query-law",
+          "source_commit": "b5064b267008330860d2ee9a5768ba723b3a6fb7",
+          "evidence_commit": "8b0f6c7567a1450916afc0752878c387024abcec",
+          "evidence_roots": [
+            "docs/artifacts/raw/a68_residual_bernstein_v1_initial",
+            "attempts/68-residual-bernstein-sampling/work/result-v1.md",
+            "attempts/68-residual-bernstein-sampling/README.md"
+          ]
+        },
+        {
+          "id": "v2-matched-count-law",
+          "source_commit": "13e5aa14072473fe60db0c9232f6f1f7b17e39de",
+          "evidence_commit": "d18b7eb27dc490d5cd8215c1f982804e90b0a2b5",
+          "evidence_roots": [
+            "docs/artifacts/raw/a68_residual_bernstein_v2_initial",
+            "attempts/68-residual-bernstein-sampling/work/result-v2.md",
+            "attempts/68-residual-bernstein-sampling/work/primary-addendum-v2.md",
+            "attempts/68-residual-bernstein-sampling/README.md"
+          ]
+        }
+      ]
     }
   ]
 }
