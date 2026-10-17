@@ -393,6 +393,7 @@ bound Omega(L); ferramentas são clássicas e prioridade própria NÃO confirmad
 Protótipo só [1,2):3a94c76 aceita10e1 incorretamente; falha preservada97f01f8
 antes do reparo439f4b1. Quatro oráculos0.737s passam48.880 números,10 inválidos,
 900 pares,3 cenários racionais/15 coeficientes de marginais com IDs/aliases.
+Suíte330 PASS94.438s; fontes inicial/corrigida arquivadas separadamente.
 Zero head/forward/update/timing A59. Compiladores completos register/digit-DP
 são controles obrigatórios; formas restritas de llguidance/XGrammar só
 identificam lacuna de suporte, não superioridade/novidade. Intervalos gerais,

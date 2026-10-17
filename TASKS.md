@@ -62,6 +62,10 @@ cost remain open. No new neural campaign is credited to M70.
   aliases/fixed holes/zero mass and literal sign regressions. No model read,
   new head/forward/update or competitive timing. Later full330 tests
   PASS94.438s and focused Ruff/format5 files PASS. See59/work/result-v2.md.
+  Independent initial-sign-bug/v1 archives preserve3a94c76/439f4b1 and their
+  distinct failed/passed evidence. Final make check exit0 verifies59 attempts/
+  237 versions/178730 files. Complete later integrity log:
+  docs/evidence/a59-v1-final-make-check.log; not a new scientific measurement.
 - [ ] T8202: Inspect/compare complete numeric register/digit-DP and bounded
   regex constructions; establish a substantive own useful difference before
   extensive generalization. Missing support in a restricted frontend alone
