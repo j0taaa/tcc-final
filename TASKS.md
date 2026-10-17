@@ -90,6 +90,11 @@ cost remain open. No new neural campaign is credited to M70.
   without expanding enormous reals. Full341 PASS98.678s/Ruff+format4 files PASS.
   Prospectived7ade98 collector passes all1/2/4/8/16 block sizes;2^32-value
   constructed source37 states/raw index49017/trimmed60. No performance/model gate.
+  Separate archivesv2-rotated-interrupted andv3-unrestricted-order preserve
+  source321582c/evidence7a8992d and sourced7ade98/evidence1e6139c respectively.
+  Final make check exit0:60 attempts/241 versions/181651 files; complete later
+  integrity receipt docs/evidence/a60-v3-final-make-check.log, not validation
+  of mathematical priority/usefulness or completion of the scientific goal.
 - [x] T8306: Written COMPLETE localization controlae454bd gives strict-CDF
   comparison O((S+E)L^2), O(L)order search then selected-order compilation;
   quantile O((S+E)L^3), no global cut factor B. Not implemented/timed or a
