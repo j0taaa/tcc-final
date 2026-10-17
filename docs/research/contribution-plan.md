@@ -1,5 +1,35 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A65 real masked application completes and fails necessity
+
+Prospective V6 protocol7c79ad5 and input-only selectordabfd45 precede all8
+selected inputs/heads. V7 native masked source1986ecc after contract7c7ce15
+passes16/16 paired CPU/CUDA/float32/BF16 replays,290 FAKE calls/128 helpers.
+Producer04c8cf9 before tokenizer-only8/8 and real capture at3fbb952:8/8 valid
+originals,129/129 REAL forwards,0 errors/refusals/updates/gold evaluation.
+Native raw IDs/pins and last-proposal RNG replay all pass,64 helpers add no
+forward. This is a DIFFERENT Tiny-A2D masked-loop application, not26B/vLLM.
+
+Frozen magnitude criterion requires4/8 ideal N7 risk-removal>=0.005. Only1/8
+passes (0.2822730191185077); the other7 are zero or rounding scale<=2.43e-17.
+Gate NEGATIVE and this application CLOSED. No dataset-mean substitute, schedule/
+head/seed/model change or quality campaign. Classical sparse moment DP and
+original-ID MAP ran on all same heads, with all preparation/capture/IO charged.
+Single ordered diagnostics dominated by bit archive IO are not a competitive
+speed result. A favorable instance does not override the breadth gate.
+
+Post-capture auditorf64a129 PASS independently checks129 packets/8 BF16
+expansions, all prompt/pin/mask steps,72 JSONs via independent byte-BPE and
+Fraction,24 means/rendering sums and64 helper calls/formula. Original137 NPZ
+byte hashes are exactly reconstructed by classical storage codec21b8a9d;
+RNG metadata force-tracked separately despite checkpoint ignore. No storage
+coding novelty claimed. Capture evidence7ea716b plus RNG/restore540c988.
+All raw heads and unfavorable cases remain accessible. Additional original
+DiffuSeq Section3 already uses MBR; lattice MBR/expectation semirings/MBMBR
+precedents are scoped in65/work/primary-and-decision-v8.md. Need a grounded
+OWN positive consequence before another substantial prototype. Full scientific
+goal/novelty/use remain OPEN; original26B hypothesis remains UNMEASURED.
+
 ## 2026-10-17 — A65 competent grid control and prospective distinct small application
 
 Contractd24974e precedes classical moment-DP source217b752/one execution:

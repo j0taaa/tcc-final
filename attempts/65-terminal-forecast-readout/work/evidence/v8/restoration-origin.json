@@ -1,0 +1,18 @@
+{
+  "status": "ALL_ORIGINAL_CAPTURE_BYTES_RESTORED",
+  "source_commit": "540c9880b5a60f113ff5c666307aaf159f98d6e4",
+  "command": ".venv/bin/python -u attempts/65-terminal-forecast-readout/work/restore_capture.py --packets docs/artifacts/raw/a65-masked-resource-v8 --output /tmp/a65-restored-v8",
+  "directly_observed_exit_code": 0,
+  "restored_files": 279,
+  "original_bytes": 2023497815,
+  "all_original_npz_files_restored": 137,
+  "all_rng_packets_tracked": 137,
+  "all_encoded_artifact_files_tracked": 280,
+  "zlib_build_version": "1.3.2",
+  "zlib_runtime_version": "1.3.2",
+  "numpy_version": "2.4.6",
+  "packet_manifest_sha256": "fef2fe5e8f374cba303eaa08cf3be49968f783efaac42a583eafe28c9826a39c",
+  "restore_log_sha256": "ef1c57cf5a05f3b80e0b26181f1527549d468fc64e0d34f52b41b6bbe166c8b9",
+  "neural_forwards_added": 0,
+  "experiment_source_unchanged": true
+}

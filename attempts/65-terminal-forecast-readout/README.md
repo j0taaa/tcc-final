@@ -89,3 +89,14 @@ normalized semantic moments with a bounded sum state, retaining exact101-value
 semantics. Its three rational laws, syntax controls and12 native CPU/CUDA
 fixture checks pass. Native weights are ordinary float64 ideal-path arithmetic,
 not a certificate of the finite RNG law. No real head/variance/cost is measured.
+
+
+V7 native MASKED-loop preflight subsequently passes16/16 CPU/CUDA cases,
+including BF16/64 slots/16 steps; those290 calls are FAKE. V8 then executes
+the prospectively selected8 real Tiny-A2D/JevBench inputs:129 real forwards,
+8 valid originals, no errors/refusals. Only1/8 reaches the frozen ideal N7
+risk-removal threshold, required4/8. This application is NEGATIVE/CLOSED;
+no quality labels/new-seed/larger-model campaign is triggered. This is NOT
+original26B reproduction. Full heads/IDs/RNG and the favorable instance stay
+preserved, with independent bit/BPE/Fraction audit. See [real result and
+limits](work/native-resource-result-v8.md) and [primary scopes/decision](work/primary-and-decision-v8.md).

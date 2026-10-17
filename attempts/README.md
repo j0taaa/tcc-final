@@ -39,6 +39,13 @@ fake-loop/real resource execution still pending. This is NOT26B reproduction.
 See65/work/{grid-result-v5,masked-resource-contract-v6,exposure-and-next-v6}.md.
 
 
+V8 real Tiny-A2D/Mosaic MASKED application now completes8/8 originals and129
+forwards with zero errors/refusals. Only1/8 meets the frozen ideal N7>=0.005
+magnitude requirement4/8: application NEGATIVE/CLOSED, no quality campaign.
+All raw heads/IDs/RNG and favorable case preserved; independent129-head/
+72-JSON/24-mean audit PASS. NOT original26B reproduction, competitive latency
+or sufficient own novelty. See65/work/native-resource-result-v8.md.
+
 A64's prospective arbitrary-key distinct-four stop is rejected EXACTLY.
 One original solve returns INCONCLUSIVE; a later prewritten seven-row Farkas
 audit independently checks20 tapes300 matchings and original source rows,

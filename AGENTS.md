@@ -1,5 +1,30 @@
 # AGENTS.md
 
+A65 V8 encerra a aplicação PEQUENA Tiny-A2D/Mosaic MASKED com gate NEGATIVO.
+V6 protocolo7c79ad5/seleção input-only8; V7 contrato7c7ce15/source1986ecc
+antecede16/16 replays CPU/CUDA BF16 com290 heads FALSOS/128 helpers. Modelo
+source/código e0cf9dc/04c8cf9 ANTES de tokenizer/modelo: preflight8/8 passa,
+captura ÚNICA em3fbb952 tem8/8 COMPLETE e129/129 forwards REAIS,0 erros/recusas,
+64 helpers sem novo forward, sem update/golds/qualidade. Só1/8 atinge risco
+IDEAL N7>=0.005 (0.2822730191185077); outros7 zeros/arredondamento<=2.43e-17.
+Regra exigia4/8: NÃO trocar por média global, destacar caso favorável como
+sucesso, mudar schedule/head/modelo/seed/threshold ou acionar qualidade.
+DP clássico esparso/MAP rodaram nosMESMOS8heads; eliminam variância IDEAL.
+Tempos são diagnósticos de ordem única/com I/O bruto, não velocidade competitiva.
+Auditor POST-f64a129 PASS verifica129heads BF16,8expansõesfloat32, progression
+64->4 máscaras,72JSONs byte-BPE independente/Fraction,24médias exatas/64custos.
+Todos heads/IDs/RNG preservados; codec clássico21b8a9d reconstrói137 NPZs com
+SHA256 de BYTE ORIGINAL idêntico. Não é nova contribuição de compressão.
+Raw dados7ea716b eRNG adicional540c988 são separados de produtor04c8cf9; nada
+de atribuir código posterior aos heads antigos. Gold bytes foram decodificados
+APENAS para descartar por seletor; valores não inspecionados/usados. NÃO é
+reprodução26B/DiffusionGemma/vLLM, cuja hipótese continua não medida. Aplicação
+Tiny16passos64slots está FECHADA, sem campanha seguinte. Não ampliar só pelo
+teorema conhecido. Novo trabalho substantivo exige operação/consequência útil
+PRÓPRIA plausível e controles fortes ANTES de outro protótipo grande. Fontes
+DiffuSeq já usam MBR; latticeMBR/expectation semirings são antecedentes. Meta
+científica positiva permanece ABERTA. Ver65/work/native-resource-result-v8.md.
+
 A65 V5 fornece controle clássico obrigatório de DP por soma/momentos, sem
 enumerar101^K vetores completos. Contratod24974e/source217b752 antes de execução:
 114 spellings/oito inválidos/quatro controles, três leis Fraction e12 pares
@@ -15,8 +40,8 @@ Dados/golds foram AUTOMATICAMENTE JSON-decodificados para descartar campos;
 valores gold NÃO foram impressos/inspecionados/usados. Não repetir antiga
 alegação de nenhuma linha/gold byte carregado. Manifesto só input/proveniência
 separada; exemplo README conhecido excluído prospectivamente. Fonte/cópias
-0a75959 e esclarecimentoe469e09 preservados. AINDA nenhum tokenizer/modelo/head/
-forward real; loop masked também NÃO executado. Próximo: hook e replay FAKE
+0a75959 e esclarecimentoe469e09 preservados. Na versãoV6 ainda não havia tokenizer/modelo/head/
+forward real; o loop masked também NÃO tinha sido executado. Próximo: hook e replay FAKE
 CPU/CUDA desse loop em Torch2.8, antes de runner e129 forwards máximos do
 screen8-inputs. Casos6/8 válidos e4/8 ganho IDEAL N7>=0.005 são só gates de
 NECESSIDADE; não acurácia/novidade nem campanha de qualidade autorizada. Último

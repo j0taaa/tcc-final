@@ -79,22 +79,38 @@ cost remain open. No new neural campaign is credited to M70.
   Evidencee8ddb26,65/work/native-result-v4.md. SYNTHETIC logits only, no model/
   pretrained tokenizer/data row/forward/update/competitive timing. AST original
   functions, NOT full vLLM serving. Literal replay does not prove finite-RNG iid.
-- [ ] T8803: Before real heads/labels/timings, freeze a resource/variance-
-  necessity protocol with input-only selection, zero/failure cases and all
-  strong normalization/MAP/exact101-value-grid/whole-ensemble controls. Need
-  meaningful removable terminal variance AND full-cost utility; mean/RB alone
-  do not prove own novelty or article sufficiency. Do not force a smaller or
-  quantized model to count as the original26B consumer. Goal remains OPEN.
-  V6 protocol7c79ad5 and selectordabfd45 now freeze a DISTINCT small masked-
-  diffusion application; NOT original26B consumer. One selector exit0 chooses8
-  of194 eligible inputs among231 public rows by input hash, no gold-based
-  selection. Raw JSONL gold bytes WERE decoded to discard, never values
-  inspected/printed/used; no pristine exposure claim. Sources/manifests0a75959,
-  exposuree469e09. No model/pretrained tokenizer/head executed. Before bounded
-  <=129 forwards need native MASKED-loop FAKE CPU/CUDA replay in Torch2.8 and
-  frozen own runner/model hashes. Necessary6/8 valid and4/8 ideal N7 removal
-  >=0.005 do not authorize quality labels/seeds/training. See65/work/masked-
-  resource-contract-v6.md and exposure-and-next-v6.md. Execution still OPEN.
+- [x] T8803: Freeze and execute the DISTINCT small Tiny-A2D/Mosaic MASKED
+  application, not original26B reproduction. Protocol7c79ad5 before selector
+  dabfd45/8 hash-ranked inputs. Gold bytes decoded to discard, no values used.
+  V7 fake-loop source1986ecc before16/16 CPU/CUDA PASS; V8 producer04c8cf9
+  before real tokenizer/model. Tokenizer preflight8/8; real capture3fbb952
+  finishes ALL8 valid originals/129 real forwards,0 errors/refusals/updates.
+  Only1/8 passes ideal N7 risk-removal>=0.005, versus required4/8. Necessary
+  gate NEGATIVE, all favorable/unfavorable data retained. Tiny16-step64-slot
+  application CLOSED; no relabeled mean/breadth gate or quality/seed/model
+  expansion. DP/MAP/normalized controls paid; diagnostic IO-dominated timing
+  is not latency superiority. Overall own novelty/use/positive goal OPEN.
+  Result65/work/native-resource-result-v8.md; evidence7ea716b plus RNG540c988.
+- [x] T8807: V7 native MASKED-loop literal replay in Torch2.8, source1986ecc
+  after prospective7c7ce15, complete16/16 CPU/CUDA/float32/BF16 cases.290 FAKE
+  heads (288 paired calls+2 support diagnostics),128 helpers; full original
+  IDs/inputs/logit bits/RNG and final4-mask commit preserved. Shared sparse DP/
+  original-ID word MAP agree with independent enumeration, including partial
+  support. Evidence62b7b79. No pretrained model/forward in this prerequisite.
+- [x] T8808: POST-capture auditorf64a129 independently validates129 retained
+  heads,8 BF16 expansions, all prompts/mask progress/pins,72 byte-BPE JSONs,
+  24 exact Fraction means/renderings/64 helpers, binomial formula and negative
+  decision. No model/gold evaluation/new forward. Codec21b8a9d losslessly
+  roundtrips137 ORIGINAL NPZ byte SHA256; RNG/metadata copied byte exactly.
+  Data/running/source commits distinguished, raw packets preserved separately.
+  Standalone restoration540c988 PASS/direct0 restores ALL279 original files/
+  2,023,497,815 bytes, including137 NPZ byte hashes/137 RNG packets. All280
+  encoded files are tracked; whole-archive receipt pending.
+- [ ] T8809: Re-establish a grounded operation and plausible OWN positive
+  comparative consequence before the next substantive prototype. No relaxing
+  A65's negative Tiny gate, larger/quantized campaign by default, new coupling
+  toy or promotion of known MBR/conditional means. Original26B remains untested;
+  absence of that test is not a new positive practical/theoretical result.
 - [x] T8805: Competent classical finite-grid sum/moment DP, contractd24974e
   before source217b752/one execution.114 spellings/eight invalid/four EOT-PAD
   guards, three Fraction laws, per-sum moments and ALL12 native fixture/device
