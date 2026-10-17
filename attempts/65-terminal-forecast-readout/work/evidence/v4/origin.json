@@ -1,0 +1,40 @@
+{
+  "source_commit": "2f55fc4a8b46a43114e447010f6361418a35851a",
+  "original_adapter_oracle_source_commit": "3e62727105068826281b93b4ff6252bcad047e3c",
+  "contract_commit": "3a2b57ef5b5cfcef1b63c8190d862dec53b4c7f8",
+  "correction_commit": "c5a571b1bd59bcea7dba1ff83b27084eaaec493c",
+  "command": ".venv-mosaic-native/bin/python -u attempts/65-terminal-forecast-readout/work/native_preflight.py --output /tmp/a65-native-v4",
+  "directly_observed_exit_code": 0,
+  "scientific_scope": "Pinned native sampler functions with synthetic logits, not pretrained or full vLLM serving reproduction",
+  "native_module_executed": true,
+  "native_full_steps": 96,
+  "native_propose_calls": 560,
+  "new_neural_forwards": 0,
+  "pretrained_tokenizer_model_instances": false,
+  "dataset_gold_rows_loaded": false,
+  "maintained_full_suite_rerun": false,
+  "exact_finite_rng_law_proved": false,
+  "first_failed_execution_preserved": "../v3-draft",
+  "files": [
+    {
+      "file": "audit.json",
+      "bytes": 316,
+      "sha256": "7df5c8eab69c48eba2122505e62f04f6bcdfee2515ca0755d4378b8e28af2d56"
+    },
+    {
+      "file": "records.jsonl",
+      "bytes": 242000,
+      "sha256": "e4c19a7e2038c5f05335c4095823b952d58f8e9b7ae15996969841ae39a42e3a"
+    },
+    {
+      "file": "run.log",
+      "bytes": 5327,
+      "sha256": "ca6d2eb74d0e13b2d5cfc48e3c18ce7dfb77bdb2db5e75212864b9b77080d82e"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 3233,
+      "sha256": "c4359368a96012a5b8bd0a9653d7ce1b7b3cdb07fea9c4a38ec96f045b832338"
+    }
+  ]
+}

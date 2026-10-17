@@ -76,3 +76,10 @@ adapter/runner code or native calls. It reuses the actual pinned constrained-
 step functions with synthetic logits, six fixture families and48 CPU/CUDA
 replays, not a pretrained model or full vLLM service. All eight criteria remain:
 this advances correctness only; a separate real variance/cost gate is required.
+
+The [V4 native result](work/native-result-v4.md) now closes that correctness
+preflight:48/48 CPU/CUDA records,96 native constrained steps,320 helpers and
+literal first-output/control/RNG preservation. The first16-record failed draft
+and prospective zero-fixture correction remain separately preserved. ALL logits
+are synthetic, with no pretrained model/tokenizer, dataset/gold or new forward.
+Useful native variance/cost and sufficient own significance remain OPEN.

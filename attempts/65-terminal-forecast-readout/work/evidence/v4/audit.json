@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "record_tuples": 48,
+  "expected_tuples": 48,
+  "helpers": 320,
+  "completed_helpers": 320,
+  "ineligible_original_records": 8,
+  "independent_exact_mean_recomputations": 120,
+  "pinned_source_files_unchanged": 14,
+  "max_marginal_error": 1.9073504518019035e-06,
+  "new_neural_forwards": 0
+}

@@ -1,0 +1,99 @@
+{
+  "python": "3.11.16",
+  "torch": "2.13.0+cu130",
+  "cuda": "13.0",
+  "numpy": "2.4.6",
+  "automata_lib": "9.2.0",
+  "status": "PASS",
+  "scope": "Native sampler functions with SYNTHETIC logits; no serving/model reproduction",
+  "new_neural_forwards": 0,
+  "copied_source_modified": false,
+  "origin": {
+    "origin": "https://github.com/MhDang/mosaic",
+    "commit": "36945e4b3c64913e23962e0924a8b40a84c58807",
+    "files": [
+      {
+        "file": "LICENSE",
+        "sha256": "4e9952258b1c2564ae4fee4f45abf408f40dc4aa43ac682389a6deecbe4b49db",
+        "bytes": 1083
+      },
+      {
+        "file": "mosaic/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "file": "mosaic/tokenizers.py",
+        "sha256": "f010a2600aea792dbe24184165a58b82bb78a561b0d24f010e4553daf353112b",
+        "bytes": 3076
+      },
+      {
+        "file": "mosaic/matcher.py",
+        "sha256": "3260b4a22397838e2be935c03da1daa96b82f962f49d2509e5caf25e43868987",
+        "bytes": 26686
+      },
+      {
+        "file": "mosaic/grammar/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "file": "mosaic/grammar/automata.py",
+        "sha256": "e887254237059074106029b2c7fcbc2c229a5baf2ef09ee71f0fc0ab0f647115",
+        "bytes": 22909
+      },
+      {
+        "file": "mosaic/grammar/json_schema.py",
+        "sha256": "66494a1bebf9818151bd768918dd512fc6bbea6777bff44efe4a0b0e5a8e2384",
+        "bytes": 17687
+      },
+      {
+        "file": "mosaic/grammar/tokenize.py",
+        "sha256": "a285531d32dcfb4e2d3c2545eddaf384441d95701a7940b44f53d056038ee1d8",
+        "bytes": 6120
+      },
+      {
+        "file": "mosaic/sampling/__init__.py",
+        "sha256": "6dcc9b73c83a9ba5fefcac46902732373050f9d2226def330ef447cf06d7c304",
+        "bytes": 314
+      },
+      {
+        "file": "mosaic/sampling/automaton.py",
+        "sha256": "27439f67c5e2df475ead22c7405645e4f576237f7b98a6170c4cd4023e594e8a",
+        "bytes": 15525
+      },
+      {
+        "file": "mosaic/sampling/layers.py",
+        "sha256": "bc805f379c4f701a279066d0f3cb7bf2499ad59dbe77671e0e0af46927a394db",
+        "bytes": 3226
+      },
+      {
+        "file": "mosaic/sampling/parallel.py",
+        "sha256": "4793b6ea344822d9c37279d9e8b73d65edfc8d49e936d6625f040391ef5f344f",
+        "bytes": 23803
+      },
+      {
+        "file": "mosaic/sampling/sequential.py",
+        "sha256": "fc0940b87b7f5a56dc524fa1225be901c77a561982c9c0347dd8e7c254822633",
+        "bytes": 10085
+      },
+      {
+        "file": "integrations/vllm/mosaic_vllm.py",
+        "sha256": "262a5658b29a74142c8ee09c6c4eac7b1ce0c606b7854557ace27f6576528057",
+        "bytes": 37266
+      }
+    ],
+    "source_modules_executed_at_copy": false
+  },
+  "records": 48,
+  "native_propose_calls": 560,
+  "synthetic_native_steps": 96,
+  "additional_helpers": 320,
+  "max_marginal_error": 1.9073504518019035e-06,
+  "peak_cuda_allocated_bytes": 8706560,
+  "actual_native_rng_iid_proved": false,
+  "full_vllm_service_executed": false,
+  "caller_rng_restored": true,
+  "caller_precision_restored": true,
+  "caller_threads_restored": true
+}
