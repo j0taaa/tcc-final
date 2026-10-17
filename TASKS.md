@@ -84,6 +84,9 @@ cost remain open. No new neural campaign is credited to M70.
   AFTER-data audit supplies both rejection witnesses for ALL64 pairs. Later
   full326 tests PASS93.764s and focused Ruff32 files PASS, after timings. See
   58/work/result-v10.md and evidence/resource-v7-initial. Simple family CLOSED.
+  Archivev2 preserves sourcebb6ced4/evidencec241fde; final make check exit0
+  verifies58 attempts/235 versions/177329 files. Complete later integrity log:
+  docs/evidence/a58-v2-final-make-check.log, not attributed to timed source.
 - [ ] T8102-priority: Complete MonoidReduce original/source is NOT retrieved;
   indexed excerpts already subsume generic arbitrary-adjoint streaming. No
   sufficient own systems distinction/real full-training benefit is established.
