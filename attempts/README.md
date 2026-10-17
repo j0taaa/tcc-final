@@ -39,6 +39,9 @@ new seeds, cost/variance or independent campaign follows for this initialization
 
 | Pasta | Direção |
 | --- | --- |
+| [55-cycle-permutation-sampling](55-cycle-permutation-sampling/README.md) | Referência racional de ciclos; oito oráculos passam, controle clássico ordenado recupera lei/custo, sem diferença própria suficiente ou campanha neural |
+| [54-coupled-policy-replay](54-coupled-policy-replay/README.md) | Comparação de políticas; todos25 coeficientes locais falham contra controle forte, sem expansão neural |
+| [53-observable-termination](53-observable-termination/README.md) | Certificado de parada; screen antigo negativo contra prefixo competente |
 | [52-collapsed-commit-likelihood](52-collapsed-commit-likelihood/README.md) | Lei da ação selecionada por confiança; prova antes de protótipo, prioridade/uso abertos |
 | [01-mwpc-original](01-mwpc-original/README.md) | MWPC original e validação inicial |
 | [02-parallel-batch-selection](02-parallel-batch-selection/README.md) | Seleção paralela em estados reais — M18 |
