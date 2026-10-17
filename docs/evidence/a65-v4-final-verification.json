@@ -1,0 +1,77 @@
+{
+  "status": "PASS_WITH_SCIENTIFIC_GOAL_OPEN",
+  "checked_tree": "fe23129741b4b8ce2649ef77d277919cbd8f8fdd",
+  "make_check_directly_observed_exit_code": 0,
+  "make_check_scope": "upstream pin, maintained Ruff/format/typecheck and all immutable attempt archives; NOT maintained full unit suite",
+  "archive_counts": {
+    "attempts": 65,
+    "versions": 258,
+    "files": 194991,
+    "uncompressed_bytes": 6053748913
+  },
+  "new_archives_checked_against_git": [
+    {
+      "id": "v2-native-terminal-replay",
+      "manifest_sha256": "fdd26e099354e71f70098a8d84bec0472ea6a0827d4ca84b036b61dae280ab5c",
+      "source_commit": "2f55fc4a8b46a43114e447010f6361418a35851a",
+      "evidence_commit": "e8ddb26fd7270a7f53c5ae59d0a4eed7359b3679"
+    },
+    {
+      "id": "v3-classical-grid-control",
+      "manifest_sha256": "da972252d484f86498592c2e526910bb9920d878614607537d0c03daaffab585",
+      "source_commit": "217b752df7c4ab29a129c0a7398c27d3e01c94d6",
+      "evidence_commit": "59fb46799804c4512e038421317b51a56e391ad3"
+    },
+    {
+      "id": "v4-prospective-masked-application",
+      "manifest_sha256": "7e306ab46e2ad4d6d9f630e696d6f7e666824bc589ebe0a5ee6da8f721f1e3ba",
+      "source_commit": "e469e09babceac3a28957af3a946c954dfa89e79",
+      "evidence_commit": "e469e09babceac3a28957af3a946c954dfa89e79"
+    }
+  ],
+  "focused_ruff_format_files": 6,
+  "maintained_345_test_suite_rerun": false,
+  "native_first_draft": {
+    "status": "ERROR_PRESERVED",
+    "completed_records": 16,
+    "native_steps": 34,
+    "native_proposals": 189,
+    "helpers": 104
+  },
+  "native_corrected": {
+    "status": "PASS",
+    "complete_records": 48,
+    "native_steps": 96,
+    "native_proposals": 560,
+    "helpers": 320,
+    "max_marginal_error": 1.9073504518019035e-06
+  },
+  "grid_control": {
+    "status": "PASS",
+    "rational_laws": 3,
+    "valid_spellings": 114,
+    "invalid_spellings": 8,
+    "control_guards": 4,
+    "native_records": 12,
+    "native_steps": 12,
+    "native_proposals": 24,
+    "max_semantic_error": 6.661338147750939e-16
+  },
+  "inclusive_native_step_invocations_with_failed_draft": 142,
+  "inclusive_native_proposal_invocations_with_failed_draft": 773,
+  "pretrained_tokenizer_model_loaded": false,
+  "new_neural_forwards": 0,
+  "parameter_updates": 0,
+  "quality_labels_evaluated": false,
+  "raw_dataset_gold_bytes_decoded_to_discard": true,
+  "gold_values_used_or_inspected": false,
+  "input_only_candidates": 194,
+  "selected_inputs": 8,
+  "masked_loop_executed": false,
+  "full_vllm_service_reproduced": false,
+  "exact_finite_rng_iid_law_proved": false,
+  "competitive_latency_or_useful_neural_gain_measured": false,
+  "sufficient_own_novelty_or_publication_confirmed": false,
+  "next_gate": "Own masked-loop FAKE CPU/CUDA Torch2.8 replay and frozen runner BEFORE bounded<=129-forward Tiny-A2D necessity screen; never original26B reproduction",
+  "unrelated_pdf_untouched": "output/pdf/grammatical-drift-v27.pdf"
+}

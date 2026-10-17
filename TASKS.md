@@ -110,6 +110,18 @@ cost remain open. No new neural campaign is credited to M70.
   docs/evidence/a65-v1-final-verification.json. Integrity does not establish
   new native calibration, useful magnitude, sufficient own priority or goal.
 
+- [x] T8806: Preserve independent v2-native/source2f55fc4/evidencee8ddb26,
+  v3-grid/source217b752/evidence59fb467, v4-prospective/source=evidencee469e09.
+  Each created/checked against original Git trees. Raw draft/V4/V5 evidence
+  hashes and all8 selected-input hashes/allowed fields independently verified.
+  Focused Ruff/format6 PASS; maintained345 tests NOT rerun. Final make check
+  directly exit0:65 attempts258 versions194991 files6,053,748,913 bytes.
+  Full receipt docs/evidence/a65-v4-final-make-check.log and scope/index
+  docs/evidence/a65-v4-final-verification.json. Including failed draft there
+  were142 SYNTHETIC native steps/773 proposals; zero neural forward. Masked
+  loop not yet executed, raw gold bytes decoded only to discard. Useful own
+  contribution and overall goal remain OPEN; T8803 execution pending.
+
 ## M87 — Arbitrary-key distinct-four stopping, exactly rejected
 
 - [x] T8700: A64 eight criteria/contractc22fa4d BEFORE sourced6de16f and one
