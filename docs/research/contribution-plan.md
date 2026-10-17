@@ -1,5 +1,32 @@
 # Caderno científico — contrato atual e histórico
 
+## 2026-10-17 — A67 classical equal-access control removes proposed separation
+
+Actual original Sablonniere2004 Section2.2 gives the right partial-inverse
+Bernstein quasi-interpolant. Reproducing1,x,x^2 independently yields the n-1
+correction; the same V1 finite difference supplies equal three-value access.
+Written contract/proof1f86722 before producer2b3c338 and ONE exact audit
+PASS/direct0:2034 coefficients/call counts/derivatives/denominators,1932
+independent elevations and both discrepancy bounds,1017 mixture bounds,
+126 bracket points including63 exact quadratic points,21/322 moment laws,
+12 refusals. All six original fixtures and degrees16/64/256 retained.
+
+The control admits explicit delta=H/n^(3/2), positive mixture with written
+E N=n0+12H/sqrt(n0), and SAME fast-bit theoretical route. On the prescribed
+spline its written mean41/2 beats V1's91/4, with equal cold value queries.
+No universal cost dominance is claimed, nor a measured sampler/bit engine.
+This withdraws V1's proposed generic locality/effective finite-mean advantage;
+the earlier dense Boolean-sum comparison is valid but insufficient. Do not
+promote a newly spelled-out analysis of a classical control as invention.
+
+Zero full samplers, p-coin draws, model/tokenizer/data/gold loads, neural
+forwards/updates or performance campaign. V1 files/raw evidence unchanged.
+No broad sampler/campaign follows. T9002 closes; T9005 requires useful own
+consequence or a justified different operation before substantive work. The
+positive scientific goal, priority/publication and T8809/T8903 stay OPEN.
+Full source-reading limits, written proof and decision in
+attempts/67-local-bernstein-factory/work/{primary-v3,quasi-comparison-v3,result-v3}.md.
+
 ## 2026-10-17 — A67 constructive effective factory candidate, proof first
 
 Previous turn is verified progress (A66 exact source/interface audit), not

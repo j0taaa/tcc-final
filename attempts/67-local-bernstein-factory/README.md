@@ -89,3 +89,10 @@ controls remain. No full sampler or performance/neural campaign follows.
 The proof and bounded audit protocol are in[the comparison](work/quasi-comparison-v3.md)
 and[protocol](work/protocol-v3.json). The positive goal remains OPEN; classical
 control construction/correctness is not promoted to an own paper contribution.
+
+The ONE frozen V3 audit2b3c338 passes/direct0:2034 coefficients/call counts/
+derivatives/denominators,1932 independent elevations and both discrepancy
+bounds,1017 mixtures,126 bracket points including63 exact quadratic points,
+21/322 moment laws and12 refusals. It closes T9002 and withdraws V1's proposed
+separating advantage. See[the decision](work/result-v3.md). No full sampler,
+p-coin draws, neural execution or timing campaign; the positive goal is OPEN.

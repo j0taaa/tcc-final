@@ -1,5 +1,21 @@
 # AGENTS.md
 
+A67 V3 encerra a comparação próxima com controle CLÁSSICO n-1. Original
+Sablonniere2004 Section2.2 lido; fórmula de ordem2 DERIVADA da reprodução,
+não atribuída a original1992 não lido. Contrato/prova1f86722 antes de
+source2b3c338 e ÚNICO oráculo PASS/direct0:2034 coeficientes/calls/derivadas/
+denominadores,1932 elevações independentes/ambos bounds,1017 misturas,
+126 pontos63 reproduções quadráticas21/322 momentos12 recusas. Mesmo
+stencil3 valores, delta=H/n^1.5, EN=n0+12H/sqrt(n0), mesma rota teórica
+de bits; no spline41/2 contra91/4 deV1, ANALÍTICO. Retira a separação
+genérica de localidade/construção efetiva proposta emV1; cold Boolean sum
+continua delimitado e insuficiente. Não promover análise do controle clássico
+como contribuição nova. NÃO implementar samplerV1/campanha só por correção;
+zero sampler/p-coins/head/forwards/treino/timing novos. Suíte345 não rerodada.
+V1/provas/dados antigos intactos. Decisão67/work/result-v3.md; T9002 fechado,
+T9005 exige consequência útil própria ou nova operação antes de expansão.
+Prioridade/publicação/meta positiva permanecem ABERTAS.
+
 A67 abre recorte construtivo de fábrica de Bernoulli, ANTES de código/testes:
 valor-only f C2 com f'' Lipschitz, range/curvatura fornecidos; stencil de três
 valores, envelope em graus4^j, mistura positiva com N escolhido antes dos

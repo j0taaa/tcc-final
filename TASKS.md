@@ -66,12 +66,16 @@ cost remain open. No new neural campaign is credited to M70.
   timing. Polynomial closed-form controls are MUCH cheaper; retained explicitly.
   Raw a67_local_bernstein_v1_initial; full scope67/work/result-v1.md. No naive
   unit-cost Fraction or empirical-frequency proof of exactness is claimed.
-- [ ] T9002: Re-evaluate the own effective construction against closest
-  quasi-interpolants BEFORE full sampler/performance work. Include classical
-  quadratic-reproducing coefficients (n-1 correction) with the same local
-  finite-difference oracle; they may remove an advertised constant/locality
-  distinction. This is an unimplemented comparison lead, not a measured/proved
-  new improvement. Correctness alone does not fulfill the scientific objective.
+- [x] T9002: Original author2004 Section2.2 and independent quadratic
+  reproduction derivation yield classical n-1 control with SAME three-value
+  stencil. Written contract/proof1f86722 before source2b3c338/ONE PASS/direct0:
+  2034 coefficients/calls/derivatives/denominators,1932 independent elevations
+  and both discrepancy bounds,1017 mixture bounds126 bracket points63 exact
+  quadratic points21/322 moment laws12 guards. Explicit delta=H/n^(3/2),
+  same finite-mean/full-bit route, spline E N=41/2 vs V1's91/4, ANALYTICAL.
+  V1's proposed generic locality/effective separation is WITHDRAWN. No full
+  sampler/p-coins/model/head/gold/forward/timing or next campaign; no own
+  publication result. V1 remains intact; result67/work/result-v3.md. Goal OPEN.
 - [x] T9003: Preserve independent v1-local-coefficient-audit, source14b2b7a/
   evidence5bb6dc7,724 files11,395,054 bytes; create+original-Git comparison PASS.
   Four frozen source/proof/protocol hashes agree; focused own Ruff/format2 PASS.
@@ -79,6 +83,14 @@ cost remain open. No new neural campaign is credited to M70.
   262 versions,198556 files7,957,239,050 bytes. Full receipts in
   docs/evidence/a67-v1-final-{make-check.log,verification.json}. Integrity is
   not proof of own novelty, full-cost benefit or achieved user goal.
+- [ ] T9004: Preserve V3 classical-control proof/source/evidence independently,
+  verify hashes/checks, normal commit/push and upstream identity. No new
+  scientific cases or rerun of maintained345 tests solely for isolated audit.
+- [ ] T9005: Before further substantial implementation, identify a useful
+  own consequence beyond the equally informed local classical control, or
+  justify another operation from primary sources. Do not tune degree/stencil/
+  constants merely to reopen the withdrawn generic advantage. T8809/T8903 and
+  the positive scientific objective remain open.
 
 ## M89 — Adaptive typed-read interface audit, classical correction only
 

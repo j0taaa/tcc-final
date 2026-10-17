@@ -1,0 +1,13 @@
+{
+  "source_commit": "2b3c338e8093fb6ef248cfba2060477b3649b63d",
+  "command": [
+    "/home/jota/projects/tcc-final/.venv/bin/python",
+    "attempts/67-local-bernstein-factory/work/audit_quasi_v3.py",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a67_classical_quasi_v3_initial"
+  ],
+  "started_utc": "2026-10-17T09:34:42.706264+00:00",
+  "elapsed_diagnostic_seconds": 2.418348121980671,
+  "direct_exit_code": 0,
+  "python": "3.11.16 (main, Aug 14 2026, 15:35:36) [Clang 22.1.3 ]",
+  "scope": "One bounded exact coefficient audit, no full sampler or timing benchmark"
+}

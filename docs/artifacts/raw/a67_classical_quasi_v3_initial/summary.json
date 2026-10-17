@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "source_commit": "2b3c338e8093fb6ef248cfba2060477b3649b63d",
+  "counts": {
+    "coefficients": 2034,
+    "value_call_counts": 2034,
+    "derivative_bounds": 2034,
+    "common_denominators": 2034,
+    "elevations": 1932,
+    "ideal_elevation_bounds": 1932,
+    "local_elevation_bounds": 1932,
+    "mixture_bounds": 1017,
+    "approximation_points": 126,
+    "quadratic_reproduction_points": 63,
+    "binomial_moments": 21,
+    "hypergeometric_moments": 322,
+    "guards": 12
+  },
+  "functions": [
+    {
+      "name": "constant",
+      "initial_degree": 16,
+      "classical_written_input_mean": "16",
+      "v1_written_input_mean": "16",
+      "cold_coefficient_value_calls_classical": 3,
+      "cold_coefficient_value_calls_v1": 3,
+      "note": "Analytical costs only; direct polynomial factories remain cheaper."
+    },
+    {
+      "name": "affine",
+      "initial_degree": 16,
+      "classical_written_input_mean": "16",
+      "v1_written_input_mean": "16",
+      "cold_coefficient_value_calls_classical": 3,
+      "cold_coefficient_value_calls_v1": 3,
+      "note": "Analytical costs only; direct polynomial factories remain cheaper."
+    },
+    {
+      "name": "quadratic",
+      "initial_degree": 16,
+      "classical_written_input_mean": "16",
+      "v1_written_input_mean": "35/2",
+      "cold_coefficient_value_calls_classical": 3,
+      "cold_coefficient_value_calls_v1": 3,
+      "note": "Analytical costs only; direct polynomial factories remain cheaper."
+    },
+    {
+      "name": "cubic",
+      "initial_degree": 16,
+      "classical_written_input_mean": "41/2",
+      "v1_written_input_mean": "25",
+      "cold_coefficient_value_calls_classical": 3,
+      "cold_coefficient_value_calls_v1": 3,
+      "note": "Analytical costs only; direct polynomial factories remain cheaper."
+    },
+    {
+      "name": "spline",
+      "initial_degree": 16,
+      "classical_written_input_mean": "41/2",
+      "v1_written_input_mean": "91/4",
+      "cold_coefficient_value_calls_classical": 3,
+      "cold_coefficient_value_calls_v1": 3,
+      "note": "Analytical costs only; direct polynomial factories remain cheaper."
+    },
+    {
+      "name": "reflected_spline",
+      "initial_degree": 16,
+      "classical_written_input_mean": "41/2",
+      "v1_written_input_mean": "91/4",
+      "cold_coefficient_value_calls_classical": 3,
+      "cold_coefficient_value_calls_v1": 3,
+      "note": "Analytical costs only; direct polynomial factories remain cheaper."
+    }
+  ],
+  "hashes": {
+    "quasi_control_v3.py": "f9f24dfff4a48c87bfc5e0ffd8d4fdb88b3a30031bde37b9f46498fa044acad4",
+    "audit_quasi_v3.py": "0b3dd5e989c2e58aae72fc04d92af5c854c544ee3806e63fe159d918735c937c",
+    "protocol-v3.json": "43afd48e8423a44477681f9525ee1f726e57da72dd8dd05b28a163c5fe4f87d0",
+    "quasi-comparison-v3.md": "28e835138bdfdd1964f9dd909a53c139fb2753fe68410c9b165f153724edd124",
+    "primary-v3.md": "ea32149ea2b135162d6d43b9e65e9fd28c839f5718ca3aea77fc96162a8c088e",
+    "coefficients.py": "58f1508d049d726236b163918372b7f380292fd61faa606444505ce075dad89b",
+    "audit.py": "46cb73eb78b2e10f543d74988a18ed6f3a4411ec255be11dc7cc075e9d9b14ea"
+  },
+  "scope": "Finite coefficient audit; zero full samplers/p-coins/NN/forwards/timing.",
+  "polynomial_controls": {
+    "constant": "Zero p-coins with known probability 1/2.",
+    "affine": "Known direct mixture, expected p-coins 1/2.",
+    "quadratic": "Known direct mixture, expected p-coins (1+p)/4 <=1/2.",
+    "cubic": "Known direct mixture, expected p-coins (1+p+p^2)/4 <=3/4."
+  },
+  "decision": "No generic locality/effective finite-mean separation; no full campaign."
+}

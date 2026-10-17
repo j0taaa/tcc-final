@@ -20,6 +20,14 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
+A67 V3 completes the closest-control comparison: classical quadratic
+reproduction with the SAME three-value stencil gives explicit envelopes and
+the SAME full-bit route. Bounded audit2034 coefficients/1932 independent
+elevations PASS; V1's proposed generic separation is withdrawn. No full
+sampler/campaign is triggered. See[the decision](67-local-bernstein-factory/work/result-v3.md).
+Earlier V1 and its restricted Boolean-sum comparison remain preserved; the
+positive scientific goal and a useful own distinction remain OPEN.
+
 A67 writes a constructive value-only Bernoulli factory BEFORE code/tests:
 explicit three-value coefficients, power-of4 consistency/positive mixture,
 finite expected flips and a separate full-bit cost contract. Smooth factory
