@@ -1,0 +1,56 @@
+{
+  "kind": "Primary reading scopes before implementation, not priority confirmation",
+  "retrieval": [
+    {
+      "file": "dawson-sankoff-1967.pdf",
+      "url": "https://www.ams.org/proc/1967-018-03/S0002-9939-1967-0211424-0/S0002-9939-1967-0211424-0.pdf",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "file": "ramachandra-natarajan.pdf",
+      "url": "https://arxiv.org/pdf/2006.00516",
+      "bytes": 968608,
+      "sha256": "a6cabdb8bc3e9bf28e54c674f7a0e81e9e1e4c12a6f22defe29e848e7a9571e9",
+      "pdftotext_exit": 0
+    },
+    {
+      "file": "anderson-koyama.pdf",
+      "url": "https://people.math.wisc.edu/~dfanderson/papers/AndersonKoyamaCouplingsRevAug1.pdf",
+      "bytes": 677393,
+      "sha256": "7c2b54d1c6a6ef54f31f2775537e87a38a1b7490735f4430df14728938b1e5d0",
+      "pdftotext_exit": 0
+    }
+  ],
+  "reading": [
+    {
+      "source": "Dawson--Sankoff1967",
+      "url": "https://www.researchgate.net/publication/243053391_An_Inequality_for_Probabilities",
+      "scope": "Author-uploaded original transcript: Theorem1.1 and proof Section2, especially support2.11; AMS original PDF returned403 and alternative web internal error, no original PDF/layout claim",
+      "antecedent": "The0/r/r+1 moment law and union bound are classical, not ours"
+    },
+    {
+      "source": "Ramachandra--Natarajan2006.00516",
+      "scope": "Abstract/introduction moment context, Section4.1 Theorem4.1 symmetry LP and uniform-subset construction pp27--30, connections4.1.1; not entire42pages",
+      "antecedent": "Symmetry/aggregated moment LP/exchangeable Bernoulli reconstruction"
+    },
+    {
+      "source": "Anderson--Koyama1403.3127",
+      "scope": "Sections3.2/3.3 and surrounding CRN/CRP equations3.3--3.5, original author PDF; not whole23pages",
+      "antecedent": "Shared internal clocks/time-change coupling are classical"
+    },
+    {
+      "source": "Natarajan coauthors n-1-wise preprint",
+      "url": "https://www.arjunramachandra.com/_files/ugd/fca0b4_d3279615d4c246ea9d192a17c1187cb6.pdf",
+      "scope": "Original author preprint example1, characterizationSection2 and Example16 excerpts; not whole8pages",
+      "antecedent": "Parity and limited-independence extremal constructions are classical"
+    }
+  ],
+  "consumer": {
+    "name": "Installed Transformers4.52.2 GenerationMixin._sample",
+    "file_sha256": "9456d3984643f9347b6772aead6392c239702eccbb5872ad0e3f52b492594ba5",
+    "reading": "utils.py lines3510--3625: full batch forward, multinomial sampling, finished-row padding, max unfinished loop; no model or API execution",
+    "upstream_url": "https://github.com/huggingface/transformers/blob/v4.52.2/src/transformers/generation/utils.py",
+    "scope": "Real static batching consumer; compact/refill engines remain mandatory controls"
+  },
+  "search_scope": "Targeted shared-EOS/termination/correlated-roulette/pairwise-clock searches found adjacent sources; absence of an exact search hit is NOT evidence of priority. No complete literature review or human review."
+}
