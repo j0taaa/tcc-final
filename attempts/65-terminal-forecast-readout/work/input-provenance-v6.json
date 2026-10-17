@@ -1,0 +1,69 @@
+{
+  "scope": "Source attribution only, no expected/outcome or provenance notes read out",
+  "selected": [
+    {
+      "id": "easy-extraction-05",
+      "tier": "easy",
+      "provenance": {
+        "license": "MIT",
+        "source": "JevBench v1.1 easy tier, original authored item"
+      }
+    },
+    {
+      "id": "original-intent-01-0",
+      "tier": "original",
+      "provenance": {
+        "license": "MIT",
+        "source": "JevBench original authored scenario"
+      }
+    },
+    {
+      "id": "original-ordinal-03-0",
+      "tier": "original",
+      "provenance": {
+        "license": "MIT",
+        "source": "JevBench original authored scenario"
+      }
+    },
+    {
+      "id": "original-ordinal-06-1",
+      "tier": "original",
+      "provenance": {
+        "license": "MIT",
+        "source": "JevBench original authored scenario"
+      }
+    },
+    {
+      "id": "original-adequacy-05-1",
+      "tier": "original",
+      "provenance": {
+        "license": "MIT",
+        "source": "JevBench original authored scenario"
+      }
+    },
+    {
+      "id": "original-routing-02-0",
+      "tier": "original",
+      "provenance": {
+        "license": "MIT",
+        "source": "JevBench original authored scenario"
+      }
+    },
+    {
+      "id": "original-routing-06-1",
+      "tier": "original",
+      "provenance": {
+        "license": "MIT",
+        "source": "JevBench original authored scenario"
+      }
+    },
+    {
+      "id": "hard-sol-b-temporal_numeric-01",
+      "tier": "hard",
+      "provenance": {
+        "license": "MIT",
+        "source": "JevBench v1.2 hard tier (original authored scenario)"
+      }
+    }
+  ]
+}
