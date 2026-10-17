@@ -1,0 +1,94 @@
+{
+  "kind": "Read-only original-source retrieval and exact reading scopes; no source execution",
+  "sources": [
+    {
+      "revision": "f74ad19771eda104e99874d19dc892e988ec53fa",
+      "revision_url": "https://github.com/rixwew/pytorch-fm/commit/f74ad19771eda104e99874d19dc892e988ec53fa",
+      "files": [
+        {
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/rixwew/pytorch-fm/f74ad19771eda104e99874d19dc892e988ec53fa/LICENSE",
+          "bytes": 1063,
+          "sha256": "e2388325bfe78a7fa8d58092e089012770379e0bde0fd97737e27c3edf6660c2"
+        },
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/rixwew/pytorch-fm/f74ad19771eda104e99874d19dc892e988ec53fa/README.md",
+          "bytes": 3176,
+          "sha256": "1a60eb35e99201a7edb1b2e8865dc2eab86ed80368bb1755e7d07f47f8a2d819"
+        },
+        {
+          "path": "examples/main.py",
+          "url": "https://raw.githubusercontent.com/rixwew/pytorch-fm/f74ad19771eda104e99874d19dc892e988ec53fa/examples/main.py",
+          "bytes": 8612,
+          "sha256": "1fd47363352bf969955128f794000548d3316825ebe208dc7f2a4cc9791cd080"
+        },
+        {
+          "path": "torchfm/dataset/criteo.py",
+          "url": "https://raw.githubusercontent.com/rixwew/pytorch-fm/f74ad19771eda104e99874d19dc892e988ec53fa/torchfm/dataset/criteo.py",
+          "bytes": 5067,
+          "sha256": "8e9e66112d0f60c9bf101306210e9597b686f085761cc7d5eea236ca764c47e1"
+        },
+        {
+          "path": "torchfm/layer.py",
+          "url": "https://raw.githubusercontent.com/rixwew/pytorch-fm/f74ad19771eda104e99874d19dc892e988ec53fa/torchfm/layer.py",
+          "bytes": 9350,
+          "sha256": "3f8296a20d075b705d458d784bc488c6f286bfeb3f31676197c78c6d3fcd8e7b"
+        },
+        {
+          "path": "torchfm/model/dfm.py",
+          "url": "https://raw.githubusercontent.com/rixwew/pytorch-fm/f74ad19771eda104e99874d19dc892e988ec53fa/torchfm/model/dfm.py",
+          "bytes": 1049,
+          "sha256": "3ea15b96fa2d5b4fb998c35c5ada0b45dbc46b0c2b4e48408deab2c974910cd0"
+        }
+      ],
+      "reading_scopes": [
+        "examples/main.py full",
+        "torchfm/model/dfm.py full",
+        "torchfm/layer.py first110 lines",
+        "torchfm/dataset/criteo.py first110 lines",
+        "README.md relevant dataset/model/license sections"
+      ],
+      "execution": "NONE"
+    },
+    {
+      "repository": "chenxijun1029/DeepFM_with_PyTorch",
+      "revision": "f12a2ccc3b0d23277112ae0efbf4c08bf0411b58",
+      "revision_date": "2020-05-05T07:40:31Z",
+      "files": [
+        {
+          "path": "README.md",
+          "url": "https://raw.githubusercontent.com/chenxijun1029/DeepFM_with_PyTorch/f12a2ccc3b0d23277112ae0efbf4c08bf0411b58/README.md",
+          "bytes": 727,
+          "sha256": "40987222333c4a1565523847f873b5fa54aa008f1424ca7f113138d28a142816"
+        },
+        {
+          "path": "main.py",
+          "url": "https://raw.githubusercontent.com/chenxijun1029/DeepFM_with_PyTorch/f12a2ccc3b0d23277112ae0efbf4c08bf0411b58/main.py",
+          "bytes": 1009,
+          "sha256": "f99f5aadcc956ece0c247fbbd0686cea8f241bd159490c42fa7befede2ce6438"
+        },
+        {
+          "path": "model/DeepFM.py",
+          "url": "https://raw.githubusercontent.com/chenxijun1029/DeepFM_with_PyTorch/f12a2ccc3b0d23277112ae0efbf4c08bf0411b58/model/DeepFM.py",
+          "bytes": 7088,
+          "sha256": "598d0dbf7ed8812132ebbd2a9afeaeb135ef4874045d9c3bc6e12965e3ceacbc"
+        },
+        {
+          "path": "model/__init__.py",
+          "url": "https://raw.githubusercontent.com/chenxijun1029/DeepFM_with_PyTorch/f12a2ccc3b0d23277112ae0efbf4c08bf0411b58/model/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "reading_scopes": [
+        "main.py full",
+        "model/DeepFM.py full",
+        "README.md full"
+      ],
+      "execution": "NONE"
+    }
+  ],
+  "pytorch_original": "Pinned source hashes/URLs from pytorch-source-manifest-v4.json; Lerp.h/scalar+vector sections and installed Adam coupled-decay branch read; whole compiled library not proved",
+  "search_scope": "Targeted web searches lazy/exact Adam, sparse/native/rounding identified already-known PULSE2602.03839 and GS-Scale2509.15645; abstract/search excerpts only this turn, no priority inference"
+}

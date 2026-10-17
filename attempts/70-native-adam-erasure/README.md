@@ -111,3 +111,17 @@ wall/CPU. This NNCP CPU/FP32 component application is CLOSED, without a
 full-codec/A70 adapter campaign. Static checkerV4b passes; a separate receipt
 addendum distinguishes actual start producercc36fab5 from end HEADda74d38b.
 Criterion reassessment in the result keeps priority/use/full benefit/goal OPEN.
+
+V5[consumer/native-contract audit](work/native-contract-v5.md), before code,
+reassesses all eight criteria: (1) actual CTR row lookups are a separate real
+use, but one source's coupled decay violates the zero-gradient premise and
+another literal no-decay CPU run has only450 updates; (2) interval/FMA tools
+are classical, specific priority/significance OPEN; (3) no competent-control
+or full-cycle win is established; (4) a WRITTEN native lerp counterexample
+blocks blanket monotonicity transfer and a CLASSICAL expression-box proof
+gives sound nonvacuous admission; (5) only a fixed108-call primitive audit
+is selected before source, not another consumer campaign; (6) model/RNG/
+state/export/native partition/full costs remain obligations; (7) short gaps,
+decay and equally good classical controls may eliminate benefit; (8) useful
+frequency, actual full native adapter, strong total benefit and adequate own
+priority remain required. No large build/article promotion or fulfilled goal.
