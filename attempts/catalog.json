@@ -4691,6 +4691,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "63-adaptive-six-coupling",
+      "title": "Custo adaptativo ótimo de acoplamento universal com três classes e cap seis",
+      "conclusion": "Written criteria/theoryee6f423 before source31c3961 and first solve. Known Bernstein cap6 atom optimum, new candidate stopped-work FAIR-POINT bound under unknown-law universal marginals with three ALLOWED classes and literal first. Exact LP:185 states454 variables63 inequalities154 equalities, reconstructed primal AND dual both386/81 with zero gap. Independent stdlib verifier enumerates729 named tapes28 multisets/five weighted laws and rejects corrupted primal/dual. Saving50/243=20.576...% of source calls versus full-six achiever at U3; not wall/CPU or all-P pointwise optimum. No operational sampler, new head/forward/weight/row/update/label or competitive timing. Raw-payload lift, symmetry scope and strong informed/larger/iid/binary controls explicit. Priority and substantive real full-cost usefulness remain OPEN. V2 extraction prospective only; later stronger adjacent-cap comparison must be separate, not relabeled initial evidence.",
+      "reading": "attempts/63-adaptive-six-coupling/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "31c396100e1ca70aa5f76424f3e60c6c6c42e4e9",
+          "evidence_commit": "b0dd7fa2b99a811eeeebea56e032dd08721561f1",
+          "evidence_roots": [
+            "attempts/63-adaptive-six-coupling/README.md",
+            "attempts/63-adaptive-six-coupling/work"
+          ]
+        }
+      ]
     }
   ]
 }

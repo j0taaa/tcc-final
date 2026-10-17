@@ -59,3 +59,9 @@ This is50/243 fewer source calls versus six, not wall time/neural quality or
 priority confirmation. [V2 extraction contract](work/extraction-contract-v2.md)
 is written before deriving an operational reference. Main environment remains
 unchanged; optional NumPy2.2.6/SciPy1.15.3 live in an isolated solver environment.
+
+[V3 adjacent-cap contract](work/odd-cap-contract-v3.md) is written BEFORE any
+new solves: caps4/5 and6/7 have equal classical atom optima but may have
+different minimum expected work. All four controls are required, including
+losses/inconclusive certificates. V2 operational extraction is deferred pending
+this stronger comparison; no operational/native sampler has been claimed.
