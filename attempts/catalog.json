@@ -4657,6 +4657,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "61-scientific-semantic-score",
+      "title": "Perda semântica científica exata de uma cabeça numérica congelada",
+      "conclusion": "Eight criteria8d6b560 and theory9f08d0f BEFORE referencef07a5d7 and execution. Category log/observed-category conditional CRPS: written strict propriety, decimal-integer rescaling, original-logit bounds4/2 and polynomial rational/symbolic-log construction using CLASSICAL conditional-score/kernel principles. Reference ENUMERATES tiny paths, not the polynomial compiler. Four independent rational oracles PASS0.049s:44 source-label cases181 logit components186 valid-trace occurrences, rare mass1e-30 and five population identities. Full345 tests PASS97.976s/Ruff+format3. No A61 head/forward/update/row-label or competitive timing. Later V2 analytical boundary counterexample ranks arbitrarily numerically accurate forecast losslog4 above distant forecast<1; this does NOT refute propriety or measure training. Canonicalization/semantic NLL/codec scores and strong continuous heads are competent controls. Final ICML GenRe2 includes OPD absent from earlierV1; TabDLM/ICF-DLM primary scopes read. Pinned RegressLM source/public model-dataset cards read-only, aggregate label statistics exposed; no Parquet/weights/row or remote-code execution. Native IEEE exponent is not always semantic order because leading0 mantissa admitted; autoregressive law not reduced to product head. V2 declines simple-score neural expansion/article promotion on present rationale. Own substantial usefulness/specific priority/publication and positive user goal remain OPEN.",
+      "reading": "attempts/61-scientific-semantic-score/README.md",
+      "versions": [
+        {
+          "id": "v1",
+          "source_commit": "f07a5d716ba44e642eff470925f028b00339a1b8",
+          "evidence_commit": "40f6017957981d9cfff39af39f77bd1bb274cb45",
+          "evidence_roots": [
+            "attempts/61-scientific-semantic-score/README.md",
+            "attempts/61-scientific-semantic-score/work"
+          ]
+        }
+      ]
     }
   ]
 }
