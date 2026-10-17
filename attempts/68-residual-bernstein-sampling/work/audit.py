@@ -98,9 +98,7 @@ def main(destination):
                 counts["setup_call_checks"] += 1
                 assert sum(known.nu) == sum(known.proposal) == 1
                 for index, probability in zip(known.indices, known.nu, strict=True):
-                    assert probability == F(
-                        comb(m, index) * comb(3 * m, k - index), comb(4 * m, k)
-                    )
+                    assert probability == F(comb(m, index) * comb(3 * m, k - index), comb(4 * m, k))
                 assert 0 < known.mass <= 9 * h / (8 * m * isqrt(m))
                 assert abs(inc.term) <= h / (21 * m * isqrt(m))
                 assert known.mass < min(inc.offset, known.weight - inc.offset)
