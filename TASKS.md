@@ -61,6 +61,9 @@ cost remain open. No new neural campaign is credited to M70.
   260 tapes/five sources/34 original-ID coefficients/310 CDFs/71 quantiles.
   Later full337 PASS95.193s; Ruff3 files PASS. No A60 model/head/forward/update/
   semantic label or competitive timing. Full facts60/work/result-v4.md.
+  Archivev1 preserves source4cf274f/evidence4134b20. Final make check exit0
+  verifies60 attempts/239 versions/180174 files; complete later integrity
+  receipt docs/evidence/a60-v1-final-make-check.log, not scientific validation.
 - [x] T8302-audit: Written complete generic-WFST construction reproduces
   projected source/prefix masses and caching. No generic own inference-speed
   advantage follows. This is NOT an independently implemented/timed control.
