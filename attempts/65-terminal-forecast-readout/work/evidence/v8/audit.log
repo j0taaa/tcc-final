@@ -1,0 +1,1 @@
+{"status": "PASS", "scientific_decision": "NECESSITY_GATE_NEGATIVE_UNCHANGED", "heads_verified": 129, "terminal_BF16_expansions_verified": 8, "valid_originals": 8, "independent_byte_BPE_JSON_outputs": 72, "exact_means_recomputed": 24, "helper_calls_charged": 64, "sufficient_magnitude_cases": 1, "required_magnitude_cases": 4, "new_neural_forwards_in_audit": 0}

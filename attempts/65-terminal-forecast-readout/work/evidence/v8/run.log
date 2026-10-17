@@ -1,0 +1,9 @@
+{"case": 0, "input_id": "original-routing-02-0", "status": "COMPLETE", "original_complete": true, "ideal_n7_removed_risk": 0.2822730191185077}
+{"case": 1, "input_id": "hard-sol-b-temporal_numeric-01", "status": "COMPLETE", "original_complete": true, "ideal_n7_removed_risk": 0.0}
+{"case": 2, "input_id": "original-intent-01-0", "status": "COMPLETE", "original_complete": true, "ideal_n7_removed_risk": 2.42861286636753e-17}
+{"case": 3, "input_id": "original-routing-06-1", "status": "COMPLETE", "original_complete": true, "ideal_n7_removed_risk": 2.42861286636753e-17}
+{"case": 4, "input_id": "original-adequacy-05-1", "status": "COMPLETE", "original_complete": true, "ideal_n7_removed_risk": 0.0}
+{"case": 5, "input_id": "easy-extraction-05", "status": "COMPLETE", "original_complete": true, "ideal_n7_removed_risk": -0.0}
+{"case": 6, "input_id": "original-ordinal-06-1", "status": "COMPLETE", "original_complete": true, "ideal_n7_removed_risk": 0.0}
+{"case": 7, "input_id": "original-ordinal-03-0", "status": "COMPLETE", "original_complete": true, "ideal_n7_removed_risk": 0.0}
+{"status": "NECESSITY_GATE_NEGATIVE", "forward_attempts": 129, "forward_completions": 129, "updates": 0, "quality_labels_evaluated": false, "competitive_timing": false, "original_26b_consumer_reproduced": false, "runtime": {"torch": "2.8.0+cu128", "transformers": "4.57.1", "numpy": "2.4.6", "automata-lib": "9.2.0", "safetensors": "0.8.0"}, "python": "3.11.16", "source_commit": "3fbb952504d4b68108bab19d6f6ede91618a78bf", "preflight_sha256": "40350fcac2f069042a719343818578e4c046cd68af191ab20436f9c18ac16bfd", "model_load": {"wall_seconds": 0.36371553502976894, "cpu_seconds": 0.35959173899999985}, "loaded_model_cuda_bytes": 1192114688, "complete_originals": 8, "sufficient_ideal_variance_cases": 1, "quality_campaign_triggered": false, "caller_rng_restored": true, "diagnostic_total_seconds": 176.41875668201828, "process_max_rss_kib": 2329024}

@@ -1,0 +1,47 @@
+{
+  "version": "A65-V8-UNEXECUTED-REAL-NECESSITY",
+  "source_sha256": {
+    "masked_resource.py": "5db201b044b84793bd8dcbc5759681796dddfead8e69faf3c2ec7fff4546f097",
+    "masked_adapter.py": "e1056f9afdc7739ef7a813d221b15b5c57846ff62fa5c7a34d295299b85c422e",
+    "masked_controls.py": "4dab4985c275a7a018ec7ff159b5f42b122787c2a81a202a2d617d6bfc638350",
+    "grid_control.py": "bd337266a996eb3c99fcd31ab34c3d917ee223ea843dd1ff1049fef18ab7edfd",
+    "native_adapter.py": "e26a9d9a37befa914fa78febf6f9e6779656133e52ab02effbd68294de6e085c",
+    "reference.py": "5b0a8a143efb2c128eb9b805b7991aa6a0cb98890481c1dc5db2516249737177",
+    "inputs-v6.json": "35d42f9ae32bd6106b9ff870625123448b4a2f2f3b003e21ddf9aead37e6dd78",
+    "input-provenance-v6.json": "d6c9c21a579ba224bbddc825d6ee6a216933c2b644e3e363d006eb8f22b9f732",
+    "masked-resource-contract-v6.md": "73d990966542cb9806fca2a5f5cceb5239862caf4ad5aafbd9ff94f236849c79",
+    "masked-preflight-contract-v7.md": "ccc3b0fc2e57974eb25fb0989091c55ccef29571886b2618c54d92d510f4014d",
+    "masked-resource-production-v8.md": "740c88d976bbc5af788d5decef7c66bb7dddc67a927d131df88b564c829d5d83",
+    "model_source_v7/manifest.json": "b57c5c247197b35bc85c692d2247eb3e55758157f551392a4e7fd444fd4f1a3c",
+    "model_source_v7/modeling_qwen3.py": "624175f036b6552db473e911e5ec57a09d518c7241b11bc375a7b4bf558675ce",
+    "model_source_v7/config.json": "02494589af3c9284b381929c576e5865c8f026b5bfed4b9a08d1b38bd4b8623e",
+    "model_source_v7/chat_template.jinja": "87a2728cb8dc9fe424d624542f6060ec05a1d285ebbec578bb078900e33396b5",
+    "masked_source_v6/manifest.json": "f947a77a8be7ff3054fd3ecac553597d108405b88be6843ffbb9831b21a081be",
+    "jevbench_source_v6/manifest.json": "f5055d5e9b2a58acf78f09360bcac4978b2296af93dea6a48e3bb4a4c0bc2472"
+  },
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.1",
+    "numpy": "2.4.6",
+    "automata-lib": "9.2.0",
+    "safetensors": "0.8.0"
+  },
+  "input_count": 8,
+  "forward_cap": 129,
+  "real_26b_reproduction": false,
+  "gold_quality_evaluation": false,
+  "loop": {
+    "steps": 16,
+    "gen_length": 64,
+    "block_length": 64,
+    "temperature": 0,
+    "cfg_scale": 0,
+    "commit_by": "constrained"
+  },
+  "necessary_gate": {
+    "valid_originals": 6,
+    "magnitude_cases": 4,
+    "ideal_n7_removed_risk_at_least": 0.005
+  },
+  "quality_campaign_triggered_automatically": false
+}

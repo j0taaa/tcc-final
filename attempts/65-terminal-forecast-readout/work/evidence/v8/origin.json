@@ -1,0 +1,80 @@
+{
+  "producer_source_commit": "04c8cf9813e900b20be23a081388b8928237cd3d",
+  "capture_running_commit": "3fbb952504d4b68108bab19d6f6ede91618a78bf",
+  "application_protocol_commit": "7c79ad570cbd62f9f09a066c881eb0dbafd38b01",
+  "preflight_source_commit": "1986eccce79d478c2be1095a98c981a382d926e5",
+  "preflight_evidence_commit": "62b7b79d437baaa048cc0decc165c0b18aab156b",
+  "postcapture_auditor_commit": "f64a129fd97258992940d062760f5b4d2c8323bd",
+  "storage_codec_commit": "21b8a9d52c643c39656d626051a7e8bed6910c55",
+  "command": ".venv-a52/bin/python -u attempts/65-terminal-forecast-readout/work/masked_resource.py --model-dir .cache/a52-model-metadata --preflight /tmp/a65-tokenizer-v8/summary.json --output /tmp/a65-real-v8",
+  "directly_observed_capture_exit_code": 0,
+  "directly_observed_audit_exit_code": 0,
+  "directly_observed_codec_exit_code": 0,
+  "decision": "NECESSITY_GATE_NEGATIVE",
+  "real_forward_attempts": 129,
+  "real_forward_completions": 129,
+  "valid_originals": 8,
+  "magnitude_pass_cases": 1,
+  "magnitude_required_cases": 4,
+  "new_neural_forwards_after_capture": 0,
+  "quality_campaign_triggered": false,
+  "labels_evaluated": false,
+  "parameter_updates": 0,
+  "original_26b_consumer_reproduced": false,
+  "raw_input_gold_bytes_decoded_to_discard": true,
+  "gold_values_used_or_inspected": false,
+  "packet_root": "docs/artifacts/raw/a65-masked-resource-v8",
+  "packet_manifest_sha256": "fef2fe5e8f374cba303eaa08cf3be49968f783efaac42a583eafe28c9826a39c",
+  "original_packet_bytes": 2023497815,
+  "encoded_packet_bytes_excluding_manifest": 1851398314,
+  "all_137_original_npz_byte_hashes_roundtrip_verified": true,
+  "no_compression_scientific_novelty_claim": true,
+  "maintained_full_suite_rerun": false,
+  "files": [
+    {
+      "file": "audit.json",
+      "bytes": 42570,
+      "sha256": "228822f72bf769a0047c5173821fa616b9d5e04f60798b3296cf468004e647f8"
+    },
+    {
+      "file": "audit.log",
+      "bytes": 362,
+      "sha256": "f5c985e951779a9fd946a60be027a580ad9885f6a815e004ea613e7b87942199"
+    },
+    {
+      "file": "events.jsonl",
+      "bytes": 23334,
+      "sha256": "cb1bba8ef34490eae561cbad36b18cb59b9e88085982bf6da02740dd94bb296e"
+    },
+    {
+      "file": "packet-codec.log",
+      "bytes": 14750,
+      "sha256": "b9f5a2334e4c2e2a668e672ac760274ec81e7190cd28d6d8eb282e5d1e488e59"
+    },
+    {
+      "file": "packet-manifest.json",
+      "bytes": 78319,
+      "sha256": "fef2fe5e8f374cba303eaa08cf3be49968f783efaac42a583eafe28c9826a39c"
+    },
+    {
+      "file": "protocol.json",
+      "bytes": 2380,
+      "sha256": "254e7ef48adeb1d79dd32179df860c032282db5df81d9dc785940793a206edde"
+    },
+    {
+      "file": "records.jsonl",
+      "bytes": 155765,
+      "sha256": "0180983c3e4267926c2a644c104e514a95234093f2e71f694b63e456db2eaf91"
+    },
+    {
+      "file": "run.log",
+      "bytes": 1929,
+      "sha256": "5d72b7cae9e198a6572546fb88fec011b787ccc910a312e2bde38172a4fbc85f"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 302933,
+      "sha256": "123e8403703382e682423e217bbcdbac6e869dcf08fa0b4f75ed5e80c9c8193e"
+    }
+  ]
+}
