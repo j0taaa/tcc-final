@@ -1,0 +1,63 @@
+{
+  "origin": "https://github.com/MhDang/mosaic",
+  "commit": "36945e4b3c64913e23962e0924a8b40a84c58807",
+  "third_party_modules_executed": false,
+  "model_or_tokenizer_instances_loaded": false,
+  "task_or_output_or_gold_rows_read": false,
+  "aggregate_readme_results_read": true,
+  "files": [
+    {
+      "file": "mosaic/LICENSE",
+      "original_path": "LICENSE",
+      "sha256": "4e9952258b1c2564ae4fee4f45abf408f40dc4aa43ac682389a6deecbe4b49db",
+      "bytes": 1083
+    },
+    {
+      "file": "mosaic/benchmarks/jevbench/run_vllm.py",
+      "original_path": "benchmarks/jevbench/run_vllm.py",
+      "sha256": "995ada4d2377e9ef82a28bbe69b5ae8dfe45e8d25afed51c1d63144ad2b8d600",
+      "bytes": 11433
+    },
+    {
+      "file": "mosaic/benchmarks/jevbench/data.py",
+      "original_path": "benchmarks/jevbench/data.py",
+      "sha256": "ab131b7eeb3e2169d9f88e7d51c0895b17e794c7d2da8b5399d4df2ff7e24ad8",
+      "bytes": 3777
+    },
+    {
+      "file": "mosaic/benchmarks/jevbench/summary.py",
+      "original_path": "benchmarks/jevbench/summary.py",
+      "sha256": "1b2216523aa6a9e2b42eca6c582fbd8751f2df17016b7cd5e7382104d9c2eb77",
+      "bytes": 7201
+    },
+    {
+      "file": "mosaic/mosaic/grammar/json_schema.py",
+      "original_path": "mosaic/grammar/json_schema.py",
+      "sha256": "66494a1bebf9818151bd768918dd512fc6bbea6777bff44efe4a0b0e5a8e2384",
+      "bytes": 17687
+    },
+    {
+      "file": "mosaic/mosaic/matcher.py",
+      "original_path": "mosaic/matcher.py",
+      "sha256": "3260b4a22397838e2be935c03da1daa96b82f962f49d2509e5caf25e43868987",
+      "bytes": 26686
+    },
+    {
+      "file": "mosaic/mosaic/sampling/parallel.py",
+      "original_path": "mosaic/sampling/parallel.py",
+      "sha256": "4793b6ea344822d9c37279d9e8b73d65edfc8d49e936d6625f040391ef5f344f",
+      "bytes": 23803
+    },
+    {
+      "file": "mosaic/integrations/vllm/mosaic_vllm.py",
+      "original_path": "integrations/vllm/mosaic_vllm.py",
+      "sha256": "262a5658b29a74142c8ee09c6c4eac7b1ce0c606b7854557ace27f6576528057",
+      "bytes": 37266
+    }
+  ],
+  "external_primary_file": {
+    "url": "https://aclanthology.org/2024.findings-emnlp.799.pdf",
+    "sha256": "032a6f44b6a6f07e62f09efe607b02f90a26cd9c6f61ed8fa9fcfc721e6f5738",
+    "scope": "Introduction, Sections2/3.1/3.2, Algorithm1/Table1; not whole appendix"
+  }
+}
