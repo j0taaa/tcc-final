@@ -60,6 +60,9 @@ cost remain open. No new neural campaign is credited to M70.
   five population identities; full345 PASS97.976s, Ruff/format3 files PASS.
   Logs/freezes61/work/evidence/v1. No new A61 head/forward/update/row-label or
   competitive timing. Passing tests does not confirm a useful own advantage.
+  Archivev1 preserves sourcef07a5d7/evidence40f6017. Final make check exit0:
+  61 attempts/242 versions/182362 files; complete later integrity receipt
+  docs/evidence/a61-v1-final-make-check.log, not scientific validation.
 - [x] T8402: V2 written boundary counterexample: near-correct forecast losslog4
   versus distant forecast<1, despite numerical error tending0. Propriety stays
   true. Complete semantic NLL/canonicalization/codec scores are strong controls;
