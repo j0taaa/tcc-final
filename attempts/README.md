@@ -20,31 +20,20 @@ científica de novidade/uso relevante permanece aberta.
 
 ## Índice
 
-A65 starts from Mosaic's actual JevBench numerical forecasts. The native final
-kernel reprojects log-marginals and still samples state paths at temperature0.
-A pre-code conditional-averaging/risk proof and three rational oracles pass
-(414 kernel leaves,414 whole absorbing leaves,78 rendering checks). These are
-classical-principle correctness results, not measured native calibration.
-Native correctness now PASS48/48 CPU/CUDA synthetic-logit records,96 steps
-and320 helpers; original IDs/control/RNG preserved. First16-row failed zero
-fixture draft and prospective correction preserved. No pretrained model/data/
-forward/label or competitive timing. Exact two-decimal-grid DP, normalization/
-MAP/full ensembles remain; useful native magnitude/own novelty OPEN. Current
-scope65-terminal-forecast-readout/work/native-result-v4.md.
-V5 strengthens controls with classical grid DP: three rational laws and12
-native fixture/device checks pass, no new neural head. V6 separately freezes
-Tiny-A2D/Mosaic MASKED-loop application, selecting8 public JevBench inputs by
-input hash. Raw gold bytes were decoded to discard, never values used; own
-fake-loop/real resource execution still pending. This is NOT26B reproduction.
-See65/work/{grid-result-v5,masked-resource-contract-v6,exposure-and-next-v6}.md.
-
-
-V8 real Tiny-A2D/Mosaic MASKED application now completes8/8 originals and129
-forwards with zero errors/refusals. Only1/8 meets the frozen ideal N7>=0.005
+A65 V8 completes a REAL Tiny-A2D/Mosaic MASKED application:8/8 valid originals,
+129 forwards,0 errors/refusals. Only1/8 meets the frozen ideal N7>=0.005
 magnitude requirement4/8: application NEGATIVE/CLOSED, no quality campaign.
-All raw heads/IDs/RNG and favorable case preserved; independent129-head/
-72-JSON/24-mean audit PASS. NOT original26B reproduction, competitive latency
-or sufficient own novelty. See65/work/native-resource-result-v8.md.
+All heads/IDs/RNG/favorable and unfavorable cases remain. Independent129-head/
+72-JSON/24-mean audit and restoration of ALL279 original files/137 NPZ byte
+hashes PASS. NOT original26B reproduction or sufficient own novelty. Current
+scope65-terminal-forecast-readout/work/native-resource-result-v8.md.
+
+Earlier versions preserve the pre-code classical risk proof/rational oracles,
+Gemma-step synthetic48/48 replay, classical grid-control12/12 and the distinct
+masked-loop fake16/16 prerequisite. V6's input-only hash selection predates all
+real heads; raw gold bytes were decoded only to discard, never values used.
+These earlier correctness-only stages are not relabeled as neural quality.
+Full scientific goal remains OPEN; see65/work/primary-and-decision-v8.md.
 
 A64's prospective arbitrary-key distinct-four stop is rejected EXACTLY.
 One original solve returns INCONCLUSIVE; a later prewritten seven-row Farkas

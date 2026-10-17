@@ -30,6 +30,19 @@ precedents are scoped in65/work/primary-and-decision-v8.md. Need a grounded
 OWN positive consequence before another substantial prototype. Full scientific
 goal/novelty/use remain OPEN; original26B hypothesis remains UNMEASURED.
 
+Unimplemented literature lead, not a selected new prototype: audit whether an
+observer's value can be certified fixed by monotone pins BEFORE later model
+calls. Zero variance of one frozen final-head kernel DOES NOT establish that
+all grammar completions/future heads have the same value. Known EOS/prefix
+termination, semantic abstract interpretation and full completion analysis
+would be mandatory controls. The [VoidPadding author abstract](https://arxiv.org/abs/2606.17999)
+and [original first page](https://openreview.net/pdf/59a7f9f520c14cda4e9a1c96868903489cca7c5a.pdf)
+(inference-rule paragraph only) already describe EOS-prefix stopping; no
+invention of early stopping follows. Distinct own consequence/antecedents need
+assessment before any new-direction README/proof/prototype or new heads. This
+lead neither changes A65's gate nor authorizes rebranding its failed application.
+
+
 ## 2026-10-17 — A65 competent grid control and prospective distinct small application
 
 Contractd24974e precedes classical moment-DP source217b752/one execution:

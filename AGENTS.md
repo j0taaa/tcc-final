@@ -41,9 +41,8 @@ valores gold NÃO foram impressos/inspecionados/usados. Não repetir antiga
 alegação de nenhuma linha/gold byte carregado. Manifesto só input/proveniência
 separada; exemplo README conhecido excluído prospectivamente. Fonte/cópias
 0a75959 e esclarecimentoe469e09 preservados. Na versãoV6 ainda não havia tokenizer/modelo/head/
-forward real; o loop masked também NÃO tinha sido executado. Próximo: hook e replay FAKE
-CPU/CUDA desse loop em Torch2.8, antes de runner e129 forwards máximos do
-screen8-inputs. Casos6/8 válidos e4/8 ganho IDEAL N7>=0.005 são só gates de
+forward real; o loop masked também NÃO tinha sido executado. Esse requisito
+foi concluído pelos replaysV7 e screenV8 descritos ACIMA. Não reiniciar. Casos6/8 válidos e4/8 ganho IDEAL N7>=0.005 são só gates de
 NECESSIDADE; não acurácia/novidade nem campanha de qualidade autorizada. Último
 kernel masked usa logits do MODELO, diferente do log-marginal de Gemma. Usar
 IDs EOT/PAD reais e hashes BF16 corretos; não importar A52 mutável. Controles

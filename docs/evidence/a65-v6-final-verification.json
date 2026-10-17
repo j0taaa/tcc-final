@@ -1,0 +1,92 @@
+{
+  "status": "INTEGRITY_PASS_PRIMARY_GATE_NEGATIVE_GOAL_OPEN",
+  "checked_tree": "09bf0a9c70d89d6949770506c4d4bc35a90d5074",
+  "make_check_directly_observed_exit_code": 0,
+  "make_check_scope": "upstream pin, maintained Ruff/format/typecheck, all immutable attempt archives; NOT maintained full unit suite",
+  "archive_counts": {
+    "attempts": 65,
+    "versions": 260,
+    "files": 197105,
+    "uncompressed_bytes": 7934373232
+  },
+  "new_versions_checked_against_original_git": [
+    {
+      "id": "v5-masked-loop-preflight",
+      "manifest_sha256": "9e5fdca53eb36a1f108b7d5d1fb305568ed0c6950dfcbeee057d6fcbce9cd179",
+      "source_commit": "1986eccce79d478c2be1095a98c981a382d926e5",
+      "evidence_commit": "62b7b79d437baaa048cc0decc165c0b18aab156b",
+      "archive_files": 2,
+      "file_count": 895
+    },
+    {
+      "id": "v6-real-masked-necessity",
+      "manifest_sha256": "9e256be4c80f52359c41e8ec62c49971fbf2e692a91048cc4c3125244d3ab3aa",
+      "source_commit": "04c8cf9813e900b20be23a081388b8928237cd3d",
+      "evidence_commit": "25a356e619ff20b6a85751f5406de2cf0ede1246",
+      "archive_files": 35,
+      "file_count": 1219
+    }
+  ],
+  "focused_ruff_format_files": 7,
+  "maintained_345_tests_rerun": false,
+  "literal_masked_preflight": {
+    "cases": 16,
+    "fake_head_calls": 290,
+    "helpers": 128,
+    "real_neural_forwards": 0
+  },
+  "tokenizer_preflight": {
+    "ready_inputs": 8,
+    "model_instance_loaded": false,
+    "forwards": 0
+  },
+  "real_capture": {
+    "producer_source_commit": "04c8cf9813e900b20be23a081388b8928237cd3d",
+    "running_commit": "3fbb952504d4b68108bab19d6f6ede91618a78bf",
+    "directly_observed_exit_code": 0,
+    "status": "NECESSITY_GATE_NEGATIVE",
+    "valid_originals": 8,
+    "real_forward_attempts": 129,
+    "real_forward_completions": 129,
+    "magnitude_pass_cases": 1,
+    "required_magnitude_cases": 4,
+    "magnitude_threshold_ideal_N7_risk": 0.005,
+    "errors": 0,
+    "refusals": 0,
+    "helper_calls": 64,
+    "updates": 0,
+    "quality_labels_evaluated": false,
+    "quality_campaign_triggered": false,
+    "competitive_latency_confirmed": false,
+    "original_26b_reproduced": false
+  },
+  "independent_post_audit": {
+    "directly_observed_exit_code": 0,
+    "heads": 129,
+    "terminal_bf16_expansions": 8,
+    "byte_bpe_jsons": 72,
+    "fraction_means": 24,
+    "neural_forwards_added": 0
+  },
+  "lossless_restoration": {
+    "directly_observed_exit_code": 0,
+    "source_commit": "540c9880b5a60f113ff5c666307aaf159f98d6e4",
+    "original_files": 279,
+    "original_npz_byte_hashes": 137,
+    "rng_packets_tracked": 137,
+    "encoded_files_tracked": 280,
+    "original_bytes": 2023497815,
+    "encoded_bytes_excluding_manifest": 1851398314,
+    "manifest_sha256": "fef2fe5e8f374cba303eaa08cf3be49968f783efaac42a583eafe28c9826a39c",
+    "standalone_code_needs_no_neural_model_or_gpu": true,
+    "compression_novelty_claimed": false
+  },
+  "raw_gold_bytes_decoded_to_discard": true,
+  "gold_values_used_or_inspected": false,
+  "exact_native_finite_rng_iid_law_proved": false,
+  "own_sufficient_novelty_or_publication_confirmed": false,
+  "goal_complete": false,
+  "closed_application": "Tiny-A2D/Mosaic MASKED16steps64slots terminal-mean necessity; no gate relaxation or quality followup",
+  "next_requirement": "Re-establish a grounded operation and OWN useful comparative consequence before another substantive prototype; EOS/semantic-stopping lead is unimplemented and unconfirmed",
+  "unrelated_pdf_untouched": "output/pdf/grammatical-drift-v27.pdf"
+}

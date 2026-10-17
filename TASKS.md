@@ -105,7 +105,7 @@ cost remain open. No new neural campaign is credited to M70.
   Data/running/source commits distinguished, raw packets preserved separately.
   Standalone restoration540c988 PASS/direct0 restores ALL279 original files/
   2,023,497,815 bytes, including137 NPZ byte hashes/137 RNG packets. All280
-  encoded files are tracked; whole-archive receipt pending.
+  encoded files are tracked; complete whole-archive receipt below.
 - [ ] T8809: Re-establish a grounded operation and plausible OWN positive
   comparative consequence before the next substantive prototype. No relaxing
   A65's negative Tiny gate, larger/quantized campaign by default, new coupling
@@ -137,6 +137,17 @@ cost remain open. No new neural campaign is credited to M70.
   were142 SYNTHETIC native steps/773 proposals; zero neural forward. Masked
   loop not yet executed, raw gold bytes decoded only to discard. Useful own
   contribution and overall goal remain OPEN; T8803 execution pending.
+
+- [x] T8810: Preserve independent v5-masked-preflight/source1986ecc/evidence
+  62b7b79 and v6-real-necessity/source04c8cf9/evidence25a356e. Creation checks
+  exact original Git trees; v6 has33 independent full-bit supplements, every
+  archive<100MiB. All280 encoded files/137 RNG files verified tracked. Full
+  restoration/129-head audit source and original metadata remain separate.
+  Focused Ruff/format7 PASS; full maintained345 tests NOT rerun. Final make
+  check directly exits0:65 attempts260 versions197105 files7,934,373,232 bytes.
+  Receipt docs/evidence/a65-v6-final-make-check.log and exact scope/index
+  docs/evidence/a65-v6-final-verification.json. Primary real necessity remains
+  NEGATIVE1/8 vs4/8, no quality campaign or sufficient own contribution/goal.
 
 ## M87 — Arbitrary-key distinct-four stopping, exactly rejected
 
