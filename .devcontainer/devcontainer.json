@@ -3,9 +3,12 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "python -m pip install -e '.[dev]' && ./scripts/verify_upstream.sh",
+  "postCreateCommand": "make setup",
   "customizations": {
     "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python"
+      },
       "extensions": [
         "charliermarsh.ruff",
         "ms-python.python",

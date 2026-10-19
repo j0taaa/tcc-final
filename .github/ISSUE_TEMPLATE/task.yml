@@ -1,29 +1,17 @@
-name: Implementation task
-about: Track one TASKS.md item with reproducible evidence
+name: Tarefa
+description: Mudança com resultado verificável
 body:
-  - type: input
-    id: task
-    attributes:
-      label: TASKS.md ID
-      placeholder: T000
-    validations:
-      required: true
   - type: textarea
-    id: contract
+    id: objective
     attributes:
-      label: Scientific contract
-      description: State the invariant and exactness scope this work must preserve.
+      label: Objetivo
+      description: Qual problema concreto precisa ser resolvido?
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
-      label: Acceptance criteria
-      description: Copy the relevant criteria from TASKS.md.
+      label: Critério de conclusão
+      description: Como verificar o resultado e quais contratos preservar?
     validations:
       required: true
-  - type: textarea
-    id: evidence
-    attributes:
-      label: Evidence when completed
-      description: Commands, outputs, seeds, artifacts and commit SHA.

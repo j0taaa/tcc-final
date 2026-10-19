@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "mwpc-exact"
 version = "0.4.0"
-description = "Exact maximum-weight parallel commitment for CFG-constrained diffusion language models"
+description = "Exact finite-token grammar inference and independent certificate validation"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
 license = "MIT"

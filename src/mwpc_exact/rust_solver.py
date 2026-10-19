@@ -58,7 +58,7 @@ def _binding() -> _RustBinding:
         return cast("_RustBinding", import_module("mwpc_parser_py"))
     except ImportError as error:
         raise RustBindingUnavailable(
-            "mwpc_parser_py is unavailable; rebuild it with `make bootstrap-rust-parser`"
+            "mwpc_parser_py is unavailable; rebuild it with `make setup-rust`"
         ) from error
 
 

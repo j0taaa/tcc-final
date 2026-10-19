@@ -19,9 +19,8 @@ jobs:
           python-version: "3.11"
       - run: python -m pip install -c requirements/constraints-py311-linux.txt -e '.[dev]'
       - run: make check VENV_PY=python
-      - run: make test VENV_PY=python
-      - run: make build-rust VENV_PY=python
-      - run: make article-results-check VENV_PY=python
+      - run: make rust VENV_PY=python
+      - run: make evidence VENV_PY=python
 
   lean:
     runs-on: ubuntu-latest
@@ -37,4 +36,4 @@ jobs:
           tar -xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP"
           "$RUNNER_TEMP/elan-init" -y --no-modify-path --default-toolchain none
           "$HOME/.elan/bin/elan" toolchain install "$(cat formal/lean-toolchain)"
-      - run: make check-formal VENV_PY=python LAKE="$HOME/.elan/bin/lake"
+      - run: make formal VENV_PY=python LAKE="$HOME/.elan/bin/lake"
