@@ -143,3 +143,25 @@ objections even if a lower mantissa precision is theoretically sufficient.
 
 Implementation and results are pending. Use the producer commit for eventual
 measurements. No changes are proposed to the maintained library or EPIC baseline.
+
+## Prospective clarifications before any measurements
+
+The written derivations and an improved generic stochastic control are preserved
+in [theory.md](theory.md). The latter strengthens the audit's initial moment
+constant by a factor of two; both moment precisions will be reported. This is a
+theoretical comparison, not a change of cases, seeds, numerical budget or gate.
+Sharing is not claimed to improve actual accuracy for every input.
+
+For the development gate, each family's time statistic is the median of its nine
+case ratios. A case ratio divides the candidate's median query time by the
+smallest median among all applicable controls. No case is omitted. Memory
+estimates from reachable Python objects and ideal payloads are diagnostic; they
+cannot satisfy the actual total resident-memory gate without matched isolated
+process measurements. If those are absent, that branch is inconclusive.
+
+The query contract measures one fresh numerical evaluation per supplied head,
+with structure cached. Uniform profiles intentionally repeat numerical heads;
+these timings do not establish superiority over a service that caches equal
+heads or amortizes an exact preparation across many outputs. A positive outcome
+must resolve that limitation before promotion. Measurement instrumentation such
+as recursive object-size accounting is outside query timers for every method.
