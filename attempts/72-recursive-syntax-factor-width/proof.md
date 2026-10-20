@@ -387,3 +387,66 @@ em circuitos já têm antecedentes diretos citados no README.
    por um matching, fica a TV=l/(M+l) do posterior. Tomar
    M>=l(1-e)/e dá erro <=e com largura 1 e O(log N+log(1/e)) bits
    por peso. A obstrução uniforme não cobre todos os logits positivos.
+
+## 8. Hipótese operacional por convoluções, antes do protocolo V2
+
+Esta seção é adicional à fonte `c74ab700`. FFT e decomposição de kernels
+em somas de produtos são técnicas clássicas de matching (ver o README).
+Não se reivindica sua invenção nem prioridade da composição abaixo.
+
+Para pesos estritamente positivos, ponha A_i=w_i('(')+w_i('['),
+C_i=w_i(')')+w_i(']'), x_i=(w_i('(')-w_i('['))/A_i e
+y_i=(w_i(')')-w_i(']'))/C_i. A contribuição de um par a<b é
+
+    w_a('(')w_b(')')+w_a('[')w_b(']') = A_a C_b (1+x_a y_b)/2.
+
+O conjunto de aberturas no contexto j é [0,j) ∪ [2j+1,l+j+1), e
+o de fechamentos é [j,2j) ∪ [l+j+1,2l+1). Assim, a contribuição
+U_j das orientações e do marcador tem todos os seus logaritmos
+calculáveis por prefixos de log A e log C em O(N) operações reais.
+
+**Proposição condicional.** Se max_i|x_i| max_i|y_i|<=ρ<1, os
+logaritmos das massas de todos os contextos admitem aproximação com
+erro absoluto <=η em O(K N log² N) operações aritméticas reais e
+O(K N) memória, onde K satisfaz
+
+    l ρ^(K+1)/((K+1)(1-ρ)) <= η.
+
+**Prova.** Trunque log(1+z) em Σ_{k=1}^K (-1)^(k+1) z^k/k.
+Somar a série geométrica de valores absolutos da cauda limita seu
+erro por |z|^(K+1)/((K+1)(1-|z|)). Cada contexto tem l pares.
+Para cada grau k, sejam
+
+    H_s(k) = Σ_{a<b, a+b=s} x_a^k y_b^k.
+
+Cada par a<b é separado por exatamente um corte da árvore binária de
+intervalos de posições. Nesse corte, a convolução dos x^k da metade
+esquerda com os y^k da direita acumula sua contribuição no índice a+b.
+Há O(log N) níveis, cada um com custo total O(N log N) por convolução
+rápida; subproblemas vazios não contribuem. Os pares de M_j são
+precisamente aqueles de soma 2j-1 e 2l+2j+1. Logo,
+
+    log Z_j = log U_j - l log 2
+        + Σ_{k=1}^K (-1)^(k+1) [H_{2j-1}(k)+H_{2l+2j+1}(k)]/k
+        + erro_j,       |erro_j|<=η.
+
+Índices fora do intervalo são zero. Esse argumento computa todos os
+contextos, sem consultar um oráculo que esconda o custo dos pares. ∎
+
+**Normalização e amostra.** Se cada log-massa tem erro em [-η,η],
+as probabilidades normalizadas têm razão Q_j/P_j em
+[exp(-2η),exp(2η)]. Consequentemente TV(P_j,Q_j)<=exp(2η)-1.
+A lei da palavra, gerada escolhendo esse marcador e depois amostrando
+EXATAMENTE os tipos condicionais com inteiros, tem a MESMA TV:
+os suportes de contextos são disjuntos e as condicionais são iguais.
+Esta última igualdade permite auditar a TV conjunta enumerando apenas
+l+1 massas, sem enumerar as (l+1)2^l palavras.
+
+**Limites materiais.** O enunciado conta aritmética real, não operações
+de bits nem latência. Se ρ tende a 1, K pode ser grande; compromissos
+e suporte contraído podem introduzir zeros e tornam a implementação
+V2 não suportada. FFT64 introduz erros adicionais aos da série.
+Não se transfere a cota escrita para o programa sem contabilizá-los.
+O protocolo mede proposta e certificação racional independente, cobra
+ambas no total certificado e mantém recusas. O circuito contextual
+vetorizado é um controle de mesmo nível, não só um parser genérico.
