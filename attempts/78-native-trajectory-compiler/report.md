@@ -4,6 +4,12 @@ Base: `84b34969`; branch `research/a78-native-trajectory-compiler`.
 Auditoria iniciada em 2026-10-19. A autorização é para testar a candidata.
 Não há descoberta aprovada, revisão humana, prova Lean ou ganho neural implícito.
 
+**Decisão: não selecionar A78 como contribuição central de TCC nesta formulação.**
+O gate barato não encontrou um dLLM utilizável com a promessa global exigida.
+A parte condicional combina aprendizado e inferência clássicos; não demonstrou
+diferença própria nem benefício integral frente ao mesmo controle competente.
+As checagens finitas abaixo passaram, sem converter esse gate em seleção.
+
 ## Operação e benefício que precisariam existir
 
 Fixar prompt, posições, pins, suportes de **IDs originais** S_i, |S_i|≤K,
@@ -217,9 +223,12 @@ q^(n−1) contextos, qualquer auditor exato que deixe um contexto z sem consulta
 recebe o mesmo transcript de h≡Bern(1/2) e de h' que muda somente em z.
 h' depende de todas as n−1 coordenadas (variar qualquer uma sai de z).
 Isso inclui consultas adaptativas, seguindo o transcript constante. Portanto
-elas não certificam a promessa contra funções arbitrárias. Testes aleatórios
-podem testar distância sob uma distribuição escolhida, não garantir igualdade
-global; isto não é um lower bound contra inspeção/prova de arquitetura.
+elas não certificam a promessa contra funções arbitrárias. Com z uniforme entre
+N contextos, T consultas adaptativas acertam z com probabilidade no máximo T/N
+no transcript constante. Distinguir com sucesso constante também exige Ω(N)
+consultas nesse par de classes. Testes aleatórios podem testar distância sob
+uma distribuição escolhida, não garantir igualdade global; isto não é um
+lower bound contra inspeção/prova de arquitetura.
 Restringir a promessa aos prefixos de π pode bastar para essa ordem, mas o
 último alvo ainda tem K^(n−1) prefixos possíveis sem estrutura adicional.
 
@@ -302,5 +311,75 @@ seus números 729/296/545/142 não serão apresentados como reprodução de A78.
 
 ## Resultado de execução e decisão
 
-Pendente da execução do produtor congelado. O gate de consumidor acima já é
-negativo; seus resultados finitos não poderão mudá-lo para positivo.
+`d4636b91` congelou protocolo, argumentos, manifesto de fontes e produtor antes
+de executar. [results-v1.jsonl](results-v1.jsonl) é a saída original exclusiva;
+seu cabeçalho registra commit e hashes SHA-256 do produtor e manifesto.
+Não houve falha científica, correção de dados, seed escolhida ou caso retirado.
+Nenhuma fonte/dado histórico, biblioteca, vendor ou outra branch foi alterada.
+
+As **6/6** checagens de fronteira passaram:
+
+- 26 contextos consultados não distinguem uma constante de uma função alterada
+  na 27ª linha; essa função depende das três coordenadas. É contraexemplo à
+  certificação global por aquele transcript, não execução de um Transformer.
+- Erro incondicional **511/524288** vira erro condicional **511/512** quando
+  Z̃=1/1024, exatamente Δ/Z̃. A amplificação não é um problema numérico de float.
+- 405 casos pai/tabela confirmaram as sondas, incluindo 45 tabelas constantes.
+  Custos de calibração por m=1…5: **3, 5, 7, 7, 9** consultas simultâneas.
+  Até nessa família construída são mais que os dois rounds do sampler raw;
+  pais conhecidos não pagam essa calibração. Não se mediu velocidade.
+- Todos os **288 mapas** para m≤4 passaram normalização, fatoração da massa
+  válida e largura executada ≤2. Foram 67.332 avaliações de palavras por ordem
+  (duas ordens), com 340 reconhecimentos de bytes distintos. Em 284 mapas os
+  posteriores das duas ordens diferiram; os quatro mapas só de self-loops
+  deram posterior uniforme, como exige a exceção escrita.
+- Os sete ciclos congelados confirmaram as fórmulas racionais. Em m=64,
+  Z=(2^64+1)/2^128 e TV contra produto raiz projetado é aproximadamente 0,96486.
+  Essa separação é construída; o controle clássico com pais conhecidos calcula
+  **a mesma lei**. Não estabelece melhoria de decodificação neural.
+- Duas extensões para b mudaram (1/2,1/2) em (1/3,2/3), TV=1/6; extensão
+  única preservou a lei. Não se ponderou uma palavra pelo número de parses.
+
+**Zero forwards, zero uso de GPU, zero bits de RNG e nenhum benchmark/timing
+experimental.** A disponibilidade de GPU não foi avaliada nem usada como
+motivo de rejeição. Após a confirmação de preparação do coordenador, o gate
+de contrato continuou negativo. Não há "0/n ganhos neurais" em casos que não
+foram executados; não se declarou inviabilidade de inferência ou impossibilidade
+de todo dLLM futuro. A ausência atual de consumidor e a falta de diferença
+demonstrada bastam para não selecionar esta formulação e parar antes de
+protótipo extenso. A contribuição científica positiva do projeto fica aberta.
+
+Não implementar sampler neste gate evita inventar contadores: os únicos
+contadores executados acima são da enumeração/sondas finitas. O custo em bits,
+memória e RNG de um compiler neural continua não medido; os bounds e itens de
+custo da seção anterior são requisitos teóricos, não uma medição de software.
+
+## Reprodução e verificações
+
+Python 3.11.16; stdlib basta para o produtor. O ambiente de desenvolvimento
+existente `/home/jota/projects/tcc-final/.venv` foi reutilizado sem instalação
+ou alteração de pacotes; `PYTHONPATH` aponta para **este** worktree. Os corpos
+de fontes externos ficaram em `/tmp/a78-primary-source-audit`, fora do Git;
+o manifesto preserva versões/URLs/hashes, não garante disponibilidade eterna
+nem byte-estabilidade do HTML de um servidor.
+
+```bash
+# Sempre uma saída nova; results-v1.jsonl não pode ser sobrescrito.
+a78_replay=$(mktemp -d /tmp/a78-replay.XXXXXX)
+PYTHONDONTWRITEBYTECODE=1 python3 \
+  attempts/78-native-trajectory-compiler/check.py --output "$a78_replay/check.jsonl"
+PYTHONDONTWRITEBYTECODE=1 /home/jota/projects/tcc-final/.venv/bin/python \
+  -m ruff check attempts/78-native-trajectory-compiler
+PYTHONDONTWRITEBYTECODE=1 /home/jota/projects/tcc-final/.venv/bin/python \
+  -m ruff format --check attempts/78-native-trajectory-compiler
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD/src" \
+  MYPY_CACHE_DIR=/tmp/a78-mypy-cache RUFF_CACHE_DIR=/tmp/a78-ruff-cache \
+  make check VENV_PY=/home/jota/projects/tcc-final/.venv/bin/python
+git diff --check
+```
+
+Ruff e formatação da tentativa passaram antes do congelamento e na conferência
+final; `git diff --check` passou. **`make check` passou: 345 testes**, snapshot
+EPIC preservado, lint/formato e mypy em 55 arquivos da biblioteca. Esses checks
+são validação de software, não timings científicos nem validação de novidade.
+Nenhum teste Lean foi criado ou alegado.
