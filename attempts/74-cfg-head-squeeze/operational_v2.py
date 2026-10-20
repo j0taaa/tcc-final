@@ -276,7 +276,8 @@ def process_snapshot():
 def split_parts(x):
     assert int(x.abs().max().item()) <= 16384
     assert int(x.max().item()) <= 16383
-    x = functional.pad(x, (0, 0, 0, (-x.shape[0]) % 16))
+    padded_rows = max(32, ((x.shape[0] + 15) // 16) * 16)
+    x = functional.pad(x, (0, 0, 0, padded_rows - x.shape[0]))
     return (
         torch.remainder(x, 128).to(torch.int8).contiguous(),
         torch.div(x, 128, rounding_mode="floor").to(torch.int8).contiguous(),
@@ -291,6 +292,17 @@ def mm_parts(hparts, wparts):
     result += 128 * torch._int_mm(hlo, whi.T).to(torch.int64)
     result += 16384 * torch._int_mm(hhi, whi.T).to(torch.int64)
     return result
+
+
+def gpu_integer_oracle():
+    h = (torch.arange(32 * 768, device="cuda", dtype=torch.int32).reshape(32, 768) % 32768) - 16384
+    w = h.flip(0).contiguous()
+    expected = (h.double() @ w.double().T).to(torch.int64)
+    actual = mm_parts(split_parts(h), split_parts(w))
+    assert torch.equal(expected, actual)
+    assert torch.equal(mm_parts(split_parts(h[:8]), split_parts(w))[:8], expected[:8])
+    torch.round(h.float() / 1024 * 1024).to(torch.int32)
+    torch.cuda.synchronize()
 
 
 class Heads:
@@ -546,6 +558,8 @@ def run(output):
             torch.backends.cuda.matmul.allow_tf32 = False
             torch.backends.cudnn.allow_tf32 = False
             setup_started = ns()
+            gpu_integer_oracle()
+            emit(type="integer_gpu_oracle", status="PASS", cells=1280)
             config = json.loads(
                 (ROOT / "configs/experiments/m31_probability_scaling_cpu_v1.json").read_text()
             )

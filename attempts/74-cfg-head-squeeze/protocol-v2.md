@@ -129,3 +129,16 @@ estatística universal. Se nenhuma passar, descartar esta formulação como
 aposta principal para o TCC no hardware/contrato testados; não inventar nova
 variante para resgatar. Se recurso/correção impedir a comparação, diagnosticar
 e corrigir separadamente antes de concluir; não usar recusa como derrota.
+
+## Correção V2b antes da primeira comparação
+
+V2 carregou/preparou o modelo e capturou o estado 0, mas recusou a primeira
+chamada `_int_mm`: `self.size(0) needs to be greater than 16, but got 16`.
+PyTorch 2.8 exige padding M>=32 nesse caminho, não somente múltiplo de 16.
+Corrigir padding por zeros para 32 preserva TODOS os dots/pesos. Incluir
+um smoke test GPU de 1.280 células, com n=8 e n=32, antes de carregar o
+modelo novamente; seu custo entra no setup comum. Também aquece conversão
+de h para não atribuir sua primeira inicialização a cada head fresco.
+`measurements-v2` preserva a falha e os tempos parciais, sem nenhum draw
+comparativo. A nova execução irá a `measurements-v2b`, com casos, sementes,
+proxies, referência, número de repetições e gate inalterados.

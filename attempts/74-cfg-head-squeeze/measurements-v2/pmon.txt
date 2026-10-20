@@ -1,0 +1,761 @@
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     40     27      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     22     13      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     12      8      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     38     25      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     34     18      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     12      9      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      0      0      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      0      0      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      0      0      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      0      0      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      0      0      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     59     37      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     54     35      -      -      -      -   4054      0    llama-server   
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     75     47      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     44     29      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     17     11      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     25     14      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     48     31      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     25     16      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     34     23      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     26     16      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     16     10      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      1      0      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      0      6      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     12      4      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     48     30      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     60     39      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     60     38      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     65     42      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     29     19      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     52     29      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     62     36      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     59     37      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     58     35      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     29     18      -      -      -      -   4054      0    llama-server   
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      0      0      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -     20      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -    250      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -    250      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      6      0      -      -      -      -   1584      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      5      0      -      -      -      -   1584      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1770      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0    2718935     C      -      -      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      5      2      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     34     21      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     40     24      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1808      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     59     37      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1810      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     64     40      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1810      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     70     43      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1812      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     57     38      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1812      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      0      0      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     23     15      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1812      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      0      0      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1812      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1812      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      -      -      -      -      -      -   1812      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1822      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1822      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1822      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command 
+# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name 
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1822      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1822      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C      -      -      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1822      0    python         
+    0      14653     G      -      -      -      -      -      -    188      0    Xorg           
+    0      14838     G      -      -      -      -      -      -     34      0    gnome-shell    
+    0      15411     G      -      -      -      -      -      -      6      0    xdg-desktop-por
+    0     136606     G      -      -      -      -      -      -     36      0    chrome --type=g
+    0     543874     G      -      -      -      -      -      -     51      0    warp-taskbar   
+    0    2603454     C     15      7      -      -      -      -   4054      0    llama-server   
+    0    2718935     C      0      0      -      -      -      -   1822      0    python         
