@@ -18,6 +18,9 @@ calibração permanece preservado; não alterar casos ou controles para resgatar
 essa execução. A busca por métodos distintos com contribuição própria e
 utilidade demonstrável continua aberta.
 
+- [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
+  integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
+  de selecionar protocolo ou campanha.
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
 - [ ] Antes de qualquer campanha neural, justificar variabilidade útil de EOS,

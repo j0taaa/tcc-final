@@ -7,6 +7,10 @@ comandos antigos pertencem às suas versões; consulte o
 
 ## Candidatas em investigação
 
+[A81 — Potência fracionária de uma mistura gramatical](81-sparse-tempered-mixture/README.md):
+prova escrita revisada para compilação com ordem raiz de beta de componentes;
+prioridade específica e vantagem integral num consumidor continuam abertas.
+
 [A72 — limite robusto para representações de sintaxe recursiva](72-recursive-syntax-factor-width/README.md):
 prova escrita para uma GLC LL(1) fixa e oráculos finitos; prioridade específica
 e suficiência científica abertas, sem vantagem neural estabelecida.
