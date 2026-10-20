@@ -7,6 +7,12 @@ comandos antigos pertencem às suas versões; consulte o
 
 ## Candidatas em investigação
 
+[A82 — Triagem de cinco operadores para dLLMs](82-five-operator-screening/README.md):
+antirrepetição, alternativas sem reposição, campos antecipados, decisões
+coerentes com marginais preservadas e perguntas sobre entradas incompletas.
+Provas delimitadas e oráculos pequenos; revisão em cinco threads próprias,
+sem ganho neural ou prioridade suficiente estabelecidos.
+
 [A81 — Potência fracionária de uma mistura gramatical](81-sparse-tempered-mixture/README.md):
 prova escrita revisada para compilação com ordem raiz de beta de componentes;
 prioridade específica e vantagem integral num consumidor continuam abertas.

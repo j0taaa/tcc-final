@@ -21,6 +21,9 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
+- [ ] Selecionar com o usuário uma candidata da triagem concluída em
+  [A82](attempts/82-five-operator-screening/README.md) e congelar seu protocolo
+  antes de uma campanha neural; correção finita não é ganho de modelo.
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
 - [ ] Antes de qualquer campanha neural, justificar variabilidade útil de EOS,
