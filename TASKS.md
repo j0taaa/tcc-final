@@ -21,6 +21,10 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
+- [ ] Em [A86](attempts/86-prefix-closure-planning/README.md), verificar fidelidade
+  das consultas agrupadas em estados reais antes de avaliar o decoder. A sonda
+  de custo V1 passou, mas não estabelece igualdade em geração, novidade ou ganho
+  integral. Só ampliar após protocolo prospectivo e controles competentes.
 - [ ] Antes de selecionar outra campanha, justificar uma contribuição própria
   com teoria, utilidade geral e benefício demonstrável para o TCC de impacto
   solicitado. A leitura de LAVE/Saber/DecoCal e a avaliação independente não
