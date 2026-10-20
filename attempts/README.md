@@ -7,6 +7,11 @@ comandos antigos pertencem às suas versões; consulte o
 
 ## Candidatas em investigação
 
+[A86 — Planejamento de consultas pelo prefixo executável](86-prefix-closure-planning/README.md):
+contrato de decoder e otimização local por latência com ferramentas clássicas de
+fechamento máximo. Antecedentes explícitos; sonda prospectiva de viabilidade,
+sem ganho de decoder nem seleção central estabelecidos.
+
 [A82 — Triagem de cinco operadores para dLLMs](82-five-operator-screening/README.md):
 antirrepetição, alternativas sem reposição, campos antecipados, decisões
 coerentes com marginais preservadas e perguntas sobre entradas incompletas.
