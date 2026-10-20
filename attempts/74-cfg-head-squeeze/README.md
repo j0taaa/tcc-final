@@ -4,10 +4,12 @@ Base: `84b3496952243f2a5b3c5dd2d31191073be3a304`. Investigação delimitada,
 sem treinamento. Protocolo escrito antes de executar os novos oráculos ou
 capturar estados. A confirmação do coordenador liberou os três worktrees.
 
-**Decisão:** não selecionar esta formulação como contribuição central.
-O mecanismo é clássico; os dois envelopes fixados recusaram os quatro estados
-CPU, e desempenho GPU ficou não medido por ocupação externa. Provas, oráculos,
-falhas de software e limites dessa conclusão estão separados em [result.md](result.md).
+**Decisão atual, após V2:** descartar esta formulação como aposta principal.
+Agora há seis estados GPU, quatro proxies e comparação operacional: 0/48
+vitórias no gate, melhor proposta 2,6–3,0 vezes mais lenta em head + sampler.
+[Resultado V2](result-v2.md), [provas](proof-v2.md), [protocolo](protocol-v2.md).
+A [V1](result.md) fica preservada: ela só testou correção/envelopes e sua
+ausência de timing não bastava para um descarte por desempenho.
 
 ## Operação e consumidor
 
