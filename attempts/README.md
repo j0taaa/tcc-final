@@ -7,11 +7,6 @@ comandos antigos pertencem às suas versões; consulte o
 
 ## Candidatas em investigação
 
-[A86 — Planejamento de consultas pelo prefixo executável](86-prefix-closure-planning/README.md):
-contrato de decoder e otimização local por latência com ferramentas clássicas de
-fechamento máximo. Antecedentes explícitos; sonda prospectiva de viabilidade,
-sem ganho de decoder nem seleção central estabelecidos.
-
 [A82 — Triagem de cinco operadores para dLLMs](82-five-operator-screening/README.md):
 antirrepetição, alternativas sem reposição, campos antecipados, decisões
 coerentes com marginais preservadas e perguntas sobre entradas incompletas.
@@ -30,6 +25,7 @@ e suficiência científica abertas, sem vantagem neural estabelecida.
 prova escrita e oráculos finitos; prioridade e benefício completo pendentes.
 
 ## Investigações anteriores
+- [A86 — Planejamento por prefixos: perfil/fidelidade viáveis, gate de benefício V3 negativo; aplicação encerrada](86-prefix-closure-planning/result-v3.md)
 - [A85 — Relaxação por checksum para capturas livres: prova candidata, sem consumidor com vantagem justificada](85-checksum-backreferences/README.md)
 - [A84 — Certificado com runner-up: prova local e piloto neural mais rápido, com perda de acurácia; não selecionada](84-full-marginal-certificate/result-v1.md)
 - [A83 — Diagnóstico do EPIC e avaliação científica: correção de engenharia, sem tema central selecionado](83-epic-operational-diagnosis/README.md)

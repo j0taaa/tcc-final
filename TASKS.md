@@ -21,12 +21,6 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
-- [ ] Em [A86](attempts/86-prefix-closure-planning/README.md), avaliar benefício
-  em replay da trajetória inteira sob protocolo prospectivo e controles fortes.
-  O [gate de fidelidade V2](attempts/86-prefix-closure-planning/fidelity-result-v2.md)
-  passou nos 256 estados capturados B1/B8, sem cobertura de EOS revelado ou
-  lotes com inícios de bloco distintos. Só implementar a avaliação integral do
-  decoder se houver potencial específico; novidade e ganho continuam abertos.
 - [ ] Antes de selecionar outra campanha, justificar uma contribuição própria
   com teoria, utilidade geral e benefício demonstrável para o TCC de impacto
   solicitado. A leitura de LAVE/Saber/DecoCal e a avaliação independente não
@@ -36,7 +30,11 @@ utilidade demonstrável continua aberta.
   O piloto prospectivo [A84](attempts/84-full-marginal-certificate/result-v1.md)
   também falhou: reduziu tempo, mas perdeu acurácia nas duas famílias. Não
   alterar margem/subset para resgatar essa aplicação nem promover sua prova
-  local a garantia de qualidade do modelo.
+  local a garantia de qualidade do modelo. O replay prospectivo
+  [A86 V3](attempts/86-prefix-closure-planning/result-v3.md) também falhou nas
+  duas famílias: custos previstos com preparo 18,18%/22,68% maiores que o
+  serial. Aplicação encerrada; não ajustar custos, margens ou casos para
+  salvar esse gate, nem implementar o decoder acelerado por esse resultado.
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
 - [ ] Antes de qualquer campanha neural, justificar variabilidade útil de EOS,
