@@ -25,6 +25,7 @@ e suficiência científica abertas, sem vantagem neural estabelecida.
 prova escrita e oráculos finitos; prioridade e benefício completo pendentes.
 
 ## Investigações anteriores
+- [A85 — Relaxação por checksum para capturas livres: prova candidata, sem consumidor com vantagem justificada](85-checksum-backreferences/README.md)
 - [A84 — Certificado com runner-up: prova local e piloto neural mais rápido, com perda de acurácia; não selecionada](84-full-marginal-certificate/result-v1.md)
 - [A83 — Diagnóstico do EPIC e avaliação científica: correção de engenharia, sem tema central selecionado](83-epic-operational-diagnosis/README.md)
 - [A80 — Calibração certificada por clipping: prova e aplicação offline sem vantagem integral](80-private-clipping-calibration/result.md)
