@@ -1,0 +1,1309 @@
+{
+  "capture": {
+    "frames": [
+      {
+        "best": {
+          "Q_base": 5,
+          "Q_bits": 77,
+          "Q_exponent": 33,
+          "k": 33,
+          "principal": "(",
+          "within_limits": false
+        },
+        "case": "llada-p0-n33",
+        "choices": [
+          {
+            "Q_base": 5,
+            "Q_bits": 77,
+            "Q_exponent": 33,
+            "k": 33,
+            "principal": "(",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 77,
+            "Q_exponent": 33,
+            "k": 33,
+            "principal": "[",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 77,
+            "Q_exponent": 33,
+            "k": 33,
+            "principal": "{",
+            "within_limits": false
+          }
+        ],
+        "effect_classes_per_slot": 5,
+        "faces": 1,
+        "guards": [],
+        "not_infeasibility": true,
+        "omitted_mass_max": "586365248077200390355/590295810358705651712",
+        "omitted_mass_min": "27909664770325391957/36893488147419103232",
+        "pins": [],
+        "proposal_counts": {
+          "2": 4,
+          "58": 15,
+          "60": 14
+        },
+        "proposal_ids_sha256": "3dc191e33d1d69cc73a042b38d6437d334956957a5cf4d4191bdb89eafb4d030",
+        "scope": "exact_on_support",
+        "slots": 33,
+        "status": "REFUSED_PARAMETER",
+        "support_bytes_hex": [
+          "28",
+          "29",
+          "5b",
+          "5d",
+          "23"
+        ],
+        "support_original_ids": [
+          7,
+          8,
+          58,
+          60,
+          2
+        ],
+        "weight_max_denominator_bits": 71,
+        "weight_max_numerator_bits": 53
+      },
+      {
+        "best": {
+          "Q_base": 5,
+          "Q_bits": 300,
+          "Q_exponent": 129,
+          "k": 129,
+          "principal": "(",
+          "within_limits": false
+        },
+        "case": "llada-p0-n129",
+        "choices": [
+          {
+            "Q_base": 5,
+            "Q_bits": 300,
+            "Q_exponent": 129,
+            "k": 129,
+            "principal": "(",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 300,
+            "Q_exponent": 129,
+            "k": 129,
+            "principal": "[",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 300,
+            "Q_exponent": 129,
+            "k": 129,
+            "principal": "{",
+            "within_limits": false
+          }
+        ],
+        "effect_classes_per_slot": 5,
+        "faces": 1,
+        "guards": [],
+        "not_infeasibility": true,
+        "omitted_mass_max": "73705086515962509265/73786976294838206464",
+        "omitted_mass_min": "939191065573278503/1152921504606846976",
+        "pins": [],
+        "proposal_counts": {
+          "2": 2,
+          "58": 115,
+          "60": 12
+        },
+        "proposal_ids_sha256": "6faa2ab871fd5fd1cd44286758718155827de12bb7abc985b9858691e69363af",
+        "scope": "exact_on_support",
+        "slots": 129,
+        "status": "REFUSED_PARAMETER",
+        "support_bytes_hex": [
+          "28",
+          "29",
+          "5b",
+          "5d",
+          "23"
+        ],
+        "support_original_ids": [
+          7,
+          8,
+          58,
+          60,
+          2
+        ],
+        "weight_max_denominator_bits": 69,
+        "weight_max_numerator_bits": 53
+      },
+      {
+        "best": {
+          "Q_base": 5,
+          "Q_bits": 1192,
+          "Q_exponent": 513,
+          "k": 513,
+          "principal": "(",
+          "within_limits": false
+        },
+        "case": "llada-p0-n513",
+        "choices": [
+          {
+            "Q_base": 5,
+            "Q_bits": 1192,
+            "Q_exponent": 513,
+            "k": 513,
+            "principal": "(",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 1192,
+            "Q_exponent": 513,
+            "k": 513,
+            "principal": "[",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 1192,
+            "Q_exponent": 513,
+            "k": 513,
+            "principal": "{",
+            "within_limits": false
+          }
+        ],
+        "effect_classes_per_slot": 5,
+        "faces": 1,
+        "guards": [],
+        "not_infeasibility": true,
+        "omitted_mass_max": "75557734787038526023607/75557863725914323419136",
+        "omitted_mass_min": "109250853629895753/144115188075855872",
+        "pins": [],
+        "proposal_counts": {
+          "2": 79,
+          "58": 399,
+          "60": 35
+        },
+        "proposal_ids_sha256": "da2cfd58e0a9b18796c1c6870fa694e03d0ed6034a3a6e6167febfaabdd41886",
+        "scope": "exact_on_support",
+        "slots": 513,
+        "status": "REFUSED_PARAMETER",
+        "support_bytes_hex": [
+          "28",
+          "29",
+          "5b",
+          "5d",
+          "23"
+        ],
+        "support_original_ids": [
+          7,
+          8,
+          58,
+          60,
+          2
+        ],
+        "weight_max_denominator_bits": 77,
+        "weight_max_numerator_bits": 53
+      },
+      {
+        "best": {
+          "Q_base": 5,
+          "Q_bits": 77,
+          "Q_exponent": 33,
+          "k": 33,
+          "principal": "(",
+          "within_limits": false
+        },
+        "case": "llada-p1-n33",
+        "choices": [
+          {
+            "Q_base": 5,
+            "Q_bits": 77,
+            "Q_exponent": 33,
+            "k": 33,
+            "principal": "(",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 77,
+            "Q_exponent": 33,
+            "k": 33,
+            "principal": "[",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 77,
+            "Q_exponent": 33,
+            "k": 33,
+            "principal": "{",
+            "within_limits": false
+          }
+        ],
+        "effect_classes_per_slot": 5,
+        "faces": 1,
+        "guards": [],
+        "not_infeasibility": true,
+        "omitted_mass_max": "4712603686716711557725/4722366482869645213696",
+        "omitted_mass_min": "26762044212470505177/36893488147419103232",
+        "pins": [],
+        "proposal_counts": {
+          "2": 2,
+          "58": 6,
+          "60": 25
+        },
+        "proposal_ids_sha256": "f90a199aad06393687642ae4c0c038a6bcb85d6b0946a58bb269202d08b108e2",
+        "scope": "exact_on_support",
+        "slots": 33,
+        "status": "REFUSED_PARAMETER",
+        "support_bytes_hex": [
+          "28",
+          "29",
+          "5b",
+          "5d",
+          "23"
+        ],
+        "support_original_ids": [
+          7,
+          8,
+          58,
+          60,
+          2
+        ],
+        "weight_max_denominator_bits": 73,
+        "weight_max_numerator_bits": 53
+      },
+      {
+        "best": {
+          "Q_base": 5,
+          "Q_bits": 300,
+          "Q_exponent": 129,
+          "k": 129,
+          "principal": "(",
+          "within_limits": false
+        },
+        "case": "llada-p1-n129",
+        "choices": [
+          {
+            "Q_base": 5,
+            "Q_bits": 300,
+            "Q_exponent": 129,
+            "k": 129,
+            "principal": "(",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 300,
+            "Q_exponent": 129,
+            "k": 129,
+            "principal": "[",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 300,
+            "Q_exponent": 129,
+            "k": 129,
+            "principal": "{",
+            "within_limits": false
+          }
+        ],
+        "effect_classes_per_slot": 5,
+        "faces": 1,
+        "guards": [],
+        "not_infeasibility": true,
+        "omitted_mass_max": "294868740953565961793/295147905179352825856",
+        "omitted_mass_min": "32144207461963342655/36893488147419103232",
+        "pins": [],
+        "proposal_counts": {
+          "2": 19,
+          "58": 6,
+          "60": 104
+        },
+        "proposal_ids_sha256": "b3ec42d5d186225acddce1785896bfd3dfaf6062c518d1b6f2a61461668a5bc4",
+        "scope": "exact_on_support",
+        "slots": 129,
+        "status": "REFUSED_PARAMETER",
+        "support_bytes_hex": [
+          "28",
+          "29",
+          "5b",
+          "5d",
+          "23"
+        ],
+        "support_original_ids": [
+          7,
+          8,
+          58,
+          60,
+          2
+        ],
+        "weight_max_denominator_bits": 72,
+        "weight_max_numerator_bits": 53
+      },
+      {
+        "best": {
+          "Q_base": 5,
+          "Q_bits": 1192,
+          "Q_exponent": 513,
+          "k": 513,
+          "principal": "(",
+          "within_limits": false
+        },
+        "case": "llada-p1-n513",
+        "choices": [
+          {
+            "Q_base": 5,
+            "Q_bits": 1192,
+            "Q_exponent": 513,
+            "k": 513,
+            "principal": "(",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 1192,
+            "Q_exponent": 513,
+            "k": 513,
+            "principal": "[",
+            "within_limits": false
+          },
+          {
+            "Q_base": 5,
+            "Q_bits": 1192,
+            "Q_exponent": 513,
+            "k": 513,
+            "principal": "{",
+            "within_limits": false
+          }
+        ],
+        "effect_classes_per_slot": 5,
+        "faces": 1,
+        "guards": [],
+        "not_infeasibility": true,
+        "omitted_mass_max": "2361027130795070783359/2361183241434822606848",
+        "omitted_mass_min": "16602420206313247207/18446744073709551616",
+        "pins": [],
+        "proposal_counts": {
+          "2": 359,
+          "58": 7,
+          "60": 147
+        },
+        "proposal_ids_sha256": "af944d5e0bfa0df7af90ed13f551840ff19d8a40f60da6e9e5994e2507330240",
+        "scope": "exact_on_support",
+        "slots": 513,
+        "status": "REFUSED_PARAMETER",
+        "support_bytes_hex": [
+          "28",
+          "29",
+          "5b",
+          "5d",
+          "23"
+        ],
+        "support_original_ids": [
+          7,
+          8,
+          58,
+          60,
+          2
+        ],
+        "weight_max_denominator_bits": 76,
+        "weight_max_numerator_bits": 53
+      }
+    ],
+    "new_forwards": 0,
+    "original_grammar_reused": false,
+    "path": "attempts/72-recursive-syntax-factor-width/capture-v2.jsonl",
+    "sha256": "a26ae43a7fe6c1b2171a4724340da30ff06aeb9c3cf1839ce7c4183d12bd61c6"
+  },
+  "extension": {
+    "comparisons": 80308,
+    "counterexamples": 0,
+    "first_counterexample": null,
+    "status": "PASS_FINITE_ONLY",
+    "systems": 428
+  },
+  "gadget": {
+    "greedy_positions_1based": [
+      3,
+      1
+    ],
+    "greedy_value_scaled10": 41,
+    "guarded_repetitions": [
+      {
+        "control_local_assignments": 16,
+        "faces": 1,
+        "global_Q": 4,
+        "local_Q_sum": 4,
+        "profile_scaled10": [
+          0,
+          40,
+          60,
+          60,
+          60
+        ],
+        "witness_hex": "7b5b28295d7d",
+        "witness_ids": [
+          123,
+          91,
+          40,
+          41,
+          93,
+          125
+        ]
+      },
+      {
+        "control_local_assignments": 32,
+        "faces": 2,
+        "global_Q": 16,
+        "local_Q_sum": 8,
+        "profile_scaled10": [
+          0,
+          40,
+          80,
+          100,
+          120,
+          120,
+          120,
+          120,
+          120
+        ],
+        "witness_hex": "7b5b28295d7d7b5b28295d7d",
+        "witness_ids": [
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125
+        ]
+      },
+      {
+        "control_local_assignments": 64,
+        "faces": 4,
+        "global_Q": 256,
+        "local_Q_sum": 16,
+        "profile_scaled10": [
+          0,
+          40,
+          80,
+          120,
+          160,
+          180,
+          200,
+          220,
+          240,
+          240,
+          240,
+          240,
+          240,
+          240,
+          240,
+          240,
+          240
+        ],
+        "witness_hex": "7b5b28295d7d7b5b28295d7d7b5b28295d7d7b5b28295d7d",
+        "witness_ids": [
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125
+        ]
+      },
+      {
+        "control_local_assignments": 128,
+        "faces": 8,
+        "global_Q": 65536,
+        "local_Q_sum": 32,
+        "profile_scaled10": [
+          0,
+          40,
+          80,
+          120,
+          160,
+          200,
+          240,
+          280,
+          320,
+          340,
+          360,
+          380,
+          400,
+          420,
+          440,
+          460,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480,
+          480
+        ],
+        "witness_hex": "7b5b28295d7d7b5b28295d7d7b5b28295d7d7b5b28295d7d7b5b28295d7d7b5b28295d7d7b5b28295d7d7b5b28295d7d",
+        "witness_ids": [
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125,
+          123,
+          91,
+          40,
+          41,
+          93,
+          125
+        ]
+      }
+    ],
+    "optimal_positions_1based": [
+      2,
+      4
+    ],
+    "optimal_value_scaled10": 60,
+    "optimal_witness_ids": [
+      91,
+      40,
+      41,
+      93
+    ],
+    "profile_scaled10": [
+      0,
+      40,
+      60,
+      60,
+      60
+    ],
+    "proposal_ids": [
+      40,
+      40,
+      40,
+      93
+    ],
+    "valid_words": [
+      [
+        40,
+        40,
+        41,
+        41
+      ],
+      [
+        40,
+        41,
+        40,
+        41
+      ],
+      [
+        91,
+        40,
+        41,
+        93
+      ]
+    ],
+    "weights_scaled10": [
+      1,
+      30,
+      40,
+      30
+    ]
+  },
+  "gpu_use": false,
+  "new_forwards": 0,
+  "normalization": {
+    "comparisons": 254904,
+    "contexts": 13,
+    "words": 19608
+  },
+  "producer_sha256": "744d7c89ada50bcccb2a09dbf0c63d24524e50406577dd96a4bc520dabe7fb5e",
+  "protocol": "A76-V1",
+  "summary": {
+    "capture_statuses": {
+      "REFUSED_PARAMETER": 6
+    },
+    "contract_gate": "PASS_FINITE_ONLY",
+    "tokenizer_probe_statuses": {
+      "REFUSED_PARAMETER": 6
+    }
+  },
+  "timings": "NOT_REQUESTED_GATE",
+  "tokenizers": [
+    {
+      "class_count": 73,
+      "config_sha256": "5f99fefe855fdb5100bb6cadb57bdb09fae723ad54811f95c00ecacf29d58a6a",
+      "controls": {
+        "eos_token_id": 126081,
+        "mask_token_id": 126336,
+        "pad_token_id": 126081
+      },
+      "decoder_checks": 126080,
+      "excluded_added_ids": [
+        126080,
+        126081,
+        126082,
+        126083,
+        126084,
+        126085,
+        126086,
+        126087,
+        126088,
+        126089,
+        126090,
+        126091,
+        126092,
+        126093,
+        126094,
+        126095,
+        126096,
+        126097,
+        126098,
+        126099,
+        126100,
+        126101,
+        126102,
+        126103,
+        126104,
+        126105,
+        126106,
+        126107,
+        126108,
+        126109,
+        126110,
+        126111,
+        126112,
+        126113,
+        126114,
+        126115,
+        126116,
+        126117,
+        126118,
+        126119,
+        126120,
+        126121,
+        126122,
+        126123,
+        126124,
+        126125,
+        126126,
+        126127,
+        126128,
+        126129,
+        126130,
+        126131,
+        126132,
+        126133,
+        126134,
+        126135,
+        126136,
+        126137,
+        126138,
+        126139,
+        126140,
+        126141,
+        126142,
+        126143,
+        126144,
+        126145,
+        126146,
+        126147,
+        126148,
+        126149,
+        126150,
+        126151,
+        126152,
+        126153,
+        126154,
+        126155,
+        126156,
+        126157,
+        126158,
+        126159,
+        126160,
+        126161,
+        126162,
+        126163,
+        126164,
+        126165,
+        126166,
+        126167,
+        126168,
+        126169,
+        126170,
+        126171,
+        126172,
+        126173,
+        126174,
+        126175,
+        126176,
+        126177,
+        126178,
+        126179,
+        126180,
+        126181,
+        126182,
+        126183,
+        126184,
+        126185,
+        126186,
+        126187,
+        126188,
+        126189,
+        126190,
+        126191,
+        126192,
+        126193,
+        126194,
+        126195,
+        126196,
+        126197,
+        126198,
+        126199,
+        126200,
+        126201,
+        126202,
+        126203,
+        126204,
+        126205,
+        126206,
+        126207,
+        126208,
+        126209,
+        126210,
+        126211,
+        126212,
+        126213,
+        126214,
+        126215,
+        126216,
+        126217,
+        126218,
+        126219,
+        126220,
+        126221,
+        126222,
+        126223,
+        126224,
+        126225,
+        126226,
+        126227,
+        126228,
+        126229,
+        126230,
+        126231,
+        126232,
+        126233,
+        126234,
+        126235,
+        126236,
+        126237,
+        126238,
+        126239,
+        126240,
+        126241,
+        126242,
+        126243,
+        126244,
+        126245,
+        126246,
+        126247,
+        126248,
+        126249,
+        126250,
+        126251,
+        126252,
+        126253,
+        126254,
+        126255,
+        126256,
+        126257,
+        126258,
+        126259,
+        126260,
+        126261,
+        126262,
+        126263,
+        126264,
+        126265,
+        126266,
+        126267,
+        126268,
+        126269,
+        126270,
+        126271,
+        126272,
+        126273,
+        126274,
+        126275,
+        126276,
+        126277,
+        126278,
+        126279,
+        126280,
+        126281,
+        126282,
+        126283,
+        126284,
+        126285,
+        126286,
+        126287,
+        126288,
+        126289,
+        126290,
+        126291,
+        126292,
+        126293,
+        126294,
+        126295,
+        126296,
+        126297,
+        126298,
+        126299,
+        126300,
+        126301,
+        126302,
+        126303,
+        126304,
+        126305,
+        126306,
+        126307,
+        126308,
+        126309,
+        126310,
+        126311,
+        126312,
+        126313,
+        126314,
+        126315,
+        126316,
+        126317,
+        126318,
+        126319,
+        126320,
+        126321,
+        126322,
+        126323,
+        126324,
+        126325,
+        126326,
+        126327,
+        126328,
+        126329,
+        126330,
+        126331,
+        126332,
+        126333,
+        126334,
+        126335,
+        126336,
+        126337,
+        126338,
+        126339,
+        126340,
+        126341,
+        126342,
+        126343,
+        126344,
+        126345,
+        126346,
+        126347,
+        126348
+      ],
+      "folder": "/home/jota/.cache/huggingface/hub/models--GSAI-ML--LLaDA-8B-Instruct/snapshots/08b83a6feb34df1a6011b80c3c00c7563e963b07",
+      "id_bytes_effect_sha256": "93b420e66381ff91b475dc22ad4b7888a1a046223fc8b51cf6541a46067b6e0a",
+      "max_aliases_per_class": 123757,
+      "model_vocab_ids": 126080,
+      "name": "LLaDA",
+      "ordinary_bytes": 839137,
+      "ordinary_ids": 126080,
+      "probes": [
+        {
+          "best": {
+            "Q_base": 73,
+            "Q_bits": 199,
+            "Q_exponent": 32,
+            "k": 32,
+            "principal": "(",
+            "within_limits": false
+          },
+          "choices": [
+            {
+              "Q_base": 73,
+              "Q_bits": 199,
+              "Q_exponent": 32,
+              "k": 32,
+              "principal": "(",
+              "within_limits": false
+            },
+            {
+              "Q_base": 73,
+              "Q_bits": 199,
+              "Q_exponent": 32,
+              "k": 32,
+              "principal": "[",
+              "within_limits": false
+            },
+            {
+              "Q_base": 73,
+              "Q_bits": 199,
+              "Q_exponent": 32,
+              "k": 32,
+              "principal": "{",
+              "within_limits": false
+            }
+          ],
+          "effect_classes_per_slot": 73,
+          "faces": 1,
+          "guards": [],
+          "not_infeasibility": true,
+          "pins": [],
+          "slots": 32,
+          "status": "REFUSED_PARAMETER"
+        },
+        {
+          "best": {
+            "Q_base": 73,
+            "Q_bits": 793,
+            "Q_exponent": 128,
+            "k": 128,
+            "principal": "(",
+            "within_limits": false
+          },
+          "choices": [
+            {
+              "Q_base": 73,
+              "Q_bits": 793,
+              "Q_exponent": 128,
+              "k": 128,
+              "principal": "(",
+              "within_limits": false
+            },
+            {
+              "Q_base": 73,
+              "Q_bits": 793,
+              "Q_exponent": 128,
+              "k": 128,
+              "principal": "[",
+              "within_limits": false
+            },
+            {
+              "Q_base": 73,
+              "Q_bits": 793,
+              "Q_exponent": 128,
+              "k": 128,
+              "principal": "{",
+              "within_limits": false
+            }
+          ],
+          "effect_classes_per_slot": 73,
+          "faces": 1,
+          "guards": [],
+          "not_infeasibility": true,
+          "pins": [],
+          "slots": 128,
+          "status": "REFUSED_PARAMETER"
+        },
+        {
+          "best": {
+            "Q_base": 73,
+            "Q_bits": 3170,
+            "Q_exponent": 512,
+            "k": 512,
+            "principal": "(",
+            "within_limits": false
+          },
+          "choices": [
+            {
+              "Q_base": 73,
+              "Q_bits": 3170,
+              "Q_exponent": 512,
+              "k": 512,
+              "principal": "(",
+              "within_limits": false
+            },
+            {
+              "Q_base": 73,
+              "Q_bits": 3170,
+              "Q_exponent": 512,
+              "k": 512,
+              "principal": "[",
+              "within_limits": false
+            },
+            {
+              "Q_base": 73,
+              "Q_bits": 3170,
+              "Q_exponent": 512,
+              "k": 512,
+              "principal": "{",
+              "within_limits": false
+            }
+          ],
+          "effect_classes_per_slot": 73,
+          "faces": 1,
+          "guards": [],
+          "not_infeasibility": true,
+          "pins": [],
+          "slots": 512,
+          "status": "REFUSED_PARAMETER"
+        }
+      ],
+      "tokenizer_sha256": "071eb20fe7bd601550b1b7838ff696d6c93b88f51257f753303d3df23163c381",
+      "zero_effect_ids": []
+    },
+    {
+      "class_count": 85,
+      "config_sha256": "02494589af3c9284b381929c576e5865c8f026b5bfed4b9a08d1b38bd4b8623e",
+      "controls": {
+        "bos_token_id": 151643,
+        "eos_token_id": 151645,
+        "pad_token_id": 151643
+      },
+      "decoder_checks": 151643,
+      "excluded_added_ids": [
+        151643,
+        151644,
+        151645,
+        151646,
+        151647,
+        151648,
+        151649,
+        151650,
+        151651,
+        151652,
+        151653,
+        151654,
+        151655,
+        151656,
+        151657,
+        151658,
+        151659,
+        151660,
+        151661,
+        151662,
+        151663,
+        151664,
+        151665,
+        151666,
+        151667,
+        151668,
+        151669
+      ],
+      "folder": "/home/jota/projects/tcc-final/.cache/a52-model-metadata",
+      "id_bytes_effect_sha256": "88874185cdc61e04db5534377a46a35440271819ab189fb8dee74938f2799d5c",
+      "max_aliases_per_class": 146544,
+      "model_vocab_ids": 151643,
+      "name": "Qwen",
+      "ordinary_bytes": 975969,
+      "ordinary_ids": 151643,
+      "probes": [
+        {
+          "best": {
+            "Q_base": 85,
+            "Q_bits": 206,
+            "Q_exponent": 32,
+            "k": 32,
+            "principal": "(",
+            "within_limits": false
+          },
+          "choices": [
+            {
+              "Q_base": 85,
+              "Q_bits": 206,
+              "Q_exponent": 32,
+              "k": 32,
+              "principal": "(",
+              "within_limits": false
+            },
+            {
+              "Q_base": 85,
+              "Q_bits": 206,
+              "Q_exponent": 32,
+              "k": 32,
+              "principal": "[",
+              "within_limits": false
+            },
+            {
+              "Q_base": 85,
+              "Q_bits": 206,
+              "Q_exponent": 32,
+              "k": 32,
+              "principal": "{",
+              "within_limits": false
+            }
+          ],
+          "effect_classes_per_slot": 85,
+          "faces": 1,
+          "guards": [],
+          "not_infeasibility": true,
+          "pins": [],
+          "slots": 32,
+          "status": "REFUSED_PARAMETER"
+        },
+        {
+          "best": {
+            "Q_base": 85,
+            "Q_bits": 821,
+            "Q_exponent": 128,
+            "k": 128,
+            "principal": "(",
+            "within_limits": false
+          },
+          "choices": [
+            {
+              "Q_base": 85,
+              "Q_bits": 821,
+              "Q_exponent": 128,
+              "k": 128,
+              "principal": "(",
+              "within_limits": false
+            },
+            {
+              "Q_base": 85,
+              "Q_bits": 821,
+              "Q_exponent": 128,
+              "k": 128,
+              "principal": "[",
+              "within_limits": false
+            },
+            {
+              "Q_base": 85,
+              "Q_bits": 821,
+              "Q_exponent": 128,
+              "k": 128,
+              "principal": "{",
+              "within_limits": false
+            }
+          ],
+          "effect_classes_per_slot": 85,
+          "faces": 1,
+          "guards": [],
+          "not_infeasibility": true,
+          "pins": [],
+          "slots": 128,
+          "status": "REFUSED_PARAMETER"
+        },
+        {
+          "best": {
+            "Q_base": 85,
+            "Q_bits": 3282,
+            "Q_exponent": 512,
+            "k": 512,
+            "principal": "(",
+            "within_limits": false
+          },
+          "choices": [
+            {
+              "Q_base": 85,
+              "Q_bits": 3282,
+              "Q_exponent": 512,
+              "k": 512,
+              "principal": "(",
+              "within_limits": false
+            },
+            {
+              "Q_base": 85,
+              "Q_bits": 3282,
+              "Q_exponent": 512,
+              "k": 512,
+              "principal": "[",
+              "within_limits": false
+            },
+            {
+              "Q_base": 85,
+              "Q_bits": 3282,
+              "Q_exponent": 512,
+              "k": 512,
+              "principal": "{",
+              "within_limits": false
+            }
+          ],
+          "effect_classes_per_slot": 85,
+          "faces": 1,
+          "guards": [],
+          "not_infeasibility": true,
+          "pins": [],
+          "slots": 512,
+          "status": "REFUSED_PARAMETER"
+        }
+      ],
+      "tokenizer_sha256": "6d55810de1daf81d1d1259355b4b85810385022ab745be68029295935a4eacf0",
+      "zero_effect_ids": []
+    }
+  ]
+}
