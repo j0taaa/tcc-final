@@ -41,7 +41,9 @@ def norms(values, bits):
     lower2 = (lo * lo).sum(axis=-1, dtype=np.int64)
     upper2 = (hi * hi).sum(axis=-1, dtype=np.int64)
     lower = [F(math.isqrt(int(v)), 2**bits) for v in lower2]
-    upper = [F(math.isqrt(int(v)) + (math.isqrt(int(v)) ** 2 != v), 2**bits) for v in upper2]
+    upper = [
+        F(math.isqrt(int(v)) + int(math.isqrt(int(v)) ** 2 != int(v)), 2**bits) for v in upper2
+    ]
     return lower, upper
 
 

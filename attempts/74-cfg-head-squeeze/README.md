@@ -169,3 +169,11 @@ original. O JSON inicial fica preservado e a falha não conta como recusa do
 envelope. A correção fornece o fonte transformado ao `linecache` em memória,
 sem gravar no cache compartilhado. Nenhum peso, caso ou gate muda. Dados
 do produtor corrigido vão para `screen-cpu-v1b.jsonl`.
+
+Correção numérica V1c: V1b carregou/hash-verificou o modelo, mas a primeira
+checagem independente Fraction recusou a norma: o booleano NumPy do arredondamento
+de isqrt propagava `np.int64` ao numerador de Fraction e causava `OverflowError`.
+Converter explicitamente esse incremento para int Python corrige o tipo sem
+mudar a fórmula do intervalo. Nenhuma captura h ocorreu. Saída parcial V1b
+preservada; execução corrigida usa `screen-cpu-v1c.jsonl`. O erro é de software,
+não recusa do proxy nem evidência de impossibilidade científica.
