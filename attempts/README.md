@@ -7,11 +7,6 @@ comandos antigos pertencem às suas versões; consulte o
 
 ## Candidatas em investigação
 
-[A83 — Diagnóstico operacional do EPIC](83-epic-operational-diagnosis/README.md):
-18 decodes e uma sonda neural em três casos JSON; desperdício de forwards
-reproduzido e removido com IDs/estados preservados, sem contribuição nova
-confirmada. Questão aberta de quando atualizar previsões durante rejeições.
-
 [A82 — Triagem de cinco operadores para dLLMs](82-five-operator-screening/README.md):
 antirrepetição, alternativas sem reposição, campos antecipados, decisões
 coerentes com marginais preservadas e perguntas sobre entradas incompletas.
@@ -30,6 +25,7 @@ e suficiência científica abertas, sem vantagem neural estabelecida.
 prova escrita e oráculos finitos; prioridade e benefício completo pendentes.
 
 ## Investigações anteriores
+- [A83 — Diagnóstico do EPIC e avaliação científica: correção de engenharia, sem tema central selecionado](83-epic-operational-diagnosis/README.md)
 - [A80 — Calibração certificada por clipping: prova e aplicação offline sem vantagem integral](80-private-clipping-calibration/result.md)
 - [A79 — Aritmética estocástica no amostrador gramatical: prova e aplicação offline não positiva](79-stochastic-circuit-sampling/README.md)
 - [A70 — Reconstrução observável do Adam nativo com apagamento certificado de estado](70-native-adam-erasure/README.md)

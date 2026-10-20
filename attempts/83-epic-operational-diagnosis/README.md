@@ -250,3 +250,41 @@ de promovê-la, essa pergunta precisa sobreviver aos controles simples e ao
 antecedente mais próximo, ganhar uma operação/prova próprias e ser avaliada
 em dados independentes com custo completo. A prova de ausência de trabalho
 não é uma prova de melhoria de qualidade nem de novidade.
+
+## Seleção científica após o requisito de impacto
+
+20/10/2026. O usuário condicionou a continuação a uma contribuição de impacto
+que fortaleça uma candidatura ao mestrado. **A83 não é selecionada como tema
+central nem como campanha de um novo decoder.** O diagnóstico e os controles
+corretos ficam preservados. Esta decisão não afirma que nenhuma extensão
+possível possa dar resultado; afirma que a evidência atual não justifica esse
+investimento para o objetivo solicitado.
+
+A leitura adicional e uma avaliação independente por subagente confrontaram
+a questão com fontes primárias:
+
+- [LAVE v3, seção 3.3](https://arxiv.org/html/2602.00612v3#S3.SS3): já monitora
+  rejeições consecutivas e recupera a geração usando prefixos verificados e
+  mudanças de contexto. Reagir a uma contagem de rejeições é antecedente, não
+  uma diferença científica suficiente.
+- [Saber, seções 4.2/4.3 e apêndice A](https://aclanthology.org/2026.acl-long.165.pdf):
+  adapta o preenchimento e reavalia escolhas conforme o contexto muda, com
+  remasking e análise sob hipóteses explícitas de calibração e confiabilidade.
+  Não resolve o mesmo controlador de rejeição CFG, mas cobre a motivação geral
+  de previsões que deixam de ser adequadas ao novo contexto.
+- [DecoCal, seções 3.2–3.5](https://aclanthology.org/2026.acl-long.545.pdf):
+  acumula previsões entre passos, decide preenchimento/revisão e usa mecanismos
+  de progresso. Não é prova de que toda atualização CFG já foi estudada.
+
+A diferença ainda concebível é usar rejeições CFG e custos medidos para decidir
+quando reavaliar a rede mantendo os commitments existentes. Isso é uma hipótese
+de controle computacional, sem algoritmo próprio, prioridade verificada,
+teorema de benefício ou superioridade frente a regras fixas e recuperações
+completas. A garantia sintática viria do verificador já existente. Nenhum dos
+18 decodes estabelece uma vantagem dessa política, pois ela não foi implementada.
+
+O próximo investimento nessa pergunta só se justifica se aparecer um mecanismo
+distinto acompanhado de uma propriedade útil demonstrável e de um comparador
+competente. Não há campanha adicional selecionada apenas para otimizar o caso
+da soma. O requisito de impacto permanece nas instruções do projeto; nenhuma
+decisão aqui promete aprovação acadêmica ou declara revisão humana.

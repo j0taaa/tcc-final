@@ -8,6 +8,12 @@
   Documentos históricos explicam evidências antigas; não são uma fila de trabalho.
 - A meta científica positiva continua aberta. A71 é uma candidata em investigação;
   não reabra aplicações encerradas para tentar obter um resultado favorável.
+- O usuário quer um TCC de impacto que fortaleça sua candidatura ao mestrado:
+  contribuição própria, teoria matemática e utilidade geral com melhoria
+  demonstrável, viável sem treinamento em uma RTX 3080 Ti de 12 GB.
+  Correções de implementação e integrações conhecidas servem como controles;
+  não bastam para selecionar o tema central. Só ampliar uma direção quando
+  houver justificativa científica específica para esse objetivo.
 
 ## Mudanças
 

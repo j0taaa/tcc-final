@@ -21,12 +21,12 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
-- [ ] Antes de propor outro decoder, confrontar a questão concreta de
-  atualização neural durante rejeições, identificada no
-  [diagnóstico A83](attempts/83-epic-operational-diagnosis/README.md), com
-  reaproveitamento de softmax, atualização fixa e recuperação completa
-  EPIC/LAVE. A82 não está selecionada para campanha; não confundir a correção
-  de trabalho vazio com novidade científica.
+- [ ] Antes de selecionar outra campanha, justificar uma contribuição própria
+  com teoria, utilidade geral e benefício demonstrável para o TCC de impacto
+  solicitado. A leitura de LAVE/Saber/DecoCal e a avaliação independente não
+  justificaram desenvolver atualização durante rejeições como tema central
+  de [A83](attempts/83-epic-operational-diagnosis/README.md). Seus controles de
+  engenharia ficam preservados; A82 também não está selecionada para campanha.
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
 - [ ] Antes de qualquer campanha neural, justificar variabilidade útil de EOS,
