@@ -504,8 +504,9 @@ def run(output):
         signal.signal(signal.SIGTERM, stop)
         signal.signal(signal.SIGINT, stop)
 
-        def check_concurrency():
-            for line in (output / "pmon.txt").read_text().splitlines():
+        def activity_since(start):
+            active = []
+            for line in (output / "pmon.txt").read_text().splitlines()[start:]:
                 columns = line.split()
                 if len(columns) > 4 and columns[0].isdigit() and "C" in columns[2]:
                     if (
@@ -513,10 +514,22 @@ def run(output):
                         and columns[3].isdigit()
                         and int(columns[3]) > 0
                     ):
-                        emit(
-                            type="resource", status="CONCURRENT_ACTIVITY_TIMINGS_INVALID", raw=line
-                        )
-                        raise RuntimeError("observed foreign GPU compute; all timings inconclusive")
+                        active.append(line)
+            return active
+
+        def mark_monitor():
+            return len((output / "pmon.txt").read_text().splitlines())
+
+        def wait_idle():
+            consecutive = 0
+            for _ in range(180):
+                snapshot = gpu_snapshot()
+                util, free = (int(v.strip()) for v in snapshot.rsplit(",", 2)[1:])
+                consecutive = consecutive + 1 if util <= 3 and free >= 2048 else 0
+                if consecutive == 3:
+                    return
+                time.sleep(1)
+            raise TimeoutError("no uncontended GPU window; resource-inconclusive")
 
         try:
             producer = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
@@ -591,6 +604,7 @@ def run(output):
             heads = Heads(w, bias, lookup)
             torch.cuda.synchronize()
             common_setup = (ns() - setup_started) / 1e9
+            common_setup_valid = not activity_since(0)
             emit(
                 type="model",
                 model_id=config["model_id"],
@@ -602,10 +616,12 @@ def run(output):
                 w12_sha256=hashlib.sha256(w.tobytes()).hexdigest(),
                 eligible_ids="0..50255",
                 common_setup_seconds=common_setup,
+                setup_timing_valid=common_setup_valid,
                 reference_storage_bytes=w.size * 4 + bias.nbytes,
                 numerical_contract="protocol-v2.md; integer weights; not native torch softmax",
             )
             proxy_setup = prepare_proxies(heads, w, emit)
+            setup_valid = common_setup_valid and not activity_since(0)
             captured = []
 
             class Captured(Exception):
@@ -622,6 +638,8 @@ def run(output):
                 input_ids = torch.tensor([ids], device="cuda")
                 capture_costs = []
                 hidden = None
+                wait_idle()
+                capture_mark = mark_monitor()
                 for rep in range(4):
                     torch.cuda.synchronize()
                     begin = ns()
@@ -640,6 +658,8 @@ def run(output):
                         if hidden is None:
                             hidden = current
                 backbone = float(np.median(capture_costs))
+                time.sleep(1.1)
+                backbone_valid = not activity_since(capture_mark)
                 quant_begin = ns()
                 h = torch.round(hidden * 1024).to(torch.int32)
                 torch.cuda.synchronize()
@@ -657,6 +677,7 @@ def run(output):
                     backbone_seconds=capture_costs,
                     backbone_median_seconds=backbone,
                     hidden_quantize_seconds=quant_seconds,
+                    backbone_timing_valid=backbone_valid,
                 )
                 # All values, not a sampled check, must agree between dense implementations.
                 dense_split = heads.dense(h, "split")
@@ -711,38 +732,63 @@ def run(output):
                 gc.collect()
                 gc.disable()
                 for rep in range(11):
-                    check_concurrency()
                     order = list(METHODS)
                     shift = (rep + case) % len(order)
                     order = order[shift:] + order[:shift]
-                    for method in order:
-                        index = METHODS.index(method)
-                        row = operation(
-                            heads,
-                            h,
-                            method,
-                            Bits(740302 + 10000 * case + 100 * rep + index),
-                            emissions,
-                        )
-                        row.update(
-                            type="draw",
+                    for resource_try in range(3):
+                        wait_idle()
+                        block_mark = mark_monitor()
+                        block = []
+                        for method in order:
+                            index = METHODS.index(method)
+                            row = operation(
+                                heads,
+                                h,
+                                method,
+                                Bits(740302 + 10000 * case + 100 * rep + index),
+                                emissions,
+                            )
+                            row.update(
+                                type="draw",
+                                case=case,
+                                n=n,
+                                rep=rep,
+                                method=method,
+                                resource_try=resource_try,
+                                common_setup_seconds=common_setup,
+                                proxy_setup_seconds=0.0
+                                if method.startswith("dense:")
+                                else proxy_setup[method.split(":")[0]],
+                                backbone_seconds=backbone,
+                                hidden_quantize_seconds=quant_seconds,
+                                setup_timing_valid=setup_valid,
+                                backbone_timing_valid=backbone_valid,
+                            )
+                            block.append(row)
+                            if torch.cuda.max_memory_allocated() > 2 * 1024**3:
+                                raise MemoryError("new CUDA allocation ceiling exceeded")
+                            if activity_since(block_mark):
+                                break
+                        time.sleep(1.1)
+                        interference = activity_since(block_mark)
+                        block_valid = not interference and len(block) == len(METHODS)
+                        for row in block:
+                            emit(**row, timing_valid=block_valid)
+                        emit(
+                            type="measurement_block",
                             case=case,
-                            n=n,
                             rep=rep,
-                            method=method,
-                            common_setup_seconds=common_setup,
-                            proxy_setup_seconds=0.0
-                            if method.startswith("dense:")
-                            else proxy_setup[method.split(":")[0]],
-                            backbone_seconds=backbone,
-                            hidden_quantize_seconds=quant_seconds,
+                            resource_try=resource_try,
+                            timing_valid=block_valid,
+                            foreign_activity=interference,
+                            monitor_start_line=block_mark,
+                            monitor_end_line=mark_monitor(),
                         )
-                        emit(**row)
-                        if torch.cuda.max_memory_allocated() > 2 * 1024**3:
-                            raise MemoryError("new CUDA allocation ceiling exceeded")
-                    # Preserve every row; do not replace a slow/rejected draw.
+                        if block_valid:
+                            break
+                    else:
+                        raise TimeoutError("three contaminated blocks; resource-inconclusive")
                 gc.enable()
-                check_concurrency()
                 emit(
                     type="case_complete",
                     case=case,

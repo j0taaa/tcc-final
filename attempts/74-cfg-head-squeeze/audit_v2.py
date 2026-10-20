@@ -61,7 +61,8 @@ def audit(directory):
             }
         )
     assert len(probabilities) == 24
-    draws = [row for row in rows if row["type"] == "draw"]
+    all_draws = [row for row in rows if row["type"] == "draw"]
+    draws = [row for row in all_draws if row.get("timing_valid", True)]
     assert len(draws) == 660
     for row in draws:
         word = row["ids"]
@@ -141,6 +142,7 @@ def audit(directory):
         "status": "PASS",
         "states": 6,
         "draws": 660,
+        "invalid_resource_draws_preserved": len(all_draws) - len(draws),
         "class_mass_certificates": 54,
         "gate_passes": sum(row["passed_frozen_gate"] for row in comparisons),
         "decision_scope": (

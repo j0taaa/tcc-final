@@ -142,3 +142,29 @@ de h para não atribuir sua primeira inicialização a cada head fresco.
 `measurements-v2` preserva a falha e os tempos parciais, sem nenhum draw
 comparativo. A nova execução irá a `measurements-v2b`, com casos, sementes,
 proxies, referência, número de repetições e gate inalterados.
+
+## Emenda de recursos V2c, ainda antes de qualquer draw comparativo
+
+V2b recusou antes do oráculo/kernel: GPU estava ociosa em duas observações,
+mas chegou a 75% na terceira. O servidor externo está intermitentemente ativo.
+V2 inicial também registrou atividade alheia durante setup no pmon: seus tempos
+parciais NÃO são medições isoladas. Preservar ambos os diretórios.
+
+Para obter comparação sem concorrência, manter um modelo preparado e esperar
+três observações ociosas antes de cada bloco das mesmas dez variantes. Monitorar
+entre variantes e por mais 1,1s após cada bloco para cobrir a janela pmon.
+Se houver atividade alheia, marcar e preservar todos os draws do bloco como
+`timing_valid=false`; interromper o bloco e tentar novamente, com EXATAMENTE
+as mesmas seeds, no máximo três vezes. Usar o primeiro bloco válido, nunca
+selecionar por velocidade. Continuam onze blocos válidos por caso, mesmas
+ordem rotativa e métricas. Um draw lento, uma rejeição ou um fallback NÃO
+autoriza repetição. Espera ociosa tem limite de 180 observações de 1s por
+bloco; teto externo passa a 1800s para essas esperas, sem ampliar casos.
+
+Capturas e setup também recebem flags de validade do monitor. Tempos de setup
+com interferência são diagnósticos, não usados para alegar vantagem; uma
+derrota já no custo quente, concedendo setup gratuito ao candidato, continua
+decisiva independentemente desse setup. Exportar ambos, sem ocultar o limite.
+Dados completos terão caminho novo `measurements-v2c`; não sobrescrever dados
+anteriores. Essa alteração é exclusivamente de isolamento/recuperação de
+recursos, não muda a lei, os proxies nem o gate científico.
