@@ -6,10 +6,12 @@ import hashlib
 import json
 import math
 import random
+import sys
 from decimal import Decimal, localcontext
 from fractions import Fraction as F
 from functools import lru_cache
 from itertools import product
+from pathlib import Path
 
 
 def mass(word, rows):
@@ -271,7 +273,85 @@ def analytic_examples():
     return {"kernel_grid_points_decimal_crosscheck": kernel_points, "oracle_lower_bound": examples}
 
 
+def audit_screen():
+    """Reconstruct stored rational certificates without Torch, weights or clocks."""
+    root = Path(__file__).resolve().parent
+    records = [
+        json.loads(line) for line in (root / "screen-cpu-v1c.jsonl").read_text().splitlines()
+    ]
+    proxies = {row["proxy"]: F(row["min_rho"]) for row in records if row["type"] == "proxy"}
+    cases = [row for row in records if row["type"] == "case"]
+    assert len(cases) == 8
+    assert records[-1]["type"] == "complete" and records[-1]["states"] == 4
+    for row in records:
+        for key, value in row.items():
+            if key.endswith("_seconds") or key == "cuda_peak_allocated_bytes":
+                assert value is None
+    for row in cases:
+        eta = [F(v) for v in row["eta_upper"]]
+        assert len(eta) == row["n"]
+        a = 2 * proxies[row["proxy"]] * sum(eta)
+        assert a == F(row["log_R_lower"])
+        certified = sum(a**k / math.factorial(k) for k in range(17))
+        assert certified == F(row["R_lower_taylor16"]) and certified > 4
+        assert row["status"] == "ENVELOPE_GATE_REFUSAL"
+        assert all(
+            row[k] == 0
+            for k in (
+                "reference_head_rows",
+                "projected_proxy_rows",
+                "chart_bytes",
+                "sampler_rng_bits",
+                "output_tokens",
+            )
+        )
+    # Supplemental exact attacks on the written constructed regime, not new
+    # model cases and not an amended gate. No historical output is overwritten.
+    for n, delta in product((2, 4, 8), (F(1, 8), F(1, 4))):
+        b = (int(40 * n / delta) - 1).bit_length()
+        lower, target, upper = [], [], []
+        for i in range(n):
+            h = (F((-1) ** i, 4 * n), F(3, 5), F(3, 5))
+            assert sum(v * v for v in h) <= 1
+            lo, w, up = [], [], []
+            for v in range(8):
+                beta = F(2 * (v % 2) - 1)
+                e = [F((-1) ** (v + d), 2) * delta / n for d in range(3)]
+                assert sum(x * x for x in e) <= (delta / n) ** 2
+                q = beta * h[0]
+                logit = q + sum(x * y for x, y in zip(e, h, strict=True))
+                weights = [kernel(q - delta / n, b), kernel(logit, b), kernel(q + delta / n, b)]
+                assert 0 < weights[0] <= weights[1] <= weights[2]
+                for out, value in zip((lo, w, up), weights, strict=True):
+                    out.append(int(value * 2**b))
+            lower.append(lo)
+            target.append(w)
+            upper.append(up)
+        zl, zw, zu = (table(rows, 2)[1] for rows in (lower, target, upper))
+        assert 0 < zl <= zw <= zu
+        assert F(zu, zl) < polynomial(F(12, 5) * delta, 32)
+    for n, r in product((2, 4, 8), (1, 2, 3)):
+        raw_plus = (F(r) ** n, F(r) ** (-n))
+        raw_minus = raw_plus[::-1]
+        tv = (
+            sum(
+                abs(x / sum(raw_plus) - y / sum(raw_minus))
+                for x, y in zip(raw_plus, raw_minus, strict=True)
+            )
+            / 2
+        )
+        assert tv == (F(r) ** (2 * n) - 1) / (F(r) ** (2 * n) + 1)
+    # Moving a gauge before the nonhomogeneous rational kernel changes the law.
+    assert kernel(F(0), 8) / kernel(F(1, 2), 8) != kernel(F(-1, 4), 8) / kernel(F(1, 4), 8)
+    print("PASS: 8 rational envelope certificates; 6 constructed rank-one cases; 9 TV laws")
+
+
 if __name__ == "__main__":
+    if sys.argv[1:] == ["--audit-screen"]:
+        audit_screen()
+        raise SystemExit(0)
+    if sys.argv[1:]:
+        raise SystemExit("usage: check.py [--audit-screen]")
     print(
         json.dumps(
             {

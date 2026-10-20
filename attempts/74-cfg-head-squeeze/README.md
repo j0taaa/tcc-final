@@ -4,6 +4,11 @@ Base: `84b3496952243f2a5b3c5dd2d31191073be3a304`. Investigação delimitada,
 sem treinamento. Protocolo escrito antes de executar os novos oráculos ou
 capturar estados. A confirmação do coordenador liberou os três worktrees.
 
+**Decisão:** não selecionar esta formulação como contribuição central.
+O mecanismo é clássico; os dois envelopes fixados recusaram os quatro estados
+CPU, e desempenho GPU ficou não medido por ocupação externa. Provas, oráculos,
+falhas de software e limites dessa conclusão estão separados em [result.md](result.md).
+
 ## Operação e consumidor
 
 Uma amostra **completa** de IDs originais do produto de um único head congelado,
@@ -25,6 +30,8 @@ iguais e lexemas j livres; todos os IDs são elegíveis em cada posição. É um
 consumidor **construído**, não um workload neural natural demonstrado. A
 triagem de envelopes vale para qualquer evento não vazio no vocabulário
 declarado; não inventa um decoder de produção nem uma semântica para os IDs.
+Nos oráculos de aliases, o ID v emite o byte `b"ABCD"[v//m]`; os m IDs de
+cada classe emitem o mesmo byte, mas mantêm pesos/identidades próprios.
 
 ## Antecedentes e diferença possível
 
