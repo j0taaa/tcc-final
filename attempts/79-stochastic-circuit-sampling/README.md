@@ -141,8 +141,11 @@ objections even if a lower mantissa precision is theoretically sufficient.
 
 ## Reproduction
 
-Implementation and results are pending. Use the producer commit for eventual
-measurements. No changes are proposed to the maintained library or EPIC baseline.
+The implementation and frozen development comparison are complete. The candidate
+was slower in all 27 cases; no family passed the time gate. Total resident memory
+remains inconclusive. See [result.md](result.md) for all outcomes, scope and exact
+reproduction commands. The mathematical statements remain in [theory.md](theory.md).
+No maintained library or EPIC baseline API was changed.
 
 ## Prospective clarifications before any measurements
 

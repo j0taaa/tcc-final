@@ -12,6 +12,7 @@ A biblioteca, o artigo histórico e as candidatas de pesquisa têm escopos disti
 | A69 | Separações matemáticas construídas; prioridade específica e consumidor natural que necessite exatidão continuam pendentes. |
 | A71 | Acoplar paradas de um lote finito preservando leis individuais e de pares. Provas escritas e oráculos finitos; novidade suficiente, implementação nativa e ganho completo ainda pendentes. |
 | A72 | Não selecionada como contribuição central após a V2. Provas escritas de obstrução robusta preservadas; hipótese adjacente por convoluções medida em 36 casos sintéticos e seis capturas reais LLaDA. Gate neural 0/6: quatro propostas corretas porém mais lentas e duas recusas. Não há vantagem de decoder. |
+| A79 | Prova escrita para erro da lei média sob arredondamento estocástico interno. Aplicação offline completa: 2.160 consultas válidas; candidata mais lenta em 27/27 casos e zero famílias aprovadas no gate de tempo. Memória total e prioridade suficiente permanecem inconclusivas. Não selecionada como tema central; [resultado e dados](../attempts/79-stochastic-circuit-sampling/result.md). |
 
 ## Onde conferir
 
