@@ -159,6 +159,11 @@ estimates from reachable Python objects and ideal payloads are diagnostic; they
 cannot satisfy the actual total resident-memory gate without matched isolated
 process measurements. If those are absent, that branch is inconclusive.
 
+The primary candidate for that gate is `sr_shared`. All four other methods are
+controls, including `sr_singleton`. The primary method will not be switched after
+observing the data. All 27 cases and all 16 queries must finish and validate for
+every method before a positive development decision is permitted.
+
 The query contract measures one fresh numerical evaluation per supplied head,
 with structure cached. Uniform profiles intentionally repeat numerical heads;
 these timings do not establish superiority over a service that caches equal

@@ -209,7 +209,9 @@ class Circuit:
     def evaluate(self, rows, method="exact", precision=9, seed=0, *, measure=True):
         if method not in ("exact", "nearest", "sr_singleton", "sr_shared"):
             raise ValueError("unknown arithmetic method")
-        rows = tuple(tuple(Fraction(x) for x in row) for row in rows)
+        rows = tuple(
+            tuple(x if isinstance(x, Fraction) else Fraction(x) for x in row) for row in rows
+        )
         if len(rows) != len(self.token_rows):
             raise ValueError("one aligned row per physical position is required")
         for row, ids, fixed in zip(rows, self.token_rows, self.canvas, strict=True):
