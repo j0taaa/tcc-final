@@ -161,3 +161,11 @@ O h capturado é o da execução CPU declarada: não alegar identidade com h
 CUDA. Sem novo prompt, seed, proxy, treinamento ou campanha de desempenho.
 Os dados CPU terão caminho novo `screen-cpu-v1a.jsonl`. A falta da medição
 GPU permanece uma limitação, mesmo que os envelopes CPU sejam recusados.
+
+Correção de implementação V1b, ainda antes de qualquer captura: V1a falhou
+no TorchScript, `RuntimeError: Expected a single top-level function`, porque
+o loader em memória atribuía ao fonte transformado o caminho/linhas do
+original. O JSON inicial fica preservado e a falha não conta como recusa do
+envelope. A correção fornece o fonte transformado ao `linecache` em memória,
+sem gravar no cache compartilhado. Nenhum peso, caso ou gate muda. Dados
+do produtor corrigido vão para `screen-cpu-v1b.jsonl`.

@@ -6,6 +6,7 @@ import argparse
 import fcntl
 import hashlib
 import json
+import linecache
 import math
 import signal
 import subprocess
@@ -72,7 +73,15 @@ def load_model(config):
         'torch.autocast(device_type="cpu", enabled=False)',
     )
     module = types.ModuleType("a74_mdlm_model")
-    module.__file__ = str(files["modeling_mdlm.py"])
+    module.__file__ = str(ROOT / ".cache/a74-audited-mdlm.py")
+    # TorchScript inspects the transformed source, whose line numbers differ
+    # from the original. Supply it in memory; never write the shared cache.
+    linecache.cache[module.__file__] = (
+        len(source),
+        None,
+        source.splitlines(keepends=True),
+        module.__file__,
+    )
     module.__dict__.update(
         MDLMConfig=configuration.MDLMConfig,
         rearrange=rearrange,

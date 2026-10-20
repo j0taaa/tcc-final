@@ -1,0 +1,1 @@
+{"type": "environment", "producer": "78738aba8bd1dee47d6d72857abc192c33ca8b1e", "device": "cpu", "gpu": null, "compute_processes": null, "torch": "2.8.0+cpu", "numpy": "2.4.6", "seed": 740203, "lock": null, "scope": "envelope_screen_only"}
