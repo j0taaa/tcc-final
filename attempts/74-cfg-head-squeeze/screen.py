@@ -11,6 +11,7 @@ import signal
 import subprocess
 import sys
 import types
+from contextlib import nullcontext
 from fractions import Fraction as F
 from pathlib import Path
 from time import perf_counter
@@ -89,15 +90,18 @@ def load_model(config):
     return model.eval(), hashlib.sha256(source.encode()).hexdigest()
 
 
-def run(output):
+def run(output, device):
     if subprocess.run(["git", "diff", "--quiet", "HEAD"], cwd=ROOT).returncode:
         raise ValueError("freeze protocol and source before capture")
-    lock = open("/tmp/tcc-final-candidate-tests-gpu.lock", "a")
-    try:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except BlockingIOError:
-        print("GPU_LOCK_BUSY: no GPU query, capture or timing started", flush=True)
-        return 75
+    cpu = device == "cpu"
+    clock = (lambda: 0.0) if cpu else perf_counter
+    lock = nullcontext() if cpu else open("/tmp/tcc-final-candidate-tests-gpu.lock", "a")
+    if not cpu:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            print("GPU_LOCK_BUSY: no GPU query, capture or timing started", flush=True)
+            return 75
     # File opened exclusively: old data cannot be overwritten.
     with lock, output.open("x") as stream:
 
@@ -111,28 +115,43 @@ def run(output):
             raise SystemExit(128 + signum)
 
         signal.signal(signal.SIGTERM, interrupted)
-        started = perf_counter()
-        smi = subprocess.check_output(
-            ["nvidia-smi", "--query-gpu=name,memory.free", "--format=csv,noheader,nounits"],
-            text=True,
-        ).strip()
-        processes = subprocess.check_output(
-            ["nvidia-smi", "--query-compute-apps=pid,process_name", "--format=csv,noheader"],
-            text=True,
-        ).strip()
+
+        def elapsed(begin):
+            return None if cpu else clock() - begin
+
+        started = clock()
+        smi = (
+            None
+            if cpu
+            else subprocess.check_output(
+                ["nvidia-smi", "--query-gpu=name,memory.free", "--format=csv,noheader,nounits"],
+                text=True,
+            ).strip()
+        )
+        processes = (
+            None
+            if cpu
+            else subprocess.check_output(
+                ["nvidia-smi", "--query-compute-apps=pid,process_name", "--format=csv,noheader"],
+                text=True,
+            ).strip()
+        )
         producer = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
         emit(
             type="environment",
             producer=producer,
+            device=device,
             gpu=smi,
             compute_processes=processes,
             torch=torch.__version__,
             numpy=np.__version__,
             seed=740203,
-            lock="/tmp/tcc-final-candidate-tests-gpu.lock",
+            lock=None if cpu else "/tmp/tcc-final-candidate-tests-gpu.lock",
             scope="envelope_screen_only",
         )
-        if processes or int(smi.rsplit(",", 1)[1]) < 2048 or not torch.cuda.is_available():
+        if not cpu and (
+            processes or int(smi.rsplit(",", 1)[1]) < 2048 or not torch.cuda.is_available()
+        ):
             emit(type="resource", status="RESOURCE_REFUSAL_INCONCLUSIVE")
             return 2
         torch.set_num_threads(4)
@@ -166,7 +185,7 @@ def run(output):
             bias="unchanged_exact",
             tokenizer_hashes={p.name: digest(p) for p in token_snapshot.iterdir() if p.is_file()},
         )
-        proxy_started = perf_counter()
+        proxy_started = clock()
         scales = np.exp2(np.ceil(np.log2(np.maximum(np.abs(weight).max(axis=1), 2.0**-100) / 127)))
         quantized = np.rint(weight / scales[:, None]) * scales[:, None]
         assert (np.abs(quantized / scales[:, None]) <= 127).all()
@@ -192,15 +211,15 @@ def run(output):
             )
         emit(
             type="preparation",
-            model_load_hash_tokenizer_seconds=proxy_started - started,
-            proxy_norm_seconds=perf_counter() - proxy_started,
-            reference_weight_bytes=int(weight.nbytes // 2),
+            model_load_hash_tokenizer_seconds=None if cpu else proxy_started - started,
+            proxy_norm_seconds=elapsed(proxy_started),
+            reference_weight_bytes=head.weight.numel() * head.weight.element_size(),
             int8_storage_bytes=int(weight.size + 8 * len(scales)),
-            diagnostic_host_work_arrays_bytes=int(weight.nbytes * 4),
+            diagnostic_host_work_arrays_bytes_lower_bound=int(weight.nbytes * 3),
             rank1_storage_bytes=int(len(weight) * 4),
             residual_norms_storage_bytes=len(weight) * 8,
         )
-        model.to("cuda").eval()
+        model.to(device).eval()
         hidden = []
 
         class Captured(Exception):
@@ -216,21 +235,23 @@ def run(output):
         ):
             for n in (8, 32):
                 prefix_ids = tokenizer.encode(prefix, add_special_tokens=False)
-                ids = torch.tensor([prefix_ids + [config["mask_token_id"]] * n], device="cuda")
-                torch.cuda.synchronize()
-                capture_started = perf_counter()
+                ids = torch.tensor([prefix_ids + [config["mask_token_id"]] * n], device=device)
+                if not cpu:
+                    torch.cuda.synchronize()
+                capture_started = clock()
                 try:
                     with torch.inference_mode():
-                        model(input_ids=ids, timesteps=torch.zeros(1, device="cuda"))
+                        model(input_ids=ids, timesteps=torch.zeros(1, device=device))
                 except Captured:
                     pass
                 else:
                     raise AssertionError("reference head executed")
-                torch.cuda.synchronize()
-                capture_seconds = perf_counter() - capture_started
+                if not cpu:
+                    torch.cuda.synchronize()
+                capture_seconds = elapsed(capture_started)
                 h = hidden.pop()[0, len(prefix_ids) :]
                 assert h.shape == (n, weight.shape[1])
-                norms_started = perf_counter()
+                norms_started = clock()
                 _, eta = norms(h, 16)
                 for row, upper in zip(h, eta, strict=True):
                     assert sum(F(float(v)) ** 2 for v in row) <= upper**2
@@ -257,8 +278,10 @@ def run(output):
                         hidden_sha256=hashlib.sha256(h.tobytes()).hexdigest(),
                         input_ids=prefix_ids + [config["mask_token_id"]] * n,
                         backbone_capture_seconds=capture_seconds,
-                        norm_seconds=perf_counter() - norms_started,
-                        cuda_peak_allocated_bytes=torch.cuda.max_memory_allocated(),
+                        norm_seconds=elapsed(norms_started),
+                        cuda_peak_allocated_bytes=None
+                        if cpu
+                        else torch.cuda.max_memory_allocated(),
                         reference_head_rows=0,
                         projected_proxy_rows=0,
                         chart_bytes=0,
@@ -270,7 +293,7 @@ def run(output):
             type="complete",
             states=4,
             proxy_cases=8,
-            diagnostic_total_seconds=perf_counter() - started,
+            diagnostic_total_seconds=elapsed(started),
             host_peak_rss_kib=__import__("resource")
             .getrusage(__import__("resource").RUSAGE_SELF)
             .ru_maxrss,
@@ -282,5 +305,6 @@ def run(output):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--device", choices=("cpu", "cuda"), default="cuda")
     args = parser.parse_args()
-    raise SystemExit(run(args.output))
+    raise SystemExit(run(args.output, args.device))

@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "scope": "finite_oracle_not_neural_measurement",
+  "complete_laws": 1296,
+  "largest_finite_R": "18",
+  "grammar_strings": 4368,
+  "alias_strings": 4096,
+  "alias_valid": 192,
+  "weighted_cases": 48,
+  "valid_samples": 768,
+  "fallback_samples": 73,
+  "reference_rows": 6446,
+  "rng_bits": 178855,
+  "peak_chart_integer_bits": 28,
+  "samples_sha256": "45cb65c215b6a9c707ed7125a062a4513fb3b1cde0d59db9e0ffb91f32b471bc",
+  "kernel_grid_points_decimal_crosscheck": 387,
+  "oracle_lower_bound": [
+    {
+      "n": 2,
+      "r": 1,
+      "R": "1",
+      "TV": "0",
+      "query": "0"
+    },
+    {
+      "n": 2,
+      "r": 2,
+      "R": "16",
+      "TV": "15/17",
+      "query": "15/16"
+    },
+    {
+      "n": 2,
+      "r": 3,
+      "R": "81",
+      "TV": "40/41",
+      "query": "80/81"
+    },
+    {
+      "n": 4,
+      "r": 1,
+      "R": "1",
+      "TV": "0",
+      "query": "0"
+    },
+    {
+      "n": 4,
+      "r": 2,
+      "R": "256",
+      "TV": "255/257",
+      "query": "255/256"
+    },
+    {
+      "n": 4,
+      "r": 3,
+      "R": "6561",
+      "TV": "3280/3281",
+      "query": "6560/6561"
+    },
+    {
+      "n": 8,
+      "r": 1,
+      "R": "1",
+      "TV": "0",
+      "query": "0"
+    },
+    {
+      "n": 8,
+      "r": 2,
+      "R": "65536",
+      "TV": "65535/65537",
+      "query": "65535/65536"
+    },
+    {
+      "n": 8,
+      "r": 3,
+      "R": "43046721",
+      "TV": "21523360/21523361",
+      "query": "43046720/43046721"
+    }
+  ]
+}

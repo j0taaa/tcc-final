@@ -1,0 +1,2 @@
+{"type": "environment", "producer": "63d5c1ed70450b9bef84ee511247dc99fa5ee2ca", "gpu": "NVIDIA GeForce RTX 3080 Ti, 7443", "compute_processes": "2603454, /home/jota/projects/pratofolio/data-extraction/experiments/menu_ocr/.runtime/llama-b11609/llama-server", "torch": "2.8.0+cu128", "numpy": "2.4.6", "seed": 740203, "lock": "/tmp/tcc-final-candidate-tests-gpu.lock", "scope": "envelope_screen_only"}
+{"type": "resource", "status": "RESOURCE_REFUSAL_INCONCLUSIVE"}

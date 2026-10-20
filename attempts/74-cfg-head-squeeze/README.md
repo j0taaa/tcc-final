@@ -147,3 +147,17 @@ head/proxy projetados; não comparar esse tempo incompleto com decoder completo.
 Comandos e resultados finais ficam em `result.md` e JSONs pequenos. Não alterar
 os casos/gates desta V1 após executar. Modelos, tensores e caches não entram
 no Git. Biblioteca, vendor e status globais permanecem fora do escopo.
+
+### Emenda V1a anterior aos dados de modelo
+
+A execução CUDA V1 recusou ANTES de carregar o modelo: um `llama-server`
+de outro projeto ocupava a GPU. `screen-v1.jsonl` preserva a recusa de
+recursos, que não é um resultado negativo do método. Não matar esse processo
+nem medir sob concorrência. Autoriza-se a MESMA triagem, quatro estados e
+dois proxies/gates inalterados, com `--device cpu` e o mesmo port FP32.
+Nessa opção não se consulta a GPU, não se lê relógio e todos os campos de
+timing/GPU são null; não há lock necessário para trabalho CPU sem timings.
+O h capturado é o da execução CPU declarada: não alegar identidade com h
+CUDA. Sem novo prompt, seed, proxy, treinamento ou campanha de desempenho.
+Os dados CPU terão caminho novo `screen-cpu-v1a.jsonl`. A falta da medição
+GPU permanece uma limitação, mesmo que os envelopes CPU sejam recusados.
