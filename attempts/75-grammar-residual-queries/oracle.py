@@ -159,6 +159,9 @@ class Oracle:
         if not total:
             raise ValueError("unsupported pin")
         bit = 1 << i
+        # Correction of 2a1e7de7: a pinned zero is not the OTHER pin cylinder.
+        if mask & bit:
+            return F(bool(values & bit))
         one = self.table.get((mask | bit, values | bit), 0)
         p = F(one, total)
         self.max_bits = max(self.max_bits, p.numerator.bit_length(), p.denominator.bit_length())
