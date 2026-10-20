@@ -21,10 +21,12 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
-- [ ] Em [A86](attempts/86-prefix-closure-planning/README.md), verificar fidelidade
-  das consultas agrupadas em estados reais antes de avaliar o decoder. A sonda
-  de custo V1 passou, mas não estabelece igualdade em geração, novidade ou ganho
-  integral. Só ampliar após protocolo prospectivo e controles competentes.
+- [ ] Em [A86](attempts/86-prefix-closure-planning/README.md), avaliar benefício
+  em replay da trajetória inteira sob protocolo prospectivo e controles fortes.
+  O [gate de fidelidade V2](attempts/86-prefix-closure-planning/fidelity-result-v2.md)
+  passou nos 256 estados capturados B1/B8, sem cobertura de EOS revelado ou
+  lotes com inícios de bloco distintos. Só implementar a avaliação integral do
+  decoder se houver potencial específico; novidade e ganho continuam abertos.
 - [ ] Antes de selecionar outra campanha, justificar uma contribuição própria
   com teoria, utilidade geral e benefício demonstrável para o TCC de impacto
   solicitado. A leitura de LAVE/Saber/DecoCal e a avaliação independente não
