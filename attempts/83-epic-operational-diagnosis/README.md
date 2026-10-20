@@ -141,3 +141,112 @@ neural, sem alegar quebra da garantia do wrapper ou superioridade sobre ele.
 ```bash
 .venv-live/bin/python attempts/83-epic-operational-diagnosis/diagnose.py --empty-control --output /tmp/a83-v4.jsonl
 ```
+
+## Evidência V2/V3 e mudança do processo
+
+[V2: nove execuções completas do protocolo](diagnostic-v2.jsonl), produtor
+`de362100`; [V3: três rastreamentos](causal-v3.jsonl), produtor `0d654eeb`.
+São casos de diagnóstico desenvolvidos aqui, sem representatividade estatística.
+
+| Caso | Modo | NFEs | Softmax | Rejeições | Loop concluído | Decode (s) |
+| --- | --- | ---: | ---: | ---: | --- | ---: |
+| soma | EPIC | 4 | 126 | 100 | não | 1,477 |
+| soma | exato primeiro | 4 | 126 | 100 | não | 0,873 |
+| soma | sequencial | 4 | 128 | 100 | não | 0,875 |
+| lista | EPIC | 8 | 20 | 4 | sim | 0,760 |
+| lista | exato primeiro | 8 | 20 | 4 | sim | 0,756 |
+| lista | sequencial | 8 | 35 | 4 | sim | 0,814 |
+| enum | EPIC | 8 | 41 | 22 | sim | 0,843 |
+| enum | exato primeiro | 8 | 41 | 22 | sim | 0,839 |
+| enum | sequencial | 8 | 53 | 22 | sim | 0,890 |
+
+Não interpretar a diferença de tempo da soma como ganho do atalho: o primeiro
+EPIC teve tempo neural de 0,690 s vs 0,345 s nos outros dois modos. Ordem,
+aquecimento e outro processo GPU impedem atribuir essa diferença ao atalho.
+Nos três casos, `exact_first` preservou todos os IDs finais **e** hashes de
+todos os estados emitidos. O custo somado das verificações regulares e exatas
+ficou entre 0,7% e 2,3% do decode instrumentado; acelerar só o parser não ataca
+o custo dominante **nestes casos**, sem extrapolar para C++ ou outros modelos.
+Na soma, softmax consumiu 0,416–0,442 s; a conversão prévia para float64 nem
+está incluída nesse subtotal. Carga V2: 81,876 s. Preparação por schema abaixo
+de 0,01 s; pico GPU alocado do processo do experimento: 5,73–5,93 GiB,
+além do outro processo GPU registrado. RSS é cumulativo, não independente.
+
+Todas as nove strings renderizadas passaram no JSON/schema e na resposta
+esperada. Isso **não** torna os nove loops concluídos: remover tokens especiais
+escondeu o MASK na posição 12 das três somas. A fonte pública ainda tem
+autocomplete para essa situação; não foi executado nem cobrado neste diagnóstico
+do loop. Não declarar vantagem integral sobre o wrapper público.
+
+V3 identificou nomes como `result`, `total`, `sum` e `number` sendo rejeitados
+na posição 12 no quarto forward, embora no canvas final esse buraco fique entre
+whitespace, fora de strings. Testes CPU do mesmo checker aceitaram espaço,
+newline, tab e vazio nesse buraco. O trace mostra uso de uma cabeça calculada
+antes das últimas alterações, mas não estabelece sozinho que uma nova cabeça
+resolva o caso; essa é a pergunta da sonda V4.
+
+As causas substituem a premissa anterior de construir primeiro uma prova:
+o consumidor real aqui é o loop de geração, seus controles incluem atalhos
+clássicos e o custo relevante inclui trabalho neural inútil e propostas antigas.
+O atalho de ordenação não virou contribuição. Nem a correção de trabalho vazio
+deverá ser apresentada como método inédito de TCC.
+
+## Resultado do controle V4
+
+[Seis execuções e a sonda](empty-control-v4.jsonl), produtor `03068bf1`.
+Todos os três pares preservaram os IDs finais e os hashes de **todos** os
+estados emitidos. Nenhuma exceção foi registrada. Soma continua com um MASK
+e 100 rejeições em ambos; não foi reclassificada como concluída.
+
+| Caso | NFEs original → controle | Decode original → controle (s) | Estado |
+| --- | --- | --- | --- |
+| soma | 4 → 4 | 1,804 → 0,893 | inconcluso nos dois |
+| lista | 8 → 4 | 0,746 → 0,423 | concluído, mesmos IDs/estados |
+| enum | 8 → 4 | 0,833 → 0,509 | concluído, mesmos IDs/estados |
+
+A queda da soma não é ganho do controle: contagens e estados são iguais e o
+primeiro original teve tempo neural maior (0,758 s vs 0,346 s), além de maior
+tempo de softmax. O desenho não isola aquecimento e contenção. Nos dois
+casos completos, a redução medida de NFEs é 50%; a de decode instrumentado,
+43%/39%. São observações individuais de casos já vistos, com outro processo
+GPU, sem teste de generalização nem throughput de produção. A carga V4 custou
+72,035 s e não foi omitida do registro; os percentuais são de requisições com
+modelo residente, não do tempo incluindo carga. Não houve recuperação externa.
+
+Prova de preservação restrita: nos forwards vazios observados, o próximo bloco
+começa sem MASK e `get_num_transfer_tokens` cria um orçamento zero em cada
+passo. A tentativa de lote é desativada pelo tamanho zero e o laço sequencial
+executa zero iterações. Nenhum valor produzido pela rede afeta `x`,
+`generated_words` ou os estados emitidos. Suprimir avaliações sem efeitos
+colaterais observáveis preserva esses valores por indução nos quatro passos.
+Isto não autoriza aplicar o guarda a qualquer scheduler/modelo com estado.
+
+Na sonda da soma, uma predição sobre o canvas interrompido colocou newline
+(ID original 198) em **primeiro** lugar; o mesmo checker o aceitou. Tab também
+passou em décimo lugar. O forward custou 0,0856 s; top-k, detokenização e as
+dez consultas não tiveram custo total isoladamente medido. A sonda não aplicou
+o token nem retomou a trajetória: demonstra disponibilidade de uma proposta
+compatível nesse estado, sem provar recuperação geral ou vantagem integral.
+
+## Decisão e questão que os dados permitem
+
+Há um diagnóstico positivo de engenharia: chamadas sem trabalho podem ser
+removidas preservando a operação; no caso preso, atualizações do canvas mudam
+a primeira proposta disponível. Não há contribuição científica nova confirmada.
+A auditoria independente distinguiu esses fatos de um suposto defeito da rede
+ou quebra da garantia do wrapper.
+
+**Questão concreta para pesquisa:** quando vale atualizar a predição neural
+durante a rejeição, em vez de continuar consultando propostas calculadas antes
+dos commitments? Diferentemente das antigas construções abstratas, há aqui
+um consumidor e um estado neural que expõem o problema. Ainda faltam controles
+de reaproveitamento de softmax/normalizadores, atualização após um número fixo
+de rejeições, a recuperação completa do EPIC e a recuperação do LAVE. O LAVE
+já modifica o contexto em seu mecanismo de recuperação (seção 3.3); executar
+outro forward não pode ser anunciado como novidade por si só.
+
+Não abrir uma campanha de um novo decoder com base nestes três casos. Antes
+de promovê-la, essa pergunta precisa sobreviver aos controles simples e ao
+antecedente mais próximo, ganhar uma operação/prova próprias e ser avaliada
+em dados independentes com custo completo. A prova de ausência de trabalho
+não é uma prova de melhoria de qualidade nem de novidade.

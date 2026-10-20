@@ -21,9 +21,12 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
-- [ ] Selecionar com o usuário uma candidata da triagem concluída em
-  [A82](attempts/82-five-operator-screening/README.md) e congelar seu protocolo
-  antes de uma campanha neural; correção finita não é ganho de modelo.
+- [ ] Antes de propor outro decoder, confrontar a questão concreta de
+  atualização neural durante rejeições, identificada no
+  [diagnóstico A83](attempts/83-epic-operational-diagnosis/README.md), com
+  reaproveitamento de softmax, atualização fixa e recuperação completa
+  EPIC/LAVE. A82 não está selecionada para campanha; não confundir a correção
+  de trabalho vazio com novidade científica.
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
 - [ ] Antes de qualquer campanha neural, justificar variabilidade útil de EOS,
