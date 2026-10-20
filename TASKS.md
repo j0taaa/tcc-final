@@ -6,16 +6,11 @@ em [docs/status.md](docs/status.md).
 
 ## Pesquisa
 
-A contribuição própria útil continua aberta. A72 investiga um limite teórico
-de aproximação para uma GLC fixa; A71 permanece uma candidata de acoplamento.
-Nenhuma das duas é um resultado prático consolidado.
-
-- [ ] Resolver prioridade específica e suficiência da A72 após a auditoria:
-  prova escrita agora inclui erro tendendo a 1 e separação robusta para PCs
-  estruturados. A família, a separação exata e os controles são clássicos.
-  Uma contribuição operacional ainda precisa de classe/condição verificável
-  e vantagem provada contra condicionamento e circuitos completos; não há
-  campanha neural selecionada.
+A contribuição própria útil continua aberta. A71 permanece uma candidata
+de acoplamento. A72 não foi selecionada como contribuição central após
+o [gate V2 negativo](attempts/72-recursive-syntax-factor-width/README.md):
+seis capturas neurais reais, nenhuma vantagem integral. Suas provas
+teóricas ficam preservadas; não ampliar essa aplicação para salvar o gate.
 
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
