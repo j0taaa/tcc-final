@@ -13,6 +13,7 @@ A biblioteca, o artigo histórico e as candidatas de pesquisa têm escopos disti
 | A71 | Acoplar paradas de um lote finito preservando leis individuais e de pares. Provas escritas e oráculos finitos; novidade suficiente, implementação nativa e ganho completo ainda pendentes. |
 | A72 | Não selecionada como contribuição central após a V2. Provas escritas de obstrução robusta preservadas; hipótese adjacente por convoluções medida em 36 casos sintéticos e seis capturas reais LLaDA. Gate neural 0/6: quatro propostas corretas porém mais lentas e duas recusas. Não há vantagem de decoder. |
 | A79 | Prova escrita para erro da lei média sob arredondamento estocástico interno. Aplicação offline completa: 2.160 consultas válidas; candidata mais lenta em 27/27 casos e zero famílias aprovadas no gate de tempo. Memória total e prioridade suficiente permanecem inconclusivas. Não selecionada como tema central; [resultado e dados](../attempts/79-stochastic-circuit-sampling/result.md). |
+| A80 | Lema escrito de calibração por clipping, revisado sob hipóteses explícitas. Aplicação offline V1 completa: 144 execuções, 2.048 saídas válidas, 16 recusas previstas da enumeração. Gate de custo completo falhou nas duas famílias; razões medianas 1,128/1,213 frente ao melhor controle. Prova preservada, sem utilidade dLLM estabelecida; [resultado e dados](../attempts/80-private-clipping-calibration/result.md). |
 
 ## Onde conferir
 

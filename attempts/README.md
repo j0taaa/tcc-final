@@ -15,6 +15,7 @@ e suficiência científica abertas, sem vantagem neural estabelecida.
 prova escrita e oráculos finitos; prioridade e benefício completo pendentes.
 
 ## Investigações anteriores
+- [A80 — Calibração certificada por clipping: prova e aplicação offline sem vantagem integral](80-private-clipping-calibration/result.md)
 - [A79 — Aritmética estocástica no amostrador gramatical: prova e aplicação offline não positiva](79-stochastic-circuit-sampling/README.md)
 - [A70 — Reconstrução observável do Adam nativo com apagamento certificado de estado](70-native-adam-erasure/README.md)
 - [A69 — Separação candidata de capacidade adaptativa frente a lotes preselecionados](69-adaptive-factory-separation/README.md)
