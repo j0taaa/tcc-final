@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import importlib
+import inspect
 import json
 import os
 import resource
@@ -78,6 +79,7 @@ ORDERS = (
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--trace", action="store_true", help="Trace all three original EPIC cases")
     args = parser.parse_args()
     if args.output.exists():
         raise SystemExit("Refusing to overwrite an existing record")
@@ -180,9 +182,10 @@ def main():
             + "```json\n"
         )
         prompt = tokenizer(prompt_text, return_tensors="pt").input_ids.to(actual.device)
-        for mode in ORDERS[case_index]:
+        for mode in ("epic",) if args.trace else ORDERS[case_index]:
             times, counts = defaultdict(float), defaultdict(int)
             selection_events, states, exception_events = [], [], []
+            query_events, forward_inputs = [], []
             start_fast_enfa_instance((name, mode))
             reset_lex_cache()
             rc._build_flat_rtn_cover_dfa_from_text.cache_clear()
@@ -226,7 +229,9 @@ def main():
             class Model:
                 device = actual.device
 
-                def __call__(self, x):
+                def __call__(self, x, _inputs=forward_inputs, _prompt_len=prompt.shape[1]):
+                    if args.trace:
+                        _inputs.append(x[0, _prompt_len:].tolist())
                     return timed("model", actual, x)
 
             class Functional:
@@ -272,7 +277,29 @@ def main():
                     _counts["selection"] += 1
 
             lg.select_batch_with_regular_cover = selector
-            lg.check_valid = lambda *a, **kw: timed("sequential_exact", original_check, *a, **kw)
+
+            def check_valid(
+                *a, _events=query_events, _prompt_len=prompt.shape[1], _counts=counts, **kw
+            ):
+                result = timed("sequential_exact", original_check, *a, **kw)
+                if args.trace:
+                    local = inspect.currentframe().f_back.f_locals
+                    token = int(local["new_word_vocab_index"].item())
+                    _events.append(
+                        {
+                            "position": local["index_of_new_word"] - _prompt_len,
+                            "token_id": token,
+                            "word": tokenizer.decode(token),
+                            "rejected": result,
+                            "forward": _counts["model"],
+                            "trial_words": [
+                                w if isinstance(w, (str, type(None))) else "<EOS>" for w in a[0]
+                            ],
+                        }
+                    )
+                return result
+
+            lg.check_valid = check_valid
             rc.exact_allows_words = lambda **kw: timed("batch_exact", original_exact, **kw)
             rc.cover_allows_words = lambda **kw: timed("regular_cover", original_cover, **kw)
             lg.F = Functional()
@@ -348,6 +375,8 @@ def main():
                     "rejections": len(resamples),
                     "selection_events": selection_events,
                     "exception_events": exception_events,
+                    "query_events": query_events,
+                    "forward_inputs": forward_inputs,
                     "peak_allocated_bytes": torch.cuda.max_memory_allocated(),
                     "process_cumulative_max_rss_kib": resource.getrusage(
                         resource.RUSAGE_SELF

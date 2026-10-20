@@ -93,3 +93,20 @@ Reprodução local (ambiente live existente, sem download):
 Prova escrita, inspeção de fonte, execução neural e validação de JSON são
 evidências distintas. Nenhuma prova aqui estabelece novidade mundial ou melhora
 de qualidade neural.
+
+## Diagnóstico causal V3, depois dos dados V2
+
+V2 terminou as nove execuções. A soma atingiu 100 rejeições nos três modos,
+com um MASK anterior ao EOS. JSON após remover tokens especiais passou, mas
+o loop não terminou; os outros dois casos terminaram. Testes CPU no canvas
+final confirmaram que preencher o buraco com espaço ou newline é permitido
+pelo mesmo checker. O próximo diagnóstico não muda casos nem tenta melhorar
+o resultado: `--trace` executa os mesmos três casos, somente EPIC original,
+registrando cada consulta sequencial (posição, ID original, palavra, aceite,
+forward e canvas lexical) e as entradas dos forwards. Congelar essa fonte em
+novo commit antes da execução. São dados de investigação da causa em casos
+já vistos; não um teste independente ou evidência de generalização.
+
+```bash
+.venv-live/bin/python attempts/83-epic-operational-diagnosis/diagnose.py --trace --output /tmp/a83-v3.jsonl
+```
