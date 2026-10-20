@@ -10,6 +10,7 @@ import argparse
 import json
 import random
 from collections import Counter
+from fractions import Fraction
 from itertools import product
 from math import prod
 
@@ -221,6 +222,207 @@ def check_library() -> int:
     return 4
 
 
+def typed_words(half: int) -> list[tuple[str, ...]]:
+    """Build nested blocks directly, without the matching-index formula."""
+    closing = {"(": ")", "[": "]"}
+    return [
+        (
+            *left,
+            *(closing[c] for c in reversed(left)),
+            "#",
+            *right,
+            *(closing[c] for c in reversed(right)),
+        )
+        for marker in range(half + 1)
+        for left in product("([", repeat=marker)
+        for right in product("([", repeat=half - marker)
+    ]
+
+
+def check_multiway_tree_separators(rng: random.Random) -> int:
+    """Check the greedy construction by independently traversing components."""
+    checked = 0
+
+    def verify(parents: tuple[int, ...], weights: tuple[int, ...]) -> None:
+        nonlocal checked
+        total = sum(weights)
+        adjacency = [set() for _ in parents]
+        for node, parent in enumerate(parents[1:], 1):
+            adjacency[node].add(parent)
+            adjacency[parent].add(node)
+        for parts in (2, 3, 4, 8):
+            residual = list(weights)
+            selected = set()
+            for node in reversed(range(len(parents))):
+                if parts * residual[node] > total:
+                    selected.add(node)
+                elif parents[node] >= 0:
+                    residual[parents[node]] += residual[node]
+            assert len(selected) < parts
+            unseen = set(range(len(parents))) - selected
+            while unseen:
+                stack = [unseen.pop()]
+                component = set(stack)
+                while stack:
+                    for neighbor in adjacency[stack.pop()] & unseen:
+                        unseen.remove(neighbor)
+                        component.add(neighbor)
+                        stack.append(neighbor)
+                assert parts * sum(weights[node] for node in component) <= total
+            checked += 1
+
+    for size in range(1, 5):
+        for tail in product(*(range(node) for node in range(1, size))):
+            for weights in product(range(3), repeat=size):
+                verify((-1, *tail), weights)
+    for size in (8, 16, 32, 64):
+        for _ in range(100):
+            parents = (-1, *(rng.randrange(node) for node in range(1, size)))
+            verify(parents, tuple(rng.randrange(6) for _ in range(size)))
+    return checked
+
+
+def check_multiway_cuts() -> int:
+    checked = 0
+    for length in (3, 5, 7, 9):
+        half = (length - 1) // 2
+        for labels in partitions(length, with_separator=True):
+            odd = Counter(labels[i] for i in range(1, length, 2) if labels[i] != 0)
+            eligible = [
+                parts for parts in (2, 3, 4, 8) if parts * max(odd.values(), default=0) <= half
+            ]
+            if not eligible:
+                continue
+            removed = labels.count(0)
+            cuts = [
+                sum(
+                    labels[a] != 0 and labels[b] != 0 and labels[a] != labels[b]
+                    for a, b in mirrors(half, marker)
+                )
+                for marker in range(half + 1)
+            ]
+            good = sum(2 * cut >= half for cut in cuts)
+            for parts in eligible:
+                assert parts * sum(cuts) >= (half + 1) * (half * (parts - 1) - parts * removed)
+                assert parts * half * good >= (half + 1) * (
+                    parts * half - 2 * half - 2 * parts * removed
+                )
+                checked += 1
+    return checked
+
+
+def check_fixed_positions() -> int:
+    checked = 0
+    for half in range(3):
+        words = typed_words(half)
+        for pins in product((None, *"()[]#"), repeat=2 * half + 1):
+            fixed = sum(pin is not None for pin in pins)
+            agree = sum(
+                all(pin is None or pin == char for pin, char in zip(pins, word, strict=True))
+                for word in words
+            )
+            assert agree * 2 ** (fixed // 2) <= len(words)
+            checked += 1
+    return checked
+
+
+def check_approximation_mixtures(rng: random.Random) -> int:
+    """Enumerate the type projection and component products; square overlap."""
+    checked = 0
+    alphabet = "01#"
+    for half in (1, 2, 3):
+        length = 2 * half + 1
+        target = [
+            tuple("#" if c == "#" else str(int(c in "[]")) for c in word)
+            for word in typed_words(half)
+        ]
+        for case in range(60):
+            labels = tuple(rng.randrange(4) for _ in range(length))
+            separator = [i for i, label in enumerate(labels) if label == 0]
+            blocks = [
+                tuple(i for i, label in enumerate(labels) if label == block)
+                for block in sorted(set(labels) - {0})
+            ]
+            rank = 1 + case % 4
+            mixing = [rng.randrange(1, 6) for _ in range(rank)]
+            components = []
+            for component in range(rank):
+                anchor = target[rng.randrange(len(target))]
+                tables = []
+                for block in blocks:
+                    entries = list(product(alphabet, repeat=len(block)))
+                    values = [rng.randrange(5) for _ in entries]
+                    if case % 2:
+                        values = [
+                            int(entry == tuple(anchor[i] for i in block)) for entry in entries
+                        ]
+                    values[0] += int(not any(values))
+                    tables.append(
+                        dict(
+                            zip(
+                                entries,
+                                (Fraction(value, sum(values)) for value in values),
+                                strict=True,
+                            )
+                        )
+                    )
+                components.append((Fraction(mixing[component], sum(mixing)), anchor, tables))
+            overlap = Fraction(0)
+            for word in target:
+                candidate = Fraction(0)
+                for weight, anchor, tables in components:
+                    if any(word[i] != anchor[i] for i in separator):
+                        continue
+                    candidate += weight * prod(
+                        table[tuple(word[i] for i in block)]
+                        for block, table in zip(blocks, tables, strict=True)
+                    )
+                overlap += min(Fraction(1, len(target)), candidate)
+            distance = 1 - overlap
+            cuts = [
+                sum(
+                    labels[a] != 0 and labels[b] != 0 and labels[a] != labels[b]
+                    for a, b in mirrors(half, marker)
+                )
+                for marker in range(half + 1)
+            ]
+            for threshold in range(1, half + 1):
+                alpha = Fraction(sum(cut >= threshold for cut in cuts), half + 1)
+                difference = max(Fraction(0), alpha - distance)
+                assert difference**2 * 2**threshold <= alpha * rank
+                checked += 1
+    return checked
+
+
+def check_operational_counterexamples() -> int:
+    checked = 0
+    for half in range(1, 7):
+        words = typed_words(half)
+        count = len(words)
+        marginals = [Counter(word[i] for word in words) for i in range(2 * half + 1)]
+        overlap = sum(
+            min(
+                Fraction(1, count),
+                prod(Fraction(row[c], count) for row, c in zip(marginals, word, strict=True)),
+            )
+            for word in words
+        )
+        assert 0 < overlap < 1
+        point_overlap = sum(min(Fraction(1, count), int(word == words[0])) for word in words)
+        assert 1 - point_overlap == 1 - Fraction(1, count)
+        for marker_weight in (1, 2, 7, 100):
+            weights = [marker_weight if word[0] == "#" else 1 for word in words]
+            total = sum(weights)
+            context_overlap = sum(
+                min(Fraction(weight, total), Fraction(1, 2**half))
+                for word, weight in zip(words, weights, strict=True)
+                if word[0] == "#"
+            )
+            assert 1 - context_overlap == Fraction(half, marker_weight + half)
+            checked += 1
+    return checked
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--library", action="store_true", help="also check the installed LL(1) API")
@@ -241,6 +443,18 @@ def main() -> None:
     }
     if args.library:
         result["library_posteriors_checked"] = check_library()
+    audit_rng = random.Random(72002)
+    result.update(
+        {
+            "multiway_weighted_tree_separators_checked": check_multiway_tree_separators(audit_rng),
+            "multiway_component_partitions_checked": check_multiway_cuts(),
+            "fixed_position_events_checked": check_fixed_positions(),
+            "rational_mixture_approximation_bounds_checked": check_approximation_mixtures(
+                audit_rng
+            ),
+            "operational_counterexamples_checked": check_operational_counterexamples(),
+        }
+    )
     print(json.dumps(result, indent=2))
 
 

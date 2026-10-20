@@ -211,3 +211,179 @@ recursos gratuitos de uma implementação completa de dLLM.
 - A prova escrita e os oráculos finitos não estabelecem prioridade,
   aprovação acadêmica ou impacto. A auditoria de antecedentes está no
   README; a suficiência científica da extensão permanece aberta.
+
+## 7. Auditoria adicional e fortalecimento (2026-10-20 UTC)
+
+Origem: seções 1–6 no commit `1804e5d94f860f46c69d67b39596b56f2624d709`.
+Elas foram preservadas. Não se encontrou um contraexemplo ao teorema da
+seção 4. O limite e<1/5 resulta da escolha de um único separador, e não
+é uma fronteira de aproximação. Segue uma prova escrita mais forte,
+sem alegação de prioridade, revisão humana ou formalização integral.
+
+### 7.1 Pontos delicados da prova original
+
+- No Lema 1, “marcador” na prova significa sua POSIÇÃO 2j, não j.
+  Para a+b=2l+1 vale o segundo caso, dando o marcador 0.
+- O centroide pesa somente os l observados ímpares. Pesar ocultos ou
+  contar todas as variáveis daria outro enunciado de balanceamento.
+- Condicionar uma atribuição completa do separador não condiciona
+  implicitamente a validade gramatical. A independência usada é de Q.
+  O evento E_j fixa `#` em 2j e exclui `#` nas demais posições: é uma
+  interseção unária, inclusive quando tem probabilidade zero em Q_h.
+- A projeção de tipo pode ser total: `(` e `)` viram 0; `[` e `]`
+  viram 1; `#` recebe, por exemplo, 0. Em E_j nenhum extremo projetado
+  é `#`. A orientação abertura/fechamento é descartada, não trocada.
+- O Lema 3 admite ciclos e múltiplas arestas. Contrair apenas uma
+  aresta entre dois tensores e depois tomar um traço não justificaria
+  a estimativa. É essencial contrair TODAS as arestas comuns.
+  É também um caso da desigualdade clássica de Finner, com expoente
+  1/2 nos blocos: cada bit pertence a exatamente dois blocos.
+- Na aproximação, usa-se a massa comum `Σ min(P,Q)=1-TV`.
+  A afinidade pode superar a massa de P_G; não se supõe o contrário.
+  Componentes de mistura com peso zero podem ser eliminadas.
+
+### 7.2 Vários separadores e um limite explícito de erro
+
+Seja k o número de observados cujo domínio admitido em Q é unitário.
+O contrato é o da seção 1, incluindo contração de domínios.
+Para qualquer inteiro K>=2, escreva B=(K-1)W. Então
+
+    TV(P,Q) >= 1 - 2^(-max(0,ceil((k-1)/2))),                 (A)
+    TV(P,Q) >= 1 - 2/K - 2(B+k)/l - 2^(B/2-l/4).             (B)
+
+As cotas podem ser negativas em tamanhos pequenos; continuam válidas.
+
+**Prova de (A).** Q fixa k posições. Em qualquer contexto j compatível,
+no máximo uma é marcador. As demais fixam os tipos de pelo menos
+ceil((k-1)/2) pares distintos, porque cada par tem dois extremos.
+Sob P_j os tipos são bits uniformes independentes. A probabilidade
+de concordar com todas as posições fixadas é, portanto, no máximo
+2^(-max(0,ceil((k-1)/2))). A média sobre j obedece à mesma cota.
+Q dá massa 1 a esse evento; TV é pelo menos a diferença de massas. ∎
+
+**Separação múltipla.** Numa árvore com pesos não negativos de soma l,
+podemos remover no máximo K-1 nós deixando cada componente com peso
+no máximo l/K. Para ver isso, enraíze a árvore e processe de baixo
+para cima. Some o peso do nó aos resíduos dos filhos. Se o resíduo
+excede l/K, selecione o nó e devolva resíduo zero; senão devolva a soma.
+Cada seleção consome massa estritamente maior que l/K, disjunta da
+consumida nas demais seleções. Logo há menos de K seleções. Cada
+componente restante é um resíduo de filho de nó removido ou da raiz,
+e tem peso no máximo l/K. Pesos concentrados numa bolsa são admitidos.
+
+Aplique à árvore de bolsas, atribuindo como antes os observados de O.
+Seja S a união das bolsas selecionadas e de TODOS os observados
+unitários. Cada componente do grafo menos S tem no máximo l/K
+observados de O. As bolsas selecionadas têm capacidade conjunta no
+máximo B; adicioná-las por união pode apenas diminuir essa capacidade.
+Os k observados unitários acrescentam zero bits. Cada observado não
+unitário custa pelo menos um bit. Assim,
+
+    |S observado| = s <= B+k,        |dom(S)| <= 2^B.
+
+Como no Lema 2, mas agora com componentes de peso no máximo l/K,
+
+    Σ_j t_j >= (l+1-s_E)(l(1-1/K)-s_O),
+    média_j t_j >= l(1-1/K)-s.
+
+A primeira desigualdade usa a contagem de parceiros quando o segundo
+fator é não negativo. Se ele é negativo, a segunda desigualdade já é
+trivial, pois seu lado direito é negativo. Chame bom o contexto com
+t_j>=l/2. Como t_j<=l, a fração α de bons obedece a
+
+    α >= 1 - 2/K - 2s/l.
+
+Condicionar S decompõe Q em r<=2^B produtos de componentes. Repetir
+a seção 4 com limiar l/2, em vez de l/6, dá
+
+    α - TV(P,Q) <= F(P_G,Q) <= sqrt(α r) 2^(-l/4)
+                                  <= 2^(B/2-l/4).
+
+Se não há bons, a mesma cota final de TV é trivial. Substituir a cota
+de α e s<=B+k prova (B). ∎
+
+**Teorema de erro tendendo a um.** Para qualquer sequência das
+representações admitidas, se W=o(N), então TV(P,Q) tende a 1.
+Equivalentemente, para cada erro constante e<1, capacidade Ω_e(N)
+é necessária. A constante depende do erro; não se alega uniformidade
+quando e também tende a 1.
+
+**Prova.** Se k>sqrt(l), (A) tende a 1. Nos demais casos, escolha
+K=max(2,floor(sqrt(l/max(W,1)))). Como W=o(l), K tende ao infinito,
+B=o(l) e k/l<=1/sqrt(l). Todos os termos subtraídos em (B) tendem
+a zero; em particular B/2-l/4=-l/4+o(l). Isso cobre todos os índices
+da sequência, mesmo alternando os dois casos. ∎
+
+Uma versão com constantes: ponha δ=1-e>0, k_*=1+2log2(1/δ) e
+K=ceil(8/δ). Se TV<=e, (A) implica k<=k_*. Para
+
+    l >= max(8 k_*/δ, 8 log2(4/δ)),
+
+(B) implica W>=δ l/[8(K-1)]. De fato, se B>=l/4 isso já basta;
+caso contrário, 2^(B/2-l/4)<=2^(-l/8)<=δ/4. Os termos 2/K e
+2k/l também são <=δ/4, forçando 2B/l>=δ/4. As constantes não
+foram otimizadas; a seção 4 mantém a cota melhor para erro 0,1.
+
+### 7.3 Consequência explícita para circuitos probabilísticos
+
+Considere PCs não negativos, suaves, com folhas univariadas sobre os
+cinco tokens, tamanho m contando nós e arestas, e produtos binários.
+“Estruturado” significa respeitar UM vtree das posições: todo produto
+separa os dois filhos do nó correspondente desse vtree. Somas podem
+ser não determinísticas. O vtree pode ser escolhido depois de conhecer P.
+Não são admitidas folhas multivariadas arbitrárias de custo unitário.
+
+**Redução clássica, explicitada no caso ponderado.** Um PC estruturado
+dessa forma admite uma representação de fatores com
+
+    W <= max(3log2(m), log2(5m)) <= 3log2(m)+log2(5).
+
+Para cada nó v do vtree, introduza H_v cujos estados são os gates do
+circuito com aquele escopo (no máximo m). No interior, expandir apenas
+cadeias de somas do mesmo escopo escreve cada gate g como
+
+    f_g = Σ_{a,b} θ_{g,a,b} f_a f_b,       θ_{g,a,b}>=0,
+
+com a e b gates dos dois escopos filhos. Use θ como fator de
+(H_v,H_esq,H_dir). Nas folhas, use f_g(x_i) como fator (H_v,X_i).
+Fixe H_raiz ao gate de saída. Por indução no vtree, somar os ocultos
+reproduz exatamente o circuito, incluindo multiplicidades de caminhos
+de soma e zeros. Não se usa uma tradução existencial que esqueça pesos.
+As bolsas de três ocultos e as bolsas (H_v,X_i), ligadas pelo vtree,
+formam uma decomposição válida com a capacidade declarada.
+Normalizar preserva Q. Essa redução não é uma contribuição alegada.
+
+**Corolário.** PCs estruturados de tamanho m=2^o(N) têm TV(P,Q)->1.
+Para qualquer e<1 constante, aproximar P exige m=2^Ω_e(N).
+Isso decorre da seção 7.2 e da redução acima.
+
+Em contrapartida, P tem um PC suave, decomponível e DETERMINÍSTICO
+de tamanho O(N²): some os l+1 contextos de marcador, de pesos 1/(l+1).
+Cada ramo é o indicador de seu marcador vezes o produto, sobre M_j,
+das duas atribuições equiprováveis do tipo de cada par. Esses produtos
+têm escopos disjuntos; as duas atribuições de um par e os contextos
+do marcador têm suportes disjuntos. A mesma construção calcula Z_w
+com pesos unários, marginais e amostras por técnicas clássicas.
+
+É uma separação robusta explícita entre decomposição geral e uma
+estrutura única, para um posterior de GLC LL(1) fixa. Não é um limite
+para TODOS os PCs: o circuito quadrático é precisamente uma alternativa.
+A suficiência científica e a prioridade dessa especialização ainda
+exigem auditoria; a redução, a separação exata e a operação de inferência
+em circuitos já têm antecedentes diretos citados no README.
+
+### 7.4 Contraexemplos a interpretações operacionais
+
+1. **Marginais.** Q_ind=∏_i P(X_i) tem TODAS as marginais univariadas
+   corretas e largura zero (capacidade log2(5)). Ainda assim, pela
+   seção 7.2, TV(P,Q_ind)->1. Um consumidor que só exige marginais
+   não está sujeito ao limite para a lei conjunta.
+2. **Validade.** Uma massa pontual numa palavra válida tem validade
+   100%, W=0 com domínios contraídos, e TV=1-1/((l+1)2^l).
+   O teorema não impede um gerador pequeno de produzir sintaxe válida.
+3. **Pesos não uniformes, todos positivos.** Dê peso M a `#` numa
+   posição par 2j0 e peso 1 a todos os demais tokens/posições. A massa
+   posterior desse marcador é M/(M+l). A lei Q=P_j0, representável
+   por um matching, fica a TV=l/(M+l) do posterior. Tomar
+   M>=l(1-e)/e dá erro <=e com largura 1 e O(log N+log(1/e)) bits
+   por peso. A obstrução uniforme não cobre todos os logits positivos.

@@ -11,7 +11,7 @@ A biblioteca, o artigo histórico e as candidatas de pesquisa têm escopos disti
 | A65, A68 e A70 | As aplicações delimitadas foram encerradas com gates negativos. Não repetir ou ampliar casos para resgatá-las. |
 | A69 | Separações matemáticas construídas; prioridade específica e consumidor natural que necessite exatidão continuam pendentes. |
 | A71 | Acoplar paradas de um lote finito preservando leis individuais e de pares. Provas escritas e oráculos finitos; novidade suficiente, implementação nativa e ganho completo ainda pendentes. |
-| A72 | Candidata teórica mais recente: limite robusto de capacidade de modelos de fatores para uma GLC LL(1) fixa. Prova escrita e oráculos finitos; prioridade específica e suficiência científica abertas. Não estabelece latência ou qualidade neural. |
+| A72 | Auditoria escrita sustenta o limite original e acrescenta: capacidade sublinear implica TV tendendo a 1; corolário de separação robusta para PCs estruturados. Antecedentes exatos diretos e controles eficientes reconhecidos. Prioridade específica e suficiência científica abertas; não há vantagem de decoder estabelecida. |
 
 ## Onde conferir
 

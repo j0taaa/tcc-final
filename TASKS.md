@@ -10,9 +10,12 @@ A contribuição própria útil continua aberta. A72 investiga um limite teóric
 de aproximação para uma GLC fixa; A71 permanece uma candidata de acoplamento.
 Nenhuma das duas é um resultado prático consolidado.
 
-- [ ] Auditar a prioridade específica e a suficiência do limite robusto A72
-  frente a representações estruturadas e aproximação de circuitos probabilísticos.
-  A separação exata e os controles por condicionamento são clássicos.
+- [ ] Resolver prioridade específica e suficiência da A72 após a auditoria:
+  prova escrita agora inclui erro tendendo a 1 e separação robusta para PCs
+  estruturados. A família, a separação exata e os controles são clássicos.
+  Uma contribuição operacional ainda precisa de classe/condição verificável
+  e vantagem provada contra condicionamento e circuitos completos; não há
+  campanha neural selecionada.
 
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
