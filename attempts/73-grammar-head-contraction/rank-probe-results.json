@@ -1,0 +1,534 @@
+[
+  {
+    "case": "json8",
+    "contracted_queries": 84,
+    "gpu_used": false,
+    "parser_alternatives": 4267,
+    "parser_cells": 1479,
+    "per_id": {
+      "1": {
+        "q": 8,
+        "text": "\"",
+        "varying_positions": 8
+      },
+      "11": {
+        "q": 6,
+        "text": ",",
+        "varying_positions": 6
+      },
+      "15": {
+        "q": 8,
+        "text": "0",
+        "varying_positions": 8
+      },
+      "16": {
+        "q": 8,
+        "text": "1",
+        "varying_positions": 8
+      },
+      "25": {
+        "q": 6,
+        "text": ":",
+        "varying_positions": 6
+      },
+      "58": {
+        "q": 7,
+        "text": "[",
+        "varying_positions": 7
+      },
+      "60": {
+        "q": 7,
+        "text": "]",
+        "varying_positions": 7
+      },
+      "64": {
+        "q": 6,
+        "text": "a",
+        "varying_positions": 6
+      },
+      "65": {
+        "q": 6,
+        "text": "b",
+        "varying_positions": 6
+      },
+      "90": {
+        "q": 7,
+        "text": "{",
+        "varying_positions": 7
+      },
+      "92": {
+        "q": 7,
+        "text": "}",
+        "varying_positions": 7
+      },
+      "220": {
+        "q": 8,
+        "text": " ",
+        "varying_positions": 8
+      }
+    },
+    "sparse_queries": 84,
+    "stats": {
+      "edges": 2189,
+      "group_nnz": 28,
+      "groups": 4,
+      "ids": 12,
+      "max_coefficient_bits": 1,
+      "nodes": 1354,
+      "stored_rational_bits": 476,
+      "sum_q": 84
+    },
+    "status": "complete",
+    "timings": "not measured"
+  },
+  {
+    "case": "json16",
+    "contracted_queries": 180,
+    "gpu_used": false,
+    "parser_alternatives": 24483,
+    "parser_cells": 5631,
+    "per_id": {
+      "1": {
+        "q": 16,
+        "text": "\"",
+        "varying_positions": 16
+      },
+      "11": {
+        "q": 14,
+        "text": ",",
+        "varying_positions": 14
+      },
+      "15": {
+        "q": 16,
+        "text": "0",
+        "varying_positions": 16
+      },
+      "16": {
+        "q": 16,
+        "text": "1",
+        "varying_positions": 16
+      },
+      "25": {
+        "q": 14,
+        "text": ":",
+        "varying_positions": 14
+      },
+      "58": {
+        "q": 15,
+        "text": "[",
+        "varying_positions": 15
+      },
+      "60": {
+        "q": 15,
+        "text": "]",
+        "varying_positions": 15
+      },
+      "64": {
+        "q": 14,
+        "text": "a",
+        "varying_positions": 14
+      },
+      "65": {
+        "q": 14,
+        "text": "b",
+        "varying_positions": 14
+      },
+      "90": {
+        "q": 15,
+        "text": "{",
+        "varying_positions": 15
+      },
+      "92": {
+        "q": 15,
+        "text": "}",
+        "varying_positions": 15
+      },
+      "220": {
+        "q": 16,
+        "text": " ",
+        "varying_positions": 16
+      }
+    },
+    "sparse_queries": 180,
+    "stats": {
+      "edges": 23059,
+      "group_nnz": 60,
+      "groups": 4,
+      "ids": 12,
+      "max_coefficient_bits": 1,
+      "nodes": 10548,
+      "stored_rational_bits": 1980,
+      "sum_q": 180
+    },
+    "status": "complete",
+    "timings": "not measured"
+  },
+  {
+    "case": "json32",
+    "contracted_queries": 372,
+    "gpu_used": false,
+    "parser_alternatives": 163923,
+    "parser_cells": 21999,
+    "per_id": {
+      "1": {
+        "q": 32,
+        "text": "\"",
+        "varying_positions": 32
+      },
+      "11": {
+        "q": 30,
+        "text": ",",
+        "varying_positions": 30
+      },
+      "15": {
+        "q": 32,
+        "text": "0",
+        "varying_positions": 32
+      },
+      "16": {
+        "q": 32,
+        "text": "1",
+        "varying_positions": 32
+      },
+      "25": {
+        "q": 30,
+        "text": ":",
+        "varying_positions": 30
+      },
+      "58": {
+        "q": 31,
+        "text": "[",
+        "varying_positions": 31
+      },
+      "60": {
+        "q": 31,
+        "text": "]",
+        "varying_positions": 31
+      },
+      "64": {
+        "q": 30,
+        "text": "a",
+        "varying_positions": 30
+      },
+      "65": {
+        "q": 30,
+        "text": "b",
+        "varying_positions": 30
+      },
+      "90": {
+        "q": 31,
+        "text": "{",
+        "varying_positions": 31
+      },
+      "92": {
+        "q": 31,
+        "text": "}",
+        "varying_positions": 31
+      },
+      "220": {
+        "q": 32,
+        "text": " ",
+        "varying_positions": 32
+      }
+    },
+    "sparse_queries": 372,
+    "stats": {
+      "edges": 247771,
+      "group_nnz": 124,
+      "groups": 4,
+      "ids": 12,
+      "max_coefficient_bits": 1,
+      "nodes": 95860,
+      "stored_rational_bits": 8060,
+      "sum_q": 372
+    },
+    "status": "complete",
+    "timings": "not measured"
+  },
+  {
+    "case": "dyck4",
+    "contracted_queries": 12,
+    "gpu_used": false,
+    "independently_checked_words": 8,
+    "parser_alternatives": 45,
+    "parser_cells": 36,
+    "per_id": {
+      "7": {
+        "q": 3,
+        "text": "(",
+        "varying_positions": 3
+      },
+      "8": {
+        "q": 3,
+        "text": ")",
+        "varying_positions": 3
+      },
+      "58": {
+        "q": 3,
+        "text": "[",
+        "varying_positions": 3
+      },
+      "60": {
+        "q": 3,
+        "text": "]",
+        "varying_positions": 3
+      }
+    },
+    "sparse_queries": 12,
+    "stats": {
+      "edges": 47,
+      "group_nnz": 6,
+      "groups": 2,
+      "ids": 4,
+      "max_coefficient_bits": 1,
+      "nodes": 45,
+      "stored_rational_bits": 54,
+      "sum_q": 12
+    },
+    "status": "complete",
+    "timings": "not measured"
+  },
+  {
+    "case": "dyck8",
+    "contracted_queries": 28,
+    "gpu_used": false,
+    "independently_checked_words": 224,
+    "parser_alternatives": 150,
+    "parser_cells": 104,
+    "per_id": {
+      "7": {
+        "q": 7,
+        "text": "(",
+        "varying_positions": 7
+      },
+      "8": {
+        "q": 7,
+        "text": ")",
+        "varying_positions": 7
+      },
+      "58": {
+        "q": 7,
+        "text": "[",
+        "varying_positions": 7
+      },
+      "60": {
+        "q": 7,
+        "text": "]",
+        "varying_positions": 7
+      }
+    },
+    "sparse_queries": 28,
+    "stats": {
+      "edges": 257,
+      "group_nnz": 14,
+      "groups": 2,
+      "ids": 4,
+      "max_coefficient_bits": 1,
+      "nodes": 189,
+      "stored_rational_bits": 238,
+      "sum_q": 28
+    },
+    "status": "complete",
+    "timings": "not measured"
+  },
+  {
+    "case": "dyck16",
+    "contracted_queries": 60,
+    "gpu_used": false,
+    "parser_alternatives": 604,
+    "parser_cells": 336,
+    "per_id": {
+      "7": {
+        "q": 15,
+        "text": "(",
+        "varying_positions": 15
+      },
+      "8": {
+        "q": 15,
+        "text": ")",
+        "varying_positions": 15
+      },
+      "58": {
+        "q": 15,
+        "text": "[",
+        "varying_positions": 15
+      },
+      "60": {
+        "q": 15,
+        "text": "]",
+        "varying_positions": 15
+      }
+    },
+    "sparse_queries": 60,
+    "stats": {
+      "edges": 1373,
+      "group_nnz": 30,
+      "groups": 2,
+      "ids": 4,
+      "max_coefficient_bits": 1,
+      "nodes": 805,
+      "stored_rational_bits": 990,
+      "sum_q": 60
+    },
+    "status": "complete",
+    "timings": "not measured"
+  },
+  {
+    "case": "dyck32",
+    "contracted_queries": 124,
+    "gpu_used": false,
+    "parser_alternatives": 2936,
+    "parser_cells": 1184,
+    "per_id": {
+      "7": {
+        "q": 31,
+        "text": "(",
+        "varying_positions": 31
+      },
+      "8": {
+        "q": 31,
+        "text": ")",
+        "varying_positions": 31
+      },
+      "58": {
+        "q": 31,
+        "text": "[",
+        "varying_positions": 31
+      },
+      "60": {
+        "q": 31,
+        "text": "]",
+        "varying_positions": 31
+      }
+    },
+    "sparse_queries": 124,
+    "stats": {
+      "edges": 7733,
+      "group_nnz": 62,
+      "groups": 2,
+      "ids": 4,
+      "max_coefficient_bits": 1,
+      "nodes": 3797,
+      "stored_rational_bits": 4030,
+      "sum_q": 124
+    },
+    "status": "complete",
+    "timings": "not measured"
+  },
+  {
+    "case": "json_array5",
+    "contracted_queries": 4,
+    "gpu_used": false,
+    "independently_checked_words": 4,
+    "parser_alternatives": 138,
+    "parser_cells": 92,
+    "per_id": {
+      "11": {
+        "q": 0,
+        "text": ",",
+        "varying_positions": 0
+      },
+      "15": {
+        "q": 2,
+        "text": "0",
+        "varying_positions": 2
+      },
+      "16": {
+        "q": 2,
+        "text": "1",
+        "varying_positions": 2
+      },
+      "58": {
+        "q": 0,
+        "text": "[",
+        "varying_positions": 0
+      },
+      "60": {
+        "q": 0,
+        "text": "]",
+        "varying_positions": 0
+      }
+    },
+    "sparse_queries": 4,
+    "stats": {
+      "edges": 19,
+      "group_nnz": 2,
+      "groups": 2,
+      "ids": 5,
+      "max_coefficient_bits": 1,
+      "nodes": 20,
+      "stored_rational_bits": 22,
+      "sum_q": 4
+    },
+    "status": "complete",
+    "timings": "not measured"
+  },
+  {
+    "case": "json_object13",
+    "contracted_queries": 4,
+    "gpu_used": false,
+    "independently_checked_words": 4,
+    "parser_alternatives": 227,
+    "parser_cells": 181,
+    "per_id": {
+      "1": {
+        "q": 0,
+        "text": "\"",
+        "varying_positions": 0
+      },
+      "11": {
+        "q": 0,
+        "text": ",",
+        "varying_positions": 0
+      },
+      "15": {
+        "q": 2,
+        "text": "0",
+        "varying_positions": 2
+      },
+      "16": {
+        "q": 2,
+        "text": "1",
+        "varying_positions": 2
+      },
+      "25": {
+        "q": 0,
+        "text": ":",
+        "varying_positions": 0
+      },
+      "64": {
+        "q": 0,
+        "text": "a",
+        "varying_positions": 0
+      },
+      "65": {
+        "q": 0,
+        "text": "b",
+        "varying_positions": 0
+      },
+      "90": {
+        "q": 0,
+        "text": "{",
+        "varying_positions": 0
+      },
+      "92": {
+        "q": 0,
+        "text": "}",
+        "varying_positions": 0
+      }
+    },
+    "sparse_queries": 4,
+    "stats": {
+      "edges": 51,
+      "group_nnz": 2,
+      "groups": 2,
+      "ids": 9,
+      "max_coefficient_bits": 1,
+      "nodes": 52,
+      "stored_rational_bits": 54,
+      "sum_q": 4
+    },
+    "status": "complete",
+    "timings": "not measured"
+  }
+]

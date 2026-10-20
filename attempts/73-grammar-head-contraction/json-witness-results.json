@@ -1,0 +1,74 @@
+{
+  "counts": [
+    {
+      "first_position_ids": 11,
+      "ids": 32804,
+      "last_position_ids": 11,
+      "slots": 6,
+      "sparse_variable_pairs": 131238,
+      "sum_q": 131238,
+      "valid_witnesses": 131238
+    },
+    {
+      "first_position_ids": 11,
+      "ids": 32804,
+      "last_position_ids": 11,
+      "slots": 8,
+      "sparse_variable_pairs": 196846,
+      "sum_q": 196846,
+      "valid_witnesses": 196846
+    },
+    {
+      "first_position_ids": 11,
+      "ids": 32804,
+      "last_position_ids": 11,
+      "slots": 16,
+      "sparse_variable_pairs": 459278,
+      "sum_q": 459278,
+      "valid_witnesses": 459278
+    },
+    {
+      "first_position_ids": 11,
+      "ids": 32804,
+      "last_position_ids": 11,
+      "slots": 32,
+      "sparse_variable_pairs": 984142,
+      "sum_q": 984142,
+      "valid_witnesses": 984142
+    }
+  ],
+  "endpoint_attacks": {
+    "_": [
+      false,
+      false
+    ],
+    "a": [
+      false,
+      false
+    ],
+    "b": [
+      false,
+      false
+    ],
+    "e": [
+      false,
+      true
+    ],
+    "l": [
+      false,
+      true
+    ],
+    "t": [
+      true,
+      false
+    ],
+    "true": [
+      true,
+      true
+    ]
+  },
+  "gpu_used": false,
+  "timings": "not measured",
+  "tokenizer_sha256": "6d55810de1daf81d1d1259355b4b85810385022ab745be68029295935a4eacf0",
+  "witnesses_sha256": "b9c6cec828e87874006331d9687f34bfa7a30bc38da9cd1efba670ab7eb6b1a9"
+}
