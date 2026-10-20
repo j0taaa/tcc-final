@@ -27,6 +27,10 @@ utilidade demonstrável continua aberta.
   justificaram desenvolver atualização durante rejeições como tema central
   de [A83](attempts/83-epic-operational-diagnosis/README.md). Seus controles de
   engenharia ficam preservados; A82 também não está selecionada para campanha.
+  O piloto prospectivo [A84](attempts/84-full-marginal-certificate/result-v1.md)
+  também falhou: reduziu tempo, mas perdeu acurácia nas duas famílias. Não
+  alterar margem/subset para resgatar essa aplicação nem promover sua prova
+  local a garantia de qualidade do modelo.
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
 - [ ] Antes de qualquer campanha neural, justificar variabilidade útil de EOS,

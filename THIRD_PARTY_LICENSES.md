@@ -96,6 +96,17 @@ The external checker is downloaded separately into cache, pinned by SHA;
 our adapter keeps original function bodies and uses Python-only registry.
 No model weights are distributed.
 
+A84's `attempts/84-full-marginal-certificate/pilot-v1.jsonl` contains eight
+GSM8K questions/answers from the OpenAI revision and MIT license cited below,
+and eight BIG-Bench-Hard word_sorting input/target excerpts from
+`suzgunmirac/BIG-Bench-Hard`, revision
+`9ee07bd481feebf959a6b59d61ea57bdcf30964d` (Copyright (c) 2022 suzgunmirac,
+MIT). The latter license is retained unchanged at
+`attempts/84-full-marginal-certificate/BBH-LICENSE.txt`.
+The result file records source URLs, full-source hashes and original indices.
+These excerpts remain third-party data, outside the parent original-material
+grant; experiment outputs and measurements are distinguished from dataset golds.
+
 GSM8K question excerpts in
 `attempts/32-native-oracle-antithetics/work/gsm-inputs-v4.json`:
 MIT, original OpenAI grade-school-math commit
