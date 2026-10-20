@@ -5,7 +5,11 @@ As fontes e evidências continuam em cada diretório `work/`. O
 comandos antigos pertencem às suas versões; consulte o
 [histórico](../docs/history/README.md) para recuperar arquivos retirados.
 
-## Candidata atual
+## Candidatas em investigação
+
+[A72 — limite robusto para representações de sintaxe recursiva](72-recursive-syntax-factor-width/README.md):
+prova escrita para uma GLC LL(1) fixa e oráculos finitos; prioridade específica
+e suficiência científica abertas, sem vantagem neural estabelecida.
 
 [A71 — paradas de lote com independência de pares](71-pairwise-stop-clocks/README.md):
 prova escrita e oráculos finitos; prioridade e benefício completo pendentes.

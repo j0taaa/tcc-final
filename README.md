@@ -48,8 +48,10 @@ testes, manifests e verificadores. Snapshots ZIP duplicados foram retirados da
 A contribuição científica própria e útil ainda está em aberto. O artigo A24
 registra um ganho histórico de consulta em 3/15 estados sob seus comparadores
 originais; uma comparação operacional posterior falhou em todos os 15 estados
-contra controles mais fortes. A investigação mais recente, A71, tem provas
-escritas e oráculos finitos, sem vantagem de latência neural estabelecida.
+contra controles mais fortes. A investigação mais recente, A72, tem uma prova
+escrita de limite de representação sob aproximação para uma GLC fixa. Sua
+prioridade e relevância científica continuam em avaliação; não há ganho neural
+estabelecido.
 
 Veja o [estado atual](docs/status.md) e as [pendências](TASKS.md). Testes de
 correção e integridade de arquivos não comprovam novidade nem benefício prático.

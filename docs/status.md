@@ -10,7 +10,8 @@ A biblioteca, o artigo histórico e as candidatas de pesquisa têm escopos disti
 | A49–A50 | As auditorias identificaram composições/especializações clássicas; a aplicação de precisão foi negativa e não há benefício neural integral confirmado. |
 | A65, A68 e A70 | As aplicações delimitadas foram encerradas com gates negativos. Não repetir ou ampliar casos para resgatá-las. |
 | A69 | Separações matemáticas construídas; prioridade específica e consumidor natural que necessite exatidão continuam pendentes. |
-| A71 | Candidata atual: acoplar paradas de um lote finito preservando leis individuais e de pares. Provas escritas e oráculos finitos; novidade suficiente, implementação nativa e ganho completo ainda pendentes. |
+| A71 | Acoplar paradas de um lote finito preservando leis individuais e de pares. Provas escritas e oráculos finitos; novidade suficiente, implementação nativa e ganho completo ainda pendentes. |
+| A72 | Candidata teórica mais recente: limite robusto de capacidade de modelos de fatores para uma GLC LL(1) fixa. Prova escrita e oráculos finitos; prioridade específica e suficiência científica abertas. Não estabelece latência ou qualidade neural. |
 
 ## Onde conferir
 
@@ -22,6 +23,8 @@ A biblioteca, o artigo histórico e as candidatas de pesquisa têm escopos disti
 - A71: [contrato e limites](../attempts/71-pairwise-stop-clocks/README.md),
   [resultado V1](../attempts/71-pairwise-stop-clocks/work/result-v1.md) e
   [protocolo local V2](../attempts/71-pairwise-stop-clocks/work/protocol-v2.md).
+- A72: [operação, antecedentes e limites](../attempts/72-recursive-syntax-factor-width/README.md)
+  e [prova escrita](../attempts/72-recursive-syntax-factor-width/proof.md).
 
 Resultados locais ainda não versionados não são promovidos a evidência publicada
 por esta página. O [índice](../attempts/README.md) dá acesso às demais frentes.

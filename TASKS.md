@@ -6,8 +6,13 @@ em [docs/status.md](docs/status.md).
 
 ## Pesquisa
 
-A contribuição própria útil continua aberta. A71 é a investigação mais recente,
-não um resultado prático consolidado.
+A contribuição própria útil continua aberta. A72 investiga um limite teórico
+de aproximação para uma GLC fixa; A71 permanece uma candidata de acoplamento.
+Nenhuma das duas é um resultado prático consolidado.
+
+- [ ] Auditar a prioridade específica e a suficiência do limite robusto A72
+  frente a representações estruturadas e aproximação de circuitos probabilísticos.
+  A separação exata e os controles por condicionamento são clássicos.
 
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
