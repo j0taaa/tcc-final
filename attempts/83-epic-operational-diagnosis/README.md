@@ -20,7 +20,15 @@ regular de um lote → verificação CFG exata → commitments → rejeição se
 para o orçamento restante. O loop também recalcula softmax denso dentro da
 rejeição. Nenhuma dessas observações de código estabelece um gargalo medido.
 
-## Protocolo prospectivo de diagnóstico V1
+## Protocolo prospectivo de diagnóstico V2
+
+V1 foi interrompida durante a carga, antes de qualquer decode, após a auditoria
+independente detectar que o reset Python não limpava o cache Rust. O registro
+de carga interrompida fica em `load-interrupted-v1.jsonl`; a fonte V1 está no
+commit `8cfc6c71`. V2 acrescenta o reset Rust por execução, registro de exceções
+antes do fallback que as captura no upstream, ordenação explícita do atalho e
+rótulo correto do RSS cumulativo. Não houve saídas de casos para escolher a
+correção. A auditoria também confirmou a equivalência sob as hipóteses abaixo.
 
 Congelar este arquivo e `diagnose.py` em commit antes da primeira execução.
 Não escolher casos depois de ver saídas. Casos próprios, pequenos, não um
@@ -29,7 +37,8 @@ de sentimento com enum. Textos e schemas exatos ficam em `CASES` no produtor.
 
 - LLaDA-8B-Instruct, snapshot `08b83a6feb34df1a6011b80c3c00c7563e963b07`,
   NF4, double quantization, compute BF16, somente arquivos locais.
-- RTX 3080 Ti 12 GB; quatro threads CPU. Não encerrar outros consumidores GPU.
+- RTX 3080 Ti 12 GB; quatro threads Torch e quatro Rayon, sem alegar limite
+  global de quatro threads. Não encerrar outros consumidores GPU.
   Recusar carga se houver menos de 6,5 GiB livres.
 - Seed 83001 por execução; temperatura zero; 64 posições, blocos de 32,
   oito passos totais; máximo de 100 rejeições, sem modificar o upstream.
@@ -43,10 +52,12 @@ de sentimento com enum. Textos e schemas exatos ficam em `CASES` no produtor.
   substituto do EPIC; serve para atribuir custo e mudanças de trajetória.
 - Caches lexicais e de cover frios por execução. Medir preparação por schema,
   carga/tokenizer uma vez, decode, forward, seleção, checks exatos/regulares,
-  softmax do decoder, contagens, conclusão, JSON/schema e resposta esperada.
-  Tempos internos aninhados não devem ser somados. Medir pico GPU alocado e RSS.
+  softmax do decoder, contagens, exceções, conclusão, JSON/schema e resposta esperada.
+  Tempos internos aninhados não devem ser somados. Medir pico GPU alocado e
+  pico RSS cumulativo do processo, sem atribuí-lo isoladamente a um modo.
 - Sincronização CUDA nos wrappers de tempo; medições são instrumentadas e
-  não alegam throughput de produção. Outros processos GPU são confundidores.
+  não alegam throughput de produção. Copiar IDs a cada yield também custa
+  tempo, especialmente no modo sequencial. Outros processos GPU são confundidores.
 - Limite cooperativo de 120 s por decode, verificado também nos wrappers;
   timeout de oráculo nativo continua o original. Erro, interrupção, OOM e saída
   incompleta ficam registrados e não equivalem a inviabilidade da gramática.
@@ -76,7 +87,7 @@ artigo. Só depois dos dados será formulada uma direção, se houver evidência
 Reprodução local (ambiente live existente, sem download):
 
 ```bash
-.venv-live/bin/python attempts/83-epic-operational-diagnosis/diagnose.py --output /tmp/a83-v1.jsonl
+.venv-live/bin/python attempts/83-epic-operational-diagnosis/diagnose.py --output /tmp/a83-v2.jsonl
 ```
 
 Prova escrita, inspeção de fonte, execução neural e validação de JSON são

@@ -16,6 +16,7 @@ from pathlib import Path
 os.environ["CONSTRAINED_DIFFUSION_REGULAR_COVER_BATCH"] = "1"
 os.environ["CONSTRAINED_DIFFUSION_REGULAR_COVER_EXACT"] = "1"
 os.environ["CONSTRAINED_DIFFUSION_DFA_FREE_CHECKER"] = "1"
+os.environ["RAYON_NUM_THREADS"] = "4"
 
 HERE = Path(__file__).resolve().parent
 MODEL = (
@@ -92,6 +93,7 @@ def main():
     from constrained_diffusion.cfgs.jsonschema import schema_to_cfg
     from constrained_diffusion.constrain_utils import compile_lex_map, start_fast_enfa_instance
     from rustformlang.cfg import CFG
+    from rustformlang.constraining import reset_lex_cache
     from transformers import AutoModel, AutoTokenizer, BitsAndBytesConfig
 
     lg = importlib.import_module(
@@ -180,20 +182,42 @@ def main():
         prompt = tokenizer(prompt_text, return_tensors="pt").input_ids.to(actual.device)
         for mode in ORDERS[case_index]:
             times, counts = defaultdict(float), defaultdict(int)
-            selection_events, states = [], []
+            selection_events, states, exception_events = [], [], []
             start_fast_enfa_instance((name, mode))
+            reset_lex_cache()
             rc._build_flat_rtn_cover_dfa_from_text.cache_clear()
             torch.manual_seed(83001)
             torch.cuda.reset_peak_memory_stats()
             deadline = time.perf_counter() + 120
 
-            def timed(key, function, *a, _deadline=deadline, _times=times, _counts=counts, **kw):
+            def timed(
+                key,
+                function,
+                *a,
+                _deadline=deadline,
+                _times=times,
+                _counts=counts,
+                _exceptions=exception_events,
+                **kw,
+            ):
                 if time.perf_counter() > _deadline:
+                    _exceptions.append(
+                        {
+                            "operation": key,
+                            "type": "TimeoutError",
+                            "message": "cooperative decode deadline",
+                        }
+                    )
                     raise TimeoutError("cooperative decode deadline")
                 torch.cuda.synchronize()
                 begin = time.perf_counter()
                 try:
                     return function(*a, **kw)
+                except BaseException as exc:
+                    _exceptions.append(
+                        {"operation": key, "type": type(exc).__name__, "message": str(exc)}
+                    )
+                    raise
                 finally:
                     torch.cuda.synchronize()
                     _times[key] += time.perf_counter() - begin
@@ -237,7 +261,7 @@ def main():
                         query["words_full"] = trial
                         if cached(**query):
                             _counts["exact_first_full_accept"] += 1
-                            selected = list(kw["candidates"])
+                            selected = sorted(kw["candidates"], key=lambda c: c.score, reverse=True)
                     if selected is None:
                         selected = original_selector(**kw)
                     _events.append({"proposed": len(kw["candidates"]), "accepted": len(selected)})
@@ -278,10 +302,16 @@ def main():
                     states.append(last[0, prompt.shape[1] :].tolist())
                     if time.perf_counter() > deadline:
                         raise TimeoutError("cooperative decode deadline")
-            except Exception as exc:
+            except (Exception, KeyboardInterrupt) as exc:
                 status = type(exc).__name__ + ": " + str(exc)
             finally:
-                torch.cuda.synchronize()
+                try:
+                    torch.cuda.synchronize()
+                except Exception as exc:
+                    exception_events.append(
+                        {"operation": "final_sync", "type": type(exc).__name__, "message": str(exc)}
+                    )
+                    status = type(exc).__name__ + ": " + str(exc)
                 elapsed = time.perf_counter() - start
                 lg.select_batch_with_regular_cover = original_selector
                 lg.check_valid, lg.F = original_check, original_f
@@ -317,10 +347,15 @@ def main():
                     "counts": dict(counts),
                     "rejections": len(resamples),
                     "selection_events": selection_events,
+                    "exception_events": exception_events,
                     "peak_allocated_bytes": torch.cuda.max_memory_allocated(),
-                    "max_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+                    "process_cumulative_max_rss_kib": resource.getrusage(
+                        resource.RUSAGE_SELF
+                    ).ru_maxrss,
                 }
             )
+            if status.startswith("KeyboardInterrupt"):
+                return
 
 
 if __name__ == "__main__":
