@@ -1,0 +1,89 @@
+{
+  "families": {
+    "ambiguous": {
+      "edges": 6,
+      "group_nnz": 1,
+      "groups": 1,
+      "ids": 2,
+      "max_coefficient_bits": 1,
+      "nodes": 7,
+      "stored_rational_bits": 3,
+      "sum_q": 2
+    },
+    "balance4": {
+      "edges": 30,
+      "group_nnz": 6,
+      "groups": 1,
+      "ids": 2,
+      "max_coefficient_bits": 1,
+      "nodes": 31,
+      "stored_rational_bits": 30,
+      "sum_q": 6
+    },
+    "byte_aliases2": {
+      "edges": 15,
+      "group_nnz": 4,
+      "groups": 2,
+      "ids": 3,
+      "max_coefficient_bits": 1,
+      "nodes": 16,
+      "stored_rational_bits": 16,
+      "sum_q": 5
+    },
+    "copy4": {
+      "edges": 15,
+      "group_nnz": 4,
+      "groups": 1,
+      "ids": 3,
+      "max_coefficient_bits": 1,
+      "nodes": 16,
+      "stored_rational_bits": 12,
+      "sum_q": 3
+    },
+    "fixed_copy4": {
+      "edges": 5,
+      "group_nnz": 0,
+      "groups": 1,
+      "ids": 1,
+      "max_coefficient_bits": 0,
+      "nodes": 6,
+      "stored_rational_bits": 0,
+      "sum_q": 0
+    },
+    "fractional_basis": {
+      "edges": 20,
+      "group_nnz": 6,
+      "groups": 1,
+      "ids": 2,
+      "max_coefficient_bits": 2,
+      "nodes": 21,
+      "stored_rational_bits": 33,
+      "sum_q": 6
+    },
+    "independent4": {
+      "edges": 405,
+      "group_nnz": 4,
+      "groups": 1,
+      "ids": 3,
+      "max_coefficient_bits": 1,
+      "nodes": 406,
+      "stored_rational_bits": 36,
+      "sum_q": 12
+    }
+  },
+  "indicator_contrasts": 41128,
+  "invalid_forests_rejected": 6,
+  "languages": 345,
+  "score_trials_per_language": 3,
+  "seed": 730019,
+  "timings": "not measured",
+  "tokenizer": {
+    "aliases_in_identifier_class": 0,
+    "identifier_bytes": 183834,
+    "identifier_ids": 32804,
+    "ordinary_ids": 151643,
+    "path": "/home/jota/projects/tcc-final/.cache/a52-model-metadata/tokenizer.json",
+    "sha256": "6d55810de1daf81d1d1259355b4b85810385022ab745be68029295935a4eacf0",
+    "sorted_ids_sha256": "ca873db3e34198e5fef0591773db4c168b4b366d9d9cdf0ef6a01cd921c6fc45"
+  }
+}
