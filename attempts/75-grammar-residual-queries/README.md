@@ -85,5 +85,18 @@ consultas. A consulta raiz não identifica o par witness BALANCE, mas isso não
 é lower bound contra uma consulta arbitrária. A melhoria relativa no pequeno
 oráculo não estabelece benefício de decoder, semântica ou prioridade.
 
-Resultados, comandos e decisão serão registrados aqui após a execução, sem
-reescrever o protocolo nem os dados produzidos.
+## Resultado da rodada
+
+**Positivo no oráculo, ponte neural não estabelecida.** Os 12 casos BALANCE
+passaram pelo gate congelado; a reprodução hard-core concordou com os números
+do briefing, mas seu reconstrutor especializado é mais forte. FORS com o mesmo
+estimador empata exatamente. A prova escrita sustenta Θ(α) na interface
+declarada, sem certificar prioridade ou utilidade prática de decoder.
+
+O primeiro oráculo falhou numa posição fixada em zero: a
+[correção explícita](correction-v1.md) preserva a origem e o dado negativo.
+O [relatório](report.md) separa prova, auditoria finita, execução contada,
+controles e gate neural. Dados: [auditoria corrigida](results-v1-corrected.jsonl),
+[execução sem timings](runtime-v1.jsonl) e [replay de bits](runtime-bits-v1.json).
+Não houve forwards de modelo nem timings sob concorrência. Esta rodada fica
+encerrada sem selecionar uma contribuição neural positiva.

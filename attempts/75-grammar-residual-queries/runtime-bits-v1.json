@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "explicit_resource_refusal_guards": 2,
+    "interval_arithmetic_pairs": 25,
+    "rational_exp_points": 9,
+    "uniform_subset_transcripts": 1692
+  },
+  "identical_runtime_rows": 48,
+  "observed_arithmetic": {
+    "interval_multiplications": 207489,
+    "interval_raw_product_bits": 665,
+    "rational_component_bits": 2101,
+    "rounding_calls": 341077
+  },
+  "scope": "operand sizes at rational rounding and interval multiplication; not a CPU instruction count or universal bit-complexity bound",
+  "status": "PASS",
+  "timed": false
+}
