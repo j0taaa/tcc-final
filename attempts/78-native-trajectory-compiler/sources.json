@@ -1,0 +1,97 @@
+[
+  {
+    "name": "dream",
+    "url": "https://huggingface.co/Dream-org/Dream-v0-Instruct-7B/raw/373705a/modeling_dream.py",
+    "resolved_url": "https://huggingface.co/Dream-org/Dream-v0-Instruct-7B/raw/373705a/modeling_dream.py",
+    "bytes": 36763,
+    "sha256": "3166e789f0d69beb1f4fbdee2317953d1c1c3b9bc21479b109afc5dd059de5b3"
+  },
+  {
+    "name": "junta",
+    "url": "https://arxiv.org/html/1706.06934v1",
+    "resolved_url": "https://arxiv.org/html/1706.06934v1",
+    "bytes": 683431,
+    "sha256": "275a91496105e208bb5269a9e94c1089d6b89e479589b69b6d54e74fd3d33e62"
+  },
+  {
+    "name": "punt",
+    "url": "https://arxiv.org/html/2510.21961v1",
+    "resolved_url": "https://arxiv.org/html/2510.21961v1",
+    "bytes": 316164,
+    "sha256": "bcd9732113375ce6c7aba817c0fbe9f5b1a33e7288757a67406d25622f70dbc7"
+  },
+  {
+    "name": "factordlm",
+    "url": "https://arxiv.org/html/2609.32900v1",
+    "resolved_url": "https://arxiv.org/html/2609.32900v1",
+    "bytes": 521630,
+    "sha256": "b3c9418cd693fed31eb2a9f3d56dbcc00d868afa9f1ff22e2c638da0f1f663ce"
+  },
+  {
+    "name": "twister",
+    "url": "https://arxiv.org/html/2609.35609v1",
+    "resolved_url": "https://arxiv.org/html/2609.35609v1",
+    "bytes": 793406,
+    "sha256": "0827e06f0fe1538878fa30c4538b8ff170277dc05d2c987c706d0a50f8c58257"
+  },
+  {
+    "name": "sparsed",
+    "url": "https://arxiv.org/html/2509.24014v1",
+    "resolved_url": "https://arxiv.org/html/2509.24014v1",
+    "bytes": 337872,
+    "sha256": "1b1abfa4330eb64f7f9b93fe860fd92a23b87f38e385313be0afc9f13aecc220"
+  },
+  {
+    "name": "losa",
+    "url": "https://arxiv.org/html/2604.12056v1",
+    "resolved_url": "https://arxiv.org/html/2604.12056v1",
+    "bytes": 319350,
+    "sha256": "3a36227d94e9dc6dfc8ee6a8c07c46de5b3ea57b84b5e113a950924e35555a93"
+  },
+  {
+    "name": "covering",
+    "url": "https://arxiv.org/html/1605.02131v1",
+    "resolved_url": "https://arxiv.org/html/1605.02131v1",
+    "bytes": 279033,
+    "sha256": "664e16deb6ba55f1b3d98eec431a73e7aa177cfe9c3f060c8299064b311ab0f8"
+  },
+  {
+    "name": "injection",
+    "url": "https://cs.yale.edu/homes/aspnes/papers/injecting-values-abstract.html",
+    "resolved_url": "https://cs.yale.edu/homes/aspnes/papers/injecting-values-abstract.html",
+    "bytes": 3071,
+    "sha256": "9df64674fda95b84e253f81cadb38f025d16b75757b119d348ae4a1a024d8a01"
+  },
+  {
+    "name": "llada/modeling_llada.py",
+    "path": "/home/jota/.cache/huggingface/hub/models--GSAI-ML--LLaDA-8B-Instruct/snapshots/08b83a6feb34df1a6011b80c3c00c7563e963b07/modeling_llada.py",
+    "bytes": 61443,
+    "sha256": "98bac7e53fef0bb7ca01e3716c11a7f710d183e10dbb9783b88db9dbba2e3766"
+  },
+  {
+    "name": "llada/config.json",
+    "path": "/home/jota/.cache/huggingface/hub/models--GSAI-ML--LLaDA-8B-Instruct/snapshots/08b83a6feb34df1a6011b80c3c00c7563e963b07/config.json",
+    "bytes": 1385,
+    "sha256": "5f99fefe855fdb5100bb6cadb57bdb09fae723ad54811f95c00ecacf29d58a6a"
+  },
+  {
+    "name": "llada/tokenizer_config.json",
+    "path": "/home/jota/.cache/huggingface/hub/models--GSAI-ML--LLaDA-8B-Instruct/snapshots/08b83a6feb34df1a6011b80c3c00c7563e963b07/tokenizer_config.json",
+    "bytes": 51692,
+    "sha256": "b9a6102c39a4f42f47f0d63fc6cee58a2381199d90f2a4f39b3f6871f32b4119"
+  },
+  {
+    "name": "dream-config",
+    "url": "https://huggingface.co/Dream-org/Dream-v0-Instruct-7B/raw/373705a/config.json",
+    "resolved_url": "https://huggingface.co/Dream-org/Dream-v0-Instruct-7B/raw/373705a/config.json",
+    "bytes": 935,
+    "sha256": "6b308f4240a5c75584cf5906cc49219809e1f4006f0e91895b4cf8c9ea76fda5"
+  },
+  {
+    "name": "bucket",
+    "url": "https://arxiv.org/abs/1302.3572",
+    "resolved_url": "https://arxiv.org/abs/1302.3572",
+    "bytes": 39418,
+    "sha256": "9d1c1d82566f8bef399acf29e1aaf2669523e93116b4291139a487dc4ad475fe"
+  }
+]
