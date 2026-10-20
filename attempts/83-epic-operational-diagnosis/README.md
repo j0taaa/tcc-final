@@ -110,3 +110,34 @@ já vistos; não um teste independente ou evidência de generalização.
 ```bash
 .venv-live/bin/python attempts/83-epic-operational-diagnosis/diagnose.py --trace --output /tmp/a83-v3.jsonl
 ```
+
+## Controle de trabalho vazio V4, prospectivo após V3
+
+V3 confirmou a falha da soma: as últimas propostas rejeitadas na posição 12
+incluíam nomes de campos, números e palavras; não houve tentativa de whitespace
+nessa posição. Nos outros dois casos, entradas dos oito forwards tinham
+respectivamente `[64,56,16,7,0,0,0,0]` e `[64,56,48,7,0,0,0,0]` máscaras.
+A segunda metade do decode avaliava a rede com o canvas inteiro preenchido.
+
+V4 (`--empty-control`) compara, nos mesmos três casos, o original com um
+controle que devolve os logits anteriores quando não há MASK algum. Nessas
+iterações, os orçamentos de reveal são todos zero: os logits não são usados
+para nenhuma atualização. Sob modelo sem efeitos colaterais observáveis,
+omitir esses forwards preserva todos os estados e IDs. Não há teorema novo:
+é eliminação de trabalho sem consumidor, disponível como controle competente.
+Não remover EOS, PAD ou MASK para simular conclusão.
+
+Uma execução por modo/caso, ordem alternada (epic/controle, controle/epic,
+epic/controle); sem ampliar casos, seeds ou alegar significância. Carga e
+preparação continuam contadas separadamente; comparar primeiro a redução
+determinística de NFEs, depois os tempos instrumentados. Se o loop original
+terminar com MASK, realizar **uma** predição separada no canvas interrompido
+e consultar o checker para suas dez primeiras propostas por buraco. Registrar
+o custo dessa sonda; ela não altera a saída nem é incluída como ganho do
+controle. Não é um método de recuperação avaliado. O wrapper público do EPIC
+já possui autocomplete em caso de interrupção; esta investigação isola o loop
+neural, sem alegar quebra da garantia do wrapper ou superioridade sobre ele.
+
+```bash
+.venv-live/bin/python attempts/83-epic-operational-diagnosis/diagnose.py --empty-control --output /tmp/a83-v4.jsonl
+```

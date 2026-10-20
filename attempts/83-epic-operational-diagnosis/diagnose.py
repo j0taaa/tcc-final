@@ -80,6 +80,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--trace", action="store_true", help="Trace all three original EPIC cases")
+    parser.add_argument(
+        "--empty-control",
+        action="store_true",
+        help="Compare original vs omitting forwards with no masks",
+    )
     args = parser.parse_args()
     if args.output.exists():
         raise SystemExit("Refusing to overwrite an existing record")
@@ -182,7 +187,10 @@ def main():
             + "```json\n"
         )
         prompt = tokenizer(prompt_text, return_tensors="pt").input_ids.to(actual.device)
-        for mode in ("epic",) if args.trace else ORDERS[case_index]:
+        modes = ("epic", "skip_empty") if case_index % 2 == 0 else ("skip_empty", "epic")
+        if not args.empty_control:
+            modes = ("epic",) if args.trace else ORDERS[case_index]
+        for mode in modes:
             times, counts = defaultdict(float), defaultdict(int)
             selection_events, states, exception_events = [], [], []
             query_events, forward_inputs = [], []
@@ -228,11 +236,26 @@ def main():
 
             class Model:
                 device = actual.device
+                previous_output = None
 
-                def __call__(self, x, _inputs=forward_inputs, _prompt_len=prompt.shape[1]):
+                def __call__(
+                    self,
+                    x,
+                    _inputs=forward_inputs,
+                    _prompt_len=prompt.shape[1],
+                    _mode=mode,
+                    _counts=counts,
+                ):
                     if args.trace:
                         _inputs.append(x[0, _prompt_len:].tolist())
-                    return timed("model", actual, x)
+                    if _mode == "skip_empty" and self.previous_output is not None:
+                        if not bool((x == 126336).any()):
+                            _counts["skipped_empty_forward"] += 1
+                            return self.previous_output
+                    result = timed("model", actual, x)
+                    if _mode == "skip_empty":
+                        self.previous_output = result
+                    return result
 
             class Functional:
                 def __getattr__(self, attr):
@@ -383,6 +406,58 @@ def main():
                     ).ru_maxrss,
                 }
             )
+            if args.empty_control and mode == "epic" and 126336 in token_ids:
+                # A separate causal probe; never alters the recorded trajectory.
+                start_probe = time.perf_counter()
+                with torch.no_grad():
+                    fresh = actual(last).logits
+                torch.cuda.synchronize()
+                probe_model_seconds = time.perf_counter() - start_probe
+                suggestions = []
+                for position, token in enumerate(token_ids):
+                    if token != 126336:
+                        continue
+                    values, ids = fresh[0, prompt.shape[1] + position].topk(10)
+                    for rank, (value, candidate) in enumerate(
+                        zip(values.tolist(), ids.tolist(), strict=True)
+                    ):
+                        words = [
+                            None
+                            if t == 126336
+                            else lg.EOS
+                            if t in (126081, 126348)
+                            else tokenizer.decode(t)
+                            for t in token_ids
+                        ]
+                        words[position] = (
+                            lg.EOS if candidate in (126081, 126348) else tokenizer.decode(candidate)
+                        )
+                        rejected = original_check(
+                            words,
+                            cfg,
+                            lexmap,
+                            cfg.get_terminals(),
+                            subtokens=subtokens,
+                            supertokens=lg.frozendict.frozendict(),
+                        )
+                        suggestions.append(
+                            {
+                                "position": position,
+                                "rank": rank + 1,
+                                "token_id": candidate,
+                                "word": tokenizer.decode(candidate),
+                                "logit": value,
+                                "rejected": rejected,
+                            }
+                        )
+                record(
+                    {
+                        "type": "fresh_probe",
+                        "case": name,
+                        "model_seconds": probe_model_seconds,
+                        "suggestions": suggestions,
+                    }
+                )
             if status.startswith("KeyboardInterrupt"):
                 return
 
