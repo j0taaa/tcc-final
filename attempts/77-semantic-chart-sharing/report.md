@@ -258,3 +258,131 @@ novidade demonstrada, ganho de qualidade ou benefício neural integral.
 - `audit_v1_corrected.py` corrige somente a chamada que constrói o suporte de
   posições já fixadas. O produtor original continua intacto. O wrapper será
   congelado antes do replay; não muda casos, seeds, pesos, métricas ou gates.
+
+## Resultado e decisão
+
+**Não selecionar A77 como contribuição central de TCC nesta formulação.**
+A prova escrita sustenta a garantia condicional declarada, e o oráculo finito
+passou após uma correção de chamada registrada. O aproximante e a redução de
+charts são reproduzidos pelo controle competente de média nas folhas + cache.
+Não foi demonstrada uma contribuição própria substantiva frente a essa
+composição e aos antecedentes de simetrização/segunda ordem. Não há evidência
+de ganho neural integral. Isso não é uma prova de que toda variante futura
+seja impossível, nem uma decisão sobre aprovação acadêmica.
+
+### Correção finita e limites numéricos
+
+`e6a0082b` congelou o wrapper corretivo antes de executar. O resultado completo
+é [oracle-v1-corrected.json](oracle-v1-corrected.json), SHA256
+`2b88ca0ab9e71693ae77214fa312a71d18e7d3b482d560bc5f76e7129cb72429`.
+Um segundo replay em diretório temporário foi idêntico byte a byte. Preservam-se
+o produtor anterior e [sua falha](oracle-v1-failure.json); não há um resultado
+V1 positivo substituindo silenciosamente aquela execução.
+
+Os dez casos conferiram 294 probabilidades de caminhos originais nas leis de
+samplers dos charts, 1.440 tuplas ordenadas e 758 identidades racionais entre
+massas de órbitas e permanentes normalizados. Massas/marginais coincidiram com
+o reconhecedor de bytes independente. Foram explorados todos os ramos
+categóricos, não estimada a lei por frequências. Aliases `a` com IDs 0 e 1,
+token `(a` de dois bytes, ordem física e pin de ID 3 foram mantidos.
+
+As TVs incondicionais e condicionais foram calculadas com racionais. As
+desigualdades logarítmicas também foram checadas em Decimal de 80 dígitos;
+essa checagem escalar é evidência numérica, não aritmética intervalar nem Lean.
+O bound de decisão D/4 e sua comparação com ε são racionais exatos.
+
+- Cobertura sintética: **5/10**, todos os casos com viés 1/100; os cinco com
+  viés 1/5 não passaram o mesmo gate. Preservar ambos os grupos é essencial:
+  falhar a cota suficiente não prova violação da tolerância pela TV real.
+- TVs semânticas variaram de 0 a aproximadamente 0,03153; TVs ordenadas de
+  0 a 0,17463. D/4 variou de 0,00010587 a 3,75823: pode ser vacuoso mesmo
+  em casos minúsculos. No caso de três módulos, a gramática elimina as
+  diferenças relevantes e as leis exatas coincidem; não se vende TV=0 como
+  separação algorítmica.
+- As dez condições de igualdade dos ASTs mantiveram o bound; a maior TV
+  condicionada foi aproximadamente 0,02691. Para a condição rara separada,
+  P(C)=99/50.000.000 e Q(C)=1/500.000, e a TV condicional é exatamente zero.
+  Foram usadas as duas tabelas condicionadas corretas, sem afirmar que um
+  chart incondicional amostra essa lei. Não houve medição de eficiência para C.
+- O exemplo Bernoulli confirmou as três identidades previstas. Para δ=1/10,
+  TV ordenada=21/400 e TV do bag=1/200. É uma diferença de ordem correta e
+  clássica, não evidência de qualidade semântica ou utilidade de dLLM.
+
+Os 320 pools amostrados emitiram 2.112 IDs e consumiram 162.298 bits RNG nesta
+implementação inteira; charts tiveram inteiros de até 89 bits. Esses máximos
+são dos fixtures, não limites gerais. Não foram medidos tempos do oráculo:
+a telemetria interna do posterior foi substituída por constante zero no
+escopo do teste, sem editar a biblioteca. Não se atribui a esse zero custo
+ou latência real. A contagem da recorrência n=253 foi reproduzida com os
+pesos dos dois operadores somados em cada split: 168.672 termos, ou 1.349.376
+em oito avaliações. Expandir os operadores em termos distintos muda essa
+contagem; ela nunca foi usada como lower bound ou speedup.
+
+### Gate de head real: inconclusivo por recurso
+
+[native-v1.jsonl](native-v1.jsonl) preserva **seis recusas
+`RESOURCE_REFUSAL_LOCK_BUSY`**, zero forwards, zero pesos capturados, zero
+timings. O produtor tentou o flock não bloqueante e retornou antes de
+`nvidia-smi`, imports de Torch ou relógios. Portanto esse registro não diz
+qual era δ, qual a massa de suporte, qual processo ocupava a GPU ou se a
+memória permitiria carregar o modelo.
+
+Uma inspeção posterior em leitura de `lslocks` confirmou o detentor do lock:
+PID 2729768, `python ... attempts/74-cfg-head-squeeze/operational_v2.py --run
+attempts/74-cfg-head-squeeze/measurements-v2c`. Ele continuou presente após o
+replay offline. Não se interrompeu esse trabalho, não se rompeu o lock e não
+se iniciou execução concorrente. Não se confundem os seis casos não medidos
+com 0/6 coberturas observadas. A cobertura de A77 em heads reais permanece
+**desconhecida**, inclusive no suporte lexical declarado; não há afirmação
+sobre o vocabulário completo.
+
+A exigência do certificado é forte antes de olhar qualquer dado neural:
+como D≥[mn/2+2(m−1)n²]δ², o gate congelado exige necessariamente
+δ≤sqrt(0,04/[mn/2+2(m−1)n²]). Para (m,n)=(8,253), isso é aproximadamente
+0,0002112, ou 0,02112% de desvio relativo máximo. Os denominadores (1−δ)
+da cota completa tornam a exigência um pouco mais estrita. É uma consequência
+algébrica do protocolo, não uma observação de que um modelo satisfaz ou viola
+esse requisito.
+
+O encerramento da seleção não depende de atribuir uma falha neural fictícia:
+o controle de média nas folhas + cache já realiza a mesma proposta e os
+mesmos custos assintóticos, e o certificado escrito não demonstrou uma
+diferença científica suficiente. A indisponibilidade de recursos é um limite
+adicional da evidência desta rodada, não refutação matemática do método.
+Não se amplia a campanha para tentar obter um resultado favorável.
+
+### Reprodução e verificações
+
+Usaram-se Python 3.11.16 e ambientes existentes em leitura; não houve instalação,
+download, treino ou modificação do vendor/biblioteca. Comandos a partir da raiz:
+
+```bash
+# Usar sempre uma saída nova; os produtores abrem com modo exclusivo x.
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD/src" \
+  /home/jota/projects/tcc-final/.venv-a52/bin/python \
+  attempts/77-semantic-chart-sharing/audit_v1_corrected.py \
+  --output /tmp/a77-oracle-new.json
+cmp attempts/77-semantic-chart-sharing/oracle-v1-corrected.json /tmp/a77-oracle-new.json
+
+# O próprio produtor exige lock/preflight; mantém todas as recusas.
+PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
+  /home/jota/projects/tcc-final/.venv-a52/bin/python \
+  attempts/77-semantic-chart-sharing/native_gate.py --coordinator-ready \
+  --output /tmp/a77-native-new.jsonl --raw /tmp/a77-native-new-raw
+
+/home/jota/projects/tcc-final/.venv/bin/python -m ruff check \
+  src scripts attempts/77-semantic-chart-sharing
+/home/jota/projects/tcc-final/.venv/bin/python -m ruff format --check \
+  src scripts attempts/77-semantic-chart-sharing
+PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD/src" \
+  /home/jota/projects/tcc-final/.venv/bin/python -m mypy
+./scripts/verify_upstream.sh
+git diff --check
+```
+
+Todos os checks estáticos acima passaram: Ruff em 81 arquivos, mypy em 55
+fontes, snapshot EPIC e whitespace. O oráculo novo passou e seu replay foi
+idêntico. Não se executou `make check` completo sob o lock ocupado: seus
+testes usam relógios/deadlines; não se desativaram essas verificações para
+declarar uma suíte completa aprovada. Não há alteração de API mantida que
+exija inferir validação do software inteiro a partir desta tentativa.
