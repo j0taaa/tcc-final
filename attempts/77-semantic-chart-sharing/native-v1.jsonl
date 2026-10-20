@@ -1,0 +1,7 @@
+{"coordinator_ready": true, "eos_pad": "absent", "epsilon": "1/100", "lock": "/tmp/tcc-final-candidate-tests-gpu.lock", "producer_commit": "8ab900577d7eb5aa31f5cffacc5be4f2456b959f", "scope": "exact_on_support", "type": "protocol"}
+{"case": "p0-m2-n13", "status": "RESOURCE_REFUSAL_LOCK_BUSY", "type": "case"}
+{"case": "p0-m8-n13", "status": "RESOURCE_REFUSAL_LOCK_BUSY", "type": "case"}
+{"case": "p0-m8-n253", "status": "RESOURCE_REFUSAL_LOCK_BUSY", "type": "case"}
+{"case": "p1-m2-n13", "status": "RESOURCE_REFUSAL_LOCK_BUSY", "type": "case"}
+{"case": "p1-m8-n13", "status": "RESOURCE_REFUSAL_LOCK_BUSY", "type": "case"}
+{"case": "p1-m8-n253", "status": "RESOURCE_REFUSAL_LOCK_BUSY", "type": "case"}

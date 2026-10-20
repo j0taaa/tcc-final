@@ -246,3 +246,15 @@ Objeções/faltas antes dos dados: δ exige proximidade relativa em todo suporte
 o coeficiente n² pode inviabilizar ε=0,01; o suporte lexical não é vocabulário
 inteiro; nenhum consumidor externo foi validado; não há prova formal Lean,
 novidade demonstrada, ganho de qualidade ou benefício neural integral.
+
+## Registro de execução e correção separada
+
+- `be81239d`: contrato, fontes primárias, prova e protocolo antes dos dados.
+- `8ab90057`: produtores do oráculo e gate neural congelados antes de executar.
+- Primeira execução do oráculo: `FAIL_INPUT_CONTRACT`, preservada em
+  `oracle-v1-failure.json`. O caso com pin fornecia o suporte inteiro à posição
+  fixada; a API exige o singleton daquele ID. Nenhum JSON parcial foi emitido.
+  Isso é erro do produtor, não falha da prova ou inviabilidade da gramática.
+- `audit_v1_corrected.py` corrige somente a chamada que constrói o suporte de
+  posições já fixadas. O produtor original continua intacto. O wrapper será
+  congelado antes do replay; não muda casos, seeds, pesos, métricas ou gates.

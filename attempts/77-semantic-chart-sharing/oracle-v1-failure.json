@@ -1,0 +1,12 @@
+{
+  "producer_commit": "8ab90057",
+  "producer": "audit.py",
+  "requested_output": "oracle-v1.json",
+  "status": "FAIL_INPUT_CONTRACT",
+  "exception": "ValueError: fixed position 0 explicit support must contain exactly token 3",
+  "location": "input_data -> build_per_position_support",
+  "cause": "The caller supplied IDs 0..7 as the explicit row at a fixed position; the maintained API requires the singleton fixed ID.",
+  "partial_results_written": false,
+  "scientific_conclusion": "No theorem or coverage decision inferred from this failed oracle run.",
+  "correction": "audit_v1_corrected.py restricts only explicit rows of already-fixed slots; original audit.py, cases, seeds, metrics and gates are unchanged."
+}
