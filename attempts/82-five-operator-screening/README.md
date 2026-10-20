@@ -22,6 +22,12 @@ congelados de medição.
 
 ## B1: evitar escolhas repetidas no mesmo passo
 
+**Reavaliação posterior:** a [prova de utilidade](b1-utility.md) confirmou
+benefícios restritos, mas também controles e contraexemplos que impedem uma
+garantia geral. A prioridade inicial de B1 para campanha está suspensa; ela
+não foi selecionada como contribuição central. A descrição da triagem abaixo
+é preservada, assim como seu oráculo original.
+
 **Uso e método.** Tokens amostrados independentemente no mesmo passo podem
 repetir a mesma palavra. Escolher previamente um caminho ou floresta entre
 posições simultâneas e coordenar seus sorteios. Uma versão usa a lei de Potts
