@@ -388,3 +388,19 @@ Nenhum sorteio, modelo, medição de latência ou gate de performance integra o
 protocolo. O script imprime somente JSON com contagens e resultado; não grava
 resultados automaticamente. Uma falha ou interrupção deve ser preservada pelo
 executor; não é autorização para trocar padrões depois dos dados.
+
+## Execução CPU V1 — 2026-10-21
+
+Produtor congelado: `83ad5903`. Comando acima, Python 3.11.16 e
+NetworkX 3.6.1 de `.venv-live`. Saída completa:
+
+```json
+{"grid_cases": 3066, "named_cases": 4, "neural_evaluations": 0, "nonempty_graphs": 511, "prior_cases": 256, "sharpness_cases": 4, "status": "PASS", "subset_checks": 201908}
+```
+
+Os cortes atingiram o mesmo custo da enumeração independente, e os dois
+predicados concordaram nos subconjuntos auditados. Uma revisão independente
+da prova escrita também conferiu os argumentos principais e a fonte da dureza.
+Essas são evidências separadas: a enumeração não prova todos os casos e a
+revisão não estabelece prioridade científica. Nenhum forward neural ou ganho
+integral foi medido. As fontes congeladas permaneceram inalteradas na execução.

@@ -25,7 +25,7 @@ e suficiência científica abertas, sem vantagem neural estabelecida.
 prova escrita e oráculos finitos; prioridade e benefício completo pendentes.
 
 ## Investigações anteriores
-- [A87 — Consistência do produto em escolhas finitas: prova candidata e auditoria CPU, sem método neural selecionado](87-conditional-choice-readout/README.md)
+- [A87 — Consistência do produto em escolhas finitas](87-conditional-choice-readout/README.md) e [certificados mínimos com consultas compartilhadas](87-conditional-choice-readout/star-certificate-analysis.md): provas candidatas e auditorias CPU, sem método neural selecionado.
 - [A86 — Planejamento por prefixos: perfil/fidelidade viáveis, gate de benefício V3 negativo; aplicação encerrada](86-prefix-closure-planning/result-v3.md)
 - [A85 — Relaxação por checksum para capturas livres: prova candidata, sem consumidor com vantagem justificada](85-checksum-backreferences/README.md)
 - [A84 — Certificado com runner-up: prova local e piloto neural mais rápido, com perda de acurácia; não selecionada](84-full-marginal-certificate/result-v1.md)
