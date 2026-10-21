@@ -21,6 +21,10 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
+- [ ] Para [A87](attempts/87-conditional-choice-readout/online-probe-analysis.md),
+  auditar prioridade do método de testemunha aleatória e qualificar se respostas
+  nativas deixam espaço útil para economizar consultas frente a controles fortes.
+  A prova residual e a auditoria CPU não selecionam o tema central.
 - [ ] Antes de selecionar outra campanha, justificar uma contribuição própria
   com teoria, utilidade geral e benefício demonstrável para o TCC de impacto
   solicitado. A leitura de LAVE/Saber/DecoCal e a avaliação independente não

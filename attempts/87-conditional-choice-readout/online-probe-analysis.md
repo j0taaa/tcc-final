@@ -348,3 +348,27 @@ global para proposta falsa, RNG físico, numérica neural ou custo integral.
 Seu sucesso seria evidência finita de correção, não prova de prioridade,
 vantagem empírica ou aprovação da direção como TCC.
 
+## 11. Auditoria CPU do produtor congelado
+
+Em 2026-10-21, o comando acima sobre o produtor `b8acf2cb` terminou com
+exit code zero: **61 instâncias, 294 previsões, 664 execuções de política e
+752 subconjuntos**. Todas as comparações de certificado, ótimo independente,
+consistência e esperança previstas passaram. Nas oito famílias de estrelas,
+as contagens perfeitas/sem previsão foram respectivamente
+`3/3, 4/4, 5/6, 7/8, 9/12, 13/16, 17/24, 25/32`;
+com centros previstos errados, foram `1,1,2,2,4,4,8,8`.
+Não houve consulta neural. Esses resultados são auditoria finita da operação
+residual, sem validar o wrapper global, prioridade ou vantagem nativa.
+
+## 12. Auditoria adicional de antecedentes
+
+A leitura dirigida posterior localizou [R-RANSAC, §§2–3, 2002](https://bmva-archive.org.uk/bmvc/2002/papers/50/full_50.pdf):
+pré-testar pontos aleatórios antes da avaliação completa, incluindo `d=1`,
+é anterior. Portanto o padrão genérico de pré-teste não é reivindicação nova.
+[Bampis et al., ESA 2021, Observação 7](https://arxiv.org/abs/2107.00572)
+já dá a decomposição por obrigatórios e cobertura; sua escolha probabilística
+usa distribuições conhecidas. [Learning-Augmented Query Policies](https://arxiv.org/abs/2011.07385)
+também trata previsões não confiáveis. Não se localizou nessas fontes o mesmo
+teste de testemunha com garantia aditiva de uma consulta perfeita e robustez
+esperada constante para esta operação vetorial. A diferença candidata fica
+restrita a essa operação e garantia; prioridade mundial continua não confirmada.
