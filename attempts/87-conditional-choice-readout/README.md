@@ -186,3 +186,33 @@ de modelo. Executar `oracles.py --audit` somente após o commit produtor:
 
 Uma auditoria finita não substitui a prova e não estabelece novidade. Não há
 download de dados de avaliação nem uso de GPU neste protocolo.
+
+## Resultado CPU V1 e auditoria posterior
+
+Fonte e protocolo congelados em `a84d19db`. Comando:
+
+```bash
+.venv/bin/python attempts/87-conditional-choice-readout/oracles.py --audit
+```
+
+Resultado: `PASS`; 20 codebooks balanceados, 2.336 posteriors com ordenação
+conferida, 586 codebooks desbalanceados e 586 testemunhas racionais de MAP
+incorreto, usando 598 sorteios no total e nenhuma recusa. Outros 273 codebooks
+foram excluídos porque não distinguem as classes, conforme o protocolo.
+Passaram as 32.768 combinações de grafo/consultas e os três exemplos nomeados.
+Isso verifica os casos enumerados, sem evidência neural, timing de decoder
+ou certificação da hipótese de oráculo.
+
+Um controle anterior adicional é especialmente pertinente:
+[James e Hastie, NIPS 1997, Teorema 1](https://proceedings.neurips.cc/paper_files/paper/1997/file/4e8412ad48562e3c9934f45c3e144d48-Paper.pdf)
+caracteriza Bayes-optimalidade do decoding **L1**, equivalente à perda esperada
+de Hamming, por equidistância dos códigos binários. Não é a operação produto
+do nosso teorema: o contraexemplo binário equidistante de cinco classes separa
+as duas condições. Entretanto, esse antecedente fornece uma correção conhecida
+que deve integrar os controles. Trocar produto por risco de Hamming ou por
+inversão conhecida não estabelece um método próprio.
+
+**Decisão:** preservar o resultado teórico; continuar a busca pelo método.
+Nenhuma campanha de classificação, avaliação de modelo ou tema central foi
+aprovado por esse resultado. A lacuna operacional é obter melhoria própria
+lidando explicitamente com massa externa e condicionais nativas incompatíveis.
