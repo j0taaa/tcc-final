@@ -472,3 +472,39 @@ São limites de chamadas online da operação com τ e conselho disponíveis.
 Preparo estático A e calibração devem ser somados: numa sequência de N pedidos,
 o limite contabiliza A mais a soma dos respectivos custos online. Isso não é
 garantia de latência ou de conjuntos semanticamente melhores.
+
+## 11. Resultado exploratório contra os controles de limiar
+
+Produtor/protocolo congelados em `51f10fc5`, antes de calcular os custos das
+políticas. Comando:
+
+```bash
+.venv-live/bin/python attempts/87-conditional-choice-readout/threshold_set_replay.py \
+  --output artifacts/a87-threshold-replay-v1.json
+```
+
+Resultado: `EXPLORATORY_COMPLETE`, 320/320 cenários e todos os certificados
+válidos, sem recusa. Custos condicionais somados sobre toda a grade:
+
+| Política | Consultas condicionais | Vitórias / empates / derrotas da candidata |
+| --- | ---: | ---: |
+| Candidata, média racional exata | 39491/6 | — |
+| MVC com poda e forced | 10347 | 214 / 106 / 0 |
+| Advice-first com a mesma previsão | 6308 | 0 / 199 / 121 |
+| Capped-lazy | 6308 | 0 / 199 / 121 |
+| Degree-greedy | 6429 | 0 / 310 / 10 |
+| Melhor controle por cenário | 6308 | 0 / 199 / 121 |
+
+Há uma raiz comum em cada cenário (320 no somatório contrafactual). Advice-first
+e capped-lazy alcançaram OPT em TODOS os 320 cenários; a candidata não pôde
+economizar chamadas frente a eles e acrescentou custo em 121. As reduções
+frente ao MVC mais fraco não constituem benefício próprio contra controles
+competentes. Nenhum limiar, caso ou controle foi removido.
+
+Decisão: esta qualificação exploratória também não justifica uma campanha
+neural do consumidor com previsão produto-raiz nem sua seleção como aceleração
+de dLLM. Não modificar limiares, casos ou partição para salvar esse resultado.
+A prova geral de robustez/consistência e a aplicação clássica de orientação
+permanecem válidas; não dependem de ganho nesta realização neural. A decisão
+de aceitar o núcleo teórico em FTC como tema central, mantendo a aplicação
+dLLM por justificar, é uma mudança de enfoque que permanece pendente do usuário.

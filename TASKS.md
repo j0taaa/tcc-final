@@ -32,6 +32,11 @@ utilidade demonstrável continua aberta.
   duas falsas fora da garantia de custo. Não ampliar V1 para resgatá-la.
   A nova prova e a auditoria CPU sustentam uma candidata teórica em FTC;
   não demonstram ganho próprio de dLLM nem selecionam sozinhas esse tema.
+  A aplicação distinta de conjuntos por limiar também foi examinada: nos
+  320 cenários exploratórios, advice-first e capped-lazy foram ótimos em
+  todos e a candidata não venceu nenhum. Não ajustar esse replay para resgate.
+  A aceitação do núcleo teórico como centro do TCC foi perguntada ao usuário;
+  o requisito original permanece vigente sem resposta.
 - [ ] Antes de selecionar outra campanha, justificar uma contribuição própria
   com teoria, utilidade geral e benefício demonstrável para o TCC de impacto
   solicitado. A leitura de LAVE/Saber/DecoCal e a avaliação independente não

@@ -11,7 +11,9 @@ comandos antigos pertencem às suas versões; consulte o
 novo algoritmo candidato, com prova escrita de custo esperado `2OPT` sob
 conselho arbitrário e `OPT+1` perfeito, separação determinística e 83.679
 execuções exaustivas válidas. Prioridade plausível após revisão dirigida;
-ganho dLLM não demonstrado, V1 nativa negativa preservada. As análises anteriores
+ganho dLLM não demonstrado: V1 nativa negativa preservada e replay distinto de
+conjuntos por limiar sem vitória em 320 cenários contra controles ótimos.
+As análises anteriores
 de [consistência](87-conditional-choice-readout/README.md),
 [certificados mínimos](87-conditional-choice-readout/star-certificate-analysis.md)
 e [auditoria de todos os alvos](87-conditional-choice-readout/multiple-probe-analysis.md)
