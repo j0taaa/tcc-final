@@ -377,3 +377,98 @@ Não selecionar o melhor limiar, calibrar, medir política adaptativa ou promove
 o custo offline a economia do método. Preservar todas as linhas/recusas.
 O diagnóstico pergunta se há trabalho que a auditoria possa influenciar antes
 de justificar uma coleta nova; não é um gate positivo de benefício neural.
+
+### Resultado do diagnóstico e protocolo de replay separado
+
+Fonte/contrato do diagnóstico congelados em `b527e890`. Comando:
+
+```bash
+.venv-live/bin/python attempts/87-conditional-choice-readout/threshold_set_diagnostic.py \
+  --output artifacts/a87-threshold-structure-v1.json
+```
+
+Resultado: `EXPLORATORY_COMPLETE`, todas as 320 linhas, sem recusa. R não vazio
+em 121 linhas, máximo |R|=3. Nessas 121 há ao menos uma testemunha que aprova;
+111 têm todas aprovando e dez contêm alguma que rejeita. Nas 121 o controle
+simples C0∪M tem custo maior que OPT; em 106 das 320 ele já é ótimo. Somado
+sobre toda a grade, |C0∪M|=10.495 e OPT=6.308. Esses são custos de conjuntos
+offline; um controle ativo pode fazer melhor. Não há ganho de política medido
+nesse diagnóstico nem limiar escolhido depois dos dados.
+
+O próximo replay é uma versão separada, sem novos dados neurais e sem alterar
+o diagnóstico congelado. Congelar `threshold_set_replay.py` e este protocolo
+antes de calcular custos de políticas. Usar TODOS os mesmos 320 pares, com
+as mesmas caps, arcos filtrados e previsão produto-raiz. Enumerar cada alvo
+de R com peso uniforme exato; R vazio dá uma execução sem auditoria. A
+candidata usa o teste filtrado e a escolha P/C0 do teorema. Em toda conclusão,
+pular consultas sem aresta ativa e consultar imediatamente pontas forçadas.
+
+Controles predefinidos, todos vendo somente respostas realmente consultadas:
+
+1. C0 com a mesma poda e conclusão forced.
+2. P com a mesma poda/conclusão, confiando na mesma previsão sem auditoria.
+3. Capped-lazy: escolher aresta ativa com maior soma de caps desconhecidas;
+   consultar sua ponta desconhecida de maior cap. Empates por menor ID.
+4. Degree-greedy: escolher vértice desconhecido com mais arestas ativas
+   incidentes; empates por maior cap e depois menor ID. Mesma conclusão forced.
+
+Para J≥τ e τ>0, aresta com nenhuma ponta conhecida está ativa se a soma de
+caps supera τ; com uma ponta x conhecida, se τ−cap<x<τ; com ambas conhecidas,
+seu rótulo já está resolvido. A política não lê valores futuros. Validar
+independentemente que os intervalos finais decidem os MESMOS 77 rótulos do
+scorer integral, sem consulta repetida. Conferir EALG≤2OPT e a consistência
+por execução quando os arcos previstos forem exatos. Registrar custos de cada
+controle, média racional da candidata, wins/ties/losses contra cada controle
+e contra o menor custo dos quatro por linha, além da soma sobre TODAS as
+320 linhas. Contar raiz separadamente como uma chamada comum.
+Cada linha é um cenário alternativo executado de forma independente. As
+somas não representam uma sequência de 320 pedidos ao mesmo cache: reutilizar
+heads entre limiares do mesmo prompt mudaria igualmente o problema de todas
+as políticas e poderia tornar consultas posteriores gratuitas.
+
+Não escolher seeds, limiar, controle ou subconjunto depois dos custos.
+Comparar ao melhor controle por linha é deliberadamente mais forte que um
+único controle implementável sem conhecer resultados. Este é um replay
+exploratório de trabalho sobre dados de treino antigos, não um teste de
+cobertura, qualidade semântica, latência online ou novo gate MAP da V1.
+
+## 10. Corolário online contando a raiz
+
+Para a operação da seção 9, considere um oráculo global que permite consultar
+a raiz e os canvases condicionais do catálogo em qualquer ordem. Cada resposta
+é um array de heads positivos e normalizados; arrays de contextos distintos
+podem variar independentemente. Não usar coerência Bayesiana, limites dos
+logits, análise dos pesos da rede nem outra fonte gratuita de informação.
+Catálogo, τ e prior estático são públicos; funções da raiz atual só ficam
+disponíveis após consultá-la. O conselho não confiável guia escolhas, mas não
+restringe as completações admissíveis como se fosse informação verificada.
+
+A projeção para produtos por estrela não perde informação relevante à
+certificação por limiar nesse oráculo: se uma aresta permanece ambígua, há
+um contexto ainda não consultado cujos heads podem concentrar ou retirar
+probabilidade da palavra-alvo para cruzar o limiar, mantendo TODOS os arrays
+já consultados. Isso requer ao menos uma posição livre em cada bloco e
+vocabulário com símbolos alternativos. São exatamente as completações usadas
+na prova de cover+M. Não é uma hipótese sobre o que um checkpoint fixo faria
+ao alterar seus pesos, e sim o modelo de consulta/certificação declarado.
+
+Seja OPT_global o menor certificado no oráculo global e OPT_cond o ótimo
+após dar a raiz gratuitamente. Para qualquer certificado global S, as consultas
+S sem a raiz continuam certificando quando a raiz é dada. Portanto
+
+\[
+OPT_{cond}\le |S\setminus\{raiz\}|\le OPT_{global},\qquad
+\mathbb E ALG_{online}\le1+2OPT_{global}.
+\]
+
+Sob conselho perfeito, ALG_online≤OPT_global+2. Se algum ótimo consulta a
+raiz, os limites melhoram para 2OPT_global−1 e OPT_global+1. Uma condição
+suficiente natural é saída real não vazia com τ>0: sem observar a raiz,
+reduzir suas probabilidades em ambos os blocos remove uma alternativa
+incluída, preservando todas as respostas condicionais conhecidas; logo não
+há certificado global sem raiz.
+
+São limites de chamadas online da operação com τ e conselho disponíveis.
+Preparo estático A e calibração devem ser somados: numa sequência de N pedidos,
+o limite contabiliza A mais a soma dos respectivos custos online. Isso não é
+garantia de latência ou de conjuntos semanticamente melhores.
