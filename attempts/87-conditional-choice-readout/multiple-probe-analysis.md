@@ -301,3 +301,29 @@ implica aceleração de dLLM: na qualificação nativa V1 o controle lazy já
 certifica as seis propostas corretas antes de qualquer auditoria. Esse dado
 permanece negativo e não será ampliado para salvar a aplicação. Uma ligação
 neural útil, distinta e com comparador competente ainda precisa ser justificada.
+
+## 8. Resultado CPU da extensão
+
+Fonte e protocolo das seções 1–7 congelados em `3d156d67`, antes da primeira
+execução. Comando:
+
+```bash
+.venv-live/bin/python attempts/87-conditional-choice-readout/multiple_probe.py --audit
+```
+
+Saída completa:
+
+```json
+{"counts": {"forecast_k_cases": 1082, "instances": 47, "policy_runs": 17648, "subset_checks": 720}, "protocol": "A87-multiple-probe-CPU-v1", "scope": "finite rational correctness only; no neural/performance/priority claim", "stars_r4_n2_k2": {"perfect": "39/4", "wrong": "4"}}
+```
+
+Todas as asserções passaram, sem recusa: certificados independentes,
+deduplicação, equivalência com k=1, dois limites esperados, probabilidades de
+aprovação, consistência por execução e referências de OPT. O par de estrelas
+confirmou exatamente os valores previamente anunciados, 39/4 e 4. Os 720
+subconjuntos são 45 instâncias de quatro vértices vezes 16; as duas instâncias
+adicionais são os casos de estrelas. Não houve PRNG nem execução neural.
+
+Esses números verificam os casos do protocolo; a prova cobre a família
+abstrata sob suas hipóteses. Nenhum dos dois estabelece prioridade mundial,
+ganho de tempo de modelo ou adequação final como tema central ligado a dLLMs.
