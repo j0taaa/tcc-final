@@ -21,12 +21,17 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
-- [ ] Para [A87](attempts/87-conditional-choice-readout/online-probe-analysis.md),
-  auditar prioridade do método de testemunha aleatória. A qualificação nativa
+- [ ] Para [A87](attempts/87-conditional-choice-readout/matching-probe-analysis.md),
+  concluir prioridade específica e adequação do método de auditoria por
+  alvos não casados: prova escrita de esperança `2OPT` arbitrária e
+  `OPT+1` perfeita; 83.679 execuções do oráculo exaustivo passaram.
+  Revisões independentes não localizaram o mesmo passo nos antecedentes
+  ESA/IJCAI, mas isso não certifica novidade mundial. A qualificação nativa
   [V1](attempts/87-conditional-choice-readout/native-result-v1.md) não justificou
   implementar a auditoria: seis propostas corretas já certificadas antes dela,
   duas falsas fora da garantia de custo. Não ampliar V1 para resgatá-la.
-  A prova residual e a auditoria CPU não selecionam o tema central.
+  A nova prova e a auditoria CPU sustentam uma candidata teórica em FTC;
+  não demonstram ganho próprio de dLLM nem selecionam sozinhas esse tema.
 - [ ] Antes de selecionar outra campanha, justificar uma contribuição própria
   com teoria, utilidade geral e benefício demonstrável para o TCC de impacto
   solicitado. A leitura de LAVE/Saber/DecoCal e a avaliação independente não

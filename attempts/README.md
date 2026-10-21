@@ -7,6 +7,16 @@ comandos antigos pertencem às suas versões; consulte o
 
 ## Candidatas em investigação
 
+[A87 — Auditoria aleatória de alvos não casados](87-conditional-choice-readout/matching-probe-analysis.md):
+novo algoritmo candidato, com prova escrita de custo esperado `2OPT` sob
+conselho arbitrário e `OPT+1` perfeito, separação determinística e 83.679
+execuções exaustivas válidas. Prioridade plausível após revisão dirigida;
+ganho dLLM não demonstrado, V1 nativa negativa preservada. As análises anteriores
+de [consistência](87-conditional-choice-readout/README.md),
+[certificados mínimos](87-conditional-choice-readout/star-certificate-analysis.md)
+e [auditoria de todos os alvos](87-conditional-choice-readout/multiple-probe-analysis.md)
+permanecem separadas.
+
 [A82 — Triagem de cinco operadores para dLLMs](82-five-operator-screening/README.md):
 antirrepetição, alternativas sem reposição, campos antecipados, decisões
 coerentes com marginais preservadas e perguntas sobre entradas incompletas.
@@ -25,7 +35,6 @@ e suficiência científica abertas, sem vantagem neural estabelecida.
 prova escrita e oráculos finitos; prioridade e benefício completo pendentes.
 
 ## Investigações anteriores
-- [A87 — Consistência do produto em escolhas finitas](87-conditional-choice-readout/README.md), [certificados mínimos](87-conditional-choice-readout/star-certificate-analysis.md) e [auditoria aleatória de previsões](87-conditional-choice-readout/online-probe-analysis.md): provas candidatas e auditorias CPU, benefício neural pendente.
 - [A86 — Planejamento por prefixos: perfil/fidelidade viáveis, gate de benefício V3 negativo; aplicação encerrada](86-prefix-closure-planning/result-v3.md)
 - [A85 — Relaxação por checksum para capturas livres: prova candidata, sem consumidor com vantagem justificada](85-checksum-backreferences/README.md)
 - [A84 — Certificado com runner-up: prova local e piloto neural mais rápido, com perda de acurácia; não selecionada](84-full-marginal-certificate/result-v1.md)

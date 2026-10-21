@@ -253,3 +253,41 @@ as low com previsão high têm custo r; high sem arcos tem custo rn+r.
 São valores a testar, não resultados medidos. Preservar erros, recusas e
 interrupções; não ajustar casos após dados. O auditor testa correção finita,
 não prioridade, desempenho de modelo nem utilidade neural.
+
+## 8. Resultado da auditoria exaustiva
+
+Esta nota e `matching_probe.py` foram congelados em `c57da4a3` antes da
+primeira execução. Comando:
+
+```bash
+.venv-live/bin/python attempts/87-conditional-choice-readout/matching_probe.py --audit
+```
+
+Resultado: **PASS**, sem recusa ou falha. Saída dos contadores:
+
+```json
+{"forecast_cases":83568,"instances":640,"named_public_checks":2,"policy_runs":83679,"public_plans":642,"subset_checks":10016}
+```
+
+Os 83.520 pares exaustivos real/previsão foram executados, mais 48 entradas
+nas estrelas, incluindo as previsões coincidentes anunciadas. Houve 624
+tabelas reais na grade e 16 nas estrelas. Os 10.016 subconjuntos incluem os
+9.984 previstos na grade mais os 32 dos dois casos de estrelas com quatro
+vértices. Cada custo esperado foi somado exatamente com racionais, sem PRNG.
+
+Passaram certificados independentes, custos sem consultas duplicadas,
+robustez esperada 2OPT, consistência por execução, probabilidade de aprovação,
+referências de OPT, saturação/otimalidade dos matchings e os dois checks
+estruturais públicos. Para r=1,2,4,8 e n=2,3, os casos high confirmaram
+rn+1 com previsão high e rn+r sem previsão; os low confirmaram r.
+
+Exemplo racional previsto, não um benchmark neural: r=8,n=3 deu 25 consultas
+com previsão correta, contra 32 para MVC seguido de mandatory. Confiar
+cegamente na mesma previsão faria 24 no caso correto, mas 24 no caso low,
+onde a auditoria faz 8. Isso demonstra o tradeoff da família matemática,
+não dominância uniforme sobre todos os controles nem redução de latência.
+
+A auditoria finita não substitui a prova geral e não estabelece prioridade.
+O resultado sustenta uma candidata de contribuição teórica em aquisição
+certificada de informação; a exigência de ganho próprio em dLLMs continua
+pendente e a V1 negativa permanece preservada.
