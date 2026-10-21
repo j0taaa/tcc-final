@@ -327,3 +327,66 @@ adicionais são os casos de estrelas. Não houve PRNG nem execução neural.
 Esses números verificam os casos do protocolo; a prova cobre a família
 abstrata sob suas hipóteses. Nenhum dos dois estabelece prioridade mundial,
 ganho de tempo de modelo ou adequação final como tema central ligado a dLLMs.
+
+## 9. Revisão adversarial: conclusão lazy e nova família sharp
+
+Posterior ao congelamento e à auditoria da fonte: a conclusão que consulta
+cegamente todo o cover escolhido admite dominância. Depois das auditorias,
+processe as pontas realmente forced e, antes de consultar cada vértice do
+cover, pule-o se todas as suas arestas já estiverem certificadas. Atualize os
+bounds após cada resposta e pare somente com certificado completo. Arestas
+certificadas não reabrem. Essa conclusão usa somente vértices do cover
+escolhido e de M, além das auditorias já pagas. Portanto as provas superiores
+das seções 2–3 continuam válidas. Trata-se de uma especificação/prova de
+refinamento, não de uma implementação já auditada; `multiple_probe.py`
+permanece congelado como está.
+
+Na família da seção 4, consultar c primeiro pode eliminar todas as folhas
+falsamente previstas. Sua sharpness é apenas da política congelada mais fraca;
+ela não justifica sharpness para essa conclusão lazy. Preservamos o argumento
+anterior com seu escopo e apresentamos **outra família**, sem alterar dados.
+
+Tome uma estrela c—ℓ_j com r folhas e n−1 arestas isoladas x_i—y_i. Ponha
+
+\[
+τ={1\over8(n+r+1)},\qquad ε={τ^2\over16},\qquad δ={ε\over4}.
+\]
+
+Use α_c=α_x=τ/4, β_ℓ=τ−ε e β_y=τ−δ. Na estrela real, u=v=ε/4;
+nas arestas isoladas, u=v=τ/8. Todas as caps são menores que τ, toda aresta
+pertence a H e todas as somas de resposta são estritamente menores que a cap.
+As somas de caps de A e B são menores que 1/32 e 1/8, respectivamente, de
+modo que há roots normalizados positivos. Em cada estrela,
+u+β_ℓ=τ−3ε/4<τ e v+α_c<τ: **não há vértice mandatory**. Nos pares,
+somente y_i é mandatory. Logo M={y_i} e OPT=n.
+
+A previsão produto-raiz tem componentes 2αβ. Na estrela,
+τ(τ−ε)/2>ε, mas τ/4+τ(τ−ε)/2<τ. Assim prevê todas as folhas e não c.
+Nos pares prevê y_i e não x_i. Portanto Mhat={ℓ_j}∪{y_i}, P=Mhat e
+Cpred=∅. Exatamente n−1 dos n−1+r testes de alvo aprovam.
+
+Se as k auditorias aprovam, nenhuma consulta em c ocorreu. Consultar uma
+folha certifica somente sua própria aresta e não força c. Mesmo a conclusão
+lazy precisa de todas as r folhas e dos n−1 vértices y_i mandatory; as fontes
+x_i das auditorias acrescentam no máximo k consultas. Se um teste rejeita,
+c já foi consultado. Com C0={c,x_i}, todos os pares exigem x_i e depois y_i,
+inclusive os já revelados por auditorias; o custo total é 2n−1. Portanto
+
+\[
+q=\left({n-1\over n-1+r}\right)^k,
+\quad ALG_{aceita}=n-1+r+O(k),\quad ALG_{rejeita}=2n-1.
+\]
+
+Com k≥2 fixo e r=(k+1)(n−1)/(k−1) inteiro, a razão esperada tende a
+2+c_k. Para k=1, r=n³ fornece limite 3. Esta sharpness resiste à poda ativa
+e às consultas forced imediatas dessa conclusão, sem afirmar limite inferior
+para todos os algoritmos aleatórios. Os componentes iguais dos dois lados
+permitem a mesma extensão a uma joint positiva descrita na seção 4.
+
+Também não basta randomizar a ordem de P sem auditar testemunhas externas:
+na estrela isolada desta família, previsão manda consultar todas as folhas,
+mas M real é vazio e OPT=1 pelo centro. Toda ordem de folhas, mesmo aleatória
+com poda/forced, custa r; o teste no centro rejeita e conclui em uma consulta.
+Esse separador explicita por que a auditoria tem conteúdo além de ordenar ou
+podar as consultas previstas. Continua sendo utilidade teórica sob o contrato,
+sem observação de ganho neural.
