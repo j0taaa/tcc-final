@@ -291,3 +291,89 @@ A auditoria finita não substitui a prova geral e não estabelece prioridade.
 O resultado sustenta uma candidata de contribuição teórica em aquisição
 certificada de informação; a exigência de ganho próprio em dLLMs continua
 pendente e a V1 negativa permanece preservada.
+
+## 9. Outro consumidor: conjunto por limiar, sem incumbente
+
+Esta seção declara uma operação diferente da escolha do máximo na V1.
+Seja um catálogo externo finito E de palavras de mesmo comprimento, dividido
+em dois blocos. Uma lei de dois blocos/mistura de ordens atribui
+
+\[
+J(a,b)=\tfrac12R(a)Q_B(b\mid a)+\tfrac12C(b)Q_A(a\mid b)
+=u_{ab}+v_{ab}.
+\]
+
+R e C vêm da raiz; Q_B e Q_A são produtos de heads dos blocos nas respectivas
+consultas condicionais. Esses fatores normalizam sobre palavras completas do
+vocabulário, sem renormalizar o catálogo. Políticas agrupadas/misturas têm
+antecedentes em [TUBE, seção 2.3](https://arxiv.org/html/2605.24292v1);
+essa lei não é a contribuição reivindicada. Não se exige que heads de
+diferentes consultas sejam condicionais de uma única posterior Bayesiana.
+
+A operação é devolver exatamente {e∈E:J(e)≥τ}, com τ externo conhecido,
+pagando por consultas condicionais compartilhadas. Exija 0<u<α=R/2,
+0<v<β=C/2 e somas de estrelas estritamente menores que suas caps; cabeças
+com zeros atingíveis requerem outro contrato. Para τ≤0, todo o catálogo é
+aceito sem consulta condicional. Para τ>0, ponha
+
+\[
+H=\{ab:α_a+β_b>τ\},\quad
+M=\{b:τ-β_b<u_{ab}<τ\}\cup\{a:τ-α_a<v_{ab}<τ\}.
+\]
+
+**Certificado iff cover+M.** Uma aresta de H com nenhuma ponta consultada
+admite valores dos dois lados do limiar. Se uma ponta retorna x, a outra só
+é ambígua quando τ−cap<x<τ. Se x≥τ, a positividade do outro componente já
+garante J>τ. Se x+cap≤τ, a cap estritamente inatingível garante J<τ.
+No intervalo aberto de ambiguidade, o componente ainda desconhecido admite
+ambas as respostas: seu alvo é mandatory mesmo revelando todos os outros
+vértices. Reciprocamente, um cover contendo M resolve todas as arestas.
+Isso também cobre J=τ: ambas as pontas ficam mandatory e são consultadas.
+As desigualdades de H/M são as mesmas para saída J>τ ou J≥τ neste contrato
+interior; com zeros/caps atingíveis, as fronteiras são diferentes.
+
+Uma testemunha selecionada verifica o teste real τ−cap_p<x<τ; portanto é
+adjacente e unilateral. Depois de qualquer cover, só faltam tais alvos de M.
+O teorema das seções 3–4 aplica-se com caps arbitrárias, **sem** consultar
+cegamente todas as caps≥τ e sem supor um vencedor. A raiz, construção do
+catálogo, previsão e preparação continuam tendo custos próprios.
+
+[Conformal Language Modeling, ICLR 2024, seção 5.2](https://arxiv.org/html/2306.10193v2)
+emprega likelihood como qualidade e rejeição por limiar; não apresenta
+exatamente este catálogo/score. Split conformal com score −J, função de
+score/catálogo fixos antes da calibração, dados permutáveis e inclusão de
+empates fornece a cobertura usual. A aquisição exata preservaria o MESMO
+conjunto para cada seed e, assim, essa cobertura. **Cobertura sozinha não
+demonstra utilidade**: um score ruim pode devolver o catálogo inteiro.
+
+Objeções prospectivas: se o catálogo foi gerado pela própria política J,
+reutilizar as consultas da geração pode já fornecer um cover; resta apenas
+mandatory e desaparece a escolha que esta auditoria melhora. Se um bloco tem
+massas muito menores que o outro, um lado inteiro pode ser mandatory e o MVC
+já pode ser ótimo. Além disso J bruto não é posterior das classes do catálogo;
+normalizá-lo por soma desconhecida mudaria o certificado. Para catálogo externo,
+é preciso comparar tamanho/qualidade dos conjuntos em cobertura semelhante
+contra produto raiz, score indexado/dJev e a própria previsão barata Jhat,
+todos calibrados separadamente. Para custo, os controles são capped-lazy e
+advice-first-lazy com a mesma previsão, pagando também preparo e calibração.
+
+### Diagnóstico estrutural exploratório, a congelar antes de ler os dados
+
+Uma fonte nova `threshold_set_diagnostic.py` reutilizará as oito capturas de
+treino já publicadas em `docs/artifacts/raw/a87_native_v1.jsonl.gz`, sem novos
+forwards, reabrir o gate MAP da V1 ou alegar validação conformal. É uma análise
+exploratória de dados antigos, não um teste prospectivo de qualidade.
+
+Verificar SHA256 descompactado
+`c828867d81991ee26f8887858839471e2c3fdbdac6a677993d47cdd024675f04`,
+proveniência dos inputs e oito casos completos/interiores. Para CADA caso e
+TODOS os 40 limiares públicos τ=2^(−j), j=1,…,40, calcular os arcos filtrados
+reais e os previstos pelo produto raiz, hat_u=hat_v=2αβ. Preparar o plano
+de matching usando só caps/previsão e calcular R. Descrever tamanho de H/M/R,
+OPT=|M|+vc(H−M), custo do cover C0 unido a M, erros do conjunto previsto,
+testemunhas de R que aprovam e tamanho do conjunto J≥τ. São 320 linhas.
+
+Não selecionar o melhor limiar, calibrar, medir política adaptativa ou promover
+o custo offline a economia do método. Preservar todas as linhas/recusas.
+O diagnóstico pergunta se há trabalho que a auditoria possa influenciar antes
+de justificar uma coleta nova; não é um gate positivo de benefício neural.
