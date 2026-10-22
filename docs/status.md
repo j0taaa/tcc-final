@@ -25,6 +25,7 @@ A biblioteca, o artigo histórico e as candidatas de pesquisa têm escopos disti
 
 ## Onde conferir
 
+- [Triagem de novas operações em 22/10](research/next-operation-audit-2026-10-22.md): localização de edições e likelihood top-k não selecionadas; hipótese de segurança da seleção paralela ainda em revisão, sem protótipo ou campanha.
 - A24: [resultado operacional posterior](../attempts/24-certified-depth-approximation/work/evidence/consumer-v4-development-first-v1/report.md).
 - A65: [decisão da aplicação](../attempts/65-terminal-forecast-readout/work/native-resource-result-v8.md).
 - A68: [decisão de custo completo](../attempts/68-residual-bernstein-sampling/work/result-v7.md).
