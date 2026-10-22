@@ -126,3 +126,42 @@ contra controles com a mesma visibilidade. A prova abstrata não demonstra
 bit-identidade de um executor GPU, ocultação de latência física, melhoria
 neural ou viabilidade integral na GPU. Nenhuma captura foi autorizada por
 esta triagem.
+
+### Revisão independente R1 e fronteira ainda aberta
+
+A revisão `dlm-flow-selection-gap-20261022-r1` confirmou o caso amostrado,
+com distância de variação total .24 nas saídas finais. Conferiu a regra de
+propostas, `gather` da confiança do token proposto e `topk` no
+[controlador oficial LLaDA](https://raw.githubusercontent.com/ML-GSAI/LLaDA/main/generate.py).
+Isso identifica um controlador pertinente, não estados observados em um
+checkpoint. A revisão também confirmou a prova construtiva e a ressalva
+das fibras, com hipóteses explícitas sobre todo o estado observável.
+
+Acrescentou dois antecedentes importantes: [CIV, §§4.3 e 6.2](https://arxiv.org/html/2508.09288)
+para labels e máscaras de atenção em modelos congelados, sem importar sua
+prova cujo sentido da desigualdade de confiança diverge entre essas seções;
+e [Popescu–Hölzl–Nipkow](https://www.andreipopescu.uk/pdf/CALCO2013.pdf)
+para o canal clássico em que escalonamento altera a distribuição do valor
+público final. [Faceted SME](https://users.soe.ucsc.edu/~cormac/papers/18ccs.pdf)
+também é antecedente de compartilhamento de execução seguro. Nenhum desses
+ingredientes é reivindicado como próprio.
+
+O parecer R1 recomenda não selecionar o método central: a correção proposta
+é operacionalmente igual a barreira + filas locais + RNG endereçado + saída
+segura. A análise pode fornecer um diagnóstico específico, mas ainda não
+mostra contribuição própria suficiente ou vantagem neural. Nenhum oráculo
+foi executado por esse parecer. O caso guloso escrito acima não fez parte
+do brief inicial e ainda não recebe validação independente por R1.
+
+A nova revisão `dlm-flow-contribution-greedy-20261022-r2` recebeu o brief
+original, os achados R1, o caso guloso e a objeção de composição. Examina a
+fronteira entre um método já conhecido para a mesma operação e uma capacidade
+nova obtida por mecanismos clássicos, além de procurar uma diferença
+construtiva verificável em relação às filas locais. Não autoriza código ou
+campanha; selecionar pela ausência de publicação idêntica continuaria errado.
+
+A inspeção estática do checkpoint LLaDA local encontrou outra fronteira:
+`attention_bias` é aceito, mas máscaras booleanas usam o menor valor finito
+do dtype, e `_cast_attn_bias` pode substituir infinito negativo por esse
+valor. A prova para uma barreira ideal não certifica esse caminho numérico.
+Não houve alteração dos pesos, cache ou implementação externa, nem execução.
