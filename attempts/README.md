@@ -7,6 +7,14 @@ comandos antigos pertencem às suas versões; consulte o
 
 ## Candidatas em investigação
 
+[A88 — Marginal de uma posição pela primeira fixação](88-first-commit-marginals/README.md):
+prova escrita de estimativa normalizada e sem viés, com redução de covariância
+sob uma política explícita de dLLM. Oráculo racional aprovado em 11 casos,
+incluindo ganho e perda de eficiência frente ao controle forte. A família
+de orçamentos e o protocolo de qualificação foram congelados antes de dados
+neurais. Benefício real, novidade suficiente e seleção central pendentes;
+implicit capture e votação probabilística são antecedentes reconhecidos.
+
 [A87 — Auditoria aleatória de alvos não casados](87-conditional-choice-readout/matching-probe-analysis.md):
 novo algoritmo candidato, com prova escrita de custo esperado `2OPT` sob
 conselho arbitrário e `OPT+1` perfeito, separação determinística e 83.679

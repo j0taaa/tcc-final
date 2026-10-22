@@ -21,6 +21,14 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
+- [ ] Concluir a qualificação pequena de desenvolvimento da
+  [A88](attempts/88-first-commit-marginals/native-protocol-v1.md), com fonte
+  e entradas congeladas antes da captura. Comparar a família inteira com
+  contagens e leitura condicionada à seleção, ambas encerradas na primeira
+  fixação e com raiz reutilizada. A prova e os 11 casos racionais aprovados
+  não demonstram ganho de checkpoint. Qualquer variante escolhida no
+  desenvolvimento precisa de teste independente antes de seleção central;
+  preservar resultado negativo ou inconclusivo sem ajustar o protocolo.
 - [ ] Para [A87](attempts/87-conditional-choice-readout/matching-probe-analysis.md),
   concluir prioridade específica e adequação do método de auditoria por
   alvos não casados: prova escrita de esperança `2OPT` arbitrária e
@@ -35,8 +43,9 @@ utilidade demonstrável continua aberta.
   A aplicação distinta de conjuntos por limiar também foi examinada: nos
   320 cenários exploratórios, advice-first e capped-lazy foram ótimos em
   todos e a candidata não venceu nenhum. Não ajustar esse replay para resgate.
-  A aceitação do núcleo teórico como centro do TCC foi perguntada ao usuário;
-  o requisito original permanece vigente sem resposta.
+  O usuário pediu explicação da pergunta sobre mudar o centro do TCC;
+  não aprovou essa mudança. O requisito original de utilidade e benefício
+  demonstrável em dLLMs permanece vigente.
 - [ ] Antes de selecionar outra campanha, justificar uma contribuição própria
   com teoria, utilidade geral e benefício demonstrável para o TCC de impacto
   solicitado. A leitura de LAVE/Saber/DecoCal e a avaliação independente não
