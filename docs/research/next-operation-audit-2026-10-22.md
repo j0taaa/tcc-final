@@ -165,3 +165,42 @@ A inspeção estática do checkpoint LLaDA local encontrou outra fronteira:
 do dtype, e `_cast_attn_bias` pode substituir infinito negativo por esse
 valor. A prova para uma barreira ideal não certifica esse caminho numérico.
 Não houve alteração dos pesos, cache ou implementação externa, nem execução.
+
+### Revisão independente R2: agrupamento guloso e critério de contribuição
+
+`dlm-flow-contribution-greedy-20261022-r2` confirmou o caso guloso com TV=1.
+O segredo controla quantas posições públicas compartilham a mesma avaliação
+anterior aos commitments. O isolamento por forward permanece válido; os
+próprios estados públicos passam a divergir por causa do controlador.
+
+A revisão também provou uma fronteira: top-1 guloso, monotônico, com cabeças
+e estado persistente públicos independentes de H e de esperas globais, tem a
+mesma sequência pública depois de remover passos exclusivamente privados.
+O melhor candidato público é função do estado público. Um passo privado
+não muda esse estado; um passo público necessariamente escolhe esse melhor
+candidato. Indução no número de commitments públicos prova a identidade.
+Exigem-se conclusão de todas as posições e desempate fixo; a prova não cobre
+revisão, truncamento, evolução por forward, parada privada ou latência física.
+A identidade por época global da R1 é suficiente, mas não necessária para
+segurança do valor final. O caso amostrado é diferente porque esperas podem
+sortear e descartar novas propostas públicas.
+
+R2 corrigiu a objeção de prioridade: definir um controle como o próprio
+método e exigir superioridade sobre ele não demonstra anterioridade. É
+necessário identificar uma receita anterior aplicável à mesma operação,
+com as mesmas hipóteses e comportamento. Peças clássicas não tornam toda
+contribuição de sistemas vazia. Contudo, uma adaptação direta sem vantagem
+própria demonstrada continua insuficiente para o objetivo deste TCC.
+
+Não foi localizada uma modificação construtiva própria adicional. Faltam um
+consumidor concreto que se beneficie do canvas compartilhado e um contrato
+executável da barreira. SME serial/batched com os mesmos pesos, public-first
+com H recebendo L real e a composição com filas locais são os controles
+seguros. Esta última é a mesma condição experimental que a correção atual,
+não um adversário independente a ser superado por definição.
+
+**Decisão:** preservar o diagnóstico e as provas. A suficiência científica
+permanece aberta, sem tema central ou qualificador nativo selecionado. Nem
+a ausência de uma publicação idêntica nem a identidade com um controle
+construído resolvem a prioridade. A pendência de prioridade específica da
+A87 é examinada separadamente, sem reabrir suas aplicações neurais negativas.
