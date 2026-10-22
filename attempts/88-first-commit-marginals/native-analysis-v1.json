@@ -1,0 +1,3055 @@
+{
+  "schema": "A88-analysis-v1",
+  "source_commit": "aa8ec805c81f40247536da55d7480882f270c8f6",
+  "audit": {
+    "physical_model_calls": 968,
+    "logical_steps": 1024,
+    "completed_replicas": 64,
+    "roots": 8,
+    "terminal": {
+      "capture_output_seconds": 0.30949196382425725,
+      "status": "COMPLETE",
+      "type": "terminal",
+      "wall_seconds": 264.2999835140072
+    },
+    "max_numeric_diagnostics": {
+      "max_cdf_end_error": 5.551115123125783e-15,
+      "max_q_sum_error": 2.6645352591003757e-15,
+      "zero_clean_probabilities": 0.0
+    }
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 888801,
+    "unit": "whole independent auxiliary replica, paired between methods",
+    "interval": "percentile 2.5/97.5%; exploratory, N=8, no multiplicity correction"
+  },
+  "setup_seconds": {
+    "input_source_preparation": 49.60784540104214,
+    "source_reverification": 52.89516848605126,
+    "load": 97.01953173498623
+  },
+  "cost_status": "MODELED_REPLAY_NOT_END_TO_END_DECODER_LATENCY",
+  "cases": [
+    {
+      "case": 0,
+      "row": 150,
+      "subject": "high_school_us_history",
+      "mean_Y5": [
+        1.6235817375664256e-19,
+        0.8426847789748915,
+        0.15731522102510836,
+        4.435230670654409e-20,
+        1.0444540898312616e-19
+      ],
+      "useful_option_mass": 0.9999999999999998,
+      "mass_gate": true,
+      "status": "ANALYZED",
+      "methods": {
+        "MC": {
+          "variance_trace": 0.27318759759290895,
+          "conditional_delta_mean": 0.20876109299251236,
+          "between_Y_sample_variance": 0.0644265046003966,
+          "mean_Y5": [
+            1.6235817375664256e-19,
+            0.8426847789748915,
+            0.15731522102510836,
+            4.435230670654409e-20,
+            1.0444540898312616e-19
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 2.710395604584074,
+          "expected_unique_model_queries_block": 8.160317072835898,
+          "global_cache_model_seconds_block": 2.2267874131573095,
+          "kernel_output_seconds_block": 0.13415137051444517,
+          "global_cache_cost_seconds_block": 27.30125698643171,
+          "mean_cost_seconds": 3.4126571233039638,
+          "variance_times_cost_exploratory": 0.9322956009237375,
+          "root_only_cost_seconds_block": 28.324568091102194,
+          "root_only_distinct_replica_U_product": 0.9734762609170523,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d0": {
+          "variance_trace": 0.0899570235075546,
+          "conditional_delta_mean": 0.025530518907158004,
+          "between_Y_sample_variance": 0.0644265046003966,
+          "mean_Y5": [
+            1.6235817375664256e-19,
+            0.8426847789748915,
+            0.15731522102510836,
+            4.435230670654409e-20,
+            1.0444540898312616e-19
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 2.710395604584074,
+          "expected_unique_model_queries_block": 8.160317072835898,
+          "global_cache_model_seconds_block": 2.2267874131573095,
+          "kernel_output_seconds_block": 0.17999880556717748,
+          "global_cache_cost_seconds_block": 27.347104421484442,
+          "mean_cost_seconds": 3.4183880526855552,
+          "variance_times_cost_exploratory": 0.30750801441337833,
+          "root_only_cost_seconds_block": 28.370415526154922,
+          "root_only_distinct_replica_U_product": 0.320699871516257,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d1": {
+          "variance_trace": 0.07362512441043854,
+          "conditional_delta_mean": 0.009198619810041947,
+          "between_Y_sample_variance": 0.0644265046003966,
+          "mean_Y5": [
+            1.6235817375664256e-19,
+            0.8426847789748915,
+            0.15731522102510836,
+            4.435230670654409e-20,
+            1.0444540898312616e-19
+          ],
+          "mean_prefix_steps": 1.0,
+          "mean_logical_steps": 3.535325398847946,
+          "expected_unique_model_queries_block": 13.968750695406854,
+          "global_cache_model_seconds_block": 3.138584401040585,
+          "kernel_output_seconds_block": 0.2196627610529242,
+          "global_cache_cost_seconds_block": 28.298565364853463,
+          "mean_cost_seconds": 3.537320670606683,
+          "variance_times_cost_exploratory": 0.26043567445303295,
+          "root_only_cost_seconds_block": 29.445287829846144,
+          "root_only_distinct_replica_U_product": 0.27111528868918655,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7206511816692174,
+            "d0": 0.1530767906981011
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.6337636801633819,
+                0.847314622673509
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.002089284114876769,
+                0.5195567934885337
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d2": {
+          "variance_trace": 0.07310540119124069,
+          "conditional_delta_mean": 0.008678896590844089,
+          "between_Y_sample_variance": 0.0644265046003966,
+          "mean_Y5": [
+            1.6235817375664256e-19,
+            0.8426847789748915,
+            0.15731522102510836,
+            4.435230670654409e-20,
+            1.0444540898312616e-19
+          ],
+          "mean_prefix_steps": 2.0,
+          "mean_logical_steps": 3.901946366745594,
+          "expected_unique_model_queries_block": 16.901718438588034,
+          "global_cache_model_seconds_block": 3.6018754339998993,
+          "kernel_output_seconds_block": 0.22275330985616507,
+          "global_cache_cost_seconds_block": 28.76494694661602,
+          "mean_cost_seconds": 3.5956183683270027,
+          "variance_times_cost_exploratory": 0.2628591233471398,
+          "root_only_cost_seconds_block": 29.9116694116087,
+          "root_only_distinct_replica_U_product": 0.2735505740865762,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7180517390764328,
+            "d0": 0.14519586148482533
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.6329199131616448,
+                0.851817681753129
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.00039261354468267395,
+                0.5347888596826545
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d4": {
+          "variance_trace": 0.06477753102631897,
+          "conditional_delta_mean": 0.00035102642592237104,
+          "between_Y_sample_variance": 0.0644265046003966,
+          "mean_Y5": [
+            1.6235817375664256e-19,
+            0.8426847789748915,
+            0.15731522102510836,
+            4.435230670654409e-20,
+            1.0444540898312616e-19
+          ],
+          "mean_prefix_steps": 4.0,
+          "mean_logical_steps": 5.121852504201401,
+          "expected_unique_model_queries_block": 24.9748200336112,
+          "global_cache_model_seconds_block": 4.871013099915408,
+          "kernel_output_seconds_block": 0.23186968733988064,
+          "global_cache_cost_seconds_block": 30.043200990015244,
+          "mean_cost_seconds": 3.7554001237519055,
+          "variance_times_cost_exploratory": 0.24326554803258116,
+          "root_only_cost_seconds_block": 31.4542718647619,
+          "root_only_distinct_replica_U_product": 0.2547564713594751,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7390682227916245,
+            "d0": 0.20891314492518231
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.6405163357265848,
+                0.9185600352203784
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.023850188214265145,
+                0.7168872100178967
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d8": {
+          "variance_trace": 0.06442655050859115,
+          "conditional_delta_mean": 4.5908194557697403e-08,
+          "between_Y_sample_variance": 0.0644265046003966,
+          "mean_Y5": [
+            1.6235817375664256e-19,
+            0.8426847789748915,
+            0.15731522102510836,
+            4.435230670654409e-20,
+            1.0444540898312616e-19
+          ],
+          "mean_prefix_steps": 8.0,
+          "mean_logical_steps": 9.384552082811684,
+          "expected_unique_model_queries_block": 59.07641666249347,
+          "global_cache_model_seconds_block": 10.229360100066321,
+          "kernel_output_seconds_block": 0.25618615850580745,
+          "global_cache_cost_seconds_block": 35.42586446133208,
+          "mean_cost_seconds": 4.42823305766651,
+          "variance_times_cost_exploratory": 0.2852957807535645,
+          "root_only_cost_seconds_block": 36.83693533607874,
+          "root_only_distinct_replica_U_product": 0.2962464162757028,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6939857053161169,
+            "d0": 0.07223302359188033
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.6059218969032882,
+                0.9165732504038532
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -0.08989638667860954,
+                0.70411268778369
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "full": {
+          "variance_trace": 0.0644265046003966,
+          "conditional_delta_mean": 0.0,
+          "between_Y_sample_variance": 0.0644265046003966,
+          "mean_Y5": [
+            1.6235817375664256e-19,
+            0.8426847789748915,
+            0.15731522102510836,
+            4.435230670654409e-20,
+            1.0444540898312616e-19
+          ],
+          "mean_prefix_steps": 16.0,
+          "mean_logical_steps": 16.0,
+          "expected_unique_model_queries_block": 112.0,
+          "global_cache_model_seconds_block": 18.550671134056756,
+          "kernel_output_seconds_block": 0.28981671539804665,
+          "global_cache_cost_seconds_block": 43.78080605221476,
+          "mean_cost_seconds": 5.472600756526845,
+          "variance_times_cost_exploratory": 0.35258053781651066,
+          "root_only_cost_seconds_block": 45.19187692696141,
+          "root_only_distinct_replica_U_product": 0.36395819585900424,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6218146503456987,
+            "d0": -0.14657349171570533
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5396620335063731,
+                0.9025689547385858
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -0.2964921936900491,
+                0.6543063601378131
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "eta.01": {
+          "variance_trace": 0.06442657571208844,
+          "conditional_delta_mean": 7.111169184745309e-08,
+          "between_Y_sample_variance": 0.0644265046003966,
+          "mean_Y5": [
+            1.6235817375664256e-19,
+            0.8426847789748915,
+            0.15731522102510836,
+            4.435230670654409e-20,
+            1.0444540898312616e-19
+          ],
+          "mean_prefix_steps": 5.5,
+          "mean_logical_steps": 6.916810016416177,
+          "expected_unique_model_queries_block": 39.33448013132941,
+          "global_cache_model_seconds_block": 7.125099651613455,
+          "kernel_output_seconds_block": 0.24167354853226222,
+          "global_cache_cost_seconds_block": 32.30709140290567,
+          "mean_cost_seconds": 4.038386425363209,
+          "variance_times_cost_exploratory": 0.26017940878833296,
+          "root_only_cost_seconds_block": 33.718162277652326,
+          "root_only_distinct_replica_U_product": 0.2726501972303297,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7209260576468002,
+            "d0": 0.1539101532535092
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.6254654100369844,
+                0.919844516395465
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -0.02182029725524038,
+                0.7195491752823701
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.0001": {
+          "variance_trace": 0.06442650460090153,
+          "conditional_delta_mean": 5.049268421811245e-13,
+          "between_Y_sample_variance": 0.0644265046003966,
+          "mean_Y5": [
+            1.6235817375664256e-19,
+            0.8426847789748915,
+            0.15731522102510836,
+            4.435230670654409e-20,
+            1.0444540898312616e-19
+          ],
+          "mean_prefix_steps": 6.875,
+          "mean_logical_steps": 7.927185817782183,
+          "expected_unique_model_queries_block": 47.417486542257485,
+          "global_cache_model_seconds_block": 8.396288980934756,
+          "kernel_output_seconds_block": 0.24823443792128724,
+          "global_cache_cost_seconds_block": 33.584841621616,
+          "mean_cost_seconds": 4.198105202702,
+          "variance_times_cost_exploratory": 0.27046924415694906,
+          "root_only_cost_seconds_block": 34.995912496362656,
+          "root_only_distinct_replica_U_product": 0.2834424528726086,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7098889623752782,
+            "d0": 0.12044814613071719
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.615798759487288,
+                0.9172668702801366
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -0.0463875481589462,
+                0.712220813948076
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        }
+      }
+    },
+    {
+      "case": 1,
+      "row": 209,
+      "subject": "miscellaneous",
+      "mean_Y5": [
+        0.8134412053766314,
+        4.7461582148444185e-33,
+        9.438919324739081e-33,
+        0.1865587946233686,
+        6.30350609317395e-33
+      ],
+      "useful_option_mass": 1.0,
+      "mass_gate": true,
+      "status": "ANALYZED",
+      "methods": {
+        "MC": {
+          "variance_trace": 0.3213891279130017,
+          "conditional_delta_mean": 0.1783498769616979,
+          "between_Y_sample_variance": 0.14303925095130382,
+          "mean_Y5": [
+            0.8134412053766314,
+            4.7461582148444185e-33,
+            9.438919324739081e-33,
+            0.1865587946233686,
+            6.30350609317395e-33
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 4.5223016871444806,
+          "expected_unique_model_queries_block": 16.17841310905324,
+          "global_cache_model_seconds_block": 1.3091326915322425,
+          "kernel_output_seconds_block": 0.018683155088378957,
+          "global_cache_cost_seconds_block": 26.268134049380574,
+          "mean_cost_seconds": 3.2835167561725718,
+          "variance_times_cost_exploratory": 1.055286586754031,
+          "root_only_cost_seconds_block": 27.318077380199924,
+          "root_only_distinct_replica_U_product": 1.09940650862706,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d0": {
+          "variance_trace": 0.2760473445443081,
+          "conditional_delta_mean": 0.13300809359300433,
+          "between_Y_sample_variance": 0.14303925095130382,
+          "mean_Y5": [
+            0.8134412053766314,
+            4.7461582148444185e-33,
+            9.438919324739081e-33,
+            0.1865587946233686,
+            6.30350609317395e-33
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 4.5223016871444806,
+          "expected_unique_model_queries_block": 16.17841310905324,
+          "global_cache_model_seconds_block": 1.3091326915322425,
+          "kernel_output_seconds_block": 0.02123400650341925,
+          "global_cache_cost_seconds_block": 26.270684900795615,
+          "mean_cost_seconds": 3.283835612599452,
+          "variance_times_cost_exploratory": 0.90649410077811,
+          "root_only_cost_seconds_block": 27.320628231614965,
+          "root_only_distinct_replica_U_product": 0.9443271010726533,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d1": {
+          "variance_trace": 0.2760473445443081,
+          "conditional_delta_mean": 0.13300809359300433,
+          "between_Y_sample_variance": 0.14303925095130382,
+          "mean_Y5": [
+            0.8134412053766314,
+            4.7461582148444185e-33,
+            9.438919324739081e-33,
+            0.1865587946233686,
+            6.30350609317395e-33
+          ],
+          "mean_prefix_steps": 1.0,
+          "mean_logical_steps": 4.5223016871444806,
+          "expected_unique_model_queries_block": 16.17841310905324,
+          "global_cache_model_seconds_block": 1.3091326915322425,
+          "kernel_output_seconds_block": 0.022782880113282472,
+          "global_cache_cost_seconds_block": 26.27223377440548,
+          "mean_cost_seconds": 3.284029221800685,
+          "variance_times_cost_exploratory": 0.9065475460839897,
+          "root_only_cost_seconds_block": 27.322177105224828,
+          "root_only_distinct_replica_U_product": 0.9443801891529613,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.1409465850670476,
+            "d0": -5.895825006896338e-05
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                -0.00016058659747216763,
+                0.5558866449414768
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -6.152557078309417e-05,
+                -5.7983270149386534e-05
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d2": {
+          "variance_trace": 0.2760473445443081,
+          "conditional_delta_mean": 0.1330080935930043,
+          "between_Y_sample_variance": 0.14303925095130382,
+          "mean_Y5": [
+            0.8134412053766314,
+            4.7461582148444185e-33,
+            9.438919324739081e-33,
+            0.1865587946233686,
+            6.30350609317395e-33
+          ],
+          "mean_prefix_steps": 2.0,
+          "mean_logical_steps": 4.5223016871444806,
+          "expected_unique_model_queries_block": 16.17841310905324,
+          "global_cache_model_seconds_block": 1.3091326915322425,
+          "kernel_output_seconds_block": 0.024322788113550514,
+          "global_cache_cost_seconds_block": 26.273773682405746,
+          "mean_cost_seconds": 3.2842217103007183,
+          "variance_times_cost_exploratory": 0.9066006820232793,
+          "root_only_cost_seconds_block": 27.323717013225096,
+          "root_only_distinct_replica_U_product": 0.9444332463873453,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.14089623292578424,
+            "d0": -0.00011757522203148518
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                -0.00022073231764052625,
+                0.5558606223987003
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -0.00012186402053220302,
+                -0.00011596658656398695
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d4": {
+          "variance_trace": 0.14499849462161196,
+          "conditional_delta_mean": 0.0019592436703081513,
+          "between_Y_sample_variance": 0.14303925095130382,
+          "mean_Y5": [
+            0.8134412053766314,
+            4.7461582148444185e-33,
+            9.438919324739081e-33,
+            0.1865587946233686,
+            6.30350609317395e-33
+          ],
+          "mean_prefix_steps": 4.0,
+          "mean_logical_steps": 5.39550144494083,
+          "expected_unique_model_queries_block": 23.163844956837895,
+          "global_cache_model_seconds_block": 1.873594336043702,
+          "kernel_output_seconds_block": 0.031087220048611173,
+          "global_cache_cost_seconds_block": 26.844999758852268,
+          "mean_cost_seconds": 3.3556249698565335,
+          "variance_times_cost_exploratory": 0.48656056914388934,
+          "root_only_cost_seconds_block": 27.89495649963947,
+          "root_only_distinct_replica_U_product": 0.5059710584163241,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.5389303955425919,
+            "d0": 0.4632501538330598
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.4006658513222553,
+                0.720784750224128
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.21320521201255616,
+                0.6528456303226493
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d8": {
+          "variance_trace": 0.14303925095130382,
+          "conditional_delta_mean": 3.851950757363333e-34,
+          "between_Y_sample_variance": 0.14303925095130382,
+          "mean_Y5": [
+            0.8134412053766314,
+            4.7461582148444185e-33,
+            9.438919324739081e-33,
+            0.1865587946233686,
+            6.30350609317395e-33
+          ],
+          "mean_prefix_steps": 8.0,
+          "mean_logical_steps": 9.000248387899832,
+          "expected_unique_model_queries_block": 47.00198710319866,
+          "global_cache_model_seconds_block": 3.7976504094758012,
+          "kernel_output_seconds_block": 0.05160854934879322,
+          "global_cache_cost_seconds_block": 28.789577161584546,
+          "mean_cost_seconds": 3.5986971451980683,
+          "variance_times_cost_exploratory": 0.5147549440497271,
+          "root_only_cost_seconds_block": 30.243374430783827,
+          "root_only_distinct_replica_U_product": 0.5407521790686775,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.5122131272102415,
+            "d0": 0.432147497035143
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.3743292239779797,
+                0.7151526947282446
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.23132414100734003,
+                0.6465521657100752
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "full": {
+          "variance_trace": 0.14303925095130382,
+          "conditional_delta_mean": 0.0,
+          "between_Y_sample_variance": 0.14303925095130382,
+          "mean_Y5": [
+            0.8134412053766314,
+            4.7461582148444185e-33,
+            9.438919324739081e-33,
+            0.1865587946233686,
+            6.30350609317395e-33
+          ],
+          "mean_prefix_steps": 16.0,
+          "mean_logical_steps": 16.0,
+          "expected_unique_model_queries_block": 103.0,
+          "global_cache_model_seconds_block": 8.324405460682465,
+          "kernel_output_seconds_block": 0.08533982258086326,
+          "global_cache_cost_seconds_block": 33.35006348602328,
+          "mean_cost_seconds": 4.16875793575291,
+          "variance_times_cost_exploratory": 0.5962960125273998,
+          "root_only_cost_seconds_block": 34.80386075522256,
+          "root_only_distinct_replica_U_product": 0.622303979937056,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.43494400477357154,
+            "d0": 0.34219537444804604
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.30886332826149987,
+                0.6909183421346965
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.1514639849393687,
+                0.6171523822538864
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.01": {
+          "variance_trace": 0.14303925095130382,
+          "conditional_delta_mean": 5.007426942265706e-33,
+          "between_Y_sample_variance": 0.14303925095130382,
+          "mean_Y5": [
+            0.8134412053766314,
+            4.7461582148444185e-33,
+            9.438919324739081e-33,
+            0.1865587946233686,
+            6.30350609317395e-33
+          ],
+          "mean_prefix_steps": 5.625,
+          "mean_logical_steps": 6.62521709518771,
+          "expected_unique_model_queries_block": 32.00142211112169,
+          "global_cache_model_seconds_block": 2.5871303222854642,
+          "kernel_output_seconds_block": 0.038432775817364574,
+          "global_cache_cost_seconds_block": 27.565881300862785,
+          "mean_cost_seconds": 3.445735162607848,
+          "variance_times_cost_exploratory": 0.4928753766359957,
+          "root_only_cost_seconds_block": 28.69630655478373,
+          "root_only_distinct_replica_U_product": 0.5137488919085934,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.5329464215478782,
+            "d0": 0.45628396675397576
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.39316767580096257,
+                0.7211659618680811
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.24942158706838666,
+                0.658032220246398
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.0001": {
+          "variance_trace": 0.14303925095130382,
+          "conditional_delta_mean": 5.007417859210405e-33,
+          "between_Y_sample_variance": 0.14303925095130382,
+          "mean_Y5": [
+            0.8134412053766314,
+            4.7461582148444185e-33,
+            9.438919324739081e-33,
+            0.1865587946233686,
+            6.30350609317395e-33
+          ],
+          "mean_prefix_steps": 6.375,
+          "mean_logical_steps": 7.375233510131896,
+          "expected_unique_model_queries_block": 36.001717673968145,
+          "global_cache_model_seconds_block": 2.9092688767727006,
+          "kernel_output_seconds_block": 0.042479645085082264,
+          "global_cache_cost_seconds_block": 27.892066724617735,
+          "mean_cost_seconds": 3.486508340577217,
+          "variance_times_cost_exploratory": 0.49870754147163837,
+          "root_only_cost_seconds_block": 29.18428645045985,
+          "root_only_distinct_replica_U_product": 0.5227703838457116,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.5274198045048417,
+            "d0": 0.44985020747122206
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.3908846027447644,
+                0.7188996845037281
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.2409597887115483,
+                0.6544094831444514
+              ],
+              "valid_resamples": 1939,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        }
+      }
+    },
+    {
+      "case": 2,
+      "row": 47,
+      "subject": "college_medicine",
+      "mean_Y5": [
+        5.541766390159013e-10,
+        0.0005213835902870375,
+        0.9994786146165678,
+        1.2066582142401182e-09,
+        3.231032055838599e-11
+      ],
+      "useful_option_mass": 0.9999999999676897,
+      "mass_gate": true,
+      "status": "ANALYZED",
+      "methods": {
+        "MC": {
+          "variance_trace": 0.001042679238762576,
+          "conditional_delta_mean": 0.0010390619950473856,
+          "between_Y_sample_variance": 3.6172437151904843e-06,
+          "mean_Y5": [
+            5.541766390159013e-10,
+            0.0005213835902870375,
+            0.9994786146165678,
+            1.2066582142401182e-09,
+            3.231032055838599e-11
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 1.2841745310045285,
+          "expected_unique_model_queries_block": 3.1909528468428365,
+          "global_cache_model_seconds_block": 0.2643277036831399,
+          "kernel_output_seconds_block": 0.005742941424082883,
+          "global_cache_cost_seconds_block": 25.210388847867176,
+          "mean_cost_seconds": 3.151298605983397,
+          "variance_times_cost_exploratory": 0.0032857936316003354,
+          "root_only_cost_seconds_block": 25.217222447565934,
+          "root_only_distinct_replica_U_product": 0.0032835056838109674,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d0": {
+          "variance_trace": 0.00021284923115423918,
+          "conditional_delta_mean": 0.0002092319874390487,
+          "between_Y_sample_variance": 3.6172437151904843e-06,
+          "mean_Y5": [
+            5.541766390159013e-10,
+            0.0005213835902870375,
+            0.9994786146165678,
+            1.2066582142401182e-09,
+            3.231032055838599e-11
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 1.2841745310045285,
+          "expected_unique_model_queries_block": 3.1909528468428365,
+          "global_cache_model_seconds_block": 0.2643277036831399,
+          "kernel_output_seconds_block": 0.008414466696944404,
+          "global_cache_cost_seconds_block": 25.21306037314004,
+          "mean_cost_seconds": 3.151632546642505,
+          "variance_times_cost_exploratory": 0.0006708225644335339,
+          "root_only_cost_seconds_block": 25.219893972838793,
+          "root_only_distinct_replica_U_product": 0.0006703604832281564,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d1": {
+          "variance_trace": 2.748948284393848e-05,
+          "conditional_delta_mean": 2.3872239128747997e-05,
+          "between_Y_sample_variance": 3.6172437151904843e-06,
+          "mean_Y5": [
+            5.541766390159013e-10,
+            0.0005213835902870375,
+            0.9994786146165678,
+            1.2066582142401182e-09,
+            3.231032055838599e-11
+          ],
+          "mean_prefix_steps": 1.0,
+          "mean_logical_steps": 3.1939855834954276,
+          "expected_unique_model_queries_block": 14.50965646891227,
+          "global_cache_model_seconds_block": 1.2038946762205276,
+          "kernel_output_seconds_block": 0.019477655851960537,
+          "global_cache_cost_seconds_block": 26.163690534832444,
+          "mean_cost_seconds": 3.2704613168540555,
+          "variance_times_cost_exploratory": 8.990329026142401e-05,
+          "root_only_cost_seconds_block": 26.498862232979143,
+          "root_only_distinct_replica_U_product": 9.041656932167212e-05,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.9726387897898393,
+            "d0": 0.8659805214850793
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.9630457709841519,
+                0.974352594471231
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.8657394903939626,
+                0.8726336917478629
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d2": {
+          "variance_trace": 2.748948284393848e-05,
+          "conditional_delta_mean": 2.3872239128747997e-05,
+          "between_Y_sample_variance": 3.6172437151904843e-06,
+          "mean_Y5": [
+            5.541766390159013e-10,
+            0.0005213835902870375,
+            0.9994786146165678,
+            1.2066582142401182e-09,
+            3.231032055838599e-11
+          ],
+          "mean_prefix_steps": 2.0,
+          "mean_logical_steps": 3.7869208731907,
+          "expected_unique_model_queries_block": 19.106177639792413,
+          "global_cache_model_seconds_block": 1.5844066914509716,
+          "kernel_output_seconds_block": 0.023522935538599594,
+          "global_cache_cost_seconds_block": 26.548247829749528,
+          "mean_cost_seconds": 3.318530978718691,
+          "variance_times_cost_exploratory": 9.122470040656583e-05,
+          "root_only_cost_seconds_block": 26.895557562019626,
+          "root_only_distinct_replica_U_product": 9.19727672692282e-05,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.9722366311964227,
+            "d0": 0.8640106859202044
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.9626329511583689,
+                0.9741047079199732
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.8640491420745056,
+                0.8716461303055949
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d4": {
+          "variance_trace": 2.5185884353466834e-05,
+          "conditional_delta_mean": 2.156864063827635e-05,
+          "between_Y_sample_variance": 3.6172437151904843e-06,
+          "mean_Y5": [
+            5.541766390159013e-10,
+            0.0005213835902870375,
+            0.9994786146165678,
+            1.2066582142401182e-09,
+            3.231032055838599e-11
+          ],
+          "mean_prefix_steps": 4.0,
+          "mean_logical_steps": 5.466554831622792,
+          "expected_unique_model_queries_block": 27.67307223075113,
+          "global_cache_model_seconds_block": 2.294608737280297,
+          "kernel_output_seconds_block": 0.033803006388937386,
+          "global_cache_cost_seconds_block": 27.268729946429186,
+          "mean_cost_seconds": 3.4085912433036483,
+          "variance_times_cost_exploratory": 8.584838486208542e-05,
+          "root_only_cost_seconds_block": 28.01921974864844,
+          "root_only_distinct_replica_U_product": 8.82515110982657e-05,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.9738728616318264,
+            "d0": 0.8720251979976571
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.9724065042633762,
+                0.9982701365281627
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.8636918713803402,
+                0.9922583542197158
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d8": {
+          "variance_trace": 3.6172668957313176e-06,
+          "conditional_delta_mean": 2.318054083341121e-11,
+          "between_Y_sample_variance": 3.6172437151904843e-06,
+          "mean_Y5": [
+            5.541766390159013e-10,
+            0.0005213835902870375,
+            0.9994786146165678,
+            1.2066582142401182e-09,
+            3.231032055838599e-11
+          ],
+          "mean_prefix_steps": 8.0,
+          "mean_logical_steps": 9.294475940128018,
+          "expected_unique_model_queries_block": 53.35580752102413,
+          "global_cache_model_seconds_block": 4.42570091791145,
+          "kernel_output_seconds_block": 0.05650315624522351,
+          "global_cache_cost_seconds_block": 29.422522276916627,
+          "mean_cost_seconds": 3.6778152846145784,
+          "variance_times_cost_exploratory": 1.3303639477650968e-05,
+          "root_only_cost_seconds_block": 30.582611843046433,
+          "root_only_distinct_replica_U_product": 1.3838788752818363e-05,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.9959511640202517,
+            "d0": 0.9801681693744381
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.9957065966987919,
+                0.9999821881729807
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.9787973713677155,
+                0.9999280878667011
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "full": {
+          "variance_trace": 3.6172437151904843e-06,
+          "conditional_delta_mean": 0.0,
+          "between_Y_sample_variance": 3.6172437151904843e-06,
+          "mean_Y5": [
+            5.541766390159013e-10,
+            0.0005213835902870375,
+            0.9994786146165678,
+            1.2066582142401182e-09,
+            3.231032055838599e-11
+          ],
+          "mean_prefix_steps": 16.0,
+          "mean_logical_steps": 16.0,
+          "expected_unique_model_queries_block": 107.0,
+          "global_cache_model_seconds_block": 8.888909612792002,
+          "kernel_output_seconds_block": 0.09042694997333456,
+          "global_cache_cost_seconds_block": 33.919654765525294,
+          "mean_cost_seconds": 4.239956845690662,
+          "variance_times_cost_exploratory": 1.5336957252753417e-05,
+          "root_only_cost_seconds_block": 35.07974433165509,
+          "root_only_distinct_replica_U_product": 1.586052359663374e-05,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.9953323431194053,
+            "d0": 0.9771370880082061
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.9952066883687264,
+                0.999981394760898
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.9763639937404174,
+                0.9999269904163263
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.01": {
+          "variance_trace": 3.7292600148396252e-06,
+          "conditional_delta_mean": 1.1201629964914105e-07,
+          "between_Y_sample_variance": 3.6172437151904843e-06,
+          "mean_Y5": [
+            5.541766390159013e-10,
+            0.0005213835902870375,
+            0.9994786146165678,
+            1.2066582142401182e-09,
+            3.231032055838599e-11
+          ],
+          "mean_prefix_steps": 4.0,
+          "mean_logical_steps": 5.717943703249178,
+          "expected_unique_model_queries_block": 29.530475153053075,
+          "global_cache_model_seconds_block": 2.4486957851950577,
+          "kernel_output_seconds_block": 0.03509041709981373,
+          "global_cache_cost_seconds_block": 27.424104405054823,
+          "mean_cost_seconds": 3.428013050631853,
+          "variance_times_cost_exploratory": 1.2783952000069772e-05,
+          "root_only_cost_seconds_block": 28.18752043272349,
+          "root_only_distinct_replica_U_product": 1.3038889408967398e-05,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.9961093259548855,
+            "d0": 0.9809428712183154
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.99592017549368,
+                0.9990066262087118
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.9798829454794391,
+                0.9964371239076246
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.0001": {
+          "variance_trace": 3.617248185838491e-06,
+          "conditional_delta_mean": 4.4706480069090465e-12,
+          "between_Y_sample_variance": 3.6172437151904843e-06,
+          "mean_Y5": [
+            5.541766390159013e-10,
+            0.0005213835902870375,
+            0.9994786146165678,
+            1.2066582142401182e-09,
+            3.231032055838599e-11
+          ],
+          "mean_prefix_steps": 7.0,
+          "mean_logical_steps": 8.437452283202308,
+          "expected_unique_model_queries_block": 47.15044999804675,
+          "global_cache_model_seconds_block": 3.9100651554571093,
+          "kernel_output_seconds_block": 0.05139466353513513,
+          "global_cache_cost_seconds_block": 28.901778021752197,
+          "mean_cost_seconds": 3.6127222527190246,
+          "variance_times_cost_exploratory": 1.3068113014586238e-05,
+          "root_only_cost_seconds_block": 30.00792946742102,
+          "root_only_distinct_replica_U_product": 1.3542449363873506e-05,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.9960228442562835,
+            "d0": 0.9805192703593365
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.9957710293791706,
+                0.9999829321938268
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.9791720900685926,
+                0.9999335351557178
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        }
+      }
+    },
+    {
+      "case": 3,
+      "row": 12,
+      "subject": "astronomy",
+      "mean_Y5": [
+        0.14374650171131464,
+        0.47655190595871344,
+        0.30475857902597314,
+        0.07494301330081994,
+        3.1789090199129774e-12
+      ],
+      "useful_option_mass": 0.9999999999968212,
+      "mass_gate": true,
+      "status": "ANALYZED",
+      "methods": {
+        "MC": {
+          "variance_trace": 0.6617247047563019,
+          "conditional_delta_mean": 0.5978548862286026,
+          "between_Y_sample_variance": 0.06386981852769923,
+          "mean_Y5": [
+            0.14374650171131464,
+            0.47655190595871344,
+            0.30475857902597314,
+            0.07494301330081994,
+            3.1789090199129774e-12
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 2.9997181271018283,
+          "expected_unique_model_queries_block": 12.639548241380545,
+          "global_cache_model_seconds_block": 1.0400433025926348,
+          "kernel_output_seconds_block": 0.015041582528728187,
+          "global_cache_cost_seconds_block": 25.995403087881318,
+          "mean_cost_seconds": 3.2494253859851647,
+          "variance_times_cost_exploratory": 2.1502250541686654,
+          "root_only_cost_seconds_block": 26.353595266110936,
+          "root_only_distinct_replica_U_product": 2.179519242102751,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d0": {
+          "variance_trace": 0.26561519910669906,
+          "conditional_delta_mean": 0.20174538057899982,
+          "between_Y_sample_variance": 0.06386981852769923,
+          "mean_Y5": [
+            0.14374650171131464,
+            0.47655190595871344,
+            0.30475857902597314,
+            0.07494301330081994,
+            3.1789090199129774e-12
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 2.9997181271018283,
+          "expected_unique_model_queries_block": 12.639548241380545,
+          "global_cache_model_seconds_block": 1.0400433025926348,
+          "kernel_output_seconds_block": 0.017685533893583495,
+          "global_cache_cost_seconds_block": 25.998047039246174,
+          "mean_cost_seconds": 3.2497558799057717,
+          "variance_times_cost_exploratory": 0.8631845550893376,
+          "root_only_cost_seconds_block": 26.356239217475792,
+          "root_only_distinct_replica_U_product": 0.8712173377151214,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d1": {
+          "variance_trace": 0.20601441825656674,
+          "conditional_delta_mean": 0.14214459972886753,
+          "between_Y_sample_variance": 0.06386981852769923,
+          "mean_Y5": [
+            0.14374650171131464,
+            0.47655190595871344,
+            0.30475857902597314,
+            0.07494301330081994,
+            3.1789090199129774e-12
+          ],
+          "mean_prefix_steps": 1.0,
+          "mean_logical_steps": 3.295495081101306,
+          "expected_unique_model_queries_block": 14.363960648810437,
+          "global_cache_model_seconds_block": 1.1812524462164689,
+          "kernel_output_seconds_block": 0.020628645409687264,
+          "global_cache_cost_seconds_block": 26.14219929438611,
+          "mean_cost_seconds": 3.2677749117982637,
+          "variance_times_cost_exploratory": 0.673208747447523,
+          "root_only_cost_seconds_block": 26.55301281247582,
+          "root_only_distinct_replica_U_product": 0.6795159808411194,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.686912425216902,
+            "d0": 0.22008712565779454
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.4296175152769337,
+                0.8877842500512672
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.04245190464277113,
+                0.49457755591236346
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d2": {
+          "variance_trace": 0.15544893043359295,
+          "conditional_delta_mean": 0.09157911190589373,
+          "between_Y_sample_variance": 0.06386981852769923,
+          "mean_Y5": [
+            0.14374650171131464,
+            0.47655190595871344,
+            0.30475857902597314,
+            0.07494301330081994,
+            3.1789090199129774e-12
+          ],
+          "mean_prefix_steps": 2.0,
+          "mean_logical_steps": 5.888118657876803,
+          "expected_unique_model_queries_block": 35.104949263014426,
+          "global_cache_model_seconds_block": 2.883403811417699,
+          "kernel_output_seconds_block": 0.032853292157635106,
+          "global_cache_cost_seconds_block": 27.85657530633529,
+          "mean_cost_seconds": 3.4820719132919113,
+          "variance_times_cost_exploratory": 0.5412843546140822,
+          "root_only_cost_seconds_block": 28.267388824424998,
+          "root_only_distinct_replica_U_product": 0.5474482588984737,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7482661856419689,
+            "d0": 0.37292164065880373
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.48705989808279365,
+                0.9294756798107158
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.09004359929208258,
+                0.7339721566621076
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d4": {
+          "variance_trace": 0.09126173048644934,
+          "conditional_delta_mean": 0.027391911958750105,
+          "between_Y_sample_variance": 0.06386981852769923,
+          "mean_Y5": [
+            0.14374650171131464,
+            0.47655190595871344,
+            0.30475857902597314,
+            0.07494301330081994,
+            3.1789090199129774e-12
+          ],
+          "mean_prefix_steps": 4.0,
+          "mean_logical_steps": 7.551454439233454,
+          "expected_unique_model_queries_block": 48.41163551386762,
+          "global_cache_model_seconds_block": 3.978169632206938,
+          "kernel_output_seconds_block": 0.0442672307290838,
+          "global_cache_cost_seconds_block": 28.962755065695976,
+          "mean_cost_seconds": 3.620344383211997,
+          "variance_times_cost_exploratory": 0.33039889336882394,
+          "root_only_cost_seconds_block": 29.373568583785683,
+          "root_only_distinct_replica_U_product": 0.3340670754011858,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.8463421804483787,
+            "d0": 0.6172326168015965
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.7883368582931262,
+                0.935302290851087
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.5310075101133087,
+                0.7662380032501139
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d8": {
+          "variance_trace": 0.08403444742440652,
+          "conditional_delta_mean": 0.0201646288967073,
+          "between_Y_sample_variance": 0.06386981852769923,
+          "mean_Y5": [
+            0.14374650171131464,
+            0.47655190595871344,
+            0.30475857902597314,
+            0.07494301330081994,
+            3.1789090199129774e-12
+          ],
+          "mean_prefix_steps": 8.0,
+          "mean_logical_steps": 9.484868928744508,
+          "expected_unique_model_queries_block": 63.87895142995607,
+          "global_cache_model_seconds_block": 5.248897978351398,
+          "kernel_output_seconds_block": 0.059115381555752036,
+          "global_cache_cost_seconds_block": 30.248331562667104,
+          "mean_cost_seconds": 3.781041445333388,
+          "variance_times_cost_exploratory": 0.31773772854737065,
+          "root_only_cost_seconds_block": 30.659145080756808,
+          "root_only_distinct_replica_U_product": 0.32172515644230487,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.8522304779532873,
+            "d0": 0.6319005864111116
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.7997072199337228,
+                0.9403307143953222
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.5587639423738322,
+                0.7826995747994084
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "full": {
+          "variance_trace": 0.06386981852769923,
+          "conditional_delta_mean": 0.0,
+          "between_Y_sample_variance": 0.06386981852769923,
+          "mean_Y5": [
+            0.14374650171131464,
+            0.47655190595871344,
+            0.30475857902597314,
+            0.07494301330081994,
+            3.1789090199129774e-12
+          ],
+          "mean_prefix_steps": 16.0,
+          "mean_logical_steps": 16.0,
+          "expected_unique_model_queries_block": 116.0,
+          "global_cache_model_seconds_block": 9.53793895734707,
+          "kernel_output_seconds_block": 0.0939077115690452,
+          "global_cache_cost_seconds_block": 34.572164871676065,
+          "mean_cost_seconds": 4.321520608959508,
+          "variance_times_cost_exploratory": 0.27601473705795604,
+          "root_only_cost_seconds_block": 34.982978389765776,
+          "root_only_distinct_replica_U_product": 0.2793033820306731,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.8716344893652676,
+            "d0": 0.6802367055450973
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.8610695888107108,
+                0.9455679833682451
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.5195790093389266,
+                0.8668089893982416
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.01": {
+          "variance_trace": 0.06387174261048473,
+          "conditional_delta_mean": 1.924082785495548e-06,
+          "between_Y_sample_variance": 0.06386981852769923,
+          "mean_Y5": [
+            0.14374650171131464,
+            0.47655190595871344,
+            0.30475857902597314,
+            0.07494301330081994,
+            3.1789090199129774e-12
+          ],
+          "mean_prefix_steps": 6.625,
+          "mean_logical_steps": 8.532321267907097,
+          "expected_unique_model_queries_block": 56.258570143256776,
+          "global_cache_model_seconds_block": 4.626657214547015,
+          "kernel_output_seconds_block": 0.05427993895342269,
+          "global_cache_cost_seconds_block": 29.62125535626039,
+          "mean_cost_seconds": 3.702656919532549,
+          "variance_times_cost_exploratory": 0.23649514973931324,
+          "root_only_cost_seconds_block": 30.0320688743501,
+          "root_only_distinct_replica_U_product": 0.23930294599566712,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.8900137688932526,
+            "d0": 0.7260201791784417
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.8751371041420618,
+                0.950179379847962
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.5750216206051656,
+                0.8777747916374861
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.0001": {
+          "variance_trace": 0.06386981852769928,
+          "conditional_delta_mean": 5.730837998589218e-17,
+          "between_Y_sample_variance": 0.06386981852769923,
+          "mean_Y5": [
+            0.14374650171131464,
+            0.47655190595871344,
+            0.30475857902597314,
+            0.07494301330081994,
+            3.1789090199129774e-12
+          ],
+          "mean_prefix_steps": 9.0,
+          "mean_logical_steps": 10.030471700376733,
+          "expected_unique_model_queries_block": 68.2437736030139,
+          "global_cache_model_seconds_block": 5.6169037736793905,
+          "kernel_output_seconds_block": 0.06494791889031037,
+          "global_cache_cost_seconds_block": 30.622169895329655,
+          "mean_cost_seconds": 3.827771236916207,
+          "variance_times_cost_exploratory": 0.24447905426738514,
+          "root_only_cost_seconds_block": 31.032983413419363,
+          "root_only_distinct_replica_U_product": 0.24743358441959123,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.8863007135958113,
+            "d0": 0.7167708193735207
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.8720296454342672,
+                0.9492012948328442
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.5629522039789164,
+                0.8755766313823561
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        }
+      }
+    },
+    {
+      "case": 4,
+      "row": 85,
+      "subject": "global_facts",
+      "mean_Y5": [
+        0.02426892341915324,
+        0.8556589390382061,
+        2.443335306438032e-08,
+        0.12007211018458458,
+        2.9247030761818622e-09
+      ],
+      "useful_option_mass": 0.9999999970752971,
+      "mass_gate": true,
+      "status": "ANALYZED",
+      "methods": {
+        "MC": {
+          "variance_trace": 0.2622718337128882,
+          "conditional_delta_mean": 0.18682906605704014,
+          "between_Y_sample_variance": 0.07544276765584808,
+          "mean_Y5": [
+            0.02426892341915324,
+            0.8556589390382061,
+            2.443335306438032e-08,
+            0.12007211018458458,
+            2.9247030761818622e-09
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 7.78467608257666,
+          "expected_unique_model_queries_block": 37.558549990894676,
+          "global_cache_model_seconds_block": 3.8056144126111295,
+          "kernel_output_seconds_block": 0.03293431513555151,
+          "global_cache_cost_seconds_block": 28.778866930506634,
+          "mean_cost_seconds": 3.5973583663133293,
+          "variance_times_cost_exploratory": 0.9434857752553967,
+          "root_only_cost_seconds_block": 30.576173684876025,
+          "root_only_distinct_replica_U_product": 1.016046270532131,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d0": {
+          "variance_trace": 0.11426721815603377,
+          "conditional_delta_mean": 0.038824450500185695,
+          "between_Y_sample_variance": 0.07544276765584808,
+          "mean_Y5": [
+            0.02426892341915324,
+            0.8556589390382061,
+            2.443335306438032e-08,
+            0.12007211018458458,
+            2.9247030761818622e-09
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 7.78467608257666,
+          "expected_unique_model_queries_block": 37.558549990894676,
+          "global_cache_model_seconds_block": 3.8056144126111295,
+          "kernel_output_seconds_block": 0.035557701612003244,
+          "global_cache_cost_seconds_block": 28.781490316983085,
+          "mean_cost_seconds": 3.5976862896228856,
+          "variance_times_cost_exploratory": 0.41109760411331,
+          "root_only_cost_seconds_block": 30.578797071352476,
+          "root_only_distinct_replica_U_product": 0.44152168845033835,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d1": {
+          "variance_trace": 0.09988034133135194,
+          "conditional_delta_mean": 0.024437573675503862,
+          "between_Y_sample_variance": 0.07544276765584808,
+          "mean_Y5": [
+            0.02426892341915324,
+            0.8556589390382061,
+            2.443335306438032e-08,
+            0.12007211018458458,
+            2.9247030761818622e-09
+          ],
+          "mean_prefix_steps": 1.0,
+          "mean_logical_steps": 8.353343724893408,
+          "expected_unique_model_queries_block": 40.826395333331504,
+          "global_cache_model_seconds_block": 4.137047929869724,
+          "kernel_output_seconds_block": 0.039571726057613464,
+          "global_cache_cost_seconds_block": 29.11693785868729,
+          "mean_cost_seconds": 3.6396172323359113,
+          "variance_times_cost_exploratory": 0.3635262114811813,
+          "root_only_cost_seconds_block": 31.04417680706778,
+          "root_only_distinct_replica_U_product": 0.39159363567677286,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6146987893031279,
+            "d0": 0.11571800019300693
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.4999263445522526,
+                0.7902441894294804
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -5.938024577457623e-05,
+                0.4080581963252626
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d2": {
+          "variance_trace": 0.07544276773578104,
+          "conditional_delta_mean": 7.993295702870086e-11,
+          "between_Y_sample_variance": 0.07544276765584808,
+          "mean_Y5": [
+            0.02426892341915324,
+            0.8556589390382061,
+            2.443335306438032e-08,
+            0.12007211018458458,
+            2.9247030761818622e-09
+          ],
+          "mean_prefix_steps": 2.0,
+          "mean_logical_steps": 9.759844531365658,
+          "expected_unique_model_queries_block": 52.0784017851095,
+          "global_cache_model_seconds_block": 5.279489386485071,
+          "kernel_output_seconds_block": 0.046905456183343054,
+          "global_cache_cost_seconds_block": 30.266713045428368,
+          "mean_cost_seconds": 3.783339130678546,
+          "variance_times_cost_exploratory": 0.2854255753014733,
+          "root_only_cost_seconds_block": 32.19395199380886,
+          "root_only_distinct_replica_U_product": 0.30330303448443247,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6974776061417459,
+            "d0": 0.3056987624213884
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5954291099220456,
+                0.8898366991508821
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.14152451379020758,
+                0.5595057557023928
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d4": {
+          "variance_trace": 0.07544276773578104,
+          "conditional_delta_mean": 7.993295702870086e-11,
+          "between_Y_sample_variance": 0.07544276765584808,
+          "mean_Y5": [
+            0.02426892341915324,
+            0.8556589390382061,
+            2.443335306438032e-08,
+            0.12007211018458458,
+            2.9247030761818622e-09
+          ],
+          "mean_prefix_steps": 4.0,
+          "mean_logical_steps": 9.759844531365658,
+          "expected_unique_model_queries_block": 52.0784017851095,
+          "global_cache_model_seconds_block": 5.279489386485071,
+          "kernel_output_seconds_block": 0.05006447837488246,
+          "global_cache_cost_seconds_block": 30.269872067619907,
+          "mean_cost_seconds": 3.7837340084524884,
+          "variance_times_cost_exploratory": 0.28545536597365684,
+          "root_only_cost_seconds_block": 32.1971110160004,
+          "root_only_distinct_replica_U_product": 0.3033327877971493,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6974460310263972,
+            "d0": 0.30562629624331894
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5953856089629335,
+                0.8898241541610726
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.14143071952257877,
+                0.5594557371341076
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "d8": {
+          "variance_trace": 0.07544276773574386,
+          "conditional_delta_mean": 7.989579075563563e-11,
+          "between_Y_sample_variance": 0.07544276765584808,
+          "mean_Y5": [
+            0.02426892341915324,
+            0.8556589390382061,
+            2.443335306438032e-08,
+            0.12007211018458458,
+            2.9247030761818622e-09
+          ],
+          "mean_prefix_steps": 8.0,
+          "mean_logical_steps": 10.203959122182102,
+          "expected_unique_model_queries_block": 55.631318511641055,
+          "global_cache_model_seconds_block": 5.6389627570124645,
+          "kernel_output_seconds_block": 0.05829929404797297,
+          "global_cache_cost_seconds_block": 30.637580253820392,
+          "mean_cost_seconds": 3.829697531727549,
+          "variance_times_cost_exploratory": 0.288922981384273,
+          "root_only_cost_seconds_block": 32.56481920220088,
+          "root_only_distinct_replica_U_product": 0.3067529422121594,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6937707075593555,
+            "d0": 0.29719127892402464
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5952934491793991,
+                0.8883950494654672
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.14122837358385226,
+                0.5541968516478748
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "full": {
+          "variance_trace": 0.07544276765584808,
+          "conditional_delta_mean": 0.0,
+          "between_Y_sample_variance": 0.07544276765584808,
+          "mean_Y5": [
+            0.02426892341915324,
+            0.8556589390382061,
+            2.443335306438032e-08,
+            0.12007211018458458,
+            2.9247030761818622e-09
+          ],
+          "mean_prefix_steps": 16.0,
+          "mean_logical_steps": 16.0,
+          "expected_unique_model_queries_block": 95.0,
+          "global_cache_model_seconds_block": 9.625931628863327,
+          "kernel_output_seconds_block": 0.08811851358768763,
+          "global_cache_cost_seconds_block": 34.65436834521097,
+          "mean_cost_seconds": 4.331796043151371,
+          "variance_times_cost_exploratory": 0.3268026824159909,
+          "root_only_cost_seconds_block": 37.29016096173291,
+          "root_only_distinct_replica_U_product": 0.3516494877184286,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6536220354487834,
+            "d0": 0.20504843826354435
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5618050912442552,
+                0.8789437946523957
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.07073128502544446,
+                0.5741852283621854
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.01": {
+          "variance_trace": 0.07544276765584829,
+          "conditional_delta_mean": 2.068871965286808e-16,
+          "between_Y_sample_variance": 0.07544276765584808,
+          "mean_Y5": [
+            0.02426892341915324,
+            0.8556589390382061,
+            2.443335306438032e-08,
+            0.12007211018458458,
+            2.9247030761818622e-09
+          ],
+          "mean_prefix_steps": 11.375,
+          "mean_logical_steps": 13.757198784612362,
+          "expected_unique_model_queries_block": 77.05759027689889,
+          "global_cache_model_seconds_block": 7.808100733589874,
+          "kernel_output_seconds_block": 0.0769779455616034,
+          "global_cache_cost_seconds_block": 32.82539688191143,
+          "mean_cost_seconds": 4.103174610238929,
+          "variance_times_cost_exploratory": 0.30955484877163136,
+          "root_only_cost_seconds_block": 35.46118949843337,
+          "root_only_distinct_replica_U_product": 0.33477186948864684,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6719030038499134,
+            "d0": 0.24700400665358924
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5726994849159758,
+                0.8847402348283786
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.09383498717539099,
+                0.5915797523019276
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.0001": {
+          "variance_trace": 0.07544276765584808,
+          "conditional_delta_mean": 2.5535159036299725e-18,
+          "between_Y_sample_variance": 0.07544276765584808,
+          "mean_Y5": [
+            0.02426892341915324,
+            0.8556589390382061,
+            2.443335306438032e-08,
+            0.12007211018458458,
+            2.9247030761818622e-09
+          ],
+          "mean_prefix_steps": 12.25,
+          "mean_logical_steps": 14.3809311267433,
+          "expected_unique_model_queries_block": 82.04744901394642,
+          "global_cache_model_seconds_block": 8.313318945581083,
+          "kernel_output_seconds_block": 0.08080274421173782,
+          "global_cache_cost_seconds_block": 33.33443989255277,
+          "mean_cost_seconds": 4.166804986569097,
+          "variance_times_cost_exploratory": 0.31435530046896154,
+          "root_only_cost_seconds_block": 35.97023250907471,
+          "root_only_distinct_replica_U_product": 0.3393529161840392,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6668150080123177,
+            "d0": 0.23532684860329067
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5689108269674622,
+                0.8835326407567817
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.08580023670060155,
+                0.587280170005257
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        }
+      }
+    },
+    {
+      "case": 5,
+      "row": 279,
+      "subject": "virology",
+      "mean_Y5": [
+        0.37312866811904466,
+        0.009642026225943406,
+        0.49933108149905997,
+        0.11789822415595183,
+        5.775160960024224e-17
+      ],
+      "useful_option_mass": 0.9999999999999999,
+      "mass_gate": true,
+      "status": "ANALYZED",
+      "methods": {
+        "MC": {
+          "variance_trace": 0.612656241137761,
+          "conditional_delta_mean": 0.4910103772182182,
+          "between_Y_sample_variance": 0.1216458639195427,
+          "mean_Y5": [
+            0.37312866811904466,
+            0.009642026225943406,
+            0.49933108149905997,
+            0.11789822415595183,
+            5.775160960024224e-17
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 6.78216253265342,
+          "expected_unique_model_queries_block": 26.25730026122737,
+          "global_cache_model_seconds_block": 2.3266470350966313,
+          "kernel_output_seconds_block": 0.028327935006583545,
+          "global_cache_cost_seconds_block": 27.29529317286317,
+          "mean_cost_seconds": 3.411911646607896,
+          "variance_times_cost_exploratory": 2.090328964504942,
+          "root_only_cost_seconds_block": 29.159726274426156,
+          "root_only_distinct_replica_U_product": 2.234203756894748,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d0": {
+          "variance_trace": 0.1965656009284109,
+          "conditional_delta_mean": 0.0749197370088682,
+          "between_Y_sample_variance": 0.1216458639195427,
+          "mean_Y5": [
+            0.37312866811904466,
+            0.009642026225943406,
+            0.49933108149905997,
+            0.11789822415595183,
+            5.775160960024224e-17
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 6.78216253265342,
+          "expected_unique_model_queries_block": 26.25730026122737,
+          "global_cache_model_seconds_block": 2.3266470350966313,
+          "kernel_output_seconds_block": 0.03112187477047259,
+          "global_cache_cost_seconds_block": 27.29808711262706,
+          "mean_cost_seconds": 3.4122608890783823,
+          "variance_times_cost_exploratory": 0.6707331121862059,
+          "root_only_cost_seconds_block": 29.16252021419004,
+          "root_only_distinct_replica_U_product": 0.7160620788592389,
+          "zero_empirical_variance_inconclusive": false
+        },
+        "d1": {
+          "variance_trace": 0.19656560092841088,
+          "conditional_delta_mean": 0.07491973700886818,
+          "between_Y_sample_variance": 0.1216458639195427,
+          "mean_Y5": [
+            0.37312866811904466,
+            0.009642026225943406,
+            0.49933108149905997,
+            0.11789822415595183,
+            5.775160960024224e-17
+          ],
+          "mean_prefix_steps": 1.0,
+          "mean_logical_steps": 6.78216253265342,
+          "expected_unique_model_queries_block": 26.25730026122737,
+          "global_cache_model_seconds_block": 2.3266470350966313,
+          "kernel_output_seconds_block": 0.0326879346578818,
+          "global_cache_cost_seconds_block": 27.299653172514468,
+          "mean_cost_seconds": 3.4124566465643085,
+          "variance_times_cost_exploratory": 0.6707715913740632,
+          "root_only_cost_seconds_block": 29.164086274077448,
+          "root_only_distinct_replica_U_product": 0.7161004698497084,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.6791071631479193,
+            "d0": -5.736885082630039e-05
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5115125586726181,
+                0.8442837634645692
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -6.101644860934674e-05,
+                -5.62294441149136e-05
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d2": {
+          "variance_trace": 0.1778889870886047,
+          "conditional_delta_mean": 0.056243123169062,
+          "between_Y_sample_variance": 0.1216458639195427,
+          "mean_Y5": [
+            0.37312866811904466,
+            0.009642026225943406,
+            0.49933108149905997,
+            0.11789822415595183,
+            5.775160960024224e-17
+          ],
+          "mean_prefix_steps": 2.0,
+          "mean_logical_steps": 7.728517669855143,
+          "expected_unique_model_queries_block": 33.828141358841144,
+          "global_cache_model_seconds_block": 3.002507379594263,
+          "kernel_output_seconds_block": 0.038860478729863174,
+          "global_cache_cost_seconds_block": 27.98168606108408,
+          "mean_cost_seconds": 3.49771075763551,
+          "variance_times_cost_exploratory": 0.622204223804697,
+          "root_only_cost_seconds_block": 29.846119162647064,
+          "root_only_distinct_replica_U_product": 0.6635113928163294,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7023414809964827,
+            "d0": 0.07235200931609376
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5513787711368373,
+                0.8670414277464059
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -0.0005982895369962936,
+                0.29015771366293275
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d4": {
+          "variance_trace": 0.1778889870886047,
+          "conditional_delta_mean": 0.056243123169062,
+          "between_Y_sample_variance": 0.1216458639195427,
+          "mean_Y5": [
+            0.37312866811904466,
+            0.009642026225943406,
+            0.49933108149905997,
+            0.11789822415595183,
+            5.775160960024224e-17
+          ],
+          "mean_prefix_steps": 4.0,
+          "mean_logical_steps": 7.728517669855143,
+          "expected_unique_model_queries_block": 33.828141358841144,
+          "global_cache_model_seconds_block": 3.002507379594263,
+          "kernel_output_seconds_block": 0.04206073255084128,
+          "global_cache_cost_seconds_block": 27.984886314905058,
+          "mean_cost_seconds": 3.4981107893631322,
+          "variance_times_cost_exploratory": 0.6222753850435271,
+          "root_only_cost_seconds_block": 29.84931941646804,
+          "root_only_distinct_replica_U_product": 0.6635825512779865,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7023074379152077,
+            "d0": 0.0722459146004204
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5513272507018795,
+                0.8670254748262297
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                -0.0007186910612881402,
+                0.2900759057383533
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d8": {
+          "variance_trace": 0.1216458639195427,
+          "conditional_delta_mean": 1.774731002472345e-19,
+          "between_Y_sample_variance": 0.1216458639195427,
+          "mean_Y5": [
+            0.37312866811904466,
+            0.009642026225943406,
+            0.49933108149905997,
+            0.11789822415595183,
+            5.775160960024224e-17
+          ],
+          "mean_prefix_steps": 8.0,
+          "mean_logical_steps": 9.418179506545975,
+          "expected_unique_model_queries_block": 47.34543605236778,
+          "global_cache_model_seconds_block": 4.2006702177420046,
+          "kernel_output_seconds_block": 0.05549800733964106,
+          "global_cache_cost_seconds_block": 29.1964864278416,
+          "mean_cost_seconds": 3.6495608034802,
+          "variance_times_cost_exploratory": 0.4439539768662493,
+          "root_only_cost_seconds_block": 31.060919529404583,
+          "root_only_distinct_replica_U_product": 0.47274926758202135,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7876152584569902,
+            "d0": 0.3381063663023679
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.6204049598373369,
+                0.9401741622332151
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.14944250843443949,
+                0.6657183000543853
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "full": {
+          "variance_trace": 0.1216458639195427,
+          "conditional_delta_mean": 0.0,
+          "between_Y_sample_variance": 0.1216458639195427,
+          "mean_Y5": [
+            0.37312866811904466,
+            0.009642026225943406,
+            0.49933108149905997,
+            0.11789822415595183,
+            5.775160960024224e-17
+          ],
+          "mean_prefix_steps": 16.0,
+          "mean_logical_steps": 16.0,
+          "expected_unique_model_queries_block": 100.0,
+          "global_cache_model_seconds_block": 8.859070728697613,
+          "kernel_output_seconds_block": 0.09005385651107645,
+          "global_cache_cost_seconds_block": 33.88944278796865,
+          "mean_cost_seconds": 4.236180348496081,
+          "variance_times_cost_exploratory": 0.5153138182117952,
+          "root_only_cost_seconds_block": 35.75387588953163,
+          "root_only_distinct_replica_U_product": 0.5437241428519506,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7534771670095294,
+            "d0": 0.23171555295344337
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.5813997183965951,
+                0.9347596525906681
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.06583733834359641,
+                0.6319378467510264
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.01": {
+          "variance_trace": 0.1216458639195427,
+          "conditional_delta_mean": 9.580231205103796e-22,
+          "between_Y_sample_variance": 0.1216458639195427,
+          "mean_Y5": [
+            0.37312866811904466,
+            0.009642026225943406,
+            0.49933108149905997,
+            0.11789822415595183,
+            5.775160960024224e-17
+          ],
+          "mean_prefix_steps": 9.5,
+          "mean_logical_steps": 10.503615130140654,
+          "expected_unique_model_queries_block": 56.028921041125216,
+          "global_cache_model_seconds_block": 4.966860031744902,
+          "kernel_output_seconds_block": 0.06209189149581569,
+          "global_cache_cost_seconds_block": 29.96927012600067,
+          "mean_cost_seconds": 3.7461587657500837,
+          "variance_times_cost_exploratory": 0.4557047194394367,
+          "root_only_cost_seconds_block": 31.833703227563653,
+          "root_only_distinct_replica_U_product": 0.483951170968173,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7819937784063752,
+            "d0": 0.32058711406970763
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.6135947990279045,
+                0.9396044396721901
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.13567242315373698,
+                0.6608808525519986
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        },
+        "eta.0001": {
+          "variance_trace": 0.1216458639195427,
+          "conditional_delta_mean": 4.4042953381987785e-24,
+          "between_Y_sample_variance": 0.1216458639195427,
+          "mean_Y5": [
+            0.37312866811904466,
+            0.009642026225943406,
+            0.49933108149905997,
+            0.11789822415595183,
+            5.775160960024224e-17
+          ],
+          "mean_prefix_steps": 10.125,
+          "mean_logical_steps": 11.125900274702513,
+          "expected_unique_model_queries_block": 61.00720219762008,
+          "global_cache_model_seconds_block": 5.4072397774251,
+          "kernel_output_seconds_block": 0.0661836348626831,
+          "global_cache_cost_seconds_block": 30.413741615047737,
+          "mean_cost_seconds": 3.801717701880967,
+          "variance_times_cost_exploratory": 0.46246323422352875,
+          "root_only_cost_seconds_block": 32.27817471661072,
+          "root_only_distinct_replica_U_product": 0.4913291793944579,
+          "zero_empirical_variance_inconclusive": false,
+          "advantage_vs_controls": {
+            "MC": 0.7787605481833549,
+            "d0": 0.31051080404221676
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": [
+                0.6097841947304633,
+                0.9388462526451266
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            },
+            "d0": {
+              "interval": [
+                0.12815843400916294,
+                0.658300195771063
+              ],
+              "valid_resamples": 2000,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": true
+        }
+      }
+    },
+    {
+      "case": 6,
+      "row": 183,
+      "subject": "logical_fallacies",
+      "mean_Y5": [
+        5.791309010354577e-43,
+        1.0,
+        1.113858939416953e-43,
+        2.883819205675176e-44,
+        8.505109326169941e-44
+      ],
+      "useful_option_mass": 1.0,
+      "mass_gate": true,
+      "status": "ANALYZED",
+      "methods": {
+        "MC": {
+          "variance_trace": 5.551115123125784e-17,
+          "conditional_delta_mean": 5.551115123125783e-17,
+          "between_Y_sample_variance": 1.0565101409209979e-32,
+          "mean_Y5": [
+            5.791309010354577e-43,
+            1.0,
+            1.113858939416953e-43,
+            2.883819205675176e-44,
+            8.505109326169941e-44
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 1.0808291825772454,
+          "expected_unique_model_queries_block": 1.6168930783765794,
+          "global_cache_model_seconds_block": 0.11526571914135503,
+          "kernel_output_seconds_block": 0.004603092610304325,
+          "global_cache_cost_seconds_block": 25.060187014511612,
+          "mean_cost_seconds": 3.1325233768139515,
+          "variance_times_cost_exploratory": 1.7388997890576976e-16,
+          "root_only_cost_seconds_block": 25.062236542167916,
+          "root_only_distinct_replica_U_product": 1.739124730743676e-16,
+          "zero_empirical_variance_inconclusive": true
+        },
+        "d0": {
+          "variance_trace": 1.980956514226932e-32,
+          "conditional_delta_mean": 9.244463733059342e-33,
+          "between_Y_sample_variance": 1.0565101409209979e-32,
+          "mean_Y5": [
+            5.791309010354577e-43,
+            1.0,
+            1.113858939416953e-43,
+            2.883819205675176e-44,
+            8.505109326169941e-44
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 1.0808291825772454,
+          "expected_unique_model_queries_block": 1.6168930783765794,
+          "global_cache_model_seconds_block": 0.11526571914135503,
+          "kernel_output_seconds_block": 0.007108867653621998,
+          "global_cache_cost_seconds_block": 25.06269278955493,
+          "mean_cost_seconds": 3.1328365986943663,
+          "variance_times_cost_exploratory": 6.206013068192149e-32,
+          "root_only_cost_seconds_block": 25.064742317211234,
+          "root_only_distinct_replica_U_product": 6.206804244890882e-32,
+          "zero_empirical_variance_inconclusive": true
+        },
+        "d1": {
+          "variance_trace": 1.980956514226875e-32,
+          "conditional_delta_mean": 9.24446373305877e-33,
+          "between_Y_sample_variance": 1.0565101409209979e-32,
+          "mean_Y5": [
+            5.791309010354577e-43,
+            1.0,
+            1.113858939416953e-43,
+            2.883819205675176e-44,
+            8.505109326169941e-44
+          ],
+          "mean_prefix_steps": 1.0,
+          "mean_logical_steps": 2.3056498651281276,
+          "expected_unique_model_queries_block": 6.441368685751761,
+          "global_cache_model_seconds_block": 0.4495855014254541,
+          "kernel_output_seconds_block": 0.013806508630698175,
+          "global_cache_cost_seconds_block": 25.403710212816105,
+          "mean_cost_seconds": 3.175463776602013,
+          "variance_times_cost_exploratory": 6.290455653951232e-32,
+          "root_only_cost_seconds_block": 25.7498980413295,
+          "root_only_distinct_replica_U_product": 6.380858755250954e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d2": {
+          "variance_trace": 1.9809565142268718e-32,
+          "conditional_delta_mean": 9.24446373305874e-33,
+          "between_Y_sample_variance": 1.0565101409209979e-32,
+          "mean_Y5": [
+            5.791309010354577e-43,
+            1.0,
+            1.113858939416953e-43,
+            2.883819205675176e-44,
+            8.505109326169941e-44
+          ],
+          "mean_prefix_steps": 2.0,
+          "mean_logical_steps": 3.154510770403414,
+          "expected_unique_model_queries_block": 12.226957367186058,
+          "global_cache_model_seconds_block": 0.846290344125396,
+          "kernel_output_seconds_block": 0.019303391520426302,
+          "global_cache_cost_seconds_block": 25.805911938405778,
+          "mean_cost_seconds": 3.2257389923007223,
+          "variance_times_cost_exploratory": 6.390048669993741e-32,
+          "root_only_cost_seconds_block": 26.220369001067418,
+          "root_only_distinct_replica_U_product": 6.481722709071583e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d4": {
+          "variance_trace": 1.826882118675892e-32,
+          "conditional_delta_mean": 7.703719777548942e-33,
+          "between_Y_sample_variance": 1.0565101409209979e-32,
+          "mean_Y5": [
+            5.791309010354577e-43,
+            1.0,
+            1.113858939416953e-43,
+            2.883819205675176e-44,
+            8.505109326169941e-44
+          ],
+          "mean_prefix_steps": 4.0,
+          "mean_logical_steps": 5.0093106205294236,
+          "expected_unique_model_queries_block": 22.074435242975095,
+          "global_cache_model_seconds_block": 1.521575254292435,
+          "kernel_output_seconds_block": 0.029994214070258523,
+          "global_cache_cost_seconds_block": 26.491887671122647,
+          "mean_cost_seconds": 3.311485958890331,
+          "variance_times_cost_exploratory": 6.049694484543036e-32,
+          "root_only_cost_seconds_block": 27.25010588636308,
+          "root_only_distinct_replica_U_product": 6.222843536485864e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d8": {
+          "variance_trace": 1.0565101409209979e-32,
+          "conditional_delta_mean": 3.1713349271087212e-62,
+          "between_Y_sample_variance": 1.0565101409209979e-32,
+          "mean_Y5": [
+            5.791309010354577e-43,
+            1.0,
+            1.113858939416953e-43,
+            2.883819205675176e-44,
+            8.505109326169941e-44
+          ],
+          "mean_prefix_steps": 8.0,
+          "mean_logical_steps": 9.000550803479534,
+          "expected_unique_model_queries_block": 47.00440608060765,
+          "global_cache_model_seconds_block": 3.231374889595838,
+          "kernel_output_seconds_block": 0.0519155812360092,
+          "global_cache_cost_seconds_block": 28.2236086735918,
+          "mean_cost_seconds": 3.527951084198975,
+          "variance_times_cost_exploratory": 3.7273160971294465e-32,
+          "root_only_cost_seconds_block": 29.462114517458772,
+          "root_only_distinct_replica_U_product": 3.891065570066405e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "full": {
+          "variance_trace": 1.0565101409209979e-32,
+          "conditional_delta_mean": 0.0,
+          "between_Y_sample_variance": 1.0565101409209979e-32,
+          "mean_Y5": [
+            5.791309010354577e-43,
+            1.0,
+            1.113858939416953e-43,
+            2.883819205675176e-44,
+            8.505109326169941e-44
+          ],
+          "mean_prefix_steps": 16.0,
+          "mean_logical_steps": 16.0,
+          "expected_unique_model_queries_block": 93.0,
+          "global_cache_model_seconds_block": 6.3915206060434375,
+          "kernel_output_seconds_block": 0.08492210999247618,
+          "global_cache_cost_seconds_block": 31.416760918795866,
+          "mean_cost_seconds": 3.9270951148494833,
+          "variance_times_cost_exploratory": 4.14901581319979e-32,
+          "root_only_cost_seconds_block": 33.34713885020756,
+          "root_only_distinct_replica_U_product": 4.4035110869134687e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "eta.01": {
+          "variance_trace": 1.9809565142268712e-32,
+          "conditional_delta_mean": 9.244463733058733e-33,
+          "between_Y_sample_variance": 1.0565101409209979e-32,
+          "mean_Y5": [
+            5.791309010354577e-43,
+            1.0,
+            1.113858939416953e-43,
+            2.883819205675176e-44,
+            8.505109326169941e-44
+          ],
+          "mean_prefix_steps": 2.25,
+          "mean_logical_steps": 3.4018799059608567,
+          "expected_unique_model_queries_block": 14.082105738116885,
+          "global_cache_model_seconds_block": 0.9737063003687352,
+          "kernel_output_seconds_block": 0.02066343373821688,
+          "global_cache_cost_seconds_block": 25.934687936866908,
+          "mean_cost_seconds": 3.2418359921083635,
+          "variance_times_cost_exploratory": 6.421936126622195e-32,
+          "root_only_cost_seconds_block": 26.357955916276257,
+          "root_only_distinct_replica_U_product": 6.521091576265128e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "eta.0001": {
+          "variance_trace": 1.826882118675892e-32,
+          "conditional_delta_mean": 7.703719777548942e-33,
+          "between_Y_sample_variance": 1.0565101409209979e-32,
+          "mean_Y5": [
+            5.791309010354577e-43,
+            1.0,
+            1.113858939416953e-43,
+            2.883819205675176e-44,
+            8.505109326169941e-44
+          ],
+          "mean_prefix_steps": 3.75,
+          "mean_logical_steps": 4.759345277802039,
+          "expected_unique_model_queries_block": 20.004007582620517,
+          "global_cache_model_seconds_block": 1.3798548159832973,
+          "kernel_output_seconds_block": 0.028620226073007984,
+          "global_cache_cost_seconds_block": 26.34879324481626,
+          "mean_cost_seconds": 3.2935991556020325,
+          "variance_times_cost_exploratory": 6.01701740345537e-32,
+          "root_only_cost_seconds_block": 27.11182635788051,
+          "root_only_distinct_replica_U_product": 6.188353002417793e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        }
+      }
+    },
+    {
+      "case": 7,
+      "row": 224,
+      "subject": "nutrition",
+      "mean_Y5": [
+        8.489528455069411e-27,
+        1.0,
+        1.3019660298203543e-27,
+        4.227217055442716e-28,
+        6.411536765195214e-28
+      ],
+      "useful_option_mass": 1.0,
+      "mass_gate": true,
+      "status": "ANALYZED",
+      "methods": {
+        "MC": {
+          "variance_trace": 2.7755575615628914e-17,
+          "conditional_delta_mean": 2.7755575615628914e-17,
+          "between_Y_sample_variance": 1.7608502348683298e-33,
+          "mean_Y5": [
+            8.489528455069411e-27,
+            1.0,
+            1.3019660298203543e-27,
+            4.227217055442716e-28,
+            6.411536765195214e-28
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 1.0074457372186982,
+          "expected_unique_model_queries_block": 1.0588594917034624,
+          "global_cache_model_seconds_block": 0.09339501584203813,
+          "kernel_output_seconds_block": 0.004190185730712892,
+          "global_cache_cost_seconds_block": 25.037903404332706,
+          "mean_cost_seconds": 3.1297379255415883,
+          "variance_times_cost_exploratory": 8.686767764947113e-17,
+          "root_only_cost_seconds_block": 25.037966146218782,
+          "root_only_distinct_replica_U_product": 8.686791558824651e-17,
+          "zero_empirical_variance_inconclusive": true
+        },
+        "d0": {
+          "variance_trace": 4.608499282424441e-30,
+          "conditional_delta_mean": 4.606738432189572e-30,
+          "between_Y_sample_variance": 1.7608502348683298e-33,
+          "mean_Y5": [
+            8.489528455069411e-27,
+            1.0,
+            1.3019660298203543e-27,
+            4.227217055442716e-28,
+            6.411536765195214e-28
+          ],
+          "mean_prefix_steps": 0.0,
+          "mean_logical_steps": 1.0074457372186982,
+          "expected_unique_model_queries_block": 1.0588594917034624,
+          "global_cache_model_seconds_block": 0.09339501584203813,
+          "kernel_output_seconds_block": 0.006718913194983056,
+          "global_cache_cost_seconds_block": 25.040432131796976,
+          "mean_cost_seconds": 3.130054016474622,
+          "variance_times_cost_exploratory": 1.4424851688873035e-29,
+          "root_only_cost_seconds_block": 25.040494873683052,
+          "root_only_distinct_replica_U_product": 1.4424193851674013e-29,
+          "zero_empirical_variance_inconclusive": true
+        },
+        "d1": {
+          "variance_trace": 3.7355003940378333e-32,
+          "conditional_delta_mean": 3.5594153705510004e-32,
+          "between_Y_sample_variance": 1.7608502348683298e-33,
+          "mean_Y5": [
+            8.489528455069411e-27,
+            1.0,
+            1.3019660298203543e-27,
+            4.227217055442716e-28,
+            6.411536765195214e-28
+          ],
+          "mean_prefix_steps": 1.0,
+          "mean_logical_steps": 2.006920953831405,
+          "expected_unique_model_queries_block": 3.055274990032471,
+          "global_cache_model_seconds_block": 0.2710761117581523,
+          "kernel_output_seconds_block": 0.01240686291415547,
+          "global_cache_cost_seconds_block": 25.22380117743226,
+          "mean_cost_seconds": 3.1529751471790326,
+          "variance_times_cost_exploratory": 1.1777939904678773e-31,
+          "root_only_cost_seconds_block": 25.75714334827257,
+          "root_only_distinct_replica_U_product": 1.1955978583999503e-31,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d2": {
+          "variance_trace": 3.499617836638891e-33,
+          "conditional_delta_mean": 1.738767601770562e-33,
+          "between_Y_sample_variance": 1.7608502348683298e-33,
+          "mean_Y5": [
+            8.489528455069411e-27,
+            1.0,
+            1.3019660298203543e-27,
+            4.227217055442716e-28,
+            6.411536765195214e-28
+          ],
+          "mean_prefix_steps": 2.0,
+          "mean_logical_steps": 3.379486741811599,
+          "expected_unique_model_queries_block": 10.035758752549034,
+          "global_cache_model_seconds_block": 0.8905819168700391,
+          "kernel_output_seconds_block": 0.019640893189986477,
+          "global_cache_cost_seconds_block": 25.85054101281998,
+          "mean_cost_seconds": 3.2313176266024977,
+          "variance_times_cost_exploratory": 1.130837680190375e-32,
+          "root_only_cost_seconds_block": 26.73939031873519,
+          "root_only_distinct_replica_U_product": 1.0975055510399526e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d4": {
+          "variance_trace": 3.302826164374166e-33,
+          "conditional_delta_mean": 1.5419759295058365e-33,
+          "between_Y_sample_variance": 1.7608502348683298e-33,
+          "mean_Y5": [
+            8.489528455069411e-27,
+            1.0,
+            1.3019660298203543e-27,
+            4.227217055442716e-28,
+            6.411536765195214e-28
+          ],
+          "mean_prefix_steps": 4.0,
+          "mean_logical_steps": 5.0052713954387595,
+          "expected_unique_model_queries_block": 19.04212654632693,
+          "global_cache_model_seconds_block": 1.6922193904749723,
+          "kernel_output_seconds_block": 0.02925534241279269,
+          "global_cache_cost_seconds_block": 26.661792935647718,
+          "mean_cost_seconds": 3.3327241169559647,
+          "variance_times_cost_exploratory": 1.1007408412122949e-32,
+          "root_only_cost_seconds_block": 27.907993730586703,
+          "root_only_distinct_replica_U_product": 1.0754719215203716e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "d8": {
+          "variance_trace": 1.760858399895786e-33,
+          "conditional_delta_mean": 8.165027456240649e-39,
+          "between_Y_sample_variance": 1.7608502348683298e-33,
+          "mean_Y5": [
+            8.489528455069411e-27,
+            1.0,
+            1.3019660298203543e-27,
+            4.227217055442716e-28,
+            6.411536765195214e-28
+          ],
+          "mean_prefix_steps": 8.0,
+          "mean_logical_steps": 9.254286561566277,
+          "expected_unique_model_queries_block": 49.03423075063505,
+          "global_cache_model_seconds_block": 4.378097313913764,
+          "kernel_output_seconds_block": 0.05252426853211743,
+          "global_cache_cost_seconds_block": 29.370939785205834,
+          "mean_cost_seconds": 3.6713674731507293,
+          "variance_times_cost_exploratory": 6.464758254201629e-33,
+          "root_only_cost_seconds_block": 30.970918881860406,
+          "root_only_distinct_replica_U_product": 5.9698798461020583e-33,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "full": {
+          "variance_trace": 1.7608502348683298e-33,
+          "conditional_delta_mean": 0.0,
+          "between_Y_sample_variance": 1.7608502348683298e-33,
+          "mean_Y5": [
+            8.489528455069411e-27,
+            1.0,
+            1.3019660298203543e-27,
+            4.227217055442716e-28,
+            6.411536765195214e-28
+          ],
+          "mean_prefix_steps": 16.0,
+          "mean_logical_steps": 16.0,
+          "expected_unique_model_queries_block": 99.0,
+          "global_cache_model_seconds_block": 8.816862556912625,
+          "kernel_output_seconds_block": 0.08553916562959785,
+          "global_cache_cost_seconds_block": 33.84271992530218,
+          "mean_cost_seconds": 4.230339990662772,
+          "variance_times_cost_exploratory": 7.44899516613143e-33,
+          "root_only_cost_seconds_block": 35.796658892671985,
+          "root_only_distinct_replica_U_product": 6.894570410257139e-33,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "eta.01": {
+          "variance_trace": 3.7355003940378333e-32,
+          "conditional_delta_mean": 3.5594153705510004e-32,
+          "between_Y_sample_variance": 1.7608502348683298e-33,
+          "mean_Y5": [
+            8.489528455069411e-27,
+            1.0,
+            1.3019660298203543e-27,
+            4.227217055442716e-28,
+            6.411536765195214e-28
+          ],
+          "mean_prefix_steps": 1.0,
+          "mean_logical_steps": 2.006920953831405,
+          "expected_unique_model_queries_block": 3.055274990032471,
+          "global_cache_model_seconds_block": 0.2710761117581523,
+          "kernel_output_seconds_block": 0.01240686291415547,
+          "global_cache_cost_seconds_block": 25.22380117743226,
+          "mean_cost_seconds": 3.1529751471790326,
+          "variance_times_cost_exploratory": 1.1777939904678773e-31,
+          "root_only_cost_seconds_block": 25.75714334827257,
+          "root_only_distinct_replica_U_product": 1.1955978583999503e-31,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        },
+        "eta.0001": {
+          "variance_trace": 3.499617836638891e-33,
+          "conditional_delta_mean": 1.738767601770562e-33,
+          "between_Y_sample_variance": 1.7608502348683298e-33,
+          "mean_Y5": [
+            8.489528455069411e-27,
+            1.0,
+            1.3019660298203543e-27,
+            4.227217055442716e-28,
+            6.411536765195214e-28
+          ],
+          "mean_prefix_steps": 2.0,
+          "mean_logical_steps": 3.379486741811599,
+          "expected_unique_model_queries_block": 10.035758752549034,
+          "global_cache_model_seconds_block": 0.8905819168700391,
+          "kernel_output_seconds_block": 0.019640893189986477,
+          "global_cache_cost_seconds_block": 25.85054101281998,
+          "mean_cost_seconds": 3.2313176266024977,
+          "variance_times_cost_exploratory": 1.130837680190375e-32,
+          "root_only_cost_seconds_block": 26.73939031873519,
+          "root_only_distinct_replica_U_product": 1.0975055510399526e-32,
+          "zero_empirical_variance_inconclusive": true,
+          "advantage_vs_controls": {
+            "MC": null,
+            "d0": null
+          },
+          "paired_95pct_exploratory": {
+            "MC": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            },
+            "d0": {
+              "interval": null,
+              "valid_resamples": 0,
+              "total": 2000
+            }
+          },
+          "material_point_advantage_both": false
+        }
+      }
+    }
+  ],
+  "gate": {
+    "option_mass_items_ge_0.9": 8,
+    "required_items": 6,
+    "material_wins_both_by_variant": {
+      "d1": 4,
+      "d2": 4,
+      "d4": 5,
+      "d8": 5,
+      "full": 5,
+      "eta.01": 6,
+      "eta.0001": 6
+    },
+    "eligible_for_future_protocol": [
+      "eta.01",
+      "eta.0001"
+    ],
+    "decision": "POSITIVE_MODELED_DEVELOPMENT_SCREEN_ONLY_END_TO_END_COST_UNQUALIFIED",
+    "central_contribution_validated": false,
+    "warning": "Development selection and uncertainty only; shared global-cache costs are block nonlinear, not iid. No wall-time theorem or independent confirmation."
+  },
+  "capture_sha256": "25f6c71aa6ee69b39f3de4d9ba208cf1af09ce3bfb1958989b3032526b8e3ec2",
+  "uncompressed_capture_sha256": "25f6c71aa6ee69b39f3de4d9ba208cf1af09ce3bfb1958989b3032526b8e3ec2",
+  "inputs_sha256": "fe163cb34d5def117011bfb415e3a8fd42374fc199c1768f94ff50722006a68a",
+  "offline_analysis_seconds": 93.07538176199887
+}
