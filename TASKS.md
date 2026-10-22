@@ -21,16 +21,6 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
-- [ ] Auditar a interpretação de custo da
-  [A88 V1 concluída](attempts/88-first-commit-marginals/native-result-v1.md)
-  antes de selecionar outra campanha. Foram 968 forwards e 64 réplicas;
-  W≤.01 passou no gate pontual modelado frio em 6/8 itens, mas tem vantagem
-  prevista residente em apenas 1/8, com dois momentos degenerados.
-  [Análise posterior separada](attempts/88-first-commit-marginals/cost-interpretation-v1.md)
-  preserva a seleção de desenvolvimento e o resultado original; não trata
-  replay como tempo ponta a ponta. Sem ganho operacional ou seleção central.
-  Não alterar o qualificador para resgate. Eventual teste independente exige
-  justificativa científica após essa auditoria e um novo protocolo congelado.
 - [ ] Para [A87](attempts/87-conditional-choice-readout/matching-probe-analysis.md),
   concluir prioridade específica e adequação do método de auditoria por
   alvos não casados: prova escrita de esperança `2OPT` arbitrária e
@@ -62,6 +52,11 @@ utilidade demonstrável continua aberta.
   duas famílias: custos previstos com preparo 18,18%/22,68% maiores que o
   serial. Aplicação encerrada; não ajustar custos, margens ou casos para
   salvar esse gate, nem implementar o decoder acelerado por esse resultado.
+  A [revisão independente da A88](attempts/88-first-commit-marginals/cost-interpretation-v1.md)
+  também não justificou outra campanha: qualificação operacional encerrada
+  como inconclusiva, redução de variância preservada e previsão de eficiência
+  residente predominantemente desfavorável. Não ampliar essa família para
+  resgatar o sinal frio de 6/8.
 - [ ] Auditar a prioridade específica e a relevância da interface A71 frente
   às construções clássicas já reconhecidas na própria tentativa.
 - [ ] Antes de qualquer campanha neural, justificar variabilidade útil de EOS,

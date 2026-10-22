@@ -86,6 +86,39 @@ nova campanha. A seleção de desenvolvimento `W<=.01` não é modificada.
 Nenhuma mudança de temperatura, scaffold, casos ou objetivo está autorizada
 por esta nota para resgatar o qualificador.
 
+## Revisão independente e encerramento — 2026-10-22
+
+A tarefa delegada `a88-cost-interpretation-20261022-r2` concluiu a leitura
+estática e a conferência aritmética, sem executar modelos, scripts ou testes
+e sem alterar arquivos. Confirmou os hashes das fontes `aa8ec805` e dos
+resultados `f1721bbb`, a sensibilidade residente acima e a ausência de uma
+variante com seis vitórias. Não identificou falha estrutural no acoplamento
+ou na decomposição da variância sob as hipóteses matemáticas declaradas.
+
+Há uma segunda sensibilidade disponível sem nova captura. No comparador
+que compartilha somente a raiz, o U-estatístico salvo admite retirar o
+preparo comum exatamente por `U_res = U_frio - a*V_estimado`, com
+`a = 3,1175397753449943`. Sob réplicas IID, esse estimador evita o viés de
+multiplicar estimativas correlacionadas. A regra escolhida tem vantagem
+material em 2/8 itens nessa interpretação; nenhuma variante ultrapassa
+2/8. Isso não corrige o produto não linear do cache global, nem mede um
+regime contínuo ou o custo de atingir outra precisão.
+
+Os 21,03 s sem atribuição impedem qualificar o custo integral, mas não
+demonstram, por si, um falso positivo operacional. Também não se apaga a
+redução pontual de variância de 28,4% a 98,2% frente a d=0 nas seis linhas
+não degeneradas. A aritmética flutuante continua uma aproximação declarada:
+os erros locais de normalização não certificam um limite global de viés.
+
+A decisão após essa revisão é **encerrar a qualificação operacional como
+INCONCLUSIVA, sem outra campanha nativa da mesma família**. A previsão de
+eficiência residente é predominantemente desfavorável, o consumidor que
+necessitaria dessa marginal não foi demonstrado e a prioridade específica
+permanece aberta. A recomendação de próximo teste no relatório original
+fica preservada como evidência histórica e não é adotada. A88 não foi
+selecionada como tema central. Provas, oráculo, protocolo, dados e perdas
+permanecem intactos; este adendo não muda o gate frio pré-registrado.
+
 ## Reprodução sem modelo, GPU ou novas medições
 
 O comando lê somente o JSON científico já congelado:

@@ -7,17 +7,6 @@ comandos antigos pertencem às suas versões; consulte o
 
 ## Candidatas em investigação
 
-[A88 — Marginal de uma posição pela primeira fixação](88-first-commit-marginals/README.md):
-prova escrita de estimativa normalizada e sem viés, com redução de covariância
-sob uma política explícita de dLLM. Oráculo racional aprovado em 11 casos,
-incluindo ganho e perda de eficiência frente ao controle forte. A família
-de orçamentos e o protocolo foram congelados antes de dados neurais. A V1
-completou 968 forwards: sinal modelado de desenvolvimento em 6/8 itens com
-preparo frio, mas vantagem prevista residente da regra escolhida em 1/8.
-Custo operacional inconclusivo; [auditoria de interpretação](88-first-commit-marginals/cost-interpretation-v1.md)
-antes de qualquer expansão. Novidade suficiente e seleção central pendentes;
-implicit capture e votação probabilística são antecedentes reconhecidos.
-
 [A87 — Auditoria aleatória de alvos não casados](87-conditional-choice-readout/matching-probe-analysis.md):
 novo algoritmo candidato, com prova escrita de custo esperado `2OPT` sob
 conselho arbitrário e `OPT+1` perfeito, separação determinística e 83.679
@@ -48,6 +37,7 @@ e suficiência científica abertas, sem vantagem neural estabelecida.
 prova escrita e oráculos finitos; prioridade e benefício completo pendentes.
 
 ## Investigações anteriores
+- [A88 — Marginal pela primeira fixação: prova e redução de variância preservadas; qualificação operacional encerrada como inconclusiva após revisão independente, sem outra campanha da mesma família](88-first-commit-marginals/cost-interpretation-v1.md)
 - [A86 — Planejamento por prefixos: perfil/fidelidade viáveis, gate de benefício V3 negativo; aplicação encerrada](86-prefix-closure-planning/result-v3.md)
 - [A85 — Relaxação por checksum para capturas livres: prova candidata, sem consumidor com vantagem justificada](85-checksum-backreferences/README.md)
 - [A84 — Certificado com runner-up: prova local e piloto neural mais rápido, com perda de acurácia; não selecionada](84-full-marginal-certificate/result-v1.md)
