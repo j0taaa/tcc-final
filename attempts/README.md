@@ -11,8 +11,11 @@ comandos antigos pertencem às suas versões; consulte o
 prova escrita de estimativa normalizada e sem viés, com redução de covariância
 sob uma política explícita de dLLM. Oráculo racional aprovado em 11 casos,
 incluindo ganho e perda de eficiência frente ao controle forte. A família
-de orçamentos e o protocolo de qualificação foram congelados antes de dados
-neurais. Benefício real, novidade suficiente e seleção central pendentes;
+de orçamentos e o protocolo foram congelados antes de dados neurais. A V1
+completou 968 forwards: sinal modelado de desenvolvimento em 6/8 itens com
+preparo frio, mas vantagem prevista residente da regra escolhida em 1/8.
+Custo operacional inconclusivo; [auditoria de interpretação](88-first-commit-marginals/cost-interpretation-v1.md)
+antes de qualquer expansão. Novidade suficiente e seleção central pendentes;
 implicit capture e votação probabilística são antecedentes reconhecidos.
 
 [A87 — Auditoria aleatória de alvos não casados](87-conditional-choice-readout/matching-probe-analysis.md):

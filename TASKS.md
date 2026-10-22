@@ -21,14 +21,16 @@ utilidade demonstrável continua aberta.
 - [ ] Auditar a prioridade específica e justificar um consumidor com vantagem
   integral para [A81](attempts/81-sparse-tempered-mixture/README.md), antes
   de selecionar protocolo ou campanha.
-- [ ] Concluir a qualificação pequena de desenvolvimento da
-  [A88](attempts/88-first-commit-marginals/native-protocol-v1.md), com fonte
-  e entradas congeladas antes da captura. Comparar a família inteira com
-  contagens e leitura condicionada à seleção, ambas encerradas na primeira
-  fixação e com raiz reutilizada. A prova e os 11 casos racionais aprovados
-  não demonstram ganho de checkpoint. Qualquer variante escolhida no
-  desenvolvimento precisa de teste independente antes de seleção central;
-  preservar resultado negativo ou inconclusivo sem ajustar o protocolo.
+- [ ] Auditar a interpretação de custo da
+  [A88 V1 concluída](attempts/88-first-commit-marginals/native-result-v1.md)
+  antes de selecionar outra campanha. Foram 968 forwards e 64 réplicas;
+  W≤.01 passou no gate pontual modelado frio em 6/8 itens, mas tem vantagem
+  prevista residente em apenas 1/8, com dois momentos degenerados.
+  [Análise posterior separada](attempts/88-first-commit-marginals/cost-interpretation-v1.md)
+  preserva a seleção de desenvolvimento e o resultado original; não trata
+  replay como tempo ponta a ponta. Sem ganho operacional ou seleção central.
+  Não alterar o qualificador para resgate. Eventual teste independente exige
+  justificativa científica após essa auditoria e um novo protocolo congelado.
 - [ ] Para [A87](attempts/87-conditional-choice-readout/matching-probe-analysis.md),
   concluir prioridade específica e adequação do método de auditoria por
   alvos não casados: prova escrita de esperança `2OPT` arbitrária e
