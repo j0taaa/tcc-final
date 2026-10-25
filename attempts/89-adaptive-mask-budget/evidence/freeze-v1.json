@@ -1,0 +1,15 @@
+{
+  "time_utc": "2026-10-23T10:31:06.922606+00:00",
+  "files": {
+    "protocol-v1.md": "8ee1b29fee12511757a87eeaa0a8dda1ba185294732cc905bd0a039a5637ccd4",
+    "reproduce.sh": "c3a8843a8ed7fdc808bb1fadd7042abc08bceadeb98759f2c86dd2be72e761d2",
+    "sources.md": "d5bc946d27fad2a92dda4cfc19d487236829888907dce873a5016ca04d74cebe",
+    "verifier.py": "5040ed4cff3cf10104d918aa63ffb8e97967abe0f69b1ef397c3422378c8149d",
+    "mechanism.md": "8271aa8b5ed1b0f1eea35137328ebff6ec5f28266b58b8e6b87a24a424e670a4",
+    "verifier.cpp": "0257e56767a51d980d2374359346193a191cc406b631aba6a73c573f6c8f6f60",
+    "pilot.py": "9d0900aef061ae4090a1ee742c1f6428c55704ddba19204451e88e9001b8174f",
+    "README.md": "55c90f1c5568680a5c82cd9cc26abde51d2082227105d10c74694a01a09f2faf",
+    "check.py": "bddcba1a55da7a83bcb884049ecdb648642c6ff9e398e67fada808545bbdbbbc"
+  },
+  "note": "Before the first A89 neural forward; correctness failures preserved in console logs."
+}

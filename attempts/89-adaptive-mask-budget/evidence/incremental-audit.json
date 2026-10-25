@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "oracle_proposals": 1460,
+  "incremental_updates": 365,
+  "joint_dependency_counterexample": true,
+  "cuda_used": false
+}

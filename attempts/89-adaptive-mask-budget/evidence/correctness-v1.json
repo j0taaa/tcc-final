@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "finite_checks": 1554,
+  "tiny_allocation_checks": 48,
+  "grammar_checks": 19531,
+  "full_table_checks": 15,
+  "states": 771,
+  "classes": 44,
+  "admitted_ids": 23582,
+  "depth_bound": 192,
+  "max_opens": 2,
+  "compile": {
+    "seconds": 0.0001263569574803114,
+    "reused": true,
+    "sha256": "0257e56767a51d980d2374359346193a191cc406b631aba6a73c573f6c8f6f60"
+  },
+  "table_prepare_seconds": 0.5941302980063483,
+  "timings": [
+    {
+      "tokens": 2,
+      "cpu_allocation_s": 0.00010170997120440006,
+      "gpu_allocation_s": 0.00036534492392092943
+    },
+    {
+      "tokens": 2,
+      "cpu_allocation_s": 9.718199726194143e-05,
+      "gpu_allocation_s": 0.0003469709772616625
+    },
+    {
+      "tokens": 2,
+      "cpu_allocation_s": 9.648804552853107e-05,
+      "gpu_allocation_s": 0.0002929879119619727
+    },
+    {
+      "tokens": 4,
+      "cpu_allocation_s": 0.00017412204761058092,
+      "gpu_allocation_s": 0.0004825280047953129
+    },
+    {
+      "tokens": 4,
+      "cpu_allocation_s": 0.0001724959583953023,
+      "gpu_allocation_s": 0.0004670739872381091
+    },
+    {
+      "tokens": 4,
+      "cpu_allocation_s": 0.00016556004993617535,
+      "gpu_allocation_s": 0.00048734794836491346
+    },
+    {
+      "tokens": 11,
+      "cpu_allocation_s": 0.00048494304064661264,
+      "gpu_allocation_s": 0.0010432639392092824
+    },
+    {
+      "tokens": 11,
+      "cpu_allocation_s": 0.0005142210284247994,
+      "gpu_allocation_s": 0.0009752779733389616
+    },
+    {
+      "tokens": 11,
+      "cpu_allocation_s": 0.0005061229458078742,
+      "gpu_allocation_s": 0.0009342930279672146
+    },
+    {
+      "tokens": 4,
+      "cpu_allocation_s": 0.00020393403246998787,
+      "gpu_allocation_s": 0.00043747795280069113
+    },
+    {
+      "tokens": 4,
+      "cpu_allocation_s": 0.00019505200907588005,
+      "gpu_allocation_s": 0.00040753395296633244
+    },
+    {
+      "tokens": 4,
+      "cpu_allocation_s": 0.00017781800124794245,
+      "gpu_allocation_s": 0.00037174602039158344
+    },
+    {
+      "tokens": 3,
+      "cpu_allocation_s": 0.00014994596131145954,
+      "gpu_allocation_s": 0.00036184804048389196
+    },
+    {
+      "tokens": 3,
+      "cpu_allocation_s": 0.00015960901509970427,
+      "gpu_allocation_s": 0.0003528889501467347
+    },
+    {
+      "tokens": 3,
+      "cpu_allocation_s": 0.00016237003728747368,
+      "gpu_allocation_s": 0.0004001390188932419
+    }
+  ],
+  "total_seconds": 1.2342505269916728
+}

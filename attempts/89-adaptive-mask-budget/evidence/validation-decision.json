@@ -1,0 +1,5 @@
+{
+  "median_verifier_fraction": 0.014375097289164838,
+  "custom_kernel_gate_passed": false,
+  "note": "Frozen after VAL, before TEST outputs. No custom GPU kernel warranted. Torch exact reference remains in factorial."
+}

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/../.."+A89_PYTHON=${A89_PYTHON:-/home/jota/projects/tcc-final/.venv-live/bin/python}
+A89_DIR=attempts/89-adaptive-mask-budget
+# Each command refuses to overwrite scientific records. Choose fresh names to rerun.
+# The lock covers the entire CUDA process, including preparation and teardown.
+flock -w 30 /tmp/tcc-final-gpu-pilot.lock "$A89_PYTHON" "$A89_DIR/check.py" --output "$A89_DIR/evidence/correctness-rerun.json"
+flock -w 30 /tmp/tcc-final-gpu-pilot.lock "$A89_PYTHON" "$A89_DIR/pilot.py" --phase val --output "$A89_DIR/evidence/val-rerun.jsonl"
+"$A89_PYTHON" "$A89_DIR/analyze.py" --val "$A89_DIR/evidence/val-rerun.jsonl" --selection "$A89_DIR/evidence/selection-rerun.json"
+flock -w 30 /tmp/tcc-final-gpu-pilot.lock "$A89_PYTHON" "$A89_DIR/pilot.py" --phase test --selection "$A89_DIR/evidence/selection-rerun.json" --output "$A89_DIR/evidence/test-rerun.jsonl"
+"$A89_PYTHON" "$A89_DIR/analyze.py" --val "$A89_DIR/evidence/val-rerun.jsonl" --test "$A89_DIR/evidence/test-rerun.jsonl" --output "$A89_DIR/evidence/analysis-rerun.json"

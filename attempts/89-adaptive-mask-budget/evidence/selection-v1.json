@@ -1,0 +1,46 @@
+{
+  "flat": {
+    "capacity": 32,
+    "correct": 0,
+    "median_seconds": 1.0514577634749003,
+    "candidates": [
+      {
+        "capacity": 32,
+        "correct": 0,
+        "median_seconds": 1.0514577634749003
+      },
+      {
+        "capacity": 64,
+        "correct": 0,
+        "median_seconds": 1.0874798410804942
+      },
+      {
+        "capacity": 96,
+        "correct": 0,
+        "median_seconds": 1.366108205053024
+      }
+    ]
+  },
+  "grouped": {
+    "capacity": 32,
+    "correct": 0,
+    "median_seconds": 0.9650212989654392,
+    "candidates": [
+      {
+        "capacity": 32,
+        "correct": 0,
+        "median_seconds": 0.9650212989654392
+      },
+      {
+        "capacity": 64,
+        "correct": 0,
+        "median_seconds": 1.3294307494652458
+      },
+      {
+        "capacity": 96,
+        "correct": 0,
+        "median_seconds": 1.038808538520243
+      }
+    ]
+  }
+}

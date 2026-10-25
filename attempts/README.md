@@ -37,6 +37,7 @@ e suficiência científica abertas, sem vantagem neural estabelecida.
 prova escrita e oráculos finitos; prioridade e benefício completo pendentes.
 
 ## Investigações anteriores
+- [A89 — Capacidade em tokens e expansão de MASKs: piloto fatorial real concluído, zero acerto funcional, sem ganho integral ou justificativa de kernel próprio; não selecionada como contribuição central](89-adaptive-mask-budget/result.md)
 - [A88 — Marginal pela primeira fixação: prova e redução de variância preservadas; qualificação operacional encerrada como inconclusiva após revisão independente, sem outra campanha da mesma família](88-first-commit-marginals/cost-interpretation-v1.md)
 - [A86 — Planejamento por prefixos: perfil/fidelidade viáveis, gate de benefício V3 negativo; aplicação encerrada](86-prefix-closure-planning/result-v3.md)
 - [A85 — Relaxação por checksum para capturas livres: prova candidata, sem consumidor com vantagem justificada](85-checksum-backreferences/README.md)

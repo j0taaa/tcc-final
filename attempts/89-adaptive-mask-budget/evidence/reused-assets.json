@@ -1,0 +1,81 @@
+{
+  "rust_bindings_installed": "/home/jota/projects/tcc-final/vendor/EPIC-Decoding/rustformlang_bindings/rustformlang",
+  "python_sources": [
+    {
+      "relative": "__init__.py",
+      "same": true,
+      "sha256": "eac90e7ea7b4bd0d224c0b158c621da068370ef5feedc729cdc17d2540e3adbc"
+    },
+    {
+      "relative": "cfg/__init__.py",
+      "same": true,
+      "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+    },
+    {
+      "relative": "constraining/__init__.py",
+      "same": true,
+      "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+    },
+    {
+      "relative": "fa/__init__.py",
+      "same": true,
+      "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+    },
+    {
+      "relative": "fa/bytes_dfa/__init__.py",
+      "same": true,
+      "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+    },
+    {
+      "relative": "fa/dfa/__init__.py",
+      "same": true,
+      "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+    },
+    {
+      "relative": "fa/epsilon_nfa/__init__.py",
+      "same": true,
+      "sha256": "bbd265179aaa82b848a50e842b95862bfed115b08aee873a3780330c6328c244"
+    }
+  ],
+  "native": [
+    {
+      "path": "/home/jota/projects/tcc-final/vendor/EPIC-Decoding/rustformlang_bindings/rustformlang/rustformlang.cpython-311-x86_64-linux-gnu.so",
+      "sha256": "7d67270cf8f0423bf8a19f1da32e474a95de23cefae8ec899e24e8403f018b4c",
+      "bytes": 5058616
+    }
+  ],
+  "model_weights": [
+    {
+      "name": "model-00001-of-00006.safetensors",
+      "bytes": 2109747184,
+      "cache_blob": "ff6699df9635a267fb4ac801ea8012d39b21bb22ed290d5a57128521b889c230"
+    },
+    {
+      "name": "model-00002-of-00006.safetensors",
+      "bytes": 2948598128,
+      "cache_blob": "b8ddf571b47f57ce654913877f3625d2c7b9a4c3f81cb6f41f6c3055473b0281"
+    },
+    {
+      "name": "model-00003-of-00006.safetensors",
+      "bytes": 2986883656,
+      "cache_blob": "8347db2fd61a3b5bad2970c2f83ecb84b93632e276a41ca169dcc5efae15462c"
+    },
+    {
+      "name": "model-00004-of-00006.safetensors",
+      "bytes": 2952797224,
+      "cache_blob": "93d8706872e7432d5cd40c9a61f9f9d270c101828cef2adaf27c67743d3dcf1a"
+    },
+    {
+      "name": "model-00005-of-00006.safetensors",
+      "bytes": 2919239128,
+      "cache_blob": "ff5f765eb7ec8bfdbe3b962a9e920d71de43d55e04eb4844710c0efcc8855092"
+    },
+    {
+      "name": "model-00006-of-00006.safetensors",
+      "bytes": 2113931792,
+      "cache_blob": "f25d4cc57b24a79a840d49c3b25d9a22dd5caf3a9766f591e4625377901194e2"
+    }
+  ],
+  "weight_note": "Existing HuggingFace cache reused. Blob filename is content-address metadata, not a new full-content audit.",
+  "all_installed_python_equal": true
+}

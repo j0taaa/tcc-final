@@ -1,0 +1,108 @@
+{
+  "records": [
+    {
+      "case": "flat-19",
+      "split": "VAL",
+      "canonical_gold_tokens_including_eos": 19,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "grouped-19",
+      "split": "VAL",
+      "canonical_gold_tokens_including_eos": 25,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "flat-163",
+      "split": "VAL",
+      "canonical_gold_tokens_including_eos": 20,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "grouped-163",
+      "split": "VAL",
+      "canonical_gold_tokens_including_eos": 25,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "flat-94",
+      "split": "TEST",
+      "canonical_gold_tokens_including_eos": 48,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "grouped-94",
+      "split": "TEST",
+      "canonical_gold_tokens_including_eos": 60,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "flat-175",
+      "split": "TEST",
+      "canonical_gold_tokens_including_eos": 10,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "grouped-175",
+      "split": "TEST",
+      "canonical_gold_tokens_including_eos": 13,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "flat-243",
+      "split": "TEST",
+      "canonical_gold_tokens_including_eos": 32,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "grouped-243",
+      "split": "TEST",
+      "canonical_gold_tokens_including_eos": 38,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "flat-111",
+      "split": "TEST",
+      "canonical_gold_tokens_including_eos": 46,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    },
+    {
+      "case": "grouped-111",
+      "split": "TEST",
+      "canonical_gold_tokens_including_eos": 59,
+      "deterministic_correct": true,
+      "empty_array_correct": false
+    }
+  ],
+  "a84_word_sorting_indices": [
+    58,
+    73,
+    120,
+    125,
+    171,
+    223,
+    235,
+    240
+  ],
+  "a89_indices": [
+    19,
+    94,
+    111,
+    163,
+    175,
+    243
+  ],
+  "overlap_a84": [],
+  "note": "CPU-only evaluation after all neural runs. Canonical BPE length is not a minimum-token certificate and was not supplied to any policy."
+}

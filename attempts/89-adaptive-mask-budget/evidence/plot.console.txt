@@ -1,0 +1,10 @@
+Downloading pillow (6.8MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading fonttools (5.2MiB)
+ Downloaded kiwisolver
+Downloading matplotlib (8.3MiB)
+ Downloaded fonttools
+ Downloaded pillow
+ Downloaded matplotlib
+Installed 12 packages in 68ms
+Wrote SVG/PNG; matplotlib 3.10.7

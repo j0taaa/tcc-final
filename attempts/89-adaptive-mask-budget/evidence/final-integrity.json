@@ -1,0 +1,15 @@
+{
+  "frozen_producers_unchanged": {
+    "pilot.py": true,
+    "verifier.py": true,
+    "verifier.cpp": true,
+    "check.py": true,
+    "protocol-v1.md": true,
+    "sources.md": true,
+    "mechanism.md": true
+  },
+  "old_readme_and_wrapper_archived": true,
+  "test_complete_records": 336,
+  "status": "PASS",
+  "note": "Result updates to README and correction to wrapper archived; no producer, policy, protocol, or raw record changed."
+}

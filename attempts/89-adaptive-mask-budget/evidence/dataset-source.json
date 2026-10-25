@@ -1,0 +1,13 @@
+{
+  "url": "https://raw.githubusercontent.com/suzgunmirac/BIG-Bench-Hard/9ee07bd481feebf959a6b59d61ea57bdcf30964d/bbh/word_sorting.json",
+  "sha256": "2a6132d2c99f00d0d2eb1113ac6b4a918bd969d863c48749210d969713db8d43",
+  "selected": [
+    19,
+    163,
+    94,
+    175,
+    243,
+    111
+  ],
+  "rule": "SHA256(A89-v1:<index>)"
+}

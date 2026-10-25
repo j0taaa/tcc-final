@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/jota/.t3/worktrees/tcc-final/research-adaptive-mask-gpu-20261023/attempts/89-adaptive-mask-budget/check.py", line 137, in <module>
+    main()
+  File "/home/jota/.t3/worktrees/tcc-final/research-adaptive-mask-gpu-20261023/attempts/89-adaptive-mask-budget/check.py", line 56, in main
+    assert gpu.prepare(canvas) == expected
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/.t3/worktrees/tcc-final/research-adaptive-mask-gpu-20261023/attempts/89-adaptive-mask-budget/verifier.py", line 165, in prepare
+    self.f[i + 1].scatter_reduce_(
+NotImplementedError: "cuda_scatter_gather_base_kernel_func" not implemented for 'Bool'

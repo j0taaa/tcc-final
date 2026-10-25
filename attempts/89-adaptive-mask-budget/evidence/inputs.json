@@ -1,0 +1,408 @@
+[
+  {
+    "id": "flat-19",
+    "index": 19,
+    "split": "VAL",
+    "family": "flat",
+    "words": [
+      "bituminous",
+      "ami",
+      "decadent",
+      "knickerbocker",
+      "exeter"
+    ],
+    "prompt": "Return a compact JSON array of the words sorted alphabetically. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: bituminous ami decadent knickerbocker exeter",
+    "expected": [
+      "ami",
+      "bituminous",
+      "decadent",
+      "exeter",
+      "knickerbocker"
+    ]
+  },
+  {
+    "id": "grouped-19",
+    "index": 19,
+    "split": "VAL",
+    "family": "grouped",
+    "words": [
+      "bituminous",
+      "ami",
+      "decadent",
+      "knickerbocker",
+      "exeter"
+    ],
+    "prompt": "Return a compact JSON array of arrays. Group the words by first letter; sort groups by that letter and words alphabetically inside each group. Do not include the group letters separately. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: bituminous ami decadent knickerbocker exeter",
+    "expected": [
+      [
+        "ami"
+      ],
+      [
+        "bituminous"
+      ],
+      [
+        "decadent"
+      ],
+      [
+        "exeter"
+      ],
+      [
+        "knickerbocker"
+      ]
+    ]
+  },
+  {
+    "id": "flat-163",
+    "index": 163,
+    "split": "VAL",
+    "family": "flat",
+    "words": [
+      "bottle",
+      "kenney",
+      "chapati",
+      "okinawa",
+      "boon",
+      "bedtime"
+    ],
+    "prompt": "Return a compact JSON array of the words sorted alphabetically. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: bottle kenney chapati okinawa boon bedtime",
+    "expected": [
+      "bedtime",
+      "boon",
+      "bottle",
+      "chapati",
+      "kenney",
+      "okinawa"
+    ]
+  },
+  {
+    "id": "grouped-163",
+    "index": 163,
+    "split": "VAL",
+    "family": "grouped",
+    "words": [
+      "bottle",
+      "kenney",
+      "chapati",
+      "okinawa",
+      "boon",
+      "bedtime"
+    ],
+    "prompt": "Return a compact JSON array of arrays. Group the words by first letter; sort groups by that letter and words alphabetically inside each group. Do not include the group letters separately. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: bottle kenney chapati okinawa boon bedtime",
+    "expected": [
+      [
+        "bedtime",
+        "boon",
+        "bottle"
+      ],
+      [
+        "chapati"
+      ],
+      [
+        "kenney"
+      ],
+      [
+        "okinawa"
+      ]
+    ]
+  },
+  {
+    "id": "flat-94",
+    "index": 94,
+    "split": "TEST",
+    "family": "flat",
+    "words": [
+      "quench",
+      "autocracy",
+      "lodge",
+      "exploitation",
+      "custody",
+      "ventricle",
+      "annuity",
+      "bruno",
+      "thunderclap",
+      "militant",
+      "somatic",
+      "dare",
+      "acquisitive"
+    ],
+    "prompt": "Return a compact JSON array of the words sorted alphabetically. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: quench autocracy lodge exploitation custody ventricle annuity bruno thunderclap militant somatic dare acquisitive",
+    "expected": [
+      "acquisitive",
+      "annuity",
+      "autocracy",
+      "bruno",
+      "custody",
+      "dare",
+      "exploitation",
+      "lodge",
+      "militant",
+      "quench",
+      "somatic",
+      "thunderclap",
+      "ventricle"
+    ]
+  },
+  {
+    "id": "grouped-94",
+    "index": 94,
+    "split": "TEST",
+    "family": "grouped",
+    "words": [
+      "quench",
+      "autocracy",
+      "lodge",
+      "exploitation",
+      "custody",
+      "ventricle",
+      "annuity",
+      "bruno",
+      "thunderclap",
+      "militant",
+      "somatic",
+      "dare",
+      "acquisitive"
+    ],
+    "prompt": "Return a compact JSON array of arrays. Group the words by first letter; sort groups by that letter and words alphabetically inside each group. Do not include the group letters separately. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: quench autocracy lodge exploitation custody ventricle annuity bruno thunderclap militant somatic dare acquisitive",
+    "expected": [
+      [
+        "acquisitive",
+        "annuity",
+        "autocracy"
+      ],
+      [
+        "bruno"
+      ],
+      [
+        "custody"
+      ],
+      [
+        "dare"
+      ],
+      [
+        "exploitation"
+      ],
+      [
+        "lodge"
+      ],
+      [
+        "militant"
+      ],
+      [
+        "quench"
+      ],
+      [
+        "somatic"
+      ],
+      [
+        "thunderclap"
+      ],
+      [
+        "ventricle"
+      ]
+    ]
+  },
+  {
+    "id": "flat-175",
+    "index": 175,
+    "split": "TEST",
+    "family": "flat",
+    "words": [
+      "shakespearian",
+      "laudatory"
+    ],
+    "prompt": "Return a compact JSON array of the words sorted alphabetically. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: shakespearian laudatory",
+    "expected": [
+      "laudatory",
+      "shakespearian"
+    ]
+  },
+  {
+    "id": "grouped-175",
+    "index": 175,
+    "split": "TEST",
+    "family": "grouped",
+    "words": [
+      "shakespearian",
+      "laudatory"
+    ],
+    "prompt": "Return a compact JSON array of arrays. Group the words by first letter; sort groups by that letter and words alphabetically inside each group. Do not include the group letters separately. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: shakespearian laudatory",
+    "expected": [
+      [
+        "laudatory"
+      ],
+      [
+        "shakespearian"
+      ]
+    ]
+  },
+  {
+    "id": "flat-243",
+    "index": 243,
+    "split": "TEST",
+    "family": "flat",
+    "words": [
+      "haddock",
+      "colossus",
+      "sheepskin",
+      "honeymoon",
+      "candid",
+      "pragmatic",
+      "agrarian",
+      "people",
+      "applicate"
+    ],
+    "prompt": "Return a compact JSON array of the words sorted alphabetically. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: haddock colossus sheepskin honeymoon candid pragmatic agrarian people applicate",
+    "expected": [
+      "agrarian",
+      "applicate",
+      "candid",
+      "colossus",
+      "haddock",
+      "honeymoon",
+      "people",
+      "pragmatic",
+      "sheepskin"
+    ]
+  },
+  {
+    "id": "grouped-243",
+    "index": 243,
+    "split": "TEST",
+    "family": "grouped",
+    "words": [
+      "haddock",
+      "colossus",
+      "sheepskin",
+      "honeymoon",
+      "candid",
+      "pragmatic",
+      "agrarian",
+      "people",
+      "applicate"
+    ],
+    "prompt": "Return a compact JSON array of arrays. Group the words by first letter; sort groups by that letter and words alphabetically inside each group. Do not include the group letters separately. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: haddock colossus sheepskin honeymoon candid pragmatic agrarian people applicate",
+    "expected": [
+      [
+        "agrarian",
+        "applicate"
+      ],
+      [
+        "candid",
+        "colossus"
+      ],
+      [
+        "haddock",
+        "honeymoon"
+      ],
+      [
+        "people",
+        "pragmatic"
+      ],
+      [
+        "sheepskin"
+      ]
+    ]
+  },
+  {
+    "id": "flat-111",
+    "index": 111,
+    "split": "TEST",
+    "family": "flat",
+    "words": [
+      "wv",
+      "habitation",
+      "panicking",
+      "schoolmate",
+      "aerodynamic",
+      "giacomo",
+      "nebulous",
+      "offset",
+      "vector",
+      "roosevelt",
+      "jimmy",
+      "botanist",
+      "suburbia",
+      "padre"
+    ],
+    "prompt": "Return a compact JSON array of the words sorted alphabetically. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: wv habitation panicking schoolmate aerodynamic giacomo nebulous offset vector roosevelt jimmy botanist suburbia padre",
+    "expected": [
+      "aerodynamic",
+      "botanist",
+      "giacomo",
+      "habitation",
+      "jimmy",
+      "nebulous",
+      "offset",
+      "padre",
+      "panicking",
+      "roosevelt",
+      "schoolmate",
+      "suburbia",
+      "vector",
+      "wv"
+    ]
+  },
+  {
+    "id": "grouped-111",
+    "index": 111,
+    "split": "TEST",
+    "family": "grouped",
+    "words": [
+      "wv",
+      "habitation",
+      "panicking",
+      "schoolmate",
+      "aerodynamic",
+      "giacomo",
+      "nebulous",
+      "offset",
+      "vector",
+      "roosevelt",
+      "jimmy",
+      "botanist",
+      "suburbia",
+      "padre"
+    ],
+    "prompt": "Return a compact JSON array of arrays. Group the words by first letter; sort groups by that letter and words alphabetically inside each group. Do not include the group letters separately. Use no spaces, code fences, explanations, or extra keys. Include every input word exactly once.\nWords: wv habitation panicking schoolmate aerodynamic giacomo nebulous offset vector roosevelt jimmy botanist suburbia padre",
+    "expected": [
+      [
+        "aerodynamic"
+      ],
+      [
+        "botanist"
+      ],
+      [
+        "giacomo"
+      ],
+      [
+        "habitation"
+      ],
+      [
+        "jimmy"
+      ],
+      [
+        "nebulous"
+      ],
+      [
+        "offset"
+      ],
+      [
+        "padre",
+        "panicking"
+      ],
+      [
+        "roosevelt"
+      ],
+      [
+        "schoolmate",
+        "suburbia"
+      ],
+      [
+        "vector"
+      ],
+      [
+        "wv"
+      ]
+    ]
+  }
+]

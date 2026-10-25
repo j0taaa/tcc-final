@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/jota/.t3/worktrees/tcc-final/research-adaptive-mask-gpu-20261023/attempts/89-adaptive-mask-budget/check.py", line 137, in <module>
+    main()
+  File "/home/jota/.t3/worktrees/tcc-final/research-adaptive-mask-gpu-20261023/attempts/89-adaptive-mask-budget/check.py", line 59, in main
+    assert not cpu.prepare([0, 1, -1, 3])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
