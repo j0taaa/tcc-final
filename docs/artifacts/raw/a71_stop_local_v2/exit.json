@@ -1,0 +1,13 @@
+{
+  "producer_at_start": "9b097865ec300ed853a584238a3040b98714a8d5",
+  "head_at_exit": "9b097865ec300ed853a584238a3040b98714a8d5",
+  "command": [
+    "/home/jota/projects/tcc-final/.venv/bin/python",
+    "attempts/71-pairwise-stop-clocks/work/audit_v2.py",
+    "--output",
+    "/home/jota/projects/tcc-final/docs/artifacts/raw/a71_stop_local_v2/run"
+  ],
+  "direct_returncode": 0,
+  "diagnostic_elapsed_seconds": 3.308817493962124,
+  "console_sha256": "ae71f36bbb4a6b41b722880dec91517a273849d6da869ff2720ddf5c447bcd7d"
+}

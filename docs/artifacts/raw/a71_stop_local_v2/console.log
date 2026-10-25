@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "producer": "9b097865ec300ed853a584238a3040b98714a8d5",
+  "counts": {
+    "stop_orthant_events": 4536,
+    "stop_single_pair_intersections": 3240,
+    "independent_mobius_mask_checks": 4536,
+    "local_k_q_cells": 324,
+    "iid_fallback_cells": 13,
+    "adaptive_transition_terms": 59864,
+    "adaptive_max_cdf_checks": 72,
+    "complete_word_single_pair_probabilities": 5880,
+    "adaptive_policy_cases": 24,
+    "continuation_comparisons": 10125,
+    "characterization_kernels": 81
+  },
+  "model_forwards": 0,
+  "scope": "Exact finite local/adaptive comparison only; no neural latency, priority or fulfilled goal"
+}
