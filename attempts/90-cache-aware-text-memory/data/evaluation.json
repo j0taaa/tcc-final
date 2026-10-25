@@ -1,0 +1,502 @@
+[
+  {
+    "id": "7a87bd0c",
+    "type": "knowledge-update",
+    "questions": [
+      {
+        "question": "How long have I been sticking to my daily tidying routine?",
+        "answer": "4 weeks",
+        "date": "2023/09/30 (Sat) 18:36"
+      }
+    ],
+    "abstention": false
+  },
+  {
+    "id": "f35224e0",
+    "type": "multi-session",
+    "questions": [
+      {
+        "question": "What is the total number of episodes I've listened to from 'How I Built This' and 'My Favorite Murder'?",
+        "answer": "27",
+        "date": "2023/05/26 (Fri) 10:38"
+      }
+    ],
+    "abstention": false
+  },
+  {
+    "id": "778164c6",
+    "type": "single-session-assistant",
+    "questions": [
+      {
+        "question": "I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Jamaican dish you recommended I try with snapper that has fruit in it?",
+        "answer": "Grilled Snapper with Mango Salsa",
+        "date": "2023/05/29 (Mon) 23:31"
+      }
+    ],
+    "abstention": false
+  },
+  {
+    "id": "75f70248",
+    "type": "single-session-preference",
+    "questions": [
+      {
+        "question": "I've been sneezing quite a bit lately. Do you think it might be my living room?",
+        "answer": "The user would prefer responses that consider the potential impact of their cat, Luna, and her shedding on their sneezing, as well as the recent deep clean of the living room and its possible effect on stirring up dust. They might not prefer responses that fail to take into account these specific details previously mentioned, such as generic suggestions or unrelated factors.",
+        "date": "2023/05/27 (Sat) 20:51"
+      }
+    ],
+    "abstention": false
+  },
+  {
+    "id": "af8d2e46",
+    "type": "single-session-user",
+    "questions": [
+      {
+        "question": "How many shirts did I pack for my 5-day trip to Costa Rica?",
+        "answer": "7",
+        "date": "2023/05/30 (Tue) 20:28"
+      }
+    ],
+    "abstention": false
+  },
+  {
+    "id": "2ebe6c92",
+    "type": "temporal-reasoning",
+    "questions": [
+      {
+        "question": "Which book did I finish a week ago?",
+        "answer": "'The Nightingale' by Kristin Hannah",
+        "date": "2023/02/07 (Tue) 10:44"
+      }
+    ],
+    "abstention": false
+  },
+  {
+    "id": "60bf93ed_abs",
+    "type": "multi-session",
+    "questions": [
+      {
+        "question": "How many days did it take for my iPad case to arrive after I bought it?",
+        "answer": "The information provided is not enough. You did not mention buying an iPad case.",
+        "date": "2023/01/24 (Tue) 10:05"
+      }
+    ],
+    "abstention": true
+  },
+  {
+    "id": "synthetic-0",
+    "type": "dependent-update",
+    "states": [
+      {
+        "step": 0,
+        "questions": [
+          {
+            "question": "What is Mira's current delivery city?",
+            "answer": "Recife",
+            "obsolete": []
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Tuesday Monday",
+            "required": [
+              "Tuesday",
+              "Monday"
+            ],
+            "obsolete": []
+          },
+          {
+            "question": "What is Mira's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Livia",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Livia"
+            ],
+            "obsolete": []
+          }
+        ]
+      },
+      {
+        "step": 1,
+        "questions": [
+          {
+            "question": "What is Mira's current delivery city?",
+            "answer": "Natal",
+            "obsolete": [
+              "Recife"
+            ]
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Tuesday Monday",
+            "required": [
+              "Tuesday",
+              "Monday"
+            ],
+            "obsolete": []
+          },
+          {
+            "question": "What is Mira's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Livia",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Livia"
+            ],
+            "obsolete": []
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "questions": [
+          {
+            "question": "What is Mira's current delivery city?",
+            "answer": "Natal",
+            "obsolete": [
+              "Recife"
+            ]
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Friday Thursday",
+            "required": [
+              "Friday",
+              "Thursday"
+            ],
+            "obsolete": [
+              "Tuesday"
+            ]
+          },
+          {
+            "question": "What is Mira's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Bruno",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Bruno"
+            ],
+            "obsolete": [
+              "Livia"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synthetic-1",
+    "type": "dependent-update",
+    "states": [
+      {
+        "step": 0,
+        "questions": [
+          {
+            "question": "What is Noah's current delivery city?",
+            "answer": "Lima",
+            "obsolete": []
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Monday Sunday",
+            "required": [
+              "Monday",
+              "Sunday"
+            ],
+            "obsolete": []
+          },
+          {
+            "question": "What is Noah's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Livia",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Livia"
+            ],
+            "obsolete": []
+          }
+        ]
+      },
+      {
+        "step": 1,
+        "questions": [
+          {
+            "question": "What is Noah's current delivery city?",
+            "answer": "Cusco",
+            "obsolete": [
+              "Lima"
+            ]
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Monday Sunday",
+            "required": [
+              "Monday",
+              "Sunday"
+            ],
+            "obsolete": []
+          },
+          {
+            "question": "What is Noah's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Livia",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Livia"
+            ],
+            "obsolete": []
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "questions": [
+          {
+            "question": "What is Noah's current delivery city?",
+            "answer": "Cusco",
+            "obsolete": [
+              "Lima"
+            ]
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Thursday Wednesday",
+            "required": [
+              "Thursday",
+              "Wednesday"
+            ],
+            "obsolete": [
+              "Monday"
+            ]
+          },
+          {
+            "question": "What is Noah's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Bruno",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Bruno"
+            ],
+            "obsolete": [
+              "Livia"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synthetic-2",
+    "type": "dependent-update",
+    "states": [
+      {
+        "step": 0,
+        "questions": [
+          {
+            "question": "What is Iris's current delivery city?",
+            "answer": "Oslo",
+            "obsolete": []
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Wednesday Tuesday",
+            "required": [
+              "Wednesday",
+              "Tuesday"
+            ],
+            "obsolete": []
+          },
+          {
+            "question": "What is Iris's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Livia",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Livia"
+            ],
+            "obsolete": []
+          }
+        ]
+      },
+      {
+        "step": 1,
+        "questions": [
+          {
+            "question": "What is Iris's current delivery city?",
+            "answer": "Bergen",
+            "obsolete": [
+              "Oslo"
+            ]
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Wednesday Tuesday",
+            "required": [
+              "Wednesday",
+              "Tuesday"
+            ],
+            "obsolete": []
+          },
+          {
+            "question": "What is Iris's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Livia",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Livia"
+            ],
+            "obsolete": []
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "questions": [
+          {
+            "question": "What is Iris's current delivery city?",
+            "answer": "Bergen",
+            "obsolete": [
+              "Oslo"
+            ]
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Saturday Friday",
+            "required": [
+              "Saturday",
+              "Friday"
+            ],
+            "obsolete": [
+              "Wednesday"
+            ]
+          },
+          {
+            "question": "What is Iris's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Bruno",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Bruno"
+            ],
+            "obsolete": [
+              "Livia"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synthetic-3",
+    "type": "dependent-update",
+    "states": [
+      {
+        "step": 0,
+        "questions": [
+          {
+            "question": "What is Enzo's current delivery city?",
+            "answer": "Rome",
+            "obsolete": []
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Friday Thursday",
+            "required": [
+              "Friday",
+              "Thursday"
+            ],
+            "obsolete": []
+          },
+          {
+            "question": "What is Enzo's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Livia",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Livia"
+            ],
+            "obsolete": []
+          }
+        ]
+      },
+      {
+        "step": 1,
+        "questions": [
+          {
+            "question": "What is Enzo's current delivery city?",
+            "answer": "Turin",
+            "obsolete": [
+              "Rome"
+            ]
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Friday Thursday",
+            "required": [
+              "Friday",
+              "Thursday"
+            ],
+            "obsolete": []
+          },
+          {
+            "question": "What is Enzo's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Livia",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Livia"
+            ],
+            "obsolete": []
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "questions": [
+          {
+            "question": "What is Enzo's current delivery city?",
+            "answer": "Turin",
+            "obsolete": [
+              "Rome"
+            ]
+          },
+          {
+            "question": "What is the current appointment day and reminder day?",
+            "answer": "Sunday Saturday",
+            "required": [
+              "Sunday",
+              "Saturday"
+            ],
+            "obsolete": [
+              "Friday"
+            ]
+          },
+          {
+            "question": "What is Enzo's employer, dog name, project code and emergency contact?",
+            "answer": "Orion Pixel Cedar Bruno",
+            "required": [
+              "Orion",
+              "Pixel",
+              "Cedar",
+              "Bruno"
+            ],
+            "obsolete": [
+              "Livia"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

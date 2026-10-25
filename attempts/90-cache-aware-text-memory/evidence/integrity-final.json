@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "streams": 11,
+  "updates": 35,
+  "cpu_memory_states": 105,
+  "selection_reproduced": 7,
+  "frozen_inputs_unchanged_with_documented_runtime_amendments": true,
+  "cache_invariants": "prefix only; causal suffix never reused after divergence",
+  "neural_memory_states": 140,
+  "reader_calls": 245,
+  "gpu_cache_audits": 5,
+  "locked_review_files_valid": true
+}

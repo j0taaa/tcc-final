@@ -1,0 +1,2 @@
+{"utc": "2026-10-23T10:43:08.539298+00:00", "compute_processes": "115052, /home/jota/projects/tcc-final/.venv-live/bin/python, 7158 MiB", "action": "bounded lock attempt failed; no model loaded; CPU preparation complete"}
+{"utc": "2026-10-23T10:59:32.634831+00:00", "action": "reader first bounded 45s lock attempt expired while own dLLM phase was still running; no reader process/model loaded; retried once with 45s limit"}

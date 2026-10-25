@@ -1,0 +1,183 @@
+{
+  "_id": "66eb498455940cd564bc84ad",
+  "id": "unsloth/Qwen2.5-3B-Instruct-bnb-4bit",
+  "private": false,
+  "pipeline_tag": "text-generation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "safetensors",
+    "qwen2",
+    "text-generation",
+    "unsloth",
+    "qwen",
+    "conversational",
+    "en",
+    "arxiv:2407.10671",
+    "base_model:Qwen/Qwen2.5-3B-Instruct",
+    "base_model:quantized:Qwen/Qwen2.5-3B-Instruct",
+    "license:apache-2.0",
+    "text-generation-inference",
+    "endpoints_compatible",
+    "4-bit",
+    "bitsandbytes",
+    "deploy:azure",
+    "region:us"
+  ],
+  "downloads": 40981,
+  "likes": 13,
+  "modelId": "unsloth/Qwen2.5-3B-Instruct-bnb-4bit",
+  "author": "unsloth",
+  "sha": "2672b588848527e456d320c11926c794539f47d5",
+  "lastModified": "2025-02-06T03:34:00.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "Hi, what can you help me with?"
+    },
+    {
+      "text": "What is 84 * 3 / 2?"
+    },
+    {
+      "text": "Tell me an interesting fact about the universe!"
+    },
+    {
+      "text": "Explain quantum computing in simple terms."
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "Qwen2ForCausalLM"
+    ],
+    "model_type": "qwen2",
+    "quantization_config": {
+      "load_in_4bit": true,
+      "load_in_8bit": false,
+      "quant_method": "bitsandbytes"
+    },
+    "tokenizer_config": {
+      "bos_token": null,
+      "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+      "eos_token": "<|im_end|>",
+      "pad_token": "<|vision_pad|>",
+      "unk_token": null
+    }
+  },
+  "cardData": {
+    "base_model": "Qwen/Qwen2.5-3B-Instruct",
+    "language": [
+      "en"
+    ],
+    "library_name": "transformers",
+    "license": "apache-2.0",
+    "tags": [
+      "unsloth",
+      "transformers",
+      "qwen"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForCausalLM",
+    "pipeline_tag": "text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "added_tokens.json"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "merges.txt"
+    },
+    {
+      "rfilename": "model.safetensors"
+    },
+    {
+      "rfilename": "special_tokens_map.json"
+    },
+    {
+      "rfilename": "tokenizer.json"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    },
+    {
+      "rfilename": "vocab.json"
+    }
+  ],
+  "spaces": [
+    "MCP-1st-Birthday/FistalAI",
+    "PRANAV05092003/Medsentinal",
+    "Mephisto2412/datacenter-env",
+    "glitchfilter/methanol-apc-env",
+    "incognitoalpha/courtllm-trainer",
+    "SThakkar0206/aayna-finetune",
+    "RayMelius/soci2",
+    "ShyamAlancode/ghostbyte",
+    "gauri0508/med-record-audit",
+    "kkaustav/cloud-config-auditor",
+    "Shubham-Godani/TriageOS_Support-triage-openenv",
+    "indra-dhanush/financial-triage-env",
+    "mcqueenmater/env-corporate",
+    "ritz-gupta/AdMarket-Arena",
+    "degree-checker-01/meta-new-space",
+    "Roopalgn/openenv-clinical-trial",
+    "Harsh-9209/Conflict_Bench",
+    "markjoseph2003/cyber-redline-arena",
+    "Dikshita2026/cascadedebug",
+    "suyashk102/clinical-trial",
+    "Prathamesh0292/market-rl-env",
+    "Madhav189/SystemTruth",
+    "muskansingh1101/orgos-training",
+    "tm23hgf/social-network-env",
+    "sri-manikanta/orthorl",
+    "tusharrrrrrrr111/edupath-grpo-training",
+    "new635902/newspace",
+    "Akshansh1020/bluffBuster",
+    "athena-openenv/Carbon_Aware_AI_Workload_Scheduler_Env",
+    "workdrive2092/qqqq",
+    "Harsh-9209/NEW_SPACE",
+    "Samarth1401/bluffbuster-grpo-fix",
+    "TanishkBhanage/courtllm-trainer",
+    "sai1912/Guardian-v1",
+    "Dikshita2026/cascadedebug-training-v2",
+    "GunsiGTX00/Enigma",
+    "IshwaM/Enigma",
+    "tusharrrrrrrr111/newwwwww",
+    "Grimoors/orthorl",
+    "ShreyasDubey/bluffBuster",
+    "KiteManohar/crm-salesforce-agent",
+    "vishal2481632/govt-services-grpo-training",
+    "NeerjaK/OnCallEnv",
+    "Tabish17110/srs-task-generator-new",
+    "sos233/stockmind-ai",
+    "Lopato4ka/gec-inline",
+    "ori1313/LILIAI",
+    "SsemuliJoseph/campusgpt-uganda",
+    "kavinilaloganathan/tamil-ai-unsloth",
+    "YadavRohityadav/aiguru-ai"
+  ],
+  "createdAt": "2024-09-18T21:43:32.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 237888,
+      "BF16": 311406592,
+      "U8": 2861322944
+    },
+    "total": 3172967424
+  },
+  "usedStorage": 2066047448
+}

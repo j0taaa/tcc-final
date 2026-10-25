@@ -1,0 +1,19 @@
+{
+  "time_utc": "2026-10-23T10:42:56.120206+00:00",
+  "git_head": "f6d26cb83e9d47cc5aa821d87b304ddc472829a7",
+  "files": {
+    "protocol-v1.md": "cf1e5b65d48cea536af2f57b0cbb49f7303b5d897e0aed225934c29b86d2c927",
+    "reproduce.sh": "2add5be70f43488379c9005052b003086cd74478cc4ebe14f2a9bebc61e97920",
+    "novelty.md": "322afb7157f57e221cff577d6087e06db50c3b07323d27422f3df64b29432c11",
+    "pilot.py": "f9e50f49bcbc011277791688896b9766394801f665780ef516b3b25f198bb80a",
+    "prepare.py": "9a7a2611b622277cf3bf5c8a6567595be1a761381d8abad13088f1d1cc9ca6ba",
+    "README.md": "a9afcf08b9157464f2b6262fb601654860c5aae45df17235682914480ca4107b",
+    "data/selection.json": "41c4f780abea2a8a6ff8e18866a19506f3b98e75fd331a76de1772da3518eafb",
+    "data/longmemeval_oracle.json": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c",
+    "data/streams.json": "e70b4a5c848618a555980284001c6163a3c164ea4ea9d24b1b9755788e806be1",
+    "data/source.json": "5d81b1584305c4a90981d963bcfa1d7314a4123043e33ae0e646e563c5d7e3bd",
+    "data/evaluation.json": "1efe09b2b0ac362cadfe5c8aa4c33445f141a5344b7e0b6c26790178b803844b",
+    "data/longmemeval_oracle_cleaned.json": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c"
+  },
+  "note": "Final pre-forward freeze. First lock attempt failed before Python/model load; initial freeze preserved. Clarified that semantic review is by the agent, not human-independent. No A90 model outcomes exist."
+}

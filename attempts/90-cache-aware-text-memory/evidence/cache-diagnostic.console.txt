@@ -1,0 +1,11 @@
+nf4 append 0.875
+nf4 early 0.615234375
+nf4 middle 0.89453125
+nf4 late 0.625
+nf4 boundary 1.015625
+The model is going to be dequantized in torch.bfloat16 - if you want to upcast it to another dtype, make sure to pass the desired dtype when quantizing the model through `bnb_4bit_quant_type` argument of `BitsAndBytesConfig`
+dequantized_bf16 append 0.625
+dequantized_bf16 early 0.953125
+dequantized_bf16 middle 0.765625
+dequantized_bf16 late 0.65625
+dequantized_bf16 boundary 1.3125

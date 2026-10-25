@@ -1,0 +1,7 @@
+ar_global seconds 167.994 states 9 /12 ext 1 /7 stale 0 new 7359 reused 1579
+ar_local seconds 164.225 states 5 /12 ext 1 /7 stale 0 new 7209 reused 1587
+dllm_global seconds 267.045 states 0 /12 ext 1 /7 stale 0 new 5254 reused 1252
+dllm_local seconds 262.031 states 0 /12 ext 1 /7 stale 3 new 5413 reused 1462
+extractive seconds 10.761 states 8 /12 ext 2 /7 stale 3 new 6409 reused 3619
+full_history seconds 30.857 states 12 /12 ext 2 /7 stale 0 new 33141 reused 50880
+raw_tail seconds 9.667 states 10 /12 ext 1 /7 stale 1 new 8328 reused 1776

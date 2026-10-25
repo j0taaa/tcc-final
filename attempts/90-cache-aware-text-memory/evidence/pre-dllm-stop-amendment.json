@@ -1,0 +1,7 @@
+{
+  "time_utc": "2026-10-23T10:45:56.197741+00:00",
+  "file": "pilot.py",
+  "before_sha256": "f9e50f49bcbc011277791688896b9766394801f665780ef516b3b25f198bb80a",
+  "after_sha256": "dcf8371761590f42e9fea83e818c3f44e4065ec971f7fa535d9da0e2b39876ed",
+  "reason": "Template inspection found EOT=126348 distinct from EOS=126081. Truncate dLLM completion at either terminator, before any dLLM load/forward/outcome. AR phase already uses initial source and is unaffected. Fixed-step NFEs/canvas work remain fully charged. This is a stop-token implementation correction, not a metric/data change."
+}

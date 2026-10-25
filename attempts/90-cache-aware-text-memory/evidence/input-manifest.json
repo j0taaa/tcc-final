@@ -1,0 +1,135 @@
+{
+  "time_utc": "2026-10-23T10:44:21.553201+00:00",
+  "files": [
+    {
+      "path": "sources/manifest.json",
+      "bytes": 2986,
+      "sha256": "edcfba5b733bfec72ba0d4027fa90eb6c7e185a790dc0b9d215eac51a4835619"
+    },
+    {
+      "path": "sources/billion-refold.ts",
+      "bytes": 4023,
+      "sha256": "bcc69e6d39a8dae78b3c5ede9e083ac70e9060dbe3b1cb5f3b813e8a840ba497"
+    },
+    {
+      "path": "sources/diffumask.html",
+      "bytes": 280144,
+      "sha256": "c30fe618e5922150c2254a019d45366f5ab5115521b953ad242a6de3c428bf06"
+    },
+    {
+      "path": "sources/memory-cards.html",
+      "bytes": 280151,
+      "sha256": "0c3cdcfb6d5c191e7259949bf0b79ec3532a4551fd9e71685fac98851ad86ceb"
+    },
+    {
+      "path": "sources/llmlingua2.pdf",
+      "bytes": 518658,
+      "sha256": "5f8217cd3c0d0c60e00b2e56984b722c981db0cb4ef1034e67569d88fc6d5651"
+    },
+    {
+      "path": "sources/longmemeval-readme.md",
+      "bytes": 15970,
+      "sha256": "c4ff45676683d9e2f7cf7d9099d26426f14635ec110dbb1da818d1019a142573"
+    },
+    {
+      "path": "sources/billion-compress.ts",
+      "bytes": 85454,
+      "sha256": "e3c84e2258ea5c7f5142e909964ad0dea921dd0b6cb5b1400f693cd4eba86c5e"
+    },
+    {
+      "path": "sources/cache-eval.html",
+      "bytes": 319318,
+      "sha256": "31490f3f31237ec295008ddb7fe4ef3a700a699fb7424b8ff376df780aecc02a"
+    },
+    {
+      "path": "sources/billion-compression-rules.ts",
+      "bytes": 14166,
+      "sha256": "352ddef1cf5fcac58e8064100e69a78eefd9f5fb58fb1c05ab4272b302e464f6"
+    },
+    {
+      "path": "sources/billion-readme.md",
+      "bytes": 66095,
+      "sha256": "7220180ac710f0784e15d493afb6ca814bf411422107e81aff4c9c6633db35e4"
+    },
+    {
+      "path": "sources/cadoc.html",
+      "bytes": 274789,
+      "sha256": "024781fe77b0f475a0fa97827703c3b4a4b4f510db0353079ee6ee0f916226a7"
+    },
+    {
+      "path": "sources/cache-engineering.html",
+      "bytes": 361689,
+      "sha256": "1554b4fc7a1603d160816bafbb987ea6d2f7d5bd58952fd6d638947121a4f0ec"
+    },
+    {
+      "path": "sources/code-editing.html",
+      "bytes": 539907,
+      "sha256": "7ecd5ceaa16b8647481d3a67ce4db306679e912cd645916823a4ddeae6149df6"
+    },
+    {
+      "path": "sources/billion-decompress.ts",
+      "bytes": 9971,
+      "sha256": "44fe84d49018d796d8cfa16628abb78690b529dae8cea76dbb8b2963477ba455"
+    },
+    {
+      "path": "sources/longmemeval.html",
+      "bytes": 405796,
+      "sha256": "da4c3fa52b22496cb9b13b5a4e41b01a44f4542256a0e21a5bef094f18111053"
+    },
+    {
+      "path": "sources/elastic.html",
+      "bytes": 195508,
+      "sha256": "515883e2dd1d4704e43ea532888a7e8c8ac158b995d167fd1f5b952f20d63309"
+    },
+    {
+      "path": "sources/billion-tree.json",
+      "bytes": 481414,
+      "sha256": "b696cf215a29e0d1e27b8c463f78e26eaa5a0f5d3f4d7fa8d7ddeb7ad32c14f0"
+    },
+    {
+      "path": "sources/acon.html",
+      "bytes": 1821779,
+      "sha256": "62f986895823bcf46882aade39f455c24199bbcc96aef140bafa831e04bef588"
+    },
+    {
+      "path": "sources/billion-paper.md",
+      "bytes": 95725,
+      "sha256": "75969855e6f2afd70acd1fe2b2d7d46e2bd9091c1ddedf22cb8d0b8d5f1ef87c"
+    },
+    {
+      "path": "sources/diffuagent.pdf",
+      "bytes": 871293,
+      "sha256": "1fade7f233cc6ce249c13cd2827920d6c974bad78a98e9ea0174c35c46f35bcf"
+    },
+    {
+      "path": "data/selection.json",
+      "bytes": 1267,
+      "sha256": "41c4f780abea2a8a6ff8e18866a19506f3b98e75fd331a76de1772da3518eafb"
+    },
+    {
+      "path": "data/longmemeval_oracle.json",
+      "bytes": 15388478,
+      "sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c"
+    },
+    {
+      "path": "data/streams.json",
+      "bytes": 149459,
+      "sha256": "e70b4a5c848618a555980284001c6163a3c164ea4ea9d24b1b9755788e806be1"
+    },
+    {
+      "path": "data/source.json",
+      "bytes": 288,
+      "sha256": "5d81b1584305c4a90981d963bcfa1d7314a4123043e33ae0e646e563c5d7e3bd"
+    },
+    {
+      "path": "data/evaluation.json",
+      "bytes": 13307,
+      "sha256": "1efe09b2b0ac362cadfe5c8aa4c33445f141a5344b7e0b6c26790178b803844b"
+    },
+    {
+      "path": "data/longmemeval_oracle_cleaned.json",
+      "bytes": 15388478,
+      "sha256": "821a2034d219ab45846873dd14c14f12cfe7776e73527a483f9dac095d38620c"
+    }
+  ]
+}

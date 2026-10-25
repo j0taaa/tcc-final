@@ -1,0 +1,89 @@
+[
+  {
+    "method": "dllm_local",
+    "id": "synthetic-2",
+    "step": 2,
+    "answer": "Current delivery city: Oslo\nAppointment day: Saturday\nReminder day: Friday\nEmployer: Iris\nDog name: Pixel\nProject code: I do not know\nEmergency contact: Bruno",
+    "obsolete": [
+      "Oslo",
+      "Wednesday",
+      "Livia"
+    ],
+    "incorrect_current_use": true,
+    "reason": "Obsolete city is explicitly labeled as the current delivery city; not a historical or negated mention."
+  },
+  {
+    "method": "extractive",
+    "id": "synthetic-3",
+    "step": 2,
+    "answer": "Delivery City: Rome\nAppointment Day: Sunday\nReminder Day: Thursday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "obsolete": [
+      "Rome",
+      "Friday",
+      "Livia"
+    ],
+    "incorrect_current_use": true,
+    "reason": "Obsolete city is explicitly labeled as the current delivery city; not a historical or negated mention."
+  },
+  {
+    "method": "dllm_local",
+    "id": "synthetic-3",
+    "step": 2,
+    "answer": "Current delivery city: Rome\nAppointment day: Sunday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "obsolete": [
+      "Rome",
+      "Friday",
+      "Livia"
+    ],
+    "incorrect_current_use": true,
+    "reason": "Obsolete city is explicitly labeled as the current delivery city; not a historical or negated mention."
+  },
+  {
+    "method": "dllm_local",
+    "id": "synthetic-1",
+    "step": 1,
+    "answer": "Current delivery city: Lima\nAppointment day: I do not know\nReminder day: I do not know\nEmployer: Noah\nDog name: I do not know\nProject code: I do not know\nEmergency contact: I do not know",
+    "obsolete": [
+      "Lima"
+    ],
+    "incorrect_current_use": true,
+    "reason": "Obsolete city is explicitly labeled as the current delivery city; not a historical or negated mention."
+  },
+  {
+    "method": "extractive",
+    "id": "synthetic-0",
+    "step": 1,
+    "answer": "The current delivery city is Recife. The appointment day is Tuesday. The reminder is on the day before the appointment. The employer is Orion. The dog name is Pixel. The project code is Cedar. The emergency contact is Livia.",
+    "obsolete": [
+      "Recife"
+    ],
+    "incorrect_current_use": true,
+    "reason": "Obsolete city is explicitly labeled as the current delivery city; not a historical or negated mention."
+  },
+  {
+    "method": "extractive",
+    "id": "synthetic-0",
+    "step": 2,
+    "answer": "Delivery City: Recife\nAppointment Day: Friday\nReminder Day: Thursday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "obsolete": [
+      "Recife",
+      "Tuesday",
+      "Livia"
+    ],
+    "incorrect_current_use": true,
+    "reason": "Obsolete city is explicitly labeled as the current delivery city; not a historical or negated mention."
+  },
+  {
+    "method": "raw_tail",
+    "id": "synthetic-3",
+    "step": 2,
+    "answer": "Current delivery city: Rome\nAppointment day: Sunday\nReminder day: Saturday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "obsolete": [
+      "Rome",
+      "Friday",
+      "Livia"
+    ],
+    "incorrect_current_use": true,
+    "reason": "Obsolete city is explicitly labeled as the current delivery city; not a historical or negated mention."
+  }
+]

@@ -1,0 +1,6 @@
+{"type": "environment", "phase": "reader", "torch": "2.8.0+cu128", "transformers": "4.52.2", "gpu": "NVIDIA GeForce RTX 3080 Ti", "initial_processes": "", "import_seconds": 2.241162632009946, "revision": "f6d26cb83e9d47cc5aa821d87b304ddc472829a7"}
+{"type": "load", "phase": "reader", "seconds": 11.26320496504195, "allocated_bytes": 2054666752, "reserved_bytes": 3462397952, "device_map": {"": 0}, "model": "/home/jota/.cache/huggingface/hub/models--unsloth--Qwen2.5-3B-Instruct-bnb-4bit/snapshots/2672b588848527e456d320c11926c794539f47d5", "cpu_maxrss_kb": 2881232}
+{"type": "warmup", "phase": "reader", "seconds": 0.42731779103633016, "prompt_tokens": 32, "reused_tokens": 0, "prefill_tokens": 32, "decode_tokens": 4, "forwards": 4, "kv_bytes": 1290240}
+{"type": "cache_audit", "case": "append", "reused_tokens": 71, "prefill_tokens": 16, "cached": "OK", "fresh": "OK", "max_abs_logits": 0.875, "first_argmax_equal": true, "output_equal": true, "tolerance": 0.25, "passed": false}
+{"type": "failure", "error": "RuntimeError('cache audit failed; preserve results and stop')"}
+{"type": "phase_wall", "phase": "reader", "seconds": 14.192742771003395}

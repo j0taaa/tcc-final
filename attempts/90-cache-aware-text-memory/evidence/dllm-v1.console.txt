@@ -1,0 +1,71 @@
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:22<01:54, 22.82s/it]Loading checkpoint shards:  33%|███▎      | 2/6 [00:32<00:59, 14.89s/it]Loading checkpoint shards:  50%|█████     | 3/6 [00:42<00:38, 12.97s/it]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:55<00:25, 12.67s/it]Loading checkpoint shards:  83%|████████▎ | 5/6 [01:05<00:11, 11.85s/it]Loading checkpoint shards: 100%|██████████| 6/6 [01:13<00:00, 10.47s/it]Loading checkpoint shards: 100%|██████████| 6/6 [01:13<00:00, 12.21s/it]
+dllm_global 7a87bd0c 0 9.635
+dllm_global 7a87bd0c 1 10.727
+dllm_global 7a87bd0c 2 10.627
+dllm_global 7a87bd0c 3 9.633
+dllm_global 7a87bd0c 4 2.756
+dllm_local synthetic-3 0 2.786
+dllm_local synthetic-3 1 2.452
+dllm_local synthetic-3 2 2.464
+dllm_local f35224e0 0 9.754
+dllm_local f35224e0 1 11.079
+dllm_local f35224e0 2 11.118
+dllm_local f35224e0 3 5.957
+dllm_local 7a87bd0c 0 9.897
+dllm_local 7a87bd0c 1 11.195
+dllm_local 7a87bd0c 2 10.945
+dllm_local 7a87bd0c 3 9.99
+dllm_local 7a87bd0c 4 1.775
+dllm_local synthetic-0 0 2.889
+dllm_local synthetic-0 1 2.505
+dllm_local synthetic-0 2 2.502
+dllm_global synthetic-3 0 2.882
+dllm_global synthetic-3 1 2.916
+dllm_global synthetic-3 2 2.922
+dllm_global synthetic-2 0 2.893
+dllm_global synthetic-2 1 2.908
+dllm_global synthetic-2 2 2.916
+dllm_local af8d2e46 0 10.099
+dllm_local af8d2e46 1 8.752
+dllm_local 75f70248 0 10.088
+dllm_local 75f70248 1 11.315
+dllm_local 75f70248 2 5.358
+dllm_global 75f70248 0 10.074
+dllm_global 75f70248 1 11.32
+dllm_global 75f70248 2 5.899
+dllm_local synthetic-1 0 2.903
+dllm_local synthetic-1 1 2.506
+dllm_local synthetic-1 2 2.555
+dllm_global 778164c6 0 7.871
+dllm_local 2ebe6c92 0 10.086
+dllm_local 2ebe6c92 1 11.384
+dllm_local 2ebe6c92 2 11.41
+dllm_local 2ebe6c92 3 11.151
+dllm_global 2ebe6c92 0 10.087
+dllm_global 2ebe6c92 1 11.395
+dllm_global 2ebe6c92 2 11.416
+dllm_global 2ebe6c92 3 11.166
+dllm_global synthetic-1 0 2.914
+dllm_global synthetic-1 1 2.912
+dllm_global synthetic-1 2 2.92
+dllm_global synthetic-0 0 2.922
+dllm_global synthetic-0 1 2.941
+dllm_global synthetic-0 2 2.947
+dllm_local 60bf93ed_abs 0 10.179
+dllm_local 60bf93ed_abs 1 11.471
+dllm_local 60bf93ed_abs 2 11.474
+dllm_local 60bf93ed_abs 3 9.253
+dllm_local 778164c6 0 7.93
+dllm_local synthetic-2 0 2.926
+dllm_local synthetic-2 1 2.538
+dllm_local synthetic-2 2 2.597
+dllm_global f35224e0 0 10.179
+dllm_global f35224e0 1 11.464
+dllm_global f35224e0 2 11.466
+dllm_global f35224e0 3 8.073
+dllm_global af8d2e46 0 10.172
+dllm_global af8d2e46 1 8.832
+dllm_global 60bf93ed_abs 0 10.184
+dllm_global 60bf93ed_abs 1 11.486
+dllm_global 60bf93ed_abs 2 11.484
+dllm_global 60bf93ed_abs 3 9.274

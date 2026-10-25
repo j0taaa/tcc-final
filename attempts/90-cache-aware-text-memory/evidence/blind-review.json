@@ -1,0 +1,394 @@
+[
+  {
+    "label": "R000",
+    "question": "Today is 2023/05/29 (Mon) 23:31. I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Jamaican dish you recommended I try with snapper that has fruit in it?",
+    "reference": "Grilled Snapper with Mango Salsa",
+    "response": "The Jamaican dish you recommended to try with snapper, which has fruit in it, is Escovitch Fish.",
+    "score": 0,
+    "reason": "Indica outro prato; não identifica Grilled Snapper with Mango Salsa."
+  },
+  {
+    "label": "R001",
+    "question": "Today is 2023/09/30 (Sat) 18:36. How long have I been sticking to my daily tidying routine?",
+    "reference": "4 weeks",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R002",
+    "question": "Today is 2023/02/07 (Tue) 10:44. Which book did I finish a week ago?",
+    "reference": "'The Nightingale' by Kristin Hannah",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R003",
+    "question": "Today is 2023/09/30 (Sat) 18:36. How long have I been sticking to my daily tidying routine?",
+    "reference": "4 weeks",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R004",
+    "question": "Today is 2023/05/26 (Fri) 10:38. What is the total number of episodes I've listened to from 'How I Built This' and 'My Favorite Murder'?",
+    "reference": "27",
+    "response": "Based on the information provided in the memory, you have listened to 15 episodes of \"How I Built This\" and 12 episodes of \"My Favorite Murder\".",
+    "score": 1,
+    "reason": "Apresenta os operandos corretos 15 e 12, mas não fornece o total 27 solicitado."
+  },
+  {
+    "label": "R005",
+    "question": "Today is 2023/05/26 (Fri) 10:38. What is the total number of episodes I've listened to from 'How I Built This' and 'My Favorite Murder'?",
+    "reference": "27",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R006",
+    "question": "Today is 2023/05/27 (Sat) 20:51. I've been sneezing quite a bit lately. Do you think it might be my living room?",
+    "reference": "The user would prefer responses that consider the potential impact of their cat, Luna, and her shedding on their sneezing, as well as the recent deep clean of the living room and its possible effect on stirring up dust. They might not prefer responses that fail to take into account these specific details previously mentioned, such as generic suggestions or unrelated factors.",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R007",
+    "question": "Today is 2023/01/24 (Tue) 10:05. How many days did it take for my iPad case to arrive after I bought it?",
+    "reference": "The information provided is not enough. You did not mention buying an iPad case.",
+    "response": "It is not possible to determine the exact number of days it took for your iPad case to arrive based on the information provided. The date mentioned (2023/01/24) is the date when you asked the question, not the date when the case arrived. To find out the arrival date, you would need to check your shipping confirmation or contact the seller directly.",
+    "score": 2,
+    "reason": "Abstenção adequada: não infere tempo de entrega ausente."
+  },
+  {
+    "label": "R008",
+    "question": "Today is 2023/05/27 (Sat) 20:51. I've been sneezing quite a bit lately. Do you think it might be my living room?",
+    "reference": "The user would prefer responses that consider the potential impact of their cat, Luna, and her shedding on their sneezing, as well as the recent deep clean of the living room and its possible effect on stirring up dust. They might not prefer responses that fail to take into account these specific details previously mentioned, such as generic suggestions or unrelated factors.",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R009",
+    "question": "Today is 2023/09/30 (Sat) 18:36. How long have I been sticking to my daily tidying routine?",
+    "reference": "4 weeks",
+    "response": "You have been sticking to your daily tidying routine for 3 weeks as of today, 2023/09/30 (Sat) 18:36.",
+    "score": 0,
+    "reason": "Responde 3 semanas; referência exige 4."
+  },
+  {
+    "label": "R010",
+    "question": "Today is 2023/05/29 (Mon) 23:31. I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Jamaican dish you recommended I try with snapper that has fruit in it?",
+    "reference": "Grilled Snapper with Mango Salsa",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R011",
+    "question": "Today is 2023/09/30 (Sat) 18:36. How long have I been sticking to my daily tidying routine?",
+    "reference": "4 weeks",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R012",
+    "question": "Today is 2023/05/26 (Fri) 10:38. What is the total number of episodes I've listened to from 'How I Built This' and 'My Favorite Murder'?",
+    "reference": "27",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R013",
+    "question": "Today is 2023/05/29 (Mon) 23:31. I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Jamaican dish you recommended I try with snapper that has fruit in it?",
+    "reference": "Grilled Snapper with Mango Salsa",
+    "response": "The Jamaican dish you recommended to try with snapper that has fruit in it is Ackee and Saltfish.",
+    "score": 0,
+    "reason": "Indica outro prato; não identifica Grilled Snapper with Mango Salsa."
+  },
+  {
+    "label": "R014",
+    "question": "Today is 2023/05/29 (Mon) 23:31. I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Jamaican dish you recommended I try with snapper that has fruit in it?",
+    "reference": "Grilled Snapper with Mango Salsa",
+    "response": "The Jamaican dish you recommended to try with snapper, which has fruit in it, is Ackee and Saltfish.",
+    "score": 0,
+    "reason": "Indica outro prato; não identifica Grilled Snapper with Mango Salsa."
+  },
+  {
+    "label": "R015",
+    "question": "Today is 2023/02/07 (Tue) 10:44. Which book did I finish a week ago?",
+    "reference": "'The Nightingale' by Kristin Hannah",
+    "response": "You finished reading \"The Song of Achilles\" a week ago.",
+    "score": 0,
+    "reason": "Indica The Song of Achilles, diferente de The Nightingale; autoria/data também não resgatam a resposta."
+  },
+  {
+    "label": "R016",
+    "question": "Today is 2023/05/27 (Sat) 20:51. I've been sneezing quite a bit lately. Do you think it might be my living room?",
+    "reference": "The user would prefer responses that consider the potential impact of their cat, Luna, and her shedding on their sneezing, as well as the recent deep clean of the living room and its possible effect on stirring up dust. They might not prefer responses that fail to take into account these specific details previously mentioned, such as generic suggestions or unrelated factors.",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R017",
+    "question": "Today is 2023/05/27 (Sat) 20:51. I've been sneezing quite a bit lately. Do you think it might be my living room?",
+    "reference": "The user would prefer responses that consider the potential impact of their cat, Luna, and her shedding on their sneezing, as well as the recent deep clean of the living room and its possible effect on stirring up dust. They might not prefer responses that fail to take into account these specific details previously mentioned, such as generic suggestions or unrelated factors.",
+    "response": "Yes, it's possible that your living room could be the source of your sneezing. Dust and allergens from pet hair, dust mites, and other indoor pollutants can accumulate in your living room, especially if it's not well-ventilated or cleaned regularly. Here are some steps you can take to address the issue:\n\n1. **Vacuum regularly**: Use a vacuum cleaner with a HEPA filter to remove dust and pet hair from your living room. Vacuum all",
+    "score": 1,
+    "reason": "Reconhece poeira e pelos como possibilidades; falta a personalização com Luna e a limpeza recente. Resposta truncada, sem inventar esses detalhes."
+  },
+  {
+    "label": "R018",
+    "question": "Today is 2023/01/24 (Tue) 10:05. How many days did it take for my iPad case to arrive after I bought it?",
+    "reference": "The information provided is not enough. You did not mention buying an iPad case.",
+    "response": "I do not know. The memory provided does not contain information about the delivery date of the iPad case.",
+    "score": 2,
+    "reason": "Abstenção adequada: não infere tempo de entrega ausente."
+  },
+  {
+    "label": "R019",
+    "question": "Today is 2023/05/26 (Fri) 10:38. What is the total number of episodes I've listened to from 'How I Built This' and 'My Favorite Murder'?",
+    "reference": "27",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R020",
+    "question": "Today is 2023/09/30 (Sat) 18:36. How long have I been sticking to my daily tidying routine?",
+    "reference": "4 weeks",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R021",
+    "question": "Today is 2023/09/30 (Sat) 18:36. How long have I been sticking to my daily tidying routine?",
+    "reference": "4 weeks",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R022",
+    "question": "Today is 2023/05/30 (Tue) 20:28. How many shirts did I pack for my 5-day trip to Costa Rica?",
+    "reference": "7",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R023",
+    "question": "Today is 2023/05/27 (Sat) 20:51. I've been sneezing quite a bit lately. Do you think it might be my living room?",
+    "reference": "The user would prefer responses that consider the potential impact of their cat, Luna, and her shedding on their sneezing, as well as the recent deep clean of the living room and its possible effect on stirring up dust. They might not prefer responses that fail to take into account these specific details previously mentioned, such as generic suggestions or unrelated factors.",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R024",
+    "question": "Today is 2023/02/07 (Tue) 10:44. Which book did I finish a week ago?",
+    "reference": "'The Nightingale' by Kristin Hannah",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R025",
+    "question": "Today is 2023/05/27 (Sat) 20:51. I've been sneezing quite a bit lately. Do you think it might be my living room?",
+    "reference": "The user would prefer responses that consider the potential impact of their cat, Luna, and her shedding on their sneezing, as well as the recent deep clean of the living room and its possible effect on stirring up dust. They might not prefer responses that fail to take into account these specific details previously mentioned, such as generic suggestions or unrelated factors.",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R026",
+    "question": "Today is 2023/01/24 (Tue) 10:05. How many days did it take for my iPad case to arrive after I bought it?",
+    "reference": "The information provided is not enough. You did not mention buying an iPad case.",
+    "response": "I do not know.",
+    "score": 2,
+    "reason": "Abstenção adequada: não infere tempo de entrega ausente."
+  },
+  {
+    "label": "R027",
+    "question": "Today is 2023/05/29 (Mon) 23:31. I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Jamaican dish you recommended I try with snapper that has fruit in it?",
+    "reference": "Grilled Snapper with Mango Salsa",
+    "response": "The Jamaican dish you recommended to try with snapper that has fruit in it is Ackee and Saltfish.",
+    "score": 0,
+    "reason": "Indica outro prato; não identifica Grilled Snapper with Mango Salsa."
+  },
+  {
+    "label": "R028",
+    "question": "Today is 2023/05/26 (Fri) 10:38. What is the total number of episodes I've listened to from 'How I Built This' and 'My Favorite Murder'?",
+    "reference": "27",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R029",
+    "question": "Today is 2023/01/24 (Tue) 10:05. How many days did it take for my iPad case to arrive after I bought it?",
+    "reference": "The information provided is not enough. You did not mention buying an iPad case.",
+    "response": "I do not know.",
+    "score": 2,
+    "reason": "Abstenção adequada: não infere tempo de entrega ausente."
+  },
+  {
+    "label": "R030",
+    "question": "Today is 2023/05/30 (Tue) 20:28. How many shirts did I pack for my 5-day trip to Costa Rica?",
+    "reference": "7",
+    "response": "I'm sorry, but I don't have the specific information about the number of shirts you packed for your 5-day trip to Costa Rica. The memory provided does not contain any details about your packing list for that trip. To answer your question accurately, I would need to refer to your packing list or a record of your trip. If you have access to that information, please share it with me, and I can provide you with the correct answer.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R031",
+    "question": "Today is 2023/05/29 (Mon) 23:31. I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Jamaican dish you recommended I try with snapper that has fruit in it?",
+    "reference": "Grilled Snapper with Mango Salsa",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R032",
+    "question": "Today is 2023/02/07 (Tue) 10:44. Which book did I finish a week ago?",
+    "reference": "'The Nightingale' by Kristin Hannah",
+    "response": "You finished reading \"The Song of Achilles\" by Kristineline Miller a week ago.",
+    "score": 0,
+    "reason": "Indica The Song of Achilles, diferente de The Nightingale; autoria/data também não resgatam a resposta."
+  },
+  {
+    "label": "R033",
+    "question": "Today is 2023/05/30 (Tue) 20:28. How many shirts did I pack for my 5-day trip to Costa Rica?",
+    "reference": "7",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R034",
+    "question": "Today is 2023/05/30 (Tue) 20:28. How many shirts did I pack for my 5-day trip to Costa Rica?",
+    "reference": "7",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R035",
+    "question": "Today is 2023/05/26 (Fri) 10:38. What is the total number of episodes I've listened to from 'How I Built This' and 'My Favorite Murder'?",
+    "reference": "27",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R036",
+    "question": "Today is 2023/05/27 (Sat) 20:51. I've been sneezing quite a bit lately. Do you think it might be my living room?",
+    "reference": "The user would prefer responses that consider the potential impact of their cat, Luna, and her shedding on their sneezing, as well as the recent deep clean of the living room and its possible effect on stirring up dust. They might not prefer responses that fail to take into account these specific details previously mentioned, such as generic suggestions or unrelated factors.",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R037",
+    "question": "Today is 2023/01/24 (Tue) 10:05. How many days did it take for my iPad case to arrive after I bought it?",
+    "reference": "The information provided is not enough. You did not mention buying an iPad case.",
+    "response": "I do not know. The memory provided does not contain any information about the delivery date of an iPad case.",
+    "score": 2,
+    "reason": "Abstenção adequada: não infere tempo de entrega ausente."
+  },
+  {
+    "label": "R038",
+    "question": "Today is 2023/05/26 (Fri) 10:38. What is the total number of episodes I've listened to from 'How I Built This' and 'My Favorite Murder'?",
+    "reference": "27",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R039",
+    "question": "Today is 2023/01/24 (Tue) 10:05. How many days did it take for my iPad case to arrive after I bought it?",
+    "reference": "The information provided is not enough. You did not mention buying an iPad case.",
+    "response": "I do not know. The memory provided does not contain information about the delivery date of the iPad case.",
+    "score": 2,
+    "reason": "Abstenção adequada: não infere tempo de entrega ausente."
+  },
+  {
+    "label": "R040",
+    "question": "Today is 2023/05/30 (Tue) 20:28. How many shirts did I pack for my 5-day trip to Costa Rica?",
+    "reference": "7",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R041",
+    "question": "Today is 2023/05/29 (Mon) 23:31. I was looking back at our previous conversation about Caribbean dishes and I was wondering, what was the name of that Jamaican dish you recommended I try with snapper that has fruit in it?",
+    "reference": "Grilled Snapper with Mango Salsa",
+    "response": "The Jamaican dish you recommended to try with snapper, which has fruit in it, is Escovitch Fish.",
+    "score": 0,
+    "reason": "Indica outro prato; não identifica Grilled Snapper with Mango Salsa."
+  },
+  {
+    "label": "R042",
+    "question": "Today is 2023/09/30 (Sat) 18:36. How long have I been sticking to my daily tidying routine?",
+    "reference": "4 weeks",
+    "response": "You have been sticking to your daily tidying routine for 4 weeks.",
+    "score": 2,
+    "reason": "Informa corretamente 4 semanas."
+  },
+  {
+    "label": "R043",
+    "question": "Today is 2023/05/30 (Tue) 20:28. How many shirts did I pack for my 5-day trip to Costa Rica?",
+    "reference": "7",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R044",
+    "question": "Today is 2023/01/24 (Tue) 10:05. How many days did it take for my iPad case to arrive after I bought it?",
+    "reference": "The information provided is not enough. You did not mention buying an iPad case.",
+    "response": "I do not know. The memory provided does not contain information about the delivery of an iPad case.",
+    "score": 2,
+    "reason": "Abstenção adequada: não infere tempo de entrega ausente."
+  },
+  {
+    "label": "R045",
+    "question": "Today is 2023/02/07 (Tue) 10:44. Which book did I finish a week ago?",
+    "reference": "'The Nightingale' by Kristin Hannah",
+    "response": "You finished reading \"The Song of Achilles\" a week ago, on 2023/02/01 (Tue) 10:44.",
+    "score": 0,
+    "reason": "Indica The Song of Achilles, diferente de The Nightingale; autoria/data também não resgatam a resposta."
+  },
+  {
+    "label": "R046",
+    "question": "Today is 2023/05/30 (Tue) 20:28. How many shirts did I pack for my 5-day trip to Costa Rica?",
+    "reference": "7",
+    "response": "Based on the information provided in the memory, you packed 7 shirts for your 5-day trip to Costa Rica.",
+    "score": 2,
+    "reason": "Informa corretamente 7 camisas."
+  },
+  {
+    "label": "R047",
+    "question": "Today is 2023/02/07 (Tue) 10:44. Which book did I finish a week ago?",
+    "reference": "'The Nightingale' by Kristin Hannah",
+    "response": "I do not know.",
+    "score": 0,
+    "reason": "Abstém-se numa pergunta respondível; informação solicitada ausente da resposta."
+  },
+  {
+    "label": "R048",
+    "question": "Today is 2023/02/07 (Tue) 10:44. Which book did I finish a week ago?",
+    "reference": "'The Nightingale' by Kristin Hannah",
+    "response": "You finished reading \"The Song of Achilles\" by Kristineline Miller a week ago.",
+    "score": 0,
+    "reason": "Indica The Song of Achilles, diferente de The Nightingale; autoria/data também não resgatam a resposta."
+  }
+]

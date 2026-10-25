@@ -1,0 +1,422 @@
+{
+  "S000": {
+    "method": "ar_global",
+    "id": "synthetic-0",
+    "step": 1
+  },
+  "S001": {
+    "method": "ar_global",
+    "id": "synthetic-3",
+    "step": 2
+  },
+  "S002": {
+    "method": "dllm_local",
+    "id": "synthetic-0",
+    "step": 0
+  },
+  "S003": {
+    "method": "dllm_local",
+    "id": "synthetic-3",
+    "step": 2
+  },
+  "S004": {
+    "method": "extractive",
+    "id": "synthetic-3",
+    "step": 0
+  },
+  "S005": {
+    "method": "extractive",
+    "id": "synthetic-3",
+    "step": 1
+  },
+  "S006": {
+    "method": "raw_tail",
+    "id": "synthetic-1",
+    "step": 0
+  },
+  "S007": {
+    "method": "ar_local",
+    "id": "synthetic-3",
+    "step": 2
+  },
+  "S008": {
+    "method": "dllm_local",
+    "id": "synthetic-3",
+    "step": 1
+  },
+  "S009": {
+    "method": "dllm_local",
+    "id": "synthetic-3",
+    "step": 0
+  },
+  "S010": {
+    "method": "ar_global",
+    "id": "synthetic-0",
+    "step": 0
+  },
+  "S011": {
+    "method": "extractive",
+    "id": "synthetic-0",
+    "step": 1
+  },
+  "S012": {
+    "method": "full_history",
+    "id": "synthetic-0",
+    "step": 0
+  },
+  "S013": {
+    "method": "full_history",
+    "id": "synthetic-3",
+    "step": 0
+  },
+  "S014": {
+    "method": "dllm_local",
+    "id": "synthetic-1",
+    "step": 2
+  },
+  "S015": {
+    "method": "dllm_global",
+    "id": "synthetic-1",
+    "step": 2
+  },
+  "S016": {
+    "method": "ar_global",
+    "id": "synthetic-3",
+    "step": 1
+  },
+  "S017": {
+    "method": "dllm_global",
+    "id": "synthetic-1",
+    "step": 1
+  },
+  "S018": {
+    "method": "raw_tail",
+    "id": "synthetic-1",
+    "step": 2
+  },
+  "S019": {
+    "method": "ar_global",
+    "id": "synthetic-2",
+    "step": 2
+  },
+  "S020": {
+    "method": "ar_global",
+    "id": "synthetic-0",
+    "step": 2
+  },
+  "S021": {
+    "method": "full_history",
+    "id": "synthetic-2",
+    "step": 0
+  },
+  "S022": {
+    "method": "ar_global",
+    "id": "synthetic-3",
+    "step": 0
+  },
+  "S023": {
+    "method": "ar_global",
+    "id": "synthetic-2",
+    "step": 0
+  },
+  "S024": {
+    "method": "raw_tail",
+    "id": "synthetic-1",
+    "step": 1
+  },
+  "S025": {
+    "method": "ar_local",
+    "id": "synthetic-0",
+    "step": 2
+  },
+  "S026": {
+    "method": "ar_local",
+    "id": "synthetic-1",
+    "step": 1
+  },
+  "S027": {
+    "method": "extractive",
+    "id": "synthetic-3",
+    "step": 2
+  },
+  "S028": {
+    "method": "full_history",
+    "id": "synthetic-3",
+    "step": 1
+  },
+  "S029": {
+    "method": "dllm_local",
+    "id": "synthetic-0",
+    "step": 2
+  },
+  "S030": {
+    "method": "ar_global",
+    "id": "synthetic-1",
+    "step": 0
+  },
+  "S031": {
+    "method": "full_history",
+    "id": "synthetic-0",
+    "step": 2
+  },
+  "S032": {
+    "method": "raw_tail",
+    "id": "synthetic-2",
+    "step": 0
+  },
+  "S033": {
+    "method": "dllm_global",
+    "id": "synthetic-3",
+    "step": 2
+  },
+  "S034": {
+    "method": "dllm_global",
+    "id": "synthetic-3",
+    "step": 0
+  },
+  "S035": {
+    "method": "full_history",
+    "id": "synthetic-1",
+    "step": 1
+  },
+  "S036": {
+    "method": "full_history",
+    "id": "synthetic-1",
+    "step": 2
+  },
+  "S037": {
+    "method": "extractive",
+    "id": "synthetic-2",
+    "step": 2
+  },
+  "S038": {
+    "method": "ar_global",
+    "id": "synthetic-1",
+    "step": 1
+  },
+  "S039": {
+    "method": "dllm_local",
+    "id": "synthetic-1",
+    "step": 1
+  },
+  "S040": {
+    "method": "dllm_global",
+    "id": "synthetic-0",
+    "step": 1
+  },
+  "S041": {
+    "method": "extractive",
+    "id": "synthetic-1",
+    "step": 0
+  },
+  "S042": {
+    "method": "full_history",
+    "id": "synthetic-0",
+    "step": 1
+  },
+  "S043": {
+    "method": "dllm_local",
+    "id": "synthetic-2",
+    "step": 1
+  },
+  "S044": {
+    "method": "full_history",
+    "id": "synthetic-2",
+    "step": 1
+  },
+  "S045": {
+    "method": "ar_local",
+    "id": "synthetic-0",
+    "step": 1
+  },
+  "S046": {
+    "method": "extractive",
+    "id": "synthetic-1",
+    "step": 1
+  },
+  "S047": {
+    "method": "dllm_global",
+    "id": "synthetic-2",
+    "step": 1
+  },
+  "S048": {
+    "method": "ar_local",
+    "id": "synthetic-2",
+    "step": 1
+  },
+  "S049": {
+    "method": "dllm_global",
+    "id": "synthetic-1",
+    "step": 0
+  },
+  "S050": {
+    "method": "dllm_local",
+    "id": "synthetic-1",
+    "step": 0
+  },
+  "S051": {
+    "method": "ar_local",
+    "id": "synthetic-3",
+    "step": 0
+  },
+  "S052": {
+    "method": "raw_tail",
+    "id": "synthetic-0",
+    "step": 1
+  },
+  "S053": {
+    "method": "dllm_global",
+    "id": "synthetic-2",
+    "step": 2
+  },
+  "S054": {
+    "method": "extractive",
+    "id": "synthetic-2",
+    "step": 0
+  },
+  "S055": {
+    "method": "full_history",
+    "id": "synthetic-2",
+    "step": 2
+  },
+  "S056": {
+    "method": "ar_local",
+    "id": "synthetic-1",
+    "step": 2
+  },
+  "S057": {
+    "method": "ar_local",
+    "id": "synthetic-0",
+    "step": 0
+  },
+  "S058": {
+    "method": "extractive",
+    "id": "synthetic-1",
+    "step": 2
+  },
+  "S059": {
+    "method": "ar_global",
+    "id": "synthetic-1",
+    "step": 2
+  },
+  "S060": {
+    "method": "ar_local",
+    "id": "synthetic-2",
+    "step": 0
+  },
+  "S061": {
+    "method": "full_history",
+    "id": "synthetic-1",
+    "step": 0
+  },
+  "S062": {
+    "method": "dllm_local",
+    "id": "synthetic-2",
+    "step": 2
+  },
+  "S063": {
+    "method": "dllm_global",
+    "id": "synthetic-2",
+    "step": 0
+  },
+  "S064": {
+    "method": "ar_global",
+    "id": "synthetic-2",
+    "step": 1
+  },
+  "S065": {
+    "method": "ar_local",
+    "id": "synthetic-2",
+    "step": 2
+  },
+  "S066": {
+    "method": "raw_tail",
+    "id": "synthetic-3",
+    "step": 0
+  },
+  "S067": {
+    "method": "dllm_global",
+    "id": "synthetic-3",
+    "step": 1
+  },
+  "S068": {
+    "method": "extractive",
+    "id": "synthetic-2",
+    "step": 1
+  },
+  "S069": {
+    "method": "raw_tail",
+    "id": "synthetic-3",
+    "step": 1
+  },
+  "S070": {
+    "method": "raw_tail",
+    "id": "synthetic-0",
+    "step": 0
+  },
+  "S071": {
+    "method": "extractive",
+    "id": "synthetic-0",
+    "step": 0
+  },
+  "S072": {
+    "method": "dllm_local",
+    "id": "synthetic-0",
+    "step": 1
+  },
+  "S073": {
+    "method": "raw_tail",
+    "id": "synthetic-2",
+    "step": 1
+  },
+  "S074": {
+    "method": "raw_tail",
+    "id": "synthetic-0",
+    "step": 2
+  },
+  "S075": {
+    "method": "dllm_global",
+    "id": "synthetic-0",
+    "step": 0
+  },
+  "S076": {
+    "method": "raw_tail",
+    "id": "synthetic-3",
+    "step": 2
+  },
+  "S077": {
+    "method": "ar_local",
+    "id": "synthetic-3",
+    "step": 1
+  },
+  "S078": {
+    "method": "dllm_local",
+    "id": "synthetic-2",
+    "step": 0
+  },
+  "S079": {
+    "method": "dllm_global",
+    "id": "synthetic-0",
+    "step": 2
+  },
+  "S080": {
+    "method": "extractive",
+    "id": "synthetic-0",
+    "step": 2
+  },
+  "S081": {
+    "method": "full_history",
+    "id": "synthetic-3",
+    "step": 2
+  },
+  "S082": {
+    "method": "ar_local",
+    "id": "synthetic-1",
+    "step": 0
+  },
+  "S083": {
+    "method": "raw_tail",
+    "id": "synthetic-2",
+    "step": 2
+  }
+}

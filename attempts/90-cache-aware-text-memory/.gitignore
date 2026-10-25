@@ -1,0 +1,4 @@
+sources/*.pdf
+sources/*.html
+data/longmemeval_oracle*.json
+__pycache__/

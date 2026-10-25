@@ -1,0 +1,100 @@
+{
+  "retrieved_utc": "2026-10-23T10:40:31.042641+00:00",
+  "files": [
+    {
+      "file": "billion-refold.ts",
+      "sha256": "bcc69e6d39a8dae78b3c5ede9e083ac70e9060dbe3b1cb5f3b813e8a840ba497",
+      "bytes": 4023
+    },
+    {
+      "file": "diffumask.html",
+      "sha256": "c30fe618e5922150c2254a019d45366f5ab5115521b953ad242a6de3c428bf06",
+      "bytes": 280144
+    },
+    {
+      "file": "memory-cards.html",
+      "sha256": "0c3cdcfb6d5c191e7259949bf0b79ec3532a4551fd9e71685fac98851ad86ceb",
+      "bytes": 280151
+    },
+    {
+      "file": "llmlingua2.pdf",
+      "sha256": "5f8217cd3c0d0c60e00b2e56984b722c981db0cb4ef1034e67569d88fc6d5651",
+      "bytes": 518658
+    },
+    {
+      "file": "longmemeval-readme.md",
+      "sha256": "c4ff45676683d9e2f7cf7d9099d26426f14635ec110dbb1da818d1019a142573",
+      "bytes": 15970
+    },
+    {
+      "file": "billion-compress.ts",
+      "sha256": "e3c84e2258ea5c7f5142e909964ad0dea921dd0b6cb5b1400f693cd4eba86c5e",
+      "bytes": 85454
+    },
+    {
+      "file": "cache-eval.html",
+      "sha256": "31490f3f31237ec295008ddb7fe4ef3a700a699fb7424b8ff376df780aecc02a",
+      "bytes": 319318
+    },
+    {
+      "file": "billion-compression-rules.ts",
+      "sha256": "352ddef1cf5fcac58e8064100e69a78eefd9f5fb58fb1c05ab4272b302e464f6",
+      "bytes": 14166
+    },
+    {
+      "file": "billion-readme.md",
+      "sha256": "7220180ac710f0784e15d493afb6ca814bf411422107e81aff4c9c6633db35e4",
+      "bytes": 66095
+    },
+    {
+      "file": "cadoc.html",
+      "sha256": "024781fe77b0f475a0fa97827703c3b4a4b4f510db0353079ee6ee0f916226a7",
+      "bytes": 274789
+    },
+    {
+      "file": "cache-engineering.html",
+      "sha256": "1554b4fc7a1603d160816bafbb987ea6d2f7d5bd58952fd6d638947121a4f0ec",
+      "bytes": 361689
+    },
+    {
+      "file": "code-editing.html",
+      "sha256": "7ecd5ceaa16b8647481d3a67ce4db306679e912cd645916823a4ddeae6149df6",
+      "bytes": 539907
+    },
+    {
+      "file": "billion-decompress.ts",
+      "sha256": "44fe84d49018d796d8cfa16628abb78690b529dae8cea76dbb8b2963477ba455",
+      "bytes": 9971
+    },
+    {
+      "file": "longmemeval.html",
+      "sha256": "da4c3fa52b22496cb9b13b5a4e41b01a44f4542256a0e21a5bef094f18111053",
+      "bytes": 405796
+    },
+    {
+      "file": "elastic.html",
+      "sha256": "515883e2dd1d4704e43ea532888a7e8c8ac158b995d167fd1f5b952f20d63309",
+      "bytes": 195508
+    },
+    {
+      "file": "billion-tree.json",
+      "sha256": "b696cf215a29e0d1e27b8c463f78e26eaa5a0f5d3f4d7fa8d7ddeb7ad32c14f0",
+      "bytes": 481414
+    },
+    {
+      "file": "acon.html",
+      "sha256": "62f986895823bcf46882aade39f455c24199bbcc96aef140bafa831e04bef588",
+      "bytes": 1821779
+    },
+    {
+      "file": "billion-paper.md",
+      "sha256": "75969855e6f2afd70acd1fe2b2d7d46e2bd9091c1ddedf22cb8d0b8d5f1ef87c",
+      "bytes": 95725
+    },
+    {
+      "file": "diffuagent.pdf",
+      "sha256": "1fade7f233cc6ce249c13cd2827920d6c974bad78a98e9ea0174c35c46f35bcf",
+      "bytes": 871293
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "time_utc": "2026-10-23T11:10:38.319897+00:00",
+  "sha256": "d87ecc1821d2fe354e66c83a09bf8c60df9d4da97d4275c6d493d6effb6dabdd",
+  "reviewer": "same agent; method labels hidden; not independent human",
+  "note": "Post-measurement semantic audit of all 84 answers, to check the lexical metric, not a replacement for the predeclared gate. No new forwards/cases/metric tuning. Two relative-day answers accepted; original metric preserved. Scored before opening synthetic mapping."
+}

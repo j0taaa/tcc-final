@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "streams": 11,
+  "updates": 35,
+  "cpu_memory_states": 105,
+  "selection_reproduced": 7,
+  "freeze_unchanged": true,
+  "cache_invariants": "prefix only; causal suffix never reused after divergence"
+}

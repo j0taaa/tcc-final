@@ -1,0 +1,10 @@
+{
+  "time_utc": "2026-10-23T11:04:12.754375+00:00",
+  "file": "pilot.py",
+  "before_sha256": "dcf8371761590f42e9fea83e818c3f44e4065ec971f7fa535d9da0e2b39876ed",
+  "after_sha256": "8001625d50f309032d680e84bcb31b6abe8a61928ed1be6127dcc3100812c0a6",
+  "new_consumer": "Qwen/Qwen2.5-1.5B-Instruct",
+  "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "dtype": "float32",
+  "reason": "V1 reader cache audit failed before any QA: max abs .875 > frozen .25, despite initial greedy OK agreement; subsequent bounded NF4/dequantized BF16 diagnostics failed too (including punctuation differences). Keep failure, thresholds, datasets, budgets, editors and scoring unchanged. Use same FP32 reader for every method, no offload. This does not establish root cause or validate the original NF4 consumer. Cache audit must pass before QA."
+}

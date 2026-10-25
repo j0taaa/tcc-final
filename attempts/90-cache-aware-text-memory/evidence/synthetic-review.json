@@ -1,0 +1,1262 @@
+[
+  {
+    "label": "S000",
+    "expected": [
+      "Natal",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Natal\nAppointment day: Tuesday\nReminder day: Monday\nEmployer: Not specified\nDog name: Not specified\nProject code: Cedar\nEmergency contact: Not specified",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S001",
+    "expected": [
+      "Turin",
+      "Sunday",
+      "Saturday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Turin\nAppointment day: Sunday\nReminder day: Saturday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S002",
+    "expected": [
+      "Recife",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S003",
+    "expected": [
+      "Turin",
+      "Sunday",
+      "Saturday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Rome\nAppointment day: Sunday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Usa a cidade superada como cidade atual; também pode omitir ou errar outros campos."
+  },
+  {
+    "label": "S004",
+    "expected": [
+      "Rome",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Rome\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S005",
+    "expected": [
+      "Turin",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "The current delivery city is Turin. The appointment day is Friday. The reminder day is the day before the appointment. The employer is Orion. The dog name is Pixel. The project code is Cedar. The emergency contact is Livia.",
+    "all_fields_correct": true,
+    "reason": "Sete campos corretos; lembrete expresso como o dia anterior ao compromisso, relação equivalente ao dia esperado. A métrica lexical não reconhecia esta equivalência."
+  },
+  {
+    "label": "S006",
+    "expected": [
+      "Lima",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Lima\nAppointment day: Monday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S007",
+    "expected": [
+      "Turin",
+      "Sunday",
+      "Saturday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Turin\nAppointment day: Sunday\nReminder day: Saturday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S008",
+    "expected": [
+      "Turin",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Turin\nAppointment day: Friday\nReminder day: I do not know (no information provided)\nEmployer: Orion\nDog name: Pixel Pixel Pixel Pixel Pixel Pixel Pixel\nProject code: Cedar\nEmergency contact: B1, B2, B3",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S009",
+    "expected": [
+      "Rome",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Rome\nAppointment day: Friday\nReminder day: I do not know (no specific reminder mentioned)\nEmployer: Orion\nDog name: Enzo\nProject code: Cedar\nEmergency contact: I do not know (no emergency contact mentioned)",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S010",
+    "expected": [
+      "Recife",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Recife\nAppointment day: Tuesday\nReminder day: Monday\nEmployer: Not specified\nDog name: Not specified\nProject code: Cedar\nEmergency contact: Not specified",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S011",
+    "expected": [
+      "Natal",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "The current delivery city is Recife. The appointment day is Tuesday. The reminder is on the day before the appointment. The employer is Orion. The dog name is Pixel. The project code is Cedar. The emergency contact is Livia.",
+    "all_fields_correct": false,
+    "reason": "Usa a cidade superada como cidade atual; também pode omitir ou errar outros campos."
+  },
+  {
+    "label": "S012",
+    "expected": [
+      "Recife",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Delivery city: Recife\nAppointment day: Tuesday\nReminder day: Monday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S013",
+    "expected": [
+      "Rome",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Rome\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S014",
+    "expected": [
+      "Cusco",
+      "Thursday",
+      "Wednesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Cusco\nAppointment Day: I do not know\nReminder Day: I do not know\nEmployer: Noah\nDog Name: I do not know\nProject Code: I do not know\nEmergency Contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S015",
+    "expected": [
+      "Cusco",
+      "Thursday",
+      "Wednesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Cusco\nAppointment Day: Thursday\nReminder Day: Thursday\nEmployer: Not specified\nDog Name: Not specified\nProject Code: Not specified\nEmergency Contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Lembrete coincide incorretamente com o compromisso; outros campos podem faltar."
+  },
+  {
+    "label": "S016",
+    "expected": [
+      "Turin",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Turin\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S017",
+    "expected": [
+      "Cusco",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know. There is no information provided about the current delivery city, appointment day, reminder day, employer, dog name, project code, or emergency contact.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S018",
+    "expected": [
+      "Cusco",
+      "Thursday",
+      "Wednesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Cusco\nAppointment day: Thursday\nReminder day: Wednesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S019",
+    "expected": [
+      "Bergen",
+      "Saturday",
+      "Friday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Bergen\nAppointment day: Saturday\nReminder day: Friday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S020",
+    "expected": [
+      "Natal",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Natal\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Not specified\nDog name: Not specified\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S021",
+    "expected": [
+      "Oslo",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Delivery city: Oslo\nAppointment day: Wednesday\nReminder day: Tuesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S022",
+    "expected": [
+      "Rome",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Rome\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S023",
+    "expected": [
+      "Oslo",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Delivery city: Oslo\nAppointment day: Wednesday\nReminder day: Tuesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S024",
+    "expected": [
+      "Cusco",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Cusco\nAppointment day: Monday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S025",
+    "expected": [
+      "Natal",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Natal\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Not specified\nDog name: Not specified\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S026",
+    "expected": [
+      "Cusco",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Cusco\nAppointment day: Monday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: B0\nEmergency contact: Livia",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S027",
+    "expected": [
+      "Turin",
+      "Sunday",
+      "Saturday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Rome\nAppointment Day: Sunday\nReminder Day: Thursday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Usa a cidade superada como cidade atual; também pode omitir ou errar outros campos."
+  },
+  {
+    "label": "S028",
+    "expected": [
+      "Turin",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Turin\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S029",
+    "expected": [
+      "Natal",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Natal\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: I do not know (no information provided)\nProject code: I do not know (no information provided)\nEmergency contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S030",
+    "expected": [
+      "Lima",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Lima\nAppointment day: Monday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S031",
+    "expected": [
+      "Natal",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Natal\nAppointment Day: Friday\nReminder Day: Thursday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S032",
+    "expected": [
+      "Oslo",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Oslo\nAppointment day: Wednesday\nReminder day: Tuesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S033",
+    "expected": [
+      "Turin",
+      "Sunday",
+      "Saturday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Turin\nAppointment day: Sunday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Lembrete coincide incorretamente com o compromisso; outros campos podem faltar."
+  },
+  {
+    "label": "S034",
+    "expected": [
+      "Rome",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Rome\nAppointment day: Friday\nReminder day: I do not know (no specific reminder mentioned)\nEmployer: Orion\nDog name: Enzo\nProject code: Cedar\nEmergency contact: I do not know (no emergency contact mentioned)",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S035",
+    "expected": [
+      "Cusco",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Cusco\nAppointment day: Monday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S036",
+    "expected": [
+      "Cusco",
+      "Thursday",
+      "Wednesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Cusco\nAppointment Day: Thursday\nReminder Day: Wednesday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S037",
+    "expected": [
+      "Bergen",
+      "Saturday",
+      "Friday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Bergen\nAppointment Day: Saturday\nReminder Day: Friday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S038",
+    "expected": [
+      "Cusco",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Cusco\nAppointment day: Monday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S039",
+    "expected": [
+      "Cusco",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Lima\nAppointment day: I do not know\nReminder day: I do not know\nEmployer: Noah\nDog name: I do not know\nProject code: I do not know\nEmergency contact: I do not know",
+    "all_fields_correct": false,
+    "reason": "Usa a cidade superada como cidade atual; também pode omitir ou errar outros campos."
+  },
+  {
+    "label": "S040",
+    "expected": [
+      "Natal",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S041",
+    "expected": [
+      "Lima",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Lima\nAppointment day: Monday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S042",
+    "expected": [
+      "Natal",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Natal\nAppointment day: Tuesday\nReminder day: Monday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S043",
+    "expected": [
+      "Bergen",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S044",
+    "expected": [
+      "Bergen",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Bergen\nAppointment day: Wednesday\nReminder day: Tuesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S045",
+    "expected": [
+      "Natal",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Natal\nAppointment day: Tuesday\nReminder day: Monday\nEmployer: Not specified\nDog name: Not specified\nProject code: Cedar\nEmergency contact: Not specified",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S046",
+    "expected": [
+      "Cusco",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Cusco\nAppointment day: Monday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S047",
+    "expected": [
+      "Bergen",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S048",
+    "expected": [
+      "Bergen",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Delivery City: Bergen\nAppointment Day: I do not know\nReminder Day: I do not know\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Livia",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S049",
+    "expected": [
+      "Lima",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S050",
+    "expected": [
+      "Lima",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S051",
+    "expected": [
+      "Rome",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Rome\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S052",
+    "expected": [
+      "Natal",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "The current delivery city is Natal. The appointment day is Tuesday. The reminder day is one day before the appointment. The employer is Orion. The dog name is Pixel. The project code is Cedar. The emergency contact is Livia.",
+    "all_fields_correct": true,
+    "reason": "Sete campos corretos; lembrete expresso como o dia anterior ao compromisso, relação equivalente ao dia esperado. A métrica lexical não reconhecia esta equivalência."
+  },
+  {
+    "label": "S053",
+    "expected": [
+      "Bergen",
+      "Saturday",
+      "Friday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S054",
+    "expected": [
+      "Oslo",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Oslo\nAppointment day: Wednesday\nReminder day: Tuesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S055",
+    "expected": [
+      "Bergen",
+      "Saturday",
+      "Friday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Bergen\nAppointment Day: Saturday\nReminder Day: Friday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S056",
+    "expected": [
+      "Cusco",
+      "Thursday",
+      "Wednesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery city: Cusco\nAppointment day: Thursday\nReminder day: Wednesday\nEmployer: Orion\nDog name: Pixel\nProject code: (Not provided in the memory)\nEmergency contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S057",
+    "expected": [
+      "Recife",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Recife\nAppointment day: Tuesday\nReminder day: Monday\nEmployer: Not specified\nDog name: Not specified\nProject code: Cedar\nEmergency contact: Not specified",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S058",
+    "expected": [
+      "Cusco",
+      "Thursday",
+      "Wednesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery city: Cusco\nAppointment day: Thursday\nReminder day: Wednesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S059",
+    "expected": [
+      "Cusco",
+      "Thursday",
+      "Wednesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery city: Cusco\nAppointment day: Thursday\nReminder day: Wednesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S060",
+    "expected": [
+      "Oslo",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Delivery city: Oslo\nAppointment day: Wednesday\nReminder day: Tuesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S061",
+    "expected": [
+      "Lima",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Delivery City: Lima\nAppointment Day: Monday\nReminder Day: Sunday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S062",
+    "expected": [
+      "Bergen",
+      "Saturday",
+      "Friday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Oslo\nAppointment day: Saturday\nReminder day: Friday\nEmployer: Iris\nDog name: Pixel\nProject code: I do not know\nEmergency contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Usa a cidade superada como cidade atual; também pode omitir ou errar outros campos."
+  },
+  {
+    "label": "S063",
+    "expected": [
+      "Oslo",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S064",
+    "expected": [
+      "Bergen",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Delivery city: Bergen\nAppointment day: Wednesday\nReminder day: Tuesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S065",
+    "expected": [
+      "Bergen",
+      "Saturday",
+      "Friday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Bergen\nAppointment Day: Saturday\nReminder Day: Friday\nEmployer: Orion\nDog Name: Pixel\nProject Code: (Not specified in the memory)\nEmergency Contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S066",
+    "expected": [
+      "Rome",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Rome\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S067",
+    "expected": [
+      "Turin",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Turin\nAppointment day: Friday\nReminder day: I do not know\nEmployer: Enzo\nDog name: Pixel\nProject code: Cedar\nEmergency contact: [\nB1: \nB2: \nB3: ]",
+    "all_fields_correct": false,
+    "reason": "Há campos ausentes ou incorretos (não basta coincidir com alguns valores da referência)."
+  },
+  {
+    "label": "S068",
+    "expected": [
+      "Bergen",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Bergen\nAppointment day: Wednesday\nReminder day: Tuesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S069",
+    "expected": [
+      "Turin",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Turin\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S070",
+    "expected": [
+      "Recife",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Recife\nAppointment day: Tuesday\nReminder day: Monday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S071",
+    "expected": [
+      "Recife",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Recife\nAppointment day: Tuesday\nReminder day: Monday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S072",
+    "expected": [
+      "Natal",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S073",
+    "expected": [
+      "Bergen",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Bergen\nAppointment day: Wednesday\nReminder day: Tuesday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S074",
+    "expected": [
+      "Natal",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Natal\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S075",
+    "expected": [
+      "Recife",
+      "Tuesday",
+      "Monday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S076",
+    "expected": [
+      "Turin",
+      "Sunday",
+      "Saturday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Current delivery city: Rome\nAppointment day: Sunday\nReminder day: Saturday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Usa a cidade superada como cidade atual; também pode omitir ou errar outros campos."
+  },
+  {
+    "label": "S077",
+    "expected": [
+      "Turin",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Turin\nAppointment day: Friday\nReminder day: Thursday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S078",
+    "expected": [
+      "Oslo",
+      "Wednesday",
+      "Tuesday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "I do not know.",
+    "all_fields_correct": false,
+    "reason": "Abstenção indevida; os sete fatos são respondíveis neste estado."
+  },
+  {
+    "label": "S079",
+    "expected": [
+      "Natal",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery city: Natal\nAppointment day: Friday\nReminder day: Friday\nEmployer: Orion\nDog name: Not specified\nProject code: Not specified\nEmergency contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Lembrete coincide incorretamente com o compromisso; outros campos podem faltar."
+  },
+  {
+    "label": "S080",
+    "expected": [
+      "Natal",
+      "Friday",
+      "Thursday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Recife\nAppointment Day: Friday\nReminder Day: Thursday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "all_fields_correct": false,
+    "reason": "Usa a cidade superada como cidade atual; também pode omitir ou errar outros campos."
+  },
+  {
+    "label": "S081",
+    "expected": [
+      "Turin",
+      "Sunday",
+      "Saturday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Turin\nAppointment Day: Sunday\nReminder Day: Saturday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S082",
+    "expected": [
+      "Lima",
+      "Monday",
+      "Sunday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Livia"
+    ],
+    "answer": "Current delivery city: Lima\nAppointment day: Monday\nReminder day: Sunday\nEmployer: Orion\nDog name: Pixel\nProject code: Cedar\nEmergency contact: Livia",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  },
+  {
+    "label": "S083",
+    "expected": [
+      "Bergen",
+      "Saturday",
+      "Friday",
+      "Orion",
+      "Pixel",
+      "Cedar",
+      "Bruno"
+    ],
+    "answer": "Delivery City: Bergen\nAppointment Day: Saturday\nReminder Day: Friday\nEmployer: Orion\nDog Name: Pixel\nProject Code: Cedar\nEmergency Contact: Bruno",
+    "all_fields_correct": true,
+    "reason": "Os sete campos respondidos correspondem aos valores atuais esperados, sem inversão de dias."
+  }
+]

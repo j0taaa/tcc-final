@@ -1,0 +1,56 @@
+{
+  "rule": "minimum SHA256(a90-v1:question_id) in each of six types excluding _abs, plus minimum among _abs; no length filtering",
+  "external": [
+    {
+      "id": "7a87bd0c",
+      "type": "knowledge-update",
+      "tokens": 6168,
+      "updates": 5,
+      "abstention": false
+    },
+    {
+      "id": "f35224e0",
+      "type": "multi-session",
+      "tokens": 5349,
+      "updates": 4,
+      "abstention": false
+    },
+    {
+      "id": "778164c6",
+      "type": "single-session-assistant",
+      "tokens": 1017,
+      "updates": 1,
+      "abstention": false
+    },
+    {
+      "id": "75f70248",
+      "type": "single-session-preference",
+      "tokens": 3750,
+      "updates": 3,
+      "abstention": false
+    },
+    {
+      "id": "af8d2e46",
+      "type": "single-session-user",
+      "tokens": 2760,
+      "updates": 2,
+      "abstention": false
+    },
+    {
+      "id": "2ebe6c92",
+      "type": "temporal-reasoning",
+      "tokens": 6075,
+      "updates": 4,
+      "abstention": false
+    },
+    {
+      "id": "60bf93ed_abs",
+      "type": "multi-session",
+      "tokens": 6029,
+      "updates": 4,
+      "abstention": true
+    }
+  ],
+  "consumer_tokenizer": "unsloth/Qwen2.5-3B-Instruct-bnb-4bit",
+  "revision": "2672b588848527e456d320c11926c794539f47d5"
+}

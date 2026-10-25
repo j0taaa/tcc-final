@@ -1,0 +1,12 @@
+{
+  "time_utc": "2026-10-23T11:09:17.360045+00:00",
+  "sha256": "8550726ca4cef3fb911b70adabc7750b15d5dd30fcb734c0baa947ba01d8e4a6",
+  "rubric": "0 incorrect/absent; 1 partial without contradiction; 2 all requirements",
+  "reviewer": "same research agent; method names hidden, not independent human review",
+  "scores": {
+    "0": 38,
+    "1": 2,
+    "2": 9
+  },
+  "note": "Scores committed before opening blind-mapping.json. No change to QA, reference, case selection or thresholds."
+}

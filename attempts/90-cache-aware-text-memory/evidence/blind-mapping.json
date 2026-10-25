@@ -1,0 +1,198 @@
+{
+  "R000": {
+    "method": "ar_local",
+    "id": "778164c6"
+  },
+  "R001": {
+    "method": "dllm_global",
+    "id": "7a87bd0c"
+  },
+  "R002": {
+    "method": "extractive",
+    "id": "2ebe6c92"
+  },
+  "R003": {
+    "method": "raw_tail",
+    "id": "7a87bd0c"
+  },
+  "R004": {
+    "method": "full_history",
+    "id": "f35224e0"
+  },
+  "R005": {
+    "method": "ar_local",
+    "id": "f35224e0"
+  },
+  "R006": {
+    "method": "ar_global",
+    "id": "75f70248"
+  },
+  "R007": {
+    "method": "full_history",
+    "id": "60bf93ed_abs"
+  },
+  "R008": {
+    "method": "ar_local",
+    "id": "75f70248"
+  },
+  "R009": {
+    "method": "extractive",
+    "id": "7a87bd0c"
+  },
+  "R010": {
+    "method": "dllm_local",
+    "id": "778164c6"
+  },
+  "R011": {
+    "method": "dllm_local",
+    "id": "7a87bd0c"
+  },
+  "R012": {
+    "method": "raw_tail",
+    "id": "f35224e0"
+  },
+  "R013": {
+    "method": "full_history",
+    "id": "778164c6"
+  },
+  "R014": {
+    "method": "raw_tail",
+    "id": "778164c6"
+  },
+  "R015": {
+    "method": "raw_tail",
+    "id": "2ebe6c92"
+  },
+  "R016": {
+    "method": "dllm_local",
+    "id": "75f70248"
+  },
+  "R017": {
+    "method": "full_history",
+    "id": "75f70248"
+  },
+  "R018": {
+    "method": "dllm_global",
+    "id": "60bf93ed_abs"
+  },
+  "R019": {
+    "method": "ar_global",
+    "id": "f35224e0"
+  },
+  "R020": {
+    "method": "ar_local",
+    "id": "7a87bd0c"
+  },
+  "R021": {
+    "method": "ar_global",
+    "id": "7a87bd0c"
+  },
+  "R022": {
+    "method": "dllm_global",
+    "id": "af8d2e46"
+  },
+  "R023": {
+    "method": "dllm_global",
+    "id": "75f70248"
+  },
+  "R024": {
+    "method": "ar_local",
+    "id": "2ebe6c92"
+  },
+  "R025": {
+    "method": "raw_tail",
+    "id": "75f70248"
+  },
+  "R026": {
+    "method": "ar_global",
+    "id": "60bf93ed_abs"
+  },
+  "R027": {
+    "method": "extractive",
+    "id": "778164c6"
+  },
+  "R028": {
+    "method": "extractive",
+    "id": "f35224e0"
+  },
+  "R029": {
+    "method": "ar_local",
+    "id": "60bf93ed_abs"
+  },
+  "R030": {
+    "method": "full_history",
+    "id": "af8d2e46"
+  },
+  "R031": {
+    "method": "dllm_global",
+    "id": "778164c6"
+  },
+  "R032": {
+    "method": "dllm_global",
+    "id": "2ebe6c92"
+  },
+  "R033": {
+    "method": "ar_local",
+    "id": "af8d2e46"
+  },
+  "R034": {
+    "method": "dllm_local",
+    "id": "af8d2e46"
+  },
+  "R035": {
+    "method": "dllm_local",
+    "id": "f35224e0"
+  },
+  "R036": {
+    "method": "extractive",
+    "id": "75f70248"
+  },
+  "R037": {
+    "method": "extractive",
+    "id": "60bf93ed_abs"
+  },
+  "R038": {
+    "method": "dllm_global",
+    "id": "f35224e0"
+  },
+  "R039": {
+    "method": "dllm_local",
+    "id": "60bf93ed_abs"
+  },
+  "R040": {
+    "method": "raw_tail",
+    "id": "af8d2e46"
+  },
+  "R041": {
+    "method": "ar_global",
+    "id": "778164c6"
+  },
+  "R042": {
+    "method": "full_history",
+    "id": "7a87bd0c"
+  },
+  "R043": {
+    "method": "ar_global",
+    "id": "af8d2e46"
+  },
+  "R044": {
+    "method": "raw_tail",
+    "id": "60bf93ed_abs"
+  },
+  "R045": {
+    "method": "full_history",
+    "id": "2ebe6c92"
+  },
+  "R046": {
+    "method": "extractive",
+    "id": "af8d2e46"
+  },
+  "R047": {
+    "method": "ar_global",
+    "id": "2ebe6c92"
+  },
+  "R048": {
+    "method": "dllm_local",
+    "id": "2ebe6c92"
+  }
+}

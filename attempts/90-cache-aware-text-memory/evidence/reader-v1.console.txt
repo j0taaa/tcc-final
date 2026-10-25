@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/jota/.t3/worktrees/tcc-final/research-cache-aware-memory-20261023/attempts/90-cache-aware-text-memory/pilot.py", line 262, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/jota/.t3/worktrees/tcc-final/research-cache-aware-memory-20261023/attempts/90-cache-aware-text-memory/pilot.py", line 259, in main
+    else:model_phase(a.phase,log)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/.t3/worktrees/tcc-final/research-cache-aware-memory-20261023/attempts/90-cache-aware-text-memory/pilot.py", line 165, in model_phase
+    else:readers(engine,ct,torch,log)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jota/.t3/worktrees/tcc-final/research-cache-aware-memory-20261023/attempts/90-cache-aware-text-memory/pilot.py", line 202, in readers
+    cache_audit(engine,tok,torch,log)
+  File "/home/jota/.t3/worktrees/tcc-final/research-cache-aware-memory-20261023/attempts/90-cache-aware-text-memory/pilot.py", line 237, in cache_audit
+    if error>.25 or not same:raise RuntimeError('cache audit failed; preserve results and stop')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: cache audit failed; preserve results and stop
